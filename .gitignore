@@ -1,0 +1,21 @@
+# Grote videobestanden horen niet in git (blijven lokaal in 00-brondocumenten/videos-jaar4/)
+00-brondocumenten/videos-jaar4/*
+!00-brondocumenten/videos-jaar4/.gitkeep
+*.mp4
+*.mov
+*.avi
+*.mkv
+*.webm
+
+# Gegenereerde output (op aanvraag herbouwbaar)
+03-build/*
+!03-build/.gitkeep
+
+# Rommel
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+~$*
