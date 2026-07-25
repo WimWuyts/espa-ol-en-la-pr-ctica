@@ -1,0 +1,13 @@
+{
+  "name": "spaans-motor",
+  "version": "1.0.0",
+  "description": "Motor voor zelfbouwende oefenspellen (Spaans / NT2). Dependency-vrij.",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "jsdom": "^29.1.1",
+    "puppeteer-core": "^25.3.0"
+  }
+}

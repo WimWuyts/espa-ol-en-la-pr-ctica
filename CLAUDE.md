@@ -97,6 +97,7 @@ Elke unit/les levert **vier formaten met een identieke, uitgeverswaardige layout
     06-vervolg/                ← C6+ (paars)
 /02-huisstijl/                 ← gedeelde templates, kleurtokens, fonts, componenten
 /03-build/                     ← gegenereerde output (Word/PDF/PPTX/HTML)
+/spaans-motor/                 ← gamification-motor (leerstof → offline HTML-spellen)
 ```
 
 ## 8 · Werkwijze (afgesproken volgorde)
@@ -249,4 +250,4 @@ Naast de twee *visuele* specs (§13) zijn er twee *didactische* specs in `02-hui
 - Dependency-vrij: elk spel = **één standalone offline HTML**. Gedeelde `engine.js` (score, streak, **adaptief**, foutenlog, resultaten, geluid); **generatoren** (vervoeging/geslacht, *nagerekend* — nooit zelf vervoegen); `SKILL.md` routeert leerstof → sjabloon → bouwt.
 - **Huidige sjablonen: `classify`, `match`, `tetris`** + generatoren `conjugation`/`gender`/`verbo` (324 werkwoorden) + 8 voorbeeldspellen. **NB: geen 100 kant-en-klare speltypes** — «100» was ambitie; de motor is wél **uitbreidbaar** (nieuwe sjablonen `cloze`/`order`/`point`/… pluggen in).
 - **Doel:** per webpagina/thema **10–15 gevarieerde spellen** die woordenschat/grammatica inoefenen volgens de principes (receptief→productief, spreiding). → vergt eerst **uitbreiding van de sjablonenset** voor voldoende variatie.
-- **Plaatsing nog te beslissen:** aparte repo (herbruikbaar, ook NT2) vs. in deze monorepo (alles samen).
+- **Plaatsing (BESLIST 2026-07-25):** in deze monorepo → **`spaans-motor/`** (met eigen README/SKILL/build).

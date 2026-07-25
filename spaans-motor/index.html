@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oefenspellen Spaans</title>
+<style>
+/* Gedeelde ontwerptokens — azulejo-stijl (Talavera-tegels). */
+:root{
+  --muro:#12264A; --muro-2:#0A1730; --cal:#F3ECDB; --cal-dim:#C8BFA9;
+  --barro:#D6C3A0; --barro-txt:#3A2E22; --roto:#7C7268;
+  --p1:#C4402C; --p2:#E0A22F; --p3:#2E8E68; --p4:#3D74D6; --p5:#8B5E9E; --p6:#EFE7D4;
+  --serif:"Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Courier New",monospace;
+}
+
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:var(--sans);color:var(--cal);background:linear-gradient(180deg,var(--muro),var(--muro-2));padding:32px 18px 60px}.ix-wrap{max-width:900px;margin:0 auto}h1{font-family:var(--serif);letter-spacing:.12em;font-size:clamp(26px,5vw,40px);margin:0 0 4px}h1 span{color:var(--p2)}p.lead{font-family:var(--serif);font-style:italic;color:var(--cal-dim);margin:0 0 28px}.ix-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}.ix-card{display:flex;flex-direction:column;gap:8px;padding:18px;border-radius:3px;text-decoration:none;background:linear-gradient(175deg,#FBF6E9,#E9E0C9);color:#12264A;border:1px solid rgba(0,0,0,.2);box-shadow:0 5px 0 rgba(0,0,0,.22);transition:transform .1s}.ix-card:active{transform:translateY(3px)}.ix-badge{align-self:flex-start;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F66;border:1px solid #C3B99F;border-radius:2px;padding:2px 7px}.ix-title{font-family:var(--serif);font-weight:700;font-size:19px}</style>
+</head>
+<body>
+<div class="ix-wrap">
+<h1>Oefen<span>spellen</span></h1>
+<p class="lead">Tik een spel om te starten.</p>
+<div class="ix-grid">
+<a class="ix-card" href="games/es-genero-tetris.html"><span class="ix-badge">tetris</span><span class="ix-title">El/la Tetris</span></a>
+<a class="ix-card" href="games/es-genero.html"><span class="ix-badge">classificeren</span><span class="ix-title">El of la</span></a>
+<a class="ix-card" href="games/es-la-familia.html"><span class="ix-badge">koppelen</span><span class="ix-title">La familia</span></a>
+<a class="ix-card" href="games/es-presente-regular.html"><span class="ix-badge">classificeren</span><span class="ix-title">Presente · persoon</span></a>
+<a class="ix-card" href="games/es-presente-tetris.html"><span class="ix-badge">tetris</span><span class="ix-title">Presente Tetris</span></a>
+<a class="ix-card" href="games/es-ser-estar.html"><span class="ix-badge">classificeren</span><span class="ix-title">Ser of estar</span></a>
+<a class="ix-card" href="games/es-verbo-clase.html"><span class="ix-badge">classificeren</span><span class="ix-title">¿Regular o no?</span></a>
+<a class="ix-card" href="games/es-verbo-persona.html"><span class="ix-badge">tetris</span><span class="ix-title">Verbo Tetris</span></a>
+</div>
+</div>
+</body>
+</html>

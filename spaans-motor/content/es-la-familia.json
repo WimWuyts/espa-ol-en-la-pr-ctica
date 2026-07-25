@@ -1,0 +1,25 @@
+{
+  "id": "es-la-familia",
+  "title": "La <span>familia</span>",
+  "subtitle": "Woordenschat koppelen",
+  "lang": "es",
+  "template": "match",
+  "options": { "chunk": 6, "audio": false },
+  "match": {
+    "prompt": "Verbind elk Spaans woord met de Nederlandse vertaling",
+    "pairs": [
+      {"a":"el padre","b":"de vader"},
+      {"a":"la madre","b":"de moeder"},
+      {"a":"el hermano","b":"de broer"},
+      {"a":"la hermana","b":"de zus"},
+      {"a":"el abuelo","b":"de grootvader"},
+      {"a":"la abuela","b":"de grootmoeder"},
+      {"a":"el hijo","b":"de zoon"},
+      {"a":"la hija","b":"de dochter"},
+      {"a":"el tío","b":"de oom"},
+      {"a":"la tía","b":"de tante"},
+      {"a":"el primo","b":"de neef"},
+      {"a":"la esposa","b":"de echtgenote"}
+    ]
+  }
+}

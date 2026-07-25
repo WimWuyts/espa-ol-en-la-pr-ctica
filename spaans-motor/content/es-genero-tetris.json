@@ -1,0 +1,15 @@
+{
+  "id": "es-genero-tetris",
+  "title": "El/la <span>Tetris</span>",
+  "subtitle": "Laat het woord in de juiste kolom vallen",
+  "lang": "es",
+  "template": "tetris",
+  "options": { "rows": 9, "speed": 1100, "audio": false },
+  "generator": { "kind": "gender" },
+  "classify": {
+    "categories": [
+      {"id":"m","label":"el<br><small>masculino</small>","glaze":"#3D74D6"},
+      {"id":"f","label":"la<br><small>femenino</small>","glaze":"#C4402C"}
+    ]
+  }
+}

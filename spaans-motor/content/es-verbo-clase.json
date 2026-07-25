@@ -1,0 +1,20 @@
+{
+  "id": "es-verbo-clase",
+  "title": "¿Regular <span>o no?</span>",
+  "subtitle": "Sorteer de infinitief op presente-klasse",
+  "lang": "es",
+  "template": "classify",
+  "options": { "rounds": 20, "audio": false },
+  "generator": { "kind": "verbo", "mode": "clase" },
+  "classify": {
+    "prompt": "welke presente-klasse?",
+    "categories": [
+      {"id":"reg","label":"regular","glaze":"#2E8E68"},
+      {"id":"ie","label":"e→ie","glaze":"#C4402C"},
+      {"id":"ue","label":"o→ue","glaze":"#3D74D6"},
+      {"id":"i","label":"e→i","glaze":"#E0A22F"},
+      {"id":"uue","label":"u→ue","glaze":"#8B5E9E"},
+      {"id":"irr","label":"onregel-<br>matig","glaze":"#B07A2E"}
+    ]
+  }
+}

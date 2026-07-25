@@ -1,0 +1,37 @@
+{
+  "id": "es-ser-estar",
+  "title": "Ser <span>of</span> estar",
+  "subtitle": "Kies het juiste werkwoord",
+  "lang": "es",
+  "template": "classify",
+  "options": { "rounds": 18, "audio": false },
+  "classify": {
+    "prompt": "ser of estar?",
+    "categories": [
+      {"id":"ser","label":"ser","glaze":"#C4402C"},
+      {"id":"estar","label":"estar","glaze":"#3D74D6"}
+    ],
+    "items": [
+      {"stimulus":"Yo ___ profesor.","answer":"ser","tag":"ser","sub":"beroep → eigenschap"},
+      {"stimulus":"María ___ cansada.","answer":"estar","tag":"estar","sub":"tijdelijke toestand"},
+      {"stimulus":"Nosotros ___ en Madrid.","answer":"estar","tag":"estar","sub":"plaats"},
+      {"stimulus":"El coche ___ rojo.","answer":"ser","tag":"ser","sub":"kleur → eigenschap"},
+      {"stimulus":"¿Cómo ___ tú hoy?","answer":"estar","tag":"estar","sub":"gemoedstoestand"},
+      {"stimulus":"La sopa ___ caliente.","answer":"estar","tag":"estar","sub":"tijdelijke toestand"},
+      {"stimulus":"Ellos ___ de España.","answer":"ser","tag":"ser","sub":"herkomst"},
+      {"stimulus":"Hoy ___ lunes.","answer":"ser","tag":"ser","sub":"dag/datum"},
+      {"stimulus":"El museo ___ cerrado.","answer":"estar","tag":"estar","sub":"toestand (open/dicht)"},
+      {"stimulus":"Mi hermana ___ alta.","answer":"ser","tag":"ser","sub":"blijvende eigenschap"},
+      {"stimulus":"La fiesta ___ en mi casa.","answer":"ser","tag":"ser","sub":"waar iets plaatsvindt"},
+      {"stimulus":"Los niños ___ enfermos.","answer":"estar","tag":"estar","sub":"tijdelijke toestand"},
+      {"stimulus":"___ las tres de la tarde.","answer":"ser","tag":"ser","sub":"tijd"},
+      {"stimulus":"El libro ___ sobre la mesa.","answer":"estar","tag":"estar","sub":"plaats"},
+      {"stimulus":"Tú ___ muy simpático.","answer":"ser","tag":"ser","sub":"karakter"},
+      {"stimulus":"Nosotros ___ contentos.","answer":"estar","tag":"estar","sub":"gevoel nu"},
+      {"stimulus":"Ella ___ médica.","answer":"ser","tag":"ser","sub":"beroep"},
+      {"stimulus":"El agua ___ fría.","answer":"estar","tag":"estar","sub":"tijdelijke toestand"},
+      {"stimulus":"Madrid ___ la capital.","answer":"ser","tag":"ser","sub":"identiteit"},
+      {"stimulus":"Mis padres ___ de viaje.","answer":"estar","tag":"estar","sub":"tijdelijke situatie"}
+    ]
+  }
+}
