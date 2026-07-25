@@ -115,7 +115,7 @@ Elke unit/les levert **vier formaten met een identieke, uitgeverswaardige layout
 ## 10 · Openstaande beslissingen (bijwerken naarmate ze vastliggen)
 
 - [x] Huisstijl: **nieuwe, frisse, uitgeverswaardige look van nul** (oude Solecito/Fredoka/Nunito niet verplicht). — beslist 2026-07-25
-- [ ] **Rode draad / verhaallijn:** één doorlopend overkoepelend concept voor **C4 → C5 → C6**, en een variant voor **C6+** die in het verlengde van *Español en la práctica* ligt. — **nu in bespreking (eerst vastleggen vóór content)**
+- [x] **Rode draad = «La Ruta»** (doorlopende reis over de kaart van de Spaanstalige wereld; elke unit = een nieuwe *parada*, de kaart groeit mee van C4 → C5 → C6). **C6+** volgt dezelfde route maar pikt op waar *Español en la práctica* eindigde (ná gap-analyse). — beslist 2026-07-25. Uitwerking: zie **§12**.
 - [ ] Eigen mascotte + kleuraccent per cursus binnen de nieuwe huisstijl.
 - [ ] Toolchain voor de "één bron → 4 formaten"-generatie (vast te leggen bij de golden sample).
 - [ ] Bestaand C5-materiaal (netlify/afgewerkte U0–U6) importeren in deze repo?
@@ -125,3 +125,22 @@ Elke unit/les levert **vier formaten met een identieke, uitgeverswaardige layout
 - **Werkbranch:** `claude/spanish-course-development-jx25ay`. Niet naar een andere branch pushen zonder toestemming.
 - Commit-berichten: kort en beschrijvend, in het Nederlands.
 - Alle vier de cursussen leven in **deze** ene repo (monorepo), gedeelde huisstijl in `02-huisstijl/`.
+
+## 12 · De rode draad — «La Ruta» (verhaallijn over alle cursussen)
+
+**Concept:** één doorlopende **reis over de kaart van de Spaanstalige wereld**. Elke unit is een nieuwe **parada** (halte/etappe); een groeiende **mapa de la ruta** verbindt de units, de jaren én de cursussen. De kaart is het vaste visuele anker (hero + terugkerend element in elke unit) en vervangt de oude MUNDO-collage van C5.
+
+**Waarom deze:** sluit naadloos aan bij de outlines (reizen, cultura, biografieën, leyendas, de Spaanstalige wereld), draagt de leerplan-component *Identiteit in diversiteit*, en de niveaugroei zit al ingebakken in de route.
+
+**Route per cursus (etappes):**
+
+| Cursus | Etappe-naam (werktitel) | Wereld-focus | Taal-/niveaulaag |
+|--------|-------------------------|--------------|------------------|
+| **C4** 🔴 | *El despegue* — vertrek & eerste contact | "leren klinken als": klanken, accent, chunks | pre-A1 mechaniek (afhankelijk van de video's) |
+| **C5** 🟢 | *El día a día* — settelen, het hier-en-nu | Spanje + eerste stappen LatAm; dagelijks leven | A1-kern + eerste A2 (t.e.m. perfecto compuesto) |
+| **C6** 🔵 | *Historias y mundos* — dieper & het verleden in | breder LatAm; verhalen, geschiedenis, actualiteit | A2 → aanzet B1 (indefinido/imperfecto passen bij verhalen) |
+| **C6+** 🟣 | dezelfde route, **ander vertrekpunt** | pikt op waar *Español en la práctica* eindigde | A2 → aanzet B1 (na gap-analyse) |
+
+**Mechaniek per unit:** elke unit opent met "waar zijn we op de ruta" (kaartje + bestemming), de `Cultura`-sectie verankert de *parada* in een echte plek/land, en de `Tarea final` is telkens een concreet reis-artefact (postal, reisblog, vlog, presentatie…). Zo is de reis niet enkel decor, maar ook de motor van de eindtaken.
+
+**Nog te beslissen:** naam/vorm van een eventuele reisgezel-mascotte binnen de nieuwe huisstijl; exacte volgorde van landen/paradas per unit (afstemmen op de bestaande outline-thema's).
