@@ -167,7 +167,18 @@ Argentina/Buenos Aires (U1) · leyenda Meso-Amerika (U2) · Chile/Patagonia (U3)
 
 **Kaarten (BINDEND):** de *mapa de la ruta* is het vaste visuele anker en wordt **prachtig gerenderd** — een eigen, verzorgde SVG-kaartstijl (geen generieke clipart of ruwe outline-maps). Elke unit opent met "waar zijn we op de ruta" (kaartje + bestemming); de kaart groeit mee van C4 → C5 → C6.
 
-**Nog te beslissen:** reisgezel-mascotte + terugkerende cast (vorm/namen) — **nu in bespreking**.
+### De cast — «la gente de la ruta» (VASTGELEGD 2026-07-25, namen provisoir)
+
+Kerncast van 4 tieners **+ de reiziger = de leerling** (Vlaams «tú»-perspectief → draagt de NL-valstrikken):
+- **Lucía** — Sevilla 🇪🇸 (familie/U2 · andaluz)
+- **Diego** — CDMX 🇲🇽 (eten & markt/U5–U6 · mexicano)
+- **Valen** (Valentina) — Cartagena 🇨🇴 (wonen & barrio/U7 · costeño)
+- **Nina** — Cusco 🇵🇪 (reizen & natuur/U8 · andino)
+- **Mateo** — Buenos Aires 🇦🇷 (**vanaf C6**: biografieën · voseo)
+
+Fictieve namen (echte figuren zoals Frida/García Márquez blijven voor *Cultura*). Elk personage = eigen **avatar-accentkleur**, geharmoniseerd met het palet en bewust **losgekoppeld** van de functionele taalkleuren én de cursuskleur. Elke *parada* kan zijn lokale castlid als gastheer hebben.
+
+**Nog te beslissen:** de **mascotte** (reisgezel) — richting «gekoppeld aan de leerling» (nu in bespreking).
 
 ## 13 · Ontwerpsysteem & componenten (BINDEND)
 
