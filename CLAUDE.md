@@ -164,3 +164,23 @@ De volledige visuele aanpak ligt vast in twee specs in `02-huisstijl/richtlijnen
 - **Print én digitaal uit één bron.** Print moet volledig bruikbaar zijn zónder interactie; toegankelijkheid (alt-tekst, contrast, grijswaarden) is vereist.
 - **Bouwvolgorde (uit de spec):** designsysteem → kleur → typografie → grid → navigatie → iconen → **componentenbibliotheek** → paginatemplates → **één prototype-unit** → PDF-export → **visuele audit** → correctie → **pas dán** productie van de rest. = onze «golden sample»-stap.
 - **Rolverdeling:** Claude + latere **subagents** beslissen de concrete invulling per onderdeel per cursus, binnen deze specs. Bij twijfel wint *variatie* + de visuele audit uit de spec.
+
+## 14 · Didactieksysteem (BINDEND)
+
+Naast de twee *visuele* specs (§13) zijn er twee *didactische* specs in `02-huisstijl/richtlijnen/`:
+- **`VIER_VAARDIGHEDEN_GEINTEGREERD.md`** — hoe lezen · luisteren · schrijven · spreken worden **aangebracht én ingeoefend**; geïntegreerde vaardigheidsketens; interactieve HTML-spreekcomponenten.
+- **`INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md`** — 50 + 50 werkvormen van **receptief → productief** + zeven ontwerpregels.
+
+**Reikwijdte:** idem §13 — alle vier cursussen, alle vier formaten. **Variatie** geldt óók in Word/PDF, niet enkel in HTML.
+
+**Kernafspraken die elke build moet respecteren:**
+- **Vaardigheidsbeweging (elke skill):** oriënteren → receptief verwerken → gericht analyseren → gestuurd reageren → zelfstandig produceren → transfer → feedback & herneming.
+- **Woordenschat & grammatica — vijf fasen:** herkennen → onderscheiden → ophalen → gestuurd produceren → vrij produceren. **Retrieval vóór herlezen.**
+- **Steun altijd zichtbaar afbouwen:** model → woordenbank → beginletters/zinsframe → inhoudelijke cue → geen steun. (Een oefening is pas productief als het antwoord niet volledig te kopiëren valt.)
+- **Betekenis vóór vorm · productie begint klein · ophalen vóór opnieuw tonen · feedback leidt tot nieuwe productie.**
+- **Spreiding & recycling verplicht:** een woord/structuur keert later terug — in een andere vaardigheid, met een ander personage, in een nieuwe tekstsoort, zonder waarschuwing.
+- **Vaardigheden zijn geïntegreerd** (8 ketens: lezen→spreken, luisteren→schrijven, … → volledige eindtaak). Niet vier gescheiden hoofdstukken.
+- **Receptieve vs. productieve beheersing apart** (statusladder 0–5).
+- **Elke eindtaak is communicatief:** afzender · ontvanger · doel · situatie · resultaat. Nooit "gebruik 10 woorden en 5 werkwoorden".
+- **Spreken = ook interactie** (beurt nemen, verduidelijken, zichzelf herstellen). Veel spreekwerkvormen worden interactieve HTML-componenten (recorder, shadowing, info-gap, vertakkende dialoog…); **print blijft volledig bruikbaar zónder interactie**.
+- **Gedeelde componentensets:** de componentlijsten uit álle vier de specs (visueel + didactisch) vormen samen één bibliotheek, één keer te bouwen bij de golden sample.

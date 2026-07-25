@@ -8,7 +8,9 @@ formaten (Word · PDF · PPTX · HTML). Gouden regel: **variatie**.
 - **`tokens/tokens.json`** — de *single source of truth*: kleuren, fonts, type-schaal, vormen.
 - **`tokens/tokens.css`** — dezelfde tokens als CSS-variabelen + `@font-face` (voor HTML-builds), incl. licht/donker.
 - **`fonts/`** — de lettertypes (woff2, SIL OFL 1.1) + licentie. Lokaal opgeslagen → builds zijn reproduceerbaar en offline.
-- **`richtlijnen/`** — de twee bindende ontwerpspecs (uitgeefsysteem + visuele woordenschat/grammatica).
+- **`richtlijnen/`** — de vier bindende specs:
+  - *visueel* — `VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md` + `VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md`
+  - *didactisch* — `VIER_VAARDIGHEDEN_GEINTEGREERD.md` + `INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md`
 
 ## Beslist (2026-07-25)
 
