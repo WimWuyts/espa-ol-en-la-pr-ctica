@@ -197,6 +197,7 @@ De volledige visuele aanpak ligt vast in twee specs in `02-huisstijl/richtlijnen
 - **Grammatica-route:** context → observeren → patroon herkennen → compacte regel → gecontroleerd oefenen → communiceren. **Nooit** enkel een grote tabel; elke grammaticaspread eindigt communicatief.
 - **Twee kleurlagen, allebei consequent:** (1) **cursus-/unitkleur** voor navigatie & huisstijl (C4 rood · C5 groen · C6 blauw · C6+ paars); (2) **functionele kleursemantiek** voor taal (blauw=onderwerp/persoon · oranje=werkwoord · groen=voorwerp · paars=tijd · turquoise=plaats · rood=ontkenning/waarschuwing · geel=strategie). Kleur is nooit de énige informatiedrager (ook label/vorm/icoon).
 - **Print én digitaal uit één bron.** Print moet volledig bruikbaar zijn zónder interactie; toegankelijkheid (alt-tekst, contrast, grijswaarden) is vereist.
+- **Bladspiegel (BINDEND):** **vermijd «kaders»**. Benut de **volledige witruimte** van het blad maximaal efficiënt (edge-to-edge composities, open lay-outs); samenhang komt uit **typografie, kleurvlakken en witruimte**, niet uit omranding. Geen alles-in-een-kader.
 - **Bouwvolgorde (uit de spec):** designsysteem → kleur → typografie → grid → navigatie → iconen → **componentenbibliotheek** → paginatemplates → **één prototype-unit** → PDF-export → **visuele audit** → correctie → **pas dán** productie van de rest. = onze «golden sample»-stap.
 - **Rolverdeling:** Claude + latere **subagents** beslissen de concrete invulling per onderdeel per cursus, binnen deze specs. Bij twijfel wint *variatie* + de visuele audit uit de spec.
 
@@ -259,7 +260,7 @@ Naast de twee *visuele* specs (§13) zijn er twee *didactische* specs in `02-hui
 
 ## 17 · Toetsen & leerplandoelen (BINDEND)
 
-- **Leerplandoel-verwijzingen (LPD):** doorheen álle cursussen verwijzingen naar de leerplandoelen (III-Spa-d). De **codes levert de auteur aan** via Drive; tot dan **placeholders** (`[LPD …]`) op de juiste plek in de content.
+- **Leerplandoel-verwijzingen (LPD):** doorheen álle cursussen verwijzingen naar de leerplandoelen (III-Spa-d). **Claude zet de codes zelf** in de cursus, afgeleid uit het leerplan (`00-brondocumenten/leerplan/…`, reeds in repo).
 - **Toetsen/evaluaties per unit:** **toetsen genereren die de leerstof effectief testen**, **leerplan-gebaseerd** (dekking van de LPD-doelen), met de vier vaardigheden en communicatieve eindtaken. Zelfde huisstijl/formaten (Word/PDF).
 
 ## 18 · Productie (WERKWIJZE — gestart 2026-07-25)
@@ -268,4 +269,5 @@ Naast de twee *visuele* specs (§13) zijn er twee *didactische* specs in `02-hui
 - **Één bron eerst:** per unit een **single-source contentbestand** (`01-cursussen/<cursus>/<unit>/<unit>_bron.md`) → daaruit de formaten.
 - **Kernstandpunt (BINDEND):** álles wat in de vier md-specs (grammatica · woordenschat · vaardigheden · PowerPoint) + de 100 spelvormen staat, moet **ergens terugkomen** → **VARIATIE is key** (>200 suggesties; geen herhaling van dezelfde werkvorm). Geldt ook voor de generator-oefeningen.
 - **Team van specialist-subagents** voert dit tot in detail uit, binnen de vastgelegde specs.
-- **Omgevingsvoorbehoud:** Word→PDF (LibreOffice) is in déze sandbox defect → PDF-export gebeurt in een normale build-omgeving of via HTML→PDF (Chromium); AI-foto's + LPD-codes komen van de auteur (placeholders/hooks tot dan).
+- **PRINT = PDF (BESLIST 2026-07-25):** Word mag, maar als het moeilijk gaat leveren we in **PDF** (visueel sterker, aldus auteur). Pijplijn: **HTML = bron → PDF via Chromium/Playwright** (werkt in déze sandbox; vervangt de defecte Word→PDF-route). AI-foto's komen van de auteur (`[BEELD:…]`-hooks tot dan).
+- **Bladspiegelspecialist verplicht** in het build-team (zie §13 bladspiegel-regel: geen kaders, volle witruimte efficiënt benutten).
