@@ -241,10 +241,12 @@ Naast de twee *visuele* specs (§13) zijn er twee *didactische* specs in `02-hui
 
 **Onderlinge verwijzingen (BINDEND):** cursus (Word/PDF) ↔ **PowerPoint** én cursus ↔ **HTML** kruisverwijzen (bv. «zie dia 12» / «oefen online: …»), met consistente iconen/kleuren.
 
-**HTML — tab «Extra» (extern bronnenmateriaal):**
-- Per **grammatica**-onderdeel: nagaan of er een **profedeele YouTube-video** bestaat → **embedden** in tab Extra.
-- Per **grammatica/woordenschat**-onderdeel: nagaan of er een **Genially op arche-ele.com** bestaat → **link embedden** in tab Extra.
-- **Toegangsbeperking:** in deze omgeving werkt websearch, maar het ophalen van willekeurige pagina's is geblokkeerd → automatische verificatie van arche-ele/YouTube lukt mogelijk niet; dan **levert de auteur de links handmatig aan**.
+**HTML — architectuur (BINDEND):**
+- **4 hoofdtabbladen** — één per cursus (C4·C5·C6·C6+). Per tab: een **overzicht van de unidades** van die cursus.
+- **Per cursus, achteraan:** een **«Conjugador» (werkwoordengenerator)** + de **woordenschat als naslagwerk** met correcte **unit/LPD-verwijzingen** en een **zoekfunctie**.
+- **Flip cards voor ÁLLE woorden per unidad:** toggle **ES→NL / NL→ES**; voorkant = Spaans woord **+ voorbeeldzin**, achterkant = vertaling **+ (eventueel) afbeelding/icoon**. Verzorgde iconen (Lucide; vorige versie had mooie icoontjes → aanhouden).
+- **Kruisverwijzingen** cursus ↔ HTML ↔ PowerPoint; huisstijl overal; motor-spellen (10–15/thema) ingebed per unidad.
+- **Tab «Extra» (extern bronnenmateriaal) per onderdeel:** grammatica → **profedeele-YouTube**-embed; grammatica/woordenschat → **arche-ele-Genially**-link (indien bestaand). *Toegangsbeperking:* websearch werkt, willekeurige pagina's ophalen niet → verificatie mogelijk handmatig (auteur levert links).
 
 **Gamification-motor — `spaans-motor`** (door auteur gebouwd via claude.ai; getest: bouwt offline met Node, geen internet):
 - Dependency-vrij: elk spel = **één standalone offline HTML**. Gedeelde `engine.js` (score, streak, **adaptief**, foutenlog, resultaten, geluid); **generatoren** (vervoeging/geslacht, *nagerekend* — nooit zelf vervoegen); `SKILL.md` routeert leerstof → sjabloon → bouwt.
@@ -254,3 +256,16 @@ Naast de twee *visuele* specs (§13) zijn er twee *didactische* specs in `02-hui
 - **100 spelvormen (brainstorm auteur):** `spaans-motor/BRAINSTORM_100_SPELVORMEN.md` → te **distilleren tot ~15–20 herbruikbare templates** (plan komt in `spaans-motor/PLAN_100_SPELVORMEN.md`). Claude kiest per leerstof de juiste template en integreert het spel in de unit-HTML (spreiding, receptief→productief). Veel ideeën = dezelfde judge-logica met een andere «jas» (arcade-skins).
 - **AI-tutor (#100) — GEWENST (auteur):** A1-tutor-chat als **online** component bovenop een LLM (bv. Claude API), met strakke A1-guardrails (alleen A1-lexis/structuren, vriendelijk corrigeren, korte beurten). Enige spelvorm die internet vereist; API-sleutel/hosting apart te regelen.
 - **Reservoir voor oefeningen:** oudere door de auteur gemaakte cursussen (in Drive) mogen als bron dienen bij het maken van oefeningen/spellen.
+
+## 17 · Toetsen & leerplandoelen (BINDEND)
+
+- **Leerplandoel-verwijzingen (LPD):** doorheen álle cursussen verwijzingen naar de leerplandoelen (III-Spa-d). De **codes levert de auteur aan** via Drive; tot dan **placeholders** (`[LPD …]`) op de juiste plek in de content.
+- **Toetsen/evaluaties per unit:** **toetsen genereren die de leerstof effectief testen**, **leerplan-gebaseerd** (dekking van de LPD-doelen), met de vier vaardigheden en communicatieve eindtaken. Zelfde huisstijl/formaten (Word/PDF).
+
+## 18 · Productie (WERKWIJZE — gestart 2026-07-25)
+
+- **Volgorde:** **eerst U0 volledig** (bron → Word · PDF · PowerPoint · HTML), goedkeuren, **dan hetzelfde proces** voor alle units van jaar 5 (C5) en 6 (C6/C6+).
+- **Één bron eerst:** per unit een **single-source contentbestand** (`01-cursussen/<cursus>/<unit>/<unit>_bron.md`) → daaruit de formaten.
+- **Kernstandpunt (BINDEND):** álles wat in de vier md-specs (grammatica · woordenschat · vaardigheden · PowerPoint) + de 100 spelvormen staat, moet **ergens terugkomen** → **VARIATIE is key** (>200 suggesties; geen herhaling van dezelfde werkvorm). Geldt ook voor de generator-oefeningen.
+- **Team van specialist-subagents** voert dit tot in detail uit, binnen de vastgelegde specs.
+- **Omgevingsvoorbehoud:** Word→PDF (LibreOffice) is in déze sandbox defect → PDF-export gebeurt in een normale build-omgeving of via HTML→PDF (Chromium); AI-foto's + LPD-codes komen van de auteur (placeholders/hooks tot dan).
