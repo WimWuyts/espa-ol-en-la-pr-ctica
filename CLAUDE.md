@@ -118,8 +118,8 @@ Elke unit/les levert **vier formaten met een identieke, uitgeverswaardige layout
 - [x] Huisstijl: **nieuwe, frisse, uitgeverswaardige look van nul** (oude Solecito/Fredoka/Nunito niet verplicht). — beslist 2026-07-25
 - [x] **Rode draad = «La Ruta»** (doorlopende reis over de kaart van de Spaanstalige wereld; elke unit = een nieuwe *parada*, de kaart groeit mee van C4 → C5 → C6). **C6+** volgt dezelfde route maar pikt op waar *Español en la práctica* eindigde (ná gap-analyse). — beslist 2026-07-25. Uitwerking: zie **§12**.
 - [x] Fonts + kleurenpalet vastgelegd als tokens (Richting 1; `02-huisstijl/tokens/`). — beslist 2026-07-25
-- [x] Reisgezel-mascotte = **«La mochila viajera»** (flat-vector); de klas kiest de naam. — beslist 2026-07-25
-- [x] Beeld-aanpak: eigen flat-vector personages/mascotte + AI-foto's; iconen Lucide; SVG→PNG voor print (zie §15). — beslist 2026-07-25
+- [x] Reisgezel-mascotte = **«La mochila viajera»**; de klas kiest de naam. Tekenstijl (AI ↔ vector) nog te bepalen. — 2026-07-25
+- [x] Beeld-aanpak: **AI-personages** (cast «Estilo Exploración», via Drive) · AI-foto's · flat-vector iconen/kaarten/mockups (Claude) · SVG→PNG voor print (zie §15). — 2026-07-25 (personages bijgesteld: flat-vector → AI)
 - [ ] Toolchain voor de "één bron → 4 formaten"-generatie (vast te leggen bij de golden sample).
 - [ ] Bestaand C5-materiaal (netlify/afgewerkte U0–U6) importeren in deze repo?
 
@@ -221,8 +221,11 @@ Naast de twee *visuele* specs (§13) zijn er twee *didactische* specs in `02-hui
 
 ## 15 · Beeld & asset-pijplijn (BESLIST 2026-07-25)
 
-- **Personages (cast) + mochila-mascotte:** **eigen flat-vector stijl**, door Claude als **SVG** gebouwd (parametrisch → consistent, licentievrij, geen AI-wispelturigheid).
-- **Foto's** (hedendaagse stedelijke fotografie): **AI-gegenereerd**, door de auteur aangeleverd via **Google Drive** (of `00-brondocumenten/beeld/`). Aandacht voor stijlconsistentie.
+- **Personages (cast):** **AI-gegenereerd** in de stijl **«Estilo Exploración»** (warm, 3D-geïllustreerd), **aangeleverd door de auteur** via de Drive-map hieronder. Cast = Lucía · Diego · Valen · Nina · Mateo + **Tú** (bestaat al als set). → *supersedes* de eerdere flat-vector-keuze vóór personages.
+- **Mochila-mascotte:** stijl nog te bepalen — in dezelfde AI-stijl als de cast óf als vector.
+- **Foto's / scènes** (plaatsen, situaties): **AI-gegenereerd**, door de auteur aangeleverd via Drive. **Stijlconsistentie** met de cast bewaken.
+- **Beeld-map (Drive):** «Estilo Exploración» → <https://drive.google.com/drive/folders/1RCPLRj6xukL7f7FYugV6KkAxWtkeBMoE> — Claude heeft leestoegang; auteur vult ze met personages/foto's. Werkwijze: **Claude signaleert tijdens de bouw per element of een illustratie/foto nuttig is** (+ promptsuggestie); auteur genereert en plaatst ze in de map.
+- **Consistentie-aandacht:** per personage meerdere **poses/emoties** in dezelfde identiteit/stijl nodig; prompts/seeds bewaren. Kleuraccent per personage overnemen uit de aangeleverde set.
 - **Iconen:** open lijniconenset **Lucide** (MIT) als basis.
 - **Kaarten, mockups (chat/ficha/ticket/menu…), infographics, spot-illustraties, kleurvlakken:** vector (SVG), in huis gebouwd.
 - **Technische pijplijn:** SVG = bron → **300 dpi PNG** voor Word/PDF (python-docx plaatst PNG kraakhelder), **SVG** rechtstreeks in HTML. Foto's als hoge-resolutie JPEG/PNG.
