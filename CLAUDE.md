@@ -230,3 +230,23 @@ Naast de twee *visuele* specs (§13) zijn er twee *didactische* specs in `02-hui
 - **Kaarten, mockups (chat/ficha/ticket/menu…), infographics, spot-illustraties, kleurvlakken:** vector (SVG), in huis gebouwd.
 - **Technische pijplijn:** SVG = bron → **300 dpi PNG** voor Word/PDF (python-docx plaatst PNG kraakhelder), **SVG** rechtstreeks in HTML. Foto's als hoge-resolutie JPEG/PNG.
 - **Altijd:** alt-tekst bij elk beeld · **grijswaarden-veilig** · kleur nooit als enige informatiedrager (ook label/vorm/icoon).
+
+## 16 · PowerPoint · HTML · gamification-motor (BINDEND — in opbouw)
+
+**PowerPoint** — spec: `02-huisstijl/richtlijnen/INTERACTIEVE_POWERPOINT_50_IDEEEN.md`.
+- **Interactief**, in **huisstijl**, met **avatars** waar nodig. Twee uitvoerversies: **docent `.pptx`** (vrije navigatie, presenter view, oplossingen) + **leerling `.ppsx`** (kioskmodus, beperkte navigatie, ingebouwde feedback).
+- Vaste diamaster-layouts (TITLE · LESSON_MENU · VOCABULARY · GRAMMAR · READING · LISTENING · SPEAKING · WRITING · QUIZ · FEEDBACK · CULTURE · FINAL_MISSION · TEACHER_NOTES), vaste objectnamen, drie lagen (CONTENT/INTERACTION/TEACHER), altijd een **noodroute** (toon oplossing / sla over / terug). Eerst de **kernset van 15** functies.
+- Didactiek = dezelfde beweging (context → begrijpen → opmerken → oefenen met afbouw → produceren → feedback → hernemen).
+
+**Onderlinge verwijzingen (BINDEND):** cursus (Word/PDF) ↔ **PowerPoint** én cursus ↔ **HTML** kruisverwijzen (bv. «zie dia 12» / «oefen online: …»), met consistente iconen/kleuren.
+
+**HTML — tab «Extra» (extern bronnenmateriaal):**
+- Per **grammatica**-onderdeel: nagaan of er een **profedeele YouTube-video** bestaat → **embedden** in tab Extra.
+- Per **grammatica/woordenschat**-onderdeel: nagaan of er een **Genially op arche-ele.com** bestaat → **link embedden** in tab Extra.
+- **Toegangsbeperking:** in deze omgeving werkt websearch, maar het ophalen van willekeurige pagina's is geblokkeerd → automatische verificatie van arche-ele/YouTube lukt mogelijk niet; dan **levert de auteur de links handmatig aan**.
+
+**Gamification-motor — `spaans-motor`** (door auteur gebouwd via claude.ai; getest: bouwt offline met Node, geen internet):
+- Dependency-vrij: elk spel = **één standalone offline HTML**. Gedeelde `engine.js` (score, streak, **adaptief**, foutenlog, resultaten, geluid); **generatoren** (vervoeging/geslacht, *nagerekend* — nooit zelf vervoegen); `SKILL.md` routeert leerstof → sjabloon → bouwt.
+- **Huidige sjablonen: `classify`, `match`, `tetris`** + generatoren `conjugation`/`gender`/`verbo` (324 werkwoorden) + 8 voorbeeldspellen. **NB: geen 100 kant-en-klare speltypes** — «100» was ambitie; de motor is wél **uitbreidbaar** (nieuwe sjablonen `cloze`/`order`/`point`/… pluggen in).
+- **Doel:** per webpagina/thema **10–15 gevarieerde spellen** die woordenschat/grammatica inoefenen volgens de principes (receptief→productief, spreiding). → vergt eerst **uitbreiding van de sjablonenset** voor voldoende variatie.
+- **Plaatsing nog te beslissen:** aparte repo (herbruikbaar, ook NT2) vs. in deze monorepo (alles samen).
