@@ -118,7 +118,8 @@ Elke unit/les levert **vier formaten met een identieke, uitgeverswaardige layout
 - [x] Huisstijl: **nieuwe, frisse, uitgeverswaardige look van nul** (oude Solecito/Fredoka/Nunito niet verplicht). — beslist 2026-07-25
 - [x] **Rode draad = «La Ruta»** (doorlopende reis over de kaart van de Spaanstalige wereld; elke unit = een nieuwe *parada*, de kaart groeit mee van C4 → C5 → C6). **C6+** volgt dezelfde route maar pikt op waar *Español en la práctica* eindigde (ná gap-analyse). — beslist 2026-07-25. Uitwerking: zie **§12**.
 - [x] Fonts + kleurenpalet vastgelegd als tokens (Richting 1; `02-huisstijl/tokens/`). — beslist 2026-07-25
-- [ ] Eigen reisgezel-mascotte binnen de nieuwe huisstijl (vorm/naam).
+- [x] Reisgezel-mascotte = **«La mochila viajera»** (flat-vector); de klas kiest de naam. — beslist 2026-07-25
+- [x] Beeld-aanpak: eigen flat-vector personages/mascotte + AI-foto's; iconen Lucide; SVG→PNG voor print (zie §15). — beslist 2026-07-25
 - [ ] Toolchain voor de "één bron → 4 formaten"-generatie (vast te leggen bij de golden sample).
 - [ ] Bestaand C5-materiaal (netlify/afgewerkte U0–U6) importeren in deze repo?
 
@@ -217,3 +218,12 @@ Naast de twee *visuele* specs (§13) zijn er twee *didactische* specs in `02-hui
 - **Elke eindtaak is communicatief:** afzender · ontvanger · doel · situatie · resultaat. Nooit "gebruik 10 woorden en 5 werkwoorden".
 - **Spreken = ook interactie** (beurt nemen, verduidelijken, zichzelf herstellen). Veel spreekwerkvormen worden interactieve HTML-componenten (recorder, shadowing, info-gap, vertakkende dialoog…); **print blijft volledig bruikbaar zónder interactie**.
 - **Gedeelde componentensets:** de componentlijsten uit álle vier de specs (visueel + didactisch) vormen samen één bibliotheek, één keer te bouwen bij de golden sample.
+
+## 15 · Beeld & asset-pijplijn (BESLIST 2026-07-25)
+
+- **Personages (cast) + mochila-mascotte:** **eigen flat-vector stijl**, door Claude als **SVG** gebouwd (parametrisch → consistent, licentievrij, geen AI-wispelturigheid).
+- **Foto's** (hedendaagse stedelijke fotografie): **AI-gegenereerd**, door de auteur aangeleverd via **Google Drive** (of `00-brondocumenten/beeld/`). Aandacht voor stijlconsistentie.
+- **Iconen:** open lijniconenset **Lucide** (MIT) als basis.
+- **Kaarten, mockups (chat/ficha/ticket/menu…), infographics, spot-illustraties, kleurvlakken:** vector (SVG), in huis gebouwd.
+- **Technische pijplijn:** SVG = bron → **300 dpi PNG** voor Word/PDF (python-docx plaatst PNG kraakhelder), **SVG** rechtstreeks in HTML. Foto's als hoge-resolutie JPEG/PNG.
+- **Altijd:** alt-tekst bij elk beeld · **grijswaarden-veilig** · kleur nooit als enige informatiedrager (ook label/vorm/icoon).
