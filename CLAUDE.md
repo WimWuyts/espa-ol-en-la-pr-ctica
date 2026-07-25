@@ -77,6 +77,7 @@ Elke unit/les levert **vier formaten met een identieke, uitgeverswaardige layout
   `§0 ¡Ponte al día!` (repaso) → `§1…§N` inhoud → `Taller de lengua` (ortografía + conectoren) → `Cultura` → `Tarea final` (genummerde pasos) → `Repaso` («Lo esencial de un vistazo» + semáforo) → `§V Vocabulario` (tabellen Español · Nederlands · ERK · Ejemplo + oefenladder).
 - **Huisstijl-richting (BESLIST 2026-07-25):** we ontwerpen een **nieuwe, frisse, uitgeverswaardige huisstijl van nul** (eigen fonts, eigen beeldtaal/mascotte, eigen componenten). De oude C5-elementen (Fredoka/Nunito, mascotte Solecito, MUNDO-collage, `illus.py`) zijn **referentie, geen verplichting**. Wél behouden: **één gedeeld sjabloon** met per cursus **één dominante hoofdkleur** (C4 rood · C5 groen · C6 blauw · C6+ paars).
 - **Templates & tokens** komen in `02-huisstijl/` (kleurtokens, fonts, componenten voor Word/PPTX/HTML).
+- **Bindende ontwerpspecs (zie §13):** `02-huisstijl/richtlijnen/VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md` + `VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md`. **Gouden regel: variatie.**
 
 ## 7 · Repo-structuur
 
@@ -144,3 +145,21 @@ Elke unit/les levert **vier formaten met een identieke, uitgeverswaardige layout
 **Mechaniek per unit:** elke unit opent met "waar zijn we op de ruta" (kaartje + bestemming), de `Cultura`-sectie verankert de *parada* in een echte plek/land, en de `Tarea final` is telkens een concreet reis-artefact (postal, reisblog, vlog, presentatie…). Zo is de reis niet enkel decor, maar ook de motor van de eindtaken.
 
 **Nog te beslissen:** naam/vorm van een eventuele reisgezel-mascotte binnen de nieuwe huisstijl; exacte volgorde van landen/paradas per unit (afstemmen op de bestaande outline-thema's).
+
+## 13 · Ontwerpsysteem & componenten (BINDEND)
+
+De volledige visuele aanpak ligt vast in twee specs in `02-huisstijl/richtlijnen/`:
+- **`VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md`** — het uitgeefsysteem: paginatypes, grid, navigatie (tabs/kop-voet/sectielabels), iconen, beeldbibliotheek, pagina-composities (A–H), micro-elementen, componentenbibliotheek, technische exportregels, visuele audit, bouwvolgorde.
+- **`VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md`** — hoe woordenschat en grammatica worden gepresenteerd (elk ~20–35 visuele patronen + herbruikbare componenten + dubbele-pagina-blueprints).
+
+**Reikwijdte (belangrijk):** deze principes gelden voor **álle vier de cursussen** (C4·C5·C6·C6+) én voor **álle formaten** binnen elke cursus: **Word, PDF, PowerPoint en HTML** (+ latere digitale varianten). Specifieke richtlijnen voor de webpagina's/digitale varianten volgen **later**.
+
+**Kernafspraken die elke build moet respecteren:**
+- **Gouden regel = VARIATIE.** Geen Word-uitstraling, geen opeenvolgende tekstblokken, geen rij identieke kaders, geen uniforme pagina's. Samenhang komt uit het *designsysteem*, niet uit identieke lay-outs.
+- **Beeld = iconen + foto's gecombineerd** (afgesproken): hedendaagse stedelijke fotografie + terugkerende personages/uitsnedes + één consistente lijniconenset. Geen clipart/emoji/3D-mix.
+- **Woordenschat** = visueel netwerk (scène, clusters, chips, collocaties, families, communicatieve toepassing) — **nooit** enkel een tweetalige lijst.
+- **Grammatica-route:** context → observeren → patroon herkennen → compacte regel → gecontroleerd oefenen → communiceren. **Nooit** enkel een grote tabel; elke grammaticaspread eindigt communicatief.
+- **Twee kleurlagen, allebei consequent:** (1) **cursus-/unitkleur** voor navigatie & huisstijl (C4 rood · C5 groen · C6 blauw · C6+ paars); (2) **functionele kleursemantiek** voor taal (blauw=onderwerp/persoon · oranje=werkwoord · groen=voorwerp · paars=tijd · turquoise=plaats · rood=ontkenning/waarschuwing · geel=strategie). Kleur is nooit de énige informatiedrager (ook label/vorm/icoon).
+- **Print én digitaal uit één bron.** Print moet volledig bruikbaar zijn zónder interactie; toegankelijkheid (alt-tekst, contrast, grijswaarden) is vereist.
+- **Bouwvolgorde (uit de spec):** designsysteem → kleur → typografie → grid → navigatie → iconen → **componentenbibliotheek** → paginatemplates → **één prototype-unit** → PDF-export → **visuele audit** → correctie → **pas dán** productie van de rest. = onze «golden sample»-stap.
+- **Rolverdeling:** Claude + latere **subagents** beslissen de concrete invulling per onderdeel per cursus, binnen deze specs. Bij twijfel wint *variatie* + de visuele audit uit de spec.
