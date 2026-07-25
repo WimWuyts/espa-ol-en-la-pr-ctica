@@ -145,7 +145,29 @@ Elke unit/les levert **vier formaten met een identieke, uitgeverswaardige layout
 
 **Mechaniek per unit:** elke unit opent met "waar zijn we op de ruta" (kaartje + bestemming), de `Cultura`-sectie verankert de *parada* in een echte plek/land, en de `Tarea final` is telkens een concreet reis-artefact (postal, reisblog, vlog, presentatie…). Zo is de reis niet enkel decor, maar ook de motor van de eindtaken.
 
-**Nog te beslissen:** naam/vorm van een eventuele reisgezel-mascotte binnen de nieuwe huisstijl; exacte volgorde van landen/paradas per unit (afstemmen op de bestaande outline-thema's).
+### C5 «El día a día» — de paradas (VASTGELEGD 2026-07-25)
+
+Boog: **España (U0–U4) → «el charco» → México (U5–U6) → Colombia (U7) → Perú (U8)**.
+
+| Unit | Parada | Tarea final |
+|---|---|---|
+| U0 ¡Empezamos! | *El mundo hispano* → **España** | Tarjeta de embarque |
+| U1 ¿Quién eres? | **Madrid** | Mi pasaporte |
+| U2 Mi gente | **Andalucía (Sevilla)** | Álbum de familia |
+| U3 El tiempo vuela | **Barcelona** | Un día en mi vida |
+| U4 Me gusta | **València / la costa** | Mi playlist |
+| U5 ¡Ñam! | **México (CDMX)** | La carta |
+| U6 De tiendas | **México — mercados** | Abre tu tienda |
+| U7 Mi casa y mi barrio | **Colombia (Cartagena)** | Mapa de mi barrio |
+| U8 ¿Qué has hecho? | **Perú (Cusco · Machu Picchu)** | Diario de viaje |
+
+### C6 «Historias y mundos» — paradas (provisoir)
+
+Argentina/Buenos Aires (U1) · leyenda Meso-Amerika (U2) · Chile/Patagonia (U3) · España/Cuba (U4) · dos ciudades (U5) · digitaal/pan-hispano (U6) · Costa Rica (U7) · Amazonía/globaal (U8). **C4** = de vertrekhal vóór de reis (definitief ná de video's).
+
+**Kaarten (BINDEND):** de *mapa de la ruta* is het vaste visuele anker en wordt **prachtig gerenderd** — een eigen, verzorgde SVG-kaartstijl (geen generieke clipart of ruwe outline-maps). Elke unit opent met "waar zijn we op de ruta" (kaartje + bestemming); de kaart groeit mee van C4 → C5 → C6.
+
+**Nog te beslissen:** reisgezel-mascotte + terugkerende cast (vorm/namen) — **nu in bespreking**.
 
 ## 13 · Ontwerpsysteem & componenten (BINDEND)
 
