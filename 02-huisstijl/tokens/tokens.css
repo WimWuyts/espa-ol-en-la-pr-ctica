@@ -1,0 +1,72 @@
+/* ==========================================================================
+   Español en la práctica — design tokens (CSS)
+   Afgeleid van tokens.json (single source of truth). Voor HTML-builds.
+   Gouden regel: variatie. Kleur nooit als enige drager (ook label/vorm/icoon).
+   ========================================================================== */
+
+/* ---- Fonts (Richting 1) — lokaal, relatief t.o.v. ../fonts ---------------- */
+@font-face{font-family:'Bricolage Grotesque';font-weight:600;font-style:normal;font-display:swap;src:url('../fonts/BricolageGrotesque-600.woff2') format('woff2')}
+@font-face{font-family:'Bricolage Grotesque';font-weight:700;font-style:normal;font-display:swap;src:url('../fonts/BricolageGrotesque-700.woff2') format('woff2')}
+@font-face{font-family:'Bricolage Grotesque';font-weight:800;font-style:normal;font-display:swap;src:url('../fonts/BricolageGrotesque-800.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-weight:400;font-style:normal;font-display:swap;src:url('../fonts/Inter-400.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-weight:500;font-style:normal;font-display:swap;src:url('../fonts/Inter-500.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-weight:600;font-style:normal;font-display:swap;src:url('../fonts/Inter-600.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-weight:700;font-style:normal;font-display:swap;src:url('../fonts/Inter-700.woff2') format('woff2')}
+@font-face{font-family:'Caveat';font-weight:400;font-style:normal;font-display:swap;src:url('../fonts/Caveat-400.woff2') format('woff2')}
+@font-face{font-family:'Caveat';font-weight:700;font-style:normal;font-display:swap;src:url('../fonts/Caveat-700.woff2') format('woff2')}
+
+:root{
+  /* Typografie */
+  --font-display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --font-body:'Inter','Segoe UI',system-ui,sans-serif;
+  --font-hand:'Caveat','Comic Sans MS',cursive;
+
+  /* Type-schaal (scherm) */
+  --fs-unit:40px; --fs-lesson:29px; --fs-section:20px; --fs-body:14px; --fs-caption:11px; --fs-label:11px;
+
+  /* Cursuskleuren — familie */
+  --c4:#D64550; --c4-d:#A8323B; --c4-t:#FBEAEC;
+  --c5:#1E9E74; --c5-d:#157355; --c5-t:#E4F4EE;
+  --c6:#2E77C2; --c6-d:#1E5691; --c6-t:#E5EFF9;
+  --c6p:#7C56A9; --c6p-d:#5B3E83; --c6p-t:#EEE8F5;
+
+  /* Neutralen (licht) */
+  --ink:#20242E; --paper:#FCFBF8; --panel:#FFFFFF; --crema:#F3EEE4;
+  --line:#E4E3DE; --line-strong:#CFCEC8; --grey:#6A6E78;
+
+  /* Functionele taalkleuren (licht) */
+  --f-subject:#2563EB; --f-verb:#D9660A; --f-object:#2F9A4A; --f-time:#7C4DE0;
+  --f-place:#0E9E97; --f-negation:#DC2626; --f-strategy:#B7860B;
+
+  /* Vorm */
+  --radius-card:14px; --radius-chip:6px; --radius-pill:999px; --measure:65ch;
+
+  /* Actieve cursuskleur — overschrijf per cursus met .course-c5 etc. */
+  --accent:var(--c5); --accent-d:var(--c5-d); --accent-t:var(--c5-t);
+}
+
+/* Donker thema — token-niveau, styling loopt altijd via de tokens hierboven */
+@media (prefers-color-scheme:dark){:root{
+  --ink:#ECEBE6; --paper:#15161A; --panel:#1C1E24; --crema:#1E2026;
+  --line:#2C2E36; --line-strong:#3A3D47; --grey:#9BA0AA;
+  --f-subject:#6AA0F2; --f-verb:#F2933F; --f-object:#5FC072; --f-time:#AD92F5;
+  --f-place:#2FD3C4; --f-negation:#F26D6D; --f-strategy:#F2C848;
+}}
+:root[data-theme="dark"]{
+  --ink:#ECEBE6; --paper:#15161A; --panel:#1C1E24; --crema:#1E2026;
+  --line:#2C2E36; --line-strong:#3A3D47; --grey:#9BA0AA;
+  --f-subject:#6AA0F2; --f-verb:#F2933F; --f-object:#5FC072; --f-time:#AD92F5;
+  --f-place:#2FD3C4; --f-negation:#F26D6D; --f-strategy:#F2C848;
+}
+:root[data-theme="light"]{
+  --ink:#20242E; --paper:#FCFBF8; --panel:#FFFFFF; --crema:#F3EEE4;
+  --line:#E4E3DE; --line-strong:#CFCEC8; --grey:#6A6E78;
+  --f-subject:#2563EB; --f-verb:#D9660A; --f-object:#2F9A4A; --f-time:#7C4DE0;
+  --f-place:#0E9E97; --f-negation:#DC2626; --f-strategy:#B7860B;
+}
+
+/* Cursus-scopes: zet de accent-tokens per cursus */
+.course-c4{--accent:var(--c4);--accent-d:var(--c4-d);--accent-t:var(--c4-t)}
+.course-c5{--accent:var(--c5);--accent-d:var(--c5-d);--accent-t:var(--c5-t)}
+.course-c6{--accent:var(--c6);--accent-d:var(--c6-d);--accent-t:var(--c6-t)}
+.course-c6plus{--accent:var(--c6p);--accent-d:var(--c6p-d);--accent-t:var(--c6p-t)}

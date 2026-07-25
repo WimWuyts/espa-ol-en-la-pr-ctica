@@ -76,7 +76,7 @@ Elke unit/les levert **vier formaten met een identieke, uitgeverswaardige layout
 - **Vaste sectiestructuur per unit** (uit de outlines):
   `§0 ¡Ponte al día!` (repaso) → `§1…§N` inhoud → `Taller de lengua` (ortografía + conectoren) → `Cultura` → `Tarea final` (genummerde pasos) → `Repaso` («Lo esencial de un vistazo» + semáforo) → `§V Vocabulario` (tabellen Español · Nederlands · ERK · Ejemplo + oefenladder).
 - **Huisstijl-richting (BESLIST 2026-07-25):** we ontwerpen een **nieuwe, frisse, uitgeverswaardige huisstijl van nul** (eigen fonts, eigen beeldtaal/mascotte, eigen componenten). De oude C5-elementen (Fredoka/Nunito, mascotte Solecito, MUNDO-collage, `illus.py`) zijn **referentie, geen verplichting**. Wél behouden: **één gedeeld sjabloon** met per cursus **één dominante hoofdkleur** (C4 rood · C5 groen · C6 blauw · C6+ paars).
-- **Templates & tokens** komen in `02-huisstijl/` (kleurtokens, fonts, componenten voor Word/PPTX/HTML).
+- **Tokens (BESLIST 2026-07-25):** `02-huisstijl/tokens/tokens.json` (single source of truth) + `tokens.css`. **Fonts = Richting 1:** koppen **Bricolage Grotesque**, tekst **Inter**, notities **Caveat** (alle SIL OFL 1.1, ingebed in álle formaten). **Kleurenpalet goedgekeurd:** vier cursuskleuren als één familie + warme neutralen. Fonts lokaal in `02-huisstijl/fonts/`.
 - **Bindende ontwerpspecs (zie §13):** `02-huisstijl/richtlijnen/VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md` + `VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md`. **Gouden regel: variatie.**
 
 ## 7 · Repo-structuur
@@ -117,7 +117,8 @@ Elke unit/les levert **vier formaten met een identieke, uitgeverswaardige layout
 
 - [x] Huisstijl: **nieuwe, frisse, uitgeverswaardige look van nul** (oude Solecito/Fredoka/Nunito niet verplicht). — beslist 2026-07-25
 - [x] **Rode draad = «La Ruta»** (doorlopende reis over de kaart van de Spaanstalige wereld; elke unit = een nieuwe *parada*, de kaart groeit mee van C4 → C5 → C6). **C6+** volgt dezelfde route maar pikt op waar *Español en la práctica* eindigde (ná gap-analyse). — beslist 2026-07-25. Uitwerking: zie **§12**.
-- [ ] Eigen mascotte + kleuraccent per cursus binnen de nieuwe huisstijl.
+- [x] Fonts + kleurenpalet vastgelegd als tokens (Richting 1; `02-huisstijl/tokens/`). — beslist 2026-07-25
+- [ ] Eigen reisgezel-mascotte binnen de nieuwe huisstijl (vorm/naam).
 - [ ] Toolchain voor de "één bron → 4 formaten"-generatie (vast te leggen bij de golden sample).
 - [ ] Bestaand C5-materiaal (netlify/afgewerkte U0–U6) importeren in deze repo?
 
