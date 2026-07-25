@@ -75,7 +75,7 @@ Elke unit/les levert **vier formaten met een identieke, uitgeverswaardige layout
   - C4 = **Rood** · C5 = **Groen** · C6 = **Blauw** · C6+ = **Paars**.
 - **Vaste sectiestructuur per unit** (uit de outlines):
   `§0 ¡Ponte al día!` (repaso) → `§1…§N` inhoud → `Taller de lengua` (ortografía + conectoren) → `Cultura` → `Tarea final` (genummerde pasos) → `Repaso` («Lo esencial de un vistazo» + semáforo) → `§V Vocabulario` (tabellen Español · Nederlands · ERK · Ejemplo + oefenladder).
-- **Bestaande huisstijl-elementen (uit C5, te bevestigen/harmoniseren):** fonts **Fredoka** (koppen) + **Nunito** (tekst); mascotte **Solecito**; MUNDO-hero-collage; `illus.py`-helpers. → **OPEN VRAAG:** behouden we mascotte + fonts over alle jaren en variëren we enkel de hoofdkleur? (voorlopige aanname: **ja**.)
+- **Huisstijl-richting (BESLIST 2026-07-25):** we ontwerpen een **nieuwe, frisse, uitgeverswaardige huisstijl van nul** (eigen fonts, eigen beeldtaal/mascotte, eigen componenten). De oude C5-elementen (Fredoka/Nunito, mascotte Solecito, MUNDO-collage, `illus.py`) zijn **referentie, geen verplichting**. Wél behouden: **één gedeeld sjabloon** met per cursus **één dominante hoofdkleur** (C4 rood · C5 groen · C6 blauw · C6+ paars).
 - **Templates & tokens** komen in `02-huisstijl/` (kleurtokens, fonts, componenten voor Word/PPTX/HTML).
 
 ## 7 · Repo-structuur
@@ -108,13 +108,15 @@ Elke unit/les levert **vier formaten met een identieke, uitgeverswaardige layout
 ## 9 · Bronmateriaal & externe content
 
 - **Bewaren in de repo** (`00-brondocumenten/`), niet in de chat. De repo is blijvend; de chatcontext niet.
+- **Materiaal aanleveren — drie kanalen:** (a) **in de repo** committen (documenten, blijvend); (b) **in de chat** uploaden (snel, maar tijdelijk); (c) in een **Google Drive-map** zetten — Claude heeft in dit project toegang tot Google Drive en kan er **rechtstreeks uit lezen**. Een naar Drive gesynchroniseerde map op de pc werkt dus als "gedeelde map".
 - **Online materiaal verwerken:** Claude kan pagina's ophalen (WebFetch/WebSearch) en er **eigen** oefeningen op maken. **Auteursrecht:** liever linken + originele afgeleide oefeningen dan letterlijk overnemen.
 - **Video's:** in de interactieve HTML native inbedden; in Word/PDF als QR/link.
 
 ## 10 · Openstaande beslissingen (bijwerken naarmate ze vastliggen)
 
-- [ ] Huisstijl: mascotte **Solecito** + fonts Fredoka/Nunito behouden over alle 4 cursussen? (aanname: ja)
-- [ ] Aparte mascotte/kleuraccent voor C4 en C6?
+- [x] Huisstijl: **nieuwe, frisse, uitgeverswaardige look van nul** (oude Solecito/Fredoka/Nunito niet verplicht). — beslist 2026-07-25
+- [ ] **Rode draad / verhaallijn:** één doorlopend overkoepelend concept voor **C4 → C5 → C6**, en een variant voor **C6+** die in het verlengde van *Español en la práctica* ligt. — **nu in bespreking (eerst vastleggen vóór content)**
+- [ ] Eigen mascotte + kleuraccent per cursus binnen de nieuwe huisstijl.
 - [ ] Toolchain voor de "één bron → 4 formaten"-generatie (vast te leggen bij de golden sample).
 - [ ] Bestaand C5-materiaal (netlify/afgewerkte U0–U6) importeren in deze repo?
 
