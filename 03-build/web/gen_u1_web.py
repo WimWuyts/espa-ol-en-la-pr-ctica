@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # Genereert de zelfstandige HTML-hub voor C5 · U1 «¿Quién eres?».
-# Eén standalone bestand: fonts base64, de 18 U1-motor-spellen base64 ingebed (modal, offline),
+# Eén standalone bestand: fonts base64, de 24 U1-motor-spellen base64 ingebed (modal, offline),
 # flashcards + naslag (U1-vocab), visuele/interactieve grammatica (ser · presente · interrogativos · el/la),
 # klikbare kaart (mundo hispano) + TTS + editbar. Zelfde pijplijn/huisstijl als U0-hub (groen).
 import json, base64, os, sys
@@ -22,7 +22,7 @@ FONTS = "".join([
  face("Caveat", "Caveat-700.woff2", "700"),
 ])
 
-# ---- de 18 U1-motor-spellen: gegroepeerd (receptief -> productief) + base64 ingebed ----
+# ---- de 24 U1-motor-spellen: gegroepeerd (receptief -> productief) + base64 ingebed ----
 MOTOR = [
  ['① Reconocer · woordenschat', [
    ['pais-nacionalidad', 'país ↔ nacionalidad', 'match'],
@@ -376,7 +376,7 @@ function gameElla(){const el=document.getElementById('g_ella');
  window._ellaG=k=>{const ok=k===el.cur[1];if(ok){pt++;st++}else st=0;setScore(sb,pt,st);feedback(el.querySelector('#eFb'),ok,(ok?'¡Sí! ':'Nee → ')+el.cur[1]+' '+el.cur[0]);setTimeout(next,850);};
  next();}
 
-// ---- MOTOR-ARCADE: 18 spellen, ingebed ----
+// ---- MOTOR-ARCADE: 24 spellen, ingebed ----
 document.getElementById('motorlink').innerHTML=MOTOR.map(([grp,gs])=>'<div class="subh">'+grp+'</div><div class="fcgrid">'+
    gs.map(([f,t,tpl])=>'<div class="chip" style="display:block;border-radius:14px" onclick="openGame(\''+f+'\',\''+t.replace(/'/g,"")+'\')"><div style="font-weight:700;color:var(--ink);font-size:14px">'+t+'</div><div class="pill" style="margin-top:4px;font-size:10px">'+tpl+'</div></div>').join('')+'</div>').join('');
 function openGame(slug,title){const g=GAMES[slug];if(!g){alert('Spel niet gevonden.');return;}

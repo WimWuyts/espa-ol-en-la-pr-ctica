@@ -126,9 +126,11 @@ Elke unit/les levert **vier formaten met een identieke, uitgeverswaardige layout
 
 ### GOLDEN SAMPLE U0 = GELOCKT (2026-07-26) → productieregels in `HANDOVER_C5_C6.md`
 U0 (C5) is goedgekeurd en vastgezet als norm voor álle volgende units. **Bij automatische generering (U1, U2, … en C6) exact dezelfde parameters/pijplijn hanteren als U0.** De volledige productiehandleiding staat in **`HANDOVER_C5_C6.md`** (lees dit vóór je een unit bouwt). Nieuw gelockte beslissingen deze sessie:
-- [x] **4 formaten per unit** = PDF (+ bewerkbare `U<N>.html`-laag) · HTML-hub (bewerkbaar) · PowerPoint 2 decks (docente `.pptx` + alumno `.ppsx`) · motor-spellen ingebed in de hub.
+- [x] **4 formaten per unit** = PDF (+ bewerkbare `U<N>.html`-laag) · HTML-hub (bewerkbaar) · PowerPoint 2 decks (docente `.pptx` + alumno `.pptx`) · motor-spellen ingebed in de hub.
 - [x] **Bewerkbare laag** (contenteditable + «Opslaan als PDF»/«Bewaar») op PDF-cursus én HTML-hub. — 2026-07-26
-- [x] **PowerPoint = geanimeerd format** (verschijnen-bij-klik via `<p:timing>`; PowerPoint vraagt soms «Repareren» → animaties werken). Geen kiosk. 2 decks. — 2026-07-26
+- [x] **LEVERING — BINDEND (auteur 2026-07-26):** een PDF wordt **standaard samen met zijn bewerkbare `U<N>.html`-laag** afgeleverd (de PDF zelf is niet bewerkbaar; de HTML-laag is de bewerkbare versie mét «Opslaan als PDF»). Nooit enkel de platte PDF sturen. De HTML-hub is even goed bewerkbaar (breed `contenteditable`-bereik: hero, koppen, inhoudskaarten cultura/extra/lectura).
+- [x] **PowerPoint alumno = `.pptx` (NIET `.ppsx`) — BINDEND (auteur 2026-07-26):** het `.ppsx`-slideshow-contenttype wordt door strikte lezers/PowerPoint geweigerd («kan niet worden gelezen»). Lever de leerlingversie als gewone **`.pptx`** (identieke dia's + klik-onthul-animaties; leerling drukt **F5** voor de diavoorstelling). `to_ppsx()` niet meer gebruiken voor levering.
+- [x] **PowerPoint = geanimeerd format** (verschijnen-bij-klik via `<p:timing>`; PowerPoint vraagt soms «Repareren» → animaties werken). Geen kiosk. 2 decks (docente + alumno, beide `.pptx`). — 2026-07-26
 - [x] **Motor-spellen = azulejo-stijl behouden** (contrast, niet omkleuren). — 2026-07-26
 - [x] **Audio = browser-TTS** voorlopig (geen eigen opnames). — 2026-07-26
 - [x] **Conjugador = aparte cursus-tool** (`03-build/web/Conjugador.html`), enkel presente, ~1000 werkwoorden (nagerekend via motor-engine), 2 lagen (opzoeken + zelf vervoegen). **Werkwoordsvervoeging hoort NIET in de units.** — 2026-07-26

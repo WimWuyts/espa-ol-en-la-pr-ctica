@@ -376,7 +376,7 @@ function gameElla(){const el=document.getElementById('g_ella');
  window._ellaG=k=>{const ok=k===el.cur[1];if(ok){pt++;st++}else st=0;setScore(sb,pt,st);feedback(el.querySelector('#eFb'),ok,(ok?'¡Sí! ':'Nee → ')+el.cur[1]+' '+el.cur[0]);setTimeout(next,850);};
  next();}
 
-// ---- MOTOR-ARCADE: 18 spellen, ingebed ----
+// ---- MOTOR-ARCADE: 24 spellen, ingebed ----
 document.getElementById('motorlink').innerHTML=MOTOR.map(([grp,gs])=>'<div class="subh">'+grp+'</div><div class="fcgrid">'+
    gs.map(([f,t,tpl])=>'<div class="chip" style="display:block;border-radius:14px" onclick="openGame(\''+f+'\',\''+t.replace(/'/g,"")+'\')"><div style="font-weight:700;color:var(--ink);font-size:14px">'+t+'</div><div class="pill" style="margin-top:4px;font-size:10px">'+tpl+'</div></div>').join('')+'</div>').join('');
 function openGame(slug,title){const g=GAMES[slug];if(!g){alert('Spel niet gevonden.');return;}
