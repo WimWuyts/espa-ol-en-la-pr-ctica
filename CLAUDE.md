@@ -234,13 +234,13 @@ Naast de twee *visuele* specs (§13) zijn er twee *didactische* specs in `02-hui
 
 ## 15 · Beeld & asset-pijplijn (BESLIST 2026-07-25)
 
-- **Personages (cast):** **AI-gegenereerd** in de stijl **«Estilo Exploración»** (warm, 3D-geïllustreerd), **aangeleverd door de auteur** via de Drive-map hieronder. Cast = Lucía · Diego · Valen · Nina · Mateo + **Tú** (bestaat al als set). → *supersedes* de eerdere flat-vector-keuze vóór personages.
-- **Mochila-mascotte:** stijl nog te bepalen — in dezelfde AI-stijl als de cast óf als vector.
-- **Foto's / scènes** (plaatsen, situaties): **AI-gegenereerd**, door de auteur aangeleverd via Drive. **Stijlconsistentie** met de cast bewaken.
-- **Beeld-map (Drive):** «Estilo Exploración» → <https://drive.google.com/drive/folders/1RCPLRj6xukL7f7FYugV6KkAxWtkeBMoE> — Claude heeft leestoegang; auteur vult ze met personages/foto's. Werkwijze: **Claude signaleert tijdens de bouw per element of een illustratie/foto nuttig is** (+ promptsuggestie); auteur genereert en plaatst ze in de map.
-- **Consistentie-aandacht:** per personage meerdere **poses/emoties** in dezelfde identiteit/stijl nodig; prompts/seeds bewaren. Kleuraccent per personage overnemen uit de aangeleverde set.
+- **BESLIST 2026-07-26 — Claude bouwt de VOLLEDIGE beeldlaag in flat-vector (code).** De AI-fotoroute (ChatGPT/DALL·E) blokkeerde bij de auteur; daarom tekent Claude **alles zelf in code** — geen externe tool nodig, alles bewerkbaar en print-perfect. Bron = de generatoren in `02-huisstijl/beeld/generators/` (`cast_gen.py`, `build_svgs.py`, `assets2.py`, `build_map.py`). Stijl = warm flat-vector (zie de gerenderde staalkaart): **concrete items, geen kale blokken of abstracte figuren.**
+- **Cast (flat-vector, VASTGELEGD):** Lucía (Sevilla, lang haar+bloem, koraal) · Diego (CDMX, kort haar, blauw) · Valen (Cartagena, krullen, turquoise) · Nina (Cusco, vlechten, oker) · **Tú** (neutrale avatar, streepjesrand) · **Mateo** (BsAs, vanaf C6). Elk = eigen accentkleur; busten + circulaire avatars + poses/emoties uit dezelfde generator.
+- **Mochila-mascotte:** flat-vector rugzak met gezichtje (kompas/kaart/ster-varianten). De klas kiest de naam.
+- **Kaarten = ECHTE geografie (BINDEND, auteur 2026-07-26):** géén gestileerde/abstracte kaart. De *mapa del mundo hispano* wordt gerenderd uit **Natural Earth** (public domain, `ne_110m_admin_0_countries.geojson`) via `build_map.py` — equirectangular, alle Spaanstalige landen opgelicht, paradas met cast-avatars. Zelfde aanpak voor latere kaarten.
+- **Foto's / scènes:** **niet vereist** — vervangen door eigen vector-illustratie. Wil de auteur tóch echte foto's van plekken, dan levert hij rechtenvrije foto's (Unsplash/Pexels) aan; Claude plaatst ze. De Drive-map «Estilo Exploración» blijft optioneel/aanvullend, niet blokkerend.
 - **Iconen:** open lijniconenset **Lucide** (MIT) als basis.
-- **Kaarten, mockups (chat/ficha/ticket/menu…), infographics, spot-illustraties, kleurvlakken:** vector (SVG), in huis gebouwd.
+- **Mockups (chat/ficha/ticket/menu/bingo/poster/profiel…), infographics, spot-illustraties, kleurvlakken:** vector (SVG), in huis gebouwd (zie `assets2.py`).
 - **Technische pijplijn:** SVG = bron → **300 dpi PNG** voor Word/PDF (python-docx plaatst PNG kraakhelder), **SVG** rechtstreeks in HTML. Foto's als hoge-resolutie JPEG/PNG.
 - **Altijd:** alt-tekst bij elk beeld · **grijswaarden-veilig** · kleur nooit als enige informatiedrager (ook label/vorm/icoon).
 
@@ -254,6 +254,8 @@ Naast de twee *visuele* specs (§13) zijn er twee *didactische* specs in `02-hui
 **Onderlinge verwijzingen (BINDEND):** cursus (Word/PDF) ↔ **PowerPoint** én cursus ↔ **HTML** kruisverwijzen (bv. «zie dia 12» / «oefen online: …»), met consistente iconen/kleuren.
 
 **HTML — architectuur (BINDEND):**
+- **Visuele/interactieve grammatica (BINDEND, auteur 2026-07-26):** de kerngrammatica wordt op de HTML-pagina **visueel én interactief** uitgelegd volgens `02-huisstijl/richtlijnen/25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md` (25 werkvormen + vaste opbouw context→noticing→ontdekken→visualiseren→regel→toepassen→produceren + herbruikbare componenten). Uitgangspunt: **eerst betekenis/patroon ontdekken, dan regel**; kleurcodering = de functionele taalsemantiek uit §13; verklarende feedback; toegankelijk (toetsenbord, geen kleur-alleen).
+- **Repaso = online (BESLIST 2026-07-26):** het herhalings-/inoefenwerk (recordar sin pista, gemengde quiz, drills) staat **op de digitale pagina** met spellen + zelfcorrectie, niet meer als drills in print. Print-repaso = enkel **spiekkaart (SummaryQuadrant) + semáforo** + een «Repasa jugando (online)»-verwijzing. Houdt de printunit korter en minder repetitief.
 - **4 hoofdtabbladen** — één per cursus (C4·C5·C6·C6+). Per tab: een **overzicht van de unidades** van die cursus.
 - **Per cursus, achteraan:** een **«Conjugador» (werkwoordengenerator)** + de **woordenschat als naslagwerk** met correcte **unit/LPD-verwijzingen** en een **zoekfunctie**.
 - **Flip cards voor ÁLLE woorden per unidad:** toggle **ES→NL / NL→ES**; voorkant = Spaans woord **+ voorbeeldzin**, achterkant = vertaling **+ (eventueel) afbeelding/icoon**. Verzorgde iconen (Lucide; vorige versie had mooie icoontjes → aanhouden).
