@@ -7,10 +7,11 @@
 import json, base64, os, sys
 ROOT = "/home/user/espa-ol-en-la-pr-ctica"
 GEN = f"{ROOT}/02-huisstijl/beeld/generators"
-sys.path.insert(0, GEN); import cast_gen as C
+sys.path.insert(0, GEN); import cast_gen as C; import vocab_icons as VI
 vocab = json.load(open(f"{ROOT}/01-cursussen/05-a1/U1/u1_vocab.json", encoding="utf-8"))
 mapsvg = open(f"{GEN}/mundo_map_real.svg").read()
 moch = C.mochila("100%", "map")
+ICONS=[VI.icon_svg(v.get("es",""),v.get("grp",""),size=34,color="var(--gd)") for v in vocab]
 
 def b64(p): return base64.b64encode(open(p, "rb").read()).decode()
 def face(fam, path, w):
@@ -191,6 +192,7 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
 
 def data_js():
     return ("const VOCAB="+json.dumps(vocab,ensure_ascii=False)+";\n"
+            +"const ICONS="+json.dumps(ICONS,ensure_ascii=False)+";\n"
             +"const MOTOR="+json.dumps(MOTOR,ensure_ascii=False)+";\n"
             +"const GAMES="+json.dumps(GAMES)+";\n")
 
@@ -268,8 +270,14 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   </section>
 
   <section class="panel" data-p="cultura">
-    <h2 class="sec">Cultura · el mundo hispano</h2>
-    <p class="lead">+20 países, ~500 miljoen sprekers. <b>Klik op een groen land</b> op de kaart voor info. Onze parada 1: <b>Madrid</b> 🇪🇸. Verderop: México → Colombia → Perú.</p>
+    <h2 class="sec">Cultura · Los dos apellidos y el tú/usted</h2>
+    <p class="lead">En el mundo hispano la gente tiene <b>dos apellidos</b> y trata de <b>tú</b> o de <b>usted</b> según la situación. <span class="gloss">In de Spaanstalige wereld heeft men twee achternamen en spreekt men iemand aan met tú of usted, naargelang de situatie.</span></p>
+    <div class="card"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px;display:flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Los dos apellidos</h3>
+      <p><b>Lucía Ramírez García</b> = Ramírez (del padre) + García (de la madre). Al casarse, el apellido <b>no cambia</b>. <span class="gloss">Iedereen draagt de achternaam van vader én moeder; bij een huwelijk verandert de naam niet. Nederlands heeft één achternaam — hier twee.</span></p></div>
+    <div class="card"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px;display:flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>¿Tú o usted?</h3>
+      <p><b>tú</b> (¿Cómo estás? · tú eres) met een leeftijdsgenoot ↔ <b>usted</b> (¿Cómo está usted? · usted es) beleefd/formeel. <span class="gloss">España: veel tú ↔ Colombia/Perú: vaak usted. Vooruitblik: in C6 ontmoet je Mateo uit Argentina met vos.</span></p></div>
+    <h3 class="subh">La Ruta · ¿dónde estamos?</h3>
+    <p class="lead">Onze parada 1: <b>Madrid</b> 🇪🇸, hoofdstad van España. <b>Klik op een groen land</b> op de kaart voor info. Verderop: México → Colombia → Perú.</p>
     <div class="card" id="mapwrap">__MAP__<div class="mapinfo" id="mapinfo"><p class="gloss" style="margin:0">👆 Klik op een groen land (of een halte ★) om er meer over te lezen.</p></div></div>
   </section>
 
@@ -320,7 +328,7 @@ function renderFC(){const q=(document.getElementById('fcsearch').value||'').toLo
   FCorder.forEach(i=>{const v=VOCAB[i];if(grp&&v.grp!==grp)return;if(q&&!(v.es.toLowerCase().includes(q)||v.nl.toLowerCase().includes(q)))return;n++;
     const front=dir==='es'?v.es:v.nl, back=dir==='es'?v.nl:v.es, ej=dir==='es'?('«'+v.ej+'»'):'';
     const d=document.createElement('div');d.className='fc';d.tabIndex=0;
-    d.innerHTML='<div class="in"><div class="s">'+(TTS?'<span class="spk" title="luister">🔊</span>':'')+'<div class="w">'+front+'</div>'+(ej?'<div class="ej">'+ej+'</div>':'')+'</div><div class="b"><div class="tr">'+back+'</div></div></div>';
+    d.innerHTML='<div class="in"><div class="s">'+(TTS?'<span class="spk" title="luister">🔊</span>':'')+(ICONS[i]||'')+'<div class="w">'+front+'</div>'+(ej?'<div class="ej">'+ej+'</div>':'')+'</div><div class="b"><div class="tr">'+back+'</div></div></div>';
     d.onclick=()=>d.classList.toggle('flip');d.onkeydown=e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();d.classList.toggle('flip')}};
     const sp=d.querySelector('.spk');if(sp)sp.onclick=e=>{e.stopPropagation();speak(v.es.replace(/→.*/,''));};
     g.appendChild(d);});

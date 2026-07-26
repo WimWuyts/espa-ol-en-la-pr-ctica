@@ -7,10 +7,11 @@
 import json, base64, os, sys
 ROOT = "/home/user/espa-ol-en-la-pr-ctica"
 GEN = f"{ROOT}/02-huisstijl/beeld/generators"
-sys.path.insert(0, GEN); import cast_gen as C
+sys.path.insert(0, GEN); import cast_gen as C; import vocab_icons as VI
 vocab = json.load(open(f"{ROOT}/01-cursussen/05-a1/U4/u4_vocab.json", encoding="utf-8"))
 mapsvg = open(f"{GEN}/mundo_map_real.svg").read()
 moch = C.mochila("100%", "map")
+ICONS=[VI.icon_svg(v.get("es",""),v.get("grp",""),size=34,color="var(--gd)") for v in vocab]
 
 def b64(p): return base64.b64encode(open(p, "rb").read()).decode()
 def face(fam, path, w):
@@ -189,6 +190,7 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
 
 def data_js():
     return ("const VOCAB="+json.dumps(vocab,ensure_ascii=False)+";\n"
+            +"const ICONS="+json.dumps(ICONS,ensure_ascii=False)+";\n"
             +"const MOTOR="+json.dumps(MOTOR,ensure_ascii=False)+";\n"
             +"const GAMES="+json.dumps(GAMES)+";\n")
 
@@ -266,8 +268,14 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   </section>
 
   <section class="panel" data-p="cultura">
-    <h2 class="sec">Cultura · el mundo hispano</h2>
-    <p class="lead">+20 países, ~500 miljoen sprekers. <b>Klik op een groen land</b> op de kaart voor info. Onze parada 4: <b>València</b> 🇪🇸 (la costa). Verderop: México → Colombia → Perú.</p>
+    <h2 class="sec">Cultura · El ocio y la música</h2>
+    <p class="lead">En el mundo hispano <b>la música une a la gente</b>. Descubre a <b>Rosalía</b> y qué hacen los jóvenes en su tiempo libre. <span class="gloss">In de Spaanstalige wereld verbindt muziek; ontdek Rosalía en de vrije tijd van jongeren.</span></p>
+    <div class="card"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px;display:flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>Rosalía 🎵 🇪🇸</h3>
+      <p>Cantante de <b>Barcelona</b>. Mezcla <b>flamenco</b> con pop y reguetón. Álbumes famosos: <i>El mal querer</i>, <i>Motomami</i>. Canta en español. <span class="gloss">Een brug tussen traditie en de charts van vandaag — perfect voor de klas. El español es de los idiomas más escuchados en las plataformas de música.</span></p></div>
+    <div class="card"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px;display:flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg>El ocio joven 🏖️</h3>
+      <p>Jongeren <b>salen con amigos</b>, escuchan música, ven series, hacen deporte y van a la playa. En <b>València</b>: las Fallas, la paella y la horchata. <span class="gloss">Muziek en samen zijn staan centraal. Contraste: el flamenco (tradición) ↔ el reguetón (actual).</span></p></div>
+    <h3 class="subh">La Ruta · ¿dónde estamos?</h3>
+    <p class="lead">Onze parada 4: <b>València</b> 🇪🇸 (la costa). <b>Klik op een groen land</b> op de kaart voor info. Verderop: México → Colombia → Perú.</p>
     <div class="card" id="mapwrap">__MAP__<div class="mapinfo" id="mapinfo"><p class="gloss" style="margin:0">👆 Klik op een groen land (of een halte ★) om er meer over te lezen.</p></div></div>
   </section>
 
@@ -318,7 +326,7 @@ function renderFC(){const q=(document.getElementById('fcsearch').value||'').toLo
   FCorder.forEach(i=>{const v=VOCAB[i];if(grp&&v.grp!==grp)return;if(q&&!(v.es.toLowerCase().includes(q)||v.nl.toLowerCase().includes(q)))return;n++;
     const front=dir==='es'?v.es:v.nl, back=dir==='es'?v.nl:v.es, ej=dir==='es'?('«'+v.ej+'»'):'';
     const d=document.createElement('div');d.className='fc';d.tabIndex=0;
-    d.innerHTML='<div class="in"><div class="s">'+(TTS?'<span class="spk" title="luister">🔊</span>':'')+'<div class="w">'+front+'</div>'+(ej?'<div class="ej">'+ej+'</div>':'')+'</div><div class="b"><div class="tr">'+back+'</div></div></div>';
+    d.innerHTML='<div class="in"><div class="s">'+(TTS?'<span class="spk" title="luister">🔊</span>':'')+(ICONS[i]||'')+'<div class="w">'+front+'</div>'+(ej?'<div class="ej">'+ej+'</div>':'')+'</div><div class="b"><div class="tr">'+back+'</div></div></div>';
     d.onclick=()=>d.classList.toggle('flip');d.onkeydown=e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();d.classList.toggle('flip')}};
     const sp=d.querySelector('.spk');if(sp)sp.onclick=e=>{e.stopPropagation();speak(v.es.replace(/\(.*?\)/g,'').replace(/…/g,'').replace(/\/.*/,''));};
     g.appendChild(d);});

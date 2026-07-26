@@ -1,0 +1,527 @@
+[
+  {
+    "es": "el alfabeto / el abecedario",
+    "nl": "het alfabet",
+    "soort": "sust. m.",
+    "tier": "prod",
+    "ej": "El alfabeto español tiene veintisiete letras."
+  },
+  {
+    "es": "la letra",
+    "nl": "de letter",
+    "soort": "sust. f.",
+    "tier": "prod",
+    "ej": "La palabra «hola» tiene cuatro letras."
+  },
+  {
+    "es": "deletrear",
+    "nl": "spellen",
+    "soort": "verbo",
+    "tier": "prod",
+    "ej": "¿Puedes deletrear tu nombre?"
+  },
+  {
+    "es": "la vocal",
+    "nl": "de klinker",
+    "soort": "sust. f.",
+    "tier": "prod",
+    "ej": "Las vocales son a, e, i, o, u."
+  },
+  {
+    "es": "la consonante",
+    "nl": "de medeklinker",
+    "soort": "sust. f.",
+    "tier": "rec",
+    "ej": "La «ñ» es una consonante."
+  },
+  {
+    "es": "la sílaba",
+    "nl": "de lettergreep",
+    "soort": "sust. f.",
+    "tier": "prod",
+    "ej": "«Ca-sa» tiene dos sílabas."
+  },
+  {
+    "es": "la sílaba tónica",
+    "nl": "de klemtoonlettergreep",
+    "soort": "loc. nom. f.",
+    "tier": "prod",
+    "ej": "En «café», la sílaba tónica es «fé»."
+  },
+  {
+    "es": "la tilde / el acento (´)",
+    "nl": "het accent(streepje)",
+    "soort": "sust. m./f.",
+    "tier": "prod",
+    "ej": "«Perú» lleva tilde en la «u»."
+  },
+  {
+    "es": "el sombrero (metáfora de clase)",
+    "nl": "het hoedje (= de tilde)",
+    "soort": "sust. m.",
+    "tier": "rec",
+    "ej": "La mochila pone un sombrero en la «é» de «café»."
+  },
+  {
+    "es": "aguda",
+    "nl": "klemtoon op de laatste",
+    "soort": "adj.",
+    "tier": "prod",
+    "ej": "«Perú» es una palabra aguda."
+  },
+  {
+    "es": "llana",
+    "nl": "klemtoon op de voorlaatste",
+    "soort": "adj.",
+    "tier": "prod",
+    "ej": "«Casa» es una palabra llana."
+  },
+  {
+    "es": "esdrújula",
+    "nl": "klemtoon op de derde van achter",
+    "soort": "adj.",
+    "tier": "prod",
+    "ej": "«México» es una palabra esdrújula."
+  },
+  {
+    "es": "el monosílabo",
+    "nl": "het eenlettergrepige woord",
+    "soort": "sust. m.",
+    "tier": "rec",
+    "ej": "«Sol» es un monosílabo: no lleva tilde."
+  },
+  {
+    "es": "la mayúscula",
+    "nl": "de hoofdletter",
+    "soort": "sust. f.",
+    "tier": "prod",
+    "ej": "«España» se escribe con mayúscula."
+  },
+  {
+    "es": "la minúscula",
+    "nl": "de kleine letter",
+    "soort": "sust. f.",
+    "tier": "prod",
+    "ej": "«español» se escribe con minúscula."
+  },
+  {
+    "es": "la diéresis (¨)",
+    "nl": "het deelteken (op ü)",
+    "soort": "sust. f.",
+    "tier": "rec",
+    "ej": "«Pingüino» lleva diéresis en la «u»."
+  },
+  {
+    "es": "el dígrafo (ch, ll)",
+    "nl": "de klankcombinatie / digraaf",
+    "soort": "sust. m.",
+    "tier": "rec",
+    "ej": "«Ch» y «ll» son dígrafos."
+  },
+  {
+    "es": "la arroba (@)",
+    "nl": "het apenstaartje",
+    "soort": "sust. f.",
+    "tier": "rec",
+    "ej": "Mi correo lleva una arroba."
+  },
+  {
+    "es": "el guion (-)",
+    "nl": "het koppelteken",
+    "soort": "sust. m.",
+    "tier": "rec",
+    "ej": "«Anna-Lena» lleva un guion."
+  },
+  {
+    "es": "con tilde / sin tilde",
+    "nl": "met / zonder accent",
+    "soort": "loc.",
+    "tier": "prod",
+    "ej": "«Camión» se escribe con tilde."
+  },
+  {
+    "es": "con be/uve · con/sin hache",
+    "nl": "met b/v · met/zonder h",
+    "soort": "loc.",
+    "tier": "prod",
+    "ej": "¿«Bélgica» con be o con uve?"
+  },
+  {
+    "es": "10 diez",
+    "nl": "11 once",
+    "soort": "12 doce",
+    "tier": "rec",
+    "ej": "14 catorce"
+  },
+  {
+    "es": "20 veinte",
+    "nl": "21 veintiuno",
+    "soort": "22 veintidós",
+    "tier": "",
+    "ej": "24 veinticuatro"
+  },
+  {
+    "es": "30 treinta",
+    "nl": "40 cuarenta",
+    "soort": "50 cincuenta",
+    "tier": "",
+    "ej": "70 setenta"
+  },
+  {
+    "es": "el número",
+    "nl": "het getal / nummer",
+    "soort": "sust. m.",
+    "tier": "prod",
+    "ej": "¿Cuál es tu número de teléfono?"
+  },
+  {
+    "es": "contar (0 → 100)",
+    "nl": "tellen",
+    "soort": "verbo",
+    "tier": "prod",
+    "ej": "Voy a contar de cero a cien."
+  },
+  {
+    "es": "cero",
+    "nl": "nul",
+    "soort": "núm.",
+    "tier": "prod",
+    "ej": "Cero grados: ¡qué frío!"
+  },
+  {
+    "es": "cien",
+    "nl": "honderd",
+    "soort": "núm.",
+    "tier": "prod",
+    "ej": "En mi calle hay cien casas."
+  },
+  {
+    "es": "dieciséis / veintidós",
+    "nl": "zestien / tweeëntwintig",
+    "soort": "núm.",
+    "tier": "prod",
+    "ej": "Mi hermana tiene dieciséis años."
+  },
+  {
+    "es": "treinta y cinco",
+    "nl": "vijfendertig",
+    "soort": "núm.",
+    "tier": "prod",
+    "ej": "El autobús treinta y cinco va a la playa."
+  },
+  {
+    "es": "la edad",
+    "nl": "de leeftijd",
+    "soort": "sust. f.",
+    "tier": "prod",
+    "ej": "¿Cuál es tu edad?"
+  },
+  {
+    "es": "tener … años",
+    "nl": "… jaar zijn (lett. hebben)",
+    "soort": "estructura",
+    "tier": "prod",
+    "ej": "Tengo catorce años."
+  },
+  {
+    "es": "¿Cuántos años tienes?",
+    "nl": "Hoe oud ben je?",
+    "soort": "expr. interr.",
+    "tier": "prod",
+    "ej": "—¿Cuántos años tienes? —Quince."
+  },
+  {
+    "es": "¡Hola!",
+    "nl": "Hallo!",
+    "soort": "interj.",
+    "tier": "prod",
+    "ej": "¡Hola! ¿Qué tal? (h zwijgt)"
+  },
+  {
+    "es": "Buenos días",
+    "nl": "Goedemorgen",
+    "soort": "expr.",
+    "tier": "prod",
+    "ej": "Buenos días, me llamo Nina."
+  },
+  {
+    "es": "Buenas tardes",
+    "nl": "Goeiemiddag",
+    "soort": "expr.",
+    "tier": "prod",
+    "ej": "Buenas tardes, señora."
+  },
+  {
+    "es": "Buenas noches",
+    "nl": "Goedenavond / -nacht",
+    "soort": "expr.",
+    "tier": "rec",
+    "ej": "Buenas noches, hasta mañana."
+  },
+  {
+    "es": "¿Qué tal?",
+    "nl": "Hoe gaat het?",
+    "soort": "expr. interr.",
+    "tier": "prod",
+    "ej": "¡Hola, Diego! ¿Qué tal?"
+  },
+  {
+    "es": "¿Cómo estás?",
+    "nl": "Hoe gaat het (met je)?",
+    "soort": "expr. interr.",
+    "tier": "prod",
+    "ej": "Hola, ¿cómo estás?"
+  },
+  {
+    "es": "(Muy) bien, gracias. ¿Y tú?",
+    "nl": "(Heel) goed, dank je. En jij?",
+    "soort": "expr.",
+    "tier": "prod",
+    "ej": "Muy bien, gracias. ¿Y tú?"
+  },
+  {
+    "es": "Adiós",
+    "nl": "Dag / Tot ziens",
+    "soort": "interj.",
+    "tier": "prod",
+    "ej": "¡Adiós! Hasta luego."
+  },
+  {
+    "es": "Hasta luego",
+    "nl": "Tot straks",
+    "soort": "expr.",
+    "tier": "prod",
+    "ej": "Hasta luego, Lucía."
+  },
+  {
+    "es": "Hasta mañana",
+    "nl": "Tot morgen",
+    "soort": "expr.",
+    "tier": "rec",
+    "ej": "Hasta mañana, clase."
+  },
+  {
+    "es": "Chao (informal)",
+    "nl": "Doei",
+    "soort": "interj.",
+    "tier": "rec",
+    "ej": "¡Chao! Nos vemos."
+  },
+  {
+    "es": "Me llamo …",
+    "nl": "Ik heet …",
+    "soort": "estructura",
+    "tier": "prod",
+    "ej": "Me llamo Valen."
+  },
+  {
+    "es": "Soy …",
+    "nl": "Ik ben …",
+    "soort": "verbo",
+    "tier": "prod",
+    "ej": "Soy Tom."
+  },
+  {
+    "es": "¿Cómo te llamas?",
+    "nl": "Hoe heet jij?",
+    "soort": "expr. interr.",
+    "tier": "prod",
+    "ej": "¿Cómo te llamas?"
+  },
+  {
+    "es": "¿Y tú?",
+    "nl": "En jij?",
+    "soort": "expr.",
+    "tier": "prod",
+    "ej": "Yo soy Sam. ¿Y tú?"
+  },
+  {
+    "es": "Encantado / Encantada",
+    "nl": "Aangenaam (m / v)",
+    "soort": "adj.",
+    "tier": "prod",
+    "ej": "Encantada, soy Lucía."
+  },
+  {
+    "es": "Mucho gusto · Igualmente",
+    "nl": "Aangenaam · Insgelijks",
+    "soort": "expr.",
+    "tier": "rec",
+    "ej": "—Mucho gusto. —Igualmente."
+  },
+  {
+    "es": "Este es … / Esta es …",
+    "nl": "Dit is … (hij / zij)",
+    "soort": "estructura",
+    "tier": "rec",
+    "ej": "Este es Diego. Esta es Nina."
+  },
+  {
+    "es": "Soy de …",
+    "nl": "Ik kom uit …",
+    "soort": "estructura",
+    "tier": "prod",
+    "ej": "Soy de Bélgica."
+  },
+  {
+    "es": "(Muchas) gracias",
+    "nl": "(Heel erg) bedankt",
+    "soort": "expr.",
+    "tier": "prod",
+    "ej": "Muchas gracias, igualmente."
+  },
+  {
+    "es": "Por favor",
+    "nl": "Alsjeblieft / a.u.b.",
+    "soort": "expr.",
+    "tier": "prod",
+    "ej": "Más despacio, por favor."
+  },
+  {
+    "es": "¿Cómo se dice «…» en español?",
+    "nl": "Hoe zeg je «…» in het Spaans?",
+    "soort": "expr. 🟡",
+    "tier": "prod",
+    "ej": "¿Cómo se dice «rugzak» en español?"
+  },
+  {
+    "es": "¿Qué significa «…»?",
+    "nl": "Wat betekent «…»?",
+    "soort": "expr. 🟡",
+    "tier": "prod",
+    "ej": "¿Qué significa «mochila»?"
+  },
+  {
+    "es": "No entiendo",
+    "nl": "Ik begrijp het niet",
+    "soort": "expr. 🟡",
+    "tier": "prod",
+    "ej": "Perdón, no entiendo."
+  },
+  {
+    "es": "¿Puedes repetir, por favor?",
+    "nl": "Kun je herhalen, a.u.b.?",
+    "soort": "expr. 🟡",
+    "tier": "prod",
+    "ej": "¿Puedes repetir, por favor?"
+  },
+  {
+    "es": "Más despacio, por favor",
+    "nl": "Trager, a.u.b.",
+    "soort": "expr. 🟡",
+    "tier": "prod",
+    "ej": "Más despacio, por favor."
+  },
+  {
+    "es": "No sé",
+    "nl": "Ik weet het niet",
+    "soort": "expr. 🟡",
+    "tier": "prod",
+    "ej": "No sé la respuesta."
+  },
+  {
+    "es": "¿Cómo se escribe?",
+    "nl": "Hoe schrijf je dat?",
+    "soort": "expr. 🟡",
+    "tier": "prod",
+    "ej": "¿Cómo se escribe tu nombre?"
+  },
+  {
+    "es": "Tengo una pregunta",
+    "nl": "Ik heb een vraag",
+    "soort": "expr. 🟡",
+    "tier": "prod",
+    "ej": "Profe, tengo una pregunta."
+  },
+  {
+    "es": "el mundo hispano",
+    "nl": "de Spaanstalige wereld",
+    "soort": "loc. nom. m.",
+    "tier": "rec",
+    "ej": "España está en el mundo hispano."
+  },
+  {
+    "es": "el país",
+    "nl": "het land",
+    "soort": "sust. m.",
+    "tier": "prod",
+    "ej": "México es un país grande."
+  },
+  {
+    "es": "la lengua / el idioma",
+    "nl": "de taal",
+    "soort": "sust. f./m.",
+    "tier": "prod",
+    "ej": "El español es una lengua muy hablada."
+  },
+  {
+    "es": "el español / el castellano",
+    "nl": "het Spaans",
+    "soort": "sust. m.",
+    "tier": "prod",
+    "ej": "El español y el castellano son la misma lengua."
+  },
+  {
+    "es": "hispanohablante",
+    "nl": "Spaanstalig(e)",
+    "soort": "adj./sust.",
+    "tier": "rec",
+    "ej": "Hay millones de hispanohablantes."
+  },
+  {
+    "es": "el cognado (palabra transparente)",
+    "nl": "het cognaat / transparant woord",
+    "soort": "sust. m. 🟡",
+    "tier": "rec",
+    "ej": "«Hospital» y «chocolate» son cognados."
+  },
+  {
+    "es": "la ruta · la parada",
+    "nl": "de route · de halte/etappe",
+    "soort": "sust. f.",
+    "tier": "rec",
+    "ej": "Nuestra primera parada es España."
+  },
+  {
+    "es": "Bélgica → belga",
+    "nl": "België → Belg(isch)",
+    "soort": "topón./gent.",
+    "tier": "prod",
+    "ej": "Yo soy de Bélgica, soy belga."
+  },
+  {
+    "es": "España → español / española",
+    "nl": "Spanje → Spaans",
+    "soort": "topón./gent.",
+    "tier": "prod",
+    "ej": "Lucía es de España, es española."
+  },
+  {
+    "es": "México → mexicano / -ana",
+    "nl": "Mexico → Mexicaans",
+    "soort": "topón./gent.",
+    "tier": "rec",
+    "ej": "Diego es mexicano."
+  },
+  {
+    "es": "Colombia → colombiano / -ana",
+    "nl": "Colombia → Colombiaans",
+    "soort": "topón./gent.",
+    "tier": "rec",
+    "ej": "Valen es colombiana."
+  },
+  {
+    "es": "Perú → peruano / -ana",
+    "nl": "Peru → Peruaans",
+    "soort": "topón./gent.",
+    "tier": "rec",
+    "ej": "Nina es peruana."
+  },
+  {
+    "es": "Argentina → argentino / -ina (teaser C6)",
+    "nl": "Argentinië → Argentijns",
+    "soort": "topón./gent.",
+    "tier": "rec",
+    "ej": "Mateo es argentino."
+  }
+]

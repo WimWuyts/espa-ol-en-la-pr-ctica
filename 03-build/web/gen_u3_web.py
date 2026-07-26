@@ -7,10 +7,11 @@
 import json, base64, os, sys
 ROOT = "/home/user/espa-ol-en-la-pr-ctica"
 GEN = f"{ROOT}/02-huisstijl/beeld/generators"
-sys.path.insert(0, GEN); import cast_gen as C
+sys.path.insert(0, GEN); import cast_gen as C; import vocab_icons as VI
 vocab = json.load(open(f"{ROOT}/01-cursussen/05-a1/U3/u3_vocab.json", encoding="utf-8"))
 mapsvg = open(f"{GEN}/mundo_map_real.svg").read()
 moch = C.mochila("100%", "map")
+ICONS=[VI.icon_svg(v.get("es",""),v.get("grp",""),size=34,color="var(--gd)") for v in vocab]
 
 def b64(p): return base64.b64encode(open(p, "rb").read()).decode()
 def face(fam, path, w):
@@ -190,6 +191,7 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
 
 def data_js():
     return ("const VOCAB="+json.dumps(vocab,ensure_ascii=False)+";\n"
+            +"const ICONS="+json.dumps(ICONS,ensure_ascii=False)+";\n"
             +"const MOTOR="+json.dumps(MOTOR,ensure_ascii=False)+";\n"
             +"const GAMES="+json.dumps(GAMES)+";\n")
 
@@ -267,8 +269,14 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   </section>
 
   <section class="panel" data-p="cultura">
-    <h2 class="sec">Cultura · el mundo hispano</h2>
-    <p class="lead">+20 países, ~500 miljoen sprekers. <b>Klik op een groen land</b> op de kaart voor info. Onze parada 3: <b>Barcelona</b> 🇪🇸. Verderop: València → México → Colombia → Perú.</p>
+    <h2 class="sec">Cultura · El horario español</h2>
+    <p class="lead">En España se come y se cena <b>más tarde</b> que en Bélgica, y la famosa <b>siesta</b> es más mito que realidad. <span class="gloss">In Spanje eet men later dan in België; de siësta is meer mythe dan realiteit. De klok zegt veel over een cultuur.</span></p>
+    <div class="card"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px;display:flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>Las comidas 🍽️</h3>
+      <p><b>desayuno</b> (~8 u, licht) · <b>comida/almuerzo</b> (~14–15 u, de hoofdmaaltijd!) · <b>merienda</b> (~18 u) · <b>cena</b> (~21–22 u). <span class="gloss">In België eet men rond 12 u en 18 u — een paar uur vroeger. La comida = 14–15 h ↔ la cena = 21–22 h.</span></p></div>
+    <div class="card"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px;display:flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>El instituto y la siesta</h3>
+      <p>Veel scholen lopen van ~<b>8:30</b> tot ~<b>14:30</b>; 's middags: deberes, deporte, amigos. De <b>siesta</b>? Mito: todos duermen ↔ realidad: pocos, sobre todo mayores. <span class="gloss">Een ander ritme dan een lange schooldag met middagpauze; de siësta is vooral een mythe.</span></p></div>
+    <h3 class="subh">La Ruta · ¿dónde estamos?</h3>
+    <p class="lead">Onze parada 3: <b>Barcelona</b> 🇪🇸. <b>Klik op een groen land</b> op de kaart voor info. Verderop: València → México → Colombia → Perú.</p>
     <div class="card" id="mapwrap">__MAP__<div class="mapinfo" id="mapinfo"><p class="gloss" style="margin:0">👆 Klik op een groen land (of een halte ★) om er meer over te lezen.</p></div></div>
   </section>
 
@@ -319,7 +327,7 @@ function renderFC(){const q=(document.getElementById('fcsearch').value||'').toLo
   FCorder.forEach(i=>{const v=VOCAB[i];if(grp&&v.grp!==grp)return;if(q&&!(v.es.toLowerCase().includes(q)||v.nl.toLowerCase().includes(q)))return;n++;
     const front=dir==='es'?v.es:v.nl, back=dir==='es'?v.nl:v.es, ej=dir==='es'?('«'+v.ej+'»'):'';
     const d=document.createElement('div');d.className='fc';d.tabIndex=0;
-    d.innerHTML='<div class="in"><div class="s">'+(TTS?'<span class="spk" title="luister">🔊</span>':'')+'<div class="w">'+front+'</div>'+(ej?'<div class="ej">'+ej+'</div>':'')+'</div><div class="b"><div class="tr">'+back+'</div></div></div>';
+    d.innerHTML='<div class="in"><div class="s">'+(TTS?'<span class="spk" title="luister">🔊</span>':'')+(ICONS[i]||'')+'<div class="w">'+front+'</div>'+(ej?'<div class="ej">'+ej+'</div>':'')+'</div><div class="b"><div class="tr">'+back+'</div></div></div>';
     d.onclick=()=>d.classList.toggle('flip');d.onkeydown=e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();d.classList.toggle('flip')}};
     const sp=d.querySelector('.spk');if(sp)sp.onclick=e=>{e.stopPropagation();speak(v.es.replace(/\(.*?\)/g,'').replace(/→.*/,''));};
     g.appendChild(d);});

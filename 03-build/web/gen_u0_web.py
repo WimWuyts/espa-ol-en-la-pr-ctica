@@ -8,11 +8,12 @@
 import json, base64, os, sys
 
 ROOT="/home/user/espa-ol-en-la-pr-ctica"
-SCRATCH="/tmp/claude-0/-home-user-espa-ol-en-la-pr-ctica/c4f0edbd-dbbb-5710-a740-e04235ccd8ef/scratchpad"
-vocab=json.load(open(f"{SCRATCH}/u0_vocab.json"))
-mapsvg=open(f"{SCRATCH}/mundo_map_real.svg").read()
-sys.path.insert(0,SCRATCH); import cast_gen as C
+GEN=f"{ROOT}/02-huisstijl/beeld/generators"
+vocab=json.load(open(f"{ROOT}/01-cursussen/05-a1/U0/u0_vocab.json"))
+mapsvg=open(f"{GEN}/mundo_map_real.svg").read()
+sys.path.insert(0,GEN); import cast_gen as C; import vocab_icons as VI
 moch=C.mochila("100%","compass")
+ICONS=[VI.icon_svg(v.get("es",""),v.get("grp",""),size=34,color="var(--gd)") for v in vocab]
 
 def b64(p):
     return base64.b64encode(open(p,"rb").read()).decode()
@@ -151,6 +152,7 @@ body.editing [contenteditable=true]:focus{outline:2px solid var(--gd);background
 
 def data_js():
     return ("const VOCAB="+json.dumps(vocab,ensure_ascii=False)+";\n"
+            +"const ICONS="+json.dumps(ICONS,ensure_ascii=False)+";\n"
             +"const MOTOR="+json.dumps(MOTOR,ensure_ascii=False)+";\n"
             +"const GAMES="+json.dumps(GAMES)+";\n")
 
@@ -232,8 +234,14 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   </section>
 
   <section class="panel" data-p="cultura">
-    <h2 class="sec">Cultura · el mundo hispano</h2>
-    <p class="lead">+20 países, ~500 miljoen sprekers. <b>Klik op een groen land</b> op de kaart voor info. Onze route dit jaar: España → México → Colombia → Perú.</p>
+    <h2 class="sec">Cultura · El mundo hispano</h2>
+    <p class="lead">El español no vive solo en España: es la lengua de más de 20 países. <span class="gloss">Spaans woont niet alleen in Spanje — het is de taal van meer dan 20 landen en ~500 miljoen sprekers.</span></p>
+    <div class="card"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px;display:flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>La lengua de más de 20 países 🌍</h3>
+      <p>El español es lengua oficial en <b>España</b>, en casi toda <b>Hispanoamérica</b> y hasta en <b>Guinea Ecuatorial</b> (África). Este año paras en cuatro sitios: España · México · Colombia · Perú. <span class="gloss">Spaans is officiële taal in Spanje, in bijna heel Spaanstalig Amerika en zelfs in Equatoriaal-Guinea. Dit jaar houd je halt op vier plekken.</span></p></div>
+    <div class="card"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px;display:flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>Saludar en todas partes</h3>
+      <p>En todo el mundo hispano se dice <b>«¡Hola!»</b>, pero cada país tiene su color: <i>¿Qué tal?</i> (España), <i>¿Qué onda?</i> (México), <i>¿Quiubo?</i> (Colombia). <span class="gloss">Overal klinkt «¡Hola!», maar elk land heeft zijn eigen kleur en groetvarianten — diversiteit binnen één taal.</span></p></div>
+    <h3 class="subh">La Ruta · ¿dónde estamos?</h3>
+    <p class="lead">Onze parada 0: <b>El mundo hispano → España</b>. <b>Klik op een groen land</b> op de kaart voor info. Verderop: México → Colombia → Perú.</p>
     <div class="card" id="mapwrap">__MAP__<div class="mapinfo" id="mapinfo"><p class="gloss" style="margin:0">👆 Klik op een groen land (of een halte ★) om er meer over te lezen.</p></div></div>
   </section>
 
@@ -286,7 +294,7 @@ function renderFC(){const q=(document.getElementById('fcsearch').value||'').toLo
   FCorder.forEach(i=>{const v=VOCAB[i];if(q&&!(v.es.toLowerCase().includes(q)||v.nl.toLowerCase().includes(q)))return;n++;
     const front=dir==='es'?v.es:v.nl, back=dir==='es'?v.nl:v.es, ej=dir==='es'?('«'+v.ej+'»'):'';
     const d=document.createElement('div');d.className='fc';d.tabIndex=0;
-    d.innerHTML='<div class="in"><div class="s">'+(TTS?'<span class="spk" title="luister">🔊</span>':'')+'<div class="w">'+front+'</div>'+(ej?'<div class="ej">'+ej+'</div>':'')+'</div><div class="b"><div class="tr">'+back+'</div></div></div>';
+    d.innerHTML='<div class="in"><div class="s">'+(TTS?'<span class="spk" title="luister">🔊</span>':'')+(ICONS[i]||'')+'<div class="w">'+front+'</div>'+(ej?'<div class="ej">'+ej+'</div>':'')+'</div><div class="b"><div class="tr">'+back+'</div></div></div>';
     d.onclick=()=>d.classList.toggle('flip');d.onkeydown=e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();d.classList.toggle('flip')}};
     const sp=d.querySelector('.spk');if(sp)sp.onclick=e=>{e.stopPropagation();speak(v.es);};
     g.appendChild(d);});
@@ -593,7 +601,7 @@ window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');
 
 // ---------- bewerk-in-browser (statische teksten) ----------
 (function(){
- var SEL='.hero h1,.hero p,h2.sec,p.lead,.subh,.foot,section[data-p="extra"] .card p,#mapinfo';
+ var SEL='.hero h1,.hero p,h2.sec,p.lead,.subh,.foot,section .card p,section .card h3,section .card h4,section .card li,#mapinfo';
  var editing=false;
  var eb=document.getElementById('editbar'),txt=document.getElementById('ebtxt'),bE=document.getElementById('ebEdit');
  function setEd(on){document.querySelectorAll(SEL).forEach(function(e){if(on){e.setAttribute('contenteditable','true');e.setAttribute('spellcheck','false');}else{e.removeAttribute('contenteditable');}});}
