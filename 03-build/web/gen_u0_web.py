@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
-# Genereert de zelfstandige HTML-hub voor U0 (flip cards, woordenschat-zoek, conjugador,
-# visuele/interactieve grammatica + spellen). Fonts base64 ingebed → één standalone bestand.
+# Genereert de zelfstandige HTML-hub voor U0 (flashcards, woordenschat-zoek,
+# visuele/interactieve grammatica + spellen). Één standalone bestand:
+#  - fonts base64 ingebed
+#  - de 17 motor-arcade-spellen base64 ingebed → werken ook als je het bestand downloadt
+#  - interactieve kaart (klik een land) + interactief abecedario + spraak (TTS)
+# NB: géén werkwoordsvervoeging (conjugador/vervoegingscirkel) — dat hoort niet in U0.
 import json, base64, os, sys
 
 ROOT="/home/user/espa-ol-en-la-pr-ctica"
@@ -9,7 +13,6 @@ vocab=json.load(open(f"{SCRATCH}/u0_vocab.json"))
 mapsvg=open(f"{SCRATCH}/mundo_map_real.svg").read()
 sys.path.insert(0,SCRATCH); import cast_gen as C
 moch=C.mochila("100%","compass")
-av={n:C.make(n,"avatar","100%") for n in ["lucia","diego","valen","nina"]}; av["tu"]=C.tu_avatar("100%")
 
 def b64(p):
     return base64.b64encode(open(p,"rb").read()).decode()
@@ -22,6 +25,18 @@ FONTS="".join([
  face("Caveat","Caveat-700.woff2","700"),
 ])
 
+# ---- de 17 motor-arcade-spellen: gegroepeerd + base64 ingebed ----
+MOTOR=[
+ ['Sonidos · uitspraak',[['be-uve','b = v · con be/uve','classify'],['hache-muda','h muda · hola↔ola','cloze'],['la-jota','la jota · ge/gi/j','classify']]],
+ ['El acento · el sombrero',[['aguda-llana-esdrujula','aguda/llana/esdrújula','classify'],['silaba-tonica','tik de tónica','tap'],['lleva-tilde','¿con/sin tilde?','cloze'],['donde-va-la-tilde','waar staat de tilde?','tap']]],
+ ['Números 0–100',[['numeros-match','cifra ↔ letra','match'],['numeros-orden','klein → groot','order'],['numeros-memoria','geheugenspel','memory']]],
+ ['Saludos · lengua de clase',[['saludos','saludos ES↔NL','match'],['saludo-despedida','saludo/despedida/cortesía','classify'],['lenguaje-de-clase','klaszinnen aanvullen','cloze']]],
+ ['Vocabulario · mundo hispano',[['vocabulario-match','woordenschat ES↔NL','match'],['vocabulario-memoria','geheugenspel','memory'],['gentilicios','país ↔ gentilicio','match'],['genero','el / la','classify']]],
+]
+GAMEDIR=f"{ROOT}/spaans-motor/games"
+slugs=[g[0] for grp in MOTOR for g in grp[1]]
+GAMES={s: b64(f"{GAMEDIR}/es-u0-{s}.html") for s in slugs if os.path.exists(f"{GAMEDIR}/es-u0-{s}.html")}
+
 CSS = FONTS + """
 :root{--g:#1E9E74;--gd:#157355;--gt:#E4F4EE;--ink:#20242E;--mut:#6A6E78;--paper:#FCFBF8;--crema:#F3EEE4;--line:#E4E3DE;--red:#DC2626;--amber:#B7860B;--card:#fff;
 --onder:#2563EB;--ww:#EA7317;--voorw:#1E9E74;--tijd:#7C3AED;--plaats:#14B8A6;
@@ -30,7 +45,7 @@ CSS = FONTS + """
 *{box-sizing:border-box}
 body{margin:0;font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.55}
 a{color:var(--gd)}
-header.top{position:sticky;top:0;z-index:20;background:var(--g);color:#fff;box-shadow:0 2px 10px #0002}
+header.top{position:sticky;top:0;z-index:30;background:var(--g);color:#fff;box-shadow:0 2px 10px #0002}
 .bar{max-width:1080px;margin:0 auto;padding:10px 18px;display:flex;align-items:center;gap:14px}
 .brand{font-family:var(--disp);font-weight:800;font-size:20px;letter-spacing:.2px}
 .brand small{font-weight:400;opacity:.9;font-family:var(--body);font-size:12px}
@@ -44,13 +59,14 @@ main{max-width:1080px;margin:0 auto;padding:0 18px 80px}
 .hero .mo{width:92px;flex:none}
 .hero h1{font-family:var(--disp);font-weight:800;font-size:34px;margin:0 0 4px}
 .hero p{margin:0;max-width:560px;opacity:.96}
-.subnav{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 8px;position:sticky;top:54px;background:var(--paper);padding:8px 0;z-index:10}
+.subnav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 8px;padding:10px 0;position:sticky;top:52px;background:var(--paper);z-index:20;border-bottom:1px solid var(--line)}
 .subnav button{border:1.5px solid var(--line);background:var(--card);color:var(--ink);font-weight:600;font-size:13px;padding:7px 13px;border-radius:20px;cursor:pointer}
 .subnav button.on{background:var(--g);color:#fff;border-color:var(--g)}
 section.panel{display:none;animation:fade .3s}
 section.panel.show{display:block}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
 h2.sec{font-family:var(--disp);font-weight:700;color:var(--gd);font-size:24px;margin:22px 0 4px}
+.subh{font-family:var(--disp);color:var(--ink);font-size:17px;margin:26px 0 6px;padding-bottom:5px;border-bottom:2px solid var(--gt);display:flex;align-items:center;gap:10px}
 .lead{color:var(--mut);margin:0 0 14px;max-width:680px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:14px 0;box-shadow:0 1px 3px #0000000a}
 .gloss{color:var(--mut);font-style:italic}
@@ -71,10 +87,11 @@ h2.sec{font-family:var(--disp);font-weight:700;color:var(--gd);font-size:24px;ma
 .fc .w{font-family:var(--disp);font-weight:700;font-size:17px}
 .fc .ej{font-size:11px;color:var(--mut);margin-top:6px}
 .fc .tr{font-family:var(--disp);font-weight:700;font-size:18px;color:var(--gd)}
+.fc .spk{position:absolute;top:6px;right:8px;font-size:14px;opacity:.5}
 /* tabel */
 table.vt{width:100%;border-collapse:collapse;font-size:14px}
 table.vt th,table.vt td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left}
-table.vt th{background:var(--gt);color:var(--gd);position:sticky;top:96px}
+table.vt th{background:var(--gt);color:var(--gd);position:sticky;top:0;z-index:1}
 /* game generiek */
 .game{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:14px 0}
 .game h3{font-family:var(--disp);margin:0 0 2px;color:var(--ink);font-size:18px}
@@ -93,6 +110,8 @@ table.vt th{background:var(--gt);color:var(--gd);position:sticky;top:96px}
 .fb.good{display:block;background:var(--gt);color:var(--gd)}
 .fb.bad{display:block;background:#fdeaea;color:var(--red)}
 .answerbtns{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.txin{border:1.5px solid var(--line);border-radius:10px;padding:8px 12px;font-size:16px;background:var(--card);color:var(--ink);font-family:var(--disp);width:120px}
+.spk-btn{border:none;background:var(--gt);color:var(--gd);border-radius:10px;padding:9px 16px;font-weight:700;cursor:pointer;font-size:15px}
 /* kleur-zin */
 .csent{font-size:22px;font-family:var(--disp);line-height:2}
 .csent span{padding:2px 5px;border-radius:6px;cursor:help;position:relative}
@@ -100,24 +119,33 @@ table.vt th{background:var(--gt);color:var(--gd);position:sticky;top:96px}
 .csent span:hover .tip,.csent span:focus .tip{display:block}
 .legend{display:flex;gap:10px;flex-wrap:wrap;font-size:12px;margin-top:10px}
 .legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:4px;vertical-align:-1px}
-/* conjugador */
-.conjgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:12px}
-.pv{background:var(--gt);border-radius:12px;padding:10px 12px}
-.pv .p{font-size:12px;color:var(--mut)}
-.pv .f{font-family:var(--disp);font-weight:700;font-size:18px;color:var(--gd)}
+/* abecedario */
+.abcgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:8px;margin-top:10px}
+.abc-l{border:1.5px solid var(--line);border-radius:12px;padding:8px 4px;text-align:center;cursor:pointer;background:var(--card)}
+.abc-l:hover{border-color:var(--g);background:var(--gt)}
+.abc-l .big{font-family:var(--disp);font-weight:800;font-size:20px;color:var(--gd)}
+.abc-l .nm{font-size:10px;color:var(--mut)}
 .foot{color:var(--mut);font-size:12px;text-align:center;margin-top:30px}
-.tilinfo{font-size:13px;color:var(--mut)}
-.wheel{display:flex;gap:20px;align-items:center;flex-wrap:wrap;justify-content:center;margin-top:8px}
-.wcirc{position:relative;width:230px;height:230px}
-.wcirc button{position:absolute;transform:translate(-50%,-50%);border:1.5px solid var(--line);background:var(--card);border-radius:20px;padding:6px 10px;font-weight:700;cursor:pointer;font-size:13px}
-.wcirc button.on{background:var(--g);color:#fff;border-color:var(--g)}
-.wcirc .mid{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:120px;height:120px;border-radius:50%;background:var(--gt);display:flex;flex-direction:column;align-items:center;justify-content:center}
-.wcirc .mid .v{font-family:var(--disp);font-weight:800;font-size:24px;color:var(--gd)}
+/* kaart interactief */
+#mapwrap svg{width:100%;height:auto}
+#mapwrap path.spa,#mapwrap path.usa{transition:opacity .12s}
+.mapinfo{margin-top:12px;padding:14px 16px;background:var(--gt);border-radius:12px;min-height:66px}
+.mapinfo h3{margin:0 0 6px;font-family:var(--disp);color:var(--gd);font-size:19px}
+.mapinfo .mrow{font-size:14px;margin:2px 0}
+/* modal voor arcade-spellen */
+.modal{display:none;position:fixed;inset:0;background:#0009;z-index:100;padding:16px}
+.modal.show{display:flex;align-items:center;justify-content:center}
+.modalbox{background:var(--card);border-radius:16px;width:min(940px,97vw);height:min(90vh,940px);display:flex;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px #0006}
+.modalbar{display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--g);color:#fff;font-family:var(--disp);font-weight:700}
+.modalbar button{background:#ffffff22;border:none;color:#fff;padding:6px 12px;border-radius:8px;cursor:pointer;font-weight:700;font-family:var(--disp)}
+.modal iframe{border:0;flex:1;width:100%;background:#fff}
 @media(max-width:600px){.hero h1{font-size:26px}.bar{flex-wrap:wrap}}
 """
 
 def data_js():
-    return "const VOCAB="+json.dumps(vocab,ensure_ascii=False)+";\n"
+    return ("const VOCAB="+json.dumps(vocab,ensure_ascii=False)+";\n"
+            +"const MOTOR="+json.dumps(MOTOR,ensure_ascii=False)+";\n"
+            +"const GAMES="+json.dumps(GAMES)+";\n")
 
 # ------- HTML secties -------
 def flashcards_html():
@@ -131,11 +159,6 @@ def flashcards_html():
 def naslag_html():
     return """<div class="controls"><input id="vsearch" placeholder="🔎 zoek in woordenschat…" oninput="renderTable()"><span class="pill" id="vcount"></span></div>
     <div style="max-height:60vh;overflow:auto"><table class="vt"><thead><tr><th>Español</th><th>Nederlands</th><th>Soort</th><th>Ejemplo</th></tr></thead><tbody id="vbody"></tbody></table></div>"""
-
-def conjugador_html():
-    return """<p class="lead">Typ een werkwoord (infinitivo) en zie de <b>presente</b>. Onregelmatige kernwerkwoorden zijn nagerekend. <span class="gloss">Enkel presente — conform het leerplan (geen futuro/subjuntivo in de 3de graad).</span></p>
-    <div class="controls"><input id="verbin" placeholder="bv. hablar, comer, vivir, ser, tener…" value="hablar" oninput="conjugate()"><button class="btn small" onclick="conjugate()">Vervoeg</button></div>
-    <div id="conjout"></div>"""
 
 HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -155,13 +178,13 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   <div class="hero">
     <div class="mo">__MOCH__</div>
     <div><h1>U0 · ¡Empezamos!</h1>
-    <p>La página digital de la Unidad 0: flashcards, woordenschat, <b>conjugador</b>, gramática visual e interactiva y <b>juegos</b>. <span style="opacity:.85">Todo lo que en el libro (PDF) tiene un QR, aquí lo puedes practicar.</span></p></div>
+    <p>La página digital de la Unidad 0: flashcards, woordenschat, gramática visual e interactiva y <b>juegos</b>. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR in het boek brengt je hier om te oefenen — zelfde thema, meer interactie.</span></p></div>
   </div>
   <div class="subnav" id="subnav"></div>
 
   <section class="panel show" data-p="vocab">
     <h2 class="sec">Vocabulario · flashcards</h2>
-    <p class="lead">Álle woorden van U0. Klik om te draaien; wissel ES↔NL. <span class="gloss">Voorkant = Spaans + voorbeeldzin, achterkant = vertaling.</span></p>
+    <p class="lead">Álle woorden van U0. Klik om te draaien; wissel ES↔NL; klik 🔊 om te horen. <span class="gloss">Voorkant = Spaans + voorbeeldzin, achterkant = vertaling.</span></p>
     __FC__
     <h2 class="sec">Naslagwerk · zoeken</h2>
     __NAS__
@@ -169,35 +192,42 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
 
   <section class="panel" data-p="gram">
     <h2 class="sec">Gramática visual e interactiva</h2>
-    <p class="lead">Eerst betekenis en patroon ontdekken, dan de regel. Beweeg over de woorden, klik, en probeer.</p>
+    <p class="lead">Eerst betekenis en patroon ontdekken, dan de regel. Beweeg over de woorden, klik, en probeer. <span class="gloss">Alles binnen het thema van U0: klanken, het abecedario en het accent.</span></p>
+    <div class="card" id="abc"></div>
     <div class="card" id="colorsent"></div>
     <div class="game" id="g_tilde"></div>
     <div class="game" id="g_silaba"></div>
-    <div class="card" id="wheel"></div>
   </section>
 
   <section class="panel" data-p="juegos">
-    <h2 class="sec">Juegos · oefenen met feedback</h2>
-    <p class="lead">Receptief → productief. Elke ronde met directe, verklarende feedback.</p>
+    <h2 class="sec">Ejercicios · veel oefeningen, jij kiest</h2>
+    <p class="lead">Een ruime keuze aan oefeningen, geordend van <b>herkennen → luisteren → kiezen → zelf schrijven → communiceren</b>. Kies wat je wil oefenen; elke ronde geeft directe, verklarende feedback en de steun bouwt af (model → beginletter → geen steun).</p>
+    <h3 class="subh">① Reconocer · luisteren &amp; herkennen <span class="pill">receptief</span></h3>
+    <div class="game" id="g_escucha"></div>
     <div class="game" id="g_sonido"></div>
+    <div class="game" id="g_marcatilde"></div>
     <div class="game" id="g_sombrero"></div>
+    <div class="game" id="g_vf"></div>
+    <h3 class="subh">② Practicar · gestuurd produceren <span class="pill">productief met steun</span></h3>
+    <div class="game" id="g_completa"></div>
+    <div class="game" id="g_dictado"></div>
+    <div class="game" id="g_ordenaletras"></div>
     <div class="game" id="g_numeros"></div>
+    <div class="game" id="g_escribenum"></div>
     <div class="game" id="g_saludos"></div>
     <div class="game" id="g_genero"></div>
+    <h3 class="subh">③ Producir &amp; comunicar <span class="pill">vrije productie</span></h3>
     <div class="game" id="g_orden"></div>
+    <div class="game" id="g_presentate"></div>
+    <h3 class="subh">④ Repasar jugando <span class="pill">arcade</span></h3>
     <div class="game" id="g_memory"></div>
     <div class="card" id="motorlink"></div>
   </section>
 
-  <section class="panel" data-p="conjug">
-    <h2 class="sec">Conjugador</h2>
-    __CONJ__
-  </section>
-
   <section class="panel" data-p="cultura">
     <h2 class="sec">Cultura · el mundo hispano</h2>
-    <p class="lead">+20 países, ~500 miljoen sprekers. Onze route dit jaar: España → México → Colombia → Perú.</p>
-    <div class="card">__MAP__</div>
+    <p class="lead">+20 países, ~500 miljoen sprekers. <b>Klik op een groen land</b> op de kaart voor info. Onze route dit jaar: España → México → Colombia → Perú.</p>
+    <div class="card" id="mapwrap">__MAP__<div class="mapinfo" id="mapinfo"><p class="gloss" style="margin:0">👆 Klik op een groen land (of een halte ★) om er meer over te lezen.</p></div></div>
   </section>
 
   <section class="panel" data-p="extra">
@@ -208,16 +238,27 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
     <p>📄 In het boek (PDF) verwijzen de QR-codes naar déze pagina, op het juiste ankerpunt.</p></div>
   </section>
 
-  <div class="foot">Español en la práctica · C5 · Unidad 0 — página digital (v1). Huisstijl groen · print ↔ PowerPoint ↔ web.</div>
+  <div class="foot">Español en la práctica · C5 · Unidad 0 — página digital (v2). Uitbreiding op de PDF · huisstijl groen · print ↔ PowerPoint ↔ web.</div>
 </main>
+
+<div class="modal" id="gmodal"><div class="modalbox">
+  <div class="modalbar"><span id="gmtitle">Juego</span><button onclick="closeGame()">✕ sluiten</button></div>
+  <iframe id="gframe" title="Spel"></iframe>
+</div></div>
+
 <script>__DATA__
 __JS__
 </script></body></html>"""
 
 JS = r"""
 function toggleTheme(){const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'}
+// ---------- spraak (TTS) ----------
+function speak(t,rate){if(!('speechSynthesis'in window))return;const u=new SpeechSynthesisUtterance(t);u.lang='es-ES';u.rate=rate||.92;
+  const vs=speechSynthesis.getVoices();const es=vs.find(v=>/^es/i.test(v.lang));if(es)u.voice=es;try{speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}
+const TTS=('speechSynthesis'in window);
+if(TTS){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}
 // subnav
-const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['juegos','Juegos'],['conjug','Conjugador'],['cultura','Cultura'],['extra','Extra']];
+const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['juegos','Juegos'],['cultura','Cultura'],['extra','Extra']];
 const sn=document.getElementById('subnav');
 PANELS.forEach((p,i)=>{const b=document.createElement('button');b.textContent=p[1];if(i===0)b.classList.add('on');b.onclick=()=>{
   document.querySelectorAll('.subnav button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
@@ -232,8 +273,9 @@ function renderFC(){const q=(document.getElementById('fcsearch').value||'').toLo
   FCorder.forEach(i=>{const v=VOCAB[i];if(q&&!(v.es.toLowerCase().includes(q)||v.nl.toLowerCase().includes(q)))return;n++;
     const front=dir==='es'?v.es:v.nl, back=dir==='es'?v.nl:v.es, ej=dir==='es'?('«'+v.ej+'»'):'';
     const d=document.createElement('div');d.className='fc';d.tabIndex=0;
-    d.innerHTML='<div class="in"><div class="s"><div class="w">'+front+'</div>'+(ej?'<div class="ej">'+ej+'</div>':'')+'</div><div class="b"><div class="tr">'+back+'</div></div></div>';
+    d.innerHTML='<div class="in"><div class="s">'+(TTS?'<span class="spk" title="luister">🔊</span>':'')+'<div class="w">'+front+'</div>'+(ej?'<div class="ej">'+ej+'</div>':'')+'</div><div class="b"><div class="tr">'+back+'</div></div></div>';
     d.onclick=()=>d.classList.toggle('flip');d.onkeydown=e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();d.classList.toggle('flip')}};
+    const sp=d.querySelector('.spk');if(sp)sp.onclick=e=>{e.stopPropagation();speak(v.es);};
     g.appendChild(d);});
   document.getElementById('fccount').textContent=n+' woorden';}
 // ---------- naslag ----------
@@ -242,28 +284,23 @@ function renderTable(){const q=(document.getElementById('vsearch').value||'').to
     const tr=document.createElement('tr');tr.innerHTML='<td><b>'+v.es+'</b></td><td>'+v.nl+'</td><td>'+v.soort+'</td><td class="gloss">'+v.ej+'</td>';b.appendChild(tr);});
   document.getElementById('vcount').textContent=n+' items';}
 
-// ---------- conjugador ----------
-const IRR={ser:['soy','eres','es','somos','sois','son'],estar:['estoy','estás','está','estamos','estáis','están'],
- tener:['tengo','tienes','tiene','tenemos','tenéis','tienen'],ir:['voy','vas','va','vamos','vais','van'],
- hacer:['hago','haces','hace','hacemos','hacéis','hacen'],ll:0};
-const PRON=['yo','tú','él/ella','nosotros','vosotros','ellos/ellas'];
-function conjugate(){const raw=(document.getElementById('verbin').value||'').trim().toLowerCase();const out=document.getElementById('conjout');
-  if(!raw){out.innerHTML='';return}
-  let forms,note='';
-  if(IRR[raw]){forms=IRR[raw];note='onregelmatig (nagerekend)';}
-  else if(/ar$|er$|ir$/.test(raw)){const st=raw.slice(0,-2);const t=raw.slice(-2);
-    const E={ar:['o','as','a','amos','áis','an'],er:['o','es','e','emos','éis','en'],ir:['o','es','e','imos','ís','en']}[t];
-    forms=E.map(e=>st+e);note='regelmatig · -'+t;}
-  else{out.innerHTML='<p class="gloss">Geef een infinitivo op -ar / -er / -ir (bv. hablar, comer, vivir) of een kernwerkwoord (ser, estar, tener, ir, hacer).</p>';return}
-  out.innerHTML='<div class="pill">presente · '+note+'</div><div class="conjgrid">'+
-    forms.map((f,i)=>'<div class="pv"><div class="p">'+PRON[i]+'</div><div class="f">'+f+'</div></div>').join('')+'</div>';}
-
 // ---------- helpers spellen ----------
 function scoreBar(id){return '<div class="scorebar" id="'+id+'"><span>Punten: <b class="pt">0</b></span><span>Reeks: <b class="st">0</b></span></div>'}
 function setScore(el,pt,st){el.querySelector('.pt').textContent=pt;el.querySelector('.st').textContent=st}
 function feedback(el,ok,msg){el.className='fb '+(ok?'good':'bad');el.innerHTML=(ok?'✅ ':'❌ ')+msg}
+function strip(w){return w.normalize('NFD').replace(/[̀-ͯ]/g,'')}
 
-// ---------- kleur-zin (grammar-viz 1) ----------
+// ---------- ABECEDARIO interactief (klik → hoor de naam + voorbeeld) ----------
+(function(){const el=document.getElementById('abc');
+ const L=[['a','a','árbol'],['b','be','bota'],['c','ce','casa'],['ch','che','chocolate'],['d','de','dedo'],['e','e','elefante'],['f','efe','foca'],['g','ge','gato'],['h','hache','hola'],['i','i','isla'],['j','jota','jamón'],['k','ka','kilo'],['l','ele','luna'],['ll','elle','lluvia'],['m','eme','mesa'],['n','ene','nube'],['ñ','eñe','niño'],['o','o','oso'],['p','pe','perro'],['q','cu','queso'],['r','erre','rojo'],['s','ese','sol'],['t','te','taza'],['u','u','uva'],['v','uve','vaca'],['w','uve doble','wifi'],['x','equis','examen'],['y','ye','yo'],['z','zeta','zapato']];
+ el.innerHTML='<h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 4px">El abecedario — 27 letras (+ ch, ll)</h3><p class="desc">Klik een letter: je hoort de <b>naam</b> van de letter en een voorbeeldwoord. Let op de valstrikken: <b>h</b> (muda), <b>j / ge / gi</b> (jota), <b>ll / y</b>, <b>ñ</b>, <b>z / ce / ci</b>.</p><div class="abcgrid" id="abcg"></div><div class="fb" id="abcfb"></div>';
+ const g=el.querySelector('#abcg');
+ L.forEach(([ltr,nm,ej])=>{const d=document.createElement('div');d.className='abc-l';d.innerHTML='<div class="big">'+ltr+'</div><div class="nm">'+nm+'</div>';
+   d.onclick=()=>{speak(nm);setTimeout(()=>speak(ej),700);feedback(el.querySelector('#abcfb'),true,'<b>'+ltr+'</b> = «'+nm+'» · '+ej);};g.appendChild(d);});
+ if(!TTS)el.querySelector('.desc').innerHTML+=' <span class="gloss">(Spraak werkt in Chrome/Edge.)</span>';
+})();
+
+// ---------- kleur-zin (grammar-viz) ----------
 document.getElementById('colorsent').innerHTML='<h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px">Kleurgecodeerde zin — beweeg over de woorden</h3>'+
 '<div class="csent">'+
 '<span style="background:#dbeafe;color:#1e40af">Yo<span class="tip">onderwerp (persona)</span></span> '+
@@ -272,30 +309,36 @@ document.getElementById('colorsent').innerHTML='<h3 style="font-family:var(--dis
 '<span style="background:#ede9fe;color:#5b21b6">hoy<span class="tip">tijd (ahora)</span></span>.</div>'+
 '<div class="legend"><span><i style="background:#93c5fd"></i>onderwerp</span><span><i style="background:#fdba74"></i>werkwoord</span><span><i style="background:#86efac"></i>voorwerp</span><span><i style="background:#c4b5fd"></i>tijd</span></div>';
 
-// ---------- vervoegingscirkel (grammar-viz 8) ----------
-(function(){const box=document.getElementById('wheel');const verb='hablar';const st='habl';const E=['o','as','a','amos','áis','an'];
- box.innerHTML='<h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px">Vervoegingscirkel — klik een persoon</h3><p class="desc" style="color:var(--mut)">'+verb+' (presente). Klik yo/tú/…</p><div class="wheel"><div class="wcirc" id="wc"></div></div>';
- const wc=document.getElementById('wc');const R=95,cx=115,cy=115;
- wc.innerHTML='<div class="mid"><div class="p" style="font-size:12px;color:var(--mut)">'+verb+'</div><div class="v" id="wv">—</div></div>';
- PRON.forEach((p,i)=>{const a=(-90+i*60)*Math.PI/180;const x=cx+R*Math.cos(a),y=cy+R*Math.sin(a);
-   const b=document.createElement('button');b.textContent=p;b.style.left=x+'px';b.style.top=y+'px';
-   b.onclick=()=>{wc.querySelectorAll('button').forEach(z=>z.classList.remove('on'));b.classList.add('on');document.getElementById('wv').textContent=st+E[i]};wc.appendChild(b);});
-})();
-
+// ---------- GAME: escucha (luisteren, TTS) ----------
+function gameEscucha(){const el=document.getElementById('g_escucha');
+ if(!TTS){el.innerHTML='<h3>¿Qué oyes? — luisteren</h3><p class="desc">Je browser ondersteunt geen spraak. Probeer Chrome of Edge om deze luisteroefening te doen.</p>';return;}
+ const bank=['uno','dos','siete','doce','veinte','treinta','cien','hola','gracias','adiós','buenos días','México','España','Perú'];
+ let pt=0,st=0;
+ el.innerHTML='<h3>¿Qué oyes? — luisteren</h3><p class="desc">Klik ▶, luister en kies wat je hoort. Herbeluisteren mag.</p>'+scoreBar('sbE')+
+  '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:6px 0"><button class="spk-btn" id="ePlay">▶ Speel af</button></div><div class="chips" id="eOpts" style="margin-top:8px"></div><div class="fb" id="eFb"></div>';
+ const sb=el.querySelector('#sbE');
+ function next(){const ans=bank[Math.floor(Math.random()*bank.length)];el.cur=ans;
+   const opts=[ans];while(opts.length<4){const c=bank[Math.floor(Math.random()*bank.length)];if(!opts.includes(c))opts.push(c);}opts.sort(()=>Math.random()-.5);
+   const oc=el.querySelector('#eOpts');oc.innerHTML='';opts.forEach(o=>{const c=document.createElement('div');c.className='chip';c.textContent=o;c.onclick=()=>{const ok=o===ans;if(ok){pt++;st++}else st=0;setScore(sb,pt,st);
+     oc.querySelectorAll('.chip').forEach(z=>{if(z.textContent===ans)z.classList.add('ok');else if(z===c&&!ok)z.classList.add('no');});
+     feedback(el.querySelector('#eFb'),ok,(ok?'¡Sí! ':'Je hoorde: ')+'«'+ans+'».');setTimeout(next,1100);};oc.appendChild(c);});
+   el.querySelector('#eFb').className='fb';speak(ans);}
+ el.querySelector('#ePlay').onclick=()=>speak(el.cur);next();}
 // ---------- GAME: klank sorteren (b=v / h muda / jota) ----------
 function gameSonido(){const el=document.getElementById('g_sonido');
  const items=[['vaca','bv'],['bota','bv'],['hola','h'],['hora','h'],['jamón','j'],['gente','j'],['vino','bv'],['hijo','h'],['gigante','j']];
  const cats={bv:'b = v (zelfde klank)',h:'h · zwijgt',j:'jota (j · ge · gi)'};
  let pool=items.slice(),pt=0,st=0;
- el.innerHTML='<h3>Klank-detective</h3><p class="desc">In welke klankfamilie hoort het woord? Klik het woord, klik dan de familie.</p>'+scoreBar('sb1')+
-  '<div id="s1word" style="font-size:26px;font-family:var(--disp);text-align:center;margin:8px 0"></div>'+
-  '<div class="chips" id="s1cats"></div><div class="fb" id="s1fb"></div>';
+ el.innerHTML='<h3>Klank-detective</h3><p class="desc">In welke klankfamilie hoort het woord? Klik 🔊 om te horen, kies dan de familie.</p>'+scoreBar('sb1')+
+  '<div style="display:flex;gap:10px;align-items:center;justify-content:center;margin:8px 0"><span id="s1word" style="font-size:26px;font-family:var(--disp)"></span>'+(TTS?'<button class="spk-btn" id="s1play">🔊</button>':'')+'</div>'+
+  '<div class="chips" id="s1cats" style="justify-content:center"></div><div class="fb" id="s1fb"></div>';
  const sb=el.querySelector('#sb1');const cont=el.querySelector('#s1cats');
  Object.entries(cats).forEach(([k,v])=>{const c=document.createElement('div');c.className='chip';c.textContent=v;c.onclick=()=>guess(k);cont.appendChild(c);});
+ const pb=el.querySelector('#s1play');if(pb)pb.onclick=()=>speak(el.cur[0]);
  function next(){if(!pool.length)pool=items.slice();const idx=Math.floor(Math.random()*pool.length);el.cur=pool.splice(idx,1)[0];el.querySelector('#s1word').textContent=el.cur[0];el.querySelector('#s1fb').className='fb';}
  function guess(k){const ok=k===el.cur[1];if(ok){pt++;st++}else st=0;setScore(sb,pt,st);
    const ex={bv:'b en v klinken identiek in het Spaans.',h:'de h wordt niet uitgesproken.',j:'j, en ge/gi, klinken als een harde keel-ch.'};
-   feedback(el.querySelector('#s1fb'),ok,ok?('«'+el.cur[0]+'» — juist! '+ex[el.cur[1]]):('«'+el.cur[0]+'» hoort bij: '+cats[el.cur[1]]+'. '+ex[el.cur[1]]));setTimeout(next,900);}
+   feedback(el.querySelector('#s1fb'),ok,ok?('«'+el.cur[0]+'» — juist! '+ex[el.cur[1]]):('«'+el.cur[0]+'» hoort bij: '+cats[el.cur[1]]+'. '+ex[el.cur[1]]));setTimeout(next,950);}
  next();}
 // ---------- GAME: la regla del sombrero ----------
 function gameSombrero(){const el=document.getElementById('g_sombrero');
@@ -303,13 +346,25 @@ function gameSombrero(){const el=document.getElementById('g_sombrero');
  const cats={aguda:'aguda (laatste)',llana:'llana (voorlaatste)',esdrujula:'esdrújula (3e van achteren)'};
  let pool=items.slice(),pt=0,st=0;
  el.innerHTML='<h3>La regla del sombrero</h3><p class="desc">Waar ligt de klemtoon? Kies de familie.</p>'+scoreBar('sb2')+
-  '<div id="s2word" style="font-size:26px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" id="s2cats"></div><div class="fb" id="s2fb"></div>';
+  '<div id="s2word" style="font-size:26px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" id="s2cats" style="justify-content:center"></div><div class="fb" id="s2fb"></div>';
  const sb=el.querySelector('#sb2');const cont=el.querySelector('#s2cats');
  Object.entries(cats).forEach(([k,v])=>{const c=document.createElement('div');c.className='chip';c.textContent=v;c.onclick=()=>guess(k);cont.appendChild(c);});
  function next(){if(!pool.length)pool=items.slice();const i=Math.floor(Math.random()*pool.length);el.cur=pool.splice(i,1)[0];el.querySelector('#s2word').textContent=el.cur[0];el.querySelector('#s2fb').className='fb';}
  function guess(k){const ok=k===el.cur[1];if(ok){pt++;st++}else st=0;setScore(sb,pt,st);
-   feedback(el.querySelector('#s2fb'),ok,ok?'¡Correcto! «'+el.cur[0]+'» is '+cats[el.cur[1]]+'.':'«'+el.cur[0]+'» is '+cats[el.cur[1]]+'.');setTimeout(next,900);}
+   feedback(el.querySelector('#s2fb'),ok,ok?'¡Correcto! «'+el.cur[0]+'» is '+cats[el.cur[1]]+'.':'«'+el.cur[0]+'» is '+cats[el.cur[1]]+'.');setTimeout(next,950);}
  next();}
+// ---------- GAME: completa (gap-fill, productief) ----------
+function gameCompleta(){const el=document.getElementById('g_completa');
+ // woord met ontbrekende letter (accent/valstrik); typ de ontbrekende letter(s)
+ const items=[['café','caf_','é','aguda op klinker → tilde'],['adiós','adi_s','ó','aguda op -s → tilde'],['México','M_xico','é','esdrújula → altijd tilde'],['música','m_sica','ú','esdrújula → altijd tilde'],['jamón','jam_n','ó','aguda op -n → tilde'],['teléfono','tel_fono','é','esdrújula → altijd tilde'],['hola','_ola','h','de h is muda (zwijgt)'],['gente','_ente','g','ge klinkt als jota']];
+ let pool=items.slice(),pt=0,st=0;
+ el.innerHTML='<h3>Completa la palabra — vul aan</h3><p class="desc">Typ de ontbrekende letter (met of zonder hoedje) en druk Enter.</p>'+scoreBar('sbC')+
+  '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0"><span id="cWord" style="font-size:26px;font-family:var(--disp)"></span><input class="txin" id="cIn" placeholder="?" autocomplete="off"><button class="btn small" id="cGo">OK</button></div><div class="fb" id="cFb"></div>';
+ const sb=el.querySelector('#sbC');const inp=el.querySelector('#cIn');
+ function next(){if(!pool.length)pool=items.slice();const i=Math.floor(Math.random()*pool.length);el.cur=pool.splice(i,1)[0];el.querySelector('#cWord').textContent=el.cur[1].replace('_','__');inp.value='';inp.focus();el.querySelector('#cFb').className='fb';}
+ function check(){const g=(inp.value||'').trim().toLowerCase();if(!g)return;const ok=g===el.cur[2];if(ok){pt++;st++}else st=0;setScore(sb,pt,st);
+   feedback(el.querySelector('#cFb'),ok,(ok?'¡Perfecto! ':'De letter is «'+el.cur[2]+'». ')+'«'+el.cur[0]+'» — '+el.cur[3]+'.');setTimeout(next,1200);}
+ el.querySelector('#cGo').onclick=check;inp.onkeydown=e=>{if(e.key==='Enter')check();};next();}
 // ---------- GAME: números match ----------
 function gameNumeros(){const el=document.getElementById('g_numeros');
  const P=[[3,'tres'],[7,'siete'],[12,'doce'],[16,'dieciséis'],[21,'veintiuno'],[40,'cuarenta'],[55,'cincuenta y cinco'],[100,'cien']];
@@ -341,10 +396,21 @@ function gameGenero(){const el=document.getElementById('g_genero');
  window._genGuess=k=>{const ok=k===el.cur[1];if(ok){pt++;st++}else st=0;setScore(sb,pt,st);
    feedback(el.querySelector('#s4fb'),ok,(ok?'¡Sí! ':'Nee → ')+el.cur[1]+' '+el.cur[0]);setTimeout(next,850);};
  next();}
+// ---------- GAME: verdadero o falso (regels) ----------
+function gameVF(){const el=document.getElementById('g_vf');
+ const items=[['«b» y «v» suenan igual.',true],['La «h» se pronuncia siempre.',false],['Las esdrújulas siempre llevan tilde.',true],['«casa» lleva tilde.',false],['«ñ» suena como «nj» (español ↔ Spanje).',true],['Los números 16–29 se escriben en una palabra.',true],['«el mapa» es incorrecto; es «la mapa».',false],['«j», «ge» y «gi» tienen el sonido de la jota.',true]];
+ let pool=items.slice(),pt=0,st=0;
+ el.innerHTML='<h3>¿Verdadero o falso? — de regels</h3><p class="desc">Klopt de bewering over uitspraak/accent/getallen? Kies.</p>'+scoreBar('sbV')+
+  '<div id="vfStmt" style="font-size:18px;font-family:var(--disp);text-align:center;margin:10px 0;min-height:48px"></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._vf(true)">✓ verdadero</div><div class="chip" onclick="window._vf(false)">✗ falso</div></div><div class="fb" id="vfFb"></div>';
+ const sb=el.querySelector('#sbV');
+ function next(){if(!pool.length)pool=items.slice();const i=Math.floor(Math.random()*pool.length);el.cur=pool.splice(i,1)[0];el.querySelector('#vfStmt').textContent=el.cur[0];el.querySelector('#vfFb').className='fb';}
+ window._vf=g=>{const ok=g===el.cur[1];if(ok){pt++;st++}else st=0;setScore(sb,pt,st);
+   feedback(el.querySelector('#vfFb'),ok,(ok?'¡Correcto! ':'Nee → ')+'de bewering is '+(el.cur[1]?'verdadera (waar)':'falsa (onwaar)')+'.');setTimeout(next,1100);};
+ next();}
 // ---------- GAME: woordvolgorde ----------
 function gameOrden(){const el=document.getElementById('g_orden');
  const sol=['Yo','me llamo','Diego','y','soy de México'];let cur=[],pool=sol.slice().sort(()=>Math.random()-.5);
- el.innerHTML='<h3>Bouw de zin — sleepbare woordvolgorde</h3><p class="desc">Klik de tegels in de juiste volgorde. Doel: een correcte voorstelzin.</p>'+
+ el.innerHTML='<h3>Bouw de zin — woordvolgorde</h3><p class="desc">Klik de tegels in de juiste volgorde. Doel: een correcte voorstelzin.</p>'+
   '<div class="chips" id="oPool"></div><div class="col" id="oZone" style="margin-top:10px"><h4>jouw zin</h4><div class="chips" id="oBuilt"></div></div><div class="answerbtns"><button class="btn small" onclick="window._ordCheck()">Controleer</button><button class="btn sec small" onclick="window._ordReset()">Reset</button></div><div class="fb" id="oFb"></div>';
  function draw(){const p=el.querySelector('#oPool');p.innerHTML='';pool.forEach((w,i)=>{const c=document.createElement('div');c.className='chip';c.textContent=w;c.onclick=()=>{cur.push(w);pool.splice(i,1);draw();built();};p.appendChild(c);});}
  function built(){const b=el.querySelector('#oBuilt');b.innerHTML='';cur.forEach((w,i)=>{const c=document.createElement('div');c.className='chip sel';c.textContent=w;c.onclick=()=>{pool.push(w);cur.splice(i,1);draw();built();};b.appendChild(c);});}
@@ -385,33 +451,137 @@ function gameTilde(){const el=document.getElementById('g_tilde');
  let pool=W.slice(),pt=0,st=0;
  el.innerHTML='<h3>¿Lleva tilde? — de regel van het hoedje</h3><p class="desc">Draagt dit woord een accent (´)? Beslis en ontdek waarom.</p>'+scoreBar('sbTi')+'<div id="tiWord" style="font-size:26px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._tiGuess(true)">sí, lleva ´</div><div class="chip" onclick="window._tiGuess(false)">no lleva</div></div><div class="fb" id="tiFb"></div>';
  const sb=el.querySelector('#sbTi');
- function strip(w){return w.normalize('NFD').replace(/[̀-ͯ]/g,'');}
  function next(){if(!pool.length)pool=W.slice();const i=Math.floor(Math.random()*pool.length);el.cur=pool.splice(i,1)[0];el.querySelector('#tiWord').textContent=strip(el.cur[0]);el.querySelector('#tiFb').className='fb';}
  window._tiGuess=g=>{const ok=g===el.cur[1];if(ok){pt++;st++}else st=0;setScore(sb,pt,st);
    feedback(el.querySelector('#tiFb'),ok,(ok?'¡Correcto! ':'')+'«'+el.cur[0]+'» — '+el.cur[2]+(el.cur[1]?' → wél een hoedje.':' → géén hoedje.'));setTimeout(next,1100);};
  next();}
-// motor-arcade: 17 standalone spellen, gegroepeerd
-const MOTOR=[
- ['Sonidos · uitspraak',[['be-uve','b = v · con be/uve','classify'],['hache-muda','h muda · hola↔ola','cloze'],['la-jota','la jota · ge/gi/j','classify']]],
- ['El acento · el sombrero',[['aguda-llana-esdrujula','aguda/llana/esdrújula','classify'],['silaba-tonica','tik de tónica','tap'],['lleva-tilde','¿con/sin tilde?','cloze'],['donde-va-la-tilde','waar staat de tilde?','tap']]],
- ['Números 0–100',[['numeros-match','cifra ↔ letra','match'],['numeros-orden','klein → groot','order'],['numeros-memoria','geheugenspel','memory']]],
- ['Saludos · lengua de clase',[['saludos','saludos ES↔NL','match'],['saludo-despedida','saludo/despedida/cortesía','classify'],['lenguaje-de-clase','klaszinnen aanvullen','cloze']]],
- ['Vocabulario · mundo hispano',[['vocabulario-match','woordenschat ES↔NL','match'],['vocabulario-memoria','geheugenspel','memory'],['gentilicios','país ↔ gentilicio','match'],['genero','el / la','classify']]],
-];
-document.getElementById('motorlink').innerHTML='<h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 4px">Arcade · la máquina de juegos 🕹️</h3><p class="gloss" style="margin:0 0 10px">17 offline spellen met score & directe feedback. Klik om te spelen (opent apart).</p>'+
+
+// ---------- GAME: marca las tildes (receptief, multi-select) ----------
+function gameMarcaTilde(){const el=document.getElementById('g_marcatilde');
+ const bank=[['café',1],['casa',0],['México',1],['lunes',0],['adiós',1],['reloj',0],['música',1],['gente',0],['jamón',1],['mano',0],['sílaba',1],['acento',0]];
+ let pt=0,st=0;
+ function round(){const set=bank.slice().sort(()=>Math.random()-.5).slice(0,6);
+  el.innerHTML='<h3>Marca las tildes — klik alle woorden mét accent</h3><p class="desc">Selecteer élk woord dat een hoedje (´) draagt en klik Controleer.</p>'+scoreBar('sbMt')+'<div class="chips" id="mtW" style="justify-content:center"></div><div class="answerbtns"><button class="btn small" id="mtGo">Controleer</button><button class="btn sec small" id="mtNew">Nieuwe ronde</button></div><div class="fb" id="mtFb"></div>';
+  const c=el.querySelector('#mtW');set.forEach(([w,t])=>{const d=document.createElement('div');d.className='chip';d.textContent=w;d.dataset.t=t;d.onclick=()=>d.classList.toggle('sel');c.appendChild(d);});
+  el.querySelector('#mtGo').onclick=()=>{let ok=true;c.querySelectorAll('.chip').forEach(d=>{const sel=d.classList.contains('sel');const t=d.dataset.t==='1';if(t&&sel){d.classList.add('ok')}else if((!t&&sel)||(t&&!sel)){d.classList.add('no');ok=false}});
+   const sb=el.querySelector('#sbMt');if(ok){pt++;st++}else st=0;setScore(sb,pt,st);feedback(el.querySelector('#mtFb'),ok,ok?'¡Perfecto! Alle accenten juist aangeduid.':'Rood = fout aangeduid of gemist. Esdrújula draagt áltijd een accent.');};
+  el.querySelector('#mtNew').onclick=round;}
+ round();}
+// ---------- GAME: dictado (productief, TTS → typen) ----------
+function gameDictado(){const el=document.getElementById('g_dictado');
+ if(!TTS){el.innerHTML='<h3>Dictado — schrijf wat je hoort</h3><p class="desc">Spraak werkt in Chrome/Edge; open de pagina daar voor deze oefening.</p>';return;}
+ const bank=['hola','gracias','México','España','café','adiós','uno','doce','veinte','buenos días','jamón','música','Perú','Colombia'];
+ let pt=0,st=0;
+ el.innerHTML='<h3>Dictado — schrijf wat je hoort</h3><p class="desc">Klik ▶, luister en typ het woord (juiste letters én accenten). Enter = controleer.</p>'+scoreBar('sbD')+'<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0"><button class="spk-btn" id="dPlay">▶ Speel af</button><input class="txin" id="dIn" style="width:220px" placeholder="typ hier…" autocomplete="off"><button class="btn small" id="dGo">OK</button></div><div class="fb" id="dFb"></div>';
+ const sb=el.querySelector('#sbD');const inp=el.querySelector('#dIn');
+ function next(){el.cur=bank[Math.floor(Math.random()*bank.length)];inp.value='';inp.focus();el.querySelector('#dFb').className='fb';speak(el.cur);}
+ function check(){const g=(inp.value||'').trim().toLowerCase();if(!g)return;const ok=g===el.cur.toLowerCase();const near=strip(g)===strip(el.cur.toLowerCase());
+   if(ok){pt++;st++}else st=0;setScore(sb,pt,st);
+   feedback(el.querySelector('#dFb'),ok,ok?'¡Perfecto! «'+el.cur+'».':(near?'Bijna! Let op het accent → «'+el.cur+'».':'Het woord was: «'+el.cur+'».'));setTimeout(next,1500);}
+ el.querySelector('#dPlay').onclick=()=>speak(el.cur);el.querySelector('#dGo').onclick=check;inp.onkeydown=e=>{if(e.key==='Enter')check();};next();}
+// ---------- GAME: escribe el número ----------
+function gameEscribeNumero(){const el=document.getElementById('g_escribenum');
+ const M={0:'cero',1:'uno',2:'dos',3:'tres',4:'cuatro',5:'cinco',6:'seis',7:'siete',8:'ocho',9:'nueve',10:'diez',11:'once',12:'doce',13:'trece',14:'catorce',15:'quince',16:'dieciséis',17:'diecisiete',18:'dieciocho',19:'diecinueve',20:'veinte',21:'veintiuno',30:'treinta',40:'cuarenta',50:'cincuenta',100:'cien'};
+ const keys=Object.keys(M);let pt=0,st=0;
+ el.innerHTML='<h3>Escribe el número — schrijf voluit</h3><p class="desc">Schrijf het getal in letters. Tip: 16–29 = één woord. Enter = controleer.</p>'+scoreBar('sbN2')+'<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:8px 0"><span id="nNum" style="font-size:30px;font-family:var(--disp);color:var(--gd)"></span><input class="txin" id="nIn" style="width:240px" placeholder="in letters…" autocomplete="off"><button class="btn small" id="nGo">OK</button></div><div class="fb" id="nFb"></div>';
+ const sb=el.querySelector('#sbN2');const inp=el.querySelector('#nIn');
+ function next(){el.cur=keys[Math.floor(Math.random()*keys.length)];el.querySelector('#nNum').textContent=el.cur;inp.value='';inp.focus();el.querySelector('#nFb').className='fb';}
+ function check(){const g=(inp.value||'').trim().toLowerCase();if(!g)return;const want=M[el.cur];const ok=strip(g)===strip(want);
+   if(ok){pt++;st++}else st=0;setScore(sb,pt,st);feedback(el.querySelector('#nFb'),ok,ok?'¡Correcto! '+el.cur+' = «'+want+'».':el.cur+' = «'+want+'».');setTimeout(next,1300);}
+ el.querySelector('#nGo').onclick=check;inp.onkeydown=e=>{if(e.key==='Enter')check();};next();}
+// ---------- GAME: ordena las letras (anagram) ----------
+function gameOrdenaLetras(){const el=document.getElementById('g_ordenaletras');
+ const bank=['hola','gato','casa','sol','luna','mesa','jamón','café','México','gracias','España','vaca'];
+ function next(el2){const w=bank[Math.floor(Math.random()*bank.length)];el.cur=w;let cur=[],pool=w.split('').sort(()=>Math.random()-.5);
+  el.innerHTML='<h3>Ordena las letras — vorm het woord</h3><p class="desc">Klik de letters in de juiste volgorde.'+(TTS?' 🔊 hint beschikbaar.':'')+'</p>'+scoreBar('sbOl')+(TTS?'<button class="spk-btn" id="olPlay" style="margin:0 0 8px">🔊 hoor het woord</button>':'')+'<div class="chips" id="olPool" style="font-size:20px;justify-content:center"></div><div class="col" style="margin-top:10px"><h4>jouw woord</h4><div class="chips" id="olBuilt" style="font-size:20px"></div></div><div class="answerbtns"><button class="btn sec small" id="olReset">Reset</button><button class="btn sec small" id="olNew">Ander woord</button></div><div class="fb" id="olFb"></div>';
+  const sb=el.querySelector('#sbOl');const pp=el.querySelector('#olPool'),bb=el.querySelector('#olBuilt');
+  const pb=el.querySelector('#olPlay');if(pb)pb.onclick=()=>speak(w);
+  function draw(){pp.innerHTML='';pool.forEach((ch,i)=>{const c=document.createElement('div');c.className='chip';c.textContent=ch;c.onclick=()=>{cur.push(ch);pool.splice(i,1);draw();built();check();};pp.appendChild(c);});}
+  function built(){bb.innerHTML='';cur.forEach((ch,i)=>{const c=document.createElement('div');c.className='chip sel';c.textContent=ch;c.onclick=()=>{pool.push(ch);cur.splice(i,1);draw();built();};bb.appendChild(c);});}
+  function check(){if(pool.length)return;const ok=cur.join('')===w;if(ok){el._pt=(el._pt||0)+1;el._st=(el._st||0)+1;setScore(sb,el._pt,el._st);feedback(el.querySelector('#olFb'),true,'¡'+w+'! Correcto.');setTimeout(()=>next(),1200);}else{el._st=0;setScore(sb,el._pt||0,0);feedback(el.querySelector('#olFb'),false,'Nog niet — reset en probeer opnieuw.');}}
+  el.querySelector('#olReset').onclick=()=>{pool=pool.concat(cur);cur=[];pool.sort(()=>Math.random()-.5);draw();built();el.querySelector('#olFb').className='fb';};
+  el.querySelector('#olNew').onclick=()=>next();draw();built();}
+ next();}
+// ---------- GAME: preséntate (vrije productie, steun bouwt af) ----------
+function gamePresentate(){const el=document.getElementById('g_presentate');
+ el.innerHTML='<h3>Preséntate — stel jezelf voor</h3><p class="desc">Vul je eigen gegevens in. Dit is <b>vrije productie</b>: er is geen «juist» antwoord — je maakt je eigen zin met het zinsframe. Zeg hem daarna hardop, en probeer ronde 2 uit het hoofd.</p>'+
+  '<div style="display:grid;gap:8px;max-width:480px">'+
+  '<div style="display:flex;gap:8px;align-items:center"><span style="font-family:var(--disp);min-width:78px">Me llamo</span><input class="txin" id="pr1" style="width:auto;flex:1" placeholder="je naam"></div>'+
+  '<div style="display:flex;gap:8px;align-items:center"><span style="font-family:var(--disp);min-width:78px">Soy de</span><input class="txin" id="pr2" style="width:auto;flex:1" placeholder="stad / land"></div>'+
+  '<div style="display:flex;gap:8px;align-items:center"><span style="font-family:var(--disp);min-width:78px">Tengo</span><input class="txin" id="pr3" style="width:80px" placeholder="14"><span style="font-family:var(--disp)">años.</span></div>'+
+  '</div><div class="answerbtns"><button class="btn small" id="prGo">Maak mijn zin</button>'+(TTS?'<button class="spk-btn" id="prSpk">🔊 hoor mijn zin</button>':'')+'</div><div class="fb" id="prFb"></div>';
+ el.querySelector('#prGo').onclick=()=>{const a=(el.querySelector('#pr1').value||'').trim()||'…',b=(el.querySelector('#pr2').value||'').trim()||'…',c=(el.querySelector('#pr3').value||'').trim()||'…';
+   el.cur='Hola, me llamo '+a+'. Soy de '+b+' y tengo '+c+' años. ¿Y tú?';
+   feedback(el.querySelector('#prFb'),true,'<b style="font-size:16px">'+el.cur+'</b><br><span class="gloss">Zeg het nu hardop. Ronde 2: dek de vakken af en zeg het uit het hoofd.</span>');};
+ const sp=el.querySelector('#prSpk');if(sp)sp.onclick=()=>{if(el.cur)speak(el.cur);};}
+
+// ---------- MOTOR-ARCADE: 17 spellen, ingebed (openen in modal, werkt offline) ----------
+document.getElementById('motorlink').innerHTML='<h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 4px">Arcade · la máquina de juegos 🕹️</h3><p class="gloss" style="margin:0 0 10px">17 extra spellen met score & directe feedback — ingebed, dus ze werken ook als je dit bestand downloadt. Klik om te spelen.</p>'+
  MOTOR.map(([grp,gs])=>'<div style="margin:10px 0 4px;font-weight:700;color:var(--gd);font-size:13px">'+grp+'</div><div class="fcgrid">'+
-   gs.map(([f,t,tpl])=>'<a href="../../spaans-motor/games/es-u0-'+f+'.html" target="_blank" style="text-decoration:none"><div class="chip" style="display:block;border-radius:12px;border-color:var(--line)"><div style="font-weight:700;color:var(--ink);font-size:14px">'+t+'</div><div class="pill" style="margin-top:4px;font-size:10px">'+tpl+'</div></div></a>').join('')+'</div>').join('');
+   gs.map(([f,t,tpl])=>'<div class="chip" style="display:block;border-radius:12px" onclick="openGame(\''+f+'\',\''+t.replace(/'/g,"")+'\')"><div style="font-weight:700;color:var(--ink);font-size:14px">'+t+'</div><div class="pill" style="margin-top:4px;font-size:10px">'+tpl+'</div></div>').join('')+'</div>').join('');
+function openGame(slug,title){const g=GAMES[slug];if(!g){alert('Spel niet gevonden.');return;}
+  document.getElementById('gmtitle').textContent=title;document.getElementById('gframe').src='data:text/html;base64,'+g;document.getElementById('gmodal').classList.add('show');}
+function closeGame(){document.getElementById('gmodal').classList.remove('show');document.getElementById('gframe').src='about:blank';}
+document.getElementById('gmodal').addEventListener('click',e=>{if(e.target.id==='gmodal')closeGame();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeGame();});
+
+// ---------- KAART interactief (klik op een land) ----------
+(function(){
+ const INFO={
+  ESP:{fl:'🇪🇸',n:'España',cap:'Madrid',f:'De bakermat van het Spaans; onze parada 0.',nl:'Vertrekpunt van de reis.',star:1},
+  MEX:{fl:'🇲🇽',n:'México',cap:'Ciudad de México',f:'Het land met de meeste Spaanstaligen (~130 mln).',nl:'Meeste sprekers ter wereld · parada (Diego).',star:1},
+  COL:{fl:'🇨🇴',n:'Colombia',cap:'Bogotá',f:'Parada: Cartagena, aan de Caribische kust.',nl:'Parada van Valen.',star:1},
+  PER:{fl:'🇵🇪',n:'Perú',cap:'Lima',f:'Parada: Cusco en Machu Picchu, in de Andes.',nl:'Parada van Nina.',star:1},
+  GTM:{fl:'🇬🇹',n:'Guatemala',cap:'Ciudad de Guatemala',f:'Rijke Maya-erfenis.',nl:''},
+  HND:{fl:'🇭🇳',n:'Honduras',cap:'Tegucigalpa',f:'In het hart van Centraal-Amerika.',nl:''},
+  SLV:{fl:'🇸🇻',n:'El Salvador',cap:'San Salvador',f:'Het kleinste land van Centraal-Amerika.',nl:''},
+  NIC:{fl:'🇳🇮',n:'Nicaragua',cap:'Managua',f:'Land van meren en vulkanen.',nl:''},
+  CRI:{fl:'🇨🇷',n:'Costa Rica',cap:'San José',f:'«¡Pura vida!» — geen leger.',nl:''},
+  PAN:{fl:'🇵🇦',n:'Panamá',cap:'Panamá',f:'Het kanaal verbindt twee oceanen.',nl:''},
+  CUB:{fl:'🇨🇺',n:'Cuba',cap:'La Habana',f:'Bakermat van son en salsa.',nl:''},
+  DOM:{fl:'🇩🇴',n:'República Dominicana',cap:'Santo Domingo',f:'De oudste stad van Amerika.',nl:''},
+  PRI:{fl:'🇵🇷',n:'Puerto Rico',cap:'San Juan',f:'Vrijstaat verbonden met de VS.',nl:''},
+  VEN:{fl:'🇻🇪',n:'Venezuela',cap:'Caracas',f:'De Salto Ángel: hoogste waterval ter wereld.',nl:''},
+  ECU:{fl:'🇪🇨',n:'Ecuador',cap:'Quito',f:'«La mitad del mundo»: op de evenaar.',nl:''},
+  BOL:{fl:'🇧🇴',n:'Bolivia',cap:'Sucre / La Paz',f:'De Salar de Uyuni: grootste zoutvlakte.',nl:''},
+  PRY:{fl:'🇵🇾',n:'Paraguay',cap:'Asunción',f:'Tweetalig: español én guaraní.',nl:''},
+  URY:{fl:'🇺🇾',n:'Uruguay',cap:'Montevideo',f:'Klein land tussen twee reuzen.',nl:''},
+  ARG:{fl:'🇦🇷',n:'Argentina',cap:'Buenos Aires',f:'De tango; vanaf C6 gastheer Mateo (voseo).',nl:''},
+  CHL:{fl:'🇨🇱',n:'Chile',cap:'Santiago',f:'Het langste, smalste land ter wereld.',nl:''},
+  GNQ:{fl:'🇬🇶',n:'Guinea Ecuatorial',cap:'Malabo',f:'Het enige Spaanstalige land in Afrika.',nl:''},
+  USA:{fl:'🇺🇸',n:'Estados Unidos',cap:'Washington D.C.',f:'~60 mln hispanohablantes — geen officiële taal, wél overal aanwezig.',nl:''}
+ };
+ const wrap=document.getElementById('mapwrap');const svg=wrap.querySelector('svg');const box=document.getElementById('mapinfo');
+ if(!svg)return;
+ svg.querySelectorAll('path.spa, path.usa').forEach(p=>{p.style.cursor='pointer';
+   p.addEventListener('mouseenter',()=>{p.style.opacity='.75'});
+   p.addEventListener('mouseleave',()=>{p.style.opacity=''});
+   p.addEventListener('click',()=>{const c=p.getAttribute('data-c');const d=INFO[c];if(!d)return;
+     box.innerHTML='<h3>'+d.fl+' '+d.n+' <span style="font-size:13px;color:var(--mut);font-weight:400">('+c+')</span>'+(d.star?' ★':'')+'</h3><div class="mrow"><b>Capital:</b> '+d.cap+'</div><div class="mrow">'+d.f+'</div>'+(d.nl?'<div class="gloss">'+d.nl+'</div>':'');
+     box.scrollIntoView({behavior:'smooth',block:'nearest'});});
+ });
+})();
 
 // init
-renderFC();renderTable();conjugate();gameSilaba();gameTilde();gameSonido();gameSombrero();gameNumeros();gameSaludos();gameGenero();gameOrden();gameMemory();
+renderFC();renderTable();
+// ① receptief
+gameEscucha();gameSonido();gameMarcaTilde();gameSombrero();gameVF();
+// ② gestuurd productief
+gameCompleta();gameDictado();gameOrdenaLetras();gameNumeros();gameEscribeNumero();gameSaludos();gameGenero();
+// ③ vrije productie
+gameOrden();gamePresentate();
+// ④ repaso
+gameMemory();
+// gramática-viz
+gameSilaba();gameTilde();
 // hash-navigatie (deep-link naar een paneel)
 (function(){const h=location.hash.replace('#','');const i=PANELS.findIndex(p=>p[0]===h);if(i>=0)sn.children[i].click();})();
 window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');const i=PANELS.findIndex(p=>p[0]===h);if(i>=0)sn.children[i].click();});
 """
 
 html=(HTML.replace("__CSS__",CSS).replace("__MOCH__",moch).replace("__FC__",flashcards_html())
-      .replace("__NAS__",naslag_html()).replace("__CONJ__",conjugador_html())
+      .replace("__NAS__",naslag_html())
       .replace("__MAP__",mapsvg).replace("__DATA__",data_js()).replace("__JS__",JS))
 os.makedirs(f"{ROOT}/03-build/web",exist_ok=True)
 open(f"{ROOT}/03-build/web/U0_web.html","w").write(html)
-print("U0_web.html geschreven:", len(html), "bytes")
+print("U0_web.html geschreven:", len(html), "bytes ·", len(GAMES), "spellen ingebed")

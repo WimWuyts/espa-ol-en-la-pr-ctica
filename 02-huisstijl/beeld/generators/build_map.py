@@ -66,12 +66,12 @@ for f in gj["features"]:
     d=geom_paths(g)
     if not d: continue
     if code in SPA:
-        fill=G; stroke=LANDB; sw=0.7
+        fill=G; stroke=LANDB; sw=0.7; cls=' class="spa" data-c="%s"'%code
     elif code in USA:
-        fill=AMBERL; stroke=LANDB; sw=0.7
+        fill=AMBERL; stroke=LANDB; sw=0.7; cls=' class="usa" data-c="USA"'
     else:
-        fill=LAND; stroke=LANDB; sw=0.6
-    paths.append(f'<path d="{d}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"/>')
+        fill=LAND; stroke=LANDB; sw=0.6; cls=''
+    paths.append(f'<path d="{d}" fill="{fill}" stroke="{stroke}" stroke-width="{sw}"{cls}/>')
 
 def av_at(name, lon, lat, r=13):
     s=C.make(name,"avatar",2*r); inner=s.split(">",1)[1].rsplit("</svg>",1)[0]
