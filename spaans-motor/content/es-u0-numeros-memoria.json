@@ -1,0 +1,25 @@
+{
+  "id": "es-u0-numeros-memoria",
+  "title": "Memoria de <span>números</span>",
+  "subtitle": "U0 · vind het paar cifra ↔ letra",
+  "lang": "es",
+  "template": "memory",
+  "options": { "pairs": 6, "audio": false },
+  "memory": {
+    "prompt": "Draai twee kaartjes om en zoek cijfer + woord",
+    "pairs": [
+      {"a":"4","b":"cuatro"},
+      {"a":"7","b":"siete"},
+      {"a":"11","b":"once"},
+      {"a":"13","b":"trece"},
+      {"a":"15","b":"quince"},
+      {"a":"16","b":"dieciséis"},
+      {"a":"20","b":"veinte"},
+      {"a":"22","b":"veintidós"},
+      {"a":"40","b":"cuarenta"},
+      {"a":"60","b":"sesenta"},
+      {"a":"80","b":"ochenta"},
+      {"a":"100","b":"cien"}
+    ]
+  }
+}

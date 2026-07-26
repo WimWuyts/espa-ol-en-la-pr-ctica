@@ -1,0 +1,25 @@
+{
+  "id": "es-u0-saludos",
+  "title": "<span>Saludos</span> y chunks",
+  "subtitle": "U0 · koppel de uitdrukking aan de vertaling",
+  "lang": "es",
+  "template": "match",
+  "options": { "chunk": 6, "audio": false },
+  "match": {
+    "prompt": "Verbind elke Spaanse uitdrukking met de Nederlandse vertaling",
+    "pairs": [
+      {"a":"¡Hola!","b":"Hallo!"},
+      {"a":"Buenos días","b":"Goedemorgen"},
+      {"a":"Buenas tardes","b":"Goeiemiddag"},
+      {"a":"Buenas noches","b":"Goedenavond"},
+      {"a":"¿Qué tal?","b":"Hoe gaat het?"},
+      {"a":"¿Cómo estás?","b":"Hoe gaat het met je?"},
+      {"a":"Adiós","b":"Tot ziens"},
+      {"a":"Hasta luego","b":"Tot straks"},
+      {"a":"Hasta mañana","b":"Tot morgen"},
+      {"a":"Muchas gracias","b":"Heel erg bedankt"},
+      {"a":"Por favor","b":"Alsjeblieft"},
+      {"a":"Encantada","b":"Aangenaam"}
+    ]
+  }
+}
