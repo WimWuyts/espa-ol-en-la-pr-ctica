@@ -247,6 +247,13 @@ body.editing [contenteditable="true"]:focus{ outline:2px solid #157355; backgrou
 .xray{ margin:3mm 0; } .xray .xs{ font-family:var(--disp); font-size:12pt; text-align:center; } .xray .xrow{ display:flex; justify-content:center; gap:4mm; margin-top:2mm; flex-wrap:wrap; font-size:8.4pt; color:var(--mut); text-align:center; } .xray .xrow b{ display:block; color:var(--ink); font-family:var(--body); }
 /* pictogram-cirkel voor cluster/sectie */
 .pico{ width:9mm;height:9mm;border-radius:50%;background:var(--gt);display:inline-flex;align-items:center;justify-content:center;font-size:12pt; }
+/* ===== leesvaardigheid (Lectura) ===== */
+.lecdoel{ background:var(--amberbg); border-left:3px solid var(--amber); border-radius:8pt; padding:2.5mm 5mm; margin:3mm 0; font-size:9.6pt; } .lecdoel b{ color:var(--amber); }
+.txtmeta{ display:flex; gap:2mm; flex-wrap:wrap; margin:2mm 0; } .txtmeta .tm{ font-size:7.6pt; font-weight:600; background:var(--gt); color:var(--gd); border-radius:20pt; padding:.7mm 3mm; } .txtmeta .tm b{ color:var(--gd); }
+.ptexts{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin:3mm 0; }
+.ptext{ border:1px solid var(--line); border-top:4px solid var(--g); border-radius:12pt; padding:4mm 5mm; background:#fff; font-size:9.5pt; }
+.ptext .ph{ display:flex; gap:3mm; align-items:center; margin-bottom:2mm; } .ptext .ph .av{ width:12mm;height:12mm;border-radius:50%;overflow:hidden;flex:none } .ptext .ph .av svg{width:100%;height:auto} .ptext .ph .nm{ font-family:var(--disp); font-weight:700; font-size:11pt; color:var(--ink); } .ptext .ph .fr{ font-size:8pt; color:var(--mut); }
+.ptext p{ margin:1.5mm 0; } .evi{ background:#FEF3C7; border-radius:3pt; padding:.1mm 1mm; }
 """
 
 # ---------------- component-helpers ----------------
@@ -756,17 +763,27 @@ P(actx(2, "Conjuga en presente",
   '<tr><td>aprender</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>vivir</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>estudiar</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr></tbody></table>', apoyo="MODELO → PISTA"))
-P(actx(3, "Cadena de transformación",
+P(actx(3, "Completa con la forma correcta",
+  [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 6 min"},{"t":"★★☆"}],
+  '<p><i>cloze klassiek.</i> Vul de <b>juiste werkwoordsvorm</b> in. Het infinitief staat tussen haakjes. <span class="gloss">ser + presente regular.</span></p>'
+  '<p style="margin-left:12.5mm">1. Yo <span class="wl md"></span> <i>(ser)</i> de Bélgica y <span class="wl md"></span> <i>(hablar)</i> neerlandés.<br>'
+  '2. Lucía <span class="wl md"></span> <i>(ser)</i> española y <span class="wl md"></span> <i>(vivir)</i> en Sevilla.<br>'
+  '3. ¿Tú <span class="wl md"></span> <i>(estudiar)</i> español? — Sí, <span class="wl md"></span> <i>(aprender)</i> mucho.<br>'
+  '4. Nosotros <span class="wl md"></span> <i>(ser)</i> estudiantes y <span class="wl md"></span> <i>(trabajar)</i> los sábados.<br>'
+  '5. Diego y Nina <span class="wl md"></span> <i>(vivir)</i> en América y <span class="wl md"></span> <i>(hablar)</i> español.<br>'
+  '6. ¿Vosotros <span class="wl md"></span> <i>(ser)</i> de Madrid? — No, <span class="wl md"></span> <i>(ser)</i> de Barcelona.</p>'
+  '<p style="margin-left:12.5mm" class="gloss">[antwoord-laag online] 1 soy · hablo · 2 es · vive · 3 estudias · aprendo · 4 somos · trabajamos · 5 viven · hablan · 6 sois · somos</p>', apoyo="PISTA (infinitief gegeven) → SIN AYUDA"))
+P(actx(4, "Cadena de transformación",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p><i>transformatieketting.</i> Begin met <b>«Yo hablo español.»</b> en voer elke opdracht uit (schrijf telkens de hele zin).</p>'
   '<p style="margin-left:12.5mm">→ maak <b>ontkennend</b>: <span class="wl lg"></span><br>→ maak er een <b>vraag</b> van: <span class="wl lg"></span><br>→ verander onderwerp naar <b>nosotros</b>: <span class="wl lg"></span><br>→ voeg <b>«en el instituto»</b> toe: <span class="wl lg"></span></p>', apoyo="PISTA → SIN AYUDA"))
-P(actx(4, "Amplía la frase",
+P(actx(5, "Amplía la frase",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p><i>zin uitbreiden.</i> Start met <b>«Estudio.»</b> en voeg stap voor stap toe: <span class="gloss">wat · waar · wanneer · waarom.</span></p>'
   '<div class="wbox sm"></div>', apoyo="MARCO (wat/waar/wanneer/waarom)"))
 P(audiorow('<div class="ic">🎧</div><div><b>Microdictado.</b> Escucha dos veces y escribe. <span class="gloss">1ª: betekenis · 2ª: schrijf de zinnen.</span></div>',
            qr("Escanea y escucha", "Audio 3.2 · Microdictado · 0:40", seed=31)))
-P(actx(5, "Microdictado con reconstrucción",
+P(actx(6, "Microdictado con reconstrucción",
   [{"t":"👂 Escuchar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 6 min"},{"t":"★★★"}],
   '<p><i>microdictogloss.</i> Reconstrueer de drie zinnen die je hoort en maak daarna één <b>eigen</b> variant.</p>'
   '<p style="margin-left:12.5mm">1) <span class="wl full"></span>2) <span class="wl full"></span>3) <span class="wl full"></span></p>'
@@ -776,7 +793,7 @@ P(tarea_com("Tarea comunicativa · 4/3/2 «Un día en mi vida»",
   '<p>Vertel in <b>4/3/2</b>-ronden (telkens sneller, andere partner) drie dingen die je doet, met <b>hablar · estudiar · vivir</b>.</p>'
   '<p style="margin-left:12.5mm">Mis notas: <span class="wl full"></span> ☐ 4 min ☐ 3 min ☐ 2 min</p>'
   '<div class="steun" style="margin-left:12.5mm">Apoyo: notas → SIN AYUDA</div>'))
-P(actx(6, "Habla de tres personas",
+P(actx(7, "Habla de tres personas",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p><i>gestuurd → vrij.</i> Schrijf per persoon één zin in het presente (hablar/estudiar/vivir/trabajar).</p>'
   '<table class="mp"><thead><tr><th>Persona</th><th>Frase</th></tr></thead><tbody>'
@@ -860,6 +877,59 @@ P(actx(5, "Un/una — artículo indefinido",
   '<p style="margin-left:12.5mm">___ ciudad · ___ país · ___ idioma · ___ dirección · ___ nombre · ___ nacionalidad<br><span class="wl full"></span></p>', apoyo="PISTA"))
 P('<div class="route-note">🎮 <b>Juega online:</b> «Palabras interrogativas», «Pregunta ↔ respuesta» en «El o la».</div>')
 P('</div>')  # page §4.2
+
+# ================= §5 · LECTURA (leesvaardigheid) =================
+P('<div class="page"><div class="parada sec">')
+P('<span class="num">📖</span><span class="pk">§5 · Lectura — «Dos perfiles»</span>')
+P('<div class="intro"><b>ES:</b> Vas a leer dos perfiles de una app de intercambio. Primero <b>predices</b>, después lees con un <b>objetivo</b>. <span class="gloss">Je leest twee profielen van een uitwisselings-app: eerst voorspellen, dan lezen met een doel.</span></div>')
+P(lpd(("1","onderwerp/hoofdgedachte bij lezen"), ("2","relevante info selecteren"), ("3","doelgericht schrijven met steun")))
+P('</div>')
+# ① visuele tekstintroductie + voorspellen
+P('<div class="txtmeta"><span class="tm"><b>Tipo:</b> perfil (app)</span><span class="tm"><b>De:</b> Lucía · Diego</span><span class="tm"><b>Para:</b> un intercambio</span><span class="tm">🎯 conocer a alguien nuevo</span></div>')
+P(actx(1, "Antes de leer: predice",
+  [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 2 min"},{"t":"★☆☆"}],
+  '<p><i>voorspellen vanuit vorm.</i> Bekijk alleen de foto\'s en de vorm. Waarover gaat de tekst? ¿Qué datos esperas?</p>'
+  '<p style="margin-left:12.5mm">Espero encontrar: <span class="wl full"></span></p>', apoyo="MODELO (nombre, país, edad…)"))
+# de teksten (parallelle perfiles) — evidence gemarkeerd
+P('<div class="ptexts">'
+  f'<div class="ptext"><div class="ph"><div class="av">{AV["lucia"]}</div><div><div class="nm">Lucía</div><div class="fr">app · perfil</div></div></div>'
+  '<p>¡Hola! Me llamo <span class="evi">Lucía Ramírez</span>. Soy de <span class="evi">Sevilla</span>, en el sur de España, y tengo <span class="evi">16 años</span>. '
+  'Estudio en un instituto y hablo <span class="evi">español e inglés</span>. Me gusta la música y viajar. Busco un amigo o una amiga para hablar español. ¿Y tú, quién eres?</p></div>'
+  f'<div class="ptext"><div class="ph"><div class="av">{AV["diego"]}</div><div><div class="nm">Diego</div><div class="fr">app · perfil</div></div></div>'
+  '<p>¡Qué onda! Soy <span class="evi">Diego</span>, de <span class="evi">Ciudad de México</span>. Tengo <span class="evi">15 años</span> y vivo con mi familia. '
+  'Hablo <span class="evi">español</span> y un poco de <span class="evi">inglés</span>. Me encanta la comida y el fútbol. Quiero conocer gente de Europa. ¡Escríbeme!</p></div></div>')
+P('<div class="lecdoel">🎯 <b>Objetivo de lectura:</b> lees om te ontdekken <b>wie waarvandaan komt</b> en <b>welke talen</b> ze spreken — je hoeft niet élk woord te begrijpen.</div>')
+P('</div>')  # page §5a
+# ② scannen (informatieraster) + juist/fout + bewijs
+P('<div class="page">')
+P(actx(2, "Escanea: completa la tabla",
+  [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
+  '<p><i>scannen → informatieraster.</i> Zoek de gegevens in de perfiles.</p>'
+  '<table class="mp"><thead><tr><th></th><th>País / ciudad</th><th>Edad</th><th>Idiomas</th><th>Le gusta…</th></tr></thead><tbody>'
+  '<tr><td><b>Lucía</b></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
+  '<tr><td><b>Diego</b></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
+  '</tbody></table>', apoyo="MODELO (evidence gemarkeerd in de tekst)"))
+P(actx(3, "¿Verdadero o falso? + prueba",
+  [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
+  '<p><i>juist/fout + bewijs.</i> Waar of niet waar? Noteer de <b>woorden uit de tekst</b> die het bewijzen (evidence).</p>'
+  '<table class="mp"><thead><tr><th>Afirmación</th><th>V/F</th><th>Prueba (palabras del texto)</th></tr></thead><tbody>'
+  '<tr><td>Lucía tiene 16 años.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
+  '<tr><td>Diego es de España.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
+  '<tr><td>Los dos hablan inglés.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
+  '<tr><td>A Diego le gusta la música.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
+  '</tbody></table>', apoyo="PISTA (onderstreep in de tekst)"))
+P(actx(4, "Del contexto: ¿qué significa?",
+  [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
+  '<p><i>betekenis uit context.</i> Wat betekent <b>«Busco un amigo»</b> en <b>«¡Escríbeme!»</b>? Kies + leg uit welke aanwijzing hielp.</p>'
+  '<p style="margin-left:12.5mm">Busco = ☐ ik zoek ☐ ik vind &nbsp;·&nbsp; ¡Escríbeme! = ☐ bel me ☐ schrijf me<br>Pista que me ayudó: <span class="wl lg"></span></p>', apoyo="PISTA"))
+# ③ productieve reactie (keten lezen→schrijven/spreken)
+P(tarea_com("Tarea comunicativa · Responde a un perfil",
+  [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
+  '<p><b>Keten lezen → schrijven → spreken.</b> Kies één perfil en schrijf een <b>antwoordbericht</b> waarin je jezelf voorstelt (afzender = jij · ontvanger = Lucía/Diego · doel = kennismaken). Lees het daarna hardop voor.</p>'
+  '<div class="wbox"></div>'
+  '<div class="steun" style="margin-left:0mm">Apoyo: MARCO (Hola, me llamo… soy de… tengo… hablo…) → SIN AYUDA · [CROSS: HTML «Mensaje de voz» — neem je antwoord op]</div>'))
+P('<div class="route-note">🎮 <b>Sigue online:</b> op de digitale pagina neem je je antwoordbericht op (recorder) en luister je de perfiles (audio).</div>')
+P('</div>')  # page §5b
 
 # ================= TALLER DE LENGUA =================
 P('<div class="page"><div class="parada sec" style="border-top-color:var(--gd)">')
