@@ -132,6 +132,37 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
 .rec .mood.on{border-color:var(--g);background:var(--gt)}
 .rec .warn{background:#fdeaea;color:var(--red);border-radius:10px;padding:8px 12px;font-size:13px;margin:6px 0}
 .rec audio{width:100%;margin-top:6px}
+/* ---- inline zelfcorrigerende oefeningen (U5-model) ---- */
+.exhead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:2px}
+.exhead h3{font-family:var(--disp);margin:0;color:var(--ink);font-size:18px}
+.ex .desc{color:var(--mut);font-size:13px;margin:0 0 10px}
+.otra{border:none;background:var(--gt);color:var(--gd);border-radius:8px;padding:6px 12px;font-weight:700;cursor:pointer;font-size:13px;font-family:var(--disp);white-space:nowrap}
+.exq{border:1px solid var(--line);border-radius:12px;padding:11px 14px;margin:9px 0;background:var(--card)}
+.exq .qz{font-family:var(--disp);font-size:16px;margin-bottom:8px}
+.exq .qz .gap{display:inline-block;min-width:60px;border-bottom:2.5px solid var(--g);margin:0 3px;vertical-align:baseline}
+.exopts{display:flex;gap:8px;flex-wrap:wrap}
+.exopt{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:7px 13px;cursor:pointer;font-size:15px;font-weight:600;font-family:var(--body)}
+.exopt.ok{border-color:var(--g);background:var(--g);color:#fff}
+.exopt.no{border-color:var(--red);background:#fde8e8;color:var(--red)}
+.exopt[disabled]{cursor:default}
+.exwhy{margin-top:8px;font-size:13px;display:none;border-radius:8px;padding:7px 10px}
+.exwhy.show{display:block}
+.exwhy.g{background:var(--gt);color:var(--gd)}.exwhy.b{background:#fdeaea;color:var(--red)}
+.exscore{font-size:13px;color:var(--mut);margin-top:8px}
+.exscore b{color:var(--gd)}
+.mcol{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+.mcell{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:9px 12px;cursor:pointer;font-size:15px;text-align:center;font-weight:600;user-select:none}
+.mcell.sel{border-color:var(--g);background:var(--gt)}
+.mcell.done{border-color:var(--g);background:var(--g);color:#fff;cursor:default;opacity:.85}
+.mcell.bad{border-color:var(--red);background:#fde8e8}
+.oslots{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0;min-height:40px}
+.oslot{border:1.5px dashed var(--line);border-radius:9px;padding:7px 11px;font-size:14px;min-width:34px;color:var(--mut)}
+.oslot.filled{border-style:solid;border-color:var(--g);background:var(--gt);color:var(--ink)}
+.obank{display:flex;gap:7px;flex-wrap:wrap;margin-top:6px}
+.ochip{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 13px;cursor:pointer;font-size:15px;font-weight:600}
+.ochip.used{opacity:.35;cursor:default}
+.ochip.shake{animation:shk .3s}
+@keyframes shk{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 </style></head><body>
 <header class="top"><div class="bar">
   <div class="brand">Español en la práctica <small>· la página digital</small></div>
@@ -164,7 +195,7 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
   <path d="M150 74 l10 -9 l3 4 Z" fill="#E8B04B"/>
 </svg></div>
     <div><h1>U1 · ¿Quién eres?</h1>
-    <p>La página digital de la Unidad 1 (parada <b>Madrid</b>): flashcards, gramática visual e interactiva y <b>24 juegos</b>. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie.</span></p></div>
+    <p>La página digital de la Unidad 1 (parada <b>Madrid · Lucía</b>): flashcards, gramática visual e interactiva, <b>24 juegos</b> con muchas series y <b>más de 100 ejercicios</b> con autocorrección. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie.</span></p></div>
   </div>
   <div class="subnav" id="subnav"></div>
 
@@ -178,6 +209,12 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
       <span class="pill" id="fccount"></span>
       <button class="btn sec small" onclick="shuffleFC()">↻ shuffle</button>
     </div><div class="fcgrid" id="fcgrid"></div>
+    <h2 class="sec">Ejercicios de vocabulario · zelfcorrectie</h2>
+    <p class="lead">Oefen de woorden actief: koppelen, invullen, definities en de <b>intruder</b>. Elke oefening geeft directe feedback en je kunt telkens een <b>andere reeks</b> trekken. <span class="gloss">herkennen → onderscheiden → ophalen.</span></p>
+    <div class="card ex" id="vx_match"></div>
+    <div class="card ex" id="vx_gap"></div>
+    <div class="card ex" id="vx_def"></div>
+    <div class="card ex" id="vx_odd"></div>
     <h2 class="sec">Naslagwerk · zoeken</h2>
     <div class="controls"><input id="vsearch" placeholder="🔎 zoek in woordenschat…" oninput="renderTable()"><span class="pill" id="vcount"></span></div>
     <div style="max-height:60vh;overflow:auto"><table class="vt"><thead><tr><th>Español</th><th>Nederlands</th><th>Soort</th><th>Ejemplo</th></tr></thead><tbody id="vbody"></tbody></table></div>
@@ -188,14 +225,32 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
     <p class="lead">Eerst betekenis en patroon ontdekken, dan de regel. Beweeg over de woorden, klik, en probeer. <span class="gloss">Alles binnen het thema van U1: presentarse, ser, presente en el/la.</span></p>
     <div class="card" id="colorsent"></div>
     <div class="card" id="serconj"></div>
+    <h3 class="subh">🧱 Preséntate — construye la frase</h3>
+    <div class="card ex" id="gx_build"></div>
+    <h3 class="subh">⚖️ ¿ser o tener? — la forma correcta</h3>
+    <div class="card ex" id="gx_serq"></div>
+    <h3 class="subh">✍️ Presente regular — completa el verbo (-ar · -er · -ir)</h3>
+    <div class="card ex" id="gx_presente"></div>
+    <h3 class="subh">❓ Palabras interrogativas — ¿qué preguntas?</h3>
     <div class="game" id="g_interrog"></div>
+    <div class="card ex" id="gx_interrog"></div>
+    <h3 class="subh">🔤 El género — ¿el o la?</h3>
     <div class="game" id="g_ella"></div>
+    <div class="card ex" id="gx_gen"></div>
+    <h3 class="subh">🌍 País ↔ nacionalidad</h3>
+    <div class="card ex" id="gx_pais"></div>
+    <h3 class="subh">🎯 Repaso mixto — rellena con feedback</h3>
+    <div class="card ex" id="gx_mix"></div>
   </section>
 
   <section class="panel" data-p="lectura">
     <h2 class="sec">Lectura · dos perfiles</h2>
     <p class="lead">Lees de twee profielen, <b>luister</b> ze (🔊 TTS) en <b>controleer je begrip</b>. Daarna reageer je met een eigen bericht — dat neem je op in het tabblad <b>Hablar</b>. <span class="gloss">Keten: lezen → luisteren → spreken.</span></p>
     <div id="lecturawrap"></div>
+    <h3 class="subh">🔢 Ordena la presentación</h3>
+    <div class="card ex" id="lx_order"></div>
+    <h3 class="subh">🔎 Comprensión · escanea y escoge</h3>
+    <div class="card ex" id="lx_scan"></div>
   </section>
 
   <section class="panel" data-p="juegos">
@@ -426,13 +481,13 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeGame();});
 // init
 // ---------- LECTURA: perfiles + TTS + begrip ----------
 function renderLectura(){const el=document.getElementById('lecturawrap');if(!el)return;
- const P=[{n:'Lucía',fr:'Sevilla 🇪🇸',t:'¡Hola! Me llamo <span class="ev">Lucía Ramírez</span>. Soy de <span class="ev">Sevilla</span>, en el sur de España, y tengo <span class="ev">16 años</span>. Estudio en un instituto y hablo <span class="ev">español e inglés</span>. Me gusta la música y viajar. Busco un amigo o una amiga para hablar español. ¿Y tú, quién eres?'},
-  {n:'Diego',fr:'CDMX 🇲🇽',t:'¡Qué onda! Soy <span class="ev">Diego</span>, de <span class="ev">Ciudad de México</span>. Tengo <span class="ev">15 años</span> y vivo con mi familia. Hablo <span class="ev">español</span> y un poco de <span class="ev">inglés</span>. Me encanta la comida y el fútbol. Quiero conocer gente de Europa. ¡Escríbeme!'}];
+ const P=[{n:'Lucía',fr:'Sevilla 🇪🇸',t:'¡Hola! Me llamo <span class="ev">Lucía Ramírez García</span>. Soy de <span class="ev">Sevilla</span>, en el sur de España, y tengo <span class="ev">16 años</span>. Vivo en el <span class="ev">centro</span> de la ciudad. Estudio en un instituto y hablo <span class="ev">español e inglés</span>. Me gusta la música y viajar. Busco un amigo o una amiga para hablar español. ¿Y tú, quién eres?'},
+  {n:'Diego',fr:'CDMX 🇲🇽',t:'¡Qué onda! Soy <span class="ev">Diego Hernández</span>, de <span class="ev">Ciudad de México</span>. Tengo <span class="ev">15 años</span> y vivo con mi familia. Mi nacionalidad es <span class="ev">mexicana</span>. Hablo <span class="ev">español</span> y un poco de <span class="ev">inglés</span>. Me encanta la comida y el fútbol. Quiero conocer gente de Europa. ¡Escríbeme!'}];
  const strip=h=>h.replace(/<[^>]+>/g,'');
  el.innerHTML='<div class="perfiles">'+P.map((p,i)=>'<div class="perfil"><h4>👤 '+p.n+' <span class="gloss" style="font-size:12px;font-weight:400">· '+p.fr+'</span> '+(TTS?'<button class="spk-btn" style="margin-left:auto;padding:4px 10px" onclick="speak(document.getElementById(\'lx'+i+'\').dataset.raw)">🔊 escuchar</button>':'')+'</h4><div class="txt" id="lx'+i+'" data-raw="'+strip(p.t).replace(/"/g,'&quot;')+'">'+p.t+'</div></div>').join('')+'</div>';
  // V/F begripstaak
- const items=[['Lucía tiene 16 años.',true,'«tengo 16 años»'],['Diego es de España.',false,'Diego es de México'],['Los dos hablan inglés.',true,'Lucía: inglés · Diego: un poco de inglés'],['A Diego le gusta la música.',false,'a Diego le gusta la comida y el fútbol']];
- const box=document.createElement('div');box.className='card vftask';box.innerHTML='<h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 8px">¿Verdadero o falso? — comprueba tu comprensión</h3>';
+ const items=[['Lucía tiene 16 años.',true,'«tengo 16 años»'],['Diego es de España.',false,'Diego es de México (CDMX)'],['Los dos hablan inglés.',true,'Lucía: inglés · Diego: un poco de inglés'],['A Diego le gusta la música.',false,'a Diego le gusta la comida y el fútbol'],['Lucía vive en el sur de España.',true,'«Sevilla, en el sur de España»'],['Diego es mayor que Lucía.',false,'Diego 15 · Lucía 16 → Lucía es mayor'],['La nacionalidad de Diego es mexicana.',true,'«Mi nacionalidad es mexicana»'],['Lucía busca a alguien para hablar español.',true,'«Busco un amigo… para hablar español»']];
+ const box=document.createElement('div');box.className='card vftask';box.innerHTML='<h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 8px">¿Verdadero o falso? — comprueba tu comprensión (con evidencia)</h3>';
  items.forEach(([q,ans,pr])=>{const r=document.createElement('div');r.className='vfrow';
    r.innerHTML='<span>'+q+'</span><span class="btns"><button class="vfb">V</button><button class="vfb">F</button><span class="res"></span></span>';
    const [bv,bf]=r.querySelectorAll('.vfb');const res=r.querySelector('.res');
@@ -482,7 +537,219 @@ function buildRecorders(){
    {text:'Preséntate a Lucía o a Diego en un mensaje de voz (30 s).',cue:'para · Lucía / Diego',tip:'Heb je nombre + origen + edad + idiomas gezegd? Neem opnieuw op.'}]});
 }
 
-renderFC();renderTable();gameInterrog();gameElla();renderLectura();buildRecorders();
+// ================= INLINE ZELFCORRIGERENDE OEFENINGEN (U5-model) =================
+function exSample(pool,n){const a=pool.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a.slice(0,Math.min(n,a.length));}
+function exEsc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function exFmt(s){return exEsc(s).replace(/___+/g,'<span class="gap">&nbsp;&nbsp;</span>');}
+
+// MEERKEUZE / GAP-FILL: pool item = {q, opts, ans, why}
+function buildChoice(id,cfg){
+ const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(6,cfg.pool.length);
+ function render(){const series=exSample(cfg.pool,per);let ok=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="qlist"></div><div class="exscore">Juist: <b class="ok">0</b>/'+series.length+'</div>';
+   host.querySelector('.otra').onclick=render;const list=host.querySelector('.qlist'),scoreEl=host.querySelector('.ok');
+   series.forEach(it=>{const q=document.createElement('div');q.className='exq';
+     q.innerHTML='<div class="qz">'+exFmt(it.q)+'</div><div class="exopts"></div><div class="exwhy"></div>';
+     const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy');let locked=false;
+     exSample(it.opts,it.opts.length).forEach(o=>{const b=document.createElement('button');b.className='exopt';b.type='button';b.textContent=o;
+       b.onclick=()=>{if(locked)return;locked=true;const good=o===it.ans;
+         opts.querySelectorAll('.exopt').forEach(x=>{x.disabled=true;if(x.textContent===it.ans)x.classList.add('ok');});
+         if(good){ok++;scoreEl.textContent=ok;}else{b.classList.add('no');}
+         why.className='exwhy show '+(good?'g':'b');why.innerHTML=(good?'✅ ¡correcto! ':'❌ → '+exEsc(it.ans)+'. ')+(it.why?exEsc(it.why):'');};
+       opts.appendChild(b);});
+     list.appendChild(q);});}
+ render();}
+
+// MATCHING: pool item = {a,b}  (b moet uniek zijn)
+function buildMatch(id,cfg){
+ const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(6,cfg.pool.length);
+ function render(){const series=exSample(cfg.pool,per);let doneN=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="mcol"><div class="mL"></div><div class="mR"></div></div><div class="exscore">Emparejados: <b class="ok">0</b>/'+series.length+'</div>';
+   host.querySelector('.otra').onclick=render;const L=host.querySelector('.mL'),R=host.querySelector('.mR'),scoreEl=host.querySelector('.ok');
+   const right=exSample(series.map((p,i)=>({p,i})),series.length);let selL=null,busy=false;
+   series.forEach((p,i)=>{const c=document.createElement('div');c.className='mcell';c.textContent=p.a;c.dataset.i=i;
+     c.onclick=()=>{if(busy||c.classList.contains('done'))return;if(selL)selL.classList.remove('sel');selL=c;c.classList.add('sel');};L.appendChild(c);});
+   right.forEach(o=>{const c=document.createElement('div');c.className='mcell';c.textContent=o.p.b;c.dataset.i=o.i;
+     c.onclick=()=>{if(busy||!selL||c.classList.contains('done'))return;busy=true;const good=selL.dataset.i===c.dataset.i;
+       if(good){selL.classList.remove('sel');selL.classList.add('done');c.classList.add('done');doneN++;scoreEl.textContent=doneN;selL=null;busy=false;}
+       else{c.classList.add('bad');const s=selL;setTimeout(()=>{c.classList.remove('bad');s.classList.remove('sel');selL=null;busy=false;},600);}};R.appendChild(c);});}
+ render();}
+
+// ORDENAR: cfg.rounds=[{sub, items:[{label,key}]}]
+function buildOrder(id,cfg){
+ const host=document.getElementById(id);if(!host)return;let ri=Math.floor(Math.random()*cfg.rounds.length);
+ function render(){const round=cfg.rounds[ri];const sorted=round.items.slice().sort((a,b)=>a.key-b.key);let pos=0,mist=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra ronda</button></div><p class="desc">'+cfg.desc+' · <b>'+exEsc(round.sub||'')+'</b></p><div class="oslots"></div><div class="obank"></div><div class="exwhy"></div>';
+   host.querySelector('.otra').onclick=()=>{ri=(ri+1)%cfg.rounds.length;render();};
+   const slots=host.querySelector('.oslots'),bank=host.querySelector('.obank'),why=host.querySelector('.exwhy');
+   sorted.forEach((_,i)=>{const s=document.createElement('div');s.className='oslot';s.textContent=(i+1);s.dataset.pos=i;slots.appendChild(s);});
+   exSample(round.items,round.items.length).forEach(it=>{const b=document.createElement('button');b.className='ochip';b.type='button';b.textContent=it.label;
+     b.onclick=()=>{if(b.classList.contains('used'))return;const exp=sorted[pos];
+       if(it.key===exp.key){b.classList.add('used');const sl=slots.querySelector('.oslot[data-pos="'+pos+'"]');sl.classList.add('filled');sl.textContent=(pos+1)+'. '+it.label;pos++;
+         if(pos>=sorted.length){why.className='exwhy show '+(mist===0?'g':'b');why.innerHTML=mist===0?'✅ ¡Perfecto! sin errores.':'✔ Completado con '+mist+' error(es). Prueba «otra ronda».';}}
+       else{mist++;b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake');why.className='exwhy show b';why.innerHTML='❌ Primero: <b>'+exEsc(exp.label)+'</b>';}};
+     bank.appendChild(b);});}
+ render();}
+
+// EL INTRUSO: pool item = {words:[...], odd, why}
+function buildOdd(id,cfg){
+ const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(5,cfg.pool.length);
+ function render(){const series=exSample(cfg.pool,per);let ok=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="qlist"></div><div class="exscore">Juist: <b class="ok">0</b>/'+series.length+'</div>';
+   host.querySelector('.otra').onclick=render;const list=host.querySelector('.qlist'),scoreEl=host.querySelector('.ok');
+   series.forEach(it=>{const q=document.createElement('div');q.className='exq';q.innerHTML='<div class="exopts"></div><div class="exwhy"></div>';
+     const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy');let locked=false;
+     exSample(it.words.map((w,i)=>({w,i})),it.words.length).forEach(o=>{const b=document.createElement('button');b.className='exopt';b.type='button';b.textContent=o.w;
+       b.onclick=()=>{if(locked)return;locked=true;const good=o.i===it.odd;opts.querySelectorAll('.exopt').forEach(x=>x.disabled=true);
+         if(good){ok++;scoreEl.textContent=ok;b.classList.add('ok');}else{b.classList.add('no');opts.querySelectorAll('.exopt').forEach(x=>{if(x.textContent===it.words[it.odd])x.classList.add('ok');});}
+         why.className='exwhy show '+(good?'g':'b');why.innerHTML=(good?'✅ ¡bien! ':'❌ → '+exEsc(it.words[it.odd])+'. ')+(it.why?exEsc(it.why):'');};
+       opts.appendChild(b);});
+     list.appendChild(q);});}
+ render();}
+
+function buildInlineExercises(){
+ // ---------------- GRAMÁTICA ----------------
+ buildOrder('gx_build',{title:'Construye: preséntate',desc:'Tik de blokjes in de juiste volgorde (onderwerp → werkwoord → rest).',rounds:[
+   {sub:'nombre',items:[{label:'Yo',key:1},{label:'me llamo',key:2},{label:'Lucía',key:3}]},
+   {sub:'origen',items:[{label:'Yo',key:1},{label:'soy',key:2},{label:'de',key:3},{label:'Bélgica',key:4}]},
+   {sub:'edad · tener',items:[{label:'Yo',key:1},{label:'tengo',key:2},{label:'quince',key:3},{label:'años',key:4}]},
+   {sub:'vivir',items:[{label:'Yo',key:1},{label:'vivo',key:2},{label:'en',key:3},{label:'Gante',key:4}]},
+   {sub:'pregunta',items:[{label:'¿De',key:1},{label:'dónde',key:2},{label:'eres',key:3},{label:'tú?',key:4}]},
+   {sub:'idiomas',items:[{label:'Yo',key:1},{label:'hablo',key:2},{label:'español',key:3},{label:'e inglés',key:4}]}]});
+ buildChoice('gx_serq',{title:'¿ser o tener? — mini-quiz',desc:'Kies de juiste vorm. ¡Ojo! leeftijd = tener, niet ser.',per:6,pool:[
+   {q:'(Yo) ___ de Bélgica.',opts:['soy','tengo','es'],ans:'soy',why:'origen → ser: yo soy'},
+   {q:'(Yo) ___ quince años.',opts:['tengo','soy','tienes'],ans:'tengo',why:'edad → tener: yo tengo'},
+   {q:'¿(Tú) ___ de España?',opts:['eres','tienes','soy'],ans:'eres',why:'origen → ser: tú eres'},
+   {q:'¿Cuántos años ___ (tú)?',opts:['tienes','eres','tiene'],ans:'tienes',why:'edad → tener: tú tienes'},
+   {q:'Lucía ___ de Sevilla.',opts:['es','tiene','eres'],ans:'es',why:'origen → ser: él/ella es'},
+   {q:'Diego ___ dieciséis años.',opts:['tiene','es','tienes'],ans:'tiene',why:'edad → tener: él/ella tiene'},
+   {q:'(Nosotros) ___ estudiantes.',opts:['somos','tenemos','sois'],ans:'somos',why:'ser: nosotros somos'},
+   {q:'(Nosotros) ___ un examen hoy.',opts:['tenemos','somos','tienen'],ans:'tenemos',why:'tener: nosotros tenemos'},
+   {q:'Ellos ___ mexicanos.',opts:['son','tienen','somos'],ans:'son',why:'ser: ellos son'},
+   {q:'Mis amigos ___ catorce años.',opts:['tienen','son','tenéis'],ans:'tienen',why:'tener: ellos tienen'},
+   {q:'¿(Vosotros) ___ de aquí?',opts:['sois','tenéis','son'],ans:'sois',why:'ser: vosotros sois'},
+   {q:'Yo ___ un hermano.',opts:['tengo','soy','tienes'],ans:'tengo',why:'bezit → tener: yo tengo'}]});
+ buildChoice('gx_presente',{title:'Presente regular — completa el verbo',desc:'Kies de juiste vorm van het werkwoord tussen haakjes (-ar · -er · -ir).',per:6,pool:[
+   {q:'(Yo) ___ español. (hablar)',opts:['hablo','hablas','habla'],ans:'hablo',why:'-ar · yo → -o: hablo'},
+   {q:'(Tú) ___ en un instituto. (estudiar)',opts:['estudias','estudio','estudia'],ans:'estudias',why:'-ar · tú → -as: estudias'},
+   {q:'Lucía ___ en Sevilla. (vivir)',opts:['vive','vives','vivo'],ans:'vive',why:'-ir · él/ella → -e: vive'},
+   {q:'(Nosotros) ___ español este año. (aprender)',opts:['aprendemos','aprendéis','aprenden'],ans:'aprendemos',why:'-er · nosotros → -emos'},
+   {q:'(Yo) ___ en Gante. (vivir)',opts:['vivo','vives','vive'],ans:'vivo',why:'-ir · yo → -o: vivo'},
+   {q:'Mi madre ___ en Bruselas. (trabajar)',opts:['trabaja','trabajo','trabajas'],ans:'trabaja',why:'-ar · él/ella → -a'},
+   {q:'(Ellos) ___ tres idiomas. (hablar)',opts:['hablan','habláis','hablamos'],ans:'hablan',why:'-ar · ellos → -an'},
+   {q:'¿(Tú) ___ neerlandés? (aprender)',opts:['aprendes','aprende','aprendo'],ans:'aprendes',why:'-er · tú → -es'},
+   {q:'(Vosotros) ___ en Amberes. (vivir)',opts:['vivís','vivimos','viven'],ans:'vivís',why:'-ir · vosotros → -ís'},
+   {q:'(Nosotros) ___ mucho. (estudiar)',opts:['estudiamos','estudiáis','estudian'],ans:'estudiamos',why:'-ar · nosotros → -amos'},
+   {q:'(Yo) ___ inglés. (aprender)',opts:['aprendo','aprende','aprendes'],ans:'aprendo',why:'-er · yo → -o'},
+   {q:'Diego ___ fútbol. (practicar)',opts:['practica','practico','practican'],ans:'practica',why:'-ar · él/ella → -a'}]});
+ buildChoice('gx_interrog',{title:'Palabras interrogativas — completa',desc:'Kies het juiste vraagwoord. Let op accenten en de betekenis.',per:6,pool:[
+   {q:'¿___ te llamas? — Me llamo Leo.',opts:['Cómo','Dónde','Cuántos'],ans:'Cómo',why:'naam vragen → ¿Cómo te llamas?'},
+   {q:'¿De ___ eres? — Soy de Bélgica.',opts:['dónde','cómo','qué'],ans:'dónde',why:'herkomst → ¿De dónde eres?'},
+   {q:'¿___ años tienes? — Tengo 15.',opts:['Cuántos','Cuál','Quién'],ans:'Cuántos',why:'aantal → ¿Cuántos años tienes?'},
+   {q:'¿___ vives? — Vivo en Gante.',opts:['Dónde','Cómo','Qué'],ans:'Dónde',why:'plaats → ¿Dónde vives?'},
+   {q:'¿___ es tu correo? — leo@mail.com',opts:['Cuál','Cómo','Dónde'],ans:'Cuál',why:'gegeven kiezen → ¿Cuál es…?'},
+   {q:'¿___ es ella? — Es Lucía.',opts:['Quién','Qué','Cómo'],ans:'Quién',why:'persoon → ¿Quién es?'},
+   {q:'¿___ idiomas hablas? — Dos.',opts:['Cuántos','Cuál','Cómo'],ans:'Cuántos',why:'aantal → ¿Cuántos…?'},
+   {q:'¿___ estudias? — Español.',opts:['Qué','Quién','Dónde'],ans:'Qué',why:'ding/zaak → ¿Qué estudias?'},
+   {q:'¿___ está usted? — Muy bien.',opts:['Cómo','Cuál','Quién'],ans:'Cómo',why:'toestand → ¿Cómo está?'},
+   {q:'¿___ es tu número de teléfono?',opts:['Cuál','Qué','Dónde'],ans:'Cuál',why:'gegeven → ¿Cuál es…?'},
+   {q:'¿De ___ país eres?',opts:['qué','dónde','cuál'],ans:'qué',why:'¿De qué país…? = welk land'},
+   {q:'¿___ trabaja tu padre? — En Bruselas.',opts:['Dónde','Cómo','Cuántos'],ans:'Dónde',why:'plaats → ¿Dónde trabaja?'}]});
+ buildChoice('gx_gen',{title:'El género — ¿el o la?',desc:'Kies het juiste lidwoord. Let op de valstrikken: el idioma, el país, la nacionalidad.',per:6,pool:[
+   {q:'___ nombre',opts:['el','la'],ans:'el',why:'el nombre (m)'},
+   {q:'___ ciudad',opts:['la','el'],ans:'la',why:'la ciudad (f)'},
+   {q:'___ país',opts:['el','la'],ans:'el',why:'el país (m) — valstrik!'},
+   {q:'___ dirección',opts:['la','el'],ans:'la',why:'la dirección (f, -ción)'},
+   {q:'___ idioma',opts:['el','la'],ans:'el',why:'el idioma (m) — valstrik, eindigt op -a!'},
+   {q:'___ edad',opts:['la','el'],ans:'la',why:'la edad (f)'},
+   {q:'___ correo',opts:['el','la'],ans:'el',why:'el correo (m)'},
+   {q:'___ nacionalidad',opts:['la','el'],ans:'la',why:'la nacionalidad (f, -dad)'},
+   {q:'___ apellido',opts:['el','la'],ans:'el',why:'el apellido (m)'},
+   {q:'___ firma',opts:['la','el'],ans:'la',why:'la firma (f)'},
+   {q:'___ teléfono',opts:['el','la'],ans:'el',why:'el teléfono (m)'},
+   {q:'___ fecha',opts:['la','el'],ans:'la',why:'la fecha (f)'}]});
+ buildMatch('gx_pais',{title:'País ↔ nacionalidad',desc:'Koppel het land aan de juiste nationaliteit (m/v-vorm hier: standaard).',per:6,pool:[
+   {a:'España',b:'español / española'},{a:'México',b:'mexicano / mexicana'},{a:'Colombia',b:'colombiano / colombiana'},
+   {a:'Perú',b:'peruano / peruana'},{a:'Argentina',b:'argentino / argentina'},{a:'Bélgica',b:'belga'},
+   {a:'Chile',b:'chileno / chilena'},{a:'Cuba',b:'cubano / cubana'},{a:'Alemania',b:'alemán / alemana'},
+   {a:'Francia',b:'francés / francesa'},{a:'Portugal',b:'portugués / portuguesa'},{a:'Ecuador',b:'ecuatoriano / ecuatoriana'}]});
+ buildChoice('gx_mix',{title:'Repaso mixto — rellena',desc:'Alles door elkaar: ser · tener · presente · interrogativos · el/la.',per:8,pool:[
+   {q:'(Yo) ___ de Bélgica.',opts:['soy','tengo','es'],ans:'soy',why:'origen → ser'},
+   {q:'¿___ te llamas?',opts:['Cómo','Dónde','Cuál'],ans:'Cómo',why:'naam → ¿Cómo te llamas?'},
+   {q:'Lucía ___ dieciséis años.',opts:['tiene','es','tienes'],ans:'tiene',why:'edad → tener'},
+   {q:'(Yo) ___ en Gante. (vivir)',opts:['vivo','vives','vive'],ans:'vivo',why:'-ir · yo → -o'},
+   {q:'___ idioma',opts:['el','la'],ans:'el',why:'el idioma (m) — valstrik'},
+   {q:'¿De ___ eres?',opts:['dónde','cómo','qué'],ans:'dónde',why:'herkomst → ¿De dónde eres?'},
+   {q:'(Nosotros) ___ español. (hablar)',opts:['hablamos','habláis','hablan'],ans:'hablamos',why:'-ar · nosotros'},
+   {q:'Diego es ___ (México).',opts:['mexicano','español','belga'],ans:'mexicano',why:'México → mexicano'},
+   {q:'¿___ años tienes?',opts:['Cuántos','Cuál','Quién'],ans:'Cuántos',why:'aantal → ¿Cuántos…?'},
+   {q:'___ ciudad',opts:['la','el'],ans:'la',why:'la ciudad (f)'},
+   {q:'(Ellos) ___ estudiantes.',opts:['son','están','tienen'],ans:'son',why:'ser: ellos son'},
+   {q:'(Tú) ___ en un instituto. (estudiar)',opts:['estudias','estudio','estudia'],ans:'estudias',why:'-ar · tú → -as'}]});
+ // ---------------- VOCABULARIO ----------------
+ buildMatch('vx_match',{title:'Empareja: país ↔ bandera',desc:'Koppel het land aan de juiste vlag.',per:6,pool:[
+   {a:'España',b:'🇪🇸'},{a:'México',b:'🇲🇽'},{a:'Colombia',b:'🇨🇴'},{a:'Perú',b:'🇵🇪'},
+   {a:'Argentina',b:'🇦🇷'},{a:'Bélgica',b:'🇧🇪'},{a:'Chile',b:'🇨🇱'},{a:'Cuba',b:'🇨🇺'},
+   {a:'Alemania',b:'🇩🇪'},{a:'Francia',b:'🇫🇷'},{a:'Portugal',b:'🇵🇹'},{a:'Ecuador',b:'🇪🇨'}]});
+ buildChoice('vx_gap',{title:'Completa la frase',desc:'Kies het woord dat in de zin past (datos personales).',per:6,pool:[
+   {q:'¿Cuál es tu ___? — Mi nombre es Leo.',opts:['nombre','edad','ciudad'],ans:'nombre',why:'nombre = voornaam'},
+   {q:'Mi ___ es García.',opts:['apellido','idioma','firma'],ans:'apellido',why:'apellido = achternaam'},
+   {q:'Tengo catorce ___.',opts:['años','ciudad','país'],ans:'años',why:'tener … años'},
+   {q:'Vivo en una ___ pequeña.',opts:['ciudad','edad','firma'],ans:'ciudad',why:'ciudad = stad'},
+   {q:'Mi ___ es leo@mail.com.',opts:['correo','teléfono','número'],ans:'correo',why:'correo electrónico'},
+   {q:'Hablo tres ___.',opts:['idiomas','años','países'],ans:'idiomas',why:'idioma = taal'},
+   {q:'Rellena la ___ con tus datos.',opts:['ficha','edad','firma'],ans:'ficha',why:'la ficha = fiche'},
+   {q:'Mi ___ es belga.',opts:['nacionalidad','dirección','curso'],ans:'nacionalidad',why:'nacionalidad'},
+   {q:'¿De qué ___ eres? — De España.',opts:['país','idioma','curso'],ans:'país',why:'país = land'},
+   {q:'___ aquí, por favor. (tu nombre)',opts:['Firma','Vivo','Hablo'],ans:'Firma',why:'firmar = tekenen'}]});
+ buildChoice('vx_def',{title:'¿Qué palabra es?',desc:'Lees de definitie en kies het juiste woord.',per:6,pool:[
+   {q:'El número de años que tienes:',opts:['la edad','el nombre','el país'],ans:'la edad',why:'edad = leeftijd'},
+   {q:'La lengua que hablas:',opts:['el idioma','la ciudad','la firma'],ans:'el idioma',why:'idioma = taal'},
+   {q:'Tu nombre de familia:',opts:['el apellido','el correo','el curso'],ans:'el apellido',why:'apellido'},
+   {q:'El territorio donde naces (España, México…):',opts:['el país','la calle','la edad'],ans:'el país',why:'país = land'},
+   {q:'Dónde vives (Madrid, Gante…):',opts:['la ciudad','el idioma','la firma'],ans:'la ciudad',why:'ciudad = stad'},
+   {q:'Tu correo con @:',opts:['el correo electrónico','el teléfono','la fecha'],ans:'el correo electrónico',why:'e-mail'},
+   {q:'Tu nombre escrito a mano al final:',opts:['la firma','el número','la edad'],ans:'la firma',why:'firma = handtekening'},
+   {q:'Español, belga, mexicano… es tu:',opts:['nacionalidad','apellido','ciudad'],ans:'nacionalidad',why:'nacionalidad'},
+   {q:'El país donde vive Lucía:',opts:['España','México','Bélgica'],ans:'España',why:'Lucía es de Sevilla, España'},
+   {q:'La calle y el número donde vives:',opts:['la dirección','el correo','la firma'],ans:'la dirección',why:'dirección = adres'},
+   {q:'El año, mes y día en que naces:',opts:['la fecha de nacimiento','el código postal','el curso'],ans:'la fecha de nacimiento',why:'geboortedatum'},
+   {q:'El verbo para decir tu nombre:',opts:['llamarse','vivir','hablar'],ans:'llamarse',why:'me llamo…'}]});
+ buildOdd('vx_odd',{title:'El intruso',desc:'Klik het woord dat NIET bij de andere hoort.',per:5,pool:[
+   {words:['España','México','Perú','español'],odd:3,why:'«español» = idioma/nacionalidad, geen país'},
+   {words:['¿Cómo?','¿Dónde?','¿Cuántos?','vivo'],odd:3,why:'«vivo» is geen interrogativo'},
+   {words:['soy','eres','es','tengo'],odd:3,why:'«tengo» is van tener; de rest is ser'},
+   {words:['hablar','estudiar','trabajar','vivir'],odd:3,why:'«vivir» is -ir; de rest -ar'},
+   {words:['el nombre','el apellido','la edad','la firma'],odd:2,why:'la edad ≠ deel van je naam'},
+   {words:['belga','español','mexicano','país'],odd:3,why:'«país» is geen nacionalidad'},
+   {words:['la ciudad','el país','la dirección','el idioma'],odd:3,why:'el idioma ≠ plaats/adres'},
+   {words:['tengo','tienes','tiene','soy'],odd:3,why:'«soy» is van ser; de rest tener'},
+   {words:['¿Cómo?','¿Dónde?','¿De dónde?','porque'],odd:3,why:'«porque» is geen vraagwoord'},
+   {words:['hablo','estudio','vivo','tengo'],odd:3,why:'«tengo» = tener; de rest is regelmatig presente (yo)'},
+   {words:['Madrid','Sevilla','Barcelona','España'],odd:3,why:'España = país; de rest zijn steden'},
+   {words:['español','francés','inglés','belga'],odd:3,why:'«belga» = nacionalidad, geen idioma'}]});
+ // ---------------- LECTURA ----------------
+ buildOrder('lx_order',{title:'Ordena la presentación',desc:'Tik de blokjes in een logische volgorde.',rounds:[
+   {sub:'una presentación completa',items:[{label:'¡Hola! Me llamo Sara',key:1},{label:'Soy de Bélgica',key:2},{label:'Tengo 15 años',key:3},{label:'Hablo español e inglés',key:4}]},
+   {sub:'la conversación',items:[{label:'¿Cómo te llamas?',key:1},{label:'Me llamo Diego',key:2},{label:'¿De dónde eres?',key:3},{label:'Soy de México',key:4}]},
+   {sub:'la ficha personal',items:[{label:'Nombre',key:1},{label:'Apellido',key:2},{label:'Fecha de nacimiento',key:3},{label:'Firma',key:4}]},
+   {sub:'los saludos del día',items:[{label:'Buenos días',key:1},{label:'Buenas tardes',key:2},{label:'Buenas noches',key:3},{label:'¡Hasta mañana!',key:4}]}]});
+ buildChoice('lx_scan',{title:'Comprensión: escanea y escoge',desc:'Zoek de info in de twee perfiles en kies het juiste antwoord.',per:6,pool:[
+   {q:'¿Cuántos años tiene Lucía?',opts:['16','15','14'],ans:'16',why:'«tengo 16 años»'},
+   {q:'¿De dónde es Diego?',opts:['Ciudad de México','Sevilla','Madrid'],ans:'Ciudad de México',why:'perfil de Diego'},
+   {q:'¿Qué apellido tiene Lucía?',opts:['Ramírez García','Hernández','García López'],ans:'Ramírez García',why:'«Lucía Ramírez García»'},
+   {q:'¿Qué idiomas habla Lucía?',opts:['español e inglés','solo español','francés'],ans:'español e inglés',why:'perfil de Lucía'},
+   {q:'¿Qué le gusta a Diego?',opts:['la comida y el fútbol','la música','viajar'],ans:'la comida y el fútbol',why:'perfil de Diego'},
+   {q:'¿Cuál es la nacionalidad de Diego?',opts:['mexicana','española','belga'],ans:'mexicana',why:'«Mi nacionalidad es mexicana»'},
+   {q:'¿En qué parte de España vive Lucía?',opts:['el sur','el norte','el este'],ans:'el sur',why:'«Sevilla, en el sur»'},
+   {q:'¿Qué busca Lucía?',opts:['un amigo para hablar español','un profesor','un trabajo'],ans:'un amigo para hablar español',why:'«Busco un amigo…»'},
+   {q:'¿Con quién vive Diego?',opts:['con su familia','solo','con amigos'],ans:'con su familia',why:'«vivo con mi familia»'},
+   {q:'¿A quién quiere conocer Diego?',opts:['gente de Europa','gente de Asia','a un profesor'],ans:'gente de Europa',why:'«Quiero conocer gente de Europa»'},
+   {q:'¿Quién es mayor?',opts:['Lucía','Diego','tienen la misma edad'],ans:'Lucía',why:'Lucía 16 · Diego 15'},
+   {q:'¿Qué le gusta a Lucía?',opts:['la música y viajar','la comida','el fútbol'],ans:'la música y viajar',why:'perfil de Lucía'}]});
+}
+
+renderFC();renderTable();gameInterrog();gameElla();renderLectura();buildRecorders();buildInlineExercises();
 (function(){const h=location.hash.replace('#','');const i=PANELS.findIndex(p=>p[0]===h);if(i>=0)sn.children[i].click();})();
 window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');const i=PANELS.findIndex(p=>p[0]===h);if(i>=0)sn.children[i].click();});
 
