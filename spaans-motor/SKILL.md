@@ -41,12 +41,17 @@ laat de gebruiker met één woord bijsturen. Geen lange uitleg.
 | geslacht / el-la | `classify` / `tetris` | generator `gender` |
 | werkwoord: welke presente-klasse (regular / cambio vocálico / onregelmatig) | `classify` / `tetris` | generator `verbo` (mode `clase`) |
 | werkwoord: cambio vocálico & onregelmatig inoefenen | `tetris` | generator `verbo` (mode `person`, `classes`) |
-| keuze tussen 2–3 opties (ser/estar, por/para, pretérito/imperfecto, b/v, tilde…) | `classify` | vaste `items` |
-| woordenschat, vertalingen, land↔nationaliteit, synoniemen | `match` | vaste `pairs` |
+| keuze tussen 2–3 opties (ser/estar, por/para, pretérito/imperfecto, b/v, tilde…) | `classify` / `tetris` | vaste `items` (of generator) |
+| woordenschat, vertalingen, land↔nationaliteit, synoniemen | `match` / `memory` | vaste `pairs` |
+| invulgat met meerkeuze per item (¿lleva tilde?, h muda, ge/gi/j, klaszin aanvullen) | `cloze` | vaste `items` (eigen `options` per item) |
+| tik het juiste deel van een woord (sílaba tónica, letter met tilde) | `tap` | vaste `items` (`parts` + `answer`-index) |
+| zet op volgorde (getallen klein→groot, chronologie, alfabetisch) | `order` | vaste `rounds` (`items` met `key`) |
+| geheugenspel woordparen (español↔nederlands, cifra↔letra) | `memory` | vaste `pairs` |
 
-Sjablonen die nog niet bestaan (`cloze`, `order`, `point`): nog niet
-aanbieden; kies het dichtstbijzijnde bestaande of meld dat het sjabloon
-ontbreekt.
+Alle sjablonen worden **dynamisch** ingeladen door `build.mjs` op basis van de
+bestandsnaam (`src/templates/<template>.{js,css}`): een nieuw sjabloon toevoegen
+= die twee bestanden aanmaken; geen registratie in `build.mjs` nodig. Nog niet
+gebouwd: `point` (klik-op-beeld/kaart), `speak` (microfoon), `sim` (open productie).
 
 ## Blokkerende controles (spel wordt NIET gebouwd als één faalt)
 
