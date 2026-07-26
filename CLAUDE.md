@@ -54,7 +54,7 @@
 
 ## 4 · Instructietaal & register
 
-- **Español primero, con apoyo en neerlandés.** De cursus is in het **Spaans** opgesteld; Nederlands als **steun** (glossen, valstrikken, korte metataal waar nodig).
+- **Español primero, con apoyo en neerlandés — CONSEQUENT OVERAL.** Álle lopende tekst staat in het **Spaans** met **Nederlandse vertaling/steun** eronder of ernaast — óók de **verbindende verteltekst** (bv. *Este año viajamos de España, cruzando el océano, a México…* + NL-vertaling), de **¡Ojo!/valstrik-kaders** (eerst Spaans, dan Nederlands) en de **grammatica-uitleg** (Spaanse, visuele uitleg + Nederlandse steun). **Nooit een tekstblok enkel in het Nederlands** (enkel korte technische metataal mag NL waar nodig). Glossen/vertalingen kort en herkenbaar.
 - **Doelgroep:** tieners (14–18). Toon: warm, motiverend, activerend; leerplan-conform "veilig klimaat, leren uit fouten".
 - Vaste valstrikken voor Nederlandstaligen expliciet benoemen (bv. *want* én *omdat* = **porque**; *dus* = **así que / por eso**, niet *luego*).
 

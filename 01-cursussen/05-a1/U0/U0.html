@@ -1,0 +1,267 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><style>
+@page{ size:A4; margin:0; }
+*{ box-sizing:border-box; }
+:root{
+ --g:#1E9E74; --gd:#157355; --gt:#E4F4EE; --ink:#20242E; --mut:#6A6E78; --paper:#FCFBF8; --crema:#F3EEE4; --line:#E4E3DE; --line2:#CFCEC8; --red:#DC2626; --amber:#B7860B; --amberbg:#FBF3D6;
+ --luc:#E07A5F; --die:#C85B9A; --val:#2FA8A0; --nin:#D69A2E;
+ --disp:'Bricolage Grotesque',sans-serif; --dispx:'Bricolage Grotesque XBold','Bricolage Grotesque',sans-serif; --body:'Inter',sans-serif; --hand:'Caveat',cursive;
+}
+body{ margin:0; font-family:var(--body); color:var(--ink); background:var(--paper); font-size:10.2pt; line-height:1.4; }
+.page{ padding:0 14mm 13mm; }
+.gloss{ color:var(--mut); font-style:italic; }
+/* ---- hero ---- */
+.hero{ background:var(--g); color:#fff; padding:15mm 14mm 11mm; position:relative; }
+.hero .eyebrow{ font-size:9pt; letter-spacing:.16em; font-weight:600; opacity:.9; }
+.hero h1{ font-family:var(--dispx); font-size:46pt; line-height:1; margin:2mm 0 1mm; }
+.hero .sub{ font-size:12pt; max-width:135mm; opacity:.97; } .hero .sub .gloss{ color:#DDF3EA; }
+.hero .q{ margin-top:6mm; display:inline-block; font-family:var(--disp); font-weight:700; font-size:14pt; background:rgba(255,255,255,.15); border-radius:22pt; padding:3mm 7mm; }
+.hero .tab{ position:absolute; top:0; right:0; background:var(--gd); color:#fff; font-weight:700; font-size:8.5pt; letter-spacing:.12em; padding:3mm 6mm; border-radius:0 0 0 10pt; }
+/* ---- generic section ---- */
+.se{ font-size:8pt; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--mut); margin:0 0 1.5mm; }
+h2{ font-family:var(--disp); font-weight:700; font-size:14pt; margin:0 0 3mm; color:var(--gd); }
+h3{ font-family:var(--disp); font-weight:700; font-size:11.5pt; margin:5mm 0 2mm; color:var(--ink); }
+.lead{ display:grid; grid-template-columns:1.15fr .85fr; gap:9mm; align-items:start; }
+.hist{ color:var(--ink); font-size:10pt; margin-top:2mm; } .hist .gloss{ display:block; }
+.ojo{ margin-top:4mm; border-left:3px solid var(--red); padding:1.5mm 0 1.5mm 4mm; font-size:9.3pt; }
+.ojo b{ color:var(--red); }
+.cast{ display:grid; grid-template-columns:repeat(5,1fr); gap:4mm; margin-top:2mm; }
+.pc{ text-align:center; } .av{ width:17mm; height:17mm; border-radius:50%; margin:0 auto 2mm; display:flex; align-items:center; justify-content:center; font-family:var(--dispx); font-size:15pt; color:#fff; }
+.pc .nm{ font-family:var(--disp); font-weight:700; font-size:11pt; } .pc .fr{ font-size:8pt; color:var(--mut); }
+.tu .av{ background:#fff; border:2px dashed var(--g); color:var(--g); }
+.moch{ background:var(--gt); border-radius:12pt; padding:5mm 6mm; margin-top:7mm; display:flex; gap:5mm; align-items:center; }
+.moch .ic{ width:14mm;height:14mm;border-radius:10pt;background:#fff;display:flex;align-items:center;justify-content:center;font-size:20pt;flex:none; }
+.moch .hand{ font-family:var(--hand); font-size:16pt; color:var(--gd); }
+.obj ul{ list-style:none; padding:0; margin:3mm 0 0; display:grid; grid-template-columns:1fr 1fr; gap:2.5mm 8mm; }
+.obj li{ display:flex; gap:3mm; font-size:10pt; } .obj .ck{ color:var(--g); font-weight:800; } .obj .es{ font-weight:600; } .obj .nl{ color:var(--mut); font-size:8.5pt; }
+.mini{ margin-top:8mm; background:var(--crema); border-radius:12pt; padding:5mm 6mm; }
+.mini .steps{ display:flex; justify-content:space-between; margin-top:3mm; font-size:8pt; color:var(--mut); text-align:center; } .mini .steps b{ display:block; color:var(--ink); font-size:9pt; font-family:var(--disp); }
+/* ---- parada header (section opener) ---- */
+.parada{ border-top:3px solid var(--g); padding-top:5mm; margin-top:2mm; }
+.parada .pk{ display:inline-block; background:var(--g); color:#fff; font-family:var(--disp); font-weight:700; font-size:12pt; border-radius:8pt; padding:1.5mm 5mm; }
+.intro{ font-size:10pt; margin-top:3mm; } .intro .gloss{ display:block; margin-top:.5mm; }
+.route-note{ font-size:8.5pt; color:var(--mut); background:var(--gt); border-radius:8pt; padding:2mm 4mm; margin-top:3mm; }
+/* ---- callout / audio ---- */
+.call{ display:flex; gap:4mm; align-items:flex-start; background:var(--gt); border-radius:10pt; padding:3.5mm 5mm; margin:4mm 0; font-size:9.6pt; }
+.call .ic{ font-size:15pt; } .call b{ color:var(--gd); }
+.asset{ font-size:7.6pt; color:#9AA0A6; font-style:italic; }
+/* ---- table alfabet ---- */
+table{ border-collapse:collapse; width:100%; font-size:8.7pt; margin:2mm 0; }
+.alf{ } .alf td,.alf th{ border:1px solid var(--line); padding:1.4mm 2mm; text-align:left; }
+.alf th{ background:var(--gt); color:var(--gd); font-weight:700; font-size:7.8pt; text-transform:uppercase; letter-spacing:.04em; }
+.alf .L{ font-family:var(--disp); font-weight:700; }
+.trap{ color:var(--red); font-weight:700; }
+/* ---- regla ---- */
+.regla{ border:1.5px solid var(--g); border-radius:2pt; padding:3.5mm 5mm; margin:4mm 0; background:#fff; }
+.regla .tag{ font-family:var(--disp); font-weight:700; color:var(--gd); font-size:10.5pt; }
+.regla p{ margin:1.5mm 0 0; font-size:9.6pt; }
+/* ---- truc / amber ---- */
+.truc{ background:var(--amberbg); border-radius:8pt; padding:3mm 5mm; margin:3mm 0; font-size:9.4pt; } .truc b{ color:var(--amber); }
+/* ---- activity ---- */
+.act{ border-left:3px solid var(--g); padding:1mm 0 1mm 5mm; margin:4mm 0; break-inside:avoid; }
+.act .h{ font-family:var(--disp); font-weight:700; font-size:10.5pt; } .act .wv{ font-size:7.8pt; color:var(--mut); font-weight:600; }
+.act p{ margin:1.5mm 0; font-size:9.5pt; }
+.words{ font-family:var(--body); } .words b{ background:var(--gt); border-radius:4pt; padding:.3mm 1.5mm; font-weight:600; }
+.steun{ display:inline-block; font-size:7.4pt; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--g); border:1px solid var(--g); border-radius:20pt; padding:.6mm 3mm; margin-top:1mm; }
+mark{ background:var(--gt); }
+/* ---- pron cards grid ---- */
+.fams{ display:grid; grid-template-columns:1fr 1fr; gap:4mm; margin-top:3mm; }
+.pcard{ border:1px solid var(--line); border-radius:10pt; padding:3.5mm 4.5mm; background:#fff; break-inside:avoid; }
+.pcard .t{ font-family:var(--disp); font-weight:700; font-size:11pt; color:var(--gd); }
+.pcard .anchor{ font-size:9pt; margin:1mm 0; } .pcard .anchor b{ color:var(--amber); }
+.pcard .ej{ font-size:9pt; } .pcard .ej b{ background:var(--gt); border-radius:4pt; padding:.3mm 1.5mm; }
+.pcard .t2{ color:var(--red); font-size:8.8pt; margin-top:1.5mm; }
+.mp{ width:100%; font-size:9pt; } .mp td,.mp th{ border:1px solid var(--line); padding:1.3mm 3mm; } .mp th{ background:var(--gt); color:var(--gd); font-size:8pt; text-transform:uppercase; }
+.semrow th{ background:var(--gt); color:var(--gd); font-size:8pt; text-transform:uppercase; }
+.sem td,.sem th{ border:1px solid var(--line); padding:1.6mm 3mm; font-size:9pt; }
+.esen{ background:var(--crema); border-radius:10pt; padding:4mm 6mm; margin-top:4mm; font-size:9.5pt; } .esen li{ margin:1mm 0; }
+.bridge{ border-top:1px solid var(--line); margin-top:7mm; padding-top:3mm; font-size:9.4pt; color:var(--ink); } .bridge b{ color:var(--gd); }
+</style></head><body>
+
+<!-- ============ OPENER ============ -->
+<div class="hero">
+  <div class="tab">U0 · ¡EMPEZAMOS!</div>
+  <div class="eyebrow">UNIDAD 0 · LA RUTA · PARADA 0 — EL MUNDO HISPANO → ESPAÑA</div>
+  <h1>¡Empezamos!</h1>
+  <div class="sub">¡Empezamos el viaje! Hoy: los sonidos, el alfabeto, los números y los primeros saludos. <span class="gloss">We beginnen de reis! Vandaag: de klanken, het alfabet, de getallen en de eerste groeten.</span></div>
+  <div class="q">¿Estás listo/a para el viaje? <span style="font-weight:400;opacity:.9">· Klaar voor de reis?</span></div>
+</div>
+<div class="page">
+  <div class="lead" style="margin-top:9mm">
+    <div>
+      <div class="se">¿Dónde estamos en La Ruta?</div>
+      <h2>Parada 0 · España 🇪🇸</h2>
+      <svg width="100%" viewBox="0 0 520 120" font-family="Inter">
+        <path d="M40 70 C 130 30, 200 30, 250 62" stroke="#C9C8C2" stroke-width="3" fill="none" stroke-dasharray="2 6" stroke-linecap="round"/>
+        <path d="M250 62 C 320 95, 420 95, 490 60" stroke="#C9C8C2" stroke-width="3" fill="none" stroke-dasharray="2 6" stroke-linecap="round"/>
+        <text x="150" y="34" fill="#6A6E78" font-size="12" font-style="italic">« el charco »</text>
+        <circle cx="40" cy="70" r="12" fill="#1E9E74"/><circle cx="40" cy="70" r="20" fill="none" stroke="#1E9E74" stroke-width="2" opacity=".4"/>
+        <text x="40" y="100" fill="#157355" font-size="13" font-weight="700" text-anchor="middle">España</text>
+        <circle cx="250" cy="62" r="9" fill="#fff" stroke="#C9C8C2" stroke-width="3"/><text x="250" y="92" fill="#6A6E78" font-size="12" text-anchor="middle">México</text>
+        <circle cx="380" cy="83" r="9" fill="#fff" stroke="#C9C8C2" stroke-width="3"/><text x="380" y="108" fill="#6A6E78" font-size="12" text-anchor="middle">Colombia</text>
+        <circle cx="490" cy="60" r="9" fill="#fff" stroke="#C9C8C2" stroke-width="3"/><text x="490" y="90" fill="#6A6E78" font-size="12" text-anchor="middle">Perú</text>
+      </svg>
+      <div class="hist">Este año viajamos de España, cruzando el océano (« el charco »), a México, Colombia y Perú. El mapa se colorea en cada parada.
+        <span class="gloss">Dit jaar reizen we van Spanje, de oceaan over (« el charco »), naar Mexico, Colombia en Peru. De kaart kleurt bij elke halte.</span></div>
+      <div class="ojo"><b>¡Ojo!</b> <i>el mapa</i> es masculino, aunque termina en -a: <b>el mapa</b>, no <s>la mapa</s>. <span class="gloss">Let op: «el mapa» is mannelijk, ook al eindigt het op -a. Verwar «el mapa» niet met «la carta» (de brief / het menu).</span></div>
+    </div>
+    <div>
+      <div class="se">La gente de la ruta</div>
+      <h2>¿A quién conoces?</h2>
+      <div class="cast">
+        <div class="pc"><div class="av" style="background:var(--luc)">L</div><div class="nm">Lucía</div><div class="fr">Sevilla 🇪🇸</div></div>
+        <div class="pc"><div class="av" style="background:var(--die)">D</div><div class="nm">Diego</div><div class="fr">CDMX 🇲🇽</div></div>
+        <div class="pc"><div class="av" style="background:var(--val)">V</div><div class="nm">Valen</div><div class="fr">Cartagena 🇨🇴</div></div>
+        <div class="pc"><div class="av" style="background:var(--nin)">N</div><div class="nm">Nina</div><div class="fr">Cusco 🇵🇪</div></div>
+        <div class="pc tu"><div class="av">TÚ</div><div class="nm">Tú</div><div class="fr">Flandes 🇧🇪</div></div>
+      </div>
+      <div class="moch">
+        <div class="ic">🎒</div>
+        <div><div style="font-weight:700">La mochila viajera</div><div style="font-size:9pt;color:var(--mut)">Tu compañera de viaje: lleva los trucos y las palabras. <span class="gloss">Je reisgezel: draagt de tips en de woorden.</span></div><div class="hand">¿Cómo se llama nuestra mochila?</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="obj" style="margin-top:8mm">
+    <div class="se">En esta lección vas a…</div>
+    <h2>In deze les ga je…</h2>
+    <ul>
+      <li><span class="ck">✓</span><span><span class="es">descubrir dónde se habla español</span> 🌍<br><span class="nl">ontdekken waar Spaans gesproken wordt</span></span></li>
+      <li><span class="ck">✓</span><span><span class="es">reconocer los sonidos y las letras</span> 🔊<br><span class="nl">de klanken en het alfabet herkennen</span></span></li>
+      <li><span class="ck">✓</span><span><span class="es">deletrear tu nombre</span> 🔤<br><span class="nl">je naam spellen</span></span></li>
+      <li><span class="ck">✓</span><span><span class="es">saludar y despedirte</span> 👋<br><span class="nl">groeten en afscheid nemen</span></span></li>
+      <li><span class="ck">✓</span><span><span class="es">pedir ayuda en clase (¿Cómo se dice…?)</span> 🙋<br><span class="nl">hulp vragen in de klas</span></span></li>
+    </ul>
+  </div>
+  <div class="mini">
+    <div class="se">La ruta de esta unidad</div>
+    <div class="steps"><div><b>§1</b>alfabeto</div><div><b>§2</b>el acento</div><div><b>§3</b>números</div><div><b>§4</b>saludos</div><div><b>Cultura</b>mundo hispano</div><div><b>Tarea</b>tarjeta</div><div><b>Repaso</b>semáforo</div></div>
+  </div>
+</div>
+
+<!-- ============ §1 ============ -->
+<div class="page">
+  <div class="parada">
+    <span class="pk">§1 · El alfabeto y la pronunciación</span>
+    <div class="intro">Antes de salir, aprendemos a <b>sonar</b> como un viajero. El español se lee <b>como se escribe</b>: aprende las reglas del sonido una vez y leerás casi cualquier palabra en voz alta. ¡Esa es tu ventaja para todo el viaje!
+      <span class="gloss">Vóór we vertrekken, leren we klinken als een reiziger. Spaans lees je zoals je het schrijft: leer de klankregels één keer en je leest bijna elk woord correct hardop. Dat is je voorsprong voor de hele reis.</span></div>
+    <div class="route-note">📍 Parada 0 · El mundo hispano → España &nbsp;·&nbsp; Ruta del bloque: contexto → observar → patrón → regla → practicar (con menos ayuda) → comunicar.</div>
+  </div>
+
+  <h3>§1.1 · El abecedario — las 27 letras</h3>
+  <div class="call"><div class="ic">🎧</div><div><b>Escucha una vez y sigue con el dedo.</b> No escribas todavía. <span class="gloss">Luister eerst één keer en volg met je vinger; nog niet schrijven.</span><div class="asset">[AUDIO: «La canción del abecedario» — ritmisch alfabetlied A–Z (~40 s), man + vrouw; ook per letter afspeelbaar.]</div></div></div>
+  <div class="asset">[BEELD: AlfabetoPoster — 27 vakjes (letter groot + letternaam + ankerwoord met beeldje), groene rand, digitaal klikbaar voor audio.]</div>
+
+  <table class="alf">
+   <tr><th>Letra</th><th>Se llama</th><th>Suena (NL-anker)</th><th>Ejemplo</th><th>Letra</th><th>Se llama</th><th>Suena (NL-anker)</th><th>Ejemplo</th></tr>
+   <tr><td class="L">A a</td><td>a</td><td>a</td><td>Ana, casa</td>                <td class="L">N n</td><td>ene</td><td>n</td><td>no, nada</td></tr>
+   <tr><td class="L">B b</td><td>be</td><td>b</td><td>Bélgica</td>               <td class="L">Ñ ñ</td><td>eñe</td><td class="trap">nj</td><td>España, niño</td></tr>
+   <tr><td class="L">C c</td><td>ce</td><td>th/k (§1.2)</td><td>casa, cine</td>     <td class="L">O o</td><td>o</td><td>o</td><td>oso, ocho</td></tr>
+   <tr><td class="L">D d</td><td>de</td><td>d</td><td>dos, dedo</td>              <td class="L">P p</td><td>pe</td><td>p</td><td>papá, Perú</td></tr>
+   <tr><td class="L">E e</td><td>e</td><td>e (kort)</td><td>mesa</td>             <td class="L">Q q</td><td>cu</td><td>k (qu)</td><td>queso, aquí</td></tr>
+   <tr><td class="L">F f</td><td>efe</td><td>f</td><td>foto, café</td>            <td class="L">R r</td><td>erre</td><td class="trap">tik / rol</td><td>pero, perro</td></tr>
+   <tr><td class="L">G g</td><td>ge</td><td>g / jota (§1.2)</td><td>gato, gente</td> <td class="L">S s</td><td>ese</td><td>s</td><td>sí, mesa</td></tr>
+   <tr><td class="L">H h</td><td>hache</td><td class="trap">— (zwijgt!)</td><td>hola</td> <td class="L">T t</td><td>te</td><td>t</td><td>té, tú</td></tr>
+   <tr><td class="L">I i</td><td>i</td><td>ie</td><td>isla, sí</td>              <td class="L">U u</td><td>u</td><td>oe</td><td>uno, luna</td></tr>
+   <tr><td class="L">J j</td><td>jota</td><td class="trap">keel-ch</td><td>Juan, jamón</td> <td class="L">V v</td><td>uve</td><td class="trap">= b!</td><td>vino, Sevilla</td></tr>
+   <tr><td class="L">K k</td><td>ka</td><td>k (zeldz.)</td><td>kilo</td>          <td class="L">W w</td><td>uve doble</td><td>w (zeldz.)</td><td>wifi</td></tr>
+   <tr><td class="L">L l</td><td>ele</td><td>l</td><td>luna, sol</td>            <td class="L">X x</td><td>equis</td><td>ks</td><td>taxi, examen</td></tr>
+   <tr><td class="L">M m</td><td>eme</td><td>m</td><td>mamá, mesa</td>           <td class="L">Y y</td><td>ye</td><td>j / ie</td><td>yo, hoy</td></tr>
+   <tr><td colspan="4"></td> <td class="L">Z z</td><td>zeta</td><td class="trap">th/s</td><td>zapato, luz</td></tr>
+  </table>
+
+  <div class="truc"><b>🟡 Truco — «el nombre = la clase de sonido».</b> Tres nombres ya revelan su sonido: <b>ge</b> y <b>jota</b> suenan con la keel-ch (→ §1.2), y <b>zeta</b> con la th. <span class="gloss">De letternaam verklapt vaak de klank: wie «ge/jota/zeta» goed zegt, kent de klank al.</span></div>
+
+  <div class="regla"><span class="tag">Regla 1 · El abecedario español</span>
+    <p>El español tiene <b>27 letras</b>: las 26 del neerlandés <b>+ la ñ</b>. <i>ch</i> y <i>ll</i> son <b>dígrafos</b> (combinaciones), no letras aparte. El <b>nombre</b> de la letra no siempre es el <b>sonido</b> → eso lo vemos en §1.2. <span class="gloss">Spaans = 27 letters (+ ñ); ch/ll zijn klankcombinaties. De letternaam ≠ altijd de klank.</span></p></div>
+
+  <div class="act"><span class="h">▷ Actividad 1 · «Escucha y señala»</span> <span class="wv">— werkvorm: Luisteren en aanwijzen · 👂</span>
+    <p>Oyes un nombre de letra → señala la letra correcta en el <b>AlfabetoPoster</b>. <span class="gloss">Je hoort een letternaam; wijs de juiste letter aan.</span><br><span class="asset">[AUDIO: 12 letternamen willekeurig — focus ñ·j·g·h·v·z·q·r·y·ll·e·i.]</span></p><span class="steun">Steun: modelo (poster zichtbaar) · receptief</span></div>
+
+  <div class="act"><span class="h">▷ Actividad 2 · «¿B o V? ¿G o J?»</span> <span class="wv">— PronunciationContrast · 👂🎙️</span>
+    <p>Oyes una palabra → marca lo que oyes → luego di <b>las dos</b> en voz alta.</p>
+    <table class="mp"><tr><th>Oyes</th><th>☐ A</th><th>☐ B</th></tr><tr><td>1</td><td>vaca</td><td>baca</td></tr><tr><td>2</td><td>gente</td><td>tente</td></tr><tr><td>3</td><td>casa</td><td>caza</td></tr><tr><td>4</td><td>hola</td><td>ola</td></tr></table>
+    <p class="ojo" style="margin-top:2mm"><b>¡Ojo!</b> <i>vaca/baca</i> y <i>hola/ola</i> suenan <b>igual</b>: no es un error, ¡es español! <span class="gloss">Ze klinken identiek — dat hoort zo.</span></p><span class="steun">Steun: banco de palabras · onderscheiden</span></div>
+
+  <div class="act"><span class="h">▷ Actividad 3 · «Deletrea tu nombre»</span> <span class="wv">— ListenRepeatRecorder · 🎙️</span>
+    <p>Escucha el modelo y deletrea <b>tu propio nombre</b>, letra por letra. <span class="gloss">Luister en spel je eigen voornaam.</span><br><span class="asset">[AUDIO: modelo — «Me llamo Lucía: ele-u-ce-i-a, con tilde en la i.»]</span><br><b>Marco:</b> «Me llamo ______ : ______ .»</p><span class="steun">Steun: marco + beginletter → sin ayuda (naam van je buur)</span></div>
+
+  <div class="act"><span class="h">▷ Tarea comunicativa 1.1 · «¿Cómo se escribe?»</span> <span class="wv">— Informatiekloof · 👥</span>
+    <p><b>A</b> tiene 4 nombres/lugares <b>con</b> ortografía; <b>B</b> los tiene <b>vacíos</b>. B pregunta, A deletrea, B escribe — y al revés. <span class="gloss">Info-gap: de een spelt, de ander schrijft.</span></p>
+    <p class="words"><b>Caja de lengua:</b> <b>¿Cómo se escribe…?</b> · <b>¿Con be o con uve?</b> · <b>¿Con hache o sin hache?</b> · con mayúscula <span class="gloss">(hoofdletter)</span> · en minúscula · con tilde · una arroba (@) · un guion (-).</p><span class="steun">Steun: modelo-dialoog → afdekken → sin ayuda</span>
+    <div class="asset">[CROSS → PPTX «Deletrear» · HTML tab «Practicar»: SpellingInfoGap.]</div></div>
+</div>
+
+<!-- ============ §1.2 ============ -->
+<div class="page">
+  <h3 style="margin-top:6mm">§1.2 · Los sonidos que cambian — «trampas para neerlandeses» 🔴</h3>
+  <div class="intro">La mayoría de los sonidos son fáciles. Pero unas letras hacen <b>algo distinto</b> de lo que esperas. Las vemos en <b>cinco familias</b>, con una <i>carta de sonido</i>, un ancla NL y <b>pares mínimos</b>.
+    <span class="gloss">De meeste klanken zijn makkelijk; een handvol letters doet iets anders. We pakken ze in vijf families aan.</span></div>
+
+  <div class="act"><span class="h">▷ Actividad 5 · «Caza de sonidos»</span> <span class="wv">— klank-speurtocht · vóór de regels</span>
+    <p>Escucha y <b>subraya</b> cada vez que oyes la <b>keel-ch</b>. Primero: ¿de dónde es Jorge? <span class="gloss">Betekenis eerst, dan de klank onderstrepen.</span><br><span class="asset">[AUDIO: «¡Hola! Me llamo Jorge, soy de Gijón. Estudio en un colegio. Me gusta la gente y el jamón.»]</span></p><span class="steun">Steun: modelo (tekst zichtbaar) · herkennen</span></div>
+
+  <div class="fams">
+    <div class="pcard"><div class="t">1 · La jota /x/</div>
+      <div class="anchor"><b>NL-anker:</b> als de <b>ch</b> in «lachen, acht, Bach» — hard, achter in de keel.</div>
+      <div class="ej"><b>Letters:</b> j (altijd) · g vóór e/i. <b>Ej.:</b> <b>Juan · jamón · gente · Gijón · rojo</b>.</div>
+      <div class="t2">🔴 Spaanse j ≠ Nederlandse «j»: Juan = «Choean».</div></div>
+    <div class="pcard"><div class="t">1b · La g dura /g/</div>
+      <div class="anchor">¿g dura vóór e/i? Zet er een <b>stille u</b> tussen: <b>gue · gui</b>.</div>
+      <div class="ej"><b>Ej.:</b> <b>guitarra · guerra · Miguel</b>. Diéresis <b>güe/güi</b> → pingüino, bilingüe.</div>
+      <div class="t2">🔴 De u zwijgt (niet «goe-i»).</div></div>
+    <div class="pcard"><div class="t">2 · ll / y /ʝ/</div>
+      <div class="anchor"><b>NL-anker:</b> als de <b>j</b> in «ja, jong». ll en y klinken (bijna overal) gelijk.</div>
+      <div class="ej"><b>Ej.:</b> <b>llamar · calle · paella · yo · playa</b>.</div>
+      <div class="t2">🔴 ll ≠ «l-l»: calle = «ca-je». 🌎 In Argentinië: «sj».</div></div>
+    <div class="pcard"><div class="t">2b · La ñ /ɲ/</div>
+      <div class="anchor"><b>NL-anker:</b> als <b>nj</b> in «oranje, Anja».</div>
+      <div class="ej"><b>Ej.:</b> <b>España · niño · año · mañana · señor</b>.</div>
+      <div class="t2">🔴 año (jaar) ≠ ano — het streepje maakt het verschil!</div></div>
+    <div class="pcard"><div class="t">3 · b = v /b/</div>
+      <div class="anchor">En español <b>b</b> y <b>v</b> suenan <b>igual</b> (/b/). Geen NL v- of w-klank.</div>
+      <div class="ej"><b>Ej.:</b> <b>Bélgica · vino · Sevilla · vivir</b>.</div>
+      <div class="t2">🔴 vivir = «bi-bir», Sevilla = «Se-bi-ja».</div></div>
+    <div class="pcard"><div class="t">3b · La h muda</div>
+      <div class="anchor">La <b>h</b> no suena <b>nunca</b>. Doe alsof ze er niet staat.</div>
+      <div class="ej"><b>Ej.:</b> <b>hola («ola») · hora · hospital · hay</b>. Maar <b>ch</b> = «tsj»: chico, coche.</div>
+      <div class="t2">🔴 hola = ola (niet «h» blazen).</div></div>
+  </div>
+
+  <div class="regla"><span class="tag">Regla 2 · La regla de la «g»</span>
+    <p><b>ga · go · gu</b> = harde g. <b>ge · gi</b> = jota. ¿g dura vóór e/i? → <b>gue · gui</b> (u zwijgt). ¿u tóch laten klinken? → <b>güe · güi</b> (diéresis). <span class="gloss">De g-regel in één lijn.</span></p></div>
+
+  <h3>Familia 4 · r (una vibración) vs rr (varias) — het paar dat betekenis verandert</h3>
+  <div class="intro" style="margin-top:1mm">Aquí <b>un solo sonido cambia el significado</b>. Escucha bien. <span class="gloss">Hier verandert één klank de betekenis.</span></div>
+  <table class="mp" style="margin-top:2mm"><tr><th>una vibración (tik)</th><th>varias (rol)</th><th></th></tr>
+   <tr><td><b>pero</b> <span class="gloss">maar</span></td><td><b>perro</b> <span class="gloss">hond</span></td><td>🐶</td></tr>
+   <tr><td><b>caro</b> <span class="gloss">duur</span></td><td><b>carro</b> <span class="gloss">kar/auto</span></td><td>🚗</td></tr>
+   <tr><td><b>pera</b> <span class="gloss">peer</span></td><td><b>perra</b> <span class="gloss">teef</span></td><td>🍐</td></tr>
+   <tr><td><b>ahora</b> <span class="gloss">nu</span></td><td><b>ahorra</b> <span class="gloss">spaart</span></td><td>💰</td></tr></table>
+  <div class="regla"><span class="tag">Regla 3 · r / rr</span>
+    <p><b>Eén tik</b> (r tussen klinkers): pero · caro. <b>Rollen</b> (rr, r aan woordbegin, en na n/l/s): perro · Roma · rojo · Enrique. <span class="gloss">r = tik, rr = rol.</span></p></div>
+  <div class="act"><span class="h">▷ Actividad 12 · «Trabalenguas»</span> <span class="wv">— 4/3/2-spreektaak · 🎙️🚂</span>
+    <p><i>«Rápido corre el carro del ferrocarril.»</i> Dilo 3× — cada vez más rápido, siempre comprensible. <span class="gloss">Tongbreker, 3× sneller.</span></p><span class="steun">Steun: modelo → alleen tekst → uit het hoofd · vlotheid</span></div>
+
+  <h3>Familia 5 · c / z / qu — de «k»-klank en de «th»-klank</h3>
+  <div class="fams">
+    <div class="pcard"><div class="t">/θ~s/ · z en ce/ci</div>
+      <div class="anchor"><b>NL-anker:</b> in <b>España</b> als de Engelse <b>th</b> in «think»; in Latijns-Amerika als <b>s</b>. Wij vertrekken in España → th.</div>
+      <div class="ej"><b>Ej.:</b> <b>zapato · zumo · plaza · cine · gracias · Barcelona</b>.</div>
+      <div class="t2">🔴 gracias/Barcelona = th (España), niet «s» of «k».</div></div>
+    <div class="pcard"><div class="t">/k/ · c (a/o/u) · qu (e/i)</div>
+      <div class="anchor">De k-klank schrijf je op drie manieren, afhankelijk van de klinker erna.</div>
+      <div class="ej"><b>Ej.:</b> <b>casa · cosa · cuchara</b> · <b>queso · quiero · aquí</b> · kilo.</div>
+      <div class="t2">🔴 qu = «k» (u zwijgt), niet «kw»: queso = «keso».</div></div>
+  </div>
+  <div class="act"><span class="h">▷ Actividad 13 · «Formula la regla»</span> <span class="wv">— Regelhypothese · 👥</span>
+    <p>Mira la serie y <b>completa la regla</b>: «El sonido /k/ lo escribo con <b>c</b> vóór ___/___/___ , y con <b>qu</b> vóór ___/___.» <br><span class="words">casa – queso · cosa – aquí · cuna – parque</span> <span class="gloss">Patroon → regel zelf formuleren.</span></p><span class="steun">Steun: pista (klinkers a o u / e i) · patroon→regel</span></div>
+
+  <div class="esen"><b style="font-family:var(--disp);color:var(--gd)">Lo esencial de esta parada</b>
+    <ul>
+      <li>Alfabeto = <b>27 letras</b> (+ ñ); de letternaam verraadt soms de klank.</li>
+      <li><b>Zwijgt:</b> h. · <b>Gelijk:</b> b = v. · <b>Jota:</b> j + ge/gi. · <b>qu</b> = «k».</li>
+      <li><b>ll/y</b> = «j» · <b>ñ</b> = «nj» · <b>z/ce/ci</b> = «th» (España). · <b>r</b> tik ↔ <b>rr</b> rol (pero/perro).</li>
+    </ul></div>
+  <div class="bridge"><b>» Van klank naar klemtoon.</b> Ya sabes <i>cómo suena cada letra</i>. En <b>§2</b> (el Taller de lengua) aprendes algo pequeño con grandes efectos: <b>qué sílaba dices más fuerte</b> y <b>cuándo escribes el sombrero</b> (la tilde). <span class="gloss">Nu weet je hoe elke letter klinkt; §2 leert je de klemtoon en de tilde.</span></div>
+</div>
+
+</body></html>
