@@ -290,7 +290,7 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
 </div></div>
 
 <div class="editbar" id="editbar">
-  <span id="ebtxt">✏️ «Bewerken» om titels/teksten aan te passen</span>
+  <span id="ebtxt">✏️ «Bewerken» → pas titels & teksten aan · «Bewaar» = eigen versie downloaden</span>
   <button class="b1" id="ebEdit">Bewerken</button>
   <button class="b2" id="ebSave">💾 Bewaar</button>
 </div>
@@ -477,11 +477,11 @@ window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');
 
 // editbar
 (function(){
- var SEL='.hero h1,.hero p,h2.sec,p.lead,.subh,.foot,section[data-p="extra"] .card p,#mapinfo';
+ var SEL='.hero h1,.hero p,h2.sec,p.lead,.subh,.foot,#mapinfo,section .card p,section .card h3,section .card h4,section .card li,.perfil p,.perfil h3';
  var editing=false;var eb=document.getElementById('editbar'),txt=document.getElementById('ebtxt'),bE=document.getElementById('ebEdit');
  function setEd(on){document.querySelectorAll(SEL).forEach(function(e){if(on){e.setAttribute('contenteditable','true');e.setAttribute('spellcheck','false');}else{e.removeAttribute('contenteditable');}});}
  bE.onclick=function(){editing=!editing;document.body.classList.toggle('editing',editing);eb.classList.toggle('on',editing);setEd(editing);
-   txt.textContent=editing?'✏️ AAN — klik op een titel/tekst en typ':'✏️ «Bewerken» om titels/teksten aan te passen';bE.textContent=editing?'Klaar':'Bewerken';};
+   txt.textContent=editing?'✏️ AAN — klik op een titel/tekst en typ':'✏️ «Bewerken» → pas titels & teksten aan · «Bewaar» = eigen versie downloaden';bE.textContent=editing?'Klaar':'Bewerken';};
  document.getElementById('ebSave').onclick=function(){if(editing)bE.click();
    var clone=document.documentElement.cloneNode(true);var b=clone.querySelector('.editbar');if(b)b.remove();
    var html='<!doctype html>\n'+clone.outerHTML;var blob=new Blob([html],{type:'text/html'});
