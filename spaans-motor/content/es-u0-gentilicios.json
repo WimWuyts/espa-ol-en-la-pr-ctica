@@ -4,16 +4,69 @@
   "subtitle": "U0 · el mundo hispano — land en nationaliteit",
   "lang": "es",
   "template": "match",
-  "options": { "chunk": 6, "audio": false },
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
   "match": {
     "prompt": "Verbind elk land met de nationaliteit (gentilicio)",
     "pairs": [
-      {"a":"Bélgica","b":"belga"},
-      {"a":"España","b":"español"},
-      {"a":"México","b":"mexicano"},
-      {"a":"Colombia","b":"colombiano"},
-      {"a":"Perú","b":"peruano"},
-      {"a":"Argentina","b":"argentino"}
+      {
+        "a": "Bélgica",
+        "b": "belga"
+      },
+      {
+        "a": "España",
+        "b": "español"
+      },
+      {
+        "a": "México",
+        "b": "mexicano"
+      },
+      {
+        "a": "Colombia",
+        "b": "colombiano"
+      },
+      {
+        "a": "Perú",
+        "b": "peruano"
+      },
+      {
+        "a": "Argentina",
+        "b": "argentino"
+      },
+      {
+        "a": "Chile",
+        "b": "chileno"
+      },
+      {
+        "a": "Cuba",
+        "b": "cubano"
+      },
+      {
+        "a": "Venezuela",
+        "b": "venezolano"
+      },
+      {
+        "a": "Ecuador",
+        "b": "ecuatoriano"
+      },
+      {
+        "a": "Bolivia",
+        "b": "boliviano"
+      },
+      {
+        "a": "Guatemala",
+        "b": "guatemalteco"
+      },
+      {
+        "a": "Costa Rica",
+        "b": "costarricense"
+      },
+      {
+        "a": "Puerto Rico",
+        "b": "puertorriqueño"
+      }
     ]
   }
 }

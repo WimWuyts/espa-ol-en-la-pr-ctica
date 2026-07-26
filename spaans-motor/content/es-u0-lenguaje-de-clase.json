@@ -4,20 +4,167 @@
   "subtitle": "U0 · vul de juiste klaszin aan",
   "lang": "es",
   "template": "cloze",
-  "options": { "rounds": 10, "audio": false },
+  "options": {
+    "rounds": 14,
+    "audio": false
+  },
   "cloze": {
     "prompt": "Kies het juiste woord (lenguaje de clase)",
     "items": [
-      {"stimulus":"¿Cómo se ___ «mochila» en español?","options":["dice","llama","escribe"],"answer":"dice","tag":"clase","sub":"Hoe zeg je …?"},
-      {"stimulus":"¿Qué ___ «parada»?","options":["significa","dice","tiene"],"answer":"significa","tag":"clase","sub":"Wat betekent …?"},
-      {"stimulus":"Más ___, por favor.","options":["despacio","rápido","alto"],"answer":"despacio","tag":"clase","sub":"Trager, a.u.b."},
-      {"stimulus":"¿Puedes ___, por favor?","options":["repetir","hablar","comer"],"answer":"repetir","tag":"clase","sub":"Kun je herhalen?"},
-      {"stimulus":"No ___ , profe.","options":["entiendo","tengo","voy"],"answer":"entiendo","tag":"clase","sub":"Ik begrijp het niet"},
-      {"stimulus":"No ___ la respuesta.","options":["sé","es","hay"],"answer":"sé","tag":"clase","sub":"Ik weet het niet"},
-      {"stimulus":"¿Cómo se ___ tu nombre?","options":["escribe","dice","abre"],"answer":"escribe","tag":"clase","sub":"Hoe schrijf je …?"},
-      {"stimulus":"Tengo una ___.","options":["pregunta","palabra","letra"],"answer":"pregunta","tag":"clase","sub":"Ik heb een vraag"},
-      {"stimulus":"¿Puedes ___ tu nombre, letra por letra?","options":["deletrear","repetir","cerrar"],"answer":"deletrear","tag":"clase","sub":"Kun je spellen?"},
-      {"stimulus":"Muchas gracias. — Por ___.","options":["favor","nada","fin"],"answer":"favor","tag":"clase","sub":"por favor = alsjeblieft"}
+      {
+        "stimulus": "¿Cómo se ___ «mochila» en español?",
+        "options": [
+          "dice",
+          "llama",
+          "escribe"
+        ],
+        "answer": "dice",
+        "tag": "clase",
+        "sub": "Hoe zeg je …?"
+      },
+      {
+        "stimulus": "¿Qué ___ «parada»?",
+        "options": [
+          "significa",
+          "dice",
+          "tiene"
+        ],
+        "answer": "significa",
+        "tag": "clase",
+        "sub": "Wat betekent …?"
+      },
+      {
+        "stimulus": "Más ___, por favor.",
+        "options": [
+          "despacio",
+          "rápido",
+          "alto"
+        ],
+        "answer": "despacio",
+        "tag": "clase",
+        "sub": "Trager, a.u.b."
+      },
+      {
+        "stimulus": "¿Puedes ___, por favor?",
+        "options": [
+          "repetir",
+          "hablar",
+          "comer"
+        ],
+        "answer": "repetir",
+        "tag": "clase",
+        "sub": "Kun je herhalen?"
+      },
+      {
+        "stimulus": "No ___ , profe.",
+        "options": [
+          "entiendo",
+          "tengo",
+          "voy"
+        ],
+        "answer": "entiendo",
+        "tag": "clase",
+        "sub": "Ik begrijp het niet"
+      },
+      {
+        "stimulus": "No ___ la respuesta.",
+        "options": [
+          "sé",
+          "es",
+          "hay"
+        ],
+        "answer": "sé",
+        "tag": "clase",
+        "sub": "Ik weet het niet"
+      },
+      {
+        "stimulus": "¿Cómo se ___ tu nombre?",
+        "options": [
+          "escribe",
+          "dice",
+          "abre"
+        ],
+        "answer": "escribe",
+        "tag": "clase",
+        "sub": "Hoe schrijf je …?"
+      },
+      {
+        "stimulus": "Tengo una ___.",
+        "options": [
+          "pregunta",
+          "palabra",
+          "letra"
+        ],
+        "answer": "pregunta",
+        "tag": "clase",
+        "sub": "Ik heb een vraag"
+      },
+      {
+        "stimulus": "¿Puedes ___ tu nombre, letra por letra?",
+        "options": [
+          "deletrear",
+          "repetir",
+          "cerrar"
+        ],
+        "answer": "deletrear",
+        "tag": "clase",
+        "sub": "Kun je spellen?"
+      },
+      {
+        "stimulus": "Muchas gracias. — Por ___.",
+        "options": [
+          "favor",
+          "nada",
+          "fin"
+        ],
+        "answer": "favor",
+        "tag": "clase",
+        "sub": "por favor = alsjeblieft"
+      },
+      {
+        "stimulus": "Abre el ___ en la página diez.",
+        "options": [
+          "libro",
+          "mapa",
+          "lápiz"
+        ],
+        "answer": "libro",
+        "tag": "clase",
+        "sub": "Doe je boek open"
+      },
+      {
+        "stimulus": "Levanta la ___ para hablar.",
+        "options": [
+          "mano",
+          "voz",
+          "letra"
+        ],
+        "answer": "mano",
+        "tag": "clase",
+        "sub": "Steek je hand op"
+      },
+      {
+        "stimulus": "¿Está ___ o mal?",
+        "options": [
+          "bien",
+          "aquí",
+          "hoy"
+        ],
+        "answer": "bien",
+        "tag": "clase",
+        "sub": "Is het goed of fout?"
+      },
+      {
+        "stimulus": "¿Cómo se ___ esta palabra?",
+        "options": [
+          "pronuncia",
+          "abre",
+          "cierra"
+        ],
+        "answer": "pronuncia",
+        "tag": "clase",
+        "sub": "Hoe spreek je dit uit?"
+      }
     ]
   }
 }
