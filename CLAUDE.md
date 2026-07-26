@@ -121,8 +121,19 @@ Elke unit/les levert **vier formaten met een identieke, uitgeverswaardige layout
 - [x] Fonts + kleurenpalet vastgelegd als tokens (Richting 1; `02-huisstijl/tokens/`). — beslist 2026-07-25
 - [x] Reisgezel-mascotte = **«La mochila viajera»**; de klas kiest de naam. Tekenstijl (AI ↔ vector) nog te bepalen. — 2026-07-25
 - [x] Beeld-aanpak: **AI-personages** (cast «Estilo Exploración», via Drive) · AI-foto's · flat-vector iconen/kaarten/mockups (Claude) · SVG→PNG voor print (zie §15). — 2026-07-25 (personages bijgesteld: flat-vector → AI)
-- [ ] Toolchain voor de "één bron → 4 formaten"-generatie (vast te leggen bij de golden sample).
+- [x] Toolchain voor de "één bron → 4 formaten"-generatie — **VASTGELEGD bij golden sample U0** (zie `HANDOVER_C5_C6.md` §3 + §8). — 2026-07-26
 - [ ] Bestaand C5-materiaal (netlify/afgewerkte U0–U6) importeren in deze repo?
+
+### GOLDEN SAMPLE U0 = GELOCKT (2026-07-26) → productieregels in `HANDOVER_C5_C6.md`
+U0 (C5) is goedgekeurd en vastgezet als norm voor álle volgende units. **Bij automatische generering (U1, U2, … en C6) exact dezelfde parameters/pijplijn hanteren als U0.** De volledige productiehandleiding staat in **`HANDOVER_C5_C6.md`** (lees dit vóór je een unit bouwt). Nieuw gelockte beslissingen deze sessie:
+- [x] **4 formaten per unit** = PDF (+ bewerkbare `U<N>.html`-laag) · HTML-hub (bewerkbaar) · PowerPoint 2 decks (docente `.pptx` + alumno `.ppsx`) · motor-spellen ingebed in de hub.
+- [x] **Bewerkbare laag** (contenteditable + «Opslaan als PDF»/«Bewaar») op PDF-cursus én HTML-hub. — 2026-07-26
+- [x] **PowerPoint = geanimeerd format** (verschijnen-bij-klik via `<p:timing>`; PowerPoint vraagt soms «Repareren» → animaties werken). Geen kiosk. 2 decks. — 2026-07-26
+- [x] **Motor-spellen = azulejo-stijl behouden** (contrast, niet omkleuren). — 2026-07-26
+- [x] **Audio = browser-TTS** voorlopig (geen eigen opnames). — 2026-07-26
+- [x] **Conjugador = aparte cursus-tool** (`03-build/web/Conjugador.html`), enkel presente, ~1000 werkwoorden (nagerekend via motor-engine), 2 lagen (opzoeken + zelf vervoegen). **Werkwoordsvervoeging hoort NIET in de units.** — 2026-07-26
+- [x] **Kaart = échte geografie (Natural Earth), klikbaar in HTML, met vlaggen + landcodes.** — 2026-07-26
+- [x] **QR's op print → naar de HTML-hub** (niet rechtstreeks YouTube/PPTX). — 2026-07-26
 
 ## 11 · Git & werkafspraken
 
