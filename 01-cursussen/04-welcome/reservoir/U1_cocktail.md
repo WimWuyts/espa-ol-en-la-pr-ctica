@@ -54,4 +54,7 @@ TÍTULO · MENÚ · ESCUCHA · KIT · GRAMÁTICA(2) · PRÁCTICA · HABLAR · M�
 - [x] Metaberichten van leerlingpagina's verwijderd
 
 ## Dekking-impact
-Eerste gebruik in U1: **50 items** (zie `C4_coverage.md`; incl. de uitspraaklaag DS-009 · SK-080/086/087/088 · PPT-037/038) → C4-plukvijver 380 → **330 nog beschikbaar**.
+Eerste gebruik in U1: **~62 items** → C4-plukvijver 380 → **~318 nog beschikbaar**.
+- Uitspraaklaag (matrix A): DS-009 · SK-080/086/087/088 · PPT-037/038.
+- Bladspiegel-verrijking (secties tot volle pagina, 2026-07-26): **LAY-033** (cast-mini-kaart) · **SK-020** (cognaten uit context) · **SK-011** (voorspellen/pre-luister) · **SK-070** (V/F verbeteren) · **WV-081** (interview zinsframes) · **WV-048** (chatbericht) · **SK-071** (LyricsTraining-cloze) · **WV-004** (país-match) · **WV-050** (mini-test/retrieval) · **SK-078** (klaszinnen-taalpalet) · **SK-077** (modelo-dialoog) · **LAY-028** (rubric/zelfevaluatie).
+- *(Grootboek-grid = indicatief zoals bij C5; deze cocktail is de exacte bron.)*

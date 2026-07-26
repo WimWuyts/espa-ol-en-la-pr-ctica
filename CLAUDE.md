@@ -138,6 +138,16 @@ U0 (C5) is goedgekeurd en vastgezet als norm voor álle volgende units. **Bij au
 - [x] **Kaart = échte geografie (Natural Earth), klikbaar in HTML, met vlaggen + landcodes.** — 2026-07-26
 - [x] **QR's op print → naar de HTML-hub** (niet rechtstreeks YouTube/PPTX). — 2026-07-26
 
+### GOLDEN SAMPLE C4 · U1 «Presentaciones» = GELOCKT (2026-07-26) → productieregels in `HANDOVER_C4.md`
+U1 (C4) is goedgekeurd en vastgezet als norm voor álle C4-units (U2–U14). **Bij het bouwen van U2… exact dezelfde parameters/pijplijn als U1.** Volledige handleiding: **`HANDOVER_C4.md`** (lees dit vóór je een C4-unit bouwt). Gelockt voor C4:
+- [x] **4 formaten** = HTML-hub (tabbladen, srcdoc-iframes, offline) · print-PDF (+ bewerkbare `U<N>.html`-laag/editbar) · PowerPoint 2 decks (docente `.pptx` + alumno `.ppsx`, geanimeerd) · muziek-/motor-componenten. **Print-formaat = PDF** (Word bouwbaar maar in sandbox niet te renderen → PDF primeert, §18).
+- [x] **Bladspiegel C4 = elke sectie verrijkt tot volle pagina** (§13/§14-verzoening; **meet elke unit**, streef 85–99 % vulling, géén 30–50 %-pagina's).
+- [x] **Uitspraaklaag «Suena bien» in elke unit** volgens **matrix A** (`C4_coverage.md`): één klankfocus + acentuación per unit, telkens andere werkvorm.
+- [x] **Video** = YouTube-embed (`youtube-nocookie`) met juiste `allow`-permissies (ook gedelegeerd in de hub-iframe) + zichtbare fallback-link.
+- [x] **Reservoir/cocktail-workflow** (`01-cursussen/04-welcome/reservoir/`): eerst `U<N>_cocktail.md` invullen (nieuwe IDs + matrix A+B), na de build coverage bijwerken.
+- [x] **Geen bouw-jargon/metaberichten op de leerlingpagina's.**
+- [x] **Doelcodes** (uit `C4_LEERDOELEN_EVALUATIE.md`) op de **docentenpagina** van elke unit.
+
 ## 11 · Git & werkafspraken
 
 - **Werkbranch:** `claude/spanish-course-development-jx25ay`. Niet naar een andere branch pushen zonder toestemming.
