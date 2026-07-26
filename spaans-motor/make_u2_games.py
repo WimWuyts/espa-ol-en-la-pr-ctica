@@ -23,7 +23,8 @@ w({"id":"es-u2-familia-memoria","title":"Memoria de la familia","subtitle":"U2 �
   {"a":"el padre","b":"de vader"},{"a":"la madre","b":"de moeder"},{"a":"el hermano","b":"de broer"},
   {"a":"la hermana","b":"de zus"},{"a":"el abuelo","b":"de opa"},{"a":"la abuela","b":"de oma"},
   {"a":"el tío","b":"de oom"},{"a":"la tía","b":"de tante"},{"a":"el primo","b":"de neef"},
-  {"a":"la prima","b":"de nicht"}]}})
+  {"a":"la prima","b":"de nicht"},{"a":"el hijo","b":"de zoon"},{"a":"la hija","b":"de dochter"},
+  {"a":"el sobrino","b":"het neefje"},{"a":"la sobrina","b":"het nichtje"}]}})
 
 # 2 · MATCH — parentesco ↔ definición (español A1)
 w({"id":"es-u2-parentesco","title":"El parentesco","subtitle":"U2 · koppel het familielid aan de omschrijving",
@@ -32,6 +33,8 @@ w({"id":"es-u2-parentesco","title":"El parentesco","subtitle":"U2 · koppel het 
   {"a":"el abuelo","b":"el padre de mi padre"},{"a":"la abuela","b":"la madre de mi madre"},
   {"a":"el tío","b":"el hermano de mi padre"},{"a":"la tía","b":"la hermana de mi madre"},
   {"a":"el primo","b":"el hijo de mi tío"},{"a":"la prima","b":"la hija de mi tía"},
+  {"a":"el sobrino","b":"el hijo de mi hermano"},{"a":"la sobrina","b":"la hija de mi hermana"},
+  {"a":"el nieto","b":"el hijo de mi hijo"},{"a":"la nieta","b":"la hija de mi hija"},
   {"a":"los padres","b":"el padre y la madre"},{"a":"los abuelos","b":"el abuelo y la abuela"}]}})
 
 # 3 · MATCH — colores ES ↔ NL
@@ -40,7 +43,8 @@ w({"id":"es-u2-colores-match","title":"Los colores del pelo y los ojos","subtitl
  "match":{"prompt":"Verbind de Spaanse kleur met de Nederlandse vertaling","pairs":[
   {"a":"marrón","b":"bruin"},{"a":"negro","b":"zwart"},{"a":"castaño","b":"kastanjebruin"},
   {"a":"azul","b":"blauw"},{"a":"verde","b":"groen"},{"a":"gris","b":"grijs"},
-  {"a":"rubio","b":"blond"},{"a":"pelirrojo","b":"roodharig"}]}})
+  {"a":"rubio","b":"blond"},{"a":"pelirrojo","b":"roodharig"},{"a":"moreno","b":"donkerbruin"},
+  {"a":"blanco","b":"wit"},{"a":"claro","b":"licht"},{"a":"oscuro","b":"donker"}]}})
 
 # 4 · TAP — sílaba tónica op familia/física-woorden
 w({"id":"es-u2-tonica-familia","title":"La tónica de la familia","subtitle":"U2 · tik de sterke lettergreep",
@@ -186,7 +190,9 @@ w({"id":"es-u2-tener-cloze","title":"Completa: tener","subtitle":"U2 · vul de j
   {"stimulus":"Lucía ___ el pelo largo.","options":["tiene","tienes","tengo"],"answer":"tiene","tag":"t","sub":"ella → tiene"},
   {"stimulus":"Yo ___ una hermana menor.","options":["tengo","tiene","tienes"],"answer":"tengo","tag":"t","sub":"yo → tengo"},
   {"stimulus":"¿Tú ___ mascota?","options":["tienes","tiene","tenéis"],"answer":"tienes","tag":"t","sub":"tú → tienes"},
-  {"stimulus":"Mi tía ___ dos hijos.","options":["tiene","tienen","tengo"],"answer":"tiene","tag":"t","sub":"ella → tiene"}]}})
+  {"stimulus":"Mi tía ___ dos hijos.","options":["tiene","tienen","tengo"],"answer":"tiene","tag":"t","sub":"ella → tiene"},
+  {"stimulus":"Mis primos ___ un gato.","options":["tienen","tiene","tenéis"],"answer":"tienen","tag":"t","sub":"ellos → tienen"},
+  {"stimulus":"Mi sobrino ___ cinco años.","options":["tiene","tienes","tengo"],"answer":"tiene","tag":"t","sub":"él → tiene"}]}})
 
 # 12 · CLOZE — verbo-cloze VERPLICHT (tener + ser + estar · nagerekend §4 bron)
 w({"id":"es-u2-ser-estar-cloze","title":"Completa el verbo: ser · estar · tener","subtitle":"U2 · vul de juiste vorm in (vormen nagerekend)",
@@ -218,7 +224,9 @@ w({"id":"es-u2-posesivo-cloze","title":"Completa: mi · tu · su","subtitle":"U2
   {"stimulus":"___ madre es habladora. (yo · 1)","options":["Mi","Mis","Su"],"answer":"Mi","tag":"pos","sub":"1 → mi"},
   {"stimulus":"Marco y Ana son ___ hermanos. (yo)","options":["mis","mi","tus"],"answer":"mis","tag":"pos","sub":"mv. → mis"},
   {"stimulus":"¿Dónde están ___ gafas? (tú)","options":["tus","tu","sus"],"answer":"tus","tag":"pos","sub":"gafas = mv. → tus"},
-  {"stimulus":"___ tía tiene dos hijos. (ella)","options":["Su","Sus","Mi"],"answer":"Su","tag":"pos","sub":"1 → su"}]}})
+  {"stimulus":"___ tía tiene dos hijos. (ella)","options":["Su","Sus","Mi"],"answer":"Su","tag":"pos","sub":"1 → su"},
+  {"stimulus":"___ casa está en Sevilla. (nosotros · 1)","options":["Nuestra","Nuestro","Nuestros"],"answer":"Nuestra","tag":"pos","sub":"la casa (f) → nuestra"},
+  {"stimulus":"___ abuelos son mayores. (nosotros · 2)","options":["Nuestros","Nuestro","Nuestras"],"answer":"Nuestros","tag":"pos","sub":"mv. m → nuestros"}]}})
 
 # 14 · CLOZE — congruencia del adjetivo (género/número)
 w({"id":"es-u2-adjetivo-concuerda","title":"El adjetivo concuerda","subtitle":"U2 · pas het adjectief aan (género + número)",
@@ -233,7 +241,9 @@ w({"id":"es-u2-adjetivo-concuerda","title":"El adjetivo concuerda","subtitle":"U
   {"stimulus":"Mis hermanos son ___. (rubio)","options":["rubios","rubias","rubio"],"answer":"rubios","tag":"c","sub":"masc. pl. → rubios"},
   {"stimulus":"Mi tía es ___. (hablador)","options":["habladora","hablador","habladoras"],"answer":"habladora","tag":"c","sub":"fem. sing. → habladora"},
   {"stimulus":"Las primas son ___. (guapo)","options":["guapas","guapos","guapa"],"answer":"guapas","tag":"c","sub":"fem. pl. → guapas"},
-  {"stimulus":"Mi abuelo es ___. (alto)","options":["alto","alta","altos"],"answer":"alto","tag":"c","sub":"masc. sing. → alto"}]}})
+  {"stimulus":"Mi abuelo es ___. (alto)","options":["alto","alta","altos"],"answer":"alto","tag":"c","sub":"masc. sing. → alto"},
+  {"stimulus":"Mis sobrinas son ___. (pequeño)","options":["pequeñas","pequeños","pequeña"],"answer":"pequeñas","tag":"c","sub":"fem. pl. → pequeñas"},
+  {"stimulus":"El bebé es ___. (gracioso)","options":["gracioso","graciosa","graciosos"],"answer":"gracioso","tag":"c","sub":"masc. sing. → gracioso"}]}})
 
 # 15 · ORDER — árbol genealógico / presentar a la familia
 w({"id":"es-u2-arbol-genealogico","title":"El árbol genealógico","subtitle":"U2 · zet de familie in de juiste volgorde",

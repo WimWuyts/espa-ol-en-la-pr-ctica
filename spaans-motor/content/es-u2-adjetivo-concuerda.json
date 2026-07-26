@@ -120,6 +120,28 @@
         "answer": "alto",
         "tag": "c",
         "sub": "masc. sing. → alto"
+      },
+      {
+        "stimulus": "Mis sobrinas son ___. (pequeño)",
+        "options": [
+          "pequeñas",
+          "pequeños",
+          "pequeña"
+        ],
+        "answer": "pequeñas",
+        "tag": "c",
+        "sub": "fem. pl. → pequeñas"
+      },
+      {
+        "stimulus": "El bebé es ___. (gracioso)",
+        "options": [
+          "gracioso",
+          "graciosa",
+          "graciosos"
+        ],
+        "answer": "gracioso",
+        "tag": "c",
+        "sub": "masc. sing. → gracioso"
       }
     ]
   }

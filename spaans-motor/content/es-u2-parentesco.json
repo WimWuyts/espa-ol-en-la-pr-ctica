@@ -36,6 +36,22 @@
         "b": "la hija de mi tía"
       },
       {
+        "a": "el sobrino",
+        "b": "el hijo de mi hermano"
+      },
+      {
+        "a": "la sobrina",
+        "b": "la hija de mi hermana"
+      },
+      {
+        "a": "el nieto",
+        "b": "el hijo de mi hijo"
+      },
+      {
+        "a": "la nieta",
+        "b": "la hija de mi hija"
+      },
+      {
         "a": "los padres",
         "b": "el padre y la madre"
       },

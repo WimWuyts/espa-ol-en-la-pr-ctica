@@ -120,6 +120,28 @@
         "answer": "tiene",
         "tag": "t",
         "sub": "ella → tiene"
+      },
+      {
+        "stimulus": "Mis primos ___ un gato.",
+        "options": [
+          "tienen",
+          "tiene",
+          "tenéis"
+        ],
+        "answer": "tienen",
+        "tag": "t",
+        "sub": "ellos → tienen"
+      },
+      {
+        "stimulus": "Mi sobrino ___ cinco años.",
+        "options": [
+          "tiene",
+          "tienes",
+          "tengo"
+        ],
+        "answer": "tiene",
+        "tag": "t",
+        "sub": "él → tiene"
       }
     ]
   }

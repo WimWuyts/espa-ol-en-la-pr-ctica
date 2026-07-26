@@ -42,6 +42,22 @@
       {
         "a": "pelirrojo",
         "b": "roodharig"
+      },
+      {
+        "a": "moreno",
+        "b": "donkerbruin"
+      },
+      {
+        "a": "blanco",
+        "b": "wit"
+      },
+      {
+        "a": "claro",
+        "b": "licht"
+      },
+      {
+        "a": "oscuro",
+        "b": "donker"
       }
     ]
   }

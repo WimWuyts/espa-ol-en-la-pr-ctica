@@ -189,6 +189,51 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
 .rec .mood.on{border-color:var(--g);background:var(--gt)}
 .rec .warn{background:#fdeaea;color:var(--red);border-radius:10px;padding:8px 12px;font-size:13px;margin:6px 0}
 .rec audio{width:100%;margin-top:6px}
+/* ---- inline zelfcorrigerende oefeningen ---- */
+.exhead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:2px}
+.exhead h3{font-family:var(--disp);margin:0;color:var(--ink);font-size:18px}
+.ex .desc{color:var(--mut);font-size:13px;margin:0 0 10px}
+.otra{border:none;background:var(--gt);color:var(--gd);border-radius:8px;padding:6px 12px;font-weight:700;cursor:pointer;font-size:13px;font-family:var(--disp);white-space:nowrap}
+.exq{border:1px solid var(--line);border-radius:12px;padding:11px 14px;margin:9px 0;background:var(--card)}
+.exq .qz{font-family:var(--disp);font-size:16px;margin-bottom:8px}
+.exq .qz .gap{display:inline-block;min-width:60px;border-bottom:2.5px solid var(--g);margin:0 3px;vertical-align:baseline}
+.exopts{display:flex;gap:8px;flex-wrap:wrap}
+.exopt{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:7px 13px;cursor:pointer;font-size:15px;font-weight:600;font-family:var(--body)}
+.exopt.ok{border-color:var(--g);background:var(--g);color:#fff}
+.exopt.no{border-color:var(--red);background:#fde8e8;color:var(--red)}
+.exopt[disabled]{cursor:default}
+.exwhy{margin-top:8px;font-size:13px;display:none;border-radius:8px;padding:7px 10px}
+.exwhy.show{display:block}
+.exwhy.g{background:var(--gt);color:var(--gd)}.exwhy.b{background:#fdeaea;color:var(--red)}
+.exscore{font-size:13px;color:var(--mut);margin-top:8px}
+.exscore b{color:var(--gd)}
+.mcol{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+.mcell{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:9px 12px;cursor:pointer;font-size:15px;text-align:center;font-weight:600;user-select:none}
+.mcell.sel{border-color:var(--g);background:var(--gt)}
+.mcell.done{border-color:var(--g);background:var(--g);color:#fff;cursor:default;opacity:.85}
+.mcell.bad{border-color:var(--red);background:#fde8e8}
+.oslots{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0;min-height:40px}
+.oslot{border:1.5px dashed var(--line);border-radius:9px;padding:7px 11px;font-size:14px;min-width:34px;color:var(--mut)}
+.oslot.filled{border-style:solid;border-color:var(--g);background:var(--gt);color:var(--ink)}
+.obank{display:flex;gap:7px;flex-wrap:wrap;margin-top:6px}
+.ochip{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 13px;cursor:pointer;font-size:15px;font-weight:600}
+.ochip.used{opacity:.35;cursor:default}
+.ochip.shake{animation:shk .3s}
+@keyframes shk{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+/* ---- árbol de Rosalía (PAREL-2) ---- */
+.arbol{display:flex;flex-direction:column;gap:14px;margin:8px 0 4px}
+.agen{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;position:relative}
+.anode{border:1.5px solid var(--line);border-top:4px solid var(--g);background:var(--card);border-radius:14px;padding:9px 12px;min-width:118px;text-align:center;cursor:pointer;transition:transform .12s}
+.anode:hover{transform:translateY(-2px);border-color:var(--g)}
+.anode.hi{border-top-color:var(--ww);background:var(--gt)}
+.anode .an{font-family:var(--disp);font-weight:700;color:var(--gd);font-size:15px}
+.anode .ar{font-size:11px;color:var(--mut);margin-top:1px}
+.anode .aemo{font-size:20px;line-height:1}
+.ainfo{margin-top:10px;padding:12px 15px;background:var(--gt);border-radius:12px;min-height:58px}
+.ainfo h4{margin:0 0 4px;font-family:var(--disp);color:var(--gd);font-size:17px}
+.ojo{border:1.5px solid var(--amber);background:#FEF7E7;border-radius:12px;padding:11px 14px;margin:10px 0;font-size:14px}
+[data-theme=dark] .ojo{background:#2a2410}
+.ojo b{color:var(--amber)}
 """
 
 def data_js():
@@ -228,7 +273,7 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   <div class="hero">
     <div class="mo">__MOCH__</div>
     <div><h1>U2 · Mi gente</h1>
-    <p>La página digital de la Unidad 2 (parada <b>Sevilla</b>, la ciudad de Lucía): flashcards, gramática visual e interactiva y <b>24 juegos</b>. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie.</span></p></div>
+    <p>La página digital de la Unidad 2 (parada <b>Sevilla</b>, la ciudad de Lucía): flashcards, el árbol de Rosalía, gramática visual e interactiva, <b>+100 ejercicios</b> con zelfcorrectie y <b>24 juegos</b> con muchas series. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie.</span></p></div>
   </div>
   <div class="subnav" id="subnav"></div>
 
@@ -236,6 +281,16 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
     <h2 class="sec">Vocabulario · flashcards</h2>
     <p class="lead">Álle woorden van U2. Klik om te draaien; wissel ES↔NL; filter per groep; klik 🔊 om te horen. <span class="gloss">Voorkant = Spaans + voorbeeldzin, achterkant = vertaling.</span></p>
     __FC__
+    <h2 class="sec">La familia de Rosalía · el árbol genealógico 🎤</h2>
+    <p class="lead">Leer het familievocab via de stamboom van de zangeres <b>Rosalía</b>. <b>Klik op een persoon</b> om te zien wie het is (en te horen 🔊). Let daarna op de grote valstrik: <b>primo/prima</b> ≠ <b>sobrino/sobrina</b>. <span class="gloss">We leren het familievocabulaire via de stamboom van Rosalía.</span></p>
+    <div class="card" id="arbolwrap"></div>
+    <div class="card ex" id="ax_rosalia"></div>
+    <h2 class="sec">Ejercicios de vocabulario · zelfcorrectie</h2>
+    <p class="lead">Oefen de woorden actief: koppelen, invullen, definities en de <b>intruder</b>. Elke oefening geeft directe feedback en je kunt telkens een <b>andere reeks</b> trekken. <span class="gloss">herkennen → onderscheiden → ophalen.</span></p>
+    <div class="card ex" id="vx_match"></div>
+    <div class="card ex" id="vx_gap"></div>
+    <div class="card ex" id="vx_def"></div>
+    <div class="card ex" id="vx_odd"></div>
     <h2 class="sec">Naslagwerk · zoeken</h2>
     __NAS__
   </section>
@@ -244,15 +299,32 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
     <h2 class="sec">Gramática visual e interactiva</h2>
     <p class="lead">Eerst betekenis en patroon ontdekken, dan de regel. Beweeg over de woorden, klik, en probeer. <span class="gloss">Alles binnen het thema van U2: la familia + tener, los posesivos, los adjetivos, ser/estar en los demostrativos.</span></p>
     <div class="card" id="colorsent"></div>
+    <h3 class="subh">👪 El verbo «tener» — construye y practica</h3>
     <div class="card" id="reflexconj"></div>
+    <div class="card ex" id="gx_build"></div>
+    <div class="card ex" id="gx_tener"></div>
+    <h3 class="subh">🔑 Posesivos — mi · tu · su (+ mis/tus/sus)</h3>
+    <div class="card ex" id="gx_pos"></div>
+    <h3 class="subh">🎨 Adjetivos — concordancia (género + número)</h3>
+    <div class="card ex" id="gx_conc"></div>
+    <h3 class="subh">⚖️ ¿ser o estar? — dé valstrik van «zijn»</h3>
     <div class="game" id="g_hora"></div>
+    <div class="card ex" id="gx_serestar"></div>
+    <h3 class="subh">👉 Demostrativos — este/ese (cerca/lejos)</h3>
     <div class="game" id="g_depor"></div>
+    <div class="card ex" id="gx_demo"></div>
+    <h3 class="subh">🎯 Repaso mixto — rellena con feedback</h3>
+    <div class="card ex" id="gx_mix"></div>
   </section>
 
   <section class="panel" data-p="lectura">
     <h2 class="sec">Lectura · la familia de Lucía</h2>
     <p class="lead">Lees het album van Lucía, <b>luister</b> het (🔊 TTS) en <b>controleer je begrip</b> (verdadero/falso met bewijs). Daarna reageer je met je eigen familie — dat neem je op in het tabblad <b>Hablar</b>. <span class="gloss">Keten: lezen → luisteren → spreken.</span></p>
     <div id="lecturawrap"></div>
+    <h3 class="subh">🔢 Ordena · la familia</h3>
+    <div class="card ex" id="lx_order"></div>
+    <h3 class="subh">🔎 Comprensión · escanea y escoge</h3>
+    <div class="card ex" id="lx_scan"></div>
   </section>
 
   <section class="panel" data-p="juegos">
@@ -479,7 +551,235 @@ function buildRecorders(){
    {text:'Preséntale tu familia a Lucía en un mensaje de voz (30 s).',cue:'para · Lucía',tip:'Heb je aantal + tener + één beschrijving gezegd? Neem opnieuw op.'}]});
 }
 
-renderFC();renderTable();gameHora();gameDePor();renderLectura();buildRecorders();
+// ---------- ÁRBOL DE ROSALÍA (PAREL-2) ----------
+function renderArbol(){const el=document.getElementById('arbolwrap');if(!el)return;
+ const GEN=[
+  [{n:'Antonio',r:'el abuelo materno',nl:'de opa',e:'👴',say:'el abuelo'},{n:'Carmen',r:'la abuela',nl:'de oma',e:'👵',say:'la abuela'}],
+  [{n:'José Manuel',r:'el padre de Rosalía',nl:'de vader',e:'👨',say:'el padre'},{n:'Pilar',r:'la madre de Rosalía',nl:'de moeder',e:'👩',say:'la madre'}],
+  [{n:'Pili',r:'la hermana mayor de Rosalía',nl:'de (oudere) zus',e:'👱‍♀️',say:'la hermana'},{n:'Rosalía',r:'la cantante · la hija menor · la tía de Genís',nl:'de zangeres',e:'🎤',say:'Rosalía',hi:true}],
+  [{n:'Genís',r:'el sobrino de Rosalía (el hijo de Pili)',nl:'het neefje',e:'👦',say:'el sobrino'}]
+ ];
+ const GN=['Los abuelos','Los padres','Las hijas','La nueva generación'];
+ el.innerHTML='<div class="arbol" id="arb"></div>'+
+  '<div class="ainfo" id="ainfo"><p class="gloss" style="margin:0">👆 Klik op een persoon in de stamboom.</p></div>'+
+  '<div class="ojo">💡 <b>¡Ojo! neef/nicht = twee woorden in het Spaans:</b> <b>el primo / la prima</b> = kind van je <b>oom/tante</b> · <b>el sobrino / la sobrina</b> = kind van je <b>broer/zus</b>. '+
+  '<span class="gloss">Genís is de <b>sobrino</b> van Rosalía (zoon van haar zus Pili), niet haar primo.</span></div>'+
+  '<p class="gloss" style="font-size:12px">De namen van de grootouders zijn voorbeelden. · '+(TTS?'<button class="spk-btn" style="padding:5px 11px" onclick="speak(\'Esta es la familia de Rosalía: los abuelos, los padres, la hermana y el sobrino.\')">🔊 escuchar la familia</button>':'')+'</p>';
+ const arb=el.querySelector('#arb'),info=el.querySelector('#ainfo');
+ GEN.forEach((row,gi)=>{const g=document.createElement('div');g.className='agen';
+   row.forEach(p=>{const d=document.createElement('div');d.className='anode'+(p.hi?' hi':'');
+     d.innerHTML='<div class="aemo">'+p.e+'</div><div class="an">'+p.n+'</div><div class="ar">'+p.r+'</div>';
+     d.onclick=()=>{info.innerHTML='<h4>'+p.e+' '+p.n+'</h4><div>'+p.r+' · <span class="gloss">'+p.nl+'</span></div>';if(TTS)speak(p.say);};
+     g.appendChild(d);});
+   arb.appendChild(g);});}
+
+// ================= INLINE ZELFCORRIGERENDE OEFENINGEN =================
+function exSample(pool,n){const a=pool.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a.slice(0,Math.min(n,a.length));}
+function exEsc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function exFmt(s){return exEsc(s).replace(/___+/g,'<span class="gap">&nbsp;&nbsp;</span>');}
+// MEERKEUZE / GAP-FILL: pool item = {q, opts, ans, why}
+function buildChoice(id,cfg){
+ const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(6,cfg.pool.length);
+ function render(){const series=exSample(cfg.pool,per);let ok=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="qlist"></div><div class="exscore">Juist: <b class="ok">0</b>/'+series.length+'</div>';
+   host.querySelector('.otra').onclick=render;const list=host.querySelector('.qlist'),scoreEl=host.querySelector('.ok');
+   series.forEach(it=>{const q=document.createElement('div');q.className='exq';
+     q.innerHTML='<div class="qz">'+exFmt(it.q)+'</div><div class="exopts"></div><div class="exwhy"></div>';
+     const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy');let locked=false;
+     exSample(it.opts,it.opts.length).forEach(o=>{const b=document.createElement('button');b.className='exopt';b.type='button';b.textContent=o;
+       b.onclick=()=>{if(locked)return;locked=true;const good=o===it.ans;
+         opts.querySelectorAll('.exopt').forEach(x=>{x.disabled=true;if(x.textContent===it.ans)x.classList.add('ok');});
+         if(good){ok++;scoreEl.textContent=ok;}else{b.classList.add('no');}
+         why.className='exwhy show '+(good?'g':'b');why.innerHTML=(good?'✅ ¡correcto! ':'❌ → '+exEsc(it.ans)+'. ')+(it.why?exEsc(it.why):'');};
+       opts.appendChild(b);});
+     list.appendChild(q);});}
+ render();}
+// MATCHING: pool item = {a,b}
+function buildMatch(id,cfg){
+ const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(6,cfg.pool.length);
+ function render(){const series=exSample(cfg.pool,per);let doneN=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="mcol"><div class="mL"></div><div class="mR"></div></div><div class="exscore">Emparejados: <b class="ok">0</b>/'+series.length+'</div>';
+   host.querySelector('.otra').onclick=render;const L=host.querySelector('.mL'),R=host.querySelector('.mR'),scoreEl=host.querySelector('.ok');
+   const right=exSample(series.map((p,i)=>({p,i})),series.length);let selL=null,busy=false;
+   series.forEach((p,i)=>{const c=document.createElement('div');c.className='mcell';c.textContent=p.a;c.dataset.i=i;
+     c.onclick=()=>{if(busy||c.classList.contains('done'))return;if(selL)selL.classList.remove('sel');selL=c;c.classList.add('sel');};L.appendChild(c);});
+   right.forEach(o=>{const c=document.createElement('div');c.className='mcell';c.textContent=o.p.b;c.dataset.i=o.i;
+     c.onclick=()=>{if(busy||!selL||c.classList.contains('done'))return;busy=true;const good=selL.dataset.i===c.dataset.i;
+       if(good){selL.classList.remove('sel');selL.classList.add('done');c.classList.add('done');doneN++;scoreEl.textContent=doneN;selL=null;busy=false;}
+       else{c.classList.add('bad');const s=selL;setTimeout(()=>{c.classList.remove('bad');s.classList.remove('sel');selL=null;busy=false;},600);}};R.appendChild(c);});}
+ render();}
+// ORDENAR: cfg.rounds=[{sub, items:[{label,key}]}]
+function buildOrder(id,cfg){
+ const host=document.getElementById(id);if(!host)return;let ri=Math.floor(Math.random()*cfg.rounds.length);
+ function render(){const round=cfg.rounds[ri];const sorted=round.items.slice().sort((a,b)=>a.key-b.key);let pos=0,mist=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra ronda</button></div><p class="desc">'+cfg.desc+' · <b>'+exEsc(round.sub||'')+'</b></p><div class="oslots"></div><div class="obank"></div><div class="exwhy"></div>';
+   host.querySelector('.otra').onclick=()=>{ri=(ri+1)%cfg.rounds.length;render();};
+   const slots=host.querySelector('.oslots'),bank=host.querySelector('.obank'),why=host.querySelector('.exwhy');
+   sorted.forEach((_,i)=>{const s=document.createElement('div');s.className='oslot';s.textContent=(i+1);s.dataset.pos=i;slots.appendChild(s);});
+   exSample(round.items,round.items.length).forEach(it=>{const b=document.createElement('button');b.className='ochip';b.type='button';b.textContent=it.label;
+     b.onclick=()=>{if(b.classList.contains('used'))return;const exp=sorted[pos];
+       if(it.key===exp.key){b.classList.add('used');const sl=slots.querySelector('.oslot[data-pos="'+pos+'"]');sl.classList.add('filled');sl.textContent=(pos+1)+'. '+it.label;pos++;
+         if(pos>=sorted.length){why.className='exwhy show '+(mist===0?'g':'b');why.innerHTML=mist===0?'✅ ¡Perfecto! sin errores.':'✔ Completado con '+mist+' error(es). Prueba «otra ronda».';}}
+       else{mist++;b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake');why.className='exwhy show b';why.innerHTML='❌ Primero: <b>'+exEsc(exp.label)+'</b>';}};
+     bank.appendChild(b);});}
+ render();}
+// EL INTRUSO: pool item = {words:[...], odd, why}
+function buildOdd(id,cfg){
+ const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(5,cfg.pool.length);
+ function render(){const series=exSample(cfg.pool,per);let ok=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="qlist"></div><div class="exscore">Juist: <b class="ok">0</b>/'+series.length+'</div>';
+   host.querySelector('.otra').onclick=render;const list=host.querySelector('.qlist'),scoreEl=host.querySelector('.ok');
+   series.forEach(it=>{const q=document.createElement('div');q.className='exq';q.innerHTML='<div class="exopts"></div><div class="exwhy"></div>';
+     const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy');let locked=false;
+     exSample(it.words.map((w,i)=>({w,i})),it.words.length).forEach(o=>{const b=document.createElement('button');b.className='exopt';b.type='button';b.textContent=o.w;
+       b.onclick=()=>{if(locked)return;locked=true;const good=o.i===it.odd;opts.querySelectorAll('.exopt').forEach(x=>x.disabled=true);
+         if(good){ok++;scoreEl.textContent=ok;b.classList.add('ok');}else{b.classList.add('no');opts.querySelectorAll('.exopt').forEach(x=>{if(x.textContent===it.words[it.odd])x.classList.add('ok');});}
+         why.className='exwhy show '+(good?'g':'b');why.innerHTML=(good?'✅ ¡bien! ':'❌ → '+exEsc(it.words[it.odd])+'. ')+(it.why?exEsc(it.why):'');};
+       opts.appendChild(b);});
+     list.appendChild(q);});}
+ render();}
+
+function buildInlineExercises(){
+ // ---- PAREL-2 · quiz sobre el árbol de Rosalía (primo vs sobrino) ----
+ buildChoice('ax_rosalia',{title:'¿Quién es quién? · la familia de Rosalía',desc:'Kijk naar de stamboom hierboven en kies het juiste familielid. Let op primo/prima ↔ sobrino/sobrina.',per:6,pool:[
+   {q:'Genís es el ___ de Rosalía (el hijo de su hermana Pili).',opts:['sobrino','primo','hermano'],ans:'sobrino',why:'kind van je zus = sobrino, geen primo'},
+   {q:'Pili es la ___ de Rosalía.',opts:['hermana','madre','tía'],ans:'hermana',why:'Pili y Rosalía son hijas de los mismos padres'},
+   {q:'José Manuel es el ___ de Rosalía.',opts:['padre','abuelo','tío'],ans:'padre',why:'José Manuel = el padre'},
+   {q:'Rosalía es la ___ de Genís.',opts:['tía','madre','prima'],ans:'tía',why:'la hermana de tu madre/padre = tía'},
+   {q:'Carmen es la ___ de Rosalía.',opts:['abuela','madre','tía'],ans:'abuela',why:'Carmen = la abuela'},
+   {q:'Pilar es la ___ de Rosalía.',opts:['madre','abuela','hermana'],ans:'madre',why:'Pilar = la madre'},
+   {q:'El hijo de tu tío es tu ___.',opts:['primo','sobrino','hermano'],ans:'primo',why:'kind van oom/tante = primo'},
+   {q:'La hija de tu hermana es tu ___.',opts:['sobrina','prima','hija'],ans:'sobrina',why:'kind van broer/zus = sobrina'},
+   {q:'El padre de tu padre es tu ___.',opts:['abuelo','tío','primo'],ans:'abuelo',why:'el padre de tu padre = el abuelo'},
+   {q:'Pili es la ___ de Genís.',opts:['madre','tía','abuela'],ans:'madre',why:'Genís es el hijo de Pili'}]});
+ // ================= VOCABULARIO =================
+ buildMatch('vx_match',{title:'Empareja: palabra ↔ imagen',desc:'Koppel het Spaanse woord aan het juiste beeld (familia · físico · colores).',per:6,pool:[
+   {a:'el padre',b:'👨'},{a:'la madre',b:'👩'},{a:'el abuelo',b:'👴'},{a:'la abuela',b:'👵'},
+   {a:'el bebé',b:'👶'},{a:'el ojo',b:'👀'},{a:'la mano',b:'✋'},{a:'la nariz',b:'👃'},
+   {a:'el pelo',b:'💇'},{a:'el perro',b:'🐶'},{a:'la boca',b:'👄'},{a:'la oreja',b:'👂'}]});
+ buildChoice('vx_gap',{title:'Completa la frase',desc:'Kies het woord dat in de zin past.',per:6,pool:[
+   {q:'El hermano de mi madre es mi ___.',opts:['tío','primo','abuelo'],ans:'tío',why:'hermano de mi madre → tío'},
+   {q:'Mi hermana pequeña es la hermana ___.',opts:['menor','mayor','media'],ans:'menor',why:'pequeña → menor'},
+   {q:'Lucía tiene el ___ largo y moreno.',opts:['pelo','ojo','mano'],ans:'pelo',why:'el pelo largo'},
+   {q:'Mi abuelo ya es ___.',opts:['mayor','menor','joven'],ans:'mayor',why:'abuelo → mayor (oud)'},
+   {q:'Mi prima es muy ___: siempre habla.',opts:['habladora','tímida','tranquila'],ans:'habladora',why:'siempre habla → habladora'},
+   {q:'Tiene los ___ azules.',opts:['ojos','pelos','pies'],ans:'ojos','why':'ojos azules'},
+   {q:'Ana no es alta, es ___.',opts:['baja','delgada','rubia'],ans:'baja',why:'no alta → baja'},
+   {q:'Mi padre lleva ___ para leer.',opts:['gafas','barba','pelo'],ans:'gafas',why:'para leer → gafas'},
+   {q:'Mi hermano es ___: nunca dice nada.',opts:['tímido','gracioso','hablador'],ans:'tímido',why:'nunca habla → tímido'},
+   {q:'La familia de Lucía es ___ y alegre.',opts:['grande','pequeña','triste'],ans:'grande',why:'muchos miembros → grande'},
+   {q:'Mi tía tiene el pelo ___ (roodharig).',opts:['pelirrojo','rubio','castaño'],ans:'pelirrojo',why:'roodharig → pelirrojo'},
+   {q:'El hijo de mi hermano es mi ___.',opts:['sobrino','primo','nieto'],ans:'sobrino',why:'hijo de mi hermano → sobrino'}]});
+ buildChoice('vx_def',{title:'¿Qué palabra es?',desc:'Lees de omschrijving en kies het juiste woord.',per:6,pool:[
+   {q:'El padre de mi padre:',opts:['el abuelo','el tío','el primo'],ans:'el abuelo',why:'padre del padre = abuelo'},
+   {q:'La hija de mi tía:',opts:['la prima','la sobrina','la hermana'],ans:'la prima',why:'hija de tía = prima'},
+   {q:'El hijo de mi hermana:',opts:['el sobrino','el primo','el nieto'],ans:'el sobrino',why:'hijo de hermana = sobrino'},
+   {q:'El hermano de mi madre:',opts:['el tío','el abuelo','el primo'],ans:'el tío',why:'hermano de madre = tío'},
+   {q:'La madre de mi madre:',opts:['la abuela','la tía','la prima'],ans:'la abuela',why:'madre de madre = abuela'},
+   {q:'Persona con poco pelo:',opts:['calvo','rubio','moreno'],ans:'calvo',why:'poco pelo → calvo'},
+   {q:'Persona que habla mucho:',opts:['hablador','tímido','tranquilo'],ans:'hablador',why:'habla mucho → hablador'},
+   {q:'Color del pelo como el fuego:',opts:['pelirrojo','castaño','gris'],ans:'pelirrojo',why:'fuego → pelirrojo'},
+   {q:'Lo contrario de alto:',opts:['bajo','delgado','joven'],ans:'bajo',why:'≠ alto → bajo'},
+   {q:'Lo contrario de gordo:',opts:['delgado','bajo','mayor'],ans:'delgado',why:'≠ gordo → delgado'},
+   {q:'Parte de la cara para ver:',opts:['los ojos','la boca','la mano'],ans:'los ojos',why:'ver → los ojos'},
+   {q:'Persona de pocos años:',opts:['joven','mayor','alto'],ans:'joven',why:'pocos años → joven'}]});
+ buildOdd('vx_odd',{title:'El intruso',desc:'Klik het woord dat NIET bij de andere hoort.',per:5,pool:[
+   {words:['el padre','la madre','el hermano','el ojo'],odd:3,why:'el ojo = cuerpo, geen familielid'},
+   {words:['alto','bajo','delgado','tío'],odd:3,why:'tío = familia, geen físico'},
+   {words:['rubio','moreno','pelirrojo','simpático'],odd:3,why:'simpático = carácter, geen kleur/pelo'},
+   {words:['la mano','el pie','la boca','la abuela'],odd:3,why:'la abuela = familia, geen cuerpo'},
+   {words:['simpático','gracioso','tímido','castaño'],odd:3,why:'castaño = color, geen carácter'},
+   {words:['el tío','la tía','el primo','el pelo'],odd:3,why:'el pelo = cuerpo'},
+   {words:['los ojos','la nariz','la oreja','el hijo'],odd:3,why:'el hijo = familia'},
+   {words:['mayor','menor','joven','hablador'],odd:3,why:'hablador = carácter; de rest = leeftijd'}]});
+ // ================= GRAMÁTICA =================
+ buildOrder('gx_build',{title:'Construye la frase',desc:'Tik de blokjes in de juiste volgorde (persoon → werkwoord → rest).',rounds:[
+   {sub:'mi hermana · descripción',items:[{label:'Mi hermana',key:1},{label:'es',key:2},{label:'morena',key:3},{label:'y simpática',key:4}]},
+   {sub:'yo · tener',items:[{label:'Yo',key:1},{label:'tengo',key:2},{label:'dos',key:3},{label:'hermanos',key:4}]},
+   {sub:'este/esta · demostrativo',items:[{label:'Esta',key:1},{label:'es',key:2},{label:'mi',key:3},{label:'prima Julia',key:4}]},
+   {sub:'estar · estado',items:[{label:'Hoy',key:1},{label:'mi abuelo',key:2},{label:'está',key:3},{label:'cansado',key:4}]},
+   {sub:'posesivo plural',items:[{label:'Mis',key:1},{label:'abuelos',key:2},{label:'son',key:3},{label:'mayores',key:4}]},
+   {sub:'ser · origen',items:[{label:'Nosotros',key:1},{label:'somos',key:2},{label:'de',key:3},{label:'Sevilla',key:4}]}]});
+ buildChoice('gx_tener',{title:'Mini-quiz: el verbo tener',desc:'Kies de juiste vorm van «tener». Directe feedback.',per:6,pool:[
+   {q:'(Yo) ___ dos hermanos.',opts:['tengo','tienes','tiene'],ans:'tengo',why:'yo → tengo'},
+   {q:'¿(Tú) ___ primos?',opts:['tienes','tengo','tiene'],ans:'tienes',why:'tú → tienes'},
+   {q:'Mi hermano ___ quince años.',opts:['tiene','tienes','tengo'],ans:'tiene',why:'él → tiene'},
+   {q:'(Nosotros) ___ una mascota.',opts:['tenemos','tienen','tengo'],ans:'tenemos',why:'nosotros → tenemos'},
+   {q:'Mis abuelos ___ un perro.',opts:['tienen','tiene','tenéis'],ans:'tienen',why:'ellos → tienen'},
+   {q:'¿(Vosotros) ___ familia en Madrid?',opts:['tenéis','tienen','tenemos'],ans:'tenéis',why:'vosotros → tenéis'},
+   {q:'Lucía ___ el pelo largo.',opts:['tiene','tienes','tengo'],ans:'tiene',why:'ella → tiene'},
+   {q:'(Yo) ___ una hermana menor.',opts:['tengo','tiene','tienes'],ans:'tengo',why:'yo → tengo'},
+   {q:'Mi tía ___ dos hijos.',opts:['tiene','tienen','tengo'],ans:'tiene',why:'ella → tiene'},
+   {q:'Mis primos ___ un gato.',opts:['tienen','tiene','tenéis'],ans:'tienen',why:'ellos → tienen'}]});
+ buildChoice('gx_pos',{title:'Mini-quiz: mi · tu · su (mis/tus/sus)',desc:'Kies het juiste bezittelijk voornaamwoord (persoon + enkel/meervoud).',per:6,pool:[
+   {q:'___ hermanos son altos. (yo · 2)',opts:['Mis','Mi','Su'],ans:'Mis',why:'meervoud → mis'},
+   {q:'___ prima se llama Julia. (yo · 1)',opts:['Mi','Mis','Tu'],ans:'Mi',why:'enkelv. → mi'},
+   {q:'¿Cómo se llama ___ padre? (tú)',opts:['tu','tus','su'],ans:'tu',why:'enkelv. → tu'},
+   {q:'___ abuelos viven en Sevilla. (yo · 2)',opts:['Mis','Mi','Sus'],ans:'Mis',why:'meervoud → mis'},
+   {q:'Lucía y ___ familia son de Sevilla. (ella)',opts:['su','sus','tu'],ans:'su',why:'enkelv. → su'},
+   {q:'¿Tienes fotos de ___ primos? (tú · 2)',opts:['tus','tu','sus'],ans:'tus',why:'meervoud → tus'},
+   {q:'___ madre es habladora. (yo · 1)',opts:['Mi','Mis','Su'],ans:'Mi',why:'enkelv. → mi'},
+   {q:'¿Dónde están ___ gafas? (tú)',opts:['tus','tu','sus'],ans:'tus',why:'gafas = mv → tus'},
+   {q:'___ tía tiene dos hijos. (ella)',opts:['Su','Sus','Mi'],ans:'Su',why:'enkelv. → su'},
+   {q:'___ casa está en Sevilla. (nosotros · 1)',opts:['Nuestra','Nuestro','Nuestros'],ans:'Nuestra',why:'la casa (f) → nuestra'}]});
+ buildMatch('gx_conc',{title:'Concordancia: adjetivo ↔ persona',desc:'Koppel de persoon aan de juiste vorm van het adjectief (género + número).',per:6,pool:[
+   {a:'Mi hermana es…',b:'alta'},{a:'Mis primos son…',b:'simpáticos'},{a:'Lucía es…',b:'morena'},
+   {a:'Mi padre es…',b:'tranquilo'},{a:'Mis abuelas son…',b:'bajas'},{a:'Mis hermanos son…',b:'rubios'},
+   {a:'Mi tía es…',b:'habladora'},{a:'Las primas son…',b:'guapas'},{a:'El bebé es…',b:'gracioso'},
+   {a:'Mis sobrinas son…',b:'pequeñas'}]});
+ buildChoice('gx_serestar',{title:'Mini-quiz: ¿ser o estar?',desc:'Identidad/descripción → ser. Estado/lugar → estar.',per:6,pool:[
+   {q:'Mi padre ___ alto.',opts:['es','está'],ans:'es',why:'descripción → ser'},
+   {q:'Mi madre ___ en casa.',opts:['está','es'],ans:'está',why:'lugar → estar'},
+   {q:'Lucía ___ de Sevilla.',opts:['es','está'],ans:'es',why:'origen → ser'},
+   {q:'Hoy mi hermano ___ cansado.',opts:['está','es'],ans:'está',why:'estado → estar'},
+   {q:'Mis abuelos ___ simpáticos.',opts:['son','están'],ans:'son',why:'carácter → ser'},
+   {q:'Nosotros ___ en el parque.',opts:['estamos','somos'],ans:'estamos',why:'lugar → estar'},
+   {q:'Ana ___ tímida.',opts:['es','está'],ans:'es',why:'carácter → ser'},
+   {q:'La ventana ___ abierta.',opts:['está','es'],ans:'está',why:'toestand → estar'},
+   {q:'Rosalía ___ cantante.',opts:['es','está'],ans:'es',why:'profesión → ser'},
+   {q:'¿Cómo ___ (tú) hoy?',opts:['estás','eres'],ans:'estás',why:'estado → estar'}]});
+ buildChoice('gx_demo',{title:'Mini-quiz: este/ese (cerca/lejos)',desc:'Dichtbij → este/esta… · verder weg → ese/esa… Let op geslacht en getal.',per:6,pool:[
+   {q:'(cerca) ___ es mi hermano.',opts:['este','ese','esta'],ans:'este',why:'cerca + m → este'},
+   {q:'(lejos) ___ es mi tío.',opts:['ese','este','esa'],ans:'ese',why:'lejos + m → ese'},
+   {q:'(cerca) ___ es mi madre.',opts:['esta','esa','este'],ans:'esta',why:'cerca + f → esta'},
+   {q:'(lejos) ___ son mis primos.',opts:['esos','estos','esas'],ans:'esos',why:'lejos + m pl → esos'},
+   {q:'(cerca) ___ son mis hermanas.',opts:['estas','esas','estos'],ans:'estas',why:'cerca + f pl → estas'},
+   {q:'(lejos) ___ es mi abuela.',opts:['esa','esta','ese'],ans:'esa',why:'lejos + f → esa'},
+   {q:'(cerca) ___ es mi primo.',opts:['este','ese','esta'],ans:'este',why:'cerca + m → este'},
+   {q:'(lejos) ___ son mis tías.',opts:['esas','estas','esos'],ans:'esas',why:'lejos + f pl → esas'},
+   {q:'(cerca) ___ son mis abuelos.',opts:['estos','esos','estas'],ans:'estos',why:'cerca + m pl → estos'},
+   {q:'(lejos) ___ es mi sobrina.',opts:['esa','esta','ese'],ans:'esa',why:'lejos + f → esa'}]});
+ buildChoice('gx_mix',{title:'Repaso mixto: rellena',desc:'Alles door elkaar: tener · posesivos · adjetivos · ser/estar · demostrativos.',per:8,pool:[
+   {q:'(Yo) ___ dos hermanos.',opts:['tengo','tienes','tiene'],ans:'tengo',why:'yo → tengo'},
+   {q:'___ prima es pelirroja. (yo · 1)',opts:['Mi','Mis','Su'],ans:'Mi',why:'enkelv. → mi'},
+   {q:'Mi hermana es ___. (moreno)',opts:['morena','moreno','morenas'],ans:'morena',why:'fem. sing.'},
+   {q:'Hoy mi abuelo ___ cansado.',opts:['está','es','son'],ans:'está',why:'estado → estar'},
+   {q:'(cerca) ___ es mi tío.',opts:['este','ese','esta'],ans:'este',why:'cerca + m → este'},
+   {q:'Mis abuelos ___ simpáticos.',opts:['son','están','es'],ans:'son',why:'carácter → ser'},
+   {q:'¿Cuántos primos ___ tú?',opts:['tienes','tienen','tengo'],ans:'tienes',why:'tú → tienes'},
+   {q:'Mis primos son ___. (simpático)',opts:['simpáticos','simpática','simpático'],ans:'simpáticos',why:'masc. pl.'},
+   {q:'Lucía ___ de Sevilla.',opts:['es','está','son'],ans:'es',why:'origen → ser'},
+   {q:'___ abuelos viven en Sevilla. (yo · 2)',opts:['Mis','Mi','Sus'],ans:'Mis',why:'meervoud → mis'},
+   {q:'(lejos) ___ son mis primas.',opts:['esas','estas','esos'],ans:'esas',why:'lejos + f pl → esas'},
+   {q:'Nosotros ___ belgas.',opts:['somos','estamos','son'],ans:'somos',why:'nacionalidad → ser'}]});
+ // ================= LECTURA =================
+ buildOrder('lx_order',{title:'Ordena · la familia',desc:'Tik de tegels in de juiste volgorde.',rounds:[
+   {sub:'las generaciones (mayor → menor)',items:[{label:'los abuelos',key:1},{label:'los padres',key:2},{label:'los hijos',key:3},{label:'los nietos',key:4}]},
+   {sub:'los hermanos de Lucía (mayor → menor)',items:[{label:'Marco (19)',key:1},{label:'Lucía (16)',key:2},{label:'Ana (8)',key:3}]},
+   {sub:'presenta a tu familia (orden lógico)',items:[{label:'Esta es mi familia.',key:1},{label:'Somos cinco.',key:2},{label:'Mi padre se llama…',key:3},{label:'Mi hermana es…',key:4}]},
+   {sub:'la familia de Rosalía (mayor → menor)',items:[{label:'los abuelos',key:1},{label:'los padres',key:2},{label:'Pili y Rosalía',key:3},{label:'Genís (el sobrino)',key:4}]}]});
+ buildChoice('lx_scan',{title:'Comprensión: escanea y escoge',desc:'Zoek de info in het album van Lucía en kies het juiste antwoord.',per:6,pool:[
+   {q:'¿Cuántos son en la familia de Lucía?',opts:['cinco','cuatro','seis'],ans:'cinco',why:'«Somos cinco»'},
+   {q:'¿Cómo se llama el padre de Lucía?',opts:['Antonio','Marco','Pepe'],ans:'Antonio',why:'«Mi padre se llama Antonio»'},
+   {q:'¿Cómo es la madre, Rosa?',opts:['habladora','tímida','alta'],ans:'habladora',why:'«muy habladora»'},
+   {q:'¿Cuántos años tiene Marco?',opts:['diecinueve','ocho','dieciséis'],ans:'diecinueve',why:'«tiene diecinueve años»'},
+   {q:'¿Quién es la más pequeña?',opts:['Ana','Julia','Rosa'],ans:'Ana',why:'«Ana solo tiene ocho años»'},
+   {q:'¿Qué lleva Marco?',opts:['gafas','barba','sombrero'],ans:'gafas',why:'«lleva gafas»'},
+   {q:'¿Cómo es Julia, la prima?',opts:['pelirroja','morena','rubia'],ans:'pelirroja',why:'«Julia, que es pelirroja»'},
+   {q:'¿Dónde están todos hoy?',opts:['en casa de los abuelos','en el colegio','en el parque'],ans:'en casa de los abuelos',why:'«hoy todos estamos en casa de los abuelos»'}]});
+}
+
+renderFC();renderTable();gameHora();gameDePor();renderLectura();buildRecorders();renderArbol();buildInlineExercises();
 (function(){const h=location.hash.replace('#','');const i=PANELS.findIndex(p=>p[0]===h);if(i>=0)sn.children[i].click();})();
 window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');const i=PANELS.findIndex(p=>p[0]===h);if(i>=0)sn.children[i].click();});
 

@@ -120,6 +120,28 @@
         "answer": "Su",
         "tag": "pos",
         "sub": "1 → su"
+      },
+      {
+        "stimulus": "___ casa está en Sevilla. (nosotros · 1)",
+        "options": [
+          "Nuestra",
+          "Nuestro",
+          "Nuestros"
+        ],
+        "answer": "Nuestra",
+        "tag": "pos",
+        "sub": "la casa (f) → nuestra"
+      },
+      {
+        "stimulus": "___ abuelos son mayores. (nosotros · 2)",
+        "options": [
+          "Nuestros",
+          "Nuestro",
+          "Nuestras"
+        ],
+        "answer": "Nuestros",
+        "tag": "pos",
+        "sub": "mv. m → nuestros"
       }
     ]
   }
