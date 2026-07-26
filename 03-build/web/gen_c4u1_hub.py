@@ -63,7 +63,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
 <nav class="tabbar">{"".join(tabbtn(i,t) for i,t in enumerate(TABS))}</nav>
 <main>
 {"".join(panel(i,t) for i,t in enumerate(TABS))}
-  <div class="foot">C4 · «Welcome to Spanish» · Unidad 1 — digitale hub (rood). §2 Kit · §4 Gramática · §5 Tarea zitten samen in het tabblad <b>Kit</b>. Elke sectie werkt ook los; deze pagina blijft offline werken.</div>
+  <div class="foot">C4 · «Welcome to Spanish» · Unidad 1 · Presentaciones</div>
 </main>
 <button class="dk" id="dk" title="licht/donker">🌙</button>
 <script>

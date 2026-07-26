@@ -110,13 +110,18 @@ def banda_block(tema):
 ARTGRID="".join(art_card(a) for a in ART)
 MAProws="".join(f'<tr><td>{TEMA_TITELS[t]}</td><td>{", ".join(a[0]+" · "+a[4] for a in ART if t in a[8]) or "—"}</td></tr>' for t in TEMA_TITELS)
 
+TEMA="presentaciones"   # thema van deze unit → bepaalt de banda sonora van de les
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · Música en español (componente)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · Música en español</title>
 <style>{CSS}</style></head><body>
-<header class="top"><div class="bar"><div class="brand">Música en español <small>· C4 · componente</small></div>
+<header class="top"><div class="bar"><div class="brand">Música en español <small>· C4</small></div>
 <button class="themebtn" onclick="document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'light':'dark'">◐</button></div></header>
 <main>
- <div class="hero"><h1>La banda sonora 🎧</h1><p>Spaanstalige muziek klinkt over de hele wereld. Ontdek de artiesten van het moment, luister de klas-playlist, en vul de liedjes aan in LyricsTraining. <span style="opacity:.85">Herbruikbare component — elke les pikt er het juiste nummer uit.</span></p></div>
+ <div class="hero"><h1>La banda sonora 🎧</h1><p>Spaanstalige muziek klinkt over de hele wereld. Ontdek de artiesten van het moment, luister de klas-playlist, en vul de liedjes aan in LyricsTraining.</p></div>
+
+ <h2 class="sec">La banda sonora de esta unidad 🎶</h2>
+ <p class="lead">Het nummer bij deze les — luister mee en pik nieuwe woorden op.</p>
+ {banda_block(TEMA)}
 
  <h2 class="sec">Los artistas 🎤</h2>
  <p class="lead">Lees de fiches (Spaans + Nederlands), bekijk de clips en beluister de playlist.</p>
@@ -129,15 +134,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
  <p class="lead">Luister en vul de ontbrekende woorden in — leuk om je oor te trainen.</p>
  <div class="card" style="display:flex;gap:10px;flex-wrap:wrap">{lt_button("la-perla","La Perla — Rosalía")}{lt_button("me-gustas-tu","Me gustas tú — Manu Chao")}</div>
 
- <h2 class="sec">Por lección — welk nummer waar? 🗺️</h2>
- <p class="lead">Voorstel-mapping: elke survival-les haalt hier zijn «banda sonora» uit (aanpasbaar).</p>
- <div class="card"><table class="mapt"><thead><tr><th>Thema</th><th>Aanbevolen nummer(s)</th></tr></thead><tbody>{MAProws}</tbody></table></div>
-
- <h2 class="sec">Voorbeeld · het les-blok «banda sonora»</h2>
- <p class="lead">Zo ziet het herbruikbare blok eruit dat in elke les komt (hier: thema «La ropa / fiesta»).</p>
- {banda_block("ropa")}
-
- <div class="foot">C4 · «Welcome to Spanish» · Música en español — herbruikbare component (rood). Spotify/LyricsTraining/videoclips werken online; in print → QR.</div>
+ <div class="foot">C4 · «Welcome to Spanish» · Música en español 🎧</div>
 </main></body></html>"""
 
 os.makedirs(f"{ROOT}/03-build/web/componentes",exist_ok=True)

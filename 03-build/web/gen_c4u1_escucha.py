@@ -103,7 +103,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
   </div>
   <div class="tr">{BODY}</div>
  </div>
- <div class="foot">C4 · «Welcome to Spanish» · Unidad 1 — meelees-transcript (rood). Video ingebed via YouTube (volledige aflevering, incl. scène 1).</div>
+ <div class="foot">C4 · «Welcome to Spanish» · Unidad 1 · Presentaciones</div>
 </main>
 <script>
 function speak(t){{if(!('speechSynthesis'in window))return;var u=new SpeechSynthesisUtterance(t);u.lang='es-ES';u.rate=.9;var v=speechSynthesis.getVoices().find(function(x){{return /^es/i.test(x.lang)}});if(v)u.voice=v;speechSynthesis.cancel();speechSynthesis.speak(u);}}

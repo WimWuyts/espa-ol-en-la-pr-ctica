@@ -207,7 +207,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
  <h2 class="subh">§5 · Tarea final <small>jouw communicatieve opdracht</small></h2>
  {TAREA}
 
- <div class="foot">C4 · «Welcome to Spanish» · Unidad 1 — §2 Kit · §4 Gramática · §5 Tarea (native, rood).</div>
+ <div class="foot">C4 · «Welcome to Spanish» · Unidad 1 · Presentaciones</div>
 </main>
 <script>
 function speak(t){{if(!('speechSynthesis'in window))return;var u=new SpeechSynthesisUtterance(t);u.lang='es-ES';u.rate=.9;var v=speechSynthesis.getVoices().find(function(x){{return /^es/i.test(x.lang)}});if(v)u.voice=v;speechSynthesis.cancel();speechSynthesis.speak(u);}}
