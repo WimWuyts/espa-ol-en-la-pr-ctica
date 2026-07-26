@@ -248,6 +248,7 @@ Naast de twee *visuele* specs (§13) zijn er twee *didactische* specs in `02-hui
 - **Per cursus, achteraan:** een **«Conjugador» (werkwoordengenerator)** + de **woordenschat als naslagwerk** met correcte **unit/LPD-verwijzingen** en een **zoekfunctie**.
 - **Flip cards voor ÁLLE woorden per unidad:** toggle **ES→NL / NL→ES**; voorkant = Spaans woord **+ voorbeeldzin**, achterkant = vertaling **+ (eventueel) afbeelding/icoon**. Verzorgde iconen (Lucide; vorige versie had mooie icoontjes → aanhouden).
 - **Kruisverwijzingen** cursus ↔ HTML ↔ PowerPoint; huisstijl overal; motor-spellen (10–15/thema) ingebed per unidad.
+- **QR-codes op print (PDF/Word)** verwijzen naar de **digitale HTML-pagina** (de hub met audio, spellen, flip cards én de Extra-links profedeele/arche-ele), op het juiste ankerpunt — **niet** rechtstreeks naar YouTube/PPTX.
 - **Tab «Extra» (extern bronnenmateriaal) per onderdeel:** grammatica → **profedeele-YouTube**-embed; grammatica/woordenschat → **arche-ele-Genially**-link (indien bestaand). *Toegangsbeperking:* websearch werkt, willekeurige pagina's ophalen niet → verificatie mogelijk handmatig (auteur levert links).
 
 **Gamification-motor — `spaans-motor`** (door auteur gebouwd via claude.ai; getest: bouwt offline met Node, geen internet):
