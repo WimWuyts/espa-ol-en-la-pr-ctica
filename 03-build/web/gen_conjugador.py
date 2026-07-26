@@ -17,62 +17,30 @@ FONTS="".join([
  face("Caveat","Caveat-700.woff2","700"),
 ])
 
-# ---------------- WERKWOORDDATABASE (nagerekend) ----------------
-# Regelmatig: (infinitivo, NL, context-situatie)
-REG=[
- ('hablar','praten','en clase de idiomas'),('estudiar','studeren','para el examen'),
- ('trabajar','werken','en una tienda'),('escuchar','luisteren','música'),
- ('cantar','zingen','en la fiesta'),('bailar','dansen','salsa'),
- ('viajar','reizen','por Latinoamérica'),('comprar','kopen','pan en el mercado'),
- ('cocinar','koken','una tortilla'),('tomar','nemen / drinken','un café'),
- ('mirar','kijken','una película'),('llegar','aankomen','tarde a clase'),
- ('descansar','uitrusten','el domingo'),('necesitar','nodig hebben','ayuda'),
- ('llevar','dragen / meenemen','una mochila'),('preguntar','vragen','a la profesora'),
- ('comer','eten','a las dos'),('beber','drinken','agua'),
- ('leer','lezen','un libro'),('aprender','leren','español'),
- ('correr','rennen','en el parque'),('vender','verkopen','fruta'),
- ('deber','moeten','estudiar más'),('comprender','begrijpen','la pregunta'),
- ('vivir','wonen','en Madrid'),('escribir','schrijven','un mensaje'),
- ('abrir','openen','la ventana'),('recibir','ontvangen / krijgen','un regalo'),
- ('subir','omhoog gaan / stijgen','al autobús'),
-]
-# Onregelmatig / klankwissel: infinitivo -> (6 vormen, NL, type, context)
-IRR={
- 'ser':(['soy','eres','es','somos','sois','son'],'zijn','onregelmatig','de España'),
- 'estar':(['estoy','estás','está','estamos','estáis','están'],'zijn (plaats/toestand)','onregelmatig','en casa'),
- 'ir':(['voy','vas','va','vamos','vais','van'],'gaan','onregelmatig','al cine'),
- 'tener':(['tengo','tienes','tiene','tenemos','tenéis','tienen'],'hebben','onregelmatig (g · e→ie)','catorce años'),
- 'hacer':(['hago','haces','hace','hacemos','hacéis','hacen'],'doen / maken','onregelmatig (yo -g)','los deberes'),
- 'ver':(['veo','ves','ve','vemos','veis','ven'],'zien','onregelmatig (yo)','la tele'),
- 'dar':(['doy','das','da','damos','dais','dan'],'geven','onregelmatig (yo)','un regalo'),
- 'saber':(['sé','sabes','sabe','sabemos','sabéis','saben'],'weten / kunnen','onregelmatig (yo)','la respuesta'),
- 'poder':(['puedo','puedes','puede','podemos','podéis','pueden'],'kunnen','klankwissel o→ue','venir hoy'),
- 'querer':(['quiero','quieres','quiere','queremos','queréis','quieren'],'willen / houden van','klankwissel e→ie','un café'),
- 'poner':(['pongo','pones','pone','ponemos','ponéis','ponen'],'zetten / leggen','onregelmatig (yo -g)','la mesa'),
- 'venir':(['vengo','vienes','viene','venimos','venís','vienen'],'komen','onregelmatig (g · e→ie)','a la fiesta'),
- 'decir':(['digo','dices','dice','decimos','decís','dicen'],'zeggen','onregelmatig (g · e→i)','la verdad'),
- 'salir':(['salgo','sales','sale','salimos','salís','salen'],'uitgaan / vertrekken','onregelmatig (yo -g)','con amigos'),
- 'jugar':(['juego','juegas','juega','jugamos','jugáis','juegan'],'spelen','klankwissel u→ue','al fútbol'),
- 'dormir':(['duermo','duermes','duerme','dormimos','dormís','duermen'],'slapen','klankwissel o→ue','ocho horas'),
- 'pedir':(['pido','pides','pide','pedimos','pedís','piden'],'vragen / bestellen','klankwissel e→i','una pizza'),
- 'pensar':(['pienso','piensas','piensa','pensamos','pensáis','piensan'],'denken','klankwissel e→ie','en el futuro'),
- 'empezar':(['empiezo','empiezas','empieza','empezamos','empezáis','empiezan'],'beginnen','klankwissel e→ie','la clase'),
- 'entender':(['entiendo','entiendes','entiende','entendemos','entendéis','entienden'],'begrijpen','klankwissel e→ie','la gramática'),
- 'volver':(['vuelvo','vuelves','vuelve','volvemos','volvéis','vuelven'],'terugkeren','klankwissel o→ue','a casa'),
- 'encontrar':(['encuentro','encuentras','encuentra','encontramos','encontráis','encuentran'],'vinden','klankwissel o→ue','las llaves'),
- 'conocer':(['conozco','conoces','conoce','conocemos','conocéis','conocen'],'kennen','onregelmatig (yo -zco)','a mucha gente'),
- 'llamarse':(['me llamo','te llamas','se llama','nos llamamos','os llamáis','se llaman'],'heten','wederkerend','Lucía'),
+# ---------------- WERKWOORDDATABASE (nagerekend via de motor-engine) ----------------
+# 324 frequentste werkwoorden, vormen voorgerekend door de motor (03-build/web/extract_verbos.mjs).
+motor=json.load(open(f"{ROOT}/03-build/web/verbos_es.json"))
+# Context-situaties voor de oefenmodus (waar we ze hebben; anders neutraal frame).
+SITS={
+ 'hablar':'en clase de idiomas','estudiar':'para el examen','trabajar':'en una tienda','escuchar':'música',
+ 'cantar':'en la fiesta','bailar':'salsa','viajar':'por Latinoamérica','comprar':'pan en el mercado',
+ 'cocinar':'una tortilla','tomar':'un café','mirar':'una película','llegar':'tarde a clase',
+ 'descansar':'el domingo','necesitar':'ayuda','llevar':'una mochila','preguntar':'a la profesora',
+ 'comer':'a las dos','beber':'agua','leer':'un libro','aprender':'español','correr':'en el parque',
+ 'vender':'fruta','deber':'estudiar más','comprender':'la pregunta','vivir':'en Madrid','escribir':'un mensaje',
+ 'abrir':'la ventana','recibir':'un regalo','subir':'al autobús','ser':'de España','estar':'en casa',
+ 'ir':'al cine','tener':'catorce años','hacer':'los deberes','ver':'la tele','dar':'un regalo',
+ 'saber':'la respuesta','poder':'venir hoy','querer':'un café','poner':'la mesa','venir':'a la fiesta',
+ 'decir':'la verdad','salir':'con amigos','jugar':'al fútbol','dormir':'ocho horas','pedir':'una pizza',
+ 'pensar':'en el futuro','empezar':'la clase','entender':'la gramática','volver':'a casa','encontrar':'las llaves',
+ 'conocer':'a mucha gente','trabajar ':'',
 }
-def reg_forms(inf):
-    st,e=inf[:-2],inf[-2:]
-    ends={'ar':['o','as','a','amos','áis','an'],'er':['o','es','e','emos','éis','en'],'ir':['o','es','e','imos','ís','en']}[e]
-    return [st+x for x in ends]
-
-DB=[]
-for inf,nl,sit in REG:
-    DB.append({'inf':inf,'nl':nl,'type':'regelmatig','sit':sit,'forms':reg_forms(inf)})
-for inf,(forms,nl,typ,sit) in IRR.items():
-    DB.append({'inf':inf,'nl':nl,'type':typ,'sit':sit,'forms':forms})
+DB=[]; seen=set()
+for v in motor:
+    v=dict(v); v['sit']=SITS.get(v['inf'],''); DB.append(v); seen.add(v['inf'])
+# extra (niet in de motor-lijst): wederkerend voorbeeld voor U0-koppeling
+for v in [{'inf':'llamarse','nl':'heten','type':'wederkerend','forms':['me llamo','te llamas','se llama','nos llamamos','os llamáis','se llaman'],'sit':'Lucía'}]:
+    if v['inf'] not in seen: DB.append(v)
 DB.sort(key=lambda v:v['inf'])
 
 CSS = FONTS + """
@@ -161,6 +129,11 @@ HTML="""<!doctype html><html lang="es" data-theme="light"><head><meta charset="u
         </select>
         <span class="pill" id="vcount"></span>
       </div>
+      <div class="controls" style="margin-top:0">
+        <input id="vfree" placeholder="…of typ eender welk werkwoord (bv. saltar)" onkeydown="if(event.key==='Enter')freeConj()">
+        <button class="btn small" onclick="freeConj()">Vervoeg</button>
+        <span class="gloss" style="font-size:12px">→ ook werkwoorden buiten de lijst (dan regelmatig aangenomen, met waarschuwing).</span>
+      </div>
       <div class="vchips" id="vchips"></div>
     </div>
     <div class="card" id="conjcard"></div>
@@ -219,17 +192,24 @@ function renderChips(){const q=(document.getElementById('vsearch').value||'').to
 function renderConj(){const v=curV;const box=document.getElementById('conjcard');if(!v){box.innerHTML='';return;}
   const badge=v.type==='regelmatig'?'<span class="pill">regelmatig</span>':'<span class="pill" style="background:#FDECD2;color:#9a5a00">'+v.type+'</span>';
   let g='';v.forms.forEach((f,i)=>{g+='<div class="pv p'+i+'"><div class="pr">'+PRON[i]+'</div><div class="fm">'+f+'</div></div>';});
-  const ex=(v.type==='wederkerend'?'':cap(PRONS[0])+' ')+v.forms[0]+' '+v.sit+'.';
-  box.innerHTML='<div class="hdr"><h2>'+v.inf+'</h2>'+badge+'<span class="gloss">'+v.nl+'</span></div><div class="conj">'+g+'</div><div class="ex">📝 Ejemplo: <b>'+ex+'</b></div>';}
+  const ex=(v.type==='wederkerend'?'':cap(PRONS[0])+' ')+v.forms[0]+(v.sit?' '+v.sit:'')+'.';
+  const warn=v.warn?'<div style="background:#FEF3C7;color:#92400E;border-radius:10px;padding:10px 13px;margin-bottom:12px">⚠️ <b>«'+v.inf+'»</b> staat niet in de database. Hieronder de <b>regelmatige</b> vervoeging — controleer of dit werkwoord onregelmatig is (klankwissel of aparte yo-vorm).</div>':'';
+  box.innerHTML=warn+'<div class="hdr"><h2>'+v.inf+'</h2>'+badge+'<span class="gloss">'+v.nl+'</span></div><div class="conj">'+g+'</div><div class="ex">📝 Ejemplo: <b>'+ex+'</b></div>';}
 function cap(s){return s.charAt(0).toUpperCase()+s.slice(1);}
+function regConj(inf){var st=inf.slice(0,-2),e=inf.slice(-2);var E={ar:['o','as','a','amos','áis','an'],er:['o','es','e','emos','éis','en'],ir:['o','es','e','imos','ís','en']}[e];return E.map(x=>st+x);}
+function freeConj(){var raw=(document.getElementById('vfree').value||'').trim().toLowerCase();if(!raw)return;
+  var hit=DB.find(v=>v.inf===raw);
+  if(hit){curV=hit;renderChips();renderConj();return;}
+  if(!/(ar|er|ir)$/.test(raw)){document.getElementById('conjcard').innerHTML='<p class="gloss">Geef een infinitivo op -ar, -er of -ir (bv. saltar, beber, subir).</p>';return;}
+  curV={inf:raw,nl:'(getypt werkwoord)',type:'regelmatig (aangenomen)',sit:'',forms:regConj(raw),warn:1};renderConj();}
 // ---- ZELF VERVOEGEN ----
 let pPt=0,pSt=0,pHintN=0;
-function pPool(){const f=document.getElementById('pfilter').value;return DB.filter(v=>v.type!=='wederkerend').filter(v=>f==='all'?true:f==='regelmatig'?v.type==='regelmatig':v.type!=='regelmatig');}
+function pPool(){const f=document.getElementById('pfilter').value;return DB.filter(v=>v.type!=='wederkerend'&&v.inf!=='haber').filter(v=>f==='all'?true:f==='regelmatig'?v.type==='regelmatig':v.type!=='regelmatig');}
 function pNext(){const pool=pPool();const v=pool[Math.floor(Math.random()*pool.length)];const i=Math.floor(Math.random()*6);
   window._pv=v;window._pi=i;pHintN=0;
   document.getElementById('pType').textContent=v.type;
-  document.getElementById('pCtx').textContent='Contexto: '+v.sit;
-  document.getElementById('pQ').innerHTML=cap(PRONS[i])+' <span class="gap" id="pGap">?</span> '+v.sit+'.';
+  document.getElementById('pCtx').textContent=v.sit?('Contexto: '+v.sit):'';
+  document.getElementById('pQ').innerHTML=cap(PRONS[i])+' <span class="gap" id="pGap">?</span>'+(v.sit?' '+v.sit:'')+'.';
   document.getElementById('pCue').textContent=PRON[i]+' · '+v.inf+' ('+v.nl+')';
   const inp=document.getElementById('pIn');inp.value='';inp.focus();document.getElementById('pFb').className='fb';}
 function pCheck(){const v=window._pv,i=window._pi;let g=(document.getElementById('pIn').value||'').trim().toLowerCase();

@@ -4,15 +4,17 @@
 gen_u0_docente.py — Interactieve PowerPoint C5 · Unidad 0 «¡Empezamos!»
 ========================================================================
 Gedeelde builder (één bron) → TWEE decks:
-  · C5_U0_docente.pptx  — docentversie: vrije navigatie, oplossingen zichtbaar in
-    groene SOLUCIÓN-kaders + TEACHER-notities; klik op een antwoord → «✓» springt in.
-  · C5_U0_alumno.ppsx   — leerlingversie: kioskmodus, GEEN docentnotities, oplossingen
-    verborgen tot de leerling klikt (▶ Mostrar solución / klik op de optie).
+  · C5_U0_docente.pptx  — docentversie: vrije navigatie; antwoorden verschijnen bij
+    klik (fade) + volledige oplossing & didactiek in de spreker-notities.
+  · C5_U0_alumno.ppsx   — leerlingversie: GEEN docentnotities, GEEN kiosk; gewone
+    diavoorstelling waarin de antwoorden/oplossingen bij klik verschijnen.
 
 ECHTE interactiviteit: op elke oefendia (QUIZ/WRITING/SPEAKING + números/tilde)
-wordt <p:timing>-XML geïnjecteerd met klik-triggers (p:cond evt="onClick" spid=…)
-die een entrance-fade op de reveal-shape starten. + hyperlink-navigatie (menutegels,
-⌂ Menú). Cast-avatars = de ECHTE flat-vector SVG's (zie render_avatars.py).
+wordt <p:timing>-XML geïnjecteerd met standaard SEQUENTIËLE on-click entrance-
+animaties (fade-in) in de hoofdsequentie (mainSeq): elke klik onthult de volgende
+reveal-shape. Dit is exact wat PowerPoint schrijft voor «Fade, Start: On Click».
++ hyperlink-navigatie (menutegels, ⌂ Menú). Cast-avatars = de ECHTE flat-vector
+SVG's (zie render_avatars.py).
 
 Volgt INTERACTIEVE_POWERPOINT_50_IDEEEN.md:
   - diamaster-layouts (TITLE · LESSON_MENU · VOCABULARY · GRAMMAR · READING ·
@@ -81,11 +83,12 @@ EMU_W, EMU_H = Inches(13.333), Inches(7.5)
 prs = None
 BLANK = None
 SLIDE_LIST = []      # alle slide-objecten in volgorde
-REVEALS = []         # (slide, trigger_spid, reveal_spid) — klik-om-te-onthullen
+REVEALS = []         # (slide, reveal_spid) — verschijnt bij klik (volgorde = klikvolgorde)
 MENU_LINKS = []      # (shape, target_index) — hyperlink-navigatie
+SOL_NOTES = {}       # id(slide) -> [platte oplossingstekst] (docent-notities)
 
 def new_presentation():
-    global prs, BLANK, PAGE, SLIDE_LIST, REVEALS, MENU_LINKS
+    global prs, BLANK, PAGE, SLIDE_LIST, REVEALS, MENU_LINKS, SOL_NOTES
     prs = Presentation()
     prs.slide_width = EMU_W
     prs.slide_height = EMU_H
@@ -94,6 +97,7 @@ def new_presentation():
     SLIDE_LIST = []
     REVEALS = []
     MENU_LINKS = []
+    SOL_NOTES = {}
 
 # ============================================================ low-level helpers
 def slide():
@@ -102,67 +106,68 @@ def slide():
     return s
 
 # ---------------------------------------------------------- interactiviteit
-def register_reveal(s, trigger_shape, reveal_shape):
-    """Registreer: klik op trigger_shape → reveal_shape verschijnt (entrance-fade,
-    getriggerd via p:cond evt=onClick spid=<trigger>). reveal_shape start verborgen."""
-    REVEALS.append((s, trigger_shape.shape_id, reveal_shape.shape_id))
+def register_reveal(s, reveal_shape):
+    """Registreer een reveal-shape: die start verborgen en verschijnt (entrance-fade)
+    bij de VOLGENDE klik in de gewone diavoorstelling. De registratievolgorde bepaalt
+    de klikvolgorde binnen één dia (sequentiële on-click entrance in de hoofdsequentie)."""
+    REVEALS.append((s, reveal_shape.shape_id))
 
 def link_to(shape, target_index):
     """Klik-actie op shape → spring naar slide met index target_index (hyperlink-navigatie)."""
     MENU_LINKS.append((shape, target_index))
 
-def _interactive_seq(cid, trig, rev):
-    """Eén interactieve p:seq: onClick op <trig> → entrance-fade (+set visible) op <rev>.
-    Gebruikt 5 opeenvolgende cTn-id's vanaf cid. presetClass=entr → PPT verbergt <rev>
-    tot de trigger klikt (canonieke PowerPoint-triggerstructuur)."""
+def _click_group(cid, rev):
+    """Eén on-click click-groep in de hoofdsequentie: bij de volgende klik verschijnt
+    <rev> met een fade-in (entrance). Gebruikt 5 opeenvolgende cTn-id's vanaf cid.
+    De buitenste <p:cond delay="indefinite"/> = «bij klik». Dit is exact de canonieke
+    structuur die PowerPoint schrijft voor «Fade, Start: On Click» — presetClass=entr
+    → PowerPoint houdt <rev> automatisch verborgen tot zijn klik."""
     a, b, c, d, e = cid, cid + 1, cid + 2, cid + 3, cid + 4
     return (
-      f'<p:seq concurrent="1" nextAc="seek">'
-      f'<p:cTn id="{a}" restart="whenNotActive" fill="hold" nodeType="interactiveSeq">'
-      f'<p:stCondLst><p:cond evt="onClick" delay="0"><p:tgtEl><p:spTgt spid="{trig}"/></p:tgtEl></p:cond></p:stCondLst>'
-      f'<p:endSync evt="end" delay="0"><p:rtn val="all"/></p:endSync>'
-      f'<p:childTnLst>'
+      f'<p:par><p:cTn id="{a}" fill="hold"><p:stCondLst><p:cond delay="indefinite"/></p:stCondLst><p:childTnLst>'
         f'<p:par><p:cTn id="{b}" fill="hold"><p:stCondLst><p:cond delay="0"/></p:stCondLst><p:childTnLst>'
           f'<p:par><p:cTn id="{c}" presetID="10" presetClass="entr" presetSubtype="0" fill="hold" grpId="0" nodeType="clickEffect">'
           f'<p:stCondLst><p:cond delay="0"/></p:stCondLst><p:childTnLst>'
             f'<p:set><p:cBhvr><p:cTn id="{d}" dur="1" fill="hold"><p:stCondLst><p:cond delay="0"/></p:stCondLst></p:cTn>'
             f'<p:tgtEl><p:spTgt spid="{rev}"/></p:tgtEl><p:attrNameLst><p:attrName>style.visibility</p:attrName></p:attrNameLst></p:cBhvr>'
             f'<p:to><p:strVal val="visible"/></p:to></p:set>'
-            f'<p:animEffect transition="in" filter="fade"><p:cBhvr><p:cTn id="{e}" dur="400"/>'
+            f'<p:animEffect transition="in" filter="fade"><p:cBhvr><p:cTn id="{e}" dur="500"/>'
             f'<p:tgtEl><p:spTgt spid="{rev}"/></p:tgtEl></p:cBhvr></p:animEffect>'
           f'</p:childTnLst></p:cTn></p:par>'
         f'</p:childTnLst></p:cTn></p:par>'
-      f'</p:childTnLst></p:cTn>'
-      f'<p:nextCondLst><p:cond evt="onClick" delay="0"><p:tgtEl><p:spTgt spid="{trig}"/></p:tgtEl></p:cond></p:nextCondLst>'
-      f'</p:seq>')
+      f'</p:childTnLst></p:cTn></p:par>')
 
 def apply_all_timing():
-    """Bouwt per slide met reveals één <p:timing>-boom (tmRoot → mainSeq +
-    interactieve seqs) en injecteert die in de slide-XML."""
-    groups = {}      # id(slide) -> list[(trig,rev)]
+    """Bouwt per slide met reveals één <p:timing>-boom: tmRoot → mainSeq met per
+    reveal-shape één on-click click-groep (sequentieel «verschijnen bij klik»).
+    Alle id's zijn uniek binnen de dia (3/4/5/6/7, 8/9/10/11/12, …)."""
+    groups = {}      # id(slide) -> list[rev_spid]
     slide_of = {}    # id(slide) -> slide
     order = []
-    for s, t, r in REVEALS:
+    for s, r in REVEALS:
         k = id(s)
         if k not in groups:
             groups[k] = []; slide_of[k] = s; order.append(k)
-        groups[k].append((t, r))
+        groups[k].append(r)
     n = 0
+    total = 0
     for k in order:
         s = slide_of[k]
-        seqs = ""; cid = 5
-        for t, r in groups[k]:
-            seqs += _interactive_seq(cid, t, r); cid += 10
+        cgs = ""; cid = 3
+        for r in groups[k]:
+            cgs += _click_group(cid, r); cid += 5; total += 1
         xml = (
           f'<p:timing {nsdecls("p", "a")}><p:tnLst><p:par>'
           f'<p:cTn id="1" dur="indefinite" restart="never" nodeType="tmRoot"><p:childTnLst>'
-          f'<p:seq concurrent="1" nextAc="seek"><p:cTn id="2" dur="indefinite" nodeType="mainSeq"><p:childTnLst/></p:cTn>'
+          f'<p:seq concurrent="1" nextAc="seek"><p:cTn id="2" dur="indefinite" nodeType="mainSeq"><p:childTnLst>'
+          f'{cgs}'
+          f'</p:childTnLst></p:cTn>'
           f'<p:prevCondLst><p:cond evt="onPrev" delay="0"><p:tgtEl><p:sldTgt/></p:tgtEl></p:cond></p:prevCondLst>'
           f'<p:nextCondLst><p:cond evt="onNext" delay="0"><p:tgtEl><p:sldTgt/></p:tgtEl></p:cond></p:nextCondLst>'
-          f'</p:seq>{seqs}</p:childTnLst></p:cTn></p:par></p:tnLst></p:timing>')
+          f'</p:seq></p:childTnLst></p:cTn></p:par></p:tnLst></p:timing>')
         s._element.append(parse_xml(xml))
         n += 1
-    return n, len(REVEALS)
+    return n, total
 
 def apply_hyperlinks():
     for shape, idx in MENU_LINKS:
@@ -268,10 +273,27 @@ def avatar(s, name, x, y, d=Inches(0.9)):
         return s.shapes.add_picture(p, x, y, d, d)
     return None
 
+def _flatten_solucion_lines(lines):
+    """Zet de solución-regels (str of list van (txt, opts)-tuples) om naar platte tekst."""
+    out = []
+    for ln in lines:
+        if isinstance(ln, str):
+            out.append(ln)
+        else:
+            if isinstance(ln, tuple):
+                ln = [ln]
+            out.append("".join(t for t, _o in ln))
+    return "\n".join(out)
+
 def notes(s, txt):
     # Docentnotities enkel in de docentversie; leerlingversie krijgt geen docentnotities.
     if is_alumno():
         return
+    extra = SOL_NOTES.get(id(s))
+    if extra:
+        # Antwoorden staan nu (ook in de docentversie) verborgen tot klik → daarom
+        # de VOLLEDIGE oplossing hier in de spreker-notities (presenter view).
+        txt = txt + "\n\n— SOLUCIÓN (docent · presenter view) —\n" + "\n\n".join(extra)
     s.notes_slide.notes_text_frame.text = txt
 
 # ------------------------------------------------------------- vaste chrome
@@ -302,7 +324,7 @@ def footer(s, tab="U0 · ¡EMPEZAMOS!", page=None):
          [[("● ", {"color": G, "size": 11, "bold": True}),
            (tab + "   ·   C5 · A1 · La Ruta", {"color": MUT, "size": 9.5})]],
          anchor=MSO_ANCHOR.MIDDLE)
-    vlabel = "Leerlingenversie — kioskmodus" if is_alumno() else "Docentenversie — met oplossingen"
+    vlabel = "Leerlingenversie — klik onthult" if is_alumno() else "Docentenversie — met oplossingen"
     text(s, Inches(9.5), Inches(7.18), Inches(3.35), Inches(0.3),
          [[(vlabel, {"color": MUT, "size": 9, "italic": True})]],
          align=PP_ALIGN.RIGHT, anchor=MSO_ANCHOR.MIDDLE)
@@ -313,8 +335,9 @@ def footer(s, tab="U0 · ¡EMPEZAMOS!", page=None):
 
 def noodroute(s, y=Inches(6.62)):
     """Idee 6 + §5-noodroute: vaste knoppen toon oplossing / sla over / terug naar menu.
-    Geeft de «Mostrar solución»-knop terug (= trigger voor de klik-onthulling van de
-    solución in de leerlingversie). «⌂ Menú» krijgt een echte hyperlink naar de menudia."""
+    Geeft de «Mostrar solución»-knop terug (visuele noodroute; elke klik in de gewone
+    diavoorstelling onthult toch de volgende reveal). «⌂ Menú» krijgt een echte
+    hyperlink naar de menudia."""
     labels = [("▶  Mostrar solución", G, WHITE),
               ("⏭  Saltar", WHITE, GD),
               ("⌂  Menú (dia 2)", WHITE, GD)]
@@ -362,22 +385,26 @@ def solucion(s, x, y, w, h, lines, title="SOLUCIÓN · docent"):
     return box, chipshp
 
 # ------------------------------------------------------- oefen-interactiviteit
-def exercise_solucion(s, x, y, w, h, lines, trigger, title_doc="SOLUCIÓN · docent"):
-    """Solución-kader op een oefendia.
-      · docentversie → zichtbaar (oplossing staat er).
-      · leerlingversie → verborgen; verschijnt via klik op <trigger> (▶ Mostrar solución).
-    Zowel het kader als het label worden in de leerlingversie mee onthuld."""
+def exercise_solucion(s, x, y, w, h, lines, trigger=None, title_doc="SOLUCIÓN · docent"):
+    """Solución-kader op een oefendia — in BEIDE decks verborgen tot klik.
+      · Het kader én het label verschijnen sequentieel bij klik (fade-in).
+      · docentversie → géén oplossing blijft zichtbaar staan die de onthulling
+        verklapt; de VOLLEDIGE oplossing gaat naar de spreker-notities (zie notes()).
+    De <trigger>-parameter wordt niet meer gebruikt (geen triggers meer) maar blijft
+    voor call-compatibiliteit."""
     title = "SOLUCIÓN" if is_alumno() else title_doc
     box, chipshp = solucion(s, x, y, w, h, lines, title=title)
-    if is_alumno() and trigger is not None:
-        register_reveal(s, trigger, box)
-        register_reveal(s, trigger, chipshp)
+    register_reveal(s, box)
+    register_reveal(s, chipshp)
+    if not is_alumno():
+        SOL_NOTES.setdefault(id(s), []).append(_flatten_solucion_lines(lines))
     return box
 
-def check_badge(s, x, y, trigger_shape, label="✓ correcto", w=None):
-    """Klein groen «✓ correcto»-vlak dat pas verschijnt als de leerling op
-    trigger_shape (een antwoordoptie/kaart) klikt — het antwoord «springt in».
-    Werkt in béíde versies (entrance-animatie = verborgen tot de klik)."""
+def check_badge(s, x, y, trigger_shape=None, label="✓ correcto", w=None):
+    """Klein groen «✓ correcto»-vlak dat verborgen start en bij de volgende klik
+    verschijnt (entrance-fade) — het antwoord «springt in». Werkt in béíde versies.
+    <trigger_shape> wordt niet meer gebruikt (geen triggers) maar blijft voor
+    call-compatibiliteit."""
     if w is None:
         w = Inches(0.2 + 0.088 * len(label))
     h = Inches(0.34)
@@ -387,7 +414,7 @@ def check_badge(s, x, y, trigger_shape, label="✓ correcto", w=None):
     p = tf.paragraphs[0]; p.alignment = PP_ALIGN.CENTER
     r = p.add_run(); r.text = label; r.font.size = Pt(11); r.font.bold = True
     r.font.name = BODY; r.font.color.rgb = WHITE
-    register_reveal(s, trigger_shape, b)
+    register_reveal(s, b)
     return b
 
 def card(s, x, y, w, h, fill=WHITE, line=LINE, lw=1.2, shadow=True, radius=0.055):
@@ -448,7 +475,8 @@ def s01_title():
     notes(s, "TEACHER · TITLE. Open de reis (La Ruta). Stel cast + mochila voor (30-40 s). "
              "Klasritueel: laat de klas straks (§4/opener) de NAAM van de mochila kiezen. "
              "Instructietaal: Spaans-eerst met NL-steun. Timing hele les: 50 min — zie dia TEACHER_NOTES. "
-             "Docentversie = vrije navigatie; leerlingversie (.ppsx) later in kioskmodus.")
+             "Docentversie = vrije navigatie + oplossing in notities; leerlingversie (.ppsx) = "
+             "gewone diavoorstelling waarin elke klik het volgende antwoord onthult (geen kiosk).")
 
 # ============================================================================
 # DIA 2 · LESSON_MENU — interactieve startpagina (idee 1)
@@ -1090,11 +1118,8 @@ def s15_lenguaclase():
         rect(s, Inches(6.75), y + Inches(0.5), Inches(6.05), Inches(0.02), fill=LINE)
         ans = text(s, Inches(6.75), y + Inches(0.02), Inches(6.0), Inches(0.4),
              [[("→ " + sol, {"size": 12.5, "bold": True, "color": G})]], anchor=MSO_ANCHOR.MIDDLE)
-        # klik op de situatiekaart → de juiste chunk «springt in»
-        if is_alumno():
-            register_reveal(s, cardshp, ans)   # verborgen tot de leerling klikt
-        else:
-            check_badge(s, Inches(12.35), y + Inches(0.02), cardshp, label="✓", w=Inches(0.36))
+        # de juiste chunk (→) start verborgen en «springt in» bij de volgende klik
+        register_reveal(s, ans)
         y = y + Inches(0.95)
     btn = noodroute(s)
     exercise_solucion(s, Inches(0.5), Inches(5.9), Inches(12.3), Inches(0.55),
@@ -1362,7 +1387,7 @@ def s21_teacher():
     text(s, Inches(7.05), Inches(1.98), Inches(5.6), Inches(1.55),
          [[("• Elke oefendia: knop ▶ Mostrar solución · ⏭ Saltar · ⌂ Menú (dia 2).", {"size": 11, "color": INK})],
           [("• Valt audio/video/internet weg → alle content staat óók als tekst/beeld op de dia (statische fallback).", {"size": 11, "color": INK})],
-          [("• Docentversie .pptx = vrije navigatie + oplossingen; leerlingversie .ppsx = kioskmodus, feedback ingebouwd, geen docentnotities.", {"size": 11, "color": INK})]], line=1.12)
+          [("• Docentversie .pptx = vrije navigatie + oplossing in de notities; leerlingversie .ppsx = gewone diavoorstelling (geen kiosk): elke klik onthult het volgende antwoord (fade). Geen docentnotities.", {"size": 11, "color": INK})]], line=1.12)
     card(s, Inches(6.85), Inches(3.75), Inches(5.95), Inches(2.25), fill=GT, line=G, lw=1.2)
     text(s, Inches(7.05), Inches(3.85), Inches(5.6), Inches(0.35),
          [[("🔗 Cross-refs (§16)", {"size": 12.5, "bold": True, "color": GD, "font": DISPLAY})]])
@@ -1380,19 +1405,9 @@ def s21_teacher():
              "Alle LPD-codes III-Spa-d nog concreet in te vullen (zie bron-md Bijlage C). "
              "Print-hygiëne / kleurlagen: cursusgroen = navigatie; functionele kleuren (blauw persoon · oranje werkw · paars tijd) enkel bij taalmarkering.")
 
-# ---------------------------------------------------------------- kioskmodus
-def set_kiosk():
-    """Zet <p:showPr> op kioskmodus (zelflopende presentatie, beperkte navigatie).
-    Best-effort: showPr is een optioneel element van <p:presentation>. Wordt na
-    injectie via een round-trip gecontroleerd (zie build_alumno)."""
-    pres = prs.slides._sldIdLst.getparent()  # <p:presentation>
-    show = parse_xml(
-        f'<p:showPr {nsdecls("p")} showAnimation="1" useTimings="0" loop="0">'
-        f'<p:kiosk/><p:sldAll/></p:showPr>')
-    pres.append(show)  # als laatste kind (na defaultTextStyle)
-
 # ---------------------------------------------------------------- build
-SLIDE_FUNCS_CORE = None  # placeholder
+# GEEN kioskmodus meer: beide decks openen als een gewone diavoorstelling waarin
+# klikken vooruit gaat en elke klik de volgende reveal-shape onthult.
 
 def _run_all_slides(include_teacher=True):
     s01_title(); s02_menu(); s03_cast()
@@ -1405,19 +1420,17 @@ def _run_all_slides(include_teacher=True):
     if include_teacher:
         s21_teacher()
 
-def build(mode, out, kiosk=False, include_teacher=True):
+def build(mode, out, include_teacher=True):
     global MODE
     MODE = mode
     new_presentation()
     _run_all_slides(include_teacher=include_teacher)
     ndia_timing, nreveals = apply_all_timing()
     apply_hyperlinks()
-    if kiosk:
-        set_kiosk()
     prs.save(out)
     ndias = len(prs.slides._sldIdLst)
-    print(f"opgeslagen: {out} · {ndias} dia's · {ndia_timing} dia's met klik-trigger · "
-          f"{nreveals} reveal-animaties · {len(MENU_LINKS)} hyperlinks")
+    print(f"opgeslagen: {out} · {ndias} dia's · {ndia_timing} dia's met on-click animaties · "
+          f"{nreveals} on-click onthullingen · {len(MENU_LINKS)} hyperlinks")
     return out, ndias, ndia_timing, nreveals
 
 
@@ -1443,17 +1456,11 @@ def to_ppsx(pptx_path, ppsx_path):
 
 
 def build_alumno():
-    # 1) bouw de leerling-.pptx (kioskmodus, geen docentnotities, geen teacher-dia)
-    build("alumno", OUT_ALUMNO_PPTX, kiosk=True, include_teacher=False)
-    # 2) verifieer dat de kiosk-.pptx nog een geldige OOXML is (round-trip)
-    try:
-        _ = Presentation(OUT_ALUMNO_PPTX)
-        print("round-trip OK (kiosk-.pptx opent):", OUT_ALUMNO_PPTX)
-    except Exception as e:
-        print("WAARSCHUWING: kiosk-.pptx opent niet (%s) → herbouw zonder showPr" % e)
-        build("alumno", OUT_ALUMNO_PPTX, kiosk=False, include_teacher=False)
-        _ = Presentation(OUT_ALUMNO_PPTX)
-        print("round-trip OK (zonder showPr):", OUT_ALUMNO_PPTX)
+    # 1) bouw de leerling-.pptx (GEEN kiosk, geen docentnotities, geen teacher-dia)
+    build("alumno", OUT_ALUMNO_PPTX, include_teacher=False)
+    # 2) verifieer dat de .pptx een geldige OOXML is (round-trip)
+    _ = Presentation(OUT_ALUMNO_PPTX)
+    print("round-trip OK (alumno-.pptx opent):", OUT_ALUMNO_PPTX)
     # 3) converteer naar .ppsx (slideshow-contenttype)
     to_ppsx(OUT_ALUMNO_PPTX, OUT_ALUMNO)
     # 4) verifieer dat de .ppsx nog een geldige zip/OOXML is
@@ -1467,7 +1474,8 @@ def build_alumno():
 
 
 if __name__ == "__main__":
-    # Docentenversie: vrije navigatie, oplossingen zichtbaar, docentnotities.
-    build("docente", OUT_DOCENTE, kiosk=False, include_teacher=True)
-    # Leerlingenversie: kioskmodus, oplossingen verborgen tot klik → .ppsx.
+    # Docentenversie: vrije navigatie; antwoorden verschijnen bij klik + volledige
+    # oplossing in de spreker-notities.
+    build("docente", OUT_DOCENTE, include_teacher=True)
+    # Leerlingenversie: gewone diavoorstelling (geen kiosk), antwoorden bij klik → .ppsx.
     build_alumno()
