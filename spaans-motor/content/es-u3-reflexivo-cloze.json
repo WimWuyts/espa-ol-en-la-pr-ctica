@@ -1,0 +1,126 @@
+{
+  "id": "es-u3-reflexivo-cloze",
+  "title": "Verbos reflexivos",
+  "subtitle": "U3 · kies de juiste reflexieve vorm",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Vul de reflexieve vorm in (pronombre + werkwoord)",
+    "items": [
+      {
+        "stimulus": "Yo ___ a las siete. (despertarse)",
+        "options": [
+          "me despierto",
+          "me despierta",
+          "despierto"
+        ],
+        "answer": "me despierto",
+        "tag": "r",
+        "sub": "yo → me despierto"
+      },
+      {
+        "stimulus": "Pau ___ por la mañana. (ducharse)",
+        "options": [
+          "se ducha",
+          "me ducho",
+          "te duchas"
+        ],
+        "answer": "se ducha",
+        "tag": "r",
+        "sub": "él → se ducha"
+      },
+      {
+        "stimulus": "¿Tú ___ rápido? (vestirse)",
+        "options": [
+          "te vistes",
+          "se viste",
+          "me visto"
+        ],
+        "answer": "te vistes",
+        "tag": "r",
+        "sub": "tú → te vistes (e→i)"
+      },
+      {
+        "stimulus": "Nosotros ___ temprano. (levantarse)",
+        "options": [
+          "nos levantamos",
+          "se levantan",
+          "me levanto"
+        ],
+        "answer": "nos levantamos",
+        "tag": "r",
+        "sub": "nosotros → nos levantamos"
+      },
+      {
+        "stimulus": "Mis amigos ___ tarde. (acostarse)",
+        "options": [
+          "se acuestan",
+          "nos acostamos",
+          "se acuesta"
+        ],
+        "answer": "se acuestan",
+        "tag": "r",
+        "sub": "ellos → se acuestan (o→ue)"
+      },
+      {
+        "stimulus": "Yo ___ los dientes. (lavarse)",
+        "options": [
+          "me lavo",
+          "se lava",
+          "te lavas"
+        ],
+        "answer": "me lavo",
+        "tag": "r",
+        "sub": "yo → me lavo"
+      },
+      {
+        "stimulus": "Lucía ___ delante del espejo. (peinarse)",
+        "options": [
+          "se peina",
+          "me peino",
+          "se peinan"
+        ],
+        "answer": "se peina",
+        "tag": "r",
+        "sub": "ella → se peina"
+      },
+      {
+        "stimulus": "¿A qué hora ___ tú? (levantarse)",
+        "options": [
+          "te levantas",
+          "se levanta",
+          "me levanto"
+        ],
+        "answer": "te levantas",
+        "tag": "r",
+        "sub": "tú → te levantas"
+      },
+      {
+        "stimulus": "Yo ___ a las once. (acostarse)",
+        "options": [
+          "me acuesto",
+          "me acosto",
+          "se acuesta"
+        ],
+        "answer": "me acuesto",
+        "tag": "r",
+        "sub": "yo → me acuesto (o→ue)"
+      },
+      {
+        "stimulus": "Nosotros ___ pronto. (despertarse)",
+        "options": [
+          "nos despertamos",
+          "me despierto",
+          "se despiertan"
+        ],
+        "answer": "nos despertamos",
+        "tag": "r",
+        "sub": "nosotros → geen wissel"
+      }
+    ]
+  }
+}

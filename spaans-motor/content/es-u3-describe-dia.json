@@ -1,0 +1,108 @@
+{
+  "id": "es-u3-describe-dia",
+  "title": "Describe tu día",
+  "subtitle": "U3 · schrijf je dag — met alle bouwstenen",
+  "lang": "es",
+  "template": "sim",
+  "options": {
+    "audio": false
+  },
+  "sim": {
+    "prompt": "Tarea comunicativa · vertel je dag",
+    "rounds": [
+      {
+        "scenario": "Cuéntale tu mañana a Pau por chat.",
+        "tag": "dia",
+        "sub": "gebruik: me levanto · a las … · desayuno",
+        "min": 10,
+        "need": [
+          {
+            "re": "me levanto|me despierto",
+            "label": "me levanto/despierto"
+          },
+          {
+            "re": "a las ",
+            "label": "a las … (hora)"
+          },
+          {
+            "re": "desayun|me ducho|me visto",
+            "label": "una acción más"
+          }
+        ],
+        "bank": [
+          "Me levanto",
+          "a las siete",
+          "me ducho",
+          "desayuno",
+          "a las ocho",
+          "salgo de casa",
+          "primero",
+          "después"
+        ],
+        "model": "Me levanto a las siete, me ducho y desayuno. Después salgo de casa a las ocho."
+      },
+      {
+        "scenario": "Describe tu tarde: instituto, deberes, deporte.",
+        "tag": "dia",
+        "sub": "hora + verbo irregular + conector",
+        "min": 12,
+        "need": [
+          {
+            "re": "empiez|almuerzo|salgo|hago",
+            "label": "un verbo del día"
+          },
+          {
+            "re": "a las |por la",
+            "label": "cuándo"
+          },
+          {
+            "re": "despu[eé]s|luego|primero",
+            "label": "un conector"
+          }
+        ],
+        "bank": [
+          "Las clases empiezan",
+          "a las nueve",
+          "almuerzo",
+          "al mediodía",
+          "hago los deberes",
+          "por la tarde",
+          "luego",
+          "juego al fútbol"
+        ],
+        "model": "Las clases empiezan a las nueve. Al mediodía almuerzo y por la tarde hago los deberes. Luego juego al fútbol."
+      },
+      {
+        "scenario": "«¿Qué haces cada día?» Cuenta tu día entero.",
+        "tag": "dia",
+        "sub": "mañana + tarde + noche + frecuencia",
+        "min": 14,
+        "need": [
+          {
+            "re": "me levanto|me despierto",
+            "label": "inicio del día"
+          },
+          {
+            "re": "siempre|a veces|normalmente|nunca|a menudo",
+            "label": "frecuencia"
+          },
+          {
+            "re": "me acuesto|ceno",
+            "label": "final del día"
+          }
+        ],
+        "bank": [
+          "Normalmente",
+          "me levanto a las siete",
+          "voy al instituto",
+          "almuerzo",
+          "por la tarde",
+          "hago los deberes",
+          "ceno a las nueve",
+          "me acuesto a las once"
+        ],
+        "model": "Normalmente me levanto a las siete y voy al instituto. Almuerzo al mediodía y por la tarde hago los deberes. Ceno a las nueve y me acuesto a las once."
+      }
+    ]
+  }
+}

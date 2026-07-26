@@ -1,0 +1,104 @@
+{
+  "id": "es-u3-frecuencia",
+  "title": "Adverbios de frecuencia",
+  "subtitle": "U3 · kies het juiste frequentiebijwoord",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 8,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Welk frequentiebijwoord past?",
+    "items": [
+      {
+        "stimulus": "___ desayuno (100%).",
+        "options": [
+          "Siempre",
+          "Nunca",
+          "A veces"
+        ],
+        "answer": "Siempre",
+        "tag": "f",
+        "sub": "altijd"
+      },
+      {
+        "stimulus": "___ llego tarde (0%).",
+        "options": [
+          "Nunca",
+          "Siempre",
+          "A menudo"
+        ],
+        "answer": "Nunca",
+        "tag": "f",
+        "sub": "nooit"
+      },
+      {
+        "stimulus": "___ ceno tarde (50%).",
+        "options": [
+          "A veces",
+          "Siempre",
+          "Nunca"
+        ],
+        "answer": "A veces",
+        "tag": "f",
+        "sub": "soms"
+      },
+      {
+        "stimulus": "___ juego al fútbol (80%).",
+        "options": [
+          "A menudo",
+          "Nunca",
+          "Casi nunca"
+        ],
+        "answer": "A menudo",
+        "tag": "f",
+        "sub": "vaak"
+      },
+      {
+        "stimulus": "___ me levanto pronto (meestal).",
+        "options": [
+          "Normalmente",
+          "Nunca",
+          "A veces"
+        ],
+        "answer": "Normalmente",
+        "tag": "f",
+        "sub": "gewoonlijk"
+      },
+      {
+        "stimulus": "Voy al cine una ___ por semana.",
+        "options": [
+          "vez",
+          "día",
+          "hora"
+        ],
+        "answer": "vez",
+        "tag": "f",
+        "sub": "una vez por semana"
+      },
+      {
+        "stimulus": "Estudio ___ los días.",
+        "options": [
+          "todos",
+          "cada",
+          "siempre"
+        ],
+        "answer": "todos",
+        "tag": "f",
+        "sub": "todos los días"
+      },
+      {
+        "stimulus": "El ___ de semana descanso.",
+        "options": [
+          "fin",
+          "día",
+          "hora"
+        ],
+        "answer": "fin",
+        "tag": "f",
+        "sub": "el fin de semana"
+      }
+    ]
+  }
+}

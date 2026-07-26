@@ -1,0 +1,126 @@
+{
+  "id": "es-u3-la-hora",
+  "title": "La hora",
+  "subtitle": "U3 · vul de juiste tijd-uitdrukking in",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste vorm",
+    "items": [
+      {
+        "stimulus": "___ una. (1:00)",
+        "options": [
+          "Es la",
+          "Son las",
+          "Es las"
+        ],
+        "answer": "Es la",
+        "tag": "h",
+        "sub": "1 uur = Es la"
+      },
+      {
+        "stimulus": "___ tres. (3:00)",
+        "options": [
+          "Son las",
+          "Es la",
+          "Son la"
+        ],
+        "answer": "Son las",
+        "tag": "h",
+        "sub": "vanaf 2 = Son las"
+      },
+      {
+        "stimulus": "Son las dos ___. (2:30)",
+        "options": [
+          "y media",
+          "y cuarto",
+          "menos cuarto"
+        ],
+        "answer": "y media",
+        "tag": "h",
+        "sub": "half = y media"
+      },
+      {
+        "stimulus": "Son las cuatro ___. (4:15)",
+        "options": [
+          "y cuarto",
+          "y media",
+          "en punto"
+        ],
+        "answer": "y cuarto",
+        "tag": "h",
+        "sub": "kwart over"
+      },
+      {
+        "stimulus": "Son las ocho ___. (7:45)",
+        "options": [
+          "menos cuarto",
+          "y cuarto",
+          "y media"
+        ],
+        "answer": "menos cuarto",
+        "tag": "h",
+        "sub": "kwart voor"
+      },
+      {
+        "stimulus": "Son las seis ___. (6:00)",
+        "options": [
+          "en punto",
+          "y media",
+          "de la"
+        ],
+        "answer": "en punto",
+        "tag": "h",
+        "sub": "precies"
+      },
+      {
+        "stimulus": "Me levanto a las siete ___ mañana.",
+        "options": [
+          "de la",
+          "por la",
+          "en"
+        ],
+        "answer": "de la",
+        "tag": "h",
+        "sub": "concreet uur"
+      },
+      {
+        "stimulus": "___ tarde hago deporte.",
+        "options": [
+          "Por la",
+          "De la",
+          "A la"
+        ],
+        "answer": "Por la",
+        "tag": "h",
+        "sub": "dagdeel"
+      },
+      {
+        "stimulus": "¿___ empiezas las clases?",
+        "options": [
+          "A qué hora",
+          "Qué hora",
+          "Cuál hora"
+        ],
+        "answer": "A qué hora",
+        "tag": "h",
+        "sub": "om hoe laat"
+      },
+      {
+        "stimulus": "Empiezo ___ ocho.",
+        "options": [
+          "a las",
+          "son las",
+          "de las"
+        ],
+        "answer": "a las",
+        "tag": "h",
+        "sub": "a las + uur"
+      }
+    ]
+  }
+}

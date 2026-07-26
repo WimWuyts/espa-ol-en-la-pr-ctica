@@ -1,0 +1,56 @@
+{
+  "id": "es-u3-rutina-memoria",
+  "title": "Memoria de la rutina",
+  "subtitle": "U3 · zoek het paar español ↔ nederlands",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes: actie + vertaling",
+    "pairs": [
+      {
+        "a": "despertarse",
+        "b": "wakker worden"
+      },
+      {
+        "a": "levantarse",
+        "b": "opstaan"
+      },
+      {
+        "a": "ducharse",
+        "b": "douchen"
+      },
+      {
+        "a": "vestirse",
+        "b": "zich aankleden"
+      },
+      {
+        "a": "desayunar",
+        "b": "ontbijten"
+      },
+      {
+        "a": "almorzar",
+        "b": "lunchen"
+      },
+      {
+        "a": "cenar",
+        "b": "avondmalen"
+      },
+      {
+        "a": "acostarse",
+        "b": "gaan slapen"
+      },
+      {
+        "a": "hacer los deberes",
+        "b": "huiswerk maken"
+      },
+      {
+        "a": "descansar",
+        "b": "uitrusten"
+      }
+    ]
+  }
+}

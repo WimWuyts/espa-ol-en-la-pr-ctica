@@ -1,0 +1,123 @@
+{
+  "id": "es-u3-cambio-raiz",
+  "title": "Cambio de raíz",
+  "subtitle": "U3 · welke stamwissel heeft dit werkwoord?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 15,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "¿o→ue, e→ie of e→i?",
+    "categories": [
+      {
+        "id": "ue",
+        "label": "o → ue<br><small>puedo</small>",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "ie",
+        "label": "e → ie<br><small>quiero</small>",
+        "glaze": "#E0A22F"
+      },
+      {
+        "id": "i",
+        "label": "e → i<br><small>pido</small>",
+        "glaze": "#2FA8A0"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "poder",
+        "answer": "ue",
+        "tag": "ue",
+        "sub": "puedo"
+      },
+      {
+        "stimulus": "querer",
+        "answer": "ie",
+        "tag": "ie",
+        "sub": "quiero"
+      },
+      {
+        "stimulus": "pedir",
+        "answer": "i",
+        "tag": "i",
+        "sub": "pido"
+      },
+      {
+        "stimulus": "dormir",
+        "answer": "ue",
+        "tag": "ue",
+        "sub": "duermo"
+      },
+      {
+        "stimulus": "empezar",
+        "answer": "ie",
+        "tag": "ie",
+        "sub": "empiezo"
+      },
+      {
+        "stimulus": "vestirse",
+        "answer": "i",
+        "tag": "i",
+        "sub": "me visto"
+      },
+      {
+        "stimulus": "volver",
+        "answer": "ue",
+        "tag": "ue",
+        "sub": "vuelvo"
+      },
+      {
+        "stimulus": "preferir",
+        "answer": "ie",
+        "tag": "ie",
+        "sub": "prefiero"
+      },
+      {
+        "stimulus": "servir",
+        "answer": "i",
+        "tag": "i",
+        "sub": "sirvo"
+      },
+      {
+        "stimulus": "almorzar",
+        "answer": "ue",
+        "tag": "ue",
+        "sub": "almuerzo"
+      },
+      {
+        "stimulus": "despertarse",
+        "answer": "ie",
+        "tag": "ie",
+        "sub": "me despierto"
+      },
+      {
+        "stimulus": "repetir",
+        "answer": "i",
+        "tag": "i",
+        "sub": "repito"
+      },
+      {
+        "stimulus": "acostarse",
+        "answer": "ue",
+        "tag": "ue",
+        "sub": "me acuesto"
+      },
+      {
+        "stimulus": "entender",
+        "answer": "ie",
+        "tag": "ie",
+        "sub": "entiendo"
+      },
+      {
+        "stimulus": "encontrar",
+        "answer": "ue",
+        "tag": "ue",
+        "sub": "encuentro"
+      }
+    ]
+  }
+}

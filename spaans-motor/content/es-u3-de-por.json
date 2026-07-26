@@ -1,0 +1,88 @@
+{
+  "id": "es-u3-de-por",
+  "title": "¿de la o por la?",
+  "subtitle": "U3 · concreet uur (de la) of deel van de dag (por la)",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "¿de la (uur) of por la (dagdeel)?",
+    "categories": [
+      {
+        "id": "de",
+        "label": "de la<br><small>a las 7 de la mañana</small>",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "por",
+        "label": "por la<br><small>por la mañana (geen uur)</small>",
+        "glaze": "#2E8E68"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "Son las siete ___ mañana.",
+        "answer": "de",
+        "tag": "de",
+        "sub": "uur → de la"
+      },
+      {
+        "stimulus": "___ tarde hago los deberes.",
+        "answer": "por",
+        "tag": "por",
+        "sub": "dagdeel → por la"
+      },
+      {
+        "stimulus": "Ceno a las nueve ___ noche.",
+        "answer": "de",
+        "tag": "de",
+        "sub": "uur → de la"
+      },
+      {
+        "stimulus": "___ mañana voy al instituto.",
+        "answer": "por",
+        "tag": "por",
+        "sub": "dagdeel → por la"
+      },
+      {
+        "stimulus": "Me levanto a las ocho ___ mañana.",
+        "answer": "de",
+        "tag": "de",
+        "sub": "uur → de la"
+      },
+      {
+        "stimulus": "Estudio ___ noche.",
+        "answer": "por",
+        "tag": "por",
+        "sub": "dagdeel → por la"
+      },
+      {
+        "stimulus": "Almuerzo a las dos ___ tarde.",
+        "answer": "de",
+        "tag": "de",
+        "sub": "uur → de la"
+      },
+      {
+        "stimulus": "___ tarde juego al fútbol.",
+        "answer": "por",
+        "tag": "por",
+        "sub": "dagdeel → por la"
+      },
+      {
+        "stimulus": "Son las once ___ noche.",
+        "answer": "de",
+        "tag": "de",
+        "sub": "uur → de la"
+      },
+      {
+        "stimulus": "Descanso ___ tarde.",
+        "answer": "por",
+        "tag": "por",
+        "sub": "dagdeel → por la"
+      }
+    ]
+  }
+}

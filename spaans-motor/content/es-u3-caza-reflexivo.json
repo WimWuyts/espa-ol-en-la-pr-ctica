@@ -1,0 +1,99 @@
+{
+  "id": "es-u3-caza-reflexivo",
+  "title": "Caza del reflexivo",
+  "subtitle": "U3 · klik ALLE reflexieve werkwoorden",
+  "lang": "es",
+  "template": "point",
+  "options": {
+    "audio": false
+  },
+  "point": {
+    "prompt": "Klik ALLE reflexieve werkwoorden (me/te/se)",
+    "mode": "all",
+    "rounds": [
+      {
+        "tag": "ref",
+        "sub": "2 reflexivos",
+        "targets": [
+          {
+            "label": "me levanto",
+            "hit": true
+          },
+          {
+            "label": "desayuno"
+          },
+          {
+            "label": "me ducho",
+            "hit": true
+          },
+          {
+            "label": "estudio"
+          }
+        ]
+      },
+      {
+        "tag": "ref",
+        "sub": "2 reflexivos",
+        "targets": [
+          {
+            "label": "ceno"
+          },
+          {
+            "label": "se acuesta",
+            "hit": true
+          },
+          {
+            "label": "hago"
+          },
+          {
+            "label": "te vistes",
+            "hit": true
+          }
+        ]
+      },
+      {
+        "tag": "ref",
+        "sub": "3 reflexivos",
+        "targets": [
+          {
+            "label": "me despierto",
+            "hit": true
+          },
+          {
+            "label": "almuerzo"
+          },
+          {
+            "label": "se peina",
+            "hit": true
+          },
+          {
+            "label": "nos levantamos",
+            "hit": true
+          },
+          {
+            "label": "juego"
+          }
+        ]
+      },
+      {
+        "tag": "ref",
+        "sub": "1 reflexivo",
+        "targets": [
+          {
+            "label": "salgo"
+          },
+          {
+            "label": "voy"
+          },
+          {
+            "label": "me acuesto",
+            "hit": true
+          },
+          {
+            "label": "hago"
+          }
+        ]
+      }
+    ]
+  }
+}

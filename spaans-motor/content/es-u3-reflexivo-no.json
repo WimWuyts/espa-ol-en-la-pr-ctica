@@ -1,0 +1,100 @@
+{
+  "id": "es-u3-reflexivo-no",
+  "title": "¿Reflexivo o no?",
+  "subtitle": "U3 · draagt het werkwoord een pronombre (me/te/se)?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Reflexief (me/te/se) of gewoon werkwoord?",
+    "categories": [
+      {
+        "id": "ref",
+        "label": "Reflexivo<br><small>me levanto</small>",
+        "glaze": "#8B5E9E"
+      },
+      {
+        "id": "no",
+        "label": "No reflexivo<br><small>desayuno</small>",
+        "glaze": "#2E8E68"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "levantarse",
+        "answer": "ref",
+        "tag": "ref",
+        "sub": "me levanto"
+      },
+      {
+        "stimulus": "desayunar",
+        "answer": "no",
+        "tag": "no",
+        "sub": "desayuno"
+      },
+      {
+        "stimulus": "ducharse",
+        "answer": "ref",
+        "tag": "ref",
+        "sub": "me ducho"
+      },
+      {
+        "stimulus": "cenar",
+        "answer": "no",
+        "tag": "no",
+        "sub": "ceno"
+      },
+      {
+        "stimulus": "acostarse",
+        "answer": "ref",
+        "tag": "ref",
+        "sub": "me acuesto"
+      },
+      {
+        "stimulus": "hacer los deberes",
+        "answer": "no",
+        "tag": "no",
+        "sub": "hago"
+      },
+      {
+        "stimulus": "vestirse",
+        "answer": "ref",
+        "tag": "ref",
+        "sub": "me visto"
+      },
+      {
+        "stimulus": "almorzar",
+        "answer": "no",
+        "tag": "no",
+        "sub": "almuerzo"
+      },
+      {
+        "stimulus": "despertarse",
+        "answer": "ref",
+        "tag": "ref",
+        "sub": "me despierto"
+      },
+      {
+        "stimulus": "descansar",
+        "answer": "no",
+        "tag": "no",
+        "sub": "descanso"
+      },
+      {
+        "stimulus": "peinarse",
+        "answer": "ref",
+        "tag": "ref",
+        "sub": "me peino"
+      },
+      {
+        "stimulus": "estudiar",
+        "answer": "no",
+        "tag": "no",
+        "sub": "estudio"
+      }
+    ]
+  }
+}
