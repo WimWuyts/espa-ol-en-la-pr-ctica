@@ -221,6 +221,16 @@ Naast de twee *visuele* specs (§13) zijn er twee *didactische* specs in `02-hui
 - **Elke eindtaak is communicatief:** afzender · ontvanger · doel · situatie · resultaat. Nooit "gebruik 10 woorden en 5 werkwoorden".
 - **Spreken = ook interactie** (beurt nemen, verduidelijken, zichzelf herstellen). Veel spreekwerkvormen worden interactieve HTML-componenten (recorder, shadowing, info-gap, vertakkende dialoog…); **print blijft volledig bruikbaar zónder interactie**.
 - **Gedeelde componentensets:** de componentlijsten uit álle vier de specs (visueel + didactisch) vormen samen één bibliotheek, één keer te bouwen bij de golden sample.
+- **ANTWOORDRUIMTE — BINDEND (auteur 2026-07-26):** élke goede oefening krijgt **voldoende, type-correcte schrijfruimte** in het boek; de leerling schrijft écht op papier. **Nooit oplossingen/antwoordsleutels op de leerlingpagina** (die horen in het docentendossier + de HTML-zelfcorrectie). Notatiewijze per oefentype:
+  - *Classificeren/sorteren* → schrijf-kolommen (`.wcols`) met kop per categorie + geruite vlakken + rij «je eigen woord».
+  - *Invullen in woord/zin (gap-fill)* → schrijflijn (`.wl`) op de juiste plek, lengte ~ verwacht antwoord.
+  - *Woorden/zinnen schrijven, dictee, reconstrueren* → genummerde regels, elk een `.wl full`/`.wl lg` (één per item).
+  - *Tabel invullen* → `.wtab` met hoge rijen + `.wl` per cel.
+  - *Meerkeuze / markeer wat je hoort* → ☐-vakjes per optie + korte `.wl` om te noteren/verbeteren.
+  - *Vrije productie (voorstellen, mini-tekst, eigen zin)* → geruit schrijfvlak (`.wbox`), maat naar lengte.
+  - *Transformeren/herschrijven* → gegeven → `.wl` voor de herschrijving (twee kolommen of regel-per-regel).
+  - *Spreken/interactie (paar)* → notitielijn(en) voor eigen antwoord/afspraak + ☐ «gedaan», of een mini-invulframe; print blijft bruikbaar zónder opname.
+- **Paginaovergangen — BINDEND (auteur 2026-07-26):** **elke hoofdsectie** (§1…§V, Cultura, Tarea, Repaso) **start op een nieuwe bladzijde** (`.sec{break-before:page}`); **geen sectiekop onderaan** (weesregel) en **geen kader/tabel doorgesneden of «ghost»** over de paginagrens (coherente blokken `break-inside:avoid`; absoluut-gepositioneerde badges enkel binnen niet-brekende blokken).
 
 ## 15 · Beeld & asset-pijplijn (BESLIST 2026-07-25)
 

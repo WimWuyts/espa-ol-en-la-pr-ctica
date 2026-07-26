@@ -11,10 +11,26 @@ html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 body{ margin:0; font-family:var(--body); color:var(--ink); background:var(--paper); font-size:10.3pt; line-height:1.5; }
 .page{ padding:0 15mm; }
 .gloss{ color:var(--mut); font-style:italic; }
-h2,h3,.pk,.divider,.se{ break-after:avoid; }
-.regla,.truc,.pcard,.call,.qr,.guide,.esen,.mp{ break-inside:avoid; }
-.acthead{ break-after:avoid; } .act{ break-inside:auto; }
-.alf tr{ break-inside:avoid; } .alf thead{ display:table-header-group; }
+h2,h3,.pk,.divider,.se,.acthead,.intro,.route-note,.lpd,.asset{ break-after:avoid; }
+.regla,.truc,.pcard,.call,.qr,.guide,.esen,.audiorow,.wcols,.wbox,.sem{ break-inside:avoid; }
+.act{ break-inside:auto; }
+/* tabellen mogen doorvloeien (rij heel, kop herhaalt) → vult de bladspiegel */
+.alf tr,.mp tr,.sem tr{ break-inside:avoid; } .alf thead,.mp thead,.sem thead{ display:table-header-group; }
+/* elke hoofdsectie start op een nieuwe pagina; hero-openpagina niet */
+.sec{ break-before:page; } .hero + .page{ break-before:avoid; }
+/* ---- schrijf-componenten (leerling schrijft echt) ---- */
+.wl{ display:inline-block; border-bottom:1.6px solid var(--line2); min-width:34mm; height:6mm; vertical-align:-1.6mm; }
+.wl.sm{ min-width:18mm } .wl.md{ min-width:50mm } .wl.lg{ min-width:72mm }
+.wl.full{ display:block; width:100%; margin:3mm 0 }
+.wbox{ border:1px solid var(--line2); border-radius:8pt; background-image:repeating-linear-gradient(var(--paper) 0 8.6mm, var(--line) 8.6mm 8.7mm); min-height:35mm; margin:3mm 0; }
+.wbox.sm{ min-height:26mm } .wbox.lg{ min-height:52mm }
+.wcols{ display:grid; gap:3.5mm; margin:3.5mm 0; }
+.wcol{ border:1px solid var(--line); border-radius:10pt; overflow:hidden; background:#fff; }
+.wcol>.ch{ font-family:var(--disp); font-weight:700; font-size:9.4pt; color:var(--gd); background:var(--gt); padding:2mm 3mm; text-align:center; }
+.wcol>.ch small{ display:block; font-family:var(--body); font-weight:400; font-size:7.4pt; color:var(--mut); text-transform:none; letter-spacing:0 }
+.wcol>.cb{ min-height:44mm; background-image:repeating-linear-gradient(#fff 0 8mm, var(--line) 8mm 8.1mm); }
+.wcol>.cb.short{ min-height:30mm } .wcol>.cb.tall{ min-height:58mm }
+.wtab td{ height:9mm; vertical-align:top } .wtab .wl{ margin-top:1mm }
 /* hero */
 .hero{ background:var(--g); color:#fff; padding:15mm 15mm 12mm; position:relative; }
 .hero .eyebrow{ font-size:9pt; letter-spacing:.16em; font-weight:600; opacity:.9; }
@@ -162,7 +178,7 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
 
 <!-- ===== §1 ===== -->
 <div class="page">
-  <div class="parada">
+  <div class="parada sec">
     <div class="num">1</div>
     <span class="pk">§1 · El alfabeto y la pronunciación</span>
     <div class="intro">Antes de salir, aprendemos a <b>sonar</b> como un viajero. El español se lee <b>como se escribe</b>: aprende las reglas del sonido una vez y leerás casi cualquier palabra en voz alta.
@@ -304,7 +320,71 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
   </div>
 
   <h3 style="margin-top:7mm">Un sonido, varias letras <span style="font-weight:400;color:var(--mut);font-size:9pt">· één klank, meerdere letters</span></h3>
-  <div class="asset">[BEELD: SonidoLetraPanel — vier rechte overzichtskaarten (rechte hoeken = grammatica/overzicht), één per klank, elk met de klinker-«schakelaar» a·o·u ↔ e·i. Alt-tekst: «vier kaarten die tonen met welke letters je de klanken k, ch-jota, harde g en th/s schrijft, afhankelijk van de klinker erna».]</div>
+  <svg viewBox="0 0 720 168" width="100%" role="img" aria-label="Vier kaarten die tonen met welke letters je de klanken k, jota, harde g en th/s schrijft, afhankelijk van de klinker die erna komt: vóór a·o·u anders dan vóór e·i." style="margin:3mm 0 1mm; font-family:'Inter',sans-serif">
+    <defs><style>
+      .sl-t{ font-family:'Bricolage Grotesque',sans-serif; font-weight:700 }
+      .sl-h{ font-size:12px } .sl-v{ font-size:10px } .sl-f{ font-size:13px } .sl-n{ font-size:8.5px }
+    </style></defs>
+    <!-- 4 kaarten -->
+    <g>
+      <!-- kaart /k/ -->
+      <g transform="translate(4,6)">
+        <rect width="168" height="150" rx="11" fill="#fff" stroke="#E4E3DE"/>
+        <path d="M0 34 H168 V11 A11 11 0 0 0 157 0 H11 A11 11 0 0 0 0 11 Z" fill="#E4F4EE"/>
+        <text x="14" y="23" class="sl-t sl-h" fill="#157355">/k/</text>
+        <text x="150" y="22" text-anchor="end" class="sl-n" fill="#6A6E78">«k»</text>
+        <rect x="12" y="46" width="52" height="18" rx="9" fill="#F3EEE4"/><text x="38" y="59" text-anchor="middle" class="sl-v" fill="#20242E">a · o · u</text>
+        <text x="72" y="59" class="sl-v" fill="#6A6E78">→</text>
+        <text x="86" y="60" class="sl-t sl-f" fill="#20242E">ca · co · cu</text>
+        <rect x="12" y="96" width="52" height="18" rx="9" fill="#E4F4EE"/><text x="38" y="109" text-anchor="middle" class="sl-v" fill="#157355">e · i</text>
+        <text x="72" y="109" class="sl-v" fill="#6A6E78">→</text>
+        <text x="86" y="110" class="sl-t sl-f" fill="#157355">que · qui</text>
+        <text x="14" y="140" class="sl-n" fill="#6A6E78">queso · aquí</text>
+      </g>
+      <!-- kaart /x/ jota -->
+      <g transform="translate(180,6)">
+        <rect width="168" height="150" rx="11" fill="#fff" stroke="#E4E3DE"/>
+        <path d="M0 34 H168 V11 A11 11 0 0 0 157 0 H11 A11 11 0 0 0 0 11 Z" fill="#E4F4EE"/>
+        <text x="14" y="23" class="sl-t sl-h" fill="#157355">/x/ <tspan class="sl-n" fill="#6A6E78">jota</tspan></text>
+        <text x="150" y="22" text-anchor="end" class="sl-n" fill="#DC2626">keel-«ch»</text>
+        <rect x="12" y="46" width="52" height="18" rx="9" fill="#F3EEE4"/><text x="38" y="59" text-anchor="middle" class="sl-v" fill="#20242E">a · o · u</text>
+        <text x="72" y="59" class="sl-v" fill="#6A6E78">→</text>
+        <text x="86" y="60" class="sl-t sl-f" fill="#20242E">ja · jo · ju</text>
+        <rect x="12" y="96" width="52" height="18" rx="9" fill="#E4F4EE"/><text x="38" y="109" text-anchor="middle" class="sl-v" fill="#157355">e · i</text>
+        <text x="72" y="109" class="sl-v" fill="#6A6E78">→</text>
+        <text x="86" y="110" class="sl-t sl-f" fill="#157355">ge · gi</text>
+        <text x="14" y="140" class="sl-n" fill="#6A6E78">gente · gimnasio</text>
+      </g>
+      <!-- kaart /g/ -->
+      <g transform="translate(356,6)">
+        <rect width="168" height="150" rx="11" fill="#fff" stroke="#E4E3DE"/>
+        <path d="M0 34 H168 V11 A11 11 0 0 0 157 0 H11 A11 11 0 0 0 0 11 Z" fill="#E4F4EE"/>
+        <text x="14" y="23" class="sl-t sl-h" fill="#157355">/g/ <tspan class="sl-n" fill="#6A6E78">harde g</tspan></text>
+        <rect x="12" y="46" width="52" height="18" rx="9" fill="#F3EEE4"/><text x="38" y="59" text-anchor="middle" class="sl-v" fill="#20242E">a · o · u</text>
+        <text x="72" y="59" class="sl-v" fill="#6A6E78">→</text>
+        <text x="86" y="60" class="sl-t sl-f" fill="#20242E">ga · go · gu</text>
+        <rect x="12" y="96" width="52" height="18" rx="9" fill="#E4F4EE"/><text x="38" y="109" text-anchor="middle" class="sl-v" fill="#157355">e · i</text>
+        <text x="72" y="109" class="sl-v" fill="#6A6E78">→</text>
+        <text x="86" y="110" class="sl-t sl-f" fill="#157355">gue · gui</text>
+        <text x="14" y="140" class="sl-n" fill="#DC2626">u muda: guitarra · Miguel</text>
+      </g>
+      <!-- kaart /θ~s/ -->
+      <g transform="translate(532,6)">
+        <rect width="168" height="150" rx="11" fill="#fff" stroke="#E4E3DE"/>
+        <path d="M0 34 H168 V11 A11 11 0 0 0 157 0 H11 A11 11 0 0 0 0 11 Z" fill="#E4F4EE"/>
+        <text x="14" y="23" class="sl-t sl-h" fill="#157355">/θ~s/</text>
+        <text x="150" y="22" text-anchor="end" class="sl-n" fill="#DC2626">«th»/«s»</text>
+        <rect x="12" y="46" width="52" height="18" rx="9" fill="#F3EEE4"/><text x="38" y="59" text-anchor="middle" class="sl-v" fill="#20242E">a · o · u</text>
+        <text x="72" y="59" class="sl-v" fill="#6A6E78">→</text>
+        <text x="86" y="60" class="sl-t sl-f" fill="#20242E">za · zo · zu</text>
+        <rect x="12" y="96" width="52" height="18" rx="9" fill="#E4F4EE"/><text x="38" y="109" text-anchor="middle" class="sl-v" fill="#157355">e · i</text>
+        <text x="72" y="109" class="sl-v" fill="#6A6E78">→</text>
+        <text x="86" y="110" class="sl-t sl-f" fill="#157355">ce · ci</text>
+        <text x="14" y="140" class="sl-n" fill="#6A6E78">cena · cine</text>
+      </g>
+    </g>
+  </svg>
+  <div class="gloss" style="font-size:8.2pt;margin:0 0 2mm">De klinker die volgt bepaalt de letter: vóór <b>a·o·u</b> anders dan vóór <b>e·i</b>.</div>
   <table class="alf"><thead>
    <tr><th>Sonido</th><th>Ankerklank (NL)</th><th>Vóór a · o · u</th><th>Vóór e · i</th><th>Ejemplos</th></tr></thead><tbody>
    <tr><td class="L">/k/</td><td>«k»</td><td><b>ca · co · cu</b></td><td><b>que · qui</b></td><td>casa · cosa · cubo · queso · aquí</td></tr>
@@ -322,15 +402,26 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
 
   <div class="act">
     <div class="acthead"><span class="anum">1</span><div><div class="h">Completa la palabra</div><div class="badges"><span class="badge skill">✍️ Escribir</span><span class="badge">👤 Solo</span><span class="badge">± 5 min</span><span class="stars">★★☆</span></div></div></div>
-    <p>Escucha el sonido y completa con <b>c / qu / g / gu / j / z</b>. La palabra suena en el audio, con su significado. <span class="gloss">Vul in met c/qu/g/gu/j/z; je hoort de klank en de betekenis staat erbij.</span></p>
-    <p class="words" style="background:var(--crema);border-radius:10pt;padding:3mm 4mm">___<b>eso</b> <span class="gloss">(kaas)</span> · ___<b>itarra</b> <span class="gloss">(gitaar)</span> · ___<b>ente</b> <span class="gloss">(mensen)</span> · <b>pla</b>___<b>a</b> <span class="gloss">(plein)</span> · <b>a</b>___<b>í</b> <span class="gloss">(hier)</span> · ___<b>amón</b> <span class="gloss">(ham)</span>.</p>
-    <p style="font-size:8.4pt;color:var(--mut)"><b>Solución (tápala primero):</b> queso · guitarra · gente · plaza · aquí · jamón.</p>
-    <span class="steun">Apoyo: banco de piezas (c/qu/g/gu/j/z) visible → sin ayuda</span></div>
+    <p>Escucha el sonido y escribe la palabra completa con la pieza correcta (<b>c · qu · g · gu · j · z</b>). <span class="gloss">Je hoort de klank en de betekenis; schrijf het volledige woord met het juiste stukje.</span></p>
+    <div style="margin-left:12.5mm"><table class="mp wtab">
+     <thead><tr><th style="width:44%">Oyes <span style="font-weight:400;text-transform:none">(betekenis)</span></th><th>Escribe la palabra completa</th></tr></thead>
+     <tr><td>…eso <span class="gloss">(kaas)</span></td><td><span class="wl lg"></span></td></tr>
+     <tr><td>…itarra <span class="gloss">(gitaar)</span></td><td><span class="wl lg"></span></td></tr>
+     <tr><td>…ente <span class="gloss">(mensen)</span></td><td><span class="wl lg"></span></td></tr>
+     <tr><td>pla…a <span class="gloss">(plein)</span></td><td><span class="wl lg"></span></td></tr>
+     <tr><td>a…í <span class="gloss">(hier)</span></td><td><span class="wl lg"></span></td></tr>
+     <tr><td>…amón <span class="gloss">(ham)</span></td><td><span class="wl lg"></span></td></tr>
+    </table></div>
+    <span class="steun">Apoyo: banco de piezas (c/qu/g/gu/j/z) zichtbaar → sin ayuda · zelfcorrectie online</span></div>
 
   <div class="act">
     <div class="acthead"><span class="anum">2</span><div><div class="h">Rompecabezas de sílabas</div><div class="badges"><span class="badge skill">🎙️ Hablar</span><span class="badge skill">✍️ Escribir</span><span class="badge">👥 En parejas</span><span class="badge">± 5 min</span><span class="stars">★★☆</span></div></div></div>
-    <p>Construye <b>4 palabras</b> con las piezas y luego <b>pronúncialas</b> en voz alta. <span class="gloss">Bouw 4 woorden uit de stukjes en spreek ze uit.</span></p>
-    <p class="words" style="background:var(--crema);border-radius:10pt;padding:3mm 4mm"><b>gui · ta · rra</b> &nbsp;·&nbsp; <b>pin · güi · no</b> &nbsp;·&nbsp; <b>gra · cias</b> &nbsp;·&nbsp; <b>que · so</b></p>
+    <p>Junta las piezas en <b>4 palabras</b>, escríbelas y luego <b>pronúncialas</b> en voz alta. <span class="gloss">Leg de stukjes tot 4 woorden, schrijf ze op en spreek ze uit.</span></p>
+    <p class="words" style="background:var(--crema);border-radius:10pt;padding:3mm 4mm;margin-left:12.5mm"><b>Piezas:</b> gui · ta · rra &nbsp;·&nbsp; pin · güi · no &nbsp;·&nbsp; gra · cias &nbsp;·&nbsp; que · so</p>
+    <div style="margin-left:12.5mm;font-size:9.4pt">
+      <div style="margin:2mm 0"><b>1.</b> <span class="wl lg"></span> &nbsp; <b>2.</b> <span class="wl lg"></span></div>
+      <div style="margin:2mm 0"><b>3.</b> <span class="wl lg"></span> &nbsp; <b>4.</b> <span class="wl lg"></span></div>
+    </div>
     <span class="steun">Apoyo: pista (son 4 palabras) → daarna klemtoon aanduiden · zonder steun</span></div>
 
   <div class="act">
@@ -339,10 +430,14 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
       <div class="call"><div class="ic">🎧</div><div><b>Escucha dos veces y escribe.</b> 1ª ronda: ¿de qué trata? · 2ª ronda: escribe las palabras. <span class="gloss">Luister 2×: eerste keer voor de betekenis, tweede keer schrijf je de woorden.</span></div></div>
       <div class="qr"><svg width="18mm" height="18mm" viewBox="0 0 40 40"><rect width="40" height="40" fill="#fff"/><g fill="#20242E"><rect x="3" y="3" width="10" height="10"/><rect x="27" y="3" width="10" height="10"/><rect x="3" y="27" width="10" height="10"/><rect x="20" y="4" width="4" height="4"/><rect x="20" y="12" width="4" height="4"/><rect x="26" y="18" width="4" height="4"/><rect x="32" y="22" width="4" height="4"/><rect x="20" y="24" width="4" height="4"/><rect x="26" y="30" width="4" height="4"/><rect x="6" y="20" width="4" height="4"/><rect x="14" y="24" width="4" height="4"/></g></svg><div class="lab">Escanea y escucha</div><div class="meta">Audio 1.3 · Microdictado · 0:50</div></div>
     </div>
-    <div class="asset">[AUDIO: 1.3 Microdictado — «jamón · guitarra · gracias · España · queso · pingüino», rustig ingesproken met korte pauzes.]</div>
-    <p>Palabras a reconstruir <span class="gloss">(te schrijven woorden)</span>: <b>j______ · g______ · g______ · E______ · q______ · p______</b>.</p>
-    <p style="font-size:8.4pt;color:var(--mut)"><b>Solución (autocorrección):</b> jamón · guitarra · gracias · España · queso · pingüino.</p>
-    <span class="steun">Apoyo: eerste letter gegeven → tweede ronde sin ayuda · zelfcorrectie</span>
+    <div class="asset">[AUDIO: 1.3 Microdictado — zes woorden, rustig ingesproken met korte pauzes.]</div>
+    <p>Escribe las <b>seis</b> palabras que oyes. La primera letra te ayuda a arrancar. <span class="gloss">Schrijf de zes woorden die je hoort; de beginletter helpt je starten.</span></p>
+    <div style="margin-left:12.5mm;font-size:9.6pt">
+      <div style="margin:2.4mm 0"><b>1.</b> j<span class="wl lg"></span> &nbsp;&nbsp; <b>2.</b> g<span class="wl lg"></span></div>
+      <div style="margin:2.4mm 0"><b>3.</b> g<span class="wl lg"></span> &nbsp;&nbsp; <b>4.</b> E<span class="wl lg"></span></div>
+      <div style="margin:2.4mm 0"><b>5.</b> q<span class="wl lg"></span> &nbsp;&nbsp; <b>6.</b> p<span class="wl lg"></span></div>
+    </div>
+    <span class="steun">Apoyo: eerste letter gegeven → tweede ronde sin ayuda · zelfcorrectie online</span>
     <div class="guide"><div class="ic">🎒</div><div><span class="hand">Primero lo intentas tú, después miras el modelo.</span> <span class="g">— probeer eerst zelf, kijk dán pas naar het antwoord: ophalen werkt beter dan herlezen.</span></div></div></div>
 
   <div class="divider">Comunicar · Tarea 1.3</div>
@@ -351,6 +446,12 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
     <div class="acthead"><span class="anum">★</span><div><div class="h">Tarea comunicativa · «El corrector de la clase»</div><div class="badges"><span class="badge skill">🎙️ Hablar</span><span class="badge skill">👥 Interacción</span><span class="badge">👥 En parejas</span><span class="badge">± 8 min</span><span class="stars">★★★</span></div></div></div>
     <p>Por un momento eres <b>«el corrector»</b>. Recibes 3 nuevos nombres de la ruta: <b>Gijón · Zaragoza · Cuenca</b>. Tu compañero/a los lee en voz alta; tú das <b>una</b> pista precisa con la tabla de sonidos («<i>Ojo: la <b>z</b> de Zaragoza suena th</i>»). Luego cambiáis. <span class="gloss">Jij bent even «de corrector»: je buur leest drie plaatsnamen voor, jij geeft één gerichte klanktip. Daarna wisselen jullie.</span></p>
     <p style="font-size:9pt"><b>Resultado <span class="gloss">(afzender · ontvanger · doel · situatie · resultaat)</span>:</b> allebei spreken jullie de drie namen verstaanbaar uit én benoemen jullie wélke regel je gebruikte. <span class="gloss">Elke eindtaak is communicatief, geen «gebruik x woorden».</span></p>
+    <div style="margin-left:12.5mm"><table class="mp wtab">
+     <thead><tr><th style="width:30%">Nombre</th><th>Mi pista precisa <span style="font-weight:400;text-transform:none">— «Ojo: la … suena …»</span></th><th style="width:14%">✓ dicho</th></tr></thead>
+     <tr><td>Gijón</td><td><span class="wl md"></span></td><td style="text-align:center">☐</td></tr>
+     <tr><td>Zaragoza</td><td><span class="wl md"></span></td><td style="text-align:center">☐</td></tr>
+     <tr><td>Cuenca</td><td><span class="wl md"></span></td><td style="text-align:center">☐</td></tr>
+    </table></div>
     <span class="steun">Apoyo: klankkaarten §1.2 mogen open → laatste ronde dicht</span>
     <p style="font-size:8.4pt;color:var(--mut);margin-top:2mm">🔗 Online: oefen deze taak met opname in de HTML-component «El corrector» (peer-uitspraakcheck).</p></div>
 
@@ -360,7 +461,7 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
 <!-- ===== s2 ===== -->
 <div class="page">
   <!-- ===== §2 PARADA HEADER ===== -->
-  <div class="parada">
+  <div class="parada sec">
     <div class="num">2</div>
     <span class="pk">§2 · Taller de lengua — El acento «la regla del sombrero»</span>
     <div class="intro">Ya sabes <b>cómo suena</b> cada letra. Ahora, algo pequeño con grandes consecuencias: <b>qué sílaba dices más fuerte</b> (la sílaba tónica) y <b>cuándo escribes un pequeño sombrero</b> — la <b>tilde</b> (´). Domínalo y leerás cada palabra nueva del viaje con la <b>acentuación correcta</b>.
@@ -553,7 +654,7 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
 <!-- ===== s3 ===== -->
 <!-- ===== §3 · Números 0–100 ===== -->
 <div class="page">
-  <div class="parada">
+  <div class="parada sec">
     <div class="num">3</div>
     <span class="pk">§3 · Números 0–100</span>
     <div class="intro">Ya sabes <b>sonar</b>; ahora aprendemos a <b>contar</b>. Con los números 0–100 puedes decir tu <b>edad</b> y tu <b>número de teléfono</b> — dos cosas que necesitas en el primer día de cualquier viaje.
@@ -758,7 +859,7 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
 <div class="page">
 
   <!-- ===== SECTIE-KOP ===== -->
-  <div class="parada">
+  <div class="parada sec">
     <div class="num">4</div>
     <span class="pk">§4 · Saludos, presentarse y lengua de clase</span>
     <div class="intro">Ya sabes <b>sonar</b> y <b>contar</b>. Ahora, las personas: ¿cómo abres <b>cada</b> encuentro en La Ruta? Aprende a <b>saludar</b>, a <b>presentarte</b> y a <b>pedir ayuda</b> en clase. Son <b>chunks</b>: frases enteras que dices de memoria, sin traducir palabra por palabra.
