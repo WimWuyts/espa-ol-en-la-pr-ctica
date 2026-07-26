@@ -80,11 +80,11 @@ CSS=FONTS+PRINTCSS+r"""
 .tl .tx b{background:var(--gt);border-radius:3pt;padding:.2mm 1.2mm;font-weight:700}
 .twocol{column-count:2;column-gap:8mm}
 /* Kit tabellen */
-.kitwrap{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-top:3mm}
+.kitwrap{display:grid;grid-template-columns:1fr 1fr;gap:3mm 5mm;margin-top:2mm}
 .kit{break-inside:avoid}
-.kit-h{font-family:var(--disp);font-weight:700;font-size:10pt;color:var(--gd);margin:2mm 0 1mm}
-.ktab{font-size:9pt;width:100%}.ktab th{background:var(--gt);color:var(--gd);font-size:7.4pt;text-transform:uppercase;padding:1.2mm 2mm;text-align:left}
-.ktab td{border-bottom:1px solid var(--line);padding:1.2mm 2mm}.k-es{font-weight:600}.k-ck{text-align:center;width:12mm}
+.kit-h{font-family:var(--disp);font-weight:700;font-size:9.6pt;color:var(--gd);margin:1mm 0 .5mm}
+.ktab{font-size:8.8pt;width:100%}.ktab th{background:var(--gt);color:var(--gd);font-size:7.2pt;text-transform:uppercase;padding:.8mm 2mm;text-align:left}
+.ktab td{border-bottom:1px solid var(--line);padding:.55mm 2mm}.k-es{font-weight:600}.k-ck{text-align:center;width:12mm}
 .chk{display:inline-block;width:3.4mm;height:3.4mm;border:1.3px solid var(--mut);border-radius:1.5pt;vertical-align:middle}
 /* grammatica mini */
 .gt2{width:100%;font-size:9.2pt;margin:2mm 0}.gt2 td{border-bottom:1px solid var(--line);padding:1.5mm 2.5mm}
@@ -111,6 +111,15 @@ ol.nl{margin:2mm 0;padding-left:7mm}ol.nl li{margin:2.6mm 0}
 .vc .vas{font-size:7.6pt;color:var(--mut);display:block}
 .vc .vej{font-size:8.6pt;font-weight:600;display:block;margin-top:1mm}
 .klemline{font-size:10pt;margin:3mm 0 0}.klemline .t{background:var(--gt);border-radius:4pt;padding:.3mm 1.6mm;font-weight:700;color:var(--gd)}
+/* verrijking (bladspiegel: sectie vult pagina) */
+.cast2{display:grid;grid-template-columns:repeat(5,1fr);gap:3mm;margin:3mm 0}
+.cast2 .m{border:1px solid var(--line);border-top:3px solid var(--g);border-radius:8pt;padding:2.5mm;text-align:center;break-inside:avoid}
+.cast2 .nm{font-family:var(--disp);font-weight:700;font-size:10pt;color:var(--gd)}.cast2 .ro{font-size:7.6pt;color:var(--mut)}.cast2 .fl{font-size:12pt}
+.cogn{display:flex;flex-wrap:wrap;gap:2mm;margin:2mm 0}.cogn span{background:var(--gt);border-radius:20pt;padding:.8mm 3mm;font-size:9.2pt;font-weight:600;color:var(--gd)}
+.vf{width:100%;font-size:9.5pt;margin:2mm 0}.vf td{border-bottom:1px solid var(--line);padding:1.9mm 2mm}.vf .b{width:26mm;text-align:center;color:var(--mut);white-space:nowrap}
+.modelo{border-left:3px solid var(--g);background:var(--gt);border-radius:0 8pt 8pt 0;padding:2.5mm 5mm;margin:2mm 0;font-size:9.7pt}
+.modelo b{color:var(--gd)}
+.rubric{width:100%;font-size:9pt;margin:2mm 0}.rubric th{background:var(--g);color:#fff;text-align:left;padding:1.6mm 2.4mm;font-size:8pt}.rubric td{border:1px solid var(--line);padding:1.6mm 2.4mm}
 /* música print */
 .bandas{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-top:3mm}
 .banda{border:1px solid var(--line);border-radius:10pt;padding:3mm 4mm;break-inside:avoid}
@@ -145,6 +154,21 @@ HERO=f"""
     </ul>
   </div>
   <div class="guide"><span class="ic">🎒</span><div><span class="hand">¡Vamos! We beginnen te reizen.</span><div class="g">In deze «survival»-les leer je de taal die je meteen nodig hebt. Luister, spreek na, en probeer het zelf.</div></div></div>
+
+  <div class="se" style="margin-top:6mm">La gente de la ruta · je reisgenoten</div>
+  <p style="font-size:9.4pt;margin:0 0 1mm">Je reist mee met vier jongeren uit de Spaanstalige wereld. Onderweg leer je hen kennen.</p>
+  <div class="cast2">
+    <div class="m"><div class="fl">🇪🇸</div><div class="nm">Lucía</div><div class="ro">Sevilla · familie</div></div>
+    <div class="m"><div class="fl">🇲🇽</div><div class="nm">Diego</div><div class="ro">CDMX · eten & markt</div></div>
+    <div class="m"><div class="fl">🇨🇴</div><div class="nm">Valen</div><div class="ro">Cartagena · wonen</div></div>
+    <div class="m"><div class="fl">🇵🇪</div><div class="nm">Nina</div><div class="ro">Cusco · reizen</div></div>
+    <div class="m"><div class="fl">🎒</div><div class="nm">Tú</div><div class="ro">jij, de reiziger</div></div>
+  </div>
+
+  <div class="truc" style="margin-top:5mm"><b>¿Qué reconoces ya?</b> Je begrijpt nu al véél Spaans — deze woorden lijken op het Nederlands of Engels (<i>palabras transparentes</i>):
+    <div class="cogn"><span>la familia</span><span>la música</span><span>el teléfono</span><span>el restaurante</span><span>el profesor</span><span>el hospital</span><span>el chocolate</span><span>el animal</span><span>la información</span><span>el problema</span><span>importante</span><span>diferente</span></div>
+    <span style="font-size:8.6pt;color:var(--mut)">Tip: durf te <b>gissen</b> — Spaans lijkt vaker op wat je al kent dan je denkt.</span>
+  </div>
 </div>
 """
 
@@ -155,8 +179,20 @@ ESCUCHA=f"""
     <div class="call"><span class="ic">🎬</span><div><b>Sitcom · Episodio 1.</b> Scan de code en bekijk de aflevering op de digitale pagina. Luister eerst zónder te lezen; daarna lees je mee. De <b>vetgedrukte</b> woorden zijn chunks om mee te nemen.</div></div>
     <div class="qr"><div class="lab">Vídeo online</div>{qr(HUB_URL+"#escucha")}<div class="meta">hub · Escucha</div></div>
   </div>
+  <div class="truc"><b>Antes de escuchar · vóór je luistert.</b> Kijk naar de scène (zónder geluid). Wat denk je? <span style="font-size:8.8pt;color:var(--mut)">(gis gerust)</span>
+    <div style="margin-top:1.5mm;font-size:9.6pt;line-height:2.2">¿Dónde están? {wl('lg')}<br>¿Cuántas personas hablan? {wl('sm')}</div>
+  </div>
   <div class="twocol">{scenehtml(*SCENES[0])}{scenehtml(*SCENES[1])}</div>
   <div class="ojo"><b>¡Ojo!</b> <b>encantado</b> (jongen) / <b>encantada</b> (meisje). Zeg <i>me llamo…</i>, niet «yo soy me llamo».</div>
+
+  <div class="se" style="margin-top:5mm">Después de escuchar · ¿Verdadero o falso?</div>
+  <p style="font-size:9.4pt;margin:0 0 1mm">Kruis aan. Verbeter de <b>falsas</b> op de lijn.</p>
+  <table class="vf">
+    <tr><td>1. María es la nueva profesora.</td><td class="b">☐ V ☐ F</td><td>{wl('')}</td></tr>
+    <tr><td>2. Julio se llama Fernando.</td><td class="b">☐ V ☐ F</td><td>{wl('')}</td></tr>
+    <tr><td>3. Josefina es la secretaria.</td><td class="b">☐ V ☐ F</td><td>{wl('')}</td></tr>
+    <tr><td>4. María dice «muchas gracias».</td><td class="b">☐ V ☐ F</td><td>{wl('')}</td></tr>
+  </table>
 </div>
 """
 
@@ -170,7 +206,7 @@ KIT=f"""
   <div class="ojo"><b>¡Ojo!</b> e blijft /e/ en o blijft /o/ — géén Nederlandse «ei/ou»-glijder (denk: a·e·i·o·oe).</div>
   <div class="klemline"><b>La sílaba tónica</b> — waar ligt de klemtoon? Onderstreep/hoor: <span class="t">HO</span>·la · me·<span class="t">LLA</span>·mo · en·can·<span class="t">TA</span>·do · a·<span class="t">DIÓS</span> · <span class="t">GRA</span>·cias</div>
 
-  <div class="se" style="margin-top:6mm">§2 · Kit de supervivencia</div><h2>De taal die je écht nodig hebt</h2>
+  <div class="se" style="margin-top:3mm">§2 · Kit de supervivencia</div><h2>De taal die je écht nodig hebt</h2>
   <p style="font-size:9.4pt;color:var(--mut);margin:0 0 2mm">Vink ☐ af telkens je een uitdrukking vlot kunt <b>naspreken</b>. Oefen ze online met audio.</p>
   <div class="kitwrap">{"".join(kittable(n,it) for n,it in CLUSTERS)}</div>
 </div>
@@ -179,6 +215,7 @@ KIT=f"""
 GRAM=f"""
 <div class="page sec" style="break-before:page">
   <div class="se">§4 · Gramática en la práctica</div><h2>Kort en functioneel</h2>
+  <div class="modelo"><b>🔎 Fíjate · kijk terug naar de scène.</b> Je hoorde het al: «<b>Yo soy</b> Julio.» · «<b>Me llamo</b> María.» · «Encantad<b>o</b> / Encantad<b>a</b>.» Ontdek zelf het patroon in de kaders hieronder — <i>eerst betekenis, dan de regel.</i></div>
   <div class="regla"><span class="tag">ser · zijn</span>
     <table class="gt2"><tr><td class="p">yo</td><td class="v">soy</td><td>ik ben</td><td class="ex">Yo <b>soy</b> Ana.</td></tr>
     <tr><td class="p">tú</td><td class="v">eres</td><td>jij bent</td><td class="ex">¿<b>Eres</b> Leo?</td></tr>
@@ -189,12 +226,18 @@ GRAM=f"""
     <tr><td class="p">(tú) te</td><td class="v">llamas</td><td>jij heet</td><td class="ex">¿Cómo <b>te llamas</b>?</td></tr>
     <tr><td class="p">(usted) se</td><td class="v">llama</td><td>u heet</td><td class="ex">¿Cómo <b>se llama</b> usted?</td></tr></table>
   </div>
-  <div class="regla"><span class="tag">-o / -a</span>
+  <div class="regla"><span class="tag">-o / -a · man of vrouw</span>
     <div class="mv2"><div class="m">♂ Un chico: encantad<b>o</b> · bienvenid<b>o</b></div><div class="f">♀ Una chica: encantad<b>a</b> · bienvenid<b>a</b></div></div>
-    <p style="font-size:9pt;margin:1mm 0 0">Kies de vorm die past bij <b>jou</b>. Met vrienden gebruik je <b>tú</b>; formeel <b>usted</b>.</p>
+    <p style="font-size:9pt;margin:1mm 0 0">Kies de vorm die past bij <b>jou</b>.</p>
   </div>
-  <div class="truc"><b>Mini-oefening.</b> Vul aan met de juiste vorm van <i>ser</i> of <i>llamarse</i>:
-    <div style="margin-top:2mm;font-size:9.6pt;line-height:2.3">1. Yo {wl('sm')} de Bélgica. &nbsp;&nbsp; 2. ¿Cómo {wl('sm')} llamas? &nbsp;&nbsp; 3. Me {wl('sm')} ____. &nbsp;&nbsp; 4. Ella {wl('sm')} profesora.</div>
+  <div class="regla"><span class="tag">tú ↔ usted</span>
+    <p style="margin:1mm 0 0;font-size:9.6pt">Met vrienden/klasgenoten: <b>tú</b> — <span class="ex" style="color:var(--mut)">¿Cómo estás? · ¿Cómo te llamas?</span><br>Formeel, met een onbekende volwassene: <b>usted</b> — <span class="ex" style="color:var(--mut)">¿Cómo está usted? · ¿Cómo se llama?</span></p>
+  </div>
+  <div class="truc"><b>Mini-oefening 1.</b> Vul aan met de juiste vorm van <i>ser</i> of <i>llamarse</i>:
+    <div style="margin-top:2mm;font-size:9.6pt;line-height:2.4">1. Yo {wl('sm')} de Bélgica. &nbsp;&nbsp; 2. ¿Cómo {wl('sm')} llamas? &nbsp;&nbsp; 3. Me {wl('sm')} ____. &nbsp;&nbsp; 4. Ella {wl('sm')} profesora. &nbsp;&nbsp; 5. ¿{wl('sm')} tú Leo? &nbsp;&nbsp; 6. Él {wl('sm')} llama Pablo.</div>
+  </div>
+  <div class="truc"><b>Mini-oefening 2 · tú of usted?</b> Kies en schrijf de juiste vraag.
+    <div style="margin-top:2mm;font-size:9.6pt;line-height:2.4">a) tegen een klasgenoot → {wl('lg')}<br>b) tegen de directeur → {wl('lg')}</div>
   </div>
 </div>
 """
@@ -233,9 +276,17 @@ PRAC=f"""
     f'<p style="margin-left:12.5mm">Vul de juiste letter in (♂ -o / ♀ -a).</p><div style="margin-left:12.5mm;font-size:10pt;line-height:2.4">'
     +f'1. (chico) Encantad{wl("sm")} &nbsp; 2. (chica) Encantad{wl("sm")} &nbsp; 3. (chica) Bienvenid{wl("sm")} &nbsp; 4. (chico) Bienvenid{wl("sm")}</div>')}
 
-  {act(6,"Preséntate por escrito",[("productie","skill"),("★★★","")],
+  {act(6,"Entrevista a un compañero",[("interactie","skill"),("★★☆","")],
+    '<p style="margin-left:12.5mm">Vraag het aan je buur en noteer zijn/haar antwoord. Wissel daarna van rol.</p>'
+    +f'<div style="margin-left:12.5mm;font-size:9.8pt;line-height:2.5">— ¿Cómo te llamas? &nbsp;→ {wl("lg")}<br>— ¿De dónde eres? &nbsp;→ {wl("lg")}<br>— ¿Qué tal? &nbsp;→ {wl("lg")}</div>')}
+
+  {act(7,"Preséntate por escrito",[("productie","skill"),("★★★","")],
     '<p style="margin-left:12.5mm">Stel jezelf voor in 3–4 zinnen: groet, naam, herkomst, afscheid. Gebruik de kit.</p>'
     +'<div class="wbox" style="margin-left:12.5mm"></div>')}
+
+  {act(8,"Escribe un mensaje",[("productie","skill"),("★★★","")],
+    '<p style="margin-left:12.5mm">Schrijf een kort chatbericht (WhatsApp) waarin je jezelf voorstelt aan een nieuwe Spaanstalige vriend(in).</p>'
+    +'<div class="wbox" style="margin-left:12.5mm;min-height:28mm"></div>')}
 </div>
 """
 
@@ -253,12 +304,28 @@ TAREA=f"""
     <div>
       <div class="se">3 compañeros</div>
       <table class="wtab"><thead><tr><th>#</th><th>¿Cómo te llamas?</th><th>¿De dónde eres?</th></tr></thead>
-      <tr><td style="width:8mm;text-align:center">1</td><td></td><td></td></tr>
-      <tr><td style="text-align:center">2</td><td></td><td></td></tr>
-      <tr><td style="text-align:center">3</td><td></td><td></td></tr></table>
+      <tr><td style="width:8mm;text-align:center;height:11mm">1</td><td></td><td></td></tr>
+      <tr><td style="text-align:center;height:11mm">2</td><td></td><td></td></tr>
+      <tr><td style="text-align:center;height:11mm">3</td><td></td><td></td></tr>
+      <tr><td style="text-align:center;height:11mm">4</td><td></td><td></td></tr></table>
     </div>
   </div>
-  <div class="truc" style="margin-top:4mm"><b>🏁 Klaar als…</b> je jezelf vlot voorstelt zónder af te lezen, de juiste vorm (-o/-a) gebruikt en 3 namen genoteerd hebt.</div>
+  <div style="margin-top:4mm"><div class="se">Dibuja tu carné · teken je kaartje (foto/emoji + versiering)</div>
+    <div class="wbox" style="min-height:26mm"></div></div>
+  <div class="regla" style="margin-top:4mm"><span class="tag">Palabras y frases útiles</span>
+    <p style="margin:1mm 0 0;font-size:9.6pt">¡Hola! · Buenos días · Me llamo… · Soy de… · Encantado/a · ¿Y tú? · ¿Cómo te llamas? · ¿De dónde eres? · Igualmente · Mucho gusto · Adiós · ¡Hasta luego!</p>
+  </div>
+  <div class="modelo" style="margin-top:4mm"><b>Modelo · zo klinkt het:</b><br>
+    — ¡Hola! Me llamo Sara. Soy de Amberes. ¡Encantada! ¿Y tú, cómo te llamas?<br>
+    — Yo soy Tom. Soy de Gante. Igualmente. ¡Hasta luego!</div>
+  <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:6mm;margin-top:4mm;align-items:start">
+    <div class="truc" style="margin:0"><b>🏁 Klaar als…</b> je jezelf vlot voorstelt zónder af te lezen, de juiste vorm (-o/-a) gebruikt en 3 namen genoteerd hebt.</div>
+    <table class="rubric"><thead><tr><th>Evaluatie</th><th style="text-align:center">🟢🟡🔴</th></tr></thead>
+      <tr><td>Opdracht volbracht</td><td></td></tr>
+      <tr><td>Juiste chunks</td><td></td></tr>
+      <tr><td>Uitspraak & durf</td><td></td></tr></table>
+  </div>
+  <p style="font-size:9pt;color:var(--mut);margin-top:3mm">Reflexión · <b>¿Qué me costó?</b> Wat vond je moeilijk? {wl('lg')}</p>
 </div>
 """
 
@@ -274,6 +341,23 @@ MUSICA=f"""
     <div class="call"><span class="ic">🎧</span><div><b>Spotify · la playlist de la clase.</b> Scan en luister. Op de digitale pagina vind je ook <b>LyricsTraining</b> (vul de tekst aan terwijl je luistert) en de video's.</div></div>
     <div class="qr"><div class="lab">Playlist</div>{qr(SPOTIFY)}<div class="meta">Spotify</div></div>
   </div>
+
+  <div class="regla" style="margin-top:5mm"><span class="tag">Completa la canción</span>
+    <p style="margin:1mm 0 0;font-size:9.7pt">«Me gustas tú» (Manu Chao) herhaalt de hele tijd <b>me gusta(n)…</b>. Luister en vul in wat je hoort:</p>
+    <div style="margin-top:2mm;font-size:10pt;line-height:2.4">Me gustan los {wl('')} , me gustas {wl('sm')} .<br>Me gusta la {wl('')} , me gustas {wl('sm')} .</div>
+    <p style="font-size:8.6pt;color:var(--mut);margin-top:1mm">🔎 <i>me gusta</i> = «ik vind leuk / ik hou van». Een makkelijke chunk om te onthouden.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:4mm;align-items:start">
+    <div><div class="se">¿De qué país? · verbind</div>
+      <table class="mtab"><tr><td class="a">Karol G</td><td>{wl('sm')}</td><td class="b">a. España</td></tr>
+      <tr><td class="a">Bad Bunny</td><td>{wl('sm')}</td><td class="b">b. Colombia</td></tr>
+      <tr><td class="a">Rosalía</td><td>{wl('sm')}</td><td class="b">c. Puerto Rico</td></tr></table>
+    </div>
+    <div class="truc" style="margin:0"><b>Escucha y responde.</b> Kies één nummer van de playlist.
+      <div style="margin-top:1.5mm;font-size:9.6pt;line-height:2.3">Mi canción: {wl('lg')}<br>Una palabra que reconozco: {wl('lg')}</div>
+    </div>
+  </div>
 </div>
 """
 
@@ -284,11 +368,24 @@ REPASO=f"""
     <div class="pcard"><div class="t">Zo groet & stel je je voor</div><div class="ej">¡Hola! <b>Me llamo</b> ___. <b>Soy de</b> ___. <b>Encantad_</b>. ¿Y tú, <b>cómo te llamas</b>?</div><div class="t2">Afscheid: Adiós · Hasta luego · ¡Nos vemos!</div></div>
     <div class="pcard"><div class="t">Onthou</div><div class="ej"><b>ser</b>: soy · eres · es &nbsp; | &nbsp; <b>llamarse</b>: me/te/se llamo/llamas/llama</div><div class="anchor"><b>-o</b> = ♂ · <b>-a</b> = ♀ &nbsp; | &nbsp; <b>tú</b> = vriend · <b>usted</b> = beleefd</div></div>
   </div>
+  <div class="regla" style="margin:4mm 0"><span class="tag">Frases para la clase</span>
+    <div class="cogn" style="margin-top:1mm"><span>¿Cómo se dice… ?</span><span>¿Qué significa… ?</span><span>Otra vez, por favor</span><span>No entiendo</span><span>¿Puedes repetir?</span><span>Más despacio, por favor</span></div>
+    <span style="font-size:8.6pt;color:var(--mut)">Handige klaszinnen — gebruik ze in het Spaans i.p.v. Nederlands.</span>
+  </div>
   <table class="sem"><thead><tr><th style="text-align:left">Puedo… · Ik kan…</th><th>🟢</th><th>🟡</th><th>🔴</th></tr></thead>
     <tr><td>groeten en afscheid nemen</td><td></td><td></td><td></td></tr>
     <tr><td>mezelf voorstellen (naam + herkomst)</td><td></td><td></td><td></td></tr>
     <tr><td>iemand naar zijn naam vragen</td><td></td><td></td><td></td></tr>
     <tr><td>-o/-a en tú/usted juist kiezen</td><td></td><td></td><td></td></tr></table>
+  <div class="regla" style="margin-top:5mm"><span class="tag">Mini-test · recuerda sin mirar</span>
+    <p style="margin:1mm 0 0;font-size:9.4pt">Sluit de cursus en vertaal uit het hoofd (ophalen = het beste leren).</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4mm 8mm;margin-top:2mm;font-size:9.8pt;line-height:2.4">
+      <div>1. hallo → {wl('')}</div><div>2. dank je → {wl('')}</div>
+      <div>3. hoe heet je? → {wl('')}</div><div>4. ik kom uit… → {wl('')}</div>
+      <div>5. tot straks → {wl('')}</div><div>6. aangenaam (v) → {wl('')}</div>
+      <div>7. graag gedaan → {wl('')}</div><div>8. tot morgen → {wl('')}</div>
+    </div>
+  </div>
   <div class="guide"><span class="ic">🎮</span><div><span class="hand">Repasa jugando</span><div class="g">Oefen alles online met spelletjes, flashcards en audio op de digitale hub (scan de QR bij §1).</div></div></div>
   <div class="bridge"><b>Próxima parada →</b> In de volgende unit bestel je iets en overleef je je eerste gesprek in een café. ¡Hasta pronto!</div>
 </div>
