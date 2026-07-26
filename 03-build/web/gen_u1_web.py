@@ -31,21 +31,17 @@ MOTOR = [
    ['bandera-pais', 'banderas ↔ país', 'memory']]],
  ['② Distinguir · gramática', [
    ['ser-tener', '¿ser o tener?', 'classify'],
-   ['ser-persona', 'el verbo SER', 'classify'],
    ['ar-er-ir', '-ar · -er · -ir', 'classify'],
    ['genero-articulo', '¿el o la?', 'classify'],
    ['mayuscula-minuscula', '¿mayúscula o minúscula?', 'classify']]],
  ['③ Producir con apoyo', [
    ['verbo-cloze', 'completa el verbo (ser+presente)', 'cloze'],
    ['interrogativos', 'palabras interrogativas', 'cloze'],
-   ['un-una', '¿un o una?', 'cloze'],
-   ['que-verbo', '¿qué verbo?', 'cloze'],
    ['presente-regular', 'presente Tetris', 'tetris'],
    ['tonica-datos', 'la tónica de los datos', 'tap'],
    ['presentacion-orden', 'ordena la presentación', 'order']]],
  ['④ Analizar & comunicar', [
    ['caza-mayusculas', 'caza de mayúsculas', 'point'],
-   ['senala-hispano', 'señala el mundo hispano', 'point'],
    ['pregunta-respuesta', 'pregunta ↔ respuesta', 'match'],
    ['presentate', '¡Preséntate!', 'sim']]],
  ['⑤ Hablar · grábate 🎙️', [
@@ -260,7 +256,7 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   <div class="hero">
     <div class="mo">__MOCH__</div>
     <div><h1>U1 · ¿Quién eres?</h1>
-    <p>La página digital de la Unidad 1 (parada <b>Madrid · Lucía</b>): flashcards, gramática visual e interactiva, <b>24 juegos</b> con muchas series y <b>más de 100 ejercicios</b> con autocorrección. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie.</span></p></div>
+    <p>La página digital de la Unidad 1 (parada <b>Madrid · Lucía</b>): flashcards, gramática visual e interactiva, <b>20 juegos</b> con muchas series y <b>más de 100 ejercicios</b> con autocorrección. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie.</span></p></div>
   </div>
   <div class="subnav" id="subnav"></div>
 
@@ -312,7 +308,7 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   </section>
 
   <section class="panel" data-p="juegos">
-    <h2 class="sec">Ejercicios · 24 juegos, jij kiest</h2>
+    <h2 class="sec">Ejercicios · 20 juegos, jij kiest</h2>
     <p class="lead">Geordend van <b>herkennen → onderscheiden → produceren met steun → analyseren &amp; communiceren → hablar</b>. Elk spel geeft directe, verklarende feedback en de steun bouwt af. <span class="gloss">Klik een spel; het opent in een venster en werkt ook offline.</span></p>
     <div id="motorlink"></div>
   </section>
@@ -443,7 +439,7 @@ function gameElla(){const el=document.getElementById('g_ella');
  window._ellaG=k=>{const ok=k===el.cur[1];if(ok){pt++;st++}else st=0;setScore(sb,pt,st);feedback(el.querySelector('#eFb'),ok,(ok?'¡Sí! ':'Nee → ')+el.cur[1]+' '+el.cur[0]);setTimeout(next,850);};
  next();}
 
-// ---- MOTOR-ARCADE: 24 spellen, ingebed ----
+// ---- MOTOR-ARCADE: 20 spellen, ingebed ----
 document.getElementById('motorlink').innerHTML=MOTOR.map(([grp,gs])=>'<div class="subh">'+grp+'</div><div class="fcgrid">'+
    gs.map(([f,t,tpl])=>'<div class="chip" style="display:block;border-radius:14px" onclick="openGame(\''+f+'\',\''+t.replace(/'/g,"")+'\')"><div style="font-weight:700;color:var(--ink);font-size:14px">'+t+'</div><div class="pill" style="margin-top:4px;font-size:10px">'+tpl+'</div></div>').join('')+'</div>').join('');
 function openGame(slug,title){const g=GAMES[slug];if(!g){alert('Spel niet gevonden.');return;}

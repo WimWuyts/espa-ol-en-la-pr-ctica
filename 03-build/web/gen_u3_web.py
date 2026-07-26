@@ -32,7 +32,6 @@ MOTOR = [
  ['② Distinguir · gramática', [
    ['reflexivo-no', '¿reflexivo o no?', 'classify'],
    ['cambio-raiz', 'cambio de raíz (ue/ie/i)', 'classify'],
-   ['de-por', '¿de la o por la?', 'classify'],
    ['dia-mes', '¿día, mes o estación?', 'classify']]],
  ['③ Producir con apoyo', [
    ['la-hora', 'la hora (completa)', 'cloze'],
@@ -44,9 +43,6 @@ MOTOR = [
    ['orden-rutina', 'ordena mi rutina', 'order']]],
  ['④ Analizar & comunicar', [
    ['caza-reflexivo', 'caza del reflexivo', 'point'],
-   ['senala-manana', 'señala la mañana', 'point'],
-   ['hora-digital', 'el reloj de 24 horas', 'match'],
-   ['orden-dia', 'ordena el día de Pau', 'order'],
    ['describe-dia', 'describe tu día', 'sim']]],
  ['⑤ Hablar · grábate 🎙️', [
    ['repite-hora', 'escucha y repite: la hora', 'speak'],
@@ -264,7 +260,7 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   <div class="hero">
     <div class="mo">__MOCH__</div>
     <div><h1>U3 · El tiempo vuela</h1>
-    <p>La página digital de la Unidad 3 (parada <b>Barcelona</b>): flashcards, gramática visual e interactiva, <b>24 juegos</b> y <b>+100 ejercicios</b> con muchas series. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie.</span></p></div>
+    <p>La página digital de la Unidad 3 (parada <b>Barcelona</b>): flashcards, gramática visual e interactiva, <b>20 juegos</b> y <b>+100 ejercicios</b> con muchas series. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie.</span></p></div>
   </div>
   <div class="subnav" id="subnav"></div>
 
@@ -317,7 +313,7 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   </section>
 
   <section class="panel" data-p="juegos">
-    <h2 class="sec">Ejercicios · 24 juegos, jij kiest</h2>
+    <h2 class="sec">Ejercicios · 20 juegos, jij kiest</h2>
     <p class="lead">Geordend van <b>herkennen → onderscheiden → produceren met steun → analyseren &amp; communiceren → hablar</b>. Elk spel geeft directe, verklarende feedback en de steun bouwt af. <span class="gloss">Klik een spel; het opent in een venster en werkt ook offline.</span></p>
     <div id="motorlink"></div>
   </section>
@@ -468,7 +464,7 @@ function gameRaiz(){const el=document.getElementById('g_raiz');
  function guess(c){const ok=c===el.cur[1];if(ok){pt++;st++}else st=0;setScore(sb,pt,st);feedback(el.querySelector('#rFb'),ok,(ok?'¡Sí! ':'Nee → ')+el.cur[0]+' → yo '+el.cur[2]+' ('+el.cur[1]+').');if(TTS&&ok)speak(el.cur[2]);setTimeout(next,1050);}
  next();}
 
-// ---- MOTOR-ARCADE: 24 spellen, ingebed ----
+// ---- MOTOR-ARCADE: 20 spellen, ingebed ----
 document.getElementById('motorlink').innerHTML=MOTOR.map(([grp,gs])=>'<div class="subh">'+grp+'</div><div class="fcgrid">'+
    gs.map(([f,t,tpl])=>'<div class="chip" style="display:block;border-radius:14px" onclick="openGame(\''+f+'\',\''+t.replace(/'/g,"")+'\')"><div style="font-weight:700;color:var(--ink);font-size:14px">'+t+'</div><div class="pill" style="margin-top:4px;font-size:10px">'+tpl+'</div></div>').join('')+'</div>').join('');
 function openGame(slug,title){const g=GAMES[slug];if(!g){alert('Spel niet gevonden.');return;}

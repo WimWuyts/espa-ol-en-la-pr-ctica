@@ -28,11 +28,9 @@ MOTOR = [
  ['① Reconocer · woordenschat', [
    ['familia-memoria', 'memoria de la familia', 'memory'],
    ['parentesco', 'parentesco (¿quién es?)', 'match'],
-   ['colores-match', 'los colores (ES↔NL)', 'match'],
    ['tonica-familia', 'la sílaba tónica', 'tap']]],
  ['② Distinguir · gramática', [
    ['tener-persona', 'tener → ¿qué persona?', 'classify'],
-   ['masculino-femenino', 'masculino o femenino', 'classify'],
    ['fisico-caracter', '¿físico o carácter?', 'classify'],
    ['posesivo-numero', 'posesivo · ¿singular o plural?', 'classify'],
    ['ser-estar', '¿ser o estar?', 'classify'],
@@ -46,12 +44,10 @@ MOTOR = [
    ['familia-tetris', 'tener/ser/estar Tetris', 'tetris']]],
  ['④ Analizar & comunicar', [
    ['cuerpo-point', 'señala el cuerpo', 'point'],
-   ['caza-adjetivo', 'caza del adjetivo', 'point'],
    ['describe-persona', 'describe a una persona', 'sim']]],
  ['⑤ Hablar · grábate 🎙️', [
    ['carrusel-familia', 'carrusel: mi familia', 'speak'],
    ['shadowing-lucia', 'shadowing: la familia de Lucía', 'speak'],
-   ['describe-familiar', 'describe a un familiar', 'speak'],
    ['mensaje-familia', 'mensaje de voz: mi familia', 'speak'],
    ['quien-es', 'juego: ¿quién es?', 'speak']]],
 ]
@@ -273,7 +269,7 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   <div class="hero">
     <div class="mo">__MOCH__</div>
     <div><h1>U2 · Mi gente</h1>
-    <p>La página digital de la Unidad 2 (parada <b>Sevilla</b>, la ciudad de Lucía): flashcards, el árbol de Rosalía, gramática visual e interactiva, <b>+100 ejercicios</b> con zelfcorrectie y <b>24 juegos</b> con muchas series. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie.</span></p></div>
+    <p>La página digital de la Unidad 2 (parada <b>Sevilla</b>, la ciudad de Lucía): flashcards, el árbol de Rosalía, gramática visual e interactiva, <b>+100 ejercicios</b> con zelfcorrectie y <b>20 juegos</b> con muchas series. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie.</span></p></div>
   </div>
   <div class="subnav" id="subnav"></div>
 
@@ -328,7 +324,7 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   </section>
 
   <section class="panel" data-p="juegos">
-    <h2 class="sec">Ejercicios · 24 juegos, jij kiest</h2>
+    <h2 class="sec">Ejercicios · 20 juegos, jij kiest</h2>
     <p class="lead">Geordend van <b>herkennen → onderscheiden → produceren met steun → analyseren &amp; communiceren → hablar</b>. Elk spel geeft directe, verklarende feedback en de steun bouwt af. <span class="gloss">Klik een spel; het opent in een venster en werkt ook offline.</span></p>
     <div id="motorlink"></div>
   </section>
@@ -459,7 +455,7 @@ function gameDePor(){const el=document.getElementById('g_depor');
  function next(){if(!pool.length)pool=items.slice();const i=Math.floor(Math.random()*pool.length);el.cur=pool.splice(i,1)[0];el.querySelector('#eeQ').textContent=el.cur[0];cont.innerHTML='';el.cur[2].forEach(o=>{const b=document.createElement('div');b.className='chip';b.textContent=o;b.onclick=()=>guess(o);cont.appendChild(b);});el.querySelector('#eeFb').className='fb';}
  next();}
 
-// ---- MOTOR-ARCADE: 24 spellen, ingebed ----
+// ---- MOTOR-ARCADE: 20 spellen, ingebed ----
 document.getElementById('motorlink').innerHTML=MOTOR.map(([grp,gs])=>'<div class="subh">'+grp+'</div><div class="fcgrid">'+
    gs.map(([f,t,tpl])=>'<div class="chip" style="display:block;border-radius:14px" onclick="openGame(\''+f+'\',\''+t.replace(/'/g,"")+'\')"><div style="font-weight:700;color:var(--ink);font-size:14px">'+t+'</div><div class="pill" style="margin-top:4px;font-size:10px">'+tpl+'</div></div>').join('')+'</div>').join('');
 function openGame(slug,title){const g=GAMES[slug];if(!g){alert('Spel niet gevonden.');return;}

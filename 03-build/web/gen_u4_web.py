@@ -27,7 +27,6 @@ FONTS = "".join([
 MOTOR = [
  ['① Reconocer · woordenschat', [
    ['gustos-memoria', 'memoria de los gustos', 'memory'],
-   ['musica-memoria', 'música y cine', 'memory'],
    ['frecuencia-escala', 'adverbios de frecuencia', 'match']]],
  ['② Distinguir · gramática', [
    ['gusta-gustan', '¿gusta o gustan?', 'classify'],
@@ -39,19 +38,16 @@ MOTOR = [
    ['gusta-cloze', 'completa: gusta o gustan', 'cloze'],
    ['verbo-cloze', 'completa el verbo (gustar/querer/poder)', 'cloze'],
    ['pronombre-cloze', '¿me, te, le…?', 'cloze'],
-   ['conectores', 'conectores de opinión', 'cloze'],
    ['presente-tetris', 'presente Tetris', 'tetris'],
    ['tonica', 'la tónica de los gustos', 'tap'],
    ['plan-orden', 'ordena el plan', 'order']]],
  ['④ Analizar & comunicar', [
    ['caza-gustar', 'caza del error (gustar)', 'point'],
    ['pregunta-respuesta', 'pregunta ↔ respuesta', 'match'],
-   ['reaccion-match', 'el espejo de reacciones', 'match'],
    ['opina', 'da tu opinión', 'sim']]],
  ['⑤ Hablar · grábate 🎙️', [
    ['repite-gustos', 'escucha y repite', 'speak'],
    ['shadowing-bea', 'shadowing con Bea', 'speak'],
-   ['carrusel-gustos', 'carrusel: mis gustos', 'speak'],
    ['mensaje-plan', 'mensaje de voz: propón un plan', 'speak'],
    ['describe-gustos', 'describe los gustos', 'speak']]],
 ]
@@ -280,7 +276,7 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   <div class="hero">
     <div class="mo">__MOCH__</div>
     <div><h1>U4 · Me gusta</h1>
-    <p>La página digital de la Unidad 4 (parada <b>València</b>): flashcards, gramática visual e interactiva, <b>+100 ejercicios</b> con autocorrección y <b>24 juegos</b>. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie.</span></p></div>
+    <p>La página digital de la Unidad 4 (parada <b>València</b>): flashcards, gramática visual e interactiva, <b>+100 ejercicios</b> con autocorrección y <b>20 juegos</b>. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie.</span></p></div>
   </div>
   <div class="subnav" id="subnav"></div>
 
@@ -331,7 +327,7 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   </section>
 
   <section class="panel" data-p="juegos">
-    <h2 class="sec">Ejercicios · 24 juegos, jij kiest</h2>
+    <h2 class="sec">Ejercicios · 20 juegos, jij kiest</h2>
     <p class="lead">Geordend van <b>herkennen → onderscheiden → produceren met steun → analyseren &amp; communiceren → hablar</b>. Elk spel geeft directe, verklarende feedback en de steun bouwt af. <span class="gloss">Klik een spel; het opent in een venster en werkt ook offline.</span></p>
     <div id="motorlink"></div>
   </section>
@@ -484,7 +480,7 @@ function gameReaccion(){const el=document.getElementById('g_reaccion');
  function guess(c){const ok=c===el.cur[2];if(ok){pt++;st++}else st=0;setScore(sb,pt,st);feedback(el.querySelector('#rFb'),ok,(ok?'¡Sí! ':'Nee → ')+'«'+el.cur[0]+'» ('+(el.cur[1]?'+':'–')+') → A mí '+el.cur[2]+'.');setTimeout(next,1000);}
  next();}
 
-// ---- MOTOR-ARCADE: 24 spellen, ingebed ----
+// ---- MOTOR-ARCADE: 20 spellen, ingebed ----
 document.getElementById('motorlink').innerHTML=MOTOR.map(([grp,gs])=>'<div class="subh">'+grp+'</div><div class="fcgrid">'+
    gs.map(([f,t,tpl])=>'<div class="chip" style="display:block;border-radius:14px" onclick="openGame(\''+f+'\',\''+t.replace(/'/g,"")+'\')"><div style="font-weight:700;color:var(--ink);font-size:14px">'+t+'</div><div class="pill" style="margin-top:4px;font-size:10px">'+tpl+'</div></div>').join('')+'</div>').join('');
 function openGame(slug,title){const g=GAMES[slug];if(!g){alert('Spel niet gevonden.');return;}
