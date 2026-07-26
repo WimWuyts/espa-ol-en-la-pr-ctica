@@ -32,7 +32,7 @@ h2,h3,.pk,.divider,.se,.acthead,.intro,.route-note,.lpd,.asset{ break-after:avoi
 .wcol>.cb.short{ min-height:30mm } .wcol>.cb.tall{ min-height:58mm }
 .wtab td{ height:9mm; vertical-align:top } .wtab .wl{ margin-top:1mm }
 /* hero */
-.hero{ background:var(--g); color:#fff; padding:15mm 15mm 12mm; position:relative; }
+.hero{ background:var(--g); color:#fff; padding:13mm 15mm 8mm; position:relative; }
 .hero .eyebrow{ font-size:9pt; letter-spacing:.16em; font-weight:600; opacity:.9; }
 .hero h1{ font-family:var(--dispx); font-size:47pt; line-height:1; margin:2mm 0 2mm; }
 .hero .sub{ font-size:12pt; max-width:140mm; opacity:.97; } .hero .sub .gloss{ color:#DDF3EA; }
@@ -53,7 +53,7 @@ h3{ font-family:var(--disp); font-weight:700; font-size:12pt; margin:0 0 2mm; co
 .moch .hand{ font-family:var(--hand); font-size:16pt; color:var(--gd); }
 .obj ul{ list-style:none; padding:0; margin:3mm 0 0; display:grid; grid-template-columns:1fr 1fr; gap:3mm 8mm; }
 .obj li{ display:flex; gap:3mm; font-size:10pt; } .obj .ck{ color:var(--g); font-weight:800; } .obj .es{ font-weight:600; } .obj .nl{ color:var(--mut); font-size:8.5pt; }
-.mini{ margin-top:8mm; background:var(--crema); border-radius:12pt; padding:5mm 6mm; }
+.mini{ margin-top:4mm; background:var(--crema); border-radius:12pt; padding:3.5mm 6mm; break-inside:avoid; }
 .mini .steps{ display:flex; justify-content:space-between; margin-top:3mm; font-size:8pt; color:var(--mut); text-align:center; } .mini .steps b{ display:block; color:var(--ink); font-size:9pt; font-family:var(--disp); }
 /* parada header */
 .parada{ border-top:3px solid var(--g); padding-top:6mm; margin-top:2mm; position:relative; }
@@ -125,7 +125,7 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
   <div class="q">¿Estás listo/a para el viaje? <span style="font-weight:400;opacity:.9">· Klaar voor de reis?</span></div>
 </div>
 <div class="page">
-  <div class="lead" style="margin-top:9mm">
+  <div class="lead" style="margin-top:5mm">
     <div>
       <div class="se">¿Dónde estamos en La Ruta?</div>
       <h2>Parada 0 · España 🇪🇸</h2>
@@ -159,7 +159,7 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
       </div>
     </div>
   </div>
-  <div class="obj" style="margin-top:8mm">
+  <div class="obj" style="margin-top:5mm">
     <div class="se">En esta lección vas a…</div>
     <h2>In deze les ga je…</h2>
     <ul>
@@ -226,25 +226,44 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
 <div class="page">
   <div class="act">
     <div class="acthead"><span class="anum">1</span><div><div class="h">Escucha y señala</div><div class="badges"><span class="badge skill">👂 Escuchar</span><span class="badge">👤 Solo</span><span class="badge">± 3 min</span><span class="stars">★☆☆</span></div></div></div>
-    <p>Oyes un nombre de letra → señala la letra correcta en el póster del abecedario. <span class="gloss">Je hoort een letternaam; wijs de juiste letter aan.</span></p>
+    <p>Oyes un nombre de letra → señala la letra correcta en el póster del abecedario. Apunta también la letra que oyes. <span class="gloss">Je hoort een letternaam; wijs de juiste letter aan en noteer ze kort.</span></p>
+    <div style="margin-left:12.5mm;font-size:9.6pt"><div style="margin:2.4mm 0"><b>1.</b> <span class="wl sm"></span> &nbsp; <b>2.</b> <span class="wl sm"></span> &nbsp; <b>3.</b> <span class="wl sm"></span> &nbsp; <b>4.</b> <span class="wl sm"></span> &nbsp; <b>5.</b> <span class="wl sm"></span> &nbsp; <b>6.</b> <span class="wl sm"></span></div></div>
     <span class="steun">Apoyo: modelo (póster visible) · receptief</span></div>
 
   <div class="act">
     <div class="acthead"><span class="anum">2</span><div><div class="h">¿B o V? ¿Con hache o sin hache?</div><div class="badges"><span class="badge skill">👂 Escuchar</span><span class="badge skill">🎙️ Hablar</span><span class="badge">👤 Solo</span><span class="badge">± 5 min</span><span class="stars">★★☆</span></div></div></div>
-    <p>Oyes una palabra → marca lo que oyes → luego di <b>las dos</b> en voz alta.</p>
-    <div style="margin-left:12.5mm"><table class="mp"><tr><th>Oyes</th><th>☐ A</th><th>☐ B</th></tr><tr><td>1</td><td>vaca</td><td>baca</td></tr><tr><td>2</td><td>hola</td><td>ola</td></tr><tr><td>3</td><td>casa</td><td>caza</td></tr></table>
+    <p>Oyes una palabra → <b>marca</b> lo que oyes (☐) → luego <b>escribe las dos</b> y di ambas en voz alta. <span class="gloss">Kruis aan wat je hoort, schrijf dan de twee woorden en zeg ze allebei hardop.</span></p>
+    <div style="margin-left:12.5mm"><table class="mp wtab">
+     <thead><tr><th style="width:10%">Nº</th><th>Opción A</th><th>Opción B</th><th>Escribe las dos <span style="font-weight:400;text-transform:none">— schrijf beide</span></th></tr></thead>
+     <tr><td>1</td><td>☐ vaca</td><td>☐ baca</td><td><span class="wl md"></span></td></tr>
+     <tr><td>2</td><td>☐ hola</td><td>☐ ola</td><td><span class="wl md"></span></td></tr>
+     <tr><td>3</td><td>☐ casa</td><td>☐ caza</td><td><span class="wl md"></span></td></tr>
+    </table>
     <div class="ojo" style="margin-top:2mm"><b>¡Ojo!</b> <i>vaca/baca</i> y <i>hola/ola</i> suenan <b>igual</b>: no es un error, ¡es español! <span class="gloss">Ze klinken identiek — dat hoort zo.</span></div></div>
     <span class="steun">Apoyo: banco de palabras → sin ayuda</span></div>
 
   <div class="act">
     <div class="acthead"><span class="anum">3</span><div><div class="h">Deletrea tu nombre</div><div class="badges"><span class="badge skill">🎙️ Hablar</span><span class="badge">👥 En parejas</span><span class="badge">± 6 min</span><span class="stars">★★☆</span></div></div></div>
-    <p>Escucha el modelo y deletrea <b>tu propio nombre</b>, letra por letra. Modelo: «Me llamo Lucía: ele-u-ce-i-a, con tilde en la i.» <span class="gloss">Luister en spel je eigen voornaam.</span><br><b>Marco:</b> «Me llamo ______ : ______ .»</p>
+    <p>Escucha el modelo y deletrea <b>tu propio nombre</b>, letra por letra. Modelo: «Me llamo Lucía: ele-u-ce-i-a, con tilde en la i.» <span class="gloss">Luister en spel je eigen voornaam.</span></p>
+    <div style="margin-left:12.5mm;font-size:9.6pt">
+      <div style="margin:2.4mm 0"><b>Me llamo</b> <span class="wl md"></span> <span class="gloss">(mijn naam)</span></div>
+      <div style="margin:2.4mm 0"><b>Se deletrea:</b> <span class="wl full"></span></div>
+      <div style="margin:2.4mm 0"><b>Mi compañero/a se llama</b> <span class="wl md"></span> <span class="gloss">(naam van je buur)</span></div>
+      <div style="margin:2.4mm 0"><b>Se deletrea:</b> <span class="wl full"></span></div>
+    </div>
     <span class="steun">Apoyo: marco + letra inicial → sin ayuda (naam van je buur)</span></div>
 
   <div class="act">
     <div class="acthead"><span class="anum">★</span><div><div class="h">Tarea comunicativa · ¿Cómo se escribe?</div><div class="badges"><span class="badge skill">👥 Interacción</span><span class="badge">± 8 min</span><span class="stars">★★★</span></div></div></div>
     <p><b>A</b> tiene 4 lugares <b>con</b> ortografía; <b>B</b> los tiene <b>vacíos</b>. B pregunta, A deletrea, B escribe — y al revés. <span class="gloss">Info-kloof: de een spelt, de ander schrijft.</span></p>
     <p class="words" style="background:var(--crema);border-radius:10pt;padding:3mm 4mm"><b>Caja de lengua:</b> ¿Cómo se escribe…? · ¿Con be o con uve? · ¿Con hache o sin hache? · con mayúscula <span class="gloss">(hoofdletter)</span> · en minúscula · con tilde · una arroba (@) · un guion (-).</p>
+    <div style="margin-left:12.5mm"><table class="mp wtab">
+     <thead><tr><th style="width:14%">Nº</th><th>Escribe aquí lo que te deletrean <span style="font-weight:400;text-transform:none">— schrijf wat je gespeld wordt</span></th></tr></thead>
+     <tr><td>1</td><td><span class="wl full"></span></td></tr>
+     <tr><td>2</td><td><span class="wl full"></span></td></tr>
+     <tr><td>3</td><td><span class="wl full"></span></td></tr>
+     <tr><td>4</td><td><span class="wl full"></span></td></tr>
+    </table></div>
     <span class="steun">Apoyo: modelo-diálogo → tapar → sin ayuda</span></div>
 
   <div class="divider">Familias de sonidos · §1.2</div>
@@ -294,6 +313,7 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
   <div class="act">
     <div class="acthead"><span class="anum">4</span><div><div class="h">Trabalenguas</div><div class="badges"><span class="badge skill">🎙️ Hablar</span><span class="badge">👤 Solo</span><span class="badge">± 4 min</span><span class="stars">★★★</span></div></div></div>
     <p><i>«Rápido corre el carro del ferrocarril.»</i> 🚂 Dilo 3× — cada vez más rápido, siempre comprensible. <span class="gloss">Tongbreker, 3× sneller.</span></p>
+    <div style="margin-left:12.5mm"><table class="mp wtab"><thead><tr><th>1ª vez</th><th>2ª vez</th><th>3ª vez (más rápido)</th></tr></thead><tr><td style="text-align:center">☐</td><td style="text-align:center">☐</td><td style="text-align:center">☐</td></tr></table></div>
     <span class="steun">Apoyo: modelo → alleen tekst → uit het hoofd</span></div>
 
   <div class="esen"><b class="tt">Lo esencial de esta parada</b>
@@ -304,7 +324,6 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
     </ul></div>
   <div class="bridge"><b>» Van klank naar klemtoon.</b> Ya sabes <i>cómo suena cada letra</i>. En <b>§2</b> aprendes <b>qué sílaba dices más fuerte</b> y <b>cuándo escribes el sombrero</b> (la tilde). <span class="gloss">Nu weet je hoe elke letter klinkt; §2 leert je de klemtoon en de tilde.</span></div>
 </div>
-
 
 <!-- ===== s1_3 ===== -->
 <div class="page">
@@ -438,7 +457,7 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
       <div style="margin:2.4mm 0"><b>5.</b> q<span class="wl lg"></span> &nbsp;&nbsp; <b>6.</b> p<span class="wl lg"></span></div>
     </div>
     <span class="steun">Apoyo: eerste letter gegeven → tweede ronde sin ayuda · zelfcorrectie online</span>
-    <div class="guide"><div class="ic">🎒</div><div><span class="hand">Primero lo intentas tú, después miras el modelo.</span> <span class="g">— probeer eerst zelf, kijk dán pas naar het antwoord: ophalen werkt beter dan herlezen.</span></div></div></div>
+    <div class="guide"><div class="ic">🎒</div><div><span class="hand">Primero lo intentas tú, después lo comprobáis juntos.</span> <span class="g">— probeer eerst zelf, vergelijk daarna met je buur: ophalen werkt beter dan herlezen. (De sleutel staat online.)</span></div></div></div>
 
   <div class="divider">Comunicar · Tarea 1.3</div>
 
@@ -496,7 +515,7 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
    <tr><td class="L">Perú</td><td>pe – <b>rú</b></td><td><b>rú</b></td><td>laatste</td></tr>
    <tr><td class="L">número</td><td><b>nú</b> – me – ro</td><td><b>nú</b></td><td>derde van achteren</td></tr>
   </tbody></table>
-  <div class="asset">[BEELD: SílabaStrip — vier woorden als «lettergreep-treintjes»; het tónica-wagonnetje is groter/vetter en draagt een sombrero-icoon. ca·FÉ · CA·sa · MÉ·xi·co · te·LÉ·fo·no. Alt per woord: «het woord X in lettergrepen, de sterke lettergreep draagt een hoedje».]</div>
+  <div style="break-inside:avoid;margin:3mm 0"><svg viewBox="0 0 720 200" width="100%" role="img" aria-label="Vier woorden in lettergrepen; de sterke lettergreep (tónica) is groter en draagt een hoedje: café, casa, México, teléfono." style="margin:3mm 0;font-family:'Inter',sans-serif"><defs><style>.d{font-family:'Bricolage Grotesque',sans-serif;font-weight:700}</style></defs><g><rect x="16.0" y="40.0" width="34.0" height="24" rx="7" fill="#fff" stroke="#E4E3DE" stroke-width="1.2"/><circle cx="23.0" cy="67.0" r="2.6" fill="#6A6E78"/><circle cx="43.0" cy="67.0" r="2.6" fill="#6A6E78"/><text x="33.0" y="56.0" text-anchor="middle" font-size="11.5" font-weight="500" fill="#20242E" class="">ca</text><line x1="50.0" y1="52.0" x2="56.0" y2="52.0" stroke="#CFCEC8" stroke-width="2.4"/><rect x="56.0" y="34.0" width="40.0" height="30" rx="7" fill="#E4F4EE" stroke="#157355" stroke-width="2"/><circle cx="63.0" cy="67.0" r="2.6" fill="#6A6E78"/><circle cx="89.0" cy="67.0" r="2.6" fill="#6A6E78"/><text x="76.0" y="56.0" text-anchor="middle" font-size="14" font-weight="700" fill="#157355" class="d">fé</text><path d="M69.0 29.0 L79.0 22.0 L81.0 25.0 Z" fill="#B7860B"/></g><g><rect x="376.0" y="34.0" width="40.0" height="30" rx="7" fill="#E4F4EE" stroke="#157355" stroke-width="2"/><circle cx="383.0" cy="67.0" r="2.6" fill="#6A6E78"/><circle cx="409.0" cy="67.0" r="2.6" fill="#6A6E78"/><text x="396.0" y="56.0" text-anchor="middle" font-size="14" font-weight="700" fill="#157355" class="d">ca</text><path d="M389.0 29.0 L399.0 22.0 L401.0 25.0 Z" fill="#B7860B"/><line x1="416.0" y1="52.0" x2="422.0" y2="52.0" stroke="#CFCEC8" stroke-width="2.4"/><rect x="422.0" y="40.0" width="34.0" height="24" rx="7" fill="#fff" stroke="#E4E3DE" stroke-width="1.2"/><circle cx="429.0" cy="67.0" r="2.6" fill="#6A6E78"/><circle cx="449.0" cy="67.0" r="2.6" fill="#6A6E78"/><text x="439.0" y="56.0" text-anchor="middle" font-size="11.5" font-weight="500" fill="#20242E" class="">sa</text></g><g><rect x="16.0" y="130.0" width="40.0" height="30" rx="7" fill="#E4F4EE" stroke="#157355" stroke-width="2"/><circle cx="23.0" cy="163.0" r="2.6" fill="#6A6E78"/><circle cx="49.0" cy="163.0" r="2.6" fill="#6A6E78"/><text x="36.0" y="152.0" text-anchor="middle" font-size="14" font-weight="700" fill="#157355" class="d">mé</text><path d="M29.0 125.0 L39.0 118.0 L41.0 121.0 Z" fill="#B7860B"/><line x1="56.0" y1="148.0" x2="62.0" y2="148.0" stroke="#CFCEC8" stroke-width="2.4"/><rect x="62.0" y="136.0" width="34.0" height="24" rx="7" fill="#fff" stroke="#E4E3DE" stroke-width="1.2"/><circle cx="69.0" cy="163.0" r="2.6" fill="#6A6E78"/><circle cx="89.0" cy="163.0" r="2.6" fill="#6A6E78"/><text x="79.0" y="152.0" text-anchor="middle" font-size="11.5" font-weight="500" fill="#20242E" class="">xi</text><line x1="96.0" y1="148.0" x2="102.0" y2="148.0" stroke="#CFCEC8" stroke-width="2.4"/><rect x="102.0" y="136.0" width="34.0" height="24" rx="7" fill="#fff" stroke="#E4E3DE" stroke-width="1.2"/><circle cx="109.0" cy="163.0" r="2.6" fill="#6A6E78"/><circle cx="129.0" cy="163.0" r="2.6" fill="#6A6E78"/><text x="119.0" y="152.0" text-anchor="middle" font-size="11.5" font-weight="500" fill="#20242E" class="">co</text></g><g><rect x="376.0" y="136.0" width="34.0" height="24" rx="7" fill="#fff" stroke="#E4E3DE" stroke-width="1.2"/><circle cx="383.0" cy="163.0" r="2.6" fill="#6A6E78"/><circle cx="403.0" cy="163.0" r="2.6" fill="#6A6E78"/><text x="393.0" y="152.0" text-anchor="middle" font-size="11.5" font-weight="500" fill="#20242E" class="">te</text><line x1="410.0" y1="148.0" x2="416.0" y2="148.0" stroke="#CFCEC8" stroke-width="2.4"/><rect x="416.0" y="130.0" width="40.0" height="30" rx="7" fill="#E4F4EE" stroke="#157355" stroke-width="2"/><circle cx="423.0" cy="163.0" r="2.6" fill="#6A6E78"/><circle cx="449.0" cy="163.0" r="2.6" fill="#6A6E78"/><text x="436.0" y="152.0" text-anchor="middle" font-size="14" font-weight="700" fill="#157355" class="d">lé</text><path d="M429.0 125.0 L439.0 118.0 L441.0 121.0 Z" fill="#B7860B"/><line x1="456.0" y1="148.0" x2="462.0" y2="148.0" stroke="#CFCEC8" stroke-width="2.4"/><rect x="462.0" y="136.0" width="34.0" height="24" rx="7" fill="#fff" stroke="#E4E3DE" stroke-width="1.2"/><circle cx="469.0" cy="163.0" r="2.6" fill="#6A6E78"/><circle cx="489.0" cy="163.0" r="2.6" fill="#6A6E78"/><text x="479.0" y="152.0" text-anchor="middle" font-size="11.5" font-weight="500" fill="#20242E" class="">fo</text><line x1="496.0" y1="148.0" x2="502.0" y2="148.0" stroke="#CFCEC8" stroke-width="2.4"/><rect x="502.0" y="136.0" width="34.0" height="24" rx="7" fill="#fff" stroke="#E4E3DE" stroke-width="1.2"/><circle cx="509.0" cy="163.0" r="2.6" fill="#6A6E78"/><circle cx="529.0" cy="163.0" r="2.6" fill="#6A6E78"/><text x="519.0" y="152.0" text-anchor="middle" font-size="11.5" font-weight="500" fill="#20242E" class="">no</text></g></svg></div>
 
   <div class="regla"><span class="tag">Regla 1</span>
     <p>Toda palabra tiene <b>una sílaba tónica</b>: la lettergreep que dices más fuerte. Esa klemtoon la <b>oyes siempre</b> — también sin tilde. El streepje (´) solo lo escribes <b>a veces</b> (→ §2.3). <span class="gloss">Elk woord heeft één klemtoonlettergreep; die hoor je altijd. Kernvalstrik: <b>klemtoon ≠ tilde</b> — «ik hoor een klemtoon» betekent niet «ik schrijf een hoedje».</span></p></div>
@@ -513,14 +532,14 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
 
   <div class="act">
     <div class="acthead"><span class="anum">2</span><div><div class="h">Marca la tónica</div><div class="badges"><span class="badge skill">✍️ Escribir</span><span class="badge">👤 Solo</span><span class="badge">± 5 min</span><span class="stars">★★☆</span></div></div></div>
-    <p>De lettergrepen zijn al gescheiden. <b>Onderstreep</b> de sílaba tónica die je <b>hoort</b>. <span class="gloss">Verdeel in de tweede ronde zelf in lettergrepen.</span></p>
-    <div style="margin-left:12.5mm"><table class="mp"><tr><th>Palabra</th><th>En sílabas</th><th>Tónica</th></tr>
-      <tr><td>patata</td><td>pa – ta – ta</td><td>____</td></tr>
-      <tr><td>amigo</td><td>a – mi – go</td><td>____</td></tr>
-      <tr><td>lunes</td><td>lu – nes</td><td>____</td></tr>
-      <tr><td>sofá</td><td>so – fá</td><td>____</td></tr>
-      <tr><td>plátano</td><td>plá – ta – no</td><td>____</td></tr></table>
-    <div class="truc" style="margin-top:2mm"><b>🟡 Truco — tel van achteren:</b> <i>última</i> (1) · <i>penúltima</i> (2) · <i>antepenúltima</i> (3). <span class="gloss">Dat heb je zo nodig in §2.2. Antwoord: pa-TA-ta · a-MI-go · LU-nes · so-FÁ · PLÁ-ta-no.</span></div></div>
+    <p>De lettergrepen zijn al gescheiden. <b>Onderstreep</b> de sílaba tónica die je <b>hoort</b> en schrijf ze in de laatste kolom. <span class="gloss">Verdeel in de tweede ronde zelf in lettergrepen.</span></p>
+    <div style="margin-left:12.5mm"><table class="mp wtab"><thead><tr><th>Palabra</th><th>En sílabas</th><th>Tónica</th></tr></thead>
+      <tr><td>patata</td><td>pa – ta – ta</td><td><span class="wl"></span></td></tr>
+      <tr><td>amigo</td><td>a – mi – go</td><td><span class="wl"></span></td></tr>
+      <tr><td>lunes</td><td>lu – nes</td><td><span class="wl"></span></td></tr>
+      <tr><td>sofá</td><td>so – fá</td><td><span class="wl"></span></td></tr>
+      <tr><td>plátano</td><td>plá – ta – no</td><td><span class="wl"></span></td></tr></table>
+    <div class="truc" style="margin-top:2mm"><b>🟡 Truco — tel van achteren:</b> <i>última</i> (1) · <i>penúltima</i> (2) · <i>antepenúltima</i> (3). <span class="gloss">Dat heb je zo nodig in §2.2.</span></div></div>
     <span class="steun">Apoyo: banco (sílabas gescheiden) → sin ayuda (zelf verdelen)</span></div>
 
   <div class="divider">Tres familias · §2.2</div>
@@ -542,7 +561,7 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
       <div class="anchor">De naam <b>doet wat hij zegt</b>: <i>es-DRÚ-ju-las</i> is zélf een esdrújula.</div>
       <div class="ej"><i>a-GU-das</i> «wijst naar het einde»; <b>LLA-nas</b> = plat/gewoon → verreweg de meeste woorden.</div></div>
   </div>
-  <div class="asset">[BEELD: TresFamiliasPoster — drie kolommen, elk een «lettergreep-trein» waarvan een ánder wagonnetje het sombrero draagt (laatste / voorlaatste / derde-van-achteren). Grijswaarden-veilig: vorm + positie dragen de info, niet kleur.]</div>
+  <div style="break-inside:avoid;margin:3mm 0"><svg viewBox="0 0 720 196" width="100%" role="img" aria-label="Drie families naar de plaats van de klemtoon: aguda (laatste), llana (voorlaatste), esdrújula (derde van achteren)." style="margin:3mm 0;font-family:'Inter',sans-serif"><defs><style>.d{font-family:'Bricolage Grotesque',sans-serif;font-weight:700}</style></defs><rect x="6" y="6" width="224" height="180" rx="12" fill="#fff" stroke="#E4E3DE"/><rect x="6" y="6" width="224" height="30" rx="12" fill="#E4F4EE"/><rect x="6" y="20" width="224" height="16" fill="#E4F4EE"/><text x="20" y="26" font-size="13" class="d" fill="#157355">AGUDA</text><text x="216" y="25" text-anchor="end" font-size="8.5" fill="#6A6E78">klap: laatste</text><rect x="24.0" y="78.0" width="34.0" height="24" rx="7" fill="#fff" stroke="#E4E3DE" stroke-width="1.2"/><circle cx="31.0" cy="105.0" r="2.6" fill="#6A6E78"/><circle cx="51.0" cy="105.0" r="2.6" fill="#6A6E78"/><text x="41.0" y="94.0" text-anchor="middle" font-size="11.5" font-weight="500" fill="#20242E" class="">ca</text><line x1="58.0" y1="90.0" x2="64.0" y2="90.0" stroke="#CFCEC8" stroke-width="2.4"/><rect x="64.0" y="72.0" width="40.0" height="30" rx="7" fill="#E4F4EE" stroke="#157355" stroke-width="2"/><circle cx="71.0" cy="105.0" r="2.6" fill="#6A6E78"/><circle cx="97.0" cy="105.0" r="2.6" fill="#6A6E78"/><text x="84.0" y="94.0" text-anchor="middle" font-size="14" font-weight="700" fill="#157355" class="d">fé</text><path d="M77.0 67.0 L87.0 60.0 L89.0 63.0 Z" fill="#B7860B"/><text x="118.0" y="138" text-anchor="middle" font-size="9" fill="#6A6E78">tónica = 1 van achteren</text><text x="118.0" y="162" text-anchor="middle" font-size="13" class="d" fill="#20242E">ca·FÉ</text><rect x="242" y="6" width="224" height="180" rx="12" fill="#fff" stroke="#E4E3DE"/><rect x="242" y="6" width="224" height="30" rx="12" fill="#E4F4EE"/><rect x="242" y="20" width="224" height="16" fill="#E4F4EE"/><text x="256" y="26" font-size="13" class="d" fill="#157355">LLANA</text><text x="452" y="25" text-anchor="end" font-size="8.5" fill="#6A6E78">klap: voorlaatste</text><rect x="260.0" y="72.0" width="40.0" height="30" rx="7" fill="#E4F4EE" stroke="#157355" stroke-width="2"/><circle cx="267.0" cy="105.0" r="2.6" fill="#6A6E78"/><circle cx="293.0" cy="105.0" r="2.6" fill="#6A6E78"/><text x="280.0" y="94.0" text-anchor="middle" font-size="14" font-weight="700" fill="#157355" class="d">ca</text><path d="M273.0 67.0 L283.0 60.0 L285.0 63.0 Z" fill="#B7860B"/><line x1="300.0" y1="90.0" x2="306.0" y2="90.0" stroke="#CFCEC8" stroke-width="2.4"/><rect x="306.0" y="78.0" width="34.0" height="24" rx="7" fill="#fff" stroke="#E4E3DE" stroke-width="1.2"/><circle cx="313.0" cy="105.0" r="2.6" fill="#6A6E78"/><circle cx="333.0" cy="105.0" r="2.6" fill="#6A6E78"/><text x="323.0" y="94.0" text-anchor="middle" font-size="11.5" font-weight="500" fill="#20242E" class="">sa</text><text x="354.0" y="138" text-anchor="middle" font-size="9" fill="#6A6E78">tónica = 2 van achteren</text><text x="354.0" y="162" text-anchor="middle" font-size="13" class="d" fill="#20242E">CA·sa</text><rect x="478" y="6" width="224" height="180" rx="12" fill="#fff" stroke="#E4E3DE"/><rect x="478" y="6" width="224" height="30" rx="12" fill="#E4F4EE"/><rect x="478" y="20" width="224" height="16" fill="#E4F4EE"/><text x="492" y="26" font-size="13" class="d" fill="#157355">ESDRÚJULA</text><text x="688" y="25" text-anchor="end" font-size="8.5" fill="#6A6E78">klap: 3de van achteren</text><rect x="496.0" y="72.0" width="40.0" height="30" rx="7" fill="#E4F4EE" stroke="#157355" stroke-width="2"/><circle cx="503.0" cy="105.0" r="2.6" fill="#6A6E78"/><circle cx="529.0" cy="105.0" r="2.6" fill="#6A6E78"/><text x="516.0" y="94.0" text-anchor="middle" font-size="14" font-weight="700" fill="#157355" class="d">mé</text><path d="M509.0 67.0 L519.0 60.0 L521.0 63.0 Z" fill="#B7860B"/><line x1="536.0" y1="90.0" x2="542.0" y2="90.0" stroke="#CFCEC8" stroke-width="2.4"/><rect x="542.0" y="78.0" width="34.0" height="24" rx="7" fill="#fff" stroke="#E4E3DE" stroke-width="1.2"/><circle cx="549.0" cy="105.0" r="2.6" fill="#6A6E78"/><circle cx="569.0" cy="105.0" r="2.6" fill="#6A6E78"/><text x="559.0" y="94.0" text-anchor="middle" font-size="11.5" font-weight="500" fill="#20242E" class="">xi</text><line x1="576.0" y1="90.0" x2="582.0" y2="90.0" stroke="#CFCEC8" stroke-width="2.4"/><rect x="582.0" y="78.0" width="34.0" height="24" rx="7" fill="#fff" stroke="#E4E3DE" stroke-width="1.2"/><circle cx="589.0" cy="105.0" r="2.6" fill="#6A6E78"/><circle cx="609.0" cy="105.0" r="2.6" fill="#6A6E78"/><text x="599.0" y="94.0" text-anchor="middle" font-size="11.5" font-weight="500" fill="#20242E" class="">co</text><text x="590.0" y="138" text-anchor="middle" font-size="9" fill="#6A6E78">tónica = 3 van achteren</text><text x="590.0" y="162" text-anchor="middle" font-size="13" class="d" fill="#20242E">MÉ·xi·co</text></svg></div>
 
   <div class="regla"><span class="tag">Regla 2 · las tres familias</span>
     <p><b>Aguda</b> = klemtoon op de <b>laatste</b> (café, Perú, español). · <b>Llana</b> = op de <b>voorlaatste</b>, <b>de gewoonste familie</b> (casa, amigo, árbol). · <b>Esdrújula</b> = op de <b>derde van achteren</b> (México, teléfono, música). <span class="gloss">Drie families, naar de plaats van de klap.</span></p></div>
@@ -553,6 +572,12 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
   <div class="act">
     <div class="acthead"><span class="anum">3</span><div><div class="h">Ordena por familia</div><div class="badges"><span class="badge skill">👂 Escuchar</span><span class="badge">👤 Solo</span><span class="badge">± 6 min</span><span class="stars">★★☆</span></div></div></div>
     <p>Luister/lees en leg elk woord in de juiste kolom — <b>aguda / llana / esdrújula</b>: <span class="words"><b>sofá · casa · plátano · Perú · lunes · música · español · amigo · teléfono · Madrid</b></span>. <span class="gloss">Voeg daarna per kolom één eigen woord toe.</span></p>
+    <div class="wcols" style="grid-template-columns:repeat(3,1fr);margin-left:12.5mm">
+      <div class="wcol"><div class="ch">aguda<small>klap op laatste</small></div><div class="cb tall"></div></div>
+      <div class="wcol"><div class="ch">llana<small>op voorlaatste</small></div><div class="cb tall"></div></div>
+      <div class="wcol"><div class="ch">esdrújula<small>3e van achteren</small></div><div class="cb tall"></div></div>
+    </div>
+    <div style="margin-left:12.5mm;margin-top:2.4mm;font-size:9.4pt"><b>Mi propia palabra</b> <span class="gloss">(één eigen woord per familie):</span> &nbsp; aguda <span class="wl md"></span> &nbsp; llana <span class="wl md"></span> &nbsp; esdrújula <span class="wl md"></span></div>
     <span class="steun">Apoyo: banco de palabras → daarna eigen woord toevoegen</span></div>
 
   <div class="act">
@@ -573,36 +598,61 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
    <tr><td class="L">árbol · lápiz · Cádiz</td><td class="trap">l · z · z</td><td class="L">casa · lunes · examen</td><td>klinker · <b>s</b> · <b>n</b></td></tr>
    <tr><td class="L">México · teléfono · música</td><td>— <i>(esdrújulas: altijd!)</i></td><td>—</td><td>—</td></tr>
   </tbody></table>
-  <div class="asset">[BEELD: DosMontones — twee stapeltjes woordkaartjes: links CON sombrero (met tilde), rechts SIN sombrero. Elk kaartje toont de laatste letter groot. Alt: «twee stapels woorden, links mét accent, rechts zonder».]</div>
+  <div style="break-inside:avoid;margin:3mm 0"><svg viewBox="0 0 720 180" width="100%" role="img" aria-label="Twee stapels woorden: links met accent (café, Perú, jamón, adiós), rechts zonder (Madrid, reloj, casa, lunes)." style="margin:3mm 0;font-family:'Inter',sans-serif"><defs><style>.d{font-family:'Bricolage Grotesque',sans-serif;font-weight:700}</style></defs><text x="126" y="20" text-anchor="middle" font-size="12" class="d" fill="#157355">CON sombrero (´)</text><rect x="16" y="34" width="220" height="27" rx="7" fill="#fff" stroke="#157355" stroke-width="1.6"/><text x="30" y="52" font-size="13" fill="#20242E">café</text><rect x="194" y="38" width="34" height="19" rx="5" fill="#E4F4EE"/><text x="211" y="52" text-anchor="middle" font-size="12" class="d" fill="#157355">-é</text><path d="M36 30 L46 23 L48 26 Z" fill="#B7860B"/><rect x="16" y="67" width="220" height="27" rx="7" fill="#fff" stroke="#157355" stroke-width="1.6"/><text x="30" y="85" font-size="13" fill="#20242E">Perú</text><rect x="194" y="71" width="34" height="19" rx="5" fill="#E4F4EE"/><text x="211" y="85" text-anchor="middle" font-size="12" class="d" fill="#157355">-ú</text><path d="M36 63 L46 56 L48 59 Z" fill="#B7860B"/><rect x="16" y="100" width="220" height="27" rx="7" fill="#fff" stroke="#157355" stroke-width="1.6"/><text x="30" y="118" font-size="13" fill="#20242E">jamón</text><rect x="194" y="104" width="34" height="19" rx="5" fill="#E4F4EE"/><text x="211" y="118" text-anchor="middle" font-size="12" class="d" fill="#157355">-n</text><path d="M36 96 L46 89 L48 92 Z" fill="#B7860B"/><rect x="16" y="133" width="220" height="27" rx="7" fill="#fff" stroke="#157355" stroke-width="1.6"/><text x="30" y="151" font-size="13" fill="#20242E">adiós</text><rect x="194" y="137" width="34" height="19" rx="5" fill="#E4F4EE"/><text x="211" y="151" text-anchor="middle" font-size="12" class="d" fill="#157355">-s</text><path d="M36 129 L46 122 L48 125 Z" fill="#B7860B"/><line x1="360" y1="20" x2="360" y2="170" stroke="#E4E3DE" stroke-dasharray="3 4"/><text x="492" y="20" text-anchor="middle" font-size="12" class="d" fill="#6A6E78">SIN sombrero</text><rect x="382" y="34" width="220" height="27" rx="7" fill="#fff" stroke="#CFCEC8" stroke-width="1.2"/><text x="396" y="52" font-size="13" fill="#20242E">Madrid</text><rect x="560" y="38" width="34" height="19" rx="5" fill="#F3EEE4"/><text x="577" y="52" text-anchor="middle" font-size="12" class="d" fill="#6A6E78">-d</text><rect x="382" y="67" width="220" height="27" rx="7" fill="#fff" stroke="#CFCEC8" stroke-width="1.2"/><text x="396" y="85" font-size="13" fill="#20242E">reloj</text><rect x="560" y="71" width="34" height="19" rx="5" fill="#F3EEE4"/><text x="577" y="85" text-anchor="middle" font-size="12" class="d" fill="#6A6E78">-j</text><rect x="382" y="100" width="220" height="27" rx="7" fill="#fff" stroke="#CFCEC8" stroke-width="1.2"/><text x="396" y="118" font-size="13" fill="#20242E">casa</text><rect x="560" y="104" width="34" height="19" rx="5" fill="#F3EEE4"/><text x="577" y="118" text-anchor="middle" font-size="12" class="d" fill="#6A6E78">-a</text><rect x="382" y="133" width="220" height="27" rx="7" fill="#fff" stroke="#CFCEC8" stroke-width="1.2"/><text x="396" y="151" font-size="13" fill="#20242E">lunes</text><rect x="560" y="137" width="34" height="19" rx="5" fill="#F3EEE4"/><text x="577" y="151" text-anchor="middle" font-size="12" class="d" fill="#6A6E78">-s</text></svg></div>
 
   <div class="regla"><span class="tag">Regla 3 · la regla del sombrero 🎩</span>
     <p><b>Esdrújula</b> (3e van achteren) → <b>SIEMPRE</b> een hoedje (México, teléfono, música). · <b>Aguda</b> (laatste) → <b>WÉL</b> als het woord eindigt op <b>-n, -s of klinker</b> (café, Perú, jamón, adiós) — <b>niet</b>: Madrid, español, reloj. · <b>Llana</b> (voorlaatste) → <b>WÉL</b> als het <b>NÍET</b> eindigt op -n/-s/klinker (árbol, lápiz, Cádiz) — <b>niet</b>: casa, lunes, examen. <span class="gloss">Dezelfde drie eindletters (-n · -s · klinker) doen bij agudas het hoedje <b>verschijnen</b> en bij llanas het hoedje <b>verdwijnen</b>. Eén setje letters, twee spiegelbeelden.</span></p></div>
 
   <div class="truc"><b>🟡 Regla 3-bis · el monosílabo.</b> Een woord van <b>één</b> lettergreep draagt <b>geen</b> hoedje: <i>sol · pan · tres · mes · dos · bien</i>. <span class="gloss">De enkele uitzonderingen (tú/tu, él/el) zijn de «tilde diacrítica» — die komt pas in U8.</span></div>
-  <div class="asset">[BEELD: beslisboompje — «¿Esdrújula? → sí: ´ · no → ¿termina en n/s/vocal?» als compacte GrammarDecisionTree (max. 3 beslismomenten). Print = statisch schema; HTML = klikbaar.]</div>
+  <div style="break-inside:avoid;margin:3mm 0"><svg viewBox="0 0 720 194" width="100%" role="img" aria-label="Beslisschema voor de tilde: hoor de klemtoon, bepaal de sílaba; esdrújula krijgt altijd een accent; anders hangt het af van de laatste letter (-n, -s of klinker)." style="margin:3mm 0;font-family:'Inter',sans-serif"><defs><style>.d{font-family:'Bricolage Grotesque',sans-serif;font-weight:700}</style></defs><rect x="280" y="6" width="160" height="34" rx="9" fill="#E4F4EE" stroke="#157355" stroke-width="1.4"/><text x="360.0" y="27.0" text-anchor="middle" font-size="12" fill="#157355" class="d">¿Oyes la tónica?</text><line x1="360" y1="40" x2="360" y2="58" stroke="#6A6E78" stroke-width="1.8"/><path d="M356 52 L360 58 L364 52" fill="#6A6E78"/><rect x="270" y="58" width="180" height="30" rx="9" fill="#F3EEE4" stroke="#E4E3DE" stroke-width="1.4"/><text x="360.0" y="77.0" text-anchor="middle" font-size="11" fill="#20242E" class="">1. ¿En qué sílaba?</text><line x1="360" y1="88" x2="360" y2="104" stroke="#6A6E78" stroke-width="1.8"/><path d="M356 98 L360 104 L364 98" fill="#6A6E78"/><rect x="250" y="104" width="220" height="30" rx="9" fill="#F3EEE4" stroke="#E4E3DE" stroke-width="1.4"/><text x="360.0" y="123.0" text-anchor="middle" font-size="11" fill="#20242E" class="">2. ¿Es esdrújula? (3ª de atrás)</text><line x1="470" y1="119" x2="556" y2="119" stroke="#157355" stroke-width="1.8"/><path d="M551 119 L556 119 L556 114" fill="none"/><text x="500" y="113" font-size="9.5" font-weight="700" fill="#157355">SÍ</text><rect x="556" y="104" width="158" height="30" rx="9" fill="#E4F4EE" stroke="#157355" stroke-width="1.4"/><text x="635.0" y="123.0" text-anchor="middle" font-size="11" fill="#157355" class="d">→ siempre ´</text><line x1="360" y1="134" x2="360" y2="150" stroke="#DC2626" stroke-width="1.8"/><path d="M356 144 L360 150 L364 144" fill="#DC2626"/><text x="368" y="146" font-size="9.5" font-weight="700" fill="#DC2626">NO</text><rect x="232" y="150" width="256" height="30" rx="9" fill="#F3EEE4" stroke="#E4E3DE" stroke-width="1.4"/><text x="360.0" y="169.0" text-anchor="middle" font-size="11" fill="#20242E" class="">3. ¿Termina en -n, -s o vocal?</text><line x1="232" y1="165" x2="150" y2="165" stroke="#157355" stroke-width="1.8"/><path d="M145 165 L150 165 L150 160" fill="none"/><text x="70" y="158" font-size="9.5" font-weight="700" fill="#157355">AGUDA→SÍ ´</text><rect x="6" y="150" width="140" height="30" rx="9" fill="#E4F4EE" stroke="#157355" stroke-width="1.4"/><text x="76.0" y="169.0" text-anchor="middle" font-size="9.5" fill="#157355" class="">aguda: SÍ ´ / llana: NO</text><line x1="488" y1="165" x2="600" y2="165" stroke="#6A6E78" stroke-width="1.8"/><path d="M595 165 L600 165 L600 160" fill="none"/><text x="520" y="158" font-size="9.5" font-weight="700" fill="#6A6E78">LLANA→NO</text><rect x="600" y="150" width="114" height="30" rx="9" fill="#F3EEE4" stroke="#CFCEC8" stroke-width="1.4"/><text x="657.0" y="169.0" text-anchor="middle" font-size="10" fill="#6A6E78" class="">llana: NO ´</text></svg></div>
 </div>
 
 <!-- ===== §2.3 activities ===== -->
 <div class="page">
   <div class="act">
     <div class="acthead"><span class="anum">5</span><div><div class="h">¿Lleva sombrero o no?</div><div class="badges"><span class="badge skill">👂 Escuchar</span><span class="badge">👤 Solo</span><span class="badge">± 6 min</span><span class="stars">★★☆</span></div></div></div>
-    <p>Je hoort en ziet het woord (mét gloss). Beslis: <b>draagt het een hoedje, ja of nee?</b> Leg kort uit <i>waarom</i>. <span class="words"><b>Peru</b> (land) · <b>cafe</b> (koffie) · <b>casa</b> (huis) · <b>arbol</b> (boom) · <b>Mexico</b> (land)</span>. <span class="gloss">Antwoord: Perú (aguda -ú) · café (aguda -é) · casa (llana -a → geen) · árbol (llana -l → wel) · México (esdrújula → wel).</span></p>
+    <p>Je hoort en ziet het woord (mét gloss). Beslis: <b>draagt het een hoedje, ja of nee?</b> Kruis aan en leg kort uit <i>waarom</i>. <span class="words"><b>Peru</b> (land) · <b>cafe</b> (koffie) · <b>casa</b> (huis) · <b>arbol</b> (boom) · <b>Mexico</b> (land)</span>.</p>
+    <div style="margin-left:12.5mm"><table class="mp wtab">
+     <thead><tr><th style="width:24%">Palabra</th><th style="width:11%">sí ´</th><th style="width:11%">no</th><th>¿Por qué? <span style="font-weight:400;text-transform:none">(familie + eindletter)</span></th></tr></thead>
+     <tr><td>Peru <span class="gloss">(land)</span></td><td style="text-align:center">☐</td><td style="text-align:center">☐</td><td><span class="wl md"></span></td></tr>
+     <tr><td>cafe <span class="gloss">(koffie)</span></td><td style="text-align:center">☐</td><td style="text-align:center">☐</td><td><span class="wl md"></span></td></tr>
+     <tr><td>casa <span class="gloss">(huis)</span></td><td style="text-align:center">☐</td><td style="text-align:center">☐</td><td><span class="wl md"></span></td></tr>
+     <tr><td>arbol <span class="gloss">(boom)</span></td><td style="text-align:center">☐</td><td style="text-align:center">☐</td><td><span class="wl md"></span></td></tr>
+     <tr><td>Mexico <span class="gloss">(land)</span></td><td style="text-align:center">☐</td><td style="text-align:center">☐</td><td><span class="wl md"></span></td></tr>
+    </table></div>
     <span class="steun">Apoyo: modelo (Regla 3 open) → pista (enkel familie) → sin ayuda</span></div>
 
   <div class="act">
     <div class="acthead"><span class="anum">6</span><div><div class="h">Coloca la tilde</div><div class="badges"><span class="badge skill">✍️ Escribir</span><span class="badge">👤 Solo</span><span class="badge">± 6 min</span><span class="stars">★★★</span></div></div></div>
-    <p>Zes woorden staan <b>zonder</b> streepje. Zet de tilde <b>alleen waar het moet</b> (en enkel op de tónica-klinker): <span class="words"><b>numero · lunes · adios · Belgica · profesor · musica</b></span>. <span class="gloss">Antwoord: número (esdr.) · lunes (llana -s → geen) · adiós (aguda -s) · Bélgica (esdr.) · profesor (aguda -r → geen) · música (esdr.).</span></p>
+    <p>Zes woorden staan <b>zonder</b> streepje. Herschrijf elk woord en zet de tilde <b>alleen waar het moet</b> (en enkel op de tónica-klinker): <span class="words"><b>numero · lunes · adios · Belgica · profesor · musica</b></span>.</p>
+    <div style="margin-left:12.5mm;font-size:9.6pt">
+      <div style="margin:2.4mm 0"><b>1.</b> numero → <span class="wl lg"></span> &nbsp; <b>2.</b> lunes → <span class="wl lg"></span></div>
+      <div style="margin:2.4mm 0"><b>3.</b> adios → <span class="wl lg"></span> &nbsp; <b>4.</b> Belgica → <span class="wl lg"></span></div>
+      <div style="margin:2.4mm 0"><b>5.</b> profesor → <span class="wl lg"></span> &nbsp; <b>6.</b> musica → <span class="wl lg"></span></div>
+    </div>
     <div class="ojo" style="margin-left:12.5mm"><b>¡Ojo! Geen hoedjes strooien.</b> <i>lunes</i> en <i>profesor</i> krijgen er <b>géén</b>. De grootste A1-fout is <i>te veel</i> tildes zetten. <span class="gloss">Bij twijfel: is het een gewone llana op -n/-s/klinker? → geen hoedje.</span></div>
     <span class="steun">Apoyo: letra inicial + familie tussen haakjes → sin ayuda</span></div>
 
   <div class="act">
     <div class="acthead"><span class="anum">7</span><div><div class="h">Clínica de tildes</div><div class="badges"><span class="badge skill">🔍 Analizar</span><span class="badge">👥 En parejas</span><span class="badge">± 6 min</span><span class="stars">★★★</span></div></div></div>
-    <p>Een leerling schreef deze woorden. <b>Zoek de fout, verbeter, en zeg welke regel helpt:</b> <span class="words"><b>✗ cásada</b> (casa) · <b>✗ Mexico</b> (land) · <b>✗ telefóno</b> (telefoon) · <b>✗ árból</b> (boom)</span>. <span class="gloss">Antwoord: casa (llana -a, géén tilde) · México (esdr., hoedje op Mé) · teléfono (esdr., op lé) · árbol (llana -l, één hoedje op ár).</span></p>
+    <p>Een leerling schreef deze woorden. <b>Zoek de fout, verbeter, en zeg welke regel helpt:</b> <span class="words"><b>✗ cásada</b> (casa) · <b>✗ Mexico</b> (land) · <b>✗ telefóno</b> (telefoon) · <b>✗ árból</b> (boom)</span>.</p>
+    <div style="margin-left:12.5mm"><table class="mp wtab">
+     <thead><tr><th style="width:26%">✗ Fout woord</th><th style="width:30%">✓ Verbetering</th><th>Regla que ayuda</th></tr></thead>
+     <tr><td>cásada <span class="gloss">(casa)</span></td><td><span class="wl md"></span></td><td><span class="wl md"></span></td></tr>
+     <tr><td>Mexico <span class="gloss">(land)</span></td><td><span class="wl md"></span></td><td><span class="wl md"></span></td></tr>
+     <tr><td>telefóno <span class="gloss">(telefoon)</span></td><td><span class="wl md"></span></td><td><span class="wl md"></span></td></tr>
+     <tr><td>árból <span class="gloss">(boom)</span></td><td><span class="wl md"></span></td><td><span class="wl md"></span></td></tr>
+    </table></div>
     <span class="steun">Apoyo: modelo (Regla 3 zichtbaar) → sin ayuda · het juiste model staat altijd als laatste</span></div>
 
   <div class="act">
     <div class="acthead"><span class="anum">8</span><div><div class="h">Formula la regla</div><div class="badges"><span class="badge skill">🔍 Analizar</span><span class="badge skill">🎙️ Hablar</span><span class="badge">👥 En parejas</span><span class="badge">± 5 min</span><span class="stars">★★★</span></div></div></div>
-    <p>Bekijk de reeks en <b>vul de regel zelf aan</b>: <span class="words"><b>café – casa · jamón – examen · adiós – lunes</b></span> → «Een <b>aguda</b> krijgt een hoedje als ze eindigt op ___ , ___ of ___. Een <b>llana</b> krijgt er net géén als ze zó eindigt.» <span class="gloss">De opties -n / -s / klinker staan als bank onderaan.</span></p>
+    <p>Bekijk de reeks en <b>vul de regel zelf aan</b>: <span class="words"><b>café – casa · jamón – examen · adiós – lunes</b></span>. <span class="gloss">De opties -n / -s / klinker staan als bank onderaan.</span></p>
+    <p class="words" style="background:var(--crema);border-radius:10pt;padding:2mm 4mm;margin-left:12.5mm;font-size:8.6pt"><b>Banco:</b> -n · -s · vocal</p>
+    <div style="margin-left:12.5mm;font-size:9.4pt">
+      <div style="margin:2.4mm 0">Een <b>aguda</b> krijgt een hoedje als ze eindigt op <span class="wl sm"></span> , <span class="wl sm"></span> of <span class="wl sm"></span>.</div>
+      <div style="margin:2.4mm 0">Een <b>llana</b> krijgt er net géén als ze zó eindigt: <span class="wl full"></span></div>
+    </div>
     <span class="steun">Apoyo: pista (opties -n / -s / vocal als bank) · leerling verwoordt zelf</span></div>
 
   <div class="truc"><b>🟡 Curiosidad — «la trampa del plural».</b> In het <b>meervoud</b> kan het hoedje <i>verspringen</i>: <b>joven → jóvenes</b> (het hoedje verschijnt), <b>canción → canciones</b> (het hoedje verdwijnt). <span class="gloss">De klap blijft op dezelfde lettergreep, maar het woord wordt langer → de familie verandert. Dit oefenen we pas later; hier even zien.</span></div>
@@ -625,9 +675,22 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
     <div class="acthead"><span class="anum">★</span><div><div class="h">Tarea comunicativa · Sube el sombrero al mapa</div><div class="badges"><span class="badge skill">🎙️ Interacción</span><span class="badge">👥 En parejas</span><span class="badge">± 10 min</span><span class="stars">★★★</span></div></div></div>
     <p>Jij en je buur zijn <i>«controladores de la ruta»</i>. Jullie krijgen <b>plaatsnamen van de reis</b>. Voor elk woord: (1) juist <b>uitspreken</b> met de goede klap, (2) benoemen <b>welke familie</b> het is, (3) zeggen <b>of er een hoedje op moet</b>. Dan wisselen jullie en geef je één gerichte tip. <span class="gloss">Afzender/ontvanger/doel/situatie/resultaat: jullie kunnen de tien paradas verstaanbaar uitspreken én de tilde verantwoorden.</span></p>
     <p class="words" style="background:var(--crema);border-radius:10pt;padding:3mm 4mm"><b>Banco de paradas:</b> España · México · Perú · Colombia · Madrid · Sevilla · Cartagena · Cusco · Bogotá · Panamá.<br><b>Marco (mag weg):</b> <i>«___ es una palabra ___ (aguda/llana/esdrújula); lleva/no lleva tilde porque termina en ___.»</i><br>→ <i>«<b>Perú</b> es una palabra <b>aguda</b>; <b>lleva</b> tilde porque termina en vocal.»</i> · <i>«<b>Sevilla</b> es <b>llana</b>; <b>no lleva</b> tilde.»</i></p>
+    <div style="margin-left:12.5mm"><table class="mp wtab">
+     <thead><tr><th style="width:24%">Parada</th><th>Mi frase — «… es una palabra … ; (no) lleva tilde porque termina en …»</th><th style="width:13%">✓ dicho</th></tr></thead>
+     <tr><td>España</td><td><span class="wl md"></span></td><td style="text-align:center">☐</td></tr>
+     <tr><td>México</td><td><span class="wl md"></span></td><td style="text-align:center">☐</td></tr>
+     <tr><td>Perú</td><td><span class="wl md"></span></td><td style="text-align:center">☐</td></tr>
+     <tr><td>Colombia</td><td><span class="wl md"></span></td><td style="text-align:center">☐</td></tr>
+     <tr><td>Madrid</td><td><span class="wl md"></span></td><td style="text-align:center">☐</td></tr>
+     <tr><td>Sevilla</td><td><span class="wl md"></span></td><td style="text-align:center">☐</td></tr>
+     <tr><td>Cartagena</td><td><span class="wl md"></span></td><td style="text-align:center">☐</td></tr>
+     <tr><td>Cusco</td><td><span class="wl md"></span></td><td style="text-align:center">☐</td></tr>
+     <tr><td>Bogotá</td><td><span class="wl md"></span></td><td style="text-align:center">☐</td></tr>
+     <tr><td>Panamá</td><td><span class="wl md"></span></td><td style="text-align:center">☐</td></tr>
+    </table></div>
     <div class="ojo" style="margin-left:12.5mm"><b>¡Ojo! Valstrik in deze taak:</b> <i>México, Perú, Bogotá, Panamá</i> dragen wél een hoedje; <i>España, Sevilla, Colombia, Cartagena, Cusco, Madrid</i> <b>niet</b>. <span class="gloss">En Lucía? Die draagt óók een tilde, maar om een ándere reden (een hiato) — dat komt pas in U7. Hier enkel herkennen.</span></div>
     <span class="steun">Apoyo: modelo + Regla 3 open → tweede ronde sin ayuda (enkel de kaart)</span></div>
-  <div class="asset">[BEELD: klein kaartje van La Ruta met de tien plaatsnamen; de leerling «plakt» een sombrero-sticker op de woorden die er één dragen (México, Perú, Bogotá, Panamá). Alt: «routekaart met plaatsnamen; op vier woorden staat een hoedje-sticker».]</div>
+  <div style="break-inside:avoid;margin:3mm 0"><svg viewBox="0 0 720 114" width="100%" role="img" aria-label="De tien haltes van de route; de plaatsnamen met een tilde (México, Bogotá, Perú, Panamá) dragen een hoedje-sticker." style="margin:3mm 0;font-family:'Inter',sans-serif"><defs><style>.d{font-family:'Bricolage Grotesque',sans-serif;font-weight:700}</style></defs><rect x="8" y="30" width="74" height="26" rx="13" fill="#fff" stroke="#E4E3DE"/><text x="45" y="47" text-anchor="middle" font-size="12" fill="#20242E">España</text><rect x="91.6" y="30" width="74" height="26" rx="13" fill="#fff" stroke="#E4E3DE"/><text x="128" y="47" text-anchor="middle" font-size="12" fill="#20242E">Madrid</text><rect x="175.2" y="30" width="82" height="26" rx="13" fill="#fff" stroke="#E4E3DE"/><text x="216" y="47" text-anchor="middle" font-size="12" fill="#20242E">Sevilla</text><rect x="267.4" y="30" width="99" height="26" rx="13" fill="#fff" stroke="#E4E3DE"/><text x="317" y="47" text-anchor="middle" font-size="12" fill="#20242E">Barcelona</text><rect x="376.79999999999995" y="30" width="91" height="26" rx="13" fill="#fff" stroke="#E4E3DE"/><text x="422" y="47" text-anchor="middle" font-size="12" fill="#20242E">València</text><rect x="477.59999999999997" y="30" width="74" height="26" rx="13" fill="#E4F4EE" stroke="#157355"/><text x="514" y="47" text-anchor="middle" font-size="12" fill="#20242E">México</text><path d="M506 27 L516 19 L518 22 Z" fill="#B7860B"/><rect x="561.1999999999999" y="30" width="99" height="26" rx="13" fill="#fff" stroke="#E4E3DE"/><text x="611" y="47" text-anchor="middle" font-size="12" fill="#20242E">Cartagena</text><rect x="8" y="72" width="74" height="26" rx="13" fill="#E4F4EE" stroke="#157355"/><text x="45" y="89" text-anchor="middle" font-size="12" fill="#20242E">Bogotá</text><path d="M37 69 L47 61 L49 64 Z" fill="#B7860B"/><rect x="91.6" y="72" width="65" height="26" rx="13" fill="#fff" stroke="#E4E3DE"/><text x="124" y="89" text-anchor="middle" font-size="12" fill="#20242E">Cusco</text><rect x="166.6" y="72" width="56" height="26" rx="13" fill="#E4F4EE" stroke="#157355"/><text x="195" y="89" text-anchor="middle" font-size="12" fill="#20242E">Perú</text><path d="M187 69 L197 61 L199 64 Z" fill="#B7860B"/><rect x="233.0" y="72" width="74" height="26" rx="13" fill="#E4F4EE" stroke="#157355"/><text x="270" y="89" text-anchor="middle" font-size="12" fill="#20242E">Panamá</text><path d="M262 69 L272 61 L274 64 Z" fill="#B7860B"/><text x="8" y="18" font-size="9.5" font-weight="700" fill="#6A6E78">LA RUTA · ¿qué nombres llevan sombrero?</text></svg></div>
 
   <div class="esen"><b class="tt">Lo esencial de esta parada</b>
     <ul>
@@ -667,7 +730,7 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
     </div>
   </div>
 
-  <div class="asset">[BEELD: sectie-opener — kleine RouteMap van «La Ruta»; routepunt licht op boven España, de mochila viajera staat op de kade met een instapkaart. Alt: «Kaart van de Spaanstalige wereld met de rugzak-mascotte die vertrekt vanuit Spanje». Grijswaarden-veilig: routepunt ook met ster-icoon.]</div>
+  <div style="break-inside:avoid;margin:3mm 0"><svg viewBox="0 0 700 88" width="100%" role="img" aria-label="Mini-routekaart van La Ruta: we vertrekken bij España (halte gemarkeerd met een ster), daarna oversteek naar México, Colombia en Perú." style="margin:3mm 0;font-family:'Inter',sans-serif"><defs><style>.d{font-family:'Bricolage Grotesque',sans-serif;font-weight:700}</style></defs><path d="M40 46 C 150 18, 210 18, 250 42" stroke="#CFCEC8" stroke-width="2.6" fill="none" stroke-dasharray="2 6"/><path d="M250 42 C 340 70, 520 70, 620 40" stroke="#CFCEC8" stroke-width="2.6" fill="none" stroke-dasharray="2 6"/><text x="150" y="16" fill="#6A6E78" font-size="10" font-style="italic">« el charco »</text><circle cx="56" cy="46" r="11" fill="#1E9E74"/><circle cx="56" cy="46" r="18" fill="none" stroke="#1E9E74" stroke-width="2" opacity=".4"/><path d="M52 46 l4 -6 l4 6 l-4 3 Z" fill="#fff"/><text x="56" y="74" fill="#157355" font-size="12" font-weight="700" text-anchor="middle">España ★</text><circle cx="250" cy="46" r="8" fill="#fff" stroke="#CFCEC8" stroke-width="2.6"/><text x="250" y="72" fill="#6A6E78" font-size="11" text-anchor="middle">México</text><circle cx="420" cy="46" r="8" fill="#fff" stroke="#CFCEC8" stroke-width="2.6"/><text x="420" y="72" fill="#6A6E78" font-size="11" text-anchor="middle">Colombia</text><circle cx="620" cy="46" r="8" fill="#fff" stroke="#CFCEC8" stroke-width="2.6"/><text x="620" y="72" fill="#6A6E78" font-size="11" text-anchor="middle">Perú</text><text x="34" y="34" font-size="15">🎒</text></svg></div>
 
   <div class="obj" style="margin-top:6mm">
     <div class="se">En esta sección vas a…</div>
@@ -713,7 +776,7 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
    <tr><td class="L">30</td><td>treinta</td><td class="L">40</td><td>cuarenta</td><td class="L">50</td><td>cincuenta</td><td class="L">60</td><td>sesenta</td></tr>
    <tr><td class="L">70</td><td>setenta</td><td class="L">80</td><td>ochenta</td><td class="L">90</td><td>noventa</td><td class="L">100</td><td>cien</td></tr>
   </tbody></table>
-  <div class="asset">[BEELD: InfographicPanel «de drie lagen» — drie horizontale banden (0–15 los blokjes · 16–29 magneet/aaneen · 30–100 machine met «y»), elk met tekstlabel. Alt: «Overzicht van de getallen in drie opbouwlagen». Grijswaarden-veilig.]</div>
+  <div style="break-inside:avoid;margin:3mm 0"><svg viewBox="0 0 720 204" width="100%" role="img" aria-label="De getallen in drie opbouwlagen: 0–15 uit het hoofd, 16–29 als één woord, 30–100 met decena plus y plus eenheid." style="margin:3mm 0;font-family:'Inter',sans-serif"><defs><style>.d{font-family:'Bricolage Grotesque',sans-serif;font-weight:700}</style></defs><rect x="6" y="6" width="708" height="54" rx="11" fill="#fff" stroke="#E4E3DE"/><rect x="6" y="6" width="150" height="54" rx="11" fill="#1E9E74"/><rect x="120" y="6" width="36" height="54" fill="#1E9E74"/><text x="18" y="30" font-size="12" class="d" fill="#fff">CAPA 1</text><text x="18" y="48" font-size="8.5" fill="#EAF6F0">los cimientos · uit het hoofd</text><rect x="172" y="21" width="46" height="24" rx="6" fill="#F3EEE4"/><text x="195.0" y="37" text-anchor="middle" font-size="11" fill="#20242E">cero</text><rect x="226" y="21" width="54" height="24" rx="6" fill="#F3EEE4"/><text x="253.0" y="37" text-anchor="middle" font-size="11" fill="#20242E">cinco</text><rect x="288" y="21" width="46" height="24" rx="6" fill="#F3EEE4"/><text x="311.0" y="37" text-anchor="middle" font-size="11" fill="#20242E">diez</text><rect x="342" y="21" width="62" height="24" rx="6" fill="#F3EEE4"/><text x="373.0" y="37" text-anchor="middle" font-size="11" fill="#20242E">quince</text><rect x="6" y="68" width="708" height="54" rx="11" fill="#fff" stroke="#E4E3DE"/><rect x="6" y="68" width="150" height="54" rx="11" fill="#157355"/><rect x="120" y="68" width="36" height="54" fill="#157355"/><text x="18" y="92" font-size="12" class="d" fill="#fff">CAPA 2</text><text x="18" y="110" font-size="8.5" fill="#EAF6F0">16–29 · één woord, geen «y»</text><rect x="172" y="83" width="86" height="24" rx="6" fill="#F3EEE4"/><text x="215.0" y="99" text-anchor="middle" font-size="11" fill="#20242E">dieciséis</text><rect x="266" y="83" width="62" height="24" rx="6" fill="#F3EEE4"/><text x="297.0" y="99" text-anchor="middle" font-size="11" fill="#20242E">veinte</text><rect x="336" y="83" width="86" height="24" rx="6" fill="#F3EEE4"/><text x="379.0" y="99" text-anchor="middle" font-size="11" fill="#20242E">veintidós</text><rect x="430" y="83" width="102" height="24" rx="6" fill="#F3EEE4"/><text x="481.0" y="99" text-anchor="middle" font-size="11" fill="#20242E">veintinueve</text><rect x="6" y="130" width="708" height="54" rx="11" fill="#fff" stroke="#E4E3DE"/><rect x="6" y="130" width="150" height="54" rx="11" fill="#B7860B"/><rect x="120" y="130" width="36" height="54" fill="#B7860B"/><text x="18" y="154" font-size="12" class="d" fill="#fff">CAPA 3</text><text x="18" y="172" font-size="8.5" fill="#EAF6F0">30–100 · decena + y + unidad</text><rect x="172" y="145" width="70" height="24" rx="6" fill="#F3EEE4"/><text x="207.0" y="161" text-anchor="middle" font-size="11" fill="#20242E">treinta</text><rect x="250" y="145" width="126" height="24" rx="6" fill="#F3EEE4"/><text x="313.0" y="161" text-anchor="middle" font-size="11" fill="#20242E">cuarenta y dos</text><rect x="384" y="145" width="134" height="24" rx="6" fill="#F3EEE4"/><text x="451.0" y="161" text-anchor="middle" font-size="11" fill="#20242E">noventa y nueve</text><text x="360" y="196" text-anchor="middle" font-size="9" fill="#6A6E78">Vanaf 30: schrijf je drie losse woorden — decena + <tspan font-weight="700">y</tspan> + unidad.</text></svg></div>
 
   <div class="guide"><div class="ic">🎒</div><div><span class="hand">Truco de la mochila: cuenta en voz alta hasta 15, después «pega» y añade la «y».</span> <span class="g">— tel hardop tot 15; daarna plakken (16–29) en pas vanaf 30 de «y».</span></div></div>
 </div>
@@ -751,11 +814,11 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
 
   <div class="act">
     <div class="acthead"><span class="anum">1</span><div><div class="h">Minimale paren — ¿cuál oyes?</div><div class="badges"><span class="badge skill">👂 Escuchar</span><span class="badge skill">🎙️ Hablar</span><span class="badge">👤 Solo</span><span class="badge">± 4 min</span><span class="stars">★★☆</span></div></div></div>
-    <p>Oyes un número → marca A of B → luego di <b>los dos</b> en voz alta. <span class="gloss">Je hoort een getal; kruis aan en zeg daarna beide hardop.</span></p>
-    <div style="margin-left:12.5mm"><table class="mp"><tr><th>Oyes</th><th>☐ A</th><th>☐ B</th></tr>
-     <tr><td>1</td><td>seis</td><td>siete</td></tr>
-     <tr><td>2</td><td>doce</td><td>trece</td></tr>
-     <tr><td>3</td><td>sesenta</td><td>setenta</td></tr></table></div>
+    <p>Oyes un número → marca la casilla A of B → luego di <b>los dos</b> en voz alta. <span class="gloss">Je hoort een getal; vink het juiste vakje aan en zeg daarna beide hardop.</span></p>
+    <div style="margin-left:12.5mm"><table class="mp wtab"><thead><tr><th style="width:14%">Oyes</th><th>☐ Opción A</th><th>☐ Opción B</th><th>Yo digo los dos en voz alta</th></tr></thead>
+     <tr><td>1</td><td>☐ &nbsp;seis</td><td>☐ &nbsp;siete</td><td><span class="wl"></span></td></tr>
+     <tr><td>2</td><td>☐ &nbsp;doce</td><td>☐ &nbsp;trece</td><td><span class="wl"></span></td></tr>
+     <tr><td>3</td><td>☐ &nbsp;sesenta</td><td>☐ &nbsp;setenta</td><td><span class="wl"></span></td></tr></table></div>
     <span class="steun">Apoyo: banco de palabras → sin ayuda</span></div>
   <div class="asset">[AUDIO: minimal-pairs fragment, 6 items, 2 stemmen (m/v), rustig tempo. LPD receptief mondeling — klankonderscheid.]</div>
 </div>
@@ -767,19 +830,23 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
 
   <div class="act">
     <div class="acthead"><span class="anum">2</span><div><div class="h">Escucha y numera</div><div class="badges"><span class="badge skill">👂 Escuchar</span><span class="badge">👤 Solo</span><span class="badge">± 5 min</span><span class="stars">★☆☆</span></div></div></div>
-    <p>Oyes <b>ocho números</b>. Escribe junto a cada imagen el <b>cifra</b> que oyes; después dilo <b>en voz alta</b>. <span class="gloss">Je hoort acht getallen; schrijf het cijfer bij elke afbeelding en zeg het daarna hardop.</span></p>
-    <p style="margin-left:12.5mm">☐ cactus &nbsp;·&nbsp; ☐ palmeras &nbsp;·&nbsp; ☐ tapas &nbsp;·&nbsp; ☐ sellos &nbsp;·&nbsp; ☐ … <span class="gloss">(cactussen · palmen · tapas · postzegels)</span></p>
+    <p>Oyes <b>ocho números</b>. Escribe la <b>cifra</b> que oyes en cada casilla y, después, dila <b>en voz alta</b>. <span class="gloss">Je hoort acht getallen; schrijf het cijfer in elk vakje en zeg het daarna hardop.</span></p>
+    <p style="margin-left:12.5mm">Imágenes: cactus · palmeras · tapas · sellos · … <span class="gloss">(cactussen · palmen · tapas · postzegels)</span></p>
+    <div style="margin-left:12.5mm;font-size:9.6pt">
+      <div style="margin:2.4mm 0"><b>1.</b> <span class="wl sm"></span> &nbsp; <b>2.</b> <span class="wl sm"></span> &nbsp; <b>3.</b> <span class="wl sm"></span> &nbsp; <b>4.</b> <span class="wl sm"></span></div>
+      <div style="margin:2.4mm 0"><b>5.</b> <span class="wl sm"></span> &nbsp; <b>6.</b> <span class="wl sm"></span> &nbsp; <b>7.</b> <span class="wl sm"></span> &nbsp; <b>8.</b> <span class="wl sm"></span></div>
+    </div>
     <span class="steun">Apoyo: model + woordenbank zichtbaar · receptief</span></div>
   <div class="asset">[BEELD: 8 kleine PhotoCards met telbare dingen (3 cactussen, 7 palmen, 12 tapas, 20 postzegels…), alt-tekst per kaart, grijswaarden-veilig.] &nbsp; [AUDIO 3.4a: rustig tempo, één stem — «tres … siete … doce … dieciséis … veinte … treinta y uno … cuarenta y cinco … cien».]</div>
 
   <div class="act">
     <div class="acthead"><span class="anum">3</span><div><div class="h">Dictado de números</div><div class="badges"><span class="badge skill">👂 Escuchar</span><span class="badge skill">✍️ Escribir</span><span class="badge">👤 Solo</span><span class="badge">± 6 min</span><span class="stars">★★☆</span></div></div></div>
     <p>La mochila lee un listado. Escribe solo los <b>números</b> en cifras (el resto ya está). <span class="gloss">De mochila leest voor; schrijf enkel de getallen in cijfers.</span></p>
-    <div style="margin-left:12.5mm"><table class="mp"><tr><th>Ronde 1 · met woordenbank</th><th></th></tr>
-     <tr><td>1. En la clase hay ____ alumnos.</td><td rowspan="3" style="vertical-align:middle;text-align:center"><b>Banco:</b><br>22 · 14 · 68</td></tr>
-     <tr><td>2. Mi abuela tiene ____ años.</td></tr>
-     <tr><td>3. El autobús número ____ va a la playa.</td></tr>
-     <tr><td>Ronde 2 · geen woordenbank: 4. ____ &nbsp; 5. ____ &nbsp; 6. ____</td><td>schrijf wat je hoort</td></tr></table></div>
+    <div style="margin-left:12.5mm"><table class="mp wtab"><thead><tr><th>Ronde 1 · met woordenbank</th><th></th></tr></thead>
+     <tr><td>1. En la clase hay <span class="wl sm"></span> alumnos.</td><td rowspan="3" style="vertical-align:middle;text-align:center"><b>Banco:</b><br>22 · 14 · 68</td></tr>
+     <tr><td>2. Mi abuela tiene <span class="wl sm"></span> años.</td></tr>
+     <tr><td>3. El autobús número <span class="wl sm"></span> va a la playa.</td></tr>
+     <tr><td>Ronde 2 · geen woordenbank: 4. <span class="wl sm"></span> &nbsp; 5. <span class="wl sm"></span> &nbsp; 6. <span class="wl sm"></span></td><td style="text-align:center">schrijf wat je hoort</td></tr></table></div>
     <span class="steun">Apoyo: ronde 1 met bank → ronde 2 zonder</span></div>
   <div class="asset">[AUDIO 3.4b: rustige stem; ronde 2 iets sneller. Transcript ronde 1: «veintidós … catorce … sesenta y ocho». Zelfcontrole: oplossingen achterin.]</div>
 
@@ -787,19 +854,28 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
     <div class="acthead"><span class="anum">4</span><div><div class="h">De menor a mayor</div><div class="badges"><span class="badge skill">🔀 Ordenar</span><span class="badge">👤 Solo</span><span class="badge">± 4 min</span><span class="stars">★★☆</span></div></div></div>
     <p>Zet in <b>stijgende</b> volgorde (klein → groot). Schrijf het <b>woord</b>, niet het cijfer — zo oefen je de spelling. <span class="gloss">Van klein naar groot, voluit in letters.</span></p>
     <p style="margin-left:12.5mm" class="words"><b>quince</b> · <b>noventa y nueve</b> · <b>cuarenta</b> · <b>siete</b> · <b>veintiséis</b> · <b>ochenta y dos</b></p>
+    <div style="margin-left:12.5mm;font-size:9.6pt">
+      <div style="margin:2.4mm 0"><b>1.</b> <span class="wl lg"></span> &nbsp; <b>2.</b> <span class="wl lg"></span></div>
+      <div style="margin:2.4mm 0"><b>3.</b> <span class="wl lg"></span> &nbsp; <b>4.</b> <span class="wl lg"></span></div>
+      <div style="margin:2.4mm 0"><b>5.</b> <span class="wl lg"></span> &nbsp; <b>6.</b> <span class="wl lg"></span></div>
+    </div>
     <p style="margin-left:12.5mm">→ Kies <b>twee opeenvolgende</b> getallen uit je rij en zeg ze hardop met hun buur: «… veintiséis, veintisiete, veintiocho …». <span class="gloss">(productieve uitbreiding)</span></p>
     <span class="steun">Apoyo: woordenbank (reeks door elkaar) → productie</span></div>
 
   <div class="act">
     <div class="acthead"><span class="anum">5</span><div><div class="h">Completa el número</div><div class="badges"><span class="badge skill">🧩 Vorm/spelling</span><span class="badge">👤 Solo</span><span class="badge">± 5 min</span><span class="stars">★★☆</span></div></div></div>
     <p>Vul aan. Let op: <b>16–29 = één woord</b>, <b>30–100 = drie woorden met «y»</b>. <span class="gloss">Aaneen vs. drie woorden.</span></p>
-    <div style="margin-left:12.5mm"><table class="mp"><tr><th>Cijfer</th><th>Vul aan</th></tr>
-     <tr><td>18</td><td>dieci______</td></tr>
-     <tr><td>24</td><td>veinti______</td></tr>
-     <tr><td>53</td><td>cincuenta ___ ______</td></tr>
-     <tr><td>71</td><td>______ y ______</td></tr>
-     <tr><td>96</td><td>______ y ______</td></tr></table></div>
+    <div style="margin-left:12.5mm"><table class="mp wtab"><thead><tr><th style="width:22%">Cijfer</th><th>Vul aan</th></tr></thead>
+     <tr><td>18</td><td>dieci<span class="wl sm"></span></td></tr>
+     <tr><td>24</td><td>veinti<span class="wl sm"></span></td></tr>
+     <tr><td>53</td><td>cincuenta <span class="wl sm"></span> <span class="wl md"></span></td></tr>
+     <tr><td>71</td><td><span class="wl md"></span> y <span class="wl md"></span></td></tr>
+     <tr><td>96</td><td><span class="wl md"></span> y <span class="wl md"></span></td></tr></table></div>
     <p style="margin-left:12.5mm">→ Mini-transfer: schrijf <b>jouw huisnummer</b> en <b>jouw schoenmaat</b> voluit in letters. <span class="gloss">(persoonlijke toepassing)</span></p>
+    <div style="margin-left:12.5mm;font-size:9.6pt">
+      <div style="margin:2.4mm 0">Nº de casa: <span class="wl lg"></span></div>
+      <div style="margin:2.4mm 0">Nº de zapato: <span class="wl lg"></span></div>
+    </div>
     <span class="steun">Apoyo: beginletters/stukjes → geen steun</span></div>
 
   <div class="act">
@@ -816,18 +892,23 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
      <tr><td>Tú</td><td>tienes</td><td>quince <b>años</b></td></tr>
      <tr><td>Lucía</td><td>tiene</td><td>dieciséis <b>años</b></td></tr>
      <tr><td>Mi hermano</td><td>tiene</td><td>veinte <b>años</b></td></tr></table></div>
+    <p style="margin-left:12.5mm">→ Escribe <b>dos frases</b> propias con la tabla (un bloque por columna): <span class="gloss">(schrijf twee eigen zinnen)</span></p>
+    <div style="margin-left:12.5mm;font-size:9.6pt">
+      <div style="margin:2.4mm 0"><b>1.</b> <span class="wl full"></span></div>
+      <div style="margin:2.4mm 0"><b>2.</b> <span class="wl full"></span></div>
+    </div>
     <div class="ojo" style="margin-left:12.5mm"><b>¡Ojo!</b> 🔴 <b>tener</b>, nooit <b>ser</b>. En let op de apocope: <b>veintiún años</b>, <b>treinta y un años</b> (uno → un vóór «años»). <span class="gloss">tener i.p.v. ser; uno wordt un vóór años.</span></div>
-    <p style="margin-left:12.5mm">→ Vraag-antwoordspiegel: 🟣 <b>¿Cuántos años tienes?</b> → 🟠🟣 <b>Tengo ______ años.</b></p>
+    <p style="margin-left:12.5mm">→ Vraag-antwoordspiegel: 🟣 <b>¿Cuántos años tienes?</b> → 🟠🟣 <b>Tengo <span class="wl sm"></span> años.</b></p>
     <span class="steun">Apoyo: volledig zinsframe → eigen antwoord</span></div>
 
   <div class="act">
     <div class="acthead"><span class="anum">8</span><div><div class="h">Intercambio de teléfonos (info-gap A/B)</div><div class="badges"><span class="badge skill">🗣️ Hablar</span><span class="badge">👥 Interacción</span><span class="badge">± 8 min</span><span class="stars">★★★</span></div></div></div>
     <p>Twee leerlingen, twee versies van dezelfde agenda. Elk heeft de helft van de nummers; je moet <b>práten</b> om de rest te weten — spieken kan niet. <span class="gloss">Informatiekloof: vraag elkaars nummers.</span></p>
-    <div style="margin-left:12.5mm"><table class="mp"><tr><th>Ficha A ziet</th><th>Ficha B ziet</th></tr>
-     <tr><td>Lucía (Sevilla) 611 24 30 …</td><td>Lucía (Sevilla) ____________</td></tr>
-     <tr><td>Diego (CDMX) __________</td><td>Diego (CDMX) 55 18 07 62 …</td></tr>
-     <tr><td>Valen (Cartagena) 301 55 12 …</td><td>Valen (Cartagena) ____________</td></tr>
-     <tr><td>Nina (Cusco) __________</td><td>Nina (Cusco) 984 26 41 …</td></tr></table></div>
+    <div style="margin-left:12.5mm"><table class="mp wtab"><thead><tr><th>Ficha A ziet</th><th>Ficha B ziet</th></tr></thead>
+     <tr><td>Lucía (Sevilla) 611 24 30 …</td><td>Lucía (Sevilla) <span class="wl md"></span></td></tr>
+     <tr><td>Diego (CDMX) <span class="wl md"></span></td><td>Diego (CDMX) 55 18 07 62 …</td></tr>
+     <tr><td>Valen (Cartagena) 301 55 12 …</td><td>Valen (Cartagena) <span class="wl md"></span></td></tr>
+     <tr><td>Nina (Cusco) <span class="wl md"></span></td><td>Nina (Cusco) 984 26 41 …</td></tr></table></div>
     <p style="margin-left:12.5mm" class="words"><b>Zinsframe:</b> — 🔵 ¿Cuál es el número de Diego? &nbsp;— Es el <b>cinco–cinco–uno–ocho–cero–siete…</b> &nbsp;— ¿Puedes repetir, <b>más despacio</b>, por favor? <span class="gloss">(cijfer per cijfer of in paren; lengua de clase, zie §4)</span></p>
     <div class="truc"><b>🟡 ¿Sabías que…?</b> in Spanje lees je een gsm-nummer vaak <b>in paren</b>: «seis once, veinticuatro, treinta». In de klas mag je gerust cijfer per cijfer beginnen. <span class="gloss">Culturele conventie — LPD identiteit in diversiteit.</span></div>
     <span class="steun">Apoyo: zinsframe zichtbaar → weglaten in ronde 2</span></div>
@@ -840,8 +921,15 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
     <div class="acthead"><span class="anum">★</span><div><div class="h">Tarea comunicativa · ¿Cuántos años tiene la clase?</div><div class="badges"><span class="badge skill">🗣️ Hablar → ✍️ Escribir</span><span class="badge">👥 Interacción</span><span class="badge">± 12 min</span><span class="stars">★★★</span></div></div></div>
     <p><b>Het communicatieve eindpunt van §3.</b> Afzender · ontvanger · doel · resultaat — geen «gebruik 10 getallen», maar een echte enquête. <span class="gloss">Interview, noteer, rapporteer.</span></p>
     <p style="margin-left:12.5mm"><b>1.</b> Interview <b>vijf</b> klasgenoten: «¿Cómo te llamas? · ¿Cuántos años tienes? · ¿Cuál es tu número?».<br>
-    <b>2.</b> Noteer in een raster: <b>Nombre · Edad · Teléfono</b>.<br>
-    <b>3.</b> Rapporteer mondeling of schriftelijk <b>in de 3e persoon</b>: «Emma <b>tiene</b> quince años. Tom <b>tiene</b> catorce años. La mayoría de la clase <b>tiene</b> quince años.»</p>
+    <b>2.</b> Noteer in het raster: <b>Nombre · Edad · Teléfono</b>.</p>
+    <div style="margin-left:12.5mm"><table class="mp wtab"><thead><tr><th style="width:40%">Nombre</th><th style="width:18%">Edad</th><th>Teléfono</th></tr></thead>
+     <tr><td><span class="wl md"></span></td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>
+     <tr><td><span class="wl md"></span></td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>
+     <tr><td><span class="wl md"></span></td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>
+     <tr><td><span class="wl md"></span></td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>
+     <tr><td><span class="wl md"></span></td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr></table></div>
+    <p style="margin-left:12.5mm"><b>3.</b> Rapporteer mondeling of schriftelijk <b>in de 3e persoon</b>. Modelo: «Emma <b>tiene</b> quince años. Tom <b>tiene</b> catorce años. La mayoría de la clase <b>tiene</b> quince años.» <span class="gloss">(modelzin — pas hem toe op jóuw klas)</span></p>
+    <div class="wbox lg" style="margin-left:12.5mm"></div>
     <span class="steun">Apoyo: geen taalsteun · vrije productie</span></div>
   <div class="asset">[BEELD/AUDIO: SurveyAndReport-raster (Nombre · Edad · Teléfono) + opname van de gesproken samenvatting voor zelfcorrectie. LPD productief mondeling+schriftelijk — gegevens vragen, noteren, rapporteren.]</div>
 
@@ -959,42 +1047,53 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
     <div class="acthead"><span class="anum">1</span><div><div class="h">Shadowing — meespreken</div><div class="badges"><span class="badge skill">👂 Escuchar</span><span class="badge skill">🎙️ Hablar</span><span class="badge">👤 Solo</span><span class="badge">± 6 min</span><span class="stars">★★☆</span></div></div></div>
     <p>Habla casi al mismo tiempo que el audio. Cuatro pasos, cada vez con menos texto → al final, tu propia versión. <span class="gloss">Spreek bijna gelijktijdig mee; bij elke stap minder tekst, tot je eigen variant.</span></p>
     <p style="background:var(--crema);border-radius:10pt;padding:3mm 4mm"><b>1</b> zin volledig zichtbaar: «Me llamo Lucía. ¿Cómo te llamas?» → <b>2</b> alleen sleutelwoorden: «Me llamo … ¿Cómo … llamas?» → <b>3</b> geen tekst, alleen audio → <b>4</b> jouw variant: «Me llamo <i>[jouw naam]</i>. ¿Cómo te llamas?»</p>
+    <div style="margin-left:12.5mm;font-size:9.4pt"><b>Paso 4 · escribe tu variante</b> <span class="gloss">(noteer je eigen zin vóór je ze inspreekt)</span>: <div style="margin-top:2mm"><span class="wl full"></span></div></div>
     <span class="steun">Apoyo: texto completo → palabras clave → sin texto · grabar → escuchar → un punto → repetir</span></div>
 
   <div class="act">
     <div class="acthead"><span class="anum">2</span><div><div class="h">Preséntate tú — la substitución</div><div class="badges"><span class="badge skill">🎙️ Hablar</span><span class="badge">👤 Solo</span><span class="badge">± 5 min</span><span class="stars">★★☆</span></div></div></div>
-    <p>Una frase modelo queda fija; en cada ronda cambia <b>un</b> elemento (naam · herkomst · leeftijd). Di cada ronda en voz alta. <span class="gloss">Eén modelzin blijft staan; per beurt roteert één cue.</span></p>
-    <div style="margin-left:12.5mm"><table class="mp"><tr><th>Ronda</th><th>Nombre</th><th>Soy de…</th><th>Tengo … años</th></tr>
+    <p>Una frase modelo queda fija; en cada ronda cambia <b>un</b> elemento (naam · herkomst · leeftijd). Di cada ronda en voz alta y escríbela. <span class="gloss">Eén modelzin blijft staan; per beurt roteert één cue. Spreek uit én schrijf.</span></p>
+    <div style="margin-left:12.5mm"><table class="mp wtab"><tr><th>Ronda</th><th>Nombre</th><th>Soy de…</th><th>Tengo … años</th></tr>
      <tr><td>1 · model</td><td>Tom</td><td>Bélgica</td><td>15</td></tr>
-     <tr><td>2 · naam zelf</td><td>____</td><td>Gante</td><td>14</td></tr>
-     <tr><td>3 · alles zelf</td><td>____</td><td>____</td><td>____</td></tr></table></div>
-    <p style="margin-top:2mm"><i>«Me llamo ______ . Soy de ______ . Tengo ______ años.»</i> Ronde 3 = jouw <b>echte</b> voorstelling.</p>
+     <tr><td>2 · naam zelf</td><td><span class="wl"></span></td><td>Gante</td><td>14</td></tr>
+     <tr><td>3 · alles zelf</td><td><span class="wl"></span></td><td><span class="wl"></span></td><td><span class="wl"></span></td></tr></table></div>
+    <p style="margin-top:2mm"><i>Zinsframe:</i> «Me llamo <span class="wl md"></span> . Soy de <span class="wl md"></span> . Tengo <span class="wl sm"></span> años.» Ronde 3 = jouw <b>echte</b> voorstelling.</p>
     <span class="steun">Apoyo: modelo fijo → un elemento cambia → sin ayuda</span></div>
 
   <div class="act">
     <div class="acthead"><span class="anum">3</span><div><div class="h">Encantad_ · la clínica del error</div><div class="badges"><span class="badge skill">🔴 Corregir</span><span class="badge">👥 En parejas</span><span class="badge">± 4 min</span><span class="stars">★★☆</span></div></div></div>
     <p>La terminación <b>-o/-a</b> depende de <b>quién habla</b>. Corrige y explica <i>por qué</i>. <span class="gloss">De uitgang hangt af van wie spreekt. Verbeter en leg uit waarom.</span></p>
-    <div style="margin-left:12.5mm"><table class="mp"><tr><th>¿Quién dice?</th><th>✗ Error</th><th>✓ Correcto</th></tr>
-     <tr><td>Diego <i>(chico)</i></td><td class="trap">«Encantada.»</td><td>«Encantado.»</td></tr>
-     <tr><td>Nina <i>(chica)</i></td><td class="trap">«Encantado.»</td><td>«Encantada.»</td></tr></table></div>
-    <p style="margin-top:2mm">Schrijf <b>jouw</b> correcte vorm: <i>«Yo digo: Encantad__»</i>. Groet dan je buur en reageer met de <b>juiste</b> vorm. <span class="gloss">Toepassing: begroeting + correcte -o/-a.</span></p>
+    <div style="margin-left:12.5mm"><table class="mp wtab"><tr><th>¿Quién dice?</th><th>✗ Error</th><th>✓ Correcto</th></tr>
+     <tr><td>Diego <i>(chico)</i></td><td class="trap">«Encantada.»</td><td><span class="wl"></span></td></tr>
+     <tr><td>Nina <i>(chica)</i></td><td class="trap">«Encantado.»</td><td><span class="wl"></span></td></tr></table></div>
+    <div style="margin-left:12.5mm;margin-top:2mm;font-size:9.4pt"><b>¿Por qué?</b> <span class="gloss">(leg de regel uit)</span> <span class="wl lg"></span></div>
+    <p style="margin-top:2mm">Schrijf <b>jouw</b> correcte vorm: <i>«Yo digo: Encantad</i><span class="wl sm"></span><i>»</i>. Groet dan je buur en reageer met de <b>juiste</b> vorm. <span class="gloss">Toepassing: begroeting + correcte -o/-a.</span></p>
     <span class="steun">Apoyo: correct model staat ernaast → sin ayuda</span></div>
 
   <div class="act">
     <div class="acthead"><span class="anum">4</span><div><div class="h">Lengua de clase — ¿qué dices?</div><div class="badges"><span class="badge skill">🗣️ Interacción</span><span class="badge">👥 En parejas</span><span class="badge">± 6 min</span><span class="stars">★★☆</span></div></div></div>
     <p>Kies de juiste <b>reddingsboei</b> bij elke situatie (banco: <i>¿cómo se dice…? · no entiendo · ¿puedes repetir? · más despacio · ¿qué significa…?</i>). <span class="gloss">Koppel de situatie aan de juiste klastaal-chunk.</span></p>
-    <div style="margin-left:12.5mm"><table class="mp"><tr><th>Situación</th><th>¿Qué dices?</th></tr>
-     <tr><td>De docent praat te snel.</td><td>____________________</td></tr>
-     <tr><td>Je kent een woord niet in het Spaans.</td><td>____________________</td></tr>
-     <tr><td>Je verstond de vraag niet.</td><td>____________________</td></tr>
-     <tr><td>Je snapt de betekenis van «tarea» niet.</td><td>____________________</td></tr></table></div>
+    <div style="margin-left:12.5mm"><table class="mp wtab"><tr><th style="width:52%">Situación</th><th>¿Qué dices?</th></tr>
+     <tr><td>De docent praat te snel.</td><td><span class="wl md"></span></td></tr>
+     <tr><td>Je kent een woord niet in het Spaans.</td><td><span class="wl md"></span></td></tr>
+     <tr><td>Je verstond de vraag niet.</td><td><span class="wl md"></span></td></tr>
+     <tr><td>Je snapt de betekenis van «tarea» niet.</td><td><span class="wl md"></span></td></tr>
+     <tr><td>Mi propia situación: <span class="wl sm"></span></td><td><span class="wl md"></span></td></tr></table></div>
     <p style="margin-top:2mm"><b>Mini-juego de roles (sin ayuda):</b> A speelt docent (praat te snel / zegt een nieuw woord); B reageert met de <b>passende</b> chunk. Wissel. <span class="gloss">Rollenspel zonder steun.</span></p>
+    <div style="margin-left:12.5mm;font-size:9.4pt"><table class="mp wtab"><tr><th>Ronda</th><th>Nota / afspraak</th><th style="width:14%">✓ dicho</th></tr>
+     <tr><td>A → B</td><td><span class="wl"></span></td><td style="text-align:center">☐</td></tr>
+     <tr><td>B → A</td><td><span class="wl"></span></td><td style="text-align:center">☐</td></tr></table></div>
     <span class="steun">Apoyo: banco de frases → cue → sin ayuda</span></div>
 
   <div class="act">
     <div class="acthead"><span class="anum">★</span><div><div class="h">Tarea comunicativa · La rueda de presentaciones</div><div class="badges"><span class="badge skill">🗣️ Interacción</span><span class="badge">👥 Toda la clase</span><span class="badge">± 10 min</span><span class="stars">★★★</span></div></div></div>
     <p>Vorm een kring. Begroet je buur, <b>stel je voor</b> (naam · herkomst · leeftijd) en <b>stel één vraag</b> in de klastaal (<i>¿Cómo se dice…?</i> of <i>¿Cuántos años tienes?</i>). Reageer telkens met <b>encantado/a</b> + een <b>despedida</b>. Schuif door → herhaal met een <b>nieuwe</b> partner (elke ronde iets vlotter). <span class="gloss">Klasketting: groeten + voorstellen + een vraag stellen; telkens een nieuwe partner.</span></p>
     <p class="words" style="background:var(--crema);border-radius:10pt;padding:3mm 4mm"><b>Meta comunicativa:</b> afzender = jij · ontvanger = een klasgenoot · doel = kennismaken &amp; info vragen · situatie = eerste dag op La Ruta · resultaat = je <b>beste voorstelling opnemen</b> (15 s) → bewaar voor de <b>Tarea final</b>. <span class="gloss">Dit is de directe opstap naar de eindtaak van U0.</span></p>
+    <div style="margin-left:12.5mm;font-size:9.4pt"><b>Mi presentación</b> <span class="gloss">(schrijf ze eerst, spreek ze dan uit)</span>: <div style="margin-top:2mm"><span class="wl full"></span></div><div style="margin-top:2.4mm"><span class="wl full"></span></div></div>
+    <div style="margin-left:12.5mm;margin-top:2.5mm"><table class="mp wtab"><tr><th>Ronda</th><th>Nombre del compañero/a</th><th style="width:14%">✓ dicho</th></tr>
+     <tr><td>1</td><td><span class="wl"></span></td><td style="text-align:center">☐</td></tr>
+     <tr><td>2</td><td><span class="wl"></span></td><td style="text-align:center">☐</td></tr>
+     <tr><td>3</td><td><span class="wl"></span></td><td style="text-align:center">☐</td></tr></table></div>
     <span class="steun">Apoyo: sin ayuda · portfolio: opnemen → bewaren</span></div>
 
   <div class="asset">[BEELD: RouteMap-mini — de klas in een kring, de mochila in het midden. Alt: «leerlingen in een kring stellen zich voor».]</div>
@@ -1112,11 +1211,11 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
   <div class="act">
     <div class="acthead"><span class="anum">1</span><div><div class="h">Observa el mapa — ¿verdadero o falso?</div><div class="badges"><span class="badge skill">👁️ Leer</span><span class="badge">👤 Solo</span><span class="badge">± 5 min</span><span class="stars">★☆☆</span></div></div></div>
     <p>Lee cada afirmación, marca ✔ o ✘ y <b>señala en el mapa</b> dónde lo ves. <span class="gloss">Lees elke bewering, kruis waar/niet-waar aan en wijs op de kaart aan waar je het ziet.</span></p>
-    <div style="margin-left:12.5mm"><table class="mp"><tr><th>Afirmación</th><th>✔ / ✘</th><th>¿Dónde en el mapa?</th></tr>
-      <tr><td>El español es oficial en más de 20 países.</td><td>☐</td><td>………</td></tr>
-      <tr><td>En <b>Brasil</b> el español es la lengua oficial.</td><td>☐</td><td>……… <span class="gloss">(cue: Brasil → portugués)</span></td></tr>
-      <tr><td>En <b>Guinea Ecuatorial</b> (África) se habla español.</td><td>☐</td><td>………</td></tr>
-      <tr><td><b>Perú</b> está en Europa.</td><td>☐</td><td>………</td></tr>
+    <div style="margin-left:12.5mm"><table class="mp wtab"><tr><th>Afirmación</th><th style="width:14%">✔ / ✘</th><th style="width:34%">¿Dónde en el mapa?</th></tr>
+      <tr><td>El español es oficial en más de 20 países.</td><td style="text-align:center">☐</td><td><span class="wl"></span></td></tr>
+      <tr><td>En <b>Brasil</b> el español es la lengua oficial.</td><td style="text-align:center">☐</td><td><span class="wl"></span> <span class="gloss">(cue: Brasil → portugués)</span></td></tr>
+      <tr><td>En <b>Guinea Ecuatorial</b> (África) se habla español.</td><td style="text-align:center">☐</td><td><span class="wl"></span></td></tr>
+      <tr><td><b>Perú</b> está en Europa.</td><td style="text-align:center">☐</td><td><span class="wl"></span></td></tr>
     </table>
     <div class="ojo" style="margin-top:2mm"><b>¡Ojo!</b> Corrige en voz alta las frases falsas: <i>«No, … está en…»</i>. <span class="gloss">Verbeter de foute zinnen mondeling.</span></div></div>
     <span class="steun">Apoyo: modelo + el mapa als woordenbank · receptief</span></div>
@@ -1124,11 +1223,11 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
   <div class="act">
     <div class="acthead"><span class="anum">2</span><div><div class="h">Coloca a la cast — ¿de dónde son?</div><div class="badges"><span class="badge skill">👁️ Leer</span><span class="badge skill">🎙️ Hablar</span><span class="badge">👥 En parejas</span><span class="badge">± 5 min</span><span class="stars">★★☆</span></div></div></div>
     <p>Une cada personaje con su <b>parada</b> en el mapa. Luego dilo en voz alta con el marco. <span class="gloss">Verbind elk personage met zijn halte op de kaart; zeg het daarna hardop.</span></p>
-    <div style="margin-left:12.5mm"><table class="mp"><tr><th>Personaje</th><th>→ Parada</th></tr>
-      <tr><td><b>Lucía</b></td><td>………</td></tr>
-      <tr><td><b>Diego</b></td><td>………</td></tr>
-      <tr><td><b>Valen</b></td><td>………</td></tr>
-      <tr><td><b>Nina</b></td><td>………</td></tr>
+    <div style="margin-left:12.5mm"><table class="mp wtab"><tr><th style="width:34%">Personaje</th><th>→ Parada</th></tr>
+      <tr><td><b>Lucía</b></td><td><span class="wl md"></span></td></tr>
+      <tr><td><b>Diego</b></td><td><span class="wl md"></span></td></tr>
+      <tr><td><b>Valen</b></td><td><span class="wl md"></span></td></tr>
+      <tr><td><b>Nina</b></td><td><span class="wl md"></span></td></tr>
     </table>
     <p class="words" style="background:var(--crema);border-radius:10pt;padding:3mm 4mm;margin-left:0"><b>Banco:</b> Cusco (Perú) · Sevilla (España) · Cartagena (Colombia) · CDMX (México). <b>Marco:</b> «<b>Lucía es de Sevilla, está en España.</b>» → <i>… es de … , está en …</i></p></div>
     <span class="steun">Apoyo: woordenbank (de paradas staan er) → zinsframe</span></div>
@@ -1136,11 +1235,11 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
   <div class="act">
     <div class="acthead"><span class="anum">3</span><div><div class="h">¿España o Hispanoamérica? — completa el par</div><div class="badges"><span class="badge skill">✍️ Escribir</span><span class="badge">👤 Solo</span><span class="badge">± 4 min</span><span class="stars">★★☆</span></div></div></div>
     <p>Ya conoces el par. Completa la palabra de Hispanoamérica — te damos la <b>letra inicial</b>. <span class="gloss">Je kent het paar al; vul het woord uit Spaanstalig Amerika aan met de beginletter als hint.</span></p>
-    <div style="margin-left:12.5mm"><table class="mp"><tr><th>🇪🇸 España</th><th>🌎 Hispanoamérica</th></tr>
-      <tr><td>el coche</td><td>el c________</td></tr>
-      <tr><td>el móvil</td><td>el c________</td></tr>
-      <tr><td>la patata</td><td>la p____</td></tr>
-      <tr><td>el zumo</td><td>el j____</td></tr>
+    <div style="margin-left:12.5mm"><table class="mp wtab"><tr><th style="width:50%">🇪🇸 España</th><th>🌎 Hispanoamérica</th></tr>
+      <tr><td>el coche</td><td>el c<span class="wl md"></span></td></tr>
+      <tr><td>el móvil</td><td>el c<span class="wl md"></span></td></tr>
+      <tr><td>la patata</td><td>la p<span class="wl md"></span></td></tr>
+      <tr><td>el zumo</td><td>el j<span class="wl md"></span></td></tr>
     </table></div>
     <span class="steun">Apoyo: beginletter als cue → sin ayuda</span></div>
 
@@ -1148,6 +1247,13 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
     <div class="acthead"><span class="anum">4</span><div><div class="h">Comunica — mini-encuesta: ¿qué palabra prefieres?</div><div class="badges"><span class="badge skill">🎙️ Hablar</span><span class="badge skill">✍️ Escribir</span><span class="badge">👥 En grupo</span><span class="badge">± 8 min</span><span class="stars">★★★</span></div></div></div>
     <p><b>Situación:</b> llenas tu mochila con tus primeras palabras. Elige de la tabla tu «duo» favorito y di o escribe <b>qué forma usarías y por qué</b> (¿el sonido? ¿la palabra?). Luego cuenta el resultado de la clase. <span class="gloss">Kies je favoriete woordpaar en zeg/schrijf welke vorm jij zou gebruiken en waarom; breng daarna verslag uit over de klas.</span></p>
     <p class="words" style="background:var(--crema);border-radius:10pt;padding:3mm 4mm"><b>Marco (mag weg):</b> «<b>Yo prefiero «______» porque ______.</b>» → «Yo prefiero «celular» porque suena bien.» <b>Informe:</b> «En mi clase, cinco prefieren «coche» y tres prefieren «carro».» <span class="gloss">Afzender: jij · ontvanger: de klas · doel: een voorkeur uitdrukken · resultaat: een klasverslagje.</span></p>
+    <div style="margin-left:12.5mm">
+      <div class="steun" style="margin:0 0 1mm">Mi preferencia <span class="gloss">— mijn voorkeur + waarom:</span></div>
+      <div class="wbox"></div>
+      <div class="steun" style="margin:2.4mm 0 1mm">El informe de la clase <span class="gloss">— het klasverslagje:</span></div>
+      <div style="margin:1mm 0"><span class="wl full"></span></div>
+      <div style="margin:2mm 0"><span class="wl full"></span></div>
+    </div>
     <span class="steun">Apoyo: enkel het communicatieve doel · sin ayuda lingüística</span></div>
 
   <div class="esen"><b class="tt">Lo esencial de esta parada</b>
@@ -1249,33 +1355,51 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
   <div class="act">
     <div class="acthead"><span class="anum">1</span><div><div class="h">Prepara tu tarjeta 🎫</div><div class="badges"><span class="badge skill">✍️ Escribir</span><span class="badge">👤 Solo</span><span class="badge">± 4 min</span><span class="stars">★☆☆</span></div></div></div>
     <p>Vul je instapkaart in: <b>NOMBRE</b> (jouw naam) · <b>DESTINO: ESPAÑA</b> · <b>RUTA: EL MUNDO HISPANO</b> · <b>PUERTA: U0</b>. <span class="gloss">Vul de velden van je tarjeta de embarque in.</span></p>
+    <div style="margin-left:12.5mm"><table class="mp wtab">
+     <thead><tr><th style="width:36%">🎫 Tarjeta de embarque · La Ruta</th><th>Completa <span style="font-weight:400;text-transform:none">— vul jouw kaart in</span></th></tr></thead>
+     <tr><td><b>NOMBRE</b> <span class="gloss">(naam)</span></td><td><span class="wl lg"></span></td></tr>
+     <tr><td><b>DESTINO</b> <span class="gloss">(bestemming)</span></td><td><span class="wl lg"></span></td></tr>
+     <tr><td><b>RUTA</b> <span class="gloss">(route)</span></td><td><span class="wl lg"></span></td></tr>
+     <tr><td><b>PUERTA</b> <span class="gloss">(gate)</span></td><td><span class="wl md"></span></td></tr>
+     <tr><td><b>ASIENTO</b> <span class="gloss">(stoel — kies zelf)</span></td><td><span class="wl md"></span></td></tr>
+    </table></div>
     <span class="steun">Apoyo: modelo (de ingevulde model-tarjeta ernaast)</span></div>
 
   <div class="act">
     <div class="acthead"><span class="anum">2</span><div><div class="h">Ensaya el alfabeto con tu nombre 🔤</div><div class="badges"><span class="badge skill">🎙️ Hablar</span><span class="badge">👤 Solo</span><span class="badge">± 5 min</span><span class="stars">★★☆</span></div></div></div>
     <p>Spel je naam <b>hardop</b>, letter per letter. Twijfel je bij een letter? Check de mochila-tip hierboven (W · Y · J · H). <span class="gloss">Oefen je naam spellen; gebruik het alfabet uit §1.</span></p>
+    <div style="margin-left:12.5mm;font-size:9.4pt"><b>Mi nombre, letra por letra</b> <span class="gloss">(schrijf het even ter voorbereiding, dan spel je hardop)</span>:<br><span class="wl full"></span></div>
     <span class="steun">Apoyo: banco de palabras (alfabet + valstrik-letters)</span></div>
   <div class="asset">[AUDIO: alfabet-referentie per letter (uit §1) als naslag beschikbaar tijdens deze paso.]</div>
 
   <div class="act">
     <div class="acthead"><span class="anum">3</span><div><div class="h">Escribe tu mini-diálogo ✍️</div><div class="badges"><span class="badge skill">✍️ Escribir</span><span class="badge">👤 Solo</span><span class="badge">± 6 min</span><span class="stars">★★☆</span></div></div></div>
     <p>Bouw je kennismaking met dit frame: <b>groet → naam → spellen → jouw klasvraag → afscheid</b>. <span class="gloss">Schrijf je eigen dialoog door de invulplaatsen aan te vullen.</span></p>
-    <div style="margin-left:12.5mm"><table class="mp"><tr><th>Zinsframe — vul aan</th></tr>
-      <tr><td>¡Hola! ______.&nbsp;&nbsp;Yo soy ______.</td></tr>
-      <tr><td>¿Cómo se escribe? → Se escribe: ______.</td></tr>
-      <tr><td>Una pregunta: ¿cómo se dice «______» en español?</td></tr>
-      <tr><td>¡Gracias! ______!</td></tr></table></div>
+    <div style="margin-left:12.5mm"><table class="mp wtab"><thead><tr><th>Zinsframe — vul aan <span style="font-weight:400;text-transform:none">(het frame is je steun; schrijf jouw woorden op de lijn)</span></th></tr></thead>
+      <tr><td>¡Hola! <span class="wl sm"></span> . &nbsp;&nbsp; Yo soy <span class="wl md"></span> .</td></tr>
+      <tr><td>¿Cómo se escribe? → Se escribe: <span class="wl lg"></span> .</td></tr>
+      <tr><td>Una pregunta: ¿cómo se dice «<span class="wl md"></span>» en español?</td></tr>
+      <tr><td>¡Gracias! <span class="wl sm"></span> !</td></tr></table></div>
     <span class="steun">Apoyo: zinsframe met invulplaatsen</span></div>
 
   <div class="act">
     <div class="acthead"><span class="anum">4</span><div><div class="h">Practica con un/a compañero/a 🗣️</div><div class="badges"><span class="badge skill">👥 Interacción</span><span class="badge">👥 En parejas</span><span class="badge">± 7 min</span><span class="stars">★★★</span></div></div></div>
     <p><b>A</b> begroet en stelt zich voor; <b>B</b> luistert, vraagt <i>«¿Cómo se escribe?»</i> en A spelt. Wissel dan van rol. <span class="gloss">Voer het gesprek in duo; wissel van beurt.</span></p>
+    <div style="margin-left:12.5mm"><table class="mp wtab">
+     <thead><tr><th>Nota — mi turno <span style="font-weight:400;text-transform:none">(korte notitie voor jouw beurt)</span></th><th style="width:16%">✓ dicho</th></tr></thead>
+     <tr><td>Turno A — saludo + me presento + deletreo <span class="gloss">(groeten + spellen)</span>: <span class="wl md"></span></td><td style="text-align:center">☐</td></tr>
+     <tr><td>Turno B — pregunto «¿Cómo se escribe?» y escucho <span class="gloss">(ik vraag en luister)</span>: <span class="wl md"></span></td><td style="text-align:center">☐</td></tr>
+    </table></div>
     <span class="steun">Apoyo: alleen cue (stappen als iconen; frame mag dicht)</span></div>
   <div class="asset">[ICOON: turn-taking — «tu turno / responde / pregunta».]</div>
 
   <div class="act">
     <div class="acthead"><span class="anum">★</span><div><div class="h">Preséntate — a la puerta de embarque 🎤</div><div class="badges"><span class="badge skill">🎙️ Hablar</span><span class="badge">👥 A la clase</span><span class="badge">± 8 min</span><span class="stars">★★★</span></div></div></div>
     <p><b>Eindtaak:</b> stel je nu <b>zónder frame</b> voor aan de klas of de mochila (of neem een spraakbericht op). Alleen je ingevulde tarjeta in de hand. <span class="gloss">Doe het echt: live aan de klas of als opname, zonder taalsteun.</span></p>
+    <div style="margin-left:12.5mm"><table class="mp wtab">
+     <thead><tr><th>Mi presentación <span style="font-weight:400;text-transform:none">— en vivo / grabada</span></th><th style="width:16%">✓ hecho</th></tr></thead>
+     <tr><td>Me he presentado a la clase / la mochila, sin frame <span class="gloss">(voorgesteld, zonder steun)</span></td><td style="text-align:center">☐</td></tr>
+    </table></div>
     <span class="steun">Apoyo: GEEN taalsteun — enkel je tarjeta</span></div>
   <div class="asset">[AUDIO: opnamefunctie in de HTML-versie · print = live aan de klas.]</div>
 
@@ -1307,7 +1431,7 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
     <tr><td class="L">Comprensibilidad <span class="gloss">verstaanbaar</span></td><td>vlot te volgen</td><td>soms herhaling nodig</td><td>moeilijk te volgen</td></tr>
   </tbody></table>
 
-  <div class="guide" style="margin-top:6mm"><div class="ic">🎒</div><div><span class="hand">Mi punto fuerte hoy · Mi próximo objetivo</span> <span class="g">— reflexión: vandaag ging goed: ______ · volgende keer beter: ______ (kort, Nederlands mag).</span></div></div>
+  <div class="guide" style="margin-top:6mm"><div class="ic">🎒</div><div><span class="hand">Mi punto fuerte hoy · Mi próximo objetivo</span> <span class="g">— reflexión: vandaag ging goed: <span class="wl md"></span> · volgende keer beter: <span class="wl md"></span> (kort, Nederlands mag).</span></div></div>
 
   <div class="bridge"><b>» Al final de la parada 0.</b> Antes del §V (het woordenschat-naslag) bundelt de <b>Repaso</b> alles: één overzicht, één gemengde herhaling en één geconsolideerd semáforo. <span class="gloss">Je bent aan het eind van parada 0; hierna komt de Repaso van de hele unit.</span></div>
 </div>
@@ -1354,7 +1478,7 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
       <div class="t2">🔴 <i>Tengo 15 años</i>, no <s>soy 15</s>.</div></div>
   </div>
 
-  <div class="asset">[BEELD: SummaryQuadrant — één A4-overzichtsplaat, vier kwadranten (kaart · klank · sombrero · getallen/groeten) met de mochila in het midden en de reisband eromheen. Dient ook als «spiekkaart». Alt-tekst: «overzichtsplaat van Unidad 0 met vier vakken». Grijswaarden-veilig.]</div>
+  <div style="break-inside:avoid;margin:3mm 0"><svg viewBox="0 0 720 240" width="100%" role="img" aria-label="Overzichtsplaat van Unidad 0 in vier vakken: de wereld, de klanken, het accent, en de getallen en groeten, met de mochila in het midden." style="margin:3mm 0;font-family:'Inter',sans-serif"><defs><style>.d{font-family:'Bricolage Grotesque',sans-serif;font-weight:700}</style></defs><rect x="6" y="6" width="326" height="100" rx="12" fill="#fff" stroke="#E4E3DE"/><circle cx="30" cy="31" r="14" fill="#E4F4EE"/><text x="30" y="36" text-anchor="middle" font-size="14">🗺️</text><text x="52" y="36" font-size="12" class="d" fill="#157355">EL MUNDO</text><text x="21" y="56" font-size="9" fill="#20242E">+20 países · España → México · Colombia</text><text x="21" y="71" font-size="9" fill="#20242E">Perú</text><rect x="388" y="6" width="326" height="100" rx="12" fill="#fff" stroke="#E4E3DE"/><circle cx="412" cy="31" r="14" fill="#E4F4EE"/><text x="412" y="36" text-anchor="middle" font-size="14">🔊</text><text x="434" y="36" font-size="12" class="d" fill="#157355">EL SONIDO</text><text x="403" y="56" font-size="9" fill="#20242E">h muda · b=v · j/ge/gi=jota · ll/y=«j»</text><text x="403" y="71" font-size="9" fill="#20242E">ñ=«nj» · z/ce/ci=«th»</text><rect x="6" y="132" width="326" height="100" rx="12" fill="#fff" stroke="#E4E3DE"/><circle cx="30" cy="157" r="14" fill="#E4F4EE"/><text x="30" y="162" text-anchor="middle" font-size="14">＾</text><text x="52" y="162" font-size="12" class="d" fill="#157355">EL SOMBRERO</text><text x="21" y="182" font-size="9" fill="#20242E">aguda/llana/esdrújula · esdrújula→siempre ´</text><text x="21" y="197" font-size="9" fill="#20242E">aguda -n/-s/vocal → ´</text><rect x="388" y="132" width="326" height="100" rx="12" fill="#fff" stroke="#E4E3DE"/><circle cx="412" cy="157" r="14" fill="#E4F4EE"/><text x="412" y="162" text-anchor="middle" font-size="14">123</text><text x="434" y="162" font-size="12" class="d" fill="#157355">NÚMEROS & SALUDOS</text><text x="403" y="182" font-size="9" fill="#20242E">0–15 · 16–29 één woord</text><text x="403" y="197" font-size="9" fill="#20242E">30+ decena y unidad · Hola/¿Qué tal?</text><circle cx="360" cy="119" r="22" fill="#1E9E74"/><text x="360" y="127" text-anchor="middle" font-size="20">🎒</text></svg></div>
 
   <div class="bridge"><b>» De vista al recuerdo.</b> Ya tienes el vistazo. Ahora <b>ciérralo</b> y recupera de memoria — mezclando secciones, sin pista previa. <span class="gloss">Nu heb je het overzicht; sluit het en haal alles uit je hoofd op — secties door elkaar, zonder aangeduide regel.</span></div>
 </div>
@@ -1368,33 +1492,53 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
   <div class="act">
     <div class="acthead"><span class="anum">1</span><div><div class="h">Pasaporte fonético</div><div class="badges"><span class="badge skill">🎙️ Hablar</span><span class="badge">👤 Solo</span><span class="badge">± 5 min</span><span class="stars">★★★</span></div></div></div>
     <p>Lee en voz alta seis <b>nuevas palabras de viaje</b>, correctas de <b>sonido y acento</b>, y di de qué <b>familia</b> es cada acento: <b>Zaragoza · Málaga · Bogotá · Cáceres · Ecuador · Panamá</b>. <span class="gloss">Lees zes nieuwe reiswoorden hardop — juiste klank én klemtoon — en benoem per woord de familie (aguda/llana/esdrújula).</span></p>
+    <div style="margin-left:12.5mm"><table class="mp wtab">
+     <thead><tr><th style="width:34%">Palabra</th><th>Familia del acento <span style="font-weight:400;text-transform:none">— aguda · llana · esdrújula</span></th><th style="width:14%">✓ dicho</th></tr></thead>
+     <tr><td>Zaragoza</td><td><span class="wl md"></span></td><td style="text-align:center">☐</td></tr>
+     <tr><td>Málaga</td><td><span class="wl md"></span></td><td style="text-align:center">☐</td></tr>
+     <tr><td>Bogotá</td><td><span class="wl md"></span></td><td style="text-align:center">☐</td></tr>
+     <tr><td>Cáceres</td><td><span class="wl md"></span></td><td style="text-align:center">☐</td></tr>
+     <tr><td>Ecuador</td><td><span class="wl md"></span></td><td style="text-align:center">☐</td></tr>
+     <tr><td>Panamá</td><td><span class="wl md"></span></td><td style="text-align:center">☐</td></tr>
+    </table></div>
     <span class="steun">Apoyo: GEEN · het model [AUDIO] komt pas ná je poging · transfer §1 + §2</span></div>
 
   <div class="act">
     <div class="acthead"><span class="anum">2</span><div><div class="h">Dictado mixto</div><div class="badges"><span class="badge skill">👂 Escuchar</span><span class="badge skill">✍️ Escribir</span><span class="badge">👤 Solo</span><span class="badge">± 6 min</span><span class="stars">★★☆</span></div></div></div>
     <p>Oyes cuatro frases cortas; escribe el <b>número en cifras y en letras</b>, con la <b>tilde</b> correcta. Después te corriges con la capa de respuestas. <span class="gloss">Je hoort vier korte zinnen; schrijf het getal in cijfers én in letters, met de juiste tilde. Daarna zelfcorrectie.</span></p>
-    <div style="margin-left:12.5mm"><table class="mp"><tr><th>Oyes…</th><th>cifras</th><th>letras (+ tilde)</th></tr>
-      <tr><td>Tengo … años.</td><td>16</td><td>dieciséis</td></tr>
-      <tr><td>Vivo en el número …</td><td>22</td><td>veintidós</td></tr>
-      <tr><td>Somos … en clase.</td><td>33</td><td>treinta y tres</td></tr>
-      <tr><td>Cuesta … euros.</td><td>100</td><td>cien</td></tr></table>
-    <div class="ojo" style="margin-top:2mm"><b>¡Ojo!</b> <i>dieciséis · veintidós</i> = <b>één woord</b> mét tilde; <i>treinta y tres</i> = <b>drie woorden</b>, geen tilde. <span class="gloss">Aaneen-schrijven én de tilde zijn hier de valstrik.</span></div></div>
+    <div style="margin-left:12.5mm"><table class="mp wtab"><thead><tr><th>Oyes…</th><th style="width:20%">cifras</th><th style="width:34%">letras (+ tilde)</th></tr></thead>
+      <tr><td>Tengo … años.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>
+      <tr><td>Vivo en el número …</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>
+      <tr><td>Somos … en clase.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>
+      <tr><td>Cuesta … euros.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr></table>
+    <div class="ojo" style="margin-top:2mm"><b>¡Ojo!</b> Los números <b>16–29</b> se escriben en <b>una sola palabra</b> y algunos llevan tilde; los de <b>31–99</b> van en <b>tres palabras</b> con <i>y</i> y sin tilde. <span class="gloss">Aaneen-schrijven (16–29) mét soms tilde, of drie woorden met <i>y</i> zonder tilde (31–99) — dát is hier de valstrik.</span></div></div>
     <span class="steun">Apoyo: geen woordenbank · gemengde ophaal §3 + §2</span></div>
 
   <div class="act">
     <div class="acthead"><span class="anum">3</span><div><div class="h">La mezcla — quiz sin cue</div><div class="badges"><span class="badge skill">🧠 Repasar</span><span class="badge">👤 Solo</span><span class="badge">± 5 min</span><span class="stars">★★☆</span></div></div></div>
-    <p>Cinco mini-ítems, cada uno de una <b>sección distinta</b>: tú eliges la regla correcta. <span class="gloss">Vijf mini-items, elk uit een andere sectie — kies zelf de juiste regel.</span></p>
-    <div style="margin-left:12.5mm"><table class="mp"><tr><th>#</th><th>Ítem</th><th>Sección</th></tr>
-      <tr><td>1</td><td>¿Lleva tilde: «Peru» o «Perú»?</td><td>§2</td></tr>
-      <tr><td>2</td><td>¿Suena la «h» en «hola»?</td><td>§1</td></tr>
-      <tr><td>3</td><td>Escribe 47 en letras.</td><td>§3</td></tr>
-      <tr><td>4</td><td>¿«Encantado» o «encantada» dice Nina?</td><td>§4</td></tr>
-      <tr><td>5</td><td>Clasifica: llana / esdrújula → «casa», «México».</td><td>§2</td></tr></table></div>
+    <p>Cinco mini-ítems, cada uno de una <b>sección distinta</b>: tú eliges la regla correcta y la escribes. <span class="gloss">Vijf mini-items, elk uit een andere sectie — kies zelf de juiste regel en schrijf je antwoord.</span></p>
+    <div style="margin-left:12.5mm"><table class="mp wtab"><thead><tr><th style="width:7%">#</th><th>Ítem</th><th style="width:12%">Sección</th><th style="width:32%">Mi respuesta</th></tr></thead>
+      <tr><td>1</td><td>¿Lleva tilde: «Peru» o «Perú»?</td><td>§2</td><td><span class="wl md"></span></td></tr>
+      <tr><td>2</td><td>¿Suena la «h» en «hola»?</td><td>§1</td><td><span class="wl md"></span></td></tr>
+      <tr><td>3</td><td>Escribe 47 en letras.</td><td>§3</td><td><span class="wl md"></span></td></tr>
+      <tr><td>4</td><td>¿«Encantado» o «encantada» dice Nina?</td><td>§4</td><td><span class="wl md"></span></td></tr>
+      <tr><td>5</td><td>Clasifica: llana / esdrújula → «casa», «México».</td><td>§2</td><td><span class="wl md"></span></td></tr></table></div>
     <span class="steun">Apoyo: geen · jij kiest de regel · gemengde quiz</span></div>
 
   <div class="act">
     <div class="acthead"><span class="anum">4</span><div><div class="h">Check-in en la puerta</div><div class="badges"><span class="badge skill">👥 Interacción</span><span class="badge">👥 En parejas</span><span class="badge">± 8 min</span><span class="stars">★★★</span></div></div></div>
     <p>Mini-diálogo en pareja que <b>recicla todo</b>: saluda → preséntate con <b>nombre + origen + edad</b> → <b>deletrea</b> tu nombre → haz <b>una pregunta de clase</b> → despídete. <span class="gloss">Duo-gesprek dat álles recycleert: groeten → voorstellen met naam + herkomst + leeftijd → naam spellen → één klasvraag → afscheid.</span></p>
+    <div style="margin-left:12.5mm"><table class="mp wtab">
+     <thead><tr><th>Mi guion — check-in <span style="font-weight:400;text-transform:none">(orde volgen)</span></th><th style="width:14%">✓ dicho</th></tr></thead>
+     <tr><td>1. Saludar — <i>¡Hola! / Buenos días</i></td><td style="text-align:center">☐</td></tr>
+     <tr><td>2. Presentarme — <b>nombre + origen + edad</b></td><td style="text-align:center">☐</td></tr>
+     <tr><td>3. Deletrear mi nombre</td><td style="text-align:center">☐</td></tr>
+     <tr><td>4. Una pregunta de clase</td><td style="text-align:center">☐</td></tr>
+     <tr><td>5. Despedirme — <i>¡Adiós! / ¡Hasta luego!</i></td><td style="text-align:center">☐</td></tr>
+    </table>
+    <div style="margin:2.4mm 0"><b>Mi presentación</b> <span class="gloss">(schrijf hier je eigen naam + origen + edad als steun):</span></div>
+    <div style="margin:2.4mm 0"><span class="wl full"></span></div>
+    <div style="margin:2.4mm 0"><span class="wl full"></span></div></div>
     <div class="truc"><b>🟡 Truco:</b> esto es ya el <b>ensayo general</b> de tu Tarjeta de embarque. <span class="gloss">Dit is meteen de generale repetitie van de Tarjeta de embarque (Tarea final).</span></div>
     <span class="steun">Apoyo: GEEN · brug naar de Tarea · leren leren: geïntegreerd ophalen (A1)</span></div>
 </div>
@@ -1423,10 +1567,19 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
   <h3 style="margin-top:9mm">Mi mochila de palabras — ¿qué llevas ahora?</h3>
   <div class="guide"><div class="ic">🎒</div><div><span class="hand">Antes de cerrar la maleta, piensa un momento.</span> <span class="g">— sluit je rugzak pas na een korte reflectie; wat zit erin?</span></div></div>
 
+  <div style="margin-top:3mm"><table class="mp wtab">
+   <thead><tr><th style="width:50%">Mis palabras de U0 <span style="font-weight:400;text-transform:none">— cinco que quiero llevar (Español)</span></th><th>Nederlands</th></tr></thead>
+   <tr><td><span class="wl md"></span></td><td><span class="wl md"></span></td></tr>
+   <tr><td><span class="wl md"></span></td><td><span class="wl md"></span></td></tr>
+   <tr><td><span class="wl md"></span></td><td><span class="wl md"></span></td></tr>
+   <tr><td><span class="wl md"></span></td><td><span class="wl md"></span></td></tr>
+   <tr><td><b>Mi propia palabra:</b> <span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>
+  </table></div>
+
   <div class="esen"><b class="tt">Reflexión & vooruitblik</b>
     <ul>
-      <li><b>Mi punto fuerte de la Unidad 0:</b> ______________________ <span class="gloss">(mijn sterke punt — NL mag)</span></li>
-      <li><b>Mi próximo objetivo (U1):</b> ______________________ <span class="gloss">(mijn volgende doel voor U1)</span></li>
+      <li><b>Mi punto fuerte de la Unidad 0:</b> <span class="wl lg"></span> <span class="gloss">(mijn sterke punt — NL mag)</span></li>
+      <li><b>Mi próximo objetivo (U1):</b> <span class="wl lg"></span> <span class="gloss">(mijn volgende doel voor U1)</span></li>
       <li><b>Vooruitblik:</b> en <b>U1 «¿Quién eres?»</b> (parada <b>Madrid</b> 🇪🇸) gebruik je dit meteen opnieuw: je <b>spelt</b> je naam & e-mail, je zegt je <b>leeftijd</b> met <i>tener</i>, en je groeten openen elke kennismaking. <span class="gloss">Recycling zonder aankondiging — zo werkt de ruta.</span></li>
     </ul></div>
 
@@ -1648,9 +1801,22 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
     <div class="acthead"><span class="anum">2</span><div><div class="h">Clasifica las palabras — sorteerspel</div><div class="badges"><span class="badge skill">👀 Leer</span><span class="badge">👤 Solo</span><span class="badge">± 7 min</span><span class="stars">★★☆</span></div></div></div>
     <p>Leg elk woord in de juiste kolom. <span class="gloss">Sorteer de woorden per subthema.</span></p>
     <div style="margin-left:12.5mm">
-      <table class="mp"><tr><th>🔤 Metataal</th><th>🔢 Número</th><th>👋 Saludo</th><th>🗣️ Clase</th><th>🌍 Mundo</th></tr>
-        <tr><td>…</td><td>…</td><td>…</td><td>…</td><td>…</td></tr></table>
       <p class="words" style="margin-left:0;background:var(--crema);border-radius:10pt;padding:3mm 4mm"><b>Banco (door elkaar):</b> veintidós · esdrújula · ¿qué tal? · el carro · no entiendo · deletrear · Encantada · setenta · el país · más despacio · la tilde · belga.</p>
+      <div class="wcols" style="grid-template-columns:repeat(5,1fr)">
+        <div class="wcol"><div class="ch">🔤 Metataal<small>gereedschap</small></div><div class="cb tall"></div></div>
+        <div class="wcol"><div class="ch">🔢 Número<small>getal</small></div><div class="cb tall"></div></div>
+        <div class="wcol"><div class="ch">👋 Saludo<small>groet</small></div><div class="cb tall"></div></div>
+        <div class="wcol"><div class="ch">🗣️ Clase<small>klastaal</small></div><div class="cb tall"></div></div>
+        <div class="wcol"><div class="ch">🌍 Mundo<small>wereld</small></div><div class="cb tall"></div></div>
+      </div>
+      <div style="margin:2mm 0 1mm"><b>+ mi propia palabra</b> <span class="gloss">— schrijf één eigen woord per kolom</span></div>
+      <div class="wcols" style="grid-template-columns:repeat(5,1fr)">
+        <div class="wcol"><div class="cb short"></div></div>
+        <div class="wcol"><div class="cb short"></div></div>
+        <div class="wcol"><div class="cb short"></div></div>
+        <div class="wcol"><div class="cb short"></div></div>
+        <div class="wcol"><div class="cb short"></div></div>
+      </div>
     </div>
     <span class="steun">Apoyo: banco de palabras → daarna één eigen woord per kolom (productief)</span></div>
 
@@ -1658,11 +1824,11 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
     <div class="acthead"><span class="anum">3</span><div><div class="h">Empareja — situatie & chunk koppelen</div><div class="badges"><span class="badge skill">👀 Leer</span><span class="badge">👤 Solo</span><span class="badge">± 5 min</span><span class="stars">★☆☆</span></div></div></div>
     <p>Verbind elke <b>situatie</b> met de juiste <b>chunk</b>. <span class="gloss">Koppel situatie aan reddingszin.</span></p>
     <div style="margin-left:12.5mm">
-      <table class="mp"><tr><th>Situatie</th><th>Chunk</th></tr>
-        <tr><td>Je verstaat de docent niet goed.</td><td>…</td></tr>
-        <tr><td>Je kent een woord niet in het Spaans.</td><td>…</td></tr>
-        <tr><td>Je stelt je voor aan Lucía.</td><td>…</td></tr>
-        <tr><td>Iemand vraagt je leeftijd.</td><td>…</td></tr></table>
+      <table class="mp wtab"><thead><tr><th style="width:46%">Situatie</th><th>Chunk</th></tr></thead>
+        <tr><td>Je verstaat de docent niet goed.</td><td><span class="wl lg"></span></td></tr>
+        <tr><td>Je kent een woord niet in het Spaans.</td><td><span class="wl lg"></span></td></tr>
+        <tr><td>Je stelt je voor aan Lucía.</td><td><span class="wl lg"></span></td></tr>
+        <tr><td>Iemand vraagt je leeftijd.</td><td><span class="wl lg"></span></td></tr></table>
       <p class="words" style="margin-left:0;background:var(--crema);border-radius:10pt;padding:3mm 4mm"><b>Banco:</b> ¿Cómo se dice… en español? · Más despacio, por favor. · Me llamo… , soy de… · Tengo … años.</p>
     </div>
     <span class="steun">Apoyo: banco → daarna enkel pista</span></div>
@@ -1670,7 +1836,11 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
   <div class="act">
     <div class="acthead"><span class="anum">4</span><div><div class="h">Completa — eerste-lettersteun & de tilde</div><div class="badges"><span class="badge skill">✍️ Escribir</span><span class="badge">👤 Solo</span><span class="badge">± 6 min</span><span class="stars">★★☆</span></div></div></div>
     <p>Vul aan (betekenis + audio staan erbij). Zet de <b>tilde</b> alleen waar het moet: <span class="gloss">Vul de woorden af; let op waar het accent hoort.</span></p>
-    <p style="font-family:var(--hand);font-size:13pt;color:var(--gd)">e______ (aangenaam, ♀) · v______ y d____ (22) · d______r (spellen) · M____xico (land) · ¿c____mo te ll______s?</p>
+    <div style="margin-left:12.5mm;font-size:9.8pt">
+      <div style="margin:2.6mm 0"><b>1.</b> e<span class="wl md"></span> <span class="gloss">(aangenaam, ♀)</span> &nbsp;&nbsp; <b>2.</b> v<span class="wl sm"></span> y d<span class="wl sm"></span> <span class="gloss">(22)</span></div>
+      <div style="margin:2.6mm 0"><b>3.</b> d<span class="wl md"></span>r <span class="gloss">(spellen)</span> &nbsp;&nbsp; <b>4.</b> M<span class="wl sm"></span>xico <span class="gloss">(land)</span></div>
+      <div style="margin:2.6mm 0"><b>5.</b> ¿c<span class="wl sm"></span>mo te ll<span class="wl sm"></span>s?</div>
+    </div>
     <span class="steun">Apoyo: letra inicial → sin ayuda</span></div>
 
   <div class="act">
@@ -1681,6 +1851,8 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
         <tr><td rowspan="3">Yo</td><td>me llamo… / soy…</td><td>(naam)</td></tr>
         <tr><td>soy de…</td><td>(Bélgica / je stad)</td></tr>
         <tr><td>tengo…</td><td>… años</td></tr></table>
+      <div style="margin-top:2mm;font-size:9pt"><b>Modelo:</b> <i>«Hola, me llamo… , soy de… y tengo… años.»</i> — schrijf jouw versie één keer, zeg ze daarna zonder te kijken:</div>
+      <div class="wbox sm"></div>
     </div>
     <span class="steun">Apoyo: zinsframe → ronde 2 sin marco (uit het hoofd)</span></div>
 
@@ -1688,22 +1860,34 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
     <div class="acthead"><span class="anum">6</span><div><div class="h">Pregunta al revés — vraag bij het antwoord</div><div class="badges"><span class="badge skill">🗣️ Hablar</span><span class="badge">👥 En parejas</span><span class="badge">± 6 min</span><span class="stars">★★☆</span></div></div></div>
     <p>Bij elk <b>antwoord</b> maak jij de <b>vraag</b>: <span class="gloss">Vind de vraag die bij het antwoord past.</span></p>
     <div style="margin-left:12.5mm">
-      <table class="mp"><tr><th>Respuesta</th><th>¿Pregunta?</th></tr>
-        <tr><td>«Me llamo Nina.»</td><td>¿Cómo te llamas?</td></tr>
-        <tr><td>«Tengo quince años.»</td><td>¿…?</td></tr>
-        <tr><td>«Soy de Colombia.»</td><td>¿…?</td></tr>
-        <tr><td>«Se escribe con hache.»</td><td>¿…?</td></tr></table>
+      <table class="mp wtab"><thead><tr><th style="width:44%">Respuesta</th><th>¿Pregunta?</th></tr></thead>
+        <tr><td>«Me llamo Nina.»</td><td>¿Cómo te llamas? <span class="gloss">(modelo)</span></td></tr>
+        <tr><td>«Tengo quince años.»</td><td><span class="wl lg"></span></td></tr>
+        <tr><td>«Soy de Colombia.»</td><td><span class="wl lg"></span></td></tr>
+        <tr><td>«Se escribe con hache.»</td><td><span class="wl lg"></span></td></tr></table>
     </div>
     <span class="steun">Apoyo: cue (enkel het antwoord) → daarna korte wisseling met je buur</span></div>
 
   <div class="act">
     <div class="acthead"><span class="anum">7</span><div><div class="h">La rueda de la clase — mini-enquête</div><div class="badges"><span class="badge skill">🗣️ Hablar</span><span class="badge skill">✍️ Escribir</span><span class="badge">👥 En grupo</span><span class="badge">± 12 min</span><span class="stars">★★★</span></div></div></div>
-    <p><b>1.</b> Interview <b>vier</b> klasgenoten: <i>¿Cómo te llamas? · ¿Cuántos años tienes? · ¿De dónde eres?</i> · <b>2.</b> Noteer in een raster: <i>Nombre · Edad · Origen</i>. · <b>3.</b> Rapporteer in de 3e persoon: <i>«Tom <b>tiene</b> catorce años y es de <b>Bél</b>gica. La mayoría de la clase <b>tiene</b> quince años.»</i> <span class="gloss">Interview vier klasgenoten, noteer en rapporteer in de derde persoon.</span></p>
+    <p><b>1.</b> Interview <b>vier</b> klasgenoten: <i>¿Cómo te llamas? · ¿Cuántos años tienes? · ¿De dónde eres?</i> · <b>2.</b> Noteer in het raster: <i>Nombre · Edad · Origen</i>. · <b>3.</b> Rapporteer in de 3e persoon. <span class="gloss">Interview vier klasgenoten, noteer en rapporteer in de derde persoon.</span></p>
+    <div style="margin-left:12.5mm"><table class="mp wtab">
+      <thead><tr><th style="width:40%">Nombre</th><th style="width:20%">Edad</th><th>Origen</th></tr></thead>
+      <tr><td><span class="wl md"></span></td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>
+      <tr><td><span class="wl md"></span></td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>
+      <tr><td><span class="wl md"></span></td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>
+      <tr><td><span class="wl md"></span></td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>
+    </table>
+      <div style="margin-top:2mm;font-size:9pt"><b>Informe <span class="gloss">(3ª persona)</span>:</b> <i>«… <b>tiene</b> … años y es de … . La mayoría de la clase <b>tiene</b> … años.»</i></div>
+      <div class="wbox sm"></div>
+    </div>
     <span class="steun">Apoyo: geen taalsteun (enkel het doel) · zelfcorrectie via opname</span></div>
 
   <div class="act">
     <div class="acthead"><span class="anum">★</span><div><div class="h">Tu mensaje de embarque — spraakbericht & transfer</div><div class="badges"><span class="badge skill">🎙️ Hablar</span><span class="badge skill">👥 Interacción</span><span class="badge">± 10 min</span><span class="stars">★★★</span></div></div></div>
     <p><b>Afzender · ontvanger · doel · situatie · resultaat:</b> je staat aan de gate voor <b>España</b>. Neem een spraakbericht (± 20 s) op voor je medereizigers: <b>groet → stel je voor</b> (naam · herkomst · leeftijd) <b>→ spel je naam → stel één klasvraag → neem afscheid.</b> Gebruik woorden uit <b>minstens drie bloques</b> — kies ze zelf, geen lijst. <span class="gloss">Een spraakbericht van ± 20 s waarin je groet, jezelf voorstelt, je naam spelt, een vraag stelt en afscheid neemt.</span></p>
+    <div style="margin-left:12.5mm"><div style="font-size:9pt;margin-bottom:1mm"><b>Mi guion <span class="gloss">(één sleutelwoord per stap: saludo → nombre · origen · edad → deletreo → pregunta → despedida)</span>:</b></div>
+      <div class="wbox"></div></div>
     <div class="guide"><div class="ic">🎧</div><div><span class="hand">Feedback & herneming:</span> <span class="g">luister terug, kies één verbeterpunt en neem opnieuw op.</span></div></div>
     <span class="steun">Apoyo: geen — enkel je ingevulde tarjeta de embarque</span></div>
 
@@ -1711,12 +1895,12 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
   <div class="divider">Mi mochila personal · §V.4</div>
   <h3>§V.4 · Mi mochila personal</h3>
   <div class="intro" style="margin-top:1mm">Añade <b>cuatro</b> palabras que <b>tú</b> quieres recordar. <span class="gloss">Voeg vier eigen woorden toe die jij wil onthouden.</span></div>
-  <table class="alf"><thead>
-    <tr><th>Palabra (ES)</th><th>Imagen / símbolo</th><th>Mi ejemplo</th></tr></thead><tbody>
-    <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-    <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-    <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-    <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+  <table class="mp wtab"><thead>
+    <tr><th style="width:34%">Palabra (ES)</th><th style="width:26%">Imagen / símbolo <span style="font-weight:400;text-transform:none">— tekening</span></th><th>Mi ejemplo</th></tr></thead><tbody>
+    <tr><td><span class="wl md"></span></td><td></td><td><span class="wl lg"></span></td></tr>
+    <tr><td><span class="wl md"></span></td><td></td><td><span class="wl lg"></span></td></tr>
+    <tr><td><span class="wl md"></span></td><td></td><td><span class="wl lg"></span></td></tr>
+    <tr><td><span class="wl md"></span></td><td></td><td><span class="wl lg"></span></td></tr>
   </tbody></table>
 
   <h3 style="margin-top:6mm">Semáforo — ¿cómo llevo mi vocabulario? 🚦</h3>
@@ -1729,7 +1913,7 @@ table{ border-collapse:collapse; width:100%; font-size:8.9pt; margin:3mm 0; }
     <tr><td><b>deletrear</b> y hablar de letras/tildes (Bloque A)</td><td>☐</td><td>☐</td><td>☐</td></tr>
     <tr><td>situar <b>España y el mundo hispano</b> + reconocer variación (Bloque E)</td><td>☐</td><td>☐</td><td>☐</td></tr>
   </tbody></table>
-  <div class="truc"><b>✍️ Reflexión (mochila):</b> <i>Mi palabra favorita de la Unidad 0: ______ . Una palabra difícil: ______ .</i> <span class="gloss">Mijn favoriete woord van U0 · Een moeilijk woord.</span></div>
+  <div class="truc"><b>✍️ Reflexión (mochila):</b> <i>Mi palabra favorita de la Unidad 0: <span class="wl md"></span> . Una palabra difícil: <span class="wl md"></span> .</i> <span class="gloss">Mijn favoriete woord van U0 · Een moeilijk woord.</span></div>
 
   <!-- ===== Cross-refs (student-facing) ===== -->
   <div class="guide"><div class="ic">🔁</div><div><span class="hand">Sigue practicando:</span> <span class="g">📊 PowerPoint — flip-decks per bloque + herhalingsquiz · 💻 Online — flashcards, la rueda de la clase, tu mensaje de embarque · ➕ Extra — profe-video «números 0–100» + Genially «saludos».</span></div></div>
