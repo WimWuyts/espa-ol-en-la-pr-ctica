@@ -192,6 +192,55 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
 .rec .mood.on{border-color:var(--g);background:var(--gt)}
 .rec .warn{background:#fdeaea;color:var(--red);border-radius:10px;padding:8px 12px;font-size:13px;margin:6px 0}
 .rec audio{width:100%;margin-top:6px}
+/* ---- Banda sonora (Cultura · muziek) ---- */
+.bandas{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin:8px 0 4px}
+.banda{border:1px solid var(--line);border-top:4px solid var(--g);border-radius:14px;padding:12px 14px;background:var(--card);display:flex;flex-direction:column;gap:4px}
+.banda .top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.banda .ar{font-family:var(--disp);font-weight:700;font-size:16px;color:var(--gd)}
+.banda .fl{font-size:20px;line-height:1}
+.banda .sg{font-size:13px;color:var(--ink)}.banda .sg b{color:var(--ww)}
+.banda .ge{display:inline-block;background:var(--gt);color:var(--gd);border-radius:20px;padding:2px 9px;font-size:11px;font-weight:600;width:fit-content}
+.banda .bio{font-size:12.5px;color:var(--mut);line-height:1.5;margin-top:2px}
+.banda .spk-mini{align-self:flex-start;border:none;background:var(--gt);color:var(--gd);border-radius:8px;padding:4px 9px;font-weight:700;cursor:pointer;font-size:12px;margin-top:2px}
+.perla{background:linear-gradient(135deg,var(--gt),#fff);border:1px solid var(--g);border-left:6px solid var(--g)}
+[data-theme=dark] .perla{background:linear-gradient(135deg,var(--gt),var(--card))}
+.escala{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 2px}
+.escala .st{flex:1 1 100px;text-align:center;border-radius:10px;padding:7px 6px;font-size:12px;font-weight:600;border:1.5px solid var(--line)}
+.escala .st .em{font-size:20px;display:block}
+.musiclinks{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.musiclink{flex:1 1 210px;display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--card);text-decoration:none;color:var(--ink)}
+.musiclink .ic{font-size:22px}.musiclink b{color:var(--gd);display:block;font-size:14px}.musiclink small{color:var(--mut);font-size:12px}
+/* ---- inline zelfcorrigerende oefeningen ---- */
+.exhead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:2px}
+.exhead h3{font-family:var(--disp);margin:0;color:var(--ink);font-size:18px}
+.ex .desc{color:var(--mut);font-size:13px;margin:0 0 10px}
+.otra{border:none;background:var(--gt);color:var(--gd);border-radius:8px;padding:6px 12px;font-weight:700;cursor:pointer;font-size:13px;font-family:var(--disp);white-space:nowrap}
+.exq{border:1px solid var(--line);border-radius:12px;padding:11px 14px;margin:9px 0;background:var(--card)}
+.exq .qz{font-family:var(--disp);font-size:16px;margin-bottom:8px}
+.exq .qz .gap{display:inline-block;min-width:60px;border-bottom:2.5px solid var(--g);margin:0 3px;vertical-align:baseline}
+.exopts{display:flex;gap:8px;flex-wrap:wrap}
+.exopt{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:7px 13px;cursor:pointer;font-size:15px;font-weight:600;font-family:var(--body)}
+.exopt.ok{border-color:var(--g);background:var(--g);color:#fff}
+.exopt.no{border-color:var(--red);background:#fde8e8;color:var(--red)}
+.exopt[disabled]{cursor:default}
+.exwhy{margin-top:8px;font-size:13px;display:none;border-radius:8px;padding:7px 10px}
+.exwhy.show{display:block}
+.exwhy.g{background:var(--gt);color:var(--gd)}.exwhy.b{background:#fdeaea;color:var(--red)}
+.exscore{font-size:13px;color:var(--mut);margin-top:8px}
+.exscore b{color:var(--gd)}
+.mcol{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+.mcell{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:9px 12px;cursor:pointer;font-size:15px;text-align:center;font-weight:600;user-select:none}
+.mcell.sel{border-color:var(--g);background:var(--gt)}
+.mcell.done{border-color:var(--g);background:var(--g);color:#fff;cursor:default;opacity:.85}
+.mcell.bad{border-color:var(--red);background:#fde8e8}
+.oslots{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0;min-height:40px}
+.oslot{border:1.5px dashed var(--line);border-radius:9px;padding:7px 11px;font-size:14px;min-width:34px;color:var(--mut)}
+.oslot.filled{border-style:solid;border-color:var(--g);background:var(--gt);color:var(--ink)}
+.obank{display:flex;gap:7px;flex-wrap:wrap;margin-top:6px}
+.ochip{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 13px;cursor:pointer;font-size:15px;font-weight:600}
+.ochip.used{opacity:.35;cursor:default}
+.ochip.shake{animation:shk .3s}
+@keyframes shk{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 """
 
 def data_js():
@@ -231,7 +280,7 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   <div class="hero">
     <div class="mo">__MOCH__</div>
     <div><h1>U4 · Me gusta</h1>
-    <p>La página digital de la Unidad 4 (parada <b>València</b>): flashcards, gramática visual e interactiva y <b>24 juegos</b>. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie.</span></p></div>
+    <p>La página digital de la Unidad 4 (parada <b>València</b>): flashcards, gramática visual e interactiva, <b>+100 ejercicios</b> con autocorrección y <b>24 juegos</b>. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie.</span></p></div>
   </div>
   <div class="subnav" id="subnav"></div>
 
@@ -239,6 +288,12 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
     <h2 class="sec">Vocabulario · flashcards</h2>
     <p class="lead">Álle woorden van U4. Klik om te draaien; wissel ES↔NL; filter per groep; klik 🔊 om te horen. <span class="gloss">Voorkant = Spaans + voorbeeldzin, achterkant = vertaling.</span></p>
     __FC__
+    <h2 class="sec">Ejercicios de vocabulario · zelfcorrectie</h2>
+    <p class="lead">Oefen de woorden actief: koppelen, invullen, definities en de <b>intruder</b>. Elke oefening geeft directe feedback en je kunt telkens een <b>andere reeks</b> trekken. <span class="gloss">herkennen → onderscheiden → ophalen.</span></p>
+    <div class="card ex" id="vx_match"></div>
+    <div class="card ex" id="vx_gap"></div>
+    <div class="card ex" id="vx_def"></div>
+    <div class="card ex" id="vx_odd"></div>
     <h2 class="sec">Naslagwerk · zoeken</h2>
     __NAS__
   </section>
@@ -248,14 +303,31 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
     <p class="lead">Eerst betekenis en patroon ontdekken, dan de regel. Beweeg over de woorden, klik, en probeer. <span class="gloss">Alles binnen het thema van U4: gustar (al revés), pronombres, reacciones y querer/poder.</span></p>
     <div class="card" id="colorsent"></div>
     <div class="card" id="oiconj"></div>
+    <h3 class="subh">🧱 Gustar/querer al revés — construye la frase</h3>
+    <div class="card ex" id="gx_build"></div>
+    <h3 class="subh">⚖️ ¿gusta o gustan? — concordancia</h3>
     <div class="game" id="g_gusta"></div>
+    <div class="card ex" id="gx_gustaq"></div>
+    <h3 class="subh">🔁 Pronombres OI — me/te/le/nos/os/les</h3>
+    <div class="card ex" id="gx_oi"></div>
+    <div class="card ex" id="gx_pregresp"></div>
+    <h3 class="subh">🪞 Reacciones — también · tampoco · a mí sí/no</h3>
     <div class="game" id="g_reaccion"></div>
+    <div class="card ex" id="gx_reac"></div>
+    <h3 class="subh">🗓️ Querer · poder + infinitivo (quedar)</h3>
+    <div class="card ex" id="gx_querer"></div>
+    <h3 class="subh">🎯 Repaso mixto — rellena con feedback</h3>
+    <div class="card ex" id="gx_mix"></div>
   </section>
 
   <section class="panel" data-p="lectura">
     <h2 class="sec">Lectura · perfiles de gustos</h2>
     <p class="lead">Lees de twee muziekprofielen, <b>luister</b> ze (🔊 TTS) en <b>controleer je begrip</b>. Daarna reageer je met je eigen playlist — die neem je op in het tabblad <b>Hablar</b>. <span class="gloss">Keten: lezen → luisteren → spreken.</span></p>
     <div id="lecturawrap"></div>
+    <h3 class="subh">🔢 Ordena · plan, frecuencia y mensaje</h3>
+    <div class="card ex" id="lx_order"></div>
+    <h3 class="subh">🔎 Comprensión · escanea y escoge</h3>
+    <div class="card ex" id="lx_scan"></div>
   </section>
 
   <section class="panel" data-p="juegos">
@@ -280,17 +352,29 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
       <p>Cantante de <b>Barcelona</b>. Mezcla <b>flamenco</b> con pop y reguetón. Álbumes famosos: <i>El mal querer</i>, <i>Motomami</i>. Canta en español. <span class="gloss">Een brug tussen traditie en de charts van vandaag — perfect voor de klas. El español es de los idiomas más escuchados en las plataformas de música.</span></p></div>
     <div class="card"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px;display:flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg>El ocio joven 🏖️</h3>
       <p>Jongeren <b>salen con amigos</b>, escuchan música, ven series, hacen deporte y van a la playa. En <b>València</b>: las Fallas, la paella y la horchata. <span class="gloss">Muziek en samen zijn staan centraal. Contraste: el flamenco (tradición) ↔ el reguetón (actual).</span></p></div>
-    <div class="card"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px">Los artistas del momento 🎤</h3>
-      <p><b>ES:</b> La música en español suena en todo el mundo. Estas son algunas de las estrellas del momento — de España y de Latinoamérica. <span class="gloss">Spaanstalige muziek klinkt overal. Enkele van de grootste sterren van dit moment.</span></p>
-      <div class="artists">
-        <div class="ar"><b>Rosalía</b> 🇪🇸<small>flamenco + pop · «La Perla»</small></div>
-        <div class="ar"><b>Bad Bunny</b> 🇵🇷<small>reguetón / trap · «Baile inolvidable»</small></div>
-        <div class="ar"><b>Karol G</b> 🇨🇴<small>reguetón · «Si antes te hubiera conocido»</small></div>
-        <div class="ar"><b>Shakira</b> 🇨🇴<small>pop latino · «Hips Don't Lie»</small></div>
-        <div class="ar"><b>Feid</b> 🇨🇴<small>reguetón · «Luna»</small></div>
-        <div class="ar"><b>Quevedo</b> 🇪🇸<small>trap / urbano · «Quédate»</small></div>
+    <h3 class="subh">🎧 Banda sonora — leer Spaans via muziek die jullie kennen</h3>
+    <div class="card">
+      <p><b>ES:</b> Cada unidad tiene una <b>banda sonora</b>: canciones de artistas que suenan ahora. <b>Escucha, canta y aprende</b> palabras nuevas. Para esta unidad («Me gusta») usamos estrellas de España y de Latinoamérica. <span class="gloss">Elke unit heeft een banda sonora: nummers van artiesten van nu. Luister, zing mee en pik nieuwe woorden op — perfect voor «me gusta / me encanta».</span></p>
+      <div class="bandas" id="bandas"></div>
+      <p class="gloss" style="margin:8px 0 0">🔊 Klik op een kaartje om de artiest + het nummer te horen (TTS). Alle nummers staan in de klas-playlist hieronder.</p>
+    </div>
+    <div class="card perla"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px;display:flex;align-items:center;gap:8px">⭐ «La Perla» — Rosalía 🇪🇸 <span class="ge" style="display:inline-block;background:var(--gt);color:var(--gd);border-radius:20px;padding:2px 9px;font-size:11px;font-weight:600">canción de la unidad</span></h3>
+      <p><b>ES:</b> «La Perla» está en el álbum <b>LUX (2025)</b> de Rosalía. La canción habla, con humor, de una persona que no es de fiar («una perla»). <b>Escúchala</b> y di en la escala: ¿la <b>odias</b>, <b>no te gusta</b>, <b>te gusta</b> o <b>te encanta</b>? <span class="gloss">Uit het album LUX (2025). Gebruik de gustar-schaal om je mening te geven — dé U4-structuur.</span></p>
+      <div class="escala">
+        <div class="st" style="background:#fde8e8;border-color:#f5b5b5"><span class="em">😡</span>La odio</div>
+        <div class="st" style="background:#fef3c7;border-color:#f3d98b"><span class="em">🙁</span>No me gusta</div>
+        <div class="st" style="background:#e0f2e9;border-color:#9fd9bf"><span class="em">🙂</span>Me gusta</div>
+        <div class="st" style="background:#d1fadf;border-color:#6fd39b"><span class="em">😍</span>Me encanta</div>
       </div>
-      <p><span class="gloss">Beluister ze in de klas-playlist. Op de hub kun je «La Perla» van Rosalía en «Me gustas tú» (Manu Chao) meezingen (LyricsTraining).</span></p></div>
+      <p class="gloss" style="margin:6px 0 0">Parel uit het vorige project (PAREL-4). Beluister ze via de playlist of LyricsTraining hieronder, en gebruik daarna «gustar» om te reageren.</p></div>
+    <h3 class="subh">🎼 La playlist de la clase · canta con LyricsTraining</h3>
+    <div class="card">
+      <p><b>ES:</b> Escucha la playlist, y <b>completa la letra mientras escuchas</b> en LyricsTraining. También puedes ver los vídeos de las canciones. <span class="gloss">Luister naar de playlist en vul de songtekst aan terwijl je luistert (LyricsTraining). Extern = link.</span></p>
+      <div class="musiclinks">
+        <a class="musiclink" href="https://open.spotify.com/search/Rosal%C3%ADa%20Karol%20G%20Bad%20Bunny%20Quevedo%20Feid%20Shakira" target="_blank" rel="noopener"><span class="ic">🟢</span><span><b>Spotify · la playlist de la clase</b><small>Rosalía · Karol G · Bad Bunny · Quevedo · Feid · Shakira — scan de QR in het boek of open Spotify.</small></span></a>
+        <a class="musiclink" href="https://lyricstraining.com/es" target="_blank" rel="noopener"><span class="ic">🎤</span><span><b>LyricsTraining</b><small>Kies een nummer en vul de tekst aan terwijl je luistert (niveau «beginner»/«fácil»).</small></span></a>
+        <a class="musiclink" href="https://www.youtube.com/results?search_query=Rosal%C3%ADa+La+Perla" target="_blank" rel="noopener"><span class="ic">▶️</span><span><b>Los vídeos</b><small>Videoclips van de nummers — via YouTube (leerkracht kiest de klasversie).</small></span></a>
+      </div></div>
     <h3 class="subh">📍 La Ruta · ¿dónde estamos?</h3>
     <p class="lead">Onze parada 4: <b>València</b> 🇪🇸 (la costa). <b>Klik op een groen land</b> op de kaart voor info. Verderop: México → Colombia → Perú.</p>
     <div class="card" id="mapwrap">__MAP__<div class="mapinfo" id="mapinfo"><p class="gloss" style="margin:0">👆 Klik op een groen land (of een halte ★) om er meer over te lezen.</p></div></div>
@@ -493,7 +577,216 @@ function buildRecorders(){
    {text:'Propón un plan para el fin de semana (30 s).',cue:'para · Lucía / Diego',tip:'Heb je een plan + een uur gezegd? Neem opnieuw op.'}]});
 }
 
-renderFC();renderTable();gameGusta();gameReaccion();renderLectura();buildRecorders();
+// ---------- BANDA SONORA (Cultura · muziek) ----------
+function renderBandas(){const el=document.getElementById('bandas');if(!el)return;
+ const A=[
+  {ar:'Rosalía',fl:'🇪🇸',song:'La Perla',ge:'flamenco + pop',bio:'Es de <b>Barcelona</b> y mezcla el <b>flamenco</b> con pop y música urbana. Sus álbumes «Motomami» y «LUX» son famosos en todo el mundo. Canta casi siempre en español. <span style="color:var(--mut)">Brug tussen traditie en de charts van nu.</span>'},
+  {ar:'Karol G',fl:'🇨🇴',song:'Si antes te hubiera conocido',ge:'reguetón',bio:'«La Bichota» es de <b>Medellín (Colombia)</b>. Es una de las reinas del <b>reguetón</b>. Llena estadios por toda América y Europa. <span style="color:var(--mut)">Herkenbare hits, ideaal om «me encanta» te oefenen.</span>'},
+  {ar:'Bad Bunny',fl:'🇵🇷',song:'Baile inolvidable',ge:'reguetón / trap',bio:'Es de <b>Puerto Rico</b> y es la estrella más escuchada del <b>reguetón</b> y el trap. Defiende el español y su cultura caribeña. Su álbum «Debí tirar más fotos» (2025) es un éxito. <span style="color:var(--mut)">Bewijs dat Spaanstalige muziek de wereld verovert.</span>'},
+  {ar:'Shakira',fl:'🇨🇴',song:'Hips Don’t Lie',ge:'pop latino',bio:'Es de <b>Barranquilla (Colombia)</b> y canta en español e inglés. Mezcla pop, rock y ritmos latinos desde hace más de 20 años. <span style="color:var(--mut)">Klassieker die elke generatie kent.</span>'},
+  {ar:'Feid',fl:'🇨🇴',song:'Luna',ge:'reguetón',bio:'«Ferxxo» es de <b>Medellín</b> y hace <b>reguetón</b> moderno y relajado. Es muy popular entre los jóvenes. <span style="color:var(--mut)">Handig voor gustos + adjetivos (relajante, guay).</span>'},
+  {ar:'Quevedo',fl:'🇪🇸',song:'Quédate',ge:'trap / urbano',bio:'Es de las <b>Islas Canarias (España)</b>. Hace música <b>urbana</b> y trap. Su «Bzrp Session #52» batió récords. <span style="color:var(--mut)">Actueel Spaans van een jonge artiest.</span>'}];
+ el.innerHTML=A.map(a=>'<div class="banda" tabindex="0" data-say="'+(a.ar+', '+a.song).replace(/"/g,'&quot;')+'"><div class="top"><span class="ar">'+a.ar+'</span><span class="fl">'+a.fl+'</span></div><div class="sg">🎵 <b>'+a.song+'</b></div><span class="ge">'+a.ge+'</span><div class="bio">'+a.bio+'</div>'+(TTS?'<button class="spk-mini" type="button">🔊 escuchar</button>':'')+'</div>').join('');
+ el.querySelectorAll('.banda').forEach(c=>{const say=c.dataset.say;const go=()=>{if(TTS)speak(say);};
+   const b=c.querySelector('.spk-mini');if(b)b.onclick=e=>{e.stopPropagation();go();};
+   c.onclick=go;c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}};});}
+
+// ================= INLINE ZELFCORRIGERENDE OEFENINGEN =================
+function exSample(pool,n){const a=pool.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a.slice(0,Math.min(n,a.length));}
+function exEsc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function exFmt(s){return exEsc(s).replace(/___+/g,'<span class="gap">&nbsp;&nbsp;</span>');}
+
+// MEERKEUZE / GAP-FILL: pool item = {q, opts, ans, why}
+function buildChoice(id,cfg){
+ const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(6,cfg.pool.length);
+ function render(){const series=exSample(cfg.pool,per);let ok=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="qlist"></div><div class="exscore">Juist: <b class="ok">0</b>/'+series.length+'</div>';
+   host.querySelector('.otra').onclick=render;const list=host.querySelector('.qlist'),scoreEl=host.querySelector('.ok');
+   series.forEach(it=>{const q=document.createElement('div');q.className='exq';
+     q.innerHTML='<div class="qz">'+exFmt(it.q)+'</div><div class="exopts"></div><div class="exwhy"></div>';
+     const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy');let locked=false;
+     exSample(it.opts,it.opts.length).forEach(o=>{const b=document.createElement('button');b.className='exopt';b.type='button';b.textContent=o;
+       b.onclick=()=>{if(locked)return;locked=true;const good=o===it.ans;
+         opts.querySelectorAll('.exopt').forEach(x=>{x.disabled=true;if(x.textContent===it.ans)x.classList.add('ok');});
+         if(good){ok++;scoreEl.textContent=ok;}else{b.classList.add('no');}
+         why.className='exwhy show '+(good?'g':'b');why.innerHTML=(good?'✅ ¡correcto! ':'❌ → '+exEsc(it.ans)+'. ')+(it.why?exEsc(it.why):'');};
+       opts.appendChild(b);});
+     list.appendChild(q);});}
+ render();}
+
+// MATCHING: pool item = {a,b}  (b moet uniek zijn)
+function buildMatch(id,cfg){
+ const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(6,cfg.pool.length);
+ function render(){const series=exSample(cfg.pool,per);let doneN=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="mcol"><div class="mL"></div><div class="mR"></div></div><div class="exscore">Emparejados: <b class="ok">0</b>/'+series.length+'</div>';
+   host.querySelector('.otra').onclick=render;const L=host.querySelector('.mL'),R=host.querySelector('.mR'),scoreEl=host.querySelector('.ok');
+   const right=exSample(series.map((p,i)=>({p,i})),series.length);let selL=null,busy=false;
+   series.forEach((p,i)=>{const c=document.createElement('div');c.className='mcell';c.textContent=p.a;c.dataset.i=i;
+     c.onclick=()=>{if(busy||c.classList.contains('done'))return;if(selL)selL.classList.remove('sel');selL=c;c.classList.add('sel');};L.appendChild(c);});
+   right.forEach(o=>{const c=document.createElement('div');c.className='mcell';c.textContent=o.p.b;c.dataset.i=o.i;
+     c.onclick=()=>{if(busy||!selL||c.classList.contains('done'))return;busy=true;const good=selL.dataset.i===c.dataset.i;
+       if(good){selL.classList.remove('sel');selL.classList.add('done');c.classList.add('done');doneN++;scoreEl.textContent=doneN;selL=null;busy=false;}
+       else{c.classList.add('bad');const s=selL;setTimeout(()=>{c.classList.remove('bad');s.classList.remove('sel');selL=null;busy=false;},600);}};R.appendChild(c);});}
+ render();}
+
+// ORDENAR: cfg.rounds=[{sub, items:[{label,key}]}]
+function buildOrder(id,cfg){
+ const host=document.getElementById(id);if(!host)return;let ri=Math.floor(Math.random()*cfg.rounds.length);
+ function render(){const round=cfg.rounds[ri];const sorted=round.items.slice().sort((a,b)=>a.key-b.key);let pos=0,mist=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra ronda</button></div><p class="desc">'+cfg.desc+' · <b>'+exEsc(round.sub||'')+'</b></p><div class="oslots"></div><div class="obank"></div><div class="exwhy"></div>';
+   host.querySelector('.otra').onclick=()=>{ri=(ri+1)%cfg.rounds.length;render();};
+   const slots=host.querySelector('.oslots'),bank=host.querySelector('.obank'),why=host.querySelector('.exwhy');
+   sorted.forEach((_,i)=>{const s=document.createElement('div');s.className='oslot';s.textContent=(i+1);s.dataset.pos=i;slots.appendChild(s);});
+   exSample(round.items,round.items.length).forEach(it=>{const b=document.createElement('button');b.className='ochip';b.type='button';b.textContent=it.label;
+     b.onclick=()=>{if(b.classList.contains('used'))return;const exp=sorted[pos];
+       if(it.key===exp.key){b.classList.add('used');const sl=slots.querySelector('.oslot[data-pos="'+pos+'"]');sl.classList.add('filled');sl.textContent=(pos+1)+'. '+it.label;pos++;
+         if(pos>=sorted.length){why.className='exwhy show '+(mist===0?'g':'b');why.innerHTML=mist===0?'✅ ¡Perfecto! sin errores.':'✔ Completado con '+mist+' error(es). Prueba «otra ronda».';}}
+       else{mist++;b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake');why.className='exwhy show b';why.innerHTML='❌ Primero: <b>'+exEsc(exp.label)+'</b>';}};
+     bank.appendChild(b);});}
+ render();}
+
+// EL INTRUSO: pool item = {words:[...], odd, why}
+function buildOdd(id,cfg){
+ const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(5,cfg.pool.length);
+ function render(){const series=exSample(cfg.pool,per);let ok=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="qlist"></div><div class="exscore">Juist: <b class="ok">0</b>/'+series.length+'</div>';
+   host.querySelector('.otra').onclick=render;const list=host.querySelector('.qlist'),scoreEl=host.querySelector('.ok');
+   series.forEach(it=>{const q=document.createElement('div');q.className='exq';q.innerHTML='<div class="exopts"></div><div class="exwhy"></div>';
+     const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy');let locked=false;
+     exSample(it.words.map((w,i)=>({w,i})),it.words.length).forEach(o=>{const b=document.createElement('button');b.className='exopt';b.type='button';b.textContent=o.w;
+       b.onclick=()=>{if(locked)return;locked=true;const good=o.i===it.odd;opts.querySelectorAll('.exopt').forEach(x=>x.disabled=true);
+         if(good){ok++;scoreEl.textContent=ok;b.classList.add('ok');}else{b.classList.add('no');opts.querySelectorAll('.exopt').forEach(x=>{if(x.textContent===it.words[it.odd])x.classList.add('ok');});}
+         why.className='exwhy show '+(good?'g':'b');why.innerHTML=(good?'✅ ¡bien! ':'❌ → '+exEsc(it.words[it.odd])+'. ')+(it.why?exEsc(it.why):'');};
+       opts.appendChild(b);});
+     list.appendChild(q);});}
+ render();}
+
+function buildInlineExercises(){
+ // ---------- GRAMÁTICA ----------
+ buildOrder('gx_build',{title:'Construye: gustar / querer al revés',desc:'Tik de blokjes in de juiste volgorde (a + persona → pronombre → verbo → resto).',rounds:[
+   {sub:'a mí · gustar (ev.)',items:[{label:'A mí',key:1},{label:'me',key:2},{label:'gusta',key:3},{label:'la música',key:4}]},
+   {sub:'a mí · gustar (mv.)',items:[{label:'A mí',key:1},{label:'me',key:2},{label:'gustan',key:3},{label:'los deportes',key:4}]},
+   {sub:'a Lucía · encantar',items:[{label:'A Lucía',key:1},{label:'le',key:2},{label:'encanta',key:3},{label:'bailar',key:4}]},
+   {sub:'querer + infinitivo',items:[{label:'(Yo)',key:1},{label:'quiero',key:2},{label:'ir',key:3},{label:'al cine',key:4}]},
+   {sub:'poder + infinitivo',items:[{label:'¿(Tú)',key:1},{label:'puedes',key:2},{label:'quedar',key:3},{label:'el sábado?',key:4}]},
+   {sub:'quedar · la hora',items:[{label:'Quedamos',key:1},{label:'a las',key:2},{label:'cinco',key:3},{label:'en la playa',key:4}]}]});
+ buildChoice('gx_gustaq',{title:'Mini-quiz: ¿gusta o gustan?',desc:'Eén ding of infinitief → gusta · meerdere dingen → gustan.',per:6,pool:[
+   {q:'A mí me ___ la música.',opts:['gusta','gustan'],ans:'gusta',why:'la música = 1 ding'},
+   {q:'A mí me ___ los deportes.',opts:['gustan','gusta'],ans:'gustan',why:'los deportes = mv.'},
+   {q:'A ti te ___ bailar.',opts:['gusta','gustan'],ans:'gusta',why:'infinitivo → gusta'},
+   {q:'A ella le ___ las canciones.',opts:['gustan','gusta'],ans:'gustan',why:'las canciones = mv.'},
+   {q:'Nos ___ la playa.',opts:['gusta','gustan'],ans:'gusta',why:'la playa = ev.'},
+   {q:'Me ___ los videojuegos.',opts:['gustan','gusta'],ans:'gustan',why:'los videojuegos = mv.'},
+   {q:'Le ___ escuchar música.',opts:['gusta','gustan'],ans:'gusta',why:'infinitivo → gusta'},
+   {q:'¿Te ___ las series?',opts:['gustan','gusta'],ans:'gustan',why:'las series = mv.'},
+   {q:'Me ___ el fútbol.',opts:['gusta','gustan'],ans:'gusta',why:'el fútbol = ev.'},
+   {q:'Os ___ los conciertos.',opts:['gustan','gusta'],ans:'gustan',why:'los conciertos = mv.'}]});
+ buildChoice('gx_oi',{title:'Mini-quiz: el pronombre OI',desc:'Welk voornaamwoord hoort bij de persoon? (a mí → me · a ti → te · a él/ella → le · a nosotros → nos · a vosotros → os · a ellos → les)',per:6,pool:[
+   {q:'A mí ___ gusta el mar.',opts:['me','te','le'],ans:'me',why:'a mí → me'},
+   {q:'A ti ___ gustan los deportes.',opts:['te','me','le'],ans:'te',why:'a ti → te'},
+   {q:'A Lucía ___ encanta bailar.',opts:['le','me','les'],ans:'le',why:'a ella → le'},
+   {q:'A nosotros ___ gusta la playa.',opts:['nos','os','les'],ans:'nos',why:'a nosotros → nos'},
+   {q:'A vosotros ___ gusta el cine.',opts:['os','nos','les'],ans:'os',why:'a vosotros → os'},
+   {q:'A ellos ___ gustan las series.',opts:['les','le','nos'],ans:'les',why:'a ellos → les'},
+   {q:'A Diego ___ gusta el reguetón.',opts:['le','les','te'],ans:'le',why:'a él → le'},
+   {q:'A mí ___ encanta la música.',opts:['me','le','nos'],ans:'me',why:'a mí → me'},
+   {q:'¿A ti ___ gusta nadar?',opts:['te','le','os'],ans:'te',why:'a ti → te'},
+   {q:'A mis amigos ___ gusta la playa.',opts:['les','le','nos'],ans:'les',why:'a ellos → les'}]});
+ buildMatch('gx_pregresp',{title:'Empareja: pregunta ↔ respuesta',desc:'Koppel elke vraag/uitspraak aan de logische reactie.',per:6,pool:[
+   {a:'¿Te gusta bailar?',b:'Sí, me encanta.'},
+   {a:'¿Qué música te gusta?',b:'El pop y el reguetón.'},
+   {a:'¿Quieres ir al cine?',b:'Vale, ¿a qué hora?'},
+   {a:'¿A qué hora quedamos?',b:'A las cinco.'},
+   {a:'No me gusta el fútbol.',b:'A mí tampoco.'},
+   {a:'Me encanta la playa.',b:'A mí también.'},
+   {a:'¿Puedes el sábado?',b:'Sí, puedo.'},
+   {a:'¿Por qué no vamos a nadar?',b:'¡Buena idea!'}]});
+ buildChoice('gx_reac',{title:'Reacciona: también · tampoco · a mí sí/no',desc:'Kies de juiste reactie. Akkoord bij + → también · akkoord bij – → tampoco · NIET akkoord → a mí sí / a mí no.',per:6,pool:[
+   {q:'—Me gusta el mar. —A mí ___. (je bent het EENS, +)',opts:['también','tampoco','no'],ans:'también',why:'akkoord + → A mí también'},
+   {q:'—No me gusta el frío. —A mí ___. (EENS, –)',opts:['tampoco','también','sí'],ans:'tampoco',why:'akkoord – → A mí tampoco'},
+   {q:'—Me encanta bailar. —A mí ___. (NIET eens)',opts:['no','también','tampoco'],ans:'no',why:'oneens met + → A mí no'},
+   {q:'—No me gustan los lunes. —A mí ___. (NIET eens)',opts:['sí','tampoco','también'],ans:'sí',why:'oneens met – → A mí sí'},
+   {q:'—Me gustan los videojuegos. —A mí ___. (EENS, +)',opts:['también','tampoco','sí'],ans:'también',why:'akkoord + → también'},
+   {q:'—No me gusta madrugar. —A mí ___. (EENS, –)',opts:['tampoco','también','no'],ans:'tampoco',why:'akkoord – → tampoco'},
+   {q:'—Me encanta la música. —A mí ___. (NIET eens)',opts:['no','sí','tampoco'],ans:'no',why:'oneens met + → A mí no'},
+   {q:'—No me gusta el fútbol. —A mí ___. (NIET eens)',opts:['sí','no','también'],ans:'sí',why:'oneens met – → A mí sí'},
+   {q:'—Me gusta la playa. —A mí ___. (EENS, +)',opts:['también','tampoco','sí'],ans:'también',why:'akkoord + → también'},
+   {q:'—No me gustan las series. —A mí ___. (EENS, –)',opts:['tampoco','también','no'],ans:'tampoco',why:'akkoord – → tampoco'}]});
+ buildChoice('gx_querer',{title:'Completa: querer / poder + infinitivo',desc:'Kies de juiste vorm van het werkwoord tussen haakjes (e>ie querer · o>ue poder).',per:6,pool:[
+   {q:'(querer · yo) ___ ir a la playa.',opts:['quiero','quieres','quiere'],ans:'quiero',why:'yo → quiero'},
+   {q:'(querer · tú) ¿___ quedar el sábado?',opts:['quieres','quiero','quiere'],ans:'quieres',why:'tú → quieres'},
+   {q:'(querer · ella) Lucía ___ ver una película.',opts:['quiere','quieres','quieren'],ans:'quiere',why:'ella → quiere'},
+   {q:'(poder · tú) ¿___ venir a las cinco?',opts:['puedes','puedo','puede'],ans:'puedes',why:'tú → puedes'},
+   {q:'(poder · yo) Hoy no ___, lo siento.',opts:['puedo','puedes','puede'],ans:'puedo',why:'yo → puedo'},
+   {q:'(poder · nosotros) ¿___ quedar mañana?',opts:['podemos','podéis','pueden'],ans:'podemos',why:'nosotros → podemos'},
+   {q:'(querer · nosotros) ___ ir al cine.',opts:['queremos','queréis','quieren'],ans:'queremos',why:'nosotros → queremos'},
+   {q:'(poder · ellos) Ellos ___ jugar hoy.',opts:['pueden','podemos','puede'],ans:'pueden',why:'ellos → pueden'},
+   {q:'(querer · tú) ¿Qué ___ hacer?',opts:['quieres','quiere','quieren'],ans:'quieres',why:'tú → quieres'},
+   {q:'(poder · ella) Nina ___ tocar la guitarra.',opts:['puede','puedes','pueden'],ans:'puede',why:'ella → puede'}]});
+ buildChoice('gx_mix',{title:'Repaso mixto: rellena',desc:'Alles door elkaar: gusta/gustan · pronombres OI · reacciones · querer/poder.',per:8,pool:[
+   {q:'A mí me ___ los deportes.',opts:['gustan','gusta'],ans:'gustan',why:'mv. → gustan'},
+   {q:'A Lucía ___ encanta bailar.',opts:['le','me','les'],ans:'le',why:'a ella → le'},
+   {q:'—Me gusta el mar. —A mí ___.',opts:['también','tampoco','sí'],ans:'también',why:'akkoord + → también'},
+   {q:'(querer · yo) ___ ir a la playa.',opts:['quiero','quieres','quiere'],ans:'quiero',why:'yo → quiero'},
+   {q:'A mí me ___ la música pop.',opts:['gusta','gustan'],ans:'gusta',why:'ev. → gusta'},
+   {q:'—No me gusta el frío. —A mí ___.',opts:['tampoco','también','no'],ans:'tampoco',why:'akkoord – → tampoco'},
+   {q:'(poder · tú) ¿___ quedar hoy?',opts:['puedes','puedo','puede'],ans:'puedes',why:'tú → puedes'},
+   {q:'A nosotros ___ gusta la playa.',opts:['nos','os','les'],ans:'nos',why:'a nosotros → nos'},
+   {q:'¿Te ___ las series?',opts:['gustan','gusta'],ans:'gustan',why:'las series = mv.'},
+   {q:'—Me encanta la música. —A mí ___. (NIET eens)',opts:['no','también','tampoco'],ans:'no',why:'oneens met + → A mí no'},
+   {q:'(querer · ella) Lucía ___ ver una peli.',opts:['quiere','quieres','quieren'],ans:'quiere',why:'ella → quiere'},
+   {q:'A ti ___ gusta nadar, ¿verdad?',opts:['te','me','le'],ans:'te',why:'a ti → te'}]});
+ // ---------- VOCABULARIO ----------
+ buildMatch('vx_match',{title:'Empareja: palabra ↔ emoji',desc:'Koppel het Spaanse woord aan het juiste beeld.',per:6,pool:[
+   {a:'el fútbol',b:'⚽'},{a:'el baloncesto',b:'🏀'},{a:'nadar',b:'🏊'},{a:'bailar',b:'💃'},
+   {a:'el videojuego',b:'🎮'},{a:'leer',b:'📖'},{a:'la playa',b:'🏖️'},{a:'la música',b:'🎵'},
+   {a:'la guitarra',b:'🎸'},{a:'la película',b:'🎬'},{a:'el/la cantante',b:'🎤'},{a:'el cine',b:'🎥'}]});
+ buildChoice('vx_gap',{title:'Completa la frase',desc:'Kies het woord dat in de zin past.',per:6,pool:[
+   {q:'En mi ___ libre escucho música.',opts:['tiempo','plan','mar'],ans:'tiempo',why:'el tiempo libre'},
+   {q:'Rosalía es una ___ española.',opts:['cantante','playa','serie'],ans:'cantante',why:'la cantante'},
+   {q:'Me gusta ___ en el mar.',opts:['nadar','leer','tocar'],ans:'nadar',why:'nadar en el mar'},
+   {q:'Toco la ___ en un grupo.',opts:['guitarra','película','costa'],ans:'guitarra',why:'tocar la guitarra'},
+   {q:'Veo una ___ de acción en el cine.',opts:['película','canción','banda'],ans:'película',why:'la película'},
+   {q:'La ___ de la canción es muy bonita.',opts:['letra','playa','paella'],ans:'letra',why:'la letra = songtekst'},
+   {q:'Los fines de semana ___ con amigos.',opts:['salgo','odio','prefiero'],ans:'salgo',why:'salir con amigos'},
+   {q:'València está en la ___.',opts:['costa','serie','banda'],ans:'costa',why:'la costa'},
+   {q:'Una película ___ me pone nervioso.',opts:['emocionante','aburrida','relajante'],ans:'emocionante',why:'emocionante = spannend'},
+   {q:'El mar es muy ___.',opts:['relajante','divertido','genial'],ans:'relajante',why:'el mar = relajante'}]});
+ buildChoice('vx_def',{title:'¿Qué palabra es?',desc:'Lees de definitie en kies het juiste woord.',per:6,pool:[
+   {q:'Persona que canta canciones:',opts:['el/la cantante','el/la artista','el grupo'],ans:'el/la cantante',why:'cantante = zanger(es)'},
+   {q:'Deporte con un balón y una portería:',opts:['el fútbol','el baloncesto','la playa'],ans:'el fútbol',why:'fútbol'},
+   {q:'Lugar con arena y mar:',opts:['la playa','el cine','la banda'],ans:'la playa',why:'la playa'},
+   {q:'Adjetivo: lo contrario de «divertido»:',opts:['aburrido','genial','emocionante'],ans:'aburrido',why:'aburrido = saai'},
+   {q:'La usas para hacer música con las manos:',opts:['la guitarra','la letra','la serie'],ans:'la guitarra',why:'la guitarra'},
+   {q:'Historia en capítulos que ves en la tele:',opts:['la serie','la película','la canción'],ans:'la serie',why:'la serie'},
+   {q:'Fiesta típica de València en marzo:',opts:['las Fallas','la horchata','la paella'],ans:'las Fallas',why:'las Fallas'},
+   {q:'Verbo: moverse con la música:',opts:['bailar','leer','nadar'],ans:'bailar',why:'bailar = dansen'}]});
+ buildOdd('vx_odd',{title:'El intruso',desc:'Klik het woord dat NIET bij de andere hoort.',per:5,pool:[
+   {words:['el fútbol','el baloncesto','nadar','la canción'],odd:3,why:'la canción = música, geen deporte'},
+   {words:['la música','la canción','la letra','la playa'],odd:3,why:'la playa hoort niet bij música'},
+   {words:['divertido','aburrido','genial','bailar'],odd:3,why:'bailar = werkwoord, geen adjectief'},
+   {words:['siempre','a veces','nunca','guitarra'],odd:3,why:'guitarra = geen frecuencia'},
+   {words:['querer','poder','quedar','playa'],odd:3,why:'playa = zelfst. nw., geen ww. van planes'},
+   {words:['la paella','la horchata','las Fallas','el reguetón'],odd:3,why:'el reguetón is niet van València'},
+   {words:['me gusta','me encanta','odio','nadar'],odd:3,why:'nadar = activiteit, geen mening'},
+   {words:['también','tampoco','a mí sí','cantante'],odd:3,why:'cantante = geen reactiewoord'}]});
+ // ---------- LECTURA ----------
+ buildOrder('lx_order',{title:'Ordena',desc:'Tik de items in de juiste volgorde.',rounds:[
+   {sub:'proponer un plan (una conversación)',items:[{label:'¿Quieres ir a la playa?',key:1},{label:'Sí, ¡buena idea!',key:2},{label:'¿A qué hora quedamos?',key:3},{label:'A las cinco. ¡Vale!',key:4}]},
+   {sub:'la frecuencia: de – a +',items:[{label:'nunca',key:1},{label:'casi nunca',key:2},{label:'a veces',key:3},{label:'a menudo',key:4},{label:'siempre',key:5}]},
+   {sub:'un mensaje de gustos',items:[{label:'¡Hola!',key:1},{label:'Me encanta la música.',key:2},{label:'¿Y a ti, qué te gusta?',key:3},{label:'¡Un abrazo!',key:4}]}]});
+ buildChoice('lx_scan',{title:'Comprensión: escanea y escoge',desc:'Zoek de info in de twee perfiles (Lucía y Diego) en kies het juiste antwoord.',per:6,pool:[
+   {q:'¿Quién es la artista favorita de Lucía?',opts:['Rosalía','Karol G','Shakira'],ans:'Rosalía',why:'«Mi artista favorita es Rosalía»'},
+   {q:'¿Qué le encanta a Diego?',opts:['los videojuegos','bailar flamenco','la playa'],ans:'los videojuegos',why:'«me encantan los videojuegos»'},
+   {q:'¿Qué instrumento toca Diego?',opts:['la guitarra','el piano','la batería'],ans:'la guitarra',why:'«Toco un poco la guitarra»'},
+   {q:'¿A Lucía le gustan los videojuegos?',opts:['No, prefiere salir','Sí, mucho','Solo a veces'],ans:'No, prefiere salir',why:'«No me gustan los videojuegos, prefiero salir»'},
+   {q:'¿Qué baile le gusta a Lucía?',opts:['el flamenco','el reguetón','la salsa'],ans:'el flamenco',why:'«me gusta bailar flamenco»'},
+   {q:'¿Qué quiere ver Diego el sábado?',opts:['películas de acción','una serie','un concierto'],ans:'películas de acción',why:'«quiero ver películas de acción»'},
+   {q:'¿Cuándo va Lucía a la playa?',opts:['los fines de semana','todos los días','nunca'],ans:'los fines de semana',why:'«Los fines de semana voy a la playa»'},
+   {q:'¿A Diego le gusta bailar?',opts:['No','Sí, mucho','Solo flamenco'],ans:'No',why:'«No me gusta bailar»'}]});
+}
+
+renderFC();renderTable();gameGusta();gameReaccion();renderLectura();buildRecorders();renderBandas();buildInlineExercises();
 (function(){const h=location.hash.replace('#','');const i=PANELS.findIndex(p=>p[0]===h);if(i>=0)sn.children[i].click();})();
 window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');const i=PANELS.findIndex(p=>p[0]===h);if(i>=0)sn.children[i].click();});
 
