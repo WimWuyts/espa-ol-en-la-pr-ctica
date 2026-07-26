@@ -136,6 +136,37 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
 .rec .mood.on{border-color:var(--g);background:var(--gt)}
 .rec .warn{background:#fdeaea;color:var(--red);border-radius:10px;padding:8px 12px;font-size:13px;margin:6px 0}
 .rec audio{width:100%;margin-top:6px}
+/* ---- inline zelfcorrigerende oefeningen ---- */
+.exhead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:2px}
+.exhead h3{font-family:var(--disp);margin:0;color:var(--ink);font-size:18px}
+.ex .desc{color:var(--mut);font-size:13px;margin:0 0 10px}
+.otra{border:none;background:var(--gt);color:var(--gd);border-radius:8px;padding:6px 12px;font-weight:700;cursor:pointer;font-size:13px;font-family:var(--disp);white-space:nowrap}
+.exq{border:1px solid var(--line);border-radius:12px;padding:11px 14px;margin:9px 0;background:var(--card)}
+.exq .qz{font-family:var(--disp);font-size:16px;margin-bottom:8px}
+.exq .qz .gap{display:inline-block;min-width:60px;border-bottom:2.5px solid var(--g);margin:0 3px;vertical-align:baseline}
+.exopts{display:flex;gap:8px;flex-wrap:wrap}
+.exopt{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:7px 13px;cursor:pointer;font-size:15px;font-weight:600;font-family:var(--body)}
+.exopt.ok{border-color:var(--g);background:var(--g);color:#fff}
+.exopt.no{border-color:var(--red);background:#fde8e8;color:var(--red)}
+.exopt[disabled]{cursor:default}
+.exwhy{margin-top:8px;font-size:13px;display:none;border-radius:8px;padding:7px 10px}
+.exwhy.show{display:block}
+.exwhy.g{background:var(--gt);color:var(--gd)}.exwhy.b{background:#fdeaea;color:var(--red)}
+.exscore{font-size:13px;color:var(--mut);margin-top:8px}
+.exscore b{color:var(--gd)}
+.mcol{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+.mcell{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:9px 12px;cursor:pointer;font-size:15px;text-align:center;font-weight:600;user-select:none}
+.mcell.sel{border-color:var(--g);background:var(--gt)}
+.mcell.done{border-color:var(--g);background:var(--g);color:#fff;cursor:default;opacity:.85}
+.mcell.bad{border-color:var(--red);background:#fde8e8}
+.oslots{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0;min-height:40px}
+.oslot{border:1.5px dashed var(--line);border-radius:9px;padding:7px 11px;font-size:14px;min-width:34px;color:var(--mut)}
+.oslot.filled{border-style:solid;border-color:var(--g);background:var(--gt);color:var(--ink)}
+.obank{display:flex;gap:7px;flex-wrap:wrap;margin-top:6px}
+.ochip{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 13px;cursor:pointer;font-size:15px;font-weight:600}
+.ochip.used{opacity:.35;cursor:default}
+.ochip.shake{animation:shk .3s}
+@keyframes shk{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 </style></head><body>
 <header class="top"><div class="bar">
   <div class="brand">Español en la práctica <small>· la página digital</small></div>
@@ -168,7 +199,7 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
   <path d="M150 74 l10 -9 l3 4 Z" fill="#E8B04B"/>
 </svg></div>
     <div><h1>U3 · El tiempo vuela</h1>
-    <p>La página digital de la Unidad 3 (parada <b>Barcelona</b>): flashcards, gramática visual e interactiva y <b>24 juegos</b>. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie.</span></p></div>
+    <p>La página digital de la Unidad 3 (parada <b>Barcelona</b>): flashcards, gramática visual e interactiva, <b>24 juegos</b> y <b>+100 ejercicios</b> con muchas series. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie.</span></p></div>
   </div>
   <div class="subnav" id="subnav"></div>
 
@@ -182,6 +213,12 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
       <span class="pill" id="fccount"></span>
       <button class="btn sec small" onclick="shuffleFC()">↻ shuffle</button>
     </div><div class="fcgrid" id="fcgrid"></div>
+    <h2 class="sec">Ejercicios de vocabulario · zelfcorrectie</h2>
+    <p class="lead">Oefen de woorden actief: koppelen, invullen, definities en de <b>intruder</b>. Elke oefening geeft directe feedback en je kunt telkens een <b>andere reeks</b> trekken. <span class="gloss">herkennen → onderscheiden → ophalen.</span></p>
+    <div class="card ex" id="vx_match"></div>
+    <div class="card ex" id="vx_gap"></div>
+    <div class="card ex" id="vx_def"></div>
+    <div class="card ex" id="vx_odd"></div>
     <h2 class="sec">Naslagwerk · zoeken</h2>
     <div class="controls"><input id="vsearch" placeholder="🔎 zoek in woordenschat…" oninput="renderTable()"><span class="pill" id="vcount"></span></div>
     <div style="max-height:60vh;overflow:auto"><table class="vt"><thead><tr><th>Español</th><th>Nederlands</th><th>Soort</th><th>Ejemplo</th></tr></thead><tbody id="vbody"></tbody></table></div>
@@ -192,14 +229,33 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
     <p class="lead">Eerst betekenis en patroon ontdekken, dan de regel. Beweeg over de woorden, klik, en probeer. <span class="gloss">Alles binnen het thema van U3: la hora, verbos reflexivos, presente irregular en de/por.</span></p>
     <div class="card" id="colorsent"></div>
     <div class="card" id="reflexconj"></div>
+    <h3 class="subh">🕐 La hora — ¿qué hora es?</h3>
     <div class="game" id="g_hora"></div>
+    <div class="card ex" id="gx_horaq"></div>
+    <h3 class="subh">🔁 Verbos reflexivos — construye y practica</h3>
+    <div class="card ex" id="gx_build"></div>
+    <div class="card ex" id="gx_reflexq"></div>
+    <div class="card ex" id="gx_reflexm"></div>
+    <h3 class="subh">⚙️ Presente irregular — o&gt;ue · e&gt;ie · e&gt;i + hacer/ir/salir</h3>
+    <div class="game" id="g_raiz"></div>
+    <div class="card ex" id="gx_irreg"></div>
+    <div class="card ex" id="gx_irregm"></div>
+    <h3 class="subh">📅 Frecuencia y momentos del día</h3>
+    <div class="card ex" id="gx_frec"></div>
     <div class="game" id="g_depor"></div>
+    <div class="card ex" id="gx_deporq"></div>
+    <h3 class="subh">🎯 Repaso mixto — rellena con feedback</h3>
+    <div class="card ex" id="gx_mix"></div>
   </section>
 
   <section class="panel" data-p="lectura">
     <h2 class="sec">Lectura · el día de Pau</h2>
     <p class="lead">Lees het blog van Pau, <b>luister</b> het (🔊 TTS) en <b>controleer je begrip</b>. Daarna reageer je met een eigen bericht — dat neem je op in het tabblad <b>Hablar</b>. <span class="gloss">Keten: lezen → luisteren → spreken.</span></p>
     <div id="lecturawrap"></div>
+    <h3 class="subh">🔢 Ordena el día de Pau</h3>
+    <div class="card ex" id="lx_order"></div>
+    <h3 class="subh">🔎 Comprensión · escanea y escoge</h3>
+    <div class="card ex" id="lx_scan"></div>
   </section>
 
   <section class="panel" data-p="juegos">
@@ -397,6 +453,20 @@ function gameDePor(){const el=document.getElementById('g_depor');
  window._deporG=k=>{const ok=k===el.cur[1];if(ok){pt++;st++}else st=0;setScore(sb,pt,st);feedback(el.querySelector('#dFb'),ok,(ok?'¡Sí! ':'Nee → ')+'«'+el.cur[1]+'» ('+(el.cur[1]==='de la'?'concreet uur':'dagdeel, geen uur')+').');setTimeout(next,950);};
  next();}
 
+// ---- GRAMMAR-VIZ 5: cambio de raíz — ¿o>ue, e>ie, e>i o regular? ----
+function gameRaiz(){const el=document.getElementById('g_raiz');
+ const items=[['dormir','o>ue','duermo'],['poder','o>ue','puedo'],['volver','o>ue','vuelvo'],['almorzar','o>ue','almuerzo'],['jugar','u>ue','juego'],
+  ['empezar','e>ie','empiezo'],['querer','e>ie','quiero'],['preferir','e>ie','prefiero'],['despertarse','e>ie','me despierto'],
+  ['pedir','e>i','pido'],['vestirse','e>i','me visto'],['servir','e>i','sirvo'],
+  ['trabajar','regular','trabajo'],['estudiar','regular','estudio'],['desayunar','regular','desayuno']];
+ let pool=items.slice(),pt=0,st=0;
+ el.innerHTML='<h3>¿Cómo cambia la raíz?</h3><p class="desc">Kies de stamwissel in de <b>yo</b>-vorm. (Let op: nosotros/vosotros wisselen NIET!)</p>'+scoreBar('sbR')+'<div id="rW" style="font-size:26px;font-family:var(--disp);text-align:center;margin:8px 0;color:var(--gd)"></div><div class="chips" id="rC" style="justify-content:center"></div><div class="fb" id="rFb"></div>';
+ const sb=el.querySelector('#sbR');const cont=el.querySelector('#rC');
+ ['o>ue','u>ue','e>ie','e>i','regular'].forEach(c=>{const b=document.createElement('div');b.className='chip';b.textContent=c;b.onclick=()=>guess(c);cont.appendChild(b);});
+ function next(){if(!pool.length)pool=items.slice();const i=Math.floor(Math.random()*pool.length);el.cur=pool.splice(i,1)[0];el.querySelector('#rW').textContent=el.cur[0];el.querySelector('#rFb').className='fb';}
+ function guess(c){const ok=c===el.cur[1];if(ok){pt++;st++}else st=0;setScore(sb,pt,st);feedback(el.querySelector('#rFb'),ok,(ok?'¡Sí! ':'Nee → ')+el.cur[0]+' → yo '+el.cur[2]+' ('+el.cur[1]+').');if(TTS&&ok)speak(el.cur[2]);setTimeout(next,1050);}
+ next();}
+
 // ---- MOTOR-ARCADE: 24 spellen, ingebed ----
 document.getElementById('motorlink').innerHTML=MOTOR.map(([grp,gs])=>'<div class="subh">'+grp+'</div><div class="fcgrid">'+
    gs.map(([f,t,tpl])=>'<div class="chip" style="display:block;border-radius:14px" onclick="openGame(\''+f+'\',\''+t.replace(/'/g,"")+'\')"><div style="font-weight:700;color:var(--ink);font-size:14px">'+t+'</div><div class="pill" style="margin-top:4px;font-size:10px">'+tpl+'</div></div>').join('')+'</div>').join('');
@@ -489,7 +559,224 @@ function buildRecorders(){
    {text:'Cuéntale tu día a Pau en un mensaje de voz (30 s).',cue:'para · Pau',tip:'Heb je horas + rutina (mañana/tarde/noche) gezegd? Neem opnieuw op.'}]});
 }
 
-renderFC();renderTable();gameHora();gameDePor();renderLectura();buildRecorders();
+// ================= INLINE ZELFCORRIGERENDE OEFENINGEN =================
+function exSample(pool,n){const a=pool.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a.slice(0,Math.min(n,a.length));}
+function exEsc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function exFmt(s){return exEsc(s).replace(/___+/g,'<span class="gap">&nbsp;&nbsp;</span>');}
+
+// MEERKEUZE / GAP-FILL: pool item = {q, opts, ans, why}
+function buildChoice(id,cfg){
+ const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(6,cfg.pool.length);
+ function render(){const series=exSample(cfg.pool,per);let ok=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="qlist"></div><div class="exscore">Juist: <b class="ok">0</b>/'+series.length+'</div>';
+   host.querySelector('.otra').onclick=render;const list=host.querySelector('.qlist'),scoreEl=host.querySelector('.ok');
+   series.forEach(it=>{const q=document.createElement('div');q.className='exq';
+     q.innerHTML='<div class="qz">'+exFmt(it.q)+'</div><div class="exopts"></div><div class="exwhy"></div>';
+     const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy');let locked=false;
+     exSample(it.opts,it.opts.length).forEach(o=>{const b=document.createElement('button');b.className='exopt';b.type='button';b.textContent=o;
+       b.onclick=()=>{if(locked)return;locked=true;const good=o===it.ans;
+         opts.querySelectorAll('.exopt').forEach(x=>{x.disabled=true;if(x.textContent===it.ans)x.classList.add('ok');});
+         if(good){ok++;scoreEl.textContent=ok;}else{b.classList.add('no');}
+         why.className='exwhy show '+(good?'g':'b');why.innerHTML=(good?'✅ ¡correcto! ':'❌ → '+exEsc(it.ans)+'. ')+(it.why?exEsc(it.why):'');};
+       opts.appendChild(b);});
+     list.appendChild(q);});}
+ render();}
+
+// MATCHING: pool item = {a,b}  (b moet uniek zijn)
+function buildMatch(id,cfg){
+ const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(6,cfg.pool.length);
+ function render(){const series=exSample(cfg.pool,per);let doneN=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="mcol"><div class="mL"></div><div class="mR"></div></div><div class="exscore">Emparejados: <b class="ok">0</b>/'+series.length+'</div>';
+   host.querySelector('.otra').onclick=render;const L=host.querySelector('.mL'),R=host.querySelector('.mR'),scoreEl=host.querySelector('.ok');
+   const right=exSample(series.map((p,i)=>({p,i})),series.length);let selL=null,busy=false;
+   series.forEach((p,i)=>{const c=document.createElement('div');c.className='mcell';c.textContent=p.a;c.dataset.i=i;
+     c.onclick=()=>{if(busy||c.classList.contains('done'))return;if(selL)selL.classList.remove('sel');selL=c;c.classList.add('sel');};L.appendChild(c);});
+   right.forEach(o=>{const c=document.createElement('div');c.className='mcell';c.textContent=o.p.b;c.dataset.i=o.i;
+     c.onclick=()=>{if(busy||!selL||c.classList.contains('done'))return;busy=true;const good=selL.dataset.i===c.dataset.i;
+       if(good){selL.classList.remove('sel');selL.classList.add('done');c.classList.add('done');doneN++;scoreEl.textContent=doneN;selL=null;busy=false;}
+       else{c.classList.add('bad');const s=selL;setTimeout(()=>{c.classList.remove('bad');s.classList.remove('sel');selL=null;busy=false;},600);}};R.appendChild(c);});}
+ render();}
+
+// ORDENAR: cfg.rounds=[{sub, items:[{label,key}]}]
+function buildOrder(id,cfg){
+ const host=document.getElementById(id);if(!host)return;let ri=Math.floor(Math.random()*cfg.rounds.length);
+ function render(){const round=cfg.rounds[ri];const sorted=round.items.slice().sort((a,b)=>a.key-b.key);let pos=0,mist=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra ronda</button></div><p class="desc">'+cfg.desc+' · <b>'+exEsc(round.sub||'')+'</b></p><div class="oslots"></div><div class="obank"></div><div class="exwhy"></div>';
+   host.querySelector('.otra').onclick=()=>{ri=(ri+1)%cfg.rounds.length;render();};
+   const slots=host.querySelector('.oslots'),bank=host.querySelector('.obank'),why=host.querySelector('.exwhy');
+   sorted.forEach((_,i)=>{const s=document.createElement('div');s.className='oslot';s.textContent=(i+1);s.dataset.pos=i;slots.appendChild(s);});
+   exSample(round.items,round.items.length).forEach(it=>{const b=document.createElement('button');b.className='ochip';b.type='button';b.textContent=it.label;
+     b.onclick=()=>{if(b.classList.contains('used'))return;const exp=sorted[pos];
+       if(it.key===exp.key){b.classList.add('used');const sl=slots.querySelector('.oslot[data-pos="'+pos+'"]');sl.classList.add('filled');sl.textContent=(pos+1)+'. '+it.label;pos++;
+         if(pos>=sorted.length){why.className='exwhy show '+(mist===0?'g':'b');why.innerHTML=mist===0?'✅ ¡Perfecto! sin errores.':'✔ Completado con '+mist+' error(es). Prueba «otra ronda».';}}
+       else{mist++;b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake');why.className='exwhy show b';why.innerHTML='❌ Primero: <b>'+exEsc(exp.label)+'</b>';}};
+     bank.appendChild(b);});}
+ render();}
+
+// EL INTRUSO: pool item = {words:[...], odd, why}
+function buildOdd(id,cfg){
+ const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(5,cfg.pool.length);
+ function render(){const series=exSample(cfg.pool,per);let ok=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="qlist"></div><div class="exscore">Juist: <b class="ok">0</b>/'+series.length+'</div>';
+   host.querySelector('.otra').onclick=render;const list=host.querySelector('.qlist'),scoreEl=host.querySelector('.ok');
+   series.forEach(it=>{const q=document.createElement('div');q.className='exq';q.innerHTML='<div class="exopts"></div><div class="exwhy"></div>';
+     const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy');let locked=false;
+     exSample(it.words.map((w,i)=>({w,i})),it.words.length).forEach(o=>{const b=document.createElement('button');b.className='exopt';b.type='button';b.textContent=o.w;
+       b.onclick=()=>{if(locked)return;locked=true;const good=o.i===it.odd;opts.querySelectorAll('.exopt').forEach(x=>x.disabled=true);
+         if(good){ok++;scoreEl.textContent=ok;b.classList.add('ok');}else{b.classList.add('no');opts.querySelectorAll('.exopt').forEach(x=>{if(x.textContent===it.words[it.odd])x.classList.add('ok');});}
+         why.className='exwhy show '+(good?'g':'b');why.innerHTML=(good?'✅ ¡bien! ':'❌ → '+exEsc(it.words[it.odd])+'. ')+(it.why?exEsc(it.why):'');};
+       opts.appendChild(b);});
+     list.appendChild(q);});}
+ render();}
+
+// ---- data + calls ----
+function buildInlineExercises(){
+ // ---------- GRAMÁTICA ----------
+ // LA HORA — mini-quiz (schrijf/kies de zin)
+ buildChoice('gx_horaq',{title:'Mini-quiz: ¿qué hora es?',desc:'Lees de digitale klok en kies de juiste zin. Es la una (1) · Son las… (2+) · y cuarto/media · menos cuarto.',per:6,pool:[
+   {q:'1:00 →',opts:['Es la una','Son las una','Son la una'],ans:'Es la una',why:'1 uur → «es la una»'},
+   {q:'3:00 →',opts:['Son las tres','Es las tres','Son la tres'],ans:'Son las tres',why:'vanaf 2 → «son las»'},
+   {q:'2:30 →',opts:['Son las dos y media','Son las dos y treinta','Es la dos y media'],ans:'Son las dos y media',why:'30 min → «y media»'},
+   {q:'4:15 →',opts:['Son las cuatro y cuarto','Son las cuatro y quince','Son las cuatro menos cuarto'],ans:'Son las cuatro y cuarto',why:'15 min → «y cuarto»'},
+   {q:'6:45 →',opts:['Son las siete menos cuarto','Son las seis y cuarenta y cinco','Son las seis menos cuarto'],ans:'Son las siete menos cuarto',why:'45 → volgend uur «menos cuarto»'},
+   {q:'9:00 →',opts:['Son las nueve en punto','Es la nueve','Son las nueve y punto'],ans:'Son las nueve en punto',why:'exact uur → «en punto»'},
+   {q:'5:20 →',opts:['Son las cinco y veinte','Son las cinco menos veinte','Es la cinco y veinte'],ans:'Son las cinco y veinte',why:'+20 min → «y veinte»'},
+   {q:'8:50 →',opts:['Son las nueve menos diez','Son las ocho y cincuenta','Son las ocho menos diez'],ans:'Son las nueve menos diez',why:'50 → volgend uur «menos diez»'},
+   {q:'1:30 →',opts:['Es la una y media','Son la una y media','Son las una y media'],ans:'Es la una y media',why:'1 uur blijft «es la una…»'},
+   {q:'12:00 →',opts:['Son las doce','Es las doce','Son la doce'],ans:'Son las doce',why:'12 → «son las doce»'},
+   {q:'7:10 →',opts:['Son las siete y diez','Son las siete menos diez','Es la siete y diez'],ans:'Son las siete y diez',why:'+10 → «y diez»'},
+   {q:'10:40 →',opts:['Son las once menos veinte','Son las diez y cuarenta','Son las diez menos veinte'],ans:'Son las once menos veinte',why:'40 → volgend uur «menos veinte»'}]});
+ // REFLEXIVOS — construye
+ buildOrder('gx_build',{title:'Construye: verbo reflexivo',desc:'Tik de blokjes in de juiste volgorde (onderwerp → pronombre me/te/se → werkwoord → tijd).',rounds:[
+   {sub:'yo · levantarse',items:[{label:'Yo',key:1},{label:'me',key:2},{label:'levanto',key:3},{label:'a las siete',key:4}]},
+   {sub:'tú · ducharse',items:[{label:'Tú',key:1},{label:'te',key:2},{label:'duchas',key:3},{label:'por la mañana',key:4}]},
+   {sub:'Pau · acostarse',items:[{label:'Pau',key:1},{label:'se',key:2},{label:'acuesta',key:3},{label:'a las once',key:4}]},
+   {sub:'nosotros · vestirse',items:[{label:'Nosotros',key:1},{label:'nos',key:2},{label:'vestimos',key:3},{label:'rápido',key:4}]},
+   {sub:'yo · despertarse',items:[{label:'Yo',key:1},{label:'me',key:2},{label:'despierto',key:3},{label:'temprano',key:4}]},
+   {sub:'ellos · acostarse',items:[{label:'Ellos',key:1},{label:'se',key:2},{label:'acuestan',key:3},{label:'tarde',key:4}]}]});
+ // REFLEXIVOS — cloze (traditionele werkwoordscloze, VERPLICHT)
+ buildChoice('gx_reflexq',{title:'Completa el verbo reflexivo',desc:'Kies de juiste vorm (pronombre + werkwoord). Klassieke werkwoordsoefening.',per:8,pool:[
+   {q:'(Yo) ___ a las siete.',opts:['me levanto','te levantas','se levanta'],ans:'me levanto',why:'yo → me levanto'},
+   {q:'(Tú) ___ en el baño.',opts:['te duchas','me ducho','se ducha'],ans:'te duchas',why:'tú → te duchas'},
+   {q:'Pau ___ a las once de la noche.',opts:['se acuesta','me acuesto','te acuestas'],ans:'se acuesta',why:'él → se acuesta (o>ue)'},
+   {q:'(Nosotros) ___ rápido.',opts:['nos vestimos','os vestís','se visten'],ans:'nos vestimos',why:'nosotros → nos vestimos'},
+   {q:'(Yo) ___ temprano los lunes.',opts:['me despierto','te despiertas','se despierta'],ans:'me despierto',why:'yo → me despierto (e>ie)'},
+   {q:'Mis amigos ___ tarde el finde.',opts:['se levantan','nos levantamos','os levantáis'],ans:'se levantan',why:'ellos → se levantan'},
+   {q:'¿(Tú) ___ temprano?',opts:['te despiertas','me despierto','se despierta'],ans:'te despiertas',why:'tú → te despiertas'},
+   {q:'(Nosotros) ___ a las siete.',opts:['nos levantamos','me levanto','se levantan'],ans:'nos levantamos',why:'nosotros → nos levantamos'},
+   {q:'Lucía ___ y desayuna.',opts:['se viste','me visto','te vistes'],ans:'se viste',why:'ella → se viste (e>i)'},
+   {q:'(Vosotros) ___ pronto.',opts:['os acostáis','se acuestan','nos acostamos'],ans:'os acostáis',why:'vosotros → os acostáis'},
+   {q:'(Yo) ___ los dientes.',opts:['me lavo','te lavas','se lava'],ans:'me lavo',why:'yo → me lavo'},
+   {q:'El niño ___ y va a la cama.',opts:['se acuesta','me acuesto','os acostáis'],ans:'se acuesta',why:'él → se acuesta'}]});
+ // REFLEXIVOS — match pronombre ↔ persoon
+ buildMatch('gx_reflexm',{title:'Empareja: persona ↔ forma',desc:'Koppel het onderwerp aan de juiste reflexieve vorm van «levantarse».',per:6,pool:[
+   {a:'yo',b:'me levanto'},{a:'tú',b:'te levantas'},{a:'él / ella',b:'se levanta'},
+   {a:'nosotros',b:'nos levantamos'},{a:'vosotros',b:'os levantáis'},{a:'ellos / ellas',b:'se levantan'}]});
+ // PRESENTE IRREGULAR — cloze (traditionele werkwoordscloze, VERPLICHT)
+ buildChoice('gx_irreg',{title:'Presente irregular · completa',desc:'Vul de juiste vorm in (o>ue · e>ie · e>i + hacer/ir/salir). Vormen nagerekend.',per:8,pool:[
+   {q:'(Yo) ___ ocho horas. (dormir)',opts:['duermo','dormo','duermes'],ans:'duermo',why:'o>ue: yo duermo'},
+   {q:'Las clases ___ a las nueve. (empezar)',opts:['empiezan','empezan','empiezo'],ans:'empiezan',why:'e>ie: ellos empiezan'},
+   {q:'(Yo) ___ de casa a las ocho. (salir)',opts:['salgo','salo','sales'],ans:'salgo',why:'yo salgo (g irregular)'},
+   {q:'(Yo) ___ los deberes por la tarde. (hacer)',opts:['hago','haco','haces'],ans:'hago',why:'yo hago'},
+   {q:'¿(Tú) ___ jugar al fútbol? (poder)',opts:['puedes','podes','puede'],ans:'puedes',why:'o>ue: tú puedes'},
+   {q:'Pau ___ al insti en metro. (ir)',opts:['va','ve','vas'],ans:'va',why:'ir: él va'},
+   {q:'(Nosotros) ___ a las nueve. (volver)',opts:['volvemos','vuelvemos','volvéis'],ans:'volvemos',why:'nosotros NIET wisselen: volvemos'},
+   {q:'(Yo) ___ un café. (pedir)',opts:['pido','pedo','pides'],ans:'pido',why:'e>i: yo pido'},
+   {q:'Ella ___ estudiar más. (querer)',opts:['quiere','quere','quieres'],ans:'quiere',why:'e>ie: ella quiere'},
+   {q:'(Ellos) ___ al fútbol el sábado. (jugar)',opts:['juegan','jugan','juegas'],ans:'juegan',why:'u>ue: ellos juegan'},
+   {q:'(Yo) ___ a las siete. (almorzar → no, empezar)',opts:['empiezo','empezo','empiezas'],ans:'empiezo',why:'e>ie: yo empiezo'},
+   {q:'(Nosotros) ___ a las tres. (almorzar)',opts:['almorzamos','almuerzamos','almorzáis'],ans:'almorzamos',why:'nosotros NIET wisselen: almorzamos'},
+   {q:'(Yo) ___ estudiar francés. (preferir)',opts:['prefiero','prefero','prefieres'],ans:'prefiero',why:'e>ie: yo prefiero'},
+   {q:'¿A qué hora ___ (tú) a casa? (volver)',opts:['vuelves','volves','vuelve'],ans:'vuelves',why:'o>ue: tú vuelves'}]});
+ // PRESENTE IRREGULAR — match verbo ↔ yo-vorm
+ buildMatch('gx_irregm',{title:'Empareja: infinitivo ↔ yo',desc:'Koppel de infinitief aan de juiste «yo»-vorm.',per:6,pool:[
+   {a:'dormir',b:'duermo'},{a:'empezar',b:'empiezo'},{a:'poder',b:'puedo'},{a:'pedir',b:'pido'},
+   {a:'hacer',b:'hago'},{a:'salir',b:'salgo'},{a:'jugar',b:'juego'},{a:'volver',b:'vuelvo'},
+   {a:'querer',b:'quiero'},{a:'preferir',b:'prefiero'},{a:'ir',b:'voy'},{a:'servir',b:'sirvo'}]});
+ // FRECUENCIA — ordena (schaal)
+ buildOrder('gx_frec',{title:'Ordena la frecuencia',desc:'Tik van MEER naar MINDER frecuentie (100% → 0%).',rounds:[
+   {sub:'de siempre a nunca',items:[{label:'siempre',key:1},{label:'a menudo',key:2},{label:'a veces',key:3},{label:'casi nunca',key:4},{label:'nunca',key:5}]},
+   {sub:'los días de la semana',items:[{label:'lunes',key:1},{label:'martes',key:2},{label:'miércoles',key:3},{label:'jueves',key:4},{label:'viernes',key:5}]},
+   {sub:'las estaciones (del año)',items:[{label:'primavera',key:1},{label:'verano',key:2},{label:'otoño',key:3},{label:'invierno',key:4}]},
+   {sub:'los meses (primeros)',items:[{label:'enero',key:1},{label:'febrero',key:2},{label:'marzo',key:3},{label:'abril',key:4},{label:'mayo',key:5}]}]});
+ // DE LA / POR LA — mini-quiz
+ buildChoice('gx_deporq',{title:'Mini-quiz: de la / por la',desc:'Concreet uur → «de la». Deel van de dag (zonder uur) → «por la».',per:6,pool:[
+   {q:'Son las siete ___ mañana.',opts:['de la','por la'],ans:'de la',why:'concreet uur → de la'},
+   {q:'___ tarde hago deporte.',opts:['por la','de la'],ans:'por la',why:'dagdeel zonder uur → por la'},
+   {q:'Ceno a las nueve ___ noche.',opts:['de la','por la'],ans:'de la',why:'concreet uur → de la'},
+   {q:'___ mañana voy al insti.',opts:['por la','de la'],ans:'por la',why:'dagdeel → por la'},
+   {q:'Me levanto a las ocho ___ mañana.',opts:['de la','por la'],ans:'de la',why:'concreet uur → de la'},
+   {q:'Estudio ___ noche.',opts:['por la','de la'],ans:'por la',why:'dagdeel → por la'},
+   {q:'Como a las dos ___ tarde.',opts:['de la','por la'],ans:'de la',why:'concreet uur → de la'},
+   {q:'___ tarde juego al fútbol.',opts:['por la','de la'],ans:'por la',why:'dagdeel → por la'},
+   {q:'Salgo a las tres ___ tarde.',opts:['de la','por la'],ans:'de la',why:'concreet uur → de la'},
+   {q:'Desayuno ___ mañana, temprano.',opts:['por la','de la'],ans:'por la',why:'dagdeel → por la'}]});
+ // REPASO MIXTO
+ buildChoice('gx_mix',{title:'Repaso mixto: rellena',desc:'Alles door elkaar: la hora · reflexivos · irregulares · frecuencia · de/por.',per:8,pool:[
+   {q:'(Yo) ___ a las siete y media. (levantarse)',opts:['me levanto','te levantas','se levanta'],ans:'me levanto',why:'yo → me levanto'},
+   {q:'Las clases ___ a las nueve. (empezar)',opts:['empiezan','empezan','empieza'],ans:'empiezan',why:'e>ie: ellas empiezan'},
+   {q:'2:30 → Son las dos ___ .',opts:['y media','y treinta','menos media'],ans:'y media',why:'30 → y media'},
+   {q:'Estudio ___ noche.',opts:['por la','de la','en la'],ans:'por la',why:'dagdeel → por la'},
+   {q:'(Yo) ___ ocho horas. (dormir)',opts:['duermo','dormo','duermes'],ans:'duermo',why:'o>ue: yo duermo'},
+   {q:'___ nunca voy al cine. (100% → 0%)',opts:['Casi','Muy','Mucho'],ans:'Casi',why:'«casi nunca» = bijna nooit'},
+   {q:'Pau ___ al insti en metro. (ir)',opts:['va','ve','vas'],ans:'va',why:'ir: él va'},
+   {q:'Son las nueve ___ noche.',opts:['de la','por la','en la'],ans:'de la',why:'concreet uur → de la'},
+   {q:'(Yo) ___ los deberes por la tarde. (hacer)',opts:['hago','haco','haces'],ans:'hago',why:'yo hago'},
+   {q:'6:45 → Son las siete ___ cuarto.',opts:['menos','y','más'],ans:'menos',why:'45 → menos cuarto'},
+   {q:'(Nosotros) ___ a las tres. (almorzar)',opts:['almorzamos','almuerzamos','almorzáis'],ans:'almorzamos',why:'nosotros NIET wisselen'},
+   {q:'El lunes es el primer ___ de la semana.',opts:['día','mes','estación'],ans:'día',why:'lunes = día'}]});
+ // ---------- VOCABULARIO ----------
+ buildMatch('vx_match',{title:'Empareja: palabra ↔ emoji',desc:'Koppel het Spaanse woord aan het juiste beeld.',per:6,pool:[
+   {a:'despertarse',b:'⏰'},{a:'ducharse',b:'🚿'},{a:'desayunar',b:'🥐'},{a:'el reloj',b:'🕐'},
+   {a:'dormir',b:'😴'},{a:'el instituto',b:'🏫'},{a:'jugar al fútbol',b:'⚽'},{a:'la noche',b:'🌙'},
+   {a:'la mañana',b:'🌅'},{a:'vestirse',b:'👕'},{a:'el calendario',b:'📅'},{a:'los deberes',b:'📓'}]});
+ buildChoice('vx_gap',{title:'Completa la frase',desc:'Kies het woord dat in de zin past.',per:6,pool:[
+   {q:'Miro la hora en el ___.',opts:['reloj','plato','libro'],ans:'reloj',why:'de klok = el reloj'},
+   {q:'Por la mañana ___ un café con leche.',opts:['desayuno','ceno','duermo'],ans:'desayuno',why:'ontbijten = desayunar'},
+   {q:'Por la noche ___ ocho horas.',opts:['duermo','juego','estudio'],ans:'duermo',why:'slapen = dormir'},
+   {q:'Voy al ___ para estudiar.',opts:['instituto','parque','cine'],ans:'instituto',why:'school = el instituto'},
+   {q:'Hago los ___ después de las clases.',opts:['deberes','platos','coches'],ans:'deberes',why:'huiswerk = los deberes'},
+   {q:'Me ___ los dientes por la mañana.',opts:['lavo','como','abro'],ans:'lavo',why:'lavarse los dientes'},
+   {q:'El sábado y el ___ no hay clase.',opts:['domingo','lunes','martes'],ans:'domingo',why:'weekend = sábado + domingo'},
+   {q:'En ___ hace calor y no hay clase.',opts:['verano','invierno','otoño'],ans:'verano',why:'zomer = el verano'},
+   {q:'Me levanto y me ___ enseguida.',opts:['ducho','ceno','vuelvo'],ans:'ducho',why:'douchen = ducharse'},
+   {q:'Ceno con mi familia a las nueve de la ___.',opts:['noche','mañana','tarde'],ans:'noche',why:'21 u → de la noche'}]});
+ buildChoice('vx_def',{title:'¿Qué palabra es?',desc:'Lees de definitie en kies het juiste woord.',per:6,pool:[
+   {q:'La primera comida del día:',opts:['el desayuno','la cena','la merienda'],ans:'el desayuno',why:'ontbijt'},
+   {q:'La última comida del día:',opts:['la cena','el desayuno','el almuerzo'],ans:'la cena',why:'avondmaal'},
+   {q:'El objeto que da la hora:',opts:['el reloj','el móvil','la agenda'],ans:'el reloj',why:'klok'},
+   {q:'La parte del día cuando sale el sol:',opts:['la mañana','la noche','la tarde'],ans:'la mañana',why:'ochtend'},
+   {q:'El primer día de la semana (España):',opts:['lunes','domingo','sábado'],ans:'lunes',why:'maandag'},
+   {q:'La estación del frío y la nieve:',opts:['el invierno','el verano','la primavera'],ans:'el invierno',why:'winter'},
+   {q:'Lo haces en la cama por la noche:',opts:['dormir','correr','comer'],ans:'dormir',why:'slapen'},
+   {q:'El deporte con un balón y dos porterías:',opts:['el fútbol','el tenis','la natación'],ans:'el fútbol',why:'voetbal'}]});
+ buildOdd('vx_odd',{title:'El intruso',desc:'Klik het woord dat NIET bij de andere hoort.',per:5,pool:[
+   {words:['lunes','martes','enero','viernes'],odd:2,why:'enero = maand; de rest = dagen'},
+   {words:['primavera','verano','otoño','domingo'],odd:3,why:'domingo = dag; de rest = seizoenen'},
+   {words:['desayunar','ducharse','levantarse','acostarse'],odd:0,why:'desayunar is NIET reflexief'},
+   {words:['siempre','a veces','nunca','reloj'],odd:3,why:'reloj = voorwerp, geen frecuentie'},
+   {words:['el desayuno','la comida','la cena','el instituto'],odd:3,why:'instituto is geen maaltijd'},
+   {words:['empezar','querer','preferir','desayunar'],odd:3,why:'desayunar is regelmatig; de rest e>ie'},
+   {words:['dormir','poder','volver','pedir'],odd:3,why:'pedir = e>i; de rest o>ue'},
+   {words:['la mañana','la tarde','la noche','el verano'],odd:3,why:'verano = seizoen; de rest = dagdeel'}]});
+ // ---------- LECTURA ----------
+ buildOrder('lx_order',{title:'Ordena el día de Pau',desc:'Tik de acties in de juiste volgorde van de dag.',rounds:[
+   {sub:'la rutina de la mañana',items:[{label:'Me despierto',key:1},{label:'Me levanto',key:2},{label:'Me ducho',key:3},{label:'Desayuno',key:4},{label:'Salgo de casa',key:5}]},
+   {sub:'el día de Pau (completo)',items:[{label:'Voy al instituto',key:1},{label:'Las clases empiezan',key:2},{label:'Almuerzo con amigos',key:3},{label:'Hago los deberes',key:4},{label:'Me acuesto',key:5}]},
+   {sub:'las comidas del día',items:[{label:'el desayuno',key:1},{label:'la comida',key:2},{label:'la merienda',key:3},{label:'la cena',key:4}]},
+   {sub:'las horas (temprano → tarde)',items:[{label:'las siete',key:1},{label:'las nueve',key:2},{label:'las dos',key:3},{label:'las once',key:4}]}]});
+ buildChoice('lx_scan',{title:'Comprensión: escanea y escoge',desc:'Zoek de info in het blog van Pau en kies het juiste antwoord.',per:6,pool:[
+   {q:'¿A qué hora se despierta Pau?',opts:['a las siete','a las ocho','a las diez'],ans:'a las siete',why:'«Me despierto a las siete»'},
+   {q:'¿Cómo va Pau al instituto?',opts:['en metro','en coche','a pie'],ans:'en metro',why:'«voy al instituto en metro»'},
+   {q:'¿A qué hora empiezan las clases?',opts:['a las nueve','a las ocho','a las diez'],ans:'a las nueve',why:'«empiezan a las nueve»'},
+   {q:'¿Dónde almuerza Pau?',opts:['en el instituto','en casa','en un bar'],ans:'en el instituto',why:'«almuerzo en el instituto»'},
+   {q:'¿Qué hace Pau por la tarde?',opts:['los deberes','duerme','va al insti'],ans:'los deberes',why:'«hago los deberes»'},
+   {q:'¿A qué hora cena Pau?',opts:['a las nueve','a las siete','a las once'],ans:'a las nueve',why:'«Ceno con mi familia a las nueve»'},
+   {q:'¿A qué hora se acuesta Pau?',opts:['a las once','a las nueve','a las diez'],ans:'a las once',why:'«me acuesto a las once»'},
+   {q:'¿A qué hora se levanta los sábados?',opts:['a las diez','a las siete','a las ocho'],ans:'a las diez',why:'«los sábados… ¡me levanto a las diez!»'}]});
+}
+
+renderFC();renderTable();gameHora();gameDePor();gameRaiz();renderLectura();buildRecorders();buildInlineExercises();
 (function(){const h=location.hash.replace('#','');const i=PANELS.findIndex(p=>p[0]===h);if(i>=0)sn.children[i].click();})();
 window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');const i=PANELS.findIndex(p=>p[0]===h);if(i>=0)sn.children[i].click();});
 
