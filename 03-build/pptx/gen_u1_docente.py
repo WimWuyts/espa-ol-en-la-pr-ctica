@@ -240,7 +240,8 @@ def s07_presente():
              trigger=btn)
     foot(s)
     notes(s, "TEACHER · GRAMMAR presente. Onthul rij per rij; laat de klas de uitgang voorspellen. Benadruk: één patroon, "
-             "drie families; -er/-ir alleen bij nosotros/vosotros anders. Werkwoordsvervoeging verder = aparte Conjugador-tool, niet hier.")
+             "drie families; -er/-ir alleen bij nosotros/vosotros anders. Werkwoordsvervoeging verder = aparte Conjugador-tool, niet hier. "
+             "Inoefenen: online cloze-spel «Completa el verbo» (invullen van de juiste vorm) + de cloze-oefening in de cursus (§3.2).")
 
 # ============================================================ DIA 8 · QUIZ — el/la + conjuga
 def s08_quiz_ella():
@@ -359,7 +360,9 @@ def s12_speaking():
     text(s, Inches(0.5), Inches(5.0), Inches(10.5), Inches(0.9),
          [[("Ronda 1: ", {"size":12,"bold":True,"color":GD}), ("met de tabel. ", {"size":12,"color":INK}),
            ("Ronda 2: ", {"size":12,"bold":True,"color":GD}), ("alleen beginwoorden. ", {"size":12,"color":INK}),
-           ("Ronda 3: ", {"size":12,"bold":True,"color":GD}), ("uit het hoofd, tegen 3 klasgenoten.", {"size":12,"color":INK})]])
+           ("Ronda 3: ", {"size":12,"bold":True,"color":GD}), ("uit het hoofd, tegen 3 klasgenoten. ", {"size":12,"color":INK}),
+           ("Ronda 4: ", {"size":12,"bold":True,"color":GD}), ("grábate en de digitale pagina → terugluisteren.", {"size":12,"color":INK})]])
+    chip(s, Inches(0.5), Inches(4.65), "🎙️ Grábate online · «Carrusel: preséntate»", fill=GT, tcolor=GD, size=11)
     btn=noodroute(s)
     exercise_solucion(s, Inches(0.5), Inches(5.6), Inches(12.3), Inches(0.65),
              [[("Modelo: ", {"bold":True,"color":GD}), ("«Hola, me llamo Sara, soy de Bélgica, tengo 14 años. Vivo en Amberes y hablo neerlandés e inglés.»", {"color":GD})]],
