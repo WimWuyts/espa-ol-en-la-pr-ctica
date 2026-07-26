@@ -8,7 +8,15 @@ def face(f,p,w): return f"@font-face{{font-family:'{f}';src:url(data:font/woff2;
 FONTS="".join([face("Bricolage Grotesque","BricolageGrotesque-700.woff2","700"),face("Bricolage Grotesque","BricolageGrotesque-800.woff2","800"),
  face("Inter","Inter-400.woff2","400"),face("Inter","Inter-600.woff2","600"),face("Caveat","Caveat-700.woff2","700")])
 
-VIDEO_ID="1weD712f-pk6ovkynMzIHrfiuzzeg9Rj6"  # Spanish Sitcom 1 = Unidad 1
+# videobron: ("youtube", id) of ("drive", id). U1 → YouTube (volledige aflevering, bevat scène 1;
+# het Drive-fragment Sitcom 1 miste scène 1). YouTube = geen deelrechten nodig, werkt voor iedereen.
+VIDEO_SRC=("youtube","yvPI-4JGdyo")
+def video_iframe(src):
+    kind,vid=src
+    if kind=="youtube":
+        return f'<iframe src="https://www.youtube-nocookie.com/embed/{vid}?rel=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>'
+    return f'<iframe src="https://drive.google.com/file/d/{vid}/preview" allow="autoplay" allowfullscreen></iframe>'
+IFRAME=video_iframe(VIDEO_SRC)
 # hoogfrequente chunks om te markeren (survival)
 CHUNKS=["Hola","¿Cómo estás?","Bien","encantada","Encantado","Encantado de conocerla","¿Cómo te llamas?","me llamo","Yo soy","soy","hasta luego","Adiós","Vale","¿Cómo está usted?","Igualmente","muy bien","¿Qué tal","Sí, claro","muchas gracias","De nada","Bienvenida","Perdona"]
 SCENES=[
@@ -87,7 +95,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
 <main>
  <div class="grid">
   <div class="vid">
-    <div class="vidbox"><iframe src="https://drive.google.com/file/d/{VIDEO_ID}/preview" allow="autoplay" allowfullscreen></iframe></div>
+    <div class="vidbox">{IFRAME}</div>
     <div class="toolbar">
       <button class="btn" id="tgnl">🇳🇱 Nederlands aan</button>
       <span class="legend">💡 <span class="ch">geel</span> = chunk om mee te nemen</span>
@@ -95,7 +103,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
   </div>
   <div class="tr">{BODY}</div>
  </div>
- <div class="foot">C4 · «Welcome to Spanish» · Unidad 1 — meelees-transcript (rood). Video ingebed vanaf Google Drive (besloten klasgebruik).</div>
+ <div class="foot">C4 · «Welcome to Spanish» · Unidad 1 — meelees-transcript (rood). Video ingebed via YouTube (volledige aflevering, incl. scène 1).</div>
 </main>
 <script>
 function speak(t){{if(!('speechSynthesis'in window))return;var u=new SpeechSynthesisUtterance(t);u.lang='es-ES';u.rate=.9;var v=speechSynthesis.getVoices().find(function(x){{return /^es/i.test(x.lang)}});if(v)u.voice=v;speechSynthesis.cancel();speechSynthesis.speak(u);}}
