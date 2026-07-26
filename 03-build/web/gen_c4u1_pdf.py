@@ -104,6 +104,13 @@ ol.nl{margin:2mm 0;padding-left:7mm}ol.nl li{margin:2.6mm 0}
 .wtab{width:100%;font-size:9pt}.wtab th{background:var(--gt);color:var(--gd);font-size:7.6pt;text-transform:uppercase;padding:1.5mm}.wtab td{border:1px solid var(--line);height:9mm;padding:1mm 2mm}
 .mtab{width:100%;font-size:9.4pt;margin-top:2mm}.mtab td{padding:1.8mm 2mm;border-bottom:1px dashed var(--line2)}.mtab .a{font-weight:600}.mtab .b{color:var(--mut)}.mtab .ln{width:8mm;border-bottom:1.4px solid var(--line2);display:inline-block}
 .scramble{display:flex;flex-wrap:wrap;gap:2mm;margin:2mm 0}.scramble span{border:1px solid var(--line);border-radius:6pt;padding:1mm 3mm;font-weight:600;font-size:9pt;background:#fff}
+/* uitspraak (Suena bien) print */
+.vrow{display:grid;grid-template-columns:repeat(5,1fr);gap:3mm;margin:2mm 0}
+.vc{border:1px solid var(--line);border-top:3px solid var(--g);border-radius:8pt;padding:2.5mm;text-align:center;break-inside:avoid}
+.vc .vl{font-family:var(--dispx);font-size:20pt;color:var(--gd);line-height:1}
+.vc .vas{font-size:7.6pt;color:var(--mut);display:block}
+.vc .vej{font-size:8.6pt;font-weight:600;display:block;margin-top:1mm}
+.klemline{font-size:10pt;margin:3mm 0 0}.klemline .t{background:var(--gt);border-radius:4pt;padding:.3mm 1.6mm;font-weight:700;color:var(--gd)}
 /* música print */
 .bandas{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-top:3mm}
 .banda{border:1px solid var(--line);border-radius:10pt;padding:3mm 4mm;break-inside:avoid}
@@ -153,9 +160,17 @@ ESCUCHA=f"""
 </div>
 """
 
+VOC=[("a","als in ‘bal’","casa"),("e","als in ‘bed’","mesa"),("i","als in ‘kiwi’","sí"),("o","als in ‘pot’","hola"),("u","als in ‘boek’","tú")]
+def vc(l,a,e): return f'<div class="vc"><div class="vl">{l}</div><span class="vas">{a}</span><span class="vej">{e}</span></div>'
 KIT=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">§2 · Kit de supervivencia</div><h2>De taal die je écht nodig hebt</h2>
+  <div class="se">Suena bien · pronunciación</div><h2>De 5 klinkers &amp; de klemtoon</h2>
+  <p style="font-size:9.4pt;color:var(--mut);margin:0 0 1mm">Spaanse klinkers zijn <b>kort en zuiver</b> — altijd dezelfde klank. Oefen ze online (QR §1): luister en spreek na.</p>
+  <div class="vrow">{"".join(vc(*v) for v in VOC)}</div>
+  <div class="ojo"><b>¡Ojo!</b> e blijft /e/ en o blijft /o/ — géén Nederlandse «ei/ou»-glijder (denk: a·e·i·o·oe).</div>
+  <div class="klemline"><b>La sílaba tónica</b> — waar ligt de klemtoon? Onderstreep/hoor: <span class="t">HO</span>·la · me·<span class="t">LLA</span>·mo · en·can·<span class="t">TA</span>·do · a·<span class="t">DIÓS</span> · <span class="t">GRA</span>·cias</div>
+
+  <div class="se" style="margin-top:6mm">§2 · Kit de supervivencia</div><h2>De taal die je écht nodig hebt</h2>
   <p style="font-size:9.4pt;color:var(--mut);margin:0 0 2mm">Vink ☐ af telkens je een uitdrukking vlot kunt <b>naspreken</b>. Oefen ze online met audio.</p>
   <div class="kitwrap">{"".join(kittable(n,it) for n,it in CLUSTERS)}</div>
 </div>

@@ -57,15 +57,15 @@
 
 | Domein | Totaal | **C4-geschikt** (✓/~) | Gebruikt (U1) | **Nog beschikbaar (C4)** |
 |---|--:|--:|--:|--:|
-| designcomponent | 50 | **49** | 6 | **43** |
+| designcomponent | 50 | **49** | 7 | **42** |
 | grammatica-patroon | 35 | **17** | 5 | **12** |
 | grammaticatool | 25 | **12** | 3 | **9** |
 | layout | 50 | **50** | 8 | **42** |
-| powerpoint | 50 | **44** | 6 | **38** |
-| vaardigheid | 120 | **120** | 9 | **111** |
+| powerpoint | 50 | **44** | 7 | **37** |
+| vaardigheid | 120 | **120** | 10 | **110** |
 | werkvorm | 100 | **65** | 7 | **58** |
 | woordenschat-patroon | 23 | **23** | 3 | **20** |
-| **TOTAAL** | **453** | **380** | **47** | **333** |
+| **TOTAAL** | **453** | **380** | **50** | **330** |
 
 
 ## designcomponent
@@ -80,7 +80,7 @@
 | DS-006 | Activiteitenpagina | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | DS-007 | Woordenschatspread | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | DS-008 | Grammaticaspread | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| DS-009 | Uitspraakpagina | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| DS-009 | Uitspraakpagina | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | DS-010 | Cultuurpagina | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | DS-011 | Projectpagina | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | DS-012 | Herhalingsspread | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
@@ -289,7 +289,7 @@
 | PPT-035 | Luisteren en ordenen | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | PPT-036 | Microdictee met gefaseerd transcript | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | PPT-037 | Shadowingmodule | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| PPT-038 | Uitspraakcontrast | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| PPT-038 | Uitspraakcontrast | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | PPT-039 | Rollenkaart met spreektimer | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | PPT-040 | Gesimuleerde chatbot | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | PPT-041 | Leesdetective met bewijsstukken | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
@@ -393,7 +393,7 @@
 | SK-084 | Herhaling met nieuwe inhoud | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | SK-085 | Opname, feedback en herneming | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | SK-086 | Luister en herhaal | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| SK-087 | Klankdiscriminatie en productie | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| SK-087 | Klankdiscriminatie en productie | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | SK-088 | Shadowing | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | SK-089 | Klikbare taalbank | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | SK-090 | Interactieve zinsbouwer | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |

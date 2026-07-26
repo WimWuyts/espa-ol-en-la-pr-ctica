@@ -16,7 +16,7 @@ def srcdoc(path):
 
 TABS=[
  ("escucha","🎬 Escucha","C4_U1_escucha.html","Bekijk de scène en lees mee — de chunks komen uit je oren."),
- ("kit","🧰 Kit","C4_U1_kgt.html","De taal die je écht nodig hebt, per situatie."),
+ ("kit","🧰 Kit","C4_U1_kgt.html","Uitspraak (klanken), de taal per situatie, gramática & tarea."),
  ("practica","✍️ Práctica","C4_U1_practica.html","Oefen zelfcorrigerend: herkennen → kiezen → zelf zeggen."),
  ("musica","🎧 Música","C4_musica.html","Banda sonora — leer Spaans via muziek die jullie kennen."),
 ]
@@ -31,7 +31,9 @@ def panel(i,t):
     on=" show" if i==0 else ""
     doc=srcdoc(f"{CMP}/{fn}")
     return (f'<section class="panel{on}" id="p_{key}"><p class="psub">{sub}</p>'
-            f'<div class="fw"><iframe class="frame" loading="lazy" srcdoc="{doc}"></iframe></div></section>')
+            f'<div class="fw"><iframe class="frame" loading="lazy" '
+            f'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen; web-share" '
+            f'allowfullscreen srcdoc="{doc}"></iframe></div></section>')
 
 CSS=FONTS+r"""
 :root{--g:#D64550;--gd:#A8323B;--gt:#FBEAEC;--ink:#20242E;--mut:#6A6E78;--paper:#FCFBF8;--crema:#F3EEE4;--line:#E7E1DF;--card:#fff;--disp:'Bricolage Grotesque',sans-serif;--body:'Inter',sans-serif}

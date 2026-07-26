@@ -476,19 +476,20 @@ def s02_menu():
     s = slide(); bg(s)
     sectionbar(s, "MENÚ", "¿Qué vamos a hacer?", "Wat gaan we doen? — klik op een tegel", num=None)
     tiles = [("1", "¡Escucha!", "de scène + chunks", 2),
-             ("2", "Kit", "saludos & presentarse", 3),
-             ("3", "Gramática", "ser · llamarse · -o/-a", 5),
-             ("4", "Práctica", "oefenen samen", 7),
-             ("5", "Hablar", "preséntate", 8),
-             ("6", "Música", "banda sonora", 9),
-             ("7", "Tarea", "el carné de la clase", 10),
-             ("8", "Repaso", "wat kun je nu?", 11)]
+             ("2", "Suena bien", "klanken & klemtoon", 3),
+             ("3", "Kit", "saludos & presentarse", 4),
+             ("4", "Gramática", "ser · llamarse · -o/-a", 6),
+             ("5", "Práctica", "oefenen samen", 8),
+             ("6", "Hablar", "preséntate", 9),
+             ("7", "Música", "banda sonora", 10),
+             ("8", "Tarea", "el carné de la clase", 11),
+             ("9", "Repaso", "wat kun je nu?", 12)]
     x0, y0 = Inches(0.55), Inches(1.7)
     w = Inches(3.0); gx = Inches(0.18); gy = Inches(0.2)
     for i, t in enumerate(tiles):
         col = i % 4; row = i // 4
         _tile(s, x0 + col * (w + gx), y0 + row * (Inches(1.15) + gy), w, *t)
-    text(s, Inches(0.6), Inches(5.6), Inches(12), Inches(0.9),
+    text(s, Inches(0.6), Inches(5.95), Inches(12), Inches(0.9),
          [[("Consejo · Tip. ", {"size": 12, "bold": True, "color": GD, "font": DISPLAY}),
            ("Luister eerst, spreek na, en durf zelf te praten. Fouten maken hoort erbij.", {"size": 12, "italic": True, "color": INK})]])
     footer(s, tab=FTAB, page=pg())
@@ -748,8 +749,30 @@ def s13_teacher():
           [("Oplossingen staan bij elke oefendia in de presenter-notities; antwoorden verschijnen bij klik.", {"size": 11.5, "italic": True, "color": RGBColor(0xA6,0xA2,0x9A)})]])
     footer(s, tab=FTAB, page=pg())
 
+def s_uitspraak():
+    s = slide(); bg(s)
+    sectionbar(s, "SUENA BIEN", "Las cinco vocales + el acento", "De 5 klinkers & de klemtoon — luister en spreek na", num=None)
+    vocs=[("a","‘bal’","casa"),("e","‘bed’","mesa"),("i","‘kiwi’","sí"),("o","‘pot’","hola"),("u","‘boek’","tú")]
+    x=Inches(0.55); w=Inches(2.4)
+    for l,a,e in vocs:
+        card(s,x,Inches(1.7),w,Inches(1.95),fill=WHITE,line=LINE)
+        rect(s,x,Inches(1.7),w,Inches(0.14),fill=G)
+        text(s,x,Inches(1.98),w,Inches(0.95),[[(l,{"size":42,"bold":True,"color":GD,"font":DISPLAY})]],align=PP_ALIGN.CENTER)
+        text(s,x,Inches(2.95),w,Inches(0.6),[[("als in "+a,{"size":11,"color":MUT})],[(e,{"size":14,"bold":True,"color":INK})]],align=PP_ALIGN.CENTER)
+        x=x+w+Inches(0.1)
+    card(s,Inches(0.55),Inches(3.85),Inches(12.25),Inches(0.85),fill=GT,line=G)
+    text(s,Inches(0.85),Inches(4.0),Inches(11.7),Inches(0.6),
+         [[("¡Ojo! ",{"size":13,"bold":True,"color":RED,"font":DISPLAY}),("e blijft /e/ en o blijft /o/ — géén NL «ei/ou»-glijder.  a · e · i · o · oe",{"size":13,"color":INK})]])
+    text(s,Inches(0.6),Inches(4.95),Inches(12),Inches(0.4),[[("¿Dónde está el acento? · waar ligt de klemtoon?",{"size":14,"bold":True,"color":GD,"font":DISPLAY})]])
+    text(s,Inches(0.6),Inches(5.5),Inches(12.2),Inches(0.7),
+         [[("HO",{"color":G,"bold":True}),("·la     me·",{}),("LLA",{"color":G,"bold":True}),("·mo     en·can·",{}),
+           ("TA",{"color":G,"bold":True}),("·do     a·",{}),("DIÓS",{"color":G,"bold":True}),("     ",{}),
+           ("GRA",{"color":G,"bold":True}),("·cias",{})]],size=20,font=DISPLAY)
+    text(s,Inches(0.6),Inches(6.3),Inches(12),Inches(0.4),[[("🔊 Oefen de klanken online op de hub (tabblad Kit · Suena bien).",{"size":11,"italic":True,"color":MUT})]])
+    footer(s, tab=FTAB, page=pg())
+
 def _run_all_slides(include_teacher=True):
-    s01_title(); s02_menu(); s03_escucha()
+    s01_title(); s02_menu(); s03_escucha(); s_uitspraak()
     s04_kit(); s05_presentarse(); s06_gram_ser()
     s07_gram_mv(); s08_practica(); s09_speaking()
     s10_musica(); s11_tarea(); s12_repaso()

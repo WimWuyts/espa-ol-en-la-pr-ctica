@@ -11,12 +11,17 @@ FONTS="".join([face("Bricolage Grotesque","BricolageGrotesque-700.woff2","700"),
 # videobron: ("youtube", id) of ("drive", id). U1 → YouTube (volledige aflevering, bevat scène 1;
 # het Drive-fragment Sitcom 1 miste scène 1). YouTube = geen deelrechten nodig, werkt voor iedereen.
 VIDEO_SRC=("youtube","yvPI-4JGdyo")
+ALLOW="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen; web-share"
 def video_iframe(src):
     kind,vid=src
     if kind=="youtube":
-        return f'<iframe src="https://www.youtube-nocookie.com/embed/{vid}?rel=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>'
-    return f'<iframe src="https://drive.google.com/file/d/{vid}/preview" allow="autoplay" allowfullscreen></iframe>'
+        return (f'<iframe src="https://www.youtube-nocookie.com/embed/{vid}?rel=0&playsinline=1" '
+                f'title="Sitcom · Episodio 1" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" '
+                f'allow="{ALLOW}" allowfullscreen></iframe>')
+    return f'<iframe src="https://drive.google.com/file/d/{vid}/preview" allow="{ALLOW}" allowfullscreen></iframe>'
 IFRAME=video_iframe(VIDEO_SRC)
+# rechtstreekse fallback-link (werkt ook wanneer de embed genest in de hub zit)
+YT_WATCH="https://www.youtube.com/watch?v="+VIDEO_SRC[1] if VIDEO_SRC[0]=="youtube" else "https://drive.google.com/file/d/"+VIDEO_SRC[1]+"/view"
 # hoogfrequente chunks om te markeren (survival)
 CHUNKS=["Hola","¿Cómo estás?","Bien","encantada","Encantado","Encantado de conocerla","¿Cómo te llamas?","me llamo","Yo soy","soy","hasta luego","Adiós","Vale","¿Cómo está usted?","Igualmente","muy bien","¿Qué tal","Sí, claro","muchas gracias","De nada","Bienvenida","Perdona"]
 SCENES=[
@@ -75,6 +80,8 @@ main{max-width:1080px;margin:0 auto;padding:18px}
 .toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:12px 0}
 .btn{border:1.5px solid var(--line);background:var(--card);color:var(--ink);font-weight:700;border-radius:10px;padding:8px 13px;cursor:pointer;font-size:13px;font-family:var(--disp)}
 .btn.on{background:var(--g);color:#fff;border-color:var(--g)}
+a.btn{text-decoration:none;display:inline-flex;align-items:center;gap:5px}
+.vidhint{font-size:12px;color:var(--mut);margin:8px 0 0}.vidhint a{color:var(--gd);font-weight:600}
 .legend{font-size:12px;color:var(--mut)}.legend .ch{background:#FEF08A;border-radius:4px;padding:1px 5px}
 .scene{margin:0 0 16px}.scene h3{font-family:var(--disp);color:var(--gd);margin:14px 0 2px;font-size:17px}.scene .si{color:var(--mut);font-size:13px;margin:0 0 8px}
 .ln{display:flex;gap:8px;align-items:baseline;padding:6px 8px;border-radius:10px;flex-wrap:wrap}
@@ -98,8 +105,10 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
     <div class="vidbox">{IFRAME}</div>
     <div class="toolbar">
       <button class="btn" id="tgnl">🇳🇱 Nederlands aan</button>
+      <a class="btn" href="{YT_WATCH}" target="_blank" rel="noopener">▶ Op YouTube</a>
       <span class="legend">💡 <span class="ch">geel</span> = chunk om mee te nemen</span>
     </div>
+    <p class="vidhint">Speelt de video niet af? Klik <a href="{YT_WATCH}" target="_blank" rel="noopener">hier om ze op YouTube te openen</a>.</p>
   </div>
   <div class="tr">{BODY}</div>
  </div>

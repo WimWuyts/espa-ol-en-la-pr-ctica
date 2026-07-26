@@ -131,6 +131,32 @@ TAREA=r"""
 </div>
 """
 
+# ── §Suena bien · uitspraak (matrix A: klinkers a·e·i·o·u + sílaba tónica) ──────
+# reservoir: DS-009 uitspraakpagina · SK-080 uitspraakkaart · SK-087 klankdiscriminatie · SK-088 shadowing
+VOCALS=[("a","als in ‘bal’","casa · mañana"),("e","als in ‘bed’ (kort)","mesa · café"),
+ ("i","als in ‘kiwi’","sí · Lucía"),("o","als in ‘pot’","hola · oso"),("u","als in ‘boek’","tú · uno")]
+SHADOW=["Hola","Buenos días","Me llamo","Encantado","Muchas gracias"]
+KLEM=[(["Ho","la"],0),(["me","lla","mo"],1),(["en","can","ta","do"],2),(["a","diós"],1),(["gra","cias"],0)]
+def voccard(l,as_,ej):
+    return (f'<div class="voc" data-w="{ej.split(" · ")[0]}"><span class="vl">{l}</span>'
+            f'<span class="vas">{as_}</span><span class="vej">{ej}</span><button class="vspk">🔊</button></div>')
+def shchip(w): return f'<button class="shchip" data-w="{w}">🔊 {w}</button>'
+def klemword(i,syls,ton):
+    chips="".join(f'<span class="syl" data-ok="{1 if j==ton else 0}">{s}</span>' for j,s in enumerate(syls))
+    return f'<div class="klemword" data-w="{"".join(syls)}"><button class="kspk">🔊</button>{chips}</div>'
+SUENA=('<div class="suena">'
+ '<div class="sblok"><h3>① Las cinco vocales · de 5 klinkers</h3>'
+ '<p class="sh">Spaanse klinkers zijn <b>kort en zuiver</b> — altijd dezelfde klank, nooit «versleept». Klik 🔊 en spreek na.</p>'
+ f'<div class="vocgrid">{"".join(voccard(*v) for v in VOCALS)}</div>'
+ '<p class="ojo2">⚠️ <b>¡Ojo!</b> <span>e blijft /e/ en o blijft /o/ — géén NL «ei/ou»-glijder. Denk: a·e·i·o·oe.</span></p></div>'
+ '<div class="sblok"><h3>② Repite · spreek na (shadowing)</h3>'
+ '<p class="sh">Luister en herhaal meteen — imiteer de melodie.</p>'
+ f'<div class="shrow">{"".join(shchip(w) for w in SHADOW)}</div></div>'
+ '<div class="sblok"><h3>③ ¿Dónde está el acento? · waar ligt de klemtoon?</h3>'
+ '<p class="sh">Klik op de lettergreep die je het <b>sterkst</b> hoort; klik 🔊 om te controleren.</p>'
+ f'<div class="klemgrid">{"".join(klemword(i,*k) for i,k in enumerate(KLEM))}</div>'
+ '<p class="sfb" id="sfb"></p></div></div>')
+
 CSS=FONTS+r"""
 :root{--g:#D64550;--gd:#A8323B;--gt:#FBEAEC;--ink:#20242E;--mut:#6A6E78;--paper:#FCFBF8;--crema:#F3EEE4;--line:#E7E1DF;--card:#fff;
 --p:#2563EB;--v:#EA7317;--disp:'Bricolage Grotesque',sans-serif;--body:'Inter',sans-serif}
@@ -192,12 +218,38 @@ main{max-width:1000px;margin:0 auto;padding:18px}
 .btn{border:1.5px solid var(--line);background:var(--card);color:var(--ink);font-weight:700;border-radius:10px;padding:7px 13px;cursor:pointer;font-family:var(--disp);font-size:13px}
 .btn.on{background:var(--g);color:#fff;border-color:var(--g)}
 .foot{color:var(--mut);font-size:12px;text-align:center;margin:26px 0}
+/* §Suena bien */
+.suena{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:760px){.suena{grid-template-columns:1fr}}
+.sblok{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.suena .sblok:first-child{grid-row:span 2}
+.sblok h3{font-family:var(--disp);color:var(--gd);margin:0 0 4px;font-size:16px}
+.sh{color:var(--mut);font-size:12.5px;margin:0 0 10px}
+.vocgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.voc{position:relative;border:1.5px solid var(--line);border-left:4px solid var(--g);border-radius:12px;padding:8px 34px 8px 12px;cursor:pointer}
+.voc:hover{background:var(--gt)}
+.vl{display:block;font-family:var(--disp);font-weight:800;font-size:22px;color:var(--gd);line-height:1.1}
+.vas{display:block;font-size:11.5px;color:var(--mut)}.vej{display:block;font-size:13px;font-weight:600}
+.vspk{position:absolute;right:8px;top:8px;border:none;background:transparent;cursor:pointer;font-size:14px;opacity:.55}
+.ojo2{background:var(--gt);border-radius:10px;padding:8px 12px;font-size:12.5px;margin:10px 0 0}.ojo2 b{color:#DC2626}
+.shrow{display:flex;flex-wrap:wrap;gap:8px}
+.shchip{border:1.5px solid var(--line);background:var(--paper);border-radius:20px;padding:8px 14px;font-weight:700;font-size:14px;cursor:pointer;font-family:var(--disp);color:var(--ink)}
+.shchip:hover{background:var(--gt);border-color:var(--g)}
+.klemgrid{display:flex;flex-direction:column;gap:8px}
+.klemword{display:flex;align-items:center;gap:4px}
+.kspk{border:none;background:transparent;cursor:pointer;font-size:14px;opacity:.55;margin-right:2px}
+.syl{border:1.5px solid var(--line);border-radius:8px;padding:5px 11px;font-family:var(--disp);font-weight:700;font-size:15px;cursor:pointer;user-select:none}
+.syl:hover{background:var(--gt)}.syl.ok{background:var(--g);color:#fff;border-color:var(--g)}.syl.no{background:#fde8e8;border-color:#DC2626;color:#DC2626}
+.sfb{font-size:13px;color:var(--gd);font-weight:600;min-height:18px;margin:8px 0 0}
 """
 
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · U1 · Kit · Gramática · Tarea</title><style>{CSS}</style></head><body>
 <div class="top"><h1>Unidad 1 · Presentaciones</h1><p>De <b>kit de supervivencia</b> (de taal die je écht nodig hebt), een korte <b>uitlegnota</b> waar het helpt, en je <b>eindtaak</b>. Klik 🔊 om woorden te horen.</p></div>
 <main>
+ <h2 class="subh">🔊 Suena bien <small>uitspraak — de 5 klinkers &amp; de klemtoon</small></h2>
+ {SUENA}
+
  <h2 class="subh">§2 · Kit de supervivencia <small>de chunks per situatie — klik om te horen</small></h2>
  {KIT}
 
@@ -212,6 +264,10 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
 <script>
 function speak(t){{if(!('speechSynthesis'in window))return;var u=new SpeechSynthesisUtterance(t);u.lang='es-ES';u.rate=.9;var v=speechSynthesis.getVoices().find(function(x){{return /^es/i.test(x.lang)}});if(v)u.voice=v;speechSynthesis.cancel();speechSynthesis.speak(u);}}
 document.querySelectorAll('.cc').forEach(function(c){{var es=c.getAttribute('data-es').replace(/[…?¿!¡]/g,'');c.onclick=function(){{speak(es);}};}});
+document.querySelectorAll('.voc').forEach(function(v){{v.onclick=function(){{speak(v.getAttribute('data-w'));}};}});
+document.querySelectorAll('.shchip').forEach(function(b){{b.onclick=function(){{speak(b.getAttribute('data-w'));}};}});
+document.querySelectorAll('.kspk').forEach(function(b){{b.onclick=function(){{speak(b.parentNode.getAttribute('data-w'));}};}});
+document.querySelectorAll('.klemword .syl').forEach(function(s){{s.onclick=function(){{var ok=s.getAttribute('data-ok')==='1';var sib=s.parentNode.querySelectorAll('.syl');sib.forEach(function(x){{x.classList.remove('ok','no');}});s.classList.add(ok?'ok':'no');var fb=document.getElementById('sfb');fb.textContent=ok?'¡Muy bien! Dat is de tónica. 👏':'Bijna — probeer een andere lettergreep.';}};}});
 </script></body></html>"""
 os.makedirs(f"{ROOT}/03-build/web/componentes",exist_ok=True)
 open(f"{ROOT}/03-build/web/componentes/C4_U1_kgt.html","w").write(HTML)
