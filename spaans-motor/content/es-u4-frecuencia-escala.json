@@ -1,0 +1,44 @@
+{
+  "id": "es-u4-frecuencia-escala",
+  "title": "Adverbios de frecuencia",
+  "subtitle": "U4 · koppel het frequentiewoord aan de betekenis",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 5,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind het Spaanse frequentiewoord met de Nederlandse betekenis",
+    "pairs": [
+      {
+        "a": "siempre",
+        "b": "altijd"
+      },
+      {
+        "a": "a menudo",
+        "b": "vaak"
+      },
+      {
+        "a": "a veces",
+        "b": "soms"
+      },
+      {
+        "a": "casi nunca",
+        "b": "bijna nooit"
+      },
+      {
+        "a": "nunca",
+        "b": "nooit"
+      },
+      {
+        "a": "todos los días",
+        "b": "elke dag"
+      },
+      {
+        "a": "los fines de semana",
+        "b": "in het weekend"
+      }
+    ]
+  }
+}

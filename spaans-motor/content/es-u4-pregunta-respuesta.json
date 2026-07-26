@@ -1,0 +1,48 @@
+{
+  "id": "es-u4-pregunta-respuesta",
+  "title": "Pregunta y respuesta",
+  "subtitle": "U4 · koppel de vraag aan het passende antwoord",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 5,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind elke vraag met het passende antwoord",
+    "pairs": [
+      {
+        "a": "¿Qué te gusta hacer?",
+        "b": "Me gusta nadar."
+      },
+      {
+        "a": "¿Te gusta el fútbol?",
+        "b": "No, no me gusta."
+      },
+      {
+        "a": "¿Por qué te gusta Rosalía?",
+        "b": "Porque canta muy bien."
+      },
+      {
+        "a": "¿Quieres ir a la playa?",
+        "b": "¡Vale! ¿A qué hora?"
+      },
+      {
+        "a": "¿A qué hora quedamos?",
+        "b": "A las once."
+      },
+      {
+        "a": "Me encanta bailar.",
+        "b": "A mí también."
+      },
+      {
+        "a": "No me gustan los lunes.",
+        "b": "A mí tampoco."
+      },
+      {
+        "a": "¿Puedes quedar el sábado?",
+        "b": "Sí, puedo por la tarde."
+      }
+    ]
+  }
+}

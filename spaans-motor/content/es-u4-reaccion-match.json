@@ -1,0 +1,40 @@
+{
+  "id": "es-u4-reaccion-match",
+  "title": "El espejo de reacciones",
+  "subtitle": "U4 · koppel elke uitspraak aan de logische reactie (akkoord)",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 4,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Koppel elke uitspraak aan de reactie waarmee je AKKOORD gaat",
+    "pairs": [
+      {
+        "a": "Me gusta el mar. (+)",
+        "b": "A mí también."
+      },
+      {
+        "a": "No me gusta el frío. (–)",
+        "b": "A mí tampoco."
+      },
+      {
+        "a": "Me encanta el cine. (jij niet)",
+        "b": "A mí no."
+      },
+      {
+        "a": "No me gustan las mates. (jij wél)",
+        "b": "A mí sí."
+      },
+      {
+        "a": "Me gustan los videojuegos. (+)",
+        "b": "¡A mí también!"
+      },
+      {
+        "a": "No me gusta madrugar. (–)",
+        "b": "¡A mí tampoco!"
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "id": "es-u4-reaccion",
+  "title": "La reacción correcta",
+  "subtitle": "U4 · reageer akkoord op de spreker",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Wat zeg je om AKKOORD te gaan met de spreker?",
+    "categories": [
+      {
+        "id": "tambien",
+        "label": "A mí también<br><small>+ akkoord</small>",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "tampoco",
+        "label": "A mí tampoco<br><small>– akkoord</small>",
+        "glaze": "#3D74D6"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "Me gusta el mar.",
+        "answer": "tambien",
+        "tag": "tambien",
+        "sub": "+ → también"
+      },
+      {
+        "stimulus": "No me gusta el frío.",
+        "answer": "tampoco",
+        "tag": "tampoco",
+        "sub": "– → tampoco"
+      },
+      {
+        "stimulus": "Me encanta bailar.",
+        "answer": "tambien",
+        "tag": "tambien",
+        "sub": "+ → también"
+      },
+      {
+        "stimulus": "No me gustan los lunes.",
+        "answer": "tampoco",
+        "tag": "tampoco",
+        "sub": "– → tampoco"
+      },
+      {
+        "stimulus": "Me gustan los videojuegos.",
+        "answer": "tambien",
+        "tag": "tambien",
+        "sub": "+ → también"
+      },
+      {
+        "stimulus": "No me gusta madrugar.",
+        "answer": "tampoco",
+        "tag": "tampoco",
+        "sub": "– → tampoco"
+      },
+      {
+        "stimulus": "Me gusta el cine.",
+        "answer": "tambien",
+        "tag": "tambien",
+        "sub": "+ → también"
+      },
+      {
+        "stimulus": "No me gustan las mates.",
+        "answer": "tampoco",
+        "tag": "tampoco",
+        "sub": "– → tampoco"
+      },
+      {
+        "stimulus": "Me encanta la playa.",
+        "answer": "tambien",
+        "tag": "tambien",
+        "sub": "+ → también"
+      },
+      {
+        "stimulus": "No me gusta el ruido.",
+        "answer": "tampoco",
+        "tag": "tampoco",
+        "sub": "– → tampoco"
+      },
+      {
+        "stimulus": "Me gusta leer.",
+        "answer": "tambien",
+        "tag": "tambien",
+        "sub": "+ → también"
+      },
+      {
+        "stimulus": "No me gustan las series largas.",
+        "answer": "tampoco",
+        "tag": "tampoco",
+        "sub": "– → tampoco"
+      }
+    ]
+  }
+}

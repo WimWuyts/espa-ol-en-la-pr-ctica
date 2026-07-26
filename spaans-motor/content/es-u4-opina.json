@@ -1,0 +1,111 @@
+{
+  "id": "es-u4-opina",
+  "title": "Da tu opinión",
+  "subtitle": "U4 · schrijf je smaak — met alle bouwstenen",
+  "lang": "es",
+  "template": "sim",
+  "options": {
+    "audio": false
+  },
+  "sim": {
+    "prompt": "Tarea comunicativa · gustos & opinión",
+    "rounds": [
+      {
+        "scenario": "Escríbele a Bea qué te gusta y qué no.",
+        "tag": "opinar",
+        "sub": "gebruik: me gusta(n) · no me gusta · porque",
+        "min": 10,
+        "need": [
+          {
+            "re": "me gusta",
+            "label": "me gusta(n) …"
+          },
+          {
+            "re": "no me gusta",
+            "label": "no me gusta …"
+          },
+          {
+            "re": "porque",
+            "label": "porque …"
+          }
+        ],
+        "bank": [
+          "Me gusta",
+          "Me gustan",
+          "Me encanta",
+          "No me gusta",
+          "porque",
+          "es divertido",
+          "los deportes",
+          "la música",
+          "bailar",
+          "y también"
+        ],
+        "model": "Me encanta la música y me gustan los deportes, pero no me gusta el fútbol porque es aburrido."
+      },
+      {
+        "scenario": "Reacciona: «Me gusta bailar. ¿Y a ti?»",
+        "tag": "opinar",
+        "sub": "reageer + geef een reden",
+        "min": 8,
+        "need": [
+          {
+            "re": "a mí (también|tampoco|sí|no)",
+            "label": "a mí también/tampoco/sí/no"
+          },
+          {
+            "re": "me gusta|me encanta|no me gusta",
+            "label": "un gusto propio"
+          },
+          {
+            "re": "porque",
+            "label": "porque …"
+          }
+        ],
+        "bank": [
+          "A mí también",
+          "A mí no",
+          "me gusta",
+          "me encanta",
+          "porque",
+          "es genial",
+          "nadar",
+          "la playa",
+          "también"
+        ],
+        "model": "A mí también me gusta bailar, y me encanta nadar porque es relajante."
+      },
+      {
+        "scenario": "Propón un plan a un amigo para el sábado.",
+        "tag": "planes",
+        "sub": "proponer + hora",
+        "min": 8,
+        "need": [
+          {
+            "re": "quieres|podemos|por qué no",
+            "label": "propuesta (querer/poder)"
+          },
+          {
+            "re": "quedamos|a las",
+            "label": "hora / quedar"
+          },
+          {
+            "re": "playa|cine|concierto|parque",
+            "label": "un lugar/plan"
+          }
+        ],
+        "bank": [
+          "¿Quieres",
+          "¿Podemos",
+          "ir a la playa",
+          "ver una película",
+          "quedamos",
+          "a las cinco",
+          "¿por qué no",
+          "el sábado"
+        ],
+        "model": "¿Quieres ir a la playa el sábado? ¿Podemos quedar a las cinco?"
+      }
+    ]
+  }
+}

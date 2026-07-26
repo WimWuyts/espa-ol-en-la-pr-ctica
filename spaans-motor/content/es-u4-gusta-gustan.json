@@ -1,0 +1,112 @@
+{
+  "id": "es-u4-gusta-gustan",
+  "title": "¿gusta o gustan?",
+  "subtitle": "U4 · één ding/infinitivo = gusta · meerdere = gustan",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 14,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Welke vorm? (één ding of een infinitief = gusta · meervoud = gustan)",
+    "categories": [
+      {
+        "id": "gusta",
+        "label": "gusta<br><small>1 ding / infinitivo</small>",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "gustan",
+        "label": "gustan<br><small>meerdere dingen</small>",
+        "glaze": "#3D74D6"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "Me ___ el fútbol.",
+        "answer": "gusta",
+        "tag": "gusta",
+        "sub": "el fútbol = 1"
+      },
+      {
+        "stimulus": "Me ___ los deportes.",
+        "answer": "gustan",
+        "tag": "gustan",
+        "sub": "los deportes = mv."
+      },
+      {
+        "stimulus": "Me ___ bailar.",
+        "answer": "gusta",
+        "tag": "gusta",
+        "sub": "infinitivo → gusta"
+      },
+      {
+        "stimulus": "Me ___ las series.",
+        "answer": "gustan",
+        "tag": "gustan",
+        "sub": "las series = mv."
+      },
+      {
+        "stimulus": "Me ___ la playa.",
+        "answer": "gusta",
+        "tag": "gusta",
+        "sub": "la playa = 1"
+      },
+      {
+        "stimulus": "Me ___ los videojuegos.",
+        "answer": "gustan",
+        "tag": "gustan",
+        "sub": "mv."
+      },
+      {
+        "stimulus": "Me ___ escuchar música.",
+        "answer": "gusta",
+        "tag": "gusta",
+        "sub": "infinitivo"
+      },
+      {
+        "stimulus": "Me ___ las canciones.",
+        "answer": "gustan",
+        "tag": "gustan",
+        "sub": "mv."
+      },
+      {
+        "stimulus": "Me ___ el cine.",
+        "answer": "gusta",
+        "tag": "gusta",
+        "sub": "el cine = 1"
+      },
+      {
+        "stimulus": "Me ___ los conciertos.",
+        "answer": "gustan",
+        "tag": "gustan",
+        "sub": "mv."
+      },
+      {
+        "stimulus": "Me ___ leer.",
+        "answer": "gusta",
+        "tag": "gusta",
+        "sub": "infinitivo"
+      },
+      {
+        "stimulus": "Me ___ las películas.",
+        "answer": "gustan",
+        "tag": "gustan",
+        "sub": "mv."
+      },
+      {
+        "stimulus": "Me ___ el mar.",
+        "answer": "gusta",
+        "tag": "gusta",
+        "sub": "1 ding"
+      },
+      {
+        "stimulus": "Me ___ los animales.",
+        "answer": "gustan",
+        "tag": "gustan",
+        "sub": "mv."
+      }
+    ]
+  }
+}

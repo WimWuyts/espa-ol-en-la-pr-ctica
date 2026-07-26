@@ -1,0 +1,103 @@
+{
+  "id": "es-u4-plan-orden",
+  "title": "Ordena el plan",
+  "subtitle": "U4 · zet de conversatie (proponer & quedar) in de juiste volgorde",
+  "lang": "es",
+  "template": "order",
+  "options": {
+    "audio": false
+  },
+  "order": {
+    "prompt": "Tik de zinnen in de logische volgorde van een plan",
+    "rounds": [
+      {
+        "tag": "plan",
+        "sub": "proponer → aceptar → hora → confirmar",
+        "items": [
+          {
+            "label": "¿Quieres ir a la playa el sábado?",
+            "key": 1
+          },
+          {
+            "label": "¡Vale! ¿A qué hora quedamos?",
+            "key": 2
+          },
+          {
+            "label": "¿Podemos quedar a las once?",
+            "key": 3
+          },
+          {
+            "label": "De acuerdo, ¡hasta el sábado!",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "plan",
+        "sub": "gusto → propuesta → aceptar",
+        "items": [
+          {
+            "label": "Me encanta el cine.",
+            "key": 1
+          },
+          {
+            "label": "¿Quieres ver una película?",
+            "key": 2
+          },
+          {
+            "label": "Sí, ¿por qué no vamos hoy?",
+            "key": 3
+          },
+          {
+            "label": "¡Genial! Quedamos a las seis.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "plan",
+        "sub": "pregunta → gusto → reacción → plan",
+        "items": [
+          {
+            "label": "¿Te gusta la música en directo?",
+            "key": 1
+          },
+          {
+            "label": "Sí, me encanta.",
+            "key": 2
+          },
+          {
+            "label": "A mí también. ¿Quieres ir a un concierto?",
+            "key": 3
+          },
+          {
+            "label": "¡Vale! ¿Cuándo?",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "plan",
+        "sub": "proponer → no puede → alternativa",
+        "items": [
+          {
+            "label": "¿Quieres quedar el viernes?",
+            "key": 1
+          },
+          {
+            "label": "No puedo el viernes.",
+            "key": 2
+          },
+          {
+            "label": "¿Podemos el sábado?",
+            "key": 3
+          },
+          {
+            "label": "Sí, ¡perfecto!",
+            "key": 4
+          }
+        ]
+      }
+    ]
+  }
+}

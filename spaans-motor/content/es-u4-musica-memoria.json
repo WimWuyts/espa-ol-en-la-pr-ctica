@@ -1,0 +1,56 @@
+{
+  "id": "es-u4-musica-memoria",
+  "title": "Música y cine",
+  "subtitle": "U4 · zoek het paar español ↔ nederlands",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om: woord + vertaling",
+    "pairs": [
+      {
+        "a": "la canción",
+        "b": "het liedje"
+      },
+      {
+        "a": "el/la cantante",
+        "b": "de zanger(es)"
+      },
+      {
+        "a": "el grupo",
+        "b": "de band"
+      },
+      {
+        "a": "la película",
+        "b": "de film"
+      },
+      {
+        "a": "la serie",
+        "b": "de serie"
+      },
+      {
+        "a": "el cine",
+        "b": "de bioscoop"
+      },
+      {
+        "a": "escuchar música",
+        "b": "muziek luisteren"
+      },
+      {
+        "a": "tocar la guitarra",
+        "b": "gitaar spelen"
+      },
+      {
+        "a": "la letra",
+        "b": "de songtekst"
+      },
+      {
+        "a": "el/la artista",
+        "b": "de artiest"
+      }
+    ]
+  }
+}

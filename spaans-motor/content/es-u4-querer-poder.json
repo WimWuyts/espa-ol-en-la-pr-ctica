@@ -1,0 +1,100 @@
+{
+  "id": "es-u4-querer-poder",
+  "title": "¿querer o poder?",
+  "subtitle": "U4 · welke stamwissel: e>ie (querer) of o>ue (poder)?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Van welk werkwoord komt deze vorm?",
+    "categories": [
+      {
+        "id": "querer",
+        "label": "querer<br><small>e → ie (willen)</small>",
+        "glaze": "#E0A22F"
+      },
+      {
+        "id": "poder",
+        "label": "poder<br><small>o → ue (kunnen)</small>",
+        "glaze": "#2FA8A0"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "quiero",
+        "answer": "querer",
+        "tag": "querer",
+        "sub": "yo quiero"
+      },
+      {
+        "stimulus": "puedo",
+        "answer": "poder",
+        "tag": "poder",
+        "sub": "yo puedo"
+      },
+      {
+        "stimulus": "quieres",
+        "answer": "querer",
+        "tag": "querer",
+        "sub": "tú quieres"
+      },
+      {
+        "stimulus": "puedes",
+        "answer": "poder",
+        "tag": "poder",
+        "sub": "tú puedes"
+      },
+      {
+        "stimulus": "quiere",
+        "answer": "querer",
+        "tag": "querer",
+        "sub": "él quiere"
+      },
+      {
+        "stimulus": "puede",
+        "answer": "poder",
+        "tag": "poder",
+        "sub": "él puede"
+      },
+      {
+        "stimulus": "queremos",
+        "answer": "querer",
+        "tag": "querer",
+        "sub": "nosotros (sin wissel)"
+      },
+      {
+        "stimulus": "podemos",
+        "answer": "poder",
+        "tag": "poder",
+        "sub": "nosotros (sin wissel)"
+      },
+      {
+        "stimulus": "quieren",
+        "answer": "querer",
+        "tag": "querer",
+        "sub": "ellos quieren"
+      },
+      {
+        "stimulus": "pueden",
+        "answer": "poder",
+        "tag": "poder",
+        "sub": "ellos pueden"
+      },
+      {
+        "stimulus": "queréis",
+        "answer": "querer",
+        "tag": "querer",
+        "sub": "vosotros (sin wissel)"
+      },
+      {
+        "stimulus": "podéis",
+        "answer": "poder",
+        "tag": "poder",
+        "sub": "vosotros (sin wissel)"
+      }
+    ]
+  }
+}

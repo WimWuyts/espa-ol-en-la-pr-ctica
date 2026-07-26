@@ -1,0 +1,126 @@
+{
+  "id": "es-u4-pronombre-cloze",
+  "title": "¿me, te, le, nos, os o les?",
+  "subtitle": "U4 · vul het juiste OI-voornaamwoord in",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies het juiste voornaamwoord",
+    "items": [
+      {
+        "stimulus": "(A mí) ___ gusta el mar.",
+        "options": [
+          "me",
+          "te",
+          "le"
+        ],
+        "answer": "me",
+        "tag": "oi",
+        "sub": "a mí → me"
+      },
+      {
+        "stimulus": "(A ti) ¿___ gusta bailar?",
+        "options": [
+          "te",
+          "me",
+          "os"
+        ],
+        "answer": "te",
+        "tag": "oi",
+        "sub": "a ti → te"
+      },
+      {
+        "stimulus": "A Bea ___ gusta la playa.",
+        "options": [
+          "le",
+          "les",
+          "te"
+        ],
+        "answer": "le",
+        "tag": "oi",
+        "sub": "a ella → le"
+      },
+      {
+        "stimulus": "(A nosotros) ___ gustan los conciertos.",
+        "options": [
+          "nos",
+          "os",
+          "les"
+        ],
+        "answer": "nos",
+        "tag": "oi",
+        "sub": "a nosotros → nos"
+      },
+      {
+        "stimulus": "(A vosotros) ¿___ gusta el cine?",
+        "options": [
+          "os",
+          "nos",
+          "le"
+        ],
+        "answer": "os",
+        "tag": "oi",
+        "sub": "a vosotros → os"
+      },
+      {
+        "stimulus": "A ellos ___ gusta la música.",
+        "options": [
+          "les",
+          "le",
+          "nos"
+        ],
+        "answer": "les",
+        "tag": "oi",
+        "sub": "a ellos → les"
+      },
+      {
+        "stimulus": "(A mí) ___ encanta nadar.",
+        "options": [
+          "me",
+          "te",
+          "le"
+        ],
+        "answer": "me",
+        "tag": "oi",
+        "sub": "a mí → me"
+      },
+      {
+        "stimulus": "A Diego ___ gustan los videojuegos.",
+        "options": [
+          "le",
+          "les",
+          "te"
+        ],
+        "answer": "le",
+        "tag": "oi",
+        "sub": "a él → le"
+      },
+      {
+        "stimulus": "(A ti) ¿qué ___ gusta hacer?",
+        "options": [
+          "te",
+          "me",
+          "os"
+        ],
+        "answer": "te",
+        "tag": "oi",
+        "sub": "a ti → te"
+      },
+      {
+        "stimulus": "A mis padres ___ gusta el jazz.",
+        "options": [
+          "les",
+          "le",
+          "nos"
+        ],
+        "answer": "les",
+        "tag": "oi",
+        "sub": "a ellos → les"
+      }
+    ]
+  }
+}

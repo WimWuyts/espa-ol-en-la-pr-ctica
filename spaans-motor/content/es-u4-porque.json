@@ -1,0 +1,100 @@
+{
+  "id": "es-u4-porque",
+  "title": "¿por qué o porque?",
+  "subtitle": "U4 · vraag (¿por qué?) of reden (porque)?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Vraag (twee woorden + tilde) of reden (één woord)?",
+    "categories": [
+      {
+        "id": "porqueq",
+        "label": "¿por qué?<br><small>waarom (vraag)</small>",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "porque",
+        "label": "porque<br><small>want/omdat (reden)</small>",
+        "glaze": "#2E8E68"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "¿___ te gusta Rosalía?",
+        "answer": "porqueq",
+        "tag": "porqueq",
+        "sub": "vraag"
+      },
+      {
+        "stimulus": "Me gusta ___ es divertido.",
+        "answer": "porque",
+        "tag": "porque",
+        "sub": "reden"
+      },
+      {
+        "stimulus": "¿___ no quieres ir?",
+        "answer": "porqueq",
+        "tag": "porqueq",
+        "sub": "vraag"
+      },
+      {
+        "stimulus": "No puedo ___ trabajo.",
+        "answer": "porque",
+        "tag": "porque",
+        "sub": "reden"
+      },
+      {
+        "stimulus": "¿___ estudias español?",
+        "answer": "porqueq",
+        "tag": "porqueq",
+        "sub": "vraag"
+      },
+      {
+        "stimulus": "Me encanta ___ es relajante.",
+        "answer": "porque",
+        "tag": "porque",
+        "sub": "reden"
+      },
+      {
+        "stimulus": "¿___ no te gusta?",
+        "answer": "porqueq",
+        "tag": "porqueq",
+        "sub": "vraag"
+      },
+      {
+        "stimulus": "Bailo ___ me gusta la música.",
+        "answer": "porque",
+        "tag": "porque",
+        "sub": "reden"
+      },
+      {
+        "stimulus": "¿___ quieres quedar?",
+        "answer": "porqueq",
+        "tag": "porqueq",
+        "sub": "vraag"
+      },
+      {
+        "stimulus": "Voy a la playa ___ hace sol.",
+        "answer": "porque",
+        "tag": "porque",
+        "sub": "reden"
+      },
+      {
+        "stimulus": "¿___ te gusta el mar?",
+        "answer": "porqueq",
+        "tag": "porqueq",
+        "sub": "vraag"
+      },
+      {
+        "stimulus": "Me gusta ___ es genial.",
+        "answer": "porque",
+        "tag": "porque",
+        "sub": "reden"
+      }
+    ]
+  }
+}

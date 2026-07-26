@@ -1,0 +1,104 @@
+{
+  "id": "es-u4-conectores",
+  "title": "Conectores de opinión",
+  "subtitle": "U4 · kies y también · pero · además · sobre todo",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 8,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies het juiste verbindingswoord",
+    "items": [
+      {
+        "stimulus": "Me gusta el cine, ___ no las series.",
+        "options": [
+          "pero",
+          "y también",
+          "además"
+        ],
+        "answer": "pero",
+        "tag": "c",
+        "sub": "tegenstelling"
+      },
+      {
+        "stimulus": "Me gusta nadar ___ bailar.",
+        "options": [
+          "y también",
+          "pero",
+          "sobre todo"
+        ],
+        "answer": "y también",
+        "tag": "c",
+        "sub": "toevoegen"
+      },
+      {
+        "stimulus": "Es divertido; ___, es barato.",
+        "options": [
+          "además",
+          "pero",
+          "sobre todo"
+        ],
+        "answer": "además",
+        "tag": "c",
+        "sub": "bovendien"
+      },
+      {
+        "stimulus": "Me gusta la música, ___ el pop.",
+        "options": [
+          "sobre todo",
+          "pero",
+          "además"
+        ],
+        "answer": "sobre todo",
+        "tag": "c",
+        "sub": "vooral"
+      },
+      {
+        "stimulus": "Toco la guitarra ___ canto.",
+        "options": [
+          "y también",
+          "pero",
+          "sobre todo"
+        ],
+        "answer": "y también",
+        "tag": "c",
+        "sub": "toevoegen"
+      },
+      {
+        "stimulus": "Me gusta el deporte, ___ no el fútbol.",
+        "options": [
+          "pero",
+          "además",
+          "y también"
+        ],
+        "answer": "pero",
+        "tag": "c",
+        "sub": "tegenstelling"
+      },
+      {
+        "stimulus": "Canta bien; ___, escribe sus letras.",
+        "options": [
+          "además",
+          "pero",
+          "sobre todo"
+        ],
+        "answer": "además",
+        "tag": "c",
+        "sub": "bovendien"
+      },
+      {
+        "stimulus": "Me encantan los viajes, ___ a la playa.",
+        "options": [
+          "sobre todo",
+          "pero",
+          "además"
+        ],
+        "answer": "sobre todo",
+        "tag": "c",
+        "sub": "vooral"
+      }
+    ]
+  }
+}
