@@ -81,6 +81,12 @@ LUCIDE = {
  "list-checks": '<path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/>',
  "guitar": '<path d="m11.9 12.1 4.514-4.514"/><path d="M20.1 2.3a1 1 0 0 0-1.4 0l-1.114 1.114A2 2 0 0 0 17 4.828v1.344a2 2 0 0 1-.586 1.414A2 2 0 0 1 17.828 7h1.344a2 2 0 0 0 1.414-.586L21.7 5.3a1 1 0 0 0 0-1.4z"/><path d="M6 16a2 2 0 1 1-4 0 2 2 0 0 1 4 0"/><path d="M11.412 9.588A2 2 0 1 0 8.586 12.414"/>',
  "megaphone": '<path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>',
+ # ---- U2 extra glyphs ----
+ "eye": '<path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/>',
+ "baby": '<path d="M9 12h.01"/><path d="M15 12h.01"/><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M17.5 6.5c0 1.5-1 3-2.5 3.5"/><path d="M12 3a9 9 0 0 0-9 9 9 9 0 0 0 18 0 9 9 0 0 0-9-9z"/>',
+ "palette": '<circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>',
+ "scissors": '<circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/>',
+ "glasses": '<circle cx="6" cy="15" r="4"/><circle cx="18" cy="15" r="4"/><path d="M14 15a2 2 0 0 0-2-2 2 2 0 0 0-2 2"/><path d="M2.5 13 5 7c.7-1.3 1.4-2 3-2"/><path d="M21.5 13 19 7c-.7-1.3-1.5-2-3-2"/>',
 }
 
 DEFAULT = "tag"
@@ -98,6 +104,9 @@ GROUP_ICON = {
  # U4
  "opinar": "heart", "ocio": "gamepad-2", "musica": "music",
  "sentim": "smile", "planes": "calendar-check", "valencia": "palmtree",
+ # U2
+ "familia": "users", "fisico": "user", "colores": "palette",
+ "caracter": "smile", "cuerpo": "user", "util": "message-circle",
 }
 
 # --------------------------------------------------------------------------
@@ -173,6 +182,36 @@ WORD_ICON = {
  "el mundo hispano": "globe", "el país": "flag", "la lengua / el idioma": "languages",
  "el español / el castellano": "languages", "hispanohablante": "message-circle",
  "el cognado (palabra transparente)": "languages", "la ruta · la parada": "route",
+ # ---- U2 «Mi gente» ----
+ # familia
+ "la familia": "users", "el padre / papá": "user", "la madre / mamá": "user",
+ "los padres": "users", "el hermano": "user", "la hermana": "user",
+ "el abuelo": "user", "la abuela": "user", "los abuelos": "users",
+ "el tío": "user", "la tía": "user", "el primo": "user", "la prima": "user",
+ "el hijo": "user", "la hija": "user", "el nieto / la nieta": "baby",
+ "el marido / la mujer": "users", "la mascota": "heart",
+ "mayor": "user", "menor": "baby", "casado/a": "heart", "soltero/a": "user",
+ # físico
+ "alto/a": "user", "bajo/a": "user", "delgado/a": "user", "gordito/a": "user",
+ "guapo/a": "smile", "joven": "baby", "moreno/a": "user", "rubio/a": "user",
+ "pelirrojo/a": "user", "el pelo": "scissors", "largo/a": "scissors",
+ "corto/a": "scissors", "liso/a": "scissors", "rizado/a": "scissors",
+ "los ojos": "eye", "la barba": "user", "las gafas": "glasses",
+ # colores
+ "marrón": "palette", "negro/a": "palette", "castaño/a": "palette",
+ "azul": "palette", "verde": "palette", "gris": "palette",
+ # carácter
+ "simpático/a": "smile", "antipático/a": "frown", "majo/a": "smile",
+ "tímido/a": "user", "gracioso/a": "smile", "trabajador/a": "briefcase",
+ "inteligente": "lightbulb", "hablador/a": "message-circle",
+ "tranquilo/a": "moon", "alegre": "smile",
+ # cuerpo
+ "la cabeza": "user", "la cara": "smile", "la nariz": "user",
+ "la boca": "smile", "la mano": "hand",
+ # útil
+ "este / esta": "map-pin", "ese / esa": "map-pin", "tener": "hash",
+ "ser": "user", "estar": "map-pin", "se llama": "user",
+ "¿cuántos/as?": "help-circle", "también": "check", "pero": "minus",
 }
 
 # --------------------------------------------------------------------------
