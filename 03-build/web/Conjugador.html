@@ -134,11 +134,18 @@ document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelect
 function matchType(v,f){if(!f)return true;if(f==='klankwissel')return v.type.includes('klankwissel');if(f==='onregelmatig')return v.type.includes('onregelmatig');if(f==='regelmatig')return v.type==='regelmatig';if(f==='wederkerend')return v.type==='wederkerend';return true;}
 // ---- OPZOEKEN ----
 let curV=DB.find(v=>v.inf==='hablar');
-function renderChips(){const q=(document.getElementById('vsearch').value||'').toLowerCase();const f=document.getElementById('vfilter').value;
-  const box=document.getElementById('vchips');box.innerHTML='';let n=0;
-  DB.forEach(v=>{if(q&&!(v.inf.includes(q)||v.nl.toLowerCase().includes(q)))return;if(!matchType(v,f))return;n++;
-    const c=document.createElement('div');c.className='vchip'+(curV&&v.inf===curV.inf?' on':'');c.innerHTML=v.inf+' <small>'+v.nl+'</small>';c.onclick=()=>{curV=v;renderChips();renderConj();};box.appendChild(c);});
-  document.getElementById('vcount').textContent=n+' werkwoorden';}
+const COMMON=['ser','estar','tener','ir','hacer','poder','querer','saber','ver','dar','decir','poner','venir','salir','hablar','comer','vivir','trabajar','estudiar','jugar','dormir','pedir','pensar','volver'];
+function renderChips(){const q=(document.getElementById('vsearch').value||'').trim().toLowerCase();const f=document.getElementById('vfilter').value;
+  const box=document.getElementById('vchips');box.innerHTML='';
+  const hits=DB.filter(v=>(!q||v.inf.includes(q)||v.nl.toLowerCase().includes(q))&&matchType(v,f));
+  let list;
+  if(!q&&!f){ // standaard: toon niet alle 1000, enkel de veelgebruikte
+    list=COMMON.map(inf=>DB.find(v=>v.inf===inf)).filter(Boolean);
+    box.innerHTML='<div class="gloss" style="width:100%;margin-bottom:8px">🔎 Typ hierboven om te zoeken in alle '+DB.length+' werkwoorden — of kies een veelgebruikt werkwoord. De volledige lijst staat onder «🗂️ Alle werkwoorden».</div>';
+  }else list=hits.slice(0,120);
+  list.forEach(v=>{const c=document.createElement('div');c.className='vchip'+(curV&&v.inf===curV.inf?' on':'');c.innerHTML=v.inf+' <small>'+v.nl+'</small>';c.onclick=()=>{curV=v;renderChips();renderConj();};box.appendChild(c);});
+  if((q||f)&&hits.length>120){const m=document.createElement('div');m.className='gloss';m.style.width='100%';m.textContent='… en '+(hits.length-120)+' meer — verfijn je zoekterm.';box.appendChild(m);}
+  document.getElementById('vcount').textContent=(q||f)?(hits.length+' gevonden'):(DB.length+' werkwoorden');}
 function renderConj(){const v=curV;const box=document.getElementById('conjcard');if(!v){box.innerHTML='';return;}
   const badge=v.type==='regelmatig'?'<span class="pill">regelmatig</span>':'<span class="pill" style="background:#FDECD2;color:#9a5a00">'+v.type+'</span>';
   let g='';v.forms.forEach((f,i)=>{g+='<div class="pv p'+i+'"><div class="pr">'+PRON[i]+'</div><div class="fm">'+f+'</div></div>';});
