@@ -64,6 +64,8 @@ Vaste sectiestructuur (CLAUDE.md §6): `§0 ¡Ponte al día!` → `§1…§N` �
 ### 3b · HTML-hub (digitaal)
 - Generator `gen_u<N>_web.py` (kopie van `gen_u0_web.py`). Produceert **één standalone bestand** met base64-fonts.
 - Bevat: flashcards (alle woorden, ES↔NL, TTS), woordenschat-zoek, **visuele grammatica** (context→noticing→regel→toepassen), **veel oefeningen** geordend receptief→gestuurd→productief (met steun-afbouw), **de 17+ motor-arcade-spellen base64 INGEBED** (openen in modal → werken offline), **interactieve kaart** (klik land → vlag+landcode+info; uit `build_map.py`, paden getagd `class="spa" data-c="ISO"`), interactief abecedario (TTS), editbar.
+- **BINDEND (auteur 2026-07-26) — flashcard-icoon:** élke flashcard krijgt een **consistent Lucide-lijnicoon** op de **voorkant, boven het woord** (34px, cursusgroen `var(--gd)`, grijswaarden-veilig, `aria-hidden`). Gedeelde module `02-huisstijl/beeld/generators/vocab_icons.py` (`icon_svg(word, grp)` → WORD_ICON → KEYWORD → GROUP-fallback; nooit leeg). Importeer in élke `gen_u<N>_web.py` en render in de flashcard-voorkant. **Zelfde stijl/plaatsing over álle units.**
+- **BINDEND (auteur 2026-07-26) — Cultura-panel unit-eigen:** het Cultura-panel mag NIET 4× dezelfde «mundo hispano»-kaart tonen. Kop = **het unit-eigen culturele aspect**; bovenaan 1–2 `.card`-cultuurblokken (kop `h3` + `p`, **Spaans-eerst + NL**, met Lucide-icoon), samengevat uit de print-`U<N>.html` Cultura-sectie; **daarna** de klikbare kaart onder de subkop **«La Ruta · ¿dónde estamos?»**. Cultuur-kaarten binnen editbar-bereik.
 - **Kruisverwijzingen**: QR's op print → naar deze hub op het juiste anker.
 - **Géén** werkwoordsvervoeging/conjugador in de unit-hub — dat is een **aparte cursus-tool** (§4).
 
