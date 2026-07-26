@@ -1,0 +1,81 @@
+{
+  "id": "es-u2-arbol-genealogico",
+  "title": "El árbol genealógico",
+  "subtitle": "U2 · zet de familie in de juiste volgorde",
+  "lang": "es",
+  "template": "order",
+  "options": {
+    "audio": false
+  },
+  "order": {
+    "prompt": "Tik de tegels in de juiste volgorde",
+    "rounds": [
+      {
+        "tag": "generacion",
+        "sub": "de mayor a menor (generaciones)",
+        "items": [
+          {
+            "label": "los abuelos",
+            "key": 1
+          },
+          {
+            "label": "el padre y la madre",
+            "key": 2
+          },
+          {
+            "label": "yo y mi hermano",
+            "key": 3
+          }
+        ]
+      },
+      {
+        "tag": "edad",
+        "sub": "por edad (mayor → menor)",
+        "items": [
+          {
+            "label": "el abuelo (70)",
+            "key": 1
+          },
+          {
+            "label": "mi madre (45)",
+            "key": 2
+          },
+          {
+            "label": "mi hermano mayor (19)",
+            "key": 3
+          },
+          {
+            "label": "yo (16)",
+            "key": 4
+          },
+          {
+            "label": "mi hermana menor (8)",
+            "key": 5
+          }
+        ]
+      },
+      {
+        "tag": "presentar",
+        "sub": "presenta a tu familia (orden lógico)",
+        "items": [
+          {
+            "label": "Esta es mi familia.",
+            "key": 1
+          },
+          {
+            "label": "Somos cinco en casa.",
+            "key": 2
+          },
+          {
+            "label": "Mi padre se llama Antonio.",
+            "key": 3
+          },
+          {
+            "label": "Y yo soy el menor.",
+            "key": 4
+          }
+        ]
+      }
+    ]
+  }
+}

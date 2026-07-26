@@ -1,0 +1,63 @@
+{
+  "id": "es-u2-shadowing-lucia",
+  "title": "Shadowing: la familia de Lucía",
+  "subtitle": "U2 · imita a Lucía — de texto completo a tu versión",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "shadowing",
+    "prompt": "Escucha a Lucía y ve quitando apoyo, paso a paso",
+    "phases": [
+      "Texto completo",
+      "Palabras clave",
+      "Sin texto",
+      "Tu versión"
+    ],
+    "items": [
+      {
+        "text": "Esta es mi familia de Sevilla. Somos cinco.",
+        "keywords": [
+          "Esta es mi familia",
+          "Sevilla",
+          "Somos cinco"
+        ],
+        "sub": "dit is mijn familie uit Sevilla, we zijn met vijf",
+        "tag": "familia"
+      },
+      {
+        "text": "Mi padre es alto, moreno y muy tranquilo.",
+        "keywords": [
+          "Mi padre",
+          "alto, moreno",
+          "tranquilo"
+        ],
+        "sub": "mijn vader is lang, donkerharig en heel rustig",
+        "tag": "familia"
+      },
+      {
+        "text": "Mi madre es baja, rubia y muy habladora.",
+        "keywords": [
+          "Mi madre",
+          "baja, rubia",
+          "habladora"
+        ],
+        "sub": "mijn moeder is klein, blond en heel praatgraag",
+        "tag": "familia"
+      },
+      {
+        "text": "También tengo una prima, Julia, muy simpática.",
+        "keywords": [
+          "También tengo",
+          "una prima",
+          "simpática"
+        ],
+        "sub": "ik heb ook een nicht, Julia, heel aardig",
+        "tag": "familia",
+        "tip": "Ahora presenta a TU familia. <span class='nl'>stel nu je eigen familie voor.</span>"
+      }
+    ]
+  }
+}

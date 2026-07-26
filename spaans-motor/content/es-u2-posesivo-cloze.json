@@ -1,0 +1,126 @@
+{
+  "id": "es-u2-posesivo-cloze",
+  "title": "Completa: mi · tu · su",
+  "subtitle": "U2 · vul het juiste bezittelijk voornaamwoord in",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies het juiste bezittelijk voornaamwoord",
+    "items": [
+      {
+        "stimulus": "___ hermanos son altos. (yo · 2)",
+        "options": [
+          "Mis",
+          "Mi",
+          "Su"
+        ],
+        "answer": "Mis",
+        "tag": "pos",
+        "sub": "mv. → mis"
+      },
+      {
+        "stimulus": "___ prima se llama Julia. (yo · 1)",
+        "options": [
+          "Mi",
+          "Mis",
+          "Tu"
+        ],
+        "answer": "Mi",
+        "tag": "pos",
+        "sub": "1 → mi"
+      },
+      {
+        "stimulus": "¿Cómo se llama ___ padre? (tú)",
+        "options": [
+          "tu",
+          "tus",
+          "su"
+        ],
+        "answer": "tu",
+        "tag": "pos",
+        "sub": "1 → tu"
+      },
+      {
+        "stimulus": "___ abuelos viven en Sevilla. (yo · 2)",
+        "options": [
+          "Mis",
+          "Mi",
+          "Sus"
+        ],
+        "answer": "Mis",
+        "tag": "pos",
+        "sub": "mv. → mis"
+      },
+      {
+        "stimulus": "Lucía y ___ familia son de Sevilla. (ella)",
+        "options": [
+          "su",
+          "sus",
+          "tu"
+        ],
+        "answer": "su",
+        "tag": "pos",
+        "sub": "1 → su"
+      },
+      {
+        "stimulus": "¿Tienes fotos de ___ primos? (tú · 2)",
+        "options": [
+          "tus",
+          "tu",
+          "sus"
+        ],
+        "answer": "tus",
+        "tag": "pos",
+        "sub": "mv. → tus"
+      },
+      {
+        "stimulus": "___ madre es habladora. (yo · 1)",
+        "options": [
+          "Mi",
+          "Mis",
+          "Su"
+        ],
+        "answer": "Mi",
+        "tag": "pos",
+        "sub": "1 → mi"
+      },
+      {
+        "stimulus": "Marco y Ana son ___ hermanos. (yo)",
+        "options": [
+          "mis",
+          "mi",
+          "tus"
+        ],
+        "answer": "mis",
+        "tag": "pos",
+        "sub": "mv. → mis"
+      },
+      {
+        "stimulus": "¿Dónde están ___ gafas? (tú)",
+        "options": [
+          "tus",
+          "tu",
+          "sus"
+        ],
+        "answer": "tus",
+        "tag": "pos",
+        "sub": "gafas = mv. → tus"
+      },
+      {
+        "stimulus": "___ tía tiene dos hijos. (ella)",
+        "options": [
+          "Su",
+          "Sus",
+          "Mi"
+        ],
+        "answer": "Su",
+        "tag": "pos",
+        "sub": "1 → su"
+      }
+    ]
+  }
+}

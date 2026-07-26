@@ -1,0 +1,100 @@
+{
+  "id": "es-u2-posesivo-numero",
+  "title": "¿mi o mis?",
+  "subtitle": "U2 · één ding (mi/tu/su) of meerdere (mis/tus/sus)?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Verwijst het bezit naar één ding of naar meerdere?",
+    "categories": [
+      {
+        "id": "sing",
+        "label": "mi · tu · su<br><small>1 cosa</small>",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "plur",
+        "label": "mis · tus · sus<br><small>varias cosas</small>",
+        "glaze": "#3D74D6"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "mi hermano",
+        "answer": "sing",
+        "tag": "sing",
+        "sub": "1 → mi"
+      },
+      {
+        "stimulus": "mis hermanos",
+        "answer": "plur",
+        "tag": "plur",
+        "sub": "mv. → mis"
+      },
+      {
+        "stimulus": "tu prima",
+        "answer": "sing",
+        "tag": "sing",
+        "sub": "1 → tu"
+      },
+      {
+        "stimulus": "tus primos",
+        "answer": "plur",
+        "tag": "plur",
+        "sub": "mv. → tus"
+      },
+      {
+        "stimulus": "su abuelo",
+        "answer": "sing",
+        "tag": "sing",
+        "sub": "1 → su"
+      },
+      {
+        "stimulus": "sus abuelos",
+        "answer": "plur",
+        "tag": "plur",
+        "sub": "mv. → sus"
+      },
+      {
+        "stimulus": "mi familia",
+        "answer": "sing",
+        "tag": "sing",
+        "sub": "1 → mi"
+      },
+      {
+        "stimulus": "mis padres",
+        "answer": "plur",
+        "tag": "plur",
+        "sub": "mv. → mis"
+      },
+      {
+        "stimulus": "tu tío",
+        "answer": "sing",
+        "tag": "sing",
+        "sub": "1 → tu"
+      },
+      {
+        "stimulus": "tus tías",
+        "answer": "plur",
+        "tag": "plur",
+        "sub": "mv. → tus"
+      },
+      {
+        "stimulus": "su hija",
+        "answer": "sing",
+        "tag": "sing",
+        "sub": "1 → su"
+      },
+      {
+        "stimulus": "sus hijos",
+        "answer": "plur",
+        "tag": "plur",
+        "sub": "mv. → sus"
+      }
+    ]
+  }
+}

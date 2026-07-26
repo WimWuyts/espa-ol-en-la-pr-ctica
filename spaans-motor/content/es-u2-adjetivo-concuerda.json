@@ -1,0 +1,126 @@
+{
+  "id": "es-u2-adjetivo-concuerda",
+  "title": "El adjetivo concuerda",
+  "subtitle": "U2 · pas het adjectief aan (género + número)",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste vorm van het adjectief",
+    "items": [
+      {
+        "stimulus": "Mi hermana es ___. (alto)",
+        "options": [
+          "alta",
+          "alto",
+          "altos"
+        ],
+        "answer": "alta",
+        "tag": "c",
+        "sub": "fem. sing. → alta"
+      },
+      {
+        "stimulus": "Mis primos son ___. (simpático)",
+        "options": [
+          "simpáticos",
+          "simpática",
+          "simpático"
+        ],
+        "answer": "simpáticos",
+        "tag": "c",
+        "sub": "masc. pl. → simpáticos"
+      },
+      {
+        "stimulus": "Lucía es ___. (moreno)",
+        "options": [
+          "morena",
+          "moreno",
+          "morenas"
+        ],
+        "answer": "morena",
+        "tag": "c",
+        "sub": "fem. sing. → morena"
+      },
+      {
+        "stimulus": "Mi padre es ___. (tranquilo)",
+        "options": [
+          "tranquilo",
+          "tranquila",
+          "tranquilos"
+        ],
+        "answer": "tranquilo",
+        "tag": "c",
+        "sub": "masc. sing. → tranquilo"
+      },
+      {
+        "stimulus": "Mis abuelas son ___. (bajo)",
+        "options": [
+          "bajas",
+          "bajos",
+          "baja"
+        ],
+        "answer": "bajas",
+        "tag": "c",
+        "sub": "fem. pl. → bajas"
+      },
+      {
+        "stimulus": "Ana es muy ___. (gracioso)",
+        "options": [
+          "graciosa",
+          "gracioso",
+          "graciosas"
+        ],
+        "answer": "graciosa",
+        "tag": "c",
+        "sub": "fem. sing. → graciosa"
+      },
+      {
+        "stimulus": "Mis hermanos son ___. (rubio)",
+        "options": [
+          "rubios",
+          "rubias",
+          "rubio"
+        ],
+        "answer": "rubios",
+        "tag": "c",
+        "sub": "masc. pl. → rubios"
+      },
+      {
+        "stimulus": "Mi tía es ___. (hablador)",
+        "options": [
+          "habladora",
+          "hablador",
+          "habladoras"
+        ],
+        "answer": "habladora",
+        "tag": "c",
+        "sub": "fem. sing. → habladora"
+      },
+      {
+        "stimulus": "Las primas son ___. (guapo)",
+        "options": [
+          "guapas",
+          "guapos",
+          "guapa"
+        ],
+        "answer": "guapas",
+        "tag": "c",
+        "sub": "fem. pl. → guapas"
+      },
+      {
+        "stimulus": "Mi abuelo es ___. (alto)",
+        "options": [
+          "alto",
+          "alta",
+          "altos"
+        ],
+        "answer": "alto",
+        "tag": "c",
+        "sub": "masc. sing. → alto"
+      }
+    ]
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "id": "es-u2-familia-tetris",
+  "title": "Tetris: ser, estar y tener",
+  "subtitle": "U2 · laat elke vorm in de juiste persoon vallen",
+  "lang": "es",
+  "template": "tetris",
+  "options": {
+    "rows": 9,
+    "speed": 1300,
+    "audio": false
+  },
+  "classify": {
+    "categories": [
+      {
+        "id": "yo",
+        "label": "yo",
+        "glaze": "#C4402C"
+      },
+      {
+        "id": "tu",
+        "label": "tú",
+        "glaze": "#E0A22F"
+      },
+      {
+        "id": "el",
+        "label": "él/ella",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "nos",
+        "label": "nosotros",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "vos",
+        "label": "vosotros",
+        "glaze": "#8B5E9E"
+      },
+      {
+        "id": "ellos",
+        "label": "ellos",
+        "glaze": "#2FA8A0"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "tengo",
+        "answer": "yo",
+        "tag": "yo",
+        "sub": "tener"
+      },
+      {
+        "stimulus": "tienes",
+        "answer": "tu",
+        "tag": "tu",
+        "sub": "tener"
+      },
+      {
+        "stimulus": "tiene",
+        "answer": "el",
+        "tag": "el",
+        "sub": "tener"
+      },
+      {
+        "stimulus": "tenemos",
+        "answer": "nos",
+        "tag": "nos",
+        "sub": "tener"
+      },
+      {
+        "stimulus": "tenéis",
+        "answer": "vos",
+        "tag": "vos",
+        "sub": "tener"
+      },
+      {
+        "stimulus": "tienen",
+        "answer": "ellos",
+        "tag": "ellos",
+        "sub": "tener"
+      },
+      {
+        "stimulus": "soy",
+        "answer": "yo",
+        "tag": "yo",
+        "sub": "ser"
+      },
+      {
+        "stimulus": "eres",
+        "answer": "tu",
+        "tag": "tu",
+        "sub": "ser"
+      },
+      {
+        "stimulus": "es",
+        "answer": "el",
+        "tag": "el",
+        "sub": "ser"
+      },
+      {
+        "stimulus": "somos",
+        "answer": "nos",
+        "tag": "nos",
+        "sub": "ser"
+      },
+      {
+        "stimulus": "sois",
+        "answer": "vos",
+        "tag": "vos",
+        "sub": "ser"
+      },
+      {
+        "stimulus": "son",
+        "answer": "ellos",
+        "tag": "ellos",
+        "sub": "ser"
+      },
+      {
+        "stimulus": "estoy",
+        "answer": "yo",
+        "tag": "yo",
+        "sub": "estar"
+      },
+      {
+        "stimulus": "estás",
+        "answer": "tu",
+        "tag": "tu",
+        "sub": "estar"
+      },
+      {
+        "stimulus": "está",
+        "answer": "el",
+        "tag": "el",
+        "sub": "estar"
+      },
+      {
+        "stimulus": "estamos",
+        "answer": "nos",
+        "tag": "nos",
+        "sub": "estar"
+      },
+      {
+        "stimulus": "estáis",
+        "answer": "vos",
+        "tag": "vos",
+        "sub": "estar"
+      },
+      {
+        "stimulus": "están",
+        "answer": "ellos",
+        "tag": "ellos",
+        "sub": "estar"
+      }
+    ]
+  }
+}

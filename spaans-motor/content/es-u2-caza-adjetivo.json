@@ -1,0 +1,100 @@
+{
+  "id": "es-u2-caza-adjetivo",
+  "title": "Caza del adjetivo",
+  "subtitle": "U2 · klik ALLE adjectieven (geen zelfstandige naamwoorden)",
+  "lang": "es",
+  "template": "point",
+  "options": {
+    "audio": false
+  },
+  "point": {
+    "prompt": "Klik ALLE adjectieven (woorden die iemand beschrijven)",
+    "mode": "all",
+    "rounds": [
+      {
+        "tag": "adj",
+        "sub": "2 adjetivos",
+        "targets": [
+          {
+            "label": "alto",
+            "hit": true
+          },
+          {
+            "label": "el padre"
+          },
+          {
+            "label": "simpática",
+            "hit": true
+          },
+          {
+            "label": "la mano"
+          }
+        ]
+      },
+      {
+        "tag": "adj",
+        "sub": "2 adjetivos",
+        "targets": [
+          {
+            "label": "moreno",
+            "hit": true
+          },
+          {
+            "label": "el primo"
+          },
+          {
+            "label": "tímido",
+            "hit": true
+          },
+          {
+            "label": "la abuela"
+          }
+        ]
+      },
+      {
+        "tag": "adj",
+        "sub": "3 adjetivos",
+        "targets": [
+          {
+            "label": "alta",
+            "hit": true
+          },
+          {
+            "label": "guapo",
+            "hit": true
+          },
+          {
+            "label": "la tía"
+          },
+          {
+            "label": "gracioso",
+            "hit": true
+          },
+          {
+            "label": "los ojos"
+          }
+        ]
+      },
+      {
+        "tag": "adj",
+        "sub": "2 adjetivos",
+        "targets": [
+          {
+            "label": "rubia",
+            "hit": true
+          },
+          {
+            "label": "la nariz"
+          },
+          {
+            "label": "tranquilo",
+            "hit": true
+          },
+          {
+            "label": "la hermana"
+          }
+        ]
+      }
+    ]
+  }
+}
