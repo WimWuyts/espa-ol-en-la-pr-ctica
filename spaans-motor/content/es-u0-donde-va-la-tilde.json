@@ -1,0 +1,28 @@
+{
+  "id": "es-u0-donde-va-la-tilde",
+  "title": "¿<span>Dónde</span> va la tilde?",
+  "subtitle": "U0 · tik de lettergreep die het hoedje krijgt",
+  "lang": "es",
+  "template": "tap",
+  "options": { "rounds": 14, "audio": false },
+  "tap": {
+    "prompt": "Deze woorden dragen een tilde — tik de juiste lettergreep",
+    "joiner": "·",
+    "items": [
+      {"parts":["Pe","ru"],"answer":1,"tag":"aguda","sub":"→ Perú"},
+      {"parts":["ca","fe"],"answer":1,"tag":"aguda","sub":"→ café"},
+      {"parts":["ca","mion"],"answer":1,"tag":"aguda","sub":"→ camión"},
+      {"parts":["a","dios"],"answer":1,"tag":"aguda","sub":"→ adiós"},
+      {"parts":["co","ra","zon"],"answer":2,"tag":"aguda","sub":"→ corazón"},
+      {"parts":["tam","bien"],"answer":1,"tag":"aguda","sub":"→ también"},
+      {"parts":["ar","bol"],"answer":0,"tag":"llana","sub":"→ árbol"},
+      {"parts":["la","piz"],"answer":0,"tag":"llana","sub":"→ lápiz"},
+      {"parts":["fa","cil"],"answer":0,"tag":"llana","sub":"→ fácil"},
+      {"parts":["Me","xi","co"],"answer":0,"tag":"esdrujula","sub":"→ México"},
+      {"parts":["te","le","fo","no"],"answer":1,"tag":"esdrujula","sub":"→ teléfono"},
+      {"parts":["mu","si","ca"],"answer":0,"tag":"esdrujula","sub":"→ música"},
+      {"parts":["pla","ta","no"],"answer":0,"tag":"esdrujula","sub":"→ plátano"},
+      {"parts":["sa","ba","do"],"answer":0,"tag":"esdrujula","sub":"→ sábado"}
+    ]
+  }
+}

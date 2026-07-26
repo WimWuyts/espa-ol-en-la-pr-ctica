@@ -1,0 +1,29 @@
+/* Sjabloon: invullen (cloze / meerkeuze). Stimuluskaart + optieknoppen eronder. */
+.cz-card{background:linear-gradient(175deg,#FBF6E9,#E9E0C9);border:1px solid rgba(0,0,0,.25);border-radius:3px;
+  box-shadow:0 6px 0 rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.9);padding:16px 16px 18px;text-align:center;position:relative;overflow:hidden;min-height:150px;display:flex;flex-direction:column;justify-content:center}
+.cz-card::before,.cz-card::after{content:"";position:absolute;left:0;right:0;height:7px;background:repeating-linear-gradient(45deg,#12264A 0 4px,transparent 4px 8px),repeating-linear-gradient(-45deg,#12264A 0 4px,transparent 4px 8px);opacity:.5}
+.cz-card::before{top:0}.cz-card::after{bottom:0}
+.cz-eye{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8A7F66}
+.cz-stim{font-family:var(--serif);font-weight:700;color:#12264A;font-size:clamp(24px,5.5vw,42px);line-height:1.12;word-break:break-word;margin-top:4px}
+.cz-stim .cz-mark{color:#C4402C;border-bottom:3px solid #E0A22F}
+.cz-gap{display:inline-block;min-width:1.4em;border-bottom:3px solid #12264A;margin:0 .06em;height:1.05em;vertical-align:-.15em}
+.cz-sub{font-family:var(--serif);font-style:italic;font-size:14px;color:#6E6249;margin-top:6px}
+.cz-fb{min-height:22px;margin-top:8px;font-family:var(--serif);font-size:15px;font-weight:700}
+.cz-fb.g{color:#1F6B4C}.cz-fb.b{color:#8E2C1D}
+.cz-card.good{animation:czGood .4s}.cz-card.bad{animation:czBad .5s}
+@keyframes czGood{0%{background:#DFF3E4}100%{}}
+@keyframes czBad{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}
+
+.cz-opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:9px;margin-top:12px}
+.cz-opt{--oc:#2E8E68;position:relative;font-family:var(--serif);font-weight:700;font-size:clamp(16px,2.6vw,21px);
+  padding:16px 12px;border-radius:2px;cursor:pointer;line-height:1.15;color:#12264A;
+  background:linear-gradient(180deg,#fff,#F3ECDB);border:1px solid #C3B99F;border-left:5px solid var(--oc);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.6);transition:transform .08s,filter .12s}
+.cz-opt small{position:absolute;top:4px;right:6px;font-family:var(--mono);font-size:10px;font-weight:400;opacity:.5}
+.cz-opt:hover{filter:brightness(1.03);border-color:#12264A}
+.cz-opt:active{transform:translateY(2px)}
+.cz-opt:focus-visible{outline:3px solid var(--cal);outline-offset:2px}
+.cz-opt.hit{background:linear-gradient(180deg,#DFF3E4,#BFE6CC);border-color:#1F6B4C;animation:czPop .35s}
+.cz-opt.miss{background:linear-gradient(180deg,#F7DAD3,#EFC3B8);border-color:#8E2C1D}
+.cz-opt.reveal{box-shadow:0 0 0 3px #1F6B4C}
+@keyframes czPop{0%{transform:scale(1)}45%{transform:scale(1.06)}100%{transform:scale(1)}}

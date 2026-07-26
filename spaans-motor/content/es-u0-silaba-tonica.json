@@ -1,0 +1,30 @@
+{
+  "id": "es-u0-silaba-tonica",
+  "title": "La sílaba <span>tónica</span>",
+  "subtitle": "U0 · tik de sterke lettergreep",
+  "lang": "es",
+  "template": "tap",
+  "options": { "rounds": 16, "audio": false },
+  "tap": {
+    "prompt": "Tik de sílaba tónica (de sterke lettergreep)",
+    "joiner": "·",
+    "items": [
+      {"parts":["ca","fé"],"answer":1,"tag":"aguda","sub":"café · koffie"},
+      {"parts":["Pe","rú"],"answer":1,"tag":"aguda","sub":"Perú · Peru"},
+      {"parts":["ca","mión"],"answer":1,"tag":"aguda","sub":"camión · vrachtwagen"},
+      {"parts":["a","ni","mal"],"answer":2,"tag":"aguda","sub":"animal · dier"},
+      {"parts":["pro","fe","sor"],"answer":2,"tag":"aguda","sub":"profesor · leraar"},
+      {"parts":["co","ra","zón"],"answer":2,"tag":"aguda","sub":"corazón · hart"},
+      {"parts":["ca","sa"],"answer":0,"tag":"llana","sub":"casa · huis"},
+      {"parts":["ven","ta","na"],"answer":1,"tag":"llana","sub":"ventana · raam"},
+      {"parts":["Es","pa","ña"],"answer":1,"tag":"llana","sub":"España · Spanje"},
+      {"parts":["a","mi","go"],"answer":1,"tag":"llana","sub":"amigo · vriend"},
+      {"parts":["pa","la","bra"],"answer":1,"tag":"llana","sub":"palabra · woord"},
+      {"parts":["Mé","xi","co"],"answer":0,"tag":"esdrujula","sub":"México"},
+      {"parts":["te","lé","fo","no"],"answer":1,"tag":"esdrujula","sub":"teléfono"},
+      {"parts":["mú","si","ca"],"answer":0,"tag":"esdrujula","sub":"música · muziek"},
+      {"parts":["plá","ta","no"],"answer":0,"tag":"esdrujula","sub":"plátano · banaan"},
+      {"parts":["sá","ba","do"],"answer":0,"tag":"esdrujula","sub":"sábado · zaterdag"}
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "es-u0-be-uve",
+  "title": "¿<span>Be</span> o uve?",
+  "subtitle": "U0 · b en v klinken gelijk — kies de juiste letter",
+  "lang": "es",
+  "template": "classify",
+  "options": { "rounds": 18, "audio": false },
+  "classify": {
+    "prompt": "b (be) of v (uve)?",
+    "categories": [
+      {"id":"be","label":"B<br><small>be</small>","glaze":"#C4402C"},
+      {"id":"uve","label":"V<br><small>uve</small>","glaze":"#3D74D6"}
+    ],
+    "items": [
+      {"stimulus":"▢aca · koe","answer":"uve","tag":"uve","sub":"vaca"},
+      {"stimulus":"▢arco · boot","answer":"be","tag":"be","sub":"barco"},
+      {"stimulus":"▢entana · raam","answer":"uve","tag":"uve","sub":"ventana"},
+      {"stimulus":"▢ien · goed","answer":"be","tag":"be","sub":"bien"},
+      {"stimulus":"vi▢ir · leven","answer":"uve","tag":"uve","sub":"vivir"},
+      {"stimulus":"tra▢ajar · werken","answer":"be","tag":"be","sub":"trabajar"},
+      {"stimulus":"▢ino · wijn","answer":"uve","tag":"uve","sub":"vino"},
+      {"stimulus":"▢ueno · goed, lekker","answer":"be","tag":"be","sub":"bueno"},
+      {"stimulus":"▢erde · groen","answer":"uve","tag":"uve","sub":"verde"},
+      {"stimulus":"li▢ro · boek","answer":"be","tag":"be","sub":"libro"},
+      {"stimulus":"▢iajar · reizen","answer":"uve","tag":"uve","sub":"viajar"},
+      {"stimulus":"▢ailar · dansen","answer":"be","tag":"be","sub":"bailar"},
+      {"stimulus":"nue▢o · nieuw","answer":"uve","tag":"uve","sub":"nuevo"},
+      {"stimulus":"reci▢ir · ontvangen","answer":"be","tag":"be","sub":"recibir"},
+      {"stimulus":"▢olver · terugkeren","answer":"uve","tag":"uve","sub":"volver"},
+      {"stimulus":"tam▢ién · ook","answer":"be","tag":"be","sub":"también"},
+      {"stimulus":"a▢ión · vliegtuig","answer":"uve","tag":"uve","sub":"avión"},
+      {"stimulus":"▢onito · mooi","answer":"be","tag":"be","sub":"bonito"}
+    ]
+  }
+}

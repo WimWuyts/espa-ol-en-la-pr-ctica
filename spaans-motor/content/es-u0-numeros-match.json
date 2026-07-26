@@ -1,0 +1,32 @@
+{
+  "id": "es-u0-numeros-match",
+  "title": "Números <span>0–100</span>",
+  "subtitle": "U0 · koppel cijfer aan woord",
+  "lang": "es",
+  "template": "match",
+  "options": { "chunk": 6, "audio": false },
+  "match": {
+    "prompt": "Verbind elk getal (cifra) met het juiste woord (letra)",
+    "pairs": [
+      {"a":"11","b":"once"},
+      {"a":"12","b":"doce"},
+      {"a":"13","b":"trece"},
+      {"a":"14","b":"catorce"},
+      {"a":"15","b":"quince"},
+      {"a":"16","b":"dieciséis"},
+      {"a":"17","b":"diecisiete"},
+      {"a":"18","b":"dieciocho"},
+      {"a":"20","b":"veinte"},
+      {"a":"21","b":"veintiuno"},
+      {"a":"22","b":"veintidós"},
+      {"a":"30","b":"treinta"},
+      {"a":"40","b":"cuarenta"},
+      {"a":"50","b":"cincuenta"},
+      {"a":"60","b":"sesenta"},
+      {"a":"70","b":"setenta"},
+      {"a":"80","b":"ochenta"},
+      {"a":"90","b":"noventa"},
+      {"a":"100","b":"cien"}
+    ]
+  }
+}

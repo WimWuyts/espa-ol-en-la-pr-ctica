@@ -1,0 +1,38 @@
+{
+  "id": "es-u0-aguda-llana-esdrujula",
+  "title": "La regla del <span>sombrero</span>",
+  "subtitle": "U0 · sorteer: aguda · llana · esdrújula",
+  "lang": "es",
+  "template": "classify",
+  "options": { "rounds": 20, "audio": false },
+  "classify": {
+    "prompt": "¿Dónde está la fuerza? aguda · llana · esdrújula",
+    "categories": [
+      {"id":"aguda","label":"aguda<br><small>última</small>","glaze":"#C4402C"},
+      {"id":"llana","label":"llana<br><small>penúltima</small>","glaze":"#2E8E68"},
+      {"id":"esdrujula","label":"esdrújula<br><small>antepenúltima</small>","glaze":"#8B5E9E"}
+    ],
+    "items": [
+      {"stimulus":"café","answer":"aguda","tag":"aguda","sub":"koffie · ca-FÉ"},
+      {"stimulus":"Perú","answer":"aguda","tag":"aguda","sub":"Peru · Pe-RÚ"},
+      {"stimulus":"camión","answer":"aguda","tag":"aguda","sub":"vrachtwagen · ca-MIÓN"},
+      {"stimulus":"reloj","answer":"aguda","tag":"aguda","sub":"klok · re-LOJ"},
+      {"stimulus":"ciudad","answer":"aguda","tag":"aguda","sub":"stad · ciu-DAD"},
+      {"stimulus":"comer","answer":"aguda","tag":"aguda","sub":"eten · co-MER"},
+      {"stimulus":"adiós","answer":"aguda","tag":"aguda","sub":"dag · a-DIÓS"},
+      {"stimulus":"casa","answer":"llana","tag":"llana","sub":"huis · CA-sa"},
+      {"stimulus":"mesa","answer":"llana","tag":"llana","sub":"tafel · ME-sa"},
+      {"stimulus":"árbol","answer":"llana","tag":"llana","sub":"boom · ÁR-bol"},
+      {"stimulus":"lápiz","answer":"llana","tag":"llana","sub":"potlood · LÁ-piz"},
+      {"stimulus":"joven","answer":"llana","tag":"llana","sub":"jong · JO-ven"},
+      {"stimulus":"fácil","answer":"llana","tag":"llana","sub":"makkelijk · FÁ-cil"},
+      {"stimulus":"hombre","answer":"llana","tag":"llana","sub":"man · HOM-bre"},
+      {"stimulus":"México","answer":"esdrujula","tag":"esdrujula","sub":"Mexico · MÉ-xi-co"},
+      {"stimulus":"música","answer":"esdrujula","tag":"esdrujula","sub":"muziek · MÚ-si-ca"},
+      {"stimulus":"teléfono","answer":"esdrujula","tag":"esdrujula","sub":"telefoon · te-LÉ-fo-no"},
+      {"stimulus":"sábado","answer":"esdrujula","tag":"esdrujula","sub":"zaterdag · SÁ-ba-do"},
+      {"stimulus":"plátano","answer":"esdrujula","tag":"esdrujula","sub":"banaan · PLÁ-ta-no"},
+      {"stimulus":"número","answer":"esdrujula","tag":"esdrujula","sub":"getal · NÚ-me-ro"}
+    ]
+  }
+}

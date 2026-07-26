@@ -1,0 +1,27 @@
+/* Sjabloon: volgorde (order). Slots bovenaan, tikbare bank onderaan. */
+.or-card{background:linear-gradient(175deg,#FBF6E9,#E9E0C9);border:1px solid rgba(0,0,0,.25);border-radius:3px;
+  box-shadow:0 6px 0 rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.9);padding:16px;position:relative;overflow:hidden;min-height:200px}
+.or-card::before,.or-card::after{content:"";position:absolute;left:0;right:0;height:7px;background:repeating-linear-gradient(45deg,#12264A 0 4px,transparent 4px 8px),repeating-linear-gradient(-45deg,#12264A 0 4px,transparent 4px 8px);opacity:.5}
+.or-card::before{top:0}.or-card::after{bottom:0}
+.or-eye{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8A7F66;text-align:center;margin-bottom:14px}
+.or-slots{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px}
+.or-slot{position:relative;min-width:74px;min-height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  border:2px dashed #C3B99F;border-radius:4px;background:rgba(18,38,74,.03)}
+.or-slot .or-n{font-family:var(--mono);font-size:11px;color:#B3A588}
+.or-slot.filled{border-style:solid;border-color:#1F6B4C;background:linear-gradient(180deg,#DFF3E4,#C4E7D0)}
+.or-slot.filled .or-n{position:absolute;top:3px;left:5px;font-size:10px;color:#1F6B4C}
+.or-lab{font-family:var(--serif);font-weight:700;font-size:clamp(15px,2.6vw,20px);color:#12264A;padding:2px 6px;text-align:center}
+.or-bank{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;min-height:56px}
+.or-chip{font-family:var(--serif);font-weight:700;font-size:clamp(15px,2.6vw,20px);color:#12264A;
+  background:linear-gradient(180deg,#fff,#F1E9D5);border:1px solid #C3B99F;border-radius:3px;padding:12px 15px;cursor:pointer;
+  box-shadow:0 3px 0 rgba(0,0,0,.14);transition:transform .08s,filter .12s}
+.or-chip:hover{filter:brightness(1.04);border-color:#12264A}
+.or-chip:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0,.14)}
+.or-chip:focus-visible{outline:3px solid #3D74D6;outline-offset:2px}
+.or-chip.used{visibility:hidden}
+.or-chip.shake{animation:orShake .45s}
+@keyframes orShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.or-fb{min-height:22px;margin-top:12px;text-align:center;font-family:var(--serif);font-size:15px;font-weight:700}
+.or-fb.g{color:#1F6B4C}.or-fb.b{color:#8E2C1D}
+.or-card.bad{animation:orBad .5s}
+@keyframes orBad{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}

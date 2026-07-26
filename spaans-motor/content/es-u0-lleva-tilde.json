@@ -1,0 +1,28 @@
+{
+  "id": "es-u0-lleva-tilde",
+  "title": "¿Lleva <span>tilde</span>?",
+  "subtitle": "U0 · met of zonder accentstreepje",
+  "lang": "es",
+  "template": "cloze",
+  "options": { "rounds": 15, "audio": false },
+  "cloze": {
+    "prompt": "¿Con tilde o sin tilde? Kies de juiste schrijfwijze",
+    "items": [
+      {"stimulus":"«Peru» (het land)","options":["Perú","Peru"],"answer":"Perú","tag":"con-tilde","sub":"aguda op vocaal → tilde"},
+      {"stimulus":"«koffie»","options":["café","cafe"],"answer":"café","tag":"con-tilde","sub":"café · aguda"},
+      {"stimulus":"«Mexico»","options":["México","Mexico"],"answer":"México","tag":"con-tilde","sub":"esdrújula → altijd tilde"},
+      {"stimulus":"«muziek»","options":["música","musica"],"answer":"música","tag":"con-tilde","sub":"esdrújula → altijd tilde"},
+      {"stimulus":"«telefoon»","options":["teléfono","telefono"],"answer":"teléfono","tag":"con-tilde","sub":"esdrújula"},
+      {"stimulus":"«boom»","options":["árbol","arbol"],"answer":"árbol","tag":"con-tilde","sub":"llana op consonant (niet n/s) → tilde"},
+      {"stimulus":"«potlood»","options":["lápiz","lapiz"],"answer":"lápiz","tag":"con-tilde","sub":"llana op -z → tilde"},
+      {"stimulus":"«ook, eveneens»","options":["también","tambien"],"answer":"también","tag":"con-tilde","sub":"aguda op -n → tilde"},
+      {"stimulus":"«moeilijk»","options":["difícil","dificil"],"answer":"difícil","tag":"con-tilde","sub":"llana op consonant → tilde"},
+      {"stimulus":"«zaterdag»","options":["sábado","sabado"],"answer":"sábado","tag":"con-tilde","sub":"esdrújula"},
+      {"stimulus":"«huis»","options":["casa","cása"],"answer":"casa","tag":"sin-tilde","sub":"llana op vocaal → geen tilde"},
+      {"stimulus":"«tafel»","options":["mesa","mésa"],"answer":"mesa","tag":"sin-tilde","sub":"llana op vocaal → geen tilde"},
+      {"stimulus":"«vriend»","options":["amigo","amígo"],"answer":"amigo","tag":"sin-tilde","sub":"llana op vocaal → geen tilde"},
+      {"stimulus":"«eten» (ww)","options":["comer","cómer"],"answer":"comer","tag":"sin-tilde","sub":"aguda op -r → geen tilde"},
+      {"stimulus":"«stad»","options":["ciudad","ciúdad"],"answer":"ciudad","tag":"sin-tilde","sub":"aguda op -d → geen tilde"}
+    ]
+  }
+}

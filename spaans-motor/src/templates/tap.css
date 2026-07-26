@@ -1,0 +1,24 @@
+/* Sjabloon: aanwijzen (tap). Woord in tikbare stukken; kies het juiste stuk. */
+.tp-card{background:linear-gradient(175deg,#FBF6E9,#E9E0C9);border:1px solid rgba(0,0,0,.25);border-radius:3px;
+  box-shadow:0 6px 0 rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.9);padding:18px 16px 20px;text-align:center;position:relative;overflow:hidden;min-height:180px;display:flex;flex-direction:column;justify-content:center}
+.tp-card::before,.tp-card::after{content:"";position:absolute;left:0;right:0;height:7px;background:repeating-linear-gradient(45deg,#12264A 0 4px,transparent 4px 8px),repeating-linear-gradient(-45deg,#12264A 0 4px,transparent 4px 8px);opacity:.5}
+.tp-card::before{top:0}.tp-card::after{bottom:0}
+.tp-eye{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8A7F66;margin-bottom:10px}
+.tp-word{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2px}
+.tp-chip{font-family:var(--serif);font-weight:700;font-size:clamp(26px,7vw,50px);line-height:1;color:#12264A;
+  background:linear-gradient(180deg,#fff,#F1E9D5);border:1px solid #C3B99F;border-radius:4px;padding:.18em .28em;
+  cursor:pointer;transition:transform .08s,filter .12s,box-shadow .12s}
+.tp-chip:hover{filter:brightness(1.04);border-color:#12264A;box-shadow:0 3px 0 rgba(0,0,0,.16)}
+.tp-chip:active{transform:translateY(2px)}
+.tp-chip:focus-visible{outline:3px solid #3D74D6;outline-offset:2px}
+.tp-chip.hit{background:linear-gradient(180deg,#BFE6CC,#9AD6AE);border-color:#1F6B4C;animation:tpPop .35s}
+.tp-chip.miss{background:linear-gradient(180deg,#EFC3B8,#E3A393);border-color:#8E2C1D}
+.tp-chip.reveal{box-shadow:0 0 0 3px #1F6B4C}
+.tp-join{font-family:var(--serif);color:#B3A588;font-size:clamp(20px,5vw,38px);padding:0 1px}
+.tp-sub{font-family:var(--serif);font-style:italic;font-size:14px;color:#6E6249;margin-top:12px}
+.tp-fb{min-height:22px;margin-top:6px;font-family:var(--serif);font-size:15px;font-weight:700}
+.tp-fb.g{color:#1F6B4C}.tp-fb.b{color:#8E2C1D}
+.tp-card.good{animation:tpGood .4s}.tp-card.bad{animation:tpBad .5s}
+@keyframes tpGood{0%{background:#DFF3E4}100%{}}
+@keyframes tpBad{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}
+@keyframes tpPop{0%{transform:scale(1)}45%{transform:scale(1.08)}100%{transform:scale(1)}}

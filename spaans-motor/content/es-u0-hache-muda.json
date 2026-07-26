@@ -1,0 +1,27 @@
+{
+  "id": "es-u0-hache-muda",
+  "title": "La <span>hache</span> muda",
+  "subtitle": "U0 · de h zwijgt — met of zonder hache?",
+  "lang": "es",
+  "template": "cloze",
+  "options": { "rounds": 14, "audio": false },
+  "cloze": {
+    "prompt": "¿Con hache (muda) o sin hache?",
+    "items": [
+      {"stimulus":"«hallo» (saludo)","options":["hola","ola"],"answer":"hola","tag":"con-h","sub":"hola · de h zwijgt"},
+      {"stimulus":"«de golf van de zee»","options":["ola","hola"],"answer":"ola","tag":"sin-h","sub":"ola · zonder h"},
+      {"stimulus":"«vandaag»","options":["hoy","oy"],"answer":"hoy","tag":"con-h","sub":"hoy"},
+      {"stimulus":"«broer»","options":["hermano","ermano"],"answer":"hermano","tag":"con-h","sub":"hermano"},
+      {"stimulus":"«doen, maken»","options":["hacer","acer"],"answer":"hacer","tag":"con-h","sub":"hacer"},
+      {"stimulus":"«uur, tijdstip»","options":["hora","ora"],"answer":"hora","tag":"con-h","sub":"hora"},
+      {"stimulus":"«zoon»","options":["hijo","ijo"],"answer":"hijo","tag":"con-h","sub":"hijo"},
+      {"stimulus":"«ziekenhuis»","options":["hospital","ospital"],"answer":"hospital","tag":"con-h","sub":"hospital"},
+      {"stimulus":"«ei»","options":["huevo","uevo"],"answer":"huevo","tag":"con-h","sub":"huevo"},
+      {"stimulus":"«man, mens»","options":["hombre","ombre"],"answer":"hombre","tag":"con-h","sub":"hombre"},
+      {"stimulus":"«tot …» (hasta)","options":["hasta","asta"],"answer":"hasta","tag":"con-h","sub":"hasta"},
+      {"stimulus":"«en» (verbindingswoord)","options":["y","hy"],"answer":"y","tag":"sin-h","sub":"y · geen h"},
+      {"stimulus":"«jaar» (año)","options":["año","haño"],"answer":"año","tag":"sin-h","sub":"año · geen h"},
+      {"stimulus":"«of» (keuze)","options":["o","ho"],"answer":"o","tag":"sin-h","sub":"o · geen h"}
+    ]
+  }
+}
