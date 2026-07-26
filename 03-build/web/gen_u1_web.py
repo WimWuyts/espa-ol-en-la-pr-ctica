@@ -35,6 +35,7 @@ MOTOR = [
    ['genero-articulo', '¿el o la?', 'classify'],
    ['mayuscula-minuscula', '¿mayúscula o minúscula?', 'classify']]],
  ['③ Producir con apoyo', [
+   ['verbo-cloze', 'completa el verbo (ser+presente)', 'cloze'],
    ['interrogativos', 'palabras interrogativas', 'cloze'],
    ['un-una', '¿un o una?', 'cloze'],
    ['que-verbo', '¿qué verbo?', 'cloze'],
@@ -46,6 +47,12 @@ MOTOR = [
    ['senala-hispano', 'señala el mundo hispano', 'point'],
    ['pregunta-respuesta', 'pregunta ↔ respuesta', 'match'],
    ['presentate', '¡Preséntate!', 'sim']]],
+ ['⑤ Hablar · grábate 🎙️', [
+   ['repite-presentacion', 'escucha y repite', 'speak'],
+   ['shadowing-lucia', 'shadowing con Lucía', 'speak'],
+   ['carrusel-presentate', 'carrusel: preséntate', 'speak'],
+   ['mensaje-de-voz', 'mensaje de voz', 'speak'],
+   ['describe-persona', 'describe a un personaje', 'speak']]],
 ]
 GAMEDIR = f"{ROOT}/spaans-motor/games"
 slugs = [g[0] for grp in MOTOR for g in grp[1]]
@@ -151,6 +158,35 @@ table.vt th{background:var(--gt);color:var(--gd);position:sticky;top:0;z-index:1
 .editbar .b1{background:#fff;color:var(--gd)}.editbar .b2{background:#ffffff22;color:#fff}.editbar.on{background:var(--amber)}
 body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-offset:2px;border-radius:3px}
 @media print{.editbar{display:none!important}}
+/* lectura */
+.perfiles{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.perfiles{grid-template-columns:1fr}}
+.perfil{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--g);border-radius:16px;padding:16px}
+.perfil h4{font-family:var(--disp);color:var(--gd);margin:0 0 6px;display:flex;align-items:center;gap:8px}
+.perfil .txt{font-size:14px;line-height:1.6}
+.perfil .txt .ev{background:#FEF3C7;border-radius:3px;padding:0 3px}
+.vftask{margin-top:8px}
+.vfrow{display:flex;gap:8px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:7px 0;font-size:14px}
+.vfrow .btns{display:flex;gap:6px}
+.vfrow .vfb{border:1.5px solid var(--line);background:var(--card);border-radius:8px;padding:3px 10px;cursor:pointer;font-weight:700}
+.vfrow .vfb.on{background:var(--g);color:#fff;border-color:var(--g)}
+.vfrow .res{font-size:12px;color:var(--mut);min-width:150px}
+/* recorder */
+.rec h3{font-family:var(--disp);margin:0 0 2px;color:var(--ink);font-size:18px}
+.rec .desc{color:var(--mut);font-size:13px;margin:0 0 12px}
+.rec .target{font-family:var(--disp);font-size:20px;color:var(--gd);background:var(--gt);border-radius:12px;padding:14px 16px;margin:8px 0;text-align:center}
+.rec .cue{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.05em}
+.rec .rbtns{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
+.rec .rbtn{border:none;border-radius:10px;padding:9px 15px;font-weight:700;cursor:pointer;font-family:var(--disp);font-size:14px;color:#fff;background:var(--g)}
+.rec .rbtn.sec{background:var(--gt);color:var(--gd)}
+.rec .rbtn.rec-on{background:var(--red);animation:pulse 1s infinite}
+.rec .rbtn[disabled]{opacity:.4;cursor:not-allowed}
+@keyframes pulse{50%{opacity:.55}}
+.rec .moods{display:flex;gap:8px;margin-top:6px}
+.rec .mood{font-size:22px;cursor:pointer;border:1.5px solid var(--line);border-radius:10px;padding:2px 10px;background:var(--card)}
+.rec .mood.on{border-color:var(--g);background:var(--gt)}
+.rec .warn{background:#fdeaea;color:var(--red);border-radius:10px;padding:8px 12px;font-size:13px;margin:6px 0}
+.rec audio{width:100%;margin-top:6px}
 """
 
 def data_js():
@@ -189,7 +225,7 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   <div class="hero">
     <div class="mo">__MOCH__</div>
     <div><h1>U1 · ¿Quién eres?</h1>
-    <p>La página digital de la Unidad 1 (parada <b>Madrid</b>): flashcards, gramática visual e interactiva y <b>18 juegos</b>. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie.</span></p></div>
+    <p>La página digital de la Unidad 1 (parada <b>Madrid</b>): flashcards, gramática visual e interactiva y <b>24 juegos</b>. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie.</span></p></div>
   </div>
   <div class="subnav" id="subnav"></div>
 
@@ -210,10 +246,25 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
     <div class="game" id="g_ella"></div>
   </section>
 
+  <section class="panel" data-p="lectura">
+    <h2 class="sec">Lectura · dos perfiles</h2>
+    <p class="lead">Lees de twee profielen, <b>luister</b> ze (🔊 TTS) en <b>controleer je begrip</b>. Daarna reageer je met een eigen bericht — dat neem je op in het tabblad <b>Hablar</b>. <span class="gloss">Keten: lezen → luisteren → spreken.</span></p>
+    <div id="lecturawrap"></div>
+  </section>
+
   <section class="panel" data-p="juegos">
-    <h2 class="sec">Ejercicios · 18 juegos, jij kiest</h2>
-    <p class="lead">Geordend van <b>herkennen → onderscheiden → produceren met steun → analyseren &amp; communiceren</b>. Elk spel geeft directe, verklarende feedback en de steun bouwt af. <span class="gloss">Klik een spel; het opent in een venster en werkt ook offline.</span></p>
+    <h2 class="sec">Ejercicios · 24 juegos, jij kiest</h2>
+    <p class="lead">Geordend van <b>herkennen → onderscheiden → produceren met steun → analyseren &amp; communiceren → hablar</b>. Elk spel geeft directe, verklarende feedback en de steun bouwt af. <span class="gloss">Klik een spel; het opent in een venster en werkt ook offline.</span></p>
     <div id="motorlink"></div>
+  </section>
+
+  <section class="panel" data-p="hablar">
+    <h2 class="sec">Hablar · grábate 🎙️</h2>
+    <p class="lead">Neem <b>jezelf</b> op: luister naar het model, spreek in, luister terug, en neem opnieuw op. <span class="gloss">Werkt in Chrome/Edge; sta de micro toe. Print blijft bruikbaar zonder opname.</span></p>
+    <div class="card" id="rec_repite"></div>
+    <div class="card" id="rec_carrusel"></div>
+    <div class="card" id="rec_mensaje"></div>
+    <p class="lead" style="margin-top:8px">Meer spreek-/opnamespellen (shadowing, describe…) vind je ook onder <b>Juegos ⑤</b>.</p>
   </section>
 
   <section class="panel" data-p="cultura">
@@ -235,7 +286,7 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
 
 <div class="modal" id="gmodal"><div class="modalbox">
   <div class="modalbar"><span id="gmtitle">Juego</span><button onclick="closeGame()">✕ sluiten</button></div>
-  <iframe id="gframe" title="Spel"></iframe>
+  <iframe id="gframe" title="Spel" allow="microphone; autoplay"></iframe>
 </div></div>
 
 <div class="editbar" id="editbar">
@@ -254,7 +305,7 @@ function speak(t,rate){if(!('speechSynthesis'in window))return;const u=new Speec
   const vs=speechSynthesis.getVoices();const es=vs.find(v=>/^es/i.test(v.lang));if(es)u.voice=es;try{speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}
 const TTS=('speechSynthesis'in window);
 if(TTS){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}
-const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['juegos','Juegos'],['cultura','Cultura'],['extra','Extra']];
+const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['juegos','Juegos'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
 const sn=document.getElementById('subnav');
 PANELS.forEach((p,i)=>{const b=document.createElement('button');b.textContent=p[1];if(i===0)b.classList.add('on');b.onclick=()=>{
   document.querySelectorAll('.subnav button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
@@ -362,7 +413,65 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeGame();});
 })();
 
 // init
-renderFC();renderTable();gameInterrog();gameElla();
+// ---------- LECTURA: perfiles + TTS + begrip ----------
+function renderLectura(){const el=document.getElementById('lecturawrap');if(!el)return;
+ const P=[{n:'Lucía',fr:'Sevilla 🇪🇸',t:'¡Hola! Me llamo <span class="ev">Lucía Ramírez</span>. Soy de <span class="ev">Sevilla</span>, en el sur de España, y tengo <span class="ev">16 años</span>. Estudio en un instituto y hablo <span class="ev">español e inglés</span>. Me gusta la música y viajar. Busco un amigo o una amiga para hablar español. ¿Y tú, quién eres?'},
+  {n:'Diego',fr:'CDMX 🇲🇽',t:'¡Qué onda! Soy <span class="ev">Diego</span>, de <span class="ev">Ciudad de México</span>. Tengo <span class="ev">15 años</span> y vivo con mi familia. Hablo <span class="ev">español</span> y un poco de <span class="ev">inglés</span>. Me encanta la comida y el fútbol. Quiero conocer gente de Europa. ¡Escríbeme!'}];
+ const strip=h=>h.replace(/<[^>]+>/g,'');
+ el.innerHTML='<div class="perfiles">'+P.map((p,i)=>'<div class="perfil"><h4>👤 '+p.n+' <span class="gloss" style="font-size:12px;font-weight:400">· '+p.fr+'</span> '+(TTS?'<button class="spk-btn" style="margin-left:auto;padding:4px 10px" onclick="speak(document.getElementById(\'lx'+i+'\').dataset.raw)">🔊 escuchar</button>':'')+'</h4><div class="txt" id="lx'+i+'" data-raw="'+strip(p.t).replace(/"/g,'&quot;')+'">'+p.t+'</div></div>').join('')+'</div>';
+ // V/F begripstaak
+ const items=[['Lucía tiene 16 años.',true,'«tengo 16 años»'],['Diego es de España.',false,'Diego es de México'],['Los dos hablan inglés.',true,'Lucía: inglés · Diego: un poco de inglés'],['A Diego le gusta la música.',false,'a Diego le gusta la comida y el fútbol']];
+ const box=document.createElement('div');box.className='card vftask';box.innerHTML='<h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 8px">¿Verdadero o falso? — comprueba tu comprensión</h3>';
+ items.forEach(([q,ans,pr])=>{const r=document.createElement('div');r.className='vfrow';
+   r.innerHTML='<span>'+q+'</span><span class="btns"><button class="vfb">V</button><button class="vfb">F</button><span class="res"></span></span>';
+   const [bv,bf]=r.querySelectorAll('.vfb');const res=r.querySelector('.res');
+   function pick(val){bv.classList.toggle('on',val);bf.classList.toggle('on',!val);const ok=val===ans;res.innerHTML=(ok?'✅ ':'❌ ')+'<span class="gloss">'+pr+'</span>';res.style.color=ok?'var(--gd)':'var(--red)';}
+   bv.onclick=()=>pick(true);bf.onclick=()=>pick(false);box.appendChild(r);});
+ const resp=document.createElement('div');resp.className='card';resp.innerHTML='<h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px">Responde</h3><p class="gloss" style="margin:0 0 8px">Kies één profiel en stel jezelf voor in een antwoordbericht. Neem het op onder <b>Hablar 🎙️</b> («mensaje de voz»).</p><textarea class="txin" style="width:100%;height:80px;font-family:var(--body)" placeholder="¡Hola! Me llamo…"></textarea>';
+ el.appendChild(box);el.appendChild(resp);}
+
+// ---------- INLINE RECORDER (MediaRecorder, draait in de hub-origin) ----------
+function makeRecorder(elId, cfg){const el=document.getElementById(elId);if(!el)return;
+ el.classList.add('rec');
+ let idx=0, media=null, chunks=[], stream=null, curURL=null;
+ const items=cfg.items;
+ el.innerHTML='<h3>'+cfg.title+'</h3><p class="desc">'+cfg.desc+'</p>'+
+   '<div class="scorebar"><span>Ítem <b class="pos">1</b>/'+items.length+'</span></div>'+
+   '<div class="cue" id="'+elId+'_cue"></div><div class="target" id="'+elId+'_tg"></div>'+
+   '<div class="rbtns">'+(TTS?'<button class="rbtn sec" id="'+elId+'_play">🔊 Escuchar</button>':'')+
+   '<button class="rbtn" id="'+elId+'_rec">⏺ Grabar</button>'+
+   '<button class="rbtn sec" id="'+elId+'_mine" disabled>▶ Mi grabación</button>'+
+   '<button class="rbtn sec" id="'+elId+'_next">Siguiente ▸</button></div>'+
+   '<div id="'+elId+'_au"></div><div class="moods" id="'+elId+'_mood"></div><div id="'+elId+'_fb" class="fb"></div>';
+ const tg=el.querySelector('#'+elId+'_tg'),cue=el.querySelector('#'+elId+'_cue'),pos=el.querySelector('.pos');
+ const bRec=el.querySelector('#'+elId+'_rec'),bMine=el.querySelector('#'+elId+'_mine'),bNext=el.querySelector('#'+elId+'_next'),bPlay=el.querySelector('#'+elId+'_play');
+ const au=el.querySelector('#'+elId+'_au'),moodbox=el.querySelector('#'+elId+'_mood');
+ function load(){const it=items[idx];pos.textContent=idx+1;cue.textContent=it.cue||'';tg.innerHTML=it.text;au.innerHTML='';bMine.disabled=true;moodbox.innerHTML='';el.querySelector('#'+elId+'_fb').className='fb';
+   ['☹','😐','☺'].forEach((m,mi)=>{const b=document.createElement('div');b.className='mood';b.textContent=m;b.onclick=()=>{moodbox.querySelectorAll('.mood').forEach(x=>x.classList.remove('on'));b.classList.add('on');feedback(el.querySelector('#'+elId+'_fb'),true,(it.tip||'¡Bien! Prueba otra vez para mejorar.'));};moodbox.appendChild(b);});}
+ if(bPlay)bPlay.onclick=()=>speak((items[idx].text||'').replace(/<[^>]+>/g,''));
+ bNext.onclick=()=>{idx=(idx+1)%items.length;load();};
+ async function start(){
+   if(!navigator.mediaDevices||!window.MediaRecorder){warn();return;}
+   try{stream=await navigator.mediaDevices.getUserMedia({audio:true});}catch(e){warn();return;}
+   chunks=[];media=new MediaRecorder(stream);media.ondataavailable=e=>chunks.push(e.data);
+   media.onstop=()=>{const blob=new Blob(chunks,{type:'audio/webm'});if(curURL)URL.revokeObjectURL(curURL);curURL=URL.createObjectURL(blob);
+     au.innerHTML='<audio controls src="'+curURL+'"></audio>';bMine.disabled=false;stream.getTracks().forEach(t=>t.stop());};
+   media.start();bRec.textContent='⏹ Parar';bRec.classList.add('rec-on');}
+ function stop(){if(media&&media.state!=='inactive')media.stop();bRec.textContent='⏺ Grabar';bRec.classList.remove('rec-on');}
+ bRec.onclick=()=>{if(media&&media.state==='recording')stop();else start();};
+ bMine.onclick=()=>{const a=au.querySelector('audio');if(a)a.play();};
+ function warn(){el.querySelector('#'+elId+'_fb').className='fb bad';el.querySelector('#'+elId+'_fb').innerHTML='🎙️ Micrófono no disponible — usa Chrome/Edge y permite el micrófono. Puedes escuchar el modelo (🔊) y practicar en voz alta.';}
+ load();}
+function buildRecorders(){
+ makeRecorder('rec_repite',{title:'Escucha y repite',desc:'Luister → zeg na → neem op → luister terug → opnieuw.',items:[
+   {text:'Me llamo Leo.',cue:'nombre',tip:'Duidelijk uitspreken? Probeer nog eens.'},{text:'Soy de Bélgica.',cue:'origen'},{text:'Tengo 15 años.',cue:'edad'},{text:'Vivo en Gante y hablo español.',cue:'ciudad · idiomas'}]});
+ makeRecorder('rec_carrusel',{title:'Carrusel: preséntate',desc:'Eén element wisselt per ronde. Bouw de zin, spreek ze in.',items:[
+   {text:'Me llamo Sara, soy de Bélgica y tengo 14 años.',cue:'ronde 1'},{text:'Me llamo Tom, soy de Amberes y tengo 16 años.',cue:'ronde 2'},{text:'Me llamo… , soy de… y tengo… años.',cue:'jouw versie'}]});
+ makeRecorder('rec_mensaje',{title:'Mensaje de voz',desc:'Neem één bericht op. Ontvanger: Lucía/Diego · Doel: jezelf voorstellen. Gebruik: me llamo · soy de · tengo … años.',items:[
+   {text:'Preséntate a Lucía o a Diego en un mensaje de voz (30 s).',cue:'para · Lucía / Diego',tip:'Heb je nombre + origen + edad + idiomas gezegd? Neem opnieuw op.'}]});
+}
+
+renderFC();renderTable();gameInterrog();gameElla();renderLectura();buildRecorders();
 (function(){const h=location.hash.replace('#','');const i=PANELS.findIndex(p=>p[0]===h);if(i>=0)sn.children[i].click();})();
 window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');const i=PANELS.findIndex(p=>p[0]===h);if(i>=0)sn.children[i].click();});
 

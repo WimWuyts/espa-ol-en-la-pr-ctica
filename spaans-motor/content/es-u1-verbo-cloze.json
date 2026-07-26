@@ -1,0 +1,27 @@
+{
+  "id": "es-u1-verbo-cloze",
+  "title": "Completa el verbo",
+  "subtitle": "U1 · vul de juiste vorm in (ser + presente)",
+  "lang": "es",
+  "template": "cloze",
+  "options": { "rounds": 12, "audio": false },
+  "cloze": {
+    "prompt": "Kies de juiste werkwoordsvorm",
+    "items": [
+      {"stimulus":"Yo ___ de Bélgica.","options":["soy","eres","es"],"answer":"soy","tag":"ser","sub":"ser · yo"},
+      {"stimulus":"Lucía ___ española.","options":["es","soy","son"],"answer":"es","tag":"ser","sub":"ser · ella"},
+      {"stimulus":"¿De dónde ___ tú?","options":["eres","es","soy"],"answer":"eres","tag":"ser","sub":"ser · tú"},
+      {"stimulus":"Nosotros ___ estudiantes.","options":["somos","sois","son"],"answer":"somos","tag":"ser","sub":"ser · nosotros"},
+      {"stimulus":"Diego y Nina ___ de América.","options":["son","somos","es"],"answer":"son","tag":"ser","sub":"ser · ellos"},
+      {"stimulus":"Yo ___ neerlandés e inglés.","options":["hablo","hablas","habla"],"answer":"hablo","tag":"pres","sub":"hablar · yo"},
+      {"stimulus":"Tú ___ español, ¿verdad?","options":["estudias","estudio","estudia"],"answer":"estudias","tag":"pres","sub":"estudiar · tú"},
+      {"stimulus":"Lucía ___ en Sevilla.","options":["vive","vivo","viven"],"answer":"vive","tag":"pres","sub":"vivir · ella"},
+      {"stimulus":"Nosotros ___ mucho.","options":["aprendemos","aprendéis","aprenden"],"answer":"aprendemos","tag":"pres","sub":"aprender · nosotros"},
+      {"stimulus":"Mis padres ___ los sábados.","options":["trabajan","trabajamos","trabaja"],"answer":"trabajan","tag":"pres","sub":"trabajar · ellos"},
+      {"stimulus":"¿Qué idiomas ___ usted?","options":["habla","hablas","hablo"],"answer":"habla","tag":"pres","sub":"hablar · usted"},
+      {"stimulus":"Yo me ___ Leo.","options":["llamo","llamas","llama"],"answer":"llamo","tag":"pres","sub":"llamarse · yo"},
+      {"stimulus":"Vosotros ___ en Madrid.","options":["vivís","vivimos","viven"],"answer":"vivís","tag":"pres","sub":"vivir · vosotros"},
+      {"stimulus":"Ella ___ 16 años.","options":["tiene","tienes","tengo"],"answer":"tiene","tag":"pres","sub":"tener · ella"}
+    ]
+  }
+}
