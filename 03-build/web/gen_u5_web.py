@@ -136,7 +136,13 @@ table.vt th{background:var(--gt);color:var(--gd);position:sticky;top:0;z-index:1
 .conjcell.rev{background:var(--gt)}
 .foot{color:var(--mut);font-size:12px;text-align:center;margin-top:30px}
 #mapwrap svg{width:100%;height:auto}
+#mapwrap{max-width:360px;margin:12px auto 0}
 #mapwrap path.spa,#mapwrap path.usa{transition:opacity .12s}
+.platos{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 2px}
+.platos .pl{flex:1 1 130px;background:var(--gt);border-radius:12px;padding:10px 8px;text-align:center}
+.platos .pl .em{font-size:24px;line-height:1}
+.platos .pl .nm{font-family:var(--disp);color:var(--gd);font-weight:700;font-size:14px;margin-top:2px}
+.platos .pl small{color:var(--mut);display:block;font-size:11px}
 .mapinfo{margin-top:12px;padding:14px 16px;background:var(--gt);border-radius:12px;min-height:66px}
 .mapinfo h3{margin:0 0 6px;font-family:var(--disp);color:var(--gd);font-size:19px}
 .mapinfo .mrow{font-size:14px;margin:2px 0}
@@ -272,7 +278,17 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
       <p>De <b>maíz</b>, con carne, verdura y <b>salsa</b>. En la CDMX hay <b>taquerías</b> por todas partes: al pastor, de pollo, de pescado… <span class="gloss">De taco is het hart van de Mexicaanse keuken — je deelt er meerdere.</span></p></div>
     <div class="card"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px;display:flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>Los mercados y los horarios 🏪</h3>
       <p>En los <b>mercados</b> compras fruta, verdura y comida fresca; regatear el <b>precio</b> es normal. <b>Horario:</b> en España se cena muy tarde (21:30), en México y Bélgica un poco antes. <span class="gloss">De markt is dé plek om cantidades te oefenen. Contraste: la paella 🇪🇸 ↔ los tacos 🇲🇽 ↔ la arepa 🇨🇴 ↔ el ceviche 🇵🇪.</span></p></div>
-    <h3 class="subh">La Ruta · ¿dónde estamos?</h3>
+    <div class="card"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px">Platos típicos de México 🇲🇽</h3>
+      <p><b>ES:</b> En México, comer es una fiesta y casi todo empieza con el <b>maíz</b>. Muchos platos se comen en la calle, en un <b>puesto</b> o en el mercado. <span class="gloss">In Mexico is eten een feest; bijna alles begint met maïs. Veel gerechten eet je op straat.</span></p>
+      <div class="platos">
+        <div class="pl"><div class="em">🌮</div><div class="nm">los tacos</div><small>tortilla + carne + salsa</small></div>
+        <div class="pl"><div class="em">🥑</div><div class="nm">el guacamole</div><small>aguacate, lima, chile</small></div>
+        <div class="pl"><div class="em">🫓</div><div class="nm">las quesadillas</div><small>tortilla con queso</small></div>
+        <div class="pl"><div class="em">🌽</div><div class="nm">el elote</div><small>maíz de la calle</small></div>
+        <div class="pl"><div class="em">🌶️</div><div class="nm">el pozole</div><small>sopa con maíz y carne</small></div>
+      </div>
+      <p><span class="gloss">¡Ojo! In Spanje = «la comida española» (tapas, paella); in Mexico andere smaken. Pittig = «picante» (met chile).</span></p></div>
+    <h3 class="subh">📍 La Ruta · ¿dónde estamos?</h3>
     <p class="lead">Onze parada 5: <b>México · CDMX</b> 🇲🇽 (cruzamos el charco). <b>Klik op een groen land</b> op de kaart voor info. Verderop: Colombia → Perú.</p>
     <div class="card" id="mapwrap">__MAP__<div class="mapinfo" id="mapinfo"><p class="gloss" style="margin:0">👆 Klik op een groen land (of een halte ★) om er meer over te lezen.</p></div></div>
   </section>

@@ -143,7 +143,13 @@ table.vt th{background:var(--gt);color:var(--gd);position:sticky;top:0;z-index:1
 .conjcell.rev{background:var(--gt)}
 .foot{color:var(--mut);font-size:12px;text-align:center;margin-top:30px}
 #mapwrap svg{width:100%;height:auto}
+#mapwrap{max-width:360px;margin:12px auto 0}
 #mapwrap path.spa,#mapwrap path.usa{transition:opacity .12s}
+.mealstrip{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 2px}
+.mealstrip .mc{flex:1 1 120px;background:var(--gt);border-radius:12px;padding:10px 8px;text-align:center}
+.mealstrip .mc .em{font-size:26px;line-height:1}
+.mealstrip .mc .nm{font-family:var(--disp);color:var(--gd);font-weight:700;font-size:14px;margin-top:2px}
+.mealstrip .mc .hr{font-size:12px;color:var(--mut)}
 .mapinfo{margin-top:12px;padding:14px 16px;background:var(--gt);border-radius:12px;min-height:66px}
 .mapinfo h3{margin:0 0 6px;font-family:var(--disp);color:var(--gd);font-size:19px}
 .mapinfo .mrow{font-size:14px;margin:2px 0}
@@ -272,10 +278,18 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
     <h2 class="sec">Cultura · El horario español</h2>
     <p class="lead">En España se come y se cena <b>más tarde</b> que en Bélgica, y la famosa <b>siesta</b> es más mito que realidad. <span class="gloss">In Spanje eet men later dan in België; de siësta is meer mythe dan realiteit. De klok zegt veel over een cultuur.</span></p>
     <div class="card"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px;display:flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>Las comidas 🍽️</h3>
-      <p><b>desayuno</b> (~8 u, licht) · <b>comida/almuerzo</b> (~14–15 u, de hoofdmaaltijd!) · <b>merienda</b> (~18 u) · <b>cena</b> (~21–22 u). <span class="gloss">In België eet men rond 12 u en 18 u — een paar uur vroeger. La comida = 14–15 h ↔ la cena = 21–22 h.</span></p></div>
+      <p><b>desayuno</b> (~8 u, licht) · <b>comida/almuerzo</b> (~14–15 u, de hoofdmaaltijd!) · <b>merienda</b> (~18 u) · <b>cena</b> (~21–22 u). <span class="gloss">In België eet men rond 12 u en 18 u — een paar uur vroeger. La comida = 14–15 h ↔ la cena = 21–22 h.</span></p>
+      <div class="mealstrip">
+        <div class="mc"><div class="em">🌅</div><div class="nm">el desayuno</div><div class="hr">~8:00</div></div>
+        <div class="mc"><div class="em">🍽️</div><div class="nm">la comida</div><div class="hr">~14:00</div></div>
+        <div class="mc"><div class="em">🍪</div><div class="nm">la merienda</div><div class="hr">~18:00</div></div>
+        <div class="mc"><div class="em">🌙</div><div class="nm">la cena</div><div class="hr">~21:30</div></div>
+      </div></div>
     <div class="card"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px;display:flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>El instituto y la siesta</h3>
       <p>Veel scholen lopen van ~<b>8:30</b> tot ~<b>14:30</b>; 's middags: deberes, deporte, amigos. De <b>siesta</b>? Mito: todos duermen ↔ realidad: pocos, sobre todo mayores. <span class="gloss">Een ander ritme dan een lange schooldag met middagpauze; de siësta is vooral een mythe.</span></p></div>
-    <h3 class="subh">La Ruta · ¿dónde estamos?</h3>
+    <div class="card"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px">La sobremesa 🗣️</h3>
+      <p><b>ES:</b> Después de comer, la gente no se levanta enseguida: se quedan en la mesa charlando. Es <b>la sobremesa</b>, un momento para hablar, reír y estar juntos. <span class="gloss">Na het eten blijft men aan tafel napraten: de «sobremesa». Een gezellig moment dat soms lang duurt — tijd is hier relatief.</span></p></div>
+    <h3 class="subh">📍 La Ruta · ¿dónde estamos?</h3>
     <p class="lead">Onze parada 3: <b>Barcelona</b> 🇪🇸. <b>Klik op een groen land</b> op de kaart voor info. Verderop: València → México → Colombia → Perú.</p>
     <div class="card" id="mapwrap">__MAP__<div class="mapinfo" id="mapinfo"><p class="gloss" style="margin:0">👆 Klik op een groen land (of een halte ★) om er meer over te lezen.</p></div></div>
   </section>

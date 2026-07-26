@@ -143,6 +143,7 @@ table.vt th{background:var(--gt);color:var(--gd);position:sticky;top:0;z-index:1
 .conjcell.rev{background:var(--gt)}
 .foot{color:var(--mut);font-size:12px;text-align:center;margin-top:30px}
 #mapwrap svg{width:100%;height:auto}
+#mapwrap{max-width:360px;margin:12px auto 0}
 #mapwrap path.spa,#mapwrap path.usa{transition:opacity .12s}
 .mapinfo{margin-top:12px;padding:14px 16px;background:var(--gt);border-radius:12px;min-height:66px}
 .mapinfo h3{margin:0 0 6px;font-family:var(--disp);color:var(--gd);font-size:19px}
@@ -276,7 +277,9 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
       <p><b>Lucía Ramírez García</b> = Ramírez (del padre) + García (de la madre). Al casarse, el apellido <b>no cambia</b>. <span class="gloss">Iedereen draagt de achternaam van vader én moeder; bij een huwelijk verandert de naam niet. Nederlands heeft één achternaam — hier twee.</span></p></div>
     <div class="card"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px;display:flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>¿Tú o usted?</h3>
       <p><b>tú</b> (¿Cómo estás? · tú eres) met een leeftijdsgenoot ↔ <b>usted</b> (¿Cómo está usted? · usted es) beleefd/formeel. <span class="gloss">España: veel tú ↔ Colombia/Perú: vaak usted. Vooruitblik: in C6 ontmoet je Mateo uit Argentina met vos.</span></p></div>
-    <h3 class="subh">La Ruta · ¿dónde estamos?</h3>
+    <div class="card"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px">Madrid · el corazón de España 🐻🌳</h3>
+      <p><b>ES:</b> Madrid es la <b>capital</b> y la ciudad más grande de España. En la <b>Puerta del Sol</b> está el <b>Kilómetro 0</b>, el punto de donde salen todas las carreteras del país. El símbolo de la ciudad es <b>el oso y el madroño</b> 🐻🌳. <span class="gloss">Madrid is de hoofdstad; op de Puerta del Sol ligt «Kilometer 0», het startpunt van alle wegen. Het symbool is de beer met de aardbeiboom.</span></p></div>
+    <h3 class="subh">📍 La Ruta · ¿dónde estamos?</h3>
     <p class="lead">Onze parada 1: <b>Madrid</b> 🇪🇸, hoofdstad van España. <b>Klik op een groen land</b> op de kaart voor info. Verderop: México → Colombia → Perú.</p>
     <div class="card" id="mapwrap">__MAP__<div class="mapinfo" id="mapinfo"><p class="gloss" style="margin:0">👆 Klik op een groen land (of een halte ★) om er meer over te lezen.</p></div></div>
   </section>

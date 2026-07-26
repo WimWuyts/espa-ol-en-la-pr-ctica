@@ -143,7 +143,12 @@ table.vt th{background:var(--gt);color:var(--gd);position:sticky;top:0;z-index:1
 .conjcell.rev{background:var(--gt)}
 .foot{color:var(--mut);font-size:12px;text-align:center;margin-top:30px}
 #mapwrap svg{width:100%;height:auto}
+#mapwrap{max-width:360px;margin:12px auto 0}
 #mapwrap path.spa,#mapwrap path.usa{transition:opacity .12s}
+.artists{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 2px}
+.artists .ar{flex:1 1 150px;background:var(--gt);border-radius:12px;padding:8px 10px}
+.artists .ar b{color:var(--gd)}
+.artists .ar small{color:var(--mut);display:block}
 .mapinfo{margin-top:12px;padding:14px 16px;background:var(--gt);border-radius:12px;min-height:66px}
 .mapinfo h3{margin:0 0 6px;font-family:var(--disp);color:var(--gd);font-size:19px}
 .mapinfo .mrow{font-size:14px;margin:2px 0}
@@ -274,7 +279,18 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
       <p>Cantante de <b>Barcelona</b>. Mezcla <b>flamenco</b> con pop y reguetón. Álbumes famosos: <i>El mal querer</i>, <i>Motomami</i>. Canta en español. <span class="gloss">Een brug tussen traditie en de charts van vandaag — perfect voor de klas. El español es de los idiomas más escuchados en las plataformas de música.</span></p></div>
     <div class="card"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px;display:flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg>El ocio joven 🏖️</h3>
       <p>Jongeren <b>salen con amigos</b>, escuchan música, ven series, hacen deporte y van a la playa. En <b>València</b>: las Fallas, la paella y la horchata. <span class="gloss">Muziek en samen zijn staan centraal. Contraste: el flamenco (tradición) ↔ el reguetón (actual).</span></p></div>
-    <h3 class="subh">La Ruta · ¿dónde estamos?</h3>
+    <div class="card"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px">Los artistas del momento 🎤</h3>
+      <p><b>ES:</b> La música en español suena en todo el mundo. Estas son algunas de las estrellas del momento — de España y de Latinoamérica. <span class="gloss">Spaanstalige muziek klinkt overal. Enkele van de grootste sterren van dit moment.</span></p>
+      <div class="artists">
+        <div class="ar"><b>Rosalía</b> 🇪🇸<small>flamenco + pop · «La Perla»</small></div>
+        <div class="ar"><b>Bad Bunny</b> 🇵🇷<small>reguetón / trap · «Baile inolvidable»</small></div>
+        <div class="ar"><b>Karol G</b> 🇨🇴<small>reguetón · «Si antes te hubiera conocido»</small></div>
+        <div class="ar"><b>Shakira</b> 🇨🇴<small>pop latino · «Hips Don't Lie»</small></div>
+        <div class="ar"><b>Feid</b> 🇨🇴<small>reguetón · «Luna»</small></div>
+        <div class="ar"><b>Quevedo</b> 🇪🇸<small>trap / urbano · «Quédate»</small></div>
+      </div>
+      <p><span class="gloss">Beluister ze in de klas-playlist. Op de hub kun je «La Perla» van Rosalía en «Me gustas tú» (Manu Chao) meezingen (LyricsTraining).</span></p></div>
+    <h3 class="subh">📍 La Ruta · ¿dónde estamos?</h3>
     <p class="lead">Onze parada 4: <b>València</b> 🇪🇸 (la costa). <b>Klik op een groen land</b> op de kaart voor info. Verderop: México → Colombia → Perú.</p>
     <div class="card" id="mapwrap">__MAP__<div class="mapinfo" id="mapinfo"><p class="gloss" style="margin:0">👆 Klik op een groen land (of een halte ★) om er meer over te lezen.</p></div></div>
   </section>
