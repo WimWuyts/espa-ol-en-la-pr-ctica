@@ -7,11 +7,11 @@
 import json, base64, os, sys
 ROOT = "/home/user/espa-ol-en-la-pr-ctica"
 GEN = f"{ROOT}/02-huisstijl/beeld/generators"
-sys.path.insert(0, GEN); import cast_gen as C; import vocab_icons as VI
+sys.path.insert(0, GEN); import cast_gen as C; import vocab_icons as VI; import vocab_emoji as VE
 vocab = json.load(open(f"{ROOT}/01-cursussen/05-a1/U4/u4_vocab.json", encoding="utf-8"))
 mapsvg = open(f"{GEN}/mundo_map_real.svg").read()
 moch = C.mochila("100%", "map")
-ICONS=[VI.icon_svg(v.get("es",""),v.get("grp",""),size=34,color="var(--gd)") for v in vocab]
+ICONS=[f'<div class="fcico">{VE.emoji_for(v.get("es",""),v.get("grp",""))}</div>' for v in vocab]
 
 def b64(p): return base64.b64encode(open(p, "rb").read()).decode()
 def face(fam, path, w):
@@ -104,6 +104,7 @@ h2.sec{font-family:var(--disp);font-weight:700;color:var(--gd);font-size:24px;ma
 .fc.flip .in{transform:rotateY(180deg)}
 .fc .s,.fc .b{position:absolute;inset:0;backface-visibility:hidden;border-radius:14px;border:1px solid var(--line);background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;text-align:center}
 .fc .s{border-top:4px solid var(--g)}
+.fc .s .fcico{font-size:40px;line-height:1;margin-bottom:2px}
 .fc .b{transform:rotateY(180deg);background:var(--gt);border-top:4px solid var(--gd)}
 .fc .w{font-family:var(--disp);font-weight:700;font-size:16px}
 .fc .ej{font-size:11px;color:var(--mut);margin-top:6px}
