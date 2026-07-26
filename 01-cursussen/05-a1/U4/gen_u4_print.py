@@ -380,7 +380,7 @@ P(f'''
   <div class="tab">U4 · ME GUSTA</div>
   <div class="eyebrow">UNIDAD 4 · LA RUTA · PARADA 4 — VALÈNCIA / LA COSTA 🇪🇸</div>
   <h1>Me gusta</h1>
-  <div class="sub">Llegamos a <b>València</b>, junto al mar. Hoy hablas de tus <b>gustos</b>: música, deportes, cine, planes. <span class="gloss">We komen aan in Valencia, aan zee. Vandaag praat je over je smaak: muziek, sport, film, plannen.</span></div>
+  <div class="sub">Llegamos a <b>València</b>, junto al mar. Hoy hablas de tus <b>gustos</b>: música, deportes, cine, planes. <span class="gloss">We komen aan in València, aan zee. Vandaag praat je over je smaak: muziek, sport, film, plannen.</span></div>
   <div class="q">¿Qué te gusta hacer en tu tiempo libre? <span style="font-weight:400;opacity:.9">· Wat doe je graag in je vrije tijd?</span></div>
 </div>
 <div class="page">
@@ -398,7 +398,7 @@ P(f'''
     <div>
       <div class="se">La historia</div>
       <div class="hist"><b>ES:</b> En <b>València</b> hace sol. Lucía y <b>Bea</b> te preguntan: «¿Qué te <b>gusta</b>?». Aprendes a decir lo que te <b>gusta</b> y lo que te <b>encanta</b> (música, deportes, cine), a estar de <b>acuerdo</b> o no, y a <b>proponer un plan</b>: «¿<b>Quieres</b> ir a la playa?».
-      <span class="gloss">In Valencia schijnt de zon. Lucía en Bea vragen: «Wat vind jij leuk?». Je leert zeggen wat je leuk/geweldig vindt, akkoord gaan of niet, en een plan voorstellen.</span></div>
+      <span class="gloss">In València schijnt de zon. Lucía en Bea vragen: «Wat vind jij leuk?». Je leert zeggen wat je leuk/geweldig vindt, akkoord gaan of niet, en een plan voorstellen.</span></div>
       <div class="ojo"><b>¡Ojo! — de grote valstrik:</b> <b>gustar</b> werkt <i>omgekeerd</i>. Je zegt niet «ik vind X leuk», maar <b>«X bevalt mij»</b>: <b>Me gusta</b> la música (= de muziek bevalt mij). Meervoud → <b>gusta<span class="trap">n</span></b>: <b>Me gustan</b> los deportes.</div>
     </div>
     <div>
@@ -427,7 +427,7 @@ P(f'''
   <div class="mini">
     <div class="se">Ruta de la unidad</div>
     <div class="steps">
-      <span><b>§0</b>Ponte al día</span><span><b>§1</b>Me gusta(n)</span><span><b>§2</b>También/tampoco</span><span><b>§3</b>Quiero/puedo + quedar</span><span><b>§5</b>Lectura</span><span><b>Taller</b>Opinión/conect.</span><span><b>Cultura</b>Rosalía & ocio</span><span><b>Tarea</b>Mi playlist</span><span><b>Repaso</b>Semáforo</span>
+      <span><b>§0</b>Ponte al día</span><span><b>§1</b>Me gusta(n)</span><span><b>§2</b>También/tampoco</span><span><b>§3</b>Quiero/puedo + quedar</span><span><b>§4</b>Lectura</span><span><b>Taller</b>Opinión/conect.</span><span><b>Cultura</b>Rosalía & ocio</span><span><b>Tarea</b>Mi playlist</span><span><b>Repaso</b>Semáforo</span>
     </div>
   </div>
   <div class="se" style="margin-top:8mm">Cómo trabajar esta unidad · leeswijzer</div>
@@ -796,9 +796,9 @@ P(tarea_com("Tarea comunicativa · «Quedamos el finde»",
 P('<div class="route-note">🔁 <b>Ojo — conjugador online:</b> alle vervoegingen (~1000 werkwoorden, nagerekend, incl. querer/poder/jugar) in de aparte cursus-tool «Conjugador».</div>')
 P('</div>')  # page §3.2
 
-# ================= §5 · LECTURA =================
+# ================= §4 · LECTURA =================
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">📖</span><span class="pk">§5 · Lectura — «Perfiles de gustos»</span>')
+P('<span class="num">📖</span><span class="pk">§4 · Lectura — «Perfiles de gustos»</span>')
 P('<div class="intro"><b>ES:</b> Vas a leer dos perfiles de una app de música (tipo playlist). Primero <b>predices</b>, después lees con un <b>objetivo</b>. <span class="gloss">Je leest twee muziekprofielen: eerst voorspellen, dan lezen met een doel.</span></div>')
 P(lpd(("1","onderwerp/hoofdgedachte bij lezen"), ("2","relevante info selecteren"), ("3","doelgericht schrijven met steun")))
 P('</div>')
@@ -813,7 +813,7 @@ P('<div class="ptexts">'
   f'<div class="ptext"><div class="ph"><div class="av">{AV["diego"]}</div><div><div class="nm">Diego</div><div class="fr">app · mi playlist</div></div></div>'
   '<p>¡Qué onda! A mí me <span class="evi">gusta el reguetón</span> y me <span class="evi">encantan los videojuegos</span>. Toco un poco la <span class="evi">guitarra</span>. No me gusta bailar, pero me gusta escuchar música todos los días. Los sábados quiero <span class="evi">ver películas de acción</span>. ¡Escríbeme tu playlist!</p></div></div>')
 P('<div class="lecdoel">🎯 <b>Objetivo de lectura:</b> lees om te ontdekken <b>welke muziek</b> ze leuk vinden en <b>wat ze niet</b> leuk vinden — je hoeft niet élk woord te begrijpen.</div>')
-P('</div>')  # page §5a
+P('</div>')  # page §4a
 P('<div class="page">')
 P(actx(2, "Escanea: completa la tabla",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
@@ -845,7 +845,7 @@ P(tarea_com("Tarea comunicativa · Responde con tu perfil",
   '<div class="wbox"></div>'
   '<div class="steun" style="margin-left:0mm">Apoyo: MARCO (Me encanta… · Me gusta… · No me gusta… porque…) → SIN AYUDA · [CROSS: HTML «Mensaje de voz» — neem je antwoord op]</div>'))
 P('<div class="route-note">🎮 <b>Sigue online:</b> op de digitale pagina neem je je antwoord op (recorder) en luister je de perfiles (audio).</div>')
-P('</div>')  # page §5b
+P('</div>')  # page §4b
 
 # ================= TALLER DE LENGUA =================
 P('<div class="page"><div class="parada sec" style="border-top-color:var(--gd)">')

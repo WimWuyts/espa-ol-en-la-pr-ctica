@@ -70,7 +70,7 @@ def s02_menu():
         ("§1", "Me gusta(n)", "gustar/encantar · pronombres OI", G, 3),
         ("§2", "De acuerdo o no", "también/tampoco · a mí sí/no", G, 7),
         ("§3", "Proponer un plan", "querer/poder + inf. · quedar", G, 11),
-        ("§5", "Lectura + escucha", "perfiles de gustos", G, 9),
+        ("§4", "Lectura + escucha", "perfiles de gustos", G, 9),
         ("★", "Cultura · Rosalía", "música y ocio joven", GD, 16),
         ("🎧", "Tarea · Mi playlist", "je playlist + presentarla", GD, 18),
         ("?", "Quiz «La mezcla»", "gemengde ophaal — mét oplossing", AMBER, 19),
@@ -253,7 +253,7 @@ def s08_quiz_reaccion():
 # ============================================================ DIA 9 · READING — perfil de gustos
 def s09_reading():
     s = slide(); bg(s, PAPER)
-    sectionbar(s, "§5 · LEER · COMPRENSIÓN", "El perfil de Lucía (playlist)", "Lees en beantwoord. Klik een vraag → het antwoord verschijnt.", num=5)
+    sectionbar(s, "§4 · LEER · COMPRENSIÓN", "El perfil de Lucía (playlist)", "Lees en beantwoord. Klik een vraag → het antwoord verschijnt.", num=4)
     card(s, Inches(0.5), Inches(1.65), Inches(5.6), Inches(3.9), fill=GT, line=G, lw=1.4)
     avatar(s, "lucia", Inches(0.85), Inches(1.95), Inches(1.1))
     text(s, Inches(2.1), Inches(2.0), Inches(3.8), Inches(1.3),
@@ -279,7 +279,7 @@ def s09_reading():
 # ============================================================ DIA 10 · LISTENING — escucha los gustos
 def s10_listening():
     s = slide(); bg(s, PAPER)
-    sectionbar(s, "§5 · ESCUCHAR", "Escucha y anota el gusto", "Vier jongeren praten over hun smaak. Klik een naam → wat ze leuk vinden. (audio op de digitale pagina)", num=5)
+    sectionbar(s, "§4 · ESCUCHAR", "Escucha y anota el gusto", "Vier jongeren praten over hun smaak. Klik een naam → wat ze leuk vinden. (audio op de digitale pagina)", num=4)
     people=[("Leo","la música pop","no: el deporte"),("Frida","los videojuegos","no: madrugar"),
             ("Mateo","el fútbol","no: las series"),("Sara","bailar y el cine","no: el frío")]
     x0,y0=Inches(0.7),Inches(1.9); cw=Inches(2.95); ch=Inches(2.4)

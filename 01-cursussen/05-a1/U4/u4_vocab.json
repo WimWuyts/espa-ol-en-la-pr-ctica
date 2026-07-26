@@ -63,10 +63,10 @@
   {"es":"¿a qué hora?","nl":"hoe laat?","soort":"expr.","ej":"¿A qué hora quedamos?","grp":"planes"},
   {"es":"el plan","nl":"het plan","soort":"sust. m.","ej":"¡Qué buen plan!","grp":"planes"},
 
-  {"es":"València / Valencia","nl":"Valencia (stad)","soort":"topón.","ej":"Valencia está en la costa.","grp":"valencia"},
-  {"es":"la costa","nl":"de kust","soort":"sust. f.","ej":"Valencia está en la costa este.","grp":"valencia"},
+  {"es":"València / València","nl":"València (stad)","soort":"topón.","ej":"València está en la costa.","grp":"valencia"},
+  {"es":"la costa","nl":"de kust","soort":"sust. f.","ej":"València está en la costa este.","grp":"valencia"},
   {"es":"el mar","nl":"de zee","soort":"sust. m.","ej":"Me encanta el mar Mediterráneo.","grp":"valencia"},
-  {"es":"la paella","nl":"de paella","soort":"sust. f.","ej":"La paella es de Valencia.","grp":"valencia"},
+  {"es":"la paella","nl":"de paella","soort":"sust. f.","ej":"La paella es de València.","grp":"valencia"},
   {"es":"las Fallas","nl":"het Fallas-feest","soort":"sust. f. pl.","ej":"Las Fallas son en marzo.","grp":"valencia"},
-  {"es":"la horchata","nl":"de horchata (drank)","soort":"sust. f.","ej":"En Valencia se bebe horchata.","grp":"valencia"}
+  {"es":"la horchata","nl":"de horchata (drank)","soort":"sust. f.","ej":"En València se bebe horchata.","grp":"valencia"}
 ]
