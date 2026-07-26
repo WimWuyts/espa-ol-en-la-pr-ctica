@@ -1,0 +1,16 @@
+{
+  "id": "es-u0-genero",
+  "title": "¿<span>El</span> o la?",
+  "subtitle": "U0 · masculino of femenino (nagerekend)",
+  "lang": "es",
+  "template": "classify",
+  "options": { "rounds": 18, "audio": false },
+  "generator": { "kind": "gender" },
+  "classify": {
+    "prompt": "¿el (masculino) o la (femenino)?",
+    "categories": [
+      {"id":"m","label":"el<br><small>masculino</small>","glaze":"#3D74D6"},
+      {"id":"f","label":"la<br><small>femenino</small>","glaze":"#C4402C"}
+    ]
+  }
+}

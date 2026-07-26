@@ -79,7 +79,7 @@ for(const f of packs){
 }
 
 /* --- index.html: menu naar alle spellen --- */
-const tplName = { classify:"classificeren", match:"koppelen", cloze:"invullen", order:"volgorde", point:"aanwijzen" };
+const tplName = { classify:"classificeren", match:"koppelen", cloze:"invullen", order:"volgorde", point:"aanwijzen", tap:"aanwijzen", memory:"memoria" };
 const cards = built.map(b=>
   '<a class="ix-card" href="games/'+b.file+'">'+
     '<span class="ix-badge">'+(tplName[b.template]||b.template)+'</span>'+
