@@ -1,0 +1,148 @@
+{
+  "id": "es-u5-voy-a",
+  "title": "Completa: ir a + infinitivo",
+  "subtitle": "U5 · el futuro próximo (voy a comer…)",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste vorm van «ir a»",
+    "items": [
+      {
+        "stimulus": "(Yo) ___ comer un taco.",
+        "options": [
+          "voy a",
+          "va a",
+          "vas a"
+        ],
+        "answer": "voy a",
+        "tag": "ir",
+        "sub": "yo → voy a"
+      },
+      {
+        "stimulus": "¿(Tú) ___ tomar un café?",
+        "options": [
+          "vas a",
+          "voy a",
+          "van a"
+        ],
+        "answer": "vas a",
+        "tag": "ir",
+        "sub": "tú → vas a"
+      },
+      {
+        "stimulus": "(Nosotros) ___ pedir la cuenta.",
+        "options": [
+          "vamos a",
+          "van a",
+          "vais a"
+        ],
+        "answer": "vamos a",
+        "tag": "ir",
+        "sub": "nosotros → vamos a"
+      },
+      {
+        "stimulus": "Diego ___ probar el ceviche.",
+        "options": [
+          "va a",
+          "vas a",
+          "voy a"
+        ],
+        "answer": "va a",
+        "tag": "ir",
+        "sub": "él → va a"
+      },
+      {
+        "stimulus": "(Ellos) ___ reservar una mesa.",
+        "options": [
+          "van a",
+          "vamos a",
+          "va a"
+        ],
+        "answer": "van a",
+        "tag": "ir",
+        "sub": "ellos → van a"
+      },
+      {
+        "stimulus": "(Yo) no ___ beber refresco.",
+        "options": [
+          "voy a",
+          "va a",
+          "vais a"
+        ],
+        "answer": "voy a",
+        "tag": "ir",
+        "sub": "yo → voy a"
+      },
+      {
+        "stimulus": "¿(Vosotros) ___ cenar en casa?",
+        "options": [
+          "vais a",
+          "van a",
+          "vamos a"
+        ],
+        "answer": "vais a",
+        "tag": "ir",
+        "sub": "vosotros → vais a"
+      },
+      {
+        "stimulus": "Lucía ___ preparar una tortilla.",
+        "options": [
+          "va a",
+          "van a",
+          "vas a"
+        ],
+        "answer": "va a",
+        "tag": "ir",
+        "sub": "ella → va a"
+      },
+      {
+        "stimulus": "(Nosotros) ___ comprar fruta.",
+        "options": [
+          "vamos a",
+          "voy a",
+          "vais a"
+        ],
+        "answer": "vamos a",
+        "tag": "ir",
+        "sub": "nosotros → vamos a"
+      },
+      {
+        "stimulus": "¿Qué ___ tomar tú?",
+        "options": [
+          "vas a",
+          "va a",
+          "voy a"
+        ],
+        "answer": "vas a",
+        "tag": "ir",
+        "sub": "tú → vas a"
+      },
+      {
+        "stimulus": "Los niños ___ comer churros.",
+        "options": [
+          "van a",
+          "va a",
+          "vamos a"
+        ],
+        "answer": "van a",
+        "tag": "ir",
+        "sub": "ellos → van a"
+      },
+      {
+        "stimulus": "(Yo) ___ probar el guacamole.",
+        "options": [
+          "voy a",
+          "vas a",
+          "va a"
+        ],
+        "answer": "voy a",
+        "tag": "ir",
+        "sub": "yo → voy a"
+      }
+    ]
+  }
+}

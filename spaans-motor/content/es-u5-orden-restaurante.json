@@ -1,0 +1,103 @@
+{
+  "id": "es-u5-orden-restaurante",
+  "title": "Ordena el diálogo",
+  "subtitle": "U5 · zet de bestel-dialoog in de juiste volgorde",
+  "lang": "es",
+  "template": "order",
+  "options": {
+    "audio": false
+  },
+  "order": {
+    "prompt": "Tik de zinnen in de logische volgorde van een restaurantbezoek",
+    "rounds": [
+      {
+        "tag": "pedir",
+        "sub": "begroeten → bestellen → beber → cuenta",
+        "items": [
+          {
+            "label": "Buenas tardes, ¿qué va a tomar?",
+            "key": 1
+          },
+          {
+            "label": "Para mí, de segundo, pollo.",
+            "key": 2
+          },
+          {
+            "label": "¿Y para beber?",
+            "key": 3
+          },
+          {
+            "label": "¿Me pone agua? Y la cuenta, por favor.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "pedir",
+        "sub": "entrante → fuerte → postre → cuenta",
+        "items": [
+          {
+            "label": "De entrante, guacamole con nachos.",
+            "key": 1
+          },
+          {
+            "label": "De plato fuerte, tacos de pollo.",
+            "key": 2
+          },
+          {
+            "label": "De postre, flan.",
+            "key": 3
+          },
+          {
+            "label": "¡Que aproveche! ... La cuenta, por favor.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "pedir",
+        "sub": "reservar → llegar → pedir → pagar",
+        "items": [
+          {
+            "label": "Quiero reservar una mesa para dos.",
+            "key": 1
+          },
+          {
+            "label": "Buenas, tenemos una reserva.",
+            "key": 2
+          },
+          {
+            "label": "Para mí, una sopa y pescado.",
+            "key": 3
+          },
+          {
+            "label": "La cuenta, por favor. Aquí tiene la propina.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "receta",
+        "sub": "receta: primero → luego → después → por último",
+        "items": [
+          {
+            "label": "Primero, abre el aguacate.",
+            "key": 1
+          },
+          {
+            "label": "Luego, añade el tomate y la cebolla.",
+            "key": 2
+          },
+          {
+            "label": "Después, exprime la lima.",
+            "key": 3
+          },
+          {
+            "label": "Por último, ¡que aproveche!",
+            "key": 4
+          }
+        ]
+      }
+    ]
+  }
+}

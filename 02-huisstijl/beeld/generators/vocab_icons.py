@@ -87,6 +87,28 @@ LUCIDE = {
  "palette": '<circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/>',
  "scissors": '<circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/>',
  "glasses": '<circle cx="6" cy="15" r="4"/><circle cx="18" cy="15" r="4"/><path d="M14 15a2 2 0 0 0-2-2 2 2 0 0 0-2 2"/><path d="M2.5 13 5 7c.7-1.3 1.4-2 3-2"/><path d="M21.5 13 19 7c-.7-1.3-1.5-2-3-2"/>',
+ # ---- U5 «¡Ñam!» comida glyphs ----
+ "apple": '<path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"/><path d="M10 2c1 .5 2 2 2 5"/>',
+ "banana": '<path d="M4 13c3.5-2 8-2 10 2a5.5 5.5 0 0 1 8 5"/><path d="M5.15 17.89c5.52-1.52 8.65-6.89 7-12C11.55 4 11.5 2 13 2c3.22 0 5 5.5 5 8 0 6.5-4.2 12-10.49 12C5.11 22 2 22 2 20c0-1.5 1.14-1.55 3.15-2.11Z"/>',
+ "grape": '<path d="M22 5V2l-5.89 5.89"/><circle cx="16.6" cy="15.89" r="3"/><circle cx="8.11" cy="7.4" r="3"/><circle cx="12.35" cy="11.65" r="3"/><circle cx="13.91" cy="5.85" r="3"/><circle cx="18.15" cy="10.09" r="3"/><circle cx="6.56" cy="13.2" r="3"/><circle cx="10.8" cy="17.44" r="3"/><circle cx="5" cy="19" r="3"/>',
+ "cherry": '<path d="M2 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z"/><path d="M12 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z"/><path d="M7 14c3.22-2.91 4.29-8.75 5-12 1.66 2.38 4.94 9 5 12"/><path d="M22 9c-4.29 0-7.14-2.33-10-7 5.71 0 10 4.67 10 7Z"/>',
+ "citrus": '<path d="M21.66 17.67a1.08 1.08 0 0 1-.04 1.6A12 12 0 0 1 4.73 2.38a1.1 1.1 0 0 1 1.61-.04z"/><path d="M19.65 15.66A8 8 0 0 1 8.35 4.34"/><path d="m14 10-5.5 5.5"/><path d="M14 17.85V10H6.15"/>',
+ "egg": '<path d="M12 22c6.23-.05 7.87-5.57 7.5-10-.36-4.34-3.95-9.96-7.5-10-3.55.04-7.14 5.66-7.5 10-.37 4.43 1.27 9.95 7.5 10z"/>',
+ "beef": '<circle cx="12.5" cy="8.5" r="2.5"/><path d="M12.5 2a6.5 6.5 0 0 0-6.22 4.6c-1.1 3.13-.78 3.9-3.18 6.08A3 3 0 0 0 5 18c4 0 8.4-1.8 11.4-4.3A6.5 6.5 0 0 0 12.5 2Z"/><path d="m18.5 6 2.19 4.5a6.48 6.48 0 0 1 .31 2 6.49 6.49 0 0 1-2.6 5.2C15.4 20.2 11 22 7 22a3 3 0 0 1-2.68-1.66L2.4 16.5"/>',
+ "fish": '<path d="M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6Z"/><path d="M18 12v.5"/><path d="M16 17.93a9.77 9.77 0 0 1 0-11.86"/><path d="M7 10.67C7 8 5.58 5.97 2.73 5.5c-1 1.5-1 5 .23 6.5-1.24 1.5-1.24 5-.23 6.5C5.58 18.03 7 16 7 13.33"/>',
+ "soup": '<path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M7 21h10"/><path d="M19.5 12 22 6"/><path d="M16.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.73 1.62"/><path d="M11.25 3c.27.1.8.53.74 1.36-.05.83-.93 1.2-.98 2.02-.06.78.33 1.24.72 1.62"/><path d="M6.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.74 1.62"/>',
+ "salad": '<path d="M7 21h10"/><path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z"/><path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1"/><path d="m13 12 4-4"/><path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2"/>',
+ "sandwich": '<path d="M3 11v3a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-3"/><path d="M12 19H4a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-3.83"/><path d="m3 11 7.77-6.04a2 2 0 0 1 2.46 0L21 11H3Z"/>',
+ "cookie": '<path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/>',
+ "milk": '<path d="M8 2h8"/><path d="M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2"/><path d="M7 15a6.472 6.472 0 0 1 5 0 6.47 6.47 0 0 0 5 0"/>',
+ "wine": '<path d="M8 22h8"/><path d="M7 10h10"/><path d="M12 15v7"/><path d="M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z"/>',
+ "beer": '<path d="M17 11h1a3 3 0 0 1 0 6h-1"/><path d="M9 12v6"/><path d="M13 12v6"/><path d="M14 7.5c-1 0-1.44.5-3 .5s-2-.5-3-.5-1.72.5-2.5.5a2.5 2.5 0 0 1 0-5c.78 0 1.57.5 2.5.5S9.44 3 11 3s2 .5 3 .5 1.72-.5 2.5-.5a2.5 2.5 0 0 1 0 5c-.78 0-1.5-.5-2.5-.5Z"/><path d="M5 8v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/>',
+ "utensils-crossed": '<path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/>',
+ "receipt": '<path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/>',
+ "chef-hat": '<path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/><path d="M6 17h12"/>',
+ "package": '<path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/>',
+ "shopping-cart": '<circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>',
+ "wheat": '<path d="M2 22 16 8"/><path d="M3.47 12.53 5 11l1.53 1.53a3.5 3.5 0 0 1 0 4.94L5 19l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M7.47 8.53 9 7l1.53 1.53a3.5 3.5 0 0 1 0 4.94L9 15l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M11.47 4.53 13 3l1.53 1.53a3.5 3.5 0 0 1 0 4.94L13 11l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/>',
 }
 
 DEFAULT = "tag"
@@ -107,6 +129,10 @@ GROUP_ICON = {
  # U2
  "familia": "users", "fisico": "user", "colores": "palette",
  "caracter": "smile", "cuerpo": "user", "util": "message-circle",
+ # U5 «¡Ñam!»
+ "comida": "utensils", "fruta": "apple", "verdura": "carrot", "bebida": "cup-soda",
+ "mesa": "utensils-crossed", "restaurante": "receipt", "cantidades": "package",
+ "cortesia": "message-circle", "mexico": "flame",
 }
 
 # --------------------------------------------------------------------------
@@ -212,6 +238,38 @@ WORD_ICON = {
  "este / esta": "map-pin", "ese / esa": "map-pin", "tener": "hash",
  "ser": "user", "estar": "map-pin", "se llama": "user",
  "¿cuántos/as?": "help-circle", "también": "check", "pero": "minus",
+ # ---- U5 «¡Ñam!» ----
+ # comida
+ "el pan": "sandwich", "los huevos": "egg", "el queso": "utensils", "la carne": "beef",
+ "el pollo": "beef", "el pescado": "fish", "el arroz": "utensils", "la pasta": "utensils",
+ "la sopa": "soup", "el bocadillo": "sandwich", "el jamón": "beef",
+ # fruta
+ "la manzana": "apple", "el plátano": "banana", "la naranja": "citrus", "la fresa": "cherry",
+ "las uvas": "grape", "el limón": "citrus", "la piña": "apple",
+ # verdura
+ "la lechuga": "salad", "el tomate": "apple", "la patata": "carrot", "la cebolla": "carrot",
+ "el ajo": "carrot", "el maíz": "wheat", "el pimiento": "carrot",
+ # bebida
+ "el agua": "droplet", "la leche": "milk", "el zumo": "cup-soda", "el café": "coffee",
+ "el té": "coffee", "el refresco": "cup-soda",
+ # mesa
+ "el plato": "utensils", "el vaso": "cup-soda", "el tenedor": "utensils-crossed",
+ "el cuchillo": "utensils-crossed", "la cuchara": "utensils", "la sal": "package",
+ "la servilleta": "receipt",
+ # restaurante
+ "la carta": "clipboard-list", "el menú": "clipboard-list", "el/la camarero/a": "chef-hat",
+ "la cuenta": "receipt", "la propina": "credit-card", "el primer plato": "soup",
+ "el segundo plato": "beef", "el postre": "cake", "reservar": "calendar-check",
+ # cantidades
+ "mucho/-a": "package", "poco/-a": "minus", "un poco de": "minus", "un kilo de": "package",
+ "una botella de": "wine", "un paquete de": "package",
+ # cortesia
+ "¿qué va a tomar?": "message-circle", "¿me pone…?": "message-circle", "para mí…": "hand",
+ "¿me trae…?": "message-circle", "¡que aproveche!": "utensils", "rico/-a": "smile",
+ "picante": "flame",
+ # mexico
+ "el taco": "utensils", "el guacamole": "salad", "el elote": "wheat", "la salsa": "flame",
+ "el aguacate": "apple", "la arepa": "sandwich", "el ceviche": "fish", "los churros": "cookie",
 }
 
 # --------------------------------------------------------------------------
@@ -283,6 +341,25 @@ KEYWORD_ICON = [
  ("abecedario", "type"), ("deletrear", "type"), ("sombrero", "type"),
  ("cognado", "languages"), ("ruta", "route"), ("parada", "map-pin"),
  ("hispano", "globe"),
+ # ---- U5 «¡Ñam!» keyword fallbacks ----
+ ("manzana", "apple"), ("plátano", "banana"), ("naranja", "citrus"), ("limón", "citrus"),
+ ("uva", "grape"), ("fresa", "cherry"), ("piña", "apple"), ("aguacate", "apple"),
+ ("huevo", "egg"), ("carne", "beef"), ("pollo", "beef"), ("jamón", "beef"),
+ ("pescado", "fish"), ("ceviche", "fish"), ("sopa", "soup"), ("ensalada", "salad"),
+ ("lechuga", "salad"), ("guacamole", "salad"), ("bocadillo", "sandwich"), ("arepa", "sandwich"),
+ ("pan", "sandwich"), ("maíz", "wheat"), ("elote", "wheat"),
+ ("leche", "milk"), ("zumo", "cup-soda"), ("refresco", "cup-soda"), ("café", "coffee"),
+ ("té", "coffee"), ("agua", "droplet"), ("botella", "wine"),
+ ("cuchillo", "utensils-crossed"), ("tenedor", "utensils-crossed"), ("cuchara", "utensils"),
+ ("vaso", "cup-soda"), ("plato", "utensils"), ("servilleta", "receipt"),
+ ("carta", "clipboard-list"), ("menú", "clipboard-list"), ("camarero", "chef-hat"),
+ ("cuenta", "receipt"), ("propina", "credit-card"), ("postre", "cake"), ("reservar", "calendar-check"),
+ ("kilo", "package"), ("paquete", "package"), ("poco", "minus"), ("mucho", "package"),
+ ("picante", "flame"), ("salsa", "flame"), ("rico", "smile"), ("aproveche", "utensils"),
+ ("va a tomar", "message-circle"), ("me pone", "message-circle"), ("me trae", "message-circle"),
+ ("para mí", "hand"), ("taco", "utensils"), ("churro", "cookie"), ("galleta", "cookie"),
+ ("cebolla", "carrot"), ("ajo", "carrot"), ("patata", "carrot"), ("tomate", "apple"),
+ ("pimiento", "carrot"), ("queso", "utensils"), ("arroz", "utensils"), ("pasta", "utensils"),
 ]
 
 

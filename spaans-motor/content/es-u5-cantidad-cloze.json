@@ -1,0 +1,126 @@
+{
+  "id": "es-u5-cantidad-cloze",
+  "title": "Completa la cantidad",
+  "subtitle": "U5 · un kilo de · un poco de · una botella de",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste cantidad",
+    "items": [
+      {
+        "stimulus": "___ agua, por favor.",
+        "options": [
+          "una botella de",
+          "un kilo de",
+          "un poco de"
+        ],
+        "answer": "una botella de",
+        "tag": "c",
+        "sub": "vloeistof → botella"
+      },
+      {
+        "stimulus": "___ tomates para la salsa.",
+        "options": [
+          "un kilo de",
+          "una botella de",
+          "un poco de"
+        ],
+        "answer": "un kilo de",
+        "tag": "c",
+        "sub": "fruta/verdura → kilo"
+      },
+      {
+        "stimulus": "Solo ___ queso, gracias.",
+        "options": [
+          "un poco de",
+          "un kilo de",
+          "una botella de"
+        ],
+        "answer": "un poco de",
+        "tag": "c",
+        "sub": "niet-telbaar → un poco de"
+      },
+      {
+        "stimulus": "___ arroz para la paella.",
+        "options": [
+          "un paquete de",
+          "una botella de",
+          "un poco de"
+        ],
+        "answer": "un paquete de",
+        "tag": "c",
+        "sub": "droog → paquete"
+      },
+      {
+        "stimulus": "___ leche para el café.",
+        "options": [
+          "un poco de",
+          "un kilo de",
+          "un paquete de"
+        ],
+        "answer": "un poco de",
+        "tag": "c",
+        "sub": "niet-telbaar"
+      },
+      {
+        "stimulus": "___ manzanas, por favor.",
+        "options": [
+          "un kilo de",
+          "una botella de",
+          "un poco de"
+        ],
+        "answer": "un kilo de",
+        "tag": "c",
+        "sub": "fruta → kilo"
+      },
+      {
+        "stimulus": "___ refresco bien frío.",
+        "options": [
+          "una botella de",
+          "un kilo de",
+          "un poco de"
+        ],
+        "answer": "una botella de",
+        "tag": "c",
+        "sub": "vloeistof → botella"
+      },
+      {
+        "stimulus": "Hay ___ pan en la mesa.",
+        "options": [
+          "mucho",
+          "mucha",
+          "muchas"
+        ],
+        "answer": "mucho",
+        "tag": "c",
+        "sub": "el pan (m)"
+      },
+      {
+        "stimulus": "Hay ___ fruta en el mercado.",
+        "options": [
+          "mucha",
+          "mucho",
+          "muchos"
+        ],
+        "answer": "mucha",
+        "tag": "c",
+        "sub": "la fruta (f)"
+      },
+      {
+        "stimulus": "Compro ___ huevos.",
+        "options": [
+          "muchos",
+          "muchas",
+          "mucho"
+        ],
+        "answer": "muchos",
+        "tag": "c",
+        "sub": "los huevos (m pl)"
+      }
+    ]
+  }
+}

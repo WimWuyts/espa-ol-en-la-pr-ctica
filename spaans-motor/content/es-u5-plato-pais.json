@@ -1,0 +1,48 @@
+{
+  "id": "es-u5-plato-pais",
+  "title": "Plato y país",
+  "subtitle": "U5 · koppel het typische gerecht aan het land",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 5,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind het gerecht met het land",
+    "pairs": [
+      {
+        "a": "los tacos",
+        "b": "México 🇲🇽"
+      },
+      {
+        "a": "la paella",
+        "b": "España 🇪🇸"
+      },
+      {
+        "a": "la arepa",
+        "b": "Colombia 🇨🇴"
+      },
+      {
+        "a": "el ceviche",
+        "b": "Perú 🇵🇪"
+      },
+      {
+        "a": "las empanadas",
+        "b": "Argentina 🇦🇷"
+      },
+      {
+        "a": "los churros",
+        "b": "España 🇪🇸"
+      },
+      {
+        "a": "el guacamole",
+        "b": "México 🇲🇽"
+      },
+      {
+        "a": "el gazpacho",
+        "b": "España 🇪🇸"
+      }
+    ]
+  }
+}

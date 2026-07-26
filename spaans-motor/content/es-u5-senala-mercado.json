@@ -1,0 +1,111 @@
+{
+  "id": "es-u5-senala-mercado",
+  "title": "Señala en el mercado",
+  "subtitle": "U5 · klik het juiste producto",
+  "lang": "es",
+  "template": "point",
+  "options": {
+    "audio": false
+  },
+  "point": {
+    "prompt": "Klik het gevraagde product",
+    "mode": "one",
+    "rounds": [
+      {
+        "tag": "fruta",
+        "sub": "señala la fruta",
+        "targets": [
+          {
+            "label": "el tomate"
+          },
+          {
+            "label": "la manzana",
+            "hit": true
+          },
+          {
+            "label": "el pan"
+          },
+          {
+            "label": "el queso"
+          }
+        ]
+      },
+      {
+        "tag": "verdura",
+        "sub": "señala la verdura",
+        "targets": [
+          {
+            "label": "la naranja"
+          },
+          {
+            "label": "el pollo"
+          },
+          {
+            "label": "la lechuga",
+            "hit": true
+          },
+          {
+            "label": "el café"
+          }
+        ]
+      },
+      {
+        "tag": "bebida",
+        "sub": "señala la bebida",
+        "targets": [
+          {
+            "label": "el arroz"
+          },
+          {
+            "label": "el zumo",
+            "hit": true
+          },
+          {
+            "label": "la carne"
+          },
+          {
+            "label": "la pasta"
+          }
+        ]
+      },
+      {
+        "tag": "mesa",
+        "sub": "señala el cubierto (bestek)",
+        "targets": [
+          {
+            "label": "el tenedor",
+            "hit": true
+          },
+          {
+            "label": "la sopa"
+          },
+          {
+            "label": "la fruta"
+          },
+          {
+            "label": "el taco"
+          }
+        ]
+      },
+      {
+        "tag": "mexico",
+        "sub": "señala el plato mexicano",
+        "targets": [
+          {
+            "label": "la paella"
+          },
+          {
+            "label": "el guacamole",
+            "hit": true
+          },
+          {
+            "label": "los churros"
+          },
+          {
+            "label": "el gazpacho"
+          }
+        ]
+      }
+    ]
+  }
+}
