@@ -1,10 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-gen_u0_docente.py — Leerkrachten-PowerPoint C5 · Unidad 0 «¡Empezamos!»
+gen_u0_docente.py — Interactieve PowerPoint C5 · Unidad 0 «¡Empezamos!»
 ========================================================================
-Genereert  03-build/pptx/C5_U0_docente.pptx  (docentversie: vrije navigatie,
-oplossingen zichtbaar + TEACHER-notities in de notes-laag).
+Gedeelde builder (één bron) → TWEE decks:
+  · C5_U0_docente.pptx  — docentversie: vrije navigatie, oplossingen zichtbaar in
+    groene SOLUCIÓN-kaders + TEACHER-notities; klik op een antwoord → «✓» springt in.
+  · C5_U0_alumno.ppsx   — leerlingversie: kioskmodus, GEEN docentnotities, oplossingen
+    verborgen tot de leerling klikt (▶ Mostrar solución / klik op de optie).
+
+ECHTE interactiviteit: op elke oefendia (QUIZ/WRITING/SPEAKING + números/tilde)
+wordt <p:timing>-XML geïnjecteerd met klik-triggers (p:cond evt="onClick" spid=…)
+die een entrance-fade op de reveal-shape starten. + hyperlink-navigatie (menutegels,
+⌂ Menú). Cast-avatars = de ECHTE flat-vector SVG's (zie render_avatars.py).
 
 Volgt INTERACTIEVE_POWERPOINT_50_IDEEEN.md:
   - diamaster-layouts (TITLE · LESSON_MENU · VOCABULARY · GRAMMAR · READING ·
@@ -16,17 +24,25 @@ Huisstijl (kit.json): unitkleur groen #1E9E74. Spaans-eerst + NL-steun.
 Twee kleurlagen: cursusgroen (navigatie) + functionele taalsemantiek.
 Bron: 01-cursussen/05-a1/U0/U0_bron.md  ·  01-cursussen/05-a1/U0/U0.html
 """
-import os
+import os, zipfile, shutil
 from pptx import Presentation
 from pptx.util import Inches, Pt, Emu
 from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
 from pptx.enum.shapes import MSO_SHAPE
-from pptx.oxml.ns import qn
+from pptx.oxml.ns import qn, nsdecls
+from pptx.oxml import parse_xml
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ASSETS = os.path.join(HERE, "assets")
-OUT = os.path.join(HERE, "C5_U0_docente.pptx")
+OUT_DOCENTE = os.path.join(HERE, "C5_U0_docente.pptx")
+OUT_ALUMNO_PPTX = os.path.join(HERE, "C5_U0_alumno.pptx")
+OUT_ALUMNO = os.path.join(HERE, "C5_U0_alumno.ppsx")
+
+# --- build-modus (wordt door build() gezet) ---
+MODE = "docente"          # "docente" | "alumno"
+def is_alumno():
+    return MODE == "alumno"
 
 # ---------------------------------------------------------------- kleuren (kit.json)
 G      = RGBColor(0x1E, 0x9E, 0x74)  # unitgroen (hoofdkleur)
@@ -61,14 +77,100 @@ HAND    = "Caveat"              # notities
 
 EMU_W, EMU_H = Inches(13.333), Inches(7.5)
 
-prs = Presentation()
-prs.slide_width = EMU_W
-prs.slide_height = EMU_H
-BLANK = prs.slide_layouts[6]
+# --- presentatie-globals (per build opnieuw gezet) ---
+prs = None
+BLANK = None
+SLIDE_LIST = []      # alle slide-objecten in volgorde
+REVEALS = []         # (slide, trigger_spid, reveal_spid) — klik-om-te-onthullen
+MENU_LINKS = []      # (shape, target_index) — hyperlink-navigatie
+
+def new_presentation():
+    global prs, BLANK, PAGE, SLIDE_LIST, REVEALS, MENU_LINKS
+    prs = Presentation()
+    prs.slide_width = EMU_W
+    prs.slide_height = EMU_H
+    BLANK = prs.slide_layouts[6]
+    PAGE = 0
+    SLIDE_LIST = []
+    REVEALS = []
+    MENU_LINKS = []
 
 # ============================================================ low-level helpers
 def slide():
-    return prs.slides.add_slide(BLANK)
+    s = prs.slides.add_slide(BLANK)
+    SLIDE_LIST.append(s)
+    return s
+
+# ---------------------------------------------------------- interactiviteit
+def register_reveal(s, trigger_shape, reveal_shape):
+    """Registreer: klik op trigger_shape → reveal_shape verschijnt (entrance-fade,
+    getriggerd via p:cond evt=onClick spid=<trigger>). reveal_shape start verborgen."""
+    REVEALS.append((s, trigger_shape.shape_id, reveal_shape.shape_id))
+
+def link_to(shape, target_index):
+    """Klik-actie op shape → spring naar slide met index target_index (hyperlink-navigatie)."""
+    MENU_LINKS.append((shape, target_index))
+
+def _interactive_seq(cid, trig, rev):
+    """Eén interactieve p:seq: onClick op <trig> → entrance-fade (+set visible) op <rev>.
+    Gebruikt 5 opeenvolgende cTn-id's vanaf cid. presetClass=entr → PPT verbergt <rev>
+    tot de trigger klikt (canonieke PowerPoint-triggerstructuur)."""
+    a, b, c, d, e = cid, cid + 1, cid + 2, cid + 3, cid + 4
+    return (
+      f'<p:seq concurrent="1" nextAc="seek">'
+      f'<p:cTn id="{a}" restart="whenNotActive" fill="hold" nodeType="interactiveSeq">'
+      f'<p:stCondLst><p:cond evt="onClick" delay="0"><p:tgtEl><p:spTgt spid="{trig}"/></p:tgtEl></p:cond></p:stCondLst>'
+      f'<p:endSync evt="end" delay="0"><p:rtn val="all"/></p:endSync>'
+      f'<p:childTnLst>'
+        f'<p:par><p:cTn id="{b}" fill="hold"><p:stCondLst><p:cond delay="0"/></p:stCondLst><p:childTnLst>'
+          f'<p:par><p:cTn id="{c}" presetID="10" presetClass="entr" presetSubtype="0" fill="hold" grpId="0" nodeType="clickEffect">'
+          f'<p:stCondLst><p:cond delay="0"/></p:stCondLst><p:childTnLst>'
+            f'<p:set><p:cBhvr><p:cTn id="{d}" dur="1" fill="hold"><p:stCondLst><p:cond delay="0"/></p:stCondLst></p:cTn>'
+            f'<p:tgtEl><p:spTgt spid="{rev}"/></p:tgtEl><p:attrNameLst><p:attrName>style.visibility</p:attrName></p:attrNameLst></p:cBhvr>'
+            f'<p:to><p:strVal val="visible"/></p:to></p:set>'
+            f'<p:animEffect transition="in" filter="fade"><p:cBhvr><p:cTn id="{e}" dur="400"/>'
+            f'<p:tgtEl><p:spTgt spid="{rev}"/></p:tgtEl></p:cBhvr></p:animEffect>'
+          f'</p:childTnLst></p:cTn></p:par>'
+        f'</p:childTnLst></p:cTn></p:par>'
+      f'</p:childTnLst></p:cTn>'
+      f'<p:nextCondLst><p:cond evt="onClick" delay="0"><p:tgtEl><p:spTgt spid="{trig}"/></p:tgtEl></p:cond></p:nextCondLst>'
+      f'</p:seq>')
+
+def apply_all_timing():
+    """Bouwt per slide met reveals één <p:timing>-boom (tmRoot → mainSeq +
+    interactieve seqs) en injecteert die in de slide-XML."""
+    groups = {}      # id(slide) -> list[(trig,rev)]
+    slide_of = {}    # id(slide) -> slide
+    order = []
+    for s, t, r in REVEALS:
+        k = id(s)
+        if k not in groups:
+            groups[k] = []; slide_of[k] = s; order.append(k)
+        groups[k].append((t, r))
+    n = 0
+    for k in order:
+        s = slide_of[k]
+        seqs = ""; cid = 5
+        for t, r in groups[k]:
+            seqs += _interactive_seq(cid, t, r); cid += 10
+        xml = (
+          f'<p:timing {nsdecls("p", "a")}><p:tnLst><p:par>'
+          f'<p:cTn id="1" dur="indefinite" restart="never" nodeType="tmRoot"><p:childTnLst>'
+          f'<p:seq concurrent="1" nextAc="seek"><p:cTn id="2" dur="indefinite" nodeType="mainSeq"><p:childTnLst/></p:cTn>'
+          f'<p:prevCondLst><p:cond evt="onPrev" delay="0"><p:tgtEl><p:sldTgt/></p:tgtEl></p:cond></p:prevCondLst>'
+          f'<p:nextCondLst><p:cond evt="onNext" delay="0"><p:tgtEl><p:sldTgt/></p:tgtEl></p:cond></p:nextCondLst>'
+          f'</p:seq>{seqs}</p:childTnLst></p:cTn></p:par></p:tnLst></p:timing>')
+        s._element.append(parse_xml(xml))
+        n += 1
+    return n, len(REVEALS)
+
+def apply_hyperlinks():
+    for shape, idx in MENU_LINKS:
+        if 0 <= idx < len(SLIDE_LIST):
+            try:
+                shape.click_action.target_slide = SLIDE_LIST[idx]
+            except Exception:
+                pass
 
 def _set_fill(shape, color):
     if color is None:
@@ -167,6 +269,9 @@ def avatar(s, name, x, y, d=Inches(0.9)):
     return None
 
 def notes(s, txt):
+    # Docentnotities enkel in de docentversie; leerlingversie krijgt geen docentnotities.
+    if is_alumno():
+        return
     s.notes_slide.notes_text_frame.text = txt
 
 # ------------------------------------------------------------- vaste chrome
@@ -197,8 +302,9 @@ def footer(s, tab="U0 · ¡EMPEZAMOS!", page=None):
          [[("● ", {"color": G, "size": 11, "bold": True}),
            (tab + "   ·   C5 · A1 · La Ruta", {"color": MUT, "size": 9.5})]],
          anchor=MSO_ANCHOR.MIDDLE)
+    vlabel = "Leerlingenversie — kioskmodus" if is_alumno() else "Docentenversie — met oplossingen"
     text(s, Inches(9.5), Inches(7.18), Inches(3.35), Inches(0.3),
-         [[("Docentenversie — met oplossingen", {"color": MUT, "size": 9, "italic": True})]],
+         [[(vlabel, {"color": MUT, "size": 9, "italic": True})]],
          align=PP_ALIGN.RIGHT, anchor=MSO_ANCHOR.MIDDLE)
     if page is not None:
         text(s, Inches(12.55), Inches(7.18), Inches(0.5), Inches(0.3),
@@ -206,11 +312,14 @@ def footer(s, tab="U0 · ¡EMPEZAMOS!", page=None):
              align=PP_ALIGN.RIGHT, anchor=MSO_ANCHOR.MIDDLE)
 
 def noodroute(s, y=Inches(6.62)):
-    """Idee 6 + §5-noodroute: vaste knoppen toon oplossing / sla over / terug naar menu."""
+    """Idee 6 + §5-noodroute: vaste knoppen toon oplossing / sla over / terug naar menu.
+    Geeft de «Mostrar solución»-knop terug (= trigger voor de klik-onthulling van de
+    solución in de leerlingversie). «⌂ Menú» krijgt een echte hyperlink naar de menudia."""
     labels = [("▶  Mostrar solución", G, WHITE),
               ("⏭  Saltar", WHITE, GD),
               ("⌂  Menú (dia 2)", WHITE, GD)]
     x = Inches(0.5)
+    btn_sol = None; btn_menu = None
     for txt, fill, tc in labels:
         w = Inches(0.2 + 0.11 * len(txt))
         shp = rect(s, x, y, w, Inches(0.4), fill=fill, line=LINE, lw=1.0, round=True, radius=0.5)
@@ -219,15 +328,24 @@ def noodroute(s, y=Inches(6.62)):
         p = tf.paragraphs[0]; p.alignment = PP_ALIGN.CENTER
         r = p.add_run(); r.text = txt; r.font.size = Pt(10.5); r.font.bold = True
         r.font.name = BODY; r.font.color.rgb = tc
+        if txt.startswith("▶"):
+            btn_sol = shp
+        if txt.startswith("⌂"):
+            btn_menu = shp
         x = x + w + Inches(0.16)
+    if btn_menu is not None:
+        link_to(btn_menu, 1)  # dia 2 = LESSON_MENU (index 1)
+    hint = ("Klik ▶ om de solución te tonen · ⌂ terug naar het menu"
+            if is_alumno() else "Noodroute (§5): werkt zonder audio/internet")
     text(s, Inches(9.1), y, Inches(3.7), Inches(0.4),
-         [[("Noodroute (§5): werkt zonder audio/internet", {"size": 8.5, "italic": True, "color": MUT})]],
+         [[(hint, {"size": 8.5, "italic": True, "color": MUT})]],
          align=PP_ALIGN.RIGHT, anchor=MSO_ANCHOR.MIDDLE)
+    return btn_sol
 
 def solucion(s, x, y, w, h, lines, title="SOLUCIÓN · docent"):
     """Zichtbaar oplossingskader (alleen docentversie). Groen-getint met label."""
     box = rect(s, x, y, w, h, fill=GT, line=G, lw=1.5, round=True, radius=0.06)
-    chip(s, x + Inches(0.15), y - Inches(0.14), title, fill=G, tcolor=WHITE, size=9.5)
+    chipshp, _ = chip(s, x + Inches(0.15), y - Inches(0.14), title, fill=G, tcolor=WHITE, size=9.5)
     tf = box.text_frame; tf.word_wrap = True
     tf.margin_left = tf.margin_right = Pt(10); tf.margin_top = Pt(11); tf.margin_bottom = Pt(6)
     first = True
@@ -241,7 +359,36 @@ def solucion(s, x, y, w, h, lines, title="SOLUCIÓN · docent"):
             r.font.size = Pt(o.get("size", 12)); r.font.bold = o.get("bold", False)
             r.font.italic = o.get("italic", False); r.font.name = BODY
             r.font.color.rgb = o.get("color", GD)
+    return box, chipshp
+
+# ------------------------------------------------------- oefen-interactiviteit
+def exercise_solucion(s, x, y, w, h, lines, trigger, title_doc="SOLUCIÓN · docent"):
+    """Solución-kader op een oefendia.
+      · docentversie → zichtbaar (oplossing staat er).
+      · leerlingversie → verborgen; verschijnt via klik op <trigger> (▶ Mostrar solución).
+    Zowel het kader als het label worden in de leerlingversie mee onthuld."""
+    title = "SOLUCIÓN" if is_alumno() else title_doc
+    box, chipshp = solucion(s, x, y, w, h, lines, title=title)
+    if is_alumno() and trigger is not None:
+        register_reveal(s, trigger, box)
+        register_reveal(s, trigger, chipshp)
     return box
+
+def check_badge(s, x, y, trigger_shape, label="✓ correcto", w=None):
+    """Klein groen «✓ correcto»-vlak dat pas verschijnt als de leerling op
+    trigger_shape (een antwoordoptie/kaart) klikt — het antwoord «springt in».
+    Werkt in béíde versies (entrance-animatie = verborgen tot de klik)."""
+    if w is None:
+        w = Inches(0.2 + 0.088 * len(label))
+    h = Inches(0.34)
+    b = rect(s, x, y, w, h, fill=F_OBJ, line=GD, lw=1.0, round=True, radius=0.5, shadow=True)
+    tf = b.text_frame; tf.vertical_anchor = MSO_ANCHOR.MIDDLE; tf.word_wrap = False
+    tf.margin_left = tf.margin_right = Pt(7); tf.margin_top = tf.margin_bottom = Pt(1)
+    p = tf.paragraphs[0]; p.alignment = PP_ALIGN.CENTER
+    r = p.add_run(); r.text = label; r.font.size = Pt(11); r.font.bold = True
+    r.font.name = BODY; r.font.color.rgb = WHITE
+    register_reveal(s, trigger_shape, b)
+    return b
 
 def card(s, x, y, w, h, fill=WHITE, line=LINE, lw=1.2, shadow=True, radius=0.055):
     return rect(s, x, y, w, h, fill=fill, line=line, lw=lw, shadow=shadow, round=True, radius=radius)
@@ -310,23 +457,26 @@ def s02_menu():
     s = slide(); bg(s, PAPER)
     sectionbar(s, "MENÚ DE LA LECCIÓN", "El mapa de la Unidad 0",
                "Kies je route — klik een tegel (of volg de volgorde). Alles oefent naar de Tarea final toe.", num=0)
+    # dia = werkelijk dianummer (1-based) = doel van de hyperlink (index = dia-1)
     tiles = [
         ("§1", "Sonar en español", "alfabet · uitspraak · klanktrampas", G, 4),
-        ("§2", "La regla del sombrero", "klemtoon · aguda/llana/esdrújula · tilde", G, 8),
-        ("§3", "Números 0–100", "tellen · leeftijd · telefoon", G, 13),
-        ("§4", "Saludos y clase", "groeten · voorstellen · lengua de clase", G, 17),
-        ("★", "Cultura", "¿Dónde se habla español? (+20 países)", GD, 21),
-        ("✈", "Tarea final", "Tarjeta de embarque (eindmissie)", GD, 23),
-        ("?", "Quiz «La mezcla»", "gemengde ophaal — mét oplossing", AMBER, 24),
-        ("◎", "Repaso + semáforo", "lo esencial · zelfevaluatie", GD, 25),
+        ("§2", "La regla del sombrero", "klemtoon · aguda/llana/esdrújula · tilde", G, 7),
+        ("§3", "Números 0–100", "tellen · leeftijd · telefoon", G, 10),
+        ("§4", "Saludos y clase", "groeten · voorstellen · lengua de clase", G, 13),
+        ("★", "Cultura", "¿Dónde se habla español? (+20 países)", GD, 16),
+        ("✈", "Tarea final", "Tarjeta de embarque (eindmissie)", GD, 18),
+        ("?", "Quiz «La mezcla»", "gemengde ophaal — mét oplossing", AMBER, 19),
+        ("◎", "Repaso + semáforo", "lo esencial · zelfevaluatie", GD, 20),
     ]
     cols, x0, y0 = 4, Inches(0.5), Inches(1.55)
     tw, th, gx, gy = Inches(3.0), Inches(2.45), Inches(0.14), Inches(0.2)
     for i, (tag, es, nl, col, dia) in enumerate(tiles):
         r, c = divmod(i, cols)
         x = x0 + c * (tw + gx); y = y0 + r * (th + gy)
-        card(s, x, y, tw, th, fill=WHITE, line=col, lw=1.6)
-        rect(s, x, y, tw, Inches(0.5), fill=col, round=False)
+        cardshp = card(s, x, y, tw, th, fill=WHITE, line=col, lw=1.6)
+        link_to(cardshp, dia - 1)  # hele tegel = klikbare hyperlink naar de sectie
+        hdr = rect(s, x, y, tw, Inches(0.5), fill=col, round=False)
+        link_to(hdr, dia - 1)  # kopbalk ligt bovenop → ook klikbaar
         # ronde badge
         b = rect(s, x + Inches(0.12), y + Inches(0.08), Inches(0.34), Inches(0.34),
                  fill=WHITE, round=True, radius=0.5)
@@ -491,13 +641,16 @@ def s06_quiz1():
     # kolom links: b/v & h
     text(s, Inches(0.5), Inches(1.45), Inches(6), Inches(0.35),
          [[("A · ¿B o V? ¿H o sin H?", {"size": 14, "bold": True, "color": GD, "font": DISPLAY})]])
-    itemsA = [("1", "vaca", "baca"), ("2", "gente", "tente"), ("3", "casa", "caza"), ("4", "hola", "ola")]
+    # correct = wat je hoort (bij vaca/baca en hola/ola klinken beide gelijk → b=v, h muda)
+    itemsA = [("1", "vaca", "baca", 0), ("2", "gente", "tente", 0), ("3", "casa", "caza", 0), ("4", "hola", "ola", 0)]
     y = Inches(1.85)
-    for n, a, b in itemsA:
+    for n, a, b, corr in itemsA:
         card(s, Inches(0.5), y, Inches(6.0), Inches(0.62), fill=WHITE, line=LINE, lw=1.0, shadow=False)
         text(s, Inches(0.62), y, Inches(0.4), Inches(0.62), [[(n, {"size": 13, "bold": True, "color": G})]], anchor=MSO_ANCHOR.MIDDLE)
-        text(s, Inches(1.05), y, Inches(2.5), Inches(0.62), [[("☐  " + a, {"size": 13, "color": INK})]], anchor=MSO_ANCHOR.MIDDLE)
+        opt_a = text(s, Inches(1.05), y, Inches(2.5), Inches(0.62), [[("☐  " + a, {"size": 13, "color": INK})]], anchor=MSO_ANCHOR.MIDDLE)
         text(s, Inches(3.7), y, Inches(2.5), Inches(0.62), [[("☐  " + b, {"size": 13, "color": INK})]], anchor=MSO_ANCHOR.MIDDLE)
+        # klik op de correcte optie → «✓» springt in (antwoord verschijnt)
+        check_badge(s, Inches(2.55), y + Inches(0.13), opt_a, label="✓", w=Inches(0.36))
         y = y + Inches(0.72)
     # kolom rechts: r/rr minimale paren
     text(s, Inches(6.9), Inches(1.45), Inches(6), Inches(0.35),
@@ -515,7 +668,8 @@ def s06_quiz1():
         text(s, Inches(8.7), y, Inches(2.0), Inches(0.62), [[(b, {"size": 13, "bold": True, "color": INK})]], anchor=MSO_ANCHOR.MIDDLE)
         text(s, Inches(10.5), y, Inches(2.2), Inches(0.62), [[(gl, {"size": 10.5, "italic": True, "color": MUT})]], anchor=MSO_ANCHOR.MIDDLE)
         y = y + Inches(0.72)
-    solucion(s, Inches(0.5), Inches(4.85), Inches(12.3), Inches(1.05),
+    btn = noodroute(s)
+    exercise_solucion(s, Inches(0.5), Inches(4.85), Inches(12.3), Inches(1.05),
              [[("A · «geen fout, dat is Spaans!»  ", {"bold": True, "color": GD}),
                ("vaca=baca en hola=ola klinken IDENTIEK", {"color": GD}),
                (" (b=v, h muda). ", {"color": GD}),
@@ -523,8 +677,7 @@ def s06_quiz1():
               [("B · r/rr:  ", {"bold": True, "color": GD}),
                ("één tik", {"bold": True, "color": G}), (" tussen klinkers (pero) ↔ ", {"color": GD}),
                ("rol", {"bold": True, "color": G}), (" bij rr, woordbegin en na n/l/s (perro, Roma, Enrique). Betekenis verandert!", {"color": GD})]],
-             title="SOLUCIÓN + uitleg · docent")
-    noodroute(s)
+             trigger=btn, title_doc="SOLUCIÓN + uitleg · docent")
     footer(s, page=pg())
     notes(s, "TEACHER · QUIZ (idee 12 meerkeuze met feedback · idee 38 uitspraakcontrast). "
              "Onthul-flow: laat de klas eerst kiezen (klik audio), DAN de solución tonen. Belangrijk: b=v en h muda "
@@ -643,16 +796,23 @@ def s09_quiz2():
     s = slide(); bg(s, PAPER)
     sectionbar(s, "§2 · QUIZ · COLOCA LA TILDE", "¿Lleva sombrero o no?",
                "Zet de tilde ALLEEN waar het moet — en enkel op de tónica-klinker. Beslis eerst, onthul dan.")
-    palabras = ["Peru", "cafe", "casa", "arbol", "Mexico", "numero", "lunes", "adios"]
+    # (weergave, correcte vorm, krijgt-tilde?)
+    palabras = [("Peru", "Perú", True), ("cafe", "café", True), ("casa", "casa", False),
+                ("arbol", "árbol", True), ("Mexico", "México", True), ("numero", "número", True),
+                ("lunes", "lunes", False), ("adios", "adiós", True)]
     x0, y0 = Inches(0.5), Inches(1.55); cw=Inches(2.9); ch=Inches(0.95); gx=Inches(0.18); gy=Inches(0.2)
-    for i,w in enumerate(palabras):
+    for i,(w, corr, tilde) in enumerate(palabras):
         r,c = divmod(i, 4)
         x = x0 + c*(cw+gx); y = y0 + r*(ch+gy)
-        card(s, x, y, cw, ch, fill=WHITE, line=LINE, lw=1.2)
+        cardshp = card(s, x, y, cw, ch, fill=WHITE, line=LINE, lw=1.2)
         text(s, x, y + Inches(0.08), cw, Inches(0.45), [[(w, {"size": 20, "bold": True, "color": INK, "font": DISPLAY})]], align=PP_ALIGN.CENTER)
         text(s, x, y + Inches(0.55), cw, Inches(0.35),
              [[("☐ con ´    ☐ sin ´", {"size": 11.5, "color": MUT})]], align=PP_ALIGN.CENTER)
-    solucion(s, Inches(0.5), Inches(4.35), Inches(12.3), Inches(1.55),
+        # klik op de kaart → correcte vorm springt in (con of sin sombrero)
+        lab = corr if tilde else corr + " · sin ´"
+        check_badge(s, x + cw/2 - Inches(0.9), y + Inches(0.63), cardshp, label=lab, w=Inches(1.8))
+    btn = noodroute(s)
+    exercise_solucion(s, Inches(0.5), Inches(4.35), Inches(12.3), Inches(1.55),
              [[("Perú", {"bold": True, "color": G}), (" (aguda -ú) · ", {"color": GD}),
                ("café", {"bold": True, "color": G}), (" (aguda -é) · ", {"color": GD}),
                ("casa", {"bold": True, "color": G}), (" → GEEN (llana -a) · ", {"color": GD}),
@@ -663,8 +823,7 @@ def s09_quiz2():
                ("adiós", {"bold": True, "color": G}), (" (aguda -s → wél)", {"color": GD})],
               [("🔴 Ojo — geen hoedjes strooien! ", {"bold": True, "color": RED}),
                ("lunes en profesor krijgen er GÉÉN. De grootste A1-fout is te veel tildes zetten.", {"color": GD})]],
-             title="SOLUCIÓN + uitleg · docent")
-    noodroute(s)
+             trigger=btn, title_doc="SOLUCIÓN + uitleg · docent")
     footer(s, page=pg())
     notes(s, "TEACHER · QUIZ (idee 11 klik-om-te-onthullen · idee 14 zoek de fout). Laat elke leerling eerst zelf beslissen + "
              "de regel benoemen ('waarom?'), dan solución. Vervolg: 'Clínica de tildes' (foutenkliniek): ✗cásada→casa, ✗Mexico→México, "
@@ -785,17 +944,22 @@ def s12_quiz3():
     s = slide(); bg(s, PAPER)
     sectionbar(s, "§3 · PRACTICA · ESCRIBE EN LETRAS", "Completa el número",
                "Let op: 16–29 = één woord · 30–100 = drie woorden met «y». Schrijf voluit.")
-    items = [("18", "dieci______"), ("24", "veinti______"), ("53", "cincuenta ___ ______"),
-             ("71", "______ y ______"), ("96", "______ y ______"), ("47", "______ y ______")]
+    items = [("18", "dieci______", "dieciocho"), ("24", "veinti______", "veinticuatro"),
+             ("53", "cincuenta ___ ______", "cincuenta y tres"),
+             ("71", "______ y ______", "setenta y uno"), ("96", "______ y ______", "noventa y seis"),
+             ("47", "______ y ______", "cuarenta y siete")]
     x0, y0 = Inches(0.5), Inches(1.6); cw=Inches(3.95); ch=Inches(1.0); gx=Inches(0.2); gy=Inches(0.22)
-    for i,(cij, gap) in enumerate(items):
+    for i,(cij, gap, ans) in enumerate(items):
         r,c = divmod(i, 3)
         x = x0 + c*(cw+gx); y = y0 + r*(ch+gy)
-        card(s, x, y, cw, ch, fill=WHITE, line=LINE, lw=1.2)
+        cardshp = card(s, x, y, cw, ch, fill=WHITE, line=LINE, lw=1.2)
         b = rect(s, x + Inches(0.12), y + Inches(0.22), Inches(0.7), Inches(0.55), fill=GT, round=True, radius=0.2)
         text(s, x + Inches(0.12), y + Inches(0.22), Inches(0.7), Inches(0.55), [[(cij, {"size": 20, "bold": True, "color": GD, "font": DISPLAY})]], align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
         text(s, x + Inches(0.95), y, cw - Inches(1.05), ch, [[(gap, {"size": 15, "color": INK})]], anchor=MSO_ANCHOR.MIDDLE)
-    solucion(s, Inches(0.5), Inches(4.6), Inches(12.3), Inches(1.3),
+        # klik op de kaart → het voluit geschreven getal springt in
+        check_badge(s, x + Inches(0.95), y + Inches(0.55), cardshp, label="✓ " + ans, w=cw - Inches(1.1))
+    btn = noodroute(s)
+    exercise_solucion(s, Inches(0.5), Inches(4.6), Inches(12.3), Inches(1.3),
              [[("18 ", {"bold": True, "color": GD}), ("dieciocho", {"bold": True, "color": G}),
                ("  ·  24 ", {"bold": True, "color": GD}), ("veinticuatro", {"bold": True, "color": G}),
                ("  ·  53 ", {"bold": True, "color": GD}), ("cincuenta y tres", {"bold": True, "color": G})],
@@ -804,8 +968,7 @@ def s12_quiz3():
                ("  ·  47 ", {"bold": True, "color": GD}), ("cuarenta y siete", {"bold": True, "color": G})],
               [("Mini-transfer: ", {"bold": True, "color": GD}),
                ("schrijf jouw huisnummer en jouw schoenmaat voluit in letters.", {"italic": True, "color": GD})]],
-             title="SOLUCIÓN · docent")
-    noodroute(s)
+             trigger=btn, title_doc="SOLUCIÓN · docent")
     footer(s, page=pg())
     notes(s, "TEACHER · WRITING (idee 42 schrijfopdracht · idee 36 microdictee). Leerling schrijft ECHT (antwoordruimte). "
              "16-29 aan elkaar (één woord), 30-100 met 'y' (drie woorden). Zelfcorrectie met de solución-laag. "
@@ -919,20 +1082,25 @@ def s15_lenguaclase():
     ]
     y = Inches(1.95)
     for i,(sit, sol) in enumerate(sits):
-        card(s, Inches(0.5), y, Inches(6.1), Inches(0.85), fill=WHITE, line=LINE, lw=1.1)
+        cardshp = card(s, Inches(0.5), y, Inches(6.1), Inches(0.85), fill=WHITE, line=LINE, lw=1.1)
         b = rect(s, Inches(0.62), y + Inches(0.24), Inches(0.38), Inches(0.38), fill=G, round=True, radius=0.5)
         text(s, Inches(0.62), y + Inches(0.24), Inches(0.38), Inches(0.38), [[(str(i+1), {"size": 13, "bold": True, "color": WHITE})]], align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
         text(s, Inches(1.15), y, Inches(5.3), Inches(0.85), [[(sit, {"size": 12.5, "color": INK})]], anchor=MSO_ANCHOR.MIDDLE)
-        # antwoordlijn
+        # antwoordlijn + de chunk (= het antwoord)
         rect(s, Inches(6.75), y + Inches(0.5), Inches(6.05), Inches(0.02), fill=LINE)
-        text(s, Inches(6.75), y + Inches(0.02), Inches(6.0), Inches(0.4),
+        ans = text(s, Inches(6.75), y + Inches(0.02), Inches(6.0), Inches(0.4),
              [[("→ " + sol, {"size": 12.5, "bold": True, "color": G})]], anchor=MSO_ANCHOR.MIDDLE)
+        # klik op de situatiekaart → de juiste chunk «springt in»
+        if is_alumno():
+            register_reveal(s, cardshp, ans)   # verborgen tot de leerling klikt
+        else:
+            check_badge(s, Inches(12.35), y + Inches(0.02), cardshp, label="✓", w=Inches(0.36))
         y = y + Inches(0.95)
-    solucion(s, Inches(0.5), Inches(5.9), Inches(12.3), Inches(0.55),
+    btn = noodroute(s)
+    exercise_solucion(s, Inches(0.5), Inches(5.9), Inches(12.3), Inches(0.55),
              [[("Mini-rollenspel (geen steun): ", {"bold": True, "color": GD}),
                ("A speelt docent (praat te snel / zegt een nieuw woord); B reageert met de passende chunk. Wissel.", {"color": GD})]],
-             title="COMUNICAR · docent")
-    noodroute(s)
+             trigger=btn, title_doc="COMUNICAR · docent")
     footer(s, page=pg())
     notes(s, "TEACHER · SPEAKING/interactie (idee 39 rollenkaart · idee 43 peerfeedback). De rechterkolom (→ chunk) is de "
              "oplossing: toon ze pas na de klaspoging. Klasposter 'Cartel de la clase' ophangen. Dit is compensatie-/strategie-taal "
@@ -1094,26 +1262,28 @@ def s19_mezcla():
     sectionbar(s, "QUIZ · RETRIEVAL", "«La mezcla» — gemengde quiz",
                "Vijf mini-items, elk uit een ándere sectie. Kies zélf de juiste regel. (retrieval vóór herlezen, §14)", accent=AMBER)
     vragen = [
-        ("1 · §2", "¿Lleva tilde: «Peru» o «Perú»?"),
-        ("2 · §1", "¿«h» klinkt of niet in «hola»?"),
-        ("3 · §3", "Escribe 47 en letras."),
-        ("4 · §4", "¿Encantado o encantada dice Nina?"),
-        ("5 · §2", "Ordena: llana / esdrújula → «casa», «México»."),
+        ("1 · §2", "¿Lleva tilde: «Peru» o «Perú»?", "Perú"),
+        ("2 · §1", "¿«h» klinkt of niet in «hola»?", "de h zwijgt"),
+        ("3 · §3", "Escribe 47 en letras.", "cuarenta y siete"),
+        ("4 · §4", "¿Encantado o encantada dice Nina?", "Encantada"),
+        ("5 · §2", "Ordena: llana / esdrújula → «casa», «México».", "casa=llana · México=esdrújula"),
     ]
     y = Inches(1.5)
-    for tag, v in vragen:
-        card(s, Inches(0.5), y, Inches(12.3), Inches(0.62), fill=WHITE, line=LINE, lw=1.0)
+    for tag, v, ans in vragen:
+        cardshp = card(s, Inches(0.5), y, Inches(12.3), Inches(0.62), fill=WHITE, line=LINE, lw=1.0)
         chip(s, Inches(0.62), y + Inches(0.15), tag, fill=GT, tcolor=GD, size=10, w=Inches(1.15))
-        text(s, Inches(1.95), y, Inches(10.6), Inches(0.62), [[(v, {"size": 13.5, "color": INK})]], anchor=MSO_ANCHOR.MIDDLE)
+        text(s, Inches(1.95), y, Inches(7.4), Inches(0.62), [[(v, {"size": 13.5, "color": INK})]], anchor=MSO_ANCHOR.MIDDLE)
+        # klik op de vraagkaart → het antwoord springt in
+        check_badge(s, Inches(9.5), y + Inches(0.14), cardshp, label="✓ " + ans, w=Inches(3.2))
         y = y + Inches(0.7)
-    solucion(s, Inches(0.5), Inches(5.2), Inches(12.3), Inches(1.2),
+    btn = noodroute(s)
+    exercise_solucion(s, Inches(0.5), Inches(5.2), Inches(12.3), Inches(1.2),
              [[("1 ", {"bold": True, "color": GD}), ("Perú", {"bold": True, "color": G}), (" (aguda -ú)   ·   ", {"color": GD}),
                ("2 ", {"bold": True, "color": GD}), ("de h zwijgt", {"bold": True, "color": G}), (" (hola = «ola»)   ·   ", {"color": GD}),
                ("3 ", {"bold": True, "color": GD}), ("cuarenta y siete", {"bold": True, "color": G})],
               [("4 ", {"bold": True, "color": GD}), ("Encantada", {"bold": True, "color": G}), (" (Nina is een meisje — de uitgang volgt wie spreekt)   ·   ", {"color": GD}),
                ("5 ", {"bold": True, "color": GD}), ("casa = llana · México = esdrújula", {"bold": True, "color": G})]],
-             title="SOLUCIÓN · docent")
-    noodroute(s)
+             trigger=btn, title_doc="SOLUCIÓN · docent")
     footer(s, page=pg())
     notes(s, "TEACHER · QUIZ (idee 17 Jeopardy-achtig · idee 18 oplopende reeks). Gemengde ophaal over de hele unit — "
              "geen aangeduide regel, leerling kiest zelf. Extra items: 'Pasaporte fonético' (Zaragoza·Málaga·Bogotá·Cáceres·Ecuador·Panamá "
@@ -1210,17 +1380,94 @@ def s21_teacher():
              "Alle LPD-codes III-Spa-d nog concreet in te vullen (zie bron-md Bijlage C). "
              "Print-hygiëne / kleurlagen: cursusgroen = navigatie; functionele kleuren (blauw persoon · oranje werkw · paars tijd) enkel bij taalmarkering.")
 
+# ---------------------------------------------------------------- kioskmodus
+def set_kiosk():
+    """Zet <p:showPr> op kioskmodus (zelflopende presentatie, beperkte navigatie).
+    Best-effort: showPr is een optioneel element van <p:presentation>. Wordt na
+    injectie via een round-trip gecontroleerd (zie build_alumno)."""
+    pres = prs.slides._sldIdLst.getparent()  # <p:presentation>
+    show = parse_xml(
+        f'<p:showPr {nsdecls("p")} showAnimation="1" useTimings="0" loop="0">'
+        f'<p:kiosk/><p:sldAll/></p:showPr>')
+    pres.append(show)  # als laatste kind (na defaultTextStyle)
+
 # ---------------------------------------------------------------- build
-def build():
+SLIDE_FUNCS_CORE = None  # placeholder
+
+def _run_all_slides(include_teacher=True):
     s01_title(); s02_menu(); s03_cast()
     s04_alfabeto(); s05_trampas(); s06_quiz1()
     s07_tonica(); s08_sombrero(); s09_quiz2()
     s10_numeros(); s11_edad(); s12_quiz3()
     s13_saludos(); s14_dialogo(); s15_lenguaclase()
     s16_cultura(); s17_variatie()
-    s18_tarea(); s19_mezcla(); s20_repaso(); s21_teacher()
-    prs.save(OUT)
-    print("opgeslagen:", OUT, "·", len(prs.slides.__iter__.__self__._sldIdLst), "dia's")
+    s18_tarea(); s19_mezcla(); s20_repaso()
+    if include_teacher:
+        s21_teacher()
+
+def build(mode, out, kiosk=False, include_teacher=True):
+    global MODE
+    MODE = mode
+    new_presentation()
+    _run_all_slides(include_teacher=include_teacher)
+    ndia_timing, nreveals = apply_all_timing()
+    apply_hyperlinks()
+    if kiosk:
+        set_kiosk()
+    prs.save(out)
+    ndias = len(prs.slides._sldIdLst)
+    print(f"opgeslagen: {out} · {ndias} dia's · {ndia_timing} dia's met klik-trigger · "
+          f"{nreveals} reveal-animaties · {len(MENU_LINKS)} hyperlinks")
+    return out, ndias, ndia_timing, nreveals
+
+
+def to_ppsx(pptx_path, ppsx_path):
+    """Converteer .pptx → .ppsx door in [Content_Types].xml de override voor
+    /ppt/presentation.xml naar het slideshow-contenttype te zetten."""
+    OLD = "application/vnd.openxmlformats-officedocument.presentationml.presentation.main+xml"
+    NEW = "application/vnd.openxmlformats-officedocument.presentationml.slideshow.main+xml"
+    if os.path.exists(ppsx_path):
+        os.remove(ppsx_path)
+    with zipfile.ZipFile(pptx_path, "r") as zin:
+        names = zin.namelist()
+        with zipfile.ZipFile(ppsx_path, "w", zipfile.ZIP_DEFLATED) as zout:
+            for n in names:
+                data = zin.read(n)
+                if n == "[Content_Types].xml":
+                    txt = data.decode("utf-8")
+                    assert OLD in txt, "presentation override niet gevonden in [Content_Types].xml"
+                    txt = txt.replace(OLD, NEW)
+                    data = txt.encode("utf-8")
+                zout.writestr(n, data)
+    return ppsx_path
+
+
+def build_alumno():
+    # 1) bouw de leerling-.pptx (kioskmodus, geen docentnotities, geen teacher-dia)
+    build("alumno", OUT_ALUMNO_PPTX, kiosk=True, include_teacher=False)
+    # 2) verifieer dat de kiosk-.pptx nog een geldige OOXML is (round-trip)
+    try:
+        _ = Presentation(OUT_ALUMNO_PPTX)
+        print("round-trip OK (kiosk-.pptx opent):", OUT_ALUMNO_PPTX)
+    except Exception as e:
+        print("WAARSCHUWING: kiosk-.pptx opent niet (%s) → herbouw zonder showPr" % e)
+        build("alumno", OUT_ALUMNO_PPTX, kiosk=False, include_teacher=False)
+        _ = Presentation(OUT_ALUMNO_PPTX)
+        print("round-trip OK (zonder showPr):", OUT_ALUMNO_PPTX)
+    # 3) converteer naar .ppsx (slideshow-contenttype)
+    to_ppsx(OUT_ALUMNO_PPTX, OUT_ALUMNO)
+    # 4) verifieer dat de .ppsx nog een geldige zip/OOXML is
+    with zipfile.ZipFile(OUT_ALUMNO) as z:
+        bad = z.testzip()
+        assert bad is None, f"corrupte .ppsx entry: {bad}"
+        ct = z.read("[Content_Types].xml").decode("utf-8")
+        assert "slideshow.main+xml" in ct, ".ppsx mist slideshow-contenttype"
+    _ = Presentation(OUT_ALUMNO_PPTX)  # pptx blijft leesbaar
+    print("opgeslagen (.ppsx, slideshow-contenttype geverifieerd):", OUT_ALUMNO)
+
 
 if __name__ == "__main__":
-    build()
+    # Docentenversie: vrije navigatie, oplossingen zichtbaar, docentnotities.
+    build("docente", OUT_DOCENTE, kiosk=False, include_teacher=True)
+    # Leerlingenversie: kioskmodus, oplossingen verborgen tot klik → .ppsx.
+    build_alumno()
