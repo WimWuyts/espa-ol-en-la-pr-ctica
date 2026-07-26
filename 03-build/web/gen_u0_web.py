@@ -140,6 +140,13 @@ table.vt th{background:var(--gt);color:var(--gd);position:sticky;top:0;z-index:1
 .modalbar button{background:#ffffff22;border:none;color:#fff;padding:6px 12px;border-radius:8px;cursor:pointer;font-weight:700;font-family:var(--disp)}
 .modal iframe{border:0;flex:1;width:100%;background:#fff}
 @media(max-width:600px){.hero h1{font-size:26px}.bar{flex-wrap:wrap}}
+/* bewerk-in-browser */
+.editbar{position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:8px;align-items:center;background:var(--gd);color:#fff;padding:8px 12px;border-radius:12px;box-shadow:0 6px 20px #0004;font-size:13px}
+.editbar button{border:none;border-radius:8px;padding:7px 12px;font-weight:700;cursor:pointer;font-family:inherit;font-size:13px}
+.editbar .b1{background:#fff;color:var(--gd)}.editbar .b2{background:#ffffff22;color:#fff}.editbar.on{background:var(--amber)}
+body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-offset:2px;border-radius:3px}
+body.editing [contenteditable=true]:focus{outline:2px solid var(--gd);background:#FEF9E7}
+@media print{.editbar{display:none!important}}
 """
 
 def data_js():
@@ -245,6 +252,12 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   <div class="modalbar"><span id="gmtitle">Juego</span><button onclick="closeGame()">✕ sluiten</button></div>
   <iframe id="gframe" title="Spel"></iframe>
 </div></div>
+
+<div class="editbar" id="editbar">
+  <span id="ebtxt">✏️ «Bewerken» om titels/teksten aan te passen</span>
+  <button class="b1" id="ebEdit">Bewerken</button>
+  <button class="b2" id="ebSave">💾 Bewaar</button>
+</div>
 
 <script>__DATA__
 __JS__
@@ -577,6 +590,20 @@ gameSilaba();gameTilde();
 // hash-navigatie (deep-link naar een paneel)
 (function(){const h=location.hash.replace('#','');const i=PANELS.findIndex(p=>p[0]===h);if(i>=0)sn.children[i].click();})();
 window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');const i=PANELS.findIndex(p=>p[0]===h);if(i>=0)sn.children[i].click();});
+
+// ---------- bewerk-in-browser (statische teksten) ----------
+(function(){
+ var SEL='.hero h1,.hero p,h2.sec,p.lead,.subh,.foot,section[data-p="extra"] .card p,#mapinfo';
+ var editing=false;
+ var eb=document.getElementById('editbar'),txt=document.getElementById('ebtxt'),bE=document.getElementById('ebEdit');
+ function setEd(on){document.querySelectorAll(SEL).forEach(function(e){if(on){e.setAttribute('contenteditable','true');e.setAttribute('spellcheck','false');}else{e.removeAttribute('contenteditable');}});}
+ bE.onclick=function(){editing=!editing;document.body.classList.toggle('editing',editing);eb.classList.toggle('on',editing);setEd(editing);
+   txt.textContent=editing?'✏️ AAN — klik op een titel/tekst en typ':'✏️ «Bewerken» om titels/teksten aan te passen';bE.textContent=editing?'Klaar':'Bewerken';};
+ document.getElementById('ebSave').onclick=function(){if(editing)bE.click();
+   var clone=document.documentElement.cloneNode(true);var b=clone.querySelector('.editbar');if(b)b.remove();
+   var html='<!doctype html>\n'+clone.outerHTML;var blob=new Blob([html],{type:'text/html'});
+   var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='U0_web_mijn_versie.html';a.click();};
+})();
 """
 
 html=(HTML.replace("__CSS__",CSS).replace("__MOCH__",moch).replace("__FC__",flashcards_html())
