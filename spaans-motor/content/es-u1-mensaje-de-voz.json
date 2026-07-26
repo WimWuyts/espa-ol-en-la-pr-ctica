@@ -1,0 +1,41 @@
+{
+  "id": "es-u1-mensaje-de-voz",
+  "title": "Mensaje de voz: preséntate",
+  "subtitle": "U1 · graba UN mensaje de voz con todos los bloques",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "voicemessage",
+    "prompt": "Graba un mensaje de voz · spraakbericht opnemen",
+    "items": [
+      {
+        "to": "Un nuevo compañero de clase",
+        "situation": "Es tu primer día y le escribes por WhatsApp.",
+        "goal": "Preséntate y pregúntale su nombre.",
+        "blocks": ["saludo (¡Hola!)", "me llamo …", "soy de …", "tengo … años", "una pregunta (¿… tú?)"],
+        "sub": "een nieuwe klasgenoot — stel je voor en vraag zijn/haar naam",
+        "tag": "mensaje"
+      },
+      {
+        "to": "La familia de acogida en España",
+        "situation": "Vas de intercambio y les mandas un audio antes de llegar.",
+        "goal": "Diles quién eres, de dónde vienes y qué idiomas hablas.",
+        "blocks": ["saludo (¡Buenos días!)", "me llamo …", "soy de … / soy belga", "vivo en …", "hablo …", "despedida (¡Hasta pronto!)"],
+        "sub": "je gastgezin in Spanje — wie je bent, waar je vandaan komt, welke talen je spreekt",
+        "tag": "mensaje"
+      },
+      {
+        "to": "Un grupo de intercambio de idiomas",
+        "situation": "Te presentas en un chat de voz para buscar compañeros.",
+        "goal": "Preséntate y di qué idiomas hablas y cuáles quieres practicar.",
+        "blocks": ["saludo", "me llamo …", "soy de …", "hablo …", "quiero practicar español", "despedida"],
+        "sub": "een taaluitwisselingsgroep — stel je voor, zeg welke talen je spreekt en wilt oefenen",
+        "tag": "mensaje",
+        "tip": "Escucha tu mensaje: ¿se entiende todo? Vuelve a grabar más despacio si hace falta. <span class='nl'>beluister jezelf; herneem rustiger indien nodig.</span>"
+      }
+    ]
+  }
+}

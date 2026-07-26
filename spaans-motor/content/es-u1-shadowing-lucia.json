@@ -1,0 +1,41 @@
+{
+  "id": "es-u1-shadowing-lucia",
+  "title": "Shadowing: la presentación de Lucía",
+  "subtitle": "U1 · imita a Lucía — de texto completo a tu propia versión",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "shadowing",
+    "prompt": "Escucha a Lucía y ve quitando apoyo, paso a paso",
+    "phases": ["Texto completo", "Palabras clave", "Sin texto", "Tu versión"],
+    "items": [
+      {
+        "text": "Hola, me llamo Lucía.",
+        "keywords": ["Hola", "me llamo", "Lucía"],
+        "sub": "hallo, ik heet Lucía",
+        "tag": "presentarse"
+      },
+      {
+        "text": "Soy de Sevilla, en el sur de España.",
+        "keywords": ["Soy de", "Sevilla", "sur", "España"],
+        "sub": "ik kom uit Sevilla, in het zuiden van Spanje",
+        "tag": "origen"
+      },
+      {
+        "text": "Tengo dieciséis años.",
+        "keywords": ["Tengo", "dieciséis", "años"],
+        "sub": "ik ben zestien jaar",
+        "tag": "edad"
+      },
+      {
+        "text": "Hablo español e inglés. ¿Y tú?",
+        "keywords": ["Hablo", "español", "inglés", "¿Y tú?"],
+        "sub": "ik spreek Spaans en Engels. En jij?",
+        "tag": "idiomas"
+      }
+    ]
+  }
+}
