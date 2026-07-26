@@ -157,6 +157,7 @@ CHROME = `/opt/pw-browsers/chromium-*/chrome-linux/chrome`. Verifieer visueel me
 
 ## 9 · QA-checklist per unit (vóór opleveren)
 
+- [ ] **OEFENDICHTHEID = golden sample U0** (≈45–50 oefeningen · ≈50 p print). Fijnmazige §x.1–x.3-cycli · ≈4 oefeningen per subsectie over de 5 fasen met steunafbouw · **Tarea comunicativa ná élke sectie** · volle antwoordruimte-set (`wcols`/`wbox`/`wl`/`wtab`) · meerdere audio-QR · rijk beeld ín de secties · werkvorm-variatie uit de 100 werkvormen (geen herhaling). **Zie CLAUDE.md §14 «OEFENDICHTHEID».** Vergelijk expliciet met `C5_U0.pdf` vóór oplevering.
 - [ ] 4 formaten gegenereerd; cursuskleur correct (C5 groen / C6 blauw).
 - [ ] Spaans-eerst + NL-steun overal; geen NL-only tekstblok.
 - [ ] Print-hygiëne: geen weesregel-koppen, geen doorgesneden kaders, elke hoofdsectie op nieuwe pagina, kleuren printen.

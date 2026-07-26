@@ -242,6 +242,15 @@ Naast de twee *visuele* specs (§13) zijn er twee *didactische* specs in `02-hui
   - *Transformeren/herschrijven* → gegeven → `.wl` voor de herschrijving (twee kolommen of regel-per-regel).
   - *Spreken/interactie (paar)* → notitielijn(en) voor eigen antwoord/afspraak + ☐ «gedaan», of een mini-invulframe; print blijft bruikbaar zónder opname.
 - **Paginaovergangen — BINDEND (auteur 2026-07-26):** **elke hoofdsectie** (§1…§V, Cultura, Tarea, Repaso) **start op een nieuwe bladzijde** (`.sec{break-before:page}`); **geen sectiekop onderaan** (weesregel) en **geen kader/tabel doorgesneden of «ghost»** over de paginagrens (coherente blokken `break-inside:avoid`; absoluut-gepositioneerde badges enkel binnen niet-brekende blokken).
+- **OEFENDICHTHEID — BINDEND (auteur 2026-07-26, na U0↔U1-vergelijking):** élke unit haalt de **dichtheid van de golden sample U0** (≈50 p print · ≈45–50 oefeningen). Dit is de norm voor **álle** units en **álle** formaten, telkens met **unit-eigen mechanismen en visuals** (geen kopie van U0's fonetiek-oefeningen, wél hetzelfde *niveau*). Concreet, per unit:
+  - **Fijnmazige leercyclus per kernpunt:** splits elke grammatica-/woordenschatstap in **§x.1/§x.2/§x.3** met de volle route *context → observeren → patroon → compacte regla → oefenen (steun afbouwt) → communiceren* (niet één regla + 2 oefeningen).
+  - **≈4 oefeningen per subsectie**, geordend over de **vijf fasen** (herkennen → onderscheiden → ophalen → gestuurd produceren → vrij produceren), elk met expliciet **steunniveau** (MODELO → BANCO → MARCO/LETRA → PISTA → SIN AYUDA).
+  - **Eén «Tarea comunicativa» ná élke hoofdsectie** (afzender·ontvanger·doel·situatie·resultaat) — bovenop de eind-Tarea.
+  - **Volle antwoordruimte-set** (§14-notatie): `wcols` (sorteer/classificeer-schrijfkolommen), `wbox` (geruit schrijfvlak), `wl`/`wl full/lg/md/sm`, `wtab`. Nooit enkel losse schrijflijnen.
+  - **Rijk beeld ín de secties** (niet enkel de opener): gelabelde scène/ficha·carné, chat-/mockup-bubbels, personage-kaarten, substitutietabel, transformatieketting, overeenkomst-pijlen, beslisboom, país-cluster, semantische ladder — kies per unit uit `VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md`.
+  - **Meer audio-QR-luisterkaarten** (meerdere per unit), elk → HTML-hub-anker.
+  - **Werkvorm-variatie is verplicht:** put uit de **100 werkvormen** (`INOEFENEN_…100_WERKVORMEN.md`); **geen werkvorm twee keer** binnen een unit met dezelfde jas.
+  - **§V Vocabulario** krijgt in print grote thematabellen **+ een korte oefenladder** (naast de online-repaso).
 
 ## 15 · Beeld & asset-pijplijn (BESLIST 2026-07-25)
 
