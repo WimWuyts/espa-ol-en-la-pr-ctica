@@ -390,8 +390,17 @@ function gameTilde(){const el=document.getElementById('g_tilde');
  window._tiGuess=g=>{const ok=g===el.cur[1];if(ok){pt++;st++}else st=0;setScore(sb,pt,st);
    feedback(el.querySelector('#tiFb'),ok,(ok?'¡Correcto! ':'')+'«'+el.cur[0]+'» — '+el.cur[2]+(el.cur[1]?' → wél een hoedje.':' → géén hoedje.'));setTimeout(next,1100);};
  next();}
-// motorlink kaart
-document.getElementById('motorlink').innerHTML='<h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 4px">Meer spellen (motor)</h3><p class="gloss" style="margin:0">De offline arcade-spellen van de spaans-motor (classify · match · tetris · …) worden hier per thema ingebed. Ze staan in <code>spaans-motor/games/</code>.</p>';
+// motor-arcade: 17 standalone spellen, gegroepeerd
+const MOTOR=[
+ ['Sonidos · uitspraak',[['be-uve','b = v · con be/uve','classify'],['hache-muda','h muda · hola↔ola','cloze'],['la-jota','la jota · ge/gi/j','classify']]],
+ ['El acento · el sombrero',[['aguda-llana-esdrujula','aguda/llana/esdrújula','classify'],['silaba-tonica','tik de tónica','tap'],['lleva-tilde','¿con/sin tilde?','cloze'],['donde-va-la-tilde','waar staat de tilde?','tap']]],
+ ['Números 0–100',[['numeros-match','cifra ↔ letra','match'],['numeros-orden','klein → groot','order'],['numeros-memoria','geheugenspel','memory']]],
+ ['Saludos · lengua de clase',[['saludos','saludos ES↔NL','match'],['saludo-despedida','saludo/despedida/cortesía','classify'],['lenguaje-de-clase','klaszinnen aanvullen','cloze']]],
+ ['Vocabulario · mundo hispano',[['vocabulario-match','woordenschat ES↔NL','match'],['vocabulario-memoria','geheugenspel','memory'],['gentilicios','país ↔ gentilicio','match'],['genero','el / la','classify']]],
+];
+document.getElementById('motorlink').innerHTML='<h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 4px">Arcade · la máquina de juegos 🕹️</h3><p class="gloss" style="margin:0 0 10px">17 offline spellen met score & directe feedback. Klik om te spelen (opent apart).</p>'+
+ MOTOR.map(([grp,gs])=>'<div style="margin:10px 0 4px;font-weight:700;color:var(--gd);font-size:13px">'+grp+'</div><div class="fcgrid">'+
+   gs.map(([f,t,tpl])=>'<a href="../../spaans-motor/games/es-u0-'+f+'.html" target="_blank" style="text-decoration:none"><div class="chip" style="display:block;border-radius:12px;border-color:var(--line)"><div style="font-weight:700;color:var(--ink);font-size:14px">'+t+'</div><div class="pill" style="margin-top:4px;font-size:10px">'+tpl+'</div></div></a>').join('')+'</div>').join('');
 
 // init
 renderFC();renderTable();conjugate();gameSilaba();gameTilde();gameSonido();gameSombrero();gameNumeros();gameSaludos();gameGenero();gameOrden();gameMemory();
