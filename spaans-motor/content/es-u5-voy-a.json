@@ -142,6 +142,72 @@
         "answer": "voy a",
         "tag": "ir",
         "sub": "yo → voy a"
+      },
+      {
+        "stimulus": "Este finde (nosotros) ___ visitar un mercado.",
+        "options": [
+          "vamos a",
+          "van a",
+          "voy a"
+        ],
+        "answer": "vamos a",
+        "tag": "ir",
+        "sub": "nosotros → vamos a"
+      },
+      {
+        "stimulus": "¿(Vosotros) ___ probar la comida picante?",
+        "options": [
+          "vais a",
+          "van a",
+          "vamos a"
+        ],
+        "answer": "vais a",
+        "tag": "ir",
+        "sub": "vosotros → vais a"
+      },
+      {
+        "stimulus": "Mañana (yo) ___ cocinar una paella.",
+        "options": [
+          "voy a",
+          "va a",
+          "vas a"
+        ],
+        "answer": "voy a",
+        "tag": "ir",
+        "sub": "yo → voy a"
+      },
+      {
+        "stimulus": "Valen y Nina ___ preparar arepas.",
+        "options": [
+          "van a",
+          "vamos a",
+          "vais a"
+        ],
+        "answer": "van a",
+        "tag": "ir",
+        "sub": "ellas → van a"
+      },
+      {
+        "stimulus": "¿(Tú) no ___ comer postre hoy?",
+        "options": [
+          "vas a",
+          "va a",
+          "voy a"
+        ],
+        "answer": "vas a",
+        "tag": "ir",
+        "sub": "tú → vas a"
+      },
+      {
+        "stimulus": "Él ___ pedir un agua sin gas.",
+        "options": [
+          "va a",
+          "van a",
+          "vas a"
+        ],
+        "answer": "va a",
+        "tag": "ir",
+        "sub": "él → va a"
       }
     ]
   }

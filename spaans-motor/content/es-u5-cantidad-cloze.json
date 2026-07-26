@@ -120,6 +120,72 @@
         "answer": "muchos",
         "tag": "c",
         "sub": "los huevos (m pl)"
+      },
+      {
+        "stimulus": "Pon ___ sal en la sopa.",
+        "options": [
+          "un poco de",
+          "un kilo de",
+          "una botella de"
+        ],
+        "answer": "un poco de",
+        "tag": "c",
+        "sub": "niet-telbaar → un poco de"
+      },
+      {
+        "stimulus": "___ zumo de naranja, por favor.",
+        "options": [
+          "una botella de",
+          "un kilo de",
+          "un paquete de"
+        ],
+        "answer": "una botella de",
+        "tag": "c",
+        "sub": "vloeistof → botella"
+      },
+      {
+        "stimulus": "Quiero ___ uvas.",
+        "options": [
+          "un kilo de",
+          "una botella de",
+          "un poco de"
+        ],
+        "answer": "un kilo de",
+        "tag": "c",
+        "sub": "fruta → kilo"
+      },
+      {
+        "stimulus": "En el mercado hay ___ verduras.",
+        "options": [
+          "muchas",
+          "muchos",
+          "mucha"
+        ],
+        "answer": "muchas",
+        "tag": "c",
+        "sub": "las verduras (f pl)"
+      },
+      {
+        "stimulus": "Hoy hay ___ gente en el mercado.",
+        "options": [
+          "mucha",
+          "mucho",
+          "muchas"
+        ],
+        "answer": "mucha",
+        "tag": "c",
+        "sub": "la gente (f)"
+      },
+      {
+        "stimulus": "Necesito ___ harina para el pan.",
+        "options": [
+          "un poco de",
+          "un kilo de",
+          "una botella de"
+        ],
+        "answer": "un poco de",
+        "tag": "c",
+        "sub": "niet-telbaar → un poco de"
       }
     ]
   }

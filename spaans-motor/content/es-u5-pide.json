@@ -100,6 +100,93 @@
           "fruta"
         ],
         "model": "Hoy voy a comer un taco y voy a probar el guacamole."
+      },
+      {
+        "scenario": "Reserva una mesa para dos personas para esta noche.",
+        "tag": "reservar",
+        "sub": "gebruik: quiero reservar · una mesa · para",
+        "min": 8,
+        "need": [
+          {
+            "re": "reservar|reserva",
+            "label": "reservar"
+          },
+          {
+            "re": "mesa",
+            "label": "una mesa"
+          },
+          {
+            "re": "para",
+            "label": "para (dos / esta noche)"
+          }
+        ],
+        "bank": [
+          "Quiero reservar",
+          "una mesa",
+          "para dos personas",
+          "para esta noche",
+          "por favor",
+          "a las ocho"
+        ],
+        "model": "Quiero reservar una mesa para dos personas para esta noche, por favor."
+      },
+      {
+        "scenario": "Pregunta el precio de un plato y di cómo vas a pagar.",
+        "tag": "pagar",
+        "sub": "gebruik: ¿cuánto cuesta? · pagar · tarjeta",
+        "min": 8,
+        "need": [
+          {
+            "re": "cuánto|cuanto|precio",
+            "label": "¿cuánto…?"
+          },
+          {
+            "re": "cuesta|es",
+            "label": "cuesta / es"
+          },
+          {
+            "re": "pagar|tarjeta|efectivo",
+            "label": "pagar (tarjeta/efectivo)"
+          }
+        ],
+        "bank": [
+          "¿Cuánto cuesta",
+          "el ceviche",
+          "¿puedo pagar",
+          "con tarjeta",
+          "en efectivo",
+          "la cuenta"
+        ],
+        "model": "¿Cuánto cuesta el ceviche? ¿Puedo pagar con tarjeta?"
+      },
+      {
+        "scenario": "Recomienda tu plato favorito a un amigo y di por qué.",
+        "tag": "recomendar",
+        "sub": "gebruik: te recomiendo · porque · está rico",
+        "min": 9,
+        "need": [
+          {
+            "re": "recomiendo|recomienda",
+            "label": "te recomiendo"
+          },
+          {
+            "re": "porque",
+            "label": "porque …"
+          },
+          {
+            "re": "rico|bueno|delicioso|encanta",
+            "label": "está rico / me encanta"
+          }
+        ],
+        "bank": [
+          "Te recomiendo",
+          "los tacos",
+          "porque",
+          "están muy ricos",
+          "me encanta",
+          "el guacamole"
+        ],
+        "model": "Te recomiendo los tacos porque están muy ricos."
       }
     ]
   }

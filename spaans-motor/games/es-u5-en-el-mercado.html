@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>¿camarero o cliente?</title>
+<title>En el mercado</title>
 <style>
 /* Gedeelde ontwerptokens — azulejo-stijl (Talavera-tegels). */
 :root{
@@ -103,7 +103,7 @@ header.mt .sp{flex:1}
 </head>
 <body>
 <div id="app"></div>
-<!-- Gegenereerd door spaans-motor uit content/es-u5-camarero-cliente.json -->
+<!-- Gegenereerd door spaans-motor uit content/es-u5-en-el-mercado.json -->
 <script>
 /* Classificeren: lees de stimulus, tik de juiste categorie/persoon.
    Dekt vervoeging→persoon, ser/estar, por/para, geslacht, tilde, b/v … */
@@ -433,7 +433,7 @@ window.Motor = { mount };
 
 ;
 (function(){
-var cfg = {"id":"es-u5-camarero-cliente","title":"¿camarero o cliente?","subtitle":"U5 · wie zegt het in het restaurant?","lang":"es","template":"classify","options":{"rounds":10,"audio":false},"classify":{"prompt":"Wie zegt deze zin: de ober of de klant?","categories":[{"id":"camarero","label":"el camarero<br><small>de ober</small>","glaze":"#E0A22F"},{"id":"cliente","label":"el cliente<br><small>de klant</small>","glaze":"#2FA8A0"}],"items":[{"stimulus":"¿Qué va a tomar?","answer":"camarero","tag":"camarero","sub":"ober vraagt"},{"stimulus":"Para mí, una sopa.","answer":"cliente","tag":"cliente","sub":"klant bestelt"},{"stimulus":"¿Y para beber?","answer":"camarero","tag":"camarero","sub":"ober vraagt"},{"stimulus":"¿Me pone un refresco?","answer":"cliente","tag":"cliente","sub":"klant bestelt"},{"stimulus":"¡Que aproveche!","answer":"camarero","tag":"camarero","sub":"ober wenst"},{"stimulus":"La cuenta, por favor.","answer":"cliente","tag":"cliente","sub":"klant vraagt"},{"stimulus":"¿Algo de postre?","answer":"camarero","tag":"camarero","sub":"ober vraagt"},{"stimulus":"De segundo, pollo.","answer":"cliente","tag":"cliente","sub":"klant bestelt"},{"stimulus":"Enseguida se lo traigo.","answer":"camarero","tag":"camarero","sub":"ober antwoordt"},{"stimulus":"¿Me trae pan, por favor?","answer":"cliente","tag":"cliente","sub":"klant vraagt"},{"stimulus":"¿Van a tomar entrante?","answer":"camarero","tag":"camarero","sub":"ober vraagt"},{"stimulus":"Para mí, un agua sin gas.","answer":"cliente","tag":"cliente","sub":"klant bestelt"},{"stimulus":"Aquí tiene la carta.","answer":"camarero","tag":"camarero","sub":"ober geeft"},{"stimulus":"¿Qué me recomienda?","answer":"cliente","tag":"cliente","sub":"klant vraagt raad"},{"stimulus":"¿Tienen menú del día?","answer":"cliente","tag":"cliente","sub":"klant vraagt"},{"stimulus":"¿Está todo bien?","answer":"camarero","tag":"camarero","sub":"ober checkt"},{"stimulus":"¿Puedo pagar con tarjeta?","answer":"cliente","tag":"cliente","sub":"klant vraagt"},{"stimulus":"¿Van a pagar juntos?","answer":"camarero","tag":"camarero","sub":"ober vraagt"}]}};
+var cfg = {"id":"es-u5-en-el-mercado","title":"En el mercado","subtitle":"U5 · sorteer het product: fruta · verdura · carne/pescado","lang":"es","template":"classify","options":{"rounds":12,"audio":false},"classify":{"prompt":"¿Qué es? fruta · verdura · carne o pescado","categories":[{"id":"fruta","label":"fruta<br><small>fruit</small>","glaze":"#C4402C"},{"id":"verdura","label":"verdura<br><small>groente</small>","glaze":"#2E8E68"},{"id":"proteina","label":"carne / pescado<br><small>vlees/vis</small>","glaze":"#E0A22F"}],"items":[{"stimulus":"la manzana","answer":"fruta","tag":"fruta","sub":"appel"},{"stimulus":"el plátano","answer":"fruta","tag":"fruta","sub":"banaan"},{"stimulus":"la naranja","answer":"fruta","tag":"fruta","sub":"sinaasappel"},{"stimulus":"las uvas","answer":"fruta","tag":"fruta","sub":"druiven"},{"stimulus":"la piña","answer":"fruta","tag":"fruta","sub":"ananas"},{"stimulus":"la fresa","answer":"fruta","tag":"fruta","sub":"aardbei"},{"stimulus":"el tomate","answer":"verdura","tag":"verdura","sub":"tomaat (culinair verdura)"},{"stimulus":"la lechuga","answer":"verdura","tag":"verdura","sub":"sla"},{"stimulus":"la cebolla","answer":"verdura","tag":"verdura","sub":"ui"},{"stimulus":"el ajo","answer":"verdura","tag":"verdura","sub":"knoflook"},{"stimulus":"el maíz","answer":"verdura","tag":"verdura","sub":"maïs"},{"stimulus":"la zanahoria","answer":"verdura","tag":"verdura","sub":"wortel"},{"stimulus":"el pollo","answer":"proteina","tag":"proteina","sub":"kip"},{"stimulus":"la carne","answer":"proteina","tag":"proteina","sub":"vlees"},{"stimulus":"el pescado","answer":"proteina","tag":"proteina","sub":"vis"},{"stimulus":"el jamón","answer":"proteina","tag":"proteina","sub":"ham"},{"stimulus":"las gambas","answer":"proteina","tag":"proteina","sub":"garnalen"},{"stimulus":"el chorizo","answer":"proteina","tag":"proteina","sub":"chorizo (worst)"}]}};
 cfg._source = { items: cfg.classify.items };
 Motor.mount(document.getElementById('app'), cfg);
 })();

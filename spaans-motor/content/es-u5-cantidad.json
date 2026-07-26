@@ -104,6 +104,54 @@
         "answer": "muchas",
         "tag": "muchas",
         "sub": "las gambas (f pl)"
+      },
+      {
+        "stimulus": "___ pescado",
+        "answer": "mucho",
+        "tag": "mucho",
+        "sub": "el pescado (m)"
+      },
+      {
+        "stimulus": "___ carne",
+        "answer": "mucha",
+        "tag": "mucha",
+        "sub": "la carne (f)"
+      },
+      {
+        "stimulus": "___ tacos",
+        "answer": "muchos",
+        "tag": "muchos",
+        "sub": "los tacos (m pl)"
+      },
+      {
+        "stimulus": "___ verduras",
+        "answer": "muchas",
+        "tag": "muchas",
+        "sub": "las verduras (f pl)"
+      },
+      {
+        "stimulus": "___ café",
+        "answer": "mucho",
+        "tag": "mucho",
+        "sub": "el café (m)"
+      },
+      {
+        "stimulus": "___ sal",
+        "answer": "mucha",
+        "tag": "mucha",
+        "sub": "la sal (f)"
+      },
+      {
+        "stimulus": "___ frijoles",
+        "answer": "muchos",
+        "tag": "muchos",
+        "sub": "los frijoles (m pl)"
+      },
+      {
+        "stimulus": "___ naranjas",
+        "answer": "muchas",
+        "tag": "muchas",
+        "sub": "las naranjas (f pl)"
       }
     ]
   }

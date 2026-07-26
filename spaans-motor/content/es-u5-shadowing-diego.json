@@ -33,9 +33,19 @@
         "tag": "futuro"
       },
       {
-        "text": "¿Vas a probar el ceviche conmigo?",
-        "sub": "ga jij de ceviche met mij proeven?",
-        "tag": "futuro",
+        "text": "En México comemos muchos tacos al pastor.",
+        "sub": "in Mexico eten we veel tacos al pastor",
+        "tag": "mexico"
+      },
+      {
+        "text": "¿Vas a probar el guacamole picante?",
+        "sub": "ga jij de pittige guacamole proeven?",
+        "tag": "futuro"
+      },
+      {
+        "text": "Después vamos a pedir la cuenta y pagar.",
+        "sub": "daarna gaan we de rekening vragen en betalen",
+        "tag": "pedir",
         "tip": "Ahora invita a un amigo de verdad. <span class='nl'>nodig nu een echte vriend uit.</span>"
       }
     ]

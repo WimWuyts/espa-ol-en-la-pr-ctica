@@ -30,6 +30,18 @@
         "tag": "describir"
       },
       {
+        "cue": "¿cuándo?",
+        "text": "Los como los fines de semana con mi familia.",
+        "sub": "ik eet ze in het weekend met mijn familie",
+        "tag": "describir"
+      },
+      {
+        "cue": "¿picante?",
+        "text": "A veces con un poco de chile, pero no muy picante.",
+        "sub": "soms met wat chili, maar niet te pittig",
+        "tag": "describir"
+      },
+      {
         "cue": "tu versión",
         "text": "Mi plato favorito es ___ . Lleva ___ .",
         "sub": "jouw versie — vul in en zeg ze",

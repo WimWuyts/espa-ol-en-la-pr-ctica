@@ -133,10 +133,10 @@
 | GT-013 | Contextkaarten |  |  |  |  |  | | | | |
 | GT-014 | Grammaticale strip |  |  |  |  |  | | | | |
 | GT-015 | Keuze met zichtbaar betekenisverschil | ✓ | ✓ |  |  | ✓ | | | | |
-| GT-016 | Sleepbare woordvolgorde |  |  |  |  |  | | | | |
+| GT-016 | Sleepbare woordvolgorde |  |  |  |  |  | ✓ | | | |
 | GT-017 | Grammaticale machine |  |  |  |  |  | | | | |
 | GT-018 | Foutenvergrootglas |  |  |  |  |  | | | | |
-| GT-019 | Domino van grammaticale relaties |  |  |  |  |  | | | | |
+| GT-019 | Domino van grammaticale relaties |  |  |  |  |  | ✓ | | | |
 | GT-020 | Uitklapbare beslisboom |  |  |  |  |  | | | | |
 | GT-021 | Conceptmap met klikbare verbindingen |  |  |  |  |  | | | | |
 | GT-022 | Voornaamwoorden als vervangingsanimatie |  |  |  |  |  | | | | |
@@ -274,7 +274,7 @@
 | SK-014 | Scannen naar concrete informatie |  | ✓ | ✓ | ✓ | ✓ | ✓ | | | |
 | SK-015 | Informatie markeren met kleur | ✓ | ✓ | ✓ | ✓ | ✓ | | | | |
 | SK-016 | Kopjes aan alinea's koppelen |  |  |  |  |  | | | | |
-| SK-017 | Zinnen in volgorde plaatsen | ✓ | ✓ |  | ✓ | ✓ | | | | |
+| SK-017 | Zinnen in volgorde plaatsen | ✓ | ✓ |  | ✓ | ✓ | ✓ | | | |
 | SK-018 | Juist, fout en bewijs | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | | | |
 | SK-019 | Vraag en bewijs koppelen | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | | | |
 | SK-020 | Betekenis uit context afleiden | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | | | |
@@ -383,14 +383,14 @@
 
 | ID | Item | U0 | U1 | U2 | U3 | U4 | U5 | U6 | U7 | U8 |
 |---|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| WV-001 | Beeld-woordkoppeling |  | ✓ |  |  |  | | | | |
+| WV-001 | Beeld-woordkoppeling |  | ✓ |  |  |  | ✓ | | | |
 | WV-002 | Luisteren en aanwijzen |  | ✓ | ✓ |  | ✓ | ✓ | | | |
 | WV-003 | Luisteren en nummeren |  |  |  |  |  | | | | |
-| WV-004 | Woord en definitie koppelen | ✓ |  |  |  | ✓ | | | | |
+| WV-004 | Woord en definitie koppelen | ✓ |  |  |  | ✓ | ✓ | | | |
 | WV-005 | Woord en contextzin koppelen | ✓ |  |  |  | ✓ | | | | |
 | WV-006 | Juist of fout bij een afbeelding | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | | | |
-| WV-007 | Het vreemde woord zoeken | ✓ | ✓ | ✓ | ✓ | ✓ | | | | |
-| WV-008 | Semantisch sorteren |  | ✓ |  | ✓ | ✓ | | | | |
+| WV-007 | Het vreemde woord zoeken | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | | | |
+| WV-008 | Semantisch sorteren |  | ✓ |  | ✓ | ✓ | ✓ | | | |
 | WV-009 | Receptieve woordenschatbingo |  |  |  |  |  | | | | |
 | WV-010 | Betekenis kiezen uit microcontext | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | | | |
 | WV-011 | Gelabelde afbeelding afbouwen |  | ✓ |  |  |  | | | | |
@@ -403,7 +403,7 @@
 | WV-018 | Geheugenraster |  |  |  |  |  | ✓ | | | |
 | WV-019 | Categorie uit het hoofd aanvullen | ✓ |  |  |  |  | | | | |
 | WV-020 | Uitgestelde ophaalladder |  |  |  |  |  | ✓ | | | |
-| WV-021 | Zinsframes met doelwoorden |  |  |  |  |  | | | | |
+| WV-021 | Zinsframes met doelwoorden |  |  |  |  |  | ✓ | | | |
 | WV-022 | Substitutietabel | ✓ | ✓ |  | ✓ | ✓ | ✓ | | | |
 | WV-023 | Collocatiedomino |  |  |  |  |  | | | | |
 | WV-024 | Woordchips naar zin |  |  |  |  |  | | | | |
@@ -443,9 +443,9 @@
 | WV-058 | Grammaticale speurtocht |  |  |  |  |  | | | | |
 | WV-059 | Patroon sorteren | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | | | |
 | WV-060 | Regelhypothese |  |  |  |  |  | | | | |
-| WV-061 | Meerkeuzecloze met betekenis |  |  |  |  |  | | | | |
+| WV-061 | Meerkeuzecloze met betekenis |  |  |  |  |  | ✓ | | | |
 | WV-062 | Zinshelften koppelen |  |  |  |  |  | | | | |
-| WV-063 | Zinsdelen ordenen |  | ✓ |  |  |  | | | | |
+| WV-063 | Zinsdelen ordenen |  | ✓ |  |  |  | ✓ | | | |
 | WV-064 | Substitutietabel | ✓ | ✓ |  | ✓ | ✓ | ✓ | | | |
 | WV-065 | Vervoegingswiel |  | ✓ |  |  |  | | | | |
 | WV-066 | Overeenkomstspijlen |  |  |  |  |  | | | | |

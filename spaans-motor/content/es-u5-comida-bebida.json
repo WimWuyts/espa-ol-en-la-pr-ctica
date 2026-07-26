@@ -5,7 +5,7 @@
   "lang": "es",
   "template": "classify",
   "options": {
-    "rounds": 14,
+    "rounds": 12,
     "audio": false
   },
   "classify": {
@@ -106,6 +106,42 @@
         "answer": "comida",
         "tag": "comida",
         "sub": "fruit → eten"
+      },
+      {
+        "stimulus": "el jamón",
+        "answer": "comida",
+        "tag": "comida",
+        "sub": "ham"
+      },
+      {
+        "stimulus": "la horchata",
+        "answer": "bebida",
+        "tag": "bebida",
+        "sub": "horchata (drank)"
+      },
+      {
+        "stimulus": "el flan",
+        "answer": "comida",
+        "tag": "comida",
+        "sub": "pudding → postre"
+      },
+      {
+        "stimulus": "el batido",
+        "answer": "bebida",
+        "tag": "bebida",
+        "sub": "milkshake"
+      },
+      {
+        "stimulus": "la ensalada",
+        "answer": "comida",
+        "tag": "comida",
+        "sub": "salade"
+      },
+      {
+        "stimulus": "la limonada",
+        "answer": "bebida",
+        "tag": "bebida",
+        "sub": "limonade"
       }
     ]
   }

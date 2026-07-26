@@ -104,6 +104,42 @@
         "answer": "mucho",
         "tag": "mucho",
         "sub": "el pescado"
+      },
+      {
+        "stimulus": "carne",
+        "answer": "mucha",
+        "tag": "mucha",
+        "sub": "la carne"
+      },
+      {
+        "stimulus": "tacos",
+        "answer": "muchos",
+        "tag": "muchos",
+        "sub": "los tacos"
+      },
+      {
+        "stimulus": "verduras",
+        "answer": "muchas",
+        "tag": "muchas",
+        "sub": "las verduras"
+      },
+      {
+        "stimulus": "café",
+        "answer": "mucho",
+        "tag": "mucho",
+        "sub": "el café"
+      },
+      {
+        "stimulus": "sal",
+        "answer": "mucha",
+        "tag": "mucha",
+        "sub": "la sal"
+      },
+      {
+        "stimulus": "naranjas",
+        "answer": "muchas",
+        "tag": "muchas",
+        "sub": "las naranjas"
       }
     ]
   }

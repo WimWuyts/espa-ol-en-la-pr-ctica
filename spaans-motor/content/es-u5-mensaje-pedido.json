@@ -1,7 +1,7 @@
 {
   "id": "es-u5-mensaje-pedido",
   "title": "Mensaje de voz: pide comida",
-  "subtitle": "U5 · neem één spraakbericht op met je pedido",
+  "subtitle": "U5 · neem een spraakbericht op met je pedido",
   "lang": "es",
   "template": "speak",
   "options": {
@@ -17,6 +17,20 @@
         "tag": "pedir",
         "sub": "gebruik: voy a comprar · un kilo de · una botella de · un poco de",
         "tip": "Heb je 3 productos + cantidad gezegd? Neem opnieuw op. <span class='nl'>3 producten + hoeveelheid? herneem.</span>"
+      },
+      {
+        "text": "Deja un mensaje para reservar una mesa (día, hora, personas).",
+        "cue": "la reserva",
+        "tag": "reservar",
+        "sub": "gebruik: quiero reservar · una mesa · para … personas · a las …",
+        "tip": "Día, hora y número de personas? Herneem. <span class='nl'>dag, uur, aantal personen? herneem.</span>"
+      },
+      {
+        "text": "Cuéntale a un amigo qué vas a cocinar hoy y con qué ingredientes.",
+        "cue": "la receta",
+        "tag": "receta",
+        "sub": "gebruik: voy a cocinar/preparar · lleva · primero… luego…",
+        "tip": "Plato + 2 ingredientes + 1 paso? Herneem. <span class='nl'>gerecht + 2 ingrediënten + 1 stap? herneem.</span>"
       }
     ]
   }

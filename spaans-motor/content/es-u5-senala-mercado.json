@@ -105,6 +105,101 @@
             "label": "el gazpacho"
           }
         ]
+      },
+      {
+        "tag": "proteina",
+        "sub": "señala la carne o el pescado",
+        "targets": [
+          {
+            "label": "la manzana"
+          },
+          {
+            "label": "el pollo",
+            "hit": true
+          },
+          {
+            "label": "el pan"
+          },
+          {
+            "label": "el zumo"
+          }
+        ]
+      },
+      {
+        "tag": "postre",
+        "sub": "señala el postre",
+        "targets": [
+          {
+            "label": "la sopa"
+          },
+          {
+            "label": "el flan",
+            "hit": true
+          },
+          {
+            "label": "la ensalada"
+          },
+          {
+            "label": "el pescado"
+          }
+        ]
+      },
+      {
+        "tag": "pais",
+        "sub": "señala el país del ceviche",
+        "targets": [
+          {
+            "label": "México"
+          },
+          {
+            "label": "Perú",
+            "hit": true
+          },
+          {
+            "label": "España"
+          },
+          {
+            "label": "Colombia"
+          }
+        ]
+      },
+      {
+        "tag": "bebida",
+        "sub": "señala la bebida caliente",
+        "targets": [
+          {
+            "label": "el café",
+            "hit": true
+          },
+          {
+            "label": "el zumo"
+          },
+          {
+            "label": "el agua"
+          },
+          {
+            "label": "el refresco"
+          }
+        ]
+      },
+      {
+        "tag": "picante",
+        "sub": "señala lo que es picante",
+        "targets": [
+          {
+            "label": "el chile",
+            "hit": true
+          },
+          {
+            "label": "el pan"
+          },
+          {
+            "label": "la leche"
+          },
+          {
+            "label": "el arroz"
+          }
+        ]
       }
     ]
   }

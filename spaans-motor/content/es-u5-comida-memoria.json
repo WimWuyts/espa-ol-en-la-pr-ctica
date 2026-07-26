@@ -58,6 +58,14 @@
       {
         "a": "el guacamole",
         "b": "guacamole"
+      },
+      {
+        "a": "el flan",
+        "b": "pudding"
+      },
+      {
+        "a": "la ensalada",
+        "b": "salade"
       }
     ]
   }

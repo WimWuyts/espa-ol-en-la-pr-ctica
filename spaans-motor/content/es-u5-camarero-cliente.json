@@ -5,7 +5,7 @@
   "lang": "es",
   "template": "classify",
   "options": {
-    "rounds": 12,
+    "rounds": 10,
     "audio": false
   },
   "classify": {
@@ -94,6 +94,42 @@
         "answer": "cliente",
         "tag": "cliente",
         "sub": "klant bestelt"
+      },
+      {
+        "stimulus": "Aquí tiene la carta.",
+        "answer": "camarero",
+        "tag": "camarero",
+        "sub": "ober geeft"
+      },
+      {
+        "stimulus": "¿Qué me recomienda?",
+        "answer": "cliente",
+        "tag": "cliente",
+        "sub": "klant vraagt raad"
+      },
+      {
+        "stimulus": "¿Tienen menú del día?",
+        "answer": "cliente",
+        "tag": "cliente",
+        "sub": "klant vraagt"
+      },
+      {
+        "stimulus": "¿Está todo bien?",
+        "answer": "camarero",
+        "tag": "camarero",
+        "sub": "ober checkt"
+      },
+      {
+        "stimulus": "¿Puedo pagar con tarjeta?",
+        "answer": "cliente",
+        "tag": "cliente",
+        "sub": "klant vraagt"
+      },
+      {
+        "stimulus": "¿Van a pagar juntos?",
+        "answer": "camarero",
+        "tag": "camarero",
+        "sub": "ober vraagt"
       }
     ]
   }

@@ -36,6 +36,21 @@
         "text": "¡Que aproveche!",
         "sub": "eet smakelijk!",
         "tag": "cortesia"
+      },
+      {
+        "text": "¿Me trae la carta, por favor?",
+        "sub": "mag ik het menu? — cortesía",
+        "tag": "pedir"
+      },
+      {
+        "text": "De postre, un flan.",
+        "sub": "als dessert, een flan",
+        "tag": "pedir"
+      },
+      {
+        "text": "¿Cuánto cuesta el ceviche?",
+        "sub": "hoeveel kost de ceviche?",
+        "tag": "pagar"
       }
     ]
   }

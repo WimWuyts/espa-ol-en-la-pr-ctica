@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>¿camarero o cliente?</title>
+<title>Plato e ingrediente</title>
 <style>
 /* Gedeelde ontwerptokens — azulejo-stijl (Talavera-tegels). */
 :root{
@@ -72,114 +72,89 @@ header.mt .sp{flex:1}
 .mt-grp>label{display:block;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#8A7F66;margin-bottom:6px}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 
-/* Sjabloon: classificeren (lanenversie). Stimuluskaart + gekleurde persoons-/categorieknoppen. */
-.cl-card{background:linear-gradient(175deg,#FBF6E9,#E9E0C9);border:1px solid rgba(0,0,0,.25);border-radius:3px;
-  box-shadow:0 6px 0 rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.9);padding:14px 16px 16px;text-align:center;position:relative;overflow:hidden;min-height:150px;display:flex;flex-direction:column;justify-content:center}
-.cl-card::before,.cl-card::after{content:"";position:absolute;left:0;right:0;height:7px;background:repeating-linear-gradient(45deg,#12264A 0 4px,transparent 4px 8px),repeating-linear-gradient(-45deg,#12264A 0 4px,transparent 4px 8px);opacity:.5}
-.cl-card::before{top:0}.cl-card::after{bottom:0}
-.cl-eye{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8A7F66}
-.cl-form{font-family:var(--serif);font-weight:700;color:#12264A;font-size:clamp(28px,7vw,52px);line-height:1.05;word-break:break-word}
-.cl-sub{font-family:var(--serif);font-style:italic;font-size:14px;color:#6E6249;margin-top:4px}
-.cl-card.good{animation:clGood .4s}
-.cl-card.bad{animation:clBad .5s}
-@keyframes clGood{0%{background:#DFF3E4}100%{}}
-@keyframes clBad{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-5px)}80%{transform:translateX(5px)}}
-.cl-fb{min-height:22px;margin-top:8px;font-family:var(--serif);font-size:15px;font-weight:700}
-.cl-fb.g{color:#1F6B4C}.cl-fb.b{color:#8E2C1D}
-
-.cl-lanes{display:grid;gap:8px;margin-top:12px}
-.cl-lane{font-family:var(--serif);font-weight:700;text-align:center;padding:16px 8px;border-radius:2px;line-height:1.15;
-  border:1px solid rgba(0,0,0,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.35);cursor:pointer;transition:transform .08s,filter .12s;user-select:none;font-size:clamp(14px,2.4vw,18px)}
-.cl-lane small{display:block;font-family:var(--mono);font-size:10px;font-weight:400;opacity:.6;margin-top:3px}
-.cl-lane:active{transform:translateY(2px);filter:brightness(1.12)}
-.cl-lane:focus-visible{outline:3px solid var(--cal);outline-offset:2px}
-.cl-lane.flash-g{animation:laneG .5s}
-.cl-lane.flash-b{animation:laneB .5s}
-.cl-lane.reveal{box-shadow:0 0 0 3px #1F6B4C, inset 0 1px 0 rgba(255,255,255,.35)}
-@keyframes laneG{0%{filter:brightness(1.5)}100%{}}
-@keyframes laneB{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+/* Sjabloon: koppelen. Twee kolommen; tik links, dan rechts. Juist paar = geglazuurd + vast. */
+.mm-wrap{background:linear-gradient(175deg,#FBF6E9,#E9E0C9);border:1px solid rgba(0,0,0,.25);border-radius:3px;box-shadow:0 6px 0 rgba(0,0,0,.22);padding:14px}
+.mm-hint{font-family:var(--serif);font-style:italic;color:#6E6249;font-size:13.5px;text-align:center;margin:0 0 12px}
+.mm-cols{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mm-col{display:flex;flex-direction:column;gap:8px}
+.mm-cell{font-family:var(--serif);font-size:clamp(15px,2.6vw,18px);padding:13px 12px;border-radius:2px;border:1px solid #C3B99F;background:#fff;color:#2A2416;cursor:pointer;text-align:center;transition:.12s;line-height:1.2}
+.mm-cell:hover{border-color:#12264A}
+.mm-cell:focus-visible{outline:3px solid #3D74D6;outline-offset:2px}
+.mm-cell.sel{background:#12264A;color:#F3ECDB;border-color:#12264A}
+.mm-cell.done{cursor:default;color:#FBF6E9;border-color:rgba(0,0,0,.25);box-shadow:inset 0 1px 0 rgba(255,255,255,.3)}
+.mm-cell.wrong{animation:mmW .5s}
+@keyframes mmW{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
 
 </style>
 </head>
 <body>
 <div id="app"></div>
-<!-- Gegenereerd door spaans-motor uit content/es-u5-camarero-cliente.json -->
+<!-- Gegenereerd door spaans-motor uit content/es-u5-plato-ingrediente.json -->
 <script>
-/* Classificeren: lees de stimulus, tik de juiste categorie/persoon.
-   Dekt vervoeging→persoon, ser/estar, por/para, geslacht, tilde, b/v … */
+/* Koppelen: verbind woord met vertaling (of vorm met infinitief, land met nationaliteit…).
+   Content levert pairs:[{a,b}]. Bij >8 paren wordt in blokjes gewerkt. */
 window.MotorTemplates = window.MotorTemplates || {};
-window.MotorTemplates.classify = {
+window.MotorTemplates.match = {
   init(api){
-    const cfg = api.config;
-    const cats = (cfg.classify && cfg.classify.categories) || [];
-    const rounds = (cfg.options && cfg.options.rounds) || 20;
-    const el = api.el, shade = api.shade;
-    api.setTarget(rounds);
+    const cfg=api.config, el=api.el;
+    const all=(cfg.match&&cfg.match.pairs)||[];
+    const CHUNK=(cfg.options&&cfg.options.chunk)||6;
+    api.setTarget(all.length);
 
-    const root = api.root; root.innerHTML="";
-    const card = el("div","cl-card");
-    card.innerHTML='<div class="cl-eye">'+esc(cfg.classify.prompt||"Kies")+'</div>'+
-      '<div class="cl-form" id="clForm">…</div><div class="cl-sub" id="clSub">&nbsp;</div>'+
-      '<div class="cl-fb" id="clFb">&nbsp;</div>';
-    root.appendChild(card);
+    const root=api.root; root.innerHTML="";
+    const wrap=el("div","mm-wrap");
+    wrap.appendChild(el("p","mm-hint", esc(cfg.match&&cfg.match.prompt || "Verbind elk woord met de juiste vertaling")));
+    const cols=el("div","mm-cols");
+    const colL=el("div","mm-col"), colR=el("div","mm-col");
+    cols.appendChild(colL); cols.appendChild(colR); wrap.appendChild(cols); root.appendChild(wrap);
 
-    const lanes = el("div","cl-lanes");
-    lanes.style.gridTemplateColumns = "repeat("+Math.min(cats.length,3)+",1fr)";
-    const laneEls = cats.map((c,i)=>{
-      const b=el("button","cl-lane"); b.type="button";
-      const ink = isDark(c.glaze) ? "#16233D" : "#FBF6E9";
-      b.style.background="linear-gradient(180deg,"+shade(c.glaze,1.12)+","+shade(c.glaze,.84)+")";
-      b.style.color=ink;
-      b.innerHTML=c.label+(i<9?"<small>"+(i+1)+"</small>":"");
-      b.addEventListener("click",()=>choose(i));
-      lanes.appendChild(b);
-      return b;
-    });
-    root.appendChild(lanes);
+    const palette=["#C4402C","#E0A22F","#2E8E68","#3D74D6","#8B5E9E","#6E6249"];
+    let queue = shuffle(all.slice());
+    let done=0, block=[], selL=null, selR=null, busy=false;
 
-    let cur=null, locked=false, n=0;
-    const formEl=card.querySelector("#clForm"), subEl=card.querySelector("#clSub"), fbEl=card.querySelector("#clFb");
-
-    function load(){
-      if(n>=rounds){ api.finish(); return; }
-      cur=api.next(); locked=false;
-      laneEls.forEach(b=>b.classList.remove("flash-g","flash-b","reveal"));
-      fbEl.textContent="\u00a0"; fbEl.className="cl-fb";
-      formEl.textContent=cur.stimulus;
-      subEl.innerHTML = (cfg.options && cfg.options.hint===false) ? "&nbsp;" : (cur.sub? esc(cur.sub) : "&nbsp;");
+    function nextBlock(){
+      colL.innerHTML=""; colR.innerHTML=""; selL=selR=null;
+      block = queue.splice(0,CHUNK);
+      if(!block.length){ api.finish(); return; }
+      const left = block.map((p,i)=>({p,i}));
+      const right = shuffle(block.map((p,i)=>({p,i})));
+      left.forEach(o=> colL.appendChild(cell(o.p.a,"L",o.i)));
+      right.forEach(o=> colR.appendChild(cell(o.p.b,"R",o.i)));
     }
-    function choose(i){
-      if(locked||!cur) return; locked=true;
-      const catId=cats[i].id;
-      const answer = Array.isArray(cur.answer)?cur.answer:[cur.answer];
-      const ok = answer.indexOf(catId)>=0;
-      api.judge(ok,{tag:cur.tag,stimulus:cur.stimulus,chosen:catId,correct:answer,sub:cur.sub});
-      n++; api.tick();
+    function cell(txt,side,idx){
+      const c=el("button","mm-cell",esc(txt)); c.type="button";
+      c.dataset.idx=idx; c.dataset.side=side;
+      c.addEventListener("click",()=>pick(c,side,idx));
+      return c;
+    }
+    function pick(c,side,idx){
+      if(busy||c.classList.contains("done"))return;
+      if(side==="L"){ if(selL)selL.classList.remove("sel"); selL=c; c.classList.add("sel"); }
+      else{ if(selR)selR.classList.remove("sel"); selR=c; c.classList.add("sel"); }
+      if(selL&&selR) evaluate();
+    }
+    function evaluate(){
+      busy=true;
+      const li=+selL.dataset.idx, ri=+selR.dataset.idx;
+      const ok = li===ri;
+      const pair = block[li];
+      api.judge(ok,{tag:"koppel",stimulus:pair.a,chosen: block[ri].b, correct:[pair.b]});
       if(ok){
-        laneEls[i].classList.add("flash-g"); card.classList.remove("bad"); card.classList.add("good");
-        fbEl.textContent="¡correcto!"; fbEl.className="cl-fb g";
-        setTimeout(()=>{card.classList.remove("good");load();}, api.calm?200:420);
+        const col=palette[done%palette.length];
+        [selL,selR].forEach(c=>{ c.classList.remove("sel"); c.classList.add("done");
+          c.style.background="linear-gradient(180deg,"+api.shade(col,1.1)+","+api.shade(col,.85)+")"; });
+        done++; api.tick(); selL=selR=null; busy=false;
+        if(colL.querySelectorAll(".mm-cell:not(.done)").length===0) setTimeout(nextBlock, 260);
       }else{
-        laneEls[i].classList.add("flash-b"); card.classList.remove("good"); card.classList.add("bad");
-        answer.forEach(a=>{ const j=cats.findIndex(c=>c.id===a); if(j>=0) laneEls[j].classList.add("reveal"); });
-        const goed = answer.map(a=>{const c=cats.find(x=>x.id===a);return c?c.label.replace(/<[^>]+>/g," ").trim():a;}).join(" / ");
-        fbEl.innerHTML="→ "+esc(goed); fbEl.className="cl-fb b";
-        setTimeout(()=>{card.classList.remove("bad");load();}, api.calm?400:900);
+        const a=selL,b=selR;
+        a.classList.add("wrong"); b.classList.add("wrong");
+        setTimeout(()=>{ a.classList.remove("sel","wrong"); b.classList.remove("sel","wrong"); selL=selR=null; busy=false; }, 550);
       }
     }
+    nextBlock();
 
-    /* toetsen 1..9 */
-    function onKey(e){
-      if(e.key>="1"&&e.key<="9"){ const i=parseInt(e.key,10)-1; if(i<cats.length){e.preventDefault();choose(i);} }
-    }
-    document.addEventListener("keydown",onKey);
-    api._cleanup = ()=>document.removeEventListener("keydown",onKey);
-
-    load();
-
+    function shuffle(a){ for(let i=a.length-1;i>0;i--){const j=(Math.random()*(i+1))|0;[a[i],a[j]]=[a[j],a[i]];} return a; }
     function esc(s){ return String(s).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
-    function isDark(hex){ const n=parseInt(hex.slice(1),16); const r=(n>>16)&255,g=(n>>8)&255,b=n&255;
-      return (0.299*r+0.587*g+0.114*b) > 176; }
   }
 };
 
@@ -433,8 +408,7 @@ window.Motor = { mount };
 
 ;
 (function(){
-var cfg = {"id":"es-u5-camarero-cliente","title":"¿camarero o cliente?","subtitle":"U5 · wie zegt het in het restaurant?","lang":"es","template":"classify","options":{"rounds":10,"audio":false},"classify":{"prompt":"Wie zegt deze zin: de ober of de klant?","categories":[{"id":"camarero","label":"el camarero<br><small>de ober</small>","glaze":"#E0A22F"},{"id":"cliente","label":"el cliente<br><small>de klant</small>","glaze":"#2FA8A0"}],"items":[{"stimulus":"¿Qué va a tomar?","answer":"camarero","tag":"camarero","sub":"ober vraagt"},{"stimulus":"Para mí, una sopa.","answer":"cliente","tag":"cliente","sub":"klant bestelt"},{"stimulus":"¿Y para beber?","answer":"camarero","tag":"camarero","sub":"ober vraagt"},{"stimulus":"¿Me pone un refresco?","answer":"cliente","tag":"cliente","sub":"klant bestelt"},{"stimulus":"¡Que aproveche!","answer":"camarero","tag":"camarero","sub":"ober wenst"},{"stimulus":"La cuenta, por favor.","answer":"cliente","tag":"cliente","sub":"klant vraagt"},{"stimulus":"¿Algo de postre?","answer":"camarero","tag":"camarero","sub":"ober vraagt"},{"stimulus":"De segundo, pollo.","answer":"cliente","tag":"cliente","sub":"klant bestelt"},{"stimulus":"Enseguida se lo traigo.","answer":"camarero","tag":"camarero","sub":"ober antwoordt"},{"stimulus":"¿Me trae pan, por favor?","answer":"cliente","tag":"cliente","sub":"klant vraagt"},{"stimulus":"¿Van a tomar entrante?","answer":"camarero","tag":"camarero","sub":"ober vraagt"},{"stimulus":"Para mí, un agua sin gas.","answer":"cliente","tag":"cliente","sub":"klant bestelt"},{"stimulus":"Aquí tiene la carta.","answer":"camarero","tag":"camarero","sub":"ober geeft"},{"stimulus":"¿Qué me recomienda?","answer":"cliente","tag":"cliente","sub":"klant vraagt raad"},{"stimulus":"¿Tienen menú del día?","answer":"cliente","tag":"cliente","sub":"klant vraagt"},{"stimulus":"¿Está todo bien?","answer":"camarero","tag":"camarero","sub":"ober checkt"},{"stimulus":"¿Puedo pagar con tarjeta?","answer":"cliente","tag":"cliente","sub":"klant vraagt"},{"stimulus":"¿Van a pagar juntos?","answer":"camarero","tag":"camarero","sub":"ober vraagt"}]}};
-cfg._source = { items: cfg.classify.items };
+var cfg = {"id":"es-u5-plato-ingrediente","title":"Plato e ingrediente","subtitle":"U5 · welk hoofdingrediënt hoort bij het gerecht?","lang":"es","template":"match","options":{"chunk":6,"audio":false},"match":{"prompt":"Verbind het gerecht met zijn belangrijkste ingrediënt","pairs":[{"a":"el guacamole","b":"el aguacate 🥑"},{"a":"la paella","b":"el arroz 🍚"},{"a":"los tacos","b":"la tortilla 🫓"},{"a":"el ceviche","b":"el pescado 🐟"},{"a":"la tortilla española","b":"los huevos 🥚"},{"a":"el gazpacho","b":"el tomate 🍅"},{"a":"las quesadillas","b":"el queso 🧀"},{"a":"la arepa","b":"el maíz 🌽"},{"a":"el bocadillo","b":"el pan 🥖"},{"a":"la ensalada","b":"la lechuga 🥬"},{"a":"los churros","b":"el chocolate 🍫"},{"a":"la limonada","b":"el limón 🍋"}]}};
 Motor.mount(document.getElementById('app'), cfg);
 })();
 </script>

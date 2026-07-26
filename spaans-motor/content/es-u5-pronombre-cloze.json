@@ -120,6 +120,72 @@
         "answer": "Las",
         "tag": "od",
         "sub": "las manzanas (f pl)"
+      },
+      {
+        "stimulus": "¿El guacamole? —___ preparo yo.",
+        "options": [
+          "Lo",
+          "La",
+          "Los"
+        ],
+        "answer": "Lo",
+        "tag": "od",
+        "sub": "el guacamole (m ev)"
+      },
+      {
+        "stimulus": "¿La ensalada? —___ traigo enseguida.",
+        "options": [
+          "La",
+          "Lo",
+          "Las"
+        ],
+        "answer": "La",
+        "tag": "od",
+        "sub": "la ensalada (f ev)"
+      },
+      {
+        "stimulus": "¿Los churros? —___ compro en la calle.",
+        "options": [
+          "Los",
+          "Las",
+          "Lo"
+        ],
+        "answer": "Los",
+        "tag": "od",
+        "sub": "los churros (m pl)"
+      },
+      {
+        "stimulus": "¿Las bebidas? —___ pongo en la mesa.",
+        "options": [
+          "Las",
+          "Los",
+          "La"
+        ],
+        "answer": "Las",
+        "tag": "od",
+        "sub": "las bebidas (f pl)"
+      },
+      {
+        "stimulus": "¿El flan? —Sí, ___ quiero de postre.",
+        "options": [
+          "lo",
+          "la",
+          "los"
+        ],
+        "answer": "lo",
+        "tag": "od",
+        "sub": "el flan (m ev)"
+      },
+      {
+        "stimulus": "¿La propina? —___ dejo en la mesa.",
+        "options": [
+          "La",
+          "Lo",
+          "Las"
+        ],
+        "answer": "La",
+        "tag": "od",
+        "sub": "la propina (f ev)"
       }
     ]
   }

@@ -77,11 +77,77 @@
         ]
       },
       {
-        "tag": "receta",
-        "sub": "receta: primero → luego → después → por último",
+        "tag": "pedir",
+        "sub": "carta → recomendar → elegir → confirmar",
         "items": [
           {
-            "label": "Primero, abre el aguacate.",
+            "label": "¿Me trae la carta, por favor?",
+            "key": 1
+          },
+          {
+            "label": "¿Qué me recomienda?",
+            "key": 2
+          },
+          {
+            "label": "Entonces, para mí el ceviche.",
+            "key": 3
+          },
+          {
+            "label": "Muy bien, enseguida se lo traigo.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "pedir",
+        "sub": "saludar → mesa → beber → comer",
+        "items": [
+          {
+            "label": "Buenas noches, ¿tienen mesa para tres?",
+            "key": 1
+          },
+          {
+            "label": "Sí, por aquí, por favor.",
+            "key": 2
+          },
+          {
+            "label": "De beber, tres refrescos.",
+            "key": 3
+          },
+          {
+            "label": "Y de comer, una paella para compartir.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "pedir",
+        "sub": "pedir → esperar → servir → desear",
+        "items": [
+          {
+            "label": "Para mí, una sopa de tomate.",
+            "key": 1
+          },
+          {
+            "label": "Muy bien, ¿algo más?",
+            "key": 2
+          },
+          {
+            "label": "Aquí tiene su sopa.",
+            "key": 3
+          },
+          {
+            "label": "Gracias. ¡Que aproveche!",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "receta",
+        "sub": "receta guacamole: primero → luego → después → por último",
+        "items": [
+          {
+            "label": "Primero, corta el aguacate.",
             "key": 1
           },
           {
@@ -93,7 +159,29 @@
             "key": 3
           },
           {
-            "label": "Por último, ¡que aproveche!",
+            "label": "Por último, mezcla y añade sal.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "receta",
+        "sub": "la comida del día: desayuno → comida → merienda → cena",
+        "items": [
+          {
+            "label": "Por la mañana: el desayuno.",
+            "key": 1
+          },
+          {
+            "label": "A las 14:00: la comida.",
+            "key": 2
+          },
+          {
+            "label": "Por la tarde: la merienda.",
+            "key": 3
+          },
+          {
+            "label": "Por la noche: la cena.",
             "key": 4
           }
         ]

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # Genereert de zelfstandige HTML-hub voor C5 · U5 «¡Ñam!».
-# Eén standalone bestand: fonts base64, de 17 U5-motor-spellen base64 ingebed (modal, offline),
+# Eén standalone bestand: fonts base64, de 21 U5-motor-spellen base64 ingebed (modal, offline),
 # flashcards + naslag (U5-vocab), visuele/interactieve grammatica (cantidades · ir a + inf · lo/la/los/las),
 # klikbare kaart (mundo hispano, parada 5 = México) + TTS + inline recorder + Lectura + editbar. Huisstijl groen.
 import json, base64, os, sys
@@ -23,14 +23,16 @@ FONTS = "".join([
  face("Caveat", "Caveat-700.woff2", "700"),
 ])
 
-# ---- de 17 U5-motor-spellen: gegroepeerd (receptief -> productief -> hablar) + base64 ingebed ----
+# ---- de U5-motor-spellen: gegroepeerd (receptief -> productief -> hablar) + base64 ingebed ----
 MOTOR = [
  ['① Reconocer · woordenschat', [
    ['comida-memoria', 'memoria de la comida', 'memory'],
    ['fruta-verdura-memoria', 'fruta y verdura', 'memory'],
-   ['plato-pais', 'plato ↔ país', 'match']]],
+   ['plato-pais', 'plato ↔ país', 'match'],
+   ['plato-ingrediente', 'plato ↔ ingrediente', 'match']]],
  ['② Distinguir · léxico/gramática', [
    ['comida-bebida', '¿comida o bebida?', 'classify'],
+   ['en-el-mercado', 'en el mercado: fruta · verdura · carne/pescado', 'classify'],
    ['cantidad', '¿mucho, mucha, muchos o muchas?', 'classify'],
    ['camarero-cliente', '¿camarero o cliente?', 'classify']]],
  ['③ Producir con apoyo', [
@@ -39,7 +41,8 @@ MOTOR = [
    ['pronombre-cloze', '¿lo, la, los o las?', 'cloze'],
    ['cantidad-tetris', 'cantidades Tetris', 'tetris'],
    ['orden-restaurante', 'ordena el diálogo', 'order'],
-   ['senala-mercado', 'señala en el mercado', 'point']]],
+   ['receta-order', 'ordena la receta', 'order'],
+   ['pon-la-mesa', 'pon la mesa', 'point']]],
  ['④ Analizar & comunicar', [
    ['pide', '¡pide en el restaurante!', 'sim']]],
  ['⑤ Hablar · grábate 🎙️', [
@@ -191,6 +194,37 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
 .menucard .sec2{font-family:var(--disp);font-weight:700;color:var(--ww);font-size:12px;text-transform:uppercase;letter-spacing:.05em;margin:8px 0 2px}
 .menucard .mi{display:flex;justify-content:space-between;font-size:14px;padding:3px 0;border-bottom:1px dotted var(--line)}
 .menucard .mi .pr{color:var(--gd);font-weight:700}
+/* ---- inline zelfcorrigerende oefeningen ---- */
+.exhead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:2px}
+.exhead h3{font-family:var(--disp);margin:0;color:var(--ink);font-size:18px}
+.ex .desc{color:var(--mut);font-size:13px;margin:0 0 10px}
+.otra{border:none;background:var(--gt);color:var(--gd);border-radius:8px;padding:6px 12px;font-weight:700;cursor:pointer;font-size:13px;font-family:var(--disp);white-space:nowrap}
+.exq{border:1px solid var(--line);border-radius:12px;padding:11px 14px;margin:9px 0;background:var(--card)}
+.exq .qz{font-family:var(--disp);font-size:16px;margin-bottom:8px}
+.exq .qz .gap{display:inline-block;min-width:60px;border-bottom:2.5px solid var(--g);margin:0 3px;vertical-align:baseline}
+.exopts{display:flex;gap:8px;flex-wrap:wrap}
+.exopt{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:7px 13px;cursor:pointer;font-size:15px;font-weight:600;font-family:var(--body)}
+.exopt.ok{border-color:var(--g);background:var(--g);color:#fff}
+.exopt.no{border-color:var(--red);background:#fde8e8;color:var(--red)}
+.exopt[disabled]{cursor:default}
+.exwhy{margin-top:8px;font-size:13px;display:none;border-radius:8px;padding:7px 10px}
+.exwhy.show{display:block}
+.exwhy.g{background:var(--gt);color:var(--gd)}.exwhy.b{background:#fdeaea;color:var(--red)}
+.exscore{font-size:13px;color:var(--mut);margin-top:8px}
+.exscore b{color:var(--gd)}
+.mcol{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+.mcell{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:9px 12px;cursor:pointer;font-size:15px;text-align:center;font-weight:600;user-select:none}
+.mcell.sel{border-color:var(--g);background:var(--gt)}
+.mcell.done{border-color:var(--g);background:var(--g);color:#fff;cursor:default;opacity:.85}
+.mcell.bad{border-color:var(--red);background:#fde8e8}
+.oslots{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0;min-height:40px}
+.oslot{border:1.5px dashed var(--line);border-radius:9px;padding:7px 11px;font-size:14px;min-width:34px;color:var(--mut)}
+.oslot.filled{border-style:solid;border-color:var(--g);background:var(--gt);color:var(--ink)}
+.obank{display:flex;gap:7px;flex-wrap:wrap;margin-top:6px}
+.ochip{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 13px;cursor:pointer;font-size:15px;font-weight:600}
+.ochip.used{opacity:.35;cursor:default}
+.ochip.shake{animation:shk .3s}
+@keyframes shk{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 """
 
 def data_js():
@@ -230,7 +264,7 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   <div class="hero">
     <div class="mo">__MOCH__</div>
     <div><h1>U5 · ¡Ñam!</h1>
-    <p>La página digital de la Unidad 5 (parada <b>México · CDMX</b>): flashcards, gramática visual e interactiva y <b>17 juegos</b>. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie.</span></p></div>
+    <p>La página digital de la Unidad 5 (parada <b>México · CDMX</b>): flashcards, gramática visual e interactiva y <b>20 juegos</b> con muchas series. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie.</span></p></div>
   </div>
   <div class="subnav" id="subnav"></div>
 
@@ -238,6 +272,12 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
     <h2 class="sec">Vocabulario · flashcards</h2>
     <p class="lead">Álle woorden van U5. Klik om te draaien; wissel ES↔NL; filter per groep; klik 🔊 om te horen. <span class="gloss">Voorkant = Spaans + voorbeeldzin, achterkant = vertaling.</span></p>
     __FC__
+    <h2 class="sec">Ejercicios de vocabulario · zelfcorrectie</h2>
+    <p class="lead">Oefen de woorden actief: koppelen, invullen, definities en de <b>intruder</b>. Elke oefening geeft directe feedback en je kunt telkens een <b>andere reeks</b> trekken. <span class="gloss">herkennen → onderscheiden → ophalen.</span></p>
+    <div class="card ex" id="vx_match"></div>
+    <div class="card ex" id="vx_gap"></div>
+    <div class="card ex" id="vx_def"></div>
+    <div class="card ex" id="vx_odd"></div>
     <h2 class="sec">Naslagwerk · zoeken</h2>
     __NAS__
   </section>
@@ -247,18 +287,32 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
     <p class="lead">Eerst betekenis en patroon ontdekken, dan de regel. Beweeg over de woorden, klik, en probeer. <span class="gloss">Alles binnen het thema van U5: cantidades, ir a + infinitivo y lo/la/los/las.</span></p>
     <div class="card" id="colorsent"></div>
     <div class="card" id="irconj"></div>
+    <h3 class="subh">🧱 Ir a + infinitivo — construye y practica</h3>
+    <div class="card ex" id="gx_build"></div>
+    <div class="card ex" id="gx_iraq"></div>
+    <h3 class="subh">⚖️ Cantidades — mucho/mucha/muchos/muchas</h3>
     <div class="game" id="g_cantidad"></div>
+    <div class="card ex" id="gx_conc"></div>
+    <div class="card ex" id="gx_cantq"></div>
+    <h3 class="subh">🔁 Pronombres — lo/la/los/las</h3>
     <div class="game" id="g_pron"></div>
+    <div class="card ex" id="gx_pronq"></div>
+    <h3 class="subh">🎯 Repaso mixto — rellena con feedback</h3>
+    <div class="card ex" id="gx_mix"></div>
   </section>
 
   <section class="panel" data-p="lectura">
     <h2 class="sec">Lectura · dos cartas (menús)</h2>
     <p class="lead">Lees de <b>twee menu's</b>, <b>luister</b> ze (🔊 TTS) en <b>controleer je begrip</b>. Daarna zeg je wat je <b>vas a pedir</b> — dat neem je op in het tabblad <b>Hablar</b>. <span class="gloss">Keten: lezen → luisteren → spreken.</span></p>
     <div id="lecturawrap"></div>
+    <h3 class="subh">🔢 Ordena la comida</h3>
+    <div class="card ex" id="lx_order"></div>
+    <h3 class="subh">🔎 Comprensión · escanea y escoge</h3>
+    <div class="card ex" id="lx_scan"></div>
   </section>
 
   <section class="panel" data-p="juegos">
-    <h2 class="sec">Ejercicios · 17 juegos, jij kiest</h2>
+    <h2 class="sec">Ejercicios · 20 juegos, jij kiest</h2>
     <p class="lead">Geordend van <b>herkennen → onderscheiden → produceren met steun → analyseren &amp; communiceren → hablar</b>. Elk spel geeft directe, verklarende feedback en de steun bouwt af. <span class="gloss">Klik een spel; het opent in een venster en werkt ook offline.</span></p>
     <div id="motorlink"></div>
   </section>
@@ -396,7 +450,7 @@ function gamePron(){const el=document.getElementById('g_pron');
  function guess(c){const ok=c===el.cur[1];if(ok){pt++;st++}else st=0;setScore(sb,pt,st);feedback(el.querySelector('#pFb'),ok,(ok?'¡Sí! ':'Nee → ')+el.cur[0]+' → '+el.cur[1]+' traigo ('+el.cur[2]+').');setTimeout(next,1000);}
  next();}
 
-// ---- MOTOR-ARCADE: 17 spellen, ingebed ----
+// ---- MOTOR-ARCADE: 20 spellen, ingebed ----
 document.getElementById('motorlink').innerHTML=MOTOR.map(([grp,gs])=>'<div class="subh">'+grp+'</div><div class="fcgrid">'+
    gs.map(([f,t,tpl])=>'<div class="chip" style="display:block;border-radius:14px" onclick="openGame(\''+f+'\',\''+t.replace(/'/g,"")+'\')"><div style="font-weight:700;color:var(--ink);font-size:14px">'+t+'</div><div class="pill" style="margin-top:4px;font-size:10px">'+tpl+'</div></div>').join('')+'</div>').join('');
 function openGame(slug,title){const g=GAMES[slug];if(!g){alert('Spel niet gevonden.');return;}
@@ -439,8 +493,8 @@ function renderLectura(){const el=document.getElementById('lecturawrap');if(!el)
    {n:'El Sabor de Diego 🇲🇽',raw:'Para empezar: guacamole con nachos, cinco euros; elote con queso, cuatro euros. Platos fuertes: tacos de pollo, ocho euros; ceviche de pescado, diez euros. Para terminar: flan casero, tres euros; piña con lima, tres euros.',
     html:'<div class="sec2">Para empezar</div><div class="mi"><span>Guacamole con nachos</span><span class="pr">5 €</span></div><div class="mi"><span>Elote con queso</span><span class="pr">4 €</span></div><div class="sec2">Platos fuertes</div><div class="mi"><span>Tacos de pollo (3)</span><span class="pr">8 €</span></div><div class="mi"><span>Ceviche de pescado</span><span class="pr">10 €</span></div><div class="sec2">Para terminar</div><div class="mi"><span>Flan casero</span><span class="pr">3 €</span></div><div class="mi"><span>Piña con lima</span><span class="pr">3 €</span></div>'}];
  el.innerHTML='<div class="perfiles">'+M.map((m,i)=>'<div class="menucard"><h4>🍽️ '+m.n+' '+(TTS?'<button class="spk-btn" style="margin-left:auto;padding:4px 10px" onclick="speak(document.getElementById(\'lm'+i+'\').dataset.raw)">🔊 escuchar</button>':'')+'</h4><div id="lm'+i+'" data-raw="'+m.raw.replace(/"/g,'&quot;')+'">'+m.html+'</div></div>').join('')+'</div>';
- const items=[['En casa de Diego hay tacos.',true,'«Tacos de pollo»'],['El pollo con patatas cuesta 9 €.',true,'«Pollo con patatas 9 €»'],['Los dos tienen postre de fruta.',true,'«Fruta del día» / «Piña con lima»'],['El ceviche es un postre.',false,'el ceviche es un plato fuerte']];
- const box=document.createElement('div');box.className='card vftask';box.innerHTML='<h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 8px">¿Verdadero o falso? — comprueba tu comprensión</h3>';
+ const items=[['En casa de Diego hay tacos.',true,'«Tacos de pollo»'],['El pollo con patatas cuesta 9 €.',true,'«Pollo con patatas 9 €»'],['Los dos tienen postre de fruta.',true,'«Fruta del día» / «Piña con lima»'],['El ceviche es un postre.',false,'el ceviche es un plato fuerte (8-10 €)'],['La sopa de tomate cuesta cuatro euros.',true,'«Sopa de tomate 4 €»'],['El guacamole está en la carta de Diego.',true,'«Guacamole con nachos»'],['La ensalada mixta cuesta seis euros.',false,'cuesta cinco euros'],['Los tacos de Diego son de pescado.',false,'son «tacos de pollo»']];
+ const box=document.createElement('div');box.className='card vftask';box.innerHTML='<h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 8px">¿Verdadero o falso? — comprueba tu comprensión (con evidencia)</h3>';
  items.forEach(([q,ans,pr])=>{const r=document.createElement('div');r.className='vfrow';
    r.innerHTML='<span>'+q+'</span><span class="btns"><button class="vfb">V</button><button class="vfb">F</button><span class="res"></span></span>';
    const [bv,bf]=r.querySelectorAll('.vfb');const res=r.querySelector('.res');
@@ -490,7 +544,188 @@ function buildRecorders(){
    {text:'Mi plato favorito es ___ . Lleva ___ . Me encanta porque ___ .',cue:'tu versión',tip:'Heb je gezegd wat het is, wat erin zit en waarom? Herneem.'}]});
 }
 
-renderFC();renderTable();gameCantidad();gamePron();renderLectura();buildRecorders();
+// ================= INLINE ZELFCORRIGERENDE OEFENINGEN =================
+function exSample(pool,n){const a=pool.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a.slice(0,Math.min(n,a.length));}
+function exEsc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function exFmt(s){return exEsc(s).replace(/___+/g,'<span class="gap">&nbsp;&nbsp;</span>');}
+
+// MEERKEUZE / GAP-FILL: pool item = {q, opts, ans, why}
+function buildChoice(id,cfg){
+ const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(6,cfg.pool.length);
+ function render(){const series=exSample(cfg.pool,per);let ok=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="qlist"></div><div class="exscore">Juist: <b class="ok">0</b>/'+series.length+'</div>';
+   host.querySelector('.otra').onclick=render;const list=host.querySelector('.qlist'),scoreEl=host.querySelector('.ok');
+   series.forEach(it=>{const q=document.createElement('div');q.className='exq';
+     q.innerHTML='<div class="qz">'+exFmt(it.q)+'</div><div class="exopts"></div><div class="exwhy"></div>';
+     const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy');let locked=false;
+     exSample(it.opts,it.opts.length).forEach(o=>{const b=document.createElement('button');b.className='exopt';b.type='button';b.textContent=o;
+       b.onclick=()=>{if(locked)return;locked=true;const good=o===it.ans;
+         opts.querySelectorAll('.exopt').forEach(x=>{x.disabled=true;if(x.textContent===it.ans)x.classList.add('ok');});
+         if(good){ok++;scoreEl.textContent=ok;}else{b.classList.add('no');}
+         why.className='exwhy show '+(good?'g':'b');why.innerHTML=(good?'✅ ¡correcto! ':'❌ → '+exEsc(it.ans)+'. ')+(it.why?exEsc(it.why):'');};
+       opts.appendChild(b);});
+     list.appendChild(q);});}
+ render();}
+
+// MATCHING: pool item = {a,b}  (b moet uniek zijn)
+function buildMatch(id,cfg){
+ const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(6,cfg.pool.length);
+ function render(){const series=exSample(cfg.pool,per);let doneN=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="mcol"><div class="mL"></div><div class="mR"></div></div><div class="exscore">Emparejados: <b class="ok">0</b>/'+series.length+'</div>';
+   host.querySelector('.otra').onclick=render;const L=host.querySelector('.mL'),R=host.querySelector('.mR'),scoreEl=host.querySelector('.ok');
+   const right=exSample(series.map((p,i)=>({p,i})),series.length);let selL=null,busy=false;
+   series.forEach((p,i)=>{const c=document.createElement('div');c.className='mcell';c.textContent=p.a;c.dataset.i=i;
+     c.onclick=()=>{if(busy||c.classList.contains('done'))return;if(selL)selL.classList.remove('sel');selL=c;c.classList.add('sel');};L.appendChild(c);});
+   right.forEach(o=>{const c=document.createElement('div');c.className='mcell';c.textContent=o.p.b;c.dataset.i=o.i;
+     c.onclick=()=>{if(busy||!selL||c.classList.contains('done'))return;busy=true;const good=selL.dataset.i===c.dataset.i;
+       if(good){selL.classList.remove('sel');selL.classList.add('done');c.classList.add('done');doneN++;scoreEl.textContent=doneN;selL=null;busy=false;}
+       else{c.classList.add('bad');const s=selL;setTimeout(()=>{c.classList.remove('bad');s.classList.remove('sel');selL=null;busy=false;},600);}};R.appendChild(c);});}
+ render();}
+
+// ORDENAR: cfg.rounds=[{sub, items:[{label,key}]}]
+function buildOrder(id,cfg){
+ const host=document.getElementById(id);if(!host)return;let ri=Math.floor(Math.random()*cfg.rounds.length);
+ function render(){const round=cfg.rounds[ri];const sorted=round.items.slice().sort((a,b)=>a.key-b.key);let pos=0,mist=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra ronda</button></div><p class="desc">'+cfg.desc+' · <b>'+exEsc(round.sub||'')+'</b></p><div class="oslots"></div><div class="obank"></div><div class="exwhy"></div>';
+   host.querySelector('.otra').onclick=()=>{ri=(ri+1)%cfg.rounds.length;render();};
+   const slots=host.querySelector('.oslots'),bank=host.querySelector('.obank'),why=host.querySelector('.exwhy');
+   sorted.forEach((_,i)=>{const s=document.createElement('div');s.className='oslot';s.textContent=(i+1);s.dataset.pos=i;slots.appendChild(s);});
+   exSample(round.items,round.items.length).forEach(it=>{const b=document.createElement('button');b.className='ochip';b.type='button';b.textContent=it.label;
+     b.onclick=()=>{if(b.classList.contains('used'))return;const exp=sorted[pos];
+       if(it.key===exp.key){b.classList.add('used');const sl=slots.querySelector('.oslot[data-pos="'+pos+'"]');sl.classList.add('filled');sl.textContent=(pos+1)+'. '+it.label;pos++;
+         if(pos>=sorted.length){why.className='exwhy show '+(mist===0?'g':'b');why.innerHTML=mist===0?'✅ ¡Perfecto! sin errores.':'✔ Completado con '+mist+' error(es). Prueba «otra ronda».';}}
+       else{mist++;b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake');why.className='exwhy show b';why.innerHTML='❌ Primero: <b>'+exEsc(exp.label)+'</b>';}};
+     bank.appendChild(b);});}
+ render();}
+
+// EL INTRUSO: pool item = {words:[...], odd, why}
+function buildOdd(id,cfg){
+ const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(5,cfg.pool.length);
+ function render(){const series=exSample(cfg.pool,per);let ok=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="qlist"></div><div class="exscore">Juist: <b class="ok">0</b>/'+series.length+'</div>';
+   host.querySelector('.otra').onclick=render;const list=host.querySelector('.qlist'),scoreEl=host.querySelector('.ok');
+   series.forEach(it=>{const q=document.createElement('div');q.className='exq';q.innerHTML='<div class="exopts"></div><div class="exwhy"></div>';
+     const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy');let locked=false;
+     exSample(it.words.map((w,i)=>({w,i})),it.words.length).forEach(o=>{const b=document.createElement('button');b.className='exopt';b.type='button';b.textContent=o.w;
+       b.onclick=()=>{if(locked)return;locked=true;const good=o.i===it.odd;opts.querySelectorAll('.exopt').forEach(x=>x.disabled=true);
+         if(good){ok++;scoreEl.textContent=ok;b.classList.add('ok');}else{b.classList.add('no');opts.querySelectorAll('.exopt').forEach(x=>{if(x.textContent===it.words[it.odd])x.classList.add('ok');});}
+         why.className='exwhy show '+(good?'g':'b');why.innerHTML=(good?'✅ ¡bien! ':'❌ → '+exEsc(it.words[it.odd])+'. ')+(it.why?exEsc(it.why):'');};
+       opts.appendChild(b);});
+     list.appendChild(q);});}
+ render();}
+
+// ---- data + calls ----
+function buildInlineExercises(){
+ // GRAMÁTICA
+ buildOrder('gx_build',{title:'Construye: ir a + infinitivo',desc:'Tik de blokjes in de juiste volgorde (onderwerp → ir → a → infinitivo → voorwerp).',rounds:[
+   {sub:'yo · comer',items:[{label:'Yo',key:1},{label:'voy',key:2},{label:'a',key:3},{label:'comer',key:4},{label:'un taco',key:5}]},
+   {sub:'tú · tomar',items:[{label:'¿Tú',key:1},{label:'vas',key:2},{label:'a',key:3},{label:'tomar',key:4},{label:'un café?',key:5}]},
+   {sub:'nosotros · pedir',items:[{label:'Nosotros',key:1},{label:'vamos',key:2},{label:'a',key:3},{label:'pedir',key:4},{label:'la cuenta',key:5}]},
+   {sub:'ellos · probar',items:[{label:'Ellos',key:1},{label:'van',key:2},{label:'a',key:3},{label:'probar',key:4},{label:'el ceviche',key:5}]},
+   {sub:'ella · preparar',items:[{label:'Lucía',key:1},{label:'va',key:2},{label:'a',key:3},{label:'preparar',key:4},{label:'una tortilla',key:5}]},
+   {sub:'yo · negativo',items:[{label:'Yo',key:1},{label:'no',key:2},{label:'voy',key:3},{label:'a',key:4},{label:'beber refresco',key:5}]}]});
+ buildChoice('gx_iraq',{title:'Mini-quiz: ir a + infinitivo',desc:'Kies de juiste vorm van «ir a». Directe feedback.',per:6,pool:[
+   {q:'(Yo) ___ comer un taco.',opts:['voy a','vas a','va a'],ans:'voy a',why:'yo → voy a'},
+   {q:'¿(Tú) ___ tomar algo?',opts:['vas a','voy a','va a'],ans:'vas a',why:'tú → vas a'},
+   {q:'(Nosotros) ___ pedir la cuenta.',opts:['vamos a','van a','voy a'],ans:'vamos a',why:'nosotros → vamos a'},
+   {q:'Diego ___ probar el ceviche.',opts:['va a','van a','vas a'],ans:'va a',why:'él → va a'},
+   {q:'(Ellos) ___ cocinar hoy.',opts:['van a','va a','vamos a'],ans:'van a',why:'ellos → van a'},
+   {q:'¿(Vosotros) ___ cenar aquí?',opts:['vais a','van a','vamos a'],ans:'vais a',why:'vosotros → vais a'},
+   {q:'Mañana (yo) ___ preparar arepas.',opts:['voy a','va a','vas a'],ans:'voy a',why:'yo → voy a'},
+   {q:'Lucía ___ comprar fruta.',opts:['va a','van a','vas a'],ans:'va a',why:'ella → va a'},
+   {q:'¿Qué ___ tomar tú?',opts:['vas a','va a','voy a'],ans:'vas a',why:'tú → vas a'},
+   {q:'Nina y Valen ___ viajar a México.',opts:['van a','vamos a','va a'],ans:'van a',why:'ellas → van a'}]});
+ buildMatch('gx_conc',{title:'Concordancia: nombre ↔ mucho…',desc:'Koppel het woord aan de juiste vorm van «mucho» (m/v · ev/mv).',per:6,pool:[
+   {a:'pan',b:'mucho pan'},{a:'fruta',b:'mucha fruta'},{a:'tomates',b:'muchos tomates'},{a:'manzanas',b:'muchas manzanas'},
+   {a:'arroz',b:'mucho arroz'},{a:'leche',b:'mucha leche'},{a:'huevos',b:'muchos huevos'},{a:'uvas',b:'muchas uvas'},
+   {a:'queso',b:'mucho queso'},{a:'gambas',b:'muchas gambas'}]});
+ buildChoice('gx_cantq',{title:'Mini-quiz: cantidades',desc:'un kilo de · un poco de · una botella de. Kies wat past.',per:6,pool:[
+   {q:'___ agua, por favor.',opts:['una botella de','un kilo de','un poco de'],ans:'una botella de',why:'vloeistof → botella'},
+   {q:'___ tomates para la salsa.',opts:['un kilo de','una botella de','un poco de'],ans:'un kilo de',why:'fruta/verdura → kilo'},
+   {q:'Solo ___ queso, gracias.',opts:['un poco de','un kilo de','una botella de'],ans:'un poco de',why:'niet-telbaar → un poco de'},
+   {q:'___ manzanas, por favor.',opts:['un kilo de','una botella de','un poco de'],ans:'un kilo de',why:'fruta → kilo'},
+   {q:'___ refresco bien frío.',opts:['una botella de','un kilo de','un poco de'],ans:'una botella de',why:'vloeistof → botella'},
+   {q:'Pon ___ sal en la sopa.',opts:['un poco de','un kilo de','una botella de'],ans:'un poco de',why:'niet-telbaar'},
+   {q:'___ zumo de naranja.',opts:['una botella de','un kilo de','un paquete de'],ans:'una botella de',why:'vloeistof → botella'},
+   {q:'Quiero ___ uvas.',opts:['un kilo de','una botella de','un poco de'],ans:'un kilo de',why:'fruta → kilo'},
+   {q:'Necesito ___ harina.',opts:['un poco de','un kilo de','una botella de'],ans:'un poco de',why:'niet-telbaar'},
+   {q:'___ leche para el café.',opts:['un poco de','un kilo de','un paquete de'],ans:'un poco de',why:'niet-telbaar'}]});
+ buildChoice('gx_pronq',{title:'Mini-quiz: lo / la / los / las',desc:'Welk pronomen vervangt het voorwerp? (la cuenta → la traigo)',per:6,pool:[
+   {q:'¿La cuenta? — Sí, ___ traigo.',opts:['la','lo','las'],ans:'la',why:'la cuenta (f ev)'},
+   {q:'¿El pan? — ___ traigo ahora.',opts:['Lo','La','Los'],ans:'Lo',why:'el pan (m ev)'},
+   {q:'¿Los tacos? — Sí, ___ quiero.',opts:['los','las','lo'],ans:'los',why:'los tacos (m pl)'},
+   {q:'¿Las gambas? — ___ pido.',opts:['Las','Los','La'],ans:'Las',why:'las gambas (f pl)'},
+   {q:'¿El postre? — Sí, ___ quiero.',opts:['lo','la','los'],ans:'lo',why:'el postre (m ev)'},
+   {q:'¿La carta? — Ahora ___ traigo.',opts:['la','lo','las'],ans:'la',why:'la carta (f ev)'},
+   {q:'¿Los refrescos? — ___ traigo.',opts:['Los','Las','Lo'],ans:'Los',why:'los refrescos (m pl)'},
+   {q:'¿Las manzanas? — ___ como.',opts:['Las','Los','La'],ans:'Las',why:'las manzanas (f pl)'},
+   {q:'¿El guacamole? — ___ preparo yo.',opts:['Lo','La','Los'],ans:'Lo',why:'el guacamole (m ev)'},
+   {q:'¿La ensalada? — ___ traigo.',opts:['La','Lo','Las'],ans:'La',why:'la ensalada (f ev)'}]});
+ buildChoice('gx_mix',{title:'Repaso mixto: rellena',desc:'Alles door elkaar: ir a · cantidades · pronombres · vocabulario.',per:8,pool:[
+   {q:'(Nosotros) ___ comer paella.',opts:['vamos a','van a','voy a'],ans:'vamos a',why:'nosotros → vamos a'},
+   {q:'Hay ___ fruta en el mercado.',opts:['mucha','mucho','muchos'],ans:'mucha',why:'la fruta (f)'},
+   {q:'¿La cuenta? — ___ traigo.',opts:['La','Lo','Las'],ans:'La',why:'la cuenta (f ev)'},
+   {q:'Para mí ___ botella de agua.',opts:['una','un','unos'],ans:'una',why:'la botella (f)'},
+   {q:'Diego ___ probar el ceviche.',opts:['va a','van a','vas a'],ans:'va a',why:'él → va a'},
+   {q:'¿El pan? — ___ traigo ahora.',opts:['Lo','La','Los'],ans:'Lo',why:'el pan (m ev)'},
+   {q:'Compro un ___ de tomates.',opts:['kilo','poco','botella'],ans:'kilo',why:'fruta/verdura → un kilo de'},
+   {q:'Hay ___ churros en la mesa.',opts:['muchos','muchas','mucho'],ans:'muchos',why:'los churros (m pl)'},
+   {q:'¿(Tú) ___ tomar postre?',opts:['vas a','va a','voy a'],ans:'vas a',why:'tú → vas a'},
+   {q:'¿Las bebidas? — ___ pongo en la mesa.',opts:['Las','Los','La'],ans:'Las',why:'las bebidas (f pl)'},
+   {q:'Solo ___ poco de queso.',opts:['un','una','unos'],ans:'un',why:'un poco de'},
+   {q:'En el mercado hay ___ verduras.',opts:['muchas','muchos','mucha'],ans:'muchas',why:'las verduras (f pl)'}]});
+ // VOCABULARIO
+ buildMatch('vx_match',{title:'Empareja: palabra ↔ emoji',desc:'Koppel het Spaanse woord aan het juiste beeld.',per:6,pool:[
+   {a:'la manzana',b:'🍎'},{a:'el plátano',b:'🍌'},{a:'la naranja',b:'🍊'},{a:'las uvas',b:'🍇'},
+   {a:'la piña',b:'🍍'},{a:'el pan',b:'🥖'},{a:'el queso',b:'🧀'},{a:'el pollo',b:'🍗'},
+   {a:'el pescado',b:'🐟'},{a:'los tacos',b:'🌮'},{a:'el café',b:'☕'},{a:'la sopa',b:'🍲'}]});
+ buildChoice('vx_gap',{title:'Completa la frase',desc:'Kies het woord dat in de zin past.',per:6,pool:[
+   {q:'En el mercado compro ___ para el zumo.',opts:['naranjas','tenedor','cuenta'],ans:'naranjas',why:'zumo de naranja'},
+   {q:'Para la ensalada necesito ___.',opts:['lechuga','refresco','postre'],ans:'lechuga',why:'ensalada = lechuga'},
+   {q:'De postre quiero un ___.',opts:['flan','vaso','mantel'],ans:'flan',why:'el flan = postre'},
+   {q:'El ___ es una bebida caliente.',opts:['café','pan','queso'],ans:'café',why:'café = bebida caliente'},
+   {q:'Como un ___ de pollo con salsa.',opts:['taco','vaso','plato'],ans:'taco',why:'el taco'},
+   {q:'Bebo una ___ de agua.',opts:['botella','cuchara','servilleta'],ans:'botella',why:'una botella de agua'},
+   {q:'El guacamole lleva ___.',opts:['aguacate','arroz','pollo'],ans:'aguacate',why:'guacamole = aguacate'},
+   {q:'Tomo la sopa con la ___.',opts:['cuchara','taza','servilleta'],ans:'cuchara',why:'la sopa → la cuchara'},
+   {q:'Corto el pan con el ___.',opts:['cuchillo','vaso','plato'],ans:'cuchillo',why:'cortar → el cuchillo'},
+   {q:'La paella lleva ___.',opts:['arroz','chocolate','lechuga'],ans:'arroz',why:'paella = arroz'}]});
+ buildChoice('vx_def',{title:'¿Qué palabra es?',desc:'Lees de definitie en kies het juiste woord.',per:6,pool:[
+   {q:'Fruta amarilla y curva:',opts:['el plátano','la manzana','el tomate'],ans:'el plátano',why:'plátano = banaan'},
+   {q:'Bebida de la mañana, caliente:',opts:['el café','el agua','el zumo'],ans:'el café',why:'café'},
+   {q:'Postre típico, dulce y blando:',opts:['el flan','la sopa','la ensalada'],ans:'el flan',why:'flan = postre'},
+   {q:'Verdura verde para la ensalada:',opts:['la lechuga','la cebolla','el maíz'],ans:'la lechuga',why:'lechuga = sla'},
+   {q:'Plato mexicano con tortilla:',opts:['el taco','la paella','el ceviche'],ans:'el taco',why:'taco 🇲🇽'},
+   {q:'Se usa para beber agua:',opts:['el vaso','el plato','el tenedor'],ans:'el vaso',why:'vaso = glas'},
+   {q:'Producto del cerdo, salado:',opts:['el jamón','el queso','el huevo'],ans:'el jamón',why:'jamón = ham'},
+   {q:'Fruta tropical de México:',opts:['la piña','las uvas','la fresa'],ans:'la piña',why:'piña = ananas'}]});
+ buildOdd('vx_odd',{title:'El intruso',desc:'Klik het woord dat NIET bij de andere hoort.',per:5,pool:[
+   {words:['la manzana','el plátano','la naranja','el pollo'],odd:3,why:'el pollo = carne, geen fruta'},
+   {words:['el agua','el café','el zumo','el pan'],odd:3,why:'el pan = comida, geen bebida'},
+   {words:['el tenedor','el cuchillo','la cuchara','la manzana'],odd:3,why:'la manzana = fruta, geen cubierto'},
+   {words:['los tacos','el guacamole','la paella','las quesadillas'],odd:2,why:'la paella = España; de rest México'},
+   {words:['la lechuga','el tomate','la cebolla','la fresa'],odd:3,why:'la fresa = fruta; de rest verdura'},
+   {words:['el flan','los churros','el pescado','la piña'],odd:2,why:'el pescado is geen postre'},
+   {words:['mucho','mucha','muchos','poco'],odd:3,why:'«poco» is geen vorm van «mucho»'},
+   {words:['la sopa','el pollo','el arroz','el refresco'],odd:3,why:'el refresco = bebida; de rest comida'}]});
+ // LECTURA
+ buildOrder('lx_order',{title:'Ordena la comida',desc:'Tik de items in de juiste volgorde.',rounds:[
+   {sub:'las partes del menú',items:[{label:'De primero (entrante)',key:1},{label:'De segundo (plato fuerte)',key:2},{label:'De postre',key:3},{label:'La cuenta',key:4}]},
+   {sub:'de barato a caro · carta de Lucía',items:[{label:'Fruta del día — 3 €',key:1},{label:'Sopa de tomate — 4 €',key:2},{label:'Pollo con patatas — 9 €',key:3},{label:'Pescado a la plancha — 11 €',key:4}]},
+   {sub:'los momentos del día',items:[{label:'el desayuno',key:1},{label:'la comida',key:2},{label:'la merienda',key:3},{label:'la cena',key:4}]},
+   {sub:'de barato a caro · carta de Diego',items:[{label:'Flan casero — 3 €',key:1},{label:'Elote con queso — 4 €',key:2},{label:'Tacos de pollo — 8 €',key:3},{label:'Ceviche de pescado — 10 €',key:4}]}]});
+ buildChoice('lx_scan',{title:'Comprensión: escanea y escoge',desc:'Zoek de info in de twee cartas en kies het juiste antwoord.',per:6,pool:[
+   {q:'¿Cuánto cuesta el pollo con patatas?',opts:['9 €','11 €','4 €'],ans:'9 €',why:'«Pollo con patatas 9 €»'},
+   {q:'¿Qué postre hay en casa de Lucía?',opts:['Churros con chocolate','Flan casero','Elote con queso'],ans:'Churros con chocolate',why:'carta de Lucía'},
+   {q:'¿De qué son los tacos de Diego?',opts:['de pollo','de pescado','de carne'],ans:'de pollo',why:'«Tacos de pollo»'},
+   {q:'¿Cuál es el plato más caro de Lucía?',opts:['Pescado a la plancha','Sopa de tomate','Ensalada mixta'],ans:'Pescado a la plancha',why:'11 € = el más caro'},
+   {q:'¿Qué cuesta 5 € en casa de Lucía?',opts:['Ensalada mixta','Fruta del día','Sopa de tomate'],ans:'Ensalada mixta',why:'«Ensalada mixta 5 €»'},
+   {q:'¿Cuánto cuesta el ceviche de Diego?',opts:['10 €','8 €','3 €'],ans:'10 €',why:'«Ceviche de pescado 10 €»'},
+   {q:'¿Qué fruta hay de postre en casa de Diego?',opts:['Piña con lima','Manzana','Uvas'],ans:'Piña con lima',why:'carta de Diego'},
+   {q:'¿Cuánto cuesta el guacamole con nachos?',opts:['5 €','4 €','8 €'],ans:'5 €',why:'«Guacamole con nachos 5 €»'}]});
+}
+
+renderFC();renderTable();gameCantidad();gamePron();renderLectura();buildRecorders();buildInlineExercises();
 (function(){const h=location.hash.replace('#','');const i=PANELS.findIndex(p=>p[0]===h);if(i>=0)sn.children[i].click();})();
 window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');const i=PANELS.findIndex(p=>p[0]===h);if(i>=0)sn.children[i].click();});
 
