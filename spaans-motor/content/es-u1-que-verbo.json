@@ -1,0 +1,148 @@
+{
+  "id": "es-u1-que-verbo",
+  "title": "¿Qué verbo?",
+  "subtitle": "U1 · kies het juiste werkwoord in de zin",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Welke werkwoordsvorm past in de zin?",
+    "items": [
+      {
+        "stimulus": "Me ___ Leo.",
+        "options": [
+          "llamo",
+          "soy",
+          "tengo"
+        ],
+        "answer": "llamo",
+        "tag": "v",
+        "sub": "llamarse → me llamo"
+      },
+      {
+        "stimulus": "___ de Bélgica.",
+        "options": [
+          "Soy",
+          "Tengo",
+          "Vivo"
+        ],
+        "answer": "Soy",
+        "tag": "v",
+        "sub": "ser → afkomst"
+      },
+      {
+        "stimulus": "___ en Gante.",
+        "options": [
+          "Vivo",
+          "Soy",
+          "Me llamo"
+        ],
+        "answer": "Vivo",
+        "tag": "v",
+        "sub": "vivir → wonen"
+      },
+      {
+        "stimulus": "___ 15 años.",
+        "options": [
+          "Tengo",
+          "Soy",
+          "Vivo"
+        ],
+        "answer": "Tengo",
+        "tag": "v",
+        "sub": "tener → leeftijd"
+      },
+      {
+        "stimulus": "¿Cómo te ___?",
+        "options": [
+          "llamas",
+          "eres",
+          "vives"
+        ],
+        "answer": "llamas",
+        "tag": "v",
+        "sub": "llamarse"
+      },
+      {
+        "stimulus": "¿De dónde ___?",
+        "options": [
+          "eres",
+          "tienes",
+          "vives"
+        ],
+        "answer": "eres",
+        "tag": "v",
+        "sub": "ser → origen"
+      },
+      {
+        "stimulus": "¿Dónde ___?",
+        "options": [
+          "vives",
+          "eres",
+          "tienes"
+        ],
+        "answer": "vives",
+        "tag": "v",
+        "sub": "vivir"
+      },
+      {
+        "stimulus": "Ella ___ española.",
+        "options": [
+          "es",
+          "tiene",
+          "vive"
+        ],
+        "answer": "es",
+        "tag": "v",
+        "sub": "ser → nationaliteit"
+      },
+      {
+        "stimulus": "Diego ___ en México.",
+        "options": [
+          "vive",
+          "es",
+          "tiene"
+        ],
+        "answer": "vive",
+        "tag": "v",
+        "sub": "vivir"
+      },
+      {
+        "stimulus": "Nosotros ___ estudiantes.",
+        "options": [
+          "somos",
+          "tenemos",
+          "vivimos"
+        ],
+        "answer": "somos",
+        "tag": "v",
+        "sub": "ser"
+      },
+      {
+        "stimulus": "¿Cuántos años ___?",
+        "options": [
+          "tienes",
+          "eres",
+          "vives"
+        ],
+        "answer": "tienes",
+        "tag": "v",
+        "sub": "tener → leeftijd"
+      },
+      {
+        "stimulus": "Mi amiga se ___ Sara.",
+        "options": [
+          "llama",
+          "es",
+          "tiene"
+        ],
+        "answer": "llama",
+        "tag": "v",
+        "sub": "llamarse (3ª)"
+      }
+    ]
+  }
+}

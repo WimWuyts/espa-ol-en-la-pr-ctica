@@ -1,0 +1,130 @@
+{
+  "id": "es-u1-caza-mayusculas",
+  "title": "Caza de mayúsculas",
+  "subtitle": "U1 · klik het woord dat verkeerd geschreven is",
+  "lang": "es",
+  "template": "point",
+  "options": {
+    "audio": false
+  },
+  "point": {
+    "prompt": "Klik het woord dat FOUT geschreven is",
+    "mode": "one",
+    "rounds": [
+      {
+        "tag": "orto",
+        "sub": "landen = hoofdletter, talen/nationaliteiten = klein",
+        "targets": [
+          {
+            "label": "España"
+          },
+          {
+            "label": "Bélgica"
+          },
+          {
+            "label": "Español",
+            "hit": true
+          },
+          {
+            "label": "Madrid"
+          }
+        ]
+      },
+      {
+        "tag": "orto",
+        "sub": "nationaliteit met kleine letter",
+        "targets": [
+          {
+            "label": "belga"
+          },
+          {
+            "label": "Mexicano",
+            "hit": true
+          },
+          {
+            "label": "francés"
+          },
+          {
+            "label": "peruano"
+          }
+        ]
+      },
+      {
+        "tag": "orto",
+        "sub": "talen met kleine letter",
+        "targets": [
+          {
+            "label": "neerlandés"
+          },
+          {
+            "label": "español"
+          },
+          {
+            "label": "Italiano",
+            "hit": true
+          },
+          {
+            "label": "inglés"
+          }
+        ]
+      },
+      {
+        "tag": "orto",
+        "sub": "land = hoofdletter",
+        "targets": [
+          {
+            "label": "méxico",
+            "hit": true
+          },
+          {
+            "label": "Colombia"
+          },
+          {
+            "label": "Perú"
+          },
+          {
+            "label": "Chile"
+          }
+        ]
+      },
+      {
+        "tag": "orto",
+        "sub": "stad = hoofdletter",
+        "targets": [
+          {
+            "label": "sevilla",
+            "hit": true
+          },
+          {
+            "label": "Madrid"
+          },
+          {
+            "label": "Barcelona"
+          },
+          {
+            "label": "Cartagena"
+          }
+        ]
+      },
+      {
+        "tag": "orto",
+        "sub": "nationaliteit met kleine letter",
+        "targets": [
+          {
+            "label": "Argentino",
+            "hit": true
+          },
+          {
+            "label": "chileno"
+          },
+          {
+            "label": "cubano"
+          },
+          {
+            "label": "colombiano"
+          }
+        ]
+      }
+    ]
+  }
+}

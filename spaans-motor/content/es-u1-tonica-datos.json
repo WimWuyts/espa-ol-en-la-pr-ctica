@@ -1,0 +1,157 @@
+{
+  "id": "es-u1-tonica-datos",
+  "title": "La tónica de los datos",
+  "subtitle": "U1 · tik de sterke lettergreep (recyclen U0)",
+  "lang": "es",
+  "template": "tap",
+  "options": {
+    "rounds": 14,
+    "audio": false
+  },
+  "tap": {
+    "prompt": "Tik de sílaba tónica (de sterke lettergreep)",
+    "joiner": "·",
+    "items": [
+      {
+        "parts": [
+          "pa",
+          "ís"
+        ],
+        "answer": 1,
+        "tag": "aguda",
+        "sub": "país · hiato + tilde"
+      },
+      {
+        "parts": [
+          "ciu",
+          "dad"
+        ],
+        "answer": 1,
+        "tag": "aguda",
+        "sub": "ciudad"
+      },
+      {
+        "parts": [
+          "na",
+          "cio",
+          "na",
+          "li",
+          "dad"
+        ],
+        "answer": 4,
+        "tag": "aguda",
+        "sub": "nacionalidad"
+      },
+      {
+        "parts": [
+          "e",
+          "dad"
+        ],
+        "answer": 1,
+        "tag": "aguda",
+        "sub": "edad"
+      },
+      {
+        "parts": [
+          "es",
+          "pa",
+          "ñol"
+        ],
+        "answer": 2,
+        "tag": "aguda",
+        "sub": "español"
+      },
+      {
+        "parts": [
+          "a",
+          "pe",
+          "lli",
+          "do"
+        ],
+        "answer": 2,
+        "tag": "llana",
+        "sub": "apellido"
+      },
+      {
+        "parts": [
+          "nom",
+          "bre"
+        ],
+        "answer": 0,
+        "tag": "llana",
+        "sub": "nombre"
+      },
+      {
+        "parts": [
+          "i",
+          "dio",
+          "ma"
+        ],
+        "answer": 1,
+        "tag": "llana",
+        "sub": "idioma"
+      },
+      {
+        "parts": [
+          "ar",
+          "gen",
+          "ti",
+          "na"
+        ],
+        "answer": 2,
+        "tag": "llana",
+        "sub": "Argentina"
+      },
+      {
+        "parts": [
+          "te",
+          "lé",
+          "fo",
+          "no"
+        ],
+        "answer": 1,
+        "tag": "esdrujula",
+        "sub": "teléfono"
+      },
+      {
+        "parts": [
+          "Mé",
+          "xi",
+          "co"
+        ],
+        "answer": 0,
+        "tag": "esdrujula",
+        "sub": "México"
+      },
+      {
+        "parts": [
+          "di",
+          "rec",
+          "ción"
+        ],
+        "answer": 2,
+        "tag": "aguda",
+        "sub": "dirección"
+      },
+      {
+        "parts": [
+          "Bél",
+          "gi",
+          "ca"
+        ],
+        "answer": 0,
+        "tag": "esdrujula",
+        "sub": "Bélgica"
+      },
+      {
+        "parts": [
+          "Pe",
+          "rú"
+        ],
+        "answer": 1,
+        "tag": "aguda",
+        "sub": "Perú"
+      }
+    ]
+  }
+}

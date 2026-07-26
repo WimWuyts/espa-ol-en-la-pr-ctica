@@ -1,0 +1,112 @@
+{
+  "id": "es-u1-ser-tener",
+  "title": "¿SER o TENER?",
+  "subtitle": "U1 · welk werkwoord? Let op de leeftijd-valstrik",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 14,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Welk werkwoord past? (leeftijd = TENER, niet SER!)",
+    "categories": [
+      {
+        "id": "ser",
+        "label": "SER<br><small>zijn / afkomst</small>",
+        "glaze": "#E0A22F"
+      },
+      {
+        "id": "tener",
+        "label": "TENER<br><small>hebben / leeftijd</small>",
+        "glaze": "#2E8E68"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "Yo ___ de Bélgica.",
+        "answer": "ser",
+        "tag": "ser",
+        "sub": "soy — afkomst"
+      },
+      {
+        "stimulus": "Yo ___ 15 años.",
+        "answer": "tener",
+        "tag": "tener",
+        "sub": "tengo — leeftijd!"
+      },
+      {
+        "stimulus": "Ella ___ española.",
+        "answer": "ser",
+        "tag": "ser",
+        "sub": "es — nationaliteit"
+      },
+      {
+        "stimulus": "¿Cuántos años ___?",
+        "answer": "tener",
+        "tag": "tener",
+        "sub": "tienes — leeftijd"
+      },
+      {
+        "stimulus": "Nosotros ___ estudiantes.",
+        "answer": "ser",
+        "tag": "ser",
+        "sub": "somos"
+      },
+      {
+        "stimulus": "Mi hermano ___ 12 años.",
+        "answer": "tener",
+        "tag": "tener",
+        "sub": "tiene — leeftijd"
+      },
+      {
+        "stimulus": "Tú ___ de México, ¿verdad?",
+        "answer": "ser",
+        "tag": "ser",
+        "sub": "eres — afkomst"
+      },
+      {
+        "stimulus": "Yo ___ un correo nuevo.",
+        "answer": "tener",
+        "tag": "tener",
+        "sub": "tengo — bezit"
+      },
+      {
+        "stimulus": "¿De dónde ___ vosotros?",
+        "answer": "ser",
+        "tag": "ser",
+        "sub": "sois — afkomst"
+      },
+      {
+        "stimulus": "Lucía ___ 16 años.",
+        "answer": "tener",
+        "tag": "tener",
+        "sub": "tiene — leeftijd"
+      },
+      {
+        "stimulus": "El profesor ___ simpático.",
+        "answer": "ser",
+        "tag": "ser",
+        "sub": "es — eigenschap"
+      },
+      {
+        "stimulus": "Ellos ___ dos apellidos.",
+        "answer": "tener",
+        "tag": "tener",
+        "sub": "tienen — bezit"
+      },
+      {
+        "stimulus": "Madrid ___ la capital.",
+        "answer": "ser",
+        "tag": "ser",
+        "sub": "es"
+      },
+      {
+        "stimulus": "Yo ___ una pregunta.",
+        "answer": "tener",
+        "tag": "tener",
+        "sub": "tengo — bezit"
+      }
+    ]
+  }
+}

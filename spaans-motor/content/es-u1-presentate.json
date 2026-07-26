@@ -1,0 +1,121 @@
+{
+  "id": "es-u1-presentate",
+  "title": "¡Preséntate!",
+  "subtitle": "U1 · schrijf je voorstelling — met alle bouwstenen",
+  "lang": "es",
+  "template": "sim",
+  "options": {
+    "audio": false
+  },
+  "sim": {
+    "prompt": "Tarea comunicativa · zich voorstellen",
+    "rounds": [
+      {
+        "scenario": "Preséntate a Lucía por chat.",
+        "tag": "pres",
+        "sub": "gebruik: me llamo · soy de · tengo … años",
+        "min": 8,
+        "need": [
+          {
+            "re": "me llamo",
+            "label": "me llamo …"
+          },
+          {
+            "re": "soy de",
+            "label": "soy de …"
+          },
+          {
+            "re": "tengo .*(años|año)",
+            "label": "tengo … años"
+          }
+        ],
+        "bank": [
+          "¡Hola!",
+          "Me llamo",
+          "Soy de",
+          "Bélgica",
+          "tengo",
+          "15 años",
+          "y",
+          "Encantado",
+          "Vivo en",
+          "Gante"
+        ],
+        "model": "¡Hola! Me llamo Leo, soy de Bélgica y tengo 15 años. Vivo en Gante. ¡Encantado!"
+      },
+      {
+        "scenario": "Rellena tu perfil: nombre, origen, edad, ciudad.",
+        "tag": "pres",
+        "sub": "vier gegevens in hele zinnen",
+        "min": 10,
+        "need": [
+          {
+            "re": "me llamo|mi nombre",
+            "label": "nombre"
+          },
+          {
+            "re": "soy de|soy [a-z]",
+            "label": "origen/nacionalidad"
+          },
+          {
+            "re": "tengo .*(años|año)",
+            "label": "edad"
+          },
+          {
+            "re": "vivo en",
+            "label": "ciudad (vivo en …)"
+          }
+        ],
+        "bank": [
+          "Me llamo",
+          "Mi nombre es",
+          "Soy de",
+          "Soy belga",
+          "tengo",
+          "14 años",
+          "Vivo en",
+          "Amberes",
+          "Hablo",
+          "dos idiomas"
+        ],
+        "model": "Me llamo Sara, soy belga y tengo 14 años. Vivo en Amberes y hablo dos idiomas."
+      },
+      {
+        "scenario": "Responde: «¿Quién eres?» Preséntate a la clase.",
+        "tag": "pres",
+        "sub": "saludo + 3 datos + despedida",
+        "min": 10,
+        "need": [
+          {
+            "re": "hola|buenos|buenas",
+            "label": "saludo"
+          },
+          {
+            "re": "me llamo|soy",
+            "label": "nombre/ser"
+          },
+          {
+            "re": "tengo .*(años|año)",
+            "label": "edad"
+          },
+          {
+            "re": "gracias|adiós|encantad",
+            "label": "cierre"
+          }
+        ],
+        "bank": [
+          "¡Buenos días!",
+          "Me llamo",
+          "Soy de",
+          "España",
+          "tengo",
+          "16 años",
+          "Encantada",
+          "Gracias",
+          "Hablo español"
+        ],
+        "model": "¡Buenos días! Me llamo Nina, soy de Perú y tengo 16 años. Hablo español. ¡Gracias!"
+      }
+    ]
+  }
+}

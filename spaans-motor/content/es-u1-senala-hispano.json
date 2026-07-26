@@ -1,0 +1,108 @@
+{
+  "id": "es-u1-senala-hispano",
+  "title": "Señala el mundo hispano",
+  "subtitle": "U1 · klik ALLE Spaanstalige landen",
+  "lang": "es",
+  "template": "point",
+  "options": {
+    "audio": false
+  },
+  "point": {
+    "prompt": "Klik ALLE landen waar Spaans een officiële taal is",
+    "mode": "all",
+    "rounds": [
+      {
+        "tag": "hispano",
+        "sub": "3 hispanohablantes",
+        "targets": [
+          {
+            "label": "México",
+            "hit": true
+          },
+          {
+            "label": "Brasil"
+          },
+          {
+            "label": "Perú",
+            "hit": true
+          },
+          {
+            "label": "Portugal"
+          },
+          {
+            "label": "España",
+            "hit": true
+          }
+        ]
+      },
+      {
+        "tag": "hispano",
+        "sub": "3 hispanohablantes",
+        "targets": [
+          {
+            "label": "Francia"
+          },
+          {
+            "label": "Colombia",
+            "hit": true
+          },
+          {
+            "label": "Argentina",
+            "hit": true
+          },
+          {
+            "label": "Italia"
+          },
+          {
+            "label": "Chile",
+            "hit": true
+          }
+        ]
+      },
+      {
+        "tag": "hispano",
+        "sub": "let op: ook in Afrika!",
+        "targets": [
+          {
+            "label": "Guinea Ecuatorial",
+            "hit": true
+          },
+          {
+            "label": "Marruecos"
+          },
+          {
+            "label": "Cuba",
+            "hit": true
+          },
+          {
+            "label": "Egipto"
+          },
+          {
+            "label": "Bolivia",
+            "hit": true
+          }
+        ]
+      },
+      {
+        "tag": "hispano",
+        "sub": "2 hispanohablantes",
+        "targets": [
+          {
+            "label": "Alemania"
+          },
+          {
+            "label": "Venezuela",
+            "hit": true
+          },
+          {
+            "label": "los Países Bajos"
+          },
+          {
+            "label": "Ecuador",
+            "hit": true
+          }
+        ]
+      }
+    ]
+  }
+}

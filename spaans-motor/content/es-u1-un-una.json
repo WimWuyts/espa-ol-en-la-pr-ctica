@@ -1,0 +1,116 @@
+{
+  "id": "es-u1-un-una",
+  "title": "¿un o una?",
+  "subtitle": "U1 · onbepaald lidwoord, let op het geslacht",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies un (m.) of una (f.)",
+    "items": [
+      {
+        "stimulus": "___ ciudad",
+        "options": [
+          "una",
+          "un"
+        ],
+        "answer": "una",
+        "tag": "a",
+        "sub": "la ciudad → una"
+      },
+      {
+        "stimulus": "___ país",
+        "options": [
+          "un",
+          "una"
+        ],
+        "answer": "un",
+        "tag": "a",
+        "sub": "el país → un"
+      },
+      {
+        "stimulus": "___ pregunta",
+        "options": [
+          "una",
+          "un"
+        ],
+        "answer": "una",
+        "tag": "a",
+        "sub": "la pregunta → una"
+      },
+      {
+        "stimulus": "___ nombre",
+        "options": [
+          "un",
+          "una"
+        ],
+        "answer": "un",
+        "tag": "a",
+        "sub": "el nombre → un"
+      },
+      {
+        "stimulus": "___ dirección",
+        "options": [
+          "una",
+          "un"
+        ],
+        "answer": "una",
+        "tag": "a",
+        "sub": "la dirección → una"
+      },
+      {
+        "stimulus": "___ correo",
+        "options": [
+          "un",
+          "una"
+        ],
+        "answer": "un",
+        "tag": "a",
+        "sub": "el correo → un"
+      },
+      {
+        "stimulus": "___ nacionalidad",
+        "options": [
+          "una",
+          "un"
+        ],
+        "answer": "una",
+        "tag": "a",
+        "sub": "la nacionalidad → una"
+      },
+      {
+        "stimulus": "___ idioma",
+        "options": [
+          "un",
+          "una"
+        ],
+        "answer": "un",
+        "tag": "a",
+        "sub": "el idioma → un (valstrik!)"
+      },
+      {
+        "stimulus": "___ firma",
+        "options": [
+          "una",
+          "un"
+        ],
+        "answer": "una",
+        "tag": "a",
+        "sub": "la firma → una"
+      },
+      {
+        "stimulus": "___ apellido",
+        "options": [
+          "un",
+          "una"
+        ],
+        "answer": "un",
+        "tag": "a",
+        "sub": "el apellido → un"
+      }
+    ]
+  }
+}

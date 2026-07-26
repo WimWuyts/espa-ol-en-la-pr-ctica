@@ -1,0 +1,123 @@
+{
+  "id": "es-u1-ar-er-ir",
+  "title": "-ar · -er · -ir",
+  "subtitle": "U1 · sorteer de infinitieven per klasse",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 15,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Welke vervoegingsklasse? Kijk naar de uitgang.",
+    "categories": [
+      {
+        "id": "ar",
+        "label": "-ar",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "er",
+        "label": "-er",
+        "glaze": "#E0A22F"
+      },
+      {
+        "id": "ir",
+        "label": "-ir",
+        "glaze": "#2E8E68"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "hablar",
+        "answer": "ar",
+        "tag": "ar",
+        "sub": "spreken"
+      },
+      {
+        "stimulus": "estudiar",
+        "answer": "ar",
+        "tag": "ar",
+        "sub": "studeren"
+      },
+      {
+        "stimulus": "trabajar",
+        "answer": "ar",
+        "tag": "ar",
+        "sub": "werken"
+      },
+      {
+        "stimulus": "llamar",
+        "answer": "ar",
+        "tag": "ar",
+        "sub": "noemen/bellen"
+      },
+      {
+        "stimulus": "rellenar",
+        "answer": "ar",
+        "tag": "ar",
+        "sub": "invullen"
+      },
+      {
+        "stimulus": "aprender",
+        "answer": "er",
+        "tag": "er",
+        "sub": "leren"
+      },
+      {
+        "stimulus": "comer",
+        "answer": "er",
+        "tag": "er",
+        "sub": "eten"
+      },
+      {
+        "stimulus": "leer",
+        "answer": "er",
+        "tag": "er",
+        "sub": "lezen"
+      },
+      {
+        "stimulus": "beber",
+        "answer": "er",
+        "tag": "er",
+        "sub": "drinken"
+      },
+      {
+        "stimulus": "comprender",
+        "answer": "er",
+        "tag": "er",
+        "sub": "begrijpen"
+      },
+      {
+        "stimulus": "vivir",
+        "answer": "ir",
+        "tag": "ir",
+        "sub": "wonen/leven"
+      },
+      {
+        "stimulus": "escribir",
+        "answer": "ir",
+        "tag": "ir",
+        "sub": "schrijven"
+      },
+      {
+        "stimulus": "abrir",
+        "answer": "ir",
+        "tag": "ir",
+        "sub": "openen"
+      },
+      {
+        "stimulus": "recibir",
+        "answer": "ir",
+        "tag": "ir",
+        "sub": "ontvangen"
+      },
+      {
+        "stimulus": "decidir",
+        "answer": "ir",
+        "tag": "ir",
+        "sub": "beslissen"
+      }
+    ]
+  }
+}
