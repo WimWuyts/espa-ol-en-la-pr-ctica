@@ -124,6 +124,9 @@ Elke unit/les levert **vier formaten met een identieke, uitgeverswaardige layout
 - [x] Toolchain voor de "één bron → 4 formaten"-generatie — **VASTGELEGD bij golden sample U0** (zie `HANDOVER_C5_C6.md` §3 + §8). — 2026-07-26
 - [ ] Bestaand C5-materiaal (netlify/afgewerkte U0–U6) importeren in deze repo?
 
+### U5 «¡Ñam!» = GELOCKT (2026-07-26) — norm voor het reservoir/cocktail-tijdperk
+U5 is door de auteur goedgekeurd en vastgezet als **referentie-unit voor de nieuwe pijplijn** (na §14ter). Wat U5 vastlegt voor U6–U8 (en de latere U0–U4-tweak): **cocktail-receta → reservoir plukken → coverage bijwerken**; **flashcard-iconen = Materiales-emoji-stijl** (`vocab_emoji.py`); **ruta-kaart discreet** (klein vanaf U1, groot enkel U0); **Cultura verrijkt** (unit-eigen kaarten uit `materiales-vorig-project`, niet enkel de kaart); **HTML-hub ≥100 interactieve oefeningen** met meerdere reeksen per oefening (§14ter); **master-vocab als kandidatenpool**. Niet meer aan U5 raken zonder expliciete vraag.
+
 ### GOLDEN SAMPLE U0 = GELOCKT (2026-07-26) → productieregels in `HANDOVER_C5_C6.md`
 U0 (C5) is goedgekeurd en vastgezet als norm voor álle volgende units. **Bij automatische generering (U1, U2, … en C6) exact dezelfde parameters/pijplijn hanteren als U0.** De volledige productiehandleiding staat in **`HANDOVER_C5_C6.md`** (lees dit vóór je een unit bouwt). Nieuw gelockte beslissingen deze sessie:
 - [x] **4 formaten per unit** = PDF (+ bewerkbare `U<N>.html`-laag) · HTML-hub (bewerkbaar) · PowerPoint 2 decks (docente `.pptx` + alumno `.pptx`) · motor-spellen ingebed in de hub.
