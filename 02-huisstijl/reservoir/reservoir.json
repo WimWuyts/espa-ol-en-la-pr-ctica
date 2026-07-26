@@ -1,0 +1,6752 @@
+[
+ {
+  "id": "WV-001",
+  "domein": "werkvorm",
+  "naam": "Beeld-woordkoppeling",
+  "omschrijving": "Leerlingen koppelen woorden aan afbeeldingen; later benoemen ze de afbeeldingen zelf mondeling of schriftelijk, met steun die afbouwt van woordenbank naar beginletters naar niets.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "herkennen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 1"
+ },
+ {
+  "id": "WV-002",
+  "domein": "werkvorm",
+  "naam": "Luisteren en aanwijzen",
+  "omschrijving": "Leerlingen wijzen een gehoord woord of omschrijving aan; later noemt één leerling het woord en wijst of handelt de partner ernaar.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "herkennen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 2"
+ },
+ {
+  "id": "WV-003",
+  "domein": "werkvorm",
+  "naam": "Luisteren en nummeren",
+  "omschrijving": "Leerlingen nummeren afbeeldingen bij gehoorde woorden of omschrijvingen; later beschrijven ze zelf de afbeeldingen in een gekozen volgorde.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "herkennen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 3"
+ },
+ {
+  "id": "WV-004",
+  "domein": "werkvorm",
+  "naam": "Woord en definitie koppelen",
+  "omschrijving": "Leerlingen verbinden woorden met eenvoudige Spaanse definities; later geven ze zelf een korte omschrijving zonder het doelwoord te noemen.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "herkennen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 4"
+ },
+ {
+  "id": "WV-005",
+  "domein": "werkvorm",
+  "naam": "Woord en contextzin koppelen",
+  "omschrijving": "Leerlingen bepalen in welke zin elk woord past; later schrijven ze een nieuwe contextzin die de betekenis ondubbelzinnig maakt.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "herkennen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 5"
+ },
+ {
+  "id": "WV-006",
+  "domein": "werkvorm",
+  "naam": "Juist of fout bij een afbeelding",
+  "omschrijving": "Leerlingen beoordelen uitspraken bij een afbeelding; later verbeteren ze foute uitspraken en formuleren zelf juiste en foute uitspraken.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "herkennen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 6"
+ },
+ {
+  "id": "WV-007",
+  "domein": "werkvorm",
+  "naam": "Het vreemde woord zoeken",
+  "omschrijving": "Leerlingen kiezen welk woord niet bij de andere hoort; later onderbouwen ze hun keuze en voegen een eigen passend woord toe.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "herkennen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 7"
+ },
+ {
+  "id": "WV-008",
+  "domein": "werkvorm",
+  "naam": "Semantisch sorteren",
+  "omschrijving": "Leerlingen sorteren woorden in gegeven categorieën; later bedenken ze eigen categorieën en nieuwe voorbeelden.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "herkennen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 8"
+ },
+ {
+  "id": "WV-009",
+  "domein": "werkvorm",
+  "naam": "Receptieve woordenschatbingo",
+  "omschrijving": "Leerlingen kruisen een afbeelding aan bij een gehoord woord of omschrijving; later worden ze zelf spelleider en omschrijven zonder Nederlandse vertaling.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "herkennen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 9"
+ },
+ {
+  "id": "WV-010",
+  "domein": "werkvorm",
+  "naam": "Betekenis kiezen uit microcontext",
+  "omschrijving": "Leerlingen leiden de betekenis van een gemarkeerd woord af uit een korte scène of dialoog; later bedenken ze zelf zo'n microcontext.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "herkennen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 10"
+ },
+ {
+  "id": "WV-011",
+  "domein": "werkvorm",
+  "naam": "Gelabelde afbeelding afbouwen",
+  "omschrijving": "Een volledig gelabeld beeld verliest stap voor stap zijn labels (label→beginletter→lege lijn→geen steun) tot leerlingen alle onderdelen zonder steun benoemen.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "ophalen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 11"
+ },
+ {
+  "id": "WV-012",
+  "domein": "werkvorm",
+  "naam": "Flitsbeeld",
+  "omschrijving": "Een kort getoond beeld met woorden verdwijnt; leerlingen reconstrueren zoveel mogelijk woorden en maken er vervolgens zinnen mee.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "ophalen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 12"
+ },
+ {
+  "id": "WV-013",
+  "domein": "werkvorm",
+  "naam": "Afbeelding naar woord",
+  "omschrijving": "Na controle van beeld-woordparen zien leerlingen enkel het beeld en produceren het Spaanse woord, later aangevuld met lidwoord, meervoud of collocatie.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "ophalen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 13"
+ },
+ {
+  "id": "WV-014",
+  "domein": "werkvorm",
+  "naam": "Eerste-lettersteun",
+  "omschrijving": "Leerlingen roepen woorden op met enkel de eerste letter of het aantal lettergrepen als steun, die geleidelijk verdwijnt.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "ophalen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 14"
+ },
+ {
+  "id": "WV-015",
+  "domein": "werkvorm",
+  "naam": "Onvolledige woorden",
+  "omschrijving": "Leerlingen vullen ontbrekende letters in een woord aan en schrijven het daarna volledig uit het hoofd in een eigen zin.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "ophalen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 15"
+ },
+ {
+  "id": "WV-016",
+  "domein": "werkvorm",
+  "naam": "Lettergreeppuzzel",
+  "omschrijving": "Leerlingen combineren losse lettergrepen tot bekende woorden en schrijven/spreken die daarna zonder puzzelstukjes correct uit.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "ophalen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 16"
+ },
+ {
+  "id": "WV-017",
+  "domein": "werkvorm",
+  "naam": "Omgekeerde flashcards",
+  "omschrijving": "Flashcards worden in verschillende richtingen doorlopen: woord→betekenis, betekenis/beeld→woord, woord→voorbeeldzin, situatie→woord.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "ophalen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 17"
+ },
+ {
+  "id": "WV-018",
+  "domein": "werkvorm",
+  "naam": "Geheugenraster",
+  "omschrijving": "Leerlingen bestuderen een raster van beeld-woordparen en reconstrueren na afdekking plaats én woord, aangevuld met een beschrijvende zin.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "ophalen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 18"
+ },
+ {
+  "id": "WV-019",
+  "domein": "werkvorm",
+  "naam": "Categorie uit het hoofd aanvullen",
+  "omschrijving": "Na afdekking van een bestudeerd woordcluster reconstrueren leerlingen de woorden en vullen ze aan met eigen voorbeelden.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "ophalen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 19"
+ },
+ {
+  "id": "WV-020",
+  "domein": "werkvorm",
+  "naam": "Uitgestelde ophaalladder",
+  "omschrijving": "Dezelfde woorden komen terug op steeds grotere tussenpozen (direct, einde les, volgende les, later, nieuwe context), van herkennen naar vrije toepassing.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "ophalen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 20"
+ },
+ {
+  "id": "WV-021",
+  "domein": "werkvorm",
+  "naam": "Zinsframes met doelwoorden",
+  "omschrijving": "Leerlingen vullen doelwoorden in een vast zinsframe in; het frame verdwijnt daarna gedeeltelijk en vervolgens volledig.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 21"
+ },
+ {
+  "id": "WV-022",
+  "domein": "werkvorm",
+  "naam": "Substitutietabel",
+  "omschrijving": "Leerlingen bouwen correcte zinnen met kolommen (persoon/werkwoord/aanvulling/tijd) en produceren daarna zelfstandig nieuwe combinaties.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 22"
+ },
+ {
+  "id": "WV-023",
+  "domein": "werkvorm",
+  "naam": "Collocatiedomino",
+  "omschrijving": "Leerlingen verbinden natuurlijke woordcombinaties (bv. tener–hambre) en gebruiken elke gevormde collocatie in een eigen zin of dialoog.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 23"
+ },
+ {
+  "id": "WV-024",
+  "domein": "werkvorm",
+  "naam": "Woordchips naar zin",
+  "omschrijving": "Leerlingen selecteren passende woordchips bij een situatie en verwerken een vast aantal chips in één correcte zin of boodschap.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 24"
+ },
+ {
+  "id": "WV-025",
+  "domein": "werkvorm",
+  "naam": "Verplichte-woorden-zin",
+  "omschrijving": "Leerlingen verwerken twee of drie gegeven woorden in één betekenisvolle zin, met steun die afbouwt vanaf modelzinnen.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 25"
+ },
+ {
+  "id": "WV-026",
+  "domein": "werkvorm",
+  "naam": "Zin bij een afbeelding",
+  "omschrijving": "Leerlingen kiezen eerst een passende voorbeeldzin bij een afbeelding en formuleren daarna zelf een zin met de doelwoorden.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 26"
+ },
+ {
+  "id": "WV-027",
+  "domein": "werkvorm",
+  "naam": "Onderschrift schrijven",
+  "omschrijving": "Na modelonderschriften schrijven leerlingen een eigen onderschrift, van woordbank via kernwoorden naar volledig zelfstandig.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 27"
+ },
+ {
+  "id": "WV-028",
+  "domein": "werkvorm",
+  "naam": "Mini-dictee met reconstructie",
+  "omschrijving": "Leerlingen luisteren naar een zin met een doelwoord, reconstrueren de zin en maken daarna een eigen variant.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 28"
+ },
+ {
+  "id": "WV-029",
+  "domein": "werkvorm",
+  "naam": "Definitie voltooien",
+  "omschrijving": "Leerlingen maken een gedeeltelijke omschrijving af en formuleren daarna zelf definities voor andere woorden.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 29"
+ },
+ {
+  "id": "WV-030",
+  "domein": "werkvorm",
+  "naam": "Vraag bij het antwoord",
+  "omschrijving": "Bij een gegeven antwoord met doelwoord produceren leerlingen de passende vraag en voeren daarna een korte vraag-antwoordwisseling uit.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 30"
+ },
+ {
+  "id": "WV-031",
+  "domein": "werkvorm",
+  "naam": "Informatiekloof met afbeeldingen",
+  "omschrijving": "Twee leerlingen met verschillende informatie stellen vragen en gebruiken doelwoorden om verschillen of ontbrekende informatie te vinden.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 31"
+ },
+ {
+  "id": "WV-032",
+  "domein": "werkvorm",
+  "naam": "Beschrijf en kies",
+  "omschrijving": "Eén leerling beschrijft een verborgen afbeelding, de partner kiest uit meerdere beelden; het taalsteunkader wordt in een tweede ronde weggenomen.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 32"
+ },
+ {
+  "id": "WV-033",
+  "domein": "werkvorm",
+  "naam": "Teken wat je hoort",
+  "omschrijving": "Een leerling beschrijft precies met de doelwoordenschat, de ander tekent; nadien vergelijken en verbeteren ze samen.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 33"
+ },
+ {
+  "id": "WV-034",
+  "domein": "werkvorm",
+  "naam": "Licht taboespel",
+  "omschrijving": "Een leerling omschrijft een doelwoord zonder het woord of voor de hand liggende steunwoorden te gebruiken, met afbouwende steun.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 34"
+ },
+ {
+  "id": "WV-035",
+  "domein": "werkvorm",
+  "naam": "Raad het woord met ja-neevragen",
+  "omschrijving": "Leerlingen stellen ja/neevragen om een verborgen doelwoord te achterhalen, na een receptieve modelronde.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 35"
+ },
+ {
+  "id": "WV-036",
+  "domein": "werkvorm",
+  "naam": "Dialoogmenu",
+  "omschrijving": "Leerlingen kiezen formuleringen uit een functiemenu (begroeten, bestellen, prijs vragen…) en voeren een eigen dialoog met steeds minder steun.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 36"
+ },
+ {
+  "id": "WV-037",
+  "domein": "werkvorm",
+  "naam": "Rollenkaarten",
+  "omschrijving": "Elke leerling krijgt een identiteit, doel en verplichte woorden; een tweede ronde herhaalt de situatie met een nieuwe rol en minder taalsteun.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 37"
+ },
+ {
+  "id": "WV-038",
+  "domein": "werkvorm",
+  "naam": "Klasenquête",
+  "omschrijving": "Leerlingen interviewen klasgenoten met modelvragen, noteren antwoorden en rapporteren — van lezen naar spreken naar samenvattend schrijven.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 38"
+ },
+ {
+  "id": "WV-039",
+  "domein": "werkvorm",
+  "naam": "Zoek iemand die…",
+  "omschrijving": "Leerlingen zoeken klasgenoten die aan een voorwaarde voldoen door te vragen, door te vragen en te rapporteren.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 39"
+ },
+ {
+  "id": "WV-040",
+  "domein": "werkvorm",
+  "naam": "Rangschikkingstaak",
+  "omschrijving": "Leerlingen rangschikken woorden of afbeeldingen volgens een criterium en beargumenteren hun keuze productief.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 40"
+ },
+ {
+  "id": "WV-041",
+  "domein": "werkvorm",
+  "naam": "Inpak- of winkelmandopdracht",
+  "omschrijving": "Leerlingen kiezen zelfstandig wat nodig is voor een situatie en verantwoorden hun keuze met porque…",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "vrij",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 41"
+ },
+ {
+  "id": "WV-042",
+  "domein": "werkvorm",
+  "naam": "Probleemoplossende missie",
+  "omschrijving": "Leerlingen selecteren relevante woordenschat om samen een oplossing voor een praktisch probleem te ontwerpen.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "vrij",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 42"
+ },
+ {
+  "id": "WV-043",
+  "domein": "werkvorm",
+  "naam": "Fotoreeks vertellen",
+  "omschrijving": "Leerlingen ordenen beelden, koppelen doelwoorden en vertellen het verhaal met afnemende steun (woordbank→kernwoorden→zonder steun).",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "vrij",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 43"
+ },
+ {
+  "id": "WV-044",
+  "domein": "werkvorm",
+  "naam": "Eén-minuutspreektaak",
+  "omschrijving": "Leerlingen spreken één minuut over een bekend thema met doelwoorden, en herhalen dit met minder steun en meer variatie.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "vrij",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 44"
+ },
+ {
+  "id": "WV-045",
+  "domein": "werkvorm",
+  "naam": "4/3/2-spreektaak",
+  "omschrijving": "Leerlingen vertellen dezelfde inhoud aan verschillende partners in afnemende tijd (4-3-2 minuten), wat vlotheid bevordert.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "vrij",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 45"
+ },
+ {
+  "id": "WV-046",
+  "domein": "werkvorm",
+  "naam": "Persoonlijk verhaal",
+  "omschrijving": "Na receptieve voorbeelden vertellen of schrijven leerlingen over een eigen ervaring, wat transfer buiten het model afdwingt.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "vrij",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 46"
+ },
+ {
+  "id": "WV-047",
+  "domein": "werkvorm",
+  "naam": "Spraakbericht",
+  "omschrijving": "Leerlingen nemen na modelberichten een eigen spraakbericht op, controleren zichzelf en nemen daarna een verbeterde versie op.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "vrij",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 47"
+ },
+ {
+  "id": "WV-048",
+  "domein": "werkvorm",
+  "naam": "Sociaal bericht of microblog",
+  "omschrijving": "Leerlingen herkennen bruikbare woorden in voorbeeldposts en maken daarna een eigen fictief bericht met beeld, onderschrift en reactie.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "vrij",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 48"
+ },
+ {
+  "id": "WV-049",
+  "domein": "werkvorm",
+  "naam": "Leerling als woordexpert",
+  "omschrijving": "Elke leerling verdiept zich in enkele woorden en geeft klasgenoten een korte instructie (betekenis, uitspraak, voorbeeld, collocatie, mini-oefening).",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "vrij",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 49"
+ },
+ {
+  "id": "WV-050",
+  "domein": "werkvorm",
+  "naam": "Uitgestelde transfertaak",
+  "omschrijving": "Eerder geleerde doelwoorden moeten later, zonder aangeduide lijst, zelfstandig herkend en gebruikt worden in een onverwachte nieuwe context.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "vrij",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL I nr 50"
+ },
+ {
+  "id": "WV-051",
+  "domein": "werkvorm",
+  "naam": "Input flood",
+  "omschrijving": "Een tekst, dialoog of luisterfragment waarin de doelstructuur opvallend vaak maar natuurlijk voorkomt; leerlingen begrijpen eerst de boodschap, verzamelen dan voorbeelden en produceren later eigen varianten.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 1"
+ },
+ {
+  "id": "WV-052",
+  "domein": "werkvorm",
+  "naam": "Gemarkeerde voorbeelden",
+  "omschrijving": "Na een context worden doelvormen visueel gemarkeerd (bv. voy a / van a); leerlingen produceren daarna zelf een voorbeeld met hetzelfde patroon.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 2"
+ },
+ {
+  "id": "WV-053",
+  "domein": "werkvorm",
+  "naam": "Vorm aan betekenis koppelen",
+  "omschrijving": "Leerlingen koppelen grammaticale vormen aan situaties (gewoonte, huidig moment, toekomstplan) en formuleren dan zelf een zin per situatie.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 3"
+ },
+ {
+  "id": "WV-054",
+  "domein": "werkvorm",
+  "naam": "Zin aan afbeelding koppelen",
+  "omschrijving": "Leerlingen kiezen het juiste beeld bij twee grammaticaal vergelijkbare zinnen (bv. ser/estar) en maken daarna een nieuw beeld-zinpaar.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 4"
+ },
+ {
+  "id": "WV-055",
+  "domein": "werkvorm",
+  "naam": "Tijdlijnkoppeling",
+  "omschrijving": "Leerlingen plaatsen voorbeeldzinnen op een tijdlijn en schrijven of zeggen daarna zelf een gebeurtenis bij elk tijdspunt.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 5"
+ },
+ {
+  "id": "WV-056",
+  "domein": "werkvorm",
+  "naam": "Voorbeeld of niet-voorbeeld",
+  "omschrijving": "Leerlingen classificeren correcte, onmogelijke en andere-betekenis-zinnen, verklaren en verbeteren, en formuleren tot slot zelf een correct voorbeeld.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 6"
+ },
+ {
+  "id": "WV-057",
+  "domein": "werkvorm",
+  "naam": "Betekenisverschil kiezen",
+  "omschrijving": "Leerlingen kiezen welke context bij welke van twee bijna identieke zinnen past en maken daarna zelf zo'n contrastpaar.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 7"
+ },
+ {
+  "id": "WV-058",
+  "domein": "werkvorm",
+  "naam": "Grammaticale speurtocht",
+  "omschrijving": "Leerlingen zoeken doelvormen in een authentiek ogende tekst, sorteren en benoemen het patroon, en produceren dan zelf een zin per categorie.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 8"
+ },
+ {
+  "id": "WV-059",
+  "domein": "werkvorm",
+  "naam": "Patroon sorteren",
+  "omschrijving": "Leerlingen sorteren voorbeeldzinnen volgens een grammaticaal criterium (enkelvoud/meervoud, bevestigend/ontkennend…) en voegen daarna zelf een voorbeeld per groep toe.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 9"
+ },
+ {
+  "id": "WV-060",
+  "domein": "werkvorm",
+  "naam": "Regelhypothese",
+  "omschrijving": "Leerlingen kiezen uit mogelijke regels op basis van voorbeelden, onderbouwen hun keuze, testen op nieuwe voorbeelden en produceren een bewijzend voorbeeld.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 10"
+ },
+ {
+  "id": "WV-061",
+  "domein": "werkvorm",
+  "naam": "Meerkeuzecloze met betekenis",
+  "omschrijving": "Leerlingen kiezen op basis van context, niet enkel op vorm, en herschrijven de zin daarna met een andere betekenis of context.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "onderscheiden",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 11"
+ },
+ {
+  "id": "WV-062",
+  "domein": "werkvorm",
+  "naam": "Zinshelften koppelen",
+  "omschrijving": "Leerlingen verbinden grammaticaal en inhoudelijk passende zinshelften en maken daarna nieuwe begin- of einddelen.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "onderscheiden",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 12"
+ },
+ {
+  "id": "WV-063",
+  "domein": "werkvorm",
+  "naam": "Zinsdelen ordenen",
+  "omschrijving": "Leerlingen ordenen gegeven zinsblokken en veranderen daarna onderwerp, tijd, ontkenning, vraagvorm of aanvulling — van ordenen naar produceren.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "onderscheiden",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 13"
+ },
+ {
+  "id": "WV-064",
+  "domein": "werkvorm",
+  "naam": "Substitutietabel",
+  "omschrijving": "Leerlingen bouwen zinnen volgens een model, dan met één eigen element, en tot slot volledig zelfstandig.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "onderscheiden",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 14"
+ },
+ {
+  "id": "WV-065",
+  "domein": "werkvorm",
+  "naam": "Vervoegingswiel",
+  "omschrijving": "Leerlingen koppelen persoon en uitgang, selecteren dan zelf een persoon en produceren de vorm meteen in een betekenisvolle zin, niet als losse vervoeging.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "onderscheiden",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 15"
+ },
+ {
+  "id": "WV-066",
+  "domein": "werkvorm",
+  "naam": "Overeenkomstspijlen",
+  "omschrijving": "Leerlingen verbinden lidwoord, zelfstandig naamwoord en bijvoeglijk naamwoord (congruentie) en gebruiken de woordgroep daarna in volledige zinnen.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "onderscheiden",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 16"
+ },
+ {
+  "id": "WV-067",
+  "domein": "werkvorm",
+  "naam": "Eén verandering tegelijk",
+  "omschrijving": "Leerlingen passen een basiszin stap voor stap aan op geslacht, getal, persoon, ontkenning en tijd, telkens met verklaring van de verandering.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "onderscheiden",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 17"
+ },
+ {
+  "id": "WV-068",
+  "domein": "werkvorm",
+  "naam": "Bevestigend naar ontkennend",
+  "omschrijving": "Leerlingen vergelijken bevestigende en ontkennende zinsparen, zetten nieuwe zinnen om en gebruiken beide vormen in een korte dialoog.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "onderscheiden",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 18"
+ },
+ {
+  "id": "WV-069",
+  "domein": "werkvorm",
+  "naam": "Vraag-antwoordspiegel",
+  "omschrijving": "Leerlingen koppelen vragen aan antwoorden, maken dan zelf een vraag bij een antwoord, antwoorden persoonlijk en stellen een vervolgvraag.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "onderscheiden",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 19"
+ },
+ {
+  "id": "WV-070",
+  "domein": "werkvorm",
+  "naam": "Beslisboom",
+  "omschrijving": "Leerlingen gebruiken een visuele beslisboom om een vorm te kiezen; de boom verdwijnt geleidelijk tot ze de vorm zonder hulpmiddel toepassen.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "onderscheiden",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 20"
+ },
+ {
+  "id": "WV-071",
+  "domein": "werkvorm",
+  "naam": "Cue naar volledige zin",
+  "omschrijving": "Vanuit betekenisdragende cues (bv. Lucía / estudiar / esta tarde) bouwen leerlingen een volledige zin, met afbouw van volledige vormsteun naar enkel inhoudelijke cues.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 21"
+ },
+ {
+  "id": "WV-072",
+  "domein": "werkvorm",
+  "naam": "Zinsbouwkaarten",
+  "omschrijving": "Leerlingen bouwen correcte zinnen met kaarten (onderwerp/werkwoord/tijd/plaats/aanvulling), lezen ze voor en vervangen kaarten daarna door eigen taal.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 22"
+ },
+ {
+  "id": "WV-073",
+  "domein": "werkvorm",
+  "naam": "Snelle miniwhiteboards",
+  "omschrijving": "Bij een cue schrijven alle leerlingen tegelijk een vorm of zin op een miniwhiteboard; nadien wordt een veelvoorkomende fout besproken en een eigen voorbeeld geproduceerd.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 23"
+ },
+ {
+  "id": "WV-074",
+  "domein": "werkvorm",
+  "naam": "Microdictogloss",
+  "omschrijving": "Leerlingen luisteren naar een korte tekst met meerdere doelvormen, noteren kernwoorden, reconstrueren samen, vergelijken met het origineel en maken een eigen variant.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 24"
+ },
+ {
+  "id": "WV-075",
+  "domein": "werkvorm",
+  "naam": "Transformatieketting",
+  "omschrijving": "Vanuit één basiszin voeren leerlingen opeenvolgende opdrachten uit (ontkennend maken, vraag maken, onderwerp veranderen…), telkens de volledige nieuwe zin producerend.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 25"
+ },
+ {
+  "id": "WV-076",
+  "domein": "werkvorm",
+  "naam": "Foutenkliniek",
+  "omschrijving": "Leerlingen lokaliseren en verbeteren een fout in een voorbeeldzin, verklaren de correctie en schrijven een nieuw correct voorbeeld.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 26"
+ },
+ {
+  "id": "WV-077",
+  "domein": "werkvorm",
+  "naam": "Grammaticadoolhof",
+  "omschrijving": "Leerlingen kiezen bij elk knooppunt van een route de correcte vorm en produceren aan het einde zelf zinnen met de onderweg geziene vormen.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 27"
+ },
+ {
+  "id": "WV-078",
+  "domein": "werkvorm",
+  "naam": "Beeldreeks met doelstructuur",
+  "omschrijving": "Leerlingen beschrijven een beeldreeks: eerst één beeld met frame, dan meerdere beelden met kernwoorden, tot slot de volledige reeks zelfstandig.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 28"
+ },
+ {
+  "id": "WV-079",
+  "domein": "werkvorm",
+  "naam": "Geleide vertaling met afbouw",
+  "omschrijving": "Leerlingen vertalen korte betekenisvolle zinnen; steun (woordbank, zinsframe, grammaticale hint) verdwijnt geleidelijk tot een zelfstandige vergelijkbare boodschap.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 29"
+ },
+ {
+  "id": "WV-080",
+  "domein": "werkvorm",
+  "naam": "Regelkaart dicht",
+  "omschrijving": "Na het bestuderen van een compacte regelkaart bedekken leerlingen die en reconstrueren de regel, geven een voorbeeld en werken een nieuwe cue uit.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 30"
+ },
+ {
+  "id": "WV-081",
+  "domein": "werkvorm",
+  "naam": "Interview met zinsframes",
+  "omschrijving": "Leerlingen interviewen elkaar met afnemende steun (volledig frame → alleen vraagwoorden → zonder steun), met persoonlijk relevante antwoorden.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 31"
+ },
+ {
+  "id": "WV-082",
+  "domein": "werkvorm",
+  "naam": "Zoek de verschillen",
+  "omschrijving": "Twee leerlingen met vergelijkbare afbeeldingen gebruiken de doelstructuur (hay, voorzetsels, tegenwoordige tijd, vergelijkingen) om verschillen te vinden — grammatica met een echte communicatieve functie.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 32"
+ },
+ {
+  "id": "WV-083",
+  "domein": "werkvorm",
+  "naam": "Zoek iemand die… met grammaticaal doel",
+  "omschrijving": "Leerlingen vragen, antwoorden, doorvragen en rapporteren in de derde persoon met een specifieke doelstructuur (bv. ir a + infinitivo, tener que).",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 33"
+ },
+ {
+  "id": "WV-084",
+  "domein": "werkvorm",
+  "naam": "Rollenspel met vormvereisten",
+  "omschrijving": "Leerlingen plannen bijvoorbeeld een weekend met verplichte vormen (twee toekomstvormen, een weigering, een vraag, een alternatief), formulering zelf vrij te kiezen.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 34"
+ },
+ {
+  "id": "WV-085",
+  "domein": "werkvorm",
+  "naam": "Bordspel met betekenisvolle prompts",
+  "omschrijving": "Elk bordvakje geeft een communicatieve opdracht (plan vertellen, vraag stellen, vergelijken, ontkennend reageren…) in plaats van losse vervoeging.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 35"
+ },
+ {
+  "id": "WV-086",
+  "domein": "werkvorm",
+  "naam": "Enquête en rapportage",
+  "omschrijving": "Leerlingen voeren een enquête met doelstructuren uit en rapporteren de resultaten, waardoor de grammatica van vraag-antwoord naar langere productie evolueert.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 36"
+ },
+ {
+  "id": "WV-087",
+  "domein": "werkvorm",
+  "naam": "Zin uitbreiden",
+  "omschrijving": "Leerlingen breiden een kernzin stap voor stap uit (wat, waar, wanneer, met wie, waarom) tot een complexe zin.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 37"
+ },
+ {
+  "id": "WV-088",
+  "domein": "werkvorm",
+  "naam": "Samenwerkend verhaal met frames",
+  "omschrijving": "Leerlingen bouwen samen een verhaal, ronde per ronde met minder steun: eerst frames, dan enkel een vormlabel, dan zonder steun.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 38"
+ },
+ {
+  "id": "WV-089",
+  "domein": "werkvorm",
+  "naam": "Probleem oplossen met doelstructuren",
+  "omschrijving": "Leerlingen lossen een situatie op waarin de doelgrammatica functioneel noodzakelijk is (reis plannen, huisregels…), beoordeeld op zowel oplossing als taalgebruik.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 39"
+ },
+ {
+  "id": "WV-090",
+  "domein": "werkvorm",
+  "naam": "Peerfeedbackdialoog",
+  "omschrijving": "Een partner luistert of leest op betekenis, markeert één doelstructuur, stelt een vraag, geeft gerichte feedback en laat de maker herformuleren.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 40"
+ },
+ {
+  "id": "WV-091",
+  "domein": "werkvorm",
+  "naam": "4/3/2 met doelstructuur",
+  "omschrijving": "Leerlingen vertellen dezelfde boodschap meerdere keren aan verschillende partners met een doelstructuur als geheugensteun, voor snellere en stabielere productie.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "vrij",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 41"
+ },
+ {
+  "id": "WV-092",
+  "domein": "werkvorm",
+  "naam": "Getimed schrijven",
+  "omschrijving": "Leerlingen schrijven een bekende communicatieve opdracht kort: eerst met steunkaart, later zonder, en na feedback in een verbeterde versie.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "vrij",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 42"
+ },
+ {
+  "id": "WV-093",
+  "domein": "werkvorm",
+  "naam": "Zelfde inhoud, ander perspectief",
+  "omschrijving": "Leerlingen herschrijven een bekende tekst vanuit een andere persoon, getal, tijd of polariteit, met behoud van betekenis maar veranderende grammaticale keuzes.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "vrij",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 43"
+ },
+ {
+  "id": "WV-094",
+  "domein": "werkvorm",
+  "naam": "Genretransformatie",
+  "omschrijving": "Leerlingen zetten dezelfde inhoud om naar een ander tekstgenre (dialoog→bericht, planning→verslag…), waardoor grammatica buiten de oorspronkelijke oefenvorm functioneert.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "vrij",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 44"
+ },
+ {
+  "id": "WV-095",
+  "domein": "werkvorm",
+  "naam": "Vrije beeldvertelling",
+  "omschrijving": "Na eerdere oefening met beelden en frames vertellen of schrijven leerlingen een nieuwe beeldreeks zonder grammaticale hulp, met functioneel nodige structuren.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "vrij",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 45"
+ },
+ {
+  "id": "WV-096",
+  "domein": "werkvorm",
+  "naam": "Authentieke boodschap",
+  "omschrijving": "Leerlingen maken een realistische tekst (afspraakbericht, e-mail, recensie…) met een communicatief doel en ontvanger, niet enkel een vormenquota.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "vrij",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 46"
+ },
+ {
+  "id": "WV-097",
+  "domein": "werkvorm",
+  "naam": "Minipresentatie",
+  "omschrijving": "Na het identificeren van doelstructuren in een modelpresentatie bereiden leerlingen een korte eigen presentatie voor over een persoonlijk thema.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "vrij",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 47"
+ },
+ {
+  "id": "WV-098",
+  "domein": "werkvorm",
+  "naam": "Opnemen, analyseren en herformuleren",
+  "omschrijving": "Leerlingen nemen een mondelinge productie op, luisteren op betekenis, zoeken zelf één grammaticaal verbeterpunt en nemen een verbeterde versie op.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "vrij",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 48"
+ },
+ {
+  "id": "WV-099",
+  "domein": "werkvorm",
+  "naam": "Uitgestelde gemengde ophaaltaak",
+  "omschrijving": "Eerder geleerde structuren worden gemengd in één opdracht zonder aanduiding welke regel nodig is; leerlingen selecteren zelf op basis van betekenis en context.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "vrij",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 49"
+ },
+ {
+  "id": "WV-100",
+  "domein": "werkvorm",
+  "naam": "Nieuwe-contexttransfertaak",
+  "omschrijving": "De doelgrammatica wordt toegepast in een situatie die niet tijdens de instructie werd gebruikt (weerbericht, productadvies…); succes betekent zelfstandige, functionele keuze van de vorm.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "vrij",
+  "bron": "INOEFENEN_WOORDENSCHAT_GRAMMATICA_100_WERKVORMEN.md#DEEL II nr 50"
+ },
+ {
+  "id": "LAY-001",
+  "domein": "layout",
+  "naam": "Vaste kleur per hoofdstuk of unit",
+  "omschrijving": "Elke unit krijgt een eigen accentkleur die terugkeert in titels, kaders, paginanummers en tabbladen.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 1"
+ },
+ {
+  "id": "LAY-002",
+  "domein": "layout",
+  "naam": "Verticale hoofdstukstrook",
+  "omschrijving": "Een smalle gekleurde balk aan de buitenrand toont het unitnummer en de unittitel.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 2"
+ },
+ {
+  "id": "LAY-003",
+  "domein": "layout",
+  "naam": "Visuele voortgangsbalk",
+  "omschrijving": "Een balk of route toont waar de leerling zich bevindt binnen de vaste stappen van de unit.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 3"
+ },
+ {
+  "id": "LAY-004",
+  "domein": "layout",
+  "naam": "Paginatabs aan de zijkant",
+  "omschrijving": "Uitstekende visuele tabbladen maken herkenbare onderdelen (vocabulario, gramática, escucha…) snel vindbaar.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 4"
+ },
+ {
+  "id": "LAY-005",
+  "domein": "layout",
+  "naam": "Breadcrumb-navigatie",
+  "omschrijving": "Bovenaan elke pagina toont een broodkruimelpad de precieze locatie binnen de cursus (Unidad › Sectie › Onderwerp).",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 5"
+ },
+ {
+  "id": "LAY-006",
+  "domein": "layout",
+  "naam": "Vaste sectie-iconen",
+  "omschrijving": "Elk terugkerend onderdeel (luisteren, spreken, lezen, schrijven, grammatica) krijgt steeds hetzelfde herkenbare icoon.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 6"
+ },
+ {
+  "id": "LAY-007",
+  "domein": "layout",
+  "naam": "Mini-inhoudsopgave per unit",
+  "omschrijving": "Een compacte visuele routekaart toont de onderdelen en leerdoelen van de unit in één oogopslag.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 7"
+ },
+ {
+  "id": "LAY-008",
+  "domein": "layout",
+  "naam": "Hoofdstuknummer als groot achtergrondcijfer",
+  "omschrijving": "Een transparant of lichtgekleurd groot cijfer staat achter de unittitel als decoratief anker.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 8"
+ },
+ {
+  "id": "LAY-009",
+  "domein": "layout",
+  "naam": "Kleurcode in paginanummers",
+  "omschrijving": "Het paginanummer staat in een cirkel, capsule of label in de kleur van de unit.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 9"
+ },
+ {
+  "id": "LAY-010",
+  "domein": "layout",
+  "naam": "Visuele eindmarkering",
+  "omschrijving": "Een duidelijke afsluitstrook markeert het einde van de unit met een korte felicitatiezin.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 10"
+ },
+ {
+  "id": "LAY-011",
+  "domein": "layout",
+  "naam": "Grote hero-titel",
+  "omschrijving": "Een krachtige unittitel met illustratie of foto, korte introductiezin en leerdoel opent de unit.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 11"
+ },
+ {
+  "id": "LAY-012",
+  "domein": "layout",
+  "naam": "Titel met geïntegreerd icoon",
+  "omschrijving": "Een icoon wordt visueel onderdeel van de titel zelf (bv. een locatiepin in het woord Viajes).",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 12"
+ },
+ {
+  "id": "LAY-013",
+  "domein": "layout",
+  "naam": "Typografisch sleutelwoord",
+  "omschrijving": "Eén woord uit de titel wordt groter, vetter of in een afwijkend lettertype gezet om het te laten opvallen.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 13"
+ },
+ {
+  "id": "LAY-014",
+  "domein": "layout",
+  "naam": "Gekleurde titelcapsule",
+  "omschrijving": "Een korte titel staat in een afgeronde pilvorm met de unitkleur als achtergrond.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 14"
+ },
+ {
+  "id": "LAY-015",
+  "domein": "layout",
+  "naam": "Hoofdstukbanner",
+  "omschrijving": "Een brede horizontale strook combineert titel, personage en contextbeeld.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 15"
+ },
+ {
+  "id": "LAY-016",
+  "domein": "layout",
+  "naam": "Illustratieve sectiescheider",
+  "omschrijving": "Een kleine illustratie, lijntekening of patroon markeert de overgang tussen twee cursusonderdelen.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 16"
+ },
+ {
+  "id": "LAY-017",
+  "domein": "layout",
+  "naam": "Titel met onderstrepingsaccent",
+  "omschrijving": "Een onregelmatige penseelstreep, markerlijn of golvende lijn accentueert de titel.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 17"
+ },
+ {
+  "id": "LAY-018",
+  "domein": "layout",
+  "naam": "Diagonaal titelvlak",
+  "omschrijving": "Een gekleurd titelvlak krijgt een schuine onderrand in plaats van een klassieke rechte rand.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 18"
+ },
+ {
+  "id": "LAY-019",
+  "domein": "layout",
+  "naam": "Vraag als sectietitel",
+  "omschrijving": "Een betekenisvolle vraag (bv. ¿Qué vas a hacer este fin de semana?) dient als sectieopener in plaats van een neutrale titel.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 19"
+ },
+ {
+  "id": "LAY-020",
+  "domein": "layout",
+  "naam": "Typografische nummering",
+  "omschrijving": "Opvallende grote nummers (01, 02, 03) markeren opeenvolgende lesfasen.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 20"
+ },
+ {
+  "id": "LAY-021",
+  "domein": "layout",
+  "naam": "Tipkader",
+  "omschrijving": "Een licht gekleurd kader met lampje of ster geeft een nuttige leerstrategie.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 21"
+ },
+ {
+  "id": "LAY-022",
+  "domein": "layout",
+  "naam": "Let-opkader",
+  "omschrijving": "Een opvallend maar niet agressief kader waarschuwt voor uitzonderingen of veelgemaakte fouten.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 22"
+ },
+ {
+  "id": "LAY-023",
+  "domein": "layout",
+  "naam": "Onthoudkaart",
+  "omschrijving": "Een compacte visuele samenvatting toont de belangrijkste regel of woordenschat van een sectie.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 23"
+ },
+ {
+  "id": "LAY-024",
+  "domein": "layout",
+  "naam": "Voorbeeldkaart",
+  "omschrijving": "Voorbeeldzinnen krijgen een eigen afgerond vlak, los van de lopende uitleg.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 24"
+ },
+ {
+  "id": "LAY-025",
+  "domein": "layout",
+  "naam": "Cultuurkader",
+  "omschrijving": "Een kader met vlag, locatie en cultuurfeit verankert de inhoud in een echte Spaanstalige plek, eventueel met een vergelijking met België.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "cultuur"
+  ],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 25"
+ },
+ {
+  "id": "LAY-026",
+  "domein": "layout",
+  "naam": "Uitdagingkader",
+  "omschrijving": "Een moeilijkere uitbreidingsopdracht wordt gemarkeerd met een bliksem-, trofee- of raketicoon.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 26"
+ },
+ {
+  "id": "LAY-027",
+  "domein": "layout",
+  "naam": "Hulpkader",
+  "omschrijving": "Steunzinnen en woordbanken staan bijeen in een discreet, herkenbaar hulpkader.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 27"
+ },
+ {
+  "id": "LAY-028",
+  "domein": "layout",
+  "naam": "Zelfevaluatiekader",
+  "omschrijving": "Een blok met kan-ik-uitspraken laat de leerling zijn eigen beheersing van de leerdoelen inschatten.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 28"
+ },
+ {
+  "id": "LAY-029",
+  "domein": "layout",
+  "naam": "Misvatting versus correcte vorm",
+  "omschrijving": "Twee kaders naast elkaar tonen de foutieve of minder natuurlijke vorm tegenover de correcte vorm.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 29"
+ },
+ {
+  "id": "LAY-030",
+  "domein": "layout",
+  "naam": "Opdrachtkaart met vaste structuur",
+  "omschrijving": "Elke opdracht volgt dezelfde visuele volgorde: doel, werkwijze, tijd, resultaat.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 30"
+ },
+ {
+  "id": "LAY-031",
+  "domein": "layout",
+  "naam": "Personage-avatar naast dialogen",
+  "omschrijving": "Elke spreker krijgt een herkenbaar gezicht, kleuraccent en naamlabel bij dialogen.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 31"
+ },
+ {
+  "id": "LAY-032",
+  "domein": "layout",
+  "naam": "Personagekleur",
+  "omschrijving": "Elk terugkerend personage krijgt een vaste eigen kleur voor tekstballonnen en kaarten.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 32"
+ },
+ {
+  "id": "LAY-033",
+  "domein": "layout",
+  "naam": "Mini-personagekaart",
+  "omschrijving": "Een klein profielkaartje toont naam, woonplaats, accent, interesses en rol van een personage.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "cultuur"
+  ],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 33"
+ },
+ {
+  "id": "LAY-034",
+  "domein": "layout",
+  "naam": "Reactieportretten",
+  "omschrijving": "Varianten van avatars tonen emoties zoals blij, verbaasd, onzeker of geïrriteerd.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 34"
+ },
+ {
+  "id": "LAY-035",
+  "domein": "layout",
+  "naam": "Personage als paginagids",
+  "omschrijving": "Een terugkerend personage wijst op een regel, geeft een tip of stelt een vraag op de pagina.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 35"
+ },
+ {
+  "id": "LAY-036",
+  "domein": "layout",
+  "naam": "Chatvensters",
+  "omschrijving": "Dialogen worden weergegeven als herkenbare chatberichten in plaats van platte lopende tekst.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 36"
+ },
+ {
+  "id": "LAY-037",
+  "domein": "layout",
+  "naam": "Socialmediakaart",
+  "omschrijving": "Een fictieve post, story of profielpagina dient als context voor een lees- of spreekopdracht.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen",
+   "spreken"
+  ],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 37"
+ },
+ {
+  "id": "LAY-038",
+  "domein": "layout",
+  "naam": "Visuele groepschat",
+  "omschrijving": "Terugkerende personages communiceren samen in één vaste, herkenbare chatinterface.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 38"
+ },
+ {
+  "id": "LAY-039",
+  "domein": "layout",
+  "naam": "Reiskaart van de cast",
+  "omschrijving": "Een kaart toont waar elk personage woont en welke plaatsen in de cursus voorkomen.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "cultuur"
+  ],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 39"
+ },
+ {
+  "id": "LAY-040",
+  "domein": "layout",
+  "naam": "Verhaallijnindicator",
+  "omschrijving": "Een klein terugkerend symbool geeft aan dat een opdracht het centrale verhaal van de reis voortzet.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 40"
+ },
+ {
+  "id": "LAY-041",
+  "domein": "layout",
+  "naam": "Genummerde stappenkaarten",
+  "omschrijving": "Een complexe opdracht wordt opgesplitst in afzonderlijke, genummerde visuele stapkaarten.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 41"
+ },
+ {
+  "id": "LAY-042",
+  "domein": "layout",
+  "naam": "Sleepzones in digitale pagina's",
+  "omschrijving": "Duidelijk afgebakende vakken waar de leerling woorden, afbeeldingen of zinsdelen naartoe sleept.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 42"
+ },
+ {
+  "id": "LAY-043",
+  "domein": "layout",
+  "naam": "Afvinkbare checklist",
+  "omschrijving": "Leerlingen vinken visueel stappen af terwijl ze een taak doorlopen.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 43"
+ },
+ {
+  "id": "LAY-044",
+  "domein": "layout",
+  "naam": "Timerbadge",
+  "omschrijving": "Een klein klokje toont de geschatte werktijd van een opdracht (bv. ± 5 min).",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 44"
+ },
+ {
+  "id": "LAY-045",
+  "domein": "layout",
+  "naam": "Werkvormlabel",
+  "omschrijving": "Een label toont meteen de organisatievorm van de opdracht: alleen, per twee, in groep of klassikaal.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 45"
+ },
+ {
+  "id": "LAY-046",
+  "domein": "layout",
+  "naam": "Moeilijkheidssterren",
+  "omschrijving": "Eén tot drie sterren geven in één oogopslag de moeilijkheidsgraad van een opdracht aan.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 46"
+ },
+ {
+  "id": "LAY-047",
+  "domein": "layout",
+  "naam": "Keuzeroute",
+  "omschrijving": "Leerlingen kiezen visueel tussen een basisroute, steunroute of verdiepingsroute door de stof.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 47"
+ },
+ {
+  "id": "LAY-048",
+  "domein": "layout",
+  "naam": "Interactieve hotspotafbeelding",
+  "omschrijving": "Klikbare punten op een kamer-, kaart-, markt- of stadsbeeld openen bijhorende woorden en uitleg.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 48"
+ },
+ {
+  "id": "LAY-049",
+  "domein": "layout",
+  "naam": "QR-blok met duidelijke functie",
+  "omschrijving": "Een ontworpen kaart rond de QR-code geeft duidelijk aan wat er gebeurt bij het scannen (bv. Scan en luister · audiofragment).",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 49"
+ },
+ {
+  "id": "LAY-050",
+  "domein": "layout",
+  "naam": "Eindproduct-preview",
+  "omschrijving": "Toon vooraf visueel wat de leerling uiteindelijk zal maken (chat, poster, audiobericht, profiel, presentatie…).",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "50_VISUELE_LAYOUTELEMENTEN.md#item 50"
+ },
+ {
+  "id": "GT-001",
+  "domein": "grammaticatool",
+  "naam": "Kleurgecodeerde voorbeeldzin",
+  "omschrijving": "Elk grammaticaal element in een voorbeeldzin krijgt een vaste kleur; hoveren of klikken toont de functie, kleurcodering kan aan/uit en leerlingen kennen later zelf kleuren toe.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 1"
+ },
+ {
+  "id": "GT-002",
+  "domein": "grammaticatool",
+  "naam": "Stap-voor-stap-zinsopbouw",
+  "omschrijving": "Een zin ontstaat laag voor laag, waarbij bij elke toevoeging kort wordt getoond wat, waarom en met welke betekenis een element wordt toegevoegd.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 2"
+ },
+ {
+  "id": "GT-003",
+  "domein": "grammaticatool",
+  "naam": "Interactieve tijdlijn",
+  "omschrijving": "Een horizontale tijdlijn (verleden-heden-toekomst) waarop leerlingen gebeurtenissen naar de juiste plek slepen of tijdszones aanklikken om de bijbehorende werkwoordsvorm te zien.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 3"
+ },
+ {
+  "id": "GT-004",
+  "domein": "grammaticatool",
+  "naam": "Voor-en-na-transformatie",
+  "omschrijving": "Twee zinnen worden naast elkaar getoond met precies gemarkeerd wat verandert, bv. bevestigend naar ontkennend of heden naar verleden.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 4"
+ },
+ {
+  "id": "GT-005",
+  "domein": "grammaticatool",
+  "naam": "Klikbare grammaticale bouwstenen",
+  "omschrijving": "Een zin wordt als losse blokken getoond; een klik op een blok toont functie, betekenis, alternatieven, plaats in de zin en de bijbehorende regel.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 5"
+ },
+ {
+  "id": "GT-006",
+  "domein": "grammaticatool",
+  "naam": "Grammaticale röntgenfoto",
+  "omschrijving": "Leerlingen wisselen tussen een natuurlijke zin en de onderliggende structuurweergave (onderwerp/werkwoord/lijdend voorwerp), eventueel als boomstructuur.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 6"
+ },
+ {
+  "id": "GT-007",
+  "domein": "grammaticatool",
+  "naam": "Geanimeerde uitgangswissel",
+  "omschrijving": "Toont hoe een werkwoordsvorm wordt opgebouwd (hablar → habl- + -o → hablo); leerlingen kiezen persoon en tijd en zien stamveranderingen visueel bewegen.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 7"
+ },
+ {
+  "id": "GT-008",
+  "domein": "grammaticatool",
+  "naam": "Interactieve vervoegingscirkel",
+  "omschrijving": "Het werkwoord staat in het midden van een cirkel met de personen errond; een klik op een persoon toont meteen de juiste vervoegde vorm.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 8"
+ },
+ {
+  "id": "GT-009",
+  "domein": "grammaticatool",
+  "naam": "Patroonzoeker",
+  "omschrijving": "Meerdere voorbeeldzinnen worden getoond zonder uitleg vooraf; leerlingen markeren gelijkenissen en verschillen en formuleren zelf een hypothese over het patroon.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 9"
+ },
+ {
+  "id": "GT-010",
+  "domein": "grammaticatool",
+  "naam": "Regelgenerator",
+  "omschrijving": "Na het bekijken van voorbeelden vullen leerlingen zelf de grammaticaregel aan via keuzemogelijkheden; pas na hun keuze verschijnt de volledige regel.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 10"
+ },
+ {
+  "id": "GT-011",
+  "domein": "grammaticatool",
+  "naam": "Minimale contrastparen",
+  "omschrijving": "Twee bijna identieke zinnen (bv. es aburrido / está aburrido) worden getoond; leerlingen klikken op het verschil en zien daarna het betekeniscontrast.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 11"
+ },
+ {
+  "id": "GT-012",
+  "domein": "grammaticatool",
+  "naam": "Betekenisschuifregelaar",
+  "omschrijving": "Een slider verandert één grammaticaal element (bv. werkwoordstijd) waarbij tijdlijn, context, vertaling en toelichting mee veranderen.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 12"
+ },
+ {
+  "id": "GT-013",
+  "domein": "grammaticatool",
+  "naam": "Contextkaarten",
+  "omschrijving": "Leerlingen kiezen een situatiekaart (routine, gisteren, plan voor morgen…) en zien welke grammaticale vorm daarbij past.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 13"
+ },
+ {
+  "id": "GT-014",
+  "domein": "grammaticatool",
+  "naam": "Grammaticale strip",
+  "omschrijving": "Een korte strip van twee tot vier panelen toont een grammaticale betekenis in een verhaal; leerlingen klikken tekstballonnen aan of kiezen de juiste formulering.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 14"
+ },
+ {
+  "id": "GT-015",
+  "domein": "grammaticatool",
+  "naam": "Keuze met zichtbaar betekenisverschil",
+  "omschrijving": "Leerlingen kiezen tussen twee grammaticale vormen (bv. es/está); niet enkel juist/fout maar ook de context of illustratie verandert mee.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 15"
+ },
+ {
+  "id": "GT-016",
+  "domein": "grammaticatool",
+  "naam": "Sleepbare woordvolgorde",
+  "omschrijving": "Losse woordtegels moeten in de juiste zinsvolgorde worden gesleept, met plaatsingszones, kleurcodes, hints en automatische feedback als ondersteuning.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 16"
+ },
+ {
+  "id": "GT-017",
+  "domein": "grammaticatool",
+  "naam": "Grammaticale machine",
+  "omschrijving": "Een visuele machine met invoervelden (persoon, werkwoord, tijd, object) genereert de correcte zin en toont de gevolgde grammaticale stappen.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 17"
+ },
+ {
+  "id": "GT-018",
+  "domein": "grammaticatool",
+  "naam": "Foutenvergrootglas",
+  "omschrijving": "Leerlingen bewegen een digitaal vergrootglas over een foutieve zin; probleemzones lichten op en de congruentierelaties worden zichtbaar gemaakt.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 18"
+ },
+ {
+  "id": "GT-019",
+  "domein": "grammaticatool",
+  "naam": "Domino van grammaticale relaties",
+  "omschrijving": "Woorden of woordgroepen als dominostenen met kenmerken (geslacht, getal); alleen grammaticaal passende stenen kunnen aansluiten.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "onderscheiden",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 19"
+ },
+ {
+  "id": "GT-020",
+  "domein": "grammaticatool",
+  "naam": "Uitklapbare beslisboom",
+  "omschrijving": "Leerlingen beantwoorden opeenvolgende vragen om tot de juiste grammaticale keuze te komen (bv. ser vs. estar), waarbij de gevolgde route zichtbaar blijft.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 20"
+ },
+ {
+  "id": "GT-021",
+  "domein": "grammaticatool",
+  "naam": "Conceptmap met klikbare verbindingen",
+  "omschrijving": "Een centraal grammaticaal begrip vertakt naar deelbetekenissen; elke tak opent voorbeelden, tijdlijnen, contrastzinnen, uitzonderingen en oefeningen.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 21"
+ },
+ {
+  "id": "GT-022",
+  "domein": "grammaticatool",
+  "naam": "Voornaamwoorden als vervangingsanimatie",
+  "omschrijving": "Leerlingen slepen een voornaamwoord over de woordgroep die het vervangt; de animatie toont hoe het voornaamwoord naar zijn correcte plaats in de zin beweegt.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 22"
+ },
+ {
+  "id": "GT-023",
+  "domein": "grammaticatool",
+  "naam": "Grammatica met geluidscontrast",
+  "omschrijving": "Leerlingen beluisteren twee zinnen terwijl de relevante vorm oplicht, met zichtbare intonatielijn, klemtoon en leestekens.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 23"
+ },
+ {
+  "id": "GT-024",
+  "domein": "grammaticatool",
+  "naam": "Scène die verandert door grammatica",
+  "omschrijving": "Eén interactieve scène verandert visueel wanneer de leerling de grammatica aanpast (bv. hay una persona vs. hay muchas personas).",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 24"
+ },
+ {
+  "id": "GT-025",
+  "domein": "grammaticatool",
+  "naam": "Van voorbeeld naar visuele samenvatting",
+  "omschrijving": "Een vast achtfasenpad (bekijk-ontdek-vergelijk-formuleer-controleer-onthoud-probeer-produceer) leidt van een betekenisvolle bron naar een compacte grammaticakaart en zelfstandige productie.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "vrij",
+  "bron": "25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md#item 25"
+ },
+ {
+  "id": "PPT-001",
+  "domein": "powerpoint",
+  "naam": "Interactieve startpagina",
+  "omschrijving": "Een beginscherm met tegels voor woordenschat, grammatica, lezen, luisteren, spreken, schrijven, cultuur en evaluatie waarmee de leraar tijdens de les rechtstreeks de gewenste route kiest.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 1"
+ },
+ {
+  "id": "PPT-002",
+  "domein": "powerpoint",
+  "naam": "Klikbare cursuskaart",
+  "omschrijving": "Een kaart (bv. van Antwerpen, Madrid of Valencia) waarop elke locatie een les, dialoog, opdracht of cultuurkader opent.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "cultuur"
+  ],
+  "fase": "",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 2"
+ },
+ {
+  "id": "PPT-003",
+  "domein": "powerpoint",
+  "naam": "Niet-lineaire leskeuze",
+  "omschrijving": "De leraar past de volgorde van de les aan de klas aan: eerst grammatica, eerst verhaal, eerst woordenschat of meteen een probleemtaak.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 3"
+ },
+ {
+  "id": "PPT-004",
+  "domein": "powerpoint",
+  "naam": "Drie moeilijkheidsroutes",
+  "omschrijving": "Een keuzedia met con apoyo, ruta básica en desafío: alle routes oefenen hetzelfde doel maar met verschillende steun.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "gestuurd",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 4"
+ },
+ {
+  "id": "PPT-005",
+  "domein": "powerpoint",
+  "naam": "Vertakkend verhaal",
+  "omschrijving": "De klas beslist wat een personage doet; elke keuze leidt naar een andere scène maar uiteindelijk naar hetzelfde leerdoel.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "cultuur",
+   "strategie"
+  ],
+  "fase": "",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 5"
+ },
+ {
+  "id": "PPT-006",
+  "domein": "powerpoint",
+  "naam": "Vaste thuis-, terug- en hulpknoppen",
+  "omschrijving": "Dezelfde knoppen (startmenu, vorige stap, woordenhulp, oplossing) staan op elke interactieve dia, zodat de PowerPoint als een echte applicatie aanvoelt.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 6"
+ },
+ {
+  "id": "PPT-007",
+  "domein": "powerpoint",
+  "naam": "Verborgen hintlagen",
+  "omschrijving": "Een leerling klikt achtereenvolgens op pista 1, pista 2 en pas dan op solución: de ondersteuning wordt zichtbaar afgebouwd.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "gestuurd",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 7"
+ },
+ {
+  "id": "PPT-008",
+  "domein": "powerpoint",
+  "naam": "Visuele voortgangsmeter",
+  "omschrijving": "Toont bovenaan hoeveel fasen van de opdracht al voltooid zijn: oriënteren, begrijpen, oefenen, produceren en reflecteren.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 8"
+ },
+ {
+  "id": "PPT-009",
+  "domein": "powerpoint",
+  "naam": "Zelfstandig leerstation in kioskmodus",
+  "omschrijving": "Leerlingen doorlopen individueel of per duo een les zonder vrij door te kunnen klikken; enkel de ingebouwde knoppen werken.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 9"
+ },
+ {
+  "id": "PPT-010",
+  "domein": "powerpoint",
+  "naam": "Digitale escape room",
+  "omschrijving": "Woordenschat, grammatica, luisteren en lezen worden gecombineerd in een missie waarin correcte antwoorden letters of cijfers voor een eindcode opleveren.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat",
+   "grammatica",
+   "luisteren",
+   "lezen"
+  ],
+  "fase": "vrij",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 10"
+ },
+ {
+  "id": "PPT-011",
+  "domein": "powerpoint",
+  "naam": "Klik om het antwoord te onthullen",
+  "omschrijving": "Eerst wordt enkel de vraag getoond; de klas formuleert een antwoord en klikt daarna om het modelantwoord, de uitleg of vertaling te tonen.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "gestuurd",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 11"
+ },
+ {
+  "id": "PPT-012",
+  "domein": "powerpoint",
+  "naam": "Meerkeuze met onmiddellijke feedback",
+  "omschrijving": "Elke antwoordknop toont een eigen feedbacklaag (¡Correcto!, Casi, of een gerichte grammaticahint).",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "gestuurd",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 12"
+ },
+ {
+  "id": "PPT-013",
+  "domein": "powerpoint",
+  "naam": "Hotspotvraag op een afbeelding",
+  "omschrijving": "Leerlingen klikken in een kamer, stad, menukaart of strip op het juiste object, personage, vervoermiddel of informatie-element.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "gestuurd",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 13"
+ },
+ {
+  "id": "PPT-014",
+  "domein": "powerpoint",
+  "naam": "Zoek de fout",
+  "omschrijving": "Verborgen klikzones over woorden of zinsdelen; de leerling duidt precies aan waar de fout staat en verbetert daarna de zin.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 14"
+ },
+ {
+  "id": "PPT-015",
+  "domein": "powerpoint",
+  "naam": "Memoryspel met woord en beeld",
+  "omschrijving": "Achter kaartjes zitten Spaanse woorden, afbeeldingen, audio of definities; de klas zoekt de passende paren.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "herkennen",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 15"
+ },
+ {
+  "id": "PPT-016",
+  "domein": "powerpoint",
+  "naam": "Volgordepuzzel",
+  "omschrijving": "Een dialoog, route, dagplanning of verhaal wordt in de juiste volgorde gezet via klikbare antwoordreeksen.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "onderscheiden",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 16"
+ },
+ {
+  "id": "PPT-017",
+  "domein": "powerpoint",
+  "naam": "Jeopardy-bord",
+  "omschrijving": "Categorieën als vocabulario, gramática, cultura, escucha en expresión; gekozen vakjes verdwijnen of veranderen van kleur.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 17"
+ },
+ {
+  "id": "PPT-018",
+  "domein": "powerpoint",
+  "naam": "Wie wordt miljonair?",
+  "omschrijving": "Een oplopende reeks taalvragen met hulplijnen zoals 50/50, woordenboekhint, publieksstem en extra voorbeeldzin.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 18"
+ },
+ {
+  "id": "PPT-019",
+  "domein": "powerpoint",
+  "naam": "Visuele aftelklok",
+  "omschrijving": "Een zichtbaar leeglopende tijdsbalk geeft 10 tot 60 seconden voor woordoproep, overleg, spreken of schrijven.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 19"
+ },
+ {
+  "id": "PPT-020",
+  "domein": "powerpoint",
+  "naam": "Live quiz of exit ticket",
+  "omschrijving": "Een Microsoft Forms-quiz, poll of exit ticket rechtstreeks in een dia; antwoorden worden klassikaal verzameld en later geanalyseerd.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 20"
+ },
+ {
+  "id": "PPT-021",
+  "domein": "powerpoint",
+  "naam": "Klikbare woordmuur",
+  "omschrijving": "Woorden verschijnen per thema; een klik toont afbeelding, uitspraak, vertaling, voorbeeldzin, collocatie of grammaticale informatie.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "herkennen",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 21"
+ },
+ {
+  "id": "PPT-022",
+  "domein": "powerpoint",
+  "naam": "Beeld-woord-audiokaarten",
+  "omschrijving": "Een afbeelding onthult achtereenvolgens het Spaanse woord, het lidwoord, de uitspraak en een modelzin.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "herkennen",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 22"
+ },
+ {
+  "id": "PPT-023",
+  "domein": "powerpoint",
+  "naam": "Ophaalflashcards met afbouw",
+  "omschrijving": "Vier opeenvolgende rondes: beeld+woord, dan alleen beeld, dan een context, dan een eigen zin — steun bouwt telkens af.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "ophalen",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 23"
+ },
+ {
+  "id": "PPT-024",
+  "domein": "powerpoint",
+  "naam": "Semantisch sorteerspel",
+  "omschrijving": "Leerlingen plaatsen woorden conceptueel bij categorieën zoals eten, vervoer, personen, handelingen of emoties.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "onderscheiden",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 24"
+ },
+ {
+  "id": "PPT-025",
+  "domein": "powerpoint",
+  "naam": "Interactieve zinsbouwer",
+  "omschrijving": "Leerlingen combineren onderwerp, werkwoord, tijd, plaats en aanvulling tot een zin; daarna verdwijnt de steun en produceren ze de zin mondeling.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica",
+   "spreken"
+  ],
+  "fase": "gestuurd",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 25"
+ },
+ {
+  "id": "PPT-026",
+  "domein": "powerpoint",
+  "naam": "Woordvolgordepuzzel",
+  "omschrijving": "De klas kiest de correcte volgorde van losse zinsdelen en ziet ze vervolgens animerend in de zin schuiven.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "onderscheiden",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 26"
+ },
+ {
+  "id": "PPT-027",
+  "domein": "powerpoint",
+  "naam": "Grammaticatransformatie met Morph",
+  "omschrijving": "Met de Morph-overgang veranderen vormen vloeiend (hablo→hablamos, es→está, enkelvoud→meervoud), waardoor de vormverandering visueel zichtbaar wordt.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 27"
+ },
+ {
+  "id": "PPT-028",
+  "domein": "powerpoint",
+  "naam": "Vervoegingswiel",
+  "omschrijving": "Een wiel kiest persoon, werkwoord of tijd; de leerling produceert de vorm en gebruikt ze in een zin.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 28"
+ },
+ {
+  "id": "PPT-029",
+  "domein": "powerpoint",
+  "naam": "Beslisboom voor ser, estar en hay",
+  "omschrijving": "Leerlingen beantwoorden opeenvolgende betekenisvragen en komen zo bij de juiste vorm; foute routes geven een gerichte tegenvoorbeeldzin.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 29"
+ },
+ {
+  "id": "PPT-030",
+  "domein": "powerpoint",
+  "naam": "Grammaticakliniek",
+  "omschrijving": "Een patiëntzin heeft een grammaticaal probleem; leerlingen diagnosticeren de fout, kiezen een ingreep en zien de herstelde zin in een nieuwe context.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 30"
+ },
+ {
+  "id": "PPT-031",
+  "domein": "powerpoint",
+  "naam": "Ingebedde video met observatieopdracht",
+  "omschrijving": "Een korte authentiek ogende scène met vooraf een globale kijkvraag, gevolgd door detailvragen.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "herkennen",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 31"
+ },
+ {
+  "id": "PPT-032",
+  "domein": "powerpoint",
+  "naam": "Pauzeer, voorspel en kijk verder",
+  "omschrijving": "Een dialoog stopt net vóór een antwoord of beslissing; leerlingen voorspellen wat er gezegd wordt en vergelijken daarna met de video.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "gestuurd",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 32"
+ },
+ {
+  "id": "PPT-033",
+  "domein": "powerpoint",
+  "naam": "Video met ondertitels en taalsteun",
+  "omschrijving": "Spaanse ondertitels, eventueel met extra Engelse of Nederlandse ondersteuningsversies, ingezet voor luisterstrategieën.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 33"
+ },
+ {
+  "id": "PPT-034",
+  "domein": "powerpoint",
+  "naam": "Audiopaneel met personages",
+  "omschrijving": "Klik op een personage om zijn uitspraak af te spelen; daarna reconstrueert de klas de volledige dialoog.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "herkennen",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 34"
+ },
+ {
+  "id": "PPT-035",
+  "domein": "powerpoint",
+  "naam": "Luisteren en ordenen",
+  "omschrijving": "Leerlingen luisteren naar routeaanwijzingen, afspraken of gebeurtenissen en kiezen daarna de juiste beeld- of zinsvolgorde.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "onderscheiden",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 35"
+ },
+ {
+  "id": "PPT-036",
+  "domein": "powerpoint",
+  "naam": "Microdictee met gefaseerd transcript",
+  "omschrijving": "Eerst luisteren zonder tekst, dan kernwoorden noteren, dan lege plaatsen invullen en ten slotte het volledige transcript vergelijken.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "luisteren",
+   "schrijven"
+  ],
+  "fase": "ophalen",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 36"
+ },
+ {
+  "id": "PPT-037",
+  "domein": "powerpoint",
+  "naam": "Shadowingmodule",
+  "omschrijving": "Een korte zin wordt afgespeeld terwijl leerlingen bijna gelijktijdig meespreken; tekst en kernwoorden verdwijnen daarna stapsgewijs.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "spreken",
+   "luisteren"
+  ],
+  "fase": "gestuurd",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 37"
+ },
+ {
+  "id": "PPT-038",
+  "domein": "powerpoint",
+  "naam": "Uitspraakcontrast",
+  "omschrijving": "Minimale paren (pero/perro, caro/carro) worden gehoord; leerlingen kiezen wat ze hoorden en spreken het daarna zelf uit.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "luisteren",
+   "spreken"
+  ],
+  "fase": "herkennen",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 38"
+ },
+ {
+  "id": "PPT-039",
+  "domein": "powerpoint",
+  "naam": "Rollenkaart met spreektimer",
+  "omschrijving": "PowerPoint toont een personage, situatie, doel en verplichte taalfunctie (weigeren, voorstellen, verduidelijken…); daarna start een timer.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "vrij",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 39"
+ },
+ {
+  "id": "PPT-040",
+  "domein": "powerpoint",
+  "naam": "Gesimuleerde chatbot",
+  "omschrijving": "Een digitaal personage stelt iets; de leerling kiest of formuleert een reactie en komt in een ander gecontroleerd dialoogpad terecht.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "spreken",
+   "schrijven"
+  ],
+  "fase": "gestuurd",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 40"
+ },
+ {
+  "id": "PPT-041",
+  "domein": "powerpoint",
+  "naam": "Leesdetective met bewijsstukken",
+  "omschrijving": "Een chat, ticket, kaart, menu en agenda worden als klikbare bronnen verdeeld; leerlingen verzamelen bewijs om een probleem op te lossen.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "gestuurd",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 41"
+ },
+ {
+  "id": "PPT-042",
+  "domein": "powerpoint",
+  "naam": "Schrijfopdracht die zichzelf opbouwt",
+  "omschrijving": "Ontvanger, doel, verplichte informatie, tekststructuur en checklist worden achtereenvolgens opengeklikt; daarna verdwijnt de steun voor de echte schrijfversie.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "gestuurd",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 42"
+ },
+ {
+  "id": "PPT-043",
+  "domein": "powerpoint",
+  "naam": "Peerfeedbackpaneel",
+  "omschrijving": "Na een schrijf- of spreektaak verschijnt per klik een feedbackvraag: boodschap, volledigheid, woordenschat, grammatica, uitspraak en volgende stap.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "schrijven",
+   "spreken"
+  ],
+  "fase": "",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 43"
+ },
+ {
+  "id": "PPT-044",
+  "domein": "powerpoint",
+  "naam": "Opnemen, vergelijken en hernemen",
+  "omschrijving": "Via een gelinkte webrecorder of schooltool bewaren leerlingen een eerste en verbeterde spreekversie; PowerPoint levert prompt, timer en feedbackcriteria.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "vrij",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 44"
+ },
+ {
+  "id": "PPT-045",
+  "domein": "powerpoint",
+  "naam": "Vier-vaardighedenmissie",
+  "omschrijving": "Start met een tekst, een audiofragment, overleg en eindig met een geschreven of gesproken product, alles binnen één visuele verhaallijn.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "lezen",
+   "luisteren",
+   "spreken",
+   "schrijven"
+  ],
+  "fase": "vrij",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 45"
+ },
+ {
+  "id": "PPT-046",
+  "domein": "powerpoint",
+  "naam": "Geanimeerde routekaart",
+  "omschrijving": "Een personage beweegt door een stad terwijl routewoorden en plaatsvoorzetsels verschijnen.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "cultuur"
+  ],
+  "fase": "",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 46"
+ },
+ {
+  "id": "PPT-047",
+  "domein": "powerpoint",
+  "naam": "Culturele fotoverkenning met zoom",
+  "omschrijving": "Een volledig plein, gebouw of markt wordt getoond en er wordt vloeiend ingezoomd op details waarover leerlingen vragen beantwoorden.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "cultuur"
+  ],
+  "fase": "",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 47"
+ },
+ {
+  "id": "PPT-048",
+  "domein": "powerpoint",
+  "naam": "Interactief 3D-object",
+  "omschrijving": "Een 3D-model (gebouw, gerecht, vervoermiddel, kunstvoorwerp) wordt geroteerd; kijkhoeken worden verbonden aan woordenschat of cultuurvragen.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "cultuur",
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 48"
+ },
+ {
+  "id": "PPT-049",
+  "domein": "powerpoint",
+  "naam": "Microfilms met GIF, schermopname en Ink Replay",
+  "omschrijving": "Een korte GIF voor emoties of handelingen, een schermopname voor digitale taken, en Ink Replay om spelling, accenten of zinsopbouw stap voor stap te tonen.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 49"
+ },
+ {
+  "id": "PPT-050",
+  "domein": "powerpoint",
+  "naam": "Live docentlaag en finale eindmissie",
+  "omschrijving": "De docentcamera via Cameo in de dia, live ondertitels of vertaling tijdens instructie, afgesloten met een grote vertakkende eindmissie die alle vaardigheden inzet.",
+  "formaat": [
+   "pptx"
+  ],
+  "vaardigheid": [
+   "lezen",
+   "luisteren",
+   "spreken",
+   "schrijven"
+  ],
+  "fase": "vrij",
+  "bron": "INTERACTIEVE_POWERPOINT_50_IDEEEN.md#idee 50"
+ },
+ {
+  "id": "VS-001",
+  "domein": "woordenschat-patroon",
+  "naam": "Gelabelde scène",
+  "omschrijving": "Eén grote illustratie of foto (slaapkamer, markt, station…) waarin woorden rechtstreeks bij hun onderdeel worden aangeduid, met een vaste kleurcode per woordsoort.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL I nr 1"
+ },
+ {
+  "id": "VS-002",
+  "domein": "woordenschat-patroon",
+  "naam": "Zoekplaat",
+  "omschrijving": "Eén rijke illustratie (bv. een markt) waarin leerlingen woorden moeten vinden, tellen of gebruiken; dezelfde plaat dient later voor voorzetsels, kleuren, hoeveelheden en meer.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL I nr 2"
+ },
+ {
+  "id": "VS-003",
+  "domein": "woordenschat-patroon",
+  "naam": "Woordenschat in visuele clusters",
+  "omschrijving": "Woorden worden gegroepeerd rond een centraal thema in kleine subclusters, elk met eigen pictogram, kleur en maximaal vijf tot acht woorden.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL I nr 3"
+ },
+ {
+  "id": "VS-004",
+  "domein": "woordenschat-patroon",
+  "naam": "Foto plus woordchips",
+  "omschrijving": "Losse woordchips rond een sfeerfoto (bv. een café) die leerlingen verbinden met de foto, sorteren en combineren tot zinnen.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL I nr 4"
+ },
+ {
+  "id": "VS-005",
+  "domein": "woordenschat-patroon",
+  "naam": "Visueel woordenboek per woord",
+  "omschrijving": "Een compacte kaart per kernwoord met afbeelding, lidwoord, meervoud, woordsoort, voorbeeldzin en collocatie — vooral voor moeilijke of frequente woorden.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL I nr 5"
+ },
+ {
+  "id": "VS-006",
+  "domein": "woordenschat-patroon",
+  "naam": "Werkwoorden als handelingenreeks",
+  "omschrijving": "Werkwoorden worden getoond als een opeenvolgende reeks acties (bv. een ochtendroutine) met pijlen, tijdstippen en een terugkerend personage.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL I nr 6"
+ },
+ {
+  "id": "VS-007",
+  "domein": "woordenschat-patroon",
+  "naam": "Tegenstellingen als visuele paren",
+  "omschrijving": "Woorden met tegengestelde betekenis worden als paar getoond (grande/pequeño…), bv. via twee foto's naast elkaar of een schuifbalk.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL I nr 7"
+ },
+ {
+  "id": "VS-008",
+  "domein": "woordenschat-patroon",
+  "naam": "Woordfamilies als bouwstenen",
+  "omschrijving": "Verwante woorden (bv. viajar → viaje → viajero) worden als boomstructuur getoond met een vaste kleurcode per woordsoort.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL I nr 8"
+ },
+ {
+  "id": "VS-009",
+  "domein": "woordenschat-patroon",
+  "naam": "Semantische ladders",
+  "omschrijving": "Woorden worden op een schaal geplaatst (temperatuur, frequentie, emotie, intensiteit) met een thermometer, meter of kleurverloop om nuance zichtbaar te maken.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL I nr 9"
+ },
+ {
+  "id": "VS-010",
+  "domein": "woordenschat-patroon",
+  "naam": "Plattegrond met woordenschat",
+  "omschrijving": "Een fictieve maar realistische kaart met plaatsen waarmee tegelijk plaatsnamen, voorzetsels, richtingen en routebeschrijving geoefend worden.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL I nr 10"
+ },
+ {
+  "id": "VS-011",
+  "domein": "woordenschat-patroon",
+  "naam": "Woordenschat via personages",
+  "omschrijving": "Verschillende cast-personages dragen elk een deel van de woordenschat (bv. muziek, sport, lezen), met avatar, kernwoorden en mini-profiel.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL I nr 11"
+ },
+ {
+  "id": "VS-012",
+  "domein": "woordenschat-patroon",
+  "naam": "Object met uitklaplabels",
+  "omschrijving": "Eén centraal object (fiets, lichaam, huis…) krijgt uitklaplabels bij de onderdelen, voor gevorderden gecombineerd met werkwoorden.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL I nr 12"
+ },
+ {
+  "id": "VS-013",
+  "domein": "woordenschat-patroon",
+  "naam": "Visuele collocaties",
+  "omschrijving": "Een centraal werkwoord (tener, hacer…) wordt als grote tegel getoond met de natuurlijke combinaties eromheen, om letterlijke NL-vertaling te vermijden.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL I nr 13"
+ },
+ {
+  "id": "VS-014",
+  "domein": "woordenschat-patroon",
+  "naam": "Woordenschat als kast, lade of koffer",
+  "omschrijving": "Een herkenbare container (kledingkast, reiskoffer, keukenkast) dient als visuele categorie-indeling voor woordenschat.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL I nr 14"
+ },
+ {
+  "id": "VS-015",
+  "domein": "woordenschat-patroon",
+  "naam": "Woordenschat via een visueel verhaal",
+  "omschrijving": "Vier à vijf beelden zonder veel tekst tonen een gebeurtenis waaraan kernwoorden gekoppeld worden, voor betere memorisatie.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL I nr 15"
+ },
+ {
+  "id": "VS-016",
+  "domein": "woordenschat-patroon",
+  "naam": "Voor-en-na-afbeeldingen",
+  "omschrijving": "Twee contrasterende beelden (bv. kamer voor/na opruimen) laten woordenschat én grammatica tegelijk oefenen.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL I nr 16"
+ },
+ {
+  "id": "VS-017",
+  "domein": "woordenschat-patroon",
+  "naam": "Infographic",
+  "omschrijving": "Woordenschat met cijfers, categorieën of verhoudingen (favoriete sporten, mediagebruik…) wordt getoond als infographic met pictogrammen en percentages.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL I nr 17"
+ },
+ {
+  "id": "VS-018",
+  "domein": "woordenschat-patroon",
+  "naam": "Woordenschat als menukaart",
+  "omschrijving": "Een keuzemenu met aanvinkbare opties (bv. Plan je vrije dag) waaruit leerlingen selecteren voor een spreek- of schrijftaak.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL I nr 18"
+ },
+ {
+  "id": "VS-019",
+  "domein": "woordenschat-patroon",
+  "naam": "Verborgen vertaling",
+  "omschrijving": "De Nederlandse vertaling staat niet meteen naast het Spaanse woord maar achter een hover, tooltip, QR-code of uitklaplaag, zodat het beeld eerst de betekenis draagt.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL I nr 19"
+ },
+ {
+  "id": "VS-020",
+  "domein": "woordenschat-patroon",
+  "naam": "Persoonlijke woordenschatruimte",
+  "omschrijving": "Een vast \"Mis palabras\"-vakje op elke woordenschatspread waar leerlingen zelf relevante woorden aan toevoegen.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "vrij",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL I nr 20"
+ },
+ {
+  "id": "VS-021",
+  "domein": "woordenschat-patroon",
+  "naam": "Sterke dubbele woordenschatpagina",
+  "omschrijving": "Blueprint voor een dubbele pagina: links een gelabelde scène met zoekopdracht, rechts woordclusters, collocaties, spreektaak en persoonlijke woordenruimte.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL I nr 21"
+ },
+ {
+  "id": "VS-022",
+  "domein": "woordenschat-patroon",
+  "naam": "Herbruikbare woordenschatcomponenten voor Claude Code",
+  "omschrijving": "Referentielijst van herbruikbare woordenschat-componenten (VocabularyScene, VocabularyCluster, VocabularyChip…) met hun gedeelde eigenschappen voor print en digitaal.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL I nr 22"
+ },
+ {
+  "id": "VS-023",
+  "domein": "woordenschat-patroon",
+  "naam": "Sterkste combinatie voor woordenschat",
+  "omschrijving": "Aanbevolen combinatie: één grote contextillustratie, visuele woordclusters, natuurlijke collocaties en een onmiddellijke spreektaak — woordenschat als bruikbaar systeem, geen lijst.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL I nr 23"
+ },
+ {
+  "id": "VG-001",
+  "domein": "grammatica-patroon",
+  "naam": "Grammatica ontdekken in een beeldsituatie",
+  "omschrijving": "Een herkenbare situatie (bv. een geïllustreerde kamer bij hay) toont de doelstructuur herhaaldelijk; observatievragen leiden de leerling naar het patroon vóór de regel volgt.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 1"
+ },
+ {
+  "id": "VG-002",
+  "domein": "grammatica-patroon",
+  "naam": "Kleurgecodeerde zinsdelen",
+  "omschrijving": "Vaste kleuren maken grammaticale functies zichtbaar (onderwerp blauw, werkwoord oranje, lijdend voorwerp groen, tijd paars, plaats turquoise, ontkenning rood), consequent doorheen de cursus.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 2"
+ },
+ {
+  "id": "VG-003",
+  "domein": "grammatica-patroon",
+  "naam": "Grammatica als bouwstroken",
+  "omschrijving": "Een zin wordt getoond als reeks verwisselbare blokken die leerlingen combineren, vervangen of ontkennen, zodat vast en variabel zichtbaar wordt.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "onderscheiden",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 3"
+ },
+ {
+  "id": "VG-004",
+  "domein": "grammatica-patroon",
+  "naam": "Werkwoordsvorming als visuele machine",
+  "omschrijving": "Een visuele machine toont hoe een werkwoord van infinitief via stam en uitgang tot vervoegde vorm wordt opgebouwd (hablar → habl- → hablo).",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 4"
+ },
+ {
+  "id": "VG-005",
+  "domein": "grammatica-patroon",
+  "naam": "Vervoegingswiel",
+  "omschrijving": "Een wiel met de stam in het midden en de persoonsuitgangen errond, aantrekkelijker dan een grote vervoegingstabel; aparte wielen per werkwoordsgroep.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "onderscheiden",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 5"
+ },
+ {
+  "id": "VG-006",
+  "domein": "grammatica-patroon",
+  "naam": "Persoonsvormen via terugkerende personages",
+  "omschrijving": "Elke grammaticale persoon (yo, tú, él/ella…) wordt gekoppeld aan een herkenbaar personage/situatiebeeld in plaats van enkel een vertaling.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 6"
+ },
+ {
+  "id": "VG-007",
+  "domein": "grammatica-patroon",
+  "naam": "Grammatica via een miniverhaal",
+  "omschrijving": "Drie tot zes beelden waarin dezelfde structuur (bv. ir a + infinitief) herhaaldelijk terugkomt, waarna leerlingen het patroon zelf ontdekken.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 7"
+ },
+ {
+  "id": "VG-008",
+  "domein": "grammatica-patroon",
+  "naam": "Tijdlijnen",
+  "omschrijving": "Tijdlijnen tonen tijd, volgorde en werkwoordstijd (tegenwoordig, nabije toekomst, voltooid) telkens met een klein beeld van de gebeurtenis erbij.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 8"
+ },
+ {
+  "id": "VG-009",
+  "domein": "grammatica-patroon",
+  "naam": "Voor-en-na-transformatie",
+  "omschrijving": "Twee zinnen naast elkaar tonen een grammaticale verandering (bevestigend/ontkennend, enkelvoud/meervoud) met enkel het verschil gemarkeerd.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "onderscheiden",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 9"
+ },
+ {
+  "id": "VG-010",
+  "domein": "grammatica-patroon",
+  "naam": "Overeenkomst zichtbaar maken",
+  "omschrijving": "Congruentie tussen lidwoord, zelfstandig naamwoord en bijvoeglijk naamwoord wordt zichtbaar gemaakt met gekleurde letters of verbindingslijnen, spaarzaam gebruikt.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 10"
+ },
+ {
+  "id": "VG-011",
+  "domein": "grammatica-patroon",
+  "naam": "Grammaticale paren",
+  "omschrijving": "Vaak verwarde regels (ser/estar) worden als visueel contrast getoond, ondersteund door een metafoor (identiteitskaart vs. locatiepin) naast echte voorbeelden.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "onderscheiden",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 11"
+ },
+ {
+  "id": "VG-012",
+  "domein": "grammatica-patroon",
+  "naam": "Beslisboom",
+  "omschrijving": "Een beslisboom van maximaal drie à vier vragen leidt de leerling naar de juiste vorm bij een keuze tussen twee of meer opties (ser/estar/hay, por/para…).",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 12"
+ },
+ {
+  "id": "VG-013",
+  "domein": "grammatica-patroon",
+  "naam": "Grammatica als routekaart",
+  "omschrijving": "Een vaste stappenroute (wie doet iets? welk werkwoord? welke persoonsvorm? welke aanvulling? woordvolgorde controleren) begeleidt zinsbouw en zelfcorrectie.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 13"
+ },
+ {
+  "id": "VG-014",
+  "domein": "grammatica-patroon",
+  "naam": "Zinsframe met invulplaatsen",
+  "omschrijving": "Vaste zinsconstructies met duidelijk gemarkeerde invulplaatsen (Voy a [activiteit] con [persoon] el [dag]) als afbouwbare ondersteuning, geen eindpunt.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 14"
+ },
+ {
+  "id": "VG-015",
+  "domein": "grammatica-patroon",
+  "naam": "Grammaticapuzzel",
+  "omschrijving": "Losse zinsdelen worden als puzzel aangeboden die leerlingen in de juiste volgorde leggen, met variaties zoals ontkenning, vraagvorm of tijdswissel.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 15"
+ },
+ {
+  "id": "VG-016",
+  "domein": "grammatica-patroon",
+  "naam": "Vraag en antwoord als spiegel",
+  "omschrijving": "Toont hoe delen van een vraag terugkeren in het antwoord, met het vraagwoord gekoppeld aan het gezochte informatietype (wie/waar/wanneer…).",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "onderscheiden",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 16"
+ },
+ {
+  "id": "VG-017",
+  "domein": "grammatica-patroon",
+  "naam": "Grammatica via stripverhaal",
+  "omschrijving": "Een korte strip van vier panelen herhaalt een structuur (bv. tener que) natuurlijk in een mini-verhaal, waarna leerlingen de regel ontdekken en een paneel toevoegen.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 17"
+ },
+ {
+  "id": "VG-018",
+  "domein": "grammatica-patroon",
+  "naam": "Grammatica als infographic",
+  "omschrijving": "Een infographic vereenvoudigt een regel die uit meerdere vaste delen bestaat (bv. bezittelijke voornaamwoorden) met eenvoudige ondersteunende beeldjes.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 18"
+ },
+ {
+  "id": "VG-019",
+  "domein": "grammatica-patroon",
+  "naam": "Betekenisverschil als fotopaar",
+  "omschrijving": "Twee bijna identieke beelden tonen hoe eenzelfde zin met een andere grammaticale keuze (es/está aburrido) een andere betekenis krijgt.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 19"
+ },
+ {
+  "id": "VG-020",
+  "domein": "grammatica-patroon",
+  "naam": "Beweging en richting visualiseren",
+  "omschrijving": "Pijlen en een kaart met personage tonen voorzetsels en bewegingswerkwoorden (ir a, venir de, pasar por) beter dan lange uitleg.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 20"
+ },
+ {
+  "id": "VG-021",
+  "domein": "grammatica-patroon",
+  "naam": "Lidwoorden via visuele zoom",
+  "omschrijving": "Een zoom van een druk straatbeeld (onbepaald, eerste vermelding) naar één specifiek detail (bepaald, bekend) maakt het verschil un/el zichtbaar.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 21"
+ },
+ {
+  "id": "VG-022",
+  "domein": "grammatica-patroon",
+  "naam": "Voornaamwoorden als vervangingskaart",
+  "omschrijving": "Toont letterlijk hoe een woordgroep wordt doorgehaald en vervangen door een voornaamwoord dat naar zijn vaste plaats vóór het werkwoord beweegt.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "onderscheiden",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 22"
+ },
+ {
+  "id": "VG-023",
+  "domein": "grammatica-patroon",
+  "naam": "Plaatsing als visuele rails",
+  "omschrijving": "Een horizontale rail met vaste kolommen (onderwerp/voornaamwoord/werkwoord/aanvulling) toont woordvolgorde, ook bij ontkenning; de rail wordt later afgebouwd.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 23"
+ },
+ {
+  "id": "VG-024",
+  "domein": "grammatica-patroon",
+  "naam": "Regelkaart met drie lagen",
+  "omschrijving": "Een grammaticakaart toont steeds vorm, betekenis én gebruik apart, zodat leerlingen niet enkel de vorm memoriseren zonder te weten wanneer ze die gebruiken.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 24"
+ },
+ {
+  "id": "VG-025",
+  "domein": "grammatica-patroon",
+  "naam": "De regel in één zin",
+  "omschrijving": "Eén korte kernregel in een herkenbaar kader volgt pas ná de ontdekfase; complexe regels worden verdeeld over kernregel, voorbeeld, schema, uitzondering en toepassing.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 25"
+ },
+ {
+  "id": "VG-026",
+  "domein": "grammatica-patroon",
+  "naam": "Uitzonderingen als waarschuwing",
+  "omschrijving": "Een vaste visuele waarschuwing (ATENCIÓN/OJO) markeert echte uitzonderingen, spaarzaam gebruikt zodat het kader zijn signaalfunctie behoudt.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "herkennen",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 26"
+ },
+ {
+  "id": "VG-027",
+  "domein": "grammatica-patroon",
+  "naam": "Foutenkliniek",
+  "omschrijving": "Een geloofwaardige foute zin naast de correcte vorm wordt door leerlingen geanalyseerd aan de hand van gerichte vragen (welk woord, waarom, welke regel).",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 27"
+ },
+ {
+  "id": "VG-028",
+  "domein": "grammatica-patroon",
+  "naam": "Grammaticale röntgenfoto",
+  "omschrijving": "Een zin wordt opengesplitst met de functie van elk deel benoemd (wanneer, werkwoord, vast onderdeel, infinitief, bestemming), enkel bij zinnen die een belangrijk patroon tonen.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "onderscheiden",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 28"
+ },
+ {
+  "id": "VG-029",
+  "domein": "grammatica-patroon",
+  "naam": "Van veel steun naar weinig steun",
+  "omschrijving": "Dezelfde opdracht wordt in vier afnemende stappen getoond (volledig model → zinsframe → sleutelwoorden → zelfstandig), zichtbaar als een aflopende steiger.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "gestuurd",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 29"
+ },
+ {
+  "id": "VG-030",
+  "domein": "grammatica-patroon",
+  "naam": "Grammatica onmiddellijk laten spreken",
+  "omschrijving": "Elke grammaticaspread eindigt met een korte communicatieve toepassing (bv. drie klasgenoten iets vragen), zodat grammatica een hulpmiddel blijft, geen einddoel.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "vrij",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 30"
+ },
+ {
+  "id": "VG-031",
+  "domein": "grammatica-patroon",
+  "naam": "Digitale grammatica-interacties",
+  "omschrijving": "Dezelfde visuele componenten worden op de digitale pagina interactief (slepen, klikken, wiel draaien, tijdlijnpunten verplaatsen), terwijl print volledig bruikbaar blijft zonder die functies.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 31"
+ },
+ {
+  "id": "VG-032",
+  "domein": "grammatica-patroon",
+  "naam": "Wat beter wordt vermeden",
+  "omschrijving": "Checklist van vijf te vermijden valkuilen: regel vóór context, volle vervoegingstabellen, regenbooggrammatica (willekeurige kleuren), overvolle kaders en abstracte termen zonder voorbeeld.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 32"
+ },
+ {
+  "id": "VG-033",
+  "domein": "grammatica-patroon",
+  "naam": "Sterke dubbele grammaticapagina",
+  "omschrijving": "Blueprint voor een dubbele pagina: links context, voorbeelden en ontdekvragen, rechts regelkaart, schema, korte oefening en communicatieve eindtaak.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 33"
+ },
+ {
+  "id": "VG-034",
+  "domein": "grammatica-patroon",
+  "naam": "Herbruikbare grammaticacomponenten voor Claude Code",
+  "omschrijving": "Referentielijst van herbruikbare grammatica-componenten (GrammarContext, GrammarMachine, GrammarDecisionTree…) met hun gedeelde eigenschappen voor print en digitaal.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 34"
+ },
+ {
+  "id": "VG-035",
+  "domein": "grammatica-patroon",
+  "naam": "Sterkste combinatie voor grammatica",
+  "omschrijving": "Aanbevolen combinatie: een realistische context, visueel gemarkeerde voorbeelden, één compacte regel, een betekenisvol schema en een onmiddellijke communicatieve toepassing.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "",
+  "bron": "VISUELE_WOORDENSCHAT_EN_GRAMMATICA.md#DEEL II nr 35"
+ },
+ {
+  "id": "SK-001",
+  "domein": "vaardigheid",
+  "naam": "Visuele tekstintroductie",
+  "omschrijving": "Een tekst wordt geïntroduceerd via foto, titel, pictogrammen, tekstsoort, afzender, ontvanger en een centrale vraag, zodat de leerling eerst voorspelt en pas dan leest.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.1 nr 1"
+ },
+ {
+  "id": "SK-002",
+  "domein": "vaardigheid",
+  "naam": "Authentiek ogende microteksten",
+  "omschrijving": "Je start met korte, visueel herkenbare tekstvormen (chatbericht, affiche, menu, ticket…) waarvan de vorm zelf al betekenis laat voorspellen.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.1 nr 2"
+ },
+ {
+  "id": "SK-003",
+  "domein": "vaardigheid",
+  "naam": "Tekstladder",
+  "omschrijving": "Teksten bouwen geleidelijk op van woord via label, korte zin en microtekst tot een langere tekst met meerdere alinea's, zonder lengte en complexiteit tegelijk sterk te laten stijgen.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.1 nr 3"
+ },
+ {
+  "id": "SK-004",
+  "domein": "vaardigheid",
+  "naam": "Verschillende leesdoelen zichtbaar maken",
+  "omschrijving": "Boven elke tekst staat een concreet leesdoel (plaats vinden, moment kiezen…), zodat de leerling niet elk woord hoeft te begrijpen.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.1 nr 4"
+ },
+ {
+  "id": "SK-005",
+  "domein": "vaardigheid",
+  "naam": "Strategiekaart naast de tekst",
+  "omschrijving": "Een vaste leesstrategiekaart (titel en beeld eerst bekijken, namen/tijden/plaatsen zoeken…) houdt telkens maar één of twee strategieën centraal.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.1 nr 5"
+ },
+ {
+  "id": "SK-006",
+  "domein": "vaardigheid",
+  "naam": "Gelaagde teksten",
+  "omschrijving": "Dezelfde tekst krijgt optionele lagen (pictogrammen, woordenhulp, vertaling, cultuurtoelichting) die enkel zichtbaar worden wanneer nodig.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.1 nr 6"
+ },
+ {
+  "id": "SK-007",
+  "domein": "vaardigheid",
+  "naam": "Tekststructuur visualiseren",
+  "omschrijving": "De vaste opbouw van een tekstsoort (bv. begroeting→aanleiding→kernboodschap→afsluiting bij een e-mail) wordt zichtbaar gemaakt.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.1 nr 7"
+ },
+ {
+  "id": "SK-008",
+  "domein": "vaardigheid",
+  "naam": "Terugkerende tekstsoorten",
+  "omschrijving": "Dezelfde tekstsoort komt herhaaldelijk terug, telkens iets complexer, zodat leerlingen de vorm herkennen en zich op de inhoud kunnen richten.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.1 nr 8"
+ },
+ {
+  "id": "SK-009",
+  "domein": "vaardigheid",
+  "naam": "Parallelle teksten",
+  "omschrijving": "Twee vergelijkbare teksten (twee profielen, twee restaurants…) worden naast elkaar geplaatst, wat een duidelijk vergelijkend leesdoel geeft.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.1 nr 9"
+ },
+ {
+  "id": "SK-010",
+  "domein": "vaardigheid",
+  "naam": "Multimodale leesteksten",
+  "omschrijving": "Tekst wordt gecombineerd met kaart, tabel, pictogram, tijdlijn of grafiek, zodat leerlingen informatie uit verschillende bronnen leren samenbrengen.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.1 nr 10"
+ },
+ {
+  "id": "SK-011",
+  "domein": "vaardigheid",
+  "naam": "Voorspellen vanuit titel en beeld",
+  "omschrijving": "Leerlingen voorspellen onderwerp, tekstsoort en boodschap op basis van titel en beeld, en controleren dit na het lezen.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.2 nr 1"
+ },
+ {
+  "id": "SK-012",
+  "domein": "vaardigheid",
+  "naam": "Tekstsoort herkennen",
+  "omschrijving": "Leerlingen bepalen of een tekst een uitnodiging, bericht, advertentie… is en motiveren hun keuze.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.2 nr 2"
+ },
+ {
+  "id": "SK-013",
+  "domein": "vaardigheid",
+  "naam": "Globale betekenis kiezen",
+  "omschrijving": "Leerlingen kiezen de beste van drie mogelijke samenvattingen zonder ieder detail te analyseren.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.2 nr 3"
+ },
+ {
+  "id": "SK-014",
+  "domein": "vaardigheid",
+  "naam": "Scannen naar concrete informatie",
+  "omschrijving": "Leerlingen zoeken snel naar naam, plaats, prijs, datum of tijdstip, eventueel met een timer zonder dat snelheid boven begrip gaat.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "onderscheiden",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.2 nr 4"
+ },
+ {
+  "id": "SK-015",
+  "domein": "vaardigheid",
+  "naam": "Informatie markeren met kleur",
+  "omschrijving": "Een vaste kleurcode (personen, plaatsen, tijd, probleem, oplossing) helpt informatie te lokaliseren, gevolgd door een invulschema.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "onderscheiden",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.2 nr 5"
+ },
+ {
+  "id": "SK-016",
+  "domein": "vaardigheid",
+  "naam": "Kopjes aan alinea's koppelen",
+  "omschrijving": "Leerlingen verbinden korte titels met tekstfragmenten en bedenken nadien zelf een betere titel.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "onderscheiden",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.2 nr 6"
+ },
+ {
+  "id": "SK-017",
+  "domein": "vaardigheid",
+  "naam": "Zinnen in volgorde plaatsen",
+  "omschrijving": "Door elkaar gehusselde gebeurtenissen of instructies (dagplanning, route, verhaal) worden door leerlingen gereconstrueerd.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "onderscheiden",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.2 nr 7"
+ },
+ {
+  "id": "SK-018",
+  "domein": "vaardigheid",
+  "naam": "Juist, fout en bewijs",
+  "omschrijving": "Leerlingen beoordelen beweringen, duiden het bewijs in de tekst aan en verbeteren foute beweringen.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "ophalen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.2 nr 8"
+ },
+ {
+  "id": "SK-019",
+  "domein": "vaardigheid",
+  "naam": "Vraag en bewijs koppelen",
+  "omschrijving": "Bij elk antwoord noteren leerlingen waar het staat en welk woord of welke informatie hen hielp.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "ophalen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.2 nr 9"
+ },
+ {
+  "id": "SK-020",
+  "domein": "vaardigheid",
+  "naam": "Betekenis uit context afleiden",
+  "omschrijving": "Bij een gemarkeerd onbekend woord kiezen leerlingen de vermoedelijke betekenis en woordsoort en leggen uit welke contextaanwijzing hielp.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "ophalen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.2 nr 10"
+ },
+ {
+  "id": "SK-021",
+  "domein": "vaardigheid",
+  "naam": "Informatieraster invullen",
+  "omschrijving": "Leerlingen plaatsen tekstgegevens in een tabel (wie/waar/wanneer/wat/waarom).",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "ophalen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.2 nr 11"
+ },
+ {
+  "id": "SK-022",
+  "domein": "vaardigheid",
+  "naam": "Jigsaw reading",
+  "omschrijving": "Een tekst of bronnen worden over groepen verdeeld; elke leerling leest één deel en deelt de informatie mondeling om de opdracht samen op te lossen.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.2 nr 12"
+ },
+ {
+  "id": "SK-023",
+  "domein": "vaardigheid",
+  "naam": "De beste optie kiezen",
+  "omschrijving": "Leerlingen lezen meerdere bronnen, nemen een beslissing (beste restaurant, beste trein…) en onderbouwen die met informatie uit de tekst.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.2 nr 13"
+ },
+ {
+  "id": "SK-024",
+  "domein": "vaardigheid",
+  "naam": "Tekst samenvatten met steun",
+  "omschrijving": "De samenvattingsopdracht bouwt af van zinnen selecteren via kernwoorden en een samenvattend frame naar volledig zelfstandig samenvatten.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.2 nr 14"
+ },
+ {
+  "id": "SK-025",
+  "domein": "vaardigheid",
+  "naam": "Productieve reactie op een tekst",
+  "omschrijving": "De leestaak eindigt met een functionele productie (antwoordbericht, mondeling advies, eigen recensie…) die op de tekst voortbouwt.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen"
+  ],
+  "fase": "vrij",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#1.2 nr 15"
+ },
+ {
+  "id": "SK-026",
+  "domein": "vaardigheid",
+  "naam": "Modeltekst",
+  "omschrijving": "Een realistische voorbeeldtekst (chatbericht, e-mail, uitnodiging…) toont wat een bruikbaar eindproduct kan zijn.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.1 nr 1"
+ },
+ {
+  "id": "SK-027",
+  "domein": "vaardigheid",
+  "naam": "Visuele ontleding van een model",
+  "omschrijving": "De vaste onderdelen van een tekstsoort (bv. begroeting, aanleiding, voorstel, afsluiting bij een uitnodiging) worden gemarkeerd.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.1 nr 2"
+ },
+ {
+  "id": "SK-028",
+  "domein": "vaardigheid",
+  "naam": "Kleurgecodeerde tekststructuur",
+  "omschrijving": "Vaste kleuren markeren tekstfuncties (openingszin, kerninformatie, argument, afsluiting…) en verdwijnen geleidelijk in latere opdrachten.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.1 nr 3"
+ },
+ {
+  "id": "SK-029",
+  "domein": "vaardigheid",
+  "naam": "Schrijfladder",
+  "omschrijving": "De weg van model naar zelfstandige tekst wordt zichtbaar gemaakt: lezen, onderdelen herkennen, aanvullen, vervangen, herschrijven, zelf maken.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.1 nr 4"
+ },
+ {
+  "id": "SK-030",
+  "domein": "vaardigheid",
+  "naam": "Zinsbouwers",
+  "omschrijving": "Tabellen of digitale bouwstroken (begin/werkwoord/aanvulling/reden) laten leerlingen eerst bestaande onderdelen combineren en daarna eigen taal toevoegen.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.1 nr 5"
+ },
+ {
+  "id": "SK-031",
+  "domein": "vaardigheid",
+  "naam": "Functionele taalbanken",
+  "omschrijving": "Taal wordt communicatief geordend (begroeten, voorstellen, akkoord gaan, weigeren, reden geven) in plaats van louter grammaticaal.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.1 nr 6"
+ },
+ {
+  "id": "SK-032",
+  "domein": "vaardigheid",
+  "naam": "Planning vóór het schrijven",
+  "omschrijving": "Hulpmiddelen als woordweb, vragenraster of structuurkaart laten leerlingen eerst inhoud bedenken vóór ze zinnen formuleren.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.1 nr 7"
+ },
+ {
+  "id": "SK-033",
+  "domein": "vaardigheid",
+  "naam": "Meerdere modellen",
+  "omschrijving": "Twee of drie verschillende goede voorbeelden voor dezelfde opdracht tonen dat er niet één juiste tekst bestaat.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.1 nr 8"
+ },
+ {
+  "id": "SK-034",
+  "domein": "vaardigheid",
+  "naam": "Eerste en verbeterde versie",
+  "omschrijving": "Een voorbeeld toont expliciet het traject eerste versie → gerichte feedback → verbeterde versie, zodat schrijven zichtbaar een proces is.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.1 nr 9"
+ },
+ {
+  "id": "SK-035",
+  "domein": "vaardigheid",
+  "naam": "Schrijfportfolio",
+  "omschrijving": "Leerlingen bewaren per unit teksten met eerste versie, feedback, verbeterde versie, reflectie en persoonlijk verbeterpunt.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.1 nr 10"
+ },
+ {
+  "id": "SK-036",
+  "domein": "vaardigheid",
+  "naam": "Kopiëren met betekenis",
+  "omschrijving": "Leerlingen schrijven een model over, markeren daarbij persoonsvormen en kernwoorden, en veranderen daarna minstens één element.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.2 nr 1"
+ },
+ {
+  "id": "SK-037",
+  "domein": "vaardigheid",
+  "naam": "Tekst aanvullen",
+  "omschrijving": "Ontbrekende tekstonderdelen (begroeting, werkwoord, tijdstip, afsluiting) worden ingevuld in functie van het communicatieve doel.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "onderscheiden",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.2 nr 2"
+ },
+ {
+  "id": "SK-038",
+  "domein": "vaardigheid",
+  "naam": "Zinnen ordenen",
+  "omschrijving": "Leerlingen zetten losse zinnen in een logische tekstvolgorde en verklaren hun keuze.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "onderscheiden",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.2 nr 3"
+ },
+ {
+  "id": "SK-039",
+  "domein": "vaardigheid",
+  "naam": "Substitutieopdracht",
+  "omschrijving": "In een modelzin wordt informatie (dag, activiteit, persoon, plaats) vervangen, waarna leerlingen een volledig eigen zin schrijven.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.2 nr 4"
+ },
+ {
+  "id": "SK-040",
+  "domein": "vaardigheid",
+  "naam": "Zinnen uitbreiden",
+  "omschrijving": "Een kernzin wordt stap voor stap uitgebreid met wat, waar, wanneer, met wie en waarom.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.2 nr 5"
+ },
+ {
+  "id": "SK-041",
+  "domein": "vaardigheid",
+  "naam": "Twee zinnen verbinden",
+  "omschrijving": "Twee korte zinnen worden samengevoegd tot één zin met een verbindingswoord (bv. porque).",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.2 nr 6"
+ },
+ {
+  "id": "SK-042",
+  "domein": "vaardigheid",
+  "naam": "Onderschrift schrijven",
+  "omschrijving": "Leerlingen schrijven een onderschrift eerst met een woordenbank, dan met enkel een afbeelding, en ten slotte bij een zelfgekozen afbeelding.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.2 nr 7"
+ },
+ {
+  "id": "SK-043",
+  "domein": "vaardigheid",
+  "naam": "Parallelle tekst",
+  "omschrijving": "Leerlingen gebruiken de structuur van een modeltekst maar vervangen alle persoonlijke inhoud.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.2 nr 8"
+ },
+ {
+  "id": "SK-044",
+  "domein": "vaardigheid",
+  "naam": "Schrijven vanuit een beeldreeks",
+  "omschrijving": "De steun bouwt af van beelden met volledige voorbeeldzinnen via kernwoorden naar enkel beelden en een nieuwe reeks.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.2 nr 9"
+ },
+ {
+  "id": "SK-045",
+  "domein": "vaardigheid",
+  "naam": "Bericht vervolledigen",
+  "omschrijving": "Bij het begin van een bericht reageren, beantwoorden of bevestigen leerlingen zelf het vervolg.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.2 nr 10"
+ },
+ {
+  "id": "SK-046",
+  "domein": "vaardigheid",
+  "naam": "Collaboratief schrijven",
+  "omschrijving": "Leerlingen schrijven samen, bijvoorbeeld beurtelings één zin of elk een tekstonderdeel, met een gezamenlijke revisieronde.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.2 nr 11"
+ },
+ {
+  "id": "SK-047",
+  "domein": "vaardigheid",
+  "naam": "Tekst voor een andere ontvanger",
+  "omschrijving": "Dezelfde boodschap wordt herschreven voor een andere ontvanger (vriend, leraar, organisatie…).",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "vrij",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.2 nr 12"
+ },
+ {
+  "id": "SK-048",
+  "domein": "vaardigheid",
+  "naam": "Genretransformatie",
+  "omschrijving": "Informatie wordt van het ene tekstgenre naar het andere omgezet (planning→bericht, interview→profiel…).",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "vrij",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.2 nr 13"
+ },
+ {
+  "id": "SK-049",
+  "domein": "vaardigheid",
+  "naam": "Feedback en herschrijven",
+  "omschrijving": "Een beperkte checklist (boodschap duidelijk? informatie compleet? zinnen verbonden?) stuurt een herschrijfronde.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "vrij",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.2 nr 14"
+ },
+ {
+  "id": "SK-050",
+  "domein": "vaardigheid",
+  "naam": "Authentieke eindtaak",
+  "omschrijving": "Leerlingen schrijven een tekst met een concrete afzender, ontvanger, doel, context en verwacht resultaat.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "vrij",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#2.2 nr 15"
+ },
+ {
+  "id": "SK-051",
+  "domein": "vaardigheid",
+  "naam": "Visuele luistercontext",
+  "omschrijving": "Spreker, locatie, situatie en een centrale luistervraag worden vooraf getoond zonder de antwoorden te verklappen.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.1 nr 1"
+ },
+ {
+  "id": "SK-052",
+  "domein": "vaardigheid",
+  "naam": "Korte luisterfragmenten",
+  "omschrijving": "Je start met fragmenten van enkele seconden (begroeting, tijdstip, bestelling) en bouwt op naar langere dialogen en monologen.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.1 nr 2"
+ },
+ {
+  "id": "SK-053",
+  "domein": "vaardigheid",
+  "naam": "Meerdere luisterrondes met ander doel",
+  "omschrijving": "Hetzelfde fragment wordt niet herhaald met dezelfde opdracht; elke ronde krijgt een andere luistervraag (wie, waarover, details, bedoeling, reactie).",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.1 nr 3"
+ },
+ {
+  "id": "SK-054",
+  "domein": "vaardigheid",
+  "naam": "Eerst globaal, daarna gedetailleerd",
+  "omschrijving": "De eerste luisterbeurt peilt de kernboodschap, pas daarna volgen namen, tijden of specifieke woorden.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.1 nr 4"
+ },
+ {
+  "id": "SK-055",
+  "domein": "vaardigheid",
+  "naam": "Transcript in lagen",
+  "omschrijving": "Het transcript wordt niet meteen volledig getoond, maar bouwt op van geen transcript via sleutelwoorden en gaten naar volledig transcript met taalmarkering.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.1 nr 5"
+ },
+ {
+  "id": "SK-056",
+  "domein": "vaardigheid",
+  "naam": "Verschillende stemmen",
+  "omschrijving": "Variatie in geslacht, leeftijd, spreektempo, stemkleur en herkomst houdt de luisterervaring realistisch maar niveaupassend.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.1 nr 6"
+ },
+ {
+  "id": "SK-057",
+  "domein": "vaardigheid",
+  "naam": "Luisterstrategiekaart",
+  "omschrijving": "Vaste strategieën (namen en plaatsen eerst, herhaalde woorden opmerken, niet alles vertalen) worden expliciet aangereikt.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.1 nr 7"
+ },
+ {
+  "id": "SK-058",
+  "domein": "vaardigheid",
+  "naam": "Luisteren met geluidssituatie",
+  "omschrijving": "Betekenisvolle omgevingsgeluiden (station, café, straat) helpen de situatie herkennen zonder de spraak onduidelijk te maken.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.1 nr 8"
+ },
+ {
+  "id": "SK-059",
+  "domein": "vaardigheid",
+  "naam": "Audio gekoppeld aan een visuele bron",
+  "omschrijving": "Luisteren wordt gecombineerd met een kaart, planning, menu of formulier dat de leerling aanvult.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.1 nr 9"
+ },
+ {
+  "id": "SK-060",
+  "domein": "vaardigheid",
+  "naam": "Luisteren als start van een handeling",
+  "omschrijving": "Het luisterfragment leidt tot een keuze, reactie, route, planning of gesprek in plaats van enkel begripsvragen.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.1 nr 10"
+ },
+ {
+  "id": "SK-061",
+  "domein": "vaardigheid",
+  "naam": "Luisteren en aanwijzen",
+  "omschrijving": "Leerlingen wijzen het juiste beeld, personage, voorwerp of woord aan bij wat ze horen.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.2 nr 1"
+ },
+ {
+  "id": "SK-062",
+  "domein": "vaardigheid",
+  "naam": "Luisteren en kiezen",
+  "omschrijving": "Leerlingen kiezen tussen twee tot vier mogelijke situaties of kernboodschappen.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.2 nr 2"
+ },
+ {
+  "id": "SK-063",
+  "domein": "vaardigheid",
+  "naam": "Sprekers herkennen",
+  "omschrijving": "Leerlingen koppelen uitspraken aan het juiste personage, beroep, mening of locatie.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.2 nr 3"
+ },
+ {
+  "id": "SK-064",
+  "domein": "vaardigheid",
+  "naam": "Luisteren en ordenen",
+  "omschrijving": "Beelden, gebeurtenissen, instructies of dialoogzinnen worden in de gehoorde volgorde geplaatst.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "onderscheiden",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.2 nr 4"
+ },
+ {
+  "id": "SK-065",
+  "domein": "vaardigheid",
+  "naam": "Globale vraag beantwoorden",
+  "omschrijving": "Brede begripsvragen (wat willen de sprekers, waar vindt het plaats, zijn ze het eens) worden beantwoord.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "onderscheiden",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.2 nr 5"
+ },
+ {
+  "id": "SK-066",
+  "domein": "vaardigheid",
+  "naam": "Informatie aanvinken",
+  "omschrijving": "Leerlingen vinken uit een overzicht met afleiders de juiste tijden, activiteiten of locaties aan.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "onderscheiden",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.2 nr 6"
+ },
+ {
+  "id": "SK-067",
+  "domein": "vaardigheid",
+  "naam": "Informatieraster invullen",
+  "omschrijving": "Een tabel (spreker/activiteit/tijd/plaats/mening) wordt tijdens het luisteren ingevuld.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "ophalen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.2 nr 7"
+ },
+ {
+  "id": "SK-068",
+  "domein": "vaardigheid",
+  "naam": "Route tekenen",
+  "omschrijving": "Leerlingen luisteren naar aanwijzingen en tekenen of selecteren de juiste route op een kaart.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "ophalen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.2 nr 8"
+ },
+ {
+  "id": "SK-069",
+  "domein": "vaardigheid",
+  "naam": "Handeling uitvoeren",
+  "omschrijving": "Leerlingen voeren een reeks gehoorde instructies effectief uit (object verplaatsen, planning aanpassen…).",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "ophalen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.2 nr 9"
+ },
+ {
+  "id": "SK-070",
+  "domein": "vaardigheid",
+  "naam": "Foute informatie verbeteren",
+  "omschrijving": "Een samenvatting met fouten wordt na het luisteren gecorrigeerd.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "ophalen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.2 nr 10"
+ },
+ {
+  "id": "SK-071",
+  "domein": "vaardigheid",
+  "naam": "Selectief gatendictee",
+  "omschrijving": "Enkel inhoudelijk relevante woorden (kernwerkwoorden, tijden, plaatsen) worden ingevuld, niet bijna elk woord.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.2 nr 11"
+ },
+ {
+  "id": "SK-072",
+  "domein": "vaardigheid",
+  "naam": "Microdictogloss",
+  "omschrijving": "Leerlingen luisteren zonder te schrijven, noteren kernwoorden, reconstrueren samen de boodschap en maken een eigen variant.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.2 nr 12"
+ },
+ {
+  "id": "SK-073",
+  "domein": "vaardigheid",
+  "naam": "Notities maken",
+  "omschrijving": "Leerlingen vullen tijdens het luisteren een functioneel schema in in plaats van volledige zinnen over te schrijven.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "ophalen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.2 nr 13"
+ },
+ {
+  "id": "SK-074",
+  "domein": "vaardigheid",
+  "naam": "Mondeling of schriftelijk reageren",
+  "omschrijving": "Na het fragment accepteren, beantwoorden of adviseren leerlingen functioneel.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.2 nr 14"
+ },
+ {
+  "id": "SK-075",
+  "domein": "vaardigheid",
+  "naam": "Luistertransfer",
+  "omschrijving": "Een nieuw fragment met andere spreker en context maar dezelfde communicatieve functie en minder visuele steun test transfer.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren"
+  ],
+  "fase": "vrij",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#3.2 nr 15"
+ },
+ {
+  "id": "SK-076",
+  "domein": "vaardigheid",
+  "naam": "Audio- of videomodel",
+  "omschrijving": "Leerlingen bekijken of beluisteren eerst een kort gesprek waarna communicatieve stappen, nuttige taal en intonatie worden getoond.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.1 nr 1"
+ },
+ {
+  "id": "SK-077",
+  "domein": "vaardigheid",
+  "naam": "Dialoogkaart",
+  "omschrijving": "De route van een gesprek (begroeten→voorstel→reageren→alternatief→afsluiten) wordt visueel in kaart gebracht.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.1 nr 2"
+ },
+ {
+  "id": "SK-078",
+  "domein": "vaardigheid",
+  "naam": "Functioneel taalpalet",
+  "omschrijving": "Taal wordt geordend per communicatieve functie (voorstellen, reageren, alternatief geven).",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.1 nr 3"
+ },
+ {
+  "id": "SK-079",
+  "domein": "vaardigheid",
+  "naam": "Spreekframe",
+  "omschrijving": "Een zichtbaar zinsframe (Quiero ___ porque ___) bouwt af naar kernwoorden, pictogrammen en ten slotte volledig vrije productie.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.1 nr 4"
+ },
+ {
+  "id": "SK-080",
+  "domein": "vaardigheid",
+  "naam": "Uitspraakkaart",
+  "omschrijving": "Uitspraak wordt in kleine functionele onderdelen behandeld (klank, klemtoon, ritme, intonatie), steeds gekoppeld aan echt gebruikte taal.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.1 nr 5"
+ },
+ {
+  "id": "SK-081",
+  "domein": "vaardigheid",
+  "naam": "Model en variatie",
+  "omschrijving": "Meerdere manieren om hetzelfde te zeggen (bv. instemmen: Sí/Vale/De acuerdo/Perfecto) worden naast elkaar getoond.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.1 nr 6"
+ },
+ {
+  "id": "SK-082",
+  "domein": "vaardigheid",
+  "naam": "Turn-taking zichtbaar maken",
+  "omschrijving": "Iconen voor beurt nemen, reageren, doorvragen en afsluiten maken gespreksdynamiek expliciet.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.1 nr 7"
+ },
+ {
+  "id": "SK-083",
+  "domein": "vaardigheid",
+  "naam": "Voorbereiding vóór spreken",
+  "omschrijving": "Korte denktijd met woordenbank, notitieveld of structuurkaart toont dat spreken niet altijd volledig onvoorbereid hoeft te gebeuren.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.1 nr 8"
+ },
+ {
+  "id": "SK-084",
+  "domein": "vaardigheid",
+  "naam": "Herhaling met nieuwe inhoud",
+  "omschrijving": "Dezelfde communicatieve structuur komt terug met een andere partner, afbeelding of gewijzigde informatie.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.1 nr 9"
+ },
+ {
+  "id": "SK-085",
+  "domein": "vaardigheid",
+  "naam": "Opname, feedback en herneming",
+  "omschrijving": "Het traject eerste poging→beluisteren→één verbeterpunt→opnieuw spreken maakt duidelijk dat een eerste opname niet het eindproduct is.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.1 nr 10"
+ },
+ {
+  "id": "SK-086",
+  "domein": "vaardigheid",
+  "naam": "Luister en herhaal",
+  "omschrijving": "Component ListenRepeatRecorder: leerlingen luisteren, zeggen na, nemen zichzelf op, luisteren terug en nemen desgewenst opnieuw op.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 1"
+ },
+ {
+  "id": "SK-087",
+  "domein": "vaardigheid",
+  "naam": "Klankdiscriminatie en productie",
+  "omschrijving": "Component PronunciationContrast: leerlingen kiezen tussen twee gehoorde woorden en spreken beide daarna zelf in.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "herkennen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 2"
+ },
+ {
+  "id": "SK-088",
+  "domein": "vaardigheid",
+  "naam": "Shadowing",
+  "omschrijving": "Component ShadowingPlayer: leerlingen spreken bijna gelijktijdig mee met een model, met afbouw van volledige tekst naar geen tekst.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 3"
+ },
+ {
+  "id": "SK-089",
+  "domein": "vaardigheid",
+  "naam": "Klikbare taalbank",
+  "omschrijving": "Component SpeakingPhraseBank: leerlingen beluisteren uitdrukkingen per categorie en gebruiken een eigen selectie in een opname.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 4"
+ },
+ {
+  "id": "SK-090",
+  "domein": "vaardigheid",
+  "naam": "Interactieve zinsbouwer",
+  "omschrijving": "Component SpokenSentenceBuilder: leerlingen bouwen een zin met keuzeblokken, spreken ze uit, waarna de blokken verdwijnen.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 5"
+ },
+ {
+  "id": "SK-091",
+  "domein": "vaardigheid",
+  "naam": "Substitutiecarrousel",
+  "omschrijving": "Component SubstitutionCarousel: een modelzin blijft zichtbaar terwijl telkens één element automatisch verandert en wordt ingesproken.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 6"
+ },
+ {
+  "id": "SK-092",
+  "domein": "vaardigheid",
+  "naam": "Beeld benoemen",
+  "omschrijving": "Component ImageSpeakCard: de leerling spreekt een woord of zin in bij een afbeelding, met afbouw van woord naar beginletter naar niets.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "ophalen",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 7"
+ },
+ {
+  "id": "SK-093",
+  "domein": "vaardigheid",
+  "naam": "Beschrijf een afbeelding",
+  "omschrijving": "Component PictureDescriptionRecorder: observatievragen (wie, waar, wat gebeurt er) leiden naar een opnametaak.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 8"
+ },
+ {
+  "id": "SK-094",
+  "domein": "vaardigheid",
+  "naam": "Spreekdobbelsteen",
+  "omschrijving": "Component SpeakingDice: een digitale dobbelsteen kiest personage, plaats, activiteit en emotie waarover de leerling een zin maakt.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 9"
+ },
+ {
+  "id": "SK-095",
+  "domein": "vaardigheid",
+  "naam": "Vraagspinner",
+  "omschrijving": "Component QuestionSpinner: een digitaal rad selecteert een vraagwoord waarmee de leerling een vraag stelt of beantwoordt.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 10"
+ },
+ {
+  "id": "SK-096",
+  "domein": "vaardigheid",
+  "naam": "Willekeurige rollenkaart",
+  "omschrijving": "Component RoleCardRandomizer: de pagina genereert een rol met identiteit, situatie, doel en verplichte communicatieve functie.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 11"
+ },
+ {
+  "id": "SK-097",
+  "domein": "vaardigheid",
+  "naam": "Vertakkende dialoog",
+  "omschrijving": "Component BranchingDialogue: de leerling kiest of spreekt een reactie in die naar een andere vervolgstap leidt, via vooraf geschreven dialoogpaden.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 12"
+ },
+ {
+  "id": "SK-098",
+  "domein": "vaardigheid",
+  "naam": "Gescripte digitale gesprekspartner",
+  "omschrijving": "Component ScriptedConversation: de pagina speelt vaste uitspraken af waarop de leerling mondeling reageert binnen een rol.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 13"
+ },
+ {
+  "id": "SK-099",
+  "domein": "vaardigheid",
+  "naam": "Informatiekloof met A- en B-versie",
+  "omschrijving": "Componenten InfoGapViewA/InfoGapViewB/PairTaskCode: twee leerlingen zien elk andere informatie en moeten spreken om het verschil te vinden.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 14"
+ },
+ {
+  "id": "SK-100",
+  "domein": "vaardigheid",
+  "naam": "Beschrijf en raad",
+  "omschrijving": "Component DescribeAndGuess: één leerling beschrijft een verborgen object, de partner raadt uit meerdere opties.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "gestuurd",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 15"
+ },
+ {
+  "id": "SK-101",
+  "domein": "vaardigheid",
+  "naam": "Visuele verhaalverteller",
+  "omschrijving": "Component PictureStoryRecorder: leerlingen ordenen beelden, kiezen kernwoorden, spreken het verhaal in en vertellen het daarna zonder beelden opnieuw.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "vrij",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 16"
+ },
+ {
+  "id": "SK-102",
+  "domein": "vaardigheid",
+  "naam": "Eén-minuutspreker",
+  "omschrijving": "Component TimedSpeakingTask: de leerling spreekt met korte voorbereiding en timer over een onderwerp, in een tweede ronde zonder kernwoorden.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "vrij",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 17"
+ },
+ {
+  "id": "SK-103",
+  "domein": "vaardigheid",
+  "naam": "4/3/2-spreekmodule",
+  "omschrijving": "Component Fluency432: dezelfde inhoud wordt met afnemende spreektijd meermaals opgenomen, met korte reflectie tussen de rondes.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "vrij",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 18"
+ },
+ {
+  "id": "SK-104",
+  "domein": "vaardigheid",
+  "naam": "Spraakbericht",
+  "omschrijving": "Component VoiceMessageTask: de leerling neemt een realistisch bericht op (uitnodiging, afzegging, advies) op basis van ontvanger, situatie en doel.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "vrij",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 19"
+ },
+ {
+  "id": "SK-105",
+  "domein": "vaardigheid",
+  "naam": "Minipresentatie",
+  "omschrijving": "Component MiniPresentationRecorder: leerlingen bouwen een korte presentatie met beelden en steekwoorden en nemen die op.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "vrij",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 20"
+ },
+ {
+  "id": "SK-106",
+  "domein": "vaardigheid",
+  "naam": "Opinielijn",
+  "omschrijving": "Component OpinionLineSpeaker: de leerling kiest een positie op een instemmingsschaal en licht die mondeling toe, ook in reactie op een tegengestelde mening.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "vrij",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 21"
+ },
+ {
+  "id": "SK-107",
+  "domein": "vaardigheid",
+  "naam": "Digitale klas-enquête",
+  "omschrijving": "Component SurveyAndReport: leerlingen interviewen klasgenoten via een gegenereerde vraag en spreken nadien een samenvatting in.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "vrij",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 22"
+ },
+ {
+  "id": "SK-108",
+  "domein": "vaardigheid",
+  "naam": "Probleemoplossende spreekmissie",
+  "omschrijving": "Component SpeakingMission: leerlingen overleggen op basis van bronnen (kaart, agenda, budget) en nemen hun oplossing op.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "vrij",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 23"
+ },
+ {
+  "id": "SK-109",
+  "domein": "vaardigheid",
+  "naam": "Zelfevaluatie na opname",
+  "omschrijving": "Component SpeakingSelfAssessment: na het terugluisteren beoordeelt de leerling begrijpelijkheid, woordgebruik en uitspraak op een eenvoudige schaal.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 24"
+ },
+ {
+  "id": "SK-110",
+  "domein": "vaardigheid",
+  "naam": "Gerichte heropname",
+  "omschrijving": "Component RecordReflectRetry: de leerling kiest vóór een tweede poging één concreet verbeterdoel.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 25"
+ },
+ {
+  "id": "SK-111",
+  "domein": "vaardigheid",
+  "naam": "Peerfeedback op audio",
+  "omschrijving": "Component PeerAudioReview: een partner beluistert de opname en geeft feedback via vaste prompts.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 26"
+ },
+ {
+  "id": "SK-112",
+  "domein": "vaardigheid",
+  "naam": "Spreekportfolio",
+  "omschrijving": "Component SpeakingPortfolio: opname, datum, taak, zelfevaluatie, feedback, verbeterde opname en persoonlijk doel worden per leerling bewaard.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#4.2 nr 27"
+ },
+ {
+  "id": "SK-113",
+  "domein": "vaardigheid",
+  "naam": "Keten 1 — Lezen naar spreken",
+  "omschrijving": "Chatgesprek lezen → voorstellen herkennen → taalsteun verzamelen → eigen afspraak bespreken.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen",
+   "spreken"
+  ],
+  "fase": "vrij",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#keten 1"
+ },
+ {
+  "id": "SK-114",
+  "domein": "vaardigheid",
+  "naam": "Keten 2 — Lezen naar schrijven",
+  "omschrijving": "Profielen lezen → structuur herkennen → informatie selecteren → eigen profiel schrijven.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen",
+   "schrijven"
+  ],
+  "fase": "vrij",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#keten 2"
+ },
+ {
+  "id": "SK-115",
+  "domein": "vaardigheid",
+  "naam": "Keten 3 — Luisteren naar spreken",
+  "omschrijving": "Dialoog beluisteren → communicatieve stappen ordenen → uitdrukkingen oefenen → eigen dialoog voeren.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren",
+   "spreken"
+  ],
+  "fase": "vrij",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#keten 3"
+ },
+ {
+  "id": "SK-116",
+  "domein": "vaardigheid",
+  "naam": "Keten 4 — Luisteren naar schrijven",
+  "omschrijving": "Spraakbericht beluisteren → kerninformatie noteren → agenda invullen → antwoordbericht schrijven.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "luisteren",
+   "schrijven"
+  ],
+  "fase": "vrij",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#keten 4"
+ },
+ {
+  "id": "SK-117",
+  "domein": "vaardigheid",
+  "naam": "Keten 5 — Schrijven naar spreken",
+  "omschrijving": "Spreekplan noteren → kernwoorden selecteren → mondeling vertellen → zonder notities herhalen.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "schrijven",
+   "spreken"
+  ],
+  "fase": "vrij",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#keten 5"
+ },
+ {
+  "id": "SK-118",
+  "domein": "vaardigheid",
+  "naam": "Keten 6 — Spreken naar schrijven",
+  "omschrijving": "Partner interviewen → notities maken → resultaten ordenen → profiel of verslag schrijven.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken",
+   "schrijven"
+  ],
+  "fase": "vrij",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#keten 6"
+ },
+ {
+  "id": "SK-119",
+  "domein": "vaardigheid",
+  "naam": "Keten 7 — Lezen, luisteren en bemiddelen",
+  "omschrijving": "Programma lezen → voorkeuren van partner beluisteren → informatie vergelijken → passend voorstel formuleren.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen",
+   "luisteren"
+  ],
+  "fase": "vrij",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#keten 7"
+ },
+ {
+  "id": "SK-120",
+  "domein": "vaardigheid",
+  "naam": "Keten 8 — Volledige eindtaak",
+  "omschrijving": "Bronnen lezen → gesprekken beluisteren → informatie selecteren → samen overleggen → product schrijven → mondeling presenteren.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen",
+   "luisteren",
+   "spreken",
+   "schrijven"
+  ],
+  "fase": "vrij",
+  "bron": "VIER_VAARDIGHEDEN_GEINTEGREERD.md#keten 8"
+ },
+ {
+  "id": "DS-001",
+  "domein": "designcomponent",
+  "naam": "Paginatabs",
+  "omschrijving": "Een verticale tab aan de buitenrand van elke pagina toont unitnummer, verkorte titel en unitkleur, zodat de leerling tijdens het bladeren meteen ziet waar een unit begint en eindigt.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#2.1"
+ },
+ {
+  "id": "DS-002",
+  "domein": "designcomponent",
+  "naam": "Kop- en voetteksten",
+  "omschrijving": "Een subtiele levende koptekst toont unit/les/sectienaam, de voettekst draagt paginanummer, unitkleur en voortgang — geen zware dominante koptekst.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#2.2"
+ },
+ {
+  "id": "DS-003",
+  "domein": "designcomponent",
+  "naam": "Sectielabels",
+  "omschrijving": "Vaste labels (VOCABULARIO, GRAMÁTICA, CULTURA, PROYECTO, REPASO…) krijgen elk een vaste vorm, kleur en positie voor herkenbare navigatie.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#2.3"
+ },
+ {
+  "id": "DS-004",
+  "domein": "designcomponent",
+  "naam": "Unitopener",
+  "omschrijving": "Een visuele dubbele pagina met sfeerfoto, unitnummer, titel, centrale vraag, verhaallijn, leerdoelen, eindtaak, route en personages — zonder lange introductietekst.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#3.1"
+ },
+ {
+  "id": "DS-005",
+  "domein": "designcomponent",
+  "naam": "Lesopener",
+  "omschrijving": "Een herkenbare header per les met lesnummer, communicatief doel, korte lesvraag, kernwoorden, vaardigheidsiconen en een indicatie van de eindactiviteit.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#3.2"
+ },
+ {
+  "id": "DS-006",
+  "domein": "designcomponent",
+  "naam": "Activiteitenpagina",
+  "omschrijving": "Een oefenpagina met duidelijk nummer, vaardigheidsicoon, instructie, bron, verwerking, invulruimte en eventueel steun of differentiatie — nooit drie identieke kaders onder elkaar.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#3.3"
+ },
+ {
+  "id": "DS-007",
+  "domein": "designcomponent",
+  "naam": "Woordenschatspread",
+  "omschrijving": "Een dubbele pagina die woordenschat toont via woordveld, woordweb, foto met labels, plattegrond, zoekplaat of clusters — nooit uitsluitend een tweetalige lijst.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#3.4"
+ },
+ {
+  "id": "DS-008",
+  "domein": "designcomponent",
+  "naam": "Grammaticaspread",
+  "omschrijving": "Een dubbele pagina die ontdekactiviteit, gemarkeerde voorbeelden, compacte regel, schema, uitzondering en communicatieve toepassing combineert — nooit enkel een grote uitlegtabel.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#3.5"
+ },
+ {
+  "id": "DS-009",
+  "domein": "designcomponent",
+  "naam": "Uitspraakpagina",
+  "omschrijving": "Een pagina rond één klank of uitspraakprobleem met mondstand/klankschema, gemarkeerde voorbeelden, minimale contrasten, klemtoonaanduiding en een spreekopdracht.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#3.6"
+ },
+ {
+  "id": "DS-010",
+  "domein": "designcomponent",
+  "naam": "Cultuurpagina",
+  "omschrijving": "Een herkenbaar gestileerde pagina met grote foto, kaart, tijdlijn, infographic, weetjes, vergelijking en een opdracht die observatie en vergelijking vraagt.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "cultuur"
+  ],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#3.7"
+ },
+ {
+  "id": "DS-011",
+  "domein": "designcomponent",
+  "naam": "Projectpagina",
+  "omschrijving": "De eindtaak krijgt een sterke titel, mock-up van het eindproduct, stappenroute, rolverdeling, checklist, succescriteria en ruimte voor feedback — als een echte uitdaging.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "gestuurd",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#3.8"
+ },
+ {
+  "id": "DS-012",
+  "domein": "designcomponent",
+  "naam": "Herhalingsspread",
+  "omschrijving": "Herhaling wordt niet als lange oefeningenreeks aangeboden maar als spelbord, missiekaart, route, keuzemenu, vaardighedencirkel of basis/steun/uitdagingsroute.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [],
+  "fase": "vrij",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#3.9"
+ },
+ {
+  "id": "DS-013",
+  "domein": "designcomponent",
+  "naam": "Zelfevaluatiepagina",
+  "omschrijving": "Een visueel dashboard met kan-ik-uitspraken, voortgangsbalken, verkeerslichtsysteem, reflectievraag, verbeterdoel en een vak voor leraarfeedback.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#3.10"
+ },
+ {
+  "id": "DS-014",
+  "domein": "designcomponent",
+  "naam": "Oefeningnummer",
+  "omschrijving": "Geen kaal nummer met punt, maar een gekleurde badge met vorm die het oefentype signaleert (rond=kort, zeshoek=uitdaging, vaantje=cultuur, routepunt=projectstap).",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#4.1"
+ },
+ {
+  "id": "DS-015",
+  "domein": "designcomponent",
+  "naam": "Vaardigheidsiconen",
+  "omschrijving": "Eén consistente lijniconenset dekt luisteren, spreken, lezen, schrijven, grammatica, woordenschat, cultuur, strategie, digitaal, groepsvorm en meer — nooit gemengd met emoji of clipart.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#4.2"
+ },
+ {
+  "id": "DS-016",
+  "domein": "designcomponent",
+  "naam": "Leerdoelenkaart",
+  "omschrijving": "Een vaste kaart 'En esta lección vas a…' met drie tot vijf korte doelen, visuele checkmarks en eventueel vaardigheidsiconen.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#4.3"
+ },
+ {
+  "id": "DS-017",
+  "domein": "designcomponent",
+  "naam": "Grammaticakaart",
+  "omschrijving": "Een vaste kaart met grammaticapictogram, eigen kleur, contextuele voorbeeldzin, korte regel, schema, uitzondering en directe toepassing.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#4.4"
+ },
+ {
+  "id": "DS-018",
+  "domein": "designcomponent",
+  "naam": "Woordenschatkaart",
+  "omschrijving": "Een vaste kaart met woord, afbeelding, lidwoord, meervoud, uitspraak, categorie, voorbeeldzin, kleurcode en ruimte voor een persoonlijke associatie.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#4.5"
+ },
+ {
+  "id": "DS-019",
+  "domein": "designcomponent",
+  "naam": "Spreekhulpkaart",
+  "omschrijving": "Een vaste taalsteiger met functionele categorieën (voorstel doen, akkoord gaan, weigeren, verduidelijken…) en direct inzetbare korte taalbouwstenen.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "gestuurd",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#4.6"
+ },
+ {
+  "id": "DS-020",
+  "domein": "designcomponent",
+  "naam": "Schrijfhulpkaart",
+  "omschrijving": "Een vaste kaart met tekststructuur, signaalwoorden, openingszinnen, verbindingswoorden, afsluitingen, checklist, modelzin en ruimte voor planning.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "schrijven"
+  ],
+  "fase": "gestuurd",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#4.7"
+ },
+ {
+  "id": "DS-021",
+  "domein": "designcomponent",
+  "naam": "Strategiekaart",
+  "omschrijving": "Een kaart met vast kompas- of stericoon, zachte achtergrond en maximaal drie korte, concreet uitvoerbare lees-, luister-, spreek- of schrijfstrategieën.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#4.8"
+ },
+ {
+  "id": "DS-022",
+  "domein": "designcomponent",
+  "naam": "Differentiatiekaarten",
+  "omschrijving": "Labels APOYO/PRÁCTICA/RETO markeren extra woorden, zinsstarters, verkorte opdracht, stappenplan of open uitbreiding als zichtbare steunniveaus.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "gestuurd",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#4.9"
+ },
+ {
+  "id": "DS-023",
+  "domein": "designcomponent",
+  "naam": "Modelantwoord",
+  "omschrijving": "Voorbeeldantwoorden zien eruit als echte producten (notitiekaart, chatbericht, e-mail, poster, profiel…), met een handschriftachtig lettertype enkel voor fictieve leerlingnotities.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "gestuurd",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#4.10"
+ },
+ {
+  "id": "DS-024",
+  "domein": "designcomponent",
+  "naam": "Checklists",
+  "omschrijving": "Visuele checklists voor taakuitvoering, projectplanning, spreek-/schrijfopdracht, zelfcorrectie, peerfeedback en portfolio.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#4.11"
+ },
+ {
+  "id": "DS-025",
+  "domein": "designcomponent",
+  "naam": "Voortgang",
+  "omschrijving": "Voortgang wordt getoond via horizontale balk, routepunten, unitmeter, vaardighedencirkel, afvinklijst of verkeerslicht.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#4.12"
+ },
+ {
+  "id": "DS-026",
+  "domein": "designcomponent",
+  "naam": "Grote sfeerfotografie",
+  "omschrijving": "Grote foto's (soms een halve of volledige pagina) voor unitopeners, cultuurpagina's, verhaalmomenten en realistische communicatieve situaties.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#5.1"
+ },
+ {
+  "id": "DS-027",
+  "domein": "designcomponent",
+  "naam": "Terugkerende personages",
+  "omschrijving": "Elk terugkerend personage krijgt een set beelden (neutraal, glimlachend, verrast, pratend, volledige figuur, ronde avatar…), enkel ingezet met didactische of narratieve functie.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#5.2"
+ },
+ {
+  "id": "DS-028",
+  "domein": "designcomponent",
+  "naam": "Uitgesneden figuren",
+  "omschrijving": "Vrijstaande personages zonder rechthoekige achtergrond bij korte vragen, tips, instructies, dialogen en reacties.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#5.3"
+ },
+ {
+  "id": "DS-029",
+  "domein": "designcomponent",
+  "naam": "Avatars",
+  "omschrijving": "Ronde avatars met een vaste accentkleur per personage in chats, profielen, e-mails en sociale media.",
+  "formaat": [
+   "html"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#5.4"
+ },
+ {
+  "id": "DS-030",
+  "domein": "designcomponent",
+  "naam": "Fotoverhalen",
+  "omschrijving": "Reeksen van drie tot zes beelden voor voorspellen, ordenen, beschrijven, dialoog schrijven of spreken zonder tekststeun.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "lezen",
+   "spreken"
+  ],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#5.5"
+ },
+ {
+  "id": "DS-031",
+  "domein": "designcomponent",
+  "naam": "Spotillustraties",
+  "omschrijving": "Kleine illustraties in één vaste stijl verduidelijken telkens één begrip (eten, emoties, vervoermiddelen, weer…).",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#5.6"
+ },
+ {
+  "id": "DS-032",
+  "domein": "designcomponent",
+  "naam": "Zoekplaten",
+  "omschrijving": "Rijke omgevingsillustraties (klaslokaal, markt, station, festival…) voor woordenschat, beschrijving, plaatsbepaling en spreekopdrachten.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "woordenschat",
+   "spreken"
+  ],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#5.7"
+ },
+ {
+  "id": "DS-033",
+  "domein": "designcomponent",
+  "naam": "Infographics",
+  "omschrijving": "Infographics visualiseren dagschema, schoolrooster, reistijden, hoeveelheden, percentages, tijdlijn of stappenplan.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#5.8"
+ },
+ {
+  "id": "DS-034",
+  "domein": "designcomponent",
+  "naam": "Kaarten en routes",
+  "omschrijving": "Land-, stads-, metro- en routekaarten, wereldkaarten en plattegronden ondersteunen reizen, cultuur en locatiewoordenschat.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "cultuur"
+  ],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#5.9"
+ },
+ {
+  "id": "DS-035",
+  "domein": "designcomponent",
+  "naam": "Schematische illustraties",
+  "omschrijving": "Schema's en pijlen tonen werkwoordsvorming, woordvolgorde, grammaticale overeenstemming, tijdsaanduidingen en vraag-antwoordstructuren.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "grammatica"
+  ],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#5.10"
+ },
+ {
+  "id": "DS-036",
+  "domein": "designcomponent",
+  "naam": "Woordchips",
+  "omschrijving": "Gekleurde chips voor woorden, woordvolgorde, tijdsaanduidingen, categorieën, grammaticale bouwstenen en sorteeroefeningen.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "woordenschat"
+  ],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#8.1"
+ },
+ {
+  "id": "DS-037",
+  "domein": "designcomponent",
+  "naam": "Speech bubbles",
+  "omschrijving": "Tekstballonnen voor korte dialogen, reacties, taalmodellen en personagecommentaar — niet voor lange paragrafen.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "spreken"
+  ],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#8.2"
+ },
+ {
+  "id": "DS-038",
+  "domein": "designcomponent",
+  "naam": "Post-its en notitiekaarten",
+  "omschrijving": "Losse notitiekaarten voor strategieën, ezelsbruggetjes, uitzonderingen en persoonlijke herinneringen.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#8.3"
+ },
+ {
+  "id": "DS-039",
+  "domein": "designcomponent",
+  "naam": "Stickers en labels",
+  "omschrijving": "Vaste labels zoals NUEVO, RETO, EN PAREJAS, CULTURA, PROYECTO en REPASO, telkens in dezelfde vormgeving.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#8.4"
+ },
+ {
+  "id": "DS-040",
+  "domein": "designcomponent",
+  "naam": "Invulzones",
+  "omschrijving": "Schrijfruimte varieert bewust tussen schrijflijnen, antwoordvak, tabel, formulier, woordweb, checklist en schetsruimte — niet overal identieke lijnen.",
+  "formaat": [
+   "print"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#8.5"
+ },
+ {
+  "id": "DS-041",
+  "domein": "designcomponent",
+  "naam": "Schaduwen",
+  "omschrijving": "Subtiele schaduwen maken kaarten, foto's, mock-ups en digitale bronnen visueel los van de achtergrond.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#8.6"
+ },
+ {
+  "id": "DS-042",
+  "domein": "designcomponent",
+  "naam": "Hoekafronding",
+  "omschrijving": "Afgeronde hoeken voor tips, chats en leerlinggerichte hulp; rechte hoeken voor grammatica, evaluatie en formele tabellen — als consequent onderscheid.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#8.7"
+ },
+ {
+  "id": "DS-043",
+  "domein": "designcomponent",
+  "naam": "Compositie A — Beeld links, opdrachten rechts",
+  "omschrijving": "Geschikt voor fotoanalyse, woordenschat, cultuur en verhaalintroductie.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#compositie A"
+ },
+ {
+  "id": "DS-044",
+  "domein": "designcomponent",
+  "naam": "Compositie B — Brede bron bovenaan, verwerking onderaan",
+  "omschrijving": "Geschikt voor menu, website, chat, poster, infographic en kaart als uitgangsbron.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#compositie B"
+ },
+ {
+  "id": "DS-045",
+  "domein": "designcomponent",
+  "naam": "Compositie C — Drie kaarten naast elkaar",
+  "omschrijving": "Geschikt voor personages, meningen, landen, keuzes en vergelijkingen.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#compositie C"
+ },
+ {
+  "id": "DS-046",
+  "domein": "designcomponent",
+  "naam": "Compositie D — Centrale illustratie met labels",
+  "omschrijving": "Geschikt voor woordenschat, grammatica, visuele samenvatting en processen.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#compositie D"
+ },
+ {
+  "id": "DS-047",
+  "domein": "designcomponent",
+  "naam": "Compositie E — Fotocollage",
+  "omschrijving": "Geschikt voor unitopener, cultuur, project en terugblik.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#compositie E"
+ },
+ {
+  "id": "DS-048",
+  "domein": "designcomponent",
+  "naam": "Compositie F — Rustige oefenpagina",
+  "omschrijving": "Geschikt voor schrijven, grammaticale inoefening, reflectie, evaluatie en portfolio.",
+  "formaat": [
+   "print"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#compositie F"
+ },
+ {
+  "id": "DS-049",
+  "domein": "designcomponent",
+  "naam": "Compositie G — Route of tijdlijn",
+  "omschrijving": "Geschikt voor projectstappen, dagplanning, verhaallijn, leerroute en herhaling.",
+  "formaat": [
+   "print",
+   "html",
+   "pptx"
+  ],
+  "vaardigheid": [],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#compositie G"
+ },
+ {
+  "id": "DS-050",
+  "domein": "designcomponent",
+  "naam": "Compositie H — Dashboard",
+  "omschrijving": "Geschikt voor zelfevaluatie, voortgang, resultaten en remediëring.",
+  "formaat": [
+   "print",
+   "html"
+  ],
+  "vaardigheid": [
+   "strategie"
+  ],
+  "fase": "",
+  "bron": "VISUEEL_ONTWERPSYSTEEM_HUISSTIJL.md#compositie H"
+ }
+]

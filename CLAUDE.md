@@ -267,6 +267,25 @@ De vier didactische/visuele specs + de 100 werkvormen + de 25 HTML-grammaticatoo
 - **PowerPoint:** put uit `INTERACTIEVE_POWERPOINT_50_IDEEEN.md`; dek naast woordenschat/grammatica ook **lezen · luisteren · spreken · schrijven** af, met de klik-onthul-didactiek en noodroute.
 - **Geen werkvorm-/component-herhaling met dezelfde jas binnen één unit; over units heen recyclen (spreiding) mét variatie.**
 
+## 14ter · Reservoir & cocktail-workflow — BINDEND (auteur 2026-07-26, ronde 5)
+
+De richtlijnen zijn **geen proza om te "kennen" maar een plukvijver om uit te putten.** Ze staan geïndexeerd in **`02-huisstijl/reservoir/`**:
+- **`reservoir.json`** — 453 geïndexeerde items met ID: **WV-** (100 werkvormen) · **LAY-** (50 layout) · **GT-** (25 interactieve grammaticatools) · **PPT-** (50 PowerPoint) · **VS-** (23 woordenschat-patronen) · **VG-** (35 grammatica-patronen) · **SK-** (120 vaardigheidscomponenten/ketens) · **DS-** (50 designcomponenten). Elk record = `{id, domein, naam, omschrijving, formaat, vaardigheid, fase, bron}`.
+- **`reservoir_index.md`** — mensleesbare pluklijst per domein.
+- **`coverage.md`** — dekkings-grootboek (item × unit). **Doel: tegen U8 is het merendeel van de 453 items érgens gebruikt.**
+- **`PARELS_materiales.md`** — door de auteur aangeduide **must-reuse-parels** uit het vorige project (`00-brondocumenten/materiales-vorig-project/`): voetbaltruitjes «equipación» (U6), familia via Rosalía-árbol (U2), leestekst LatAm-supersterren (U4), canción «La Perla» (U4).
+
+**Woordenschat = kandidatenpool, geen wet:** `00-brondocumenten/materiales-vorig-project/Cursus_Spaans_Woordenschat_Master_v8.xlsx` (kolom *Unidad de introducción*) is een **voorlopige** synthese uit het vorige project. Cureer per unit uit die pool (gestuurd door outline-thema + leerplan), forceer de aantallen niet, en **verbeter/vul de lijst onderweg aan**.
+
+**VERPLICHTE workflow vóór élke unit (nieuw én tweak):**
+1. **Cocktail-receta** `01-cursussen/05-a1/U<N>/U<N>_cocktail.md` schrijven: per cursusonderdeel (§0, elke grammatica-sectie, vocab, Taller, Cultura, Lectura, Tarea, Repaso, hub-games, PowerPoint) **expliciet reservoir-IDs kiezen** — bewust de **nog niet/weinig gebruikte** (raadpleeg `coverage.md`), zodat variatie meetbaar groeit i.p.v. dezelfde jas.
+2. **Quota halen** (harde ondergrens per unit): ≥1 **luisterdialoog** (script + TTS op de hub + begripstaak in print) · ≥1 **rijke leestekst** (Lectura) · ≥2 **opname-oefeningen** · ≥1 **traditionele cloze-werkwoord** · ≥8 **verschillende** motor-speltypes · een echte **"traditionele" oefenbatterij** (gap-fill · substitutie · matching · dictee · ordenen) **naast** de visuele grammatica (= de klassieke "cursus-feeling" + het moderne visuele).
+3. **Master-vocab cureren** uit de pool + aanvullen.
+4. **Parels inweven** waar de doel-unit matcht (zie `PARELS_materiales.md`).
+5. Na de build: **`coverage.md` bijwerken** met de exact gebruikte IDs.
+
+**Traditioneel × modern (BINDEND):** elke unit combineert de visueel-eerste grammatica (§14) mét een klassieke oefenbatterij en echte vaardigheidsteksten (luisterdialoog, leestekst) in de stijl van de eigen eerdere lessen (`materiales-vorig-project` = ijkpunt voor de "cursus-feeling"). De visuele innovatie vervángt de traditionele invulling niet — ze staan naast elkaar.
+
 ## 15 · Beeld & asset-pijplijn (BESLIST 2026-07-25)
 
 - **BESLIST 2026-07-26 — Claude bouwt de VOLLEDIGE beeldlaag in flat-vector (code).** De AI-fotoroute (ChatGPT/DALL·E) blokkeerde bij de auteur; daarom tekent Claude **alles zelf in code** — geen externe tool nodig, alles bewerkbaar en print-perfect. Bron = de generatoren in `02-huisstijl/beeld/generators/` (`cast_gen.py`, `build_svgs.py`, `assets2.py`, `build_map.py`). Stijl = warm flat-vector (zie de gerenderde staalkaart): **concrete items, geen kale blokken of abstracte figuren.**
