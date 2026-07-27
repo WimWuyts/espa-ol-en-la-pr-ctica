@@ -1,0 +1,124 @@
+{
+  "id": "es-c6plus-u0-ser-estar",
+  "title": "¿soy o estoy?",
+  "subtitle": "U0 · ser (wie/wat) of estar (waar/hoe)?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Kies: soy (identiteit) of estoy (plaats/gevoel)?",
+    "categories": [
+      {
+        "id": "soy",
+        "label": "soy<br><small>ser · wie/wat</small>",
+        "glaze": "#8B5E9E"
+      },
+      {
+        "id": "estoy",
+        "label": "estoy<br><small>estar · waar/hoe</small>",
+        "glaze": "#2FA8A0"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "___ de Bélgica.",
+        "answer": "soy",
+        "tag": "soy",
+        "sub": "herkomst → ser"
+      },
+      {
+        "stimulus": "___ en clase.",
+        "answer": "estoy",
+        "tag": "estoy",
+        "sub": "plaats → estar"
+      },
+      {
+        "stimulus": "___ estudiante.",
+        "answer": "soy",
+        "tag": "soy",
+        "sub": "identiteit → ser"
+      },
+      {
+        "stimulus": "Hoy ___ contento.",
+        "answer": "estoy",
+        "tag": "estoy",
+        "sub": "gevoel → estar"
+      },
+      {
+        "stimulus": "___ alto y moreno.",
+        "answer": "soy",
+        "tag": "soy",
+        "sub": "eigenschap → ser"
+      },
+      {
+        "stimulus": "___ muy bien, gracias.",
+        "answer": "estoy",
+        "tag": "estoy",
+        "sub": "toestand → estar"
+      },
+      {
+        "stimulus": "___ belga.",
+        "answer": "soy",
+        "tag": "soy",
+        "sub": "nationaliteit → ser"
+      },
+      {
+        "stimulus": "___ en casa.",
+        "answer": "estoy",
+        "tag": "estoy",
+        "sub": "plaats → estar"
+      },
+      {
+        "stimulus": "___ simpático.",
+        "answer": "soy",
+        "tag": "soy",
+        "sub": "karakter → ser"
+      },
+      {
+        "stimulus": "___ cansado hoy.",
+        "answer": "estoy",
+        "tag": "estoy",
+        "sub": "gevoel → estar"
+      },
+      {
+        "stimulus": "___ el hermano de Nina.",
+        "answer": "soy",
+        "tag": "soy",
+        "sub": "identiteit → ser"
+      },
+      {
+        "stimulus": "___ en el mercado.",
+        "answer": "estoy",
+        "tag": "estoy",
+        "sub": "plaats → estar"
+      },
+      {
+        "stimulus": "___ profesor de español.",
+        "answer": "soy",
+        "tag": "soy",
+        "sub": "beroep → ser"
+      },
+      {
+        "stimulus": "___ nervioso antes del examen.",
+        "answer": "estoy",
+        "tag": "estoy",
+        "sub": "gevoel → estar"
+      },
+      {
+        "stimulus": "___ de Sevilla.",
+        "answer": "soy",
+        "tag": "soy",
+        "sub": "herkomst → ser"
+      },
+      {
+        "stimulus": "___ aquí, en la parada.",
+        "answer": "estoy",
+        "tag": "estoy",
+        "sub": "plaats → estar"
+      }
+    ]
+  }
+}

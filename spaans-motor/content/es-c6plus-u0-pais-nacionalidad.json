@@ -1,0 +1,64 @@
+{
+  "id": "es-c6plus-u0-pais-nacionalidad",
+  "title": "País y nacionalidad",
+  "subtitle": "U0 · koppel het land aan de nationaliteit",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind het land met de nationaliteit",
+    "pairs": [
+      {
+        "a": "España",
+        "b": "español/a 🇪🇸"
+      },
+      {
+        "a": "México",
+        "b": "mexicano/a 🇲🇽"
+      },
+      {
+        "a": "Colombia",
+        "b": "colombiano/a 🇨🇴"
+      },
+      {
+        "a": "Perú",
+        "b": "peruano/a 🇵🇪"
+      },
+      {
+        "a": "Argentina",
+        "b": "argentino/a 🇦🇷"
+      },
+      {
+        "a": "Bélgica",
+        "b": "belga 🇧🇪"
+      },
+      {
+        "a": "Chile",
+        "b": "chileno/a 🇨🇱"
+      },
+      {
+        "a": "Cuba",
+        "b": "cubano/a 🇨🇺"
+      },
+      {
+        "a": "Venezuela",
+        "b": "venezolano/a 🇻🇪"
+      },
+      {
+        "a": "Ecuador",
+        "b": "ecuatoriano/a 🇪🇨"
+      },
+      {
+        "a": "Alemania",
+        "b": "alemán/alemana 🇩🇪"
+      },
+      {
+        "a": "Francia",
+        "b": "francés/francesa 🇫🇷"
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "es-c6plus-u0-paises-memoria",
+  "title": "Banderas y países",
+  "subtitle": "U0 · zoek de vlag bij het land",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om: vlag + land",
+    "pairs": [
+      {
+        "a": "🇪🇸",
+        "b": "España"
+      },
+      {
+        "a": "🇲🇽",
+        "b": "México"
+      },
+      {
+        "a": "🇨🇴",
+        "b": "Colombia"
+      },
+      {
+        "a": "🇵🇪",
+        "b": "Perú"
+      },
+      {
+        "a": "🇦🇷",
+        "b": "Argentina"
+      },
+      {
+        "a": "🇧🇪",
+        "b": "Bélgica"
+      },
+      {
+        "a": "🇨🇱",
+        "b": "Chile"
+      },
+      {
+        "a": "🇨🇺",
+        "b": "Cuba"
+      },
+      {
+        "a": "🇻🇪",
+        "b": "Venezuela"
+      },
+      {
+        "a": "🇪🇨",
+        "b": "Ecuador"
+      },
+      {
+        "a": "🇺🇾",
+        "b": "Uruguay"
+      },
+      {
+        "a": "🇬🇹",
+        "b": "Guatemala"
+      }
+    ]
+  }
+}

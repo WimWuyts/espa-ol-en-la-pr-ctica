@@ -1,0 +1,192 @@
+{
+  "id": "es-c6plus-u0-concordancia",
+  "title": "Completa: concordancia",
+  "subtitle": "U0 · laat het adjectief overeenkomen (m/v · ev/mv)",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste vorm van het adjectief",
+    "items": [
+      {
+        "stimulus": "La chica es ___ .",
+        "options": [
+          "simpática",
+          "simpático",
+          "simpáticas"
+        ],
+        "answer": "simpática",
+        "tag": "c",
+        "sub": "la chica (f ev)"
+      },
+      {
+        "stimulus": "El chico es ___ .",
+        "options": [
+          "alto",
+          "alta",
+          "altos"
+        ],
+        "answer": "alto",
+        "tag": "c",
+        "sub": "el chico (m ev)"
+      },
+      {
+        "stimulus": "Los libros son ___ .",
+        "options": [
+          "rojos",
+          "rojas",
+          "rojo"
+        ],
+        "answer": "rojos",
+        "tag": "c",
+        "sub": "los libros (m pl)"
+      },
+      {
+        "stimulus": "Las casas son ___ .",
+        "options": [
+          "blancas",
+          "blancos",
+          "blanca"
+        ],
+        "answer": "blancas",
+        "tag": "c",
+        "sub": "las casas (f pl)"
+      },
+      {
+        "stimulus": "Nina es ___ .",
+        "options": [
+          "peruana",
+          "peruano",
+          "peruanas"
+        ],
+        "answer": "peruana",
+        "tag": "c",
+        "sub": "ella → peruana"
+      },
+      {
+        "stimulus": "Diego es ___ .",
+        "options": [
+          "mexicano",
+          "mexicana",
+          "mexicanos"
+        ],
+        "answer": "mexicano",
+        "tag": "c",
+        "sub": "él → mexicano"
+      },
+      {
+        "stimulus": "Mis amigas son ___ .",
+        "options": [
+          "alegres",
+          "alegre",
+          "alegras"
+        ],
+        "answer": "alegres",
+        "tag": "c",
+        "sub": "alegre → alegres (pl)"
+      },
+      {
+        "stimulus": "La profesora es ___ .",
+        "options": [
+          "trabajadora",
+          "trabajador",
+          "trabajadoras"
+        ],
+        "answer": "trabajadora",
+        "tag": "c",
+        "sub": "la profesora (f ev)"
+      },
+      {
+        "stimulus": "El coche es ___ .",
+        "options": [
+          "nuevo",
+          "nueva",
+          "nuevos"
+        ],
+        "answer": "nuevo",
+        "tag": "c",
+        "sub": "el coche (m ev)"
+      },
+      {
+        "stimulus": "Las chicas son ___ .",
+        "options": [
+          "morenas",
+          "morenos",
+          "morena"
+        ],
+        "answer": "morenas",
+        "tag": "c",
+        "sub": "las chicas (f pl)"
+      },
+      {
+        "stimulus": "Los perros son ___ .",
+        "options": [
+          "pequeños",
+          "pequeñas",
+          "pequeño"
+        ],
+        "answer": "pequeños",
+        "tag": "c",
+        "sub": "los perros (m pl)"
+      },
+      {
+        "stimulus": "Mi madre es ___ .",
+        "options": [
+          "española",
+          "español",
+          "españolas"
+        ],
+        "answer": "española",
+        "tag": "c",
+        "sub": "ella → española"
+      },
+      {
+        "stimulus": "El profesor es ___ .",
+        "options": [
+          "simpático",
+          "simpática",
+          "simpáticos"
+        ],
+        "answer": "simpático",
+        "tag": "c",
+        "sub": "el profesor (m ev)"
+      },
+      {
+        "stimulus": "Las mochilas son ___ .",
+        "options": [
+          "rojas",
+          "rojos",
+          "roja"
+        ],
+        "answer": "rojas",
+        "tag": "c",
+        "sub": "las mochilas (f pl)"
+      },
+      {
+        "stimulus": "Valen es ___ .",
+        "options": [
+          "colombiana",
+          "colombiano",
+          "colombianas"
+        ],
+        "answer": "colombiana",
+        "tag": "c",
+        "sub": "ella → colombiana"
+      },
+      {
+        "stimulus": "Mis hermanos son ___ .",
+        "options": [
+          "altos",
+          "altas",
+          "alto"
+        ],
+        "answer": "altos",
+        "tag": "c",
+        "sub": "los hermanos (m pl)"
+      }
+    ]
+  }
+}
