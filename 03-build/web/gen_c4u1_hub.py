@@ -16,6 +16,7 @@ def srcdoc(path):
 
 TABS=[
  ("escucha","🎬 Escucha","C4_U1_escucha.html","Bekijk de scène en lees mee — de chunks komen uit je oren."),
+ ("mapa","🗺️ Mapa","C4_U1_mapa.html","La Ruta — klik op een land van de Spaanstalige wereld en lees zijn fiche."),
  ("kit","🧰 Kit","C4_U1_kgt.html","Uitspraak (klanken), de taal per situatie, gramática & tarea."),
  ("practica","✍️ Práctica","C4_U1_practica.html","Oefen zelfcorrigerend: herkennen → kiezen → zelf zeggen."),
  ("musica","🎧 Música","C4_musica.html","Banda sonora — leer Spaans via muziek die jullie kennen."),
