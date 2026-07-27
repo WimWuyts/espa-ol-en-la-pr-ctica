@@ -1,0 +1,53 @@
+{
+  "id": "es-u8-describe-vacaciones",
+  "title": "Describe tus vacaciones",
+  "subtitle": "U8 · beschrijf je vakantie, grábate",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "repeat",
+    "prompt": "Escucha ▶ · describe tus vacaciones · grábate ⏺",
+    "items": [
+      {
+        "cue": "Modelo · Nina 🇵🇪",
+        "text": "Estas vacaciones he ido a Perú.",
+        "sub": "deze vakantie ben ik naar Peru gegaan",
+        "tag": "describir"
+      },
+      {
+        "cue": "¿cómo?",
+        "text": "He viajado en avión y en tren.",
+        "sub": "ik heb met het vliegtuig en de trein gereisd",
+        "tag": "describir"
+      },
+      {
+        "cue": "¿qué has visto?",
+        "text": "He visto Machu Picchu y muchas llamas.",
+        "sub": "ik heb Machu Picchu en veel lama's gezien",
+        "tag": "describir"
+      },
+      {
+        "cue": "¿qué tiempo?",
+        "text": "Ha hecho frío en la montaña, pero sol en la costa.",
+        "sub": "in de bergen was het koud, aan de kust zonnig",
+        "tag": "describir"
+      },
+      {
+        "cue": "¿te ha gustado?",
+        "text": "Me ha encantado. ¡Nunca he estado tan feliz!",
+        "sub": "ik vond het geweldig. Nog nooit zo blij geweest!",
+        "tag": "describir"
+      },
+      {
+        "cue": "tu versión",
+        "text": "Estas vacaciones he ido a ___ . He visto ___ .",
+        "sub": "jouw versie — vul in en zeg ze",
+        "tag": "describir",
+        "tip": "Ahora describe las vacaciones de un amigo. <span class='nl'>beschrijf nu de vakantie van een vriend(in).</span>"
+      }
+    ]
+  }
+}

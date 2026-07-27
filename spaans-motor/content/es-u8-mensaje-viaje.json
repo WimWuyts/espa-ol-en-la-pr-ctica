@@ -1,0 +1,37 @@
+{
+  "id": "es-u8-mensaje-viaje",
+  "title": "Mensaje de voz: tu viaje",
+  "subtitle": "U8 · neem een spraakbericht op over je reis",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "voicemessage",
+    "prompt": "Graba un mensaje de voz (30 s)",
+    "items": [
+      {
+        "text": "Cuenta qué has hecho estas vacaciones (¿adónde has ido? ¿qué has visto?).",
+        "cue": "las vacaciones",
+        "tag": "viaje",
+        "sub": "gebruik: he ido a · he visto · he viajado en · perfecto compuesto",
+        "tip": "Heb je 3 dingen in perfecto compuesto gezegd? Neem opnieuw op. <span class='nl'>3 zinnen met perfecto compuesto? herneem.</span>"
+      },
+      {
+        "text": "Deja un mensaje sobre el tiempo de hoy en tu ciudad.",
+        "cue": "el tiempo",
+        "tag": "clima",
+        "sub": "gebruik: hoy hace · está · llueve/nieva · estamos a … grados",
+        "tip": "Weer + temperatuur genoemd? Herneem. <span class='nl'>weer + temperatuur? herneem.</span>"
+      },
+      {
+        "text": "Cuéntale a un amigo tres experiencias con «alguna vez» o «nunca».",
+        "cue": "experiencias",
+        "tag": "marcador",
+        "sub": "gebruik: (nunca) he … · (alguna vez) he …",
+        "tip": "3 ervaringen met marcador? Herneem. <span class='nl'>3 ervaringen met marker? herneem.</span>"
+      }
+    ]
+  }
+}

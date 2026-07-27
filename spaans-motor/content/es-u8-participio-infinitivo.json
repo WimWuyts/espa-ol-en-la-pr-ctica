@@ -1,0 +1,72 @@
+{
+  "id": "es-u8-participio-infinitivo",
+  "title": "Participio e infinitivo",
+  "subtitle": "U8 · koppel het deelwoord aan het werkwoord",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind het participio met de infinitief",
+    "pairs": [
+      {
+        "a": "hecho",
+        "b": "hacer"
+      },
+      {
+        "a": "visto",
+        "b": "ver"
+      },
+      {
+        "a": "dicho",
+        "b": "decir"
+      },
+      {
+        "a": "escrito",
+        "b": "escribir"
+      },
+      {
+        "a": "vuelto",
+        "b": "volver"
+      },
+      {
+        "a": "puesto",
+        "b": "poner"
+      },
+      {
+        "a": "abierto",
+        "b": "abrir"
+      },
+      {
+        "a": "roto",
+        "b": "romper"
+      },
+      {
+        "a": "viajado",
+        "b": "viajar"
+      },
+      {
+        "a": "comido",
+        "b": "comer"
+      },
+      {
+        "a": "vivido",
+        "b": "vivir"
+      },
+      {
+        "a": "subido",
+        "b": "subir"
+      },
+      {
+        "a": "estado",
+        "b": "estar"
+      },
+      {
+        "a": "ido",
+        "b": "ir"
+      }
+    ]
+  }
+}

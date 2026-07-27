@@ -1,0 +1,72 @@
+{
+  "id": "es-u8-viajes-memoria",
+  "title": "Memoria de los viajes",
+  "subtitle": "U8 · zoek het paar español ↔ nederlands",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om en zoek het woord + de vertaling",
+    "pairs": [
+      {
+        "a": "el viaje",
+        "b": "de reis"
+      },
+      {
+        "a": "la maleta",
+        "b": "de koffer"
+      },
+      {
+        "a": "el billete",
+        "b": "het ticket"
+      },
+      {
+        "a": "el pasaporte",
+        "b": "het paspoort"
+      },
+      {
+        "a": "el avión",
+        "b": "het vliegtuig"
+      },
+      {
+        "a": "el tren",
+        "b": "de trein"
+      },
+      {
+        "a": "el hotel",
+        "b": "het hotel"
+      },
+      {
+        "a": "la playa",
+        "b": "het strand"
+      },
+      {
+        "a": "la montaña",
+        "b": "de berg"
+      },
+      {
+        "a": "el barco",
+        "b": "de boot"
+      },
+      {
+        "a": "la foto",
+        "b": "de foto"
+      },
+      {
+        "a": "el recuerdo",
+        "b": "het souvenir"
+      },
+      {
+        "a": "la excursión",
+        "b": "de excursie"
+      },
+      {
+        "a": "la estación",
+        "b": "het station"
+      }
+    ]
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "id": "es-u8-diario-order",
+  "title": "Ordena el diario de viaje",
+  "subtitle": "U8 · zet de reisdag in de juiste volgorde",
+  "lang": "es",
+  "template": "order",
+  "options": {
+    "audio": false
+  },
+  "order": {
+    "prompt": "Tik de zinnen in de logische volgorde van een reisdag",
+    "rounds": [
+      {
+        "tag": "viaje",
+        "sub": "el día de Nina · llegar → subir → fotos → volver",
+        "items": [
+          {
+            "label": "He llegado a Cusco en avión.",
+            "key": 1
+          },
+          {
+            "label": "He cogido el tren a Machu Picchu.",
+            "key": 2
+          },
+          {
+            "label": "He subido y he sacado muchas fotos.",
+            "key": 3
+          },
+          {
+            "label": "Al final, he vuelto al hotel.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "viaje",
+        "sub": "preparar el viaje",
+        "items": [
+          {
+            "label": "He comprado el billete de avión.",
+            "key": 1
+          },
+          {
+            "label": "He hecho la maleta.",
+            "key": 2
+          },
+          {
+            "label": "He llegado al aeropuerto.",
+            "key": 3
+          },
+          {
+            "label": "He viajado a Perú.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "viaje",
+        "sub": "un día en la playa",
+        "items": [
+          {
+            "label": "Me he levantado temprano.",
+            "key": 1
+          },
+          {
+            "label": "He ido a la playa a pie.",
+            "key": 2
+          },
+          {
+            "label": "He nadado en el mar.",
+            "key": 3
+          },
+          {
+            "label": "He vuelto porque ha empezado a llover.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "viaje",
+        "sub": "la excursión a la montaña",
+        "items": [
+          {
+            "label": "Me he puesto el abrigo (hace frío).",
+            "key": 1
+          },
+          {
+            "label": "He empezado la excursión.",
+            "key": 2
+          },
+          {
+            "label": "He visto las llamas.",
+            "key": 3
+          },
+          {
+            "label": "He llegado a la cima.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "relato",
+        "sub": "conectores: primero → luego → después → al final",
+        "items": [
+          {
+            "label": "Primero, he desayunado.",
+            "key": 1
+          },
+          {
+            "label": "Luego, he visitado el museo.",
+            "key": 2
+          },
+          {
+            "label": "Después, he comido en un restaurante.",
+            "key": 3
+          },
+          {
+            "label": "Al final, he escrito en mi diario.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "relato",
+        "sub": "la postal",
+        "items": [
+          {
+            "label": "He comprado una postal.",
+            "key": 1
+          },
+          {
+            "label": "He escrito el mensaje.",
+            "key": 2
+          },
+          {
+            "label": "He puesto el sello.",
+            "key": 3
+          },
+          {
+            "label": "La he enviado a mi familia.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "viaje",
+        "sub": "el mal tiempo",
+        "items": [
+          {
+            "label": "Por la mañana ha hecho sol.",
+            "key": 1
+          },
+          {
+            "label": "Luego se ha nublado.",
+            "key": 2
+          },
+          {
+            "label": "Después ha empezado la tormenta.",
+            "key": 3
+          },
+          {
+            "label": "Al final ha llovido mucho.",
+            "key": 4
+          }
+        ]
+      }
+    ]
+  }
+}

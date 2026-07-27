@@ -1,0 +1,170 @@
+{
+  "id": "es-u8-ya-todavia",
+  "title": "¿ya, todavía no o…?",
+  "subtitle": "U8 · kies de juiste marcador",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de marcador die past",
+    "items": [
+      {
+        "stimulus": "___ he hecho la maleta. ✅",
+        "options": [
+          "Ya",
+          "Todavía no",
+          "Nunca"
+        ],
+        "answer": "Ya",
+        "tag": "mc",
+        "sub": "klaar → ya"
+      },
+      {
+        "stimulus": "___ he reservado el hotel. ⏳",
+        "options": [
+          "Todavía no",
+          "Ya",
+          "Muchas veces"
+        ],
+        "answer": "Todavía no",
+        "tag": "mc",
+        "sub": "nog niet → todavía no"
+      },
+      {
+        "stimulus": "¿Has viajado ___ en barco? (ooit)",
+        "options": [
+          "alguna vez",
+          "ya",
+          "hoy"
+        ],
+        "answer": "alguna vez",
+        "tag": "mc",
+        "sub": "ooit → alguna vez"
+      },
+      {
+        "stimulus": "___ he estado en Perú. (nooit)",
+        "options": [
+          "Nunca",
+          "Ya",
+          "Esta semana"
+        ],
+        "answer": "Nunca",
+        "tag": "mc",
+        "sub": "nooit → nunca"
+      },
+      {
+        "stimulus": "___ he estudiado dos horas. (vandaag)",
+        "options": [
+          "Hoy",
+          "Nunca",
+          "Alguna vez"
+        ],
+        "answer": "Hoy",
+        "tag": "mc",
+        "sub": "vandaag → hoy"
+      },
+      {
+        "stimulus": "He visto esa peli ___. (vaak)",
+        "options": [
+          "muchas veces",
+          "todavía no",
+          "hoy"
+        ],
+        "answer": "muchas veces",
+        "tag": "mc",
+        "sub": "vaak → muchas veces"
+      },
+      {
+        "stimulus": "___ hemos ido dos veces. (deze week)",
+        "options": [
+          "Esta semana",
+          "Nunca",
+          "Alguna vez"
+        ],
+        "answer": "Esta semana",
+        "tag": "mc",
+        "sub": "deze week → esta semana"
+      },
+      {
+        "stimulus": "—¿Has comido? —No, ___.",
+        "options": [
+          "todavía no",
+          "ya",
+          "alguna vez"
+        ],
+        "answer": "todavía no",
+        "tag": "mc",
+        "sub": "nog niet"
+      },
+      {
+        "stimulus": "—¿Has hecho los deberes? —Sí, ___.",
+        "options": [
+          "ya",
+          "nunca",
+          "todavía no"
+        ],
+        "answer": "ya",
+        "tag": "mc",
+        "sub": "al klaar → ya"
+      },
+      {
+        "stimulus": "___ he viajado a México. (dit jaar)",
+        "options": [
+          "Este año",
+          "Nunca",
+          "Alguna vez"
+        ],
+        "answer": "Este año",
+        "tag": "mc",
+        "sub": "dit jaar → este año"
+      },
+      {
+        "stimulus": "¿Has probado el ceviche ___? (ooit)",
+        "options": [
+          "alguna vez",
+          "ya",
+          "hoy"
+        ],
+        "answer": "alguna vez",
+        "tag": "mc",
+        "sub": "ooit"
+      },
+      {
+        "stimulus": "___ he visto la nieve. (nog nooit)",
+        "options": [
+          "Nunca",
+          "Ya",
+          "Hoy"
+        ],
+        "answer": "Nunca",
+        "tag": "mc",
+        "sub": "nooit → nunca"
+      },
+      {
+        "stimulus": "___ he leído mucho. (de laatste tijd)",
+        "options": [
+          "Últimamente",
+          "Nunca",
+          "Todavía no"
+        ],
+        "answer": "Últimamente",
+        "tag": "mc",
+        "sub": "de laatste tijd"
+      },
+      {
+        "stimulus": "¿___ has llegado? ¡Qué rápido!",
+        "options": [
+          "Ya",
+          "Nunca",
+          "Todavía no"
+        ],
+        "answer": "Ya",
+        "tag": "mc",
+        "sub": "al → ya"
+      }
+    ]
+  }
+}

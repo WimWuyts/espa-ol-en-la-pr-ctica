@@ -1,0 +1,124 @@
+{
+  "id": "es-u8-marcador",
+  "title": "¿Periodo o experiencia?",
+  "subtitle": "U8 · sorteer de marcador (hoy… / nunca…)",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Is de marcador een lopende periode of een ervaring?",
+    "categories": [
+      {
+        "id": "periodo",
+        "label": "periodo abierto<br><small>hoy · este año</small>",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "experiencia",
+        "label": "experiencia<br><small>nunca · alguna vez</small>",
+        "glaze": "#8B5E9E"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "hoy",
+        "answer": "periodo",
+        "tag": "periodo",
+        "sub": "vandaag"
+      },
+      {
+        "stimulus": "esta semana",
+        "answer": "periodo",
+        "tag": "periodo",
+        "sub": "deze week"
+      },
+      {
+        "stimulus": "este mes",
+        "answer": "periodo",
+        "tag": "periodo",
+        "sub": "deze maand"
+      },
+      {
+        "stimulus": "este año",
+        "answer": "periodo",
+        "tag": "periodo",
+        "sub": "dit jaar"
+      },
+      {
+        "stimulus": "esta mañana",
+        "answer": "periodo",
+        "tag": "periodo",
+        "sub": "vanochtend"
+      },
+      {
+        "stimulus": "últimamente",
+        "answer": "periodo",
+        "tag": "periodo",
+        "sub": "de laatste tijd"
+      },
+      {
+        "stimulus": "nunca",
+        "answer": "experiencia",
+        "tag": "experiencia",
+        "sub": "nooit"
+      },
+      {
+        "stimulus": "alguna vez",
+        "answer": "experiencia",
+        "tag": "experiencia",
+        "sub": "ooit"
+      },
+      {
+        "stimulus": "muchas veces",
+        "answer": "experiencia",
+        "tag": "experiencia",
+        "sub": "vaak"
+      },
+      {
+        "stimulus": "ya",
+        "answer": "experiencia",
+        "tag": "experiencia",
+        "sub": "al (klaar)"
+      },
+      {
+        "stimulus": "todavía no",
+        "answer": "experiencia",
+        "tag": "experiencia",
+        "sub": "nog niet"
+      },
+      {
+        "stimulus": "una vez",
+        "answer": "experiencia",
+        "tag": "experiencia",
+        "sub": "één keer"
+      },
+      {
+        "stimulus": "este verano",
+        "answer": "periodo",
+        "tag": "periodo",
+        "sub": "deze zomer"
+      },
+      {
+        "stimulus": "dos veces",
+        "answer": "experiencia",
+        "tag": "experiencia",
+        "sub": "twee keer"
+      },
+      {
+        "stimulus": "hoy por la tarde",
+        "answer": "periodo",
+        "tag": "periodo",
+        "sub": "vanmiddag"
+      },
+      {
+        "stimulus": "jamás",
+        "answer": "experiencia",
+        "tag": "experiencia",
+        "sub": "nooit (nadruk)"
+      }
+    ]
+  }
+}

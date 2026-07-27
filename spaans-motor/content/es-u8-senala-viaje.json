@@ -1,0 +1,206 @@
+{
+  "id": "es-u8-senala-viaje",
+  "title": "Señala en el viaje",
+  "subtitle": "U8 · klik het juiste woord",
+  "lang": "es",
+  "template": "point",
+  "options": {
+    "audio": false
+  },
+  "point": {
+    "prompt": "Klik het gevraagde woord",
+    "mode": "one",
+    "rounds": [
+      {
+        "tag": "transporte",
+        "sub": "señala el transporte por aire",
+        "targets": [
+          {
+            "label": "el tren"
+          },
+          {
+            "label": "el avión ✈️",
+            "hit": true
+          },
+          {
+            "label": "el barco"
+          },
+          {
+            "label": "la bici"
+          }
+        ]
+      },
+      {
+        "tag": "transporte",
+        "sub": "señala el transporte por agua",
+        "targets": [
+          {
+            "label": "el barco 🚢",
+            "hit": true
+          },
+          {
+            "label": "el coche"
+          },
+          {
+            "label": "el metro"
+          },
+          {
+            "label": "el avión"
+          }
+        ]
+      },
+      {
+        "tag": "clima",
+        "sub": "señala «hace frío»",
+        "targets": [
+          {
+            "label": "hace calor"
+          },
+          {
+            "label": "hace frío 🥶",
+            "hit": true
+          },
+          {
+            "label": "hace sol"
+          },
+          {
+            "label": "está nublado"
+          }
+        ]
+      },
+      {
+        "tag": "clima",
+        "sub": "señala «llueve»",
+        "targets": [
+          {
+            "label": "nieva"
+          },
+          {
+            "label": "hace sol"
+          },
+          {
+            "label": "llueve 🌧️",
+            "hit": true
+          },
+          {
+            "label": "hace viento"
+          }
+        ]
+      },
+      {
+        "tag": "viajes",
+        "sub": "señala lo que llevas en el viaje",
+        "targets": [
+          {
+            "label": "la maleta 🧳",
+            "hit": true
+          },
+          {
+            "label": "el mar"
+          },
+          {
+            "label": "la nube"
+          },
+          {
+            "label": "la estación"
+          }
+        ]
+      },
+      {
+        "tag": "clima",
+        "sub": "señala «nieva»",
+        "targets": [
+          {
+            "label": "nieva ❄️",
+            "hit": true
+          },
+          {
+            "label": "hace calor"
+          },
+          {
+            "label": "llueve"
+          },
+          {
+            "label": "hace sol"
+          }
+        ]
+      },
+      {
+        "tag": "participio",
+        "sub": "señala el participio de «hacer»",
+        "targets": [
+          {
+            "label": "hacido"
+          },
+          {
+            "label": "hecho",
+            "hit": true
+          },
+          {
+            "label": "hago"
+          },
+          {
+            "label": "hacer"
+          }
+        ]
+      },
+      {
+        "tag": "participio",
+        "sub": "señala el participio de «ver»",
+        "targets": [
+          {
+            "label": "veído"
+          },
+          {
+            "label": "visto",
+            "hit": true
+          },
+          {
+            "label": "veo"
+          },
+          {
+            "label": "vido"
+          }
+        ]
+      },
+      {
+        "tag": "marcador",
+        "sub": "señala «nog niet»",
+        "targets": [
+          {
+            "label": "ya"
+          },
+          {
+            "label": "todavía no",
+            "hit": true
+          },
+          {
+            "label": "muchas veces"
+          },
+          {
+            "label": "hoy"
+          }
+        ]
+      },
+      {
+        "tag": "lugar",
+        "sub": "señala el país del ceviche y Machu Picchu",
+        "targets": [
+          {
+            "label": "México"
+          },
+          {
+            "label": "Perú 🇵🇪",
+            "hit": true
+          },
+          {
+            "label": "España"
+          },
+          {
+            "label": "Colombia"
+          }
+        ]
+      }
+    ]
+  }
+}

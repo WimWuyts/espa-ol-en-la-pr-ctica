@@ -1,0 +1,53 @@
+{
+  "id": "es-u8-shadowing-nina",
+  "title": "Shadowing con Nina",
+  "subtitle": "U8 · praat mee met Nina, steeds minder tekst",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "shadowing",
+    "prompt": "Escucha ▶ · habla al mismo tiempo · grábate ⏺",
+    "phases": [
+      "Texto completo",
+      "Palabras clave",
+      "Sin texto",
+      "Tu versión"
+    ],
+    "items": [
+      {
+        "text": "Esta semana he viajado a Perú y he visto Machu Picchu.",
+        "sub": "deze week ben ik naar Peru gereisd en heb ik Machu Picchu gezien",
+        "tag": "pc"
+      },
+      {
+        "text": "He cogido el tren muy pronto y ha hecho sol toda la mañana.",
+        "sub": "ik heb heel vroeg de trein genomen en het was de hele ochtend zonnig",
+        "tag": "viaje"
+      },
+      {
+        "text": "En Cusco hace frío, así que me he puesto el abrigo.",
+        "sub": "in Cusco is het koud, dus heb ik mijn jas aangedaan",
+        "tag": "clima"
+      },
+      {
+        "text": "He comido un plato típico y he bebido un mate.",
+        "sub": "ik heb een typisch gerecht gegeten en mate gedronken",
+        "tag": "pc"
+      },
+      {
+        "text": "¿Alguna vez has estado en la montaña?",
+        "sub": "ben je ooit in de bergen geweest?",
+        "tag": "marcador"
+      },
+      {
+        "text": "Al final del día he escrito todo en mi diario.",
+        "sub": "aan het eind van de dag heb ik alles in mijn dagboek geschreven",
+        "tag": "relato",
+        "tip": "Ahora cuenta tu propio día. <span class='nl'>vertel nu je eigen dag.</span>"
+      }
+    ]
+  }
+}
