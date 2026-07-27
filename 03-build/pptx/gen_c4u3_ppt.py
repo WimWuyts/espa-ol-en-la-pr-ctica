@@ -492,6 +492,48 @@ def s02_menu():
            ("Luister eerst, spreek na, en durf zelf te praten. Fouten maken hoort erbij.", {"size": 12, "italic": True, "color": INK})]])
     footer(s, tab=FTAB, page=pg())
 
+# ── Online-video (YouTube) inbedden zodat hij ÍN PowerPoint afspeelt ───────────
+# Bron = YouTube (geen lokale mp4), dus een ONLINE-video: PowerPoint desktop (2016+/365)
+# speelt hem in-app af via de ingebedde speler (internet vereist). Poster = PIL-render.
+from PIL import Image as _Img, ImageDraw as _Dw, ImageFont as _Ft
+_VIDEO_REL="http://schemas.openxmlformats.org/officeDocument/2006/relationships/video"
+_MEDIA_REL="http://schemas.microsoft.com/office/2007/relationships/media"
+_P14="http://schemas.microsoft.com/office/powerpoint/2010/main"
+VIDEO_ID="62GTD0QXbiI"; VIDEO_TOP="Sitcom · Episodio 3"; VIDEO_MAIN="Nacionalidades y países"
+VIDEO_POSTER=os.path.join(HERE,"assets","video_poster_U3.png")
+def _load_font(sz,bold=True):
+    for p in ["/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+              "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"]:
+        try: return _Ft.truetype(p,sz)
+        except Exception: pass
+    return _Ft.load_default()
+def make_video_poster(png,top,main):
+    os.makedirs(os.path.dirname(png),exist_ok=True)
+    W,H=1280,720; im=_Img.new("RGB",(W,H)); dr=_Dw.Draw(im)
+    c0=(0xD6,0x45,0x50); c1=(0xA8,0x32,0x3B)
+    for yy in range(H):
+        t=yy/H; dr.line([(0,yy),(W,yy)],fill=tuple(int(c0[i]+(c1[i]-c0[i])*t) for i in range(3)))
+    dr.ellipse([560,320,720,480],fill=(255,255,255))
+    dr.polygon([(618,362),(618,438),(688,400)],fill=c1)
+    dr.text((70,96),top,font=_load_font(38),fill=(255,255,255))
+    dr.text((70,156),main,font=_load_font(66),fill=(255,255,255))
+    dr.text((70,626),"▶ Klik om af te spelen · Spanish Sitcom (YouTube)",font=_load_font(28,False),fill=(255,255,255))
+    im.save(png)
+make_video_poster(VIDEO_POSTER,VIDEO_TOP,VIDEO_MAIN)
+def add_online_video(s,video_id,x,y,w,h,poster_png):
+    url="https://www.youtube.com/embed/%s"%video_id
+    pic=s.shapes.add_picture(poster_png,x,y,w,h)
+    part=s.part
+    rIdv=part.relate_to(url,_VIDEO_REL,is_external=True)
+    rIdm=part.relate_to(url,_MEDIA_REL,is_external=True)
+    el=pic._element; nvPicPr=el.find(qn('p:nvPicPr'))
+    cNvPr=nvPicPr.find(qn('p:cNvPr'))
+    cNvPr.insert(0,parse_xml('<a:hlinkClick xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:id="" action="ppaction://media"/>'))
+    nvPr=nvPicPr.find(qn('p:nvPr'))
+    nvPr.append(parse_xml('<a:videoFile xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" r:link="%s"/>'%rIdv))
+    nvPr.append(parse_xml('<p:extLst xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><p:ext uri="{DAA4B4D4-6D71-4841-9C94-3DE7FCFB9230}"><p14:media xmlns:p14="%s" r:embed="%s"/></p:ext></p:extLst>'%(_P14,rIdm)))
+    return pic
+
 def s03_escucha():
     s = slide(); bg(s)
     sectionbar(s, "§1 · ¡ESCUCHA!", "Bekijk la escena y escucha", "Kijk & luister — Fernando leert la extranjera «¿de dónde eres?»", num=1)
@@ -510,19 +552,18 @@ def s03_escucha():
         text(s, Inches(2.35), y - Inches(0.02), Inches(5.4), Inches(0.5),
              [[(tx, {"size": 13, "color": INK})]])
         y = y + Inches(0.58)
-    # chunks-kaart rechts
-    card(s, Inches(8.2), Inches(1.55), Inches(4.6), Inches(3.4), fill=GT, line=G)
-    text(s, Inches(8.45), Inches(1.75), Inches(4.1), Inches(3.1),
-         [[("Chunks para llevar 🎒", {"size": 14, "bold": True, "color": GD, "font": DISPLAY})],
-          [("¿De dónde eres? · ¿De qué país?", {"size": 12.5, "color": INK})],
-          [("Soy de + país · Soy de Argelia", {"size": 12.5, "color": INK})],
-          [("argelino ♂ · argelina ♀", {"size": 12.5, "color": INK})],
-          [("Hablo español · un poco · bastante bien", {"size": 12.5, "color": INK})],
-          [("árabe · francés · español · inglés", {"size": 12.5, "color": INK})]])
-    card(s, Inches(8.2), Inches(5.1), Inches(4.6), Inches(1.35), fill=WHITE, line=LINE)
-    text(s, Inches(8.45), Inches(5.25), Inches(4.1), Inches(1.1),
-         [[("🎬 Vídeo online · Episodio 3", {"size": 12, "bold": True, "color": GD, "font": DISPLAY})],
-          [("Scan de QR op de cursus of open de digitale hub → tabblad Escucha. Fallback: youtu.be/62GTD0QXbiI", {"size": 10.5, "color": MUT})]])
+    # chunks-kaart rechts (ingekort om plaats te maken voor de video)
+    card(s, Inches(8.2), Inches(1.55), Inches(4.6), Inches(2.45), fill=GT, line=G)
+    text(s, Inches(8.45), Inches(1.72), Inches(4.1), Inches(2.2),
+         [[("Chunks para llevar 🎒", {"size": 13, "bold": True, "color": GD, "font": DISPLAY})],
+          [("¿De dónde eres? · Soy de + país", {"size": 11.5, "color": INK})],
+          [("argelino ♂ · argelina ♀", {"size": 11.5, "color": INK})],
+          [("Hablo español · un poco", {"size": 11.5, "color": INK})],
+          [("árabe · francés · español · inglés", {"size": 11.5, "color": INK})]])
+    # echte, afspeelbare video (online YouTube-embed) — speelt in PowerPoint
+    text(s, Inches(8.2), Inches(4.12), Inches(4.6), Inches(0.3),
+         [[("🎬 Sitcom · Episodio 3 — klik om af te spelen", {"size": 11, "bold": True, "color": GD, "font": DISPLAY})]])
+    add_online_video(s, VIDEO_ID, Inches(8.2), Inches(4.45), Inches(4.6), Inches(2.55), VIDEO_POSTER)
     footer(s, tab=FTAB, page=pg())
 
 def s04_kit():

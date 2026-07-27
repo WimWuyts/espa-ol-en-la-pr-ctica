@@ -105,6 +105,15 @@ Fonts: base64-inbedden via de `face()`-helper (staat in elke generator).
 9. **Video:** YouTube-embed (`youtube-nocookie.com/embed/<id>?rel=0&playsinline=1`) met
    `allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen; web-share"`
    + `allowfullscreen`; dezelfde `allow` op de hub-`.frame`-iframe; **zichtbare fallback-link** «Op YouTube».
+   **In de PowerPoint (BINDEND, auteur 2026-07-27):** de video zit als **echte, afspeelbare
+   online-video** op de Escucha-dia (speelt ín PowerPoint desktop 2016+/365, internet vereist).
+   Techniek: helper `add_online_video()` in `gen_c4u<N>_ppt.py` — poster (PIL-render, C4-rood +
+   play-knop) via `add_picture`, dan `<a:videoFile r:link>` (extern, `.../relationships/video`) +
+   `<p14:media r:embed>` (extern, `.../2007/relationships/media`), beide naar
+   `youtube.com/embed/<id>`, + `<a:hlinkClick action="ppaction://media">`. Zet per unit
+   `VIDEO_ID/VIDEO_TOP/VIDEO_MAIN`. **Bij het klonen van de generator gaat dit automatisch mee** —
+   niet verwijderen. (LibreOffice kan pptx-video niet renderen in de sandbox; verifieer via
+   round-trip + rels: `videoFile`/`p14:media` aanwezig, embed-URL klopt, thema blijft rood.)
 10. **Geen bouw-jargon/metaberichten** op de leerlingpagina (Engelse componentnamen, «native/component/rood»,
     build-notities → enkel in broncode/docentdossier).
 11. **Doelcodes** uit `C4_LEERDOELEN_EVALUATIE.md` op de **docentenpagina** van elke unit (niet leerling).
