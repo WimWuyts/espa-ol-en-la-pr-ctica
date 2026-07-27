@@ -574,7 +574,7 @@ P(actx(AN(), "¿Quién hace qué? · relaciona sujeto y forma",
 P('</div>')  # page §2.1
 
 # ---------- §2.2 El verbo ser ----------
-P('<div class="page"><div class="parada">')
+P('<div class="page"><div class="parada sec">')
 P('<span class="num">2</span><span class="pk">§2.2 · El verbo «ser»</span>')
 P('<div class="intro"><b>ES:</b> <b>ser</b> es irregular y muy importante: para decir <b>quién eres</b>, <b>de dónde eres</b> y <b>a qué te dedicas</b>. <span class="gloss">ser gebruik je om te zeggen wie je bent, waar je vandaan komt en wat je doet.</span></div>')
 P('</div>')
@@ -607,7 +607,7 @@ P(actx(AN(), "★ Tarea comunicativa · entrevista",
 P('</div>')  # page §2.2
 
 # ---------- §2.3 Los otros irregulares clave ----------
-P('<div class="page"><div class="parada">')
+P('<div class="page"><div class="parada sec">')
 P('<span class="num">2</span><span class="pk">§2.3 · Los otros irregulares clave</span>')
 P('<div class="intro"><b>ES:</b> Seis verbos irregulares que usas cada día: <b>estar · tener · ir · hacer · venir · dar</b>. Fíjate en la forma de <b>yo</b>. <span class="gloss">Zes dagelijkse onregelmatige werkwoorden — let op de yo-vorm.</span></div>')
 P('</div>')
@@ -704,7 +704,7 @@ P(actx(AN(), "Escribe la forma que falta (m ↔ f)",
 P('</div>')  # page §3.1
 
 # ---------- §3.2 El número ----------
-P('<div class="page"><div class="parada">')
+P('<div class="page"><div class="parada sec">')
 P('<span class="num">3</span><span class="pk">§3.2 · El número — el plural</span>')
 P('<div class="intro"><b>ES:</b> Van enkelvoud naar meervoud, en het lidwoord wordt <b>los/las</b>. <span class="gloss">Meervoud vormen — en el/la wordt los/las.</span></div>')
 P('</div>')
@@ -726,7 +726,7 @@ P(actx(AN(), "Cadena · singular → plural",
 P('</div>')  # page §3.2
 
 # ---------- §3.3 Los adjetivos ----------
-P('<div class="page"><div class="parada">')
+P('<div class="page"><div class="parada sec">')
 P('<span class="num">3</span><span class="pk">§3.3 · Los adjetivos — concordancia y lugar</span>')
 P('<div class="intro"><b>ES:</b> El adjetivo <b>concuerda</b> (m/v · ev/mv) y va <b>después</b> del sustantivo. <span class="gloss">Het bijvoeglijk nw. komt overeen én staat meestal ná het zelfstandig nw.</span></div>')
 P('</div>')
