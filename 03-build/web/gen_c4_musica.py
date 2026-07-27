@@ -110,7 +110,7 @@ def banda_block(tema):
 ARTGRID="".join(art_card(a) for a in ART)
 MAProws="".join(f'<tr><td>{TEMA_TITELS[t]}</td><td>{", ".join(a[0]+" · "+a[4] for a in ART if t in a[8]) or "—"}</td></tr>' for t in TEMA_TITELS)
 
-TEMA="presentaciones"   # thema van deze unit → bepaalt de banda sonora van de les
+TEMA=os.environ.get("C4_TEMA","presentaciones")   # thema van deze unit → bepaalt de banda sonora van de les (per unit via env)
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · Música en español</title>
 <style>{CSS}</style></head><body>
@@ -138,5 +138,6 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
 </main></body></html>"""
 
 os.makedirs(f"{ROOT}/03-build/web/componentes",exist_ok=True)
-open(f"{ROOT}/03-build/web/componentes/C4_musica.html","w").write(HTML)
-print("C4_musica.html geschreven:",len(HTML),"bytes ·",len(ART),"artiesten")
+OUT=os.environ.get("C4_MUSICA_OUT","C4_musica.html")   # per unit via env; default = gedeeld U1-bestand
+open(f"{ROOT}/03-build/web/componentes/{OUT}","w").write(HTML)
+print(f"{OUT} geschreven:",len(HTML),"bytes ·",len(ART),"artiesten · tema=",TEMA)
