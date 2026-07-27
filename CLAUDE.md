@@ -147,6 +147,14 @@ U1 (C4) is goedgekeurd en vastgezet als norm voor álle C4-units (U2–U14). **B
 - [x] **Reservoir/cocktail-workflow** (`01-cursussen/04-welcome/reservoir/`): eerst `U<N>_cocktail.md` invullen (nieuwe IDs + matrix A+B), na de build coverage bijwerken.
 - [x] **Geen bouw-jargon/metaberichten op de leerlingpagina's.**
 - [x] **Doelcodes** (uit `C4_LEERDOELEN_EVALUATIE.md`) op de **docentenpagina** van elke unit.
+- [~] **Funciones-comunicativas-laag (PROTOTYPE, ter validatie 2026-07-27):** een doorlopende,
+  gráduaal groeiende ruggengraat van communicatieve functies, vertrekkend uit de sitcom-fragmenten.
+  = **matrix C** naast matrix A (klanken) en B (chunks). Bron: `03-build/web/funciones_data.py`
+  (catalogus F01–F08 + noticing per unit + eindtaak-tags) → component `gen_c4_funciones.py` →
+  tab «🗣️ Funciones» in elke hub (video-noticing «¿Qué hacen con el idioma?» + cumulatief banco met
+  exponentes-per-unit + semáforo + «esta unidad añade» nieuw/nivel+). Docentdossier + matrix C:
+  `01-cursussen/04-welcome/reservoir/C4_funciones_matrix.md`. Retroactief op U1–U3. **Nog te
+  bevestigen:** ook in print («Lo que ya sé decir»-spiekkaart) + PPT (funciones-dia), en doortrekken U4+.
 
 ## 11 · Git & werkafspraken
 
