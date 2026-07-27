@@ -1,0 +1,214 @@
+{
+  "id": "es-u6-acabar-de-cloze",
+  "title": "Completa: acabar de + infinitivo",
+  "subtitle": "U6 · net iets gedaan (acabo de comprar…)",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste vorm van «acabar de»",
+    "items": [
+      {
+        "stimulus": "(Yo) ___ comprar una gorra.",
+        "options": [
+          "acabo de",
+          "acaba de",
+          "acabas de"
+        ],
+        "answer": "acabo de",
+        "tag": "ac",
+        "sub": "yo → acabo de"
+      },
+      {
+        "stimulus": "¿(Tú) ___ probarte el vestido?",
+        "options": [
+          "acabas de",
+          "acabo de",
+          "acaban de"
+        ],
+        "answer": "acabas de",
+        "tag": "ac",
+        "sub": "tú → acabas de"
+      },
+      {
+        "stimulus": "(Nosotros) ___ pagar en la caja.",
+        "options": [
+          "acabamos de",
+          "acaban de",
+          "acabáis de"
+        ],
+        "answer": "acabamos de",
+        "tag": "ac",
+        "sub": "nosotros → acabamos de"
+      },
+      {
+        "stimulus": "Diego ___ llegar al mercado.",
+        "options": [
+          "acaba de",
+          "acaban de",
+          "acabas de"
+        ],
+        "answer": "acaba de",
+        "tag": "ac",
+        "sub": "él → acaba de"
+      },
+      {
+        "stimulus": "(Ellos) ___ ver el escaparate.",
+        "options": [
+          "acaban de",
+          "acaba de",
+          "acabamos de"
+        ],
+        "answer": "acaban de",
+        "tag": "ac",
+        "sub": "ellos → acaban de"
+      },
+      {
+        "stimulus": "Lucía ___ encontrar unas botas.",
+        "options": [
+          "acaba de",
+          "acaban de",
+          "acabas de"
+        ],
+        "answer": "acaba de",
+        "tag": "ac",
+        "sub": "ella → acaba de"
+      },
+      {
+        "stimulus": "¿(Vosotros) ___ entrar en la tienda?",
+        "options": [
+          "acabáis de",
+          "acaban de",
+          "acabamos de"
+        ],
+        "answer": "acabáis de",
+        "tag": "ac",
+        "sub": "vosotros → acabáis de"
+      },
+      {
+        "stimulus": "(Yo) ___ elegir la talla M.",
+        "options": [
+          "acabo de",
+          "acaba de",
+          "acabas de"
+        ],
+        "answer": "acabo de",
+        "tag": "ac",
+        "sub": "yo → acabo de"
+      },
+      {
+        "stimulus": "Acabo ___ comprar una camisa.",
+        "options": [
+          "de",
+          "a",
+          "que"
+        ],
+        "answer": "de",
+        "tag": "ac",
+        "sub": "acabar DE + infinitivo"
+      },
+      {
+        "stimulus": "Valen y Nina ___ salir de la tienda.",
+        "options": [
+          "acaban de",
+          "acabamos de",
+          "acabáis de"
+        ],
+        "answer": "acaban de",
+        "tag": "ac",
+        "sub": "ellas → acaban de"
+      },
+      {
+        "stimulus": "¿Qué ___ comprar (tú)?",
+        "options": [
+          "acabas de",
+          "acaba de",
+          "acabo de"
+        ],
+        "answer": "acabas de",
+        "tag": "ac",
+        "sub": "tú → acabas de"
+      },
+      {
+        "stimulus": "(Nosotros) ___ regatear el precio.",
+        "options": [
+          "acabamos de",
+          "acaban de",
+          "acabo de"
+        ],
+        "answer": "acabamos de",
+        "tag": "ac",
+        "sub": "nosotros → acabamos de"
+      },
+      {
+        "stimulus": "Él ___ probarse los zapatos.",
+        "options": [
+          "acaba de",
+          "acaban de",
+          "acabas de"
+        ],
+        "answer": "acaba de",
+        "tag": "ac",
+        "sub": "él → acaba de"
+      },
+      {
+        "stimulus": "(Yo) ___ pagar con tarjeta.",
+        "options": [
+          "acabo de",
+          "acaba de",
+          "acabáis de"
+        ],
+        "answer": "acabo de",
+        "tag": "ac",
+        "sub": "yo → acabo de"
+      },
+      {
+        "stimulus": "Mis amigos ___ abrir una tienda.",
+        "options": [
+          "acaban de",
+          "acaba de",
+          "acabamos de"
+        ],
+        "answer": "acaban de",
+        "tag": "ac",
+        "sub": "ellos → acaban de"
+      },
+      {
+        "stimulus": "¿(Tú) ___ ver las rebajas?",
+        "options": [
+          "acabas de",
+          "acaba de",
+          "acabo de"
+        ],
+        "answer": "acabas de",
+        "tag": "ac",
+        "sub": "tú → acabas de"
+      },
+      {
+        "stimulus": "La dependienta ___ abrir la caja.",
+        "options": [
+          "acaba de",
+          "acaban de",
+          "acabas de"
+        ],
+        "answer": "acaba de",
+        "tag": "ac",
+        "sub": "ella → acaba de"
+      },
+      {
+        "stimulus": "(Nosotros) ___ encontrar un descuento.",
+        "options": [
+          "acabamos de",
+          "acaban de",
+          "acabo de"
+        ],
+        "answer": "acabamos de",
+        "tag": "ac",
+        "sub": "nosotros → acabamos de"
+      }
+    ]
+  }
+}

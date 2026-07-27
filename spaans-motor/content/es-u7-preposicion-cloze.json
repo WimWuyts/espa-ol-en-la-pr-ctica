@@ -1,0 +1,192 @@
+{
+  "id": "es-u7-preposicion-cloze",
+  "title": "Completa la preposición",
+  "subtitle": "U7 · ¿dónde está? (encima de, al lado de…)",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de preposición die bij de betekenis (haakjes) past",
+    "items": [
+      {
+        "stimulus": "La lámpara está ___ la mesa (boven op).",
+        "options": [
+          "encima de",
+          "debajo de",
+          "entre"
+        ],
+        "answer": "encima de",
+        "tag": "prep",
+        "sub": "boven op"
+      },
+      {
+        "stimulus": "El gato está ___ la cama (onder).",
+        "options": [
+          "debajo de",
+          "encima de",
+          "al lado de"
+        ],
+        "answer": "debajo de",
+        "tag": "prep",
+        "sub": "onder"
+      },
+      {
+        "stimulus": "El banco está ___ la farmacia (naast).",
+        "options": [
+          "al lado de",
+          "delante de",
+          "entre"
+        ],
+        "answer": "al lado de",
+        "tag": "prep",
+        "sub": "naast"
+      },
+      {
+        "stimulus": "El cine está ___ el banco y el parque.",
+        "options": [
+          "entre",
+          "encima de",
+          "detrás de"
+        ],
+        "answer": "entre",
+        "tag": "prep",
+        "sub": "tussen A y B"
+      },
+      {
+        "stimulus": "El jardín está ___ la casa (achter).",
+        "options": [
+          "detrás de",
+          "delante de",
+          "dentro de"
+        ],
+        "answer": "detrás de",
+        "tag": "prep",
+        "sub": "achter"
+      },
+      {
+        "stimulus": "Hay un árbol ___ la casa (vóór).",
+        "options": [
+          "delante de",
+          "detrás de",
+          "encima de"
+        ],
+        "answer": "delante de",
+        "tag": "prep",
+        "sub": "vóór"
+      },
+      {
+        "stimulus": "La ropa está ___ armario (binnen in).",
+        "options": [
+          "dentro del",
+          "encima del",
+          "entre"
+        ],
+        "answer": "dentro del",
+        "tag": "prep",
+        "sub": "binnen in + del"
+      },
+      {
+        "stimulus": "El museo está ___ la iglesia (tegenover).",
+        "options": [
+          "enfrente de",
+          "al lado de",
+          "debajo de"
+        ],
+        "answer": "enfrente de",
+        "tag": "prep",
+        "sub": "tegenover"
+      },
+      {
+        "stimulus": "El parque está ___ mi casa (dichtbij).",
+        "options": [
+          "cerca de",
+          "lejos de",
+          "dentro de"
+        ],
+        "answer": "cerca de",
+        "tag": "prep",
+        "sub": "dichtbij"
+      },
+      {
+        "stimulus": "La estación está ___ (ver).",
+        "options": [
+          "lejos",
+          "cerca",
+          "entre"
+        ],
+        "answer": "lejos",
+        "tag": "prep",
+        "sub": "ver"
+      },
+      {
+        "stimulus": "El espejo está ___ la pared (aan/tegen).",
+        "options": [
+          "en",
+          "debajo de",
+          "entre"
+        ],
+        "answer": "en",
+        "tag": "prep",
+        "sub": "en la pared"
+      },
+      {
+        "stimulus": "La alfombra está ___ el sofá (onder).",
+        "options": [
+          "debajo de",
+          "encima de",
+          "enfrente de"
+        ],
+        "answer": "debajo de",
+        "tag": "prep",
+        "sub": "onder"
+      },
+      {
+        "stimulus": "La farmacia está ___ (op de hoek).",
+        "options": [
+          "en la esquina",
+          "entre",
+          "encima de"
+        ],
+        "answer": "en la esquina",
+        "tag": "prep",
+        "sub": "op de hoek"
+      },
+      {
+        "stimulus": "Los libros están ___ la estantería (in).",
+        "options": [
+          "en",
+          "debajo de",
+          "delante de"
+        ],
+        "answer": "en",
+        "tag": "prep",
+        "sub": "in de kast"
+      },
+      {
+        "stimulus": "El coche está ___ la casa (vóór).",
+        "options": [
+          "delante de",
+          "dentro de",
+          "encima de"
+        ],
+        "answer": "delante de",
+        "tag": "prep",
+        "sub": "vóór"
+      },
+      {
+        "stimulus": "El supermercado está ___ mi barrio (in).",
+        "options": [
+          "en",
+          "entre",
+          "debajo de"
+        ],
+        "answer": "en",
+        "tag": "prep",
+        "sub": "in de buurt"
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "es-u6-repite-tienda",
+  "title": "Escucha y repite: en la tienda",
+  "subtitle": "U6 · escucha el modelo, repite y GRÁBATE",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "repeat",
+    "prompt": "Escucha ▶ · repite en voz alta · grábate ⏺",
+    "items": [
+      {
+        "text": "¿Cuánto cuesta esta camiseta?",
+        "sub": "hoeveel kost dit T-shirt?",
+        "tag": "precio",
+        "tip": "¡Bien! Ahora dilo sin leer. <span class='nl'>zeg het nu zonder te lezen.</span>"
+      },
+      {
+        "text": "¿Puedo probármelo?",
+        "sub": "mag ik het passen? — probarse",
+        "tag": "probar"
+      },
+      {
+        "text": "¿La tienen en talla M?",
+        "sub": "hebben jullie het in maat M?",
+        "tag": "talla"
+      },
+      {
+        "text": "Me queda bien. Me lo llevo.",
+        "sub": "het staat me goed. ik neem het.",
+        "tag": "comprar"
+      },
+      {
+        "text": "Acabo de comprar unos vaqueros.",
+        "sub": "ik heb net een jeans gekocht — acabar de",
+        "tag": "acabar"
+      },
+      {
+        "text": "¿Me hace un descuento?",
+        "sub": "geeft u me korting? — regatear",
+        "tag": "regateo"
+      },
+      {
+        "text": "Pago con tarjeta, por favor.",
+        "sub": "ik betaal met kaart",
+        "tag": "pago"
+      },
+      {
+        "text": "Me gusta aquel abrigo del escaparate.",
+        "sub": "ik vind die jas in de etalage mooi",
+        "tag": "demostrativo"
+      }
+    ]
+  }
+}

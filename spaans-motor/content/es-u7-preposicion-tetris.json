@@ -1,0 +1,141 @@
+{
+  "id": "es-u7-preposicion-tetris",
+  "title": "Preposiciones Tetris",
+  "subtitle": "U7 · laat elke preposición in de juiste betekenis vallen",
+  "lang": "es",
+  "template": "tetris",
+  "options": {
+    "rows": 9,
+    "speed": 1300,
+    "audio": false
+  },
+  "classify": {
+    "categories": [
+      {
+        "id": "cerca",
+        "label": "cerca/naast",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "vertical",
+        "label": "boven/onder",
+        "glaze": "#E0A22F"
+      },
+      {
+        "id": "frente",
+        "label": "voor/achter",
+        "glaze": "#8B5E9E"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "al lado de",
+        "answer": "cerca",
+        "tag": "cerca",
+        "sub": "naast"
+      },
+      {
+        "stimulus": "cerca de",
+        "answer": "cerca",
+        "tag": "cerca",
+        "sub": "dichtbij"
+      },
+      {
+        "stimulus": "junto a",
+        "answer": "cerca",
+        "tag": "cerca",
+        "sub": "vlak bij"
+      },
+      {
+        "stimulus": "encima de",
+        "answer": "vertical",
+        "tag": "vertical",
+        "sub": "boven op"
+      },
+      {
+        "stimulus": "debajo de",
+        "answer": "vertical",
+        "tag": "vertical",
+        "sub": "onder"
+      },
+      {
+        "stimulus": "sobre",
+        "answer": "vertical",
+        "tag": "vertical",
+        "sub": "op"
+      },
+      {
+        "stimulus": "delante de",
+        "answer": "frente",
+        "tag": "frente",
+        "sub": "vóór"
+      },
+      {
+        "stimulus": "detrás de",
+        "answer": "frente",
+        "tag": "frente",
+        "sub": "achter"
+      },
+      {
+        "stimulus": "enfrente de",
+        "answer": "frente",
+        "tag": "frente",
+        "sub": "tegenover"
+      },
+      {
+        "stimulus": "al lado del banco",
+        "answer": "cerca",
+        "tag": "cerca",
+        "sub": "naast de bank"
+      },
+      {
+        "stimulus": "debajo de la mesa",
+        "answer": "vertical",
+        "tag": "vertical",
+        "sub": "onder de tafel"
+      },
+      {
+        "stimulus": "encima del armario",
+        "answer": "vertical",
+        "tag": "vertical",
+        "sub": "boven op de kast"
+      },
+      {
+        "stimulus": "detrás de la casa",
+        "answer": "frente",
+        "tag": "frente",
+        "sub": "achter het huis"
+      },
+      {
+        "stimulus": "cerca del parque",
+        "answer": "cerca",
+        "tag": "cerca",
+        "sub": "dichtbij het park"
+      },
+      {
+        "stimulus": "delante de la puerta",
+        "answer": "frente",
+        "tag": "frente",
+        "sub": "vóór de deur"
+      },
+      {
+        "stimulus": "enfrente del cine",
+        "answer": "frente",
+        "tag": "frente",
+        "sub": "tegenover de bioscoop"
+      },
+      {
+        "stimulus": "sobre la cama",
+        "answer": "vertical",
+        "tag": "vertical",
+        "sub": "op het bed"
+      },
+      {
+        "stimulus": "junto a la ventana",
+        "answer": "cerca",
+        "tag": "cerca",
+        "sub": "bij het raam"
+      }
+    ]
+  }
+}

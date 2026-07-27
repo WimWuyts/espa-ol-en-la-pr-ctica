@@ -1,0 +1,53 @@
+{
+  "id": "es-u6-shadowing-diego",
+  "title": "Shadowing con Diego",
+  "subtitle": "U6 · praat mee met Diego, steeds minder tekst",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "shadowing",
+    "prompt": "Escucha ▶ · habla al mismo tiempo · grábate ⏺",
+    "phases": [
+      "Texto completo",
+      "Palabras clave",
+      "Sin texto",
+      "Tu versión"
+    ],
+    "items": [
+      {
+        "text": "En el mercado hay mucha ropa de todos los colores.",
+        "sub": "op de markt is veel kleding in alle kleuren",
+        "tag": "mercado"
+      },
+      {
+        "text": "Acabo de comprar una camiseta roja y unos vaqueros azules.",
+        "sub": "ik heb net een rood T-shirt en een blauwe jeans gekocht",
+        "tag": "acabar"
+      },
+      {
+        "text": "¿Te gusta esta chaqueta o prefieres aquella?",
+        "sub": "vind je dit vest mooi of verkies je dat daar?",
+        "tag": "demostrativo"
+      },
+      {
+        "text": "En el tianguis puedes regatear el precio.",
+        "sub": "op de tianguis kun je afdingen",
+        "tag": "regateo"
+      },
+      {
+        "text": "¿La camisa azul? Sí, la compro. Me queda muy bien.",
+        "sub": "het blauwe hemd? ja, ik koop het. het staat me goed",
+        "tag": "od"
+      },
+      {
+        "text": "Voy a pagar en la caja con tarjeta.",
+        "sub": "ik ga aan de kassa met kaart betalen",
+        "tag": "pago",
+        "tip": "Ahora invita a un amigo de verdad. <span class='nl'>nodig nu een echte vriend uit.</span>"
+      }
+    ]
+  }
+}

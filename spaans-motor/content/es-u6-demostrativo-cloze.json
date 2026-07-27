@@ -1,0 +1,192 @@
+{
+  "id": "es-u6-demostrativo-cloze",
+  "title": "Completa: este/ese/aquel",
+  "subtitle": "U6 · cerca · ahí · lejos (concordantie)",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste vorm (cerca=este · ahí=ese · lejos=aquel)",
+    "items": [
+      {
+        "stimulus": "Me gusta ___ camiseta (aquí).",
+        "options": [
+          "esta",
+          "esa",
+          "aquella"
+        ],
+        "answer": "esta",
+        "tag": "d",
+        "sub": "cerca (v) → esta"
+      },
+      {
+        "stimulus": "¿Cuánto cuesta ___ gorra (ahí)?",
+        "options": [
+          "esa",
+          "esta",
+          "aquella"
+        ],
+        "answer": "esa",
+        "tag": "d",
+        "sub": "ahí (v) → esa"
+      },
+      {
+        "stimulus": "___ abrigo (allí) es caro.",
+        "options": [
+          "Aquel",
+          "Este",
+          "Ese"
+        ],
+        "answer": "Aquel",
+        "tag": "d",
+        "sub": "lejos (m) → aquel"
+      },
+      {
+        "stimulus": "___ zapatos (aquí) son cómodos.",
+        "options": [
+          "estos",
+          "esos",
+          "aquellos"
+        ],
+        "answer": "estos",
+        "tag": "d",
+        "sub": "cerca (m pl) → estos"
+      },
+      {
+        "stimulus": "Prefiero ___ vestido (ahí).",
+        "options": [
+          "ese",
+          "este",
+          "aquel"
+        ],
+        "answer": "ese",
+        "tag": "d",
+        "sub": "ahí (m) → ese"
+      },
+      {
+        "stimulus": "___ botas (allí) son de cuero.",
+        "options": [
+          "aquellas",
+          "estas",
+          "esas"
+        ],
+        "answer": "aquellas",
+        "tag": "d",
+        "sub": "lejos (v pl) → aquellas"
+      },
+      {
+        "stimulus": "¿Te gusta ___ jersey (aquí)?",
+        "options": [
+          "este",
+          "ese",
+          "aquel"
+        ],
+        "answer": "este",
+        "tag": "d",
+        "sub": "cerca (m) → este"
+      },
+      {
+        "stimulus": "___ falda (ahí) es de cuadros.",
+        "options": [
+          "esa",
+          "esta",
+          "aquella"
+        ],
+        "answer": "esa",
+        "tag": "d",
+        "sub": "ahí (v) → esa"
+      },
+      {
+        "stimulus": "Mira ___ pantalones (allí).",
+        "options": [
+          "aquellos",
+          "estos",
+          "esos"
+        ],
+        "answer": "aquellos",
+        "tag": "d",
+        "sub": "lejos (m pl) → aquellos"
+      },
+      {
+        "stimulus": "Quiero ___ sandalias (aquí).",
+        "options": [
+          "estas",
+          "esas",
+          "aquellas"
+        ],
+        "answer": "estas",
+        "tag": "d",
+        "sub": "cerca (v pl) → estas"
+      },
+      {
+        "stimulus": "¿Cuánto es ___ cinturón (ahí)?",
+        "options": [
+          "ese",
+          "este",
+          "aquel"
+        ],
+        "answer": "ese",
+        "tag": "d",
+        "sub": "ahí (m) → ese"
+      },
+      {
+        "stimulus": "___ camisa (allí) es blanca.",
+        "options": [
+          "Aquella",
+          "Esta",
+          "Esa"
+        ],
+        "answer": "Aquella",
+        "tag": "d",
+        "sub": "lejos (v) → aquella"
+      },
+      {
+        "stimulus": "Me llevo ___ gafas (aquí).",
+        "options": [
+          "estas",
+          "esas",
+          "aquellas"
+        ],
+        "answer": "estas",
+        "tag": "d",
+        "sub": "cerca (v pl) → estas"
+      },
+      {
+        "stimulus": "___ sombrero (ahí) es bonito.",
+        "options": [
+          "Ese",
+          "Este",
+          "Aquel"
+        ],
+        "answer": "Ese",
+        "tag": "d",
+        "sub": "ahí (m) → ese"
+      },
+      {
+        "stimulus": "¿Ves ___ calcetines (allí)?",
+        "options": [
+          "aquellos",
+          "estos",
+          "esos"
+        ],
+        "answer": "aquellos",
+        "tag": "d",
+        "sub": "lejos (m pl) → aquellos"
+      },
+      {
+        "stimulus": "Compro ___ bufanda (aquí).",
+        "options": [
+          "esta",
+          "esa",
+          "aquella"
+        ],
+        "answer": "esta",
+        "tag": "d",
+        "sub": "cerca (v) → esta"
+      }
+    ]
+  }
+}

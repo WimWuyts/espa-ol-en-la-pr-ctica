@@ -1,0 +1,72 @@
+{
+  "id": "es-u6-ropa-memoria",
+  "title": "Memoria de la ropa",
+  "subtitle": "U6 · zoek het paar español ↔ nederlands",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om en zoek het woord + de vertaling",
+    "pairs": [
+      {
+        "a": "la camiseta",
+        "b": "T-shirt"
+      },
+      {
+        "a": "los pantalones",
+        "b": "broek"
+      },
+      {
+        "a": "el vestido",
+        "b": "jurk"
+      },
+      {
+        "a": "la falda",
+        "b": "rok"
+      },
+      {
+        "a": "los zapatos",
+        "b": "schoenen"
+      },
+      {
+        "a": "las botas",
+        "b": "laarzen"
+      },
+      {
+        "a": "la gorra",
+        "b": "pet"
+      },
+      {
+        "a": "el abrigo",
+        "b": "jas"
+      },
+      {
+        "a": "los vaqueros",
+        "b": "jeans"
+      },
+      {
+        "a": "el jersey",
+        "b": "trui"
+      },
+      {
+        "a": "la bufanda",
+        "b": "sjaal"
+      },
+      {
+        "a": "el bolso",
+        "b": "handtas"
+      },
+      {
+        "a": "las gafas de sol",
+        "b": "zonnebril"
+      },
+      {
+        "a": "los calcetines",
+        "b": "sokken"
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "es-u7-explica-camino-voz",
+  "title": "Mensaje de voz: explica el camino",
+  "subtitle": "U7 · neem een spraakbericht op",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "voicemessage",
+    "prompt": "Graba un mensaje de voz (30 s)",
+    "items": [
+      {
+        "text": "Explica el camino de la escuela a la plaza (usa sigue, gira, cruza).",
+        "cue": "el camino",
+        "tag": "camino",
+        "sub": "gebruik: sigue todo recto · gira a la derecha/izquierda · cruza · está al final",
+        "tip": "Heb je 4-5 instructies met imperativo gezegd? Neem opnieuw op. <span class='nl'>4-5 instructies met imperativo? herneem.</span>"
+      },
+      {
+        "text": "Describe tu habitación (¿qué hay? ¿dónde está cada mueble?).",
+        "cue": "mi habitación",
+        "tag": "describir",
+        "sub": "gebruik: hay · está · al lado de · encima de · debajo de",
+        "tip": "Heb je hay, una preposición én un mueble gezegd? Herneem. <span class='nl'>hay + preposición + meubel? herneem.</span>"
+      },
+      {
+        "text": "Deja un mensaje: ¿qué estás haciendo ahora en casa?",
+        "cue": "ahora mismo",
+        "tag": "gerundio",
+        "sub": "gebruik: estoy + gerundio (-ando/-iendo) · en la cocina / el salón…",
+        "tip": "2 acciones met estar+gerundio + un lugar? Herneem. <span class='nl'>2 acties met estar+gerundio + een plek? herneem.</span>"
+      }
+    ]
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "id": "es-u6-orden-tienda",
+  "title": "Ordena el diálogo",
+  "subtitle": "U6 · zet de winkel-dialoog in de juiste volgorde",
+  "lang": "es",
+  "template": "order",
+  "options": {
+    "audio": false
+  },
+  "order": {
+    "prompt": "Tik de zinnen in de logische volgorde van een winkelbezoek",
+    "rounds": [
+      {
+        "tag": "tienda",
+        "sub": "entrar → buscar → probar → comprar",
+        "items": [
+          {
+            "label": "Buenas, ¿qué desea?",
+            "key": 1
+          },
+          {
+            "label": "Busco una camisa azul.",
+            "key": 2
+          },
+          {
+            "label": "¿Puedo probármela?",
+            "key": 3
+          },
+          {
+            "label": "Me queda bien, me la llevo.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "tienda",
+        "sub": "talla → probador → precio → pago",
+        "items": [
+          {
+            "label": "¿La tienen en talla M?",
+            "key": 1
+          },
+          {
+            "label": "Sí, el probador está allí.",
+            "key": 2
+          },
+          {
+            "label": "¿Cuánto cuesta?",
+            "key": 3
+          },
+          {
+            "label": "Son 20 €. Pago con tarjeta.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "tianguis",
+        "sub": "regateo: precio → caro → descuento → trato",
+        "items": [
+          {
+            "label": "¿Cuánto cuesta este poncho?",
+            "key": 1
+          },
+          {
+            "label": "Cuesta 300 pesos.",
+            "key": 2
+          },
+          {
+            "label": "Es un poco caro, ¿me hace un descuento?",
+            "key": 3
+          },
+          {
+            "label": "Vale, 250. ¡Me lo llevo!",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "tienda",
+        "sub": "saludar → mostrar → color → decidir",
+        "items": [
+          {
+            "label": "Hola, ¿me enseña esa chaqueta?",
+            "key": 1
+          },
+          {
+            "label": "Claro, ¿de qué color la quiere?",
+            "key": 2
+          },
+          {
+            "label": "La quiero negra o gris.",
+            "key": 3
+          },
+          {
+            "label": "Esta negra le queda genial.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "rebajas",
+        "sub": "rebajas → elegir → probar → pagar",
+        "items": [
+          {
+            "label": "¡Hay rebajas! −50 % en vaqueros.",
+            "key": 1
+          },
+          {
+            "label": "Quiero estos vaqueros azules.",
+            "key": 2
+          },
+          {
+            "label": "Me los pruebo en el probador.",
+            "key": 3
+          },
+          {
+            "label": "Perfecto, pago en la caja.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "tienda",
+        "sub": "escaparate → entrar → preguntar → probar",
+        "items": [
+          {
+            "label": "Me gusta el vestido del escaparate.",
+            "key": 1
+          },
+          {
+            "label": "Entro en la tienda.",
+            "key": 2
+          },
+          {
+            "label": "¿Lo tienen en mi talla?",
+            "key": 3
+          },
+          {
+            "label": "Sí, ¿quiere probárselo?",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "devolucion",
+        "sub": "comprar → no queda → volver → cambiar",
+        "items": [
+          {
+            "label": "Acabo de comprar esta camisa.",
+            "key": 1
+          },
+          {
+            "label": "Pero no me queda bien.",
+            "key": 2
+          },
+          {
+            "label": "Vuelvo a la tienda.",
+            "key": 3
+          },
+          {
+            "label": "¿Puedo cambiarla por otra talla?",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "complementos",
+        "sub": "combinar el look",
+        "items": [
+          {
+            "label": "Primero, la camiseta blanca.",
+            "key": 1
+          },
+          {
+            "label": "Luego, los vaqueros azules.",
+            "key": 2
+          },
+          {
+            "label": "Después, las zapatillas.",
+            "key": 3
+          },
+          {
+            "label": "Por último, la gorra roja.",
+            "key": 4
+          }
+        ]
+      }
+    ]
+  }
+}

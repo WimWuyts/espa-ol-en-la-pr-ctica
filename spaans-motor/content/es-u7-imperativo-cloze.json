@@ -1,0 +1,192 @@
+{
+  "id": "es-u7-imperativo-cloze",
+  "title": "El camino: imperativo",
+  "subtitle": "U7 · explica el camino (gira, sigue, cruza…)",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies het juiste imperativo (tú)",
+    "items": [
+      {
+        "stimulus": "___ todo recto.",
+        "options": [
+          "Sigue",
+          "Sige",
+          "Sigues"
+        ],
+        "answer": "Sigue",
+        "tag": "imp",
+        "sub": "seguir → sigue (e→i)"
+      },
+      {
+        "stimulus": "___ a la derecha.",
+        "options": [
+          "Gira",
+          "Gire",
+          "Giras"
+        ],
+        "answer": "Gira",
+        "tag": "imp",
+        "sub": "girar → gira"
+      },
+      {
+        "stimulus": "___ la calle.",
+        "options": [
+          "Cruza",
+          "Cruce",
+          "Cruzas"
+        ],
+        "answer": "Cruza",
+        "tag": "imp",
+        "sub": "cruzar → cruza"
+      },
+      {
+        "stimulus": "___ la primera calle.",
+        "options": [
+          "Toma",
+          "Tome",
+          "Tomas"
+        ],
+        "answer": "Toma",
+        "tag": "imp",
+        "sub": "tomar → toma"
+      },
+      {
+        "stimulus": "___ por la escalera.",
+        "options": [
+          "Sube",
+          "Suba",
+          "Subes"
+        ],
+        "answer": "Sube",
+        "tag": "imp",
+        "sub": "subir → sube"
+      },
+      {
+        "stimulus": "___ a la plaza.",
+        "options": [
+          "Ve",
+          "Va",
+          "Vas"
+        ],
+        "answer": "Ve",
+        "tag": "imp",
+        "sub": "ir → ve"
+      },
+      {
+        "stimulus": "___ el autobús número 5.",
+        "options": [
+          "Coge",
+          "Coja",
+          "Coges"
+        ],
+        "answer": "Coge",
+        "tag": "imp",
+        "sub": "coger → coge"
+      },
+      {
+        "stimulus": "___ en el semáforo.",
+        "options": [
+          "Para",
+          "Pare",
+          "Paras"
+        ],
+        "answer": "Para",
+        "tag": "imp",
+        "sub": "parar → para"
+      },
+      {
+        "stimulus": "___ a la izquierda.",
+        "options": [
+          "Dobla",
+          "Doble",
+          "Doblas"
+        ],
+        "answer": "Dobla",
+        "tag": "imp",
+        "sub": "doblar → dobla"
+      },
+      {
+        "stimulus": "___ hasta el final de la calle.",
+        "options": [
+          "Camina",
+          "Camine",
+          "Caminas"
+        ],
+        "answer": "Camina",
+        "tag": "imp",
+        "sub": "caminar → camina"
+      },
+      {
+        "stimulus": "___ por el puente.",
+        "options": [
+          "Pasa",
+          "Pase",
+          "Pasas"
+        ],
+        "answer": "Pasa",
+        "tag": "imp",
+        "sub": "pasar → pasa"
+      },
+      {
+        "stimulus": "___ la puerta, por favor.",
+        "options": [
+          "Abre",
+          "Abra",
+          "Abres"
+        ],
+        "answer": "Abre",
+        "tag": "imp",
+        "sub": "abrir → abre"
+      },
+      {
+        "stimulus": "___ a la derecha en el banco.",
+        "options": [
+          "Gira",
+          "Gire",
+          "Giras"
+        ],
+        "answer": "Gira",
+        "tag": "imp",
+        "sub": "girar → gira"
+      },
+      {
+        "stimulus": "___ recto y luego cruza.",
+        "options": [
+          "Sigue",
+          "Sige",
+          "Sigues"
+        ],
+        "answer": "Sigue",
+        "tag": "imp",
+        "sub": "seguir → sigue"
+      },
+      {
+        "stimulus": "___ por la calle Real.",
+        "options": [
+          "Baja",
+          "Baje",
+          "Bajas"
+        ],
+        "answer": "Baja",
+        "tag": "imp",
+        "sub": "bajar → baja"
+      },
+      {
+        "stimulus": "___ el metro en la estación.",
+        "options": [
+          "Toma",
+          "Tome",
+          "Tomas"
+        ],
+        "answer": "Toma",
+        "tag": "imp",
+        "sub": "tomar → toma"
+      }
+    ]
+  }
+}

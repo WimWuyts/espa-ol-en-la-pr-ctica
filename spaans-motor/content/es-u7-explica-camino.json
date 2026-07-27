@@ -1,0 +1,187 @@
+{
+  "id": "es-u7-explica-camino",
+  "title": "¡Explica el camino!",
+  "subtitle": "U7 · schrijf de route — met alle bouwstenen",
+  "lang": "es",
+  "template": "sim",
+  "options": {
+    "audio": false
+  },
+  "sim": {
+    "prompt": "Tarea comunicativa · explica el camino / describe tu casa",
+    "rounds": [
+      {
+        "scenario": "Un turista pregunta: «¿Cómo se va a la plaza?» — explícale el camino.",
+        "tag": "camino",
+        "sub": "gebruik: sigue · gira · todo recto",
+        "min": 10,
+        "need": [
+          {
+            "re": "sigue|sige",
+            "label": "sigue …"
+          },
+          {
+            "re": "gira|dobla",
+            "label": "gira/dobla …"
+          },
+          {
+            "re": "recto|derecha|izquierda",
+            "label": "recto/derecha/izquierda"
+          }
+        ],
+        "bank": [
+          "Sigue todo recto",
+          "gira a la derecha",
+          "gira a la izquierda",
+          "cruza la calle",
+          "la plaza está",
+          "al final"
+        ],
+        "model": "Sigue todo recto y gira a la derecha. La plaza está al final de la calle."
+      },
+      {
+        "scenario": "Describe tu salón: ¿qué hay y dónde está cada cosa?",
+        "tag": "describir",
+        "sub": "gebruik: hay · está · una preposición",
+        "min": 10,
+        "need": [
+          {
+            "re": "hay",
+            "label": "hay …"
+          },
+          {
+            "re": "est[aá]",
+            "label": "está / están"
+          },
+          {
+            "re": "al lado|encima|debajo|entre|delante|detrás|enfrente|cerca",
+            "label": "una preposición"
+          }
+        ],
+        "bank": [
+          "En mi salón hay",
+          "un sofá",
+          "una mesa",
+          "está al lado de",
+          "está enfrente de",
+          "la ventana"
+        ],
+        "model": "En mi salón hay un sofá y una mesa. El sofá está al lado de la ventana."
+      },
+      {
+        "scenario": "Di qué estás haciendo ahora en casa (estar + gerundio).",
+        "tag": "gerundio",
+        "sub": "gebruik: estoy + -ando/-iendo",
+        "min": 8,
+        "need": [
+          {
+            "re": "estoy|estamos",
+            "label": "estoy/estamos …"
+          },
+          {
+            "re": "ando|iendo|yendo",
+            "label": "un gerundio (-ando/-iendo)"
+          },
+          {
+            "re": "cocina|salón|salon|habitación|habitacion|casa|comedor",
+            "label": "un lugar de la casa"
+          }
+        ],
+        "bank": [
+          "Ahora estoy",
+          "cocinando",
+          "viendo la tele",
+          "en la cocina",
+          "en el salón",
+          "estudiando"
+        ],
+        "model": "Ahora estoy cocinando en la cocina y mi hermano está viendo la tele."
+      },
+      {
+        "scenario": "Describe una vivienda para un anuncio (habitaciones, piso, precio).",
+        "tag": "anuncio",
+        "sub": "gebruik: tiene · habitaciones · piso · euros",
+        "min": 9,
+        "need": [
+          {
+            "re": "tiene|hay",
+            "label": "tiene / hay"
+          },
+          {
+            "re": "habitaci",
+            "label": "habitaciones"
+          },
+          {
+            "re": "piso|planta",
+            "label": "piso / planta"
+          }
+        ],
+        "bank": [
+          "Se alquila piso",
+          "tiene dos habitaciones",
+          "tercer piso",
+          "con ascensor",
+          "cerca del parque",
+          "600 euros al mes"
+        ],
+        "model": "Se alquila piso en el tercer piso. Tiene dos habitaciones y está cerca del parque. 600 euros al mes."
+      },
+      {
+        "scenario": "¿Dónde está tu casa? Di qué hay cerca en tu barrio.",
+        "tag": "barrio",
+        "sub": "gebruik: cerca de · hay · al lado de",
+        "min": 8,
+        "need": [
+          {
+            "re": "cerca|al lado|enfrente",
+            "label": "cerca de / al lado de"
+          },
+          {
+            "re": "hay",
+            "label": "hay …"
+          },
+          {
+            "re": "parque|plaza|tienda|panadería|panaderia|banco|supermercado",
+            "label": "un lugar del barrio"
+          }
+        ],
+        "bank": [
+          "Mi casa está cerca de",
+          "hay una plaza",
+          "al lado de la panadería",
+          "enfrente del parque",
+          "el supermercado"
+        ],
+        "model": "Mi casa está cerca de la plaza. Al lado hay una panadería y enfrente hay un parque."
+      },
+      {
+        "scenario": "Invita a un amigo a tu casa y dile cómo llegar.",
+        "tag": "invitar",
+        "sub": "gebruik: ven a · toma · baja en",
+        "min": 9,
+        "need": [
+          {
+            "re": "ven|te invito",
+            "label": "ven a / te invito"
+          },
+          {
+            "re": "toma|coge|autobús|autobus|metro",
+            "label": "toma el autobús/metro"
+          },
+          {
+            "re": "baja|para|gira|sigue",
+            "label": "baja / gira / sigue"
+          }
+        ],
+        "bank": [
+          "Ven a mi casa",
+          "toma el autobús 5",
+          "baja en la plaza",
+          "gira a la derecha",
+          "vivo en el tercer piso"
+        ],
+        "model": "Ven a mi casa. Toma el autobús 5 y baja en la plaza. Vivo en el tercer piso."
+      }
+    ]
+  }
+}

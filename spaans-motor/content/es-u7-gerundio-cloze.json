@@ -1,0 +1,214 @@
+{
+  "id": "es-u7-gerundio-cloze",
+  "title": "Completa: estar + gerundio",
+  "subtitle": "U7 · ¿qué pasa ahora? (estoy cocinando…)",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste vorm van «estar + gerundio»",
+    "items": [
+      {
+        "stimulus": "(Yo) ___ en la cocina.",
+        "options": [
+          "estoy cocinando",
+          "estás cocinando",
+          "estoy cocinar"
+        ],
+        "answer": "estoy cocinando",
+        "tag": "ger",
+        "sub": "yo → estoy + cocinando"
+      },
+      {
+        "stimulus": "¿(Tú) ___ la tele?",
+        "options": [
+          "estás viendo",
+          "estoy viendo",
+          "estás veiendo"
+        ],
+        "answer": "estás viendo",
+        "tag": "ger",
+        "sub": "ver → viendo"
+      },
+      {
+        "stimulus": "(Nosotros) ___ en el comedor.",
+        "options": [
+          "estamos comiendo",
+          "están comiendo",
+          "estamos comer"
+        ],
+        "answer": "estamos comiendo",
+        "tag": "ger",
+        "sub": "comer → comiendo"
+      },
+      {
+        "stimulus": "Valen ___ una carta.",
+        "options": [
+          "está escribiendo",
+          "están escribiendo",
+          "está escribir"
+        ],
+        "answer": "está escribiendo",
+        "tag": "ger",
+        "sub": "escribir → escribiendo"
+      },
+      {
+        "stimulus": "(Ellos) ___ en el dormitorio.",
+        "options": [
+          "están durmiendo",
+          "están dormiendo",
+          "está durmiendo"
+        ],
+        "answer": "están durmiendo",
+        "tag": "ger",
+        "sub": "dormir → durmiendo"
+      },
+      {
+        "stimulus": "(Yo) ___ un libro en el salón.",
+        "options": [
+          "estoy leyendo",
+          "estoy leiendo",
+          "estás leyendo"
+        ],
+        "answer": "estoy leyendo",
+        "tag": "ger",
+        "sub": "leer → leyendo"
+      },
+      {
+        "stimulus": "¿(Vosotros) ___ música?",
+        "options": [
+          "estáis escuchando",
+          "estás escuchando",
+          "estáis escuchendo"
+        ],
+        "answer": "estáis escuchando",
+        "tag": "ger",
+        "sub": "escuchar → escuchando"
+      },
+      {
+        "stimulus": "Mi madre ___ la casa.",
+        "options": [
+          "está limpiando",
+          "están limpiando",
+          "está limpiendo"
+        ],
+        "answer": "está limpiando",
+        "tag": "ger",
+        "sub": "limpiar → limpiando"
+      },
+      {
+        "stimulus": "Los niños ___ en el parque.",
+        "options": [
+          "están jugando",
+          "está jugando",
+          "están jugendo"
+        ],
+        "answer": "están jugando",
+        "tag": "ger",
+        "sub": "jugar → jugando"
+      },
+      {
+        "stimulus": "(Yo) ___ para el examen.",
+        "options": [
+          "estoy estudiando",
+          "estás estudiando",
+          "estoy estudiar"
+        ],
+        "answer": "estoy estudiando",
+        "tag": "ger",
+        "sub": "estudiar → estudiando"
+      },
+      {
+        "stimulus": "La gente ___ por la plaza.",
+        "options": [
+          "está paseando",
+          "están paseando",
+          "está paseendo"
+        ],
+        "answer": "está paseando",
+        "tag": "ger",
+        "sub": "pasear → paseando"
+      },
+      {
+        "stimulus": "¿Qué ___ (tú) ahora?",
+        "options": [
+          "estás haciendo",
+          "estoy haciendo",
+          "estás hacer"
+        ],
+        "answer": "estás haciendo",
+        "tag": "ger",
+        "sub": "hacer → haciendo"
+      },
+      {
+        "stimulus": "(Nosotros) ___ la mesa.",
+        "options": [
+          "estamos poniendo",
+          "están poniendo",
+          "estamos poner"
+        ],
+        "answer": "estamos poniendo",
+        "tag": "ger",
+        "sub": "poner → poniendo"
+      },
+      {
+        "stimulus": "Diego ___ por teléfono.",
+        "options": [
+          "está hablando",
+          "están hablando",
+          "está hablar"
+        ],
+        "answer": "está hablando",
+        "tag": "ger",
+        "sub": "hablar → hablando"
+      },
+      {
+        "stimulus": "(Yo) ___ una ducha.",
+        "options": [
+          "me estoy duchando",
+          "me estás duchando",
+          "me estoy duchar"
+        ],
+        "answer": "me estoy duchando",
+        "tag": "ger",
+        "sub": "ducharse → duchando"
+      },
+      {
+        "stimulus": "Las chicas ___ en la habitación.",
+        "options": [
+          "están cantando",
+          "está cantando",
+          "están cantiendo"
+        ],
+        "answer": "están cantando",
+        "tag": "ger",
+        "sub": "cantar → cantando"
+      },
+      {
+        "stimulus": "¿(Tú) ___ la comida?",
+        "options": [
+          "estás preparando",
+          "estoy preparando",
+          "estás preparendo"
+        ],
+        "answer": "estás preparando",
+        "tag": "ger",
+        "sub": "preparar → preparando"
+      },
+      {
+        "stimulus": "Papá ___ en el jardín.",
+        "options": [
+          "está trabajando",
+          "están trabajando",
+          "está trabajendo"
+        ],
+        "answer": "está trabajando",
+        "tag": "ger",
+        "sub": "trabajar → trabajando"
+      }
+    ]
+  }
+}

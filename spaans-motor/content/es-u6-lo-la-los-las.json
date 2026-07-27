@@ -1,0 +1,146 @@
+{
+  "id": "es-u6-lo-la-los-las",
+  "title": "¿lo, la, los o las?",
+  "subtitle": "U6 · welk pronomen vervangt de prenda?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Welk pronomen vervangt de prenda? (m/v · ev/mv)",
+    "categories": [
+      {
+        "id": "lo",
+        "label": "lo<br><small>m. ev.</small>",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "la",
+        "label": "la<br><small>v. ev.</small>",
+        "glaze": "#C4402C"
+      },
+      {
+        "id": "los",
+        "label": "los<br><small>m. mv.</small>",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "las",
+        "label": "las<br><small>v. mv.</small>",
+        "glaze": "#E0A22F"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "la falda",
+        "answer": "la",
+        "tag": "la",
+        "sub": "v. ev."
+      },
+      {
+        "stimulus": "el jersey",
+        "answer": "lo",
+        "tag": "lo",
+        "sub": "m. ev."
+      },
+      {
+        "stimulus": "los zapatos",
+        "answer": "los",
+        "tag": "los",
+        "sub": "m. mv."
+      },
+      {
+        "stimulus": "las botas",
+        "answer": "las",
+        "tag": "las",
+        "sub": "v. mv."
+      },
+      {
+        "stimulus": "la camisa",
+        "answer": "la",
+        "tag": "la",
+        "sub": "v. ev."
+      },
+      {
+        "stimulus": "el abrigo",
+        "answer": "lo",
+        "tag": "lo",
+        "sub": "m. ev."
+      },
+      {
+        "stimulus": "los vaqueros",
+        "answer": "los",
+        "tag": "los",
+        "sub": "m. mv."
+      },
+      {
+        "stimulus": "las sandalias",
+        "answer": "las",
+        "tag": "las",
+        "sub": "v. mv."
+      },
+      {
+        "stimulus": "el cinturón",
+        "answer": "lo",
+        "tag": "lo",
+        "sub": "m. ev."
+      },
+      {
+        "stimulus": "la gorra",
+        "answer": "la",
+        "tag": "la",
+        "sub": "v. ev."
+      },
+      {
+        "stimulus": "los calcetines",
+        "answer": "los",
+        "tag": "los",
+        "sub": "m. mv."
+      },
+      {
+        "stimulus": "las gafas",
+        "answer": "las",
+        "tag": "las",
+        "sub": "v. mv."
+      },
+      {
+        "stimulus": "el vestido",
+        "answer": "lo",
+        "tag": "lo",
+        "sub": "m. ev."
+      },
+      {
+        "stimulus": "la bufanda",
+        "answer": "la",
+        "tag": "la",
+        "sub": "v. ev."
+      },
+      {
+        "stimulus": "los guantes",
+        "answer": "los",
+        "tag": "los",
+        "sub": "m. mv."
+      },
+      {
+        "stimulus": "las zapatillas",
+        "answer": "las",
+        "tag": "las",
+        "sub": "v. mv."
+      },
+      {
+        "stimulus": "el sombrero",
+        "answer": "lo",
+        "tag": "lo",
+        "sub": "m. ev."
+      },
+      {
+        "stimulus": "la chaqueta",
+        "answer": "la",
+        "tag": "la",
+        "sub": "v. ev."
+      }
+    ]
+  }
+}

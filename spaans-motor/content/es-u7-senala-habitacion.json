@@ -1,0 +1,206 @@
+{
+  "id": "es-u7-senala-habitacion",
+  "title": "Señala en la habitación",
+  "subtitle": "U7 · klik het juiste mueble/lugar",
+  "lang": "es",
+  "template": "point",
+  "options": {
+    "audio": false
+  },
+  "point": {
+    "prompt": "Klik het gevraagde item",
+    "mode": "one",
+    "rounds": [
+      {
+        "tag": "cama",
+        "sub": "señala dónde duermes",
+        "targets": [
+          {
+            "label": "la cama 🛏️",
+            "hit": true
+          },
+          {
+            "label": "el sofá"
+          },
+          {
+            "label": "la mesa"
+          },
+          {
+            "label": "el armario"
+          }
+        ]
+      },
+      {
+        "tag": "cocina",
+        "sub": "señala dónde cocinas",
+        "targets": [
+          {
+            "label": "el baño"
+          },
+          {
+            "label": "la cocina 🍳",
+            "hit": true
+          },
+          {
+            "label": "el salón"
+          },
+          {
+            "label": "el jardín"
+          }
+        ]
+      },
+      {
+        "tag": "nevera",
+        "sub": "señala dónde está la leche",
+        "targets": [
+          {
+            "label": "la lámpara"
+          },
+          {
+            "label": "la nevera 🧊",
+            "hit": true
+          },
+          {
+            "label": "el espejo"
+          },
+          {
+            "label": "la silla"
+          }
+        ]
+      },
+      {
+        "tag": "ducha",
+        "sub": "señala dónde te duchas",
+        "targets": [
+          {
+            "label": "la ducha 🚿",
+            "hit": true
+          },
+          {
+            "label": "la cama"
+          },
+          {
+            "label": "el sofá"
+          },
+          {
+            "label": "la mesa"
+          }
+        ]
+      },
+      {
+        "tag": "sofa",
+        "sub": "señala dónde ves la tele",
+        "targets": [
+          {
+            "label": "la cama"
+          },
+          {
+            "label": "la ducha"
+          },
+          {
+            "label": "el sofá 🛋️",
+            "hit": true
+          },
+          {
+            "label": "el armario"
+          }
+        ]
+      },
+      {
+        "tag": "armario",
+        "sub": "señala dónde está la ropa",
+        "targets": [
+          {
+            "label": "el armario 🚪",
+            "hit": true
+          },
+          {
+            "label": "la nevera"
+          },
+          {
+            "label": "la mesa"
+          },
+          {
+            "label": "la ventana"
+          }
+        ]
+      },
+      {
+        "tag": "ventana",
+        "sub": "señala por dónde entra la luz",
+        "targets": [
+          {
+            "label": "la ventana 🪟",
+            "hit": true
+          },
+          {
+            "label": "la pared"
+          },
+          {
+            "label": "el suelo"
+          },
+          {
+            "label": "el techo"
+          }
+        ]
+      },
+      {
+        "tag": "escalera",
+        "sub": "señala cómo subes al piso",
+        "targets": [
+          {
+            "label": "la escalera 🪜",
+            "hit": true
+          },
+          {
+            "label": "la puerta"
+          },
+          {
+            "label": "la alfombra"
+          },
+          {
+            "label": "la mesa"
+          }
+        ]
+      },
+      {
+        "tag": "estanteria",
+        "sub": "señala dónde están los libros",
+        "targets": [
+          {
+            "label": "la estantería 📚",
+            "hit": true
+          },
+          {
+            "label": "la cama"
+          },
+          {
+            "label": "la ducha"
+          },
+          {
+            "label": "el sofá"
+          }
+        ]
+      },
+      {
+        "tag": "espejo",
+        "sub": "señala dónde te miras",
+        "targets": [
+          {
+            "label": "el espejo 🪞",
+            "hit": true
+          },
+          {
+            "label": "la lámpara"
+          },
+          {
+            "label": "la nevera"
+          },
+          {
+            "label": "la silla"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "id": "es-u6-concordancia-tetris",
+  "title": "Concordancia Tetris",
+  "subtitle": "U6 · laat de prenda in de juiste kleurvorm vallen",
+  "lang": "es",
+  "template": "tetris",
+  "options": {
+    "rows": 9,
+    "speed": 1300,
+    "audio": false
+  },
+  "classify": {
+    "categories": [
+      {
+        "id": "o",
+        "label": "-o (m.ev.)",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "a",
+        "label": "-a (v.ev.)",
+        "glaze": "#C4402C"
+      },
+      {
+        "id": "os",
+        "label": "-os (m.mv.)",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "as",
+        "label": "-as (v.mv.)",
+        "glaze": "#E0A22F"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "vestido roj_",
+        "answer": "o",
+        "tag": "o",
+        "sub": "el vestido (m)"
+      },
+      {
+        "stimulus": "camiseta roj_",
+        "answer": "a",
+        "tag": "a",
+        "sub": "la camiseta (v)"
+      },
+      {
+        "stimulus": "zapatos roj_",
+        "answer": "os",
+        "tag": "os",
+        "sub": "los zapatos (m pl)"
+      },
+      {
+        "stimulus": "botas roj_",
+        "answer": "as",
+        "tag": "as",
+        "sub": "las botas (v pl)"
+      },
+      {
+        "stimulus": "jersey negr_",
+        "answer": "o",
+        "tag": "o",
+        "sub": "el jersey (m)"
+      },
+      {
+        "stimulus": "falda negr_",
+        "answer": "a",
+        "tag": "a",
+        "sub": "la falda (v)"
+      },
+      {
+        "stimulus": "calcetines negr_",
+        "answer": "os",
+        "tag": "os",
+        "sub": "los calcetines (m pl)"
+      },
+      {
+        "stimulus": "sandalias negr_",
+        "answer": "as",
+        "tag": "as",
+        "sub": "las sandalias (v pl)"
+      },
+      {
+        "stimulus": "abrigo blanc_",
+        "answer": "o",
+        "tag": "o",
+        "sub": "el abrigo (m)"
+      },
+      {
+        "stimulus": "blusa blanc_",
+        "answer": "a",
+        "tag": "a",
+        "sub": "la blusa (v)"
+      },
+      {
+        "stimulus": "pantalones blanc_",
+        "answer": "os",
+        "tag": "os",
+        "sub": "los pantalones (m pl)"
+      },
+      {
+        "stimulus": "camisas blanc_",
+        "answer": "as",
+        "tag": "as",
+        "sub": "las camisas (v pl)"
+      },
+      {
+        "stimulus": "bolso amarill_",
+        "answer": "o",
+        "tag": "o",
+        "sub": "el bolso (m)"
+      },
+      {
+        "stimulus": "gorra amarill_",
+        "answer": "a",
+        "tag": "a",
+        "sub": "la gorra (v)"
+      },
+      {
+        "stimulus": "zapatos amarill_",
+        "answer": "os",
+        "tag": "os",
+        "sub": "los zapatos (m pl)"
+      },
+      {
+        "stimulus": "gafas amarill_",
+        "answer": "as",
+        "tag": "as",
+        "sub": "las gafas (v pl)"
+      },
+      {
+        "stimulus": "sombrero morad_",
+        "answer": "o",
+        "tag": "o",
+        "sub": "el sombrero (m)"
+      },
+      {
+        "stimulus": "chaqueta morad_",
+        "answer": "a",
+        "tag": "a",
+        "sub": "la chaqueta (v)"
+      }
+    ]
+  }
+}

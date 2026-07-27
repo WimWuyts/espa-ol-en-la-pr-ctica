@@ -1,0 +1,189 @@
+{
+  "id": "es-u6-de-compras",
+  "title": "¡Vas de compras!",
+  "subtitle": "U6 · schrijf je zin — met alle bouwstenen",
+  "lang": "es",
+  "template": "sim",
+  "options": {
+    "audio": false
+  },
+  "sim": {
+    "prompt": "Tarea comunicativa · de compras",
+    "rounds": [
+      {
+        "scenario": "El/la dependiente/-a dice: «¿Qué desea?» — pide una prenda con color.",
+        "tag": "pedir",
+        "sub": "gebruik: busco · una/un · + color",
+        "min": 8,
+        "need": [
+          {
+            "re": "busco|quiero",
+            "label": "busco / quiero"
+          },
+          {
+            "re": "camiseta|camisa|falda|vestido|jersey|vaqueros|abrigo",
+            "label": "una prenda"
+          },
+          {
+            "re": "roj|azul|negr|blanc|verde|amarill|gris",
+            "label": "un color"
+          }
+        ],
+        "bank": [
+          "Busco",
+          "una camiseta",
+          "azul",
+          "roja",
+          "¿La tienen",
+          "en talla M?",
+          "por favor"
+        ],
+        "model": "Busco una camiseta azul en talla M, por favor."
+      },
+      {
+        "scenario": "Pregunta si te lo puedes probar y dónde está el probador.",
+        "tag": "probar",
+        "sub": "gebruik: ¿puedo probármelo/la? · el probador",
+        "min": 8,
+        "need": [
+          {
+            "re": "probár|probar",
+            "label": "probarme"
+          },
+          {
+            "re": "lo|la|los|las",
+            "label": "pronomen (lo/la…)"
+          },
+          {
+            "re": "probador",
+            "label": "el probador"
+          }
+        ],
+        "bank": [
+          "¿Puedo",
+          "probármela",
+          "probármelo",
+          "¿Dónde está",
+          "el probador",
+          "por favor"
+        ],
+        "model": "¿Puedo probármela? ¿Dónde está el probador?"
+      },
+      {
+        "scenario": "Regatea en el tianguis: el precio es alto, pide un descuento.",
+        "tag": "regateo",
+        "sub": "gebruik: ¿cuánto cuesta? · es caro · ¿me hace un descuento?",
+        "min": 9,
+        "need": [
+          {
+            "re": "cuánto|cuanto|precio",
+            "label": "¿cuánto cuesta?"
+          },
+          {
+            "re": "caro",
+            "label": "es caro"
+          },
+          {
+            "re": "descuento|rebaja",
+            "label": "un descuento"
+          }
+        ],
+        "bank": [
+          "¿Cuánto cuesta",
+          "este poncho?",
+          "Es un poco caro",
+          "¿me hace",
+          "un descuento?",
+          "me lo llevo"
+        ],
+        "model": "¿Cuánto cuesta este poncho? Es un poco caro, ¿me hace un descuento?"
+      },
+      {
+        "scenario": "Di qué acabas de comprar y de qué color es.",
+        "tag": "acabar",
+        "sub": "gebruik: acabo de comprar · + color",
+        "min": 8,
+        "need": [
+          {
+            "re": "acabo de",
+            "label": "acabo de"
+          },
+          {
+            "re": "comprar",
+            "label": "comprar"
+          },
+          {
+            "re": "roj|azul|negr|blanc|verde|gris|amarill",
+            "label": "un color"
+          }
+        ],
+        "bank": [
+          "Acabo de",
+          "comprar",
+          "unos vaqueros",
+          "azules",
+          "una camiseta",
+          "roja"
+        ],
+        "model": "Acabo de comprar unos vaqueros azules y una camiseta roja."
+      },
+      {
+        "scenario": "Señala una prenda lejos (en el escaparate) y pregunta el precio.",
+        "tag": "demostrativo",
+        "sub": "gebruik: aquel/aquella · ¿cuánto cuesta?",
+        "min": 8,
+        "need": [
+          {
+            "re": "aquel|aquella|aquellos|aquellas",
+            "label": "aquel/aquella…"
+          },
+          {
+            "re": "cuánto|cuanto",
+            "label": "¿cuánto…?"
+          },
+          {
+            "re": "cuesta|es",
+            "label": "cuesta / es"
+          }
+        ],
+        "bank": [
+          "¿Cuánto cuesta",
+          "aquel abrigo",
+          "aquella chaqueta",
+          "del escaparate?",
+          "por favor"
+        ],
+        "model": "¿Cuánto cuesta aquel abrigo del escaparate?"
+      },
+      {
+        "scenario": "Recomienda una prenda a un amigo y di por qué.",
+        "tag": "recomendar",
+        "sub": "gebruik: te recomiendo · porque · me queda bien",
+        "min": 9,
+        "need": [
+          {
+            "re": "recomiendo|recomienda",
+            "label": "te recomiendo"
+          },
+          {
+            "re": "porque",
+            "label": "porque …"
+          },
+          {
+            "re": "queda|bonit|gusta|barat",
+            "label": "me queda bien / es bonito"
+          }
+        ],
+        "bank": [
+          "Te recomiendo",
+          "esta chaqueta",
+          "porque",
+          "me queda bien",
+          "es bonita",
+          "y barata"
+        ],
+        "model": "Te recomiendo esta chaqueta porque me queda bien y es barata."
+      }
+    ]
+  }
+}

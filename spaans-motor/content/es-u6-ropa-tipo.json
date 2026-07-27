@@ -1,0 +1,158 @@
+{
+  "id": "es-u6-ropa-tipo",
+  "title": "¿Dónde va la prenda?",
+  "subtitle": "U6 · arriba · abajo · calzado · complemento",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Sorteer de prenda: bovenlijf · onderlijf · schoeisel · accessoire",
+    "categories": [
+      {
+        "id": "arriba",
+        "label": "arriba<br><small>bovenlijf</small>",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "abajo",
+        "label": "abajo<br><small>onderlijf</small>",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "calzado",
+        "label": "calzado<br><small>schoeisel</small>",
+        "glaze": "#E0A22F"
+      },
+      {
+        "id": "complemento",
+        "label": "complemento<br><small>accessoire</small>",
+        "glaze": "#8B5E9E"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "la camiseta",
+        "answer": "arriba",
+        "tag": "arriba",
+        "sub": "T-shirt"
+      },
+      {
+        "stimulus": "la camisa",
+        "answer": "arriba",
+        "tag": "arriba",
+        "sub": "hemd"
+      },
+      {
+        "stimulus": "el jersey",
+        "answer": "arriba",
+        "tag": "arriba",
+        "sub": "trui"
+      },
+      {
+        "stimulus": "la sudadera",
+        "answer": "arriba",
+        "tag": "arriba",
+        "sub": "sweater"
+      },
+      {
+        "stimulus": "la chaqueta",
+        "answer": "arriba",
+        "tag": "arriba",
+        "sub": "vest"
+      },
+      {
+        "stimulus": "los pantalones",
+        "answer": "abajo",
+        "tag": "abajo",
+        "sub": "broek"
+      },
+      {
+        "stimulus": "los vaqueros",
+        "answer": "abajo",
+        "tag": "abajo",
+        "sub": "jeans"
+      },
+      {
+        "stimulus": "la falda",
+        "answer": "abajo",
+        "tag": "abajo",
+        "sub": "rok"
+      },
+      {
+        "stimulus": "el vestido",
+        "answer": "abajo",
+        "tag": "abajo",
+        "sub": "jurk (onderlijf-groep)"
+      },
+      {
+        "stimulus": "el bañador",
+        "answer": "abajo",
+        "tag": "abajo",
+        "sub": "zwembroek"
+      },
+      {
+        "stimulus": "los zapatos",
+        "answer": "calzado",
+        "tag": "calzado",
+        "sub": "schoenen"
+      },
+      {
+        "stimulus": "las zapatillas",
+        "answer": "calzado",
+        "tag": "calzado",
+        "sub": "sportschoenen"
+      },
+      {
+        "stimulus": "las botas",
+        "answer": "calzado",
+        "tag": "calzado",
+        "sub": "laarzen"
+      },
+      {
+        "stimulus": "las sandalias",
+        "answer": "calzado",
+        "tag": "calzado",
+        "sub": "sandalen"
+      },
+      {
+        "stimulus": "los calcetines",
+        "answer": "calzado",
+        "tag": "calzado",
+        "sub": "sokken"
+      },
+      {
+        "stimulus": "la gorra",
+        "answer": "complemento",
+        "tag": "complemento",
+        "sub": "pet"
+      },
+      {
+        "stimulus": "la bufanda",
+        "answer": "complemento",
+        "tag": "complemento",
+        "sub": "sjaal"
+      },
+      {
+        "stimulus": "el cinturón",
+        "answer": "complemento",
+        "tag": "complemento",
+        "sub": "riem"
+      },
+      {
+        "stimulus": "el bolso",
+        "answer": "complemento",
+        "tag": "complemento",
+        "sub": "handtas"
+      },
+      {
+        "stimulus": "las gafas de sol",
+        "answer": "complemento",
+        "tag": "complemento",
+        "sub": "zonnebril"
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "es-u6-prenda-tienda",
+  "title": "Prenda y tienda",
+  "subtitle": "U6 · waar koop je het?",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind de prenda/product met de winkel",
+    "pairs": [
+      {
+        "a": "los zapatos",
+        "b": "la zapatería 👟"
+      },
+      {
+        "a": "el pan",
+        "b": "la panadería 🥖"
+      },
+      {
+        "a": "una camiseta",
+        "b": "la tienda de ropa 👕"
+      },
+      {
+        "a": "la carne",
+        "b": "la carnicería 🥩"
+      },
+      {
+        "a": "las manzanas",
+        "b": "la frutería 🍎"
+      },
+      {
+        "a": "un anillo",
+        "b": "la joyería 💍"
+      },
+      {
+        "a": "un libro",
+        "b": "la librería 📚"
+      },
+      {
+        "a": "una medicina",
+        "b": "la farmacia 💊"
+      },
+      {
+        "a": "un pastel",
+        "b": "la pastelería 🍰"
+      },
+      {
+        "a": "el pescado",
+        "b": "la pescadería 🐟"
+      },
+      {
+        "a": "un cuaderno",
+        "b": "la papelería ✏️"
+      },
+      {
+        "a": "un perfume",
+        "b": "la perfumería 🧴"
+      }
+    ]
+  }
+}

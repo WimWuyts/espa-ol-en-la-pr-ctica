@@ -1,0 +1,136 @@
+{
+  "id": "es-u7-diptongo-hiato",
+  "title": "¿diptongo o hiato?",
+  "subtitle": "U7 · ortografía: één lettergreep of apart?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Diptongo = twee klinkers samen · hiato = apart (vaak met tilde op í/ú)",
+    "categories": [
+      {
+        "id": "diptongo",
+        "label": "diptongo<br><small>bue-no</small>",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "hiato",
+        "label": "hiato<br><small>dí-a</small>",
+        "glaze": "#C4402C"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "puerta",
+        "answer": "diptongo",
+        "tag": "diptongo",
+        "sub": "puer-ta (ue samen)"
+      },
+      {
+        "stimulus": "día",
+        "answer": "hiato",
+        "tag": "hiato",
+        "sub": "dí-a (tilde op í)"
+      },
+      {
+        "stimulus": "país",
+        "answer": "hiato",
+        "tag": "hiato",
+        "sub": "pa-ís (tilde op í)"
+      },
+      {
+        "stimulus": "bueno",
+        "answer": "diptongo",
+        "tag": "diptongo",
+        "sub": "bue-no (ue samen)"
+      },
+      {
+        "stimulus": "panadería",
+        "answer": "hiato",
+        "tag": "hiato",
+        "sub": "...rí-a (tilde op í)"
+      },
+      {
+        "stimulus": "seis",
+        "answer": "diptongo",
+        "tag": "diptongo",
+        "sub": "seis (ei samen)"
+      },
+      {
+        "stimulus": "tiene",
+        "answer": "diptongo",
+        "tag": "diptongo",
+        "sub": "tie-ne (ie samen)"
+      },
+      {
+        "stimulus": "frío",
+        "answer": "hiato",
+        "tag": "hiato",
+        "sub": "frí-o (tilde op í)"
+      },
+      {
+        "stimulus": "agua",
+        "answer": "diptongo",
+        "tag": "diptongo",
+        "sub": "a-gua (ua samen)"
+      },
+      {
+        "stimulus": "María",
+        "answer": "hiato",
+        "tag": "hiato",
+        "sub": "Ma-rí-a (tilde op í)"
+      },
+      {
+        "stimulus": "ciudad",
+        "answer": "diptongo",
+        "tag": "diptongo",
+        "sub": "ciu-dad (iu samen)"
+      },
+      {
+        "stimulus": "cafetería",
+        "answer": "hiato",
+        "tag": "hiato",
+        "sub": "...rí-a (tilde op í)"
+      },
+      {
+        "stimulus": "aire",
+        "answer": "diptongo",
+        "tag": "diptongo",
+        "sub": "ai-re (ai samen)"
+      },
+      {
+        "stimulus": "tía",
+        "answer": "hiato",
+        "tag": "hiato",
+        "sub": "tí-a (tilde op í)"
+      },
+      {
+        "stimulus": "cuatro",
+        "answer": "diptongo",
+        "tag": "diptongo",
+        "sub": "cua-tro (ua samen)"
+      },
+      {
+        "stimulus": "río",
+        "answer": "hiato",
+        "tag": "hiato",
+        "sub": "rí-o (tilde op í)"
+      },
+      {
+        "stimulus": "veinte",
+        "answer": "diptongo",
+        "tag": "diptongo",
+        "sub": "vein-te (ei samen)"
+      },
+      {
+        "stimulus": "librería",
+        "answer": "hiato",
+        "tag": "hiato",
+        "sub": "...rí-a (tilde op í)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "es-u7-repite-barrio",
+  "title": "Escucha y repite: en el barrio",
+  "subtitle": "U7 · escucha el modelo, repite y GRÁBATE",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "repeat",
+    "prompt": "Escucha ▶ · repite en voz alta · grábate ⏺",
+    "items": [
+      {
+        "text": "En mi barrio hay una plaza muy bonita.",
+        "sub": "in mijn buurt is een mooi plein",
+        "tag": "hay",
+        "tip": "¡Bien! Ahora dilo sin leer. <span class='nl'>zeg het nu zonder te lezen.</span>"
+      },
+      {
+        "text": "La panadería está al lado del parque.",
+        "sub": "de bakkerij is naast het park",
+        "tag": "prep"
+      },
+      {
+        "text": "Estoy cocinando en la cocina.",
+        "sub": "ik ben aan het koken in de keuken",
+        "tag": "gerundio"
+      },
+      {
+        "text": "Sigue todo recto y gira a la derecha.",
+        "sub": "ga rechtdoor en sla rechtsaf",
+        "tag": "imperativo"
+      },
+      {
+        "text": "Vivo en el tercer piso, con ascensor.",
+        "sub": "ik woon op de derde verdieping, met lift",
+        "tag": "ordinal"
+      },
+      {
+        "text": "El baño está al final del pasillo.",
+        "sub": "de badkamer is aan het eind van de gang",
+        "tag": "prep"
+      },
+      {
+        "text": "Hay muchas casas de colores.",
+        "sub": "er zijn veel kleurrijke huizen",
+        "tag": "hay"
+      },
+      {
+        "text": "¿Cómo se va a la estación?",
+        "sub": "hoe kom ik bij het station?",
+        "tag": "camino"
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "es-u6-tienda-producto-memoria",
+  "title": "Tienda y producto",
+  "subtitle": "U6 · welke winkel verkoopt wat?",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om: winkel + product",
+    "pairs": [
+      {
+        "a": "la zapatería",
+        "b": "los zapatos"
+      },
+      {
+        "a": "la panadería",
+        "b": "el pan"
+      },
+      {
+        "a": "la carnicería",
+        "b": "la carne"
+      },
+      {
+        "a": "la frutería",
+        "b": "la fruta"
+      },
+      {
+        "a": "la farmacia",
+        "b": "las medicinas"
+      },
+      {
+        "a": "la tienda de ropa",
+        "b": "los vestidos"
+      },
+      {
+        "a": "el supermercado",
+        "b": "la compra"
+      },
+      {
+        "a": "la joyería",
+        "b": "los anillos"
+      },
+      {
+        "a": "la librería",
+        "b": "los libros"
+      },
+      {
+        "a": "la pastelería",
+        "b": "los pasteles"
+      },
+      {
+        "a": "la papelería",
+        "b": "los cuadernos"
+      },
+      {
+        "a": "la perfumería",
+        "b": "los perfumes"
+      }
+    ]
+  }
+}

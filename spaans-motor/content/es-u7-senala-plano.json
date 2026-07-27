@@ -1,0 +1,206 @@
+{
+  "id": "es-u7-senala-plano",
+  "title": "Señala en el plano del barrio",
+  "subtitle": "U7 · klik het juiste edificio/lugar",
+  "lang": "es",
+  "template": "point",
+  "options": {
+    "audio": false
+  },
+  "point": {
+    "prompt": "Klik het gevraagde gebouw",
+    "mode": "one",
+    "rounds": [
+      {
+        "tag": "pan",
+        "sub": "¿dónde compras pan?",
+        "targets": [
+          {
+            "label": "la panadería 🥖",
+            "hit": true
+          },
+          {
+            "label": "el banco"
+          },
+          {
+            "label": "el cine"
+          },
+          {
+            "label": "el museo"
+          }
+        ]
+      },
+      {
+        "tag": "dinero",
+        "sub": "¿dónde sacas dinero?",
+        "targets": [
+          {
+            "label": "la farmacia"
+          },
+          {
+            "label": "el banco 🏦",
+            "hit": true
+          },
+          {
+            "label": "el parque"
+          },
+          {
+            "label": "la iglesia"
+          }
+        ]
+      },
+      {
+        "tag": "medicina",
+        "sub": "¿dónde compras medicinas?",
+        "targets": [
+          {
+            "label": "la farmacia 💊",
+            "hit": true
+          },
+          {
+            "label": "la panadería"
+          },
+          {
+            "label": "la estación"
+          },
+          {
+            "label": "el cine"
+          }
+        ]
+      },
+      {
+        "tag": "tren",
+        "sub": "¿dónde tomas el tren?",
+        "targets": [
+          {
+            "label": "el museo"
+          },
+          {
+            "label": "la estación 🚉",
+            "hit": true
+          },
+          {
+            "label": "el parque"
+          },
+          {
+            "label": "la iglesia"
+          }
+        ]
+      },
+      {
+        "tag": "pelicula",
+        "sub": "¿dónde ves una película?",
+        "targets": [
+          {
+            "label": "el cine 🎬",
+            "hit": true
+          },
+          {
+            "label": "el banco"
+          },
+          {
+            "label": "la farmacia"
+          },
+          {
+            "label": "el hospital"
+          }
+        ]
+      },
+      {
+        "tag": "pasear",
+        "sub": "¿dónde paseas y juegas?",
+        "targets": [
+          {
+            "label": "el parque 🌳",
+            "hit": true
+          },
+          {
+            "label": "el supermercado"
+          },
+          {
+            "label": "la estación"
+          },
+          {
+            "label": "el banco"
+          }
+        ]
+      },
+      {
+        "tag": "comida",
+        "sub": "¿dónde compras comida?",
+        "targets": [
+          {
+            "label": "el supermercado 🛒",
+            "hit": true
+          },
+          {
+            "label": "el museo"
+          },
+          {
+            "label": "el cine"
+          },
+          {
+            "label": "la iglesia"
+          }
+        ]
+      },
+      {
+        "tag": "arte",
+        "sub": "¿dónde ves arte?",
+        "targets": [
+          {
+            "label": "el museo 🏛️",
+            "hit": true
+          },
+          {
+            "label": "la panadería"
+          },
+          {
+            "label": "el banco"
+          },
+          {
+            "label": "la estación"
+          }
+        ]
+      },
+      {
+        "tag": "esquina",
+        "sub": "¿qué está en la esquina?",
+        "targets": [
+          {
+            "label": "la farmacia (en la esquina)",
+            "hit": true
+          },
+          {
+            "label": "el centro de la plaza"
+          },
+          {
+            "label": "el parque grande"
+          },
+          {
+            "label": "el río"
+          }
+        ]
+      },
+      {
+        "tag": "plaza",
+        "sub": "¿dónde se reúne la gente?",
+        "targets": [
+          {
+            "label": "la plaza ⛲",
+            "hit": true
+          },
+          {
+            "label": "el armario"
+          },
+          {
+            "label": "el pasillo"
+          },
+          {
+            "label": "la nevera"
+          }
+        ]
+      }
+    ]
+  }
+}

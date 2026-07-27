@@ -1,0 +1,214 @@
+{
+  "id": "es-u6-pronombre-od-cloze",
+  "title": "Completa: lo/la/los/las",
+  "subtitle": "U6 · vervang de prenda (la falda → la compro)",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies het juiste pronomen (lo/la/los/las)",
+    "items": [
+      {
+        "stimulus": "¿La falda? —Sí, ___ compro.",
+        "options": [
+          "la",
+          "lo",
+          "las"
+        ],
+        "answer": "la",
+        "tag": "od",
+        "sub": "la falda (v ev)"
+      },
+      {
+        "stimulus": "¿El jersey? —___ quiero.",
+        "options": [
+          "Lo",
+          "La",
+          "Los"
+        ],
+        "answer": "Lo",
+        "tag": "od",
+        "sub": "el jersey (m ev)"
+      },
+      {
+        "stimulus": "¿Los zapatos? —Sí, ___ llevo.",
+        "options": [
+          "los",
+          "las",
+          "lo"
+        ],
+        "answer": "los",
+        "tag": "od",
+        "sub": "los zapatos (m pl)"
+      },
+      {
+        "stimulus": "¿Las botas? —___ me pruebo.",
+        "options": [
+          "Las",
+          "Los",
+          "La"
+        ],
+        "answer": "Las",
+        "tag": "od",
+        "sub": "las botas (v pl)"
+      },
+      {
+        "stimulus": "¿La camisa? —Ahora ___ busco.",
+        "options": [
+          "la",
+          "lo",
+          "las"
+        ],
+        "answer": "la",
+        "tag": "od",
+        "sub": "la camisa (v ev)"
+      },
+      {
+        "stimulus": "¿El abrigo? —Sí, ___ compro.",
+        "options": [
+          "lo",
+          "la",
+          "los"
+        ],
+        "answer": "lo",
+        "tag": "od",
+        "sub": "el abrigo (m ev)"
+      },
+      {
+        "stimulus": "¿Los vaqueros? —___ llevo hoy.",
+        "options": [
+          "Los",
+          "Las",
+          "Lo"
+        ],
+        "answer": "Los",
+        "tag": "od",
+        "sub": "los vaqueros (m pl)"
+      },
+      {
+        "stimulus": "¿Las gafas? —___ veo en el escaparate.",
+        "options": [
+          "Las",
+          "Los",
+          "La"
+        ],
+        "answer": "Las",
+        "tag": "od",
+        "sub": "las gafas (v pl)"
+      },
+      {
+        "stimulus": "¿El cinturón? —___ compro también.",
+        "options": [
+          "Lo",
+          "La",
+          "Los"
+        ],
+        "answer": "Lo",
+        "tag": "od",
+        "sub": "el cinturón (m ev)"
+      },
+      {
+        "stimulus": "¿La gorra? —___ quiero roja.",
+        "options": [
+          "La",
+          "Lo",
+          "Las"
+        ],
+        "answer": "La",
+        "tag": "od",
+        "sub": "la gorra (v ev)"
+      },
+      {
+        "stimulus": "¿Los calcetines? —___ pago en la caja.",
+        "options": [
+          "Los",
+          "Las",
+          "Lo"
+        ],
+        "answer": "Los",
+        "tag": "od",
+        "sub": "los calcetines (m pl)"
+      },
+      {
+        "stimulus": "¿Las sandalias? —___ me llevo.",
+        "options": [
+          "Las",
+          "Los",
+          "La"
+        ],
+        "answer": "Las",
+        "tag": "od",
+        "sub": "las sandalias (v pl)"
+      },
+      {
+        "stimulus": "¿El vestido? —Voy a comprar___.",
+        "options": [
+          "lo",
+          "la",
+          "los"
+        ],
+        "answer": "lo",
+        "tag": "od",
+        "sub": "comprarlo (achter infinitief)"
+      },
+      {
+        "stimulus": "¿La chaqueta? —Quiero probár___la.",
+        "options": [
+          "me",
+          "te",
+          "se"
+        ],
+        "answer": "me",
+        "tag": "od",
+        "sub": "probármela (me + la)"
+      },
+      {
+        "stimulus": "¿Los guantes? —Sí, ___ necesito.",
+        "options": [
+          "los",
+          "las",
+          "lo"
+        ],
+        "answer": "los",
+        "tag": "od",
+        "sub": "los guantes (m pl)"
+      },
+      {
+        "stimulus": "¿La bufanda? —___ llevo en invierno.",
+        "options": [
+          "La",
+          "Lo",
+          "Las"
+        ],
+        "answer": "La",
+        "tag": "od",
+        "sub": "la bufanda (v ev)"
+      },
+      {
+        "stimulus": "¿El sombrero? —___ compro en el tianguis.",
+        "options": [
+          "Lo",
+          "La",
+          "Los"
+        ],
+        "answer": "Lo",
+        "tag": "od",
+        "sub": "el sombrero (m ev)"
+      },
+      {
+        "stimulus": "¿Las camisetas? —___ tienen en rebajas.",
+        "options": [
+          "Las",
+          "Los",
+          "La"
+        ],
+        "answer": "Las",
+        "tag": "od",
+        "sub": "las camisetas (v pl)"
+      }
+    ]
+  }
+}

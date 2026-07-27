@@ -1,0 +1,207 @@
+{
+  "id": "es-u6-senala-escaparate",
+  "title": "Señala en el escaparate",
+  "subtitle": "U6 · klik het juiste artikel",
+  "lang": "es",
+  "template": "point",
+  "options": {
+    "audio": false
+  },
+  "point": {
+    "prompt": "Klik het gevraagde artikel",
+    "mode": "one",
+    "rounds": [
+      {
+        "tag": "arriba",
+        "sub": "señala una prenda de arriba",
+        "targets": [
+          {
+            "label": "la falda"
+          },
+          {
+            "label": "la camiseta",
+            "hit": true
+          },
+          {
+            "label": "los zapatos"
+          },
+          {
+            "label": "la gorra"
+          }
+        ]
+      },
+      {
+        "tag": "abajo",
+        "sub": "señala una prenda de abajo",
+        "targets": [
+          {
+            "label": "el jersey"
+          },
+          {
+            "label": "los pantalones",
+            "hit": true
+          },
+          {
+            "label": "las botas"
+          },
+          {
+            "label": "el bolso"
+          }
+        ]
+      },
+      {
+        "tag": "calzado",
+        "sub": "señala el calzado",
+        "targets": [
+          {
+            "label": "la camisa"
+          },
+          {
+            "label": "las zapatillas",
+            "hit": true
+          },
+          {
+            "label": "la bufanda"
+          },
+          {
+            "label": "el cinturón"
+          }
+        ]
+      },
+      {
+        "tag": "complemento",
+        "sub": "señala un complemento",
+        "targets": [
+          {
+            "label": "el vestido"
+          },
+          {
+            "label": "las gafas de sol",
+            "hit": true
+          },
+          {
+            "label": "los calcetines"
+          },
+          {
+            "label": "la falda"
+          }
+        ]
+      },
+      {
+        "tag": "color",
+        "sub": "señala algo rojo",
+        "targets": [
+          {
+            "label": "una camiseta roja",
+            "hit": true
+          },
+          {
+            "label": "un vestido azul"
+          },
+          {
+            "label": "unos zapatos negros"
+          },
+          {
+            "label": "una gorra verde"
+          }
+        ]
+      },
+      {
+        "tag": "patron",
+        "sub": "señala algo de rayas",
+        "targets": [
+          {
+            "label": "una camisa de rayas",
+            "hit": true
+          },
+          {
+            "label": "una falda de lunares"
+          },
+          {
+            "label": "un jersey liso"
+          },
+          {
+            "label": "unos vaqueros"
+          }
+        ]
+      },
+      {
+        "tag": "tienda",
+        "sub": "señala dónde compras zapatos",
+        "targets": [
+          {
+            "label": "la panadería"
+          },
+          {
+            "label": "la zapatería",
+            "hit": true
+          },
+          {
+            "label": "la farmacia"
+          },
+          {
+            "label": "la frutería"
+          }
+        ]
+      },
+      {
+        "tag": "caja",
+        "sub": "señala dónde se paga",
+        "targets": [
+          {
+            "label": "el probador"
+          },
+          {
+            "label": "la caja",
+            "hit": true
+          },
+          {
+            "label": "el escaparate"
+          },
+          {
+            "label": "la etiqueta"
+          }
+        ]
+      },
+      {
+        "tag": "probador",
+        "sub": "señala dónde te pruebas la ropa",
+        "targets": [
+          {
+            "label": "el probador",
+            "hit": true
+          },
+          {
+            "label": "la bolsa",
+            "hit": false
+          },
+          {
+            "label": "la caja"
+          },
+          {
+            "label": "el recibo"
+          }
+        ]
+      },
+      {
+        "tag": "rebajas",
+        "sub": "señala el descuento",
+        "targets": [
+          {
+            "label": "las rebajas",
+            "hit": true
+          },
+          {
+            "label": "la talla"
+          },
+          {
+            "label": "la tarjeta"
+          },
+          {
+            "label": "el probador"
+          }
+        ]
+      }
+    ]
+  }
+}

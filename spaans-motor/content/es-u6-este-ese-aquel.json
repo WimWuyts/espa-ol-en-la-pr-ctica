@@ -1,0 +1,141 @@
+{
+  "id": "es-u6-este-ese-aquel",
+  "title": "Cerca, ahí o lejos",
+  "subtitle": "U6 · este (cerca) · ese (ahí) · aquel (lejos)",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Bij welke afstand hoort het aanwijswoord?",
+    "categories": [
+      {
+        "id": "cerca",
+        "label": "este/esta<br><small>cerca · aquí</small>",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "ahi",
+        "label": "ese/esa<br><small>ahí</small>",
+        "glaze": "#E0A22F"
+      },
+      {
+        "id": "lejos",
+        "label": "aquel/aquella<br><small>lejos · allí</small>",
+        "glaze": "#8B5E9E"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "este jersey",
+        "answer": "cerca",
+        "tag": "cerca",
+        "sub": "aquí"
+      },
+      {
+        "stimulus": "esta falda",
+        "answer": "cerca",
+        "tag": "cerca",
+        "sub": "aquí"
+      },
+      {
+        "stimulus": "estos zapatos",
+        "answer": "cerca",
+        "tag": "cerca",
+        "sub": "aquí"
+      },
+      {
+        "stimulus": "estas botas",
+        "answer": "cerca",
+        "tag": "cerca",
+        "sub": "aquí"
+      },
+      {
+        "stimulus": "ese abrigo",
+        "answer": "ahi",
+        "tag": "ahi",
+        "sub": "ahí"
+      },
+      {
+        "stimulus": "esa gorra",
+        "answer": "ahi",
+        "tag": "ahi",
+        "sub": "ahí"
+      },
+      {
+        "stimulus": "esos vaqueros",
+        "answer": "ahi",
+        "tag": "ahi",
+        "sub": "ahí"
+      },
+      {
+        "stimulus": "esas sandalias",
+        "answer": "ahi",
+        "tag": "ahi",
+        "sub": "ahí"
+      },
+      {
+        "stimulus": "aquel vestido",
+        "answer": "lejos",
+        "tag": "lejos",
+        "sub": "allí"
+      },
+      {
+        "stimulus": "aquella camisa",
+        "answer": "lejos",
+        "tag": "lejos",
+        "sub": "allí"
+      },
+      {
+        "stimulus": "aquellos calcetines",
+        "answer": "lejos",
+        "tag": "lejos",
+        "sub": "allí"
+      },
+      {
+        "stimulus": "aquellas gafas",
+        "answer": "lejos",
+        "tag": "lejos",
+        "sub": "allí"
+      },
+      {
+        "stimulus": "este cinturón",
+        "answer": "cerca",
+        "tag": "cerca",
+        "sub": "aquí"
+      },
+      {
+        "stimulus": "esa bufanda",
+        "answer": "ahi",
+        "tag": "ahi",
+        "sub": "ahí"
+      },
+      {
+        "stimulus": "aquel sombrero",
+        "answer": "lejos",
+        "tag": "lejos",
+        "sub": "allí"
+      },
+      {
+        "stimulus": "estas zapatillas",
+        "answer": "cerca",
+        "tag": "cerca",
+        "sub": "aquí"
+      },
+      {
+        "stimulus": "ese traje",
+        "answer": "ahi",
+        "tag": "ahi",
+        "sub": "ahí"
+      },
+      {
+        "stimulus": "aquellas botas",
+        "answer": "lejos",
+        "tag": "lejos",
+        "sub": "allí"
+      }
+    ]
+  }
+}
