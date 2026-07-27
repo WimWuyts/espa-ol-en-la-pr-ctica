@@ -818,11 +818,36 @@ def s_uitspraak():
     text(s,Inches(0.6),Inches(6.35),Inches(12),Inches(0.4),[[("🔊 Oefen de klanken online op de hub (tabblad Kit · Suena bien).",{"size":11,"italic":True,"color":MUT})]])
     footer(s, tab=FTAB, page=pg())
 
+# ── Funciones-comunicativas-dia (matrix C) — leest de gedeelde funciones_data ──
+import sys as _sys
+_sys.path.insert(0, os.path.join(os.path.dirname(HERE), "web"))
+import funciones_data as FD
+FUNC_UNIT = 2
+def s_funciones():
+    s = slide(); bg(s)
+    sectionbar(s, "FUNCIONES", "Mis funciones comunicativas", "Lo que ya sé hacer — crece cada unidad", num=None)
+    fs = FD.funciones_hasta(FUNC_UNIT); have=len(fs); total=len(FD.FUNCIONES)
+    text(s, Inches(0.6), Inches(1.42), Inches(12.2), Inches(0.35),
+         [[("Mi repertorio: %d / %d funciones — " % (have,total), {"size":13,"bold":True,"color":GD,"font":DISPLAY}),
+           ("no solo palabras: lo que puedo HACER con el español.", {"size":12,"color":MUT})]])
+    cols_x=[Inches(0.55), Inches(6.85)]; w=Inches(5.9)
+    for i,f in enumerate(fs):
+        col=i%2; row=i//2
+        x=cols_x[col]; y=Inches(1.85+row*1.32)
+        st=FD.status(f,FUNC_UNIT); hot = st in ("nueva","nivel")
+        card(s,x,y,w,Inches(1.16),fill=(GT if hot else WHITE),line=(G if hot else LINE))
+        badge = "  ● NUEVA" if st=="nueva" else ("  ▲ nivel+" if st=="nivel" else "")
+        text(s,x+Inches(0.22),y+Inches(0.12),w-Inches(0.44),Inches(0.4),
+             [[(f["es"], {"size":12.5,"bold":True,"color":INK,"font":DISPLAY}),(badge,{"size":9,"bold":True,"color":GD})]])
+        exps=" · ".join(e for u in sorted(k for k in f["exp"] if k<=FUNC_UNIT) for e in f["exp"][u])
+        text(s,x+Inches(0.22),y+Inches(0.55),w-Inches(0.44),Inches(0.55),[[(exps,{"size":9,"color":MUT})]])
+    footer(s, tab=FTAB, page=pg())
+
 def _run_all_slides(include_teacher=True):
     s01_title(); s02_menu(); s03_escucha(); s_uitspraak()
     s04_kit(); s05_presentarse(); s06_gram_ser()
     s07_gram_mv(); s08_practica(); s09_speaking()
-    s10_musica(); s11_tarea(); s12_repaso()
+    s10_musica(); s11_tarea(); s_funciones(); s12_repaso()
     if include_teacher:
         s13_teacher()
 

@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 # C4 · Unidad 2 — PRINT (HTML=bron → PDF via Chromium). Golden-sample print-kit, C4-rood.
 # Thema: Saludos por el día + estar + estado. Zelfde pijplijn/CSS als U1.
-import base64, os, re, segno, io
+import base64, os, re, segno, io, sys
 ROOT="/home/user/espa-ol-en-la-pr-ctica"
+sys.path.insert(0, f"{ROOT}/03-build/web")
+from funciones_print import print_section
+FUNCIONES_SEC=print_section(2)
 def b64(p): return base64.b64encode(open(p,"rb").read()).decode()
 def face(f,p,w,fam=None):
     return f"@font-face{{font-family:'{fam or f}';src:url(data:font/woff2;base64,{b64(f'{ROOT}/02-huisstijl/fonts/{p}')}) format('woff2');font-weight:{w};font-display:swap}}"
@@ -411,7 +414,7 @@ document.getElementById('btnsave').onclick=function(){var html='<!doctype html>'
 HTML=f"""<!doctype html><html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · Unidad 2 · Saludos</title><style>{CSS}</style></head><body>
 {EDITBAR}
-{HERO}{ESCUCHA}{KIT}{GRAM}{PRAC}{TAREA}{MUSICA}{REPASO}
+{HERO}{ESCUCHA}{KIT}{GRAM}{PRAC}{TAREA}{MUSICA}{FUNCIONES_SEC}{REPASO}
 {SCRIPT}
 </body></html>"""
 os.makedirs(f"{ROOT}/03-build/web/print",exist_ok=True)
