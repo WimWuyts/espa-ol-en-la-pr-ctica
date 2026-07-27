@@ -1,0 +1,124 @@
+{
+  "id": "es-c6plus-u1-gusta-gustan",
+  "title": "¿gusta o gustan?",
+  "subtitle": "U1 · 1 ding/infinitivo (gusta) of meerdere (gustan)?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Kies gusta (1 ding/infinitivo) of gustan (meerdere)?",
+    "categories": [
+      {
+        "id": "gusta",
+        "label": "gusta<br><small>1 ding / inf.</small>",
+        "glaze": "#8B5E9E"
+      },
+      {
+        "id": "gustan",
+        "label": "gustan<br><small>meervoud</small>",
+        "glaze": "#B4309A"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "Me ___ el fútbol.",
+        "answer": "gusta",
+        "tag": "gusta",
+        "sub": "el fútbol (1)"
+      },
+      {
+        "stimulus": "Me ___ los perros.",
+        "answer": "gustan",
+        "tag": "gustan",
+        "sub": "los perros (varios)"
+      },
+      {
+        "stimulus": "Me ___ bailar.",
+        "answer": "gusta",
+        "tag": "gusta",
+        "sub": "infinitivo → gusta"
+      },
+      {
+        "stimulus": "Me ___ las películas.",
+        "answer": "gustan",
+        "tag": "gustan",
+        "sub": "las películas (varias)"
+      },
+      {
+        "stimulus": "Me ___ la música.",
+        "answer": "gusta",
+        "tag": "gusta",
+        "sub": "la música (1)"
+      },
+      {
+        "stimulus": "Me ___ los videojuegos.",
+        "answer": "gustan",
+        "tag": "gustan",
+        "sub": "los videojuegos (varios)"
+      },
+      {
+        "stimulus": "Me ___ cantar y bailar.",
+        "answer": "gusta",
+        "tag": "gusta",
+        "sub": "infinitivos → gusta"
+      },
+      {
+        "stimulus": "Me ___ las vacaciones.",
+        "answer": "gustan",
+        "tag": "gustan",
+        "sub": "las vacaciones (varias)"
+      },
+      {
+        "stimulus": "Me ___ el chocolate.",
+        "answer": "gusta",
+        "tag": "gusta",
+        "sub": "el chocolate (1)"
+      },
+      {
+        "stimulus": "Me ___ los deportes.",
+        "answer": "gustan",
+        "tag": "gustan",
+        "sub": "los deportes (varios)"
+      },
+      {
+        "stimulus": "Me ___ leer.",
+        "answer": "gusta",
+        "tag": "gusta",
+        "sub": "infinitivo → gusta"
+      },
+      {
+        "stimulus": "Me ___ las flores.",
+        "answer": "gustan",
+        "tag": "gustan",
+        "sub": "las flores (varias)"
+      },
+      {
+        "stimulus": "Me ___ el reguetón.",
+        "answer": "gusta",
+        "tag": "gusta",
+        "sub": "el reguetón (1)"
+      },
+      {
+        "stimulus": "Me ___ los fines de semana.",
+        "answer": "gustan",
+        "tag": "gustan",
+        "sub": "varios"
+      },
+      {
+        "stimulus": "Me ___ la comida española.",
+        "answer": "gusta",
+        "tag": "gusta",
+        "sub": "la comida (1)"
+      },
+      {
+        "stimulus": "Me ___ los lunes… ¡no!",
+        "answer": "gustan",
+        "tag": "gustan",
+        "sub": "los lunes (varios)"
+      }
+    ]
+  }
+}

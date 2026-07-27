@@ -1,0 +1,57 @@
+{
+  "id": "es-c6plus-u1-repite-dia",
+  "title": "Escucha y repite: mi día",
+  "subtitle": "U1 · escucha el modelo, repite y GRÁBATE",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "repeat",
+    "prompt": "Escucha ▶ · repite en voz alta · grábate ⏺",
+    "items": [
+      {
+        "text": "Me levanto a las siete y cuarto.",
+        "sub": "ik sta op om kwart over zeven",
+        "tag": "rutina",
+        "tip": "¡Bien! Ahora dilo sin leer. <span class='nl'>zeg het nu zonder te lezen.</span>"
+      },
+      {
+        "text": "Primero me ducho y luego desayuno.",
+        "sub": "eerst douche ik, dan ontbijt ik",
+        "tag": "rutina"
+      },
+      {
+        "text": "Como a las dos y ceno a las nueve.",
+        "sub": "ik eet om twee en negen uur",
+        "tag": "hora"
+      },
+      {
+        "text": "Me gusta bailar porque es divertido.",
+        "sub": "ik dans graag want het is leuk",
+        "tag": "opinion"
+      },
+      {
+        "text": "No me gustan nada los lunes.",
+        "sub": "ik vind maandagen helemaal niet leuk",
+        "tag": "gustar"
+      },
+      {
+        "text": "Hoy estoy contento porque es viernes.",
+        "sub": "vandaag ben ik blij want het is vrijdag",
+        "tag": "serestar"
+      },
+      {
+        "text": "Normalmente me acuesto a las once.",
+        "sub": "meestal ga ik om elf uur slapen",
+        "tag": "frecuencia"
+      },
+      {
+        "text": "¿A qué hora te levantas tú?",
+        "sub": "hoe laat sta jij op?",
+        "tag": "interaccion"
+      }
+    ]
+  }
+}

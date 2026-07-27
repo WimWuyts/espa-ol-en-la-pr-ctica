@@ -1,0 +1,136 @@
+{
+  "id": "es-c6plus-u1-ser-estar",
+  "title": "¿ser o estar?",
+  "subtitle": "U1 · identiteit/karakter (ser) of plaats/gevoel (estar)?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Kies: ser (permanent) of estar (plaats/gevoel)?",
+    "categories": [
+      {
+        "id": "ser",
+        "label": "ser<br><small>soy/eres/es…</small>",
+        "glaze": "#8B5E9E"
+      },
+      {
+        "id": "estar",
+        "label": "estar<br><small>estoy/estás…</small>",
+        "glaze": "#2FA8A0"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "Lucía ___ de Sevilla.",
+        "answer": "ser",
+        "tag": "ser",
+        "sub": "herkomst → ser"
+      },
+      {
+        "stimulus": "Hoy ___ cansado.",
+        "answer": "estar",
+        "tag": "estar",
+        "sub": "gevoel → estar"
+      },
+      {
+        "stimulus": "___ simpático.",
+        "answer": "ser",
+        "tag": "ser",
+        "sub": "karakter → ser"
+      },
+      {
+        "stimulus": "La mochila ___ en clase.",
+        "answer": "estar",
+        "tag": "estar",
+        "sub": "plaats → estar"
+      },
+      {
+        "stimulus": "___ estudiante.",
+        "answer": "ser",
+        "tag": "ser",
+        "sub": "identiteit → ser"
+      },
+      {
+        "stimulus": "Diego ___ contento.",
+        "answer": "estar",
+        "tag": "estar",
+        "sub": "gevoel → estar"
+      },
+      {
+        "stimulus": "Nosotros ___ de Bélgica.",
+        "answer": "ser",
+        "tag": "ser",
+        "sub": "herkomst → ser"
+      },
+      {
+        "stimulus": "¿Cómo ___ (tú)?",
+        "answer": "estar",
+        "tag": "estar",
+        "sub": "toestand → estar"
+      },
+      {
+        "stimulus": "El profesor ___ alto.",
+        "answer": "ser",
+        "tag": "ser",
+        "sub": "eigenschap → ser"
+      },
+      {
+        "stimulus": "La ventana ___ abierta.",
+        "answer": "estar",
+        "tag": "estar",
+        "sub": "toestand → estar"
+      },
+      {
+        "stimulus": "Son las dos: ___ mediodía.",
+        "answer": "ser",
+        "tag": "ser",
+        "sub": "tijd → ser"
+      },
+      {
+        "stimulus": "___ nervioso por el examen.",
+        "answer": "estar",
+        "tag": "estar",
+        "sub": "gevoel → estar"
+      },
+      {
+        "stimulus": "Mi hermana ___ profesora.",
+        "answer": "ser",
+        "tag": "ser",
+        "sub": "beroep → ser"
+      },
+      {
+        "stimulus": "El café ___ caliente.",
+        "answer": "estar",
+        "tag": "estar",
+        "sub": "toestand → estar"
+      },
+      {
+        "stimulus": "___ alegre y hablador.",
+        "answer": "ser",
+        "tag": "ser",
+        "sub": "karakter → ser"
+      },
+      {
+        "stimulus": "Los alumnos ___ en el patio.",
+        "answer": "estar",
+        "tag": "estar",
+        "sub": "plaats → estar"
+      },
+      {
+        "stimulus": "La paella ___ rica hoy.",
+        "answer": "estar",
+        "tag": "estar",
+        "sub": "smaak nu → estar"
+      },
+      {
+        "stimulus": "Sevilla ___ en el sur.",
+        "answer": "estar",
+        "tag": "estar",
+        "sub": "ligging → estar"
+      }
+    ]
+  }
+}

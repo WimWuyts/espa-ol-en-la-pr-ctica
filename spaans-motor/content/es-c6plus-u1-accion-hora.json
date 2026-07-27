@@ -1,0 +1,64 @@
+{
+  "id": "es-c6plus-u1-accion-hora",
+  "title": "Acción y hora",
+  "subtitle": "U1 · koppel de actie aan een gebruikelijk uur",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind de actie met een logisch uur",
+    "pairs": [
+      {
+        "a": "me levanto",
+        "b": "a las 7:00 🌅"
+      },
+      {
+        "a": "desayuno",
+        "b": "a las 7:30 🥐"
+      },
+      {
+        "a": "empiezan las clases",
+        "b": "a las 8:30 🏫"
+      },
+      {
+        "a": "como",
+        "b": "a las 14:00 🍽️"
+      },
+      {
+        "a": "meriendo",
+        "b": "a las 17:00 🍪"
+      },
+      {
+        "a": "hago los deberes",
+        "b": "a las 18:00 📓"
+      },
+      {
+        "a": "ceno",
+        "b": "a las 21:00 🌙"
+      },
+      {
+        "a": "me acuesto",
+        "b": "a las 23:00 🛏️"
+      },
+      {
+        "a": "vuelvo a casa",
+        "b": "a las 16:00 🏠"
+      },
+      {
+        "a": "me ducho",
+        "b": "a las 7:15 🚿"
+      },
+      {
+        "a": "quedo con amigos",
+        "b": "el sábado 🎉"
+      },
+      {
+        "a": "hago deporte",
+        "b": "los martes ⚽"
+      }
+    ]
+  }
+}

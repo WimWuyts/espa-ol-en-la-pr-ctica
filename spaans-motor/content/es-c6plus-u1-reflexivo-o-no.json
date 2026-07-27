@@ -1,0 +1,124 @@
+{
+  "id": "es-c6plus-u1-reflexivo-o-no",
+  "title": "¿reflexivo o no?",
+  "subtitle": "U1 · keert de actie terug naar jezelf?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Is dit werkwoord reflexief (jezelf) of niet?",
+    "categories": [
+      {
+        "id": "refl",
+        "label": "reflexivo<br><small>me/te/se…</small>",
+        "glaze": "#8B5E9E"
+      },
+      {
+        "id": "no",
+        "label": "no reflexivo",
+        "glaze": "#2FA8A0"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "ducharse",
+        "answer": "refl",
+        "tag": "refl",
+        "sub": "me ducho"
+      },
+      {
+        "stimulus": "desayunar",
+        "answer": "no",
+        "tag": "no",
+        "sub": "desayuno"
+      },
+      {
+        "stimulus": "levantarse",
+        "answer": "refl",
+        "tag": "refl",
+        "sub": "me levanto"
+      },
+      {
+        "stimulus": "comer",
+        "answer": "no",
+        "tag": "no",
+        "sub": "como"
+      },
+      {
+        "stimulus": "vestirse",
+        "answer": "refl",
+        "tag": "refl",
+        "sub": "me visto"
+      },
+      {
+        "stimulus": "hacer los deberes",
+        "answer": "no",
+        "tag": "no",
+        "sub": "hago los deberes"
+      },
+      {
+        "stimulus": "peinarse",
+        "answer": "refl",
+        "tag": "refl",
+        "sub": "me peino"
+      },
+      {
+        "stimulus": "cenar",
+        "answer": "no",
+        "tag": "no",
+        "sub": "ceno"
+      },
+      {
+        "stimulus": "acostarse",
+        "answer": "refl",
+        "tag": "refl",
+        "sub": "me acuesto"
+      },
+      {
+        "stimulus": "estudiar",
+        "answer": "no",
+        "tag": "no",
+        "sub": "estudio"
+      },
+      {
+        "stimulus": "despertarse",
+        "answer": "refl",
+        "tag": "refl",
+        "sub": "me despierto"
+      },
+      {
+        "stimulus": "volver a casa",
+        "answer": "no",
+        "tag": "no",
+        "sub": "vuelvo"
+      },
+      {
+        "stimulus": "lavarse los dientes",
+        "answer": "refl",
+        "tag": "refl",
+        "sub": "me lavo los dientes"
+      },
+      {
+        "stimulus": "merendar",
+        "answer": "no",
+        "tag": "no",
+        "sub": "meriendo"
+      },
+      {
+        "stimulus": "sentarse",
+        "answer": "refl",
+        "tag": "refl",
+        "sub": "me siento"
+      },
+      {
+        "stimulus": "salir de casa",
+        "answer": "no",
+        "tag": "no",
+        "sub": "salgo"
+      }
+    ]
+  }
+}

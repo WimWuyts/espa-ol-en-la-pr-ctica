@@ -1,0 +1,146 @@
+{
+  "id": "es-c6plus-u1-pronombre-tetris",
+  "title": "Pronombre Tetris",
+  "subtitle": "U1 · laat het juiste pronomen (me/te/se…) vallen",
+  "lang": "es",
+  "template": "tetris",
+  "options": {
+    "rows": 9,
+    "speed": 1300,
+    "audio": false
+  },
+  "classify": {
+    "categories": [
+      {
+        "id": "me",
+        "label": "me",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "te",
+        "label": "te",
+        "glaze": "#C4402C"
+      },
+      {
+        "id": "se",
+        "label": "se",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "nos",
+        "label": "nos",
+        "glaze": "#E0A22F"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "yo ___ levanto",
+        "answer": "me",
+        "tag": "me",
+        "sub": "yo → me"
+      },
+      {
+        "stimulus": "tú ___ duchas",
+        "answer": "te",
+        "tag": "te",
+        "sub": "tú → te"
+      },
+      {
+        "stimulus": "ella ___ despierta",
+        "answer": "se",
+        "tag": "se",
+        "sub": "ella → se"
+      },
+      {
+        "stimulus": "nosotros ___ acostamos",
+        "answer": "nos",
+        "tag": "nos",
+        "sub": "nosotros → nos"
+      },
+      {
+        "stimulus": "yo ___ visto",
+        "answer": "me",
+        "tag": "me",
+        "sub": "yo → me"
+      },
+      {
+        "stimulus": "tú ___ peinas",
+        "answer": "te",
+        "tag": "te",
+        "sub": "tú → te"
+      },
+      {
+        "stimulus": "él ___ acuesta",
+        "answer": "se",
+        "tag": "se",
+        "sub": "él → se"
+      },
+      {
+        "stimulus": "nosotros ___ duchamos",
+        "answer": "nos",
+        "tag": "nos",
+        "sub": "nosotros → nos"
+      },
+      {
+        "stimulus": "yo ___ despierto",
+        "answer": "me",
+        "tag": "me",
+        "sub": "yo → me"
+      },
+      {
+        "stimulus": "tú ___ acuestas",
+        "answer": "te",
+        "tag": "te",
+        "sub": "tú → te"
+      },
+      {
+        "stimulus": "ellos ___ levantan",
+        "answer": "se",
+        "tag": "se",
+        "sub": "ellos → se"
+      },
+      {
+        "stimulus": "nosotros ___ vestimos",
+        "answer": "nos",
+        "tag": "nos",
+        "sub": "nosotros → nos"
+      },
+      {
+        "stimulus": "yo ___ acuesto",
+        "answer": "me",
+        "tag": "me",
+        "sub": "yo → me"
+      },
+      {
+        "stimulus": "tú ___ sientas",
+        "answer": "te",
+        "tag": "te",
+        "sub": "tú → te"
+      },
+      {
+        "stimulus": "usted ___ ducha",
+        "answer": "se",
+        "tag": "se",
+        "sub": "usted → se"
+      },
+      {
+        "stimulus": "nosotros ___ peinamos",
+        "answer": "nos",
+        "tag": "nos",
+        "sub": "nosotros → nos"
+      },
+      {
+        "stimulus": "yo ___ duermo",
+        "answer": "me",
+        "tag": "me",
+        "sub": "yo → me"
+      },
+      {
+        "stimulus": "María ___ maquilla",
+        "answer": "se",
+        "tag": "se",
+        "sub": "ella → se"
+      }
+    ]
+  }
+}
