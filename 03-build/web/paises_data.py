@@ -161,22 +161,33 @@ PARADAS = {
 
 import json
 
-def _nl_for(code, unit):
+def _nl_for(code, unit, paradas):
     """La-Ruta-note (NL/ES) voor een parada-land, afhankelijk van de unidad."""
-    if code not in PARADAS:
+    if code not in paradas:
         return ""
-    start, rango, desc = PARADAS[code]
+    start, rango, desc = paradas[code]
     if unit < start:
         return ""  # nog niet bezocht
     # huidige parada = grootste start <= unit
-    cur = max((c for c,(s,_,_) in PARADAS.items() if s <= unit), key=lambda c: PARADAS[c][0])
+    cur = max((c for c,(s,_,_) in paradas.items() if s <= unit), key=lambda c: paradas[c][0])
     if code == cur:
         return f"★ ¡Estás aquí! Parada {rango} · {desc}"
     return f"Parada anterior ({rango}) · {desc}"
 
-def info_block_js(unit):
-    """Bouw de JS-tekst `const INFO={...};` voor deze unidad (thema meegebakken)."""
-    tema_key, tema_label = UNIT_TEMA[unit]
+def info_block_js(unit, unit_tema=None, paradas=None):
+    """Bouw de JS-tekst `const INFO={...};` voor deze unidad (thema meegebakken).
+
+    Meerdere cursussen delen PAISES + TEMAS (landgegevens + themafeiten).
+    Elke cursus geeft z'n eigen mapping mee:
+      • unit_tema : {unit_nr: (thema_key, "🔖 Label")}  — welke themalaag per unit
+                    (thema_key moet in TEMAS bestaan; voeg gerust nieuwe thema's
+                     toe aan TEMAS voor cursus-eigen categorieën).
+      • paradas   : {code: (start_unit, "rango", "NL-beschrijving")} — de route.
+    Zonder argumenten = C5-standaard (UNIT_TEMA / PARADAS hieronder).
+    """
+    ut = unit_tema if unit_tema is not None else UNIT_TEMA
+    pr = paradas   if paradas   is not None else PARADAS
+    tema_key, tema_label = ut[unit]
     tmap = TEMAS.get(tema_key, {})
     out = {}
     for code, d in PAISES.items():
@@ -187,8 +198,8 @@ def info_block_js(unit):
             "fl": d["fl"], "n": d["n"], "cap": d["cap"], "pob": d["pob"],
             "mon": d["mon"], "gen": d["gen"], "idi": d["idi"],
             "cool": cool, "tema": tema_full,
-            "star": 1 if (code in PARADAS and PARADAS[code][0] <= unit) else 0,
-            "nl": _nl_for(code, unit),
+            "star": 1 if (code in pr and pr[code][0] <= unit) else 0,
+            "nl": _nl_for(code, unit, pr),
         }
     return "const INFO=" + json.dumps(out, ensure_ascii=False) + ";"
 
