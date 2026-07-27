@@ -230,22 +230,34 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
 
   <section class="panel" data-p="gram">
     <h2 class="sec">Gramática visual e interactiva</h2>
-    <p class="lead">Eerst betekenis en patroon ontdekken, dan de regel. Beweeg over de woorden, klik, en probeer. <span class="gloss">Alles binnen het thema van U0: el presente, género/concordancia y ser/estar.</span></p>
+    <p class="lead">De <b>essentiële</b> grammatica van U0: de <b>werkwoorden</b> en de <b>concordancia</b>. Hier oefen je <b>maximaal</b> — elke oefening trekt uit een grote pool, dus «↻ otra serie» geeft telkens een nieuwe reeks. <span class="gloss">Eerst betekenis/patroon ontdekken, dan de regel.</span></p>
     <div class="card" id="colorsent"></div>
     <div class="card" id="irconj"></div>
-    <h3 class="subh">🧩 El presente — ordena y practica</h3>
-    <div class="card ex" id="gx_build"></div>
+    <h2 class="sec" style="margin-top:26px">🔑 Los verbos — máxima práctica</h2>
+    <p class="lead">De motor van alles. Regelmatig (-ar/-er/-ir) én de 7 irregulares (ser · estar · tener · ir · hacer · venir · dar). <span class="gloss">Blijf herspelen tot de vormen automatisch komen.</span></p>
+    <div class="card ex" id="gx_reg"></div>
+    <div class="card ex" id="gx_irreg"></div>
+    <div class="card ex" id="gx_ser"></div>
     <div class="card ex" id="gx_iraq"></div>
-    <h3 class="subh">⚖️ Género y concordancia — el/la · -o/-a</h3>
-    <div class="game" id="g_cantidad"></div>
-    <div class="card ex" id="gx_conc"></div>
-    <div class="card ex" id="gx_cantq"></div>
+    <div class="card ex" id="gx_subj"></div>
+    <div class="card ex" id="gx_build"></div>
     <h3 class="subh">🔀 Ser o estar — soy / estoy</h3>
     <div class="game" id="g_pron"></div>
     <div class="card ex" id="gx_pronq"></div>
-    <h3 class="subh">🎯 Repaso mixto — rellena con feedback</h3>
+    <h2 class="sec" style="margin-top:26px">⚖️ La concordancia — máxima práctica</h2>
+    <p class="lead">Alles komt overeen: <b>género</b> (el/la · -o/-a), <b>número</b> (plural) en de <b>nacionalidades</b>. <span class="gloss">Kijk telkens naar m/v én enkelvoud/meervoud.</span></p>
+    <div class="game" id="g_cantidad"></div>
+    <div class="card ex" id="gx_cantq"></div>
+    <div class="card ex" id="gx_adj"></div>
+    <div class="card ex" id="gx_plural"></div>
+    <div class="card ex" id="gx_nac"></div>
+    <div class="card ex" id="gx_conc"></div>
+    <div class="card ex" id="gx_conc2"></div>
+    <h3 class="subh">🎯 Repaso mixto — verbos + concordancia</h3>
     <div class="card ex" id="gx_mix"></div>
   </section>
+
+  <section</section>
 
   <section class="panel" data-p="lectura">
     <h2 class="sec">Lectura · dos perfiles</h2>
@@ -610,40 +622,91 @@ function buildOdd(id,cfg){
 
 // ---- data + calls ----
 function buildInlineExercises(){
- // GRAMÁTICA
+ // ===== WERKWOORDEN (essentieel · grote pools) =====
+ buildChoice('gx_reg',{title:'Regulares: -ar / -er / -ir',desc:'Kies de juiste vorm van het regelmatige werkwoord.',per:8,pool:[
+   {q:'(Yo) ___ (hablar) español.',opts:['hablo','hablas','habla'],ans:'hablo',why:'yo → -o'},
+   {q:'(Tú) ___ (hablar) muy bien.',opts:['hablas','hablo','habla'],ans:'hablas',why:'tú → -as'},
+   {q:'Ella ___ (estudiar) mucho.',opts:['estudia','estudias','estudio'],ans:'estudia',why:'él/ella → -a'},
+   {q:'(Nosotros) ___ (trabajar) aquí.',opts:['trabajamos','trabajáis','trabajan'],ans:'trabajamos',why:'nosotros → -amos'},
+   {q:'(Vosotros) ___ (escuchar) música.',opts:['escucháis','escuchan','escuchamos'],ans:'escucháis',why:'vosotros → -áis'},
+   {q:'(Ellos) ___ (comprar) pan.',opts:['compran','compra','compráis'],ans:'compran',why:'ellos → -an'},
+   {q:'(Yo) ___ (comer) a las dos.',opts:['como','comes','come'],ans:'como',why:'yo → -o'},
+   {q:'(Tú) ___ (beber) agua.',opts:['bebes','bebe','bebo'],ans:'bebes',why:'tú → -es'},
+   {q:'Él ___ (leer) un libro.',opts:['lee','lees','leo'],ans:'lee',why:'él → -e'},
+   {q:'(Nosotros) ___ (comer) juntos.',opts:['comemos','coméis','comen'],ans:'comemos',why:'nosotros → -emos'},
+   {q:'(Ellos) ___ (aprender) español.',opts:['aprenden','aprende','aprendéis'],ans:'aprenden',why:'ellos → -en'},
+   {q:'(Yo) ___ (vivir) en Gante.',opts:['vivo','vives','vive'],ans:'vivo',why:'yo → -o'},
+   {q:'(Tú) ___ (escribir) un correo.',opts:['escribes','escribe','escribo'],ans:'escribes',why:'tú → -es'},
+   {q:'Ella ___ (abrir) la puerta.',opts:['abre','abres','abro'],ans:'abre',why:'él/ella → -e'},
+   {q:'(Nosotros) ___ (vivir) en Flandes.',opts:['vivimos','vivís','viven'],ans:'vivimos',why:'nosotros → -imos'},
+   {q:'(Vosotros) ___ (escribir) bien.',opts:['escribís','escriben','escribimos'],ans:'escribís',why:'vosotros → -ís'}]});
+ buildChoice('gx_irreg',{title:'Los 7 irregulares clave',desc:'ser · estar · tener · ir · hacer · venir · dar. Kies de juiste vorm.',per:8,pool:[
+   {q:'(Yo) ___ (ser) estudiante.',opts:['soy','eres','es'],ans:'soy',why:'ser: yo → soy'},
+   {q:'(Yo) ___ (estar) en clase.',opts:['estoy','estás','está'],ans:'estoy',why:'estar: yo → estoy'},
+   {q:'(Yo) ___ (tener) 16 años.',opts:['tengo','tienes','tiene'],ans:'tengo',why:'tener: yo → tengo'},
+   {q:'(Yo) ___ (ir) al instituto.',opts:['voy','vas','va'],ans:'voy',why:'ir: yo → voy'},
+   {q:'(Yo) ___ (hacer) deporte.',opts:['hago','haces','hace'],ans:'hago',why:'hacer: yo → hago'},
+   {q:'(Yo) ___ (venir) de casa.',opts:['vengo','vienes','viene'],ans:'vengo',why:'venir: yo → vengo'},
+   {q:'(Yo) ___ (dar) las gracias.',opts:['doy','das','da'],ans:'doy',why:'dar: yo → doy'},
+   {q:'(Tú) ___ (tener) hambre.',opts:['tienes','tengo','tiene'],ans:'tienes',why:'tener: tú → tienes'},
+   {q:'Ella ___ (estar) contenta.',opts:['está','estás','estoy'],ans:'está',why:'estar: ella → está'},
+   {q:'Diego ___ (ir) al mercado.',opts:['va','vas','voy'],ans:'va',why:'ir: él → va'},
+   {q:'(Nosotros) ___ (ser) amigos.',opts:['somos','sois','son'],ans:'somos',why:'ser: nosotros → somos'},
+   {q:'(Nosotros) ___ (tener) clase.',opts:['tenemos','tenéis','tienen'],ans:'tenemos',why:'tener: nosotros → tenemos'},
+   {q:'(Vosotros) ___ (hacer) los deberes.',opts:['hacéis','hacen','hacemos'],ans:'hacéis',why:'hacer: vosotros → hacéis'},
+   {q:'(Ellos) ___ (venir) de México.',opts:['vienen','venís','viene'],ans:'vienen',why:'venir: ellos → vienen'},
+   {q:'(Ellos) ___ (ir) a España.',opts:['van','va','vamos'],ans:'van',why:'ir: ellos → van'},
+   {q:'(Tú) ___ (hacer) la cena.',opts:['haces','hago','hace'],ans:'haces',why:'hacer: tú → haces'},
+   {q:'(Nosotros) ___ (estar) bien.',opts:['estamos','estáis','están'],ans:'estamos',why:'estar: nosotros → estamos'},
+   {q:'Mateo ___ (venir) de Argentina.',opts:['viene','vienes','vengo'],ans:'viene',why:'venir: él → viene'}]});
+ buildChoice('gx_ser',{title:'Conjuga «ser»',desc:'De volledige vervoeging van ser. Kies de vorm.',per:6,pool:[
+   {q:'yo →',opts:['soy','eres','es'],ans:'soy',why:'yo → soy'},
+   {q:'tú →',opts:['eres','es','soy'],ans:'eres',why:'tú → eres'},
+   {q:'él/ella →',opts:['es','eres','somos'],ans:'es',why:'él/ella → es'},
+   {q:'nosotros →',opts:['somos','sois','son'],ans:'somos',why:'nosotros → somos'},
+   {q:'vosotros →',opts:['sois','son','somos'],ans:'sois',why:'vosotros → sois'},
+   {q:'ellos →',opts:['son','sois','es'],ans:'son',why:'ellos → son'},
+   {q:'María y yo ___ amigos.',opts:['somos','son','sois'],ans:'somos',why:'nosotros → somos'},
+   {q:'Vosotras ___ de Madrid.',opts:['sois','son','somos'],ans:'sois',why:'vosotros → sois'}]});
+ buildChoice('gx_iraq',{title:'El presente — todo mezclado',desc:'Regular + irregular, alle personen door elkaar.',per:8,pool:[
+   {q:'(Yo) ___ de Bélgica.',opts:['soy','eres','es'],ans:'soy',why:'ser: yo → soy'},
+   {q:'¿(Tú) ___ en Gante?',opts:['vives','vivo','vive'],ans:'vives',why:'vivir: tú → vives'},
+   {q:'Nina ___ dieciséis años.',opts:['tiene','tienes','tengo'],ans:'tiene',why:'tener: ella → tiene'},
+   {q:'(Nosotros) ___ español.',opts:['hablamos','habláis','hablan'],ans:'hablamos',why:'hablar: nosotros'},
+   {q:'Diego ___ al mercado.',opts:['va','vas','voy'],ans:'va',why:'ir: él → va'},
+   {q:'(Yo) ___ muy bien.',opts:['estoy','está','estás'],ans:'estoy',why:'estar: yo → estoy'},
+   {q:'¿(Vosotros) ___ los deberes?',opts:['hacéis','hacen','hago'],ans:'hacéis',why:'hacer: vosotros'},
+   {q:'(Ellos) ___ de México.',opts:['vienen','venís','viene'],ans:'vienen',why:'venir: ellos'},
+   {q:'Lucía ___ española.',opts:['es','eres','soy'],ans:'es',why:'ser: ella → es'},
+   {q:'(Yo) ___ dos hermanas.',opts:['tengo','tienes','tiene'],ans:'tengo',why:'tener: yo → tengo'},
+   {q:'(Nosotros) ___ amigos.',opts:['somos','sois','son'],ans:'somos',why:'ser: nosotros'},
+   {q:'¿Cómo te ___ ?',opts:['llamas','llama','llamo'],ans:'llamas',why:'llamarse: tú'},
+   {q:'(Ellos) ___ mucho español.',opts:['hablan','habláis','hablamos'],ans:'hablan',why:'hablar: ellos'},
+   {q:'(Yo) ___ deporte.',opts:['hago','haces','hace'],ans:'hago',why:'hacer: yo → hago'},
+   {q:'(Tú) ___ contento hoy.',opts:['estás','está','estoy'],ans:'estás',why:'estar: tú → estás'},
+   {q:'(Yo) ___ al insti en bici.',opts:['voy','vas','va'],ans:'voy',why:'ir: yo → voy'},
+   {q:'(Nosotros) ___ en Flandes.',opts:['vivimos','vivís','viven'],ans:'vivimos',why:'vivir: nosotros'},
+   {q:'(Vosotros) ___ de Madrid.',opts:['sois','son','somos'],ans:'sois',why:'ser: vosotros'},
+   {q:'Mateo ___ de Argentina.',opts:['viene','vienes','vengo'],ans:'viene',why:'venir: él → viene'},
+   {q:'(Ellos) ___ hambre.',opts:['tienen','tenéis','tenemos'],ans:'tienen',why:'tener: ellos'}]});
+ buildChoice('gx_subj',{title:'¿Qué forma va con el sujeto?',desc:'Kies de vorm die bij het onderwerp past.',per:7,pool:[
+   {q:'Yo ___',opts:['soy','eres','es'],ans:'soy',why:'yo → soy'},
+   {q:'Mis abuelos ___',opts:['viven','vive','vivís'],ans:'viven',why:'ellos → viven'},
+   {q:'Tú ___',opts:['comes','come','como'],ans:'comes',why:'tú → comes'},
+   {q:'Mi hermana ___',opts:['habla','hablas','hablo'],ans:'habla',why:'ella → habla'},
+   {q:'Nosotros ___',opts:['tenemos','tienen','tenéis'],ans:'tenemos',why:'nosotros → tenemos'},
+   {q:'Vosotros ___',opts:['hacéis','hacen','hacemos'],ans:'hacéis',why:'vosotros → hacéis'},
+   {q:'Los chicos ___',opts:['van','va','vamos'],ans:'van',why:'ellos → van'},
+   {q:'Usted ___',opts:['es','eres','soy'],ans:'es',why:'usted → es (3ª)'},
+   {q:'Ella y yo ___',opts:['estamos','están','estáis'],ans:'estamos',why:'nosotros → estamos'},
+   {q:'¿Y tú, de dónde ___?',opts:['eres','es','soy'],ans:'eres',why:'tú → eres'}]});
  buildOrder('gx_build',{title:'Ordena la presentación',desc:'Tik de zinnen in de logische volgorde.',rounds:[
    {sub:'saludar → nombre → origen → edad',items:[{label:'¡Hola! ¿Qué tal?',key:1},{label:'Me llamo Nina.',key:2},{label:'Soy de Perú.',key:3},{label:'Tengo dieciséis años.',key:4}]},
    {sub:'nombre → dónde vives → lengua → y tú',items:[{label:'Me llamo Diego.',key:1},{label:'Vivo en México.',key:2},{label:'Hablo español.',key:3},{label:'¿Y tú?',key:4}]},
    {sub:'pregunta → respuesta → repregunta → mucho gusto',items:[{label:'¿Cómo te llamas?',key:1},{label:'Me llamo Lucía, ¿y tú?',key:2},{label:'Yo soy Mateo.',key:3},{label:'¡Mucho gusto!',key:4}]},
    {sub:'origen → nacionalidad → lengua → carácter',items:[{label:'Soy de Cartagena.',key:1},{label:'Soy colombiana.',key:2},{label:'Hablo español.',key:3},{label:'Soy muy alegre.',key:4}]},
    {sub:'formal: saludar → nombre → usted → encantada',items:[{label:'Buenos días, señora.',key:1},{label:'Me llamo Ana.',key:2},{label:'¿Cómo se llama usted?',key:3},{label:'Encantada.',key:4}]}]});
- buildChoice('gx_iraq',{title:'Mini-quiz: el presente',desc:'Kies de juiste vorm in het presente.',per:6,pool:[
-   {q:'(Yo) ___ de Bélgica.',opts:['soy','eres','es'],ans:'soy',why:'yo → soy'},
-   {q:'¿(Tú) ___ en Gante?',opts:['vives','vivo','vive'],ans:'vives',why:'tú → vives'},
-   {q:'Nina ___ dieciséis años.',opts:['tiene','tienes','tengo'],ans:'tiene',why:'ella → tiene'},
-   {q:'(Nosotros) ___ español.',opts:['hablamos','habláis','hablan'],ans:'hablamos',why:'nosotros → hablamos'},
-   {q:'Diego ___ al mercado.',opts:['va','vas','voy'],ans:'va',why:'él → va'},
-   {q:'(Yo) ___ muy bien.',opts:['estoy','está','estás'],ans:'estoy',why:'yo → estoy'},
-   {q:'¿(Vosotros) ___ los deberes?',opts:['hacéis','hacen','hago'],ans:'hacéis',why:'vosotros → hacéis'},
-   {q:'(Ellos) ___ de México.',opts:['vienen','venís','viene'],ans:'vienen',why:'ellos → vienen'},
-   {q:'Lucía ___ española.',opts:['es','eres','soy'],ans:'es',why:'ella → es'},
-   {q:'(Yo) ___ dos hermanas.',opts:['tengo','tienes','tiene'],ans:'tengo',why:'yo → tengo'}]});
- buildMatch('gx_conc',{title:'Empareja: país ↔ nacionalidad',desc:'Koppel het land aan de nationaliteit.',per:6,pool:[
-   {a:'España',b:'español/a'},{a:'México',b:'mexicano/a'},{a:'Colombia',b:'colombiano/a'},{a:'Perú',b:'peruano/a'},
-   {a:'Argentina',b:'argentino/a'},{a:'Bélgica',b:'belga'},{a:'Chile',b:'chileno/a'},{a:'Cuba',b:'cubano/a'},
-   {a:'Ecuador',b:'ecuatoriano/a'},{a:'Venezuela',b:'venezolano/a'}]});
- buildChoice('gx_cantq',{title:'Mini-quiz: ¿el o la?',desc:'Género: kies el (m) of la (v). Let op de valstrikken.',per:6,pool:[
-   {q:'___ problema',opts:['el','la'],ans:'el',why:'-ma → masculino'},
-   {q:'___ casa',opts:['la','el'],ans:'la',why:'la casa (f)'},
-   {q:'___ día',opts:['el','la'],ans:'el',why:'el día (m! -a)'},
-   {q:'___ mano',opts:['la','el'],ans:'la',why:'la mano (f! -o)'},
-   {q:'___ mapa',opts:['el','la'],ans:'el',why:'el mapa (m! -a)'},
-   {q:'___ ciudad',opts:['la','el'],ans:'la',why:'-dad → femenino'},
-   {q:'___ idioma',opts:['el','la'],ans:'el',why:'-ma → masculino'},
-   {q:'___ foto',opts:['la','el'],ans:'la',why:'la foto (f! -o)'},
-   {q:'___ libro',opts:['el','la'],ans:'el',why:'el libro (m)'},
-   {q:'___ nacionalidad',opts:['la','el'],ans:'la',why:'-dad → femenino'}]});
- buildChoice('gx_pronq',{title:'Mini-quiz: ¿soy o estoy?',desc:'ser (identiteit) of estar (plaats/gevoel)?',per:6,pool:[
+ buildChoice('gx_pronq',{title:'¿soy o estoy?',desc:'ser (identiteit) of estar (plaats/gevoel)?',per:7,pool:[
    {q:'___ de Bélgica.',opts:['soy','estoy'],ans:'soy',why:'herkomst → ser'},
    {q:'___ en clase.',opts:['estoy','soy'],ans:'estoy',why:'plaats → estar'},
    {q:'___ estudiante.',opts:['soy','estoy'],ans:'soy',why:'identiteit → ser'},
@@ -653,21 +716,98 @@ function buildInlineExercises(){
    {q:'___ simpático.',opts:['soy','estoy'],ans:'soy',why:'karakter → ser'},
    {q:'___ en casa.',opts:['estoy','soy'],ans:'estoy',why:'plaats → estar'},
    {q:'___ el hermano de Nina.',opts:['soy','estoy'],ans:'soy',why:'identiteit → ser'},
-   {q:'___ cansado hoy.',opts:['estoy','soy'],ans:'estoy',why:'gevoel → estar'}]});
- buildChoice('gx_mix',{title:'Repaso mixto: rellena',desc:'Alles door elkaar: presente · género · ser/estar · concordancia.',per:8,pool:[
-   {q:'(Nosotros) ___ amigos.',opts:['somos','sois','son'],ans:'somos',why:'nosotros → somos'},
+   {q:'___ cansado hoy.',opts:['estoy','soy'],ans:'estoy',why:'gevoel → estar'},
+   {q:'___ profesor de español.',opts:['soy','estoy'],ans:'soy',why:'beroep → ser'},
+   {q:'___ nervioso antes del examen.',opts:['estoy','soy'],ans:'estoy',why:'gevoel → estar'}]});
+ // ===== CONCORDANCIA (essentieel · grote pools) =====
+ buildChoice('gx_cantq',{title:'¿el o la? — género',desc:'Kies el (m) of la (v). Let op de valstrikken -ma/-a/-o/-dad.',per:8,pool:[
+   {q:'___ problema',opts:['el','la'],ans:'el',why:'-ma → masculino'},
+   {q:'___ casa',opts:['la','el'],ans:'la',why:'la casa (f)'},
+   {q:'___ día',opts:['el','la'],ans:'el',why:'el día (m! -a)'},
+   {q:'___ mano',opts:['la','el'],ans:'la',why:'la mano (f! -o)'},
+   {q:'___ mapa',opts:['el','la'],ans:'el',why:'el mapa (m! -a)'},
+   {q:'___ ciudad',opts:['la','el'],ans:'la',why:'-dad → femenino'},
+   {q:'___ idioma',opts:['el','la'],ans:'el',why:'-ma → masculino'},
+   {q:'___ foto',opts:['la','el'],ans:'la',why:'la foto (f! -o)'},
+   {q:'___ libro',opts:['el','la'],ans:'el',why:'el libro (m)'},
+   {q:'___ nacionalidad',opts:['la','el'],ans:'la',why:'-dad → femenino'},
+   {q:'___ padre',opts:['el','la'],ans:'el',why:'el padre (m)'},
+   {q:'___ madre',opts:['la','el'],ans:'la',why:'la madre (f)'},
+   {q:'___ hombre',opts:['el','la'],ans:'el',why:'el hombre (m)'},
+   {q:'___ mujer',opts:['la','el'],ans:'la',why:'la mujer (f)'},
+   {q:'___ lengua',opts:['la','el'],ans:'la',why:'la lengua (f)'},
+   {q:'___ país',opts:['el','la'],ans:'el',why:'el país (m)'},
+   {q:'___ instituto',opts:['el','la'],ans:'el',why:'el instituto (m)'},
+   {q:'___ clase',opts:['la','el'],ans:'la',why:'la clase (f)'}]});
+ buildChoice('gx_adj',{title:'Concordancia del adjetivo',desc:'Kies de vorm die overeenkomt (m/v · ev/mv).',per:8,pool:[
+   {q:'La chica es ___ .',opts:['simpática','simpático','simpáticas'],ans:'simpática',why:'la chica (f ev)'},
+   {q:'El chico es ___ .',opts:['alto','alta','altos'],ans:'alto',why:'el chico (m ev)'},
+   {q:'Los libros son ___ .',opts:['rojos','rojas','rojo'],ans:'rojos',why:'los libros (m pl)'},
+   {q:'Las casas son ___ .',opts:['blancas','blancos','blanca'],ans:'blancas',why:'las casas (f pl)'},
+   {q:'Nina es ___ .',opts:['peruana','peruano','peruanas'],ans:'peruana',why:'ella → peruana'},
+   {q:'Diego es ___ .',opts:['mexicano','mexicana','mexicanos'],ans:'mexicano',why:'él → mexicano'},
+   {q:'Mis amigas son ___ .',opts:['alegres','alegre','alegras'],ans:'alegres',why:'alegre → alegres (pl)'},
+   {q:'La profesora es ___ .',opts:['trabajadora','trabajador','trabajadoras'],ans:'trabajadora',why:'la profesora (f ev)'},
+   {q:'El coche es ___ .',opts:['nuevo','nueva','nuevos'],ans:'nuevo',why:'el coche (m ev)'},
+   {q:'Las chicas son ___ .',opts:['morenas','morenos','morena'],ans:'morenas',why:'las chicas (f pl)'},
+   {q:'Los perros son ___ .',opts:['pequeños','pequeñas','pequeño'],ans:'pequeños',why:'los perros (m pl)'},
+   {q:'Mi madre es ___ .',opts:['española','español','españolas'],ans:'española',why:'ella → española'},
+   {q:'Un ___ amigo (apócope).',opts:['buen','bueno','buena'],ans:'buen',why:'bueno → buen vóór m.ev.'},
+   {q:'Una ___ ciudad (apócope).',opts:['gran','grande','grandes'],ans:'gran',why:'grande → gran vóór het nw.'},
+   {q:'El libro es ___ .',opts:['azul','azula','azules'],ans:'azul',why:'azul = onveranderlijk (m/v)'},
+   {q:'Los ejercicios son ___ .',opts:['difíciles','difícil','difíciles'],ans:'difíciles',why:'difícil → difíciles (pl)'},
+   {q:'Valen es ___ .',opts:['colombiana','colombiano','colombianas'],ans:'colombiana',why:'ella → colombiana'},
+   {q:'Mis hermanos son ___ .',opts:['altos','altas','alto'],ans:'altos',why:'los hermanos (m pl)'}]});
+ buildChoice('gx_plural',{title:'El plural',desc:'Kies het juiste meervoud (klinker +s · medeklinker +es · -z → -ces).',per:7,pool:[
+   {q:'el chico →',opts:['los chicos','las chicos','los chico'],ans:'los chicos',why:'klinker → +s'},
+   {q:'la amiga →',opts:['las amigas','los amigas','las amiga'],ans:'las amigas',why:'klinker → +s'},
+   {q:'el profesor →',opts:['los profesores','los profesors','las profesores'],ans:'los profesores',why:'medeklinker → +es'},
+   {q:'la ciudad →',opts:['las ciudades','las ciudads','los ciudades'],ans:'las ciudades',why:'medeklinker → +es'},
+   {q:'el lápiz →',opts:['los lápices','los lápizes','los lápiz'],ans:'los lápices',why:'-z → -ces'},
+   {q:'la vez →',opts:['las veces','las vezes','las vez'],ans:'las veces',why:'-z → -ces'},
+   {q:'la foto →',opts:['las fotos','los fotos','las fotoes'],ans:'las fotos',why:'klinker → +s (la foto, f)'},
+   {q:'el país →',opts:['los países','los paises','las países'],ans:'los países',why:'medeklinker → +es'},
+   {q:'la nacionalidad →',opts:['las nacionalidades','las nacionalidads','los nacionalidades'],ans:'las nacionalidades',why:'-dad → +es'},
+   {q:'el problema →',opts:['los problemas','las problemas','los problema'],ans:'los problemas',why:'klinker → +s (m!)'},
+   {q:'la mano →',opts:['las manos','los manos','las manoes'],ans:'las manos',why:'klinker → +s (f!)'},
+   {q:'el reloj →',opts:['los relojes','los relojs','las relojes'],ans:'los relojes',why:'medeklinker → +es'}]});
+ buildChoice('gx_nac',{title:'Concordancia de la nacionalidad',desc:'Kies de nationaliteit die overeenkomt met het onderwerp.',per:7,pool:[
+   {q:'María es de España → es ___ .',opts:['española','español','españolas'],ans:'española',why:'v ev → española'},
+   {q:'Tom es de Bélgica → es ___ .',opts:['belga','belgo','belgas'],ans:'belga',why:'belga = onveranderlijk'},
+   {q:'Hans es de Alemania → es ___ .',opts:['alemán','alemana','alemanes'],ans:'alemán',why:'m ev → alemán'},
+   {q:'Sophie es de Francia → es ___ .',opts:['francesa','francés','francesas'],ans:'francesa',why:'v ev → -esa'},
+   {q:'Los chicos son de México → son ___ .',opts:['mexicanos','mexicano','mexicanas'],ans:'mexicanos',why:'m pl → -os'},
+   {q:'Las chicas son de Perú → son ___ .',opts:['peruanas','peruanos','peruana'],ans:'peruanas',why:'v pl → -as'},
+   {q:'Diego es ___ .',opts:['mexicano','mexicana','mexicanos'],ans:'mexicano',why:'m ev → -o'},
+   {q:'Ella es de Italia → es ___ .',opts:['italiana','italiano','italianas'],ans:'italiana',why:'v ev → -a'},
+   {q:'Ellos son de EE. UU. → son ___ .',opts:['estadounidenses','estadounidense','estadounidensos'],ans:'estadounidenses',why:'-ense → +s (pl)'},
+   {q:'Ella es de Marruecos → es ___ .',opts:['marroquí','marroquía','marroquíes'],ans:'marroquí',why:'marroquí = onveranderlijk (ev)'},
+   {q:'Nosotras somos de Colombia → somos ___ .',opts:['colombianas','colombianos','colombiana'],ans:'colombianas',why:'v pl → -as'},
+   {q:'Él es de Reino Unido → es ___ .',opts:['inglés','inglesa','ingleses'],ans:'inglés',why:'m ev → -és'}]});
+ buildMatch('gx_conc',{title:'Empareja: país ↔ nacionalidad',desc:'Koppel het land aan de nationaliteit.',per:6,pool:[
+   {a:'España',b:'español/a'},{a:'México',b:'mexicano/a'},{a:'Colombia',b:'colombiano/a'},{a:'Perú',b:'peruano/a'},
+   {a:'Argentina',b:'argentino/a'},{a:'Bélgica',b:'belga'},{a:'Alemania',b:'alemán/-ana'},{a:'Francia',b:'francés/-esa'},
+   {a:'Italia',b:'italiano/a'},{a:'Marruecos',b:'marroquí'}]});
+ buildMatch('gx_conc2',{title:'Empareja: sustantivo ↔ adjetivo',desc:'Koppel elk zelfstandig nw. aan het adjectief dat overeenkomt (m/v · ev/mv).',per:6,pool:[
+   {a:'la chica',b:'simpática'},{a:'el chico',b:'alto'},{a:'las casas',b:'blancas'},{a:'los libros',b:'rojos'},
+   {a:'la profesora',b:'trabajadora'},{a:'los perros',b:'pequeños'},{a:'la mochila',b:'roja'},{a:'el coche',b:'nuevo'},
+   {a:'las amigas',b:'alegres'},{a:'los hermanos',b:'altos'}]});
+ buildChoice('gx_mix',{title:'Repaso mixto — verbos + concordancia',desc:'Alles door elkaar. Directe feedback.',per:8,pool:[
+   {q:'(Nosotros) ___ amigos.',opts:['somos','sois','son'],ans:'somos',why:'ser: nosotros'},
    {q:'La chica es ___ .',opts:['simpática','simpático','simpáticas'],ans:'simpática',why:'la chica (f ev)'},
    {q:'___ problema es difícil.',opts:['El','La','Los'],ans:'El',why:'el problema (m)'},
-   {q:'(Yo) ___ en clase.',opts:['estoy','soy','está'],ans:'estoy',why:'plaats → estar'},
-   {q:'Diego ___ mexicano.',opts:['es','está','soy'],ans:'es',why:'nationaliteit → ser'},
+   {q:'(Yo) ___ en clase.',opts:['estoy','soy','está'],ans:'estoy',why:'estar: yo → estoy'},
+   {q:'Diego ___ mexicano.',opts:['es','está','soy'],ans:'es',why:'ser: él → es'},
    {q:'Los libros son ___ .',opts:['rojos','rojas','rojo'],ans:'rojos',why:'los libros (m pl)'},
-   {q:'¿(Tú) ___ dieciséis años?',opts:['tienes','tiene','tengo'],ans:'tienes',why:'tú → tienes'},
-   {q:'___ ciudad es bonita.',opts:['La','El','Los'],ans:'La',why:'la ciudad (f)'},
-   {q:'(Ellos) ___ de Perú.',opts:['son','somos','sois'],ans:'son',why:'ellos → son'},
-   {q:'Nina ___ peruana.',opts:['es','está','soy'],ans:'es',why:'nationaliteit → ser'},
+   {q:'¿(Tú) ___ dieciséis años?',opts:['tienes','tiene','tengo'],ans:'tienes',why:'tener: tú → tienes'},
+   {q:'la ciudad → plural:',opts:['las ciudades','las ciudads','los ciudades'],ans:'las ciudades',why:'-dad → +es'},
+   {q:'(Ellos) ___ de Perú.',opts:['son','somos','sois'],ans:'son',why:'ser: ellos → son'},
+   {q:'Nina es ___ .',opts:['peruana','peruano','peruanas'],ans:'peruana',why:'ella → peruana'},
    {q:'Las casas son ___ .',opts:['blancas','blancos','blanca'],ans:'blancas',why:'las casas (f pl)'},
-   {q:'(Yo) ___ al instituto en bici.',opts:['voy','vas','va'],ans:'voy',why:'yo → voy'}]});
- // VOCABULARIO
+   {q:'(Yo) ___ al instituto en bici.',opts:['voy','vas','va'],ans:'voy',why:'ir: yo → voy'},
+   {q:'(Vosotros) ___ los deberes.',opts:['hacéis','hacen','hacemos'],ans:'hacéis',why:'hacer: vosotros'},
+   {q:'el lápiz → plural:',opts:['los lápices','los lápizes','los lápiz'],ans:'los lápices',why:'-z → -ces'}]});
+  // VOCABULARIO
  buildMatch('vx_match',{title:'Empareja: país ↔ bandera',desc:'Koppel het land aan de vlag.',per:6,pool:[
    {a:'España',b:'🇪🇸'},{a:'México',b:'🇲🇽'},{a:'Colombia',b:'🇨🇴'},{a:'Perú',b:'🇵🇪'},
    {a:'Argentina',b:'🇦🇷'},{a:'Bélgica',b:'🇧🇪'},{a:'Chile',b:'🇨🇱'},{a:'Cuba',b:'🇨🇺'},
