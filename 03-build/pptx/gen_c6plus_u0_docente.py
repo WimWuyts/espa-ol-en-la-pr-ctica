@@ -26,6 +26,10 @@ E.G  = RGBColor(0x7C, 0x56, 0xA9)
 E.GD = RGBColor(0x5B, 0x3E, 0x83)
 E.GT = RGBColor(0xEE, 0xE8, 0xF5)
 G, GD, GT = E.G, E.GD, E.GT
+# ---- GEEN GROEN in dit deck (auteur): functionele 'voorwerp'-groen en 'plaats'-teal wegwerken ----
+E.F_OBJ  = RGBColor(0xB4, 0x30, 0x9A)   # was groen -> magenta (voorwerp)
+E.F_PLAC = RGBColor(0x64, 0x74, 0x8B)   # was teal  -> leisteenblauw (plaats)
+F_OBJ, F_PLAC = E.F_OBJ, E.F_PLAC
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT_DOCENTE = os.path.join(HERE, "C6plus_U0_docente.pptx")
@@ -560,7 +564,7 @@ def s21_teacher():
               ("Kernvalstrikken", "soy ≠ estoy (identiteit vs plaats/gevoel) · porque = want én omdat · nacionalidades met kleine letter · belga = m/v gelijk · el problema/día/mapa (m), la mano/foto (f)."),
               ("Differentiatie (zij-instromers)", "U0 = diagnostisch, geen heronderwijs. Sterker: volledige presentación + tarjeta + perfil beschrijven. Zwakker: presente-tabel + soy/estoy-kaart langer open, frames houden."),
               ("Digitaal", "13 spellen + flip cards + klikbare wereldkaart + recorder (Hablar) + Lectura (dos perfiles) op de página digital. QR's in het boek → juiste anker. Conjugador = aparte tool."),
-              ("Evaluatie", "Tarea «Tarjeta de reencuentro» met rúbrica (4 criteria). LPD 1·2·3·4·7 + 5 (cultura). U0 = opstap, geen zware toetsing.")]
+              ("Evaluatie", "Tarea «Tarjeta de reencuentro» met rúbrica (4 criteria). LPD (III-Spa-d): presentarse 4·5·9 · datos 7·3 · países/nacionalidades 7·8·5 · ser/verbos 8·3 · género 8·7. U0 = opstap, geen zware toetsing.")]
     y = Inches(1.4)
     for t, b in blocks:
         card(s, Inches(0.5), y, Inches(12.3), Inches(1.0), fill=RGBColor(0x47, 0x30, 0x69), line=None)
@@ -578,6 +582,25 @@ def _run_all(include_teacher=True):
     if include_teacher:
         s21_teacher()
 
+def _repaint(path):
+    """Kogelvrije nabewerking: elke resterende engine-groen -> paars, en foute footer-tekst fixen.
+    (De engine zet footer-stip/noodroute-knop op #1E9E74; die override loopt hier soms mis, dus
+    corrigeren we hard op XML-niveau. #2EB085 = het grote titelcijfer.)"""
+    import zipfile, os as _os
+    reps = [("1E9E74", "7C56A9"), ("1e9e74", "7c56a9"), ("2EB085", "9374C2"), ("2eb085", "9374c2"),
+            ("C5 · A1 · La Ruta", "C6+ · el reencuentro")]
+    tmp = path + ".tmp"
+    with zipfile.ZipFile(path, "r") as zin, zipfile.ZipFile(tmp, "w", zipfile.ZIP_DEFLATED) as zout:
+        for item in zin.infolist():
+            data = zin.read(item.filename)
+            if item.filename.startswith("ppt/slides/") and item.filename.endswith(".xml"):
+                t = data.decode("utf-8")
+                for a, b in reps:
+                    t = t.replace(a, b)
+                data = t.encode("utf-8")
+            zout.writestr(item, data)
+    _os.replace(tmp, path)
+
 def build(mode, out, include_teacher=True):
     E.MODE = mode
     E.new_presentation()
@@ -585,6 +608,7 @@ def build(mode, out, include_teacher=True):
     ndia_timing, nreveals = E.apply_all_timing()
     E.apply_hyperlinks()
     E.prs.save(out)
+    _repaint(out)
     ndias = len(E.prs.slides._sldIdLst)
     print(f"opgeslagen: {out} · {ndias} dia's · {ndia_timing} met animaties · {nreveals} onthullingen · {len(E.MENU_LINKS)} hyperlinks")
     return out, ndias
