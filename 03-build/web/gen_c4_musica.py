@@ -47,6 +47,51 @@ TEMA_TITELS={"presentaciones":"Presentaciones","saludos":"Saludos","nacionalidad
  "objetos":"Objetos cotidianos","casa":"La casa","profesiones":"Las profesiones","horas":"Las horas","planes":"Planes y obligaciones",
  "tareas":"En casa (tareas)","tiempo":"El tiempo","ropa":"La ropa / fiesta","mercado":"En el mercado","restaurante":"En el restaurante","hotel":"En el hotel"}
 
+# thema -> unit-EIGEN cultuurluik (Español + NL). Maakt de Cultura-tab per unit onderscheidend
+# (§12 La Ruta: elke parada verankert de cultuur in een echt thema/plek). Geen entry = geen blok
+# (zo blijft U1 ongewijzigd). Elk item: (icoon, titel_es, tekst_es, tekst_nl).
+CULTURA={
+ "presentaciones":{
+   "intro":"Als je je voorstelt, hoor je meteen iets over iemands achtergrond. Zo werken namen in de Spaanstalige wereld.",
+   "cards":[
+     ("📛","Dos apellidos","Casi todos tienen <b>dos apellidos</b>: el del padre y el de la madre (p. ej. García Márquez).",
+      "Bijna iedereen heeft <b>twee achternamen</b>: die van de vader én die van de moeder (bv. García <i>Márquez</i>)."),
+     ("🎉","El santo","Además del cumpleaños, muchos celebran <b>el día de su santo</b> (el santo con su nombre).",
+      "Naast je verjaardag vieren velen ook <b>hun naamdag</b> (de heilige met dezelfde naam)."),
+     ("🌍","Nombres del mundo","Nombres como <b>Sofía, Mateo, Lucía, Diego</b> son populares en España y Latinoamérica.",
+      "Namen als <b>Sofía, Mateo, Lucía, Diego</b> zijn populair in heel de Spaanstalige wereld — je cast-reisgenoten dragen ze."),
+     ("🤝","Mucho gusto","Al conocer a alguien: <b>«Encantado/a»</b> o <b>«Mucho gusto»</b> + a menudo dos besos.",
+      "Bij een kennismaking: <b>«Encantado/a»</b> of <b>«Mucho gusto»</b>, vaak met twee kussen."),
+   ],
+   "dato":"¿Sabías que…? En español el apellido de la madre no desaparece: los dos apellidos pasan a los hijos. Por eso mucha gente comparte apellidos… ¡pero no siempre son familia!",
+ },
+ "saludos":{
+   "intro":"Un saludo zegt veel over een cultuur: hoe dichtbij, hoe warm, hoeveel contact. Kijk hoe men groet in de Spaanstalige wereld.",
+   "cards":[
+     ("😘","Dos besos","En España, entre amigos y familia, se dan <b>dos besos</b> (primero en la mejilla izquierda).",
+      "In Spanje geef je vrienden en familie <b>twee kussen</b> (eerst op de linkerwang). Twee jongens geven meestal een hand of een <i>abrazo</i>."),
+     ("🤝","Formal o informal","Con desconocidos o personas mayores: <b>un apretón de manos</b> y <b>usted</b>.",
+      "Met onbekenden of oudere mensen: een <b>handdruk</b> en je gebruikt <b>usted</b>. Onder jongeren: <i>tú</i> en losser."),
+     ("🌎","En Latinoamérica","En muchos países se da <b>un solo beso</b> o <b>un abrazo</b>; cambia de país a país.",
+      "In veel Latijns-Amerikaanse landen geef je <b>één kus</b> of een <b>knuffel</b> — het verschilt per land."),
+     ("👋","«¡Buenas!»","Forma corta e informal de <b>buenos días / buenas tardes</b>, útil a cualquier hora.",
+      "Korte, informele vorm van <i>buenos días/tardes</i> — handig op elk moment van de dag."),
+   ],
+   "dato":"¿Sabías que…? En español el saludo cambia con la hora: buenos días (mañana) · buenas tardes (tarde) · buenas noches (noche). ¡Y «buenas noches» sirve para llegar y para despedirse!",
+ },
+}
+def cultura_block(tema):
+    c=CULTURA.get(tema)
+    if not c: return ""
+    cards="".join(
+      f'<div class="cult"><div class="cult-ic">{ic}</div><div class="cult-b">'
+      f'<div class="cult-t">{t_es}</div><div class="cult-es">{es}</div><div class="cult-nl">{nl}</div></div></div>'
+      for ic,t_es,es,nl in c["cards"])
+    return (f'<h2 class="sec">Cultura · {TEMA_TITELS.get(tema,tema)} 🌍</h2>'
+            f'<p class="lead">{c["intro"]}</p>'
+            f'<div class="cultgrid">{cards}</div>'
+            f'<div class="card cult-dato">💡 {c["dato"]}</div>')
+
 CSS=FONTS+"""
 :root{--g:#D64550;--gd:#A8323B;--gt:#FBEAEC;--ink:#20242E;--mut:#6A6E78;--paper:#FCFBF8;--crema:#F3EEE4;--line:#E7E1DF;--card:#fff;--disp:'Bricolage Grotesque',sans-serif;--body:'Inter',sans-serif;--hand:'Caveat',cursive}
 [data-theme=dark]{--ink:#ECEAE3;--mut:#A6A29A;--paper:#181513;--crema:#241C1B;--gt:#3A1E20;--line:#3a302e;--card:#211a19}
@@ -79,6 +124,13 @@ h2.sec{font-family:var(--disp);font-weight:700;color:var(--gd);font-size:24px;ma
 .mapt th,.mapt td{border-bottom:1px solid var(--line);padding:7px 9px;text-align:left}.mapt th{background:var(--gt);color:var(--gd)}
 .pill{display:inline-block;background:var(--gt);color:var(--gd);border-radius:20px;padding:3px 10px;font-size:12px;font-weight:700}
 .foot{color:var(--mut);font-size:12px;text-align:center;margin-top:30px}
+/* unit-eigen Cultura-luik */
+.cultgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.cult{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--g);border-radius:16px;padding:14px 16px}
+.cult-ic{font-size:30px;flex:none;line-height:1.1}
+.cult-t{font-family:var(--disp);font-weight:800;font-size:16px;color:var(--gd);margin-bottom:2px}
+.cult-es{font-size:13px}.cult-nl{font-size:12.5px;color:var(--mut);font-style:italic;margin-top:3px}
+.cult-dato{background:var(--gt);border:1px solid var(--line);font-size:13.5px;color:var(--ink);margin-top:14px}
 """
 
 def art_card(a):
@@ -118,6 +170,8 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
 <button class="themebtn" onclick="document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'light':'dark'">◐</button></div></header>
 <main>
  <div class="hero"><h1>La banda sonora 🎧</h1><p>Spaanstalige muziek klinkt over de hele wereld. Ontdek de artiesten van het moment, luister de klas-playlist, en vul de liedjes aan in LyricsTraining.</p></div>
+
+ {cultura_block(TEMA)}
 
  <h2 class="sec">La banda sonora de esta unidad 🎶</h2>
  <p class="lead">Het nummer bij deze les — luister mee en pik nieuwe woorden op.</p>
