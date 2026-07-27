@@ -65,6 +65,20 @@ CULTURA={
    ],
    "dato":"¿Sabías que…? En español el apellido de la madre no desaparece: los dos apellidos pasan a los hijos. Por eso mucha gente comparte apellidos… ¡pero no siempre son familia!",
  },
+ "nacionalidades":{
+   "intro":"El español is één taal die 21 landen verbindt — van Europa tot Amerika en zelfs Afrika. Eén taal, veel accenten en culturen.",
+   "cards":[
+     ("🌍","21 países","El español es lengua oficial en <b>21 países</b> y lo hablan más de <b>490 millones</b> de personas.",
+      "Spaans is officiële taal in <b>21 landen</b> en wordt door meer dan <b>490 miljoen</b> mensen gesproken — de op één na meest gesproken moedertaal ter wereld."),
+     ("🇬🇶","¿Español en África?","<b>Guinea Ecuatorial</b> es el único país africano donde el español es oficial.",
+      "<b>Equatoriaal-Guinea</b> is het enige Afrikaanse land waar Spaans officieel is — een verrassing voor velen."),
+     ("🗣️","Un idioma, muchos acentos","Un mexicano, un argentino y un español hablan el mismo idioma… ¡pero suenan muy distinto!",
+      "Een Mexicaan, een Argentijn en een Spanjaard spreken dezelfde taal… maar klinken heel verschillend (de <i>c/z</i>, de <i>ll</i>, het ritme)."),
+     ("🇧🇪","¿Y tú?","En Bélgica hablamos neerlandés, francés y alemán — y ahora también <b>un poco de español</b>.",
+      "In België spreken we Nederlands, Frans en Duits — en nu ook <b>een beetje Spaans</b>. Jij hoort er ook bij op de kaart!"),
+   ],
+   "dato":"¿Sabías que…? El gentilicio se escribe con minúscula: soy belga, hablo neerlandés. Y «americano» no significa solo «de EE. UU.»: ¡toda América (del Norte, Central y del Sur) es América!",
+ },
  "saludos":{
    "intro":"Un saludo zegt veel over een cultuur: hoe dichtbij, hoe warm, hoeveel contact. Kijk hoe men groet in de Spaanstalige wereld.",
    "cards":[
