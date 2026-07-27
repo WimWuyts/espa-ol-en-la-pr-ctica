@@ -243,6 +243,15 @@ body.editing [contenteditable="true"]:focus{ outline:2px solid #157355; backgrou
 .ptext{ border:1px solid var(--line); border-top:4px solid var(--g); border-radius:12pt; padding:4mm 5mm; background:#fff; font-size:9.5pt; }
 .ptext .ph{ display:flex; gap:3mm; align-items:center; margin-bottom:2mm; } .ptext .ph .av{ width:12mm;height:12mm;border-radius:50%;overflow:hidden;flex:none } .ptext .ph .av svg{width:100%;height:auto} .ptext .ph .nm{ font-family:var(--disp); font-weight:700; font-size:11pt; color:var(--ink); } .ptext .ph .fr{ font-size:8pt; color:var(--mut); }
 .ptext p{ margin:1.5mm 0; } .evi{ background:#FEF3C7; border-radius:3pt; padding:.1mm 1mm; }
+/* PAREL-2 · árbol genealógico (Rosalía) */
+.arbol{ border:1.5px solid var(--g); border-radius:16pt; padding:4mm 5mm; margin:4mm 0; background:#fff; break-inside:avoid; }
+.arbol .cap{ font-family:var(--hand); font-size:14pt; color:var(--gd); margin-bottom:1mm; }
+.arbolwrap{ display:grid; grid-template-columns:1.35fr 1fr; gap:6mm; align-items:center; margin:4mm 0; }
+.arbolwrap .arbol{ margin:0; }
+.ojofam{ border:1.5px solid var(--red); border-radius:12pt; padding:3.5mm 5mm; background:#fff; }
+.ojofam .oh{ font-family:var(--disp); font-weight:700; color:var(--red); font-size:10.5pt; }
+.ojofam p{ margin:2mm 0 0; font-size:9.3pt; } .ojofam .pair{ display:block; margin:1.5mm 0; }
+.ojofam .k{ font-weight:700; color:var(--gd); }
 /* horario tabel (routine profiel) */
 .horario{ width:100%; font-size:9pt; } .horario td,.horario th{ border:1px solid var(--line); padding:1.6mm 3mm; } .horario th{ background:var(--gt); color:var(--gd); font-size:8pt; text-transform:uppercase; } .horario .hh{ font-family:var(--disp); font-weight:700; color:var(--gd); white-space:nowrap; }
 """
@@ -389,6 +398,47 @@ def clock(h, m):
 def clockcard(h, m, es, nl):
     return f'<div class="clockcard">{clock(h,m)}<div class="es">{es}</div><div class="nl">{nl}</div></div>'
 
+def arbol_rosalia():
+    # PAREL-2 · el árbol genealógico de Rosalía (flat-vector SVG, print-veilig).
+    # Personas: abuelos → padres → Pili + Rosalía → Genís (sobrino de Rosalía).
+    G, GD, GT = "#1E9E74", "#157355", "#E4F4EE"
+    def box(x, y, name, role, hi=False):
+        fill = GD if hi else "#fff"
+        stroke = GD if hi else "#CFCEC8"
+        tcol = "#fff" if hi else "#20242E"
+        rcol = "#DDF3EA" if hi else "#6A6E78"
+        return (f'<g><rect x="{x}" y="{y}" width="130" height="44" rx="10" fill="{fill}" '
+                f'stroke="{stroke}" stroke-width="{2.4 if hi else 1.6}"/>'
+                f'<text x="{x+65}" y="{y+19}" text-anchor="middle" fill="{tcol}" '
+                f'font-family="Bricolage Grotesque,sans-serif" font-weight="700" font-size="14">{name}</text>'
+                f'<text x="{x+65}" y="{y+34}" text-anchor="middle" fill="{rcol}" '
+                f'font-family="Inter,sans-serif" font-size="9.5">{role}</text></g>')
+    lines = (f'<g stroke="{G}" stroke-width="2" fill="none">'
+             # abuelos pareja
+             '<path d="M200 30 H320"/>'
+             # bajada a los padres (Pilar es hija de los abuelos)
+             '<path d="M260 30 V61 H385 V92"/>'
+             # padres pareja
+             '<path d="M200 114 H320"/>'
+             # bajada + reparto a las dos hijas
+             '<path d="M260 114 V149 H135 V176"/>'
+             '<path d="M260 149 H385 V176"/>'
+             # Pili -> Genís (sobrino)
+             '<path d="M135 220 V260"/>'
+             '</g>')
+    boxes = "".join([
+        box(70, 8, "Antonio", "el abuelo"),
+        box(320, 8, "Carmen", "la abuela"),
+        box(70, 92, "José Manuel", "el padre"),
+        box(320, 92, "Pilar", "la madre"),
+        box(70, 176, "Pili", "la hermana"),
+        box(320, 176, "Rosalía", "la cantante", hi=True),
+        box(70, 260, "Genís", "el sobrino de Rosalía"),
+    ])
+    svg = (f'<svg viewBox="0 0 470 316" style="width:100%;height:auto;display:block">'
+           f'<rect width="470" height="316" fill="{GT}" rx="14"/>{lines}{boxes}</svg>')
+    return f'<div class="arbol">{svg}</div>'
+
 # ================= BODY =================
 BODY = []
 def P(*x): BODY.extend(x)
@@ -520,7 +570,24 @@ P(lpd(("7","woordenschat: la familia"), ("8","taalsysteem: tener"), ("3","je fam
 P('</div>')
 # §1.1 vocab familia
 P('<h3 style="margin-top:6mm">§1.1 · Los miembros de la familia — el vocabulario</h3>')
-P('<p style="font-size:9.6pt">① <b>El árbol de Lucía.</b> Observa y adivina el significado. <span class="gloss">De stamboom van Lucía — raad de betekenis.</span></p>')
+# --- PAREL-2 · el árbol genealógico de Rosalía ---
+P('<p style="font-size:9.6pt">① <b>El árbol de Rosalía.</b> Antes de tu familia, conocemos a la familia de una cantante famosa: <b>Rosalía</b>. Explora su árbol y aprende el vocabulario de la familia. <span class="gloss">We leren het familievocabulaire via de stamboom van Rosalía.</span></p>')
+P('<div class="arbolwrap">')
+P('<div>' + arbol_rosalia() + '<div class="asset" style="margin-top:1mm">Los nombres de los abuelos son de ejemplo (poco se sabe públicamente).</div></div>')
+P('<div class="ojofam"><div class="oh">💡 ¡Ojo! — «neef/nicht» = dos palabras</div>'
+  '<p>En neerlandés <b>«neef/nicht»</b> son <b>dos cosas</b> en español:'
+  '<span class="pair"><span class="k">el primo / la prima</span> = kind van je <b>oom of tante</b> <span class="gloss">(tío/tía)</span></span>'
+  '<span class="pair"><span class="k">el sobrino / la sobrina</span> = kind van je <b>broer of zus</b> <span class="gloss">(hermano/hermana)</span></span>'
+  '<b>Genís</b> es el <b>sobrino</b> de Rosalía (el hijo de su hermana Pili) — <b>no</b> su <span class="trap">primo</span>.</p></div>')
+P('</div>')
+P(actx(1, "¿Quién es quién en el árbol de Rosalía?",
+  [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★☆☆"}],
+  '<p><i>árbol lezen.</i> Kijk naar de stamboom en vul het juiste familiewoord in.</p>'
+  '<p style="margin-left:12.5mm">a) Pilar es la <span class="wl md"></span> de Rosalía.<br>'
+  'b) Antonio y Carmen son los <span class="wl md"></span> de Rosalía.<br>'
+  'c) Pili es la <span class="wl md"></span> de Rosalía.<br>'
+  'd) Genís es el <span class="wl md"></span> de Rosalía (no el primo).</p>', apoyo="BANCO (madre · abuelos · hermana · sobrino)"))
+P('<p style="font-size:9.6pt">② <b>Los miembros — la ficha.</b> Observa y adivina el significado. <span class="gloss">De familieleden — raad de betekenis.</span></p>')
 P('<div class="fichacard">'
   '<div><div class="row"><span class="k">los padres</span><span class="v">Antonio + Rosa <span class="nl">de ouders</span></span></div>'
   '<div class="row"><span class="k">el padre / la madre</span><span class="v">papá / mamá <span class="nl">vader / moeder</span></span></div>'
@@ -530,15 +597,15 @@ P('<div class="fichacard">'
   '<div class="row"><span class="k">el primo / la prima</span><span class="v">Julia <span class="nl">neef / nicht</span></span></div>'
   '<div class="row"><span class="k">el hijo / la hija</span><span class="v">de zoon / dochter</span></div>'
   '<div class="row"><span class="k">la mascota</span><span class="v">el perro, el gato <span class="nl">huisdier</span></span></div></div></div>')
-P('<p style="font-size:9.6pt">② <b>Organiza en clusters</b> — de familie als netwerk, niet als lijst:</p>')
+P('<p style="font-size:9.6pt">③ <b>Organiza en clusters</b> — de familie als netwerk, niet als lijst:</p>')
 P(clusters([
   ("👴","Los mayores",["los abuelos: abuelo · abuela","los padres: padre · madre","los tíos: tío · tía"],"De oudere generaties."),
   ("🧒","Mi generación",["hermano · hermana","primo · prima","yo"],"Broers, zussen, neven, nichten."),
   ("💞","Otros",["marido · mujer","hijo · hija · nieto/a","mayor ↔ menor"],"Relaties & leeftijd."),
 ]))
-P('<p style="font-size:9.6pt">③ <b>Parejas: masculino ↔ femenino.</b> Veel familiewoorden komen in paren (-o/-a):</p>')
+P('<p style="font-size:9.6pt">④ <b>Parejas: masculino ↔ femenino.</b> Veel familiewoorden komen in paren (-o/-a):</p>')
 P(vpairs([("el hermano","la hermana"),("el abuelo","la abuela"),("el tío","la tía"),("el primo","la prima"),("el hijo","la hija"),("el nieto","la nieta")]))
-P(actx(1, "Empareja miembro ↔ definición",
+P(actx(2, "Empareja miembro ↔ definición",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★☆☆"}],
   '<p><i>woord-betekenis-koppeling.</i> Verbind het familielid met de omschrijving (schrijf de letter).</p>'
   '<table class="mp"><thead><tr><th>Miembro</th><th>Letra</th><th></th><th>Definición</th></tr></thead><tbody>'
@@ -546,11 +613,11 @@ P(actx(1, "Empareja miembro ↔ definición",
   '<tr><td>2 · la prima</td><td><span class="wl sm"></span></td><td>B</td><td>de vader van mijn vader</td></tr>'
   '<tr><td>3 · el tío</td><td><span class="wl sm"></span></td><td>C</td><td>de dochter van mijn tante</td></tr>'
   '<tr><td>4 · la hermana</td><td><span class="wl sm"></span></td><td>D</td><td>de andere dochter van mijn ouders</td></tr></tbody></table>', apoyo="BANCO"))
-P(actx(2, "Masculino o femenino — clasifica",
+P(actx(3, "Masculino o femenino — clasifica",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p><i>sorteren + eigen woord.</i> Zet elk woord in de juiste kolom. <span class="words"><b>el primo · la abuela · el hijo · la tía · el hermano · la madre</b></span></p>'
   + sortcols([("Masculino (el)",""),("Femenino (la)","")]), apoyo="BANCO → +1 eigen woord"))
-P(actx(3, "El árbol genealógico — completa",
+P(actx(4, "El árbol genealógico — completa",
   [{"t":"🔍 Analizar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p><i>stamboom invullen.</i> Kijk naar Lucía: haar ouders zijn Antonio en Rosa; haar opa en oma zijn Pepe en Carmen. Vul in wat Pepe en Carmen zijn voor Lucía, en wat Lucía is voor hen.</p>'
   '<p style="margin-left:12.5mm">Pepe y Carmen son los <span class="wl md"></span> de Lucía.<br>Lucía es la <span class="wl md"></span> de Pepe y Carmen.<br>Antonio es el <span class="wl md"></span> de Lucía.</p>', apoyo="BANCO (abuelos · nieta · padre)"))
@@ -583,11 +650,11 @@ P(blocks([
 P(regla("Regla · tener",
   '<p><b>tener</b> = hebben. Onregelmatig: <b>yo tengo</b> (met -g-) en <b>e→ie</b> in tú/él/ellos (t<b>ie</b>nes, t<b>ie</b>ne, t<b>ie</b>nen). Nosotros/vosotros gewoon: ten<b>e</b>mos, ten<b>é</b>is. '
   '<br>🟡 <b>Ojo:</b> leeftijd = <b>tener … años</b> (niet <span class="trap">ser</span>): <i>Tengo 16 años.</i></p>'))
-P(actx(4, "Elige la forma de tener",
+P(actx(5, "Elige la forma de tener",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p><i>vorm herkennen.</i> Kruis de juiste vorm aan.</p>'
   '<p style="margin-left:12.5mm">a) Yo ☐ tengo ☐ tienes dos primas. &nbsp; b) ¿Tú ☐ tiene ☐ tienes hermanos?<br>c) Mis abuelos ☐ tienen ☐ tenemos un gato. &nbsp; d) Nosotros ☐ tienen ☐ tenemos una casa grande.</p>', apoyo="MODELO"))
-P(actx(5, "Conjuga tener (cloze)",
+P(actx(6, "Conjuga tener (cloze)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p><i>cloze klassiek · werkwoordsvormen nagerekend.</i> Vul de juiste vorm van <b>tener</b> in.</p>'
   '<p style="margin-left:12.5mm">1. Yo <span class="wl md"></span> dos hermanos.<br>'
@@ -596,7 +663,7 @@ P(actx(5, "Conjuga tener (cloze)",
   '4. Nosotros <span class="wl md"></span> una familia grande.<br>'
   '5. Mis tíos <span class="wl md"></span> tres hijos.</p>'
   '<p style="margin-left:12.5mm" class="gloss">✅ De oplossingen staan online (zelfcorrectie op de digitale pagina).</p>', apoyo="PISTA (kijk naar de persoon) → SIN AYUDA"))
-P(actx(6, "¿Cuántos tienes? — pregunta y responde",
+P(actx(7, "¿Cuántos tienes? — pregunta y responde",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p><i>gestuurde interactie.</i> Vraag je buur naar zijn/haar familie en noteer de aantallen.</p>'
   '<table class="wtab mp"><thead><tr><th>¿Cuántos/as… tienes?</th><th>Mi compañero/a</th></tr></thead><tbody>'
@@ -608,13 +675,13 @@ P('</div>')  # page §1.2
 P('<div class="page">')
 P('<h3>§1.3 · Comunicar — presenta a tu familia</h3>')
 P('<p style="font-size:9.6pt">Nu je de leden kent en met <b>tener</b> kan tellen, stel je je gezin voor.</p>')
-P(actx(7, "Mi familia en números",
+P(actx(8, "Mi familia en números",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p><i>gestuurde productie.</i> Schrijf drie zinnen over jouw familie met <b>tener</b> + een aantal.</p>'
   '<p style="margin-left:12.5mm">1) En mi familia somos <span class="wl md"></span>.<br>2) Tengo <span class="wl lg"></span>.<br>3) Mi familia tiene <span class="wl lg"></span>.</p>', apoyo="MARCO → SIN AYUDA"))
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha a Lucía presentar a su familia.</b> <span class="gloss">Luister; noteer hoeveel broers/zussen en huisdieren ze heeft.</span></div>',
            qr("Escanea y escucha", "Audio 1 · Mi familia · 0:45", seed=221)))
-P(actx(8, "Escucha y anota",
+P(actx(9, "Escucha y anota",
   [{"t":"👂 Escuchar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p><i>selectief luisteren.</i> Vul in wat je hoort over de familie van Lucía.</p>'
   '<p style="margin-left:12.5mm">hermanos: <span class="wl sm"></span> · primos: <span class="wl sm"></span> · mascota: <span class="wl md"></span> · abuelos: <span class="wl sm"></span></p>', apoyo="PISTA (números)"))
@@ -623,7 +690,17 @@ P(tarea_com("Tarea comunicativa · Preséntame a tu gente",
   '<p><b>Afzender·ontvanger·doel·situatie·resultaat:</b> jij en je buur wisselen jullie families uit, net zoals Lucía haar album toont. Vertel wie er in je gezin zit en hoeveel je er van elk hebt. Je buur tekent jouw <b>árbol genealógico</b>. <span class="gloss">«En mi familia somos cuatro. Tengo una hermana y un perro…»</span></p>'
   '<div class="wbox sm"></div>'
   '<div class="steun" style="margin-left:0mm">Apoyo: MODELO (Lucía) → SIN AYUDA · [CROSS: dia 6 · HTML «Carrusel: mi familia» — grábate]</div>'))
-P('<div class="route-note">🎮 <b>Juega online:</b> «memoria de la familia», «parentesco» en «tener (cloze)».</div>')
+P(actx(10, "Dictado preparado — la familia de Lucía",
+  [{"t":"👂 Escuchar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
+  '<p><i>dictee · traditioneel.</i> Luister naar de audio (of je leerkracht leest voor) en schrijf de vier zinnen op. Let op de familiewoorden en <b>tener</b>.</p>'
+  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>'
+  '2. <span class="wl full"></span>'
+  '3. <span class="wl full"></span>'
+  '4. <span class="wl full"></span></p>'
+  '<p style="margin-left:12.5mm" class="gloss">✅ Vergelijk daarna met de tekst online (zelfcorrectie).</p>', apoyo="BANCO (familiewoorden) → SIN AYUDA"))
+P(audiorow('<div class="ic">🎧</div><div><b>Repite en voz alta.</b> <span class="gloss">Luister opnieuw en herhaal elke zin — let op de klemtoon van de namen.</span></div>',
+           qr("Escanea y repite", "Audio 1b · Dictado · 0:40", seed=222)))
+P('<div class="route-note">🎮 <b>Juega online:</b> «memoria de la familia», «parentesco» en «tener (cloze)» — met zelfcorrectie en meerdere reeksen op de digitale pagina.</div>')
 P('</div>')  # page §1.3
 
 # ================= §2 · LOS POSESIVOS =================
@@ -983,7 +1060,22 @@ P(actx(3, "¿por qué? — responde con porque",
   '<p style="margin-left:12.5mm">1. ¿Por qué te gusta tu familia? → Porque <span class="wl lg"></span><br>'
   '2. ¿Por qué es especial tu abuelo/a? → Porque <span class="wl lg"></span><br>'
   '3. ¿Por qué es simpático tu mejor amigo/a? → Porque <span class="wl lg"></span></p>', apoyo="MARCO (Porque es… / tiene…) → SIN AYUDA"))
-P('<div class="route-note">🎮 <b>Juega online:</b> «conectores» en «caza del adjetivo».</div>')
+P(actx(4, "Ordena las palabras — construye la frase",
+  [{"t":"🔍 Analizar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
+  '<p><i>ordenen · traditioneel.</i> Zet de woorden in de juiste volgorde tot een correcte zin (let op hoofdletter + punt).</p>'
+  '<p style="margin-left:12.5mm">1. simpática · mi · muy · es · hermana → <span class="wl lg"></span><br>'
+  '2. alto · pero · mi · es · tímido · primo → <span class="wl lg"></span><br>'
+  '3. porque · me · familia · alegre · gusta · es · mi → <span class="wl full"></span>'
+  '4. también · mi · morena · abuela · es → <span class="wl lg"></span></p>'
+  '<p style="margin-left:12.5mm" class="gloss">✅ Zelfcorrectie online.</p>', apoyo="PISTA (begin met het onderwerp) → SIN AYUDA"))
+P(actx(5, "Corrige la ortografía",
+  [{"t":"🔍 Analizar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
+  '<p><i>verbeteren · ortografía.</i> Zoek en verbeter de fout in elke zin (hoofdletter, concordancia of edad).</p>'
+  '<table class="mp"><thead><tr><th>Frase con error</th><th>Correcta</th></tr></thead><tbody>'
+  '<tr><td>mi hermano se llama marco.</td><td><span class="wl lg"></span></td></tr>'
+  '<tr><td>Mi madre es alto y morena.</td><td><span class="wl lg"></span></td></tr>'
+  '<tr><td>Mi abuela es 70 años.</td><td><span class="wl lg"></span></td></tr></tbody></table>', apoyo="PISTA (mayúscula · -o/-a · tener años)"))
+P('<div class="route-note">🎮 <b>Juega online:</b> «conectores», «caza del adjetivo» en «ortografía» — meerdere reeksen met zelfcorrectie op de digitale pagina.</div>')
 P('</div>')  # page Taller
 
 # ================= CULTURA =================

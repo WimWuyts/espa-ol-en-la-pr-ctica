@@ -91,9 +91,12 @@ def s02_menu():
              [[(es, {"size": 14.5, "bold": True, "color": WHITE, "font": DISPLAY})]], anchor=MSO_ANCHOR.MIDDLE)
         text(s, x + Inches(0.18), y + Inches(0.68), tw - Inches(0.36), Inches(1.2), [[(nl, {"size": 11.5, "color": INK})]], line=1.12)
         chip(s, x + Inches(0.18), y + th - Inches(0.45), f"→ dia {dia}", fill=GT, tcolor=GD, size=9.5)
+    chip(s, Inches(0.5), Inches(7.0), "🔗 Cruzar · libro (§1–§V + Lectura) ↔ página digital (20 juegos · audio · flip cards · recorder)",
+         fill=GT, tcolor=GD, size=11)
     foot(s)
     notes(s, "TEACHER · LESSON_MENU. Elke tegel = hyperlink naar de sectie; op elke oefendia staat ⌂ Menú terug. "
-             "Bij veel zij-instromers: begin gerust bij §1 (datos) — de kern van zich voorstellen. Richttijd 50 min.")
+             "Bij veel zij-instromers: begin gerust bij §1 (datos) — de kern van zich voorstellen. Richttijd 50 min. "
+             "Kruisverwijzing print/HTML: elke sectie verwijst naar «oefen online» op de verrijkte hub (20 juegos + drills + flip cards).")
 
 # ============================================================ DIA 3 · VOCABULARY — datos (ficha)
 def s03_datos():
@@ -583,7 +586,7 @@ def s21_teacher():
     blocks=[("Timing (50 min)","Menu 2' · datos/presentarse 10' · ser/presente 12' · reading/listening 8' · interrogativos + speaking 10' · cultura 4' · Tarea-briefing 4'."),
             ("Kernvalstrikken","edad = TENER · nationaliteit kleine letter · ¿Cuál? vóór ser · want/omdat = porque · el idioma/día (m.) · «e» vóór inglés."),
             ("Differentiatie (zij-instromers)","Alles start vanaf nul. Sterkere leerlingen: meer landen + fictieve identiteit. Zwakkere: marco/tabel langer open houden."),
-            ("Digitaal","18 spellen + flip cards + klikbare kaart + recorder op de página digital. QR's in het boek → juiste anker. Conjugador = aparte tool."),
+            ("Digitaal","20 spellen + flip cards + klikbare kaart + recorder op de página digital. QR's in het boek → juiste anker. Conjugador = aparte tool."),
             ("Evaluatie","Tarea «Mi pasaporte» met rúbrica (4 criteria). LPD 3·4·7·8 + 5 (cultura) + 1·2 (receptief).")]
     y=Inches(1.4)
     for t,b in blocks:
@@ -613,17 +616,10 @@ def build(mode, out, include_teacher=True):
     print(f"opgeslagen: {out} · {ndias} dia's · {ndia_timing} met animaties · {nreveals} onthullingen · {len(E.MENU_LINKS)} hyperlinks")
     return out, ndias
 
-def build_alumno():
+if __name__ == "__main__":
+    # BINDEND (auteur 2026-07-26): alumno = gewone .pptx (NIET .ppsx). to_ppsx() niet gebruiken.
+    build("docente", OUT_DOCENTE, include_teacher=True)
     build("alumno", OUT_ALUMNO_PPTX, include_teacher=False)
     from pptx import Presentation
-    _ = Presentation(OUT_ALUMNO_PPTX)
-    E.to_ppsx(OUT_ALUMNO_PPTX, OUT_ALUMNO)
-    import zipfile
-    with zipfile.ZipFile(OUT_ALUMNO) as z:
-        assert z.testzip() is None
-        assert "slideshow.main+xml" in z.read("[Content_Types].xml").decode("utf-8")
-    print("opgeslagen (.ppsx geverifieerd):", OUT_ALUMNO)
-
-if __name__ == "__main__":
-    build("docente", OUT_DOCENTE, include_teacher=True)
-    build_alumno()
+    d = Presentation(OUT_DOCENTE); a = Presentation(OUT_ALUMNO_PPTX)
+    print("docente dia's:", len(d.slides._sldIdLst), "· alumno dia's:", len(a.slides._sldIdLst))

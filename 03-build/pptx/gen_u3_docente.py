@@ -560,7 +560,7 @@ def s20_mezcla():
 # ============================================================ DIA 21 · FEEDBACK/REPASO
 def s21_repaso():
     s = slide(); bg(s, PAPER)
-    sectionbar(s, "REPASO · LO ESENCIAL", "Lo esencial de un vistazo", "De volledige herhaling (24 spellen, drills) staat online. Hier: de kern + semáforo.", num=5)
+    sectionbar(s, "REPASO · LO ESENCIAL", "Lo esencial de un vistazo", "De volledige herhaling (20 spellen, drills) staat online. Hier: de kern + semáforo.", num=5)
     ess=["La hora: Es la una · Son las dos… · y media/cuarto · menos cuarto · en punto · ¿a qué hora? a las…",
          "Reflexivos: me/te/se/nos/os/se + verbo (me levanto). Pronombre vóór het werkwoord.",
          "Presente irregular: o→ue (puedo), e→ie (empiezo), e→i (pido) · hago · voy · salgo. NIET bij nosotros/vosotros.",
@@ -580,7 +580,7 @@ def s21_repaso():
             chip(s,Inches(8.0)+j*Inches(1.5),y+Inches(0.03),em+" ",fill=WHITE,tcolor=col,size=12,w=Inches(1.3))
         y=y+Inches(0.42)
     foot(s)
-    notes(s, "TEACHER · FEEDBACK/REPASO. Semáforo = zelfevaluatie. Repaso-drills online (24 spellen + zelfcorrectie). "
+    notes(s, "TEACHER · FEEDBACK/REPASO. Semáforo = zelfevaluatie. Repaso-drills online (20 spellen + zelfcorrectie). "
              "Bruggetje: U4 «Me gusta» (València) — gustos & aficiones (me gusta / me encanta).")
 
 # ============================================================ DIA 22 · TEACHER_NOTES
@@ -590,7 +590,7 @@ def s22_teacher():
     blocks=[("Timing (50 min)","Menu 2' · la hora 8' · rutina/reflexivos 10' · presente irregular 12' · reading/listening 8' · speaking/writing 6' · Tarea-briefing 4'."),
             ("Kernvalstrikken","Es la una / Son las… · pronomen vóór verbo (me levanto) · nosotros/vosotros géén stamwissel · hago/salgo/voy · de la vs por la · días/meses klein."),
             ("Differentiatie (zij-instromers)","Alles start vanaf nul. Sterker: hele dag + frecuencia. Zwakker: la hora eerst automatiseren, marco/tabel langer open."),
-            ("Digitaal","24 spellen + flip cards + klikbare kaart + recorder («la hora», «mi día», «mensaje de voz») op de página digital. QR's → juiste anker. Conjugador = aparte tool."),
+            ("Digitaal","20 spellen + flip cards + klikbare kaart + recorder («la hora», «mi día», «mensaje de voz») op de página digital. QR's → juiste anker. Conjugador = aparte tool."),
             ("Evaluatie","Tarea «Un día en mi vida» met rúbrica (4 criteria). LPD 3·4·7·8 + 5 (cultura: el horario) + 1·2 (receptief: el día de Pau).")]
     y=Inches(1.4)
     for t,b in blocks:

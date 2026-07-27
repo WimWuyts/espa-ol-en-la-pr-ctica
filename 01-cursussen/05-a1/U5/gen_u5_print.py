@@ -458,7 +458,7 @@ P(f'''
       <div class="ej" style="margin-top:2mm"><b>1 · groen</b> = de cursus/unit. <b>2 · función</b>: <span class="fx per">persoon</span> <span class="fx vb">werkwoord</span> <span class="fx ob">voorwerp</span> <span class="fx ti">tijd</span> <span class="fx pl">plaats</span> <span style="color:var(--red);font-weight:700">🔴 valstrik</span>.</div>
       <div class="anchor gloss" style="margin-top:2mm">Kleur is <b>nooit</b> de enige drager — altijd óók label of vorm.</div></div>
     <div class="pcard"><div class="t" style="font-size:10.5pt">Papel + pantalla</div>
-      <div class="ej" style="margin-top:2mm">📄 el libro · 🎮 la <b>página digital</b> (14 spellen, audio, flip cards) · 📊 el PowerPoint. De <b>QR</b>-codes brengen je naar de juiste online-oefening.</div>
+      <div class="ej" style="margin-top:2mm">📄 el libro · 🎮 la <b>página digital</b> (20 spellen, audio, flip cards) · 📊 el PowerPoint. De <b>QR</b>-codes brengen je naar de juiste online-oefening.</div>
       <div class="anchor gloss" style="margin-top:2mm">Print werkt <b>volledig zonder</b> scherm; het <b>repaso</b> staat online.</div></div>
   </div>
 </div>
@@ -1004,7 +1004,7 @@ P('</div>')  # page Tarea
 # ================= REPASO =================
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">✓</span><span class="pk">Repaso · lo esencial</span>')
-P('<div class="intro"><b>ES:</b> Lo más importante de un vistazo. El <b>repaso completo</b> (quiz, drills, 14 juegos) está <b>online</b>. <span class="gloss">Het belangrijkste in één oogopslag.</span></div>')
+P('<div class="intro"><b>ES:</b> Lo más importante de un vistazo. El <b>repaso completo</b> (quiz, drills, 20 juegos) está <b>online</b>. <span class="gloss">Het belangrijkste in één oogopslag.</span></div>')
 P('</div>')
 P('<div class="esen"><b class="tt">Lo esencial de un vistazo</b><ul>'
   '<li><b>Cantidades:</b> much<b>o</b>/much<b>a</b>/much<b>os</b>/much<b>as</b> (past aan) · <b>un poco de</b> (blijft gelijk) · un kilo de · una botella de.</li>'
@@ -1067,7 +1067,7 @@ P(actx("V.5", "Comunicar — mi menú ideal",
   '<p><i>vrije productie → transfer.</i> Schrijf jouw ideale menu (primero, segundo, postre, bebida) met <b>voy a pedir…</b> én telkens waarom. Zeg het daarna hardop tegen je buur, die als camarero reageert.</p>'
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="MARCO (Voy a pedir … porque …) → SIN AYUDA"))
 P(mispal("Mis palabras de la unidad", 4))
-P('<div class="guide"><div class="ic">🎴</div><div><span class="hand">Sigue en la página digital:</span> <span class="g">flip cards (ES↔NL), audio en de 14 spellen bouwen de steun verder af.</span></div></div>')
+P('<div class="guide"><div class="ic">🎴</div><div><span class="hand">Sigue en la página digital:</span> <span class="g">flip cards (ES↔NL), audio en de 20 spellen bouwen de steun verder af.</span></div></div>')
 P('</div>')  # page §V
 
 # ---------- EDITBAR ----------

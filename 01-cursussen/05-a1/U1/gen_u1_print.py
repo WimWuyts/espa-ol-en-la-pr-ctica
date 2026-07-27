@@ -44,7 +44,7 @@ body{ margin:0; font-family:var(--body); color:var(--ink); background:var(--pape
 .page{ padding:0 15mm; }
 .gloss{ color:var(--mut); font-style:italic; }
 h2,h3,.pk,.divider,.se,.acthead,.intro,.route-note,.lpd,.asset{ break-after:avoid; }
-.regla,.truc,.pcard,.call,.qr,.guide,.esen,.audiorow,.wcols,.wbox,.sem,.acthead,.chatline,.fichacard{ break-inside:avoid; }
+.regla,.truc,.pcard,.call,.qr,.guide,.esen,.audiorow,.wcols,.wbox,.sem,.acthead,.chatline,.fichacard,.mispal,.ptext,.lecdoel,.gustobars,.menu{ break-inside:avoid; }
 .newpage{ break-before:page; }
 .act{ break-inside:auto; }
 .alf tr,.mp tr,.sem tr,.conj tr{ break-inside:avoid; } .alf thead,.mp thead,.sem thead,.conj thead{ display:table-header-group; }
@@ -254,6 +254,19 @@ body.editing [contenteditable="true"]:focus{ outline:2px solid #157355; backgrou
 .ptext{ border:1px solid var(--line); border-top:4px solid var(--g); border-radius:12pt; padding:4mm 5mm; background:#fff; font-size:9.5pt; }
 .ptext .ph{ display:flex; gap:3mm; align-items:center; margin-bottom:2mm; } .ptext .ph .av{ width:12mm;height:12mm;border-radius:50%;overflow:hidden;flex:none } .ptext .ph .av svg{width:100%;height:auto} .ptext .ph .nm{ font-family:var(--disp); font-weight:700; font-size:11pt; color:var(--ink); } .ptext .ph .fr{ font-size:8pt; color:var(--mut); }
 .ptext p{ margin:1.5mm 0; } .evi{ background:#FEF3C7; border-radius:3pt; padding:.1mm 1mm; }
+/* smaak-/encuesta-bars (infografía · lezen van data) — kit-pariteit met U5 */
+.gustobars{ margin:3mm 0; } .gbar{ display:grid; grid-template-columns:40mm 1fr; gap:3mm; align-items:center; margin:1.8mm 0; font-size:9.2pt; }
+.gbar .track2{ background:var(--crema); border-radius:6pt; height:6mm; position:relative; overflow:hidden; }
+.gbar .fill{ background:var(--g); height:100%; border-radius:6pt; }
+.gbar .pct{ position:absolute; right:2mm; top:0; line-height:6mm; font-size:8pt; color:#fff; font-weight:700; }
+.infocard{ border:1px solid var(--line); border-top:4px solid var(--g); border-radius:12pt; padding:4mm 5mm; background:#fff; margin:3mm 0; }
+.infocard .it{ font-family:var(--disp); font-weight:700; font-size:11pt; color:var(--gd); } .infocard .isub{ font-size:8pt; color:var(--mut); margin-bottom:1mm; }
+/* menú-kaart (kit-pariteit met U5) */
+.menu{ border:1.5px solid var(--gd); border-radius:14pt; padding:4mm 6mm; margin:4mm 0; background:#fff; }
+.menu .mt{ font-family:var(--disp); font-weight:800; font-size:13pt; color:var(--gd); text-align:center; border-bottom:2px dashed var(--line2); padding-bottom:2mm; }
+.menu .sec2{ font-family:var(--disp); font-weight:700; font-size:9.6pt; color:var(--ww); text-transform:uppercase; letter-spacing:.06em; margin:3mm 0 1mm; }
+.menu .mi{ display:flex; justify-content:space-between; font-size:9.4pt; padding:.8mm 0; border-bottom:1px dotted var(--line); }
+.menu .mi .pr{ color:var(--gd); font-weight:700; }
 """
 
 # ---------------- component-helpers ----------------
@@ -386,6 +399,10 @@ def xray(sentence, parts):
     p = "".join(f'<div><b>{w}</b>{fn}</div>' for w, fn in parts)
     return f'<div class="xray"><div class="xs">{sentence}</div><div class="xrow">{p}</div></div>'
 
+def gustobars(rows):
+    inner = "".join(f'<div class="gbar"><span>{lab}</span><div class="track2"><div class="fill" style="width:{p}%"></div><span class="pct">{p}%</span></div></div>' for lab, p in rows)
+    return f'<div class="gustobars">{inner}</div>'
+
 def agree_wrap():
     return ('<div class="agree"><div class="w"><u>el</u> paí<u>s</u></div><div class="tie">m. · enkelvoud</div>'
             '<div class="w" style="margin-top:2mm"><u>los</u> paíse<u>s</u></div><div class="tie">m. · meervoud</div></div>'
@@ -466,7 +483,7 @@ P(f'''
       <div class="ej" style="margin-top:2mm"><b>1 · groen</b> = de cursus/unit. <b>2 · función</b>: <span class="fx per">persoon</span> <span class="fx vb">werkwoord</span> <span class="fx ob">voorwerp</span> <span class="fx ti">tijd</span> <span class="fx pl">plaats</span> <span style="color:var(--red);font-weight:700">🔴 valstrik</span>.</div>
       <div class="anchor gloss" style="margin-top:2mm">Kleur is <b>nooit</b> de enige drager — altijd óók label of vorm.</div></div>
     <div class="pcard"><div class="t" style="font-size:10.5pt">Papel + pantalla</div>
-      <div class="ej" style="margin-top:2mm">📄 el libro · 🎮 la <b>página digital</b> (24 spellen, audio, flip cards) · 📊 el PowerPoint. De <b>QR</b>-codes brengen je naar de juiste online-oefening.</div>
+      <div class="ej" style="margin-top:2mm">📄 el libro · 🎮 la <b>página digital</b> (20 spellen, audio, flip cards) · 📊 el PowerPoint. De <b>QR</b>-codes brengen je naar de juiste online-oefening.</div>
       <div class="anchor gloss" style="margin-top:2mm">Print werkt <b>volledig zonder</b> scherm; het <b>repaso</b> staat online.</div></div>
   </div>
 </div>
@@ -922,13 +939,25 @@ P(actx(4, "Del contexto: ¿qué significa?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p><i>betekenis uit context.</i> Wat betekent <b>«Busco un amigo»</b> en <b>«¡Escríbeme!»</b>? Kies + leg uit welke aanwijzing hielp.</p>'
   '<p style="margin-left:12.5mm">Busco = ☐ ik zoek ☐ ik vind &nbsp;·&nbsp; ¡Escríbeme! = ☐ bel me ☐ schrijf me<br>Pista que me ayudó: <span class="wl lg"></span></p>', apoyo="PISTA"))
+# ③bis — leer una gráfica (infografía · mediación: lezen van data)
+P('<div class="infocard"><div class="it">📊 Infografía · ¿Qué idiomas estudian los jóvenes en Europa?</div>'
+  '<div class="isub">Fuente: encuesta escolar (datos aproximados) · lees de balken</div>'
+  + gustobars([("inglés",92),("español",26),("francés",23),("alemán",18),("neerlandés",6)]) + '</div>')
+P(actx(5, "Lee la gráfica y responde",
+  [{"t":"🔍 Leer","skill":True},{"t":"🔢 Mediar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
+  '<p><i>data lezen (mediación).</i> Antwoord met een <b>hele zin</b> op basis van de grafiek.</p>'
+  '<p style="margin-left:12.5mm">a) ¿Qué idioma estudian más? <span class="wl md"></span><br>'
+  'b) ¿Cuántos por ciento estudian español? <span class="wl md"></span><br>'
+  'c) ¿Qué idioma estudian menos? <span class="wl md"></span><br>'
+  'd) ¿Y tú? Yo estudio <span class="wl md"></span> <i>(porque…)</i> <span class="wl md"></span></p>', apoyo="MARCO (estudian… · el … por ciento) → SIN AYUDA"))
 # ③ productieve reactie (keten lezen→schrijven/spreken)
 P(tarea_com("Tarea comunicativa · Responde a un perfil",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
   '<p><b>Keten lezen → schrijven → spreken.</b> Kies één perfil en schrijf een <b>antwoordbericht</b> waarin je jezelf voorstelt (afzender = jij · ontvanger = Lucía/Diego · doel = kennismaken). Lees het daarna hardop voor.</p>'
   '<div class="wbox"></div>'
   '<div class="steun" style="margin-left:0mm">Apoyo: MARCO (Hola, me llamo… soy de… tengo… hablo…) → SIN AYUDA · [CROSS: HTML «Mensaje de voz» — neem je antwoord op]</div>'))
-P('<div class="route-note">🎮 <b>Sigue online:</b> op de digitale pagina neem je je antwoordbericht op (recorder) en luister je de perfiles (audio).</div>')
+P(mispal("Mis palabras del perfil — woorden die ik uit de teksten haal", 3))
+P('<div class="route-note">🎮 <b>Sigue online (hub verrijkt):</b> op de digitale pagina luister je de twee perfiles (audio), neem je je antwoordbericht op (recorder) én speel je de flip cards + drills met zelfcorrectie.</div>')
 P('</div>')  # page §5b
 
 # ================= TALLER DE LENGUA =================
@@ -1044,7 +1073,7 @@ P('</div>')  # page Tarea
 # ================= REPASO =================
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">✓</span><span class="pk">Repaso · lo esencial</span>')
-P('<div class="intro"><b>ES:</b> Lo más importante de un vistazo. El <b>repaso completo</b> (quiz, drills, 24 juegos) está <b>online</b>. <span class="gloss">Het belangrijkste in één oogopslag.</span></div>')
+P('<div class="intro"><b>ES:</b> Lo más importante de un vistazo. El <b>repaso completo</b> (quiz, drills, 20 juegos) está <b>online</b>. <span class="gloss">Het belangrijkste in één oogopslag.</span></div>')
 P('</div>')
 P('<div class="esen"><b class="tt">Lo esencial de un vistazo</b><ul>'
   '<li><b>Presentarse:</b> Me llamo… · Soy de… · Soy + nat. · Tengo … años · Vivo en… · Hablo…</li>'
@@ -1103,7 +1132,7 @@ P(actx("V.4", "Producir — una frase con tres palabras",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★★"}],
   '<p><i>verplichte-woorden-zin.</i> Maak één correcte zin met <b>nombre · país · edad</b>.</p><div class="wbox sm"></div>', apoyo="SIN AYUDA"))
 P(mispal("Mis palabras de la unidad", 3))
-P('<div class="guide"><div class="ic">🎴</div><div><span class="hand">Sigue en la página digital:</span> <span class="g">flip cards (ES↔NL), audio en de 24 spellen bouwen de steun verder af.</span></div></div>')
+P('<div class="guide"><div class="ic">🎴</div><div><span class="hand">Sigue en la página digital:</span> <span class="g">flip cards (ES↔NL), audio en de 20 spellen bouwen de steun verder af.</span></div></div>')
 P('</div>')  # page §V
 
 # ---------- EDITBAR ----------

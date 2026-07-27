@@ -462,7 +462,7 @@ P(f'''
       <div class="ej" style="margin-top:2mm"><b>1 · groen</b> = de cursus/unit. <b>2 · función</b>: <span class="fx per">persoon</span> <span class="fx vb">werkwoord</span> <span class="fx ob">voorwerp</span> <span class="fx ti">tijd</span> <span class="fx pl">plaats</span> <span style="color:var(--red);font-weight:700">🔴 valstrik</span>.</div>
       <div class="anchor gloss" style="margin-top:2mm">Kleur is <b>nooit</b> de enige drager — altijd óók label of vorm.</div></div>
     <div class="pcard"><div class="t" style="font-size:10.5pt">Papel + pantalla</div>
-      <div class="ej" style="margin-top:2mm">📄 el libro · 🎮 la <b>página digital</b> (24 spellen, audio, flip cards) · 📊 el PowerPoint. De <b>QR</b>-codes brengen je naar de juiste online-oefening.</div>
+      <div class="ej" style="margin-top:2mm">📄 el libro · 🎮 la <b>página digital</b> (20 spellen, audio, flip cards) · 📊 el PowerPoint. De <b>QR</b>-codes brengen je naar de juiste online-oefening.</div>
       <div class="anchor gloss" style="margin-top:2mm">Print werkt <b>volledig zonder</b> scherm; het <b>repaso</b> staat online.</div></div>
   </div>
 </div>
@@ -1062,7 +1062,7 @@ P('</div>')  # page Tarea
 # ================= REPASO =================
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">✓</span><span class="pk">Repaso · lo esencial</span>')
-P('<div class="intro"><b>ES:</b> Lo más importante de un vistazo. El <b>repaso completo</b> (quiz, drills, 24 juegos) está <b>online</b>. <span class="gloss">Het belangrijkste in één oogopslag.</span></div>')
+P('<div class="intro"><b>ES:</b> Lo más importante de un vistazo. El <b>repaso completo</b> (quiz, drills, 20 juegos) está <b>online</b>. <span class="gloss">Het belangrijkste in één oogopslag.</span></div>')
 P('</div>')
 P('<div class="esen"><b class="tt">Lo esencial de un vistazo</b><ul>'
   '<li><b>La hora:</b> Es la una · Son las dos… · y cuarto/media · menos cuarto · en punto · ¿A qué hora? a las…</li>'
@@ -1127,7 +1127,7 @@ P(actx("V.5", "Comunicar — mi rutina en tres pasos",
 P(mispal("Mis palabras de la unidad", 5))
 P('<p style="font-size:9.6pt;margin-top:4mm"><b>Tu red de palabras.</b> Kies uit elk cluster twee woorden en verbind ze in één zin over jouw dag — zo blijft de woordenschat plakken:</p>')
 P(vpairs([("la hora ↔ una acción","Son las 8 y desayuno."),("un día ↔ una frecuencia","El sábado casi nunca…"),("un reflexivo ↔ una hora","Me acuesto a las 11."),("un verbo irregular ↔ un momento","Por la tarde juego.")]))
-P('<div class="guide"><div class="ic">🎴</div><div><span class="hand">Sigue en la página digital:</span> <span class="g">flip cards (ES↔NL), audio en de 24 spellen bouwen de steun verder af.</span></div></div>')
+P('<div class="guide"><div class="ic">🎴</div><div><span class="hand">Sigue en la página digital:</span> <span class="g">flip cards (ES↔NL), audio en de 20 spellen bouwen de steun verder af.</span></div></div>')
 P('<div class="bridge"><b>» ¡Hasta la próxima parada!</b> Con la hora, tu rutina y el presente irregular ya puedes contar tu día. En <b>U4 «Me gusta»</b> viajas a <b>València</b> y hablas de tus gustos. <span class="gloss">Je kan nu je dag vertellen — op naar València!</span></div>')
 P('</div>')  # page §V
 

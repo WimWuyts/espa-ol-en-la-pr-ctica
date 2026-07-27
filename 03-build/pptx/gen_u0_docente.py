@@ -1169,6 +1169,14 @@ def s16_cultura():
     text(s, Inches(8.55), Inches(5.36), Inches(4.15), Inches(0.6),
          [[("🟡 Cognados: ", {"size": 11, "bold": True, "color": AMBER}),
            ("hospital, animal, chocolate, familia, taxi… je herkent al véél Spaans!", {"size": 10.5, "color": INK})]], line=1.05)
+    # LEER · comprensión lectora — expliciete leesvaardigheid (V/F con prueba) + reveal
+    chip(s, Inches(0.5), Inches(6.08), "👀 LEER · comprensión lectora", fill=GT, tcolor=GD, size=10.5)
+    text(s, Inches(0.5), Inches(6.5), Inches(8.0), Inches(0.5),
+         [[("V/F · Lee la lista: «En Brasil se habla español.»  ", {"size": 11, "color": INK})]])
+    rev = text(s, Inches(6.2), Inches(6.5), Inches(2.1), Inches(0.5),
+         [[("→ FALSO (portugués)", {"size": 11, "bold": True, "color": RED})]], anchor=MSO_ANCHOR.MIDDLE)
+    register_reveal(s, rev)
+    chip(s, Inches(8.5), Inches(6.5), "🔗 Online: mapa clicable + flip cards", fill=CREMA, tcolor=GD, size=10)
     footer(s, page=pg())
     notes(s, "TEACHER · CULTURE (idee 2 klikbare kaart · idee 47 zoom). Component Identiteit in diversiteit (leerplan). "
              "Juist/fout met bewijs: 'In Brasil is español officieel?' (nee → portugués) · 'Perú está en Europa?' (nee). "
@@ -1477,5 +1485,14 @@ if __name__ == "__main__":
     # Docentenversie: vrije navigatie; antwoorden verschijnen bij klik + volledige
     # oplossing in de spreker-notities.
     build("docente", OUT_DOCENTE, include_teacher=True)
-    # Leerlingenversie: gewone diavoorstelling (geen kiosk), antwoorden bij klik → .ppsx.
-    build_alumno()
+    # Leerlingenversie = gewone .pptx (NOOIT .ppsx — CLAUDE.md §10, auteur 2026-07-26):
+    # identieke dia's + klik-onthul-animaties; leerling drukt F5 voor de diavoorstelling.
+    build("alumno", OUT_ALUMNO_PPTX, include_teacher=False)
+    # Ruim een eventueel oud .ppsx op (deprecated leveringsformaat).
+    if os.path.exists(OUT_ALUMNO):
+        os.remove(OUT_ALUMNO)
+    # Verifieer dat beide .pptx openen (round-trip).
+    d = Presentation(OUT_DOCENTE); a = Presentation(OUT_ALUMNO_PPTX)
+    print("round-trip OK · docente dia's:", len(d.slides._sldIdLst),
+          "· alumno dia's:", len(a.slides._sldIdLst),
+          "· alumno =", os.path.basename(OUT_ALUMNO_PPTX), "(.pptx, geen .ppsx)")

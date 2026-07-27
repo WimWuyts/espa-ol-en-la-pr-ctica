@@ -243,6 +243,22 @@ body.editing [contenteditable="true"]:focus{ outline:2px solid #157355; backgrou
 .gbar .track2{ background:var(--crema); border-radius:6pt; height:6mm; position:relative; overflow:hidden; }
 .gbar .fill{ background:var(--g); height:100%; border-radius:6pt; }
 .gbar .pct{ position:absolute; right:2mm; top:0; line-height:6mm; font-size:8pt; color:#fff; font-weight:700; }
+/* ===== Banda sonora (parel) ===== */
+.banda{ display:grid; grid-template-columns:1fr 1fr; gap:4mm; margin:4mm 0; }
+.bard{ border:1px solid var(--line); border-left:4px solid var(--g); border-radius:12pt; padding:3.4mm 4.5mm; background:#fff; break-inside:avoid; }
+.bard .bh{ display:flex; justify-content:space-between; align-items:baseline; gap:2mm; }
+.bard .bn{ font-family:var(--disp); font-weight:800; font-size:12pt; color:var(--gd); }
+.bard .bflag{ font-size:8pt; color:var(--mut); font-weight:600; }
+.bard .bsong{ font-size:8.8pt; color:var(--ww); font-weight:700; margin:.4mm 0 1.6mm; }
+.bard .bbio{ font-size:8.9pt; margin:0; line-height:1.42; } .bard .bbio .gloss{ display:block; margin-top:.6mm; }
+.perla{ margin:4mm 0; border:1.5px solid var(--g); border-radius:12pt; padding:4mm 5mm; background:var(--gt); break-inside:avoid; }
+.perla .pt{ font-family:var(--disp); font-weight:700; color:var(--gd); font-size:11pt; }
+.perla .pt small{ font-family:var(--body); font-weight:400; color:var(--mut); font-size:8pt; }
+.perla .steps2{ display:grid; grid-template-columns:repeat(4,1fr); gap:2.5mm; margin-top:3mm; align-items:stretch; }
+.perla .st2{ border-radius:9pt; padding:2.6mm 2mm; text-align:center; color:#fff; }
+.perla .st2 .ex{ font-family:var(--dispx); font-weight:800; font-size:11pt; display:block; }
+.perla .st2 .nl2{ font-size:7.4pt; opacity:.95; display:block; margin-top:.6mm; }
+.perla .arrow2{ text-align:center; font-size:8pt; color:var(--gd); font-weight:700; margin-top:2mm; letter-spacing:.05em; }
 """
 
 # ---------------- component-helpers (identiek aan U1) ----------------
@@ -370,6 +386,21 @@ def gustobars(rows):
     inner = "".join(f'<div class="gbar"><span>{lab}</span><div class="track2"><div class="fill" style="width:{p}%"></div><span class="pct">{p}%</span></div></div>' for lab, p in rows)
     return f'<div class="gustobars">{inner}</div>'
 
+def banda(cards):
+    # cards = [(nombre, flag, cancion, bio_html)]
+    out = []
+    for nm, flag, song, bio in cards:
+        out.append(f'<div class="bard"><div class="bh"><span class="bn">{nm}</span><span class="bflag">{flag}</span></div>'
+                   f'<div class="bsong">🎵 {song}</div><div class="bbio">{bio}</div></div>')
+    return f'<div class="banda">{"".join(out)}</div>'
+
+def perla_scale(stops):
+    # stops = [(color, ejemplo_es, nl)] van odio (rood) → me encanta (groen)
+    cols = "".join(f'<div class="st2" style="background:{c}"><span class="ex">{es}</span><span class="nl2">{nl}</span></div>' for c, es, nl in stops)
+    return ('<div class="perla"><div class="pt">🎚️ La escala del gusto <small>· de Rosalía «La Perla»: de «odio» a «me encanta»</small></div>'
+            f'<div class="steps2">{cols}</div>'
+            '<div class="arrow2">◄ menos ——————————————— más ►</div></div>')
+
 # ================= BODY =================
 BODY = []
 def P(*x): BODY.extend(x)
@@ -427,7 +458,7 @@ P(f'''
   <div class="mini">
     <div class="se">Ruta de la unidad</div>
     <div class="steps">
-      <span><b>§0</b>Ponte al día</span><span><b>§1</b>Me gusta(n)</span><span><b>§2</b>También/tampoco</span><span><b>§3</b>Quiero/puedo + quedar</span><span><b>§4</b>Lectura</span><span><b>Taller</b>Opinión/conect.</span><span><b>Cultura</b>Rosalía & ocio</span><span><b>Tarea</b>Mi playlist</span><span><b>Repaso</b>Semáforo</span>
+      <span><b>§0</b>Ponte al día</span><span><b>§1</b>Me gusta(n)</span><span><b>§2</b>También/tampoco</span><span><b>§3</b>Quiero/puedo + quedar</span><span><b>§4</b>Lectura</span><span><b>Taller</b>Opinión/conect.</span><span><b>Cultura</b>Ocio & banda sonora</span><span><b>Tarea</b>Mi playlist</span><span><b>Repaso</b>Semáforo</span>
     </div>
   </div>
   <div class="se" style="margin-top:8mm">Cómo trabajar esta unidad · leeswijzer</div>
@@ -444,7 +475,7 @@ P(f'''
       <div class="ej" style="margin-top:2mm"><b>1 · groen</b> = de cursus/unit. <b>2 · función</b>: <span class="fx per">persoon</span> <span class="fx vb">werkwoord</span> <span class="fx ob">voorwerp</span> <span class="fx ti">tijd</span> <span class="fx pl">plaats</span> <span style="color:var(--red);font-weight:700">🔴 valstrik</span>.</div>
       <div class="anchor gloss" style="margin-top:2mm">Kleur is <b>nooit</b> de enige drager — altijd óók label of vorm.</div></div>
     <div class="pcard"><div class="t" style="font-size:10.5pt">Papel + pantalla</div>
-      <div class="ej" style="margin-top:2mm">📄 el libro · 🎮 la <b>página digital</b> (24 spellen, audio, flip cards) · 📊 el PowerPoint. De <b>QR</b>-codes brengen je naar de juiste online-oefening.</div>
+      <div class="ej" style="margin-top:2mm">📄 el libro · 🎮 la <b>página digital</b> (20 spellen, audio, flip cards) · 📊 el PowerPoint. De <b>QR</b>-codes brengen je naar de juiste online-oefening.</div>
       <div class="anchor gloss" style="margin-top:2mm">Print werkt <b>volledig zonder</b> scherm; het <b>repaso</b> staat online.</div></div>
   </div>
 </div>
@@ -941,6 +972,67 @@ P(actx(3, "Escribe tu mini-reseña",
 P('<div class="route-note">🎮 <b>Sigue online:</b> escucha una canción, lee la letra y reacciona met de gustos-spellen op de digitale pagina.</div>')
 P('</div>')  # page Cultura 2
 
+# ================= CULTURA · BANDA SONORA (PAREL-3/4) =================
+P('<div class="page"><div class="parada sec">')
+P('<span class="num">♫</span><span class="pk">Cultura · Banda sonora</span>')
+P('<div class="intro"><b>ES:</b> Cada unidad tiene su <b>banda sonora</b>: artistas que suenan hoy en todo el mundo hispano. Escucha, canta y pilla palabras nuevas — casi todos cantan de lo que te <b>gusta</b> y de lo que <b>quieres</b>. <span class="gloss">Elke unit heeft zijn soundtrack: artiesten die nu overal klinken. Luister, zing mee en pik nieuwe woorden op — bijna allemaal zingen ze over wat je leuk vindt.</span></div>')
+P(lpd(("5","kenmerkende aspecten van de cultuur"), ("2","relevante info uit een tekst"), ("7","woordenschat via muziek")))
+P('</div>')
+P('<h3 style="margin-top:6mm">Seis artistas del mundo hispano <span class="gloss" style="font-size:8pt">· la playlist de la clase</span></h3>')
+P(banda([
+  ("Rosalía", "🇪🇸 flamenco-pop",  "La Perla · Motomami",
+   'Cantante de <b>Barcelona</b>. Mezcla el <b>flamenco</b> tradicional con el pop, el trap y el reguetón. Sus álbumes <i>El mal querer</i> y <i>Motomami</i> son famosos en todo el mundo. Canta en español, ¡perfecto para la clase! '
+   '<span class="gloss">Zangeres uit Barcelona. Ze mengt traditionele flamenco met pop, trap en reggaeton. Haar albums <i>El mal querer</i> en <i>Motomami</i> zijn wereldberoemd. Ze zingt in het Spaans — ideaal voor de klas!</span>'),
+  ("Karol G", "🇨🇴 reguetón",  "TQG · Provenza",
+   'Es de <b>Medellín</b> (Colombia) y es una de las reinas del <b>reguetón</b>. Su pelo naranja es su marca. Con canciones como <i>TQG</i> y <i>Provenza</i> llena estadios en América y Europa. A los jóvenes les <b>encanta</b> bailar sus temas. '
+   '<span class="gloss">Komt uit Medellín (Colombia) en is een van de koninginnen van de reggaeton. Haar oranje haar is haar handelsmerk. Met liedjes als <i>TQG</i> en <i>Provenza</i> vult ze stadions in Amerika en Europa. Jongeren zijn dol op dansen op haar nummers.</span>'),
+  ("Bad Bunny", "🇵🇷 urbano",  "Tití me preguntó",
+   'El «conejo malo» es de <b>Puerto Rico</b> y es el artista más escuchado del planeta. Mezcla reguetón, trap y hasta música típica de su isla. Además de cantar, es actor y luchador. Sus conciertos son enormes. '
+   '<span class="gloss">De «conejo malo» komt uit Puerto Rico en is de meest beluisterde artiest ter wereld. Hij mengt reggaeton, trap en zelfs typische muziek van zijn eiland. Naast zingen is hij ook acteur en worstelaar. Zijn concerten zijn enorm.</span>'),
+  ("Shakira", "🇨🇴 pop",  "Waka Waka · BZRP 53",
+   'De <b>Barranquilla</b> (Colombia), es una leyenda del pop mundial desde hace más de veinte años. Baila, escribe sus canciones y canta en español e inglés. <i>Waka Waka</i> fue el himno de un Mundial de fútbol. Es un símbolo de Latinoamérica. '
+   '<span class="gloss">Uit Barranquilla (Colombia), al meer dan twintig jaar een legende van de wereldpop. Ze danst, schrijft haar eigen liedjes en zingt in het Spaans en Engels. <i>Waka Waka</i> was de hymne van een WK voetbal. Ze is een symbool van Latijns-Amerika.</span>'),
+  ("Feid", "🇨🇴 reguetón",  "Feliz Cumpleaños Ferxxo",
+   'Otro artista de <b>Medellín</b>, siempre con su ropa <b>verde</b>. Empezó escribiendo canciones para otros y ahora es una estrella del reguetón «neo perreo». Sus fans se llaman «los Ferxxos». Colabora mucho con Karol G. '
+   '<span class="gloss">Nog een artiest uit Medellín, altijd in het groen gekleed. Hij begon met liedjes schrijven voor anderen en is nu een ster van de «neo perreo»-reggaeton. Zijn fans heten «los Ferxxos». Hij werkt vaak samen met Karol G.</span>'),
+  ("Quevedo", "🇪🇸 urbano",  "Bzrp #52 · Columbia",
+   'Joven cantante de las <b>Islas Canarias</b> (España). Se hizo famoso con su sesión con Bizarrap, un éxito mundial. Su estilo mezcla el trap y el reguetón con letras tranquilas. Representa a la nueva generación del urbano español. '
+   '<span class="gloss">Jonge zanger van de Canarische Eilanden (Spanje). Hij werd beroemd met zijn sessie met Bizarrap, een wereldwijde hit. Zijn stijl mengt trap en reggaeton met rustige teksten. Hij vertegenwoordigt de nieuwe generatie van de Spaanse urban.</span>'),
+]))
+P('<div class="truc"><b>🟡 Dato:</b> el <b>español</b> es de los idiomas <b>más escuchados</b> en Spotify y YouTube. Cuatro de estos seis artistas son de <b>Colombia</b> o del <b>Caribe</b> — la ruta te lleva allí en U7 y U8.</div>')
+P(audiorow('<div class="ic">🎧</div><div><b>Escucha «La Perla» de Rosalía</b> (o un fragmento) y anota <b>tres palabras</b> que reconoces. <span class="gloss">Luister; noteer drie woorden die je herkent — LyricsTraining staat online.</span></div>',
+           qr("Escanea y escucha", "Banda sonora · playlist U4", seed=45)))
+P('</div>')  # page Banda 1
+P('<div class="page">')
+P('<div class="divider">La escala del gusto · «La Perla»</div>')
+P('<p style="font-size:9.6pt">① <b>De «odio» a «me encanta».</b> Rosalía canta en <i>La Perla</i> sobre alguien que no aguanta. Zo kan je je smaak <b>graderen</b>, van heel negatief tot heel positief:</p>')
+P(perla_scale([
+  ("#DC2626", "odio", "ik haat"),
+  ("#B7860B", "no me gusta", "ik vind niet leuk"),
+  ("#2FA8A0", "me gusta", "ik vind leuk"),
+  ("#157355", "me encanta", "ik vind geweldig"),
+]))
+P('<div class="truc"><b>🔴 Ojo:</b> <b>odio</b> + naamwoord/infinitief: <i>odio los lunes · odio madrugar</i>. Bij <b>me encanta / me gusta</b> geldt weer de regel gusta/gustan (bevalt mij). <b>odio</b> vervoeg je gewoon (yo odio, tú odias…).</div>')
+P(actx(1, "Coloca en la escala",
+  [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
+  '<p><i>graderen.</i> Plaats elk gevoel op de juiste trap (1 = odio … 4 = me encanta) en schrijf het cijfer.</p>'
+  '<p style="margin-left:12.5mm">___ me encanta bailar &nbsp; ___ odio los lunes &nbsp; ___ me gusta el pop &nbsp; ___ no me gusta madrugar<br>Un gusto mío en cada nivel: <span class="wl full"></span></p>', apoyo="MODELO (escala boven)"))
+P(actx(2, "¿Qué artista y por qué? (mini-reseña con la escala)",
+  [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
+  '<p><i>gestuurde productie.</i> Kies twee artiesten hierboven. Schrijf per artiest één zin met een <b>niveau van de escala</b> (odio / no me gusta / me gusta / me encanta) én een reden met <b>porque</b>.</p>'
+  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span></p>', apoyo="MARCO (Me encanta … porque …) → SIN AYUDA"))
+P(tarea_com("Tarea comunicativa · «La playlist de la clase»",
+  [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
+  '<p><b>Afzender·ontvanger·doel·situatie·resultaat:</b> vergelijk met je buur welke van de zes artiesten jullie <b>me encanta / me gusta / no me gusta / odio</b> vinden. Reageer met <b>también/tampoco/a mí sí/no</b> en kies samen één nummer voor de klasplaylist.</p>'
+  '<table class="mp"><thead><tr><th>Artista</th><th>Yo (escala)</th><th>Mi compañero/a</th><th>¿Igual?</th></tr></thead><tbody>'
+  '<tr><td>Rosalía</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
+  '<tr><td>Karol G</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
+  '<tr><td>Bad Bunny</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr></tbody></table>'
+  '<p style="margin-left:12.5mm">Nuestra canción para la clase: <span class="wl lg"></span></p>'
+  '<div class="steun" style="margin-left:12.5mm">Apoyo: MARCO (escala + reacciones) → SIN AYUDA · [CROSS: HTML «Banda sonora» + recorder]</div>'))
+P('<div class="route-note">🎮 <b>Sigue online:</b> escucha la playlist, prueba <b>LyricsTraining</b> (vul de songtekst aan) y juega «La escala del gusto» met zelfcorrectie op de digitale pagina.</div>')
+P('</div>')  # page Banda 2
+
 # ================= TAREA FINAL =================
 P('<div class="page"><div class="parada sec" style="border-top-color:var(--gd)">')
 P('<span class="num">✦</span><span class="pk" style="background:var(--gd)">Tarea final · Mi playlist</span>')
@@ -979,7 +1071,7 @@ P('</div>')  # page Tarea
 # ================= REPASO =================
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">✓</span><span class="pk">Repaso · lo esencial</span>')
-P('<div class="intro"><b>ES:</b> Lo más importante de un vistazo. El <b>repaso completo</b> (quiz, drills, 24 juegos) está <b>online</b>. <span class="gloss">Het belangrijkste in één oogopslag.</span></div>')
+P('<div class="intro"><b>ES:</b> Lo más importante de un vistazo. El <b>repaso completo</b> (quiz, drills, 20 juegos) está <b>online</b>. <span class="gloss">Het belangrijkste in één oogopslag.</span></div>')
 P('</div>')
 P('<div class="esen"><b class="tt">Lo esencial de un vistazo</b><ul>'
   '<li><b>Gustar (al revés):</b> me/te/le/nos/os/les + <b>gusta</b> (ev./infinitivo) · <b>gustan</b> (mv.). Idem encanta(n).</li>'
@@ -1023,7 +1115,8 @@ for key, titel in GRP:
     rows = "".join(f'<tr><td><b>{v["es"]}</b></td><td>{v["nl"]}</td><td class="gloss">{v["soort"]}</td><td class="gloss">{v["ej"]}</td></tr>' for v in items)
     P(f'<table class="alf"><thead><tr><th>Español</th><th>Nederlands</th><th>ERK/soort</th><th>Ejemplo</th></tr></thead><tbody>{rows}</tbody></table>')
 # print-oefenladder V.1-V.4
-P('<div class="divider">Escalera de práctica · V.1–V.4</div>')
+P('</div><div class="page">')  # nieuwe bladzijde: oefenladder krijgt volle pagina
+P('<div class="divider">Escalera de práctica · V.1–V.7</div>')
 P(actx("V.1", "Reconocer — ES → NL",
   [{"t":"🔍 Leer","skill":True},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Schrijf de vertaling. la canción = <span class="wl md"></span> · el deporte = <span class="wl md"></span> · encantar = <span class="wl md"></span> · a menudo = <span class="wl md"></span></p>', apoyo="MODELO"))
@@ -1041,8 +1134,27 @@ P(actx("V.5", "Comunicar — mi top-3 de gustos",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"± 5 min"},{"t":"★★★"}],
   '<p><i>vrije productie → transfer.</i> Schrijf je <b>top-3</b> favoriete dingen met de juiste vorm (gusta/gustan/encanta) én telkens een reden met <b>porque</b>. Zeg ze daarna hardop tegen je buur, die reageert (también/tampoco/sí/no).</p>'
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="MARCO (Me encanta … porque …) → SIN AYUDA"))
+P(actx("V.6", "Definiciones — ¿qué palabra es?",
+  [{"t":"🔍 Analizar","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
+  '<p><i>omschrijving → woord.</i> Lees de definitie in het Spaans en schrijf het juiste woord uit de unit.</p>'
+  '<table class="mp"><thead><tr><th>Definición (ES)</th><th>La palabra</th></tr></thead><tbody>'
+  '<tr><td>Lugar con arena y mar donde vas en verano.</td><td><span class="wl md"></span></td></tr>'
+  '<tr><td>Una persona que canta.</td><td><span class="wl md"></span></td></tr>'
+  '<tr><td>Mover el cuerpo con la música.</td><td><span class="wl md"></span></td></tr>'
+  '<tr><td>Palabra para decir «want / omdat».</td><td><span class="wl md"></span></td></tr>'
+  '<tr><td>Reacción cuando estás de acuerdo con algo positivo.</td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="BANCO (playa · cantante · bailar · porque · también)"))
+P(actx("V.7", "Mi carné de gustos — ficha final",
+  [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"± 5 min"},{"t":"★★★"}],
+  '<p><i>transfer → ficha.</i> Vul je eigen «carné de gustos» in met volledige zinnen (gusta/gustan/encanta + porque). Bewaar het voor de eindtaak.</p>'
+  '<div class="fichacard">'
+  '<div><div class="row"><span class="k">Me encanta…</span><span class="v"><span class="wl sm"></span></span></div>'
+  '<div class="row"><span class="k">Me gusta(n)…</span><span class="v"><span class="wl sm"></span></span></div>'
+  '<div class="row"><span class="k">No me gusta…</span><span class="v"><span class="wl sm"></span></span></div></div>'
+  '<div><div class="row"><span class="k">Odio…</span><span class="v"><span class="wl sm"></span></span></div>'
+  '<div class="row"><span class="k">Mi artista favorito/a…</span><span class="v"><span class="wl sm"></span></span></div>'
+  '<div class="row"><span class="k">…porque…</span><span class="v"><span class="wl sm"></span></span></div></div></div>', apoyo="MARCO → SIN AYUDA"))
 P(mispal("Mis palabras de la unidad", 4))
-P('<div class="guide"><div class="ic">🎴</div><div><span class="hand">Sigue en la página digital:</span> <span class="g">flip cards (ES↔NL), audio en de 24 spellen bouwen de steun verder af.</span></div></div>')
+P('<div class="route-note">🎴 <b>Sigue en la página digital:</b> flip cards (ES↔NL) van álle woorden, audio (TTS), buscador én de 20 spellen bouwen de steun verder af. Scan de QR op deze bladzijde en oefen tot je alles <b>sin ayuda</b> kan.</div>')
 P('</div>')  # page §V
 
 # ---------- EDITBAR ----------

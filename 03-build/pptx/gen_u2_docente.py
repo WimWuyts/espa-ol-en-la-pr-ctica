@@ -130,7 +130,8 @@ def s03_familia():
              trigger=btn)
     foot(s)
     notes(s, "TEACHER · VOCAB familia (reveal). Bouw een árbol genealógico op het bord terwijl je onthult. Wijs op de -o/-a-paren. "
-             "Zie het boek §1.1 (clusters/árbol). Online: «familia-memoria» + flip cards ES↔NL.")
+             "Zie het boek §1.1 → el árbol genealógico de ROSALÍA (parel) + het ¡Ojo!-kader: primo/prima (kind van tío/tía) vs. sobrino/sobrina (kind van hermano/hermana). "
+             "Online: «familia-memoria» + flip cards ES↔NL.")
 
 # ============================================================ DIA 4 · GRAMMAR — tener (conjugation reveal)
 def s04_tener():
@@ -672,7 +673,7 @@ def s24_teacher():
     blocks=[("Timing (50 min)","Menu 2' · familia+tener 8' · posesivos 6' · adjetivos+congruencia 10' · ser/estar 12' · demostrativos 4' · lectura/tarea-briefing 8'."),
             ("Kernvalstrikken","ser ↔ estar (beide = «zijn») · adjetivo NÁ het zn. + congruentie o/a · posesivo in getal (mis hermanas) · porque = want ÉN omdat · días/nombres met hoofdletter."),
             ("Differentiatie (zij-instromers)","Alles start vanaf nul. Sterker: física + carácter + ser/estar combineren in het album. Zwakker: familia + tener eerst automatiseren, marco/tabel langer open."),
-            ("Digitaal","~24 spellen + flip cards ES↔NL + klikbare kaart + recorder («shadowing-lucia», «describe-familiar», «mensaje-familia») op de página digital. QR's → juiste anker. Conjugador = aparte tool."),
+            ("Digitaal","~20 spellen + flip cards ES↔NL + klikbare kaart + recorder («shadowing-lucia», «describe-familiar», «mensaje-familia») op de página digital. QR's → juiste anker. Conjugador = aparte tool."),
             ("Evaluatie","Tarea «Álbum de familia» met rúbrica (4 criteria). LPD 3·4·7·8·9 + 5 (cultura: familia hispana/quinceañera/Frida) + 1·2 (receptief: «La familia de Lucía»).")]
     y=Inches(1.4)
     for t,b in blocks:

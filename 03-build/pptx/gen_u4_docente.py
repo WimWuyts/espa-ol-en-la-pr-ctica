@@ -71,13 +71,14 @@ def s02_menu():
         ("§2", "De acuerdo o no", "también/tampoco · a mí sí/no", G, 7),
         ("§3", "Proponer un plan", "querer/poder + inf. · quedar", G, 11),
         ("§4", "Lectura + escucha", "perfiles de gustos", G, 9),
-        ("★", "Cultura · Rosalía", "música y ocio joven", GD, 16),
-        ("🎧", "Tarea · Mi playlist", "je playlist + presentarla", GD, 18),
-        ("?", "Quiz «La mezcla»", "gemengde ophaal — mét oplossing", AMBER, 19),
-        ("◎", "Repaso + semáforo", "lo esencial · zelfevaluatie", GD, 20),
+        ("★", "Cultura · ocio", "Rosalía y el ocio joven", GD, 16),
+        ("♫", "Banda sonora", "6 artistas · la escala del gusto", GD, 17),
+        ("🎧", "Tarea · Mi playlist", "je playlist + presentarla", GD, 19),
+        ("?", "Quiz «La mezcla»", "gemengde ophaal — mét oplossing", AMBER, 20),
+        ("◎", "Repaso + semáforo", "lo esencial · zelfevaluatie", GD, 21),
     ]
-    cols, x0, y0 = 4, Inches(0.5), Inches(1.55)
-    tw, th, gx, gy = Inches(3.0), Inches(2.45), Inches(0.14), Inches(0.2)
+    cols, x0, y0 = 3, Inches(0.5), Inches(1.5)
+    tw, th, gx, gy = Inches(4.0), Inches(1.72), Inches(0.14), Inches(0.16)
     for i, (tag, es, nl, col, dia) in enumerate(tiles):
         r, c = divmod(i, cols)
         x = x0 + c * (tw + gx); y = y0 + r * (th + gy)
@@ -88,11 +89,11 @@ def s02_menu():
         rr=p.add_run(); rr.text=tag; rr.font.size=Pt(12); rr.font.bold=True; rr.font.name=DISPLAY; rr.font.color.rgb=col
         text(s, x + Inches(0.58), y + Inches(0.06), tw - Inches(0.7), Inches(0.4),
              [[(es, {"size": 14.5, "bold": True, "color": WHITE, "font": DISPLAY})]], anchor=MSO_ANCHOR.MIDDLE)
-        text(s, x + Inches(0.18), y + Inches(0.68), tw - Inches(0.36), Inches(1.2), [[(nl, {"size": 11.5, "color": INK})]], line=1.12)
-        chip(s, x + Inches(0.18), y + th - Inches(0.45), f"→ dia {dia}", fill=GT, tcolor=GD, size=9.5)
+        text(s, x + Inches(0.18), y + Inches(0.6), tw - Inches(0.36), Inches(0.65), [[(nl, {"size": 11.5, "color": INK})]], line=1.1)
+        chip(s, x + Inches(0.18), y + th - Inches(0.42), f"→ dia {dia}", fill=GT, tcolor=GD, size=9.5)
     foot(s)
     notes(s, "TEACHER · LESSON_MENU. Elke tegel = hyperlink; op elke oefendia staat ⌂ Menú terug. Richttijd 50 min. "
-             "Begin bij §1 (gustar) — het hart van de unit. Kruisverwijzing print/HTML: «oefen online — 24 juegos».")
+             "Begin bij §1 (gustar) — het hart van de unit. Kruisverwijzing print/HTML: «oefen online — 20 juegos».")
 
 # ============================================================ DIA 3 · VOCABULARY — gustos/ocio
 def s03_vocab():
@@ -460,7 +461,49 @@ def s16_cultura():
     notes(s, "TEACHER · CULTURE (identiteit in diversiteit, LPD 5). Onthul per kaart. Speel eventueel een fragment (rechtenvrij/eigen keuze). "
              "Verbind met de klas: welke Spaanstalige artiesten kennen jullie? Bruggetje naar de Tarea Mi playlist.")
 
-# ============================================================ DIA 17 · QUIZ — haz la pregunta
+# ============================================================ DIA 17 · CULTURE · BANDA SONORA (parel)
+def s_banda():
+    s = slide(); bg(s, PAPER)
+    sectionbar(s, "CULTURA · BANDA SONORA", "Seis artistas del mundo hispano",
+               "La playlist de la clase. Klik een kaart → een weetje. Casi todos cantan de lo que te gusta.", num=1)
+    arts=[("Rosalía","🇪🇸 flamenco-pop","La Perla · Motomami","De Barcelona. Mezcla flamenco con pop y reguetón. Canta en español."),
+          ("Karol G","🇨🇴 reguetón","TQG · Provenza","De Medellín, reina del reguetón. Su pelo naranja es su marca."),
+          ("Bad Bunny","🇵🇷 urbano","Tití me preguntó","De Puerto Rico. El artista más escuchado del planeta."),
+          ("Shakira","🇨🇴 pop","Waka Waka","De Barranquilla. Leyenda mundial; canta en español e inglés."),
+          ("Feid","🇨🇴 reguetón","Ferxxo","De Medellín, siempre de verde. Neo perreo. Colabora con Karol G."),
+          ("Quevedo","🇪🇸 urbano","Bzrp #52","De las Islas Canarias. Éxito mundial con Bizarrap.")]
+    x0,y0=Inches(0.5),Inches(1.6); cw=Inches(4.05); ch=Inches(1.55)
+    for i,(nm,flag,song,fact) in enumerate(arts):
+        c=i%3; r=i//3; x=x0+c*(cw+Inches(0.13)); y=y0+r*(ch+Inches(0.14))
+        card(s,x,y,cw,ch,fill=WHITE,line=G,lw=1.2)
+        text(s,x+Inches(0.15),y+Inches(0.06),cw-Inches(0.3),Inches(0.35),
+             [[(nm+"  ",{"size":13.5,"bold":True,"color":GD,"font":DISPLAY}),(flag,{"size":9.5,"color":MUT})]])
+        text(s,x+Inches(0.15),y+Inches(0.44),cw-Inches(0.3),Inches(0.3),[[("🎵 "+song,{"size":10.5,"bold":True,"color":G})]])
+        rev=text(s,x+Inches(0.15),y+Inches(0.78),cw-Inches(0.3),Inches(0.7),[[(fact,{"size":10.5,"color":INK})]],line=1.1)
+        register_reveal(s, rev)
+    # escala del gusto (odio → me encanta)
+    text(s, Inches(0.5), Inches(4.95), Inches(12), Inches(0.35),
+         [[("🎚️ La escala del gusto ", {"size":13,"bold":True,"color":GD,"font":DISPLAY}),
+           ("(de Rosalía «La Perla»): de «odio» a «me encanta».", {"size":11,"italic":True,"color":MUT})]])
+    scale=[("odio","ik haat",RED),("no me gusta","niet leuk",AMBER),("me gusta","leuk",RGBColor(0x2F,0xA8,0xA0)),("me encanta","geweldig",GD)]
+    x=Inches(0.5); sw=Inches(3.0)
+    for es,nl,col in scale:
+        b=card(s,x,Inches(5.35),sw,Inches(0.7),fill=col,line=None)
+        text(s,x,Inches(5.35),sw,Inches(0.7),
+             [[(es,{"size":13,"bold":True,"color":WHITE,"font":DISPLAY})],[(nl,{"size":9,"color":WHITE})]],
+             align=PP_ALIGN.CENTER,anchor=MSO_ANCHOR.MIDDLE)
+        x=x+sw+Inches(0.1)
+    btn=noodroute(s)
+    exercise_solucion(s, Inches(0.5), Inches(6.2), Inches(12.3), Inches(0.55),
+             [[("Actividad: ", {"bold":True,"color":GD}),
+               ("kies twee artiesten en zeg één zin met de escala + porque. Cross: HTML «Banda sonora» + LyricsTraining + recorder.", {"color":GD})]],
+             trigger=btn)
+    foot(s)
+    notes(s, "TEACHER · CULTURE BANDA SONORA (parel · LPD 5·7). Onthul per kaart een weetje; speel evt. een rechtenvrij fragment/eigen keuze. "
+             "Escala del gusto = graderen (odio→me encanta) — koppel aan gustar (§1) en reacciones (§2). Online: playlist + LyricsTraining + «La escala del gusto». "
+             "Bruggetje naar de Tarea «Mi playlist».")
+
+# ============================================================ DIA 18 · QUIZ — haz la pregunta
 def s17_quiz_pregunta():
     s = slide(); bg(s, PAPER)
     sectionbar(s, "§1 · QUIZ · INTERACCIÓN", "Haz la pregunta", "Bij dit antwoord — welke vraag? Klik → de vraag verschijnt.", num=1)
@@ -539,7 +582,7 @@ def s19_mezcla():
 # ============================================================ DIA 20 · FEEDBACK/REPASO
 def s20_repaso():
     s = slide(); bg(s, PAPER)
-    sectionbar(s, "REPASO · LO ESENCIAL", "Lo esencial de un vistazo", "De volledige herhaling (24 spellen, drills) staat online. Hier: de kern + semáforo.", num=1)
+    sectionbar(s, "REPASO · LO ESENCIAL", "Lo esencial de un vistazo", "De volledige herhaling (20 spellen, drills) staat online. Hier: de kern + semáforo.", num=1)
     ess=["Gustar (al revés): me/te/le/nos/os/les + gusta (1/inf.) · gustan (mv.). Idem encanta(n).",
          "Reacciones: + akkoord también · + oneens a mí no · – akkoord tampoco · – oneens a mí sí.",
          "Proponer: querer (e→ie) / poder (o→ue) + infinitivo · quedar (afspreken).",
@@ -559,7 +602,7 @@ def s20_repaso():
             chip(s,Inches(8.0)+j*Inches(1.5),y+Inches(0.03),em+" ",fill=WHITE,tcolor=col,size=12,w=Inches(1.3))
         y=y+Inches(0.42)
     foot(s)
-    notes(s, "TEACHER · FEEDBACK/REPASO. Semáforo = zelfevaluatie. Repaso-drills online (24 spellen). Bruggetje: U5 «¡Ñam!» (CDMX) — "
+    notes(s, "TEACHER · FEEDBACK/REPASO. Semáforo = zelfevaluatie. Repaso-drills online (20 spellen). Bruggetje: U5 «¡Ñam!» (CDMX) — "
              "cruzamos el charco a México: comida en un restaurante.")
 
 # ============================================================ DIA 21 · TEACHER_NOTES
@@ -569,7 +612,7 @@ def s21_teacher():
     blocks=[("Timing (50 min)","Menu 2' · gustar + pronombres 12' · también/tampoco 8' · querer/poder + quedar 10' · lectura/escucha 8' · cultura 4' · Tarea-briefing 6'."),
             ("Kernvalstrikken","gustar al revés (het ding = onderwerp) · gustaN bij meervoud · tampoco = ook niet · «a mí», niet «yo» · querer/poder zónder wissel bij nosotros/vosotros · 2e ww = infinitief · ¿por qué? ≠ porque."),
             ("Differentiatie (zij-instromers)","Alles start vanaf nul. Sterker: encantar + conectoren + eigen playlist toelichten. Zwakker: gusta/gustan-kaart en OI-tabel langer open."),
-            ("Digitaal","24 spellen + flip cards + klikbare kaart + recorder (Hablar) + Lectura op de página digital. QR's in het boek → juiste anker. Conjugador = aparte tool."),
+            ("Digitaal","20 spellen + flip cards + klikbare kaart + recorder (Hablar) + Lectura op de página digital. QR's in het boek → juiste anker. Conjugador = aparte tool."),
             ("Evaluatie","Tarea «Mi playlist» met rúbrica (4 criteria). LPD 3·4·7·8 + 5 (cultura) + 1·2 (receptief).")]
     y=Inches(1.4)
     for t,b in blocks:
@@ -584,7 +627,7 @@ def s21_teacher():
 def _run_all(include_teacher=True):
     s01_title(); s02_menu(); s03_vocab(); s04_gustar(); s05_gusta_gustan(); s06_oi(); s07_reacciones()
     s08_quiz_reaccion(); s09_reading(); s10_listening(); s11_querer_poder(); s12_speaking(); s13_writing()
-    s14_ocio_musica(); s15_taller(); s16_cultura(); s17_quiz_pregunta(); s18_tarea(); s19_mezcla(); s20_repaso()
+    s14_ocio_musica(); s15_taller(); s16_cultura(); s_banda(); s17_quiz_pregunta(); s18_tarea(); s19_mezcla(); s20_repaso()
     if include_teacher:
         s21_teacher()
 
