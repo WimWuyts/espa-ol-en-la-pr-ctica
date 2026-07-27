@@ -346,8 +346,8 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   <section class="panel" data-p="extra">
     <h2 class="sec">Extra · bronnen</h2>
     <p class="lead">Externe uitleg &amp; oefeningen (de leerkracht vult de links aan).</p>
-    <div class="card"><p>🎬 <b>profedeele</b> (YouTube — ir a + infinitivo / la comida) — <span class="gloss">link volgt.</span></p>
-    <p>🧩 <b>arche-ele</b> (Genially — la comida / el restaurante) — <span class="gloss">link volgt.</span></p>
+    <div class="card"><p>🎬 <b>profedeele</b> (YouTube — los verbos reflexivos / el verbo gustar) — <span class="gloss">link volgt.</span></p>
+    <p>🧩 <b>arche-ele</b> (Genially — ser y estar / la rutina diaria) — <span class="gloss">link volgt.</span></p>
     <p>📄 In het boek (PDF) verwijzen de QR-codes naar déze pagina, op het juiste ankerpunt.</p></div>
   </section>
 

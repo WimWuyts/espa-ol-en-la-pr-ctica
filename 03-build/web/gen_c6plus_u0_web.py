@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# Genereert de zelfstandige HTML-hub voor C5 · U5 «¡Ñam!».
-# Eén standalone bestand: fonts base64, de 21 U5-motor-spellen base64 ingebed (modal, offline),
-# flashcards + naslag (U5-vocab), visuele/interactieve grammatica (cantidades · ir a + inf · lo/la/los/las),
-# klikbare kaart (mundo hispano, parada 5 = México) + TTS + inline recorder + Lectura + editbar. Huisstijl groen.
+# Genereert de zelfstandige HTML-hub voor C6+ · U0 «¡Volvemos!» (het reencuentro).
+# Eén standalone bestand: fonts base64, de U0-motor-spellen base64 ingebed (modal, offline),
+# flashcards + naslag (U0-vocab), visuele/interactieve grammatica (presente · género/concordancia · ser/estar),
+# klikbare kaart (mundo hispano, meelopende fiche) + TTS + inline recorder + Lectura + editbar. Huisstijl morado.
 import json, base64, os, sys
 ROOT = "/home/user/espa-ol-en-la-pr-ctica"
 GEN = f"{ROOT}/02-huisstijl/beeld/generators"
@@ -262,7 +262,7 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
 
   <section class="panel show" data-p="vocab">
     <h2 class="sec">Vocabulario · flashcards</h2>
-    <p class="lead">Álle woorden van U5. Klik om te draaien; wissel ES↔NL; filter per groep; klik 🔊 om te horen. <span class="gloss">Voorkant = Spaans + voorbeeldzin, achterkant = vertaling.</span></p>
+    <p class="lead">Álle woorden van U0. Klik om te draaien; wissel ES↔NL; filter per groep; klik 🔊 om te horen. <span class="gloss">Voorkant = Spaans + voorbeeldzin, achterkant = vertaling.</span></p>
     __FC__
     <h2 class="sec">Ejercicios de vocabulario · zelfcorrectie</h2>
     <p class="lead">Oefen de woorden actief: koppelen, invullen, definities en de <b>intruder</b>. Elke oefening geeft directe feedback en je kunt telkens een <b>andere reeks</b> trekken. <span class="gloss">herkennen → onderscheiden → ophalen.</span></p>
@@ -347,8 +347,8 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   <section class="panel" data-p="extra">
     <h2 class="sec">Extra · bronnen</h2>
     <p class="lead">Externe uitleg &amp; oefeningen (de leerkracht vult de links aan).</p>
-    <div class="card"><p>🎬 <b>profedeele</b> (YouTube — ir a + infinitivo / la comida) — <span class="gloss">link volgt.</span></p>
-    <p>🧩 <b>arche-ele</b> (Genially — la comida / el restaurante) — <span class="gloss">link volgt.</span></p>
+    <div class="card"><p>🎬 <b>profedeele</b> (YouTube — el presente / ser y estar) — <span class="gloss">link volgt.</span></p>
+    <p>🧩 <b>arche-ele</b> (Genially — género y artículos / nacionalidades) — <span class="gloss">link volgt.</span></p>
     <p>📄 In het boek (PDF) verwijzen de QR-codes naar déze pagina, op het juiste ankerpunt.</p></div>
   </section>
 
