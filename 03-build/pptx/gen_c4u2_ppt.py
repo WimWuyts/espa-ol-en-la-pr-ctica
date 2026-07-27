@@ -786,6 +786,45 @@ def _run_all_slides(include_teacher=True):
         s13_teacher()
 
 
+# Themapalet → C4-rode familie. python-pptx start van het Office-standaardthema
+# (accent1 blauw, accent3 groen, blauwe hyperlinks). Elk overgeërfd element
+# (stijl-fills/-lijnen, schaduwen via effectRef, hyperlinks, tx2) trok daardoor naar
+# Office-blauw/groen. Hier herschrijven we het klerenschema naar rood + warme neutralen,
+# zónder de expliciete functionele taalkleuren (§13) te raken.
+THEME_MAP = {
+    "dk2": "20242E", "lt2": "F3EEE4",       # tekst2 = ink · achtergrond2 = crema
+    "accent1": "D64550", "accent2": "A8323B",  # C4-rood + donkerrood
+    "accent3": "C25A63", "accent4": "E08A90",  # rood-tinten
+    "accent5": "9D2A33", "accent6": "FBEAEC",  # diep rood · rood-vlak
+    "hlink": "A8323B", "folHlink": "D64550",   # hyperlinks in C4-rood
+}
+def patch_theme(pptx_path):
+    """Herschrijf alle theme*.xml-klerenschema's naar de C4-rode familie."""
+    import re
+    with zipfile.ZipFile(pptx_path, "r") as zin:
+        items = [(n, zin.read(n)) for n in zin.namelist()]
+    changed = 0
+    out = []
+    for n, data in items:
+        if n.startswith("ppt/theme/") and n.endswith(".xml"):
+            txt = data.decode("utf-8")
+            m = re.search(r"<a:clrScheme\b.*?</a:clrScheme>", txt, re.S)
+            if m:
+                block = m.group(0)
+                for tag, hexv in THEME_MAP.items():
+                    block = re.sub(
+                        r'(<a:%s>\s*<a:srgbClr val=")[0-9A-Fa-f]{6}' % tag,
+                        lambda mo, h=hexv: mo.group(1) + h, block)
+                txt = txt[:m.start()] + block + txt[m.end():]
+                data = txt.encode("utf-8")
+                changed += 1
+        out.append((n, data))
+    with zipfile.ZipFile(pptx_path, "w", zipfile.ZIP_DEFLATED) as zout:
+        for n, data in out:
+            zout.writestr(n, data)
+    return changed
+
+
 def build(mode, out, include_teacher=True):
     global MODE
     MODE = mode
@@ -794,6 +833,8 @@ def build(mode, out, include_teacher=True):
     ndia_timing, nreveals = apply_all_timing()
     apply_hyperlinks()
     prs.save(out)
+    nthemes = patch_theme(out)
+    print(f"themapalet → C4-rood gepatcht in {nthemes} theme-XML('s): {out}")
     ndias = len(prs.slides._sldIdLst)
     print(f"opgeslagen: {out} · {ndias} dia's · {ndia_timing} dia's met on-click animaties · "
           f"{nreveals} on-click onthullingen · {len(MENU_LINKS)} hyperlinks")
