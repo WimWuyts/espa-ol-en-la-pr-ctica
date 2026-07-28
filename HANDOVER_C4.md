@@ -118,6 +118,15 @@ Fonts: base64-inbedden via de `face()`-helper (staat in elke generator).
     build-notities → enkel in broncode/docentdossier).
 11. **Doelcodes** uit `C4_LEERDOELEN_EVALUATIE.md` op de **docentenpagina** van elke unit (niet leerling).
 12. **QR's op print → naar de HTML-hub** (juist ankerpunt), niet rechtstreeks YouTube/PPTX.
+13. **Funciones-comunicativas-laag (BINDEND, auteur 2026-07-27 — matrix C):** elke unit bouwt de
+    **doorlopende functie-ruggengraat** verder uit, vertrekkend uit het fragment. Werkwijze: in
+    `03-build/web/funciones_data.py` een nieuwe `exp[<unit>]` bij een bestaande functie zetten
+    (= *uptrade/nivel+*) of een nieuwe functie toevoegen (`exp[<intro-unit>]`), plus
+    `NOTICING[<unit>]` (cita→función uit de scène) en `TAREA_FUN[<unit>]`. De laag komt **automatisch**
+    in de 3 formaten: hub-tab «🗣️ Funciones» (`gen_c4_funciones.py`), print-sectie tussen Música en
+    Repaso (`funciones_print.py`, bladspiegel 85–99 %), en de PPT-dia `s_funciones()`. Werk daarna
+    `01-cursussen/04-welcome/reservoir/C4_funciones_matrix.md` bij. Leerlingpagina toont función +
+    exponentes + CEFR-chip; **doelcodes enkel in matrix C (docentdossier)**.
 
 ---
 
