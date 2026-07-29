@@ -79,9 +79,21 @@ Nico: [impressed] ¡Qué bien! ¿Hay un ordenador?
 Ana: [calm] No, no hay ordenador, pero hay muchos libros.
 ```
 
+## U6 · «¿dónde está?»  (1 dialoog — Marta zoekt haar spullen, Pablo helpt)
+**Stemmen:** Marta = jonge vrouw · Pablo = jonge man.
+*(Komt exact overeen met `AUDIO[6]` in `comprension_data.py` → preposiciones de lugar · hay/está.)*
+```
+Marta: [a bit stressed] ¿Dónde está mi bolso? No lo encuentro.
+Pablo: [helpful] ¿Está en la cocina?
+Marta: No, en la cocina no hay nada.
+Pablo: [pointing] Mira, está aquí, encima del sofá.
+Marta: [relieved] ¡Ah! Y las llaves, ¿dónde están?
+Pablo: Debajo de la mesa, al lado de tu libro.
+```
+
 ---
 
 ## Nadat je de mp3's hebt
-Zet ze als `C4_U1_audio.mp3` … `C4_U5_audio.mp3` in `03-build/web/componentes/audio/` (of stuur ze mij).
+Zet ze als `C4_U1_audio.mp3` … `C4_U6_audio.mp3` in `03-build/web/componentes/audio/` (of stuur ze mij).
 Dan draai ik `gen_c4_comprension.py` + de hubs opnieuw → de audio zit meteen in de «🎧 Escucha»-tab,
 met een traag-knop en het transcript. Voor volgende units lever ik telkens hetzelfde: script + tags + stemmen.

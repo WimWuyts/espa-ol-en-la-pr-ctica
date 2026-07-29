@@ -29,6 +29,8 @@ herkomst vragen, corrigeren, iets vragen, tellen…). Elke unit:
 | F10 | Describir a alguien | iemand beschrijven (fysiek/karakter) | descripción de personas | C4-SP-2 |
 | F11 | Identificar objetos | voorwerpen benoemen (¿qué es esto?) | identificar cosas | C4-WS-1 |
 | F12 | Decir qué hay y para qué sirve | zeggen wat er is / waarvoor iets dient | existencia y función | C4-WS-1 |
+| F13 | Ubicar cosas · decir dónde está | situeren (¿dónde está? · preposiciones) | localización en el espacio | C4-TS-3 |
+| F14 | Pedir y dar permiso | om toestemming vragen/geven (¿puedo…?) | pedir/dar permiso | C4-GE-2 |
 
 ## Matrix C — functie × unit (● intro · ▲ uptrade/nivel+ · · recycle)
 | ID | U1 | U2 | U3 | U4 | U5 | … | Exponentes die groeien |
@@ -43,12 +45,15 @@ herkomst vragen, corrigeren, iets vragen, tellen…). Elke unit:
 | F08 Gestionar comprensión | ● | ▲ | ▲ | · | · | | ¿cómo?/otra vez → ¿puedes repetir? → más despacio · no entiendo |
 | F09 Hablar de la familia | | | | ● | · | | mi madre/padre · hermano-a · abuelo-a · tío-a · la hermana de María (de + nombre) |
 | F10 Describir a alguien | | | | ● | · | | es alto-a/guapo-a · simpático-a/divertido-a · muy… · un poco… |
-| F11 Identificar objetos | | | | | ● | | ¿qué es esto? · esto es un/una… · esto son… · un/el · una/la |
-| F12 Qué hay / para qué sirve | | | | | ● | | ¿hay…? · (no) hay… · sí que hay… · que sirve para + infinitivo |
+| F11 Identificar objetos | | | | | ● | · | ¿qué es esto? · esto es un/una… · esto son… · un/el · una/la |
+| F12 Qué hay / para qué sirve | | | | | ● | · | ¿hay…? · (no) hay… → hay ↔ está (U6) · que sirve para + infinitivo |
+| F13 Ubicar · dónde está | | | | | | ● | ¿dónde está? · encima/debajo/dentro/al lado de · del (de+el) |
+| F14 Pedir y dar permiso | | | | | | ● | ¿puedo…? · ¿puedes…? · sí, puedes… · aquí no · puedes ir fuera |
 
 **Groei tot nu toe:** U1 = 4 functies · U2 = 6 (+cortesía, +cómo estoy) · U3 = 8 (+pedir algo, +contar) ·
 U4 = 10 (+hablar de la familia, +describir a alguien; F02 uptrade → presentar a alguien) ·
-U5 = 12 (+identificar objetos, +decir qué hay/para qué sirve).
+U5 = 12 (+identificar objetos, +decir qué hay/para qué sirve) ·
+U6 = 14 (+ubicar cosas/dónde está, +pedir y dar permiso).
 
 ## Noticing per unit («¿Qué hacen con el idioma?» — cita → función)
 - **U1:** «¡Hola! ¿Qué tal?»→F01 · «Me llamo…»→F02 · «¿Cómo te llamas?»→F03 · «¿Cómo? Otra vez.»→F08
@@ -56,6 +61,7 @@ U5 = 12 (+identificar objetos, +decir qué hay/para qué sirve).
 - **U3:** «Buenas noches»→F01 · «¿De dónde eres? ¿De qué país?»→F03 · «Soy de Argelia. Eres argelina.»→F02 · «¿Habla usted francés?»→F03 · «Dinero, por favor.»→F06 · «Uno, dos, tres… veinte.»→F07
 - **U4:** «Esta es mi madre.»→F02 · «Es muy elegante, pero un poco gorda.»→F10 · «Paula es la hermana de María.»→F09 · «El tío Fermín, el guapo de la familia.»→F09 · «Es muy alto y muy fuerte.»→F10
 - **U5:** «¿Qué es esto?»→F11 · «Esto es un sofá.»→F11 · «Sirve para descansar.»→F12 · «¿Hay un ordenador?»→F12 · «Esto son mis llaves.»→F11
+- **U6:** «Hay cosas encima de las sillas.»→F13 · «Debajo de la cama.»→F13 · «Dentro del frigorífico…»→F13 · «¿Puedo fumar?»→F14 · «Aquí no, pero puedes ir fuera.»→F14
 
 ## Eindtaak-tags (recycling zichtbaar)
 - **U1 «Mi presentación»** = F01 + F02 + F03
@@ -63,6 +69,7 @@ U5 = 12 (+identificar objetos, +decir qué hay/para qué sirve).
 - **U3 «Mi mapa»** = F02 + F03 + F08
 - **U4 «Mi árbol de familia»** = F09 + F10 + F02
 - **U5 «Diccionario de la clase»** = F11 + F12 + F10
+- **U6 «Plano de mi casa»** = F13 + F12 + F14
 
 ## Zeven ontwerpregels
 1. **Video-afgeleid:** elke functie begint bij een citaat uit de scène (noticing), nooit abstract.
