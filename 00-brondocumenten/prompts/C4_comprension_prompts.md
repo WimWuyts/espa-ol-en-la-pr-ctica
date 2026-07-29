@@ -1,105 +1,166 @@
-# C4 — NotebookLM-prompts voor lees- & luisteroefeningen (U1–U3, uitbreidbaar)
+# C4 — NotebookLM-prompts voor lees- & luisteroefeningen (U1–U3, plak-klaar)
 
-> **Doel:** per unit een korte **leestekst** + een kort **luister-script** genereren op **A1/pre-A1**,
-> in een **vast format** dat rechtstreeks in `03-build/web/comprension_data.py` past → tab
-> «📖 Lee y escucha» + print-blok + (later) PPT-dia's.
+> **Gebruik:** open NotebookLM, plak één volledig prompt-blok hieronder, kopieer de JSON-output
+> terug (of geef ze aan Claude). Elk blok is **zelfstandig** en vraagt de output in een **vast
+> JSON-format** dat rechtstreeks in `03-build/web/comprension_data.py` past (LECTURA/AUDIO).
 >
-> **Werkwijze:** open NotebookLM, plak één prompt hieronder, kopieer de output terug (of geef ze aan
-> Claude). Voor het **geluid**: het script speelt standaard via browser-TTS in de pagina; wil je
-> natuurlijker geluid, spreek het in of gebruik een AI-TTS-mp3 (dan embedden we die).
-> **Niveau-regels (altijd):** enkel presente en vaste formules · géén verleden/toekomst/subjuntivo ·
-> korte zinnen · enkel de woordenschat van de unit + enkele internationale cognaten.
-
----
-
-## Vast uitvoerformat (BELANGRIJK — zo plugt het in de pagina)
-
-**Lezen** →
-```
-TEXTO: [["Spreker of leeg","zin ES"], ...]
-CONTEXTO_NL: "één zin Nederlandse situering"
-GLOBAL: [{"q":"vraag ES","opts":["a","b","c"],"a":0}]        (2 meerkeuze, globaal begrip)
-DETALLE: [{"q":"stelling ES","vf":true}]                      (4 waar/niet-waar)
-TRANSFER: "één open ¿y tú?-vraag ES"
-GLOSARIO: [["es","nl"]]                                        (max 8 lastige woorden)
-```
-**Luisteren** →
-```
-TIPO: "korte omschrijving"
-GUION: [["Spreker","zin ES"], ...]
-TAREA_NL: "de luistertaak in één zin"
-PREGUNTAS: [{"q":"vraag ES","opts":["a","b","c"],"a":0}]      (4 vragen, globaal → detail)
-GLOSARIO: [["es","nl"]]
-RALLENTADO: ["woord1","woord2","woord3"]                       (traag/duidelijk uit te spreken)
-```
+> **Waarom JSON + antwoordsleutels:** de oefeningen op de pagina zijn zelfcorrigerend — daarvoor is
+> per vraag het juiste antwoord nodig. Vraag NotebookLM dus altijd om de "a"-index en om V/F-stellingen.
+> Krijg je toch losse prose terug? Geen probleem — plak ze bij Claude, die normaliseert ze.
 
 ---
 
 ## UNIDAD 1 · Presentaciones
 
-### 📖 Lezen — WhatsApp-chat
+### 📖 Lezen — WhatsApp-chat  *(U1-lezen is al ingevuld; gebruik dit enkel om te hergenereren)*
 ```
-Je bent leraar Spaans en maakt leesmateriaal voor Vlaamse tieners (14–16), niveau A1/pre-A1.
-Thema: Presentaciones (jezelf voorstellen). Enkel presente/vaste vormen; korte zinnen.
-Gebruik UITSLUITEND: Hola · ¿Cómo te llamas? · Me llamo… · (Yo) soy… · Encantado/a · ¿Cómo estás? ·
-Bien / Muy bien · Gracias · ¡Bienvenido/a! · Adiós · Hasta luego (+ enkele cognaten).
+Je bent leraar Spaans en maakt leesmateriaal voor Vlaamse tieners (14–16) op niveau A1/pre-A1.
+Thema: Presentaciones. Regels: enkel presente en vaste formules; GEEN verleden/toekomst/subjuntivo;
+korte zinnen. Gebruik UITSLUITEND deze woordenschat (+ hooguit enkele internationale cognaten):
+Hola · ¿Cómo estás? · Bien, gracias · ¿Cómo te llamas? · Me llamo… · (Yo) soy… · ¿De dónde eres? ·
+Soy de… (una ciudad) · Encantado/a · Gracias · Adiós · Hasta luego.
+
 Schrijf een WhatsApp-chat van 6–8 berichten tussen twee tieners die elkaar leren kennen.
-Lever daarna EXACT in het vaste leesformat (TEXTO / CONTEXTO_NL / GLOBAL / DETALLE / TRANSFER / GLOSARIO).
+
+Antwoord UITSLUITEND met geldige JSON, exact deze sleutels en niets erbuiten. Vragen in het SPAANS.
+{
+  "TEXTO": [["Spreker","zin ES"]],
+  "CONTEXTO_NL": "één zin Nederlandse situering",
+  "GLOBAL": [{"q":"vraag ES","opts":["a","b","c"],"a":0}],
+  "DETALLE": [{"q":"STELLING ES (bewering, geen vraag)","vf":true}],
+  "TRANSFER": "een open ¿y tú?-vraag in het Spaans",
+  "GLOSARIO": [["es","nl"]]
+}
+GLOBAL = precies 2 meerkeuzevragen; "a" = index (0–2) van het juiste antwoord.
+DETALLE = precies 4 waar/niet-waar-STELLINGEN met vf:true of vf:false. GLOSARIO = max 8 woorden.
 ```
+
 ### 🎧 Luisteren — 3 personas se presentan
 ```
-Zelfde rol/niveau/regels. Thema: Presentaciones.
-Woordenschat: Hola · Buenos días · Me llamo… · Yo soy… · Encantado/a · ¿Qué tal? · Estoy bien /
-un poco cansado-a · estudiante · gracias.
-Schrijf een KORT luister-script: 3 mensen stellen zich elk in 2 zinnen voor, langzaam en heel eenvoudig.
-Pauzes met «…». Lever EXACT in het vaste luisterformat (TIPO / GUION / TAREA_NL / PREGUNTAS / GLOSARIO / RALLENTADO).
+Je bent leraar Spaans en maakt luistermateriaal voor Vlaamse tieners (14–16) op niveau A1/pre-A1.
+Thema: Presentaciones. Regels: enkel presente/vaste vormen; korte zinnen. Gebruik UITSLUITEND:
+Hola · Buenos días · Me llamo… · (Yo) soy… · Encantado/a · ¿Qué tal? · Estoy bien / un poco cansado-a ·
+estudiante · gracias (+ cognaten).
+
+Schrijf een KORT luister-script: 3 mensen stellen zich elk in 2 zinnen voor. Langzaam, heel eenvoudig;
+korte pauzes met «…».
+
+Antwoord UITSLUITEND met geldige JSON, exact deze sleutels. Vragen in het SPAANS.
+{
+  "TIPO": "3 personas se presentan",
+  "GUION": [["Spreker","zin ES"]],
+  "TAREA_NL": "de luistertaak in één zin (NL)",
+  "PREGUNTAS": [{"q":"vraag ES","opts":["a","b","c"],"a":0}],
+  "GLOSARIO": [["es","nl"]],
+  "RALLENTADO": ["woord1","woord2","woord3"]
+}
+PREGUNTAS = precies 4, van globaal → detail; "a" = index (0–2) van het juiste antwoord.
 ```
+
+---
 
 ## UNIDAD 2 · Saludos y cortesía
 
-### 📖 Lezen — muro de notas (3 dagmomenten)
+### 📖 Lezen — 3 notas/mensajes (mañana · tarde · noche)
 ```
-Je bent leraar Spaans, materiaal voor Vlaamse tieners (14–16), A1/pre-A1. Enkel presente/vaste vormen.
-Thema: Saludos y cortesía. Gebruik UITSLUITEND: Buenos días / Buenas tardes / Buenas noches · ¡Buenas! ·
-¿Qué tal? · ¿Cómo estás? · Estoy bien / cansado-a / ocupado-a / nervioso-a · Regular · Por favor ·
-Gracias · De nada · Adiós · Hasta luego / Hasta mañana (+ cognaten).
-Schrijf 3 korte notas/berichten (elk 2 zinnen) op 3 momenten: mañana, tarde, noche — telkens een groet
-+ hoe iemand zich voelt. Lever EXACT in het vaste leesformat.
+Je bent leraar Spaans en maakt leesmateriaal voor Vlaamse tieners (14–16) op niveau A1/pre-A1.
+Thema: Saludos y cortesía. Regels: enkel presente en vaste formules; GEEN verleden/toekomst; korte zinnen.
+Gebruik UITSLUITEND: Buenos días / Buenas tardes / Buenas noches · ¡Buenas! · ¿Qué tal? · ¿Cómo estás? ·
+Estoy bien / cansado-a / ocupado-a / nervioso-a · Regular · Por favor · Gracias · De nada ·
+Adiós · Hasta luego / Hasta mañana (+ cognaten).
+
+Schrijf 3 korte notas/berichten van elk 2 zinnen, op 3 momenten van de dag (mañana, tarde, noche):
+telkens een gepaste groet + hoe iemand zich voelt.
+
+Antwoord UITSLUITEND met geldige JSON, exact deze sleutels en niets erbuiten. Vragen in het SPAANS.
+{
+  "TEXTO": [["Spreker of \"\"","zin ES"]],
+  "CONTEXTO_NL": "één zin Nederlandse situering",
+  "GLOBAL": [{"q":"vraag ES","opts":["a","b","c"],"a":0}],
+  "DETALLE": [{"q":"STELLING ES (bewering, geen vraag)","vf":true}],
+  "TRANSFER": "een open ¿y tú?-vraag in het Spaans",
+  "GLOSARIO": [["es","nl"]]
+}
+GLOBAL = precies 2 meerkeuzevragen; "a" = index van het juiste antwoord.
+DETALLE = precies 4 waar/niet-waar-STELLINGEN (vf). Minstens één stelling over het moment van de dag.
+GLOSARIO = max 8 woorden.
 ```
+
 ### 🎧 Luisteren — 3 mini-diálogos de saludo
 ```
-Zelfde rol/niveau/regels. Thema: Saludos y cortesía. Woordenschat: idem als hierboven.
-Schrijf 3 heel korte dialoogjes (elk 3 beurten) op 3 momenten van de dag: mensen groeten elkaar,
-vragen hoe het gaat en nemen afscheid. Langzaam, A1, pauzes met «…».
-Lever EXACT in het vaste luisterformat. In PREGUNTAS: minstens één vraag «¿mañana, tarde o noche?»
-en één «¿cómo está?».
+Je bent leraar Spaans en maakt luistermateriaal voor Vlaamse tieners (14–16) op niveau A1/pre-A1.
+Thema: Saludos y cortesía. Regels: enkel presente/vaste vormen; korte zinnen. Gebruik UITSLUITEND:
+Buenos días / Buenas tardes / Buenas noches · ¡Buenas! · ¿Qué tal? · ¿Cómo estás? ·
+Estoy bien / cansado-a / ocupado-a · Por favor · Gracias · De nada · Adiós · Hasta luego (+ cognaten).
+
+Schrijf 3 heel korte dialoogjes van elk 3 beurten, op 3 momenten van de dag: mensen groeten elkaar,
+vragen hoe het gaat en nemen afscheid. Langzaam, A1; pauzes met «…».
+
+Antwoord UITSLUITEND met geldige JSON, exact deze sleutels. Vragen in het SPAANS.
+{
+  "TIPO": "3 mini-diálogos de saludo",
+  "GUION": [["Spreker","zin ES"]],
+  "TAREA_NL": "de luistertaak in één zin (NL)",
+  "PREGUNTAS": [{"q":"vraag ES","opts":["a","b","c"],"a":0}],
+  "GLOSARIO": [["es","nl"]],
+  "RALLENTADO": ["woord1","woord2","woord3"]
+}
+PREGUNTAS = precies 4; neem minstens één «¿mañana, tarde o noche?» en één «¿cómo está?». "a" = index.
 ```
+
+---
 
 ## UNIDAD 3 · Nacionalidades y países
 
-### 📖 Lezen — 3 fichas / foro internacional
+### 📖 Lezen — 3 fichas van een foro internacional
 ```
-Je bent leraar Spaans, materiaal voor Vlaamse tieners (14–16), A1/pre-A1. Enkel presente/vaste vormen.
-Thema: Nacionalidades y países. Gebruik UITSLUITEND: Me llamo… · Soy de + país (España, México,
-Colombia, Argentina, Bélgica…) · Soy español/a · mexicano/a · belga · argentino/a · colombiano/a ·
-Hablo español / neerlandés / francés / inglés · un poco · ¿Qué idiomas hablas? (+ cognaten).
-Schrijf 3 korte fichas (elk 3 zinnen) van tieners uit verschillende landen (of een kort forobericht per
-persoon): naam, land van herkomst, nationaliteit en talen. Lever EXACT in het vaste leesformat.
-Zorg dat DETALLE minstens één vraag over gentilicio (♂/♀) en één over idioma bevat.
+Je bent leraar Spaans en maakt leesmateriaal voor Vlaamse tieners (14–16) op niveau A1/pre-A1.
+Thema: Nacionalidades y países. Regels: enkel presente en vaste formules; GEEN verleden/toekomst; korte zinnen.
+Gebruik UITSLUITEND: Me llamo… · Soy de + país (España, México, Colombia, Argentina, Bélgica…) ·
+Soy español/a · mexicano/a · belga · argentino/a · colombiano/a · Hablo español / neerlandés / francés / inglés ·
+un poco · ¿Qué idiomas hablas? (+ cognaten). Schrijf de nationaliteit/taal met KLEINE letter.
+
+Schrijf 3 korte forumberichten (fichas) van elk 3 zinnen: tieners uit verschillende landen stellen zich voor
+(naam, land van herkomst, nationaliteit, talen).
+
+Antwoord UITSLUITEND met geldige JSON, exact deze sleutels en niets erbuiten. Vragen in het SPAANS.
+{
+  "TEXTO": [["Naam of \"\"","zin ES"]],
+  "CONTEXTO_NL": "één zin Nederlandse situering",
+  "GLOBAL": [{"q":"vraag ES","opts":["a","b","c"],"a":0}],
+  "DETALLE": [{"q":"STELLING ES (bewering, geen vraag)","vf":true}],
+  "TRANSFER": "een open ¿y tú?-vraag in het Spaans",
+  "GLOSARIO": [["es","nl"]]
+}
+GLOBAL = precies 2 meerkeuzevragen; "a" = index. DETALLE = precies 4 waar/niet-waar-STELLINGEN (vf),
+met minstens één over de gentilicio (♂/♀) en één over een idioma. GLOSARIO = max 8 woorden.
 ```
+
 ### 🎧 Luisteren — entrevista en la calle
 ```
-Zelfde rol/niveau/regels. Thema: Nacionalidades y países. Woordenschat: idem als hierboven +
-números 0–20.
-Schrijf een kort «entrevista en la calle»-script (4–5 beurten): een verslaggever vraagt 2 mensen
-waar ze vandaan komen en welke talen ze spreken. Langzaam, A1, pauzes met «…».
-Lever EXACT in het vaste luisterformat. TAREA_NL = «Vul de tabel in: país · nacionalidad · idioma».
-PREGUNTAS: van globaal (¿cuántas personas?) naar detail (¿de dónde es la segunda persona?).
+Je bent leraar Spaans en maakt luistermateriaal voor Vlaamse tieners (14–16) op niveau A1/pre-A1.
+Thema: Nacionalidades y países. Regels: enkel presente/vaste vormen; korte zinnen. Gebruik UITSLUITEND:
+¿De dónde eres? · Soy de + país · Soy español/a · mexicano/a · belga · Hablo español / neerlandés / francés ·
+un poco · ¿Qué idiomas hablas? · números 0–20 (+ cognaten).
+
+Schrijf een kort «entrevista en la calle»-script van 4–5 beurten: een verslaggever vraagt 2 mensen
+waar ze vandaan komen en welke talen ze spreken. Langzaam, A1; pauzes met «…».
+
+Antwoord UITSLUITEND met geldige JSON, exact deze sleutels. Vragen in het SPAANS.
+{
+  "TIPO": "entrevista en la calle",
+  "GUION": [["Spreker","zin ES"]],
+  "TAREA_NL": "Vul de tabel in: país · nacionalidad · idioma",
+  "PREGUNTAS": [{"q":"vraag ES","opts":["a","b","c"],"a":0}],
+  "GLOSARIO": [["es","nl"]],
+  "RALLENTADO": ["woord1","woord2","woord3"]
+}
+PREGUNTAS = precies 4, van globaal (¿cuántas personas?) → detail (¿de dónde es la segunda persona?). "a" = index.
 ```
 
 ---
 
 ## Uitbreiden naar U4+
-Kopieer een unit-blok, vervang thema + woordenschat (uit de Kit van die unit) + de tekstsoort
-(kies telkens een **andere** soort dan de vorige units → variatie). Plak de output in
-`comprension_data.py` onder `LECTURA[<unit>]` / `AUDIO[<unit>]`.
+Kopieer een unit-blok, vervang thema + woordenschat (uit de Kit van die unit) + de tekstsoort (kies telkens
+een **andere** soort dan de vorige units → variatie). Plak de JSON in `comprension_data.py` onder
+`LECTURA[<unit>]` / `AUDIO[<unit>]` (of geef ze aan Claude).
