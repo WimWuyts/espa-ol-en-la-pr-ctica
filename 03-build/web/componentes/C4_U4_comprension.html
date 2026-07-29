@@ -60,12 +60,14 @@ document.querySelectorAll('.q[data-vf]').forEach(function(q){var cor=q.getAttrib
 // lees-tekst voorlezen
 var rt=document.getElementById('readTts');
 if(rt)rt.onclick=function(){var t=[];document.querySelectorAll('.chat .bub, .para').forEach(function(e){if(!e.closest('#audText'))t.push(e.textContent);});speak(t.join('. '),.9);};
-// audio afspelen (sequentieel)
+// audio afspelen: echte mp3 (element #aud) heeft voorrang; anders browser-TTS-fallback
+var au=document.getElementById('aud');
 var slow=false,sl=document.getElementById('audSlow');
-if(sl)sl.onclick=function(){slow=!slow;sl.classList.toggle('on',slow);};
-// dialoog afspelen: elke spreker krijgt een eigen stem + toonhoogte, zodat het als een gesprek klinkt
+if(sl)sl.onclick=function(){slow=!slow;sl.classList.toggle('on',slow);if(au)au.playbackRate=slow?.75:1;};
 var ap=document.getElementById('audPlay');
-if(ap)ap.onclick=function(){var G=JSON.parse(ap.getAttribute('data-guion'));
+if(ap)ap.onclick=function(){
+  if(au){au.playbackRate=slow?.75:1;try{au.currentTime=0;}catch(e){}au.play();return;}
+  var G=JSON.parse(ap.getAttribute('data-guion'));
   var voces=speechSynthesis.getVoices().filter(function(v){return /^es/i.test(v.lang)});
   var pitches=[1.18,0.82,1.02,0.9,1.1];var spk={},ord=0;
   function conf(s){if(!(s in spk)){spk[s]=ord;ord++;}return spk[s];}

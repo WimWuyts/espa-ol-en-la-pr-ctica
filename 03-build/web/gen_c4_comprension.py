@@ -96,22 +96,34 @@ def lectura_section(L):
             f'<div class="transfer">✍️ {esc(L["transfer"])} <span style="font-weight:400;color:var(--mut)">— schrijf of zeg je antwoord.</span></div>'
             f'{gloss_block(L["glosario"])}</div>')
 
-def audio_section(A):
-    js_guion=json.dumps(A["guion"], ensure_ascii=False)   # [[spreker,zin]] → per-spreker stem/toonhoogte
+AUDIO_DIR=f"{ROOT}/03-build/web/componentes/audio"
+def audio_b64(unit):
+    p=f"{AUDIO_DIR}/C4_U{unit}_audio.mp3"
+    return base64.b64encode(open(p,"rb").read()).decode() if os.path.exists(p) else None
+
+def audio_section(A, unit):
     transcript="".join(f'<div class="bub l"><span class="who">{esc(w)}</span>{esc(l)}</div>' for w,l in A["guion"])
+    mp3=audio_b64(unit)
+    if mp3:  # echte mp3 (natuurlijke stemmen) → speelt op elk toestel, los van browserstemmen
+        player=(f'<audio id="aud" preload="metadata" src="data:audio/mpeg;base64,{mp3}"></audio>'
+                f'<div class="toolbar"><button class="btn play" id="audPlay">▶ Reproducir</button>'
+                f'<button class="btn" id="audSlow">🐢 Lento</button>'
+                f'<button class="btn" id="audTr">👁️ Ver transcripción</button></div>')
+    else:  # fallback: browser-TTS (per-spreker stem/toonhoogte) — kan robotisch of stil zijn afhankelijk van het toestel
+        js_guion=json.dumps(A["guion"], ensure_ascii=False)
+        player=(f'<div class="toolbar"><button class="btn play" id="audPlay" data-guion=\'{esc(js_guion)}\'>▶ Reproducir</button>'
+                f'<button class="btn" id="audSlow">🐢 Lento</button>'
+                f'<button class="btn" id="audTr">👁️ Ver transcripción</button></div>')
     return (f'<h2 class="sec">🎧 Escucha <span class="tipo">{esc(A["tipo"])}</span></h2>'
             f'<p class="lead"><b>{esc(A["tarea_nl"])}</b> — luister eerst zónder de tekst te lezen.</p>'
-            f'<div class="card"><div class="toolbar">'
-            f'<button class="btn play" id="audPlay" data-guion=\'{esc(js_guion)}\'>▶ Reproducir</button>'
-            f'<button class="btn" id="audSlow">🐢 Lento</button>'
-            f'<button class="btn" id="audTr">👁️ Ver transcripción</button></div>'
+            f'<div class="card">{player}'
             f'<div class="chat" id="audText" style="display:none;margin-top:8px">{transcript}</div></div>'
             f'<div class="card"><b>Preguntas</b>{mc_block(A["preguntas"],"au")}{gloss_block(A["glosario"])}</div>')
 
 def build(unit, out_name):
     L=CD.LECTURA.get(unit); A=CD.AUDIO.get(unit)
     if L or A:
-        inner=(lectura_section(L) if L else "")+(audio_section(A) if A else "")
+        inner=(lectura_section(L) if L else "")+(audio_section(A, unit) if A else "")
     else:
         inner=('<div class="card ph">📖🎧 Pronto: una lectura y una audición nuevas para esta unidad.'
                '<span class="nl">Binnenkort: een nieuwe lees- en luisteroefening.</span></div>')
@@ -138,12 +150,14 @@ document.querySelectorAll('.q[data-vf]').forEach(function(q){{var cor=q.getAttri
 // lees-tekst voorlezen
 var rt=document.getElementById('readTts');
 if(rt)rt.onclick=function(){{var t=[];document.querySelectorAll('.chat .bub, .para').forEach(function(e){{if(!e.closest('#audText'))t.push(e.textContent);}});speak(t.join('. '),.9);}};
-// audio afspelen (sequentieel)
+// audio afspelen: echte mp3 (element #aud) heeft voorrang; anders browser-TTS-fallback
+var au=document.getElementById('aud');
 var slow=false,sl=document.getElementById('audSlow');
-if(sl)sl.onclick=function(){{slow=!slow;sl.classList.toggle('on',slow);}};
-// dialoog afspelen: elke spreker krijgt een eigen stem + toonhoogte, zodat het als een gesprek klinkt
+if(sl)sl.onclick=function(){{slow=!slow;sl.classList.toggle('on',slow);if(au)au.playbackRate=slow?.75:1;}};
 var ap=document.getElementById('audPlay');
-if(ap)ap.onclick=function(){{var G=JSON.parse(ap.getAttribute('data-guion'));
+if(ap)ap.onclick=function(){{
+  if(au){{au.playbackRate=slow?.75:1;try{{au.currentTime=0;}}catch(e){{}}au.play();return;}}
+  var G=JSON.parse(ap.getAttribute('data-guion'));
   var voces=speechSynthesis.getVoices().filter(function(v){{return /^es/i.test(v.lang)}});
   var pitches=[1.18,0.82,1.02,0.9,1.1];var spk={{}},ord=0;
   function conf(s){{if(!(s in spk)){{spk[s]=ord;ord++;}}return spk[s];}}
