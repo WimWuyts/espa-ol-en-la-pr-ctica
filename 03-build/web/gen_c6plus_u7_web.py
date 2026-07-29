@@ -35,7 +35,7 @@ MOTOR = [
  ['③ Producir con apoyo', [
    ['imperativo', 'completa: el imperativo', 'cloze'],
    ['opinar', 'completa: opinar y conectar', 'cloze'],
-   ['imper-tetris', 'imperativo Tetris', 'tetris'],
+   ['imper-tetris', 'imperativo: serpiente', 'snake'],
    ['argumento-order', 'ordena el argumento', 'order'],
    ['senala', 'señala', 'point']]],
  ['④ Hablar · grábate 🎙️', [

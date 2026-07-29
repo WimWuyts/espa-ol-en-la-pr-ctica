@@ -1,12 +1,11 @@
 {
   "id": "es-u3-irregular-tetris",
-  "title": "Presente irregular Tetris",
-  "subtitle": "U3 · laat de vorm in de juiste persoon vallen",
+  "title": "Presente irregular: burbujas",
+  "subtitle": "U3 · dispara a la persona correcta · schiet naar de juiste persoon",
   "lang": "es",
-  "template": "tetris",
+  "template": "bubble",
   "options": {
-    "rows": 9,
-    "speed": 1300,
+    "rounds": 16,
     "audio": false
   },
   "generator": {

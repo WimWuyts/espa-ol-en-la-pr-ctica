@@ -36,7 +36,7 @@ MOTOR = [
  ['③ Producir con apoyo', [
    ['reflexivos', 'completa: los reflexivos', 'cloze'],
    ['gustar', 'completa: gustar', 'cloze'],
-   ['pronombre-tetris', 'pronombre Tetris (me/te/se)', 'tetris'],
+   ['pronombre-tetris', 'pronombre: cinta', 'belt'],
    ['rutina-order', 'ordena tu día', 'order'],
    ['senala', 'señala', 'point']]],
  ['④ Hablar · grábate 🎙️', [

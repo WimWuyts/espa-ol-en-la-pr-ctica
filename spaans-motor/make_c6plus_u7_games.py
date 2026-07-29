@@ -128,8 +128,8 @@ w({"id":PRE+"opinar","title":"Completa: opinar y conectar","subtitle":"U7 · men
   {"stimulus":"___ un lado es cómodo; por otro, contamina.","options":["Por","Para","Con"],"answer":"Por","tag":"con","sub":"por un lado"}]}})
 
 # 8 · TETRIS — imperativo: regular -a / regular -e / irregular (pool 16)
-w({"id":PRE+"imper-tetris","title":"Imperativo Tetris","subtitle":"U7 · laat het juiste type vallen",
- "lang":"es","template":"tetris","options":{"rows":9,"speed":1300,"audio":False},
+w({"id":PRE+"imper-tetris","title":"Imperativo: serpiente","subtitle":"U7 · lleva la serpiente al tipo correcto · stuur naar het juiste type",
+ "lang":"es","template":"snake","options":{"rounds":16,"audio":False},
  "classify":{"categories":[
   {"id":"a","label":"-a (-ar)","glaze":G["blue"]},{"id":"e","label":"-e (-er/-ir)","glaze":G["green"]},
   {"id":"irr","label":"irregular ⭐","glaze":G["magenta"]}],

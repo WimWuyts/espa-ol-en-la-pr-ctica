@@ -55,7 +55,7 @@ MOTOR = [
    ['haber-participio', 'completa: haber + participio', 'cloze'],
    ['participio-irregular', 'el participio irregular', 'cloze'],
    ['ya-todavia', '¿ya, todavía no o…?', 'cloze'],
-   ['haber-tetris', 'haber Tetris', 'tetris'],
+   ['haber-tetris', 'haber: pinball', 'pinball'],
    ['diario-order', 'ordena el diario de viaje', 'order'],
    ['senala-viaje', 'señala en el viaje', 'point']]],
  ['④ Analizar & comunicar', [

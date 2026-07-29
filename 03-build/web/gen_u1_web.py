@@ -33,15 +33,19 @@ MOTOR = [
    ['ser-tener', '¿ser o tener?', 'classify'],
    ['ar-er-ir', '-ar · -er · -ir', 'classify'],
    ['genero-articulo', '¿el o la?', 'classify'],
-   ['mayuscula-minuscula', '¿mayúscula o minúscula?', 'classify']]],
+   ['mayuscula-minuscula', '¿mayúscula o minúscula?', 'classify'],
+   ['ser-persona', 'el verbo SER', 'classify']]],
  ['③ Producir con apoyo', [
    ['verbo-cloze', 'completa el verbo (ser+presente)', 'cloze'],
    ['interrogativos', 'palabras interrogativas', 'cloze'],
+   ['que-verbo', '¿qué verbo?', 'cloze'],
+   ['un-una', '¿un o una?', 'cloze'],
    ['presente-regular', 'presente Tetris', 'tetris'],
    ['tonica-datos', 'la tónica de los datos', 'tap'],
    ['presentacion-orden', 'ordena la presentación', 'order']]],
  ['④ Analizar & comunicar', [
    ['caza-mayusculas', 'caza de mayúsculas', 'point'],
+   ['senala-hispano', 'señala el mundo hispano', 'point'],
    ['pregunta-respuesta', 'pregunta ↔ respuesta', 'match'],
    ['presentate', '¡Preséntate!', 'sim']]],
  ['⑤ Hablar · grábate 🎙️', [

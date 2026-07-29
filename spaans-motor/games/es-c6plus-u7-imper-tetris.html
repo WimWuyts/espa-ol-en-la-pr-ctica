@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Imperativo Tetris</title>
+<title>Imperativo: serpiente</title>
 <style>
 /* Gedeelde ontwerptokens — azulejo-stijl (Talavera-tegels). */
 :root{
@@ -107,35 +107,29 @@ header.mt .sp{flex:1}
 .mf-ci.on .mf-cbox{border-color:#2E8E68;background:#DFF3E4}
 .mf-cbtn:active{transform:translateY(1px)}
 
-/* Sjabloon: tetris (sorteer-faller). Kolommen = categorieën. De vallende
-   tegel toont de stimulus; laat ze in de juiste kolom vallen. Volle rij = weg. */
-.tx-wrap{max-width:min(94vw,480px);margin:0 auto}
-.tx-head{display:grid;gap:4px;margin-bottom:6px}
-.tx-h{font-family:var(--serif);font-weight:700;text-align:center;padding:8px 4px;border-radius:2px 2px 0 0;cursor:pointer;
-  color:#FBF6E9;line-height:1.1;font-size:clamp(13px,3.2vw,17px);border:1px solid rgba(0,0,0,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.3);user-select:none;transition:filter .1s}
-.tx-h small{display:block;font-family:var(--mono);font-size:9px;font-weight:400;opacity:.7;margin-top:2px}
-.tx-h:hover{filter:brightness(1.12)}.tx-h:active{filter:brightness(1.25)}
-.tx-h.ink-d{color:#16233D}
+/* Arcade-skin «snake». Kop + legenda boven, dobbelbord onder. */
+.sn-wrap{display:flex;flex-direction:column;gap:10px}
+.sn-head{background:linear-gradient(175deg,#FBF6E9,#E9E0C9);border:1px solid rgba(0,0,0,.25);border-radius:3px;
+  box-shadow:0 5px 0 rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.9);padding:12px;text-align:center}
+.sn-eye{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F66}
+.sn-eye .nl{text-transform:none;letter-spacing:0;font-style:italic}
+.sn-stim{font-family:var(--serif);font-weight:700;color:#12264A;font-size:clamp(22px,5vw,36px);line-height:1.1;margin-top:2px;word-break:break-word}
+.sn-sub{font-family:var(--serif);font-style:italic;font-size:13px;color:#6E6249;min-height:16px}
+.sn-legend{display:flex;flex-wrap:wrap;gap:6px 12px;justify-content:center}
+.sn-leg{display:inline-flex;align-items:center;gap:5px;font-family:var(--serif);font-size:13px;color:var(--cal)}
+.sn-leg i{width:13px;height:13px;border-radius:3px;border:1px solid rgba(0,0,0,.35);display:inline-block}
 
-.tx-grid{position:relative;display:grid;gap:4px;background:rgba(8,18,38,.55);border:1px solid rgba(243,236,219,.22);border-radius:0 0 3px 3px;padding:4px;overflow:hidden;touch-action:manipulation}
-.tx-cell{--ch:46px;height:var(--ch);border-radius:2px;background:rgba(243,236,219,.05)}
-@media(max-width:520px){.tx-cell{--ch:40px}}
-.tx-cell.on{box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}
-.tx-cell.crack{position:relative}
-.tx-cell.crack::after{content:"";position:absolute;inset:0;background:
-  linear-gradient(45deg,transparent 46%,rgba(20,10,6,.6) 47% 49%,transparent 50%),
-  linear-gradient(-20deg,transparent 60%,rgba(20,10,6,.5) 61% 63%,transparent 64%);}
-.tx-cell.clear{animation:txFlash .28s}
-@keyframes txFlash{0%{filter:brightness(2.4)}100%{}}
-
-.tx-active{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;
-  border-radius:2px;background:linear-gradient(175deg,#FBF6E9,#E7DEC7);color:#12264A;font-family:var(--serif);font-weight:700;
-  border:1px solid rgba(0,0,0,.3);box-shadow:0 3px 0 rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.8);
-  padding:2px 4px;line-height:1.02;word-break:break-word;transition:left .11s linear,top .11s linear;z-index:3}
-.tx-meta{display:flex;justify-content:space-between;align-items:baseline;margin:8px 2px 0;font-size:12px;color:var(--cal-dim)}
-.tx-meta .m{font-family:var(--mono)}
-.tx-sub{text-align:center;font-family:var(--serif);font-style:italic;color:var(--cal-dim);min-height:20px;margin-top:4px;font-size:14px}
-.tx-tip{text-align:center;font-size:11.5px;letter-spacing:.06em;color:var(--roto);margin-top:6px}
+.sn-boardwrap{display:flex;justify-content:center}
+.sn-board{display:grid;gap:2px;width:min(92vw,440px);aspect-ratio:1;padding:6px;border-radius:6px;
+  background:linear-gradient(180deg,#173059,#0F2140);border:1px solid rgba(0,0,0,.4);box-shadow:inset 0 2px 10px rgba(0,0,0,.45)}
+.sn-cell{border-radius:2px;background:rgba(243,236,219,.05);display:flex;align-items:center;justify-content:center;
+  font-family:var(--sans);font-weight:700;font-size:9px;line-height:1;overflow:hidden;text-align:center}
+.sn-cell.food{border:1px solid rgba(0,0,0,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.25);font-family:var(--serif);font-size:10px;padding:1px}
+.sn-cell.food.reveal{outline:2px solid #7BE0AE;outline-offset:-1px;animation:snReveal .5s}
+@keyframes snReveal{0%,100%{filter:brightness(1)}50%{filter:brightness(1.5)}}
+.sn-cell.sbody{background:linear-gradient(180deg,#3E9E77,#2E8E68);border-radius:3px}
+.sn-cell.shead{background:linear-gradient(180deg,#E0A22F,#C4842A);border-radius:4px;box-shadow:0 0 6px rgba(224,162,47,.7)}
+.sn-tip{text-align:center;font-size:12px;color:var(--cal-dim);font-style:italic}
 
 </style>
 </head>
@@ -143,136 +137,128 @@ header.mt .sp{flex:1}
 <div id="app"></div>
 <!-- Gegenereerd door spaans-motor uit content/es-c6plus-u7-imper-tetris.json -->
 <script>
-/* Tetris-sjabloon: sorteer-faller. Kolommen = categorieën uit cfg.classify.
-   Stimulus valt; stuur ze naar de juiste kolom (tik kolom / pijltjes / 1-9).
-   Juist = schone tegel; fout = gebarsten tegel (vult je bord). Volle rij = weg.
-   Bord vol → einde. Hergebruikt ELK classify-pakket, ook met generator. */
+/* Arcade-skin «snake»: dunne skin op de classify-judge, met écht andere
+   interactie (STUREN i.p.v. tikken). De stimulus staat boven; op het bord
+   liggen voedseltegels (één per categorie). Stuur de slang (pijltjes/WASD/
+   vegen) naar het voedsel met de JUISTE categorie. Juist = groeien + punt;
+   fout = de juiste tegel licht op. Randen lopen door (wrap); tegen jezelf
+   botsen kost lengte, geen game-over (leervriendelijk). Hergebruikt elk
+   classify-pakket via api.next(). */
 window.MotorTemplates = window.MotorTemplates || {};
-window.MotorTemplates.tetris = {
+window.MotorTemplates.snake = {
   init(api){
     const cfg=api.config, el=api.el, shade=api.shade;
     const cats=(cfg.classify&&cfg.classify.categories)||[];
-    const COLS=cats.length, ROWS=(cfg.options&&cfg.options.rows)||9;
-    const START=(cfg.options&&cfg.options.speed)||1050;
     const root=api.root; root.innerHTML="";
+    const rounds=(cfg.options&&cfg.options.rounds)||14;
+    api.setTarget(rounds);
+    const N=Math.max(11, cats.length+7);
 
-    const wrap=el("div","tx-wrap");
-    const head=el("div","tx-head"); head.style.gridTemplateColumns="repeat("+COLS+",1fr)";
-    cats.forEach((c,i)=>{
-      const h=el("div","tx-h"); h.dataset.col=i;
-      h.style.background="linear-gradient(180deg,"+shade(c.glaze,1.12)+","+shade(c.glaze,.84)+")";
-      if(isLight(c.glaze)) h.classList.add("ink-d");
-      h.innerHTML=c.label+(i<9?"<small>"+(i+1)+"</small>":"");
-      h.addEventListener("click",()=>drop(i));
-      head.appendChild(h);
-    });
-    const grid=el("div","tx-grid"); grid.style.gridTemplateColumns="repeat("+COLS+",1fr)";
+    const wrap=el("div","sn-wrap");
+    const head=el("div","sn-head");
+    head.innerHTML='<div class="sn-eye">Lleva la serpiente a la categoría correcta · <span class="nl">stuur naar de juiste tegel</span></div>'+
+      '<div class="sn-stim" id="snStim">…</div><div class="sn-sub" id="snSub">&nbsp;</div>';
+    const legend=el("div","sn-legend");
+    cats.forEach(c=>{ const t=el("span","sn-leg"); t.innerHTML='<i style="background:'+c.glaze+'"></i>'+c.label; legend.appendChild(t); });
+    const boardWrap=el("div","sn-boardwrap");
+    const board=el("div","sn-board");
+    board.style.gridTemplateColumns="repeat("+N+",1fr)";
     const cells=[];
-    for(let i=0;i<ROWS*COLS;i++){ const c=el("div","tx-cell"); grid.appendChild(c); cells.push(c); }
-    const active=el("div","tx-active"); active.style.display="none"; grid.appendChild(active);
-    const sub=el("div","tx-sub","&nbsp;");
-    const meta=el("div","tx-meta"); meta.innerHTML='<span>Lijnen <b class="m" id="txL">0</b></span><span>Niveau <b class="m" id="txN">1</b></span>';
-    const tip=el("div","tx-tip","tik de kolom · of pijltjes + spatie · of 1–"+Math.min(COLS,9));
-    wrap.appendChild(head); wrap.appendChild(grid); wrap.appendChild(meta); wrap.appendChild(sub); wrap.appendChild(tip);
+    for(let i=0;i<N*N;i++){ const c=el("div","sn-cell"); board.appendChild(c); cells.push(c); }
+    boardWrap.appendChild(board);
+    const tip=el("div","sn-tip","← ↑ ↓ → · WASD · of veeg");
+    wrap.appendChild(head); wrap.appendChild(legend); wrap.appendChild(boardWrap); wrap.appendChild(tip);
     root.appendChild(wrap);
+    const stimEl=head.querySelector("#snStim"), subEl=head.querySelector("#snSub");
 
-    /* staat */
-    const board=Array.from({length:ROWS},()=>new Array(COLS).fill(null));
-    const height=new Array(COLS).fill(0);
-    let cur=null, lines=0, drops=0, over=false, timer=null, cw=0, chh=0;
+    let snake=[{x:(N>>1),y:(N>>1)}], dir={x:1,y:0}, pend=null, foods=[], cur=null, done=0, over=false, timer=null;
 
-    function measure(){ const c0=cells[0].getBoundingClientRect(), g=grid.getBoundingClientRect();
-      cw=cells[1]?(cells[1].getBoundingClientRect().left-c0.left):c0.width+4;
-      chh=(cells[COLS]?(cells[COLS].getBoundingClientRect().top-c0.top):c0.height+4);
-      active.style.width=c0.width+"px"; active.style.height=c0.height+"px";
-      active.style.fontSize=Math.max(10,Math.min(20, (c0.width*1.7)/Math.max(4,curLen())))+"px";
+    function idx(x,y){ return y*N+x; }
+    function occupied(x,y){ return snake.some(s=>s.x===x&&s.y===y) || foods.some(f=>f.x===x&&f.y===y); }
+    function placeFoods(){
+      foods=[];
+      cats.forEach((c,ci)=>{
+        let x,y,tries=0;
+        do{ x=(Math.random()*N)|0; y=(Math.random()*N)|0; tries++; }while(occupied(x,y)&&tries<200);
+        foods.push({x,y,col:ci,label:shortLabel(c.label)});
+      });
     }
-    function curLen(){ return cur? String(cur.item.stimulus).length : 6; }
-    function place(){ if(!cur){active.style.display="none";return;}
-      const base=cells[0].getBoundingClientRect(), g=grid.getBoundingClientRect();
-      const x=(cells[cur.col].getBoundingClientRect().left)-g.left+grid.clientLeft;
-      const r=cur.row<0?0:cur.row;
-      const y=(cells[r*COLS+cur.col].getBoundingClientRect().top)-g.top+grid.clientTop + (cur.row<0?-chh:0);
-      active.style.left=x+"px"; active.style.top=y+"px"; active.style.display="flex";
-    }
-    function paint(){
-      for(let r=0;r<ROWS;r++)for(let c=0;c<COLS;c++){
-        const cell=cells[r*COLS+c], b=board[r][c];
-        cell.className="tx-cell";
-        if(b){ cell.classList.add("on"); if(!b.ok)cell.classList.add("crack");
-          cell.style.background="linear-gradient(180deg,"+shade(b.glaze,1.1)+","+shade(b.glaze,.82)+")"; }
-        else cell.style.background="";
-      }
-    }
-    function floor(col){ return ROWS-1-height[col]; }
+    function shortLabel(lbl){ const s=String(lbl).replace(/<[^>]+>/g,"").trim(); return s.length<=6?s:s.slice(0,5)+"…"; }
+    function correctCol(item){ const ans=Array.isArray(item.answer)?item.answer:[item.answer]; return cats.findIndex(c=>ans.indexOf(c.id)>=0); }
 
     function spawn(){
       if(over) return;
-      cur={ col:(COLS>>1), row:-1, item:api.next() };
-      active.textContent=cur.item.stimulus;
-      sub.innerHTML = (cfg.options&&cfg.options.hint===false)?"&nbsp;":(cur.item.sub?esc(cur.item.sub):"&nbsp;");
-      measure(); place();
+      cur=api.next();
+      stimEl.textContent=cur.stimulus;
+      subEl.innerHTML=(cfg.options&&cfg.options.hint===false)?"&nbsp;":(cur.sub?esc(cur.sub):"&nbsp;");
+      placeFoods(); paint();
+    }
+    function paint(){
+      cells.forEach(c=>{ c.className="sn-cell"; c.textContent=""; c.style.background=""; c.style.color=""; });
+      foods.forEach(f=>{ const c=cells[idx(f.x,f.y)]; c.classList.add("food");
+        c.style.background="linear-gradient(180deg,"+shade(cats[f.col].glaze,1.12)+","+shade(cats[f.col].glaze,.82)+")";
+        if(isLight(cats[f.col].glaze)) c.style.color="#12264A"; else c.style.color="#F3ECDB";
+        c.textContent=f.label; });
+      snake.forEach((s,i)=>{ const c=cells[idx(s.x,s.y)]; c.classList.add(i===0?"shead":"sbody"); });
+    }
+    function setDir(x,y){
+      if(over) return;
+      if(x===-dir.x && y===-dir.y) return; // geen ommekeer
+      pend={x,y};
     }
     function step(){
       if(over||!cur) return;
-      const fr=floor(cur.col);
-      if(cur.row>=fr){ lock(); return; }
-      cur.row++; place();
-    }
-    function moveCol(d){ if(over||!cur)return; const n=cur.col+d; if(n>=0&&n<COLS){cur.col=n;place();} }
-    function drop(col){ if(over||!cur)return; if(col!=null)cur.col=col; cur.row=floor(cur.col); place(); lock(); }
-
-    function lock(){
-      const col=cur.col, fr=floor(col);
-      if(fr<0){ end(); return; }
-      const ans=Array.isArray(cur.item.answer)?cur.item.answer:[cur.item.answer];
-      const ok=ans.indexOf(cats[col].id)>=0;
-      board[fr][col]={glaze:cats[col].glaze, ok}; height[col]++;
-      api.judge(ok,{tag:cur.item.tag,stimulus:cur.item.stimulus,chosen:cats[col].id,correct:ans,sub:cur.item.sub});
-      cur=null; active.style.display="none";
-      paint(); clearLines(); drops++;
-      if(height.some(h=>h>=ROWS)){ end(); return; }
-      retime();
-      setTimeout(spawn, 70);
-    }
-    function clearLines(){
-      let cleared=0;
-      for(let r=ROWS-1;r>=0;r--){
-        let full=true; for(let c=0;c<COLS;c++) if(!board[r][c]){full=false;break;}
-        if(full){ cleared++;
-          for(let c=0;c<COLS;c++) cells[r*COLS+c].classList.add("clear");
-          for(let rr=r; rr>0; rr--) board[rr]=board[rr-1].slice();
-          board[0]=new Array(COLS).fill(null); r++;
-        }
+      if(pend){ dir=pend; pend=null; }
+      let hx=(snake[0].x+dir.x+N)%N, hy=(snake[0].y+dir.y+N)%N;
+      // eigen staart: kost lengte, geen einde
+      if(snake.some((s,i)=>i>0 && s.x===hx&&s.y===hy)){
+        if(snake.length>3) snake=snake.slice(0,3);
+        api.sfx.bad();
       }
-      if(cleared){
-        for(let c=0;c<COLS;c++){ let h=0; for(let r=0;r<ROWS;r++) if(board[r][c])h++; height[c]=h; }
-        lines+=cleared; document.getElementById("txL").textContent=lines;
-        api.bonus(cleared*cleared*25); api.sfx.win();
-        setTimeout(paint, 120);
+      const nh={x:hx,y:hy};
+      const fi=foods.findIndex(f=>f.x===hx&&f.y===hy);
+      snake.unshift(nh);
+      if(fi>=0){
+        const f=foods[fi], item=cur;
+        const ans=Array.isArray(item.answer)?item.answer:[item.answer];
+        const ok=ans.indexOf(cats[f.col].id)>=0;
+        api.judge(ok,{tag:item.tag,stimulus:item.stimulus,chosen:cats[f.col].id,correct:ans,sub:item.sub});
+        cur=null; done++; api.tick();
+        if(!ok){ snake.pop(); const r=correctCol(item); if(r>=0){ const rc=cells[idx(foods[r].x,foods[r].y)]; rc.classList.add("reveal"); } }
+        // bij juist: groei (staart NIET poppen)
+        foods=[]; paint();
+        if(done>=rounds){ setTimeout(end, ok?260:650); return; }
+        setTimeout(()=>{ if(!over) spawn(); }, ok?260:650);
+        return;
+      } else {
+        snake.pop(); // gewone stap
       }
+      paint();
     }
-    function level(){ return 1+Math.floor(drops/8); }
-    function retime(){ const n=level(); document.getElementById("txN").textContent=n;
-      clearInterval(timer); timer=setInterval(step, Math.max(340, START - (n-1)*80)); }
     function end(){ over=true; clearInterval(timer); api.finish(); }
 
     function onKey(e){
-      if(over||!cur) return;
-      if(e.key==="ArrowLeft"){e.preventDefault();moveCol(-1);}
-      else if(e.key==="ArrowRight"){e.preventDefault();moveCol(1);}
-      else if(e.key===" "||e.key==="ArrowDown"){e.preventDefault();drop(null);}
-      else if(e.key>="1"&&e.key<="9"){const i=+e.key-1; if(i<COLS){e.preventDefault();drop(i);}}
+      const k=e.key.toLowerCase();
+      if(k==="arrowleft"||k==="a"){e.preventDefault();setDir(-1,0);}
+      else if(k==="arrowright"||k==="d"){e.preventDefault();setDir(1,0);}
+      else if(k==="arrowup"||k==="w"){e.preventDefault();setDir(0,-1);}
+      else if(k==="arrowdown"||k==="s"){e.preventDefault();setDir(0,1);}
     }
     document.addEventListener("keydown",onKey);
-    grid.addEventListener("click",e=>{ if(!cur)return; const g=grid.getBoundingClientRect();
-      const i=Math.max(0,Math.min(COLS-1,Math.floor((e.clientX-g.left)/(g.width/COLS)))); drop(i); });
-    const onResize=()=>{ measure(); place(); };
-    window.addEventListener("resize",onResize);
-    api._cleanup=()=>{ clearInterval(timer); document.removeEventListener("keydown",onKey); window.removeEventListener("resize",onResize); };
+    // vegen
+    let tx=0,ty=0;
+    function ts(e){ const t=e.touches[0]; tx=t.clientX; ty=t.clientY; }
+    function te(e){ const t=e.changedTouches[0], dx=t.clientX-tx, dy=t.clientY-ty;
+      if(Math.abs(dx)<20&&Math.abs(dy)<20) return;
+      if(Math.abs(dx)>Math.abs(dy)) setDir(dx>0?1:-1,0); else setDir(0,dy>0?1:-1); }
+    board.addEventListener("touchstart",ts,{passive:true});
+    board.addEventListener("touchend",te,{passive:true});
 
-    paint();
-    requestAnimationFrame(()=>{ spawn(); retime(); });
+    api._cleanup=()=>{ over=true; clearInterval(timer); document.removeEventListener("keydown",onKey);
+      board.removeEventListener("touchstart",ts); board.removeEventListener("touchend",te); };
+
+    spawn();
+    timer=setInterval(step, api.calm?360:260);
 
     function esc(s){ return String(s).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
     function isLight(hex){ const n=parseInt(hex.slice(1),16); return (0.299*((n>>16)&255)+0.587*((n>>8)&255)+0.114*(n&255))>176; }
@@ -709,7 +695,7 @@ window.Motor = { mount };
 
 ;
 (function(){
-var cfg = {"id":"es-c6plus-u7-imper-tetris","title":"Imperativo Tetris","subtitle":"U7 · laat het juiste type vallen","lang":"es","template":"tetris","options":{"rows":9,"speed":1300,"audio":false},"classify":{"categories":[{"id":"a","label":"-a (-ar)","glaze":"#3D74D6"},{"id":"e","label":"-e (-er/-ir)","glaze":"#2E8E68"},{"id":"irr","label":"irregular ⭐","glaze":"#B4309A"}],"items":[{"stimulus":"cuidar","answer":"a","tag":"a","sub":"cuida"},{"stimulus":"comer","answer":"e","tag":"e","sub":"come"},{"stimulus":"hacer","answer":"irr","tag":"irr","sub":"haz"},{"stimulus":"reciclar","answer":"a","tag":"a","sub":"recicla"},{"stimulus":"ir","answer":"irr","tag":"irr","sub":"ve"},{"stimulus":"beber","answer":"e","tag":"e","sub":"bebe"},{"stimulus":"decir","answer":"irr","tag":"irr","sub":"di"},{"stimulus":"ahorrar","answer":"a","tag":"a","sub":"ahorra"},{"stimulus":"escribir","answer":"e","tag":"e","sub":"escribe"},{"stimulus":"ser","answer":"irr","tag":"irr","sub":"sé"},{"stimulus":"proteger","answer":"e","tag":"e","sub":"protege"},{"stimulus":"tener","answer":"irr","tag":"irr","sub":"ten"},{"stimulus":"evitar","answer":"a","tag":"a","sub":"evita"},{"stimulus":"venir","answer":"irr","tag":"irr","sub":"ven"},{"stimulus":"usar","answer":"a","tag":"a","sub":"usa"},{"stimulus":"vivir","answer":"e","tag":"e","sub":"vive"}]}};
+var cfg = {"id":"es-c6plus-u7-imper-tetris","title":"Imperativo: serpiente","subtitle":"U7 · lleva la serpiente al tipo correcto · stuur naar het juiste type","lang":"es","template":"snake","options":{"rounds":16,"audio":false},"classify":{"categories":[{"id":"a","label":"-a (-ar)","glaze":"#3D74D6"},{"id":"e","label":"-e (-er/-ir)","glaze":"#2E8E68"},{"id":"irr","label":"irregular ⭐","glaze":"#B4309A"}],"items":[{"stimulus":"cuidar","answer":"a","tag":"a","sub":"cuida"},{"stimulus":"comer","answer":"e","tag":"e","sub":"come"},{"stimulus":"hacer","answer":"irr","tag":"irr","sub":"haz"},{"stimulus":"reciclar","answer":"a","tag":"a","sub":"recicla"},{"stimulus":"ir","answer":"irr","tag":"irr","sub":"ve"},{"stimulus":"beber","answer":"e","tag":"e","sub":"bebe"},{"stimulus":"decir","answer":"irr","tag":"irr","sub":"di"},{"stimulus":"ahorrar","answer":"a","tag":"a","sub":"ahorra"},{"stimulus":"escribir","answer":"e","tag":"e","sub":"escribe"},{"stimulus":"ser","answer":"irr","tag":"irr","sub":"sé"},{"stimulus":"proteger","answer":"e","tag":"e","sub":"protege"},{"stimulus":"tener","answer":"irr","tag":"irr","sub":"ten"},{"stimulus":"evitar","answer":"a","tag":"a","sub":"evita"},{"stimulus":"venir","answer":"irr","tag":"irr","sub":"ven"},{"stimulus":"usar","answer":"a","tag":"a","sub":"usa"},{"stimulus":"vivir","answer":"e","tag":"e","sub":"vive"}]}};
 cfg._source = { items: cfg.classify.items };
 Motor.mount(document.getElementById('app'), cfg);
 })();

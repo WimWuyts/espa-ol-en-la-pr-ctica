@@ -35,7 +35,7 @@ MOTOR = [
  ['③ Producir con apoyo', [
    ['gerundio', 'completa: estar + gerundio', 'cloze'],
    ['lo-la', 'completa: lo/la/los/las', 'cloze'],
-   ['lo-la-tetris', 'lo/la Tetris', 'tetris'],
+   ['lo-la-tetris', 'lo/la: puertas', 'platform'],
    ['direcciones-order', 'ordena la ruta', 'order'],
    ['senala', 'señala', 'point']]],
  ['④ Hablar · grábate 🎙️', [

@@ -35,7 +35,7 @@ MOTOR = [
  ['③ Producir con apoyo', [
    ['indefinido', 'completa: el indefinido', 'cloze'],
    ['se-lo', 'completa: se lo/se la', 'cloze'],
-   ['indef-tetris', 'indefinido Tetris', 'tetris'],
+   ['indef-tetris', 'indefinido: pinball', 'pinball'],
    ['biografia-order', 'ordena la frase', 'order'],
    ['senala', 'señala', 'point']]],
  ['④ Hablar · grábate 🎙️', [

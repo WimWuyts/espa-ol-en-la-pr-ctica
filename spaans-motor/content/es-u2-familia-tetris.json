@@ -1,12 +1,11 @@
 {
   "id": "es-u2-familia-tetris",
-  "title": "Tetris: ser, estar y tener",
-  "subtitle": "U2 · laat elke vorm in de juiste persoon vallen",
+  "title": "Topos: ser, estar y tener",
+  "subtitle": "U2 · aporrea la persona correcta · mep de juiste persoon",
   "lang": "es",
-  "template": "tetris",
+  "template": "mole",
   "options": {
-    "rows": 9,
-    "speed": 1300,
+    "rounds": 16,
     "audio": false
   },
   "classify": {

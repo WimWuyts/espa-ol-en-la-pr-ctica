@@ -235,8 +235,8 @@ w({"id":"es-u5-pronombre-cloze","title":"¿lo, la, los o las?","subtitle":"U5 ·
   {"stimulus":"¿La propina? —___ dejo en la mesa.","options":["La","Lo","Las"],"answer":"La","tag":"od","sub":"la propina (f ev)"}]}})
 
 # 10 · TETRIS — cantidades (concordantie, valt in de juiste kolom)  (pool 18)
-w({"id":"es-u5-cantidad-tetris","title":"Cantidades Tetris","subtitle":"U5 · laat elk woord in de juiste vorm van «mucho» vallen",
- "lang":"es","template":"tetris","options":{"rows":9,"speed":1300,"audio":False},
+w({"id":"es-u5-cantidad-tetris","title":"Cantidades: cinta","subtitle":"U5 · clasifica «mucho» en la cinta · sorteer op de band",
+ "lang":"es","template":"belt","options":{"rounds":16,"audio":False},
  "classify":{"categories":[
   {"id":"mucho","label":"mucho","glaze":G["blue"]},{"id":"mucha","label":"mucha","glaze":G["red"]},
   {"id":"muchos","label":"muchos","glaze":G["green"]},{"id":"muchas","label":"muchas","glaze":G["amber"]}],

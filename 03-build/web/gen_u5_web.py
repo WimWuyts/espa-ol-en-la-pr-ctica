@@ -39,10 +39,11 @@ MOTOR = [
    ['voy-a', 'completa: ir a + infinitivo', 'cloze'],
    ['cantidad-cloze', 'completa la cantidad', 'cloze'],
    ['pronombre-cloze', '¿lo, la, los o las?', 'cloze'],
-   ['cantidad-tetris', 'cantidades Tetris', 'tetris'],
+   ['cantidad-tetris', 'cantidades: cinta', 'belt'],
    ['orden-restaurante', 'ordena el diálogo', 'order'],
    ['receta-order', 'ordena la receta', 'order'],
-   ['pon-la-mesa', 'pon la mesa', 'point']]],
+   ['pon-la-mesa', 'pon la mesa', 'point'],
+   ['senala-mercado', 'señala en el mercado', 'point']]],
  ['④ Analizar & comunicar', [
    ['pide', '¡pide en el restaurante!', 'sim']]],
  ['⑤ Hablar · grábate 🎙️', [

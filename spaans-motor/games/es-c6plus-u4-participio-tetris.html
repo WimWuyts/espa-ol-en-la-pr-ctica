@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Participio Tetris</title>
+<title>Participio: torres</title>
 <style>
 /* Gedeelde ontwerptokens — azulejo-stijl (Talavera-tegels). */
 :root{
@@ -107,35 +107,38 @@ header.mt .sp{flex:1}
 .mf-ci.on .mf-cbox{border-color:#2E8E68;background:#DFF3E4}
 .mf-cbtn:active{transform:translateY(1px)}
 
-/* Sjabloon: tetris (sorteer-faller). Kolommen = categorieën. De vallende
-   tegel toont de stimulus; laat ze in de juiste kolom vallen. Volle rij = weg. */
-.tx-wrap{max-width:min(94vw,480px);margin:0 auto}
-.tx-head{display:grid;gap:4px;margin-bottom:6px}
-.tx-h{font-family:var(--serif);font-weight:700;text-align:center;padding:8px 4px;border-radius:2px 2px 0 0;cursor:pointer;
-  color:#FBF6E9;line-height:1.1;font-size:clamp(13px,3.2vw,17px);border:1px solid rgba(0,0,0,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.3);user-select:none;transition:filter .1s}
-.tx-h small{display:block;font-family:var(--mono);font-size:9px;font-weight:400;opacity:.7;margin-top:2px}
-.tx-h:hover{filter:brightness(1.12)}.tx-h:active{filter:brightness(1.25)}
-.tx-h.ink-d{color:#16233D}
-
-.tx-grid{position:relative;display:grid;gap:4px;background:rgba(8,18,38,.55);border:1px solid rgba(243,236,219,.22);border-radius:0 0 3px 3px;padding:4px;overflow:hidden;touch-action:manipulation}
-.tx-cell{--ch:46px;height:var(--ch);border-radius:2px;background:rgba(243,236,219,.05)}
-@media(max-width:520px){.tx-cell{--ch:40px}}
-.tx-cell.on{box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}
-.tx-cell.crack{position:relative}
-.tx-cell.crack::after{content:"";position:absolute;inset:0;background:
-  linear-gradient(45deg,transparent 46%,rgba(20,10,6,.6) 47% 49%,transparent 50%),
-  linear-gradient(-20deg,transparent 60%,rgba(20,10,6,.5) 61% 63%,transparent 64%);}
-.tx-cell.clear{animation:txFlash .28s}
-@keyframes txFlash{0%{filter:brightness(2.4)}100%{}}
-
-.tx-active{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;
-  border-radius:2px;background:linear-gradient(175deg,#FBF6E9,#E7DEC7);color:#12264A;font-family:var(--serif);font-weight:700;
-  border:1px solid rgba(0,0,0,.3);box-shadow:0 3px 0 rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.8);
-  padding:2px 4px;line-height:1.02;word-break:break-word;transition:left .11s linear,top .11s linear;z-index:3}
-.tx-meta{display:flex;justify-content:space-between;align-items:baseline;margin:8px 2px 0;font-size:12px;color:var(--cal-dim)}
-.tx-meta .m{font-family:var(--mono)}
-.tx-sub{text-align:center;font-family:var(--serif);font-style:italic;color:var(--cal-dim);min-height:20px;margin-top:4px;font-size:14px}
-.tx-tip{text-align:center;font-size:11.5px;letter-spacing:.06em;color:var(--roto);margin-top:6px}
+/* Arcade-skin «torenverdediging». Vijand-baan boven, torens onder, levens. */
+.tw-wrap{display:flex;flex-direction:column;gap:10px}
+.tw-hp{font-family:var(--serif);font-size:18px;color:#C4402C;text-align:center;letter-spacing:.08em}
+.tw-hp .tw-hpk{font-family:var(--sans);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--cal-dim);margin-right:8px}
+.tw-hp .tw-hp0{color:#6E6249;opacity:.6}
+.tw-lane{position:relative;height:150px;border-radius:6px;overflow:hidden;
+  background:linear-gradient(180deg,#24467C,#173059);border:1px solid rgba(0,0,0,.4);box-shadow:inset 0 2px 10px rgba(0,0,0,.4)}
+.tw-lane::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:44%;transform:translateX(-50%);
+  background:repeating-linear-gradient(0deg,rgba(243,236,219,.10) 0 12px,transparent 12px 24px)}
+.tw-base{position:absolute;left:50%;bottom:4px;transform:translateX(-50%);font-size:32px;z-index:2;filter:drop-shadow(0 2px 2px rgba(0,0,0,.5))}
+.tw-enemy{position:absolute;left:50%;top:4%;transform:translateX(-50%);min-width:52px;max-width:70%;height:40px;padding:0 12px;
+  display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;color:#12264A;text-align:center;line-height:1.05;
+  background:linear-gradient(180deg,#FBF6E9,#E4D9BE);border:1px solid rgba(0,0,0,.35);border-radius:4px;box-shadow:0 3px 0 rgba(0,0,0,.35);white-space:nowrap}
+.tw-enemy.boom{animation:twBoom .34s forwards}
+.tw-enemy.pass{animation:twPass .34s forwards}
+@keyframes twBoom{0%{transform:translateX(-50%) scale(1)}45%{transform:translateX(-50%) scale(1.3);filter:brightness(1.5)}100%{transform:translateX(-50%) scale(0);opacity:0}}
+@keyframes twPass{0%,100%{transform:translateX(-50%)}25%{transform:translate(calc(-50% - 6px),0)}75%{transform:translate(calc(-50% + 6px),0)}}
+.tw-sub{min-height:16px;text-align:center;font-family:var(--serif);font-style:italic;font-size:13px;color:var(--cal-dim)}
+.tw-turrets{display:grid;gap:8px}
+.tw-turret{position:relative;min-height:60px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  padding:8px 6px;border-radius:4px 4px 3px 3px;cursor:pointer;color:#F3ECDB;text-align:center;
+  border:1px solid rgba(0,0,0,.35);box-shadow:0 4px 0 rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.25);transition:transform .08s,filter .12s}
+.tw-turret.ink-d{color:#12264A}
+.tw-cannon{width:10px;height:14px;border-radius:3px 3px 0 0;background:rgba(0,0,0,.35)}
+.tw-tl{font-family:var(--serif);font-weight:700;font-size:clamp(13px,2.3vw,18px);line-height:1.05}
+.tw-turret small{position:absolute;top:4px;right:6px;font-family:var(--mono);font-size:10px;opacity:.55}
+.tw-turret:hover{filter:brightness(1.05)}
+.tw-turret:active{transform:translateY(2px);box-shadow:0 2px 0 rgba(0,0,0,.28)}
+.tw-turret.shoot{animation:twShoot .26s}
+.tw-turret.reveal{outline:3px solid #7BE0AE;outline-offset:2px}
+@keyframes twShoot{0%{filter:brightness(1)}40%{filter:brightness(1.5)}100%{filter:brightness(1)}}
+.tw-tip{text-align:center;font-size:12px;color:var(--cal-dim);font-style:italic}
 
 </style>
 </head>
@@ -143,136 +146,105 @@ header.mt .sp{flex:1}
 <div id="app"></div>
 <!-- Gegenereerd door spaans-motor uit content/es-c6plus-u4-participio-tetris.json -->
 <script>
-/* Tetris-sjabloon: sorteer-faller. Kolommen = categorieën uit cfg.classify.
-   Stimulus valt; stuur ze naar de juiste kolom (tik kolom / pijltjes / 1-9).
-   Juist = schone tegel; fout = gebarsten tegel (vult je bord). Volle rij = weg.
-   Bord vol → einde. Hergebruikt ELK classify-pakket, ook met generator. */
+/* Arcade-skin «torenverdediging» (tower): dunne skin op de classify-judge, met
+   LEVENS + tijdsdruk (defense-jas). Een vijand (de stimulus) marcheert naar je
+   basis; tik de TOREN (categorie) die bij de stimulus past om hem neer te halen
+   vóór hij aankomt. Juiste toren = punt; verkeerde toren of de vijand bereikt de
+   basis = mis + −1 leven. Levens op → einde. Hergebruikt elk classify-pakket. */
 window.MotorTemplates = window.MotorTemplates || {};
-window.MotorTemplates.tetris = {
+window.MotorTemplates.tower = {
   init(api){
     const cfg=api.config, el=api.el, shade=api.shade;
     const cats=(cfg.classify&&cfg.classify.categories)||[];
-    const COLS=cats.length, ROWS=(cfg.options&&cfg.options.rows)||9;
-    const START=(cfg.options&&cfg.options.speed)||1050;
     const root=api.root; root.innerHTML="";
+    const rounds=(cfg.options&&cfg.options.rounds)||16;
+    let lives=(cfg.options&&cfg.options.lives)||5;
+    api.setTarget(rounds);
 
-    const wrap=el("div","tx-wrap");
-    const head=el("div","tx-head"); head.style.gridTemplateColumns="repeat("+COLS+",1fr)";
+    const wrap=el("div","tw-wrap");
+    const hpbar=el("div","tw-hp"); hpbar.id="twHp";
+    const lane=el("div","tw-lane");
+    const enemy=el("div","tw-enemy"); enemy.style.display="none";
+    const base=el("div","tw-base"); base.innerHTML='<span>🏰</span>';
+    lane.appendChild(base); lane.appendChild(enemy);
+    const sub=el("div","tw-sub","&nbsp;");
+    const turrets=el("div","tw-turrets"); turrets.style.gridTemplateColumns="repeat("+cats.length+",1fr)";
     cats.forEach((c,i)=>{
-      const h=el("div","tx-h"); h.dataset.col=i;
-      h.style.background="linear-gradient(180deg,"+shade(c.glaze,1.12)+","+shade(c.glaze,.84)+")";
-      if(isLight(c.glaze)) h.classList.add("ink-d");
-      h.innerHTML=c.label+(i<9?"<small>"+(i+1)+"</small>":"");
-      h.addEventListener("click",()=>drop(i));
-      head.appendChild(h);
+      const t=el("div","tw-turret"); t.dataset.col=i;
+      t.style.background="linear-gradient(180deg,"+shade(c.glaze,1.12)+","+shade(c.glaze,.8)+")";
+      if(isLight(c.glaze)) t.classList.add("ink-d");
+      t.innerHTML='<span class="tw-cannon"></span><span class="tw-tl">'+c.label+'</span>'+(i<9?'<small>'+(i+1)+'</small>':'');
+      t.addEventListener("click",()=>fire(i));
+      turrets.appendChild(t);
     });
-    const grid=el("div","tx-grid"); grid.style.gridTemplateColumns="repeat("+COLS+",1fr)";
-    const cells=[];
-    for(let i=0;i<ROWS*COLS;i++){ const c=el("div","tx-cell"); grid.appendChild(c); cells.push(c); }
-    const active=el("div","tx-active"); active.style.display="none"; grid.appendChild(active);
-    const sub=el("div","tx-sub","&nbsp;");
-    const meta=el("div","tx-meta"); meta.innerHTML='<span>Lijnen <b class="m" id="txL">0</b></span><span>Niveau <b class="m" id="txN">1</b></span>';
-    const tip=el("div","tx-tip","tik de kolom · of pijltjes + spatie · of 1–"+Math.min(COLS,9));
-    wrap.appendChild(head); wrap.appendChild(grid); wrap.appendChild(meta); wrap.appendChild(sub); wrap.appendChild(tip);
+    const tip=el("div","tw-tip","tik de juiste toren · of 1–"+Math.min(cats.length,9));
+    wrap.appendChild(hpbar); wrap.appendChild(lane); wrap.appendChild(sub); wrap.appendChild(turrets); wrap.appendChild(tip);
     root.appendChild(wrap);
 
-    /* staat */
-    const board=Array.from({length:ROWS},()=>new Array(COLS).fill(null));
-    const height=new Array(COLS).fill(0);
-    let cur=null, lines=0, drops=0, over=false, timer=null, cw=0, chh=0;
+    let cur=null, pos=0, done=0, over=false, raf=null, last=0, speed=0.012, busy=false;
 
-    function measure(){ const c0=cells[0].getBoundingClientRect(), g=grid.getBoundingClientRect();
-      cw=cells[1]?(cells[1].getBoundingClientRect().left-c0.left):c0.width+4;
-      chh=(cells[COLS]?(cells[COLS].getBoundingClientRect().top-c0.top):c0.height+4);
-      active.style.width=c0.width+"px"; active.style.height=c0.height+"px";
-      active.style.fontSize=Math.max(10,Math.min(20, (c0.width*1.7)/Math.max(4,curLen())))+"px";
-    }
-    function curLen(){ return cur? String(cur.item.stimulus).length : 6; }
-    function place(){ if(!cur){active.style.display="none";return;}
-      const base=cells[0].getBoundingClientRect(), g=grid.getBoundingClientRect();
-      const x=(cells[cur.col].getBoundingClientRect().left)-g.left+grid.clientLeft;
-      const r=cur.row<0?0:cur.row;
-      const y=(cells[r*COLS+cur.col].getBoundingClientRect().top)-g.top+grid.clientTop + (cur.row<0?-chh:0);
-      active.style.left=x+"px"; active.style.top=y+"px"; active.style.display="flex";
-    }
-    function paint(){
-      for(let r=0;r<ROWS;r++)for(let c=0;c<COLS;c++){
-        const cell=cells[r*COLS+c], b=board[r][c];
-        cell.className="tx-cell";
-        if(b){ cell.classList.add("on"); if(!b.ok)cell.classList.add("crack");
-          cell.style.background="linear-gradient(180deg,"+shade(b.glaze,1.1)+","+shade(b.glaze,.82)+")"; }
-        else cell.style.background="";
-      }
-    }
-    function floor(col){ return ROWS-1-height[col]; }
+    function renderHp(){ hpbar.innerHTML='<span class="tw-hpk">Base</span> '+"❤".repeat(Math.max(0,lives))+'<span class="tw-hp0">'+"♡".repeat(Math.max(0,5-lives))+'</span>'; }
+    function correctCol(item){ const ans=Array.isArray(item.answer)?item.answer:[item.answer]; return cats.findIndex(c=>ans.indexOf(c.id)>=0); }
 
     function spawn(){
       if(over) return;
-      cur={ col:(COLS>>1), row:-1, item:api.next() };
-      active.textContent=cur.item.stimulus;
-      sub.innerHTML = (cfg.options&&cfg.options.hint===false)?"&nbsp;":(cur.item.sub?esc(cur.item.sub):"&nbsp;");
-      measure(); place();
+      cur=api.next(); pos=0; busy=false;
+      enemy.textContent=cur.stimulus;
+      const fs=Math.max(11,Math.min(20,200/Math.max(4,String(cur.stimulus).length)));
+      enemy.style.fontSize=fs+"px"; enemy.style.display="flex";
+      sub.innerHTML=(cfg.options&&cfg.options.hint===false)?"&nbsp;":(cur.sub?esc(cur.sub):"&nbsp;");
+      speed=0.010+Math.min(0.02, done*0.0012);
+      place();
     }
-    function step(){
-      if(over||!cur) return;
-      const fr=floor(cur.col);
-      if(cur.row>=fr){ lock(); return; }
-      cur.row++; place();
+    function place(){ enemy.style.top=(4+pos*72)+"%"; }
+    function loop(t){
+      if(over) return;
+      if(!last) last=t; const dt=Math.min(50,t-last); last=t;
+      if(cur&&!busy){
+        pos+=speed*(dt/16.7);
+        if(pos>=1){ reach(); } else place();
+      }
+      raf=requestAnimationFrame(loop);
     }
-    function moveCol(d){ if(over||!cur)return; const n=cur.col+d; if(n>=0&&n<COLS){cur.col=n;place();} }
-    function drop(col){ if(over||!cur)return; if(col!=null)cur.col=col; cur.row=floor(cur.col); place(); lock(); }
-
-    function lock(){
-      const col=cur.col, fr=floor(col);
-      if(fr<0){ end(); return; }
-      const ans=Array.isArray(cur.item.answer)?cur.item.answer:[cur.item.answer];
+    function fire(col){
+      if(over||!cur||busy) return;
+      busy=true;
+      const item=cur;
+      const ans=Array.isArray(item.answer)?item.answer:[item.answer];
       const ok=ans.indexOf(cats[col].id)>=0;
-      board[fr][col]={glaze:cats[col].glaze, ok}; height[col]++;
-      api.judge(ok,{tag:cur.item.tag,stimulus:cur.item.stimulus,chosen:cats[col].id,correct:ans,sub:cur.item.sub});
-      cur=null; active.style.display="none";
-      paint(); clearLines(); drops++;
-      if(height.some(h=>h>=ROWS)){ end(); return; }
-      retime();
-      setTimeout(spawn, 70);
+      const tEl=turrets.querySelector('.tw-turret[data-col="'+col+'"]'); if(tEl){ tEl.classList.add("shoot"); setTimeout(()=>tEl.classList.remove("shoot"),260); }
+      if(ok){ enemy.classList.add("boom"); }
+      else { enemy.classList.add("pass"); lives--; renderHp(); const r=correctCol(item); const rc=turrets.querySelector('.tw-turret[data-col="'+r+'"]'); if(rc) rc.classList.add("reveal"),setTimeout(()=>rc.classList.remove("reveal"),700); }
+      api.judge(ok,{tag:item.tag,stimulus:item.stimulus,chosen:cats[col].id,correct:ans,sub:item.sub});
+      resolve();
     }
-    function clearLines(){
-      let cleared=0;
-      for(let r=ROWS-1;r>=0;r--){
-        let full=true; for(let c=0;c<COLS;c++) if(!board[r][c]){full=false;break;}
-        if(full){ cleared++;
-          for(let c=0;c<COLS;c++) cells[r*COLS+c].classList.add("clear");
-          for(let rr=r; rr>0; rr--) board[rr]=board[rr-1].slice();
-          board[0]=new Array(COLS).fill(null); r++;
-        }
-      }
-      if(cleared){
-        for(let c=0;c<COLS;c++){ let h=0; for(let r=0;r<ROWS;r++) if(board[r][c])h++; height[c]=h; }
-        lines+=cleared; document.getElementById("txL").textContent=lines;
-        api.bonus(cleared*cleared*25); api.sfx.win();
-        setTimeout(paint, 120);
-      }
+    function reach(){
+      if(over||!cur||busy) return;
+      busy=true;
+      const item=cur;
+      const ans=Array.isArray(item.answer)?item.answer:[item.answer];
+      enemy.classList.add("pass"); lives--; renderHp();
+      api.judge(false,{tag:item.tag,stimulus:item.stimulus,chosen:"—(basis bereikt)",correct:ans,sub:item.sub});
+      resolve();
     }
-    function level(){ return 1+Math.floor(drops/8); }
-    function retime(){ const n=level(); document.getElementById("txN").textContent=n;
-      clearInterval(timer); timer=setInterval(step, Math.max(340, START - (n-1)*80)); }
-    function end(){ over=true; clearInterval(timer); api.finish(); }
+    function resolve(){
+      done++; api.tick();
+      setTimeout(()=>{ enemy.style.display="none"; enemy.className="tw-enemy"; }, 300);
+      if(lives<=0){ setTimeout(()=>end(true),400); return; }
+      if(done>=rounds){ setTimeout(()=>end(false),400); return; }
+      setTimeout(spawn, 420);
+    }
+    function end(dead){ over=true; if(raf)cancelAnimationFrame(raf); api.finish(); }
 
     function onKey(e){
-      if(over||!cur) return;
-      if(e.key==="ArrowLeft"){e.preventDefault();moveCol(-1);}
-      else if(e.key==="ArrowRight"){e.preventDefault();moveCol(1);}
-      else if(e.key===" "||e.key==="ArrowDown"){e.preventDefault();drop(null);}
-      else if(e.key>="1"&&e.key<="9"){const i=+e.key-1; if(i<COLS){e.preventDefault();drop(i);}}
+      if(over||!cur||busy) return;
+      if(e.key>="1"&&e.key<="9"){const i=+e.key-1; if(i<cats.length){e.preventDefault();fire(i);}}
     }
     document.addEventListener("keydown",onKey);
-    grid.addEventListener("click",e=>{ if(!cur)return; const g=grid.getBoundingClientRect();
-      const i=Math.max(0,Math.min(COLS-1,Math.floor((e.clientX-g.left)/(g.width/COLS)))); drop(i); });
-    const onResize=()=>{ measure(); place(); };
-    window.addEventListener("resize",onResize);
-    api._cleanup=()=>{ clearInterval(timer); document.removeEventListener("keydown",onKey); window.removeEventListener("resize",onResize); };
+    api._cleanup=()=>{ over=true; if(raf)cancelAnimationFrame(raf); document.removeEventListener("keydown",onKey); };
 
-    paint();
-    requestAnimationFrame(()=>{ spawn(); retime(); });
+    renderHp();
+    requestAnimationFrame(()=>{ last=0; spawn(); raf=requestAnimationFrame(loop); });
 
     function esc(s){ return String(s).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
     function isLight(hex){ const n=parseInt(hex.slice(1),16); return (0.299*((n>>16)&255)+0.587*((n>>8)&255)+0.114*(n&255))>176; }
@@ -709,7 +681,7 @@ window.Motor = { mount };
 
 ;
 (function(){
-var cfg = {"id":"es-c6plus-u4-participio-tetris","title":"Participio Tetris","subtitle":"U4 · laat het juiste participio-type vallen","lang":"es","template":"tetris","options":{"rows":9,"speed":1300,"audio":false},"classify":{"categories":[{"id":"ado","label":"-ado","glaze":"#3D74D6"},{"id":"ido","label":"-ido","glaze":"#2E8E68"},{"id":"irr","label":"irregular","glaze":"#B4309A"}],"items":[{"stimulus":"viajar","answer":"ado","tag":"ado","sub":"viajado"},{"stimulus":"comer","answer":"ido","tag":"ido","sub":"comido"},{"stimulus":"hacer","answer":"irr","tag":"irr","sub":"hecho"},{"stimulus":"salir","answer":"ido","tag":"ido","sub":"salido"},{"stimulus":"ver","answer":"irr","tag":"irr","sub":"visto"},{"stimulus":"reservar","answer":"ado","tag":"ado","sub":"reservado"},{"stimulus":"volver","answer":"irr","tag":"irr","sub":"vuelto"},{"stimulus":"dormir","answer":"ido","tag":"ido","sub":"dormido"},{"stimulus":"visitar","answer":"ado","tag":"ado","sub":"visitado"},{"stimulus":"escribir","answer":"irr","tag":"irr","sub":"escrito"},{"stimulus":"beber","answer":"ido","tag":"ido","sub":"bebido"},{"stimulus":"poner","answer":"irr","tag":"irr","sub":"puesto"},{"stimulus":"probar","answer":"ado","tag":"ado","sub":"probado"},{"stimulus":"subir","answer":"ido","tag":"ido","sub":"subido"},{"stimulus":"decir","answer":"irr","tag":"irr","sub":"dicho"},{"stimulus":"cantar","answer":"ado","tag":"ado","sub":"cantado"}]}};
+var cfg = {"id":"es-c6plus-u4-participio-tetris","title":"Participio: torres","subtitle":"U4 · defiende con la torre correcta · verdedig met de juiste toren","lang":"es","template":"tower","options":{"rounds":16,"lives":5,"audio":false},"classify":{"categories":[{"id":"ado","label":"-ado","glaze":"#3D74D6"},{"id":"ido","label":"-ido","glaze":"#2E8E68"},{"id":"irr","label":"irregular","glaze":"#B4309A"}],"items":[{"stimulus":"viajar","answer":"ado","tag":"ado","sub":"viajado"},{"stimulus":"comer","answer":"ido","tag":"ido","sub":"comido"},{"stimulus":"hacer","answer":"irr","tag":"irr","sub":"hecho"},{"stimulus":"salir","answer":"ido","tag":"ido","sub":"salido"},{"stimulus":"ver","answer":"irr","tag":"irr","sub":"visto"},{"stimulus":"reservar","answer":"ado","tag":"ado","sub":"reservado"},{"stimulus":"volver","answer":"irr","tag":"irr","sub":"vuelto"},{"stimulus":"dormir","answer":"ido","tag":"ido","sub":"dormido"},{"stimulus":"visitar","answer":"ado","tag":"ado","sub":"visitado"},{"stimulus":"escribir","answer":"irr","tag":"irr","sub":"escrito"},{"stimulus":"beber","answer":"ido","tag":"ido","sub":"bebido"},{"stimulus":"poner","answer":"irr","tag":"irr","sub":"puesto"},{"stimulus":"probar","answer":"ado","tag":"ado","sub":"probado"},{"stimulus":"subir","answer":"ido","tag":"ido","sub":"subido"},{"stimulus":"decir","answer":"irr","tag":"irr","sub":"dicho"},{"stimulus":"cantar","answer":"ado","tag":"ado","sub":"cantado"}]}};
 cfg._source = { items: cfg.classify.items };
 Motor.mount(document.getElementById('app'), cfg);
 })();

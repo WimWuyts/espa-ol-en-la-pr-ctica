@@ -27,6 +27,7 @@ FONTS = "".join([
 MOTOR = [
  ['① Reconocer · woordenschat', [
    ['gustos-memoria', 'memoria de los gustos', 'memory'],
+   ['musica-memoria', 'música y cine', 'memory'],
    ['frecuencia-escala', 'adverbios de frecuencia', 'match']]],
  ['② Distinguir · gramática', [
    ['gusta-gustan', '¿gusta o gustan?', 'classify'],
@@ -38,18 +39,21 @@ MOTOR = [
    ['gusta-cloze', 'completa: gusta o gustan', 'cloze'],
    ['verbo-cloze', 'completa el verbo (gustar/querer/poder)', 'cloze'],
    ['pronombre-cloze', '¿me, te, le…?', 'cloze'],
-   ['presente-tetris', 'presente Tetris', 'tetris'],
+   ['conectores', 'conectores de opinión', 'cloze'],
+   ['presente-tetris', 'presente: serpiente', 'snake'],
    ['tonica', 'la tónica de los gustos', 'tap'],
    ['plan-orden', 'ordena el plan', 'order']]],
  ['④ Analizar & comunicar', [
    ['caza-gustar', 'caza del error (gustar)', 'point'],
    ['pregunta-respuesta', 'pregunta ↔ respuesta', 'match'],
+   ['reaccion-match', 'el espejo de reacciones', 'match'],
    ['opina', 'da tu opinión', 'sim']]],
  ['⑤ Hablar · grábate 🎙️', [
    ['repite-gustos', 'escucha y repite', 'speak'],
    ['shadowing-bea', 'shadowing con Bea', 'speak'],
    ['mensaje-plan', 'mensaje de voz: propón un plan', 'speak'],
-   ['describe-gustos', 'describe los gustos', 'speak']]],
+   ['describe-gustos', 'describe los gustos', 'speak'],
+   ['carrusel-gustos', 'carrusel: mis gustos', 'speak']]],
 ]
 GAMEDIR = f"{ROOT}/spaans-motor/games"
 slugs = [g[0] for grp in MOTOR for g in grp[1]]

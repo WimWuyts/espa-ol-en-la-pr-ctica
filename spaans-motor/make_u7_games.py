@@ -223,8 +223,8 @@ w({"id":"es-u7-imperativo-cloze","title":"El camino: imperativo","subtitle":"U7 
   {"stimulus":"___ el metro en la estación.","options":["Toma","Tome","Tomas"],"answer":"Toma","tag":"imp","sub":"tomar → toma"}]}})
 
 # 12 · TETRIS — preposiciones (valt in de juiste kolom)  (pool 18)
-w({"id":"es-u7-preposicion-tetris","title":"Preposiciones Tetris","subtitle":"U7 · laat elke preposición in de juiste betekenis vallen",
- "lang":"es","template":"tetris","options":{"rows":9,"speed":1300,"audio":False},
+w({"id":"es-u7-preposicion-tetris","title":"Preposiciones: torres","subtitle":"U7 · defiende con la torre correcta · verdedig met de juiste toren",
+ "lang":"es","template":"tower","options":{"rounds":16,"lives":5,"audio":False},
  "classify":{"categories":[
   {"id":"cerca","label":"cerca/naast","glaze":G["green"]},{"id":"vertical","label":"boven/onder","glaze":G["amber"]},
   {"id":"frente","label":"voor/achter","glaze":G["purple"]}],

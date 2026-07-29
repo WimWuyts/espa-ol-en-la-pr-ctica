@@ -168,8 +168,8 @@ w({"id":PRE+"gustar","title":"Completa: gustar","subtitle":"U1 · me/te/le… + 
   {"stimulus":"A ti ___ los lunes… ¡qué raro!","options":["te gustan","te gusta","le gustan"],"answer":"te gustan","tag":"g","sub":"te · los lunes (varios)"}]}})
 
 # 9 · TETRIS — el pronombre reflexivo (valt in de juiste kolom) (pool 18)
-w({"id":PRE+"pronombre-tetris","title":"Pronombre Tetris","subtitle":"U1 · laat het juiste pronomen (me/te/se…) vallen",
- "lang":"es","template":"tetris","options":{"rows":9,"speed":1300,"audio":False},
+w({"id":PRE+"pronombre-tetris","title":"Pronombre: cinta","subtitle":"U1 · clasifica el pronombre en la cinta · sorteer op de band",
+ "lang":"es","template":"belt","options":{"rounds":16,"audio":False},
  "classify":{"categories":[
   {"id":"me","label":"me","glaze":G["blue"]},{"id":"te","label":"te","glaze":G["red"]},
   {"id":"se","label":"se","glaze":G["green"]},{"id":"nos","label":"nos","glaze":G["amber"]}],

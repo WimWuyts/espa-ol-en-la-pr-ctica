@@ -1,12 +1,11 @@
 {
   "id": "es-u8-haber-tetris",
-  "title": "Haber Tetris",
-  "subtitle": "U8 · laat elke persoon in de juiste vorm van «haber» vallen",
+  "title": "Haber: pinball",
+  "subtitle": "U8 · empuja la bola a la forma correcta · flip naar de juiste vorm",
   "lang": "es",
-  "template": "tetris",
+  "template": "pinball",
   "options": {
-    "rows": 9,
-    "speed": 1300,
+    "rounds": 16,
     "audio": false
   },
   "classify": {

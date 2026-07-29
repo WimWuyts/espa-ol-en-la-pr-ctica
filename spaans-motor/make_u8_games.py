@@ -199,8 +199,8 @@ w({"id":"es-u8-ya-todavia","title":"¿ya, todavía no o…?","subtitle":"U8 · k
   {"stimulus":"¿___ has llegado? ¡Qué rápido!","options":["Ya","Nunca","Todavía no"],"answer":"Ya","tag":"mc","sub":"al → ya"}]}})
 
 # 9 · TETRIS — haber (he/has/ha/hemos/habéis/han)  (pool 18)
-w({"id":"es-u8-haber-tetris","title":"Haber Tetris","subtitle":"U8 · laat elke persoon in de juiste vorm van «haber» vallen",
- "lang":"es","template":"tetris","options":{"rows":9,"speed":1300,"audio":False},
+w({"id":"es-u8-haber-tetris","title":"Haber: pinball","subtitle":"U8 · empuja la bola a la forma correcta · flip naar de juiste vorm",
+ "lang":"es","template":"pinball","options":{"rounds":16,"audio":False},
  "classify":{"categories":[
   {"id":"he","label":"he","glaze":G["blue"]},{"id":"has","label":"has","glaze":G["red"]},
   {"id":"ha","label":"ha","glaze":G["green"]},{"id":"hemos","label":"hemos","glaze":G["amber"]},

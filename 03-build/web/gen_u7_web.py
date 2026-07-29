@@ -56,7 +56,7 @@ MOTOR = [
    ['gerundio-cloze', 'completa: estar + gerundio', 'cloze'],
    ['preposicion-cloze', 'completa la preposición', 'cloze'],
    ['imperativo-cloze', 'el camino: imperativo', 'cloze'],
-   ['preposicion-tetris', 'preposiciones Tetris', 'tetris'],
+   ['preposicion-tetris', 'preposiciones: torres', 'tower'],
    ['ordena-ruta', 'ordena las instrucciones', 'order'],
    ['ordena-casa', 'ordena de fuera a dentro', 'order'],
    ['senala-habitacion', 'señala en la habitación', 'point'],

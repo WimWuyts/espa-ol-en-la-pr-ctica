@@ -1,12 +1,11 @@
 {
   "id": "es-c6plus-u5-indef-tetris",
-  "title": "Indefinido Tetris",
-  "subtitle": "U5 · laat het juiste type vallen",
+  "title": "Indefinido: pinball",
+  "subtitle": "U5 · empuja la bola al tipo correcto · flip naar het juiste type",
   "lang": "es",
-  "template": "tetris",
+  "template": "pinball",
   "options": {
-    "rows": 9,
-    "speed": 1300,
+    "rounds": 16,
     "audio": false
   },
   "classify": {

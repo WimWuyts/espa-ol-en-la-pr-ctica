@@ -130,8 +130,8 @@ w({"id":PRE+"por-para-cloze","title":"Completa: por / para","subtitle":"U4 · ki
   {"stimulus":"Te llamo ___ teléfono.","options":["por","para","con"],"answer":"por","tag":"pp","sub":"middel → por"}]}})
 
 # 8 · TETRIS — participio: -ado / -ido / irregular (pool 16)
-w({"id":PRE+"participio-tetris","title":"Participio Tetris","subtitle":"U4 · laat het juiste participio-type vallen",
- "lang":"es","template":"tetris","options":{"rows":9,"speed":1300,"audio":False},
+w({"id":PRE+"participio-tetris","title":"Participio: torres","subtitle":"U4 · defiende con la torre correcta · verdedig met de juiste toren",
+ "lang":"es","template":"tower","options":{"rounds":16,"lives":5,"audio":False},
  "classify":{"categories":[
   {"id":"ado","label":"-ado","glaze":G["blue"]},{"id":"ido","label":"-ido","glaze":G["green"]},
   {"id":"irr","label":"irregular","glaze":G["magenta"]}],

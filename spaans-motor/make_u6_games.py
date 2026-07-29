@@ -236,8 +236,8 @@ w({"id":"es-u6-demostrativo-cloze","title":"Completa: este/ese/aquel","subtitle"
   {"stimulus":"Compro ___ bufanda (aquí).","options":["esta","esa","aquella"],"answer":"esta","tag":"d","sub":"cerca (v) → esta"}]}})
 
 # 12 · TETRIS — concordancia (la kleurvorm valt in de juiste kolom)  (pool 18)
-w({"id":"es-u6-concordancia-tetris","title":"Concordancia Tetris","subtitle":"U6 · laat de prenda in de juiste kleurvorm vallen",
- "lang":"es","template":"tetris","options":{"rows":9,"speed":1300,"audio":False},
+w({"id":"es-u6-concordancia-tetris","title":"Concordancia: puertas","subtitle":"U6 · corre a la forma correcta · loop naar de juiste vorm",
+ "lang":"es","template":"platform","options":{"rounds":16,"audio":False},
  "classify":{"categories":[
   {"id":"o","label":"-o (m.ev.)","glaze":G["blue"]},{"id":"a","label":"-a (v.ev.)","glaze":G["red"]},
   {"id":"os","label":"-os (m.mv.)","glaze":G["green"]},{"id":"as","label":"-as (v.mv.)","glaze":G["amber"]}],

@@ -35,7 +35,7 @@ MOTOR = [
  ['③ Producir con apoyo', [
    ['imperfecto', 'completa: el imperfecto', 'cloze'],
    ['contraste', 'completa: indef ↔ imperf', 'cloze'],
-   ['imperf-tetris', 'imperfecto Tetris', 'tetris'],
+   ['imperf-tetris', 'imperfecto: topos', 'mole'],
    ['recuerdo-order', 'ordena la frase', 'order'],
    ['senala', 'señala', 'point']]],
  ['④ Hablar · grábate 🎙️', [

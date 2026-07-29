@@ -260,8 +260,8 @@ w({"id":"es-u2-arbol-genealogico","title":"El árbol genealógico","subtitle":"U
     {"label":"Mi padre se llama Antonio.","key":3},{"label":"Y yo soy el menor.","key":4}]}]}})
 
 # 16 · TETRIS — persona de tener / ser / estar (vormen geverifieerd, hardcoded)
-w({"id":"es-u2-familia-tetris","title":"Tetris: ser, estar y tener","subtitle":"U2 · laat elke vorm in de juiste persoon vallen",
- "lang":"es","template":"tetris","options":{"rows":9,"speed":1300,"audio":False},
+w({"id":"es-u2-familia-tetris","title":"Topos: ser, estar y tener","subtitle":"U2 · aporrea la persona correcta · mep de juiste persoon",
+ "lang":"es","template":"mole","options":{"rounds":16,"audio":False},
  "classify":{"categories":[
   {"id":"yo","label":"yo","glaze":G["red"]},{"id":"tu","label":"tú","glaze":G["amber"]},
   {"id":"el","label":"él/ella","glaze":G["green"]},{"id":"nos","label":"nosotros","glaze":G["blue"]},

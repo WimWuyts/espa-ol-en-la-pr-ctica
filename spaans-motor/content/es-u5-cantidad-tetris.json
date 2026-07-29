@@ -1,12 +1,11 @@
 {
   "id": "es-u5-cantidad-tetris",
-  "title": "Cantidades Tetris",
-  "subtitle": "U5 · laat elk woord in de juiste vorm van «mucho» vallen",
+  "title": "Cantidades: cinta",
+  "subtitle": "U5 · clasifica «mucho» en la cinta · sorteer op de band",
   "lang": "es",
-  "template": "tetris",
+  "template": "belt",
   "options": {
-    "rows": 9,
-    "speed": 1300,
+    "rounds": 16,
     "audio": false
   },
   "classify": {

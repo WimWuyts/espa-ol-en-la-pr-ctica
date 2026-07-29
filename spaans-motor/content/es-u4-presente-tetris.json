@@ -1,12 +1,11 @@
 {
   "id": "es-u4-presente-tetris",
-  "title": "Presente regular",
-  "subtitle": "U4 · laat de vorm in de juiste persoon vallen (actividades)",
+  "title": "Presente regular: serpiente",
+  "subtitle": "U4 · lleva la serpiente a la persona correcta · stuur naar de juiste persoon",
   "lang": "es",
-  "template": "tetris",
+  "template": "snake",
   "options": {
-    "rows": 9,
-    "speed": 1250,
+    "rounds": 16,
     "audio": false
   },
   "generator": {

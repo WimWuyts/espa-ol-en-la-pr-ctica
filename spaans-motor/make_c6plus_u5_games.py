@@ -130,8 +130,8 @@ w({"id":PRE+"se-lo","title":"Completa: se lo / se la","subtitle":"U5 · le/les +
   {"stimulus":"¿Los libros a Nina? — ___ presté.","options":["Se los","Le los","Se las"],"answer":"Se los","tag":"od","sub":"los libros → se los"}]}})
 
 # 8 · TETRIS — indefinido: -ó / -ió / irregular (pool 16)
-w({"id":PRE+"indef-tetris","title":"Indefinido Tetris","subtitle":"U5 · laat het juiste type vallen",
- "lang":"es","template":"tetris","options":{"rows":9,"speed":1300,"audio":False},
+w({"id":PRE+"indef-tetris","title":"Indefinido: pinball","subtitle":"U5 · empuja la bola al tipo correcto · flip naar het juiste type",
+ "lang":"es","template":"pinball","options":{"rounds":16,"audio":False},
  "classify":{"categories":[
   {"id":"o","label":"-ó (-ar)","glaze":G["blue"]},{"id":"io","label":"-ió (-er/-ir)","glaze":G["green"]},
   {"id":"irr","label":"irregular","glaze":G["magenta"]}],

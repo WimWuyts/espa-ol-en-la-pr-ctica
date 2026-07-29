@@ -174,8 +174,8 @@ w({"id":"es-u3-frecuencia","title":"Adverbios de frecuencia","subtitle":"U3 · k
   {"stimulus":"El ___ de semana descanso.","options":["fin","día","hora"],"answer":"fin","tag":"f","sub":"el fin de semana"}]}})
 
 # 12 · TETRIS — presente irregular (generator: stamwissel, nagerekend)
-w({"id":"es-u3-irregular-tetris","title":"Presente irregular Tetris","subtitle":"U3 · laat de vorm in de juiste persoon vallen",
- "lang":"es","template":"tetris","options":{"rows":9,"speed":1300,"audio":False},
+w({"id":"es-u3-irregular-tetris","title":"Presente irregular: burbujas","subtitle":"U3 · dispara a la persona correcta · schiet naar de juiste persoon",
+ "lang":"es","template":"bubble","options":{"rounds":16,"audio":False},
  "generator":{"kind":"verbo","mode":"person","classes":["ie","ue","i","uue"],"persons":["yo","tu","el","nos","vos","ellos"]},
  "classify":{"categories":[
   {"id":"yo","label":"yo","glaze":G["red"]},{"id":"tu","label":"tú","glaze":G["amber"]},

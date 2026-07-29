@@ -133,8 +133,8 @@ w({"id":PRE+"lo-la","title":"Completa: lo/la/los/las","subtitle":"U2 · vervang 
   {"stimulus":"¿El espejo? ___ pongo en el baño.","options":["Lo","La","Los"],"answer":"Lo","tag":"od","sub":"el espejo → lo"}]}})
 
 # 8 · TETRIS — el pronombre OD (lo/la/los/las) (pool 16)
-w({"id":PRE+"lo-la-tetris","title":"lo/la Tetris","subtitle":"U2 · laat het juiste pronomen vallen",
- "lang":"es","template":"tetris","options":{"rows":9,"speed":1300,"audio":False},
+w({"id":PRE+"lo-la-tetris","title":"lo / la: puertas","subtitle":"U2 · corre a la puerta correcta · loop naar de juiste deur",
+ "lang":"es","template":"platform","options":{"rounds":16,"audio":False},
  "classify":{"categories":[
   {"id":"lo","label":"lo","glaze":G["blue"]},{"id":"la","label":"la","glaze":G["red"]},
   {"id":"los","label":"los","glaze":G["green"]},{"id":"las","label":"las","glaze":G["amber"]}],

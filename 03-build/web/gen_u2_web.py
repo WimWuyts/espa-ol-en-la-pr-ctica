@@ -28,28 +28,32 @@ MOTOR = [
  ['① Reconocer · woordenschat', [
    ['familia-memoria', 'memoria de la familia', 'memory'],
    ['parentesco', 'parentesco (¿quién es?)', 'match'],
+   ['colores-match', 'los colores del pelo y los ojos', 'match'],
    ['tonica-familia', 'la sílaba tónica', 'tap']]],
  ['② Distinguir · gramática', [
    ['tener-persona', 'tener → ¿qué persona?', 'classify'],
    ['fisico-caracter', '¿físico o carácter?', 'classify'],
    ['posesivo-numero', 'posesivo · ¿singular o plural?', 'classify'],
    ['ser-estar', '¿ser o estar?', 'classify'],
-   ['este-ese', '¿este o ese? (cerca/lejos)', 'classify']]],
+   ['este-ese', '¿este o ese? (cerca/lejos)', 'classify'],
+   ['masculino-femenino', '¿masculino o femenino?', 'classify']]],
  ['③ Producir con apoyo', [
    ['tener-cloze', 'el verbo tener', 'cloze'],
    ['ser-estar-cloze', 'ser / estar (cloze)', 'cloze'],
    ['posesivo-cloze', 'los posesivos (mi/tu/su)', 'cloze'],
    ['adjetivo-concuerda', 'concuerda el adjetivo', 'cloze'],
    ['arbol-genealogico', 'ordena el árbol genealógico', 'order'],
-   ['familia-tetris', 'tener/ser/estar Tetris', 'tetris']]],
+   ['familia-tetris', 'tener/ser/estar: topos', 'mole']]],
  ['④ Analizar & comunicar', [
    ['cuerpo-point', 'señala el cuerpo', 'point'],
+   ['caza-adjetivo', 'caza del adjetivo', 'point'],
    ['describe-persona', 'describe a una persona', 'sim']]],
  ['⑤ Hablar · grábate 🎙️', [
    ['carrusel-familia', 'carrusel: mi familia', 'speak'],
    ['shadowing-lucia', 'shadowing: la familia de Lucía', 'speak'],
    ['mensaje-familia', 'mensaje de voz: mi familia', 'speak'],
-   ['quien-es', 'juego: ¿quién es?', 'speak']]],
+   ['quien-es', 'juego: ¿quién es?', 'speak'],
+   ['describe-familiar', 'describe a un familiar', 'speak']]],
 ]
 GAMEDIR = f"{ROOT}/spaans-motor/games"
 slugs = [g[0] for grp in MOTOR for g in grp[1]]

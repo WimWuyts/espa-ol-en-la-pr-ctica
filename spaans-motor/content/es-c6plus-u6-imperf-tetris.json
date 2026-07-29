@@ -1,12 +1,11 @@
 {
   "id": "es-c6plus-u6-imperf-tetris",
-  "title": "Imperfecto Tetris",
-  "subtitle": "U6 · laat het juiste type vallen",
+  "title": "Imperfecto: topos",
+  "subtitle": "U6 · aporrea la forma correcta · mep de juiste vorm",
   "lang": "es",
-  "template": "tetris",
+  "template": "mole",
   "options": {
-    "rows": 9,
-    "speed": 1300,
+    "rounds": 16,
     "audio": false
   },
   "classify": {

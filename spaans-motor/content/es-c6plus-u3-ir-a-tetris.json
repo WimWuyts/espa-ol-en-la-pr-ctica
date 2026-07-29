@@ -1,12 +1,11 @@
 {
   "id": "es-c6plus-u3-ir-a-tetris",
-  "title": "ir a Tetris",
-  "subtitle": "U3 · laat de juiste vorm van ir vallen",
+  "title": "ir a + inf.: burbujas",
+  "subtitle": "U3 · dispara a la forma correcta · schiet naar de juiste vorm",
   "lang": "es",
-  "template": "tetris",
+  "template": "bubble",
   "options": {
-    "rows": 9,
-    "speed": 1300,
+    "rounds": 16,
     "audio": false
   },
   "classify": {

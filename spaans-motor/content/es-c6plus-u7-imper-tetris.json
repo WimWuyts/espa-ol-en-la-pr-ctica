@@ -1,12 +1,11 @@
 {
   "id": "es-c6plus-u7-imper-tetris",
-  "title": "Imperativo Tetris",
-  "subtitle": "U7 · laat het juiste type vallen",
+  "title": "Imperativo: serpiente",
+  "subtitle": "U7 · lleva la serpiente al tipo correcto · stuur naar het juiste type",
   "lang": "es",
-  "template": "tetris",
+  "template": "snake",
   "options": {
-    "rows": 9,
-    "speed": 1300,
+    "rounds": 16,
     "audio": false
   },
   "classify": {

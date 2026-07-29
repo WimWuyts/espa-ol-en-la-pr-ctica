@@ -27,22 +27,26 @@ FONTS = "".join([
 MOTOR = [
  ['① Reconocer · woordenschat', [
    ['hora-reloj', '¿qué hora es? (reloj)', 'match'],
+   ['hora-digital', 'el reloj de 24 horas', 'match'],
    ['rutina-memoria', 'memoria de la rutina', 'memory'],
    ['verbo-memoria', 'verbos irregulares (memoria)', 'memory']]],
  ['② Distinguir · gramática', [
    ['reflexivo-no', '¿reflexivo o no?', 'classify'],
    ['cambio-raiz', 'cambio de raíz (ue/ie/i)', 'classify'],
-   ['dia-mes', '¿día, mes o estación?', 'classify']]],
+   ['dia-mes', '¿día, mes o estación?', 'classify'],
+   ['de-por', '¿de la o por la?', 'classify']]],
  ['③ Producir con apoyo', [
    ['la-hora', 'la hora (completa)', 'cloze'],
    ['reflexivo-cloze', 'verbos reflexivos', 'cloze'],
    ['irregular-cloze', 'presente irregular', 'cloze'],
    ['frecuencia', 'adverbios de frecuencia', 'cloze'],
-   ['irregular-tetris', 'presente irregular Tetris', 'tetris'],
+   ['irregular-tetris', 'presente irregular: burbujas', 'bubble'],
    ['tonica-rutina', 'la tónica de la rutina', 'tap'],
-   ['orden-rutina', 'ordena mi rutina', 'order']]],
+   ['orden-rutina', 'ordena mi rutina', 'order'],
+   ['orden-dia', 'ordena el día de Pau', 'order']]],
  ['④ Analizar & comunicar', [
    ['caza-reflexivo', 'caza del reflexivo', 'point'],
+   ['senala-manana', 'señala la mañana', 'point'],
    ['describe-dia', 'describe tu día', 'sim']]],
  ['⑤ Hablar · grábate 🎙️', [
    ['repite-hora', 'escucha y repite: la hora', 'speak'],

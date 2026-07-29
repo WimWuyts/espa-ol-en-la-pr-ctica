@@ -36,7 +36,7 @@ MOTOR = [
    ['ir-a', 'completa: ir a + infinitivo', 'cloze'],
    ['le-les-cloze', 'completa: le/les', 'cloze'],
    ['creo-que', 'completa: creo que + indicativo', 'cloze'],
-   ['ir-a-tetris', 'ir a Tetris', 'tetris'],
+   ['ir-a-tetris', 'ir a + inf.: burbujas', 'bubble'],
    ['plan-order', 'ordena la frase', 'order'],
    ['senala', 'señala', 'point']]],
  ['④ Hablar · grábate 🎙️', [

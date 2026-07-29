@@ -195,8 +195,8 @@ w({"id":"es-u4-conectores","title":"Conectores de opinión","subtitle":"U4 · ki
   {"stimulus":"Me encantan los viajes, ___ a la playa.","options":["sobre todo","pero","además"],"answer":"sobre todo","tag":"c","sub":"vooral"}]}})
 
 # 13 · TETRIS — presente regular (actividades) via generator (nagerekend)
-w({"id":"es-u4-presente-tetris","title":"Presente regular","subtitle":"U4 · laat de vorm in de juiste persoon vallen (actividades)",
- "lang":"es","template":"tetris","options":{"rows":9,"speed":1250,"audio":False},
+w({"id":"es-u4-presente-tetris","title":"Presente regular: serpiente","subtitle":"U4 · lleva la serpiente a la persona correcta · stuur naar de juiste persoon",
+ "lang":"es","template":"snake","options":{"rounds":16,"audio":False},
  "generator":{"kind":"conjugation","tense":"pres","pool":"reg","persons":["yo","tu","el","nos","vos","ellos"]},
  "classify":{"categories":[
   {"id":"yo","label":"yo","glaze":G["red"]},{"id":"tu","label":"tú","glaze":G["amber"]},

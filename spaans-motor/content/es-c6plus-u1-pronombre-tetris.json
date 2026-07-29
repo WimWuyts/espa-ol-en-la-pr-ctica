@@ -1,12 +1,11 @@
 {
   "id": "es-c6plus-u1-pronombre-tetris",
-  "title": "Pronombre Tetris",
-  "subtitle": "U1 · laat het juiste pronomen (me/te/se…) vallen",
+  "title": "Pronombre: cinta",
+  "subtitle": "U1 · clasifica el pronombre en la cinta · sorteer op de band",
   "lang": "es",
-  "template": "tetris",
+  "template": "belt",
   "options": {
-    "rows": 9,
-    "speed": 1300,
+    "rounds": 16,
     "audio": false
   },
   "classify": {

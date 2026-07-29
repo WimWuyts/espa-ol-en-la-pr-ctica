@@ -61,7 +61,7 @@ MOTOR = [
    ['pronombre-od-cloze', 'completa: lo/la/los/las', 'cloze'],
    ['acabar-de-cloze', 'completa: acabar de + infinitivo', 'cloze'],
    ['demostrativo-cloze', 'completa: este/ese/aquel', 'cloze'],
-   ['concordancia-tetris', 'concordancia Tetris', 'tetris'],
+   ['concordancia-tetris', 'concordancia: puertas', 'platform'],
    ['orden-tienda', 'ordena el diálogo de la tienda', 'order'],
    ['pasos-compra', 'ordena los pasos de la compra', 'order'],
    ['senala-escaparate', 'señala en el escaparate', 'point']]],

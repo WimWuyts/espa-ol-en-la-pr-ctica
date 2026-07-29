@@ -1,12 +1,12 @@
 {
   "id": "es-u7-preposicion-tetris",
-  "title": "Preposiciones Tetris",
-  "subtitle": "U7 · laat elke preposición in de juiste betekenis vallen",
+  "title": "Preposiciones: torres",
+  "subtitle": "U7 · defiende con la torre correcta · verdedig met de juiste toren",
   "lang": "es",
-  "template": "tetris",
+  "template": "tower",
   "options": {
-    "rows": 9,
-    "speed": 1300,
+    "rounds": 16,
+    "lives": 5,
     "audio": false
   },
   "classify": {

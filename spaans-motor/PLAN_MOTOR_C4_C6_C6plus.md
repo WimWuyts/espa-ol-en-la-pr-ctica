@@ -249,9 +249,15 @@ U5 sorteerband · U6 torenverdediging · U7 pinball.
 
 ---
 
-## 6bis · Arcade-retrofit voor de GEBOUWDE cursussen (C5 · C6+) — te bouwen
+## 6bis · Arcade-retrofit voor de GEBOUWDE cursussen (C5 · C6+) — ✅ UITGEVOERD 2026-07-29
 
-**Situatie (eerlijk, 2026-07-29):** C5 en C6+ zijn gebouwd **vóór** de 7 nieuwe
+> **Uitgevoerd 2026-07-29.** De 14 skin-wissels zijn doorgevoerd en getest; daarnaast zijn
+> **17 gebouwde spellen die in géén hub stonden** toegevoegd aan hun unit-hub (C5 U1–U5).
+> Dekking nu **291/291** unit-spellen in de hub van hun unidad. Skins toegewezen op het aantal
+> categorieën (bubbels/mollen/snake bij 6 cat.; torens/deuren/pinball bij 3–5) — dat wijkt licht
+> af van de eerste tabel hieronder, die de oorspronkelijke toewijzing documenteert.
+
+**Situatie vóór de retrofit:** C5 en C6+ zijn gebouwd **vóór** de 7 nieuwe
 arcade-skins bestonden. In de 299 bestaande spellen is `tetris` daarom de **enige**
 arcade-vorm: precies **één** arcade-slot per unit, telkens tetris. De andere zeven
 skins zijn wél gebouwd en klaar, maar nog niet ingezet in het Spaans.

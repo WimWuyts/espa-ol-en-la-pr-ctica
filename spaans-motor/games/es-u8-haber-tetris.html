@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Haber Tetris</title>
+<title>Haber: pinball</title>
 <style>
 /* Gedeelde ontwerptokens — azulejo-stijl (Talavera-tegels). */
 :root{
@@ -107,35 +107,40 @@ header.mt .sp{flex:1}
 .mf-ci.on .mf-cbox{border-color:#2E8E68;background:#DFF3E4}
 .mf-cbtn:active{transform:translateY(1px)}
 
-/* Sjabloon: tetris (sorteer-faller). Kolommen = categorieën. De vallende
-   tegel toont de stimulus; laat ze in de juiste kolom vallen. Volle rij = weg. */
-.tx-wrap{max-width:min(94vw,480px);margin:0 auto}
-.tx-head{display:grid;gap:4px;margin-bottom:6px}
-.tx-h{font-family:var(--serif);font-weight:700;text-align:center;padding:8px 4px;border-radius:2px 2px 0 0;cursor:pointer;
-  color:#FBF6E9;line-height:1.1;font-size:clamp(13px,3.2vw,17px);border:1px solid rgba(0,0,0,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.3);user-select:none;transition:filter .1s}
-.tx-h small{display:block;font-family:var(--mono);font-size:9px;font-weight:400;opacity:.7;margin-top:2px}
-.tx-h:hover{filter:brightness(1.12)}.tx-h:active{filter:brightness(1.25)}
-.tx-h.ink-d{color:#16233D}
+/* Arcade-skin «pinball». Doelen boven, bal met fysica, flippers onder. */
+.pb-wrap{display:flex;flex-direction:column;gap:10px}
+.pb-head{background:linear-gradient(175deg,#FBF6E9,#E9E0C9);border:1px solid rgba(0,0,0,.25);border-radius:3px;
+  box-shadow:0 5px 0 rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.9);padding:12px;text-align:center}
+.pb-eye{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F66}
+.pb-eye .nl{text-transform:none;letter-spacing:0;font-style:italic}
+.pb-stim{font-family:var(--serif);font-weight:700;color:#12264A;font-size:clamp(22px,5vw,36px);line-height:1.1;margin-top:2px;word-break:break-word}
+.pb-sub{font-family:var(--serif);font-style:italic;font-size:13px;color:#6E6249;min-height:16px}
 
-.tx-grid{position:relative;display:grid;gap:4px;background:rgba(8,18,38,.55);border:1px solid rgba(243,236,219,.22);border-radius:0 0 3px 3px;padding:4px;overflow:hidden;touch-action:manipulation}
-.tx-cell{--ch:46px;height:var(--ch);border-radius:2px;background:rgba(243,236,219,.05)}
-@media(max-width:520px){.tx-cell{--ch:40px}}
-.tx-cell.on{box-shadow:inset 0 1px 0 rgba(255,255,255,.35)}
-.tx-cell.crack{position:relative}
-.tx-cell.crack::after{content:"";position:absolute;inset:0;background:
-  linear-gradient(45deg,transparent 46%,rgba(20,10,6,.6) 47% 49%,transparent 50%),
-  linear-gradient(-20deg,transparent 60%,rgba(20,10,6,.5) 61% 63%,transparent 64%);}
-.tx-cell.clear{animation:txFlash .28s}
-@keyframes txFlash{0%{filter:brightness(2.4)}100%{}}
-
-.tx-active{position:absolute;display:flex;align-items:center;justify-content:center;text-align:center;
-  border-radius:2px;background:linear-gradient(175deg,#FBF6E9,#E7DEC7);color:#12264A;font-family:var(--serif);font-weight:700;
-  border:1px solid rgba(0,0,0,.3);box-shadow:0 3px 0 rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.8);
-  padding:2px 4px;line-height:1.02;word-break:break-word;transition:left .11s linear,top .11s linear;z-index:3}
-.tx-meta{display:flex;justify-content:space-between;align-items:baseline;margin:8px 2px 0;font-size:12px;color:var(--cal-dim)}
-.tx-meta .m{font-family:var(--mono)}
-.tx-sub{text-align:center;font-family:var(--serif);font-style:italic;color:var(--cal-dim);min-height:20px;margin-top:4px;font-size:14px}
-.tx-tip{text-align:center;font-size:11.5px;letter-spacing:.06em;color:var(--roto);margin-top:6px}
+.pb-field{position:relative;height:340px;border-radius:8px;overflow:hidden;touch-action:none;
+  background:radial-gradient(circle at 50% 12%, #2E568F, #173059 70%);border:2px solid #0C1A34;
+  box-shadow:inset 0 2px 14px rgba(0,0,0,.5)}
+.pb-targets{position:absolute;top:0;left:0;right:0;height:46px;display:flex;gap:3px;padding:3px}
+.pb-target{position:relative;flex:1;border-radius:0 0 6px 6px;color:#F3ECDB;display:flex;align-items:center;justify-content:center;text-align:center;
+  border:1px solid rgba(0,0,0,.35);box-shadow:inset 0 -3px 8px rgba(0,0,0,.3);overflow:hidden}
+.pb-target.ink-d{color:#12264A}
+.pb-target .pb-tl{font-family:var(--serif);font-weight:700;font-size:clamp(12px,2.1vw,17px);line-height:1;padding:0 4px}
+.pb-target small{position:absolute;top:2px;right:5px;font-family:var(--mono);font-size:9px;opacity:.6}
+.pb-target.lit{animation:pbLit .5s}
+.pb-target.miss{animation:pbMiss .5s}
+.pb-target.reveal{outline:3px solid #7BE0AE;outline-offset:-3px}
+@keyframes pbLit{0%,100%{filter:brightness(1)}40%{filter:brightness(1.6) saturate(1.3)}}
+@keyframes pbMiss{0%,100%{filter:brightness(1)}40%{filter:brightness(.6)}}
+.pb-ball{position:absolute;width:26px;height:26px;transform:translate(-50%,-50%);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:10px;color:rgba(0,0,0,.35);
+  background:radial-gradient(circle at 34% 30%, #fff, #C9CED6 45%, #7E8794);
+  border:1px solid rgba(0,0,0,.4);box-shadow:0 2px 6px rgba(0,0,0,.5)}
+.pb-flip{position:absolute;bottom:12px;width:42%;height:16px;border-radius:8px;
+  background:linear-gradient(180deg,#E0A22F,#B77E23);border:1px solid rgba(0,0,0,.4);box-shadow:0 2px 0 rgba(0,0,0,.4);transition:transform .1s}
+.pb-flip.l{left:5%;transform-origin:left center;transform:rotate(18deg)}
+.pb-flip.r{right:5%;transform-origin:right center;transform:rotate(-18deg)}
+.pb-flip.l.on{transform:rotate(-14deg)}
+.pb-flip.r.on{transform:rotate(14deg)}
+.pb-tip{text-align:center;font-size:12px;color:var(--cal-dim);font-style:italic}
 
 </style>
 </head>
@@ -143,136 +148,120 @@ header.mt .sp{flex:1}
 <div id="app"></div>
 <!-- Gegenereerd door spaans-motor uit content/es-u8-haber-tetris.json -->
 <script>
-/* Tetris-sjabloon: sorteer-faller. Kolommen = categorieën uit cfg.classify.
-   Stimulus valt; stuur ze naar de juiste kolom (tik kolom / pijltjes / 1-9).
-   Juist = schone tegel; fout = gebarsten tegel (vult je bord). Volle rij = weg.
-   Bord vol → einde. Hergebruikt ELK classify-pakket, ook met generator. */
+/* Arcade-skin «pinball» (flipper): dunne skin op de classify-judge, met
+   REFLEX/timing-input (echt andere vaardigheid). De bal (stimulus) valt; onderaan
+   twee flippers (← rechts-in, → links-in of tik de helft van het veld). Flip de
+   bal naar het categorie-DOEL bovenaan dat bij de stimulus past. Bal raakt het
+   juiste doel = punt; verkeerd doel of de bal valt eruit = mis. 1–9 = toegankelijke
+   directe keuze (zonder fysica). Hergebruikt elk classify-pakket via api.next(). */
 window.MotorTemplates = window.MotorTemplates || {};
-window.MotorTemplates.tetris = {
+window.MotorTemplates.pinball = {
   init(api){
     const cfg=api.config, el=api.el, shade=api.shade;
     const cats=(cfg.classify&&cfg.classify.categories)||[];
-    const COLS=cats.length, ROWS=(cfg.options&&cfg.options.rows)||9;
-    const START=(cfg.options&&cfg.options.speed)||1050;
     const root=api.root; root.innerHTML="";
+    const rounds=(cfg.options&&cfg.options.rounds)||14;
+    api.setTarget(rounds);
 
-    const wrap=el("div","tx-wrap");
-    const head=el("div","tx-head"); head.style.gridTemplateColumns="repeat("+COLS+",1fr)";
+    const wrap=el("div","pb-wrap");
+    const head=el("div","pb-head");
+    head.innerHTML='<div class="pb-eye">Empuja la bola al objetivo correcto · <span class="nl">flip naar het juiste doel</span></div>'+
+      '<div class="pb-stim" id="pbStim">…</div><div class="pb-sub" id="pbSub">&nbsp;</div>';
+    const field=el("div","pb-field");
+    const targets=el("div","pb-targets");
     cats.forEach((c,i)=>{
-      const h=el("div","tx-h"); h.dataset.col=i;
-      h.style.background="linear-gradient(180deg,"+shade(c.glaze,1.12)+","+shade(c.glaze,.84)+")";
-      if(isLight(c.glaze)) h.classList.add("ink-d");
-      h.innerHTML=c.label+(i<9?"<small>"+(i+1)+"</small>":"");
-      h.addEventListener("click",()=>drop(i));
-      head.appendChild(h);
+      const t=el("div","pb-target"); t.dataset.col=i;
+      t.style.background="linear-gradient(180deg,"+shade(c.glaze,1.14)+","+shade(c.glaze,.82)+")";
+      if(isLight(c.glaze)) t.classList.add("ink-d");
+      t.innerHTML='<span class="pb-tl">'+c.label+'</span>'+(i<9?'<small>'+(i+1)+'</small>':'');
+      targets.appendChild(t);
     });
-    const grid=el("div","tx-grid"); grid.style.gridTemplateColumns="repeat("+COLS+",1fr)";
-    const cells=[];
-    for(let i=0;i<ROWS*COLS;i++){ const c=el("div","tx-cell"); grid.appendChild(c); cells.push(c); }
-    const active=el("div","tx-active"); active.style.display="none"; grid.appendChild(active);
-    const sub=el("div","tx-sub","&nbsp;");
-    const meta=el("div","tx-meta"); meta.innerHTML='<span>Lijnen <b class="m" id="txL">0</b></span><span>Niveau <b class="m" id="txN">1</b></span>';
-    const tip=el("div","tx-tip","tik de kolom · of pijltjes + spatie · of 1–"+Math.min(COLS,9));
-    wrap.appendChild(head); wrap.appendChild(grid); wrap.appendChild(meta); wrap.appendChild(sub); wrap.appendChild(tip);
+    const ball=el("div","pb-ball");
+    const flipL=el("div","pb-flip l"); const flipR=el("div","pb-flip r");
+    field.appendChild(targets); field.appendChild(ball); field.appendChild(flipL); field.appendChild(flipR);
+    const tip=el("div","pb-tip","← / → = flippers (of tik links/rechts) · 1–"+Math.min(cats.length,9)+" = kiezen");
+    wrap.appendChild(head); wrap.appendChild(field); wrap.appendChild(tip);
     root.appendChild(wrap);
+    const stimEl=head.querySelector("#pbStim"), subEl=head.querySelector("#pbSub");
 
-    /* staat */
-    const board=Array.from({length:ROWS},()=>new Array(COLS).fill(null));
-    const height=new Array(COLS).fill(0);
-    let cur=null, lines=0, drops=0, over=false, timer=null, cw=0, chh=0;
+    let cur=null, done=0, over=false, raf=null, last=0, busy=false;
+    let W=0,H=0,R=13, x=0,y=0,vx=0,vy=0;
+    const G=0.16, BAND=46, FLIPH=64;
 
-    function measure(){ const c0=cells[0].getBoundingClientRect(), g=grid.getBoundingClientRect();
-      cw=cells[1]?(cells[1].getBoundingClientRect().left-c0.left):c0.width+4;
-      chh=(cells[COLS]?(cells[COLS].getBoundingClientRect().top-c0.top):c0.height+4);
-      active.style.width=c0.width+"px"; active.style.height=c0.height+"px";
-      active.style.fontSize=Math.max(10,Math.min(20, (c0.width*1.7)/Math.max(4,curLen())))+"px";
-    }
-    function curLen(){ return cur? String(cur.item.stimulus).length : 6; }
-    function place(){ if(!cur){active.style.display="none";return;}
-      const base=cells[0].getBoundingClientRect(), g=grid.getBoundingClientRect();
-      const x=(cells[cur.col].getBoundingClientRect().left)-g.left+grid.clientLeft;
-      const r=cur.row<0?0:cur.row;
-      const y=(cells[r*COLS+cur.col].getBoundingClientRect().top)-g.top+grid.clientTop + (cur.row<0?-chh:0);
-      active.style.left=x+"px"; active.style.top=y+"px"; active.style.display="flex";
-    }
-    function paint(){
-      for(let r=0;r<ROWS;r++)for(let c=0;c<COLS;c++){
-        const cell=cells[r*COLS+c], b=board[r][c];
-        cell.className="tx-cell";
-        if(b){ cell.classList.add("on"); if(!b.ok)cell.classList.add("crack");
-          cell.style.background="linear-gradient(180deg,"+shade(b.glaze,1.1)+","+shade(b.glaze,.82)+")"; }
-        else cell.style.background="";
-      }
-    }
-    function floor(col){ return ROWS-1-height[col]; }
+    function measure(){ const r=field.getBoundingClientRect(); W=r.width; H=r.height; }
+    function correctCol(item){ const ans=Array.isArray(item.answer)?item.answer:[item.answer]; return cats.findIndex(c=>ans.indexOf(c.id)>=0); }
 
     function spawn(){
       if(over) return;
-      cur={ col:(COLS>>1), row:-1, item:api.next() };
-      active.textContent=cur.item.stimulus;
-      sub.innerHTML = (cfg.options&&cfg.options.hint===false)?"&nbsp;":(cur.item.sub?esc(cur.item.sub):"&nbsp;");
-      measure(); place();
+      cur=api.next(); busy=false;
+      stimEl.textContent=cur.stimulus;
+      subEl.innerHTML=(cfg.options&&cfg.options.hint===false)?"&nbsp;":(cur.sub?esc(cur.sub):"&nbsp;");
+      measure();
+      x=W*(0.35+Math.random()*0.3); y=H*0.46; vx=(Math.random()*2-1)*1.4; vy=0.6;
+      ball.style.display="flex"; ball.textContent="●"; drawBall();
     }
-    function step(){
-      if(over||!cur) return;
-      const fr=floor(cur.col);
-      if(cur.row>=fr){ lock(); return; }
-      cur.row++; place();
-    }
-    function moveCol(d){ if(over||!cur)return; const n=cur.col+d; if(n>=0&&n<COLS){cur.col=n;place();} }
-    function drop(col){ if(over||!cur)return; if(col!=null)cur.col=col; cur.row=floor(cur.col); place(); lock(); }
-
-    function lock(){
-      const col=cur.col, fr=floor(col);
-      if(fr<0){ end(); return; }
-      const ans=Array.isArray(cur.item.answer)?cur.item.answer:[cur.item.answer];
-      const ok=ans.indexOf(cats[col].id)>=0;
-      board[fr][col]={glaze:cats[col].glaze, ok}; height[col]++;
-      api.judge(ok,{tag:cur.item.tag,stimulus:cur.item.stimulus,chosen:cats[col].id,correct:ans,sub:cur.item.sub});
-      cur=null; active.style.display="none";
-      paint(); clearLines(); drops++;
-      if(height.some(h=>h>=ROWS)){ end(); return; }
-      retime();
-      setTimeout(spawn, 70);
-    }
-    function clearLines(){
-      let cleared=0;
-      for(let r=ROWS-1;r>=0;r--){
-        let full=true; for(let c=0;c<COLS;c++) if(!board[r][c]){full=false;break;}
-        if(full){ cleared++;
-          for(let c=0;c<COLS;c++) cells[r*COLS+c].classList.add("clear");
-          for(let rr=r; rr>0; rr--) board[rr]=board[rr-1].slice();
-          board[0]=new Array(COLS).fill(null); r++;
+    function drawBall(){ ball.style.left=x+"px"; ball.style.top=y+"px"; }
+    function flip(side){
+      if(over||busy||!cur) return;
+      const fEl=side<0?flipL:flipR;
+      fEl.classList.add("on"); setTimeout(()=>fEl.classList.remove("on"),130);
+      // impuls als de bal laag genoeg is en aan de juiste kant
+      if(y > H-FLIPH-R*2){
+        const onSide = side<0 ? (x < W*0.52) : (x > W*0.48);
+        if(onSide){
+          vy = -Math.max(4.2, Math.abs(vy)*0.6+4.2);
+          vx += side<0 ? 2.6 : -2.6;   // naar het midden/omhoog duwen
+          api.sfx.move();
         }
       }
-      if(cleared){
-        for(let c=0;c<COLS;c++){ let h=0; for(let r=0;r<ROWS;r++) if(board[r][c])h++; height[c]=h; }
-        lines+=cleared; document.getElementById("txL").textContent=lines;
-        api.bonus(cleared*cleared*25); api.sfx.win();
-        setTimeout(paint, 120);
-      }
     }
-    function level(){ return 1+Math.floor(drops/8); }
-    function retime(){ const n=level(); document.getElementById("txN").textContent=n;
-      clearInterval(timer); timer=setInterval(step, Math.max(340, START - (n-1)*80)); }
-    function end(){ over=true; clearInterval(timer); api.finish(); }
+    function hit(col){
+      if(over||!cur||busy) return;
+      busy=true;
+      const item=cur;
+      const ans=Array.isArray(item.answer)?item.answer:[item.answer];
+      const ok = col>=0 && ans.indexOf(cats[col].id)>=0;
+      if(col>=0){ const tEl=targets.querySelector('.pb-target[data-col="'+col+'"]'); if(tEl){ tEl.classList.add(ok?"lit":"miss"); setTimeout(()=>tEl.classList.remove("lit","miss"),500);} }
+      if(!ok){ const r=correctCol(item); const rc=targets.querySelector('.pb-target[data-col="'+r+'"]'); if(rc){ rc.classList.add("reveal"); setTimeout(()=>rc.classList.remove("reveal"),700);} }
+      api.judge(ok,{tag:item.tag,stimulus:item.stimulus,chosen:col>=0?cats[col].id:"—(bal eruit)",correct:ans,sub:item.sub});
+      ball.style.display="none";
+      done++; api.tick();
+      if(done>=rounds){ setTimeout(()=>end(),560); return; }
+      setTimeout(spawn, 460);
+    }
+    function loop(t){
+      if(over) return;
+      if(!last) last=t; const dtf=Math.min(2.4,(t-last)/16.7); last=t;
+      if(cur&&!busy){
+        vy+=G*dtf; x+=vx*dtf*2; y+=vy*dtf*2;
+        if(x<R){ x=R; vx=-vx*0.78; } else if(x>W-R){ x=W-R; vx=-vx*0.78; }
+        if(y<=BAND+R){ // bovenaan → doelzone
+          const n=cats.length, zi=Math.max(0,Math.min(n-1,Math.floor(x/(W/n))));
+          hit(zi);
+        } else if(y>H+R){ // eruit gevallen (drain)
+          hit(-1);
+        } else drawBall();
+      }
+      raf=requestAnimationFrame(loop);
+    }
+    function end(){ over=true; if(raf)cancelAnimationFrame(raf); api.finish(); }
 
     function onKey(e){
       if(over||!cur) return;
-      if(e.key==="ArrowLeft"){e.preventDefault();moveCol(-1);}
-      else if(e.key==="ArrowRight"){e.preventDefault();moveCol(1);}
-      else if(e.key===" "||e.key==="ArrowDown"){e.preventDefault();drop(null);}
-      else if(e.key>="1"&&e.key<="9"){const i=+e.key-1; if(i<COLS){e.preventDefault();drop(i);}}
+      const k=e.key;
+      if(k==="ArrowLeft"){e.preventDefault();flip(-1);}
+      else if(k==="ArrowRight"){e.preventDefault();flip(1);}
+      else if(k>="1"&&k<="9"){const i=+k-1; if(i<cats.length){e.preventDefault();hit(i);}}
     }
     document.addEventListener("keydown",onKey);
-    grid.addEventListener("click",e=>{ if(!cur)return; const g=grid.getBoundingClientRect();
-      const i=Math.max(0,Math.min(COLS-1,Math.floor((e.clientX-g.left)/(g.width/COLS)))); drop(i); });
-    const onResize=()=>{ measure(); place(); };
+    function onTap(e){ const r=field.getBoundingClientRect(); flip((e.clientX-r.left) < r.width/2 ? -1 : 1); }
+    field.addEventListener("pointerdown",onTap);
+    const onResize=()=>measure();
     window.addEventListener("resize",onResize);
-    api._cleanup=()=>{ clearInterval(timer); document.removeEventListener("keydown",onKey); window.removeEventListener("resize",onResize); };
+    api._cleanup=()=>{ over=true; if(raf)cancelAnimationFrame(raf); document.removeEventListener("keydown",onKey);
+      field.removeEventListener("pointerdown",onTap); window.removeEventListener("resize",onResize); };
 
-    paint();
-    requestAnimationFrame(()=>{ spawn(); retime(); });
+    requestAnimationFrame(()=>{ last=0; measure(); spawn(); raf=requestAnimationFrame(loop); });
 
     function esc(s){ return String(s).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
     function isLight(hex){ const n=parseInt(hex.slice(1),16); return (0.299*((n>>16)&255)+0.587*((n>>8)&255)+0.114*(n&255))>176; }
@@ -709,7 +698,7 @@ window.Motor = { mount };
 
 ;
 (function(){
-var cfg = {"id":"es-u8-haber-tetris","title":"Haber Tetris","subtitle":"U8 · laat elke persoon in de juiste vorm van «haber» vallen","lang":"es","template":"tetris","options":{"rows":9,"speed":1300,"audio":false},"classify":{"categories":[{"id":"he","label":"he","glaze":"#3D74D6"},{"id":"has","label":"has","glaze":"#C4402C"},{"id":"ha","label":"ha","glaze":"#2E8E68"},{"id":"hemos","label":"hemos","glaze":"#E0A22F"},{"id":"han","label":"han","glaze":"#8B5E9E"}],"items":[{"stimulus":"yo","answer":"he","tag":"he","sub":"yo he"},{"stimulus":"tú","answer":"has","tag":"has","sub":"tú has"},{"stimulus":"él","answer":"ha","tag":"ha","sub":"él ha"},{"stimulus":"ella","answer":"ha","tag":"ha","sub":"ella ha"},{"stimulus":"nosotros","answer":"hemos","tag":"hemos","sub":"nosotros hemos"},{"stimulus":"nosotras","answer":"hemos","tag":"hemos","sub":"nosotras hemos"},{"stimulus":"ellos","answer":"han","tag":"han","sub":"ellos han"},{"stimulus":"ellas","answer":"han","tag":"han","sub":"ellas han"},{"stimulus":"Nina","answer":"ha","tag":"ha","sub":"Nina ha"},{"stimulus":"Diego y Nina","answer":"han","tag":"han","sub":"ellos han"},{"stimulus":"tú y yo","answer":"hemos","tag":"hemos","sub":"nosotros hemos"},{"stimulus":"usted","answer":"ha","tag":"ha","sub":"usted ha"},{"stimulus":"mi madre","answer":"ha","tag":"ha","sub":"ella ha"},{"stimulus":"mis amigos","answer":"han","tag":"han","sub":"ellos han"},{"stimulus":"yo (otra vez)","answer":"he","tag":"he","sub":"yo he"},{"stimulus":"la profesora","answer":"ha","tag":"ha","sub":"ella ha"},{"stimulus":"tú (otra vez)","answer":"has","tag":"has","sub":"tú has"},{"stimulus":"el grupo","answer":"ha","tag":"ha","sub":"el grupo ha (ev.)"}]}};
+var cfg = {"id":"es-u8-haber-tetris","title":"Haber: pinball","subtitle":"U8 · empuja la bola a la forma correcta · flip naar de juiste vorm","lang":"es","template":"pinball","options":{"rounds":16,"audio":false},"classify":{"categories":[{"id":"he","label":"he","glaze":"#3D74D6"},{"id":"has","label":"has","glaze":"#C4402C"},{"id":"ha","label":"ha","glaze":"#2E8E68"},{"id":"hemos","label":"hemos","glaze":"#E0A22F"},{"id":"han","label":"han","glaze":"#8B5E9E"}],"items":[{"stimulus":"yo","answer":"he","tag":"he","sub":"yo he"},{"stimulus":"tú","answer":"has","tag":"has","sub":"tú has"},{"stimulus":"él","answer":"ha","tag":"ha","sub":"él ha"},{"stimulus":"ella","answer":"ha","tag":"ha","sub":"ella ha"},{"stimulus":"nosotros","answer":"hemos","tag":"hemos","sub":"nosotros hemos"},{"stimulus":"nosotras","answer":"hemos","tag":"hemos","sub":"nosotras hemos"},{"stimulus":"ellos","answer":"han","tag":"han","sub":"ellos han"},{"stimulus":"ellas","answer":"han","tag":"han","sub":"ellas han"},{"stimulus":"Nina","answer":"ha","tag":"ha","sub":"Nina ha"},{"stimulus":"Diego y Nina","answer":"han","tag":"han","sub":"ellos han"},{"stimulus":"tú y yo","answer":"hemos","tag":"hemos","sub":"nosotros hemos"},{"stimulus":"usted","answer":"ha","tag":"ha","sub":"usted ha"},{"stimulus":"mi madre","answer":"ha","tag":"ha","sub":"ella ha"},{"stimulus":"mis amigos","answer":"han","tag":"han","sub":"ellos han"},{"stimulus":"yo (otra vez)","answer":"he","tag":"he","sub":"yo he"},{"stimulus":"la profesora","answer":"ha","tag":"ha","sub":"ella ha"},{"stimulus":"tú (otra vez)","answer":"has","tag":"has","sub":"tú has"},{"stimulus":"el grupo","answer":"ha","tag":"ha","sub":"el grupo ha (ev.)"}]}};
 cfg._source = { items: cfg.classify.items };
 Motor.mount(document.getElementById('app'), cfg);
 })();

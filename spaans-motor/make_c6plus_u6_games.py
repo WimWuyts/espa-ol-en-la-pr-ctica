@@ -129,8 +129,8 @@ w({"id":PRE+"contraste","title":"Completa: indef ↔ imperf","subtitle":"U6 · a
   {"stimulus":"Entonces ___ (ellos) la casa.","options":["vendieron","vendían","venden"],"answer":"vendieron","tag":"ct","sub":"gebeurtenis → indefinido"}]}})
 
 # 8 · TETRIS — imperfecto: -aba / -ía / irregular (pool 16)
-w({"id":PRE+"imperf-tetris","title":"Imperfecto Tetris","subtitle":"U6 · laat het juiste type vallen",
- "lang":"es","template":"tetris","options":{"rows":9,"speed":1300,"audio":False},
+w({"id":PRE+"imperf-tetris","title":"Imperfecto: topos","subtitle":"U6 · aporrea la forma correcta · mep de juiste vorm",
+ "lang":"es","template":"mole","options":{"rounds":16,"audio":False},
  "classify":{"categories":[
   {"id":"aba","label":"-aba (-ar)","glaze":G["blue"]},{"id":"ia","label":"-ía (-er/-ir)","glaze":G["green"]},
   {"id":"irr","label":"era/iba/veía","glaze":G["magenta"]}],

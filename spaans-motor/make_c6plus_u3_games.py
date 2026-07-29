@@ -152,8 +152,8 @@ w({"id":PRE+"creo-que","title":"Completa: creo que + indicativo","subtitle":"U3 
   {"stimulus":"Me parece que la gente ___ mucho en las redes.","options":["comparte","comparta","comparten"],"answer":"comparte","tag":"op","sub":"la gente → comparte"}]}})
 
 # 9 · TETRIS — ir a: la persona correcta (voy/vas/va/vamos/vais/van) (pool 16)
-w({"id":PRE+"ir-a-tetris","title":"ir a Tetris","subtitle":"U3 · laat de juiste vorm van ir vallen",
- "lang":"es","template":"tetris","options":{"rows":9,"speed":1300,"audio":False},
+w({"id":PRE+"ir-a-tetris","title":"ir a + inf.: burbujas","subtitle":"U3 · dispara a la forma correcta · schiet naar de juiste vorm",
+ "lang":"es","template":"bubble","options":{"rounds":16,"audio":False},
  "classify":{"categories":[
   {"id":"voy","label":"voy a","glaze":G["blue"]},{"id":"vas","label":"vas a","glaze":G["red"]},
   {"id":"va","label":"va a","glaze":G["green"]},{"id":"van","label":"van a","glaze":G["amber"]}],

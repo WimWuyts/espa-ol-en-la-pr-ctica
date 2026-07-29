@@ -1,12 +1,11 @@
 {
   "id": "es-c6plus-u2-lo-la-tetris",
-  "title": "lo/la Tetris",
-  "subtitle": "U2 · laat het juiste pronomen vallen",
+  "title": "lo / la: puertas",
+  "subtitle": "U2 · corre a la puerta correcta · loop naar de juiste deur",
   "lang": "es",
-  "template": "tetris",
+  "template": "platform",
   "options": {
-    "rows": 9,
-    "speed": 1300,
+    "rounds": 16,
     "audio": false
   },
   "classify": {

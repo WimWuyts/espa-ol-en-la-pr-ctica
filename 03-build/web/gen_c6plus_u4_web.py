@@ -35,7 +35,7 @@ MOTOR = [
  ['③ Producir con apoyo', [
    ['perfecto', 'completa: el perfecto', 'cloze'],
    ['por-para-cloze', 'completa: por/para', 'cloze'],
-   ['participio-tetris', 'participio Tetris', 'tetris'],
+   ['participio-tetris', 'participio: torres', 'tower'],
    ['viaje-order', 'ordena la frase', 'order'],
    ['senala', 'señala', 'point']]],
  ['④ Hablar · grábate 🎙️', [

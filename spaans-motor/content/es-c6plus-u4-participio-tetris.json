@@ -1,12 +1,12 @@
 {
   "id": "es-c6plus-u4-participio-tetris",
-  "title": "Participio Tetris",
-  "subtitle": "U4 · laat het juiste participio-type vallen",
+  "title": "Participio: torres",
+  "subtitle": "U4 · defiende con la torre correcta · verdedig met de juiste toren",
   "lang": "es",
-  "template": "tetris",
+  "template": "tower",
   "options": {
-    "rows": 9,
-    "speed": 1300,
+    "rounds": 16,
+    "lives": 5,
     "audio": false
   },
   "classify": {
