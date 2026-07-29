@@ -1,0 +1,28 @@
+{
+  "id":"es-demo-snake-serestar",
+  "title":"Demo · snake <span>ser/estar</span>",
+  "subtitle":"arcade-skin op classify — stuur naar de juiste tegel",
+  "template":"snake",
+  "options":{"rounds":10},
+  "classify":{
+    "prompt":"ser of estar?",
+"categories":[
+      {"id":"ser","label":"ser","glaze":"#C4402C"},
+      {"id":"estar","label":"estar","glaze":"#2E8E68"}
+    ],
+    "items":[
+      {"stimulus":"Yo ___ profesor","answer":"ser","tag":"ser","sub":"beroep"},
+      {"stimulus":"Ella ___ en Madrid","answer":"estar","tag":"estar","sub":"plaats"},
+      {"stimulus":"Nosotros ___ cansados","answer":"estar","tag":"estar","sub":"toestand"},
+      {"stimulus":"El coche ___ rojo","answer":"ser","tag":"ser","sub":"kleur"},
+      {"stimulus":"¿Cómo ___ (tú)?","answer":"estar","tag":"estar","sub":"gevoel"},
+      {"stimulus":"Hoy ___ lunes","answer":"ser","tag":"ser","sub":"dag"},
+      {"stimulus":"La sopa ___ caliente","answer":"estar","tag":"estar","sub":"tijdelijk"},
+      {"stimulus":"Mi madre ___ española","answer":"ser","tag":"ser","sub":"herkomst"},
+      {"stimulus":"Los niños ___ contentos","answer":"estar","tag":"estar"},
+      {"stimulus":"Barcelona ___ en Cataluña","answer":"estar","tag":"estar","sub":"plaats"},
+      {"stimulus":"Él ___ alto","answer":"ser","tag":"ser","sub":"eigenschap"},
+      {"stimulus":"La ventana ___ abierta","answer":"estar","tag":"estar"}
+    ]
+  }
+}

@@ -47,11 +47,22 @@ laat de gebruiker met één woord bijsturen. Geen lange uitleg.
 | tik het juiste deel van een woord (sílaba tónica, letter met tilde) | `tap` | vaste `items` (`parts` + `answer`-index) |
 | zet op volgorde (getallen klein→groot, chronologie, alfabetisch) | `order` | vaste `rounds` (`items` met `key`) |
 | geheugenspel woordparen (español↔nederlands, cifra↔letra) | `memory` | vaste `pairs` |
+| **leerling TYPT het antwoord** (escribe la palabra, gentilicio, concordancia, verbo-cloze-libre, transforma, número en letras, bouw-de-zin) | **`type`** | vaste `items` (`answer`/`answers`, of `must`+`model` voor open) |
+| klik op beeld/scène/plattegrond | `point` | vaste `items` |
+| spreken / opname (repeat, shadowing, substitutie-carrousel, spraakbericht) | `speak` | vaste `items` (`mode`) |
+| open productie / mini-simulatie (chat, kassa, wallapop) | `sim` | vaste `items` |
+| **arcade-M1** (zelfde classify-judge, andere «jas» — roteer per unit) | **`tetris` · `belt` · `mole` · `bubble` · `snake`** | ident. aan `classify` (`categories` + `items`/generator) |
+
+**Productieve laag (BINDEND, plan §2/§4):** elke unit-pagina haalt **≥8 productieve
+slots** — put daarvoor uit **`type`** (getypt) en **`speak`** (gesproken), niet enkel
+uit kies/klik/sleep. **Arcade-rotatie (plan §3):** de vijf arcade-skins delen dezelfde
+judge; laat M1 per unit **roteren** (`tetris → belt → mole → bubble → snake → …`) zodat
+geen mechaniek zich binnen één cursus opdringt.
 
 Alle sjablonen worden **dynamisch** ingeladen door `build.mjs` op basis van de
 bestandsnaam (`src/templates/<template>.{js,css}`): een nieuw sjabloon toevoegen
-= die twee bestanden aanmaken; geen registratie in `build.mjs` nodig. Nog niet
-gebouwd: `point` (klik-op-beeld/kaart), `speak` (microfoon), `sim` (open productie).
+= die twee bestanden aanmaken; geen registratie in `build.mjs` nodig (enkel een
+badge-label in de `tplName`-map is optioneel).
 
 ## Blokkerende controles (spel wordt NIET gebouwd als één faalt)
 

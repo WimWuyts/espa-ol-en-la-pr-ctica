@@ -1,0 +1,55 @@
+/* Sjabloon: typen (productieve laag). Stimuluskaart + invoerveld + accentbalk. */
+.ty-card{background:linear-gradient(175deg,#FBF6E9,#E9E0C9);border:1px solid rgba(0,0,0,.25);border-radius:3px;
+  box-shadow:0 6px 0 rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.9);padding:16px 16px 18px;text-align:center;
+  position:relative;overflow:hidden;min-height:170px;display:flex;flex-direction:column;justify-content:center}
+.ty-card::before,.ty-card::after{content:"";position:absolute;left:0;right:0;height:7px;
+  background:repeating-linear-gradient(45deg,#12264A 0 4px,transparent 4px 8px),repeating-linear-gradient(-45deg,#12264A 0 4px,transparent 4px 8px);opacity:.5}
+.ty-card::before{top:0}.ty-card::after{bottom:0}
+.ty-eye{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8A7F66}
+.ty-stim{font-family:var(--serif);font-weight:700;color:#12264A;font-size:clamp(20px,4.6vw,34px);line-height:1.14;word-break:break-word;margin-top:4px}
+.ty-stim .ty-mark{color:#C4402C;border-bottom:3px solid #E0A22F}
+.ty-gap{display:inline-block;min-width:1.6em;border-bottom:3px solid #12264A;margin:0 .06em;height:1.05em;vertical-align:-.15em}
+.ty-sub{font-family:var(--serif);font-style:italic;font-size:14px;color:#6E6249;margin-top:6px}
+.ty-hint{font-family:var(--mono);font-size:14px;color:#8A7F66;margin-top:6px;letter-spacing:.06em}
+.ty-hint .ty-hk{font-family:var(--sans);font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  background:#E9E0C9;border:1px solid #C3B99F;border-radius:2px;padding:1px 5px;margin-right:6px;color:#8A7F66}
+
+.ty-inrow{display:flex;gap:8px;margin-top:12px;max-width:520px;width:100%;align-self:center}
+.ty-in{flex:1;font-family:var(--serif);font-size:clamp(18px,3.2vw,24px);font-weight:600;color:#12264A;
+  padding:12px 14px;border-radius:2px;border:1px solid #C3B99F;border-bottom:3px solid #12264A;
+  background:linear-gradient(180deg,#fff,#FBF6E9);box-shadow:inset 0 1px 3px rgba(0,0,0,.08);outline:none;min-width:0}
+.ty-in:focus{border-color:#3D74D6;border-bottom-color:#3D74D6}
+.ty-in.ok{border-color:#1F6B4C;border-bottom-color:#1F6B4C;background:linear-gradient(180deg,#EAF7EE,#DFF3E4)}
+.ty-in.no{border-color:#8E2C1D;border-bottom-color:#8E2C1D;background:linear-gradient(180deg,#FBEDE9,#F7DAD3)}
+.ty-in::placeholder{color:#B6AA8E;font-style:italic;font-weight:400}
+.ty-go{flex:0 0 auto;font-size:20px;font-weight:700;color:#fff;padding:0 18px;border-radius:2px;cursor:pointer;
+  background:linear-gradient(180deg,#3E9E77,#2E8E68);border:1px solid #1F6B4C;border-bottom-width:3px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.3);transition:transform .08s,filter .12s}
+.ty-go:hover{filter:brightness(1.05)}.ty-go:active{transform:translateY(2px)}
+.ty-go:disabled{opacity:.5;cursor:default}
+.ty-go:focus-visible{outline:3px solid var(--cal);outline-offset:2px}
+
+.ty-acc{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-top:9px}
+.ty-accbtn{font-family:var(--serif);font-size:16px;font-weight:700;color:#12264A;min-width:32px;padding:5px 8px;
+  border-radius:2px;cursor:pointer;background:linear-gradient(180deg,#fff,#F3ECDB);border:1px solid #C3B99F;
+  box-shadow:0 2px 0 rgba(0,0,0,.15)}
+.ty-accbtn:hover{filter:brightness(1.04);border-color:#12264A}.ty-accbtn:active{transform:translateY(1px);box-shadow:none}
+
+.ty-fb{min-height:22px;margin-top:10px;font-family:var(--serif);font-size:16px;font-weight:700}
+.ty-fb.g{color:#1F6B4C}.ty-fb.b{color:#8E2C1D}
+.ty-fb .ty-alt{font-weight:400;font-style:italic;font-size:14px;color:#6E6249}
+.ty-card.good{animation:tyGood .4s}.ty-card.bad{animation:tyBad .5s}
+@keyframes tyGood{0%{background:#DFF3E4}100%{}}
+@keyframes tyBad{0%,100%{transform:translateX(0)}20%{transform:translateX(-7px)}40%{transform:translateX(7px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+
+.ty-extra{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:10px}
+.ty-reveal,.ty-cont{font-family:var(--serif);font-weight:700;font-size:15px;padding:9px 16px;border-radius:2px;cursor:pointer;
+  border:1px solid #C3B99F;box-shadow:0 3px 0 rgba(0,0,0,.18);transition:transform .08s}
+.ty-reveal{color:#12264A;background:linear-gradient(180deg,#fff,#F3ECDB)}
+.ty-cont{color:#fff;background:linear-gradient(180deg,#4E82E0,#3D74D6);border-color:#2A5AB0}
+.ty-reveal:active,.ty-cont:active{transform:translateY(2px);box-shadow:none}
+.ty-model{font-family:var(--serif);font-size:16px;color:#12264A;background:#EAF7EE;border:1px solid #9FCDB4;
+  border-radius:2px;padding:8px 12px}
+.ty-model .ty-mk,.ty-extra .nl{font-family:var(--sans);font-size:11px}
+.ty-model .ty-mk{letter-spacing:.14em;text-transform:uppercase;color:#1F6B4C;margin-right:6px}
+.nl{color:#6E6249;font-style:italic}

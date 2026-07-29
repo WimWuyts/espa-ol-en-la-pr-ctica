@@ -1,0 +1,33 @@
+/* Arcade-skin «sorteerband». Band bovenaan, bakken onderaan. */
+.bl-wrap{display:flex;flex-direction:column;gap:10px}
+.bl-track{position:relative;height:92px;border-radius:3px;overflow:hidden;
+  background:linear-gradient(180deg,#1B3766,#12264A);border:1px solid rgba(0,0,0,.4);
+  box-shadow:inset 0 2px 8px rgba(0,0,0,.4)}
+.bl-track::before{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,rgba(243,236,219,.14) 0 22px,transparent 22px 44px);
+  animation:blMove 1s linear infinite}
+@keyframes blMove{to{background-position:44px 0}}
+.bl-goal{position:absolute;top:0;bottom:0;right:0;width:14px;
+  background:repeating-linear-gradient(45deg,#C4402C 0 6px,#7C1D12 6px 12px);opacity:.85}
+.bl-tile{position:absolute;top:50%;left:6%;transform:translate(-50%,-50%);
+  min-width:56px;max-width:46%;height:52px;padding:0 12px;display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-weight:700;color:#12264A;text-align:center;line-height:1.05;
+  background:linear-gradient(180deg,#FBF6E9,#E4D9BE);border:1px solid rgba(0,0,0,.3);border-radius:3px;
+  box-shadow:0 4px 0 rgba(0,0,0,.3);white-space:nowrap}
+.bl-sub{min-height:18px;text-align:center;font-family:var(--serif);font-style:italic;font-size:13px;color:var(--cal-dim)}
+.bl-bins{display:grid;gap:8px}
+.bl-bin{position:relative;min-height:64px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:8px 6px;border-radius:3px;cursor:pointer;color:#F3ECDB;text-align:center;
+  border:1px solid rgba(0,0,0,.3);box-shadow:0 4px 0 rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.25);
+  transition:transform .08s,filter .12s}
+.bl-bin.ink-d{color:#12264A}
+.bl-bin .bl-bl{font-family:var(--serif);font-weight:700;font-size:clamp(14px,2.4vw,19px);line-height:1.1}
+.bl-bin small{position:absolute;top:4px;right:6px;font-family:var(--mono);font-size:10px;opacity:.55}
+.bl-bin:hover{filter:brightness(1.05)}
+.bl-bin:active{transform:translateY(2px);box-shadow:0 2px 0 rgba(0,0,0,.25)}
+.bl-bin.aim{outline:3px solid var(--cal);outline-offset:2px}
+.bl-bin.hit{animation:blHit .3s}
+.bl-bin.miss{animation:blMiss .3s}
+@keyframes blHit{0%{filter:brightness(1)}40%{filter:brightness(1.35)}100%{filter:brightness(1)}}
+@keyframes blMiss{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.bl-tip{text-align:center;font-size:12px;color:var(--cal-dim);font-style:italic}

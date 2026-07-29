@@ -1,0 +1,21 @@
+{
+  "id":"es-demo-type-vocab",
+  "title":"Demo · <span>escribe</span> la palabra",
+  "subtitle":"productief typen (V3) — normalisatie + accent-tolerant",
+  "template":"type",
+  "options":{"rounds":8},
+  "type":{
+    "prompt":"Escribe en español · schrijf in het Spaans",
+    "mode":"closed",
+    "items":[
+      {"stimulus":"de vader","answers":["el padre","padre"],"tag":"familia","hint":"e_ p____"},
+      {"stimulus":"de moeder","answers":["la madre","madre"],"tag":"familia","hint":"l_ m____"},
+      {"stimulus":"het huis","answers":["la casa","casa"],"tag":"casa","hint":"l_ c___"},
+      {"stimulus":"de hond","answers":["el perro","perro"],"tag":"animales","hint":"e_ p____"},
+      {"stimulus":"rood","answers":["rojo","rojo/roja"],"tag":"colores","sub":"masculino"},
+      {"stimulus":"blauw","answers":["azul"],"tag":"colores"},
+      {"stimulus":"de school","answers":["el colegio","la escuela","colegio","escuela"],"tag":"lugares","sub":"twee opties"},
+      {"stimulus":"dank je wel","answers":["gracias"],"tag":"cortesia"}
+    ]
+  }
+}

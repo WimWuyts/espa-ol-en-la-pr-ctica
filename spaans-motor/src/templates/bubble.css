@@ -1,0 +1,35 @@
+/* Arcade-skin «bubbelschieter». Bubbels boven, kanon onder. */
+.bu-wrap{position:relative;display:flex;flex-direction:column;gap:10px;min-height:340px}
+.bu-sky{flex:1;display:flex;flex-wrap:wrap;gap:12px;align-content:flex-start;justify-content:center;
+  padding:14px 10px;border-radius:6px;min-height:180px;
+  background:linear-gradient(180deg,#1B3766,#12264A);border:1px solid rgba(0,0,0,.4);
+  box-shadow:inset 0 2px 10px rgba(0,0,0,.4)}
+.bu-bub{position:relative;width:clamp(78px,20vw,116px);aspect-ratio:1;border-radius:50%;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;text-align:center;color:#F3ECDB;
+  border:1px solid rgba(255,255,255,.35);box-shadow:0 4px 10px rgba(0,0,0,.35),inset 0 -6px 12px rgba(0,0,0,.25);
+  animation:buFloat 3.2s ease-in-out infinite;transition:transform .12s}
+.bu-bub.ink-d{color:#12264A}
+.bu-bub span{font-family:var(--serif);font-weight:700;font-size:clamp(13px,2.3vw,18px);line-height:1.05;padding:0 6px}
+.bu-bub small{position:absolute;top:8px;right:12px;font-family:var(--mono);font-size:10px;opacity:.6}
+@keyframes buFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.bu-bub:hover{transform:scale(1.05)}
+.bu-bub.pop{animation:buPop .4s forwards}
+.bu-bub.miss{animation:buShake .4s}
+.bu-bub.reveal{outline:3px solid #7BE0AE;outline-offset:3px}
+@keyframes buPop{0%{transform:scale(1)}45%{transform:scale(1.25);filter:brightness(1.4)}100%{transform:scale(0);opacity:0}}
+@keyframes buShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+
+.bu-cannon{position:relative;display:flex;flex-direction:column;align-items:center;gap:4px}
+.bu-sub{min-height:16px;font-family:var(--serif);font-style:italic;font-size:13px;color:var(--cal-dim)}
+.bu-ammo{min-width:64px;max-width:80%;min-height:52px;padding:8px 14px;display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-weight:700;color:#12264A;text-align:center;line-height:1.05;
+  background:radial-gradient(circle at 34% 30%, #fff, #E4D9BE);border:1px solid rgba(0,0,0,.3);border-radius:50%;
+  box-shadow:0 5px 0 rgba(0,0,0,.3)}
+.bu-base{width:120px;height:16px;border-radius:6px 6px 3px 3px;margin-top:-4px;
+  background:linear-gradient(180deg,#5A5045,#2E2820);border:1px solid rgba(0,0,0,.4)}
+.bu-proj{position:absolute;z-index:5;transform:translate(-50%,-50%);
+  min-width:52px;height:48px;padding:0 12px;display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-weight:700;color:#12264A;
+  background:radial-gradient(circle at 34% 30%, #fff, #E4D9BE);border-radius:50%;border:1px solid rgba(0,0,0,.3);
+  box-shadow:0 3px 8px rgba(0,0,0,.35)}
+.bu-tip{text-align:center;font-size:12px;color:var(--cal-dim);font-style:italic}

@@ -136,6 +136,63 @@ Geheugenspel (concentration): draai twee kaartjes om en zoek de paren.
 
 `options.pairs` = aantal paren per bord (default 6 → 12 kaartjes).
 
+## Sjabloon `type` (productief typen)
+
+De leerling **typt** het antwoord (i.p.v. kiezen). Normalisatie is
+accent-tolerant (á≈a, é≈e, …) mét behoud van **ñ** (año ≠ ano), en tolerant
+voor hoofdletters/spaties/leestekens. Twee modi:
+
+```json
+{
+  "template": "type",
+  "options": { "rounds": 8 },
+  "type": {
+    "prompt": "Escribe en español",
+    "mode": "closed",
+    "accentSensitive": false,
+    "items": [
+      { "stimulus": "de vader", "answers": ["el padre","padre"], "tag": "familia", "hint": "e_ p____" }
+    ]
+  }
+}
+```
+
+- **`mode":"closed"`** (goud): `answer` (string) of `answers` (array) = aanvaarde
+  oplossingen → auto-check. Bij fout wordt het modelantwoord getoond.
+- **`mode":"open"`** (halfopen): vrije mini-zin → **structuurcheck** via `must`
+  (array verplichte tokens) + knop **«Ver modelo»** (`model`) ter zelfcorrectie.
+- `stimulus`: `___` = gat-streep, `**x**` = markering. `hint` = optionele letterhint.
+- Een accentbalk (á é í ó ú ñ ü ¿ ¡) staat onder het invoerveld (mobiel/AZERTY).
+
+## Arcade-skins `tetris` · `belt` · `mole` · `bubble` · `snake`
+
+**Zelfde judge-logica als `classify`, andere «jas».** Ze consumeren een
+**identiek `classify`-blok** (`categories` + `items`, of een generator) — je kan
+elk classify-pakket omzetten door enkel `template` te wisselen.
+
+| skin | mechaniek | interactie |
+|---|---|---|
+| `tetris` | vallende tegel → juiste kolom | tik kolom / ← → + spatie / 1-9 |
+| `belt` | sorteerband → juiste bak vóór hij afvalt | tik bak / ← → + spatie / 1-9 |
+| `mole` | mollenmeppen → mep het juiste hol (tijdbalk) | tik hol / 1-9 |
+| `bubble` | bubbelschieter → schiet naar juiste bubbel | tik bubbel / 1-9 |
+| `snake` | stuur de slang naar de juiste voedseltegel | pijltjes · WASD · vegen |
+
+```json
+{
+  "template": "belt",
+  "options": { "rounds": 12 },
+  "classify": {
+    "prompt": "¿el o la?",
+    "categories": [ { "id":"el","label":"el","glaze":"#3D74D6" }, { "id":"la","label":"la","glaze":"#C4402C" } ],
+    "items": [ { "stimulus":"casa", "answer":"la", "tag":"la", "sub":"-a" } ]
+  }
+}
+```
+
+**Rotatie (plan §3):** laat het arcade-slot (M1) per unit roteren over deze skins
+zodat geen enkele mechaniek zich binnen één cursus opdringt.
+
 ## Een spel toevoegen
 
 1. Zet een `.json` in `content/`.

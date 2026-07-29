@@ -1,6 +1,24 @@
 # PLAN — Spellenmotor over de drie cursussen (C4 · C6 · C6+)
 
-> **Status:** plan (goedgekeurd te bouwen ná akkoord). **Niets gebouwd.** Referentie = C5 (klaar).
+> **Status:** plan (goedgekeurd te bouwen ná akkoord). Referentie = C5 (klaar).
+>
+> **✅ MOTOR-INFRASTRUCTUUR GEBOUWD (2026-07-29)** — de herbruikbare engine-laag
+> uit §8/§9 stap 1-2 staat er (vóór de per-unit-content, die volgt als de
+> cursussen v1 af zijn):
+> - **`type`** (§2/§4-A) — getypte-productie-judge: normalisatie (accent-tolerant,
+>   ñ behouden), meerdere aanvaarde antwoorden, «closed» + «open» (structuurcheck
+>   `must` + «Ver modelo»), accentbalk. → deblokkeert V3·V4·G4·G5·G6.
+> - **Arcade-skins `belt` · `mole` · `bubble` · `snake`** (§3/§4-C) — dunne skins
+>   op de classify-judge; samen met de bestaande `tetris` = **5 arcade-mechanieken**
+>   voor de M1-rotatie (einde van «5× tetris»).
+> - **`speak`** dekt §2/§4-B al (repeat · shadowing · substitutie-carrousel ·
+>   spraakbericht + zelfscan-rubric) — geen extra werk nodig.
+> - 6 **demo-pakketten** (`content/es-demo-*`) tonen elke nieuwe mechaniek;
+>   headless gerookttest (Chromium) → geen JS-fouten, offline werkend.
+>
+> **Nog te bouwen (volgende ronde):** 3 arcade-skins (platformer · torenverdediging
+> · pinball, §3), motor-features (Leitner · streak · heatmap · confidence · can-do,
+> §8-4), klassikale set (§8-5), en de **per-unit 16-slot-content** (§6) per cursus.
 > **Aanpak (auteur, 2026-07-27/29):** leerstof-eerst → kies uit de pool van 100 (uitgebreid) →
 > bouw de motor als die er nog niet is → lever het spel op. **Minimum 15 games/thema** (mix
 > grammatica + woordenschat). **Elke webpagina** bevat oefeningen waar de leerling het antwoord

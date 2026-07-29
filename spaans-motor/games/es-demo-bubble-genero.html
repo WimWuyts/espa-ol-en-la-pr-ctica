@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Demo · bubbelschieter género</title>
+<style>
+/* Gedeelde ontwerptokens — azulejo-stijl (Talavera-tegels). */
+:root{
+  --muro:#12264A; --muro-2:#0A1730; --cal:#F3ECDB; --cal-dim:#C8BFA9;
+  --barro:#D6C3A0; --barro-txt:#3A2E22; --roto:#7C7268;
+  --p1:#C4402C; --p2:#E0A22F; --p3:#2E8E68; --p4:#3D74D6; --p5:#8B5E9E; --p6:#EFE7D4;
+  --serif:"Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Courier New",monospace;
+}
+
+/* Gedeelde schil: pagina, kop, HUD, overlays, resultaten. Sjabloon-onafhankelijk. */
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  min-height:100vh;color:var(--cal);font-family:var(--sans);
+  background:
+    radial-gradient(120% 80% at 18% -10%, rgba(255,236,190,.16), transparent 60%),
+    radial-gradient(90% 70% at 100% 110%, rgba(61,116,214,.20), transparent 65%),
+    linear-gradient(180deg,var(--muro) 0%,var(--muro-2) 100%);
+  background-attachment:fixed;
+  display:flex;flex-direction:column;align-items:center;padding:14px 12px 28px;
+}
+#app{width:100%;max-width:1040px}
+header.mt{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+header.mt h1{font-family:var(--serif);font-weight:700;font-size:clamp(22px,4.5vw,38px);letter-spacing:.14em;margin:0;line-height:1;text-shadow:0 2px 0 rgba(0,0,0,.35)}
+header.mt h1 span{color:var(--p2)}
+header.mt .tag{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--cal-dim);margin:2px 0 0}
+header.mt .sp{flex:1}
+.mt-btn{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;background:transparent;color:var(--cal-dim);border:1px solid rgba(243,236,219,.28);border-radius:2px;padding:7px 12px;cursor:pointer;transition:.15s}
+.mt-btn:hover{color:var(--cal);border-color:var(--cal);background:rgba(243,236,219,.07)}
+.mt-btn:focus-visible{outline:2px solid var(--p2);outline-offset:2px}
+.mt-wrap{display:grid;grid-template-columns:1fr 220px;gap:18px;align-items:start}
+@media(max-width:820px){.mt-wrap{grid-template-columns:1fr}}
+.mt-panel{display:flex;flex-direction:column;gap:10px}
+.mt-stat{background:rgba(243,236,219,.06);border:1px solid rgba(243,236,219,.16);border-radius:2px;padding:9px 12px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.mt-stat .k{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--cal-dim)}
+.mt-stat .v{font-family:var(--mono);font-size:20px;font-weight:600}
+.mt-stat .v.hot{color:var(--p2)}
+@media(max-width:820px){.mt-panel{flex-direction:row;flex-wrap:wrap}.mt-stat{flex:1 1 90px}}
+.mt-ov{position:fixed;inset:0;z-index:50;display:none;background:rgba(8,18,38,.90);backdrop-filter:blur(3px);overflow-y:auto;padding:24px 16px}
+.mt-ov.on{display:flex;align-items:flex-start;justify-content:center}
+.mt-sheet{width:100%;max-width:640px;margin:auto;background:linear-gradient(175deg,#FBF6E9,#EAE1CA);color:#12264A;border-radius:3px;box-shadow:0 20px 50px rgba(0,0,0,.6);padding:24px;position:relative;overflow:hidden}
+.mt-sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:9px;background:repeating-linear-gradient(45deg,#12264A 0 5px,transparent 5px 10px),repeating-linear-gradient(-45deg,#12264A 0 5px,transparent 5px 10px);opacity:.55}
+.mt-sheet h2{font-family:var(--serif);font-size:26px;letter-spacing:.08em;margin:12px 0 3px;text-transform:uppercase}
+.mt-sheet .sub{font-family:var(--serif);font-style:italic;color:#6E6249;margin:0 0 18px;font-size:14.5px}
+.mt-go{width:100%;margin-top:8px;padding:15px;border:none;border-radius:2px;cursor:pointer;background:#C4402C;color:#FBF6E9;font-family:var(--serif);font-size:19px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;box-shadow:0 5px 0 #8E2C1D;transition:.1s}
+.mt-go:hover{background:#D14A34}.mt-go:active{transform:translateY(4px);box-shadow:0 1px 0 #8E2C1D}
+.mt-go.alt{background:#12264A;box-shadow:0 5px 0 #08152C}.mt-go.alt:hover{background:#1B3667}
+.mt-ghost{width:100%;margin-top:9px;padding:11px;border:1px solid #C3B99F;background:transparent;border-radius:2px;cursor:pointer;font-family:var(--serif);font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#6E6249}
+.mt-ghost:hover{border-color:#12264A;color:#12264A}
+.mt-rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}
+.mt-rcell{background:rgba(18,38,74,.07);border:1px solid rgba(18,38,74,.14);border-radius:2px;padding:9px 6px;text-align:center}
+.mt-rcell .rk{font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:#8A7F66}
+.mt-rcell .rv{font-family:var(--mono);font-size:20px;font-weight:600}
+.mt-bar{display:grid;grid-template-columns:96px 1fr 46px;align-items:center;gap:8px;margin-bottom:5px;font-size:13px}
+.mt-bar .bl{font-family:var(--serif);font-style:italic;text-align:right;color:#3A3222;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mt-bar .bt{height:15px;background:rgba(18,38,74,.10);border-radius:1px;overflow:hidden}
+.mt-bar .bf{height:100%;transition:width .5s ease}
+.mt-bar .bn{font-family:var(--mono);font-size:11.5px;color:#6E6249}
+.mt-mis{list-style:none;padding:0;margin:6px 0 0;font-size:13.5px}
+.mt-mis li{padding:6px 0;border-bottom:1px dotted rgba(18,38,74,.22);display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.mt-mis b{font-family:var(--serif);font-size:16px}
+.mt-mis .ok{color:#1F6B4C;font-weight:600}.mt-mis em{font-style:normal;color:#8E2C1D}
+.mt-grp{margin-bottom:15px}
+.mt-grp>label{display:block;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#8A7F66;margin-bottom:6px}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+
+/* Arcade-skin «bubbelschieter». Bubbels boven, kanon onder. */
+.bu-wrap{position:relative;display:flex;flex-direction:column;gap:10px;min-height:340px}
+.bu-sky{flex:1;display:flex;flex-wrap:wrap;gap:12px;align-content:flex-start;justify-content:center;
+  padding:14px 10px;border-radius:6px;min-height:180px;
+  background:linear-gradient(180deg,#1B3766,#12264A);border:1px solid rgba(0,0,0,.4);
+  box-shadow:inset 0 2px 10px rgba(0,0,0,.4)}
+.bu-bub{position:relative;width:clamp(78px,20vw,116px);aspect-ratio:1;border-radius:50%;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;text-align:center;color:#F3ECDB;
+  border:1px solid rgba(255,255,255,.35);box-shadow:0 4px 10px rgba(0,0,0,.35),inset 0 -6px 12px rgba(0,0,0,.25);
+  animation:buFloat 3.2s ease-in-out infinite;transition:transform .12s}
+.bu-bub.ink-d{color:#12264A}
+.bu-bub span{font-family:var(--serif);font-weight:700;font-size:clamp(13px,2.3vw,18px);line-height:1.05;padding:0 6px}
+.bu-bub small{position:absolute;top:8px;right:12px;font-family:var(--mono);font-size:10px;opacity:.6}
+@keyframes buFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.bu-bub:hover{transform:scale(1.05)}
+.bu-bub.pop{animation:buPop .4s forwards}
+.bu-bub.miss{animation:buShake .4s}
+.bu-bub.reveal{outline:3px solid #7BE0AE;outline-offset:3px}
+@keyframes buPop{0%{transform:scale(1)}45%{transform:scale(1.25);filter:brightness(1.4)}100%{transform:scale(0);opacity:0}}
+@keyframes buShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+
+.bu-cannon{position:relative;display:flex;flex-direction:column;align-items:center;gap:4px}
+.bu-sub{min-height:16px;font-family:var(--serif);font-style:italic;font-size:13px;color:var(--cal-dim)}
+.bu-ammo{min-width:64px;max-width:80%;min-height:52px;padding:8px 14px;display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-weight:700;color:#12264A;text-align:center;line-height:1.05;
+  background:radial-gradient(circle at 34% 30%, #fff, #E4D9BE);border:1px solid rgba(0,0,0,.3);border-radius:50%;
+  box-shadow:0 5px 0 rgba(0,0,0,.3)}
+.bu-base{width:120px;height:16px;border-radius:6px 6px 3px 3px;margin-top:-4px;
+  background:linear-gradient(180deg,#5A5045,#2E2820);border:1px solid rgba(0,0,0,.4)}
+.bu-proj{position:absolute;z-index:5;transform:translate(-50%,-50%);
+  min-width:52px;height:48px;padding:0 12px;display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-weight:700;color:#12264A;
+  background:radial-gradient(circle at 34% 30%, #fff, #E4D9BE);border-radius:50%;border:1px solid rgba(0,0,0,.3);
+  box-shadow:0 3px 8px rgba(0,0,0,.35)}
+.bu-tip{text-align:center;font-size:12px;color:var(--cal-dim);font-style:italic}
+
+</style>
+</head>
+<body>
+<div id="app"></div>
+<!-- Gegenereerd door spaans-motor uit content/es-demo-bubble-genero.json -->
+<script>
+/* Arcade-skin «bubbelschieter» (bubble): dunne skin op de classify-judge.
+   Categorie-bubbels drijven bovenaan; onderaan een kanon met de stimulus.
+   Tik de juiste bubbel → de stimulus vliegt erheen en de bubbel knapt.
+   Juist = punt; fout = de juiste bubbel licht op. Accuratesse i.p.v. tempo
+   (variatie t.o.v. band/mol). Hergebruikt elk classify-pakket. */
+window.MotorTemplates = window.MotorTemplates || {};
+window.MotorTemplates.bubble = {
+  init(api){
+    const cfg=api.config, el=api.el, shade=api.shade;
+    const cats=(cfg.classify&&cfg.classify.categories)||[];
+    const root=api.root; root.innerHTML="";
+    const rounds=(cfg.options&&cfg.options.rounds)||16;
+    api.setTarget(rounds);
+
+    const wrap=el("div","bu-wrap");
+    const sky=el("div","bu-sky");
+    const bubbleEls=[];
+    cats.forEach((c,i)=>{
+      const b=el("div","bu-bub"); b.dataset.col=i;
+      b.style.background="radial-gradient(circle at 34% 30%, rgba(255,255,255,.75), "+shade(c.glaze,1.05)+" 42%, "+shade(c.glaze,.72)+")";
+      if(isLight(c.glaze)) b.classList.add("ink-d");
+      b.innerHTML='<span>'+c.label+'</span>'+(i<9?'<small>'+(i+1)+'</small>':'');
+      b.style.animationDelay=(i*0.4)+"s";
+      b.addEventListener("click",()=>shoot(i));
+      sky.appendChild(b); bubbleEls.push(b);
+    });
+    const cannon=el("div","bu-cannon");
+    cannon.innerHTML='<div class="bu-sub" id="buSub">&nbsp;</div><div class="bu-ammo" id="buAmmo">…</div><div class="bu-base"></div>';
+    const projectile=el("div","bu-proj"); projectile.style.display="none";
+    const tip=el("div","bu-tip","tik de bubbel met de juiste categorie");
+    wrap.appendChild(sky); wrap.appendChild(cannon); wrap.appendChild(projectile); wrap.appendChild(tip);
+    root.appendChild(wrap);
+
+    const ammoEl=cannon.querySelector("#buAmmo"), subEl=cannon.querySelector("#buSub");
+    let cur=null, done=0, over=false, busy=false;
+
+    function spawn(){
+      if(over) return;
+      cur=api.next(); busy=false;
+      ammoEl.textContent=cur.stimulus;
+      const fs=Math.max(12,Math.min(22,220/Math.max(4,String(cur.stimulus).length)));
+      ammoEl.style.fontSize=fs+"px";
+      subEl.innerHTML=(cfg.options&&cfg.options.hint===false)?"&nbsp;":(cur.sub?esc(cur.sub):"&nbsp;");
+      bubbleEls.forEach(b=>b.classList.remove("pop","reveal","miss"));
+    }
+    function correctCol(item){ const ans=Array.isArray(item.answer)?item.answer:[item.answer]; return cats.findIndex(c=>ans.indexOf(c.id)>=0); }
+
+    function shoot(col){
+      if(over||!cur||busy) return;
+      busy=true;
+      const item=cur;
+      const ans=Array.isArray(item.answer)?item.answer:[item.answer];
+      const ok=ans.indexOf(cats[col].id)>=0;
+      // projectiel-animatie van kanon → doelbubbel
+      const wr=wrap.getBoundingClientRect(), tb=bubbleEls[col].getBoundingClientRect(), am=ammoEl.getBoundingClientRect();
+      projectile.textContent=item.stimulus;
+      projectile.style.fontSize=ammoEl.style.fontSize;
+      projectile.style.display="flex";
+      projectile.style.left=(am.left-wr.left+am.width/2)+"px";
+      projectile.style.top=(am.top-wr.top+am.height/2)+"px";
+      ammoEl.textContent="";
+      requestAnimationFrame(()=>{
+        projectile.style.transition="left .32s ease, top .32s ease";
+        projectile.style.left=(tb.left-wr.left+tb.width/2)+"px";
+        projectile.style.top=(tb.top-wr.top+tb.height/2)+"px";
+      });
+      setTimeout(()=>{
+        projectile.style.display="none"; projectile.style.transition="";
+        bubbleEls[col].classList.add(ok?"pop":"miss");
+        if(!ok){ const r=correctCol(item); if(r>=0) bubbleEls[r].classList.add("reveal"); }
+        api.judge(ok,{tag:item.tag,stimulus:item.stimulus,chosen:cats[col].id,correct:ans,sub:item.sub});
+        cur=null; done++; api.tick();
+        if(done>=rounds){ setTimeout(end,520); return; }
+        setTimeout(spawn, ok?420:900);
+      },340);
+    }
+    function end(){ over=true; api.finish(); }
+
+    function onKey(e){
+      if(over||!cur||busy) return;
+      if(e.key>="1"&&e.key<="9"){const i=+e.key-1;if(i<cats.length){e.preventDefault();shoot(i);}}
+    }
+    document.addEventListener("keydown",onKey);
+    api._cleanup=()=>{ over=true; document.removeEventListener("keydown",onKey); };
+    spawn();
+
+    function esc(s){ return String(s).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
+    function isLight(hex){ const n=parseInt(hex.slice(1),16); return (0.299*((n>>16)&255)+0.587*((n>>8)&255)+0.114*(n&255))>176; }
+  }
+};
+
+;
+/* ============================================================
+   MOTOR — gedeelde kern. Sjabloon-onafhankelijk.
+   Een sjabloon rendert ALLEEN het speelveld en meldt per beurt
+   goed/fout via api.judge(). De motor doet de rest:
+   score, streak, niveau, adaptieve keuze, foutenlog, resultaten,
+   geluid, instellingen, toegankelijkheid.
+   ============================================================ */
+(function(){
+"use strict";
+
+const CALM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- geluid ---------- */
+function makeAudio(on){
+  let AC=null;
+  function ac(){ if(!AC && on){ try{AC=new (window.AudioContext||window.webkitAudioContext)();}catch(e){}} return AC; }
+  function beep(f,d,type,vol,to){ if(!on)return; const a=ac(); if(!a)return;
+    const o=a.createOscillator(),g=a.createGain(); o.type=type||"triangle";
+    o.frequency.setValueAtTime(f,a.currentTime);
+    if(to) o.frequency.exponentialRampToValueAtTime(to,a.currentTime+d);
+    g.gain.setValueAtTime(vol||.16,a.currentTime);
+    g.gain.exponentialRampToValueAtTime(.0008,a.currentTime+d);
+    o.connect(g);g.connect(a.destination);o.start();o.stop(a.currentTime+d); }
+  function noise(d,vol){ if(!on)return; const a=ac(); if(!a)return;
+    const n=Math.floor(a.sampleRate*d),buf=a.createBuffer(1,n,a.sampleRate),dt=buf.getChannelData(0);
+    for(let i=0;i<n;i++)dt[i]=(Math.random()*2-1)*(1-i/n);
+    const s=a.createBufferSource();s.buffer=buf;
+    const fl=a.createBiquadFilter();fl.type="lowpass";fl.frequency.value=900;
+    const g=a.createGain();g.gain.value=vol||.18;
+    s.connect(fl);fl.connect(g);g.connect(a.destination);s.start(); }
+  return {
+    unlock:ac,
+    setOn(v){on=v;},
+    ok(){ beep(740,.08,"triangle",.16); setTimeout(()=>beep(1108,.13,"triangle",.14),60); },
+    bad(){ noise(.22,.24); beep(150,.28,"sawtooth",.12,70); },
+    move(){ beep(620,.04,"square",.05); },
+    win(){ [523,659,784,1046,1319].forEach((f,i)=>setTimeout(()=>beep(f,.16,"triangle",.15),i*62)); }
+  };
+}
+
+/* ---------- helpers ---------- */
+function el(tag,cls,html){ const e=document.createElement(tag); if(cls)e.className=cls; if(html!=null)e.innerHTML=html; return e; }
+function shade(hex,f){ const n=parseInt(hex.slice(1),16);
+  const r=Math.max(0,Math.min(255,Math.round(((n>>16)&255)*f)));
+  const g=Math.max(0,Math.min(255,Math.round(((n>>8)&255)*f)));
+  const b=Math.max(0,Math.min(255,Math.round((n&255)*f)));
+  return "rgb("+r+","+g+","+b+")"; }
+
+/* ---------- adaptieve toevoer ----------
+   Trekt K kandidaten en kiest die met de zwakste tag. Werkt zowel voor
+   generatoren (source.make) als voor vaste itemlijsten (source.items). */
+function makeFeeder(source, tagStats){
+  const draw = source.make ? source.make
+             : () => source.items[(Math.random()*source.items.length)|0];
+  return function next(){
+    let best=null, bestScore=Infinity;
+    for(let i=0;i<4;i++){
+      const it = draw();
+      const st = tagStats[it.tag] || {ok:0,bad:0};
+      const acc = (st.ok+1)/(st.ok+st.bad+2);      // laag = zwak → voorrang
+      const score = acc + Math.random()*0.5;
+      if(score<bestScore){ bestScore=score; best=it; }
+    }
+    return best;
+  };
+}
+
+/* ============================================================
+   MOUNT
+   ============================================================ */
+function mount(app, cfg){
+  cfg.options = cfg.options || {};
+  const audio = makeAudio(cfg.options.audio !== false);
+
+  /* ---- schil bouwen ---- */
+  app.innerHTML = "";
+  const header = el("header","mt");
+  const titleWrap = el("div");
+  titleWrap.appendChild(el("h1",null, esc(cfg.title||"Oefening")));
+  if(cfg.subtitle) titleWrap.appendChild(el("p","tag", esc(cfg.subtitle)));
+  header.appendChild(titleWrap);
+  header.appendChild(el("div","sp"));
+  const bAgain = el("button","mt-btn","Opnieuw"); bAgain.type="button";
+  header.appendChild(bAgain);
+  app.appendChild(header);
+
+  const wrap = el("div","mt-wrap");
+  const fieldCol = el("div");
+  const field = el("div","mt-field");
+  fieldCol.appendChild(field);
+  wrap.appendChild(fieldCol);
+
+  const panel = el("div","mt-panel");
+  const sScore = statBox(panel,"Punten","0");
+  const sStreak = statBox(panel,"Reeks","0");
+  const sProg = statBox(panel,"Voortgang","–");
+  wrap.appendChild(panel);
+  app.appendChild(wrap);
+
+  /* ---- resultatenoverlay ---- */
+  const ov = el("div","mt-ov");
+  ov.innerHTML =
+    '<div class="mt-sheet"><h2>Klaar</h2><p class="sub" id="mtRSub"></p>'+
+    '<div class="mt-rgrid">'+
+      '<div class="mt-rcell"><div class="rk">Punten</div><div class="rv" id="mtRScore">0</div></div>'+
+      '<div class="mt-rcell"><div class="rk">Juist</div><div class="rv" id="mtRAcc">–</div></div>'+
+      '<div class="mt-rcell"><div class="rk">Beste reeks</div><div class="rv" id="mtRBest">0</div></div>'+
+    '</div>'+
+    '<div class="mt-grp" id="mtRBarsWrap"><label id="mtRBarsLbl">Per categorie</label><div id="mtRBars"></div></div>'+
+    '<div class="mt-grp" id="mtRMisWrap"><label>Waar het misging</label><ul class="mt-mis" id="mtRMis"></ul></div>'+
+    '<button class="mt-go" id="mtRAgain" type="button">Opnieuw</button></div>';
+  app.appendChild(ov);
+
+  /* ---- staat ---- */
+  const S = { score:0, streak:0, best:0, level:1, ok:0, total:0, tagStats:{}, log:[], done:0, target:0 };
+
+  function statBox(parent,k,v){
+    const b=el("div","mt-stat"); b.innerHTML='<span class="k">'+k+'</span><span class="v">'+v+'</span>';
+    parent.appendChild(b); return b.querySelector(".v");
+  }
+  function esc(s){ return String(s).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
+
+  function hud(){
+    sScore.textContent=S.score;
+    sStreak.textContent=S.streak; sStreak.classList.toggle("hot",S.streak>=5);
+    sProg.textContent = S.target ? (S.done+"/"+S.target) : "–";
+  }
+
+  /* label voor een tag (categorie of persoon) t.b.v. resultaten */
+  function tagLabel(tag){
+    if(cfg._tagLabel){ const l=cfg._tagLabel(tag); if(l) return l; }
+    if(cfg.classify && cfg.classify.categories){
+      const c=cfg.classify.categories.find(x=>x.id===tag); if(c) return c.label.replace(/<[^>]+>/g," ").trim();
+    }
+    return tag;
+  }
+
+  /* ---- API voor het sjabloon ---- */
+  const feeder = cfg._source ? makeFeeder(cfg._source, S.tagStats) : null;
+
+  const api = {
+    root: field,
+    config: cfg,
+    calm: CALM,
+    sfx: audio,
+    el, shade,
+    categories: (cfg.classify && cfg.classify.categories) || [],
+
+    /* volgende stimulus (adaptief) — enkel voor stimulus→antwoord-sjablonen */
+    next(){ return feeder ? feeder() : null; },
+
+    /* aantal beurten instellen (voor voortgang + einde) */
+    setTarget(n){ S.target=n; hud(); },
+    tick(){ S.done++; hud(); },
+
+    /* losse puntenbonus (bv. tetris-lijn); telt niet mee in juist% */
+    bonus(n){ S.score += (n|0); hud(); },
+
+    /* kern: één beoordeling. meta = {tag, stimulus, chosen, correct[], sub} */
+    judge(ok, meta){
+      meta = meta || {};
+      S.total++;
+      const tag = meta.tag || "_";
+      const st = S.tagStats[tag] || (S.tagStats[tag]={ok:0,bad:0});
+      if(ok){
+        S.ok++; st.ok++; S.streak++; if(S.streak>S.best)S.best=S.streak;
+        S.score += 10 + Math.min(50,S.streak*3);
+        if(S.ok % 10 === 0) S.level++;
+        audio.ok();
+      }else{
+        st.bad++; S.streak=0; S.score=Math.max(0,S.score-5);
+        audio.bad();
+        if(meta.stimulus){
+          S.log.push({ stimulus:meta.stimulus, sub:meta.sub||"",
+            juist:(meta.correct||[]).map(tagLabel).join(" / "),
+            gekozen: meta.chosen!=null ? tagLabel(meta.chosen) : "" });
+        }
+      }
+      hud();
+      return { ok, streak:S.streak };
+    },
+
+    finish(){ showResults(); }
+  };
+
+  function showResults(){
+    const acc = S.total ? Math.round(S.ok/S.total*100) : 0;
+    ov.querySelector("#mtRScore").textContent=S.score;
+    ov.querySelector("#mtRAcc").textContent=acc+"%";
+    ov.querySelector("#mtRBest").textContent=S.best;
+    ov.querySelector("#mtRSub").textContent =
+      acc>=90 ? "Strak werk." : acc>=70 ? "Degelijk." : "Nog eens oefenen loont.";
+
+    /* balken per tag (alleen tonen als er >1 tag is) */
+    const tags = Object.keys(S.tagStats);
+    const barsWrap = ov.querySelector("#mtRBarsWrap");
+    const bars = ov.querySelector("#mtRBars"); bars.innerHTML="";
+    if(tags.length>1){
+      barsWrap.style.display="";
+      const palette=["#C4402C","#E0A22F","#2E8E68","#3D74D6","#8B5E9E","#6E6249"];
+      tags.forEach((t,i)=>{
+        const s=S.tagStats[t], tot=s.ok+s.bad, pct=tot?Math.round(s.ok/tot*100):0;
+        const row=el("div","mt-bar");
+        row.innerHTML='<span class="bl">'+esc(tagLabel(t))+'</span>'+
+          '<span class="bt"><span class="bf" style="width:'+pct+'%;background:'+palette[i%palette.length]+'"></span></span>'+
+          '<span class="bn">'+pct+'%</span>';
+        bars.appendChild(row);
+      });
+    } else barsWrap.style.display="none";
+
+    /* laatste fouten */
+    const misWrap=ov.querySelector("#mtRMisWrap");
+    const ul=ov.querySelector("#mtRMis"); ul.innerHTML="";
+    const last=S.log.slice(-8).reverse();
+    misWrap.style.display = last.length ? "" : "none";
+    last.forEach(m=>{
+      const li=el("li");
+      li.innerHTML="<b>"+esc(m.stimulus)+"</b> <span class='ok'>"+esc(m.juist)+"</span>"+
+        (m.gekozen?" <em>jij: "+esc(m.gekozen)+"</em>":"")+
+        (m.sub?" <span style='color:#8A7F66;font-size:12px'>("+esc(m.sub)+")</span>":"");
+      ul.appendChild(li);
+    });
+    if(acc>=90) audio.win();
+    ov.classList.add("on");
+  }
+
+  /* ---- start / herstart ---- */
+  function reset(){
+    S.score=0;S.streak=0;S.best=0;S.level=1;S.ok=0;S.total=0;S.tagStats={};S.log=[];S.done=0;S.target=0;
+    if(api._cleanup){ api._cleanup(); api._cleanup=null; }
+    ov.classList.remove("on"); field.innerHTML=""; hud();
+    const tpl = window.MotorTemplates && window.MotorTemplates[cfg.template];
+    if(!tpl){ field.innerHTML="<p style='color:#C4402C'>Onbekend sjabloon: "+esc(cfg.template)+"</p>"; return; }
+    tpl.init(api);
+  }
+  bAgain.addEventListener("click", ()=>{ audio.unlock(); reset(); });
+  ov.querySelector("#mtRAgain").addEventListener("click", ()=>{ audio.unlock(); reset(); });
+
+  /* eerste tik ontgrendelt geluid op mobiel */
+  app.addEventListener("pointerdown", ()=>audio.unlock(), {once:true});
+
+  reset();
+}
+
+window.Motor = { mount };
+})();
+
+;
+(function(){
+var cfg = {"id":"es-demo-bubble-genero","title":"Demo · bubbelschieter <span>género</span>","subtitle":"arcade-skin op classify — schiet naar de juiste bubbel","template":"bubble","options":{"rounds":12},"classify":{"prompt":"¿el o la?","categories":[{"id":"el","label":"el","glaze":"#3D74D6"},{"id":"la","label":"la","glaze":"#C4402C"}],"items":[{"stimulus":"casa","answer":"la","tag":"la"},{"stimulus":"perro","answer":"el","tag":"el"},{"stimulus":"mesa","answer":"la","tag":"la"},{"stimulus":"libro","answer":"el","tag":"el"},{"stimulus":"mano","answer":"la","tag":"la","sub":"¡valstrik!"},{"stimulus":"día","answer":"el","tag":"el","sub":"¡valstrik!"},{"stimulus":"ciudad","answer":"la","tag":"la"},{"stimulus":"mapa","answer":"el","tag":"el","sub":"¡valstrik!"},{"stimulus":"silla","answer":"la","tag":"la"},{"stimulus":"árbol","answer":"el","tag":"el"},{"stimulus":"leche","answer":"la","tag":"la"},{"stimulus":"sol","answer":"el","tag":"el"}]}};
+cfg._source = { items: cfg.classify.items };
+Motor.mount(document.getElementById('app'), cfg);
+})();
+</script>
+</body>
+</html>

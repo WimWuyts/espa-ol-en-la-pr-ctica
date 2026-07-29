@@ -1,0 +1,28 @@
+{
+  "id":"es-demo-belt-genero",
+  "title":"Demo · sorteerband <span>género</span>",
+  "subtitle":"arcade-skin op classify — el / la",
+  "template":"belt",
+  "options":{"rounds":12},
+  "classify":{
+    "prompt":"¿el o la?",
+    "categories":[
+      {"id":"el","label":"el","glaze":"#3D74D6"},
+      {"id":"la","label":"la","glaze":"#C4402C"}
+    ],
+    "items":[
+      {"stimulus":"casa","answer":"la","tag":"la","sub":"-a"},
+      {"stimulus":"perro","answer":"el","tag":"el","sub":"-o"},
+      {"stimulus":"mesa","answer":"la","tag":"la"},
+      {"stimulus":"libro","answer":"el","tag":"el"},
+      {"stimulus":"mano","answer":"la","tag":"la","sub":"¡valstrik!"},
+      {"stimulus":"día","answer":"el","tag":"el","sub":"¡valstrik!"},
+      {"stimulus":"ciudad","answer":"la","tag":"la","sub":"-dad"},
+      {"stimulus":"problema","answer":"el","tag":"el","sub":"¡valstrik!"},
+      {"stimulus":"chica","answer":"la","tag":"la"},
+      {"stimulus":"coche","answer":"el","tag":"el"},
+      {"stimulus":"clase","answer":"la","tag":"la"},
+      {"stimulus":"profesor","answer":"el","tag":"el"}
+    ]
+  }
+}
