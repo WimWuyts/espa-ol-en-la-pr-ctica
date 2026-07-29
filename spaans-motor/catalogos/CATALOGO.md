@@ -5,6 +5,21 @@
 
 Eén motor, **13 speltypes**, drie talen. Domeinen: **vocab** (match·memory·point) · **gram** (classify·cloze·order·tap) · **prod** (type·speak·sim) · **arcade** (tetris·belt·mole·bubble·snake·platform·tower·pinball).
 
+## Arcade-rotatie voor C5 & C6+ — TE BOUWEN (PLAN_MOTOR §6bis)
+
+C5 en C6+ zijn gebouwd **vóór** de 7 nieuwe arcade-skins bestonden: daar is `tetris` nu
+nog de **enige** arcade-vorm (1 slot per unit). Omdat de 8 skins onderling verwisselbare
+jassen zijn op dezelfde classify-judge, krijgt elk arcade-slot enkel een **andere skin** —
+zelfde items, geen nieuwe didactische content.
+
+| Cursus | U0 | U1 | U2 | U3 | U4 | U5 | U6 | U7 | U8 |
+|---|---|---|---|---|---|---|---|---|---|
+| **C5** | — | tetris | belt | mole | bubble | snake | platform | tower | pinball |
+| **C6+** | tetris | bubble | mole | platform | snake | belt | tower | pinball | — |
+
+→ Alle **8** arcade-vormen leven dan in het Spaans, elke skin 1× per cursus; tetris van 16× naar 2×.
+Uit te voeren in de **digitale sweep** van C5/C6+ (niet als losse pass).
+
 ## Español · GEBOUWD — 299 spellen
 
 Domein: woordenschat 83 · grammatica 137 · productie 60 · arcade 19.  

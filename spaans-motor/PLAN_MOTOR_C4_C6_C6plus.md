@@ -249,6 +249,64 @@ U5 sorteerband · U6 torenverdediging · U7 pinball.
 
 ---
 
+## 6bis · Arcade-retrofit voor de GEBOUWDE cursussen (C5 · C6+) — te bouwen
+
+**Situatie (eerlijk, 2026-07-29):** C5 en C6+ zijn gebouwd **vóór** de 7 nieuwe
+arcade-skins bestonden. In de 299 bestaande spellen is `tetris` daarom de **enige**
+arcade-vorm: precies **één** arcade-slot per unit, telkens tetris. De andere zeven
+skins zijn wél gebouwd en klaar, maar nog niet ingezet in het Spaans.
+
+**Wat er moet gebeuren (goedkoop):** de 8 skins zijn *onderling verwisselbare jassen op
+dezelfde classify-judge* — dezelfde content-JSON werkt met elke skin. Het arcade-slot per
+unit krijgt dus enkel een **andere skin** (veld `template`, plus titel/subtitel/hub-label
+in dezelfde stijl). Géén nieuwe didactische content nodig; de items blijven identiek.
+
+**Rotatie C5** (tetris blijft in U1, waar «vervoeging in kolommen» didactisch het best past):
+
+| Unit | Bestaand arcade-slot | Wordt | Skin |
+|---|---|---|---|
+| U1 | `es-u1-presente-regular` | **blijft** | `tetris` |
+| U2 | `es-u2-familia-tetris` (ser/estar/tener) | → | `belt` sorteerband |
+| U3 | `es-u3-irregular-tetris` | → | `mole` mollenmeppen |
+| U4 | `es-u4-presente-tetris` | → | `bubble` bubbelschieter |
+| U5 | `es-u5-cantidad-tetris` (mucho) | → | `snake` |
+| U6 | `es-u6-concordancia-tetris` | → | `platform` |
+| U7 | `es-u7-preposicion-tetris` | → | `tower` torenverdediging |
+| U8 | `es-u8-haber-tetris` | → | `pinball` |
+
+**Rotatie C6+** (volgt de reeds vastgelegde volgorde hierboven):
+
+| Unit | Bestaand arcade-slot | Wordt | Skin |
+|---|---|---|---|
+| U0 | `es-c6plus-u0-concordancia-tetris` | **blijft** | `tetris` |
+| U1 | `es-c6plus-u1-pronombre-tetris` | → | `bubble` |
+| U2 | `es-c6plus-u2-lo-la-tetris` | → | `mole` |
+| U3 | `es-c6plus-u3-ir-a-tetris` | → | `platform` |
+| U4 | `es-c6plus-u4-participio-tetris` | → | `snake` |
+| U5 | `es-c6plus-u5-indef-tetris` | → | `belt` |
+| U6 | `es-c6plus-u6-imperf-tetris` | → | `tower` |
+| U7 | `es-c6plus-u7-imper-tetris` | → | `pinball` |
+
+→ Resultaat: **alle 8 arcade-vormen** leven in het Spaans, elke skin **1×** per cursus,
+tetris van 16× naar 2×. Dit is de invulling van §3 voor de bestaande cursussen.
+
+**Uitvoeringsketen (3 plaatsen per slot, ID's blijven ongewijzigd):**
+1. `spaans-motor/make_<unit>_games.py` — de **bron**: `template` + titel + subtitel
+   (arcade-woord: Tetris · Cinta · Topos · Burbujas · Serpiente · Puertas · Torres · Pinball),
+   en tetris-only opties (`rows`/`speed`) → `rounds` (+ `lives` bij `tower`).
+2. `spaans-motor/content/es-…json` — hergenereren via het make-script.
+3. `03-build/web/gen_<unit>_web.py` — het **zichtbare hub-label** + de badge-naam.
+
+⚠️ **Niet de game-ID's hernoemen:** de hub-generators linken de spellen op ID
+(`…-tetris`). Naam wijzigen breekt die links; de skin-wissel gebeurt in `template` +
+labels. (Optioneel later: ID's mee hernoemen in één gecoördineerde pass, samen met de
+hub-generators.)
+
+**Inpassen:** neem dit mee in de **digitale sweep** van C5/C6+ (de motor-integratielaag),
+niet als losse pass — dan hergenereer je elke unit één keer.
+
+---
+
 ## 7 · 100-dekkingskaart (elk idee komt érgens terug)
 
 Doel: **alle 100 (+ uitbreidingen)** minstens één keer, op de cursus/unit waar ze passen.
