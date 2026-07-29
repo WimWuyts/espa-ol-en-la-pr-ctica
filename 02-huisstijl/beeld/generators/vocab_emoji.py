@@ -192,6 +192,8 @@ GROUP_EMOJI = {
  "biografia":"👤","logros":"🏆","persona":"🎭","indefinido":"⏳","odoi":"🔁","relato":"📖",
  # ---- C6+·U6 «Cuando era pequeño» ----
  "infancia":"🧸","escuela":"🏫","antesahora":"🔄","comparar":"⚖️","relativo":"🔗",
+ # ---- C6+·U7 «¡Opina y cuídate!» ----
+ "salud":"💪","consejos":"🥗","medioambiente":"🌍","imperativo":"🗣️",
 }
 
 _ARTICLES = ("el ", "la ", "los ", "las ", "un ", "una ", "unos ", "unas ", "mi ", "al ")

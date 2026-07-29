@@ -1,0 +1,57 @@
+{
+  "id": "es-c6plus-u7-repite-consejos",
+  "title": "Escucha y repite: consejos",
+  "subtitle": "U7 · escucha, repite y GRÁBATE",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "repeat",
+    "prompt": "Escucha ▶ · repite en voz alta · grábate ⏺",
+    "items": [
+      {
+        "text": "Come sano y bebe mucha agua.",
+        "sub": "eet gezond en drink veel water",
+        "tag": "im",
+        "tip": "¡Bien! Ahora dilo sin leer."
+      },
+      {
+        "text": "Haz deporte y duerme ocho horas.",
+        "sub": "sport en slaap acht uur",
+        "tag": "im"
+      },
+      {
+        "text": "Recicla el papel y ahorra energía.",
+        "sub": "recycle papier en bespaar energie",
+        "tag": "im"
+      },
+      {
+        "text": "Cuídate y relájate: ¡pura vida!",
+        "sub": "zorg goed voor jezelf en ontspan",
+        "tag": "im"
+      },
+      {
+        "text": "Creo que debemos proteger el planeta.",
+        "sub": "ik denk dat we de planeet moeten beschermen",
+        "tag": "op"
+      },
+      {
+        "text": "En mi opinión, la bici es mejor que el coche.",
+        "sub": "volgens mij is de fiets beter dan de auto",
+        "tag": "op"
+      },
+      {
+        "text": "Reciclo porque es importante; además, ahorra dinero.",
+        "sub": "ik recycle want het is belangrijk; bovendien bespaart het geld",
+        "tag": "con"
+      },
+      {
+        "text": "Estoy de acuerdo, pero tenemos que hacer más.",
+        "sub": "ik ben het eens, maar we moeten meer doen",
+        "tag": "op"
+      }
+    ]
+  }
+}

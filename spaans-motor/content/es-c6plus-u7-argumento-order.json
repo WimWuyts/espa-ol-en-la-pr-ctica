@@ -1,0 +1,191 @@
+{
+  "id": "es-c6plus-u7-argumento-order",
+  "title": "Ordena el argumento",
+  "subtitle": "U7 · zet de zin/het argument in de juiste volgorde",
+  "lang": "es",
+  "template": "order",
+  "options": {
+    "audio": false
+  },
+  "order": {
+    "prompt": "Tik in de logische volgorde",
+    "rounds": [
+      {
+        "tag": "consejo",
+        "sub": "imperativo",
+        "items": [
+          {
+            "label": "Recicla",
+            "key": 1
+          },
+          {
+            "label": "el papel",
+            "key": 2
+          },
+          {
+            "label": "y el vidrio",
+            "key": 3
+          },
+          {
+            "label": "cada semana.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "opinion",
+        "sub": "mening + reden",
+        "items": [
+          {
+            "label": "Creo que",
+            "key": 1
+          },
+          {
+            "label": "debemos reciclar",
+            "key": 2
+          },
+          {
+            "label": "porque",
+            "key": 3
+          },
+          {
+            "label": "protege el planeta.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "argumento",
+        "sub": "opinión → argumento → conclusie",
+        "items": [
+          {
+            "label": "La bici es genial.",
+            "key": 1
+          },
+          {
+            "label": "No contamina.",
+            "key": 2
+          },
+          {
+            "label": "Además, es sana.",
+            "key": 3
+          },
+          {
+            "label": "Por eso la uso.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "consejo",
+        "sub": "imperativo + pronombre",
+        "items": [
+          {
+            "label": "El grifo:",
+            "key": 1
+          },
+          {
+            "label": "ciérralo",
+            "key": 2
+          },
+          {
+            "label": "cuando",
+            "key": 3
+          },
+          {
+            "label": "te laves los dientes.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "salud",
+        "sub": "consejo de salud",
+        "items": [
+          {
+            "label": "Come sano,",
+            "key": 1
+          },
+          {
+            "label": "haz deporte",
+            "key": 2
+          },
+          {
+            "label": "y duerme",
+            "key": 3
+          },
+          {
+            "label": "ocho horas.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "opinion",
+        "sub": "reageren",
+        "items": [
+          {
+            "label": "No estoy",
+            "key": 1
+          },
+          {
+            "label": "de acuerdo",
+            "key": 2
+          },
+          {
+            "label": "porque",
+            "key": 3
+          },
+          {
+            "label": "el coche contamina.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "argumento",
+        "sub": "twee kanten",
+        "items": [
+          {
+            "label": "Por un lado",
+            "key": 1
+          },
+          {
+            "label": "es cómodo;",
+            "key": 2
+          },
+          {
+            "label": "por otro lado,",
+            "key": 3
+          },
+          {
+            "label": "contamina.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "consejo",
+        "sub": "pura vida",
+        "items": [
+          {
+            "label": "Cuídate,",
+            "key": 1
+          },
+          {
+            "label": "relájate",
+            "key": 2
+          },
+          {
+            "label": "y disfruta:",
+            "key": 3
+          },
+          {
+            "label": "¡pura vida!",
+            "key": 4
+          }
+        ]
+      }
+    ]
+  }
+}

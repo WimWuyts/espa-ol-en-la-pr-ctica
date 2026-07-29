@@ -1,0 +1,129 @@
+{
+  "id": "es-c6plus-u7-imper-tetris",
+  "title": "Imperativo Tetris",
+  "subtitle": "U7 · laat het juiste type vallen",
+  "lang": "es",
+  "template": "tetris",
+  "options": {
+    "rows": 9,
+    "speed": 1300,
+    "audio": false
+  },
+  "classify": {
+    "categories": [
+      {
+        "id": "a",
+        "label": "-a (-ar)",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "e",
+        "label": "-e (-er/-ir)",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "irr",
+        "label": "irregular ⭐",
+        "glaze": "#B4309A"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "cuidar",
+        "answer": "a",
+        "tag": "a",
+        "sub": "cuida"
+      },
+      {
+        "stimulus": "comer",
+        "answer": "e",
+        "tag": "e",
+        "sub": "come"
+      },
+      {
+        "stimulus": "hacer",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "haz"
+      },
+      {
+        "stimulus": "reciclar",
+        "answer": "a",
+        "tag": "a",
+        "sub": "recicla"
+      },
+      {
+        "stimulus": "ir",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "ve"
+      },
+      {
+        "stimulus": "beber",
+        "answer": "e",
+        "tag": "e",
+        "sub": "bebe"
+      },
+      {
+        "stimulus": "decir",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "di"
+      },
+      {
+        "stimulus": "ahorrar",
+        "answer": "a",
+        "tag": "a",
+        "sub": "ahorra"
+      },
+      {
+        "stimulus": "escribir",
+        "answer": "e",
+        "tag": "e",
+        "sub": "escribe"
+      },
+      {
+        "stimulus": "ser",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "sé"
+      },
+      {
+        "stimulus": "proteger",
+        "answer": "e",
+        "tag": "e",
+        "sub": "protege"
+      },
+      {
+        "stimulus": "tener",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "ten"
+      },
+      {
+        "stimulus": "evitar",
+        "answer": "a",
+        "tag": "a",
+        "sub": "evita"
+      },
+      {
+        "stimulus": "venir",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "ven"
+      },
+      {
+        "stimulus": "usar",
+        "answer": "a",
+        "tag": "a",
+        "sub": "usa"
+      },
+      {
+        "stimulus": "vivir",
+        "answer": "e",
+        "tag": "e",
+        "sub": "vive"
+      }
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "id": "es-c6plus-u7-favor-contra",
+  "title": "¿a favor o en contra?",
+  "subtitle": "U7 · sorteer het argument",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Argument vóór of tégen het gebruik van de auto in de stad?",
+    "categories": [
+      {
+        "id": "favor",
+        "label": "a favor 👍",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "contra",
+        "label": "en contra 👎",
+        "glaze": "#E0A22F"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "Es rápido.",
+        "answer": "favor",
+        "tag": "favor",
+        "sub": "vóór"
+      },
+      {
+        "stimulus": "Contamina el aire.",
+        "answer": "contra",
+        "tag": "contra",
+        "sub": "tégen"
+      },
+      {
+        "stimulus": "Es cómodo cuando llueve.",
+        "answer": "favor",
+        "tag": "favor",
+        "sub": "vóór"
+      },
+      {
+        "stimulus": "Hace mucho ruido.",
+        "answer": "contra",
+        "tag": "contra",
+        "sub": "tégen"
+      },
+      {
+        "stimulus": "Gasta mucha gasolina.",
+        "answer": "contra",
+        "tag": "contra",
+        "sub": "tégen"
+      },
+      {
+        "stimulus": "Protege de la lluvia y el frío.",
+        "answer": "favor",
+        "tag": "favor",
+        "sub": "vóór"
+      },
+      {
+        "stimulus": "Provoca atascos en la ciudad.",
+        "answer": "contra",
+        "tag": "contra",
+        "sub": "tégen"
+      },
+      {
+        "stimulus": "Puedes llevar cosas pesadas.",
+        "answer": "favor",
+        "tag": "favor",
+        "sub": "vóór"
+      },
+      {
+        "stimulus": "Ocupa mucho espacio para aparcar.",
+        "answer": "contra",
+        "tag": "contra",
+        "sub": "tégen"
+      },
+      {
+        "stimulus": "Es útil para largas distancias.",
+        "answer": "favor",
+        "tag": "favor",
+        "sub": "vóór"
+      },
+      {
+        "stimulus": "Es caro de mantener.",
+        "answer": "contra",
+        "tag": "contra",
+        "sub": "tégen"
+      },
+      {
+        "stimulus": "Da libertad para viajar.",
+        "answer": "favor",
+        "tag": "favor",
+        "sub": "vóór"
+      },
+      {
+        "stimulus": "Aumenta la contaminación.",
+        "answer": "contra",
+        "tag": "contra",
+        "sub": "tégen"
+      },
+      {
+        "stimulus": "Es práctico con niños pequeños.",
+        "answer": "favor",
+        "tag": "favor",
+        "sub": "vóór"
+      }
+    ]
+  }
+}

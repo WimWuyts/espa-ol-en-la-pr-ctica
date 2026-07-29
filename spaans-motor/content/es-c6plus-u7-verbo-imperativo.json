@@ -1,0 +1,72 @@
+{
+  "id": "es-c6plus-u7-verbo-imperativo",
+  "title": "Verbo e imperativo",
+  "subtitle": "U7 · koppel de infinitief aan de imperativo (tú)",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind de infinitief met de imperativo (tú)",
+    "pairs": [
+      {
+        "a": "comer",
+        "b": "come"
+      },
+      {
+        "a": "beber",
+        "b": "bebe"
+      },
+      {
+        "a": "reciclar",
+        "b": "recicla"
+      },
+      {
+        "a": "hacer",
+        "b": "haz ⭐"
+      },
+      {
+        "a": "ir",
+        "b": "ve ⭐"
+      },
+      {
+        "a": "decir",
+        "b": "di ⭐"
+      },
+      {
+        "a": "tener",
+        "b": "ten ⭐"
+      },
+      {
+        "a": "venir",
+        "b": "ven ⭐"
+      },
+      {
+        "a": "poner",
+        "b": "pon ⭐"
+      },
+      {
+        "a": "ser",
+        "b": "sé ⭐"
+      },
+      {
+        "a": "salir",
+        "b": "sal ⭐"
+      },
+      {
+        "a": "dormir",
+        "b": "duerme"
+      },
+      {
+        "a": "cuidar",
+        "b": "cuida"
+      },
+      {
+        "a": "ahorrar",
+        "b": "ahorra"
+      }
+    ]
+  }
+}

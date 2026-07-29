@@ -619,3 +619,23 @@ Bewust gekozen (cocktail `01-cursussen/06-vervolg/U5/U5_cocktail.md`), 4 formate
 **Kaart-fiche (digitale pagina):** thema **familia** («👪 En familia: muchos apellidos tienen raíces quechuas»), parada 6 = **Perú (Cusco)** met ★ ¡Estás aquí! (Nina). Systematisch ingebakken via `patch_maps_c6plus.py` (idempotent, U0–U6).
 
 **Quota U6 ✓:** ≥1 luisterdialoog («¿Cómo era tu infancia?», script+TTS+begripstaak) · ≥1 rijke Lectura («El pueblo de mi abuela» — recuerdo met imperfecto) · 3 opname-oefeningen (cuenta tu infancia · antes↔ahora · repite) · traditionele werkwoord-cloze (imperfecto §2) · ≥8 verschillende motor-speltypes (12 spellen) · traditionele oefenbatterij (gap-fill·substitutie·matching·dictee·ordenen·foutenkliniek·transformeren) · HTML-hub 100+ oefeningen «otra serie» · 29 genummerde print-oefeningen (+ tarea/★ + 5 V) · elke §/subsectie op een nieuwe bladzijde · div-balans==0 · geen groen-lek in pptx (paars) · échte LPD-codes (7 · 8 · 3 · 4 · 1·2·5).
+
+### C6+ · U7 «¡Opina y cuídate!» (parada: Costa Rica 🇨🇷 · «pura vida» · P3-capstone)
+- **woordenschat (VS):** VS-001 (beeld-woord) · VS-003 (clusters: salud/consejos/medio ambiente) · **VS-009** (tegenstellingsparen: sano↔enfermo, proteger↔contaminar) · **VS-013** (collocaties: comer sano, hacer deporte).
+- **grammatica (VG):** **VG-004** (werkwoord-machine: imperativo raíz+uitgang) · **VG-011** (grammaticale paren) · **VG-012** (beslisboom: ¿a favor o en contra?) · **VG-016** (enclitic-pronombres-bouwsteen: cuídate/hazlo/dímelo) · **VG-018** (meningsframe: creo que + indicativo) · VG-014 (zinsframe).
+- **grammaticatool (GT):** **GT-020** (conector-schuiver: porque/además/por eso).
+- **werkvorm (WV):** **WV-050** (cloze-batterij imperativo — traditionele ww-cloze) · **WV-059** (sorteren: a favor/en contra) · **WV-061** (meerkeuzecloze) · **WV-064** (substitutie) · **WV-076** (foutenkliniek).
+- **vaardigheid (SK):** SK-001 (visuele tekstintro: decálogo) · **SK-007** (tekststructuur) · SK-014 (scannen: imperativos) · **SK-018** (juist/fout+bewijs) · **SK-051** (visuele luistercontext) · SK-053 (meerdere rondes) · **SK-076** (audiomodel) · SK-085/086/110 (opname) · SK-113–120 (ketens lezen→schrijven, luisteren→spreken, eindtaak/capstone).
+- **layout (LAY):** LAY-011 (hero) · LAY-023 (onthoudkaart) · LAY-039 (reiskaart discreet: fin de la ruta) · **LAY-025** (cultuurkader: Costa Rica) · **LAY-041** (genummerde stappen: cartel) · LAY-049 (QR-audiokaart).
+- **powerpoint (PPT):** PPT-011 (klik-onthullen) · PPT-012 (meerkeuze-feedback) · **PPT-014** (zoek de fout: imperativo/mening) · **PPT-016** (sleep-in-kolom: ¿salud o medio ambiente? / a favor–en contra) · **PPT-022** (beeld-woord-audio: salud) · **PPT-028** (machine: imperativo + pronombre) · PPT-045 (vier-vaardighedenmissie).
+- **designcomponent (DS):** DS-004 (unitopener) · DS-008 (grammaticaspread) · **DS-010** (cultuurpagina: Costa Rica) · DS-029 (avatars: cast-finale) · DS-034 (kaarten/routes: Costa Rica ★ · fin de la ruta) · DS-049 (route/tijdlijn).
+
+**Kaart-fiche (digitale pagina):** thema **comida/salud** («🍽️ En la mesa: el gallo pinto y el «casado»»), parada 7 = **Costa Rica (San José)** met ★ ¡Estás aquí! (fin de la ruta). Systematisch ingebakken via `patch_maps_c6plus.py` (idempotent, U0–U7).
+
+**Quota U7 ✓:** ≥1 luisterdialoog («¿Qué opinas del medio ambiente?», script+TTS+begripstaak) · ≥1 rijke Lectura («Diez consejos para el planeta» — decálogo + reactie) · 3 opname-oefeningen (repite consejos · tus consejos · tu opinión) · traditionele werkwoord-cloze (imperativo §2) · ≥8 verschillende motor-speltypes (12 spellen) · traditionele oefenbatterij (gap-fill·substitutie·matching·dictee·ordenen·foutenkliniek·transformeren) · HTML-hub 100+ oefeningen «otra serie» (19 widgets + 12 games) · 28 genummerde print-oefeningen (+ tarea/★ + 5 V) · elke §/subsectie op een nieuwe bladzijde · div-balans==0 · geen groen-lek in pptx (paars 471/463) · P3-capstone (opiniestuk) · **cierre de la ruta** · échte LPD-codes (7 · 8 · 3 · 4 · 1·2·5).
+
+---
+
+## 🏁 Versie 1 compleet — C6+ (U0–U7)
+
+Alle 8 units van de paarse vervolgcursus «¡Español en la práctica! · vervolg» (C6+) zijn gebouwd, geverifieerd en geleverd in 4 formaten (print-PDF + bewerkbare HTML-laag · HTML-hub · 2× PowerPoint · motor-spellen). La Ruta compleet: España → México → Colombia → Argentina → Perú → Costa Rica (fin de la ruta).

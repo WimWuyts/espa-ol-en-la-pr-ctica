@@ -1,0 +1,124 @@
+{
+  "id": "es-c6plus-u7-salud-planeta",
+  "title": "¿salud o medio ambiente?",
+  "subtitle": "U7 · waarover gaat de tip?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Is de tip voor de gezondheid of voor het milieu?",
+    "categories": [
+      {
+        "id": "salud",
+        "label": "salud<br><small>el cuerpo, el deporte</small>",
+        "glaze": "#C4402C"
+      },
+      {
+        "id": "planeta",
+        "label": "medio ambiente<br><small>reciclar, ahorrar</small>",
+        "glaze": "#2E8E68"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "Come más fruta y verdura.",
+        "answer": "salud",
+        "tag": "salud",
+        "sub": "dieta"
+      },
+      {
+        "stimulus": "Recicla el papel y el vidrio.",
+        "answer": "planeta",
+        "tag": "planeta",
+        "sub": "residuos"
+      },
+      {
+        "stimulus": "Duerme ocho horas.",
+        "answer": "salud",
+        "tag": "salud",
+        "sub": "descanso"
+      },
+      {
+        "stimulus": "Ahorra agua: cierra el grifo.",
+        "answer": "planeta",
+        "tag": "planeta",
+        "sub": "agua"
+      },
+      {
+        "stimulus": "Haz deporte tres veces por semana.",
+        "answer": "salud",
+        "tag": "salud",
+        "sub": "ejercicio"
+      },
+      {
+        "stimulus": "Apaga las luces que no usas.",
+        "answer": "planeta",
+        "tag": "planeta",
+        "sub": "energía"
+      },
+      {
+        "stimulus": "Bebe dos litros de agua al día.",
+        "answer": "salud",
+        "tag": "salud",
+        "sub": "hidratación"
+      },
+      {
+        "stimulus": "Usa la bici en vez del coche.",
+        "answer": "planeta",
+        "tag": "planeta",
+        "sub": "transporte"
+      },
+      {
+        "stimulus": "Relájate para evitar el estrés.",
+        "answer": "salud",
+        "tag": "salud",
+        "sub": "estrés"
+      },
+      {
+        "stimulus": "No tires basura al suelo.",
+        "answer": "planeta",
+        "tag": "planeta",
+        "sub": "residuos"
+      },
+      {
+        "stimulus": "Evita el azúcar y la comida rápida.",
+        "answer": "salud",
+        "tag": "salud",
+        "sub": "dieta"
+      },
+      {
+        "stimulus": "Planta un árbol.",
+        "answer": "planeta",
+        "tag": "planeta",
+        "sub": "naturaleza"
+      },
+      {
+        "stimulus": "Muévete más: sube por las escaleras.",
+        "answer": "salud",
+        "tag": "salud",
+        "sub": "ejercicio"
+      },
+      {
+        "stimulus": "Protege los bosques.",
+        "answer": "planeta",
+        "tag": "planeta",
+        "sub": "naturaleza"
+      },
+      {
+        "stimulus": "Ve al médico una vez al año.",
+        "answer": "salud",
+        "tag": "salud",
+        "sub": "prevención"
+      },
+      {
+        "stimulus": "Usa energía solar en casa.",
+        "answer": "planeta",
+        "tag": "planeta",
+        "sub": "energía"
+      }
+    ]
+  }
+}
