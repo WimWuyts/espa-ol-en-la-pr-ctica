@@ -59,9 +59,10 @@ def print_section(unit):
                  f'<div style="font-size:9.6pt;line-height:2.5">a) hallo / tot ziens → {_wl("lg")}<br>'
                  f'b) hoe heet je? → {_wl("lg")}<br>c) ik heet… / ik ben… → {_wl("lg")}</div></div>')
     # de mini-reto vult lichte units; bij 9-14 functies is het banco al vol → geen reto (anders overloop).
-    # In tight-modus (≥15) is elke banco-rij één regel → er is opnieuw plaats voor een kleine reto.
+    # In tight-modus is elke banco-rij één regel → tot 16 functies past er nog een kleine reto bij;
+    # vanaf 17 is het blad ook zó vol → geen reto meer (gemeten op de U8-build).
     reto = ""
-    if have <= 8 or tight:
+    if have <= 8 or (tight and have <= 16):
         reto_h = 22 if tight else max(14, int(42 - have * 3.2))
         reto = (f'<div class="truc" style="margin-top:3mm"><b>Mini-reto ✍️</b> Schrijf een korte mini-conversatie '
                 f'waarin je <b>minstens 3 functies</b> hierboven gebruikt. Onderstreep telkens welke functie.'

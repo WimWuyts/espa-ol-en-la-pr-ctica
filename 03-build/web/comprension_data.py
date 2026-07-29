@@ -164,6 +164,29 @@ LECTURA = {
    "transfer": "¿Y tú? ¿A qué te dedicas? (estudiante cuenta ook!) ¿Y tus padres?",
    "glosario": [["¿a qué se dedican?", "wat doen ze (voor werk)?"], ["la academia", "de (taal)school"], ["el/la dependiente/a", "de winkelbediende"], ["está cansado", "hij is moe"]],
  },
+ 8: {
+   "tipo": "un mensaje · mi horario del sábado",
+   "contexto_nl": "Nuria stuurt haar zaterdagplanning door in de klasgroep.",
+   "texto": [
+     ["", "¡Hola! Este es mi horario del sábado."],
+     ["", "Por la mañana estudio español a las diez y media."],
+     ["", "A la una y cuarto como con mi familia. ¡Siempre comemos tarde!"],
+     ["", "Por la tarde, a las cinco, juego al fútbol con mis amigos."],
+     ["", "Y por la noche, a las nueve menos cuarto, vemos una película. ¿Quieres quedar el domingo?"],
+   ],
+   "global": [
+     {"q": "¿De qué día habla Nuria?", "opts": ["Del lunes", "Del sábado", "Del domingo"], "a": 1},
+     {"q": "¿A qué hora estudia español?", "opts": ["A las diez y media", "A la una y cuarto", "A las cinco"], "a": 0},
+   ],
+   "detalle": [
+     {"q": "Nuria come a la una y cuarto.", "vf": True},
+     {"q": "Juega al fútbol por la mañana.", "vf": False},
+     {"q": "Ve una película a las nueve menos cuarto.", "vf": True},
+     {"q": "Quiere quedar el lunes.", "vf": False},
+   ],
+   "transfer": "¿Y tú? ¿Cuál es tu horario del sábado? ¿A qué hora comes?",
+   "glosario": [["el horario", "het (uur)schema"], ["y media", "half (…+30)"], ["menos cuarto", "kwart voor"], ["por la mañana/tarde/noche", "'s ochtends/'s middags/'s avonds"], ["¿quieres quedar?", "wil je afspreken?"]],
+ },
 }
 
 AUDIO = {
@@ -293,6 +316,25 @@ AUDIO = {
    ],
    "glosario": [["¿a qué te dedicas?", "wat doe je (voor werk)?"], ["el/la dependiente/a", "de winkelbediende"], ["estoy contento/a", "ik ben blij"], ["los sábados", "op zaterdag"]],
    "rallentado": ["a qué te dedicas", "trabajo en una tienda", "estoy muy contento"],
+ },
+ 8: {
+   "tipo": "quedar por teléfono · ¿a qué hora?",
+   "guion": [
+     ["Elena", "¿Sí? Hola, Tomás."],
+     ["Tomás", "Hola, Elena. ¿Quieres quedar esta tarde?"],
+     ["Elena", "Sí, vale. ¿A qué hora?"],
+     ["Tomás", "¿A las seis? ¿O es un poco pronto?"],
+     ["Elena", "A las seis no puedo. Mejor a las siete y media."],
+     ["Tomás", "Perfecto. Quedamos en el cine. ¡Hasta luego!"],
+   ],
+   "tarea_nl": "Luister: op welk uur spreken ze af, en waar?",
+   "preguntas": [
+     {"q": "¿Cuándo quieren quedar?", "opts": ["Esta mañana", "Esta tarde", "El domingo"], "a": 1},
+     {"q": "¿A qué hora quedan al final?", "opts": ["A las seis", "A las siete y media", "A las ocho"], "a": 1},
+     {"q": "¿Dónde quedan?", "opts": ["En el cine", "En casa de Elena", "En un restaurante"], "a": 0},
+   ],
+   "glosario": [["¿quieres quedar?", "wil je afspreken?"], ["¿a qué hora?", "hoe laat?"], ["un poco pronto", "een beetje vroeg"], ["y media", "half (…+30)"]],
+   "rallentado": ["a qué hora", "a las siete y media", "quedamos en el cine"],
  },
 }
 

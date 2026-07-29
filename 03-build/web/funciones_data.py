@@ -32,12 +32,14 @@ FUNCIONES = [
   "exp":{3:["…, por favor","¿Me da…?"]}},
  {"id":"F07","es":"Contar (números 0–20)","nl":"tellen",
   "cefr":"A1 · números","code":"C4-WS-1",
-  "exp":{3:["uno · dos · tres · cinco","diez · veinte"]}},
+  "exp":{3:["uno · dos · tres · cinco","diez · veinte"],
+         8:["las horas: la una · las doce","y media · y cuarto · menos cuarto","en veinte minutos"]}},
  {"id":"F08","es":"Gestionar la comprensión","nl":"om verduidelijking vragen (luisterstrategie)",
   "cefr":"A1 · estrategias de comprensión","code":"C4-STR-1",
   "exp":{1:["¿Cómo?","Otra vez, por favor"],
          2:["¿Puedes repetir?"],
-         3:["Más despacio, por favor","No entiendo"]}},
+         3:["Más despacio, por favor","No entiendo"],
+         8:["¿Sí? · No te oigo (nada)","¿Puedes hablar más despacio?"]}},
  {"id":"F09","es":"Hablar de la familia","nl":"over je familie praten",
   "cefr":"A1 · la familia y la posesión","code":"C4-WS-1",
   "exp":{4:["mi madre · mi padre","mi hermano/a · mi abuelo/a","el tío / la tía","la hermana de María (de + nombre)"]}},
@@ -62,6 +64,14 @@ FUNCIONES = [
  {"id":"F16","es":"Especular y adivinar","nl":"gissen & vermoedens uiten",
   "cefr":"A1 · expresar hipótesis sencillas","code":"C4-STR-1",
   "exp":{7:["Puede ser… (escritora)","¿Trabaja en una tienda?","Creo que es…","¡Ya lo sé! · ¿O algo parecido?"]}},
+ {"id":"F17","es":"Decir y preguntar la hora","nl":"de tijd vragen & zeggen",
+  "cefr":"A1 · la hora y los días","code":"C4-WS-1",
+  "exp":{8:["¿Qué hora es? · Es la una · Son las ocho","y media · y cuarto · menos cuarto · en punto",
+            "¿A qué hora? · a las doce","el lunes · los lunes · el fin de semana"]}},
+ {"id":"F18","es":"Quedar con alguien","nl":"een afspraak maken",
+  "cefr":"A1 · concertar una cita","code":"C4-GE-3",
+  "exp":{8:["¿Quieres quedar (esta noche)?","Quedamos a las… · en mi casa","Más tarde · ahora mismo no puedo",
+            "Es un poco pronto · un poco tarde","Hasta ahora · te veo en veinte minutos"]}},
 ]
 FMAP={f["id"]:f for f in FUNCIONES}
 
@@ -79,10 +89,13 @@ NOTICING={
     ("«¿Puedo fumar?»","F14"),("«Aquí no, pero puedes ir fuera.»","F14")],
  7:[("«Puede ser escritora.»","F16"),("«¿Trabaja en una tienda?»","F16"),("«Es profesora.»","F15"),
     ("«Yo trabajo aquí, tú trabajas aquí.»","F15"),("«Estamos todos bien.»","F05")],
+ 8:[("«¿Qué hora es? ¿Las ocho y media?»","F17"),("«¿A qué hora? Mejor a las doce.»","F17"),
+    ("«¿Quieres quedar esta noche?»","F18"),("«Quedamos en mi casa.»","F18"),
+    ("«No te oigo nada. ¿Puedes hablar más despacio?»","F08"),("«Te veo en veinte minutos.»","F07")],
 }
 # welke functies de eindtaak van elke unit combineert (afzender·ontvanger·doel — recycling zichtbaar).
-TAREA_FUN={1:["F01","F02","F03"],2:["F01","F05","F04"],3:["F02","F03","F08"],4:["F09","F10","F02"],5:["F11","F12","F10"],6:["F13","F12","F14"],7:["F15","F16","F03"]}
-TAREA_TITEL={1:"Mi presentación",2:"Un día de saludos",3:"Mi mapa · ¿de dónde eres?",4:"Mi árbol de familia",5:"Diccionario de la clase",6:"Plano de mi casa",7:"¿Quién soy? · adivina"}
+TAREA_FUN={1:["F01","F02","F03"],2:["F01","F05","F04"],3:["F02","F03","F08"],4:["F09","F10","F02"],5:["F11","F12","F10"],6:["F13","F12","F14"],7:["F15","F16","F03"],8:["F17","F18","F07"]}
+TAREA_TITEL={1:"Mi presentación",2:"Un día de saludos",3:"Mi mapa · ¿de dónde eres?",4:"Mi árbol de familia",5:"Diccionario de la clase",6:"Plano de mi casa",7:"¿Quién soy? · adivina",8:"Mi horario"}
 
 def funciones_hasta(unit):
     """Alle functies met intro-unit <= unit (het cumulatieve repertoire tot hier)."""

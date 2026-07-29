@@ -28,7 +28,10 @@ UNIT_TEMA = {
  4: ("familia", "👪 En familia"),
  5: ("compras", "🛍️ Un producto típico"),   # objetos → een typisch product per land
  6: ("lugar",   "🏠 Casas y lugares"),        # la casa y los lugares → een typische plek/woning per land
- 7: ("rutina",  "⏰ La vida y el trabajo"),    # las profesiones → werk-/dagritme per land
+ # U7 hergebruikt bewust «persona» (spaced recycling, §14): in U1 was de vraag «wie komt hier vandaan?»,
+ # in U7 is de invalshoek «wat is zijn/haar BEROEP?» (Frida Kahlo, pintora · Nadal, tenista).
+ 7: ("persona", "💼 Su profesión"),           # las profesiones → bekende persoon + beroep per land
+ 8: ("rutina",  "⏰ ¿A qué hora?"),            # la hora y los días → dag-/maaltijdritme per land
 }
 # de route: C4 = «vertrekhal». De sitcom (Julio & María) speelt in Madrid → España is
 # het thuisbasis-vertrekpunt vanaf U1. {code: (start_unit, "rango", "NL/ES-beschrijving")}
@@ -46,8 +49,10 @@ INTRO = {
      "Waar kom je vandaan? 21 landen, één taal. Klik op een land: vlag, hoofdstad, nationaliteit en taal."),
  6: ("Cada país tiene sus casas y sus lugares. Haz clic en un país y descubre cómo se vive.",
      "Elk land heeft zijn eigen huizen en plekken. Klik op een land en ontdek hoe men er woont."),
- 7: ("¿Cómo se vive y se trabaja? Haz clic en un país y descubre su ritmo de vida.",
-     "Hoe leeft en werkt men er? Klik op een land en ontdek zijn levensritme."),
+ 7: ("¿A qué se dedican? Haz clic en un país y descubre a alguien famoso… y su profesión.",
+     "Wat doen ze voor werk? Klik op een land en ontdek een bekende persoon… én zijn/haar beroep."),
+ 8: ("¿A qué hora se come? Cada país tiene su ritmo. Haz clic en un país y descúbrelo.",
+     "Hoe laat eet men er? Elk land heeft zijn eigen ritme. Klik op een land en ontdek het."),
 }
 DEFAULT_INTRO = ("Haz clic en un país del mundo hispano para leer su ficha.",
                  "Klik op een land van de Spaanstalige wereld voor zijn fiche.")

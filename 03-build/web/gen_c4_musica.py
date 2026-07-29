@@ -149,6 +149,20 @@ CULTURA={
    ],
    "dato":"¿Sabías que…? Veel beroepsnamen hebben een eigen ♀-vorm: profesor/profesora · escritor/escritora · actor/actriz · dependiente/dependienta. Sommige blijven gelijk: el/la estudiante, el/la periodista.",
  },
+ "horas":{
+   "intro":"De klok tikt anders in de Spaanstalige wereld: later eten, later uitgaan, en een eigen manier om de tijd te zeggen. Zo werkt de dag.",
+   "cards":[
+     ("🍽️","Se come a las dos","En España se come a las <b>14 h</b> y se cena a las <b>21–22 h</b>. En México se almuerza fuerte a las 14–15 h.",
+      "In Spanje eet men warm rond <b>14 u</b> en avondmaal pas om <b>21–22 u</b> — voor Vlamingen bijzonder laat! In Mexico is de lunch (14–15 u) de hoofdmaaltijd."),
+     ("🕐","«La una» es especial","Solo la <b>una</b> va en singular: <b>es la</b> una. Todas las demás: <b>son las</b> dos, tres, cuatro…",
+      "Alleen bij <b>één uur</b> gebruik je enkelvoud: <b>es la</b> una. Alle andere uren: <b>son las</b> dos, tres… (meervoud!)."),
+     ("🌙","«Buenas noches» a las 22 h","La <b>tarde</b> dura hasta las 20–21 h; después empieza la <b>noche</b>. ¡La tarde es muy larga!",
+      "De <b>tarde</b> loopt door tot 20–21 u; pas dan begint de <b>noche</b>. Daarom zeg je om 19 u nog «buenas tardes» — een lange namiddag dus."),
+     ("📅","Los días en minúscula","Los días se escriben con <b>minúscula</b>: lunes, martes… Y «op maandag» = <b>el</b> lunes (sin «en»).",
+      "Dagen schrijf je met een <b>kleine letter</b> (lunes, martes…). En «op maandag» is <b>el</b> lunes — géén «en» ervoor, anders dan je verwacht."),
+   ],
+   "dato":"¿Sabías que…? «Half negen» is in het Spaans <b>las ocho y media</b>: het Spaans kijkt <i>terug</i> naar het vorige uur (acht + dertig), terwijl het Nederlands vóóruit kijkt naar negen. Dé klassieke valstrik!",
+ },
 }
 def cultura_block(tema):
     c=CULTURA.get(tema)
