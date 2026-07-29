@@ -1,0 +1,206 @@
+{
+  "id": "es-c6plus-u2-senala",
+  "title": "Señala",
+  "subtitle": "U2 · klik het juiste antwoord",
+  "lang": "es",
+  "template": "point",
+  "options": {
+    "audio": false
+  },
+  "point": {
+    "prompt": "Klik het gevraagde item",
+    "mode": "one",
+    "rounds": [
+      {
+        "tag": "casa",
+        "sub": "señala un mueble",
+        "targets": [
+          {
+            "label": "la plaza"
+          },
+          {
+            "label": "el sofá",
+            "hit": true
+          },
+          {
+            "label": "la farmacia"
+          },
+          {
+            "label": "la calle"
+          }
+        ]
+      },
+      {
+        "tag": "casa",
+        "sub": "señala una habitación",
+        "targets": [
+          {
+            "label": "la cocina",
+            "hit": true
+          },
+          {
+            "label": "la cama"
+          },
+          {
+            "label": "el parque"
+          },
+          {
+            "label": "la silla"
+          }
+        ]
+      },
+      {
+        "tag": "prep",
+        "sub": "«op/boven» = ?",
+        "targets": [
+          {
+            "label": "debajo de"
+          },
+          {
+            "label": "encima de",
+            "hit": true
+          },
+          {
+            "label": "al lado de"
+          },
+          {
+            "label": "detrás de"
+          }
+        ]
+      },
+      {
+        "tag": "prep",
+        "sub": "«naast» = ?",
+        "targets": [
+          {
+            "label": "al lado de",
+            "hit": true
+          },
+          {
+            "label": "delante de"
+          },
+          {
+            "label": "entre"
+          },
+          {
+            "label": "lejos de"
+          }
+        ]
+      },
+      {
+        "tag": "hayest",
+        "sub": "¿«En el salón ___ un sofá»?",
+        "targets": [
+          {
+            "label": "hay",
+            "hit": true
+          },
+          {
+            "label": "está"
+          },
+          {
+            "label": "están"
+          },
+          {
+            "label": "es"
+          }
+        ]
+      },
+      {
+        "tag": "ger",
+        "sub": "comer → gerundio",
+        "targets": [
+          {
+            "label": "comando"
+          },
+          {
+            "label": "comiendo",
+            "hit": true
+          },
+          {
+            "label": "comendo"
+          },
+          {
+            "label": "comiando"
+          }
+        ]
+      },
+      {
+        "tag": "ger",
+        "sub": "leer → gerundio",
+        "targets": [
+          {
+            "label": "leiendo"
+          },
+          {
+            "label": "leyendo",
+            "hit": true
+          },
+          {
+            "label": "leendo"
+          },
+          {
+            "label": "leando"
+          }
+        ]
+      },
+      {
+        "tag": "od",
+        "sub": "¿La casa? ___ veo",
+        "targets": [
+          {
+            "label": "lo"
+          },
+          {
+            "label": "la",
+            "hit": true
+          },
+          {
+            "label": "los"
+          },
+          {
+            "label": "las"
+          }
+        ]
+      },
+      {
+        "tag": "od",
+        "sub": "¿Los muebles? ___ compro",
+        "targets": [
+          {
+            "label": "los",
+            "hit": true
+          },
+          {
+            "label": "las"
+          },
+          {
+            "label": "lo"
+          },
+          {
+            "label": "la"
+          }
+        ]
+      },
+      {
+        "tag": "barrio",
+        "sub": "señala un lugar del barrio",
+        "targets": [
+          {
+            "label": "el armario"
+          },
+          {
+            "label": "la plaza",
+            "hit": true
+          },
+          {
+            "label": "la nevera"
+          },
+          {
+            "label": "el espejo"
+          }
+        ]
+      }
+    ]
+  }
+}

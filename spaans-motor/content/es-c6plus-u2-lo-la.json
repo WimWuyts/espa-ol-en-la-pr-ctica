@@ -1,0 +1,192 @@
+{
+  "id": "es-c6plus-u2-lo-la",
+  "title": "Completa: lo/la/los/las",
+  "subtitle": "U2 · vervang het voorwerp",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies het juiste OD-pronomen",
+    "items": [
+      {
+        "stimulus": "¿El sofá? ___ pongo aquí.",
+        "options": [
+          "Lo",
+          "La",
+          "Los"
+        ],
+        "answer": "Lo",
+        "tag": "od",
+        "sub": "el sofá (m ev) → lo"
+      },
+      {
+        "stimulus": "¿La cama? ___ pongo aquí.",
+        "options": [
+          "La",
+          "Lo",
+          "Las"
+        ],
+        "answer": "La",
+        "tag": "od",
+        "sub": "la cama (v ev) → la"
+      },
+      {
+        "stimulus": "¿Los platos? ___ lavo.",
+        "options": [
+          "Los",
+          "Las",
+          "Lo"
+        ],
+        "answer": "Los",
+        "tag": "od",
+        "sub": "los platos (m pl) → los"
+      },
+      {
+        "stimulus": "¿Las sillas? ___ pongo en la cocina.",
+        "options": [
+          "Las",
+          "Los",
+          "La"
+        ],
+        "answer": "Las",
+        "tag": "od",
+        "sub": "las sillas (v pl) → las"
+      },
+      {
+        "stimulus": "¿La tele? ___ veo por la noche.",
+        "options": [
+          "La",
+          "Lo",
+          "Las"
+        ],
+        "answer": "La",
+        "tag": "od",
+        "sub": "la tele (v) → la"
+      },
+      {
+        "stimulus": "¿El coche? ___ aparco en el garaje.",
+        "options": [
+          "Lo",
+          "La",
+          "Los"
+        ],
+        "answer": "Lo",
+        "tag": "od",
+        "sub": "el coche (m) → lo"
+      },
+      {
+        "stimulus": "¿Las ventanas? ___ limpio.",
+        "options": [
+          "Las",
+          "Los",
+          "La"
+        ],
+        "answer": "Las",
+        "tag": "od",
+        "sub": "las ventanas → las"
+      },
+      {
+        "stimulus": "¿Los libros? ___ leo en el salón.",
+        "options": [
+          "Los",
+          "Las",
+          "Lo"
+        ],
+        "answer": "Los",
+        "tag": "od",
+        "sub": "los libros → los"
+      },
+      {
+        "stimulus": "¿La plaza? ___ veo desde el balcón.",
+        "options": [
+          "La",
+          "Lo",
+          "Las"
+        ],
+        "answer": "La",
+        "tag": "od",
+        "sub": "la plaza → la"
+      },
+      {
+        "stimulus": "¿El armario? ___ abro.",
+        "options": [
+          "Lo",
+          "La",
+          "Los"
+        ],
+        "answer": "Lo",
+        "tag": "od",
+        "sub": "el armario → lo"
+      },
+      {
+        "stimulus": "¿El autobús? ___ cojo en la parada.",
+        "options": [
+          "Lo",
+          "La",
+          "Los"
+        ],
+        "answer": "Lo",
+        "tag": "od",
+        "sub": "el autobús → lo"
+      },
+      {
+        "stimulus": "¿La comida? Mamá ___ prepara.",
+        "options": [
+          "la",
+          "lo",
+          "las"
+        ],
+        "answer": "la",
+        "tag": "od",
+        "sub": "la comida → la"
+      },
+      {
+        "stimulus": "¿Los muebles? ___ compro en la tienda.",
+        "options": [
+          "Los",
+          "Las",
+          "Lo"
+        ],
+        "answer": "Los",
+        "tag": "od",
+        "sub": "los muebles → los"
+      },
+      {
+        "stimulus": "¿La lámpara? ___ pongo encima de la mesa.",
+        "options": [
+          "La",
+          "Lo",
+          "Las"
+        ],
+        "answer": "La",
+        "tag": "od",
+        "sub": "la lámpara → la"
+      },
+      {
+        "stimulus": "¿Las flores? ___ pongo en el balcón.",
+        "options": [
+          "Las",
+          "Los",
+          "La"
+        ],
+        "answer": "Las",
+        "tag": "od",
+        "sub": "las flores → las"
+      },
+      {
+        "stimulus": "¿El espejo? ___ pongo en el baño.",
+        "options": [
+          "Lo",
+          "La",
+          "Los"
+        ],
+        "answer": "Lo",
+        "tag": "od",
+        "sub": "el espejo → lo"
+      }
+    ]
+  }
+}

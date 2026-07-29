@@ -1,0 +1,57 @@
+{
+  "id": "es-c6plus-u2-repite-casa",
+  "title": "Escucha y repite: mi casa",
+  "subtitle": "U2 · escucha, repite y GRÁBATE",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "repeat",
+    "prompt": "Escucha ▶ · repite en voz alta · grábate ⏺",
+    "items": [
+      {
+        "text": "En mi casa hay tres habitaciones.",
+        "sub": "in mijn huis zijn drie kamers",
+        "tag": "casa",
+        "tip": "¡Bien! Ahora dilo sin leer."
+      },
+      {
+        "text": "La cama está al lado de la ventana.",
+        "sub": "het bed staat naast het raam",
+        "tag": "prep"
+      },
+      {
+        "text": "El sofá está delante de la tele.",
+        "sub": "de zetel staat vóór de tv",
+        "tag": "prep"
+      },
+      {
+        "text": "Ahora mismo estoy estudiando.",
+        "sub": "op dit moment ben ik aan het studeren",
+        "tag": "ger"
+      },
+      {
+        "text": "En mi barrio hay una plaza y un parque.",
+        "sub": "in mijn buurt zijn een plein en een park",
+        "tag": "barrio"
+      },
+      {
+        "text": "Para ir a la plaza, sigue recto y gira a la derecha.",
+        "sub": "ga rechtdoor en sla rechts af",
+        "tag": "ruta"
+      },
+      {
+        "text": "¿El supermercado? Lo tengo cerca.",
+        "sub": "de supermarkt? die heb ik dichtbij",
+        "tag": "od"
+      },
+      {
+        "text": "Me gusta mi barrio porque es tranquilo.",
+        "sub": "ik hou van mijn buurt want het is rustig",
+        "tag": "opinion"
+      }
+    ]
+  }
+}

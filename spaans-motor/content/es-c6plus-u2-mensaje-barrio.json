@@ -1,0 +1,37 @@
+{
+  "id": "es-c6plus-u2-mensaje-barrio",
+  "title": "Mensaje de voz: mi barrio",
+  "subtitle": "U2 · neem een spraakbericht op",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "voicemessage",
+    "prompt": "Graba un mensaje de voz (30–40 s)",
+    "items": [
+      {
+        "text": "Describe tu habitación: qué hay y dónde está (usa 4 preposiciones).",
+        "cue": "mi habitación",
+        "tag": "prep",
+        "sub": "gebruik: hay · está · encima de · al lado de · debajo de · entre",
+        "tip": "4 preposiciones + hay/está? Neem opnieuw op."
+      },
+      {
+        "text": "Da direcciones de tu casa a un lugar del barrio.",
+        "cue": "cómo llegar",
+        "tag": "ruta",
+        "sub": "gebruik: sigue recto · gira a la derecha/izquierda · cruza · está a … minutos",
+        "tip": "3 stappen + afstand? Herneem."
+      },
+      {
+        "text": "Di qué está haciendo tu familia ahora mismo (3 personas).",
+        "cue": "estar + gerundio",
+        "tag": "ger",
+        "sub": "gebruik: está cocinando · están viendo la tele · estoy …",
+        "tip": "3 personen met estar+gerundio? Herneem."
+      }
+    ]
+  }
+}

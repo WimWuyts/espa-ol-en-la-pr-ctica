@@ -1,0 +1,191 @@
+{
+  "id": "es-c6plus-u2-direcciones-order",
+  "title": "Ordena la ruta",
+  "subtitle": "U2 · zet de weg/zin in de juiste volgorde",
+  "lang": "es",
+  "template": "order",
+  "options": {
+    "audio": false
+  },
+  "order": {
+    "prompt": "Tik in de logische volgorde",
+    "rounds": [
+      {
+        "tag": "ruta",
+        "sub": "cómo llegar a la plaza",
+        "items": [
+          {
+            "label": "Sal de casa.",
+            "key": 1
+          },
+          {
+            "label": "Sigue recto.",
+            "key": 2
+          },
+          {
+            "label": "Gira a la derecha.",
+            "key": 3
+          },
+          {
+            "label": "La plaza está a la izquierda.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "frase",
+        "sub": "una frase con preposición",
+        "items": [
+          {
+            "label": "La lámpara",
+            "key": 1
+          },
+          {
+            "label": "está",
+            "key": 2
+          },
+          {
+            "label": "encima de",
+            "key": 3
+          },
+          {
+            "label": "la mesa.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "frase",
+        "sub": "hay + lugar",
+        "items": [
+          {
+            "label": "En mi barrio",
+            "key": 1
+          },
+          {
+            "label": "hay",
+            "key": 2
+          },
+          {
+            "label": "un parque",
+            "key": 3
+          },
+          {
+            "label": "muy grande.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "frase",
+        "sub": "estar + gerundio",
+        "items": [
+          {
+            "label": "Valen",
+            "key": 1
+          },
+          {
+            "label": "está",
+            "key": 2
+          },
+          {
+            "label": "cocinando",
+            "key": 3
+          },
+          {
+            "label": "en la cocina.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "frase",
+        "sub": "pronombre OD",
+        "items": [
+          {
+            "label": "¿El sofá?",
+            "key": 1
+          },
+          {
+            "label": "Lo",
+            "key": 2
+          },
+          {
+            "label": "pongo",
+            "key": 3
+          },
+          {
+            "label": "en el salón.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "ruta",
+        "sub": "cómo llegar a la farmacia",
+        "items": [
+          {
+            "label": "Cruza la calle.",
+            "key": 1
+          },
+          {
+            "label": "Sigue recto.",
+            "key": 2
+          },
+          {
+            "label": "Gira a la izquierda.",
+            "key": 3
+          },
+          {
+            "label": "La farmacia está en la esquina.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "frase",
+        "sub": "de casa al insti",
+        "items": [
+          {
+            "label": "Cojo el autobús",
+            "key": 1
+          },
+          {
+            "label": "en la parada,",
+            "key": 2
+          },
+          {
+            "label": "bajo en el centro",
+            "key": 3
+          },
+          {
+            "label": "y ando cinco minutos.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "frase",
+        "sub": "describe la habitación",
+        "items": [
+          {
+            "label": "En mi dormitorio",
+            "key": 1
+          },
+          {
+            "label": "la cama está",
+            "key": 2
+          },
+          {
+            "label": "al lado de",
+            "key": 3
+          },
+          {
+            "label": "la ventana.",
+            "key": 4
+          }
+        ]
+      }
+    ]
+  }
+}

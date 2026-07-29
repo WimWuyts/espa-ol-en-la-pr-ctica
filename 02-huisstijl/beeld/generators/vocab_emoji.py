@@ -181,6 +181,9 @@ GROUP_EMOJI = {
  "restaurante":"🍽️","cantidades":"⚖️","cortesia":"🙏","mexico":"🌮",
  # ---- C6+·U1 «El día a día» ----
  "calendario":"📅","conectores":"🔗","gustar":"👍","sentimientos":"😊",
+ # ---- C6+·U2 «Aquí vivo» ----
+ "casa":"🏠","muebles":"🛋️","habitaciones":"🚪","preposiciones":"📍","barrio":"🏙️",
+ "ciudad":"🌆","direcciones":"🧭","movimiento":"🚶","lugares":"🏬",
 }
 
 _ARTICLES = ("el ", "la ", "los ", "las ", "un ", "una ", "unos ", "unas ", "mi ", "al ")

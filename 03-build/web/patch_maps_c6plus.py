@@ -11,7 +11,10 @@ import paises_data as PD
 import mapa_c6plus as M
 
 WEB = os.path.dirname(os.path.abspath(__file__))
-INFO_RE   = re.compile(r"const INFO=\{.*?\n \};", re.S)
+# matcht zowel het originele blok (`const INFO={ … \n };`) als de reeds-gepatchte
+# platte vorm (`const INFO={ … }};`). `};` komt maar één keer voor (op het einde),
+# dus non-greedy `.*?\};` is veilig. Idempotent: herdraaien geeft hetzelfde resultaat.
+INFO_RE   = re.compile(r"const INFO=\{.*?\};", re.S)
 RENDER_RE = re.compile(r"box\.innerHTML='<h3>'\+d\.fl\+[^\n]*;")
 
 done = []

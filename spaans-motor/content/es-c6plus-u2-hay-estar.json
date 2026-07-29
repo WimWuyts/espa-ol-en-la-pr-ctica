@@ -1,0 +1,124 @@
+{
+  "id": "es-c6plus-u2-hay-estar",
+  "title": "¿hay o está(n)?",
+  "subtitle": "U2 · onbepaald (hay) of bepaald (está/están)?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Kies: hay (er is, onbepaald) of está/están (bepaald)?",
+    "categories": [
+      {
+        "id": "hay",
+        "label": "hay<br><small>un/dos/mucho</small>",
+        "glaze": "#8B5E9E"
+      },
+      {
+        "id": "esta",
+        "label": "está/están<br><small>el/la/mi</small>",
+        "glaze": "#2FA8A0"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "En el salón ___ un sofá.",
+        "answer": "hay",
+        "tag": "hay",
+        "sub": "un → hay"
+      },
+      {
+        "stimulus": "El sofá ___ delante de la tele.",
+        "answer": "esta",
+        "tag": "esta",
+        "sub": "el → está"
+      },
+      {
+        "stimulus": "En mi barrio ___ dos parques.",
+        "answer": "hay",
+        "tag": "hay",
+        "sub": "dos → hay"
+      },
+      {
+        "stimulus": "Los parques ___ cerca.",
+        "answer": "esta",
+        "tag": "esta",
+        "sub": "los → están"
+      },
+      {
+        "stimulus": "¿___ una farmacia cerca?",
+        "answer": "hay",
+        "tag": "hay",
+        "sub": "una → hay"
+      },
+      {
+        "stimulus": "La farmacia ___ en la esquina.",
+        "answer": "esta",
+        "tag": "esta",
+        "sub": "la → está"
+      },
+      {
+        "stimulus": "En la cocina ___ una mesa.",
+        "answer": "hay",
+        "tag": "hay",
+        "sub": "una → hay"
+      },
+      {
+        "stimulus": "Mi casa ___ en el centro.",
+        "answer": "esta",
+        "tag": "esta",
+        "sub": "mi → está"
+      },
+      {
+        "stimulus": "___ muchas tiendas aquí.",
+        "answer": "hay",
+        "tag": "hay",
+        "sub": "muchas → hay"
+      },
+      {
+        "stimulus": "Las tiendas ___ abiertas.",
+        "answer": "esta",
+        "tag": "esta",
+        "sub": "las → están"
+      },
+      {
+        "stimulus": "Detrás de casa ___ un jardín.",
+        "answer": "hay",
+        "tag": "hay",
+        "sub": "un → hay"
+      },
+      {
+        "stimulus": "El jardín ___ detrás de la casa.",
+        "answer": "esta",
+        "tag": "esta",
+        "sub": "el → está"
+      },
+      {
+        "stimulus": "En el dormitorio ___ una cama.",
+        "answer": "hay",
+        "tag": "hay",
+        "sub": "una → hay"
+      },
+      {
+        "stimulus": "La cama ___ al lado de la ventana.",
+        "answer": "esta",
+        "tag": "esta",
+        "sub": "la → está"
+      },
+      {
+        "stimulus": "¿Cuántos baños ___ ?",
+        "answer": "hay",
+        "tag": "hay",
+        "sub": "cuántos → hay"
+      },
+      {
+        "stimulus": "El banco ___ lejos.",
+        "answer": "esta",
+        "tag": "esta",
+        "sub": "el → está"
+      }
+    ]
+  }
+}
