@@ -27,11 +27,12 @@ function jsFor(pack){
     files.push(join(SRC,"generators.js"));
   }
   files.push(join(SRC,"templates",pack.template+".js"));
+  files.push(join(SRC,"features.js"));   // meta-laag: voortgang persisteren
   files.push(join(SRC,"engine.js"));
   return files;
 }
 function cssFor(pack){
-  return [ join(SRC,"tokens.css"), join(SRC,"shell.css"), join(SRC,"templates",pack.template+".css") ];
+  return [ join(SRC,"tokens.css"), join(SRC,"shell.css"), join(SRC,"features.css"), join(SRC,"templates",pack.template+".css") ];
 }
 
 /* bouwt de bootstrap: zet generator om in een _source, of gebruikt vaste items */
@@ -79,7 +80,7 @@ for(const f of packs){
 }
 
 /* --- index.html: menu naar alle spellen --- */
-const tplName = { classify:"classificeren", match:"koppelen", cloze:"invullen", order:"volgorde", point:"aanwijzen", tap:"aanwijzen", memory:"memoria", sim:"produceren", speak:"spreken", type:"escribir", tetris:"arcade", belt:"arcade", mole:"arcade", bubble:"arcade", snake:"arcade" };
+const tplName = { classify:"classificeren", match:"koppelen", cloze:"invullen", order:"volgorde", point:"aanwijzen", tap:"aanwijzen", memory:"memoria", sim:"produceren", speak:"spreken", type:"escribir", tetris:"arcade", belt:"arcade", mole:"arcade", bubble:"arcade", snake:"arcade", platform:"arcade", tower:"arcade", pinball:"arcade" };
 const cards = built.map(b=>
   '<a class="ix-card" href="games/'+b.file+'">'+
     '<span class="ix-badge">'+(tplName[b.template]||b.template)+'</span>'+
@@ -88,7 +89,7 @@ const cards = built.map(b=>
 const index =
 "<!DOCTYPE html>\n<html lang=\"nl\">\n<head>\n<meta charset=\"utf-8\">\n"+
 "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>Oefenspellen Spaans</title>\n<style>\n"+
-read(join(SRC,"tokens.css"))+"\n"+
+read(join(SRC,"tokens.css"))+"\n"+read(join(SRC,"features.css"))+"\n"+
 "*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:var(--sans);color:var(--cal);"+
 "background:linear-gradient(180deg,var(--muro),var(--muro-2));padding:32px 18px 60px}"+
 ".ix-wrap{max-width:900px;margin:0 auto}"+
@@ -102,9 +103,32 @@ read(join(SRC,"tokens.css"))+"\n"+
 ".ix-badge{align-self:flex-start;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F66;"+
 "border:1px solid #C3B99F;border-radius:2px;padding:2px 7px}"+
 ".ix-title{font-family:var(--serif);font-weight:700;font-size:19px}"+
+".ix-dash{margin:40px 0 0}.ix-dash h2{font-family:var(--serif);letter-spacing:.06em;font-size:22px;margin:0 0 14px}"+
+".ix-dash h2 span{color:var(--cal-dim);font-style:italic;font-size:14px;letter-spacing:0}"+
+".ix-dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}"+
+".ix-reset{margin-top:14px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--cal-dim);"+
+"background:transparent;border:1px solid rgba(243,236,219,.24);border-radius:2px;padding:6px 12px;cursor:pointer}"+
+".ix-reset:hover{color:var(--cal);border-color:var(--cal)}"+
 "</style>\n</head>\n<body>\n<div class=\"ix-wrap\">\n"+
 "<h1>Oefen<span>spellen</span></h1>\n<p class=\"lead\">Tik een spel om te starten.</p>\n"+
-"<div class=\"ix-grid\">\n"+cards+"\n</div>\n</div>\n</body>\n</html>\n";
+"<div class=\"ix-grid\">\n"+cards+"\n</div>\n"+
+"<section class=\"ix-dash\">\n<h2>Mi progreso <span>· jouw voortgang</span></h2>\n"+
+"<div class=\"ix-dgrid\">\n"+
+"<div class=\"mf-panel\" id=\"dashStreak\"></div>\n"+
+"<div class=\"mf-panel\" id=\"dashHeat\"></div>\n"+
+"<div class=\"mf-panel\" id=\"dashCando\"></div>\n"+
+"</div>\n<button class=\"ix-reset\" id=\"dashReset\" type=\"button\">↺ Borrar mi progreso</button>\n</section>\n"+
+"</div>\n<script>\n"+read(join(SRC,"features.js"))+"\n</script>\n<script>\n"+
+"MotorFeatures.mountStreak(document.getElementById('dashStreak'));\n"+
+"MotorFeatures.mountHeatmap(document.getElementById('dashHeat'));\n"+
+"MotorFeatures.mountCanDo(document.getElementById('dashCando'), ["+
+"{id:'jugar',label:'He jugado a un juego'},"+
+"{id:'escribir',label:'He escrito respuestas (no solo elegir)'},"+
+"{id:'hablar',label:'Me he grabado hablando'},"+
+"{id:'racha',label:'Tengo una racha de varios días'}"+
+"], 'motor');\n"+
+"document.getElementById('dashReset').addEventListener('click',function(){ if(confirm('¿Borrar tu progreso guardado?')){ MotorFeatures.reset(); location.reload(); } });\n"+
+"</script>\n</body>\n</html>\n";
 writeFileSync(join(ROOT,"index.html"), index, "utf8");
 
 console.log("\n"+built.length+" spel(len) gebouwd → /games, menu → index.html");

@@ -82,6 +82,13 @@ function mount(app, cfg){
   header.appendChild(el("div","sp"));
   const bAgain = el("button","mt-btn","Opnieuw"); bAgain.type="button";
   header.appendChild(bAgain);
+  /* confidence-betting (opt-in): ×2 punten én ×2 straf wanneer je zeker bent */
+  let bBet=null;
+  if(cfg.options.confidence){
+    bBet=el("button","mt-btn bet","🎲 ×1"); bBet.type="button";
+    bBet.title="Apuesta: dobla los puntos… y el riesgo";
+    header.appendChild(bBet);
+  }
   app.appendChild(header);
 
   const wrap = el("div","mt-wrap");
@@ -112,7 +119,12 @@ function mount(app, cfg){
   app.appendChild(ov);
 
   /* ---- staat ---- */
-  const S = { score:0, streak:0, best:0, level:1, ok:0, total:0, tagStats:{}, log:[], done:0, target:0 };
+  const S = { score:0, streak:0, best:0, level:1, ok:0, total:0, tagStats:{}, log:[], done:0, target:0, bet:1 };
+  if(bBet){ bBet.addEventListener("click", ()=>{
+    S.bet = S.bet===1 ? 2 : 1;
+    bBet.textContent = "🎲 ×"+S.bet; bBet.classList.toggle("on", S.bet===2);
+    audio.move();
+  }); }
 
   function statBox(parent,k,v){
     const b=el("div","mt-stat"); b.innerHTML='<span class="k">'+k+'</span><span class="v">'+v+'</span>';
@@ -162,13 +174,14 @@ function mount(app, cfg){
       S.total++;
       const tag = meta.tag || "_";
       const st = S.tagStats[tag] || (S.tagStats[tag]={ok:0,bad:0});
+      const bet = S.bet||1;
       if(ok){
         S.ok++; st.ok++; S.streak++; if(S.streak>S.best)S.best=S.streak;
-        S.score += 10 + Math.min(50,S.streak*3);
+        S.score += (10 + Math.min(50,S.streak*3)) * bet;
         if(S.ok % 10 === 0) S.level++;
         audio.ok();
       }else{
-        st.bad++; S.streak=0; S.score=Math.max(0,S.score-5);
+        st.bad++; S.streak=0; S.score=Math.max(0,S.score-5*bet);
         audio.bad();
         if(meta.stimulus){
           S.log.push({ stimulus:meta.stimulus, sub:meta.sub||"",
@@ -222,6 +235,16 @@ function mount(app, cfg){
     });
     if(acc>=90) audio.win();
     ov.classList.add("on");
+
+    /* meta-laag: voortgang persisteren (streak · heatmap · spellen) */
+    if(window.MotorFeatures && window.MotorFeatures.recordFinish){
+      const tagLabels={}; Object.keys(S.tagStats).forEach(t=>{ tagLabels[t]=tagLabel(t); });
+      window.MotorFeatures.recordFinish({
+        id: cfg.id,
+        title: String(cfg.title||"").replace(/<[^>]+>/g,"").trim(),
+        ok: S.ok, total: S.total, tagStats: S.tagStats, tagLabels: tagLabels
+      });
+    }
   }
 
   /* ---- start / herstart ---- */

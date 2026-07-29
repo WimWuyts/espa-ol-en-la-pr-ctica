@@ -51,13 +51,16 @@ laat de gebruiker met één woord bijsturen. Geen lange uitleg.
 | klik op beeld/scène/plattegrond | `point` | vaste `items` |
 | spreken / opname (repeat, shadowing, substitutie-carrousel, spraakbericht) | `speak` | vaste `items` (`mode`) |
 | open productie / mini-simulatie (chat, kassa, wallapop) | `sim` | vaste `items` |
-| **arcade-M1** (zelfde classify-judge, andere «jas» — roteer per unit) | **`tetris` · `belt` · `mole` · `bubble` · `snake`** | ident. aan `classify` (`categories` + `items`/generator) |
+| **arcade-M1** (zelfde classify-judge, andere «jas» — roteer per unit) | **`tetris`·`belt`·`mole`·`bubble`·`snake`·`platform`·`tower`·`pinball`** | ident. aan `classify` (`categories` + `items`/generator) |
 
 **Productieve laag (BINDEND, plan §2/§4):** elke unit-pagina haalt **≥8 productieve
 slots** — put daarvoor uit **`type`** (getypt) en **`speak`** (gesproken), niet enkel
-uit kies/klik/sleep. **Arcade-rotatie (plan §3):** de vijf arcade-skins delen dezelfde
-judge; laat M1 per unit **roteren** (`tetris → belt → mole → bubble → snake → …`) zodat
-geen mechaniek zich binnen één cursus opdringt.
+uit kies/klik/sleep. **Arcade-rotatie (plan §3):** de **acht** arcade-skins delen dezelfde
+judge; laat M1 per unit **roteren** (`tetris → belt → mole → bubble → snake → platform →
+tower → pinball`) zodat geen mechaniek zich binnen één cursus opdringt.
+
+**Meta-laag (plan §4-D):** `src/features.js` zit in elk spel — voortgang (streak ·
+heatmap · can-do · Leitner) + `options.confidence` (🎲 ×2-inzet). Zie `schema.md`.
 
 Alle sjablonen worden **dynamisch** ingeladen door `build.mjs` op basis van de
 bestandsnaam (`src/templates/<template>.{js,css}`): een nieuw sjabloon toevoegen

@@ -1,0 +1,24 @@
+{
+  "id":"es-demo-confidence-serestar",
+  "title":"Demo · <span>apuesta</span> ser/estar",
+  "subtitle":"confidence-betting: zet 🎲 ×2 aan als je zeker bent (dubbel punt én dubbel risico)",
+  "template":"classify",
+  "options":{"rounds":12,"confidence":true},
+  "classify":{
+    "prompt":"ser of estar? — durf je te verdubbelen?",
+    "categories":[
+      {"id":"ser","label":"ser","glaze":"#C4402C"},
+      {"id":"estar","label":"estar","glaze":"#2E8E68"}
+    ],
+    "items":[
+      {"stimulus":"Yo ___ profesor","answer":"ser","tag":"ser"},
+      {"stimulus":"Ella ___ en Madrid","answer":"estar","tag":"estar"},
+      {"stimulus":"Nosotros ___ cansados","answer":"estar","tag":"estar"},
+      {"stimulus":"El coche ___ rojo","answer":"ser","tag":"ser"},
+      {"stimulus":"Hoy ___ lunes","answer":"ser","tag":"ser"},
+      {"stimulus":"La sopa ___ caliente","answer":"estar","tag":"estar"},
+      {"stimulus":"Mi madre ___ española","answer":"ser","tag":"ser"},
+      {"stimulus":"Barcelona ___ en Cataluña","answer":"estar","tag":"estar"}
+    ]
+  }
+}

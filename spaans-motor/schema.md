@@ -177,6 +177,9 @@ elk classify-pakket omzetten door enkel `template` te wisselen.
 | `mole` | mollenmeppen → mep het juiste hol (tijdbalk) | tik hol / 1-9 |
 | `bubble` | bubbelschieter → schiet naar juiste bubbel | tik bubbel / 1-9 |
 | `snake` | stuur de slang naar de juiste voedseltegel | pijltjes · WASD · vegen |
+| `platform` | loop met het personage naar de juiste deur | ← → lopen · ↑/spatie in · 1-9 |
+| `tower` | torenverdediging: schiet de vijand met de juiste toren (levens + tijd) | tik toren / 1-9 · `options.lives` |
+| `pinball` | flip de bal (fysica) naar het juiste doel | ← → flippers · tik veldhelft · 1-9 |
 
 ```json
 {
@@ -190,8 +193,28 @@ elk classify-pakket omzetten door enkel `template` te wisselen.
 }
 ```
 
-**Rotatie (plan §3):** laat het arcade-slot (M1) per unit roteren over deze skins
-zodat geen enkele mechaniek zich binnen één cursus opdringt.
+**Rotatie (plan §3):** laat het arcade-slot (M1) per unit roteren over deze **8
+skins** zodat geen enkele mechaniek zich binnen één cursus opdringt.
+
+## `options.confidence` — confidence-betting (plan §4-D)
+
+Zet `"options": { "confidence": true }` op **elk** pakket → er verschijnt een
+knop **🎲 ×1 / ×2**. Staat hij op ×2, dan levert een juist antwoord **dubbele
+punten** op én kost een fout **dubbele straf**. Werkt engine-breed, over alle
+sjablonen (de leerling zet in wanneer die zeker is).
+
+## Motor-features (`src/features.js`) — meta-laag, plan §4-D
+
+Automatisch in **elk** spel gebundeld; de engine schrijft na afloop de voortgang
+weg (`localStorage`, veilig als dat ontbreekt). Zichtbaar op de menu-`index.html`:
+
+- **streak-kalender** (`mountStreak`) — opeenvolgende speeldagen.
+- **beheersings-heatmap** (`mountHeatmap`) — juist% per tag, zwakste eerst.
+- **can-do-zelfscan** (`mountCanDo(el, items, poolId)`) — persistente checklist;
+  unit-hubs geven hun eigen can-do-uitspraken door.
+- **Leitner** (`new MotorFeatures.Leitner(poolId)`) — doosjes 1-5 voor spaced
+  repetition; `.register(key, ok)` promoveert/degradeert, `.weight(key)` voor een
+  feeder die vaker uit zwakke doosjes trekt.
 
 ## Een spel toevoegen
 

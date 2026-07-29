@@ -1,0 +1,34 @@
+/* Arcade-skin «pinball». Doelen boven, bal met fysica, flippers onder. */
+.pb-wrap{display:flex;flex-direction:column;gap:10px}
+.pb-head{background:linear-gradient(175deg,#FBF6E9,#E9E0C9);border:1px solid rgba(0,0,0,.25);border-radius:3px;
+  box-shadow:0 5px 0 rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.9);padding:12px;text-align:center}
+.pb-eye{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8A7F66}
+.pb-eye .nl{text-transform:none;letter-spacing:0;font-style:italic}
+.pb-stim{font-family:var(--serif);font-weight:700;color:#12264A;font-size:clamp(22px,5vw,36px);line-height:1.1;margin-top:2px;word-break:break-word}
+.pb-sub{font-family:var(--serif);font-style:italic;font-size:13px;color:#6E6249;min-height:16px}
+
+.pb-field{position:relative;height:340px;border-radius:8px;overflow:hidden;touch-action:none;
+  background:radial-gradient(circle at 50% 12%, #2E568F, #173059 70%);border:2px solid #0C1A34;
+  box-shadow:inset 0 2px 14px rgba(0,0,0,.5)}
+.pb-targets{position:absolute;top:0;left:0;right:0;height:46px;display:flex;gap:3px;padding:3px}
+.pb-target{position:relative;flex:1;border-radius:0 0 6px 6px;color:#F3ECDB;display:flex;align-items:center;justify-content:center;text-align:center;
+  border:1px solid rgba(0,0,0,.35);box-shadow:inset 0 -3px 8px rgba(0,0,0,.3);overflow:hidden}
+.pb-target.ink-d{color:#12264A}
+.pb-target .pb-tl{font-family:var(--serif);font-weight:700;font-size:clamp(12px,2.1vw,17px);line-height:1;padding:0 4px}
+.pb-target small{position:absolute;top:2px;right:5px;font-family:var(--mono);font-size:9px;opacity:.6}
+.pb-target.lit{animation:pbLit .5s}
+.pb-target.miss{animation:pbMiss .5s}
+.pb-target.reveal{outline:3px solid #7BE0AE;outline-offset:-3px}
+@keyframes pbLit{0%,100%{filter:brightness(1)}40%{filter:brightness(1.6) saturate(1.3)}}
+@keyframes pbMiss{0%,100%{filter:brightness(1)}40%{filter:brightness(.6)}}
+.pb-ball{position:absolute;width:26px;height:26px;transform:translate(-50%,-50%);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:10px;color:rgba(0,0,0,.35);
+  background:radial-gradient(circle at 34% 30%, #fff, #C9CED6 45%, #7E8794);
+  border:1px solid rgba(0,0,0,.4);box-shadow:0 2px 6px rgba(0,0,0,.5)}
+.pb-flip{position:absolute;bottom:12px;width:42%;height:16px;border-radius:8px;
+  background:linear-gradient(180deg,#E0A22F,#B77E23);border:1px solid rgba(0,0,0,.4);box-shadow:0 2px 0 rgba(0,0,0,.4);transition:transform .1s}
+.pb-flip.l{left:5%;transform-origin:left center;transform:rotate(18deg)}
+.pb-flip.r{right:5%;transform-origin:right center;transform:rotate(-18deg)}
+.pb-flip.l.on{transform:rotate(-14deg)}
+.pb-flip.r.on{transform:rotate(14deg)}
+.pb-tip{text-align:center;font-size:12px;color:var(--cal-dim);font-style:italic}
