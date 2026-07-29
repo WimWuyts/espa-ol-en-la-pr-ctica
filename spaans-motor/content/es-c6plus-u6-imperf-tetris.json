@@ -1,0 +1,129 @@
+{
+  "id": "es-c6plus-u6-imperf-tetris",
+  "title": "Imperfecto Tetris",
+  "subtitle": "U6 · laat het juiste type vallen",
+  "lang": "es",
+  "template": "tetris",
+  "options": {
+    "rows": 9,
+    "speed": 1300,
+    "audio": false
+  },
+  "classify": {
+    "categories": [
+      {
+        "id": "aba",
+        "label": "-aba (-ar)",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "ia",
+        "label": "-ía (-er/-ir)",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "irr",
+        "label": "era/iba/veía",
+        "glaze": "#B4309A"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "jugar",
+        "answer": "aba",
+        "tag": "aba",
+        "sub": "jugaba"
+      },
+      {
+        "stimulus": "comer",
+        "answer": "ia",
+        "tag": "ia",
+        "sub": "comía"
+      },
+      {
+        "stimulus": "ser",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "era"
+      },
+      {
+        "stimulus": "vivir",
+        "answer": "ia",
+        "tag": "ia",
+        "sub": "vivía"
+      },
+      {
+        "stimulus": "ir",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "iba"
+      },
+      {
+        "stimulus": "estudiar",
+        "answer": "aba",
+        "tag": "aba",
+        "sub": "estudiaba"
+      },
+      {
+        "stimulus": "ver",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "veía"
+      },
+      {
+        "stimulus": "tener",
+        "answer": "ia",
+        "tag": "ia",
+        "sub": "tenía"
+      },
+      {
+        "stimulus": "soñar",
+        "answer": "aba",
+        "tag": "aba",
+        "sub": "soñaba"
+      },
+      {
+        "stimulus": "hacer",
+        "answer": "ia",
+        "tag": "ia",
+        "sub": "hacía"
+      },
+      {
+        "stimulus": "cuidar",
+        "answer": "aba",
+        "tag": "aba",
+        "sub": "cuidaba"
+      },
+      {
+        "stimulus": "aprender",
+        "answer": "ia",
+        "tag": "ia",
+        "sub": "aprendía"
+      },
+      {
+        "stimulus": "jugar (nos.)",
+        "answer": "aba",
+        "tag": "aba",
+        "sub": "jugábamos"
+      },
+      {
+        "stimulus": "salir",
+        "answer": "ia",
+        "tag": "ia",
+        "sub": "salía"
+      },
+      {
+        "stimulus": "cantar",
+        "answer": "aba",
+        "tag": "aba",
+        "sub": "cantaba"
+      },
+      {
+        "stimulus": "leer",
+        "answer": "ia",
+        "tag": "ia",
+        "sub": "leía"
+      }
+    ]
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "id": "es-c6plus-u6-contraste",
+  "title": "Completa: indef ↔ imperf",
+  "subtitle": "U6 · achtergrond of gebeurtenis?",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste tijd (achtergrond → imperfecto, gebeurtenis → indefinido)",
+    "items": [
+      {
+        "stimulus": "(Yo) ___ en el patio cuando llegó mi madre.",
+        "options": [
+          "jugaba",
+          "jugué",
+          "juego"
+        ],
+        "answer": "jugaba",
+        "tag": "ct",
+        "sub": "achtergrond → imperfecto"
+      },
+      {
+        "stimulus": "Jugaba cuando, de repente, ___ a llover.",
+        "options": [
+          "empezó",
+          "empezaba",
+          "empieza"
+        ],
+        "answer": "empezó",
+        "tag": "ct",
+        "sub": "gebeurtenis → indefinido"
+      },
+      {
+        "stimulus": "___ de noche y llovía.",
+        "options": [
+          "Era",
+          "Fue",
+          "Es"
+        ],
+        "answer": "Era",
+        "tag": "ct",
+        "sub": "decor → imperfecto"
+      },
+      {
+        "stimulus": "Nina vivía en Cusco cuando ___ su hermano.",
+        "options": [
+          "nació",
+          "nacía",
+          "nace"
+        ],
+        "answer": "nació",
+        "tag": "ct",
+        "sub": "gebeurtenis → indefinido"
+      },
+      {
+        "stimulus": "Todos los días ___ al parque.",
+        "options": [
+          "iba",
+          "fui",
+          "voy"
+        ],
+        "answer": "iba",
+        "tag": "ct",
+        "sub": "gewoonte → imperfecto"
+      },
+      {
+        "stimulus": "Ayer ___ a mi abuela.",
+        "options": [
+          "visité",
+          "visitaba",
+          "visito"
+        ],
+        "answer": "visité",
+        "tag": "ct",
+        "sub": "ayer → indefinido"
+      },
+      {
+        "stimulus": "Mientras (yo) ___, sonó el teléfono.",
+        "options": [
+          "estudiaba",
+          "estudié",
+          "estudio"
+        ],
+        "answer": "estudiaba",
+        "tag": "ct",
+        "sub": "mientras → imperfecto"
+      },
+      {
+        "stimulus": "Un día ___ un concurso de dibujo.",
+        "options": [
+          "gané",
+          "ganaba",
+          "gano"
+        ],
+        "answer": "gané",
+        "tag": "ct",
+        "sub": "un día → indefinido"
+      },
+      {
+        "stimulus": "La casa ___ grande y bonita.",
+        "options": [
+          "era",
+          "fue",
+          "es"
+        ],
+        "answer": "era",
+        "tag": "ct",
+        "sub": "beschrijving → imperfecto"
+      },
+      {
+        "stimulus": "De repente, ___ mi tío con una bici.",
+        "options": [
+          "llegó",
+          "llegaba",
+          "llega"
+        ],
+        "answer": "llegó",
+        "tag": "ct",
+        "sub": "de repente → indefinido"
+      },
+      {
+        "stimulus": "Siempre ___ (nosotros) en la calle.",
+        "options": [
+          "jugábamos",
+          "jugamos",
+          "jugaron"
+        ],
+        "answer": "jugábamos",
+        "tag": "ct",
+        "sub": "siempre → imperfecto"
+      },
+      {
+        "stimulus": "Aquel verano ___ a Perú.",
+        "options": [
+          "viajé",
+          "viajaba",
+          "viajo"
+        ],
+        "answer": "viajé",
+        "tag": "ct",
+        "sub": "aquel verano → indefinido"
+      },
+      {
+        "stimulus": "(Ella) ___ tímida de pequeña.",
+        "options": [
+          "era",
+          "fue",
+          "es"
+        ],
+        "answer": "era",
+        "tag": "ct",
+        "sub": "beschrijving → imperfecto"
+      },
+      {
+        "stimulus": "Entonces ___ (ellos) la casa.",
+        "options": [
+          "vendieron",
+          "vendían",
+          "venden"
+        ],
+        "answer": "vendieron",
+        "tag": "ct",
+        "sub": "gebeurtenis → indefinido"
+      }
+    ]
+  }
+}

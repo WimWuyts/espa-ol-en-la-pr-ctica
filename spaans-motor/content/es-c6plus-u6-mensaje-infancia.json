@@ -1,0 +1,37 @@
+{
+  "id": "es-c6plus-u6-mensaje-infancia",
+  "title": "Mensaje de voz: mi infancia",
+  "subtitle": "U6 · neem een spraakbericht op",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "voicemessage",
+    "prompt": "Graba un mensaje de voz (30–40 s)",
+    "items": [
+      {
+        "text": "Cuenta cómo era tu infancia (usa 3 veces el imperfecto: vivía, tenía, jugaba).",
+        "cue": "mi infancia",
+        "tag": "im",
+        "sub": "gebruik: de pequeño/a vivía… tenía… iba…",
+        "tip": "3× het imperfecto (achtergrond/gewoonte)? Neem opnieuw op."
+      },
+      {
+        "text": "Cuenta algo que pasó un día (indefinido) con el fondo (imperfecto).",
+        "cue": "un recuerdo",
+        "tag": "ct",
+        "sub": "gebruik: Era… cuando, de repente, … pasó",
+        "tip": "achtergrond (imperf.) + gebeurtenis (indef.)? Herneem."
+      },
+      {
+        "text": "Compara antes y ahora y da tu opinión (más/menos… que · creo que antes…).",
+        "cue": "antes ↔ ahora",
+        "tag": "comp",
+        "sub": "gebruik: antes era más… que ahora · creo que…",
+        "tip": "una comparación + una opinión? Herneem."
+      }
+    ]
+  }
+}

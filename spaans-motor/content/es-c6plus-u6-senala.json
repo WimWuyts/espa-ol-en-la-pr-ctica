@@ -1,0 +1,206 @@
+{
+  "id": "es-c6plus-u6-senala",
+  "title": "Señala",
+  "subtitle": "U6 · klik het juiste antwoord",
+  "lang": "es",
+  "template": "point",
+  "options": {
+    "audio": false
+  },
+  "point": {
+    "prompt": "Klik het gevraagde item",
+    "mode": "one",
+    "rounds": [
+      {
+        "tag": "inf",
+        "sub": "señala algo de la escuela",
+        "targets": [
+          {
+            "label": "el patio",
+            "hit": true
+          },
+          {
+            "label": "los abuelos"
+          },
+          {
+            "label": "el juguete"
+          },
+          {
+            "label": "antes"
+          }
+        ]
+      },
+      {
+        "tag": "inf",
+        "sub": "señala algo de la infancia",
+        "targets": [
+          {
+            "label": "el juguete",
+            "hit": true
+          },
+          {
+            "label": "la maestra"
+          },
+          {
+            "label": "el vecino"
+          },
+          {
+            "label": "la época"
+          }
+        ]
+      },
+      {
+        "tag": "im",
+        "sub": "ser → imperfecto (él)",
+        "targets": [
+          {
+            "label": "era",
+            "hit": true
+          },
+          {
+            "label": "fue"
+          },
+          {
+            "label": "es"
+          },
+          {
+            "label": "sería"
+          }
+        ]
+      },
+      {
+        "tag": "im",
+        "sub": "ir → imperfecto (yo)",
+        "targets": [
+          {
+            "label": "iba",
+            "hit": true
+          },
+          {
+            "label": "fui"
+          },
+          {
+            "label": "voy"
+          },
+          {
+            "label": "iría"
+          }
+        ]
+      },
+      {
+        "tag": "im",
+        "sub": "«jugaba» = ?",
+        "targets": [
+          {
+            "label": "hij/zij speelde (gewoonte)",
+            "hit": true
+          },
+          {
+            "label": "hij speelde één keer"
+          },
+          {
+            "label": "hij speelt"
+          },
+          {
+            "label": "hij zal spelen"
+          }
+        ]
+      },
+      {
+        "tag": "ct",
+        "sub": "achtergrond of feit? «Era de noche»",
+        "targets": [
+          {
+            "label": "imperfecto (achtergrond)",
+            "hit": true
+          },
+          {
+            "label": "indefinido (feit)"
+          },
+          {
+            "label": "presente"
+          },
+          {
+            "label": "futuro"
+          }
+        ]
+      },
+      {
+        "tag": "comp",
+        "sub": "«groter dan» = ?",
+        "targets": [
+          {
+            "label": "más grande que",
+            "hit": true
+          },
+          {
+            "label": "tan grande como"
+          },
+          {
+            "label": "menos grande que"
+          },
+          {
+            "label": "el más grande"
+          }
+        ]
+      },
+      {
+        "tag": "comp",
+        "sub": "«beter dan» (irregular) = ?",
+        "targets": [
+          {
+            "label": "mejor que",
+            "hit": true
+          },
+          {
+            "label": "más bueno que"
+          },
+          {
+            "label": "tan bueno como"
+          },
+          {
+            "label": "peor que"
+          }
+        ]
+      },
+      {
+        "tag": "rel",
+        "sub": "«de plek waar» = ?",
+        "targets": [
+          {
+            "label": "el lugar donde",
+            "hit": true
+          },
+          {
+            "label": "el lugar que"
+          },
+          {
+            "label": "el lugar como"
+          },
+          {
+            "label": "el lugar cuando"
+          }
+        ]
+      },
+      {
+        "tag": "antes",
+        "sub": "«niet meer» = ?",
+        "targets": [
+          {
+            "label": "ya no",
+            "hit": true
+          },
+          {
+            "label": "todavía"
+          },
+          {
+            "label": "siempre"
+          },
+          {
+            "label": "a menudo"
+          }
+        ]
+      }
+    ]
+  }
+}

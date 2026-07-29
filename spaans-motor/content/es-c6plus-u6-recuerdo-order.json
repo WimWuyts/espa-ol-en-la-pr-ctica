@@ -1,0 +1,191 @@
+{
+  "id": "es-c6plus-u6-recuerdo-order",
+  "title": "Ordena la frase",
+  "subtitle": "U6 · zet het verhaal/de zin in de juiste volgorde",
+  "lang": "es",
+  "template": "order",
+  "options": {
+    "audio": false
+  },
+  "order": {
+    "prompt": "Tik in de logische volgorde",
+    "rounds": [
+      {
+        "tag": "imperf",
+        "sub": "beschrijving",
+        "items": [
+          {
+            "label": "De pequeña",
+            "key": 1
+          },
+          {
+            "label": "Nina",
+            "key": 2
+          },
+          {
+            "label": "vivía",
+            "key": 3
+          },
+          {
+            "label": "en un pueblo.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "contraste",
+        "sub": "achtergrond + gebeurtenis",
+        "items": [
+          {
+            "label": "Jugaba en el patio",
+            "key": 1
+          },
+          {
+            "label": "cuando,",
+            "key": 2
+          },
+          {
+            "label": "de repente,",
+            "key": 3
+          },
+          {
+            "label": "empezó a llover.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "comparar",
+        "sub": "vergelijking",
+        "items": [
+          {
+            "label": "El pueblo",
+            "key": 1
+          },
+          {
+            "label": "era más",
+            "key": 2
+          },
+          {
+            "label": "tranquilo",
+            "key": 3
+          },
+          {
+            "label": "que la ciudad.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "relativo",
+        "sub": "que",
+        "items": [
+          {
+            "label": "El niño",
+            "key": 1
+          },
+          {
+            "label": "que",
+            "key": 2
+          },
+          {
+            "label": "jugaba en la calle",
+            "key": 3
+          },
+          {
+            "label": "era yo.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "imperf",
+        "sub": "gewoonte",
+        "items": [
+          {
+            "label": "Todos los días",
+            "key": 1
+          },
+          {
+            "label": "íbamos",
+            "key": 2
+          },
+          {
+            "label": "al parque",
+            "key": 3
+          },
+          {
+            "label": "a jugar.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "comparar",
+        "sub": "tan … como",
+        "items": [
+          {
+            "label": "Mi hermano",
+            "key": 1
+          },
+          {
+            "label": "era tan",
+            "key": 2
+          },
+          {
+            "label": "alto",
+            "key": 3
+          },
+          {
+            "label": "como yo.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "contraste",
+        "sub": "un día",
+        "items": [
+          {
+            "label": "Un día,",
+            "key": 1
+          },
+          {
+            "label": "mientras comíamos,",
+            "key": 2
+          },
+          {
+            "label": "llegó",
+            "key": 3
+          },
+          {
+            "label": "mi tío.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "antes",
+        "sub": "antes ↔ ahora",
+        "items": [
+          {
+            "label": "Antes",
+            "key": 1
+          },
+          {
+            "label": "vivía en un pueblo;",
+            "key": 2
+          },
+          {
+            "label": "en cambio,",
+            "key": 3
+          },
+          {
+            "label": "ahora vivo en la ciudad.",
+            "key": 4
+          }
+        ]
+      }
+    ]
+  }
+}
