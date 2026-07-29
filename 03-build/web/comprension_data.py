@@ -10,30 +10,31 @@
 #                  glosario:[[es,nl]], rallentado:[...]}
 
 LECTURA = {
- 1: {  # ── DEMO (U1) — vervang gerust door NotebookLM-output ──
+ 1: {  # ── NotebookLM-output (auteur), genormaliseerd naar het vaste format ──
    "tipo": "Chat de WhatsApp · presentaciones",
-   "contexto_nl": "Lucía is nieuw op school en chat met Tom.",
+   "contexto_nl": "Sofía en Mateo sturen elkaar voor het eerst een WhatsApp-berichtje om kennis te maken.",
    "texto": [
-     ["Lucía", "¡Hola! Me llamo Lucía. ¿Cómo te llamas?"],
-     ["Tom", "Hola. Yo soy Tom. Encantado."],
-     ["Lucía", "Encantada, Tom. ¿Cómo estás?"],
-     ["Tom", "Muy bien, gracias. ¿Y tú?"],
-     ["Lucía", "Bien también. Soy la nueva estudiante."],
-     ["Tom", "¡Bienvenida! Hasta luego, Lucía."],
-     ["Lucía", "¡Adiós! Hasta luego."],
+     ["Sofía", "¡Hola! ¿Cómo estás?"],
+     ["Mateo", "¡Hola! Bien, gracias. ¿Cómo te llamas?"],
+     ["Sofía", "Me llamo Sofía. ¿Y tú?"],
+     ["Mateo", "Yo soy Mateo. ¿De dónde eres?"],
+     ["Sofía", "Soy de Bruselas. ¿Y tú?"],
+     ["Mateo", "Soy de Madrid. ¡Encantado!"],
+     ["Sofía", "¡Encantada! Adiós."],
+     ["Mateo", "Hasta luego."],
    ],
    "global": [
-     {"q": "¿Cómo se llama la chica?", "opts": ["Lucía", "Tom", "Ana"], "a": 0},
-     {"q": "¿Cómo está Tom?", "opts": ["Muy bien", "Cansado", "Enfermo"], "a": 0},
+     {"q": "¿De qué hablan Sofía y Mateo?", "opts": ["De sus aficiones y el colegio", "De su nombre y de dónde son", "De sus planes para el finde"], "a": 1},
+     {"q": "¿Cómo está Mateo?", "opts": ["Bien", "Cansado", "Enfermo"], "a": 0},
    ],
    "detalle": [
-     {"q": "Tom es la nueva estudiante.", "vf": False},
-     {"q": "Lucía dice «encantada».", "vf": True},
-     {"q": "Tom dice «¡bienvenida!».", "vf": True},
-     {"q": "Lucía está mal.", "vf": False},
+     {"q": "Sofía es de Madrid.", "vf": False},
+     {"q": "Mateo es de Madrid.", "vf": True},
+     {"q": "Mateo está bien.", "vf": True},
+     {"q": "Sofía dice «encantada».", "vf": True},
    ],
-   "transfer": "¿Y tú? ¿Cómo te llamas y cómo estás?",
-   "glosario": [["la nueva estudiante", "de nieuwe leerling"], ["¡Bienvenida!", "Welkom!"], ["también", "ook"]],
+   "transfer": "¿Y tú? Preséntate: ¿cómo te llamas y de dónde eres?",
+   "glosario": [["¿De dónde eres?", "Waar kom je vandaan?"], ["Soy de…", "Ik kom uit…"], ["Encantado/a", "Aangenaam"], ["Hasta luego", "Tot ziens"]],
  },
  2: None,
  3: None,
