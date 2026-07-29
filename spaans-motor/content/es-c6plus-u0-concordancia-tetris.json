@@ -1,0 +1,134 @@
+{
+  "id": "es-c6plus-u0-concordancia-tetris",
+  "title": "Concordancia Tetris",
+  "subtitle": "U0 · laat elk woord in de juiste vorm vallen",
+  "lang": "es",
+  "template": "tetris",
+  "options": {
+    "rows": 9,
+    "speed": 1300,
+    "audio": false
+  },
+  "classify": {
+    "categories": [
+      {
+        "id": "alto",
+        "label": "alto",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "alta",
+        "label": "alta",
+        "glaze": "#C4402C"
+      },
+      {
+        "id": "altos",
+        "label": "altos",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "altas",
+        "label": "altas",
+        "glaze": "#E0A22F"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "el chico",
+        "answer": "alto",
+        "tag": "alto",
+        "sub": "m ev"
+      },
+      {
+        "stimulus": "la chica",
+        "answer": "alta",
+        "tag": "alta",
+        "sub": "f ev"
+      },
+      {
+        "stimulus": "los chicos",
+        "answer": "altos",
+        "tag": "altos",
+        "sub": "m pl"
+      },
+      {
+        "stimulus": "las chicas",
+        "answer": "altas",
+        "tag": "altas",
+        "sub": "f pl"
+      },
+      {
+        "stimulus": "el profesor",
+        "answer": "alto",
+        "tag": "alto",
+        "sub": "m ev"
+      },
+      {
+        "stimulus": "la profesora",
+        "answer": "alta",
+        "tag": "alta",
+        "sub": "f ev"
+      },
+      {
+        "stimulus": "los amigos",
+        "answer": "altos",
+        "tag": "altos",
+        "sub": "m pl"
+      },
+      {
+        "stimulus": "las amigas",
+        "answer": "altas",
+        "tag": "altas",
+        "sub": "f pl"
+      },
+      {
+        "stimulus": "el hermano",
+        "answer": "alto",
+        "tag": "alto",
+        "sub": "m ev"
+      },
+      {
+        "stimulus": "la hermana",
+        "answer": "alta",
+        "tag": "alta",
+        "sub": "f ev"
+      },
+      {
+        "stimulus": "los padres",
+        "answer": "altos",
+        "tag": "altos",
+        "sub": "m pl"
+      },
+      {
+        "stimulus": "las madres",
+        "answer": "altas",
+        "tag": "altas",
+        "sub": "f pl"
+      },
+      {
+        "stimulus": "el niño",
+        "answer": "alto",
+        "tag": "alto",
+        "sub": "m ev"
+      },
+      {
+        "stimulus": "la niña",
+        "answer": "alta",
+        "tag": "alta",
+        "sub": "f ev"
+      },
+      {
+        "stimulus": "los perros",
+        "answer": "altos",
+        "tag": "altos",
+        "sub": "m pl"
+      },
+      {
+        "stimulus": "las gatas",
+        "answer": "altas",
+        "tag": "altas",
+        "sub": "f pl"
+      }
+    ]
+  }
+}

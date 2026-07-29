@@ -1,0 +1,72 @@
+{
+  "id": "es-c6plus-u0-saludos-memoria",
+  "title": "Memoria del reencuentro",
+  "subtitle": "U0 · zoek het paar español ↔ nederlands",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om en zoek het woord + de vertaling",
+    "pairs": [
+      {
+        "a": "hola",
+        "b": "hallo"
+      },
+      {
+        "a": "buenos días",
+        "b": "goedemorgen"
+      },
+      {
+        "a": "adiós",
+        "b": "tot ziens"
+      },
+      {
+        "a": "me llamo",
+        "b": "ik heet"
+      },
+      {
+        "a": "soy de",
+        "b": "ik kom uit"
+      },
+      {
+        "a": "tengo … años",
+        "b": "ik ben … jaar"
+      },
+      {
+        "a": "¿cómo te llamas?",
+        "b": "hoe heet je?"
+      },
+      {
+        "a": "encantado",
+        "b": "aangenaam"
+      },
+      {
+        "a": "gracias",
+        "b": "dank je"
+      },
+      {
+        "a": "la lengua",
+        "b": "de taal"
+      },
+      {
+        "a": "el amigo",
+        "b": "de vriend"
+      },
+      {
+        "a": "vivo en",
+        "b": "ik woon in"
+      },
+      {
+        "a": "¿de dónde eres?",
+        "b": "waar kom je vandaan?"
+      },
+      {
+        "a": "hasta luego",
+        "b": "tot straks"
+      }
+    ]
+  }
+}

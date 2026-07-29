@@ -1,0 +1,485 @@
+[
+ {
+  "es": "hola",
+  "nl": "hallo",
+  "soort": "expr.",
+  "ej": "¡Hola! ¿Qué tal?",
+  "grp": "saludos"
+ },
+ {
+  "es": "buenos días",
+  "nl": "goedemorgen",
+  "soort": "expr.",
+  "ej": "Buenos días, profe.",
+  "grp": "saludos"
+ },
+ {
+  "es": "buenas tardes",
+  "nl": "goedemiddag",
+  "soort": "expr.",
+  "ej": "Buenas tardes a todos.",
+  "grp": "saludos"
+ },
+ {
+  "es": "buenas noches",
+  "nl": "goedenavond / goedenacht",
+  "soort": "expr.",
+  "ej": "Buenas noches, hasta mañana.",
+  "grp": "saludos"
+ },
+ {
+  "es": "¿qué tal?",
+  "nl": "hoe gaat het?",
+  "soort": "expr.",
+  "ej": "Hola Nina, ¿qué tal?",
+  "grp": "saludos"
+ },
+ {
+  "es": "¿cómo estás?",
+  "nl": "hoe gaat het met je?",
+  "soort": "expr.",
+  "ej": "¿Cómo estás hoy?",
+  "grp": "saludos"
+ },
+ {
+  "es": "adiós",
+  "nl": "dag / tot ziens",
+  "soort": "expr.",
+  "ej": "Adiós, ¡hasta luego!",
+  "grp": "saludos"
+ },
+ {
+  "es": "hasta luego",
+  "nl": "tot straks",
+  "soort": "expr.",
+  "ej": "Me voy, hasta luego.",
+  "grp": "saludos"
+ },
+ {
+  "es": "me llamo…",
+  "nl": "ik heet…",
+  "soort": "expr.",
+  "ej": "Me llamo Diego.",
+  "grp": "presentarse"
+ },
+ {
+  "es": "¿cómo te llamas?",
+  "nl": "hoe heet je?",
+  "soort": "expr.",
+  "ej": "¿Cómo te llamas?",
+  "grp": "presentarse"
+ },
+ {
+  "es": "soy…",
+  "nl": "ik ben…",
+  "soort": "v. (ser)",
+  "ej": "Soy estudiante.",
+  "grp": "presentarse"
+ },
+ {
+  "es": "tengo … años",
+  "nl": "ik ben … jaar",
+  "soort": "expr. (tener)",
+  "ej": "Tengo dieciséis años.",
+  "grp": "presentarse"
+ },
+ {
+  "es": "¿cuántos años tienes?",
+  "nl": "hoe oud ben je?",
+  "soort": "expr.",
+  "ej": "¿Cuántos años tienes?",
+  "grp": "presentarse"
+ },
+ {
+  "es": "vivo en…",
+  "nl": "ik woon in…",
+  "soort": "v. (vivir)",
+  "ej": "Vivo en Gante.",
+  "grp": "presentarse"
+ },
+ {
+  "es": "soy de…",
+  "nl": "ik kom uit…",
+  "soort": "expr. (ser)",
+  "ej": "Soy de Bélgica.",
+  "grp": "presentarse"
+ },
+ {
+  "es": "¿de dónde eres?",
+  "nl": "waar kom je vandaan?",
+  "soort": "expr.",
+  "ej": "¿De dónde eres?",
+  "grp": "presentarse"
+ },
+ {
+  "es": "encantado / encantada",
+  "nl": "aangenaam",
+  "soort": "adj.",
+  "ej": "Encantada, soy Lucía.",
+  "grp": "presentarse"
+ },
+ {
+  "es": "mucho gusto",
+  "nl": "aangenaam kennis te maken",
+  "soort": "expr.",
+  "ej": "—Soy Mateo. —Mucho gusto.",
+  "grp": "presentarse"
+ },
+ {
+  "es": "¿cómo se dice…?",
+  "nl": "hoe zeg je…?",
+  "soort": "expr.",
+  "ej": "¿Cómo se dice 'boekentas'?",
+  "grp": "clase"
+ },
+ {
+  "es": "¿qué significa…?",
+  "nl": "wat betekent…?",
+  "soort": "expr.",
+  "ej": "¿Qué significa 'mochila'?",
+  "grp": "clase"
+ },
+ {
+  "es": "no entiendo",
+  "nl": "ik begrijp het niet",
+  "soort": "expr.",
+  "ej": "Perdón, no entiendo.",
+  "grp": "clase"
+ },
+ {
+  "es": "¿puedes repetir?",
+  "nl": "kun je herhalen?",
+  "soort": "expr.",
+  "ej": "¿Puedes repetir, por favor?",
+  "grp": "clase"
+ },
+ {
+  "es": "más despacio",
+  "nl": "trager",
+  "soort": "expr.",
+  "ej": "Más despacio, por favor.",
+  "grp": "clase"
+ },
+ {
+  "es": "por favor",
+  "nl": "alsjeblieft",
+  "soort": "expr.",
+  "ej": "Una pregunta, por favor.",
+  "grp": "clase"
+ },
+ {
+  "es": "gracias",
+  "nl": "dank je",
+  "soort": "expr.",
+  "ej": "Muchas gracias, profe.",
+  "grp": "clase"
+ },
+ {
+  "es": "tengo una pregunta",
+  "nl": "ik heb een vraag",
+  "soort": "expr.",
+  "ej": "Profe, tengo una pregunta.",
+  "grp": "clase"
+ },
+ {
+  "es": "España",
+  "nl": "Spanje",
+  "soort": "sust. f.",
+  "ej": "Lucía es de España.",
+  "grp": "paises"
+ },
+ {
+  "es": "México",
+  "nl": "Mexico",
+  "soort": "sust. m.",
+  "ej": "Diego vive en México.",
+  "grp": "paises"
+ },
+ {
+  "es": "Colombia",
+  "nl": "Colombia",
+  "soort": "sust. f.",
+  "ej": "Valen es de Colombia.",
+  "grp": "paises"
+ },
+ {
+  "es": "Perú",
+  "nl": "Peru",
+  "soort": "sust. m.",
+  "ej": "Nina vive en Perú.",
+  "grp": "paises"
+ },
+ {
+  "es": "Argentina",
+  "nl": "Argentinië",
+  "soort": "sust. f.",
+  "ej": "Mateo es de Argentina.",
+  "grp": "paises"
+ },
+ {
+  "es": "Bélgica",
+  "nl": "België",
+  "soort": "sust. f.",
+  "ej": "Yo soy de Bélgica.",
+  "grp": "paises"
+ },
+ {
+  "es": "Chile",
+  "nl": "Chili",
+  "soort": "sust. m.",
+  "ej": "Chile está en Sudamérica.",
+  "grp": "paises"
+ },
+ {
+  "es": "el mundo hispano",
+  "nl": "de Spaanstalige wereld",
+  "soort": "sust. m.",
+  "ej": "El mundo hispano tiene 21 países.",
+  "grp": "paises"
+ },
+ {
+  "es": "español / española",
+  "nl": "Spaans (nat.)",
+  "soort": "adj.",
+  "ej": "Lucía es española.",
+  "grp": "nacionalidades"
+ },
+ {
+  "es": "mexicano / mexicana",
+  "nl": "Mexicaans",
+  "soort": "adj.",
+  "ej": "Diego es mexicano.",
+  "grp": "nacionalidades"
+ },
+ {
+  "es": "colombiano / colombiana",
+  "nl": "Colombiaans",
+  "soort": "adj.",
+  "ej": "Valen es colombiana.",
+  "grp": "nacionalidades"
+ },
+ {
+  "es": "peruano / peruana",
+  "nl": "Peruaans",
+  "soort": "adj.",
+  "ej": "Nina es peruana.",
+  "grp": "nacionalidades"
+ },
+ {
+  "es": "belga",
+  "nl": "Belgisch",
+  "soort": "adj.",
+  "ej": "Yo soy belga.",
+  "grp": "nacionalidades"
+ },
+ {
+  "es": "la nacionalidad",
+  "nl": "de nationaliteit",
+  "soort": "sust. f.",
+  "ej": "¿Cuál es tu nacionalidad?",
+  "grp": "nacionalidades"
+ },
+ {
+  "es": "la lengua / el idioma",
+  "nl": "de taal",
+  "soort": "sust. f./m.",
+  "ej": "El español es una lengua bonita.",
+  "grp": "nacionalidades"
+ },
+ {
+  "es": "hablar",
+  "nl": "spreken",
+  "soort": "v. reg. (-ar)",
+  "ej": "Hablo español y neerlandés.",
+  "grp": "nacionalidades"
+ },
+ {
+  "es": "el neerlandés",
+  "nl": "het Nederlands",
+  "soort": "sust. m.",
+  "ej": "En Flandes hablamos neerlandés.",
+  "grp": "nacionalidades"
+ },
+ {
+  "es": "¿cómo eres?",
+  "nl": "hoe ben je? (karakter/uiterlijk)",
+  "soort": "expr.",
+  "ej": "¿Cómo eres? —Soy alegre.",
+  "grp": "descripcion"
+ },
+ {
+  "es": "alto / alta",
+  "nl": "lang (persoon)",
+  "soort": "adj.",
+  "ej": "Mateo es alto.",
+  "grp": "descripcion"
+ },
+ {
+  "es": "bajo / baja",
+  "nl": "klein (persoon)",
+  "soort": "adj.",
+  "ej": "Mi hermana es baja.",
+  "grp": "descripcion"
+ },
+ {
+  "es": "simpático / simpática",
+  "nl": "aardig",
+  "soort": "adj.",
+  "ej": "Diego es muy simpático.",
+  "grp": "descripcion"
+ },
+ {
+  "es": "moreno / morena",
+  "nl": "donker (haar)",
+  "soort": "adj.",
+  "ej": "Lucía es morena.",
+  "grp": "descripcion"
+ },
+ {
+  "es": "rubio / rubia",
+  "nl": "blond",
+  "soort": "adj.",
+  "ej": "Nina no es rubia.",
+  "grp": "descripcion"
+ },
+ {
+  "es": "alegre",
+  "nl": "vrolijk",
+  "soort": "adj.",
+  "ej": "Valen es muy alegre.",
+  "grp": "descripcion"
+ },
+ {
+  "es": "trabajador / trabajadora",
+  "nl": "hardwerkend",
+  "soort": "adj.",
+  "ej": "Soy trabajador en clase.",
+  "grp": "descripcion"
+ },
+ {
+  "es": "la familia",
+  "nl": "het gezin / de familie",
+  "soort": "sust. f.",
+  "ej": "Mi familia es pequeña.",
+  "grp": "familia"
+ },
+ {
+  "es": "el padre / la madre",
+  "nl": "de vader / de moeder",
+  "soort": "sust. m./f.",
+  "ej": "Mi madre es profesora.",
+  "grp": "familia"
+ },
+ {
+  "es": "el hermano / la hermana",
+  "nl": "de broer / de zus",
+  "soort": "sust. m./f.",
+  "ej": "Tengo un hermano.",
+  "grp": "familia"
+ },
+ {
+  "es": "el amigo / la amiga",
+  "nl": "de vriend / de vriendin",
+  "soort": "sust. m./f.",
+  "ej": "Diego es mi amigo.",
+  "grp": "familia"
+ },
+ {
+  "es": "tener",
+  "nl": "hebben",
+  "soort": "v. irreg.",
+  "ej": "Tengo dos hermanas.",
+  "grp": "familia"
+ },
+ {
+  "es": "los números",
+  "nl": "de getallen",
+  "soort": "sust. m. pl.",
+  "ej": "Repasamos los números.",
+  "grp": "numeros"
+ },
+ {
+  "es": "¿cuántos? / ¿cuántas?",
+  "nl": "hoeveel?",
+  "soort": "interr.",
+  "ej": "¿Cuántos años tienes?",
+  "grp": "numeros"
+ },
+ {
+  "es": "veinte",
+  "nl": "twintig",
+  "soort": "num.",
+  "ej": "Tengo veinte euros.",
+  "grp": "numeros"
+ },
+ {
+  "es": "cincuenta",
+  "nl": "vijftig",
+  "soort": "num.",
+  "ej": "Cincuenta más cincuenta es cien.",
+  "grp": "numeros"
+ },
+ {
+  "es": "cien",
+  "nl": "honderd",
+  "soort": "num.",
+  "ej": "Cien por cien.",
+  "grp": "numeros"
+ },
+ {
+  "es": "ser",
+  "nl": "zijn (permanent)",
+  "soort": "v. irreg.",
+  "ej": "Soy de Bélgica.",
+  "grp": "verbos"
+ },
+ {
+  "es": "estar",
+  "nl": "zijn (plaats/gevoel)",
+  "soort": "v. irreg.",
+  "ej": "Estoy en clase.",
+  "grp": "verbos"
+ },
+ {
+  "es": "hacer",
+  "nl": "doen / maken",
+  "soort": "v. irreg.",
+  "ej": "Hago mis deberes.",
+  "grp": "verbos"
+ },
+ {
+  "es": "ir",
+  "nl": "gaan",
+  "soort": "v. irreg.",
+  "ej": "Voy al instituto.",
+  "grp": "verbos"
+ },
+ {
+  "es": "venir",
+  "nl": "komen",
+  "soort": "v. irreg.",
+  "ej": "Vengo de casa.",
+  "grp": "verbos"
+ },
+ {
+  "es": "dar",
+  "nl": "geven",
+  "soort": "v. irreg.",
+  "ej": "Doy las gracias.",
+  "grp": "verbos"
+ },
+ {
+  "es": "vivir",
+  "nl": "wonen / leven",
+  "soort": "v. reg. (-ir)",
+  "ej": "Vivo en Flandes.",
+  "grp": "verbos"
+ },
+ {
+  "es": "llamarse",
+  "nl": "heten",
+  "soort": "v. reflex.",
+  "ej": "Me llamo Ana.",
+  "grp": "verbos"
+ }
+]

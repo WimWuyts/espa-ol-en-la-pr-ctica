@@ -1,0 +1,124 @@
+{
+  "id": "es-c6plus-u0-formal-informal",
+  "title": "¿formal o informal?",
+  "subtitle": "U0 · tú of usted?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Is deze uitdrukking formal (usted) of informal (tú)?",
+    "categories": [
+      {
+        "id": "formal",
+        "label": "formal<br><small>usted</small>",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "informal",
+        "label": "informal<br><small>tú</small>",
+        "glaze": "#2E8E68"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "¿Cómo estás?",
+        "answer": "informal",
+        "tag": "informal",
+        "sub": "tú → estás"
+      },
+      {
+        "stimulus": "¿Cómo está usted?",
+        "answer": "formal",
+        "tag": "formal",
+        "sub": "usted → está"
+      },
+      {
+        "stimulus": "¿De dónde eres?",
+        "answer": "informal",
+        "tag": "informal",
+        "sub": "tú → eres"
+      },
+      {
+        "stimulus": "¿De dónde es usted?",
+        "answer": "formal",
+        "tag": "formal",
+        "sub": "usted → es"
+      },
+      {
+        "stimulus": "¿Cómo te llamas?",
+        "answer": "informal",
+        "tag": "informal",
+        "sub": "tú → te llamas"
+      },
+      {
+        "stimulus": "¿Cómo se llama usted?",
+        "answer": "formal",
+        "tag": "formal",
+        "sub": "usted → se llama"
+      },
+      {
+        "stimulus": "¡Hola! ¿Qué tal?",
+        "answer": "informal",
+        "tag": "informal",
+        "sub": "informele groet"
+      },
+      {
+        "stimulus": "Buenos días, señor.",
+        "answer": "formal",
+        "tag": "formal",
+        "sub": "formeel, señor"
+      },
+      {
+        "stimulus": "¿Tienes un boli?",
+        "answer": "informal",
+        "tag": "informal",
+        "sub": "tú → tienes"
+      },
+      {
+        "stimulus": "¿Tiene usted hora?",
+        "answer": "formal",
+        "tag": "formal",
+        "sub": "usted → tiene"
+      },
+      {
+        "stimulus": "¿Dónde vives?",
+        "answer": "informal",
+        "tag": "informal",
+        "sub": "tú → vives"
+      },
+      {
+        "stimulus": "¿Dónde vive usted?",
+        "answer": "formal",
+        "tag": "formal",
+        "sub": "usted → vive"
+      },
+      {
+        "stimulus": "Encantado de conocerle.",
+        "answer": "formal",
+        "tag": "formal",
+        "sub": "formeel/beleefd"
+      },
+      {
+        "stimulus": "Oye, ¿me ayudas?",
+        "answer": "informal",
+        "tag": "informal",
+        "sub": "'oye' + tú"
+      },
+      {
+        "stimulus": "¿Puede repetir, por favor?",
+        "answer": "formal",
+        "tag": "formal",
+        "sub": "usted → puede"
+      },
+      {
+        "stimulus": "¿Me pasas el boli?",
+        "answer": "informal",
+        "tag": "informal",
+        "sub": "tú → pasas"
+      }
+    ]
+  }
+}

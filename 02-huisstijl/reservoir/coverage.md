@@ -510,3 +510,22 @@
 | VS-021 | Sterke dubbele woordenschatpagina | ✓ |  |  |  |  |  | | | | |
 | VS-022 | Herbruikbare woordenschatcomponenten voor Clau |  |  |  |  |  |  | | | | |
 | VS-023 | Sterkste combinatie voor woordenschat | ✓ |  |  |  |  |  | | | | |
+---
+
+## C6+ (morado) — dekking per unit
+
+> C6+ hergebruikt hetzelfde reservoir; hieronder de **eerste/expliciete inzet per C6+-unit**.
+> Doel blijft: tegen het einde van C6+ zoveel mogelijk nog-niet-gebruikte items érgens ingezet.
+
+### C6+ · U0 «¡Volvemos!» (reencuentro · presente/género/países) — 2026-07-27
+Bewust gekozen (cocktail `01-cursussen/06-vervolg/U0/U0_cocktail.md`), effectief gebouwd over de 4 formaten:
+- **werkvorm (WV):** WV-081 (interview zinsframes) · WV-064 (substitutietabel) · WV-076 (foutenkliniek) · WV-003 (luisteren&nummeren) · WV-059 (patroon sorteren) · WV-004/005 (koppelen) · WV-030 (vraag bij antwoord) · WV-039/083 (zoek iemand die) · WV-061 (meerkeuzecloze) · WV-007 (intruso) · WV-028 (mini-dictee).
+- **grammatica-patroon (VG):** VG-001 (ontdekken in beeld) · VG-004 (werkwoordmachine) · VG-005 (vervoegingswiel/ser-reveal) · VG-010 (overeenkomst zichtbaar) · VG-011 (grammaticale paren) · VG-021 (lidwoord-zoom) · VG-016 (vraag-antwoord-spiegel) · VG-025 (regel in één zin) · VG-029 (steun afbouwen).
+- **grammaticatool (GT):** GT-001 (kleurgecodeerde zin) · GT-008 (vervoegingscirkel) · GT-015 (keuze met betekenisverschil) · GT-016 (sleepbare volgorde) · GT-024/025 (scène/samenvatting).
+- **woordenschat-patroon (VS):** VS-003 (clusters) · VS-011 (via personages) · VS-014 (mochila/koffer) · VS-007 (tegenstellingsparen) · VS-020 (Mis palabras).
+- **vaardigheid (SK):** SK-001 (visuele tekstintro) · SK-011/013/014 (voorspellen/globaal/scannen) · SK-018/019 (juist-fout+bewijs) · SK-053 (meerdere luisterrondes) · SK-077 (dialoogkaart) · SK-081 (model & variatie) · SK-085/088 (opname/shadowing) · SK-104 (spraakbericht) · SK-113–120 (ketens lezen→schrijven/luisteren→spreken/eindtaak).
+- **layout (LAY):** LAY-011 (hero) · LAY-023 (onthoudkaart) · LAY-039 (reiskaart cast) · LAY-041 (genummerde stappen) · LAY-049 (QR-blok) · LAY-025 (cultuurkader) · LAY-042 (sleepzones).
+- **powerpoint (PPT):** PPT-011 (klik-onthullen) · PPT-012 (meerkeuze-feedback) · PPT-014 (zoek de fout) · PPT-022 (beeld-woord-audio) · PPT-028 (vervoegingswiel) · PPT-032 (pauzeer/voorspel) · PPT-045 (vier-vaardighedenmissie) · PPT-006 (thuis/terug/hulp).
+- **designcomponent (DS):** DS-004 (unitopener) · DS-008 (grammaticaspread) · DS-027 (personages) · DS-029 (avatars) · DS-034 (kaarten/routes) · DS-043 (compositie A) · DS-049 (route/tijdlijn).
+
+**Quota U0 ✓:** ≥1 luisterdialoog (§1/§4 + hub-audio) · ≥1 rijke Lectura (perfiles Diego/Nina) · 3 opname-oefeningen · 1 traditionele presente-cloze · 8 verschillende motor-speltypes (memory·match·classify·cloze·tetris·order·point·speak) · traditionele oefenbatterij (gap-fill·substitutie·matching·dictee·ordenen) · HTML-hub ~100+ oefeningen met «otra serie».

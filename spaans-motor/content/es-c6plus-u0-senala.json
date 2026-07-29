@@ -1,0 +1,206 @@
+{
+  "id": "es-c6plus-u0-senala",
+  "title": "Señala",
+  "subtitle": "U0 · klik het juiste antwoord",
+  "lang": "es",
+  "template": "point",
+  "options": {
+    "audio": false
+  },
+  "point": {
+    "prompt": "Klik het gevraagde item",
+    "mode": "one",
+    "rounds": [
+      {
+        "tag": "pais",
+        "sub": "señala el país (no la nacionalidad)",
+        "targets": [
+          {
+            "label": "español"
+          },
+          {
+            "label": "México",
+            "hit": true
+          },
+          {
+            "label": "peruano"
+          },
+          {
+            "label": "belga"
+          }
+        ]
+      },
+      {
+        "tag": "nacionalidad",
+        "sub": "señala la nacionalidad",
+        "targets": [
+          {
+            "label": "España"
+          },
+          {
+            "label": "Perú"
+          },
+          {
+            "label": "colombiano",
+            "hit": true
+          },
+          {
+            "label": "Chile"
+          }
+        ]
+      },
+      {
+        "tag": "saludo",
+        "sub": "señala el saludo (begroeting)",
+        "targets": [
+          {
+            "label": "adiós"
+          },
+          {
+            "label": "buenos días",
+            "hit": true
+          },
+          {
+            "label": "hasta luego"
+          },
+          {
+            "label": "gracias"
+          }
+        ]
+      },
+      {
+        "tag": "verbo",
+        "sub": "señala la forma de «yo» (ser)",
+        "targets": [
+          {
+            "label": "eres"
+          },
+          {
+            "label": "es"
+          },
+          {
+            "label": "soy",
+            "hit": true
+          },
+          {
+            "label": "somos"
+          }
+        ]
+      },
+      {
+        "tag": "verbo",
+        "sub": "señala la forma de «tú» (tener)",
+        "targets": [
+          {
+            "label": "tengo"
+          },
+          {
+            "label": "tienes",
+            "hit": true
+          },
+          {
+            "label": "tiene"
+          },
+          {
+            "label": "tienen"
+          }
+        ]
+      },
+      {
+        "tag": "genero",
+        "sub": "señala la palabra femenina (la)",
+        "targets": [
+          {
+            "label": "libro"
+          },
+          {
+            "label": "problema"
+          },
+          {
+            "label": "casa",
+            "hit": true
+          },
+          {
+            "label": "día"
+          }
+        ]
+      },
+      {
+        "tag": "adjetivo",
+        "sub": "señala el adjetivo femenino",
+        "targets": [
+          {
+            "label": "alto"
+          },
+          {
+            "label": "simpática",
+            "hit": true
+          },
+          {
+            "label": "trabajador"
+          },
+          {
+            "label": "morenos"
+          }
+        ]
+      },
+      {
+        "tag": "lengua",
+        "sub": "señala una lengua",
+        "targets": [
+          {
+            "label": "España"
+          },
+          {
+            "label": "el quechua",
+            "hit": true
+          },
+          {
+            "label": "Madrid"
+          },
+          {
+            "label": "belga"
+          }
+        ]
+      },
+      {
+        "tag": "despedida",
+        "sub": "señala la despedida (afscheid)",
+        "targets": [
+          {
+            "label": "hola"
+          },
+          {
+            "label": "buenas tardes"
+          },
+          {
+            "label": "adiós",
+            "hit": true
+          },
+          {
+            "label": "encantado"
+          }
+        ]
+      },
+      {
+        "tag": "numero",
+        "sub": "señala el número cien (100)",
+        "targets": [
+          {
+            "label": "veinte"
+          },
+          {
+            "label": "cincuenta"
+          },
+          {
+            "label": "cien",
+            "hit": true
+          },
+          {
+            "label": "catorce"
+          }
+        ]
+      }
+    ]
+  }
+}

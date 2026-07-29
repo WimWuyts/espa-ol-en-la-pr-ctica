@@ -1,0 +1,191 @@
+{
+  "id": "es-c6plus-u0-presentacion-order",
+  "title": "Ordena la presentación",
+  "subtitle": "U0 · zet de zinnen in de logische volgorde",
+  "lang": "es",
+  "template": "order",
+  "options": {
+    "audio": false
+  },
+  "order": {
+    "prompt": "Tik de zinnen in de logische volgorde van een presentatie",
+    "rounds": [
+      {
+        "tag": "pres",
+        "sub": "saludar → nombre → origen → edad",
+        "items": [
+          {
+            "label": "¡Hola! ¿Qué tal?",
+            "key": 1
+          },
+          {
+            "label": "Me llamo Nina.",
+            "key": 2
+          },
+          {
+            "label": "Soy de Perú.",
+            "key": 3
+          },
+          {
+            "label": "Tengo dieciséis años.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "pres",
+        "sub": "saludar → nombre → dónde vives → lengua",
+        "items": [
+          {
+            "label": "Buenos días.",
+            "key": 1
+          },
+          {
+            "label": "Me llamo Diego.",
+            "key": 2
+          },
+          {
+            "label": "Vivo en Ciudad de México.",
+            "key": 3
+          },
+          {
+            "label": "Hablo español.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "pres",
+        "sub": "pregunta → respuesta → repregunta → respuesta",
+        "items": [
+          {
+            "label": "¿Cómo te llamas?",
+            "key": 1
+          },
+          {
+            "label": "Me llamo Lucía, ¿y tú?",
+            "key": 2
+          },
+          {
+            "label": "Yo soy Mateo.",
+            "key": 3
+          },
+          {
+            "label": "¡Mucho gusto, Mateo!",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "pres",
+        "sub": "origen → nacionalidad → lengua → carácter",
+        "items": [
+          {
+            "label": "Soy de Cartagena.",
+            "key": 1
+          },
+          {
+            "label": "Soy colombiana.",
+            "key": 2
+          },
+          {
+            "label": "Hablo español.",
+            "key": 3
+          },
+          {
+            "label": "Soy muy alegre.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "pres",
+        "sub": "saludar → cómo estás → responder → despedir",
+        "items": [
+          {
+            "label": "¡Hola, Lucía!",
+            "key": 1
+          },
+          {
+            "label": "¿Cómo estás?",
+            "key": 2
+          },
+          {
+            "label": "Muy bien, gracias.",
+            "key": 3
+          },
+          {
+            "label": "¡Hasta luego!",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "pres",
+        "sub": "formal: saludar → nombre → usted → despedir",
+        "items": [
+          {
+            "label": "Buenos días, señora.",
+            "key": 1
+          },
+          {
+            "label": "Me llamo Ana García.",
+            "key": 2
+          },
+          {
+            "label": "¿Y cómo se llama usted?",
+            "key": 3
+          },
+          {
+            "label": "Encantada.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "pres",
+        "sub": "clase: pedir → responder → repetir → gracias",
+        "items": [
+          {
+            "label": "Perdón, ¿cómo se dice 'boekentas'?",
+            "key": 1
+          },
+          {
+            "label": "Se dice «la mochila».",
+            "key": 2
+          },
+          {
+            "label": "¿Puedes repetir, por favor?",
+            "key": 3
+          },
+          {
+            "label": "«La mochila». ¡Gracias!",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "pres",
+        "sub": "números: presentar edad y clase",
+        "items": [
+          {
+            "label": "Me llamo Tom.",
+            "key": 1
+          },
+          {
+            "label": "Tengo quince años.",
+            "key": 2
+          },
+          {
+            "label": "Estoy en 6º año.",
+            "key": 3
+          },
+          {
+            "label": "Vivo cerca del instituto.",
+            "key": 4
+          }
+        ]
+      }
+    ]
+  }
+}

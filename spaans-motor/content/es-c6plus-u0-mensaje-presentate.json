@@ -1,0 +1,37 @@
+{
+  "id": "es-c6plus-u0-mensaje-presentate",
+  "title": "Mensaje de voz: preséntate",
+  "subtitle": "U0 · neem een spraakbericht op met je presentación",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "voicemessage",
+    "prompt": "Graba un mensaje de voz (20–30 s)",
+    "items": [
+      {
+        "text": "Preséntate: nombre, edad, de dónde eres, dónde vives y una lengua.",
+        "cue": "tu presentación",
+        "tag": "pres",
+        "sub": "gebruik: me llamo · tengo … años · soy de · vivo en · hablo",
+        "tip": "Heb je 5 gegevens gezegd? Neem opnieuw op. <span class='nl'>5 gegevens? herneem.</span>"
+      },
+      {
+        "text": "Describe a un compañero/a: ¿cómo es? (carácter y físico).",
+        "cue": "describir",
+        "tag": "describir",
+        "sub": "gebruik: es · tiene · alto/a · simpático/a · moreno/a",
+        "tip": "2 eigenschappen + 1 fysiek? Herneem. <span class='nl'>2 karakter + 1 uiterlijk? herneem.</span>"
+      },
+      {
+        "text": "Deja un saludo formal para tu profe (usted).",
+        "cue": "formal",
+        "tag": "formal",
+        "sub": "gebruik: buenos días · ¿cómo está usted? · soy … · hasta luego",
+        "tip": "Heb je 'usted' gebruikt? Herneem. <span class='nl'>usted gebruikt? herneem.</span>"
+      }
+    ]
+  }
+}

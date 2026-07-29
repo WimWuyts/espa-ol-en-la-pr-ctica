@@ -1,0 +1,57 @@
+{
+  "id": "es-c6plus-u0-repite-saludos",
+  "title": "Escucha y repite: saludos",
+  "subtitle": "U0 · escucha el modelo, repite y GRÁBATE",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "repeat",
+    "prompt": "Escucha ▶ · repite en voz alta · grábate ⏺",
+    "items": [
+      {
+        "text": "¡Hola! Me llamo Diego.",
+        "sub": "hallo, ik heet Diego",
+        "tag": "pres",
+        "tip": "¡Bien! Ahora dilo sin leer. <span class='nl'>zeg het nu zonder te lezen.</span>"
+      },
+      {
+        "text": "Soy de Bélgica y tengo dieciséis años.",
+        "sub": "ik kom uit België en ben 16",
+        "tag": "pres"
+      },
+      {
+        "text": "Vivo en Gante y hablo neerlandés y español.",
+        "sub": "ik woon in Gent en spreek NL en ES",
+        "tag": "pres"
+      },
+      {
+        "text": "Encantado, ¿cómo te llamas?",
+        "sub": "aangenaam, hoe heet je?",
+        "tag": "pres"
+      },
+      {
+        "text": "Buenos días, ¿qué tal?",
+        "sub": "goedemorgen, hoe gaat het?",
+        "tag": "saludo"
+      },
+      {
+        "text": "Soy estudiante y soy muy alegre.",
+        "sub": "ik ben student en heel vrolijk",
+        "tag": "pres"
+      },
+      {
+        "text": "¿De dónde eres tú?",
+        "sub": "waar kom jij vandaan?",
+        "tag": "pres"
+      },
+      {
+        "text": "¡Hasta luego!",
+        "sub": "tot straks!",
+        "tag": "despedida"
+      }
+    ]
+  }
+}

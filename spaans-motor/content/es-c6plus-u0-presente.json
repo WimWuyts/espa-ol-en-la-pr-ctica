@@ -1,0 +1,236 @@
+{
+  "id": "es-c6plus-u0-presente",
+  "title": "Completa: el presente",
+  "subtitle": "U0 · vervoeg in het presente (regular + ser/estar/tener/ir…)",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste vorm in het presente",
+    "items": [
+      {
+        "stimulus": "(Yo) ___ de Bélgica.",
+        "options": [
+          "soy",
+          "eres",
+          "es"
+        ],
+        "answer": "soy",
+        "tag": "ser",
+        "sub": "yo → soy"
+      },
+      {
+        "stimulus": "¿(Tú) ___ en Gante?",
+        "options": [
+          "vives",
+          "vivo",
+          "vive"
+        ],
+        "answer": "vives",
+        "tag": "vivir",
+        "sub": "tú → vives"
+      },
+      {
+        "stimulus": "Nina ___ dieciséis años.",
+        "options": [
+          "tiene",
+          "tienes",
+          "tengo"
+        ],
+        "answer": "tiene",
+        "tag": "tener",
+        "sub": "ella → tiene"
+      },
+      {
+        "stimulus": "(Nosotros) ___ español en clase.",
+        "options": [
+          "hablamos",
+          "habláis",
+          "hablan"
+        ],
+        "answer": "hablamos",
+        "tag": "hablar",
+        "sub": "nosotros → hablamos"
+      },
+      {
+        "stimulus": "Diego ___ al mercado.",
+        "options": [
+          "va",
+          "vas",
+          "voy"
+        ],
+        "answer": "va",
+        "tag": "ir",
+        "sub": "él → va"
+      },
+      {
+        "stimulus": "(Yo) ___ muy bien, gracias.",
+        "options": [
+          "estoy",
+          "está",
+          "estás"
+        ],
+        "answer": "estoy",
+        "tag": "estar",
+        "sub": "yo → estoy"
+      },
+      {
+        "stimulus": "¿(Vosotros) ___ los deberes?",
+        "options": [
+          "hacéis",
+          "hacen",
+          "hago"
+        ],
+        "answer": "hacéis",
+        "tag": "hacer",
+        "sub": "vosotros → hacéis"
+      },
+      {
+        "stimulus": "(Ellos) ___ de México.",
+        "options": [
+          "vienen",
+          "venís",
+          "viene"
+        ],
+        "answer": "vienen",
+        "tag": "venir",
+        "sub": "ellos → vienen"
+      },
+      {
+        "stimulus": "(Yo) ___ estudiante.",
+        "options": [
+          "soy",
+          "estoy",
+          "tengo"
+        ],
+        "answer": "soy",
+        "tag": "ser",
+        "sub": "identiteit → soy"
+      },
+      {
+        "stimulus": "¿Cómo te ___ ?",
+        "options": [
+          "llamas",
+          "llama",
+          "llamo"
+        ],
+        "answer": "llamas",
+        "tag": "llamarse",
+        "sub": "tú → te llamas"
+      },
+      {
+        "stimulus": "(Nosotros) ___ en Flandes.",
+        "options": [
+          "vivimos",
+          "vivís",
+          "viven"
+        ],
+        "answer": "vivimos",
+        "tag": "vivir",
+        "sub": "nosotros → vivimos"
+      },
+      {
+        "stimulus": "Lucía ___ española.",
+        "options": [
+          "es",
+          "eres",
+          "soy"
+        ],
+        "answer": "es",
+        "tag": "ser",
+        "sub": "ella → es"
+      },
+      {
+        "stimulus": "(Yo) ___ dos hermanas.",
+        "options": [
+          "tengo",
+          "tienes",
+          "tiene"
+        ],
+        "answer": "tengo",
+        "tag": "tener",
+        "sub": "yo → tengo"
+      },
+      {
+        "stimulus": "¿(Tú) ___ contento hoy?",
+        "options": [
+          "estás",
+          "está",
+          "estoy"
+        ],
+        "answer": "estás",
+        "tag": "estar",
+        "sub": "tú → estás"
+      },
+      {
+        "stimulus": "(Ellos) ___ mucho español.",
+        "options": [
+          "hablan",
+          "habláis",
+          "hablamos"
+        ],
+        "answer": "hablan",
+        "tag": "hablar",
+        "sub": "ellos → hablan"
+      },
+      {
+        "stimulus": "(Yo) ___ al instituto en bici.",
+        "options": [
+          "voy",
+          "vas",
+          "va"
+        ],
+        "answer": "voy",
+        "tag": "ir",
+        "sub": "yo → voy"
+      },
+      {
+        "stimulus": "Mateo ___ de Argentina.",
+        "options": [
+          "viene",
+          "vienes",
+          "vengo"
+        ],
+        "answer": "viene",
+        "tag": "venir",
+        "sub": "él → viene"
+      },
+      {
+        "stimulus": "(Nosotros) ___ amigos.",
+        "options": [
+          "somos",
+          "sois",
+          "son"
+        ],
+        "answer": "somos",
+        "tag": "ser",
+        "sub": "nosotros → somos"
+      },
+      {
+        "stimulus": "¿(Vosotros) ___ en Bruselas?",
+        "options": [
+          "vivís",
+          "viven",
+          "vivimos"
+        ],
+        "answer": "vivís",
+        "tag": "vivir",
+        "sub": "vosotros → vivís"
+      },
+      {
+        "stimulus": "(Yo) ___ los deberes por la tarde.",
+        "options": [
+          "hago",
+          "haces",
+          "hace"
+        ],
+        "answer": "hago",
+        "tag": "hacer",
+        "sub": "yo → hago"
+      }
+    ]
+  }
+}
