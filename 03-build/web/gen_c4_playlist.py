@@ -17,7 +17,7 @@ SPOTIFY_URL="https://open.spotify.com/playlist/37i9dQZF1DXaxEKcoCdWHD"
 # categorie-labels
 CATS={
  "cursus":  ("🎬 Ya en el curso","Deze staan al in «Welcome to Spanish» (banda sonora per unit)."),
- "ultratop":("📈 Greatest hits · Ultratop BE (2005–nu)","Spaanstalige nummers die de Belgische hitlijsten haalden."),
+ "ultratop":("📈 Greatest hits · Ultratop BE (1990–nu)","Spaanstalige nummers die de Belgische hitlijsten haalden — van de jaren 90 tot vandaag."),
  "viral":   ("🔥 Virales de hoy (2022–2025)","Recent viraal via TikTok/Reels/Spotify — herkenbaar voor tieners."),
  "clasico": ("🌟 Clásicos imprescindibles","Tijdloze nummers die (ook in Vlaanderen) iedereen kent."),
 }
@@ -45,7 +45,14 @@ SONGS=[
  ("Shakira & Bizarrap","BZRP Music Sessions #53",2023,"🇨🇴🇦🇷","cursus","chk"),
  ("Feid","Luna",2024,"🇨🇴","cursus",""),
  ("Rauw Alejandro","Todo de Ti",2021,"🇵🇷","cursus",""),
- # ── 2) Ultratop greatest hits 2005-nu ──
+ # ── 2) Ultratop greatest hits 1990-nu ──
+ ("Paradisio","Bailando",1996,"🇧🇪","ultratop",""),
+ ("Los Umbrellos","No Tengo Dinero",1998,"🌎","ultratop",""),
+ ("Loona","Bailando",1998,"🇳🇱","ultratop",""),
+ ("King Africa","La Bomba",2000,"🇦🇷","ultratop",""),
+ ("Las Ketchup","Aserejé (The Ketchup Song)",2002,"🇪🇸","ultratop",""),
+ ("Shakira","Suerte",2002,"🇨🇴","ultratop",""),
+ ("David Bisbal","Bulería",2004,"🇪🇸","ultratop",""),
  ("Aventura","Obsesión",2004,"🇩🇴","ultratop",""),
  ("Shakira ft. Alejandro Sanz","La Tortura",2005,"🇨🇴🇪🇸","ultratop",""),
  ("Shakira","Waka Waka",2010,"🇨🇴","ultratop",""),
@@ -91,17 +98,12 @@ SONGS=[
  ("Bad Bunny","NUEVAYoL",2025,"🇵🇷","viral",""),
  ("Karol G","Mi Ex Tenía Razón",2024,"🇨🇴","viral","chk"),
  ("Shakira","Puntería",2024,"🇨🇴","viral",""),
- ("Kapo","Uwaie",2024,"🇨🇴","viral",""),
  ("Beéle","Si Te Pudiera Mentir",2024,"🇨🇴","viral",""),
  ("Xavi","La Diabla",2023,"🇲🇽🇺🇸","viral","chk"),
- ("Bizarrap & Milo J","BZRP Music Sessions #57",2024,"🇦🇷","viral",""),
- ("Lola Índigo & Belén Aguilera","La Niña de la Escuela",2023,"🇪🇸","viral",""),
  ("Aitana & Sebastián Yatra","Akureyri",2024,"🇪🇸🇨🇴","viral",""),
  ("Sebastián Yatra","Tacones Rojos",2021,"🇨🇴","viral",""),
  ("Camilo","Vida de Rico",2020,"🇨🇴","viral",""),
  ("Morat","Cómo Te Atreves",2016,"🇨🇴","viral",""),
- ("María Becerra","Automático",2021,"🇦🇷","viral",""),
- ("Quevedo","Vista al Mar",2022,"🇪🇸","viral",""),
  # ── 4) Klassiekers & didactische parels ──
  ("Gipsy Kings","Bamboléo",1987,"🇫🇷","clasico",""),
  ("Los del Río","Macarena",1993,"🇪🇸","clasico",""),
@@ -115,7 +117,6 @@ SONGS=[
  ("Chayanne","Torero",2002,"🇵🇷","clasico",""),
  ("Café Tacvba","Eres",2003,"🇲🇽","clasico",""),
  ("Julieta Venegas","Limón y Sal",2006,"🇲🇽","clasico",""),
- ("Julieta Venegas","Me Voy",2006,"🇲🇽","clasico",""),
  ("La Oreja de Van Gogh","Rosas",2004,"🇪🇸","clasico",""),
  ("Jesse & Joy","¡Corre!",2011,"🇲🇽","clasico",""),
  ("Alejandro Sanz","Corazón Partío",1997,"🇪🇸","clasico",""),
@@ -127,7 +128,6 @@ SONGS=[
  ("Shakira","Estoy Aquí",1996,"🇨🇴","clasico",""),
  ("Enrique Iglesias","Experiencia Religiosa",1994,"🇪🇸","clasico",""),
  ("Camilo","Tutu",2019,"🇨🇴","clasico",""),
- ("Jarabe de Palo","Depende",1998,"🇪🇸","clasico",""),
 ]
 assert len(SONGS)==100, f"verwacht 100, kreeg {len(SONGS)}"
 
@@ -204,7 +204,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
 <div class="hero">
   <span class="kick">🎧 Música en español · C4 «Welcome to Spanish»</span>
   <h1>La playlist de la clase — Top 100</h1>
-  <p>Honderd Spaanstalige nummers: de liedjes uit de cursus, de <b>greatest hits</b> die in de Belgische Ultratop stonden (2005–nu), de <b>virale</b> nummers van vandaag en de <b>tijdloze klassiekers</b>. Zoek, filter en klik ▶ om op YouTube te beluisteren.</p>
+  <p>Honderd Spaanstalige nummers: de liedjes uit de cursus, de <b>greatest hits</b> die in de Belgische Ultratop stonden (<b>1990–nu</b>), de <b>virale</b> nummers van vandaag en de <b>tijdloze klassiekers</b>. Zoek, filter en klik ▶ om op YouTube te beluisteren.</p>
   <a class="spotbtn" href="{SPOTIFY_URL}" target="_blank" rel="noopener">▶ Abrir en Spotify</a>
 </div>
 <main>
@@ -237,7 +237,7 @@ open(f"{ROOT}/03-build/web/componentes/C4_playlist.html","w",encoding="utf-8").w
 md=["# La playlist de la clase — Top 100 (Spaanstalige liedjes)",
 "",
 "> Bronlijst voor de officiële Spotify-playlist van «Welcome to Spanish» (C4).",
-"> Curatie: cursusnummers · Ultratop-hits BE 2005–nu · viraal 2022–2025 · klassiekers.",
+"> Curatie: cursusnummers · Ultratop-hits BE 1990–nu · viraal 2022–2025 · klassiekers.",
 "> **⚠️ = kies een clean/radio-versie** (check de tekst voor 14–18 j.). Vlaggen = land van de artiest.",
 ""]
 for c in ORDER:

@@ -1,7 +1,7 @@
 # La playlist de la clase — Top 100 (Spaanstalige liedjes)
 
 > Bronlijst voor de officiële Spotify-playlist van «Welcome to Spanish» (C4).
-> Curatie: cursusnummers · Ultratop-hits BE 2005–nu · viraal 2022–2025 · klassiekers.
+> Curatie: cursusnummers · Ultratop-hits BE 1990–nu · viraal 2022–2025 · klassiekers.
 > **⚠️ = kies een clean/radio-versie** (check de tekst voor 14–18 j.). Vlaggen = land van de artiest.
 
 ## 🎬 Ya en el curso
@@ -28,97 +28,97 @@
 19. **Feid** — *Luna* (2024, 🇨🇴)
 20. **Rauw Alejandro** — *Todo de Ti* (2021, 🇵🇷)
 
-## 📈 Greatest hits · Ultratop BE (2005–nu)
-*Spaanstalige nummers die de Belgische hitlijsten haalden.*
+## 📈 Greatest hits · Ultratop BE (1990–nu)
+*Spaanstalige nummers die de Belgische hitlijsten haalden — van de jaren 90 tot vandaag.*
 
-21. **Aventura** — *Obsesión* (2004, 🇩🇴)
-22. **Shakira ft. Alejandro Sanz** — *La Tortura* (2005, 🇨🇴🇪🇸)
-23. **Shakira** — *Waka Waka* (2010, 🇨🇴)
-24. **Don Omar & Lucenzo** — *Danza Kuduro* (2010, 🇵🇷🇫🇷)
-25. **Carlos Baute & Marta Sánchez** — *Colgando en tus Manos* (2009, 🇻🇪🇪🇸)
-26. **Álvaro Soler** — *El Mismo Sol* (2015, 🇪🇸)
-27. **Álvaro Soler** — *Sofía* (2016, 🇪🇸)
-28. **Álvaro Soler** — *La Cintura* (2018, 🇪🇸)
-29. **Marc Anthony** — *Vivir Mi Vida* (2013, 🇵🇷)
-30. **Gente de Zona ft. Marc Anthony** — *La Gozadera* (2015, 🇨🇺)
-31. **Carlos Vives & Shakira** — *La Bicicleta* (2016, 🇨🇴)
-32. **Shakira ft. Maluma** — *Chantaje* (2016, 🇨🇴) ⚠️
-33. **J Balvin & Willy William** — *Mi Gente* (2017, 🇨🇴🇫🇷)
-34. **Enrique Iglesias ft. Nicky Jam** — *El Perdón* (2015, 🇪🇸🇵🇷)
-35. **Luis Fonsi & Demi Lovato** — *Échame la Culpa* (2017, 🇵🇷🇺🇸)
-36. **Daddy Yankee & Snow** — *Con Calma* (2019, 🇵🇷)
-37. **Karol G** — *Hawái* (2020, 🇨🇴)
-38. **Rosalía & J Balvin** — *Con Altura* (2019, 🇪🇸🇨🇴)
-39. **Manuel Turizo** — *La Bachata* (2022, 🇨🇴)
-40. **Deorro ft. Elvis Crespo** — *Bailar* (2016, 🇺🇸🇵🇷)
-41. **Ricky Martin & Maluma** — *Vente Pa' Ca* (2016, 🇵🇷🇨🇴) ⚠️
-42. **Enrique Iglesias** — *Súbeme la Radio* (2017, 🇪🇸)
-43. **J Balvin** — *Ay Vamos* (2014, 🇨🇴)
-44. **Nicky Jam** — *El Amante* (2017, 🇵🇷) ⚠️
-45. **CNCO** — *Reggaetón Lento* (2016, 🌎)
-46. **Maluma** — *Felices los 4* (2017, 🇨🇴) ⚠️
-47. **Sebastián Yatra** — *Traicionera* (2016, 🇨🇴)
-48. **Reik ft. Ozuna & Wisin** — *Me Niego* (2018, 🇲🇽)
-49. **Pedro Capó & Farruko** — *Calma* (2019, 🇵🇷)
-50. **Farruko** — *Pepas* (2021, 🇵🇷) ⚠️
+21. **Paradisio** — *Bailando* (1996, 🇧🇪)
+22. **Los Umbrellos** — *No Tengo Dinero* (1998, 🌎)
+23. **Loona** — *Bailando* (1998, 🇳🇱)
+24. **King Africa** — *La Bomba* (2000, 🇦🇷)
+25. **Las Ketchup** — *Aserejé (The Ketchup Song)* (2002, 🇪🇸)
+26. **Shakira** — *Suerte* (2002, 🇨🇴)
+27. **David Bisbal** — *Bulería* (2004, 🇪🇸)
+28. **Aventura** — *Obsesión* (2004, 🇩🇴)
+29. **Shakira ft. Alejandro Sanz** — *La Tortura* (2005, 🇨🇴🇪🇸)
+30. **Shakira** — *Waka Waka* (2010, 🇨🇴)
+31. **Don Omar & Lucenzo** — *Danza Kuduro* (2010, 🇵🇷🇫🇷)
+32. **Carlos Baute & Marta Sánchez** — *Colgando en tus Manos* (2009, 🇻🇪🇪🇸)
+33. **Álvaro Soler** — *El Mismo Sol* (2015, 🇪🇸)
+34. **Álvaro Soler** — *Sofía* (2016, 🇪🇸)
+35. **Álvaro Soler** — *La Cintura* (2018, 🇪🇸)
+36. **Marc Anthony** — *Vivir Mi Vida* (2013, 🇵🇷)
+37. **Gente de Zona ft. Marc Anthony** — *La Gozadera* (2015, 🇨🇺)
+38. **Carlos Vives & Shakira** — *La Bicicleta* (2016, 🇨🇴)
+39. **Shakira ft. Maluma** — *Chantaje* (2016, 🇨🇴) ⚠️
+40. **J Balvin & Willy William** — *Mi Gente* (2017, 🇨🇴🇫🇷)
+41. **Enrique Iglesias ft. Nicky Jam** — *El Perdón* (2015, 🇪🇸🇵🇷)
+42. **Luis Fonsi & Demi Lovato** — *Échame la Culpa* (2017, 🇵🇷🇺🇸)
+43. **Daddy Yankee & Snow** — *Con Calma* (2019, 🇵🇷)
+44. **Karol G** — *Hawái* (2020, 🇨🇴)
+45. **Rosalía & J Balvin** — *Con Altura* (2019, 🇪🇸🇨🇴)
+46. **Manuel Turizo** — *La Bachata* (2022, 🇨🇴)
+47. **Deorro ft. Elvis Crespo** — *Bailar* (2016, 🇺🇸🇵🇷)
+48. **Ricky Martin & Maluma** — *Vente Pa' Ca* (2016, 🇵🇷🇨🇴) ⚠️
+49. **Enrique Iglesias** — *Súbeme la Radio* (2017, 🇪🇸)
+50. **J Balvin** — *Ay Vamos* (2014, 🇨🇴)
+51. **Nicky Jam** — *El Amante* (2017, 🇵🇷) ⚠️
+52. **CNCO** — *Reggaetón Lento* (2016, 🌎)
+53. **Maluma** — *Felices los 4* (2017, 🇨🇴) ⚠️
+54. **Sebastián Yatra** — *Traicionera* (2016, 🇨🇴)
+55. **Reik ft. Ozuna & Wisin** — *Me Niego* (2018, 🇲🇽)
+56. **Pedro Capó & Farruko** — *Calma* (2019, 🇵🇷)
+57. **Farruko** — *Pepas* (2021, 🇵🇷) ⚠️
 
 ## 🔥 Virales de hoy (2022–2025)
 *Recent viraal via TikTok/Reels/Spotify — herkenbaar voor tieners.*
 
-51. **Grupo Frontera & Bad Bunny** — *Un x100to* (2023, 🇲🇽🇵🇷)
-52. **Rauw Alejandro & Rosalía** — *Beso* (2023, 🇵🇷🇪🇸)
-53. **Feid & Young Miko** — *Classy 101* (2023, 🇨🇴) ⚠️
-54. **Myke Towers** — *LALA* (2023, 🇵🇷) ⚠️
-55. **Peso Pluma & Eslabon Armado** — *Ella Baila Sola* (2023, 🇲🇽) ⚠️
-56. **Manuel Turizo & Grupo Frontera** — *El Merengue* (2023, 🇨🇴🇲🇽)
-57. **Tini** — *Cupido* (2023, 🇦🇷)
-58. **Emilia ft. Tini** — *La_Original.mp3* (2023, 🇦🇷)
-59. **Lola Índigo & Quevedo** — *El Tonto* (2023, 🇪🇸) ⚠️
-60. **Bad Bunny** — *Mónaco* (2023, 🇵🇷) ⚠️
-61. **Bad Bunny** — *DtMF (DeBÍ TiRAR MáS FoToS)* (2025, 🇵🇷)
-62. **Bad Bunny** — *NUEVAYoL* (2025, 🇵🇷)
-63. **Karol G** — *Mi Ex Tenía Razón* (2024, 🇨🇴) ⚠️
-64. **Shakira** — *Puntería* (2024, 🇨🇴)
-65. **Kapo** — *Uwaie* (2024, 🇨🇴)
-66. **Beéle** — *Si Te Pudiera Mentir* (2024, 🇨🇴)
-67. **Xavi** — *La Diabla* (2023, 🇲🇽🇺🇸) ⚠️
-68. **Bizarrap & Milo J** — *BZRP Music Sessions #57* (2024, 🇦🇷)
-69. **Lola Índigo & Belén Aguilera** — *La Niña de la Escuela* (2023, 🇪🇸)
-70. **Aitana & Sebastián Yatra** — *Akureyri* (2024, 🇪🇸🇨🇴)
-71. **Sebastián Yatra** — *Tacones Rojos* (2021, 🇨🇴)
-72. **Camilo** — *Vida de Rico* (2020, 🇨🇴)
-73. **Morat** — *Cómo Te Atreves* (2016, 🇨🇴)
-74. **María Becerra** — *Automático* (2021, 🇦🇷)
-75. **Quevedo** — *Vista al Mar* (2022, 🇪🇸)
+58. **Grupo Frontera & Bad Bunny** — *Un x100to* (2023, 🇲🇽🇵🇷)
+59. **Rauw Alejandro & Rosalía** — *Beso* (2023, 🇵🇷🇪🇸)
+60. **Feid & Young Miko** — *Classy 101* (2023, 🇨🇴) ⚠️
+61. **Myke Towers** — *LALA* (2023, 🇵🇷) ⚠️
+62. **Peso Pluma & Eslabon Armado** — *Ella Baila Sola* (2023, 🇲🇽) ⚠️
+63. **Manuel Turizo & Grupo Frontera** — *El Merengue* (2023, 🇨🇴🇲🇽)
+64. **Tini** — *Cupido* (2023, 🇦🇷)
+65. **Emilia ft. Tini** — *La_Original.mp3* (2023, 🇦🇷)
+66. **Lola Índigo & Quevedo** — *El Tonto* (2023, 🇪🇸) ⚠️
+67. **Bad Bunny** — *Mónaco* (2023, 🇵🇷) ⚠️
+68. **Bad Bunny** — *DtMF (DeBÍ TiRAR MáS FoToS)* (2025, 🇵🇷)
+69. **Bad Bunny** — *NUEVAYoL* (2025, 🇵🇷)
+70. **Karol G** — *Mi Ex Tenía Razón* (2024, 🇨🇴) ⚠️
+71. **Shakira** — *Puntería* (2024, 🇨🇴)
+72. **Beéle** — *Si Te Pudiera Mentir* (2024, 🇨🇴)
+73. **Xavi** — *La Diabla* (2023, 🇲🇽🇺🇸) ⚠️
+74. **Aitana & Sebastián Yatra** — *Akureyri* (2024, 🇪🇸🇨🇴)
+75. **Sebastián Yatra** — *Tacones Rojos* (2021, 🇨🇴)
+76. **Camilo** — *Vida de Rico* (2020, 🇨🇴)
+77. **Morat** — *Cómo Te Atreves* (2016, 🇨🇴)
 
 ## 🌟 Clásicos imprescindibles
 *Tijdloze nummers die (ook in Vlaanderen) iedereen kent.*
 
-76. **Gipsy Kings** — *Bamboléo* (1987, 🇫🇷)
-77. **Los del Río** — *Macarena* (1993, 🇪🇸)
-78. **Buena Vista Social Club** — *Chan Chan* (1997, 🇨🇺)
-79. **Jarabe de Palo** — *La Flaca* (1996, 🇪🇸)
-80. **Manu Chao** — *Clandestino* (1998, 🇪🇸🇫🇷)
-81. **Santana ft. Maná** — *Corazón Espinado* (1999, 🇲🇽)
-82. **Maná** — *Rayando el Sol* (1992, 🇲🇽)
-83. **Ricky Martin** — *María* (1995, 🇵🇷)
-84. **Ricky Martin** — *La Copa de la Vida* (1998, 🇵🇷)
-85. **Chayanne** — *Torero* (2002, 🇵🇷)
-86. **Café Tacvba** — *Eres* (2003, 🇲🇽)
-87. **Julieta Venegas** — *Limón y Sal* (2006, 🇲🇽)
-88. **Julieta Venegas** — *Me Voy* (2006, 🇲🇽)
-89. **La Oreja de Van Gogh** — *Rosas* (2004, 🇪🇸)
-90. **Jesse & Joy** — *¡Corre!* (2011, 🇲🇽)
-91. **Alejandro Sanz** — *Corazón Partío* (1997, 🇪🇸)
-92. **Pablo Alborán** — *Solamente Tú* (2011, 🇪🇸)
-93. **Estopa** — *La Raja de tu Falda* (1999, 🇪🇸)
-94. **Chambao** — *Ahí Estás Tú* (2005, 🇪🇸)
-95. **Juanes** — *A Dios le Pido* (2002, 🇨🇴)
-96. **Juanes** — *Fotografía* (2002, 🇨🇴)
-97. **Shakira** — *Estoy Aquí* (1996, 🇨🇴)
-98. **Enrique Iglesias** — *Experiencia Religiosa* (1994, 🇪🇸)
-99. **Camilo** — *Tutu* (2019, 🇨🇴)
-100. **Jarabe de Palo** — *Depende* (1998, 🇪🇸)
+78. **Gipsy Kings** — *Bamboléo* (1987, 🇫🇷)
+79. **Los del Río** — *Macarena* (1993, 🇪🇸)
+80. **Buena Vista Social Club** — *Chan Chan* (1997, 🇨🇺)
+81. **Jarabe de Palo** — *La Flaca* (1996, 🇪🇸)
+82. **Manu Chao** — *Clandestino* (1998, 🇪🇸🇫🇷)
+83. **Santana ft. Maná** — *Corazón Espinado* (1999, 🇲🇽)
+84. **Maná** — *Rayando el Sol* (1992, 🇲🇽)
+85. **Ricky Martin** — *María* (1995, 🇵🇷)
+86. **Ricky Martin** — *La Copa de la Vida* (1998, 🇵🇷)
+87. **Chayanne** — *Torero* (2002, 🇵🇷)
+88. **Café Tacvba** — *Eres* (2003, 🇲🇽)
+89. **Julieta Venegas** — *Limón y Sal* (2006, 🇲🇽)
+90. **La Oreja de Van Gogh** — *Rosas* (2004, 🇪🇸)
+91. **Jesse & Joy** — *¡Corre!* (2011, 🇲🇽)
+92. **Alejandro Sanz** — *Corazón Partío* (1997, 🇪🇸)
+93. **Pablo Alborán** — *Solamente Tú* (2011, 🇪🇸)
+94. **Estopa** — *La Raja de tu Falda* (1999, 🇪🇸)
+95. **Chambao** — *Ahí Estás Tú* (2005, 🇪🇸)
+96. **Juanes** — *A Dios le Pido* (2002, 🇨🇴)
+97. **Juanes** — *Fotografía* (2002, 🇨🇴)
+98. **Shakira** — *Estoy Aquí* (1996, 🇨🇴)
+99. **Enrique Iglesias** — *Experiencia Religiosa* (1994, 🇪🇸)
+100. **Camilo** — *Tutu* (2019, 🇨🇴)
 
 ---
 **Totaal: 100 nummers** · 17 met ⚠️ (clean-versie kiezen).
