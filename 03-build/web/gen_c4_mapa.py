@@ -32,6 +32,7 @@ UNIT_TEMA = {
  # in U7 is de invalshoek «wat is zijn/haar BEROEP?» (Frida Kahlo, pintora · Nadal, tenista).
  7: ("persona", "💼 Su profesión"),           # las profesiones → bekende persoon + beroep per land
  8: ("rutina",  "⏰ ¿A qué hora?"),            # la hora y los días → dag-/maaltijdritme per land
+ 9: ("viaje",   "✈️ ¿Qué vas a visitar?"),     # planes → «voy a visitar…» per land (ir a + infinitivo)
 }
 # de route: C4 = «vertrekhal». De sitcom (Julio & María) speelt in Madrid → España is
 # het thuisbasis-vertrekpunt vanaf U1. {code: (start_unit, "rango", "NL/ES-beschrijving")}
@@ -53,6 +54,8 @@ INTRO = {
      "Wat doen ze voor werk? Klik op een land en ontdek een bekende persoon… én zijn/haar beroep."),
  8: ("¿A qué hora se come? Cada país tiene su ritmo. Haz clic en un país y descúbrelo.",
      "Hoe laat eet men er? Elk land heeft zijn eigen ritme. Klik op een land en ontdek het."),
+ 9: ("¿Qué vas a visitar? Haz clic en un país y di: «Voy a visitar…».",
+     "Wat ga je bezoeken? Klik op een land en zeg: «Voy a visitar…» — zo oefen je ir a + infinitivo."),
 }
 DEFAULT_INTRO = ("Haz clic en un país del mundo hispano para leer su ficha.",
                  "Klik op een land van de Spaanstalige wereld voor zijn fiche.")

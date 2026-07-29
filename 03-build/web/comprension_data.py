@@ -187,6 +187,29 @@ LECTURA = {
    "transfer": "¿Y tú? ¿Cuál es tu horario del sábado? ¿A qué hora comes?",
    "glosario": [["el horario", "het (uur)schema"], ["y media", "half (…+30)"], ["menos cuarto", "kwart voor"], ["por la mañana/tarde/noche", "'s ochtends/'s middags/'s avonds"], ["¿quieres quedar?", "wil je afspreken?"]],
  },
+ 9: {
+   "tipo": "un mensaje · mis planes del finde",
+   "contexto_nl": "Iker stuurt zijn weekendplannen naar de klasgroep.",
+   "texto": [
+     ["", "¡Hola! Este finde tengo muchos planes."],
+     ["", "El sábado por la mañana tengo que estudiar, pero por la tarde voy a jugar al fútbol."],
+     ["", "Por la noche vamos a ver una película en casa de Marta."],
+     ["", "El domingo tengo que pasear al perro y después voy a quedar con mis primos."],
+     ["", "¡Ah! Y el lunes tengo que trabajar. ¿Y tú? ¿Qué vas a hacer?"],
+   ],
+   "global": [
+     {"q": "¿De qué habla Iker?", "opts": ["De sus clases", "De sus planes del finde", "De su familia"], "a": 1},
+     {"q": "¿Qué va a hacer el sábado por la tarde?", "opts": ["Estudiar", "Jugar al fútbol", "Pasear al perro"], "a": 1},
+   ],
+   "detalle": [
+     {"q": "El sábado por la mañana tiene que estudiar.", "vf": True},
+     {"q": "Van a ver una película en casa de Marta.", "vf": True},
+     {"q": "El domingo va a quedar con sus amigas.", "vf": False},
+     {"q": "El lunes no tiene que trabajar.", "vf": False},
+   ],
+   "transfer": "¿Y tú? ¿Qué vas a hacer este finde? ¿Qué tienes que hacer?",
+   "glosario": [["el finde", "het weekend (informeel)"], ["voy a + inf.", "ik ga … (plan)"], ["tengo que + inf.", "ik moet …"], ["vamos a ver", "we gaan kijken"], ["después", "daarna"]],
+ },
 }
 
 AUDIO = {
@@ -335,6 +358,25 @@ AUDIO = {
    ],
    "glosario": [["¿quieres quedar?", "wil je afspreken?"], ["¿a qué hora?", "hoe laat?"], ["un poco pronto", "een beetje vroeg"], ["y media", "half (…+30)"]],
    "rallentado": ["a qué hora", "a las siete y media", "quedamos en el cine"],
+ },
+ 9: {
+   "tipo": "planes · ¿qué vas a hacer?",
+   "guion": [
+     ["Lucas", "¿Qué vas a hacer este finde?"],
+     ["Alba", "El sábado voy a ir a un concierto. ¿Vienes?"],
+     ["Lucas", "No puedo. Tengo que trabajar en la tienda."],
+     ["Alba", "¡Qué pena! ¿Y el domingo?"],
+     ["Lucas", "El domingo tengo que estudiar por la mañana, pero por la tarde estoy libre."],
+     ["Alba", "Perfecto. Vamos a tomar algo el domingo por la tarde."],
+   ],
+   "tarea_nl": "Luister: wat gaat elk doen, en wat moet elk doen?",
+   "preguntas": [
+     {"q": "¿Qué va a hacer Alba el sábado?", "opts": ["Trabajar", "Ir a un concierto", "Estudiar"], "a": 1},
+     {"q": "¿Por qué no puede Lucas el sábado?", "opts": ["Tiene que trabajar", "Tiene que estudiar", "Está enfermo"], "a": 0},
+     {"q": "¿Cuándo van a tomar algo?", "opts": ["El sábado por la noche", "El domingo por la mañana", "El domingo por la tarde"], "a": 2},
+   ],
+   "glosario": [["¿qué vas a hacer?", "wat ga je doen?"], ["tengo que trabajar", "ik moet werken"], ["¡qué pena!", "wat jammer!"], ["estoy libre", "ik ben vrij"], ["vamos a tomar algo", "we gaan iets drinken"]],
+   "rallentado": ["qué vas a hacer", "tengo que trabajar", "vamos a tomar algo"],
  },
 }
 

@@ -163,6 +163,20 @@ CULTURA={
    ],
    "dato":"¿Sabías que…? «Half negen» is in het Spaans <b>las ocho y media</b>: het Spaans kijkt <i>terug</i> naar het vorige uur (acht + dertig), terwijl het Nederlands vóóruit kijkt naar negen. Dé klassieke valstrik!",
  },
+ "planes":{
+   "intro":"Plannen maken klinkt anders in het Spaans — en het weekend begint er later. Zo ziet een <i>finde</i> in de Spaanstalige wereld eruit.",
+   "cards":[
+     ("🌙","Salir tarde","En España la gente <b>queda</b> a las 22–23 h para salir; los conciertos empiezan tarde.",
+      "In Spanje spreekt men vaak pas om <b>22–23 u</b> af om uit te gaan; concerten beginnen laat en de nacht duurt lang."),
+     ("🌉","Hacer puente","Si una fiesta cae en jueves, muchos <b>hacen puente</b>: también libran el viernes.",
+      "Valt een feestdag op donderdag, dan «maakt men een brug» (<b>hacer puente</b>): ook de vrijdag vrij — een lang weekend."),
+     ("🗓️","El «finde»","<b>El finde</b> = el fin de semana. Los jóvenes dicen: «¿Qué haces el finde?»",
+      "<b>El finde</b> is de gewone spreektaalafkorting van <i>el fin de semana</i>. Jongeren zeggen: «¿Qué haces el finde?»"),
+     ("👨‍👩‍👧","Planes en familia","El domingo suele ser el día de la <b>comida familiar</b> — un plan fijo para muchos.",
+      "De zondag is bij veel families de dag van de <b>familiemaaltijd</b> — een vast plan, vaak met de hele familie samen."),
+   ],
+   "dato":"¿Sabías que…? Om een plan te maken gebruik je <b>ir a + infinitivo</b>: «voy a estudiar» = ik ga studeren — net zoals in het Nederlands. Maar «ik moet werken» wordt <b>tengo que trabajar</b>, letterlijk «ik heb te werken».",
+ },
 }
 def cultura_block(tema):
     c=CULTURA.get(tema)
