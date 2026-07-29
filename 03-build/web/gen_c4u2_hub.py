@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-# C4 · Unidad 1 — HTML-HUB: bundelt alle secties tot één standalone digitale pagina met tabbladen.
+# C4 · Unidad 2 — HTML-HUB: bundelt alle secties tot één standalone digitale pagina met tabbladen.
 # Elke sectie in een geïsoleerde srcdoc-iframe (geen CSS-botsing, blijft werken bij download).
-# Tabbladen: Escucha · Kit · Práctica · Gramática+Tarea · Música. C4-rood.
+# Tabbladen: Escucha · Kit · Práctica · Música. C4-rood. Zelfde pijplijn als U1.
 import base64, os
 ROOT="/home/user/espa-ol-en-la-pr-ctica"
 CMP=f"{ROOT}/03-build/web/componentes"
@@ -15,14 +15,13 @@ def srcdoc(path):
     return h.replace("&","&amp;").replace('"',"&quot;")
 
 TABS=[
- ("escucha","🎬 Escucha","C4_U1_escucha.html","Bekijk de scène en lees mee — de chunks komen uit je oren."),
- ("mapa","🗺️ Mapa","C4_U1_mapa.html","La Ruta — klik op een land van de Spaanstalige wereld en lees zijn fiche."),
- ("funciones","🗣️ Funciones","C4_U1_funciones.html","Wat je met het Spaans kunt DOEN — je repertoire groeit elke unit."),
- ("kit","🧰 Kit","C4_U1_kgt.html","Uitspraak (klanken), de taal per situatie, gramática & tarea."),
- ("practica","✍️ Práctica","C4_U1_practica.html","Oefen zelfcorrigerend: herkennen → kiezen → zelf zeggen."),
- ("musica","🎧 Música","C4_musica.html","Banda sonora — leer Spaans via muziek die jullie kennen."),
+ ("escucha","🎬 Escucha","C4_U2_escucha.html","Bekijk de scène en lees mee — de chunks komen uit je oren."),
+ ("mapa","🗺️ Mapa","C4_U2_mapa.html","La Ruta — klik op een land van de Spaanstalige wereld en lees zijn fiche."),
+ ("funciones","🗣️ Funciones","C4_U2_funciones.html","Wat je met het Spaans kunt DOEN — je repertoire groeit elke unit."),
+ ("kit","🧰 Kit","C4_U2_kgt.html","Uitspraak (jota, h muda), de taal per situatie, gramática & tarea."),
+ ("practica","✍️ Práctica","C4_U2_practica.html","Oefen zelfcorrigerend: herkennen → kiezen → zelf zeggen."),
+ ("musica","🎧 Música","C4_U2_musica.html","Banda sonora — leer Spaans via muziek die jullie kennen."),
 ]
-# kgt bevat §2 Kit + §4 Gramática + §5 Tarea; we tonen het onder "Kit" én verwijzen ernaar.
 
 def tabbtn(i,t):
     key,label,_,_=t
@@ -58,16 +57,16 @@ main{max-width:1120px;margin:0 auto;padding:14px 16px 30px}
 """
 
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · Unidad 1 · Presentaciones — Hub</title><style>{CSS}</style></head><body>
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · Unidad 2 · Saludos — Hub</title><style>{CSS}</style></head><body>
 <div class="hero">
-  <span class="ruta">🗺️ La Ruta · C4 «El despegue» · Parada 1</span>
-  <h1>Unidad 1 · Presentaciones</h1>
-  <p>Je eerste woorden Spaans — <b>saludos</b>, <b>jezelf voorstellen</b> en <b>afscheid nemen</b>. Alles wat je hier hoort, kun je meteen gebruiken. <i>Survival in Spanish.</i></p>
+  <span class="ruta">🗺️ La Ruta · C4 «El despegue» · Parada 2</span>
+  <h1>Unidad 2 · Saludos</h1>
+  <p>Groeten volgens het <b>moment van de dag</b> en zeggen <b>hoe je je voelt</b> (estar + estado). Alles wat je hier hoort, kun je meteen gebruiken. <i>Survival in Spanish.</i></p>
 </div>
 <nav class="tabbar">{"".join(tabbtn(i,t) for i,t in enumerate(TABS))}</nav>
 <main>
 {"".join(panel(i,t) for i,t in enumerate(TABS))}
-  <div class="foot">C4 · «Welcome to Spanish» · Unidad 1 · Presentaciones</div>
+  <div class="foot">C4 · «Welcome to Spanish» · Unidad 2 · Saludos</div>
 </main>
 <button class="dk" id="dk" title="licht/donker">🌙</button>
 <script>
@@ -75,5 +74,5 @@ var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.pa
 tabs.forEach(function(b){{b.onclick=function(){{var k=b.getAttribute('data-t');tabs.forEach(function(x){{x.classList.toggle('on',x===b);}});panels.forEach(function(p){{p.classList.toggle('show',p.id==='p_'+k);}});window.scrollTo(0,0);}};}});
 var dark=false;document.getElementById('dk').onclick=function(){{dark=!dark;document.documentElement.setAttribute('data-theme',dark?'dark':'light');this.textContent=dark?'☀️':'🌙';document.querySelectorAll('iframe.frame').forEach(function(f){{try{{f.contentDocument.documentElement.setAttribute('data-theme',dark?'dark':'light');}}catch(e){{}}}});}};
 </script></body></html>"""
-open(f"{CMP}/C4_U1_hub.html","w",encoding="utf-8").write(HTML)
-print("C4_U1_hub.html geschreven:",len(HTML),"bytes")
+open(f"{CMP}/C4_U2_hub.html","w",encoding="utf-8").write(HTML)
+print("C4_U2_hub.html geschreven:",len(HTML),"bytes")

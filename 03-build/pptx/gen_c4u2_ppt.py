@@ -37,9 +37,9 @@ from pptx.oxml import parse_xml
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ASSETS = os.path.join(HERE, "assets")
-OUT_DOCENTE = os.path.join(HERE, "C4_U1_docente.pptx")
-OUT_ALUMNO_PPTX = os.path.join(HERE, "C4_U1_alumno.pptx")
-OUT_ALUMNO = os.path.join(HERE, "C4_U1_alumno.ppsx")
+OUT_DOCENTE = os.path.join(HERE, "C4_U2_docente.pptx")
+OUT_ALUMNO_PPTX = os.path.join(HERE, "C4_U2_alumno.pptx")
+OUT_ALUMNO = os.path.join(HERE, "C4_U2_alumno.ppsx")
 
 # --- build-modus (wordt door build() gezet) ---
 MODE = "docente"          # "docente" | "alumno"
@@ -440,26 +440,26 @@ def pg():
 # ============================================================================
 # C4 · UNIDAD 1 «Presentaciones» — slides (survival). Herbruikt de U0-machinerie.
 # ============================================================================
-FTAB = "U1 · PRESENTACIONES"
+FTAB = "U2 · SALUDOS"
 
 def s01_title():
     s = slide(); bg(s)
     rect(s, 0, 0, EMU_W, Inches(4.7), fill=G)
     rect(s, 0, Inches(4.62), EMU_W, Inches(0.08), fill=GD)
-    chip(s, Inches(0.6), Inches(0.55), "C4 · LA RUTA · EL DESPEGUE · PARADA 1", fill=WHITE, tcolor=G, size=12)
+    chip(s, Inches(0.6), Inches(0.55), "C4 · LA RUTA · EL DESPEGUE · PARADA 2", fill=WHITE, tcolor=G, size=12)
     text(s, Inches(0.55), Inches(1.35), Inches(12), Inches(1.8),
-         [[("Presentaciones", {"size": 66, "bold": True, "color": WHITE, "font": DISPLAY})]])
+         [[("Saludos", {"size": 66, "bold": True, "color": WHITE, "font": DISPLAY})]])
     text(s, Inches(0.6), Inches(3.15), Inches(11.5), Inches(1.1),
-         [[("¡Hola! Je eerste woorden Spaans: ", {"size": 17, "color": WHITE}),
-           ("groeten, jezelf voorstellen en afscheid nemen.", {"size": 17, "bold": True, "color": WHITE})],
+         [[("¡Buenos días! Groeten volgens het moment van de dag en zeggen ", {"size": 17, "color": WHITE}),
+           ("hoe je je voelt.", {"size": 17, "bold": True, "color": WHITE})],
           [("Survival in Spanish — todo lo que oyes, lo puedes usar enseguida.", {"size": 13, "italic": True, "color": GT})]])
     # mochila-gids
     avatar(s, "mochila", Inches(10.7), Inches(4.95), d=Inches(1.7))
     text(s, Inches(0.6), Inches(5.25), Inches(9), Inches(1.4),
          [[("En esta unidad vas a…", {"size": 13, "bold": True, "color": GD, "font": DISPLAY})],
-          [("• Saludar y despedirte  ", {"size": 13, "color": INK}), ("groeten & afscheid", {"size": 11, "italic": True, "color": MUT})],
-          [("• Decir tu nombre y de dónde eres  ", {"size": 13, "color": INK}), ("naam & herkomst", {"size": 11, "italic": True, "color": MUT})],
-          [("• Preguntar el nombre  ", {"size": 13, "color": INK}), ("iemand naar zijn naam vragen", {"size": 11, "italic": True, "color": MUT})]])
+          [("• Saludar según el momento del día  ", {"size": 13, "color": INK}), ("días · tardes · noches", {"size": 11, "italic": True, "color": MUT})],
+          [("• Decir cómo estás  ", {"size": 13, "color": INK}), ("estar + estado (bien, cansado…)", {"size": 11, "italic": True, "color": MUT})],
+          [("• Despedirte  ", {"size": 13, "color": INK}), ("adiós · hasta luego · hasta mañana", {"size": 11, "italic": True, "color": MUT})]])
     footer(s, tab=FTAB, page=pg())
 
 def _tile(s, x, y, w, num, es, nl, target):
@@ -476,13 +476,13 @@ def s02_menu():
     s = slide(); bg(s)
     sectionbar(s, "MENÚ", "¿Qué vamos a hacer?", "Wat gaan we doen? — klik op een tegel", num=None)
     tiles = [("1", "¡Escucha!", "de scène + chunks", 2),
-             ("2", "Suena bien", "klanken & klemtoon", 3),
-             ("3", "Kit", "saludos & presentarse", 4),
-             ("4", "Gramática", "ser · llamarse · -o/-a", 6),
+             ("2", "Suena bien", "jota · h muda · acento", 3),
+             ("3", "Kit", "saludos por el día", 4),
+             ("4", "Gramática", "estar · saludo por hora", 6),
              ("5", "Práctica", "oefenen samen", 8),
-             ("6", "Hablar", "preséntate", 9),
+             ("6", "Hablar", "un día de saludos", 9),
              ("7", "Música", "banda sonora", 10),
-             ("8", "Tarea", "el carné de la clase", 11),
+             ("8", "Tarea", "un día de saludos", 11),
              ("9", "Repaso", "wat kun je nu?", 12)]
     x0, y0 = Inches(0.55), Inches(1.7)
     w = Inches(3.0); gx = Inches(0.18); gy = Inches(0.2)
@@ -501,8 +501,8 @@ from PIL import Image as _Img, ImageDraw as _Dw, ImageFont as _Ft
 _VIDEO_REL="http://schemas.openxmlformats.org/officeDocument/2006/relationships/video"
 _MEDIA_REL="http://schemas.microsoft.com/office/2007/relationships/media"
 _P14="http://schemas.microsoft.com/office/powerpoint/2010/main"
-VIDEO_ID="yvPI-4JGdyo"; VIDEO_TOP="Sitcom · Episodio 1"; VIDEO_MAIN="Presentaciones"
-VIDEO_POSTER=os.path.join(HERE,"assets","video_poster_U1.png")
+VIDEO_ID="2E51CKpanmU"; VIDEO_TOP="Sitcom · Episodio 2"; VIDEO_MAIN="Saludos"
+VIDEO_POSTER=os.path.join(HERE,"assets","video_poster_U2.png")
 def _load_font(sz,bold=True):
     for p in ["/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
               "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"]:
@@ -538,13 +538,13 @@ def add_online_video(s,video_id,x,y,w,h,poster_png):
 
 def s03_escucha():
     s = slide(); bg(s)
-    sectionbar(s, "§1 · ¡ESCUCHA!", "Bekijk la escena y escucha", "Kijk & luister — de chunks komen uit je oren", num=1)
+    sectionbar(s, "§1 · ¡ESCUCHA!", "Bekijk la escena y escucha", "Kijk & luister — de scène speelt op 09.00 · 16.00 · 21.05 u", num=1)
     card(s, Inches(0.55), Inches(1.55), Inches(7.4), Inches(4.9), fill=WHITE, line=LINE)
-    dia = [("María", "Hola. ¿Cómo estás?", F_SUBJ), ("Julio", "Bien. ¿Cómo te llamas?", F_VERB),
-           ("María", "Yo me llamo María. Encantada.", F_SUBJ), ("Julio", "Encantado. Yo soy Julio.", F_VERB),
-           ("Fernando", "Os presento: María, la nueva profesora.", F_TIME),
-           ("Julio", "Encantado de conocerla.", F_VERB), ("María", "Igualmente. Muchas gracias.", F_SUBJ),
-           ("Fernando", "De nada. ¡Bienvenida!", F_TIME)]
+    dia = [("Julio", "Josefina… Buenos días.", F_VERB), ("Josefina", "¿Cómo estás?", F_SUBJ),
+           ("Julio", "Bien, bien. Es María, la nueva profesora.", F_VERB), ("Josefina", "Yo estoy ocupada. Muy ocupada.", F_SUBJ),
+           ("María", "Buenas tardes. ¿Cómo estás?", F_TIME),
+           ("Josefina", "Estoy enferma. Un poco enferma.", F_SUBJ), ("Fernando", "Y tú, ¿cómo estás?", F_PLAC),
+           ("Josefina", "Uf, cansada, muy cansada.", F_SUBJ)]
     y = Inches(1.8)
     for sp, tx, col in dia:
         chip(s, Inches(0.75), y, sp, fill=col, tcolor=WHITE, size=10)
@@ -555,25 +555,25 @@ def s03_escucha():
     card(s, Inches(8.2), Inches(1.55), Inches(4.6), Inches(2.45), fill=GT, line=G)
     text(s, Inches(8.45), Inches(1.72), Inches(4.1), Inches(2.2),
          [[("Chunks para llevar 🎒", {"size": 13, "bold": True, "color": GD, "font": DISPLAY})],
-          [("Hola · ¿Cómo estás? · Bien", {"size": 11.5, "color": INK})],
-          [("¿Cómo te llamas? · Me llamo…", {"size": 11.5, "color": INK})],
-          [("Yo soy… · Encantado/a · Igualmente", {"size": 11.5, "color": INK})],
-          [("Muchas gracias · Hasta luego · Adiós", {"size": 11.5, "color": INK})]])
+          [("Buenos días · Buenas tardes", {"size": 11.5, "color": INK})],
+          [("Buenas noches · ¿Cómo estás?", {"size": 11.5, "color": INK})],
+          [("Estoy bien / cansado-a / ocupado-a", {"size": 11.5, "color": INK})],
+          [("Hasta luego · Adiós · Hasta mañana", {"size": 11.5, "color": INK})]])
     # echte, afspeelbare video (online YouTube-embed) — speelt in PowerPoint
     text(s, Inches(8.2), Inches(4.12), Inches(4.6), Inches(0.3),
-         [[("🎬 Sitcom · Episodio 1 — klik om af te spelen", {"size": 11, "bold": True, "color": GD, "font": DISPLAY})]])
+         [[("🎬 Sitcom · Episodio 2 — klik om af te spelen", {"size": 11, "bold": True, "color": GD, "font": DISPLAY})]])
     add_online_video(s, VIDEO_ID, Inches(8.2), Inches(4.45), Inches(4.6), Inches(2.55), VIDEO_POSTER)
     footer(s, tab=FTAB, page=pg())
 
 def s04_kit():
     s = slide(); bg(s)
-    sectionbar(s, "§2 · KIT", "Saludar y despedirse", "Groeten & afscheid nemen", num=2)
-    cols = [("Saludar · begroeten", [("¡Hola!", "hallo"), ("Buenos días", "goedemorgen"),
-              ("Buenas tardes", "goedemiddag"), ("¿Qué tal?", "hoe gaat het?"), ("¿Cómo estás?", "hoe gaat het? (jij)")]),
-            ("Responder · antwoorden", [("Bien", "goed"), ("Muy bien", "heel goed"),
-              ("Bien, ¿y tú?", "goed, en jij?"), ("Regular", "gaat wel")]),
+    sectionbar(s, "§2 · KIT", "Saludar por el día y despedirse", "Groeten volgens het moment & afscheid nemen", num=2)
+    cols = [("Saludar · begroeten", [("Buenos días", "goedemorgen"), ("Buenas tardes", "goedemiddag"),
+              ("Buenas noches", "goedenavond"), ("¡Hola!", "hallo"), ("¡Buenas!", "hoi (informeel)")]),
+            ("Preguntar · vragen", [("¿Qué tal?", "hoe gaat het?"), ("¿Cómo estás?", "hoe gaat het? (jij)"),
+              ("¿Cómo está usted?", "… met u?"), ("¿Y tú?", "en jij?")]),
             ("Despedirse · afscheid", [("Adiós", "dag"), ("Hasta luego", "tot straks"),
-              ("Hasta mañana", "tot morgen"), ("Vale", "oké"), ("¡Nos vemos!", "we zien elkaar!")])]
+              ("Hasta mañana", "tot morgen"), ("¡Nos vemos!", "we zien elkaar!"), ("Chao", "doei")])]
     x = Inches(0.55); w = Inches(4.0)
     for title, items in cols:
         card(s, x, Inches(1.6), w, Inches(4.9), fill=WHITE, line=LINE)
@@ -589,121 +589,122 @@ def s04_kit():
 
 def s05_presentarse():
     s = slide(); bg(s)
-    sectionbar(s, "§2 · KIT", "Presentarse", "Jezelf voorstellen & de ander leren kennen", num=2)
-    left = [("Me llamo…", "ik heet…"), ("Yo soy…", "ik ben…"), ("Soy de…", "ik kom uit…"),
-            ("Encantado / Encantada", "aangenaam (m/v)"), ("Igualmente", "insgelijks")]
-    right = [("¿Cómo te llamas?", "hoe heet je?"), ("¿Y tú?", "en jij?"),
-             ("¿De dónde eres?", "waar kom je vandaan?"), ("¿Cómo está usted?", "hoe gaat het met u?")]
+    sectionbar(s, "§2 · KIT", "Decir cómo estoy", "Zeggen hoe je je voelt · estar + estado", num=2)
+    left = [("Estoy bien", "ik voel me goed"), ("Muy bien", "heel goed"), ("Regular", "gaat wel"),
+            ("Estoy cansado / cansada", "ik ben moe"), ("Estoy ocupado / ocupada", "ik heb het druk")]
+    right = [("Estoy nervioso / nerviosa", "ik ben nerveus"), ("Estoy enfermo / enferma", "ik ben ziek"),
+             ("Estoy fatal", "heel slecht"), ("¿Y tú?", "en jij?")]
     card(s, Inches(0.55), Inches(1.6), Inches(6.0), Inches(4.9), fill=GT, line=G)
     text(s, Inches(0.8), Inches(1.78), Inches(5.5), Inches(0.5),
-         [[("Decir quién eres · zeggen wie je bent", {"size": 13.5, "bold": True, "color": GD, "font": DISPLAY})]])
+         [[("¿Cómo estás? → Estoy…", {"size": 13.5, "bold": True, "color": GD, "font": DISPLAY})]])
     y = Inches(2.5)
     for es, nl in left:
         text(s, Inches(0.8), y, Inches(5.4), Inches(0.6), [[(es, {"size": 15, "bold": True, "color": INK}), ("   " + nl, {"size": 11, "italic": True, "color": MUT})]])
         y = y + Inches(0.72)
     card(s, Inches(6.8), Inches(1.6), Inches(6.0), Inches(4.9), fill=WHITE, line=LINE)
     text(s, Inches(7.05), Inches(1.78), Inches(5.5), Inches(0.5),
-         [[("Preguntar · aan de ander vragen", {"size": 13.5, "bold": True, "color": GD, "font": DISPLAY})]])
+         [[("Más estados · meer toestanden", {"size": 13.5, "bold": True, "color": GD, "font": DISPLAY})]])
     y = Inches(2.5)
     for es, nl in right:
         text(s, Inches(7.05), y, Inches(5.4), Inches(0.6), [[(es, {"size": 15, "bold": True, "color": INK}), ("   " + nl, {"size": 11, "italic": True, "color": MUT})]])
         y = y + Inches(0.72)
     text(s, Inches(7.05), Inches(5.7), Inches(5.5), Inches(0.7),
          [[("¡Ojo! ", {"size": 12, "bold": True, "color": RED}),
-           ("me llamo… (niet «yo soy me llamo»).", {"size": 12, "italic": True, "color": INK})]])
+           ("Estoy bien (niet «Soy bien»). Man: -o · vrouw: -a.", {"size": 12, "italic": True, "color": INK})]])
     footer(s, tab=FTAB, page=pg())
 
 def s06_gram_ser():
     s = slide(); bg(s)
-    sectionbar(s, "§4 · GRAMÁTICA", "ser · llamarse", "Wie je bent / hoe je heet — functioneel", num=4)
+    sectionbar(s, "§4 · GRAMÁTICA", "estar · saludo por la hora", "Hoe je je voelt & groeten volgens de klok — functioneel", num=4)
     legend_func(s, Inches(0.55), Inches(1.42))
-    # ser
+    # estar
     card(s, Inches(0.55), Inches(1.9), Inches(6.0), Inches(2.2), fill=WHITE, line=LINE)
-    text(s, Inches(0.8), Inches(2.05), Inches(5.5), Inches(0.4), [[("ser — zijn", {"size": 15, "bold": True, "color": GD, "font": DISPLAY})]])
-    ser = [("yo", "soy", "ik ben"), ("tú", "eres", "jij bent"), ("él/ella/usted", "es", "hij/zij is · u bent")]
+    text(s, Inches(0.8), Inches(2.05), Inches(5.5), Inches(0.4), [[("estar — hoe je je voelt", {"size": 15, "bold": True, "color": GD, "font": DISPLAY})]])
+    est = [("yo", "estoy", "ik ben / voel me"), ("tú", "estás", "jij bent / voelt je"), ("él/ella/usted", "está", "hij/zij is · u bent")]
     y = Inches(2.55)
-    for p, v, nl in ser:
+    for p, v, nl in est:
         text(s, Inches(0.8), y, Inches(5.6), Inches(0.4),
              [[(p + "  ", {"size": 13, "bold": True, "color": F_SUBJ}), (v, {"size": 13, "bold": True, "color": F_VERB}), ("   " + nl, {"size": 11, "italic": True, "color": MUT})]])
         y = y + Inches(0.48)
-    # llamarse
+    # saludo por hora
     card(s, Inches(6.8), Inches(1.9), Inches(6.0), Inches(2.2), fill=WHITE, line=LINE)
-    text(s, Inches(7.05), Inches(2.05), Inches(5.5), Inches(0.4), [[("llamarse — heten", {"size": 15, "bold": True, "color": GD, "font": DISPLAY})]])
-    lla = [("(yo) me", "llamo", "ik heet"), ("(tú) te", "llamas", "jij heet"), ("(usted) se", "llama", "u heet")]
+    text(s, Inches(7.05), Inches(2.05), Inches(5.5), Inches(0.4), [[("saludo según la hora", {"size": 15, "bold": True, "color": GD, "font": DISPLAY})]])
+    hor = [("🌅 la mañana", "Buenos días", "~6–12 u"), ("☀️ la tarde", "Buenas tardes", "~12–20 u"), ("🌙 la noche", "Buenas noches", "~20–6 u")]
     y = Inches(2.55)
-    for p, v, nl in lla:
+    for m, v, nl in hor:
         text(s, Inches(7.05), y, Inches(5.6), Inches(0.4),
-             [[(p + "  ", {"size": 13, "bold": True, "color": F_SUBJ}), (v, {"size": 13, "bold": True, "color": F_VERB}), ("   " + nl, {"size": 11, "italic": True, "color": MUT})]])
+             [[(m + "  ", {"size": 13, "bold": True, "color": INK}), (v, {"size": 13, "bold": True, "color": GD}), ("   " + nl, {"size": 11, "italic": True, "color": MUT})]])
         y = y + Inches(0.48)
     # mini-quiz met reveal
     card(s, Inches(0.55), Inches(4.35), Inches(12.25), Inches(1.7), fill=GT, line=G)
     text(s, Inches(0.8), Inches(4.5), Inches(11.7), Inches(0.5),
          [[("Completa · vul aan (klik voor de oplossing): ", {"size": 13, "bold": True, "color": GD, "font": DISPLAY}),
-           ("Yo ___ de Bélgica.  ¿Cómo ___ llamas?  Ella ___ profesora.", {"size": 13, "color": INK})]])
+           ("Yo ___ bien.  ¿Cómo ___ (tú)?  María ___ cansada.  08.30 → ___ ", {"size": 13, "color": INK})]])
     exercise_solucion(s, Inches(0.8), Inches(5.15), Inches(11.7), Inches(0.7),
-        [[("soy · te · es", {"bold": True, "color": GD, "size": 13})]])
+        [[("estoy · estás · está · Buenos días", {"bold": True, "color": GD, "size": 13})]])
     noodroute(s)
-    notes(s, "Functioneel: enkel soy/eres/es en me/te/se llamo/llamas/llama. Geen volledige conjugatie.")
+    notes(s, "Functioneel: enkel estoy/estás/está (estar voor toestand/gevoel). Geen volledige conjugatie. Saludo volgens de klok (días/tardes/noches). Geen ser/estar-contrast als systeem — dat is C5/C6.")
     footer(s, tab=FTAB, page=pg())
 
 def s07_gram_mv():
     s = slide(); bg(s)
-    sectionbar(s, "§4 · GRAMÁTICA", "-o / -a · tú / usted", "Man/vrouw & informeel/beleefd", num=4)
+    sectionbar(s, "§4 · GRAMÁTICA", "-o / -a · tú / usted", "Man/vrouw (op de estados) & informeel/beleefd", num=4)
     card(s, Inches(0.55), Inches(1.7), Inches(6.0), Inches(2.3), fill=RGBColor(0xE8,0xF0,0xFE), line=LINE)
     text(s, Inches(0.8), Inches(1.9), Inches(5.5), Inches(2.0),
          [[("♂ Un chico dice…", {"size": 14, "bold": True, "color": RGBColor(0x1E,0x40,0xAF), "font": DISPLAY})],
-          [("Encantado", {"size": 18, "bold": True, "color": RGBColor(0x1E,0x40,0xAF)})],
-          [("Bienvenido", {"size": 18, "bold": True, "color": RGBColor(0x1E,0x40,0xAF)})]])
+          [("Estoy cansado", {"size": 18, "bold": True, "color": RGBColor(0x1E,0x40,0xAF)})],
+          [("ocupado · nervioso · enfermo", {"size": 14, "bold": True, "color": RGBColor(0x1E,0x40,0xAF)})]])
     card(s, Inches(6.8), Inches(1.7), Inches(6.0), Inches(2.3), fill=RGBColor(0xFC,0xE7,0xF0), line=LINE)
     text(s, Inches(7.05), Inches(1.9), Inches(5.5), Inches(2.0),
          [[("♀ Una chica dice…", {"size": 14, "bold": True, "color": RGBColor(0x9D,0x17,0x4D), "font": DISPLAY})],
-          [("Encantada", {"size": 18, "bold": True, "color": RGBColor(0x9D,0x17,0x4D)})],
-          [("Bienvenida", {"size": 18, "bold": True, "color": RGBColor(0x9D,0x17,0x4D)})]])
+          [("Estoy cansada", {"size": 18, "bold": True, "color": RGBColor(0x9D,0x17,0x4D)})],
+          [("ocupada · nerviosa · enferma", {"size": 14, "bold": True, "color": RGBColor(0x9D,0x17,0x4D)})]])
     card(s, Inches(0.55), Inches(4.2), Inches(12.25), Inches(1.8), fill=WHITE, line=LINE)
     text(s, Inches(0.8), Inches(4.4), Inches(11.7), Inches(1.5),
          [[("tú  ↔  usted", {"size": 15, "bold": True, "color": GD, "font": DISPLAY})],
           [("Met vrienden en klasgenoten: ", {"size": 13, "color": INK}), ("tú", {"size": 13, "bold": True, "color": F_VERB}),
-           ("  (¿Cómo estás? · ¿Cómo te llamas?).", {"size": 13, "color": INK})],
-          [("Formeel, met een onbekende volwassene: ", {"size": 13, "color": INK}), ("usted", {"size": 13, "bold": True, "color": F_VERB}),
-           ("  (¿Cómo está usted? · ¿Cómo se llama?).", {"size": 13, "color": INK})]])
+           ("  (¿Cómo estás? · ¿Qué tal?).", {"size": 13, "color": INK})],
+          [("Formeel, met een onbekende volwassene / de directeur: ", {"size": 13, "color": INK}), ("usted", {"size": 13, "bold": True, "color": F_VERB}),
+           ("  (¿Cómo está usted?).", {"size": 13, "color": INK})]])
     footer(s, tab=FTAB, page=pg())
 
 def s08_practica():
     s = slide(); bg(s)
     sectionbar(s, "§3 · PRÁCTICA", "Completa el diálogo", "Vul samen aan — klik voor de oplossing", num=3)
     card(s, Inches(0.55), Inches(1.7), Inches(7.6), Inches(4.5), fill=WHITE, line=LINE)
-    lines = [("— ¡Hola! ¿Cómo ___ llamas?", "te"),
-             ("— Me ___ Ana. ¿Y ___?", "llamo · tú"),
-             ("— Yo ___ Leo. ___ de Madrid.", "soy · Soy"),
-             ("— ¡___! Hasta ___.", "Encantado · luego")]
+    lines = [("— Buenos ___, ¿cómo ___?", "días · estás"),
+             ("— ___ bien, gracias. ¿Y tú?", "Estoy"),
+             ("— Regular… ___ un poco cansada.", "estoy"),
+             ("— Vaya. ¡Hasta ___!", "luego")]
     y = Inches(2.0)
     for q, _a in lines:
         text(s, Inches(0.8), y, Inches(7.1), Inches(0.6), [[(q, {"size": 16, "color": INK})]])
         y = y + Inches(0.9)
     exercise_solucion(s, Inches(8.4), Inches(1.9), Inches(4.4), Inches(4.0),
-        [[("1. te", {"color": GD, "size": 14})], [("2. llamo · tú", {"color": GD, "size": 14})],
-         [("3. soy · Soy", {"color": GD, "size": 14})], [("4. Encantado/a · luego", {"color": GD, "size": 14})]],
+        [[("1. días · estás", {"color": GD, "size": 14})], [("2. Estoy", {"color": GD, "size": 14})],
+         [("3. estoy", {"color": GD, "size": 14})], [("4. luego", {"color": GD, "size": 14})]],
         title_doc="SOLUCIÓN · docent")
     noodroute(s)
-    notes(s, "Laat leerlingen eerst zelf proberen (in duo). Klik daarna de oplossing open.")
+    notes(s, "Laat leerlingen eerst zelf proberen (in duo). Klik daarna de oplossing open. Let op estar (estoy/estás) + saludo por hora.")
     footer(s, tab=FTAB, page=pg())
 
 def s09_speaking():
     s = slide(); bg(s)
-    sectionbar(s, "§3 · HABLAR", "Preséntate", "Sta recht, groet en stel je voor — sin leer", num=3)
+    sectionbar(s, "§3 · HABLAR", "Un día de saludos", "Groet volgens het uur en zeg hoe het gaat — sin leer", num=3)
     card(s, Inches(0.55), Inches(1.7), Inches(7.6), Inches(3.4), fill=GT, line=G)
     text(s, Inches(0.85), Inches(1.95), Inches(7.1), Inches(3.0),
-         [[("Modelo · zeg dit hardop:", {"size": 13, "bold": True, "color": GD, "font": DISPLAY})],
-          [("«¡Hola! Me llamo ____.", {"size": 18, "color": INK})],
-          [("Soy de ____. ¡Encantad_!", {"size": 18, "color": INK})],
-          [("¿Y tú, cómo te llamas?»", {"size": 18, "color": INK})]])
+         [[("Modelo · zeg dit hardop (por la mañana):", {"size": 13, "bold": True, "color": GD, "font": DISPLAY})],
+          [("«¡Buenos días! ¿Qué tal?", {"size": 18, "color": INK})],
+          [("— Estoy bien, ¿y tú?", {"size": 18, "color": INK})],
+          [("— Regular, estoy un poco cansado.", {"size": 18, "color": INK})],
+          [("— Vaya. ¡Hasta luego!»", {"size": 18, "color": INK})]])
     card(s, Inches(8.4), Inches(1.7), Inches(4.4), Inches(3.4), fill=WHITE, line=LINE)
     text(s, Inches(8.65), Inches(1.95), Inches(3.9), Inches(3.0),
          [[("¿Cómo? · Werkvorm", {"size": 13, "bold": True, "color": GD, "font": DISPLAY})],
-          [("1. Draai je naar je buur.", {"size": 13, "color": INK})],
-          [("2. Groet en stel je voor.", {"size": 13, "color": INK})],
-          [("3. Vraag zijn/haar naam.", {"size": 13, "color": INK})],
-          [("4. Wissel van partner (3×).", {"size": 13, "color": INK})]])
+          [("1. Kies een moment (🌅☀️🌙).", {"size": 13, "color": INK})],
+          [("2. Groet gepast + vraag ¿cómo estás?", {"size": 13, "color": INK})],
+          [("3. Antwoord met estar + estado.", {"size": 13, "color": INK})],
+          [("4. Neem afscheid. Wissel (3×).", {"size": 13, "color": INK})]])
     text(s, Inches(0.6), Inches(5.4), Inches(12), Inches(0.7),
          [[("Interactie ", {"size": 12, "bold": True, "color": GD, "font": DISPLAY}),
            ("= beurt nemen, luisteren en reageren. Begrijp je iets niet? Zeg: «¿Cómo? / Otra vez, por favor.»", {"size": 12, "italic": True, "color": INK})]])
@@ -711,10 +712,10 @@ def s09_speaking():
 
 def s10_musica():
     s = slide(); bg(s)
-    sectionbar(s, "CULTURA", "Banda sonora", "Leer Spaans via muziek die jullie kennen", num=None)
-    bandas = [("Aitana", "Las Babys", "pop 🇪🇸"), ("Quevedo", "Bzrp #52", "urban 🇪🇸"),
-              ("Manu Chao", "Me gustas tú", "clásico 🌎"), ("Karol G", "TQG", "🇨🇴"),
-              ("Bad Bunny", "Tití me preguntó", "🇵🇷"), ("Rosalía", "La Perla", "🇪🇸")]
+    sectionbar(s, "CULTURA", "Saludos & banda sonora", "Warme begroetingen (dos besos) + muziek die jullie kennen", num=None)
+    bandas = [("Rosalía", "La Perla", "🇪🇸 flamenco+pop"), ("Luis Fonsi", "Despacito", "🇵🇷 pop"),
+              ("Manu Chao", "Me gustas tú", "🌎 clásico"), ("Aitana", "6 de febrero", "🇪🇸 pop"),
+              ("Karol G", "TQG", "🇨🇴 reggaetón"), ("Quevedo", "Bzrp #52", "🇪🇸 urban")]
     x0, y0 = Inches(0.55), Inches(1.75); w = Inches(4.0)
     for i, (ar, sg, ge) in enumerate(bandas):
         col = i % 3; row = i // 3
@@ -731,24 +732,24 @@ def s10_musica():
 
 def s11_tarea():
     s = slide(); bg(s)
-    sectionbar(s, "§5 · TAREA FINAL", "El carné de la clase", "Maak je klaskaartje & stel je voor", num=5)
+    sectionbar(s, "§5 · TAREA FINAL", "Un día de saludos", "Speel 3 mini-gesprekjes, één per moment van de dag", num=5)
     card(s, Inches(0.55), Inches(1.7), Inches(6.0), Inches(3.5), fill=WHITE, line=G, lw=1.6)
     rect(s, Inches(0.55), Inches(1.7), Inches(6.0), Inches(0.55), fill=G)
-    text(s, Inches(0.75), Inches(1.78), Inches(5.6), Inches(0.4), [[("CARNÉ · academia Welcome to Spanish", {"size": 12, "bold": True, "color": WHITE, "font": DISPLAY})]])
+    text(s, Inches(0.75), Inches(1.78), Inches(5.6), Inches(0.4), [[("DIARIO DE SALUDOS · noteer je gesprekjes", {"size": 12, "bold": True, "color": WHITE, "font": DISPLAY})]])
     text(s, Inches(0.85), Inches(2.5), Inches(5.4), Inches(2.5),
-         [[("Me llamo  ", {"size": 15, "bold": True, "color": INK}), ("________________", {"size": 15, "color": LINE})],
-          [("Soy de  ", {"size": 15, "bold": True, "color": INK}), ("__________________", {"size": 15, "color": LINE})],
-          [("Mi emoji  ", {"size": 15, "bold": True, "color": INK}), ("____________", {"size": 15, "color": LINE})]])
+         [[("🌅 Saludo  ", {"size": 14, "bold": True, "color": INK}), ("____________  Estoy ______", {"size": 14, "color": LINE})],
+          [("☀️ Saludo  ", {"size": 14, "bold": True, "color": INK}), ("____________  Estoy ______", {"size": 14, "color": LINE})],
+          [("🌙 Saludo  ", {"size": 14, "bold": True, "color": INK}), ("____________  Estoy ______", {"size": 14, "color": LINE})]])
     card(s, Inches(6.8), Inches(1.7), Inches(6.0), Inches(3.5), fill=GT, line=G)
     text(s, Inches(7.05), Inches(1.9), Inches(5.5), Inches(3.1),
          [[("Los pasos · stappen", {"size": 14, "bold": True, "color": GD, "font": DISPLAY})],
-          [("1. Vul je carné in.", {"size": 13, "color": INK})],
-          [("2. Stel je voor (sin leer): «¡Hola! Me llamo…»", {"size": 13, "color": INK})],
-          [("3. Vraag 3 klasgenoten naam + herkomst.", {"size": 13, "color": INK})],
-          [("4. Sluit af: «¡Encantad_! Hasta luego.»", {"size": 13, "color": INK})]])
+          [("1. Kies een moment: mañana / tarde / noche.", {"size": 13, "color": INK})],
+          [("2. Groet gepast + «¿cómo estás?»", {"size": 13, "color": INK})],
+          [("3. Antwoord met estar: «Estoy ___» (‑o/‑a).", {"size": 13, "color": INK})],
+          [("4. Sluit af: «Hasta luego / mañana. Adiós.»", {"size": 13, "color": INK})]])
     text(s, Inches(0.6), Inches(5.5), Inches(12), Inches(0.9),
          [[("🏁 Klaar als… ", {"size": 13, "bold": True, "color": GD, "font": DISPLAY}),
-           ("je jezelf vlot voorstelt zónder af te lezen, de juiste vorm (-o/-a) gebruikt en 3 namen genoteerd hebt.", {"size": 12.5, "color": INK})]])
+           ("je op elk moment de juiste groet kiest (días/tardes/noches), met estar zegt hoe je je voelt (juiste ‑o/‑a) en netjes afscheid neemt — zónder af te lezen.", {"size": 12.5, "color": INK})]])
     footer(s, tab=FTAB, page=pg())
 
 def s12_repaso():
@@ -756,17 +757,17 @@ def s12_repaso():
     sectionbar(s, "REPASO", "Lo esencial de un vistazo", "Wat je nu kunt — semáforo", num=None)
     card(s, Inches(0.55), Inches(1.7), Inches(7.6), Inches(4.4), fill=WHITE, line=LINE)
     text(s, Inches(0.85), Inches(1.9), Inches(7.1), Inches(4.0),
-         [[("Zo groet & stel je je voor", {"size": 14, "bold": True, "color": GD, "font": DISPLAY})],
-          [("¡Hola! Me llamo ___. Soy de ___. Encantad_.", {"size": 14, "color": INK})],
-          [("¿Y tú, cómo te llamas?", {"size": 14, "color": INK})],
+         [[("Zo groet je volgens het uur", {"size": 14, "bold": True, "color": GD, "font": DISPLAY})],
+          [("🌅 Buenos días · ☀️ Buenas tardes · 🌙 Buenas noches", {"size": 14, "color": INK})],
+          [("Afscheid: Adiós · Hasta luego · Hasta mañana", {"size": 14, "color": INK})],
           [("", {"size": 6})],
-          [("Onthou", {"size": 14, "bold": True, "color": GD, "font": DISPLAY})],
-          [("ser: soy · eres · es", {"size": 13, "color": INK})],
-          [("llamarse: me/te/se + llamo/llamas/llama", {"size": 13, "color": INK})],
+          [("Zo zeg je hoe het gaat", {"size": 14, "bold": True, "color": GD, "font": DISPLAY})],
+          [("¿Cómo estás? → Estoy bien / cansad_ / ocupad_.", {"size": 13, "color": INK})],
+          [("estar: estoy · estás · está", {"size": 13, "color": INK})],
           [("-o = ♂ · -a = ♀   |   tú = vriend · usted = beleefd", {"size": 13, "color": INK})]])
     card(s, Inches(8.4), Inches(1.7), Inches(4.4), Inches(4.4), fill=GT, line=G)
     text(s, Inches(8.65), Inches(1.9), Inches(3.9), Inches(0.5), [[("Puedo… · Ik kan…", {"size": 13, "bold": True, "color": GD, "font": DISPLAY})]])
-    items = ["groeten & afscheid nemen", "mezelf voorstellen", "iemand naar naam vragen", "-o/-a & tú/usted kiezen"]
+    items = ["groeten volgens het moment", "hoe het gaat zeggen (estar)", "afscheid nemen", "-o/-a & tú/usted kiezen"]
     y = Inches(2.55)
     for it in items:
         text(s, Inches(8.65), y, Inches(3.9), Inches(0.5), [[("🟢🟡🔴  ", {"size": 12}), (it, {"size": 12, "color": INK})]])
@@ -776,47 +777,52 @@ def s12_repaso():
 
 def s13_teacher():
     s = slide(); bg(s, color=RGBColor(0x24,0x1C,0x1B))
-    text(s, Inches(0.6), Inches(0.5), Inches(12), Inches(0.7), [[("Docentendossier · Unidad 1 «Presentaciones»", {"size": 22, "bold": True, "color": WHITE, "font": DISPLAY})]])
+    text(s, Inches(0.6), Inches(0.5), Inches(12), Inches(0.7), [[("Docentendossier · Unidad 2 «Saludos»", {"size": 22, "bold": True, "color": WHITE, "font": DISPLAY})]])
     text(s, Inches(0.6), Inches(1.4), Inches(12.1), Inches(5.4),
          [[("Timing (2 lesuren van 50 min).", {"size": 14, "bold": True, "color": RGBColor(0xFB,0xEA,0xEC), "font": DISPLAY})],
-          [("Les 1: Escucha + Kit (saludos/presentarse) + eerste práctica. Les 2: gramática functioneel, hablar, tarea + música.", {"size": 12.5, "color": RGBColor(0xEC,0xEA,0xE3)})],
+          [("Les 1: Escucha (sitcom ep. 2, 3 momenten) + Suena bien (jota/h muda) + Kit (saludos por el día · estar+estado). Les 2: gramática functioneel (estar · saludo por hora), hablar, tarea + música.", {"size": 12.5, "color": RGBColor(0xEC,0xEA,0xE3)})],
           [("", {"size": 6})],
           [("Aanpak C4 (survival).", {"size": 14, "bold": True, "color": RGBColor(0xFB,0xEA,0xEC), "font": DISPLAY})],
-          [("Chunks komen auditief binnen (luisteren → naspreken). Grammatica enkel functioneel, geen volledige conjugatie — dat is voor het 5de. Zo krijgen de 4MOT-leerlingen voorsprong in de mechaniek zonder de leerplanstof van C5 op te gebruiken.", {"size": 12.5, "color": RGBColor(0xEC,0xEA,0xE3)})],
+          [("Chunks komen auditief binnen (luisteren → naspreken). estar enkel functioneel (estoy/estás/está voor toestand), géén ser/estar-contrast als systeem en géén volledige conjugatie — dat is C5/C6. Doelcodes: C4-GE-1/2 · C4-WS-2 · C4-MEC-3 · C4-CU-2.", {"size": 12.5, "color": RGBColor(0xEC,0xEA,0xE3)})],
           [("", {"size": 6})],
           [("Evaluatie.", {"size": 14, "bold": True, "color": RGBColor(0xFB,0xEA,0xEC), "font": DISPLAY})],
-          [("Mondelinge mini-taak (preséntate + 3 klasgenoten) + herkennen van saludos/chunks. Geen leerplan → focus op «kunnen gebruiken in de praktijk».", {"size": 12.5, "color": RGBColor(0xEC,0xEA,0xE3)})],
+          [("Mondelinge mini-taak («un día de saludos»: 3 momenten groeten + estar) + herkennen van saludos/estados. Geen leerplan → focus op «kunnen gebruiken in de praktijk».", {"size": 12.5, "color": RGBColor(0xEC,0xEA,0xE3)})],
           [("", {"size": 6})],
           [("Oplossingen staan bij elke oefendia in de presenter-notities; antwoorden verschijnen bij klik.", {"size": 11.5, "italic": True, "color": RGBColor(0xA6,0xA2,0x9A)})]])
     footer(s, tab=FTAB, page=pg())
 
 def s_uitspraak():
     s = slide(); bg(s)
-    sectionbar(s, "SUENA BIEN", "Las cinco vocales + el acento", "De 5 klinkers & de klemtoon — luister en spreek na", num=None)
-    vocs=[("a","‘bal’","casa"),("e","‘bed’","mesa"),("i","‘kiwi’","sí"),("o","‘pot’","hola"),("u","‘boek’","tú")]
-    x=Inches(0.55); w=Inches(2.4)
-    for l,a,e in vocs:
-        card(s,x,Inches(1.7),w,Inches(1.95),fill=WHITE,line=LINE)
-        rect(s,x,Inches(1.7),w,Inches(0.14),fill=G)
-        text(s,x,Inches(1.98),w,Inches(0.95),[[(l,{"size":42,"bold":True,"color":GD,"font":DISPLAY})]],align=PP_ALIGN.CENTER)
-        text(s,x,Inches(2.95),w,Inches(0.6),[[("als in "+a,{"size":11,"color":MUT})],[(e,{"size":14,"bold":True,"color":INK})]],align=PP_ALIGN.CENTER)
-        x=x+w+Inches(0.1)
-    card(s,Inches(0.55),Inches(3.85),Inches(12.25),Inches(0.85),fill=GT,line=G)
-    text(s,Inches(0.85),Inches(4.0),Inches(11.7),Inches(0.6),
-         [[("¡Ojo! ",{"size":13,"bold":True,"color":RED,"font":DISPLAY}),("e blijft /e/ en o blijft /o/ — géén NL «ei/ou»-glijder.  a · e · i · o · oe",{"size":13,"color":INK})]])
-    text(s,Inches(0.6),Inches(4.95),Inches(12),Inches(0.4),[[("¿Dónde está el acento? · waar ligt de klemtoon?",{"size":14,"bold":True,"color":GD,"font":DISPLAY})]])
-    text(s,Inches(0.6),Inches(5.5),Inches(12.2),Inches(0.7),
-         [[("HO",{"color":G,"bold":True}),("·la     me·",{}),("LLA",{"color":G,"bold":True}),("·mo     en·can·",{}),
-           ("TA",{"color":G,"bold":True}),("·do     a·",{}),("DIÓS",{"color":G,"bold":True}),("     ",{}),
-           ("GRA",{"color":G,"bold":True}),("·cias",{})]],size=20,font=DISPLAY)
-    text(s,Inches(0.6),Inches(6.3),Inches(12),Inches(0.4),[[("🔊 Oefen de klanken online op de hub (tabblad Kit · Suena bien).",{"size":11,"italic":True,"color":MUT})]])
+    sectionbar(s, "SUENA BIEN", "La jota /x/ · la h muda · el acento", "De jota, de stille h & de klemtoon — luister en spreek na", num=None)
+    # jota-kaart
+    card(s,Inches(0.55),Inches(1.6),Inches(6.05),Inches(2.15),fill=WHITE,line=LINE)
+    rect(s,Inches(0.55),Inches(1.6),Inches(6.05),Inches(0.14),fill=G)
+    text(s,Inches(0.8),Inches(1.85),Inches(5.6),Inches(0.4),[[("La jota /x/ · j en g+e,i",{"size":14,"bold":True,"color":GD,"font":DISPLAY})]])
+    text(s,Inches(0.8),Inches(2.35),Inches(5.6),Inches(1.3),
+         [[("Josefina · jueves · gente · gimnasio · trabajo · mujer",{"size":15,"bold":True,"color":INK})],
+          [("Keelklank, zoals de NL «g» maar krachtiger.",{"size":11,"italic":True,"color":MUT})]])
+    # h muda-kaart
+    card(s,Inches(6.75),Inches(1.6),Inches(6.05),Inches(2.15),fill=WHITE,line=LINE)
+    rect(s,Inches(6.75),Inches(1.6),Inches(6.05),Inches(0.14),fill=G)
+    text(s,Inches(7.0),Inches(1.85),Inches(5.6),Inches(0.4),[[("La h muda · de stille h",{"size":14,"bold":True,"color":GD,"font":DISPLAY})]])
+    text(s,Inches(7.0),Inches(2.35),Inches(5.6),Inches(1.3),
+         [[("hola · hasta · hija · ahora · hombre · hospital",{"size":15,"bold":True,"color":INK})],
+          [("Je schrijft de h wél, maar je hóórt ze niet: «hola» = «ola».",{"size":11,"italic":True,"color":MUT})]])
+    card(s,Inches(0.55),Inches(3.9),Inches(12.25),Inches(0.85),fill=GT,line=G)
+    text(s,Inches(0.85),Inches(4.05),Inches(11.7),Inches(0.6),
+         [[("¡Ojo! ",{"size":13,"bold":True,"color":RED,"font":DISPLAY}),("g + a/o/u = /g/ (gato, gusto)  ·  maar g + e/i = /x/ (gente, gimnasio) — net als de j.",{"size":13,"color":INK})]])
+    text(s,Inches(0.6),Inches(5.0),Inches(12),Inches(0.4),[[("El acento en los saludos · waar ligt de klemtoon?",{"size":14,"bold":True,"color":GD,"font":DISPLAY})]])
+    text(s,Inches(0.6),Inches(5.55),Inches(12.2),Inches(0.7),
+         [[("bue·nos ",{}),("DÍ",{"color":G,"bold":True}),("·as      bue·nas ",{}),("TAR",{"color":G,"bold":True}),
+           ("·des      bue·nas ",{}),("NO",{"color":G,"bold":True}),("·ches",{})]],size=20,font=DISPLAY)
+    text(s,Inches(0.6),Inches(6.35),Inches(12),Inches(0.4),[[("🔊 Oefen de klanken online op de hub (tabblad Kit · Suena bien).",{"size":11,"italic":True,"color":MUT})]])
     footer(s, tab=FTAB, page=pg())
 
 # ── Funciones-comunicativas-dia (matrix C) — leest de gedeelde funciones_data ──
 import sys as _sys
 _sys.path.insert(0, os.path.join(os.path.dirname(HERE), "web"))
 import funciones_data as FD
-FUNC_UNIT = 1
+FUNC_UNIT = 2
 def s_funciones():
     s = slide(); bg(s)
     sectionbar(s, "FUNCIONES", "Mis funciones comunicativas", "Lo que ya sé hacer — crece cada unidad", num=None)
