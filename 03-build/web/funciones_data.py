@@ -43,6 +43,12 @@ FUNCIONES = [
  {"id":"F10","es":"Describir a alguien","nl":"iemand beschrijven (fysiek & karakter)",
   "cefr":"A1 · descripción de personas","code":"C4-SP-2",
   "exp":{4:["es alto/a · bajo/a · guapo/a","es simpático/a · divertido/a · inteligente","es muy… · un poco…"]}},
+ {"id":"F11","es":"Identificar objetos","nl":"voorwerpen benoemen (¿qué es esto?)",
+  "cefr":"A1 · identificar cosas","code":"C4-WS-1",
+  "exp":{5:["¿Qué es esto?","Esto es un/una…","Esto son… (meervoud)","un libro · una mesa (el/la)"]}},
+ {"id":"F12","es":"Decir qué hay y para qué sirve","nl":"zeggen wat er is / waarvoor iets dient",
+  "cefr":"A1 · existencia y función","code":"C4-WS-1",
+  "exp":{5:["¿Hay…? · (No) hay…","Sí que hay…","… que sirve para + infinitivo","sirve para abrir · beber · descansar"]}},
 ]
 FMAP={f["id"]:f for f in FUNCIONES}
 
@@ -54,10 +60,12 @@ NOTICING={
     ("«¿Habla usted francés?»","F03"),("«Dinero, por favor.»","F06"),("«Uno, dos, tres… veinte.»","F07")],
  4:[("«Esta es mi madre.»","F02"),("«Es muy elegante, pero un poco gorda.»","F10"),("«Paula es la hermana de María.»","F09"),
     ("«El tío Fermín, el guapo de la familia.»","F09"),("«Es muy alto y muy fuerte.»","F10")],
+ 5:[("«¿Qué es esto?»","F11"),("«Esto es un sofá.»","F11"),("«Sirve para descansar.»","F12"),
+    ("«¿Hay un ordenador?»","F12"),("«Esto son mis llaves.»","F11")],
 }
 # welke functies de eindtaak van elke unit combineert (afzender·ontvanger·doel — recycling zichtbaar).
-TAREA_FUN={1:["F01","F02","F03"],2:["F01","F05","F04"],3:["F02","F03","F08"],4:["F09","F10","F02"]}
-TAREA_TITEL={1:"Mi presentación",2:"Un día de saludos",3:"Mi mapa · ¿de dónde eres?",4:"Mi árbol de familia"}
+TAREA_FUN={1:["F01","F02","F03"],2:["F01","F05","F04"],3:["F02","F03","F08"],4:["F09","F10","F02"],5:["F11","F12","F10"]}
+TAREA_TITEL={1:"Mi presentación",2:"Un día de saludos",3:"Mi mapa · ¿de dónde eres?",4:"Mi árbol de familia",5:"Diccionario de la clase"}
 
 def funciones_hasta(unit):
     """Alle functies met intro-unit <= unit (het cumulatieve repertoire tot hier)."""

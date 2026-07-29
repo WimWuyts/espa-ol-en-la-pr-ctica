@@ -66,9 +66,22 @@ Pablo: Mi padre se llama Jorge. Es alto y muy fuerte.
 Pablo: [cheerful] Y mi hermano Leo es pequeño, pero muy divertido.
 ```
 
+## U5 · «una visita a la habitación»  (1 dialoog — Ana toont haar kamer aan Nico)
+**Stemmen:** Ana = jonge vrouw · Nico = jonge man.
+*(Komt exact overeen met `AUDIO[5]` in `comprension_data.py` → voorwerpen benoemen · hay/no hay · sirve para.)*
+```
+Ana: [cheerful] Mira, esta es mi habitación.
+[pause]
+Ana: Aquí hay una cama y una mesa pequeña.
+Nico: [curious] ¿Y qué es esto?
+Ana: [friendly] Esto es una guitarra. Sirve para tocar música.
+Nico: [impressed] ¡Qué bien! ¿Hay un ordenador?
+Ana: [calm] No, no hay ordenador, pero hay muchos libros.
+```
+
 ---
 
 ## Nadat je de mp3's hebt
-Zet ze als `C4_U1_audio.mp3` … `C4_U4_audio.mp3` in `03-build/web/componentes/audio/` (of stuur ze mij).
+Zet ze als `C4_U1_audio.mp3` … `C4_U5_audio.mp3` in `03-build/web/componentes/audio/` (of stuur ze mij).
 Dan draai ik `gen_c4_comprension.py` + de hubs opnieuw → de audio zit meteen in de «🎧 Escucha»-tab,
 met een traag-knop en het transcript. Voor volgende units lever ik telkens hetzelfde: script + tags + stemmen.

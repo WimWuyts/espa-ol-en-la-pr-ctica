@@ -14,7 +14,9 @@ def print_section(unit):
     # ── banco-spiekkaart: función · exponentes (per unit) · semáforo ──
     rows = ""
     for f in fs:
-        exps = " · ".join(e for u in sorted(k for k in f["exp"] if k <= unit) for e in f["exp"][u])
+        allexp = [e for u in sorted(k for k in f["exp"] if k <= unit) for e in f["exp"][u]]
+        cap = 5 if have >= 11 else 99   # zware units (≥11 functies): toon max 5 exponentes per functie (leesbaar + past op één blad)
+        exps = " · ".join(allexp[:cap]) + (" …" if len(allexp) > cap else "")
         st = FD.status(f, unit)
         mark = ' <span style="font-size:6.6pt;font-weight:800;color:var(--gd)">NUEVA</span>' if st=="nueva" else (' <span style="font-size:6.6pt;font-weight:800;color:var(--gd)">▲</span>' if st=="nivel" else "")
         rows += (f'<tr><td style="text-align:left"><b>{f["es"]}</b>{mark}<br>'
@@ -30,7 +32,7 @@ def print_section(unit):
     noticing = (f'<div class="regla"><span class="tag">¿Qué hacen con el idioma? · uit de scène</span>'
                 f'<p style="margin:1mm 0;font-size:8.8pt">Welke <b>functie</b> voert elke zin uit? Schrijf ze erbij. '
                 f'<span style="color:var(--mut)">Banco: {bank}.</span></p>'
-                f'<div style="columns:2;column-gap:8mm;line-height:2.0">{n_cells}</div></div>')
+                f'<div style="columns:2;column-gap:8mm;line-height:1.75">{n_cells}</div></div>')
     # ── tarea-tags + mini-reto (productie; wbox-hoogte schaalt met #functies → volle bladspiegel) ──
     ids = FD.TAREA_FUN.get(unit, [])
     tt = FD.TAREA_TITEL.get(unit, "")

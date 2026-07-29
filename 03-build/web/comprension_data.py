@@ -99,6 +99,27 @@ LECTURA = {
    "transfer": "¿Y tú? Describe a una persona de tu familia.",
    "glosario": [["Esta es mi madre", "dit is mijn moeder"], ["alta", "lang"], ["un poco bajo", "een beetje klein"], ["delgada", "slank"]],
  },
+ 5: {
+   "tipo": "un mensaje · ¿qué hay en mi habitación?",
+   "contexto_nl": "Leo stuurt een berichtje over zijn kamer.",
+   "texto": [
+     ["", "¡Hola! Esta es mi habitación. Hay una mesa, una silla y una cama."],
+     ["", "En la mesa hay un ordenador y muchos libros. Sirven para estudiar."],
+     ["", "También hay una ventana grande. Sirve para mirar la luna. ¡Me gusta mi habitación!"],
+   ],
+   "global": [
+     {"q": "¿Qué describe Leo?", "opts": ["Su clase", "Su habitación", "Su mochila"], "a": 1},
+     {"q": "¿Qué hay en la mesa?", "opts": ["Un sofá", "Un ordenador y libros", "Una televisión"], "a": 1},
+   ],
+   "detalle": [
+     {"q": "Hay una cama en la habitación.", "vf": True},
+     {"q": "No hay ventana.", "vf": False},
+     {"q": "Los libros sirven para estudiar.", "vf": True},
+     {"q": "La ventana es pequeña.", "vf": False},
+   ],
+   "transfer": "¿Y tú? ¿Qué hay en tu habitación?",
+   "glosario": [["hay", "er is/zijn"], ["la ventana", "het raam"], ["sirven para", "dienen om"], ["Me gusta", "ik vind leuk"]],
+ },
 }
 
 AUDIO = {
@@ -170,6 +191,26 @@ AUDIO = {
    ],
    "glosario": [["somos cuatro", "we zijn met vier"], ["amable", "vriendelijk"], ["fuerte", "sterk"], ["pequeño", "klein"]],
    "rallentado": ["mi madre", "amable", "divertido"],
+ },
+ 5: {
+   "tipo": "una visita a la habitación",
+   "guion": [
+     ["Ana", "Mira, esta es mi habitación."],
+     ["Ana", "Aquí hay una cama y una mesa pequeña."],
+     ["Nico", "¿Y qué es esto?"],
+     ["Ana", "Esto es una guitarra. Sirve para tocar música."],
+     ["Nico", "¡Qué bien! ¿Hay un ordenador?"],
+     ["Ana", "No, no hay ordenador, pero hay muchos libros."],
+   ],
+   "tarea_nl": "Luister: welke voorwerpen zijn er in de kamer?",
+   "preguntas": [
+     {"q": "¿De qué habitación hablan?", "opts": ["De la clase", "De la habitación de Ana", "De la cocina"], "a": 1},
+     {"q": "¿Qué objeto enseña Ana?", "opts": ["Un ordenador", "Una guitarra", "Una televisión"], "a": 1},
+     {"q": "¿Para qué sirve la guitarra?", "opts": ["Para estudiar", "Para tocar música", "Para descansar"], "a": 1},
+     {"q": "¿Hay un ordenador?", "opts": ["Sí", "No", "No se sabe"], "a": 1},
+   ],
+   "glosario": [["hay", "er is/zijn"], ["la guitarra", "de gitaar"], ["Sirve para tocar", "dient om te spelen"], ["muchos libros", "veel boeken"]],
+   "rallentado": ["esto es", "guitarra", "no hay ordenador"],
  },
 }
 

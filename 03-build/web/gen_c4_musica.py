@@ -40,7 +40,7 @@ ART=[
  ("Juanes","🇨🇴","Colombia","rock/pop latino","«La Camisa Negra»","Ha ganado muchos premios Grammy Latinos.",
   "Juanes es de Colombia; mezcla rock y ritmos latinos.","Juanes uit Colombia; mengt rock met Latijnse ritmes.",["ropa","nacionalidades"]),
  ("Manu Chao","🇪🇸","España/Francia","mestizo/rock","«Me gustas tú»","«Me gustas tú» repite todo el tiempo «me gusta…»: ideal para practicar.",
-  "Manu Chao tiene raíces españolas y francesas.","Manu Chao heeft Spaanse en Franse roots.",["saludos","presentaciones"]),
+  "Manu Chao tiene raíces españolas y francesas.","Manu Chao heeft Spaanse en Franse roots.",["saludos","presentaciones","objetos"]),
 ]
 # thema -> aanbevolen nummer(s) (survival-lessen halen hieruit)
 TEMA_TITELS={"presentaciones":"Presentaciones","saludos":"Saludos","nacionalidades":"Nacionalidades y países","familia":"La familia",
@@ -106,6 +106,20 @@ CULTURA={
       "Korte, informele vorm van <i>buenos días/tardes</i> — handig op elk moment van de dag."),
    ],
    "dato":"¿Sabías que…? En español el saludo cambia con la hora: buenos días (mañana) · buenas tardes (tarde) · buenas noches (noche). ¡Y «buenas noches» sirve para llegar y para despedirse!",
+ },
+ "objetos":{
+   "intro":"Sommige alledaagse voorwerpen zijn echte iconen van de Spaanstalige cultuur. Elk voorwerp «sirve para» iets — en vertelt een verhaal.",
+   "cards":[
+     ("🎸","La guitarra española","La <b>guitarra española</b> (o flamenca) nació en España y sirve para tocar flamenco y muchos otros estilos.",
+      "De <b>Spaanse (flamenco)gitaar</b> ontstond in Spanje en «sirve para» flamenco én talloze andere stijlen te spelen — een wereldwijd symbool."),
+     ("🧉","El mate","En Argentina, Uruguay y Paraguay, el <b>mate</b> es una bebida que se comparte: la misma taza pasa de mano en mano.",
+      "In Argentinië, Uruguay en Paraguay is de <b>mate</b> een drank die je <i>deelt</i>: dezelfde beker gaat van hand tot hand — «sirve para compartir»."),
+     ("🪅","La piñata","En México, la <b>piñata</b> es un objeto de fiesta lleno de dulces; sirve para celebrar los cumpleaños.",
+      "In Mexico is de <b>piñata</b> een feestvoorwerp vol snoep; «sirve para» verjaardagen te vieren — je slaat ze stuk met een stok."),
+     ("🛖","La hamaca","La <b>hamaca</b> (una palabra taína del Caribe) sirve para descansar… ¡como el sofá de Julio!",
+      "De <b>hangmat</b> (<i>hamaca</i>, een Taíno-woord uit de Cariben) «sirve para descansar» — net als de bank van Julio in de video."),
+   ],
+   "dato":"¿Sabías que…? Muchas palabras de objetos vienen de lenguas indígenas de América: «hamaca», «canoa» y «chocolate» pasaron del taíno y del náhuatl al español… y luego a medio mundo.",
  },
 }
 def cultura_block(tema):

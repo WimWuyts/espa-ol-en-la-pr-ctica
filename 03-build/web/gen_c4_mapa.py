@@ -26,7 +26,8 @@ UNIT_TEMA = {
  2: ("simbolo", "🌎 Un símbolo"),         # Saludos — een symbool/icoon per land
  3: ("musica",  "🎵 Su música"),          # Nacionalidades/países — een muziekweetje per land
  4: ("familia", "👪 En familia"),
- 5: ("comida",  "🍽️ En la mesa"),
+ 5: ("compras", "🛍️ Un producto típico"),   # objetos → een typisch product per land
+ 6: ("comida",  "🍽️ En la mesa"),
 }
 # de route: C4 = «vertrekhal». De sitcom (Julio & María) speelt in Madrid → España is
 # het thuisbasis-vertrekpunt vanaf U1. {code: (start_unit, "rango", "NL/ES-beschrijving")}
