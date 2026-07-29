@@ -1,0 +1,159 @@
+{
+  "id": "es-u7-clasifica-lugar",
+  "title": "habitación · mueble · edificio",
+  "subtitle": "U7 · sorteer het woord",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "¿Qué es? una habitación, un mueble of un edificio del barrio",
+    "categories": [
+      {
+        "id": "habitacion",
+        "label": "habitación<br><small>kamer</small>",
+        "glaze": "#2FA8A0"
+      },
+      {
+        "id": "mueble",
+        "label": "mueble<br><small>meubel</small>",
+        "glaze": "#E0A22F"
+      },
+      {
+        "id": "edificio",
+        "label": "edificio<br><small>gebouw</small>",
+        "glaze": "#3D74D6"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "la cocina",
+        "answer": "habitacion",
+        "tag": "habitacion",
+        "sub": "keuken"
+      },
+      {
+        "stimulus": "el salón",
+        "answer": "habitacion",
+        "tag": "habitacion",
+        "sub": "woonkamer"
+      },
+      {
+        "stimulus": "el baño",
+        "answer": "habitacion",
+        "tag": "habitacion",
+        "sub": "badkamer"
+      },
+      {
+        "stimulus": "el dormitorio",
+        "answer": "habitacion",
+        "tag": "habitacion",
+        "sub": "slaapkamer"
+      },
+      {
+        "stimulus": "el comedor",
+        "answer": "habitacion",
+        "tag": "habitacion",
+        "sub": "eetkamer"
+      },
+      {
+        "stimulus": "la cama",
+        "answer": "mueble",
+        "tag": "mueble",
+        "sub": "bed"
+      },
+      {
+        "stimulus": "el sofá",
+        "answer": "mueble",
+        "tag": "mueble",
+        "sub": "bank"
+      },
+      {
+        "stimulus": "el armario",
+        "answer": "mueble",
+        "tag": "mueble",
+        "sub": "kast"
+      },
+      {
+        "stimulus": "la mesa",
+        "answer": "mueble",
+        "tag": "mueble",
+        "sub": "tafel"
+      },
+      {
+        "stimulus": "la silla",
+        "answer": "mueble",
+        "tag": "mueble",
+        "sub": "stoel"
+      },
+      {
+        "stimulus": "la estantería",
+        "answer": "mueble",
+        "tag": "mueble",
+        "sub": "boekenkast"
+      },
+      {
+        "stimulus": "la lámpara",
+        "answer": "mueble",
+        "tag": "mueble",
+        "sub": "lamp"
+      },
+      {
+        "stimulus": "la panadería",
+        "answer": "edificio",
+        "tag": "edificio",
+        "sub": "bakkerij"
+      },
+      {
+        "stimulus": "el banco",
+        "answer": "edificio",
+        "tag": "edificio",
+        "sub": "bank"
+      },
+      {
+        "stimulus": "la farmacia",
+        "answer": "edificio",
+        "tag": "edificio",
+        "sub": "apotheek"
+      },
+      {
+        "stimulus": "el museo",
+        "answer": "edificio",
+        "tag": "edificio",
+        "sub": "museum"
+      },
+      {
+        "stimulus": "la estación",
+        "answer": "edificio",
+        "tag": "edificio",
+        "sub": "station"
+      },
+      {
+        "stimulus": "el cine",
+        "answer": "edificio",
+        "tag": "edificio",
+        "sub": "bioscoop"
+      },
+      {
+        "stimulus": "el supermercado",
+        "answer": "edificio",
+        "tag": "edificio",
+        "sub": "supermarkt"
+      },
+      {
+        "stimulus": "la iglesia",
+        "answer": "edificio",
+        "tag": "edificio",
+        "sub": "kerk"
+      },
+      {
+        "stimulus": "la nevera",
+        "answer": "mueble",
+        "tag": "mueble",
+        "sub": "koelkast"
+      }
+    ]
+  }
+}

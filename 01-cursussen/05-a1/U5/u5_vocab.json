@@ -1,0 +1,478 @@
+[
+{
+"es": "el pan",
+"nl": "brood",
+"soort": "sust. m.",
+"ej": "Como pan con queso.",
+"grp": "comida"
+},
+{
+"es": "los huevos",
+"nl": "eieren",
+"soort": "sust. m. pl.",
+"ej": "Como huevos en el desayuno.",
+"grp": "comida"
+},
+{
+"es": "el queso",
+"nl": "kaas",
+"soort": "sust. m.",
+"ej": "Un bocadillo de queso.",
+"grp": "comida"
+},
+{
+"es": "la carne",
+"nl": "vlees",
+"soort": "sust. f.",
+"ej": "Me gusta la carne.",
+"grp": "comida"
+},
+{
+"es": "el pollo",
+"nl": "kip",
+"soort": "sust. m.",
+"ej": "De segundo, pollo con patatas.",
+"grp": "comida"
+},
+{
+"es": "el pescado",
+"nl": "vis",
+"soort": "sust. m.",
+"ej": "El pescado está muy rico.",
+"grp": "comida"
+},
+{
+"es": "el arroz",
+"nl": "rijst",
+"soort": "sust. m.",
+"ej": "La paella lleva arroz.",
+"grp": "comida"
+},
+{
+"es": "la pasta",
+"nl": "pasta",
+"soort": "sust. f.",
+"ej": "Como pasta con tomate.",
+"grp": "comida"
+},
+{
+"es": "la sopa",
+"nl": "soep",
+"soort": "sust. f.",
+"ej": "De primero, una sopa.",
+"grp": "comida"
+},
+{
+"es": "el bocadillo",
+"nl": "broodje",
+"soort": "sust. m.",
+"ej": "Un bocadillo de jamón.",
+"grp": "comida"
+},
+{
+"es": "el jamón",
+"nl": "ham",
+"soort": "sust. m.",
+"ej": "Un bocadillo de jamón, por favor.",
+"grp": "comida"
+},
+{
+"es": "la manzana",
+"nl": "appel",
+"soort": "sust. f.",
+"ej": "Como una manzana.",
+"grp": "fruta"
+},
+{
+"es": "el plátano",
+"nl": "banaan",
+"soort": "sust. m.",
+"ej": "Un plátano de postre.",
+"grp": "fruta"
+},
+{
+"es": "la naranja",
+"nl": "sinaasappel",
+"soort": "sust. f.",
+"ej": "Un zumo de naranja.",
+"grp": "fruta"
+},
+{
+"es": "la fresa",
+"nl": "aardbei",
+"soort": "sust. f.",
+"ej": "Un yogur de fresa.",
+"grp": "fruta"
+},
+{
+"es": "las uvas",
+"nl": "druiven",
+"soort": "sust. f. pl.",
+"ej": "En Nochevieja comemos doce uvas.",
+"grp": "fruta"
+},
+{
+"es": "el limón",
+"nl": "citroen",
+"soort": "sust. m.",
+"ej": "Un té con limón.",
+"grp": "fruta"
+},
+{
+"es": "la piña",
+"nl": "ananas",
+"soort": "sust. f.",
+"ej": "La piña es una fruta tropical.",
+"grp": "fruta"
+},
+{
+"es": "la lechuga",
+"nl": "sla",
+"soort": "sust. f.",
+"ej": "La ensalada lleva lechuga.",
+"grp": "verdura"
+},
+{
+"es": "el tomate",
+"nl": "tomaat",
+"soort": "sust. m.",
+"ej": "Una ensalada de tomate.",
+"grp": "verdura"
+},
+{
+"es": "la patata",
+"nl": "aardappel",
+"soort": "sust. f.",
+"ej": "Patatas fritas con salsa.",
+"grp": "verdura"
+},
+{
+"es": "la cebolla",
+"nl": "ui",
+"soort": "sust. f.",
+"ej": "La cebolla me hace llorar.",
+"grp": "verdura"
+},
+{
+"es": "el ajo",
+"nl": "knoflook",
+"soort": "sust. m.",
+"ej": "Las gambas al ajillo llevan ajo.",
+"grp": "verdura"
+},
+{
+"es": "el maíz",
+"nl": "maïs",
+"soort": "sust. m.",
+"ej": "Los tacos son de maíz.",
+"grp": "verdura"
+},
+{
+"es": "el pimiento",
+"nl": "paprika",
+"soort": "sust. m.",
+"ej": "La paella lleva pimiento rojo.",
+"grp": "verdura"
+},
+{
+"es": "el agua",
+"nl": "water",
+"soort": "sust. f.",
+"ej": "Para beber, agua.",
+"grp": "bebida"
+},
+{
+"es": "la leche",
+"nl": "melk",
+"soort": "sust. f.",
+"ej": "Un café con leche.",
+"grp": "bebida"
+},
+{
+"es": "el zumo",
+"nl": "(vruchten)sap",
+"soort": "sust. m.",
+"ej": "Un zumo de naranja.",
+"grp": "bebida"
+},
+{
+"es": "el café",
+"nl": "koffie",
+"soort": "sust. m.",
+"ej": "Un café con leche, por favor.",
+"grp": "bebida"
+},
+{
+"es": "el té",
+"nl": "thee",
+"soort": "sust. m.",
+"ej": "Un té con limón.",
+"grp": "bebida"
+},
+{
+"es": "el refresco",
+"nl": "frisdrank",
+"soort": "sust. m.",
+"ej": "Un refresco de cola.",
+"grp": "bebida"
+},
+{
+"es": "el plato",
+"nl": "bord",
+"soort": "sust. m.",
+"ej": "Pongo el plato en la mesa.",
+"grp": "mesa"
+},
+{
+"es": "el vaso",
+"nl": "glas",
+"soort": "sust. m.",
+"ej": "Un vaso de agua, por favor.",
+"grp": "mesa"
+},
+{
+"es": "el tenedor",
+"nl": "vork",
+"soort": "sust. m.",
+"ej": "Como la pasta con un tenedor.",
+"grp": "mesa"
+},
+{
+"es": "el cuchillo",
+"nl": "mes",
+"soort": "sust. m.",
+"ej": "Corto la carne con el cuchillo.",
+"grp": "mesa"
+},
+{
+"es": "la cuchara",
+"nl": "lepel",
+"soort": "sust. f.",
+"ej": "Como la sopa con una cuchara.",
+"grp": "mesa"
+},
+{
+"es": "la sal",
+"nl": "zout",
+"soort": "sust. f.",
+"ej": "¿Me pasas la sal?",
+"grp": "mesa"
+},
+{
+"es": "la servilleta",
+"nl": "servet",
+"soort": "sust. f.",
+"ej": "¿Me trae una servilleta, por favor?",
+"grp": "mesa"
+},
+{
+"es": "la carta",
+"nl": "de menukaart",
+"soort": "sust. f.",
+"ej": "El camarero trae la carta.",
+"grp": "restaurante"
+},
+{
+"es": "el menú",
+"nl": "het menu",
+"soort": "sust. m.",
+"ej": "El menú del día cuesta 12 euros.",
+"grp": "restaurante"
+},
+{
+"es": "el/la camarero/a",
+"nl": "de ober / serveerster",
+"soort": "sust.",
+"ej": "El camarero trae la carta.",
+"grp": "restaurante"
+},
+{
+"es": "la cuenta",
+"nl": "de rekening",
+"soort": "sust. f.",
+"ej": "La cuenta, por favor.",
+"grp": "restaurante"
+},
+{
+"es": "la propina",
+"nl": "de fooi",
+"soort": "sust. f.",
+"ej": "Dejamos una propina.",
+"grp": "restaurante"
+},
+{
+"es": "el primer plato",
+"nl": "het voorgerecht",
+"soort": "expr. m.",
+"ej": "De primer plato, una sopa.",
+"grp": "restaurante"
+},
+{
+"es": "el segundo plato",
+"nl": "het hoofdgerecht",
+"soort": "expr. m.",
+"ej": "De segundo plato, pollo.",
+"grp": "restaurante"
+},
+{
+"es": "el postre",
+"nl": "het dessert",
+"soort": "sust. m.",
+"ej": "De postre, un flan.",
+"grp": "restaurante"
+},
+{
+"es": "reservar",
+"nl": "reserveren",
+"soort": "verbo",
+"ej": "Quiero reservar una mesa.",
+"grp": "restaurante"
+},
+{
+"es": "mucho/-a",
+"nl": "veel",
+"soort": "adj./cant.",
+"ej": "Hay mucha fruta.",
+"grp": "cantidades"
+},
+{
+"es": "poco/-a",
+"nl": "weinig",
+"soort": "adj./cant.",
+"ej": "Hay poca leche.",
+"grp": "cantidades"
+},
+{
+"es": "un poco de",
+"nl": "een beetje",
+"soort": "expr.",
+"ej": "Un poco de pan, por favor.",
+"grp": "cantidades"
+},
+{
+"es": "un kilo de",
+"nl": "een kilo",
+"soort": "expr.",
+"ej": "Un kilo de tomates.",
+"grp": "cantidades"
+},
+{
+"es": "una botella de",
+"nl": "een fles",
+"soort": "expr.",
+"ej": "Una botella de agua.",
+"grp": "cantidades"
+},
+{
+"es": "un paquete de",
+"nl": "een pak",
+"soort": "expr.",
+"ej": "Un paquete de galletas.",
+"grp": "cantidades"
+},
+{
+"es": "¿qué va a tomar?",
+"nl": "wat wilt u nemen?",
+"soort": "expr.",
+"ej": "—¿Qué va a tomar? —Para mí, una sopa.",
+"grp": "cortesia"
+},
+{
+"es": "¿me pone…?",
+"nl": "mag ik…? (u serveert me)",
+"soort": "expr.",
+"ej": "¿Me pone un café, por favor?",
+"grp": "cortesia"
+},
+{
+"es": "para mí…",
+"nl": "voor mij…",
+"soort": "expr.",
+"ej": "Para mí, la paella.",
+"grp": "cortesia"
+},
+{
+"es": "¿me trae…?",
+"nl": "brengt u me…?",
+"soort": "expr.",
+"ej": "¿Me trae la cuenta, por favor?",
+"grp": "cortesia"
+},
+{
+"es": "¡que aproveche!",
+"nl": "eet smakelijk!",
+"soort": "expr.",
+"ej": "¡Que aproveche!",
+"grp": "cortesia"
+},
+{
+"es": "rico/-a",
+"nl": "lekker",
+"soort": "adj.",
+"ej": "La comida está muy rica.",
+"grp": "cortesia"
+},
+{
+"es": "picante",
+"nl": "pikant / scherp",
+"soort": "adj.",
+"ej": "La comida mexicana es picante.",
+"grp": "cortesia"
+},
+{
+"es": "el taco",
+"nl": "de taco",
+"soort": "sust. m.",
+"ej": "Los tacos son de México.",
+"grp": "mexico"
+},
+{
+"es": "el guacamole",
+"nl": "de guacamole",
+"soort": "sust. m.",
+"ej": "El guacamole se hace con aguacate.",
+"grp": "mexico"
+},
+{
+"es": "el elote",
+"nl": "de maïskolf (Mex.)",
+"soort": "sust. m.",
+"ej": "El elote es maíz con queso y chile.",
+"grp": "mexico"
+},
+{
+"es": "la salsa",
+"nl": "de saus",
+"soort": "sust. f.",
+"ej": "Salsa de tomate y chile.",
+"grp": "mexico"
+},
+{
+"es": "el aguacate",
+"nl": "de avocado",
+"soort": "sust. m.",
+"ej": "El guacamole se hace con aguacate.",
+"grp": "mexico"
+},
+{
+"es": "la arepa",
+"nl": "het maïsbroodje",
+"soort": "sust. f.",
+"ej": "La arepa es un panecillo de maíz.",
+"grp": "mexico"
+},
+{
+"es": "el ceviche",
+"nl": "de ceviche",
+"soort": "sust. m.",
+"ej": "El ceviche es pescado con lima.",
+"grp": "mexico"
+},
+{
+"es": "los churros",
+"nl": "de churros",
+"soort": "sust. m. pl.",
+"ej": "Desayunamos churros con chocolate.",
+"grp": "mexico"
+}
+]

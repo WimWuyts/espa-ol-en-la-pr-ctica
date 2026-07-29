@@ -1,0 +1,64 @@
+{
+  "id": "es-u2-parentesco",
+  "title": "El parentesco",
+  "subtitle": "U2 · koppel het familielid aan de omschrijving",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 4,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind het familielid met de juiste omschrijving",
+    "pairs": [
+      {
+        "a": "el abuelo",
+        "b": "el padre de mi padre"
+      },
+      {
+        "a": "la abuela",
+        "b": "la madre de mi madre"
+      },
+      {
+        "a": "el tío",
+        "b": "el hermano de mi padre"
+      },
+      {
+        "a": "la tía",
+        "b": "la hermana de mi madre"
+      },
+      {
+        "a": "el primo",
+        "b": "el hijo de mi tío"
+      },
+      {
+        "a": "la prima",
+        "b": "la hija de mi tía"
+      },
+      {
+        "a": "el sobrino",
+        "b": "el hijo de mi hermano"
+      },
+      {
+        "a": "la sobrina",
+        "b": "la hija de mi hermana"
+      },
+      {
+        "a": "el nieto",
+        "b": "el hijo de mi hijo"
+      },
+      {
+        "a": "la nieta",
+        "b": "la hija de mi hija"
+      },
+      {
+        "a": "los padres",
+        "b": "el padre y la madre"
+      },
+      {
+        "a": "los abuelos",
+        "b": "el abuelo y la abuela"
+      }
+    ]
+  }
+}

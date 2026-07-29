@@ -1,0 +1,111 @@
+{
+  "id": "es-u4-caza-gustar",
+  "title": "Caza del error (gustar)",
+  "subtitle": "U4 · klik de zin met de FOUTE vorm van gustar",
+  "lang": "es",
+  "template": "point",
+  "options": {
+    "audio": false
+  },
+  "point": {
+    "prompt": "Klik de zin waar gustar FOUT is (gusta/gustan)",
+    "mode": "one",
+    "rounds": [
+      {
+        "tag": "gustar",
+        "sub": "meervoud → gustan",
+        "targets": [
+          {
+            "label": "Me gusta el cine"
+          },
+          {
+            "label": "Me gustan los deportes"
+          },
+          {
+            "label": "Me gusta los videojuegos",
+            "hit": true
+          },
+          {
+            "label": "Me gusta bailar"
+          }
+        ]
+      },
+      {
+        "tag": "gustar",
+        "sub": "infinitivo → gusta",
+        "targets": [
+          {
+            "label": "Me gustan las series"
+          },
+          {
+            "label": "Me gustan leer",
+            "hit": true
+          },
+          {
+            "label": "Me gusta la playa"
+          },
+          {
+            "label": "Me gustan los conciertos"
+          }
+        ]
+      },
+      {
+        "tag": "gustar",
+        "sub": "1 ding → gusta",
+        "targets": [
+          {
+            "label": "Me gusta la música"
+          },
+          {
+            "label": "Me gustan la canción",
+            "hit": true
+          },
+          {
+            "label": "Me gustan los animales"
+          },
+          {
+            "label": "Me gusta nadar"
+          }
+        ]
+      },
+      {
+        "tag": "gustar",
+        "sub": "OI: a mí → me",
+        "targets": [
+          {
+            "label": "A mí me gusta el mar"
+          },
+          {
+            "label": "A ti te gustan las pelis"
+          },
+          {
+            "label": "A mí te gusta el cine",
+            "hit": true
+          },
+          {
+            "label": "A Bea le gusta la playa"
+          }
+        ]
+      },
+      {
+        "tag": "gustar",
+        "sub": "meervoud → gustan",
+        "targets": [
+          {
+            "label": "Nos gustan las playas"
+          },
+          {
+            "label": "Nos gusta las montañas",
+            "hit": true
+          },
+          {
+            "label": "Nos gusta el sol"
+          },
+          {
+            "label": "Nos gustan los helados"
+          }
+        ]
+      }
+    ]
+  }
+}

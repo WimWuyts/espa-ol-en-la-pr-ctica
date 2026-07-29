@@ -1,0 +1,47 @@
+{
+  "id": "es-u1-repite-presentacion",
+  "title": "Escucha y repite: preséntate",
+  "subtitle": "U1 · escucha el modelo, repite y GRÁBATE",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "repeat",
+    "prompt": "Escucha ▶ · repite en voz alta · grábate ⏺",
+    "items": [
+      {
+        "text": "Me llamo Leo.",
+        "sub": "ik heet Leo",
+        "tag": "presentarse",
+        "tip": "¡Bien! Ahora dilo mirando a la cámara, sin leer. <span class='nl'>zeg het nu zonder te lezen.</span>"
+      },
+      {
+        "text": "Soy de Bélgica.",
+        "sub": "ik ben (kom) uit België",
+        "tag": "origen"
+      },
+      {
+        "text": "Tengo 15 años.",
+        "sub": "ik ben 15 jaar — let op: TENER, niet «ser»",
+        "tag": "edad"
+      },
+      {
+        "text": "Vivo en Gante.",
+        "sub": "ik woon in Gent",
+        "tag": "ciudad"
+      },
+      {
+        "text": "Hablo español e inglés.",
+        "sub": "ik spreek Spaans en Engels — «e» i.p.v. «y» vóór i-",
+        "tag": "idiomas"
+      },
+      {
+        "text": "Encantado, ¿y tú?",
+        "sub": "aangenaam, en jij? — meisje: «encantada»",
+        "tag": "interaccion"
+      }
+    ]
+  }
+}

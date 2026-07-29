@@ -1,0 +1,64 @@
+{
+  "id": "es-u8-clima-memoria",
+  "title": "El tiempo y el clima",
+  "subtitle": "U8 · zoek het paar español ↔ nederlands",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om: woord + vertaling",
+    "pairs": [
+      {
+        "a": "hace sol",
+        "b": "het is zonnig"
+      },
+      {
+        "a": "hace calor",
+        "b": "het is warm"
+      },
+      {
+        "a": "hace frío",
+        "b": "het is koud"
+      },
+      {
+        "a": "hace viento",
+        "b": "het waait"
+      },
+      {
+        "a": "llueve",
+        "b": "het regent"
+      },
+      {
+        "a": "nieva",
+        "b": "het sneeuwt"
+      },
+      {
+        "a": "está nublado",
+        "b": "het is bewolkt"
+      },
+      {
+        "a": "la lluvia",
+        "b": "de regen"
+      },
+      {
+        "a": "la nieve",
+        "b": "de sneeuw"
+      },
+      {
+        "a": "la tormenta",
+        "b": "de storm"
+      },
+      {
+        "a": "el paraguas",
+        "b": "de paraplu"
+      },
+      {
+        "a": "la nube",
+        "b": "de wolk"
+      }
+    ]
+  }
+}

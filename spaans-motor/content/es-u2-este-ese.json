@@ -1,0 +1,100 @@
+{
+  "id": "es-u2-este-ese",
+  "title": "¿este o ese?",
+  "subtitle": "U2 · este/esta = dichtbij · ese/esa = verderaf",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "¿Es este/esta (aquí, cerca) o ese/esa (allí, lejos)?",
+    "categories": [
+      {
+        "id": "cerca",
+        "label": "este · esta<br><small>aquí (cerca)</small>",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "lejos",
+        "label": "ese · esa<br><small>allí (lejos)</small>",
+        "glaze": "#E0A22F"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "esta foto",
+        "answer": "cerca",
+        "tag": "cerca",
+        "sub": "esta → cerca"
+      },
+      {
+        "stimulus": "esa niña",
+        "answer": "lejos",
+        "tag": "lejos",
+        "sub": "esa → lejos"
+      },
+      {
+        "stimulus": "este chico",
+        "answer": "cerca",
+        "tag": "cerca",
+        "sub": "este → cerca"
+      },
+      {
+        "stimulus": "ese señor",
+        "answer": "lejos",
+        "tag": "lejos",
+        "sub": "ese → lejos"
+      },
+      {
+        "stimulus": "estos primos",
+        "answer": "cerca",
+        "tag": "cerca",
+        "sub": "estos → cerca"
+      },
+      {
+        "stimulus": "esas fotos",
+        "answer": "lejos",
+        "tag": "lejos",
+        "sub": "esas → lejos"
+      },
+      {
+        "stimulus": "estas gafas",
+        "answer": "cerca",
+        "tag": "cerca",
+        "sub": "estas → cerca"
+      },
+      {
+        "stimulus": "esos abuelos",
+        "answer": "lejos",
+        "tag": "lejos",
+        "sub": "esos → lejos"
+      },
+      {
+        "stimulus": "este es mi hermano",
+        "answer": "cerca",
+        "tag": "cerca",
+        "sub": "aquí a mi lado"
+      },
+      {
+        "stimulus": "esa es mi tía",
+        "answer": "lejos",
+        "tag": "lejos",
+        "sub": "allí, en la foto"
+      },
+      {
+        "stimulus": "esta mascota",
+        "answer": "cerca",
+        "tag": "cerca",
+        "sub": "esta → cerca"
+      },
+      {
+        "stimulus": "ese hombre",
+        "answer": "lejos",
+        "tag": "lejos",
+        "sub": "ese → lejos"
+      }
+    ]
+  }
+}

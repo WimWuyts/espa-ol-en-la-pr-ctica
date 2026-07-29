@@ -1,0 +1,206 @@
+{
+  "id": "es-u5-senala-mercado",
+  "title": "Señala en el mercado",
+  "subtitle": "U5 · klik het juiste producto",
+  "lang": "es",
+  "template": "point",
+  "options": {
+    "audio": false
+  },
+  "point": {
+    "prompt": "Klik het gevraagde product",
+    "mode": "one",
+    "rounds": [
+      {
+        "tag": "fruta",
+        "sub": "señala la fruta",
+        "targets": [
+          {
+            "label": "el tomate"
+          },
+          {
+            "label": "la manzana",
+            "hit": true
+          },
+          {
+            "label": "el pan"
+          },
+          {
+            "label": "el queso"
+          }
+        ]
+      },
+      {
+        "tag": "verdura",
+        "sub": "señala la verdura",
+        "targets": [
+          {
+            "label": "la naranja"
+          },
+          {
+            "label": "el pollo"
+          },
+          {
+            "label": "la lechuga",
+            "hit": true
+          },
+          {
+            "label": "el café"
+          }
+        ]
+      },
+      {
+        "tag": "bebida",
+        "sub": "señala la bebida",
+        "targets": [
+          {
+            "label": "el arroz"
+          },
+          {
+            "label": "el zumo",
+            "hit": true
+          },
+          {
+            "label": "la carne"
+          },
+          {
+            "label": "la pasta"
+          }
+        ]
+      },
+      {
+        "tag": "mesa",
+        "sub": "señala el cubierto (bestek)",
+        "targets": [
+          {
+            "label": "el tenedor",
+            "hit": true
+          },
+          {
+            "label": "la sopa"
+          },
+          {
+            "label": "la fruta"
+          },
+          {
+            "label": "el taco"
+          }
+        ]
+      },
+      {
+        "tag": "mexico",
+        "sub": "señala el plato mexicano",
+        "targets": [
+          {
+            "label": "la paella"
+          },
+          {
+            "label": "el guacamole",
+            "hit": true
+          },
+          {
+            "label": "los churros"
+          },
+          {
+            "label": "el gazpacho"
+          }
+        ]
+      },
+      {
+        "tag": "proteina",
+        "sub": "señala la carne o el pescado",
+        "targets": [
+          {
+            "label": "la manzana"
+          },
+          {
+            "label": "el pollo",
+            "hit": true
+          },
+          {
+            "label": "el pan"
+          },
+          {
+            "label": "el zumo"
+          }
+        ]
+      },
+      {
+        "tag": "postre",
+        "sub": "señala el postre",
+        "targets": [
+          {
+            "label": "la sopa"
+          },
+          {
+            "label": "el flan",
+            "hit": true
+          },
+          {
+            "label": "la ensalada"
+          },
+          {
+            "label": "el pescado"
+          }
+        ]
+      },
+      {
+        "tag": "pais",
+        "sub": "señala el país del ceviche",
+        "targets": [
+          {
+            "label": "México"
+          },
+          {
+            "label": "Perú",
+            "hit": true
+          },
+          {
+            "label": "España"
+          },
+          {
+            "label": "Colombia"
+          }
+        ]
+      },
+      {
+        "tag": "bebida",
+        "sub": "señala la bebida caliente",
+        "targets": [
+          {
+            "label": "el café",
+            "hit": true
+          },
+          {
+            "label": "el zumo"
+          },
+          {
+            "label": "el agua"
+          },
+          {
+            "label": "el refresco"
+          }
+        ]
+      },
+      {
+        "tag": "picante",
+        "sub": "señala lo que es picante",
+        "targets": [
+          {
+            "label": "el chile",
+            "hit": true
+          },
+          {
+            "label": "el pan"
+          },
+          {
+            "label": "la leche"
+          },
+          {
+            "label": "el arroz"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "id": "es-u1-interrogativos",
+  "title": "Palabras interrogativas",
+  "subtitle": "U1 · kies het juiste vraagwoord",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Vul het juiste vraagwoord in",
+    "items": [
+      {
+        "stimulus": "¿___ te llamas?",
+        "options": [
+          "Cómo",
+          "Dónde",
+          "Quién"
+        ],
+        "answer": "Cómo",
+        "tag": "q",
+        "sub": "Hoe heet je?"
+      },
+      {
+        "stimulus": "¿De ___ eres?",
+        "options": [
+          "dónde",
+          "cómo",
+          "qué"
+        ],
+        "answer": "dónde",
+        "tag": "q",
+        "sub": "Waarvandaan ben je?"
+      },
+      {
+        "stimulus": "¿___ vives?",
+        "options": [
+          "Dónde",
+          "Quién",
+          "Cuál"
+        ],
+        "answer": "Dónde",
+        "tag": "q",
+        "sub": "Waar woon je?"
+      },
+      {
+        "stimulus": "¿Cuántos ___ tienes?",
+        "options": [
+          "años",
+          "edad",
+          "tiempo"
+        ],
+        "answer": "años",
+        "tag": "q",
+        "sub": "Hoe oud ben je?"
+      },
+      {
+        "stimulus": "¿___ es tu correo?",
+        "options": [
+          "Cuál",
+          "Qué",
+          "Cómo"
+        ],
+        "answer": "Cuál",
+        "tag": "q",
+        "sub": "Wat is je e-mail?"
+      },
+      {
+        "stimulus": "¿___ es ella?",
+        "options": [
+          "Quién",
+          "Dónde",
+          "Cuál"
+        ],
+        "answer": "Quién",
+        "tag": "q",
+        "sub": "Wie is zij?"
+      },
+      {
+        "stimulus": "¿___ idiomas hablas?",
+        "options": [
+          "Qué",
+          "Cuál",
+          "Cómo"
+        ],
+        "answer": "Qué",
+        "tag": "q",
+        "sub": "Welke talen spreek je?"
+      },
+      {
+        "stimulus": "¿___ se escribe tu apellido?",
+        "options": [
+          "Cómo",
+          "Qué",
+          "Quién"
+        ],
+        "answer": "Cómo",
+        "tag": "q",
+        "sub": "Hoe schrijf je …?"
+      },
+      {
+        "stimulus": "¿___ es tu número de teléfono?",
+        "options": [
+          "Cuál",
+          "Quién",
+          "Dónde"
+        ],
+        "answer": "Cuál",
+        "tag": "q",
+        "sub": "Wat is je nummer?"
+      },
+      {
+        "stimulus": "¿De ___ país eres?",
+        "options": [
+          "qué",
+          "dónde",
+          "cómo"
+        ],
+        "answer": "qué",
+        "tag": "q",
+        "sub": "Uit welk land?"
+      }
+    ]
+  }
+}

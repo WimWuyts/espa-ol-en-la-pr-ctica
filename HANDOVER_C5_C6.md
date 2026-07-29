@@ -28,7 +28,7 @@ Alles hieronder is bij U0 vastgelegd en **moet identiek** bij elke volgende unit
 | Bewerkbare cursus | `01-cursussen/05-a1/U0/U0.html` | (editbar-injectie, zie §3) |
 | HTML-hub (digitaal) | `03-build/web/U0_web.html` | `03-build/web/gen_u0_web.py` |
 | PowerPoint docente | `03-build/pptx/C5_U0_docente.pptx` | `03-build/pptx/gen_u0_docente.py` |
-| PowerPoint alumno | `03-build/pptx/C5_U0_alumno.ppsx` | idem (`build()`-modes) |
+| PowerPoint alumno | `03-build/pptx/C5_U0_alumno.pptx` | idem (`build()`-modes) |
 | Conjugador (cursus-tool) | `03-build/web/Conjugador.html` | `03-build/web/gen_conjugador.py` |
 
 **Aanpak per nieuwe unit:** kopieer de U0-generator naar `gen_u<N>_web.py` / `gen_u<N>_docente.py`, wissel enkel het **per-unit config-blok** (§5) en de content (§2). Niets aan de layout/pijplijn/tokens veranderen.
@@ -64,11 +64,13 @@ Vaste sectiestructuur (CLAUDE.md §6): `§0 ¡Ponte al día!` → `§1…§N` �
 ### 3b · HTML-hub (digitaal)
 - Generator `gen_u<N>_web.py` (kopie van `gen_u0_web.py`). Produceert **één standalone bestand** met base64-fonts.
 - Bevat: flashcards (alle woorden, ES↔NL, TTS), woordenschat-zoek, **visuele grammatica** (context→noticing→regel→toepassen), **veel oefeningen** geordend receptief→gestuurd→productief (met steun-afbouw), **de 17+ motor-arcade-spellen base64 INGEBED** (openen in modal → werken offline), **interactieve kaart** (klik land → vlag+landcode+info; uit `build_map.py`, paden getagd `class="spa" data-c="ISO"`), interactief abecedario (TTS), editbar.
+- **BINDEND (auteur 2026-07-26) — flashcard-icoon:** élke flashcard krijgt een **consistent Lucide-lijnicoon** op de **voorkant, boven het woord** (34px, cursusgroen `var(--gd)`, grijswaarden-veilig, `aria-hidden`). Gedeelde module `02-huisstijl/beeld/generators/vocab_icons.py` (`icon_svg(word, grp)` → WORD_ICON → KEYWORD → GROUP-fallback; nooit leeg). Importeer in élke `gen_u<N>_web.py` en render in de flashcard-voorkant. **Zelfde stijl/plaatsing over álle units.**
+- **BINDEND (auteur 2026-07-26) — Cultura-panel unit-eigen:** het Cultura-panel mag NIET 4× dezelfde «mundo hispano»-kaart tonen. Kop = **het unit-eigen culturele aspect**; bovenaan 1–2 `.card`-cultuurblokken (kop `h3` + `p`, **Spaans-eerst + NL**, met Lucide-icoon), samengevat uit de print-`U<N>.html` Cultura-sectie; **daarna** de klikbare kaart onder de subkop **«La Ruta · ¿dónde estamos?»**. Cultuur-kaarten binnen editbar-bereik.
 - **Kruisverwijzingen**: QR's op print → naar deze hub op het juiste anker.
 - **Géén** werkwoordsvervoeging/conjugador in de unit-hub — dat is een **aparte cursus-tool** (§4).
 
 ### 3c · PowerPoint (2 decks) — GEANIMEERD format (LOCKED)
-- Generator `gen_u<N>_docente.py`, `build(mode,out)` → **docente `.pptx`** (oplossingen + spreker-notities) + **alumno `.ppsx`** (opent als diavoorstelling).
+- Generator `gen_u<N>_docente.py`, `build(mode,out)` → **docente `.pptx`** (oplossingen + spreker-notities) + **alumno `.pptx`** (leerling drukt **F5** voor de diavoorstelling). **NB:** lever de alumno NIET als `.ppsx` — dat slideshow-contenttype wordt door PowerPoint geweigerd («kan niet worden gelezen»). `to_ppsx()` blijft in de engine maar wordt niet meer voor levering gebruikt.
 - **Klik-animaties** via geïnjecteerde `<p:timing>` (verschijnen-bij-klik). ⚠️ PowerPoint toont bij openen soms een **reparatie-dialoog** → **«Repareren»** en de animaties werken. De auteur accepteert dit format. **Geen kioskmodus.**
 - Diamaster-layouts + regels: CLAUDE.md §16 (TITLE·LESSON_MENU·VOCABULARY·GRAMMAR·READING·LISTENING·SPEAKING·WRITING·QUIZ·FEEDBACK·CULTURE·FINAL_MISSION·TEACHER_NOTES), noodroute-hyperlinks, echte cast-avatars, huisstijl, ≥20 dia's.
 - Echte cast-avatar-PNG's: `03-build/pptx/assets/` (gerenderd via `03-build/pptx/render_avatars.py` uit `cast_gen.py`).
@@ -157,14 +159,21 @@ CHROME = `/opt/pw-browsers/chromium-*/chrome-linux/chrome`. Verifieer visueel me
 
 ## 9 · QA-checklist per unit (vóór opleveren)
 
+- [ ] **OEFENDICHTHEID = golden sample U0** (≈45–50 oefeningen · ≈50 p print). Fijnmazige §x.1–x.3-cycli · ≈4 oefeningen per subsectie over de 5 fasen met steunafbouw · **Tarea comunicativa ná élke sectie** · volle antwoordruimte-set (`wcols`/`wbox`/`wl`/`wtab`) · meerdere audio-QR · rijk beeld ín de secties · werkvorm-variatie uit de 100 werkvormen (geen herhaling). **Zie CLAUDE.md §14 «OEFENDICHTHEID».** Vergelijk expliciet met `C5_U0.pdf` vóór oplevering.
 - [ ] 4 formaten gegenereerd; cursuskleur correct (C5 groen / C6 blauw).
 - [ ] Spaans-eerst + NL-steun overal; geen NL-only tekstblok.
 - [ ] Print-hygiëne: geen weesregel-koppen, geen doorgesneden kaders, elke hoofdsectie op nieuwe pagina, kleuren printen.
 - [ ] Bladspiegel efficiënt gevuld (geen halflege pagina's, geen bladvullende lege omranding), composities variëren.
 - [ ] Antwoordruimte type-correct; geen oplossingen op leerlingpagina.
-- [ ] HTML: spellen openen & werken, kaart klikbaar, editbar werkt, TTS in Chrome/Edge.
-- [ ] PPTX: 2 decks, echte avatars, ≥20 dia's, animaties aanwezig (na «Repareren»).
+- [ ] HTML: spellen openen & werken, kaart klikbaar, editbar werkt (breed bereik: hero/koppen/inhoudskaarten), TTS in Chrome/Edge, **opname-oefeningen** (inline MediaRecorder in de hub), **Lectura-panel**.
+- [ ] **Traditionele cloze-werkwoordsoefening** aanwezig in de cursus (§14bis) + als motor-spel op de hub.
+- [ ] **Leessectie (Lectura)** aanwezig in de cursus (§14bis) — visuele tekstintro → voorspellen → scannen → V/F+bewijs → productieve reactie.
+- [ ] Games gekozen **in functie van de leerstof** + **variatie** (put uit >100 motor-oefentypes; geen speltype 2× met dezelfde jas). Ontbreekt een geschikt speltype → **motor-sjabloon bijbouwen**.
+- [ ] PPTX: 2 decks, **beide `.pptx`** (alumno NIET als `.ppsx` — dat weigert PowerPoint), echte avatars, ≥20 dia's, animaties aanwezig (na «Repareren»), vier vaardigheden gedekt, print↔HTML-kruisverwijzing.
+- [ ] **Getallen/tellingen kloppen** (bv. «N spellen» in print = werkelijk aantal games in de hub).
+- [ ] **§0-repaso klopt met de vorige unit** (haal enkel op wat écht is aangeleerd — verifieer tegen `U<N-1>_bron.md`).
 - [ ] LPD-codes ingevuld; eindtaak communicatief.
+- [ ] **LEVERING:** PDF **altijd samen met** de bewerkbare `U<N>.html`-laag; alumno-deck als `.pptx`; HTML-hub; motor-spellen. Nooit enkel de platte PDF.
 - [ ] Commit + push op de werkbranch; deliver.
 
 ---

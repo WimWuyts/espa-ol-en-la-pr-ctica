@@ -1,0 +1,148 @@
+{
+  "id": "es-u2-ser-estar-cloze",
+  "title": "Completa el verbo: ser · estar · tener",
+  "subtitle": "U2 · vul de juiste vorm in (vormen nagerekend)",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste werkwoordsvorm",
+    "items": [
+      {
+        "stimulus": "Mi abuela ___ (ser) simpática.",
+        "options": [
+          "es",
+          "está",
+          "tiene"
+        ],
+        "answer": "es",
+        "tag": "ser",
+        "sub": "ser · ella → es"
+      },
+      {
+        "stimulus": "Hoy mi abuela ___ (estar) en Sevilla.",
+        "options": [
+          "está",
+          "es",
+          "tiene"
+        ],
+        "answer": "está",
+        "tag": "estar",
+        "sub": "estar · ella → está"
+      },
+      {
+        "stimulus": "Yo ___ (tener) dos primos.",
+        "options": [
+          "tengo",
+          "soy",
+          "estoy"
+        ],
+        "answer": "tengo",
+        "tag": "tener",
+        "sub": "tener · yo → tengo"
+      },
+      {
+        "stimulus": "Mis padres ___ (ser) de Andalucía.",
+        "options": [
+          "son",
+          "están",
+          "tienen"
+        ],
+        "answer": "son",
+        "tag": "ser",
+        "sub": "ser · ellos → son"
+      },
+      {
+        "stimulus": "Nosotros ___ (estar) en casa.",
+        "options": [
+          "estamos",
+          "somos",
+          "tenemos"
+        ],
+        "answer": "estamos",
+        "tag": "estar",
+        "sub": "estar · nosotros → estamos"
+      },
+      {
+        "stimulus": "¿Cuántos hermanos ___ (tener) tú?",
+        "options": [
+          "tienes",
+          "eres",
+          "estás"
+        ],
+        "answer": "tienes",
+        "tag": "tener",
+        "sub": "tener · tú → tienes"
+      },
+      {
+        "stimulus": "Lucía ___ (tener) el pelo largo.",
+        "options": [
+          "tiene",
+          "es",
+          "está"
+        ],
+        "answer": "tiene",
+        "tag": "tener",
+        "sub": "tener · ella → tiene"
+      },
+      {
+        "stimulus": "Lucía ___ (ser) morena.",
+        "options": [
+          "es",
+          "está",
+          "tiene"
+        ],
+        "answer": "es",
+        "tag": "ser",
+        "sub": "ser · ella → es"
+      },
+      {
+        "stimulus": "Mi hermano ___ (estar) cansado.",
+        "options": [
+          "está",
+          "es",
+          "tiene"
+        ],
+        "answer": "está",
+        "tag": "estar",
+        "sub": "estar · él → está"
+      },
+      {
+        "stimulus": "Vosotros ___ (ser) muy majos.",
+        "options": [
+          "sois",
+          "estáis",
+          "tenéis"
+        ],
+        "answer": "sois",
+        "tag": "ser",
+        "sub": "ser · vosotros → sois"
+      },
+      {
+        "stimulus": "Mi tío ___ (estar) en el trabajo.",
+        "options": [
+          "está",
+          "es",
+          "tiene"
+        ],
+        "answer": "está",
+        "tag": "estar",
+        "sub": "estar · él → está"
+      },
+      {
+        "stimulus": "Ana ___ (ser) muy graciosa.",
+        "options": [
+          "es",
+          "está",
+          "tiene"
+        ],
+        "answer": "es",
+        "tag": "ser",
+        "sub": "ser · ella → es"
+      }
+    ]
+  }
+}

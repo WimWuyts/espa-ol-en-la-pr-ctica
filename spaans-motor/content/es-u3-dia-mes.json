@@ -1,0 +1,123 @@
+{
+  "id": "es-u3-dia-mes",
+  "title": "¿Día, mes o estación?",
+  "subtitle": "U3 · sorteer dag, maand of seizoen",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 15,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "¿Es un día, un mes o una estación?",
+    "categories": [
+      {
+        "id": "dia",
+        "label": "Día<br><small>lunes</small>",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "mes",
+        "label": "Mes<br><small>enero</small>",
+        "glaze": "#E0A22F"
+      },
+      {
+        "id": "est",
+        "label": "Estación<br><small>verano</small>",
+        "glaze": "#2E8E68"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "lunes",
+        "answer": "dia",
+        "tag": "dia",
+        "sub": "maandag"
+      },
+      {
+        "stimulus": "agosto",
+        "answer": "mes",
+        "tag": "mes",
+        "sub": "augustus"
+      },
+      {
+        "stimulus": "verano",
+        "answer": "est",
+        "tag": "est",
+        "sub": "zomer"
+      },
+      {
+        "stimulus": "domingo",
+        "answer": "dia",
+        "tag": "dia",
+        "sub": "zondag"
+      },
+      {
+        "stimulus": "marzo",
+        "answer": "mes",
+        "tag": "mes",
+        "sub": "maart"
+      },
+      {
+        "stimulus": "invierno",
+        "answer": "est",
+        "tag": "est",
+        "sub": "winter"
+      },
+      {
+        "stimulus": "viernes",
+        "answer": "dia",
+        "tag": "dia",
+        "sub": "vrijdag"
+      },
+      {
+        "stimulus": "julio",
+        "answer": "mes",
+        "tag": "mes",
+        "sub": "juli"
+      },
+      {
+        "stimulus": "primavera",
+        "answer": "est",
+        "tag": "est",
+        "sub": "lente"
+      },
+      {
+        "stimulus": "miércoles",
+        "answer": "dia",
+        "tag": "dia",
+        "sub": "woensdag"
+      },
+      {
+        "stimulus": "diciembre",
+        "answer": "mes",
+        "tag": "mes",
+        "sub": "december"
+      },
+      {
+        "stimulus": "otoño",
+        "answer": "est",
+        "tag": "est",
+        "sub": "herfst"
+      },
+      {
+        "stimulus": "sábado",
+        "answer": "dia",
+        "tag": "dia",
+        "sub": "zaterdag"
+      },
+      {
+        "stimulus": "mayo",
+        "answer": "mes",
+        "tag": "mes",
+        "sub": "mei"
+      },
+      {
+        "stimulus": "martes",
+        "answer": "dia",
+        "tag": "dia",
+        "sub": "dinsdag"
+      }
+    ]
+  }
+}

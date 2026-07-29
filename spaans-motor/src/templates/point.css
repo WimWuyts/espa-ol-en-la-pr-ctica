@@ -1,0 +1,22 @@
+/* Sjabloon: aanwijzen (point). Azulejo-tegel met doelenraster. */
+.pt-card{background:linear-gradient(175deg,#FBF6E9,#E9E0C9);border:1px solid rgba(0,0,0,.25);border-radius:3px;
+  box-shadow:0 6px 0 rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.9);padding:16px;position:relative;overflow:hidden;min-height:210px}
+.pt-card::before,.pt-card::after{content:"";position:absolute;left:0;right:0;height:7px;background:repeating-linear-gradient(45deg,#12264A 0 4px,transparent 4px 8px),repeating-linear-gradient(-45deg,#12264A 0 4px,transparent 4px 8px);opacity:.5}
+.pt-card::before{top:0}.pt-card::after{bottom:0}
+.pt-eye{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8A7F66;text-align:center;margin-bottom:4px}
+.pt-sub{font-family:var(--serif);font-size:14px;color:#5C5540;text-align:center;margin-bottom:14px}
+.pt-grid{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:8px}
+.pt-tgt{font-family:var(--serif);font-weight:700;font-size:clamp(15px,2.6vw,20px);color:#12264A;
+  background:linear-gradient(180deg,#fff,#F1E9D5);border:1px solid #C3B99F;border-radius:3px;padding:12px 16px;cursor:pointer;
+  box-shadow:0 3px 0 rgba(0,0,0,.14);transition:transform .08s,filter .12s}
+.pt-tgt:hover{filter:brightness(1.04);border-color:#12264A}
+.pt-tgt:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0,.14)}
+.pt-tgt:focus-visible{outline:3px solid #3D74D6;outline-offset:2px}
+.pt-tgt.hit{background:linear-gradient(180deg,#DFF3E4,#C4E7D0);border-color:#1F6B4C;color:#12264A}
+.pt-tgt.miss{background:linear-gradient(180deg,#F7D9D2,#EDBCB1);border-color:#8E2C1D;animation:ptShake .45s}
+.pt-tgt.done{cursor:default}
+@keyframes ptShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.pt-fb{min-height:22px;margin-top:8px;text-align:center;font-family:var(--serif);font-size:15px;font-weight:700}
+.pt-fb.g{color:#1F6B4C}.pt-fb.b{color:#8E2C1D}
+.pt-card.bad{animation:ptBad .5s}
+@keyframes ptBad{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}

@@ -1,0 +1,64 @@
+{
+  "id": "es-u8-pais-clima",
+  "title": "País y clima",
+  "subtitle": "U8 · welk weer/plek hoort bij het land?",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind de plek met het typische weer of symbool",
+    "pairs": [
+      {
+        "a": "Cusco (los Andes) 🇵🇪",
+        "b": "hace frío 🥶"
+      },
+      {
+        "a": "la selva amazónica 🇵🇪",
+        "b": "llueve 🌧️"
+      },
+      {
+        "a": "la costa de Lima 🇵🇪",
+        "b": "hace sol ☀️"
+      },
+      {
+        "a": "Machu Picchu 🇵🇪",
+        "b": "las ruinas incas 🏔️"
+      },
+      {
+        "a": "los Andes en invierno",
+        "b": "nieva ❄️"
+      },
+      {
+        "a": "España en verano 🇪🇸",
+        "b": "hace calor 🔥"
+      },
+      {
+        "a": "Cartagena 🇨🇴",
+        "b": "la playa 🏖️"
+      },
+      {
+        "a": "CDMX 🇲🇽",
+        "b": "los tacos 🌮"
+      },
+      {
+        "a": "la sierra de noche",
+        "b": "hace frío 🥶"
+      },
+      {
+        "a": "un día de tormenta",
+        "b": "hay tormenta ⛈️"
+      },
+      {
+        "a": "el cielo con nubes",
+        "b": "está nublado ☁️"
+      },
+      {
+        "a": "el mar del Caribe",
+        "b": "hace calor 🔥"
+      }
+    ]
+  }
+}

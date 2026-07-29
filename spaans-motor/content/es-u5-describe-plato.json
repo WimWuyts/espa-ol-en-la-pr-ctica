@@ -1,0 +1,53 @@
+{
+  "id": "es-u5-describe-plato",
+  "title": "Describe tu plato",
+  "subtitle": "U5 · beschrijf je lievelingsgerecht, grábate",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "repeat",
+    "prompt": "Escucha ▶ · describe tu plato · grábate ⏺",
+    "items": [
+      {
+        "cue": "Modelo · Diego 🇲🇽",
+        "text": "Mi plato favorito son los tacos.",
+        "sub": "mijn lievelingsgerecht zijn taco's",
+        "tag": "describir"
+      },
+      {
+        "cue": "¿qué lleva?",
+        "text": "Llevan carne, verdura y salsa.",
+        "sub": "ze bevatten vlees, groente en saus",
+        "tag": "describir"
+      },
+      {
+        "cue": "¿por qué?",
+        "text": "Me encantan porque están muy ricos.",
+        "sub": "ik ben er dol op want ze zijn heel lekker",
+        "tag": "describir"
+      },
+      {
+        "cue": "¿cuándo?",
+        "text": "Los como los fines de semana con mi familia.",
+        "sub": "ik eet ze in het weekend met mijn familie",
+        "tag": "describir"
+      },
+      {
+        "cue": "¿picante?",
+        "text": "A veces con un poco de chile, pero no muy picante.",
+        "sub": "soms met wat chili, maar niet te pittig",
+        "tag": "describir"
+      },
+      {
+        "cue": "tu versión",
+        "text": "Mi plato favorito es ___ . Lleva ___ .",
+        "sub": "jouw versie — vul in en zeg ze",
+        "tag": "describir",
+        "tip": "Ahora describe el plato de un amigo. <span class='nl'>beschrijf nu het gerecht van een vriend(in).</span>"
+      }
+    ]
+  }
+}

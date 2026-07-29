@@ -1,0 +1,41 @@
+{
+  "id": "es-u4-describe-gustos",
+  "title": "Describe los gustos",
+  "subtitle": "U4 · beschrijf wat Lucía en Diego leuk vinden, grábate",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "repeat",
+    "prompt": "Escucha ▶ · describe a la persona (3ª pers.) · grábate ⏺",
+    "items": [
+      {
+        "cue": "Lucía · Sevilla 🇪🇸",
+        "text": "A Lucía le encanta la música.",
+        "sub": "Lucía is dol op muziek — «le encanta»",
+        "tag": "describir"
+      },
+      {
+        "cue": "Lucía · Sevilla 🇪🇸",
+        "text": "Le gusta bailar flamenco.",
+        "sub": "ze houdt van flamenco dansen",
+        "tag": "describir"
+      },
+      {
+        "cue": "Diego · CDMX 🇲🇽",
+        "text": "A Diego le gusta el reguetón.",
+        "sub": "Diego houdt van reggaeton",
+        "tag": "describir"
+      },
+      {
+        "cue": "Diego · CDMX 🇲🇽",
+        "text": "Le encantan los videojuegos.",
+        "sub": "hij is dol op videospellen — «le encantan» (mv.)",
+        "tag": "describir",
+        "tip": "Ahora describe los gustos de un amigo tuyo. <span class='nl'>beschrijf nu de smaak van een echte vriend(in).</span>"
+      }
+    ]
+  }
+}

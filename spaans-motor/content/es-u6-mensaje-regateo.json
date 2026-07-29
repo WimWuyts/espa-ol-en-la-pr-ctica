@@ -1,0 +1,37 @@
+{
+  "id": "es-u6-mensaje-regateo",
+  "title": "Mensaje de voz: regatea",
+  "subtitle": "U6 · neem een spraakbericht op met je regateo",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "voicemessage",
+    "prompt": "Graba un mensaje de voz (30 s)",
+    "items": [
+      {
+        "text": "Regatea el precio de una prenda en el tianguis (¿cuánto cuesta? ¿es caro? ¿un descuento?).",
+        "cue": "el regateo",
+        "tag": "regateo",
+        "sub": "gebruik: ¿cuánto cuesta? · es caro · ¿me hace un descuento? · me lo llevo",
+        "tip": "Prijs + «es caro» + descuento vragen? Neem opnieuw op. <span class='nl'>prijs + te duur + korting vragen? herneem.</span>"
+      },
+      {
+        "text": "Deja un mensaje para describir tu outfit de hoy (prendas + colores).",
+        "cue": "mi look",
+        "tag": "describir",
+        "sub": "gebruik: llevo · una/un · + color · de (rayas/algodón)",
+        "tip": "3 prendas + kleur? Herneem. <span class='nl'>3 kledingstukken + kleur? herneem.</span>"
+      },
+      {
+        "text": "Cuéntale a un amigo qué acabas de comprar y por qué te gusta.",
+        "cue": "la compra",
+        "tag": "acabar",
+        "sub": "gebruik: acabo de comprar · me queda bien · porque",
+        "tip": "Prenda + acabar de + reden? Herneem. <span class='nl'>kledingstuk + acabar de + reden? herneem.</span>"
+      }
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "es-u7-describe-habitacion",
+  "title": "Describe tu habitación",
+  "subtitle": "U7 · beschrijf je kamer, grábate",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "repeat",
+    "prompt": "Escucha ▶ · describe tu habitación · grábate ⏺",
+    "items": [
+      {
+        "cue": "Modelo · Valen 🇨🇴",
+        "text": "Mi habitación es pequeña pero bonita.",
+        "sub": "mijn kamer is klein maar mooi",
+        "tag": "describir"
+      },
+      {
+        "cue": "¿qué hay?",
+        "text": "Hay una cama, un armario y una mesa.",
+        "sub": "er is een bed, een kast en een tafel",
+        "tag": "describir"
+      },
+      {
+        "cue": "¿dónde?",
+        "text": "La cama está al lado de la ventana.",
+        "sub": "het bed staat naast het raam",
+        "tag": "describir"
+      },
+      {
+        "cue": "¿y más?",
+        "text": "Encima de la mesa hay una lámpara.",
+        "sub": "op de tafel staat een lamp",
+        "tag": "describir"
+      },
+      {
+        "cue": "¿ahora?",
+        "text": "Ahora estoy estudiando en mi habitación.",
+        "sub": "nu ben ik aan het studeren in mijn kamer",
+        "tag": "describir"
+      },
+      {
+        "cue": "tu versión",
+        "text": "En mi habitación hay ___ . La cama está ___ .",
+        "sub": "jouw versie — vul in en zeg ze",
+        "tag": "describir",
+        "tip": "Ahora describe la habitación de un amigo. <span class='nl'>beschrijf nu de kamer van een vriend(in).</span>"
+      }
+    ]
+  }
+}

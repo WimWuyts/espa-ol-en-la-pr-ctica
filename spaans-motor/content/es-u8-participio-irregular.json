@@ -1,0 +1,170 @@
+{
+  "id": "es-u8-participio-irregular",
+  "title": "El participio irregular",
+  "subtitle": "U8 · schrijf de onregelmatige participio",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste onregelmatige participio",
+    "items": [
+      {
+        "stimulus": "hacer → he ___",
+        "options": [
+          "hecho",
+          "hacido",
+          "hacado"
+        ],
+        "answer": "hecho",
+        "tag": "irr",
+        "sub": "hacer → hecho"
+      },
+      {
+        "stimulus": "ver → has ___",
+        "options": [
+          "visto",
+          "veído",
+          "vido"
+        ],
+        "answer": "visto",
+        "tag": "irr",
+        "sub": "ver → visto"
+      },
+      {
+        "stimulus": "decir → ha ___",
+        "options": [
+          "dicho",
+          "decido",
+          "dijido"
+        ],
+        "answer": "dicho",
+        "tag": "irr",
+        "sub": "decir → dicho"
+      },
+      {
+        "stimulus": "escribir → hemos ___",
+        "options": [
+          "escrito",
+          "escribido",
+          "escribto"
+        ],
+        "answer": "escrito",
+        "tag": "irr",
+        "sub": "escribir → escrito"
+      },
+      {
+        "stimulus": "volver → habéis ___",
+        "options": [
+          "vuelto",
+          "volvido",
+          "volto"
+        ],
+        "answer": "vuelto",
+        "tag": "irr",
+        "sub": "volver → vuelto"
+      },
+      {
+        "stimulus": "poner → han ___",
+        "options": [
+          "puesto",
+          "ponido",
+          "posto"
+        ],
+        "answer": "puesto",
+        "tag": "irr",
+        "sub": "poner → puesto"
+      },
+      {
+        "stimulus": "abrir → he ___",
+        "options": [
+          "abierto",
+          "abrido",
+          "abrto"
+        ],
+        "answer": "abierto",
+        "tag": "irr",
+        "sub": "abrir → abierto"
+      },
+      {
+        "stimulus": "romper → has ___",
+        "options": [
+          "roto",
+          "rompido",
+          "rompto"
+        ],
+        "answer": "roto",
+        "tag": "irr",
+        "sub": "romper → roto"
+      },
+      {
+        "stimulus": "hacer → ¿qué has ___?",
+        "options": [
+          "hecho",
+          "hacido",
+          "hacto"
+        ],
+        "answer": "hecho",
+        "tag": "irr",
+        "sub": "hacer → hecho"
+      },
+      {
+        "stimulus": "ver → nunca he ___ el mar",
+        "options": [
+          "visto",
+          "veído",
+          "vido"
+        ],
+        "answer": "visto",
+        "tag": "irr",
+        "sub": "ver → visto"
+      },
+      {
+        "stimulus": "escribir → he ___ una postal",
+        "options": [
+          "escrito",
+          "escribido",
+          "escrivido"
+        ],
+        "answer": "escrito",
+        "tag": "irr",
+        "sub": "escribir → escrito"
+      },
+      {
+        "stimulus": "volver → ya hemos ___",
+        "options": [
+          "vuelto",
+          "volvido",
+          "vueltado"
+        ],
+        "answer": "vuelto",
+        "tag": "irr",
+        "sub": "volver → vuelto"
+      },
+      {
+        "stimulus": "poner → me he ___ el abrigo",
+        "options": [
+          "puesto",
+          "ponido",
+          "puestado"
+        ],
+        "answer": "puesto",
+        "tag": "irr",
+        "sub": "poner → puesto"
+      },
+      {
+        "stimulus": "decir → me ha ___ la verdad",
+        "options": [
+          "dicho",
+          "decido",
+          "dichado"
+        ],
+        "answer": "dicho",
+        "tag": "irr",
+        "sub": "decir → dicho"
+      }
+    ]
+  }
+}

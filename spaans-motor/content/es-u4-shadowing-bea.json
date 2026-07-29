@@ -1,0 +1,43 @@
+{
+  "id": "es-u4-shadowing-bea",
+  "title": "Shadowing con Bea",
+  "subtitle": "U4 · praat mee met Bea, steeds minder tekst",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "shadowing",
+    "prompt": "Escucha ▶ · habla al mismo tiempo · grábate ⏺",
+    "phases": [
+      "Texto completo",
+      "Palabras clave",
+      "Sin texto",
+      "Tu versión"
+    ],
+    "items": [
+      {
+        "text": "A mí me encanta la música pop.",
+        "sub": "ik ben dol op popmuziek",
+        "tag": "gusto"
+      },
+      {
+        "text": "Los fines de semana voy a la playa.",
+        "sub": "in het weekend ga ik naar het strand",
+        "tag": "ocio"
+      },
+      {
+        "text": "Me gusta bailar, pero no me gustan los videojuegos.",
+        "sub": "ik hou van dansen maar niet van videospellen",
+        "tag": "gusto"
+      },
+      {
+        "text": "¿Quieres ir a un concierto conmigo?",
+        "sub": "wil je met mij naar een concert?",
+        "tag": "planes",
+        "tip": "Ahora invita a un amigo de verdad. <span class='nl'>nodig nu een echte vriend uit.</span>"
+      }
+    ]
+  }
+}

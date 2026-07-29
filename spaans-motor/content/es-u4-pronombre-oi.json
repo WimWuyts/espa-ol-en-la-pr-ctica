@@ -1,0 +1,120 @@
+{
+  "id": "es-u4-pronombre-oi",
+  "title": "El pronombre OI",
+  "subtitle": "U4 · welk voornaamwoord (me/te/le…) hoort bij de persoon?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Bij welke persoon hoort dit OI-voornaamwoord?",
+    "categories": [
+      {
+        "id": "me",
+        "label": "a mí",
+        "glaze": "#C4402C"
+      },
+      {
+        "id": "te",
+        "label": "a ti",
+        "glaze": "#E0A22F"
+      },
+      {
+        "id": "le",
+        "label": "a él/ella",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "nos",
+        "label": "a nosotros",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "os",
+        "label": "a vosotros",
+        "glaze": "#8B5E9E"
+      },
+      {
+        "id": "les",
+        "label": "a ellos",
+        "glaze": "#2FA8A0"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "me",
+        "answer": "me",
+        "tag": "me",
+        "sub": "a mí me"
+      },
+      {
+        "stimulus": "te",
+        "answer": "te",
+        "tag": "te",
+        "sub": "a ti te"
+      },
+      {
+        "stimulus": "le",
+        "answer": "le",
+        "tag": "le",
+        "sub": "a él/ella le"
+      },
+      {
+        "stimulus": "nos",
+        "answer": "nos",
+        "tag": "nos",
+        "sub": "a nosotros nos"
+      },
+      {
+        "stimulus": "os",
+        "answer": "os",
+        "tag": "os",
+        "sub": "a vosotros os"
+      },
+      {
+        "stimulus": "les",
+        "answer": "les",
+        "tag": "les",
+        "sub": "a ellos les"
+      },
+      {
+        "stimulus": "me",
+        "answer": "me",
+        "tag": "me",
+        "sub": "a mí me"
+      },
+      {
+        "stimulus": "le",
+        "answer": "le",
+        "tag": "le",
+        "sub": "a ella le"
+      },
+      {
+        "stimulus": "te",
+        "answer": "te",
+        "tag": "te",
+        "sub": "a ti te"
+      },
+      {
+        "stimulus": "les",
+        "answer": "les",
+        "tag": "les",
+        "sub": "a ellas les"
+      },
+      {
+        "stimulus": "nos",
+        "answer": "nos",
+        "tag": "nos",
+        "sub": "a nosotras nos"
+      },
+      {
+        "stimulus": "os",
+        "answer": "os",
+        "tag": "os",
+        "sub": "a vosotras os"
+      }
+    ]
+  }
+}

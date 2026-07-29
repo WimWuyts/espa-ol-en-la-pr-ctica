@@ -1,0 +1,100 @@
+{
+  "id": "es-u2-ser-estar",
+  "title": "¿ser o estar?",
+  "subtitle": "U2 · identiteit/beschrijving (ser) of toestand/plaats (estar)?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "¿Necesitas ser (identidad/descripción) o estar (estado/lugar)?",
+    "categories": [
+      {
+        "id": "ser",
+        "label": "ser<br><small>identidad · cómo es</small>",
+        "glaze": "#E0A22F"
+      },
+      {
+        "id": "estar",
+        "label": "estar<br><small>estado · dónde está</small>",
+        "glaze": "#2FA8A0"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "Mi madre ___ alta.",
+        "answer": "ser",
+        "tag": "ser",
+        "sub": "descripción → es"
+      },
+      {
+        "stimulus": "Mi abuela ___ en casa.",
+        "answer": "estar",
+        "tag": "estar",
+        "sub": "lugar → está"
+      },
+      {
+        "stimulus": "Mi hermano ___ cansado.",
+        "answer": "estar",
+        "tag": "estar",
+        "sub": "estado → está"
+      },
+      {
+        "stimulus": "Lucía ___ morena.",
+        "answer": "ser",
+        "tag": "ser",
+        "sub": "descripción → es"
+      },
+      {
+        "stimulus": "Mis primos ___ simpáticos.",
+        "answer": "ser",
+        "tag": "ser",
+        "sub": "carácter → son"
+      },
+      {
+        "stimulus": "Mi padre ___ en Sevilla.",
+        "answer": "estar",
+        "tag": "estar",
+        "sub": "lugar → está"
+      },
+      {
+        "stimulus": "Ana ___ tímida.",
+        "answer": "ser",
+        "tag": "ser",
+        "sub": "carácter → es"
+      },
+      {
+        "stimulus": "Hoy ___ contentos.",
+        "answer": "estar",
+        "tag": "estar",
+        "sub": "estado → están"
+      },
+      {
+        "stimulus": "Nosotros ___ de Andalucía.",
+        "answer": "ser",
+        "tag": "ser",
+        "sub": "origen → somos"
+      },
+      {
+        "stimulus": "El abuelo ___ enfermo hoy.",
+        "answer": "estar",
+        "tag": "estar",
+        "sub": "estado → está"
+      },
+      {
+        "stimulus": "Marco ___ delgado.",
+        "answer": "ser",
+        "tag": "ser",
+        "sub": "descripción → es"
+      },
+      {
+        "stimulus": "La familia ___ en la cocina.",
+        "answer": "estar",
+        "tag": "estar",
+        "sub": "lugar → está"
+      }
+    ]
+  }
+}

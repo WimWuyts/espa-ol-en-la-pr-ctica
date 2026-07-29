@@ -1,0 +1,108 @@
+{
+  "id": "es-u2-describe-persona",
+  "title": "Describe a un familiar",
+  "subtitle": "U2 · beschrijf een familielid — met alle bouwstenen",
+  "lang": "es",
+  "template": "sim",
+  "options": {
+    "audio": false
+  },
+  "sim": {
+    "prompt": "Tarea comunicativa · beschrijf iemand uit je familie",
+    "rounds": [
+      {
+        "scenario": "Preséntale un familiar a Lucía por chat.",
+        "tag": "describir",
+        "sub": "gebruik: mi … · se llama · es …",
+        "min": 10,
+        "need": [
+          {
+            "re": "mi (padre|madre|hermano|hermana|abuelo|abuela|t[íi]o|t[íi]a|primo|prima)",
+            "label": "mi + familielid"
+          },
+          {
+            "re": "se llama",
+            "label": "se llama …"
+          },
+          {
+            "re": "\\bes\\b",
+            "label": "es + descripción"
+          }
+        ],
+        "bank": [
+          "Mi hermano",
+          "Mi hermana",
+          "se llama",
+          "es alto",
+          "es simpática",
+          "tiene el pelo largo",
+          "y",
+          "también"
+        ],
+        "model": "Mi hermano se llama Marco. Es alto y moreno, y es muy simpático."
+      },
+      {
+        "scenario": "Describe el físico Y el carácter de un familiar.",
+        "tag": "describir",
+        "sub": "uiterlijk + karakter + porque",
+        "min": 12,
+        "need": [
+          {
+            "re": "alto|baj|moren|rubi|delgad|guap|pelo|ojos",
+            "label": "un rasgo físico"
+          },
+          {
+            "re": "simp[áa]tic|t[íi]mid|gracios|hablador|tranquil|alegre|majo",
+            "label": "un rasgo de carácter"
+          },
+          {
+            "re": "porque",
+            "label": "porque …"
+          }
+        ],
+        "bank": [
+          "Mi tía",
+          "es baja",
+          "tiene los ojos verdes",
+          "es muy habladora",
+          "porque",
+          "habla mucho",
+          "pero",
+          "alegre"
+        ],
+        "model": "Mi tía es baja y tiene los ojos verdes. Es muy habladora porque habla mucho, pero es muy alegre."
+      },
+      {
+        "scenario": "«¿Cómo es tu familia?» Presenta a dos personas.",
+        "tag": "describir",
+        "sub": "tener + ser + estar",
+        "min": 14,
+        "need": [
+          {
+            "re": "tengo|tiene|tenemos",
+            "label": "tener (número/edad)"
+          },
+          {
+            "re": "\\b(es|son|soy|somos)\\b",
+            "label": "ser (cómo es)"
+          },
+          {
+            "re": "est[áa]|estamos|estoy",
+            "label": "estar (estado/lugar)"
+          }
+        ],
+        "bank": [
+          "Tengo dos hermanos",
+          "Mi madre es",
+          "muy simpática",
+          "Mi padre está",
+          "en el trabajo",
+          "tiene el pelo corto",
+          "somos cinco",
+          "hoy"
+        ],
+        "model": "Somos cinco en casa. Tengo dos hermanos. Mi madre es muy simpática y hoy está en casa. Mi padre tiene el pelo corto y está en el trabajo."
+      }
+    ]
+  }
+}

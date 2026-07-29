@@ -1,0 +1,112 @@
+{
+  "id": "es-u2-masculino-femenino",
+  "title": "¿Masculino o femenino?",
+  "subtitle": "U2 · eindigt op -o (m.) of op -a (f.)?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 14,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Eindigt op -o (masculino) of op -a (femenino)?",
+    "categories": [
+      {
+        "id": "m",
+        "label": "Masculino<br><small>-o (el)</small>",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "f",
+        "label": "Femenino<br><small>-a (la)</small>",
+        "glaze": "#C4402C"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "el tío",
+        "answer": "m",
+        "tag": "m",
+        "sub": "-o"
+      },
+      {
+        "stimulus": "la tía",
+        "answer": "f",
+        "tag": "f",
+        "sub": "-a"
+      },
+      {
+        "stimulus": "el primo",
+        "answer": "m",
+        "tag": "m",
+        "sub": "-o"
+      },
+      {
+        "stimulus": "la prima",
+        "answer": "f",
+        "tag": "f",
+        "sub": "-a"
+      },
+      {
+        "stimulus": "el hermano",
+        "answer": "m",
+        "tag": "m",
+        "sub": "-o"
+      },
+      {
+        "stimulus": "la hermana",
+        "answer": "f",
+        "tag": "f",
+        "sub": "-a"
+      },
+      {
+        "stimulus": "el abuelo",
+        "answer": "m",
+        "tag": "m",
+        "sub": "-o"
+      },
+      {
+        "stimulus": "la abuela",
+        "answer": "f",
+        "tag": "f",
+        "sub": "-a"
+      },
+      {
+        "stimulus": "el hijo",
+        "answer": "m",
+        "tag": "m",
+        "sub": "-o"
+      },
+      {
+        "stimulus": "la hija",
+        "answer": "f",
+        "tag": "f",
+        "sub": "-a"
+      },
+      {
+        "stimulus": "alto",
+        "answer": "m",
+        "tag": "m",
+        "sub": "adj. -o"
+      },
+      {
+        "stimulus": "alta",
+        "answer": "f",
+        "tag": "f",
+        "sub": "adj. -a"
+      },
+      {
+        "stimulus": "simpático",
+        "answer": "m",
+        "tag": "m",
+        "sub": "adj. -o"
+      },
+      {
+        "stimulus": "simpática",
+        "answer": "f",
+        "tag": "f",
+        "sub": "adj. -a"
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "es-u5-plato-ingrediente",
+  "title": "Plato e ingrediente",
+  "subtitle": "U5 · welk hoofdingrediënt hoort bij het gerecht?",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind het gerecht met zijn belangrijkste ingrediënt",
+    "pairs": [
+      {
+        "a": "el guacamole",
+        "b": "el aguacate 🥑"
+      },
+      {
+        "a": "la paella",
+        "b": "el arroz 🍚"
+      },
+      {
+        "a": "los tacos",
+        "b": "la tortilla 🫓"
+      },
+      {
+        "a": "el ceviche",
+        "b": "el pescado 🐟"
+      },
+      {
+        "a": "la tortilla española",
+        "b": "los huevos 🥚"
+      },
+      {
+        "a": "el gazpacho",
+        "b": "el tomate 🍅"
+      },
+      {
+        "a": "las quesadillas",
+        "b": "el queso 🧀"
+      },
+      {
+        "a": "la arepa",
+        "b": "el maíz 🌽"
+      },
+      {
+        "a": "el bocadillo",
+        "b": "el pan 🥖"
+      },
+      {
+        "a": "la ensalada",
+        "b": "la lechuga 🥬"
+      },
+      {
+        "a": "los churros",
+        "b": "el chocolate 🍫"
+      },
+      {
+        "a": "la limonada",
+        "b": "el limón 🍋"
+      }
+    ]
+  }
+}

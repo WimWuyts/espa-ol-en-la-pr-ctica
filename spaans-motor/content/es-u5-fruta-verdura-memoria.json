@@ -1,0 +1,64 @@
+{
+  "id": "es-u5-fruta-verdura-memoria",
+  "title": "Fruta y verdura",
+  "subtitle": "U5 · zoek het paar español ↔ nederlands",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om: woord + vertaling",
+    "pairs": [
+      {
+        "a": "la manzana",
+        "b": "appel"
+      },
+      {
+        "a": "el plátano",
+        "b": "banaan"
+      },
+      {
+        "a": "la naranja",
+        "b": "sinaasappel"
+      },
+      {
+        "a": "las uvas",
+        "b": "druiven"
+      },
+      {
+        "a": "la piña",
+        "b": "ananas"
+      },
+      {
+        "a": "el tomate",
+        "b": "tomaat"
+      },
+      {
+        "a": "la lechuga",
+        "b": "sla"
+      },
+      {
+        "a": "la cebolla",
+        "b": "ui"
+      },
+      {
+        "a": "el ajo",
+        "b": "knoflook"
+      },
+      {
+        "a": "el maíz",
+        "b": "maïs"
+      },
+      {
+        "a": "la fresa",
+        "b": "aardbei"
+      },
+      {
+        "a": "la zanahoria",
+        "b": "wortel"
+      }
+    ]
+  }
+}

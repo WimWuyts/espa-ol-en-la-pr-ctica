@@ -1,0 +1,147 @@
+{
+  "id": "es-u7-ordena-ruta",
+  "title": "Ordena las instrucciones",
+  "subtitle": "U7 · zet de route in de juiste volgorde",
+  "lang": "es",
+  "template": "order",
+  "options": {
+    "audio": false
+  },
+  "order": {
+    "prompt": "Tik de instructies in de logische volgorde van de route",
+    "rounds": [
+      {
+        "tag": "ruta",
+        "sub": "a la plaza",
+        "items": [
+          {
+            "label": "Sal de casa.",
+            "key": 1
+          },
+          {
+            "label": "Sigue todo recto.",
+            "key": 2
+          },
+          {
+            "label": "Gira a la derecha en el semáforo.",
+            "key": 3
+          },
+          {
+            "label": "La plaza está a la izquierda.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "ruta",
+        "sub": "a la panadería",
+        "items": [
+          {
+            "label": "Cruza la calle.",
+            "key": 1
+          },
+          {
+            "label": "Sigue recto por la calle Real.",
+            "key": 2
+          },
+          {
+            "label": "Gira a la izquierda.",
+            "key": 3
+          },
+          {
+            "label": "La panadería está en la esquina.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "ruta",
+        "sub": "al parque",
+        "items": [
+          {
+            "label": "Toma la primera calle.",
+            "key": 1
+          },
+          {
+            "label": "Pasa por delante del banco.",
+            "key": 2
+          },
+          {
+            "label": "Cruza el puente.",
+            "key": 3
+          },
+          {
+            "label": "El parque está al final.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "ruta",
+        "sub": "a la estación",
+        "items": [
+          {
+            "label": "Baja por la calle.",
+            "key": 1
+          },
+          {
+            "label": "Gira a la derecha.",
+            "key": 2
+          },
+          {
+            "label": "Sigue todo recto.",
+            "key": 3
+          },
+          {
+            "label": "La estación está enfrente.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "ruta",
+        "sub": "al museo",
+        "items": [
+          {
+            "label": "Sal del hotel.",
+            "key": 1
+          },
+          {
+            "label": "Toma el autobús número 5.",
+            "key": 2
+          },
+          {
+            "label": "Baja en la plaza.",
+            "key": 3
+          },
+          {
+            "label": "El museo está al lado de la iglesia.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "ruta",
+        "sub": "al supermercado",
+        "items": [
+          {
+            "label": "Camina hasta el final de la calle.",
+            "key": 1
+          },
+          {
+            "label": "Gira a la izquierda.",
+            "key": 2
+          },
+          {
+            "label": "Pasa por el parque.",
+            "key": 3
+          },
+          {
+            "label": "El supermercado está a la derecha.",
+            "key": 4
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "id": "es-u8-haber-tetris",
+  "title": "Haber Tetris",
+  "subtitle": "U8 · laat elke persoon in de juiste vorm van «haber» vallen",
+  "lang": "es",
+  "template": "tetris",
+  "options": {
+    "rows": 9,
+    "speed": 1300,
+    "audio": false
+  },
+  "classify": {
+    "categories": [
+      {
+        "id": "he",
+        "label": "he",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "has",
+        "label": "has",
+        "glaze": "#C4402C"
+      },
+      {
+        "id": "ha",
+        "label": "ha",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "hemos",
+        "label": "hemos",
+        "glaze": "#E0A22F"
+      },
+      {
+        "id": "han",
+        "label": "han",
+        "glaze": "#8B5E9E"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "yo",
+        "answer": "he",
+        "tag": "he",
+        "sub": "yo he"
+      },
+      {
+        "stimulus": "tú",
+        "answer": "has",
+        "tag": "has",
+        "sub": "tú has"
+      },
+      {
+        "stimulus": "él",
+        "answer": "ha",
+        "tag": "ha",
+        "sub": "él ha"
+      },
+      {
+        "stimulus": "ella",
+        "answer": "ha",
+        "tag": "ha",
+        "sub": "ella ha"
+      },
+      {
+        "stimulus": "nosotros",
+        "answer": "hemos",
+        "tag": "hemos",
+        "sub": "nosotros hemos"
+      },
+      {
+        "stimulus": "nosotras",
+        "answer": "hemos",
+        "tag": "hemos",
+        "sub": "nosotras hemos"
+      },
+      {
+        "stimulus": "ellos",
+        "answer": "han",
+        "tag": "han",
+        "sub": "ellos han"
+      },
+      {
+        "stimulus": "ellas",
+        "answer": "han",
+        "tag": "han",
+        "sub": "ellas han"
+      },
+      {
+        "stimulus": "Nina",
+        "answer": "ha",
+        "tag": "ha",
+        "sub": "Nina ha"
+      },
+      {
+        "stimulus": "Diego y Nina",
+        "answer": "han",
+        "tag": "han",
+        "sub": "ellos han"
+      },
+      {
+        "stimulus": "tú y yo",
+        "answer": "hemos",
+        "tag": "hemos",
+        "sub": "nosotros hemos"
+      },
+      {
+        "stimulus": "usted",
+        "answer": "ha",
+        "tag": "ha",
+        "sub": "usted ha"
+      },
+      {
+        "stimulus": "mi madre",
+        "answer": "ha",
+        "tag": "ha",
+        "sub": "ella ha"
+      },
+      {
+        "stimulus": "mis amigos",
+        "answer": "han",
+        "tag": "han",
+        "sub": "ellos han"
+      },
+      {
+        "stimulus": "yo (otra vez)",
+        "answer": "he",
+        "tag": "he",
+        "sub": "yo he"
+      },
+      {
+        "stimulus": "la profesora",
+        "answer": "ha",
+        "tag": "ha",
+        "sub": "ella ha"
+      },
+      {
+        "stimulus": "tú (otra vez)",
+        "answer": "has",
+        "tag": "has",
+        "sub": "tú has"
+      },
+      {
+        "stimulus": "el grupo",
+        "answer": "ha",
+        "tag": "ha",
+        "sub": "el grupo ha (ev.)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "id": "es-u8-regular-irregular",
+  "title": "¿Participio regular o irregular?",
+  "subtitle": "U8 · -ado/-ido of uit het hoofd?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Is de participio regelmatig (-ado/-ido) of onregelmatig?",
+    "categories": [
+      {
+        "id": "regular",
+        "label": "regular<br><small>-ado / -ido</small>",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "irregular",
+        "label": "irregular<br><small>uit het hoofd</small>",
+        "glaze": "#C4402C"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "viajar → viajado",
+        "answer": "regular",
+        "tag": "regular",
+        "sub": "-ar → -ado"
+      },
+      {
+        "stimulus": "comer → comido",
+        "answer": "regular",
+        "tag": "regular",
+        "sub": "-er → -ido"
+      },
+      {
+        "stimulus": "hacer → hecho",
+        "answer": "irregular",
+        "tag": "irregular",
+        "sub": "irregular"
+      },
+      {
+        "stimulus": "ver → visto",
+        "answer": "irregular",
+        "tag": "irregular",
+        "sub": "irregular"
+      },
+      {
+        "stimulus": "vivir → vivido",
+        "answer": "regular",
+        "tag": "regular",
+        "sub": "-ir → -ido"
+      },
+      {
+        "stimulus": "escribir → escrito",
+        "answer": "irregular",
+        "tag": "irregular",
+        "sub": "irregular"
+      },
+      {
+        "stimulus": "estudiar → estudiado",
+        "answer": "regular",
+        "tag": "regular",
+        "sub": "-ar → -ado"
+      },
+      {
+        "stimulus": "volver → vuelto",
+        "answer": "irregular",
+        "tag": "irregular",
+        "sub": "irregular"
+      },
+      {
+        "stimulus": "subir → subido",
+        "answer": "regular",
+        "tag": "regular",
+        "sub": "-ir → -ido"
+      },
+      {
+        "stimulus": "poner → puesto",
+        "answer": "irregular",
+        "tag": "irregular",
+        "sub": "irregular"
+      },
+      {
+        "stimulus": "beber → bebido",
+        "answer": "regular",
+        "tag": "regular",
+        "sub": "-er → -ido"
+      },
+      {
+        "stimulus": "abrir → abierto",
+        "answer": "irregular",
+        "tag": "irregular",
+        "sub": "irregular"
+      },
+      {
+        "stimulus": "hablar → hablado",
+        "answer": "regular",
+        "tag": "regular",
+        "sub": "-ar → -ado"
+      },
+      {
+        "stimulus": "decir → dicho",
+        "answer": "irregular",
+        "tag": "irregular",
+        "sub": "irregular"
+      },
+      {
+        "stimulus": "visitar → visitado",
+        "answer": "regular",
+        "tag": "regular",
+        "sub": "-ar → -ado"
+      },
+      {
+        "stimulus": "romper → roto",
+        "answer": "irregular",
+        "tag": "irregular",
+        "sub": "irregular"
+      },
+      {
+        "stimulus": "llegar → llegado",
+        "answer": "regular",
+        "tag": "regular",
+        "sub": "-ar → -ado"
+      },
+      {
+        "stimulus": "estar → estado",
+        "answer": "regular",
+        "tag": "regular",
+        "sub": "-ar → -ado"
+      },
+      {
+        "stimulus": "sacar → sacado",
+        "answer": "regular",
+        "tag": "regular",
+        "sub": "-ar → -ado"
+      },
+      {
+        "stimulus": "ir → ido",
+        "answer": "regular",
+        "tag": "regular",
+        "sub": "-ir → -ido (kort)"
+      }
+    ]
+  }
+}

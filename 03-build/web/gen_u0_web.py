@@ -8,11 +8,12 @@
 import json, base64, os, sys
 
 ROOT="/home/user/espa-ol-en-la-pr-ctica"
-SCRATCH="/tmp/claude-0/-home-user-espa-ol-en-la-pr-ctica/c4f0edbd-dbbb-5710-a740-e04235ccd8ef/scratchpad"
-vocab=json.load(open(f"{SCRATCH}/u0_vocab.json"))
-mapsvg=open(f"{SCRATCH}/mundo_map_real.svg").read()
-sys.path.insert(0,SCRATCH); import cast_gen as C
+GEN=f"{ROOT}/02-huisstijl/beeld/generators"
+vocab=json.load(open(f"{ROOT}/01-cursussen/05-a1/U0/u0_vocab.json"))
+mapsvg=open(f"{GEN}/mundo_map_real.svg").read()
+sys.path.insert(0,GEN); import cast_gen as C; import vocab_icons as VI; import vocab_emoji as VE
 moch=C.mochila("100%","compass")
+ICONS=[f'<div class="fcico">{VE.emoji_for(v.get("es",""),v.get("grp",""))}</div>' for v in vocab]
 
 def b64(p):
     return base64.b64encode(open(p,"rb").read()).decode()
@@ -83,6 +84,7 @@ h2.sec{font-family:var(--disp);font-weight:700;color:var(--gd);font-size:24px;ma
 .fc.flip .in{transform:rotateY(180deg)}
 .fc .s,.fc .b{position:absolute;inset:0;backface-visibility:hidden;border-radius:14px;border:1px solid var(--line);background:var(--card);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;text-align:center}
 .fc .s{border-top:4px solid var(--g)}
+.fc .s .fcico{font-size:40px;line-height:1;margin-bottom:2px}
 .fc .b{transform:rotateY(180deg);background:var(--gt);border-top:4px solid var(--gd)}
 .fc .w{font-family:var(--disp);font-weight:700;font-size:17px}
 .fc .ej{font-size:11px;color:var(--mut);margin-top:6px}
@@ -147,10 +149,70 @@ table.vt th{background:var(--gt);color:var(--gd);position:sticky;top:0;z-index:1
 body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-offset:2px;border-radius:3px}
 body.editing [contenteditable=true]:focus{outline:2px solid var(--gd);background:#FEF9E7}
 @media print{.editbar{display:none!important}}
+/* ---- Lectura: perfiles + V/F met bewijs ---- */
+.perfiles{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.perfiles{grid-template-columns:1fr}}
+.perfil{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--g);border-radius:16px;padding:16px}
+.perfil h4{font-family:var(--disp);color:var(--gd);margin:0 0 6px;display:flex;align-items:center;gap:8px}
+.perfil .txt{font-size:14px;line-height:1.6}
+.perfil .txt .ev{background:#FEF3C7;border-radius:3px;padding:0 3px}
+.vftask{margin-top:8px}
+.vfrow{display:flex;gap:8px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:7px 0;font-size:14px}
+.vfrow .btns{display:flex;gap:6px}
+.vfrow .vfb{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;padding:3px 10px;cursor:pointer;font-weight:700}
+.vfrow .vfb.on{background:var(--g);color:#fff;border-color:var(--g)}
+.vfrow .res{font-size:12px;color:var(--mut);min-width:150px}
+/* ---- Hablar: inline recorder ---- */
+.rec h3{font-family:var(--disp);margin:0 0 2px;color:var(--ink);font-size:18px}
+.rec .desc{color:var(--mut);font-size:13px;margin:0 0 12px}
+.rec .target{font-family:var(--disp);font-size:20px;color:var(--gd);background:var(--gt);border-radius:12px;padding:14px 16px;margin:8px 0;text-align:center}
+.rec .cue{font-size:12px;color:var(--mut);text-transform:uppercase;letter-spacing:.05em}
+.rec .rbtns{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0}
+.rec .rbtn{border:none;border-radius:10px;padding:9px 15px;font-weight:700;cursor:pointer;font-family:var(--disp);font-size:14px;color:#fff;background:var(--g)}
+.rec .rbtn.sec{background:var(--gt);color:var(--gd)}
+.rec .rbtn.rec-on{background:var(--red);animation:pulse 1s infinite}
+.rec .rbtn[disabled]{opacity:.4;cursor:not-allowed}
+@keyframes pulse{50%{opacity:.55}}
+.rec .moods{display:flex;gap:8px;margin-top:6px}
+.rec .mood{font-size:22px;cursor:pointer;border:1.5px solid var(--line);border-radius:10px;padding:2px 10px;background:var(--card)}
+.rec .mood.on{border-color:var(--g);background:var(--gt)}
+.rec audio{width:100%;margin-top:6px}
+/* ---- inline zelfcorrigerende oefeningen ---- */
+.exhead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:2px}
+.exhead h3{font-family:var(--disp);margin:0;color:var(--ink);font-size:18px}
+.ex .desc{color:var(--mut);font-size:13px;margin:0 0 10px}
+.otra{border:none;background:var(--gt);color:var(--gd);border-radius:8px;padding:6px 12px;font-weight:700;cursor:pointer;font-size:13px;font-family:var(--disp);white-space:nowrap}
+.exq{border:1px solid var(--line);border-radius:12px;padding:11px 14px;margin:9px 0;background:var(--card)}
+.exq .qz{font-family:var(--disp);font-size:16px;margin-bottom:8px}
+.exq .qz .gap{display:inline-block;min-width:60px;border-bottom:2.5px solid var(--g);margin:0 3px;vertical-align:baseline}
+.exopts{display:flex;gap:8px;flex-wrap:wrap}
+.exopt{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:7px 13px;cursor:pointer;font-size:15px;font-weight:600;font-family:var(--body)}
+.exopt.ok{border-color:var(--g);background:var(--g);color:#fff}
+.exopt.no{border-color:var(--red);background:#fde8e8;color:var(--red)}
+.exopt[disabled]{cursor:default}
+.exwhy{margin-top:8px;font-size:13px;display:none;border-radius:8px;padding:7px 10px}
+.exwhy.show{display:block}
+.exwhy.g{background:var(--gt);color:var(--gd)}.exwhy.b{background:#fdeaea;color:var(--red)}
+.exscore{font-size:13px;color:var(--mut);margin-top:8px}
+.exscore b{color:var(--gd)}
+.mcol{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px}
+.mcell{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:9px 12px;cursor:pointer;font-size:15px;text-align:center;font-weight:600;user-select:none}
+.mcell.sel{border-color:var(--g);background:var(--gt)}
+.mcell.done{border-color:var(--g);background:var(--g);color:#fff;cursor:default;opacity:.85}
+.mcell.bad{border-color:var(--red);background:#fde8e8}
+.oslots{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0;min-height:40px}
+.oslot{border:1.5px dashed var(--line);border-radius:9px;padding:7px 11px;font-size:14px;min-width:34px;color:var(--mut)}
+.oslot.filled{border-style:solid;border-color:var(--g);background:var(--gt);color:var(--ink)}
+.obank{display:flex;gap:7px;flex-wrap:wrap;margin-top:6px}
+.ochip{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 13px;cursor:pointer;font-size:15px;font-weight:600}
+.ochip.used{opacity:.35;cursor:default}
+.ochip.shake{animation:shk .3s}
+@keyframes shk{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 """
 
 def data_js():
     return ("const VOCAB="+json.dumps(vocab,ensure_ascii=False)+";\n"
+            +"const ICONS="+json.dumps(ICONS,ensure_ascii=False)+";\n"
             +"const MOTOR="+json.dumps(MOTOR,ensure_ascii=False)+";\n"
             +"const GAMES="+json.dumps(GAMES)+";\n")
 
@@ -185,7 +247,7 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   <div class="hero">
     <div class="mo">__MOCH__</div>
     <div><h1>U0 · ¡Empezamos!</h1>
-    <p>La página digital de la Unidad 0: flashcards, woordenschat, gramática visual e interactiva y <b>juegos</b>. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR in het boek brengt je hier om te oefenen — zelfde thema, meer interactie.</span></p></div>
+    <p>La página digital de la Unidad 0: flashcards, gramática visual e interactiva, <b>lectura</b>, <b>hablar</b> (grábate) y <b>muchos juegos</b> con muchas series. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR in het boek brengt je hier om te oefenen — zelfde thema, meer interactie.</span></p></div>
   </div>
   <div class="subnav" id="subnav"></div>
 
@@ -193,6 +255,12 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
     <h2 class="sec">Vocabulario · flashcards</h2>
     <p class="lead">Álle woorden van U0. Klik om te draaien; wissel ES↔NL; klik 🔊 om te horen. <span class="gloss">Voorkant = Spaans + voorbeeldzin, achterkant = vertaling.</span></p>
     __FC__
+    <h2 class="sec">Ejercicios de vocabulario · zelfcorrectie</h2>
+    <p class="lead">Oefen de woorden actief: koppelen, invullen, país↔gentilicio en de <b>intruder</b>. Elke oefening geeft directe feedback en je kunt telkens een <b>andere reeks</b> trekken. <span class="gloss">herkennen → onderscheiden → ophalen.</span></p>
+    <div class="card ex" id="vx_match"></div>
+    <div class="card ex" id="vx_gap"></div>
+    <div class="card ex" id="vx_pais"></div>
+    <div class="card ex" id="vx_odd"></div>
     <h2 class="sec">Naslagwerk · zoeken</h2>
     __NAS__
   </section>
@@ -204,6 +272,39 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
     <div class="card" id="colorsent"></div>
     <div class="game" id="g_tilde"></div>
     <div class="game" id="g_silaba"></div>
+    <h3 class="subh">🔤 El abecedario — letra ↔ nombre</h3>
+    <div class="card ex" id="gx_abc"></div>
+    <h3 class="subh">🔊 Los sonidos — b/v · h muda · la jota</h3>
+    <div class="card ex" id="gx_sonido"></div>
+    <h3 class="subh">🎩 El acento — aguda · llana · esdrújula</h3>
+    <div class="card ex" id="gx_acento"></div>
+    <div class="card ex" id="gx_tilde"></div>
+    <h3 class="subh">🔢 Los números — cifra ↔ palabra</h3>
+    <div class="card ex" id="gx_num"></div>
+    <div class="card ex" id="gx_numorden"></div>
+    <h3 class="subh">⚖️ El género — ¿el o la?</h3>
+    <div class="card ex" id="gx_genero"></div>
+    <h3 class="subh">🎯 Repaso mixto — rellena con feedback</h3>
+    <div class="card ex" id="gx_mix"></div>
+  </section>
+
+  <section class="panel" data-p="lectura">
+    <h2 class="sec">Lectura · el chat de la clase</h2>
+    <p class="lead">Lees de <b>vier profielen</b> van de reisgenoten, <b>luister</b> ze (🔊 TTS) en <b>controleer je begrip</b>. Daarna zeg je hoe jij je voorstelt — dat neem je op in het tabblad <b>Hablar</b>. <span class="gloss">Keten: lezen → luisteren → spreken.</span></p>
+    <div id="lecturawrap"></div>
+    <h3 class="subh">🔢 Ordena</h3>
+    <div class="card ex" id="lx_order"></div>
+    <h3 class="subh">🔎 Comprensión · escanea y escoge</h3>
+    <div class="card ex" id="lx_scan"></div>
+  </section>
+
+  <section class="panel" data-p="hablar">
+    <h2 class="sec">Hablar · grábate 🎙️</h2>
+    <p class="lead">Neem <b>jezelf</b> op: luister naar het model, spreek in, luister terug, en neem opnieuw op. <span class="gloss">Werkt in Chrome/Edge; sta de micro toe. Print blijft bruikbaar zonder opname.</span></p>
+    <div class="card" id="rec_saluda"></div>
+    <div class="card" id="rec_deletrear"></div>
+    <div class="card" id="rec_presenta"></div>
+    <p class="lead" style="margin-top:8px">Meer luister-/spreekoefening vind je ook onder <b>Juegos</b> (dictado, escucha) en <b>Gramática</b> (abecedario, tik de tónica).</p>
   </section>
 
   <section class="panel" data-p="juegos">
@@ -232,8 +333,16 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   </section>
 
   <section class="panel" data-p="cultura">
-    <h2 class="sec">Cultura · el mundo hispano</h2>
-    <p class="lead">+20 países, ~500 miljoen sprekers. <b>Klik op een groen land</b> op de kaart voor info. Onze route dit jaar: España → México → Colombia → Perú.</p>
+    <h2 class="sec">Cultura · El mundo hispano</h2>
+    <p class="lead">El español no vive solo en España: es la lengua de más de 20 países. <span class="gloss">Spaans woont niet alleen in Spanje — het is de taal van meer dan 20 landen en ~500 miljoen sprekers.</span></p>
+    <div class="card"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px;display:flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>La lengua de más de 20 países 🌍</h3>
+      <p>El español es lengua oficial en <b>España</b>, en casi toda <b>Hispanoamérica</b> y hasta en <b>Guinea Ecuatorial</b> (África). Este año paras en cuatro sitios: España · México · Colombia · Perú. <span class="gloss">Spaans is officiële taal in Spanje, in bijna heel Spaanstalig Amerika en zelfs in Equatoriaal-Guinea. Dit jaar houd je halt op vier plekken.</span></p></div>
+    <div class="card"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px;display:flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2"/><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2"/><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/></svg>Saludar en todas partes</h3>
+      <p>En todo el mundo hispano se dice <b>«¡Hola!»</b>, pero cada país tiene su color: <i>¿Qué tal?</i> (España), <i>¿Qué onda?</i> (México), <i>¿Quiubo?</i> (Colombia). <span class="gloss">Overal klinkt «¡Hola!», maar elk land heeft zijn eigen kleur en groetvarianten — diversiteit binnen één taal.</span></p></div>
+    <div class="card"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px">Los dos besos 💋</h3>
+      <p><b>ES:</b> En el mundo hispano, saludar es muy importante. En <b>España</b>, los amigos y la familia suelen darse <b>dos besos</b> (uno en cada mejilla). En muchos países de <b>Latinoamérica</b> se da <b>un solo beso</b>. <span class="gloss">Groeten is belangrijk: in Spanje vaak twee kusjes (één op elke wang), in veel Latijns-Amerikaanse landen één. Tussen mannen meestal een hand of «abrazo».</span></p></div>
+    <h3 class="subh">La Ruta · ¿dónde estamos?</h3>
+    <p class="lead">Onze parada 0: <b>El mundo hispano → España</b>. <b>Klik op een groen land</b> op de kaart voor info. Verderop: México → Colombia → Perú.</p>
     <div class="card" id="mapwrap">__MAP__<div class="mapinfo" id="mapinfo"><p class="gloss" style="margin:0">👆 Klik op een groen land (of een halte ★) om er meer over te lezen.</p></div></div>
   </section>
 
@@ -271,7 +380,7 @@ function speak(t,rate){if(!('speechSynthesis'in window))return;const u=new Speec
 const TTS=('speechSynthesis'in window);
 if(TTS){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}
 // subnav
-const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['juegos','Juegos'],['cultura','Cultura'],['extra','Extra']];
+const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['juegos','Juegos'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
 const sn=document.getElementById('subnav');
 PANELS.forEach((p,i)=>{const b=document.createElement('button');b.textContent=p[1];if(i===0)b.classList.add('on');b.onclick=()=>{
   document.querySelectorAll('.subnav button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
@@ -286,7 +395,7 @@ function renderFC(){const q=(document.getElementById('fcsearch').value||'').toLo
   FCorder.forEach(i=>{const v=VOCAB[i];if(q&&!(v.es.toLowerCase().includes(q)||v.nl.toLowerCase().includes(q)))return;n++;
     const front=dir==='es'?v.es:v.nl, back=dir==='es'?v.nl:v.es, ej=dir==='es'?('«'+v.ej+'»'):'';
     const d=document.createElement('div');d.className='fc';d.tabIndex=0;
-    d.innerHTML='<div class="in"><div class="s">'+(TTS?'<span class="spk" title="luister">🔊</span>':'')+'<div class="w">'+front+'</div>'+(ej?'<div class="ej">'+ej+'</div>':'')+'</div><div class="b"><div class="tr">'+back+'</div></div></div>';
+    d.innerHTML='<div class="in"><div class="s">'+(TTS?'<span class="spk" title="luister">🔊</span>':'')+(ICONS[i]||'')+'<div class="w">'+front+'</div>'+(ej?'<div class="ej">'+ej+'</div>':'')+'</div><div class="b"><div class="tr">'+back+'</div></div></div>';
     d.onclick=()=>d.classList.toggle('flip');d.onkeydown=e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();d.classList.toggle('flip')}};
     const sp=d.querySelector('.spk');if(sp)sp.onclick=e=>{e.stopPropagation();speak(v.es);};
     g.appendChild(d);});
@@ -540,43 +649,288 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeGame();});
 
 // ---------- KAART interactief (klik op een land) ----------
 (function(){
- const INFO={
-  ESP:{fl:'🇪🇸',n:'España',cap:'Madrid',f:'De bakermat van het Spaans; onze parada 0.',nl:'Vertrekpunt van de reis.',star:1},
-  MEX:{fl:'🇲🇽',n:'México',cap:'Ciudad de México',f:'Het land met de meeste Spaanstaligen (~130 mln).',nl:'Meeste sprekers ter wereld · parada (Diego).',star:1},
-  COL:{fl:'🇨🇴',n:'Colombia',cap:'Bogotá',f:'Parada: Cartagena, aan de Caribische kust.',nl:'Parada van Valen.',star:1},
-  PER:{fl:'🇵🇪',n:'Perú',cap:'Lima',f:'Parada: Cusco en Machu Picchu, in de Andes.',nl:'Parada van Nina.',star:1},
-  GTM:{fl:'🇬🇹',n:'Guatemala',cap:'Ciudad de Guatemala',f:'Rijke Maya-erfenis.',nl:''},
-  HND:{fl:'🇭🇳',n:'Honduras',cap:'Tegucigalpa',f:'In het hart van Centraal-Amerika.',nl:''},
-  SLV:{fl:'🇸🇻',n:'El Salvador',cap:'San Salvador',f:'Het kleinste land van Centraal-Amerika.',nl:''},
-  NIC:{fl:'🇳🇮',n:'Nicaragua',cap:'Managua',f:'Land van meren en vulkanen.',nl:''},
-  CRI:{fl:'🇨🇷',n:'Costa Rica',cap:'San José',f:'«¡Pura vida!» — geen leger.',nl:''},
-  PAN:{fl:'🇵🇦',n:'Panamá',cap:'Panamá',f:'Het kanaal verbindt twee oceanen.',nl:''},
-  CUB:{fl:'🇨🇺',n:'Cuba',cap:'La Habana',f:'Bakermat van son en salsa.',nl:''},
-  DOM:{fl:'🇩🇴',n:'República Dominicana',cap:'Santo Domingo',f:'De oudste stad van Amerika.',nl:''},
-  PRI:{fl:'🇵🇷',n:'Puerto Rico',cap:'San Juan',f:'Vrijstaat verbonden met de VS.',nl:''},
-  VEN:{fl:'🇻🇪',n:'Venezuela',cap:'Caracas',f:'De Salto Ángel: hoogste waterval ter wereld.',nl:''},
-  ECU:{fl:'🇪🇨',n:'Ecuador',cap:'Quito',f:'«La mitad del mundo»: op de evenaar.',nl:''},
-  BOL:{fl:'🇧🇴',n:'Bolivia',cap:'Sucre / La Paz',f:'De Salar de Uyuni: grootste zoutvlakte.',nl:''},
-  PRY:{fl:'🇵🇾',n:'Paraguay',cap:'Asunción',f:'Tweetalig: español én guaraní.',nl:''},
-  URY:{fl:'🇺🇾',n:'Uruguay',cap:'Montevideo',f:'Klein land tussen twee reuzen.',nl:''},
-  ARG:{fl:'🇦🇷',n:'Argentina',cap:'Buenos Aires',f:'De tango; vanaf C6 gastheer Mateo (voseo).',nl:''},
-  CHL:{fl:'🇨🇱',n:'Chile',cap:'Santiago',f:'Het langste, smalste land ter wereld.',nl:''},
-  GNQ:{fl:'🇬🇶',n:'Guinea Ecuatorial',cap:'Malabo',f:'Het enige Spaanstalige land in Afrika.',nl:''},
-  USA:{fl:'🇺🇸',n:'Estados Unidos',cap:'Washington D.C.',f:'~60 mln hispanohablantes — geen officiële taal, wél overal aanwezig.',nl:''}
- };
+   const INFO={"MEX": {"fl": "🇲🇽", "n": "México", "cap": "Ciudad de México", "pob": "~130 mln", "mon": "peso mexicano", "gen": "mexicano/a", "idi": "español (+ náhuatl, maya y 66 lenguas más)", "cool": "los aztecas fundaron Tenochtitlan (hoy CDMX) en 1325 · Frida Kahlo y Diego Rivera, pintores · pirámides de Teotihuacán y Chichén Itzá (mayas)", "tema": "🌎 Símbolo: el águila sobre el nopal, en la bandera", "star": 0, "nl": ""}, "ESP": {"fl": "🇪🇸", "n": "España", "cap": "Madrid", "pob": "~48 mln", "mon": "euro", "gen": "español/a", "idi": "español (+ catalán, gallego, euskera)", "cool": "la Sagrada Familia de Gaudí, aún en obras · la Alhambra de Granada, arquitectura árabe · Picasso, Velázquez y el Prado", "tema": "🌎 Símbolo: el sol y «¡hola!» como saludo", "star": 1, "nl": "★ ¡Estás aquí! Parada U0–U4 · Madrid · Sevilla · Barcelona · València"}, "COL": {"fl": "🇨🇴", "n": "Colombia", "cap": "Bogotá", "pob": "~52 mln", "mon": "peso colombiano", "gen": "colombiano/a", "idi": "español (+ 65 lenguas indígenas)", "cool": "Gabriel García Márquez, Nobel del «realismo mágico» · Shakira y Karol G · Cartagena, ciudad amurallada colonial", "tema": "🌎 Símbolo: el cóndor y el grano de café", "star": 0, "nl": ""}, "PER": {"fl": "🇵🇪", "n": "Perú", "cap": "Lima", "pob": "~34 mln", "mon": "sol", "gen": "peruano/a", "idi": "español, quechua y aymara", "cool": "Machu Picchu, ciudad inca en los Andes · el imperio inca tuvo su capital en Cusco · las misteriosas líneas de Nazca", "tema": "🌎 Símbolo: el sol inca y la llama", "star": 0, "nl": ""}, "ARG": {"fl": "🇦🇷", "n": "Argentina", "cap": "Buenos Aires", "pob": "~46 mln", "mon": "peso argentino", "gen": "argentino/a", "idi": "español (voseo: «vos tenés»)", "cool": "Lionel Messi y Diego Maradona (fútbol) · el tango nació en Buenos Aires · la Patagonia y el glaciar Perito Moreno", "tema": "🌎 Símbolo: el sol de mayo en la bandera", "star": 0, "nl": ""}, "VEN": {"fl": "🇻🇪", "n": "Venezuela", "cap": "Caracas", "pob": "~28 mln", "mon": "bolívar", "gen": "venezolano/a", "idi": "español (+ lenguas indígenas)", "cool": "el Salto Ángel, la cascada más alta del mundo (979 m) · Simón Bolívar, «el Libertador» · tierra de muchas Miss Universo", "tema": "🌎 Símbolo: las siete estrellas de la bandera", "star": 0, "nl": ""}, "CHL": {"fl": "🇨🇱", "n": "Chile", "cap": "Santiago", "pob": "~20 mln", "mon": "peso chileno", "gen": "chileno/a", "idi": "español (+ mapudungun)", "cool": "el desierto de Atacama, el más seco del mundo · Pablo Neruda y Gabriela Mistral, poetas Nobel · la isla de Pascua y sus moáis", "tema": "🌎 Símbolo: la estrella solitaria de la bandera", "star": 0, "nl": ""}, "ECU": {"fl": "🇪🇨", "n": "Ecuador", "cap": "Quito", "pob": "~18 mln", "mon": "dólar estadounidense", "gen": "ecuatoriano/a", "idi": "español y quechua (kichwa)", "cool": "las islas Galápagos, donde estudió Darwin · «la mitad del mundo»: la línea del ecuador · Quito, primer Patrimonio de la Humanidad (1978)", "tema": "🌎 Símbolo: el cóndor de los Andes", "star": 0, "nl": ""}, "GTM": {"fl": "🇬🇹", "n": "Guatemala", "cap": "Ciudad de Guatemala", "pob": "~18 mln", "mon": "quetzal", "gen": "guatemalteco/a", "idi": "español (+ 20 lenguas mayas)", "cool": "Tikal, gran ciudad maya en la selva · Rigoberta Menchú, Nobel de la Paz · el lago de Atitlán entre volcanes", "tema": "🌎 Símbolo: el quetzal, ave nacional", "star": 0, "nl": ""}, "CUB": {"fl": "🇨🇺", "n": "Cuba", "cap": "La Habana", "pob": "~11 mln", "mon": "peso cubano", "gen": "cubano/a", "idi": "español", "cool": "La Habana Vieja y sus coches clásicos · cuna del son, la salsa y la rumba · José Martí, héroe nacional", "tema": "🌎 Símbolo: la estrella solitaria y la palma real", "star": 0, "nl": ""}, "BOL": {"fl": "🇧🇴", "n": "Bolivia", "cap": "Sucre / La Paz", "pob": "~12 mln", "mon": "boliviano", "gen": "boliviano/a", "idi": "español, quechua, aymara, guaraní (37 oficiales)", "cool": "el Salar de Uyuni, el mayor salar del mundo · el lago Titicaca, el lago navegable más alto · Tiwanaku, cultura anterior a los incas", "tema": "🌎 Símbolo: el cóndor y la bandera wiphala", "star": 0, "nl": ""}, "DOM": {"fl": "🇩🇴", "n": "República Dominicana", "cap": "Santo Domingo", "pob": "~11 mln", "mon": "peso dominicano", "gen": "dominicano/a", "idi": "español", "cool": "la primera catedral y universidad de América · cuna del merengue y la bachata · Óscar de la Renta, diseñador", "tema": "🌎 Símbolo: la única bandera del mundo con una Biblia", "star": 0, "nl": ""}, "HND": {"fl": "🇭🇳", "n": "Honduras", "cap": "Tegucigalpa", "pob": "~10 mln", "mon": "lempira", "gen": "hondureño/a", "idi": "español (+ garífuna, miskito)", "cool": "Copán, ciudad maya de estelas famosas · las islas de la Bahía, paraíso del buceo · «Honduras» significa «profundidades»", "tema": "🌎 Símbolo: las cinco estrellas de Centroamérica", "star": 0, "nl": ""}, "PRY": {"fl": "🇵🇾", "n": "Paraguay", "cap": "Asunción", "pob": "~7 mln", "mon": "guaraní", "gen": "paraguayo/a", "idi": "español y guaraní (bilingüe)", "cool": "país oficialmente bilingüe (español + guaraní) · la represa de Itaipú, una de las mayores del mundo · las misiones jesuíticas, Patrimonio de la Humanidad", "tema": "🌎 Símbolo: la única bandera distinta por cada lado", "star": 0, "nl": ""}, "NIC": {"fl": "🇳🇮", "n": "Nicaragua", "cap": "Managua", "pob": "~7 mln", "mon": "córdoba", "gen": "nicaragüense", "idi": "español (+ miskito en la costa)", "cool": "«tierra de lagos y volcanes» · Rubén Darío, padre del modernismo · la isla de Ometepe, con dos volcanes", "tema": "🌎 Símbolo: el arco iris en el escudo nacional", "star": 0, "nl": ""}, "SLV": {"fl": "🇸🇻", "n": "El Salvador", "cap": "San Salvador", "pob": "~6 mln", "mon": "dólar estadounidense", "gen": "salvadoreño/a", "idi": "español (+ náhuat)", "cool": "«el pulgarcito de América»: el más pequeño · las pupusas, plato nacional · playas famosas para el surf en el Pacífico", "tema": "🌎 Símbolo: un volcán en el paisaje nacional", "star": 0, "nl": ""}, "CRI": {"fl": "🇨🇷", "n": "Costa Rica", "cap": "San José", "pob": "~5 mln", "mon": "colón", "gen": "costarricense", "idi": "español", "cool": "sin ejército desde 1948 · «Pura Vida» y una enorme biodiversidad · líder mundial en energía renovable", "tema": "🌎 Símbolo: «Pura Vida», saludo y lema del país", "star": 0, "nl": ""}, "PAN": {"fl": "🇵🇦", "n": "Panamá", "cap": "Ciudad de Panamá", "pob": "~4 mln", "mon": "balboa / dólar", "gen": "panameño/a", "idi": "español", "cool": "el Canal de Panamá une dos océanos · el sombrero «panamá» es en realidad ecuatoriano · el Darién, de gran biodiversidad", "tema": "🌎 Símbolo: las dos estrellas y el Canal", "star": 0, "nl": ""}, "URY": {"fl": "🇺🇾", "n": "Uruguay", "cap": "Montevideo", "pob": "~3 mln", "mon": "peso uruguayo", "gen": "uruguayo/a", "idi": "español", "cool": "José «Pepe» Mujica, expresidente humilde · el mate y las playas de Punta del Este · ganó la primera Copa del Mundo (1930)", "tema": "🌎 Símbolo: el sol de mayo, como Argentina", "star": 0, "nl": ""}, "PRI": {"fl": "🇵🇷", "n": "Puerto Rico", "cap": "San Juan", "pob": "~3 mln", "mon": "dólar estadounidense", "gen": "puertorriqueño/a", "idi": "español e inglés", "cool": "Bad Bunny y el reguetón · el Viejo San Juan, colonial y colorido · El Yunque, bosque tropical lluvioso", "tema": "🌎 Símbolo: la rana coquí, símbolo de la isla", "star": 0, "nl": ""}, "GNQ": {"fl": "🇬🇶", "n": "Guinea Ecuatorial", "cap": "Malabo", "pob": "~1,7 mln", "mon": "franco CFA", "gen": "ecuatoguineano/a", "idi": "español, francés y portugués", "cool": "el único país hispanohablante de África · antigua colonia española (hasta 1968) · la isla de Bioko y la selva ecuatorial", "tema": "🌎 Símbolo: la única nación hispana de África", "star": 0, "nl": ""}, "USA": {"fl": "🇺🇸", "n": "Estados Unidos", "cap": "Washington D.C.", "pob": "~60 mln hispanos", "mon": "dólar estadounidense", "gen": "estadounidense", "idi": "inglés; el español es la 2ª lengua", "cool": "~60 mln de hispanos: la 2ª lengua más hablada · Miami, Los Ángeles y Nueva York, muy hispanas · Sonia Sotomayor, jueza del Tribunal Supremo", "tema": "🌎 Símbolo: la mezcla de banderas hispanas en las calles", "star": 0, "nl": ""}};
  const wrap=document.getElementById('mapwrap');const svg=wrap.querySelector('svg');const box=document.getElementById('mapinfo');
  if(!svg)return;
  svg.querySelectorAll('path.spa, path.usa').forEach(p=>{p.style.cursor='pointer';
    p.addEventListener('mouseenter',()=>{p.style.opacity='.75'});
    p.addEventListener('mouseleave',()=>{p.style.opacity=''});
    p.addEventListener('click',()=>{const c=p.getAttribute('data-c');const d=INFO[c];if(!d)return;
-     box.innerHTML='<h3>'+d.fl+' '+d.n+' <span style="font-size:13px;color:var(--mut);font-weight:400">('+c+')</span>'+(d.star?' ★':'')+'</h3><div class="mrow"><b>Capital:</b> '+d.cap+'</div><div class="mrow">'+d.f+'</div>'+(d.nl?'<div class="gloss">'+d.nl+'</div>':'');
+     box.innerHTML='<h3>'+d.fl+' '+d.n+' <span style="font-size:13px;color:var(--mut);font-weight:400">('+c+')</span>'+(d.star?' ★':'')+'</h3>'+'<div class="mrow"><b>🏛️ Capital:</b> '+d.cap+'</div>'+'<div class="mrow"><b>👥 Población:</b> '+d.pob+'</div>'+'<div class="mrow"><b>💰 Moneda:</b> '+d.mon+'</div>'+'<div class="mrow"><b>🗣️ Gentilicio:</b> '+d.gen+'</div>'+'<div class="mrow"><b>🌐 Idioma:</b> '+d.idi+'</div>'+(d.tema?'<div style="margin-top:8px;padding:8px 11px;background:rgba(255,255,255,.7);border-left:4px solid var(--gd);border-radius:7px;font-weight:600;color:var(--gd)">'+d.tema+'</div>':'')+(d.cool?'<div style="margin-top:8px;font-size:13px;line-height:1.5"><b>💡 ¿Sabías que…?</b> '+d.cool+'</div>':'')+(d.nl?'<div class="gloss" style="margin-top:6px">'+d.nl+'</div>':'');
      box.scrollIntoView({behavior:'smooth',block:'nearest'});});
  });
 })();
 
+// ================= INLINE ZELFCORRIGERENDE OEFENINGEN (U5-model) =================
+function exSample(pool,n){const a=pool.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a.slice(0,Math.min(n,a.length));}
+function exEsc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function exFmt(s){return exEsc(s).replace(/___+/g,'<span class="gap">&nbsp;&nbsp;</span>');}
+// MEERKEUZE / GAP-FILL: pool item = {q, opts, ans, why}
+function exChoice(id,cfg){
+ const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(6,cfg.pool.length);
+ function render(){const series=exSample(cfg.pool,per);let ok=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="qlist"></div><div class="exscore">Juist: <b class="ok">0</b>/'+series.length+'</div>';
+   host.querySelector('.otra').onclick=render;const list=host.querySelector('.qlist'),scoreEl=host.querySelector('.ok');
+   series.forEach(it=>{const q=document.createElement('div');q.className='exq';
+     q.innerHTML='<div class="qz">'+exFmt(it.q)+'</div><div class="exopts"></div><div class="exwhy"></div>';
+     const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy');let locked=false;
+     exSample(it.opts,it.opts.length).forEach(o=>{const b=document.createElement('button');b.className='exopt';b.type='button';b.textContent=o;
+       b.onclick=()=>{if(locked)return;locked=true;const good=o===it.ans;
+         opts.querySelectorAll('.exopt').forEach(x=>{x.disabled=true;if(x.textContent===it.ans)x.classList.add('ok');});
+         if(good){ok++;scoreEl.textContent=ok;}else{b.classList.add('no');}
+         why.className='exwhy show '+(good?'g':'b');why.innerHTML=(good?'✅ ¡correcto! ':'❌ → '+exEsc(it.ans)+'. ')+(it.why?exEsc(it.why):'');};
+       opts.appendChild(b);});
+     list.appendChild(q);});}
+ render();}
+// MATCHING: pool item = {a,b}
+function exMatch(id,cfg){
+ const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(6,cfg.pool.length);
+ function render(){const series=exSample(cfg.pool,per);let doneN=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="mcol"><div class="mL"></div><div class="mR"></div></div><div class="exscore">Emparejados: <b class="ok">0</b>/'+series.length+'</div>';
+   host.querySelector('.otra').onclick=render;const L=host.querySelector('.mL'),R=host.querySelector('.mR'),scoreEl=host.querySelector('.ok');
+   const right=exSample(series.map((p,i)=>({p,i})),series.length);let selL=null,busy=false;
+   series.forEach((p,i)=>{const c=document.createElement('div');c.className='mcell';c.textContent=p.a;c.dataset.i=i;
+     c.onclick=()=>{if(busy||c.classList.contains('done'))return;if(selL)selL.classList.remove('sel');selL=c;c.classList.add('sel');};L.appendChild(c);});
+   right.forEach(o=>{const c=document.createElement('div');c.className='mcell';c.textContent=o.p.b;c.dataset.i=o.i;
+     c.onclick=()=>{if(busy||!selL||c.classList.contains('done'))return;busy=true;const good=selL.dataset.i===c.dataset.i;
+       if(good){selL.classList.remove('sel');selL.classList.add('done');c.classList.add('done');doneN++;scoreEl.textContent=doneN;selL=null;busy=false;}
+       else{c.classList.add('bad');const s=selL;setTimeout(()=>{c.classList.remove('bad');s.classList.remove('sel');selL=null;busy=false;},600);}};R.appendChild(c);});}
+ render();}
+// ORDENAR: cfg.rounds=[{sub, items:[{label,key}]}]
+function exOrder(id,cfg){
+ const host=document.getElementById(id);if(!host)return;let ri=Math.floor(Math.random()*cfg.rounds.length);
+ function render(){const round=cfg.rounds[ri];const sorted=round.items.slice().sort((a,b)=>a.key-b.key);let pos=0,mist=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra ronda</button></div><p class="desc">'+cfg.desc+' · <b>'+exEsc(round.sub||'')+'</b></p><div class="oslots"></div><div class="obank"></div><div class="exwhy"></div>';
+   host.querySelector('.otra').onclick=()=>{ri=(ri+1)%cfg.rounds.length;render();};
+   const slots=host.querySelector('.oslots'),bank=host.querySelector('.obank'),why=host.querySelector('.exwhy');
+   sorted.forEach((_,i)=>{const s=document.createElement('div');s.className='oslot';s.textContent=(i+1);s.dataset.pos=i;slots.appendChild(s);});
+   exSample(round.items,round.items.length).forEach(it=>{const b=document.createElement('button');b.className='ochip';b.type='button';b.textContent=it.label;
+     b.onclick=()=>{if(b.classList.contains('used'))return;const exp=sorted[pos];
+       if(it.key===exp.key){b.classList.add('used');const sl=slots.querySelector('.oslot[data-pos="'+pos+'"]');sl.classList.add('filled');sl.textContent=(pos+1)+'. '+it.label;pos++;
+         if(pos>=sorted.length){why.className='exwhy show '+(mist===0?'g':'b');why.innerHTML=mist===0?'✅ ¡Perfecto! sin errores.':'✔ Completado con '+mist+' error(es). Prueba «otra ronda».';}}
+       else{mist++;b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake');why.className='exwhy show b';why.innerHTML='❌ Primero: <b>'+exEsc(exp.label)+'</b>';}};
+     bank.appendChild(b);});}
+ render();}
+// EL INTRUSO: pool item = {words:[...], odd, why}
+function exOdd(id,cfg){
+ const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(5,cfg.pool.length);
+ function render(){const series=exSample(cfg.pool,per);let ok=0;
+   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="qlist"></div><div class="exscore">Juist: <b class="ok">0</b>/'+series.length+'</div>';
+   host.querySelector('.otra').onclick=render;const list=host.querySelector('.qlist'),scoreEl=host.querySelector('.ok');
+   series.forEach(it=>{const q=document.createElement('div');q.className='exq';q.innerHTML='<div class="exopts"></div><div class="exwhy"></div>';
+     const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy');let locked=false;
+     exSample(it.words.map((w,i)=>({w,i})),it.words.length).forEach(o=>{const b=document.createElement('button');b.className='exopt';b.type='button';b.textContent=o.w;
+       b.onclick=()=>{if(locked)return;locked=true;const good=o.i===it.odd;opts.querySelectorAll('.exopt').forEach(x=>x.disabled=true);
+         if(good){ok++;scoreEl.textContent=ok;b.classList.add('ok');}else{b.classList.add('no');opts.querySelectorAll('.exopt').forEach(x=>{if(x.textContent===it.words[it.odd])x.classList.add('ok');});}
+         why.className='exwhy show '+(good?'g':'b');why.innerHTML=(good?'✅ ¡bien! ':'❌ → '+exEsc(it.words[it.odd])+'. ')+(it.why?exEsc(it.why):'');};
+       opts.appendChild(b);});
+     list.appendChild(q);});}
+ render();}
+
+function buildInlineExercises(){
+ // ---------- VOCABULARIO ----------
+ exMatch('vx_match',{title:'Empareja: palabra ↔ símbolo',desc:'Koppel het Spaanse woord aan het juiste beeld.',per:6,pool:[
+   {a:'España',b:'🇪🇸'},{a:'México',b:'🇲🇽'},{a:'Colombia',b:'🇨🇴'},{a:'Perú',b:'🇵🇪'},
+   {a:'la mochila',b:'🎒'},{a:'el libro',b:'📚'},{a:'el mapa',b:'🗺️'},{a:'¡Hola!',b:'👋'},
+   {a:'el mundo',b:'🌍'},{a:'la profesora',b:'👩‍🏫'},{a:'el número',b:'🔢'},{a:'la letra',b:'🔤'},
+   {a:'la clase',b:'🏫'},{a:'el lápiz',b:'✏️'}]});
+ exChoice('vx_gap',{title:'Completa la frase',desc:'Kies het woord dat in de zin past (saludos & lengua de clase).',per:6,pool:[
+   {q:'— ¡Hola! ¿Qué ___? — Bien, gracias.',opts:['tal','día','hola'],ans:'tal',why:'¿Qué tal? = hoe gaat het?'},
+   {q:'Por la mañana: «Buenos ___».',opts:['días','noches','tardes'],ans:'días',why:'ochtend → buenos días'},
+   {q:'Al llegar la noche: «Buenas ___».',opts:['noches','días','tardes'],ans:'noches',why:'avond/nacht → buenas noches'},
+   {q:'Para despedirte: «Hasta ___».',opts:['luego','favor','nada'],ans:'luego',why:'hasta luego = tot straks'},
+   {q:'«Muchas gracias.» — «De ___.»',opts:['nada','favor','acuerdo'],ans:'nada',why:'de nada = graag gedaan'},
+   {q:'No entiendo. ¿Puedes ___?',opts:['repetir','comer','cantar'],ans:'repetir',why:'kun je herhalen?'},
+   {q:'¿Cómo se ___ «mochila» en español?',opts:['dice','come','abre'],ans:'dice',why:'hoe zeg je …?'},
+   {q:'¿Puedes ___ tu nombre, letra por letra?',opts:['deletrear','comer','abrir'],ans:'deletrear',why:'deletrear = spellen'},
+   {q:'Más ___, por favor (no tan rápido).',opts:['despacio','alto','tarde'],ans:'despacio',why:'más despacio = trager'},
+   {q:'Mi ___ es español, del Perú.',opts:['idioma','letra','número'],ans:'idioma',why:'el idioma = de taal'},
+   {q:'España, México y Perú están en el ___ hispano.',opts:['mundo','libro','mapa'],ans:'mundo',why:'el mundo hispano'},
+   {q:'La palabra «hola» tiene cuatro ___.',opts:['letras','números','mapas'],ans:'letras',why:'la letra = de letter'}]});
+ exMatch('vx_pais',{title:'País ↔ gentilicio',desc:'Koppel het land aan de nationaliteit.',per:6,pool:[
+   {a:'España',b:'español'},{a:'México',b:'mexicano'},{a:'Colombia',b:'colombiano'},{a:'Perú',b:'peruano'},
+   {a:'Argentina',b:'argentino'},{a:'Chile',b:'chileno'},{a:'Cuba',b:'cubano'},{a:'Bélgica',b:'belga'},
+   {a:'Venezuela',b:'venezolano'},{a:'Ecuador',b:'ecuatoriano'},{a:'Bolivia',b:'boliviano'},{a:'Guatemala',b:'guatemalteco'}]});
+ exOdd('vx_odd',{title:'El intruso',desc:'Klik het woord dat NIET bij de andere hoort.',per:5,pool:[
+   {words:['¡Hola!','Buenos días','¿Qué tal?','Hasta luego'],odd:3,why:'«Hasta luego» is een afscheid, de rest zijn begroetingen'},
+   {words:['España','México','Perú','Bélgica'],odd:3,why:'Bélgica is niet Spaanstalig'},
+   {words:['uno','dos','tres','hola'],odd:3,why:'«hola» is geen getal'},
+   {words:['a','e','i','m'],odd:3,why:'«m» is geen klinker (vocal)'},
+   {words:['español','mexicano','peruano','Colombia'],odd:3,why:'Colombia is een land, niet een gentilicio'},
+   {words:['la letra','el número','el idioma','gracias'],odd:3,why:'«gracias» is geen ding maar een uiting'},
+   {words:['aguda','llana','esdrújula','tilde'],odd:3,why:'«tilde» is het accent zelf, niet een klemtoontype'},
+   {words:['b','v','h','r'],odd:2,why:'«h» is stom (muda); b en v klinken gelijk, r is een aparte klank'}]});
+ // ---------- GRAMÁTICA ----------
+ exMatch('gx_abc',{title:'El abecedario — letra ↔ nombre',desc:'Koppel de letter aan haar Spaanse naam.',per:6,pool:[
+   {a:'h',b:'hache'},{a:'j',b:'jota'},{a:'ñ',b:'eñe'},{a:'ll',b:'elle'},{a:'y',b:'ye'},{a:'v',b:'uve'},
+   {a:'w',b:'uve doble'},{a:'z',b:'zeta'},{a:'r',b:'erre'},{a:'q',b:'cu'},{a:'g',b:'ge'},{a:'c',b:'ce'},
+   {a:'b',b:'be'},{a:'x',b:'equis'}]});
+ exChoice('gx_sonido',{title:'Los sonidos — ¿cómo suena?',desc:'Kies de juiste uitspraakregel.',per:6,pool:[
+   {q:'La «h» de «hola» suena…',opts:['no suena (muda)','como la j','como la s'],ans:'no suena (muda)',why:'de h is muda (zwijgt)'},
+   {q:'«hola» y «ola» suenan…',opts:['igual','diferente','con j'],ans:'igual',why:'de h zwijgt → identiek'},
+   {q:'«b» y «v» en español suenan…',opts:['igual','diferente','como f'],ans:'igual',why:'b en v klinken gelijk'},
+   {q:'La «j» de «jamón» suena…',opts:['fuerte, de garganta','como y','muda'],ans:'fuerte, de garganta',why:'jota = harde keelklank'},
+   {q:'«gente» — la «g» suena…',opts:['como j','como en «gato»','muda'],ans:'como j',why:'ge/gi klinken als jota'},
+   {q:'«gato» — la «g» suena…',opts:['dura (g)','como j','muda'],ans:'dura (g)',why:'ga/go/gu = harde g'},
+   {q:'La «ñ» de «niño» suena como…',opts:['nj (Spanje)','n','m'],ans:'nj (Spanje)',why:'ñ ≈ «nj»'},
+   {q:'La «z» de «zapato» (España) suena…',opts:['como th (inglés)','como k','como m'],ans:'como th (inglés)',why:'z ≈ zachte th in España'},
+   {q:'«ll» de «lluvia» suena parecido a…',opts:['y','l sola','r'],ans:'y',why:'ll ≈ y'},
+   {q:'«casa» — la «c» suena…',opts:['como k','como th','como j'],ans:'como k',why:'ca/co/cu = k'},
+   {q:'«cine» — la «c» suena…',opts:['como th/s','como k','como j'],ans:'como th/s',why:'ce/ci = zachte c'},
+   {q:'La «r» de «rojo» al empezar suena…',opts:['fuerte (rr)','suave','muda'],ans:'fuerte (rr)',why:'r aan het begin = rollende rr'}]});
+ exChoice('gx_acento',{title:'El acento — ¿aguda, llana o esdrújula?',desc:'Waar ligt de klemtoon? Kies de familie.',per:6,pool:[
+   {q:'«café» es…',opts:['aguda','llana','esdrújula'],ans:'aguda',why:'klemtoon op de laatste lettergreep'},
+   {q:'«casa» es…',opts:['llana','aguda','esdrújula'],ans:'llana',why:'klemtoon op de voorlaatste'},
+   {q:'«México» es…',opts:['esdrújula','llana','aguda'],ans:'esdrújula',why:'klemtoon op de derde van achteren'},
+   {q:'«Perú» es…',opts:['aguda','llana','esdrújula'],ans:'aguda',why:'klemtoon op de laatste'},
+   {q:'«árbol» es…',opts:['llana','aguda','esdrújula'],ans:'llana',why:'klemtoon op de voorlaatste'},
+   {q:'«teléfono» es…',opts:['esdrújula','llana','aguda'],ans:'esdrújula',why:'derde van achteren'},
+   {q:'«lunes» es…',opts:['llana','aguda','esdrújula'],ans:'llana',why:'voorlaatste'},
+   {q:'«adiós» es…',opts:['aguda','llana','esdrújula'],ans:'aguda',why:'laatste lettergreep'},
+   {q:'«música» es…',opts:['esdrújula','llana','aguda'],ans:'esdrújula',why:'derde van achteren'},
+   {q:'«jamón» es…',opts:['aguda','llana','esdrújula'],ans:'aguda',why:'laatste'},
+   {q:'«sílaba» es…',opts:['esdrújula','llana','aguda'],ans:'esdrújula',why:'derde van achteren'},
+   {q:'«mesa» es…',opts:['llana','aguda','esdrújula'],ans:'llana',why:'voorlaatste'}]});
+ exChoice('gx_tilde',{title:'¿Lleva tilde?',desc:'Draagt dit woord een accent (´)? Kies en lees waarom.',per:6,pool:[
+   {q:'café',opts:['sí, lleva ´','no lleva'],ans:'sí, lleva ´',why:'aguda die eindigt op klinker → tilde'},
+   {q:'casa',opts:['no lleva','sí, lleva ´'],ans:'no lleva',why:'llana op klinker → geen tilde'},
+   {q:'México',opts:['sí, lleva ´','no lleva'],ans:'sí, lleva ´',why:'esdrújula → altijd tilde'},
+   {q:'árbol',opts:['sí, lleva ´','no lleva'],ans:'sí, lleva ´',why:'llana die eindigt op -l → tilde'},
+   {q:'lunes',opts:['no lleva','sí, lleva ´'],ans:'no lleva',why:'llana op -s → geen tilde'},
+   {q:'adiós',opts:['sí, lleva ´','no lleva'],ans:'sí, lleva ´',why:'aguda op -s → tilde'},
+   {q:'reloj',opts:['no lleva','sí, lleva ´'],ans:'no lleva',why:'aguda op -j → geen tilde'},
+   {q:'música',opts:['sí, lleva ´','no lleva'],ans:'sí, lleva ´',why:'esdrújula → altijd tilde'},
+   {q:'gente',opts:['no lleva','sí, lleva ´'],ans:'no lleva',why:'llana op klinker → geen tilde'},
+   {q:'jamón',opts:['sí, lleva ´','no lleva'],ans:'sí, lleva ´',why:'aguda op -n → tilde'},
+   {q:'sílaba',opts:['sí, lleva ´','no lleva'],ans:'sí, lleva ´',why:'esdrújula → altijd tilde'},
+   {q:'Madrid',opts:['no lleva','sí, lleva ´'],ans:'no lleva',why:'aguda op -d → geen tilde'}]});
+ exChoice('gx_num',{title:'Los números — ¿cómo se escribe?',desc:'Kies de juiste schrijfwijze van het getal.',per:6,pool:[
+   {q:'11 =',opts:['once','onze','onse'],ans:'once',why:'11 = once'},
+   {q:'15 =',opts:['quince','quinse','cinque'],ans:'quince',why:'15 = quince'},
+   {q:'16 =',opts:['dieciséis','diez y seis','dieciseis'],ans:'dieciséis',why:'16–29 = één woord, met tilde'},
+   {q:'20 =',opts:['veinte','veynte','viente'],ans:'veinte',why:'20 = veinte'},
+   {q:'21 =',opts:['veintiuno','veinte y uno','venteuno'],ans:'veintiuno',why:'21 = veintiuno (één woord)'},
+   {q:'30 =',opts:['treinta','treynta','trenta'],ans:'treinta',why:'30 = treinta'},
+   {q:'40 =',opts:['cuarenta','cuarenta','carenta'],ans:'cuarenta',why:'40 = cuarenta'},
+   {q:'50 =',opts:['cincuenta','cincuenta y','sincuenta'],ans:'cincuenta',why:'50 = cincuenta'},
+   {q:'100 =',opts:['cien','ciento','sien'],ans:'cien',why:'100 alleen = cien'},
+   {q:'7 =',opts:['siete','sieta','siet'],ans:'siete',why:'7 = siete'},
+   {q:'12 =',opts:['doce','dose','doze'],ans:'doce',why:'12 = doce'},
+   {q:'33 =',opts:['treinta y tres','treintitrés','treinta tres'],ans:'treinta y tres',why:'31+ = met «y»'}]});
+ exOrder('gx_numorden',{title:'Ordena los números',desc:'Tik de getallen in de juiste volgorde (klein → groot).',rounds:[
+   {sub:'de 1 a 5',items:[{label:'uno',key:1},{label:'dos',key:2},{label:'tres',key:3},{label:'cuatro',key:4},{label:'cinco',key:5}]},
+   {sub:'de menor a mayor',items:[{label:'cero',key:0},{label:'siete',key:7},{label:'doce',key:12},{label:'veinte',key:20},{label:'cincuenta',key:50}]},
+   {sub:'decenas',items:[{label:'diez',key:10},{label:'veinte',key:20},{label:'treinta',key:30},{label:'cuarenta',key:40},{label:'cien',key:100}]},
+   {sub:'los teens',items:[{label:'once',key:11},{label:'trece',key:13},{label:'quince',key:15},{label:'dieciséis',key:16},{label:'diecinueve',key:19}]}]});
+ exChoice('gx_genero',{title:'¿el o la? — el género',desc:'Kies het juiste lidwoord. Let op de valstrikken.',per:6,pool:[
+   {q:'___ mapa',opts:['el','la'],ans:'el',why:'el mapa (uitzondering: -a maar masculino)'},
+   {q:'___ casa',opts:['la','el'],ans:'la',why:'la casa (v)'},
+   {q:'___ problema',opts:['el','la'],ans:'el',why:'el problema (-ma → masculino)'},
+   {q:'___ ciudad',opts:['la','el'],ans:'la',why:'la ciudad (-dad → femenino)'},
+   {q:'___ día',opts:['el','la'],ans:'el',why:'el día (uitzondering)'},
+   {q:'___ mano',opts:['la','el'],ans:'la',why:'la mano (uitzondering: -o maar femenino)'},
+   {q:'___ idioma',opts:['el','la'],ans:'el',why:'el idioma (-ma → masculino)'},
+   {q:'___ letra',opts:['la','el'],ans:'la',why:'la letra (v)'},
+   {q:'___ acento',opts:['el','la'],ans:'el',why:'el acento (m)'},
+   {q:'___ sílaba',opts:['la','el'],ans:'la',why:'la sílaba (v)'},
+   {q:'___ país',opts:['el','la'],ans:'el',why:'el país (m)'},
+   {q:'___ lengua',opts:['la','el'],ans:'la',why:'la lengua (v)'}]});
+ exChoice('gx_mix',{title:'Repaso mixto: rellena',desc:'Alles door elkaar: sonidos · acento · números · género · saludos.',per:8,pool:[
+   {q:'«teléfono» es…',opts:['esdrújula','llana','aguda'],ans:'esdrújula',why:'derde van achteren'},
+   {q:'___ mapa',opts:['el','la'],ans:'el',why:'el mapa'},
+   {q:'16 =',opts:['dieciséis','diez y seis','dieciseis'],ans:'dieciséis',why:'één woord met tilde'},
+   {q:'«hola» y «ola» suenan…',opts:['igual','diferente','con j'],ans:'igual',why:'de h is muda'},
+   {q:'Por la mañana: «Buenos ___».',opts:['días','noches','tardes'],ans:'días',why:'buenos días'},
+   {q:'«café» lleva…',opts:['tilde','no tilde'],ans:'tilde',why:'aguda op klinker'},
+   {q:'España → gentilicio:',opts:['español','España','espano'],ans:'español',why:'español'},
+   {q:'___ ciudad',opts:['la','el'],ans:'la',why:'la ciudad'},
+   {q:'«b» y «v» suenan…',opts:['igual','diferente'],ans:'igual',why:'gelijk in het Spaans'},
+   {q:'100 =',opts:['cien','ciento','sien'],ans:'cien',why:'cien'},
+   {q:'«casa» lleva…',opts:['no tilde','tilde'],ans:'no tilde',why:'llana op klinker'},
+   {q:'«Muchas gracias.» — «De ___.»',opts:['nada','favor','acuerdo'],ans:'nada',why:'de nada'}]});
+ // ---------- LECTURA ----------
+ exOrder('lx_order',{title:'Ordena',desc:'Tik de items in de juiste volgorde.',rounds:[
+   {sub:'el abecedario (primeras letras)',items:[{label:'a',key:1},{label:'be',key:2},{label:'ce',key:3},{label:'de',key:4},{label:'e',key:5}]},
+   {sub:'los saludos del día',items:[{label:'Buenos días',key:1},{label:'Buenas tardes',key:2},{label:'Buenas noches',key:3}]},
+   {sub:'de menor a mayor edad',items:[{label:'trece',key:13},{label:'catorce',key:14},{label:'quince',key:15},{label:'dieciséis',key:16}]},
+   {sub:'una conversación',items:[{label:'¡Hola!',key:1},{label:'¿Qué tal?',key:2},{label:'Bien, gracias.',key:3},{label:'Hasta luego.',key:4}]}]});
+ exChoice('lx_scan',{title:'Comprensión: escanea y escoge',desc:'Zoek de info in de vier profielen en kies het juiste antwoord.',per:6,pool:[
+   {q:'¿De dónde es Lucía?',opts:['de Sevilla (España)','de México','del Perú'],ans:'de Sevilla (España)',why:'«Soy de Sevilla»'},
+   {q:'¿Cuántos años tiene Diego?',opts:['15','14','16'],ans:'15',why:'«tengo quince años»'},
+   {q:'¿Quién es de Cartagena?',opts:['Valen','Nina','Lucía'],ans:'Valen',why:'«Soy de Cartagena»'},
+   {q:'¿De qué país es Nina?',opts:['Perú','Colombia','España'],ans:'Perú',why:'«Soy de Cusco, en el Perú»'},
+   {q:'¿Cómo saluda Diego?',opts:['¿Qué onda?','¿Quiubo?','¿Qué tal?'],ans:'¿Qué onda?',why:'saludo mexicano'},
+   {q:'¿Quién tiene catorce años?',opts:['Lucía','Diego','Valen'],ans:'Lucía',why:'«tengo catorce años»'},
+   {q:'¿Qué gentilicio es Nina?',opts:['peruana','colombiana','española'],ans:'peruana',why:'de Perú → peruana'},
+   {q:'¿Con qué saluda Valen (Colombia)?',opts:['¿Quiubo?','¿Qué onda?','Hola, ¿qué tal?'],ans:'¿Quiubo?',why:'saludo colombiano'}]});
+}
+
+// ---------- LECTURA: cuatro perfiles + TTS + V/F met bewijs ----------
+function renderLectura(){const el=document.getElementById('lecturawrap');if(!el)return;
+ const P=[
+  {n:'Lucía 🇪🇸',raw:'Hola, me llamo Lucía. Soy de Sevilla, en España. Tengo catorce años. Para saludar digo: «Hola, ¿qué tal?».',
+   html:'Hola, me llamo <b>Lucía</b>. Soy de <span class="ev">Sevilla</span>, en España. Tengo <span class="ev">catorce</span> años. Para saludar digo: «<span class="ev">Hola, ¿qué tal?</span>».'},
+  {n:'Diego 🇲🇽',raw:'¡Qué onda! Me llamo Diego y soy de la Ciudad de México. Tengo quince años. En México saludamos así: «¿Qué onda?».',
+   html:'¡Qué onda! Me llamo <b>Diego</b> y soy de la <span class="ev">Ciudad de México</span>. Tengo <span class="ev">quince</span> años. En México saludamos así: «<span class="ev">¿Qué onda?</span>».'},
+  {n:'Valen 🇨🇴',raw:'¡Quiubo! Me llamo Valen. Soy de Cartagena, en Colombia. Tengo quince años. Soy colombiana.',
+   html:'¡Quiubo! Me llamo <b>Valen</b>. Soy de <span class="ev">Cartagena</span>, en Colombia. Tengo quince años. Soy <span class="ev">colombiana</span>.'},
+  {n:'Nina 🇵🇪',raw:'Hola, soy Nina. Soy de Cusco, en el Perú. Tengo dieciséis años. Soy peruana.',
+   html:'Hola, soy <b>Nina</b>. Soy de <span class="ev">Cusco</span>, en el <span class="ev">Perú</span>. Tengo <span class="ev">dieciséis</span> años. Soy <span class="ev">peruana</span>.'}];
+ el.innerHTML='<div class="perfiles">'+P.map((m,i)=>'<div class="perfil"><h4>🧳 '+m.n+' '+(TTS?'<button class="spk-btn" style="margin-left:auto;padding:4px 10px" onclick="speak(document.getElementById(\'lp'+i+'\').dataset.raw)">🔊 escuchar</button>':'')+'</h4><div class="txt" id="lp'+i+'" data-raw="'+m.raw.replace(/"/g,'&quot;')+'">'+m.html+'</div></div>').join('')+'</div>';
+ const items=[['Lucía es de Sevilla.',true,'«Soy de Sevilla»'],['Diego tiene catorce años.',false,'tiene quince años'],['Nina es del Perú.',true,'«Soy de Cusco, en el Perú»'],['Valen es española.',false,'es colombiana (Cartagena)'],['Diego saluda con «¿Qué onda?».',true,'saludo mexicano'],['Lucía tiene quince años.',false,'tiene catorce años'],['Nina es peruana.',true,'de Perú → peruana'],['Valen es de Cartagena.',true,'«Soy de Cartagena»']];
+ const box=document.createElement('div');box.className='card vftask';box.innerHTML='<h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 8px">¿Verdadero o falso? — comprueba tu comprensión (con evidencia)</h3>';
+ items.forEach(([q,ans,pr])=>{const r=document.createElement('div');r.className='vfrow';
+   r.innerHTML='<span>'+q+'</span><span class="btns"><button class="vfb">V</button><button class="vfb">F</button><span class="res"></span></span>';
+   const [bv,bf]=r.querySelectorAll('.vfb');const res=r.querySelector('.res');
+   function pick(val){bv.classList.toggle('on',val);bf.classList.toggle('on',!val);const ok=val===ans;res.innerHTML=(ok?'✅ ':'❌ ')+'<span class="gloss">'+pr+'</span>';res.style.color=ok?'var(--gd)':'var(--red)';}
+   bv.onclick=()=>pick(true);bf.onclick=()=>pick(false);box.appendChild(r);});
+ const resp=document.createElement('div');resp.className='card';resp.innerHTML='<h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px">¿Y tú? Preséntate</h3><p class="gloss" style="margin:0 0 8px">Schrijf jouw voorstelzin (naam · woonplaats/land · leeftijd · groet). Neem hem daarna op onder <b>Hablar 🎙️</b> («preséntate»).</p><textarea class="txin" style="width:100%;height:80px;font-family:var(--body)" placeholder="Hola, me llamo… Soy de… Tengo… años."></textarea>';
+ el.appendChild(box);el.appendChild(resp);}
+
+// ---------- INLINE RECORDER (MediaRecorder) ----------
+function makeRecorder(elId, cfg){const el=document.getElementById(elId);if(!el)return;
+ el.classList.add('rec');
+ let idx=0, media=null, chunks=[], stream=null, curURL=null;
+ const items=cfg.items;
+ el.innerHTML='<h3>'+cfg.title+'</h3><p class="desc">'+cfg.desc+'</p>'+
+   '<div class="scorebar"><span>Ítem <b class="pos">1</b>/'+items.length+'</span></div>'+
+   '<div class="cue" id="'+elId+'_cue"></div><div class="target" id="'+elId+'_tg"></div>'+
+   '<div class="rbtns">'+(TTS?'<button class="rbtn sec" id="'+elId+'_play">🔊 Escuchar</button>':'')+
+   '<button class="rbtn" id="'+elId+'_rec">⏺ Grabar</button>'+
+   '<button class="rbtn sec" id="'+elId+'_mine" disabled>▶ Mi grabación</button>'+
+   '<button class="rbtn sec" id="'+elId+'_next">Siguiente ▸</button></div>'+
+   '<div id="'+elId+'_au"></div><div class="moods" id="'+elId+'_mood"></div><div id="'+elId+'_fb" class="fb"></div>';
+ const tg=el.querySelector('#'+elId+'_tg'),cue=el.querySelector('#'+elId+'_cue'),pos=el.querySelector('.pos');
+ const bRec=el.querySelector('#'+elId+'_rec'),bMine=el.querySelector('#'+elId+'_mine'),bNext=el.querySelector('#'+elId+'_next'),bPlay=el.querySelector('#'+elId+'_play');
+ const au=el.querySelector('#'+elId+'_au'),moodbox=el.querySelector('#'+elId+'_mood');
+ function load(){const it=items[idx];pos.textContent=idx+1;cue.textContent=it.cue||'';tg.innerHTML=it.text;au.innerHTML='';bMine.disabled=true;moodbox.innerHTML='';el.querySelector('#'+elId+'_fb').className='fb';
+   ['☹','😐','☺'].forEach((m,mi)=>{const b=document.createElement('div');b.className='mood';b.textContent=m;b.onclick=()=>{moodbox.querySelectorAll('.mood').forEach(x=>x.classList.remove('on'));b.classList.add('on');feedback(el.querySelector('#'+elId+'_fb'),true,(it.tip||'¡Bien! Prueba otra vez para mejorar.'));};moodbox.appendChild(b);});}
+ if(bPlay)bPlay.onclick=()=>speak((items[idx].text||'').replace(/<[^>]+>/g,''));
+ bNext.onclick=()=>{idx=(idx+1)%items.length;load();};
+ async function start(){
+   if(!navigator.mediaDevices||!window.MediaRecorder){warn();return;}
+   try{stream=await navigator.mediaDevices.getUserMedia({audio:true});}catch(e){warn();return;}
+   chunks=[];media=new MediaRecorder(stream);media.ondataavailable=e=>chunks.push(e.data);
+   media.onstop=()=>{const blob=new Blob(chunks,{type:'audio/webm'});if(curURL)URL.revokeObjectURL(curURL);curURL=URL.createObjectURL(blob);
+     au.innerHTML='<audio controls src="'+curURL+'"></audio>';bMine.disabled=false;stream.getTracks().forEach(t=>t.stop());};
+   media.start();bRec.textContent='⏹ Parar';bRec.classList.add('rec-on');}
+ function stop(){if(media&&media.state!=='inactive')media.stop();bRec.textContent='⏺ Grabar';bRec.classList.remove('rec-on');}
+ bRec.onclick=()=>{if(media&&media.state==='recording')stop();else start();};
+ bMine.onclick=()=>{const a=au.querySelector('audio');if(a)a.play();};
+ function warn(){el.querySelector('#'+elId+'_fb').className='fb bad';el.querySelector('#'+elId+'_fb').innerHTML='🎙️ Micrófono no disponible — usa Chrome/Edge y permite el micrófono. Puedes escuchar el modelo (🔊) y practicar en voz alta.';}
+ load();}
+function buildRecorders(){
+ makeRecorder('rec_saluda',{title:'Escucha y repite: saludos',desc:'Luister → zeg na → neem op → luister terug → opnieuw.',items:[
+   {text:'Hola, ¿qué tal?',cue:'saludo'},{text:'Buenos días.',cue:'saludo'},{text:'Buenas noches.',cue:'saludo'},{text:'Encantado. / Encantada.',cue:'cortesía'},{text:'Hasta luego.',cue:'despedida'}]});
+ makeRecorder('rec_deletrear',{title:'Deletrea — spel je naam',desc:'Zeg de letters van je naam met de Spaanse letternamen (a, be, ce, che…). Neem het op.',items:[
+   {text:'Me llamo ___ . Se escribe: ___ , ___ , ___ …',cue:'deletrear tu nombre',tip:'Heb je elke letter met de Spaanse naam gezegd? Herneem.'}]});
+ makeRecorder('rec_presenta',{title:'Preséntate — mensaje de voz',desc:'Neem één bericht op: naam · woonplaats/land · leeftijd · een groet.',items:[
+   {text:'Hola, me llamo ___ . Soy de ___ . Tengo ___ años. ¡Hasta luego!',cue:'tu presentación',tip:'Naam + herkomst + leeftijd + groet? Neem opnieuw op.'}]});
+}
+
 // init
 renderFC();renderTable();
+buildInlineExercises();renderLectura();buildRecorders();
 // ① receptief
 gameEscucha();gameSonido();gameMarcaTilde();gameSombrero();gameVF();
 // ② gestuurd productief
@@ -593,7 +947,7 @@ window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');
 
 // ---------- bewerk-in-browser (statische teksten) ----------
 (function(){
- var SEL='.hero h1,.hero p,h2.sec,p.lead,.subh,.foot,section[data-p="extra"] .card p,#mapinfo';
+ var SEL='.hero h1,.hero p,h2.sec,p.lead,.subh,.foot,section .card p,section .card h3,section .card h4,section .card li,.perfil h4,#mapinfo';
  var editing=false;
  var eb=document.getElementById('editbar'),txt=document.getElementById('ebtxt'),bE=document.getElementById('ebEdit');
  function setEd(on){document.querySelectorAll(SEL).forEach(function(e){if(on){e.setAttribute('contenteditable','true');e.setAttribute('spellcheck','false');}else{e.removeAttribute('contenteditable');}});}

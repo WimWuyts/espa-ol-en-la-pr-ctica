@@ -1,0 +1,53 @@
+{
+  "id": "es-u6-describe-ropa",
+  "title": "Describe tu ropa",
+  "subtitle": "U6 · beschrijf je outfit, grábate",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "repeat",
+    "prompt": "Escucha ▶ · describe tu ropa · grábate ⏺",
+    "items": [
+      {
+        "cue": "Modelo · Diego 🇲🇽",
+        "text": "Hoy llevo una camiseta verde y unos vaqueros.",
+        "sub": "vandaag draag ik een groen T-shirt en een jeans",
+        "tag": "describir"
+      },
+      {
+        "cue": "¿de qué color?",
+        "text": "Mis zapatillas son blancas y negras.",
+        "sub": "mijn sneakers zijn wit en zwart",
+        "tag": "describir"
+      },
+      {
+        "cue": "¿el patrón?",
+        "text": "Me gusta la ropa de rayas, no de lunares.",
+        "sub": "ik hou van gestreepte kleding, niet met stippen",
+        "tag": "describir"
+      },
+      {
+        "cue": "¿por qué?",
+        "text": "Me queda bien porque es cómoda.",
+        "sub": "het staat me goed want het is comfortabel",
+        "tag": "describir"
+      },
+      {
+        "cue": "¿nueva?",
+        "text": "Acabo de comprar esta gorra en las rebajas.",
+        "sub": "ik heb deze pet net in de solden gekocht",
+        "tag": "describir"
+      },
+      {
+        "cue": "tu versión",
+        "text": "Hoy llevo ___ . Es ___ (color) y de ___ .",
+        "sub": "jouw versie — vul in en zeg ze",
+        "tag": "describir",
+        "tip": "Ahora describe la ropa de un amigo. <span class='nl'>beschrijf nu de kleren van een vriend(in).</span>"
+      }
+    ]
+  }
+}

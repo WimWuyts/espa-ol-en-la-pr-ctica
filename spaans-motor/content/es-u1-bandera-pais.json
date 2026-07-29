@@ -1,0 +1,64 @@
+{
+  "id": "es-u1-bandera-pais",
+  "title": "Banderas",
+  "subtitle": "U1 · zoek de vlag bij het land",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes: vind de vlag bij het land",
+    "pairs": [
+      {
+        "a": "🇪🇸",
+        "b": "España"
+      },
+      {
+        "a": "🇲🇽",
+        "b": "México"
+      },
+      {
+        "a": "🇦🇷",
+        "b": "Argentina"
+      },
+      {
+        "a": "🇨🇴",
+        "b": "Colombia"
+      },
+      {
+        "a": "🇵🇪",
+        "b": "Perú"
+      },
+      {
+        "a": "🇧🇪",
+        "b": "Bélgica"
+      },
+      {
+        "a": "🇨🇱",
+        "b": "Chile"
+      },
+      {
+        "a": "🇻🇪",
+        "b": "Venezuela"
+      },
+      {
+        "a": "🇨🇺",
+        "b": "Cuba"
+      },
+      {
+        "a": "🇪🇨",
+        "b": "Ecuador"
+      },
+      {
+        "a": "🇵🇷",
+        "b": "Puerto Rico"
+      },
+      {
+        "a": "🇬🇶",
+        "b": "Guinea Ecuatorial"
+      }
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "id": "es-u3-shadowing-rutina",
+  "title": "Shadowing: la rutina de Pau",
+  "subtitle": "U3 · imita a Pau — de texto completo a tu versión",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "shadowing",
+    "prompt": "Escucha a Pau y ve quitando apoyo, paso a paso",
+    "phases": [
+      "Texto completo",
+      "Palabras clave",
+      "Sin texto",
+      "Tu versión"
+    ],
+    "items": [
+      {
+        "text": "Me despierto a las siete y me levanto.",
+        "keywords": [
+          "Me despierto",
+          "a las siete",
+          "me levanto"
+        ],
+        "sub": "ik word om 7 uur wakker en sta op",
+        "tag": "rutina"
+      },
+      {
+        "text": "Me ducho, me visto y desayuno.",
+        "keywords": [
+          "Me ducho",
+          "me visto",
+          "desayuno"
+        ],
+        "sub": "ik douche, kleed me aan en ontbijt",
+        "tag": "rutina"
+      },
+      {
+        "text": "Salgo de casa a las ocho y voy al instituto.",
+        "keywords": [
+          "Salgo",
+          "a las ocho",
+          "voy al instituto"
+        ],
+        "sub": "ik vertrek om 8 uur en ga naar school",
+        "tag": "rutina"
+      },
+      {
+        "text": "Por la tarde hago los deberes y juego al fútbol.",
+        "keywords": [
+          "Por la tarde",
+          "los deberes",
+          "juego"
+        ],
+        "sub": "'s middags maak ik huiswerk en speel ik voetbal",
+        "tag": "rutina"
+      }
+    ]
+  }
+}

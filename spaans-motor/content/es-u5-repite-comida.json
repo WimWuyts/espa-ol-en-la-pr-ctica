@@ -1,0 +1,57 @@
+{
+  "id": "es-u5-repite-comida",
+  "title": "Escucha y repite: la comida",
+  "subtitle": "U5 · escucha el modelo, repite y GRÁBATE",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "repeat",
+    "prompt": "Escucha ▶ · repite en voz alta · grábate ⏺",
+    "items": [
+      {
+        "text": "Para mí, una sopa, por favor.",
+        "sub": "voor mij, een soep",
+        "tag": "pedir",
+        "tip": "¡Bien! Ahora dilo sin leer. <span class='nl'>zeg het nu zonder te lezen.</span>"
+      },
+      {
+        "text": "¿Me pone una botella de agua?",
+        "sub": "mag ik een fles water? — cortesía",
+        "tag": "pedir"
+      },
+      {
+        "text": "Voy a comer un taco.",
+        "sub": "ik ga een taco eten — ir a + infinitivo",
+        "tag": "futuro"
+      },
+      {
+        "text": "La cuenta, por favor.",
+        "sub": "de rekening, alstublieft",
+        "tag": "pedir"
+      },
+      {
+        "text": "¡Que aproveche!",
+        "sub": "eet smakelijk!",
+        "tag": "cortesia"
+      },
+      {
+        "text": "¿Me trae la carta, por favor?",
+        "sub": "mag ik het menu? — cortesía",
+        "tag": "pedir"
+      },
+      {
+        "text": "De postre, un flan.",
+        "sub": "als dessert, een flan",
+        "tag": "pedir"
+      },
+      {
+        "text": "¿Cuánto cuesta el ceviche?",
+        "sub": "hoeveel kost de ceviche?",
+        "tag": "pagar"
+      }
+    ]
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "id": "es-u6-genero-adjetivo",
+  "title": "Masculino o femenino",
+  "subtitle": "U6 · concordantie van kleur/adjectief",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Is de prenda masculino of femenino? (kies de juiste kleurvorm)",
+    "categories": [
+      {
+        "id": "masc",
+        "label": "masculino<br><small>-o / los</small>",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "fem",
+        "label": "femenino<br><small>-a / las</small>",
+        "glaze": "#C4402C"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "un vestido roj__",
+        "answer": "masc",
+        "tag": "masc",
+        "sub": "vestido (m) → rojo"
+      },
+      {
+        "stimulus": "una camiseta roj__",
+        "answer": "fem",
+        "tag": "fem",
+        "sub": "camiseta (v) → roja"
+      },
+      {
+        "stimulus": "un jersey negr__",
+        "answer": "masc",
+        "tag": "masc",
+        "sub": "jersey (m) → negro"
+      },
+      {
+        "stimulus": "una falda negr__",
+        "answer": "fem",
+        "tag": "fem",
+        "sub": "falda (v) → negra"
+      },
+      {
+        "stimulus": "un abrigo blanc__",
+        "answer": "masc",
+        "tag": "masc",
+        "sub": "abrigo (m) → blanco"
+      },
+      {
+        "stimulus": "una blusa blanc__",
+        "answer": "fem",
+        "tag": "fem",
+        "sub": "blusa (v) → blanca"
+      },
+      {
+        "stimulus": "un bolso amarill__",
+        "answer": "masc",
+        "tag": "masc",
+        "sub": "bolso (m) → amarillo"
+      },
+      {
+        "stimulus": "una gorra amarill__",
+        "answer": "fem",
+        "tag": "fem",
+        "sub": "gorra (v) → amarilla"
+      },
+      {
+        "stimulus": "un sombrero morad__",
+        "answer": "masc",
+        "tag": "masc",
+        "sub": "sombrero (m) → morado"
+      },
+      {
+        "stimulus": "una chaqueta morad__",
+        "answer": "fem",
+        "tag": "fem",
+        "sub": "chaqueta (v) → morada"
+      },
+      {
+        "stimulus": "un cinturón roj__",
+        "answer": "masc",
+        "tag": "masc",
+        "sub": "cinturón (m) → rojo"
+      },
+      {
+        "stimulus": "una bufanda roj__",
+        "answer": "fem",
+        "tag": "fem",
+        "sub": "bufanda (v) → roja"
+      },
+      {
+        "stimulus": "un traje negr__",
+        "answer": "masc",
+        "tag": "masc",
+        "sub": "traje (m) → negro"
+      },
+      {
+        "stimulus": "una camisa blanc__",
+        "answer": "fem",
+        "tag": "fem",
+        "sub": "camisa (v) → blanca"
+      },
+      {
+        "stimulus": "un pañuelo roj__",
+        "answer": "masc",
+        "tag": "masc",
+        "sub": "pañuelo (m) → rojo"
+      },
+      {
+        "stimulus": "una corbata amarill__",
+        "answer": "fem",
+        "tag": "fem",
+        "sub": "corbata (v) → amarilla"
+      },
+      {
+        "stimulus": "un pijama blanc__",
+        "answer": "masc",
+        "tag": "masc",
+        "sub": "pijama (m) → blanco"
+      },
+      {
+        "stimulus": "una sudadera negr__",
+        "answer": "fem",
+        "tag": "fem",
+        "sub": "sudadera (v) → negra"
+      }
+    ]
+  }
+}

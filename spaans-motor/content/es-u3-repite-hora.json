@@ -1,0 +1,42 @@
+{
+  "id": "es-u3-repite-hora",
+  "title": "Escucha y repite: la hora",
+  "subtitle": "U3 · escucha el modelo, repite y GRÁBATE",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "repeat",
+    "prompt": "Escucha ▶ · repite la hora · grábate ⏺",
+    "items": [
+      {
+        "text": "Es la una en punto.",
+        "sub": "het is één uur precies",
+        "tag": "hora"
+      },
+      {
+        "text": "Son las dos y media.",
+        "sub": "het is half drie",
+        "tag": "hora"
+      },
+      {
+        "text": "Son las cinco menos cuarto.",
+        "sub": "het is kwart voor vijf",
+        "tag": "hora"
+      },
+      {
+        "text": "Son las siete de la mañana.",
+        "sub": "het is zeven uur 's ochtends",
+        "tag": "hora"
+      },
+      {
+        "text": "Son las nueve de la noche.",
+        "sub": "het is negen uur 's avonds",
+        "tag": "hora",
+        "tip": "Ahora di la hora que es AHORA, sin leer. <span class='nl'>zeg de tijd van nu, zonder te lezen.</span>"
+      }
+    ]
+  }
+}

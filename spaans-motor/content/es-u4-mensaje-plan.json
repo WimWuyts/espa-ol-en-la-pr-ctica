@@ -1,0 +1,23 @@
+{
+  "id": "es-u4-mensaje-plan",
+  "title": "Mensaje de voz: propón un plan",
+  "subtitle": "U4 · neem één spraakbericht op met een plan",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "voicemessage",
+    "prompt": "Graba un mensaje de voz (30 s)",
+    "items": [
+      {
+        "text": "Propón un plan a Lucía o a Diego para el fin de semana.",
+        "cue": "para · Lucía / Diego",
+        "tag": "planes",
+        "sub": "gebruik: ¿Quieres…? · ¿Podemos…? · quedamos a las…",
+        "tip": "Heb je een plan + een uur gezegd? Neem opnieuw op. <span class='nl'>plan + uur? herneem.</span>"
+      }
+    ]
+  }
+}

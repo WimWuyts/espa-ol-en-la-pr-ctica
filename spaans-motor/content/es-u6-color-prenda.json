@@ -1,0 +1,64 @@
+{
+  "id": "es-u6-color-prenda",
+  "title": "Color y prenda",
+  "subtitle": "U6 · welke vorm van de kleur past?",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind de prenda met de juiste vorm van de kleur (m/v · ev/mv)",
+    "pairs": [
+      {
+        "a": "una camiseta (roja)",
+        "b": "roja"
+      },
+      {
+        "a": "un vestido (rojo)",
+        "b": "rojo"
+      },
+      {
+        "a": "unos zapatos (rojos)",
+        "b": "rojos"
+      },
+      {
+        "a": "unas botas (rojas)",
+        "b": "rojas"
+      },
+      {
+        "a": "unos vaqueros (azul)",
+        "b": "azules"
+      },
+      {
+        "a": "una falda (azul)",
+        "b": "azul"
+      },
+      {
+        "a": "un jersey (negro)",
+        "b": "negro"
+      },
+      {
+        "a": "unas sandalias (negro)",
+        "b": "negras"
+      },
+      {
+        "a": "una gorra (blanco)",
+        "b": "blanca"
+      },
+      {
+        "a": "unos calcetines (verde)",
+        "b": "verdes"
+      },
+      {
+        "a": "un abrigo (gris)",
+        "b": "gris"
+      },
+      {
+        "a": "unas gafas (marrón)",
+        "b": "marrones"
+      }
+    ]
+  }
+}

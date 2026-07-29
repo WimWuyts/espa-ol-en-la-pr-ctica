@@ -1,0 +1,57 @@
+{
+  "id": "es-u8-repite-tiempo",
+  "title": "Escucha y repite: el viaje",
+  "subtitle": "U8 · escucha el modelo, repite y GRÁBATE",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "repeat",
+    "prompt": "Escucha ▶ · repite en voz alta · grábate ⏺",
+    "items": [
+      {
+        "text": "Hoy he subido a Machu Picchu.",
+        "sub": "vandaag ben ik naar Machu Picchu geklommen",
+        "tag": "pc",
+        "tip": "¡Bien! Ahora dilo sin leer. <span class='nl'>zeg het nu zonder te lezen.</span>"
+      },
+      {
+        "text": "He viajado en avión desde Lima.",
+        "sub": "ik heb met het vliegtuig gereisd vanuit Lima",
+        "tag": "viaje"
+      },
+      {
+        "text": "Aquí hace frío y está nublado.",
+        "sub": "hier is het koud en bewolkt",
+        "tag": "clima"
+      },
+      {
+        "text": "¿Qué has hecho hoy?",
+        "sub": "wat heb je vandaag gedaan?",
+        "tag": "pregunta"
+      },
+      {
+        "text": "Nunca he visto la nieve.",
+        "sub": "ik heb nog nooit sneeuw gezien",
+        "tag": "marcador"
+      },
+      {
+        "text": "He sacado muchas fotos.",
+        "sub": "ik heb veel foto's gemaakt",
+        "tag": "pc"
+      },
+      {
+        "text": "Todavía no he comido.",
+        "sub": "ik heb nog niet gegeten",
+        "tag": "marcador"
+      },
+      {
+        "text": "He escrito una postal para mi familia.",
+        "sub": "ik heb een kaart geschreven voor mijn familie",
+        "tag": "pc"
+      }
+    ]
+  }
+}

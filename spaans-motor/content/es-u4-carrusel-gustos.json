@@ -1,0 +1,37 @@
+{
+  "id": "es-u4-carrusel-gustos",
+  "title": "Carrusel: mis gustos",
+  "subtitle": "U4 · één zin, wisselende bouwstenen — grábate",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "substitution",
+    "prompt": "Bouw de zin, spreek ze in, grábate ⏺",
+    "frame": "Me gusta(n) ___ porque es/son ___.",
+    "items": [
+      {
+        "text": "Me gusta la playa porque es relajante.",
+        "cue": "ronda 1",
+        "tag": "gusto"
+      },
+      {
+        "text": "Me gustan los conciertos porque son divertidos.",
+        "cue": "ronda 2",
+        "tag": "gusto"
+      },
+      {
+        "text": "Me encanta el cine porque es emocionante.",
+        "cue": "ronda 3",
+        "tag": "gusto"
+      },
+      {
+        "text": "Me gusta(n) ___ porque es/son ___.",
+        "cue": "jouw versie",
+        "tag": "gusto"
+      }
+    ]
+  }
+}

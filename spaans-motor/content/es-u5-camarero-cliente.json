@@ -1,0 +1,136 @@
+{
+  "id": "es-u5-camarero-cliente",
+  "title": "¿camarero o cliente?",
+  "subtitle": "U5 · wie zegt het in het restaurant?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Wie zegt deze zin: de ober of de klant?",
+    "categories": [
+      {
+        "id": "camarero",
+        "label": "el camarero<br><small>de ober</small>",
+        "glaze": "#E0A22F"
+      },
+      {
+        "id": "cliente",
+        "label": "el cliente<br><small>de klant</small>",
+        "glaze": "#2FA8A0"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "¿Qué va a tomar?",
+        "answer": "camarero",
+        "tag": "camarero",
+        "sub": "ober vraagt"
+      },
+      {
+        "stimulus": "Para mí, una sopa.",
+        "answer": "cliente",
+        "tag": "cliente",
+        "sub": "klant bestelt"
+      },
+      {
+        "stimulus": "¿Y para beber?",
+        "answer": "camarero",
+        "tag": "camarero",
+        "sub": "ober vraagt"
+      },
+      {
+        "stimulus": "¿Me pone un refresco?",
+        "answer": "cliente",
+        "tag": "cliente",
+        "sub": "klant bestelt"
+      },
+      {
+        "stimulus": "¡Que aproveche!",
+        "answer": "camarero",
+        "tag": "camarero",
+        "sub": "ober wenst"
+      },
+      {
+        "stimulus": "La cuenta, por favor.",
+        "answer": "cliente",
+        "tag": "cliente",
+        "sub": "klant vraagt"
+      },
+      {
+        "stimulus": "¿Algo de postre?",
+        "answer": "camarero",
+        "tag": "camarero",
+        "sub": "ober vraagt"
+      },
+      {
+        "stimulus": "De segundo, pollo.",
+        "answer": "cliente",
+        "tag": "cliente",
+        "sub": "klant bestelt"
+      },
+      {
+        "stimulus": "Enseguida se lo traigo.",
+        "answer": "camarero",
+        "tag": "camarero",
+        "sub": "ober antwoordt"
+      },
+      {
+        "stimulus": "¿Me trae pan, por favor?",
+        "answer": "cliente",
+        "tag": "cliente",
+        "sub": "klant vraagt"
+      },
+      {
+        "stimulus": "¿Van a tomar entrante?",
+        "answer": "camarero",
+        "tag": "camarero",
+        "sub": "ober vraagt"
+      },
+      {
+        "stimulus": "Para mí, un agua sin gas.",
+        "answer": "cliente",
+        "tag": "cliente",
+        "sub": "klant bestelt"
+      },
+      {
+        "stimulus": "Aquí tiene la carta.",
+        "answer": "camarero",
+        "tag": "camarero",
+        "sub": "ober geeft"
+      },
+      {
+        "stimulus": "¿Qué me recomienda?",
+        "answer": "cliente",
+        "tag": "cliente",
+        "sub": "klant vraagt raad"
+      },
+      {
+        "stimulus": "¿Tienen menú del día?",
+        "answer": "cliente",
+        "tag": "cliente",
+        "sub": "klant vraagt"
+      },
+      {
+        "stimulus": "¿Está todo bien?",
+        "answer": "camarero",
+        "tag": "camarero",
+        "sub": "ober checkt"
+      },
+      {
+        "stimulus": "¿Puedo pagar con tarjeta?",
+        "answer": "cliente",
+        "tag": "cliente",
+        "sub": "klant vraagt"
+      },
+      {
+        "stimulus": "¿Van a pagar juntos?",
+        "answer": "camarero",
+        "tag": "camarero",
+        "sub": "ober vraagt"
+      }
+    ]
+  }
+}

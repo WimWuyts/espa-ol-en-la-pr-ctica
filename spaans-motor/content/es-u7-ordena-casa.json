@@ -1,0 +1,125 @@
+{
+  "id": "es-u7-ordena-casa",
+  "title": "Ordena de fuera a dentro",
+  "subtitle": "U7 · ruimtes en verdiepingen op volgorde",
+  "lang": "es",
+  "template": "order",
+  "options": {
+    "audio": false
+  },
+  "order": {
+    "prompt": "Tik de items in de juiste volgorde",
+    "rounds": [
+      {
+        "tag": "casa",
+        "sub": "de fuera a dentro",
+        "items": [
+          {
+            "label": "la calle",
+            "key": 1
+          },
+          {
+            "label": "la puerta",
+            "key": 2
+          },
+          {
+            "label": "el pasillo",
+            "key": 3
+          },
+          {
+            "label": "el salón",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "casa",
+        "sub": "los pisos (de abajo a arriba)",
+        "items": [
+          {
+            "label": "la planta baja",
+            "key": 1
+          },
+          {
+            "label": "el primer piso",
+            "key": 2
+          },
+          {
+            "label": "el segundo piso",
+            "key": 3
+          },
+          {
+            "label": "el tercer piso",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "casa",
+        "sub": "poner la mesa",
+        "items": [
+          {
+            "label": "el mantel",
+            "key": 1
+          },
+          {
+            "label": "el plato",
+            "key": 2
+          },
+          {
+            "label": "el tenedor",
+            "key": 3
+          },
+          {
+            "label": "el vaso",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "casa",
+        "sub": "los ordinales",
+        "items": [
+          {
+            "label": "primero",
+            "key": 1
+          },
+          {
+            "label": "segundo",
+            "key": 2
+          },
+          {
+            "label": "tercero",
+            "key": 3
+          },
+          {
+            "label": "cuarto",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "casa",
+        "sub": "la ficha del anuncio",
+        "items": [
+          {
+            "label": "Tercer piso con ascensor",
+            "key": 1
+          },
+          {
+            "label": "2 habitaciones",
+            "key": 2
+          },
+          {
+            "label": "Terraza con vistas",
+            "key": 3
+          },
+          {
+            "label": "600 €/mes",
+            "key": 4
+          }
+        ]
+      }
+    ]
+  }
+}

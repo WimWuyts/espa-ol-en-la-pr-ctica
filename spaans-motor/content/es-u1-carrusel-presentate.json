@@ -1,0 +1,49 @@
+{
+  "id": "es-u1-carrusel-presentate",
+  "title": "Carrusel: cambia los datos",
+  "subtitle": "U1 · misma frase, datos nuevos — grábate en cada vuelta",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "substitution",
+    "prompt": "Di la frase con los datos nuevos y grábate",
+    "frame": "Me llamo ___, soy de ___ y tengo ___ años.",
+    "frameLabel": "Modelo · vul de gemarkeerde delen in",
+    "items": [
+      {
+        "fills": ["Leo", "Bélgica", "quince"],
+        "sub": "Leo · uit België · 15",
+        "tag": "carrusel"
+      },
+      {
+        "fills": ["Diego", "México", "dieciséis"],
+        "sub": "Diego · uit Mexico · 16",
+        "tag": "carrusel"
+      },
+      {
+        "fills": ["Nina", "Perú", "diecisiete"],
+        "sub": "Nina · uit Peru · 17",
+        "tag": "carrusel"
+      },
+      {
+        "fills": ["Valen", "Colombia", "catorce"],
+        "sub": "Valen · uit Colombia · 14",
+        "tag": "carrusel"
+      },
+      {
+        "fills": ["Lucía", "España", "dieciséis"],
+        "sub": "Lucía · uit Spanje · 16",
+        "tag": "carrusel"
+      },
+      {
+        "fills": ["yo", "mi ciudad", "mis"],
+        "sub": "nu met JOUW echte gegevens — ¡preséntate tú!",
+        "tag": "carrusel",
+        "tip": "¡Ahora tú de verdad! Grábate con tus datos reales. <span class='nl'>neem jezelf op met je échte gegevens.</span>"
+      }
+    ]
+  }
+}

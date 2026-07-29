@@ -1,0 +1,89 @@
+{
+  "id": "es-u3-orden-rutina",
+  "title": "Ordena mi rutina",
+  "subtitle": "U3 · zet de dagacties in de juiste volgorde",
+  "lang": "es",
+  "template": "order",
+  "options": {
+    "audio": false
+  },
+  "order": {
+    "prompt": "Tik de acties in de logische volgorde van de dag",
+    "rounds": [
+      {
+        "tag": "rutina",
+        "sub": "la mañana",
+        "items": [
+          {
+            "label": "Me despierto.",
+            "key": 1
+          },
+          {
+            "label": "Me levanto.",
+            "key": 2
+          },
+          {
+            "label": "Me ducho.",
+            "key": 3
+          },
+          {
+            "label": "Me visto.",
+            "key": 4
+          },
+          {
+            "label": "Desayuno.",
+            "key": 5
+          }
+        ]
+      },
+      {
+        "tag": "rutina",
+        "sub": "el día entero",
+        "items": [
+          {
+            "label": "Salgo de casa.",
+            "key": 1
+          },
+          {
+            "label": "Empiezan las clases.",
+            "key": 2
+          },
+          {
+            "label": "Almuerzo al mediodía.",
+            "key": 3
+          },
+          {
+            "label": "Hago los deberes.",
+            "key": 4
+          },
+          {
+            "label": "Me acuesto.",
+            "key": 5
+          }
+        ]
+      },
+      {
+        "tag": "rutina",
+        "sub": "con conectores",
+        "items": [
+          {
+            "label": "Primero me despierto.",
+            "key": 1
+          },
+          {
+            "label": "Después desayuno.",
+            "key": 2
+          },
+          {
+            "label": "Luego voy al instituto.",
+            "key": 3
+          },
+          {
+            "label": "Por fin me acuesto.",
+            "key": 4
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "id": "es-u1-pais-nacionalidad",
+  "title": "País y nacionalidad",
+  "subtitle": "U1 · koppel land aan nationaliteit",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind elk land met de juiste nationaliteit (gentilicio)",
+    "pairs": [
+      {
+        "a": "Bélgica",
+        "b": "belga"
+      },
+      {
+        "a": "España",
+        "b": "español"
+      },
+      {
+        "a": "México",
+        "b": "mexicano"
+      },
+      {
+        "a": "Argentina",
+        "b": "argentino"
+      },
+      {
+        "a": "Colombia",
+        "b": "colombiano"
+      },
+      {
+        "a": "Perú",
+        "b": "peruano"
+      },
+      {
+        "a": "Francia",
+        "b": "francés"
+      },
+      {
+        "a": "Alemania",
+        "b": "alemán"
+      },
+      {
+        "a": "Italia",
+        "b": "italiano"
+      },
+      {
+        "a": "Portugal",
+        "b": "portugués"
+      },
+      {
+        "a": "Estados Unidos",
+        "b": "estadounidense"
+      },
+      {
+        "a": "Brasil",
+        "b": "brasileño"
+      },
+      {
+        "a": "Japón",
+        "b": "japonés"
+      },
+      {
+        "a": "Marruecos",
+        "b": "marroquí"
+      },
+      {
+        "a": "Canadá",
+        "b": "canadiense"
+      },
+      {
+        "a": "China",
+        "b": "chino"
+      },
+      {
+        "a": "los Países Bajos",
+        "b": "neerlandés"
+      },
+      {
+        "a": "Chile",
+        "b": "chileno"
+      }
+    ]
+  }
+}

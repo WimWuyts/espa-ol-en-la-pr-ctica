@@ -1,0 +1,29 @@
+{
+  "id": "es-u1-genero-articulo",
+  "title": "El o la",
+  "subtitle": "U1 · kies het juiste bepaald lidwoord",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 18,
+    "audio": false
+  },
+  "generator": {
+    "kind": "gender"
+  },
+  "classify": {
+    "prompt": "¿masculino (el) o femenino (la)?",
+    "categories": [
+      {
+        "id": "m",
+        "label": "el<br><small>masculino</small>",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "f",
+        "label": "la<br><small>femenino</small>",
+        "glaze": "#C4402C"
+      }
+    ]
+  }
+}

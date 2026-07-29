@@ -1,0 +1,47 @@
+{
+  "id": "es-u2-describe-familiar",
+  "title": "Describe a un familiar",
+  "subtitle": "U2 · escucha, describe a la persona en 3ª persona, y grábate",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "repeat",
+    "prompt": "Escucha ▶ · describe a la persona (él/ella) · grábate ⏺",
+    "items": [
+      {
+        "cue": "Antonio · el padre de Lucía",
+        "text": "Antonio es alto y moreno.",
+        "sub": "hij is lang en donkerharig — «es»",
+        "tag": "describir"
+      },
+      {
+        "cue": "Rosa · la madre de Lucía",
+        "text": "Rosa es baja y muy habladora.",
+        "sub": "zij is klein en heel praatgraag",
+        "tag": "describir"
+      },
+      {
+        "cue": "Marco · el hermano mayor",
+        "text": "Marco tiene diecinueve años y lleva gafas.",
+        "sub": "hij is 19 en draagt een bril — «tiene»",
+        "tag": "describir"
+      },
+      {
+        "cue": "Ana · la hermana menor",
+        "text": "Ana es pequeña, graciosa y un poco tímida.",
+        "sub": "zij is klein, grappig en een beetje verlegen",
+        "tag": "describir"
+      },
+      {
+        "cue": "Julia · la prima",
+        "text": "Julia es pelirroja y muy simpática.",
+        "sub": "zij is roodharig en heel aardig",
+        "tag": "describir",
+        "tip": "Ahora describe a un familiar tuyo de verdad. <span class='nl'>beschrijf nu een echt familielid.</span>"
+      }
+    ]
+  }
+}

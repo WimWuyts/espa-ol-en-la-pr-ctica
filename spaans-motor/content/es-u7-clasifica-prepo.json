@@ -1,0 +1,129 @@
+{
+  "id": "es-u7-clasifica-prepo",
+  "title": "preposición: ¿dónde?",
+  "subtitle": "U7 · welke betekenis heeft de preposición?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Koppel de preposición aan zijn betekenis",
+    "categories": [
+      {
+        "id": "cerca",
+        "label": "cerca / al lado<br><small>dichtbij/naast</small>",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "vertical",
+        "label": "encima / debajo<br><small>boven/onder</small>",
+        "glaze": "#E0A22F"
+      },
+      {
+        "id": "frente",
+        "label": "delante / detrás / enfrente<br><small>voor/achter/tegenover</small>",
+        "glaze": "#8B5E9E"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "al lado de",
+        "answer": "cerca",
+        "tag": "cerca",
+        "sub": "naast"
+      },
+      {
+        "stimulus": "cerca de",
+        "answer": "cerca",
+        "tag": "cerca",
+        "sub": "dichtbij"
+      },
+      {
+        "stimulus": "junto a",
+        "answer": "cerca",
+        "tag": "cerca",
+        "sub": "vlak bij"
+      },
+      {
+        "stimulus": "encima de",
+        "answer": "vertical",
+        "tag": "vertical",
+        "sub": "boven op"
+      },
+      {
+        "stimulus": "debajo de",
+        "answer": "vertical",
+        "tag": "vertical",
+        "sub": "onder"
+      },
+      {
+        "stimulus": "sobre",
+        "answer": "vertical",
+        "tag": "vertical",
+        "sub": "op/boven"
+      },
+      {
+        "stimulus": "delante de",
+        "answer": "frente",
+        "tag": "frente",
+        "sub": "vóór"
+      },
+      {
+        "stimulus": "detrás de",
+        "answer": "frente",
+        "tag": "frente",
+        "sub": "achter"
+      },
+      {
+        "stimulus": "enfrente de",
+        "answer": "frente",
+        "tag": "frente",
+        "sub": "tegenover"
+      },
+      {
+        "stimulus": "al lado del parque",
+        "answer": "cerca",
+        "tag": "cerca",
+        "sub": "naast het park"
+      },
+      {
+        "stimulus": "debajo de la cama",
+        "answer": "vertical",
+        "tag": "vertical",
+        "sub": "onder het bed"
+      },
+      {
+        "stimulus": "encima de la mesa",
+        "answer": "vertical",
+        "tag": "vertical",
+        "sub": "op de tafel"
+      },
+      {
+        "stimulus": "detrás de la casa",
+        "answer": "frente",
+        "tag": "frente",
+        "sub": "achter het huis"
+      },
+      {
+        "stimulus": "cerca de la plaza",
+        "answer": "cerca",
+        "tag": "cerca",
+        "sub": "dichtbij het plein"
+      },
+      {
+        "stimulus": "delante de la puerta",
+        "answer": "frente",
+        "tag": "frente",
+        "sub": "vóór de deur"
+      },
+      {
+        "stimulus": "enfrente del museo",
+        "answer": "frente",
+        "tag": "frente",
+        "sub": "tegenover het museum"
+      }
+    ]
+  }
+}

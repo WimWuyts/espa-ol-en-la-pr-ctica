@@ -1,0 +1,64 @@
+{
+  "id": "es-u2-colores-match",
+  "title": "Los colores del pelo y los ojos",
+  "subtitle": "U2 · koppel de kleur aan de vertaling",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 4,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind de Spaanse kleur met de Nederlandse vertaling",
+    "pairs": [
+      {
+        "a": "marrón",
+        "b": "bruin"
+      },
+      {
+        "a": "negro",
+        "b": "zwart"
+      },
+      {
+        "a": "castaño",
+        "b": "kastanjebruin"
+      },
+      {
+        "a": "azul",
+        "b": "blauw"
+      },
+      {
+        "a": "verde",
+        "b": "groen"
+      },
+      {
+        "a": "gris",
+        "b": "grijs"
+      },
+      {
+        "a": "rubio",
+        "b": "blond"
+      },
+      {
+        "a": "pelirrojo",
+        "b": "roodharig"
+      },
+      {
+        "a": "moreno",
+        "b": "donkerbruin"
+      },
+      {
+        "a": "blanco",
+        "b": "wit"
+      },
+      {
+        "a": "claro",
+        "b": "licht"
+      },
+      {
+        "a": "oscuro",
+        "b": "donker"
+      }
+    ]
+  }
+}

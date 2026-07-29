@@ -1,0 +1,111 @@
+{
+  "id": "es-u1-presentacion-orden",
+  "title": "Ordena la presentación",
+  "subtitle": "U1 · zet de zelfvoorstelling in de juiste volgorde",
+  "lang": "es",
+  "template": "order",
+  "options": {
+    "audio": false
+  },
+  "order": {
+    "prompt": "Tik de zinnen in de logische volgorde van een presentación",
+    "rounds": [
+      {
+        "tag": "pres",
+        "sub": "saluda → nombre → origen → edad → despedida",
+        "items": [
+          {
+            "label": "¡Hola! Buenos días.",
+            "key": 1
+          },
+          {
+            "label": "Me llamo Leo García.",
+            "key": 2
+          },
+          {
+            "label": "Soy de Bélgica, soy belga.",
+            "key": 3
+          },
+          {
+            "label": "Tengo 15 años.",
+            "key": 4
+          },
+          {
+            "label": "¡Encantado! Adiós.",
+            "key": 5
+          }
+        ]
+      },
+      {
+        "tag": "pres",
+        "sub": "saluda → nombre → ciudad → idiomas → cierre",
+        "items": [
+          {
+            "label": "¡Buenas! ¿Qué tal?",
+            "key": 1
+          },
+          {
+            "label": "Me llamo Sara.",
+            "key": 2
+          },
+          {
+            "label": "Vivo en Amberes.",
+            "key": 3
+          },
+          {
+            "label": "Hablo neerlandés y español.",
+            "key": 4
+          },
+          {
+            "label": "¡Gracias!",
+            "key": 5
+          }
+        ]
+      },
+      {
+        "tag": "pres",
+        "sub": "pregunta → nombre → origen → edad",
+        "items": [
+          {
+            "label": "¿Cómo te llamas?",
+            "key": 1
+          },
+          {
+            "label": "Me llamo Diego.",
+            "key": 2
+          },
+          {
+            "label": "Soy de México.",
+            "key": 3
+          },
+          {
+            "label": "Tengo 16 años.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "pres",
+        "sub": "nombre → apellido → país → correo",
+        "items": [
+          {
+            "label": "Mi nombre es Nina.",
+            "key": 1
+          },
+          {
+            "label": "Mi apellido es Quispe.",
+            "key": 2
+          },
+          {
+            "label": "Soy de Perú.",
+            "key": 3
+          },
+          {
+            "label": "Mi correo es nina@mail.com.",
+            "key": 4
+          }
+        ]
+      }
+    ]
+  }
+}

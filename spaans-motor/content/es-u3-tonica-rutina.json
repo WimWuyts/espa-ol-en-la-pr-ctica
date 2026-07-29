@@ -1,0 +1,138 @@
+{
+  "id": "es-u3-tonica-rutina",
+  "title": "La tónica de la rutina",
+  "subtitle": "U3 · tik de sterke lettergreep",
+  "lang": "es",
+  "template": "tap",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "tap": {
+    "prompt": "Tik de sílaba tónica (de sterke lettergreep)",
+    "joiner": "·",
+    "items": [
+      {
+        "parts": [
+          "des",
+          "pier",
+          "to"
+        ],
+        "answer": 1,
+        "tag": "llana",
+        "sub": "despierto"
+      },
+      {
+        "parts": [
+          "me",
+          "dio",
+          "dí",
+          "a"
+        ],
+        "answer": 2,
+        "tag": "con tilde",
+        "sub": "mediodía · hiato"
+      },
+      {
+        "parts": [
+          "miér",
+          "co",
+          "les"
+        ],
+        "answer": 0,
+        "tag": "esdrujula",
+        "sub": "miércoles"
+      },
+      {
+        "parts": [
+          "sá",
+          "ba",
+          "do"
+        ],
+        "answer": 0,
+        "tag": "esdrujula",
+        "sub": "sábado"
+      },
+      {
+        "parts": [
+          "ru",
+          "ti",
+          "na"
+        ],
+        "answer": 1,
+        "tag": "llana",
+        "sub": "rutina"
+      },
+      {
+        "parts": [
+          "de",
+          "sa",
+          "yu",
+          "no"
+        ],
+        "answer": 2,
+        "tag": "llana",
+        "sub": "desayuno"
+      },
+      {
+        "parts": [
+          "re",
+          "loj"
+        ],
+        "answer": 1,
+        "tag": "aguda",
+        "sub": "reloj"
+      },
+      {
+        "parts": [
+          "es",
+          "ta",
+          "ción"
+        ],
+        "answer": 2,
+        "tag": "aguda",
+        "sub": "estación"
+      },
+      {
+        "parts": [
+          "ve",
+          "ra",
+          "no"
+        ],
+        "answer": 1,
+        "tag": "llana",
+        "sub": "verano"
+      },
+      {
+        "parts": [
+          "des",
+          "pués"
+        ],
+        "answer": 1,
+        "tag": "aguda",
+        "sub": "después"
+      },
+      {
+        "parts": [
+          "a",
+          "cos",
+          "tar",
+          "se"
+        ],
+        "answer": 2,
+        "tag": "llana",
+        "sub": "acostarse"
+      },
+      {
+        "parts": [
+          "fe",
+          "bre",
+          "ro"
+        ],
+        "answer": 1,
+        "tag": "llana",
+        "sub": "febrero"
+      }
+    ]
+  }
+}

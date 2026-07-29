@@ -1,0 +1,141 @@
+{
+  "id": "es-u8-que-tiempo",
+  "title": "¿Qué tiempo hace?",
+  "subtitle": "U8 · hace · está · un verbo (llueve/nieva)",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Welk woord hoort bij de weer-uitdrukking?",
+    "categories": [
+      {
+        "id": "hace",
+        "label": "hace…<br><small>sol/frío/calor</small>",
+        "glaze": "#E0A22F"
+      },
+      {
+        "id": "esta",
+        "label": "está / hay…<br><small>nublado/tormenta</small>",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "verbo",
+        "label": "un verbo<br><small>llueve/nieva</small>",
+        "glaze": "#2FA8A0"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "___ sol",
+        "answer": "hace",
+        "tag": "hace",
+        "sub": "hace sol"
+      },
+      {
+        "stimulus": "___ calor",
+        "answer": "hace",
+        "tag": "hace",
+        "sub": "hace calor"
+      },
+      {
+        "stimulus": "___ frío",
+        "answer": "hace",
+        "tag": "hace",
+        "sub": "hace frío"
+      },
+      {
+        "stimulus": "___ viento",
+        "answer": "hace",
+        "tag": "hace",
+        "sub": "hace viento"
+      },
+      {
+        "stimulus": "___ buen tiempo",
+        "answer": "hace",
+        "tag": "hace",
+        "sub": "hace buen tiempo"
+      },
+      {
+        "stimulus": "___ mal tiempo",
+        "answer": "hace",
+        "tag": "hace",
+        "sub": "hace mal tiempo"
+      },
+      {
+        "stimulus": "___ nublado",
+        "answer": "esta",
+        "tag": "esta",
+        "sub": "está nublado"
+      },
+      {
+        "stimulus": "___ tormenta",
+        "answer": "esta",
+        "tag": "esta",
+        "sub": "hay tormenta"
+      },
+      {
+        "stimulus": "___ nubes",
+        "answer": "esta",
+        "tag": "esta",
+        "sub": "hay nubes"
+      },
+      {
+        "stimulus": "___ (regenen)",
+        "answer": "verbo",
+        "tag": "verbo",
+        "sub": "llueve"
+      },
+      {
+        "stimulus": "___ (sneeuwen)",
+        "answer": "verbo",
+        "tag": "verbo",
+        "sub": "nieva"
+      },
+      {
+        "stimulus": "___ 20 grados",
+        "answer": "hace",
+        "tag": "hace",
+        "sub": "hace 20 grados"
+      },
+      {
+        "stimulus": "___ despejado",
+        "answer": "esta",
+        "tag": "esta",
+        "sub": "está despejado"
+      },
+      {
+        "stimulus": "___ (het regent nu)",
+        "answer": "verbo",
+        "tag": "verbo",
+        "sub": "llueve"
+      },
+      {
+        "stimulus": "___ sol y calor",
+        "answer": "hace",
+        "tag": "hace",
+        "sub": "hace sol y calor"
+      },
+      {
+        "stimulus": "___ mucho viento",
+        "answer": "hace",
+        "tag": "hace",
+        "sub": "hace mucho viento"
+      },
+      {
+        "stimulus": "___ nieve en la sierra",
+        "answer": "verbo",
+        "tag": "verbo",
+        "sub": "nieva"
+      },
+      {
+        "stimulus": "___ muy nublado",
+        "answer": "esta",
+        "tag": "esta",
+        "sub": "está muy nublado"
+      }
+    ]
+  }
+}

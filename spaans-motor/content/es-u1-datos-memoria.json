@@ -1,0 +1,64 @@
+{
+  "id": "es-u1-datos-memoria",
+  "title": "Memoria de los datos",
+  "subtitle": "U1 · zoek het paar español ↔ nederlands",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om en zoek het woord + de vertaling",
+    "pairs": [
+      {
+        "a": "el nombre",
+        "b": "de voornaam"
+      },
+      {
+        "a": "el apellido",
+        "b": "de achternaam"
+      },
+      {
+        "a": "la edad",
+        "b": "de leeftijd"
+      },
+      {
+        "a": "el país",
+        "b": "het land"
+      },
+      {
+        "a": "la nacionalidad",
+        "b": "de nationaliteit"
+      },
+      {
+        "a": "la dirección",
+        "b": "het adres"
+      },
+      {
+        "a": "la ciudad",
+        "b": "de stad"
+      },
+      {
+        "a": "el idioma",
+        "b": "de taal"
+      },
+      {
+        "a": "el correo",
+        "b": "het e-mailadres"
+      },
+      {
+        "a": "el teléfono",
+        "b": "het telefoonnummer"
+      },
+      {
+        "a": "la firma",
+        "b": "de handtekening"
+      },
+      {
+        "a": "el curso",
+        "b": "het leerjaar"
+      }
+    ]
+  }
+}

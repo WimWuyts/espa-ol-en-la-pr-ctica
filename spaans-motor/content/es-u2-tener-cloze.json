@@ -1,0 +1,148 @@
+{
+  "id": "es-u2-tener-cloze",
+  "title": "Completa: tener",
+  "subtitle": "U2 · vul de juiste vorm van tener in",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste vorm van tener",
+    "items": [
+      {
+        "stimulus": "Yo ___ dos hermanos.",
+        "options": [
+          "tengo",
+          "tienes",
+          "tiene"
+        ],
+        "answer": "tengo",
+        "tag": "t",
+        "sub": "yo → tengo"
+      },
+      {
+        "stimulus": "¿Cuántos primos ___ tú?",
+        "options": [
+          "tienes",
+          "tienen",
+          "tengo"
+        ],
+        "answer": "tienes",
+        "tag": "t",
+        "sub": "tú → tienes"
+      },
+      {
+        "stimulus": "Mi hermano ___ quince años.",
+        "options": [
+          "tiene",
+          "tienes",
+          "tengo"
+        ],
+        "answer": "tiene",
+        "tag": "t",
+        "sub": "él → tiene"
+      },
+      {
+        "stimulus": "Nosotros ___ una mascota.",
+        "options": [
+          "tenemos",
+          "tienen",
+          "tengo"
+        ],
+        "answer": "tenemos",
+        "tag": "t",
+        "sub": "nosotros → tenemos"
+      },
+      {
+        "stimulus": "Mis abuelos ___ un perro.",
+        "options": [
+          "tienen",
+          "tiene",
+          "tenéis"
+        ],
+        "answer": "tienen",
+        "tag": "t",
+        "sub": "ellos → tienen"
+      },
+      {
+        "stimulus": "¿Vosotros ___ primos en Madrid?",
+        "options": [
+          "tenéis",
+          "tienen",
+          "tenemos"
+        ],
+        "answer": "tenéis",
+        "tag": "t",
+        "sub": "vosotros → tenéis"
+      },
+      {
+        "stimulus": "Lucía ___ el pelo largo.",
+        "options": [
+          "tiene",
+          "tienes",
+          "tengo"
+        ],
+        "answer": "tiene",
+        "tag": "t",
+        "sub": "ella → tiene"
+      },
+      {
+        "stimulus": "Yo ___ una hermana menor.",
+        "options": [
+          "tengo",
+          "tiene",
+          "tienes"
+        ],
+        "answer": "tengo",
+        "tag": "t",
+        "sub": "yo → tengo"
+      },
+      {
+        "stimulus": "¿Tú ___ mascota?",
+        "options": [
+          "tienes",
+          "tiene",
+          "tenéis"
+        ],
+        "answer": "tienes",
+        "tag": "t",
+        "sub": "tú → tienes"
+      },
+      {
+        "stimulus": "Mi tía ___ dos hijos.",
+        "options": [
+          "tiene",
+          "tienen",
+          "tengo"
+        ],
+        "answer": "tiene",
+        "tag": "t",
+        "sub": "ella → tiene"
+      },
+      {
+        "stimulus": "Mis primos ___ un gato.",
+        "options": [
+          "tienen",
+          "tiene",
+          "tenéis"
+        ],
+        "answer": "tienen",
+        "tag": "t",
+        "sub": "ellos → tienen"
+      },
+      {
+        "stimulus": "Mi sobrino ___ cinco años.",
+        "options": [
+          "tiene",
+          "tienes",
+          "tengo"
+        ],
+        "answer": "tiene",
+        "tag": "t",
+        "sub": "él → tiene"
+      }
+    ]
+  }
+}

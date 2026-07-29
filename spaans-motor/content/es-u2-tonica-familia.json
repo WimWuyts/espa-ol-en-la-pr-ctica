@@ -1,0 +1,135 @@
+{
+  "id": "es-u2-tonica-familia",
+  "title": "La tónica de la familia",
+  "subtitle": "U2 · tik de sterke lettergreep",
+  "lang": "es",
+  "template": "tap",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "tap": {
+    "prompt": "Tik de sílaba tónica (de sterke lettergreep)",
+    "joiner": "·",
+    "items": [
+      {
+        "parts": [
+          "fa",
+          "mi",
+          "lia"
+        ],
+        "answer": 1,
+        "tag": "llana",
+        "sub": "familia"
+      },
+      {
+        "parts": [
+          "her",
+          "ma",
+          "no"
+        ],
+        "answer": 1,
+        "tag": "llana",
+        "sub": "hermano"
+      },
+      {
+        "parts": [
+          "a",
+          "bue",
+          "lo"
+        ],
+        "answer": 1,
+        "tag": "llana",
+        "sub": "abuelo"
+      },
+      {
+        "parts": [
+          "pri",
+          "mo"
+        ],
+        "answer": 0,
+        "tag": "llana",
+        "sub": "primo"
+      },
+      {
+        "parts": [
+          "sim",
+          "pá",
+          "ti",
+          "co"
+        ],
+        "answer": 1,
+        "tag": "esdrujula",
+        "sub": "simpático · tilde"
+      },
+      {
+        "parts": [
+          "tí",
+          "mi",
+          "do"
+        ],
+        "answer": 0,
+        "tag": "esdrujula",
+        "sub": "tímido · tilde"
+      },
+      {
+        "parts": [
+          "ma",
+          "rrón"
+        ],
+        "answer": 1,
+        "tag": "aguda",
+        "sub": "marrón · tilde"
+      },
+      {
+        "parts": [
+          "na",
+          "riz"
+        ],
+        "answer": 1,
+        "tag": "aguda",
+        "sub": "nariz"
+      },
+      {
+        "parts": [
+          "ca",
+          "be",
+          "za"
+        ],
+        "answer": 1,
+        "tag": "llana",
+        "sub": "cabeza"
+      },
+      {
+        "parts": [
+          "ma",
+          "yor"
+        ],
+        "answer": 1,
+        "tag": "aguda",
+        "sub": "mayor"
+      },
+      {
+        "parts": [
+          "her",
+          "ma",
+          "na"
+        ],
+        "answer": 1,
+        "tag": "llana",
+        "sub": "hermana"
+      },
+      {
+        "parts": [
+          "pe",
+          "li",
+          "rro",
+          "jo"
+        ],
+        "answer": 2,
+        "tag": "llana",
+        "sub": "pelirrojo"
+      }
+    ]
+  }
+}

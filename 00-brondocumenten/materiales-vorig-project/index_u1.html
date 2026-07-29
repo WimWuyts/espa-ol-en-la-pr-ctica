@@ -1,0 +1,1812 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Español · Unidad 1 · ¿Quién eres?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons@7.5.0/css/flag-icons.min.css">
+<style>
+:root{--terra:#BC4A2F;--terra-d:#9E3D24;--ochre:#B5791A;--teal:#2E7D74;--ink:#2B2622;--cream:#FBF7F0;--card:#fff;--muted:#6E665B;--line:#ECE6DC;--good:#0F6E56;--good-bg:#E3F0ED;--bad:#C2410C;--bad-bg:#FBE7DD;--purple:#3C3489;--purple-bg:#EEEDFE}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:'Nunito',system-ui,sans-serif;color:var(--ink);background:var(--cream);line-height:1.5;-webkit-text-size-adjust:100%}
+.fred{font-family:'Fredoka',system-ui,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px 60px}
+header{background:var(--terra);color:#fff;padding:20px 0 18px}
+.header-in{max-width:860px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:14px}
+.sun{flex:none;width:46px;height:46px;border-radius:50%;background:#F4C95D;position:relative}
+.sun::after{content:"";position:absolute;inset:-7px;border-radius:50%;border:3px dashed #F4C95D;opacity:.45}
+header .eyebrow{font-size:12px;font-weight:800;color:#F4CDBE;letter-spacing:.04em}
+header h1{font-size:27px;margin:1px 0 0}
+header p{margin:3px 0 0;font-size:13.5px;color:#FBE3D9}
+nav.tabs{position:sticky;top:0;z-index:30;background:var(--cream);border-bottom:1px solid var(--line);display:flex;gap:6px;overflow-x:auto;padding:9px 16px;margin-bottom:18px;-webkit-overflow-scrolling:touch}
+nav.tabs button{flex:none;border:1px solid var(--line);background:#fff;color:var(--muted);font-family:'Fredoka';font-size:14px;padding:7px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+nav.tabs button.active{background:var(--terra);color:#fff;border-color:var(--terra)}
+.panel{display:none}
+.panel.active{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.sec-title{display:flex;align-items:center;gap:10px;margin:6px 0 2px}
+.sec-title .dot{flex:none;width:32px;height:32px;border-radius:9px;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px}
+.sec-title h2{font-family:'Fredoka';font-size:21px;margin:0}
+.sec-sub{color:var(--muted);font-size:13.5px;margin:0 0 6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 17px;margin:14px 0;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.card h3{font-family:'Fredoka';font-size:16px;margin:0 0 2px;color:var(--terra)}
+.card .instr{font-size:13px;color:var(--muted);margin:0 0 10px}
+.btn{font-family:'Fredoka';font-size:14px;border:none;background:var(--terra);color:#fff;padding:9px 16px;border-radius:11px;cursor:pointer}
+.btn:active{transform:translateY(1px)}
+.btn.ghost{background:#fff;color:var(--terra);border:1.5px solid var(--terra)}
+.btn.teal{background:var(--teal)}
+.btn.sm{padding:6px 12px;font-size:13px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.opt{font-family:'Nunito';font-weight:700;font-size:15px;border:1.6px solid var(--line);background:#FFFDF9;color:var(--ink);padding:9px 16px;border-radius:11px;cursor:pointer;transition:.12s}
+.opt:hover{border-color:#D8CFBE}
+.opt.good{background:var(--good-bg);border-color:#9FCCBF;color:var(--good)}
+.opt.bad{background:var(--bad-bg);border-color:#E9B79C;color:var(--bad)}
+.opt:disabled{cursor:default;opacity:.95}
+.fb{font-weight:700;font-size:13.5px;margin-top:9px;min-height:18px}
+.fb.good{color:var(--good)}.fb.bad{color:var(--bad)}
+.q{margin:0 0 7px;font-size:15px;font-weight:700}
+.qblock{padding:11px 0;border-top:1px solid #F2EDE3}
+.qblock:first-child{border-top:none}
+.score{font-family:'Fredoka';font-size:14px;color:var(--ochre);margin-top:10px}
+.iconbtn{font-family:'Fredoka';font-size:14px;border:none;background:var(--teal);color:#fff;padding:8px 14px;border-radius:11px;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1.6px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font-weight:700;font-size:14px;cursor:pointer;user-select:none}
+.chip.sel{border-color:var(--terra);background:#FBEDE8;color:var(--terra)}
+.chip.good{background:var(--good-bg);border-color:#9FCCBF;color:var(--good);cursor:default}
+.chip.bad{background:var(--bad-bg);border-color:#E9B79C;color:var(--bad)}
+.cols{display:grid;gap:10px;margin-top:12px}
+.col{border:1.6px dashed #DCD4C5;border-radius:13px;padding:10px;min-height:64px;background:#FFFDF9}
+.col h4{font-family:'Fredoka';margin:0 0 7px;font-size:14px;color:var(--ochre);text-align:center}
+.col .drop{display:flex;flex-wrap:wrap;gap:7px;justify-content:center}
+.bank{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.flash{perspective:1000px;margin:6px auto 0;max-width:340px}
+.flash .inner{position:relative;height:150px;cursor:pointer;transition:transform .5s;transform-style:preserve-3d}
+.flash.flipped .inner{transform:rotateY(180deg)}
+.flash .face{position:absolute;inset:0;backface-visibility:hidden;border-radius:16px;display:flex;align-items:center;justify-content:center;flex-direction:column;border:1.6px solid var(--line)}
+.flash .front{background:#FBEDE8}
+.flash .back{background:var(--good-bg);transform:rotateY(180deg)}
+.flash .face .big{font-family:'Fredoka';font-size:26px;color:var(--ink)}
+.flash .face .lab{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.cat-row{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:6px}
+.cat{font-size:13px;font-weight:700;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:5px 13px;cursor:pointer}
+.cat.active{background:var(--ochre);color:#fff;border-color:var(--ochre)}
+.mem{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:6px}
+.mc{aspect-ratio:1/1;border-radius:12px;border:none;background:var(--terra);color:#fff;font-family:'Fredoka';font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.mc.open{background:#fff;border:1.6px solid var(--line);color:var(--ink)}
+.mc.done{background:var(--good-bg);color:var(--good);cursor:default}
+.gap{display:inline-block;min-width:78px;border-bottom:2px solid var(--terra);text-align:center;font-weight:700;color:var(--terra);cursor:pointer;padding:0 4px;margin:0 2px}
+.gap.filled{border-bottom-style:solid}
+.gap.good{color:var(--good);border-color:var(--good)}
+.gap.bad{color:var(--bad);border-color:var(--bad)}
+.dlg{line-height:2.2;font-size:15.5px}
+.chat{border:1px solid var(--line);border-radius:14px;background:#FBF8F2;padding:12px;max-height:330px;overflow-y:auto}
+.bub{max-width:80%;padding:9px 13px;border-radius:14px;margin:6px 0;font-size:14.5px;line-height:1.35}
+.bub.bot{background:var(--good-bg);color:var(--good)}
+.bub.me{background:#FBF1DC;color:var(--ochre);margin-left:auto}
+.ficha{display:flex;align-items:center;gap:13px;border:1px solid var(--line);border-radius:13px;padding:11px 14px;margin-top:11px;background:#FFFDF9;min-height:58px}
+.ficha .fl{font-size:34px;line-height:1}
+.ficha .nm{font-family:'Fredoka';font-size:17px}
+.ficha .cp{font-size:12.5px;color:var(--muted)}
+.mapbox svg{width:100%;height:auto;display:block}
+.pais{cursor:pointer;transition:fill .15s}
+.pais:hover{fill:var(--terra-d)}
+.note{font-size:12px;color:var(--muted);margin-top:8px}
+.foot{text-align:center;color:#A99E8B;font-size:11.5px;margin-top:30px}
+@media(max-width:560px){.mem{grid-template-columns:repeat(3,1fr)}header h1{font-size:23px}}
+
+/* ---- doodly additions ---- */
+.sun-badge{flex:none;display:flex;align-items:center;justify-content:center;background:#FBF7F0;border-radius:50%;width:58px;height:58px;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.opener{display:flex;align-items:center;gap:1px;flex:none;margin-left:auto}
+.sec-title{flex-wrap:nowrap}
+.sec-title h2{flex:1 1 auto}
+.mundo-hero{border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:2px 0 14px;box-shadow:0 1px 3px rgba(0,0,0,.05);background:#FDF2E7}
+.cref{display:inline-flex;align-items:center;gap:7px;background:#FBF1DC;border:1.5px solid #E8D6AE;color:#854F0B;border-radius:999px;padding:6px 13px;font-family:'Fredoka';font-size:13px;margin-top:6px}
+.cref .bk{flex:none}
+.soon{display:flex;align-items:flex-start;gap:14px}
+.soon .soon-sole{flex:none;background:#FBEDE8;border-radius:14px;padding:6px;display:flex}
+.soon h3{margin-top:2px}
+.soon .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.soon .tags span{font-size:12.5px;font-weight:700;background:#FFFDF9;border:1.5px solid var(--line);border-radius:999px;padding:4px 11px;color:var(--muted)}
+@media(max-width:560px){.opener .op-prop{display:none}.soon{gap:10px}}
+
+
+/* ---- vlaggen + landfiche ---- */
+.flag-ico{display:inline-block;width:54px;height:40px;border-radius:4px;box-shadow:0 0 0 1px rgba(0,0,0,.10);flex:none;background-color:#f3eee5}
+.fiche-top{display:flex;align-items:center;gap:14px}
+.fiche-name .pais{font-family:'Fredoka';font-size:21px;display:flex;align-items:center;gap:9px;color:var(--ink)}
+.fiche .iconbtn{padding:5px 11px;font-size:13px}
+.fiche-name .gentsub{font-size:13px;color:var(--muted);margin-top:1px}
+.fiche-rows{display:grid;grid-template-columns:1fr 1fr;gap:9px 14px;margin-top:13px}
+.frow{display:flex;flex-direction:column;border-left:3px solid #EFE7DA;padding-left:10px}
+.flab{font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:800}
+.fval{font-size:15px;font-weight:700;color:var(--ink)}
+.dato{display:flex;gap:10px;align-items:flex-start;background:#FBF1DC;border:1.5px solid #E8D6AE;border-radius:12px;padding:11px 13px;margin-top:13px;font-size:14px;line-height:1.45}
+.dato .dato-ic{flex:none;font-size:18px;line-height:1.2}
+.dato b{color:#854F0B}
+.dato .gloss{display:block;color:#AFA39A;font-style:italic;font-size:12.5px;margin-top:2px}
+.fiche-empty{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:14.5px;padding:4px 0}
+.paisgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(94px,1fr));gap:8px;margin-top:8px}
+.ptile{display:flex;flex-direction:column;align-items:center;gap:6px;border:1.6px solid var(--line);border-radius:12px;padding:9px 6px 8px;background:#FFFDF9;cursor:pointer;transition:.12s;text-align:center}
+.ptile:hover{border-color:var(--terra);background:#FBEDE8}
+.ptile.sel{border-color:var(--terra);background:#FBEDE8;box-shadow:0 0 0 2px #F3D6CB}
+.ptile .flag-ico{width:46px;height:34px}
+.ptile .pn{font-size:11.5px;font-weight:700;line-height:1.15;color:var(--ink)}
+
+
+/* ---- Cultura ---- */
+.culintro{display:flex;align-items:flex-start;gap:13px;background:#FFF6EC}
+.culintro .ci-sole{flex:none;background:#FBEDE8;border-radius:14px;padding:5px;display:flex}
+.culintro p{margin:3px 0 0;font-size:14.5px;line-height:1.5}
+.cultext{font-size:14px;line-height:1.55;color:var(--ink);margin:0 0 11px}
+.cultext .gloss{display:block;color:#AFA39A;font-style:italic;font-size:12.5px;margin-top:3px}
+.mt-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+.mt-col{display:flex;flex-direction:column;gap:8px}
+.mt-colhd{font-family:'Fredoka';font-size:13px;color:var(--ochre);text-align:center;margin-bottom:1px}
+.mt-item{display:flex;align-items:center;gap:9px;border:1.6px solid var(--line);background:#FFFDF9;border-radius:11px;padding:9px 11px;cursor:pointer;font-weight:700;font-size:14px;transition:.12s;text-align:left;min-height:44px}
+.mt-item:hover{border-color:#D8CFBE}
+.mt-item.sel{border-color:var(--terra);background:#FBEDE8;box-shadow:0 0 0 2px #F3D6CB}
+.mt-item.good{border-color:#9FCCBF;background:var(--good-bg);color:var(--good);cursor:default}
+.mt-item.bad{border-color:#E9B79C;background:var(--bad-bg);color:var(--bad)}
+.mt-item .flag-ico{width:34px;height:25px}
+.duel-q{font-weight:700;font-size:15px;text-align:center;margin:4px 0 10px}
+.duel-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.duel-card{display:flex;flex-direction:column;align-items:center;gap:8px;border:1.8px solid var(--line);background:#FFFDF9;border-radius:14px;padding:16px 10px 13px;cursor:pointer;transition:.12s}
+.duel-card:hover{border-color:var(--terra);background:#FBEDE8}
+.duel-card .flag-ico{width:62px;height:46px}
+.duel-card .dc-name{font-size:16px;text-align:center}
+.duel-card.good{border-color:#9FCCBF;background:var(--good-bg)}
+.duel-card.bad{border-color:#E9B79C;background:var(--bad-bg)}
+.dc-area{font-size:13px;font-weight:800;color:var(--ochre)}
+.duel-done{font-family:'Fredoka';font-size:16px;color:var(--ochre);text-align:center;margin-bottom:8px}
+.duel-fact{background:#FBF1DC;border:1.5px solid #E8D6AE;border-radius:12px;padding:11px 13px;font-size:14px;line-height:1.45;text-align:center}
+.duel-fact b{color:#854F0B}
+
+
+/* ---- Ejercicios digitales ---- */
+.ws-grid{display:grid;gap:3px;margin:8px 0;max-width:430px}
+.ws-c{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;background:#FFFDF9;border:1px solid var(--line);border-radius:5px;font-family:'Fredoka';font-size:13px;cursor:pointer;user-select:none;color:var(--ink)}
+.ws-c.sel{background:#FBEDE8;border-color:var(--terra);color:var(--terra)}
+.ws-c.found{background:var(--good-bg);border-color:#9FCCBF;color:var(--good)}
+.ws-list{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px}
+.ws-w{font-weight:700;font-size:13px;border:1.5px solid var(--line);border-radius:999px;padding:4px 11px;background:#fff;color:var(--ink)}
+.ws-w.done{background:var(--good-bg);border-color:#9FCCBF;color:var(--good);text-decoration:line-through}
+.ord-bank{display:flex;flex-direction:column;gap:7px;margin:8px 0}
+.ord-chip{border:1.6px solid var(--line);background:#FFFDF9;border-radius:11px;padding:9px 12px;cursor:pointer;font-weight:700;font-size:14px;transition:.12s}
+.ord-chip:hover{border-color:#D8CFBE}
+.ord-chip.used{opacity:.4;cursor:default;background:#F3EEE5}
+.ord-target{display:flex;flex-direction:column;gap:7px;margin-top:8px;min-height:8px}
+.ord-line{display:flex;align-items:center;gap:10px;border:1.6px solid var(--line);background:#fff;border-radius:11px;padding:9px 12px;font-weight:700;font-size:14px}
+.ord-line.good{background:var(--good-bg);border-color:#9FCCBF;color:var(--good)}
+.ord-line.bad{background:var(--bad-bg);border-color:#E9B79C;color:var(--bad)}
+.ord-num{flex:none;width:24px;height:24px;border-radius:50%;background:var(--ochre);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Fredoka';font-size:13px}
+.bld-target{display:flex;flex-wrap:wrap;gap:6px;min-height:30px;margin:8px 0;padding:8px;border:1.5px dashed #DCD4C5;border-radius:11px;background:#FFFDF9}
+.bld-target.good{border-color:#9FCCBF;background:var(--good-bg)}
+.bld-target.bad{border-color:#E9B79C;background:var(--bad-bg)}
+.bld-w{font-weight:700;font-size:14px;background:#FBF1DC;border-radius:8px;padding:4px 9px;color:var(--ochre)}
+.bld-bank{display:flex;flex-wrap:wrap;gap:7px}
+.chip.used{opacity:.4;cursor:default}
+.numword{font-family:'Fredoka';font-size:24px;color:var(--terra)}
+.numrow{display:flex;align-items:center;gap:12px;margin-top:4px}
+.numin{font-family:'Fredoka';font-size:18px;width:120px;padding:8px 12px;border:1.6px solid var(--line);border-radius:11px;text-align:center;background:#FFFDF9}
+.numin:focus{outline:none;border-color:var(--terra)}
+@media(max-width:480px){.ws-c{font-size:11px}}
+
+
+/* ---- Ampliación + autoevaluación ---- */
+.amp{border:1.5px solid #D9D6F2;background:#F8F7FE}
+.amp-badge{display:inline-flex;align-items:center;gap:6px;background:#EEEDFE;color:#3C3489;border-radius:999px;padding:3px 11px;font-family:'Fredoka';font-size:12px;font-weight:600;margin-bottom:9px}
+.amp h3{color:#3C3489}
+.ampref{background:#fff;border:1px solid #D9D6F2;border-radius:11px;padding:11px 13px;font-size:14px;margin:8px 0;line-height:1.55}
+.ampref b{color:#3C3489}
+.traba{font-family:'Fredoka';font-size:16px;line-height:1.75;color:#3C3489;background:#fff;border:1px solid #D9D6F2;border-radius:11px;padding:13px 15px;margin:9px 0}
+.ya{display:flex;flex-direction:column;gap:7px}
+.ya-item{display:flex;align-items:center;gap:11px;border:1.6px solid var(--line);background:#FFFDF9;border-radius:11px;padding:10px 13px;cursor:pointer;font-weight:700;font-size:14px;transition:.12s}
+.ya-item:hover{border-color:#D8CFBE}
+.ya-item.on{border-color:#9FCCBF;background:var(--good-bg);color:var(--good)}
+.ya-box{flex:none;width:24px;height:24px;border-radius:7px;border:2px solid #CFC8BB;display:flex;align-items:center;justify-content:center;font-size:14px;background:#fff;color:#fff}
+.ya-item.on .ya-box{background:#0F6E56;border-color:#0F6E56}
+
+</style>
+</head>
+<body>
+<header><div class="header-in"><span class="sun-badge"><svg viewBox="0 0 88 88" width="50" height="50" style="flex:none"><g stroke="#BC4A2F" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M0 -28 q2 -7 -1 -12"/><path d="M22 -16 q6 -4 8 -9"/><path d="M30 4 q8 0 13 -2"/><path d="M22 22 q6 4 8 10"/><path d="M-22 -16 q-6 -4 -8 -9"/><path d="M-30 4 q-8 -1 -13 -3"/><path d="M-22 22 q-6 4 -9 9"/></g><path d="M0 -22 C16 -23 27 -11 26 3 C27 18 14 28 0 27 C-15 28 -27 17 -26 3 C-27 -11 -15 -22 0 -22 Z" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.8" stroke-linejoin="round"/><circle cx="-9" cy="-2" r="3.1" fill="#3A2A18"/><circle cx="9" cy="-3" r="2.8" fill="#3A2A18"/><path d="M-10 9 Q0 18 11 8" stroke="#3A2A18" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="-14" cy="9" r="4" fill="#F2A99A" opacity=".6"/><circle cx="15" cy="8" r="4" fill="#F2A99A" opacity=".6"/><g transform="translate(-23,21)"><ellipse cx="0" cy="0" rx="6.5" ry="7.5" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.2"/><g stroke="#BC4A2F" stroke-width="1.7" stroke-linecap="round"><line x1="-3" y1="-4" x2="-3" y2="-9"/><line x1="0" y1="-5" x2="0" y2="-11"/><line x1="3" y1="-4" x2="3" y2="-9"/></g></g></svg></span><div><div class="eyebrow">UNIDAD 1 · ESPAÑOL · 3ᵉ GRAAD</div><h1 class="fred">¿Quién eres?</h1><p>Oefen hier: saludos, datos personales, ser, werkwoorden en woordenschat.</p></div></div></header>
+<nav class="tabs" id="tabs">
+<button data-t="descubrir" class="active">👋 Calentamiento</button>
+<button data-t="vocabulario">🗂️ Vocabulario</button>
+<button data-t="forma">🔤 Forma</button>
+<button data-t="gramatica">🧩 Gramática</button>
+<button data-t="conjugador">🔁 Conjugador</button>
+<button data-t="comunicar">💬 Comunicar</button>
+<button data-t="repasar">✅ Repasar</button>
+<button data-t="extra">✨ Extra</button>
+</nav>
+
+<div class="wrap">
+
+<section class="panel active" id="descubrir"><div class="sec-title"><span class="dot" style="background:#0F6E56">👋</span><h2 class="fred">Calentamiento — repaso de la Unidad 0</h2><span class="opener"><svg viewBox="0 0 88 88" width="42" height="42" style="flex:none"><g stroke="#BC4A2F" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M0 -28 q2 -7 -1 -12"/><path d="M22 -16 q6 -4 8 -9"/><path d="M30 4 q8 0 13 -2"/><path d="M22 22 q6 4 8 10"/><path d="M-22 -16 q-6 -4 -8 -9"/><path d="M-30 4 q-8 -1 -13 -3"/><path d="M-22 22 q-6 4 -9 9"/></g><path d="M0 -22 C16 -23 27 -11 26 3 C27 18 14 28 0 27 C-15 28 -27 17 -26 3 C-27 -11 -15 -22 0 -22 Z" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.8" stroke-linejoin="round"/><circle cx="-9" cy="-2" r="3.1" fill="#3A2A18"/><circle cx="9" cy="-3" r="2.8" fill="#3A2A18"/><path d="M-10 9 Q0 18 11 8" stroke="#3A2A18" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="-14" cy="9" r="4" fill="#F2A99A" opacity=".6"/><circle cx="15" cy="8" r="4" fill="#F2A99A" opacity=".6"/><g transform="translate(-23,21)"><ellipse cx="0" cy="0" rx="6.5" ry="7.5" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.2"/><g stroke="#BC4A2F" stroke-width="1.7" stroke-linecap="round"><line x1="-3" y1="-4" x2="-3" y2="-9"/><line x1="0" y1="-5" x2="0" y2="-11"/><line x1="3" y1="-4" x2="3" y2="-9"/></g></g></svg></span></div><p class="sec-sub">Un repaso rápido de los saludos y las presentaciones de la Unidad 0.</p><div class="card culintro"><span class="ci-sole"><svg viewBox="0 0 88 88" width="52" height="52" style="flex:none"><g stroke="#BC4A2F" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M0 -28 q2 -7 -1 -12"/><path d="M22 -16 q6 -4 8 -9"/><path d="M30 4 q8 0 13 -2"/><path d="M22 22 q6 4 8 10"/><path d="M-22 -16 q-6 -4 -8 -9"/><path d="M-30 4 q-8 -1 -13 -3"/><path d="M-22 22 q-6 4 -9 9"/></g><path d="M0 -22 C16 -23 27 -11 26 3 C27 18 14 28 0 27 C-15 28 -27 17 -26 3 C-27 -11 -15 -22 0 -22 Z" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.8" stroke-linejoin="round"/><circle cx="-9" cy="-2" r="3.1" fill="#3A2A18"/><circle cx="9" cy="-3" r="2.8" fill="#3A2A18"/><path d="M-10 9 Q0 18 11 8" stroke="#3A2A18" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="-14" cy="9" r="4" fill="#F2A99A" opacity=".6"/><circle cx="15" cy="8" r="4" fill="#F2A99A" opacity=".6"/><g transform="translate(-23,21)"><ellipse cx="0" cy="0" rx="6.5" ry="7.5" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.2"/><g stroke="#BC4A2F" stroke-width="1.7" stroke-linecap="round"><line x1="-3" y1="-4" x2="-3" y2="-9"/><line x1="0" y1="-5" x2="0" y2="-11"/><line x1="3" y1="-4" x2="3" y2="-9"/></g></g></svg></span><p><b>¡Hola otra vez!</b> Antes de empezar la Unidad 1, repasamos los <b>saludos</b> y las <b>presentaciones</b> que ya conoces de la <b>Unidad 0</b>. ¡Vamos!</p></div><div class="card"><h3>Completa el diálogo</h3><div class="instr">Tik een woord uit de lijst aan en tik daarna op een open plek.</div><div id="u1-saludo"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §0 · 0.2</div></div><div class="card"><h3>Empareja · pregunta y respuesta</h3><div class="instr">Klik links een zin en daarna rechts het juiste antwoord.</div><div id="u1-salupr"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §0</div></div><div class="card"><h3>Saludos y gestos del mundo hispano 👋</h3><p class="cultext">Saludar es muy importante: el gesto cambia según el país y la situación. <span class="gloss">Begroeten is belangrijk; het gebaar verschilt per land en situatie.</span></p><div class="gesto-grid"><div class="gesto-card"><div class="gesto-emoji">💋💋</div><div class="gesto-t">Dos besos</div><div class="gesto-d">España · con amigos y familia (uno en cada mejilla).</div></div><div class="gesto-card"><div class="gesto-emoji">💋</div><div class="gesto-t">Un beso</div><div class="gesto-d">Muchos países de Latinoamérica.</div></div><div class="gesto-card"><div class="gesto-emoji">🤝</div><div class="gesto-t">Apretón de manos</div><div class="gesto-d">Situaciones formales o con desconocidos.</div></div></div><div class="instr" style="margin-top:13px">Y de palabra, cada región tiene su saludo informal. Empareja el saludo con el país.</div><div id="u1-saluregion"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §0 · Ampliación</div></div></section>
+
+<section class="panel" id="vocabulario"><div class="sec-title"><span class="dot" style="background:#B5791A">🗂️</span><h2 class="fred">Vocabulario — Unidad 1</h2><span class="opener"><svg viewBox="0 0 88 88" width="42" height="42" style="flex:none"><g stroke="#BC4A2F" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M0 -28 q2 -7 -1 -12"/><path d="M22 -16 q6 -4 8 -9"/><path d="M30 4 q8 0 13 -2"/><path d="M22 22 q6 4 8 10"/><path d="M-22 -16 q-6 -4 -8 -9"/><path d="M-30 4 q-8 -1 -13 -3"/><path d="M-22 22 q-6 4 -9 9"/></g><path d="M0 -22 C16 -23 27 -11 26 3 C27 18 14 28 0 27 C-15 28 -27 17 -26 3 C-27 -11 -15 -22 0 -22 Z" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.8" stroke-linejoin="round"/><circle cx="-9" cy="-2" r="3.1" fill="#3A2A18"/><circle cx="9" cy="-3" r="2.8" fill="#3A2A18"/><path d="M-10 9 Q0 18 11 8" stroke="#3A2A18" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="-14" cy="9" r="4" fill="#F2A99A" opacity=".6"/><circle cx="15" cy="8" r="4" fill="#F2A99A" opacity=".6"/><g transform="translate(-23,21)"><ellipse cx="0" cy="0" rx="6.5" ry="7.5" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.2"/><g stroke="#BC4A2F" stroke-width="1.7" stroke-linecap="round"><line x1="-3" y1="-4" x2="-3" y2="-9"/><line x1="0" y1="-5" x2="0" y2="-11"/><line x1="3" y1="-4" x2="3" y2="-9"/></g></g></svg><svg viewBox="0 0 48 48" width="40" height="40" style="flex:none"><circle cx="24" cy="24" r="16" fill="#CDEAE0" stroke="#0F6E56" stroke-width="2"/><ellipse cx="24" cy="24" rx="7" ry="16" fill="none" stroke="#0F6E56" stroke-width="1.6"/><line x1="8" y1="24" x2="40" y2="24" stroke="#0F6E56" stroke-width="1.6"/><path d="M11 17 Q24 21 37 17 M11 31 Q24 27 37 31" fill="none" stroke="#0F6E56" stroke-width="1.4"/></svg></span></div><p class="sec-sub">Las palabras de la unidad: saludos, datos, profesiones, verbos… y el mundo hispano.</p><div class="card culintro"><span class="ci-sole"><svg viewBox="0 0 88 88" width="52" height="52" style="flex:none"><g stroke="#BC4A2F" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M0 -28 q2 -7 -1 -12"/><path d="M22 -16 q6 -4 8 -9"/><path d="M30 4 q8 0 13 -2"/><path d="M22 22 q6 4 8 10"/><path d="M-22 -16 q-6 -4 -8 -9"/><path d="M-30 4 q-8 -1 -13 -3"/><path d="M-22 22 q-6 4 -9 9"/></g><path d="M0 -22 C16 -23 27 -11 26 3 C27 18 14 28 0 27 C-15 28 -27 17 -26 3 C-27 -11 -15 -22 0 -22 Z" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.8" stroke-linejoin="round"/><circle cx="-9" cy="-2" r="3.1" fill="#3A2A18"/><circle cx="9" cy="-3" r="2.8" fill="#3A2A18"/><path d="M-10 9 Q0 18 11 8" stroke="#3A2A18" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="-14" cy="9" r="4" fill="#F2A99A" opacity=".6"/><circle cx="15" cy="8" r="4" fill="#F2A99A" opacity=".6"/><g transform="translate(-23,21)"><ellipse cx="0" cy="0" rx="6.5" ry="7.5" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.2"/><g stroke="#BC4A2F" stroke-width="1.7" stroke-linecap="round"><line x1="-3" y1="-4" x2="-3" y2="-9"/><line x1="0" y1="-5" x2="0" y2="-11"/><line x1="3" y1="-4" x2="3" y2="-9"/></g></g></svg></span><p><b>¡A por las palabras!</b> Practica el vocabulario con las <b>tarjetas</b> (flashcards) y los ejercicios. Al final están los <b>países</b>, las <b>nacionalidades</b> y los <b>idiomas</b>.</p></div><div class="card"><h3>Tarjetas de vocabulario</h3><div class="instr">Kies een thema, tik op de kaart om te draaien, en tik 🔊 om te luisteren.</div><div id="v-flash"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §V</div></div><div class="card"><h3>V.1 · Elige la palabra correcta</h3><div class="instr">Kies het juiste woord.</div><div id="v-q1"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §V · V.1</div></div><div class="card"><h3>V.2 · Completa la palabra</h3><div class="instr">Vul het woord aan; we geven de eerste letter.</div><div id="v-q2"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §V · V.2</div></div><div class="card"><h3>V.3 · Completa el texto</h3><div class="instr">Tik een woord uit het kader en daarna een open plek.</div><div id="v-q3"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §V · V.3</div></div><div class="card"><h3>V.4 · Completa el texto (sin recuadro)</h3><div class="instr">Nu zonder kader: typ zelf het juiste woord.</div><div id="v-q4"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §V · V.4</div></div><div class="sec-sub2">🌍 Países, nacionalidades e idiomas</div><div class="card"><h3>Países, nacionalidades e idiomas</h3><div class="dato" style="margin-bottom:11px"><span class="dato-ic">💡</span><div>El <b>gentilicio masculino</b> suele ser también el <b>idioma</b>: soy <b>español</b> → hablo <b>español</b>. Pero ¡ojo!: <b>Bélgica</b> → neerlandés, francés y alemán, <b>Brasil</b> → portugués.<span class="gloss">De mannelijke nationaliteit is meestal ook de taal — op enkele uitzonderingen na.</span></div></div><div class="instr">Schrijf de nationaliteit (mannelijk) en de taal. Tik 🔊 om te luisteren.</div><div id="u1-pni"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §2 · Ampliación</div></div><div class="card"><h3>Transforma las frases</h3><div class="instr">Verander «X es de + land» in «X es + nationaliteit». Let op het geslacht! Tik 🔊 om je antwoord te horen.</div><div class="tf-model"><span class="tf-q">“</span>Él es de Italia <b>=</b> Él es italiano<span class="tf-q">”</span></div><div id="u1-transforma"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §2</div></div><div class="card"><h3>Relaciona · país y lengua</h3><div class="instr">¿Qué lengua hablan? Klik links een land en daarna rechts de taal.</div><div id="u1-paislengua"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §2</div></div><div class="card"><h3>El género de los gentilicios</h3><div class="instr">Wissel tussen <b>masculino</b> en <b>femenino</b> en kijk hoe de uitgang verandert. Sommige veranderen niet!</div><div id="u1-gentmorph"></div><div class="instr" style="margin-top:14px">Sleep elk gentilicio naar de juiste kolom: verandert het (m./v.) of niet?</div><div id="u1-gentsort"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §2</div></div></section><section class="panel" id="forma"><div class="sec-title"><span class="dot" style="background:#3C3489">🔤</span><h2 class="fred">Forma — género, número y artículos</h2><span class="opener"><svg viewBox="0 0 88 88" width="42" height="42" style="flex:none"><g stroke="#BC4A2F" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M0 -28 q2 -7 -1 -12"/><path d="M22 -16 q6 -4 8 -9"/><path d="M30 4 q8 0 13 -2"/><path d="M22 22 q6 4 8 10"/><path d="M-22 -16 q-6 -4 -8 -9"/><path d="M-30 4 q-8 -1 -13 -3"/><path d="M-22 22 q-6 4 -9 9"/></g><path d="M0 -22 C16 -23 27 -11 26 3 C27 18 14 28 0 27 C-15 28 -27 17 -26 3 C-27 -11 -15 -22 0 -22 Z" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.8" stroke-linejoin="round"/><circle cx="-9" cy="-2" r="3.1" fill="#3A2A18"/><circle cx="9" cy="-3" r="2.8" fill="#3A2A18"/><path d="M-10 9 Q0 18 11 8" stroke="#3A2A18" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="-14" cy="9" r="4" fill="#F2A99A" opacity=".6"/><circle cx="15" cy="8" r="4" fill="#F2A99A" opacity=".6"/><g transform="translate(-23,21)"><ellipse cx="0" cy="0" rx="6.5" ry="7.5" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.2"/><g stroke="#BC4A2F" stroke-width="1.7" stroke-linecap="round"><line x1="-3" y1="-4" x2="-3" y2="-9"/><line x1="0" y1="-5" x2="0" y2="-11"/><line x1="3" y1="-4" x2="3" y2="-9"/></g></g></svg></span></div><p class="sec-sub">Los sustantivos tienen género (m./f.) y número (sing./pl.). El artículo cambia con ellos.</p><div class="card"><h3>El género: <span style="color:#0F6E56">el</span> / <span style="color:#BC4A2F">la</span></h3><div class="gx-grid"><div class="gx gx-m"><div class="gx-h">MASCULINO · el</div><div class="gx-r">termina en <b>-o</b></div><div class="gx-ex">el libr<b>o</b> · el chic<b>o</b> · el bolígraf<b>o</b></div><div class="gx-sub">también: <b>-or</b> (el color), <b>-aje</b> (el viaje)</div></div><div class="gx gx-f"><div class="gx-h">FEMENINO · la</div><div class="gx-r">termina en <b>-a</b></div><div class="gx-ex">la cas<b>a</b> · la chic<b>a</b> · la mes<b>a</b></div><div class="gx-sub">también: <b>-ción</b> (la canción), <b>-dad</b> (la ciudad)</div></div></div><div class="dato" style="margin-top:11px"><span class="dato-ic">⚠️</span><div>Excepciones: <b>el</b> día, <b>el</b> mapa, <b>el</b> problema, <b>el</b> idioma · <b>la</b> mano, <b>la</b> foto. Las palabras en <b>-ma</b> suelen ser masculinas (el tema, el sistema).<span class="gloss">Niet alles volgt de regel — leer de uitzonderingen uit het hoofd.</span></div></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §6</div></div><div class="card"><h3>El número y los artículos</h3><div class="rule-row"><span class="rule-k">vocal → +s</span> casa → casa<b>s</b> · libro → libro<b>s</b></div><div class="rule-row"><span class="rule-k">consonante → +es</span> profesor → profesor<b>es</b> · ciudad → ciudad<b>es</b></div><div class="rule-row"><span class="rule-k">-z → -ces</span> lápiz → lápi<b>ces</b> · luz → lu<b>ces</b></div><table class="art-tbl"><tr><th></th><th>masculino</th><th>femenino</th></tr><tr><td>singular</td><td>el · un</td><td>la · una</td></tr><tr><td>plural</td><td>los · unos</td><td>las · unas</td></tr></table><div class="instr">El artículo concuerda en género y número: el libro → los libros · una casa → unas casas.</div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §6</div></div><div class="card"><h3>¿Masculino o femenino?</h3><div class="instr">Sleep elk woord naar de juiste kolom volgens het geslacht.</div><div id="f-gensort"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §6 · 6.1</div></div><div class="card"><h3>Marca las palabras masculinas</h3><div class="instr">Klik de <b>mannelijke</b> zelfstandige naamwoorden aan en druk dan op Comprobar.</div><div id="f-marca"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §6</div></div><div class="card"><h3>Laberinto 🧩</h3><div class="instr">Verlaat het doolhof: klik enkel <b>vrouwelijke</b> woorden, telkens naar een <b>aangrenzend</b> vakje. Start linksboven, uitgang rechtsonder.</div><div id="f-lab"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §6</div></div><div class="card"><h3>Laberinto · variante masculina 🧩</h3><div class="instr">Zelfde spel, maar nu klik je enkel <b>mannelijke</b> woorden om te ontsnappen.</div><div id="f-lab-m"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §6</div></div><div class="card"><h3>Completa la regla · masculino → femenino</h3><div class="instr">Sleep elk woord naar de regel die het van mannelijk naar vrouwelijk verandert.</div><div id="f-regla"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §6</div></div><div class="card"><h3>Completa con el género opuesto</h3><div class="instr">Zet alles om: <b>mannelijk enkelvoud → vrouwelijk meervoud</b> (lidwoord, zelfstandig naamwoord én bijvoeglijk naamwoord!).</div><div class="tf-model"><span class="tf-q">“</span>el profesor español <b>→</b> las profesoras españolas<span class="tf-q">”</span></div><div id="f-opuesto"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §6 · 6.2</div></div></section><section class="panel" id="gramatica"><div class="sec-title"><span class="dot" style="background:#3C3489">🧩</span><h2 class="fred">Gramática — pronombres y verbos</h2><span class="opener"><svg viewBox="0 0 88 88" width="42" height="42" style="flex:none"><g stroke="#BC4A2F" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M0 -28 q2 -7 -1 -12"/><path d="M22 -16 q6 -4 8 -9"/><path d="M30 4 q8 0 13 -2"/><path d="M22 22 q6 4 8 10"/><path d="M-22 -16 q-6 -4 -8 -9"/><path d="M-30 4 q-8 -1 -13 -3"/><path d="M-22 22 q-6 4 -9 9"/></g><path d="M0 -22 C16 -23 27 -11 26 3 C27 18 14 28 0 27 C-15 28 -27 17 -26 3 C-27 -11 -15 -22 0 -22 Z" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.8" stroke-linejoin="round"/><circle cx="-9" cy="-2" r="3.1" fill="#3A2A18"/><circle cx="9" cy="-3" r="2.8" fill="#3A2A18"/><path d="M-10 9 Q0 18 11 8" stroke="#3A2A18" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="-14" cy="9" r="4" fill="#F2A99A" opacity=".6"/><circle cx="15" cy="8" r="4" fill="#F2A99A" opacity=".6"/><g transform="translate(-23,21)"><ellipse cx="0" cy="0" rx="6.5" ry="7.5" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.2"/><g stroke="#BC4A2F" stroke-width="1.7" stroke-linecap="round"><line x1="-3" y1="-4" x2="-3" y2="-9"/><line x1="0" y1="-5" x2="0" y2="-11"/><line x1="3" y1="-4" x2="3" y2="-9"/></g></g></svg></span></div><p class="sec-sub">Wie doet de actie (pronombres) en hoe vervoeg je werkwoorden in de tegenwoordige tijd.</p><div class="card culintro"><span class="ci-sole"><svg viewBox="0 0 88 88" width="52" height="52" style="flex:none"><g stroke="#BC4A2F" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M0 -28 q2 -7 -1 -12"/><path d="M22 -16 q6 -4 8 -9"/><path d="M30 4 q8 0 13 -2"/><path d="M22 22 q6 4 8 10"/><path d="M-22 -16 q-6 -4 -8 -9"/><path d="M-30 4 q-8 -1 -13 -3"/><path d="M-22 22 q-6 4 -9 9"/></g><path d="M0 -22 C16 -23 27 -11 26 3 C27 18 14 28 0 27 C-15 28 -27 17 -26 3 C-27 -11 -15 -22 0 -22 Z" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.8" stroke-linejoin="round"/><circle cx="-9" cy="-2" r="3.1" fill="#3A2A18"/><circle cx="9" cy="-3" r="2.8" fill="#3A2A18"/><path d="M-10 9 Q0 18 11 8" stroke="#3A2A18" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="-14" cy="9" r="4" fill="#F2A99A" opacity=".6"/><circle cx="15" cy="8" r="4" fill="#F2A99A" opacity=".6"/><g transform="translate(-23,21)"><ellipse cx="0" cy="0" rx="6.5" ry="7.5" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.2"/><g stroke="#BC4A2F" stroke-width="1.7" stroke-linecap="round"><line x1="-3" y1="-4" x2="-3" y2="-9"/><line x1="0" y1="-5" x2="0" y2="-11"/><line x1="3" y1="-4" x2="3" y2="-9"/></g></g></svg></span><p><b>¡A conjugar!</b> Primero los <b>pronombres</b> (yo, tú, él…), luego el verbo <b>ser</b> y los verbos regulares en <b>-ar / -er / -ir</b>. Practica con la animación y los juegos.</p></div><div class="card"><h3>Pronombres personales</h3><table class="pron-tbl"><tr><th></th><th>1ª persona</th><th>2ª persona</th><th>3ª persona</th></tr><tr><td>singular</td><td>yo<span>ik</span></td><td>tú<span>jij</span></td><td>él / ella / usted<span>hij / zij / u</span></td></tr><tr><td>plural</td><td>nosotros/as<span>wij</span></td><td>vosotros/as<span>jullie</span></td><td>ellos / ellas / ustedes<span>zij</span></td></tr></table><div class="dato" style="margin-top:10px"><span class="dato-ic">💡</span><div><b>usted</b> y <b>ustedes</b> = «tú/jullie» formeel, maar met het werkwoord in de <b>3ª persona</b> (usted habla, ustedes hablan).<span class="gloss">In Spanje is vosotros informeel; in Latijns-Amerika gebruikt men altijd ustedes.</span></div></div><div class="instr" style="margin-top:11px">Verbind elk pronombre met de Nederlandse vertaling.</div><div id="g-pron"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §5</div></div><div class="card"><h3>El verbo <span style="color:#3C3489">ser</span></h3><div class="instr">Onregelmatig én heel belangrijk: voor wie je bent, waar je vandaan komt en je beroep.</div><div class="ser-box"><div class="ser-col"><div class="ser-h">SINGULAR</div><div class="ser-row"><span>yo</span><b>soy</b></div><div class="ser-row"><span>tú</span><b>eres</b></div><div class="ser-row"><span>él / ella / usted</span><b>es</b></div></div><div class="ser-col"><div class="ser-h">PLURAL</div><div class="ser-row"><span>nosotros/as</span><b>somos</b></div><div class="ser-row"><span>vosotros/as</span><b>sois</b></div><div class="ser-row"><span>ellos / ustedes</span><b>son</b></div></div></div><div class="ser-foot"><b>soy</b> de… (origen) · <b>soy</b> belga (nacionalidad) · <b>soy</b> estudiante (profesión)</div><div class="instr" style="margin-top:11px">Vul aan met de juiste vorm van <b>ser</b>.</div><div id="g-ser"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §3</div></div><div class="card"><h3>Verbos regulares en -ar / -er / -ir</h3><div class="instr">Bekijk de <b>animatie</b>: van <i>infinitivo</i> naar <b>raíz + terminación</b>. De uitgang kleurt per groep. Let op de <b>klemtoon</b>: in het Spaans op de stam (<b>HA</b>-blo), niet op de uitgang (dus niet «habló»). Speel af met ▶ of stap met ⏮ ⏭.</div><div id="g-conjuga"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §4</div></div><div class="card"><h3>Conjuga los verbos regulares</h3><div class="instr">Schrijf de zes vormen van elk werkwoord in de tegenwoordige tijd.</div><div id="g-conjej"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §4 · 4.1</div></div><div class="card"><h3>Completa con el presente regular</h3><div class="instr">Vul elke zin aan met de juiste vorm van het werkwoord tussen haakjes.</div><div id="g-completa"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §4 · 4.3</div></div><div class="card"><h3>Tablero · juego del dado 🎲</h3><div class="instr">Gooi de dobbelsteen, ga vooruit en vervoeg het werkwoord op het vakje. Raak je tot bij de META, dan win je!</div><div id="g-tablero"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §4</div></div></section><section class="panel" id="conjugador"><div class="sec-title"><span class="dot" style="background:#2E7D74">🔁</span><h2 class="fred">Conjugador — entrenador de verbos</h2><span class="opener"><svg viewBox="0 0 88 88" width="42" height="42" style="flex:none"><g stroke="#BC4A2F" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M0 -28 q2 -7 -1 -12"/><path d="M22 -16 q6 -4 8 -9"/><path d="M30 4 q8 0 13 -2"/><path d="M22 22 q6 4 8 10"/><path d="M-22 -16 q-6 -4 -8 -9"/><path d="M-30 4 q-8 -1 -13 -3"/><path d="M-22 22 q-6 4 -9 9"/></g><path d="M0 -22 C16 -23 27 -11 26 3 C27 18 14 28 0 27 C-15 28 -27 17 -26 3 C-27 -11 -15 -22 0 -22 Z" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.8" stroke-linejoin="round"/><circle cx="-9" cy="-2" r="3.1" fill="#3A2A18"/><circle cx="9" cy="-3" r="2.8" fill="#3A2A18"/><path d="M-10 9 Q0 18 11 8" stroke="#3A2A18" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="-14" cy="9" r="4" fill="#F2A99A" opacity=".6"/><circle cx="15" cy="8" r="4" fill="#F2A99A" opacity=".6"/><g transform="translate(-23,21)"><ellipse cx="0" cy="0" rx="6.5" ry="7.5" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.2"/><g stroke="#BC4A2F" stroke-width="1.7" stroke-linecap="round"><line x1="-3" y1="-4" x2="-3" y2="-9"/><line x1="0" y1="-5" x2="0" y2="-11"/><line x1="3" y1="-4" x2="3" y2="-9"/></g></g></svg></span></div><p class="sec-sub">Train de regelmatige werkwoorden in de tegenwoordige tijd, zo veel je wil.</p><div class="card culintro"><span class="ci-sole"><svg viewBox="0 0 88 88" width="52" height="52" style="flex:none"><g stroke="#BC4A2F" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M0 -28 q2 -7 -1 -12"/><path d="M22 -16 q6 -4 8 -9"/><path d="M30 4 q8 0 13 -2"/><path d="M22 22 q6 4 8 10"/><path d="M-22 -16 q-6 -4 -8 -9"/><path d="M-30 4 q-8 -1 -13 -3"/><path d="M-22 22 q-6 4 -9 9"/></g><path d="M0 -22 C16 -23 27 -11 26 3 C27 18 14 28 0 27 C-15 28 -27 17 -26 3 C-27 -11 -15 -22 0 -22 Z" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.8" stroke-linejoin="round"/><circle cx="-9" cy="-2" r="3.1" fill="#3A2A18"/><circle cx="9" cy="-3" r="2.8" fill="#3A2A18"/><path d="M-10 9 Q0 18 11 8" stroke="#3A2A18" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="-14" cy="9" r="4" fill="#F2A99A" opacity=".6"/><circle cx="15" cy="8" r="4" fill="#F2A99A" opacity=".6"/><g transform="translate(-23,21)"><ellipse cx="0" cy="0" rx="6.5" ry="7.5" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.2"/><g stroke="#BC4A2F" stroke-width="1.7" stroke-linecap="round"><line x1="-3" y1="-4" x2="-3" y2="-9"/><line x1="0" y1="-5" x2="0" y2="-11"/><line x1="3" y1="-4" x2="3" y2="-9"/></g></g></svg></span><p><b>¡A practicar!</b> Hieronder oefen je eindeloos de vervoeging van <b>regelmatige</b> werkwoorden op <b>-ar / -er / -ir</b>. Gebruik de tabel als geheugensteun.</p></div><div class="card"><h3>Las terminaciones del presente</h3><div class="instr">De uitgangen die je aan de <b>raíz</b> toevoegt. Elke groep heeft een eigen kleur.</div><table class="ends-tbl"><tr><th>persona</th><th class="t-ar">-ar</th><th class="t-er">-er</th><th class="t-ir">-ir</th></tr><tr><td>yo</td><td class="t-ar">-o</td><td class="t-er">-o</td><td class="t-ir">-o</td></tr><tr><td>tú</td><td class="t-ar">-as</td><td class="t-er">-es</td><td class="t-ir">-es</td></tr><tr><td>él / ella / usted</td><td class="t-ar">-a</td><td class="t-er">-e</td><td class="t-ir">-e</td></tr><tr><td>nosotros/as</td><td class="t-ar">-amos</td><td class="t-er">-emos</td><td class="t-ir">-imos</td></tr><tr><td>vosotros/as</td><td class="t-ar">-áis</td><td class="t-er">-éis</td><td class="t-ir">-ís</td></tr><tr><td>ellos / ellas / ustedes</td><td class="t-ar">-an</td><td class="t-er">-en</td><td class="t-ir">-en</td></tr></table><div class="gloss" style="margin-top:8px">💡 Alleen <b>nosotros</b> en <b>vosotros</b> verschillen tussen -er en -ir.</div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §4</div></div><div class="card cg-feature"><h3>Generador ♾️</h3><div class="instr">Een willekeurig regelmatig werkwoord + persoon. Typ de juiste vorm in de tegenwoordige tijd en bouw een <b>racha</b> (reeks goede antwoorden) op.</div><div id="cj-gen"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §4</div></div></section><section class="panel" id="comunicar"><div class="sec-title"><span class="dot" style="background:#BC4A2F">💬</span><h2 class="fred">Comunicar — ¡a hablar!</h2><span class="opener"><svg viewBox="0 0 88 88" width="42" height="42" style="flex:none"><g stroke="#BC4A2F" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M0 -28 q2 -7 -1 -12"/><path d="M22 -16 q6 -4 8 -9"/><path d="M30 4 q8 0 13 -2"/><path d="M22 22 q6 4 8 10"/><path d="M-22 -16 q-6 -4 -8 -9"/><path d="M-30 4 q-8 -1 -13 -3"/><path d="M-22 22 q-6 4 -9 9"/></g><path d="M0 -22 C16 -23 27 -11 26 3 C27 18 14 28 0 27 C-15 28 -27 17 -26 3 C-27 -11 -15 -22 0 -22 Z" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.8" stroke-linejoin="round"/><circle cx="-9" cy="-2" r="3.1" fill="#3A2A18"/><circle cx="9" cy="-3" r="2.8" fill="#3A2A18"/><path d="M-10 9 Q0 18 11 8" stroke="#3A2A18" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="-14" cy="9" r="4" fill="#F2A99A" opacity=".6"/><circle cx="15" cy="8" r="4" fill="#F2A99A" opacity=".6"/><g transform="translate(-23,21)"><ellipse cx="0" cy="0" rx="6.5" ry="7.5" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.2"/><g stroke="#BC4A2F" stroke-width="1.7" stroke-linecap="round"><line x1="-3" y1="-4" x2="-3" y2="-9"/><line x1="0" y1="-5" x2="0" y2="-11"/><line x1="3" y1="-4" x2="3" y2="-9"/></g></g></svg></span></div><p class="sec-sub">Mondelinge productie: stel jezelf voor, beantwoord vragen en interview een klasgenoot.</p><div class="card culintro"><span class="ci-sole"><svg viewBox="0 0 88 88" width="52" height="52" style="flex:none"><g stroke="#BC4A2F" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M0 -28 q2 -7 -1 -12"/><path d="M22 -16 q6 -4 8 -9"/><path d="M30 4 q8 0 13 -2"/><path d="M22 22 q6 4 8 10"/><path d="M-22 -16 q-6 -4 -8 -9"/><path d="M-30 4 q-8 -1 -13 -3"/><path d="M-22 22 q-6 4 -9 9"/></g><path d="M0 -22 C16 -23 27 -11 26 3 C27 18 14 28 0 27 C-15 28 -27 17 -26 3 C-27 -11 -15 -22 0 -22 Z" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.8" stroke-linejoin="round"/><circle cx="-9" cy="-2" r="3.1" fill="#3A2A18"/><circle cx="9" cy="-3" r="2.8" fill="#3A2A18"/><path d="M-10 9 Q0 18 11 8" stroke="#3A2A18" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="-14" cy="9" r="4" fill="#F2A99A" opacity=".6"/><circle cx="15" cy="8" r="4" fill="#F2A99A" opacity=".6"/><g transform="translate(-23,21)"><ellipse cx="0" cy="0" rx="6.5" ry="7.5" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.2"/><g stroke="#BC4A2F" stroke-width="1.7" stroke-linecap="round"><line x1="-3" y1="-4" x2="-3" y2="-9"/><line x1="0" y1="-5" x2="0" y2="-11"/><line x1="3" y1="-4" x2="3" y2="-9"/></g></g></svg></span><p><b>¡Ahora hablas tú!</b> Deze tab draait om <b>spreken</b>: je stelt jezelf voor, beantwoordt vragen hardop en leert de anderen kennen.</p></div><div class="card"><h3>¡Preséntate! · stel jezelf voor</h3><div class="instr">Maak je profiel en stel je voor aan de klas (5–6 zinnen), in een video of live.</div><div class="pasos"><div class="paso"><span class="paso-n">1</span> Completa tu perfil con tus datos.</div><div class="paso"><span class="paso-n">2</span> Escribe 5–6 frases sobre ti.</div><div class="paso"><span class="paso-n">3</span> Grábate en vídeo o preséntate en clase.</div></div><div class="modelo"><div class="modelo-h">Modelo · así se presenta Sara <span id="c-sara-audio"></span></div><p class="modelo-t">¡Hola! Me llamo Sara. Mi nombre al estilo español es <b>Sara Peeters Maes</b>. Tengo 16 años y soy belga, de Gante. Hablo neerlandés, francés y un poco de español. Estudio en el colegio Sint-Jan. Mi afición favorita es bailar.</p></div><div class="fu-h">Frases útiles</div><div class="fu-grid"><div class="fu">Me llamo… / Mi nombre completo es…</div><div class="fu">Soy de… <span>(ciudad / país)</span></div><div class="fu">Tengo … años.</div><div class="fu">Soy… <span>(nacionalidad)</span></div><div class="fu">Vivo en…</div><div class="fu">Hablo… <span>(idiomas)</span></div><div class="fu">Estudio en…</div><div class="fu">Mi afición favorita es…</div></div><div class="niveles"><div class="nivel"><b>Básico</b> Preséntate con 4 frases: nombre, edad, nacionalidad y ciudad.</div><div class="nivel"><b>Plus</b> 6 frases + tu nombre al estilo español + una afición.</div><div class="nivel"><b>Reto</b> Añade 2 frases sobre tu familia o tu rutina diaria.</div></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §8</div></div><div class="card"><h3>Preguntas para conocer a alguien</h3><div class="instr">Estas preguntas las necesitas para el dado y la entrevista. Toca 🔊 para escucharlas.</div><div id="c-preguntas"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §1 &amp; §2</div></div><div class="card"><h3>El dado de preguntas 🎲</h3><div class="instr">Tik op <b>Tirar</b> en beantwoord de vraag <b>hardop</b>. Tik 🔊 om de vraag te horen.</div><div id="c-dado"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §1 &amp; §8</div></div><div class="card"><h3>Entrevista a tu compañero/a</h3><div class="instr">Interview een klasgenoot met deze vragen en stel hem/haar daarna voor aan de klas, in de <b>3e persoon</b>.</div><div class="dato" style="margin-bottom:12px"><span class="dato-ic">💡</span><div>Om over <b>iemand anders</b> te praten (3ª persona): <b>es</b> <i>(ser)</i> · <b>tiene</b> … años <i>(tener)</i> · <b>habla</b> / <b>vive</b> / <b>estudia</b> <i>(-ar/-er/-ir)</i> · <b>su</b> afición. <span class="gloss">«tiene» is een voorproefje van <i>tener</i> — dat zie je volledig in Unidad 2.</span></div></div><div class="ent-q"><div class="ent-item">¿Cómo te llamas? ¿Cómo se escribe tu apellido?</div><div class="ent-item">¿Cuántos años tienes?</div><div class="ent-item">¿De dónde eres? ¿Cuál es tu nacionalidad?</div><div class="ent-item">¿Qué idiomas hablas?</div><div class="ent-item">¿Dónde vives? ¿Qué estudias?</div><div class="ent-item">¿Cuál es tu afición favorita?</div></div><div class="modelo"><div class="modelo-h">Modelo · presenta a tu compañero <span id="c-tom-audio"></span></div><p class="modelo-t">Os presento a <b>Tom</b>. Es de Bélgica, tiene 16 años y habla neerlandés y francés. Estudia en el colegio Sint-Jan. Su afición favorita es el fútbol.</p></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §8</div></div></section><section class="panel" id="repasar"><div class="sec-title"><span class="dot" style="background:#0F6E56">✅</span><h2 class="fred">Repasar — test final</h2><span class="opener"><svg viewBox="0 0 88 88" width="42" height="42" style="flex:none"><g stroke="#BC4A2F" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M0 -28 q2 -7 -1 -12"/><path d="M22 -16 q6 -4 8 -9"/><path d="M30 4 q8 0 13 -2"/><path d="M22 22 q6 4 8 10"/><path d="M-22 -16 q-6 -4 -8 -9"/><path d="M-30 4 q-8 -1 -13 -3"/><path d="M-22 22 q-6 4 -9 9"/></g><path d="M0 -22 C16 -23 27 -11 26 3 C27 18 14 28 0 27 C-15 28 -27 17 -26 3 C-27 -11 -15 -22 0 -22 Z" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.8" stroke-linejoin="round"/><circle cx="-9" cy="-2" r="3.1" fill="#3A2A18"/><circle cx="9" cy="-3" r="2.8" fill="#3A2A18"/><path d="M-10 9 Q0 18 11 8" stroke="#3A2A18" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="-14" cy="9" r="4" fill="#F2A99A" opacity=".6"/><circle cx="15" cy="8" r="4" fill="#F2A99A" opacity=".6"/><g transform="translate(-23,21)"><ellipse cx="0" cy="0" rx="6.5" ry="7.5" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.2"/><g stroke="#BC4A2F" stroke-width="1.7" stroke-linecap="round"><line x1="-3" y1="-4" x2="-3" y2="-9"/><line x1="0" y1="-5" x2="0" y2="-11"/><line x1="3" y1="-4" x2="3" y2="-9"/></g></g></svg></span></div><p class="sec-sub">Has terminado la Unidad 1. Repasa lo esencial y comprueba lo que ya sabes hacer.</p><div class="card culintro"><span class="ci-sole"><svg viewBox="0 0 88 88" width="52" height="52" style="flex:none"><g stroke="#BC4A2F" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M0 -28 q2 -7 -1 -12"/><path d="M22 -16 q6 -4 8 -9"/><path d="M30 4 q8 0 13 -2"/><path d="M22 22 q6 4 8 10"/><path d="M-22 -16 q-6 -4 -8 -9"/><path d="M-30 4 q-8 -1 -13 -3"/><path d="M-22 22 q-6 4 -9 9"/></g><path d="M0 -22 C16 -23 27 -11 26 3 C27 18 14 28 0 27 C-15 28 -27 17 -26 3 C-27 -11 -15 -22 0 -22 Z" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.8" stroke-linejoin="round"/><circle cx="-9" cy="-2" r="3.1" fill="#3A2A18"/><circle cx="9" cy="-3" r="2.8" fill="#3A2A18"/><path d="M-10 9 Q0 18 11 8" stroke="#3A2A18" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="-14" cy="9" r="4" fill="#F2A99A" opacity=".6"/><circle cx="15" cy="8" r="4" fill="#F2A99A" opacity=".6"/><g transform="translate(-23,21)"><ellipse cx="0" cy="0" rx="6.5" ry="7.5" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.2"/><g stroke="#BC4A2F" stroke-width="1.7" stroke-linecap="round"><line x1="-3" y1="-4" x2="-3" y2="-9"/><line x1="0" y1="-5" x2="0" y2="-11"/><line x1="3" y1="-4" x2="3" y2="-9"/></g></g></svg></span><p><b>¡Última parada!</b> Hier herhaal je de hele unit met een paar oefeningen en een zelfevaluatie. ¿Listo? ¡Vamos!</p></div><div class="card"><h3>Lo esencial de un vistazo</h3><div class="res-grid"><div class="res"><div class="res-t">Presentarse</div><div class="res-c">Me llamo… · Soy… · Tengo … años · ¿Y tú?</div></div><div class="res"><div class="res-t">Datos personales</div><div class="res-c">nombre · dos apellidos · edad · nacionalidad</div></div><div class="res"><div class="res-t">Países e idiomas</div><div class="res-c">Soy de España → soy español → hablo español</div></div><div class="res"><div class="res-t">El verbo <i>ser</i></div><div class="res-c">soy · eres · es · somos · sois · son</div></div><div class="res"><div class="res-t">Verbos -ar / -er / -ir</div><div class="res-c">hablo · como · vivo — terminaciones regulares</div></div><div class="res"><div class="res-t">Pronombres</div><div class="res-c">yo · tú · él/ella/usted · nosotros · vosotros · ellos</div></div><div class="res"><div class="res-t">Género y número</div><div class="res-c">el / la · un / una · plural: +s / +es</div></div><div class="res"><div class="res-t">tú / usted</div><div class="res-c">tú = informal, cercano · usted = formal</div></div></div></div><div class="card"><h3>9.1 · Completa con el verbo correcto</h3><div class="instr">ser, -ar, -er of -ir? Typ de juiste vorm.</div><div id="r-91"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §9 · 9.1</div></div><div class="card"><h3>9.2 · Escribe el plural con su artículo</h3><div class="instr">el libro → los libros. Vergeet het lidwoord niet.</div><div id="r-92"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §9 · 9.2</div></div><div class="card"><h3>9.3 · Completa la presentación de Lucía</h3><div class="instr">Vul Lucía's voorstelling aan met het juiste werkwoord.</div><div id="r-93"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §9 · 9.3</div></div><div class="card"><h3>¿Qué sé hacer? · zelfevaluatie</h3><div class="instr">Tik per zin je niveau aan: 🔴 nog niet · 🟡 een beetje · 🟢 helemaal.</div><div id="r-puedo"></div><div class="cref"><svg class="bk" viewBox="0 0 32 32" width="18" height="18"><path d="M16 9 Q10 6 5 8 V24 Q10 22 16 25 Z" fill="#F7E3C0" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/><path d="M16 9 Q22 6 27 8 V24 Q22 22 16 25 Z" fill="#FBEBC8" stroke="#854F0B" stroke-width="2" stroke-linejoin="round"/></svg>→ Cuaderno · §9</div></div></section><section class="panel" id="extra"><div class="sec-title"><span class="dot" style="background:#7A3FA0">✨</span><h2 class="fred">Extra — más práctica</h2><span class="opener"><svg viewBox="0 0 88 88" width="42" height="42" style="flex:none"><g stroke="#BC4A2F" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M0 -28 q2 -7 -1 -12"/><path d="M22 -16 q6 -4 8 -9"/><path d="M30 4 q8 0 13 -2"/><path d="M22 22 q6 4 8 10"/><path d="M-22 -16 q-6 -4 -8 -9"/><path d="M-30 4 q-8 -1 -13 -3"/><path d="M-22 22 q-6 4 -9 9"/></g><path d="M0 -22 C16 -23 27 -11 26 3 C27 18 14 28 0 27 C-15 28 -27 17 -26 3 C-27 -11 -15 -22 0 -22 Z" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.8" stroke-linejoin="round"/><circle cx="-9" cy="-2" r="3.1" fill="#3A2A18"/><circle cx="9" cy="-3" r="2.8" fill="#3A2A18"/><path d="M-10 9 Q0 18 11 8" stroke="#3A2A18" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="-14" cy="9" r="4" fill="#F2A99A" opacity=".6"/><circle cx="15" cy="8" r="4" fill="#F2A99A" opacity=".6"/><g transform="translate(-23,21)"><ellipse cx="0" cy="0" rx="6.5" ry="7.5" fill="#F4C95D" stroke="#BC4A2F" stroke-width="2.2"/><g stroke="#BC4A2F" stroke-width="1.7" stroke-linecap="round"><line x1="-3" y1="-4" x2="-3" y2="-9"/><line x1="0" y1="-5" x2="0" y2="-11"/><line x1="3" y1="-4" x2="3" y2="-9"/></g></g></svg></span></div><p class="sec-sub">Recursos interactivos para repasar por tema. Cada tarjeta abre en una pestaña nueva.</p><div class="xgrp"><span class="xgrp-b">§1 · §2</span> Presentarse, países e idiomas</div><div class="gen-grid"><a class="gen-card" href="https://view.genially.com/5f422f6e891cc20d3a9fafb2" target="_blank" rel="noopener"><div class="gen-thumb"><img src="https://thumbnails.genially.com/5d84eaa99bf39f0fd2dbd3e2/pdf/e1591e8b-e94e-4ee7-820b-69237b92b5ae.png" alt="¿De dónde eres? · Nacionalidades" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('gen-noimg')"><span class="gen-badge">Genially</span><span class="gen-play">▶</span></div><div class="gen-body"><div class="gen-tt">¿De dónde eres? · Nacionalidades</div><div class="gen-sub">Relaciona países y nacionalidades. · Arche-ELE</div><div class="gen-ref">→ Cuaderno · §2</div></div></a><a class="gen-card" href="https://www.youtube.com/watch?v=wRJur240B5U" target="_blank" rel="noopener"><div class="gen-thumb"><img src="https://img.youtube.com/vi/wRJur240B5U/hqdefault.jpg" alt="Países, lenguas y nacionalidades" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('gen-noimg')"><span class="gen-badge yt">YouTube</span><span class="gen-play">▶</span></div><div class="gen-body"><div class="gen-tt">Países, lenguas y nacionalidades</div><div class="gen-sub">Vídeo A1: país, lengua y nacionalidad. · ProfeDeELE</div><div class="gen-ref">→ Cuaderno · §2</div></div></a><a class="gen-card" href="https://planet-painter.kids/" target="_blank" rel="noopener"><div class="gen-thumb gen-noimg"><span class="xpp">🗺️🎨</span><span class="gen-badge web">Web</span><span class="gen-play">▶</span></div><div class="gen-body"><div class="gen-tt">Pintor del Planeta</div><div class="gen-sub">Pinta el mapa del mundo. ⚙️ Pon «español» en ajustes primero.</div><div class="gen-ref">→ Cuaderno · §2</div></div></a></div><div class="xgrp"><span class="xgrp-b">§4</span> Verbos · presente regular</div><div class="gen-grid"><a class="gen-card" href="https://www.youtube.com/watch?v=mw_b3ho0sbA" target="_blank" rel="noopener"><div class="gen-thumb"><img src="https://img.youtube.com/vi/mw_b3ho0sbA/hqdefault.jpg" alt="Presente regular en español" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('gen-noimg')"><span class="gen-badge yt">YouTube</span><span class="gen-play">▶</span></div><div class="gen-body"><div class="gen-tt">Presente regular en español</div><div class="gen-sub">Vídeo A1: el presente -ar / -er / -ir. · ProfeDeELE</div><div class="gen-ref">→ Cuaderno · §4</div></div></a><a class="gen-card" href="https://view.genially.com/5eeb1fefb508bf0d7f24c27d" target="_blank" rel="noopener"><div class="gen-thumb"><img src="https://thumbnails.genially.com/5d84eaa99bf39f0fd2dbd3e2/pdf/08313622-55a2-457e-8126-5d3b3e062c1c.png" alt="Tablero del presente" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('gen-noimg')"><span class="gen-badge">Genially</span><span class="gen-play">▶</span></div><div class="gen-body"><div class="gen-tt">Tablero del presente</div><div class="gen-sub">Juego de tablero: conjuga verbos regulares. · Arche-ELE</div><div class="gen-ref">→ Cuaderno · §4</div></div></a><a class="gen-card" href="https://view.genially.com/63fb97471ce186001292ced0" target="_blank" rel="noopener"><div class="gen-thumb"><img src="https://thumbnails.genially.com/5d84eaa99bf39f0fd2dbd3e2/screenshots/c4463a49-0c2e-4b67-93b4-4f2e36b23647.jpg" alt="Presente · busca la forma" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('gen-noimg')"><span class="gen-badge">Genially</span><span class="gen-play">▶</span></div><div class="gen-body"><div class="gen-tt">Presente · busca la forma</div><div class="gen-sub">Encuentra la forma correcta de cada verbo. · Arche-ELE</div><div class="gen-ref">→ Cuaderno · §4</div></div></a></div><div class="xgrp"><span class="xgrp-b">§6</span> Género, número y artículos</div><div class="gen-grid"><a class="gen-card" href="https://www.youtube.com/watch?v=8Ykwtg6grtk" target="_blank" rel="noopener"><div class="gen-thumb"><img src="https://img.youtube.com/vi/8Ykwtg6grtk/hqdefault.jpg" alt="Género masculino y femenino" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('gen-noimg')"><span class="gen-badge yt">YouTube</span><span class="gen-play">▶</span></div><div class="gen-body"><div class="gen-tt">Género masculino y femenino</div><div class="gen-sub">Vídeo: el género de sustantivos y adjetivos. · ProfeDeELE</div><div class="gen-ref">→ Cuaderno · §6</div></div></a><a class="gen-card" href="https://view.genially.com/6423eb9f17a357001921eed2" target="_blank" rel="noopener"><div class="gen-thumb"><img src="https://thumbnails.genially.com/5d84eaa99bf39f0fd2dbd3e2/screenshots/74da5e8a-be7e-4860-b7fe-c739621c7a2e.jpg" alt="Los artículos" loading="lazy" onerror="this.style.display='none';this.parentNode.classList.add('gen-noimg')"><span class="gen-badge">Genially</span><span class="gen-play">▶</span></div><div class="gen-body"><div class="gen-tt">Los artículos</div><div class="gen-sub">Practica el / la / los / las · un / una… · Arche-ELE</div><div class="gen-ref">→ Cuaderno · §6</div></div></a></div><div class="gen-note">Vídeos de <b>ProfeDeELE</b> · actividades de <b>Arche-ELE</b> (arche-ele.com). ¡Gracias!</div></section>
+
+<div class="foot">Español · Unidad 1 · ¿Quién eres? — versión digital · borrador</div>
+</div>
+
+<style>
+/* Unidad 1 · gestos */
+.gesto-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:6px}
+.gesto-card{border:1.6px solid var(--line);border-radius:14px;padding:12px;text-align:center;background:#FFFDF9}
+.gesto-emoji{font-size:30px;line-height:1.1}
+.gesto-t{font-family:'Fredoka';font-weight:600;font-size:15px;color:#993C1D;margin:4px 0 2px}
+.gesto-d{font-size:12px;color:var(--muted);line-height:1.4}
+/* Unidad 1 · país-nacionalidad-idioma */
+.pni-card{border:1px solid var(--line);border-radius:14px;padding:11px 13px;margin-bottom:10px;background:#fff;break-inside:avoid}
+.pni-head{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+.pni-head .flag-ico{width:30px;height:22px;border-radius:3px;border:.5px solid rgba(0,0,0,.12);flex:none}
+.pni-pais{font-size:17px;flex:1;min-width:0}
+.pni-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pni-in{flex:1;min-width:130px;padding:9px 11px;border:2px solid #E6E0D4;border-radius:10px;font-size:15px;font-family:inherit}
+.pni-in:focus{outline:none;border-color:#F4C95D}
+.pni-in.good{border-color:var(--good);background:var(--good-bg)}
+.pni-in.bad{border-color:var(--bad);background:var(--bad-bg)}
+/* Unidad 1 · gentilicio morph */
+.gm-tabs{display:flex;gap:8px;margin-bottom:12px;justify-content:center}
+.gm-tab{border:1.6px solid var(--line);background:#fff;color:var(--muted);font-family:'Fredoka';font-size:14px;padding:7px 18px;border-radius:999px;cursor:pointer}
+.gm-tab.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+.gm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:11px}
+.gm-cell{border:1.6px solid #CBE4DC;background:#F2FBF8;border-radius:14px;padding:14px 10px;text-align:center}
+.gm-cell.inv{border-color:#F0E2C2;background:#FBF6E9}
+.gm-word{font-family:'Fredoka';font-weight:600;font-size:18px;line-height:1.15;color:#2B2622;overflow-wrap:anywhere}
+.gm-end{display:inline-block;background:#FCE39A;color:#854F0B;border-radius:6px;padding:0 5px;margin-left:1px;animation:gmpop .3s ease}
+.gm-cell.inv .gm-end{background:transparent;color:inherit;animation:none}
+@keyframes gmpop{from{transform:scale(.6);opacity:.3}to{transform:scale(1);opacity:1}}
+.gm-tag{font-size:11px;color:var(--muted);margin-top:7px;text-transform:uppercase;letter-spacing:.05em;font-weight:700}
+.btn.sm{padding:8px 15px;font-size:14px}
+.soon{display:flex;align-items:center;gap:14px}
+.soon .gloss{margin-top:3px}
+/* Unidad 1 · transforma */
+.tf-row{border:1px solid var(--line);border-radius:12px;padding:11px 13px;margin-bottom:9px;background:#fff}
+.tf-prompt{font-size:15px;color:#2B2622;margin-bottom:8px;font-weight:600}
+.tf-arrow{color:var(--teal);margin-left:7px;font-weight:800}
+.tf-ans{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.tf-in{flex:1;min-width:170px;padding:9px 11px;border:2px solid #E6E0D4;border-radius:10px;font-size:15px;font-family:inherit}
+.tf-in:focus{outline:none;border-color:#F4C95D}
+.tf-in.good{border-color:var(--good);background:var(--good-bg)}
+.tf-in.bad{border-color:var(--bad);background:var(--bad-bg)}
+.tf-model{background:#F2FBF8;border:1px dashed #BFE0D8;border-radius:12px;padding:10px 14px;margin-bottom:11px;font-style:italic;color:#2B2622;font-size:15px}
+.tf-model b{color:var(--teal);font-style:normal}
+.tf-q{color:#9A8E78;font-size:20px;font-weight:700;font-style:normal;vertical-align:-2px}
+/* Forma · género box */
+.gx-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:8px}
+.gx{border-radius:12px;padding:12px 13px}
+.gx-m{background:#E9F5F0;border:1.5px solid #A9DECC}
+.gx-f{background:#FBEEE7;border:1.5px solid #EBC3B2}
+.gx-h{font-family:'Fredoka';font-weight:600;font-size:13px;margin-bottom:5px}
+.gx-m .gx-h{color:#0F6E56}.gx-f .gx-h{color:#BC4A2F}
+.gx-r{font-size:13px;color:#2B2622}
+.gx-ex{font-size:13px;color:#444;margin:3px 0}
+.gx-sub{font-size:11.5px;color:var(--muted)}
+@media(max-width:520px){.gx-grid{grid-template-columns:1fr}}
+/* Forma · reglas + artículos */
+.rule-row{font-size:13.5px;color:#2B2622;padding:5px 0;border-bottom:1px solid #F0EBE0}
+.rule-k{display:inline-block;min-width:152px;font-family:'Fredoka';font-weight:600;color:#3C3489}
+.art-tbl{border-collapse:collapse;margin:12px 0 4px;font-size:13.5px}
+.art-tbl th,.art-tbl td{border:1px solid #E6E0D4;padding:5px 13px;text-align:center}
+.art-tbl th{background:#EEEDFE;color:#3C3489;font-weight:700}
+.art-tbl td:first-child{background:#F7F4EE;font-weight:700;color:#6E665B}
+/* Forma · marca masculinas */
+.mw-grid{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 10px}
+.mw-chip{border:1.6px solid #E6E0D4;background:#fff;border-radius:999px;padding:7px 14px;font-size:14px;font-family:inherit;cursor:pointer;color:#2B2622}
+.mw-chip.sel{background:#EEEDFE;border-color:#3C3489;color:#3C3489;font-weight:700}
+.mw-chip.correct{background:var(--good-bg);border-color:var(--good);color:var(--good);font-weight:700}
+.mw-chip.missed{background:#FBF1DC;border-color:#E0B84A;color:#854F0B}
+.mw-chip.wrong{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.mw-foot{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+/* Forma · laberinto */
+.lab-status{font-size:13.5px;font-weight:700;margin-bottom:9px;color:var(--muted);min-height:19px}
+.lab-status.ok{color:var(--good)}.lab-status.no{color:var(--bad)}
+.lab-board{display:grid;gap:5px;max-width:440px}
+.lab-cell{border:1.5px solid #E6E0D4;background:#FBF9F4;border-radius:8px;padding:9px 2px;font-size:12.5px;font-family:inherit;cursor:pointer;color:#3A352F;line-height:1.1;min-height:40px}
+.lab-cell.on{background:#D9F2E4;border-color:var(--good);color:var(--good);font-weight:700}
+.lab-cell.entry{box-shadow:inset 0 0 0 2px #0F6E56}
+.lab-cell.exit{box-shadow:inset 0 0 0 2px #BC4A2F}
+.lab-cell.wall{background:var(--bad-bg);border-color:var(--bad);animation:shk .4s}
+.lab-cell.shake{animation:shk .35s}
+@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+/* Gramática · conjuga explorer */
+.cj-tabs{display:flex;gap:8px;margin-bottom:11px;flex-wrap:wrap}
+.cj-tab{border:1.6px solid var(--line);background:#fff;color:var(--muted);font-family:'Fredoka';font-size:15px;padding:7px 18px;border-radius:999px;cursor:pointer}
+.cj-tab.active{background:var(--cjc);border-color:var(--cjc);color:#fff}
+.cj-table{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#FFFDF9}
+.cj-row{display:flex;align-items:center;gap:10px;padding:8px 13px;border-bottom:1px solid #F2EEE6}
+.cj-row:last-child{border-bottom:none}
+.cj-pron{min-width:130px;font-size:13px;color:var(--muted)}
+.cj-form{font-size:19px;color:#2B2622;flex:1}
+.cj-end{display:inline-block;background:var(--cjc);color:#fff;border-radius:6px;padding:1px 7px;font-weight:700;margin-left:1px;animation:gmpop .3s ease}
+/* Gramática · conjuga ejercicio */
+.ce-card{border:1px solid var(--line);border-radius:14px;padding:11px 14px;margin-bottom:11px;background:#fff}
+.ce-inf{font-size:18px;color:#3C3489;margin-bottom:8px}
+.ce-row{display:flex;align-items:center;gap:10px;padding:3px 0}
+.ce-pr{min-width:104px;font-size:13px;color:var(--muted)}
+.ce-in{flex:1;max-width:200px;padding:7px 10px;border:2px solid #E6E0D4;border-radius:9px;font-size:15px;font-family:inherit}
+.ce-in:focus{outline:none;border-color:#F4C95D}
+.ce-in.good{border-color:var(--good);background:var(--good-bg)}
+.ce-in.bad{border-color:var(--bad);background:var(--bad-bg)}
+.ce-foot{display:flex;align-items:center;gap:12px;margin-top:8px;flex-wrap:wrap}
+/* Gramática · completa */
+.cp-row{display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding:7px 0;border-bottom:1px solid #F0EBE0;font-size:14.5px}
+.cp-txt{color:#2B2622}
+.cp-in{width:120px;padding:7px 10px;border:2px solid #E6E0D4;border-radius:9px;font-size:14.5px;font-family:inherit;text-align:center}
+.cp-in:focus{outline:none;border-color:#F4C95D}
+.cp-in.good{border-color:var(--good);background:var(--good-bg)}
+.cp-in.bad{border-color:var(--bad);background:var(--bad-bg)}
+.cp-inf{font-size:12px;color:var(--muted)}
+/* Gramática · tablero */
+.tb-board{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.tb-cell{position:relative;width:84px;min-height:56px;border:1.5px solid #E6E0D4;border-radius:10px;background:#FBF9F4;padding:6px 5px;display:flex;align-items:center;justify-content:center;text-align:center}
+.tb-cell.here{border-color:#3C3489;box-shadow:0 0 0 2px #3C3489;background:#EEEDFE}
+.tb-n{position:absolute;top:2px;left:5px;font-size:9px;color:#B0A795;font-weight:700}
+.tb-label{font-family:'Fredoka';font-weight:700;font-size:12px;color:#3C3489}
+.tb-sq b{display:block;font-size:13px;color:#993C1D;font-family:'Fredoka'}
+.tb-pr{font-size:11px;color:var(--muted)}
+.tb-controls{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:8px}
+.tb-status{font-size:13.5px;font-weight:700;color:var(--muted)}
+.tb-status.ok{color:var(--good)}
+.tb-q{font-family:'Fredoka';font-weight:600;font-size:15px;color:#3C3489;margin-bottom:7px}
+.tb-ans{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+/* Gramática · pronombres tabla */
+.pron-tbl{border-collapse:collapse;width:100%;max-width:560px;margin-top:8px;font-size:13px}
+.pron-tbl th,.pron-tbl td{border:1px solid #E6E0D4;padding:7px 9px;text-align:center;vertical-align:middle}
+.pron-tbl th{background:#EEEDFE;color:#3C3489;font-weight:700;font-size:12px}
+.pron-tbl td:first-child{background:#F7F4EE;color:#6E665B;font-weight:700;font-size:11px}
+.pron-tbl td span{display:block;font-size:11px;color:#9A8E78;margin-top:2px}
+/* Gramática · ser box */
+.ser-box{display:flex;flex-wrap:wrap;gap:8px 26px;border:1px solid #DAD8F0;border-radius:14px;background:#F7F7FE;padding:12px 16px;margin-top:8px}
+.ser-col{flex:1;min-width:190px}
+.ser-h{font-size:11px;font-weight:700;color:#8983C4;letter-spacing:.5px;margin-bottom:4px}
+.ser-row{display:flex;justify-content:space-between;align-items:baseline;padding:3px 0;border-bottom:1px dotted #E1DFF4}
+.ser-row span{color:#6E665B;font-size:12.5px}
+.ser-row b{font-size:17px;color:#2B2440}
+.ser-foot{font-size:11.5px;color:#6E665B;margin-top:8px;background:#F7F7FE;border:1px dashed #DAD8F0;border-radius:10px;padding:7px 12px}
+/* Gramática · generador */
+.cg-feature{background:#FAF9FF;border-color:#D9D6F5}
+.cg-stat{font-size:13px;font-weight:700;color:var(--muted);margin-bottom:9px}
+.cg-stat b{color:#3C3489}
+.cg-card{border:2px solid #3C3489;border-radius:14px;padding:15px;text-align:center;margin-bottom:11px;background:#fff;transition:border-color .25s}
+.cg-cls{display:inline-block;font-family:'Fredoka';font-weight:600;font-size:12px;border-radius:999px;padding:1px 10px;margin-bottom:6px}
+.cg-verb{display:block;font-family:'Fredoka';font-weight:600;font-size:27px;line-height:1.1}
+.cg-pron{display:block;font-size:14px;color:var(--muted);margin-top:3px}
+.cg-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.cg-row .cp-in{flex:1;min-width:150px}
+/* Gramática · conjuga-animatie */
+.ca-stage{background:#F7F7FE;border:1px solid #DAD8F0;border-radius:14px;padding:18px 16px 16px;text-align:center;margin-top:10px}
+.ca-persona{font-size:13px;color:#8983C4;font-weight:700;min-height:18px;letter-spacing:.3px}
+.ca-word{display:flex;align-items:baseline;justify-content:center;gap:0;min-height:52px;margin:8px 0 6px;font-family:'Fredoka';font-weight:600;font-size:40px;line-height:1}
+.ca-stem{color:#2B2440}
+.ca-endx{opacity:1;transition:opacity .3s ease}
+.ca-endx.fade{opacity:0}
+.ca-str{position:relative}
+.ca-str::after{content:'';position:absolute;left:2%;right:2%;bottom:-6px;height:3px;border-radius:3px;background:currentColor;opacity:.5}
+.ca-say{font-family:'Fredoka';font-weight:600;font-size:15px;border:1px solid #DAD8F0;background:#fff;border-radius:999px;padding:4px 15px;cursor:pointer;color:#3C3489}
+.ca-hint{font-size:12.5px;color:#5C5550;margin-top:11px;background:#fff;border:1px dashed #DAD8F0;border-radius:10px;padding:7px 12px}
+.ca-hint.end{border-color:#E7C9A8;background:#FFF8F1}
+.ca-ctrls{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:11px}
+.ca-count{font-size:12px;color:var(--muted);font-weight:700;min-width:42px}
+.ca-legend{font-size:11.5px;color:var(--muted);text-align:center;margin:13px 0 5px}
+.ca-legend b{color:#2B2440}.ca-legend-e{color:#993C1D}
+.ca-table{display:flex;flex-direction:column;gap:5px;max-width:430px;margin:0 auto}
+.ca-trow{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:6px 12px;border:1px solid #ECE6DC;border-radius:9px;background:#fff;cursor:pointer;transition:.15s}
+.ca-trow.on{border-color:#3C3489;background:#F2F0FF}
+.ca-tp{font-size:12px;color:#6E665B}
+.ca-tw{font-family:'Fredoka';font-weight:600;font-size:18px;color:#2B2440}
+/* Conjugador · terminaciones-tabel */
+.ends-tbl{border-collapse:collapse;width:100%;max-width:520px;margin-top:8px;font-size:13.5px}
+.ends-tbl th,.ends-tbl td{border:1px solid #ECE6DC;padding:7px 10px;text-align:center}
+.ends-tbl th{font-family:'Fredoka';font-weight:600;font-size:13px}
+.ends-tbl td{font-family:'Fredoka';font-weight:600}
+.ends-tbl td:first-child,.ends-tbl th:first-child{text-align:left;color:#6E665B;font-size:12px;font-family:'Nunito';font-weight:700;background:#FAF7F1}
+.ends-tbl .t-ar{color:#993C1D}.ends-tbl th.t-ar{background:#F8ECE7}
+.ends-tbl .t-er{color:#0F6E56}.ends-tbl th.t-er{background:#E3F0ED}
+.ends-tbl .t-ir{color:#854F0B}.ends-tbl th.t-ir{background:#F5EEE2}
+/* link-placeholder (Conjugador-pagina komt later) */
+.link-ph{display:flex;align-items:center;gap:9px;margin-top:11px;padding:10px 13px;border:1.5px dashed #C9C4E4;border-radius:11px;background:#F7F6FD;color:#6E665B;font-size:12.5px}
+.link-ph-ic{font-size:15px;opacity:.7}
+.link-ph b{color:#3C3489}
+/* sub-sectie kopje binnen een tab */
+.sec-sub2{font-family:'Fredoka';font-weight:600;font-size:17px;color:#8a5a12;margin:26px 0 2px;padding-top:16px;border-top:2px solid #F0E7D5}
+/* flashcards · richtingstoggle */
+.fc-dir{display:inline-flex;border:1.5px solid #E2DCD0;border-radius:999px;overflow:hidden;margin-bottom:11px}
+.fc-dir-b{border:none;background:#fff;color:#6E665B;font-family:'Fredoka';font-weight:600;font-size:12.5px;padding:5px 15px;cursor:pointer}
+.fc-dir-b.active{background:#2E7D74;color:#fff}
+/* Comunicar */
+.pasos{display:flex;flex-direction:column;gap:7px;margin:4px 0 14px}
+.paso{display:flex;align-items:flex-start;gap:9px;font-size:14px}
+.paso-n{flex:none;width:22px;height:22px;border-radius:50%;background:#BC4A2F;color:#fff;font-family:'Fredoka';font-weight:600;font-size:13px;display:flex;align-items:center;justify-content:center}
+.modelo{background:#FFF8F1;border:1px solid #F0D9C4;border-radius:12px;padding:13px 15px;margin:6px 0 14px}
+.modelo-h{font-family:'Fredoka';font-weight:600;font-size:13px;color:#BC4A2F;display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:6px}
+.modelo-t{font-size:14px;line-height:1.6;margin:0}
+.fu-h{font-family:'Fredoka';font-weight:600;font-size:13px;color:#6E665B;margin-bottom:7px}
+.fu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:7px;margin-bottom:14px}
+.fu{background:#fff;border:1px solid #ECE6DC;border-radius:9px;padding:8px 11px;font-size:13px;font-weight:600}
+.fu span{font-weight:400;color:#8a8276;font-size:12px}
+.niveles{display:flex;flex-direction:column;gap:6px}
+.nivel{font-size:12.5px;background:#F7F7FE;border:1px dashed #DAD8F0;border-radius:9px;padding:7px 11px}
+.nivel b{color:#3C3489}
+.dp-card{display:flex;flex-direction:column;align-items:center;gap:10px;background:#FFF8F1;border:1px solid #F0D9C4;border-radius:14px;padding:22px 16px;text-align:center;min-height:118px;justify-content:center}
+.dp-die{font-size:38px;line-height:1}
+.dp-die.roll{animation:dp-spin .5s ease}
+@keyframes dp-spin{0%{transform:rotate(0) scale(1)}50%{transform:rotate(180deg) scale(1.18)}100%{transform:rotate(360deg) scale(1)}}
+.dp-q{font-family:'Fredoka';font-weight:600;font-size:20px;color:#BC4A2F;line-height:1.3}
+.dp-q.pop{animation:dp-pop .3s ease}
+@keyframes dp-pop{0%{transform:scale(.92);opacity:.5}100%{transform:scale(1);opacity:1}}
+.dp-ctrls{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:11px}
+.ent-q{display:flex;flex-direction:column;gap:6px;margin:4px 0 13px}
+.ent-item{background:#fff;border:1px solid #ECE6DC;border-left:3px solid #BC4A2F;border-radius:8px;padding:8px 12px;font-size:13.5px}
+/* Repasar */
+.res-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:9px}
+.res{background:#E3F0ED;border:1px solid #CDE5DD;border-radius:11px;padding:11px 13px}
+.res-t{font-family:'Fredoka';font-weight:600;font-size:13px;color:#0F6E56;margin-bottom:3px}
+.res-c{font-size:12px;color:#5C5550;line-height:1.5}
+.sf-wrap{display:flex;flex-direction:column;gap:7px}
+.sf-row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:7px 11px;border:1px solid #ECE6DC;border-radius:9px;background:#fff}
+.sf-lab{font-size:13px}
+.sf-dots{display:flex;gap:4px;flex:none}
+.sf-dot{border:none;background:transparent;font-size:17px;cursor:pointer;opacity:.32;padding:2px;transition:.15s;line-height:1}
+.sf-dot.on{opacity:1;transform:scale(1.18)}
+/* Extra */
+.gen-badge.yt{background:#c4302b}
+.gen-badge.web{background:#2E7D74}
+.xgrp{font-family:'Fredoka';font-weight:600;font-size:15px;color:#7A3FA0;margin:18px 0 9px;display:flex;align-items:center;gap:8px}
+.xgrp .xgrp-b{font-size:11px;font-weight:700;color:#fff;background:#7A3FA0;border-radius:999px;padding:2px 9px;letter-spacing:.03em}
+.gen-thumb.gen-noimg{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#BBE3F0,#D9CCF0)}
+.xpp{font-size:40px;line-height:1}
+/* Preguntas para conocer a alguien */
+.pqa-grid{display:flex;flex-direction:column;gap:7px}
+.pqa-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:8px 11px;border:1px solid #ECE6DC;border-radius:10px;background:#fff}
+.pqa-q{display:flex;align-items:center;gap:7px;flex:1 1 230px;min-width:0}
+.pqa-say{border:none;background:#F3EEFB;color:#7A3FA0;border-radius:8px;width:30px;height:30px;flex:none;cursor:pointer;font-size:14px;line-height:1}
+.pqa-say:hover{background:#E7DEF7}
+.pqa-qt{font-weight:600;color:#3C3489}
+.pqa-gl{font-size:11.5px;color:var(--muted)}
+.pqa-a{flex:1 1 150px;font-size:13.5px;color:#5C5550}
+.pqa-a::before{content:'→ ';color:#B7B2D6}
+</style>
+
+</div>
+
+<style>
+.tq-prompt{font-size:30px;text-align:center;margin:6px 0 14px;font-weight:700;color:#3A2A18;min-height:42px;line-height:1.2}
+.tq-prompt b{color:#0C447C}
+.tq-input{width:100%;box-sizing:border-box;padding:11px 14px;border:2px solid #E6E0D4;border-radius:12px;font-size:17px;font-family:inherit;text-align:center}
+.tq-input:focus{outline:none;border-color:#F4C95D}
+.tq-btns{display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap}
+.tq-prog{margin-left:auto;color:#9A8E78;font-size:13px;font-weight:700}
+.tq-fb{margin-top:10px;text-align:center;min-height:22px;font-weight:700}
+.tq-ok{color:#0F6E56}.tq-no{color:#B23B3B}.tq-hint{color:#854F0B}
+.tq-done{font-size:26px;text-align:center;font-weight:700;color:#0F6E56;margin:10px 0}
+.cw-wrap{display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start;margin-bottom:10px}
+.cw{border-collapse:collapse}
+.cw td.cw-blank{width:34px;height:34px;border:none;background:transparent}
+.cw td.cw-cell{width:34px;height:34px;border:1.6px solid #C9806E;padding:0;position:relative;background:#fff}
+.cw-num{position:absolute;top:1px;left:3px;font-size:9px;color:#993C1D;font-weight:700;line-height:1;z-index:2;pointer-events:none}
+.cw td.cw-cell input{width:34px;height:34px;border:none;text-align:center;font-size:18px;font-weight:700;text-transform:uppercase;background:transparent;color:#3A2A18;font-family:inherit;padding:0}
+.cw td.cw-cell input:focus{outline:2px solid #F4C95D;outline-offset:-3px}
+.cw-cell input.cw-ok{background:#D9F2E4;color:#0F6E56}
+.cw-cell input.cw-no{background:#FBE0E0;color:#B23B3B}
+.cw-clues{font-size:14px;line-height:1.75}
+.cw-clues .cw-h{font-weight:700;color:#993C1D;margin:4px 0 2px}
+.cw-msg{font-weight:700;margin-left:8px;color:#0F6E56}
+.lot-balls{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:8px 0 4px}
+.lot-ball{width:46px;height:46px;border-radius:50%;background:#FBF1DC;border:2px solid #E0B84A;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 -3px 6px rgba(0,0,0,.06)}
+.lot-ball input{width:38px;height:38px;border:none;background:transparent;text-align:center;font-size:18px;font-weight:700;color:#854F0B;font-family:inherit}
+.lot-ball input:focus{outline:none}
+.lot-ball input.lot-ok{color:#0F6E56}.lot-ball input.lot-no{color:#B23B3B}
+.fb-match{display:flex;align-items:center;justify-content:center;gap:10px;font-size:17px;font-weight:700;margin:6px 0 10px;flex-wrap:wrap}
+.fb-team{color:#3A2A18}
+.fb-sc{background:#0F6E56;color:#fff;border-radius:8px;padding:2px 11px;font-size:19px}
+.fb-dash{color:#9A8E78}
+.fb-lbl{text-align:center;font-size:13px;color:#6E665B;margin-bottom:5px}
+.fb-inputs{display:flex;align-items:center;justify-content:center;gap:10px;font-size:16px}
+.fb-inputs input{width:130px;padding:9px 11px;border:2px solid #E6E0D4;border-radius:10px;font-size:16px;font-family:inherit;text-align:center}
+.fb-inputs input:focus{outline:none;border-color:#F4C95D}
+.lot-euro{background:linear-gradient(160deg,#0b2a6b 0%,#16387f 100%);border-radius:16px;padding:15px 12px 12px;margin:8px 0 10px}
+.lot-euro-h{text-align:center;color:#FFD24A;font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:13px;margin-bottom:11px}
+.lot-euro .lot-balls{margin:0 0 8px}
+.lot-euro .lot-ball{background:#fff;border:2px solid #cfe0ff;box-shadow:0 2px 5px rgba(0,0,0,.18)}
+.lot-euro .lot-ball input{color:#0b2a6b}
+.lot-euro .lot-star{position:relative;background:radial-gradient(circle at 50% 38%,#FFE89A,#FFC02E);border:2px solid #fff}
+.lot-euro .lot-star input{color:#7A4E00}
+.lot-euro .lot-star::after{content:'★';position:absolute;top:-8px;right:-4px;font-size:13px;color:#FFD24A;text-shadow:0 1px 2px rgba(0,0,0,.35)}
+.lot-plus{color:#FFD24A;font-weight:800;font-size:24px;display:flex;align-items:center;margin:0 3px}
+.lot-euro-lbl{text-align:center;color:#bcd0ff;font-size:11px}
+.gen-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:6px 0 4px}
+.gen-card{display:block;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .15s,box-shadow .15s}
+.gen-card:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.1)}
+.gen-thumb{position:relative;aspect-ratio:16/9;background:#11204a;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.gen-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.gen-thumb.gen-noimg{background:linear-gradient(135deg,#7A3FA0,#BC4A2F)}
+.gen-play{position:absolute;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.92);color:#7A3FA0;display:flex;align-items:center;justify-content:center;font-size:18px;padding-left:3px;box-shadow:0 3px 10px rgba(0,0,0,.25)}
+.gen-badge{position:absolute;top:8px;left:8px;background:rgba(0,0,0,.55);color:#fff;font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:999px}
+.gen-body{padding:11px 13px 13px}
+.gen-tt{font-family:'Fredoka';font-weight:600;font-size:16px;color:var(--ink)}
+.gen-sub{font-size:12.5px;color:var(--muted);margin:3px 0 7px}
+.gen-ref{font-size:11.5px;color:#854F0B;font-weight:600}
+.gen-note{font-size:12.5px;color:var(--muted);text-align:center;margin-top:8px}
+</style>
+<script>
+// ---------- helpers ----------
+const $=s=>document.querySelector(s);
+function make(tag,attrs,...kids){const e=document.createElement(tag);attrs=attrs||{};for(const k in attrs){const v=attrs[k];if(k==='class')e.className=v;else if(k==='html')e.innerHTML=v;else if(k.slice(0,2)==='on'&&typeof v==='function')e.addEventListener(k.slice(2),v);else if(v!=null)e.setAttribute(k,v);}for(const c of kids){if(c==null||c===false)continue;e.append(c.nodeType?c:document.createTextNode(c));}return e;}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+
+// ---------- TTS ----------
+let _voices=[];
+function loadVoices(){_voices=window.speechSynthesis?speechSynthesis.getVoices():[];}
+if(window.speechSynthesis){loadVoices();speechSynthesis.onvoiceschanged=loadVoices;}
+function speak(text,rate){
+  if(!('speechSynthesis' in window)){return;}
+  try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='es-ES';u.rate=rate||0.95;
+  const v=_voices.find(x=>/es(-|_)?(ES)?/i.test(x.lang))||_voices.find(x=>x.lang.toLowerCase().startsWith('es'));
+  if(v)u.voice=v;speechSynthesis.speak(u);}catch(e){}
+}
+function spk(label,text){return make('button',{class:'iconbtn',onclick:()=>speak(text)},'🔊 '+(label||'Escuchar'));}
+
+// ---------- numbers 0-100 in Spanish ----------
+const U=['cero','uno','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez','once','doce','trece','catorce','quince','dieciséis','diecisiete','dieciocho','diecinueve','veinte','veintiuno','veintidós','veintitrés','veinticuatro','veinticinco','veintiséis','veintisiete','veintiocho','veintinueve'];
+const T=['','','','treinta','cuarenta','cincuenta','sesenta','setenta','ochenta','noventa'];
+function numEs(n){if(n<30)return U[n];if(n===100)return'cien';const t=Math.floor(n/10),u=n%10;return T[t]+(u?' y '+U[u]:'');}
+
+// ---------- generic MC / quiz engine ----------
+function quiz(mount,items,opts){
+  opts=opts||{};let done=0,ok=0;const total=items.length;
+  const scoreEl=opts.score?make('div',{class:'score'}, 'Puntos: 0 / '+total):null;
+  items.forEach(it=>{
+    const block=make('div',{class:'qblock'});
+    const head=make('div',{class:'row'});
+    if(it.audio)head.append(make('button',{class:'iconbtn',onclick:()=>speak(it.audio)},'🔊 Escuchar'));
+    if(it.q)head.append(make('span',{class:'q'},it.q));
+    block.append(head);
+    const optRow=make('div',{class:'row',style:'margin-top:8px'});
+    const fb=make('div',{class:'fb'});
+    let answered=false;
+    it.options.forEach((o,i)=>{
+      const b=make('button',{class:'opt',onclick:()=>{
+        if(answered)return;answered=true;done++;
+        if(i===it.correct){b.classList.add('good');fb.className='fb good';fb.textContent='¡Muy bien! ✓';ok++;}
+        else{b.classList.add('bad');fb.className='fb bad';fb.textContent='Casi. La respuesta es: '+it.options[it.correct];optRow.children[it.correct].classList.add('good');}
+        Array.from(optRow.children).forEach(c=>c.disabled=true);
+        if(scoreEl)scoreEl.textContent='Puntos: '+ok+' / '+total;
+        if(done===total&&opts.score)scoreEl.textContent='Puntos: '+ok+' / '+total+'  '+(ok===total?'¡Perfecto! 🎉':ok>=total*0.6?'¡Bien hecho! 👏':'¡Sigue practicando! 💪');
+      }},o);
+      optRow.append(b);
+    });
+    block.append(optRow,fb);mount.append(block);
+  });
+  if(scoreEl)mount.append(scoreEl);
+}
+
+// ---------- sort engine ----------
+function sortGame(mount,columns,words){
+  let placed=0;const total=words.length;let sel=null;
+  const fb=make('div',{class:'fb'});
+  const bank=make('div',{class:'bank'});
+  const drops={};
+  const colsWrap=make('div',{class:'cols',style:'grid-template-columns:repeat('+columns.length+',1fr)'});
+  columns.forEach(c=>{
+    const drop=make('div',{class:'drop'});drops[c.key]=drop;
+    const col=make('div',{class:'col',onclick:()=>tryPlace(c.key)},make('h4',{},c.label),drop);
+    colsWrap.append(col);
+  });
+  function mkChip(wd){
+    return make('div',{class:'chip',onclick:function(){if(this.classList.contains('good'))return;if(sel)sel.el.classList.remove('sel');if(sel&&sel.el===this){sel=null;return;}sel={el:this,wd:wd};this.classList.add('sel');}},wd.w);
+  }
+  shuffle(words).forEach(wd=>bank.append(mkChip(wd)));
+  function tryPlace(key){
+    if(!sel)return;const chip=sel.el,wd=sel.wd;chip.classList.remove('sel');
+    if(wd.c===key){chip.classList.add('good');chip.onclick=null;drops[key].append(chip);placed++;fb.className='fb good';fb.textContent='¡Correcto! ✓';speak(wd.w);if(placed===total)fb.textContent='¡Completado! 🎉';}
+    else{chip.classList.add('bad');fb.className='fb bad';fb.textContent='Esa no es. Inténtalo otra vez.';setTimeout(()=>chip.classList.remove('bad'),700);}
+    sel=null;
+  }
+  mount.append(colsWrap,make('div',{class:'note'},'Por colocar:'),bank,fb);
+}
+
+// ---------- flashcards ----------
+function flashcards(mount,cats){
+  const catRow=make('div',{class:'cat-row'});
+  const holder=make('div');
+  let cur=Object.keys(cats)[0],idx=0,cards=cats[cur];
+  function render(){
+    holder.innerHTML='';
+    const c=cards[idx];
+    const flash=make('div',{class:'flash'});
+    const inner=make('div',{class:'inner',onclick:()=>flash.classList.toggle('flipped')},
+      make('div',{class:'face front'},make('div',{class:'lab'},'Español'),make('div',{class:'big'},c.es)),
+      make('div',{class:'face back'},make('div',{class:'lab'},'Nederlands'),make('div',{class:'big'},c.nl)));
+    flash.append(inner);
+    const ctr=make('div',{class:'row',style:'justify-content:center;margin-top:12px'},
+      make('button',{class:'btn ghost sm',onclick:()=>{idx=(idx-1+cards.length)%cards.length;render();}},'‹'),
+      spk('Escuchar',c.es),
+      make('button',{class:'btn ghost sm',onclick:()=>{flash.classList.toggle('flipped');}},'↺ Girar'),
+      make('button',{class:'btn ghost sm',onclick:()=>{idx=(idx+1)%cards.length;render();}},'›'));
+    const counter=make('div',{class:'note',style:'text-align:center'},(idx+1)+' / '+cards.length);
+    holder.append(flash,ctr,counter);
+  }
+  Object.keys(cats).forEach(k=>{
+    const b=make('button',{class:'cat'+(k===cur?' active':''),onclick:()=>{cur=k;cards=cats[k];idx=0;catRow.querySelectorAll('.cat').forEach(x=>x.classList.remove('active'));b.classList.add('active');render();}},k);
+    catRow.append(b);
+  });
+  mount.append(catRow,holder);render();
+}
+
+// ---------- cloze ----------
+function cloze(mount,parts,bank){
+  let sel=null;const gaps=[];
+  const dlg=make('div',{class:'dlg'});
+  parts.forEach(p=>{
+    if(typeof p==='string'){dlg.append(document.createTextNode(p));}
+    else if(p&&p.nodeType){dlg.append(p);}
+    else{const g=make('span',{class:'gap',onclick:function(){if(sel){this.textContent=sel.textContent;this.dataset.val=sel.textContent;this.classList.add('filled');sel.classList.remove('sel');sel=null;}else if(this.dataset.val){this.textContent='____';this.removeAttribute('data-val');this.classList.remove('filled','good','bad');}}},'____');g.dataset.ans=p.a;gaps.push(g);dlg.append(g);}
+  });
+  const bankEl=make('div',{class:'bank'});
+  shuffle(bank).forEach(w=>bankEl.append(make('div',{class:'chip',onclick:function(){if(sel)sel.classList.remove('sel');if(sel===this){sel=null;return;}sel=this;this.classList.add('sel');}},w)));
+  const fb=make('div',{class:'fb'});
+  const check=make('button',{class:'btn',style:'margin-top:11px',onclick:()=>{
+    let all=true,good=0;gaps.forEach(g=>{g.classList.remove('good','bad');const v=(g.dataset.val||'').toLowerCase();if(v===g.dataset.ans.toLowerCase()){g.classList.add('good');good++;}else{g.classList.add('bad');all=false;}});
+    fb.className='fb '+(all?'good':'bad');fb.textContent=all?'¡Perfecto! 🎉':'Bien: '+good+' / '+gaps.length+'. Corrige las rojas.';
+  }},'Comprobar');
+  mount.append(dlg,make('div',{class:'note',style:'margin-top:6px'},'Palabras:'),bankEl,make('div',{class:'row'},check),fb);
+}
+
+// ---------- chatbot ----------
+function chatbot(mount,steps){
+  const box=make('div',{class:'chat'});
+  const choices=make('div',{class:'row',style:'margin-top:10px'});
+  let i=0,name='';
+  function botSay(t){const m=make('div',{class:'bub bot'},t);box.append(m);box.scrollTop=box.scrollHeight;speak(t.replace(/[🤖👋]/g,''));}
+  function meSay(t){box.append(make('div',{class:'bub me'},t));box.scrollTop=box.scrollHeight;}
+  function step(){
+    choices.innerHTML='';
+    if(i>=steps.length)return;
+    const s=steps[i];
+    botSay(s.bot.replace('{name}',name));
+    s.choices.forEach(c=>{
+      choices.append(make('button',{class:'opt',onclick:()=>{
+        meSay(c.label);if(c.name)name=c.name;
+        if(c.restart){i=0;setTimeout(()=>{box.innerHTML='';step();},500);return;}
+        i++;setTimeout(step,450);
+      }},c.label));
+    });
+  }
+  mount.append(box,choices);step();
+}
+
+// ---------- recorder ----------
+function recorder(mount,prompt){
+  const p=make('div',{style:'font-size:14.5px;background:#FBF1DC;border-radius:11px;padding:10px 13px;color:var(--ochre);font-weight:700'},prompt);
+  const status=make('div',{class:'note'},'Klaar om op te nemen.');
+  const audio=make('audio',{controls:'',style:'display:none;width:100%;margin-top:10px'});
+  let rec=null,chunks=[],stream=null;
+  const recBtn=make('button',{class:'btn',onclick:start},'● Grabar');
+  const stopBtn=make('button',{class:'btn ghost',onclick:stop,disabled:''},'■ Parar');
+  async function start(){
+    if(!navigator.mediaDevices||!window.MediaRecorder){status.textContent='Opnemen wordt niet ondersteund in deze browser.';return;}
+    try{stream=await navigator.mediaDevices.getUserMedia({audio:true});}
+    catch(e){status.textContent='Geen toegang tot de microfoon (geef toestemming of gebruik https).';return;}
+    chunks=[];rec=new MediaRecorder(stream);rec.ondataavailable=e=>chunks.push(e.data);
+    rec.onstop=()=>{const blob=new Blob(chunks,{type:'audio/webm'});audio.src=URL.createObjectURL(blob);audio.style.display='block';if(stream)stream.getTracks().forEach(t=>t.stop());};
+    rec.start();status.textContent='● Grabando… habla ahora.';recBtn.disabled=true;stopBtn.disabled=false;
+  }
+  function stop(){if(rec&&rec.state!=='inactive')rec.stop();status.textContent='Listo. Escucha tu grabación ▸';recBtn.disabled=false;stopBtn.disabled=true;}
+  mount.append(p,make('div',{class:'row',style:'margin-top:11px'},recBtn,stopBtn),audio,status);
+}
+
+// ---------- memory ----------
+function memory(mount,pairs){
+  const cards=[];pairs.forEach((p,idx)=>{cards.push({pid:idx,t:p[0],spk:p[1]});cards.push({pid:idx,t:p[1],spk:p[1]});});
+  const grid=make('div',{class:'mem'});
+  const fb=make('div',{class:'fb',style:'text-align:center'});
+  let open=[],matched=0,lock=false;
+  shuffle(cards).forEach(c=>{
+    const b=make('button',{class:'mc',onclick:function(){
+      if(lock||this.classList.contains('open')||this.classList.contains('done'))return;
+      this.classList.add('open');this.textContent=c.t;speak(c.spk);open.push({el:this,c:c});
+      if(open.length===2){lock=true;
+        if(open[0].c.pid===open[1].c.pid){open.forEach(o=>{o.el.classList.remove('open');o.el.classList.add('done');});matched++;open=[];lock=false;if(matched===pairs.length){fb.className='fb good';fb.textContent='¡Bien hecho! 🎉';}}
+        else{setTimeout(()=>{open.forEach(o=>{o.el.classList.remove('open');o.el.textContent='?';});open=[];lock=false;},800);}
+      }
+    }},'?');
+    b.dataset.pid=c.pid;grid.append(b);
+  });
+  mount.append(grid,fb);
+}
+
+// ---------- DATA ----------
+const FLASH={
+ 'Saludos':[{es:'hola',nl:'hallo'},{es:'buenos días',nl:'goedemorgen'},{es:'buenas tardes',nl:'goedemiddag'},{es:'buenas noches',nl:'goedenavond'},{es:'adiós',nl:'dag / tot ziens'},{es:'hasta luego',nl:'tot straks'},{es:'gracias',nl:'dank je'},{es:'muy bien',nl:'heel goed'}],
+ 'Presentarse':[{es:'¿cómo te llamas?',nl:'hoe heet je?'},{es:'me llamo…',nl:'ik heet…'},{es:'¿y tú?',nl:'en jij?'},{es:'encantado',nl:'aangenaam'},{es:'sí',nl:'ja'},{es:'no',nl:'nee'}],
+ 'Números':[{es:'cero',nl:'nul'},{es:'diez',nl:'tien'},{es:'veinte',nl:'twintig'},{es:'treinta',nl:'dertig'},{es:'cincuenta',nl:'vijftig'},{es:'cien',nl:'honderd'}],
+ 'En clase':[{es:'la puerta',nl:'de deur'},{es:'la ventana',nl:'het raam'},{es:'la mesa',nl:'de tafel'},{es:'la silla',nl:'de stoel'},{es:'el libro',nl:'het boek'},{es:'el boli',nl:'de pen'},{es:'la mochila',nl:'de rugzak'},{es:'la pizarra',nl:'het bord'}]
+};
+const LYC=[
+ {audio:'carro',q:'¿Qué palabra oyes?',options:['caro','carro'],correct:1},
+ {audio:'pollo',q:'¿Qué palabra oyes?',options:['polo','pollo'],correct:1},
+ {audio:'caña',q:'¿Qué palabra oyes?',options:['cana','caña'],correct:1},
+ {audio:'gracias',q:'¿Qué significa?',options:['dank je','tot ziens','alsjeblieft'],correct:0},
+ {audio:'diecisiete',q:'¿Qué número oyes?',options:['16','17','19','70'],correct:1},
+ {audio:'cuarenta',q:'¿Qué número oyes?',options:['14','40','44','24'],correct:1}
+];
+const ELLA=[{w:'puerta',c:'la'},{w:'libro',c:'el'},{w:'mesa',c:'la'},{w:'boli',c:'el'},{w:'mochila',c:'la'},{w:'mapa',c:'el'},{w:'mano',c:'la'},{w:'problema',c:'el'},{w:'ventana',c:'la'},{w:'día',c:'el'}];
+const SON=[{w:'paella',c:'ll'},{w:'llave',c:'ll'},{w:'ocho',c:'ch'},{w:'coche',c:'ch'},{w:'niño',c:'ñ'},{w:'año',c:'ñ'},{w:'perro',c:'rr'},{w:'guitarra',c:'rr'},{w:'jamón',c:'j'},{w:'jirafa',c:'j'}];
+const ACE=[
+ {q:'',options:['ingles','inglés'],correct:1},
+ {q:'',options:['cafe','café'],correct:1},
+ {q:'',options:['telefono','teléfono'],correct:1},
+ {q:'',options:['musica','música'],correct:1},
+ {q:'',options:['lapiz','lápiz'],correct:1},
+ {q:'',options:['adios','adiós'],correct:1}
+];
+const QUIZ=[
+ {q:'¿Cómo se llama la letra "ñ"?',options:['ene','eñe','enie'],correct:1},
+ {q:'"treinta y dos" en cifras es…',options:['23','32','302'],correct:1},
+ {q:'¿Qué significa "gracias"?',options:['hallo','dank je','tot ziens'],correct:1},
+ {q:'Respondes a "¿Cómo estás?" con…',options:['Me llamo Ana','Muy bien, gracias','Buenos días'],correct:1},
+ {q:'¿Cuál NO es un país hispano?',options:['Perú','Brasil','Chile'],correct:1},
+ {q:'¿Cómo se escribe el número 15?',options:['quince','cinco','cincuenta'],correct:0},
+ {q:'"Me llamo Tom." betekent…',options:['Ik heet Tom','Tot ziens Tom','Hallo Tom'],correct:0}
+];
+const MEM=[['7','siete'],['12','doce'],['20','veinte'],['30','treinta'],['100','cien'],['15','quince']];
+const BOT=[
+ {bot:'¡Hola! 🤖 Soy Roboto. ¿Cómo te llamas?',choices:[{label:'Me llamo Ana',name:'Ana'},{label:'Me llamo Tom',name:'Tom'},{label:'Me llamo Sofía',name:'Sofía'}]},
+ {bot:'¡Encantado, {name}! ¿Cómo estás?',choices:[{label:'Muy bien, gracias'},{label:'Regular'},{label:'Mal'}]},
+ {bot:'Vale. ¿De dónde eres?',choices:[{label:'Soy de Bélgica'},{label:'Soy de Amberes'}]},
+ {bot:'¡Genial, {name}! Encantado de conocerte. ¡Hasta luego! 👋',choices:[{label:'¡Adiós! 🔁',restart:true}]}
+];
+
+// ---------- dictado ----------
+function dictado(mount){
+  const nums=shuffle(Array.from({length:101},(_,i)=>i)).slice(0,6);
+  let i=0,ok=0;
+  const playBtn=make('button',{class:'iconbtn',onclick:()=>speak(numEs(nums[i]))},'🔊 Escuchar');
+  const inp=make('input',{type:'tel',inputmode:'numeric',placeholder:'cijfer',style:'font-size:16px;padding:8px 11px;border:1.6px solid var(--line);border-radius:10px;width:90px'});
+  const fb=make('div',{class:'fb'});
+  const score=make('div',{class:'score'},'0 / 6');
+  const check=make('button',{class:'btn',onclick:()=>{
+    if(inp.value==='')return;
+    if(parseInt(inp.value,10)===nums[i]){fb.className='fb good';fb.textContent='¡Correcto! ✓ ('+numEs(nums[i])+')';ok++;}
+    else{fb.className='fb bad';fb.textContent='Era '+nums[i]+' ('+numEs(nums[i])+').';}
+    i++;score.textContent=ok+' / 6';inp.value='';inp.disabled=true;check.disabled=true;
+    if(i<6){setTimeout(()=>{inp.disabled=false;check.disabled=false;fb.textContent='';inp.focus();speak(numEs(nums[i]));},900);}
+    else{fb.textContent+='  — ¡Terminado! '+(ok>=4?'👏':'💪');playBtn.disabled=true;}
+  }},'Comprobar');
+  inp.addEventListener('keydown',e=>{if(e.key==='Enter')check.click();});
+  mount.append(make('div',{class:'row'},playBtn,inp,check),fb,score);
+}
+
+// ---------- map ----------
+const PAISES=[{"cc": "es", "n": "España", "c": "Madrid", "g": "español/a", "h": "~48 millones", "d": "La Sagrada Família de Barcelona lleva más de 140 años en construcción.", "nl": "De Sagrada Família in Barcelona is al 140+ jaar in aanbouw."}, {"cc": "mx", "n": "México", "c": "Ciudad de México", "g": "mexicano/a", "h": "~130 millones", "d": "Es el país con más hispanohablantes del mundo.", "nl": "Het land met de meeste Spaanstaligen ter wereld."}, {"cc": "co", "n": "Colombia", "c": "Bogotá", "g": "colombiano/a", "h": "~52 millones", "d": "Es famoso por su café y lleva el nombre de Cristóbal Colón.", "nl": "Beroemd om de koffie; vernoemd naar Columbus."}, {"cc": "ar", "n": "Argentina", "c": "Buenos Aires", "g": "argentino/a", "h": "~46 millones", "d": "Aquí nació el tango y es típico el dulce de leche.", "nl": "Bakermat van de tango; dulce de leche is er typisch."}, {"cc": "pe", "n": "Perú", "c": "Lima", "g": "peruano/a", "h": "~34 millones", "d": "Machu Picchu es una ciudad inca en los Andes.", "nl": "Machu Picchu is een Inca-stad in de Andes."}, {"cc": "ve", "n": "Venezuela", "c": "Caracas", "g": "venezolano/a", "h": "~29 millones", "d": "El Salto Ángel es la cascada más alta del mundo.", "nl": "De Salto Ángel is de hoogste waterval ter wereld."}, {"cc": "cl", "n": "Chile", "c": "Santiago", "g": "chileno/a", "h": "~20 millones", "d": "Es un país muy largo y estrecho: más de 4000 km.", "nl": "Een heel lang, smal land van 4000+ km."}, {"cc": "ec", "n": "Ecuador", "c": "Quito", "g": "ecuatoriano/a", "h": "~18 millones", "d": "La línea del ecuador pasa por el país; de ahí su nombre.", "nl": "De evenaar loopt door het land; vandaar de naam."}, {"cc": "gt", "n": "Guatemala", "c": "Ciudad de Guatemala", "g": "guatemalteco/a", "h": "~18 millones", "d": "Es tierra de los mayas y tiene muchos volcanes.", "nl": "Maya-land met veel vulkanen."}, {"cc": "cu", "n": "Cuba", "c": "La Habana", "g": "cubano/a", "h": "~11 millones", "d": "Es una isla famosa por su música: el son y la salsa.", "nl": "Een eiland, beroemd om son en salsa."}, {"cc": "bo", "n": "Bolivia", "c": "Sucre", "g": "boliviano/a", "h": "~12 millones", "d": "Tiene dos capitales y el Salar de Uyuni, el mayor desierto de sal.", "nl": "Twee hoofdsteden en de grootste zoutvlakte (Uyuni)."}, {"cc": "do", "n": "Rep. Dominicana", "c": "Santo Domingo", "g": "dominicano/a", "h": "~11 millones", "d": "Santo Domingo es la ciudad europea más antigua de América.", "nl": "Santo Domingo is de oudste Europese stad van Amerika."}, {"cc": "hn", "n": "Honduras", "c": "Tegucigalpa", "g": "hondureño/a", "h": "~10 millones", "d": "Copán es una famosa ciudad maya.", "nl": "Copán is een beroemde Maya-stad."}, {"cc": "py", "n": "Paraguay", "c": "Asunción", "g": "paraguayo/a", "h": "~7 millones", "d": "Tiene dos lenguas oficiales: el español y el guaraní.", "nl": "Twee officiële talen: Spaans en Guaraní."}, {"cc": "sv", "n": "El Salvador", "c": "San Salvador", "g": "salvadoreño/a", "h": "~6 millones", "d": "Es el país más pequeño de Centroamérica.", "nl": "Het kleinste land van Midden-Amerika."}, {"cc": "ni", "n": "Nicaragua", "c": "Managua", "g": "nicaragüense", "h": "~7 millones", "d": "Tiene muchos lagos y volcanes.", "nl": "Veel meren en vulkanen."}, {"cc": "cr", "n": "Costa Rica", "c": "San José", "g": "costarricense", "h": "~5 millones", "d": "No tiene ejército desde 1948. Su lema: «pura vida».", "nl": "Heeft sinds 1948 geen leger. Motto: pura vida."}, {"cc": "pa", "n": "Panamá", "c": "Ciudad de Panamá", "g": "panameño/a", "h": "~4,5 millones", "d": "El Canal de Panamá une el Atlántico y el Pacífico.", "nl": "Het Panamakanaal verbindt twee oceanen."}, {"cc": "uy", "n": "Uruguay", "c": "Montevideo", "g": "uruguayo/a", "h": "~3,4 millones", "d": "El mate es la bebida nacional.", "nl": "Mate is de nationale drank."}, {"cc": "gq", "n": "Guinea Ecuatorial", "c": "Malabo", "g": "ecuatoguineano/a", "h": "~1,7 millones", "d": "Es el único país de África con el español como lengua oficial.", "nl": "Het enige land in Afrika met Spaans als officiële taal."}];
+function frowEl(lab,val){return make('div',{class:'frow'},make('span',{class:'flab'},lab),make('span',{class:'fval'},val));}
+function openFicha(cc){
+  const p=PAISES.find(x=>x.cc===cc); if(!p)return;
+  const f=$('#ficha'); f.innerHTML='';
+  const top=make('div',{class:'fiche-top'},
+    make('span',{class:'fi fi-'+p.cc+' flag-ico'}),
+    make('div',{class:'fiche-name'},
+      make('div',{class:'pais fred'},p.n,make('button',{class:'iconbtn',onclick:()=>speak(p.n+'. La capital es '+p.c+'.')},'🔊')),
+      make('div',{class:'gentsub'},'Nacionalidad: '+p.g)));
+  const rows=make('div',{class:'fiche-rows'},frowEl('Capital',p.c),frowEl('Nacionalidad',p.g),frowEl('Habitantes',p.h));
+  const dato=make('div',{class:'dato'},make('span',{class:'dato-ic'},'💡'),
+    make('div',{},make('b',{},'¿Sabías que…? '),p.d,make('span',{class:'gloss'},p.nl)));
+  f.append(top,rows,dato);
+  document.querySelectorAll('#paisgrid .ptile').forEach(t=>t.classList.toggle('sel',t.dataset.cc===cc));
+}
+function renderPaisGrid(){
+  const g=$('#paisgrid'); if(!g)return; g.innerHTML='';
+  PAISES.forEach(p=>{
+    const t=make('div',{class:'ptile',onclick:()=>{openFicha(p.cc);const fc=$('#ficha-card');if(fc)fc.scrollIntoView({behavior:'smooth',block:'center'});}},
+      make('span',{class:'fi fi-'+p.cc+' flag-ico'}),make('span',{class:'pn'},p.n));
+    t.dataset.cc=p.cc; g.append(t);
+  });
+  $('#ficha').innerHTML='<div class="fiche-empty">🗺️ <span>Klik op een land op de kaart of op een vlag voor de fiche.</span></div>';
+}
+
+const AREA={"es": 505990, "mx": 1964375, "co": 1141748, "ar": 2780400, "pe": 1285216, "ve": 916445, "cl": 756102, "ec": 256370, "gt": 108889, "cu": 109884, "bo": 1098581, "do": 48671, "hn": 112492, "py": 406752, "sv": 21041, "ni": 130373, "cr": 51100, "pa": 75417, "uy": 176215, "gq": 28051};
+const MATCH_BASICO=["es", "mx", "ar", "co", "pe", "cl"];
+const MATCH_RETO=["es", "mx", "ar", "co", "pe", "cl", "ve", "ec", "cu", "uy"];
+const BESOS=[{"t": "En España, mucha gente se saluda con dos besos (uno en cada mejilla).", "v": true, "e": "En España, los dos besos son muy normales entre amigos y familia."}, {"t": "Entre dos hombres, lo más normal es darse dos besos.", "v": false, "e": "Entre hombres lo habitual es un apretón de manos (handen schudden)."}, {"t": "En muchos países de Latinoamérica se da un solo beso.", "v": true, "e": "En gran parte de Latinoamérica se da un beso; en España, dos."}, {"t": "En una reunión de trabajo muy formal, lo normal son dos besos.", "v": false, "e": "En contextos formales se da la mano, no dos besos."}, {"t": "Los dos besos muchas veces son mejilla con mejilla, no un beso 'de verdad'.", "v": true, "e": "A menudo es mejilla con mejilla y el sonido del beso — un saludo, no un beso real."}];
+
+function fmtNum(n){return n.toLocaleString('es-ES');}
+function matchPairs(mount,pairs){
+  mount.innerHTML=''; let selL=null,done=0; const total=pairs.length;
+  const fb=make('div',{class:'fb'}); const score=make('div',{class:'score'},'Parejas: 0 / '+total);
+  const grid=make('div',{class:'mt-grid'});
+  const colL=make('div',{class:'mt-col'},make('div',{class:'mt-colhd'},'País'));
+  const colR=make('div',{class:'mt-col'},make('div',{class:'mt-colhd'},'Capital'));
+  pairs.forEach(p=>{
+    const l=make('div',{class:'mt-item'},make('span',{class:'fi fi-'+p.cc+' flag-ico'}),make('span',{},p.n));
+    l.dataset.cc=p.cc;
+    l.addEventListener('click',()=>{ if(l.classList.contains('good'))return; if(selL)selL.classList.remove('sel'); if(selL===l){selL=null;return;} selL=l; l.classList.add('sel'); });
+    colL.append(l);
+  });
+  shuffle(pairs).forEach(p=>{
+    const r=make('div',{class:'mt-item'},make('span',{},p.c)); r.dataset.cc=p.cc;
+    r.addEventListener('click',()=>{
+      if(r.classList.contains('good'))return;
+      if(!selL){fb.className='fb';fb.textContent='Elige primero un país (izquierda).';return;}
+      if(selL.dataset.cc===p.cc){selL.classList.remove('sel');selL.classList.add('good');r.classList.add('good');speak(p.n);done++;fb.className='fb good';fb.textContent='¡Correcto! ✓';score.textContent='Parejas: '+done+' / '+total;selL=null;if(done===total)fb.textContent='¡Completado! 🎉';}
+      else{r.classList.add('bad');selL.classList.remove('sel');selL=null;setTimeout(()=>r.classList.remove('bad'),650);fb.className='fb bad';fb.textContent='Esa no es. Inténtalo otra vez.';}
+    });
+    colR.append(r);
+  });
+  grid.append(colL,colR); mount.append(grid,fb,score);
+}
+function initMatch(mount){
+  mount.innerHTML='';
+  const cats=make('div',{class:'cat-row'}); const sub=make('div',{});
+  const levels=[['Básico',MATCH_BASICO],['Reto',MATCH_RETO]];
+  function load(set,btn){
+    Array.from(cats.children).forEach(c=>c.classList.remove('active')); btn.classList.add('active');
+    const pairs=set.map(cc=>{const p=PAISES.find(x=>x.cc===cc);return {cc:p.cc,n:p.n,c:p.c};});
+    matchPairs(sub,pairs);
+  }
+  levels.forEach(([lab,set],i)=>{const btn=make('button',{class:'cat'+(i===0?' active':'')},lab);btn.addEventListener('click',()=>load(set,btn));cats.append(btn);});
+  mount.append(cats,sub); load(MATCH_BASICO,cats.children[0]);
+}
+function biggerDuel(mount){
+  mount.innerHTML='';
+  const pool=PAISES.filter(p=>AREA[p.cc]!=null);
+  let round=0,score=0; const totalR=10;
+  const bar=make('div',{class:'score'},'Ronda 0 / '+totalR);
+  const arena=make('div',{}); const fb=make('div',{class:'fb'});
+  function step(){
+    if(round>=totalR){summary();return;}
+    round++; bar.textContent='Ronda '+round+' / '+totalR+'  ·  Aciertos: '+score; fb.textContent='';
+    let a=pool[Math.floor(Math.random()*pool.length)],b;
+    do{b=pool[Math.floor(Math.random()*pool.length)];}while(b.cc===a.cc||AREA[b.cc]===AREA[a.cc]);
+    const win=AREA[a.cc]>AREA[b.cc]?a:b;
+    arena.innerHTML='';
+    const cards=make('div',{class:'duel-cards'});
+    [a,b].forEach(pp=>{
+      const card=make('div',{class:'duel-card'},make('span',{class:'fi fi-'+pp.cc+' flag-ico'}),make('div',{class:'dc-name fred'},pp.n));
+      card.addEventListener('click',()=>{
+        Array.from(cards.children).forEach(c=>c.style.pointerEvents='none');
+        cards.children[0].append(make('div',{class:'dc-area'},fmtNum(AREA[a.cc])+' km²'));
+        cards.children[1].append(make('div',{class:'dc-area'},fmtNum(AREA[b.cc])+' km²'));
+        Array.from(cards.children).forEach((c,idx)=>{ if([a,b][idx].cc===win.cc)c.classList.add('good'); });
+        if(pp.cc===win.cc){score++;fb.className='fb good';fb.textContent='¡Sí! '+win.n+' es más grande.';}
+        else{card.classList.add('bad');fb.className='fb bad';fb.textContent='En realidad, '+win.n+' es más grande.';}
+        setTimeout(step,1500);
+      });
+      cards.append(card);
+    });
+    arena.append(make('div',{class:'duel-q'},'¿Qué país es más grande? Toca el más grande.'),cards);
+  }
+  function summary(){
+    arena.innerHTML='';
+    let big=pool[0],small=pool[0]; pool.forEach(p=>{if(AREA[p.cc]>AREA[big.cc])big=p;if(AREA[p.cc]<AREA[small.cc])small=p;});
+    bar.textContent='Ronda '+totalR+' / '+totalR+'  ·  Aciertos: '+score;
+    arena.append(
+      make('div',{class:'duel-done'},'Resultado: '+score+' / '+totalR+(score>=8?' 🎉':score>=5?' 👏':' 💪')),
+      make('div',{class:'duel-fact'},make('b',{},'El más grande: '),big.n+' ('+fmtNum(AREA[big.cc])+' km²). ',make('b',{},'El más pequeño: '),small.n+' ('+fmtNum(AREA[small.cc])+' km²).'),
+      make('button',{class:'btn',style:'margin-top:12px',onclick:()=>biggerDuel(mount)},'Jugar otra vez')
+    );
+  }
+  mount.append(bar,arena,fb); step();
+}
+function vfQuiz(mount,items){
+  mount.innerHTML=''; let done=0,ok=0; const total=items.length;
+  const score=make('div',{class:'score'},'Puntos: 0 / '+total);
+  items.forEach(it=>{
+    const block=make('div',{class:'qblock'});
+    block.append(make('div',{class:'q'},it.t));
+    const row=make('div',{class:'row',style:'margin-top:8px'}); const fb=make('div',{class:'fb'}); let answered=false;
+    [['Verdad',true],['Mito',false]].forEach(([lab,val])=>{
+      const bt=make('button',{class:'opt'},lab);
+      bt.addEventListener('click',()=>{
+        if(answered)return;answered=true;done++;
+        if(val===it.v){bt.classList.add('good');ok++;fb.className='fb good';fb.textContent='✓ '+it.e;}
+        else{bt.classList.add('bad');fb.className='fb bad';fb.textContent='✗ '+it.e;}
+        Array.from(row.children).forEach(c=>c.disabled=true);
+        score.textContent='Puntos: '+ok+' / '+total+(done===total?(ok===total?'  ¡Perfecto! 🎉':'  ¡Bien! 👏'):'');
+      });
+      row.append(bt);
+    });
+    block.append(row,fb); mount.append(block);
+  });
+  mount.append(score);
+}
+
+const SOPA={"Saludos": ["HOLA", "ADIOS", "GRACIAS", "BUENAS", "TARDES", "NOCHES", "HASTA", "CHAO"], "Clase": ["MESA", "SILLA", "LIBRO", "PUERTA", "VENTANA", "BOLI", "MOCHILA", "PIZARRA"], "Países": ["ESPANA", "MEXICO", "CHILE", "PERU", "CUBA", "BOLIVIA", "PANAMA", "ARGENTINA"]};
+const MATCH_PR=[{"l": "¿Cómo te llamas?", "r": "Me llamo Ana."}, {"l": "¿De dónde eres?", "r": "Soy de Bélgica."}, {"l": "¿Qué tal?", "r": "Muy bien, gracias."}, {"l": "¡Hola!", "r": "¡Hola! ¿Qué tal?"}, {"l": "¡Hasta luego!", "r": "¡Adiós!"}, {"l": "¿Cuántos años tienes?", "r": "Tengo quince años."}];
+const NAT=["es", "mx", "ar", "co", "pe", "cl", "ve", "cu", "bo", "uy"];
+const ORDENA=[["— ¡Hola! ¿Cómo te llamas?", "— Me llamo Lucía. ¿Y tú?", "— Me llamo Tom. ¿De dónde eres?", "— Soy de Bélgica. ¡Hasta luego!"], ["— Buenos días.", "— Buenos días. ¿Qué tal?", "— Muy bien, gracias. ¿Y usted?", "— Bien también. ¡Hasta mañana!"]];
+const BUILD=[{"hint": "Vraag iemands naam:", "w": ["¿Cómo", "te", "llamas?"]}, {"hint": "Zeg waar je vandaan komt:", "w": ["Soy", "de", "España."]}, {"hint": "Vraag waar iemand vandaan komt:", "w": ["¿De", "dónde", "eres?"]}, {"hint": "Stel jezelf voor:", "w": ["Me", "llamo", "Carlos."]}, {"hint": "Vraag iemands leeftijd:", "w": ["¿Cuántos", "años", "tienes?"]}, {"hint": "Groet en vraag hoe het gaat:", "w": ["Hola,", "¿qué", "tal?"]}];
+
+function buildGrid(words,size){
+  const G=Array.from({length:size},()=>Array(size).fill(''));
+  const dirs=[[0,1],[1,0],[1,1],[1,-1]];
+  function place(w){
+    for(let t=0;t<300;t++){
+      const d=dirs[Math.floor(Math.random()*dirs.length)];
+      const r0=Math.floor(Math.random()*size),c0=Math.floor(Math.random()*size);
+      const r1=r0+d[0]*(w.length-1),c1=c0+d[1]*(w.length-1);
+      if(r1<0||r1>=size||c1<0||c1>=size)continue;
+      let ok=true;
+      for(let i=0;i<w.length;i++){const r=r0+d[0]*i,c=c0+d[1]*i;if(G[r][c]&&G[r][c]!==w[i]){ok=false;break;}}
+      if(!ok)continue;
+      for(let i=0;i<w.length;i++){const r=r0+d[0]*i,c=c0+d[1]*i;G[r][c]=w[i];}
+      return true;
+    }
+    return false;
+  }
+  words.forEach(place);
+  const A='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  for(let r=0;r<size;r++)for(let c=0;c<size;c++)if(!G[r][c])G[r][c]=A[Math.floor(Math.random()*26)];
+  return G;
+}
+function wordSearch(mount,words,size){
+  size=size||12; const G=buildGrid(words,size); const found=new Set(); let start=null;
+  const grid=make('div',{class:'ws-grid',style:'grid-template-columns:repeat('+size+',1fr)'});
+  const cells=[]; const fb=make('div',{class:'fb'}); const list=make('div',{class:'ws-list'});
+  for(let r=0;r<size;r++){cells.push([]);for(let c=0;c<size;c++){
+    const cell=make('div',{class:'ws-c'},G[r][c]);
+    cell.addEventListener('click',()=>onCell(r,c)); grid.append(cell); cells[r].push(cell);
+  }}
+  words.forEach(w=>{const sp=make('span',{class:'ws-w'},w);sp.dataset.w=w;list.append(sp);});
+  function onCell(r,c){
+    if(!start){start={r,c};cells[r][c].classList.add('sel');return;}
+    cells[start.r][start.c].classList.remove('sel');
+    if(start.r===r&&start.c===c){start=null;return;}
+    const straight=(start.r===r)||(start.c===c)||(Math.abs(r-start.r)===Math.abs(c-start.c));
+    if(!straight){start=null;return;}
+    const dr=Math.sign(r-start.r),dc=Math.sign(c-start.c),len=Math.max(Math.abs(r-start.r),Math.abs(c-start.c))+1;
+    const arr=[];for(let i=0;i<len;i++)arr.push([start.r+dr*i,start.c+dc*i]);
+    const str=arr.map(x=>G[x[0]][x[1]]).join(''),rev=str.split('').reverse().join('');
+    const hit=words.find(w=>w===str||w===rev);
+    if(hit&&!found.has(hit)){found.add(hit);arr.forEach(x=>cells[x[0]][x[1]].classList.add('found'));list.querySelector('[data-w="'+hit+'"]').classList.add('done');fb.className='fb good';fb.textContent='¡Encontrada: '+hit+'! ('+found.size+'/'+words.length+')';if(found.size===words.length)fb.textContent='¡Completado! 🎉';}
+    start=null;
+  }
+  mount.innerHTML=''; mount.append(grid,list,fb);
+}
+function initSopa(mount){
+  mount.innerHTML=''; const cats=make('div',{class:'cat-row'}); const sub=make('div',{}); const themes=Object.keys(SOPA);
+  function load(name,btn){Array.from(cats.children).forEach(c=>c.classList.remove('active'));btn.classList.add('active');wordSearch(sub,SOPA[name],12);}
+  themes.forEach((name,i)=>{const btn=make('button',{class:'cat'+(i===0?' active':'')},name);btn.addEventListener('click',()=>load(name,btn));cats.append(btn);});
+  mount.append(cats,sub); load(themes[0],cats.children[0]);
+}
+function matchTwo(mount,pairs,lLab,rLab){
+  mount.innerHTML=''; let sel=null,done=0; const total=pairs.length;
+  const fb=make('div',{class:'fb'}); const score=make('div',{class:'score'},'Parejas: 0 / '+total);
+  const grid=make('div',{class:'mt-grid'});
+  const colL=make('div',{class:'mt-col'},make('div',{class:'mt-colhd'},lLab||'')); const colR=make('div',{class:'mt-col'},make('div',{class:'mt-colhd'},rLab||''));
+  let id=0; const tg=pairs.map(p=>({id:id++,l:p.l,r:p.r}));
+  tg.forEach(p=>{const l=make('div',{class:'mt-item'},make('span',{},p.l));l.dataset.id=p.id;l.addEventListener('click',()=>{if(l.classList.contains('good'))return;if(sel)sel.classList.remove('sel');if(sel===l){sel=null;return;}sel=l;l.classList.add('sel');});colL.append(l);});
+  shuffle(tg).forEach(p=>{const r=make('div',{class:'mt-item'},make('span',{},p.r));r.dataset.id=p.id;r.addEventListener('click',()=>{
+    if(r.classList.contains('good'))return;
+    if(!sel){fb.className='fb';fb.textContent='Elige primero la izquierda.';return;}
+    if(sel.dataset.id===r.dataset.id){sel.classList.remove('sel');sel.classList.add('good');r.classList.add('good');done++;fb.className='fb good';fb.textContent='¡Correcto! ✓';score.textContent='Parejas: '+done+' / '+total;sel=null;if(done===total)fb.textContent='¡Completado! 🎉';}
+    else{r.classList.add('bad');sel.classList.remove('sel');sel=null;setTimeout(()=>r.classList.remove('bad'),650);fb.className='fb bad';fb.textContent='Esa no es. Inténtalo otra vez.';}
+  });colR.append(r);});
+  grid.append(colL,colR); mount.append(grid,fb,score);
+}
+function natQuiz(mount,ccList){
+  mount.innerHTML=''; let done=0,ok=0; const total=ccList.length; const score=make('div',{class:'score'},'Puntos: 0 / '+total);
+  const allG=PAISES.map(p=>p.g);
+  ccList.forEach(cc=>{
+    const p=PAISES.find(x=>x.cc===cc); const block=make('div',{class:'qblock'});
+    block.append(make('div',{class:'row'},make('span',{class:'fi fi-'+p.cc+' flag-ico',style:'width:38px;height:28px'}),make('span',{class:'q'},p.n+' → ?')));
+    let opts=[p.g]; const pool=shuffle(allG.filter(g=>g!==p.g)); let i=0; while(opts.length<3&&i<pool.length){if(opts.indexOf(pool[i])<0)opts.push(pool[i]);i++;}
+    opts=shuffle(opts); const correct=opts.indexOf(p.g);
+    const row=make('div',{class:'row',style:'margin-top:8px'}); const fb=make('div',{class:'fb'}); let answered=false;
+    opts.forEach((o,idx)=>{const bt=make('button',{class:'opt'},o);bt.addEventListener('click',()=>{if(answered)return;answered=true;done++;if(idx===correct){bt.classList.add('good');ok++;fb.className='fb good';fb.textContent='¡Muy bien! ✓';}else{bt.classList.add('bad');fb.className='fb bad';fb.textContent='Es: '+p.g;row.children[correct].classList.add('good');}Array.from(row.children).forEach(c=>c.disabled=true);score.textContent='Puntos: '+ok+' / '+total+(done===total?(ok===total?'  ¡Perfecto! 🎉':'  ¡Bien! 👏'):'');});row.append(bt);});
+    block.append(row,fb); mount.append(block);
+  });
+  mount.append(score);
+}
+function orderOne(mount,lines){
+  mount.innerHTML=''; const target=make('div',{class:'ord-target'}); const bank=make('div',{class:'ord-bank'}); const fb=make('div',{class:'fb'}); const picked=[];
+  shuffle(lines.map((t,i)=>({t,i}))).forEach(o=>{const chip=make('div',{class:'ord-chip'},o.t);chip.addEventListener('click',()=>{
+    if(chip.classList.contains('used'))return; chip.classList.add('used');
+    target.append(make('div',{class:'ord-line'},make('span',{class:'ord-num'},(picked.length+1)+''),make('span',{},o.t))); picked.push(o.i);
+    if(picked.length===lines.length)check();
+  });bank.append(chip);});
+  function check(){const okAll=picked.every((v,idx)=>v===idx);Array.from(target.children).forEach((sl,idx)=>sl.classList.add(picked[idx]===idx?'good':'bad'));fb.className=okAll?'fb good':'fb bad';fb.textContent=okAll?'¡Perfecto! Conversación en orden. 🎉':'Casi. Mira el orden y vuelve a intentarlo.';}
+  const reset=make('button',{class:'btn ghost sm',style:'margin-top:10px'},'Reiniciar'); reset.addEventListener('click',()=>orderOne(mount,lines));
+  mount.append(bank,target,fb,reset);
+}
+function initOrden(mount){
+  mount.innerHTML=''; const cats=make('div',{class:'cat-row'}); const sub=make('div',{});
+  function load(idx,btn){Array.from(cats.children).forEach(c=>c.classList.remove('active'));btn.classList.add('active');orderOne(sub,ORDENA[idx]);}
+  ORDENA.forEach((d,i)=>{const btn=make('button',{class:'cat'+(i===0?' active':'')},'Diálogo '+(i+1));btn.addEventListener('click',()=>load(i,btn));cats.append(btn);});
+  mount.append(cats,sub); load(0,cats.children[0]);
+}
+function buildOne(container,item){
+  container.innerHTML=''; const hint=make('div',{class:'q'},item.hint||'Ordena las palabras:'); const target=make('div',{class:'bld-target'}); const bank=make('div',{class:'bld-bank'}); const fb=make('div',{class:'fb'}); const picked=[];
+  shuffle(item.w.map((t,i)=>({t,i}))).forEach(o=>{const chip=make('div',{class:'chip'},o.t);chip.addEventListener('click',()=>{
+    if(chip.classList.contains('used'))return; chip.classList.add('used'); picked.push(o.t); target.append(make('span',{class:'bld-w'},o.t));
+    if(picked.length===item.w.length){const okk=picked.join(' ')===item.w.join(' ');fb.className=okk?'fb good':'fb bad';fb.textContent=okk?'¡Correcto! ✓':'Casi. Es: '+item.w.join(' ');target.classList.add(okk?'good':'bad');}
+  });bank.append(chip);});
+  container.append(hint,target,bank,fb);
+}
+function buildSentence(mount,items){
+  let idx=0; const bar=make('div',{class:'score'}); const slot=make('div',{});
+  const row=make('div',{class:'row',style:'margin-top:10px'}); const resetB=make('button',{class:'btn ghost sm'},'Reiniciar'); const nextB=make('button',{class:'btn sm'},'Siguiente →');
+  function show(){bar.textContent='Frase '+(idx+1)+' / '+items.length;buildOne(slot,items[idx]);}
+  resetB.addEventListener('click',show); nextB.addEventListener('click',()=>{idx=(idx+1)%items.length;show();}); row.append(resetB,nextB);
+  mount.innerHTML=''; mount.append(bar,slot,row); show();
+}
+function numRead(mount){
+  let round=0,score=0,cur=0; const totalR=10;
+  const bar=make('div',{class:'score'}); const word=make('div',{class:'numword'}); const sayB=make('button',{class:'iconbtn'},'🔊');
+  const inp=make('input',{type:'text',inputmode:'numeric',class:'numin',placeholder:'cifra'}); const checkB=make('button',{class:'btn sm'},'Comprobar'); const fb=make('div',{class:'fb'});
+  function newR(){cur=Math.floor(Math.random()*101);word.textContent=numEs(cur);inp.value='';inp.disabled=false;checkB.disabled=false;fb.textContent='';fb.className='fb';bar.textContent='Número '+(round+1)+' / '+totalR+'  ·  Aciertos: '+score;}
+  sayB.addEventListener('click',()=>speak(numEs(cur)));
+  function submit(){if(checkB.disabled)return;const v=parseInt(inp.value,10);if(v===cur){score++;fb.className='fb good';fb.textContent='¡Correcto! '+cur+' = '+numEs(cur);}else{fb.className='fb bad';fb.textContent='Era '+cur+' = '+numEs(cur);}inp.disabled=true;checkB.disabled=true;round++;
+    if(round>=totalR){setTimeout(()=>{bar.textContent='Resultado: '+score+' / '+totalR+(score>=8?' 🎉':score>=5?' 👏':' 💪');word.textContent='¡Fin!';const again=make('button',{class:'btn',style:'margin-top:8px'},'Otra vez');again.addEventListener('click',()=>{round=0;score=0;again.remove();newR();});mount.append(again);},900);}
+    else setTimeout(newR,900);}
+  checkB.addEventListener('click',submit); inp.addEventListener('keydown',e=>{if(e.key==='Enter')submit();});
+  mount.innerHTML=''; mount.append(bar,make('div',{class:'numrow'},word,sayB),make('div',{class:'row',style:'margin-top:8px'},inp,checkB),fb); newR();
+}
+
+const AMPNUM=[{"q": "¿Cuánto es «doscientos»?", "options": ["200", "220", "2000"], "correct": 0}, {"q": "«Mil» es…", "options": ["100", "1000", "10000"], "correct": 1}, {"q": "El 3.º es…", "options": ["segundo", "tercero", "cuarto"], "correct": 1}, {"q": "«Quinientos» es…", "options": ["50", "150", "500"], "correct": 2}, {"q": "El 1.º es…", "options": ["primero", "primo", "uno"], "correct": 0}];
+const ESDR=[{"w": "café", "c": "aguda"}, {"w": "español", "c": "aguda"}, {"w": "reloj", "c": "aguda"}, {"w": "casa", "c": "llana"}, {"w": "libro", "c": "llana"}, {"w": "lápiz", "c": "llana"}, {"w": "música", "c": "esdrujula"}, {"w": "teléfono", "c": "esdrujula"}, {"w": "sábado", "c": "esdrujula"}];
+const FORMAL=[{"w": "¿Cómo está usted?", "c": "formal"}, {"w": "Buenos días, señor.", "c": "formal"}, {"w": "¿Cómo se llama?", "c": "formal"}, {"w": "¡Hola!", "c": "informal"}, {"w": "¿Qué tal?", "c": "informal"}, {"w": "¿Cómo te llamas?", "c": "informal"}];
+const YAP=["Saludar y despedirme en español", "Deletrear mi nombre", "Contar del 0 al 100", "Decir de dónde soy", "Usar las palabras de la clase"];
+
+function yaPuedo(mount,items){
+  mount.innerHTML=''; let on=0; const total=items.length;
+  const bar=make('div',{class:'score'},'Ya puedo: 0 / '+total);
+  items.forEach(t=>{const box=make('span',{class:'ya-box'});const it=make('div',{class:'ya-item'},box,make('span',{},t));
+    it.addEventListener('click',()=>{const now=!it.classList.contains('on');it.classList.toggle('on',now);box.textContent=now?'✓':'';on+=now?1:-1;bar.textContent='Ya puedo: '+on+' / '+total;});
+    mount.append(it);});
+  mount.append(bar);
+}
+
+function initMap(){
+  const byName={}; PAISES.forEach(p=>byName[p.n]=p.cc);
+  document.querySelectorAll('#mapbox .pais').forEach(p=>{
+    const cc=byName[p.dataset.n];
+    p.addEventListener('click',()=>{ if(cc){openFicha(cc);const fc=$('#ficha-card');if(fc)fc.scrollIntoView({behavior:'smooth',block:'nearest'});} });
+    p.setAttribute('title',p.dataset.n);
+    if(cc)p.style.cursor='pointer';
+  });
+}
+
+// ---------- nieuwe engines: typeQuiz + crossword ----------
+function typeQuiz(mountId, items, opts){
+  opts=opts||{};
+  const norm=s=>(s||'').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9ñ ]/g,'').replace(/\s+/g,' ').trim();
+  const el=typeof mountId==='string'?document.getElementById(mountId):mountId; if(!el) return;
+  const uid='tq'+Math.random().toString(36).slice(2,7);
+  let order=shuffle(items.map((_,k)=>k)),i=0,score=0;
+  function done(){
+    el.innerHTML='<div class="tq-done">🎉 '+score+' / '+items.length+'</div><div class="tq-btns" style="justify-content:center"><button class="iconbtn" id="'+uid+'-ag">↻ Opnieuw</button></div>';
+    el.querySelector('#'+uid+'-ag').onclick=()=>{order=shuffle(items.map((_,k)=>k));i=0;score=0;step();};
+  }
+  function step(){
+    if(i>=order.length)return done();
+    const it=items[order[i]];
+    el.innerHTML='<div class="tq-prompt">'+it.q+'</div>'+
+      '<input class="tq-input" id="'+uid+'-in" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="'+(opts.ph||'Typ je antwoord…')+'">'+
+      '<div class="tq-btns"><button class="iconbtn" id="'+uid+'-ck">Controleer</button>'+(it.hint?'<button class="iconbtn" id="'+uid+'-hi">Tip</button>':'')+'<span class="tq-prog">'+(i+1)+'/'+items.length+'</span></div>'+
+      '<div class="tq-fb" id="'+uid+'-fb"></div>';
+    const inp=el.querySelector('#'+uid+'-in'),fb=el.querySelector('#'+uid+'-fb');
+    try{inp.focus();}catch(e){}
+    function check(){
+      if(norm(inp.value)===norm(it.a)){score++;fb.innerHTML='<span class="tq-ok">✓ ¡Correcto!</span>';inp.disabled=true;el.querySelector('#'+uid+'-ck').disabled=true;setTimeout(()=>{i++;step();},650);}
+      else{fb.innerHTML='<span class="tq-no">✗ Casi… probeer opnieuw</span>';}
+    }
+    el.querySelector('#'+uid+'-ck').onclick=check;
+    inp.addEventListener('keydown',e=>{if(e.key==='Enter')check();});
+    if(it.hint)el.querySelector('#'+uid+'-hi').onclick=()=>{fb.innerHTML='<span class="tq-hint">💡 '+it.hint+'</span>';};
+  }
+  step();
+}
+function crossword(mountId, data){
+  const el=typeof mountId==='string'?document.getElementById(mountId):mountId; if(!el) return;
+  const uid='cw'+Math.random().toString(36).slice(2,7);
+  const map={}; data.cells.forEach(c=>map[c.r+','+c.c]=c);
+  let h='<div class="cw-wrap"><table class="cw">';
+  for(let r=1;r<=data.rows;r++){h+='<tr>';for(let c=1;c<=data.cols;c++){const cell=map[r+','+c];h+=cell?('<td class="cw-cell">'+(cell.num?'<span class="cw-num">'+cell.num+'</span>':'')+'<input maxlength="1" data-k="'+r+','+c+'" autocomplete="off" spellcheck="false"></td>'):'<td class="cw-blank"></td>';}h+='</tr>';}
+  h+='</table><div class="cw-clues"><div class="cw-h">Horizontales →</div>'+data.clues.across.map(x=>'<div><b>'+x[0]+'.</b> '+x[1]+'</div>').join('')+'<div class="cw-h">Verticales ↓</div>'+data.clues.down.map(x=>'<div><b>'+x[0]+'.</b> '+x[1]+'</div>').join('')+'</div></div>';
+  h+='<div class="tq-btns"><button class="iconbtn" id="'+uid+'-ck">Comprobar</button><button class="iconbtn" id="'+uid+'-so">Solución</button><span class="cw-msg" id="'+uid+'-ms"></span></div>';
+  el.innerHTML=h;
+  const inputs=[...el.querySelectorAll('input[data-k]')];
+  inputs.forEach((inp,idx)=>{inp.addEventListener('input',()=>{inp.value=inp.value.toUpperCase();inp.classList.remove('cw-ok','cw-no');if(inp.value&&idx<inputs.length-1)inputs[idx+1].focus();});});
+  el.querySelector('#'+uid+'-ck').onclick=()=>{let ok=0,t=0;inputs.forEach(inp=>{t++;const w=map[inp.dataset.k].ch.toUpperCase();const g=(inp.value||'').toUpperCase();inp.classList.remove('cw-ok','cw-no');if(g===w){ok++;inp.classList.add('cw-ok');}else if(g){inp.classList.add('cw-no');}});el.querySelector('#'+uid+'-ms').textContent=ok===t?'🎉 ¡Perfecto!':ok+' / '+t;};
+  el.querySelector('#'+uid+'-so').onclick=()=>{inputs.forEach(inp=>{inp.value=map[inp.dataset.k].ch.toUpperCase();inp.classList.add('cw-ok');inp.classList.remove('cw-no');});el.querySelector('#'+uid+'-ms').textContent='Solución';};
+}
+const OPER=[{q:'dos + tres',a:'cinco'},{q:'diez + cinco',a:'quince'},{q:'veinte − cuatro',a:'dieciséis'},{q:'siete + ocho',a:'quince'},{q:'cuarenta + diez',a:'cincuenta'},{q:'cincuenta − cinco',a:'cuarenta y cinco'}];
+const CIFRAS=[{q:'45',a:'cuarenta y cinco'},{q:'62',a:'sesenta y dos'},{q:'87',a:'ochenta y siete'},{q:'94',a:'noventa y cuatro'},{q:'78',a:'setenta y ocho'},{q:'100',a:'cien'}];
+const INSTR=[{q:'✏️ <b>E…</b>',a:'escribe',hint:'schrijven'},{q:'🙋 <b>P…</b>',a:'pregunta',hint:'een vraag stellen'},{q:'🧩 <b>R…</b>',a:'relaciona',hint:'verbinden'},{q:'🔍 <b>O…</b>',a:'observa',hint:'aandachtig kijken'},{q:'💡 <b>P…</b>',a:'piensa',hint:'nadenken'},{q:'📖 <b>L…</b>',a:'lee',hint:'lezen'},{q:'👂 <b>E…</b>',a:'escucha',hint:'luisteren'},{q:'✅ <b>C…</b>',a:'completa',hint:'aanvullen'},{q:'💬 <b>H…</b>',a:'habla',hint:'spreken'},{q:'👀 <b>M…</b>',a:'mira',hint:'kijken'}];
+const CW={cols:8,rows:7,cells:[{r:1,c:2,ch:'S',num:1},{r:2,c:1,ch:'D',num:2},{r:2,c:2,ch:'I'},{r:2,c:3,ch:'E'},{r:2,c:4,ch:'Z'},{r:3,c:2,ch:'E'},{r:3,c:5,ch:'C',num:3},{r:4,c:2,ch:'T',num:4},{r:4,c:3,ch:'R'},{r:4,c:4,ch:'E'},{r:4,c:5,ch:'I'},{r:4,c:6,ch:'N'},{r:4,c:7,ch:'T'},{r:4,c:8,ch:'A'},{r:5,c:2,ch:'E'},{r:5,c:5,ch:'N'},{r:6,c:5,ch:'C'},{r:7,c:5,ch:'O',num:5},{r:7,c:6,ch:'C'},{r:7,c:7,ch:'H'},{r:7,c:8,ch:'O'}],clues:{across:[['2','10'],['4','30'],['5','8']],down:[['1','7'],['3','5']]}};
+
+function lottery(mountId){
+  const el=typeof mountId==='string'?document.getElementById(mountId):mountId; if(!el) return;
+  const uid='lot'+Math.random().toString(36).slice(2,7);
+  let nums=[], stars=[];
+  function draw(){
+    nums=shuffle([...Array(50)].map((_,i)=>i+1)).slice(0,5).sort((a,b)=>a-b);
+    stars=shuffle([...Array(12)].map((_,i)=>i+1)).slice(0,2).sort((a,b)=>a-b);
+    render();
+  }
+  function render(){
+    const ball=(p,j)=>'<span class="lot-ball'+(p==='s'?' lot-star':'')+'"><input id="'+uid+'-'+p+j+'" maxlength="2" inputmode="numeric" autocomplete="off"></span>';
+    el.innerHTML='<div class="lot-euro"><div class="lot-euro-h">El sorteo</div>'+
+      '<div class="lot-balls">'+nums.map((_,j)=>ball('n',j)).join('')+'<span class="lot-plus">+</span>'+stars.map((_,j)=>ball('s',j)).join('')+'</div>'+
+      '<div class="lot-euro-lbl">5 números (1–50) &nbsp;+&nbsp; 2 estrellas (1–12)</div></div>'+
+      '<div class="tq-btns" style="justify-content:center"><button class="iconbtn" id="'+uid+'-ls">🔊 Escuchar el sorteo</button><button class="iconbtn" id="'+uid+'-wd">👁️ Sin sonido</button><button class="iconbtn" id="'+uid+'-ck">Comprobar</button><button class="iconbtn" id="'+uid+'-nw">↻ Otro sorteo</button></div>'+
+      '<div class="tq-fb" id="'+uid+'-fb"></div>';
+    el.querySelector('#'+uid+'-ls').onclick=()=>speak(nums.map(numEs).join(', ')+'. Estrellas: '+stars.map(numEs).join(', '),0.9);
+    el.querySelector('#'+uid+'-wd').onclick=()=>{el.querySelector('#'+uid+'-fb').innerHTML='<span class="tq-hint">Números: '+nums.map(numEs).join(' · ')+'<br>Estrellas: '+stars.map(numEs).join(' · ')+'</span>';};
+    el.querySelector('#'+uid+'-nw').onclick=draw;
+    el.querySelector('#'+uid+'-ck').onclick=()=>{
+      let ok=0,tot=nums.length+stars.length;
+      nums.forEach((n,j)=>{const inp=el.querySelector('#'+uid+'-n'+j);inp.classList.remove('lot-ok','lot-no');if(parseInt(inp.value,10)===n){ok++;inp.classList.add('lot-ok');}else{inp.classList.add('lot-no');}});
+      stars.forEach((n,j)=>{const inp=el.querySelector('#'+uid+'-s'+j);inp.classList.remove('lot-ok','lot-no');if(parseInt(inp.value,10)===n){ok++;inp.classList.add('lot-ok');}else{inp.classList.add('lot-no');}});
+      el.querySelector('#'+uid+'-fb').innerHTML=ok===tot?'<span class="tq-ok">🎉 ¡Bote! '+tot+' / '+tot+'</span>':'<span class="tq-no">'+ok+' / '+tot+' correcto</span>';
+    };
+  }
+  draw();
+}
+const FBM=[['España',3,'México',1],['Argentina',2,'Colombia',2],['Chile',0,'Perú',1],['México',4,'Uruguay',0],['Colombia',1,'España',1],['Perú',2,'Argentina',3],['Uruguay',2,'Chile',2],['España',5,'Perú',0]];
+function futbol(mountId){
+  const el=typeof mountId==='string'?document.getElementById(mountId):mountId; if(!el) return;
+  const uid='fb'+Math.random().toString(36).slice(2,7);
+  const norm=s=>(s||'').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z ]/g,'').replace(/\s+/g,' ').trim();
+  let order=shuffle(FBM.map((_,i)=>i)),i=0,score=0;
+  function done(){el.innerHTML='<div class="tq-done">🎉 '+score+' / '+FBM.length+'</div><div class="tq-btns" style="justify-content:center"><button class="iconbtn" id="'+uid+'-ag">↻ Opnieuw</button></div>';el.querySelector('#'+uid+'-ag').onclick=()=>{order=shuffle(FBM.map((_,i)=>i));i=0;score=0;step();};}
+  function step(){
+    if(i>=order.length)return done();
+    const m=FBM[order[i]];
+    el.innerHTML='<div class="fb-match"><span class="fb-team">'+m[0]+'</span><span class="fb-sc">'+m[1]+'</span><span class="fb-dash">–</span><span class="fb-sc">'+m[3]+'</span><span class="fb-team">'+m[2]+'</span></div>'+
+      '<div class="fb-lbl">Escribe el resultado en palabras:</div>'+
+      '<div class="fb-inputs"><input id="'+uid+'-h" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="'+m[0]+'"><span>–</span><input id="'+uid+'-a" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="'+m[2]+'"></div>'+
+      '<div class="tq-btns" style="justify-content:center"><button class="iconbtn" id="'+uid+'-ls">🔊 Escuchar</button><button class="iconbtn" id="'+uid+'-ck">Comprobar</button><span class="tq-prog">'+(i+1)+'/'+FBM.length+'</span></div>'+
+      '<div class="tq-fb" id="'+uid+'-fb"></div>';
+    el.querySelector('#'+uid+'-ls').onclick=()=>speak(m[0]+' '+numEs(m[1])+', '+m[2]+' '+numEs(m[3]),0.9);
+    el.querySelector('#'+uid+'-ck').onclick=()=>{const h=el.querySelector('#'+uid+'-h'),a=el.querySelector('#'+uid+'-a');const okH=norm(h.value)===norm(numEs(m[1])),okA=norm(a.value)===norm(numEs(m[3]));const fb=el.querySelector('#'+uid+'-fb');if(okH&&okA){score++;fb.innerHTML='<span class="tq-ok">✓ ¡Correcto! '+numEs(m[1])+' – '+numEs(m[3])+'</span>';h.disabled=true;a.disabled=true;el.querySelector('#'+uid+'-ck').disabled=true;setTimeout(()=>{i++;step();},950);}else{fb.innerHTML='<span class="tq-no">✗ '+(okH?'':'Casa: revisa. ')+(okA?'':'Visitante: revisa.')+'</span>';}};
+  }
+  step();
+}
+
+const SALU_COLS=[{key:'dia',label:'Buenos días'},{key:'tarde',label:'Buenas tardes'},{key:'noche',label:'Buenas noches'}];
+const SALU_H=[{w:'08:00',c:'dia'},{w:'11:30',c:'dia'},{w:'07:15',c:'dia'},{w:'15:00',c:'tarde'},{w:'18:30',c:'tarde'},{w:'16:45',c:'tarde'},{w:'22:00',c:'noche'},{w:'23:30',c:'noche'},{w:'21:30',c:'noche'}];
+const PAIS_AM_COLS=[{key:'si',label:'Sí · se habla español'},{key:'no',label:'No'}];
+const PAIS_AM=[{w:'México',c:'si'},{w:'Argentina',c:'si'},{w:'Colombia',c:'si'},{w:'Perú',c:'si'},{w:'Cuba',c:'si'},{w:'Brasil',c:'no'},{w:'Haití',c:'no'},{w:'Jamaica',c:'no'},{w:'Surinam',c:'no'},{w:'Belice',c:'no'}];
+
+// ===== Unidad 1 · engines =====
+function _norm1(s){return (s||'').toString().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z\/ ]/g,'').replace(/\s+/g,' ').trim();}
+function paisNatIdioma(mount,list){
+  mount.innerHTML=''; let done=0; const total=list.length;
+  const score=make('div',{class:'score'},'Aciertos: 0 / '+total);
+  list.forEach(p=>{
+    const inN=make('input',{class:'pni-in',type:'text',autocomplete:'off',autocapitalize:'none',spellcheck:'false',placeholder:'nacionalidad (m.)'});
+    const inI=make('input',{class:'pni-in',type:'text',autocomplete:'off',autocapitalize:'none',spellcheck:'false',placeholder:'idioma'});
+    const fb=make('div',{class:'fb'}); let ok=false;
+    const ck=make('button',{class:'btn sm'},'Comprobar');
+    ck.addEventListener('click',()=>{
+      if(ok)return;
+      const okN=_norm1(inN.value)===_norm1(p.gm);
+      const okI=p.idi.split('/').some(x=>_norm1(inI.value)===_norm1(x));
+      inN.classList.toggle('good',okN);inN.classList.toggle('bad',!okN);
+      inI.classList.toggle('good',okI);inI.classList.toggle('bad',!okI);
+      if(okN&&okI){ok=true;done++;fb.className='fb good';fb.textContent='¡Correcto! ✓  '+p.gm+' · habla '+p.idi;score.textContent='Aciertos: '+done+' / '+total+(done===total?'  🎉':'');inN.disabled=true;inI.disabled=true;ck.disabled=true;}
+      else{fb.className='fb bad';fb.textContent='Casi… '+(okN?'':'nacionalidad: revisa. ')+(okI?'':'idioma: revisa.');}
+    });
+    const head=make('div',{class:'pni-head'},
+      make('span',{class:'fi fi-'+p.cc+' flag-ico'}),
+      make('span',{class:'pni-pais fred'},p.pais),
+      make('button',{class:'iconbtn',onclick:()=>speak(p.pais+'. Es '+p.gm+'. Habla '+p.idi.replace('/',' o ')+'.')},'🔊'));
+    mount.append(make('div',{class:'pni-card'},head,make('div',{class:'pni-row'},inN,inI,ck),fb));
+  });
+  mount.append(score);
+}
+function gentMorph(mount,items){
+  mount.innerHTML=''; let gender='m';
+  const grid=make('div',{class:'gm-grid'});
+  function stem(a,b){let i=0;while(i<a.length&&i<b.length&&a[i]===b[i])i++;return i;}
+  function render(){
+    grid.innerHTML='';
+    items.forEach(it=>{
+      const inv=it.m===it.f; const word=gender==='m'?it.m:it.f;
+      let root=word, end='';
+      if(!inv){const s=stem(it.m,it.f);root=word.slice(0,s);end=word.slice(s);}
+      grid.append(make('div',{class:'gm-cell'+(inv?' inv':'')},
+        make('div',{class:'gm-word'},root,make('span',{class:'gm-end'},end)),
+        make('div',{class:'gm-tag'},inv?'invariable':(gender==='m'?'masculino':'femenino'))));
+    });
+  }
+  const btnM=make('button',{class:'gm-tab active'},'Masculino');
+  const btnF=make('button',{class:'gm-tab'},'Femenino');
+  btnM.addEventListener('click',()=>{gender='m';btnM.classList.add('active');btnF.classList.remove('active');render();});
+  btnF.addEventListener('click',()=>{gender='f';btnF.classList.add('active');btnM.classList.remove('active');render();});
+  mount.append(make('div',{class:'gm-tabs'},btnM,btnF),grid); render();
+}
+function transforma(mount,items,hint){
+  mount.innerHTML=''; let done=0; const total=items.length;
+  const score=make('div',{class:'score'},'Aciertos: 0 / '+total);
+  items.forEach(it=>{
+    const inp=make('input',{class:'tf-in',type:'text',autocomplete:'off',autocapitalize:'none',spellcheck:'false',placeholder:'escribe la frase…'});
+    const fb=make('div',{class:'fb'}); let ok=false;
+    const ck=make('button',{class:'btn sm'},'Comprobar');
+    ck.addEventListener('click',()=>{
+      if(ok)return;
+      if(_norm1(inp.value)===_norm1(it.a)){ok=true;done++;inp.classList.add('good');inp.disabled=true;ck.disabled=true;fb.className='fb good';fb.textContent='✓ '+it.a;score.textContent='Aciertos: '+done+' / '+total+(done===total?'  🎉':'');}
+      else{inp.classList.add('bad');fb.className='fb bad';fb.textContent=hint||'Casi… revisa tu respuesta.';}
+    });
+    const sp=make('button',{class:'iconbtn',onclick:()=>speak(it.a)},'🔊');
+    mount.append(make('div',{class:'tf-row'},
+      make('div',{class:'tf-prompt'},it.p,make('span',{class:'tf-arrow'},'→ ?')),
+      make('div',{class:'tf-ans'},inp,ck,sp),fb));
+  });
+  mount.append(score);
+}
+function markWords(mount,words){
+  mount.innerHTML='';
+  const wrap=make('div',{class:'mw-grid'});
+  const state=words.map(()=>false);
+  words.forEach((wd,i)=>{
+    const chip=make('button',{class:'mw-chip'},wd.w);
+    chip.addEventListener('click',()=>{if(chip.disabled)return;state[i]=!state[i];chip.classList.toggle('sel',state[i]);});
+    wrap.append(chip);
+  });
+  const fb=make('div',{class:'fb'});
+  const ck=make('button',{class:'btn sm'},'Comprobar');
+  ck.addEventListener('click',()=>{
+    let ok=0,tot=0;
+    [...wrap.children].forEach((chip,i)=>{
+      const isM=!!words[i].m, sel=state[i];
+      chip.classList.remove('sel');
+      if(isM){tot++; if(sel){chip.classList.add('correct');ok++;} else {chip.classList.add('missed');}}
+      else if(sel){chip.classList.add('wrong');}
+      chip.disabled=true;
+    });
+    fb.className='fb '+(ok===tot?'good':'bad');
+    fb.textContent='Masculinos: '+ok+' / '+tot+(ok===tot?'  🎉':'  · amarillo = te faltó · rojo = es femenino');
+  });
+  mount.append(wrap,make('div',{class:'mw-foot'},ck,fb));
+}
+function laberinto(mount,grid,target){
+  target=target||'f';
+  const need=target==='f'?'femenina':'masculina', needPl=target==='f'?'femeninas':'masculinas';
+  mount.innerHTML='';
+  const R=grid.length, C=grid[0].length, key=(r,c)=>r+','+c;
+  const carved=new Set([key(0,0)]); let solved=false;
+  const status=make('div',{class:'lab-status'},'Haz clic en una palabra '+need+' vecina para avanzar.');
+  const board=make('div',{class:'lab-board'}); board.style.gridTemplateColumns='repeat('+C+',1fr)';
+  const adj=(r,c)=>carved.has(key(r-1,c))||carved.has(key(r+1,c))||carved.has(key(r,c-1))||carved.has(key(r,c+1));
+  function render(){
+    board.innerHTML='';
+    for(let r=0;r<R;r++)for(let c=0;c<C;c++){
+      const cell=grid[r][c], k=key(r,c), on=carved.has(k);
+      const entry=(r===0&&c===0), exit=(r===R-1&&c===C-1);
+      const b=make('button',{class:'lab-cell'+(on?' on':'')+(entry?' entry':'')+(exit?' exit':'')},cell.w);
+      if(!solved&&!on){
+        b.addEventListener('click',()=>{
+          if(!adj(r,c)){b.classList.add('shake');setTimeout(()=>b.classList.remove('shake'),350);status.className='lab-status no';status.textContent='Solo puedes avanzar a una casilla vecina.';return;}
+          if(cell.g===target){carved.add(k);if(exit){solved=true;status.className='lab-status ok';status.textContent='¡Has salido del laberinto! 🎉';}else{status.className='lab-status ok';status.textContent='¡Bien! Sigue por las palabras '+needPl+'.';}render();}
+          else{b.classList.add('wall');setTimeout(()=>b.classList.remove('wall'),450);status.className='lab-status no';status.textContent='«'+cell.w+'» no es '+need+' — ¡pared!';}
+        });
+      }
+      board.append(b);
+    }
+  }
+  mount.append(status,board); render();
+}
+function conjugate(inf,pron){
+  const stem=inf.slice(0,-2), cls='-'+inf.slice(-2);
+  const E={'-ar':{yo:'o','tú':'as','él':'a',nosotros:'amos',vosotros:'áis',ellos:'an'},
+           '-er':{yo:'o','tú':'es','él':'e',nosotros:'emos',vosotros:'éis',ellos:'en'},
+           '-ir':{yo:'o','tú':'es','él':'e',nosotros:'imos',vosotros:'ís',ellos:'en'}};
+  const map={yo:'yo','tú':'tú','él':'él',ella:'él',usted:'él',nosotros:'nosotros',vosotros:'vosotros',ellos:'ellos',ellas:'ellos',ustedes:'ellos'};
+  const k=map[pron]||pron;
+  return stem+((E[cls]&&E[cls][k])||'');
+}
+function conjuga(mount,verbs){
+  mount.innerHTML=''; let idx=0;
+  const tabs=make('div',{class:'cj-tabs'}), table=make('div',{class:'cj-table'});
+  function render(){
+    [...tabs.children].forEach((t,i)=>t.classList.toggle('active',i===idx));
+    const v=verbs[idx]; table.innerHTML=''; table.style.setProperty('--cjc',v.color);
+    v.ends.forEach(pr=>{
+      table.append(make('div',{class:'cj-row'},
+        make('span',{class:'cj-pron'},pr[0]),
+        make('span',{class:'cj-form'},v.raiz,make('span',{class:'cj-end'},pr[1])),
+        make('button',{class:'iconbtn',onclick:()=>speak(v.raiz+pr[1])},'🔊')));
+    });
+  }
+  verbs.forEach((v,i)=>{const t=make('button',{class:'cj-tab'},v.inf);t.style.setProperty('--cjc',v.color);t.addEventListener('click',()=>{idx=i;render();});tabs.append(t);});
+  mount.append(tabs,table); render();
+}
+function conjugaEj(mount,verbs){
+  mount.innerHTML='';
+  const PR=[['yo','yo'],['tú','tú'],['él / ella','él'],['nosotros/as','nosotros'],['vosotros/as','vosotros'],['ellos / ellas','ellos']];
+  verbs.forEach(inf=>{
+    const card=make('div',{class:'ce-card'}); card.append(make('div',{class:'ce-inf fred'},inf));
+    const pairs=[];
+    PR.forEach(p=>{const inp=make('input',{class:'ce-in',autocomplete:'off',autocapitalize:'none',spellcheck:'false'});pairs.push([inp,conjugate(inf,p[1])]);card.append(make('div',{class:'ce-row'},make('span',{class:'ce-pr'},p[0]),inp));});
+    const fb=make('div',{class:'fb'}), ck=make('button',{class:'btn sm'},'Comprobar');
+    ck.addEventListener('click',()=>{let ok=0;pairs.forEach(p=>{const g=_norm1(p[0].value)===_norm1(p[1]);p[0].classList.toggle('good',g);p[0].classList.toggle('bad',!g);if(g)ok++;});fb.className='fb '+(ok===pairs.length?'good':'bad');fb.textContent='Correctas: '+ok+' / '+pairs.length+(ok===pairs.length?'  🎉':'');});
+    card.append(make('div',{class:'ce-foot'},ck,fb)); mount.append(card);
+  });
+}
+function completaPresente(mount,items){
+  mount.innerHTML=''; let done=0; const total=items.length;
+  const score=make('div',{class:'score'},'Aciertos: 0 / '+total);
+  items.forEach(it=>{
+    const inp=make('input',{class:'cp-in',autocomplete:'off',autocapitalize:'none',spellcheck:'false',placeholder:it.inf});
+    const fb=make('div',{class:'fb'}); let ok=false; const ck=make('button',{class:'btn sm'},'Comprobar');
+    const ans=it.answer||conjugate(it.inf,it.p);
+    ck.addEventListener('click',()=>{if(ok)return;if(_norm1(inp.value)===_norm1(ans)){ok=true;done++;inp.classList.add('good');inp.disabled=true;ck.disabled=true;fb.className='fb good';fb.textContent='✓ '+ans;score.textContent='Aciertos: '+done+' / '+total+(done===total?'  🎉':'');}else{inp.classList.add('bad');fb.className='fb bad';fb.textContent='Casi… ('+it.inf+')';}});
+    mount.append(make('div',{class:'cp-row'},make('span',{class:'cp-txt'},it.before+' '),inp,make('span',{class:'cp-txt'},' '+it.after),make('span',{class:'cp-inf'},'('+it.inf+')'),ck,fb));
+  });
+  mount.append(score);
+}
+function tablero(mount,squares){
+  mount.innerHTML='';
+  let pos=0; const last=squares.length-1; let solved=false, awaiting=false;
+  const board=make('div',{class:'tb-board'}), cells=[];
+  squares.forEach((sq,i)=>{
+    let inner;
+    if(i===0)inner=make('span',{class:'tb-label'},'SALIDA');
+    else if(i===last)inner=make('span',{class:'tb-label'},'META 🏁');
+    else inner=make('span',{class:'tb-sq'},make('b',{},sq.v),make('span',{class:'tb-pr'},sq.p));
+    const cell=make('div',{class:'tb-cell'},make('span',{class:'tb-n'},i),inner); cells.push(cell); board.append(cell);
+  });
+  const dice=make('button',{class:'btn'},'🎲 Tirar el dado'), status=make('div',{class:'tb-status'},'Tira el dado para empezar.'), panel=make('div',{class:'tb-panel'});
+  const paint=()=>cells.forEach((c,i)=>c.classList.toggle('here',i===pos));
+  function ask(){
+    panel.innerHTML='';
+    if(pos===last){solved=true;status.className='tb-status ok';status.textContent='¡Has llegado a la meta! 🎉';dice.disabled=true;return;}
+    awaiting=true; const sq=squares[pos];
+    const inp=make('input',{class:'cp-in',autocomplete:'off',autocapitalize:'none',spellcheck:'false',placeholder:sq.v+' · '+sq.p});
+    const fb=make('div',{class:'fb'}), ck=make('button',{class:'btn sm'},'Comprobar');
+    ck.addEventListener('click',()=>{const ans=conjugate(sq.v,sq.p);if(_norm1(inp.value)===_norm1(ans)){awaiting=false;fb.className='fb good';fb.textContent='✓ '+ans;inp.disabled=true;ck.disabled=true;dice.disabled=false;status.className='tb-status ok';status.textContent='¡Bien! Tira de nuevo.';}else{fb.className='fb bad';fb.textContent='Casi… inténtalo otra vez.';}});
+    panel.append(make('div',{class:'tb-q'},'Conjuga: '+sq.v+' ('+sq.p+')'),make('div',{class:'tb-ans'},inp,ck,fb)); dice.disabled=true;
+  }
+  dice.addEventListener('click',()=>{if(solved||awaiting)return;const d=1+Math.floor(Math.random()*6);pos=Math.min(last,pos+d);paint();status.className='tb-status';status.textContent='Sale un '+d+'. Vas a la casilla '+pos+'.';ask();});
+  mount.append(board,make('div',{class:'tb-controls'},dice,status),panel); paint();
+}
+function dadoPreguntas(mount,qs){
+  mount.innerHTML='';
+  let order=shuffle(qs.map((_,i)=>i)), p=0, cur=null;
+  const die=make('div',{class:'dp-die'},'🎲');
+  const q=make('div',{class:'dp-q'},'Tik op «Tirar» voor een vraag.');
+  const sayBtn=make('button',{class:'iconbtn',style:'visibility:hidden'},'🔊 Escuchar');
+  const rollBtn=make('button',{class:'btn'},'🎲 Tirar');
+  function roll(){
+    if(p>=order.length){order=shuffle(qs.map((_,i)=>i));p=0;}
+    cur=qs[order[p++]];
+    die.classList.remove('roll'); void die.offsetWidth; die.classList.add('roll');
+    q.classList.remove('pop'); void q.offsetWidth; q.classList.add('pop');
+    q.textContent=cur; sayBtn.style.visibility='visible';
+  }
+  sayBtn.addEventListener('click',()=>{if(cur)speak(cur);});
+  rollBtn.addEventListener('click',roll);
+  mount.append(make('div',{class:'dp-card'},die,q),make('div',{class:'dp-ctrls'},rollBtn,sayBtn));
+}
+function preguntas(mount,items){
+  mount.innerHTML='';
+  const wrap=make('div',{class:'pqa-grid'});
+  items.forEach(it=>{
+    const q=make('div',{class:'pqa-q'},
+      make('button',{class:'pqa-say',onclick:()=>speak(it.q)},'🔊'),
+      make('span',{class:'pqa-qt'},it.q),
+      it.gloss?make('span',{class:'pqa-gl'},it.gloss):null);
+    wrap.append(make('div',{class:'pqa-row'},q,make('div',{class:'pqa-a'},it.a)));
+  });
+  mount.append(wrap);
+}
+function semaforo(mount,items){
+  mount.innerHTML='';
+  const wrap=make('div',{class:'sf-wrap'});
+  items.forEach(txt=>{
+    const dots=make('div',{class:'sf-dots'});
+    ['🔴','🟡','🟢'].forEach(d=>{
+      const b=make('button',{class:'sf-dot'},d);
+      b.addEventListener('click',()=>{[...dots.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');});
+      dots.append(b);
+    });
+    wrap.append(make('div',{class:'sf-row'},make('span',{class:'sf-lab'},txt),dots));
+  });
+  mount.append(wrap);
+}
+function conjugaGen(mount,verbs){
+  mount.innerHTML='';
+  const PRONS=['yo','tú','él','nosotros','vosotros','ellos'];
+  const LABEL={yo:'yo','tú':'tú','él':'él / ella / usted',nosotros:'nosotros / nosotras',vosotros:'vosotros / vosotras',ellos:'ellos / ellas / ustedes'};
+  let streak=0,total=0,correct=0,cur=null;
+  const stat=make('div',{class:'cg-stat'});
+  const card=make('div',{class:'cg-card'});
+  const inp=make('input',{class:'cp-in',autocomplete:'off',autocapitalize:'none',spellcheck:'false',placeholder:'conjuga en presente…'});
+  const fb=make('div',{class:'fb'});
+  const ckBtn=make('button',{class:'btn sm'},'Comprobar');
+  const nextBtn=make('button',{class:'iconbtn'},'Siguiente →');
+  function newQ(){
+    const v=verbs[Math.floor(Math.random()*verbs.length)], pr=PRONS[Math.floor(Math.random()*PRONS.length)], t=v.slice(-2);
+    const col=({ar:'#993C1D',er:'#0F6E56',ir:'#854F0B'})[t];
+    cur={ans:conjugate(v,pr)};
+    card.style.borderColor=col; card.innerHTML='';
+    card.append(make('span',{class:'cg-cls',style:'background:'+col+'1f;color:'+col},'-'+t),
+                make('span',{class:'cg-verb',style:'color:'+col},v),
+                make('span',{class:'cg-pron'},LABEL[pr]));
+    inp.value='';inp.disabled=false;ckBtn.disabled=false;fb.className='fb';fb.textContent=''; try{inp.focus();}catch(e){}
+  }
+  function check(){
+    if(!cur||inp.disabled)return; total++;
+    if(_norm1(inp.value)===_norm1(cur.ans)){correct++;streak++;fb.className='fb good';fb.textContent='✓ ¡Correcto!';}
+    else{streak=0;fb.className='fb bad';fb.textContent='✗ Era: '+cur.ans;}
+    inp.disabled=true;ckBtn.disabled=true; stat.innerHTML='Racha: <b>'+streak+'</b> · Aciertos: '+correct+' / '+total;
+  }
+  ckBtn.addEventListener('click',check);
+  nextBtn.addEventListener('click',newQ);
+  inp.addEventListener('keydown',e=>{if(e.key==='Enter'){inp.disabled?newQ():check();}});
+  stat.innerHTML='Racha: <b>0</b> · Aciertos: 0 / 0';
+  mount.append(stat,card,make('div',{class:'cg-row'},inp,ckBtn,nextBtn),fb); newQ();
+}
+function flashcards(mount,cats){
+  const catRow=make('div',{class:'cat-row'});
+  const holder=make('div');
+  let cur=Object.keys(cats)[0],idx=0,cards=cats[cur],dir='es';
+  const dirRow=make('div',{class:'fc-dir'});
+  const bEs=make('button',{class:'fc-dir-b active',onclick:()=>{dir='es';bEs.classList.add('active');bNl.classList.remove('active');render();}},'ES → NL');
+  const bNl=make('button',{class:'fc-dir-b',onclick:()=>{dir='nl';bNl.classList.add('active');bEs.classList.remove('active');render();}},'NL → ES');
+  dirRow.append(bEs,bNl);
+  function render(){
+    holder.innerHTML='';
+    const c=cards[idx];
+    const fLab=dir==='es'?'Español':'Nederlands', bLab=dir==='es'?'Nederlands':'Español';
+    const fTxt=dir==='es'?c.es:c.nl, bTxt=dir==='es'?c.nl:c.es;
+    const flash=make('div',{class:'flash'});
+    const inner=make('div',{class:'inner',onclick:()=>flash.classList.toggle('flipped')},
+      make('div',{class:'face front'},make('div',{class:'lab'},fLab),make('div',{class:'big'},fTxt)),
+      make('div',{class:'face back'},make('div',{class:'lab'},bLab),make('div',{class:'big'},bTxt)));
+    flash.append(inner);
+    const ctr=make('div',{class:'row',style:'justify-content:center;margin-top:12px'},
+      make('button',{class:'btn ghost sm',onclick:()=>{idx=(idx-1+cards.length)%cards.length;render();}},'‹'),
+      spk('Escuchar',c.es),
+      make('button',{class:'btn ghost sm',onclick:()=>{flash.classList.toggle('flipped');}},'↺ Girar'),
+      make('button',{class:'btn ghost sm',onclick:()=>{idx=(idx+1)%cards.length;render();}},'›'));
+    const counter=make('div',{class:'note',style:'text-align:center'},(idx+1)+' / '+cards.length);
+    holder.append(flash,ctr,counter);
+  }
+  Object.keys(cats).forEach(k=>{
+    const b=make('button',{class:'cat'+(k===cur?' active':''),onclick:()=>{cur=k;cards=cats[k];idx=0;catRow.querySelectorAll('.cat').forEach(x=>x.classList.remove('active'));b.classList.add('active');render();}},k);
+    catRow.append(b);
+  });
+  mount.append(dirRow,catRow,holder);render();
+}
+function conjugaAnim(mount,verbs){
+  mount.innerHTML='';
+  let vi=0, pos=0, playing=false, timer=null, anim=null;
+  let stemEl=null, endEl=null;
+  const tabs=make('div',{class:'cj-tabs'});
+  const stage=make('div',{class:'ca-stage'});
+  const persona=make('div',{class:'ca-persona'});
+  const wordWrap=make('div',{class:'ca-word'});
+  const sayChip=make('button',{class:'ca-say'});
+  const hint=make('div',{class:'ca-hint'});
+  const counter=make('span',{class:'ca-count'});
+  const prevB=make('button',{class:'iconbtn ca-nav'},'⏮');
+  const playB=make('button',{class:'iconbtn ca-nav'},'▶ Play');
+  const nextB=make('button',{class:'iconbtn ca-nav'},'⏭');
+  const tableWrap=make('div',{class:'ca-table'});
+  const V=()=>verbs[vi];
+  function buildTable(){
+    const v=V(); tableWrap.innerHTML='';
+    v.forms.forEach((f,i)=>{
+      const row=make('div',{class:'ca-trow'},
+        make('span',{class:'ca-tp'},f.pron),
+        make('span',{class:'ca-tw'},make('span',{class:'ca-stem'},v.raiz),make('span',{class:'ca-end',style:'color:'+v.color},f.end)));
+      row.addEventListener('click',()=>{stop();pos=i+1;render(true);});
+      tableWrap.append(row);
+    });
+  }
+  function rebuildWord(){
+    const v=V(); wordWrap.innerHTML='';
+    stemEl=make('span',{class:'ca-stem'},v.raiz);
+    endEl=make('span',{class:'ca-endx',style:'color:#B7B2D6'},v.cls);
+    wordWrap.append(stemEl,endEl);
+  }
+  function morphEnd(text,color,animate,done){
+    clearTimeout(anim);
+    if(!animate){endEl.textContent=text;endEl.style.color=color;endEl.classList.remove('fade');if(done)done();return;}
+    endEl.classList.add('fade');
+    anim=setTimeout(()=>{endEl.textContent=text;endEl.style.color=color;endEl.classList.remove('fade');if(done)done();},300);
+  }
+  function setInf(animate){
+    const v=V();
+    persona.textContent='infinitivo';
+    counter.textContent='';
+    stemEl.className='ca-stem';
+    morphEnd(v.cls,'#B7B2D6',animate,()=>{ if(playing&&animate)speak(v.inf); });
+    sayChip.innerHTML='🔊 '+v.inf;
+    sayChip.onclick=()=>speak(v.inf);
+    hint.className='ca-hint raiz';
+    hint.innerHTML='De <b>infinitivo</b> = <b>'+v.raiz+'</b> + <b>'+v.cls+'</b>. Vanaf hier vervoegen we.';
+    [...tableWrap.children].forEach(r=>r.classList.remove('on'));
+  }
+  function showForm(animate){
+    const v=V(), f=v.forms[pos-1];
+    persona.textContent=f.pron;
+    counter.textContent=pos+' / '+v.forms.length;
+    stemEl.className='ca-stem'+(f.stress==='raiz'?' ca-str':'');
+    morphEnd(f.end,v.color,animate,()=>{
+      if(f.stress==='end')endEl.classList.add('ca-str');else endEl.classList.remove('ca-str');
+      if(playing&&animate)speak(v.raiz+f.end);
+    });
+    sayChip.innerHTML='🔊 '+f.say;
+    sayChip.onclick=()=>speak(v.raiz+f.end);
+    hint.className='ca-hint '+(f.stress==='end'?'end':'raiz');
+    hint.innerHTML=f.stress==='raiz'
+      ? 'Klemtoon op de <b>stam</b>, niet op de uitgang. Zeg <b>'+f.say+'</b>.'
+      : 'Hier valt de klemtoon op de <b>uitgang</b> — let op het accent: <b>'+f.say+'</b>.';
+    [...tableWrap.children].forEach((r,i)=>r.classList.toggle('on',i===pos-1));
+  }
+  function render(animate){ if(pos===0)setInf(animate); else showForm(animate); }
+  function next(){const n=V().forms.length; pos=(pos>=n?1:pos+1); render(true);}
+  function prev(){const n=V().forms.length; pos=(pos<=0?n:pos-1); render(true);}
+  function play(){playing=true;playB.innerHTML='⏸ Pausa';render(true);timer=setInterval(next,2000);}
+  function stop(){playing=false;playB.innerHTML='▶ Play';clearInterval(timer);}
+  function selVerb(k){stop();vi=k;pos=0;[...tabs.children].forEach((b,i)=>b.classList.toggle('active',i===k));buildTable();rebuildWord();render(false);}
+  verbs.forEach((v,k)=>{const b=make('button',{class:'cj-tab'+(k===0?' active':'')},v.inf);b.style.setProperty('--cjc',v.color);b.addEventListener('click',()=>selVerb(k));tabs.append(b);});
+  prevB.addEventListener('click',()=>{stop();prev();});
+  nextB.addEventListener('click',()=>{stop();next();});
+  playB.addEventListener('click',()=>{playing?stop():play();});
+  stage.append(persona,wordWrap,sayChip,hint);
+  mount.append(tabs,stage,make('div',{class:'ca-ctrls'},prevB,playB,nextB,counter),
+    make('div',{class:'ca-legend'},'infinitivo → ',make('b',{},'raíz'),' + ',make('b',{class:'ca-legend-e'},'terminación')),tableWrap);
+  buildTable(); rebuildWord(); render(false);
+}
+
+// ===== Unidad 1 · data =====
+const U1_SALUDO=['— ¡',{a:'Hola'},'! ¿Cómo te ',{a:'llamas'},'?',document.createElement('br'),
+ '— Me ',{a:'llamo'},' Lucía. ¿Y ',{a:'tú'},'?',document.createElement('br'),
+ '— Yo ',{a:'soy'},' Marc. ¡',{a:'Encantado'},'!'];
+const U1_SALUDO_BANK=['Hola','llamas','llamo','tú','soy','Encantado'];
+const U1_SALU_PR=[
+ {l:'¡Hola! ¿Cómo te llamas?',r:'Me llamo Sara.'},
+ {l:'¿De dónde eres?',r:'Soy de Bélgica.'},
+ {l:'¿Y tú?',r:'Yo soy Tom.'},
+ {l:'Encantado.',r:'Encantada.'},
+ {l:'¿Cómo estás?',r:'Muy bien, gracias.'},
+ {l:'¡Hasta luego!',r:'¡Adiós!'}];
+const U1_SALU_REGION=[
+ {l:'¿Qué onda?',r:'México'},
+ {l:'Pura vida',r:'Costa Rica'},
+ {l:'¿Qué pasa, tío?',r:'España'},
+ {l:'¿Cómo andás, che?',r:'Argentina'}];
+const U1_PNI=[
+ {pais:'España',cc:'es',gm:'español',gf:'española',idi:'español'},
+ {pais:'Francia',cc:'fr',gm:'francés',gf:'francesa',idi:'francés'},
+ {pais:'Italia',cc:'it',gm:'italiano',gf:'italiana',idi:'italiano'},
+ {pais:'Alemania',cc:'de',gm:'alemán',gf:'alemana',idi:'alemán'},
+ {pais:'Bélgica',cc:'be',gm:'belga',gf:'belga',idi:'neerlandés/francés/alemán'},
+ {pais:'Brasil',cc:'br',gm:'brasileño',gf:'brasileña',idi:'portugués'},
+ {pais:'Reino Unido',cc:'gb',gm:'inglés',gf:'inglesa',idi:'inglés'},
+ {pais:'Japón',cc:'jp',gm:'japonés',gf:'japonesa',idi:'japonés'}];
+const U1_GENT_MORPH=[
+ {m:'italiano',f:'italiana'},
+ {m:'francés',f:'francesa'},
+ {m:'alemán',f:'alemana'},
+ {m:'español',f:'española'},
+ {m:'belga',f:'belga'},
+ {m:'estadounidense',f:'estadounidense'}];
+const U1_GENT_SORT=[
+ {w:'italiano',c:'cambia'},{w:'francés',c:'cambia'},{w:'chino',c:'cambia'},{w:'japonés',c:'cambia'},{w:'alemán',c:'cambia'},
+ {w:'belga',c:'invariable'},{w:'canadiense',c:'invariable'},{w:'estadounidense',c:'invariable'},{w:'marroquí',c:'invariable'},{w:'vietnamita',c:'invariable'}];
+const U1_TRANSFORMA=[
+ {p:'Él es de Italia',a:'Él es italiano'},
+ {p:'Ella es de Grecia',a:'Ella es griega'},
+ {p:'María es de España',a:'María es española'},
+ {p:'Tom es de Bélgica',a:'Tom es belga'},
+ {p:'Ella es de Brasil',a:'Ella es brasileña'},
+ {p:'Él es de Japón',a:'Él es japonés'},
+ {p:'Ana es de Alemania',a:'Ana es alemana'},
+ {p:'Él es de Francia',a:'Él es francés'}];
+const U1_PAIS_LENGUA=[
+ {l:'España',r:'español'},
+ {l:'Francia',r:'francés'},
+ {l:'Italia',r:'italiano'},
+ {l:'Brasil',r:'portugués'},
+ {l:'Alemania',r:'alemán'},
+ {l:'Reino Unido',r:'inglés'}];
+// ----- Forma (§6) -----
+const F_GEN_SORT=[
+ {w:'libro',c:'m'},{w:'casa',c:'f'},{w:'coche',c:'m'},{w:'mesa',c:'f'},{w:'color',c:'m'},{w:'ciudad',c:'f'},
+ {w:'día',c:'m'},{w:'mano',c:'f'},{w:'mapa',c:'m'},{w:'foto',c:'f'},{w:'problema',c:'m'},{w:'canción',c:'f'}];
+const F_MARCA=[
+ {w:'libro',m:1},{w:'casa'},{w:'profesor',m:1},{w:'mesa'},{w:'coche',m:1},{w:'ciudad'},{w:'día',m:1},
+ {w:'mano'},{w:'color',m:1},{w:'flor'},{w:'mapa',m:1},{w:'foto'},{w:'bolígrafo',m:1},{w:'canción'}];
+const F_LAB=[
+ [{w:'casa',g:'f'},{w:'flor',g:'f'},{w:'libro',g:'m'},{w:'coche',g:'m'},{w:'perro',g:'m'},{w:'gato',g:'m'}],
+ [{w:'mesa',g:'f'},{w:'sol',g:'m'},{w:'día',g:'m'},{w:'mapa',g:'m'},{w:'problema',g:'m'},{w:'color',g:'m'}],
+ [{w:'silla',g:'f'},{w:'puerta',g:'f'},{w:'ventana',g:'f'},{w:'mano',g:'f'},{w:'bolígrafo',g:'m'},{w:'cuaderno',g:'m'}],
+ [{w:'chico',g:'m'},{w:'profesor',g:'m'},{w:'mochila',g:'f'},{w:'árbol',g:'m'},{w:'reloj',g:'m'},{w:'pan',g:'m'}],
+ [{w:'café',g:'m'},{w:'tren',g:'m'},{w:'noche',g:'f'},{w:'ciudad',g:'f'},{w:'calle',g:'f'},{w:'ojo',g:'m'}],
+ [{w:'pie',g:'m'},{w:'techo',g:'m'},{w:'suelo',g:'m'},{w:'lápiz',g:'m'},{w:'luna',g:'f'},{w:'chica',g:'f'}]];
+const F_LAB_M=[
+ [{w:'libro',g:'m'},{w:'coche',g:'m'},{w:'perro',g:'m'},{w:'casa',g:'f'},{w:'mesa',g:'f'},{w:'silla',g:'f'}],
+ [{w:'árbol',g:'m'},{w:'puerta',g:'f'},{w:'gato',g:'m'},{w:'ventana',g:'f'},{w:'flor',g:'f'},{w:'mano',g:'f'}],
+ [{w:'ciudad',g:'f'},{w:'calle',g:'f'},{w:'sol',g:'m'},{w:'día',g:'m'},{w:'mapa',g:'m'},{w:'mochila',g:'f'}],
+ [{w:'noche',g:'f'},{w:'luna',g:'f'},{w:'reloj',g:'m'},{w:'chica',g:'f'},{w:'problema',g:'m'},{w:'leche',g:'f'}],
+ [{w:'clase',g:'f'},{w:'tienda',g:'f'},{w:'cocina',g:'f'},{w:'planta',g:'f'},{w:'color',g:'m'},{w:'hora',g:'f'}],
+ [{w:'semana',g:'f'},{w:'falda',g:'f'},{w:'camisa',g:'f'},{w:'nariz',g:'f'},{w:'bolígrafo',g:'m'},{w:'cuaderno',g:'m'}]];
+const F_REGLA=[
+ {w:'niño',c:'oa'},{w:'gato',c:'oa'},{w:'amigo',c:'oa'},
+ {w:'profesor',c:'consa'},{w:'doctor',c:'consa'},{w:'escritor',c:'consa'},
+ {w:'estudiante',c:'inv'},{w:'artista',c:'inv'},{w:'dentista',c:'inv'}];
+const F_OPUESTO=[
+ {p:'el profesor español',a:'las profesoras españolas'},
+ {p:'el alumno alemán',a:'las alumnas alemanas'},
+ {p:'el niño pequeño',a:'las niñas pequeñas'},
+ {p:'el camarero italiano',a:'las camareras italianas'},
+ {p:'el médico francés',a:'las médicas francesas'},
+ {p:'el cocinero alto',a:'las cocineras altas'}];
+// ----- Gramática (§3 ser · §4 verbos · §5 pronombres) -----
+const PRON_MATCH=[
+ {l:'yo',r:'ik'},
+ {l:'tú',r:'jij'},
+ {l:'él / ella',r:'hij / zij'},
+ {l:'nosotros/as',r:'wij'},
+ {l:'vosotros/as',r:'jullie'},
+ {l:'ellos / ellas',r:'zij (mv.)'}];
+const SER_PRACTICE=[
+ {before:'Yo',answer:'soy',inf:'ser',after:'de Bélgica.'},
+ {before:'Tú',answer:'eres',inf:'ser',after:'español.'},
+ {before:'María',answer:'es',inf:'ser',after:'profesora.'},
+ {before:'Nosotros',answer:'somos',inf:'ser',after:'estudiantes.'},
+ {before:'Vosotros',answer:'sois',inf:'ser',after:'de Madrid.'},
+ {before:'Ellos',answer:'son',inf:'ser',after:'italianos.'}];
+const CONJUGA=[
+ {inf:'hablar',raiz:'habl',color:'#993C1D',ends:[['yo','o'],['tú','as'],['él/ella/usted','a'],['nosotros/as','amos'],['vosotros/as','áis'],['ellos/ustedes','an']]},
+ {inf:'comer',raiz:'com',color:'#0F6E56',ends:[['yo','o'],['tú','es'],['él/ella/usted','e'],['nosotros/as','emos'],['vosotros/as','éis'],['ellos/ustedes','en']]},
+ {inf:'vivir',raiz:'viv',color:'#854F0B',ends:[['yo','o'],['tú','es'],['él/ella/usted','e'],['nosotros/as','imos'],['vosotros/as','ís'],['ellos/ustedes','en']]}];
+const CONJUGA_EJ=['trabajar','beber','escribir'];
+const COMPLETA_PRES=[
+ {before:'Yo',inf:'estudiar',p:'yo',after:'español en el colegio.'},
+ {before:'Mi familia y yo',inf:'vivir',p:'nosotros',after:'en Bélgica.'},
+ {before:'¿Tú',inf:'hablar',p:'tú',after:'francés en casa?'},
+ {before:'Mis amigos',inf:'escuchar',p:'ellos',after:'música latina.'},
+ {before:'Vosotros',inf:'escribir',p:'vosotros',after:'un correo.'},
+ {before:'Ella',inf:'comer',p:'él',after:'una manzana.'}];
+const TABLERO=[
+ {},{v:'hablar',p:'yo'},{v:'comer',p:'tú'},{v:'vivir',p:'él'},{v:'estudiar',p:'nosotros'},
+ {v:'beber',p:'vosotros'},{v:'escribir',p:'ellos'},{v:'trabajar',p:'yo'},{v:'leer',p:'tú'},
+ {v:'bailar',p:'nosotros'},{v:'abrir',p:'ellos'},{v:'escuchar',p:'él'},{}];
+const GEN_VERBS=['hablar','trabajar','estudiar','cantar','bailar','viajar','cocinar','escuchar','comprar','llevar','mirar','ayudar','llamar','preguntar','contestar','terminar','usar','necesitar','descansar','entrar','pasar','nadar','dibujar','ganar','esperar','visitar','caminar','lavar','limpiar','cenar','comer','beber','leer','aprender','vender','correr','comprender','deber','vivir','escribir','abrir','subir','recibir','partir','decidir','describir','permitir','sufrir','discutir','asistir'];
+const CONJ_ANIM=[
+ {inf:'hablar',cls:'ar',color:'#993C1D',raiz:'habl',forms:[
+  {pron:'yo',end:'o',say:'HA-blo',stress:'raiz'},
+  {pron:'tú',end:'as',say:'HA-blas',stress:'raiz'},
+  {pron:'él / ella / usted',end:'a',say:'HA-bla',stress:'raiz'},
+  {pron:'nosotros / nosotras',end:'amos',say:'ha-BLA-mos',stress:'end'},
+  {pron:'vosotros / vosotras',end:'áis',say:'ha-BLÁIS',stress:'end'},
+  {pron:'ellos / ellas / ustedes',end:'an',say:'HA-blan',stress:'raiz'}]},
+ {inf:'comer',cls:'er',color:'#0F6E56',raiz:'com',forms:[
+  {pron:'yo',end:'o',say:'CO-mo',stress:'raiz'},
+  {pron:'tú',end:'es',say:'CO-mes',stress:'raiz'},
+  {pron:'él / ella / usted',end:'e',say:'CO-me',stress:'raiz'},
+  {pron:'nosotros / nosotras',end:'emos',say:'co-ME-mos',stress:'end'},
+  {pron:'vosotros / vosotras',end:'éis',say:'co-MÉIS',stress:'end'},
+  {pron:'ellos / ellas / ustedes',end:'en',say:'CO-men',stress:'raiz'}]},
+ {inf:'vivir',cls:'ir',color:'#854F0B',raiz:'viv',forms:[
+  {pron:'yo',end:'o',say:'VI-vo',stress:'raiz'},
+  {pron:'tú',end:'es',say:'VI-ves',stress:'raiz'},
+  {pron:'él / ella / usted',end:'e',say:'VI-ve',stress:'raiz'},
+  {pron:'nosotros / nosotras',end:'imos',say:'vi-VI-mos',stress:'end'},
+  {pron:'vosotros / vosotras',end:'ís',say:'vi-VÍS',stress:'end'},
+  {pron:'ellos / ellas / ustedes',end:'en',say:'VI-ven',stress:'raiz'}]}];
+const VOCAB={
+ 'Saludos':[{es:'¡Hola!',nl:'hallo'},{es:'Buenos días',nl:'goedemorgen'},{es:'Buenas tardes',nl:'goedemiddag'},{es:'Adiós',nl:'dag · tot ziens'},{es:'Hasta luego',nl:'tot later'},{es:'Encantado / -a',nl:'aangenaam'},{es:'¿Cómo te llamas?',nl:'hoe heet je?'},{es:'Me llamo…',nl:'ik heet…'},{es:'¿Y tú?',nl:'en jij?'},{es:'Soy…',nl:'ik ben…'}],
+ 'Datos personales':[{es:'el nombre',nl:'de voornaam'},{es:'el apellido',nl:'de achternaam'},{es:'la edad',nl:'de leeftijd'},{es:'la nacionalidad',nl:'de nationaliteit'},{es:'el correo',nl:'het e-mailadres'},{es:'el teléfono',nl:'het telefoonnummer'},{es:'la dirección',nl:'het adres'},{es:'¿Cuántos años tienes?',nl:'hoe oud ben je?'},{es:'tener … años',nl:'… jaar oud zijn'}],
+ 'Profesiones':[{es:'el / la profesor(a)',nl:'de leraar · lerares'},{es:'el / la estudiante',nl:'de student(e)'},{es:'el médico / la médica',nl:'de arts'},{es:'el enfermero / la enfermera',nl:'de verpleegkundige'},{es:'el camarero / la camarera',nl:'de ober · serveerster'},{es:'el cocinero / la cocinera',nl:'de kok'},{es:'el / la dependiente / -a',nl:'de verkoper · verkoopster'}],
+ 'Personas':[{es:'el hombre',nl:'de man'},{es:'la mujer',nl:'de vrouw'},{es:'el niño / la niña',nl:'de jongen · het meisje'},{es:'el chico / la chica',nl:'de jongen · het meisje'},{es:'el señor / la señora',nl:'de meneer · mevrouw'},{es:'el rey / la reina',nl:'de koning · koningin'},{es:'el actor / la actriz',nl:'de acteur · actrice'},{es:'el padre / la madre',nl:'de vader · moeder'}],
+ 'Verbos -ar':[{es:'hablar',nl:'spreken'},{es:'estudiar',nl:'studeren'},{es:'trabajar',nl:'werken'},{es:'escuchar',nl:'luisteren'},{es:'cantar',nl:'zingen'},{es:'bailar',nl:'dansen'},{es:'cocinar',nl:'koken'},{es:'mirar',nl:'kijken'},{es:'viajar',nl:'reizen'},{es:'comprar',nl:'kopen'},{es:'ayudar',nl:'helpen'},{es:'descansar',nl:'rusten'}],
+ 'Verbos -er':[{es:'comer',nl:'eten'},{es:'beber',nl:'drinken'},{es:'leer',nl:'lezen'},{es:'aprender',nl:'leren'},{es:'comprender',nl:'begrijpen'},{es:'correr',nl:'lopen · rennen'}],
+ 'Verbos -ir':[{es:'vivir',nl:'wonen · leven'},{es:'escribir',nl:'schrijven'},{es:'abrir',nl:'openen'},{es:'recibir',nl:'ontvangen'},{es:'subir',nl:'omhooggaan · stijgen'},{es:'compartir',nl:'delen'}],
+ 'En el aula':[{es:'el libro',nl:'het boek'},{es:'el bolígrafo',nl:'de balpen'},{es:'el cuaderno',nl:'het schrift'},{es:'la mesa',nl:'de tafel'},{es:'la silla',nl:'de stoel'},{es:'la puerta',nl:'de deur'},{es:'la ventana',nl:'het raam'},{es:'la pizarra',nl:'het schoolbord'},{es:'la mochila',nl:'de rugzak'}],
+ 'Para presentarte':[{es:'¿De dónde eres?',nl:'waar kom je vandaan?'},{es:'¿A qué te dedicas?',nl:'wat doe je? (werk)'},{es:'la afición',nl:'de hobby'},{es:'Mi afición favorita es…',nl:'mijn favoriete hobby is…'}]};
+const V1_QUIZ=[
+ {q:'Mi madre trabaja en un hospital: es ___.',options:['camarera','médica','profesora'],correct:1},
+ {q:'Por la mañana ___ café con leche.',options:['bebo','como','subo'],correct:0},
+ {q:'En el restaurante, el ___ trae la comida.',options:['médico','camarero','profesor'],correct:1},
+ {q:'Para escribir necesito un ___ azul.',options:['silla','ventana','bolígrafo'],correct:2},
+ {q:'Mi hermano ___ español en el instituto.',options:['cocina','estudia','viaja'],correct:1},
+ {q:'___, profe. ¿Qué tal?',options:['Gracias','Buenos días','Adiós'],correct:1},
+ {q:'El profesor escribe en la ___.',options:['mochila','puerta','pizarra'],correct:2},
+ {q:'Mi ___ favorita es bailar.',options:['edad','afición','dirección'],correct:1},
+ {q:'Los sábados ___ salsa con mis amigos.',options:['leo','abro','bailo'],correct:2},
+ {q:'Esa persona es muy famosa: es una ___.',options:['madre','actriz','vecina'],correct:1}];
+const V2_TYPE=[
+ {q:'Mi padre prepara la comida: es <b>c…</b>',a:'cocinero'},
+ {q:'Hago los ejercicios en el <b>c…</b>',a:'cuaderno'},
+ {q:'La <b>p…</b> del aula está abierta.',a:'puerta'},
+ {q:'Mi abuela tiene 80 años: es una <b>s…</b> mayor.',a:'señora'},
+ {q:'Para ir a clase llevo los libros en la <b>m…</b>',a:'mochila'},
+ {q:'<b>H…</b> tres idiomas: español, francés e inglés.',a:'hablo'},
+ {q:'Mi vecino cuida a los enfermos: es <b>e…</b>',a:'enfermero'},
+ {q:'Los domingos <b>d…</b> en casa, no trabajo.',a:'descanso'},
+ {q:'Vivo en Amberes. Esta es mi <b>d…</b>',a:'dirección'},
+ {q:'¿Cómo te <b>ll…</b>? — Me llamo Sara.',a:'llamas'}];
+const V3_PARTS=['¡Hola! ',{a:'me llamo'},' Marco. ',{a:'soy'},' de Italia y ',{a:'tengo'},' dieciséis años. Soy ',{a:'estudiante'},' en un instituto de Roma. ',{a:'vivo'},' en una casa grande con mi familia. Mi ',{a:'padre'},' es cocinero y mi madre es ',{a:'médica'},'. ',{a:'hablo'},' italiano e inglés. Mi ',{a:'afición'},' favorita es la música: cada día ',{a:'escucho'},' canciones nuevas.'];
+const V3_BANK=['soy','me llamo','médica','estudiante','padre','afición','vivo','escucho','hablo','tengo'];
+const V4_TYPE=[
+ {q:'<b>Buenos …</b> (saludo de la mañana)',a:'días'},
+ {q:'Me <b>…</b> Carmen.',a:'llamo'},
+ {q:'… y <b>…</b> de Sevilla.',a:'soy'},
+ {q:'<b>…</b> quince años.',a:'tengo'},
+ {q:'<b>…</b> en una casa con mi familia.',a:'vivo'},
+ {q:'Por la mañana <b>…</b> en el instituto.',a:'estudio'},
+ {q:'Mi <b>…</b> favorita es la música.',a:'afición'},
+ {q:'Cada día <b>…</b> canciones nuevas.',a:'escucho'}];
+const DADO_Q=['¿Cómo te llamas?','¿Cuál es tu apellido?','¿Cuántos años tienes?','¿De dónde eres?','¿Cuál es tu nacionalidad?','¿Qué idiomas hablas?','¿A qué te dedicas?','¿Dónde vives?','¿Estudias o trabajas?','¿Cuál es tu afición favorita?','¿Cuál es tu correo?','Preséntate en tres frases.'];
+const SARA_PRES='¡Hola! Me llamo Sara. Mi nombre al estilo español es Sara Peeters Maes. Tengo 16 años y soy belga, de Gante. Hablo neerlandés, francés y un poco de español. Estudio en el colegio Sint-Jan. Mi afición favorita es bailar.';
+const TOM_PRES='Os presento a Tom. Es de Bélgica, tiene 16 años y habla neerlandés y francés. Estudia en el colegio Sint-Jan. Su afición favorita es el fútbol.';
+const C_PREG=[
+ {q:'¿Cómo te llamas?',gloss:'hoe heet je?',a:'Me llamo Sara.'},
+ {q:'¿Cuántos años tienes?',gloss:'hoe oud ben je?',a:'Tengo 16 años.'},
+ {q:'¿De dónde eres?',gloss:'waar kom je vandaan?',a:'Soy de Bélgica.'},
+ {q:'¿Dónde vives?',gloss:'waar woon je?',a:'Vivo en Amberes.'},
+ {q:'¿Qué idiomas hablas?',gloss:'welke talen spreek je?',a:'Hablo neerlandés y francés.'},
+ {q:'¿A qué te dedicas?',gloss:'wat doe je?',a:'Soy estudiante.'}];
+const R91=[{q:'Yo <b>…</b> de Bélgica. <i>(ser)</i>',a:'soy'},{q:'Mi hermana <b>…</b> español. <i>(estudiar)</i>',a:'estudia'},{q:'Nosotros <b>…</b> en Amberes. <i>(vivir)</i>',a:'vivimos'},{q:'¿Tú <b>…</b> francés? <i>(hablar)</i>',a:'hablas'},{q:'María <b>…</b> profesora. <i>(ser)</i>',a:'es'},{q:'Los niños <b>…</b> en casa. <i>(comer)</i>',a:'comen'}];
+const R92=[{q:'el libro →',a:'los libros'},{q:'la casa →',a:'las casas'},{q:'el profesor →',a:'los profesores'},{q:'la ciudad →',a:'las ciudades'},{q:'la canción →',a:'las canciones'},{q:'el lápiz →',a:'los lápices'},{q:'el problema →',a:'los problemas'},{q:'la mano →',a:'las manos'}];
+const R93=[{q:'¡Hola! Me <b>…</b> Lucía. <i>(llamarse)</i>',a:'llamo'},{q:'<b>…</b> de España. <i>(ser)</i>',a:'soy'},{q:'y <b>…</b> española. <i>(ser)</i>',a:'soy'},{q:'<b>…</b> 16 años. <i>(tener)</i>',a:'tengo'},{q:'<b>…</b> en Madrid. <i>(vivir)</i>',a:'vivo'},{q:'y <b>…</b> en un instituto. <i>(estudiar)</i>',a:'estudio'},{q:'<b>…</b> español e inglés. <i>(hablar)</i>',a:'hablo'}];
+const R_PUEDO=['Saludar y presentarme.','Decir mi nombre, mi edad y mi nacionalidad.','Decir de dónde soy y qué idiomas hablo.','Usar el verbo ser.','Conjugar verbos en -ar, -er e -ir.','Usar el género, el número y los artículos.','Rellenar un formulario con mis datos.'];
+
+// ---------- init (Unidad 1) ----------
+cloze($('#u1-saludo'),U1_SALUDO,U1_SALUDO_BANK);
+matchTwo($('#u1-salupr'),U1_SALU_PR,'Pregunta','Respuesta');
+matchTwo($('#u1-saluregion'),U1_SALU_REGION,'Saludo','¿Dónde?');
+paisNatIdioma($('#u1-pni'),U1_PNI);
+gentMorph($('#u1-gentmorph'),U1_GENT_MORPH);
+sortGame($('#u1-gentsort'),[{key:'cambia',label:'Cambia (m./f.)'},{key:'invariable',label:'Invariable'}],U1_GENT_SORT);
+transforma($('#u1-transforma'),U1_TRANSFORMA,'Casi… revisa el verbo y la nacionalidad.');
+matchTwo($('#u1-paislengua'),U1_PAIS_LENGUA,'País','Lengua');
+// Forma (§6)
+sortGame($('#f-gensort'),[{key:'m',label:'Masculino · el'},{key:'f',label:'Femenino · la'}],F_GEN_SORT);
+markWords($('#f-marca'),F_MARCA);
+laberinto($('#f-lab'),F_LAB,'f');
+laberinto($('#f-lab-m'),F_LAB_M,'m');
+sortGame($('#f-regla'),[{key:'oa',label:'-o → -a'},{key:'consa',label:'consonante + -a'},{key:'inv',label:'No cambia'}],F_REGLA);
+transforma($('#f-opuesto'),F_OPUESTO,'Casi… revisa el artículo, el género y el número.');
+// Gramática (§3 ser · §4 verbos · §5 pronombres)
+matchTwo($('#g-pron'),PRON_MATCH,'Pronombre','Nederlands');
+completaPresente($('#g-ser'),SER_PRACTICE);
+conjugaAnim($('#g-conjuga'),CONJ_ANIM);
+conjugaEj($('#g-conjej'),CONJUGA_EJ);
+completaPresente($('#g-completa'),COMPLETA_PRES);
+tablero($('#g-tablero'),TABLERO);
+conjugaGen($('#cj-gen'),GEN_VERBS);
+// Vocabulario (§V)
+flashcards($('#v-flash'),VOCAB);
+quiz($('#v-q1'),V1_QUIZ,{score:true});
+typeQuiz('v-q2',V2_TYPE,{ph:'typ het woord…'});
+cloze($('#v-q3'),V3_PARTS,V3_BANK);
+typeQuiz('v-q4',V4_TYPE,{ph:'typ het woord…'});
+// Comunicar (§1 · §8)
+dadoPreguntas($('#c-dado'),DADO_Q);
+$('#c-sara-audio').append(spk('🔊 Escuchar',SARA_PRES));
+$('#c-tom-audio').append(spk('🔊 Escuchar',TOM_PRES));
+preguntas($('#c-preguntas'),C_PREG);
+// Repasar (§9)
+typeQuiz('r-91',R91,{ph:'conjuga…'});
+typeQuiz('r-92',R92,{ph:'el plural…'});
+typeQuiz('r-93',R93,{ph:'conjuga…'});
+semaforo($('#r-puedo'),R_PUEDO);
+
+// tabs
+document.querySelectorAll('#tabs button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('#tabs button').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+    $('#'+b.dataset.t).classList.add('active');
+    if(window.speechSynthesis)speechSynthesis.cancel();
+  });
+});
+</script>
+</body>
+</html>

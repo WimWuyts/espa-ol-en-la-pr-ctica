@@ -1,0 +1,112 @@
+{
+  "id": "es-u1-mayuscula-minuscula",
+  "title": "¿Mayúscula o minúscula?",
+  "subtitle": "U1 · landen mét hoofdletter, nationaliteiten zónder",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 14,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Hoofdletter (país) of kleine letter (nacionalidad/idioma)?",
+    "categories": [
+      {
+        "id": "may",
+        "label": "MAYÚSCULA<br><small>país (España)</small>",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "min",
+        "label": "minúscula<br><small>gentilicio (español)</small>",
+        "glaze": "#2E8E68"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "España",
+        "answer": "may",
+        "tag": "may",
+        "sub": "land → hoofdletter"
+      },
+      {
+        "stimulus": "español",
+        "answer": "min",
+        "tag": "min",
+        "sub": "nationaliteit/taal → klein"
+      },
+      {
+        "stimulus": "México",
+        "answer": "may",
+        "tag": "may",
+        "sub": "land → hoofdletter"
+      },
+      {
+        "stimulus": "mexicano",
+        "answer": "min",
+        "tag": "min",
+        "sub": "nationaliteit → klein"
+      },
+      {
+        "stimulus": "Bélgica",
+        "answer": "may",
+        "tag": "may",
+        "sub": "land → hoofdletter"
+      },
+      {
+        "stimulus": "belga",
+        "answer": "min",
+        "tag": "min",
+        "sub": "nationaliteit → klein"
+      },
+      {
+        "stimulus": "Francia",
+        "answer": "may",
+        "tag": "may",
+        "sub": "land → hoofdletter"
+      },
+      {
+        "stimulus": "francés",
+        "answer": "min",
+        "tag": "min",
+        "sub": "nationaliteit → klein"
+      },
+      {
+        "stimulus": "Colombia",
+        "answer": "may",
+        "tag": "may",
+        "sub": "land → hoofdletter"
+      },
+      {
+        "stimulus": "colombiano",
+        "answer": "min",
+        "tag": "min",
+        "sub": "nationaliteit → klein"
+      },
+      {
+        "stimulus": "Madrid",
+        "answer": "may",
+        "tag": "may",
+        "sub": "stad → hoofdletter"
+      },
+      {
+        "stimulus": "neerlandés",
+        "answer": "min",
+        "tag": "min",
+        "sub": "taal → klein"
+      },
+      {
+        "stimulus": "Perú",
+        "answer": "may",
+        "tag": "may",
+        "sub": "land → hoofdletter"
+      },
+      {
+        "stimulus": "peruano",
+        "answer": "min",
+        "tag": "min",
+        "sub": "nationaliteit → klein"
+      }
+    ]
+  }
+}

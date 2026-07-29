@@ -1,0 +1,45 @@
+{
+  "id": "es-u2-quien-es",
+  "title": "¿Quién es? Descríbelo",
+  "subtitle": "U2 · beschrijf een persoon zodat de klas raadt — grábate",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "voicemessage",
+    "prompt": "Describe a la persona sin decir el nombre · graba tu descripción ⏺",
+    "items": [
+      {
+        "to": "La clase (juego «¿Quién es?»)",
+        "situation": "Es el juego de la tarea final: describes a alguien y los demás adivinan.",
+        "goal": "Describe a un familiar SIN decir el nombre (físico + carácter).",
+        "blocks": [
+          "Es un chico / una chica de mi familia.",
+          "Es … (alto/a, moren@, rubi@ …).",
+          "Tiene el pelo … y los ojos …",
+          "Es muy … (simpátic@, gracios@ …).",
+          "¿Quién es?"
+        ],
+        "sub": "beschrijf zonder naam · uiterlijk + karakter",
+        "tag": "quien",
+        "tip": "¿Dijiste el pelo, los ojos Y el carácter? Si no, vuelve a grabar. <span class='nl'>haar, ogen én karakter genoemd? zo niet, herneem.</span>"
+      },
+      {
+        "to": "La clase (segunda ronda)",
+        "situation": "Ahora describes a otra persona, más difícil.",
+        "goal": "Describe a otro familiar con MÁS detalles para que sea un buen reto.",
+        "blocks": [
+          "Esta persona es mi …",
+          "Es … y …",
+          "Lleva gafas / tiene barba …",
+          "Su carácter es …",
+          "¿Quién es?"
+        ],
+        "sub": "tweede ronde · meer details",
+        "tag": "quien"
+      }
+    ]
+  }
+}

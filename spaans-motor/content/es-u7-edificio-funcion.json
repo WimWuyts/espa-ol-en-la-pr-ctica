@@ -1,0 +1,64 @@
+{
+  "id": "es-u7-edificio-funcion",
+  "title": "Edificio y función",
+  "subtitle": "U7 · waarvoor dient dit gebouw?",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind het gebouw met wat je er doet",
+    "pairs": [
+      {
+        "a": "la panadería",
+        "b": "comprar pan 🥖"
+      },
+      {
+        "a": "la farmacia",
+        "b": "comprar medicinas 💊"
+      },
+      {
+        "a": "el banco",
+        "b": "sacar dinero 🏦"
+      },
+      {
+        "a": "el supermercado",
+        "b": "comprar comida 🛒"
+      },
+      {
+        "a": "el parque",
+        "b": "pasear y jugar 🌳"
+      },
+      {
+        "a": "el cine",
+        "b": "ver una película 🎬"
+      },
+      {
+        "a": "la estación",
+        "b": "tomar el tren 🚉"
+      },
+      {
+        "a": "el museo",
+        "b": "ver arte 🏛️"
+      },
+      {
+        "a": "la iglesia",
+        "b": "rezar ⛪"
+      },
+      {
+        "a": "el hospital",
+        "b": "ir al médico 🏥"
+      },
+      {
+        "a": "la escuela",
+        "b": "estudiar ✏️"
+      },
+      {
+        "a": "el restaurante",
+        "b": "comer fuera 🍽️"
+      }
+    ]
+  }
+}

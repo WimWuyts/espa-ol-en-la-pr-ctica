@@ -1,0 +1,182 @@
+{
+  "id": "es-u8-cuenta-viaje",
+  "title": "¡Cuenta tu viaje!",
+  "subtitle": "U8 · schrijf tu experiencia — met alle bouwstenen",
+  "lang": "es",
+  "template": "sim",
+  "options": {
+    "audio": false
+  },
+  "sim": {
+    "prompt": "Tarea comunicativa · contar qué has hecho",
+    "rounds": [
+      {
+        "scenario": "Cuenta qué has hecho hoy (mín. 2 cosas, perfecto compuesto).",
+        "tag": "contar",
+        "sub": "gebruik: he + participio · hoy",
+        "min": 10,
+        "need": [
+          {
+            "re": "he ",
+            "label": "he + participio"
+          },
+          {
+            "re": "hoy|esta",
+            "label": "hoy / esta…"
+          },
+          {
+            "re": "visto|hecho|comido|estudiado|ido|viajado",
+            "label": "un participio"
+          }
+        ],
+        "bank": [
+          "Hoy",
+          "he",
+          "he visto",
+          "he comido",
+          "he estudiado",
+          "y",
+          "también",
+          "una serie"
+        ],
+        "model": "Hoy he estudiado español y he visto una serie."
+      },
+      {
+        "scenario": "Cuenta un viaje: adónde has ido y cómo has viajado.",
+        "tag": "viaje",
+        "sub": "gebruik: he ido a · he viajado en",
+        "min": 9,
+        "need": [
+          {
+            "re": "he ido|hemos ido",
+            "label": "he ido a…"
+          },
+          {
+            "re": "en (avión|tren|coche|barco|bus|autobús)",
+            "label": "en + transporte"
+          },
+          {
+            "re": "a ",
+            "label": "a + destino"
+          }
+        ],
+        "bank": [
+          "He ido a",
+          "Perú",
+          "he viajado en",
+          "avión",
+          "tren",
+          "con mi familia"
+        ],
+        "model": "He ido a Perú. He viajado en avión con mi familia."
+      },
+      {
+        "scenario": "Di qué tiempo ha hecho en tu viaje.",
+        "tag": "clima",
+        "sub": "gebruik: ha hecho · ha llovido · ha nevado",
+        "min": 8,
+        "need": [
+          {
+            "re": "ha hecho|ha llovido|ha nevado|ha estado",
+            "label": "weer in perfecto"
+          },
+          {
+            "re": "sol|calor|frío|viento|nublado|lluvia",
+            "label": "un tiempo"
+          }
+        ],
+        "bank": [
+          "Ha hecho",
+          "sol",
+          "frío",
+          "ha llovido",
+          "por la tarde",
+          "ha estado nublado"
+        ],
+        "model": "Por la mañana ha hecho sol, pero por la tarde ha llovido."
+      },
+      {
+        "scenario": "Pregunta a un amigo qué ha hecho estas vacaciones (con marcadores).",
+        "tag": "preguntar",
+        "sub": "gebruik: ¿qué has hecho? · ¿has …? · alguna vez",
+        "min": 8,
+        "need": [
+          {
+            "re": "has ",
+            "label": "¿has …?"
+          },
+          {
+            "re": "qué|alguna vez|dónde",
+            "label": "qué / alguna vez / dónde"
+          },
+          {
+            "re": "\\?",
+            "label": "een vraag (¿…?)"
+          }
+        ],
+        "bank": [
+          "¿Qué has hecho",
+          "estas vacaciones",
+          "¿Has viajado",
+          "alguna vez",
+          "¿Adónde has ido",
+          "?"
+        ],
+        "model": "¿Qué has hecho estas vacaciones? ¿Has viajado alguna vez a otro país?"
+      },
+      {
+        "scenario": "Cuenta una experiencia con «nunca» o «ya».",
+        "tag": "experiencia",
+        "sub": "gebruik: nunca he · ya he",
+        "min": 7,
+        "need": [
+          {
+            "re": "nunca|ya",
+            "label": "nunca / ya"
+          },
+          {
+            "re": "he ",
+            "label": "he + participio"
+          }
+        ],
+        "bank": [
+          "Nunca he",
+          "Ya he",
+          "visto la nieve",
+          "estado en Perú",
+          "comido ceviche"
+        ],
+        "model": "Nunca he visto la nieve, pero ya he estado en la montaña."
+      },
+      {
+        "scenario": "Recomienda un destino y di por qué (perfecto compuesto).",
+        "tag": "recomendar",
+        "sub": "gebruik: te recomiendo · he estado · porque",
+        "min": 9,
+        "need": [
+          {
+            "re": "recomiendo|recomienda",
+            "label": "te recomiendo"
+          },
+          {
+            "re": "he estado|he visitado|he ido",
+            "label": "he estado/visitado"
+          },
+          {
+            "re": "porque",
+            "label": "porque …"
+          }
+        ],
+        "bank": [
+          "Te recomiendo",
+          "Cusco",
+          "he estado allí",
+          "porque",
+          "he visto Machu Picchu",
+          "es increíble"
+        ],
+        "model": "Te recomiendo Cusco porque he estado allí y he visto Machu Picchu."
+      }
+    ]
+  }
+}

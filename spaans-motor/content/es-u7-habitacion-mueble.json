@@ -1,0 +1,64 @@
+{
+  "id": "es-u7-habitacion-mueble",
+  "title": "Habitación y mueble",
+  "subtitle": "U7 · welk meubel/actie hoort bij de kamer?",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind de kamer met wat erbij hoort",
+    "pairs": [
+      {
+        "a": "la cocina",
+        "b": "la nevera 🧊"
+      },
+      {
+        "a": "el dormitorio",
+        "b": "la cama 🛏️"
+      },
+      {
+        "a": "el salón",
+        "b": "el sofá 🛋️"
+      },
+      {
+        "a": "el baño",
+        "b": "la ducha 🚿"
+      },
+      {
+        "a": "el comedor",
+        "b": "la mesa 🍽️"
+      },
+      {
+        "a": "el estudio",
+        "b": "la estantería 📚"
+      },
+      {
+        "a": "el pasillo",
+        "b": "el espejo 🪞"
+      },
+      {
+        "a": "la terraza",
+        "b": "las plantas 🪴"
+      },
+      {
+        "a": "el jardín",
+        "b": "los árboles 🌳"
+      },
+      {
+        "a": "la entrada",
+        "b": "la puerta 🚪"
+      },
+      {
+        "a": "el techo",
+        "b": "la lámpara 💡"
+      },
+      {
+        "a": "el suelo",
+        "b": "la alfombra 🟫"
+      }
+    ]
+  }
+}

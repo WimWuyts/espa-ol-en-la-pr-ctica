@@ -1,0 +1,148 @@
+{
+  "id": "es-u5-comida-bebida",
+  "title": "¿comida o bebida?",
+  "subtitle": "U5 · eten of drinken?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Is het comida (eten) of bebida (drinken)?",
+    "categories": [
+      {
+        "id": "comida",
+        "label": "comida<br><small>eten</small>",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "bebida",
+        "label": "bebida<br><small>drinken</small>",
+        "glaze": "#3D74D6"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "el pan",
+        "answer": "comida",
+        "tag": "comida",
+        "sub": "brood"
+      },
+      {
+        "stimulus": "el agua",
+        "answer": "bebida",
+        "tag": "bebida",
+        "sub": "water"
+      },
+      {
+        "stimulus": "el pollo",
+        "answer": "comida",
+        "tag": "comida",
+        "sub": "kip"
+      },
+      {
+        "stimulus": "el zumo",
+        "answer": "bebida",
+        "tag": "bebida",
+        "sub": "sap"
+      },
+      {
+        "stimulus": "la manzana",
+        "answer": "comida",
+        "tag": "comida",
+        "sub": "appel"
+      },
+      {
+        "stimulus": "el café",
+        "answer": "bebida",
+        "tag": "bebida",
+        "sub": "koffie"
+      },
+      {
+        "stimulus": "la sopa",
+        "answer": "comida",
+        "tag": "comida",
+        "sub": "soep"
+      },
+      {
+        "stimulus": "el refresco",
+        "answer": "bebida",
+        "tag": "bebida",
+        "sub": "frisdrank"
+      },
+      {
+        "stimulus": "el queso",
+        "answer": "comida",
+        "tag": "comida",
+        "sub": "kaas"
+      },
+      {
+        "stimulus": "la leche",
+        "answer": "bebida",
+        "tag": "bebida",
+        "sub": "melk"
+      },
+      {
+        "stimulus": "los tacos",
+        "answer": "comida",
+        "tag": "comida",
+        "sub": "taco's"
+      },
+      {
+        "stimulus": "el té",
+        "answer": "bebida",
+        "tag": "bebida",
+        "sub": "thee"
+      },
+      {
+        "stimulus": "el arroz",
+        "answer": "comida",
+        "tag": "comida",
+        "sub": "rijst"
+      },
+      {
+        "stimulus": "la naranja",
+        "answer": "comida",
+        "tag": "comida",
+        "sub": "fruit → eten"
+      },
+      {
+        "stimulus": "el jamón",
+        "answer": "comida",
+        "tag": "comida",
+        "sub": "ham"
+      },
+      {
+        "stimulus": "la horchata",
+        "answer": "bebida",
+        "tag": "bebida",
+        "sub": "horchata (drank)"
+      },
+      {
+        "stimulus": "el flan",
+        "answer": "comida",
+        "tag": "comida",
+        "sub": "pudding → postre"
+      },
+      {
+        "stimulus": "el batido",
+        "answer": "bebida",
+        "tag": "bebida",
+        "sub": "milkshake"
+      },
+      {
+        "stimulus": "la ensalada",
+        "answer": "comida",
+        "tag": "comida",
+        "sub": "salade"
+      },
+      {
+        "stimulus": "la limonada",
+        "answer": "bebida",
+        "tag": "bebida",
+        "sub": "limonade"
+      }
+    ]
+  }
+}

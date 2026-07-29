@@ -1,0 +1,48 @@
+{
+  "id": "es-u1-pregunta-respuesta",
+  "title": "Pregunta y respuesta",
+  "subtitle": "U1 · koppel de vraag aan het juiste antwoord",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 5,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind elke vraag met het passende antwoord",
+    "pairs": [
+      {
+        "a": "¿Cómo te llamas?",
+        "b": "Me llamo Leo."
+      },
+      {
+        "a": "¿De dónde eres?",
+        "b": "Soy de Bélgica."
+      },
+      {
+        "a": "¿Dónde vives?",
+        "b": "Vivo en Gante."
+      },
+      {
+        "a": "¿Cuántos años tienes?",
+        "b": "Tengo 15 años."
+      },
+      {
+        "a": "¿Cuál es tu correo?",
+        "b": "Es leo@mail.com."
+      },
+      {
+        "a": "¿Qué idiomas hablas?",
+        "b": "Hablo dos idiomas."
+      },
+      {
+        "a": "¿Quién es ella?",
+        "b": "Es Lucía, de Sevilla."
+      },
+      {
+        "a": "¿Cuál es tu nacionalidad?",
+        "b": "Soy belga."
+      }
+    ]
+  }
+}

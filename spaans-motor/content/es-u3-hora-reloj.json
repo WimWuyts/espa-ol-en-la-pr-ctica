@@ -1,0 +1,48 @@
+{
+  "id": "es-u3-hora-reloj",
+  "title": "¿Qué hora es?",
+  "subtitle": "U3 · koppel de tijd aan de digitale klok",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind de gesproken tijd met de klok",
+    "pairs": [
+      {
+        "a": "Es la una",
+        "b": "1:00"
+      },
+      {
+        "a": "Son las dos y media",
+        "b": "2:30"
+      },
+      {
+        "a": "Son las tres y cuarto",
+        "b": "3:15"
+      },
+      {
+        "a": "Son las cinco menos cuarto",
+        "b": "4:45"
+      },
+      {
+        "a": "Son las nueve en punto",
+        "b": "9:00"
+      },
+      {
+        "a": "Son las seis y diez",
+        "b": "6:10"
+      },
+      {
+        "a": "Es la una y media",
+        "b": "1:30"
+      },
+      {
+        "a": "Son las ocho menos cuarto",
+        "b": "7:45"
+      }
+    ]
+  }
+}

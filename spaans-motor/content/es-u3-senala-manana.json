@@ -1,0 +1,77 @@
+{
+  "id": "es-u3-senala-manana",
+  "title": "Señala la mañana",
+  "subtitle": "U3 · klik alles wat bij de OCHTEND hoort",
+  "lang": "es",
+  "template": "point",
+  "options": {
+    "audio": false
+  },
+  "point": {
+    "prompt": "Klik ALLES wat bij «por la mañana» past",
+    "mode": "all",
+    "rounds": [
+      {
+        "tag": "manana",
+        "sub": "acciones de la mañana",
+        "targets": [
+          {
+            "label": "me levanto",
+            "hit": true
+          },
+          {
+            "label": "desayuno",
+            "hit": true
+          },
+          {
+            "label": "ceno"
+          },
+          {
+            "label": "me acuesto"
+          }
+        ]
+      },
+      {
+        "tag": "manana",
+        "sub": "horas de la mañana",
+        "targets": [
+          {
+            "label": "las 7:00",
+            "hit": true
+          },
+          {
+            "label": "las 23:00"
+          },
+          {
+            "label": "las 8:15",
+            "hit": true
+          },
+          {
+            "label": "las 21:00"
+          }
+        ]
+      },
+      {
+        "tag": "manana",
+        "sub": "acciones de la mañana",
+        "targets": [
+          {
+            "label": "me ducho",
+            "hit": true
+          },
+          {
+            "label": "me visto",
+            "hit": true
+          },
+          {
+            "label": "la cena"
+          },
+          {
+            "label": "salgo de casa",
+            "hit": true
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "es-u2-carrusel-familia",
+  "title": "Carrusel: mi familia",
+  "subtitle": "U2 · één zin, wisselende bouwstenen — grábate en cada vuelta",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "substitution",
+    "prompt": "Di la frase con el familiar nuevo y grábate ⏺",
+    "frame": "Mi ___ se llama ___ y es ___.",
+    "frameLabel": "Modelo · vul de gemarkeerde delen in",
+    "items": [
+      {
+        "fills": [
+          "hermano",
+          "Marco",
+          "alto"
+        ],
+        "sub": "broer · Marco · lang",
+        "tag": "carrusel"
+      },
+      {
+        "fills": [
+          "madre",
+          "Rosa",
+          "habladora"
+        ],
+        "sub": "moeder · Rosa · praatgraag",
+        "tag": "carrusel"
+      },
+      {
+        "fills": [
+          "prima",
+          "Julia",
+          "pelirroja"
+        ],
+        "sub": "nicht · Julia · roodharig",
+        "tag": "carrusel"
+      },
+      {
+        "fills": [
+          "abuelo",
+          "Pepe",
+          "tranquilo"
+        ],
+        "sub": "opa · Pepe · rustig",
+        "tag": "carrusel"
+      },
+      {
+        "fills": [
+          "___",
+          "___",
+          "___"
+        ],
+        "sub": "nu met JOUW echte familie — ¡cuéntalo tú!",
+        "tag": "carrusel",
+        "tip": "¡Ahora tú de verdad! Grábate con un familiar real. <span class='nl'>neem jezelf op met een echt familielid.</span>"
+      }
+    ]
+  }
+}

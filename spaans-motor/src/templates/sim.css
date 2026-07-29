@@ -1,0 +1,29 @@
+/* Sjabloon: simulatie / vrije productie (sim). Chat-achtige azulejo-tegel. */
+.sm-card{background:linear-gradient(175deg,#FBF6E9,#E9E0C9);border:1px solid rgba(0,0,0,.25);border-radius:3px;
+  box-shadow:0 6px 0 rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.9);padding:16px;position:relative;overflow:hidden;min-height:230px}
+.sm-card::before,.sm-card::after{content:"";position:absolute;left:0;right:0;height:7px;background:repeating-linear-gradient(45deg,#12264A 0 4px,transparent 4px 8px),repeating-linear-gradient(-45deg,#12264A 0 4px,transparent 4px 8px);opacity:.5}
+.sm-card::before{top:0}.sm-card::after{bottom:0}
+.sm-eye{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8A7F66;text-align:center;margin-bottom:6px}
+.sm-scn{font-family:var(--serif);font-weight:700;font-size:16px;color:#12264A;text-align:center;margin-bottom:10px}
+.sm-scn .sm-hint{font-weight:400;font-size:13px;color:#8A7F66}
+.sm-need{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:10px}
+.sm-chk{font-family:var(--serif);font-size:12.5px;color:#8E2C1D;background:#fff;border:1px solid #E3C7C0;border-radius:20px;padding:3px 10px}
+.sm-chk.ok{color:#1F6B4C;border-color:#B7DCC4;background:#EAF7EE}
+.sm-ta{width:100%;box-sizing:border-box;font-family:var(--serif);font-size:16px;color:#12264A;background:#fff;
+  border:1px solid #C3B99F;border-radius:4px;padding:10px 12px;resize:vertical;line-height:1.5}
+.sm-ta:focus{outline:2px solid #3D74D6;outline-offset:1px}
+.sm-bank{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin:10px 0}
+.sm-chip{font-family:var(--serif);font-weight:700;font-size:14px;color:#12264A;background:linear-gradient(180deg,#fff,#F1E9D5);
+  border:1px solid #C3B99F;border-radius:3px;padding:7px 11px;cursor:pointer;box-shadow:0 2px 0 rgba(0,0,0,.12)}
+.sm-chip:hover{filter:brightness(1.04);border-color:#12264A}
+.sm-chip:active{transform:translateY(1px)}
+.sm-row{display:flex;gap:10px;justify-content:center;margin-top:6px}
+.sm-btn{font-family:var(--serif);font-weight:700;font-size:15px;color:#fff;background:#1F6B4C;border:none;border-radius:4px;
+  padding:9px 18px;cursor:pointer;box-shadow:0 3px 0 rgba(0,0,0,.18)}
+.sm-btn:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0,.18)}
+.sm-btn.ghost{background:#EDE4CE;color:#5C5540}
+.sm-fb{min-height:22px;margin-top:10px;text-align:center;font-family:var(--serif);font-size:15px;font-weight:700}
+.sm-fb.g{color:#1F6B4C}.sm-fb.b{color:#8E2C1D}
+.sm-model{display:none;margin-top:10px;font-family:var(--serif);font-size:14.5px;color:#12264A;background:#EAF7EE;border:1px solid #B7DCC4;border-radius:4px;padding:9px 12px}
+.sm-card.good{box-shadow:0 6px 0 rgba(31,107,76,.3),inset 0 1px 0 rgba(255,255,255,.9)}
+.sm-card.bad .sm-ta{border-color:#C4402C}

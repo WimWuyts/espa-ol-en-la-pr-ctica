@@ -1,0 +1,53 @@
+{
+  "id": "es-u1-describe-persona",
+  "title": "Describe a un personaje",
+  "subtitle": "U1 · escucha, describe a Diego y a Nina, y grábate",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "repeat",
+    "prompt": "Escucha ▶ · describe a la persona · grábate ⏺",
+    "items": [
+      {
+        "cue": "Diego · CDMX 🇲🇽",
+        "text": "Se llama Diego.",
+        "sub": "hij heet Diego — «se llama» (3de persoon)",
+        "tag": "describir"
+      },
+      {
+        "cue": "Diego · CDMX 🇲🇽",
+        "text": "Es de México y tiene dieciséis años.",
+        "sub": "hij komt uit Mexico en is 16 — «es» + «tiene»",
+        "tag": "describir"
+      },
+      {
+        "cue": "Diego · CDMX 🇲🇽",
+        "text": "Habla español y le gusta la comida.",
+        "sub": "hij spreekt Spaans en houdt van eten",
+        "tag": "describir"
+      },
+      {
+        "cue": "Nina · Cusco 🇵🇪",
+        "text": "Se llama Nina y es de Perú.",
+        "sub": "zij heet Nina en komt uit Peru",
+        "tag": "describir"
+      },
+      {
+        "cue": "Nina · Cusco 🇵🇪",
+        "text": "Tiene diecisiete años y vive en Cusco.",
+        "sub": "zij is 17 en woont in Cusco",
+        "tag": "describir"
+      },
+      {
+        "cue": "Nina · Cusco 🇵🇪",
+        "text": "Habla español y quechua.",
+        "sub": "zij spreekt Spaans en Quechua",
+        "tag": "describir",
+        "tip": "Ahora describe a un amigo tuyo con estas frases. <span class='nl'>beschrijf nu een echte vriend(in) met dezelfde zinnen.</span>"
+      }
+    ]
+  }
+}

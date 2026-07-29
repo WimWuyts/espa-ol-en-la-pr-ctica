@@ -1,0 +1,141 @@
+{
+  "id": "es-u5-en-el-mercado",
+  "title": "En el mercado",
+  "subtitle": "U5 · sorteer het product: fruta · verdura · carne/pescado",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "¿Qué es? fruta · verdura · carne o pescado",
+    "categories": [
+      {
+        "id": "fruta",
+        "label": "fruta<br><small>fruit</small>",
+        "glaze": "#C4402C"
+      },
+      {
+        "id": "verdura",
+        "label": "verdura<br><small>groente</small>",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "proteina",
+        "label": "carne / pescado<br><small>vlees/vis</small>",
+        "glaze": "#E0A22F"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "la manzana",
+        "answer": "fruta",
+        "tag": "fruta",
+        "sub": "appel"
+      },
+      {
+        "stimulus": "el plátano",
+        "answer": "fruta",
+        "tag": "fruta",
+        "sub": "banaan"
+      },
+      {
+        "stimulus": "la naranja",
+        "answer": "fruta",
+        "tag": "fruta",
+        "sub": "sinaasappel"
+      },
+      {
+        "stimulus": "las uvas",
+        "answer": "fruta",
+        "tag": "fruta",
+        "sub": "druiven"
+      },
+      {
+        "stimulus": "la piña",
+        "answer": "fruta",
+        "tag": "fruta",
+        "sub": "ananas"
+      },
+      {
+        "stimulus": "la fresa",
+        "answer": "fruta",
+        "tag": "fruta",
+        "sub": "aardbei"
+      },
+      {
+        "stimulus": "el tomate",
+        "answer": "verdura",
+        "tag": "verdura",
+        "sub": "tomaat (culinair verdura)"
+      },
+      {
+        "stimulus": "la lechuga",
+        "answer": "verdura",
+        "tag": "verdura",
+        "sub": "sla"
+      },
+      {
+        "stimulus": "la cebolla",
+        "answer": "verdura",
+        "tag": "verdura",
+        "sub": "ui"
+      },
+      {
+        "stimulus": "el ajo",
+        "answer": "verdura",
+        "tag": "verdura",
+        "sub": "knoflook"
+      },
+      {
+        "stimulus": "el maíz",
+        "answer": "verdura",
+        "tag": "verdura",
+        "sub": "maïs"
+      },
+      {
+        "stimulus": "la zanahoria",
+        "answer": "verdura",
+        "tag": "verdura",
+        "sub": "wortel"
+      },
+      {
+        "stimulus": "el pollo",
+        "answer": "proteina",
+        "tag": "proteina",
+        "sub": "kip"
+      },
+      {
+        "stimulus": "la carne",
+        "answer": "proteina",
+        "tag": "proteina",
+        "sub": "vlees"
+      },
+      {
+        "stimulus": "el pescado",
+        "answer": "proteina",
+        "tag": "proteina",
+        "sub": "vis"
+      },
+      {
+        "stimulus": "el jamón",
+        "answer": "proteina",
+        "tag": "proteina",
+        "sub": "ham"
+      },
+      {
+        "stimulus": "las gambas",
+        "answer": "proteina",
+        "tag": "proteina",
+        "sub": "garnalen"
+      },
+      {
+        "stimulus": "el chorizo",
+        "answer": "proteina",
+        "tag": "proteina",
+        "sub": "chorizo (worst)"
+      }
+    ]
+  }
+}

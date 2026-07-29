@@ -1,0 +1,64 @@
+{
+  "id": "es-u4-gustos-memoria",
+  "title": "Memoria de los gustos",
+  "subtitle": "U4 · zoek het paar español ↔ nederlands",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om en zoek het woord + de vertaling",
+    "pairs": [
+      {
+        "a": "gustar",
+        "b": "leuk vinden"
+      },
+      {
+        "a": "encantar",
+        "b": "geweldig vinden"
+      },
+      {
+        "a": "el deporte",
+        "b": "de sport"
+      },
+      {
+        "a": "bailar",
+        "b": "dansen"
+      },
+      {
+        "a": "nadar",
+        "b": "zwemmen"
+      },
+      {
+        "a": "la playa",
+        "b": "het strand"
+      },
+      {
+        "a": "el tiempo libre",
+        "b": "de vrije tijd"
+      },
+      {
+        "a": "salir con amigos",
+        "b": "met vrienden uitgaan"
+      },
+      {
+        "a": "los videojuegos",
+        "b": "de videospellen"
+      },
+      {
+        "a": "aburrido",
+        "b": "saai"
+      },
+      {
+        "a": "divertido",
+        "b": "leuk/grappig"
+      },
+      {
+        "a": "favorito",
+        "b": "favoriet"
+      }
+    ]
+  }
+}

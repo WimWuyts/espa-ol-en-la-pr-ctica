@@ -1,0 +1,44 @@
+{
+  "id": "es-u3-hora-digital",
+  "title": "El reloj de 24 horas",
+  "subtitle": "U3 · koppel de zin aan het 24-uursformaat",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 5,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind de gesproken tijd met de digitale klok",
+    "pairs": [
+      {
+        "a": "Son las siete de la mañana",
+        "b": "07:00"
+      },
+      {
+        "a": "Son las tres de la tarde",
+        "b": "15:00"
+      },
+      {
+        "a": "Son las nueve de la noche",
+        "b": "21:00"
+      },
+      {
+        "a": "Es la una de la tarde",
+        "b": "13:00"
+      },
+      {
+        "a": "Son las ocho de la mañana",
+        "b": "08:00"
+      },
+      {
+        "a": "Son las once de la noche",
+        "b": "23:00"
+      },
+      {
+        "a": "Son las cuatro y media de la tarde",
+        "b": "16:30"
+      }
+    ]
+  }
+}

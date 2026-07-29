@@ -1,0 +1,168 @@
+{
+  "id": "es-u5-pon-la-mesa",
+  "title": "Pon la mesa",
+  "subtitle": "U5 · klik het juiste item van la mesa",
+  "lang": "es",
+  "template": "point",
+  "options": {
+    "audio": false
+  },
+  "point": {
+    "prompt": "Klik het gevraagde item van de tafel",
+    "mode": "one",
+    "rounds": [
+      {
+        "tag": "tenedor",
+        "sub": "señala el tenedor (vork)",
+        "targets": [
+          {
+            "label": "el tenedor 🍴",
+            "hit": true
+          },
+          {
+            "label": "el vaso"
+          },
+          {
+            "label": "el plato"
+          },
+          {
+            "label": "la servilleta"
+          }
+        ]
+      },
+      {
+        "tag": "cuchillo",
+        "sub": "señala el cuchillo (mes)",
+        "targets": [
+          {
+            "label": "el cuchillo 🔪",
+            "hit": true
+          },
+          {
+            "label": "la cuchara"
+          },
+          {
+            "label": "la taza"
+          },
+          {
+            "label": "el mantel"
+          }
+        ]
+      },
+      {
+        "tag": "cuchara",
+        "sub": "señala la cuchara (para la sopa)",
+        "targets": [
+          {
+            "label": "la cuchara 🥄",
+            "hit": true
+          },
+          {
+            "label": "el tenedor"
+          },
+          {
+            "label": "el vaso"
+          },
+          {
+            "label": "el plato"
+          }
+        ]
+      },
+      {
+        "tag": "vaso",
+        "sub": "señala el vaso (para el agua)",
+        "targets": [
+          {
+            "label": "el vaso 🥛",
+            "hit": true
+          },
+          {
+            "label": "el plato"
+          },
+          {
+            "label": "el cuchillo"
+          },
+          {
+            "label": "la servilleta"
+          }
+        ]
+      },
+      {
+        "tag": "servilleta",
+        "sub": "señala la servilleta (servet)",
+        "targets": [
+          {
+            "label": "la servilleta",
+            "hit": true
+          },
+          {
+            "label": "el tenedor"
+          },
+          {
+            "label": "la taza"
+          },
+          {
+            "label": "el plato"
+          }
+        ]
+      },
+      {
+        "tag": "plato",
+        "sub": "señala el plato (bord)",
+        "targets": [
+          {
+            "label": "el plato 🍽️",
+            "hit": true
+          },
+          {
+            "label": "el vaso"
+          },
+          {
+            "label": "la cuchara"
+          },
+          {
+            "label": "el mantel"
+          }
+        ]
+      },
+      {
+        "tag": "taza",
+        "sub": "señala la taza (para el café)",
+        "targets": [
+          {
+            "label": "la taza ☕",
+            "hit": true
+          },
+          {
+            "label": "el vaso"
+          },
+          {
+            "label": "el tenedor"
+          },
+          {
+            "label": "el plato"
+          }
+        ]
+      },
+      {
+        "tag": "mantel",
+        "sub": "señala el mantel (tafelkleed)",
+        "targets": [
+          {
+            "label": "el mantel",
+            "hit": true
+          },
+          {
+            "label": "la servilleta"
+          },
+          {
+            "label": "el plato"
+          },
+          {
+            "label": "el vaso"
+          }
+        ]
+      }
+    ]
+  }
+}

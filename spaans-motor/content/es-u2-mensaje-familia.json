@@ -1,0 +1,46 @@
+{
+  "id": "es-u2-mensaje-familia",
+  "title": "Mensaje de voz: mi familia",
+  "subtitle": "U2 · graba UN mensaje presentando a tu familia",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "voicemessage",
+    "prompt": "Graba un mensaje de voz · spraakbericht opnemen",
+    "items": [
+      {
+        "to": "Lucía, de Sevilla",
+        "situation": "Lucía te enseña su álbum de familia y te pregunta por la tuya.",
+        "goal": "Preséntale tu familia: cuántos sois y cómo son.",
+        "blocks": [
+          "saludo (¡Hola, Lucía!)",
+          "en mi familia somos …",
+          "tengo … hermanos/as",
+          "mi madre/padre es …",
+          "despedida"
+        ],
+        "sub": "Lucía — stel je familie voor (aantal + hoe ze zijn)",
+        "tag": "mensaje"
+      },
+      {
+        "to": "Tu familia de acogida en España",
+        "situation": "Vas de intercambio y les hablas de tu familia.",
+        "goal": "Diles quién es quién y cómo es cada persona.",
+        "blocks": [
+          "saludo",
+          "somos … en casa",
+          "mi hermano/a se llama …",
+          "es … (físico + carácter)",
+          "también tengo …",
+          "despedida"
+        ],
+        "sub": "je gastgezin — wie is wie en hoe ze zijn",
+        "tag": "mensaje",
+        "tip": "Escucha tu mensaje: ¿se entiende quién es quién? Vuelve a grabar más despacio. <span class='nl'>beluister jezelf; herneem rustiger.</span>"
+      }
+    ]
+  }
+}

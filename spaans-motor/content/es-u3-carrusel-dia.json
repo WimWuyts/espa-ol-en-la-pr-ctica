@@ -1,0 +1,59 @@
+{
+  "id": "es-u3-carrusel-dia",
+  "title": "Carrusel: cambia la hora",
+  "subtitle": "U3 · zelfde zin, andere tijd — grábate en cada vuelta",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "substitution",
+    "prompt": "Di la frase con la hora nueva y grábate",
+    "frame": "Me levanto a las ___ y ___.",
+    "frameLabel": "Modelo · vul de gemarkeerde delen in",
+    "items": [
+      {
+        "fills": [
+          "siete",
+          "desayuno"
+        ],
+        "sub": "7 uur · ontbijten",
+        "tag": "carrusel"
+      },
+      {
+        "fills": [
+          "seis y media",
+          "me ducho"
+        ],
+        "sub": "6:30 · douchen",
+        "tag": "carrusel"
+      },
+      {
+        "fills": [
+          "ocho",
+          "voy al instituto"
+        ],
+        "sub": "8 uur · naar school",
+        "tag": "carrusel"
+      },
+      {
+        "fills": [
+          "diez",
+          "el sábado descanso"
+        ],
+        "sub": "10 uur · zaterdag",
+        "tag": "carrusel"
+      },
+      {
+        "fills": [
+          "___",
+          "___"
+        ],
+        "sub": "nu met JOUW echte dag — ¡cuéntalo tú!",
+        "tag": "carrusel",
+        "tip": "¡Ahora tú de verdad! Grábate con tu hora real. <span class='nl'>neem jezelf op met je échte uur.</span>"
+      }
+    ]
+  }
+}

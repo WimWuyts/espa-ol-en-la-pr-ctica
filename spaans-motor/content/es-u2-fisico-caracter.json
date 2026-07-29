@@ -1,0 +1,124 @@
+{
+  "id": "es-u2-fisico-caracter",
+  "title": "¿Físico o carácter?",
+  "subtitle": "U2 · beschrijft het het uiterlijk of het karakter?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 16,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "¿Descripción física (uiterlijk) o carácter (aard)?",
+    "categories": [
+      {
+        "id": "fis",
+        "label": "Físico<br><small>uiterlijk</small>",
+        "glaze": "#2FA8A0"
+      },
+      {
+        "id": "car",
+        "label": "Carácter<br><small>aard</small>",
+        "glaze": "#8B5E9E"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "alto",
+        "answer": "fis",
+        "tag": "fis",
+        "sub": "lang"
+      },
+      {
+        "stimulus": "simpático",
+        "answer": "car",
+        "tag": "car",
+        "sub": "aardig"
+      },
+      {
+        "stimulus": "moreno",
+        "answer": "fis",
+        "tag": "fis",
+        "sub": "donkerharig"
+      },
+      {
+        "stimulus": "tímido",
+        "answer": "car",
+        "tag": "car",
+        "sub": "verlegen"
+      },
+      {
+        "stimulus": "rubio",
+        "answer": "fis",
+        "tag": "fis",
+        "sub": "blond"
+      },
+      {
+        "stimulus": "gracioso",
+        "answer": "car",
+        "tag": "car",
+        "sub": "grappig"
+      },
+      {
+        "stimulus": "delgado",
+        "answer": "fis",
+        "tag": "fis",
+        "sub": "slank"
+      },
+      {
+        "stimulus": "hablador",
+        "answer": "car",
+        "tag": "car",
+        "sub": "praatgraag"
+      },
+      {
+        "stimulus": "guapo",
+        "answer": "fis",
+        "tag": "fis",
+        "sub": "knap"
+      },
+      {
+        "stimulus": "tranquilo",
+        "answer": "car",
+        "tag": "car",
+        "sub": "rustig"
+      },
+      {
+        "stimulus": "pelirrojo",
+        "answer": "fis",
+        "tag": "fis",
+        "sub": "roodharig"
+      },
+      {
+        "stimulus": "alegre",
+        "answer": "car",
+        "tag": "car",
+        "sub": "vrolijk"
+      },
+      {
+        "stimulus": "bajo",
+        "answer": "fis",
+        "tag": "fis",
+        "sub": "klein"
+      },
+      {
+        "stimulus": "inteligente",
+        "answer": "car",
+        "tag": "car",
+        "sub": "slim"
+      },
+      {
+        "stimulus": "joven",
+        "answer": "fis",
+        "tag": "fis",
+        "sub": "jong"
+      },
+      {
+        "stimulus": "majo",
+        "answer": "car",
+        "tag": "car",
+        "sub": "leuk (Sp.)"
+      }
+    ]
+  }
+}

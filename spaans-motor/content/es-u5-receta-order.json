@@ -1,0 +1,147 @@
+{
+  "id": "es-u5-receta-order",
+  "title": "Ordena la receta",
+  "subtitle": "U5 · zet de bereidingsstappen in de juiste volgorde",
+  "lang": "es",
+  "template": "order",
+  "options": {
+    "audio": false
+  },
+  "order": {
+    "prompt": "Tik de stappen van het recept in de juiste volgorde",
+    "rounds": [
+      {
+        "tag": "tacos",
+        "sub": "los tacos 🌮",
+        "items": [
+          {
+            "label": "Calienta la tortilla.",
+            "key": 1
+          },
+          {
+            "label": "Pon la carne encima.",
+            "key": 2
+          },
+          {
+            "label": "Añade salsa y cebolla.",
+            "key": 3
+          },
+          {
+            "label": "Come el taco con las manos.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "limonada",
+        "sub": "la limonada 🍋",
+        "items": [
+          {
+            "label": "Exprime los limones.",
+            "key": 1
+          },
+          {
+            "label": "Añade agua y azúcar.",
+            "key": 2
+          },
+          {
+            "label": "Mezcla bien.",
+            "key": 3
+          },
+          {
+            "label": "Sirve con hielo.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "bocadillo",
+        "sub": "el bocadillo 🥖",
+        "items": [
+          {
+            "label": "Corta el pan.",
+            "key": 1
+          },
+          {
+            "label": "Pon el jamón y el queso.",
+            "key": 2
+          },
+          {
+            "label": "Añade tomate.",
+            "key": 3
+          },
+          {
+            "label": "Cierra el bocadillo.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "cafe",
+        "sub": "el café con leche ☕",
+        "items": [
+          {
+            "label": "Calienta la leche.",
+            "key": 1
+          },
+          {
+            "label": "Prepara el café.",
+            "key": 2
+          },
+          {
+            "label": "Mezcla café y leche.",
+            "key": 3
+          },
+          {
+            "label": "Bebe caliente.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "ensalada",
+        "sub": "la ensalada 🥗",
+        "items": [
+          {
+            "label": "Lava la lechuga.",
+            "key": 1
+          },
+          {
+            "label": "Corta el tomate y la cebolla.",
+            "key": 2
+          },
+          {
+            "label": "Añade aceite y sal.",
+            "key": 3
+          },
+          {
+            "label": "Mezcla todo.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "quesadilla",
+        "sub": "la quesadilla 🫓",
+        "items": [
+          {
+            "label": "Pon queso en la tortilla.",
+            "key": 1
+          },
+          {
+            "label": "Dobla la tortilla.",
+            "key": 2
+          },
+          {
+            "label": "Calienta en la sartén.",
+            "key": 3
+          },
+          {
+            "label": "Corta y sirve.",
+            "key": 4
+          }
+        ]
+      }
+    ]
+  }
+}

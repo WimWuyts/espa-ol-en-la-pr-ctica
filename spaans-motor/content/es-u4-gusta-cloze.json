@@ -1,0 +1,116 @@
+{
+  "id": "es-u4-gusta-cloze",
+  "title": "Completa: gusta o gustan",
+  "subtitle": "U4 · kies de juiste vorm van gustar",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Vul gusta of gustan in",
+    "items": [
+      {
+        "stimulus": "Me ___ los deportes.",
+        "options": [
+          "gustan",
+          "gusta"
+        ],
+        "answer": "gustan",
+        "tag": "g",
+        "sub": "mv."
+      },
+      {
+        "stimulus": "Me ___ la música.",
+        "options": [
+          "gusta",
+          "gustan"
+        ],
+        "answer": "gusta",
+        "tag": "g",
+        "sub": "1 ding"
+      },
+      {
+        "stimulus": "Me ___ nadar.",
+        "options": [
+          "gusta",
+          "gustan"
+        ],
+        "answer": "gusta",
+        "tag": "g",
+        "sub": "infinitivo"
+      },
+      {
+        "stimulus": "¿Te ___ las series?",
+        "options": [
+          "gustan",
+          "gusta"
+        ],
+        "answer": "gustan",
+        "tag": "g",
+        "sub": "mv."
+      },
+      {
+        "stimulus": "Nos ___ el mar.",
+        "options": [
+          "gusta",
+          "gustan"
+        ],
+        "answer": "gusta",
+        "tag": "g",
+        "sub": "1 ding"
+      },
+      {
+        "stimulus": "Le ___ los videojuegos.",
+        "options": [
+          "gustan",
+          "gusta"
+        ],
+        "answer": "gustan",
+        "tag": "g",
+        "sub": "mv."
+      },
+      {
+        "stimulus": "Me ___ bailar y cantar.",
+        "options": [
+          "gusta",
+          "gustan"
+        ],
+        "answer": "gusta",
+        "tag": "g",
+        "sub": "infinitivos → gusta"
+      },
+      {
+        "stimulus": "¿Os ___ el cine?",
+        "options": [
+          "gusta",
+          "gustan"
+        ],
+        "answer": "gusta",
+        "tag": "g",
+        "sub": "1 ding"
+      },
+      {
+        "stimulus": "Les ___ las canciones.",
+        "options": [
+          "gustan",
+          "gusta"
+        ],
+        "answer": "gustan",
+        "tag": "g",
+        "sub": "mv."
+      },
+      {
+        "stimulus": "Me ___ la playa.",
+        "options": [
+          "gusta",
+          "gustan"
+        ],
+        "answer": "gusta",
+        "tag": "g",
+        "sub": "1 ding"
+      }
+    ]
+  }
+}

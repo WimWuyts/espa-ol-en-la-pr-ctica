@@ -1,0 +1,148 @@
+{
+  "id": "es-u4-verbo-cloze",
+  "title": "Completa el verbo",
+  "subtitle": "U4 · vul de juiste vorm in (gustar · querer · poder)",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste werkwoordsvorm",
+    "items": [
+      {
+        "stimulus": "A nosotros nos ___ las playas.",
+        "options": [
+          "gustan",
+          "gusta",
+          "gustamos"
+        ],
+        "answer": "gustan",
+        "tag": "gustar",
+        "sub": "las playas = mv."
+      },
+      {
+        "stimulus": "¿___ quedar el sábado?",
+        "options": [
+          "Quieres",
+          "Quiero",
+          "Queréis"
+        ],
+        "answer": "Quieres",
+        "tag": "querer",
+        "sub": "querer · tú (e>ie)"
+      },
+      {
+        "stimulus": "(A mí) me ___ la música.",
+        "options": [
+          "encanta",
+          "encantan",
+          "encanto"
+        ],
+        "answer": "encanta",
+        "tag": "encantar",
+        "sub": "la música = 1"
+      },
+      {
+        "stimulus": "Yo no ___ hoy, lo siento.",
+        "options": [
+          "puedo",
+          "puede",
+          "pueden"
+        ],
+        "answer": "puedo",
+        "tag": "poder",
+        "sub": "poder · yo (o>ue)"
+      },
+      {
+        "stimulus": "¿A ti te ___ los videojuegos?",
+        "options": [
+          "gustan",
+          "gusta",
+          "gustas"
+        ],
+        "answer": "gustan",
+        "tag": "gustar",
+        "sub": "mv."
+      },
+      {
+        "stimulus": "Nosotros ___ ir al cine.",
+        "options": [
+          "queremos",
+          "queréis",
+          "quieren"
+        ],
+        "answer": "queremos",
+        "tag": "querer",
+        "sub": "nosotros (sin wissel)"
+      },
+      {
+        "stimulus": "Ella ___ tocar la guitarra.",
+        "options": [
+          "puede",
+          "puedo",
+          "podemos"
+        ],
+        "answer": "puede",
+        "tag": "poder",
+        "sub": "poder · ella"
+      },
+      {
+        "stimulus": "A ellos les ___ bailar.",
+        "options": [
+          "gusta",
+          "gustan",
+          "gustamos"
+        ],
+        "answer": "gusta",
+        "tag": "gustar",
+        "sub": "infinitivo → gusta"
+      },
+      {
+        "stimulus": "¿___ venir a la playa?",
+        "options": [
+          "Podéis",
+          "Puedes",
+          "Podemos"
+        ],
+        "answer": "Podéis",
+        "tag": "poder",
+        "sub": "poder · vosotros"
+      },
+      {
+        "stimulus": "(A mí) me ___ la horchata.",
+        "options": [
+          "gusta",
+          "gustan",
+          "gusto"
+        ],
+        "answer": "gusta",
+        "tag": "gustar",
+        "sub": "la horchata = 1"
+      },
+      {
+        "stimulus": "Tú ___ ir a la playa, ¿no?",
+        "options": [
+          "quieres",
+          "quiere",
+          "queréis"
+        ],
+        "answer": "quieres",
+        "tag": "querer",
+        "sub": "querer · tú"
+      },
+      {
+        "stimulus": "¿A vosotros os ___ el reguetón?",
+        "options": [
+          "gusta",
+          "gustan",
+          "gustáis"
+        ],
+        "answer": "gusta",
+        "tag": "gustar",
+        "sub": "el reguetón = 1"
+      }
+    ]
+  }
+}

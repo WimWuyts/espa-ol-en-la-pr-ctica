@@ -1,0 +1,47 @@
+{
+  "id": "es-u3-describe-pau",
+  "title": "Describe la rutina de Pau",
+  "subtitle": "U3 · escucha, describe a Pau en 3ª persona, y grábate",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "repeat",
+    "prompt": "Escucha ▶ · describe a Pau (él) · grábate ⏺",
+    "items": [
+      {
+        "cue": "Pau · Barcelona 🇪🇸",
+        "text": "Pau se despierta a las siete.",
+        "sub": "hij wordt om 7 uur wakker — «se despierta»",
+        "tag": "describir"
+      },
+      {
+        "cue": "Pau · Barcelona 🇪🇸",
+        "text": "Se ducha y desayuna un bocadillo.",
+        "sub": "hij doucht en ontbijt een broodje",
+        "tag": "describir"
+      },
+      {
+        "cue": "Pau · Barcelona 🇪🇸",
+        "text": "Va al instituto en metro.",
+        "sub": "hij gaat met de metro naar school",
+        "tag": "describir"
+      },
+      {
+        "cue": "Pau · Barcelona 🇪🇸",
+        "text": "Por la tarde hace los deberes y juega al fútbol.",
+        "sub": "'s middags maakt hij huiswerk en speelt hij voetbal",
+        "tag": "describir"
+      },
+      {
+        "cue": "Pau · Barcelona 🇪🇸",
+        "text": "Se acuesta a las once.",
+        "sub": "hij gaat om 11 uur slapen",
+        "tag": "describir",
+        "tip": "Ahora describe la rutina de un amigo tuyo. <span class='nl'>beschrijf nu de dag van een echte vriend(in).</span>"
+      }
+    ]
+  }
+}

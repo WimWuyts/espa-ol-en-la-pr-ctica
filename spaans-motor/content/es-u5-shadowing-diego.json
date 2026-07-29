@@ -1,0 +1,53 @@
+{
+  "id": "es-u5-shadowing-diego",
+  "title": "Shadowing con Diego",
+  "subtitle": "U5 · praat mee met Diego, steeds minder tekst",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "shadowing",
+    "prompt": "Escucha ▶ · habla al mismo tiempo · grábate ⏺",
+    "phases": [
+      "Texto completo",
+      "Palabras clave",
+      "Sin texto",
+      "Tu versión"
+    ],
+    "items": [
+      {
+        "text": "En el mercado hay mucha fruta y muchas verduras.",
+        "sub": "op de markt is veel fruit en veel groenten",
+        "tag": "mercado"
+      },
+      {
+        "text": "Voy a comprar un kilo de tomates y un poco de queso.",
+        "sub": "ik ga een kilo tomaten en een beetje kaas kopen",
+        "tag": "cantidad"
+      },
+      {
+        "text": "Hoy vamos a comer tacos y guacamole.",
+        "sub": "vandaag gaan we taco's en guacamole eten",
+        "tag": "futuro"
+      },
+      {
+        "text": "En México comemos muchos tacos al pastor.",
+        "sub": "in Mexico eten we veel tacos al pastor",
+        "tag": "mexico"
+      },
+      {
+        "text": "¿Vas a probar el guacamole picante?",
+        "sub": "ga jij de pittige guacamole proeven?",
+        "tag": "futuro"
+      },
+      {
+        "text": "Después vamos a pedir la cuenta y pagar.",
+        "sub": "daarna gaan we de rekening vragen en betalen",
+        "tag": "pedir",
+        "tip": "Ahora invita a un amigo de verdad. <span class='nl'>nodig nu een echte vriend uit.</span>"
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "es-u3-mensaje-dia",
+  "title": "Mensaje de voz: mi día",
+  "subtitle": "U3 · graba UN mensaje sobre tu día",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "voicemessage",
+    "prompt": "Graba un mensaje de voz · spraakbericht opnemen",
+    "items": [
+      {
+        "to": "Pau, de Barcelona",
+        "situation": "Pau te pregunta cómo es un día tuyo.",
+        "goal": "Cuéntale tu rutina con horas.",
+        "blocks": [
+          "saludo (¡Hola, Pau!)",
+          "me levanto a las …",
+          "por la mañana …",
+          "por la tarde …",
+          "me acuesto a las …"
+        ],
+        "sub": "Pau — vertel je routine met tijden",
+        "tag": "mensaje"
+      },
+      {
+        "to": "Tu familia de acogida en España",
+        "situation": "Vas de intercambio y les explicas tu horario.",
+        "goal": "Diles a qué hora te levantas, comes y te acuestas.",
+        "blocks": [
+          "saludo",
+          "me despierto a las …",
+          "almuerzo a las …",
+          "ceno a las …",
+          "normalmente / a veces …",
+          "despedida"
+        ],
+        "sub": "je gastgezin — je uren van de dag",
+        "tag": "mensaje",
+        "tip": "Escucha tu mensaje: ¿se entienden las horas? Vuelve a grabar más despacio. <span class='nl'>beluister jezelf; herneem rustiger.</span>"
+      }
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+/* Sjabloon: spreken / opname (speak). Azulejo-tegel met opnameknoppen. */
+.sp-card{background:linear-gradient(175deg,#FBF6E9,#E9E0C9);border:1px solid rgba(0,0,0,.25);border-radius:3px;
+  box-shadow:0 6px 0 rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.9);padding:16px;position:relative;overflow:hidden;min-height:250px}
+.sp-card::before,.sp-card::after{content:"";position:absolute;left:0;right:0;height:7px;background:repeating-linear-gradient(45deg,#12264A 0 4px,transparent 4px 8px),repeating-linear-gradient(-45deg,#12264A 0 4px,transparent 4px 8px);opacity:.5}
+.sp-card::before{top:0}.sp-card::after{bottom:0}
+
+.sp-eye{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8A7F66;text-align:center;margin-bottom:2px}
+.sp-count{font-family:var(--mono);font-size:11px;color:#B0A488;text-align:center;margin-bottom:10px}
+
+/* stage */
+.sp-stage{margin-bottom:12px}
+.sp-cue{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8E2C1D;text-align:center;margin-bottom:6px}
+.sp-target{font-family:var(--serif);font-weight:700;font-size:clamp(19px,3.4vw,25px);line-height:1.35;color:#12264A;text-align:center;
+  background:#fff;border:1px solid #C3B99F;border-left:4px solid #1F6B4C;border-radius:4px;padding:14px 16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}
+.sp-sub{font-family:var(--serif);font-style:italic;font-size:13.5px;color:#8A7F66;text-align:center;margin-top:8px}
+.sp-slot{background:#FBEED0;border-bottom:2px solid #E0A22F;border-radius:3px;padding:0 5px;font-weight:700;color:#8E2C1D}
+.sp-keys{color:#1F6B4C}
+.sp-hidden{color:#C3B99F;letter-spacing:.35em;font-size:22px}
+.sp-own{color:#8B5E9E}
+
+/* shadowing-fasen */
+.sp-phases{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:10px}
+.sp-phase{font-family:var(--serif);font-size:12.5px;color:#5C5540;background:#EDE4CE;border:1px solid #C3B99F;border-radius:20px;
+  padding:4px 11px;cursor:pointer}
+.sp-phase:hover{border-color:#12264A}
+.sp-phase.on{background:#12264A;color:#F3ECDB;border-color:#12264A}
+
+/* voicemessage-ficha */
+.sp-ficha{background:#fff;border:1px solid #C3B99F;border-radius:4px;padding:10px 12px;box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}
+.sp-frow{display:flex;gap:10px;align-items:baseline;padding:4px 0;border-bottom:1px dotted #E1D7BE}
+.sp-frow:last-child{border-bottom:none}
+.sp-fk{flex:0 0 82px;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#8A7F66}
+.sp-fv{font-family:var(--serif);font-weight:700;font-size:15px;color:#12264A}
+.sp-need{margin-top:10px;font-family:var(--serif);font-size:14px;color:#12264A}
+.sp-needlbl{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#8E2C1D}
+.sp-need ul{margin:5px 0 0;padding-left:20px}
+.sp-need li{margin:2px 0}
+
+/* knoppen */
+.sp-controls{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:6px}
+.sp-btn{font-family:var(--serif);font-weight:700;font-size:14.5px;color:#fff;background:#12264A;border:none;border-radius:4px;
+  padding:9px 15px;cursor:pointer;box-shadow:0 3px 0 rgba(0,0,0,.18)}
+.sp-btn:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0,.18)}
+.sp-btn:focus-visible{outline:3px solid #3D74D6;outline-offset:2px}
+.sp-btn.listen{background:#1F6B4C}
+.sp-btn.rec{background:#8E2C1D}
+.sp-btn.rec.on{background:#C4402C;animation:spPulse 1.1s infinite}
+.sp-btn.play{background:#3D74D6}
+.sp-btn.ghost{background:#EDE4CE;color:#5C5540}
+.sp-btn:disabled{opacity:.45;cursor:not-allowed;box-shadow:0 3px 0 rgba(0,0,0,.1)}
+@keyframes spPulse{0%,100%{filter:brightness(1)}50%{filter:brightness(1.28)}}
+
+.sp-timer{text-align:center;font-family:var(--mono);font-size:12.5px;color:#8E2C1D;min-height:18px;margin-bottom:4px}
+.sp-audio{width:100%;margin:6px 0;height:34px}
+
+.sp-note{min-height:20px;text-align:center;font-family:var(--serif);font-size:13.5px;color:#5C5540;margin:6px 0 4px;line-height:1.4}
+.sp-note .nl{color:#8A7F66;font-style:italic;font-size:12.5px}
+.sp-note.ok{color:#1F6B4C}
+.sp-note.warn{color:#8E2C1D;background:#FBEDE9;border:1px solid #E3C7C0;border-radius:4px;padding:8px 10px}
+.sp-confirm{display:block;margin:8px auto 0;font-family:var(--serif);font-weight:700;font-size:14px;color:#12264A;
+  background:linear-gradient(180deg,#fff,#F1E9D5);border:1px solid #C3B99F;border-radius:3px;padding:8px 14px;cursor:pointer;box-shadow:0 2px 0 rgba(0,0,0,.12)}
+.sp-confirm.done{background:#EAF7EE;border-color:#B7DCC4;color:#1F6B4C}
+
+/* zelfevaluatie */
+.sp-assess{margin-top:8px;padding-top:10px;border-top:1px dashed #C3B99F;text-align:center}
+.sp-alabel{font-family:var(--serif);font-size:13.5px;color:#12264A;margin-bottom:8px}
+.sp-alabel .nl{color:#8A7F66;font-style:italic;font-size:12.5px}
+.sp-moods{display:flex;gap:10px;justify-content:center}
+.sp-mood{font-size:26px;line-height:1;width:52px;height:52px;border-radius:50%;cursor:pointer;
+  background:linear-gradient(180deg,#fff,#F1E9D5);border:1px solid #C3B99F;box-shadow:0 3px 0 rgba(0,0,0,.14)}
+.sp-mood:hover{border-color:#12264A;filter:brightness(1.03)}
+.sp-mood:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0,.14)}
+.sp-mood:focus-visible{outline:3px solid #3D74D6;outline-offset:2px}
+.sp-mood.picked{background:#EAF7EE;border-color:#1F6B4C;box-shadow:0 0 0 3px rgba(31,107,76,.25),0 3px 0 rgba(0,0,0,.14)}

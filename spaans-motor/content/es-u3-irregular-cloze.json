@@ -1,0 +1,148 @@
+{
+  "id": "es-u3-irregular-cloze",
+  "title": "Presente irregular",
+  "subtitle": "U3 · kies de juiste onregelmatige vorm",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Vul de juiste presente-vorm in",
+    "items": [
+      {
+        "stimulus": "Las clases ___ a las nueve. (empezar)",
+        "options": [
+          "empiezan",
+          "empezan",
+          "empiezen"
+        ],
+        "answer": "empiezan",
+        "tag": "v",
+        "sub": "ellos → empiezan"
+      },
+      {
+        "stimulus": "Yo ___ dormir más. (querer)",
+        "options": [
+          "quiero",
+          "quero",
+          "queno"
+        ],
+        "answer": "quiero",
+        "tag": "v",
+        "sub": "yo → quiero"
+      },
+      {
+        "stimulus": "¿Tú ___ la tarde? (preferir)",
+        "options": [
+          "prefieres",
+          "preferes",
+          "prefires"
+        ],
+        "answer": "prefieres",
+        "tag": "v",
+        "sub": "tú → prefieres"
+      },
+      {
+        "stimulus": "Pau ___ un café. (pedir)",
+        "options": [
+          "pide",
+          "pede",
+          "piede"
+        ],
+        "answer": "pide",
+        "tag": "v",
+        "sub": "él → pide (e→i)"
+      },
+      {
+        "stimulus": "Nosotros ___ a las ocho. (empezar)",
+        "options": [
+          "empezamos",
+          "empiezamos",
+          "empezáis"
+        ],
+        "answer": "empezamos",
+        "tag": "v",
+        "sub": "nosotros → geen wissel"
+      },
+      {
+        "stimulus": "Yo no ___ salir hoy. (poder)",
+        "options": [
+          "puedo",
+          "podo",
+          "puede"
+        ],
+        "answer": "puedo",
+        "tag": "v",
+        "sub": "yo → puedo"
+      },
+      {
+        "stimulus": "Pau ___ ocho horas. (dormir)",
+        "options": [
+          "duerme",
+          "dorme",
+          "duermo"
+        ],
+        "answer": "duerme",
+        "tag": "v",
+        "sub": "él → duerme"
+      },
+      {
+        "stimulus": "Yo ___ los deberes. (hacer)",
+        "options": [
+          "hago",
+          "haco",
+          "hazo"
+        ],
+        "answer": "hago",
+        "tag": "v",
+        "sub": "yo → hago"
+      },
+      {
+        "stimulus": "Yo ___ al instituto. (ir)",
+        "options": [
+          "voy",
+          "vo",
+          "iro"
+        ],
+        "answer": "voy",
+        "tag": "v",
+        "sub": "yo → voy"
+      },
+      {
+        "stimulus": "Yo ___ de casa a las ocho. (salir)",
+        "options": [
+          "salgo",
+          "salo",
+          "saljo"
+        ],
+        "answer": "salgo",
+        "tag": "v",
+        "sub": "yo → salgo"
+      },
+      {
+        "stimulus": "Pau ___ al fútbol. (jugar)",
+        "options": [
+          "juega",
+          "juga",
+          "jueja"
+        ],
+        "answer": "juega",
+        "tag": "v",
+        "sub": "él → juega (u→ue)"
+      },
+      {
+        "stimulus": "¿Vosotros ___ al parque? (volver)",
+        "options": [
+          "volvéis",
+          "vuelvéis",
+          "volváis"
+        ],
+        "answer": "volvéis",
+        "tag": "v",
+        "sub": "vosotros → geen wissel"
+      }
+    ]
+  }
+}

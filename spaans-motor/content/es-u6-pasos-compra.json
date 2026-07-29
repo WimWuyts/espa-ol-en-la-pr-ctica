@@ -1,0 +1,143 @@
+{
+  "id": "es-u6-pasos-compra",
+  "title": "Ordena los pasos",
+  "subtitle": "U6 · zet de stappen van het winkelen op volgorde",
+  "lang": "es",
+  "template": "order",
+  "options": {
+    "audio": false
+  },
+  "order": {
+    "prompt": "Tik de stappen in de juiste volgorde",
+    "rounds": [
+      {
+        "tag": "compra",
+        "sub": "la compra 🛍️",
+        "items": [
+          {
+            "label": "Entrar en la tienda",
+            "key": 1
+          },
+          {
+            "label": "Elegir una prenda",
+            "key": 2
+          },
+          {
+            "label": "Probarse en el probador",
+            "key": 3
+          },
+          {
+            "label": "Pagar en la caja",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "precios",
+        "sub": "de barato a caro (Moda Diego)",
+        "items": [
+          {
+            "label": "Camiseta — 5 €",
+            "key": 1
+          },
+          {
+            "label": "Vestido de lunares — 20 €",
+            "key": 2
+          },
+          {
+            "label": "Vaqueros — 25 €",
+            "key": 3
+          },
+          {
+            "label": "Zapatillas — 39 €",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "distancia",
+        "sub": "cerca → lejos",
+        "items": [
+          {
+            "label": "esta camiseta (aquí)",
+            "key": 1
+          },
+          {
+            "label": "esa gorra (ahí)",
+            "key": 2
+          },
+          {
+            "label": "aquel abrigo (allí)",
+            "key": 3
+          }
+        ]
+      },
+      {
+        "tag": "tallas",
+        "sub": "de pequeño a grande",
+        "items": [
+          {
+            "label": "talla S (pequeña)",
+            "key": 1
+          },
+          {
+            "label": "talla M (mediana)",
+            "key": 2
+          },
+          {
+            "label": "talla L (grande)",
+            "key": 3
+          },
+          {
+            "label": "talla XL (muy grande)",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "rebajas",
+        "sub": "del descuento pequeño al grande",
+        "items": [
+          {
+            "label": "−10 %",
+            "key": 1
+          },
+          {
+            "label": "−25 %",
+            "key": 2
+          },
+          {
+            "label": "−50 %",
+            "key": 3
+          },
+          {
+            "label": "−70 %",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "look",
+        "sub": "vestirse de arriba abajo",
+        "items": [
+          {
+            "label": "la gorra (cabeza)",
+            "key": 1
+          },
+          {
+            "label": "la camiseta (arriba)",
+            "key": 2
+          },
+          {
+            "label": "los pantalones (abajo)",
+            "key": 3
+          },
+          {
+            "label": "los zapatos (pies)",
+            "key": 4
+          }
+        ]
+      }
+    ]
+  }
+}

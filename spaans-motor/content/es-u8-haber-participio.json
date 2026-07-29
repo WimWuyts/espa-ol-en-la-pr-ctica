@@ -1,0 +1,236 @@
+{
+  "id": "es-u8-haber-participio",
+  "title": "Completa: haber + participio",
+  "subtitle": "U8 · el pretérito perfecto compuesto (he viajado…)",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste vorm van «haber + participio»",
+    "items": [
+      {
+        "stimulus": "(Yo) ___ a Machu Picchu.",
+        "options": [
+          "he subido",
+          "has subido",
+          "he subir"
+        ],
+        "answer": "he subido",
+        "tag": "pc",
+        "sub": "yo → he + subido"
+      },
+      {
+        "stimulus": "¿(Tú) ___ las llamas?",
+        "options": [
+          "has visto",
+          "he visto",
+          "has veído"
+        ],
+        "answer": "has visto",
+        "tag": "pc",
+        "sub": "tú → has + visto (irreg.)"
+      },
+      {
+        "stimulus": "(Nosotros) ___ muchas fotos.",
+        "options": [
+          "hemos sacado",
+          "han sacado",
+          "hemos sacar"
+        ],
+        "answer": "hemos sacado",
+        "tag": "pc",
+        "sub": "nosotros → hemos + sacado"
+      },
+      {
+        "stimulus": "Nina ___ un diario.",
+        "options": [
+          "ha escrito",
+          "ha escribido",
+          "han escrito"
+        ],
+        "answer": "ha escrito",
+        "tag": "pc",
+        "sub": "ella → ha + escrito (irreg.)"
+      },
+      {
+        "stimulus": "(Ellos) ___ en tren.",
+        "options": [
+          "han viajado",
+          "ha viajado",
+          "han viajar"
+        ],
+        "answer": "han viajado",
+        "tag": "pc",
+        "sub": "ellos → han + viajado"
+      },
+      {
+        "stimulus": "Hoy (yo) todavía no ___.",
+        "options": [
+          "he comido",
+          "has comido",
+          "he comer"
+        ],
+        "answer": "he comido",
+        "tag": "pc",
+        "sub": "yo → he + comido"
+      },
+      {
+        "stimulus": "¿(Vosotros) ___ la maleta?",
+        "options": [
+          "habéis hecho",
+          "han hecho",
+          "habéis hacido"
+        ],
+        "answer": "habéis hecho",
+        "tag": "pc",
+        "sub": "vosotros → habéis + hecho (irreg.)"
+      },
+      {
+        "stimulus": "Diego ___ del viaje.",
+        "options": [
+          "ha vuelto",
+          "ha volvido",
+          "han vuelto"
+        ],
+        "answer": "ha vuelto",
+        "tag": "pc",
+        "sub": "él → ha + vuelto (irreg.)"
+      },
+      {
+        "stimulus": "(Yo) ___ un ceviche.",
+        "options": [
+          "he comido",
+          "has comido",
+          "he comer"
+        ],
+        "answer": "he comido",
+        "tag": "pc",
+        "sub": "yo → he + comido"
+      },
+      {
+        "stimulus": "¿Qué ___ (tú) hoy?",
+        "options": [
+          "has hecho",
+          "he hecho",
+          "has hacido"
+        ],
+        "answer": "has hecho",
+        "tag": "pc",
+        "sub": "tú → has + hecho (irreg.)"
+      },
+      {
+        "stimulus": "(Nosotros) ___ el hotel.",
+        "options": [
+          "hemos abierto",
+          "han abierto",
+          "hemos abrido"
+        ],
+        "answer": "hemos abierto",
+        "tag": "pc",
+        "sub": "nosotros → hemos + abierto (irreg.)"
+      },
+      {
+        "stimulus": "Lucía ___ una postal.",
+        "options": [
+          "ha escrito",
+          "ha escribido",
+          "han escrito"
+        ],
+        "answer": "ha escrito",
+        "tag": "pc",
+        "sub": "ella → ha + escrito"
+      },
+      {
+        "stimulus": "(Ellos) ___ a la montaña.",
+        "options": [
+          "han subido",
+          "ha subido",
+          "han subir"
+        ],
+        "answer": "han subido",
+        "tag": "pc",
+        "sub": "ellos → han + subido"
+      },
+      {
+        "stimulus": "¿(Tú) ___ el mar alguna vez?",
+        "options": [
+          "has visto",
+          "he visto",
+          "has veído"
+        ],
+        "answer": "has visto",
+        "tag": "pc",
+        "sub": "tú → has + visto"
+      },
+      {
+        "stimulus": "(Yo) ___ el abrigo porque hace frío.",
+        "options": [
+          "me he puesto",
+          "me ha puesto",
+          "me he ponido"
+        ],
+        "answer": "me he puesto",
+        "tag": "pc",
+        "sub": "yo → he + puesto (irreg.)"
+      },
+      {
+        "stimulus": "Se ___ la maleta.",
+        "options": [
+          "ha roto",
+          "ha rompido",
+          "han roto"
+        ],
+        "answer": "ha roto",
+        "tag": "pc",
+        "sub": "se ha + roto (irreg.)"
+      },
+      {
+        "stimulus": "(Nosotros) ___ en avión.",
+        "options": [
+          "hemos viajado",
+          "han viajado",
+          "hemos viajar"
+        ],
+        "answer": "hemos viajado",
+        "tag": "pc",
+        "sub": "nosotros → hemos + viajado"
+      },
+      {
+        "stimulus": "Nina ___ la verdad.",
+        "options": [
+          "ha dicho",
+          "ha decido",
+          "han dicho"
+        ],
+        "answer": "ha dicho",
+        "tag": "pc",
+        "sub": "ella → ha + dicho (irreg.)"
+      },
+      {
+        "stimulus": "(Vosotros) ___ las ruinas.",
+        "options": [
+          "habéis visitado",
+          "han visitado",
+          "habéis visitar"
+        ],
+        "answer": "habéis visitado",
+        "tag": "pc",
+        "sub": "vosotros → habéis + visitado"
+      },
+      {
+        "stimulus": "Este año (yo) ___ mucho.",
+        "options": [
+          "he estudiado",
+          "has estudiado",
+          "he estudiar"
+        ],
+        "answer": "he estudiado",
+        "tag": "pc",
+        "sub": "yo → he + estudiado"
+      }
+    ]
+  }
+}

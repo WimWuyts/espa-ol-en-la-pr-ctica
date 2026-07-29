@@ -1,0 +1,42 @@
+{
+  "id": "es-u4-repite-gustos",
+  "title": "Escucha y repite: mis gustos",
+  "subtitle": "U4 · escucha el modelo, repite y GRÁBATE",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "repeat",
+    "prompt": "Escucha ▶ · repite en voz alta · grábate ⏺",
+    "items": [
+      {
+        "text": "Me gusta la música.",
+        "sub": "ik vind muziek leuk",
+        "tag": "gusto",
+        "tip": "¡Bien! Ahora dilo sin leer. <span class='nl'>zeg het nu zonder te lezen.</span>"
+      },
+      {
+        "text": "Me gustan los deportes.",
+        "sub": "ik vind sport leuk — let op: gusta<b>n</b> (mv.)",
+        "tag": "gusto"
+      },
+      {
+        "text": "Me encanta bailar.",
+        "sub": "ik ben dol op dansen — infinitivo → encanta",
+        "tag": "gusto"
+      },
+      {
+        "text": "No me gusta el fútbol.",
+        "sub": "ik hou niet van voetbal",
+        "tag": "gusto"
+      },
+      {
+        "text": "¿Y a ti, qué te gusta?",
+        "sub": "en jij, wat vind jij leuk?",
+        "tag": "interaccion"
+      }
+    ]
+  }
+}

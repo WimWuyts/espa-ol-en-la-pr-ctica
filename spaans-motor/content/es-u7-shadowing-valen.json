@@ -1,0 +1,53 @@
+{
+  "id": "es-u7-shadowing-valen",
+  "title": "Shadowing con Valen",
+  "subtitle": "U7 · praat mee met Valen, steeds minder tekst",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "shadowing",
+    "prompt": "Escucha ▶ · habla al mismo tiempo · grábate ⏺",
+    "phases": [
+      "Texto completo",
+      "Palabras clave",
+      "Sin texto",
+      "Tu versión"
+    ],
+    "items": [
+      {
+        "text": "Vivo en un barrio de casas de colores en Cartagena.",
+        "sub": "ik woon in een buurt met kleurrijke huizen in Cartagena",
+        "tag": "barrio"
+      },
+      {
+        "text": "Enfrente de mi casa hay una plaza con palmeras.",
+        "sub": "tegenover mijn huis is een plein met palmbomen",
+        "tag": "prep"
+      },
+      {
+        "text": "Por la tarde, la gente está paseando por la plaza.",
+        "sub": "'s middags wandelen de mensen over het plein",
+        "tag": "gerundio"
+      },
+      {
+        "text": "La panadería está al lado y el mar está cerca.",
+        "sub": "de bakkerij is naast en de zee is dichtbij",
+        "tag": "prep"
+      },
+      {
+        "text": "Para llegar, sigue todo recto y cruza el semáforo.",
+        "sub": "om te komen: ga rechtdoor en steek over bij het licht",
+        "tag": "imperativo"
+      },
+      {
+        "text": "¡Ven a visitar mi barrio! Te va a encantar.",
+        "sub": "kom mijn buurt bezoeken! je gaat het geweldig vinden",
+        "tag": "invitar",
+        "tip": "Ahora invita a un amigo de verdad. <span class='nl'>nodig nu een echte vriend uit.</span>"
+      }
+    ]
+  }
+}

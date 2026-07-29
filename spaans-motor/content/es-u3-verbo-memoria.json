@@ -1,0 +1,56 @@
+{
+  "id": "es-u3-verbo-memoria",
+  "title": "Verbos irregulares",
+  "subtitle": "U3 · zoek het werkwoord bij de betekenis",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes: werkwoord + betekenis",
+    "pairs": [
+      {
+        "a": "empezar",
+        "b": "beginnen"
+      },
+      {
+        "a": "querer",
+        "b": "willen"
+      },
+      {
+        "a": "poder",
+        "b": "kunnen"
+      },
+      {
+        "a": "dormir",
+        "b": "slapen"
+      },
+      {
+        "a": "volver",
+        "b": "terugkeren"
+      },
+      {
+        "a": "pedir",
+        "b": "vragen/bestellen"
+      },
+      {
+        "a": "jugar",
+        "b": "spelen"
+      },
+      {
+        "a": "hacer",
+        "b": "doen/maken"
+      },
+      {
+        "a": "salir",
+        "b": "uitgaan"
+      },
+      {
+        "a": "preferir",
+        "b": "verkiezen"
+      }
+    ]
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "id": "es-u7-hay-esta",
+  "title": "¿hay o está?",
+  "subtitle": "U7 · er is (hay) of het staat (está/están)?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Nieuw (un/una/número) → hay. Bekend (el/la) + plaats → está/están.",
+    "categories": [
+      {
+        "id": "hay",
+        "label": "hay<br><small>er is/zijn</small>",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "esta",
+        "label": "está / están<br><small>staat / staan</small>",
+        "glaze": "#3D74D6"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "En el salón ___ un sofá.",
+        "answer": "hay",
+        "tag": "hay",
+        "sub": "un sofá = nieuw"
+      },
+      {
+        "stimulus": "El sofá ___ al lado.",
+        "answer": "esta",
+        "tag": "esta",
+        "sub": "el sofá = bekend"
+      },
+      {
+        "stimulus": "___ tres habitaciones.",
+        "answer": "hay",
+        "tag": "hay",
+        "sub": "número = hay"
+      },
+      {
+        "stimulus": "Los baños ___ arriba.",
+        "answer": "esta",
+        "tag": "esta",
+        "sub": "los baños = mv."
+      },
+      {
+        "stimulus": "___ una plaza en mi barrio.",
+        "answer": "hay",
+        "tag": "hay",
+        "sub": "una plaza = nieuw"
+      },
+      {
+        "stimulus": "La plaza ___ en el centro.",
+        "answer": "esta",
+        "tag": "esta",
+        "sub": "la plaza = bekend"
+      },
+      {
+        "stimulus": "___ muchas tiendas.",
+        "answer": "hay",
+        "tag": "hay",
+        "sub": "muchas = nieuw"
+      },
+      {
+        "stimulus": "La farmacia ___ en la esquina.",
+        "answer": "esta",
+        "tag": "esta",
+        "sub": "la farmacia = bekend"
+      },
+      {
+        "stimulus": "___ un parque cerca.",
+        "answer": "hay",
+        "tag": "hay",
+        "sub": "un parque = nieuw"
+      },
+      {
+        "stimulus": "El parque ___ cerca.",
+        "answer": "esta",
+        "tag": "esta",
+        "sub": "el parque = bekend"
+      },
+      {
+        "stimulus": "___ dos ventanas.",
+        "answer": "hay",
+        "tag": "hay",
+        "sub": "número = hay"
+      },
+      {
+        "stimulus": "Las ventanas ___ abiertas.",
+        "answer": "esta",
+        "tag": "esta",
+        "sub": "las ventanas = mv."
+      },
+      {
+        "stimulus": "En la cocina ___ una nevera.",
+        "answer": "hay",
+        "tag": "hay",
+        "sub": "una nevera = nieuw"
+      },
+      {
+        "stimulus": "La nevera ___ al lado del horno.",
+        "answer": "esta",
+        "tag": "esta",
+        "sub": "la nevera = bekend"
+      },
+      {
+        "stimulus": "___ un museo famoso.",
+        "answer": "hay",
+        "tag": "hay",
+        "sub": "un museo = nieuw"
+      },
+      {
+        "stimulus": "El museo ___ enfrente de la iglesia.",
+        "answer": "esta",
+        "tag": "esta",
+        "sub": "el museo = bekend"
+      },
+      {
+        "stimulus": "___ mucha gente en la plaza.",
+        "answer": "hay",
+        "tag": "hay",
+        "sub": "mucha = nieuw"
+      },
+      {
+        "stimulus": "Las llaves ___ encima de la mesa.",
+        "answer": "esta",
+        "tag": "esta",
+        "sub": "las llaves = mv."
+      },
+      {
+        "stimulus": "¿Cuántas sillas ___ ?",
+        "answer": "hay",
+        "tag": "hay",
+        "sub": "¿cuántas? = hay"
+      },
+      {
+        "stimulus": "El banco ___ al lado de la farmacia.",
+        "answer": "esta",
+        "tag": "esta",
+        "sub": "el banco = bekend"
+      }
+    ]
+  }
+}

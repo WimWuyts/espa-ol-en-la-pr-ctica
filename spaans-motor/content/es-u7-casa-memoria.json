@@ -1,0 +1,72 @@
+{
+  "id": "es-u7-casa-memoria",
+  "title": "Memoria de la casa",
+  "subtitle": "U7 · zoek het paar español ↔ nederlands",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om en zoek het woord + de vertaling",
+    "pairs": [
+      {
+        "a": "la cocina",
+        "b": "keuken"
+      },
+      {
+        "a": "el salón",
+        "b": "woonkamer"
+      },
+      {
+        "a": "el baño",
+        "b": "badkamer"
+      },
+      {
+        "a": "el dormitorio",
+        "b": "slaapkamer"
+      },
+      {
+        "a": "la cama",
+        "b": "bed"
+      },
+      {
+        "a": "el sofá",
+        "b": "bank"
+      },
+      {
+        "a": "el armario",
+        "b": "kast"
+      },
+      {
+        "a": "la mesa",
+        "b": "tafel"
+      },
+      {
+        "a": "la silla",
+        "b": "stoel"
+      },
+      {
+        "a": "la ventana",
+        "b": "raam"
+      },
+      {
+        "a": "la puerta",
+        "b": "deur"
+      },
+      {
+        "a": "la escalera",
+        "b": "trap"
+      },
+      {
+        "a": "la nevera",
+        "b": "koelkast"
+      },
+      {
+        "a": "la ducha",
+        "b": "douche"
+      }
+    ]
+  }
+}
