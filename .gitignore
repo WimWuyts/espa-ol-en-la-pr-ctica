@@ -19,3 +19,8 @@ __pycache__/
 .venv/
 node_modules/
 ~$*
+
+# Leverings-zips zijn build-artefacten: herbouwbaar met 03-build/make_zip.py
+# (niet in git — ze wegen samen >100 MB en verouderen zodra een hub/PDF wijzigt)
+03-build/*_levering_*.zip
+03-build/*_COMPLETO.zip
