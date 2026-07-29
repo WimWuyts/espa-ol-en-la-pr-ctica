@@ -188,6 +188,8 @@ GROUP_EMOJI = {
  "dispositivos":"📱","internet":"🌐","digital":"📲","comunicar":"💬","adjmedia":"⭐",
  # ---- C6+·U4 «De viaje» ----
  "transporte":"✈️","alojamiento":"🏨","viaje":"🧳","experiencias":"📸","porpara":"🎯",
+ # ---- C6+·U5 «Érase una vez» ----
+ "biografia":"👤","logros":"🏆","persona":"🎭","indefinido":"⏳","odoi":"🔁","relato":"📖",
 }
 
 _ARTICLES = ("el ", "la ", "los ", "las ", "un ", "una ", "unos ", "unas ", "mi ", "al ")

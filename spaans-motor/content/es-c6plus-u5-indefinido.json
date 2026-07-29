@@ -1,0 +1,214 @@
+{
+  "id": "es-c6plus-u5-indefinido",
+  "title": "Completa: el indefinido",
+  "subtitle": "U5 · una biografía",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste vorm van de indefinido",
+    "items": [
+      {
+        "stimulus": "García Márquez ___ en Colombia.",
+        "options": [
+          "nació",
+          "nacío",
+          "naceó"
+        ],
+        "answer": "nació",
+        "tag": "if",
+        "sub": "nacer → nació"
+      },
+      {
+        "stimulus": "___ «Cien años de soledad».",
+        "options": [
+          "escribió",
+          "escribó",
+          "escrivió"
+        ],
+        "answer": "escribió",
+        "tag": "if",
+        "sub": "escribir → escribió"
+      },
+      {
+        "stimulus": "Frida Kahlo ___ autorretratos.",
+        "options": [
+          "pintó",
+          "pintió",
+          "pintaba"
+        ],
+        "answer": "pintó",
+        "tag": "if",
+        "sub": "pintar → pintó"
+      },
+      {
+        "stimulus": "Messi ___ el Mundial.",
+        "options": [
+          "ganó",
+          "ganió",
+          "gané"
+        ],
+        "answer": "ganó",
+        "tag": "if",
+        "sub": "ganar → ganó"
+      },
+      {
+        "stimulus": "(Yo) ___ mucho ayer.",
+        "options": [
+          "estudié",
+          "estudó",
+          "estudié"
+        ],
+        "answer": "estudié",
+        "tag": "if",
+        "sub": "yo → estudié"
+      },
+      {
+        "stimulus": "Nosotros ___ en el centro.",
+        "options": [
+          "comimos",
+          "comemos",
+          "comió"
+        ],
+        "answer": "comimos",
+        "tag": "if",
+        "sub": "nosotros → comimos"
+      },
+      {
+        "stimulus": "Gardel ___ en Buenos Aires.",
+        "options": [
+          "vivió",
+          "vivó",
+          "vivía"
+        ],
+        "answer": "vivió",
+        "tag": "if",
+        "sub": "vivir → vivió"
+      },
+      {
+        "stimulus": "Evita ___ muy importante.",
+        "options": [
+          "fue",
+          "fui",
+          "fué"
+        ],
+        "answer": "fue",
+        "tag": "if",
+        "sub": "ser → fue"
+      },
+      {
+        "stimulus": "Maradona ___ el «gol del siglo».",
+        "options": [
+          "hizo",
+          "hació",
+          "hizió"
+        ],
+        "answer": "hizo",
+        "tag": "if",
+        "sub": "hacer → hizo"
+      },
+      {
+        "stimulus": "(Yo) ___ un buen día.",
+        "options": [
+          "tuve",
+          "tení",
+          "tenió"
+        ],
+        "answer": "tuve",
+        "tag": "if",
+        "sub": "tener → tuve"
+      },
+      {
+        "stimulus": "Gardel ___ a París.",
+        "options": [
+          "fue",
+          "fui",
+          "fué"
+        ],
+        "answer": "fue",
+        "tag": "if",
+        "sub": "ir → fue"
+      },
+      {
+        "stimulus": "El equipo ___ en la final.",
+        "options": [
+          "estuvo",
+          "estó",
+          "estuvió"
+        ],
+        "answer": "estuvo",
+        "tag": "if",
+        "sub": "estar → estuvo"
+      },
+      {
+        "stimulus": "Ella me ___ un regalo.",
+        "options": [
+          "dio",
+          "dió",
+          "daba"
+        ],
+        "answer": "dio",
+        "tag": "if",
+        "sub": "dar → dio"
+      },
+      {
+        "stimulus": "El artista ___ la verdad.",
+        "options": [
+          "dijo",
+          "dició",
+          "dijió"
+        ],
+        "answer": "dijo",
+        "tag": "if",
+        "sub": "decir → dijo"
+      },
+      {
+        "stimulus": "¿(Tú) ___ el año pasado?",
+        "options": [
+          "viajaste",
+          "viajastes",
+          "viajó"
+        ],
+        "answer": "viajaste",
+        "tag": "if",
+        "sub": "tú → viajaste"
+      },
+      {
+        "stimulus": "Ellos ___ una familia.",
+        "options": [
+          "tuvieron",
+          "tenieron",
+          "tuvíeron"
+        ],
+        "answer": "tuvieron",
+        "tag": "if",
+        "sub": "ellos → tuvieron"
+      },
+      {
+        "stimulus": "(Yo) ___ a la ciudad.",
+        "options": [
+          "vine",
+          "viné",
+          "venió"
+        ],
+        "answer": "vine",
+        "tag": "if",
+        "sub": "venir → vine"
+      },
+      {
+        "stimulus": "Ella ___ un concierto.",
+        "options": [
+          "dio",
+          "dió",
+          "daba"
+        ],
+        "answer": "dio",
+        "tag": "if",
+        "sub": "dar → dio"
+      }
+    ]
+  }
+}

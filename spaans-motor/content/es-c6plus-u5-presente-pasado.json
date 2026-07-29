@@ -1,0 +1,124 @@
+{
+  "id": "es-c6plus-u5-presente-pasado",
+  "title": "¿presente o pasado?",
+  "subtitle": "U5 · nu (presente) of afgerond verleden (indefinido)?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Is de zin in het presente of in de indefinido (verleden)?",
+    "categories": [
+      {
+        "id": "pres",
+        "label": "presente<br><small>ahora</small>",
+        "glaze": "#2FA8A0"
+      },
+      {
+        "id": "pas",
+        "label": "indefinido<br><small>ayer, en 1919</small>",
+        "glaze": "#8B5E9E"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "Ayer estudié mucho.",
+        "answer": "pas",
+        "tag": "pas",
+        "sub": "ayer → indefinido"
+      },
+      {
+        "stimulus": "Hoy estudio en casa.",
+        "answer": "pres",
+        "tag": "pres",
+        "sub": "hoy → presente"
+      },
+      {
+        "stimulus": "Nació en 1927.",
+        "answer": "pas",
+        "tag": "pas",
+        "sub": "en 1927 → indefinido"
+      },
+      {
+        "stimulus": "Vive en Buenos Aires.",
+        "answer": "pres",
+        "tag": "pres",
+        "sub": "presente"
+      },
+      {
+        "stimulus": "Ganó el Mundial en 2022.",
+        "answer": "pas",
+        "tag": "pas",
+        "sub": "en 2022 → indefinido"
+      },
+      {
+        "stimulus": "Escribo una carta.",
+        "answer": "pres",
+        "tag": "pres",
+        "sub": "presente"
+      },
+      {
+        "stimulus": "El año pasado viajé a Perú.",
+        "answer": "pas",
+        "tag": "pas",
+        "sub": "año pasado → indefinido"
+      },
+      {
+        "stimulus": "Trabaja de periodista.",
+        "answer": "pres",
+        "tag": "pres",
+        "sub": "presente"
+      },
+      {
+        "stimulus": "Se casó joven.",
+        "answer": "pas",
+        "tag": "pas",
+        "sub": "indefinido"
+      },
+      {
+        "stimulus": "Come tacos cada día.",
+        "answer": "pres",
+        "tag": "pres",
+        "sub": "cada día → presente"
+      },
+      {
+        "stimulus": "Murió en 1954.",
+        "answer": "pas",
+        "tag": "pas",
+        "sub": "en 1954 → indefinido"
+      },
+      {
+        "stimulus": "Hace deporte los lunes.",
+        "answer": "pres",
+        "tag": "pres",
+        "sub": "presente"
+      },
+      {
+        "stimulus": "De repente, todo cambió.",
+        "answer": "pas",
+        "tag": "pas",
+        "sub": "de repente → indefinido"
+      },
+      {
+        "stimulus": "Estudia medicina ahora.",
+        "answer": "pres",
+        "tag": "pres",
+        "sub": "ahora → presente"
+      },
+      {
+        "stimulus": "Hace dos años me mudé.",
+        "answer": "pas",
+        "tag": "pas",
+        "sub": "hace dos años → indefinido"
+      },
+      {
+        "stimulus": "Pinta cuadros modernos.",
+        "answer": "pres",
+        "tag": "pres",
+        "sub": "presente"
+      }
+    ]
+  }
+}

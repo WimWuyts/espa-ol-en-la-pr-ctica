@@ -1,0 +1,191 @@
+{
+  "id": "es-c6plus-u5-biografia-order",
+  "title": "Ordena la frase",
+  "subtitle": "U5 · zet het verhaal/de zin in de juiste volgorde",
+  "lang": "es",
+  "template": "order",
+  "options": {
+    "audio": false
+  },
+  "order": {
+    "prompt": "Tik in de logische volgorde",
+    "rounds": [
+      {
+        "tag": "bio",
+        "sub": "la vida de una figura",
+        "items": [
+          {
+            "label": "Nació en 1927.",
+            "key": 1
+          },
+          {
+            "label": "Estudió periodismo.",
+            "key": 2
+          },
+          {
+            "label": "Escribió novelas.",
+            "key": 3
+          },
+          {
+            "label": "Murió en 2014.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "frase",
+        "sub": "indefinido regular",
+        "items": [
+          {
+            "label": "Frida",
+            "key": 1
+          },
+          {
+            "label": "pintó",
+            "key": 2
+          },
+          {
+            "label": "muchos",
+            "key": 3
+          },
+          {
+            "label": "autorretratos.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "frase",
+        "sub": "forma fuerte",
+        "items": [
+          {
+            "label": "Messi",
+            "key": 1
+          },
+          {
+            "label": "fue",
+            "key": 2
+          },
+          {
+            "label": "campeón",
+            "key": 3
+          },
+          {
+            "label": "del Mundo.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "selo",
+        "sub": "se lo",
+        "items": [
+          {
+            "label": "El libro,",
+            "key": 1
+          },
+          {
+            "label": "se lo",
+            "key": 2
+          },
+          {
+            "label": "di",
+            "key": 3
+          },
+          {
+            "label": "a Mateo.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "bio",
+        "sub": "conectores",
+        "items": [
+          {
+            "label": "Primero nació,",
+            "key": 1
+          },
+          {
+            "label": "después estudió,",
+            "key": 2
+          },
+          {
+            "label": "entonces triunfó",
+            "key": 3
+          },
+          {
+            "label": "y al final murió famoso.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "frase",
+        "sub": "pregunta",
+        "items": [
+          {
+            "label": "¿Qué",
+            "key": 1
+          },
+          {
+            "label": "hiciste",
+            "key": 2
+          },
+          {
+            "label": "el año",
+            "key": 3
+          },
+          {
+            "label": "pasado?",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "selo",
+        "sub": "se las",
+        "items": [
+          {
+            "label": "Las fotos,",
+            "key": 1
+          },
+          {
+            "label": "se las",
+            "key": 2
+          },
+          {
+            "label": "mandé",
+            "key": 3
+          },
+          {
+            "label": "a Nina.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "frase",
+        "sub": "marcador + indefinido",
+        "items": [
+          {
+            "label": "En 1986",
+            "key": 1
+          },
+          {
+            "label": "Maradona",
+            "key": 2
+          },
+          {
+            "label": "hizo",
+            "key": 3
+          },
+          {
+            "label": "historia.",
+            "key": 4
+          }
+        ]
+      }
+    ]
+  }
+}

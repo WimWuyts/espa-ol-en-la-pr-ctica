@@ -1,0 +1,72 @@
+{
+  "id": "es-c6plus-u5-verbo-indefinido",
+  "title": "Verbo e indefinido",
+  "subtitle": "U5 · koppel de infinitief aan de él-vorm",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind de infinitief met de indefinido (él/ella)",
+    "pairs": [
+      {
+        "a": "nacer",
+        "b": "nació"
+      },
+      {
+        "a": "escribir",
+        "b": "escribió"
+      },
+      {
+        "a": "ganar",
+        "b": "ganó"
+      },
+      {
+        "a": "ser / ir",
+        "b": "fue ⭐"
+      },
+      {
+        "a": "hacer",
+        "b": "hizo ⭐"
+      },
+      {
+        "a": "tener",
+        "b": "tuvo ⭐"
+      },
+      {
+        "a": "estar",
+        "b": "estuvo ⭐"
+      },
+      {
+        "a": "decir",
+        "b": "dijo ⭐"
+      },
+      {
+        "a": "venir",
+        "b": "vino ⭐"
+      },
+      {
+        "a": "dar",
+        "b": "dio ⭐"
+      },
+      {
+        "a": "ver",
+        "b": "vio ⭐"
+      },
+      {
+        "a": "vivir",
+        "b": "vivió"
+      },
+      {
+        "a": "pintar",
+        "b": "pintó"
+      },
+      {
+        "a": "estudiar",
+        "b": "estudió"
+      }
+    ]
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "id": "es-c6plus-u5-se-lo",
+  "title": "Completa: se lo / se la",
+  "subtitle": "U5 · le/les + lo/la → se lo/se la",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste combinatie se + lo/la/los/las",
+    "items": [
+      {
+        "stimulus": "¿El libro a Mateo? — ___ di.",
+        "options": [
+          "Se lo",
+          "Le lo",
+          "Se la"
+        ],
+        "answer": "Se lo",
+        "tag": "od",
+        "sub": "el libro → se lo"
+      },
+      {
+        "stimulus": "¿La carta a Nina? — ___ mandé.",
+        "options": [
+          "Se la",
+          "Le la",
+          "Se lo"
+        ],
+        "answer": "Se la",
+        "tag": "od",
+        "sub": "la carta → se la"
+      },
+      {
+        "stimulus": "¿Los discos a Diego? — ___ presté.",
+        "options": [
+          "Se los",
+          "Le los",
+          "Se las"
+        ],
+        "answer": "Se los",
+        "tag": "od",
+        "sub": "los discos → se los"
+      },
+      {
+        "stimulus": "¿Las fotos a Valen? — ___ enseñé.",
+        "options": [
+          "Se las",
+          "Le las",
+          "Se los"
+        ],
+        "answer": "Se las",
+        "tag": "od",
+        "sub": "las fotos → se las"
+      },
+      {
+        "stimulus": "¿El secreto a ella? — ___ conté.",
+        "options": [
+          "Se lo",
+          "Le lo",
+          "Se la"
+        ],
+        "answer": "Se lo",
+        "tag": "od",
+        "sub": "el secreto → se lo"
+      },
+      {
+        "stimulus": "¿La noticia a él? — ___ dije.",
+        "options": [
+          "Se la",
+          "Le la",
+          "Se lo"
+        ],
+        "answer": "Se la",
+        "tag": "od",
+        "sub": "la noticia → se la"
+      },
+      {
+        "stimulus": "¿El regalo a tu madre? — ___ di.",
+        "options": [
+          "Se lo",
+          "Le lo",
+          "Se la"
+        ],
+        "answer": "Se lo",
+        "tag": "od",
+        "sub": "el regalo → se lo"
+      },
+      {
+        "stimulus": "¿Las llaves a tu hermano? — ___ dejé.",
+        "options": [
+          "Se las",
+          "Le las",
+          "Se los"
+        ],
+        "answer": "Se las",
+        "tag": "od",
+        "sub": "las llaves → se las"
+      },
+      {
+        "stimulus": "¿La verdad a ellos? — ___ conté.",
+        "options": [
+          "Se la",
+          "Les la",
+          "Se lo"
+        ],
+        "answer": "Se la",
+        "tag": "od",
+        "sub": "les+la → se la"
+      },
+      {
+        "stimulus": "¿El vídeo a tus amigos? — ___ mandé.",
+        "options": [
+          "Se lo",
+          "Les lo",
+          "Se la"
+        ],
+        "answer": "Se lo",
+        "tag": "od",
+        "sub": "les+lo → se lo"
+      },
+      {
+        "stimulus": "¿Las cartas a Frida? — ___ escribí.",
+        "options": [
+          "Se las",
+          "Le las",
+          "Se los"
+        ],
+        "answer": "Se las",
+        "tag": "od",
+        "sub": "las cartas → se las"
+      },
+      {
+        "stimulus": "¿El premio a la científica? — ___ dieron.",
+        "options": [
+          "Se lo",
+          "Le lo",
+          "Se la"
+        ],
+        "answer": "Se lo",
+        "tag": "od",
+        "sub": "el premio → se lo"
+      },
+      {
+        "stimulus": "¿La foto a Mateo? — ___ enseñé.",
+        "options": [
+          "Se la",
+          "Le la",
+          "Se lo"
+        ],
+        "answer": "Se la",
+        "tag": "od",
+        "sub": "la foto → se la"
+      },
+      {
+        "stimulus": "¿Los libros a Nina? — ___ presté.",
+        "options": [
+          "Se los",
+          "Le los",
+          "Se las"
+        ],
+        "answer": "Se los",
+        "tag": "od",
+        "sub": "los libros → se los"
+      }
+    ]
+  }
+}
