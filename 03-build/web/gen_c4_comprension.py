@@ -97,7 +97,7 @@ def lectura_section(L):
             f'{gloss_block(L["glosario"])}</div>')
 
 def audio_section(A):
-    js_guion=json.dumps([l for _,l in A["guion"]], ensure_ascii=False)
+    js_guion=json.dumps(A["guion"], ensure_ascii=False)   # [[spreker,zin]] → per-spreker stem/toonhoogte
     transcript="".join(f'<div class="bub l"><span class="who">{esc(w)}</span>{esc(l)}</div>' for w,l in A["guion"])
     return (f'<h2 class="sec">🎧 Escucha <span class="tipo">{esc(A["tipo"])}</span></h2>'
             f'<p class="lead"><b>{esc(A["tarea_nl"])}</b> — luister eerst zónder de tekst te lezen.</p>'
@@ -141,8 +141,17 @@ if(rt)rt.onclick=function(){{var t=[];document.querySelectorAll('.chat .bub, .pa
 // audio afspelen (sequentieel)
 var slow=false,sl=document.getElementById('audSlow');
 if(sl)sl.onclick=function(){{slow=!slow;sl.classList.toggle('on',slow);}};
+// dialoog afspelen: elke spreker krijgt een eigen stem + toonhoogte, zodat het als een gesprek klinkt
 var ap=document.getElementById('audPlay');
-if(ap)ap.onclick=function(){{var G=JSON.parse(ap.getAttribute('data-guion'));var i=0;function nx(){{if(i>=G.length)return;var u=new SpeechSynthesisUtterance(G[i]);u.lang='es-ES';u.rate=slow?.68:.9;esVoice(u);u.onend=function(){{i++;setTimeout(nx,420);}};speechSynthesis.speak(u);}}speechSynthesis.cancel();nx();}};
+if(ap)ap.onclick=function(){{var G=JSON.parse(ap.getAttribute('data-guion'));
+  var voces=speechSynthesis.getVoices().filter(function(v){{return /^es/i.test(v.lang)}});
+  var pitches=[1.18,0.82,1.02,0.9,1.1];var spk={{}},ord=0;
+  function conf(s){{if(!(s in spk)){{spk[s]=ord;ord++;}}return spk[s];}}
+  var i=0;function nx(){{if(i>=G.length)return;var s=G[i][0],t=G[i][1];var k=conf(s);
+    var u=new SpeechSynthesisUtterance(t);u.lang='es-ES';u.rate=slow?.66:.92;u.pitch=pitches[k%pitches.length];
+    if(voces.length>1)u.voice=voces[k%voces.length];else if(voces.length===1)u.voice=voces[0];
+    u.onend=function(){{i++;setTimeout(nx,360);}};speechSynthesis.speak(u);}}
+  speechSynthesis.cancel();nx();}};
 var at=document.getElementById('audTr');
 if(at)at.onclick=function(){{var t=document.getElementById('audText');var show=t.style.display==='none';t.style.display=show?'flex':'none';at.classList.toggle('on',show);}};
 </script></body></html>"""

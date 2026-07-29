@@ -1,4 +1,14 @@
-# C4 — NotebookLM-prompts voor lees- & luisteroefeningen (U1–U3, plak-klaar)
+# C4 — Prompts voor lees- & luisteroefeningen (plak-klaar)
+
+> ⚠️ **NB (2026-07-29):** NotebookLM blijkt géén verzonnen dialogen te kunnen genereren (het is een
+> bron-samenvat-tool). Daarom worden de teksten/dialogen **door Claude zelf geschreven** (A1, met de
+> woordenschat van de unit) en rechtstreeks in `comprension_data.py` geplaatst — U1–U4 zijn al ingevuld.
+> De prompts hieronder blijven bruikbaar voor **andere** LLM's (ChatGPT/Claude) die wél vrij tekst maken.
+> **Audio:** de pagina speelt elk dialoogscript af met browser-TTS, nu met **een eigen stem/toonhoogte per
+> spreker** (klinkt als een gesprek). Wil je studio-kwaliteit met echte stemmen? Lever een mp3 aan (AI-TTS
+> of opgenomen) → dan embedden we die.
+
+
 
 > **Gebruik:** open NotebookLM, plak één volledig prompt-blok hieronder, kopieer de JSON-output
 > terug (of geef ze aan Claude). Elk blok is **zelfstandig** en vraagt de output in een **vast
