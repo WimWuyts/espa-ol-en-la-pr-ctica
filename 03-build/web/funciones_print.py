@@ -12,14 +12,28 @@ def print_section(unit):
     fs = FD.funciones_hasta(unit)
     have = len(fs); total = len(FD.FUNCIONES)
     # ── banco-spiekkaart: función · exponentes (per unit) · semáforo ──
+    # volle spiekkaart → trapsgewijs compacter zodat alles op één blad blijft
+    tight   = have >= 15   # zeer vol (≥15): exponentes op dezelfde regel als de functienaam
+    compact = have >= 13   # vol (13-14): kleinere letter + minder exponentes
+    exp_fs = "6.8pt" if tight else ("7.0pt" if compact else "7.6pt")
     rows = ""
     for f in fs:
-        exps = " · ".join(e for u in sorted(k for k in f["exp"] if k <= unit) for e in f["exp"][u])
+        allexp = [e for u in sorted(k for k in f["exp"] if k <= unit) for e in f["exp"][u]]
+        cap = 3 if tight else (4 if compact else (5 if have >= 11 else 99))
+        exps = " · ".join(allexp[:cap]) + (" …" if len(allexp) > cap else "")
         st = FD.status(f, unit)
         mark = ' <span style="font-size:6.6pt;font-weight:800;color:var(--gd)">NUEVA</span>' if st=="nueva" else (' <span style="font-size:6.6pt;font-weight:800;color:var(--gd)">▲</span>' if st=="nivel" else "")
-        rows += (f'<tr><td style="text-align:left"><b>{f["es"]}</b>{mark}<br>'
-                 f'<span style="font-size:7.6pt;color:var(--mut)">{exps}</span></td><td></td><td></td><td></td></tr>')
-    banco = ('<table class="sem" style="margin-top:2mm"><thead><tr>'
+        br = " — " if tight else "<br>"
+        rows += (f'<tr><td style="text-align:left"><b>{f["es"]}</b>{mark}{br}'
+                 f'<span style="font-size:{exp_fs};color:var(--mut)">{exps}</span></td><td></td><td></td><td></td></tr>')
+    # compacte units krijgen een td-override zodat de lange tabel op één blad blijft
+    if tight:
+        compact_style = '<style>.fbanco td{padding:.4mm 1.8mm!important;font-size:8.2pt}.fbanco th{padding:.8mm 1.8mm!important}</style>'
+    elif compact:
+        compact_style = '<style>.fbanco td{padding:.55mm 2mm!important}.fbanco th{padding:.9mm 2mm!important}</style>'
+    else:
+        compact_style = ''
+    banco = (compact_style + '<table class="sem fbanco" style="margin-top:2mm"><thead><tr>'
              '<th style="text-align:left">Función · exponentes (wat ik al kan zeggen)</th><th>🟢</th><th>🟡</th><th>🔴</th></tr></thead>'
              f'{rows}</table>')
     # ── noticing (compacte 2-koloms-oefening: cita → función) ──
@@ -30,7 +44,7 @@ def print_section(unit):
     noticing = (f'<div class="regla"><span class="tag">¿Qué hacen con el idioma? · uit de scène</span>'
                 f'<p style="margin:1mm 0;font-size:8.8pt">Welke <b>functie</b> voert elke zin uit? Schrijf ze erbij. '
                 f'<span style="color:var(--mut)">Banco: {bank}.</span></p>'
-                f'<div style="columns:2;column-gap:8mm;line-height:2.0">{n_cells}</div></div>')
+                f'<div style="columns:2;column-gap:8mm;line-height:1.75">{n_cells}</div></div>')
     # ── tarea-tags + mini-reto (productie; wbox-hoogte schaalt met #functies → volle bladspiegel) ──
     ids = FD.TAREA_FUN.get(unit, [])
     tt = FD.TAREA_TITEL.get(unit, "")
@@ -44,10 +58,15 @@ def print_section(unit):
                  '<p style="font-size:9pt;margin:1mm 0">Vertaal uit het hoofd (ophalen = het beste leren):</p>'
                  f'<div style="font-size:9.6pt;line-height:2.5">a) hallo / tot ziens → {_wl("lg")}<br>'
                  f'b) hoe heet je? → {_wl("lg")}<br>c) ik heet… / ik ben… → {_wl("lg")}</div></div>')
-    reto_h = max(14, int(42 - have * 3.2))  # minder functies (U1) → grotere schrijfruimte, zodat elke unit ~1 volle pagina vult
-    reto = (f'<div class="truc" style="margin-top:3mm"><b>Mini-reto ✍️</b> Schrijf een korte mini-conversatie '
-            f'waarin je <b>minstens 3 functies</b> hierboven gebruikt. Onderstreep telkens welke functie.'
-            f'<div class="wbox" style="min-height:{reto_h}mm"></div></div>')
+    # de mini-reto vult lichte units; bij 9-14 functies is het banco al vol → geen reto (anders overloop).
+    # In tight-modus is elke banco-rij één regel → tot 16 functies past er nog een kleine reto bij;
+    # vanaf 17 is het blad ook zó vol → geen reto meer (gemeten op de U8-build).
+    reto = ""
+    if have <= 8 or (tight and have <= 16):
+        reto_h = 22 if tight else max(14, int(42 - have * 3.2))
+        reto = (f'<div class="truc" style="margin-top:3mm"><b>Mini-reto ✍️</b> Schrijf een korte mini-conversatie '
+                f'waarin je <b>minstens 3 functies</b> hierboven gebruikt. Onderstreep telkens welke functie.'
+                f'<div class="wbox" style="min-height:{reto_h}mm"></div></div>')
     return (f'<div class="page sec" style="break-before:page">'
             f'<div class="se">Funciones comunicativas · lo que ya sé decir</div>'
             f'<h2>Wat je nu al kunt DOEN met het Spaans</h2>'

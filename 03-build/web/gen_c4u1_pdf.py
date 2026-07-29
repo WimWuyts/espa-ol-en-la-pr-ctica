@@ -22,6 +22,8 @@ def qr(data):
     svg=re.sub(r'<\?xml[^>]*\?>','',svg); svg=svg.replace('<svg ','<svg style="width:26mm;height:26mm" ',1)
     return svg
 HUB_URL="https://hablacon-ene.local/C4/U1"   # placeholder → auteur vervangt door de gehoste hub-URL
+import comprension_print
+COMPR_SEC=comprension_print.print_section(1, HUB_URL)
 SPOTIFY="https://open.spotify.com/playlist/37i9dQZF1DXaxEKcoCdWHD"
 
 # ── data ──────────────────────────────────────────────────────────────────────
@@ -416,7 +418,7 @@ document.getElementById('btnsave').onclick=function(){var html='<!doctype html>'
 HTML=f"""<!doctype html><html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · Unidad 1 · Presentaciones</title><style>{CSS}</style></head><body>
 {EDITBAR}
-{HERO}{ESCUCHA}{KIT}{GRAM}{PRAC}{TAREA}{MUSICA}{FUNCIONES_SEC}{REPASO}
+{HERO}{ESCUCHA}{COMPR_SEC}{KIT}{GRAM}{PRAC}{TAREA}{MUSICA}{FUNCIONES_SEC}{REPASO}
 {SCRIPT}
 </body></html>"""
 os.makedirs(f"{ROOT}/03-build/web/print",exist_ok=True)

@@ -26,7 +26,16 @@ UNIT_TEMA = {
  2: ("simbolo", "🌎 Un símbolo"),         # Saludos — een symbool/icoon per land
  3: ("musica",  "🎵 Su música"),          # Nacionalidades/países — een muziekweetje per land
  4: ("familia", "👪 En familia"),
- 5: ("comida",  "🍽️ En la mesa"),
+ 5: ("compras", "🛍️ Un producto típico"),   # objetos → een typisch product per land
+ 6: ("lugar",   "🏠 Casas y lugares"),        # la casa y los lugares → een typische plek/woning per land
+ # U7 hergebruikt bewust «persona» (spaced recycling, §14): in U1 was de vraag «wie komt hier vandaan?»,
+ # in U7 is de invalshoek «wat is zijn/haar BEROEP?» (Frida Kahlo, pintora · Nadal, tenista).
+ 7: ("persona", "💼 Su profesión"),           # las profesiones → bekende persoon + beroep per land
+ 8: ("rutina",  "⏰ ¿A qué hora?"),            # la hora y los días → dag-/maaltijdritme per land
+ 9: ("viaje",   "✈️ ¿Qué vas a visitar?"),     # planes → «voy a visitar…» per land (ir a + infinitivo)
+ # U10 hergebruikt bewust «familia» (spaced recycling, §14): in U4 was de vraag «hoe is de familie?»,
+ # in U10 is de invalshoek «wie helpt er in huis?» — zelfde feiten, andere didactische hoek.
+ 10:("familia", "🏠 ¿Quién ayuda en casa?"),    # tareas domésticas → rollen in het gezin per land
 }
 # de route: C4 = «vertrekhal». De sitcom (Julio & María) speelt in Madrid → España is
 # het thuisbasis-vertrekpunt vanaf U1. {code: (start_unit, "rango", "NL/ES-beschrijving")}
@@ -42,6 +51,16 @@ INTRO = {
      "Een groet klinkt anders in elk land. Verken de kaart en het symbool van elk land."),
  3: ("¿De dónde eres? 21 países, un idioma. Haz clic en un país: bandera, capital, gentilicio e idioma.",
      "Waar kom je vandaan? 21 landen, één taal. Klik op een land: vlag, hoofdstad, nationaliteit en taal."),
+ 6: ("Cada país tiene sus casas y sus lugares. Haz clic en un país y descubre cómo se vive.",
+     "Elk land heeft zijn eigen huizen en plekken. Klik op een land en ontdek hoe men er woont."),
+ 7: ("¿A qué se dedican? Haz clic en un país y descubre a alguien famoso… y su profesión.",
+     "Wat doen ze voor werk? Klik op een land en ontdek een bekende persoon… én zijn/haar beroep."),
+ 8: ("¿A qué hora se come? Cada país tiene su ritmo. Haz clic en un país y descúbrelo.",
+     "Hoe laat eet men er? Elk land heeft zijn eigen ritme. Klik op een land en ontdek het."),
+ 9: ("¿Qué vas a visitar? Haz clic en un país y di: «Voy a visitar…».",
+     "Wat ga je bezoeken? Klik op een land en zeg: «Voy a visitar…» — zo oefen je ir a + infinitivo."),
+ 10:("En casa, ¿quién ayuda? Haz clic en un país y descubre cómo se vive en familia.",
+     "Wie helpt er in huis? Klik op een land en ontdek hoe men er in familie samenleeft."),
 }
 DEFAULT_INTRO = ("Haz clic en un país del mundo hispano para leer su ficha.",
                  "Klik op een land van de Spaanstalige wereld voor zijn fiche.")

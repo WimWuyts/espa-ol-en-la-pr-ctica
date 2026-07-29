@@ -16,6 +16,7 @@ def srcdoc(path):
 
 TABS=[
  ("escucha","🎬 Escucha","C4_U1_escucha.html","Bekijk de scène en lees mee — de chunks komen uit je oren."),
+ ("comprension","📖 Lee y escucha","C4_U1_comprension.html","Een korte lees- en luisteroefening — begrijp het Spaans dat je al kent."),
  ("mapa","🗺️ Mapa","C4_U1_mapa.html","La Ruta — klik op een land van de Spaanstalige wereld en lees zijn fiche."),
  ("funciones","🗣️ Funciones","C4_U1_funciones.html","Wat je met het Spaans kunt DOEN — je repertoire groeit elke unit."),
  ("kit","🧰 Kit","C4_U1_kgt.html","Uitspraak (klanken), de taal per situatie, gramática & tarea."),
