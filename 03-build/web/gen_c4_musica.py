@@ -40,7 +40,7 @@ ART=[
  ("Juanes","🇨🇴","Colombia","rock/pop latino","«La Camisa Negra»","Ha ganado muchos premios Grammy Latinos.",
   "Juanes es de Colombia; mezcla rock y ritmos latinos.","Juanes uit Colombia; mengt rock met Latijnse ritmes.",["ropa","nacionalidades"]),
  ("Manu Chao","🇪🇸","España/Francia","mestizo/rock","«Me gustas tú»","«Me gustas tú» repite todo el tiempo «me gusta…»: ideal para practicar.",
-  "Manu Chao tiene raíces españolas y francesas.","Manu Chao heeft Spaanse en Franse roots.",["saludos","presentaciones","objetos"]),
+  "Manu Chao tiene raíces españolas y francesas.","Manu Chao heeft Spaanse en Franse roots.",["saludos","presentaciones","objetos","casa"]),
 ]
 # thema -> aanbevolen nummer(s) (survival-lessen halen hieruit)
 TEMA_TITELS={"presentaciones":"Presentaciones","saludos":"Saludos","nacionalidades":"Nacionalidades y países","familia":"La familia",
@@ -120,6 +120,20 @@ CULTURA={
       "De <b>hangmat</b> (<i>hamaca</i>, een Taíno-woord uit de Cariben) «sirve para descansar» — net als de bank van Julio in de video."),
    ],
    "dato":"¿Sabías que…? Muchas palabras de objetos vienen de lenguas indígenas de América: «hamaca», «canoa» y «chocolate» pasaron del taíno y del náhuatl al español… y luego a medio mundo.",
+ },
+ "casa":{
+   "intro":"Een huis vertelt veel over een cultuur: hoe men samenleeft, waar men rust, welke kleuren men kiest. Zo wonen mensen in de Spaanstalige wereld.",
+   "cards":[
+     ("🌿","El patio","In veel Spaanse en Latijns-Amerikaanse huizen is er een <b>patio</b>: een binnenkoer vol planten, het hart van het huis.",
+      "In veel Spaanse en Latijns-Amerikaanse huizen is er een <b>patio</b> (binnenkoer) vol planten — de centrale, gezellige plek van het huis."),
+     ("🎨","Casas de colores","In <b>Guanajuato</b> (🇲🇽), <b>Cartagena</b> (🇨🇴) en <b>Guatapé</b> schilderen mensen hun huizen in <b>felle kleuren</b>.",
+      "In steden als <b>Guanajuato</b> (Mexico), <b>Cartagena</b> (Colombia) en <b>Guatapé</b> zijn de huizen geschilderd in <b>felle kleuren</b> — een kleurrijk straatbeeld."),
+     ("🛋️","La sobremesa en casa","Thuis blijft men na het eten lang aan tafel praten: de <b>sobremesa</b> — het huis is een plek om samen te zijn.",
+      "Thuis blijft de familie na het eten lang natafelen (<b>la sobremesa</b>): het huis draait om samenzijn, niet enkel om ruimtes."),
+     ("😴","La siesta","In warme streken rust men midden op de dag — de <b>siesta</b>. Even alles dicht, dan weer open.",
+      "In warme streken rust men midden op de dag: de <b>siesta</b>. Rond 14–17u sluiten sommige winkels; daarna gaat alles weer open."),
+   ],
+   "dato":"¿Sabías que…? «Estar en casa» (thuis zijn) en «ir a casa» (naar huis gaan) gebruik je zónder lidwoord — net als in het Nederlands zeg je «naar huis», niet «naar het huis».",
  },
 }
 def cultura_block(tema):

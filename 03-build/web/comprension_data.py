@@ -120,6 +120,28 @@ LECTURA = {
    "transfer": "¿Y tú? ¿Qué hay en tu habitación?",
    "glosario": [["hay", "er is/zijn"], ["la ventana", "het raam"], ["sirven para", "dienen om"], ["Me gusta", "ik vind leuk"]],
  },
+ 6: {
+   "tipo": "un mensaje · ¿cómo es mi casa?",
+   "contexto_nl": "Sara beschrijft haar huis en waar de dingen staan.",
+   "texto": [
+     ["", "¡Hola! Esta es mi casa. Hay una cocina, un salón, un dormitorio y un cuarto de baño."],
+     ["", "En la cocina hay un frigorífico. Dentro del frigorífico hay leche y fruta."],
+     ["", "En el salón hay un sofá y una mesa. Encima de la mesa hay un libro y, debajo de la mesa, está mi bolso."],
+     ["", "El gato está al lado de la ventana. ¡Me gusta mucho mi casa!"],
+   ],
+   "global": [
+     {"q": "¿Qué describe Sara?", "opts": ["Su clase", "Su casa", "Su mochila"], "a": 1},
+     {"q": "¿Dónde está el bolso?", "opts": ["Encima de la mesa", "Debajo de la mesa", "En la cocina"], "a": 1},
+   ],
+   "detalle": [
+     {"q": "La casa tiene cuatro habitaciones.", "vf": True},
+     {"q": "Dentro del frigorífico hay leche.", "vf": True},
+     {"q": "El gato está encima de la mesa.", "vf": False},
+     {"q": "No hay sofá en el salón.", "vf": False},
+   ],
+   "transfer": "¿Y tú? ¿Cómo es tu casa? ¿Qué hay en cada habitación?",
+   "glosario": [["la cocina", "de keuken"], ["el frigorífico", "de koelkast"], ["encima de", "op/boven"], ["debajo de", "onder"], ["al lado de", "naast"]],
+ },
 }
 
 AUDIO = {
@@ -211,6 +233,25 @@ AUDIO = {
    ],
    "glosario": [["hay", "er is/zijn"], ["la guitarra", "de gitaar"], ["Sirve para tocar", "dient om te spelen"], ["muchos libros", "veel boeken"]],
    "rallentado": ["esto es", "guitarra", "no hay ordenador"],
+ },
+ 6: {
+   "tipo": "¿dónde está? · buscar cosas en casa",
+   "guion": [
+     ["Marta", "¿Dónde está mi bolso? No lo encuentro."],
+     ["Pablo", "¿Está en la cocina?"],
+     ["Marta", "No, en la cocina no hay nada."],
+     ["Pablo", "Mira, está aquí, encima del sofá."],
+     ["Marta", "¡Ah! Y las llaves, ¿dónde están?"],
+     ["Pablo", "Debajo de la mesa, al lado de tu libro."],
+   ],
+   "tarea_nl": "Luister: waar staan de spullen (bolso, llaves)?",
+   "preguntas": [
+     {"q": "¿Qué busca Marta primero?", "opts": ["Las llaves", "Su bolso", "Un libro"], "a": 1},
+     {"q": "¿Dónde está el bolso?", "opts": ["En la cocina", "Encima del sofá", "Debajo de la mesa"], "a": 1},
+     {"q": "¿Dónde están las llaves?", "opts": ["Encima del sofá", "Debajo de la mesa", "En la ventana"], "a": 1},
+   ],
+   "glosario": [["¿dónde está?", "waar is?"], ["encima del sofá", "boven op de bank"], ["debajo de la mesa", "onder de tafel"], ["las llaves", "de sleutels"]],
+   "rallentado": ["dónde está", "encima del sofá", "debajo de la mesa"],
  },
 }
 

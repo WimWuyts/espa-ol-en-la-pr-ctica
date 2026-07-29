@@ -27,7 +27,7 @@ UNIT_TEMA = {
  3: ("musica",  "🎵 Su música"),          # Nacionalidades/países — een muziekweetje per land
  4: ("familia", "👪 En familia"),
  5: ("compras", "🛍️ Un producto típico"),   # objetos → een typisch product per land
- 6: ("comida",  "🍽️ En la mesa"),
+ 6: ("lugar",   "🏠 Casas y lugares"),        # la casa y los lugares → een typische plek/woning per land
 }
 # de route: C4 = «vertrekhal». De sitcom (Julio & María) speelt in Madrid → España is
 # het thuisbasis-vertrekpunt vanaf U1. {code: (start_unit, "rango", "NL/ES-beschrijving")}
@@ -43,6 +43,8 @@ INTRO = {
      "Een groet klinkt anders in elk land. Verken de kaart en het symbool van elk land."),
  3: ("¿De dónde eres? 21 países, un idioma. Haz clic en un país: bandera, capital, gentilicio e idioma.",
      "Waar kom je vandaan? 21 landen, één taal. Klik op een land: vlag, hoofdstad, nationaliteit en taal."),
+ 6: ("Cada país tiene sus casas y sus lugares. Haz clic en un país y descubre cómo se vive.",
+     "Elk land heeft zijn eigen huizen en plekken. Klik op een land en ontdek hoe men er woont."),
 }
 DEFAULT_INTRO = ("Haz clic en un país del mundo hispano para leer su ficha.",
                  "Klik op een land van de Spaanstalige wereld voor zijn fiche.")

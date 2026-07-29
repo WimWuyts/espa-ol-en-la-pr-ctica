@@ -12,16 +12,20 @@ def print_section(unit):
     fs = FD.funciones_hasta(unit)
     have = len(fs); total = len(FD.FUNCIONES)
     # ── banco-spiekkaart: función · exponentes (per unit) · semáforo ──
+    compact = have >= 13   # zeer volle spiekkaart (≥13 functies) → compacter zodat alles op één blad past
+    exp_fs = "7.0pt" if compact else "7.6pt"
     rows = ""
     for f in fs:
         allexp = [e for u in sorted(k for k in f["exp"] if k <= unit) for e in f["exp"][u]]
-        cap = 5 if have >= 11 else 99   # zware units (≥11 functies): toon max 5 exponentes per functie (leesbaar + past op één blad)
+        cap = 4 if compact else (5 if have >= 11 else 99)   # zware units: minder exponentes per functie (leesbaar + past op één blad)
         exps = " · ".join(allexp[:cap]) + (" …" if len(allexp) > cap else "")
         st = FD.status(f, unit)
         mark = ' <span style="font-size:6.6pt;font-weight:800;color:var(--gd)">NUEVA</span>' if st=="nueva" else (' <span style="font-size:6.6pt;font-weight:800;color:var(--gd)">▲</span>' if st=="nivel" else "")
         rows += (f'<tr><td style="text-align:left"><b>{f["es"]}</b>{mark}<br>'
-                 f'<span style="font-size:7.6pt;color:var(--mut)">{exps}</span></td><td></td><td></td><td></td></tr>')
-    banco = ('<table class="sem" style="margin-top:2mm"><thead><tr>'
+                 f'<span style="font-size:{exp_fs};color:var(--mut)">{exps}</span></td><td></td><td></td><td></td></tr>')
+    # compacte units krijgen een td-override zodat de 14-rij-tabel op één blad blijft
+    compact_style = '<style>.fbanco td{padding:.55mm 2mm!important}.fbanco th{padding:.9mm 2mm!important}</style>' if compact else ''
+    banco = (compact_style + '<table class="sem fbanco" style="margin-top:2mm"><thead><tr>'
              '<th style="text-align:left">Función · exponentes (wat ik al kan zeggen)</th><th>🟢</th><th>🟡</th><th>🔴</th></tr></thead>'
              f'{rows}</table>')
     # ── noticing (compacte 2-koloms-oefening: cita → función) ──
