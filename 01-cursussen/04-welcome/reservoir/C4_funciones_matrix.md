@@ -33,6 +33,8 @@ herkomst vragen, corrigeren, iets vragen, tellen…). Elke unit:
 | F14 | Pedir y dar permiso | om toestemming vragen/geven (¿puedo…?) | pedir/dar permiso | C4-GE-2 |
 | F15 | Hablar del trabajo | over je werk/beroep praten | profesión y lugar de trabajo | C4-SP-1 |
 | F16 | Especular y adivinar | gissen & vermoedens uiten (puede ser…) | expresar hipótesis sencillas | C4-STR-1 |
+| F17 | Decir y preguntar la hora | de tijd vragen & zeggen | la hora y los días | C4-WS-1 |
+| F18 | Quedar con alguien | een afspraak maken | concertar una cita | C4-GE-3 |
 
 ## Matrix C — functie × unit (● intro · ▲ uptrade/nivel+ · · recycle)
 | ID | U1 | U2 | U3 | U4 | U5 | … | Exponentes die groeien |
@@ -53,14 +55,19 @@ herkomst vragen, corrigeren, iets vragen, tellen…). Elke unit:
 | F14 Pedir y dar permiso | | | | | | ● | ¿puedo…? · ¿puedes…? · sí, puedes… · aquí no · puedes ir fuera |
 | F15 Hablar del trabajo | | | | | | | ● (U7) — ¿a qué te dedicas? · soy profesor/a · trabajo en… (ser sin un/una) |
 | F16 Especular y adivinar | | | | | | | ● (U7) — puede ser… · ¿trabaja en…? · creo que es… · ¡ya lo sé! |
+| F17 Decir/preguntar la hora | | | | | | | ● (U8) — ¿qué hora es? · es la una ↔ son las… · y media/menos cuarto · ¿a qué hora? · el/los lunes |
+| F18 Quedar con alguien | | | | | | | ● (U8) — ¿quieres quedar? · quedamos a las… · más tarde · hasta ahora |
 
-*(NB: F05 kreeg in U7 een ▲-uptrade: estamos todos bien · ¿estáis bien? · ser↔estar-contrast.)*
+*(NB: F05 kreeg in U7 een ▲-uptrade: estamos todos bien · ¿estáis bien? · ser↔estar-contrast.
+F07 en F08 kregen in U8 een ▲-uptrade: F07 números → **las horas** (y media · en veinte minutos) ·
+F08 comprensión → **telefoonregister** (¿sí? · no te oigo nada · ¿puedes hablar más despacio?).)*
 
 **Groei tot nu toe:** U1 = 4 functies · U2 = 6 (+cortesía, +cómo estoy) · U3 = 8 (+pedir algo, +contar) ·
 U4 = 10 (+hablar de la familia, +describir a alguien; F02 uptrade → presentar a alguien) ·
 U5 = 12 (+identificar objetos, +decir qué hay/para qué sirve) ·
 U6 = 14 (+ubicar cosas/dónde está, +pedir y dar permiso) ·
-U7 = 16 (+hablar del trabajo, +especular y adivinar; F05 uptrade → estamos/estáis).
+U7 = 16 (+hablar del trabajo, +especular y adivinar; F05 uptrade → estamos/estáis) ·
+U8 = 18 (+decir/preguntar la hora, +quedar; F07 uptrade → horas, F08 uptrade → teléfono).
 
 ## Noticing per unit («¿Qué hacen con el idioma?» — cita → función)
 - **U1:** «¡Hola! ¿Qué tal?»→F01 · «Me llamo…»→F02 · «¿Cómo te llamas?»→F03 · «¿Cómo? Otra vez.»→F08
@@ -70,6 +77,7 @@ U7 = 16 (+hablar del trabajo, +especular y adivinar; F05 uptrade → estamos/est
 - **U5:** «¿Qué es esto?»→F11 · «Esto es un sofá.»→F11 · «Sirve para descansar.»→F12 · «¿Hay un ordenador?»→F12 · «Esto son mis llaves.»→F11
 - **U6:** «Hay cosas encima de las sillas.»→F13 · «Debajo de la cama.»→F13 · «Dentro del frigorífico…»→F13 · «¿Puedo fumar?»→F14 · «Aquí no, pero puedes ir fuera.»→F14
 - **U7:** «Puede ser escritora.»→F16 · «¿Trabaja en una tienda?»→F16 · «Es profesora.»→F15 · «Yo trabajo aquí, tú trabajas aquí.»→F15 · «Estamos todos bien.»→F05
+- **U8:** «¿Qué hora es? ¿Las ocho y media?»→F17 · «¿A qué hora? Mejor a las doce.»→F17 · «¿Quieres quedar esta noche?»→F18 · «Quedamos en mi casa.»→F18 · «No te oigo nada. ¿Puedes hablar más despacio?»→F08 · «Te veo en veinte minutos.»→F07
 
 ## Eindtaak-tags (recycling zichtbaar)
 - **U1 «Mi presentación»** = F01 + F02 + F03
@@ -79,6 +87,7 @@ U7 = 16 (+hablar del trabajo, +especular y adivinar; F05 uptrade → estamos/est
 - **U5 «Diccionario de la clase»** = F11 + F12 + F10
 - **U6 «Plano de mi casa»** = F13 + F12 + F14
 - **U7 «¿Quién soy? · adivina»** = F15 + F16 + F03
+- **U8 «Mi horario»** = F17 + F18 + F07
 
 ## Zeven ontwerpregels
 1. **Video-afgeleid:** elke functie begint bij een citaat uit de scène (noticing), nooit abstract.

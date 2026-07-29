@@ -103,9 +103,22 @@ Sofía: Soy estudiante, pero los sábados trabajo en una oficina.
 Óscar: [laughing] ¡Trabajamos mucho los dos!
 ```
 
+## U8 · «quedar por teléfono»  (1 telefoondialoog — Elena & Tomás)
+**Stemmen:** Elena = jonge vrouw · Tomás = jonge man.
+*(Komt exact overeen met `AUDIO[8]` in `comprension_data.py` → la hora · ¿a qué hora? · quedar.)*
+*Tip: zet bij ElevenLabs eventueel een licht «telefoon»-effect op beide stemmen — dat past bij de scène.*
+```
+Elena: [picking up the phone] ¿Sí? Hola, Tomás.
+Tomás: [cheerful] Hola, Elena. ¿Quieres quedar esta tarde?
+Elena: Sí, vale. ¿A qué hora?
+Tomás: [suggesting] ¿A las seis? ¿O es un poco pronto?
+Elena: [thinking] A las seis no puedo. Mejor a las siete y media.
+Tomás: [happy] Perfecto. Quedamos en el cine. ¡Hasta luego!
+```
+
 ---
 
 ## Nadat je de mp3's hebt
-Zet ze als `C4_U1_audio.mp3` … `C4_U7_audio.mp3` in `03-build/web/componentes/audio/` (of stuur ze mij).
+Zet ze als `C4_U1_audio.mp3` … `C4_U8_audio.mp3` in `03-build/web/componentes/audio/` (of stuur ze mij).
 Dan draai ik `gen_c4_comprension.py` + de hubs opnieuw → de audio zit meteen in de «🎧 Escucha»-tab,
 met een traag-knop en het transcript. Voor volgende units lever ik telkens hetzelfde: script + tags + stemmen.

@@ -34,7 +34,7 @@ soy? · adivina»** (raadspel met 3 pistas). Toon: speels, theatraal (de kaarten
 | Escucha | DS-046 · LAY-034 · DS-040 · SK-063 · **SK-069** (luisteren: quién es/qué hace) · **SK-075** | luisteren → beroepen identificeren |
 | Kit | VS-006 · VS-010 · VS-019bis (woordveld profesiones/lugares) · **VS-023** (vraag-antwoordchunks trabajo) | woordveld beroepen + werkplekken |
 | Práctica | **WV-015** (clasifica profesión/lugar/estado) · WV-056 · **WV-024** (profesión↔lugar) · **WV-033** (completa entrevista) · **WV-037** (ser/estar-keuze) · **WV-047** (forma femenina typen) | afbouw receptief→productief |
-| Gramática | ♻ VG-018 (ser+X, andere jas: profesión i.p.v. adjetivo) · ♻ VG-026 (-o/-a-regel op beroepen) · ♻ GT-003 (kleurcode) · **VG-031** (fíjate ser↔estar) · ♻ GT-014 (contrast-kaart, nu ser/estar) | functioneel; VG/GT-recycling conform schaarste-signaal |
+| Gramática | ♻ VG-010 (ser+X, andere jas: profesión i.p.v. adjetivo) · ♻ VG-026 (-o/-a-regel op beroepen) · ♻ GT-001 (kleurcode) · **VG-031** (fíjate ser↔estar) · ♻ GT-014 (contrast-kaart, nu ser/estar) | functioneel; VG/GT-recycling conform schaarste-signaal |
 | Uitspraak | DS-015 · SK-083 · SK-096 · SK-097 · SK-098 · PPT-043/044 | matrix A: c/qu + esdrújula |
 | Tarea «¿Quién soy?» | **SK-099** (adivinar-spel) · SK-119 · pistas-fiche | communicatief: gissen + bevestigen |
 | Cultura/Banda | LAY-028 · DS-016 · banda_block("profesiones") | el trabajo hispano (horario partido · profesiones famosas) |
@@ -61,4 +61,9 @@ trabajo (¿a qué te dedicas?) · decir el trabajo (soy… · trabajo en…) · 
 
 ## Dekking-impact (na build coverage bijwerken)
 Nieuw eerste gebruik U7: SK-020 · SK-069 · SK-075 · VS-023 · WV-015 · WV-024 · WV-033 · WV-037 · WV-047 · VG-031 · SK-099
-→ **±11 nieuwe ✓-items** + ♻-recycling VG-018/VG-026/GT-003/GT-014 + spaced recycling van de U1–U6-laag.
+→ **±11 nieuwe ✓-items** + ♻-recycling VG-010/VG-026/GT-001/GT-014 + spaced recycling van de U1–U6-laag.
+
+> **Correctie (audit 2026-07-29):** enkele reservoir-IDs in deze receta verwezen naar items die in
+> `C4_coverage.md` als **✗ (C5/C6-only: systeem-grammatica)** staan. Ze zijn vervangen door
+> C4-geschikte (✓/~) items die dezelfde didactische functie dekken. De **gebouwde inhoud** is niet
+> gewijzigd — die respecteerde de C4-grens al (functioneel, chunks, géén paradigma's).

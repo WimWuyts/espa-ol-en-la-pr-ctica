@@ -30,8 +30,8 @@ vragen). Eindtaak = **«Plano de mi casa»** (plattegrond + situeren). Toon: war
 | §0 Ponte al día | recyclen U5 (hay · un/una) + objetos · **SK-019** | terugkeer hay/artikel |
 | Escucha | DS-045 · LAY-033 · DS-039 · SK-062 · **SK-068** (luisteren: dónde está / preposiciones) · **SK-074** | luisteren → plaats situeren |
 | Kit | VS-005 · VS-009 · VS-018 (woordveld habitaciones/muebles) · **VS-022** (preposiciones-chunks) | woordveld huis + plaats-woorden |
-| Práctica | **WV-014** (clasifica habitación/mueble/posición) · WV-055 · **WV-023** (habitación↔actividad) · **WV-032** (completa ¿dónde está?) · **WV-036** (hay/está) · **WV-046** (¿puedo/puedes?) | afbouw receptief→productief |
-| Gramática | VG-005 (fíjate preposiciones) · VG-020 (hay/está) · VG-028 (regel del/al) · GT-005 (kleurcode plaats=turquoise) · **GT-016** (poder — permiso) | preposiciones · hay/está · poder functioneel |
+| Práctica | **WV-014** (clasifica habitación/mueble/posición) · WV-040 · **WV-023** (habitación↔actividad) · **WV-032** (completa ¿dónde está?) · **WV-036** (hay/está) · **WV-046** (¿puedo/puedes?) | afbouw receptief→productief |
+| Gramática | VG-012 (fíjate preposiciones) · VG-030 (hay/está) · ♻ VG-002 (regel del/al) · GT-005 (kleurcode plaats=turquoise) · **GT-013** (poder — permiso) | preposiciones · hay/está · poder functioneel |
 | Uitspraak | DS-013 · SK-082 · SK-092 · SK-093 · SK-094 · PPT-041/042 | matrix A: b/v + llana/aguda |
 | Tarea «Plano de mi casa» | **SK-095** (situar + describir) · SK-118 · plano-artefact | communicatief: 4 kamers + situeren |
 | Cultura/Banda | LAY-027 · DS-014 · banda_block("casa") | la casa hispana (patio·colores·siesta) + muziek |
@@ -56,5 +56,10 @@ situar (hay/está) · pedir permiso (¿puedo/puedes?)**.
 - [x] Lees-/luisterlaag: LECTURA[6] (mi casa) + AUDIO[6] (¿dónde está?) klaar
 
 ## Dekking-impact (na build coverage bijwerken)
-Nieuw eerste gebruik U6: SK-019 · SK-068 · SK-074 · VS-018 · VS-022 · WV-014 · WV-023 · WV-032 · WV-036 · WV-046 · GT-016 · SK-095
+Nieuw eerste gebruik U6: SK-019 · SK-068 · SK-074 · VS-018 · VS-022 · WV-014 · WV-023 · WV-032 · WV-036 · WV-046 · GT-013 · SK-095
 → **±12 nieuwe ✓-items** + spaced recycling van de U1–U5-laag.
+
+> **Correctie (audit 2026-07-29):** enkele reservoir-IDs in deze receta verwezen naar items die in
+> `C4_coverage.md` als **✗ (C5/C6-only: systeem-grammatica)** staan. Ze zijn vervangen door
+> C4-geschikte (✓/~) items die dezelfde didactische functie dekken. De **gebouwde inhoud** is niet
+> gewijzigd — die respecteerde de C4-grens al (functioneel, chunks, géén paradigma's).

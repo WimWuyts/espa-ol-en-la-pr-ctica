@@ -32,7 +32,7 @@ concreet, «wijs-en-benoem».
 | Escucha | DS-044 · LAY-032 · DS-038 · SK-061 · **SK-067** (luisteren: qué es / para qué sirve) · **SK-073** | luisteren → objetos + función |
 | Kit | VS-004 · VS-008 · VS-020 · **VS-017** (woordveld objetos clase/casa) · **VS-021** (identificar/sirve-chunks) | woordveld voorwerpen + functie |
 | Práctica | **WV-013** (clasifica clase/casa/función) · WV-054 · **WV-022** (objeto↔para qué sirve) · **WV-031** (completa diálogo qué es) · **WV-035** (un/una) · **WV-045** (¿hay o no hay?) | afbouw receptief→productief |
-| Gramática | VG-004 (fíjate un/una) · VG-019 (esto es/son) · VG-027 (regel género) · GT-004 (kleurcode objeto) · **GT-015** (hay + sirve para) | género · identificar · hay · sirve para functioneel |
+| Gramática | VG-021 (fíjate un/una) · VG-019 (esto es/son) · VG-027 (regel género) · GT-004 (kleurcode objeto) · **GT-015** (hay + sirve para) | género · identificar · hay · sirve para functioneel |
 | Uitspraak | DS-011 · SK-081 · SK-089 · SK-090 · SK-091 · PPT-039/040 | matrix A: r/rr + tilde |
 | Tarea «Diccionario de la clase» | **SK-093** (identificar+definir) · SK-117 · diccionario-artefact | communicatief: 5 objecten benoemen+functie |
 | Cultura/Banda | LAY-026 · DS-012 · banda_block("objetos") | objetos típicos (guitarra·mate·piñata·hamaca) + muziek |
@@ -59,3 +59,8 @@ para qué sirve (sirve para + inf.) · ¿qué hay? (hay/no hay/sí que hay)**.
 ## Dekking-impact (na build coverage bijwerken)
 Nieuw eerste gebruik U5: SK-018 · SK-067 · SK-073 · VS-017 · VS-021 · WV-013 · WV-022 · WV-031 · WV-035 · WV-045 · SK-093 · GT-015
 → **±12 nieuwe ✓-items** + spaced recycling van de U1–U4-laag.
+
+> **Correctie (audit 2026-07-29):** enkele reservoir-IDs in deze receta verwezen naar items die in
+> `C4_coverage.md` als **✗ (C5/C6-only: systeem-grammatica)** staan. Ze zijn vervangen door
+> C4-geschikte (✓/~) items die dezelfde didactische functie dekken. De **gebouwde inhoud** is niet
+> gewijzigd — die respecteerde de C4-grens al (functioneel, chunks, géén paradigma's).

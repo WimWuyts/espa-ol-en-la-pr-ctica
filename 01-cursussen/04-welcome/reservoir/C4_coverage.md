@@ -47,6 +47,9 @@
 | ser: es / son | U1 | U3, U4, **U5** (esto es/son), U6, **U7** (ser+profesión), U14 |
 | ¿A qué te dedicas? · trabajo en… | U7 | U8 (rutina), U13, U14 |
 | estar: estamos / estáis (mv.) | U7 | U9, U12, U14 |
+| La hora (es la una · son las…) | U8 | U9 (planes), U10 (bar), U13, U14 |
+| Los días · el/los lunes | U8 | U9, U12, U14 |
+| Quedar (¿quieres quedar? · a las…) | U8 | U9, U12, U13 |
 | hay · no hay · ¿hay…? | U5 | U6 (hay↔está), U7, U10, U11, U13 |
 | preposiciones de lugar · está | U6 | U7, U8, U13 |
 | poder (¿puedo…? / ¿puedes…?) | U6 | U9, U10, U13 |
@@ -62,23 +65,34 @@
 
 ## Beschikbaar per domein — de C4-plukvijver
 
-| Domein | Totaal | **C4-geschikt** (✓/~) | Gebruikt (U1–U7) | **Nog beschikbaar (C4)** |
+| Domein | Totaal | **C4-geschikt** (✓/~) | Gebruikt (U1–U8) | **Nog beschikbaar (C4)** |
 |---|--:|--:|--:|--:|
-| designcomponent | 50 | **49** | 20 | **29** |
+| designcomponent | 50 | **49** | 24 | **25** |
 | grammatica-patroon | 35 | **17** | 17 | **0** |
-| grammaticatool | 25 | **12** | 10 | **2** |
-| layout | 50 | **50** | 15 | **35** |
-| powerpoint | 50 | **44** | 13 | **31** |
-| vaardigheid | 120 | **120** | 45 | **75** |
-| werkvorm | 100 | **65** | 35 | **30** |
+| grammaticatool | 25 | **12** | 9 | **3** |
+| layout | 50 | **50** | 17 | **33** |
+| powerpoint | 50 | **44** | 15 | **29** |
+| vaardigheid | 120 | **120** | 53 | **67** |
+| werkvorm | 100 | **65** | 39 | **26** |
 | woordenschat-patroon | 23 | **23** | 18 | **5** |
-| **TOTAAL** | **453** | **380** | **173** | **207** |
+| **TOTAAL** | **453** | **380** | **192** | **188** |
 
-> ⚠️ **Schaarste-signaal:** *grammatica-patroon* is nu **volledig benut** (17/17) en *grammaticatool* bijna
-> (10/12). Vanaf U7 wordt bewust **♻ gerecycled** (bestaande VG/GT-items in een andere jas — U7 deed dit al:
-> VG-018/VG-026/GT-003/GT-014). Dat mag en is gewenst: C4-grammatica is functioneel en beperkt, dus
-> herhaling met variatie ondersteunt precies de spreading/retrieval-principes (§14). Ook *woordenschat-
-> patroon* (nog 5) begint te slinken → zelfde recyclingregel toepassen vanaf ±U9.
+> ⚠️ **Schaarste-signaal:** *grammatica-patroon* is **volledig benut** (17/17) en *grammaticatool* bijna
+> (9/12). Vanaf U7 wordt daarom bewust **♻ gerecycled** (bestaande VG/GT-items in een andere jas).
+> Dat mag en is gewenst: C4-grammatica is functioneel en beperkt, dus herhaling met variatie ondersteunt
+> precies de spreading/retrieval-principes (§14). Ook *woordenschat-patroon* (nog 5) slinkt → zelfde
+> recyclingregel vanaf ±U10.
+
+> 🔍 **Audit-correctie 2026-07-29 (belangrijk voor de C4/C5-grens).** Bij een controle bleek dat in de
+> kolommen U3–U7 dertien items waren aangevinkt die in dit grootboek als **✗ = C5/C6-only** staan
+> (systeem-grammatica: *Vervoegingswiel*, *Werkwoordsvorming als visuele machine*, *Grammatica als
+> bouwstroken/infographic*, *Interactieve tijdlijn*, *Sleepbare woordvolgorde*, *Tijdlijnkoppeling* …).
+> Die vinkjes zijn **verwijderd** en vervangen door C4-geschikte (✓/~) items met dezelfde didactische
+> functie (o.a. VG-021 *Lidwoorden via visuele zoom* voor un/una in U5, VG-012 *Beslisboom* voor hay/está
+> in U6, VG-014 *Zinsframe* in U3, VG-024 *Regelkaart* in U4). De **gebouwde cursusinhoud is niet
+> gewijzigd**: die respecteerde de grens al (functionele uitleg, chunks, géén paradigma's — bv.
+> trabajo/trabajas/trabaja en quedamos staan expliciet als *chunks* gelabeld). Enkel de **ID-boekhouding**
+> was fout. Controle-invariant sindsdien: **geen enkel ✗-item mag in een unit-kolom aangevinkt staan.**
 
 
 ## designcomponent
@@ -101,8 +115,8 @@
 | DS-014 | Oefeningnummer | ✓ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
 | DS-015 | Vaardigheidsiconen | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |
 | DS-016 | Leerdoelenkaart | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |
-| DS-017 | Grammaticakaart | ~ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| DS-018 | Woordenschatkaart | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| DS-017 | Grammaticakaart | ~ |  |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |
+| DS-018 | Woordenschatkaart | ✓ |  |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |
 | DS-019 | Spreekhulpkaart | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | DS-020 | Schrijfhulpkaart | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | DS-021 | Strategiekaart | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
@@ -125,13 +139,13 @@
 | DS-038 | Post-its en notitiekaarten | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
 | DS-039 | Stickers en labels | ✓ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
 | DS-040 | Invulzones | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |
-| DS-041 | Schaduwen | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| DS-041 | Schaduwen | ✓ |  |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |
 | DS-042 | Hoekafronding | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | DS-043 | Compositie A — Beeld links, opdrachten rechts | ✓ | ✓ | ✓ | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |
 | DS-044 | Compositie B — Brede bron bovenaan, verwerking | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
 | DS-045 | Compositie C — Drie kaarten naast elkaar | ✓ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
 | DS-046 | Compositie D — Centrale illustratie met labels | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |
-| DS-047 | Compositie E — Fotocollage | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| DS-047 | Compositie E — Fotocollage | ✓ |  |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |
 | DS-048 | Compositie F — Rustige oefenpagina | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | DS-049 | Compositie G — Route of tijdlijn | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | DS-050 | Compositie H — Dashboard | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
@@ -142,36 +156,36 @@
 |---|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | VG-001 | Grammatica ontdekken in een beeldsituatie | ✓ | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |
 | VG-002 | Kleurgecodeerde zinsdelen | ~ |  |  | ✓ |  |  |  |  |  |  |  |  |  |  |  |
-| VG-003 | Grammatica als bouwstroken | ✗ |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |  |
-| VG-004 | Werkwoordsvorming als visuele machine | ✗ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
-| VG-005 | Vervoegingswiel | ✗ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
+| VG-003 | Grammatica als bouwstroken | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| VG-004 | Werkwoordsvorming als visuele machine | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| VG-005 | Vervoegingswiel | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | VG-006 | Persoonsvormen via terugkerende personages | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | VG-007 | Grammatica via een miniverhaal | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | VG-008 | Tijdlijnen | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| VG-009 | Voor-en-na-transformatie | ~ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| VG-009 | Voor-en-na-transformatie | ~ |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |  |
 | VG-010 | Overeenkomst zichtbaar maken | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | VG-011 | Grammaticale paren | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| VG-012 | Beslisboom | ~ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| VG-012 | Beslisboom | ~ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
 | VG-013 | Grammatica als routekaart | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| VG-014 | Zinsframe met invulplaatsen | ~ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| VG-014 | Zinsframe met invulplaatsen | ~ |  |  | ✓ |  |  |  |  |  |  |  |  |  |  |  |
 | VG-015 | Grammaticapuzzel | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | VG-016 | Vraag en antwoord als spiegel | ✓ | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |
-| VG-017 | Grammatica via stripverhaal | ✗ |  |  | ✓ |  |  |  |  |  |  |  |  |  |  |  |
-| VG-018 | Grammatica als infographic | ✗ |  |  |  | ✓ |  |  | ✓ |  |  |  |  |  |  |  |
-| VG-019 | Betekenisverschil als fotopaar | ~ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
-| VG-020 | Beweging en richting visualiseren | ✗ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
-| VG-021 | Lidwoorden via visuele zoom | ~ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| VG-017 | Grammatica via stripverhaal | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| VG-018 | Grammatica als infographic | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| VG-019 | Betekenisverschil als fotopaar | ~ |  |  |  |  | ✓ |  |  | ✓ |  |  |  |  |  |  |
+| VG-020 | Beweging en richting visualiseren | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| VG-021 | Lidwoorden via visuele zoom | ~ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
 | VG-022 | Voornaamwoorden als vervangingskaart | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | VG-023 | Plaatsing als visuele rails | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| VG-024 | Regelkaart met drie lagen | ~ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| VG-024 | Regelkaart met drie lagen | ~ |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |  |
 | VG-025 | De regel in één zin | ✓ | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |
 | VG-026 | Uitzonderingen als waarschuwing | ~ |  |  | ✓ | ✓ |  |  | ✓ |  |  |  |  |  |  |  |
-| VG-027 | Foutenkliniek | ~ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
-| VG-028 | Grammaticale röntgenfoto | ✗ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
+| VG-027 | Foutenkliniek | ~ |  |  |  |  | ✓ |  |  | ✓ |  |  |  |  |  |  |
+| VG-028 | Grammaticale röntgenfoto | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | VG-029 | Van veel steun naar weinig steun | ✓ | ✓ | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |  |
-| VG-030 | Grammatica onmiddellijk laten spreken | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| VG-030 | Grammatica onmiddellijk laten spreken | ✓ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
 | VG-031 | Digitale grammatica-interacties | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |
-| VG-032 | Wat beter wordt vermeden | ~ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| VG-032 | Wat beter wordt vermeden | ~ |  |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |
 | VG-033 | Sterke dubbele grammaticapagina | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | VG-034 | Herbruikbare grammaticacomponenten voor Claude | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | VG-035 | Sterkste combinatie voor grammatica | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
@@ -181,21 +195,21 @@
 | ID | Item | C4? | U1 | U2 | U3 | U4 | U5 | U6 | U7 | U8 | U9 | U10 | U11 | U12 | U13 | U14 |
 |---|---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 | GT-001 | Kleurgecodeerde voorbeeldzin | ~ | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |
-| GT-002 | Stap-voor-stap-zinsopbouw | ✗ |  |  | ✓ |  |  |  |  |  |  |  |  |  |  |  |
-| GT-003 | Interactieve tijdlijn | ✗ |  |  |  | ✓ |  |  | ✓ |  |  |  |  |  |  |  |
-| GT-004 | Voor-en-na-transformatie | ~ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
+| GT-002 | Stap-voor-stap-zinsopbouw | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| GT-003 | Interactieve tijdlijn | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| GT-004 | Voor-en-na-transformatie | ~ |  |  |  |  | ✓ |  |  | ✓ |  |  |  |  |  |  |
 | GT-005 | Klikbare grammaticale bouwstenen | ✓ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
 | GT-006 | Grammaticale röntgenfoto | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | GT-007 | Geanimeerde uitgangswissel | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | GT-008 | Interactieve vervoegingscirkel | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| GT-009 | Patroonzoeker | ~ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| GT-009 | Patroonzoeker | ~ |  |  | ✓ |  |  |  |  |  |  |  |  |  |  |  |
 | GT-010 | Regelgenerator | ~ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | GT-011 | Minimale contrastparen | ✓ | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |
 | GT-012 | Betekenisschuifregelaar | ✓ |  |  | ✓ |  |  |  |  |  |  |  |  |  |  |  |
-| GT-013 | Contextkaarten | ~ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| GT-013 | Contextkaarten | ~ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
 | GT-014 | Grammaticale strip | ✓ |  |  |  | ✓ |  |  | ✓ |  |  |  |  |  |  |  |
-| GT-015 | Keuze met zichtbaar betekenisverschil | ✓ | ✓ |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
-| GT-016 | Sleepbare woordvolgorde | ✗ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
+| GT-015 | Keuze met zichtbaar betekenisverschil | ✓ | ✓ |  |  |  | ✓ |  |  | ✓ |  |  |  |  |  |  |
+| GT-016 | Sleepbare woordvolgorde | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | GT-017 | Grammaticale machine | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | GT-018 | Foutenvergrootglas | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | GT-019 | Domino van grammaticale relaties | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
@@ -238,13 +252,13 @@
 | LAY-026 | Uitdagingkader | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
 | LAY-027 | Hulpkader | ✓ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
 | LAY-028 | Zelfevaluatiekader | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |
-| LAY-029 | Misvatting versus correcte vorm | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| LAY-029 | Misvatting versus correcte vorm | ✓ |  |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |
 | LAY-030 | Opdrachtkaart met vaste structuur | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | LAY-031 | Personage-avatar naast dialogen | ✓ | ✓ | ✓ | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |
 | LAY-032 | Personagekleur | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
 | LAY-033 | Mini-personagekaart | ✓ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
 | LAY-034 | Reactieportretten | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |
-| LAY-035 | Personage als paginagids | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| LAY-035 | Personage als paginagids | ✓ |  |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |
 | LAY-036 | Chatvensters | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | LAY-037 | Socialmediakaart | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | LAY-038 | Visuele groepschat | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
@@ -309,8 +323,8 @@
 | PPT-042 | Schrijfopdracht die zichzelf opbouwt | ✓ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
 | PPT-043 | Peerfeedbackpaneel | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |
 | PPT-044 | Opnemen, vergelijken en hernemen | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |
-| PPT-045 | Vier-vaardighedenmissie | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| PPT-046 | Geanimeerde routekaart | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| PPT-045 | Vier-vaardighedenmissie | ✓ |  |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |
+| PPT-046 | Geanimeerde routekaart | ✓ |  |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |
 | PPT-047 | Culturele fotoverkenning met zoom | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | PPT-048 | Interactief 3D-object | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | PPT-049 | Microfilms met GIF, schermopname en Ink Replay | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
@@ -340,7 +354,7 @@
 | SK-018 | Juist, fout en bewijs | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
 | SK-019 | Vraag en bewijs koppelen | ✓ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
 | SK-020 | Betekenis uit context afleiden | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |
-| SK-021 | Informatieraster invullen | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| SK-021 | Informatieraster invullen | ✓ |  |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |
 | SK-022 | Jigsaw reading | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | SK-023 | De beste optie kiezen | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | SK-024 | Tekst samenvatten met steun | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
@@ -383,19 +397,19 @@
 | SK-061 | Luisteren en aanwijzen | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
 | SK-062 | Luisteren en kiezen | ✓ | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
 | SK-063 | Sprekers herkennen | ✓ |  | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |  |
-| SK-064 | Luisteren en ordenen | ✓ |  |  | ✓ |  |  |  |  |  |  |  |  |  |  |  |
+| SK-064 | Luisteren en ordenen | ✓ |  |  | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |
 | SK-065 | Globale vraag beantwoorden | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | SK-066 | Informatie aanvinken | ✓ |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |  |
 | SK-067 | Informatieraster invullen | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
 | SK-068 | Route tekenen | ✓ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
 | SK-069 | Handeling uitvoeren | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |
-| SK-070 | Foute informatie verbeteren | ✓ |  |  | ✓ |  |  |  |  |  |  |  |  |  |  |  |
+| SK-070 | Foute informatie verbeteren | ✓ |  |  | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |
 | SK-071 | Selectief gatendictee | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | SK-072 | Microdictogloss | ✓ |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |  |
 | SK-073 | Notities maken | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
 | SK-074 | Mondeling of schriftelijk reageren | ✓ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
 | SK-075 | Luistertransfer | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |
-| SK-076 | Audio- of videomodel | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| SK-076 | Audio- of videomodel | ✓ |  |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |
 | SK-077 | Dialoogkaart | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | SK-078 | Functioneel taalpalet | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | SK-079 | Spreekframe | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
@@ -403,7 +417,7 @@
 | SK-081 | Model en variatie | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
 | SK-082 | Turn-taking zichtbaar maken | ✓ | ✓ | ✓ |  |  |  | ✓ |  |  |  |  |  |  |  |  |
 | SK-083 | Voorbereiding vóór spreken | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |
-| SK-084 | Herhaling met nieuwe inhoud | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| SK-084 | Herhaling met nieuwe inhoud | ✓ |  |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |
 | SK-085 | Opname, feedback en herneming | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | SK-086 | Luister en herhaal | ✓ | ✓ | ✓ | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |
 | SK-087 | Klankdiscriminatie en productie | ✓ | ✓ | ✓ | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |
@@ -419,10 +433,10 @@
 | SK-097 | Vertakkende dialoog | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |
 | SK-098 | Gescripte digitale gesprekspartner | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |
 | SK-099 | Informatiekloof met A- en B-versie | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |
-| SK-100 | Beschrijf en raad | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| SK-101 | Visuele verhaalverteller | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| SK-102 | Eén-minuutspreker | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| SK-103 | 4/3/2-spreekmodule | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| SK-100 | Beschrijf en raad | ✓ |  |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |
+| SK-101 | Visuele verhaalverteller | ✓ |  |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |
+| SK-102 | Eén-minuutspreker | ✓ |  |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |
+| SK-103 | 4/3/2-spreekmodule | ✓ |  |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |
 | SK-104 | Spraakbericht | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | SK-105 | Minipresentatie | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | SK-106 | Opinielijn | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
@@ -439,7 +453,7 @@
 | SK-117 | Keten 5 — Schrijven naar spreken | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
 | SK-118 | Keten 6 — Spreken naar schrijven | ✓ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
 | SK-119 | Keten 7 — Lezen, luisteren en bemiddelen | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |
-| SK-120 | Keten 8 — Volledige eindtaak | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| SK-120 | Keten 8 — Volledige eindtaak | ✓ |  |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |
 
 ## werkvorm
 
@@ -460,7 +474,7 @@
 | WV-013 | Afbeelding naar woord | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
 | WV-014 | Eerste-lettersteun | ✓ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
 | WV-015 | Onvolledige woorden | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |
-| WV-016 | Lettergreeppuzzel | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| WV-016 | Lettergreeppuzzel | ✓ |  |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |
 | WV-017 | Omgekeerde flashcards | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | WV-018 | Geheugenraster | ✓ |  | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |
 | WV-019 | Categorie uit het hoofd aanvullen | ✓ |  |  | ✓ |  |  |  |  |  |  |  |  |  |  |  |
@@ -469,7 +483,7 @@
 | WV-022 | Substitutietabel | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
 | WV-023 | Collocatiedomino | ✓ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
 | WV-024 | Woordchips naar zin | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |
-| WV-025 | Verplichte-woorden-zin | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| WV-025 | Verplichte-woorden-zin | ✓ | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |
 | WV-026 | Zin bij een afbeelding | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | WV-027 | Onderschrift schrijven | ✓ |  | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |
 | WV-028 | Mini-dictee met reconstructie | ✓ |  |  | ✓ |  |  |  |  |  |  |  |  |  |  |  |
@@ -478,13 +492,13 @@
 | WV-031 | Informatiekloof met afbeeldingen | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
 | WV-032 | Beschrijf en kies | ✓ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
 | WV-033 | Teken wat je hoort | ✓ |  | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |  |
-| WV-034 | Licht taboespel | ✓ |  |  | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |
+| WV-034 | Licht taboespel | ✓ |  |  | ✓ | ✓ |  |  |  | ✓ |  |  |  |  |  |  |
 | WV-035 | Raad het woord met ja-neevragen | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
 | WV-036 | Dialoogmenu | ✓ | ✓ | ✓ |  |  |  | ✓ |  |  |  |  |  |  |  |  |
 | WV-037 | Rollenkaarten | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |
-| WV-038 | Klasenquête | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| WV-038 | Klasenquête | ✓ |  |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |
 | WV-039 | Zoek iemand die… | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| WV-040 | Rangschikkingstaak | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| WV-040 | Rangschikkingstaak | ✓ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
 | WV-041 | Inpak- of winkelmandopdracht | ✓ |  |  | ✓ |  |  |  |  |  |  |  |  |  |  |  |
 | WV-042 | Probleemoplossende missie | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | WV-043 | Fotoreeks vertellen | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
@@ -492,16 +506,16 @@
 | WV-045 | 4/3/2-spreektaak | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
 | WV-046 | Persoonlijk verhaal | ✓ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
 | WV-047 | Spraakbericht | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |
-| WV-048 | Sociaal bericht of microblog | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| WV-048 | Sociaal bericht of microblog | ✓ |  |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |
 | WV-049 | Leerling als woordexpert | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | WV-050 | Uitgestelde transfertaak | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | WV-051 | Input flood | ~ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | WV-052 | Gemarkeerde voorbeelden | ~ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | WV-053 | Vorm aan betekenis koppelen | ✓ | ✓ | ✓ | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |
 | WV-054 | Zin aan afbeelding koppelen | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
-| WV-055 | Tijdlijnkoppeling | ✗ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
+| WV-055 | Tijdlijnkoppeling | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | WV-056 | Voorbeeld of niet-voorbeeld | ~ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |
-| WV-057 | Betekenisverschil kiezen | ~ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| WV-057 | Betekenisverschil kiezen | ~ |  |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |
 | WV-058 | Grammaticale speurtocht | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | WV-059 | Patroon sorteren | ~ | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | WV-060 | Regelhypothese | ✗ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
@@ -560,7 +574,7 @@
 | VS-008 | Woordfamilies als bouwstenen | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
 | VS-009 | Semantische ladders | ✓ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
 | VS-010 | Plattegrond met woordenschat | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |
-| VS-011 | Woordenschat via personages | ✓ |  | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |
+| VS-011 | Woordenschat via personages | ✓ |  | ✓ |  |  |  |  |  | ✓ |  |  |  |  |  |  |
 | VS-012 | Object met uitklaplabels | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | VS-013 | Visuele collocaties | ✓ |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
 | VS-014 | Woordenschat als kast, lade of koffer | ✓ |  |  | ✓ |  |  |  |  |  |  |  |  |  |  |  |
@@ -568,8 +582,8 @@
 | VS-016 | Voor-en-na-afbeeldingen | ✓ |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |  |
 | VS-017 | Infographic | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
 | VS-018 | Woordenschat als menukaart | ✓ |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |
-| VS-019 | Verborgen vertaling | ✓ | ✓ | ✓ | ✓ | ✓ |  |  |  |  |  |  |  |  |  |  |
+| VS-019 | Verborgen vertaling | ✓ | ✓ | ✓ | ✓ | ✓ |  |  |  | ✓ |  |  |  |  |  |  |
 | VS-020 | Persoonlijke woordenschatruimte | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
 | VS-021 | Sterke dubbele woordenschatpagina | ✓ |  |  |  |  | ✓ |  |  |  |  |  |  |  |  |  |
-| VS-022 | Herbruikbare woordenschatcomponenten voor Clau | ✓ |  |  | ✓ |  |  | ✓ |  |  |  |  |  |  |  |  |
+| VS-022 | Herbruikbare woordenschatcomponenten voor Clau | ✓ |  |  | ✓ |  |  | ✓ |  | ✓ |  |  |  |  |  |  |
 | VS-023 | Sterkste combinatie voor woordenschat | ✓ |  |  |  |  |  |  | ✓ |  |  |  |  |  |  |  |

@@ -35,7 +35,7 @@ Gastheer = de sitcom-cast (Julio · María · Fernando · Josefina) + de mochila
 | **Escucha** (video + meelees-transcript) | DS-043 · LAY-031 · DS-037 · SK-060 · **SK-064** (luisteren: ¿de qué país?) · **SK-070** (nota los gentilicios) · PPT-032 | luisteren → gentilicio auditief |
 | **Kit de supervivencia** | VS-003 · VS-007 · VS-019 · DS-007 · **VS-014** (woordfamilie país↔gentilicio↔idioma) · **VS-022** (mapa-woordveld) | woordenschat als netwerk op de kaart |
 | **Práctica** (receptief→productief) | **WV-010** (clasifica país/gentilicio/idioma) · WV-053 · **WV-019** (relaciona país↔gentilicio) · **WV-028** (completa «soy de ___ / soy ___») · **WV-034** (m↔v gentilicio omzetten) · **WV-041** (info-gap ¿de dónde es?) · LAY-046 | afbouwende steun |
-| **Gramática en la práctica** (functioneel) | VG-002 (fíjate: soy **de**+país ≠ soy+gentilicio) · VG-017 (vraag-antwoord spiegel ¿de dónde eres?→soy de) · VG-026 (regel in één zin: -o/-a, -és/-esa) · VG-029 (afbouw) · GT-002 (kleurcode: persoon soy · plaats de+país) · **GT-012** (contrast país↔gentilicio) | *ser de + país* · *gentilicio m/v* **functioneel** (herkennen/vaste vormen, géén paradigma) |
+| **Gramática en la práctica** (functioneel) | VG-002 (fíjate: soy **de**+país ≠ soy+gentilicio) · VG-014 (vraag-antwoord spiegel ¿de dónde eres?→soy de) · VG-026 (regel in één zin: -o/-a, -és/-esa) · VG-029 (afbouw) · GT-009 (kleurcode: persoon soy · plaats de+país) · **GT-012** (contrast país↔gentilicio) | *ser de + país* · *gentilicio m/v* **functioneel** (herkennen/vaste vormen, géén paradigma) |
 | **Uitspraak** «Suena bien» | DS-009 · SK-080 · SK-086 · SK-087 · SK-088 · PPT-037/038 | matrix A: ñ + c/z + aguda (-dad/-és) |
 | **Tarea final** «Mi mapa · ¿de dónde eres?» | **SK-090** (presentar en la clase) · SK-116 (keten luisteren→interactie) · mapa-artefact (3 personen op de kaart: X es de… y habla…) | communicatief: eigen mini-kaart + presenteren |
 | **Cultura / Banda sonora** | LAY-025 · DS-010 · banda_block("nacionalidades") | el mundo hispano (21 países, kaart-tab) + muziek |
@@ -71,3 +71,8 @@ la nacionalidad (gentilicio m/v) · los idiomas (hablar) · países del mundo hi
 Nieuw eerste gebruik in U3: SK-013 · SK-064 · SK-070 · VS-014 · VS-022 · WV-010 · WV-019 · WV-028 · WV-034 · WV-041 · SK-090 · GT-012
 → **±12 nieuwe ✓-items** (+ terugkeer van de U1/U2-uitspraak-/chunk-laag als spaced recycling).
 *(Grammatica gebruikt enkel functionele ✓/~-items — soy de+país / gentilicio m-v zónder systeem-items zoals het ser-paradigma, dat → C5.)*
+
+> **Correctie (audit 2026-07-29):** enkele reservoir-IDs in deze receta verwezen naar items die in
+> `C4_coverage.md` als **✗ (C5/C6-only: systeem-grammatica)** staan. Ze zijn vervangen door
+> C4-geschikte (✓/~) items die dezelfde didactische functie dekken. De **gebouwde inhoud** is niet
+> gewijzigd — die respecteerde de C4-grens al (functioneel, chunks, géén paradigma's).

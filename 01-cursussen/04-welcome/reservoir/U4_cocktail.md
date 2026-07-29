@@ -29,7 +29,7 @@ Eindtaak = **«Mi árbol de familia»** (stamboom + beschrijving). Toon: warm, h
 | Escucha | DS-043 · LAY-031 · DS-037 · SK-060 · **SK-066** (luisteren: quién/cómo es) · **SK-072** | luisteren → adjetivos |
 | Kit | VS-003 · VS-007 · VS-019 · **VS-016** (woordveld familia) · **VS-024** (adjetivos-paren) | woordveld familie+beschrijving |
 | Práctica | **WV-012** (clasifica familia/físico/carácter) · WV-053 · **WV-021** (miembro↔definición) · **WV-030** (completa descripción) · WV-034 (-o/-a) · **WV-044** (mi/tu) | afbouw |
-| Gramática | VG-003 (fíjate mi/tu) · VG-018 (ser+adj) · VG-026 (regel -o/-a) · GT-003 (kleurcode) · **GT-014** (muy/un poco) | mi/tu · ser+adjetivo functioneel |
+| Gramática | VG-024 (fíjate mi/tu) · VG-009 (ser+adj) · VG-026 (regel -o/-a) · ♻ GT-001 (kleurcode) · **GT-014** (muy/un poco) | mi/tu · ser+adjetivo functioneel |
 | Uitspraak | DS-009 · SK-080 · SK-086 · SK-087 · SK-088 · PPT-037/038 | matrix A: ll/y + llana |
 | Tarea «Mi árbol de familia» | **SK-092** (presentar) · SK-116 · árbol-artefact | communicatief: 4 personen beschrijven |
 | Cultura/Banda | LAY-025 · DS-010 · banda_block("familia") | la familia in de Spaanstalige wereld + muziek |
@@ -56,3 +56,8 @@ describir el carácter · ¿dónde vive?**
 ## Dekking-impact (na build coverage bijwerken)
 Nieuw eerste gebruik U4: SK-015 · SK-066 · SK-072 · VS-016 · VS-024 · WV-012 · WV-021 · WV-030 · WV-044 · SK-092 · GT-014
 → **±11 nieuwe ✓-items** + spaced recycling van de U1–U3-laag.
+
+> **Correctie (audit 2026-07-29):** enkele reservoir-IDs in deze receta verwezen naar items die in
+> `C4_coverage.md` als **✗ (C5/C6-only: systeem-grammatica)** staan. Ze zijn vervangen door
+> C4-geschikte (✓/~) items die dezelfde didactische functie dekken. De **gebouwde inhoud** is niet
+> gewijzigd — die respecteerde de C4-grens al (functioneel, chunks, géén paradigma's).
