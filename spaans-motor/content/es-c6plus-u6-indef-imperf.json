@@ -1,0 +1,124 @@
+{
+  "id": "es-c6plus-u6-indef-imperf",
+  "title": "¿indefinido o imperfecto?",
+  "subtitle": "U6 · afgerond feit of achtergrond/gewoonte?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Is het een afgerond feit (indefinido) of achtergrond/gewoonte (imperfecto)?",
+    "categories": [
+      {
+        "id": "indef",
+        "label": "indefinido<br><small>un día, de repente</small>",
+        "glaze": "#8B5E9E"
+      },
+      {
+        "id": "imperf",
+        "label": "imperfecto<br><small>siempre, era, jugaba</small>",
+        "glaze": "#2FA8A0"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "De pequeño jugaba en la calle.",
+        "answer": "imperf",
+        "tag": "imperf",
+        "sub": "gewoonte"
+      },
+      {
+        "stimulus": "Un día empezó a llover.",
+        "answer": "indef",
+        "tag": "indef",
+        "sub": "un día → feit"
+      },
+      {
+        "stimulus": "Era de noche y llovía.",
+        "answer": "imperf",
+        "tag": "imperf",
+        "sub": "decor"
+      },
+      {
+        "stimulus": "De repente, sonó el teléfono.",
+        "answer": "indef",
+        "tag": "indef",
+        "sub": "de repente → feit"
+      },
+      {
+        "stimulus": "Siempre íbamos al parque.",
+        "answer": "imperf",
+        "tag": "imperf",
+        "sub": "siempre → gewoonte"
+      },
+      {
+        "stimulus": "Ayer llegó mi abuela.",
+        "answer": "indef",
+        "tag": "indef",
+        "sub": "ayer + feit"
+      },
+      {
+        "stimulus": "Mi casa era de adobe.",
+        "answer": "imperf",
+        "tag": "imperf",
+        "sub": "beschrijving"
+      },
+      {
+        "stimulus": "En 2010 nació mi hermano.",
+        "answer": "indef",
+        "tag": "indef",
+        "sub": "en 2010 → feit"
+      },
+      {
+        "stimulus": "Todos los días comía pan.",
+        "answer": "imperf",
+        "tag": "imperf",
+        "sub": "gewoonte"
+      },
+      {
+        "stimulus": "Entonces ganó el partido.",
+        "answer": "indef",
+        "tag": "indef",
+        "sub": "feit"
+      },
+      {
+        "stimulus": "Tenía cinco años.",
+        "answer": "imperf",
+        "tag": "imperf",
+        "sub": "beschrijving (leeftijd)"
+      },
+      {
+        "stimulus": "Un día fuimos al circo.",
+        "answer": "indef",
+        "tag": "indef",
+        "sub": "un día → feit"
+      },
+      {
+        "stimulus": "Mi abuela era muy amable.",
+        "answer": "imperf",
+        "tag": "imperf",
+        "sub": "beschrijving"
+      },
+      {
+        "stimulus": "De repente, alguien gritó.",
+        "answer": "indef",
+        "tag": "indef",
+        "sub": "feit"
+      },
+      {
+        "stimulus": "A menudo visitaba a mis primos.",
+        "answer": "imperf",
+        "tag": "imperf",
+        "sub": "gewoonte"
+      },
+      {
+        "stimulus": "Aquel día conocí a Nina.",
+        "answer": "indef",
+        "tag": "indef",
+        "sub": "aquel día → feit"
+      }
+    ]
+  }
+}

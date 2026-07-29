@@ -1,0 +1,206 @@
+{
+  "id": "es-c6plus-u4-senala",
+  "title": "Señala",
+  "subtitle": "U4 · klik het juiste antwoord",
+  "lang": "es",
+  "template": "point",
+  "options": {
+    "audio": false
+  },
+  "point": {
+    "prompt": "Klik het gevraagde item",
+    "mode": "one",
+    "rounds": [
+      {
+        "tag": "viaje",
+        "sub": "señala un transporte",
+        "targets": [
+          {
+            "label": "el avión",
+            "hit": true
+          },
+          {
+            "label": "la playa"
+          },
+          {
+            "label": "el hotel"
+          },
+          {
+            "label": "la llave"
+          }
+        ]
+      },
+      {
+        "tag": "viaje",
+        "sub": "señala un alojamiento",
+        "targets": [
+          {
+            "label": "el hostal",
+            "hit": true
+          },
+          {
+            "label": "el billete"
+          },
+          {
+            "label": "el museo"
+          },
+          {
+            "label": "la maleta"
+          }
+        ]
+      },
+      {
+        "tag": "part",
+        "sub": "hacer → participio",
+        "targets": [
+          {
+            "label": "hecho",
+            "hit": true
+          },
+          {
+            "label": "hacido"
+          },
+          {
+            "label": "hacho"
+          },
+          {
+            "label": "hació"
+          }
+        ]
+      },
+      {
+        "tag": "part",
+        "sub": "ver → participio",
+        "targets": [
+          {
+            "label": "visto",
+            "hit": true
+          },
+          {
+            "label": "veído"
+          },
+          {
+            "label": "vido"
+          },
+          {
+            "label": "veyó"
+          }
+        ]
+      },
+      {
+        "tag": "perfecto",
+        "sub": "«ik heb gereisd» = ?",
+        "targets": [
+          {
+            "label": "he viajado",
+            "hit": true
+          },
+          {
+            "label": "tengo viajado"
+          },
+          {
+            "label": "he viajar"
+          },
+          {
+            "label": "has viajado"
+          }
+        ]
+      },
+      {
+        "tag": "porpara",
+        "sub": "«Salgo ___ Chile»",
+        "targets": [
+          {
+            "label": "para",
+            "hit": true
+          },
+          {
+            "label": "por"
+          },
+          {
+            "label": "de"
+          },
+          {
+            "label": "en"
+          }
+        ]
+      },
+      {
+        "tag": "porpara",
+        "sub": "«Viajo ___ avión»",
+        "targets": [
+          {
+            "label": "por",
+            "hit": true
+          },
+          {
+            "label": "para"
+          },
+          {
+            "label": "en"
+          },
+          {
+            "label": "a"
+          }
+        ]
+      },
+      {
+        "tag": "marcador",
+        "sub": "«nog niet» = ?",
+        "targets": [
+          {
+            "label": "todavía no",
+            "hit": true
+          },
+          {
+            "label": "ya"
+          },
+          {
+            "label": "siempre"
+          },
+          {
+            "label": "nunca"
+          }
+        ]
+      },
+      {
+        "tag": "part",
+        "sub": "volver → participio",
+        "targets": [
+          {
+            "label": "vuelto",
+            "hit": true
+          },
+          {
+            "label": "volvido"
+          },
+          {
+            "label": "vueltado"
+          },
+          {
+            "label": "volto"
+          }
+        ]
+      },
+      {
+        "tag": "viaje",
+        "sub": "«het ticket» = ?",
+        "targets": [
+          {
+            "label": "el billete",
+            "hit": true
+          },
+          {
+            "label": "la reserva"
+          },
+          {
+            "label": "la llave"
+          },
+          {
+            "label": "el equipaje"
+          }
+        ]
+      }
+    ]
+  }
+}

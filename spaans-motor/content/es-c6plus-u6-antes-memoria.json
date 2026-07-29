@@ -1,0 +1,64 @@
+{
+  "id": "es-c6plus-u6-antes-memoria",
+  "title": "Memoria: antes y ahora",
+  "subtitle": "U6 · koppel het woord aan de vertaling",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om: tiempo + vertaling",
+    "pairs": [
+      {
+        "a": "antes",
+        "b": "vroeger"
+      },
+      {
+        "a": "ahora",
+        "b": "nu"
+      },
+      {
+        "a": "ya no",
+        "b": "niet meer"
+      },
+      {
+        "a": "todavía",
+        "b": "nog steeds"
+      },
+      {
+        "a": "siempre",
+        "b": "altijd"
+      },
+      {
+        "a": "a menudo",
+        "b": "vaak"
+      },
+      {
+        "a": "feliz",
+        "b": "gelukkig"
+      },
+      {
+        "a": "tranquilo",
+        "b": "rustig"
+      },
+      {
+        "a": "diferente",
+        "b": "anders"
+      },
+      {
+        "a": "echar de menos",
+        "b": "missen"
+      },
+      {
+        "a": "la época",
+        "b": "het tijdperk"
+      },
+      {
+        "a": "el lugar",
+        "b": "de plek"
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "es-c6plus-u3-verbo-objeto",
+  "title": "Verbo y objeto",
+  "subtitle": "U3 · koppel de actie aan het juiste ding",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind het werkwoord met het logische object",
+    "pairs": [
+      {
+        "a": "subir",
+        "b": "un vídeo ⬆️"
+      },
+      {
+        "a": "descargar",
+        "b": "una app 📲"
+      },
+      {
+        "a": "cargar",
+        "b": "la batería 🔋"
+      },
+      {
+        "a": "chatear",
+        "b": "con un amigo 💬"
+      },
+      {
+        "a": "seguir",
+        "b": "a un artista ⭐"
+      },
+      {
+        "a": "mandar",
+        "b": "un mensaje ✉️"
+      },
+      {
+        "a": "hacer",
+        "b": "una videollamada 📹"
+      },
+      {
+        "a": "escribir",
+        "b": "la contraseña 🔑"
+      },
+      {
+        "a": "compartir",
+        "b": "una foto 🖼️"
+      },
+      {
+        "a": "apagar",
+        "b": "el móvil 🌙"
+      },
+      {
+        "a": "quedar",
+        "b": "en la plaza 📍"
+      },
+      {
+        "a": "ver",
+        "b": "una serie 📺"
+      }
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "id": "es-c6plus-u4-viaje-memoria",
+  "title": "Memoria del viaje",
+  "subtitle": "U4 · zoek het paar español ↔ nederlands",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om: viaje + vertaling",
+    "pairs": [
+      {
+        "a": "el avión",
+        "b": "het vliegtuig"
+      },
+      {
+        "a": "el tren",
+        "b": "de trein"
+      },
+      {
+        "a": "el billete",
+        "b": "het ticket"
+      },
+      {
+        "a": "la maleta",
+        "b": "de koffer"
+      },
+      {
+        "a": "el hotel",
+        "b": "het hotel"
+      },
+      {
+        "a": "la reserva",
+        "b": "de reservering"
+      },
+      {
+        "a": "la llave",
+        "b": "de sleutel"
+      },
+      {
+        "a": "la habitación",
+        "b": "de kamer"
+      },
+      {
+        "a": "el aeropuerto",
+        "b": "de luchthaven"
+      },
+      {
+        "a": "la estación",
+        "b": "het station"
+      },
+      {
+        "a": "el vuelo",
+        "b": "de vlucht"
+      },
+      {
+        "a": "la playa",
+        "b": "het strand"
+      },
+      {
+        "a": "la montaña",
+        "b": "de berg"
+      },
+      {
+        "a": "el equipaje",
+        "b": "de bagage"
+      }
+    ]
+  }
+}

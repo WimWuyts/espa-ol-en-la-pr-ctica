@@ -1,0 +1,191 @@
+{
+  "id": "es-c6plus-u3-plan-order",
+  "title": "Ordena la frase",
+  "subtitle": "U3 · zet de zin/het plan in de juiste volgorde",
+  "lang": "es",
+  "template": "order",
+  "options": {
+    "audio": false
+  },
+  "order": {
+    "prompt": "Tik in de logische volgorde",
+    "rounds": [
+      {
+        "tag": "futuro",
+        "sub": "ir a + infinitivo",
+        "items": [
+          {
+            "label": "Este finde",
+            "key": 1
+          },
+          {
+            "label": "voy a",
+            "key": 2
+          },
+          {
+            "label": "quedar",
+            "key": 3
+          },
+          {
+            "label": "con mis amigos.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "oi",
+        "sub": "le + verbo",
+        "items": [
+          {
+            "label": "Le",
+            "key": 1
+          },
+          {
+            "label": "escribo",
+            "key": 2
+          },
+          {
+            "label": "un mensaje",
+            "key": 3
+          },
+          {
+            "label": "a Diego.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "acabar",
+        "sub": "acabar de + infinitivo",
+        "items": [
+          {
+            "label": "Acabo",
+            "key": 1
+          },
+          {
+            "label": "de",
+            "key": 2
+          },
+          {
+            "label": "subir",
+            "key": 3
+          },
+          {
+            "label": "una foto.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "opinion",
+        "sub": "creo que + porque",
+        "items": [
+          {
+            "label": "Creo que",
+            "key": 1
+          },
+          {
+            "label": "las redes",
+            "key": 2
+          },
+          {
+            "label": "son útiles",
+            "key": 3
+          },
+          {
+            "label": "porque conectan.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "futuro",
+        "sub": "expresión de tiempo",
+        "items": [
+          {
+            "label": "Mañana",
+            "key": 1
+          },
+          {
+            "label": "Diego",
+            "key": 2
+          },
+          {
+            "label": "va a",
+            "key": 3
+          },
+          {
+            "label": "llamar a su abuela.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "plan",
+        "sub": "el plan del sábado",
+        "items": [
+          {
+            "label": "Primero voy a estudiar,",
+            "key": 1
+          },
+          {
+            "label": "después voy a quedar,",
+            "key": 2
+          },
+          {
+            "label": "luego vamos a comer",
+            "key": 3
+          },
+          {
+            "label": "y por la noche voy a descansar.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "oi",
+        "sub": "les + verbo",
+        "items": [
+          {
+            "label": "Les",
+            "key": 1
+          },
+          {
+            "label": "mando",
+            "key": 2
+          },
+          {
+            "label": "fotos",
+            "key": 3
+          },
+          {
+            "label": "a mis amigos.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "futuro",
+        "sub": "pregunta con ir a",
+        "items": [
+          {
+            "label": "¿Qué",
+            "key": 1
+          },
+          {
+            "label": "vas a",
+            "key": 2
+          },
+          {
+            "label": "hacer",
+            "key": 3
+          },
+          {
+            "label": "el fin de semana?",
+            "key": 4
+          }
+        ]
+      }
+    ]
+  }
+}

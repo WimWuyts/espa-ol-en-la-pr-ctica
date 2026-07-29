@@ -1,0 +1,214 @@
+{
+  "id": "es-c6plus-u7-imperativo",
+  "title": "Completa: el imperativo",
+  "subtitle": "U7 · da el consejo (tú)",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste imperativo (tú)",
+    "items": [
+      {
+        "stimulus": "___ (comer) más verdura.",
+        "options": [
+          "Come",
+          "Comes",
+          "Comer"
+        ],
+        "answer": "Come",
+        "tag": "im",
+        "sub": "comer → come"
+      },
+      {
+        "stimulus": "___ (beber) dos litros de agua.",
+        "options": [
+          "Bebe",
+          "Bebes",
+          "Beber"
+        ],
+        "answer": "Bebe",
+        "tag": "im",
+        "sub": "beber → bebe"
+      },
+      {
+        "stimulus": "___ (hacer) deporte.",
+        "options": [
+          "Haz",
+          "Hace",
+          "Haces"
+        ],
+        "answer": "Haz",
+        "tag": "im",
+        "sub": "hacer → haz ⭐"
+      },
+      {
+        "stimulus": "___ (dormir) ocho horas.",
+        "options": [
+          "Duerme",
+          "Dormes",
+          "Duermes"
+        ],
+        "answer": "Duerme",
+        "tag": "im",
+        "sub": "dormir → duerme"
+      },
+      {
+        "stimulus": "___ (reciclar) el plástico.",
+        "options": [
+          "Recicla",
+          "Reciclas",
+          "Reciclar"
+        ],
+        "answer": "Recicla",
+        "tag": "im",
+        "sub": "reciclar → recicla"
+      },
+      {
+        "stimulus": "___ (ahorrar) energía.",
+        "options": [
+          "Ahorra",
+          "Ahorras",
+          "Ahorrar"
+        ],
+        "answer": "Ahorra",
+        "tag": "im",
+        "sub": "ahorrar → ahorra"
+      },
+      {
+        "stimulus": "___ (ir) al médico.",
+        "options": [
+          "Ve",
+          "Va",
+          "Ir"
+        ],
+        "answer": "Ve",
+        "tag": "im",
+        "sub": "ir → ve ⭐"
+      },
+      {
+        "stimulus": "___ (ser) responsable con la basura.",
+        "options": [
+          "Sé",
+          "Ser",
+          "Eres"
+        ],
+        "answer": "Sé",
+        "tag": "im",
+        "sub": "ser → sé ⭐"
+      },
+      {
+        "stimulus": "___ (decir) siempre la verdad.",
+        "options": [
+          "Di",
+          "Dice",
+          "Dices"
+        ],
+        "answer": "Di",
+        "tag": "im",
+        "sub": "decir → di ⭐"
+      },
+      {
+        "stimulus": "___ (poner) la basura en su sitio.",
+        "options": [
+          "Pon",
+          "Pone",
+          "Pones"
+        ],
+        "answer": "Pon",
+        "tag": "im",
+        "sub": "poner → pon ⭐"
+      },
+      {
+        "stimulus": "___ (venir) al parque conmigo.",
+        "options": [
+          "Ven",
+          "Viene",
+          "Vienes"
+        ],
+        "answer": "Ven",
+        "tag": "im",
+        "sub": "venir → ven ⭐"
+      },
+      {
+        "stimulus": "___ (tener) cuidado con el sol.",
+        "options": [
+          "Ten",
+          "Tiene",
+          "Tienes"
+        ],
+        "answer": "Ten",
+        "tag": "im",
+        "sub": "tener → ten ⭐"
+      },
+      {
+        "stimulus": "___ (cuidar) tu salud.",
+        "options": [
+          "Cuida",
+          "Cuidas",
+          "Cuidar"
+        ],
+        "answer": "Cuida",
+        "tag": "im",
+        "sub": "cuidar → cuida"
+      },
+      {
+        "stimulus": "___ (evitar) el estrés.",
+        "options": [
+          "Evita",
+          "Evitas",
+          "Evitar"
+        ],
+        "answer": "Evita",
+        "tag": "im",
+        "sub": "evitar → evita"
+      },
+      {
+        "stimulus": "___ (proteger) los árboles.",
+        "options": [
+          "Protege",
+          "Proteges",
+          "Proteger"
+        ],
+        "answer": "Protege",
+        "tag": "im",
+        "sub": "proteger → protege"
+      },
+      {
+        "stimulus": "___ (salir) a caminar cada día.",
+        "options": [
+          "Sal",
+          "Sale",
+          "Sales"
+        ],
+        "answer": "Sal",
+        "tag": "im",
+        "sub": "salir → sal ⭐"
+      },
+      {
+        "stimulus": "___ (usar) el transporte público.",
+        "options": [
+          "Usa",
+          "Usas",
+          "Usar"
+        ],
+        "answer": "Usa",
+        "tag": "im",
+        "sub": "usar → usa"
+      },
+      {
+        "stimulus": "___ (apagar) las luces.",
+        "options": [
+          "Apaga",
+          "Apagas",
+          "Apagar"
+        ],
+        "answer": "Apaga",
+        "tag": "im",
+        "sub": "apagar → apaga"
+      }
+    ]
+  }
+}

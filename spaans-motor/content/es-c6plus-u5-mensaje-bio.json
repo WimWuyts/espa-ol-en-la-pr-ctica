@@ -1,0 +1,37 @@
+{
+  "id": "es-c6plus-u5-mensaje-bio",
+  "title": "Mensaje de voz: una biografía",
+  "subtitle": "U5 · neem een spraakbericht op",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "voicemessage",
+    "prompt": "Graba un mensaje de voz (30–40 s)",
+    "items": [
+      {
+        "text": "Cuenta la vida de una persona famosa (usa 3 veces el indefinido: nació, hizo, ganó/escribió).",
+        "cue": "una biografía",
+        "tag": "if",
+        "sub": "gebruik: nació en… · estudió… · escribió/ganó…",
+        "tip": "3× el indefinido (afgeronde feiten)? Neem opnieuw op."
+      },
+      {
+        "text": "Usa conectores para ordenar la vida (primero, después, entonces, al final).",
+        "cue": "conectores",
+        "tag": "conector",
+        "sub": "gebruik: primero… después… entonces… al final…",
+        "tip": "conectoren gebruikt? Herneem."
+      },
+      {
+        "text": "Da tu opinión sobre esa figura (creo que fue… porque…).",
+        "cue": "mi opinión",
+        "tag": "opinion",
+        "sub": "gebruik: creo que fue… porque… · lo más importante fue…",
+        "tip": "una opinión met «fue»? Herneem."
+      }
+    ]
+  }
+}

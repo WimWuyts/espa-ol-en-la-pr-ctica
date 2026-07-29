@@ -1,0 +1,72 @@
+{
+  "id": "es-c6plus-u7-salud-memoria",
+  "title": "Memoria de la salud",
+  "subtitle": "U7 · zoek het paar español ↔ nederlands",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om: salud + vertaling",
+    "pairs": [
+      {
+        "a": "la salud",
+        "b": "de gezondheid"
+      },
+      {
+        "a": "sano",
+        "b": "gezond"
+      },
+      {
+        "a": "enfermo",
+        "b": "ziek"
+      },
+      {
+        "a": "el cuerpo",
+        "b": "het lichaam"
+      },
+      {
+        "a": "el ejercicio",
+        "b": "de beweging"
+      },
+      {
+        "a": "dormir",
+        "b": "slapen"
+      },
+      {
+        "a": "descansar",
+        "b": "rusten"
+      },
+      {
+        "a": "la dieta",
+        "b": "de voeding"
+      },
+      {
+        "a": "el estrés",
+        "b": "de stress"
+      },
+      {
+        "a": "cuidarse",
+        "b": "voor zichzelf zorgen"
+      },
+      {
+        "a": "la fruta",
+        "b": "het fruit"
+      },
+      {
+        "a": "el consejo",
+        "b": "de tip"
+      },
+      {
+        "a": "evitar",
+        "b": "vermijden"
+      },
+      {
+        "a": "relajarse",
+        "b": "ontspannen"
+      }
+    ]
+  }
+}

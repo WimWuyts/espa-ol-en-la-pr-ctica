@@ -1,0 +1,57 @@
+{
+  "id": "es-c6plus-u5-repite-bio",
+  "title": "Escucha y repite: una biografía",
+  "subtitle": "U5 · escucha, repite y GRÁBATE",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "repeat",
+    "prompt": "Escucha ▶ · repite en voz alta · grábate ⏺",
+    "items": [
+      {
+        "text": "Nació en Argentina en 1987.",
+        "sub": "hij werd geboren in Argentinië in 1987",
+        "tag": "if",
+        "tip": "¡Bien! Ahora dilo sin leer."
+      },
+      {
+        "text": "De joven jugó en un equipo local.",
+        "sub": "als jongere speelde hij in een lokaal team",
+        "tag": "if"
+      },
+      {
+        "text": "Ganó muchos títulos.",
+        "sub": "hij won veel titels",
+        "tag": "if"
+      },
+      {
+        "text": "En 2022 fue campeón del Mundo.",
+        "sub": "in 2022 was hij wereldkampioen",
+        "tag": "if"
+      },
+      {
+        "text": "Frida pintó autorretratos famosos.",
+        "sub": "Frida schilderde beroemde zelfportretten",
+        "tag": "if"
+      },
+      {
+        "text": "El libro se lo di a Mateo.",
+        "sub": "het boek gaf ik aan Mateo",
+        "tag": "selo"
+      },
+      {
+        "text": "Primero estudió, después triunfó.",
+        "sub": "eerst studeerde hij, daarna slaagde hij",
+        "tag": "conector"
+      },
+      {
+        "text": "Creo que fue un genio.",
+        "sub": "ik denk dat hij een genie was",
+        "tag": "opinion"
+      }
+    ]
+  }
+}

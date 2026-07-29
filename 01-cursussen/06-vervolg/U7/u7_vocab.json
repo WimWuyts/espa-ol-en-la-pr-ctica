@@ -1,0 +1,380 @@
+[
+ {
+  "es": "la salud",
+  "nl": "de gezondheid",
+  "soort": "sust.",
+  "ej": "La salud es lo más importante.",
+  "grp": "salud"
+ },
+ {
+  "es": "sano/-a",
+  "nl": "gezond",
+  "soort": "adj.",
+  "ej": "Como muy sano.",
+  "grp": "salud"
+ },
+ {
+  "es": "enfermo/-a",
+  "nl": "ziek",
+  "soort": "adj.",
+  "ej": "Estoy enfermo hoy.",
+  "grp": "salud"
+ },
+ {
+  "es": "el cuerpo",
+  "nl": "het lichaam",
+  "soort": "sust.",
+  "ej": "Cuida tu cuerpo.",
+  "grp": "salud"
+ },
+ {
+  "es": "el ejercicio",
+  "nl": "de oefening/beweging",
+  "soort": "sust.",
+  "ej": "Hago ejercicio cada día.",
+  "grp": "salud"
+ },
+ {
+  "es": "descansar",
+  "nl": "rusten",
+  "soort": "verbo",
+  "ej": "Necesito descansar.",
+  "grp": "salud"
+ },
+ {
+  "es": "dormir",
+  "nl": "slapen",
+  "soort": "verbo",
+  "ej": "Duerme ocho horas.",
+  "grp": "salud"
+ },
+ {
+  "es": "la dieta",
+  "nl": "het dieet/voeding",
+  "soort": "sust.",
+  "ej": "Tengo una dieta sana.",
+  "grp": "salud"
+ },
+ {
+  "es": "el estrés",
+  "nl": "de stress",
+  "soort": "sust.",
+  "ej": "El estrés es malo para la salud.",
+  "grp": "salud"
+ },
+ {
+  "es": "cuidarse",
+  "nl": "voor zichzelf zorgen",
+  "soort": "verbo",
+  "ej": "¡Cuídate mucho!",
+  "grp": "salud"
+ },
+ {
+  "es": "la fruta",
+  "nl": "het fruit",
+  "soort": "sust.",
+  "ej": "Come más fruta.",
+  "grp": "salud"
+ },
+ {
+  "es": "el agua",
+  "nl": "het water",
+  "soort": "sust.",
+  "ej": "Bebe mucha agua.",
+  "grp": "salud"
+ },
+ {
+  "es": "el consejo",
+  "nl": "de raad/tip",
+  "soort": "sust.",
+  "ej": "Te doy un consejo.",
+  "grp": "consejos"
+ },
+ {
+  "es": "comer sano",
+  "nl": "gezond eten",
+  "soort": "expr.",
+  "ej": "Es importante comer sano.",
+  "grp": "consejos"
+ },
+ {
+  "es": "hacer deporte",
+  "nl": "sporten",
+  "soort": "expr.",
+  "ej": "Haz deporte tres veces por semana.",
+  "grp": "consejos"
+ },
+ {
+  "es": "beber agua",
+  "nl": "water drinken",
+  "soort": "expr.",
+  "ej": "Bebe agua a menudo.",
+  "grp": "consejos"
+ },
+ {
+  "es": "evitar",
+  "nl": "vermijden",
+  "soort": "verbo",
+  "ej": "Evita el azúcar.",
+  "grp": "consejos"
+ },
+ {
+  "es": "moverse",
+  "nl": "bewegen",
+  "soort": "verbo",
+  "ej": "Muévete más.",
+  "grp": "consejos"
+ },
+ {
+  "es": "relajarse",
+  "nl": "ontspannen",
+  "soort": "verbo",
+  "ej": "Relájate un poco.",
+  "grp": "consejos"
+ },
+ {
+  "es": "es importante",
+  "nl": "het is belangrijk",
+  "soort": "expr.",
+  "ej": "Es importante dormir bien.",
+  "grp": "consejos"
+ },
+ {
+  "es": "deberías",
+  "nl": "je zou moeten",
+  "soort": "expr.",
+  "ej": "Deberías descansar más.",
+  "grp": "consejos"
+ },
+ {
+  "es": "el medio ambiente",
+  "nl": "het milieu",
+  "soort": "sust.",
+  "ej": "Cuidamos el medio ambiente.",
+  "grp": "medioambiente"
+ },
+ {
+  "es": "el planeta",
+  "nl": "de planeet",
+  "soort": "sust.",
+  "ej": "Protege el planeta.",
+  "grp": "medioambiente"
+ },
+ {
+  "es": "la naturaleza",
+  "nl": "de natuur",
+  "soort": "sust.",
+  "ej": "Me gusta la naturaleza.",
+  "grp": "medioambiente"
+ },
+ {
+  "es": "reciclar",
+  "nl": "recyclen",
+  "soort": "verbo",
+  "ej": "Recicla el papel y el vidrio.",
+  "grp": "medioambiente"
+ },
+ {
+  "es": "la basura",
+  "nl": "het afval",
+  "soort": "sust.",
+  "ej": "No tires basura al suelo.",
+  "grp": "medioambiente"
+ },
+ {
+  "es": "contaminar",
+  "nl": "vervuilen",
+  "soort": "verbo",
+  "ej": "Los coches contaminan mucho.",
+  "grp": "medioambiente"
+ },
+ {
+  "es": "la contaminación",
+  "nl": "de vervuiling",
+  "soort": "sust.",
+  "ej": "Hay mucha contaminación.",
+  "grp": "medioambiente"
+ },
+ {
+  "es": "ahorrar",
+  "nl": "besparen",
+  "soort": "verbo",
+  "ej": "Ahorra agua y energía.",
+  "grp": "medioambiente"
+ },
+ {
+  "es": "la energía",
+  "nl": "de energie",
+  "soort": "sust.",
+  "ej": "Usa energía solar.",
+  "grp": "medioambiente"
+ },
+ {
+  "es": "proteger",
+  "nl": "beschermen",
+  "soort": "verbo",
+  "ej": "Debemos proteger los bosques.",
+  "grp": "medioambiente"
+ },
+ {
+  "es": "el árbol",
+  "nl": "de boom",
+  "soort": "sust.",
+  "ej": "Planta un árbol.",
+  "grp": "medioambiente"
+ },
+ {
+  "es": "el bosque",
+  "nl": "het bos",
+  "soort": "sust.",
+  "ej": "El bosque tropical es enorme.",
+  "grp": "medioambiente"
+ },
+ {
+  "es": "cuida",
+  "nl": "zorg (jij)",
+  "soort": "imper.",
+  "ej": "Cuida el planeta.",
+  "grp": "imperativo"
+ },
+ {
+  "es": "come",
+  "nl": "eet (jij)",
+  "soort": "imper.",
+  "ej": "Come más verdura.",
+  "grp": "imperativo"
+ },
+ {
+  "es": "bebe",
+  "nl": "drink (jij)",
+  "soort": "imper.",
+  "ej": "Bebe agua.",
+  "grp": "imperativo"
+ },
+ {
+  "es": "haz",
+  "nl": "doe/maak (jij)",
+  "soort": "imper.",
+  "ej": "Haz deporte.",
+  "grp": "imperativo"
+ },
+ {
+  "es": "ven",
+  "nl": "kom (jij)",
+  "soort": "imper.",
+  "ej": "Ven conmigo.",
+  "grp": "imperativo"
+ },
+ {
+  "es": "di",
+  "nl": "zeg (jij)",
+  "soort": "imper.",
+  "ej": "Dime la verdad.",
+  "grp": "imperativo"
+ },
+ {
+  "es": "sé",
+  "nl": "wees (jij)",
+  "soort": "imper.",
+  "ej": "Sé responsable.",
+  "grp": "imperativo"
+ },
+ {
+  "es": "recicla",
+  "nl": "recycle (jij)",
+  "soort": "imper.",
+  "ej": "Recicla siempre.",
+  "grp": "imperativo"
+ },
+ {
+  "es": "creo que",
+  "nl": "ik denk dat",
+  "soort": "expr.",
+  "ej": "Creo que es verdad.",
+  "grp": "opinar"
+ },
+ {
+  "es": "pienso que",
+  "nl": "ik vind dat",
+  "soort": "expr.",
+  "ej": "Pienso que debemos reciclar.",
+  "grp": "opinar"
+ },
+ {
+  "es": "en mi opinión",
+  "nl": "volgens mij",
+  "soort": "expr.",
+  "ej": "En mi opinión, el deporte es clave.",
+  "grp": "opinar"
+ },
+ {
+  "es": "me parece que",
+  "nl": "het lijkt me dat",
+  "soort": "expr.",
+  "ej": "Me parece que tienes razón.",
+  "grp": "opinar"
+ },
+ {
+  "es": "estoy de acuerdo",
+  "nl": "ik ben het eens",
+  "soort": "expr.",
+  "ej": "Estoy de acuerdo contigo.",
+  "grp": "opinar"
+ },
+ {
+  "es": "no estoy de acuerdo",
+  "nl": "ik ben het oneens",
+  "soort": "expr.",
+  "ej": "No estoy de acuerdo con eso.",
+  "grp": "opinar"
+ },
+ {
+  "es": "tener razón",
+  "nl": "gelijk hebben",
+  "soort": "expr.",
+  "ej": "Tienes razón.",
+  "grp": "opinar"
+ },
+ {
+  "es": "porque",
+  "nl": "omdat/want",
+  "soort": "conector",
+  "ej": "Reciclo porque es importante.",
+  "grp": "conectores"
+ },
+ {
+  "es": "además",
+  "nl": "bovendien",
+  "soort": "conector",
+  "ej": "Además, ahorra dinero.",
+  "grp": "conectores"
+ },
+ {
+  "es": "por eso",
+  "nl": "daarom",
+  "soort": "conector",
+  "ej": "Contamina; por eso está prohibido.",
+  "grp": "conectores"
+ },
+ {
+  "es": "sin embargo",
+  "nl": "echter",
+  "soort": "conector",
+  "ej": "Es caro; sin embargo, funciona.",
+  "grp": "conectores"
+ },
+ {
+  "es": "por un lado",
+  "nl": "enerzijds",
+  "soort": "conector",
+  "ej": "Por un lado es cómodo.",
+  "grp": "conectores"
+ },
+ {
+  "es": "por otro lado",
+  "nl": "anderzijds",
+  "soort": "conector",
+  "ej": "Por otro lado, contamina.",
+  "grp": "conectores"
+ }
+]

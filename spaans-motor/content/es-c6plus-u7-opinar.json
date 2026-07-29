@@ -1,0 +1,170 @@
+{
+  "id": "es-c6plus-u7-opinar",
+  "title": "Completa: opinar y conectar",
+  "subtitle": "U7 · mening + verbindingswoord",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies het juiste woord (mening / conector)",
+    "items": [
+      {
+        "stimulus": "___ que el deporte es importante.",
+        "options": [
+          "Creo",
+          "Creer",
+          "Creía"
+        ],
+        "answer": "Creo",
+        "tag": "op",
+        "sub": "creo que + indicativo"
+      },
+      {
+        "stimulus": "Reciclo ___ es importante.",
+        "options": [
+          "porque",
+          "por qué",
+          "porqué"
+        ],
+        "answer": "porque",
+        "tag": "con",
+        "sub": "porque = reden"
+      },
+      {
+        "stimulus": "Es sano; ___, es barato.",
+        "options": [
+          "además",
+          "porque",
+          "sin embargo"
+        ],
+        "answer": "además",
+        "tag": "con",
+        "sub": "además = toevoeging"
+      },
+      {
+        "stimulus": "El coche contamina; ___ voy en bici.",
+        "options": [
+          "por eso",
+          "porque",
+          "además"
+        ],
+        "answer": "por eso",
+        "tag": "con",
+        "sub": "por eso = gevolg"
+      },
+      {
+        "stimulus": "En mi ___, hay mucha basura.",
+        "options": [
+          "opinión",
+          "opino",
+          "opinar"
+        ],
+        "answer": "opinión",
+        "tag": "op",
+        "sub": "en mi opinión"
+      },
+      {
+        "stimulus": "Es caro; ___, funciona bien.",
+        "options": [
+          "sin embargo",
+          "por eso",
+          "además"
+        ],
+        "answer": "sin embargo",
+        "tag": "con",
+        "sub": "sin embargo = echter"
+      },
+      {
+        "stimulus": "___ de acuerdo contigo.",
+        "options": [
+          "Estoy",
+          "Soy",
+          "Tengo"
+        ],
+        "answer": "Estoy",
+        "tag": "op",
+        "sub": "estar de acuerdo"
+      },
+      {
+        "stimulus": "Me ___ que tienes razón.",
+        "options": [
+          "parece",
+          "pareces",
+          "parecer"
+        ],
+        "answer": "parece",
+        "tag": "op",
+        "sub": "me parece que"
+      },
+      {
+        "stimulus": "Como fruta ___ es sana.",
+        "options": [
+          "porque",
+          "por eso",
+          "sin embargo"
+        ],
+        "answer": "porque",
+        "tag": "con",
+        "sub": "reden"
+      },
+      {
+        "stimulus": "Tienes ___: hay que reciclar.",
+        "options": [
+          "razón",
+          "razones",
+          "derecho"
+        ],
+        "answer": "razón",
+        "tag": "op",
+        "sub": "tener razón"
+      },
+      {
+        "stimulus": "Pienso ___ debemos ahorrar agua.",
+        "options": [
+          "que",
+          "de",
+          "por"
+        ],
+        "answer": "que",
+        "tag": "op",
+        "sub": "pienso que"
+      },
+      {
+        "stimulus": "Es útil; ___, contamina un poco.",
+        "options": [
+          "sin embargo",
+          "por eso",
+          "porque"
+        ],
+        "answer": "sin embargo",
+        "tag": "con",
+        "sub": "tegenstelling"
+      },
+      {
+        "stimulus": "Ahorro energía; ___ apago las luces.",
+        "options": [
+          "por eso",
+          "porque",
+          "además"
+        ],
+        "answer": "por eso",
+        "tag": "con",
+        "sub": "gevolg"
+      },
+      {
+        "stimulus": "___ un lado es cómodo; por otro, contamina.",
+        "options": [
+          "Por",
+          "Para",
+          "Con"
+        ],
+        "answer": "Por",
+        "tag": "con",
+        "sub": "por un lado"
+      }
+    ]
+  }
+}

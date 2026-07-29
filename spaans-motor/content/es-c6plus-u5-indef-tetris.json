@@ -1,0 +1,129 @@
+{
+  "id": "es-c6plus-u5-indef-tetris",
+  "title": "Indefinido Tetris",
+  "subtitle": "U5 · laat het juiste type vallen",
+  "lang": "es",
+  "template": "tetris",
+  "options": {
+    "rows": 9,
+    "speed": 1300,
+    "audio": false
+  },
+  "classify": {
+    "categories": [
+      {
+        "id": "o",
+        "label": "-ó (-ar)",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "io",
+        "label": "-ió (-er/-ir)",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "irr",
+        "label": "irregular",
+        "glaze": "#B4309A"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "ganar",
+        "answer": "o",
+        "tag": "o",
+        "sub": "ganó"
+      },
+      {
+        "stimulus": "escribir",
+        "answer": "io",
+        "tag": "io",
+        "sub": "escribió"
+      },
+      {
+        "stimulus": "hacer",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "hizo"
+      },
+      {
+        "stimulus": "nacer",
+        "answer": "io",
+        "tag": "io",
+        "sub": "nació"
+      },
+      {
+        "stimulus": "ser/ir",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "fue"
+      },
+      {
+        "stimulus": "pintar",
+        "answer": "o",
+        "tag": "o",
+        "sub": "pintó"
+      },
+      {
+        "stimulus": "tener",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "tuvo"
+      },
+      {
+        "stimulus": "vivir",
+        "answer": "io",
+        "tag": "io",
+        "sub": "vivió"
+      },
+      {
+        "stimulus": "estudiar",
+        "answer": "o",
+        "tag": "o",
+        "sub": "estudió"
+      },
+      {
+        "stimulus": "decir",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "dijo"
+      },
+      {
+        "stimulus": "comer",
+        "answer": "io",
+        "tag": "io",
+        "sub": "comió"
+      },
+      {
+        "stimulus": "estar",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "estuvo"
+      },
+      {
+        "stimulus": "cantar",
+        "answer": "o",
+        "tag": "o",
+        "sub": "cantó"
+      },
+      {
+        "stimulus": "salir",
+        "answer": "io",
+        "tag": "io",
+        "sub": "salió"
+      },
+      {
+        "stimulus": "venir",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "vino"
+      },
+      {
+        "stimulus": "trabajar",
+        "answer": "o",
+        "tag": "o",
+        "sub": "trabajó"
+      }
+    ]
+  }
+}

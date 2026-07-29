@@ -1,0 +1,64 @@
+{
+  "id": "es-c6plus-u5-persona-memoria",
+  "title": "Memoria de oficios",
+  "subtitle": "U5 · koppel het beroep aan de vertaling",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om: oficio + vertaling",
+    "pairs": [
+      {
+        "a": "el escritor",
+        "b": "de schrijver"
+      },
+      {
+        "a": "la pintora",
+        "b": "de schilderes"
+      },
+      {
+        "a": "el cantante",
+        "b": "de zanger"
+      },
+      {
+        "a": "el futbolista",
+        "b": "de voetballer"
+      },
+      {
+        "a": "el científico",
+        "b": "de wetenschapper"
+      },
+      {
+        "a": "el artista",
+        "b": "de kunstenaar"
+      },
+      {
+        "a": "el líder",
+        "b": "de leider"
+      },
+      {
+        "a": "el personaje",
+        "b": "het personage"
+      },
+      {
+        "a": "la leyenda",
+        "b": "de legende"
+      },
+      {
+        "a": "la historia",
+        "b": "het verhaal"
+      },
+      {
+        "a": "el premio",
+        "b": "de prijs"
+      },
+      {
+        "a": "el éxito",
+        "b": "het succes"
+      }
+    ]
+  }
+}

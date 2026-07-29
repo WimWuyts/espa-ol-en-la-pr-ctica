@@ -1,0 +1,214 @@
+{
+  "id": "es-c6plus-u4-perfecto",
+  "title": "Completa: el perfecto",
+  "subtitle": "U4 · haber + participio",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste vorm van het pretérito perfecto",
+    "items": [
+      {
+        "stimulus": "(Yo) ___ a Chile.",
+        "options": [
+          "he viajado",
+          "has viajado",
+          "ha viajado"
+        ],
+        "answer": "he viajado",
+        "tag": "pf",
+        "sub": "yo → he viajado"
+      },
+      {
+        "stimulus": "¿(Tú) ___ ya?",
+        "options": [
+          "has comido",
+          "he comido",
+          "han comido"
+        ],
+        "answer": "has comido",
+        "tag": "pf",
+        "sub": "tú → has comido"
+      },
+      {
+        "stimulus": "Nosotros ___ el museo.",
+        "options": [
+          "hemos visitado",
+          "habéis visitado",
+          "han visitado"
+        ],
+        "answer": "hemos visitado",
+        "tag": "pf",
+        "sub": "nosotros → hemos visitado"
+      },
+      {
+        "stimulus": "El avión ___ tarde.",
+        "options": [
+          "ha llegado",
+          "han llegado",
+          "has llegado"
+        ],
+        "answer": "ha llegado",
+        "tag": "pf",
+        "sub": "él → ha llegado"
+      },
+      {
+        "stimulus": "(Yo) ___ las maletas.",
+        "options": [
+          "he hecho",
+          "he hacido",
+          "he hacho"
+        ],
+        "answer": "he hecho",
+        "tag": "pf",
+        "sub": "hacer → hecho"
+      },
+      {
+        "stimulus": "¿(Tú) ___ el mar?",
+        "options": [
+          "has visto",
+          "has veído",
+          "has vido"
+        ],
+        "answer": "has visto",
+        "tag": "pf",
+        "sub": "ver → visto"
+      },
+      {
+        "stimulus": "Nosotros ___ del viaje.",
+        "options": [
+          "hemos vuelto",
+          "hemos volvido",
+          "hemos vueltado"
+        ],
+        "answer": "hemos vuelto",
+        "tag": "pf",
+        "sub": "volver → vuelto"
+      },
+      {
+        "stimulus": "(Yo) ___ una postal.",
+        "options": [
+          "he escrito",
+          "he escribido",
+          "he escrivido"
+        ],
+        "answer": "he escrito",
+        "tag": "pf",
+        "sub": "escribir → escrito"
+      },
+      {
+        "stimulus": "Mis amigos ___ un hostal.",
+        "options": [
+          "han reservado",
+          "ha reservado",
+          "habéis reservado"
+        ],
+        "answer": "han reservado",
+        "tag": "pf",
+        "sub": "ellos → han reservado"
+      },
+      {
+        "stimulus": "¿Vosotros ___ fotos?",
+        "options": [
+          "habéis sacado",
+          "han sacado",
+          "hemos sacado"
+        ],
+        "answer": "habéis sacado",
+        "tag": "pf",
+        "sub": "vosotros → habéis sacado"
+      },
+      {
+        "stimulus": "Nina ___ a la montaña.",
+        "options": [
+          "ha subido",
+          "has subido",
+          "han subido"
+        ],
+        "answer": "ha subido",
+        "tag": "pf",
+        "sub": "ella → ha subido"
+      },
+      {
+        "stimulus": "(Yo) ___ mal.",
+        "options": [
+          "he dormido",
+          "he durmido",
+          "he dormado"
+        ],
+        "answer": "he dormido",
+        "tag": "pf",
+        "sub": "dormir → dormido"
+      },
+      {
+        "stimulus": "El guía nos ___ la hora.",
+        "options": [
+          "ha dicho",
+          "ha decido",
+          "ha dijido"
+        ],
+        "answer": "ha dicho",
+        "tag": "pf",
+        "sub": "decir → dicho"
+      },
+      {
+        "stimulus": "Han ___ el museo.",
+        "options": [
+          "abierto",
+          "abrido",
+          "aberto"
+        ],
+        "answer": "abierto",
+        "tag": "pf",
+        "sub": "abrir → abierto"
+      },
+      {
+        "stimulus": "(Yo) ___ la paella.",
+        "options": [
+          "he probado",
+          "he probido",
+          "he prueba"
+        ],
+        "answer": "he probado",
+        "tag": "pf",
+        "sub": "probar → probado"
+      },
+      {
+        "stimulus": "El viaje ___ genial.",
+        "options": [
+          "ha sido",
+          "ha seído",
+          "ha estado sido"
+        ],
+        "answer": "ha sido",
+        "tag": "pf",
+        "sub": "ser → sido"
+      },
+      {
+        "stimulus": "(Nosotros) ___ en Perú.",
+        "options": [
+          "hemos estado",
+          "habéis estado",
+          "han estado"
+        ],
+        "answer": "hemos estado",
+        "tag": "pf",
+        "sub": "nosotros → hemos estado"
+      },
+      {
+        "stimulus": "¿(Tú) ___ el tren?",
+        "options": [
+          "has perdido",
+          "has perdo",
+          "has perdiendo"
+        ],
+        "answer": "has perdido",
+        "tag": "pf",
+        "sub": "perder → perdido"
+      }
+    ]
+  }
+}

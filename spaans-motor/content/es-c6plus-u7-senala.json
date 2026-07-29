@@ -1,0 +1,206 @@
+{
+  "id": "es-c6plus-u7-senala",
+  "title": "Señala",
+  "subtitle": "U7 · klik het juiste antwoord",
+  "lang": "es",
+  "template": "point",
+  "options": {
+    "audio": false
+  },
+  "point": {
+    "prompt": "Klik het gevraagde item",
+    "mode": "one",
+    "rounds": [
+      {
+        "tag": "voc",
+        "sub": "señala algo del medio ambiente",
+        "targets": [
+          {
+            "label": "reciclar",
+            "hit": true
+          },
+          {
+            "label": "el cuerpo"
+          },
+          {
+            "label": "dormir"
+          },
+          {
+            "label": "la dieta"
+          }
+        ]
+      },
+      {
+        "tag": "voc",
+        "sub": "señala algo de la salud",
+        "targets": [
+          {
+            "label": "el ejercicio",
+            "hit": true
+          },
+          {
+            "label": "la basura"
+          },
+          {
+            "label": "la energía"
+          },
+          {
+            "label": "el árbol"
+          }
+        ]
+      },
+      {
+        "tag": "im",
+        "sub": "hacer → imperativo (tú)",
+        "targets": [
+          {
+            "label": "haz",
+            "hit": true
+          },
+          {
+            "label": "hace"
+          },
+          {
+            "label": "haces"
+          },
+          {
+            "label": "hacer"
+          }
+        ]
+      },
+      {
+        "tag": "im",
+        "sub": "ir → imperativo (tú)",
+        "targets": [
+          {
+            "label": "ve",
+            "hit": true
+          },
+          {
+            "label": "va"
+          },
+          {
+            "label": "vas"
+          },
+          {
+            "label": "ir"
+          }
+        ]
+      },
+      {
+        "tag": "im",
+        "sub": "cuida + te = ?",
+        "targets": [
+          {
+            "label": "cuídate",
+            "hit": true
+          },
+          {
+            "label": "cuidate"
+          },
+          {
+            "label": "te cuida"
+          },
+          {
+            "label": "cuidaste"
+          }
+        ]
+      },
+      {
+        "tag": "op",
+        "sub": "«ik ben het eens» = ?",
+        "targets": [
+          {
+            "label": "estoy de acuerdo",
+            "hit": true
+          },
+          {
+            "label": "tengo acuerdo"
+          },
+          {
+            "label": "soy de acuerdo"
+          },
+          {
+            "label": "hago acuerdo"
+          }
+        ]
+      },
+      {
+        "tag": "op",
+        "sub": "na «creo que» komt…",
+        "targets": [
+          {
+            "label": "indicativo (es)",
+            "hit": true
+          },
+          {
+            "label": "subjuntivo (sea)"
+          },
+          {
+            "label": "infinitivo (ser)"
+          },
+          {
+            "label": "imperativo (sé)"
+          }
+        ]
+      },
+      {
+        "tag": "con",
+        "sub": "«daarom» = ?",
+        "targets": [
+          {
+            "label": "por eso",
+            "hit": true
+          },
+          {
+            "label": "porque"
+          },
+          {
+            "label": "luego"
+          },
+          {
+            "label": "sin embargo"
+          }
+        ]
+      },
+      {
+        "tag": "con",
+        "sub": "«want / omdat» = ?",
+        "targets": [
+          {
+            "label": "porque",
+            "hit": true
+          },
+          {
+            "label": "por eso"
+          },
+          {
+            "label": "además"
+          },
+          {
+            "label": "para que"
+          }
+        ]
+      },
+      {
+        "tag": "cult",
+        "sub": "«pura vida» es de…",
+        "targets": [
+          {
+            "label": "Costa Rica",
+            "hit": true
+          },
+          {
+            "label": "Perú"
+          },
+          {
+            "label": "España"
+          },
+          {
+            "label": "México"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "es-c6plus-u3-repite-planes",
+  "title": "Escucha y repite: mis planes",
+  "subtitle": "U3 · escucha, repite y GRÁBATE",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "repeat",
+    "prompt": "Escucha ▶ · repite en voz alta · grábate ⏺",
+    "items": [
+      {
+        "text": "Este fin de semana voy a salir con mis amigos.",
+        "sub": "dit weekend ga ik uitgaan met mijn vrienden",
+        "tag": "futuro",
+        "tip": "¡Bien! Ahora dilo sin leer."
+      },
+      {
+        "text": "Mañana voy a subir un vídeo nuevo.",
+        "sub": "morgen ga ik een nieuwe video uploaden",
+        "tag": "futuro"
+      },
+      {
+        "text": "Le escribo a Diego cada día.",
+        "sub": "ik schrijf Diego elke dag",
+        "tag": "oi"
+      },
+      {
+        "text": "Les mando fotos a mis amigos.",
+        "sub": "ik stuur foto's naar mijn vrienden",
+        "tag": "oi"
+      },
+      {
+        "text": "Acabo de mandar un mensaje.",
+        "sub": "ik heb net een bericht gestuurd",
+        "tag": "acabar"
+      },
+      {
+        "text": "Creo que las redes son útiles pero adictivas.",
+        "sub": "ik vind sociale media nuttig maar verslavend",
+        "tag": "opinion"
+      },
+      {
+        "text": "Pienso que pasamos demasiado tiempo en el móvil.",
+        "sub": "ik denk dat we te veel tijd op de gsm zitten",
+        "tag": "opinion"
+      },
+      {
+        "text": "¿Quedamos el sábado en la plaza?",
+        "sub": "spreken we zaterdag af op het plein?",
+        "tag": "plan"
+      }
+    ]
+  }
+}

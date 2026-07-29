@@ -5,7 +5,7 @@
 
 INK="#20242E"; MUT="#6A6E78"; PAPER="#FCFBF8"; GT="#E4F4EE"; GD="#157355"; G="#1E9E74"
 AMBER="#E8B04B"
-LUC="#E07A5F"; DIE="#5B8DEF"; VAL="#2FA8A0"; NIN="#D69A2E"; TU="#8A7BE0"
+LUC="#E07A5F"; DIE="#5B8DEF"; VAL="#2FA8A0"; NIN="#D69A2E"; TU="#8A7BE0"; MAT="#3E9E63"
 
 SK={"light":"#F3CBA4","med":"#E0AC7E","tan":"#C88E62","deep":"#AA7248"}
 SKD={"light":"#E0B084","med":"#C8945F","tan":"#AC7549","deep":"#8E5C36"}
@@ -87,6 +87,7 @@ CAST={
  "diego": dict(skin="med",   hair=hair_short,hc="#1C1610", acc=DIE, extra="", jaw="square"),
  "valen": dict(skin="tan",   hair=hair_curly,hc="#241813", acc=VAL, extra="", jaw="round"),
  "nina":  dict(skin="deep",  hair=hair_braids,hc="#140F0C", acc=NIN, extra="", jaw="round"),
+ "mateo": dict(skin="light", hair=hair_short, hc="#2A1F17", acc=MAT, extra="", jaw="round"),
 }
 
 def make(name, kind="bust", w=None):

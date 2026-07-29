@@ -1,0 +1,124 @@
+{
+  "id": "es-c6plus-u2-gerundio-tipo",
+  "title": "¿-ando o -iendo?",
+  "subtitle": "U2 · welke gerundio-uitgang?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Krijgt dit werkwoord -ando (-ar) of -iendo (-er/-ir)?",
+    "categories": [
+      {
+        "id": "ando",
+        "label": "-ando<br><small>-ar</small>",
+        "glaze": "#8B5E9E"
+      },
+      {
+        "id": "iendo",
+        "label": "-iendo<br><small>-er / -ir</small>",
+        "glaze": "#B4309A"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "cocinar",
+        "answer": "ando",
+        "tag": "ando",
+        "sub": "cocinando"
+      },
+      {
+        "stimulus": "comer",
+        "answer": "iendo",
+        "tag": "iendo",
+        "sub": "comiendo"
+      },
+      {
+        "stimulus": "estudiar",
+        "answer": "ando",
+        "tag": "ando",
+        "sub": "estudiando"
+      },
+      {
+        "stimulus": "escribir",
+        "answer": "iendo",
+        "tag": "iendo",
+        "sub": "escribiendo"
+      },
+      {
+        "stimulus": "hablar",
+        "answer": "ando",
+        "tag": "ando",
+        "sub": "hablando"
+      },
+      {
+        "stimulus": "beber",
+        "answer": "iendo",
+        "tag": "iendo",
+        "sub": "bebiendo"
+      },
+      {
+        "stimulus": "trabajar",
+        "answer": "ando",
+        "tag": "ando",
+        "sub": "trabajando"
+      },
+      {
+        "stimulus": "vivir",
+        "answer": "iendo",
+        "tag": "iendo",
+        "sub": "viviendo"
+      },
+      {
+        "stimulus": "limpiar",
+        "answer": "ando",
+        "tag": "ando",
+        "sub": "limpiando"
+      },
+      {
+        "stimulus": "aprender",
+        "answer": "iendo",
+        "tag": "iendo",
+        "sub": "aprendiendo"
+      },
+      {
+        "stimulus": "pasear",
+        "answer": "ando",
+        "tag": "ando",
+        "sub": "paseando"
+      },
+      {
+        "stimulus": "abrir",
+        "answer": "iendo",
+        "tag": "iendo",
+        "sub": "abriendo"
+      },
+      {
+        "stimulus": "cantar",
+        "answer": "ando",
+        "tag": "ando",
+        "sub": "cantando"
+      },
+      {
+        "stimulus": "correr",
+        "answer": "iendo",
+        "tag": "iendo",
+        "sub": "corriendo"
+      },
+      {
+        "stimulus": "jugar",
+        "answer": "ando",
+        "tag": "ando",
+        "sub": "jugando"
+      },
+      {
+        "stimulus": "subir",
+        "answer": "iendo",
+        "tag": "iendo",
+        "sub": "subiendo"
+      }
+    ]
+  }
+}

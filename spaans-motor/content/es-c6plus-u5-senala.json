@@ -1,0 +1,206 @@
+{
+  "id": "es-c6plus-u5-senala",
+  "title": "Señala",
+  "subtitle": "U5 · klik het juiste antwoord",
+  "lang": "es",
+  "template": "point",
+  "options": {
+    "audio": false
+  },
+  "point": {
+    "prompt": "Klik het gevraagde item",
+    "mode": "one",
+    "rounds": [
+      {
+        "tag": "bio",
+        "sub": "señala una etapa de la vida",
+        "targets": [
+          {
+            "label": "nacer",
+            "hit": true
+          },
+          {
+            "label": "ganar"
+          },
+          {
+            "label": "el escritor"
+          },
+          {
+            "label": "famoso"
+          }
+        ]
+      },
+      {
+        "tag": "bio",
+        "sub": "señala un oficio",
+        "targets": [
+          {
+            "label": "el pintor",
+            "hit": true
+          },
+          {
+            "label": "crecer"
+          },
+          {
+            "label": "el premio"
+          },
+          {
+            "label": "morir"
+          }
+        ]
+      },
+      {
+        "tag": "indef",
+        "sub": "hacer → indefinido (él)",
+        "targets": [
+          {
+            "label": "hizo",
+            "hit": true
+          },
+          {
+            "label": "hació"
+          },
+          {
+            "label": "hace"
+          },
+          {
+            "label": "hizió"
+          }
+        ]
+      },
+      {
+        "tag": "indef",
+        "sub": "ser/ir → indefinido (él)",
+        "targets": [
+          {
+            "label": "fue",
+            "hit": true
+          },
+          {
+            "label": "fui"
+          },
+          {
+            "label": "fué"
+          },
+          {
+            "label": "era"
+          }
+        ]
+      },
+      {
+        "tag": "indef",
+        "sub": "«escribió» = ?",
+        "targets": [
+          {
+            "label": "hij/zij schreef",
+            "hit": true
+          },
+          {
+            "label": "hij schrijft"
+          },
+          {
+            "label": "hij gaat schrijven"
+          },
+          {
+            "label": "hij heeft geschreven"
+          }
+        ]
+      },
+      {
+        "tag": "selo",
+        "sub": "«¿El libro a él? ___ di»",
+        "targets": [
+          {
+            "label": "Se lo",
+            "hit": true
+          },
+          {
+            "label": "Le lo"
+          },
+          {
+            "label": "Se la"
+          },
+          {
+            "label": "Lo le"
+          }
+        ]
+      },
+      {
+        "tag": "selo",
+        "sub": "«¿Las fotos a ella? ___ mandé»",
+        "targets": [
+          {
+            "label": "Se las",
+            "hit": true
+          },
+          {
+            "label": "Le las"
+          },
+          {
+            "label": "Se los"
+          },
+          {
+            "label": "Las le"
+          }
+        ]
+      },
+      {
+        "tag": "marc",
+        "sub": "marcador del indefinido",
+        "targets": [
+          {
+            "label": "ayer",
+            "hit": true
+          },
+          {
+            "label": "hoy"
+          },
+          {
+            "label": "esta semana"
+          },
+          {
+            "label": "mañana"
+          }
+        ]
+      },
+      {
+        "tag": "indef",
+        "sub": "tener → indefinido (él)",
+        "targets": [
+          {
+            "label": "tuvo",
+            "hit": true
+          },
+          {
+            "label": "tenió"
+          },
+          {
+            "label": "tiene"
+          },
+          {
+            "label": "tení"
+          }
+        ]
+      },
+      {
+        "tag": "conector",
+        "sub": "«uiteindelijk» = ?",
+        "targets": [
+          {
+            "label": "al final",
+            "hit": true
+          },
+          {
+            "label": "primero"
+          },
+          {
+            "label": "entonces"
+          },
+          {
+            "label": "érase una vez"
+          }
+        ]
+      }
+    ]
+  }
+}

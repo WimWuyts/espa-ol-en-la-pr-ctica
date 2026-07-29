@@ -1,0 +1,214 @@
+{
+  "id": "es-c6plus-u6-imperfecto",
+  "title": "Completa: el imperfecto",
+  "subtitle": "U6 · ¿cómo era todo?",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste vorm van het imperfecto",
+    "items": [
+      {
+        "stimulus": "De pequeña, Nina ___ (vivir) en un pueblo.",
+        "options": [
+          "vivía",
+          "vivió",
+          "vive"
+        ],
+        "answer": "vivía",
+        "tag": "im",
+        "sub": "vivir → vivía"
+      },
+      {
+        "stimulus": "(Ella) ___ (ser) muy tímida.",
+        "options": [
+          "era",
+          "fue",
+          "es"
+        ],
+        "answer": "era",
+        "tag": "im",
+        "sub": "ser → era"
+      },
+      {
+        "stimulus": "Todos los días ___ (ir, ella) a la escuela.",
+        "options": [
+          "iba",
+          "fue",
+          "va"
+        ],
+        "answer": "iba",
+        "tag": "im",
+        "sub": "ir → iba"
+      },
+      {
+        "stimulus": "(Ella) ___ (tener) un perro.",
+        "options": [
+          "tenía",
+          "tuvo",
+          "tiene"
+        ],
+        "answer": "tenía",
+        "tag": "im",
+        "sub": "tener → tenía"
+      },
+      {
+        "stimulus": "(Yo) ___ (jugar) en el patio.",
+        "options": [
+          "jugaba",
+          "jugué",
+          "juego"
+        ],
+        "answer": "jugaba",
+        "tag": "im",
+        "sub": "jugar → jugaba"
+      },
+      {
+        "stimulus": "Nosotros ___ (comer) en casa de la abuela.",
+        "options": [
+          "comíamos",
+          "comimos",
+          "comemos"
+        ],
+        "answer": "comíamos",
+        "tag": "im",
+        "sub": "comer → comíamos"
+      },
+      {
+        "stimulus": "Por la tarde (yo) ___ (ver) dibujos.",
+        "options": [
+          "veía",
+          "vi",
+          "veo"
+        ],
+        "answer": "veía",
+        "tag": "im",
+        "sub": "ver → veía"
+      },
+      {
+        "stimulus": "Mis amigos ___ (soñar) con ser futbolistas.",
+        "options": [
+          "soñaban",
+          "soñaron",
+          "sueñan"
+        ],
+        "answer": "soñaban",
+        "tag": "im",
+        "sub": "soñar → soñaban"
+      },
+      {
+        "stimulus": "___ (haber) menos coches antes.",
+        "options": [
+          "Había",
+          "Hubo",
+          "Hay"
+        ],
+        "answer": "Había",
+        "tag": "im",
+        "sub": "haber → había"
+      },
+      {
+        "stimulus": "El pueblo ___ (ser) tranquilo.",
+        "options": [
+          "era",
+          "fue",
+          "es"
+        ],
+        "answer": "era",
+        "tag": "im",
+        "sub": "ser → era"
+      },
+      {
+        "stimulus": "(Nosotros) ___ (ir) al parque.",
+        "options": [
+          "íbamos",
+          "fuimos",
+          "vamos"
+        ],
+        "answer": "íbamos",
+        "tag": "im",
+        "sub": "ir → íbamos"
+      },
+      {
+        "stimulus": "Mi abuela ___ (hacer) pan cada día.",
+        "options": [
+          "hacía",
+          "hizo",
+          "hace"
+        ],
+        "answer": "hacía",
+        "tag": "im",
+        "sub": "hacer → hacía"
+      },
+      {
+        "stimulus": "(Yo) ___ (tener) cinco años.",
+        "options": [
+          "tenía",
+          "tuve",
+          "tengo"
+        ],
+        "answer": "tenía",
+        "tag": "im",
+        "sub": "tener → tenía"
+      },
+      {
+        "stimulus": "¿(Tú) ___ (vivir) en la ciudad?",
+        "options": [
+          "vivías",
+          "viviste",
+          "vives"
+        ],
+        "answer": "vivías",
+        "tag": "im",
+        "sub": "tú → vivías"
+      },
+      {
+        "stimulus": "Los niños ___ (jugar) en la calle.",
+        "options": [
+          "jugaban",
+          "jugaron",
+          "juegan"
+        ],
+        "answer": "jugaban",
+        "tag": "im",
+        "sub": "ellos → jugaban"
+      },
+      {
+        "stimulus": "(Yo) ___ (aprender) a leer.",
+        "options": [
+          "aprendía",
+          "aprendí",
+          "aprendo"
+        ],
+        "answer": "aprendía",
+        "tag": "im",
+        "sub": "aprender → aprendía"
+      },
+      {
+        "stimulus": "Mi maestra ___ (ser) amable.",
+        "options": [
+          "era",
+          "fue",
+          "es"
+        ],
+        "answer": "era",
+        "tag": "im",
+        "sub": "ser → era"
+      },
+      {
+        "stimulus": "(Nosotros) ___ (cuidar) a los abuelos.",
+        "options": [
+          "cuidábamos",
+          "cuidamos",
+          "cuidaron"
+        ],
+        "answer": "cuidábamos",
+        "tag": "im",
+        "sub": "cuidar → cuidábamos"
+      }
+    ]
+  }
+}

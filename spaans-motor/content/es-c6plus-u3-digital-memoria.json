@@ -1,0 +1,72 @@
+{
+  "id": "es-c6plus-u3-digital-memoria",
+  "title": "Memoria digital",
+  "subtitle": "U3 · zoek het paar español ↔ nederlands",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om: mundo digital + vertaling",
+    "pairs": [
+      {
+        "a": "el móvil",
+        "b": "de gsm"
+      },
+      {
+        "a": "el ordenador",
+        "b": "de computer"
+      },
+      {
+        "a": "la tableta",
+        "b": "de tablet"
+      },
+      {
+        "a": "la pantalla",
+        "b": "het scherm"
+      },
+      {
+        "a": "los auriculares",
+        "b": "de oortjes"
+      },
+      {
+        "a": "el cargador",
+        "b": "de oplader"
+      },
+      {
+        "a": "la contraseña",
+        "b": "het wachtwoord"
+      },
+      {
+        "a": "el perfil",
+        "b": "het profiel"
+      },
+      {
+        "a": "el mensaje",
+        "b": "het bericht"
+      },
+      {
+        "a": "el vídeo",
+        "b": "de video"
+      },
+      {
+        "a": "la app",
+        "b": "de app"
+      },
+      {
+        "a": "las redes sociales",
+        "b": "de sociale media"
+      },
+      {
+        "a": "la videollamada",
+        "b": "het videogesprek"
+      },
+      {
+        "a": "la wifi",
+        "b": "de wifi"
+      }
+    ]
+  }
+}

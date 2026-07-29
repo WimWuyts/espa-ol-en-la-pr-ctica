@@ -1,0 +1,72 @@
+{
+  "id": "es-c6plus-u6-verbo-imperfecto",
+  "title": "Verbo e imperfecto",
+  "subtitle": "U6 · koppel de infinitief aan het imperfecto",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind de infinitief met het imperfecto (yo/él)",
+    "pairs": [
+      {
+        "a": "jugar",
+        "b": "jugaba"
+      },
+      {
+        "a": "comer",
+        "b": "comía"
+      },
+      {
+        "a": "vivir",
+        "b": "vivía"
+      },
+      {
+        "a": "ser",
+        "b": "era ⭐"
+      },
+      {
+        "a": "ir",
+        "b": "iba ⭐"
+      },
+      {
+        "a": "ver",
+        "b": "veía ⭐"
+      },
+      {
+        "a": "tener",
+        "b": "tenía"
+      },
+      {
+        "a": "hacer",
+        "b": "hacía"
+      },
+      {
+        "a": "haber",
+        "b": "había"
+      },
+      {
+        "a": "estudiar",
+        "b": "estudiaba"
+      },
+      {
+        "a": "soñar",
+        "b": "soñaba"
+      },
+      {
+        "a": "vivir (nos.)",
+        "b": "vivíamos"
+      },
+      {
+        "a": "cuidar",
+        "b": "cuidaba"
+      },
+      {
+        "a": "aprender",
+        "b": "aprendía"
+      }
+    ]
+  }
+}

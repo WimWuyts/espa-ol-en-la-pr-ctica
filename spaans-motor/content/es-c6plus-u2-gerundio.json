@@ -1,0 +1,214 @@
+{
+  "id": "es-c6plus-u2-gerundio",
+  "title": "Completa: estar + gerundio",
+  "subtitle": "U2 · ¿qué está pasando ahora?",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste estar + gerundio-vorm",
+    "items": [
+      {
+        "stimulus": "Valen ___ en la cocina.",
+        "options": [
+          "está cocinando",
+          "estoy cocinando",
+          "están cocinando"
+        ],
+        "answer": "está cocinando",
+        "tag": "g",
+        "sub": "ella → está cocinando"
+      },
+      {
+        "stimulus": "(Yo) ___ para el examen.",
+        "options": [
+          "estoy estudiando",
+          "estás estudiando",
+          "está estudiando"
+        ],
+        "answer": "estoy estudiando",
+        "tag": "g",
+        "sub": "yo → estoy estudiando"
+      },
+      {
+        "stimulus": "Los niños ___ ahora.",
+        "options": [
+          "están durmiendo",
+          "está durmiendo",
+          "estamos durmiendo"
+        ],
+        "answer": "están durmiendo",
+        "tag": "g",
+        "sub": "ellos → durmiendo (o→u)"
+      },
+      {
+        "stimulus": "¿(Tú) ___ un libro?",
+        "options": [
+          "estás leyendo",
+          "estoy leyendo",
+          "está leyendo"
+        ],
+        "answer": "estás leyendo",
+        "tag": "g",
+        "sub": "tú → leyendo (i→y)"
+      },
+      {
+        "stimulus": "(Nosotros) ___ en la terraza.",
+        "options": [
+          "estamos comiendo",
+          "estáis comiendo",
+          "están comiendo"
+        ],
+        "answer": "estamos comiendo",
+        "tag": "g",
+        "sub": "nosotros → comiendo"
+      },
+      {
+        "stimulus": "Mamá ___ un mensaje.",
+        "options": [
+          "está escribiendo",
+          "estás escribiendo",
+          "estoy escribiendo"
+        ],
+        "answer": "está escribiendo",
+        "tag": "g",
+        "sub": "ella → escribiendo"
+      },
+      {
+        "stimulus": "Diego ___ una pizza.",
+        "options": [
+          "está pidiendo",
+          "está pediendo",
+          "está pidiando"
+        ],
+        "answer": "está pidiendo",
+        "tag": "g",
+        "sub": "pedir → pidiendo (e→i)"
+      },
+      {
+        "stimulus": "(Yo) ___ la tele.",
+        "options": [
+          "estoy viendo",
+          "estoy veiendo",
+          "estoy vidiendo"
+        ],
+        "answer": "estoy viendo",
+        "tag": "g",
+        "sub": "ver → viendo"
+      },
+      {
+        "stimulus": "¿(Vosotros) ___ música?",
+        "options": [
+          "estáis escuchando",
+          "están escuchando",
+          "estamos escuchando"
+        ],
+        "answer": "estáis escuchando",
+        "tag": "g",
+        "sub": "vosotros → escuchando"
+      },
+      {
+        "stimulus": "El bebé ___ .",
+        "options": [
+          "está durmiendo",
+          "está dormiendo",
+          "está durmando"
+        ],
+        "answer": "está durmiendo",
+        "tag": "g",
+        "sub": "dormir → durmiendo"
+      },
+      {
+        "stimulus": "(Nosotros) ___ la casa.",
+        "options": [
+          "estamos limpiando",
+          "estáis limpiando",
+          "están limpiando"
+        ],
+        "answer": "estamos limpiando",
+        "tag": "g",
+        "sub": "nosotros → limpiando"
+      },
+      {
+        "stimulus": "Valen ___ por el parque.",
+        "options": [
+          "está paseando",
+          "estás paseando",
+          "estoy paseando"
+        ],
+        "answer": "está paseando",
+        "tag": "g",
+        "sub": "ella → paseando"
+      },
+      {
+        "stimulus": "(Yo) ___ un correo.",
+        "options": [
+          "estoy escribiendo",
+          "estoy escribando",
+          "estoy escribiendo"
+        ],
+        "answer": "estoy escribiendo",
+        "tag": "g",
+        "sub": "yo → escribiendo"
+      },
+      {
+        "stimulus": "Los amigos ___ al fútbol.",
+        "options": [
+          "están jugando",
+          "está jugando",
+          "estamos jugando"
+        ],
+        "answer": "están jugando",
+        "tag": "g",
+        "sub": "ellos → jugando"
+      },
+      {
+        "stimulus": "¿Qué ___ (tú) ahora?",
+        "options": [
+          "estás haciendo",
+          "estás haciando",
+          "estás hacando"
+        ],
+        "answer": "estás haciendo",
+        "tag": "g",
+        "sub": "hacer → haciendo"
+      },
+      {
+        "stimulus": "El profe ___ algo.",
+        "options": [
+          "está diciendo",
+          "está deciendo",
+          "está dijiendo"
+        ],
+        "answer": "está diciendo",
+        "tag": "g",
+        "sub": "decir → diciendo"
+      },
+      {
+        "stimulus": "(Yo) ___ agua.",
+        "options": [
+          "estoy bebiendo",
+          "estoy bebando",
+          "estoy biebiendo"
+        ],
+        "answer": "estoy bebiendo",
+        "tag": "g",
+        "sub": "beber → bebiendo"
+      },
+      {
+        "stimulus": "Ellos ___ la maleta.",
+        "options": [
+          "están abriendo",
+          "están abrando",
+          "está abriendo"
+        ],
+        "answer": "están abriendo",
+        "tag": "g",
+        "sub": "abrir → abriendo"
+      }
+    ]
+  }
+}

@@ -181,6 +181,19 @@ GROUP_EMOJI = {
  "restaurante":"🍽️","cantidades":"⚖️","cortesia":"🙏","mexico":"🌮",
  # ---- C6+·U1 «El día a día» ----
  "calendario":"📅","conectores":"🔗","gustar":"👍","sentimientos":"😊",
+ # ---- C6+·U2 «Aquí vivo» ----
+ "casa":"🏠","muebles":"🛋️","habitaciones":"🚪","preposiciones":"📍","barrio":"🏙️",
+ "ciudad":"🌆","direcciones":"🧭","movimiento":"🚶","lugares":"🏬",
+ # ---- C6+·U3 «Conectados» ----
+ "dispositivos":"📱","internet":"🌐","digital":"📲","comunicar":"💬","adjmedia":"⭐",
+ # ---- C6+·U4 «De viaje» ----
+ "transporte":"✈️","alojamiento":"🏨","viaje":"🧳","experiencias":"📸","porpara":"🎯",
+ # ---- C6+·U5 «Érase una vez» ----
+ "biografia":"👤","logros":"🏆","persona":"🎭","indefinido":"⏳","odoi":"🔁","relato":"📖",
+ # ---- C6+·U6 «Cuando era pequeño» ----
+ "infancia":"🧸","escuela":"🏫","antesahora":"🔄","comparar":"⚖️","relativo":"🔗",
+ # ---- C6+·U7 «¡Opina y cuídate!» ----
+ "salud":"💪","consejos":"🥗","medioambiente":"🌍","imperativo":"🗣️",
 }
 
 _ARTICLES = ("el ", "la ", "los ", "las ", "un ", "una ", "unos ", "unas ", "mi ", "al ")

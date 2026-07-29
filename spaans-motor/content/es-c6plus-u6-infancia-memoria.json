@@ -1,0 +1,72 @@
+{
+  "id": "es-c6plus-u6-infancia-memoria",
+  "title": "Memoria de la infancia",
+  "subtitle": "U6 · zoek het paar español ↔ nederlands",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om: infancia + vertaling",
+    "pairs": [
+      {
+        "a": "el recuerdo",
+        "b": "de herinnering"
+      },
+      {
+        "a": "el juguete",
+        "b": "het speelgoed"
+      },
+      {
+        "a": "la escuela",
+        "b": "de school"
+      },
+      {
+        "a": "el patio",
+        "b": "de speelplaats"
+      },
+      {
+        "a": "el recreo",
+        "b": "de pauze"
+      },
+      {
+        "a": "la maestra",
+        "b": "de juf"
+      },
+      {
+        "a": "los abuelos",
+        "b": "de grootouders"
+      },
+      {
+        "a": "el pueblo",
+        "b": "het dorp"
+      },
+      {
+        "a": "la mascota",
+        "b": "het huisdier"
+      },
+      {
+        "a": "jugar",
+        "b": "spelen"
+      },
+      {
+        "a": "soñar",
+        "b": "dromen"
+      },
+      {
+        "a": "la infancia",
+        "b": "de kindertijd"
+      },
+      {
+        "a": "el vecino",
+        "b": "de buur"
+      },
+      {
+        "a": "aprender",
+        "b": "leren"
+      }
+    ]
+  }
+}

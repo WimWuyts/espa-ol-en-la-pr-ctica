@@ -1,0 +1,64 @@
+{
+  "id": "es-c6plus-u2-barrio-memoria",
+  "title": "Memoria del barrio",
+  "subtitle": "U2 · zoek de plek + de vertaling",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om: lugar + vertaling",
+    "pairs": [
+      {
+        "a": "la plaza",
+        "b": "het plein"
+      },
+      {
+        "a": "el parque",
+        "b": "het park"
+      },
+      {
+        "a": "la tienda",
+        "b": "de winkel"
+      },
+      {
+        "a": "la farmacia",
+        "b": "de apotheek"
+      },
+      {
+        "a": "el banco",
+        "b": "de bank"
+      },
+      {
+        "a": "la parada",
+        "b": "de halte"
+      },
+      {
+        "a": "el supermercado",
+        "b": "de supermarkt"
+      },
+      {
+        "a": "la calle",
+        "b": "de straat"
+      },
+      {
+        "a": "la esquina",
+        "b": "de hoek"
+      },
+      {
+        "a": "la estación",
+        "b": "het station"
+      },
+      {
+        "a": "el semáforo",
+        "b": "het verkeerslicht"
+      },
+      {
+        "a": "el centro",
+        "b": "het centrum"
+      }
+    ]
+  }
+}

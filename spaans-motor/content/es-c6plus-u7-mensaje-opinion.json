@@ -1,0 +1,37 @@
+{
+  "id": "es-c6plus-u7-mensaje-opinion",
+  "title": "Mensaje de voz: tu opinión",
+  "subtitle": "U7 · neem een spraakbericht op",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "voicemessage",
+    "prompt": "Graba un mensaje de voz (30–40 s)",
+    "items": [
+      {
+        "text": "Da 3 consejos de salud (usa el imperativo: come, bebe, haz…).",
+        "cue": "consejos de salud",
+        "tag": "im",
+        "sub": "gebruik: come sano, bebe agua, haz deporte…",
+        "tip": "3× de imperativo (tú)? Neem opnieuw op."
+      },
+      {
+        "text": "Da tu opinión sobre el medio ambiente (creo que… porque…).",
+        "cue": "mi opinión",
+        "tag": "op",
+        "sub": "gebruik: creo que… porque… además…",
+        "tip": "una opinión + un argumento (porque)? Herneem."
+      },
+      {
+        "text": "Convence a alguien de reciclar (imperativo + opinión + conector).",
+        "cue": "convencer",
+        "tag": "con",
+        "sub": "gebruik: Recicla… porque… Por eso…",
+        "tip": "un consejo + un argumento + un conector? Herneem."
+      }
+    ]
+  }
+}

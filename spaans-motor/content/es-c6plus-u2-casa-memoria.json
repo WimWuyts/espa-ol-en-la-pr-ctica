@@ -1,0 +1,72 @@
+{
+  "id": "es-c6plus-u2-casa-memoria",
+  "title": "Memoria de la casa",
+  "subtitle": "U2 · zoek het paar español ↔ nederlands",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om: casa + vertaling",
+    "pairs": [
+      {
+        "a": "la cama",
+        "b": "het bed"
+      },
+      {
+        "a": "el sofá",
+        "b": "de zetel"
+      },
+      {
+        "a": "la cocina",
+        "b": "de keuken"
+      },
+      {
+        "a": "el dormitorio",
+        "b": "de slaapkamer"
+      },
+      {
+        "a": "el armario",
+        "b": "de kast"
+      },
+      {
+        "a": "la nevera",
+        "b": "de koelkast"
+      },
+      {
+        "a": "el salón",
+        "b": "de woonkamer"
+      },
+      {
+        "a": "la mesa",
+        "b": "de tafel"
+      },
+      {
+        "a": "la silla",
+        "b": "de stoel"
+      },
+      {
+        "a": "el baño",
+        "b": "de badkamer"
+      },
+      {
+        "a": "la ventana",
+        "b": "het raam"
+      },
+      {
+        "a": "el espejo",
+        "b": "de spiegel"
+      },
+      {
+        "a": "la estantería",
+        "b": "de boekenkast"
+      },
+      {
+        "a": "la lámpara",
+        "b": "de lamp"
+      }
+    ]
+  }
+}

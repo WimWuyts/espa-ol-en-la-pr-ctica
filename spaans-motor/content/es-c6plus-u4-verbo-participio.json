@@ -1,0 +1,72 @@
+{
+  "id": "es-c6plus-u4-verbo-participio",
+  "title": "Verbo y participio",
+  "subtitle": "U4 · koppel de infinitief aan het deelwoord",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind de infinitief met het participio",
+    "pairs": [
+      {
+        "a": "viajar",
+        "b": "viajado"
+      },
+      {
+        "a": "comer",
+        "b": "comido"
+      },
+      {
+        "a": "salir",
+        "b": "salido"
+      },
+      {
+        "a": "hacer",
+        "b": "hecho ⭐"
+      },
+      {
+        "a": "ver",
+        "b": "visto ⭐"
+      },
+      {
+        "a": "decir",
+        "b": "dicho ⭐"
+      },
+      {
+        "a": "volver",
+        "b": "vuelto ⭐"
+      },
+      {
+        "a": "poner",
+        "b": "puesto ⭐"
+      },
+      {
+        "a": "escribir",
+        "b": "escrito ⭐"
+      },
+      {
+        "a": "abrir",
+        "b": "abierto ⭐"
+      },
+      {
+        "a": "romper",
+        "b": "roto ⭐"
+      },
+      {
+        "a": "dormir",
+        "b": "dormido"
+      },
+      {
+        "a": "beber",
+        "b": "bebido"
+      },
+      {
+        "a": "subir",
+        "b": "subido"
+      }
+    ]
+  }
+}

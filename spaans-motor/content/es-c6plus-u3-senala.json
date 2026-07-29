@@ -1,0 +1,206 @@
+{
+  "id": "es-c6plus-u3-senala",
+  "title": "Señala",
+  "subtitle": "U3 · klik het juiste antwoord",
+  "lang": "es",
+  "template": "point",
+  "options": {
+    "audio": false
+  },
+  "point": {
+    "prompt": "Klik het gevraagde item",
+    "mode": "one",
+    "rounds": [
+      {
+        "tag": "digital",
+        "sub": "señala un aparato",
+        "targets": [
+          {
+            "label": "el móvil",
+            "hit": true
+          },
+          {
+            "label": "chatear"
+          },
+          {
+            "label": "útil"
+          },
+          {
+            "label": "mañana"
+          }
+        ]
+      },
+      {
+        "tag": "digital",
+        "sub": "señala una acción (verbo)",
+        "targets": [
+          {
+            "label": "la pantalla"
+          },
+          {
+            "label": "subir",
+            "hit": true
+          },
+          {
+            "label": "el perfil"
+          },
+          {
+            "label": "el cargador"
+          }
+        ]
+      },
+      {
+        "tag": "futuro",
+        "sub": "«ik ga eten» = ?",
+        "targets": [
+          {
+            "label": "voy comer"
+          },
+          {
+            "label": "voy a comer",
+            "hit": true
+          },
+          {
+            "label": "voy a como"
+          },
+          {
+            "label": "va a comer"
+          }
+        ]
+      },
+      {
+        "tag": "futuro",
+        "sub": "«we gaan afspreken» = ?",
+        "targets": [
+          {
+            "label": "vamos a quedar",
+            "hit": true
+          },
+          {
+            "label": "van a quedar"
+          },
+          {
+            "label": "vamos quedar"
+          },
+          {
+            "label": "vais a quedar"
+          }
+        ]
+      },
+      {
+        "tag": "oi",
+        "sub": "«___ escribo a Diego»",
+        "targets": [
+          {
+            "label": "le",
+            "hit": true
+          },
+          {
+            "label": "les"
+          },
+          {
+            "label": "lo"
+          },
+          {
+            "label": "la"
+          }
+        ]
+      },
+      {
+        "tag": "oi",
+        "sub": "«___ mando fotos a mis amigos»",
+        "targets": [
+          {
+            "label": "les",
+            "hit": true
+          },
+          {
+            "label": "le"
+          },
+          {
+            "label": "los"
+          },
+          {
+            "label": "las"
+          }
+        ]
+      },
+      {
+        "tag": "acabar",
+        "sub": "«ik heb net gegeten» = ?",
+        "targets": [
+          {
+            "label": "voy a comer"
+          },
+          {
+            "label": "acabo de comer",
+            "hit": true
+          },
+          {
+            "label": "acabo comer"
+          },
+          {
+            "label": "acabo de como"
+          }
+        ]
+      },
+      {
+        "tag": "opinion",
+        "sub": "«Creo que las redes ___ útiles»",
+        "targets": [
+          {
+            "label": "son",
+            "hit": true
+          },
+          {
+            "label": "sean"
+          },
+          {
+            "label": "es"
+          },
+          {
+            "label": "están"
+          }
+        ]
+      },
+      {
+        "tag": "tiempo",
+        "sub": "«dit weekend» = ?",
+        "targets": [
+          {
+            "label": "este fin de semana",
+            "hit": true
+          },
+          {
+            "label": "ayer"
+          },
+          {
+            "label": "siempre"
+          },
+          {
+            "label": "ahora"
+          }
+        ]
+      },
+      {
+        "tag": "digital",
+        "sub": "«het wachtwoord» = ?",
+        "targets": [
+          {
+            "label": "la contraseña",
+            "hit": true
+          },
+          {
+            "label": "el mensaje"
+          },
+          {
+            "label": "la pantalla"
+          },
+          {
+            "label": "el usuario"
+          }
+        ]
+      }
+    ]
+  }
+}

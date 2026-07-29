@@ -1,0 +1,72 @@
+{
+  "id": "es-c6plus-u5-biografia-memoria",
+  "title": "Memoria de la vida",
+  "subtitle": "U5 · zoek het paar español ↔ nederlands",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om: biografía + vertaling",
+    "pairs": [
+      {
+        "a": "nacer",
+        "b": "geboren worden"
+      },
+      {
+        "a": "crecer",
+        "b": "opgroeien"
+      },
+      {
+        "a": "casarse",
+        "b": "trouwen"
+      },
+      {
+        "a": "morir",
+        "b": "sterven"
+      },
+      {
+        "a": "ganar",
+        "b": "winnen"
+      },
+      {
+        "a": "escribir",
+        "b": "schrijven"
+      },
+      {
+        "a": "pintar",
+        "b": "schilderen"
+      },
+      {
+        "a": "descubrir",
+        "b": "ontdekken"
+      },
+      {
+        "a": "el premio",
+        "b": "de prijs"
+      },
+      {
+        "a": "el éxito",
+        "b": "het succes"
+      },
+      {
+        "a": "la vida",
+        "b": "het leven"
+      },
+      {
+        "a": "famoso",
+        "b": "beroemd"
+      },
+      {
+        "a": "mudarse",
+        "b": "verhuizen"
+      },
+      {
+        "a": "componer",
+        "b": "componeren"
+      }
+    ]
+  }
+}

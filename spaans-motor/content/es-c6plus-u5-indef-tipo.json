@@ -1,0 +1,124 @@
+{
+  "id": "es-c6plus-u5-indef-tipo",
+  "title": "¿regular o irregular?",
+  "subtitle": "U5 · welk soort indefinido?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Is de indefinido regelmatig of een sterke vorm (irregular)?",
+    "categories": [
+      {
+        "id": "reg",
+        "label": "regular<br><small>-ó / -ió</small>",
+        "glaze": "#2FA8A0"
+      },
+      {
+        "id": "irr",
+        "label": "irregular<br><small>fue, hizo…</small>",
+        "glaze": "#8B5E9E"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "nacer → nació",
+        "answer": "reg",
+        "tag": "reg",
+        "sub": "-er regular"
+      },
+      {
+        "stimulus": "hacer → hizo",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "fuerte"
+      },
+      {
+        "stimulus": "escribir → escribió",
+        "answer": "reg",
+        "tag": "reg",
+        "sub": "-ir regular"
+      },
+      {
+        "stimulus": "ser → fue",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "fuerte"
+      },
+      {
+        "stimulus": "ganar → ganó",
+        "answer": "reg",
+        "tag": "reg",
+        "sub": "-ar regular"
+      },
+      {
+        "stimulus": "tener → tuvo",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "fuerte"
+      },
+      {
+        "stimulus": "estudiar → estudió",
+        "answer": "reg",
+        "tag": "reg",
+        "sub": "-ar regular"
+      },
+      {
+        "stimulus": "decir → dijo",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "fuerte"
+      },
+      {
+        "stimulus": "vivir → vivió",
+        "answer": "reg",
+        "tag": "reg",
+        "sub": "-ir regular"
+      },
+      {
+        "stimulus": "estar → estuvo",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "fuerte"
+      },
+      {
+        "stimulus": "pintar → pintó",
+        "answer": "reg",
+        "tag": "reg",
+        "sub": "-ar regular"
+      },
+      {
+        "stimulus": "venir → vino",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "fuerte"
+      },
+      {
+        "stimulus": "componer → compuso",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "fuerte (poner)"
+      },
+      {
+        "stimulus": "ir → fue",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "fuerte"
+      },
+      {
+        "stimulus": "comer → comió",
+        "answer": "reg",
+        "tag": "reg",
+        "sub": "-er regular"
+      },
+      {
+        "stimulus": "dar → dio",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "fuerte"
+      }
+    ]
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "id": "es-c6plus-u3-ir-a-tetris",
+  "title": "ir a Tetris",
+  "subtitle": "U3 · laat de juiste vorm van ir vallen",
+  "lang": "es",
+  "template": "tetris",
+  "options": {
+    "rows": 9,
+    "speed": 1300,
+    "audio": false
+  },
+  "classify": {
+    "categories": [
+      {
+        "id": "voy",
+        "label": "voy a",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "vas",
+        "label": "vas a",
+        "glaze": "#C4402C"
+      },
+      {
+        "id": "va",
+        "label": "va a",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "van",
+        "label": "van a",
+        "glaze": "#E0A22F"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "yo … subir",
+        "answer": "voy",
+        "tag": "voy",
+        "sub": "yo → voy a"
+      },
+      {
+        "stimulus": "tú … salir",
+        "answer": "vas",
+        "tag": "vas",
+        "sub": "tú → vas a"
+      },
+      {
+        "stimulus": "Diego … chatear",
+        "answer": "va",
+        "tag": "va",
+        "sub": "él → va a"
+      },
+      {
+        "stimulus": "ellos … ver",
+        "answer": "van",
+        "tag": "van",
+        "sub": "ellos → van a"
+      },
+      {
+        "stimulus": "yo … llamar",
+        "answer": "voy",
+        "tag": "voy",
+        "sub": "yo → voy a"
+      },
+      {
+        "stimulus": "tú … estudiar",
+        "answer": "vas",
+        "tag": "vas",
+        "sub": "tú → vas a"
+      },
+      {
+        "stimulus": "Valen … compartir",
+        "answer": "va",
+        "tag": "va",
+        "sub": "ella → va a"
+      },
+      {
+        "stimulus": "mis amigos … quedar",
+        "answer": "van",
+        "tag": "van",
+        "sub": "ellos → van a"
+      },
+      {
+        "stimulus": "yo … descargar",
+        "answer": "voy",
+        "tag": "voy",
+        "sub": "yo → voy a"
+      },
+      {
+        "stimulus": "¿tú … venir?",
+        "answer": "vas",
+        "tag": "vas",
+        "sub": "tú → vas a"
+      },
+      {
+        "stimulus": "mi madre … comprar",
+        "answer": "va",
+        "tag": "va",
+        "sub": "ella → va a"
+      },
+      {
+        "stimulus": "los niños … jugar",
+        "answer": "van",
+        "tag": "van",
+        "sub": "ellos → van a"
+      },
+      {
+        "stimulus": "yo … apagar",
+        "answer": "voy",
+        "tag": "voy",
+        "sub": "yo → voy a"
+      },
+      {
+        "stimulus": "tú … contestar",
+        "answer": "vas",
+        "tag": "vas",
+        "sub": "tú → vas a"
+      },
+      {
+        "stimulus": "él … publicar",
+        "answer": "va",
+        "tag": "va",
+        "sub": "él → va a"
+      },
+      {
+        "stimulus": "ellas … viajar",
+        "answer": "van",
+        "tag": "van",
+        "sub": "ellas → van a"
+      }
+    ]
+  }
+}

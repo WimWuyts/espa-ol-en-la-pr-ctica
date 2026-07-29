@@ -1,0 +1,118 @@
+{
+  "id": "es-c6plus-u6-comparar",
+  "title": "¿más, menos o tan?",
+  "subtitle": "U6 · welk vergelijkingswoord?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "más/menos … QUE of tan … COMO?",
+    "categories": [
+      {
+        "id": "masque",
+        "label": "más/menos … que",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "tancomo",
+        "label": "tan … como",
+        "glaze": "#2E8E68"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "La ciudad es ___ grande ___ el pueblo. (groter)",
+        "answer": "masque",
+        "tag": "masque",
+        "sub": "más…que"
+      },
+      {
+        "stimulus": "Es ___ alto ___ yo. (even)",
+        "answer": "tancomo",
+        "tag": "tancomo",
+        "sub": "tan…como"
+      },
+      {
+        "stimulus": "Hoy hace ___ calor ___ ayer. (meer)",
+        "answer": "masque",
+        "tag": "masque",
+        "sub": "más…que"
+      },
+      {
+        "stimulus": "Es ___ rápido ___ un tren. (even)",
+        "answer": "tancomo",
+        "tag": "tancomo",
+        "sub": "tan…como"
+      },
+      {
+        "stimulus": "Antes era ___ tímido ___ ahora. (minder)",
+        "answer": "masque",
+        "tag": "masque",
+        "sub": "menos…que"
+      },
+      {
+        "stimulus": "Mi perro es ___ grande ___ el tuyo. (even)",
+        "answer": "tancomo",
+        "tag": "tancomo",
+        "sub": "tan…como"
+      },
+      {
+        "stimulus": "El pueblo es ___ tranquilo ___ la ciudad. (rustiger)",
+        "answer": "masque",
+        "tag": "masque",
+        "sub": "más…que"
+      },
+      {
+        "stimulus": "Soy ___ alto ___ mi hermano. (even)",
+        "answer": "tancomo",
+        "tag": "tancomo",
+        "sub": "tan…como"
+      },
+      {
+        "stimulus": "Este libro es ___ interesante ___ ese. (meer)",
+        "answer": "masque",
+        "tag": "masque",
+        "sub": "más…que"
+      },
+      {
+        "stimulus": "Es ___ divertido ___ un juego. (even)",
+        "answer": "tancomo",
+        "tag": "tancomo",
+        "sub": "tan…como"
+      },
+      {
+        "stimulus": "Hoy estoy ___ cansado ___ ayer. (minder)",
+        "answer": "masque",
+        "tag": "masque",
+        "sub": "menos…que"
+      },
+      {
+        "stimulus": "Nina es ___ simpática ___ Diego. (even)",
+        "answer": "tancomo",
+        "tag": "tancomo",
+        "sub": "tan…como"
+      },
+      {
+        "stimulus": "La casa nueva es ___ cara ___ la vieja. (duurder)",
+        "answer": "masque",
+        "tag": "masque",
+        "sub": "más…que"
+      },
+      {
+        "stimulus": "Corre ___ rápido ___ yo. (even)",
+        "answer": "tancomo",
+        "tag": "tancomo",
+        "sub": "tan…como"
+      },
+      {
+        "stimulus": "Antes había ___ coches ___ ahora. (minder)",
+        "answer": "masque",
+        "tag": "masque",
+        "sub": "menos…que"
+      }
+    ]
+  }
+}

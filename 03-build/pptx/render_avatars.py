@@ -32,7 +32,7 @@ def square_mochila(svg):
 
 def build_svgs():
     out = {}
-    for name in ["lucia", "diego", "valen", "nina"]:
+    for name in ["lucia", "diego", "valen", "nina", "mateo"]:
         out[name] = C.make(name, "avatar", w=PX)
     out["tu"] = C.tu_avatar(w=PX)
     out["mochila"] = square_mochila(C.mochila(w=PX))

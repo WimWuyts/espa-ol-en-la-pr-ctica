@@ -1,0 +1,64 @@
+{
+  "id": "es-c6plus-u3-acciones-memoria",
+  "title": "Memoria de acciones",
+  "subtitle": "U3 · koppel het werkwoord aan de vertaling",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om: verbo + vertaling",
+    "pairs": [
+      {
+        "a": "chatear",
+        "b": "chatten"
+      },
+      {
+        "a": "navegar",
+        "b": "surfen"
+      },
+      {
+        "a": "subir",
+        "b": "uploaden"
+      },
+      {
+        "a": "descargar",
+        "b": "downloaden"
+      },
+      {
+        "a": "compartir",
+        "b": "delen"
+      },
+      {
+        "a": "seguir",
+        "b": "volgen"
+      },
+      {
+        "a": "publicar",
+        "b": "posten"
+      },
+      {
+        "a": "apagar",
+        "b": "uitzetten"
+      },
+      {
+        "a": "encender",
+        "b": "aanzetten"
+      },
+      {
+        "a": "mandar",
+        "b": "sturen"
+      },
+      {
+        "a": "llamar",
+        "b": "bellen"
+      },
+      {
+        "a": "contestar",
+        "b": "antwoorden"
+      }
+    ]
+  }
+}

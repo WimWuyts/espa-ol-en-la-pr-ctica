@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ordena la frase</title>
+<style>
+/* Gedeelde ontwerptokens — azulejo-stijl (Talavera-tegels). */
+:root{
+  --muro:#12264A; --muro-2:#0A1730; --cal:#F3ECDB; --cal-dim:#C8BFA9;
+  --barro:#D6C3A0; --barro-txt:#3A2E22; --roto:#7C7268;
+  --p1:#C4402C; --p2:#E0A22F; --p3:#2E8E68; --p4:#3D74D6; --p5:#8B5E9E; --p6:#EFE7D4;
+  --serif:"Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Courier New",monospace;
+}
+
+/* Gedeelde schil: pagina, kop, HUD, overlays, resultaten. Sjabloon-onafhankelijk. */
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  min-height:100vh;color:var(--cal);font-family:var(--sans);
+  background:
+    radial-gradient(120% 80% at 18% -10%, rgba(255,236,190,.16), transparent 60%),
+    radial-gradient(90% 70% at 100% 110%, rgba(61,116,214,.20), transparent 65%),
+    linear-gradient(180deg,var(--muro) 0%,var(--muro-2) 100%);
+  background-attachment:fixed;
+  display:flex;flex-direction:column;align-items:center;padding:14px 12px 28px;
+}
+#app{width:100%;max-width:1040px}
+header.mt{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+header.mt h1{font-family:var(--serif);font-weight:700;font-size:clamp(22px,4.5vw,38px);letter-spacing:.14em;margin:0;line-height:1;text-shadow:0 2px 0 rgba(0,0,0,.35)}
+header.mt h1 span{color:var(--p2)}
+header.mt .tag{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--cal-dim);margin:2px 0 0}
+header.mt .sp{flex:1}
+.mt-btn{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;background:transparent;color:var(--cal-dim);border:1px solid rgba(243,236,219,.28);border-radius:2px;padding:7px 12px;cursor:pointer;transition:.15s}
+.mt-btn:hover{color:var(--cal);border-color:var(--cal);background:rgba(243,236,219,.07)}
+.mt-btn:focus-visible{outline:2px solid var(--p2);outline-offset:2px}
+.mt-wrap{display:grid;grid-template-columns:1fr 220px;gap:18px;align-items:start}
+@media(max-width:820px){.mt-wrap{grid-template-columns:1fr}}
+.mt-panel{display:flex;flex-direction:column;gap:10px}
+.mt-stat{background:rgba(243,236,219,.06);border:1px solid rgba(243,236,219,.16);border-radius:2px;padding:9px 12px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.mt-stat .k{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--cal-dim)}
+.mt-stat .v{font-family:var(--mono);font-size:20px;font-weight:600}
+.mt-stat .v.hot{color:var(--p2)}
+@media(max-width:820px){.mt-panel{flex-direction:row;flex-wrap:wrap}.mt-stat{flex:1 1 90px}}
+.mt-ov{position:fixed;inset:0;z-index:50;display:none;background:rgba(8,18,38,.90);backdrop-filter:blur(3px);overflow-y:auto;padding:24px 16px}
+.mt-ov.on{display:flex;align-items:flex-start;justify-content:center}
+.mt-sheet{width:100%;max-width:640px;margin:auto;background:linear-gradient(175deg,#FBF6E9,#EAE1CA);color:#12264A;border-radius:3px;box-shadow:0 20px 50px rgba(0,0,0,.6);padding:24px;position:relative;overflow:hidden}
+.mt-sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:9px;background:repeating-linear-gradient(45deg,#12264A 0 5px,transparent 5px 10px),repeating-linear-gradient(-45deg,#12264A 0 5px,transparent 5px 10px);opacity:.55}
+.mt-sheet h2{font-family:var(--serif);font-size:26px;letter-spacing:.08em;margin:12px 0 3px;text-transform:uppercase}
+.mt-sheet .sub{font-family:var(--serif);font-style:italic;color:#6E6249;margin:0 0 18px;font-size:14.5px}
+.mt-go{width:100%;margin-top:8px;padding:15px;border:none;border-radius:2px;cursor:pointer;background:#C4402C;color:#FBF6E9;font-family:var(--serif);font-size:19px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;box-shadow:0 5px 0 #8E2C1D;transition:.1s}
+.mt-go:hover{background:#D14A34}.mt-go:active{transform:translateY(4px);box-shadow:0 1px 0 #8E2C1D}
+.mt-go.alt{background:#12264A;box-shadow:0 5px 0 #08152C}.mt-go.alt:hover{background:#1B3667}
+.mt-ghost{width:100%;margin-top:9px;padding:11px;border:1px solid #C3B99F;background:transparent;border-radius:2px;cursor:pointer;font-family:var(--serif);font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#6E6249}
+.mt-ghost:hover{border-color:#12264A;color:#12264A}
+.mt-rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}
+.mt-rcell{background:rgba(18,38,74,.07);border:1px solid rgba(18,38,74,.14);border-radius:2px;padding:9px 6px;text-align:center}
+.mt-rcell .rk{font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:#8A7F66}
+.mt-rcell .rv{font-family:var(--mono);font-size:20px;font-weight:600}
+.mt-bar{display:grid;grid-template-columns:96px 1fr 46px;align-items:center;gap:8px;margin-bottom:5px;font-size:13px}
+.mt-bar .bl{font-family:var(--serif);font-style:italic;text-align:right;color:#3A3222;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mt-bar .bt{height:15px;background:rgba(18,38,74,.10);border-radius:1px;overflow:hidden}
+.mt-bar .bf{height:100%;transition:width .5s ease}
+.mt-bar .bn{font-family:var(--mono);font-size:11.5px;color:#6E6249}
+.mt-mis{list-style:none;padding:0;margin:6px 0 0;font-size:13.5px}
+.mt-mis li{padding:6px 0;border-bottom:1px dotted rgba(18,38,74,.22);display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.mt-mis b{font-family:var(--serif);font-size:16px}
+.mt-mis .ok{color:#1F6B4C;font-weight:600}.mt-mis em{font-style:normal;color:#8E2C1D}
+.mt-grp{margin-bottom:15px}
+.mt-grp>label{display:block;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#8A7F66;margin-bottom:6px}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+
+/* Sjabloon: volgorde (order). Slots bovenaan, tikbare bank onderaan. */
+.or-card{background:linear-gradient(175deg,#FBF6E9,#E9E0C9);border:1px solid rgba(0,0,0,.25);border-radius:3px;
+  box-shadow:0 6px 0 rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.9);padding:16px;position:relative;overflow:hidden;min-height:200px}
+.or-card::before,.or-card::after{content:"";position:absolute;left:0;right:0;height:7px;background:repeating-linear-gradient(45deg,#12264A 0 4px,transparent 4px 8px),repeating-linear-gradient(-45deg,#12264A 0 4px,transparent 4px 8px);opacity:.5}
+.or-card::before{top:0}.or-card::after{bottom:0}
+.or-eye{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8A7F66;text-align:center;margin-bottom:14px}
+.or-slots{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:16px}
+.or-slot{position:relative;min-width:74px;min-height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  border:2px dashed #C3B99F;border-radius:4px;background:rgba(18,38,74,.03)}
+.or-slot .or-n{font-family:var(--mono);font-size:11px;color:#B3A588}
+.or-slot.filled{border-style:solid;border-color:#1F6B4C;background:linear-gradient(180deg,#DFF3E4,#C4E7D0)}
+.or-slot.filled .or-n{position:absolute;top:3px;left:5px;font-size:10px;color:#1F6B4C}
+.or-lab{font-family:var(--serif);font-weight:700;font-size:clamp(15px,2.6vw,20px);color:#12264A;padding:2px 6px;text-align:center}
+.or-bank{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;min-height:56px}
+.or-chip{font-family:var(--serif);font-weight:700;font-size:clamp(15px,2.6vw,20px);color:#12264A;
+  background:linear-gradient(180deg,#fff,#F1E9D5);border:1px solid #C3B99F;border-radius:3px;padding:12px 15px;cursor:pointer;
+  box-shadow:0 3px 0 rgba(0,0,0,.14);transition:transform .08s,filter .12s}
+.or-chip:hover{filter:brightness(1.04);border-color:#12264A}
+.or-chip:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(0,0,0,.14)}
+.or-chip:focus-visible{outline:3px solid #3D74D6;outline-offset:2px}
+.or-chip.used{visibility:hidden}
+.or-chip.shake{animation:orShake .45s}
+@keyframes orShake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.or-fb{min-height:22px;margin-top:12px;text-align:center;font-family:var(--serif);font-size:15px;font-weight:700}
+.or-fb.g{color:#1F6B4C}.or-fb.b{color:#8E2C1D}
+.or-card.bad{animation:orBad .5s}
+@keyframes orBad{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+
+</style>
+</head>
+<body>
+<div id="app"></div>
+<!-- Gegenereerd door spaans-motor uit content/es-c6plus-u4-viaje-order.json -->
+<script>
+/* Volgorde (order / sequence): een reeks tegels staat door elkaar; tik ze in
+   de juiste volgorde (klein→groot, alfabetisch, chronologisch …). Elke tegel
+   heeft een `key` die de juiste volgorde bepaalt (oplopend). Content:
+   order.rounds:[{prompt?, tag, sub?, items:[{label,key}]}].
+   Judge één keer per ronde: juist = de hele ronde zonder misklik gelegd. */
+window.MotorTemplates = window.MotorTemplates || {};
+window.MotorTemplates.order = {
+  init(api){
+    const cfg = api.config, el = api.el;
+    const conf = cfg.order || {};
+    const rounds = shuffle((conf.rounds || []).slice());
+    api.setTarget(rounds.length);
+
+    const root = api.root; root.innerHTML = "";
+    const card = el("div","or-card");
+    card.innerHTML =
+      '<div class="or-eye" id="orEye"></div>'+
+      '<div class="or-slots" id="orSlots"></div>'+
+      '<div class="or-bank" id="orBank"></div>'+
+      '<div class="or-fb" id="orFb">&nbsp;</div>';
+    root.appendChild(card);
+
+    const eyeEl = card.querySelector("#orEye");
+    const slotsEl = card.querySelector("#orSlots");
+    const bankEl = card.querySelector("#orBank");
+    const fbEl = card.querySelector("#orFb");
+
+    let ri = 0, round = null, sorted = [], nextPos = 0, mistakes = 0, locked = false;
+
+    function loadRound(){
+      if(ri >= rounds.length){ api.finish(); return; }
+      round = rounds[ri];
+      sorted = (round.items||[]).slice().sort((a,b)=>a.key-b.key);
+      nextPos = 0; mistakes = 0; locked = false;
+      eyeEl.textContent = round.prompt || conf.prompt || "Tik in de juiste volgorde";
+      fbEl.textContent = " "; fbEl.className = "or-fb"; card.classList.remove("bad");
+      slotsEl.innerHTML = ""; bankEl.innerHTML = "";
+      sorted.forEach((_,i)=>{ const s = el("div","or-slot"); s.innerHTML = '<span class="or-n">'+(i+1)+'</span>'; s.dataset.pos = i; slotsEl.appendChild(s); });
+      shuffle(round.items.slice()).forEach(it=>{
+        const b = el("button","or-chip", esc(it.label)); b.type="button";
+        b.dataset.key = it.key;
+        b.addEventListener("click",()=>tap(it,b));
+        bankEl.appendChild(b);
+      });
+    }
+    function tap(it,b){
+      if(locked || b.classList.contains("used")) return;
+      const expected = sorted[nextPos];
+      if(it.key === expected.key){
+        b.classList.add("used");
+        const slot = slotsEl.querySelector('.or-slot[data-pos="'+nextPos+'"]');
+        slot.classList.add("filled");
+        slot.insertAdjacentHTML("beforeend",'<span class="or-lab">'+esc(it.label)+'</span>');
+        api.sfx.move();
+        nextPos++;
+        if(nextPos >= sorted.length) finishRound();
+      }else{
+        mistakes++;
+        b.classList.remove("shake"); void b.offsetWidth; b.classList.add("shake");
+        api.sfx.bad();
+        fbEl.innerHTML = "→ eerst: <b>"+esc(expected.label)+"</b>"; fbEl.className = "or-fb b";
+      }
+    }
+    function finishRound(){
+      locked = true;
+      const ok = mistakes === 0;
+      api.judge(ok,{tag:round.tag||"orden", stimulus:sorted.map(x=>x.label).join(" · "),
+        chosen: ok?"":"("+mistakes+" fout)", correct:[sorted.map(x=>x.label).join(" · ")], sub:round.sub});
+      if(ok){ fbEl.textContent = "¡perfecto!"; fbEl.className = "or-fb g"; api.sfx.ok(); }
+      else { card.classList.add("bad"); }
+      ri++; api.tick();
+      setTimeout(loadRound, api.calm?300:800);
+    }
+
+    loadRound();
+
+    function esc(s){ return String(s).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
+    function shuffle(a){ for(let i=a.length-1;i>0;i--){const j=(Math.random()*(i+1))|0;[a[i],a[j]]=[a[j],a[i]];} return a; }
+  }
+};
+
+;
+/* ============================================================
+   MOTOR — gedeelde kern. Sjabloon-onafhankelijk.
+   Een sjabloon rendert ALLEEN het speelveld en meldt per beurt
+   goed/fout via api.judge(). De motor doet de rest:
+   score, streak, niveau, adaptieve keuze, foutenlog, resultaten,
+   geluid, instellingen, toegankelijkheid.
+   ============================================================ */
+(function(){
+"use strict";
+
+const CALM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- geluid ---------- */
+function makeAudio(on){
+  let AC=null;
+  function ac(){ if(!AC && on){ try{AC=new (window.AudioContext||window.webkitAudioContext)();}catch(e){}} return AC; }
+  function beep(f,d,type,vol,to){ if(!on)return; const a=ac(); if(!a)return;
+    const o=a.createOscillator(),g=a.createGain(); o.type=type||"triangle";
+    o.frequency.setValueAtTime(f,a.currentTime);
+    if(to) o.frequency.exponentialRampToValueAtTime(to,a.currentTime+d);
+    g.gain.setValueAtTime(vol||.16,a.currentTime);
+    g.gain.exponentialRampToValueAtTime(.0008,a.currentTime+d);
+    o.connect(g);g.connect(a.destination);o.start();o.stop(a.currentTime+d); }
+  function noise(d,vol){ if(!on)return; const a=ac(); if(!a)return;
+    const n=Math.floor(a.sampleRate*d),buf=a.createBuffer(1,n,a.sampleRate),dt=buf.getChannelData(0);
+    for(let i=0;i<n;i++)dt[i]=(Math.random()*2-1)*(1-i/n);
+    const s=a.createBufferSource();s.buffer=buf;
+    const fl=a.createBiquadFilter();fl.type="lowpass";fl.frequency.value=900;
+    const g=a.createGain();g.gain.value=vol||.18;
+    s.connect(fl);fl.connect(g);g.connect(a.destination);s.start(); }
+  return {
+    unlock:ac,
+    setOn(v){on=v;},
+    ok(){ beep(740,.08,"triangle",.16); setTimeout(()=>beep(1108,.13,"triangle",.14),60); },
+    bad(){ noise(.22,.24); beep(150,.28,"sawtooth",.12,70); },
+    move(){ beep(620,.04,"square",.05); },
+    win(){ [523,659,784,1046,1319].forEach((f,i)=>setTimeout(()=>beep(f,.16,"triangle",.15),i*62)); }
+  };
+}
+
+/* ---------- helpers ---------- */
+function el(tag,cls,html){ const e=document.createElement(tag); if(cls)e.className=cls; if(html!=null)e.innerHTML=html; return e; }
+function shade(hex,f){ const n=parseInt(hex.slice(1),16);
+  const r=Math.max(0,Math.min(255,Math.round(((n>>16)&255)*f)));
+  const g=Math.max(0,Math.min(255,Math.round(((n>>8)&255)*f)));
+  const b=Math.max(0,Math.min(255,Math.round((n&255)*f)));
+  return "rgb("+r+","+g+","+b+")"; }
+
+/* ---------- adaptieve toevoer ----------
+   Trekt K kandidaten en kiest die met de zwakste tag. Werkt zowel voor
+   generatoren (source.make) als voor vaste itemlijsten (source.items). */
+function makeFeeder(source, tagStats){
+  const draw = source.make ? source.make
+             : () => source.items[(Math.random()*source.items.length)|0];
+  return function next(){
+    let best=null, bestScore=Infinity;
+    for(let i=0;i<4;i++){
+      const it = draw();
+      const st = tagStats[it.tag] || {ok:0,bad:0};
+      const acc = (st.ok+1)/(st.ok+st.bad+2);      // laag = zwak → voorrang
+      const score = acc + Math.random()*0.5;
+      if(score<bestScore){ bestScore=score; best=it; }
+    }
+    return best;
+  };
+}
+
+/* ============================================================
+   MOUNT
+   ============================================================ */
+function mount(app, cfg){
+  cfg.options = cfg.options || {};
+  const audio = makeAudio(cfg.options.audio !== false);
+
+  /* ---- schil bouwen ---- */
+  app.innerHTML = "";
+  const header = el("header","mt");
+  const titleWrap = el("div");
+  titleWrap.appendChild(el("h1",null, esc(cfg.title||"Oefening")));
+  if(cfg.subtitle) titleWrap.appendChild(el("p","tag", esc(cfg.subtitle)));
+  header.appendChild(titleWrap);
+  header.appendChild(el("div","sp"));
+  const bAgain = el("button","mt-btn","Opnieuw"); bAgain.type="button";
+  header.appendChild(bAgain);
+  app.appendChild(header);
+
+  const wrap = el("div","mt-wrap");
+  const fieldCol = el("div");
+  const field = el("div","mt-field");
+  fieldCol.appendChild(field);
+  wrap.appendChild(fieldCol);
+
+  const panel = el("div","mt-panel");
+  const sScore = statBox(panel,"Punten","0");
+  const sStreak = statBox(panel,"Reeks","0");
+  const sProg = statBox(panel,"Voortgang","–");
+  wrap.appendChild(panel);
+  app.appendChild(wrap);
+
+  /* ---- resultatenoverlay ---- */
+  const ov = el("div","mt-ov");
+  ov.innerHTML =
+    '<div class="mt-sheet"><h2>Klaar</h2><p class="sub" id="mtRSub"></p>'+
+    '<div class="mt-rgrid">'+
+      '<div class="mt-rcell"><div class="rk">Punten</div><div class="rv" id="mtRScore">0</div></div>'+
+      '<div class="mt-rcell"><div class="rk">Juist</div><div class="rv" id="mtRAcc">–</div></div>'+
+      '<div class="mt-rcell"><div class="rk">Beste reeks</div><div class="rv" id="mtRBest">0</div></div>'+
+    '</div>'+
+    '<div class="mt-grp" id="mtRBarsWrap"><label id="mtRBarsLbl">Per categorie</label><div id="mtRBars"></div></div>'+
+    '<div class="mt-grp" id="mtRMisWrap"><label>Waar het misging</label><ul class="mt-mis" id="mtRMis"></ul></div>'+
+    '<button class="mt-go" id="mtRAgain" type="button">Opnieuw</button></div>';
+  app.appendChild(ov);
+
+  /* ---- staat ---- */
+  const S = { score:0, streak:0, best:0, level:1, ok:0, total:0, tagStats:{}, log:[], done:0, target:0 };
+
+  function statBox(parent,k,v){
+    const b=el("div","mt-stat"); b.innerHTML='<span class="k">'+k+'</span><span class="v">'+v+'</span>';
+    parent.appendChild(b); return b.querySelector(".v");
+  }
+  function esc(s){ return String(s).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
+
+  function hud(){
+    sScore.textContent=S.score;
+    sStreak.textContent=S.streak; sStreak.classList.toggle("hot",S.streak>=5);
+    sProg.textContent = S.target ? (S.done+"/"+S.target) : "–";
+  }
+
+  /* label voor een tag (categorie of persoon) t.b.v. resultaten */
+  function tagLabel(tag){
+    if(cfg._tagLabel){ const l=cfg._tagLabel(tag); if(l) return l; }
+    if(cfg.classify && cfg.classify.categories){
+      const c=cfg.classify.categories.find(x=>x.id===tag); if(c) return c.label.replace(/<[^>]+>/g," ").trim();
+    }
+    return tag;
+  }
+
+  /* ---- API voor het sjabloon ---- */
+  const feeder = cfg._source ? makeFeeder(cfg._source, S.tagStats) : null;
+
+  const api = {
+    root: field,
+    config: cfg,
+    calm: CALM,
+    sfx: audio,
+    el, shade,
+    categories: (cfg.classify && cfg.classify.categories) || [],
+
+    /* volgende stimulus (adaptief) — enkel voor stimulus→antwoord-sjablonen */
+    next(){ return feeder ? feeder() : null; },
+
+    /* aantal beurten instellen (voor voortgang + einde) */
+    setTarget(n){ S.target=n; hud(); },
+    tick(){ S.done++; hud(); },
+
+    /* losse puntenbonus (bv. tetris-lijn); telt niet mee in juist% */
+    bonus(n){ S.score += (n|0); hud(); },
+
+    /* kern: één beoordeling. meta = {tag, stimulus, chosen, correct[], sub} */
+    judge(ok, meta){
+      meta = meta || {};
+      S.total++;
+      const tag = meta.tag || "_";
+      const st = S.tagStats[tag] || (S.tagStats[tag]={ok:0,bad:0});
+      if(ok){
+        S.ok++; st.ok++; S.streak++; if(S.streak>S.best)S.best=S.streak;
+        S.score += 10 + Math.min(50,S.streak*3);
+        if(S.ok % 10 === 0) S.level++;
+        audio.ok();
+      }else{
+        st.bad++; S.streak=0; S.score=Math.max(0,S.score-5);
+        audio.bad();
+        if(meta.stimulus){
+          S.log.push({ stimulus:meta.stimulus, sub:meta.sub||"",
+            juist:(meta.correct||[]).map(tagLabel).join(" / "),
+            gekozen: meta.chosen!=null ? tagLabel(meta.chosen) : "" });
+        }
+      }
+      hud();
+      return { ok, streak:S.streak };
+    },
+
+    finish(){ showResults(); }
+  };
+
+  function showResults(){
+    const acc = S.total ? Math.round(S.ok/S.total*100) : 0;
+    ov.querySelector("#mtRScore").textContent=S.score;
+    ov.querySelector("#mtRAcc").textContent=acc+"%";
+    ov.querySelector("#mtRBest").textContent=S.best;
+    ov.querySelector("#mtRSub").textContent =
+      acc>=90 ? "Strak werk." : acc>=70 ? "Degelijk." : "Nog eens oefenen loont.";
+
+    /* balken per tag (alleen tonen als er >1 tag is) */
+    const tags = Object.keys(S.tagStats);
+    const barsWrap = ov.querySelector("#mtRBarsWrap");
+    const bars = ov.querySelector("#mtRBars"); bars.innerHTML="";
+    if(tags.length>1){
+      barsWrap.style.display="";
+      const palette=["#C4402C","#E0A22F","#2E8E68","#3D74D6","#8B5E9E","#6E6249"];
+      tags.forEach((t,i)=>{
+        const s=S.tagStats[t], tot=s.ok+s.bad, pct=tot?Math.round(s.ok/tot*100):0;
+        const row=el("div","mt-bar");
+        row.innerHTML='<span class="bl">'+esc(tagLabel(t))+'</span>'+
+          '<span class="bt"><span class="bf" style="width:'+pct+'%;background:'+palette[i%palette.length]+'"></span></span>'+
+          '<span class="bn">'+pct+'%</span>';
+        bars.appendChild(row);
+      });
+    } else barsWrap.style.display="none";
+
+    /* laatste fouten */
+    const misWrap=ov.querySelector("#mtRMisWrap");
+    const ul=ov.querySelector("#mtRMis"); ul.innerHTML="";
+    const last=S.log.slice(-8).reverse();
+    misWrap.style.display = last.length ? "" : "none";
+    last.forEach(m=>{
+      const li=el("li");
+      li.innerHTML="<b>"+esc(m.stimulus)+"</b> <span class='ok'>"+esc(m.juist)+"</span>"+
+        (m.gekozen?" <em>jij: "+esc(m.gekozen)+"</em>":"")+
+        (m.sub?" <span style='color:#8A7F66;font-size:12px'>("+esc(m.sub)+")</span>":"");
+      ul.appendChild(li);
+    });
+    if(acc>=90) audio.win();
+    ov.classList.add("on");
+  }
+
+  /* ---- start / herstart ---- */
+  function reset(){
+    S.score=0;S.streak=0;S.best=0;S.level=1;S.ok=0;S.total=0;S.tagStats={};S.log=[];S.done=0;S.target=0;
+    if(api._cleanup){ api._cleanup(); api._cleanup=null; }
+    ov.classList.remove("on"); field.innerHTML=""; hud();
+    const tpl = window.MotorTemplates && window.MotorTemplates[cfg.template];
+    if(!tpl){ field.innerHTML="<p style='color:#C4402C'>Onbekend sjabloon: "+esc(cfg.template)+"</p>"; return; }
+    tpl.init(api);
+  }
+  bAgain.addEventListener("click", ()=>{ audio.unlock(); reset(); });
+  ov.querySelector("#mtRAgain").addEventListener("click", ()=>{ audio.unlock(); reset(); });
+
+  /* eerste tik ontgrendelt geluid op mobiel */
+  app.addEventListener("pointerdown", ()=>audio.unlock(), {once:true});
+
+  reset();
+}
+
+window.Motor = { mount };
+})();
+
+;
+(function(){
+var cfg = {"id":"es-c6plus-u4-viaje-order","title":"Ordena la frase","subtitle":"U4 · zet de zin/het verhaal in de juiste volgorde","lang":"es","template":"order","options":{"audio":false},"order":{"prompt":"Tik in de logische volgorde","rounds":[{"tag":"perfecto","sub":"haber + participio","items":[{"label":"Este año","key":1},{"label":"he","key":2},{"label":"viajado","key":3},{"label":"a Chile.","key":4}]},{"tag":"relato","sub":"el orden del viaje","items":[{"label":"He hecho la maleta,","key":1},{"label":"he cogido el avión,","key":2},{"label":"he visitado el desierto","key":3},{"label":"y he vuelto a casa.","key":4}]},{"tag":"porpara","sub":"por/para","items":[{"label":"Viajo","key":1},{"label":"por avión","key":2},{"label":"para","key":3},{"label":"visitar Chile.","key":4}]},{"tag":"pregunta","sub":"pregunta con perfecto","items":[{"label":"¿Has","key":1},{"label":"estado","key":2},{"label":"alguna vez","key":3},{"label":"en Perú?","key":4}]},{"tag":"perfecto","sub":"irregular","items":[{"label":"(Yo)","key":1},{"label":"he","key":2},{"label":"visto","key":3},{"label":"el mar.","key":4}]},{"tag":"opinion","sub":"lo mejor","items":[{"label":"Lo mejor","key":1},{"label":"ha sido","key":2},{"label":"el paisaje","key":3},{"label":"de la Patagonia.","key":4}]},{"tag":"marcador","sub":"todavía no","items":[{"label":"Todavía","key":1},{"label":"no","key":2},{"label":"he estado","key":3},{"label":"en Rapa Nui.","key":4}]},{"tag":"relato","sub":"el vuelo","items":[{"label":"Primero","key":1},{"label":"he ido al aeropuerto,","key":2},{"label":"luego he facturado","key":3},{"label":"y al final he embarcado.","key":4}]}]}};
+Motor.mount(document.getElementById('app'), cfg);
+})();
+</script>
+</body>
+</html>

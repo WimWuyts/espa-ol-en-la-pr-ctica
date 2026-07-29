@@ -1,0 +1,64 @@
+{
+  "id": "es-c6plus-u2-lugar-funcion",
+  "title": "Lugar y función",
+  "subtitle": "U2 · koppel de plek aan wat je er doet",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind de plek met de functie",
+    "pairs": [
+      {
+        "a": "la farmacia",
+        "b": "comprar medicinas 💊"
+      },
+      {
+        "a": "el supermercado",
+        "b": "comprar comida 🛒"
+      },
+      {
+        "a": "la parada",
+        "b": "coger el autobús 🚌"
+      },
+      {
+        "a": "el parque",
+        "b": "pasear 🌳"
+      },
+      {
+        "a": "el banco",
+        "b": "sacar dinero 💰"
+      },
+      {
+        "a": "la estación",
+        "b": "coger el tren 🚆"
+      },
+      {
+        "a": "la plaza",
+        "b": "quedar con amigos 🟨"
+      },
+      {
+        "a": "la cocina",
+        "b": "cocinar 🍳"
+      },
+      {
+        "a": "el dormitorio",
+        "b": "dormir 🛏️"
+      },
+      {
+        "a": "el baño",
+        "b": "ducharse 🚿"
+      },
+      {
+        "a": "la panadería",
+        "b": "comprar pan 🥖"
+      },
+      {
+        "a": "el garaje",
+        "b": "aparcar el coche 🚗"
+      }
+    ]
+  }
+}

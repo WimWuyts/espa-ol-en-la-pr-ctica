@@ -1,0 +1,64 @@
+{
+  "id": "es-c6plus-u7-planeta-memoria",
+  "title": "Memoria: el planeta",
+  "subtitle": "U7 · koppel het woord aan de vertaling",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om: medio ambiente + vertaling",
+    "pairs": [
+      {
+        "a": "el medio ambiente",
+        "b": "het milieu"
+      },
+      {
+        "a": "el planeta",
+        "b": "de planeet"
+      },
+      {
+        "a": "reciclar",
+        "b": "recyclen"
+      },
+      {
+        "a": "la basura",
+        "b": "het afval"
+      },
+      {
+        "a": "contaminar",
+        "b": "vervuilen"
+      },
+      {
+        "a": "ahorrar",
+        "b": "besparen"
+      },
+      {
+        "a": "la energía",
+        "b": "de energie"
+      },
+      {
+        "a": "proteger",
+        "b": "beschermen"
+      },
+      {
+        "a": "el árbol",
+        "b": "de boom"
+      },
+      {
+        "a": "porque",
+        "b": "omdat/want"
+      },
+      {
+        "a": "además",
+        "b": "bovendien"
+      },
+      {
+        "a": "por eso",
+        "b": "daarom"
+      }
+    ]
+  }
+}

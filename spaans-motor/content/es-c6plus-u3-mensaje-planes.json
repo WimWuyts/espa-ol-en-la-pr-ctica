@@ -1,0 +1,37 @@
+{
+  "id": "es-c6plus-u3-mensaje-planes",
+  "title": "Mensaje de voz: mi finde",
+  "subtitle": "U3 · neem een spraakbericht op",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "voicemessage",
+    "prompt": "Graba un mensaje de voz (30–40 s)",
+    "items": [
+      {
+        "text": "Cuenta tu plan de fin de semana (usa 3 veces ir a + infinitivo).",
+        "cue": "mi plan",
+        "tag": "futuro",
+        "sub": "gebruik: voy a … · vamos a … · el sábado voy a …",
+        "tip": "3× ir a + infinitivo (met de a)? Neem opnieuw op."
+      },
+      {
+        "text": "Di a quién escribes, llamas o mandas fotos (usa le y les).",
+        "cue": "le / les",
+        "tag": "oi",
+        "sub": "gebruik: le escribo a … · les mando … a mis amigos",
+        "tip": "le én les gebruikt? Herneem."
+      },
+      {
+        "text": "Da tu opinión sobre las redes sociales (creo que … porque …).",
+        "cue": "mi opinión",
+        "tag": "opinion",
+        "sub": "gebruik: creo que … es … porque … · por un lado … por otro …",
+        "tip": "creo que + indicativo + porque? Herneem."
+      }
+    ]
+  }
+}

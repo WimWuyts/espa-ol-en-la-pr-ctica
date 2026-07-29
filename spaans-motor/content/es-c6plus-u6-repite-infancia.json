@@ -1,0 +1,57 @@
+{
+  "id": "es-c6plus-u6-repite-infancia",
+  "title": "Escucha y repite: mi infancia",
+  "subtitle": "U6 · escucha, repite y GRÁBATE",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "repeat",
+    "prompt": "Escucha ▶ · repite en voz alta · grábate ⏺",
+    "items": [
+      {
+        "text": "De pequeña vivía en un pueblo.",
+        "sub": "als kind woonde ik in een dorp",
+        "tag": "im",
+        "tip": "¡Bien! Ahora dilo sin leer."
+      },
+      {
+        "text": "Tenía un perro y jugaba en la calle.",
+        "sub": "ik had een hond en speelde op straat",
+        "tag": "im"
+      },
+      {
+        "text": "Todos los días iba a la escuela a pie.",
+        "sub": "elke dag ging ik te voet naar school",
+        "tag": "im"
+      },
+      {
+        "text": "Mi abuela era muy amable.",
+        "sub": "mijn oma was heel lief",
+        "tag": "im"
+      },
+      {
+        "text": "Jugaba cuando, de repente, empezó a llover.",
+        "sub": "ik speelde toen het plots begon te regenen",
+        "tag": "ct"
+      },
+      {
+        "text": "Antes el pueblo era más tranquilo que la ciudad.",
+        "sub": "vroeger was het dorp rustiger dan de stad",
+        "tag": "comp"
+      },
+      {
+        "text": "El niño que jugaba en el patio era yo.",
+        "sub": "het kind dat op de speelplaats speelde was ik",
+        "tag": "rel"
+      },
+      {
+        "text": "Creo que antes era mejor.",
+        "sub": "ik denk dat het vroeger beter was",
+        "tag": "opinion"
+      }
+    ]
+  }
+}

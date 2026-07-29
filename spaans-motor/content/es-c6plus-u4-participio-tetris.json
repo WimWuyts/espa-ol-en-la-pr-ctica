@@ -1,0 +1,129 @@
+{
+  "id": "es-c6plus-u4-participio-tetris",
+  "title": "Participio Tetris",
+  "subtitle": "U4 · laat het juiste participio-type vallen",
+  "lang": "es",
+  "template": "tetris",
+  "options": {
+    "rows": 9,
+    "speed": 1300,
+    "audio": false
+  },
+  "classify": {
+    "categories": [
+      {
+        "id": "ado",
+        "label": "-ado",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "ido",
+        "label": "-ido",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "irr",
+        "label": "irregular",
+        "glaze": "#B4309A"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "viajar",
+        "answer": "ado",
+        "tag": "ado",
+        "sub": "viajado"
+      },
+      {
+        "stimulus": "comer",
+        "answer": "ido",
+        "tag": "ido",
+        "sub": "comido"
+      },
+      {
+        "stimulus": "hacer",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "hecho"
+      },
+      {
+        "stimulus": "salir",
+        "answer": "ido",
+        "tag": "ido",
+        "sub": "salido"
+      },
+      {
+        "stimulus": "ver",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "visto"
+      },
+      {
+        "stimulus": "reservar",
+        "answer": "ado",
+        "tag": "ado",
+        "sub": "reservado"
+      },
+      {
+        "stimulus": "volver",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "vuelto"
+      },
+      {
+        "stimulus": "dormir",
+        "answer": "ido",
+        "tag": "ido",
+        "sub": "dormido"
+      },
+      {
+        "stimulus": "visitar",
+        "answer": "ado",
+        "tag": "ado",
+        "sub": "visitado"
+      },
+      {
+        "stimulus": "escribir",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "escrito"
+      },
+      {
+        "stimulus": "beber",
+        "answer": "ido",
+        "tag": "ido",
+        "sub": "bebido"
+      },
+      {
+        "stimulus": "poner",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "puesto"
+      },
+      {
+        "stimulus": "probar",
+        "answer": "ado",
+        "tag": "ado",
+        "sub": "probado"
+      },
+      {
+        "stimulus": "subir",
+        "answer": "ido",
+        "tag": "ido",
+        "sub": "subido"
+      },
+      {
+        "stimulus": "decir",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "dicho"
+      },
+      {
+        "stimulus": "cantar",
+        "answer": "ado",
+        "tag": "ado",
+        "sub": "cantado"
+      }
+    ]
+  }
+}

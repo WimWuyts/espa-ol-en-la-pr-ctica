@@ -1,0 +1,124 @@
+{
+  "id": "es-c6plus-u4-participio-tipo",
+  "title": "¿regular o irregular?",
+  "subtitle": "U4 · welk soort participio?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Is het participio regelmatig (-ado/-ido) of onregelmatig?",
+    "categories": [
+      {
+        "id": "reg",
+        "label": "regular<br><small>-ado / -ido</small>",
+        "glaze": "#2FA8A0"
+      },
+      {
+        "id": "irr",
+        "label": "irregular<br><small>hecho, visto…</small>",
+        "glaze": "#8B5E9E"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "viajar → viajado",
+        "answer": "reg",
+        "tag": "reg",
+        "sub": "-ar → -ado"
+      },
+      {
+        "stimulus": "hacer → hecho",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "irregular"
+      },
+      {
+        "stimulus": "comer → comido",
+        "answer": "reg",
+        "tag": "reg",
+        "sub": "-er → -ido"
+      },
+      {
+        "stimulus": "ver → visto",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "irregular"
+      },
+      {
+        "stimulus": "salir → salido",
+        "answer": "reg",
+        "tag": "reg",
+        "sub": "-ir → -ido"
+      },
+      {
+        "stimulus": "decir → dicho",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "irregular"
+      },
+      {
+        "stimulus": "reservar → reservado",
+        "answer": "reg",
+        "tag": "reg",
+        "sub": "-ar → -ado"
+      },
+      {
+        "stimulus": "volver → vuelto",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "irregular"
+      },
+      {
+        "stimulus": "dormir → dormido",
+        "answer": "reg",
+        "tag": "reg",
+        "sub": "-ir → -ido"
+      },
+      {
+        "stimulus": "escribir → escrito",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "irregular"
+      },
+      {
+        "stimulus": "beber → bebido",
+        "answer": "reg",
+        "tag": "reg",
+        "sub": "-er → -ido"
+      },
+      {
+        "stimulus": "poner → puesto",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "irregular"
+      },
+      {
+        "stimulus": "visitar → visitado",
+        "answer": "reg",
+        "tag": "reg",
+        "sub": "-ar → -ado"
+      },
+      {
+        "stimulus": "abrir → abierto",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "irregular"
+      },
+      {
+        "stimulus": "subir → subido",
+        "answer": "reg",
+        "tag": "reg",
+        "sub": "-ir → -ido"
+      },
+      {
+        "stimulus": "romper → roto",
+        "answer": "irr",
+        "tag": "irr",
+        "sub": "irregular"
+      }
+    ]
+  }
+}
