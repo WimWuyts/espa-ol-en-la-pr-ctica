@@ -127,6 +127,14 @@ Fonts: base64-inbedden via de `face()`-helper (staat in elke generator).
     Repaso (`funciones_print.py`, bladspiegel 85–99 %), en de PPT-dia `s_funciones()`. Werk daarna
     `01-cursussen/04-welcome/reservoir/C4_funciones_matrix.md` bij. Leerlingpagina toont función +
     exponentes + CEFR-chip; **doelcodes enkel in matrix C (docentdossier)**.
+14. **Lees- & luisterlaag «Lee y escucha» (BINDEND, auteur 2026-07-28):** elke unit krijgt een
+    korte **leestekst** (begripsladder globaal→detalle→transfer) + een **2e luisterfragment**
+    (script, TTS-play) die de functies recyclen. Genereer met de NotebookLM-prompts in
+    `00-brondocumenten/prompts/C4_comprension_prompts.md` (vast format) en plak de output in
+    `03-build/web/comprension_data.py` onder `LECTURA[<unit>]`/`AUDIO[<unit>]`. De laag verschijnt
+    dan automatisch: hub-tab «📖 Lee y escucha» (`gen_c4_comprension.py`) + print-sectie na Escucha
+    (`comprension_print.py`, alleen als er data is; bladspiegel 85–99 %). Kies per unit een **andere
+    tekstsoort** (variatie). U1 = ingevulde demo; U2/U3 wachten op je NotebookLM-output.
 
 ---
 
