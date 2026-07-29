@@ -184,6 +184,8 @@ GROUP_EMOJI = {
  # ---- C6+·U2 «Aquí vivo» ----
  "casa":"🏠","muebles":"🛋️","habitaciones":"🚪","preposiciones":"📍","barrio":"🏙️",
  "ciudad":"🌆","direcciones":"🧭","movimiento":"🚶","lugares":"🏬",
+ # ---- C6+·U3 «Conectados» ----
+ "dispositivos":"📱","internet":"🌐","digital":"📲","comunicar":"💬","adjmedia":"⭐",
 }
 
 _ARTICLES = ("el ", "la ", "los ", "las ", "un ", "una ", "unos ", "unas ", "mi ", "al ")

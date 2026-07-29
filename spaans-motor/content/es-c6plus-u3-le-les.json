@@ -1,0 +1,124 @@
+{
+  "id": "es-c6plus-u3-le-les",
+  "title": "¿le o les?",
+  "subtitle": "U3 · aan één persoon (le) of aan meer (les)?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Kies: le (aan één persoon) of les (aan meer personen)?",
+    "categories": [
+      {
+        "id": "le",
+        "label": "le<br><small>a él/ella/usted</small>",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "les",
+        "label": "les<br><small>a ellos/ellas</small>",
+        "glaze": "#B4309A"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "___ escribo a mi amiga.",
+        "answer": "le",
+        "tag": "le",
+        "sub": "a mi amiga → le"
+      },
+      {
+        "stimulus": "___ mando fotos a mis padres.",
+        "answer": "les",
+        "tag": "les",
+        "sub": "a mis padres → les"
+      },
+      {
+        "stimulus": "___ cuento un secreto a Diego.",
+        "answer": "le",
+        "tag": "le",
+        "sub": "a Diego → le"
+      },
+      {
+        "stimulus": "___ regalo auriculares a mis hermanos.",
+        "answer": "les",
+        "tag": "les",
+        "sub": "a mis hermanos → les"
+      },
+      {
+        "stimulus": "___ pregunto la hora a Valen.",
+        "answer": "le",
+        "tag": "le",
+        "sub": "a Valen → le"
+      },
+      {
+        "stimulus": "___ muestro mi perfil a mis amigos.",
+        "answer": "les",
+        "tag": "les",
+        "sub": "a mis amigos → les"
+      },
+      {
+        "stimulus": "___ digo la verdad a mi madre.",
+        "answer": "le",
+        "tag": "le",
+        "sub": "a mi madre → le"
+      },
+      {
+        "stimulus": "___ envío un mensaje a los profes.",
+        "answer": "les",
+        "tag": "les",
+        "sub": "a los profes → les"
+      },
+      {
+        "stimulus": "___ llamo a mi abuela los domingos.",
+        "answer": "le",
+        "tag": "le",
+        "sub": "a mi abuela → le"
+      },
+      {
+        "stimulus": "___ cuento las noticias a mis primos.",
+        "answer": "les",
+        "tag": "les",
+        "sub": "a mis primos → les"
+      },
+      {
+        "stimulus": "___ escribo a mi profesor.",
+        "answer": "le",
+        "tag": "le",
+        "sub": "a mi profesor → le"
+      },
+      {
+        "stimulus": "___ mando la ubicación a mis amigas.",
+        "answer": "les",
+        "tag": "les",
+        "sub": "a mis amigas → les"
+      },
+      {
+        "stimulus": "___ pregunto la contraseña a Diego.",
+        "answer": "le",
+        "tag": "le",
+        "sub": "a Diego → le"
+      },
+      {
+        "stimulus": "___ regalo una app a mi hermana.",
+        "answer": "le",
+        "tag": "le",
+        "sub": "a mi hermana → le"
+      },
+      {
+        "stimulus": "___ enseño las fotos a mis abuelos.",
+        "answer": "les",
+        "tag": "les",
+        "sub": "a mis abuelos → les"
+      },
+      {
+        "stimulus": "___ respondo a mis compañeros.",
+        "answer": "les",
+        "tag": "les",
+        "sub": "a mis compañeros → les"
+      }
+    ]
+  }
+}

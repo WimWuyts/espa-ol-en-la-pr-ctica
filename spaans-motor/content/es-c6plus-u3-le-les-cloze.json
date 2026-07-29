@@ -1,0 +1,192 @@
+{
+  "id": "es-c6plus-u3-le-les-cloze",
+  "title": "Completa: le/les",
+  "subtitle": "U3 · ¿a quién? le of les",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies het juiste OI-pronomen",
+    "items": [
+      {
+        "stimulus": "¿Escribes a Diego? — Sí, ___ escribo.",
+        "options": [
+          "le",
+          "les",
+          "la"
+        ],
+        "answer": "le",
+        "tag": "oi",
+        "sub": "a Diego (1) → le"
+      },
+      {
+        "stimulus": "¿Mandas fotos a tus amigos? — Sí, ___ mando fotos.",
+        "options": [
+          "les",
+          "le",
+          "los"
+        ],
+        "answer": "les",
+        "tag": "oi",
+        "sub": "a tus amigos → les"
+      },
+      {
+        "stimulus": "¿Cuentas el secreto a Valen? — Sí, ___ cuento.",
+        "options": [
+          "le",
+          "les",
+          "lo"
+        ],
+        "answer": "le",
+        "tag": "oi",
+        "sub": "a Valen (1) → le"
+      },
+      {
+        "stimulus": "¿Preguntas la hora a tus padres? — Sí, ___ pregunto.",
+        "options": [
+          "les",
+          "le",
+          "las"
+        ],
+        "answer": "les",
+        "tag": "oi",
+        "sub": "a tus padres → les"
+      },
+      {
+        "stimulus": "¿Regalas auriculares a tu hermana? — Sí, ___ regalo unos.",
+        "options": [
+          "le",
+          "les",
+          "la"
+        ],
+        "answer": "le",
+        "tag": "oi",
+        "sub": "a tu hermana (1) → le"
+      },
+      {
+        "stimulus": "¿Muestras el perfil a los profes? — Sí, ___ muestro.",
+        "options": [
+          "les",
+          "le",
+          "lo"
+        ],
+        "answer": "les",
+        "tag": "oi",
+        "sub": "a los profes → les"
+      },
+      {
+        "stimulus": "¿Llamas a tu abuela? — Sí, ___ llamo.",
+        "options": [
+          "le",
+          "les",
+          "la"
+        ],
+        "answer": "le",
+        "tag": "oi",
+        "sub": "a tu abuela (1) → le"
+      },
+      {
+        "stimulus": "¿Envías la ubicación a tus amigas? — Sí, ___ envío.",
+        "options": [
+          "les",
+          "le",
+          "las"
+        ],
+        "answer": "les",
+        "tag": "oi",
+        "sub": "a tus amigas → les"
+      },
+      {
+        "stimulus": "¿Dices la verdad a tu madre? — Sí, ___ digo la verdad.",
+        "options": [
+          "le",
+          "les",
+          "la"
+        ],
+        "answer": "le",
+        "tag": "oi",
+        "sub": "a tu madre (1) → le"
+      },
+      {
+        "stimulus": "¿Respondes a tus compañeros? — Sí, ___ respondo.",
+        "options": [
+          "les",
+          "le",
+          "los"
+        ],
+        "answer": "les",
+        "tag": "oi",
+        "sub": "a compañeros → les"
+      },
+      {
+        "stimulus": "¿Escribes a tu profesor? — Sí, ___ escribo.",
+        "options": [
+          "le",
+          "les",
+          "lo"
+        ],
+        "answer": "le",
+        "tag": "oi",
+        "sub": "a tu profesor (1) → le"
+      },
+      {
+        "stimulus": "¿Enseñas las fotos a tus abuelos? — Sí, ___ enseño.",
+        "options": [
+          "les",
+          "le",
+          "las"
+        ],
+        "answer": "les",
+        "tag": "oi",
+        "sub": "a tus abuelos → les"
+      },
+      {
+        "stimulus": "¿Mandas un audio a Diego? — Sí, ___ mando un audio.",
+        "options": [
+          "le",
+          "les",
+          "lo"
+        ],
+        "answer": "le",
+        "tag": "oi",
+        "sub": "a Diego (1) → le"
+      },
+      {
+        "stimulus": "¿Cuentas las noticias a tus primos? — Sí, ___ cuento.",
+        "options": [
+          "les",
+          "le",
+          "las"
+        ],
+        "answer": "les",
+        "tag": "oi",
+        "sub": "a tus primos → les"
+      },
+      {
+        "stimulus": "¿Preguntas la contraseña a Valen? — Sí, ___ pregunto.",
+        "options": [
+          "le",
+          "les",
+          "la"
+        ],
+        "answer": "le",
+        "tag": "oi",
+        "sub": "a Valen (1) → le"
+      },
+      {
+        "stimulus": "¿Regalas una app a tus hermanos? — Sí, ___ regalo una.",
+        "options": [
+          "les",
+          "le",
+          "los"
+        ],
+        "answer": "les",
+        "tag": "oi",
+        "sub": "a tus hermanos → les"
+      }
+    ]
+  }
+}

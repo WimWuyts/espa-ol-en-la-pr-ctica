@@ -1,0 +1,124 @@
+{
+  "id": "es-c6plus-u3-presente-futuro",
+  "title": "¿ahora o después?",
+  "subtitle": "U3 · presente (nu) of ir a + inf (straks)?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Gebeurt het nu/gewoonlijk (presente) of straks (ir a + inf)?",
+    "categories": [
+      {
+        "id": "pres",
+        "label": "ahora / siempre<br><small>presente</small>",
+        "glaze": "#2FA8A0"
+      },
+      {
+        "id": "futuro",
+        "label": "después<br><small>ir a + inf.</small>",
+        "glaze": "#8B5E9E"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "Cada día chateo con mis amigos.",
+        "answer": "pres",
+        "tag": "pres",
+        "sub": "cada día → presente"
+      },
+      {
+        "stimulus": "Mañana voy a subir un vídeo.",
+        "answer": "futuro",
+        "tag": "futuro",
+        "sub": "mañana → ir a"
+      },
+      {
+        "stimulus": "Este finde vamos a quedar.",
+        "answer": "futuro",
+        "tag": "futuro",
+        "sub": "este finde → ir a"
+      },
+      {
+        "stimulus": "Normalmente navego por la noche.",
+        "answer": "pres",
+        "tag": "pres",
+        "sub": "normalmente → presente"
+      },
+      {
+        "stimulus": "Luego voy a llamar a Diego.",
+        "answer": "futuro",
+        "tag": "futuro",
+        "sub": "luego → ir a"
+      },
+      {
+        "stimulus": "Ahora subo las fotos.",
+        "answer": "pres",
+        "tag": "pres",
+        "sub": "ahora + presente"
+      },
+      {
+        "stimulus": "El sábado van a salir.",
+        "answer": "futuro",
+        "tag": "futuro",
+        "sub": "el sábado → ir a"
+      },
+      {
+        "stimulus": "Siempre apago el móvil por la noche.",
+        "answer": "pres",
+        "tag": "pres",
+        "sub": "siempre → presente"
+      },
+      {
+        "stimulus": "Pronto voy a comprar una tableta.",
+        "answer": "futuro",
+        "tag": "futuro",
+        "sub": "pronto → ir a"
+      },
+      {
+        "stimulus": "Los domingos veo series.",
+        "answer": "pres",
+        "tag": "pres",
+        "sub": "los domingos → presente"
+      },
+      {
+        "stimulus": "El próximo año vamos a viajar.",
+        "answer": "futuro",
+        "tag": "futuro",
+        "sub": "el próximo año → ir a"
+      },
+      {
+        "stimulus": "Diego sigue a muchos artistas.",
+        "answer": "pres",
+        "tag": "pres",
+        "sub": "acción habitual → presente"
+      },
+      {
+        "stimulus": "Esta tarde vas a estudiar.",
+        "answer": "futuro",
+        "tag": "futuro",
+        "sub": "esta tarde → ir a"
+      },
+      {
+        "stimulus": "Comparto vídeos cada semana.",
+        "answer": "pres",
+        "tag": "pres",
+        "sub": "cada semana → presente"
+      },
+      {
+        "stimulus": "Más tarde voy a descansar.",
+        "answer": "futuro",
+        "tag": "futuro",
+        "sub": "más tarde → ir a"
+      },
+      {
+        "stimulus": "Mis amigos van a ver una peli.",
+        "answer": "futuro",
+        "tag": "futuro",
+        "sub": "van a + inf"
+      }
+    ]
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "id": "es-c6plus-u3-ir-a",
+  "title": "Completa: ir a + infinitivo",
+  "subtitle": "U3 · ¿qué vas a hacer?",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste vorm van ir a + infinitivo",
+    "items": [
+      {
+        "stimulus": "(Yo) ___ un vídeo esta tarde.",
+        "options": [
+          "voy a subir",
+          "vas a subir",
+          "va a subir"
+        ],
+        "answer": "voy a subir",
+        "tag": "f",
+        "sub": "yo → voy a subir"
+      },
+      {
+        "stimulus": "¿(Tú) ___ el sábado?",
+        "options": [
+          "vas a salir",
+          "voy a salir",
+          "van a salir"
+        ],
+        "answer": "vas a salir",
+        "tag": "f",
+        "sub": "tú → vas a salir"
+      },
+      {
+        "stimulus": "Diego ___ con nosotros luego.",
+        "options": [
+          "va a chatear",
+          "vas a chatear",
+          "voy a chatear"
+        ],
+        "answer": "va a chatear",
+        "tag": "f",
+        "sub": "él → va a chatear"
+      },
+      {
+        "stimulus": "(Nosotros) ___ en la plaza.",
+        "options": [
+          "vamos a quedar",
+          "van a quedar",
+          "vais a quedar"
+        ],
+        "answer": "vamos a quedar",
+        "tag": "f",
+        "sub": "nosotros → vamos a quedar"
+      },
+      {
+        "stimulus": "Mis amigos ___ una serie.",
+        "options": [
+          "van a ver",
+          "va a ver",
+          "vamos a ver"
+        ],
+        "answer": "van a ver",
+        "tag": "f",
+        "sub": "ellos → van a ver"
+      },
+      {
+        "stimulus": "¿(Vosotros) ___ mañana?",
+        "options": [
+          "vais a estudiar",
+          "van a estudiar",
+          "vamos a estudiar"
+        ],
+        "answer": "vais a estudiar",
+        "tag": "f",
+        "sub": "vosotros → vais a estudiar"
+      },
+      {
+        "stimulus": "(Yo) ___ a mi abuela.",
+        "options": [
+          "voy a llamar",
+          "va a llamar",
+          "vas a llamar"
+        ],
+        "answer": "voy a llamar",
+        "tag": "f",
+        "sub": "yo → voy a llamar"
+      },
+      {
+        "stimulus": "Valen ___ las fotos.",
+        "options": [
+          "va a compartir",
+          "van a compartir",
+          "vas a compartir"
+        ],
+        "answer": "va a compartir",
+        "tag": "f",
+        "sub": "ella → va a compartir"
+      },
+      {
+        "stimulus": "(Nosotros) ___ tacos.",
+        "options": [
+          "vamos a comer",
+          "van a comer",
+          "voy a comer"
+        ],
+        "answer": "vamos a comer",
+        "tag": "f",
+        "sub": "nosotros → vamos a comer"
+      },
+      {
+        "stimulus": "¿Qué ___ (tú) este finde?",
+        "options": [
+          "vas a hacer",
+          "va a hacer",
+          "voy a hacer"
+        ],
+        "answer": "vas a hacer",
+        "tag": "f",
+        "sub": "tú → vas a hacer"
+      },
+      {
+        "stimulus": "Ellos ___ un vídeo nuevo.",
+        "options": [
+          "van a publicar",
+          "va a publicar",
+          "vais a publicar"
+        ],
+        "answer": "van a publicar",
+        "tag": "f",
+        "sub": "ellos → van a publicar"
+      },
+      {
+        "stimulus": "(Yo) ___ una app.",
+        "options": [
+          "voy a descargar",
+          "vas a descargar",
+          "va a descargar"
+        ],
+        "answer": "voy a descargar",
+        "tag": "f",
+        "sub": "yo → voy a descargar"
+      },
+      {
+        "stimulus": "Diego y yo ___ pronto.",
+        "options": [
+          "vamos a quedar",
+          "van a quedar",
+          "voy a quedar"
+        ],
+        "answer": "vamos a quedar",
+        "tag": "f",
+        "sub": "nosotros → vamos a quedar"
+      },
+      {
+        "stimulus": "Mi madre ___ un móvil nuevo.",
+        "options": [
+          "va a comprar",
+          "van a comprar",
+          "vas a comprar"
+        ],
+        "answer": "va a comprar",
+        "tag": "f",
+        "sub": "ella → va a comprar"
+      },
+      {
+        "stimulus": "¿(Tú) me ___ luego?",
+        "options": [
+          "vas a llamar",
+          "va a llamar",
+          "van a llamar"
+        ],
+        "answer": "vas a llamar",
+        "tag": "f",
+        "sub": "tú → vas a llamar"
+      },
+      {
+        "stimulus": "Los niños ___ al parque.",
+        "options": [
+          "van a ir",
+          "va a ir",
+          "vamos a ir"
+        ],
+        "answer": "van a ir",
+        "tag": "f",
+        "sub": "ellos → van a ir"
+      },
+      {
+        "stimulus": "(Nosotros) ___ una peli esta noche.",
+        "options": [
+          "vamos a ver",
+          "van a ver",
+          "vais a ver"
+        ],
+        "answer": "vamos a ver",
+        "tag": "f",
+        "sub": "nosotros → vamos a ver"
+      },
+      {
+        "stimulus": "(Yo) ___ con mis primos.",
+        "options": [
+          "voy a chatear",
+          "vas a chatear",
+          "va a chatear"
+        ],
+        "answer": "voy a chatear",
+        "tag": "f",
+        "sub": "yo → voy a chatear"
+      }
+    ]
+  }
+}

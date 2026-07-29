@@ -1,0 +1,170 @@
+{
+  "id": "es-c6plus-u3-creo-que",
+  "title": "Completa: creo que + indicativo",
+  "subtitle": "U3 · tu opinión (gewone tijd, geen subjuntivo)",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de indicativo-vorm na «creo que…»",
+    "items": [
+      {
+        "stimulus": "Creo que las redes ___ útiles.",
+        "options": [
+          "son",
+          "sean",
+          "es"
+        ],
+        "answer": "son",
+        "tag": "op",
+        "sub": "las redes → son (indicativo)"
+      },
+      {
+        "stimulus": "Pienso que Diego ___ razón.",
+        "options": [
+          "tiene",
+          "tenga",
+          "tienen"
+        ],
+        "answer": "tiene",
+        "tag": "op",
+        "sub": "Diego → tiene"
+      },
+      {
+        "stimulus": "Me parece que (nosotros) ___ mucho tiempo online.",
+        "options": [
+          "pasamos",
+          "pasemos",
+          "pasan"
+        ],
+        "answer": "pasamos",
+        "tag": "op",
+        "sub": "nosotros → pasamos"
+      },
+      {
+        "stimulus": "Creo que el móvil ___ a estudiar.",
+        "options": [
+          "ayuda",
+          "ayude",
+          "ayudan"
+        ],
+        "answer": "ayuda",
+        "tag": "op",
+        "sub": "el móvil → ayuda"
+      },
+      {
+        "stimulus": "Pienso que los videojuegos ___ ser adictivos.",
+        "options": [
+          "pueden",
+          "puedan",
+          "puede"
+        ],
+        "answer": "pueden",
+        "tag": "op",
+        "sub": "los videojuegos → pueden"
+      },
+      {
+        "stimulus": "Creo que la wifi de aquí ___ rápida.",
+        "options": [
+          "es",
+          "sea",
+          "son"
+        ],
+        "answer": "es",
+        "tag": "op",
+        "sub": "la wifi → es"
+      },
+      {
+        "stimulus": "Me parece que (tú) ___ demasiado en el móvil.",
+        "options": [
+          "estás",
+          "estés",
+          "está"
+        ],
+        "answer": "estás",
+        "tag": "op",
+        "sub": "tú → estás"
+      },
+      {
+        "stimulus": "Pienso que las apps ___ prácticas.",
+        "options": [
+          "son",
+          "sean",
+          "es"
+        ],
+        "answer": "son",
+        "tag": "op",
+        "sub": "las apps → son"
+      },
+      {
+        "stimulus": "Creo que (nosotros) ___ que apagar el móvil a veces.",
+        "options": [
+          "tenemos",
+          "tengamos",
+          "tienen"
+        ],
+        "answer": "tenemos",
+        "tag": "op",
+        "sub": "nosotros → tenemos"
+      },
+      {
+        "stimulus": "Me parece que internet ___ peligroso a veces.",
+        "options": [
+          "es",
+          "sea",
+          "son"
+        ],
+        "answer": "es",
+        "tag": "op",
+        "sub": "internet → es"
+      },
+      {
+        "stimulus": "Creo que Valen ___ muchos seguidores.",
+        "options": [
+          "tiene",
+          "tenga",
+          "tienen"
+        ],
+        "answer": "tiene",
+        "tag": "op",
+        "sub": "Valen → tiene"
+      },
+      {
+        "stimulus": "Pienso que (yo) ___ demasiadas fotos.",
+        "options": [
+          "subo",
+          "suba",
+          "sube"
+        ],
+        "answer": "subo",
+        "tag": "op",
+        "sub": "yo → subo"
+      },
+      {
+        "stimulus": "Creo que las videollamadas ___ geniales.",
+        "options": [
+          "son",
+          "sean",
+          "es"
+        ],
+        "answer": "son",
+        "tag": "op",
+        "sub": "las videollamadas → son"
+      },
+      {
+        "stimulus": "Me parece que la gente ___ mucho en las redes.",
+        "options": [
+          "comparte",
+          "comparta",
+          "comparten"
+        ],
+        "answer": "comparte",
+        "tag": "op",
+        "sub": "la gente → comparte"
+      }
+    ]
+  }
+}
