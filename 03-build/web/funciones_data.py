@@ -80,7 +80,15 @@ FUNCIONES = [
  {"id":"F20","es":"Expresar obligación","nl":"zeggen wat je moet doen (tener que + inf.)",
   "cefr":"A1 · expresar obligación","code":"C4-TS-3",
   "exp":{9:["Tengo que + infinitivo (tengo que trabajar)","Tengo cosas que hacer","¿Tienes que hacer algo?",
-            "tengo hambre · tengo sueño (tener + naamwoord)"]}},
+            "tengo hambre · tengo sueño (tener + naamwoord)"],
+         10:["Hay que + infinitivo (algemeen: hay que limpiar)","No tienes que molestarte"]}},
+ {"id":"F21","es":"Ofrecer y pedir ayuda","nl":"hulp aanbieden & vragen",
+  "cefr":"A1 · ofrecer/pedir ayuda","code":"C4-GE-3",
+  "exp":{10:["Yo te ayudo · ¿Te ayudo?","¿Qué tengo que hacer?","No es molestia","Déjame, lo hago yo"]}},
+ {"id":"F22","es":"Decir lo que sé hacer","nl":"zeggen wat je kunt/weet te doen (saber + inf.)",
+  "cefr":"A1 · expresar habilidad","code":"C4-SP-2",
+  "exp":{10:["Sé + infinitivo (sé pasar la aspiradora)","¿Sabes…? · ¿Sabes cómo funciona?",
+             "Sabemos… (nosotros)","Claro que sé"]}},
 ]
 FMAP={f["id"]:f for f in FUNCIONES}
 
@@ -104,10 +112,13 @@ NOTICING={
  9:[("«Voy a preparar café.»","F19"),("«Vamos a dormir un poquito más.»","F19"),
     ("«Tengo que pasear al perro.»","F20"),("«Tengo cosas que hacer.»","F20"),
     ("«¿Quedamos para ir al cine?»","F18"),("«Tengo sueño. ¿No tienes sueño?»","F20")],
+ 10:[("«Yo te ayudo.»","F21"),("«¿Qué tengo que hacer?»","F21"),("«No es molestia.»","F21"),
+     ("«Hay que limpiar esto.»","F20"),("«¿Sabes pasar la aspiradora?»","F22"),
+     ("«Los hombres también sabemos pasar la aspiradora.»","F22")],
 }
 # welke functies de eindtaak van elke unit combineert (afzender·ontvanger·doel — recycling zichtbaar).
-TAREA_FUN={1:["F01","F02","F03"],2:["F01","F05","F04"],3:["F02","F03","F08"],4:["F09","F10","F02"],5:["F11","F12","F10"],6:["F13","F12","F14"],7:["F15","F16","F03"],8:["F17","F18","F07"],9:["F19","F20","F18"]}
-TAREA_TITEL={1:"Mi presentación",2:"Un día de saludos",3:"Mi mapa · ¿de dónde eres?",4:"Mi árbol de familia",5:"Diccionario de la clase",6:"Plano de mi casa",7:"¿Quién soy? · adivina",8:"Mi horario",9:"Mi finde"}
+TAREA_FUN={1:["F01","F02","F03"],2:["F01","F05","F04"],3:["F02","F03","F08"],4:["F09","F10","F02"],5:["F11","F12","F10"],6:["F13","F12","F14"],7:["F15","F16","F03"],8:["F17","F18","F07"],9:["F19","F20","F18"],10:["F21","F22","F20"]}
+TAREA_TITEL={1:"Mi presentación",2:"Un día de saludos",3:"Mi mapa · ¿de dónde eres?",4:"Mi árbol de familia",5:"Diccionario de la clase",6:"Plano de mi casa",7:"¿Quién soy? · adivina",8:"Mi horario",9:"Mi finde",10:"¿Quién hace qué?"}
 
 def funciones_hasta(unit):
     """Alle functies met intro-unit <= unit (het cumulatieve repertoire tot hier)."""

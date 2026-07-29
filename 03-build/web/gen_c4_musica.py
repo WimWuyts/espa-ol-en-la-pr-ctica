@@ -40,7 +40,7 @@ ART=[
  ("Juanes","🇨🇴","Colombia","rock/pop latino","«La Camisa Negra»","Ha ganado muchos premios Grammy Latinos.",
   "Juanes es de Colombia; mezcla rock y ritmos latinos.","Juanes uit Colombia; mengt rock met Latijnse ritmes.",["ropa","nacionalidades"]),
  ("Manu Chao","🇪🇸","España/Francia","mestizo/rock","«Me gustas tú»","«Me gustas tú» repite todo el tiempo «me gusta…»: ideal para practicar.",
-  "Manu Chao tiene raíces españolas y francesas.","Manu Chao heeft Spaanse en Franse roots.",["saludos","presentaciones","objetos","casa"]),
+  "Manu Chao tiene raíces españolas y francesas.","Manu Chao heeft Spaanse en Franse roots.",["saludos","presentaciones","objetos","casa","tareas"]),
 ]
 # thema -> aanbevolen nummer(s) (survival-lessen halen hieruit)
 TEMA_TITELS={"presentaciones":"Presentaciones","saludos":"Saludos","nacionalidades":"Nacionalidades y países","familia":"La familia",
@@ -176,6 +176,20 @@ CULTURA={
       "De zondag is bij veel families de dag van de <b>familiemaaltijd</b> — een vast plan, vaak met de hele familie samen."),
    ],
    "dato":"¿Sabías que…? Om een plan te maken gebruik je <b>ir a + infinitivo</b>: «voy a estudiar» = ik ga studeren — net zoals in het Nederlands. Maar «ik moet werken» wordt <b>tengo que trabajar</b>, letterlijk «ik heb te werken».",
+ },
+ "tareas":{
+   "intro":"Wie doet wat in huis? Dat verschilt per gezin en per land — en het is aan het veranderen. Zo zit het in de Spaanstalige wereld.",
+   "cards":[
+     ("🧹","«Los hombres también»","En la escena Julio dice: «yo no soy machista, los hombres <b>también</b> sabemos pasar la aspiradora».",
+      "In de scène zegt Julio: «ik ben niet machistisch, wij mannen kunnen óók stofzuigen». Het <b>verdelen van huistaken</b> is in Spanje sterk veranderd: jonge koppels delen veel meer dan hun grootouders — al is het nog niet overal gelijk."),
+     ("📋","El reparto de tareas","Muchas familias hacen un <b>cuadro de tareas</b>: quién friega, quién ordena, quién pasa la aspiradora.",
+      "Veel gezinnen maken een <b>takenschema</b> (cuadro de tareas): wie doet de vaat, wie ruimt op, wie stofzuigt. Precies wat jullie in de eindtaak gaan doen."),
+     ("🧽","La asistenta","En la academia esperan a la <b>asistenta</b>. En varios países de Latinoamérica tener ayuda en casa es más habitual que en Bélgica.",
+      "In de scène wachten ze op de <b>asistenta</b> (poetshulp). In verschillende Latijns-Amerikaanse landen is huishoudhulp gebruikelijker dan bij ons — vaak omdat lonen en kosten er anders liggen."),
+     ("🇧🇪","¿Y en tu casa?","¿Quién limpia? ¿Quién cocina? ¿Sabes cocinar o planchar?",
+      "En bij jou thuis? Wie poetst, wie kookt? En wat kan <b>jij</b> al: koken, strijken, stofzuigen? Daarover ga je straks in het Spaans praten."),
+   ],
+   "dato":"¿Sabías que…? Er zijn twee manieren om «moeten» te zeggen: <b>tengo que</b> limpiar (ík moet) is persoonlijk, <b>hay que</b> limpiar (er moet gepoetst worden) is algemeen — handig als je niet wil zeggen wíe het moet doen!",
  },
 }
 def cultura_block(tema):

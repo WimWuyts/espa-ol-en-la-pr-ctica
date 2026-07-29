@@ -128,7 +128,19 @@ Lucas: El domingo tengo que estudiar por la mañana, pero por la tarde estoy lib
 Alba: [cheerful] Perfecto. Vamos a tomar algo el domingo por la tarde.
 ```
 
+## U10 · «repartir las tareas»  (1 dialoog — Rosa & Iván verdelen het huishouden)
+**Stemmen:** Rosa = jonge vrouw · Iván = jonge man.
+*(Komt exact overeen met `AUDIO[10]` in `comprension_data.py` → hay que + inf. · saber + inf. · yo te ayudo.)*
+```
+Rosa: [exasperated] ¡Qué desorden! Hay que limpiar la cocina.
+Iván: [helpful] Yo te ayudo. ¿Qué tengo que hacer?
+Rosa: [asking] ¿Sabes pasar la aspiradora?
+Iván: [confident] Claro que sé. Y también sé fregar los platos.
+Rosa: [pleased] Perfecto. Entonces yo limpio el polvo y ordeno los armarios.
+Iván: [cheerful] Vale. ¡Así terminamos rápido!
+```
+
 ---
 
 ## Nadat je de mp3's hebt
-Zet ze als `C4_U1_audio.mp3` … `C4_U9_audio.mp3` in `03-build/web/componentes/audio/` (of stuur ze mij).
+Zet ze als `C4_U1_audio.mp3` … `C4_U10_audio.mp3` in `03-build/web/componentes/audio/` (of stuur ze mij).

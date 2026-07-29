@@ -37,6 +37,8 @@ herkomst vragen, corrigeren, iets vragen, tellen…). Elke unit:
 | F18 | Quedar con alguien | een afspraak maken | concertar una cita | C4-GE-3 |
 | F19 | Hablar de planes | over plannen praten (ir a + inf.) | expresar planes e intenciones | C4-TS-4 |
 | F20 | Expresar obligación | zeggen wat je moet doen (tener que + inf.) | expresar obligación | C4-TS-3 |
+| F21 | Ofrecer y pedir ayuda | hulp aanbieden & vragen | ofrecer/pedir ayuda | C4-GE-3 |
+| F22 | Decir lo que sé hacer | zeggen wat je kunt/weet te doen (saber + inf.) | expresar habilidad | C4-SP-2 |
 
 ## Matrix C — functie × unit (● intro · ▲ uptrade/nivel+ · · recycle)
 | ID | U1 | U2 | U3 | U4 | U5 | … | Exponentes die groeien |
@@ -60,7 +62,9 @@ herkomst vragen, corrigeren, iets vragen, tellen…). Elke unit:
 | F17 Decir/preguntar la hora | | | | | | | ● (U8) — ¿qué hora es? · es la una ↔ son las… · y media/menos cuarto · ¿a qué hora? · el/los lunes |
 | F18 Quedar con alguien | | | | | | | ● (U8) — ¿quieres quedar? · quedamos a las… ▲ (U9) quedar para + inf. · afwijzen |
 | F19 Hablar de planes | | | | | | | ● (U9) — voy a / vas a / vamos a + infinitivo · ¿qué vas a hacer? |
-| F20 Expresar obligación | | | | | | | ● (U9) — tengo que + infinitivo · tengo cosas que hacer · tengo hambre/sueño |
+| F20 Expresar obligación | | | | | | | ● (U9) — tengo que + infinitivo · tengo cosas que hacer · tengo hambre/sueño ▲ (U10) hay que + infinitivo (onpersoonlijk) · no tienes que molestarte |
+| F21 Ofrecer y pedir ayuda | | | | | | | ● (U10) — yo te ayudo · ¿te ayudo? · ¿qué tengo que hacer? · no es molestia · déjame, lo hago yo |
+| F22 Decir lo que sé hacer | | | | | | | ● (U10) — sé + infinitivo · ¿sabes…? · ¿sabes cómo funciona? · sabemos… · claro que sé |
 
 *(NB: F05 kreeg in U7 een ▲-uptrade: estamos todos bien · ¿estáis bien? · ser↔estar-contrast.
 F07 en F08 kregen in U8 een ▲-uptrade: F07 números → **las horas** (y media · en veinte minutos) ·
@@ -72,7 +76,9 @@ U5 = 12 (+identificar objetos, +decir qué hay/para qué sirve) ·
 U6 = 14 (+ubicar cosas/dónde está, +pedir y dar permiso) ·
 U7 = 16 (+hablar del trabajo, +especular y adivinar; F05 uptrade → estamos/estáis) ·
 U8 = 18 (+decir/preguntar la hora, +quedar; F07 uptrade → horas, F08 uptrade → teléfono) ·
-U9 = 20 (+hablar de planes, +expresar obligación; F18 uptrade → quedar para + inf. / afwijzen).
+U9 = 20 (+hablar de planes, +expresar obligación; F18 uptrade → quedar para + inf. / afwijzen) ·
+U10 = **22** (+ofrecer y pedir ayuda, +decir lo que sé hacer; F20 uptrade → **hay que + infinitivo**
+= onpersoonlijke verplichting náást het persoonlijke *tengo que*, en *no tienes que molestarte*).
 
 ## Noticing per unit («¿Qué hacen con el idioma?» — cita → función)
 - **U1:** «¡Hola! ¿Qué tal?»→F01 · «Me llamo…»→F02 · «¿Cómo te llamas?»→F03 · «¿Cómo? Otra vez.»→F08
@@ -83,6 +89,7 @@ U9 = 20 (+hablar de planes, +expresar obligación; F18 uptrade → quedar para +
 - **U6:** «Hay cosas encima de las sillas.»→F13 · «Debajo de la cama.»→F13 · «Dentro del frigorífico…»→F13 · «¿Puedo fumar?»→F14 · «Aquí no, pero puedes ir fuera.»→F14
 - **U7:** «Puede ser escritora.»→F16 · «¿Trabaja en una tienda?»→F16 · «Es profesora.»→F15 · «Yo trabajo aquí, tú trabajas aquí.»→F15 · «Estamos todos bien.»→F05
 - **U8:** «¿Qué hora es? ¿Las ocho y media?»→F17 · «¿A qué hora? Mejor a las doce.»→F17 · «¿Quieres quedar esta noche?»→F18 · «Quedamos en mi casa.»→F18 · «No te oigo nada. ¿Puedes hablar más despacio?»→F08 · «Te veo en veinte minutos.»→F07
+- **U10:** «Yo te ayudo.»→F21 · «¿Qué tengo que hacer?»→F21 · «No es molestia.»→F21 · «Hay que limpiar esto.»→F20 · «¿Sabes pasar la aspiradora?»→F22 · «Los hombres también sabemos pasar la aspiradora.»→F22
 - **U9:** «Voy a preparar café.»→F19 · «Vamos a dormir un poquito más.»→F19 · «Tengo que pasear al perro.»→F20 · «Tengo cosas que hacer.»→F20 · «¿Quedamos para ir al cine?»→F18 · «Tengo sueño. ¿No tienes sueño?»→F20
 
 ## Eindtaak-tags (recycling zichtbaar)
@@ -95,6 +102,7 @@ U9 = 20 (+hablar de planes, +expresar obligación; F18 uptrade → quedar para +
 - **U7 «¿Quién soy? · adivina»** = F15 + F16 + F03
 - **U8 «Mi horario»** = F17 + F18 + F07
 - **U9 «Mi finde»** = F19 + F20 + F18
+- **U10 «¿Quién hace qué?»** = F21 + F22 + F20
 
 ## Zeven ontwerpregels
 1. **Video-afgeleid:** elke functie begint bij een citaat uit de scène (noticing), nooit abstract.

@@ -210,6 +210,29 @@ LECTURA = {
    "transfer": "¿Y tú? ¿Qué vas a hacer este finde? ¿Qué tienes que hacer?",
    "glosario": [["el finde", "het weekend (informeel)"], ["voy a + inf.", "ik ga … (plan)"], ["tengo que + inf.", "ik moet …"], ["vamos a ver", "we gaan kijken"], ["después", "daarna"]],
  },
+ 10: {
+   "tipo": "una nota en la cocina · ¿quién hace qué?",
+   "contexto_nl": "Een briefje op de koelkast: de taken van het huis verdeeld.",
+   "texto": [
+     ["", "¡Hola, familia! Esta semana hay que ayudar más en casa."],
+     ["", "Yo sé cocinar, así que yo preparo la comida."],
+     ["", "Ana tiene que pasar la aspiradora en el salón y ordenar su habitación."],
+     ["", "Luis sabe planchar muy bien, pero esta semana tiene que fregar los platos."],
+     ["", "Y papá va a limpiar el polvo. ¡Gracias a todos! Mamá"],
+   ],
+   "global": [
+     {"q": "¿Qué es este texto?", "opts": ["Una carta de un hotel", "Una nota sobre las tareas de casa", "Un menú"], "a": 1},
+     {"q": "¿Quién sabe cocinar?", "opts": ["Mamá", "Ana", "Luis"], "a": 0},
+   ],
+   "detalle": [
+     {"q": "Ana tiene que pasar la aspiradora.", "vf": True},
+     {"q": "Luis sabe planchar bien.", "vf": True},
+     {"q": "Esta semana Luis tiene que planchar.", "vf": False},
+     {"q": "Papá va a limpiar el polvo.", "vf": True},
+   ],
+   "transfer": "¿Y en tu casa? ¿Quién hace qué? ¿Qué sabes hacer tú?",
+   "glosario": [["hay que + inf.", "men moet / er moet …"], ["sé cocinar", "ik kan koken"], ["pasar la aspiradora", "stofzuigen"], ["fregar los platos", "de vaat doen"], ["limpiar el polvo", "afstoffen"]],
+ },
 }
 
 AUDIO = {
@@ -377,6 +400,25 @@ AUDIO = {
    ],
    "glosario": [["¿qué vas a hacer?", "wat ga je doen?"], ["tengo que trabajar", "ik moet werken"], ["¡qué pena!", "wat jammer!"], ["estoy libre", "ik ben vrij"], ["vamos a tomar algo", "we gaan iets drinken"]],
    "rallentado": ["qué vas a hacer", "tengo que trabajar", "vamos a tomar algo"],
+ },
+ 10: {
+   "tipo": "repartir las tareas · ¿me ayudas?",
+   "guion": [
+     ["Rosa", "¡Qué desorden! Hay que limpiar la cocina."],
+     ["Iván", "Yo te ayudo. ¿Qué tengo que hacer?"],
+     ["Rosa", "¿Sabes pasar la aspiradora?"],
+     ["Iván", "Claro que sé. Y también sé fregar los platos."],
+     ["Rosa", "Perfecto. Entonces yo limpio el polvo y ordeno los armarios."],
+     ["Iván", "Vale. ¡Así terminamos rápido!"],
+   ],
+   "tarea_nl": "Luister: wie doet welke taak?",
+   "preguntas": [
+     {"q": "¿Qué hay que limpiar?", "opts": ["El salón", "La cocina", "El baño"], "a": 1},
+     {"q": "¿Qué sabe hacer Iván?", "opts": ["Cocinar y planchar", "Pasar la aspiradora y fregar", "Solo ordenar"], "a": 1},
+     {"q": "¿Qué va a hacer Rosa?", "opts": ["Fregar los platos", "Limpiar el polvo y ordenar", "Pasar la aspiradora"], "a": 1},
+   ],
+   "glosario": [["hay que limpiar", "er moet gepoetst worden"], ["yo te ayudo", "ik help je"], ["¿sabes…?", "kan je…?"], ["fregar los platos", "de vaat doen"], ["ordenar los armarios", "de kasten opruimen"]],
+   "rallentado": ["hay que limpiar", "yo te ayudo", "sabes pasar la aspiradora"],
  },
 }
 
