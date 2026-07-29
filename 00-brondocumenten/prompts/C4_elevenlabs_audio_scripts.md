@@ -116,9 +116,19 @@ Elena: [thinking] A las seis no puedo. Mejor a las siete y media.
 Tomás: [happy] Perfecto. Quedamos en el cine. ¡Hasta luego!
 ```
 
+## U9 · «¿qué vas a hacer?»  (1 dialoog — Lucas & Alba over het weekend)
+**Stemmen:** Lucas = jonge man · Alba = jonge vrouw.
+*(Komt exact overeen met `AUDIO[9]` in `comprension_data.py` → ir a + inf. · tener que + inf.)*
+```
+Lucas: [curious] ¿Qué vas a hacer este finde?
+Alba: [excited] El sábado voy a ir a un concierto. ¿Vienes?
+Lucas: [disappointed] No puedo. Tengo que trabajar en la tienda.
+Alba: [sympathetic] ¡Qué pena! ¿Y el domingo?
+Lucas: El domingo tengo que estudiar por la mañana, pero por la tarde estoy libre.
+Alba: [cheerful] Perfecto. Vamos a tomar algo el domingo por la tarde.
+```
+
 ---
 
 ## Nadat je de mp3's hebt
-Zet ze als `C4_U1_audio.mp3` … `C4_U8_audio.mp3` in `03-build/web/componentes/audio/` (of stuur ze mij).
-Dan draai ik `gen_c4_comprension.py` + de hubs opnieuw → de audio zit meteen in de «🎧 Escucha»-tab,
-met een traag-knop en het transcript. Voor volgende units lever ik telkens hetzelfde: script + tags + stemmen.
+Zet ze als `C4_U1_audio.mp3` … `C4_U9_audio.mp3` in `03-build/web/componentes/audio/` (of stuur ze mij).
