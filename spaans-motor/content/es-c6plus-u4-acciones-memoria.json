@@ -1,0 +1,64 @@
+{
+  "id": "es-c6plus-u4-acciones-memoria",
+  "title": "Memoria de acciones",
+  "subtitle": "U4 · koppel het werkwoord aan de vertaling",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om: verbo + vertaling",
+    "pairs": [
+      {
+        "a": "viajar",
+        "b": "reizen"
+      },
+      {
+        "a": "visitar",
+        "b": "bezoeken"
+      },
+      {
+        "a": "reservar",
+        "b": "reserveren"
+      },
+      {
+        "a": "sacar fotos",
+        "b": "foto's maken"
+      },
+      {
+        "a": "perder",
+        "b": "missen"
+      },
+      {
+        "a": "quedarse",
+        "b": "verblijven"
+      },
+      {
+        "a": "alquilar",
+        "b": "huren"
+      },
+      {
+        "a": "volver",
+        "b": "terugkeren"
+      },
+      {
+        "a": "probar",
+        "b": "proeven"
+      },
+      {
+        "a": "coger",
+        "b": "nemen"
+      },
+      {
+        "a": "subir",
+        "b": "omhoog gaan"
+      },
+      {
+        "a": "llegar",
+        "b": "aankomen"
+      }
+    ]
+  }
+}

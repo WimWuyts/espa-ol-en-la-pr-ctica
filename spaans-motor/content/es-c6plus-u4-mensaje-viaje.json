@@ -1,0 +1,37 @@
+{
+  "id": "es-c6plus-u4-mensaje-viaje",
+  "title": "Mensaje de voz: mi viaje",
+  "subtitle": "U4 · neem een spraakbericht op",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "voicemessage",
+    "prompt": "Graba un mensaje de voz (30–40 s)",
+    "items": [
+      {
+        "text": "Cuenta un viaje real o inventado (usa 3 veces el perfecto: he ido, he visto, he hecho).",
+        "cue": "mi viaje",
+        "tag": "pf",
+        "sub": "gebruik: he viajado a… · he visto… · he probado…",
+        "tip": "3× el perfecto (haber + participio)? Neem opnieuw op."
+      },
+      {
+        "text": "Di cómo has viajado y para qué (usa por y para).",
+        "cue": "por / para",
+        "tag": "pp",
+        "sub": "gebruik: he viajado por avión · para visitar…",
+        "tip": "por én para gebruikt? Herneem."
+      },
+      {
+        "text": "Da tu opinión sobre el viaje (lo mejor / lo peor ha sido…).",
+        "cue": "mi opinión",
+        "tag": "op",
+        "sub": "gebruik: lo mejor ha sido… porque… · ha sido inolvidable",
+        "tip": "una opinión met «ha sido»? Herneem."
+      }
+    ]
+  }
+}

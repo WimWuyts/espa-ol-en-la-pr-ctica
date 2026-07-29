@@ -186,6 +186,8 @@ GROUP_EMOJI = {
  "ciudad":"🌆","direcciones":"🧭","movimiento":"🚶","lugares":"🏬",
  # ---- C6+·U3 «Conectados» ----
  "dispositivos":"📱","internet":"🌐","digital":"📲","comunicar":"💬","adjmedia":"⭐",
+ # ---- C6+·U4 «De viaje» ----
+ "transporte":"✈️","alojamiento":"🏨","viaje":"🧳","experiencias":"📸","porpara":"🎯",
 }
 
 _ARTICLES = ("el ", "la ", "los ", "las ", "un ", "una ", "unos ", "unas ", "mi ", "al ")

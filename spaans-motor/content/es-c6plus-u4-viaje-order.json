@@ -1,0 +1,191 @@
+{
+  "id": "es-c6plus-u4-viaje-order",
+  "title": "Ordena la frase",
+  "subtitle": "U4 · zet de zin/het verhaal in de juiste volgorde",
+  "lang": "es",
+  "template": "order",
+  "options": {
+    "audio": false
+  },
+  "order": {
+    "prompt": "Tik in de logische volgorde",
+    "rounds": [
+      {
+        "tag": "perfecto",
+        "sub": "haber + participio",
+        "items": [
+          {
+            "label": "Este año",
+            "key": 1
+          },
+          {
+            "label": "he",
+            "key": 2
+          },
+          {
+            "label": "viajado",
+            "key": 3
+          },
+          {
+            "label": "a Chile.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "relato",
+        "sub": "el orden del viaje",
+        "items": [
+          {
+            "label": "He hecho la maleta,",
+            "key": 1
+          },
+          {
+            "label": "he cogido el avión,",
+            "key": 2
+          },
+          {
+            "label": "he visitado el desierto",
+            "key": 3
+          },
+          {
+            "label": "y he vuelto a casa.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "porpara",
+        "sub": "por/para",
+        "items": [
+          {
+            "label": "Viajo",
+            "key": 1
+          },
+          {
+            "label": "por avión",
+            "key": 2
+          },
+          {
+            "label": "para",
+            "key": 3
+          },
+          {
+            "label": "visitar Chile.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "pregunta",
+        "sub": "pregunta con perfecto",
+        "items": [
+          {
+            "label": "¿Has",
+            "key": 1
+          },
+          {
+            "label": "estado",
+            "key": 2
+          },
+          {
+            "label": "alguna vez",
+            "key": 3
+          },
+          {
+            "label": "en Perú?",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "perfecto",
+        "sub": "irregular",
+        "items": [
+          {
+            "label": "(Yo)",
+            "key": 1
+          },
+          {
+            "label": "he",
+            "key": 2
+          },
+          {
+            "label": "visto",
+            "key": 3
+          },
+          {
+            "label": "el mar.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "opinion",
+        "sub": "lo mejor",
+        "items": [
+          {
+            "label": "Lo mejor",
+            "key": 1
+          },
+          {
+            "label": "ha sido",
+            "key": 2
+          },
+          {
+            "label": "el paisaje",
+            "key": 3
+          },
+          {
+            "label": "de la Patagonia.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "marcador",
+        "sub": "todavía no",
+        "items": [
+          {
+            "label": "Todavía",
+            "key": 1
+          },
+          {
+            "label": "no",
+            "key": 2
+          },
+          {
+            "label": "he estado",
+            "key": 3
+          },
+          {
+            "label": "en Rapa Nui.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "relato",
+        "sub": "el vuelo",
+        "items": [
+          {
+            "label": "Primero",
+            "key": 1
+          },
+          {
+            "label": "he ido al aeropuerto,",
+            "key": 2
+          },
+          {
+            "label": "luego he facturado",
+            "key": 3
+          },
+          {
+            "label": "y al final he embarcado.",
+            "key": 4
+          }
+        ]
+      }
+    ]
+  }
+}

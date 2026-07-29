@@ -1,0 +1,124 @@
+{
+  "id": "es-c6plus-u4-por-para",
+  "title": "¿por o para?",
+  "subtitle": "U4 · doel/bestemming (para) of middel/duur/reden (por)?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Kies: para (doel/bestemming) of por (middel/duur/reden)?",
+    "categories": [
+      {
+        "id": "para",
+        "label": "para<br><small>doel/bestemming</small>",
+        "glaze": "#2E8E68"
+      },
+      {
+        "id": "por",
+        "label": "por<br><small>middel/duur/reden</small>",
+        "glaze": "#E0A22F"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "Salgo ___ Chile.",
+        "answer": "para",
+        "tag": "para",
+        "sub": "bestemming → para"
+      },
+      {
+        "stimulus": "Viajo ___ avión.",
+        "answer": "por",
+        "tag": "por",
+        "sub": "middel → por"
+      },
+      {
+        "stimulus": "Estudio ___ aprobar.",
+        "answer": "para",
+        "tag": "para",
+        "sub": "doel → para"
+      },
+      {
+        "stimulus": "Me quedo ___ dos días.",
+        "answer": "por",
+        "tag": "por",
+        "sub": "duur → por"
+      },
+      {
+        "stimulus": "Este regalo es ___ ti.",
+        "answer": "para",
+        "tag": "para",
+        "sub": "ontvanger → para"
+      },
+      {
+        "stimulus": "Paseo ___ la playa.",
+        "answer": "por",
+        "tag": "por",
+        "sub": "doorheen → por"
+      },
+      {
+        "stimulus": "La reserva es ___ el lunes.",
+        "answer": "para",
+        "tag": "para",
+        "sub": "deadline → para"
+      },
+      {
+        "stimulus": "No salgo ___ el mal tiempo.",
+        "answer": "por",
+        "tag": "por",
+        "sub": "reden → por"
+      },
+      {
+        "stimulus": "Voy ___ descansar.",
+        "answer": "para",
+        "tag": "para",
+        "sub": "om te → para"
+      },
+      {
+        "stimulus": "Viajamos ___ la mañana.",
+        "answer": "por",
+        "tag": "por",
+        "sub": "deel v.d. dag → por"
+      },
+      {
+        "stimulus": "El tren sale ___ Madrid.",
+        "answer": "para",
+        "tag": "para",
+        "sub": "bestemming → para"
+      },
+      {
+        "stimulus": "Te llamo ___ teléfono.",
+        "answer": "por",
+        "tag": "por",
+        "sub": "middel → por"
+      },
+      {
+        "stimulus": "Necesito el billete ___ mañana.",
+        "answer": "para",
+        "tag": "para",
+        "sub": "deadline → para"
+      },
+      {
+        "stimulus": "Gracias ___ todo.",
+        "answer": "por",
+        "tag": "por",
+        "sub": "reden → por"
+      },
+      {
+        "stimulus": "Estudio español ___ viajar.",
+        "answer": "para",
+        "tag": "para",
+        "sub": "doel → para"
+      },
+      {
+        "stimulus": "Camino ___ el centro.",
+        "answer": "por",
+        "tag": "por",
+        "sub": "doorheen → por"
+      }
+    ]
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "id": "es-c6plus-u4-por-para-cloze",
+  "title": "Completa: por / para",
+  "subtitle": "U4 · kies por of para",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies por of para",
+    "items": [
+      {
+        "stimulus": "Salgo ___ Chile mañana.",
+        "options": [
+          "para",
+          "por",
+          "de"
+        ],
+        "answer": "para",
+        "tag": "pp",
+        "sub": "bestemming → para"
+      },
+      {
+        "stimulus": "Viajo ___ avión.",
+        "options": [
+          "por",
+          "para",
+          "en"
+        ],
+        "answer": "por",
+        "tag": "pp",
+        "sub": "middel → por"
+      },
+      {
+        "stimulus": "Estudio ___ aprobar el examen.",
+        "options": [
+          "para",
+          "por",
+          "a"
+        ],
+        "answer": "para",
+        "tag": "pp",
+        "sub": "doel → para"
+      },
+      {
+        "stimulus": "Me quedo ___ una semana.",
+        "options": [
+          "por",
+          "para",
+          "en"
+        ],
+        "answer": "por",
+        "tag": "pp",
+        "sub": "duur → por"
+      },
+      {
+        "stimulus": "Este billete es ___ ti.",
+        "options": [
+          "para",
+          "por",
+          "de"
+        ],
+        "answer": "para",
+        "tag": "pp",
+        "sub": "ontvanger → para"
+      },
+      {
+        "stimulus": "Paseamos ___ la costa.",
+        "options": [
+          "por",
+          "para",
+          "en"
+        ],
+        "answer": "por",
+        "tag": "pp",
+        "sub": "doorheen → por"
+      },
+      {
+        "stimulus": "No viajo ___ el mal tiempo.",
+        "options": [
+          "por",
+          "para",
+          "con"
+        ],
+        "answer": "por",
+        "tag": "pp",
+        "sub": "reden → por"
+      },
+      {
+        "stimulus": "La reserva es ___ el lunes.",
+        "options": [
+          "para",
+          "por",
+          "en"
+        ],
+        "answer": "para",
+        "tag": "pp",
+        "sub": "deadline → para"
+      },
+      {
+        "stimulus": "Voy al hotel ___ descansar.",
+        "options": [
+          "para",
+          "por",
+          "a"
+        ],
+        "answer": "para",
+        "tag": "pp",
+        "sub": "om te → para"
+      },
+      {
+        "stimulus": "Salimos ___ la mañana.",
+        "options": [
+          "por",
+          "para",
+          "en"
+        ],
+        "answer": "por",
+        "tag": "pp",
+        "sub": "deel v.d. dag → por"
+      },
+      {
+        "stimulus": "Gracias ___ el viaje.",
+        "options": [
+          "por",
+          "para",
+          "de"
+        ],
+        "answer": "por",
+        "tag": "pp",
+        "sub": "reden → por"
+      },
+      {
+        "stimulus": "El tren sale ___ Barcelona.",
+        "options": [
+          "para",
+          "por",
+          "a"
+        ],
+        "answer": "para",
+        "tag": "pp",
+        "sub": "bestemming → para"
+      },
+      {
+        "stimulus": "Necesito la maleta ___ el viernes.",
+        "options": [
+          "para",
+          "por",
+          "en"
+        ],
+        "answer": "para",
+        "tag": "pp",
+        "sub": "deadline → para"
+      },
+      {
+        "stimulus": "Te llamo ___ teléfono.",
+        "options": [
+          "por",
+          "para",
+          "con"
+        ],
+        "answer": "por",
+        "tag": "pp",
+        "sub": "middel → por"
+      }
+    ]
+  }
+}

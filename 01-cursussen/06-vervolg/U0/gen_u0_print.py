@@ -24,7 +24,7 @@ FONTS = "".join([
     face("Caveat", "Caveat-700.woff2", "700"),
 ])
 
-AV = {n: C.make(n, "avatar", 64) for n in ["lucia", "diego", "valen", "nina"]}
+AV = {n: C.make(n, "avatar", 64) for n in ["lucia", "diego", "valen", "nina", "mateo"]}
 TU = C.tu_avatar(64)
 MOCH = C.mochila(84, "map")
 

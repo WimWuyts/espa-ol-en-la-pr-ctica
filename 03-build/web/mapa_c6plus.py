@@ -23,6 +23,8 @@ PARADAS = {
  "ESP": (0, "U0–U1", "el mundo hispano · España (Lucía)"),
  "COL": (2, "U2",    "Cartagena (Valen)"),
  "MEX": (3, "U3",    "CDMX (Diego)"),
+ "CHL": (4, "U4",    "Chile · el gran viaje (Patagonia, Atacama)"),
  "ARG": (5, "U5",    "Buenos Aires (Mateo · voseo)"),
  "PER": (6, "U6",    "Cusco (Nina)"),
+ "CRI": (7, "U7",    "Costa Rica · «pura vida» (salud y medio ambiente)"),
 }

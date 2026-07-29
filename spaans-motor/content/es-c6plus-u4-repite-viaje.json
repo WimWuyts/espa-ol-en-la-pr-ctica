@@ -1,0 +1,57 @@
+{
+  "id": "es-c6plus-u4-repite-viaje",
+  "title": "Escucha y repite: mi viaje",
+  "subtitle": "U4 · escucha, repite y GRÁBATE",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "repeat",
+    "prompt": "Escucha ▶ · repite en voz alta · grábate ⏺",
+    "items": [
+      {
+        "text": "Este año he viajado a Chile.",
+        "sub": "dit jaar ben ik naar Chile gereisd",
+        "tag": "pf",
+        "tip": "¡Bien! Ahora dilo sin leer."
+      },
+      {
+        "text": "He visto el desierto de Atacama.",
+        "sub": "ik heb de Atacama-woestijn gezien",
+        "tag": "pf"
+      },
+      {
+        "text": "He hecho muchas fotos.",
+        "sub": "ik heb veel foto's gemaakt",
+        "tag": "pf"
+      },
+      {
+        "text": "¿Has estado alguna vez en Perú?",
+        "sub": "ben je ooit in Peru geweest?",
+        "tag": "pf"
+      },
+      {
+        "text": "Todavía no he ido a la playa.",
+        "sub": "ik ben nog niet naar het strand geweest",
+        "tag": "marc"
+      },
+      {
+        "text": "Viajo por avión para descansar.",
+        "sub": "ik reis per vliegtuig om te rusten",
+        "tag": "pp"
+      },
+      {
+        "text": "Lo mejor ha sido el paisaje.",
+        "sub": "het beste was het landschap",
+        "tag": "op"
+      },
+      {
+        "text": "Ha sido un viaje inolvidable.",
+        "sub": "het was een onvergetelijke reis",
+        "tag": "op"
+      }
+    ]
+  }
+}
