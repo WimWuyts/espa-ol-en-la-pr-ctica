@@ -1,0 +1,192 @@
+{
+  "id": "es-c6plus-u1-gustar",
+  "title": "Completa: gustar",
+  "subtitle": "U1 · me/te/le… + gusta/gustan",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste vorm van gustar",
+    "items": [
+      {
+        "stimulus": "A mí ___ el fútbol.",
+        "options": [
+          "me gusta",
+          "me gustan",
+          "te gusta"
+        ],
+        "answer": "me gusta",
+        "tag": "g",
+        "sub": "a mí → me · el fútbol (1)"
+      },
+      {
+        "stimulus": "A mí ___ los perros.",
+        "options": [
+          "me gustan",
+          "me gusta",
+          "le gustan"
+        ],
+        "answer": "me gustan",
+        "tag": "g",
+        "sub": "me · los perros (varios)"
+      },
+      {
+        "stimulus": "A Lucía ___ bailar.",
+        "options": [
+          "le gusta",
+          "le gustan",
+          "les gusta"
+        ],
+        "answer": "le gusta",
+        "tag": "g",
+        "sub": "a Lucía → le · inf."
+      },
+      {
+        "stimulus": "¿A ti ___ los deportes?",
+        "options": [
+          "te gustan",
+          "te gusta",
+          "os gustan"
+        ],
+        "answer": "te gustan",
+        "tag": "g",
+        "sub": "a ti → te · varios"
+      },
+      {
+        "stimulus": "A nosotros ___ viajar.",
+        "options": [
+          "nos gusta",
+          "nos gustan",
+          "les gusta"
+        ],
+        "answer": "nos gusta",
+        "tag": "g",
+        "sub": "nosotros → nos · inf."
+      },
+      {
+        "stimulus": "A mis padres ___ los domingos.",
+        "options": [
+          "les gustan",
+          "le gustan",
+          "les gusta"
+        ],
+        "answer": "les gustan",
+        "tag": "g",
+        "sub": "a ellos → les · varios"
+      },
+      {
+        "stimulus": "A ella no ___ nada el terror.",
+        "options": [
+          "le gusta",
+          "le gustan",
+          "les gusta"
+        ],
+        "answer": "le gusta",
+        "tag": "g",
+        "sub": "le · el terror (1)"
+      },
+      {
+        "stimulus": "A mí ___ la música latina.",
+        "options": [
+          "me gusta",
+          "me gustan",
+          "te gusta"
+        ],
+        "answer": "me gusta",
+        "tag": "g",
+        "sub": "me · la música (1)"
+      },
+      {
+        "stimulus": "¿A vosotros ___ las comedias?",
+        "options": [
+          "os gustan",
+          "os gusta",
+          "nos gustan"
+        ],
+        "answer": "os gustan",
+        "tag": "g",
+        "sub": "a vosotros → os · varias"
+      },
+      {
+        "stimulus": "A Diego ___ los videojuegos.",
+        "options": [
+          "le gustan",
+          "le gusta",
+          "les gustan"
+        ],
+        "answer": "le gustan",
+        "tag": "g",
+        "sub": "le · los videojuegos (varios)"
+      },
+      {
+        "stimulus": "A mí ___ leer y cantar.",
+        "options": [
+          "me gusta",
+          "me gustan",
+          "le gusta"
+        ],
+        "answer": "me gusta",
+        "tag": "g",
+        "sub": "me · infinitivos → gusta"
+      },
+      {
+        "stimulus": "A ti ___ el chocolate.",
+        "options": [
+          "te gusta",
+          "te gustan",
+          "le gusta"
+        ],
+        "answer": "te gusta",
+        "tag": "g",
+        "sub": "te · el chocolate (1)"
+      },
+      {
+        "stimulus": "A nosotros ___ las vacaciones.",
+        "options": [
+          "nos gustan",
+          "nos gusta",
+          "os gustan"
+        ],
+        "answer": "nos gustan",
+        "tag": "g",
+        "sub": "nos · las vacaciones (varias)"
+      },
+      {
+        "stimulus": "A los niños ___ el helado.",
+        "options": [
+          "les gusta",
+          "les gustan",
+          "le gusta"
+        ],
+        "answer": "les gusta",
+        "tag": "g",
+        "sub": "les · el helado (1)"
+      },
+      {
+        "stimulus": "A mí me ___ mucho las flores.",
+        "options": [
+          "gustan",
+          "gusta",
+          "encanta"
+        ],
+        "answer": "gustan",
+        "tag": "g",
+        "sub": "las flores (varias) → gustan"
+      },
+      {
+        "stimulus": "A ti ___ los lunes… ¡qué raro!",
+        "options": [
+          "te gustan",
+          "te gusta",
+          "le gustan"
+        ],
+        "answer": "te gustan",
+        "tag": "g",
+        "sub": "te · los lunes (varios)"
+      }
+    ]
+  }
+}

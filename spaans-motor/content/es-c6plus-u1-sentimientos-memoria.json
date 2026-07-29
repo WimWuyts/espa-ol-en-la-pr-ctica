@@ -1,0 +1,64 @@
+{
+  "id": "es-c6plus-u1-sentimientos-memoria",
+  "title": "¿Cómo estás?",
+  "subtitle": "U1 · zoek het gevoel + de vertaling",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om: sentimiento + vertaling",
+    "pairs": [
+      {
+        "a": "contento",
+        "b": "blij"
+      },
+      {
+        "a": "cansado",
+        "b": "moe"
+      },
+      {
+        "a": "nervioso",
+        "b": "nerveus"
+      },
+      {
+        "a": "triste",
+        "b": "verdrietig"
+      },
+      {
+        "a": "aburrido",
+        "b": "verveeld"
+      },
+      {
+        "a": "enfadado",
+        "b": "boos"
+      },
+      {
+        "a": "relajado",
+        "b": "ontspannen"
+      },
+      {
+        "a": "ocupado",
+        "b": "druk"
+      },
+      {
+        "a": "feliz",
+        "b": "gelukkig"
+      },
+      {
+        "a": "estresado",
+        "b": "gestrest"
+      },
+      {
+        "a": "tranquilo",
+        "b": "rustig"
+      },
+      {
+        "a": "emocionado",
+        "b": "opgewonden"
+      }
+    ]
+  }
+}

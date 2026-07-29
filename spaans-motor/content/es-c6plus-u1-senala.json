@@ -1,0 +1,206 @@
+{
+  "id": "es-c6plus-u1-senala",
+  "title": "Señala",
+  "subtitle": "U1 · klik het juiste antwoord",
+  "lang": "es",
+  "template": "point",
+  "options": {
+    "audio": false
+  },
+  "point": {
+    "prompt": "Klik het gevraagde item",
+    "mode": "one",
+    "rounds": [
+      {
+        "tag": "refl",
+        "sub": "señala el verbo reflexivo",
+        "targets": [
+          {
+            "label": "desayunar"
+          },
+          {
+            "label": "ducharse",
+            "hit": true
+          },
+          {
+            "label": "comer"
+          },
+          {
+            "label": "estudiar"
+          }
+        ]
+      },
+      {
+        "tag": "pron",
+        "sub": "¿qué pronombre va con «yo»?",
+        "targets": [
+          {
+            "label": "te"
+          },
+          {
+            "label": "se"
+          },
+          {
+            "label": "me",
+            "hit": true
+          },
+          {
+            "label": "nos"
+          }
+        ]
+      },
+      {
+        "tag": "serestar",
+        "sub": "señala la frase con «estar»",
+        "targets": [
+          {
+            "label": "Soy de Sevilla"
+          },
+          {
+            "label": "Estoy cansado",
+            "hit": true
+          },
+          {
+            "label": "Soy alto"
+          },
+          {
+            "label": "Es profesor"
+          }
+        ]
+      },
+      {
+        "tag": "gustar",
+        "sub": "señala la forma correcta: «Me ___ los perros»",
+        "targets": [
+          {
+            "label": "gusta"
+          },
+          {
+            "label": "gustan",
+            "hit": true
+          },
+          {
+            "label": "gusto"
+          },
+          {
+            "label": "gustas"
+          }
+        ]
+      },
+      {
+        "tag": "hora",
+        "sub": "señala «son las tres y media»",
+        "targets": [
+          {
+            "label": "3:15"
+          },
+          {
+            "label": "3:45"
+          },
+          {
+            "label": "3:30",
+            "hit": true
+          },
+          {
+            "label": "2:30"
+          }
+        ]
+      },
+      {
+        "tag": "sentim",
+        "sub": "señala un sentimiento",
+        "targets": [
+          {
+            "label": "cansado",
+            "hit": true
+          },
+          {
+            "label": "lunes"
+          },
+          {
+            "label": "ducharse"
+          },
+          {
+            "label": "a veces"
+          }
+        ]
+      },
+      {
+        "tag": "frecuencia",
+        "sub": "señala un adverbio de frecuencia",
+        "targets": [
+          {
+            "label": "primero"
+          },
+          {
+            "label": "siempre",
+            "hit": true
+          },
+          {
+            "label": "contento"
+          },
+          {
+            "label": "cuarto"
+          }
+        ]
+      },
+      {
+        "tag": "conector",
+        "sub": "señala un conector de secuencia",
+        "targets": [
+          {
+            "label": "porque"
+          },
+          {
+            "label": "luego",
+            "hit": true
+          },
+          {
+            "label": "también"
+          },
+          {
+            "label": "pero"
+          }
+        ]
+      },
+      {
+        "tag": "gustar",
+        "sub": "señala «a mí también» (bij +)",
+        "targets": [
+          {
+            "label": "a mí tampoco"
+          },
+          {
+            "label": "a mí también",
+            "hit": true
+          },
+          {
+            "label": "a mí no"
+          },
+          {
+            "label": "yo también"
+          }
+        ]
+      },
+      {
+        "tag": "refl",
+        "sub": "señala la forma «nosotros» de levantarse",
+        "targets": [
+          {
+            "label": "me levanto"
+          },
+          {
+            "label": "nos levantamos",
+            "hit": true
+          },
+          {
+            "label": "os levantáis"
+          },
+          {
+            "label": "se levantan"
+          }
+        ]
+      }
+    ]
+  }
+}

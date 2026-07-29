@@ -1,0 +1,236 @@
+{
+  "id": "es-c6plus-u1-reflexivos",
+  "title": "Completa: los reflexivos",
+  "subtitle": "U1 · pronombre + verbo (me levanto, te duchas…)",
+  "lang": "es",
+  "template": "cloze",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "cloze": {
+    "prompt": "Kies de juiste reflexieve vorm",
+    "items": [
+      {
+        "stimulus": "(Yo) ___ a las siete.",
+        "options": [
+          "me levanto",
+          "te levantas",
+          "se levanta"
+        ],
+        "answer": "me levanto",
+        "tag": "levantarse",
+        "sub": "yo → me levanto"
+      },
+      {
+        "stimulus": "¿(Tú) ___ por la mañana?",
+        "options": [
+          "te duchas",
+          "me ducho",
+          "se ducha"
+        ],
+        "answer": "te duchas",
+        "tag": "ducharse",
+        "sub": "tú → te duchas"
+      },
+      {
+        "stimulus": "Lucía ___ muy temprano.",
+        "options": [
+          "se despierta",
+          "me despierto",
+          "te despiertas"
+        ],
+        "answer": "se despierta",
+        "tag": "despertarse",
+        "sub": "ella → se despierta"
+      },
+      {
+        "stimulus": "(Nosotros) ___ a las once.",
+        "options": [
+          "nos acostamos",
+          "os acostáis",
+          "se acuestan"
+        ],
+        "answer": "nos acostamos",
+        "tag": "acostarse",
+        "sub": "nosotros → nos acostamos"
+      },
+      {
+        "stimulus": "Diego ___ rápido.",
+        "options": [
+          "se viste",
+          "me visto",
+          "te vistes"
+        ],
+        "answer": "se viste",
+        "tag": "vestirse",
+        "sub": "él → se viste"
+      },
+      {
+        "stimulus": "(Yo) ___ enseguida.",
+        "options": [
+          "me duermo",
+          "te duermes",
+          "se duerme"
+        ],
+        "answer": "me duermo",
+        "tag": "dormirse",
+        "sub": "yo → me duermo"
+      },
+      {
+        "stimulus": "¿(Vosotros) ___ aquí?",
+        "options": [
+          "os sentáis",
+          "se sientan",
+          "nos sentamos"
+        ],
+        "answer": "os sentáis",
+        "tag": "sentarse",
+        "sub": "vosotros → os sentáis"
+      },
+      {
+        "stimulus": "Mis hermanos ___ delante del espejo.",
+        "options": [
+          "se peinan",
+          "nos peinamos",
+          "os peináis"
+        ],
+        "answer": "se peinan",
+        "tag": "peinarse",
+        "sub": "ellos → se peinan"
+      },
+      {
+        "stimulus": "(Tú) ___ los dientes.",
+        "options": [
+          "te lavas",
+          "me lavo",
+          "se lava"
+        ],
+        "answer": "te lavas",
+        "tag": "lavarse",
+        "sub": "tú → te lavas"
+      },
+      {
+        "stimulus": "(Yo) ___ a las siete y cuarto.",
+        "options": [
+          "me levanto",
+          "me levantas",
+          "me levanta"
+        ],
+        "answer": "me levanto",
+        "tag": "levantarse",
+        "sub": "yo → me levanto"
+      },
+      {
+        "stimulus": "Ella ___ por la noche.",
+        "options": [
+          "se ducha",
+          "te duchas",
+          "me ducho"
+        ],
+        "answer": "se ducha",
+        "tag": "ducharse",
+        "sub": "ella → se ducha"
+      },
+      {
+        "stimulus": "(Nosotros) ___ temprano.",
+        "options": [
+          "nos despertamos",
+          "os despertáis",
+          "se despiertan"
+        ],
+        "answer": "nos despertamos",
+        "tag": "despertarse",
+        "sub": "nosotros → nos despertamos"
+      },
+      {
+        "stimulus": "(Yo) ___ a las once.",
+        "options": [
+          "me acuesto",
+          "te acuestas",
+          "se acuesta"
+        ],
+        "answer": "me acuesto",
+        "tag": "acostarse",
+        "sub": "yo → me acuesto"
+      },
+      {
+        "stimulus": "¿(Tú) ___ elegante?",
+        "options": [
+          "te vistes",
+          "me visto",
+          "se viste"
+        ],
+        "answer": "te vistes",
+        "tag": "vestirse",
+        "sub": "tú → te vistes"
+      },
+      {
+        "stimulus": "Los niños ___ a las nueve.",
+        "options": [
+          "se acuestan",
+          "nos acostamos",
+          "os acostáis"
+        ],
+        "answer": "se acuestan",
+        "tag": "acostarse",
+        "sub": "ellos → se acuestan"
+      },
+      {
+        "stimulus": "(Vosotros) ___ tarde.",
+        "options": [
+          "os levantáis",
+          "nos levantamos",
+          "se levantan"
+        ],
+        "answer": "os levantáis",
+        "tag": "levantarse",
+        "sub": "vosotros → os levantáis"
+      },
+      {
+        "stimulus": "Mi madre ___ a las seis.",
+        "options": [
+          "se despierta",
+          "me despierto",
+          "te despiertas"
+        ],
+        "answer": "se despierta",
+        "tag": "despertarse",
+        "sub": "ella → se despierta"
+      },
+      {
+        "stimulus": "(Yo) ___ en el sofá.",
+        "options": [
+          "me siento",
+          "te sientas",
+          "se sienta"
+        ],
+        "answer": "me siento",
+        "tag": "sentarse",
+        "sub": "yo → me siento"
+      },
+      {
+        "stimulus": "¿(Vosotros) ___ pronto?",
+        "options": [
+          "os duchais",
+          "nos duchamos",
+          "se duchan"
+        ],
+        "answer": "os duchais",
+        "tag": "ducharse",
+        "sub": "vosotros → os ducháis"
+      },
+      {
+        "stimulus": "Diego y yo ___ deporte y luego ___.",
+        "options": [
+          "hacemos … nos duchamos",
+          "hago … me ducho",
+          "hacéis … os ducháis"
+        ],
+        "answer": "hacemos … nos duchamos",
+        "tag": "nosotros",
+        "sub": "nosotros → nos duchamos"
+      }
+    ]
+  }
+}

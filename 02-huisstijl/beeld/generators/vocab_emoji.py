@@ -179,6 +179,8 @@ GROUP_EMOJI = {
  "opinar":"💭","ocio":"🎮","musica":"🎵","sentim":"😀","planes":"📆","valencia":"🏖️",
  "comida":"🍽️","fruta":"🍓","verdura":"🥕","bebida":"🥤","mesa":"🍴",
  "restaurante":"🍽️","cantidades":"⚖️","cortesia":"🙏","mexico":"🌮",
+ # ---- C6+·U1 «El día a día» ----
+ "calendario":"📅","conectores":"🔗","gustar":"👍","sentimientos":"😊",
 }
 
 _ARTICLES = ("el ", "la ", "los ", "las ", "un ", "una ", "unos ", "unas ", "mi ", "al ")

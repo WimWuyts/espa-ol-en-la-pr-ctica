@@ -1,0 +1,72 @@
+{
+  "id": "es-c6plus-u1-rutina-memoria",
+  "title": "Memoria de la rutina",
+  "subtitle": "U1 · zoek het paar español ↔ nederlands",
+  "lang": "es",
+  "template": "memory",
+  "options": {
+    "pairs": 6,
+    "audio": false
+  },
+  "memory": {
+    "prompt": "Draai twee kaartjes om: acción + vertaling",
+    "pairs": [
+      {
+        "a": "me levanto",
+        "b": "ik sta op"
+      },
+      {
+        "a": "me ducho",
+        "b": "ik douche"
+      },
+      {
+        "a": "desayuno",
+        "b": "ik ontbijt"
+      },
+      {
+        "a": "me visto",
+        "b": "ik kleed me aan"
+      },
+      {
+        "a": "como",
+        "b": "ik eet ('s middags)"
+      },
+      {
+        "a": "me acuesto",
+        "b": "ik ga naar bed"
+      },
+      {
+        "a": "me despierto",
+        "b": "ik word wakker"
+      },
+      {
+        "a": "ceno",
+        "b": "ik eet 's avonds"
+      },
+      {
+        "a": "hago los deberes",
+        "b": "ik maak huiswerk"
+      },
+      {
+        "a": "me peino",
+        "b": "ik kam me"
+      },
+      {
+        "a": "salgo de casa",
+        "b": "ik ga het huis uit"
+      },
+      {
+        "a": "vuelvo a casa",
+        "b": "ik keer terug naar huis"
+      },
+      {
+        "a": "me duermo",
+        "b": "ik val in slaap"
+      },
+      {
+        "a": "descanso",
+        "b": "ik rust uit"
+      }
+    ]
+  }
+}

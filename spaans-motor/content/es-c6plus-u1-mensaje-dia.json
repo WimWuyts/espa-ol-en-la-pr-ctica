@@ -1,0 +1,37 @@
+{
+  "id": "es-c6plus-u1-mensaje-dia",
+  "title": "Mensaje de voz: mi día a día",
+  "subtitle": "U1 · neem een spraakbericht op over je dag",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "voicemessage",
+    "prompt": "Graba un mensaje de voz (30–40 s)",
+    "items": [
+      {
+        "text": "Describe tu rutina: usa 5 verbos reflexivos + la hora + conectores.",
+        "cue": "mi día",
+        "tag": "rutina",
+        "sub": "gebruik: me levanto · me ducho · a las… · primero · luego · después",
+        "tip": "5 reflexieve werkwoorden + de hora? Neem opnieuw op. <span class='nl'>5 reflexieven + uur? herneem.</span>"
+      },
+      {
+        "text": "Di qué te gusta y qué no, con «porque».",
+        "cue": "mis gustos",
+        "tag": "opinion",
+        "sub": "gebruik: me gusta · me encanta · no me gusta nada · porque",
+        "tip": "2 gustos + 1 porque? Herneem. <span class='nl'>2 smaken + reden? herneem.</span>"
+      },
+      {
+        "text": "Di cómo te sientes hoy y por qué (ser/estar).",
+        "cue": "¿cómo estás?",
+        "tag": "serestar",
+        "sub": "gebruik: estoy contento/cansado… porque…",
+        "tip": "estar + gevoel + porque gebruikt? Herneem. <span class='nl'>estar + gevoel + reden? herneem.</span>"
+      }
+    ]
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "id": "es-c6plus-u1-rutina-order",
+  "title": "Ordena tu día",
+  "subtitle": "U1 · zet de acties in de logische volgorde",
+  "lang": "es",
+  "template": "order",
+  "options": {
+    "audio": false
+  },
+  "order": {
+    "prompt": "Tik de acties in de logische volgorde van een dag",
+    "rounds": [
+      {
+        "tag": "dia",
+        "sub": "la mañana",
+        "items": [
+          {
+            "label": "Me despierto a las 7:00.",
+            "key": 1
+          },
+          {
+            "label": "Me ducho.",
+            "key": 2
+          },
+          {
+            "label": "Desayuno.",
+            "key": 3
+          },
+          {
+            "label": "Salgo de casa.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "dia",
+        "sub": "el día completo",
+        "items": [
+          {
+            "label": "Me levanto.",
+            "key": 1
+          },
+          {
+            "label": "Como a las dos.",
+            "key": 2
+          },
+          {
+            "label": "Hago los deberes.",
+            "key": 3
+          },
+          {
+            "label": "Me acuesto.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "dia",
+        "sub": "con conectores",
+        "items": [
+          {
+            "label": "Primero me levanto.",
+            "key": 1
+          },
+          {
+            "label": "Luego me visto.",
+            "key": 2
+          },
+          {
+            "label": "Después desayuno.",
+            "key": 3
+          },
+          {
+            "label": "Por último, voy al insti.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "hora",
+        "sub": "de menor a mayor (la hora)",
+        "items": [
+          {
+            "label": "Es la una.",
+            "key": 1
+          },
+          {
+            "label": "Son las tres y cuarto.",
+            "key": 2
+          },
+          {
+            "label": "Son las seis y media.",
+            "key": 3
+          },
+          {
+            "label": "Son las nueve.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "dia",
+        "sub": "la tarde y la noche",
+        "items": [
+          {
+            "label": "Vuelvo a casa a las seis.",
+            "key": 1
+          },
+          {
+            "label": "Meriendo.",
+            "key": 2
+          },
+          {
+            "label": "Ceno a las nueve.",
+            "key": 3
+          },
+          {
+            "label": "Me duermo.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "opinion",
+        "sub": "una opinión (me gusta… porque)",
+        "items": [
+          {
+            "label": "Me gusta el fin de semana",
+            "key": 1
+          },
+          {
+            "label": "porque",
+            "key": 2
+          },
+          {
+            "label": "no hay clase",
+            "key": 3
+          },
+          {
+            "label": "y quedo con amigos.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "dia",
+        "sub": "la rutina de Lucía",
+        "items": [
+          {
+            "label": "Lucía se despierta a las siete.",
+            "key": 1
+          },
+          {
+            "label": "Se ducha.",
+            "key": 2
+          },
+          {
+            "label": "Desayuna tostadas.",
+            "key": 3
+          },
+          {
+            "label": "Va al instituto.",
+            "key": 4
+          }
+        ]
+      },
+      {
+        "tag": "frecuencia",
+        "sub": "de + a − (frecuencia)",
+        "items": [
+          {
+            "label": "siempre",
+            "key": 1
+          },
+          {
+            "label": "normalmente",
+            "key": 2
+          },
+          {
+            "label": "a veces",
+            "key": 3
+          },
+          {
+            "label": "nunca",
+            "key": 4
+          }
+        ]
+      }
+    ]
+  }
+}
