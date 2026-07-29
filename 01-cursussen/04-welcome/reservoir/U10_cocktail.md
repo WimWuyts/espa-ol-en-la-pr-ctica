@@ -6,11 +6,11 @@
 > gecontroleerd (`role=reader / type=anyone`) → werkt voor leerlingen zonder login.
 > **VG-pool is leeg** → de grammatica-laag is opnieuw volledig **♻ gerecycled**; van GT blijft
 > ná deze unit nog **1** item vrij (GT-025).
-> ⚠️ **Thema-afwijking:** de themalijst in `C4_LEERDOELEN_EVALUATIE.md` plant voor U10
-> «La comida / en el bar»; **aflevering 10 gaat over de huistaken**. Conform CLAUDE.md
-> («de video's zijn de leidraad voor C4») is de unit op de vídeo gebouwd. De klankfocus
-> **g/gu** uit matrix A blijft ongewijzigd van toepassing. → beslissing auteur nodig
-> (hernummeren van de themalijst óf de lijst als losse themavijver behandelen).
+> ✅ **Thema = de video (beslist door de auteur, 2026-07-29).** De oude themalijst plande hier
+> «La comida / en el bar», maar aflevering 10 gaat over de huistaken. De auteur heeft beslist:
+> **de video's zijn de norm, de themalijst was verouderd.** `C4_LEERDOELEN_EVALUATIE.md` §3 is
+> bijgewerkt (U10 = *Las tareas de casa*; U11–U14 = «volgt de aflevering», met de niet-gebruikte
+> thema's in een themavijver). De klankfocus **g/gu** uit matrix A blijft ongewijzigd van toepassing.
 
 ## De smaak van deze unit
 De **asistenta is ziek**, dus de academie moet zélf gepoetst worden. Daaruit komt precies de taal

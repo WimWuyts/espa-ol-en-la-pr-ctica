@@ -24,12 +24,12 @@
 | **U8** | La hora y los días | **d** (zacht, intervocalisch) · getallen | klemtoon in getallen | c/qu |
 | **U9** | Planes y obligaciones | **diptongos ie/ue** (qu**ie**ro, p**ue**do) | tilde bij diptong | d, esdrújula |
 | **U10** | Las tareas de casa <sup>†</sup> | **g / gu** (a**g**ua, **gu**apo, **gui**tarra) | herhaling aguda/llana | diptongos, c/qu, jota |
-| **U11** | De compras / la ropa | **s** (altijd stemloos, nooit /z/) | klemtoon in prijzen/getallen | g/gu |
-| **U12** | El tiempo y estaciones | **entonación** (uitroep ¡qué frío!) | signos **¡! ¿?** + intonatiecurve | s |
-| **U13** | En el hotel / viajar | **enlace** (woorden aaneen: en_el_hotel) | vraagintonatie | entonación |
-| **U14** | Repaso · Mi mundo hispano | **álle klanken** door elkaar (transfer) | tilde-regels samengevat (aguda·llana·esdrújula) | **alles** |
+| **U11** | *volgt aflevering 11* | **s** (altijd stemloos, nooit /z/) | klemtoon in prijzen/getallen | g/gu |
+| **U12** | *volgt aflevering 12* | **entonación** (uitroep ¡qué frío!) | signos **¡! ¿?** + intonatiecurve | s |
+| **U13** | *volgt aflevering 13* | **enlace** (woorden aaneen: en_el_hotel) | vraagintonatie | entonación |
+| **U14** | *volgt aflevering 14* · + repaso | **álle klanken** door elkaar (transfer) | tilde-regels samengevat (aguda·llana·esdrújula) | **alles** |
 
-<sup>†</sup> **Thema-afwijking U10 (2026-07-29).** De themalijst in `C4_LEERDOELEN_EVALUATIE.md` plant hier «La comida / en el bar», maar **aflevering 10 van de sitcom gaat over de huistaken** («¡No tenemos asistenta!»). Conform CLAUDE.md (*de video's zijn de leidraad voor C4*) is U10 op de vídeo gebouwd; de klankfocus **g/gu** past onveranderd. Het eten/bar-thema schuift dus op — **beslissing auteur nodig**: de themalijst hernummeren, óf de lijst behandelen als een themavijver die losstaat van de video-volgorde.
+<sup>†</sup> **De video's zijn de norm (beslist 2026-07-29).** Aflevering 10 gaat over de huistaken («¡No tenemos asistenta!»), niet over eten/bar zoals de oude, provisoire themalijst plande. De auteur heeft beslist dat **de video's de volgorde bepalen**; `C4_LEERDOELEN_EVALUATIE.md` §3 is daarop bijgewerkt (U10 = *Las tareas de casa*; de niet-gebruikte thema's staan daar nu in een **themavijver** voor U11–U14). Deze klankmatrix is **thema-onafhankelijk**: de klankfocus per unit blijft staan, welk thema de video ook brengt.
 
 **Reservoir-koppeling (uitspraak):** put hiervoor telkens uit **SK-080** (uitspraakkaart) · **SK-086** (luister & herhaal) · **SK-087** (klankdiscriminatie & productie) · **SK-088** (shadowing) · **PPT-037** (shadowingmodule) · **PPT-038** (uitspraakcontrast/minimale paren) · **DS-009** (uitspraakpagina). **Variatie-regel:** wissel de *werkvorm* van de klankfocus per unit (dictee-light ↔ minimale paren ↔ shadowing ↔ teken-wat-je-hoort ↔ rijmpjes) — nooit 2× dezelfde jas.
 

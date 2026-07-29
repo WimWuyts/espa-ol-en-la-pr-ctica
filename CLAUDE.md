@@ -155,6 +155,17 @@ U1 (C4) is goedgekeurd en vastgezet als norm voor álle C4-units (U2–U14). **B
   exponentes-per-unit + semáforo + «esta unidad añade» nieuw/nivel+). Docentdossier + matrix C:
   `01-cursussen/04-welcome/reservoir/C4_funciones_matrix.md`. Retroactief op U1–U3. **Nog te
   bevestigen:** ook in print («Lo que ya sé decir»-spiekkaart) + PPT (funciones-dia), en doortrekken U4+.
+- [x] **DE VIDEO'S ZIJN DE NORM voor de C4-thema-volgorde (BESLIST 2026-07-29).** De thema-tabel in
+  `C4_LEERDOELEN_EVALUATIE.md` §3 was **verouderd**: aflevering 10 gaat over de **huistaken**
+  («¡No tenemos asistenta!»), niet over «la comida / en el bar». Regel voortaan: bij elk nieuw
+  transcript **volgt de tabel de video**, nooit omgekeerd. U11–U14 staan daar nu als «volgt de
+  aflevering»; de niet-gebruikte thema's (comida/bar · compras/ropa · tiempo · hotel/viajar) leven
+  verder in een **themavijver** onder die tabel en worden toegewezen zodra het transcript er is.
+  De **uitspraak-spreidingsmatrix A** is thema-onafhankelijk en blijft dus ongewijzigd staan.
+- [x] **Videobron mag Google Drive zijn** (U8–U10): géén YouTube-link nodig. Embed via
+  `https://drive.google.com/file/d/<id>/preview` in de hub én in de PPT (media-embed), met een
+  hyperlink-knop «▶ Abrir en Drive» (`/view`) als noodroute. Deelrechten telkens vooraf controleren
+  (`role=reader / type=anyone`).
 
 ## 11 · Git & werkafspraken
 

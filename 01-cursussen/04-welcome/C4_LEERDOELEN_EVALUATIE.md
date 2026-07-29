@@ -147,27 +147,45 @@ voor iedereen nieuw blijft.
 
 ---
 
-## 3 · Woordenschat- & thema-overzicht (14 thema's · provisoir)
+## 3 · Woordenschat- & thema-overzicht (14 thema's)
 
-> Af te stemmen op de video's. Elk thema = 2 lesuren. De **centrale taalhandelingen** komen uit
-> de transcripten; de tabel koppelt de dominante doelcodes en de eindtaak.
+> **De video's zijn de norm (beslist 2026-07-29).** De thema's volgen de volgorde van de
+> sitcomafleveringen; deze tabel wordt dus **bijgewerkt naar de video**, niet omgekeerd. Elk thema
+> = 2 lesuren. De **centrale taalhandelingen** komen uit de transcripten; de tabel koppelt de
+> dominante doelcodes en de eindtaak. ✅ = gebouwd en opgeleverd.
 
 | # | Thema (werktitel) | Centrale taalhandelingen | Dominante doelen | Eindtaak (voorbeeld) |
 |---|---|---|---|---|
 | 1 | **Presentaciones** ✅ | groeten, jezelf voorstellen, naam vragen | SP-1, GE-1, TS-1/3, MEC-5 | El carné de la clase |
-| 2 | **Saludos y cortesía** | begroeten (dag/nacht), beleefdheid, afscheid | GE-1/2, WS-2, MEC-3 | Mini-diálogos de cortesía |
-| 3 | **Nacionalidades y países** | herkomst zeggen/vragen, landen & talen | SP-1, TS-3, CU-1 | Mi mapa / ¿de dónde eres? |
-| 4 | **La familia** | familie voorstellen, bezit (mi/tu) | SP-2, WS-1, TS-1/2 | Mi árbol de familia |
-| 5 | **En clase / objetos** | klasobjecten, instructies, ¿qué es esto? | LU-3, WS-1, MEC-4 | Diccionario de la clase |
-| 6 | **La casa y los lugares** | woonruimte, waar-vragen (¿dónde?), hay | LE-1, WS-1, TS-3 | Plano de mi casa |
-| 7 | **Las profesiones** | beroepen, ser + beroep | SP-1, TS-3, WS-1 | ¿Quién soy? (adivina) |
-| 8 | **La hora y los días** | uur, dagen, dagindeling | WS-1, TS-5, LU-2 | Mi horario |
-| 9 | **Planes y obligaciones** | plannen (ir a), moeten (tener que) — vaste vormen | TS-3/4, SP-2 | Mi finde |
-| 10 | **La comida / en el bar** | bestellen, ¿qué quieres?, me gusta | GE-1, TS-3, WS-1 | La carta / pedir en el bar |
-| 11 | **De compras / la ropa** | prijzen, kleuren, kledij, ¿cuánto cuesta? | GE-1, TS-5, WS-1 | Abre tu tienda |
-| 12 | **El tiempo y estaciones** | weer, seizoenen, hace frío/calor | LU-2, WS-1, LE-1 | El parte del tiempo |
-| 13 | **En el hotel / viajar** | reserveren, vragen, richtingen (survival op reis) | GE-1/3, LE-1, SP-2 | Reservar en el hotel |
-| 14 | **Repaso · Mi mundo hispano** | integratie van alle chunks + cultuur | alle SP/GE + CU | Mini-presentación final |
+| 2 | **Saludos y cortesía** ✅ | begroeten (dag/nacht), beleefdheid, afscheid | GE-1/2, WS-2, MEC-3 | Un día de saludos |
+| 3 | **Nacionalidades y países** ✅ | herkomst zeggen/vragen, landen & talen | SP-1, TS-3, CU-1 | Mi mapa / ¿de dónde eres? |
+| 4 | **La familia** ✅ | familie voorstellen, bezit (mi/tu) | SP-2, WS-1, TS-1/2 | Mi árbol de familia |
+| 5 | **En clase / objetos** ✅ | klasobjecten, instructies, ¿qué es esto? | LU-3, WS-1, MEC-4 | Diccionario de la clase |
+| 6 | **La casa y los lugares** ✅ | woonruimte, waar-vragen (¿dónde?), hay | LE-1, WS-1, TS-3 | Plano de mi casa |
+| 7 | **Las profesiones** ✅ | beroepen, ser + beroep | SP-1, TS-3, WS-1 | ¿Quién soy? · adivina la profesión |
+| 8 | **La hora y los días** ✅ | uur, dagen, dagindeling | WS-1, TS-5, LU-2 | Mi horario |
+| 9 | **Planes y obligaciones** ✅ | plannen (ir a), moeten (tener que) — vaste vormen | TS-3/4, SP-2 | Mi finde |
+| 10 | **Las tareas de casa** ✅ | huistaken, hay que ↔ tengo que, saber ↔ poder, hulp aanbieden | TS-3, SP-2, GE-3, WS-1 | ¿Quién hace qué? |
+| 11 | *volgt aflevering 11* | — | — | — |
+| 12 | *volgt aflevering 12* | — | — | — |
+| 13 | *volgt aflevering 13* | — | — | — |
+| 14 | *volgt aflevering 14* (+ **Repaso · Mi mundo hispano** integreren) | integratie van alle chunks + cultuur | alle SP/GE + CU | Mini-presentación final |
+
+> **Themavijver voor U11–U14 (nog niet toegewezen).** Deze thema's stonden in de oude, provisoire
+> lijst en zijn *niet* verdwenen — ze wachten op de afleveringen 11–14. Bij elk nieuw transcript
+> wordt het passende thema hier weggehaald en in de tabel gezet; wat overblijft, wordt in unit 14
+> (repaso/integratie) meegenomen of aan een unit toegevoegd als extra *parada*.
+>
+> | Thema (vijver) | Centrale taalhandelingen | Dominante doelen | Eindtaak (voorbeeld) |
+> |---|---|---|---|
+> | **La comida / en el bar** | bestellen, ¿qué quieres?, me gusta | GE-1, TS-3, WS-1 | La carta / pedir en el bar |
+> | **De compras / la ropa** | prijzen, kleuren, kledij, ¿cuánto cuesta? | GE-1, TS-5, WS-1 | Abre tu tienda |
+> | **El tiempo y estaciones** | weer, seizoenen, hace frío/calor | LU-2, WS-1, LE-1 | El parte del tiempo |
+> | **En el hotel / viajar** | reserveren, vragen, richtingen (survival op reis) | GE-1/3, LE-1, SP-2 | Reservar en el hotel |
+>
+> De **uitspraak-spreidingsmatrix A** (`reservoir/C4_coverage.md`) is *thema-onafhankelijk*: de
+> klankfocus per unit (U11 = s · U12 = entonación · U13 = enlace · U14 = alles) blijft staan, welk
+> thema de video ook brengt.
 
 > **Doorlopende laag over álle thema's:** C4-MEC-1/2/3/4/5 (uitspraak & acentuación),
 > C4-STR-1/2 (strategieën), C4-CU-1/2 (cultuur & muziek). Deze worden **elke les** een beetje
