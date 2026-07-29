@@ -31,6 +31,8 @@ herkomst vragen, corrigeren, iets vragen, tellen…). Elke unit:
 | F12 | Decir qué hay y para qué sirve | zeggen wat er is / waarvoor iets dient | existencia y función | C4-WS-1 |
 | F13 | Ubicar cosas · decir dónde está | situeren (¿dónde está? · preposiciones) | localización en el espacio | C4-TS-3 |
 | F14 | Pedir y dar permiso | om toestemming vragen/geven (¿puedo…?) | pedir/dar permiso | C4-GE-2 |
+| F15 | Hablar del trabajo | over je werk/beroep praten | profesión y lugar de trabajo | C4-SP-1 |
+| F16 | Especular y adivinar | gissen & vermoedens uiten (puede ser…) | expresar hipótesis sencillas | C4-STR-1 |
 
 ## Matrix C — functie × unit (● intro · ▲ uptrade/nivel+ · · recycle)
 | ID | U1 | U2 | U3 | U4 | U5 | … | Exponentes die groeien |
@@ -49,11 +51,16 @@ herkomst vragen, corrigeren, iets vragen, tellen…). Elke unit:
 | F12 Qué hay / para qué sirve | | | | | ● | · | ¿hay…? · (no) hay… → hay ↔ está (U6) · que sirve para + infinitivo |
 | F13 Ubicar · dónde está | | | | | | ● | ¿dónde está? · encima/debajo/dentro/al lado de · del (de+el) |
 | F14 Pedir y dar permiso | | | | | | ● | ¿puedo…? · ¿puedes…? · sí, puedes… · aquí no · puedes ir fuera |
+| F15 Hablar del trabajo | | | | | | | ● (U7) — ¿a qué te dedicas? · soy profesor/a · trabajo en… (ser sin un/una) |
+| F16 Especular y adivinar | | | | | | | ● (U7) — puede ser… · ¿trabaja en…? · creo que es… · ¡ya lo sé! |
+
+*(NB: F05 kreeg in U7 een ▲-uptrade: estamos todos bien · ¿estáis bien? · ser↔estar-contrast.)*
 
 **Groei tot nu toe:** U1 = 4 functies · U2 = 6 (+cortesía, +cómo estoy) · U3 = 8 (+pedir algo, +contar) ·
 U4 = 10 (+hablar de la familia, +describir a alguien; F02 uptrade → presentar a alguien) ·
 U5 = 12 (+identificar objetos, +decir qué hay/para qué sirve) ·
-U6 = 14 (+ubicar cosas/dónde está, +pedir y dar permiso).
+U6 = 14 (+ubicar cosas/dónde está, +pedir y dar permiso) ·
+U7 = 16 (+hablar del trabajo, +especular y adivinar; F05 uptrade → estamos/estáis).
 
 ## Noticing per unit («¿Qué hacen con el idioma?» — cita → función)
 - **U1:** «¡Hola! ¿Qué tal?»→F01 · «Me llamo…»→F02 · «¿Cómo te llamas?»→F03 · «¿Cómo? Otra vez.»→F08
@@ -62,6 +69,7 @@ U6 = 14 (+ubicar cosas/dónde está, +pedir y dar permiso).
 - **U4:** «Esta es mi madre.»→F02 · «Es muy elegante, pero un poco gorda.»→F10 · «Paula es la hermana de María.»→F09 · «El tío Fermín, el guapo de la familia.»→F09 · «Es muy alto y muy fuerte.»→F10
 - **U5:** «¿Qué es esto?»→F11 · «Esto es un sofá.»→F11 · «Sirve para descansar.»→F12 · «¿Hay un ordenador?»→F12 · «Esto son mis llaves.»→F11
 - **U6:** «Hay cosas encima de las sillas.»→F13 · «Debajo de la cama.»→F13 · «Dentro del frigorífico…»→F13 · «¿Puedo fumar?»→F14 · «Aquí no, pero puedes ir fuera.»→F14
+- **U7:** «Puede ser escritora.»→F16 · «¿Trabaja en una tienda?»→F16 · «Es profesora.»→F15 · «Yo trabajo aquí, tú trabajas aquí.»→F15 · «Estamos todos bien.»→F05
 
 ## Eindtaak-tags (recycling zichtbaar)
 - **U1 «Mi presentación»** = F01 + F02 + F03
@@ -70,6 +78,7 @@ U6 = 14 (+ubicar cosas/dónde está, +pedir y dar permiso).
 - **U4 «Mi árbol de familia»** = F09 + F10 + F02
 - **U5 «Diccionario de la clase»** = F11 + F12 + F10
 - **U6 «Plano de mi casa»** = F13 + F12 + F14
+- **U7 «¿Quién soy? · adivina»** = F15 + F16 + F03
 
 ## Zeven ontwerpregels
 1. **Video-afgeleid:** elke functie begint bij een citaat uit de scène (noticing), nooit abstract.

@@ -91,9 +91,21 @@ Marta: [relieved] ¡Ah! Y las llaves, ¿dónde están?
 Pablo: Debajo de la mesa, al lado de tu libro.
 ```
 
+## U7 · «una entrevista · ¿en qué trabajas?»  (1 dialoog — Sofía interviewt Óscar)
+**Stemmen:** Sofía = jonge vrouw · Óscar = jonge man.
+*(Komt exact overeen met `AUDIO[7]` in `comprension_data.py` → profesiones · trabajo en · estoy contento.)*
+```
+Sofía: [friendly] Hola, Óscar. ¿A qué te dedicas?
+Óscar: [relaxed] Soy dependiente. Trabajo en una tienda de música.
+Sofía: [impressed] ¡Qué bien! ¿Y estás contento?
+Óscar: [cheerful] Sí, estoy muy contento. ¿Y tú? ¿En qué trabajas?
+Sofía: Soy estudiante, pero los sábados trabajo en una oficina.
+Óscar: [laughing] ¡Trabajamos mucho los dos!
+```
+
 ---
 
 ## Nadat je de mp3's hebt
-Zet ze als `C4_U1_audio.mp3` … `C4_U6_audio.mp3` in `03-build/web/componentes/audio/` (of stuur ze mij).
+Zet ze als `C4_U1_audio.mp3` … `C4_U7_audio.mp3` in `03-build/web/componentes/audio/` (of stuur ze mij).
 Dan draai ik `gen_c4_comprension.py` + de hubs opnieuw → de audio zit meteen in de «🎧 Escucha»-tab,
 met een traag-knop en het transcript. Voor volgende units lever ik telkens hetzelfde: script + tags + stemmen.
