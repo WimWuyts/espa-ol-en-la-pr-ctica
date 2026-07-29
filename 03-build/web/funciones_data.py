@@ -25,7 +25,8 @@ FUNCIONES = [
   "exp":{2:["Por favor","Gracias · Muchas gracias","De nada","Perdona"]}},
  {"id":"F05","es":"Preguntar y decir cómo estoy","nl":"vragen/zeggen hoe het gaat",
   "cefr":"A1 · preguntar/expresar el estado","code":"C4-GE-1",
-  "exp":{2:["¿Qué tal? · ¿Cómo estás?","Estoy bien / cansado-a / ocupado-a","Regular"]}},
+  "exp":{2:["¿Qué tal? · ¿Cómo estás?","Estoy bien / cansado-a / ocupado-a","Regular"],
+         7:["Estamos todos bien / tranquilos","¿Estáis bien?","estar = toestand · ser = wie/wat je bent"]}},
  {"id":"F06","es":"Pedir algo","nl":"iets vragen/bestellen",
   "cefr":"A1 · peticiones básicas","code":"C4-GE-3",
   "exp":{3:["…, por favor","¿Me da…?"]}},
@@ -55,6 +56,12 @@ FUNCIONES = [
  {"id":"F14","es":"Pedir y dar permiso","nl":"om toestemming vragen / geven",
   "cefr":"A1 · pedir/dar permiso","code":"C4-GE-2",
   "exp":{6:["¿Puedo…? · ¿Puedes…?","Sí, puedes… · Aquí no","puedes ir fuera","¿Puedo fumar? · ¿Puedes venir?"]}},
+ {"id":"F15","es":"Hablar del trabajo","nl":"over je werk/beroep praten",
+  "cefr":"A1 · profesión y lugar de trabajo","code":"C4-SP-1",
+  "exp":{7:["¿A qué te dedicas? · ¿En qué trabajas?","Soy profesor/a · escritor/a · actriz","Trabajo en una tienda · una oficina","ser + profesión (zonder un/una)"]}},
+ {"id":"F16","es":"Especular y adivinar","nl":"gissen & vermoedens uiten",
+  "cefr":"A1 · expresar hipótesis sencillas","code":"C4-STR-1",
+  "exp":{7:["Puede ser… (escritora)","¿Trabaja en una tienda?","Creo que es…","¡Ya lo sé! · ¿O algo parecido?"]}},
 ]
 FMAP={f["id"]:f for f in FUNCIONES}
 
@@ -70,10 +77,12 @@ NOTICING={
     ("«¿Hay un ordenador?»","F12"),("«Esto son mis llaves.»","F11")],
  6:[("«Hay cosas encima de las sillas.»","F13"),("«Debajo de la cama.»","F13"),("«Dentro del frigorífico…»","F13"),
     ("«¿Puedo fumar?»","F14"),("«Aquí no, pero puedes ir fuera.»","F14")],
+ 7:[("«Puede ser escritora.»","F16"),("«¿Trabaja en una tienda?»","F16"),("«Es profesora.»","F15"),
+    ("«Yo trabajo aquí, tú trabajas aquí.»","F15"),("«Estamos todos bien.»","F05")],
 }
 # welke functies de eindtaak van elke unit combineert (afzender·ontvanger·doel — recycling zichtbaar).
-TAREA_FUN={1:["F01","F02","F03"],2:["F01","F05","F04"],3:["F02","F03","F08"],4:["F09","F10","F02"],5:["F11","F12","F10"],6:["F13","F12","F14"]}
-TAREA_TITEL={1:"Mi presentación",2:"Un día de saludos",3:"Mi mapa · ¿de dónde eres?",4:"Mi árbol de familia",5:"Diccionario de la clase",6:"Plano de mi casa"}
+TAREA_FUN={1:["F01","F02","F03"],2:["F01","F05","F04"],3:["F02","F03","F08"],4:["F09","F10","F02"],5:["F11","F12","F10"],6:["F13","F12","F14"],7:["F15","F16","F03"]}
+TAREA_TITEL={1:"Mi presentación",2:"Un día de saludos",3:"Mi mapa · ¿de dónde eres?",4:"Mi árbol de familia",5:"Diccionario de la clase",6:"Plano de mi casa",7:"¿Quién soy? · adivina"}
 
 def funciones_hasta(unit):
     """Alle functies met intro-unit <= unit (het cumulatieve repertoire tot hier)."""

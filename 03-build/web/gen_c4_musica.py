@@ -20,7 +20,7 @@ ART=[
  ("Bad Bunny","🇵🇷","Puerto Rico","urbano · reguetón/trap","«Baile inolvidable»","Es el artista más escuchado del mundo en Spotify (¡tres veces!).",
   "Bad Bunny es de Puerto Rico. Su música urbana (reguetón y trap) suena en todo el mundo.","Bad Bunny komt uit Puerto Rico; zijn urban muziek (reggaetón & trap) klinkt wereldwijd.",["ropa","restaurante"]),
  ("Rosalía","🇪🇸","España","flamenco + pop moderno","«La Perla» (LUX, 2025)","«La Perla» fue número 1 en España.",
-  "Rosalía es de España. Mezcla el flamenco tradicional con la música moderna.","Rosalía uit Spanje mengt traditionele flamenco met moderne muziek.",["familia","saludos"]),
+  "Rosalía es de España. Mezcla el flamenco tradicional con la música moderna.","Rosalía uit Spanje mengt traditionele flamenco met moderne muziek.",["familia","saludos","profesiones"]),
  ("Karol G","🇨🇴","Colombia","reguetón","«Si antes te hubiera conocido»","Es una de las artistas más famosas de Latinoamérica.",
   "Karol G es de Colombia y canta reguetón.","Karol G komt uit Colombia en zingt reggaetón.",["ropa","nacionalidades"]),
  ("Aitana","🇪🇸","España","pop","«6 de febrero»","Es muy popular entre los jóvenes.",
@@ -134,6 +134,20 @@ CULTURA={
       "In warme streken rust men midden op de dag: de <b>siesta</b>. Rond 14–17u sluiten sommige winkels; daarna gaat alles weer open."),
    ],
    "dato":"¿Sabías que…? «Estar en casa» (thuis zijn) en «ir a casa» (naar huis gaan) gebruik je zónder lidwoord — net als in het Nederlands zeg je «naar huis», niet «naar het huis».",
+ },
+ "profesiones":{
+   "intro":"Werk en beroep klinken anders in elke cultuur — van de siësta-mythe tot wereldberoemde beroepen. Zo werkt de Spaanstalige wereld.",
+   "cards":[
+     ("💼","Soy profesor — sin «un»","En español dices <b>soy profesor</b>, <b>es actriz</b> — ¡sin «un/una»!",
+      "In het Spaans zeg je <b>soy profesor</b>, <b>es actriz</b> — zónder «un/una» (anders dan in het Engels «I'm A teacher»)."),
+     ("🎨","Profesiones famosas","Frida Kahlo era <b>pintora</b>, García Márquez <b>escritor</b>, Messi es <b>futbolista</b> y Rosalía es <b>cantante</b>.",
+      "Beroemde Spaanstaligen per beroep: Frida Kahlo <b>pintora</b> (schilderes), García Márquez <b>escritor</b>, Messi <b>futbolista</b>, Rosalía <b>cantante</b>."),
+     ("⏰","El horario partido","En España muchas tiendas cierran de 14 a 17 h (el <b>horario partido</b>) y se trabaja hasta las 20 h.",
+      "In Spanje sluiten veel winkels tussen 14 en 17 u (de <b>gedeelde werkdag</b>) en werkt men daarna tot ± 20 u — dineren pas om 21–22 u!"),
+     ("🗣️","¿A qué te dedicas?","La pregunta clásica al conocer a alguien: <b>¿A qué te dedicas?</b> o <b>¿En qué trabajas?</b>",
+      "Dé klassieke kennismakingsvraag: <b>¿A qué te dedicas?</b> («waaraan wijd je je?») of <b>¿En qué trabajas?</b> — beleefd én nieuwsgierig."),
+   ],
+   "dato":"¿Sabías que…? Veel beroepsnamen hebben een eigen ♀-vorm: profesor/profesora · escritor/escritora · actor/actriz · dependiente/dependienta. Sommige blijven gelijk: el/la estudiante, el/la periodista.",
  },
 }
 def cultura_block(tema):

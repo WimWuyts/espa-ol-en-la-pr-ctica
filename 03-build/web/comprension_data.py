@@ -142,6 +142,28 @@ LECTURA = {
    "transfer": "¿Y tú? ¿Cómo es tu casa? ¿Qué hay en cada habitación?",
    "glosario": [["la cocina", "de keuken"], ["el frigorífico", "de koelkast"], ["encima de", "op/boven"], ["debajo de", "onder"], ["al lado de", "naast"]],
  },
+ 7: {
+   "tipo": "un perfil · ¿a qué se dedican?",
+   "contexto_nl": "Een klasblog stelt drie mensen en hun werk voor.",
+   "texto": [
+     ["", "¡Hola! Somos tres amigos y trabajamos en la misma calle."],
+     ["", "Yo soy profesora. Trabajo en una academia de idiomas y estoy muy contenta."],
+     ["", "Marco es dependiente. Trabaja en una tienda de ropa, pero hoy está cansado."],
+     ["", "Y Elena es escritora. Trabaja en casa y también trabaja en una oficina los lunes."],
+   ],
+   "global": [
+     {"q": "¿Cuántas personas se presentan?", "opts": ["Dos", "Tres", "Cuatro"], "a": 1},
+     {"q": "¿Dónde trabaja la profesora?", "opts": ["En una tienda", "En una academia", "En una oficina"], "a": 1},
+   ],
+   "detalle": [
+     {"q": "Marco trabaja en una tienda de ropa.", "vf": True},
+     {"q": "Marco está muy contento hoy.", "vf": False},
+     {"q": "Elena es actriz.", "vf": False},
+     {"q": "Elena también trabaja en una oficina.", "vf": True},
+   ],
+   "transfer": "¿Y tú? ¿A qué te dedicas? (estudiante cuenta ook!) ¿Y tus padres?",
+   "glosario": [["¿a qué se dedican?", "wat doen ze (voor werk)?"], ["la academia", "de (taal)school"], ["el/la dependiente/a", "de winkelbediende"], ["está cansado", "hij is moe"]],
+ },
 }
 
 AUDIO = {
@@ -252,6 +274,25 @@ AUDIO = {
    ],
    "glosario": [["¿dónde está?", "waar is?"], ["encima del sofá", "boven op de bank"], ["debajo de la mesa", "onder de tafel"], ["las llaves", "de sleutels"]],
    "rallentado": ["dónde está", "encima del sofá", "debajo de la mesa"],
+ },
+ 7: {
+   "tipo": "una entrevista · ¿en qué trabajas?",
+   "guion": [
+     ["Sofía", "Hola, Óscar. ¿A qué te dedicas?"],
+     ["Óscar", "Soy dependiente. Trabajo en una tienda de música."],
+     ["Sofía", "¡Qué bien! ¿Y estás contento?"],
+     ["Óscar", "Sí, estoy muy contento. ¿Y tú? ¿En qué trabajas?"],
+     ["Sofía", "Soy estudiante, pero los sábados trabajo en una oficina."],
+     ["Óscar", "¡Trabajamos mucho los dos!"],
+   ],
+   "tarea_nl": "Luister: welk beroep heeft elk, en waar werken ze?",
+   "preguntas": [
+     {"q": "¿A qué se dedica Óscar?", "opts": ["Es profesor", "Es dependiente", "Es escritor"], "a": 1},
+     {"q": "¿Dónde trabaja Óscar?", "opts": ["En una tienda de música", "En una academia", "En un teatro"], "a": 0},
+     {"q": "¿Qué hace Sofía los sábados?", "opts": ["Estudia en casa", "Trabaja en una oficina", "Trabaja en una tienda"], "a": 1},
+   ],
+   "glosario": [["¿a qué te dedicas?", "wat doe je (voor werk)?"], ["el/la dependiente/a", "de winkelbediende"], ["estoy contento/a", "ik ben blij"], ["los sábados", "op zaterdag"]],
+   "rallentado": ["a qué te dedicas", "trabajo en una tienda", "estoy muy contento"],
  },
 }
 

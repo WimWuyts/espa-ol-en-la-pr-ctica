@@ -28,6 +28,7 @@ UNIT_TEMA = {
  4: ("familia", "👪 En familia"),
  5: ("compras", "🛍️ Un producto típico"),   # objetos → een typisch product per land
  6: ("lugar",   "🏠 Casas y lugares"),        # la casa y los lugares → een typische plek/woning per land
+ 7: ("rutina",  "⏰ La vida y el trabajo"),    # las profesiones → werk-/dagritme per land
 }
 # de route: C4 = «vertrekhal». De sitcom (Julio & María) speelt in Madrid → España is
 # het thuisbasis-vertrekpunt vanaf U1. {code: (start_unit, "rango", "NL/ES-beschrijving")}
@@ -45,6 +46,8 @@ INTRO = {
      "Waar kom je vandaan? 21 landen, één taal. Klik op een land: vlag, hoofdstad, nationaliteit en taal."),
  6: ("Cada país tiene sus casas y sus lugares. Haz clic en un país y descubre cómo se vive.",
      "Elk land heeft zijn eigen huizen en plekken. Klik op een land en ontdek hoe men er woont."),
+ 7: ("¿Cómo se vive y se trabaja? Haz clic en un país y descubre su ritmo de vida.",
+     "Hoe leeft en werkt men er? Klik op een land en ontdek zijn levensritme."),
 }
 DEFAULT_INTRO = ("Haz clic en un país del mundo hispano para leer su ficha.",
                  "Klik op een land van de Spaanstalige wereld voor zijn fiche.")
