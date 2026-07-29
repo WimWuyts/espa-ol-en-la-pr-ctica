@@ -38,6 +38,7 @@ LECTURA = {
  },
  2: None,
  3: None,
+ 4: None,
 }
 
 AUDIO = {
@@ -60,6 +61,7 @@ AUDIO = {
  },
  2: None,
  3: None,
+ 4: None,
 }
 
 def has(unit):

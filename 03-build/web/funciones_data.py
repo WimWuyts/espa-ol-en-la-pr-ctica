@@ -11,10 +11,11 @@ FUNCIONES = [
   "cefr":"A1 · establecer contacto social","code":"C4-GE-1",
   "exp":{1:["Hola","Adiós","Hasta luego"],
          2:["Buenos días / tardes / noches","¡Buenas!","Hasta mañana","¡Nos vemos!"]}},
- {"id":"F02","es":"Presentarse (decir quién soy)","nl":"jezelf voorstellen",
+ {"id":"F02","es":"Presentarse y presentar a alguien","nl":"jezelf/iemand voorstellen",
   "cefr":"A1 · presentarse","code":"C4-SP-1",
   "exp":{1:["Me llamo…","(Yo) soy…","Encantado/a"],
-         3:["Soy de… (país)","Soy español/a · mexicano/a · belga"]}},
+         3:["Soy de… (país)","Soy español/a · mexicano/a · belga"],
+         4:["Esta es mi madre","Este es mi padre","Es mi hermano/a"]}},
  {"id":"F03","es":"Pedir y dar información personal","nl":"persoonlijke info vragen & geven",
   "cefr":"A1 · dar y pedir datos personales","code":"C4-GE-1",
   "exp":{1:["¿Cómo te llamas?","¿Y tú?"],
@@ -36,6 +37,12 @@ FUNCIONES = [
   "exp":{1:["¿Cómo?","Otra vez, por favor"],
          2:["¿Puedes repetir?"],
          3:["Más despacio, por favor","No entiendo"]}},
+ {"id":"F09","es":"Hablar de la familia","nl":"over je familie praten",
+  "cefr":"A1 · la familia y la posesión","code":"C4-WS-1",
+  "exp":{4:["mi madre · mi padre","mi hermano/a · mi abuelo/a","el tío / la tía","la hermana de María (de + nombre)"]}},
+ {"id":"F10","es":"Describir a alguien","nl":"iemand beschrijven (fysiek & karakter)",
+  "cefr":"A1 · descripción de personas","code":"C4-SP-2",
+  "exp":{4:["es alto/a · bajo/a · guapo/a","es simpático/a · divertido/a · inteligente","es muy… · un poco…"]}},
 ]
 FMAP={f["id"]:f for f in FUNCIONES}
 
@@ -45,10 +52,12 @@ NOTICING={
  2:[("«Buenos días. / Buenas tardes.»","F01"),("«¿Cómo estás?»","F05"),("«Estoy ocupada / cansada.»","F05"),("«Adiós. Hasta luego.»","F01")],
  3:[("«Buenas noches.»","F01"),("«¿De dónde eres? ¿De qué país?»","F03"),("«Soy de Argelia. Eres argelina.»","F02"),
     ("«¿Habla usted francés?»","F03"),("«Dinero, por favor.»","F06"),("«Uno, dos, tres… veinte.»","F07")],
+ 4:[("«Esta es mi madre.»","F02"),("«Es muy elegante, pero un poco gorda.»","F10"),("«Paula es la hermana de María.»","F09"),
+    ("«El tío Fermín, el guapo de la familia.»","F09"),("«Es muy alto y muy fuerte.»","F10")],
 }
 # welke functies de eindtaak van elke unit combineert (afzender·ontvanger·doel — recycling zichtbaar).
-TAREA_FUN={1:["F01","F02","F03"],2:["F01","F05","F04"],3:["F02","F03","F08"]}
-TAREA_TITEL={1:"Mi presentación","2":"Un día de saludos",2:"Un día de saludos",3:"Mi mapa · ¿de dónde eres?"}
+TAREA_FUN={1:["F01","F02","F03"],2:["F01","F05","F04"],3:["F02","F03","F08"],4:["F09","F10","F02"]}
+TAREA_TITEL={1:"Mi presentación",2:"Un día de saludos",3:"Mi mapa · ¿de dónde eres?",4:"Mi árbol de familia"}
 
 def funciones_hasta(unit):
     """Alle functies met intro-unit <= unit (het cumulatieve repertoire tot hier)."""

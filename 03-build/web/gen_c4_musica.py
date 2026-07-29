@@ -79,6 +79,20 @@ CULTURA={
    ],
    "dato":"¿Sabías que…? El gentilicio se escribe con minúscula: soy belga, hablo neerlandés. Y «americano» no significa solo «de EE. UU.»: ¡toda América (del Norte, Central y del Sur) es América!",
  },
+ "familia":{
+   "intro":"De familie staat centraal in de Spaanstalige cultuur — vaak groot, warm en dichtbij. Zo praat men over «la familia».",
+   "cards":[
+     ("👨‍👩‍👧‍👦","La familia unida","In veel Spaanstalige landen wonen <b>drie generaties</b> dicht bij elkaar; <b>los abuelos</b> spelen een grote rol.",
+      "In veel Spaanstalige landen leven <b>drie generaties</b> dicht bij elkaar; <b>grootouders</b> (los abuelos) zijn heel belangrijk."),
+     ("🍚","La sobremesa","Na het eten blijft de familie lang aan tafel praten: <b>la sobremesa</b>.",
+      "Na het eten blijft de familie lang napraten aan tafel — dat heet <b>la sobremesa</b>, een echte familietraditie."),
+     ("💃","Frida &amp; su familia","La pintora <b>Frida Kahlo</b> pintó «Mi familia» (Mis abuelos, mis padres y yo).",
+      "Schilderes <b>Frida Kahlo</b> maakte een beroemd schilderij van haar stamboom: «Mis abuelos, mis padres y yo»."),
+     ("🇧🇪","¿Y tu familia?","Grande o pequeña, cada familia es especial. ¿Cómo es la tuya?",
+      "Groot of klein, elke familie is bijzonder. Hoe ziet <b>jouw</b> familie eruit? (Straks maak je je eigen <i>árbol de familia</i>.)"),
+   ],
+   "dato":"¿Sabías que…? Casi todos tienen dos apellidos (del padre y de la madre) — así que el apellido de la madre nunca se pierde en la familia.",
+ },
  "saludos":{
    "intro":"Un saludo zegt veel over een cultuur: hoe dichtbij, hoe warm, hoeveel contact. Kijk hoe men groet in de Spaanstalige wereld.",
    "cards":[

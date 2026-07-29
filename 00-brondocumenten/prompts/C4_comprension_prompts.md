@@ -160,6 +160,56 @@ PREGUNTAS = precies 4, van globaal (¿cuántas personas?) → detail (¿de dónd
 
 ---
 
+## UNIDAD 4 · La familia
+
+### 📖 Lezen — una descripción de una foto de familia
+```
+Je bent leraar Spaans en maakt leesmateriaal voor Vlaamse tieners (14–16) op niveau A1/pre-A1.
+Thema: La familia. Regels: enkel presente en vaste formules; GEEN verleden/toekomst; korte zinnen.
+Gebruik UITSLUITEND: mi madre / mi padre · mi hermano/a · mi abuelo/a · el tío / la tía ·
+Esta es… / Este es… · Se llama… · es alto/a · bajo/a · guapo/a · delgado/a · simpático/a ·
+divertido/a · amable · inteligente · muy… · un poco… · vive en… (+ cognaten). Nationaliteit/adjectief klein.
+
+Schrijf een korte tekst (5–6 zinnen) waarin een tiener een foto van zijn/haar familie beschrijft:
+wie het zijn (relación + naam) en hoe ze zijn (1–2 adjectieven per persoon).
+
+Antwoord UITSLUITEND met geldige JSON, exact deze sleutels en niets erbuiten. Vragen in het SPAANS.
+{
+  "TEXTO": [["\"\"","zin ES"]],
+  "CONTEXTO_NL": "één zin Nederlandse situering",
+  "GLOBAL": [{"q":"vraag ES","opts":["a","b","c"],"a":0}],
+  "DETALLE": [{"q":"STELLING ES (bewering, geen vraag)","vf":true}],
+  "TRANSFER": "een open ¿y tú?-vraag in het Spaans (over je eigen familie)",
+  "GLOSARIO": [["es","nl"]]
+}
+GLOBAL = precies 2 MC ("a"=index). DETALLE = precies 4 waar/niet-waar-STELLINGEN (vf), met minstens
+één over een familielid (relación) en één over een adjectief. GLOSARIO = max 8 woorden.
+```
+
+### 🎧 Luisteren — alguien describe a su familia
+```
+Je bent leraar Spaans en maakt luistermateriaal voor Vlaamse tieners (14–16) op niveau A1/pre-A1.
+Thema: La familia. Regels: enkel presente/vaste vormen; korte zinnen. Gebruik UITSLUITEND:
+mi madre / mi padre · mi hermano/a · mi abuela · Se llama… · es alto/a · guapo/a · simpático/a ·
+divertido/a · inteligente · amable · muy… · un poco… · vive en… (+ cognaten).
+
+Schrijf een KORT monoloog-script: een tiener beschrijft 3 familieleden (elk 2 zinnen: wie + hoe).
+Langzaam, heel eenvoudig; korte pauzes met «…».
+
+Antwoord UITSLUITEND met geldige JSON, exact deze sleutels. Vragen in het SPAANS.
+{
+  "TIPO": "alguien describe a su familia",
+  "GUION": [["Spreker","zin ES"]],
+  "TAREA_NL": "Vul de fiche in: wie + hoe is elke persoon?",
+  "PREGUNTAS": [{"q":"vraag ES","opts":["a","b","c"],"a":0}],
+  "GLOSARIO": [["es","nl"]],
+  "RALLENTADO": ["woord1","woord2","woord3"]
+}
+PREGUNTAS = precies 4, van globaal (¿de cuántas personas habla?) → detail (¿cómo es el/la…?). "a" = index.
+```
+
+---
+
 ## Uitbreiden naar U4+
 Kopieer een unit-blok, vervang thema + woordenschat (uit de Kit van die unit) + de tekstsoort (kies telkens
 een **andere** soort dan de vorige units → variatie). Plak de JSON in `comprension_data.py` onder

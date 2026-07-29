@@ -44,10 +44,13 @@ def print_section(unit):
                  '<p style="font-size:9pt;margin:1mm 0">Vertaal uit het hoofd (ophalen = het beste leren):</p>'
                  f'<div style="font-size:9.6pt;line-height:2.5">a) hallo / tot ziens → {_wl("lg")}<br>'
                  f'b) hoe heet je? → {_wl("lg")}<br>c) ik heet… / ik ben… → {_wl("lg")}</div></div>')
-    reto_h = max(14, int(42 - have * 3.2))  # minder functies (U1) → grotere schrijfruimte, zodat elke unit ~1 volle pagina vult
-    reto = (f'<div class="truc" style="margin-top:3mm"><b>Mini-reto ✍️</b> Schrijf een korte mini-conversatie '
-            f'waarin je <b>minstens 3 functies</b> hierboven gebruikt. Onderstreep telkens welke functie.'
-            f'<div class="wbox" style="min-height:{reto_h}mm"></div></div>')
+    # de mini-reto vult lichte units; bij veel functies (≥9) is het banco al vol → geen reto (anders overloop)
+    reto = ""
+    if have <= 8:
+        reto_h = max(14, int(42 - have * 3.2))
+        reto = (f'<div class="truc" style="margin-top:3mm"><b>Mini-reto ✍️</b> Schrijf een korte mini-conversatie '
+                f'waarin je <b>minstens 3 functies</b> hierboven gebruikt. Onderstreep telkens welke functie.'
+                f'<div class="wbox" style="min-height:{reto_h}mm"></div></div>')
     return (f'<div class="page sec" style="break-before:page">'
             f'<div class="se">Funciones comunicativas · lo que ya sé decir</div>'
             f'<h2>Wat je nu al kunt DOEN met het Spaans</h2>'
