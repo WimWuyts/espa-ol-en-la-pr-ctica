@@ -153,6 +153,31 @@ de TTS-fallback.
 
 ---
 
+## 4ter · QR naar externe oefenpagina's — GEBOUWD, links onbevestigd
+
+`03-build/web/gen_qr_extra.py` maakt per unit één blok **«Práctica extra en línea»** met
+**echte** QR-codes (segno, inline SVG — geen externe beelddienst). Alle 17 blokken staan al
+gegenereerd in `03-build/web/qr/`; samen 24 QR's, in de cursuskleur.
+
+    python3 03-build/web/gen_qr_extra.py --alle     # alle blokken
+    python3 03-build/web/gen_qr_extra.py C5 0       # één unit
+    python3 03-build/web/gen_qr_extra.py --check    # leven de links nog?
+
+Het blok is één zelfstandig stuk HTML dat zowel in de **printlaag** als in de hub-tab
+**«Extra · bronnen»** kan worden ingevoegd. Het is expliciet gelabeld als **online**, zodat
+het onderscheid met de offline hub duidelijk blijft.
+
+⚠️ **De links zijn NIET geverifieerd.** `--check` geeft voor alle 19 unieke URL's
+`403 Forbidden` van de egress-proxy: die host is in deze omgeving geblokkeerd, dus ik kan
+niet nagaan of de pagina's bestaan of nog leven. De QR's coderen exact de URL's zoals ze in
+de blueprints staan — meer garantie is er niet. **Laat de auteur er enkele scannen vóór
+levering.** Verdwijnt er later een pagina, dan pas je alleen `LINKS` in dit ene script aan.
+
+⚠️ Dit wijkt bewust af van beide blueprints, die het tonen van de bronsite aan leerlingen
+verbieden (C5 §0, C6+ §6.1). De auteur heeft die keuze herzien.
+
+---
+
 ## 5 · Hoe je de volgende chat begint
 
 1. Nieuwe chat in dezelfde groep, op branch `claude/spanish-course-development-jx25ay`.
