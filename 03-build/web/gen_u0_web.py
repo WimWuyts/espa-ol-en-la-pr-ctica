@@ -646,8 +646,9 @@ function gamePresentate(){const el=document.getElementById('g_presentate');
    feedback(el.querySelector('#prFb'),true,'<b style="font-size:16px">'+el.cur+'</b><br><span class="gloss">Zeg het nu hardop. Ronde 2: dek de vakken af en zeg het uit het hoofd.</span>');};
  const sp=el.querySelector('#prSpk');if(sp)sp.onclick=()=>{if(el.cur)speak(el.cur);};}
 
-// ---------- MOTOR-ARCADE: 17 spellen, ingebed (openen in modal, werkt offline) ----------
-document.getElementById('motorlink').innerHTML='<h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 4px">Arcade · la máquina de juegos 🕹️</h3><p class="gloss" style="margin:0 0 10px">17 extra spellen met score & directe feedback — ingebed, dus ze werken ook als je dit bestand downloadt. Klik om te spelen.</p>'+
+// ---------- MOTOR-ARCADE: ingebed (openen in modal, werkt offline) ----------
+// Het aantal wordt geteld uit MOTOR zelf; de hardgecodeerde 17 klopte al niet meer.
+document.getElementById('motorlink').innerHTML='<h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 4px">Arcade · la máquina de juegos 🕹️</h3><p class="gloss" style="margin:0 0 10px">'+MOTOR.reduce((n,g)=>n+g[1].length,0)+' extra spellen met score & directe feedback — ingebed, dus ze werken ook als je dit bestand downloadt. Klik om te spelen.</p>'+
  MOTOR.map(([grp,gs])=>'<div style="margin:10px 0 4px;font-weight:700;color:var(--gd);font-size:13px">'+grp+'</div><div class="fcgrid">'+
    gs.map(([f,t,tpl])=>'<div class="chip" style="display:block;border-radius:12px" onclick="openGame(\''+f+'\',\''+t.replace(/'/g,"")+'\')"><div style="font-weight:700;color:var(--ink);font-size:14px">'+t+'</div><div class="pill" style="margin-top:4px;font-size:10px">'+tpl+'</div></div>').join('')+'</div>').join('');
 function openGame(slug,title){const g=GAMES[slug];if(!g){alert('Spel niet gevonden.');return;}

@@ -8,6 +8,7 @@ import json, base64, os, sys
 import hub_drills, hub_bloques
 import hub_type_sets
 import hub_type_gram
+import extra_bronnen
 import nat_data, escucha_data, lectura_data
 ROOT = "/home/user/espa-ol-en-la-pr-ctica"
 GEN = f"{ROOT}/02-huisstijl/beeld/generators"
@@ -56,7 +57,7 @@ GAMEDIR = f"{ROOT}/spaans-motor/games"
 slugs = [g[0] for grp in MOTOR for g in grp[1]]
 GAMES = {s: b64(f"{GAMEDIR}/es-c6plus-u0-{s}.html") for s in slugs if os.path.exists(f"{GAMEDIR}/es-c6plus-u0-{s}.html")}
 
-CSS = FONTS + hub_drills.TYPE_CSS + hub_drills.ESCUCHA_CSS + hub_drills.LECTURA_CSS + hub_bloques.CSS_EXTRA + """
+CSS = FONTS + extra_bronnen.CSS + hub_drills.TYPE_CSS + hub_drills.ESCUCHA_CSS + hub_drills.LECTURA_CSS + hub_bloques.CSS_EXTRA + """
 :root{--g:#7C56A9;--gd:#5B3E83;--gt:#EEE8F5;--ink:#20242E;--mut:#6A6E78;--paper:#FCFBF8;--crema:#F3EEE4;--line:#E4E3DE;--red:#DC2626;--amber:#B7860B;--card:#fff;
 --onder:#2563EB;--ww:#EA7317;--voorw:#1E9E74;--tijd:#7C3AED;--plaats:#14B8A6;
 --disp:'Bricolage Grotesque',sans-serif;--body:'Inter',sans-serif;--hand:'Caveat',cursive}
@@ -265,7 +266,7 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   <div class="hero">
     <div class="mo">__MOCH__</div>
     <div><h1>U0 · ¡Volvemos!</h1>
-    <p>La página digital de la Unidad 0 (el <b>reencuentro</b>): flashcards, gramática visual e interactiva y <b>13 juegos</b> con muchas series. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie. Diagnostische repaso: presente · género · países.</span></p></div>
+    <p>La página digital de la Unidad 0 (el <b>reencuentro</b>): flashcards, gramática visual e interactiva y <b>__NGAMES__ juegos</b> con muchas series. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie. Diagnostische repaso: presente · género · países.</span></p></div>
   </div>
   <div class="subnav" id="subnav"></div>
 
@@ -334,7 +335,7 @@ __TYPESLOTS__
   </section>
 
   <section class="panel" data-p="juegos">
-    <h2 class="sec">Ejercicios · 13 juegos, jij kiest</h2>
+    <h2 class="sec">Ejercicios · __NGAMES__ juegos, jij kiest</h2>
     <p class="lead">Geordend van <b>herkennen → onderscheiden → produceren met steun → analyseren &amp; communiceren → hablar</b>. Elk spel geeft directe, verklarende feedback en de steun bouwt af. <span class="gloss">Klik een spel; het opent in een venster en werkt ook offline.</span></p>
     <div id="motorlink"></div>
   </section>
@@ -369,11 +370,7 @@ __TYPESLOTS__
   </section>
 
   <section class="panel" data-p="extra">
-    <h2 class="sec">Extra · bronnen</h2>
-    <p class="lead">Externe uitleg &amp; oefeningen (de leerkracht vult de links aan).</p>
-    <div class="card"><p>🎬 <b>profedeele</b> (YouTube — el presente / ser y estar) — <span class="gloss">link volgt.</span></p>
-    <p>🧩 <b>arche-ele</b> (Genially — género y artículos / nacionalidades) — <span class="gloss">link volgt.</span></p>
-    <p>📄 In het boek (PDF) verwijzen de QR-codes naar déze pagina, op het juiste ankerpunt.</p></div>
+    __BRONNEN__
   </section>
 
   <div class="foot">Español en la práctica · C6+ · Unidad 0 «¡Volvemos!» — página digital. Uitbreiding op de PDF · huisstijl morado · print ↔ PowerPoint ↔ web.</div>
@@ -802,6 +799,9 @@ JS=JS.replace("__BLOQUES__", BLOQUES)
 JS += hub_type_sets.vocab_type_js(vocab)
 JS += hub_type_gram.js('C6+', 0)
 HTML = HTML.replace("__GRAMSLOTS__", hub_type_gram.slots('C6+', 0))
+HTML = HTML.replace("__BRONNEN__", extra_bronnen.html("C6+", 0))
+# Aantal spellen niet met de hand bijhouden: het verouderde al twee keer.
+HTML = HTML.replace("__NGAMES__", str(len(GAMES)))
 HTML = HTML.replace("__TYPESLOTS__", hub_type_sets.SLOTS_HTML)
 
 html=(HTML.replace("__CSS__",CSS).replace("__MOCH__",moch).replace("__FC__",flashcards_html())
