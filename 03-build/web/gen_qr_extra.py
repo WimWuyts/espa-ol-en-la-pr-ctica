@@ -83,7 +83,10 @@ def qr_svg(url, kleur):
 
 
 def blok(course, unit):
-    items = LINKS.get((course, unit))
+    items = list(LINKS.get((course, unit)) or [])
+    for t, u in _extra_links(course, unit):          # door de auteur toegevoegd
+        if (t, u) not in items:
+            items.append((t, u))
     if not items:
         return None
     kleur = KLEUR.get(course, "#1E9E74")
@@ -146,6 +149,100 @@ BALK_CSS = """<style>
 </style>"""
 
 
+# ---------------------------------------------------------------------------
+# Uitbreidbaar linkregister: 03-build/web/qr_links.json
+# Alle onderwerpen van de cursus (196) staan daar met een lege `urls`-lijst. Vul je er een
+# URL in, dan pikt dit script hem automatisch op — zonder code te wijzigen.
+# ---------------------------------------------------------------------------
+REG = os.path.join(ROOT, "03-build", "web", "qr_links.json")
+
+
+def _register():
+    import json
+    if not os.path.exists(REG):
+        return []
+    return json.load(open(REG, encoding="utf-8"))
+
+
+def _extra_links(course, unit):
+    """URL's die de auteur in qr_links.json heeft ingevuld."""
+    uit = []
+    for blok in _register():
+        if blok["curso"] == course and blok["unidad"] == unit:
+            for o in blok["onderwerpen"]:
+                for u in o.get("urls", []):
+                    titel = u.get("titulo") or o["onderwerp"]
+                    uit.append((titel, u["url"]))
+    return uit
+
+
+def dekking():
+    """Welke onderwerpen hebben al een link, welke nog niet?"""
+    reg = _register()
+    if not reg:
+        sys.exit("qr_links.json ontbreekt.")
+    tot = met = 0
+    print("%-9s %-5s %-7s %s" % ("cursus", "unit", "gelinkt", "onderwerpen zonder link"))
+    for b in reg:
+        o_met = [o for o in b["onderwerpen"] if o.get("urls")]
+        o_zon = [o["onderwerp"] for o in b["onderwerpen"] if not o.get("urls")]
+        tot += len(b["onderwerpen"]); met += len(o_met)
+        print("%-9s U%-4d %2d/%-4d %s" % (b["curso"], b["unidad"], len(o_met), len(b["onderwerpen"]),
+              ", ".join(o_zon[:6]) + (" …" if len(o_zon) > 6 else "")))
+    print("\n%d van %d onderwerpen heeft een link (%d%%)." % (met, tot, round(met / tot * 100)))
+    print("Blueprint-oefeningen met vaste link: %d (staan los in EJERCICIOS)." % len(EJERCICIOS))
+
+
+def match(bestand):
+    """Stelt links voor door een URL-lijst (sitemap.xml of platte tekst) te matchen op trefwoord.
+
+    De auteur levert de lijst aan — ik kan de site zelf niet bereiken (egress-proxy 403).
+    Voorstellen worden in qr_links.json gezet als `urls` met bron «voorstel», zodat je ze
+    enkel nog hoeft na te kijken.
+    """
+    import json, re, unicodedata
+    ruw = open(bestand, encoding="utf-8", errors="ignore").read()
+    urls = sorted(set(re.findall(r"https?://[^\s<>\"']+", ruw)))
+    urls = [u.rstrip("/") + "/" for u in urls if "paginadelespanol" in u]
+    print("%d URL's gelezen uit %s" % (len(urls), os.path.basename(bestand)))
+    if not urls:
+        sys.exit("Geen paginadelespanol-URL's gevonden in dat bestand.")
+
+    def norm(t):
+        t = unicodedata.normalize("NFD", t.lower())
+        t = "".join(c for c in t if unicodedata.category(c) != "Mn")
+        return re.sub(r"[^a-z0-9]+", " ", t).strip()
+
+    STOP = {"de", "la", "el", "los", "las", "y", "con", "para", "del", "en", "un", "una"}
+    reg = _register()
+    voorstellen = 0
+    for b in reg:
+        for o in b["onderwerpen"]:
+            if o.get("urls"):
+                continue
+            woorden = [w for w in norm(o["onderwerp"]).split() if len(w) > 3 and w not in STOP]
+            if not woorden:
+                continue
+            beste, score = None, 0
+            for u in urls:
+                slug = " " + norm(u.split("paginadelespanol.com/")[-1]) + " "
+                # heel woord in de slug telt zwaar; deelwoord telt licht
+                tref = 0
+                for w in woorden:
+                    if " " + w + " " in slug:
+                        tref += 2
+                    elif w in slug and len(w) >= 7:
+                        tref += 1
+                if tref > score:
+                    beste, score = u, tref
+            # drempel: minstens één VOLLEDIG woord raak, anders geen voorstel
+            if beste and score >= 2:
+                o["urls"] = [{"titulo": o["onderwerp"], "url": beste, "bron": "voorstel"}]
+                voorstellen += 1
+    json.dump(reg, open(REG, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    print("%d voorstellen weggeschreven naar qr_links.json (bron: «voorstel» — nakijken!)" % voorstellen)
+
+
 def check():
     ctx = ssl.create_default_context(cafile="/root/.ccr/ca-bundle.crt") \
         if os.path.exists("/root/.ccr/ca-bundle.crt") else ssl.create_default_context()
@@ -179,7 +276,13 @@ def main():
     ap.add_argument("--check", action="store_true", help="controleer of de links nog leven")
     ap.add_argument("--balkjes", action="store_true", help="compacte strook per OEFENING (naast de oefening in de cursus)")
     ap.add_argument("--oefening", help="één balkje voor dit oefening-ID")
+    ap.add_argument("--dekking", action="store_true", help="welke onderwerpen hebben al een link?")
+    ap.add_argument("--match", metavar="BESTAND", help="stel links voor uit een sitemap/URL-lijst")
     a = ap.parse_args()
+    if a.dekking:
+        dekking(); sys.exit(0)
+    if a.match:
+        match(a.match); sys.exit(0)
     if a.check:
         sys.exit(check())
     if a.oefening or a.balkjes:

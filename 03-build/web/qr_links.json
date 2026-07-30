@@ -1,0 +1,1262 @@
+[
+ {
+  "curso": "C5",
+  "unidad": 0,
+  "links_bekend": [
+   {
+    "titulo": "Los números del 0 al 10",
+    "url": "https://paginadelespanol.com/los-numeros-del-0-al-10/",
+    "bron": "blueprint",
+    "ejercicio": "C5-U0-NAT-01"
+   },
+   {
+    "titulo": "Los números del 10 al 20",
+    "url": "https://paginadelespanol.com/los-numeros-del-10-al-20/",
+    "bron": "blueprint",
+    "ejercicio": "C5-U0-NAT-02"
+   }
+  ],
+  "onderwerpen": [
+   {
+    "onderwerp": "alfabet y sonidos",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "acentuación y tilde",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "números 0–100",
+    "soort": "gramática",
+    "urls": []
+   }
+  ]
+ },
+ {
+  "curso": "C5",
+  "unidad": 1,
+  "links_bekend": [
+   {
+    "titulo": "Nacionalidades del mundo hispano",
+    "url": "https://paginadelespanol.com/nacionalidades-de-los-paises-hispanohablantes/",
+    "bron": "blueprint",
+    "ejercicio": "C5-U1-NAT-01"
+   }
+  ],
+  "onderwerpen": [
+   {
+    "onderwerp": "ser",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "presente regular (-ar/-er/-ir)",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "interrogativos",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "artículos",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "género y número",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "y/e · o/u",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "porque",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "mundo",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "pais",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "datos",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "ficha",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "interrog",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "saludos",
+    "soort": "vocabulario",
+    "urls": []
+   }
+  ]
+ },
+ {
+  "curso": "C5",
+  "unidad": 2,
+  "links_bekend": [
+   {
+    "titulo": "Adjetivos posesivos",
+    "url": "https://paginadelespanol.com/adjetivos-posesivos/",
+    "bron": "blueprint",
+    "ejercicio": "C5-U2-NAT-01"
+   }
+  ],
+  "onderwerpen": [
+   {
+    "onderwerp": "tener",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "posesivos",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "concordancia del adjetivo",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "ser / estar",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "este / ese",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "familia",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "fisico",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "caracter",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "util",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "colores",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "cuerpo",
+    "soort": "vocabulario",
+    "urls": []
+   }
+  ]
+ },
+ {
+  "curso": "C5",
+  "unidad": 3,
+  "links_bekend": [
+   {
+    "titulo": "Verbos reflexivos",
+    "url": "https://paginadelespanol.com/utiliza-estos-verbos-reflexivos/",
+    "bron": "blueprint",
+    "ejercicio": "C5-U3-NAT-01"
+   }
+  ],
+  "onderwerpen": [
+   {
+    "onderwerp": "verbos reflexivos",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "cambio de raíz (o>ue, e>ie, e>i)",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "hacer / ir / salir",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "la hora",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "conectores de tiempo",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "hora",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "rutina",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "tiempo",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "verbos",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "frecuencia",
+    "soort": "vocabulario",
+    "urls": []
+   }
+  ]
+ },
+ {
+  "curso": "C5",
+  "unidad": 4,
+  "links_bekend": [
+   {
+    "titulo": "El verbo gustar y similares",
+    "url": "https://paginadelespanol.com/25-frases-para-practicar-el-verbo-gustar-y-similares/",
+    "bron": "blueprint",
+    "ejercicio": "C5-U4-NAT-01"
+   }
+  ],
+  "onderwerpen": [
+   {
+    "onderwerp": "gustar / encantar",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "pronombres de OI",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "querer / poder",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "por qué · porque",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "conectores de opinión",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "opinar",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "musica",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "ocio",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "sentim",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "planes",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "frecuencia",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "valencia",
+    "soort": "vocabulario",
+    "urls": []
+   }
+  ]
+ },
+ {
+  "curso": "C5",
+  "unidad": 5,
+  "links_bekend": [
+   {
+    "titulo": "Verbos para cocinar",
+    "url": "https://paginadelespanol.com/20-verbos-cocinar-espanol/",
+    "bron": "blueprint",
+    "ejercicio": "C5-U5-NAT-01"
+   },
+   {
+    "titulo": "Adjetivos sobre la comida",
+    "url": "https://paginadelespanol.com/completa-frases-con-adjetivos-comida/",
+    "bron": "blueprint",
+    "ejercicio": "C5-U5-NAT-02"
+   }
+  ],
+  "onderwerpen": [
+   {
+    "onderwerp": "mucho/a/os/as",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "ir a + infinitivo",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "pronombres OD (lo/la/los/las)",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "conectores de secuencia",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "ortografía n/ñ",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "comida",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "restaurante",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "mexico",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "fruta",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "verdura",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "mesa",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "cortesia",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "bebida",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "cantidades",
+    "soort": "vocabulario",
+    "urls": []
+   }
+  ]
+ },
+ {
+  "curso": "C5",
+  "unidad": 6,
+  "links_bekend": [
+   {
+    "titulo": "Verbos para hablar de la ropa",
+    "url": "https://paginadelespanol.com/20-verbos-para-hablar-sobre-la-ropa/",
+    "bron": "blueprint",
+    "ejercicio": "C5-U6-NAT-01"
+   },
+   {
+    "titulo": "Palabras de moda",
+    "url": "https://paginadelespanol.com/25-palabras-relacionadas-con-la-moda/",
+    "bron": "blueprint",
+    "ejercicio": "C5-U6-NAT-02"
+   }
+  ],
+  "onderwerpen": [
+   {
+    "onderwerp": "pronombres OD",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "acabar de + infinitivo",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "demostrativos (este/ese/aquel)",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "concordancia ropa+color",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "agudas/llanas/esdrújulas",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "pero/sino · así que",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "ropa",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "colores",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "material",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "compra",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "calzado",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "tienda",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "tiendas",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "mexico",
+    "soort": "vocabulario",
+    "urls": []
+   }
+  ]
+ },
+ {
+  "curso": "C5",
+  "unidad": 7,
+  "links_bekend": [
+   {
+    "titulo": "Sopa de letras: la casa",
+    "url": "https://paginadelespanol.com/sopa-de-letras-15-palabras-relacionadas-con-la-casa/",
+    "bron": "blueprint",
+    "ejercicio": "C5-U7-NAT-01"
+   },
+   {
+    "titulo": "El imperativo",
+    "url": "https://paginadelespanol.com/25-frases-para-practicar-el-imperativo/",
+    "bron": "blueprint",
+    "ejercicio": "C5-U7-NAT-02"
+   }
+  ],
+  "onderwerpen": [
+   {
+    "onderwerp": "hay / estar",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "preposiciones de lugar",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "estar + gerundio",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "imperativo afirmativo (tú)",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "ordinales",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "diptongo e hiato",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "barrio",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "casa",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "muebles",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "direcciones",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "preposiciones",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "habitaciones",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "transporte",
+    "soort": "vocabulario",
+    "urls": []
+   }
+  ]
+ },
+ {
+  "curso": "C5",
+  "unidad": 8,
+  "links_bekend": [
+   {
+    "titulo": "El pretérito perfecto",
+    "url": "https://paginadelespanol.com/20-frases-para-practicar-el-preterito-perfecto/",
+    "bron": "blueprint",
+    "ejercicio": "C5-U8-NAT-01"
+   }
+  ],
+  "onderwerpen": [
+   {
+    "onderwerp": "pretérito perfecto",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "participios",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "ya / todavía no",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "el tiempo (hace/está)",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "tilde diacrítica",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "viajes",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "clima",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "transporte",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "experiencias",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "participios",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "peru",
+    "soort": "vocabulario",
+    "urls": []
+   }
+  ]
+ },
+ {
+  "curso": "C6+",
+  "unidad": 0,
+  "links_bekend": [
+   {
+    "titulo": "Nacionalidades del mundo hispano",
+    "url": "https://paginadelespanol.com/nacionalidades-de-los-paises-hispanohablantes/",
+    "bron": "blueprint",
+    "ejercicio": "c6p-u0-nationalities-20"
+   }
+  ],
+  "onderwerpen": [
+   {
+    "onderwerp": "presente regular",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "ser/estar/tener/hacer/ir/dar/venir",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "artículos, género y número",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "formar preguntas",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "presentarse",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "nacionalidades",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "saludos",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "clase",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "paises",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "descripcion",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "verbos",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "familia",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "numeros",
+    "soort": "vocabulario",
+    "urls": []
+   }
+  ]
+ },
+ {
+  "curso": "C6+",
+  "unidad": 1,
+  "links_bekend": [
+   {
+    "titulo": "Ser y estar",
+    "url": "https://paginadelespanol.com/30-frases-para-practicar-los-verbos-ser-y-estar/",
+    "bron": "blueprint",
+    "ejercicio": "c6p-u1-ser-estar-30"
+   },
+   {
+    "titulo": "Verbos reflexivos",
+    "url": "https://paginadelespanol.com/utiliza-estos-verbos-reflexivos/",
+    "bron": "blueprint",
+    "ejercicio": "c6p-u1-reflexives-20"
+   }
+  ],
+  "onderwerpen": [
+   {
+    "onderwerp": "verbos reflexivos",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "ser / estar",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "gustar + OI",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "la hora y la frecuencia",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "rutina",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "hora",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "calendario",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "frecuencia",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "sentimientos",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "gustar",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "conectores",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "ocio",
+    "soort": "vocabulario",
+    "urls": []
+   }
+  ]
+ },
+ {
+  "curso": "C6+",
+  "unidad": 2,
+  "links_bekend": [
+   {
+    "titulo": "Sopa de letras: la casa",
+    "url": "https://paginadelespanol.com/sopa-de-letras-15-palabras-relacionadas-con-la-casa/",
+    "bron": "blueprint",
+    "ejercicio": "c6p-u2-house-15"
+   }
+  ],
+  "onderwerpen": [
+   {
+    "onderwerp": "hay / estar",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "preposiciones de lugar",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "estar + gerundio",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "pronombres OD",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "preposiciones",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "barrio",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "muebles",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "habitaciones",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "ciudad",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "direcciones",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "movimiento",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "casa",
+    "soort": "vocabulario",
+    "urls": []
+   }
+  ]
+ },
+ {
+  "curso": "C6+",
+  "unidad": 3,
+  "links_bekend": [
+   {
+    "titulo": "El futuro próximo (ir a + inf.)",
+    "url": "https://paginadelespanol.com/25-frases-para-practicar-el-futuro-proximo/",
+    "bron": "blueprint",
+    "ejercicio": "c6p-u3-ir-a-inf-25"
+   }
+  ],
+  "onderwerpen": [
+   {
+    "onderwerp": "ir a + infinitivo",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "acabar de + infinitivo",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "pronombres OI (le/les)",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "creo que + indicativo",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "internet",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "digital",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "planes",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "comunicar",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "dispositivos",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "opinar",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "adjmedia",
+    "soort": "vocabulario",
+    "urls": []
+   }
+  ]
+ },
+ {
+  "curso": "C6+",
+  "unidad": 4,
+  "links_bekend": [
+   {
+    "titulo": "El pretérito perfecto",
+    "url": "https://paginadelespanol.com/20-frases-para-practicar-el-preterito-perfecto/",
+    "bron": "blueprint",
+    "ejercicio": "c6p-u4-perfecto-20"
+   },
+   {
+    "titulo": "Participios irregulares",
+    "url": "https://paginadelespanol.com/20-participios-irregulares/",
+    "bron": "blueprint",
+    "ejercicio": "c6p-u4-participles-20"
+   }
+  ],
+  "onderwerpen": [
+   {
+    "onderwerp": "pretérito perfecto",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "participios irregulares",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "por / para",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "ya · todavía no · nunca",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "transporte",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "viaje",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "experiencias",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "lugares",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "opinar",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "tiempo",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "alojamiento",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "porpara",
+    "soort": "vocabulario",
+    "urls": []
+   }
+  ]
+ },
+ {
+  "curso": "C6+",
+  "unidad": 5,
+  "links_bekend": [
+   {
+    "titulo": "El pretérito indefinido",
+    "url": "https://paginadelespanol.com/30-frases-para-practicar-el-preterito-indefinido/",
+    "bron": "blueprint",
+    "ejercicio": "c6p-u5-indefinido-30"
+   }
+  ],
+  "onderwerpen": [
+   {
+    "onderwerp": "pretérito indefinido",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "formas fuertes",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "se lo / se la",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "conectores narrativos",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "voseo",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "logros",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "indefinido",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "biografia",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "persona",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "tiempo",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "relato",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "odoi",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "opinar",
+    "soort": "vocabulario",
+    "urls": []
+   }
+  ]
+ },
+ {
+  "curso": "C6+",
+  "unidad": 6,
+  "links_bekend": [
+   {
+    "titulo": "El pretérito imperfecto",
+    "url": "https://paginadelespanol.com/25-frases-para-practicar-el-preterito-imperfecto/",
+    "bron": "blueprint",
+    "ejercicio": "c6p-u6-imperfecto-25"
+   }
+  ],
+  "onderwerpen": [
+   {
+    "onderwerp": "pretérito imperfecto",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "contraste indefinido/imperfecto",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "comparativos con que",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "que / donde",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "infancia",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "imperfecto",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "antesahora",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "comparar",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "escuela",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "familia",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "opinar",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "relativo",
+    "soort": "vocabulario",
+    "urls": []
+   }
+  ]
+ },
+ {
+  "curso": "C6+",
+  "unidad": 7,
+  "links_bekend": [
+   {
+    "titulo": "El imperativo",
+    "url": "https://paginadelespanol.com/25-frases-para-practicar-el-imperativo/",
+    "bron": "blueprint",
+    "ejercicio": "c6p-u7-imperative-25"
+   },
+   {
+    "titulo": "Verbos del tiempo y el clima",
+    "url": "https://paginadelespanol.com/25-verbos-para-hablar-del-tiempo-y-el-clima/",
+    "bron": "blueprint",
+    "ejercicio": "c6p-u7-climate-25"
+   }
+  ],
+  "onderwerpen": [
+   {
+    "onderwerp": "imperativo afirmativo (tú)",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "imperativo + pronombres",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "opinión con indicativo",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "conectores argumentativos",
+    "soort": "gramática",
+    "urls": []
+   },
+   {
+    "onderwerp": "salud",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "medioambiente",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "consejos",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "imperativo",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "opinar",
+    "soort": "vocabulario",
+    "urls": []
+   },
+   {
+    "onderwerp": "conectores",
+    "soort": "vocabulario",
+    "urls": []
+   }
+  ]
+ }
+]
