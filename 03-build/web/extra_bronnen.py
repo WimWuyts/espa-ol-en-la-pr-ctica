@@ -40,6 +40,21 @@ DESTACADO = {
         "tip": "Doe hem als afsluiting, nadat je de oefeningen hierboven hebt gemaakt — "
                "of samen met een klasgenoot, om beurten.",
     },
+    ("C6+", 0): {
+        "kicker": "Repaso de toda la unidad",
+        "titel": "El vuelo 69",
+        "soort": "Escape room",
+        "url": "https://el-vuelo-69.wim-wuyts1979.chatgpt.site/",
+        "es": "Estás a bordo del vuelo 69 y no despega sin ti. Para salir tienes que conjugar en "
+              "presente, elegir entre ser y estar, acertar el género y decir de dónde es cada "
+              "pasajero.",
+        "nl": "Je zit aan boord van vlucht 69 en die vertrekt niet zonder jou. Om eruit te raken "
+              "moet je vervoegen in het presente, kiezen tussen ser en estar, het juiste geslacht "
+              "treffen en van elke passagier zeggen waar hij of zij vandaan komt. Álle leerstof "
+              "van deze unidad in één spel.",
+        "tip": "Doe hem als afsluiting, nadat je de oefeningen hierboven hebt gemaakt — "
+               "of samen met een klasgenoot, om beurten.",
+    },
 }
 
 BRONNEN[("C5", 0)] = [
