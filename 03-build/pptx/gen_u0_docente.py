@@ -1431,8 +1431,8 @@ def s21_teacher():
 # De oplossing staat in de docentenversie en verschijnt bij klik in de
 # leerlingenversie, nooit meteen zichtbaar.
 # ============================================================================
-def s_lectura():
-    t = _LEC
+def s_lectura(t=None):
+    t = t or _LEC
     s = slide(); bg(s, PAPER)
     sectionbar(s, "§5 · LECTURA", "«%s»" % t["titulo"],
                "Een echte tekst. Je hoeft niet alles te begrijpen om de informatie eruit te halen.", num=5)
@@ -1486,8 +1486,8 @@ def s_lectura():
              "(zelfcorrigerend, met vertaalknop).")
 
 
-def s_escucha():
-    f = _ESC
+def s_escucha(f=None):
+    f = f or _ESC
     s = slide(); bg(s, PAPER)
     sectionbar(s, "§6 · ESCUCHA", "«%s»" % f["titulo"],
                "Eerst de situatie, dan luisteren. Het transcript komt pas ná de taken.", num=6)

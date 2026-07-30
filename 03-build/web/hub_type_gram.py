@@ -89,6 +89,117 @@ SETS[("C5", 0)] = [
          ]),
 ]
 
+SETS[("C5", 1)] = [
+    dict(title="El presente regular — rellena el verbo", accents="strict",
+         desc="De klassieke invuloefening: schrijf het werkwoord tussen haakjes in de juiste vorm. "
+              "Alle werkwoorden hier zijn <b>regelmatig</b> — je hoeft niets uit het hoofd te "
+              "kennen, alleen de uitgang te kiezen.",
+         items=[
+             {"q": "Yo ___ (hablar) español en clase.", "ans": "hablo", "hint": "h____", "why": "-ar · yo → -o"},
+             {"q": "Tú ___ (estudiar) en Madrid.", "ans": "estudias", "hint": "e_______", "why": "-ar · tú → -as"},
+             {"q": "Lucía ___ (vivir) en Sevilla.", "ans": "vive", "hint": "v___", "why": "-ir · ella → -e"},
+             {"q": "Nosotros ___ (comer) en casa.", "ans": "comemos", "hint": "c______", "why": "-er · nosotros → -emos"},
+             {"q": "Los alumnos ___ (escribir) un mensaje.", "ans": "escriben", "hint": "e_______", "why": "-ir · ellos → -en"},
+             {"q": "Yo ___ (aprender) español este año.", "ans": "aprendo", "hint": "a______", "why": "-er · yo → -o"},
+             {"q": "¿Tú ___ (trabajar) los sábados?", "ans": "trabajas", "hint": "t_______", "why": "-ar · tú → -as"},
+             {"q": "Diego ___ (escuchar) música.", "ans": "escucha", "hint": "e______", "why": "-ar · él → -a"},
+             {"q": "Nosotros ___ (leer) un libro.", "ans": "leemos", "hint": "l_____", "why": "-er · nosotros → -emos"},
+             {"q": "Mis amigos ___ (bailar) muy bien.", "ans": "bailan", "hint": "b_____", "why": "-ar · ellos → -an"},
+             {"q": "¿Dónde ___ (vivir) tú?", "ans": "vives", "hint": "v____", "why": "-ir · tú → -es"},
+             {"q": "Nina ___ (beber) agua.", "ans": "bebe", "hint": "b___", "why": "-er · ella → -e"},
+         ]),
+    dict(title="¿ser o tener? — escribe la forma", accents="strict",
+         desc="Let op de valstrik voor Nederlandstaligen: je <b>bent</b> geen vijftien in het "
+              "Spaans, je <b>hebt</b> vijftien jaar — <i>tengo quince años</i>.",
+         items=[
+             {"q": "Yo ___ quince años.", "ans": "tengo", "why": "leeftijd → tener, nooit ser"},
+             {"q": "Lucía ___ de Sevilla.", "ans": "es", "why": "herkomst → ser"},
+             {"q": "Nosotros ___ estudiantes.", "ans": "somos", "why": "identiteit → ser"},
+             {"q": "Diego ___ dieciséis años.", "ans": "tiene", "why": "leeftijd → tener"},
+             {"q": "¿Cuántos años ___ tú?", "ans": "tienes", "why": "leeftijd vragen → tener"},
+             {"q": "Tú ___ muy simpático.", "ans": "eres", "why": "eigenschap → ser"},
+             {"q": "Mis padres ___ belgas.", "ans": "son", "why": "nationaliteit → ser"},
+             {"q": "Yo ___ de Bélgica.", "ans": "soy", "why": "herkomst → ser"},
+             {"q": "¿___ (tú) hermanos?", "ans": "tienes", "why": "bezit → tener"},
+             {"q": "Valen ___ colombiana.", "ans": "es", "why": "nationaliteit → ser"},
+             {"q": "Nosotros ___ catorce años.", "ans": "tenemos", "why": "leeftijd → tener"},
+             {"q": "Ustedes ___ profesores.", "ans": "son", "why": "beroep → ser"},
+         ]),
+    dict(title="Las palabras interrogativas — escribe la pregunta", accents="strict",
+         desc="Vul het vraagwoord in. <b>Elk vraagwoord draagt een accent</b> — dat is geen "
+              "versiering maar het verschil tussen een vraag en een gewone zin.",
+         items=[
+             {"q": "¿___ te llamas? — Me llamo Nina.", "ans": "Cómo", "hint": "C___", "why": "cómo = hoe"},
+             {"q": "¿De ___ eres? — Soy de Madrid.", "ans": "dónde", "hint": "d____", "why": "de dónde = waarvandaan"},
+             {"q": "¿___ años tienes? — Tengo quince.", "ans": "Cuántos", "hint": "C______", "why": "cuántos = hoeveel (mv.)"},
+             {"q": "¿___ es tu profesora? — La señora Ruiz.", "ans": "Quién", "hint": "Q____", "why": "quién = wie"},
+             {"q": "¿___ estudias? — Español.", "ans": "Qué", "hint": "Q__", "why": "qué = wat"},
+             {"q": "¿___ es tu cumpleaños? — En mayo.", "ans": "Cuándo", "hint": "C_____", "why": "cuándo = wanneer"},
+             {"q": "¿___ vives? — En Sevilla.", "ans": "Dónde", "hint": "D____", "why": "dónde = waar"},
+             {"q": "¿___ hermanos tienes? — Dos.", "ans": "Cuántos", "hint": "C______", "why": "cuántos hermanos"},
+             {"q": "¿___ tal? — Bien, gracias.", "ans": "Qué", "hint": "Q__", "why": "¿Qué tal? = hoe gaat het?"},
+             {"q": "¿___ se dice «mochila» en neerlandés?", "ans": "Cómo", "hint": "C___", "why": "cómo se dice = hoe zeg je"},
+             {"q": "¿___ son ellos? — Son mis primos.", "ans": "Quiénes", "hint": "Q______", "why": "meervoud van quién"},
+             {"q": "¿___ es tu número de teléfono?", "ans": "Cuál", "hint": "C___", "why": "cuál = welk(e), bij een keuze uit veel"},
+         ]),
+]
+
+SETS[("C6+", 1)] = [
+    dict(title="Los verbos reflexivos — rellena", accents="strict",
+         desc="Vergeet het <b>pronombre</b> niet: bij een reflexief werkwoord horen er twee "
+              "woorden in het gat — <i>me levanto</i>, niet <i>levanto</i>.",
+         items=[
+             {"q": "Yo ___ (levantarse) a las siete.", "ans": "me levanto", "hint": "m_ l______", "why": "yo → me"},
+             {"q": "Diego ___ (ducharse) por la mañana.", "ans": "se ducha", "hint": "s_ d____", "why": "él → se"},
+             {"q": "Nosotros ___ (acostarse) a las once.", "ans": "nos acostamos", "hint": "n__ a________",
+              "why": "nosotros → nos · en géén o→ue bij nosotros"},
+             {"q": "¿A qué hora ___ (despertarse) tú?", "ans": "te despiertas", "hint": "t_ d_________", "why": "tú → te · e→ie"},
+             {"q": "Lucía ___ (vestirse) rápido.", "ans": "se viste", "hint": "s_ v____", "why": "e→i"},
+             {"q": "Yo ___ (despertarse) muy temprano.", "ans": "me despierto", "hint": "m_ d________", "why": "e→ie"},
+             {"q": "Mis hermanos ___ (peinarse) delante del espejo.", "ans": "se peinan", "hint": "s_ p_____", "why": "ellos → se"},
+             {"q": "Nosotros ___ (lavarse) las manos.", "ans": "nos lavamos", "hint": "n__ l______", "why": "regelmatig"},
+             {"q": "Nina ___ (acostarse) tarde.", "ans": "se acuesta", "hint": "s_ a______", "why": "o→ue"},
+             {"q": "¿Tú ___ (afeitarse) todos los días?", "ans": "te afeitas", "hint": "t_ a______", "why": "tú → te"},
+             {"q": "Yo ___ (llamarse) Valen.", "ans": "me llamo", "hint": "m_ l____", "why": "llamarse is ook reflexief"},
+             {"q": "Los niños ___ (dormirse) en el sofá.", "ans": "se duermen", "hint": "s_ d______", "why": "o→ue"},
+         ]),
+    dict(title="El verbo gustar — ¿gusta o gustan?", accents="strict",
+         desc="Bij <i>gustar</i> is het onderwerp niet de persoon maar het <b>ding</b>. Schrijf het "
+              "pronombre én de juiste vorm: <i>me gusta el libro</i> · <i>me gustan los libros</i>.",
+         items=[
+             {"q": "A mí ___ el chocolate.", "ans": "me gusta", "hint": "m_ g____", "why": "één ding → gusta"},
+             {"q": "A ti ___ los deportes.", "ans": "te gustan", "hint": "t_ g_____", "why": "meervoud → gustan"},
+             {"q": "A Lucía ___ bailar.", "ans": "le gusta", "hint": "l_ g____", "why": "infinitivo telt als enkelvoud"},
+             {"q": "A nosotros ___ las películas españolas.", "ans": "nos gustan", "hint": "n__ g_____", "why": "meervoud → gustan"},
+             {"q": "A Diego y a Nina ___ la música.", "ans": "les gusta", "hint": "l__ g____", "why": "twee personen → les, maar la música → gusta"},
+             {"q": "A mí ___ los libros de aventuras.", "ans": "me gustan", "hint": "m_ g_____", "why": "meervoud → gustan"},
+             {"q": "¿___ el español? (a ti)", "ans": "te gusta", "hint": "t_ g____", "why": "el español → gusta"},
+             {"q": "A mi hermana ___ los perros.", "ans": "le gustan", "hint": "l_ g_____", "why": "één persoon, meervoud ding"},
+             {"q": "A nosotros ___ el fútbol.", "ans": "nos gusta", "hint": "n__ g____", "why": "enkelvoud → gusta"},
+             {"q": "A mis padres ___ viajar.", "ans": "les gusta", "hint": "l__ g____", "why": "infinitivo → gusta"},
+             {"q": "A ti ___ las matemáticas.", "ans": "te gustan", "hint": "t_ g_____", "why": "meervoud → gustan"},
+             {"q": "A mí no ___ madrugar.", "ans": "me gusta", "hint": "m_ g____", "why": "infinitivo → gusta"},
+         ]),
+    dict(title="La hora — escríbela en letras", accents="soft",
+         desc="Schrijf het uur voluit. Eén uur is <b>es la una</b>, alle andere uren zijn "
+              "<b>son las…</b> — dat verschil is de hele oefening.",
+         items=[
+             {"q": "3:00 →", "ans": "Son las tres", "hint": "S__ l__ t___"},
+             {"q": "1:00 →", "ans": "Es la una", "hint": "E_ l_ u__", "why": "enkelvoud: es la una"},
+             {"q": "3:15 →", "ans": "Son las tres y cuarto", "hint": "S__ l__ t___ y c_____"},
+             {"q": "5:30 →", "ans": "Son las cinco y media", "hint": "S__ l__ c____ y m____"},
+             {"q": "8:45 →", "ans": "Son las nueve menos cuarto", "hint": "S__ l__ n____ m____ c_____",
+              "why": "vanaf 31 minuten reken je terug naar het volgende uur"},
+             {"q": "2:10 →", "ans": "Son las dos y diez", "hint": "S__ l__ d__ y d___"},
+             {"q": "7:50 →", "ans": "Son las ocho menos diez", "hint": "S__ l__ o___ m____ d___"},
+             {"q": "12:00 →", "ans": "Son las doce", "hint": "S__ l__ d___"},
+             {"q": "6:20 →", "ans": "Son las seis y veinte", "hint": "S__ l__ s___ y v_____"},
+             {"q": "10:40 →", "ans": "Son las once menos veinte", "hint": "S__ l__ o___ m____ v_____"},
+             {"q": "1:30 →", "ans": "Es la una y media", "hint": "E_ l_ u__ y m____", "why": "één uur blijft «es la»"},
+             {"q": "4:05 →", "ans": "Son las cuatro y cinco", "hint": "S__ l__ c_____ y c____"},
+         ]),
+]
+
 SETS[("C6+", 0)] = [
     dict(title="El presente — rellena el verbo", accents="strict",
          desc="De klassieke invuloefening: schrijf het werkwoord tussen haakjes in de juiste vorm "

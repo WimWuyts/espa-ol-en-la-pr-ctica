@@ -16,6 +16,12 @@ from gen_u0_print import (CSS, AV, TU, MOCH, qr, audiorow, act, regla, guide, lp
                           gustobars, menu)
 
 # ================= BODY =================
+import sys as _sys
+_sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
+import print_bloques as PB
+import lectura_data as LD
+import escucha_data as ED
+
 BODY = []
 def P(*x): BODY.extend(x)
 _AN = [0]
@@ -597,6 +603,21 @@ P(actx(AN(), "Completa con el conector correcto",
   '2. <span class="wl sm"></span>, me acuesto. &nbsp; 3. Me gusta el fin de semana <span class="wl sm"></span> no hay clase.</p>',
   apoyo="BANCO"))
 sec_close()
+
+# ================= §5 LECTURA · §6 ESCUCHA =================
+# Zelfde bron als de hub (lectura_data / escucha_data), zodat papier en scherm
+# niet uit elkaar kunnen lopen. Elk op een eigen bladzijde (§14).
+P('<div class="page"><div class="parada sec">')
+P('<span class="num">5</span><span class="pk">§5 · Lectura — «Un martes cualquiera»</span>')
+P('<div class="intro"><b>ES:</b> Una entrada de blog de verdad. <b>No hace falta entenderlo todo</b> para sacar la información. <span class="gloss">Een echte blogpost. Je hoeft niet alles te begrijpen om de informatie te vinden — let vooral op de uren.</span></div>')
+P(PB.lectura_print(LD.C6P_U1, AN()))
+P('</div>')
+
+P('<div class="page"><div class="parada sec">')
+P('<span class="num">6</span><span class="pk">§6 · Escucha — «Entrevista a un deportista»</span>')
+P('<div class="intro"><b>ES:</b> Una periodista entrevista a Hugo, nadador. <b>Escucha primero, escribe después.</b> <span class="gloss">Een schooljournaliste interviewt zwemmer Hugo. Eerst luisteren, dan schrijven; het transcript staat online en gaat pas open ná de taken.</span></div>')
+P(PB.escucha_print(ED.C6P_U1, AN()))
+P('</div>')
 
 # ================= CULTURA =================
 sec_open("C", "Cultura · el horario español", 'En España el <b>horario</b> es diferente: se <b>come</b> a las 2–3 y se <b>cena</b> a las 9–10. Y existe la <b>siesta</b>. Un día hispano no es igual en todos los países. <span class="gloss">In Spanje eet men laat en soms is er een siësta. De dagindeling verschilt per land.</span>',

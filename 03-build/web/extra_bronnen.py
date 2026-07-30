@@ -316,7 +316,23 @@ def html(course, unit):
     """Het volledige Extra-paneel. Leeg als er voor deze unit geen lijst is."""
     groepen = BRONNEN.get((course, unit))
     if not groepen:
-        return ""
+        # Nog geen bronnenlijst voor deze unit. Géén «link volgt» op de leerlingpagina
+        # (CLAUDE.md §18): dan liever een kader dat de leerling écht ergens heen stuurt.
+        return (
+            '<h2 class="sec">Extra · seguir practicando</h2>\n    '
+            '<p class="lead">Nog niet genoeg geoefend? Alles wat je nodig hebt staat al op deze '
+            'pagina. <span class="gloss">Zo haal je er het meeste uit.</span></p>\n    '
+            '<div class="card"><ul class="bronlijst">'
+            '<li>🃏 <b>Vocabulario</b> — eerst de flashcards, dan «✍️ Escribe tú»: daar '
+            'schrijf je de woorden zelf, zonder keuzelijst.</li>'
+            '<li>🧠 <b>Gramática</b> — de visuele uitleg bovenaan, de invuloefeningen onderaan.</li>'
+            '<li>🕹️ <b>Juegos</b> — elk spel trekt telkens een nieuwe reeks; opnieuw spelen '
+            'levert dus andere items op.</li>'
+            '<li>🎙️ <b>Hablar</b> — neem jezelf op, luister terug, doe het nog eens.</li>'
+            '<li>📖 <b>Lectura</b> en 🎧 <b>Escuchar</b> — lees en luister met de taken erbij.</li>'
+            '</ul></div>\n    '
+            '<div class="card"><p>📄 In het boek verwijzen de QR-codes naar deze digitale '
+            'pagina, telkens op het juiste ankerpunt.</p></div>')
     n = sum(len(v) for _t, v in groepen)
     uit = ['<h2 class="sec">Extra · bronnen</h2>',
            '<p class="lead">Wil je meer oefenen dan wat hier staat? Deze pagina\'s van '

@@ -186,7 +186,200 @@ C6P_U0 = {
     },
 }
 
-TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0}
+# ---------------------------------------------------------------------------
+# C5 · U1 «¿Quién eres?» — parada Madrid
+# Tekstsoort bewust anders dan U0 (daar een cartel/anuncio): hier een perfil uit
+# een uitwisselings-app, zodat de leerling een ándere leesstrategie oefent —
+# scannen in een ingevuld formulier in plaats van in doorlopende reclametekst.
+# ---------------------------------------------------------------------------
+C5_U1 = {
+    "id": "C5-U1-LEC-01",
+    "ancla": "c5-u1-lec-01",
+    "titulo": "Busco un compi de intercambio",
+    "tipo": "perfil (app de intercambio lingüístico)",
+    "emisor": "Álex, un chico de Madrid",
+    "receptor": "Alumnos de español de toda Europa",
+    "objetivo": "Encontrar a alguien para hablar español y neerlandés",
+    "prediccion": {
+        "q": "Kijk eerst alleen naar de kopjes, de vlaggen en de getallen. Wat voor tekst is dit?",
+        "opts": ["Een profiel om iemand te leren kennen", "Een treinticket", "Een menukaart"],
+        "ans": "Een profiel om iemand te leren kennen",
+    },
+    "texto": [
+        ["titulo", "BUSCO COMPI DE INTERCAMBIO 🇪🇸 ↔ 🇧🇪"],
+        ["lema", "Tú me hablas en neerlandés, yo te hablo en español."],
+        ["lista", [
+            "Nombre: Álex Moreno Gil",
+            "Edad: tengo dieciséis años",
+            "Ciudad: Madrid, España. Soy español.",
+            "Instituto: IES Cervantes, cuarto curso",
+            "Lenguas: hablo español e inglés. Estudio francés.",
+        ]],
+        ["p", "¡Hola! Me llamo Álex y vivo en Madrid, en el barrio de Lavapiés. "
+              "Estudio en el IES Cervantes y este año aprendo francés."],
+        ["p", "En mi tiempo libre escucho música, juego al baloncesto y leo cómics. "
+              "Los sábados trabajo en la tienda de mi tía."],
+        ["p", "Busco un compi de Bélgica o de los Países Bajos. Hablamos media hora en español "
+              "y media hora en neerlandés. ¿Te apuntas?"],
+        ["firma", "Escríbeme: alex.moreno@correo.es · ¿Cómo te llamas tú?"],
+    ],
+    "traduccion": "Ik zoek een taalmaatje. Jij spreekt Nederlands tegen mij, ik spreek Spaans "
+                  "tegen jou. Hallo! Ik heet Álex en ik woon in Madrid, in de wijk Lavapiés. Ik "
+                  "zit op het IES Cervantes en dit jaar leer ik Frans. In mijn vrije tijd luister "
+                  "ik muziek, speel ik basket en lees ik strips. Op zaterdag werk ik in de winkel "
+                  "van mijn tante. Ik zoek een maatje uit België of Nederland. We praten een half "
+                  "uur Spaans en een half uur Nederlands. Doe je mee?",
+    "global": {
+        "q": "¿Para qué escribe Álex este perfil?",
+        "opts": ["Para buscar a alguien con quien practicar lenguas",
+                 "Para vender cómics", "Para invitarte a su instituto"],
+        "ans": "Para buscar a alguien con quien practicar lenguas",
+    },
+    "escanear": [
+        {"q": "¿Cuántos años tiene Álex?", "ans": "16",
+         "alt": ["dieciséis", "dieciseis", "tiene dieciséis años", "16 años"],
+         "why": "«tengo dieciséis años»"},
+        {"q": "¿En qué ciudad vive?", "ans": "Madrid", "alt": ["en madrid"],
+         "why": "«vivo en Madrid»"},
+        {"q": "¿Cómo se llama su instituto?", "ans": "IES Cervantes",
+         "alt": ["cervantes", "ies cervantes"], "why": "«Estudio en el IES Cervantes»"},
+        {"q": "¿Qué lengua estudia este año?", "ans": "francés",
+         "alt": ["el francés", "frances"], "why": "«este año aprendo francés»"},
+        {"q": "¿Qué día trabaja?", "ans": "los sábados",
+         "alt": ["sábados", "sabados", "el sábado", "los sabados"],
+         "why": "«Los sábados trabajo en la tienda de mi tía»"},
+    ],
+    "vf": [
+        {"q": "Álex es español.", "ans": True, "prueba": "soy español"},
+        {"q": "Álex vive en Sevilla.", "ans": False, "prueba": "vivo en madrid"},
+        {"q": "Álex habla inglés.", "ans": True, "prueba": "hablo español e inglés"},
+        {"q": "Álex juega al fútbol.", "ans": False, "prueba": "juego al baloncesto"},
+        {"q": "Álex trabaja en la tienda de su tía.", "ans": True,
+         "prueba": "trabajo en la tienda de mi tía"},
+    ],
+    "contexto": [
+        {"q": "«compi» — ¿qué es?", "opts": ["een maatje, een partner", "een boek", "een les"],
+         "ans": "een maatje, een partner",
+         "why": "Korte spreektaal voor «compañero» — de hele tekst gaat over samen oefenen."},
+        {"q": "«¿Te apuntas?» — ¿qué te pide Álex?",
+         "opts": ["Of je meedoet", "Of je opschrijft wat hij zegt", "Of je hem aanwijst"],
+         "ans": "Of je meedoet", "why": "Het staat aan het eind, als uitnodiging."},
+        {"q": "«en mi tiempo libre» — ¿cuándo?",
+         "opts": ["Als hij geen school heeft", "Tijdens de les", "'s nachts"],
+         "ans": "Als hij geen school heeft",
+         "why": "Erna volgen hobby's, geen schoolvakken."},
+    ],
+    "produccion": {
+        "prompt": "Escribe tu propio perfil para Álex (4–5 frases): cómo te llamas, cuántos años "
+                  "tienes, de dónde eres, qué lenguas hablas y qué haces en tu tiempo libre.",
+        "modelo": "Hola, Álex. Me llamo… Tengo… años. Soy de… y vivo en… Hablo… y estudio… "
+                  "En mi tiempo libre…",
+    },
+}
+
+
+# ---------------------------------------------------------------------------
+# C6+ · U1 — la rutina diaria, parada España
+# Tekstsoort: entrada de blog. Een doorlopend verhaal met tijdsaanduidingen,
+# zodat het scannen naar úren gebeurt en de reflexieve werkwoorden in
+# natuurlijke context terugkomen.
+# ---------------------------------------------------------------------------
+C6P_U1 = {
+    "id": "C6P-U1-LEC-01",
+    "ancla": "c6p-u1-lec-01",
+    "titulo": "Un martes cualquiera",
+    "tipo": "entrada de blog",
+    "emisor": "Marta, estudiante en Salamanca",
+    "receptor": "Los lectores de su blog «Mi vida en España»",
+    "objetivo": "Contar cómo es un día normal para ella",
+    "prediccion": {
+        "q": "Kijk eerst alleen naar de titel en de uren die in de tekst staan. Waarover gaat dit?",
+        "opts": ["Over een gewone dag van begin tot eind", "Over een reis naar Amerika",
+                 "Over een examen"],
+        "ans": "Over een gewone dag van begin tot eind",
+    },
+    "texto": [
+        ["titulo", "UN MARTES CUALQUIERA ⏰"],
+        ["lema", "Mi vida en España · entrada del 12 de marzo"],
+        ["p", "Me despierto a las siete menos cuarto, pero no me levanto hasta las siete. "
+              "Me ducho rápido, me visto y desayuno un café con tostadas."],
+        ["p", "A las ocho salgo de casa. La facultad está lejos, así que voy en autobús. "
+              "Las clases empiezan a las nueve y terminan a la una y media."],
+        ["p", "Como con mis compañeros en la cafetería. Me gusta mucho la tortilla de patatas, "
+              "pero no me gustan nada las lentejas."],
+        ["lista", [
+            "07:00 — me levanto",
+            "08:00 — salgo de casa",
+            "09:00 — empiezan las clases",
+            "13:30 — termino y como",
+            "17:00 — estudio en la biblioteca",
+            "23:30 — me acuesto",
+        ]],
+        ["p", "Por la tarde estudio en la biblioteca hasta las siete. Después voy al gimnasio "
+              "dos días por semana. Estoy cansada, pero estoy contenta."],
+        ["firma", "Me acuesto a las once y media. ¿Y tú? ¿A qué hora te acuestas?"],
+    ],
+    "traduccion": "Een doordeweekse dinsdag. Ik word wakker om kwart voor zeven, maar ik sta pas "
+                  "om zeven uur op. Ik douche snel, kleed me aan en ontbijt met koffie en "
+                  "geroosterd brood. Om acht uur ga ik de deur uit. De faculteit is ver, dus ik "
+                  "ga met de bus. De lessen beginnen om negen uur en eindigen om half twee. Ik eet "
+                  "met mijn medestudenten in de cafetaria. Ik hou erg van aardappelomelet, maar ik "
+                  "hou helemaal niet van linzen. 's Middags studeer ik tot zeven uur in de "
+                  "bibliotheek. Daarna ga ik twee dagen per week naar de sportschool. Ik ben moe, "
+                  "maar ik ben tevreden. Ik ga om half twaalf slapen. En jij? Hoe laat ga jij slapen?",
+    "global": {
+        "q": "¿De qué trata la entrada?",
+        "opts": ["De la rutina diaria de Marta", "De sus vacaciones", "De un examen difícil"],
+        "ans": "De la rutina diaria de Marta",
+    },
+    "escanear": [
+        {"q": "¿A qué hora se levanta Marta?", "ans": "a las siete",
+         "alt": ["siete", "las siete", "7:00", "07:00", "a las 7"],
+         "why": "«no me levanto hasta las siete»"},
+        {"q": "¿Cómo va a la facultad?", "ans": "en autobús",
+         "alt": ["autobús", "autobus", "en autobus", "el autobús"], "why": "«voy en autobús»"},
+        {"q": "¿A qué hora terminan las clases?", "ans": "a la una y media",
+         "alt": ["la una y media", "una y media", "13:30", "1:30"],
+         "why": "«terminan a la una y media»"},
+        {"q": "¿Dónde estudia por la tarde?", "ans": "en la biblioteca",
+         "alt": ["la biblioteca", "biblioteca"], "why": "«estudio en la biblioteca»"},
+        {"q": "¿Cuántos días por semana va al gimnasio?", "ans": "dos",
+         "alt": ["2", "dos días", "dos dias"], "why": "«dos días por semana»"},
+    ],
+    "vf": [
+        {"q": "Marta se ducha por la mañana.", "ans": True, "prueba": "me ducho rápido"},
+        {"q": "A Marta le gustan las lentejas.", "ans": False,
+         "prueba": "no me gustan nada las lentejas"},
+        {"q": "Marta come sola.", "ans": False, "prueba": "como con mis compañeros"},
+        {"q": "Marta se acuesta a las once y media.", "ans": True,
+         "prueba": "me acuesto a las once y media"},
+        {"q": "Marta va a la facultad en coche.", "ans": False, "prueba": "voy en autobús"},
+    ],
+    "contexto": [
+        {"q": "«no me levanto hasta las siete» — ¿qué significa «hasta»?",
+         "opts": ["tot", "vanaf", "zonder"], "ans": "tot",
+         "why": "Ze wordt eerder wakker, maar staat pas óm zeven uur op."},
+        {"q": "«así que voy en autobús» — ¿qué expresa «así que»?",
+         "opts": ["een gevolg (dus)", "een tegenstelling (maar)", "een reden (omdat)"],
+         "ans": "een gevolg (dus)",
+         "why": "De faculteit is ver → dáárom de bus. Let op: «dus» is nooit «luego»."},
+        {"q": "«Estoy cansada, pero estoy contenta» — ¿por qué «estoy» y no «soy»?",
+         "opts": ["Het is hoe ze zich nú voelt", "Het is haar karakter", "Het is haar beroep"],
+         "ans": "Het is hoe ze zich nú voelt",
+         "why": "Toestand van het moment → estar."},
+    ],
+    "produccion": {
+        "prompt": "Escribe tu propio martes (5–6 frases): a qué hora te levantas, cómo vas al "
+                  "instituto, cuándo empiezan y terminan las clases, qué te gusta comer y a qué "
+                  "hora te acuestas.",
+        "modelo": "Me levanto a las… Voy al instituto en… Las clases empiezan a las… y terminan "
+                  "a las… Me gusta… pero no me gusta… Me acuesto a las…",
+    },
+}
+
+
+TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
+         ("C5", 1): C5_U1, ("C6+", 1): C6P_U1}
 
 
 def _texto_plano(t):

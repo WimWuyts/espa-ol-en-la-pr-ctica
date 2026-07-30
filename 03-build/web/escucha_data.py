@@ -158,7 +158,148 @@ C6P_U0 = {
     },
 }
 
-TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0}
+# ---------------------------------------------------------------------------
+# C5 · U1 — diálogo. Andere tekstsoort dan de lectura van deze unit (een perfil),
+# zodat lezen en luisteren niet twee keer hetzelfde vragen.
+# ---------------------------------------------------------------------------
+C5_U1 = {
+    "id": "C5-U1-ESC-01",
+    "ancla": "c5-u1-esc-01",
+    "titulo": "El primer día en el instituto",
+    "audio": "audio/C5_U1.mp3",
+    "situacion": {
+        "lugar": "El pasillo del IES Cervantes, Madrid",
+        "quien": "Álex (de Madrid) y Sam, un alumno nuevo de Bélgica",
+        "que": "Se conocen y se hacen preguntas",
+        "claves": ["¿cómo te llamas?", "¿de dónde eres?", "¿cuántos años tienes?"],
+    },
+    "guion": [
+        {"who": "Álex", "es": "¡Hola! Tú eres nuevo, ¿verdad? Yo soy Álex.",
+         "nl": "Hallo! Jij bent nieuw, hè? Ik ben Álex."},
+        {"who": "Sam", "es": "Sí, soy nuevo. Me llamo Sam.", "nl": "Ja, ik ben nieuw. Ik heet Sam."},
+        {"who": "Álex", "es": "¿Cómo se escribe? ¿Con ce o con ese?",
+         "nl": "Hoe schrijf je dat? Met een c of met een s?"},
+        {"who": "Sam", "es": "Con ese: ese, a, eme.", "nl": "Met een s: s, a, m."},
+        {"who": "Álex", "es": "Vale. ¿Y de dónde eres, Sam?", "nl": "Oké. En waar kom jij vandaan, Sam?"},
+        {"who": "Sam", "es": "Soy de Bélgica, de Amberes. Soy belga.",
+         "nl": "Ik kom uit België, uit Antwerpen. Ik ben Belg."},
+        {"who": "Álex", "es": "¡Qué bien! ¿Y cuántos años tienes?", "nl": "Wat leuk! En hoe oud ben je?"},
+        {"who": "Sam", "es": "Tengo quince años. ¿Y tú?", "nl": "Ik ben vijftien. En jij?"},
+        {"who": "Álex", "es": "Yo tengo dieciséis. Estudio francés y tú, ¿qué estudias?",
+         "nl": "Ik ben zestien. Ik studeer Frans, en jij, wat studeer je?"},
+        {"who": "Sam", "es": "Estudio español, claro. Y también inglés.",
+         "nl": "Spaans natuurlijk. En ook Engels."},
+        {"who": "Álex", "es": "Oye, ¿tienes hermanos?", "nl": "Zeg, heb je broers of zussen?"},
+        {"who": "Sam", "es": "Tengo una hermana. Se llama Anna y tiene doce años.",
+         "nl": "Ik heb een zus. Ze heet Anna en ze is twaalf."},
+    ],
+    "global": {
+        "q": "¿Qué hacen Álex y Sam?",
+        "opts": ["Se presentan y se hacen preguntas", "Hablan de un examen",
+                 "Compran material escolar"],
+        "ans": "Se presentan y se hacen preguntas",
+    },
+    "detalle": [
+        {"q": "¿Cómo se escribe el nombre de Sam?", "opts": ["Con ese", "Con ce", "Con zeta"],
+         "ans": "Con ese", "why": "«Con ese: ese, a, eme»"},
+        {"q": "¿De dónde es Sam?", "opts": ["De Amberes, Bélgica", "De Madrid", "De Sevilla"],
+         "ans": "De Amberes, Bélgica", "why": "«Soy de Bélgica, de Amberes»"},
+        {"q": "¿Cuántos años tiene Sam?", "opts": ["15", "16", "12"], "ans": "15",
+         "why": "«Tengo quince años»"},
+        {"q": "¿Qué lengua estudia Álex?", "opts": ["Francés", "Alemán", "Italiano"],
+         "ans": "Francés", "why": "«Estudio francés»"},
+        {"q": "¿Cuántos años tiene la hermana de Sam?", "opts": ["12", "15", "16"], "ans": "12",
+         "why": "«tiene doce años»"},
+    ],
+    "vf": [
+        {"q": "Álex tiene dieciséis años.", "ans": True, "prueba": "yo tengo dieciséis"},
+        {"q": "Sam estudia alemán.", "ans": False, "prueba": "estudio español, claro"},
+        {"q": "Sam tiene una hermana.", "ans": True, "prueba": "tengo una hermana"},
+    ],
+    "produccion": {
+        "prompt": "Álex te pregunta a ti: «¿Cómo te llamas, de dónde eres y cuántos años tienes?» "
+                  "Contesta en tres frases y añade una pregunta para él.",
+        "modo": "escribir",
+        "min": 3,
+        "modelo": "Me llamo… Soy de… Tengo… años. Y tú, ¿…?",
+    },
+}
+
+
+# ---------------------------------------------------------------------------
+# C6+ · U1 — entrevista. De lectura van deze unit is een blog; het interview
+# vraagt dezelfde leerstof (rutina, la hora, gustar) via een andere tekstsoort.
+# ---------------------------------------------------------------------------
+C6P_U1 = {
+    "id": "C6P-U1-ESC-01",
+    "ancla": "c6p-u1-esc-01",
+    "titulo": "Entrevista a un deportista",
+    "audio": "audio/C6plus_U1.mp3",
+    "situacion": {
+        "lugar": "La radio del instituto, Salamanca",
+        "quien": "Una periodista escolar y Hugo, nadador de dieciocho años",
+        "que": "Le pregunta por su rutina y por lo que le gusta",
+        "claves": ["¿a qué hora?", "me levanto", "me gusta"],
+    },
+    "guion": [
+        {"who": "Periodista", "es": "Hugo, gracias por venir. ¿A qué hora te levantas?",
+         "nl": "Hugo, bedankt dat je er bent. Hoe laat sta je op?"},
+        {"who": "Hugo", "es": "Me levanto a las cinco y media. Muy temprano, sí.",
+         "nl": "Ik sta om half zes op. Heel vroeg, ja."},
+        {"who": "Periodista", "es": "¿Y qué haces primero?", "nl": "En wat doe je eerst?"},
+        {"who": "Hugo", "es": "Me ducho, desayuno mucho y voy a la piscina en bici.",
+         "nl": "Ik douche, ontbijt veel en ga met de fiets naar het zwembad."},
+        {"who": "Periodista", "es": "¿Cuántas horas entrenas al día?",
+         "nl": "Hoeveel uur train je per dag?"},
+        {"who": "Hugo", "es": "Entreno cuatro horas: dos por la mañana y dos por la tarde.",
+         "nl": "Ik train vier uur: twee 's ochtends en twee 's middags."},
+        {"who": "Periodista", "es": "¿Te gusta madrugar?", "nl": "Hou je ervan om vroeg op te staan?"},
+        {"who": "Hugo", "es": "No, no me gusta nada. Pero me gustan mucho las carreras.",
+         "nl": "Nee, helemaal niet. Maar ik hou wel erg van de wedstrijden."},
+        {"who": "Periodista", "es": "¿Estudias también?", "nl": "Studeer je ook?"},
+        {"who": "Hugo", "es": "Sí, estudio por la noche. Estoy cansado, pero estoy contento.",
+         "nl": "Ja, ik studeer 's avonds. Ik ben moe, maar ik ben tevreden."},
+        {"who": "Periodista", "es": "Última pregunta: ¿a qué hora te acuestas?",
+         "nl": "Laatste vraag: hoe laat ga je slapen?"},
+        {"who": "Hugo", "es": "Me acuesto a las diez. ¡Y me duermo en dos minutos!",
+         "nl": "Ik ga om tien uur slapen. En ik val binnen twee minuten in slaap!"},
+    ],
+    "global": {
+        "q": "¿De qué habla Hugo en la entrevista?",
+        "opts": ["De su rutina y de sus gustos", "De un viaje al extranjero",
+                 "De sus problemas en clase"],
+        "ans": "De su rutina y de sus gustos",
+    },
+    "detalle": [
+        {"q": "¿A qué hora se levanta Hugo?", "opts": ["A las cinco y media", "A las seis y media",
+                                                       "A las siete"], "ans": "A las cinco y media",
+         "why": "«Me levanto a las cinco y media»"},
+        {"q": "¿Cómo va a la piscina?", "opts": ["En bici", "En autobús", "Andando"],
+         "ans": "En bici", "why": "«voy a la piscina en bici»"},
+        {"q": "¿Cuántas horas entrena al día?", "opts": ["Cuatro", "Dos", "Seis"],
+         "ans": "Cuatro", "why": "«Entreno cuatro horas»"},
+        {"q": "¿Cuándo estudia?", "opts": ["Por la noche", "Por la mañana", "No estudia"],
+         "ans": "Por la noche", "why": "«estudio por la noche»"},
+        {"q": "¿A qué hora se acuesta?", "opts": ["A las diez", "A las once", "A las nueve"],
+         "ans": "A las diez", "why": "«Me acuesto a las diez»"},
+    ],
+    "vf": [
+        {"q": "A Hugo le gusta madrugar.", "ans": False, "prueba": "no me gusta nada"},
+        {"q": "A Hugo le gustan las carreras.", "ans": True, "prueba": "me gustan mucho las carreras"},
+        {"q": "Hugo se ducha antes de desayunar.", "ans": True, "prueba": "me ducho, desayuno mucho"},
+    ],
+    "produccion": {
+        "prompt": "Contesta tú a la periodista: ¿a qué hora te levantas, qué haces primero, "
+                  "qué te gusta y qué no te gusta, y a qué hora te acuestas?",
+        "modo": "escribir",
+        "min": 4,
+        "modelo": "Me levanto a las… Primero me… Me gusta… pero no me gusta… Me acuesto a las…",
+    },
+}
+
+
+TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
+         ("C5", 1): C5_U1, ("C6+", 1): C6P_U1}
 
 
 def controla():
