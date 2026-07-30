@@ -159,6 +159,113 @@ BRONNEN[("C5", 0)] = [
 ]
 
 
+BRONNEN[("C5", 1)] = [
+    ("§1 · El presente regular (-ar · -er · -ir)", [
+        ("ProfeDeELE", "Presente regular",
+         "https://www.profedeele.es/actividad/presente-regular/"),
+        ("Arche-ELE", "El presente regular de indicativo · conjugaciones",
+         "https://arche-ele.com/el-presente-regular-de-indicativo-conjugaciones"),
+    ]),
+    ("§2 · ¿ser o tener? — la edad se «tiene»", [
+        ("Arche-ELE", "Ser y tener · nivel A1",
+         "https://arche-ele.com/ser-y-tener-nivel-a1-actividades"),
+    ]),
+    ("§3 · Las palabras interrogativas", [
+        ("ProfeDeELE", "Pronombres interrogativos — qué · quién · dónde · cómo · cuándo · cuál",
+         "https://www.profedeele.es/actividad/pronombres-interrogativos/"),
+    ]),
+    ("§4 · El género y los artículos", [
+        ("ProfeDeELE", "Género masculino / femenino",
+         "https://www.profedeele.es/actividad/genero-masculino-femenino/"),
+        ("Arche-ELE", "El género — el y la",
+         "https://arche-ele.com/el-genero-masculino-femenino-aprende-espanol-spanish"),
+        ("ProfeDeELE", "El artículo definido e indefinido",
+         "https://www.profedeele.es/actividad/articulo-definido-indefinido/"),
+        ("Arche-ELE", "El artículo — nivel A1",
+         "https://arche-ele.com/el-articulo-nivel-a1-indeterminado-determinado"),
+        ("My Daily Spanish", "El of la kiezen (video)",
+         "https://www.youtube.com/watch?v=2bJy0ehC0i8"),
+    ]),
+    ("Países, lenguas y nacionalidades", [
+        ("ProfeDeELE", "Países, lenguas y nacionalidades",
+         "https://www.profedeele.es/actividad/paises-lenguas-nacionalidades/"),
+        ("Arche-ELE", "País ↔ nacionalidad",
+         "https://arche-ele.com/paises-y-nacionalidades-countries-nationalities"),
+    ]),
+    ("Datos personales · presentarse (tarea «Mi pasaporte»)", [
+        ("ProfeDeELE", "Dar y pedir información personal",
+         "https://www.profedeele.es/actividad/dar-pedir-informacion-personal/"),
+        ("Arche-ELE", "Información personal",
+         "https://arche-ele.com/informacion-personal-aprende-espanol-learn-spanish"),
+        ("My Daily Spanish", "Jezelf voorstellen (video)",
+         "https://www.youtube.com/watch?v=i0uwQDZo0Ew"),
+    ]),
+    ("La familia", [
+        ("ProfeDeELE", "La familia", "https://www.profedeele.es/actividad/la-familia/"),
+        ("Arche-ELE", "La familia — woordenschat en stamboom",
+         "https://arche-ele.com/la-familia-vocabulario-family-spanish-vocabulary"),
+    ]),
+    ("El instituto y la clase", [
+        ("ProfeDeELE", "El material escolar",
+         "https://www.profedeele.es/actividad/material-escolar/"),
+        ("Arche-ELE", "La clase — woordenschat en interactieve oefeningen",
+         "https://arche-ele.com/la-clase-ele-vocabulario-actividades-interactivas"),
+    ]),
+    ("Describir personas — físico y carácter", [
+        ("ProfeDeELE", "La descripción física",
+         "https://www.profedeele.es/actividad/descripcion-fisico-espanol/"),
+        ("ProfeDeELE", "Adjetivos de carácter y personalidad",
+         "https://www.profedeele.es/actividad/adjetivos-caracter-personalidad/"),
+        ("Arche-ELE", "Descripciones A1 — físicas y de carácter",
+         "https://arche-ele.com/descripciones-a1-fisicasydecaracter-en-espanol"),
+    ]),
+    ("Saludos y despedidas", [
+        ("ProfeDeELE", "Saludos y despedidas",
+         "https://www.profedeele.es/actividad/saludos-despedidas/"),
+        ("Arche-ELE", "Saludos y despedidas",
+         "https://arche-ele.com/saludos-y-despedidas-aprende-espanol-learn-spanish"),
+    ]),
+]
+
+
+BRONNEN[("C6+", 1)] = [
+    ("§1 · Los verbos reflexivos y la rutina", [
+        ("Arche-ELE", "Pronombres reflexivos · nivel A1 — la posición del pronombre",
+         "https://arche-ele.com/pronombres-reflexivos-1-nivel-a1"),
+        ("Arche-ELE", "La rutina — reflexieve werkwoorden in context",
+         "https://arche-ele.com/la-rutina-daily-routine-aprende-espanol-learn-spanish"),
+        ("ProfeDeELE", "Acciones habituales — dagelijkse handelingen",
+         "https://www.profedeele.es/actividad/acciones-habituales/"),
+    ]),
+    ("§2 · El verbo gustar", [
+        ("Arche-ELE", "Me gusta · gustar — me · te · le · nos · les",
+         "https://arche-ele.com/me-gusta-gustar-verbos-aprende-espanol"),
+        ("ProfeDeELE", "Me gustas tú — gusta tegenover gustan",
+         "https://www.profedeele.es/actividad/me-gustas-tu/"),
+        ("ProfeDeELE", "Gustos y preferencias — me gusta / no me gusta (download)",
+         "https://mas.profedeele.es/descarga-062"),
+    ]),
+    ("§3 · ¿ser o estar?", [
+        ("Arche-ELE", "Ser y estar — het verschil, cognitief uitgelegd",
+         "https://arche-ele.com/ser-y-estar-gramatica-cognitiva-ele-diferencia"),
+        ("My Daily Spanish", "Ser of estar? (video)",
+         "https://www.youtube.com/watch?v=X-7k7R3Ca9U"),
+        ("ProfeDeELE", "Haber · estar · tener — plaats en toestand",
+         "https://www.profedeele.es/actividad/haber-estar-tener/"),
+    ]),
+    ("§4 · La hora", [
+        ("ProfeDeELE", "La hora — es la una · son las… · y cuarto · y media · menos cuarto",
+         "https://www.profedeele.es/actividad/la-hora/"),
+        ("Arche-ELE", "La hora — ¿qué hora es? · ¿tienes hora?",
+         "https://arche-ele.com/la-hora-time-que-hora-es-tienes-hora-ele"),
+    ]),
+    ("Las comidas y la alimentación", [
+        ("Arche-ELE", "La comida — woordenschat",
+         "https://arche-ele.com/la-comida-vocabulario-aprende-espanol-ele"),
+    ]),
+]
+
+
 BRONNEN[("C6+", 0)] = [
     ("§2.1 · El presente — los verbos regulares (-ar · -er · -ir)", [
         ("ProfeDeELE", "Presente regular",
