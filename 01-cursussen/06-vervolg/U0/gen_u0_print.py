@@ -385,6 +385,11 @@ def menu(titel, secs):
     return "".join(out)
 
 # ================= BODY =================
+import sys as _sys
+_sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
+import print_bloques as PB
+import nat_data as ND, lectura_data as LD, escucha_data as ED
+
 BODY = []
 def P(*x): BODY.extend(x)
 _AN=[0]
@@ -875,6 +880,29 @@ P(actx(AN(), "Completa con el conector correcto",
   '3. Nina es tranquila, <span class="wl sm"></span> Diego es hablador. &nbsp; 4. Tengo un hermano <span class="wl sm"></span> una hermana.</p>', apoyo="BANCO"))
 P('</div>')  # page Taller
 
+# ===== ronde 1 · toegevoegde blokken =====
+# Alleen toegevoegd: bestaande secties en nummering blijven staan, deze krijgen
+# een eigen nummer erachter. Inhoud uit dezelfde bron als de hub.
+P('<div class="page"><div class="parada sec">')
+P('<span class="num">4.3</span><span class="pk">§4.3 · Países y nacionalidades — la serie completa</span>')
+P('<div class="intro"><b>ES:</b> Ya sabes emparejar. Ahora <b>escribe</b> la nacionalidad, sin mirar. <span class="gloss">Koppelen kun je al. Nu schrijf je de nationaliteit zelf — dat is een trede hoger dan herkennen.</span></div>')
+P(PB.nat_print(ND.C6P_U0_NAC_TYPE, AN(),
+  opgave_tekst="Escribe la nacionalidad (forma masculina) de cada país.",
+  klasse="wl md", per_rij=2))
+P('</div>')
+
+P('<div class="page"><div class="parada sec">')
+P('<span class="num">5.2</span><span class="pk">§5.2 · Lectura — «El tablón de anuncios»</span>')
+P('<div class="intro"><b>ES:</b> Tres avisos de verdad, del pasillo. <b>No hace falta entenderlo todo</b> para sacar la información. <span class="gloss">Drie echte prikbordberichtjes. Je hoeft niet alles te begrijpen om de informatie te vinden.</span></div>')
+P(PB.lectura_print(LD.C6P_U0, AN()))
+P('</div>')
+
+P('<div class="page"><div class="parada sec">')
+P('<span class="num">6</span><span class="pk">§6 · Escucha — «El primer día de curso»</span>')
+P('<div class="intro"><b>ES:</b> Diego y Valen se reencuentran en el patio. <b>Escucha primero, escribe después.</b> <span class="gloss">Diego en Valen zien elkaar terug op de speelplaats. Eerst luisteren, dan schrijven; het transcript staat online en gaat pas open ná de taken.</span></div>')
+P(PB.escucha_print(ED.C6P_U0, AN()))
+P('</div>')
+
 # ================= CULTURA =================
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">C</span><span class="pk">Cultura · el mundo hispano</span>')
@@ -1044,7 +1072,7 @@ EDITBAR = '''
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Español en la práctica · C6+ U0 ¡Volvemos!</title><style>'
-        + CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
+        + CSS + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/U0.html"
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, "·", len(HTML), "bytes")

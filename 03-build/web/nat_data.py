@@ -132,6 +132,9 @@ C6P_U0_NAC = {
 C6P_U0_NAC_TYPE = {
     "id": "c6p-u0-nationalities-20-type",
     "ancla": "c6p-u0-nationalities-20-type",
+    # De getypte versie oefent dezelfde twintig als de koppelversie en deelt dus
+    # het QR-balkje; er is maar één externe oefenpagina voor dit onderwerp.
+    "qr_id": "c6p-u0-nationalities-20",
     "titulo": "Países y nacionalidades — escríbelas",
     "instruccion_nl": "Typ de mannelijke vorm van de nationaliteit.",
     "aantal": 20,
