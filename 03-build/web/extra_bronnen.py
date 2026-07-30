@@ -24,6 +24,24 @@ SITES = {
 
 BRONNEN = {}
 
+# Eén uitgelicht geheel per unit: materiaal dat de héle unidad bestrijkt en dus
+# niet onder één onderwerp thuishoort. Het staat bovenaan, vóór de themalijsten.
+DESTACADO = {
+    ("C5", 0): {
+        "kicker": "Repaso de toda la unidad",
+        "titel": "El museo de las palabras perdidas",
+        "soort": "Escape room",
+        "url": "https://museo-palabras-perdidas.wim-wuyts1979.chatgpt.site/",
+        "es": "Un museo ha perdido sus palabras. Solo sales si superas las pruebas: "
+              "los sonidos, la tilde, los números, el género y los saludos.",
+        "nl": "Een museum is zijn woorden kwijt. Je raakt er alleen uit door de proeven te "
+              "doorstaan: de klanken, de tilde, de getallen, het geslacht en de saludos. "
+              "Álle leerstof van deze unidad in één spel.",
+        "tip": "Doe hem als afsluiting, nadat je de oefeningen hierboven hebt gemaakt — "
+               "of samen met een klasgenoot, om beurten.",
+    },
+}
+
 BRONNEN[("C5", 0)] = [
     ("§1 · Klanksysteem — letters, klanken en uitspraak", [
         ("ProfeDeELE", "Letras y sonidos del español",
@@ -143,6 +161,21 @@ def html(course, unit):
            '<b>ProfeDeELE</b>, <b>Arche-ELE</b> en <b>My Daily Spanish</b> behandelen precies de '
            'onderwerpen van deze unidad. <span class="gloss">%d bronnen, geordend zoals de unit '
            'zelf. Ze openen in een nieuw tabblad.</span></p>' % n]
+
+    d = DESTACADO.get((course, unit))
+    if d:
+        uit.append(
+            '<a class="destacado" href="%s" target="_blank" rel="noopener">'
+            '<span class="dest-ico" aria-hidden="true">🗝️</span>'
+            '<span class="dest-tekst">'
+            '<span class="dest-kicker">%s</span>'
+            '<span class="dest-titel">%s</span>'
+            '<span class="dest-es">%s</span>'
+            '<span class="dest-nl">%s</span>'
+            '<span class="dest-tip">💡 %s</span></span>'
+            '<span class="dest-badge">%s</span></a>'
+            % (_esc(d["url"]), _esc(d["kicker"]), _esc(d["titel"]), _esc(d["es"]),
+               _esc(d["nl"]), _esc(d["tip"]), _esc(d["soort"])))
     for titel, items in groepen:
         uit.append('<div class="card brongroep"><h3>%s</h3><ul class="bronlijst">' % _esc(titel))
         for bron, naam, url in items:
@@ -160,6 +193,23 @@ def html(course, unit):
 
 
 CSS = r"""
+/* Uitgelicht materiaal dat de hele unidad bestrijkt — mag opvallen, maar blijft
+   binnen de cursuskleur; geen tweede accentkleur erbij. */
+.destacado{display:flex;gap:16px;align-items:flex-start;text-decoration:none;color:var(--ink);
+  background:linear-gradient(135deg,var(--gt),var(--card));border:2px solid var(--g);
+  border-radius:16px;padding:18px 20px;margin:0 0 18px;position:relative}
+.destacado:hover,.destacado:focus-visible{border-color:var(--gd);box-shadow:0 4px 18px rgba(0,0,0,.08)}
+.destacado:focus-visible{outline:3px solid var(--gd);outline-offset:3px}
+.dest-ico{font-size:34px;line-height:1;flex:none}
+.dest-tekst{display:flex;flex-direction:column;gap:4px;min-width:0}
+.dest-kicker{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--gd)}
+.dest-titel{font-family:var(--disp);font-size:21px;font-weight:800;color:var(--gd);line-height:1.15}
+.dest-es{font-style:italic;font-size:14px}
+.dest-nl{font-size:13px;color:var(--mut)}
+.dest-tip{font-family:var(--hand,var(--body));font-size:13px;color:var(--gd);margin-top:4px}
+.dest-badge{position:absolute;top:-11px;right:16px;background:var(--g);color:#fff;font-size:11px;
+  font-weight:800;letter-spacing:.05em;padding:4px 12px;border-radius:999px;white-space:nowrap}
+@media(max-width:520px){.destacado{flex-direction:column;gap:10px}.dest-badge{right:12px}}
 .brongroep h3{font-family:var(--disp);color:var(--gd);margin:0 0 10px;font-size:16px}
 .bronlijst{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
 .bronlijst li{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:7px 9px;border-radius:9px}
