@@ -1,0 +1,545 @@
+{
+  "id": "es-u0-que-palabra",
+  "title": "¿Qué palabra?",
+  "subtitle": "C5 · U0 · van thema naar woord (ophalen zonder zin)",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C5",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "ortografia → «de letter»",
+        "answers": [
+          "la letra",
+          "letra"
+        ],
+        "hint": "l____",
+        "tag": "ortografia",
+        "sub": "sust. f."
+      },
+      {
+        "stimulus": "ortografia → «spellen»",
+        "answers": [
+          "deletrear"
+        ],
+        "hint": "d________",
+        "tag": "ortografia",
+        "sub": "verbo"
+      },
+      {
+        "stimulus": "ortografia → «de klinker»",
+        "answers": [
+          "la vocal",
+          "vocal"
+        ],
+        "hint": "v____",
+        "tag": "ortografia",
+        "sub": "sust. f."
+      },
+      {
+        "stimulus": "ortografia → «de medeklinker»",
+        "answers": [
+          "la consonante",
+          "consonante"
+        ],
+        "hint": "c_________",
+        "tag": "ortografia",
+        "sub": "sust. f."
+      },
+      {
+        "stimulus": "ortografia → «de lettergreep»",
+        "answers": [
+          "la sílaba",
+          "sílaba"
+        ],
+        "hint": "s_____",
+        "tag": "ortografia",
+        "sub": "sust. f."
+      },
+      {
+        "stimulus": "ortografia → «de klemtoonlettergreep»",
+        "answers": [
+          "la sílaba tónica",
+          "sílaba tónica"
+        ],
+        "hint": "s_____ t_____",
+        "tag": "ortografia",
+        "sub": "loc. nom. f."
+      },
+      {
+        "stimulus": "ortografia → «het hoedje (= de tilde)»",
+        "answers": [
+          "el sombrero metáfora de clase",
+          "sombrero metáfora de clase",
+          "el sombrero",
+          "sombrero"
+        ],
+        "hint": "s_______",
+        "tag": "ortografia",
+        "sub": "sust. m."
+      },
+      {
+        "stimulus": "ortografia → «klemtoon op de laatste»",
+        "answers": [
+          "aguda"
+        ],
+        "hint": "a____",
+        "tag": "ortografia",
+        "sub": "adj."
+      },
+      {
+        "stimulus": "ortografia → «klemtoon op de voorlaatste»",
+        "answers": [
+          "llana"
+        ],
+        "hint": "l____",
+        "tag": "ortografia",
+        "sub": "adj."
+      },
+      {
+        "stimulus": "ortografia → «klemtoon op de derde van achter»",
+        "answers": [
+          "esdrújula"
+        ],
+        "hint": "e________",
+        "tag": "ortografia",
+        "sub": "adj."
+      },
+      {
+        "stimulus": "ortografia → «het eenlettergrepige woord»",
+        "answers": [
+          "el monosílabo",
+          "monosílabo"
+        ],
+        "hint": "m_________",
+        "tag": "ortografia",
+        "sub": "sust. m."
+      },
+      {
+        "stimulus": "ortografia → «de hoofdletter»",
+        "answers": [
+          "la mayúscula",
+          "mayúscula"
+        ],
+        "hint": "m________",
+        "tag": "ortografia",
+        "sub": "sust. f."
+      },
+      {
+        "stimulus": "ortografia → «de kleine letter»",
+        "answers": [
+          "la minúscula",
+          "minúscula"
+        ],
+        "hint": "m________",
+        "tag": "ortografia",
+        "sub": "sust. f."
+      },
+      {
+        "stimulus": "ortografia → «het deelteken (op ü)»",
+        "answers": [
+          "la diéresis ¨",
+          "diéresis ¨",
+          "la diéresis",
+          "diéresis"
+        ],
+        "hint": "d_______",
+        "tag": "ortografia",
+        "sub": "sust. f."
+      },
+      {
+        "stimulus": "ortografia → «de klankcombinatie / digraaf»",
+        "answers": [
+          "el dígrafo ch, ll",
+          "dígrafo ch, ll",
+          "el dígrafo",
+          "dígrafo"
+        ],
+        "hint": "d______",
+        "tag": "ortografia",
+        "sub": "sust. m."
+      },
+      {
+        "stimulus": "ortografia → «het apenstaartje»",
+        "answers": [
+          "la arroba @",
+          "arroba @",
+          "la arroba",
+          "arroba"
+        ],
+        "hint": "a_____",
+        "tag": "ortografia",
+        "sub": "sust. f."
+      },
+      {
+        "stimulus": "ortografia → «het koppelteken»",
+        "answers": [
+          "el guion -",
+          "guion -",
+          "el guion",
+          "guion"
+        ],
+        "hint": "g____",
+        "tag": "ortografia",
+        "sub": "sust. m."
+      },
+      {
+        "stimulus": "numeros → «11 once»",
+        "answers": [
+          "10 diez"
+        ],
+        "hint": "1_ d___",
+        "tag": "numeros",
+        "sub": "12 doce"
+      },
+      {
+        "stimulus": "numeros → «21 veintiuno»",
+        "answers": [
+          "20 veinte"
+        ],
+        "hint": "2_ v_____",
+        "tag": "numeros",
+        "sub": "22 veintidós"
+      },
+      {
+        "stimulus": "numeros → «40 cuarenta»",
+        "answers": [
+          "30 treinta"
+        ],
+        "hint": "3_ t______",
+        "tag": "numeros",
+        "sub": "50 cincuenta"
+      },
+      {
+        "stimulus": "numeros → «het getal / nummer»",
+        "answers": [
+          "el número",
+          "número"
+        ],
+        "hint": "n_____",
+        "tag": "numeros",
+        "sub": "sust. m."
+      },
+      {
+        "stimulus": "numeros → «tellen»",
+        "answers": [
+          "contar"
+        ],
+        "hint": "c_____",
+        "tag": "numeros",
+        "sub": "verbo · 0 → 100"
+      },
+      {
+        "stimulus": "numeros → «nul»",
+        "answers": [
+          "cero"
+        ],
+        "hint": "c___",
+        "tag": "numeros",
+        "sub": "núm."
+      },
+      {
+        "stimulus": "numeros → «honderd»",
+        "answers": [
+          "cien"
+        ],
+        "hint": "c___",
+        "tag": "numeros",
+        "sub": "núm."
+      },
+      {
+        "stimulus": "numeros → «vijfendertig»",
+        "answers": [
+          "treinta y cinco"
+        ],
+        "hint": "t______ y c____",
+        "tag": "numeros",
+        "sub": "núm."
+      },
+      {
+        "stimulus": "edad → «de leeftijd»",
+        "answers": [
+          "la edad",
+          "edad"
+        ],
+        "hint": "e___",
+        "tag": "edad",
+        "sub": "sust. f."
+      },
+      {
+        "stimulus": "edad → «… jaar zijn (lett. hebben)»",
+        "answers": [
+          "tener … años"
+        ],
+        "hint": "t____ … a___",
+        "tag": "edad",
+        "sub": "estructura"
+      },
+      {
+        "stimulus": "edad → «Hoe oud ben je?»",
+        "answers": [
+          "¿Cuántos años tienes?"
+        ],
+        "hint": "¿_______ a___ t______",
+        "tag": "edad",
+        "sub": "expr. interr."
+      },
+      {
+        "stimulus": "saludos → «Hallo!»",
+        "answers": [
+          "¡Hola!"
+        ],
+        "hint": "¡_____",
+        "tag": "saludos",
+        "sub": "interj."
+      },
+      {
+        "stimulus": "saludos → «Goedemorgen»",
+        "answers": [
+          "Buenos días"
+        ],
+        "hint": "B_____ d___",
+        "tag": "saludos",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "saludos → «Goeiemiddag»",
+        "answers": [
+          "Buenas tardes"
+        ],
+        "hint": "B_____ t_____",
+        "tag": "saludos",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "saludos → «Goedenavond / -nacht»",
+        "answers": [
+          "Buenas noches"
+        ],
+        "hint": "B_____ n_____",
+        "tag": "saludos",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "saludos → «Hoe gaat het?»",
+        "answers": [
+          "¿Qué tal?"
+        ],
+        "hint": "¿___ t___",
+        "tag": "saludos",
+        "sub": "expr. interr."
+      },
+      {
+        "stimulus": "saludos → «Hoe gaat het (met je)?»",
+        "answers": [
+          "¿Cómo estás?"
+        ],
+        "hint": "¿____ e_____",
+        "tag": "saludos",
+        "sub": "expr. interr."
+      },
+      {
+        "stimulus": "saludos → «Dag / Tot ziens»",
+        "answers": [
+          "Adiós"
+        ],
+        "hint": "A____",
+        "tag": "saludos",
+        "sub": "interj."
+      },
+      {
+        "stimulus": "saludos → «Tot straks»",
+        "answers": [
+          "Hasta luego"
+        ],
+        "hint": "H____ l____",
+        "tag": "saludos",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "saludos → «Tot morgen»",
+        "answers": [
+          "Hasta mañana"
+        ],
+        "hint": "H____ m_____",
+        "tag": "saludos",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "saludos → «Doei»",
+        "answers": [
+          "Chao informal",
+          "Chao"
+        ],
+        "hint": "C___",
+        "tag": "saludos",
+        "sub": "interj."
+      },
+      {
+        "stimulus": "presentarse → «Ik heet …»",
+        "answers": [
+          "Me llamo …"
+        ],
+        "hint": "M_ l____ …",
+        "tag": "presentarse",
+        "sub": "estructura"
+      },
+      {
+        "stimulus": "presentarse → «Ik ben …»",
+        "answers": [
+          "Soy …"
+        ],
+        "hint": "S__ …",
+        "tag": "presentarse",
+        "sub": "verbo"
+      },
+      {
+        "stimulus": "presentarse → «Hoe heet jij?»",
+        "answers": [
+          "¿Cómo te llamas?"
+        ],
+        "hint": "¿____ t_ l______",
+        "tag": "presentarse",
+        "sub": "expr. interr."
+      },
+      {
+        "stimulus": "presentarse → «En jij?»",
+        "answers": [
+          "¿Y tú?"
+        ],
+        "hint": "¿_ t__",
+        "tag": "presentarse",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "presentarse → «Ik kom uit …»",
+        "answers": [
+          "Soy de …"
+        ],
+        "hint": "S__ d_ …",
+        "tag": "presentarse",
+        "sub": "estructura"
+      },
+      {
+        "stimulus": "clase → «(Heel erg) bedankt»",
+        "answers": [
+          "gracias Muchas",
+          "gracias"
+        ],
+        "hint": "g______",
+        "tag": "clase",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "clase → «Alsjeblieft / a.u.b.»",
+        "answers": [
+          "Por favor"
+        ],
+        "hint": "P__ f____",
+        "tag": "clase",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "clase → «Wat betekent «…»?»",
+        "answers": [
+          "¿Qué significa «…»?"
+        ],
+        "hint": "¿___ s________ «___",
+        "tag": "clase",
+        "sub": "expr. 🟡"
+      },
+      {
+        "stimulus": "clase → «Ik begrijp het niet»",
+        "answers": [
+          "No entiendo"
+        ],
+        "hint": "N_ e_______",
+        "tag": "clase",
+        "sub": "expr. 🟡"
+      },
+      {
+        "stimulus": "clase → «Ik weet het niet»",
+        "answers": [
+          "No sé"
+        ],
+        "hint": "N_ s_",
+        "tag": "clase",
+        "sub": "expr. 🟡"
+      },
+      {
+        "stimulus": "clase → «Hoe schrijf je dat?»",
+        "answers": [
+          "¿Cómo se escribe?"
+        ],
+        "hint": "¿____ s_ e_______",
+        "tag": "clase",
+        "sub": "expr. 🟡"
+      },
+      {
+        "stimulus": "clase → «Ik heb een vraag»",
+        "answers": [
+          "Tengo una pregunta"
+        ],
+        "hint": "T____ u__ p_______",
+        "tag": "clase",
+        "sub": "expr. 🟡"
+      },
+      {
+        "stimulus": "mundo hispano → «de Spaanstalige wereld»",
+        "answers": [
+          "el mundo hispano",
+          "mundo hispano"
+        ],
+        "hint": "m____ h______",
+        "tag": "mundo hispano",
+        "sub": "loc. nom. m."
+      },
+      {
+        "stimulus": "mundo hispano → «het land»",
+        "answers": [
+          "el país",
+          "país"
+        ],
+        "hint": "p___",
+        "tag": "mundo hispano",
+        "sub": "sust. m."
+      },
+      {
+        "stimulus": "mundo hispano → «Spaanstalig(e)»",
+        "answers": [
+          "hispanohablante"
+        ],
+        "hint": "h______________",
+        "tag": "mundo hispano",
+        "sub": "adj./sust."
+      },
+      {
+        "stimulus": "mundo hispano → «het cognaat / transparant woord»",
+        "answers": [
+          "el cognado palabra transparente",
+          "cognado palabra transparente",
+          "el cognado",
+          "cognado"
+        ],
+        "hint": "c______",
+        "tag": "mundo hispano",
+        "sub": "sust. m. 🟡"
+      },
+      {
+        "stimulus": "paises → «België → Belg(isch)»",
+        "answers": [
+          "Bélgica → belga"
+        ],
+        "hint": "B______ → b____",
+        "tag": "paises",
+        "sub": "topón./gent."
+      }
+    ]
+  }
+}

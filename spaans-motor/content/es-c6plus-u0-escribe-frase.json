@@ -1,0 +1,486 @@
+{
+  "id": "es-c6plus-u0-escribe-frase",
+  "title": "Escribe una frase",
+  "subtitle": "C6+ · U0 · vrije productie · structuurcheck + modeloplossing",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 8,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "open",
+    "items": [
+      {
+        "stimulus": "Escribe una frase con «hola»",
+        "must": [
+          "hola"
+        ],
+        "model": "¡Hola! ¿Qué tal?",
+        "tag": "saludos",
+        "sub": "hallo"
+      },
+      {
+        "stimulus": "Escribe una frase con «buenos días»",
+        "must": [
+          "buenos días"
+        ],
+        "model": "Buenos días, profe.",
+        "tag": "saludos",
+        "sub": "goedemorgen"
+      },
+      {
+        "stimulus": "Escribe una frase con «buenas tardes»",
+        "must": [
+          "buenas tardes"
+        ],
+        "model": "Buenas tardes a todos.",
+        "tag": "saludos",
+        "sub": "goedemiddag"
+      },
+      {
+        "stimulus": "Escribe una frase con «buenas noches»",
+        "must": [
+          "buenas noches"
+        ],
+        "model": "Buenas noches, hasta mañana.",
+        "tag": "saludos",
+        "sub": "goedenavond / goedenacht"
+      },
+      {
+        "stimulus": "Escribe una frase con «¿qué tal?»",
+        "must": [
+          "¿qué tal?"
+        ],
+        "model": "Hola Nina, ¿qué tal?",
+        "tag": "saludos",
+        "sub": "hoe gaat het?"
+      },
+      {
+        "stimulus": "Escribe una frase con «¿cómo estás?»",
+        "must": [
+          "¿cómo estás?"
+        ],
+        "model": "¿Cómo estás hoy?",
+        "tag": "saludos",
+        "sub": "hoe gaat het met je?"
+      },
+      {
+        "stimulus": "Escribe una frase con «adiós»",
+        "must": [
+          "adiós"
+        ],
+        "model": "Adiós, ¡hasta luego!",
+        "tag": "saludos",
+        "sub": "dag / tot ziens"
+      },
+      {
+        "stimulus": "Escribe una frase con «hasta luego»",
+        "must": [
+          "hasta luego"
+        ],
+        "model": "Me voy, hasta luego.",
+        "tag": "saludos",
+        "sub": "tot straks"
+      },
+      {
+        "stimulus": "Escribe una frase con «me llamo…»",
+        "must": [
+          "me llamo…"
+        ],
+        "model": "Me llamo Diego.",
+        "tag": "presentarse",
+        "sub": "ik heet…"
+      },
+      {
+        "stimulus": "Escribe una frase con «¿cómo te llamas?»",
+        "must": [
+          "¿cómo te llamas?"
+        ],
+        "model": "¿Cómo te llamas?",
+        "tag": "presentarse",
+        "sub": "hoe heet je?"
+      },
+      {
+        "stimulus": "Escribe una frase con «tengo … años»",
+        "must": [
+          "tengo … años"
+        ],
+        "model": "Tengo dieciséis años.",
+        "tag": "presentarse",
+        "sub": "ik ben … jaar"
+      },
+      {
+        "stimulus": "Escribe una frase con «¿cuántos años tienes?»",
+        "must": [
+          "¿cuántos años tienes?"
+        ],
+        "model": "¿Cuántos años tienes?",
+        "tag": "presentarse",
+        "sub": "hoe oud ben je?"
+      },
+      {
+        "stimulus": "Escribe una frase con «vivo en…»",
+        "must": [
+          "vivo en…"
+        ],
+        "model": "Vivo en Gante.",
+        "tag": "presentarse",
+        "sub": "ik woon in…"
+      },
+      {
+        "stimulus": "Escribe una frase con «soy de…»",
+        "must": [
+          "soy de…"
+        ],
+        "model": "Soy de Bélgica.",
+        "tag": "presentarse",
+        "sub": "ik kom uit…"
+      },
+      {
+        "stimulus": "Escribe una frase con «¿de dónde eres?»",
+        "must": [
+          "¿de dónde eres?"
+        ],
+        "model": "¿De dónde eres?",
+        "tag": "presentarse",
+        "sub": "waar kom je vandaan?"
+      },
+      {
+        "stimulus": "Escribe una frase con «mucho gusto»",
+        "must": [
+          "mucho gusto"
+        ],
+        "model": "—Soy Mateo. —Mucho gusto.",
+        "tag": "presentarse",
+        "sub": "aangenaam kennis te maken"
+      },
+      {
+        "stimulus": "Escribe una frase con «¿cómo se dice…?»",
+        "must": [
+          "¿cómo se dice…?"
+        ],
+        "model": "¿Cómo se dice 'boekentas'?",
+        "tag": "clase",
+        "sub": "hoe zeg je…?"
+      },
+      {
+        "stimulus": "Escribe una frase con «¿qué significa…?»",
+        "must": [
+          "¿qué significa…?"
+        ],
+        "model": "¿Qué significa 'mochila'?",
+        "tag": "clase",
+        "sub": "wat betekent…?"
+      },
+      {
+        "stimulus": "Escribe una frase con «no entiendo»",
+        "must": [
+          "no entiendo"
+        ],
+        "model": "Perdón, no entiendo.",
+        "tag": "clase",
+        "sub": "ik begrijp het niet"
+      },
+      {
+        "stimulus": "Escribe una frase con «¿puedes repetir?»",
+        "must": [
+          "¿puedes repetir?"
+        ],
+        "model": "¿Puedes repetir, por favor?",
+        "tag": "clase",
+        "sub": "kun je herhalen?"
+      },
+      {
+        "stimulus": "Escribe una frase con «más despacio»",
+        "must": [
+          "más despacio"
+        ],
+        "model": "Más despacio, por favor.",
+        "tag": "clase",
+        "sub": "trager"
+      },
+      {
+        "stimulus": "Escribe una frase con «por favor»",
+        "must": [
+          "por favor"
+        ],
+        "model": "Una pregunta, por favor.",
+        "tag": "clase",
+        "sub": "alsjeblieft"
+      },
+      {
+        "stimulus": "Escribe una frase con «gracias»",
+        "must": [
+          "gracias"
+        ],
+        "model": "Muchas gracias, profe.",
+        "tag": "clase",
+        "sub": "dank je"
+      },
+      {
+        "stimulus": "Escribe una frase con «tengo una pregunta»",
+        "must": [
+          "tengo una pregunta"
+        ],
+        "model": "Profe, tengo una pregunta.",
+        "tag": "clase",
+        "sub": "ik heb een vraag"
+      },
+      {
+        "stimulus": "Escribe una frase con «España»",
+        "must": [
+          "España"
+        ],
+        "model": "Lucía es de España.",
+        "tag": "paises",
+        "sub": "Spanje"
+      },
+      {
+        "stimulus": "Escribe una frase con «México»",
+        "must": [
+          "México"
+        ],
+        "model": "Diego vive en México.",
+        "tag": "paises",
+        "sub": "Mexico"
+      },
+      {
+        "stimulus": "Escribe una frase con «Colombia»",
+        "must": [
+          "Colombia"
+        ],
+        "model": "Valen es de Colombia.",
+        "tag": "paises",
+        "sub": "Colombia"
+      },
+      {
+        "stimulus": "Escribe una frase con «Perú»",
+        "must": [
+          "Perú"
+        ],
+        "model": "Nina vive en Perú.",
+        "tag": "paises",
+        "sub": "Peru"
+      },
+      {
+        "stimulus": "Escribe una frase con «Argentina»",
+        "must": [
+          "Argentina"
+        ],
+        "model": "Mateo es de Argentina.",
+        "tag": "paises",
+        "sub": "Argentinië"
+      },
+      {
+        "stimulus": "Escribe una frase con «Bélgica»",
+        "must": [
+          "Bélgica"
+        ],
+        "model": "Yo soy de Bélgica.",
+        "tag": "paises",
+        "sub": "België"
+      },
+      {
+        "stimulus": "Escribe una frase con «Chile»",
+        "must": [
+          "Chile"
+        ],
+        "model": "Chile está en Sudamérica.",
+        "tag": "paises",
+        "sub": "Chili"
+      },
+      {
+        "stimulus": "Escribe una frase con «el mundo hispano»",
+        "must": [
+          "mundo hispano"
+        ],
+        "model": "El mundo hispano tiene 21 países.",
+        "tag": "paises",
+        "sub": "de Spaanstalige wereld"
+      },
+      {
+        "stimulus": "Escribe una frase con «belga»",
+        "must": [
+          "belga"
+        ],
+        "model": "Yo soy belga.",
+        "tag": "nacionalidades",
+        "sub": "Belgisch"
+      },
+      {
+        "stimulus": "Escribe una frase con «la nacionalidad»",
+        "must": [
+          "nacionalidad"
+        ],
+        "model": "¿Cuál es tu nacionalidad?",
+        "tag": "nacionalidades",
+        "sub": "de nationaliteit"
+      },
+      {
+        "stimulus": "Escribe una frase con «hablar»",
+        "must": [
+          "hablar"
+        ],
+        "model": "Hablo español y neerlandés.",
+        "tag": "nacionalidades",
+        "sub": "spreken"
+      },
+      {
+        "stimulus": "Escribe una frase con «el neerlandés»",
+        "must": [
+          "neerlandés"
+        ],
+        "model": "En Flandes hablamos neerlandés.",
+        "tag": "nacionalidades",
+        "sub": "het Nederlands"
+      },
+      {
+        "stimulus": "Escribe una frase con «¿cómo eres?»",
+        "must": [
+          "¿cómo eres?"
+        ],
+        "model": "¿Cómo eres? —Soy alegre.",
+        "tag": "descripcion",
+        "sub": "hoe ben je? (karakter/uiterlijk)"
+      },
+      {
+        "stimulus": "Escribe una frase con «alegre»",
+        "must": [
+          "alegre"
+        ],
+        "model": "Valen es muy alegre.",
+        "tag": "descripcion",
+        "sub": "vrolijk"
+      },
+      {
+        "stimulus": "Escribe una frase con «la familia»",
+        "must": [
+          "familia"
+        ],
+        "model": "Mi familia es pequeña.",
+        "tag": "familia",
+        "sub": "het gezin / de familie"
+      },
+      {
+        "stimulus": "Escribe una frase con «tener»",
+        "must": [
+          "tener"
+        ],
+        "model": "Tengo dos hermanas.",
+        "tag": "familia",
+        "sub": "hebben"
+      },
+      {
+        "stimulus": "Escribe una frase con «los números»",
+        "must": [
+          "números"
+        ],
+        "model": "Repasamos los números.",
+        "tag": "numeros",
+        "sub": "de getallen"
+      },
+      {
+        "stimulus": "Escribe una frase con «veinte»",
+        "must": [
+          "veinte"
+        ],
+        "model": "Tengo veinte euros.",
+        "tag": "numeros",
+        "sub": "twintig"
+      },
+      {
+        "stimulus": "Escribe una frase con «cincuenta»",
+        "must": [
+          "cincuenta"
+        ],
+        "model": "Cincuenta más cincuenta es cien.",
+        "tag": "numeros",
+        "sub": "vijftig"
+      },
+      {
+        "stimulus": "Escribe una frase con «cien»",
+        "must": [
+          "cien"
+        ],
+        "model": "Cien por cien.",
+        "tag": "numeros",
+        "sub": "honderd"
+      },
+      {
+        "stimulus": "Escribe una frase con «ser»",
+        "must": [
+          "ser"
+        ],
+        "model": "Soy de Bélgica.",
+        "tag": "verbos",
+        "sub": "zijn (permanent)"
+      },
+      {
+        "stimulus": "Escribe una frase con «estar»",
+        "must": [
+          "estar"
+        ],
+        "model": "Estoy en clase.",
+        "tag": "verbos",
+        "sub": "zijn (plaats/gevoel)"
+      },
+      {
+        "stimulus": "Escribe una frase con «hacer»",
+        "must": [
+          "hacer"
+        ],
+        "model": "Hago mis deberes.",
+        "tag": "verbos",
+        "sub": "doen / maken"
+      },
+      {
+        "stimulus": "Escribe una frase con «ir»",
+        "must": [
+          "ir"
+        ],
+        "model": "Voy al instituto.",
+        "tag": "verbos",
+        "sub": "gaan"
+      },
+      {
+        "stimulus": "Escribe una frase con «venir»",
+        "must": [
+          "venir"
+        ],
+        "model": "Vengo de casa.",
+        "tag": "verbos",
+        "sub": "komen"
+      },
+      {
+        "stimulus": "Escribe una frase con «dar»",
+        "must": [
+          "dar"
+        ],
+        "model": "Doy las gracias.",
+        "tag": "verbos",
+        "sub": "geven"
+      },
+      {
+        "stimulus": "Escribe una frase con «vivir»",
+        "must": [
+          "vivir"
+        ],
+        "model": "Vivo en Flandes.",
+        "tag": "verbos",
+        "sub": "wonen / leven"
+      },
+      {
+        "stimulus": "Escribe una frase con «llamarse»",
+        "must": [
+          "llamarse"
+        ],
+        "model": "Me llamo Ana.",
+        "tag": "verbos",
+        "sub": "heten"
+      }
+    ]
+  }
+}

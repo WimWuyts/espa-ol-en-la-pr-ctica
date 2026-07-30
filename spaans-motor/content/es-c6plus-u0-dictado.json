@@ -1,0 +1,447 @@
+{
+  "id": "es-c6plus-u0-dictado",
+  "title": "Dictado",
+  "subtitle": "C6+ · U0 · luister en typ · lees eerst, dan afdekken",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "🔊 hola",
+        "answers": [
+          "hola"
+        ],
+        "tag": "saludos",
+        "sub": "hallo"
+      },
+      {
+        "stimulus": "🔊 buenos días",
+        "answers": [
+          "buenos días"
+        ],
+        "tag": "saludos",
+        "sub": "goedemorgen"
+      },
+      {
+        "stimulus": "🔊 buenas tardes",
+        "answers": [
+          "buenas tardes"
+        ],
+        "tag": "saludos",
+        "sub": "goedemiddag"
+      },
+      {
+        "stimulus": "🔊 buenas noches",
+        "answers": [
+          "buenas noches"
+        ],
+        "tag": "saludos",
+        "sub": "goedenavond / goedenacht"
+      },
+      {
+        "stimulus": "🔊 ¿qué tal?",
+        "answers": [
+          "¿qué tal?"
+        ],
+        "tag": "saludos",
+        "sub": "hoe gaat het?"
+      },
+      {
+        "stimulus": "🔊 ¿cómo estás?",
+        "answers": [
+          "¿cómo estás?"
+        ],
+        "tag": "saludos",
+        "sub": "hoe gaat het met je?"
+      },
+      {
+        "stimulus": "🔊 adiós",
+        "answers": [
+          "adiós"
+        ],
+        "tag": "saludos",
+        "sub": "dag / tot ziens"
+      },
+      {
+        "stimulus": "🔊 hasta luego",
+        "answers": [
+          "hasta luego"
+        ],
+        "tag": "saludos",
+        "sub": "tot straks"
+      },
+      {
+        "stimulus": "🔊 me llamo…",
+        "answers": [
+          "me llamo…"
+        ],
+        "tag": "presentarse",
+        "sub": "ik heet…"
+      },
+      {
+        "stimulus": "🔊 ¿cómo te llamas?",
+        "answers": [
+          "¿cómo te llamas?"
+        ],
+        "tag": "presentarse",
+        "sub": "hoe heet je?"
+      },
+      {
+        "stimulus": "🔊 soy…",
+        "answers": [
+          "soy…"
+        ],
+        "tag": "presentarse",
+        "sub": "ik ben…"
+      },
+      {
+        "stimulus": "🔊 tengo … años",
+        "answers": [
+          "tengo … años"
+        ],
+        "tag": "presentarse",
+        "sub": "ik ben … jaar"
+      },
+      {
+        "stimulus": "🔊 ¿cuántos años tienes?",
+        "answers": [
+          "¿cuántos años tienes?"
+        ],
+        "tag": "presentarse",
+        "sub": "hoe oud ben je?"
+      },
+      {
+        "stimulus": "🔊 vivo en…",
+        "answers": [
+          "vivo en…"
+        ],
+        "tag": "presentarse",
+        "sub": "ik woon in…"
+      },
+      {
+        "stimulus": "🔊 soy de…",
+        "answers": [
+          "soy de…"
+        ],
+        "tag": "presentarse",
+        "sub": "ik kom uit…"
+      },
+      {
+        "stimulus": "🔊 ¿de dónde eres?",
+        "answers": [
+          "¿de dónde eres?"
+        ],
+        "tag": "presentarse",
+        "sub": "waar kom je vandaan?"
+      },
+      {
+        "stimulus": "🔊 mucho gusto",
+        "answers": [
+          "mucho gusto"
+        ],
+        "tag": "presentarse",
+        "sub": "aangenaam kennis te maken"
+      },
+      {
+        "stimulus": "🔊 ¿cómo se dice…?",
+        "answers": [
+          "¿cómo se dice…?"
+        ],
+        "tag": "clase",
+        "sub": "hoe zeg je…?"
+      },
+      {
+        "stimulus": "🔊 ¿qué significa…?",
+        "answers": [
+          "¿qué significa…?"
+        ],
+        "tag": "clase",
+        "sub": "wat betekent…?"
+      },
+      {
+        "stimulus": "🔊 no entiendo",
+        "answers": [
+          "no entiendo"
+        ],
+        "tag": "clase",
+        "sub": "ik begrijp het niet"
+      },
+      {
+        "stimulus": "🔊 ¿puedes repetir?",
+        "answers": [
+          "¿puedes repetir?"
+        ],
+        "tag": "clase",
+        "sub": "kun je herhalen?"
+      },
+      {
+        "stimulus": "🔊 más despacio",
+        "answers": [
+          "más despacio"
+        ],
+        "tag": "clase",
+        "sub": "trager"
+      },
+      {
+        "stimulus": "🔊 por favor",
+        "answers": [
+          "por favor"
+        ],
+        "tag": "clase",
+        "sub": "alsjeblieft"
+      },
+      {
+        "stimulus": "🔊 gracias",
+        "answers": [
+          "gracias"
+        ],
+        "tag": "clase",
+        "sub": "dank je"
+      },
+      {
+        "stimulus": "🔊 tengo una pregunta",
+        "answers": [
+          "tengo una pregunta"
+        ],
+        "tag": "clase",
+        "sub": "ik heb een vraag"
+      },
+      {
+        "stimulus": "🔊 España",
+        "answers": [
+          "España"
+        ],
+        "tag": "paises",
+        "sub": "Spanje"
+      },
+      {
+        "stimulus": "🔊 México",
+        "answers": [
+          "México"
+        ],
+        "tag": "paises",
+        "sub": "Mexico"
+      },
+      {
+        "stimulus": "🔊 Colombia",
+        "answers": [
+          "Colombia"
+        ],
+        "tag": "paises",
+        "sub": "Colombia"
+      },
+      {
+        "stimulus": "🔊 Perú",
+        "answers": [
+          "Perú"
+        ],
+        "tag": "paises",
+        "sub": "Peru"
+      },
+      {
+        "stimulus": "🔊 Argentina",
+        "answers": [
+          "Argentina"
+        ],
+        "tag": "paises",
+        "sub": "Argentinië"
+      },
+      {
+        "stimulus": "🔊 Bélgica",
+        "answers": [
+          "Bélgica"
+        ],
+        "tag": "paises",
+        "sub": "België"
+      },
+      {
+        "stimulus": "🔊 Chile",
+        "answers": [
+          "Chile"
+        ],
+        "tag": "paises",
+        "sub": "Chili"
+      },
+      {
+        "stimulus": "🔊 el mundo hispano",
+        "answers": [
+          "el mundo hispano",
+          "mundo hispano"
+        ],
+        "tag": "paises",
+        "sub": "de Spaanstalige wereld"
+      },
+      {
+        "stimulus": "🔊 belga",
+        "answers": [
+          "belga"
+        ],
+        "tag": "nacionalidades",
+        "sub": "Belgisch"
+      },
+      {
+        "stimulus": "🔊 la nacionalidad",
+        "answers": [
+          "la nacionalidad",
+          "nacionalidad"
+        ],
+        "tag": "nacionalidades",
+        "sub": "de nationaliteit"
+      },
+      {
+        "stimulus": "🔊 hablar",
+        "answers": [
+          "hablar"
+        ],
+        "tag": "nacionalidades",
+        "sub": "spreken"
+      },
+      {
+        "stimulus": "🔊 el neerlandés",
+        "answers": [
+          "el neerlandés",
+          "neerlandés"
+        ],
+        "tag": "nacionalidades",
+        "sub": "het Nederlands"
+      },
+      {
+        "stimulus": "🔊 ¿cómo eres?",
+        "answers": [
+          "¿cómo eres?"
+        ],
+        "tag": "descripcion",
+        "sub": "hoe ben je? (karakter/uiterlijk)"
+      },
+      {
+        "stimulus": "🔊 alegre",
+        "answers": [
+          "alegre"
+        ],
+        "tag": "descripcion",
+        "sub": "vrolijk"
+      },
+      {
+        "stimulus": "🔊 la familia",
+        "answers": [
+          "la familia",
+          "familia"
+        ],
+        "tag": "familia",
+        "sub": "het gezin / de familie"
+      },
+      {
+        "stimulus": "🔊 tener",
+        "answers": [
+          "tener"
+        ],
+        "tag": "familia",
+        "sub": "hebben"
+      },
+      {
+        "stimulus": "🔊 los números",
+        "answers": [
+          "los números",
+          "números"
+        ],
+        "tag": "numeros",
+        "sub": "de getallen"
+      },
+      {
+        "stimulus": "🔊 veinte",
+        "answers": [
+          "veinte"
+        ],
+        "tag": "numeros",
+        "sub": "twintig"
+      },
+      {
+        "stimulus": "🔊 cincuenta",
+        "answers": [
+          "cincuenta"
+        ],
+        "tag": "numeros",
+        "sub": "vijftig"
+      },
+      {
+        "stimulus": "🔊 cien",
+        "answers": [
+          "cien"
+        ],
+        "tag": "numeros",
+        "sub": "honderd"
+      },
+      {
+        "stimulus": "🔊 ser",
+        "answers": [
+          "ser"
+        ],
+        "tag": "verbos",
+        "sub": "zijn (permanent)"
+      },
+      {
+        "stimulus": "🔊 estar",
+        "answers": [
+          "estar"
+        ],
+        "tag": "verbos",
+        "sub": "zijn (plaats/gevoel)"
+      },
+      {
+        "stimulus": "🔊 hacer",
+        "answers": [
+          "hacer"
+        ],
+        "tag": "verbos",
+        "sub": "doen / maken"
+      },
+      {
+        "stimulus": "🔊 ir",
+        "answers": [
+          "ir"
+        ],
+        "tag": "verbos",
+        "sub": "gaan"
+      },
+      {
+        "stimulus": "🔊 venir",
+        "answers": [
+          "venir"
+        ],
+        "tag": "verbos",
+        "sub": "komen"
+      },
+      {
+        "stimulus": "🔊 dar",
+        "answers": [
+          "dar"
+        ],
+        "tag": "verbos",
+        "sub": "geven"
+      },
+      {
+        "stimulus": "🔊 vivir",
+        "answers": [
+          "vivir"
+        ],
+        "tag": "verbos",
+        "sub": "wonen / leven"
+      },
+      {
+        "stimulus": "🔊 llamarse",
+        "answers": [
+          "llamarse"
+        ],
+        "tag": "verbos",
+        "sub": "heten"
+      }
+    ]
+  }
+}

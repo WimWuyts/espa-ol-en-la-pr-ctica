@@ -11,6 +11,13 @@
 03-build/*
 !03-build/.gitkeep
 
+# ...maar de generatoren zelf zijn BRON, geen output. Zonder deze uitzondering
+# valt elk nieuw .py-bestand in 03-build/web/ stil buiten git (de bestaande
+# generatoren staan er alleen in omdat ze ouder zijn dan de regel hierboven).
+!03-build/web/
+03-build/web/*
+!03-build/web/*.py
+
 # Rommel
 .DS_Store
 Thumbs.db

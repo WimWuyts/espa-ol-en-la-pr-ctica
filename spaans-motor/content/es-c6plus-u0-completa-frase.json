@@ -1,0 +1,329 @@
+{
+  "id": "es-c6plus-u0-completa-frase",
+  "title": "Completa la frase",
+  "subtitle": "C6+ · U0 · vul het ontbrekende woord in (betekenis uit de context)",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "¡___! ¿Qué tal?",
+        "answers": [
+          "hola",
+          "hola"
+        ],
+        "tag": "saludos",
+        "sub": "hallo"
+      },
+      {
+        "stimulus": "___, profe.",
+        "answers": [
+          "buenos días",
+          "buenos días"
+        ],
+        "tag": "saludos",
+        "sub": "goedemorgen"
+      },
+      {
+        "stimulus": "___ a todos.",
+        "answers": [
+          "buenas tardes",
+          "buenas tardes"
+        ],
+        "tag": "saludos",
+        "sub": "goedemiddag"
+      },
+      {
+        "stimulus": "___, hasta mañana.",
+        "answers": [
+          "buenas noches",
+          "buenas noches"
+        ],
+        "tag": "saludos",
+        "sub": "goedenavond / goedenacht"
+      },
+      {
+        "stimulus": "Hola Nina, ___",
+        "answers": [
+          "¿qué tal?",
+          "¿qué tal?"
+        ],
+        "tag": "saludos",
+        "sub": "hoe gaat het?"
+      },
+      {
+        "stimulus": "___, ¡hasta luego!",
+        "answers": [
+          "adiós",
+          "adiós"
+        ],
+        "tag": "saludos",
+        "sub": "dag / tot ziens"
+      },
+      {
+        "stimulus": "Me voy, ___.",
+        "answers": [
+          "hasta luego",
+          "hasta luego"
+        ],
+        "tag": "saludos",
+        "sub": "tot straks"
+      },
+      {
+        "stimulus": "___",
+        "answers": [
+          "¿cómo te llamas?",
+          "¿cómo te llamas?"
+        ],
+        "tag": "presentarse",
+        "sub": "hoe heet je?"
+      },
+      {
+        "stimulus": "___",
+        "answers": [
+          "¿cuántos años tienes?",
+          "¿cuántos años tienes?"
+        ],
+        "tag": "presentarse",
+        "sub": "hoe oud ben je?"
+      },
+      {
+        "stimulus": "___",
+        "answers": [
+          "¿de dónde eres?",
+          "¿de dónde eres?"
+        ],
+        "tag": "presentarse",
+        "sub": "waar kom je vandaan?"
+      },
+      {
+        "stimulus": "—Soy Mateo. —___.",
+        "answers": [
+          "mucho gusto",
+          "mucho gusto"
+        ],
+        "tag": "presentarse",
+        "sub": "aangenaam kennis te maken"
+      },
+      {
+        "stimulus": "Perdón, ___.",
+        "answers": [
+          "no entiendo",
+          "no entiendo"
+        ],
+        "tag": "clase",
+        "sub": "ik begrijp het niet"
+      },
+      {
+        "stimulus": "___, por favor.",
+        "answers": [
+          "más despacio",
+          "más despacio"
+        ],
+        "tag": "clase",
+        "sub": "trager"
+      },
+      {
+        "stimulus": "Una pregunta, ___.",
+        "answers": [
+          "por favor",
+          "por favor"
+        ],
+        "tag": "clase",
+        "sub": "alsjeblieft"
+      },
+      {
+        "stimulus": "Muchas ___, profe.",
+        "answers": [
+          "gracias",
+          "gracias"
+        ],
+        "tag": "clase",
+        "sub": "dank je"
+      },
+      {
+        "stimulus": "Profe, ___.",
+        "answers": [
+          "tengo una pregunta",
+          "tengo una pregunta"
+        ],
+        "tag": "clase",
+        "sub": "ik heb een vraag"
+      },
+      {
+        "stimulus": "Lucía es de ___.",
+        "answers": [
+          "España",
+          "España"
+        ],
+        "tag": "paises",
+        "sub": "Spanje"
+      },
+      {
+        "stimulus": "Diego vive en ___.",
+        "answers": [
+          "México",
+          "México"
+        ],
+        "tag": "paises",
+        "sub": "Mexico"
+      },
+      {
+        "stimulus": "Valen es de ___.",
+        "answers": [
+          "Colombia",
+          "Colombia"
+        ],
+        "tag": "paises",
+        "sub": "Colombia"
+      },
+      {
+        "stimulus": "Nina vive en ___.",
+        "answers": [
+          "Perú",
+          "Perú"
+        ],
+        "tag": "paises",
+        "sub": "Peru"
+      },
+      {
+        "stimulus": "Mateo es de ___.",
+        "answers": [
+          "Argentina",
+          "Argentina"
+        ],
+        "tag": "paises",
+        "sub": "Argentinië"
+      },
+      {
+        "stimulus": "Yo soy de ___.",
+        "answers": [
+          "Bélgica",
+          "Bélgica"
+        ],
+        "tag": "paises",
+        "sub": "België"
+      },
+      {
+        "stimulus": "___ está en Sudamérica.",
+        "answers": [
+          "Chile",
+          "Chile"
+        ],
+        "tag": "paises",
+        "sub": "Chili"
+      },
+      {
+        "stimulus": "El ___ tiene 21 países.",
+        "answers": [
+          "el mundo hispano",
+          "mundo hispano",
+          "mundo hispano"
+        ],
+        "tag": "paises",
+        "sub": "de Spaanstalige wereld"
+      },
+      {
+        "stimulus": "Yo soy ___.",
+        "answers": [
+          "belga",
+          "belga"
+        ],
+        "tag": "nacionalidades",
+        "sub": "Belgisch"
+      },
+      {
+        "stimulus": "¿Cuál es tu ___?",
+        "answers": [
+          "la nacionalidad",
+          "nacionalidad",
+          "nacionalidad"
+        ],
+        "tag": "nacionalidades",
+        "sub": "de nationaliteit"
+      },
+      {
+        "stimulus": "En Flandes hablamos ___.",
+        "answers": [
+          "el neerlandés",
+          "neerlandés",
+          "neerlandés"
+        ],
+        "tag": "nacionalidades",
+        "sub": "het Nederlands"
+      },
+      {
+        "stimulus": "___ —Soy alegre.",
+        "answers": [
+          "¿cómo eres?",
+          "¿cómo eres?"
+        ],
+        "tag": "descripcion",
+        "sub": "hoe ben je? (karakter/uiterlijk)"
+      },
+      {
+        "stimulus": "Valen es muy ___.",
+        "answers": [
+          "alegre",
+          "alegre"
+        ],
+        "tag": "descripcion",
+        "sub": "vrolijk"
+      },
+      {
+        "stimulus": "Mi ___ es pequeña.",
+        "answers": [
+          "la familia",
+          "familia",
+          "familia"
+        ],
+        "tag": "familia",
+        "sub": "het gezin / de familie"
+      },
+      {
+        "stimulus": "Repasamos los ___.",
+        "answers": [
+          "los números",
+          "números",
+          "números"
+        ],
+        "tag": "numeros",
+        "sub": "de getallen"
+      },
+      {
+        "stimulus": "Tengo ___ euros.",
+        "answers": [
+          "veinte",
+          "veinte"
+        ],
+        "tag": "numeros",
+        "sub": "twintig"
+      },
+      {
+        "stimulus": "___ más cincuenta es cien.",
+        "answers": [
+          "cincuenta",
+          "cincuenta"
+        ],
+        "tag": "numeros",
+        "sub": "vijftig"
+      },
+      {
+        "stimulus": "___ por cien.",
+        "answers": [
+          "cien",
+          "cien"
+        ],
+        "tag": "numeros",
+        "sub": "honderd"
+      }
+    ]
+  }
+}

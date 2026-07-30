@@ -1,0 +1,483 @@
+{
+  "id": "es-u0-completa-frase",
+  "title": "Completa la frase",
+  "subtitle": "C5 · U0 · vul het ontbrekende woord in (betekenis uit de context)",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C5",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "La palabra «hola» tiene cuatro ___s.",
+        "answers": [
+          "la letra",
+          "letra",
+          "letra"
+        ],
+        "tag": "ortografia",
+        "sub": "de letter"
+      },
+      {
+        "stimulus": "¿Puedes ___ tu nombre?",
+        "answers": [
+          "deletrear",
+          "deletrear"
+        ],
+        "tag": "ortografia",
+        "sub": "spellen"
+      },
+      {
+        "stimulus": "Las ___es son a, e, i, o, u.",
+        "answers": [
+          "la vocal",
+          "vocal",
+          "vocal"
+        ],
+        "tag": "ortografia",
+        "sub": "de klinker"
+      },
+      {
+        "stimulus": "La «ñ» es una ___.",
+        "answers": [
+          "la consonante",
+          "consonante",
+          "consonante"
+        ],
+        "tag": "ortografia",
+        "sub": "de medeklinker"
+      },
+      {
+        "stimulus": "«Ca-sa» tiene dos ___s.",
+        "answers": [
+          "la sílaba",
+          "sílaba",
+          "sílaba"
+        ],
+        "tag": "ortografia",
+        "sub": "de lettergreep"
+      },
+      {
+        "stimulus": "En «café», la ___ es «fé».",
+        "answers": [
+          "la sílaba tónica",
+          "sílaba tónica",
+          "sílaba tónica"
+        ],
+        "tag": "ortografia",
+        "sub": "de klemtoonlettergreep"
+      },
+      {
+        "stimulus": "La mochila pone un ___ en la «é» de «café».",
+        "answers": [
+          "el sombrero metáfora de clase",
+          "sombrero metáfora de clase",
+          "el sombrero",
+          "sombrero",
+          "sombrero"
+        ],
+        "tag": "ortografia",
+        "sub": "het hoedje (= de tilde)"
+      },
+      {
+        "stimulus": "«Perú» es una palabra ___.",
+        "answers": [
+          "aguda",
+          "aguda"
+        ],
+        "tag": "ortografia",
+        "sub": "klemtoon op de laatste"
+      },
+      {
+        "stimulus": "«Casa» es una palabra ___.",
+        "answers": [
+          "llana",
+          "llana"
+        ],
+        "tag": "ortografia",
+        "sub": "klemtoon op de voorlaatste"
+      },
+      {
+        "stimulus": "«México» es una palabra ___.",
+        "answers": [
+          "esdrújula",
+          "esdrújula"
+        ],
+        "tag": "ortografia",
+        "sub": "klemtoon op de derde van achter"
+      },
+      {
+        "stimulus": "«Sol» es un ___: no lleva tilde.",
+        "answers": [
+          "el monosílabo",
+          "monosílabo",
+          "monosílabo"
+        ],
+        "tag": "ortografia",
+        "sub": "het eenlettergrepige woord"
+      },
+      {
+        "stimulus": "«España» se escribe con ___.",
+        "answers": [
+          "la mayúscula",
+          "mayúscula",
+          "mayúscula"
+        ],
+        "tag": "ortografia",
+        "sub": "de hoofdletter"
+      },
+      {
+        "stimulus": "«español» se escribe con ___.",
+        "answers": [
+          "la minúscula",
+          "minúscula",
+          "minúscula"
+        ],
+        "tag": "ortografia",
+        "sub": "de kleine letter"
+      },
+      {
+        "stimulus": "«Pingüino» lleva ___ en la «u».",
+        "answers": [
+          "la diéresis ¨",
+          "diéresis ¨",
+          "la diéresis",
+          "diéresis",
+          "diéresis"
+        ],
+        "tag": "ortografia",
+        "sub": "het deelteken (op ü)"
+      },
+      {
+        "stimulus": "«Ch» y «ll» son ___s.",
+        "answers": [
+          "el dígrafo ch, ll",
+          "dígrafo ch, ll",
+          "el dígrafo",
+          "dígrafo",
+          "dígrafo"
+        ],
+        "tag": "ortografia",
+        "sub": "de klankcombinatie / digraaf"
+      },
+      {
+        "stimulus": "Mi correo lleva una ___.",
+        "answers": [
+          "la arroba @",
+          "arroba @",
+          "la arroba",
+          "arroba",
+          "arroba"
+        ],
+        "tag": "ortografia",
+        "sub": "het apenstaartje"
+      },
+      {
+        "stimulus": "«Anna-Lena» lleva un ___.",
+        "answers": [
+          "el guion -",
+          "guion -",
+          "el guion",
+          "guion",
+          "guion"
+        ],
+        "tag": "ortografia",
+        "sub": "het koppelteken"
+      },
+      {
+        "stimulus": "¿Cuál es tu ___ de teléfono?",
+        "answers": [
+          "el número",
+          "número",
+          "número"
+        ],
+        "tag": "numeros",
+        "sub": "het getal / nummer"
+      },
+      {
+        "stimulus": "Voy a ___ de cero a cien.",
+        "answers": [
+          "contar",
+          "contar"
+        ],
+        "tag": "numeros",
+        "sub": "tellen"
+      },
+      {
+        "stimulus": "___ grados: ¡qué frío!",
+        "answers": [
+          "cero",
+          "cero"
+        ],
+        "tag": "numeros",
+        "sub": "nul"
+      },
+      {
+        "stimulus": "En mi calle hay ___ casas.",
+        "answers": [
+          "cien",
+          "cien"
+        ],
+        "tag": "numeros",
+        "sub": "honderd"
+      },
+      {
+        "stimulus": "El autobús ___ va a la playa.",
+        "answers": [
+          "treinta y cinco",
+          "treinta y cinco"
+        ],
+        "tag": "numeros",
+        "sub": "vijfendertig"
+      },
+      {
+        "stimulus": "¿Cuál es tu ___?",
+        "answers": [
+          "la edad",
+          "edad",
+          "edad"
+        ],
+        "tag": "edad",
+        "sub": "de leeftijd"
+      },
+      {
+        "stimulus": "—___ —Quince.",
+        "answers": [
+          "¿Cuántos años tienes?",
+          "¿Cuántos años tienes?"
+        ],
+        "tag": "edad",
+        "sub": "Hoe oud ben je?"
+      },
+      {
+        "stimulus": "___ ¿Qué tal? (h zwijgt)",
+        "answers": [
+          "¡Hola!",
+          "¡Hola!"
+        ],
+        "tag": "saludos",
+        "sub": "Hallo!"
+      },
+      {
+        "stimulus": "___, me llamo Nina.",
+        "answers": [
+          "Buenos días",
+          "Buenos días"
+        ],
+        "tag": "saludos",
+        "sub": "Goedemorgen"
+      },
+      {
+        "stimulus": "___, señora.",
+        "answers": [
+          "Buenas tardes",
+          "Buenas tardes"
+        ],
+        "tag": "saludos",
+        "sub": "Goeiemiddag"
+      },
+      {
+        "stimulus": "___, hasta mañana.",
+        "answers": [
+          "Buenas noches",
+          "Buenas noches"
+        ],
+        "tag": "saludos",
+        "sub": "Goedenavond / -nacht"
+      },
+      {
+        "stimulus": "¡Hola, Diego! ___",
+        "answers": [
+          "¿Qué tal?",
+          "¿Qué tal?"
+        ],
+        "tag": "saludos",
+        "sub": "Hoe gaat het?"
+      },
+      {
+        "stimulus": "Hola, ___",
+        "answers": [
+          "¿Cómo estás?",
+          "¿Cómo estás?"
+        ],
+        "tag": "saludos",
+        "sub": "Hoe gaat het (met je)?"
+      },
+      {
+        "stimulus": "Muy ___",
+        "answers": [
+          "bien, gracias. ¿Y tú? Muy",
+          "bien, gracias. ¿Y tú?",
+          "bien, gracias. ¿Y tú?"
+        ],
+        "tag": "saludos",
+        "sub": "(Heel) goed, dank je. En jij?"
+      },
+      {
+        "stimulus": "¡___! Hasta luego.",
+        "answers": [
+          "Adiós",
+          "Adiós"
+        ],
+        "tag": "saludos",
+        "sub": "Dag / Tot ziens"
+      },
+      {
+        "stimulus": "___, Lucía.",
+        "answers": [
+          "Hasta luego",
+          "Hasta luego"
+        ],
+        "tag": "saludos",
+        "sub": "Tot straks"
+      },
+      {
+        "stimulus": "___, clase.",
+        "answers": [
+          "Hasta mañana",
+          "Hasta mañana"
+        ],
+        "tag": "saludos",
+        "sub": "Tot morgen"
+      },
+      {
+        "stimulus": "¡___! Nos vemos.",
+        "answers": [
+          "Chao informal",
+          "Chao",
+          "Chao"
+        ],
+        "tag": "saludos",
+        "sub": "Doei"
+      },
+      {
+        "stimulus": "___",
+        "answers": [
+          "¿Cómo te llamas?",
+          "¿Cómo te llamas?"
+        ],
+        "tag": "presentarse",
+        "sub": "Hoe heet jij?"
+      },
+      {
+        "stimulus": "Yo soy Sam. ___",
+        "answers": [
+          "¿Y tú?",
+          "¿Y tú?"
+        ],
+        "tag": "presentarse",
+        "sub": "En jij?"
+      },
+      {
+        "stimulus": "Muchas ___, igualmente.",
+        "answers": [
+          "gracias Muchas",
+          "gracias",
+          "gracias"
+        ],
+        "tag": "clase",
+        "sub": "(Heel erg) bedankt"
+      },
+      {
+        "stimulus": "Más despacio, ___.",
+        "answers": [
+          "Por favor",
+          "Por favor"
+        ],
+        "tag": "clase",
+        "sub": "Alsjeblieft / a.u.b."
+      },
+      {
+        "stimulus": "Perdón, ___.",
+        "answers": [
+          "No entiendo",
+          "No entiendo"
+        ],
+        "tag": "clase",
+        "sub": "Ik begrijp het niet"
+      },
+      {
+        "stimulus": "___",
+        "answers": [
+          "¿Puedes repetir, por favor?",
+          "¿Puedes repetir, por favor?"
+        ],
+        "tag": "clase",
+        "sub": "Kun je herhalen, a.u.b.?"
+      },
+      {
+        "stimulus": "___.",
+        "answers": [
+          "Más despacio, por favor",
+          "Más despacio, por favor"
+        ],
+        "tag": "clase",
+        "sub": "Trager, a.u.b."
+      },
+      {
+        "stimulus": "___ la respuesta.",
+        "answers": [
+          "No sé",
+          "No sé"
+        ],
+        "tag": "clase",
+        "sub": "Ik weet het niet"
+      },
+      {
+        "stimulus": "Profe, ___.",
+        "answers": [
+          "Tengo una pregunta",
+          "Tengo una pregunta"
+        ],
+        "tag": "clase",
+        "sub": "Ik heb een vraag"
+      },
+      {
+        "stimulus": "España está en el ___.",
+        "answers": [
+          "el mundo hispano",
+          "mundo hispano",
+          "mundo hispano"
+        ],
+        "tag": "mundo hispano",
+        "sub": "de Spaanstalige wereld"
+      },
+      {
+        "stimulus": "México es un ___ grande.",
+        "answers": [
+          "el país",
+          "país",
+          "país"
+        ],
+        "tag": "mundo hispano",
+        "sub": "het land"
+      },
+      {
+        "stimulus": "Hay millones de ___s.",
+        "answers": [
+          "hispanohablante",
+          "hispanohablante"
+        ],
+        "tag": "mundo hispano",
+        "sub": "Spaanstalig(e)"
+      },
+      {
+        "stimulus": "«Hospital» y «chocolate» son ___s.",
+        "answers": [
+          "el cognado palabra transparente",
+          "cognado palabra transparente",
+          "el cognado",
+          "cognado",
+          "cognado"
+        ],
+        "tag": "mundo hispano",
+        "sub": "het cognaat / transparant woord"
+      }
+    ]
+  }
+}
