@@ -36,6 +36,12 @@ OUT_DOCENTE = os.path.join(HERE, "C6plus_U0_docente.pptx")
 OUT_ALUMNO_PPTX = os.path.join(HERE, "C6plus_U0_alumno.pptx")
 TAB = "U0 · ¡VOLVEMOS!"
 
+import sys as _sys
+_sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
+import lectura_data as _LD, escucha_data as _ED
+_LEC = _LD.C6P_U0
+_ESC = _ED.C6P_U0
+
 def foot(s): footer(s, tab=TAB, page=pg())
 
 # ============================================================ DIA 1 · TITLE
@@ -575,10 +581,121 @@ def s21_teacher():
     notes(s, "Alleen in het docentdeck. Volledige LPD-dekking en didactische route staan in het cursusdossier (cocktail + outline).")
 
 # ============================================================ RUN + BUILD
+
+# ============================================================================
+# RONDE 1 · twee dia's erbij: de leestekst en het luisterfragment
+# Zelfde inhoud als de printcursus en de hub — de bron is gedeeld
+# (lectura_data / escucha_data), zodat de drie dragers niet uit elkaar lopen.
+# De oplossing staat in de docentenversie en verschijnt bij klik in de
+# leerlingenversie, nooit meteen zichtbaar.
+# ============================================================================
+def s_lectura():
+    t = _LEC
+    s = slide(); bg(s, PAPER)
+    sectionbar(s, "§5 · LECTURA", "«%s»" % t["titulo"],
+               "Een echte tekst. Je hoeft niet alles te begrijpen om de informatie eruit te halen.", num=5)
+    # links: de tekst zelf
+    card(s, Inches(0.5), Inches(1.45), Inches(6.1), Inches(4.55), fill=WHITE, line=G, lw=1.4)
+    rect(s, Inches(0.5), Inches(1.45), Inches(6.1), Inches(0.42), fill=G)
+    text(s, Inches(0.65), Inches(1.47), Inches(5.8), Inches(0.4),
+         [[(t["tipo"], {"size": 11.5, "bold": True, "color": WHITE, "font": DISPLAY})]],
+         anchor=MSO_ANCHOR.MIDDLE)
+    lineas = []
+    for soort, c in t["texto"]:
+        if soort == "titulo":
+            lineas.append([(c, {"size": 12.5, "bold": True, "color": GD, "font": DISPLAY})])
+        elif soort == "lema":
+            lineas.append([(c, {"size": 10.5, "italic": True, "color": MUT})])
+        elif soort == "lista":
+            for x in c:
+                lineas.append([("• " + x, {"size": 10.5, "color": INK})])
+        elif soort == "aviso":
+            lineas.append([(c[0], {"size": 11, "bold": True, "color": GD})])
+            lineas.append([(c[1], {"size": 10, "color": INK})])
+        elif soort == "firma":
+            lineas.append([(c, {"size": 9.5, "color": MUT})])
+        else:
+            lineas.append([(c, {"size": 10.5, "color": INK})])
+    text(s, Inches(0.7), Inches(1.98), Inches(5.7), Inches(3.9), lineas, line=1.18)
+
+    # rechts: scannen + juist/fout met bewijs
+    card(s, Inches(6.85), Inches(1.45), Inches(5.98), Inches(2.15), fill=CREMA, line=LINE, lw=1.2)
+    text(s, Inches(7.05), Inches(1.55), Inches(5.6), Inches(0.32),
+         [[("Escanea — busca el dato", {"size": 12, "bold": True, "color": GD, "font": DISPLAY})]])
+    text(s, Inches(7.05), Inches(1.92), Inches(5.6), Inches(1.6),
+         [[("%d. %s" % (i + 1, e["q"]), {"size": 10.5, "color": INK})]
+          for i, e in enumerate(t["escanear"])], line=1.25)
+
+    card(s, Inches(6.85), Inches(3.75), Inches(5.98), Inches(2.25), fill=WHITE, line=LINE, lw=1.2)
+    text(s, Inches(7.05), Inches(3.85), Inches(5.6), Inches(0.32),
+         [[("¿Verdadero o falso? — y la prueba", {"size": 12, "bold": True, "color": GD, "font": DISPLAY})]])
+    text(s, Inches(7.05), Inches(4.22), Inches(5.6), Inches(1.7),
+         [[("%d. %s" % (i + 1, v["q"]), {"size": 10.5, "color": INK})]
+          for i, v in enumerate(t["vf"])], line=1.25)
+
+    sol = ["Escanear: " + " · ".join("%d) %s" % (i + 1, e["ans"]) for i, e in enumerate(t["escanear"]))]
+    sol += ["%d) %s — «%s»" % (i + 1, "V" if v["ans"] else "F", v["prueba"]) for i, v in enumerate(t["vf"])]
+    exercise_solucion(s, Inches(0.5), Inches(6.12), Inches(12.33), Inches(0.72), sol)
+    footer(s, page=pg())
+    notes(s, "TEACHER · READING. Route: voorspellen → globaal → scannen → juist/fout MET BEWIJS → betekenis uit "
+             "context → zelf schrijven. Laat de tekst staan tijdens het scannen: informatie terugvinden is lezen, "
+             "uit het hoofd opzeggen is iets anders. Eis bij elke V/F de zin uit de tekst — dat is de stap die "
+             "gokken onmogelijk maakt. Dezelfde tekst staat in de cursus (met schrijfruimte) en op de hub "
+             "(zelfcorrigerend, met vertaalknop).")
+
+
+def s_escucha():
+    f = _ESC
+    s = slide(); bg(s, PAPER)
+    sectionbar(s, "§6 · ESCUCHA", "«%s»" % f["titulo"],
+               "Eerst de situatie, dan luisteren. Het transcript komt pas ná de taken.", num=6)
+    # situatie vooraf
+    card(s, Inches(0.5), Inches(1.45), Inches(12.33), Inches(1.15), fill=GT, line=G, lw=1.2)
+    text(s, Inches(0.7), Inches(1.55), Inches(11.9), Inches(0.95),
+         [[("¿Dónde? ", {"size": 11, "bold": True, "color": GD}),
+           (f["situacion"]["lugar"], {"size": 11, "color": INK}),
+           ("     ¿Quién? ", {"size": 11, "bold": True, "color": GD}),
+           (f["situacion"]["quien"], {"size": 11, "color": INK})],
+          [("¿Qué pasa? ", {"size": 11, "bold": True, "color": GD}),
+           (f["situacion"]["que"], {"size": 11, "color": INK})],
+          [("Palabras clave: ", {"size": 10.5, "bold": True, "color": MUT}),
+           (" · ".join(f["situacion"]["claves"]), {"size": 10.5, "italic": True, "color": INK})]], line=1.2)
+    # vijf detailvragen
+    card(s, Inches(0.5), Inches(2.75), Inches(6.1), Inches(3.25), fill=WHITE, line=LINE, lw=1.2)
+    text(s, Inches(0.7), Inches(2.85), Inches(5.7), Inches(0.32),
+         [[("Escucha con detalle", {"size": 12, "bold": True, "color": GD, "font": DISPLAY})]])
+    text(s, Inches(0.7), Inches(3.22), Inches(5.7), Inches(2.6),
+         [[("%d. %s" % (i + 1, d["q"]), {"size": 10.5, "color": INK})]
+          for i, d in enumerate(f["detalle"])], line=1.35)
+    # juist/fout met bewijs
+    card(s, Inches(6.85), Inches(2.75), Inches(5.98), Inches(3.25), fill=CREMA, line=LINE, lw=1.2)
+    text(s, Inches(7.05), Inches(2.85), Inches(5.6), Inches(0.32),
+         [[("¿Verdadero o falso? — y la prueba", {"size": 12, "bold": True, "color": GD, "font": DISPLAY})]])
+    text(s, Inches(7.05), Inches(3.22), Inches(5.6), Inches(1.6),
+         [[("%d. %s" % (i + 1, v["q"]), {"size": 10.5, "color": INK})]
+          for i, v in enumerate(f["vf"])], line=1.35)
+    text(s, Inches(7.05), Inches(5.0), Inches(5.6), Inches(0.9),
+         [[("Tu reacción: ", {"size": 10.5, "bold": True, "color": GD}),
+           (f["produccion"]["prompt"], {"size": 10, "color": INK})]], line=1.2)
+
+    sol = ["Detalle: " + " · ".join("%d) %s" % (i + 1, d["ans"]) for i, d in enumerate(f["detalle"]))]
+    sol += ["%d) %s — «%s»" % (i + 1, "V" if v["ans"] else "F", v["prueba"]) for i, v in enumerate(f["vf"])]
+    exercise_solucion(s, Inches(0.5), Inches(6.12), Inches(12.33), Inches(0.72), sol)
+    footer(s, page=pg())
+    notes(s, "TEACHER · LISTENING. Zes treden: situatie vooraf → globaal → vijf details → juist/fout MET BEWIJS → "
+             "transcript pas ná de taken → productieve reactie. Speel het fragment minstens twee keer: één keer "
+             "globaal (boeken dicht), daarna gericht. Het transcript staat op de hub en gaat daar pas open als de "
+             "taken gedaan zijn — meelezen tijdens het luisteren maakt er een leesoefening van. Zolang er geen "
+             "opname is, leest de computerstem het gesprek voor met een eigen stem per spreker. Noodroute: het "
+             "fragment ook voorlezen kan, met twee leerlingen in de rollen.")
+
+
 def _run_all(include_teacher=True):
     s01_title(); s02_menu(); s03_vocab(); s04_presente(); s05_presente_quiz(); s06_ser(); s07_genero()
     s08_genero_quiz(); s09_reading(); s10_listening(); s11_ser_estar(); s12_speaking(); s13_writing()
-    s14_paises(); s15_taller(); s16_cultura(); s17_quiz_pres(); s18_tarea(); s19_mezcla(); s20_repaso()
+    s14_paises(); s15_taller(); s16_cultura(); s17_quiz_pres()
+    s_lectura(); s_escucha()
+    s18_tarea(); s19_mezcla(); s20_repaso()
     if include_teacher:
         s21_teacher()
 
