@@ -117,6 +117,42 @@ een testuitslag in plaats van een interpretatie — en zie je bij elke unit mete
 
 ---
 
+## 4bis · Lezen & luisteren per unit — SPEC (auteur, 2026-07-29)
+
+**Elke unidad krijgt één leestekst én één luisteroefening, elk op TWEE plaatsen:**
+in de **printcursus** (met antwoordruimte + QR naar het fragment) én in de **hub**
+(interactief, zelfcorrigerend). Zelfde inhoud, twee dragers.
+
+> *Interpretatie:* «op twee plaatsen» = print + digitaal. Bedoelde de auteur twee
+> leesteksten en twee luisteroefeningen pér unit, dan is dat een kleine uitbreiding van
+> dezelfde structuur — even bevestigen bij de start.
+
+**Tekstsoort is vrij** (dialoog · informatieve tekst · interview · aankondiging) en wordt
+gekozen bij het thema van de unit. Beide sluiten aan bij de *parada* en de cast.
+
+**Luisterladder** (zes treden, zie `BOUWPLAN_SWEEP.md` fase 2b): situatie vooraf → globaal
+begrip → 5 detailvragen → juist/fout **met bewijs** → transcript pas ná de taken →
+productieve reactie. **Leesroute** (§14bis): voorspellen → globaal → scannen → juist/fout met
+bewijs → betekenis uit context → productieve reactie.
+
+**Audio — twee routes, zelfde uitvoer:**
+
+| Script | Dienst | Sleutel |
+|---|---|---|
+| `03-build/web/gen_audio.py` | Google Cloud TTS (bestond al, voor C4) | `GOOGLE_TTS_API_KEY` |
+| `03-build/web/gen_audio_elevenlabs.py` | **ElevenLabs** (nieuw, mooiste stemmen) | `ELEVENLABS_API_KEY` |
+
+Beide schrijven naar `03-build/web/audio/<cursus>_U<n>.mp3`. Het luistercomponent zoekt dat
+bestand en valt terug op **browser-TTS** zolang het er niet is — de bouw wacht dus nergens op.
+`--split` bewaart elke regel apart voor klik-om-te-horen in het transcript. Vaste stem per
+castlid (`CAST_VOICES`), zodat Lucía in U8 klinkt als in U0.
+
+**Bron van waarheid:** `03-build/web/escucha_data.py` — dataformaat staat onderaan
+`gen_audio_elevenlabs.py`. Eén `guion` voedt drie dingen: de mp3, het meelees-transcript en
+de TTS-fallback.
+
+---
+
 ## 5 · Hoe je de volgende chat begint
 
 1. Nieuwe chat in dezelfde groep, op branch `claude/spanish-course-development-jx25ay`.
