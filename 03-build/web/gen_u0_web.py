@@ -9,6 +9,7 @@ import json, base64, os, sys
 import hub_drills, hub_bloques
 import hub_type_sets
 import hub_type_gram
+import extra_bronnen
 import nat_data, escucha_data, lectura_data
 
 ROOT="/home/user/espa-ol-en-la-pr-ctica"
@@ -47,7 +48,7 @@ GAMEDIR=f"{ROOT}/spaans-motor/games"
 slugs=[g[0] for grp in MOTOR for g in grp[1]]
 GAMES={s: b64(f"{GAMEDIR}/es-u0-{s}.html") for s in slugs if os.path.exists(f"{GAMEDIR}/es-u0-{s}.html")}
 
-CSS = FONTS + hub_drills.TYPE_CSS + hub_drills.ESCUCHA_CSS + hub_drills.LECTURA_CSS + hub_bloques.CSS_EXTRA + """
+CSS = FONTS + extra_bronnen.CSS + hub_drills.TYPE_CSS + hub_drills.ESCUCHA_CSS + hub_drills.LECTURA_CSS + hub_bloques.CSS_EXTRA + """
 :root{--g:#1E9E74;--gd:#157355;--gt:#E4F4EE;--ink:#20242E;--mut:#6A6E78;--paper:#FCFBF8;--crema:#F3EEE4;--line:#E4E3DE;--red:#DC2626;--amber:#B7860B;--card:#fff;
 --onder:#2563EB;--ww:#EA7317;--voorw:#1E9E74;--tijd:#7C3AED;--plaats:#14B8A6;
 --disp:'Bricolage Grotesque',sans-serif;--body:'Inter',sans-serif;--hand:'Caveat',cursive}
@@ -370,11 +371,7 @@ __TYPESLOTS__
   </section>
 
   <section class="panel" data-p="extra">
-    <h2 class="sec">Extra · bronnen</h2>
-    <p class="lead">Externe uitleg & oefeningen (de leerkracht vult de links aan).</p>
-    <div class="card"><p>🎬 <b>profedeele</b> (YouTube-grammatica) — <span class="gloss">link volgt.</span></p>
-    <p>🧩 <b>arche-ele</b> (Genially woordenschat/grammatica) — <span class="gloss">link volgt.</span></p>
-    <p>📄 In het boek (PDF) verwijzen de QR-codes naar déze pagina, op het juiste ankerpunt.</p></div>
+    __BRONNEN__
   </section>
 
   <div class="foot">Español en la práctica · C5 · Unidad 0 — página digital (v2). Uitbreiding op de PDF · huisstijl groen · print ↔ PowerPoint ↔ web.</div>
@@ -900,6 +897,7 @@ JS=JS.replace("__BLOQUES__", BLOQUES)
 JS += hub_type_sets.vocab_type_js(vocab)
 JS += hub_type_gram.js('C5', 0)
 HTML = HTML.replace("__GRAMSLOTS__", hub_type_gram.slots('C5', 0))
+HTML = HTML.replace("__BRONNEN__", extra_bronnen.html("C5", 0))
 HTML = HTML.replace("__TYPESLOTS__", hub_type_sets.SLOTS_HTML)
 
 html=(HTML.replace("__CSS__",CSS).replace("__MOCH__",moch).replace("__FC__",flashcards_html())
