@@ -261,3 +261,208 @@ TYPE_CSS = r"""
 .tycheck[disabled]{opacity:.5;cursor:default}
 .tyklaar{font-size:13px;font-weight:800;color:var(--gd)}
 """
+
+
+# ---------------------------------------------------------------------------
+# buildEscucha — luisterblok met verwisselbare audiobron
+#
+# De meting van 2026-07-29 was hard: C5 heeft 9/9 units met een Lectura-paneel en
+# 0/9 met een luisterpaneel. Wat er stond waren losse TTS-knopjes die één woord
+# uitspreken — geen luisterbegrip. Dit component vult die leemte.
+#
+# De audiobron is verwisselbaar, zodat de bouw nergens op wacht:
+#   * geen mp3 aanwezig  -> browser-TTS leest het guion voor, met een eigen
+#                           stemprofiel (toonhoogte/tempo) per spreker;
+#   * mp3 aanwezig       -> die wordt automatisch gebruikt, zonder de oefeningen
+#                           opnieuw te bouwen. cfg.audioLineas (van --split) geeft
+#                           bovendien klik-om-te-horen per regel.
+# Het component probeert de mp3 te laden en valt bij een laadfout terug op TTS.
+#
+# De luisterladder heeft zes treden (VIER_VAARDIGHEDEN_GEINTEGREERD.md):
+#   1 situatie vooraf   2 globaal begrip   3 vijf detailvragen
+#   4 juist/fout met bewijs   5 transcript pas NA de taken   6 productieve reactie
+#
+#   buildEscucha('esc_c5u0', {
+#     title:'En el aeropuerto', audio:'audio/C5_U0.mp3',
+#     situacion:{lugar:'Barajas, Madrid', quien:'Lucia y tu',
+#                que:'Se presentan en la puerta de embarque', claves:['hola','me llamo','de donde']},
+#     guion:[{who:'Lucia', es:'Hola, me llamo Lucia.', nl:'Hallo, ik heet Lucia.'}],
+#     global:{q:'Waar gaat het fragment over?', opts:[...], ans:'...'},
+#     detalle:[{q, opts, ans, why} x5],
+#     vf:[{q:'Lucia es de Sevilla.', ans:true, prueba:'Soy de Sevilla'}],
+#     produccion:{prompt:'Contesta a Lucia...', modo:'escribir'}
+#   });
+# ---------------------------------------------------------------------------
+ESCUCHA_JS = r"""
+function escPerfil(i){const p=[{rate:.92,pitch:1.12},{rate:.88,pitch:.85},{rate:.95,pitch:1.0},{rate:.9,pitch:1.25}];return p[i%p.length];}
+function escReproductor(cfg,onEstado){
+ // Verwisselbare bron: probeer de mp3, val bij een laadfout terug op browser-TTS.
+ const guion=cfg.guion||[],hablantes=[];
+ guion.forEach(g=>{if(hablantes.indexOf(g.who)<0)hablantes.push(g.who);});
+ let modo=cfg.audio?'mp3':'tts',el=null,idx=0,parado=true;
+ // De mp3 wordt pas bij de eerste klik geladen. Zou het component het bestand al
+ // bij het openen van de pagina proberen, dan logt de browser een netwerkfout
+ // zolang er nog geen opname bestaat — en dan is «geen consolefouten» geen
+ // bruikbare rooktest meer bij het bouwen van een unit.
+ function fuente(){if(el||!cfg.audio)return el;
+   el=new Audio(cfg.audio);el.preload='none';
+   el.addEventListener('error',()=>{modo='tts';onEstado&&onEstado(modo,!parado);if(!parado){idx=0;ttsSecuencia();}});
+   el.addEventListener('ended',()=>{parado=true;onEstado&&onEstado(modo,false);});
+   return el;}
+ function ttsLinea(i,despues){
+   if(!('speechSynthesis'in window)){parado=true;onEstado&&onEstado(modo,false);return;}
+   const g=guion[i];if(!g){parado=true;onEstado&&onEstado(modo,false);return;}
+   const perf=escPerfil(hablantes.indexOf(g.who)),u=new SpeechSynthesisUtterance(g.es);
+   u.lang='es-ES';u.rate=perf.rate;u.pitch=perf.pitch;
+   const vs=speechSynthesis.getVoices(),es=vs.find(v=>/^es/i.test(v.lang));if(es)u.voice=es;
+   u.onend=()=>{if(despues)despues();};
+   try{speechSynthesis.speak(u);}catch(e){}}
+ function ttsSecuencia(){if(parado)return;if(idx>=guion.length){parado=true;idx=0;onEstado&&onEstado(modo,false);return;}
+   const i=idx++;ttsLinea(i,ttsSecuencia);}
+ return {
+  get modo(){return modo;},
+  reproducir(){parado=false;onEstado&&onEstado(modo,true);
+    const a=modo==='mp3'?fuente():null;
+    if(a){a.play().catch(()=>{modo='tts';onEstado&&onEstado(modo,true);idx=0;ttsSecuencia();});}
+    else{try{speechSynthesis.cancel();}catch(e){}idx=0;ttsSecuencia();}},
+  parar(){parado=true;if(el){el.pause();el.currentTime=0;}try{speechSynthesis.cancel();}catch(e){}onEstado&&onEstado(modo,false);},
+  linea(i){const u=(cfg.audioLineas||[])[i];
+    if(u){const a=new Audio(u);a.play().catch(()=>ttsLinea(i));return;}
+    try{speechSynthesis.cancel();}catch(e){}ttsLinea(i);}
+ };}
+function buildEscucha(id,cfg){
+ const host=document.getElementById(id);if(!host)return;
+ const G=cfg.guion||[],det=cfg.detalle||[],vf=cfg.vf||[],S=cfg.situacion||{};
+ if(cfg.expectDetalle)console.assert(det.length===cfg.expectDetalle,'buildEscucha '+id+': '+det.length+' detailvragen, verwacht '+cfg.expectDetalle);
+ const estado={glob:false,det:0,vf:0};
+ host.innerHTML=
+  '<div class="exhead"><h3>🎧 '+cfg.title+'</h3><span class="escfuente" role="status" aria-live="polite"></span></div>'+
+  '<ol class="escladder">'+
+   '<li class="escpaso" data-p="1"><h4>1 · Antes de escuchar</h4><div class="escsit"></div></li>'+
+   '<li class="escpaso" data-p="2"><h4>2 · Escucha global</h4><div class="escplay"></div><div class="escglob"></div></li>'+
+   '<li class="escpaso" data-p="3"><h4>3 · Escucha con detalle</h4><div class="escdet"></div></li>'+
+   '<li class="escpaso" data-p="4"><h4>4 · Verdadero o falso — con prueba</h4><div class="escvf"></div></li>'+
+   '<li class="escpaso" data-p="5"><h4>5 · Transcripción</h4><div class="esctr"></div></li>'+
+   '<li class="escpaso" data-p="6"><h4>6 · Tu reacción</h4><div class="escprod"></div></li>'+
+  '</ol>';
+ const $=s=>host.querySelector(s);
+ const fuente=$('.escfuente');
+ const player=escReproductor(cfg,(modo,sonando)=>{
+   fuente.textContent=modo==='mp3'?'audio grabado':'voz del navegador';
+   const b=$('.escbtn-play');if(b)b.textContent=sonando?'⏹ Parar':'▶ Escuchar';});
+ fuente.textContent=cfg.audio?'audio grabado':'voz del navegador';
+ // 1 · situatie vooraf
+ $('.escsit').innerHTML='<div class="escficha">'+
+   (S.lugar?'<p><b>¿Dónde?</b> '+exEsc(S.lugar)+'</p>':'')+
+   (S.quien?'<p><b>¿Quién habla?</b> '+exEsc(S.quien)+'</p>':'')+
+   (S.que?'<p><b>¿Qué pasa?</b> '+exEsc(S.que)+'</p>':'')+
+   '</div><p class="desc">Drie sleutelwoorden vooraf — klik om ze te horen:</p><div class="escclaves"></div>';
+ (S.claves||[]).forEach(w=>{const b=document.createElement('button');b.type='button';b.className='escclave';
+   b.innerHTML='🔊 '+exEsc(w);b.onclick=()=>speak(w);$('.escclaves').appendChild(b);});
+ // 2 · afspelen + globaal begrip
+ $('.escplay').innerHTML='<button class="escbtn escbtn-play" type="button">▶ Escuchar</button>'+
+   '<button class="escbtn escbtn-stop" type="button">↺ Otra vez</button>'+
+   '<span class="desc escnota">Luister eerst één keer helemaal. Nog niet meelezen.</span>';
+ let sonando=false;
+ $('.escbtn-play').onclick=()=>{if(sonando){player.parar();sonando=false;}else{player.reproducir();sonando=true;}};
+ $('.escbtn-stop').onclick=()=>{player.parar();sonando=false;player.reproducir();sonando=true;};
+ function preguntaMC(cont,it,alContestar){
+   const q=document.createElement('div');q.className='exq';
+   q.innerHTML='<div class="qz">'+exFmt(it.q)+'</div><div class="exopts"></div><div class="exwhy" role="status" aria-live="polite"></div>';
+   const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy');let cerrado=false;
+   exSample(it.opts,it.opts.length).forEach(o=>{const b=document.createElement('button');b.className='exopt';b.type='button';b.textContent=o;
+     b.onclick=()=>{if(cerrado)return;cerrado=true;const bien=o===it.ans;
+       opts.querySelectorAll('.exopt').forEach(x=>{x.disabled=true;if(x.textContent===it.ans)x.classList.add('ok');});
+       if(!bien)b.classList.add('no');
+       why.className='exwhy show '+(bien?'g':'b');
+       why.innerHTML=(bien?'<b>✓ correcto</b>':'<b>✗ no</b> → '+exEsc(it.ans))+(it.why?' · '+exEsc(it.why):'');
+       alContestar&&alContestar(bien);};
+     opts.appendChild(b);});
+   cont.appendChild(q);}
+ if(cfg.global)preguntaMC($('.escglob'),cfg.global,()=>{estado.glob=true;revisa();});
+ // 3 · vijf detailvragen
+ $('.escdet').innerHTML='<p class="desc">Luister opnieuw en let op de details (getallen, tijd, plaats, naam). <span class="escscore">Juist: <b class="okd">0</b>/'+det.length+'</span></p>';
+ let okd=0;
+ det.forEach(it=>preguntaMC($('.escdet'),it,bien=>{if(bien){okd++;$('.okd').textContent=okd;}estado.det++;revisa();}));
+ // 4 · juist/fout met bewijs uit het fragment
+ vf.forEach((it,i)=>{const q=document.createElement('div');q.className='exq';
+   q.innerHTML='<div class="qz"><span class="tynum">'+(i+1)+'</span><span>'+exFmt(it.q)+'</span></div>'+
+     '<div class="exopts"><button class="exopt" type="button">Verdadero</button><button class="exopt" type="button">Falso</button></div>'+
+     '<div class="escprueba" hidden><label>Bewijs uit het fragment: <input type="text" class="tyfield escpr" autocomplete="off" aria-label="Bewijs bij stelling '+(i+1)+'"></label><button class="otra escprbtn" type="button">✓ Comprobar prueba</button></div>'+
+     '<div class="exwhy" role="status" aria-live="polite"></div>';
+   const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy'),pr=q.querySelector('.escprueba');
+   let cerrado=false;
+   opts.querySelectorAll('.exopt').forEach(b=>{b.onclick=()=>{if(cerrado)return;cerrado=true;
+     const dicho=b.textContent==='Verdadero',bien=dicho===!!it.ans;
+     opts.querySelectorAll('.exopt').forEach(x=>{x.disabled=true;
+       if((x.textContent==='Verdadero')===!!it.ans)x.classList.add('ok');});
+     if(!bien)b.classList.add('no');
+     why.className='exwhy show '+(bien?'g':'b');
+     why.innerHTML=(bien?'<b>✓ correcto</b>':'<b>✗ no</b> → '+(it.ans?'verdadero':'falso'))+' · Schrijf nu wáár je dat hoort.';
+     pr.hidden=false;};});
+   q.querySelector('.escprbtn').onclick=()=>{const v=q.querySelector('.escpr').value.trim();
+     const a=tyNorm(v,'soft'),b=tyNorm(it.prueba||'','soft');
+     const bien=a.length>2&&(b.indexOf(a)>-1||a.indexOf(b)>-1);
+     why.className='exwhy show '+(bien?'g':'b');
+     why.innerHTML=bien?'<b>✓ buena prueba</b> · «'+exEsc(it.prueba)+'»':'<b>✗ esa prueba no está</b> · en el fragment: «'+exEsc(it.prueba)+'»';
+     q.querySelector('.escprbtn').disabled=true;q.querySelector('.escpr').disabled=true;
+     estado.vf++;revisa();};
+   $('.escvf').appendChild(q);});
+ // 5 · transcript, pas ná de taken
+ $('.esctr').innerHTML='<p class="desc esctrslot">Het transcript blijft dicht tot je de taken hierboven hebt gedaan — anders lees je mee in plaats van te luisteren.</p><button class="escbtn esctrbtn" type="button" disabled>🔒 Ver transcripción</button><div class="esctrbody" hidden></div>';
+ function revisa(){const listo=(!cfg.global||estado.glob)&&estado.det>=det.length&&estado.vf>=vf.length;
+   const b=$('.esctrbtn');if(!b)return;
+   b.disabled=!listo;b.textContent=listo?'📄 Ver transcripción':'🔒 Ver transcripción';
+   if(listo)$('.esctrslot').textContent='Klaar — nu mag je meelezen. Klik een regel om ze opnieuw te horen.';}
+ revisa();
+ $('.esctrbtn').onclick=()=>{const body=$('.esctrbody');
+   if(!body.dataset.hecho){body.dataset.hecho='1';
+     G.forEach((g,i)=>{const r=document.createElement('div');r.className='esctrl';
+       r.innerHTML='<button class="esctrsay" type="button" aria-label="Regel '+(i+1)+' opnieuw horen">🔊</button>'+
+         '<div><b class="esctrwho">'+exEsc(g.who||'')+'</b><span class="esctres">'+exEsc(g.es)+'</span>'+
+         (g.nl?'<span class="esctrnl">'+exEsc(g.nl)+'</span>':'')+'</div>';
+       r.querySelector('.esctrsay').onclick=()=>player.linea(i);body.appendChild(r);});
+     body.insertAdjacentHTML('afterbegin','<button class="otra esctrnlbtn" type="button">🇳🇱 vertaling aan/uit</button>');
+     body.querySelector('.esctrnlbtn').onclick=()=>body.classList.toggle('sinnl');}
+   body.hidden=!body.hidden;};
+ // 6 · productieve reactie
+ const P=cfg.produccion||{};
+ $('.escprod').innerHTML='<p class="desc">'+exEsc(P.prompt||'Reageer op het fragment.')+'</p>'+
+   (P.modo==='grabar'?'<div id="'+id+'_rec"></div>':'<textarea class="escta" rows="4" aria-label="Jouw reactie op het fragment"></textarea><p class="desc escconteo">0 palabras</p>');
+ const ta=$('.escta');
+ if(ta)ta.addEventListener('input',()=>{const n=ta.value.trim()?ta.value.trim().split(/\s+/).length:0;
+   $('.escconteo').textContent=n+' palabra'+(n===1?'':'s')+(P.min?' · mínimo '+P.min:'');});
+ if(P.modo==='grabar'&&typeof makeRecorder==='function')
+   makeRecorder(id+'_rec',{title:'Tu respuesta hablada',desc:P.prompt||'',items:[{text:P.prompt||'',cue:'graba tu respuesta'}]});
+}
+"""
+
+ESCUCHA_CSS = r"""
+.escfuente{font-size:11px;font-weight:700;color:var(--gd);background:var(--gt);border-radius:999px;padding:3px 9px;white-space:nowrap}
+.escladder{list-style:none;margin:0;padding:0;counter-reset:esc}
+.escpaso{border-left:3px solid var(--gt);padding:2px 0 2px 14px;margin:0 0 18px}
+.escpaso h4{font-family:var(--disp);font-size:15px;margin:0 0 8px;color:var(--gd)}
+.escficha{background:var(--gt);border-radius:12px;padding:11px 14px}
+.escficha p{margin:2px 0;font-size:14px}
+.escclaves{display:flex;gap:8px;flex-wrap:wrap}
+.escclave{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 13px;cursor:pointer;font-size:14px;font-weight:600;font-family:var(--body)}
+.escplay{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:10px}
+.escbtn{border:none;background:var(--g);color:#fff;border-radius:10px;padding:9px 16px;font-weight:700;cursor:pointer;font-family:var(--disp);font-size:14px}
+.escbtn-stop{background:var(--gt);color:var(--gd)}
+.escbtn[disabled]{opacity:.55;cursor:default}
+.escnota{margin:0}
+.escscore{color:var(--mut)}.escscore b{color:var(--gd)}
+.escprueba{margin-top:9px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.escprueba label{display:flex;gap:7px;align-items:center;flex:1 1 220px;min-width:0;font-size:13px;color:var(--mut)}
+.esctrbody{margin-top:10px;border:1px solid var(--line);border-radius:12px;padding:9px 11px;background:var(--card)}
+.esctrl{display:flex;gap:9px;align-items:flex-start;padding:6px 0;border-bottom:1px solid var(--gt)}
+.esctrl:last-child{border-bottom:none}
+.esctrsay{border:none;background:var(--gt);color:var(--gd);border-radius:8px;padding:4px 8px;cursor:pointer;flex:none}
+.esctrwho{display:block;font-size:11px;color:var(--gd);letter-spacing:.05em;text-transform:uppercase}
+.esctres{display:block;font-size:15px}
+.esctrnl{display:block;font-size:13px;color:var(--mut);font-style:italic}
+.esctrbody.sinnl .esctrnl{display:none}
+.escta{width:100%;max-width:100%;box-sizing:border-box;border:1.5px solid var(--line);border-radius:10px;padding:9px 11px;font-family:var(--body);font-size:15px;background:var(--card);color:var(--ink)}
+.escta:focus-visible,.escbtn:focus-visible,.escclave:focus-visible,.esctrsay:focus-visible{outline:3px solid var(--gd);outline-offset:2px}
+.escconteo{margin:4px 0 0}
+"""
