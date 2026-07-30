@@ -42,7 +42,8 @@ FUNCIONES = [
          8:["¿Sí? · No te oigo (nada)","¿Puedes hablar más despacio?"]}},
  {"id":"F09","es":"Hablar de la familia","nl":"over je familie praten",
   "cefr":"A1 · la familia y la posesión","code":"C4-WS-1",
-  "exp":{4:["mi madre · mi padre","mi hermano/a · mi abuelo/a","el tío / la tía","la hermana de María (de + nombre)"]}},
+  "exp":{4:["mi madre · mi padre","mi hermano/a · mi abuelo/a","el tío / la tía","la hermana de María (de + nombre)"],
+         11:["con los tuyos (bij de jouwen)","mis tíos · mis cuñados","las fiestas de Navidad en familia"]}},
  {"id":"F10","es":"Describir a alguien","nl":"iemand beschrijven (fysiek & karakter)",
   "cefr":"A1 · descripción de personas","code":"C4-SP-2",
   "exp":{4:["es alto/a · bajo/a · guapo/a","es simpático/a · divertido/a · inteligente","es muy… · un poco…"]}},
@@ -89,6 +90,19 @@ FUNCIONES = [
   "cefr":"A1 · expresar habilidad","code":"C4-SP-2",
   "exp":{10:["Sé + infinitivo (sé pasar la aspiradora)","¿Sabes…? · ¿Sabes cómo funciona?",
              "Sabemos… (nosotros)","Claro que sé"]}},
+ {"id":"F23","es":"Hablar del tiempo","nl":"over het weer praten (hace + naamwoord)",
+  "cefr":"A1 · describir el tiempo atmosférico","code":"C4-WS-1",
+  "exp":{11:["¿Qué tiempo hace?","Hace frío · hace calor · hace viento · hace sol",
+             "Hace buen / mal tiempo","En invierno / en verano…","Aquí hace demasiado calor"]}},
+ {"id":"F24","es":"Expresar gustos y aficiones","nl":"zeggen wat je (niet) graag doet",
+  "cefr":"A1 · expresar gustos","code":"C4-SP-2",
+  "exp":{11:["Me gusta + el cine / la ópera","Me gusta + infinitivo (me gusta hacer yoga)",
+             "Me gustan los deportes (meervoud)","A mí me gusta más el frío",
+             "A ella también le gusta · ¿Te gusta…?"]}},
+ {"id":"F25","es":"Decir con qué frecuencia","nl":"zeggen hoe vaak je iets doet",
+  "cefr":"A1 · expresar frecuencia","code":"C4-TS-5",
+  "exp":{11:["siempre · casi siempre · a veces","casi nunca · nunca",
+             "todos los años · todos los días","tres veces por semana","Voy mucho al cine"]}},
 ]
 FMAP={f["id"]:f for f in FUNCIONES}
 
@@ -112,13 +126,18 @@ NOTICING={
  9:[("«Voy a preparar café.»","F19"),("«Vamos a dormir un poquito más.»","F19"),
     ("«Tengo que pasear al perro.»","F20"),("«Tengo cosas que hacer.»","F20"),
     ("«¿Quedamos para ir al cine?»","F18"),("«Tengo sueño. ¿No tienes sueño?»","F20")],
+ 11:[("«Siempre hace buen tiempo en Canarias.»","F23"),("«¡Hace mucho viento!»","F23"),
+     ("«En verano, en cambio, hace calor.»","F23"),("«Me gusta el cine y me gusta la ópera.»","F24"),
+     ("«A mí me gusta más el frío.»","F24"),("«A ella también le gusta hacer submarinismo.»","F24"),
+     ("«Casi nunca voy a la ópera.»","F25"),("«Voy al gimnasio tres veces por semana.»","F25"),
+     ("«Pasas las fiestas de Navidad con los tuyos.»","F09")],
  10:[("«Yo te ayudo.»","F21"),("«¿Qué tengo que hacer?»","F21"),("«No es molestia.»","F21"),
      ("«Hay que limpiar esto.»","F20"),("«¿Sabes pasar la aspiradora?»","F22"),
      ("«Los hombres también sabemos pasar la aspiradora.»","F22")],
 }
 # welke functies de eindtaak van elke unit combineert (afzender·ontvanger·doel — recycling zichtbaar).
-TAREA_FUN={1:["F01","F02","F03"],2:["F01","F05","F04"],3:["F02","F03","F08"],4:["F09","F10","F02"],5:["F11","F12","F10"],6:["F13","F12","F14"],7:["F15","F16","F03"],8:["F17","F18","F07"],9:["F19","F20","F18"],10:["F21","F22","F20"]}
-TAREA_TITEL={1:"Mi presentación",2:"Un día de saludos",3:"Mi mapa · ¿de dónde eres?",4:"Mi árbol de familia",5:"Diccionario de la clase",6:"Plano de mi casa",7:"¿Quién soy? · adivina",8:"Mi horario",9:"Mi finde",10:"¿Quién hace qué?"}
+TAREA_FUN={1:["F01","F02","F03"],2:["F01","F05","F04"],3:["F02","F03","F08"],4:["F09","F10","F02"],5:["F11","F12","F10"],6:["F13","F12","F14"],7:["F15","F16","F03"],8:["F17","F18","F07"],9:["F19","F20","F18"],10:["F21","F22","F20"],11:["F23","F24","F25"]}
+TAREA_TITEL={1:"Mi presentación",2:"Un día de saludos",3:"Mi mapa · ¿de dónde eres?",4:"Mi árbol de familia",5:"Diccionario de la clase",6:"Plano de mi casa",7:"¿Quién soy? · adivina",8:"Mi horario",9:"Mi finde",10:"¿Quién hace qué?",11:"Mi estación favorita"}
 
 def funciones_hasta(unit):
     """Alle functies met intro-unit <= unit (het cumulatieve repertoire tot hier)."""

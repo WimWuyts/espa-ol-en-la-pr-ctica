@@ -127,6 +127,18 @@ TEMAS = {
   "HND":"las casas de madera de las islas","PRY":"las casas con galería y patio","NIC":"Granada, ciudad colonial junto al lago","SLV":"los pueblos de la Ruta de las Flores",
   "CRI":"las casas con jardín, «pura vida»","PAN":"el Casco Viejo de la capital","URY":"la Ciudad Vieja de Montevideo","PRI":"las casas de colores del Viejo San Juan",
   "GNQ":"Malabo y su arquitectura colonial","USA":"barrios latinos como «Little Havana» (Miami)"},
+ "clima": {  # C4·U11 · El tiempo y los gustos (¿qué tiempo hace?)
+  "MEX":"en la costa hace calor todo el año; en el DF hace fresco por la altura","ESP":"cuatro estaciones: en verano hace mucho calor, en invierno nieva en el norte",
+  "COL":"no hay estaciones: cada ciudad tiene «su» clima según la altura","PER":"en la costa casi nunca llueve; Lima vive bajo una niebla gris",
+  "ARG":"las estaciones están al revés: en enero hace calor y es verano","VEN":"calor tropical: solo hay «temporada seca» y «temporada de lluvias»",
+  "CHL":"del desierto más seco del mundo al hielo de la Patagonia","ECU":"en la mitad del mundo el día dura 12 horas siempre",
+  "GTM":"«el país de la eterna primavera»: 20 °C casi todo el año","CUB":"calor y huracanes entre junio y noviembre",
+  "BOL":"en La Paz, a 3.600 m, hace frío por la noche todo el año","DOM":"sol y 28 °C casi siempre; llueve fuerte pero poco tiempo",
+  "HND":"calor en la costa, fresco en las montañas","PRY":"en verano se pasa de 40 °C; por eso la siesta",
+  "NIC":"el país de «lagos y volcanes», con calor húmedo","SLV":"dos estaciones: seca (verano) y lluviosa (invierno)",
+  "CRI":"«invierno» significa temporada de lluvias, no frío","PAN":"llueve casi todos los días entre mayo y noviembre",
+  "URY":"viento del Atlántico; en julio hace frío y húmedo","PRI":"clima de isla: 27 °C, brisa del mar y huracanes",
+  "GNQ":"calor ecuatorial y lluvia casi todo el año","USA":"del frío de Chicago al calor de Miami, en el mismo idioma"},
  "viaje": {  # U8 · ¿Qué has hecho?
   "MEX":"Chichén Itzá y las playas de Cancún","ESP":"la Sagrada Familia y la Alhambra","COL":"Cartagena y el Eje Cafetero","PER":"Machu Picchu, maravilla del mundo",
   "ARG":"las cataratas del Iguazú y la Patagonia","VEN":"el Salto Ángel, la cascada más alta","CHL":"el desierto de Atacama y la isla de Pascua","ECU":"las islas Galápagos",

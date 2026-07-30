@@ -166,13 +166,14 @@ voor iedereen nieuw blijft.
 | 8 | **La hora y los días** ✅ | uur, dagen, dagindeling | WS-1, TS-5, LU-2 | Mi horario |
 | 9 | **Planes y obligaciones** ✅ | plannen (ir a), moeten (tener que) — vaste vormen | TS-3/4, SP-2 | Mi finde |
 | 10 | **Las tareas de casa** ✅ | huistaken, hay que ↔ tengo que, saber ↔ poder, hulp aanbieden | TS-3, SP-2, GE-3, WS-1 | ¿Quién hace qué? |
-| 11 | *volgt aflevering 11* | — | — | — |
+| 11 | **El tiempo y los gustos** ✅ | het weer (hace + nw.), seizoenen, gustos (me gusta/gustan), frequentie | WS-1, SP-2, TS-3/5, CU-1 | Mi estación favorita |
 | 12 | *volgt aflevering 12* | — | — | — |
 | 13 | *volgt aflevering 13* | — | — | — |
 | 14 | *volgt aflevering 14* (+ **Repaso · Mi mundo hispano** integreren) | integratie van alle chunks + cultuur | alle SP/GE + CU | Mini-presentación final |
 
-> **Themavijver voor U11–U14 (nog niet toegewezen).** Deze thema's stonden in de oude, provisoire
-> lijst en zijn *niet* verdwenen — ze wachten op de afleveringen 11–14. Bij elk nieuw transcript
+> **Themavijver voor U12–U14 (nog niet toegewezen).** Deze thema's stonden in de oude, provisoire
+> lijst en zijn *niet* verdwenen — ze wachten op de afleveringen 12–14. (*El tiempo y estaciones* is
+> in U11 opgenomen, want aflevering 11 gaat over het weer én de gustos.) Bij elk nieuw transcript
 > wordt het passende thema hier weggehaald en in de tabel gezet; wat overblijft, wordt in unit 14
 > (repaso/integratie) meegenomen of aan een unit toegevoegd als extra *parada*.
 >
@@ -180,11 +181,10 @@ voor iedereen nieuw blijft.
 > |---|---|---|---|
 > | **La comida / en el bar** | bestellen, ¿qué quieres?, me gusta | GE-1, TS-3, WS-1 | La carta / pedir en el bar |
 > | **De compras / la ropa** | prijzen, kleuren, kledij, ¿cuánto cuesta? | GE-1, TS-5, WS-1 | Abre tu tienda |
-> | **El tiempo y estaciones** | weer, seizoenen, hace frío/calor | LU-2, WS-1, LE-1 | El parte del tiempo |
 > | **En el hotel / viajar** | reserveren, vragen, richtingen (survival op reis) | GE-1/3, LE-1, SP-2 | Reservar en el hotel |
 >
 > De **uitspraak-spreidingsmatrix A** (`reservoir/C4_coverage.md`) is *thema-onafhankelijk*: de
-> klankfocus per unit (U11 = s · U12 = entonación · U13 = enlace · U14 = alles) blijft staan, welk
+> klankfocus per unit (U12 = entonación · U13 = enlace · U14 = alles) blijft staan, welk
 > thema de video ook brengt.
 
 > **Doorlopende laag over álle thema's:** C4-MEC-1/2/3/4/5 (uitspraak & acentuación),

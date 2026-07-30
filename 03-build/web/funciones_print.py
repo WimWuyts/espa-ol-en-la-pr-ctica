@@ -13,13 +13,14 @@ def print_section(unit):
     have = len(fs); total = len(FD.FUNCIONES)
     # ── banco-spiekkaart: función · exponentes (per unit) · semáforo ──
     # volle spiekkaart → trapsgewijs compacter zodat alles op één blad blijft
+    ultra   = have >= 23   # extreem vol (≥23): maximaal comprimeren zodat het banco op één blad blijft
     tight   = have >= 15   # zeer vol (≥15): exponentes op dezelfde regel als de functienaam
     compact = have >= 13   # vol (13-14): kleinere letter + minder exponentes
-    exp_fs = "6.8pt" if tight else ("7.0pt" if compact else "7.6pt")
+    exp_fs = "6.4pt" if ultra else ("6.8pt" if tight else ("7.0pt" if compact else "7.6pt"))
     rows = ""
     for f in fs:
         allexp = [e for u in sorted(k for k in f["exp"] if k <= unit) for e in f["exp"][u]]
-        cap = 3 if tight else (4 if compact else (5 if have >= 11 else 99))
+        cap = 2 if ultra else (3 if tight else (4 if compact else (5 if have >= 11 else 99)))
         exps = " · ".join(allexp[:cap]) + (" …" if len(allexp) > cap else "")
         st = FD.status(f, unit)
         mark = ' <span style="font-size:6.6pt;font-weight:800;color:var(--gd)">NUEVA</span>' if st=="nueva" else (' <span style="font-size:6.6pt;font-weight:800;color:var(--gd)">▲</span>' if st=="nivel" else "")
@@ -27,7 +28,9 @@ def print_section(unit):
         rows += (f'<tr><td style="text-align:left"><b>{f["es"]}</b>{mark}{br}'
                  f'<span style="font-size:{exp_fs};color:var(--mut)">{exps}</span></td><td></td><td></td><td></td></tr>')
     # compacte units krijgen een td-override zodat de lange tabel op één blad blijft
-    if tight:
+    if ultra:
+        compact_style = '<style>.fbanco td{padding:.22mm 1.6mm!important;font-size:7.8pt;line-height:1.18}.fbanco th{padding:.6mm 1.6mm!important}</style>'
+    elif tight:
         compact_style = '<style>.fbanco td{padding:.4mm 1.8mm!important;font-size:8.2pt}.fbanco th{padding:.8mm 1.8mm!important}</style>'
     elif compact:
         compact_style = '<style>.fbanco td{padding:.55mm 2mm!important}.fbanco th{padding:.9mm 2mm!important}</style>'
@@ -44,7 +47,7 @@ def print_section(unit):
     noticing = (f'<div class="regla"><span class="tag">¿Qué hacen con el idioma? · uit de scène</span>'
                 f'<p style="margin:1mm 0;font-size:8.8pt">Welke <b>functie</b> voert elke zin uit? Schrijf ze erbij. '
                 f'<span style="color:var(--mut)">Banco: {bank}.</span></p>'
-                f'<div style="columns:2;column-gap:8mm;line-height:1.75">{n_cells}</div></div>')
+                f'<div style="columns:{3 if len(noti) >= 8 else 2};column-gap:7mm;line-height:{1.55 if len(noti) >= 8 else 1.75}">{n_cells}</div></div>')
     # ── tarea-tags + mini-reto (productie; wbox-hoogte schaalt met #functies → volle bladspiegel) ──
     ids = FD.TAREA_FUN.get(unit, [])
     tt = FD.TAREA_TITEL.get(unit, "")
@@ -75,8 +78,8 @@ def print_section(unit):
             f'nu <b>{have}/{total}</b> functies.</span></p>'
             f'{noticing}'
             f'<div class="se" style="margin-top:3mm">Mi repertorio · zet je semáforo</div>'
-            f'<p style="font-size:8.8pt;color:var(--mut);margin:0 0 1mm">Alles wat je tot nu toe kunt zeggen. Kleur per functie: 🟢 vlot · 🟡 met moeite · 🔴 nog niet.</p>'
-            f'{banco}{tarea}{extra}{reto}</div>')
+            + ('' if ultra else '<p style="font-size:8.8pt;color:var(--mut);margin:0 0 1mm">Alles wat je tot nu toe kunt zeggen. Kleur per functie: 🟢 vlot · 🟡 met moeite · 🔴 nog niet.</p>')
+            + f'{banco}{tarea}{extra}{reto}</div>')
 
 if __name__ == "__main__":
     for u in (1, 2, 3):

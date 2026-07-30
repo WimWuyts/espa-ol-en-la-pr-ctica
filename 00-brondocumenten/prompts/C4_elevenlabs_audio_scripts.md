@@ -140,7 +140,27 @@ Rosa: [pleased] Perfecto. Entonces yo limpio el polvo y ordeno los armarios.
 Iván: [cheerful] Vale. ¡Así terminamos rápido!
 ```
 
+## U11 · «¿qué te gusta hacer?»  (1 dialoog — Nuria & Hugo over gustos en frecuentie)
+**Stemmen:** Nuria = jonge vrouw · Hugo = jonge man.
+*(Komt exact overeen met `AUDIO[11]` in `comprension_data.py` → me gusta/me gustan · frecuencia · hace frío.)*
+```
+Nuria: [curious] ¿Qué te gusta hacer los fines de semana?
+Hugo: [enthusiastic] Me gusta el cine. Voy mucho, casi todas las semanas.
+Nuria: [agreeing] A mí también me gusta el cine. ¿Y los deportes?
+Hugo: [hesitant] No me gustan mucho, pero hago yoga dos veces por semana.
+Nuria: [lively] Yo voy al gimnasio tres veces por semana. ¿Y cuando hace mal tiempo?
+Hugo: [cosy] Cuando hace frío, casi nunca salgo. Me gusta estar en casa.
+```
+
+### Extra voor U11 · «dictado de precios» (los precios van de print-oefening ②)
+**Stem:** camarero/camarera, rustig en duidelijk, korte pauze tussen de items.
+*(Hoort bij de Suena bien-oefening ② in de print + de hub-tab Kit. Klemtoon: cin·CUEN·ta.)*
+```
+Camarero: [clear, unhurried] a) Son cuatro cincuenta. ... b) Son doce euros. ... c) Son veinticinco euros. ... d) Son seis euros con setenta. ... e) Son treinta y dos euros. ... f) Son cincuenta y cinco euros.
+```
+
 ---
 
 ## Nadat je de mp3's hebt
-Zet ze als `C4_U1_audio.mp3` … `C4_U10_audio.mp3` in `03-build/web/componentes/audio/` (of stuur ze mij).
+Zet ze als `C4_U1_audio.mp3` … `C4_U11_audio.mp3` in `03-build/web/componentes/audio/` (of stuur ze mij).
+Het dictado wordt `C4_U11_precios.mp3`.

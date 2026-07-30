@@ -40,7 +40,7 @@ ART=[
  ("Juanes","🇨🇴","Colombia","rock/pop latino","«La Camisa Negra»","Ha ganado muchos premios Grammy Latinos.",
   "Juanes es de Colombia; mezcla rock y ritmos latinos.","Juanes uit Colombia; mengt rock met Latijnse ritmes.",["ropa","nacionalidades"]),
  ("Manu Chao","🇪🇸","España/Francia","mestizo/rock","«Me gustas tú»","«Me gustas tú» repite todo el tiempo «me gusta…»: ideal para practicar.",
-  "Manu Chao tiene raíces españolas y francesas.","Manu Chao heeft Spaanse en Franse roots.",["saludos","presentaciones","objetos","casa","tareas"]),
+  "Manu Chao tiene raíces españolas y francesas.","Manu Chao heeft Spaanse en Franse roots.",["saludos","presentaciones","objetos","casa","tareas","tiempo"]),
 ]
 # thema -> aanbevolen nummer(s) (survival-lessen halen hieruit)
 TEMA_TITELS={"presentaciones":"Presentaciones","saludos":"Saludos","nacionalidades":"Nacionalidades y países","familia":"La familia",
@@ -176,6 +176,20 @@ CULTURA={
       "De zondag is bij veel families de dag van de <b>familiemaaltijd</b> — een vast plan, vaak met de hele familie samen."),
    ],
    "dato":"¿Sabías que…? Om een plan te maken gebruik je <b>ir a + infinitivo</b>: «voy a estudiar» = ik ga studeren — net zoals in het Nederlands. Maar «ik moet werken» wordt <b>tengo que trabajar</b>, letterlijk «ik heb te werken».",
+ },
+ "tiempo":{
+   "intro":"Eén taal, 21 klimaten. Van eeuwige lente tot de droogste woestijn ter wereld — en op het zuidelijk halfrond staan de seizoenen op hun kop.",
+   "cards":[
+     ("🌞","«La eterna primavera»","<b>Canarias</b> tiene unos 20–24 °C todo el año: por eso Julio dice «siempre hace buen tiempo en Canarias». <b>Guatemala</b> se llama «el país de la eterna primavera».",
+      "De <b>Canarische Eilanden</b> hebben het hele jaar 20–24 °C — vandaar «siempre hace buen tiempo en Canarias». <b>Guatemala</b> heet «het land van de eeuwige lente»."),
+     ("🥶","¡Qué frío en Ávila!","Julio va al pueblo de sus padres, en <b>Ávila</b>: la provincia <b>más fría</b> de España, a 1.130 m de altura. «Nunca hace ese frío en Madrid.»",
+      "Julio gaat naar het dorp van zijn ouders in <b>Ávila</b>: de <b>koudste</b> provincie van Spanje, op 1.130 m hoogte. Hoogte bepaalt het klimaat vaak méér dan de breedtegraad."),
+     ("🎄","Navidad en la playa","En <b>Argentina, Chile o Uruguay</b> las estaciones están <b>al revés</b>: en diciembre es <b>verano</b> y se celebra la Navidad con calor.",
+      "In <b>Argentinië, Chili en Uruguay</b> zijn de seizoenen <b>omgekeerd</b>: in december is het <b>zomer</b> en viert men Kerstmis in de hitte — soms op het strand."),
+     ("🌧️","«Invierno» sin frío","En <b>Costa Rica</b> o <b>El Salvador</b> «invierno» no significa frío, sino <b>temporada de lluvias</b>. Solo hay dos estaciones: seca y lluviosa.",
+      "In <b>Costa Rica</b> en <b>El Salvador</b> betekent «invierno» niet koud, maar <b>regenseizoen</b>. Er zijn maar twee seizoenen: droog en nat — dus «invierno» kan 30 °C zijn."),
+   ],
+   "dato":"¿Sabías que…? Het weer is in het Spaans iets dat het weer <b>doet</b>: <b>hace</b> frío · <b>hace</b> calor · <b>hace</b> viento. Maar als jíj het koud hebt, gebruik je <i>tener</i>: <b>tengo</b> frío. Dus: «hace frío» (het is koud buiten) ↔ «tengo frío» (ík heb het koud).",
  },
  "tareas":{
    "intro":"Wie doet wat in huis? Dat verschilt per gezin en per land — en het is aan het veranderen. Zo zit het in de Spaanstalige wereld.",

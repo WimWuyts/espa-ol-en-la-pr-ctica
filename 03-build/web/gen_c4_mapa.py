@@ -36,6 +36,7 @@ UNIT_TEMA = {
  # U10 hergebruikt bewust «familia» (spaced recycling, §14): in U4 was de vraag «hoe is de familie?»,
  # in U10 is de invalshoek «wie helpt er in huis?» — zelfde feiten, andere didactische hoek.
  10:("familia", "🏠 ¿Quién ayuda en casa?"),    # tareas domésticas → rollen in het gezin per land
+ 11:("clima",   "🌤️ ¿Qué tiempo hace?"),        # el tiempo y los gustos → het klimaat per land (nieuw thema in paises_data)
 }
 # de route: C4 = «vertrekhal». De sitcom (Julio & María) speelt in Madrid → España is
 # het thuisbasis-vertrekpunt vanaf U1. {code: (start_unit, "rango", "NL/ES-beschrijving")}
@@ -61,6 +62,8 @@ INTRO = {
      "Wat ga je bezoeken? Klik op een land en zeg: «Voy a visitar…» — zo oefen je ir a + infinitivo."),
  10:("En casa, ¿quién ayuda? Haz clic en un país y descubre cómo se vive en familia.",
      "Wie helpt er in huis? Klik op een land en ontdek hoe men er in familie samenleeft."),
+ 11:("¿Qué tiempo hace allí? Haz clic en un país y descubre su clima. ¡En el sur las estaciones están al revés!",
+     "Welk weer is het daar? Klik op een land en ontdek zijn klimaat. Op het zuidelijk halfrond zijn de seizoenen omgekeerd!"),
 }
 DEFAULT_INTRO = ("Haz clic en un país del mundo hispano para leer su ficha.",
                  "Klik op een land van de Spaanstalige wereld voor zijn fiche.")

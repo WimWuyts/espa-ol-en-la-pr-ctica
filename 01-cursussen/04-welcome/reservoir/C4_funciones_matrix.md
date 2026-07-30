@@ -39,6 +39,9 @@ herkomst vragen, corrigeren, iets vragen, tellen…). Elke unit:
 | F20 | Expresar obligación | zeggen wat je moet doen (tener que + inf.) | expresar obligación | C4-TS-3 |
 | F21 | Ofrecer y pedir ayuda | hulp aanbieden & vragen | ofrecer/pedir ayuda | C4-GE-3 |
 | F22 | Decir lo que sé hacer | zeggen wat je kunt/weet te doen (saber + inf.) | expresar habilidad | C4-SP-2 |
+| F23 | Hablar del tiempo | over het weer praten (hace + naamwoord) | describir el tiempo atmosférico | C4-WS-1 |
+| F24 | Expresar gustos y aficiones | zeggen wat je (niet) graag doet | expresar gustos | C4-SP-2 |
+| F25 | Decir con qué frecuencia | zeggen hoe vaak je iets doet | expresar frecuencia | C4-TS-5 |
 
 ## Matrix C — functie × unit (● intro · ▲ uptrade/nivel+ · · recycle)
 | ID | U1 | U2 | U3 | U4 | U5 | … | Exponentes die groeien |
@@ -65,9 +68,13 @@ herkomst vragen, corrigeren, iets vragen, tellen…). Elke unit:
 | F20 Expresar obligación | | | | | | | ● (U9) — tengo que + infinitivo · tengo cosas que hacer · tengo hambre/sueño ▲ (U10) hay que + infinitivo (onpersoonlijk) · no tienes que molestarte |
 | F21 Ofrecer y pedir ayuda | | | | | | | ● (U10) — yo te ayudo · ¿te ayudo? · ¿qué tengo que hacer? · no es molestia · déjame, lo hago yo |
 | F22 Decir lo que sé hacer | | | | | | | ● (U10) — sé + infinitivo · ¿sabes…? · ¿sabes cómo funciona? · sabemos… · claro que sé |
+| F23 Hablar del tiempo | | | | | | | ● (U11) — ¿qué tiempo hace? · hace frío/calor/viento/sol · hace buen/mal tiempo · en invierno/verano · demasiado calor |
+| F24 Expresar gustos y aficiones | | | | | | | ● (U11) — me gusta + el cine / + infinitivo · me gustan los deportes · a mí me gusta más… · a ella también le gusta · ¿te gusta…? |
+| F25 Decir con qué frecuencia | | | | | | | ● (U11) — siempre · casi siempre · a veces · casi nunca · nunca · todos los años · tres veces por semana · voy mucho al cine |
 
 *(NB: F05 kreeg in U7 een ▲-uptrade: estamos todos bien · ¿estáis bien? · ser↔estar-contrast.
 F07 en F08 kregen in U8 een ▲-uptrade: F07 números → **las horas** (y media · en veinte minutos) ·
+F09 kreeg in U11 een ▲-uptrade: con los tuyos · mis tíos/cuñados · las fiestas de Navidad.
 F08 comprensión → **telefoonregister** (¿sí? · no te oigo nada · ¿puedes hablar más despacio?).)*
 
 **Groei tot nu toe:** U1 = 4 functies · U2 = 6 (+cortesía, +cómo estoy) · U3 = 8 (+pedir algo, +contar) ·
@@ -77,8 +84,10 @@ U6 = 14 (+ubicar cosas/dónde está, +pedir y dar permiso) ·
 U7 = 16 (+hablar del trabajo, +especular y adivinar; F05 uptrade → estamos/estáis) ·
 U8 = 18 (+decir/preguntar la hora, +quedar; F07 uptrade → horas, F08 uptrade → teléfono) ·
 U9 = 20 (+hablar de planes, +expresar obligación; F18 uptrade → quedar para + inf. / afwijzen) ·
-U10 = **22** (+ofrecer y pedir ayuda, +decir lo que sé hacer; F20 uptrade → **hay que + infinitivo**
-= onpersoonlijke verplichting náást het persoonlijke *tengo que*, en *no tienes que molestarte*).
+U10 = 22 (+ofrecer y pedir ayuda, +decir lo que sé hacer; F20 uptrade → **hay que + infinitivo**
+= onpersoonlijke verplichting náást het persoonlijke *tengo que*, en *no tienes que molestarte*) ·
+U11 = **25** (+hablar del tiempo, +expresar gustos y aficiones, +decir con qué frecuencia;
+F09 uptrade → *con los tuyos · mis tíos · mis cuñados · las fiestas de Navidad*).
 
 ## Noticing per unit («¿Qué hacen con el idioma?» — cita → función)
 - **U1:** «¡Hola! ¿Qué tal?»→F01 · «Me llamo…»→F02 · «¿Cómo te llamas?»→F03 · «¿Cómo? Otra vez.»→F08
@@ -89,6 +98,7 @@ U10 = **22** (+ofrecer y pedir ayuda, +decir lo que sé hacer; F20 uptrade → *
 - **U6:** «Hay cosas encima de las sillas.»→F13 · «Debajo de la cama.»→F13 · «Dentro del frigorífico…»→F13 · «¿Puedo fumar?»→F14 · «Aquí no, pero puedes ir fuera.»→F14
 - **U7:** «Puede ser escritora.»→F16 · «¿Trabaja en una tienda?»→F16 · «Es profesora.»→F15 · «Yo trabajo aquí, tú trabajas aquí.»→F15 · «Estamos todos bien.»→F05
 - **U8:** «¿Qué hora es? ¿Las ocho y media?»→F17 · «¿A qué hora? Mejor a las doce.»→F17 · «¿Quieres quedar esta noche?»→F18 · «Quedamos en mi casa.»→F18 · «No te oigo nada. ¿Puedes hablar más despacio?»→F08 · «Te veo en veinte minutos.»→F07
+- **U11:** «Siempre hace buen tiempo en Canarias.»→F23 · «¡Hace mucho viento!»→F23 · «En verano, en cambio, hace calor.»→F23 · «Me gusta el cine y me gusta la ópera.»→F24 · «A mí me gusta más el frío.»→F24 · «A ella también le gusta hacer submarinismo.»→F24 · «Casi nunca voy a la ópera.»→F25 · «Voy al gimnasio tres veces por semana.»→F25 · «Pasas las fiestas de Navidad con los tuyos.»→F09
 - **U10:** «Yo te ayudo.»→F21 · «¿Qué tengo que hacer?»→F21 · «No es molestia.»→F21 · «Hay que limpiar esto.»→F20 · «¿Sabes pasar la aspiradora?»→F22 · «Los hombres también sabemos pasar la aspiradora.»→F22
 - **U9:** «Voy a preparar café.»→F19 · «Vamos a dormir un poquito más.»→F19 · «Tengo que pasear al perro.»→F20 · «Tengo cosas que hacer.»→F20 · «¿Quedamos para ir al cine?»→F18 · «Tengo sueño. ¿No tienes sueño?»→F20
 
@@ -103,6 +113,7 @@ U10 = **22** (+ofrecer y pedir ayuda, +decir lo que sé hacer; F20 uptrade → *
 - **U8 «Mi horario»** = F17 + F18 + F07
 - **U9 «Mi finde»** = F19 + F20 + F18
 - **U10 «¿Quién hace qué?»** = F21 + F22 + F20
+- **U11 «Mi estación favorita»** = F23 + F24 + F25
 
 ## Zeven ontwerpregels
 1. **Video-afgeleid:** elke functie begint bij een citaat uit de scène (noticing), nooit abstract.
