@@ -1,0 +1,500 @@
+{
+  "id": "es-c6plus-u0-que-palabra",
+  "title": "¿Qué palabra?",
+  "subtitle": "C6+ · U0 · van thema naar woord (ophalen zonder zin)",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "saludos → «hallo»",
+        "answers": [
+          "hola"
+        ],
+        "hint": "h___",
+        "tag": "saludos",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "saludos → «goedemorgen»",
+        "answers": [
+          "buenos días"
+        ],
+        "hint": "b_____ d___",
+        "tag": "saludos",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "saludos → «goedemiddag»",
+        "answers": [
+          "buenas tardes"
+        ],
+        "hint": "b_____ t_____",
+        "tag": "saludos",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "saludos → «goedenavond / goedenacht»",
+        "answers": [
+          "buenas noches"
+        ],
+        "hint": "b_____ n_____",
+        "tag": "saludos",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "saludos → «hoe gaat het?»",
+        "answers": [
+          "¿qué tal?"
+        ],
+        "hint": "¿___ t___",
+        "tag": "saludos",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "saludos → «hoe gaat het met je?»",
+        "answers": [
+          "¿cómo estás?"
+        ],
+        "hint": "¿____ e_____",
+        "tag": "saludos",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "saludos → «dag / tot ziens»",
+        "answers": [
+          "adiós"
+        ],
+        "hint": "a____",
+        "tag": "saludos",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "saludos → «tot straks»",
+        "answers": [
+          "hasta luego"
+        ],
+        "hint": "h____ l____",
+        "tag": "saludos",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "presentarse → «ik heet…»",
+        "answers": [
+          "me llamo…"
+        ],
+        "hint": "m_ l_____",
+        "tag": "presentarse",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "presentarse → «hoe heet je?»",
+        "answers": [
+          "¿cómo te llamas?"
+        ],
+        "hint": "¿____ t_ l______",
+        "tag": "presentarse",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "presentarse → «ik ben…»",
+        "answers": [
+          "soy…"
+        ],
+        "hint": "s___",
+        "tag": "presentarse",
+        "sub": "v. (ser)"
+      },
+      {
+        "stimulus": "presentarse → «ik ben … jaar»",
+        "answers": [
+          "tengo … años"
+        ],
+        "hint": "t____ … a___",
+        "tag": "presentarse",
+        "sub": "expr. (tener)"
+      },
+      {
+        "stimulus": "presentarse → «hoe oud ben je?»",
+        "answers": [
+          "¿cuántos años tienes?"
+        ],
+        "hint": "¿_______ a___ t______",
+        "tag": "presentarse",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "presentarse → «ik woon in…»",
+        "answers": [
+          "vivo en…"
+        ],
+        "hint": "v___ e__",
+        "tag": "presentarse",
+        "sub": "v. (vivir)"
+      },
+      {
+        "stimulus": "presentarse → «ik kom uit…»",
+        "answers": [
+          "soy de…"
+        ],
+        "hint": "s__ d__",
+        "tag": "presentarse",
+        "sub": "expr. (ser)"
+      },
+      {
+        "stimulus": "presentarse → «waar kom je vandaan?»",
+        "answers": [
+          "¿de dónde eres?"
+        ],
+        "hint": "¿__ d____ e____",
+        "tag": "presentarse",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "presentarse → «aangenaam kennis te maken»",
+        "answers": [
+          "mucho gusto"
+        ],
+        "hint": "m____ g____",
+        "tag": "presentarse",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "clase → «hoe zeg je…?»",
+        "answers": [
+          "¿cómo se dice…?"
+        ],
+        "hint": "¿____ s_ d_____",
+        "tag": "clase",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "clase → «wat betekent…?»",
+        "answers": [
+          "¿qué significa…?"
+        ],
+        "hint": "¿___ s__________",
+        "tag": "clase",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "clase → «ik begrijp het niet»",
+        "answers": [
+          "no entiendo"
+        ],
+        "hint": "n_ e_______",
+        "tag": "clase",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "clase → «kun je herhalen?»",
+        "answers": [
+          "¿puedes repetir?"
+        ],
+        "hint": "¿______ r_______",
+        "tag": "clase",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "clase → «trager»",
+        "answers": [
+          "más despacio"
+        ],
+        "hint": "m__ d_______",
+        "tag": "clase",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "clase → «alsjeblieft»",
+        "answers": [
+          "por favor"
+        ],
+        "hint": "p__ f____",
+        "tag": "clase",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "clase → «dank je»",
+        "answers": [
+          "gracias"
+        ],
+        "hint": "g______",
+        "tag": "clase",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "clase → «ik heb een vraag»",
+        "answers": [
+          "tengo una pregunta"
+        ],
+        "hint": "t____ u__ p_______",
+        "tag": "clase",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "paises → «Spanje»",
+        "answers": [
+          "España"
+        ],
+        "hint": "E_____",
+        "tag": "paises",
+        "sub": "sust. f."
+      },
+      {
+        "stimulus": "paises → «Mexico»",
+        "answers": [
+          "México"
+        ],
+        "hint": "M_____",
+        "tag": "paises",
+        "sub": "sust. m."
+      },
+      {
+        "stimulus": "paises → «Colombia»",
+        "answers": [
+          "Colombia"
+        ],
+        "hint": "C_______",
+        "tag": "paises",
+        "sub": "sust. f."
+      },
+      {
+        "stimulus": "paises → «Peru»",
+        "answers": [
+          "Perú"
+        ],
+        "hint": "P___",
+        "tag": "paises",
+        "sub": "sust. m."
+      },
+      {
+        "stimulus": "paises → «Argentinië»",
+        "answers": [
+          "Argentina"
+        ],
+        "hint": "A________",
+        "tag": "paises",
+        "sub": "sust. f."
+      },
+      {
+        "stimulus": "paises → «België»",
+        "answers": [
+          "Bélgica"
+        ],
+        "hint": "B______",
+        "tag": "paises",
+        "sub": "sust. f."
+      },
+      {
+        "stimulus": "paises → «Chili»",
+        "answers": [
+          "Chile"
+        ],
+        "hint": "C____",
+        "tag": "paises",
+        "sub": "sust. m."
+      },
+      {
+        "stimulus": "paises → «de Spaanstalige wereld»",
+        "answers": [
+          "el mundo hispano",
+          "mundo hispano"
+        ],
+        "hint": "m____ h______",
+        "tag": "paises",
+        "sub": "sust. m."
+      },
+      {
+        "stimulus": "nacionalidades → «Belgisch»",
+        "answers": [
+          "belga"
+        ],
+        "hint": "b____",
+        "tag": "nacionalidades",
+        "sub": "adj."
+      },
+      {
+        "stimulus": "nacionalidades → «de nationaliteit»",
+        "answers": [
+          "la nacionalidad",
+          "nacionalidad"
+        ],
+        "hint": "n___________",
+        "tag": "nacionalidades",
+        "sub": "sust. f."
+      },
+      {
+        "stimulus": "nacionalidades → «spreken»",
+        "answers": [
+          "hablar"
+        ],
+        "hint": "h_____",
+        "tag": "nacionalidades",
+        "sub": "v. reg. (-ar)"
+      },
+      {
+        "stimulus": "nacionalidades → «het Nederlands»",
+        "answers": [
+          "el neerlandés",
+          "neerlandés"
+        ],
+        "hint": "n_________",
+        "tag": "nacionalidades",
+        "sub": "sust. m."
+      },
+      {
+        "stimulus": "descripcion → «hoe ben je? (karakter/uiterlijk)»",
+        "answers": [
+          "¿cómo eres?"
+        ],
+        "hint": "¿____ e____",
+        "tag": "descripcion",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "descripcion → «vrolijk»",
+        "answers": [
+          "alegre"
+        ],
+        "hint": "a_____",
+        "tag": "descripcion",
+        "sub": "adj."
+      },
+      {
+        "stimulus": "familia → «het gezin / de familie»",
+        "answers": [
+          "la familia",
+          "familia"
+        ],
+        "hint": "f______",
+        "tag": "familia",
+        "sub": "sust. f."
+      },
+      {
+        "stimulus": "familia → «hebben»",
+        "answers": [
+          "tener"
+        ],
+        "hint": "t____",
+        "tag": "familia",
+        "sub": "v. irreg."
+      },
+      {
+        "stimulus": "numeros → «de getallen»",
+        "answers": [
+          "los números",
+          "números"
+        ],
+        "hint": "n______",
+        "tag": "numeros",
+        "sub": "sust. m. pl."
+      },
+      {
+        "stimulus": "numeros → «twintig»",
+        "answers": [
+          "veinte"
+        ],
+        "hint": "v_____",
+        "tag": "numeros",
+        "sub": "num."
+      },
+      {
+        "stimulus": "numeros → «vijftig»",
+        "answers": [
+          "cincuenta"
+        ],
+        "hint": "c________",
+        "tag": "numeros",
+        "sub": "num."
+      },
+      {
+        "stimulus": "numeros → «honderd»",
+        "answers": [
+          "cien"
+        ],
+        "hint": "c___",
+        "tag": "numeros",
+        "sub": "num."
+      },
+      {
+        "stimulus": "verbos → «zijn (permanent)»",
+        "answers": [
+          "ser"
+        ],
+        "hint": "s__",
+        "tag": "verbos",
+        "sub": "v. irreg."
+      },
+      {
+        "stimulus": "verbos → «zijn (plaats/gevoel)»",
+        "answers": [
+          "estar"
+        ],
+        "hint": "e____",
+        "tag": "verbos",
+        "sub": "v. irreg."
+      },
+      {
+        "stimulus": "verbos → «doen / maken»",
+        "answers": [
+          "hacer"
+        ],
+        "hint": "h____",
+        "tag": "verbos",
+        "sub": "v. irreg."
+      },
+      {
+        "stimulus": "verbos → «gaan»",
+        "answers": [
+          "ir"
+        ],
+        "hint": "i_",
+        "tag": "verbos",
+        "sub": "v. irreg."
+      },
+      {
+        "stimulus": "verbos → «komen»",
+        "answers": [
+          "venir"
+        ],
+        "hint": "v____",
+        "tag": "verbos",
+        "sub": "v. irreg."
+      },
+      {
+        "stimulus": "verbos → «geven»",
+        "answers": [
+          "dar"
+        ],
+        "hint": "d__",
+        "tag": "verbos",
+        "sub": "v. irreg."
+      },
+      {
+        "stimulus": "verbos → «wonen / leven»",
+        "answers": [
+          "vivir"
+        ],
+        "hint": "v____",
+        "tag": "verbos",
+        "sub": "v. reg. (-ir)"
+      },
+      {
+        "stimulus": "verbos → «heten»",
+        "answers": [
+          "llamarse"
+        ],
+        "hint": "l_______",
+        "tag": "verbos",
+        "sub": "v. reflex."
+      }
+    ]
+  }
+}

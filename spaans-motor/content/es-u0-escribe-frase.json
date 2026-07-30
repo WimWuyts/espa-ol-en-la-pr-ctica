@@ -1,0 +1,531 @@
+{
+  "id": "es-u0-escribe-frase",
+  "title": "Escribe una frase",
+  "subtitle": "C5 · U0 · vrije productie · structuurcheck + modeloplossing",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 8,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C5",
+    "mode": "open",
+    "items": [
+      {
+        "stimulus": "Escribe una frase con «la letra»",
+        "must": [
+          "letra"
+        ],
+        "model": "La palabra «hola» tiene cuatro letras.",
+        "tag": "ortografia",
+        "sub": "de letter"
+      },
+      {
+        "stimulus": "Escribe una frase con «deletrear»",
+        "must": [
+          "deletrear"
+        ],
+        "model": "¿Puedes deletrear tu nombre?",
+        "tag": "ortografia",
+        "sub": "spellen"
+      },
+      {
+        "stimulus": "Escribe una frase con «la vocal»",
+        "must": [
+          "vocal"
+        ],
+        "model": "Las vocales son a, e, i, o, u.",
+        "tag": "ortografia",
+        "sub": "de klinker"
+      },
+      {
+        "stimulus": "Escribe una frase con «la consonante»",
+        "must": [
+          "consonante"
+        ],
+        "model": "La «ñ» es una consonante.",
+        "tag": "ortografia",
+        "sub": "de medeklinker"
+      },
+      {
+        "stimulus": "Escribe una frase con «la sílaba»",
+        "must": [
+          "sílaba"
+        ],
+        "model": "«Ca-sa» tiene dos sílabas.",
+        "tag": "ortografia",
+        "sub": "de lettergreep"
+      },
+      {
+        "stimulus": "Escribe una frase con «la sílaba tónica»",
+        "must": [
+          "sílaba tónica"
+        ],
+        "model": "En «café», la sílaba tónica es «fé».",
+        "tag": "ortografia",
+        "sub": "de klemtoonlettergreep"
+      },
+      {
+        "stimulus": "Escribe una frase con «el sombrero»",
+        "must": [
+          "sombrero"
+        ],
+        "model": "La mochila pone un sombrero en la «é» de «café».",
+        "tag": "ortografia",
+        "sub": "het hoedje (= de tilde)"
+      },
+      {
+        "stimulus": "Escribe una frase con «aguda»",
+        "must": [
+          "aguda"
+        ],
+        "model": "«Perú» es una palabra aguda.",
+        "tag": "ortografia",
+        "sub": "klemtoon op de laatste"
+      },
+      {
+        "stimulus": "Escribe una frase con «llana»",
+        "must": [
+          "llana"
+        ],
+        "model": "«Casa» es una palabra llana.",
+        "tag": "ortografia",
+        "sub": "klemtoon op de voorlaatste"
+      },
+      {
+        "stimulus": "Escribe una frase con «esdrújula»",
+        "must": [
+          "esdrújula"
+        ],
+        "model": "«México» es una palabra esdrújula.",
+        "tag": "ortografia",
+        "sub": "klemtoon op de derde van achter"
+      },
+      {
+        "stimulus": "Escribe una frase con «el monosílabo»",
+        "must": [
+          "monosílabo"
+        ],
+        "model": "«Sol» es un monosílabo: no lleva tilde.",
+        "tag": "ortografia",
+        "sub": "het eenlettergrepige woord"
+      },
+      {
+        "stimulus": "Escribe una frase con «la mayúscula»",
+        "must": [
+          "mayúscula"
+        ],
+        "model": "«España» se escribe con mayúscula.",
+        "tag": "ortografia",
+        "sub": "de hoofdletter"
+      },
+      {
+        "stimulus": "Escribe una frase con «la minúscula»",
+        "must": [
+          "minúscula"
+        ],
+        "model": "«español» se escribe con minúscula.",
+        "tag": "ortografia",
+        "sub": "de kleine letter"
+      },
+      {
+        "stimulus": "Escribe una frase con «la diéresis»",
+        "must": [
+          "diéresis"
+        ],
+        "model": "«Pingüino» lleva diéresis en la «u».",
+        "tag": "ortografia",
+        "sub": "het deelteken (op ü)"
+      },
+      {
+        "stimulus": "Escribe una frase con «el dígrafo»",
+        "must": [
+          "dígrafo"
+        ],
+        "model": "«Ch» y «ll» son dígrafos.",
+        "tag": "ortografia",
+        "sub": "de klankcombinatie / digraaf"
+      },
+      {
+        "stimulus": "Escribe una frase con «la arroba»",
+        "must": [
+          "arroba"
+        ],
+        "model": "Mi correo lleva una arroba.",
+        "tag": "ortografia",
+        "sub": "het apenstaartje"
+      },
+      {
+        "stimulus": "Escribe una frase con «el guion»",
+        "must": [
+          "guion"
+        ],
+        "model": "«Anna-Lena» lleva un guion.",
+        "tag": "ortografia",
+        "sub": "het koppelteken"
+      },
+      {
+        "stimulus": "Escribe una frase con «el número»",
+        "must": [
+          "número"
+        ],
+        "model": "¿Cuál es tu número de teléfono?",
+        "tag": "numeros",
+        "sub": "het getal / nummer"
+      },
+      {
+        "stimulus": "Escribe una frase con «contar»",
+        "must": [
+          "contar"
+        ],
+        "model": "Voy a contar de cero a cien.",
+        "tag": "numeros",
+        "sub": "tellen"
+      },
+      {
+        "stimulus": "Escribe una frase con «cero»",
+        "must": [
+          "cero"
+        ],
+        "model": "Cero grados: ¡qué frío!",
+        "tag": "numeros",
+        "sub": "nul"
+      },
+      {
+        "stimulus": "Escribe una frase con «cien»",
+        "must": [
+          "cien"
+        ],
+        "model": "En mi calle hay cien casas.",
+        "tag": "numeros",
+        "sub": "honderd"
+      },
+      {
+        "stimulus": "Escribe una frase con «treinta y cinco»",
+        "must": [
+          "treinta y cinco"
+        ],
+        "model": "El autobús treinta y cinco va a la playa.",
+        "tag": "numeros",
+        "sub": "vijfendertig"
+      },
+      {
+        "stimulus": "Escribe una frase con «la edad»",
+        "must": [
+          "edad"
+        ],
+        "model": "¿Cuál es tu edad?",
+        "tag": "edad",
+        "sub": "de leeftijd"
+      },
+      {
+        "stimulus": "Escribe una frase con «tener … años»",
+        "must": [
+          "tener … años"
+        ],
+        "model": "Tengo catorce años.",
+        "tag": "edad",
+        "sub": "… jaar zijn (lett. hebben)"
+      },
+      {
+        "stimulus": "Escribe una frase con «¿Cuántos años tienes?»",
+        "must": [
+          "¿Cuántos años tienes?"
+        ],
+        "model": "—¿Cuántos años tienes? —Quince.",
+        "tag": "edad",
+        "sub": "Hoe oud ben je?"
+      },
+      {
+        "stimulus": "Escribe una frase con «¡Hola!»",
+        "must": [
+          "¡Hola!"
+        ],
+        "model": "¡Hola! ¿Qué tal? (h zwijgt)",
+        "tag": "saludos",
+        "sub": "Hallo!"
+      },
+      {
+        "stimulus": "Escribe una frase con «Buenos días»",
+        "must": [
+          "Buenos días"
+        ],
+        "model": "Buenos días, me llamo Nina.",
+        "tag": "saludos",
+        "sub": "Goedemorgen"
+      },
+      {
+        "stimulus": "Escribe una frase con «Buenas tardes»",
+        "must": [
+          "Buenas tardes"
+        ],
+        "model": "Buenas tardes, señora.",
+        "tag": "saludos",
+        "sub": "Goeiemiddag"
+      },
+      {
+        "stimulus": "Escribe una frase con «Buenas noches»",
+        "must": [
+          "Buenas noches"
+        ],
+        "model": "Buenas noches, hasta mañana.",
+        "tag": "saludos",
+        "sub": "Goedenavond / -nacht"
+      },
+      {
+        "stimulus": "Escribe una frase con «¿Qué tal?»",
+        "must": [
+          "¿Qué tal?"
+        ],
+        "model": "¡Hola, Diego! ¿Qué tal?",
+        "tag": "saludos",
+        "sub": "Hoe gaat het?"
+      },
+      {
+        "stimulus": "Escribe una frase con «¿Cómo estás?»",
+        "must": [
+          "¿Cómo estás?"
+        ],
+        "model": "Hola, ¿cómo estás?",
+        "tag": "saludos",
+        "sub": "Hoe gaat het (met je)?"
+      },
+      {
+        "stimulus": "Escribe una frase con «bien, gracias. ¿Y tú?»",
+        "must": [
+          "bien, gracias. ¿Y tú?"
+        ],
+        "model": "Muy bien, gracias. ¿Y tú?",
+        "tag": "saludos",
+        "sub": "(Heel) goed, dank je. En jij?"
+      },
+      {
+        "stimulus": "Escribe una frase con «Adiós»",
+        "must": [
+          "Adiós"
+        ],
+        "model": "¡Adiós! Hasta luego.",
+        "tag": "saludos",
+        "sub": "Dag / Tot ziens"
+      },
+      {
+        "stimulus": "Escribe una frase con «Hasta luego»",
+        "must": [
+          "Hasta luego"
+        ],
+        "model": "Hasta luego, Lucía.",
+        "tag": "saludos",
+        "sub": "Tot straks"
+      },
+      {
+        "stimulus": "Escribe una frase con «Hasta mañana»",
+        "must": [
+          "Hasta mañana"
+        ],
+        "model": "Hasta mañana, clase.",
+        "tag": "saludos",
+        "sub": "Tot morgen"
+      },
+      {
+        "stimulus": "Escribe una frase con «Chao»",
+        "must": [
+          "Chao"
+        ],
+        "model": "¡Chao! Nos vemos.",
+        "tag": "saludos",
+        "sub": "Doei"
+      },
+      {
+        "stimulus": "Escribe una frase con «Me llamo …»",
+        "must": [
+          "Me llamo …"
+        ],
+        "model": "Me llamo Valen.",
+        "tag": "presentarse",
+        "sub": "Ik heet …"
+      },
+      {
+        "stimulus": "Escribe una frase con «¿Cómo te llamas?»",
+        "must": [
+          "¿Cómo te llamas?"
+        ],
+        "model": "¿Cómo te llamas?",
+        "tag": "presentarse",
+        "sub": "Hoe heet jij?"
+      },
+      {
+        "stimulus": "Escribe una frase con «¿Y tú?»",
+        "must": [
+          "¿Y tú?"
+        ],
+        "model": "Yo soy Sam. ¿Y tú?",
+        "tag": "presentarse",
+        "sub": "En jij?"
+      },
+      {
+        "stimulus": "Escribe una frase con «Mucho gusto · Igualmente»",
+        "must": [
+          "Mucho gusto · Igualmente"
+        ],
+        "model": "—Mucho gusto. —Igualmente.",
+        "tag": "presentarse",
+        "sub": "Aangenaam · Insgelijks"
+      },
+      {
+        "stimulus": "Escribe una frase con «Soy de …»",
+        "must": [
+          "Soy de …"
+        ],
+        "model": "Soy de Bélgica.",
+        "tag": "presentarse",
+        "sub": "Ik kom uit …"
+      },
+      {
+        "stimulus": "Escribe una frase con «gracias»",
+        "must": [
+          "gracias"
+        ],
+        "model": "Muchas gracias, igualmente.",
+        "tag": "clase",
+        "sub": "(Heel erg) bedankt"
+      },
+      {
+        "stimulus": "Escribe una frase con «Por favor»",
+        "must": [
+          "Por favor"
+        ],
+        "model": "Más despacio, por favor.",
+        "tag": "clase",
+        "sub": "Alsjeblieft / a.u.b."
+      },
+      {
+        "stimulus": "Escribe una frase con «¿Cómo se dice «…» en español?»",
+        "must": [
+          "¿Cómo se dice «…» en español?"
+        ],
+        "model": "¿Cómo se dice «rugzak» en español?",
+        "tag": "clase",
+        "sub": "Hoe zeg je «…» in het Spaans?"
+      },
+      {
+        "stimulus": "Escribe una frase con «¿Qué significa «…»?»",
+        "must": [
+          "¿Qué significa «…»?"
+        ],
+        "model": "¿Qué significa «mochila»?",
+        "tag": "clase",
+        "sub": "Wat betekent «…»?"
+      },
+      {
+        "stimulus": "Escribe una frase con «No entiendo»",
+        "must": [
+          "No entiendo"
+        ],
+        "model": "Perdón, no entiendo.",
+        "tag": "clase",
+        "sub": "Ik begrijp het niet"
+      },
+      {
+        "stimulus": "Escribe una frase con «¿Puedes repetir, por favor?»",
+        "must": [
+          "¿Puedes repetir, por favor?"
+        ],
+        "model": "¿Puedes repetir, por favor?",
+        "tag": "clase",
+        "sub": "Kun je herhalen, a.u.b.?"
+      },
+      {
+        "stimulus": "Escribe una frase con «Más despacio, por favor»",
+        "must": [
+          "Más despacio, por favor"
+        ],
+        "model": "Más despacio, por favor.",
+        "tag": "clase",
+        "sub": "Trager, a.u.b."
+      },
+      {
+        "stimulus": "Escribe una frase con «No sé»",
+        "must": [
+          "No sé"
+        ],
+        "model": "No sé la respuesta.",
+        "tag": "clase",
+        "sub": "Ik weet het niet"
+      },
+      {
+        "stimulus": "Escribe una frase con «¿Cómo se escribe?»",
+        "must": [
+          "¿Cómo se escribe?"
+        ],
+        "model": "¿Cómo se escribe tu nombre?",
+        "tag": "clase",
+        "sub": "Hoe schrijf je dat?"
+      },
+      {
+        "stimulus": "Escribe una frase con «Tengo una pregunta»",
+        "must": [
+          "Tengo una pregunta"
+        ],
+        "model": "Profe, tengo una pregunta.",
+        "tag": "clase",
+        "sub": "Ik heb een vraag"
+      },
+      {
+        "stimulus": "Escribe una frase con «el mundo hispano»",
+        "must": [
+          "mundo hispano"
+        ],
+        "model": "España está en el mundo hispano.",
+        "tag": "mundo hispano",
+        "sub": "de Spaanstalige wereld"
+      },
+      {
+        "stimulus": "Escribe una frase con «el país»",
+        "must": [
+          "país"
+        ],
+        "model": "México es un país grande.",
+        "tag": "mundo hispano",
+        "sub": "het land"
+      },
+      {
+        "stimulus": "Escribe una frase con «hispanohablante»",
+        "must": [
+          "hispanohablante"
+        ],
+        "model": "Hay millones de hispanohablantes.",
+        "tag": "mundo hispano",
+        "sub": "Spaanstalig(e)"
+      },
+      {
+        "stimulus": "Escribe una frase con «el cognado»",
+        "must": [
+          "cognado"
+        ],
+        "model": "«Hospital» y «chocolate» son cognados.",
+        "tag": "mundo hispano",
+        "sub": "het cognaat / transparant woord"
+      },
+      {
+        "stimulus": "Escribe una frase con «la ruta · la parada»",
+        "must": [
+          "ruta · la parada"
+        ],
+        "model": "Nuestra primera parada es España.",
+        "tag": "mundo hispano",
+        "sub": "de route · de halte/etappe"
+      },
+      {
+        "stimulus": "Escribe una frase con «Bélgica → belga»",
+        "must": [
+          "Bélgica → belga"
+        ],
+        "model": "Yo soy de Bélgica, soy belga.",
+        "tag": "paises",
+        "sub": "België → Belg(isch)"
+      }
+    ]
+  }
+}

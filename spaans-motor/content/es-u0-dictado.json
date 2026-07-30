@@ -1,0 +1,540 @@
+{
+  "id": "es-u0-dictado",
+  "title": "Dictado",
+  "subtitle": "C5 · U0 · luister en typ · lees eerst, dan afdekken",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C5",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "🔊 la letra",
+        "answers": [
+          "la letra",
+          "letra"
+        ],
+        "tag": "ortografia",
+        "sub": "de letter"
+      },
+      {
+        "stimulus": "🔊 deletrear",
+        "answers": [
+          "deletrear"
+        ],
+        "tag": "ortografia",
+        "sub": "spellen"
+      },
+      {
+        "stimulus": "🔊 la vocal",
+        "answers": [
+          "la vocal",
+          "vocal"
+        ],
+        "tag": "ortografia",
+        "sub": "de klinker"
+      },
+      {
+        "stimulus": "🔊 la consonante",
+        "answers": [
+          "la consonante",
+          "consonante"
+        ],
+        "tag": "ortografia",
+        "sub": "de medeklinker"
+      },
+      {
+        "stimulus": "🔊 la sílaba",
+        "answers": [
+          "la sílaba",
+          "sílaba"
+        ],
+        "tag": "ortografia",
+        "sub": "de lettergreep"
+      },
+      {
+        "stimulus": "🔊 la sílaba tónica",
+        "answers": [
+          "la sílaba tónica",
+          "sílaba tónica"
+        ],
+        "tag": "ortografia",
+        "sub": "de klemtoonlettergreep"
+      },
+      {
+        "stimulus": "🔊 el sombrero",
+        "answers": [
+          "el sombrero metáfora de clase",
+          "sombrero metáfora de clase",
+          "el sombrero",
+          "sombrero"
+        ],
+        "tag": "ortografia",
+        "sub": "het hoedje (= de tilde)"
+      },
+      {
+        "stimulus": "🔊 aguda",
+        "answers": [
+          "aguda"
+        ],
+        "tag": "ortografia",
+        "sub": "klemtoon op de laatste"
+      },
+      {
+        "stimulus": "🔊 llana",
+        "answers": [
+          "llana"
+        ],
+        "tag": "ortografia",
+        "sub": "klemtoon op de voorlaatste"
+      },
+      {
+        "stimulus": "🔊 esdrújula",
+        "answers": [
+          "esdrújula"
+        ],
+        "tag": "ortografia",
+        "sub": "klemtoon op de derde van achter"
+      },
+      {
+        "stimulus": "🔊 el monosílabo",
+        "answers": [
+          "el monosílabo",
+          "monosílabo"
+        ],
+        "tag": "ortografia",
+        "sub": "het eenlettergrepige woord"
+      },
+      {
+        "stimulus": "🔊 la mayúscula",
+        "answers": [
+          "la mayúscula",
+          "mayúscula"
+        ],
+        "tag": "ortografia",
+        "sub": "de hoofdletter"
+      },
+      {
+        "stimulus": "🔊 la minúscula",
+        "answers": [
+          "la minúscula",
+          "minúscula"
+        ],
+        "tag": "ortografia",
+        "sub": "de kleine letter"
+      },
+      {
+        "stimulus": "🔊 la diéresis",
+        "answers": [
+          "la diéresis ¨",
+          "diéresis ¨",
+          "la diéresis",
+          "diéresis"
+        ],
+        "tag": "ortografia",
+        "sub": "het deelteken (op ü)"
+      },
+      {
+        "stimulus": "🔊 el dígrafo",
+        "answers": [
+          "el dígrafo ch, ll",
+          "dígrafo ch, ll",
+          "el dígrafo",
+          "dígrafo"
+        ],
+        "tag": "ortografia",
+        "sub": "de klankcombinatie / digraaf"
+      },
+      {
+        "stimulus": "🔊 la arroba",
+        "answers": [
+          "la arroba @",
+          "arroba @",
+          "la arroba",
+          "arroba"
+        ],
+        "tag": "ortografia",
+        "sub": "het apenstaartje"
+      },
+      {
+        "stimulus": "🔊 el guion",
+        "answers": [
+          "el guion -",
+          "guion -",
+          "el guion",
+          "guion"
+        ],
+        "tag": "ortografia",
+        "sub": "het koppelteken"
+      },
+      {
+        "stimulus": "🔊 10 diez",
+        "answers": [
+          "10 diez"
+        ],
+        "tag": "numeros",
+        "sub": "11 once"
+      },
+      {
+        "stimulus": "🔊 20 veinte",
+        "answers": [
+          "20 veinte"
+        ],
+        "tag": "numeros",
+        "sub": "21 veintiuno"
+      },
+      {
+        "stimulus": "🔊 30 treinta",
+        "answers": [
+          "30 treinta"
+        ],
+        "tag": "numeros",
+        "sub": "40 cuarenta"
+      },
+      {
+        "stimulus": "🔊 el número",
+        "answers": [
+          "el número",
+          "número"
+        ],
+        "tag": "numeros",
+        "sub": "het getal / nummer"
+      },
+      {
+        "stimulus": "🔊 contar",
+        "answers": [
+          "contar"
+        ],
+        "tag": "numeros",
+        "sub": "tellen"
+      },
+      {
+        "stimulus": "🔊 cero",
+        "answers": [
+          "cero"
+        ],
+        "tag": "numeros",
+        "sub": "nul"
+      },
+      {
+        "stimulus": "🔊 cien",
+        "answers": [
+          "cien"
+        ],
+        "tag": "numeros",
+        "sub": "honderd"
+      },
+      {
+        "stimulus": "🔊 treinta y cinco",
+        "answers": [
+          "treinta y cinco"
+        ],
+        "tag": "numeros",
+        "sub": "vijfendertig"
+      },
+      {
+        "stimulus": "🔊 la edad",
+        "answers": [
+          "la edad",
+          "edad"
+        ],
+        "tag": "edad",
+        "sub": "de leeftijd"
+      },
+      {
+        "stimulus": "🔊 tener … años",
+        "answers": [
+          "tener … años"
+        ],
+        "tag": "edad",
+        "sub": "… jaar zijn (lett. hebben)"
+      },
+      {
+        "stimulus": "🔊 ¿Cuántos años tienes?",
+        "answers": [
+          "¿Cuántos años tienes?"
+        ],
+        "tag": "edad",
+        "sub": "Hoe oud ben je?"
+      },
+      {
+        "stimulus": "🔊 ¡Hola!",
+        "answers": [
+          "¡Hola!"
+        ],
+        "tag": "saludos",
+        "sub": "Hallo!"
+      },
+      {
+        "stimulus": "🔊 Buenos días",
+        "answers": [
+          "Buenos días"
+        ],
+        "tag": "saludos",
+        "sub": "Goedemorgen"
+      },
+      {
+        "stimulus": "🔊 Buenas tardes",
+        "answers": [
+          "Buenas tardes"
+        ],
+        "tag": "saludos",
+        "sub": "Goeiemiddag"
+      },
+      {
+        "stimulus": "🔊 Buenas noches",
+        "answers": [
+          "Buenas noches"
+        ],
+        "tag": "saludos",
+        "sub": "Goedenavond / -nacht"
+      },
+      {
+        "stimulus": "🔊 ¿Qué tal?",
+        "answers": [
+          "¿Qué tal?"
+        ],
+        "tag": "saludos",
+        "sub": "Hoe gaat het?"
+      },
+      {
+        "stimulus": "🔊 ¿Cómo estás?",
+        "answers": [
+          "¿Cómo estás?"
+        ],
+        "tag": "saludos",
+        "sub": "Hoe gaat het (met je)?"
+      },
+      {
+        "stimulus": "🔊 bien, gracias. ¿Y tú?",
+        "answers": [
+          "bien, gracias. ¿Y tú? Muy",
+          "bien, gracias. ¿Y tú?"
+        ],
+        "tag": "saludos",
+        "sub": "(Heel) goed, dank je. En jij?"
+      },
+      {
+        "stimulus": "🔊 Adiós",
+        "answers": [
+          "Adiós"
+        ],
+        "tag": "saludos",
+        "sub": "Dag / Tot ziens"
+      },
+      {
+        "stimulus": "🔊 Hasta luego",
+        "answers": [
+          "Hasta luego"
+        ],
+        "tag": "saludos",
+        "sub": "Tot straks"
+      },
+      {
+        "stimulus": "🔊 Hasta mañana",
+        "answers": [
+          "Hasta mañana"
+        ],
+        "tag": "saludos",
+        "sub": "Tot morgen"
+      },
+      {
+        "stimulus": "🔊 Chao",
+        "answers": [
+          "Chao informal",
+          "Chao"
+        ],
+        "tag": "saludos",
+        "sub": "Doei"
+      },
+      {
+        "stimulus": "🔊 Me llamo …",
+        "answers": [
+          "Me llamo …"
+        ],
+        "tag": "presentarse",
+        "sub": "Ik heet …"
+      },
+      {
+        "stimulus": "🔊 Soy …",
+        "answers": [
+          "Soy …"
+        ],
+        "tag": "presentarse",
+        "sub": "Ik ben …"
+      },
+      {
+        "stimulus": "🔊 ¿Cómo te llamas?",
+        "answers": [
+          "¿Cómo te llamas?"
+        ],
+        "tag": "presentarse",
+        "sub": "Hoe heet jij?"
+      },
+      {
+        "stimulus": "🔊 ¿Y tú?",
+        "answers": [
+          "¿Y tú?"
+        ],
+        "tag": "presentarse",
+        "sub": "En jij?"
+      },
+      {
+        "stimulus": "🔊 Mucho gusto · Igualmente",
+        "answers": [
+          "Mucho gusto · Igualmente"
+        ],
+        "tag": "presentarse",
+        "sub": "Aangenaam · Insgelijks"
+      },
+      {
+        "stimulus": "🔊 Soy de …",
+        "answers": [
+          "Soy de …"
+        ],
+        "tag": "presentarse",
+        "sub": "Ik kom uit …"
+      },
+      {
+        "stimulus": "🔊 gracias",
+        "answers": [
+          "gracias Muchas",
+          "gracias"
+        ],
+        "tag": "clase",
+        "sub": "(Heel erg) bedankt"
+      },
+      {
+        "stimulus": "🔊 Por favor",
+        "answers": [
+          "Por favor"
+        ],
+        "tag": "clase",
+        "sub": "Alsjeblieft / a.u.b."
+      },
+      {
+        "stimulus": "🔊 ¿Cómo se dice «…» en español?",
+        "answers": [
+          "¿Cómo se dice «…» en español?"
+        ],
+        "tag": "clase",
+        "sub": "Hoe zeg je «…» in het Spaans?"
+      },
+      {
+        "stimulus": "🔊 ¿Qué significa «…»?",
+        "answers": [
+          "¿Qué significa «…»?"
+        ],
+        "tag": "clase",
+        "sub": "Wat betekent «…»?"
+      },
+      {
+        "stimulus": "🔊 No entiendo",
+        "answers": [
+          "No entiendo"
+        ],
+        "tag": "clase",
+        "sub": "Ik begrijp het niet"
+      },
+      {
+        "stimulus": "🔊 ¿Puedes repetir, por favor?",
+        "answers": [
+          "¿Puedes repetir, por favor?"
+        ],
+        "tag": "clase",
+        "sub": "Kun je herhalen, a.u.b.?"
+      },
+      {
+        "stimulus": "🔊 Más despacio, por favor",
+        "answers": [
+          "Más despacio, por favor"
+        ],
+        "tag": "clase",
+        "sub": "Trager, a.u.b."
+      },
+      {
+        "stimulus": "🔊 No sé",
+        "answers": [
+          "No sé"
+        ],
+        "tag": "clase",
+        "sub": "Ik weet het niet"
+      },
+      {
+        "stimulus": "🔊 ¿Cómo se escribe?",
+        "answers": [
+          "¿Cómo se escribe?"
+        ],
+        "tag": "clase",
+        "sub": "Hoe schrijf je dat?"
+      },
+      {
+        "stimulus": "🔊 Tengo una pregunta",
+        "answers": [
+          "Tengo una pregunta"
+        ],
+        "tag": "clase",
+        "sub": "Ik heb een vraag"
+      },
+      {
+        "stimulus": "🔊 el mundo hispano",
+        "answers": [
+          "el mundo hispano",
+          "mundo hispano"
+        ],
+        "tag": "mundo hispano",
+        "sub": "de Spaanstalige wereld"
+      },
+      {
+        "stimulus": "🔊 el país",
+        "answers": [
+          "el país",
+          "país"
+        ],
+        "tag": "mundo hispano",
+        "sub": "het land"
+      },
+      {
+        "stimulus": "🔊 hispanohablante",
+        "answers": [
+          "hispanohablante"
+        ],
+        "tag": "mundo hispano",
+        "sub": "Spaanstalig(e)"
+      },
+      {
+        "stimulus": "🔊 el cognado",
+        "answers": [
+          "el cognado palabra transparente",
+          "cognado palabra transparente",
+          "el cognado",
+          "cognado"
+        ],
+        "tag": "mundo hispano",
+        "sub": "het cognaat / transparant woord"
+      },
+      {
+        "stimulus": "🔊 la ruta · la parada",
+        "answers": [
+          "la ruta · la parada",
+          "ruta · la parada"
+        ],
+        "tag": "mundo hispano",
+        "sub": "de route · de halte/etappe"
+      },
+      {
+        "stimulus": "🔊 Bélgica → belga",
+        "answers": [
+          "Bélgica → belga"
+        ],
+        "tag": "paises",
+        "sub": "België → Belg(isch)"
+      }
+    ]
+  }
+}
