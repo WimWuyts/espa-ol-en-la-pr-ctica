@@ -5,7 +5,8 @@
 # flashcards + naslag (U0-vocab), visuele/interactieve grammatica (presente · género/concordancia · ser/estar),
 # klikbare kaart (mundo hispano, meelopende fiche) + TTS + inline recorder + Lectura + editbar. Huisstijl morado.
 import json, base64, os, sys
-import hub_drills
+import hub_drills, hub_bloques
+import nat_data, escucha_data, lectura_data
 ROOT = "/home/user/espa-ol-en-la-pr-ctica"
 GEN = f"{ROOT}/02-huisstijl/beeld/generators"
 sys.path.insert(0, GEN); import cast_gen as C; import vocab_icons as VI; import vocab_emoji as VE
@@ -44,11 +45,16 @@ MOTOR = [
    ['repite-saludos', 'escucha y repite: saludos', 'speak'],
    ['mensaje-presentate', 'mensaje de voz: preséntate', 'speak']]],
 ]
+# De getypte woordenschatladder (make_vocab_type_games.py): ophalen en
+# produceren, de treden die boven het koppelen en aanwijzen liggen.
+_grupo = hub_bloques.grupo_escribir(
+    lambda sl: os.path.exists(f"{ROOT}/spaans-motor/games/es-c6plus-u0-{sl}.html"))
+if _grupo: MOTOR.append(_grupo)
 GAMEDIR = f"{ROOT}/spaans-motor/games"
 slugs = [g[0] for grp in MOTOR for g in grp[1]]
 GAMES = {s: b64(f"{GAMEDIR}/es-c6plus-u0-{s}.html") for s in slugs if os.path.exists(f"{GAMEDIR}/es-c6plus-u0-{s}.html")}
 
-CSS = FONTS + """
+CSS = FONTS + hub_drills.TYPE_CSS + hub_drills.ESCUCHA_CSS + hub_drills.LECTURA_CSS + hub_bloques.CSS_EXTRA + """
 :root{--g:#7C56A9;--gd:#5B3E83;--gt:#EEE8F5;--ink:#20242E;--mut:#6A6E78;--paper:#FCFBF8;--crema:#F3EEE4;--line:#E4E3DE;--red:#DC2626;--amber:#B7860B;--card:#fff;
 --onder:#2563EB;--ww:#EA7317;--voorw:#1E9E74;--tijd:#7C3AED;--plaats:#14B8A6;
 --disp:'Bricolage Grotesque',sans-serif;--body:'Inter',sans-serif;--hand:'Caveat',cursive}
@@ -271,6 +277,10 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
     <div class="card ex" id="vx_gap"></div>
     <div class="card ex" id="vx_def"></div>
     <div class="card ex" id="vx_odd"></div>
+    <h3 class="subh">🌎 Países y nacionalidades — la serie completa</h3>
+    <p class="lead">Eerst <b>koppelen</b> (herkennen), daarna <b>zelf schrijven</b> (produceren). Dezelfde twintig landen, twee treden van de ladder.</p>
+    <div class="card ex" id="nat_c6p_match"></div>
+    <div class="card ex" id="nat_c6p_type"></div>
     <h2 class="sec">Naslagwerk · zoeken</h2>
     __NAS__
   </section>
@@ -314,6 +324,9 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
     <div class="card ex" id="lx_order"></div>
     <h3 class="subh">🔎 Comprensión · escanea y escoge</h3>
     <div class="card ex" id="lx_scan"></div>
+    <h2 class="sec">Lectura completa · el tablón de anuncios</h2>
+    <p class="lead">Drie echte berichtjes van het prikbord, met de volledige leesroute: <b>voorspellen → globaal → scannen → juist/fout met bewijs → betekenis uit de context → zelf schrijven</b>. <span class="gloss">Dezelfde tekst staat in je cursus, met schrijfruimte.</span></p>
+    <div class="card ex" id="lec_c6p"></div>
   </section>
 
   <section class="panel" data-p="juegos">
@@ -329,6 +342,12 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
     <div class="card" id="rec_pedido"></div>
     <div class="card" id="rec_plato"></div>
     <p class="lead" style="margin-top:8px">Meer spreek-/opnamespellen (preséntate, describe…) vind je ook onder <b>Juegos ④</b>.</p>
+  </section>
+
+  <section class="panel" data-p="escuchar">
+    <h2 class="sec">Escuchar · el primer día de curso 🎧</h2>
+    <p class="lead">Eén gesprek op de speelplaats, zes stappen: <b>situatie</b> → <b>globaal</b> → <b>details</b> → <b>juist/fout met bewijs</b>. Het <b>transcript</b> gaat pas open als de taken klaar zijn. <span class="gloss">Zolang er nog geen opname is, leest de computerstem het gesprek voor.</span></p>
+    <div class="card ex" id="esc_c6p"></div>
   </section>
 
   <section class="panel" data-p="cultura">
@@ -376,7 +395,7 @@ function toggleTheme(){const r=document.documentElement;r.dataset.theme=r.datase
 """ + hub_drills.SPEAK_JS + r"""
 const TTS=('speechSynthesis'in window);
 if(TTS){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}
-const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['juegos','Juegos'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
+const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
 const sn=document.getElementById('subnav');
 PANELS.forEach((p,i)=>{const b=document.createElement('button');b.textContent=p[1];if(i===0)b.classList.add('on');b.onclick=()=>{
   document.querySelectorAll('.subnav button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
@@ -749,6 +768,9 @@ function buildInlineExercises(){
 }
 
 renderFC();renderTable();gameCantidad();gamePron();renderLectura();buildRecorders();buildInlineExercises();
+""" + hub_drills.TYPE_JS + hub_drills.ESCUCHA_JS + hub_drills.LECTURA_JS + r"""
+// ---------- Blueprint-oefeningen, luisteren en lezen (uit de inhoudsbronnen) ----------
+__BLOQUES__
 (function(){const h=location.hash.replace('#','');const i=PANELS.findIndex(p=>p[0]===h);if(i>=0)sn.children[i].click();})();
 window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');const i=PANELS.findIndex(p=>p[0]===h);if(i>=0)sn.children[i].click();});
 
@@ -765,6 +787,12 @@ window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');
    var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='C6plus_U0_web_mijn_versie.html';a.click();};
 })();
 """
+
+BLOQUES=(hub_bloques.match_js("nat_c6p_match", nat_data.C6P_U0_NAC, per=20)
+        +hub_bloques.type_js("nat_c6p_type", nat_data.C6P_U0_NAC_TYPE)
+        +hub_bloques.escucha_js("esc_c6p", escucha_data.C6P_U0)
+        +hub_bloques.lectura_js("lec_c6p", lectura_data.C6P_U0))
+JS=JS.replace("__BLOQUES__", BLOQUES)
 
 html=(HTML.replace("__CSS__",CSS).replace("__MOCH__",moch).replace("__FC__",flashcards_html())
       .replace("__NAS__",naslag_html()).replace("__MAP__",mapsvg).replace("__DATA__",data_js()).replace("__JS__",JS))

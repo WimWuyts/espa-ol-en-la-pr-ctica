@@ -70,8 +70,9 @@ _ENGINES = {
    host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="qlist"></div><div class="exscore">Juist: <b class="ok">0</b>/'+series.length+'</div>';
    host.querySelector('.otra').onclick=render;const list=host.querySelector('.qlist'),scoreEl=host.querySelector('.ok');
    series.forEach(it=>{const q=document.createElement('div');q.className='exq';
-     q.innerHTML='<div class="qz">'+exFmt(it.q)+'</div><div class="exopts"></div><div class="exwhy"></div>';
+     q.innerHTML='<div class="qz">'+(it.say?'<button class="exsay" type="button" aria-label="Escuchar la palabra">🔊</button> ':'')+exFmt(it.q)+'</div><div class="exopts"></div><div class="exwhy"></div>';
      const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy');let locked=false;
+     const bs=q.querySelector('.exsay');if(bs)bs.onclick=()=>speak(it.say);
      exSample(it.opts,it.opts.length).forEach(o=>{const b=document.createElement('button');b.className='exopt';b.type='button';b.textContent=o;
        b.onclick=()=>{if(locked)return;locked=true;const good=o===it.ans;
          opts.querySelectorAll('.exopt').forEach(x=>{x.disabled=true;if(x.textContent===it.ans)x.classList.add('ok');});
@@ -465,4 +466,131 @@ ESCUCHA_CSS = r"""
 .escta{width:100%;max-width:100%;box-sizing:border-box;border:1.5px solid var(--line);border-radius:10px;padding:9px 11px;font-family:var(--body);font-size:15px;background:var(--card);color:var(--ink)}
 .escta:focus-visible,.escbtn:focus-visible,.escclave:focus-visible,.esctrsay:focus-visible{outline:3px solid var(--gd);outline-offset:2px}
 .escconteo{margin:4px 0 0}
+"""
+
+
+# ---------------------------------------------------------------------------
+# buildLectura — leesblok volgens de route van CLAUDE.md 14bis
+#
+# De hubs hadden per unit wel een Lectura, maar meestal als «tekst + een paar
+# meerkeuzevragen». De route eist meer, en vooral: scannen en bewijs.
+#
+#   voorspellen (vóór het lezen) -> globaal begrip -> scannen (getypt, want
+#   informatie terugvinden is ophalen, niet herkennen) -> juist/fout MET BEWIJS
+#   -> betekenis uit context -> productieve reactie.
+#
+# De tekst blijft de hele tijd zichtbaar: scannen zonder tekst is geheugenwerk,
+# en dat is een andere vaardigheid dan lezen.
+# ---------------------------------------------------------------------------
+LECTURA_JS = r"""
+function lecTexto(bloques){let h='';
+ bloques.forEach(b=>{const soort=b[0],c=b[1];
+  if(soort==='titulo')h+='<h4 class="lectitulo">'+exEsc(c)+'</h4>';
+  else if(soort==='lema')h+='<p class="leclema">'+exEsc(c)+'</p>';
+  else if(soort==='firma')h+='<p class="lecfirma">'+exEsc(c)+'</p>';
+  else if(soort==='lista')h+='<ul class="leclista">'+c.map(x=>'<li>'+exEsc(x)+'</li>').join('')+'</ul>';
+  else if(soort==='aviso')h+='<div class="lecaviso"><b>'+exEsc(c[0])+'</b><p>'+exEsc(c[1])+'</p></div>';
+  else h+='<p>'+exEsc(c)+'</p>';});
+ return h;}
+function buildLectura(id,cfg){
+ const host=document.getElementById(id);if(!host)return;
+ const esc=cfg.escanear||[],vf=cfg.vf||[],ctx=cfg.contexto||[];
+ host.innerHTML=
+  '<div class="exhead"><h3>📄 '+cfg.titulo+'</h3><span class="lectipo">'+exEsc(cfg.tipo)+'</span></div>'+
+  '<div class="lecficha"><span><b>Afzender</b> '+exEsc(cfg.emisor)+'</span><span><b>Ontvanger</b> '+exEsc(cfg.receptor)+'</span><span><b>Leesdoel</b> '+exEsc(cfg.objetivo)+'</span></div>'+
+  '<ol class="escladder">'+
+   '<li class="escpaso"><h4>1 · Antes de leer — predice</h4><div class="lecpred"></div></li>'+
+   '<li class="escpaso"><h4>2 · El texto</h4><div class="lectexto">'+lecTexto(cfg.texto)+'</div>'+
+     '<button class="otra lecnl" type="button">🇳🇱 vertaling aan/uit</button><div class="lectrad" hidden>'+exEsc(cfg.traduccion||'')+'</div></li>'+
+   '<li class="escpaso"><h4>3 · Comprensión global</h4><div class="lecglob"></div></li>'+
+   '<li class="escpaso"><h4>4 · Escanea — busca el dato</h4><div class="lecesc"></div></li>'+
+   '<li class="escpaso"><h4>5 · Verdadero o falso — con prueba</h4><div class="lecvf"></div></li>'+
+   '<li class="escpaso"><h4>6 · El significado por el contexto</h4><div class="lecctx"></div></li>'+
+   '<li class="escpaso"><h4>7 · Tu reacción</h4><div class="lecprod"></div></li>'+
+  '</ol>';
+ const $=s=>host.querySelector(s);
+ $('.lecnl').onclick=()=>{const t=$('.lectrad');t.hidden=!t.hidden;};
+ function mc(cont,it){const q=document.createElement('div');q.className='exq';
+   q.innerHTML='<div class="qz">'+exFmt(it.q)+'</div><div class="exopts"></div><div class="exwhy" role="status" aria-live="polite"></div>';
+   const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy');let cerrado=false;
+   exSample(it.opts,it.opts.length).forEach(o=>{const b=document.createElement('button');b.className='exopt';b.type='button';b.textContent=o;
+     b.onclick=()=>{if(cerrado)return;cerrado=true;const bien=o===it.ans;
+       opts.querySelectorAll('.exopt').forEach(x=>{x.disabled=true;if(x.textContent===it.ans)x.classList.add('ok');});
+       if(!bien)b.classList.add('no');
+       why.className='exwhy show '+(bien?'g':'b');
+       why.innerHTML=(bien?'<b>✓ correcto</b>':'<b>✗ no</b> → '+exEsc(it.ans))+(it.why?' · '+exEsc(it.why):'');};
+     opts.appendChild(b);});
+   cont.appendChild(q);}
+ if(cfg.prediccion)mc($('.lecpred'),cfg.prediccion);
+ if(cfg.global)mc($('.lecglob'),cfg.global);
+ ctx.forEach(it=>mc($('.lecctx'),it));
+ // Scannen is getypt: het antwoord staat in de tekst, dus opzoeken en
+ // overschrijven — geen keuzemenu waarin het antwoord al meekijkt.
+ buildTypeEn($('.lecesc'),esc);
+ function buildTypeEn(cont,items){
+   cont.innerHTML='<p class="desc">Zoek het gegeven in de tekst en schrijf het op. <span class="escscore">Juist: <b class="oke">0</b>/'+items.length+'</span></p>';
+   let ok=0;
+   items.forEach((it,i)=>{const r=document.createElement('div');r.className='exq tyq';
+     r.innerHTML='<div class="qz"><span class="tynum">'+(i+1)+'</span><span>'+exFmt(it.q)+'</span></div>'+
+       '<div class="tyin"><input type="text" class="tyfield" autocomplete="off" aria-label="Scanvraag '+(i+1)+'"><button class="otra lecchk" type="button">✓</button></div>'+
+       '<div class="exwhy" role="status" aria-live="polite"></div>';
+     const inp=r.querySelector('.tyfield'),why=r.querySelector('.exwhy'),btn=r.querySelector('.lecchk');
+     function comprueba(){if(inp.disabled)return;const v=inp.value.trim();
+       const bien=v&&[it.ans].concat(it.alt||[]).some(a=>tyNorm(a,'soft')===tyNorm(v,'soft'));
+       if(bien){ok++;cont.querySelector('.oke').textContent=ok;inp.disabled=true;btn.disabled=true;
+         inp.classList.add('good');inp.setAttribute('aria-invalid','false');
+         why.className='exwhy show g';why.innerHTML='<b>✓ correcto</b>'+(it.why?' · '+exEsc(it.why):'');}
+       else{inp.classList.add('bad');inp.setAttribute('aria-invalid','true');
+         why.className='exwhy show b';why.innerHTML='<b>✗ todavía no</b> · zoek nog eens in de tekst';}}
+     btn.onclick=comprueba;
+     inp.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();comprueba();}});
+     cont.appendChild(r);});}
+ vf.forEach((it,i)=>{const q=document.createElement('div');q.className='exq';
+   q.innerHTML='<div class="qz"><span class="tynum">'+(i+1)+'</span><span>'+exFmt(it.q)+'</span></div>'+
+     '<div class="exopts"><button class="exopt" type="button">Verdadero</button><button class="exopt" type="button">Falso</button></div>'+
+     '<div class="escprueba" hidden><label>Bewijs uit de tekst: <input type="text" class="tyfield lecpr" autocomplete="off" aria-label="Bewijs bij stelling '+(i+1)+'"></label><button class="otra lecprbtn" type="button">✓ Comprobar prueba</button></div>'+
+     '<div class="exwhy" role="status" aria-live="polite"></div>';
+   const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy'),pr=q.querySelector('.escprueba');let cerrado=false;
+   opts.querySelectorAll('.exopt').forEach(b=>{b.onclick=()=>{if(cerrado)return;cerrado=true;
+     const bien=(b.textContent==='Verdadero')===!!it.ans;
+     opts.querySelectorAll('.exopt').forEach(x=>{x.disabled=true;if((x.textContent==='Verdadero')===!!it.ans)x.classList.add('ok');});
+     if(!bien)b.classList.add('no');
+     why.className='exwhy show '+(bien?'g':'b');
+     why.innerHTML=(bien?'<b>✓ correcto</b>':'<b>✗ no</b> → '+(it.ans?'verdadero':'falso'))+' · Kopieer nu de zin die het bewijst.';
+     pr.hidden=false;};});
+   q.querySelector('.lecprbtn').onclick=()=>{const v=q.querySelector('.lecpr').value.trim();
+     const a=tyNorm(v,'soft'),b=tyNorm(it.prueba,'soft');
+     const bien=a.length>2&&(b.indexOf(a)>-1||a.indexOf(b)>-1);
+     why.className='exwhy show '+(bien?'g':'b');
+     why.innerHTML=bien?'<b>✓ buena prueba</b> · «'+exEsc(it.prueba)+'»':'<b>✗ esa prueba no está</b> · en el texto: «'+exEsc(it.prueba)+'»';
+     q.querySelector('.lecprbtn').disabled=true;q.querySelector('.lecpr').disabled=true;};
+   $('.lecvf').appendChild(q);});
+ const P=cfg.produccion||{};
+ $('.lecprod').innerHTML='<p class="desc">'+exEsc(P.prompt||'')+'</p>'+
+   '<textarea class="escta" rows="5" aria-label="Jouw geschreven reactie"></textarea>'+
+   '<p class="desc escconteo">0 palabras</p>'+
+   (P.modelo?'<button class="otra lecmod" type="button">👁 Ver modelo</button><p class="lecmodelo" hidden>'+exEsc(P.modelo)+'</p>':'');
+ const ta=$('.escta');
+ if(ta)ta.addEventListener('input',()=>{const n=ta.value.trim()?ta.value.trim().split(/\s+/).length:0;
+   $('.escconteo').textContent=n+' palabra'+(n===1?'':'s');});
+ const bm=$('.lecmod');
+ if(bm)bm.onclick=()=>{const m=$('.lecmodelo');m.hidden=!m.hidden;};
+}
+"""
+
+LECTURA_CSS = r"""
+.lectipo{font-size:11px;font-weight:700;color:var(--gd);background:var(--gt);border-radius:999px;padding:3px 9px}
+.lecficha{display:flex;gap:14px;flex-wrap:wrap;background:var(--gt);border-radius:10px;padding:8px 12px;margin:8px 0 14px;font-size:12px}
+.lecficha b{display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--gd)}
+.lectexto{border:1px solid var(--line);border-left:4px solid var(--g);border-radius:12px;padding:14px 17px;background:var(--card)}
+.lectitulo{font-family:var(--disp);color:var(--gd);margin:0 0 4px;font-size:17px}
+.leclema{font-family:var(--hand,inherit);color:var(--mut);margin:0 0 10px}
+.leclista{margin:8px 0;padding-left:20px}
+.leclista li{margin:3px 0}
+.lecaviso{border:1px dashed var(--line);border-radius:10px;padding:9px 12px;margin:9px 0;background:var(--gt)}
+.lecaviso p{margin:4px 0 0}
+.lecfirma{font-size:13px;color:var(--mut);margin:10px 0 0}
+.lectrad{font-size:13px;color:var(--mut);font-style:italic;margin-top:9px;border-left:3px solid var(--line);padding-left:10px}
+.lecmodelo{font-size:13px;background:var(--gt);color:var(--gd);border-radius:9px;padding:8px 11px;margin-top:8px}
+.lecchk{flex:none}
 """

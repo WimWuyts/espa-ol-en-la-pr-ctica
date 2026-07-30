@@ -1,0 +1,116 @@
+#!/usr/bin/env python3
+"""Zet de inhoudsbronnen om in hub-JS.
+
+De data staat in `nat_data.py`, `escucha_data.py` en `lectura_data.py`; dit
+bestand maakt er de `build…(...)`-aanroepen van die in de hub terechtkomen.
+Zo blijft de inhoud op één plaats en kan de printgenerator dezelfde bron lezen
+zonder de JS te moeten napluizen.
+"""
+import json
+
+_J = lambda o: json.dumps(o, ensure_ascii=False)
+
+
+def choice_js(host_id, bloque, per=None, extra_desc="", prefix="build"):
+    """Blueprint-oefening als vierkeuze. `per` = None -> alle items in één reeks,
+    want de blueprints eisen «presenteer alle N items».
+
+    `prefix` bestaat omdat C5 U0 de motoren onder hun oudere naam kent
+    (`exChoice` in plaats van `buildChoice`); zie hub_drills.engines()."""
+    n = len(bloque["items"])
+    desc = bloque.get("instruccion_nl", "")
+    if extra_desc:
+        desc += " " + extra_desc
+    cfg = {
+        "title": "%s <span class=\"natid\">%s</span>" % (bloque["titulo"], bloque["id"]),
+        "desc": desc,
+        "per": per or n,
+        "pool": bloque["items"],
+    }
+    # console.assert: de blueprint eist een exact aantal, dus laat het zichzelf
+    # controleren in de browser in plaats van erop te vertrouwen.
+    return ("console.assert(%d===%d,'%s: itemaantal wijkt af');\n"
+            "%sChoice(%s,%s);\n" % (n, bloque["aantal"], bloque["id"],
+                                    prefix, _J(host_id), _J(cfg)))
+
+
+def match_js(host_id, bloque, per=None, prefix="build"):
+    pares = [{"a": a, "b": b} for a, b in bloque["pares"]]
+    n = len(pares)
+    cfg = {
+        "title": "%s <span class=\"natid\">%s</span>" % (bloque["titulo"], bloque["id"]),
+        "desc": bloque.get("instruccion_nl", "") +
+                (" Modelo: %s" % bloque["modelo"] if bloque.get("modelo") else ""),
+        "per": per or min(10, n),
+        "pool": pares,
+    }
+    return ("console.assert(%d===%d,'%s: itemaantal wijkt af');\n"
+            "%sMatch(%s,%s);\n" % (n, bloque["aantal"], bloque["id"], prefix, _J(host_id), _J(cfg)))
+
+
+def type_js(host_id, bloque, per_block=10):
+    cfg = {
+        "title": "%s <span class=\"natid\">%s</span>" % (bloque["titulo"], bloque["id"]),
+        "desc": bloque.get("instruccion_nl", ""),
+        "perBlock": per_block,
+        "accents": bloque.get("accents", "soft"),
+        "expect": bloque["aantal"],
+        "items": bloque["items"],
+    }
+    return "buildType(%s,%s);\n" % (_J(host_id), _J(cfg))
+
+
+def escucha_js(host_id, frag):
+    cfg = {
+        "title": frag["titulo"],
+        "audio": frag["audio"],
+        "expectDetalle": 5,
+        "situacion": frag["situacion"],
+        "guion": frag["guion"],
+        "global": frag["global"],
+        "detalle": frag["detalle"],
+        "vf": frag["vf"],
+        "produccion": frag["produccion"],
+    }
+    return "buildEscucha(%s,%s);\n" % (_J(host_id), _J(cfg))
+
+
+def lectura_js(host_id, texto):
+    cfg = {
+        "titulo": texto["titulo"], "tipo": texto["tipo"],
+        "emisor": texto["emisor"], "receptor": texto["receptor"],
+        "objetivo": texto["objetivo"],
+        "prediccion": texto["prediccion"], "texto": texto["texto"],
+        "traduccion": texto.get("traduccion", ""),
+        "global": texto["global"], "escanear": texto["escanear"],
+        "vf": texto["vf"], "contexto": texto["contexto"],
+        "produccion": texto["produccion"],
+    }
+    return "buildLectura(%s,%s);\n" % (_J(host_id), _J(cfg))
+
+
+# De typ-oefeningen uit make_vocab_type_games.py verschijnen als motor-spellen;
+# dit is de groep waaronder ze in de hub komen te staan.
+GRUPO_ESCRIBIR = ["escribe-palabra", "completa-frase", "que-palabra", "dictado", "escribe-frase"]
+GRUPO_ESCRIBIR_TITULOS = {
+    "escribe-palabra": ("NL → typ het Spaanse woord", "type"),
+    "completa-frase": ("vul het woord in de zin in", "type"),
+    "que-palabra": ("omschrijving → typ het woord", "type"),
+    "dictado": ("dictee: typ wat je hoort", "type"),
+    "escribe-frase": ("schrijf zelf een zin", "type"),
+}
+
+
+def grupo_escribir(prefix_bestaat):
+    """Bouwt de MOTOR-groep «Escribir» uit de vijf getypte woordenschat-spellen.
+    `prefix_bestaat(slug)` zegt of het spelbestand er is, zodat een ontbrekend
+    spel niet als dode tegel in de hub belandt."""
+    juegos = [[s, GRUPO_ESCRIBIR_TITULOS[s][0], GRUPO_ESCRIBIR_TITULOS[s][1]]
+              for s in GRUPO_ESCRIBIR if prefix_bestaat(s)]
+    return ["Escribir · typen ✍️", juegos] if juegos else None
+
+
+CSS_EXTRA = """
+.natid{font-size:10px;font-weight:700;color:var(--mut);background:var(--crema,#eee);border-radius:6px;padding:2px 6px;letter-spacing:.04em;vertical-align:middle}
+.exsay{border:none;background:var(--gt);color:var(--gd);border-radius:7px;padding:2px 7px;cursor:pointer;font-size:14px}
+"""

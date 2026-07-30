@@ -6,7 +6,8 @@
 #  - interactieve kaart (klik een land) + interactief abecedario + spraak (TTS)
 # NB: géén werkwoordsvervoeging (conjugador/vervoegingscirkel) — dat hoort niet in U0.
 import json, base64, os, sys
-import hub_drills
+import hub_drills, hub_bloques
+import nat_data, escucha_data, lectura_data
 
 ROOT="/home/user/espa-ol-en-la-pr-ctica"
 GEN=f"{ROOT}/02-huisstijl/beeld/generators"
@@ -35,11 +36,16 @@ MOTOR=[
  ['Saludos · lengua de clase',[['saludos','saludos ES↔NL','match'],['saludo-despedida','saludo/despedida/cortesía','classify'],['lenguaje-de-clase','klaszinnen aanvullen','cloze']]],
  ['Vocabulario · mundo hispano',[['vocabulario-match','woordenschat ES↔NL','match'],['vocabulario-memoria','geheugenspel','memory'],['gentilicios','país ↔ gentilicio','match'],['genero','el / la','classify']]],
 ]
+# De getypte woordenschatladder (make_vocab_type_games.py): de bovenkant van de
+# ladder — ophalen en produceren in plaats van herkennen. Alleen de spellen die
+# echt gebouwd zijn, zodat er geen dode tegel in de hub komt.
+_grupo=hub_bloques.grupo_escribir(lambda sl: os.path.exists(f"{ROOT}/spaans-motor/games/es-u0-{sl}.html"))
+if _grupo: MOTOR.append(_grupo)
 GAMEDIR=f"{ROOT}/spaans-motor/games"
 slugs=[g[0] for grp in MOTOR for g in grp[1]]
 GAMES={s: b64(f"{GAMEDIR}/es-u0-{s}.html") for s in slugs if os.path.exists(f"{GAMEDIR}/es-u0-{s}.html")}
 
-CSS = FONTS + """
+CSS = FONTS + hub_drills.TYPE_CSS + hub_drills.ESCUCHA_CSS + hub_drills.LECTURA_CSS + hub_bloques.CSS_EXTRA + """
 :root{--g:#1E9E74;--gd:#157355;--gt:#E4F4EE;--ink:#20242E;--mut:#6A6E78;--paper:#FCFBF8;--crema:#F3EEE4;--line:#E4E3DE;--red:#DC2626;--amber:#B7860B;--card:#fff;
 --onder:#2563EB;--ww:#EA7317;--voorw:#1E9E74;--tijd:#7C3AED;--plaats:#14B8A6;
 --disp:'Bricolage Grotesque',sans-serif;--body:'Inter',sans-serif;--hand:'Caveat',cursive}
@@ -262,6 +268,8 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
     <div class="card ex" id="vx_gap"></div>
     <div class="card ex" id="vx_pais"></div>
     <div class="card ex" id="vx_odd"></div>
+    <h3 class="subh">🔢 Los números — reeksen uit de leerlijn</h3>
+    <div class="card ex" id="nat_num010"></div>
     <h2 class="sec">Naslagwerk · zoeken</h2>
     __NAS__
   </section>
@@ -297,6 +305,9 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
     <div class="card ex" id="lx_order"></div>
     <h3 class="subh">🔎 Comprensión · escanea y escoge</h3>
     <div class="card ex" id="lx_scan"></div>
+    <h2 class="sec">Lectura completa · el cartel del club</h2>
+    <p class="lead">Een echte tekst van de school, met de volledige leesroute: <b>voorspellen → globaal → scannen → juist/fout met bewijs → betekenis uit de context → zelf schrijven</b>. <span class="gloss">Dezelfde tekst staat in je cursus, met schrijfruimte.</span></p>
+    <div class="card ex" id="lec_u0"></div>
   </section>
 
   <section class="panel" data-p="hablar">
@@ -325,12 +336,19 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
     <div class="game" id="g_escribenum"></div>
     <div class="game" id="g_saludos"></div>
     <div class="game" id="g_genero"></div>
+    <div class="game ex" id="nat_num1020"></div>
     <h3 class="subh">③ Producir &amp; comunicar <span class="pill">vrije productie</span></h3>
     <div class="game" id="g_orden"></div>
     <div class="game" id="g_presentate"></div>
     <h3 class="subh">④ Repasar jugando <span class="pill">arcade</span></h3>
     <div class="game" id="g_memory"></div>
     <div class="card" id="motorlink"></div>
+  </section>
+
+  <section class="panel" data-p="escuchar">
+    <h2 class="sec">Escuchar · en la puerta de embarque 🎧</h2>
+    <p class="lead">Eén gesprek, zes stappen: eerst <b>weten waar je bent</b>, dan <b>globaal</b> luisteren, dan de <b>details</b>, dan <b>juist/fout met bewijs</b>. Het <b>transcript</b> gaat pas open als je klaar bent — anders lees je mee in plaats van te luisteren. <span class="gloss">Zolang er nog geen opname is, leest de computerstem het gesprek voor.</span></p>
+    <div class="card ex" id="esc_u0"></div>
   </section>
 
   <section class="panel" data-p="cultura">
@@ -380,7 +398,7 @@ function toggleTheme(){const r=document.documentElement;r.dataset.theme=r.datase
 const TTS=('speechSynthesis'in window);
 if(TTS){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}
 // subnav
-const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['juegos','Juegos'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
+const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
 const sn=document.getElementById('subnav');
 PANELS.forEach((p,i)=>{const b=document.createElement('button');b.textContent=p[1];if(i===0)b.classList.add('on');b.onclick=()=>{
   document.querySelectorAll('.subnav button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
@@ -836,6 +854,9 @@ function buildRecorders(){
 // init
 renderFC();renderTable();
 buildInlineExercises();renderLectura();buildRecorders();
+""" + hub_drills.TYPE_JS + hub_drills.ESCUCHA_JS + hub_drills.LECTURA_JS + r"""
+// ---------- Blueprint-oefeningen, luisteren en lezen (uit de inhoudsbronnen) ----------
+__BLOQUES__
 // ① receptief
 gameEscucha();gameSonido();gameMarcaTilde();gameSombrero();gameVF();
 // ② gestuurd productief
@@ -864,6 +885,12 @@ window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');
    var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='U0_web_mijn_versie.html';a.click();};
 })();
 """
+
+BLOQUES=(hub_bloques.choice_js("nat_num010", nat_data.C5_U0_NAT_01, prefix="ex")
+        +hub_bloques.choice_js("nat_num1020", nat_data.C5_U0_NAT_02, prefix="ex")
+        +hub_bloques.escucha_js("esc_u0", escucha_data.C5_U0)
+        +hub_bloques.lectura_js("lec_u0", lectura_data.C5_U0))
+JS=JS.replace("__BLOQUES__", BLOQUES)
 
 html=(HTML.replace("__CSS__",CSS).replace("__MOCH__",moch).replace("__FC__",flashcards_html())
       .replace("__NAS__",naslag_html())
