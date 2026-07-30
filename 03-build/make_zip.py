@@ -51,6 +51,7 @@ COURSES = {
             ("03-build/web/U{n}_web.html",                  "C5_U{n}_hub.html"),
             ("03-build/pptx/C5_U{n}_docente.pptx",          "C5_U{n}_docente.pptx"),
             ("03-build/pptx/C5_U{n}_alumno.pptx",           "C5_U{n}_alumno.pptx"),
+            ("01-cursussen/05-a1/U{n}/LEESMIJ.md",           "LEESMIJ.md"),
         ],
         "globs": [],
     },
