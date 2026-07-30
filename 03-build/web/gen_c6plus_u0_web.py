@@ -5,6 +5,7 @@
 # flashcards + naslag (U0-vocab), visuele/interactieve grammatica (presente · género/concordancia · ser/estar),
 # klikbare kaart (mundo hispano, meelopende fiche) + TTS + inline recorder + Lectura + editbar. Huisstijl morado.
 import json, base64, os, sys
+import hub_drills
 ROOT = "/home/user/espa-ol-en-la-pr-ctica"
 GEN = f"{ROOT}/02-huisstijl/beeld/generators"
 sys.path.insert(0, GEN); import cast_gen as C; import vocab_icons as VI; import vocab_emoji as VE
@@ -372,8 +373,7 @@ __JS__
 
 JS = r"""
 function toggleTheme(){const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'}
-function speak(t,rate){if(!('speechSynthesis'in window))return;const u=new SpeechSynthesisUtterance(t);u.lang='es-ES';u.rate=rate||.92;
-  const vs=speechSynthesis.getVoices();const es=vs.find(v=>/^es/i.test(v.lang));if(es)u.voice=es;try{speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}
+""" + hub_drills.SPEAK_JS + r"""
 const TTS=('speechSynthesis'in window);
 if(TTS){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}
 const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['juegos','Juegos'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
@@ -485,37 +485,7 @@ function renderLectura(){const el=document.getElementById('lecturawrap');if(!el)
  el.appendChild(box);el.appendChild(resp);}
 
 // ---------- INLINE RECORDER (MediaRecorder) ----------
-function makeRecorder(elId, cfg){const el=document.getElementById(elId);if(!el)return;
- el.classList.add('rec');
- let idx=0, media=null, chunks=[], stream=null, curURL=null;
- const items=cfg.items;
- el.innerHTML='<h3>'+cfg.title+'</h3><p class="desc">'+cfg.desc+'</p>'+
-   '<div class="scorebar"><span>Ítem <b class="pos">1</b>/'+items.length+'</span></div>'+
-   '<div class="cue" id="'+elId+'_cue"></div><div class="target" id="'+elId+'_tg"></div>'+
-   '<div class="rbtns">'+(TTS?'<button class="rbtn sec" id="'+elId+'_play">🔊 Escuchar</button>':'')+
-   '<button class="rbtn" id="'+elId+'_rec">⏺ Grabar</button>'+
-   '<button class="rbtn sec" id="'+elId+'_mine" disabled>▶ Mi grabación</button>'+
-   '<button class="rbtn sec" id="'+elId+'_next">Siguiente ▸</button></div>'+
-   '<div id="'+elId+'_au"></div><div class="moods" id="'+elId+'_mood"></div><div id="'+elId+'_fb" class="fb"></div>';
- const tg=el.querySelector('#'+elId+'_tg'),cue=el.querySelector('#'+elId+'_cue'),pos=el.querySelector('.pos');
- const bRec=el.querySelector('#'+elId+'_rec'),bMine=el.querySelector('#'+elId+'_mine'),bNext=el.querySelector('#'+elId+'_next'),bPlay=el.querySelector('#'+elId+'_play');
- const au=el.querySelector('#'+elId+'_au'),moodbox=el.querySelector('#'+elId+'_mood');
- function load(){const it=items[idx];pos.textContent=idx+1;cue.textContent=it.cue||'';tg.innerHTML=it.text;au.innerHTML='';bMine.disabled=true;moodbox.innerHTML='';el.querySelector('#'+elId+'_fb').className='fb';
-   ['☹','😐','☺'].forEach((m,mi)=>{const b=document.createElement('div');b.className='mood';b.textContent=m;b.onclick=()=>{moodbox.querySelectorAll('.mood').forEach(x=>x.classList.remove('on'));b.classList.add('on');feedback(el.querySelector('#'+elId+'_fb'),true,(it.tip||'¡Bien! Prueba otra vez para mejorar.'));};moodbox.appendChild(b);});}
- if(bPlay)bPlay.onclick=()=>speak((items[idx].text||'').replace(/<[^>]+>/g,''));
- bNext.onclick=()=>{idx=(idx+1)%items.length;load();};
- async function start(){
-   if(!navigator.mediaDevices||!window.MediaRecorder){warn();return;}
-   try{stream=await navigator.mediaDevices.getUserMedia({audio:true});}catch(e){warn();return;}
-   chunks=[];media=new MediaRecorder(stream);media.ondataavailable=e=>chunks.push(e.data);
-   media.onstop=()=>{const blob=new Blob(chunks,{type:'audio/webm'});if(curURL)URL.revokeObjectURL(curURL);curURL=URL.createObjectURL(blob);
-     au.innerHTML='<audio controls src="'+curURL+'"></audio>';bMine.disabled=false;stream.getTracks().forEach(t=>t.stop());};
-   media.start();bRec.textContent='⏹ Parar';bRec.classList.add('rec-on');}
- function stop(){if(media&&media.state!=='inactive')media.stop();bRec.textContent='⏺ Grabar';bRec.classList.remove('rec-on');}
- bRec.onclick=()=>{if(media&&media.state==='recording')stop();else start();};
- bMine.onclick=()=>{const a=au.querySelector('audio');if(a)a.play();};
- function warn(){el.querySelector('#'+elId+'_fb').className='fb bad';el.querySelector('#'+elId+'_fb').innerHTML='🎙️ Micrófono no disponible — usa Chrome/Edge y permite el micrófono. Puedes escuchar el modelo (🔊) y practicar en voz alta.';}
- load();}
+""" + hub_drills.RECORDER_JS + r"""
 function buildRecorders(){
  makeRecorder('rec_repite',{title:'Escucha y repite: saludos y presentación',desc:'Luister → zeg na → neem op → luister terug → opnieuw.',items:[
    {text:'¡Hola! Me llamo Diego.',cue:'presentarse',tip:'Duidelijk? Probeer nog eens zonder te lezen.'},{text:'Soy de Bélgica y tengo dieciséis años.',cue:'origen + edad'},{text:'Vivo en Gante y hablo neerlandés.',cue:'dónde + lengua'},{text:'Encantado, ¿cómo te llamas?',cue:'cortesía'},{text:'Buenos días, ¿qué tal?',cue:'saludo'},{text:'¡Hasta luego!',cue:'despedida'}]});
@@ -526,74 +496,19 @@ function buildRecorders(){
 }
 
 // ================= INLINE ZELFCORRIGERENDE OEFENINGEN =================
-function exSample(pool,n){const a=pool.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a.slice(0,Math.min(n,a.length));}
-function exEsc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
-function exFmt(s){return exEsc(s).replace(/___+/g,'<span class="gap">&nbsp;&nbsp;</span>');}
+""" + hub_drills.HELPERS_JS + r"""
 
 // MEERKEUZE / GAP-FILL: pool item = {q, opts, ans, why}
-function buildChoice(id,cfg){
- const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(6,cfg.pool.length);
- function render(){const series=exSample(cfg.pool,per);let ok=0;
-   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="qlist"></div><div class="exscore">Juist: <b class="ok">0</b>/'+series.length+'</div>';
-   host.querySelector('.otra').onclick=render;const list=host.querySelector('.qlist'),scoreEl=host.querySelector('.ok');
-   series.forEach(it=>{const q=document.createElement('div');q.className='exq';
-     q.innerHTML='<div class="qz">'+exFmt(it.q)+'</div><div class="exopts"></div><div class="exwhy"></div>';
-     const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy');let locked=false;
-     exSample(it.opts,it.opts.length).forEach(o=>{const b=document.createElement('button');b.className='exopt';b.type='button';b.textContent=o;
-       b.onclick=()=>{if(locked)return;locked=true;const good=o===it.ans;
-         opts.querySelectorAll('.exopt').forEach(x=>{x.disabled=true;if(x.textContent===it.ans)x.classList.add('ok');});
-         if(good){ok++;scoreEl.textContent=ok;}else{b.classList.add('no');}
-         why.className='exwhy show '+(good?'g':'b');why.innerHTML=(good?'✅ ¡correcto! ':'❌ → '+exEsc(it.ans)+'. ')+(it.why?exEsc(it.why):'');};
-       opts.appendChild(b);});
-     list.appendChild(q);});}
- render();}
+""" + hub_drills.CHOICE_JS + r"""
 
 // MATCHING: pool item = {a,b}  (b moet uniek zijn)
-function buildMatch(id,cfg){
- const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(6,cfg.pool.length);
- function render(){const series=exSample(cfg.pool,per);let doneN=0;
-   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="mcol"><div class="mL"></div><div class="mR"></div></div><div class="exscore">Emparejados: <b class="ok">0</b>/'+series.length+'</div>';
-   host.querySelector('.otra').onclick=render;const L=host.querySelector('.mL'),R=host.querySelector('.mR'),scoreEl=host.querySelector('.ok');
-   const right=exSample(series.map((p,i)=>({p,i})),series.length);let selL=null,busy=false;
-   series.forEach((p,i)=>{const c=document.createElement('div');c.className='mcell';c.textContent=p.a;c.dataset.i=i;
-     c.onclick=()=>{if(busy||c.classList.contains('done'))return;if(selL)selL.classList.remove('sel');selL=c;c.classList.add('sel');};L.appendChild(c);});
-   right.forEach(o=>{const c=document.createElement('div');c.className='mcell';c.textContent=o.p.b;c.dataset.i=o.i;
-     c.onclick=()=>{if(busy||!selL||c.classList.contains('done'))return;busy=true;const good=selL.dataset.i===c.dataset.i;
-       if(good){selL.classList.remove('sel');selL.classList.add('done');c.classList.add('done');doneN++;scoreEl.textContent=doneN;selL=null;busy=false;}
-       else{c.classList.add('bad');const s=selL;setTimeout(()=>{c.classList.remove('bad');s.classList.remove('sel');selL=null;busy=false;},600);}};R.appendChild(c);});}
- render();}
+""" + hub_drills.MATCH_JS + r"""
 
 // ORDENAR: cfg.rounds=[{sub, items:[{label,key}]}]
-function buildOrder(id,cfg){
- const host=document.getElementById(id);if(!host)return;let ri=Math.floor(Math.random()*cfg.rounds.length);
- function render(){const round=cfg.rounds[ri];const sorted=round.items.slice().sort((a,b)=>a.key-b.key);let pos=0,mist=0;
-   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra ronda</button></div><p class="desc">'+cfg.desc+' · <b>'+exEsc(round.sub||'')+'</b></p><div class="oslots"></div><div class="obank"></div><div class="exwhy"></div>';
-   host.querySelector('.otra').onclick=()=>{ri=(ri+1)%cfg.rounds.length;render();};
-   const slots=host.querySelector('.oslots'),bank=host.querySelector('.obank'),why=host.querySelector('.exwhy');
-   sorted.forEach((_,i)=>{const s=document.createElement('div');s.className='oslot';s.textContent=(i+1);s.dataset.pos=i;slots.appendChild(s);});
-   exSample(round.items,round.items.length).forEach(it=>{const b=document.createElement('button');b.className='ochip';b.type='button';b.textContent=it.label;
-     b.onclick=()=>{if(b.classList.contains('used'))return;const exp=sorted[pos];
-       if(it.key===exp.key){b.classList.add('used');const sl=slots.querySelector('.oslot[data-pos="'+pos+'"]');sl.classList.add('filled');sl.textContent=(pos+1)+'. '+it.label;pos++;
-         if(pos>=sorted.length){why.className='exwhy show '+(mist===0?'g':'b');why.innerHTML=mist===0?'✅ ¡Perfecto! sin errores.':'✔ Completado con '+mist+' error(es). Prueba «otra ronda».';}}
-       else{mist++;b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake');why.className='exwhy show b';why.innerHTML='❌ Primero: <b>'+exEsc(exp.label)+'</b>';}};
-     bank.appendChild(b);});}
- render();}
+""" + hub_drills.ORDER_JS + r"""
 
 // EL INTRUSO: pool item = {words:[...], odd, why}
-function buildOdd(id,cfg){
- const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(5,cfg.pool.length);
- function render(){const series=exSample(cfg.pool,per);let ok=0;
-   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="qlist"></div><div class="exscore">Juist: <b class="ok">0</b>/'+series.length+'</div>';
-   host.querySelector('.otra').onclick=render;const list=host.querySelector('.qlist'),scoreEl=host.querySelector('.ok');
-   series.forEach(it=>{const q=document.createElement('div');q.className='exq';q.innerHTML='<div class="exopts"></div><div class="exwhy"></div>';
-     const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy');let locked=false;
-     exSample(it.words.map((w,i)=>({w,i})),it.words.length).forEach(o=>{const b=document.createElement('button');b.className='exopt';b.type='button';b.textContent=o.w;
-       b.onclick=()=>{if(locked)return;locked=true;const good=o.i===it.odd;opts.querySelectorAll('.exopt').forEach(x=>x.disabled=true);
-         if(good){ok++;scoreEl.textContent=ok;b.classList.add('ok');}else{b.classList.add('no');opts.querySelectorAll('.exopt').forEach(x=>{if(x.textContent===it.words[it.odd])x.classList.add('ok');});}
-         why.className='exwhy show '+(good?'g':'b');why.innerHTML=(good?'✅ ¡bien! ':'❌ → '+exEsc(it.words[it.odd])+'. ')+(it.why?exEsc(it.why):'');};
-       opts.appendChild(b);});
-     list.appendChild(q);});}
- render();}
+""" + hub_drills.ODD_JS + r"""
 
 // ---- data + calls ----
 function buildInlineExercises(){

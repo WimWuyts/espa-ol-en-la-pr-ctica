@@ -6,6 +6,7 @@
 #  - interactieve kaart (klik een land) + interactief abecedario + spraak (TTS)
 # NB: géén werkwoordsvervoeging (conjugador/vervoegingscirkel) — dat hoort niet in U0.
 import json, base64, os, sys
+import hub_drills
 
 ROOT="/home/user/espa-ol-en-la-pr-ctica"
 GEN=f"{ROOT}/02-huisstijl/beeld/generators"
@@ -375,8 +376,7 @@ __JS__
 JS = r"""
 function toggleTheme(){const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'}
 // ---------- spraak (TTS) ----------
-function speak(t,rate){if(!('speechSynthesis'in window))return;const u=new SpeechSynthesisUtterance(t);u.lang='es-ES';u.rate=rate||.92;
-  const vs=speechSynthesis.getVoices();const es=vs.find(v=>/^es/i.test(v.lang));if(es)u.voice=es;try{speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}
+""" + hub_drills.SPEAK_JS + r"""
 const TTS=('speechSynthesis'in window);
 if(TTS){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}
 // subnav
@@ -496,17 +496,7 @@ function gameSaludos(){const el=document.getElementById('g_saludos');
  const P=[['¡Hola!','hallo'],['Buenos días','goedemorgen'],['Buenas noches','goedenacht'],['¿Qué tal?','hoe gaat het?'],['Hasta luego','tot straks'],['Encantada','aangenaam (v.)']];
  buildMatch(el,'Saludos — verbind ES en NL',P);}
 // generieke match (klik links, klik rechts)
-function buildMatch(el,title,pairs){let pt=0,st=0,sel=null,done=0;
- const L=pairs.map(p=>p[0]),Rr=pairs.map(p=>p[1]).slice().sort(()=>Math.random()-.5);
- el.innerHTML='<h3>'+title+'</h3><p class="desc">Klik een kaart links, dan de juiste rechts.</p>'+scoreBar('m'+title.length)+
-  '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px"><div class="chips" style="flex-direction:column" id="mL"></div><div class="chips" style="flex-direction:column" id="mR"></div></div><div class="fb" id="mfb"></div>';
- const sb=el.querySelector('.scorebar');const cL=el.querySelector('#mL'),cR=el.querySelector('#mR');
- L.forEach((t,i)=>{const c=document.createElement('div');c.className='chip';c.textContent=t;c.dataset.i=i;c.onclick=()=>{cL.querySelectorAll('.chip').forEach(z=>z.classList.remove('sel'));c.classList.add('sel');sel=i};cL.appendChild(c);});
- Rr.forEach(t=>{const c=document.createElement('div');c.className='chip';c.textContent=t;c.onclick=()=>{if(sel==null){return}const want=pairs[sel][1];const ok=t===want;
-   if(ok){c.classList.add('ok');cL.querySelector('.chip[data-i="'+sel+'"]').classList.add('ok');pt++;st++;done++;feedback(el.querySelector('#mfb'),true,pairs[sel][0]+' → '+t);
-     if(done===pairs.length)feedback(el.querySelector('#mfb'),true,'¡Completado! '+pt+' correct.');}
-   else{st=0;c.classList.add('no');setTimeout(()=>c.classList.remove('no'),500);feedback(el.querySelector('#mfb'),false,'Probeer opnieuw.');}
-   setScore(sb,pt,st);sel=null;cL.querySelectorAll('.chip').forEach(z=>z.classList.remove('sel'));};cR.appendChild(c);});}
+""" + hub_drills.MATCH_LEGACY_JS + r"""
 // ---------- GAME: ¿el o la? ----------
 function gameGenero(){const el=document.getElementById('g_genero');
  const items=[['mapa','el'],['casa','la'],['problema','el'],['ciudad','la'],['día','el'],['mano','la'],['idioma','el'],['letra','la'],['acento','el'],['sílaba','la']];
@@ -662,70 +652,15 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeGame();});
 })();
 
 // ================= INLINE ZELFCORRIGERENDE OEFENINGEN (U5-model) =================
-function exSample(pool,n){const a=pool.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a.slice(0,Math.min(n,a.length));}
-function exEsc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
-function exFmt(s){return exEsc(s).replace(/___+/g,'<span class="gap">&nbsp;&nbsp;</span>');}
+""" + hub_drills.HELPERS_JS + r"""
 // MEERKEUZE / GAP-FILL: pool item = {q, opts, ans, why}
-function exChoice(id,cfg){
- const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(6,cfg.pool.length);
- function render(){const series=exSample(cfg.pool,per);let ok=0;
-   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="qlist"></div><div class="exscore">Juist: <b class="ok">0</b>/'+series.length+'</div>';
-   host.querySelector('.otra').onclick=render;const list=host.querySelector('.qlist'),scoreEl=host.querySelector('.ok');
-   series.forEach(it=>{const q=document.createElement('div');q.className='exq';
-     q.innerHTML='<div class="qz">'+exFmt(it.q)+'</div><div class="exopts"></div><div class="exwhy"></div>';
-     const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy');let locked=false;
-     exSample(it.opts,it.opts.length).forEach(o=>{const b=document.createElement('button');b.className='exopt';b.type='button';b.textContent=o;
-       b.onclick=()=>{if(locked)return;locked=true;const good=o===it.ans;
-         opts.querySelectorAll('.exopt').forEach(x=>{x.disabled=true;if(x.textContent===it.ans)x.classList.add('ok');});
-         if(good){ok++;scoreEl.textContent=ok;}else{b.classList.add('no');}
-         why.className='exwhy show '+(good?'g':'b');why.innerHTML=(good?'✅ ¡correcto! ':'❌ → '+exEsc(it.ans)+'. ')+(it.why?exEsc(it.why):'');};
-       opts.appendChild(b);});
-     list.appendChild(q);});}
- render();}
+""" + hub_drills.one("Choice", "ex") + r"""
 // MATCHING: pool item = {a,b}
-function exMatch(id,cfg){
- const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(6,cfg.pool.length);
- function render(){const series=exSample(cfg.pool,per);let doneN=0;
-   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="mcol"><div class="mL"></div><div class="mR"></div></div><div class="exscore">Emparejados: <b class="ok">0</b>/'+series.length+'</div>';
-   host.querySelector('.otra').onclick=render;const L=host.querySelector('.mL'),R=host.querySelector('.mR'),scoreEl=host.querySelector('.ok');
-   const right=exSample(series.map((p,i)=>({p,i})),series.length);let selL=null,busy=false;
-   series.forEach((p,i)=>{const c=document.createElement('div');c.className='mcell';c.textContent=p.a;c.dataset.i=i;
-     c.onclick=()=>{if(busy||c.classList.contains('done'))return;if(selL)selL.classList.remove('sel');selL=c;c.classList.add('sel');};L.appendChild(c);});
-   right.forEach(o=>{const c=document.createElement('div');c.className='mcell';c.textContent=o.p.b;c.dataset.i=o.i;
-     c.onclick=()=>{if(busy||!selL||c.classList.contains('done'))return;busy=true;const good=selL.dataset.i===c.dataset.i;
-       if(good){selL.classList.remove('sel');selL.classList.add('done');c.classList.add('done');doneN++;scoreEl.textContent=doneN;selL=null;busy=false;}
-       else{c.classList.add('bad');const s=selL;setTimeout(()=>{c.classList.remove('bad');s.classList.remove('sel');selL=null;busy=false;},600);}};R.appendChild(c);});}
- render();}
+""" + hub_drills.one("Match", "ex") + r"""
 // ORDENAR: cfg.rounds=[{sub, items:[{label,key}]}]
-function exOrder(id,cfg){
- const host=document.getElementById(id);if(!host)return;let ri=Math.floor(Math.random()*cfg.rounds.length);
- function render(){const round=cfg.rounds[ri];const sorted=round.items.slice().sort((a,b)=>a.key-b.key);let pos=0,mist=0;
-   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra ronda</button></div><p class="desc">'+cfg.desc+' · <b>'+exEsc(round.sub||'')+'</b></p><div class="oslots"></div><div class="obank"></div><div class="exwhy"></div>';
-   host.querySelector('.otra').onclick=()=>{ri=(ri+1)%cfg.rounds.length;render();};
-   const slots=host.querySelector('.oslots'),bank=host.querySelector('.obank'),why=host.querySelector('.exwhy');
-   sorted.forEach((_,i)=>{const s=document.createElement('div');s.className='oslot';s.textContent=(i+1);s.dataset.pos=i;slots.appendChild(s);});
-   exSample(round.items,round.items.length).forEach(it=>{const b=document.createElement('button');b.className='ochip';b.type='button';b.textContent=it.label;
-     b.onclick=()=>{if(b.classList.contains('used'))return;const exp=sorted[pos];
-       if(it.key===exp.key){b.classList.add('used');const sl=slots.querySelector('.oslot[data-pos="'+pos+'"]');sl.classList.add('filled');sl.textContent=(pos+1)+'. '+it.label;pos++;
-         if(pos>=sorted.length){why.className='exwhy show '+(mist===0?'g':'b');why.innerHTML=mist===0?'✅ ¡Perfecto! sin errores.':'✔ Completado con '+mist+' error(es). Prueba «otra ronda».';}}
-       else{mist++;b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake');why.className='exwhy show b';why.innerHTML='❌ Primero: <b>'+exEsc(exp.label)+'</b>';}};
-     bank.appendChild(b);});}
- render();}
+""" + hub_drills.one("Order", "ex") + r"""
 // EL INTRUSO: pool item = {words:[...], odd, why}
-function exOdd(id,cfg){
- const host=document.getElementById(id);if(!host)return;const per=cfg.per||Math.min(5,cfg.pool.length);
- function render(){const series=exSample(cfg.pool,per);let ok=0;
-   host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="qlist"></div><div class="exscore">Juist: <b class="ok">0</b>/'+series.length+'</div>';
-   host.querySelector('.otra').onclick=render;const list=host.querySelector('.qlist'),scoreEl=host.querySelector('.ok');
-   series.forEach(it=>{const q=document.createElement('div');q.className='exq';q.innerHTML='<div class="exopts"></div><div class="exwhy"></div>';
-     const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy');let locked=false;
-     exSample(it.words.map((w,i)=>({w,i})),it.words.length).forEach(o=>{const b=document.createElement('button');b.className='exopt';b.type='button';b.textContent=o.w;
-       b.onclick=()=>{if(locked)return;locked=true;const good=o.i===it.odd;opts.querySelectorAll('.exopt').forEach(x=>x.disabled=true);
-         if(good){ok++;scoreEl.textContent=ok;b.classList.add('ok');}else{b.classList.add('no');opts.querySelectorAll('.exopt').forEach(x=>{if(x.textContent===it.words[it.odd])x.classList.add('ok');});}
-         why.className='exwhy show '+(good?'g':'b');why.innerHTML=(good?'✅ ¡bien! ':'❌ → '+exEsc(it.words[it.odd])+'. ')+(it.why?exEsc(it.why):'');};
-       opts.appendChild(b);});
-     list.appendChild(q);});}
- render();}
+""" + hub_drills.one("Odd", "ex") + r"""
 
 function buildInlineExercises(){
  // ---------- VOCABULARIO ----------
@@ -888,37 +823,7 @@ function renderLectura(){const el=document.getElementById('lecturawrap');if(!el)
  el.appendChild(box);el.appendChild(resp);}
 
 // ---------- INLINE RECORDER (MediaRecorder) ----------
-function makeRecorder(elId, cfg){const el=document.getElementById(elId);if(!el)return;
- el.classList.add('rec');
- let idx=0, media=null, chunks=[], stream=null, curURL=null;
- const items=cfg.items;
- el.innerHTML='<h3>'+cfg.title+'</h3><p class="desc">'+cfg.desc+'</p>'+
-   '<div class="scorebar"><span>Ítem <b class="pos">1</b>/'+items.length+'</span></div>'+
-   '<div class="cue" id="'+elId+'_cue"></div><div class="target" id="'+elId+'_tg"></div>'+
-   '<div class="rbtns">'+(TTS?'<button class="rbtn sec" id="'+elId+'_play">🔊 Escuchar</button>':'')+
-   '<button class="rbtn" id="'+elId+'_rec">⏺ Grabar</button>'+
-   '<button class="rbtn sec" id="'+elId+'_mine" disabled>▶ Mi grabación</button>'+
-   '<button class="rbtn sec" id="'+elId+'_next">Siguiente ▸</button></div>'+
-   '<div id="'+elId+'_au"></div><div class="moods" id="'+elId+'_mood"></div><div id="'+elId+'_fb" class="fb"></div>';
- const tg=el.querySelector('#'+elId+'_tg'),cue=el.querySelector('#'+elId+'_cue'),pos=el.querySelector('.pos');
- const bRec=el.querySelector('#'+elId+'_rec'),bMine=el.querySelector('#'+elId+'_mine'),bNext=el.querySelector('#'+elId+'_next'),bPlay=el.querySelector('#'+elId+'_play');
- const au=el.querySelector('#'+elId+'_au'),moodbox=el.querySelector('#'+elId+'_mood');
- function load(){const it=items[idx];pos.textContent=idx+1;cue.textContent=it.cue||'';tg.innerHTML=it.text;au.innerHTML='';bMine.disabled=true;moodbox.innerHTML='';el.querySelector('#'+elId+'_fb').className='fb';
-   ['☹','😐','☺'].forEach((m,mi)=>{const b=document.createElement('div');b.className='mood';b.textContent=m;b.onclick=()=>{moodbox.querySelectorAll('.mood').forEach(x=>x.classList.remove('on'));b.classList.add('on');feedback(el.querySelector('#'+elId+'_fb'),true,(it.tip||'¡Bien! Prueba otra vez para mejorar.'));};moodbox.appendChild(b);});}
- if(bPlay)bPlay.onclick=()=>speak((items[idx].text||'').replace(/<[^>]+>/g,''));
- bNext.onclick=()=>{idx=(idx+1)%items.length;load();};
- async function start(){
-   if(!navigator.mediaDevices||!window.MediaRecorder){warn();return;}
-   try{stream=await navigator.mediaDevices.getUserMedia({audio:true});}catch(e){warn();return;}
-   chunks=[];media=new MediaRecorder(stream);media.ondataavailable=e=>chunks.push(e.data);
-   media.onstop=()=>{const blob=new Blob(chunks,{type:'audio/webm'});if(curURL)URL.revokeObjectURL(curURL);curURL=URL.createObjectURL(blob);
-     au.innerHTML='<audio controls src="'+curURL+'"></audio>';bMine.disabled=false;stream.getTracks().forEach(t=>t.stop());};
-   media.start();bRec.textContent='⏹ Parar';bRec.classList.add('rec-on');}
- function stop(){if(media&&media.state!=='inactive')media.stop();bRec.textContent='⏺ Grabar';bRec.classList.remove('rec-on');}
- bRec.onclick=()=>{if(media&&media.state==='recording')stop();else start();};
- bMine.onclick=()=>{const a=au.querySelector('audio');if(a)a.play();};
- function warn(){el.querySelector('#'+elId+'_fb').className='fb bad';el.querySelector('#'+elId+'_fb').innerHTML='🎙️ Micrófono no disponible — usa Chrome/Edge y permite el micrófono. Puedes escuchar el modelo (🔊) y practicar en voz alta.';}
- load();}
+""" + hub_drills.RECORDER_JS + r"""
 function buildRecorders(){
  makeRecorder('rec_saluda',{title:'Escucha y repite: saludos',desc:'Luister → zeg na → neem op → luister terug → opnieuw.',items:[
    {text:'Hola, ¿qué tal?',cue:'saludo'},{text:'Buenos días.',cue:'saludo'},{text:'Buenas noches.',cue:'saludo'},{text:'Encantado. / Encantada.',cue:'cortesía'},{text:'Hasta luego.',cue:'despedida'}]});
