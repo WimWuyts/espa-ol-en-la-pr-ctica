@@ -32,5 +32,10 @@ node_modules/
 03-build/*_levering_*.zip
 03-build/*_COMPLETO.zip
 
-# het zip-script is BRON, geen output
+# deze scripts zijn BRON, geen output
 !03-build/make_zip.py
+!03-build/check_regressie.py
+!03-build/SETUP_OMGEVING.md
+!03-build/web/gen_audio_elevenlabs.py
+!03-build/web/gen_qr_extra.py
+!03-build/web/qr_links.json
