@@ -30,8 +30,13 @@ window.MotorTemplates.type = {
     const mode = conf.mode === "open" ? "open" : "closed";
     const accentSensitive = !!conf.accentSensitive;
     const pool = (conf.items || []).slice();
-    const rounds = (cfg.options && cfg.options.rounds) || pool.length;
-    api.setTarget(Math.min(rounds, pool.length) || pool.length);
+    /* Series: `options.series` rondes van `options.rounds` items.
+       Elke ronde trekt VERSE items zolang de pool het toelaat; is de pool op,
+       dan wordt hij opnieuw geschud (herhaling = retrieval, geen bug). */
+    const perRound = (cfg.options && cfg.options.rounds) || pool.length;
+    const series = Math.max(1, (cfg.options && cfg.options.series) || 1);
+    const total = Math.min(perRound * series, Math.max(perRound, pool.length * series));
+    api.setTarget(total);
 
     const root = api.root; root.innerHTML = "";
     const card = el("div","ty-card");
@@ -68,11 +73,26 @@ window.MotorTemplates.type = {
       accEl.appendChild(b);
     });
 
-    let queue = shuffle(pool.slice()).slice(0, rounds);
-    let idx = 0, cur = null, locked = false;
+    /* bouw de volledige wachtrij: per ronde verse items, pool herschudden als hij op is */
+    let queue = [], rest = shuffle(pool.slice());
+    for(let s = 0; s < series; s++){
+      for(let i = 0; i < perRound; i++){
+        if(!rest.length) rest = shuffle(pool.slice());
+        queue.push(rest.shift());
+      }
+    }
+    const roundOf = i => Math.floor(i / perRound) + 1;   // 1-based rondenummer
+
+    let idx = 0, cur = null, locked = false, shownRound = 1;
 
     function load(){
       if(idx >= queue.length){ api.finish(); return; }
+      /* nieuwe ronde begonnen? → kort tussenscherm */
+      if(series > 1 && roundOf(idx) !== shownRound && idx % perRound === 0){
+        shownRound = roundOf(idx);
+        showBreak(shownRound);
+        return;
+      }
       cur = queue[idx]; locked = false;
       card.classList.remove("good","bad");
       stimEl.innerHTML = fmt(cur.stimulus);
@@ -161,6 +181,20 @@ window.MotorTemplates.type = {
       }
     }
     function next(delay){ setTimeout(load, delay); }
+
+    /* tussenscherm tussen twee rondes: even ademen, dan door */
+    function showBreak(n){
+      stimEl.innerHTML = '<span class="ty-round">Ronda '+n+' / '+series+'</span>';
+      subEl.innerHTML = "&nbsp;"; hintEl.style.display="none";
+      fbEl.textContent = " "; fbEl.className="ty-fb";
+      inEl.value=""; inEl.disabled=true; goEl.disabled=true;
+      inEl.classList.remove("ok","no");
+      extraEl.innerHTML="";
+      const b = el("button","ty-cont","Empezar ronda "+n+" →"); b.type="button";
+      b.addEventListener("click", ()=>{ shownRound = n; extraEl.innerHTML=""; load(); });
+      extraEl.appendChild(b);
+      b.focus();
+    }
 
     goEl.addEventListener("click", submit);
     function onKey(e){

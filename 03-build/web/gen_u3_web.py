@@ -54,6 +54,12 @@ MOTOR = [
    ['carrusel-dia', 'carrusel: mi día', 'speak'],
    ['mensaje-dia', 'mensaje de voz: mi día', 'speak'],
    ['describe-pau', 'describe la rutina de Pau', 'speak']]],
+ ['⑥ Escribir · escríbelo tú ✍️', [
+   ['escribe-palabra', 'escribe la palabra (NL → ES)', 'type'],
+   ['completa-frase', 'completa la frase', 'type'],
+   ['que-palabra', '¿qué palabra? (por tema)', 'type'],
+   ['dictado', 'dictado: escucha y escribe', 'type'],
+   ['escribe-frase', 'escribe una frase', 'type']]],
 ]
 GAMEDIR = f"{ROOT}/spaans-motor/games"
 slugs = [g[0] for grp in MOTOR for g in grp[1]]

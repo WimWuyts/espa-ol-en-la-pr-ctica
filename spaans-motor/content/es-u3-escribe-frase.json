@@ -1,0 +1,639 @@
+{
+  "id": "es-u3-escribe-frase",
+  "title": "Escribe una frase",
+  "subtitle": "C5 · U3 · vrije productie · structuurcheck + modeloplossing",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 8,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C5",
+    "mode": "open",
+    "items": [
+      {
+        "stimulus": "Escribe una frase con «¿Qué hora es?»",
+        "must": [
+          "¿Qué hora es?"
+        ],
+        "model": "—¿Qué hora es? —Son las tres.",
+        "tag": "hora",
+        "sub": "Hoe laat is het?"
+      },
+      {
+        "stimulus": "Escribe una frase con «la hora»",
+        "must": [
+          "hora"
+        ],
+        "model": "¿Tienes hora? Es la una.",
+        "tag": "hora",
+        "sub": "het uur / de tijd"
+      },
+      {
+        "stimulus": "Escribe una frase con «es la una»",
+        "must": [
+          "es la una"
+        ],
+        "model": "Es la una en punto.",
+        "tag": "hora",
+        "sub": "het is één uur"
+      },
+      {
+        "stimulus": "Escribe una frase con «son las dos»",
+        "must": [
+          "son las dos"
+        ],
+        "model": "Son las dos de la tarde.",
+        "tag": "hora",
+        "sub": "het is twee uur"
+      },
+      {
+        "stimulus": "Escribe una frase con «y media»",
+        "must": [
+          "y media"
+        ],
+        "model": "Son las nueve y media.",
+        "tag": "hora",
+        "sub": "half (… uur dertig)"
+      },
+      {
+        "stimulus": "Escribe una frase con «y cuarto»",
+        "must": [
+          "y cuarto"
+        ],
+        "model": "Son las cuatro y cuarto.",
+        "tag": "hora",
+        "sub": "kwart over"
+      },
+      {
+        "stimulus": "Escribe una frase con «menos cuarto»",
+        "must": [
+          "menos cuarto"
+        ],
+        "model": "Son las ocho menos cuarto.",
+        "tag": "hora",
+        "sub": "kwart voor"
+      },
+      {
+        "stimulus": "Escribe una frase con «en punto»",
+        "must": [
+          "en punto"
+        ],
+        "model": "Son las seis en punto.",
+        "tag": "hora",
+        "sub": "precies (op het hele uur)"
+      },
+      {
+        "stimulus": "Escribe una frase con «el mediodía»",
+        "must": [
+          "mediodía"
+        ],
+        "model": "Comemos al mediodía.",
+        "tag": "hora",
+        "sub": "de middag (12 u)"
+      },
+      {
+        "stimulus": "Escribe una frase con «la medianoche»",
+        "must": [
+          "medianoche"
+        ],
+        "model": "La fiesta termina a medianoche.",
+        "tag": "hora",
+        "sub": "middernacht"
+      },
+      {
+        "stimulus": "Escribe una frase con «de la mañana»",
+        "must": [
+          "de la mañana"
+        ],
+        "model": "Son las siete de la mañana.",
+        "tag": "hora",
+        "sub": "'s ochtends"
+      },
+      {
+        "stimulus": "Escribe una frase con «de la tarde»",
+        "must": [
+          "de la tarde"
+        ],
+        "model": "Son las cinco de la tarde.",
+        "tag": "hora",
+        "sub": "'s middags / 's avonds (tot ~20 u)"
+      },
+      {
+        "stimulus": "Escribe una frase con «de la noche»",
+        "must": [
+          "de la noche"
+        ],
+        "model": "Son las once de la noche.",
+        "tag": "hora",
+        "sub": "'s nachts / 's avonds (laat)"
+      },
+      {
+        "stimulus": "Escribe una frase con «¿A qué hora…?»",
+        "must": [
+          "¿A qué hora…?"
+        ],
+        "model": "¿A qué hora empiezas?",
+        "tag": "hora",
+        "sub": "Om hoe laat…?"
+      },
+      {
+        "stimulus": "Escribe una frase con «a las …»",
+        "must": [
+          "a las …"
+        ],
+        "model": "Empiezo a las ocho.",
+        "tag": "hora",
+        "sub": "om … uur"
+      },
+      {
+        "stimulus": "Escribe una frase con «el reloj»",
+        "must": [
+          "reloj"
+        ],
+        "model": "El reloj marca las diez.",
+        "tag": "hora",
+        "sub": "de klok / het horloge"
+      },
+      {
+        "stimulus": "Escribe una frase con «temprano»",
+        "must": [
+          "temprano"
+        ],
+        "model": "Me levanto temprano.",
+        "tag": "hora",
+        "sub": "vroeg"
+      },
+      {
+        "stimulus": "Escribe una frase con «tarde»",
+        "must": [
+          "tarde"
+        ],
+        "model": "Llego tarde a clase.",
+        "tag": "hora",
+        "sub": "laat"
+      },
+      {
+        "stimulus": "Escribe una frase con «la rutina»",
+        "must": [
+          "rutina"
+        ],
+        "model": "Mi rutina diaria es sencilla.",
+        "tag": "rutina",
+        "sub": "de routine / het dagritme"
+      },
+      {
+        "stimulus": "Escribe una frase con «despertarse»",
+        "must": [
+          "despertarse"
+        ],
+        "model": "Me despierto a las siete.",
+        "tag": "rutina",
+        "sub": "wakker worden"
+      },
+      {
+        "stimulus": "Escribe una frase con «levantarse»",
+        "must": [
+          "levantarse"
+        ],
+        "model": "Me levanto enseguida.",
+        "tag": "rutina",
+        "sub": "opstaan"
+      },
+      {
+        "stimulus": "Escribe una frase con «ducharse»",
+        "must": [
+          "ducharse"
+        ],
+        "model": "Me ducho por la mañana.",
+        "tag": "rutina",
+        "sub": "(zich) douchen"
+      },
+      {
+        "stimulus": "Escribe una frase con «lavarse»",
+        "must": [
+          "lavarse"
+        ],
+        "model": "Me lavo los dientes.",
+        "tag": "rutina",
+        "sub": "zich wassen"
+      },
+      {
+        "stimulus": "Escribe una frase con «vestirse»",
+        "must": [
+          "vestirse"
+        ],
+        "model": "Me visto rápido.",
+        "tag": "rutina",
+        "sub": "zich aankleden"
+      },
+      {
+        "stimulus": "Escribe una frase con «peinarse»",
+        "must": [
+          "peinarse"
+        ],
+        "model": "Me peino delante del espejo.",
+        "tag": "rutina",
+        "sub": "zich kammen"
+      },
+      {
+        "stimulus": "Escribe una frase con «desayunar»",
+        "must": [
+          "desayunar"
+        ],
+        "model": "Desayuno a las ocho.",
+        "tag": "rutina",
+        "sub": "ontbijten"
+      },
+      {
+        "stimulus": "Escribe una frase con «almorzar»",
+        "must": [
+          "almorzar"
+        ],
+        "model": "Almuerzo en el instituto.",
+        "tag": "rutina",
+        "sub": "lunchen"
+      },
+      {
+        "stimulus": "Escribe una frase con «cenar»",
+        "must": [
+          "cenar"
+        ],
+        "model": "Cenamos a las nueve.",
+        "tag": "rutina",
+        "sub": "avondmalen"
+      },
+      {
+        "stimulus": "Escribe una frase con «acostarse»",
+        "must": [
+          "acostarse"
+        ],
+        "model": "Me acuesto a las once.",
+        "tag": "rutina",
+        "sub": "gaan slapen / naar bed gaan"
+      },
+      {
+        "stimulus": "Escribe una frase con «hacer los deberes»",
+        "must": [
+          "hacer los deberes"
+        ],
+        "model": "Hago los deberes por la tarde.",
+        "tag": "rutina",
+        "sub": "huiswerk maken"
+      },
+      {
+        "stimulus": "Escribe una frase con «ir al instituto»",
+        "must": [
+          "ir al instituto"
+        ],
+        "model": "Voy al instituto en bici.",
+        "tag": "rutina",
+        "sub": "naar school gaan"
+      },
+      {
+        "stimulus": "Escribe una frase con «descansar»",
+        "must": [
+          "descansar"
+        ],
+        "model": "Descanso un rato.",
+        "tag": "rutina",
+        "sub": "rusten / uitrusten"
+      },
+      {
+        "stimulus": "Escribe una frase con «por la mañana»",
+        "must": [
+          "por la mañana"
+        ],
+        "model": "Por la mañana estudio.",
+        "tag": "rutina",
+        "sub": "'s ochtends"
+      },
+      {
+        "stimulus": "Escribe una frase con «por la tarde»",
+        "must": [
+          "por la tarde"
+        ],
+        "model": "Por la tarde juego.",
+        "tag": "rutina",
+        "sub": "'s middags"
+      },
+      {
+        "stimulus": "Escribe una frase con «por la noche»",
+        "must": [
+          "por la noche"
+        ],
+        "model": "Por la noche descanso.",
+        "tag": "rutina",
+        "sub": "'s avonds/'s nachts"
+      },
+      {
+        "stimulus": "Escribe una frase con «empezar»",
+        "must": [
+          "empezar"
+        ],
+        "model": "Las clases empiezan a las nueve.",
+        "tag": "verbos",
+        "sub": "beginnen"
+      },
+      {
+        "stimulus": "Escribe una frase con «querer»",
+        "must": [
+          "querer"
+        ],
+        "model": "Quiero dormir más.",
+        "tag": "verbos",
+        "sub": "willen"
+      },
+      {
+        "stimulus": "Escribe una frase con «preferir»",
+        "must": [
+          "preferir"
+        ],
+        "model": "Prefiero la tarde.",
+        "tag": "verbos",
+        "sub": "verkiezen / liever hebben"
+      },
+      {
+        "stimulus": "Escribe una frase con «poder»",
+        "must": [
+          "poder"
+        ],
+        "model": "No puedo salir hoy.",
+        "tag": "verbos",
+        "sub": "kunnen / mogen"
+      },
+      {
+        "stimulus": "Escribe una frase con «dormir»",
+        "must": [
+          "dormir"
+        ],
+        "model": "Duermo ocho horas.",
+        "tag": "verbos",
+        "sub": "slapen"
+      },
+      {
+        "stimulus": "Escribe una frase con «volver»",
+        "must": [
+          "volver"
+        ],
+        "model": "Vuelvo a casa a las seis.",
+        "tag": "verbos",
+        "sub": "terugkeren"
+      },
+      {
+        "stimulus": "Escribe una frase con «pedir»",
+        "must": [
+          "pedir"
+        ],
+        "model": "Pido un café.",
+        "tag": "verbos",
+        "sub": "vragen / bestellen"
+      },
+      {
+        "stimulus": "Escribe una frase con «jugar»",
+        "must": [
+          "jugar"
+        ],
+        "model": "Juego al fútbol.",
+        "tag": "verbos",
+        "sub": "spelen"
+      },
+      {
+        "stimulus": "Escribe una frase con «ir»",
+        "must": [
+          "ir"
+        ],
+        "model": "Voy al centro.",
+        "tag": "verbos",
+        "sub": "gaan"
+      },
+      {
+        "stimulus": "Escribe una frase con «salir»",
+        "must": [
+          "salir"
+        ],
+        "model": "Salgo con amigos.",
+        "tag": "verbos",
+        "sub": "uitgaan / vertrekken"
+      },
+      {
+        "stimulus": "Escribe una frase con «normalmente»",
+        "must": [
+          "normalmente"
+        ],
+        "model": "Normalmente me levanto pronto.",
+        "tag": "frecuencia",
+        "sub": "gewoonlijk / meestal"
+      },
+      {
+        "stimulus": "Escribe una frase con «a menudo»",
+        "must": [
+          "a menudo"
+        ],
+        "model": "A menudo juego al fútbol.",
+        "tag": "frecuencia",
+        "sub": "vaak"
+      },
+      {
+        "stimulus": "Escribe una frase con «a veces»",
+        "must": [
+          "a veces"
+        ],
+        "model": "A veces ceno tarde.",
+        "tag": "frecuencia",
+        "sub": "soms"
+      },
+      {
+        "stimulus": "Escribe una frase con «casi nunca»",
+        "must": [
+          "casi nunca"
+        ],
+        "model": "Casi nunca duermo la siesta.",
+        "tag": "frecuencia",
+        "sub": "bijna nooit"
+      },
+      {
+        "stimulus": "Escribe una frase con «nunca»",
+        "must": [
+          "nunca"
+        ],
+        "model": "Nunca llego tarde.",
+        "tag": "frecuencia",
+        "sub": "nooit"
+      },
+      {
+        "stimulus": "Escribe una frase con «todos los días»",
+        "must": [
+          "todos los días"
+        ],
+        "model": "Estudio todos los días.",
+        "tag": "frecuencia",
+        "sub": "elke dag"
+      },
+      {
+        "stimulus": "Escribe una frase con «una vez por semana»",
+        "must": [
+          "vez por semana"
+        ],
+        "model": "Voy al cine una vez por semana.",
+        "tag": "frecuencia",
+        "sub": "één keer per week"
+      },
+      {
+        "stimulus": "Escribe una frase con «el fin de semana»",
+        "must": [
+          "fin de semana"
+        ],
+        "model": "El fin de semana descanso.",
+        "tag": "frecuencia",
+        "sub": "het weekend"
+      },
+      {
+        "stimulus": "Escribe una frase con «el lunes»",
+        "must": [
+          "lunes"
+        ],
+        "model": "El lunes tengo español.",
+        "tag": "tiempo",
+        "sub": "maandag"
+      },
+      {
+        "stimulus": "Escribe una frase con «el martes»",
+        "must": [
+          "martes"
+        ],
+        "model": "El martes hago deporte.",
+        "tag": "tiempo",
+        "sub": "dinsdag"
+      },
+      {
+        "stimulus": "Escribe una frase con «el miércoles»",
+        "must": [
+          "miércoles"
+        ],
+        "model": "El miércoles salgo pronto.",
+        "tag": "tiempo",
+        "sub": "woensdag"
+      },
+      {
+        "stimulus": "Escribe una frase con «el jueves»",
+        "must": [
+          "jueves"
+        ],
+        "model": "El jueves estudio en casa.",
+        "tag": "tiempo",
+        "sub": "donderdag"
+      },
+      {
+        "stimulus": "Escribe una frase con «el viernes»",
+        "must": [
+          "viernes"
+        ],
+        "model": "El viernes juego con amigos.",
+        "tag": "tiempo",
+        "sub": "vrijdag"
+      },
+      {
+        "stimulus": "Escribe una frase con «el sábado»",
+        "must": [
+          "sábado"
+        ],
+        "model": "El sábado duermo más.",
+        "tag": "tiempo",
+        "sub": "zaterdag"
+      },
+      {
+        "stimulus": "Escribe una frase con «el domingo»",
+        "must": [
+          "domingo"
+        ],
+        "model": "El domingo descanso.",
+        "tag": "tiempo",
+        "sub": "zondag"
+      },
+      {
+        "stimulus": "Escribe una frase con «enero · febrero · marzo»",
+        "must": [
+          "enero · febrero · marzo"
+        ],
+        "model": "Mi cumpleaños es en marzo.",
+        "tag": "tiempo",
+        "sub": "januari · februari · maart"
+      },
+      {
+        "stimulus": "Escribe una frase con «abril · mayo · junio»",
+        "must": [
+          "abril · mayo · junio"
+        ],
+        "model": "En junio hace calor.",
+        "tag": "tiempo",
+        "sub": "april · mei · juni"
+      },
+      {
+        "stimulus": "Escribe una frase con «julio · agosto · septiembre»",
+        "must": [
+          "julio · agosto · septiembre"
+        ],
+        "model": "Las vacaciones son en agosto.",
+        "tag": "tiempo",
+        "sub": "juli · augustus · september"
+      },
+      {
+        "stimulus": "Escribe una frase con «octubre · noviembre · diciembre»",
+        "must": [
+          "octubre · noviembre · diciembre"
+        ],
+        "model": "En diciembre es Navidad.",
+        "tag": "tiempo",
+        "sub": "oktober · november · december"
+      },
+      {
+        "stimulus": "Escribe una frase con «la primavera»",
+        "must": [
+          "primavera"
+        ],
+        "model": "En primavera hay flores.",
+        "tag": "tiempo",
+        "sub": "de lente"
+      },
+      {
+        "stimulus": "Escribe una frase con «el verano»",
+        "must": [
+          "verano"
+        ],
+        "model": "En verano vamos a la playa.",
+        "tag": "tiempo",
+        "sub": "de zomer"
+      },
+      {
+        "stimulus": "Escribe una frase con «el otoño»",
+        "must": [
+          "otoño"
+        ],
+        "model": "En otoño llueve.",
+        "tag": "tiempo",
+        "sub": "de herfst"
+      },
+      {
+        "stimulus": "Escribe una frase con «el invierno»",
+        "must": [
+          "invierno"
+        ],
+        "model": "En invierno hace frío.",
+        "tag": "tiempo",
+        "sub": "de winter"
+      },
+      {
+        "stimulus": "Escribe una frase con «hoy · mañana · ayer»",
+        "must": [
+          "hoy · mañana · ayer"
+        ],
+        "model": "Hoy es lunes; mañana es martes.",
+        "tag": "tiempo",
+        "sub": "vandaag · morgen · gisteren"
+      }
+    ]
+  }
+}

@@ -42,6 +42,9 @@
 @keyframes tyGood{0%{background:#DFF3E4}100%{}}
 @keyframes tyBad{0%,100%{transform:translateX(0)}20%{transform:translateX(-7px)}40%{transform:translateX(7px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
 
+.ty-round{display:inline-block;font-family:var(--serif);font-weight:700;color:#12264A;
+  border:2px solid #C3B99F;border-radius:99px;padding:6px 22px;background:linear-gradient(180deg,#fff,#F3ECDB);
+  box-shadow:0 3px 0 rgba(0,0,0,.14)}
 .ty-extra{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:10px}
 .ty-reveal,.ty-cont{font-family:var(--serif);font-weight:700;font-size:15px;padding:9px 16px;border-radius:2px;cursor:pointer;
   border:1px solid #C3B99F;box-shadow:0 3px 0 rgba(0,0,0,.18);transition:transform .08s}

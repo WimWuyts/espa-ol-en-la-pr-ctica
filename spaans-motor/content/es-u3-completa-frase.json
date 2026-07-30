@@ -1,0 +1,396 @@
+{
+  "id": "es-u3-completa-frase",
+  "title": "Completa la frase",
+  "subtitle": "C5 · U3 · vul het ontbrekende woord in (betekenis uit de context)",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C5",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "—___ —Son las tres.",
+        "answers": [
+          "¿Qué hora es?",
+          "¿Qué hora es?"
+        ],
+        "tag": "hora",
+        "sub": "Hoe laat is het?"
+      },
+      {
+        "stimulus": "¿Tienes ___? Es la una.",
+        "answers": [
+          "la hora",
+          "hora",
+          "hora"
+        ],
+        "tag": "hora",
+        "sub": "het uur / de tijd"
+      },
+      {
+        "stimulus": "___ en punto.",
+        "answers": [
+          "es la una",
+          "es la una"
+        ],
+        "tag": "hora",
+        "sub": "het is één uur"
+      },
+      {
+        "stimulus": "___ de la tarde.",
+        "answers": [
+          "son las dos",
+          "son las dos"
+        ],
+        "tag": "hora",
+        "sub": "het is twee uur"
+      },
+      {
+        "stimulus": "Son las nueve ___.",
+        "answers": [
+          "y media",
+          "y media"
+        ],
+        "tag": "hora",
+        "sub": "half (… uur dertig)"
+      },
+      {
+        "stimulus": "Son las cuatro ___.",
+        "answers": [
+          "y cuarto",
+          "y cuarto"
+        ],
+        "tag": "hora",
+        "sub": "kwart over"
+      },
+      {
+        "stimulus": "Son las ocho ___.",
+        "answers": [
+          "menos cuarto",
+          "menos cuarto"
+        ],
+        "tag": "hora",
+        "sub": "kwart voor"
+      },
+      {
+        "stimulus": "Son las seis ___.",
+        "answers": [
+          "en punto",
+          "en punto"
+        ],
+        "tag": "hora",
+        "sub": "precies (op het hele uur)"
+      },
+      {
+        "stimulus": "Comemos al ___.",
+        "answers": [
+          "el mediodía",
+          "mediodía",
+          "mediodía"
+        ],
+        "tag": "hora",
+        "sub": "de middag (12 u)"
+      },
+      {
+        "stimulus": "La fiesta termina a ___.",
+        "answers": [
+          "la medianoche",
+          "medianoche",
+          "medianoche"
+        ],
+        "tag": "hora",
+        "sub": "middernacht"
+      },
+      {
+        "stimulus": "Son las siete ___.",
+        "answers": [
+          "de la mañana",
+          "de la mañana"
+        ],
+        "tag": "hora",
+        "sub": "'s ochtends"
+      },
+      {
+        "stimulus": "Son las cinco ___.",
+        "answers": [
+          "de la tarde",
+          "de la tarde"
+        ],
+        "tag": "hora",
+        "sub": "'s middags / 's avonds (tot ~20 u)"
+      },
+      {
+        "stimulus": "Son las once ___.",
+        "answers": [
+          "de la noche",
+          "de la noche"
+        ],
+        "tag": "hora",
+        "sub": "'s nachts / 's avonds (laat)"
+      },
+      {
+        "stimulus": "El ___ marca las diez.",
+        "answers": [
+          "el reloj",
+          "reloj",
+          "reloj"
+        ],
+        "tag": "hora",
+        "sub": "de klok / het horloge"
+      },
+      {
+        "stimulus": "Me levanto ___.",
+        "answers": [
+          "temprano",
+          "temprano"
+        ],
+        "tag": "hora",
+        "sub": "vroeg"
+      },
+      {
+        "stimulus": "Llego ___ a clase.",
+        "answers": [
+          "tarde",
+          "tarde"
+        ],
+        "tag": "hora",
+        "sub": "laat"
+      },
+      {
+        "stimulus": "Mi ___ diaria es sencilla.",
+        "answers": [
+          "la rutina",
+          "rutina",
+          "rutina"
+        ],
+        "tag": "rutina",
+        "sub": "de routine / het dagritme"
+      },
+      {
+        "stimulus": "___ estudio.",
+        "answers": [
+          "por la mañana",
+          "por la mañana"
+        ],
+        "tag": "rutina",
+        "sub": "'s ochtends"
+      },
+      {
+        "stimulus": "___ juego.",
+        "answers": [
+          "por la tarde",
+          "por la tarde"
+        ],
+        "tag": "rutina",
+        "sub": "'s middags"
+      },
+      {
+        "stimulus": "___ descanso.",
+        "answers": [
+          "por la noche",
+          "por la noche"
+        ],
+        "tag": "rutina",
+        "sub": "'s avonds/'s nachts"
+      },
+      {
+        "stimulus": "___ desayuno.",
+        "answers": [
+          "siempre",
+          "siempre"
+        ],
+        "tag": "frecuencia",
+        "sub": "altijd"
+      },
+      {
+        "stimulus": "___ me levanto pronto.",
+        "answers": [
+          "normalmente",
+          "normalmente"
+        ],
+        "tag": "frecuencia",
+        "sub": "gewoonlijk / meestal"
+      },
+      {
+        "stimulus": "___ juego al fútbol.",
+        "answers": [
+          "a menudo",
+          "a menudo"
+        ],
+        "tag": "frecuencia",
+        "sub": "vaak"
+      },
+      {
+        "stimulus": "___ ceno tarde.",
+        "answers": [
+          "a veces",
+          "a veces"
+        ],
+        "tag": "frecuencia",
+        "sub": "soms"
+      },
+      {
+        "stimulus": "___ duermo la siesta.",
+        "answers": [
+          "casi nunca",
+          "casi nunca"
+        ],
+        "tag": "frecuencia",
+        "sub": "bijna nooit"
+      },
+      {
+        "stimulus": "___ llego tarde.",
+        "answers": [
+          "nunca",
+          "nunca"
+        ],
+        "tag": "frecuencia",
+        "sub": "nooit"
+      },
+      {
+        "stimulus": "Estudio ___.",
+        "answers": [
+          "todos los días",
+          "todos los días"
+        ],
+        "tag": "frecuencia",
+        "sub": "elke dag"
+      },
+      {
+        "stimulus": "Voy al cine una ___.",
+        "answers": [
+          "una vez por semana",
+          "vez por semana",
+          "vez por semana"
+        ],
+        "tag": "frecuencia",
+        "sub": "één keer per week"
+      },
+      {
+        "stimulus": "El ___ descanso.",
+        "answers": [
+          "el fin de semana",
+          "fin de semana",
+          "fin de semana"
+        ],
+        "tag": "frecuencia",
+        "sub": "het weekend"
+      },
+      {
+        "stimulus": "El ___ tengo español.",
+        "answers": [
+          "el lunes",
+          "lunes",
+          "lunes"
+        ],
+        "tag": "tiempo",
+        "sub": "maandag"
+      },
+      {
+        "stimulus": "El ___ hago deporte.",
+        "answers": [
+          "el martes",
+          "martes",
+          "martes"
+        ],
+        "tag": "tiempo",
+        "sub": "dinsdag"
+      },
+      {
+        "stimulus": "El ___ salgo pronto.",
+        "answers": [
+          "el miércoles",
+          "miércoles",
+          "miércoles"
+        ],
+        "tag": "tiempo",
+        "sub": "woensdag"
+      },
+      {
+        "stimulus": "El ___ estudio en casa.",
+        "answers": [
+          "el jueves",
+          "jueves",
+          "jueves"
+        ],
+        "tag": "tiempo",
+        "sub": "donderdag"
+      },
+      {
+        "stimulus": "El ___ juego con amigos.",
+        "answers": [
+          "el viernes",
+          "viernes",
+          "viernes"
+        ],
+        "tag": "tiempo",
+        "sub": "vrijdag"
+      },
+      {
+        "stimulus": "El ___ duermo más.",
+        "answers": [
+          "el sábado",
+          "sábado",
+          "sábado"
+        ],
+        "tag": "tiempo",
+        "sub": "zaterdag"
+      },
+      {
+        "stimulus": "El ___ descanso.",
+        "answers": [
+          "el domingo",
+          "domingo",
+          "domingo"
+        ],
+        "tag": "tiempo",
+        "sub": "zondag"
+      },
+      {
+        "stimulus": "En ___ hay flores.",
+        "answers": [
+          "la primavera",
+          "primavera",
+          "primavera"
+        ],
+        "tag": "tiempo",
+        "sub": "de lente"
+      },
+      {
+        "stimulus": "En ___ vamos a la playa.",
+        "answers": [
+          "el verano",
+          "verano",
+          "verano"
+        ],
+        "tag": "tiempo",
+        "sub": "de zomer"
+      },
+      {
+        "stimulus": "En ___ llueve.",
+        "answers": [
+          "el otoño",
+          "otoño",
+          "otoño"
+        ],
+        "tag": "tiempo",
+        "sub": "de herfst"
+      },
+      {
+        "stimulus": "En ___ hace frío.",
+        "answers": [
+          "el invierno",
+          "invierno",
+          "invierno"
+        ],
+        "tag": "tiempo",
+        "sub": "de winter"
+      }
+    ]
+  }
+}
