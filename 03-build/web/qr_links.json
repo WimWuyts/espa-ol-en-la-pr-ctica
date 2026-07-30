@@ -20,7 +20,20 @@
    {
     "onderwerp": "alfabet y sonidos",
     "soort": "gramática",
-    "urls": []
+    "urls": [
+     {
+      "titulo": "El abecedario",
+      "url": "https://paginadelespanol.com/el-abecedario-espanol/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     },
+     {
+      "titulo": "El alfabeto o abecedario",
+      "url": "https://paginadelespanol.com/el-alfabeto-o-abecedario/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     }
+    ]
    },
    {
     "onderwerp": "acentuación y tilde",
@@ -30,7 +43,32 @@
    {
     "onderwerp": "números 0–100",
     "soort": "gramática",
-    "urls": []
+    "urls": [
+     {
+      "titulo": "Los números del 0 al 100",
+      "url": "https://paginadelespanol.com/los-numeros-del-0-al-100/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     },
+     {
+      "titulo": "Los números del 0 al 10",
+      "url": "https://paginadelespanol.com/los-numeros-del-0-al-10/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     },
+     {
+      "titulo": "Los números del 10 al 20",
+      "url": "https://paginadelespanol.com/los-numeros-del-10-al-20/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     },
+     {
+      "titulo": "Escribe el nombre de los números",
+      "url": "https://paginadelespanol.com/nombre-de-los-numeros-espanol/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     }
+    ]
    }
   ]
  },
@@ -669,37 +707,158 @@
    {
     "onderwerp": "presente regular",
     "soort": "gramática",
-    "urls": []
+    "urls": [
+     {
+      "titulo": "Completa con los verbos en presente",
+      "url": "https://paginadelespanol.com/completa-con-los-verbos-en-presente/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     },
+     {
+      "titulo": "Juego de memoria: los verbos en presente",
+      "url": "https://paginadelespanol.com/juego-memoria-verbos-presente/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     },
+     {
+      "titulo": "Regulares o irregulares",
+      "url": "https://paginadelespanol.com/verbos-regulares-o-irregulares/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     }
+    ]
    },
    {
     "onderwerp": "ser/estar/tener/hacer/ir/dar/venir",
     "soort": "gramática",
-    "urls": []
+    "urls": [
+     {
+      "titulo": "El presente de algunos verbos irregulares",
+      "url": "https://paginadelespanol.com/el-presente-de-algunos-verbos-irregulares/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     },
+     {
+      "titulo": "SER, ESTAR o TENER",
+      "url": "https://paginadelespanol.com/ser-estar-o-tener/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     },
+     {
+      "titulo": "Ser, estar, haber",
+      "url": "https://paginadelespanol.com/ejercicio-ser-estar-haber/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     },
+     {
+      "titulo": "Conjuga estos verbos irregulares",
+      "url": "https://paginadelespanol.com/conjuga-estos-verbos-irregulares/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     },
+     {
+      "titulo": "Completa con los verbos SER, TENER y LLEVAR",
+      "url": "https://paginadelespanol.com/completa-con-los-verbos-ser-estar-llevar/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     }
+    ]
    },
    {
     "onderwerp": "artículos, género y número",
     "soort": "gramática",
-    "urls": []
+    "urls": [
+     {
+      "titulo": "Los artículos",
+      "url": "https://paginadelespanol.com/los-articulos/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     },
+     {
+      "titulo": "Completa con los artículos",
+      "url": "https://paginadelespanol.com/articulos/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     }
+    ]
    },
    {
     "onderwerp": "formar preguntas",
     "soort": "gramática",
-    "urls": []
+    "urls": [
+     {
+      "titulo": "Interrogativos",
+      "url": "https://paginadelespanol.com/interrogativos/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     },
+     {
+      "titulo": "Pronombres interrogativos",
+      "url": "https://paginadelespanol.com/pronombres-interrogativos/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     },
+     {
+      "titulo": "Quién, quiénes, cómo, cuándo, dónde…",
+      "url": "https://paginadelespanol.com/quien-quienes-como-cuando-donde/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     },
+     {
+      "titulo": "Para hacer preguntas (pronombres interrogativos)",
+      "url": "https://paginadelespanol.com/para-hacer-preguntas-pronombres-interrogativos/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     },
+     {
+      "titulo": "¿Qué o cuál?",
+      "url": "https://paginadelespanol.com/que-o-cual/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     },
+     {
+      "titulo": "¿Cómo o qué tal?",
+      "url": "https://paginadelespanol.com/como-o-que-tal/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     }
+    ]
    },
    {
     "onderwerp": "presentarse",
     "soort": "vocabulario",
-    "urls": []
+    "urls": [
+     {
+      "titulo": "Preguntas y respuestas",
+      "url": "https://paginadelespanol.com/preguntas-y-respuestas/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     }
+    ]
    },
    {
     "onderwerp": "nacionalidades",
     "soort": "vocabulario",
-    "urls": []
+    "urls": [
+     {
+      "titulo": "Nacionalidades de los países hispanohablantes",
+      "url": "https://paginadelespanol.com/nacionalidades-de-los-paises-hispanohablantes/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     }
+    ]
    },
    {
     "onderwerp": "saludos",
     "soort": "vocabulario",
-    "urls": []
+    "urls": [
+     {
+      "titulo": "Saludos y despedidas",
+      "url": "https://paginadelespanol.com/saludos-y-despedidas-espanol/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     }
+    ]
    },
    {
     "onderwerp": "clase",
@@ -709,27 +868,80 @@
    {
     "onderwerp": "paises",
     "soort": "vocabulario",
-    "urls": []
+    "urls": [
+     {
+      "titulo": "Nacionalidades de los países hispanohablantes",
+      "url": "https://paginadelespanol.com/nacionalidades-de-los-paises-hispanohablantes/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     }
+    ]
    },
    {
     "onderwerp": "descripcion",
     "soort": "vocabulario",
-    "urls": []
+    "urls": [
+     {
+      "titulo": "60 adjetivos para describir a una persona",
+      "url": "https://paginadelespanol.com/60-adjetivos-para-describir-a-una-persona/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     },
+     {
+      "titulo": "La personalidad",
+      "url": "https://paginadelespanol.com/la-personalidad/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     },
+     {
+      "titulo": "Adjetivos",
+      "url": "https://paginadelespanol.com/ejercicio-adjetivos/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     },
+     {
+      "titulo": "Adjetivos y sus contrarios",
+      "url": "https://paginadelespanol.com/adjetivos-y-sus-contrarios/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     }
+    ]
    },
    {
     "onderwerp": "verbos",
     "soort": "vocabulario",
-    "urls": []
+    "urls": [
+     {
+      "titulo": "Conjuga estos verbos irregulares",
+      "url": "https://paginadelespanol.com/conjuga-estos-verbos-irregulares/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     }
+    ]
    },
    {
     "onderwerp": "familia",
     "soort": "vocabulario",
-    "urls": []
+    "urls": [
+     {
+      "titulo": "Mi familia",
+      "url": "https://paginadelespanol.com/mi-familia/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     }
+    ]
    },
    {
     "onderwerp": "numeros",
     "soort": "vocabulario",
-    "urls": []
+    "urls": [
+     {
+      "titulo": "Los números del 0 al 100",
+      "url": "https://paginadelespanol.com/los-numeros-del-0-al-100/",
+      "bron": "websearch",
+      "status": "titel-gecontroleerd"
+     }
+    ]
    }
   ]
  },
