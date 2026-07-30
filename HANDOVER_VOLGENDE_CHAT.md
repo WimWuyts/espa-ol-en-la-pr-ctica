@@ -163,8 +163,16 @@ gegenereerd in `03-build/web/qr/`; samen 24 QR's, in de cursuskleur.
     python3 03-build/web/gen_qr_extra.py C5 0       # één unit
     python3 03-build/web/gen_qr_extra.py --check    # leven de links nog?
 
-Het blok is één zelfstandig stuk HTML dat zowel in de **printlaag** als in de hub-tab
-**«Extra · bronnen»** kan worden ingevoegd. Het is expliciet gelabeld als **online**, zodat
+**Twee vormen, beide gegenereerd:**
+
+| Vorm | Waar | Commando |
+|---|---|---|
+| **balkje per oefening** (aanbevolen) | pal naast de oefening in de cursus — kleine QR (58 px), één regel, `break-inside:avoid` | `--balkjes` of `--oefening C5-U0-NAT-01` |
+| bundel per unit | achteraan de unit + hub-tab «Extra · bronnen» | `--alle` of `C5 0` |
+
+Het balkje draagt het **oefening-ID als anker** (`id="qr-c5-u0-nat-01"`), zodat print, PDF en
+hub naar hetzelfde punt verwijzen. `_balkjes_overzicht.html` toont alle 24 in één blik.
+Beide vormen komen uit **één tabel** (`EJERCICIOS`) — geen dubbele waarheid. Het is expliciet gelabeld als **online**, zodat
 het onderscheid met de offline hub duidelijk blijft.
 
 ⚠️ **De links zijn NIET geverifieerd.** `--check` geeft voor alle 19 unieke URL's
