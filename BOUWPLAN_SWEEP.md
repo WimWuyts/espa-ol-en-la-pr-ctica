@@ -81,10 +81,25 @@ Oplossing pas na `Rendirse`. `Otra serie` verplaatst woorden, voegt er nooit toe
 
 ---
 
-## Fase 2 · Digitale oefeningen per unit
+## Fase 2 · Unit per unit — VOLGORDE BESLIST (auteur, 2026-07-29)
 
-Volgorde: **C6+ eerst** (11 oefeningen, beter uitgebalanceerd, 6 hubs), dan **C5** (13
-oefeningen, 8 hubs) mét de correcties hieronder.
+**Niet meer per cursus, maar per unitnummer, beide cursussen samen.** De auteur heeft U0
+het snelste nodig.
+
+| Ronde | Bouw | Bevat |
+|---|---|---|
+| **1** | **C5 U0 + C6+ U0** | blueprint-oefeningen · typ-woordenschatladder · luisterblok · QR-pagina |
+| 2 | C5 U1 + C6+ U1 | idem |
+| 3 | C5 U2 + C6+ U2 | idem |
+| … | … tot C5 U8 (C6+ eindigt bij U7) | |
+
+Elke ronde levert **twee complete units** op: hub + print + PDF + 2 PowerPoints, mét
+regressiecheck. Zo heeft de auteur na ronde 1 meteen bruikbaar lesmateriaal in plaats van
+een half afgewerkte cursus.
+
+**Cursuslaag — BINDEND (auteur):** in de printcursus wordt **alleen toegevoegd, nooit
+weggelaten**. Bestaande oefeningen, secties en nummering blijven staan; nieuwe oefeningen
+krijgen een eigen subsectienummer erachter.
 
 **Per unit dezelfde vijf stappen:**
 1. oefeningdata toevoegen in de generator (canonieke inhoud uit de blueprint, ID exact);
@@ -170,3 +185,78 @@ Daarna: alle hubs opnieuw genereren, `check_regressie.py --herijk`, verse zips.
 **Aanbevolen ritme:** fase 1 in één sessie (met de refactor-diff als bewijs), dan per fase
 één sessie. Elke sessie eindigt met `check_regressie.py` schoon en een push, zodat een
 volgende chat koud kan verdergaan.
+
+---
+
+## Fase 2b · Luistervaardigheid — de grootste inhoudelijke leemte
+
+**Meting (2026-07-29):** C5 heeft **9/9** units met een `Lectura`-paneel, maar **0/9** met een
+luisterpaneel. Wat er is, zijn 14–21 losse TTS-knopjes die één woord uitspreken. Er is dus
+geen luisterbegrip — dat schendt §14ter (≥1 luisterdialoog per unit mét begripstaak).
+C6+ heeft hetzelfde beeld.
+
+### Wat er al klaarstaat
+
+- **C4 heeft de pijplijn al**: `03-build/web/gen_audio.py` (Google Cloud TTS, **eigen stem per
+  spreker** → klinkt als een echt gesprek) en per unit een `escucha`- én `comprension`-component.
+- ⚠️ **Er staat nog geen enkele mp3 in de repo** — het script is nooit gedraaid; het vraagt
+  `GOOGLE_TTS_API_KEY`. C4's luisterblokken draaien nu op video + TTS-transcript.
+- C5/C6+ hebben geen videobron, dus daar moet het van **audio** komen.
+
+### Voorstel: één luisterblok per unit, dat met én zonder API-sleutel werkt
+
+Bouw het component zo dat de audiobron verwisselbaar is:
+
+1. **nu, zonder sleutel** — browser-TTS speelt de dialoog af, met een ander stemprofiel
+   (toonhoogte/tempo) per spreker. Werkt offline, is robotisch maar bruikbaar.
+2. **later, mét sleutel** — `gen_audio.py` produceert echte mp3's per unit; het component
+   pakt die automatisch op zodra ze bestaan. Geen herbouw van de oefeningen nodig.
+
+**De luisterladder per unit** (volgt `VIER_VAARDIGHEDEN_GEINTEGREERD.md`):
+
+| Trede | Taak |
+|---|---|
+| vóór het luisteren | situatie + wie spreekt + 3 sleutelwoorden vooraf |
+| globaal begrip | waar gaat het over? · 3 keuzes |
+| gericht luisteren | 5 detailvragen (getallen, tijd, plaats, naam) |
+| scannen | juist/fout **met bewijs** uit het fragment |
+| meelezen | transcript verschijnt pas ná de taken (klik-om-te-horen per zin) |
+| productie | schriftelijke of gesproken reactie op het fragment |
+
+**In print:** de begripstaak met antwoordruimte + een QR naar het fragment op de hub.
+
+### Leesvaardigheid
+
+`Lectura` bestaat wél, maar is per unit één tekst. Uitbreiden volgens §14bis met de volledige
+route: voorspellen → globaal → **scannen** → juist/fout **met bewijs** → betekenis uit context
+→ productieve reactie. Dat is uitbreiding van een bestaand paneel, geen nieuw component.
+
+---
+
+## Fase 2c · QR naar externe oefenpagina's — LET OP: wijkt af van de blueprints
+
+De auteur vraagt in de cursus te verwijzen naar de **exacte deelpagina** van *La página del
+español* via een QR-pagina.
+
+⚠️ **Dit spreekt de blueprints tegen.** C5 §0: *«Gebruik bronvermelding alleen in
+ontwikkelaarsdocumentatie. Toon de naam of vormgeving van de externe website niet aan
+leerlingen.»* C6+ §6.1 zegt hetzelfde («alleen in docentmetadata»). De auteur mag die keuze
+herzien — dit is enkel de vastlegging dat het een bewuste wijziging is, geen vergissing.
+
+**Juridisch is linken onproblematisch** (linken ≠ overnemen); de items in de cursus blijven
+zelf geschreven. Aandachtspunten zijn praktisch:
+
+- **link-rot** — externe pagina's verdwijnen of veranderen;
+- **internet vereist** — botst met de offline-belofte van de hub;
+- **geen controle** over wat er op die pagina staat (advertenties, niveau, taalvariant).
+
+**Aanbevolen uitvoering — één QR-pagina per unit, niet verspreid:**
+
+- één printpagina achteraan de unit: **«Práctica extra en línea»**, met per onderwerp een
+  QR + de titel van de oefening (in het Spaans, zonder de huisstijl van de bronsite over te nemen);
+- dezelfde lijst in de hub-tab **«Extra · bronnen»**, waar externe bronnen al thuishoren;
+- expliciet gelabeld als **online** (≠ de offline hub);
+- één plaats om te onderhouden bij link-rot, in plaats van dertien verspreide QR's.
+
+**Technisch kan dit nu al:** `segno` is beschikbaar en de externe URL's zijn bekend, dus deze
+QR-codes worden **echt** — in tegenstelling tot de hub-QR's, die op de Netlify-URL wachten (§18).
