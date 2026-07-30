@@ -18,6 +18,11 @@
 .tycheck{background:var(--g);color:#fff}
 .tycheck[disabled]{opacity:.5;cursor:default}
 .tyklaar{font-size:13px;font-weight:800;color:var(--gd)}
+.tyspk{border:none;background:var(--gt);color:var(--gd);border-radius:8px;padding:3px 9px;font-size:14px;cursor:pointer;flex:none}
+.tyspk:focus-visible{outline:3px solid var(--gd);outline-offset:2px}
+/* De typ-oefeningen zijn de kern van de productieve fase: geef ze een eigen,
+   herkenbare rand zodat de leerling meteen ziet dat hier geschreven wordt. */
+.card.ex.escribe{border-left:5px solid var(--g)}
 
 .escfuente{font-size:11px;font-weight:700;color:var(--gd);background:var(--gt);border-radius:999px;padding:3px 9px;white-space:nowrap}
 .escladder{list-style:none;margin:0;padding:0;counter-reset:esc}
@@ -290,6 +295,14 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
     <p class="lead">Eerst <b>koppelen</b> (herkennen), daarna <b>zelf schrijven</b> (produceren). Dezelfde twintig landen, twee treden van de ladder.</p>
     <div class="card ex" id="nat_c6p_match"></div>
     <div class="card ex" id="nat_c6p_type"></div>
+    <h3 class="subh">✍️ Escribe tú — van herkennen naar schrijven</h3>
+    <p class="lead">Hier klik je niet: je <b>typt</b> het antwoord zelf. Fout? Je krijgt een
+    <b>pista</b> en mag opnieuw. <span class="gloss">ophalen → gestuurd produceren · accenten worden
+    getoond in de correctie.</span></p>
+    <div class="card ex escribe" id="vt_palabra"></div>
+    <div class="card ex escribe" id="vt_frase"></div>
+    <div class="card ex escribe" id="vt_dictado"></div>
+
     <h2 class="sec">Naslagwerk · zoeken</h2>
     <div class="controls"><input id="vsearch" placeholder="🔎 zoek in woordenschat…" oninput="renderTable()"><span class="pill" id="vcount"></span></div>
     <div style="max-height:60vh;overflow:auto"><table class="vt"><thead><tr><th>Español</th><th>Nederlands</th><th>Soort</th><th>Ejemplo</th></tr></thead><tbody id="vbody"></tbody></table></div>
@@ -322,6 +335,13 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
     <div class="card ex" id="gx_conc2"></div>
     <h3 class="subh">🎯 Repaso mixto — verbos + concordancia</h3>
     <div class="card ex" id="gx_mix"></div>
+      <h3 class="subh">✍️ Escribe tú — la gramática sin opciones</h3>
+    <p class="lead">Geen keuzelijst: je <b>schrijft</b> de vorm zelf. <span class="gloss">Bij
+    werkwoorden en bij de tilde tellen de accenten mee — dat ís hier de leerstof.</span></p>
+    <div class="card ex escribe" id="gt_1"></div>
+    <div class="card ex escribe" id="gt_2"></div>
+    <div class="card ex escribe" id="gt_3"></div>
+
   </section>
 
   <section</section>
@@ -941,12 +961,15 @@ function buildType(id,cfg){
      if(n>per)blk.innerHTML='<div class="tyblokkop">'+(i+1)+'–'+Math.min(i+per,n)+'</div>';
      wrap.appendChild(blk);}
    const row=document.createElement('div');row.className='exq tyq';
-   row.innerHTML='<div class="qz"><span class="tynum">'+(i+1)+'</span><span>'+exFmt(it.q)+'</span></div>'+
+   const hoor=(cfg.speak&&it.say&&typeof speak==='function')?'<button class="tyspk" type="button" aria-label="Luister naar item '+(i+1)+'">\U0001F50A</button>':'';
+   row.innerHTML='<div class="qz"><span class="tynum">'+(i+1)+'</span>'+hoor+'<span>'+exFmt(it.q)+'</span></div>'+
      '<div class="tyin"><input type="text" class="tyfield" autocomplete="off" autocapitalize="none" spellcheck="false" aria-label="Vraag '+(i+1)+' van '+n+'">'+
      (it.hint?'<button class="typista" type="button" aria-label="Toon een letterhint bij vraag '+(i+1)+'">pista</button>':'')+'</div>'+
      '<div class="exwhy" role="status" aria-live="polite"></div>';
    const inp=row.querySelector('.tyfield'),why=row.querySelector('.exwhy'),pista=row.querySelector('.typista');
    if(pista)pista.onclick=()=>{why.className='exwhy show n';why.innerHTML='<b>pista</b> · '+exEsc(it.hint);};
+   const spk=row.querySelector('.tyspk');
+   if(spk){spk.onclick=()=>speak(it.say);setTimeout(()=>{if(i===0&&cfg.autoplay)speak(it.say);},300);}
    inp.addEventListener('keydown',e=>{if(e.key!=='Enter')return;e.preventDefault();
      const all=[].slice.call(wrap.querySelectorAll('.tyfield:not([disabled])')),p=all.indexOf(inp);
      if(p>-1&&p<all.length-1)all[p+1].focus();else bChk.click();});
@@ -1240,5 +1263,17 @@ window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');
    var html='<!doctype html>\n'+clone.outerHTML;var blob=new Blob([html],{type:'text/html'});
    var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='C6plus_U0_web_mijn_versie.html';a.click();};
 })();
+function buildVocabType(){
+ buildType('vt_palabra',{title:"Escribe la palabra",desc:"Lees het Nederlands en <b>typ</b> het Spaanse woord. Klik op <b>pista</b> voor de beginletters.",accents:'soft',perBlock:12,expect:12,items:[{"q": "gaan", "ans": "ir", "alt": [], "hint": "i_", "why": "v. irreg."}, {"q": "zijn (permanent)", "ans": "ser", "alt": [], "hint": "s__", "why": "v. irreg."}, {"q": "geven", "ans": "dar", "alt": [], "hint": "d__", "why": "v. irreg."}, {"q": "hallo", "ans": "hola", "alt": [], "hint": "h___", "why": "expr."}, {"q": "ik ben…", "ans": "soy…", "alt": [], "hint": "s___", "why": "v. (ser)"}, {"q": "Peru", "ans": "Perú", "alt": [], "hint": "P___", "why": "sust. m."}, {"q": "honderd", "ans": "cien", "alt": [], "hint": "c___", "why": "num."}, {"q": "dag / tot ziens", "ans": "adiós", "alt": [], "hint": "a____", "why": "expr."}, {"q": "Chili", "ans": "Chile", "alt": [], "hint": "C____", "why": "sust. m."}, {"q": "Belgisch", "ans": "belga", "alt": [], "hint": "b____", "why": "adj."}, {"q": "hebben", "ans": "tener", "alt": [], "hint": "t____", "why": "v. irreg."}, {"q": "zijn (plaats/gevoel)", "ans": "estar", "alt": [], "hint": "e____", "why": "v. irreg."}]});
+ buildType('vt_frase',{title:"Completa la frase",desc:"Vul het ontbrekende woord in. De zin geeft je de betekenis; let op enkelvoud of meervoud.",accents:'soft',perBlock:12,expect:12,items:[{"q": "Lucía es de ___.", "ans": "España", "alt": ["españa"], "hint": "E_____", "why": "Spanje"}, {"q": "Diego vive en ___.", "ans": "México", "alt": ["méxico"], "hint": "M_____", "why": "Mexico"}, {"q": "Valen es muy ___.", "ans": "alegre", "alt": [], "hint": "a_____", "why": "vrolijk"}, {"q": "Tengo ___ euros.", "ans": "veinte", "alt": [], "hint": "v_____", "why": "twintig"}, {"q": "Muchas ___, profe.", "ans": "gracias", "alt": [], "hint": "g______", "why": "dank je"}, {"q": "Yo soy de ___.", "ans": "Bélgica", "alt": ["bélgica"], "hint": "B______", "why": "België"}, {"q": "Valen es de ___.", "ans": "Colombia", "alt": ["colombia"], "hint": "C_______", "why": "Colombia"}, {"q": "Hola Nina, ___", "ans": "¿qué tal?", "alt": [], "hint": "¿___ t___", "why": "hoe gaat het?"}, {"q": "Una pregunta, ___.", "ans": "por favor", "alt": [], "hint": "p__ f____", "why": "alsjeblieft"}, {"q": "Mateo es de ___.", "ans": "Argentina", "alt": ["argentina"], "hint": "A________", "why": "Argentinië"}, {"q": "___ más cincuenta es cien.", "ans": "Cincuenta", "alt": ["cincuenta"], "hint": "C________", "why": "vijftig"}, {"q": "Mi ___ es pequeña.", "ans": "familia", "alt": ["la familia"], "hint": "f______", "why": "het gezin / de familie"}]});
+ buildType('vt_dictado',{title:"Dictado — escucha y escribe",desc:"Klik op 🔊, luister en <b>schrijf</b> het woord. Zo koppel je klank aan schriftbeeld.",accents:'soft',speak:true,perBlock:10,expect:10,items:[{"q": "···", "say": "hacer", "ans": "hacer", "alt": [], "why": "doen / maken"}, {"q": "···", "say": "venir", "ans": "venir", "alt": [], "why": "komen"}, {"q": "···", "say": "vivir", "ans": "vivir", "alt": [], "why": "wonen / leven"}, {"q": "···", "say": "hablar", "ans": "hablar", "alt": [], "why": "spreken"}, {"q": "···", "say": "soy de…", "ans": "soy de…", "alt": [], "why": "ik kom uit…"}, {"q": "···", "say": "vivo en…", "ans": "vivo en…", "alt": [], "why": "ik woon in…"}, {"q": "···", "say": "llamarse", "ans": "llamarse", "alt": [], "why": "heten"}, {"q": "···", "say": "me llamo…", "ans": "me llamo…", "alt": [], "why": "ik heet…"}, {"q": "···", "say": "cincuenta", "ans": "cincuenta", "alt": [], "why": "vijftig"}, {"q": "···", "say": "la familia", "ans": "la familia", "alt": ["familia"], "why": "het gezin / de familie"}]});
+}
+buildVocabType();
+function buildGramType(){
+ buildType('gt_1',{title:"El presente — rellena el verbo",desc:"De klassieke invuloefening: schrijf het werkwoord tussen haakjes in de juiste vorm van het <b>presente</b>. Accenten tellen mee.",accents:'strict',perBlock:12,expect:12,items:[{"q": "Yo ___ (hablar) español en clase.", "ans": "hablo", "hint": "h____", "why": "-ar, yo → -o"}, {"q": "Nosotros ___ (comer) a las dos.", "ans": "comemos", "hint": "c______", "why": "-er, nosotros → -emos"}, {"q": "Diego ___ (vivir) en México.", "ans": "vive", "hint": "v___", "why": "-ir, él → -e"}, {"q": "¿Tú ___ (estudiar) francés?", "ans": "estudias", "hint": "e_______", "why": "-ar, tú → -as"}, {"q": "Ellos ___ (escribir) un mensaje.", "ans": "escriben", "hint": "e_______", "why": "-ir, ellos → -en"}, {"q": "Yo ___ (ser) de Bélgica.", "ans": "soy", "hint": "s__", "why": "ser is onregelmatig"}, {"q": "Valen ___ (tener) quince años.", "ans": "tiene", "hint": "t____", "why": "tener: e → ie"}, {"q": "Nosotros ___ (ir) al instituto.", "ans": "vamos", "hint": "v____", "why": "ir is onregelmatig"}, {"q": "¿Qué ___ (hacer) tú los sábados?", "ans": "haces", "hint": "h____", "why": "hacer: yo hago, tú haces"}, {"q": "Mis amigos ___ (venir) a las seis.", "ans": "vienen", "hint": "v_____", "why": "venir: e → ie"}, {"q": "La profesora ___ (dar) los deberes.", "ans": "da", "hint": "d_", "why": "dar: yo doy, ella da"}, {"q": "Yo ___ (estar) en casa.", "ans": "estoy", "hint": "e____", "why": "estar is onregelmatig"}]});
+ buildType('gt_2',{title:"¿ser o estar? — escribe la forma",desc:"Geen keuze tussen twee knoppen: schrijf de <b>vorm</b> zelf. Denk aan wat je zegt — wie of wat iets ís (ser), of waar en hoe iets ís (estar).",accents:'strict',perBlock:12,expect:12,items:[{"q": "Lucía ___ de Sevilla.", "ans": "es", "why": "herkomst → ser"}, {"q": "Hoy yo ___ cansado.", "ans": "estoy", "why": "gevoel/toestand → estar"}, {"q": "Nosotros ___ estudiantes.", "ans": "somos", "why": "identiteit → ser"}, {"q": "El libro ___ encima de la mesa.", "ans": "está", "why": "plaats → estar (mét tilde)"}, {"q": "Diego y Nina ___ simpáticos.", "ans": "son", "why": "eigenschap → ser"}, {"q": "¿Dónde ___ tú?", "ans": "estás", "why": "plaats → estar (mét tilde)"}, {"q": "Madrid ___ en España.", "ans": "está", "why": "plaats → estar"}, {"q": "Yo ___ belga.", "ans": "soy", "why": "nationaliteit → ser"}, {"q": "La ventana ___ abierta.", "ans": "está", "why": "toestand → estar"}, {"q": "¿Ustedes ___ de Colombia?", "ans": "son", "why": "herkomst → ser"}, {"q": "Mi madre ___ profesora.", "ans": "es", "why": "beroep → ser"}, {"q": "Los niños ___ en el parque.", "ans": "están", "why": "plaats → estar (mét tilde)"}]});
+ buildType('gt_3',{title:"Concordancia — escribe la forma correcta",desc:"Schrijf het woord tussen haakjes in de vorm die <b>overeenkomt</b> met het onderwerp: mannelijk of vrouwelijk, enkelvoud of meervoud.",accents:'strict',perBlock:12,expect:12,items:[{"q": "Nina es del Perú. Es ___ (peruano).", "ans": "peruana", "hint": "p______", "why": "vrouwelijk enkelvoud"}, {"q": "Diego es de México. Es ___ (mexicano).", "ans": "mexicano", "hint": "m_______", "why": "mannelijk enkelvoud"}, {"q": "Lucía y su hermana son ___ (español).", "ans": "españolas", "hint": "e________", "why": "vrouwelijk meervoud"}, {"q": "Los chicos son ___ (colombiano).", "ans": "colombianos", "hint": "c__________", "why": "mannelijk meervoud"}, {"q": "La casa es ___ (bonito).", "ans": "bonita", "hint": "b_____", "why": "la casa → -a"}, {"q": "Los libros son ___ (interesante).", "ans": "interesantes", "hint": "i___________", "why": "-e → alleen +s in het meervoud"}, {"q": "Mi amiga es ___ (belga).", "ans": "belga", "hint": "b____", "why": "belga verandert niet van vorm"}, {"q": "Las ciudades son ___ (grande).", "ans": "grandes", "hint": "g______", "why": "-e → +s"}, {"q": "El profesor es ___ (simpático).", "ans": "simpático", "hint": "s________", "why": "mannelijk enkelvoud, mét tilde"}, {"q": "Las profesoras son ___ (simpático).", "ans": "simpáticas", "hint": "s_________", "why": "vrouwelijk meervoud, mét tilde"}, {"q": "Valen es ___ (alto).", "ans": "alta", "hint": "a___", "why": "Valen is een meisje → -a"}, {"q": "Mis primos son ___ (argentino).", "ans": "argentinos", "hint": "a_________", "why": "mannelijk meervoud"}]});
+}
+buildGramType();
 
 </script></body></html>

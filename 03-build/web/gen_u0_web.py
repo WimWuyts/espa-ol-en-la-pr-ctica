@@ -7,6 +7,8 @@
 # NB: géén werkwoordsvervoeging (conjugador/vervoegingscirkel) — dat hoort niet in U0.
 import json, base64, os, sys
 import hub_drills, hub_bloques
+import hub_type_sets
+import hub_type_gram
 import nat_data, escucha_data, lectura_data
 
 ROOT="/home/user/espa-ol-en-la-pr-ctica"
@@ -270,6 +272,7 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
     <div class="card ex" id="vx_odd"></div>
     <h3 class="subh">🔢 Los números — reeksen uit de leerlijn</h3>
     <div class="card ex" id="nat_num010"></div>
+__TYPESLOTS__
     <h2 class="sec">Naslagwerk · zoeken</h2>
     __NAS__
   </section>
@@ -295,6 +298,7 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
     <div class="card ex" id="gx_genero"></div>
     <h3 class="subh">🎯 Repaso mixto — rellena con feedback</h3>
     <div class="card ex" id="gx_mix"></div>
+  __GRAMSLOTS__
   </section>
 
   <section class="panel" data-p="lectura">
@@ -891,6 +895,12 @@ BLOQUES=(hub_bloques.choice_js("nat_num010", nat_data.C5_U0_NAT_01, prefix="ex")
         +hub_bloques.escucha_js("esc_u0", escucha_data.C5_U0)
         +hub_bloques.lectura_js("lec_u0", lectura_data.C5_U0))
 JS=JS.replace("__BLOQUES__", BLOQUES)
+
+# Getypte woordenschat-drills (fase ophalen + produceren) in het paneel zelf.
+JS += hub_type_sets.vocab_type_js(vocab)
+JS += hub_type_gram.js('C5', 0)
+HTML = HTML.replace("__GRAMSLOTS__", hub_type_gram.slots('C5', 0))
+HTML = HTML.replace("__TYPESLOTS__", hub_type_sets.SLOTS_HTML)
 
 html=(HTML.replace("__CSS__",CSS).replace("__MOCH__",moch).replace("__FC__",flashcards_html())
       .replace("__NAS__",naslag_html())

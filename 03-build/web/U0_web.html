@@ -18,6 +18,11 @@
 .tycheck{background:var(--g);color:#fff}
 .tycheck[disabled]{opacity:.5;cursor:default}
 .tyklaar{font-size:13px;font-weight:800;color:var(--gd)}
+.tyspk{border:none;background:var(--gt);color:var(--gd);border-radius:8px;padding:3px 9px;font-size:14px;cursor:pointer;flex:none}
+.tyspk:focus-visible{outline:3px solid var(--gd);outline-offset:2px}
+/* De typ-oefeningen zijn de kern van de productieve fase: geef ze een eigen,
+   herkenbare rand zodat de leerling meteen ziet dat hier geschreven wordt. */
+.card.ex.escribe{border-left:5px solid var(--g)}
 
 .escfuente{font-size:11px;font-weight:700;color:var(--gd);background:var(--gt);border-radius:999px;padding:3px 9px;white-space:nowrap}
 .escladder{list-style:none;margin:0;padding:0;counter-reset:esc}
@@ -287,6 +292,14 @@ body.editing [contenteditable=true]:focus{outline:2px solid var(--gd);background
     <div class="card ex" id="vx_odd"></div>
     <h3 class="subh">🔢 Los números — reeksen uit de leerlijn</h3>
     <div class="card ex" id="nat_num010"></div>
+    <h3 class="subh">✍️ Escribe tú — van herkennen naar schrijven</h3>
+    <p class="lead">Hier klik je niet: je <b>typt</b> het antwoord zelf. Fout? Je krijgt een
+    <b>pista</b> en mag opnieuw. <span class="gloss">ophalen → gestuurd produceren · accenten worden
+    getoond in de correctie.</span></p>
+    <div class="card ex escribe" id="vt_palabra"></div>
+    <div class="card ex escribe" id="vt_frase"></div>
+    <div class="card ex escribe" id="vt_dictado"></div>
+
     <h2 class="sec">Naslagwerk · zoeken</h2>
     <div class="controls"><input id="vsearch" placeholder="🔎 zoek in woordenschat…" oninput="renderTable()"><span class="pill" id="vcount"></span></div>
     <div style="max-height:60vh;overflow:auto"><table class="vt"><thead><tr><th>Español</th><th>Nederlands</th><th>Soort</th><th>Ejemplo</th></tr></thead><tbody id="vbody"></tbody></table></div>
@@ -313,6 +326,13 @@ body.editing [contenteditable=true]:focus{outline:2px solid var(--gd);background
     <div class="card ex" id="gx_genero"></div>
     <h3 class="subh">🎯 Repaso mixto — rellena con feedback</h3>
     <div class="card ex" id="gx_mix"></div>
+      <h3 class="subh">✍️ Escribe tú — la gramática sin opciones</h3>
+    <p class="lead">Geen keuzelijst: je <b>schrijft</b> de vorm zelf. <span class="gloss">Bij
+    werkwoorden en bij de tilde tellen de accenten mee — dat ís hier de leerstof.</span></p>
+    <div class="card ex escribe" id="gt_1"></div>
+    <div class="card ex escribe" id="gt_2"></div>
+    <div class="card ex escribe" id="gt_3"></div>
+
   </section>
 
   <section class="panel" data-p="lectura">
@@ -1045,12 +1065,15 @@ function buildType(id,cfg){
      if(n>per)blk.innerHTML='<div class="tyblokkop">'+(i+1)+'–'+Math.min(i+per,n)+'</div>';
      wrap.appendChild(blk);}
    const row=document.createElement('div');row.className='exq tyq';
-   row.innerHTML='<div class="qz"><span class="tynum">'+(i+1)+'</span><span>'+exFmt(it.q)+'</span></div>'+
+   const hoor=(cfg.speak&&it.say&&typeof speak==='function')?'<button class="tyspk" type="button" aria-label="Luister naar item '+(i+1)+'">\U0001F50A</button>':'';
+   row.innerHTML='<div class="qz"><span class="tynum">'+(i+1)+'</span>'+hoor+'<span>'+exFmt(it.q)+'</span></div>'+
      '<div class="tyin"><input type="text" class="tyfield" autocomplete="off" autocapitalize="none" spellcheck="false" aria-label="Vraag '+(i+1)+' van '+n+'">'+
      (it.hint?'<button class="typista" type="button" aria-label="Toon een letterhint bij vraag '+(i+1)+'">pista</button>':'')+'</div>'+
      '<div class="exwhy" role="status" aria-live="polite"></div>';
    const inp=row.querySelector('.tyfield'),why=row.querySelector('.exwhy'),pista=row.querySelector('.typista');
    if(pista)pista.onclick=()=>{why.className='exwhy show n';why.innerHTML='<b>pista</b> · '+exEsc(it.hint);};
+   const spk=row.querySelector('.tyspk');
+   if(spk){spk.onclick=()=>speak(it.say);setTimeout(()=>{if(i===0&&cfg.autoplay)speak(it.say);},300);}
    inp.addEventListener('keydown',e=>{if(e.key!=='Enter')return;e.preventDefault();
      const all=[].slice.call(wrap.querySelectorAll('.tyfield:not([disabled])')),p=all.indexOf(inp);
      if(p>-1&&p<all.length-1)all[p+1].focus();else bChk.click();});
@@ -1357,5 +1380,17 @@ window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');
    var html='<!doctype html>\n'+clone.outerHTML;var blob=new Blob([html],{type:'text/html'});
    var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='U0_web_mijn_versie.html';a.click();};
 })();
+function buildVocabType(){
+ buildType('vt_palabra',{title:"Escribe la palabra",desc:"Lees het Nederlands en <b>typ</b> het Spaanse woord. Klik op <b>pista</b> voor de beginletters.",accents:'soft',perBlock:12,expect:12,items:[{"q": "nul", "ans": "cero", "alt": [], "hint": "c___", "why": "núm."}, {"q": "honderd", "ans": "cien", "alt": [], "hint": "c___", "why": "núm."}, {"q": "klemtoon op de laatste", "ans": "aguda", "alt": [], "hint": "a____", "why": "adj."}, {"q": "klemtoon op de voorlaatste", "ans": "llana", "alt": [], "hint": "l____", "why": "adj."}, {"q": "Dag / Tot ziens", "ans": "Adiós", "alt": [], "hint": "A____", "why": "interj."}, {"q": "Ik ben …", "ans": "Soy …", "alt": [], "hint": "S__ …", "why": "verbo"}, {"q": "Ik weet het niet", "ans": "No sé", "alt": [], "hint": "N_ s_", "why": "expr. 🟡"}, {"q": "tellen", "ans": "contar", "alt": [], "hint": "c_____", "why": "verbo · 0 → 100"}, {"q": "Hallo!", "ans": "¡Hola!", "alt": [], "hint": "¡_____", "why": "interj."}, {"q": "de leeftijd", "ans": "la edad", "alt": ["edad"], "hint": "e___", "why": "sust. f."}, {"q": "(Heel erg) bedankt", "ans": "gracias", "alt": ["gracias"], "hint": "g______", "why": "expr."}, {"q": "het land", "ans": "el país", "alt": ["país"], "hint": "p___", "why": "sust. m."}]});
+ buildType('vt_frase',{title:"Completa la frase",desc:"Vul het ontbrekende woord in. De zin geeft je de betekenis; let op enkelvoud of meervoud.",accents:'soft',perBlock:12,expect:12,items:[{"q": "Yo soy Sam. ___", "ans": "¿Y tú?", "alt": ["¿y tú?"], "hint": "¿_ t__", "why": "En jij?"}, {"q": "La palabra «hola» tiene cuatro ___.", "ans": "letras", "alt": ["la letra", "letra"], "hint": "l_____", "why": "de letter"}, {"q": "Las ___ son a, e, i, o, u.", "ans": "vocales", "alt": ["vocal", "la vocal"], "hint": "v______", "why": "de klinker"}, {"q": "¿Puedes ___ tu nombre?", "ans": "deletrear", "alt": [], "hint": "d________", "why": "spellen"}, {"q": "«Ca-sa» tiene dos ___.", "ans": "sílabas", "alt": ["la sílaba", "sílaba"], "hint": "s______", "why": "de lettergreep"}, {"q": "«México» es una palabra ___.", "ans": "esdrújula", "alt": [], "hint": "e________", "why": "klemtoon op de derde van achter"}, {"q": "¿Cuál es tu ___ de teléfono?", "ans": "número", "alt": ["el número"], "hint": "n_____", "why": "het getal / nummer"}, {"q": "¡Hola, Diego! ___", "ans": "¿Qué tal?", "alt": ["¿qué tal?"], "hint": "¿___ t___", "why": "Hoe gaat het?"}, {"q": "Más despacio, ___.", "ans": "por favor", "alt": ["Por favor"], "hint": "p__ f____", "why": "Alsjeblieft / a.u.b."}, {"q": "___, me llamo Nina.", "ans": "Buenos días", "alt": ["buenos días"], "hint": "B_____ d___", "why": "Goedemorgen"}, {"q": "___, Lucía.", "ans": "Hasta luego", "alt": ["hasta luego"], "hint": "H____ l____", "why": "Tot straks"}, {"q": "Perdón, ___.", "ans": "no entiendo", "alt": ["No entiendo"], "hint": "n_ e_______", "why": "Ik begrijp het niet"}]});
+ buildType('vt_dictado',{title:"Dictado — escucha y escribe",desc:"Klik op 🔊, luister en <b>schrijf</b> het woord. Zo koppel je klank aan schriftbeeld.",accents:'soft',speak:true,perBlock:10,expect:10,items:[{"q": "···", "say": "la letra", "ans": "la letra", "alt": ["letra"], "why": "de letter"}, {"q": "···", "say": "la vocal", "ans": "la vocal", "alt": ["vocal"], "why": "de klinker"}, {"q": "···", "say": "la sílaba", "ans": "la sílaba", "alt": ["sílaba"], "why": "de lettergreep"}, {"q": "···", "say": "el número", "ans": "el número", "alt": ["número"], "why": "het getal / nummer"}, {"q": "···", "say": "Por favor", "ans": "Por favor", "alt": [], "why": "Alsjeblieft / a.u.b."}, {"q": "···", "say": "No entiendo", "ans": "No entiendo", "alt": [], "why": "Ik begrijp het niet"}, {"q": "···", "say": "la mayúscula", "ans": "la mayúscula", "alt": ["mayúscula"], "why": "de hoofdletter"}, {"q": "···", "say": "la minúscula", "ans": "la minúscula", "alt": ["minúscula"], "why": "de kleine letter"}, {"q": "···", "say": "Buenas tardes", "ans": "Buenas tardes", "alt": [], "why": "Goeiemiddag"}, {"q": "···", "say": "Chao", "ans": "Chao", "alt": ["Chao"], "why": "Doei"}]});
+}
+buildVocabType();
+function buildGramType(){
+ buildType('gt_1',{title:"Escribe la palabra con tilde",desc:"Het woord staat er zónder accent. Schrijf het <b>juist</b>: met tilde als de regel het vraagt, zonder als ze dat niet doet.",accents:'strict',perBlock:12,expect:12,items:[{"q": "cafe", "ans": "café", "hint": "c___", "why": "aguda op klinker → tilde"}, {"q": "casa", "ans": "casa", "hint": "c___", "why": "llana op klinker → géén tilde"}, {"q": "adios", "ans": "adiós", "hint": "a____", "why": "aguda op -s → tilde"}, {"q": "Mexico", "ans": "México", "hint": "M_____", "why": "esdrújula → altijd tilde"}, {"q": "musica", "ans": "música", "hint": "m_____", "why": "esdrújula → altijd tilde"}, {"q": "lunes", "ans": "lunes", "hint": "l____", "why": "llana op -s → géén tilde"}, {"q": "jamon", "ans": "jamón", "hint": "j____", "why": "aguda op -n → tilde"}, {"q": "arbol", "ans": "árbol", "hint": "á____", "why": "llana op -l → tilde"}, {"q": "telefono", "ans": "teléfono", "hint": "t_______", "why": "esdrújula → altijd tilde"}, {"q": "reloj", "ans": "reloj", "hint": "r____", "why": "aguda op -j → géén tilde"}, {"q": "silaba", "ans": "sílaba", "hint": "s_____", "why": "esdrújula → altijd tilde"}, {"q": "Peru", "ans": "Perú", "hint": "P___", "why": "aguda op klinker → tilde"}]});
+ buildType('gt_2',{title:"¿el o la? — escribe el artículo",desc:"Schrijf het lidwoord voluit. Let op de valstrikken: niet elk woord op <b>-a</b> is vrouwelijk, en niet elk woord op <b>-o</b> is mannelijk.",accents:'soft',perBlock:12,expect:12,items:[{"q": "___ mapa", "ans": "el", "why": "el mapa — valstrik: -a maar masculino"}, {"q": "___ casa", "ans": "la", "why": "la casa"}, {"q": "___ problema", "ans": "el", "why": "-ma (Grieks) → masculino"}, {"q": "___ ciudad", "ans": "la", "why": "-dad → femenino"}, {"q": "___ día", "ans": "el", "why": "el día — valstrik"}, {"q": "___ mano", "ans": "la", "why": "la mano — valstrik: -o maar femenino"}, {"q": "___ idioma", "ans": "el", "why": "-ma → masculino"}, {"q": "___ letra", "ans": "la", "why": "la letra"}, {"q": "___ país", "ans": "el", "why": "el país"}, {"q": "___ sílaba", "ans": "la", "why": "la sílaba"}, {"q": "___ número", "ans": "el", "why": "el número"}, {"q": "___ clase", "ans": "la", "why": "la clase"}]});
+ buildType('gt_3',{title:"Escribe el número en letras",desc:"Schrijf het getal voluit. De accenten van <b>dieciséis</b> en <b>veintidós</b> horen erbij.",accents:'strict',perBlock:12,expect:12,items:[{"q": "0 =", "ans": "cero", "hint": "c___"}, {"q": "5 =", "ans": "cinco", "hint": "c____"}, {"q": "11 =", "ans": "once", "hint": "o___"}, {"q": "13 =", "ans": "trece", "hint": "t____"}, {"q": "15 =", "ans": "quince", "hint": "q_____"}, {"q": "16 =", "ans": "dieciséis", "hint": "d________", "why": "16–29 = één woord, met tilde"}, {"q": "20 =", "ans": "veinte", "hint": "v_____"}, {"q": "21 =", "ans": "veintiuno", "hint": "v________", "why": "één woord"}, {"q": "22 =", "ans": "veintidós", "hint": "v________", "why": "aguda op -s → tilde"}, {"q": "30 =", "ans": "treinta", "hint": "t______"}, {"q": "45 =", "ans": "cuarenta y cinco", "hint": "c_______ y c____", "why": "vanaf 31 met «y»"}, {"q": "100 =", "ans": "cien", "hint": "c___", "why": "100 alleen = cien"}]});
+}
+buildGramType();
 
 </script></body></html>

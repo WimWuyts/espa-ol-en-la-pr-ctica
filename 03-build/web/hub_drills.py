@@ -202,12 +202,15 @@ function buildType(id,cfg){
      if(n>per)blk.innerHTML='<div class="tyblokkop">'+(i+1)+'–'+Math.min(i+per,n)+'</div>';
      wrap.appendChild(blk);}
    const row=document.createElement('div');row.className='exq tyq';
-   row.innerHTML='<div class="qz"><span class="tynum">'+(i+1)+'</span><span>'+exFmt(it.q)+'</span></div>'+
+   const hoor=(cfg.speak&&it.say&&typeof speak==='function')?'<button class="tyspk" type="button" aria-label="Luister naar item '+(i+1)+'">\U0001F50A</button>':'';
+   row.innerHTML='<div class="qz"><span class="tynum">'+(i+1)+'</span>'+hoor+'<span>'+exFmt(it.q)+'</span></div>'+
      '<div class="tyin"><input type="text" class="tyfield" autocomplete="off" autocapitalize="none" spellcheck="false" aria-label="Vraag '+(i+1)+' van '+n+'">'+
      (it.hint?'<button class="typista" type="button" aria-label="Toon een letterhint bij vraag '+(i+1)+'">pista</button>':'')+'</div>'+
      '<div class="exwhy" role="status" aria-live="polite"></div>';
    const inp=row.querySelector('.tyfield'),why=row.querySelector('.exwhy'),pista=row.querySelector('.typista');
    if(pista)pista.onclick=()=>{why.className='exwhy show n';why.innerHTML='<b>pista</b> · '+exEsc(it.hint);};
+   const spk=row.querySelector('.tyspk');
+   if(spk){spk.onclick=()=>speak(it.say);setTimeout(()=>{if(i===0&&cfg.autoplay)speak(it.say);},300);}
    inp.addEventListener('keydown',e=>{if(e.key!=='Enter')return;e.preventDefault();
      const all=[].slice.call(wrap.querySelectorAll('.tyfield:not([disabled])')),p=all.indexOf(inp);
      if(p>-1&&p<all.length-1)all[p+1].focus();else bChk.click();});
@@ -261,6 +264,11 @@ TYPE_CSS = r"""
 .tycheck{background:var(--g);color:#fff}
 .tycheck[disabled]{opacity:.5;cursor:default}
 .tyklaar{font-size:13px;font-weight:800;color:var(--gd)}
+.tyspk{border:none;background:var(--gt);color:var(--gd);border-radius:8px;padding:3px 9px;font-size:14px;cursor:pointer;flex:none}
+.tyspk:focus-visible{outline:3px solid var(--gd);outline-offset:2px}
+/* De typ-oefeningen zijn de kern van de productieve fase: geef ze een eigen,
+   herkenbare rand zodat de leerling meteen ziet dat hier geschreven wordt. */
+.card.ex.escribe{border-left:5px solid var(--g)}
 """
 
 

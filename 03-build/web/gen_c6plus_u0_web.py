@@ -6,6 +6,8 @@
 # klikbare kaart (mundo hispano, meelopende fiche) + TTS + inline recorder + Lectura + editbar. Huisstijl morado.
 import json, base64, os, sys
 import hub_drills, hub_bloques
+import hub_type_sets
+import hub_type_gram
 import nat_data, escucha_data, lectura_data
 ROOT = "/home/user/espa-ol-en-la-pr-ctica"
 GEN = f"{ROOT}/02-huisstijl/beeld/generators"
@@ -281,6 +283,7 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
     <p class="lead">Eerst <b>koppelen</b> (herkennen), daarna <b>zelf schrijven</b> (produceren). Dezelfde twintig landen, twee treden van de ladder.</p>
     <div class="card ex" id="nat_c6p_match"></div>
     <div class="card ex" id="nat_c6p_type"></div>
+__TYPESLOTS__
     <h2 class="sec">Naslagwerk · zoeken</h2>
     __NAS__
   </section>
@@ -312,6 +315,7 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
     <div class="card ex" id="gx_conc2"></div>
     <h3 class="subh">🎯 Repaso mixto — verbos + concordancia</h3>
     <div class="card ex" id="gx_mix"></div>
+  __GRAMSLOTS__
   </section>
 
   <section</section>
@@ -793,6 +797,12 @@ BLOQUES=(hub_bloques.match_js("nat_c6p_match", nat_data.C6P_U0_NAC, per=20)
         +hub_bloques.escucha_js("esc_c6p", escucha_data.C6P_U0)
         +hub_bloques.lectura_js("lec_c6p", lectura_data.C6P_U0))
 JS=JS.replace("__BLOQUES__", BLOQUES)
+
+# Getypte woordenschat-drills (fase ophalen + produceren) in het paneel zelf.
+JS += hub_type_sets.vocab_type_js(vocab)
+JS += hub_type_gram.js('C6+', 0)
+HTML = HTML.replace("__GRAMSLOTS__", hub_type_gram.slots('C6+', 0))
+HTML = HTML.replace("__TYPESLOTS__", hub_type_sets.SLOTS_HTML)
 
 html=(HTML.replace("__CSS__",CSS).replace("__MOCH__",moch).replace("__FC__",flashcards_html())
       .replace("__NAS__",naslag_html()).replace("__MAP__",mapsvg).replace("__DATA__",data_js()).replace("__JS__",JS))

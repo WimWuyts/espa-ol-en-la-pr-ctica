@@ -7,6 +7,8 @@
 # Emoji-flashcards via lokale EXTRA-dict (vocab_emoji.py NIET aangeraakt).
 import json, base64, os, sys
 import hub_drills
+import hub_type_sets
+import hub_type_gram
 ROOT = "/home/user/espa-ol-en-la-pr-ctica"
 GEN = f"{ROOT}/02-huisstijl/beeld/generators"
 sys.path.insert(0, GEN); import cast_gen as C; import vocab_emoji as VE
@@ -74,7 +76,7 @@ GAMEDIR = f"{ROOT}/spaans-motor/games"
 slugs = [g[0] for grp in MOTOR for g in grp[1]]
 GAMES = {s: b64(f"{GAMEDIR}/es-u7-{s}.html") for s in slugs if os.path.exists(f"{GAMEDIR}/es-u7-{s}.html")}
 
-CSS = FONTS + """
+CSS = FONTS + hub_drills.TYPE_CSS + """
 :root{--g:#1E9E74;--gd:#157355;--gt:#E4F4EE;--ink:#20242E;--mut:#6A6E78;--paper:#FCFBF8;--crema:#F3EEE4;--line:#E4E3DE;--red:#DC2626;--amber:#B7860B;--card:#fff;
 --onder:#2563EB;--ww:#EA7317;--voorw:#1E9E74;--tijd:#7C3AED;--plaats:#14B8A6;
 --disp:'Bricolage Grotesque',sans-serif;--body:'Inter',sans-serif;--hand:'Caveat',cursive}
@@ -297,6 +299,7 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
     <div class="card ex" id="vx_gap"></div>
     <div class="card ex" id="vx_def"></div>
     <div class="card ex" id="vx_odd"></div>
+__TYPESLOTS__
     <h2 class="sec">Naslagwerk · zoeken</h2>
     __NAS__
   </section>
@@ -322,6 +325,7 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
     <div class="card ex" id="gx_ordq"></div>
     <h3 class="subh">🎯 Repaso mixto — rellena con feedback</h3>
     <div class="card ex" id="gx_mix"></div>
+  __GRAMSLOTS__
   </section>
 
   <section class="panel" data-p="lectura">
@@ -522,7 +526,7 @@ function buildRecorders(){
 }
 
 // ================= INLINE ZELFCORRIGERENDE OEFENINGEN =================
-""" + hub_drills.HELPERS_JS + r"""
+""" + hub_drills.HELPERS_JS + hub_drills.TYPE_JS + r"""
 
 // MEERKEUZE / GAP-FILL: pool item = {q, opts, ans, why}
 """ + hub_drills.CHOICE_JS + r"""
@@ -691,6 +695,12 @@ window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');
    var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='U7_web_mijn_versie.html';a.click();};
 })();
 """
+
+# Getypte woordenschat-drills (fase ophalen + produceren) in het paneel zelf.
+JS += hub_type_sets.vocab_type_js(vocab)
+JS += hub_type_gram.js('C5', 7)
+HTML = HTML.replace("__GRAMSLOTS__", hub_type_gram.slots('C5', 7))
+HTML = HTML.replace("__TYPESLOTS__", hub_type_sets.SLOTS_HTML)
 
 html=(HTML.replace("__CSS__",CSS).replace("__MOCH__",moch).replace("__FC__",flashcards_html())
       .replace("__NAS__",naslag_html()).replace("__MAP__",mapsvg).replace("__DATA__",data_js()).replace("__JS__",JS))
