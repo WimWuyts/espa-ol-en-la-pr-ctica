@@ -209,6 +209,23 @@ Zie <https://code.claude.com/docs/en/claude-code-on-the-web>.
 
 ---
 
+## 4quinquies · PowerPoints — bouwen kan, controleren vraagt één setup-regel
+
+**Gemeten 2026-07-30, niet aangenomen:** `python-pptx` (1.0.2) **is** aanwezig — ik heb er
+een deck mee gebouwd, en de 54 bestaande decks in de repo zijn er ook mee gemaakt.
+Wat ontbrak is **`libreoffice-impress`** (enkel `libreoffice-core` stond er), waardoor
+`soffice --convert-to pdf` faalde met «source file could not be loaded».
+
+→ **Bouw de PowerPoints gewoon; alleen de visuele controle hing vast.** Ga niet de rauwe
+OOXML-route in — dat is onnodig werk voor een probleem van één ontbrekend pakket.
+
+Oplossing + verificatie: `03-build/SETUP_OMGEVING.md`. Kern: zet als **Setup script** in de
+omgeving `apt-get update -qq || true` gevolgd door `apt-get install -y -qq libreoffice-impress`.
+De `apt-get update` is verplicht — zonder die regel geeft de installatie 404's.
+Na installatie hier getest: `C5_U3_docente.pptx` → PDF van 1,4 MB.
+
+---
+
 ## 5 · Hoe je de volgende chat begint
 
 1. Nieuwe chat in dezelfde groep, op branch `claude/spanish-course-development-jx25ay`.
