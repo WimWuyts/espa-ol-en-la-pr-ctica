@@ -186,6 +186,29 @@ verbieden (C5 §0, C6+ §6.1). De auteur heeft die keuze herzien.
 
 ---
 
+## 4quater · Netwerk — wat werkt wel en niet (getest 2026-07-30)
+
+| Kanaal | Status | Wat ermee kan |
+|---|---|---|
+| **WebSearch** | ✅ **werkt nu al** | URL's van paginadelespanol.com **vinden**. Getest: zoekopdracht op «pretérito imperfecto» gaf 10 echte pagina's, waarvan er meerdere níét in de blueprints staan. |
+| **WebFetch / curl** | ❌ geblokkeerd | de pagina zelf **openen**. Gateway antwoordt `403 to CONNECT` op `paginadelespanol.com:443` (policy denial). |
+
+**Gevolg:** het matchen van de 196 onderwerpen aan URL's kan **zonder instellingswijziging** —
+via WebSearch per onderwerp zoeken en de gevonden URL in `qr_links.json` zetten.
+
+**Waarom de instelling tóch de moeite is:** zonder ophalen kan ik niet controleren wat er op
+die pagina staat. De site bevat ook oefeningen **buiten onze scope** — bij de test verscheen
+«30 frases para practicar el pretérito imperfecto **de subjuntivo**». Subjuntivo, condicional
+en futuro simple mogen niet in deze cursus (III-Spa-d). Met alleen een zoekresultaat moet ik
+op de titel afgaan; met ophalen kan ik het niveau, het aantal items en de scope écht nakijken.
+
+**Gevraagde instelling:** in de omgevingsinstellingen het netwerkbeleid van *standaard* naar
+een **eigen allowlist** met `paginadelespanol.com` (en eventueel `www.paginadelespanol.com`).
+Volledig open internet is niet nodig — één domein volstaat.
+Zie <https://code.claude.com/docs/en/claude-code-on-the-web>.
+
+---
+
 ## 5 · Hoe je de volgende chat begint
 
 1. Nieuwe chat in dezelfde groep, op branch `claude/spanish-course-development-jx25ay`.
