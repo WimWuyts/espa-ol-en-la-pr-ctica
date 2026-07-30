@@ -97,14 +97,16 @@ samen in `03-build/web/hub_drills.py`, anders kost elke latere correctie zeventi
 
 ---
 
-## 6 · De vier beslispunten (voorgelegd aan de auteur)
+## 6 · De vier beslispunten — BESLIST door de auteur (2026-07-29)
 
-| # | Kwestie | Voorstel |
+| # | Kwestie | **Beslissing** |
 |---|---|---|
-| **A** | C5 eist «splits niets, set blijft exact even groot»; wij spraken 12 items × 3 rondes af. C6+ lost het zelf op (U5: drie blokken van tien, één totaalscore). | **C6+-regel overal**: visuele blokken, één score over de volledige canonieke set. |
-| **B** | «Geen iframe» — maar onze hubs openen motor-spellen wél in een iframe (base64, offline). | Regel geldt voor de **nieuwe** oefeningen (native in het paneel); de bestaande spelmodal blijft. |
-| **C** | Accentbeleid verschilt tussen beide documenten. | **C6+-regel overal**: geen algemene accentverwijdering; bij werkwoordsvormen zijn accenten betekenisonderscheidend. Woordenschat: eerste poging tolerant, accent tonen in de correctie. |
-| **D** | Elk onderwerp bestaat al als spel. | Nieuwe sets komen **náást** de bestaande als de grote canonieke reeks (20–30 items); de korte spellen blijven als lagere trede. |
+| **A** | C5 eist «splits niets»; wij spraken 12×3 rondes af. | **C6+-regel overal.** Visuele blokken van 10–12 met tussenscherm, **doorlopende nummering en één totaalscore** over de volledige canonieke set. De set blijft dus compleet; alleen de presentatie wordt opgedeeld. |
+| **B** | «Geen iframe» vs. onze bestaande spelmodal. | **Geldt enkel voor de nieuwe oefeningen** — die worden native in het paneel. De bestaande iframe-spelmodal (base64, offline) blijft ongemoeid; geen herbouw van de 309 spellen. |
+| **C** | Accentbeleid. | **Gedifferentieerd.** Werkwoordsvormen: accent **verplicht** (*hablo ≠ habló*, *habéis*, *leído*). Woordenschat: eerste poging **accent-tolerant**, correctie toont het juiste accent expliciet. |
+| **D** | Overlap met bestaande spellen. | **Náást elkaar, verschillende treden.** De nieuwe sets = de grote canonieke reeks (20–30 items) in het paneel; de bestaande korte spellen blijven als lagere trede in de spellensectie. Niets verwijderen. |
+
+Deze vier gelden als **bindend** voor de implementatie van beide blueprints.
 
 ---
 
@@ -119,3 +121,31 @@ samen in `03-build/web/hub_drills.py`, anders kost elke latere correctie zeventi
 
 **Omvang:** C5 raakt 8 hubs + 3× print/PDF/PPTX; C6+ 6 hubs + 4× print/PDF/PPTX; samen ~470
 nieuwe items. Het zwaartepunt zit in de PowerPoint/PDF-synchronisatie, niet in de oefeningen.
+
+---
+
+## 8 · Laag 3 — de cursus zelf (print)
+
+De auteur bevestigt dat ook de **cursusoefeningen** hiaten hebben. De blueprints benoemen
+er zeven, die via de bewerkbare HTML-laag → PDF → PPTX moeten lopen:
+
+| Oefening | Unit | Items | Inhoud |
+|---|---|---:|---|
+| `C5-U2-NAT-01` | C5 U2 | 8 | herschrijven met possessivum (§2.3 nieuw) |
+| `C5-U5-NAT-02` | C5 U5 | 20 | smaak-/textuuradjectieven uit woordbank, mét congruentie |
+| `C5-U7-NAT-02` | C5 U7 | 25 | bevestigende tú-imperatief, vijf themablokken |
+| `c6p-u1-ser-estar-30` | C6+ U1 | 30 | ser/estar-contrast in presente |
+| `c6p-u4-perfecto-20` | C6+ U4 | 20 | pretérito perfecto in reiscontext |
+| `c6p-u5-indefinido-30` | C6+ U5 | 30 | indefinido als biografische tijdlijn |
+| `c6p-u7-imperative-25` | C6+ U7 | 25 | gezondheids-/milieuadvies in tú-imperatief |
+
+**Regels die hier gelden** (uit CLAUDE.md §14 + de blueprints):
+- élke oefening krijgt **type-correcte antwoordruimte** (`wl` schrijflijn, `wcols`, `wtab`,
+  `wbox`) — de leerling schrijft écht op papier;
+- **geen oplossingen in de leerlingweergave**; sleutel enkel in het docentmateriaal;
+- geen pagina-einde midden in een item; lange sets in betekenisvolle blokken met
+  **doorlopende nummering** (beslissing A);
+- PDF, bewerkbare laag en beide PPTX blijven inhoudelijk gesynchroniseerd.
+
+Dit is het zwaarste blok qua uitvoering (regeneratie van PDF én twee PowerPoints per unit),
+maar didactisch het minst risicovol: de inhoud ligt canoniek vast.
