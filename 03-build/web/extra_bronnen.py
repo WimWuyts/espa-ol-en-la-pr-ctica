@@ -40,6 +40,36 @@ DESTACADO = {
         "tip": "Doe hem als afsluiting, nadat je de oefeningen hierboven hebt gemaakt — "
                "of samen met een klasgenoot, om beurten.",
     },
+    ("C5", 1): {
+        "kicker": "Repaso de toda la unidad",
+        "titel": "Línea Cero · Madrid",
+        "soort": "Escape room",
+        "url": "https://linea-cero-madrid.wim-wuyts1979.chatgpt.site/",
+        "es": "Estás en el metro de Madrid, en una línea que no existe en el plano. Para volver a "
+              "la superficie tienes que conjugar en presente, decidir entre ser y tener, hacer "
+              "las preguntas correctas y saber de dónde es cada pasajero.",
+        "nl": "Je zit in de metro van Madrid, op een lijn die niet op het plan staat. Om weer "
+              "boven te raken moet je vervoegen in het presente, kiezen tussen ser en tener, de "
+              "juiste vragen stellen en van elke passagier weten waar hij of zij vandaan komt. "
+              "Álle leerstof van deze unidad in één spel.",
+        "tip": "Doe hem als afsluiting, nadat je de oefeningen hierboven hebt gemaakt — "
+               "of samen met een klasgenoot, om beurten.",
+    },
+    ("C6+", 1): {
+        "kicker": "Repaso de toda la unidad",
+        "titel": "El martes desaparecido",
+        "soort": "Escape room",
+        "url": "https://martes-desaparecido.wim-wuyts1979.chatgpt.site/",
+        "es": "Un martes entero ha desaparecido del calendario. Para recuperarlo tienes que "
+              "reconstruir la rutina hora por hora: los verbos reflexivos, qué le gusta a cada "
+              "uno y cuándo se usa ser o estar.",
+        "nl": "Er is een hele dinsdag uit de kalender verdwenen. Om hem terug te krijgen moet je "
+              "de dagindeling uur na uur reconstrueren: de reflexieve werkwoorden, wie waarvan "
+              "houdt, en wanneer je ser of estar gebruikt. Álle leerstof van deze unidad in "
+              "één spel.",
+        "tip": "Doe hem als afsluiting, nadat je de oefeningen hierboven hebt gemaakt — "
+               "of samen met een klasgenoot, om beurten.",
+    },
     ("C6+", 0): {
         "kicker": "Repaso de toda la unidad",
         "titel": "El vuelo 69",
