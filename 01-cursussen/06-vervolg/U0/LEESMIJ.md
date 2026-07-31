@@ -1,24 +1,43 @@
-# C6+ · Unidad 0 «¡Volvemos!» — LEESMIJ (levering)
+# C6+ · Unidad 0 «¡Volvemos!» — LEESMIJ
 
-Paarse vervolgcursus (C6+), Unidad 0 = **diagnostische repaso / het reencuentro** (geen heronderwijs).
-De huidige 6de-cohorte deed *Español en la práctica* in het 4de/5de → we activeren de basis opnieuw.
-**Scope (diagnostisch, alles A1):** presente reg. + 7 kern-onregelmatige (ser·estar·tener·hacer·ir·dar·venir) · género/artículos/adjetivos (concordancia) · países/nacionalidades/lenguas · números.
-**Buiten scope:** géén verleden tijd, géén futuro/condicional/subjuntivo.
-**Parada op La Ruta:** el mundo hispano (de kaart voluit — enkel in U0 groot).
+Paarse vervolgcursus. Unidad 0 is een **diagnostische repaso**, geen heronderwijs: de cohorte deed *Español en la práctica* en we activeren de basis opnieuw.
 
-## De vier formaten (in deze zip)
+**Parada op La Ruta:** el mundo hispano (de kaart voluit — enkel in U0 groot)
+**Scope:** presente regelmatig + de zeven kern-onregelmatige (ser · estar · tener · hacer · ir · dar · venir) · ser of estar · género · artículos · plural · concordancia · países en nacionalidades · números
+**Buiten scope:** géén verleden tijd behalve wat hierboven staat, géén futuro simple,
+géén condicional, géén subjuntivo.
+
+## De vier formaten
 
 | Bestand | Wat | Hoe gebruiken |
 |---|---|---|
-| **C6plus_U0.pdf** | Print-cursus (41 p) | Afdrukken/projecteren. Niet bewerkbaar. |
-| **C6plus_U0_BEWERKBAAR.html** | Bewerkbare laag van de PDF | Open in Chrome/Edge → knop **«Bewerken»** · **«Opslaan als PDF»** · **«Bewaar»** (eigen versie downloaden). |
-| **C6plus_U0_web.html** | Digitale hub (standalone, offline) | Open in de browser. Tabbladen: Vocabulario (flip cards) · Gramática (interactief) · Lectura · Juegos (18 spellen) · Hablar (opname) · Cultura (klikbare wereldkaart) · Extra. 100+ zelfcorrigerende oefeningen met «↻ otra serie», plus 70 velden waar je het antwoord zelf **typt** (kopje «✍️ Escribe tú» in Vocabulario en Gramática). |
-| **C6plus_U0_docente.pptx** | PowerPoint docent (23 dia's) | Vrije navigatie, presenter view, oplossingen + didactiek in de notities. Klik-onthul-animaties. |
-| **C6plus_U0_alumno.pptx** | PowerPoint leerling | Druk **F5**; elke klik onthult het volgende antwoord. |
+| **C6plus_U0.pdf** | Print-cursus (41 blz.) | Afdrukken of projecteren. Niet bewerkbaar. |
+| **C6plus_U0_BEWERKBAAR.html** | Bewerkbare laag van diezelfde cursus | Open in Chrome of Edge → **«Bewerken»** · **«Opslaan als PDF»** · **«Bewaar»**. |
+| **C6plus_U0_hub.html** | Digitale hub (standalone, werkt offline) | Tabbladen: Vocabulario · Gramática · Lectura · Escuchar 🎧 · Juegos (18) · Hablar 🎙️ · Cultura · Extra. |
+| **C6plus_U0_docente.pptx** | PowerPoint docent (23 dia's) | Vrije navigatie, oplossingen en didactiek in de notities. |
+| **C6plus_U0_alumno.pptx** | PowerPoint leerling (22 dia's) | Druk **F5**; elke klik onthult het volgende antwoord. |
 
-> **Let op (PowerPoint):** PowerPoint vraagt bij het openen soms «Repareren» — dat is normaal (de klik-onthul-animaties). Bevestig; de animaties werken dan.
+> **Let op (PowerPoint):** PowerPoint vraagt bij het openen soms «Repareren» — dat hoort
+> bij de klik-onthul-animaties. Bevestigen; daarna werkt alles.
+
+## Wat er in de hub zit
+
+- **70 typvelden** waar de leerling zelf schrijft, geen keuzelijst: onder «✍️ Escribe tú»
+  in *Vocabulario* en in *Gramática*. Met **pista**, **Comprobar**, **Reintentar**, en
+  **Ver solución** pas na een tweede poging.
+- **§5 Lectura** — «El tablón de anuncios», drie korte prikbordberichten.
+- **§6 Escucha** — «El primer día de curso», Diego en Valen zien elkaar terug op de speelplaats · zes treden, transcript pas ná de taken.
+- **Extra** — 63 bronnen in 16 groepen + de escape room **El vuelo 69**.
 
 ## Inhoud
-§1 Saludos & presentarse → §2 El presente (§2.1 reg. · §2.2 ser · §2.3 andere irregulares) → §3 Género · artículos · número · adjetivos → §4 Países · nacionalidades · números → §5 Lectura (perfiles Diego/Nina) → §6 Escucha → Taller (acentuación + conectoren) → Cultura (el mundo hispano) → Tarea «Tarjeta de reencuentro» → Repaso (semáforo) → §V Vocabulario.
 
-Golden sample van de C6+-pijplijn (paars). Bron: `gen_u0_print.py` + `u0_vocab.json` + `U0_cocktail.md`.
+§1 Saludos y presentarse → §2 El presente (regulares · ser · andere irregulares) → §3 Género · artículos · número · adjetivos → §4 Países · nacionalidades · números → Taller de lengua → Cultura (el mundo hispano) → §5 Lectura → §6 Escucha → Repaso (semáforo) → §V Vocabulario (69 woorden).
+
+**Tarea final:** Tarjeta de reencuentro
+
+## Wat nog niet af is
+
+- De **QR-codes** in de print wijzen nog niet naar een echte pagina; dat gebeurt in één
+  sweep zodra de site online staat.
+- Het **luisteren** gebruikt de stem van je browser. Zodra er echte opnames zijn, pikt de
+  hub die automatisch op — de oefeningen hoeven niet herbouwd te worden.

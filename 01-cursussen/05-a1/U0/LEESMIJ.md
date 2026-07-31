@@ -1,46 +1,43 @@
-# C5 · Unidad 0 «¡Empezamos!» — LEESMIJ (levering)
+# C5 · Unidad 0 «¡Empezamos!» — LEESMIJ
 
-Groene kerncursus (C5), Unidad 0 = **de start vanaf nul**: klanken, het abecedario, het accent,
-de getallen, de eerste saludos en het voorstellen. Geen voorkennis verondersteld.
-**Scope:** uitspraak & klank–schriftbeeld · acentuación (aguda · llana · esdrújula) · abecedario ·
-números 0–100 · saludos en lengua de clase · género (el/la) · zich voorstellen.
-**Buiten scope:** géén werkwoordsvervoeging als systeem, géén verleden tijd, géén futuro,
-condicional of subjuntivo.
-**Parada op La Ruta:** el mundo hispano → España (de kaart voluit — enkel in U0 groot).
+Groene kerncursus, **de start vanaf nul**. Geen voorkennis verondersteld.
 
-## De vier formaten (in deze zip)
+**Parada op La Ruta:** el mundo hispano → España (de kaart voluit — enkel in U0 groot)
+**Scope:** klanken en klank–schriftbeeld · acentuación (aguda · llana · esdrújula) · abecedario · números 0–100 · saludos en lengua de clase · género el/la · zich voorstellen
+**Buiten scope:** géén verleden tijd behalve wat hierboven staat, géén futuro simple,
+géén condicional, géén subjuntivo.
+
+## De vier formaten
 
 | Bestand | Wat | Hoe gebruiken |
 |---|---|---|
-| **C5_U0.pdf** | Print-cursus | Afdrukken of projecteren. Niet bewerkbaar. |
-| **C5_U0_BEWERKBAAR.html** | Bewerkbare laag van diezelfde cursus | Open in Chrome of Edge → knop **«Bewerken»** · **«Opslaan als PDF»** · **«Bewaar»** (je eigen versie downloaden). |
-| **C5_U0_hub.html** | Digitale hub (standalone, werkt offline) | Open in de browser. Tabbladen: Vocabulario · Gramática · Lectura · Escuchar 🎧 · Juegos (22 spellen) · Hablar 🎙️ (opname) · Cultura (klikbare wereldkaart) · Extra. |
-| **C5_U0_docente.pptx** | PowerPoint docent (23 dia's) | Vrije navigatie, presenter view, oplossingen en didactiek in de notities. Klik-onthul-animaties. |
+| **C5_U0.pdf** | Print-cursus (62 blz.) | Afdrukken of projecteren. Niet bewerkbaar. |
+| **C5_U0_BEWERKBAAR.html** | Bewerkbare laag van diezelfde cursus | Open in Chrome of Edge → **«Bewerken»** · **«Opslaan als PDF»** · **«Bewaar»**. |
+| **C5_U0_hub.html** | Digitale hub (standalone, werkt offline) | Tabbladen: Vocabulario · Gramática · Lectura · Escuchar 🎧 · Juegos (22) · Hablar 🎙️ · Cultura · Extra. |
+| **C5_U0_docente.pptx** | PowerPoint docent (23 dia's) | Vrije navigatie, oplossingen en didactiek in de notities. |
 | **C5_U0_alumno.pptx** | PowerPoint leerling (22 dia's) | Druk **F5**; elke klik onthult het volgende antwoord. |
 
-> **Let op (PowerPoint):** PowerPoint vraagt bij het openen soms «Repareren» — dat is normaal
-> (het komt door de klik-onthul-animaties). Bevestigen; de animaties werken daarna gewoon.
+> **Let op (PowerPoint):** PowerPoint vraagt bij het openen soms «Repareren» — dat hoort
+> bij de klik-onthul-animaties. Bevestigen; daarna werkt alles.
 
-## Nieuw in deze versie
+## Wat er in de hub zit
 
-- **Typoefeningen op de digitale pagina.** Onder het kopje **«✍️ Escribe tú»** in *Vocabulario*
-  (34 velden) en in *Gramática* (36 velden) typt de leerling het antwoord zelf — geen keuzelijst.
-  Met **pista** (beginletters), **Comprobar**, **Reintentar**, en **Ver solución** pas na een
-  tweede poging. Accenten zijn verplicht bij de tilde-regel, tolerant bij woordenschat.
-- **§5 Lectura en §6 Escucha** in print, in de hub én als dia in beide PowerPoints.
+- **70 typvelden** waar de leerling zelf schrijft, geen keuzelijst: onder «✍️ Escribe tú»
+  in *Vocabulario* en in *Gramática*. Met **pista**, **Comprobar**, **Reintentar**, en
+  **Ver solución** pas na een tweede poging.
+- **§5 Lectura** — «El Club de Español», een aanplakbiljet uit de gang.
+- **§6 Escucha** — «En la puerta de embarque», Lucía en jij wachten op dezelfde vlucht · zes treden, transcript pas ná de taken.
+- **Extra** — 37 bronnen in 9 groepen (ProfeDeELE · Arche-ELE · My Daily Spanish) + de escape room **El museo de las palabras perdidas**.
 
 ## Inhoud
 
-§1 Sonar en español (klanken · trampas voor Nederlandstaligen) → §2 Taller de lengua
-(acentuación · la regla del sombrero) → §3 Números y edad → §4 Saludos y lengua de clase →
-Cultura (identidad en diversidad · variación) → §5 Lectura → §6 Escucha →
-Tarea final (tarjeta de embarque) → Repaso (semáforo) → §V Vocabulario.
+§1 Sonar en español (klanken · valstrikken voor Nederlandstaligen) → §2 Taller de lengua (acentuación · la regla del sombrero) → §3 Números y edad → §4 Saludos y lengua de clase → Cultura (identidad en diversidad · variación) → §5 Lectura → §6 Escucha → Repaso (semáforo) → §V Vocabulario (75 woorden).
 
-Golden sample van de C5-pijplijn (groen).
+**Tarea final:** Tarjeta de embarque
 
 ## Wat nog niet af is
 
-- De **QR-codes** in de print verwijzen nog niet naar een echte pagina: dat gebeurt in één sweep
-  zodra de site online staat. Tot dan staat er een gewone verwijzing naar het juiste tabblad.
-- Het **luisteren** draait op de stem van je browser (TTS). Zodra er echte opnames zijn, pikt de
-  hub die automatisch op — de oefeningen hoeven niet opnieuw gebouwd te worden.
+- De **QR-codes** in de print wijzen nog niet naar een echte pagina; dat gebeurt in één
+  sweep zodra de site online staat.
+- Het **luisteren** gebruikt de stem van je browser. Zodra er echte opnames zijn, pikt de
+  hub die automatisch op — de oefeningen hoeven niet herbouwd te worden.
