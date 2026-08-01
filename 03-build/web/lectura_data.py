@@ -1736,6 +1736,125 @@ C6P_U7 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C5 · U8 «¿Qué has hecho?» — parada Perú (Cusco · Machu Picchu)
+# Tekstsoort: test de revista. Nieuw genre en het perfecte omhulsel voor deze
+# unit: elke vraag is een «¿Has… alguna vez?» en elk profiel gebruikt ya of
+# todavía no. De unit heeft in §5 al een reisdagboek, dus geen tweede verhaal.
+# Het luisterfragment is een weerbericht: dezelfde reis, maar de klimaatlaag.
+# ---------------------------------------------------------------------------
+C5_U8 = {
+    "id": "C5-U8-LEC-01",
+    "ancla": "c5-u8-lec-01",
+    "titulo": "¿Qué tipo de viajero eres?",
+    "tipo": "test de revista (cuestionario con resultados)",
+    "emisor": "La revista de viajes «Mochila»",
+    "receptor": "Sus lectores jóvenes",
+    "objetivo": "Que te pongas una nota y te reconozcas en un perfil",
+    "prediccion": {
+        "q": "Kijk eerst alleen naar de zes genummerde vragen en de drie gekleurde kaders "
+             "onderaan. Wat voor tekst is dit?",
+        "opts": ["Een test met een uitslag", "Een reisverslag", "Een advertentie voor een reis"],
+        "ans": "Een test met een uitslag",
+        "why": "Vragen + puntentelling + profielen = een tijdschrifttest.",
+    },
+    "texto": [
+        ["titulo", "🎒 ¿QUÉ TIPO DE VIAJERO ERES?"],
+        ["lema", "Test · revista «Mochila» · marzo"],
+        ["p", "Contesta sí o no. Cuenta un punto por cada «sí» y mira tu resultado al final."],
+        ["lista", [
+            "1 · ¿Has dormido alguna vez en una tienda de campaña?",
+            "2 · ¿Has viajado alguna vez solo o sola?",
+            "3 · ¿Has probado alguna vez una comida muy rara?",
+            "4 · ¿Has hablado alguna vez con un desconocido en otro idioma?",
+            "5 · ¿Has perdido alguna vez un tren o un avión?",
+            "6 · ¿Has subido alguna vez a más de tres mil metros?",
+        ]],
+        ["aviso", ["🟢 DE 0 A 2 PUNTOS — «El viajero de casa»",
+                   "Todavía no has salido mucho de tu zona. No pasa nada: todo el mundo empieza "
+                   "así. Este año puedes hacer una excursión de un día a un sitio nuevo."]],
+        ["aviso", ["🟡 DE 3 A 4 PUNTOS — «El viajero curioso»",
+                   "Ya has visto cosas y ya has tenido algún problema. Sabes que un viaje no "
+                   "siempre sale como en las fotos, y eso es una buena noticia."]],
+        ["aviso", ["🔴 DE 5 A 6 PUNTOS — «La mochila siempre lista»",
+                   "Has hecho de todo. Cuidado con una cosa: viajar mucho no es lo mismo que "
+                   "mirar. ¿De cuántas de esas ciudades te acuerdas de verdad?"]],
+        ["p", "Nina, de Cusco, ha sacado seis puntos. «He subido a Machu Picchu tres veces», "
+              "dice, «pero todavía no he visto el mar»."],
+        ["firma", "¿Cuántos puntos has sacado tú? Cuéntanoslo en mochila@revista.pe"],
+    ],
+    "traduccion": "WAT VOOR REIZIGER BEN JIJ? Test · tijdschrift «Mochila» · maart. Antwoord ja "
+                  "of nee. Tel één punt voor elke «ja» en kijk onderaan naar je uitslag. "
+                  "1 · Heb je ooit in een tent geslapen? 2 · Heb je ooit alleen gereisd? "
+                  "3 · Heb je ooit iets heel raars gegeten? 4 · Heb je ooit met een onbekende "
+                  "in een andere taal gepraat? 5 · Heb je ooit een trein of een vliegtuig "
+                  "gemist? 6 · Ben je ooit hoger dan drieduizend meter geweest? — 0 TOT 2 "
+                  "PUNTEN «De thuisreiziger»: je bent nog niet veel buiten je vertrouwde "
+                  "omgeving geweest. Dat geeft niet: iedereen begint zo. Dit jaar kun je een "
+                  "daguitstap maken naar een nieuwe plek. — 3 TOT 4 PUNTEN «De nieuwsgierige "
+                  "reiziger»: je hebt al dingen gezien en al eens een probleem gehad. Je weet "
+                  "dat een reis niet altijd verloopt zoals op de foto's, en dat is goed nieuws. "
+                  "— 5 TOT 6 PUNTEN «De rugzak staat altijd klaar»: je hebt van alles gedaan. "
+                  "Pas op voor één ding: veel reizen is niet hetzelfde als kijken. Hoeveel van "
+                  "die steden herinner je je echt? — Nina uit Cusco haalde zes punten. «Ik ben "
+                  "drie keer op Machu Picchu geweest», zegt ze, «maar ik heb de zee nog nooit "
+                  "gezien.»",
+    "global": {
+        "q": "¿Para qué es este texto?",
+        "opts": ["Para descubrir qué tipo de viajero eres", "Para reservar un viaje a Perú",
+                 "Para explicar cómo se sube a Machu Picchu"],
+        "ans": "Para descubrir qué tipo de viajero eres",
+    },
+    "escanear": [
+        {"q": "¿Cuántas preguntas tiene el test? (en cifras)", "ans": "6",
+         "alt": ["seis", "6 preguntas"], "why": "de vragen zijn genummerd van 1 tot 6"},
+        {"q": "¿Cuántos puntos ha sacado Nina? (en cifras)", "ans": "6",
+         "alt": ["seis", "seis puntos"], "why": "«ha sacado seis puntos»"},
+        {"q": "¿Cuántas veces ha subido Nina a Machu Picchu? (en cifras)", "ans": "3",
+         "alt": ["tres", "tres veces"], "why": "«He subido a Machu Picchu tres veces»"},
+        {"q": "¿A partir de cuántos puntos eres «el viajero curioso»? (en cifras)", "ans": "3",
+         "alt": ["tres", "de 3 a 4", "3 a 4"], "why": "«DE 3 A 4 PUNTOS — El viajero curioso»"},
+        {"q": "¿A qué dirección puedes escribir?", "ans": "mochila@revista.pe",
+         "alt": ["mochila@revista.pe"], "why": "«Cuéntanoslo en mochila@revista.pe»"},
+    ],
+    "vf": [
+        {"q": "Cada «sí» vale un punto.", "ans": True, "prueba": "cuenta un punto por cada «sí»"},
+        {"q": "Nina ya ha estado en Machu Picchu.", "ans": True,
+         "prueba": "he subido a machu picchu tres veces"},
+        {"q": "Nina ya ha visto el mar.", "ans": False, "prueba": "todavía no he visto el mar"},
+        {"q": "Con dos puntos has viajado mucho.", "ans": False,
+         "prueba": "todavía no has salido mucho de tu zona"},
+        {"q": "Según el test, viajar mucho es lo mismo que mirar de verdad.", "ans": False,
+         "prueba": "viajar mucho no es lo mismo que mirar"},
+    ],
+    "contexto": [
+        {"q": "«una tienda de campaña» — ¿qué es?",
+         "opts": ["een tent", "een winkel op het platteland", "een boerderij"], "ans": "een tent",
+         "why": "«la tienda» is winkel, maar «tienda de campaña» is een tent — een klassieke "
+                "valstrik."},
+        {"q": "«Todavía no has salido mucho de tu zona» — ¿qué significa?",
+         "opts": ["Je bent nog niet veel buiten je vertrouwde omgeving geweest",
+                  "Je bent nooit thuis", "Je mag niet meer weg"],
+         "ans": "Je bent nog niet veel buiten je vertrouwde omgeving geweest",
+         "why": "«todavía no» = nog niet — het kan nog komen."},
+        {"q": "«¿Cuántos puntos has sacado?» — ¿qué significa «sacar» aquí?",
+         "opts": ["behalen", "fotograferen", "eruit halen"], "ans": "behalen",
+         "why": "In een test haal je punten; «sacar fotos» is iets anders."},
+        {"q": "«No pasa nada» — ¿qué quiere decir?",
+         "opts": ["Het geeft niet", "Er gebeurt hier nooit iets", "Het is verboden"],
+         "ans": "Het geeft niet",
+         "why": "Het is een geruststelling na een lage score."},
+    ],
+    "produccion": {
+        "prompt": "Escribe tu resultado y tres frases más (5–6 in totaal): cuántos puntos has "
+                  "sacado, dos cosas que ya has hecho y dos que todavía no has hecho. Usa ya · "
+                  "todavía no · nunca · alguna vez.",
+        "modelo": "He sacado … puntos. Ya he… y ya he… Pero todavía no he… y nunca he… "
+                  "¿Y tú, has … alguna vez?",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
          ("C5", 2): C5_U2, ("C6+", 2): C6P_U2,
@@ -1743,7 +1862,8 @@ TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 4): C5_U4, ("C6+", 4): C6P_U4,
          ("C5", 5): C5_U5, ("C6+", 5): C6P_U5,
          ("C5", 6): C5_U6, ("C6+", 6): C6P_U6,
-         ("C5", 7): C5_U7, ("C6+", 7): C6P_U7}
+         ("C5", 7): C5_U7, ("C6+", 7): C6P_U7,
+         ("C5", 8): C5_U8}
 
 
 def _texto_plano(t):

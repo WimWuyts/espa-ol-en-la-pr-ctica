@@ -1364,6 +1364,98 @@ C6P_U7 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C5 · U8 — el parte del tiempo. De leestekst van deze unit is een test over
+# ervaringen; hier gaat het over cijfers en het weer. Nieuw genre en de laatste
+# halte van de route: een weerbericht dwingt tot heel precies luisteren, want
+# alle informatie zit in getallen en plaatsnamen. Toekomst zonder futuro simple:
+# «va a llover» (ir a + infinitivo, uit U5).
+# ---------------------------------------------------------------------------
+C5_U8 = {
+    "id": "C5-U8-ESC-01",
+    "ancla": "c5-u8-esc-01",
+    "titulo": "El tiempo en los Andes",
+    "audio": "audio/C5_U8.mp3",
+    "situacion": {
+        "lugar": "La radio de Cusco, boletín de las ocho de la mañana",
+        "quien": "El presentador y Rosa Quispe, meteoróloga",
+        "que": "Dan el tiempo de hoy y de mañana en Perú",
+        "claves": ["hace sol / hace frío", "va a llover", "grados"],
+    },
+    "guion": [
+        {"who": "Presentador", "es": "Son las ocho. Rosa, ¿qué tiempo hace hoy en Cusco?",
+         "nl": "Het is acht uur. Rosa, wat voor weer is het vandaag in Cusco?"},
+        {"who": "Rosa", "es": "Buenos días. Hoy hace sol, pero hace frío: solo cinco grados a "
+                              "esta hora.",
+         "nl": "Goedemorgen. Vandaag is het zonnig, maar koud: maar vijf graden op dit uur."},
+        {"who": "Presentador", "es": "¿Y por la tarde?", "nl": "En vanmiddag?"},
+        {"who": "Rosa", "es": "Por la tarde sube a dieciséis grados. En los Andes la diferencia "
+                              "entre la mañana y la tarde es enorme.",
+         "nl": "'s Namiddags stijgt het naar zestien graden. In de Andes is het verschil tussen "
+               "de ochtend en de namiddag enorm."},
+        {"who": "Presentador", "es": "¿Necesitamos paraguas?", "nl": "Hebben we een paraplu nodig?"},
+        {"who": "Rosa", "es": "Hoy no. Pero mañana sí: va a llover toda la tarde, con tormenta "
+                              "en la montaña.",
+         "nl": "Vandaag niet. Maar morgen wel: het gaat de hele namiddag regenen, met onweer in "
+               "de bergen."},
+        {"who": "Presentador", "es": "¿Y en Machu Picchu?", "nl": "En in Machu Picchu?"},
+        {"who": "Rosa", "es": "Allí está nublado y llueve un poco. Es normal: estamos en "
+                              "temporada de lluvias.",
+         "nl": "Daar is het bewolkt en regent het wat. Dat is normaal: we zitten in het "
+               "regenseizoen."},
+        {"who": "Presentador", "es": "¿Hasta cuándo dura?", "nl": "Hoe lang duurt dat nog?"},
+        {"who": "Rosa", "es": "Hasta marzo. Después llegan los meses secos, de mayo a "
+                              "septiembre.",
+         "nl": "Tot maart. Daarna komen de droge maanden, van mei tot september."},
+        {"who": "Presentador", "es": "¿Y en la costa, en Lima?", "nl": "En aan de kust, in Lima?"},
+        {"who": "Rosa", "es": "Veintidós grados y mucha nube, como casi siempre. Allí casi "
+                              "nunca llueve.",
+         "nl": "Tweeëntwintig graden en veel bewolking, zoals bijna altijd. Daar regent het "
+               "bijna nooit."},
+        {"who": "Presentador", "es": "Gracias, Rosa. Volvemos mañana a las ocho.",
+         "nl": "Dank je, Rosa. Morgen om acht uur zijn we er weer."},
+    ],
+    "global": {
+        "q": "¿De qué habla este boletín?",
+        "opts": ["Del tiempo de hoy y de mañana en Perú", "De un viaje a Machu Picchu",
+                 "De un accidente en la montaña"],
+        "ans": "Del tiempo de hoy y de mañana en Perú",
+        "why": "graden, wolken, regen — per plaats",
+    },
+    "detalle": [
+        {"q": "¿Cuántos grados hace en Cusco a las ocho de la mañana?",
+         "opts": ["Cinco", "Quince", "Veinticinco"], "ans": "Cinco",
+         "why": "«solo cinco grados a esta hora»"},
+        {"q": "¿Cuántos grados hace por la tarde?", "opts": ["Dieciséis", "Seis", "Veintiséis"],
+         "ans": "Dieciséis", "why": "«sube a dieciséis grados»"},
+        {"q": "¿Cuándo va a llover?", "opts": ["Mañana por la tarde", "Hoy por la mañana",
+                                                "El domingo"], "ans": "Mañana por la tarde",
+         "why": "«mañana sí: va a llover toda la tarde»"},
+        {"q": "¿Hasta cuándo dura la temporada de lluvias?",
+         "opts": ["Hasta marzo", "Hasta mayo", "Hasta septiembre"], "ans": "Hasta marzo",
+         "why": "«Hasta marzo»"},
+        {"q": "¿Qué tiempo hace en Lima?",
+         "opts": ["Nublado y veintidós grados", "Sol y treinta grados", "Nieve y frío"],
+         "ans": "Nublado y veintidós grados",
+         "why": "«Veintidós grados y mucha nube»"},
+    ],
+    "vf": [
+        {"q": "Hoy hace falta paraguas en Cusco.", "ans": False, "prueba": "hoy no"},
+        {"q": "En Machu Picchu está nublado.", "ans": True,
+         "prueba": "allí está nublado y llueve un poco"},
+        {"q": "En Lima llueve mucho.", "ans": False, "prueba": "allí casi nunca llueve"},
+    ],
+    "produccion": {
+        "prompt": "Da tú el parte del tiempo de tu ciudad para hoy y mañana (cinco frases): "
+                  "qué tiempo hace, cuántos grados, si hace falta paraguas y qué va a pasar "
+                  "mañana. Usa: hace sol · está nublado · llueve · va a…",
+        "modo": "grabar",
+        "modelo": "Buenos días. Hoy en … hace… y hay … grados. Por la tarde… Mañana va a… "
+                  "Hasta mañana.",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
          ("C5", 2): C5_U2, ("C6+", 2): C6P_U2,
@@ -1371,7 +1463,8 @@ TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 4): C5_U4, ("C6+", 4): C6P_U4,
          ("C5", 5): C5_U5, ("C6+", 5): C6P_U5,
          ("C5", 6): C5_U6, ("C6+", 6): C6P_U6,
-         ("C5", 7): C5_U7, ("C6+", 7): C6P_U7}
+         ("C5", 7): C5_U7, ("C6+", 7): C6P_U7,
+         ("C5", 8): C5_U8}
 
 
 def controla():

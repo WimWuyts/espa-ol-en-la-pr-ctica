@@ -426,6 +426,78 @@ SETS[("C5", 5)] = [
          ]),
 ]
 
+SETS[("C5", 8)] = [
+    dict(title="El pretérito perfecto — haber + participio", accents="strict",
+         desc="De tijd van «wat heb je vandaag gedaan». Schrijf <b>allebei</b> de woorden: "
+              "de vorm van <i>haber</i> (he · has · ha · hemos · habéis · han) en het "
+              "participio: <b>-ar → -ado</b> · <b>-er/-ir → -ido</b>.",
+         items=[
+             {"q": "Hoy yo ___ (visitar) las ruinas.", "ans": "he visitado", "hint": "h_ v_______",
+              "why": "yo → he + -ado"},
+             {"q": "¿Tú ___ (subir) alguna vez a los Andes?", "ans": "has subido", "hint": "h__ s_____",
+              "why": "tú → has · -ir → -ido"},
+             {"q": "Nina ___ (sacar) cien fotos esta mañana.", "ans": "ha sacado", "hint": "h_ s_____"},
+             {"q": "Nosotros ___ (comer) en el mercado de Cusco.", "ans": "hemos comido",
+              "hint": "h____ c_____", "why": "nosotros → hemos"},
+             {"q": "Mis padres ___ (perder) el tren.", "ans": "han perdido", "hint": "h__ p______"},
+             {"q": "Yo todavía no ___ (comprar) los recuerdos.", "ans": "he comprado",
+              "hint": "h_ c_______"},
+             {"q": "¿Vosotros ___ (dormir) bien esta noche?", "ans": "habéis dormido",
+              "hint": "h_____ d______", "why": "vosotros → habéis, mét tilde"},
+             {"q": "Esta semana ___ (llover) todos los días.", "ans": "ha llovido", "hint": "h_ l______",
+              "why": "weerwerkwoorden staan altijd in de derde persoon"},
+             {"q": "Yo ___ (aprender) tres palabras en quechua.", "ans": "he aprendido",
+              "hint": "h_ a________"},
+             {"q": "Nosotras ___ (viajar) en autobús hasta Aguas Calientes.", "ans": "hemos viajado",
+              "hint": "h____ v______"},
+             {"q": "El guía ___ (explicar) la historia de la ciudad.", "ans": "ha explicado",
+              "hint": "h_ e________"},
+             {"q": "Ellos ___ (beber) mate de coca.", "ans": "han bebido", "hint": "h__ b_____"},
+         ]),
+    dict(title="Los participios irregulares", accents="strict",
+         desc="Acht werkwoorden weigeren de gewone uitgang — precies de acht die op de "
+              "vocabulariolijst van deze unidad staan. Schrijf <b>alleen</b> het participio.",
+         items=[
+             {"q": "hacer → he ___", "ans": "hecho", "hint": "h____", "why": "hacer → hecho"},
+             {"q": "ver → he ___", "ans": "visto", "hint": "v____", "why": "ver → visto"},
+             {"q": "decir → he ___", "ans": "dicho", "hint": "d____", "why": "decir → dicho"},
+             {"q": "escribir → he ___", "ans": "escrito", "hint": "e______", "why": "escribir → escrito"},
+             {"q": "volver → he ___", "ans": "vuelto", "hint": "v_____", "why": "volver → vuelto"},
+             {"q": "poner → he ___", "ans": "puesto", "hint": "p_____", "why": "poner → puesto"},
+             {"q": "abrir → he ___", "ans": "abierto", "hint": "a______", "why": "abrir → abierto"},
+             {"q": "romper → he ___", "ans": "roto", "hint": "r___", "why": "romper → roto"},
+             {"q": "viajar → he ___", "ans": "viajado", "hint": "v______",
+              "why": "valstrik: viajar is gewoon regelmatig"},
+             {"q": "subir → he ___", "ans": "subido", "hint": "s_____",
+              "why": "valstrik: subir is gewoon regelmatig"},
+             {"q": "leer → he ___", "ans": "leído", "hint": "l____",
+              "why": "leer → leído, met een tilde op de i"},
+             {"q": "traer → he ___", "ans": "traído", "hint": "t_____",
+              "why": "traer → traído, ook met tilde"},
+         ]),
+    dict(title="Marcadores — ya · todavía no · nunca · alguna vez", accents="strict",
+         desc="Vier woorden die zeggen <b>waar je staat</b> in een reeks ervaringen. "
+              "<b>ya</b> = al · <b>todavía no</b> = nog niet · <b>nunca</b> = nooit · "
+              "<b>alguna vez</b> = ooit (alleen in een vraag).",
+         items=[
+             {"q": "— ¿Has visto Machu Picchu? — Sí, ___ lo he visto.", "ans": "ya",
+              "why": "bevestigend en afgevinkt → ya"},
+             {"q": "— ¿Has subido a la montaña? — No, ___ ___ he subido.", "ans": "todavía no",
+              "why": "nog niet, maar het kan nog → todavía no"},
+             {"q": "¿Has viajado ___ ___ en barco?", "ans": "alguna vez",
+              "why": "in een vraag naar ervaring → alguna vez"},
+             {"q": "Yo ___ he comido cuy. (nooit)", "ans": "nunca"},
+             {"q": "— ¿Habéis hecho las maletas? — Sí, ___ están listas.", "ans": "ya"},
+             {"q": "Mi hermano ___ ha visto la nieve. (nooit)", "ans": "nunca"},
+             {"q": "— ¿Has escrito la postal? — No, ___ ___ la he escrito.", "ans": "todavía no"},
+             {"q": "¿Has estado ___ ___ en Perú?", "ans": "alguna vez"},
+             {"q": "El tren ___ ha salido: son las nueve y cinco.", "ans": "ya"},
+             {"q": "Nosotros ___ hemos perdido una maleta. (nooit)", "ans": "nunca"},
+             {"q": "— ¿Ha llegado el guía? — No, ___ ___ ha llegado.", "ans": "todavía no"},
+             {"q": "¿Habéis probado ___ ___ la comida andina?", "ans": "alguna vez"},
+         ]),
+]
+
 SETS[("C5", 7)] = [
     dict(title="¿hay o está(n)? — escribe la forma", accents="strict",
          desc="<b>hay</b> als het iets nieuws of ongeteld is (un · dos · mucho) · "

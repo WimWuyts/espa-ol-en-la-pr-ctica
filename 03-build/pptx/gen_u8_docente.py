@@ -12,6 +12,7 @@ Huisstijl groen (C5). Spaans-eerst + NL-steun. ≥20 dia's. Dekt de vier vaardig
 """
 import os
 import gen_u0_docente as E
+import lectura_data as _LD, escucha_data as _ED
 from gen_u0_docente import (
     slide, bg, rect, text, chip, avatar, card, sectionbar, footer, noodroute,
     exercise_solucion, check_badge, legend_func, link_to, register_reveal, notes, pg,
@@ -569,7 +570,10 @@ def s21_teacher():
 def _run_all(include_teacher=True):
     s01_title(); s02_menu(); s03_vocab(); s04_perfecto(); s05_perfecto_quiz(); s06_participios(); s07_marcadores()
     s08_quiz_participio(); s09_reading(); s10_listening(); s11_ya(); s12_speaking(); s13_writing()
-    s14_transporte(); s15_taller(); s16_cultura(); s17_quiz_completa(); s18_tarea(); s19_mezcla(); s20_repaso()
+    s14_transporte(); s15_taller(); s16_cultura(); s17_quiz_completa()
+    # Lectura en Escucha uit de gedeelde bron — zelfde inhoud als print en hub.
+    E.s_lectura(_LD.C5_U8); E.s_escucha(_ED.C5_U8)
+    s18_tarea(); s19_mezcla(); s20_repaso()
     if include_teacher:
         s21_teacher()
 
