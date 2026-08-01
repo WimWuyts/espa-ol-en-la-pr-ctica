@@ -13,6 +13,11 @@ from gen_u0_print import (CSS, AV, TU, MOCH, qr, audiorow, act, regla, guide, lp
                           pcard, steun, sortcols, actx, tarea_com, obsbox, machine, blocks, tree,
                           mirror, fmu, scaffold, zoom, clusters, colloc, scale, vpairs, mispal, xray,
                           gustobars, menu)
+import sys as _sys
+_sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
+import print_bloques as PB
+import lectura_data as LD
+import escucha_data as ED
 
 BODY = []
 def P(*x): BODY.extend(x)
@@ -526,6 +531,21 @@ P(actx(AN(), "Completa con aquí / ahí / allí",
   apoyo="BANCO"))
 sec_close()
 
+# ================= §7 LECTURA · §8 ESCUCHA =================
+# Zelfde bron als de digitale hub (lectura_data / escucha_data): papier en scherm
+# kunnen zo niet uit elkaar lopen. Elk op een eigen bladzijde (§14).
+P('<div class="page"><div class="parada sec">')
+P('<span class="num">7</span><span class="pk">§7 · Lectura — «Casa Azul»: dos reseñas</span>')
+P('<div class="intro"><b>ES:</b> Dos opiniones sobre la misma casa. <b>No hace falta entenderlo todo</b> para sacar la información. <span class="gloss">Twee meningen over hetzelfde huis. Je hoeft niet alles te begrijpen — zoek gericht, en let op waar ze het oneens zijn.</span></div>')
+P(PB.lectura_print(LD.C6P_U2, "1"))
+P('</div>')
+
+P('<div class="page"><div class="parada sec">')
+P('<span class="num">8</span><span class="pk">§8 · Escucha — «Estoy perdido en Cartagena»</span>')
+P('<div class="intro"><b>ES:</b> Sam llama a Valen: no encuentra su calle. <b>Escucha primero, escribe después.</b> <span class="gloss">Sam belt Valen op: hij vindt haar straat niet. Eerst luisteren, dan schrijven; het transcript staat online en gaat pas open ná de taken.</span></div>')
+P(PB.escucha_print(ED.C6P_U2, "1"))
+P('</div>')
+
 # ================= CULTURA =================
 sec_open("C", "Cultura · la vivienda hispana", 'La <b>casa</b> hispana tiene su propio estilo: <b>patios</b> con plantas, <b>balcones</b> floridos y <b>plazas</b> como corazón del barrio. Cada país tiene el suyo. <span class="gloss">Het Spaanstalige huis: patio\'s, balkons met bloemen en het plein als hart van de buurt.</span>',
         lpd(("5","identiteit in diversiteit: la vivienda hispana")))
@@ -686,7 +706,7 @@ EDITBAR = '''
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Español en la práctica · C6+ U2 Aquí vivo</title><style>'
-        + CSS + CSS_OVR + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
+        + CSS + CSS_OVR + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/C6plus_U2.html"
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, "·", len(HTML), "bytes ·", _AN[0], "genummerde oefeningen (excl. V.1–V.5)")

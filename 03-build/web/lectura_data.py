@@ -480,9 +480,115 @@ C5_U2 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C6+ · U2 «Aquí vivo» — parada Cartagena
+# Tekstsoort: reseñas (beoordelingen op een boekingssite). Nieuw genre naast
+# tablón (U0) en blog (U1): twee tegengestelde meningen over dezelfde woning,
+# zodat de leerling niet alleen feiten zoekt maar ook standpunten vergelijkt.
+# Het luisterfragment van deze unit is een telefoongesprek met een routebeschrijving.
+# ---------------------------------------------------------------------------
+C6P_U2 = {
+    "id": "C6P-U2-LEC-01",
+    "ancla": "c6p-u2-lec-01",
+    "titulo": "«Casa Azul» — dos reseñas",
+    "tipo": "reseñas (web de alojamiento)",
+    "emisor": "Dos viajeros: Marta y Tomás",
+    "receptor": "Quien busca dónde dormir en Cartagena",
+    "objetivo": "Contar cómo es la casa de verdad",
+    "prediccion": {
+        "q": "Kijk eerst alleen naar de sterren, het cijfer en de namen. Wat voor tekst is dit?",
+        "opts": ["Meningen van gasten over een woning", "Een routebeschrijving", "Een menukaart"],
+        "ans": "Meningen van gasten over een woning",
+        "why": "Sterren + een gemiddelde + namen van personen = beoordelingen.",
+    },
+    "texto": [
+        ["titulo", "⭐ RESEÑAS · «Casa Azul» — Centro Histórico, Cartagena"],
+        ["lema", "4,6 sobre 5 · 128 opiniones · Anfitriona: Valen"],
+        ["aviso", ["★★★★★ Marta, de Madrid — «Un balcón lleno de flores»",
+                   "El apartamento está en la calle de la Iglesia, muy cerca de la muralla. "
+                   "Hay dos dormitorios, un salón grande y una cocina pequeña. Encima de la cama "
+                   "hay un ventilador, y eso es importante: en Cartagena hace mucho calor. "
+                   "El balcón está lleno de flores. El barrio es antiguo y por la mañana está "
+                   "muy tranquilo."]],
+        ["aviso", ["★★★☆☆ Tomás, de Lima — «Bonito, pero ruidoso»",
+                   "La casa es bonita y está muy limpia. El problema es el ruido: debajo del "
+                   "balcón hay un bar y la música no para hasta las dos. Si duermes poco, pide "
+                   "la habitación de detrás. La parada del bus está a cinco minutos a pie."]],
+        ["p", "Respuesta de la anfitriona: «¡Gracias por vuestros comentarios! Es verdad que el "
+              "centro es ruidoso los fines de semana. Entre semana está mucho más tranquilo. "
+              "La habitación de detrás no da a la calle.»"],
+        ["firma", "Solo puedes escribir una reseña si duermes una noche en la casa."],
+    ],
+    "traduccion": "BEOORDELINGEN · «Casa Azul», historisch centrum, Cartagena. 4,6 op 5 · 128 "
+                  "meningen · Gastvrouw: Valen. ★★★★★ Marta, uit Madrid — «Een balkon vol "
+                  "bloemen»: het appartement ligt in de calle de la Iglesia, vlak bij de "
+                  "stadsmuur. Er zijn twee slaapkamers, een grote woonkamer en een kleine keuken. "
+                  "Boven het bed hangt een ventilator, en dat is belangrijk: in Cartagena is het "
+                  "erg warm. Het balkon staat vol bloemen. De buurt is oud en 's ochtends heel "
+                  "rustig. ★★★☆☆ Tomás, uit Lima — «Mooi, maar lawaaierig»: het huis is mooi en "
+                  "heel proper. Het probleem is het lawaai: onder het balkon is een café en de "
+                  "muziek stopt pas om twee uur. Als je weinig slaapt, vraag dan de kamer "
+                  "achteraan. De bushalte ligt op vijf minuten te voet. Antwoord van de "
+                  "gastvrouw: «Bedankt voor jullie commentaar! Het klopt dat het centrum in het "
+                  "weekend lawaaierig is. Doordeweeks is het veel rustiger. De kamer achteraan "
+                  "kijkt niet uit op de straat.»",
+    "global": {
+        "q": "¿Qué son estos textos?",
+        "opts": ["Opiniones de viajeros sobre un apartamento",
+                 "Un anuncio de venta de una casa",
+                 "Un artículo sobre la historia de Cartagena"],
+        "ans": "Opiniones de viajeros sobre un apartamento",
+    },
+    "escanear": [
+        {"q": "¿En qué calle está el apartamento?", "ans": "la calle de la Iglesia",
+         "alt": ["calle de la iglesia", "de la iglesia", "la iglesia"],
+         "why": "«está en la calle de la Iglesia»"},
+        {"q": "¿Cuántos dormitorios hay? (en cifras)", "ans": "2", "alt": ["dos", "2 dormitorios"],
+         "why": "«Hay dos dormitorios»"},
+        {"q": "¿Qué hay encima de la cama?", "ans": "un ventilador", "alt": ["ventilador", "el ventilador"],
+         "why": "«Encima de la cama hay un ventilador»"},
+        {"q": "¿Hasta qué hora hay música?", "ans": "hasta las dos", "alt": ["las dos", "dos", "2"],
+         "why": "«la música no para hasta las dos»"},
+        {"q": "¿A cuántos minutos está la parada del bus? (en cifras)", "ans": "5",
+         "alt": ["cinco", "cinco minutos", "5 minutos"], "why": "«a cinco minutos a pie»"},
+    ],
+    "vf": [
+        {"q": "El apartamento tiene dos dormitorios.", "ans": True, "prueba": "hay dos dormitorios"},
+        {"q": "La casa está lejos de la muralla.", "ans": False, "prueba": "muy cerca de la muralla"},
+        {"q": "Debajo del balcón hay un bar.", "ans": True, "prueba": "debajo del balcón hay un bar"},
+        {"q": "Tomás dice que la casa está sucia.", "ans": False, "prueba": "está muy limpia"},
+        {"q": "La parada del bus está a cinco minutos andando.", "ans": True,
+         "prueba": "está a cinco minutos a pie"},
+    ],
+    "contexto": [
+        {"q": "«El balcón está lleno de flores» — ¿qué significa «lleno de»?",
+         "opts": ["vol met", "ver van", "zonder"], "ans": "vol met",
+         "why": "Het gaat over hoeveel bloemen er staan."},
+        {"q": "«la música no para hasta las dos» — ¿qué quiere decir «no para»?",
+         "opts": ["ze stopt niet", "ze staat niet stil", "ze begint niet"], "ans": "ze stopt niet",
+         "why": "«parar» = stoppen; het is de klacht over lawaai."},
+        {"q": "«pide la habitación de detrás» — ¿por qué lo aconseja Tomás?",
+         "opts": ["Omdat die niet aan de straat ligt", "Omdat die groter is", "Omdat die goedkoper is"],
+         "ans": "Omdat die niet aan de straat ligt",
+         "why": "De gastvrouw legt het uit: «no da a la calle»."},
+        {"q": "«Entre semana está mucho más tranquilo» — ¿cuándo?",
+         "opts": ["Van maandag tot vrijdag", "In het weekend", "In de vakantie"],
+         "ans": "Van maandag tot vrijdag",
+         "why": "Het staat tegenover «los fines de semana»."},
+    ],
+    "produccion": {
+        "prompt": "Escribe tu propia reseña de tu casa o de tu barrio (5–6 frases): cuántas "
+                  "estrellas le das, qué hay, dónde está cada cosa, qué es lo mejor y qué es "
+                  "lo peor.",
+        "modelo": "★★★★☆ — En mi casa hay… El/La… está… Lo mejor es que… Lo peor es que… "
+                  "La parada está a … minutos.",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
-         ("C5", 2): C5_U2}
+         ("C5", 2): C5_U2, ("C6+", 2): C6P_U2}
 
 
 def _texto_plano(t):

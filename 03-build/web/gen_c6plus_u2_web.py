@@ -8,6 +8,9 @@ import json, base64, os, sys
 import hub_drills
 import hub_type_sets
 import hub_type_gram
+import extra_bronnen
+import hub_bloques
+import escucha_data, lectura_data
 ROOT = "/home/user/espa-ol-en-la-pr-ctica"
 GEN = f"{ROOT}/02-huisstijl/beeld/generators"
 sys.path.insert(0, GEN); import cast_gen as C; import vocab_icons as VI; import vocab_emoji as VE
@@ -49,7 +52,7 @@ GAMEDIR = f"{ROOT}/spaans-motor/games"
 slugs = [g[0] for grp in MOTOR for g in grp[1]]
 GAMES = {s: b64(f"{GAMEDIR}/es-c6plus-u2-{s}.html") for s in slugs if os.path.exists(f"{GAMEDIR}/es-c6plus-u2-{s}.html")}
 
-CSS = FONTS + hub_drills.TYPE_CSS + """
+CSS = FONTS + extra_bronnen.CSS + hub_drills.ESCUCHA_CSS + hub_drills.LECTURA_CSS + hub_drills.TYPE_CSS + """
 :root{--g:#7C56A9;--gd:#5B3E83;--gt:#EEE8F5;--ink:#20242E;--mut:#6A6E78;--paper:#FCFBF8;--crema:#F3EEE4;--line:#E4E3DE;--red:#DC2626;--amber:#B7860B;--card:#fff;
 --onder:#2563EB;--ww:#EA7317;--voorw:#1E9E74;--tijd:#7C3AED;--plaats:#14B8A6;
 --disp:'Bricolage Grotesque',sans-serif;--body:'Inter',sans-serif;--hand:'Caveat',cursive}
@@ -258,7 +261,7 @@ HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset=
   <div class="hero">
     <div class="mo">__MOCH__</div>
     <div><h1>U2 · Aquí vivo</h1>
-    <p>La página digital de la Unidad 2 (<b>aquí vivo</b>): flashcards, gramática visual e interactiva y <b>12 juegos</b> con muchas series. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie. Thema's: la casa · hay/estar · gerundio · lo/la.</span></p></div>
+    <p>La página digital de la Unidad 2 (<b>aquí vivo</b>): flashcards, gramática visual e interactiva y <b>__NGAMES__ juegos</b> con muchas series. <span style="opacity:.85">Uitbreiding van het boek (PDF): elke QR brengt je hier om te oefenen met zelfcorrectie. Thema's: la casa · hay/estar · gerundio · lo/la.</span></p></div>
   </div>
   <div class="subnav" id="subnav"></div>
 
@@ -315,10 +318,18 @@ __TYPESLOTS__
     <div class="card ex" id="lx_order"></div>
     <h3 class="subh">🔎 Comprensión · escanea y escoge</h3>
     <div class="card ex" id="lx_scan"></div>
+    <h2 class="sec">Lectura completa · «Casa Azul» — dos reseñas</h2>
+    <p class="lead">Twee echte beoordelingen met de volledige leesroute: <b>voorspellen → globaal → scannen → juist/fout met bewijs → betekenis uit de context → zelf schrijven</b>. <span class="gloss">Dezelfde tekst staat in je cursus, met schrijfruimte.</span></p>
+    <div class="card ex" id="lec_c6p_u2"></div>
   </section>
 
+  <section class="panel" data-p="escuchar">
+    <h2 class="sec">Escuchar · Estoy perdido en Cartagena 🎧</h2>
+    <p class="lead">Sam belt Valen op: hij is de weg kwijt in de oude stad. Eén fragment, zes stappen: eerst <b>weten waar je bent</b>, dan <b>globaal</b> luisteren, dan de <b>details</b>, dan <b>juist/fout met bewijs</b>. Het <b>transcript</b> gaat pas open als je klaar bent — anders lees je mee in plaats van te luisteren. <span class="gloss">Zolang er nog geen opname is, leest de computerstem het fragment voor.</span></p>
+    <div class="card ex" id="esc_c6p_u2"></div>
+  </section>
   <section class="panel" data-p="juegos">
-    <h2 class="sec">Ejercicios · 12 juegos, jij kiest</h2>
+    <h2 class="sec">Ejercicios · __NGAMES__ juegos, jij kiest</h2>
     <p class="lead">Geordend van <b>herkennen → onderscheiden → produceren met steun → analyseren &amp; communiceren → hablar</b>. Elk spel geeft directe, verklarende feedback en de steun bouwt af. <span class="gloss">Klik een spel; het opent in een venster en werkt ook offline.</span></p>
     <div id="motorlink"></div>
   </section>
@@ -347,11 +358,7 @@ __TYPESLOTS__
   </section>
 
   <section class="panel" data-p="extra">
-    <h2 class="sec">Extra · bronnen</h2>
-    <p class="lead">Externe uitleg &amp; oefeningen (de leerkracht vult de links aan).</p>
-    <div class="card"><p>🎬 <b>profedeele</b> (YouTube — hay/estar + preposiciones / estar + gerundio) — <span class="gloss">link volgt.</span></p>
-    <p>🧩 <b>arche-ele</b> (Genially — los pronombres lo/la / la casa y el barrio) — <span class="gloss">link volgt.</span></p>
-    <p>📄 In het boek (PDF) verwijzen de QR-codes naar déze pagina, op het juiste ankerpunt.</p></div>
+    __BRONNEN__
   </section>
 
   <div class="foot">Español en la práctica · C6+ · Unidad 2 «Aquí vivo» — página digital. Uitbreiding op de PDF · huisstijl morado · print ↔ PowerPoint ↔ web.</div>
@@ -377,7 +384,7 @@ function toggleTheme(){const r=document.documentElement;r.dataset.theme=r.datase
 """ + hub_drills.SPEAK_JS + r"""
 const TTS=('speechSynthesis'in window);
 if(TTS){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}
-const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['juegos','Juegos'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
+const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
 const sn=document.getElementById('subnav');
 PANELS.forEach((p,i)=>{const b=document.createElement('button');b.textContent=p[1];if(i===0)b.classList.add('on');b.onclick=()=>{
   document.querySelectorAll('.subnav button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
@@ -497,7 +504,7 @@ function buildRecorders(){
 }
 
 // ================= INLINE ZELFCORRIGERENDE OEFENINGEN =================
-""" + hub_drills.HELPERS_JS + hub_drills.TYPE_JS + r"""
+""" + hub_drills.HELPERS_JS + hub_drills.TYPE_JS + hub_drills.ESCUCHA_JS + hub_drills.LECTURA_JS + r"""
 
 // MEERKEUZE / GAP-FILL: pool item = {q, opts, ans, why}
 """ + hub_drills.CHOICE_JS + r"""
@@ -715,7 +722,11 @@ window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');
 # Getypte woordenschat-drills (fase ophalen + produceren) in het paneel zelf.
 JS += hub_type_sets.vocab_type_js(vocab)
 JS += hub_type_gram.js('C6+', 2)
+JS += (hub_bloques.escucha_js("esc_c6p_u2", escucha_data.C6P_U2)
+       + hub_bloques.lectura_js("lec_c6p_u2", lectura_data.C6P_U2))
 HTML = HTML.replace("__GRAMSLOTS__", hub_type_gram.slots('C6+', 2))
+HTML = HTML.replace("__NGAMES__", str(len(GAMES)))
+HTML = HTML.replace("__BRONNEN__", extra_bronnen.html('C6+', 2))
 HTML = HTML.replace("__TYPESLOTS__", hub_type_sets.SLOTS_HTML)
 
 html=(HTML.replace("__CSS__",CSS).replace("__MOCH__",moch).replace("__FC__",flashcards_html())

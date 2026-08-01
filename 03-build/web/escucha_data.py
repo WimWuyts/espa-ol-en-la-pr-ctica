@@ -376,9 +376,93 @@ C5_U2 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C6+ · U2 — llamada de teléfono. De leestekst van deze unit beoordeelt een
+# woning; hier moet de leerling een wég volgen. Andere inhoud, andere taalhandeling
+# (instructies opvolgen in plaats van meningen wegen), en luisteren naar
+# richtingen kan alleen mét het oor: op papier zou de leerling terugbladeren.
+# ---------------------------------------------------------------------------
+C6P_U2 = {
+    "id": "C6P-U2-ESC-01",
+    "ancla": "c6p-u2-esc-01",
+    "titulo": "Estoy perdido en Cartagena",
+    "audio": "audio/C6plus_U2.mp3",
+    "situacion": {
+        "lugar": "Por teléfono — Sam está en algún lugar del centro histórico",
+        "quien": "Sam (perdido) y Valen (en su casa)",
+        "que": "Valen le explica el camino paso a paso",
+        "claves": ["sigue recto", "gira a la derecha", "está a … minutos"],
+    },
+    "guion": [
+        {"who": "Valen", "es": "¿Sí? ¿Sam? ¿Dónde estás?", "nl": "Ja? Sam? Waar ben je?"},
+        {"who": "Sam", "es": "Estoy perdido. Estoy buscando tu calle, pero no la encuentro.",
+         "nl": "Ik ben verdwaald. Ik zoek jouw straat, maar ik vind hem niet."},
+        {"who": "Valen", "es": "Tranquilo. ¿Qué ves?", "nl": "Rustig maar. Wat zie je?"},
+        {"who": "Sam", "es": "Hay una plaza grande con muchos coches amarillos. Y hay una torre "
+                             "con un reloj.",
+         "nl": "Er is een groot plein met veel gele auto's. En er is een toren met een klok."},
+        {"who": "Valen", "es": "¡Ah! Estás en la Plaza de los Coches, debajo de la Torre del "
+                               "Reloj. Estás muy cerca.",
+         "nl": "Ah! Je staat op de Plaza de los Coches, onder de Torre del Reloj. Je bent vlakbij."},
+        {"who": "Sam", "es": "¿Sí? ¡Qué bien!", "nl": "Echt? Wat fijn!"},
+        {"who": "Valen", "es": "Mira: sigue recto por la calle grande y en el segundo semáforo "
+                               "gira a la derecha.",
+         "nl": "Kijk: ga rechtdoor de grote straat in en sla bij het tweede stoplicht rechts af."},
+        {"who": "Sam", "es": "Vale… a la derecha en el segundo semáforo.",
+         "nl": "Oké… rechts bij het tweede stoplicht."},
+        {"who": "Valen", "es": "Después cruza la plaza pequeña. Mi calle está a la izquierda, "
+                               "al lado de una farmacia verde.",
+         "nl": "Steek daarna het kleine plein over. Mijn straat ligt links, naast een groene apotheek."},
+        {"who": "Sam", "es": "¿Y tu casa?", "nl": "En jouw huis?"},
+        {"who": "Valen", "es": "Es la casa azul, entre la farmacia y una tienda de sombreros. "
+                               "Está a cinco minutos a pie.",
+         "nl": "Het is het blauwe huis, tussen de apotheek en een hoedenwinkel. Het is vijf "
+               "minuten te voet."},
+        {"who": "Sam", "es": "Perfecto. Ya estoy andando. ¡Hasta ahora!",
+         "nl": "Perfect. Ik ben al onderweg. Tot zo!"},
+        {"who": "Valen", "es": "¡Te espero en el balcón!", "nl": "Ik wacht op je op het balkon!"},
+    ],
+    "global": {
+        "q": "¿Qué hace Valen por teléfono?",
+        "opts": ["Le explica a Sam cómo llegar a su casa", "Le invita a una fiesta",
+                 "Le describe su habitación"],
+        "ans": "Le explica a Sam cómo llegar a su casa",
+        "why": "sigue · gira · cruza = het pad, niet de woning",
+    },
+    "detalle": [
+        {"q": "¿Dónde está Sam al principio?",
+         "opts": ["En la Plaza de los Coches", "En el parque", "En la estación"],
+         "ans": "En la Plaza de los Coches", "why": "«Estás en la Plaza de los Coches»"},
+        {"q": "¿Qué monumento ve Sam?", "opts": ["La Torre del Reloj", "La catedral", "La muralla"],
+         "ans": "La Torre del Reloj", "why": "«una torre con un reloj»"},
+        {"q": "¿En qué semáforo tiene que girar?", "opts": ["En el segundo", "En el primero", "En el tercero"],
+         "ans": "En el segundo", "why": "«en el segundo semáforo gira a la derecha»"},
+        {"q": "¿Qué hay al lado de la calle de Valen?",
+         "opts": ["Una farmacia verde", "Un banco", "Un supermercado"], "ans": "Una farmacia verde",
+         "why": "«al lado de una farmacia verde»"},
+        {"q": "¿A cuántos minutos está la casa?", "opts": ["Cinco", "Quince", "Dos"], "ans": "Cinco",
+         "why": "«Está a cinco minutos a pie»"},
+    ],
+    "vf": [
+        {"q": "Sam sabe dónde está su calle.", "ans": False,
+         "prueba": "estoy buscando tu calle, pero no la encuentro"},
+        {"q": "La casa de Valen es azul.", "ans": True, "prueba": "es la casa azul"},
+        {"q": "Valen espera a Sam en el balcón.", "ans": True, "prueba": "te espero en el balcón"},
+    ],
+    "produccion": {
+        "prompt": "Ahora tú. Alguien está en la parada de tu barrio y quiere llegar a tu casa. "
+                  "Explícale el camino en cuatro frases: sigue recto · gira · cruza · "
+                  "está a … minutos.",
+        "modo": "grabar",
+        "modelo": "Sigue recto por la calle… En el… semáforo gira a la… Cruza… Mi casa está "
+                  "al lado de… Está a … minutos a pie.",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
-         ("C5", 2): C5_U2}
+         ("C5", 2): C5_U2, ("C6+", 2): C6P_U2}
 
 
 def controla():
