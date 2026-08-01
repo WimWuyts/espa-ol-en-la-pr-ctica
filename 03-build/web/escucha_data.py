@@ -643,10 +643,98 @@ C6P_U3 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C5 · U4 — encuesta callejera. Anders dan de entrevista van C6+ U1: daar volgt
+# de leerling één verhaal, hier moet hij drie stemmen naast elkaar leggen en
+# onthouden wie wát graag doet. De leestekst van deze unit is een festivalprogramma
+# — daar kiest de leerling, hier vergelijkt hij.
+# ---------------------------------------------------------------------------
+C5_U4 = {
+    "id": "C5-U4-ESC-01",
+    "ancla": "c5-u4-esc-01",
+    "titulo": "¿Qué haces en tu tiempo libre?",
+    "audio": "audio/C5_U4.mp3",
+    "situacion": {
+        "lugar": "En la calle, delante del instituto de València",
+        "quien": "Marta (radio del instituto) y tres personas: un chico, una señora y una chica",
+        "que": "Les pregunta qué les gusta hacer en su tiempo libre",
+        "claves": ["me gusta / me encanta", "a mí también / a mí tampoco", "los fines de semana"],
+    },
+    "guion": [
+        {"who": "Marta", "es": "Buenos días. Somos la radio del instituto. ¿Qué haces tú en tu "
+                               "tiempo libre?",
+         "nl": "Goedemorgen. Wij zijn de schoolradio. Wat doe jij in je vrije tijd?"},
+        {"who": "Chico", "es": "Yo juego al baloncesto tres veces por semana. Me encanta el deporte.",
+         "nl": "Ik speel drie keer per week basket. Ik ben gek op sport."},
+        {"who": "Marta", "es": "¿Y la música? ¿Te gusta?", "nl": "En muziek? Vind je dat leuk?"},
+        {"who": "Chico", "es": "Sí, pero no toco ningún instrumento. Solo escucho.",
+         "nl": "Ja, maar ik speel geen enkel instrument. Ik luister alleen."},
+        {"who": "Marta", "es": "Gracias. Y usted, señora, ¿qué le gusta hacer?",
+         "nl": "Bedankt. En u, mevrouw, wat doet u graag?"},
+        {"who": "Señora", "es": "A mí me gusta mucho leer. Voy a la biblioteca los martes. "
+                                "No me gustan nada los videojuegos.",
+         "nl": "Ik lees heel graag. Ik ga op dinsdag naar de bibliotheek. Videospelletjes vind "
+               "ik helemaal niets."},
+        {"who": "Marta", "es": "A mí tampoco. ¿Y ve series?", "nl": "Ik ook niet. En kijkt u series?"},
+        {"who": "Señora", "es": "Sí, veo una serie española por la noche. Es muy divertida.",
+         "nl": "Ja, ik kijk 's avonds naar een Spaanse serie. Ze is heel grappig."},
+        {"who": "Marta", "es": "Última pregunta, para ti: ¿qué haces los fines de semana?",
+         "nl": "Laatste vraag, voor jou: wat doe jij in het weekend?"},
+        {"who": "Chica", "es": "Los sábados quedo con mis amigas en la playa. Nadamos y bailamos.",
+         "nl": "Op zaterdag spreek ik af met mijn vriendinnen op het strand. We zwemmen en dansen."},
+        {"who": "Marta", "es": "¿Y no os aburrís?", "nl": "En vervelen jullie je niet?"},
+        {"who": "Chica", "es": "¡Qué va! A mí me encanta el mar. Pero mi hermana prefiere el "
+                               "cine: a ella no le gusta la playa.",
+         "nl": "Welnee! Ik ben gek op de zee. Maar mijn zus gaat liever naar de film: zij houdt "
+               "niet van het strand."},
+        {"who": "Marta", "es": "¡Gracias a los tres! Y ahora, música.",
+         "nl": "Bedankt alle drie! En nu: muziek."},
+    ],
+    "global": {
+        "q": "¿Qué hace Marta en este audio?",
+        "opts": ["Pregunta a tres personas qué les gusta hacer",
+                 "Presenta un concierto en la playa", "Explica un examen de música"],
+        "ans": "Pregunta a tres personas qué les gusta hacer",
+        "why": "drie keer dezelfde vraag, drie verschillende antwoorden",
+    },
+    "detalle": [
+        {"q": "¿Cuántas veces por semana juega al baloncesto el chico?",
+         "opts": ["Tres", "Dos", "Cinco"], "ans": "Tres", "why": "«tres veces por semana»"},
+        {"q": "¿Toca el chico algún instrumento?",
+         "opts": ["No, solo escucha", "Sí, la guitarra", "Sí, el piano"], "ans": "No, solo escucha",
+         "why": "«no toco ningún instrumento. Solo escucho»"},
+        {"q": "¿Qué día va la señora a la biblioteca?",
+         "opts": ["Los martes", "Los lunes", "Los sábados"], "ans": "Los martes",
+         "why": "«Voy a la biblioteca los martes»"},
+        {"q": "¿Qué no le gusta nada a la señora?",
+         "opts": ["Los videojuegos", "Las series", "Leer"], "ans": "Los videojuegos",
+         "why": "«No me gustan nada los videojuegos»"},
+        {"q": "¿Qué prefiere la hermana de la chica?",
+         "opts": ["El cine", "La playa", "El baloncesto"], "ans": "El cine",
+         "why": "«mi hermana prefiere el cine»"},
+    ],
+    "vf": [
+        {"q": "A Marta tampoco le gustan los videojuegos.", "ans": True, "prueba": "a mí tampoco"},
+        {"q": "La chica queda con sus amigas los domingos.", "ans": False,
+         "prueba": "los sábados quedo con mis amigas"},
+        {"q": "A la hermana de la chica le gusta la playa.", "ans": False,
+         "prueba": "a ella no le gusta la playa"},
+    ],
+    "produccion": {
+        "prompt": "Contesta tú a la radio del instituto en cuatro frases: qué te gusta hacer, "
+                  "qué te encanta, qué no te gusta nada y con quién quedas los fines de semana.",
+        "modo": "grabar",
+        "modelo": "En mi tiempo libre… Me encanta… No me gusta nada… Los fines de semana quedo "
+                  "con… y…",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
          ("C5", 2): C5_U2, ("C6+", 2): C6P_U2,
-         ("C5", 3): C5_U3, ("C6+", 3): C6P_U3}
+         ("C5", 3): C5_U3, ("C6+", 3): C6P_U3,
+         ("C5", 4): C5_U4}
 
 
 def controla():

@@ -283,6 +283,74 @@ SETS[("C5", 3)] = [
          ]),
 ]
 
+SETS[("C5", 4)] = [
+    dict(title="Gustar al revés — escribe el pronombre y la forma", accents="strict",
+         desc="Bij <i>gustar</i> is de persoon niet het onderwerp: het <b>ding</b> is dat. "
+              "Schrijf allebei de woorden. Eén ding of een infinitivo → <b>gusta</b> · "
+              "meerdere dingen → <b>gustan</b>.",
+         items=[
+             {"q": "A mí ___ la playa.", "ans": "me gusta", "hint": "m_ g____", "why": "één ding → gusta"},
+             {"q": "A ti ___ los videojuegos.", "ans": "te gustan", "hint": "t_ g_____", "why": "meervoud → gustan"},
+             {"q": "A Lucía ___ nadar en el mar.", "ans": "le gusta", "hint": "l_ g____",
+              "why": "infinitivo telt als enkelvoud"},
+             {"q": "A nosotros ___ las series españolas.", "ans": "nos gustan", "hint": "n__ g_____"},
+             {"q": "A mis padres ___ la paella.", "ans": "les gusta", "hint": "l__ g____",
+              "why": "twee personen → les, maar la paella → gusta"},
+             {"q": "A mí ___ las canciones de ese grupo.", "ans": "me gustan", "hint": "m_ g_____"},
+             {"q": "¿___ el cine? (a ti)", "ans": "te gusta", "hint": "t_ g____"},
+             {"q": "A mi hermano ___ los deportes de playa.", "ans": "le gustan", "hint": "l_ g_____"},
+             {"q": "A nosotras ___ bailar y cantar.", "ans": "nos gusta", "hint": "n__ g____",
+              "why": "twee infinitivos blijven toch «gusta»"},
+             {"q": "A vosotros ___ la horchata, ¿verdad?", "ans": "os gusta", "hint": "o_ g____",
+              "why": "vosotros → os"},
+             {"q": "A Diego y a Nina ___ los conciertos.", "ans": "les gustan", "hint": "l__ g_____"},
+             {"q": "A mí no ___ nada el fútbol.", "ans": "me gusta", "hint": "m_ g____",
+              "why": "ook ontkennend blijft de bouw hetzelfde"},
+         ]),
+    dict(title="Reaccionar — también · tampoco · a mí sí · a mí no", accents="strict",
+         desc="Vier korte reacties, en de keuze hangt af van <b>twee</b> dingen: is de zin van de "
+              "ander positief of negatief, en ben jij het eens of niet? "
+              "<b>ook</b> na iets positiefs = <i>también</i> · <b>ook niet</b> na iets negatiefs "
+              "= <i>tampoco</i>.",
+         items=[
+             {"q": "— Me gusta la playa. — A mí ___. (jij ook)", "ans": "también", "hint": "t______"},
+             {"q": "— No me gusta el fútbol. — A mí ___. (jij ook niet)", "ans": "tampoco", "hint": "t______"},
+             {"q": "— Me encanta bailar. — A mí ___. (jij niet)", "ans": "no", "hint": "n_",
+              "why": "positief + jij oneens → a mí no"},
+             {"q": "— No me gustan los videojuegos. — A mí ___. (jij wél)", "ans": "sí", "hint": "s_",
+              "why": "negatief + jij oneens → a mí sí"},
+             {"q": "— Me interesa la música latina. — A mí ___. (jij ook)", "ans": "también", "hint": "t______"},
+             {"q": "— No me gusta madrugar. — A mí ___. (jij ook niet)", "ans": "tampoco", "hint": "t______"},
+             {"q": "— Odio las series largas. — Yo ___. (jij ook)", "ans": "también", "hint": "t______",
+              "why": "odiar is een gewoon werkwoord → yo también"},
+             {"q": "— Me gustan las Fallas. — A mí ___. (jij niet)", "ans": "no", "hint": "n_"},
+             {"q": "— No como carne. — Yo ___. (jij ook niet)", "ans": "tampoco", "hint": "t______"},
+             {"q": "— Prefiero el mar. — Yo ___. (jij ook)", "ans": "también", "hint": "t______"},
+             {"q": "— No me gusta esta canción. — A mí ___. (jij wél)", "ans": "sí", "hint": "s_"},
+             {"q": "— Me aburre el baloncesto. — A mí ___. (jij ook)", "ans": "también", "hint": "t______"},
+         ]),
+    dict(title="Proponer un plan — querer · poder + infinitivo", accents="strict",
+         desc="Twee werkwoorden met een klinkerwissel (<b>e → ie</b> en <b>o → ue</b>) plus een "
+              "infinitivo die je <b>niet</b> vervoegt. Bij <i>nosotros</i> blijft de stam gewoon.",
+         items=[
+             {"q": "Yo ___ (querer) ir a la playa.", "ans": "quiero", "hint": "q_____", "why": "e → ie"},
+             {"q": "¿Tú ___ (poder) salir el sábado?", "ans": "puedes", "hint": "p_____", "why": "o → ue"},
+             {"q": "Nosotros ___ (querer) quedar a las seis.", "ans": "queremos", "hint": "q_______",
+              "why": "valstrik: nosotros houdt de e"},
+             {"q": "Diego no ___ (poder) venir hoy.", "ans": "puede", "hint": "p____"},
+             {"q": "Mis amigas ___ (querer) ver la película.", "ans": "quieren", "hint": "q______"},
+             {"q": "¿___ (querer) tú tocar la guitarra conmigo?", "ans": "Quieres", "hint": "Q______"},
+             {"q": "Yo ___ (poder) quedar después de clase.", "ans": "puedo", "hint": "p____"},
+             {"q": "Nosotras ___ (poder) ir en bici.", "ans": "podemos", "hint": "p______",
+              "why": "valstrik: nosotras houdt de o"},
+             {"q": "¿Vosotros ___ (querer) escuchar mi playlist?", "ans": "queréis", "hint": "q______",
+              "why": "vosotros houdt de e — mét tilde"},
+             {"q": "Nina ___ (querer) aprender a nadar.", "ans": "quiere", "hint": "q_____"},
+             {"q": "Ellos no ___ (poder) jugar al baloncesto los lunes.", "ans": "pueden", "hint": "p_____"},
+             {"q": "¿A qué hora ___ (poder) quedar nosotros?", "ans": "podemos", "hint": "p______"},
+         ]),
+]
+
 SETS[("C6+", 1)] = [
     dict(title="Los verbos reflexivos — rellena", accents="strict",
          desc="Vergeet het <b>pronombre</b> niet: bij een reflexief werkwoord horen er twee "

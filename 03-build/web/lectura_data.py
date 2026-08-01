@@ -809,10 +809,119 @@ C6P_U3 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C5 · U4 «Me gusta» — parada València
+# Tekstsoort: programa de festival. Nieuw genre: een uurrooster met daarnaast
+# korte aanprijzingen, dus de leerling schakelt tussen snel scannen (uren,
+# namen) en lezen om te kiezen — precies wat «me gusta / prefiero» vraagt.
+# Het luisterfragment is een straatenquête met drie verschillende stemmen.
+# ---------------------------------------------------------------------------
+C5_U4 = {
+    "id": "C5-U4-LEC-01",
+    "ancla": "c5-u4-lec-01",
+    "titulo": "Fiesta de la Música · València",
+    "tipo": "programa de un festival",
+    "emisor": "La organización del festival",
+    "receptor": "Los jóvenes de la ciudad",
+    "objetivo": "Ayudarte a elegir a qué concierto vas",
+    "prediccion": {
+        "q": "Kijk eerst alleen naar de uren, de namen in hoofdletters en de muziekstijlen "
+             "tussen haakjes. Wat voor tekst is dit?",
+        "opts": ["Het programma van een festival", "Een liedtekst", "Een treinregeling"],
+        "ans": "Het programma van een festival",
+        "why": "Uren + artiestennamen + podia = een programma.",
+    },
+    "texto": [
+        ["titulo", "🎶 FIESTA DE LA MÚSICA · València"],
+        ["lema", "Sábado 21 de junio · Playa de la Malvarrosa · Entrada gratuita"],
+        ["lista", [
+            "17:00 · Escenario del Mar — LOS ALMENDROS (pop en valenciano)",
+            "19:00 · Escenario del Mar — LA NIÑA DEL SUR (flamenco urbano)",
+            "21:00 · Escenario Grande — TROPICANA (cumbia y salsa)",
+            "23:00 · Escenario Grande — DJ MARÍA (electrónica)",
+        ]],
+        ["p", "¿Te gusta bailar? Entonces tu grupo es TROPICANA: ocho músicos de Colombia y de "
+              "Cuba que no paran en toda la noche."],
+        ["p", "¿Prefieres escuchar tranquilo? LOS ALMENDROS tocan la guitarra y cantan en "
+              "valenciano. Es un concierto relajante, perfecto para empezar la tarde."],
+        ["p", "¿Te encanta el flamenco? Entonces te interesa LA NIÑA DEL SUR: mezcla flamenco y "
+              "música electrónica. Sus letras hablan de la costa y del mar."],
+        ["aviso", ["🍹 ZONA DE COMIDA",
+                   "Hay paella, horchata y bocadillos desde las cinco. No se puede entrar con "
+                   "botellas de cristal."]],
+        ["firma", "Programa completo y letras de las canciones: fiestamusica.valencia.es"],
+    ],
+    "traduccion": "MUZIEKFEEST · Valencia. Zaterdag 21 juni · Malvarrosastrand · Gratis toegang. "
+                  "17:00 Zeepodium — LOS ALMENDROS (pop in het Valenciaans) · 19:00 Zeepodium — "
+                  "LA NIÑA DEL SUR (urban flamenco) · 21:00 Groot podium — TROPICANA (cumbia en "
+                  "salsa) · 23:00 Groot podium — DJ MARÍA (electro). Hou je van dansen? Dan is "
+                  "TROPICANA jouw groep: acht muzikanten uit Colombia en Cuba die de hele nacht "
+                  "doorgaan. Luister je liever rustig? LOS ALMENDROS spelen gitaar en zingen in "
+                  "het Valenciaans. Een ontspannen concert, ideaal om de avond mee te beginnen. "
+                  "Ben je gek op flamenco? Dan is LA NIÑA DEL SUR iets voor jou: ze mengt "
+                  "flamenco met electro. Haar teksten gaan over de kust en de zee. ETENSZONE: er "
+                  "is paella, horchata en broodjes vanaf vijf uur. Glazen flessen mogen niet "
+                  "binnen.",
+    "global": {
+        "q": "¿Para qué es este texto?",
+        "opts": ["Para informar sobre los conciertos y ayudarte a elegir",
+                 "Para vender instrumentos de música",
+                 "Para explicar la historia de València"],
+        "ans": "Para informar sobre los conciertos y ayudarte a elegir",
+    },
+    "escanear": [
+        {"q": "¿Qué día es el festival?", "ans": "el 21 de junio",
+         "alt": ["21 de junio", "sábado 21 de junio", "21/6", "21"], "why": "«Sábado 21 de junio»"},
+        {"q": "¿Dónde es?", "ans": "en la playa de la Malvarrosa",
+         "alt": ["la malvarrosa", "malvarrosa", "playa de la malvarrosa"],
+         "why": "«Playa de la Malvarrosa»"},
+        {"q": "¿A qué hora toca TROPICANA?", "ans": "21:00",
+         "alt": ["a las nueve", "las nueve", "21h", "9"], "why": "«21:00 · Escenario Grande — TROPICANA»"},
+        {"q": "¿Cuántos músicos tiene TROPICANA? (en cifras)", "ans": "8",
+         "alt": ["ocho", "ocho músicos"], "why": "«ocho músicos de Colombia y de Cuba»"},
+        {"q": "¿Desde qué hora hay comida?", "ans": "desde las cinco",
+         "alt": ["las cinco", "cinco", "17:00", "5"], "why": "«desde las cinco»"},
+    ],
+    "vf": [
+        {"q": "El festival es gratis.", "ans": True, "prueba": "entrada gratuita"},
+        {"q": "TROPICANA es un grupo de cumbia y salsa.", "ans": True,
+         "prueba": "tropicana (cumbia y salsa)"},
+        {"q": "LOS ALMENDROS cantan en castellano.", "ans": False, "prueba": "cantan en valenciano"},
+        {"q": "Se puede entrar con botellas de cristal.", "ans": False,
+         "prueba": "no se puede entrar con botellas de cristal"},
+        {"q": "Las letras de LA NIÑA DEL SUR hablan del mar.", "ans": True,
+         "prueba": "hablan de la costa y del mar"},
+    ],
+    "contexto": [
+        {"q": "«Entrada gratuita» — ¿cuánto cuesta?",
+         "opts": ["Nada", "Cinco euros", "Depende del escenario"], "ans": "Nada",
+         "why": "«gratuito» = gratis."},
+        {"q": "«que no paran en toda la noche» — ¿qué quiere decir?",
+         "opts": ["Ze spelen de hele nacht door", "Ze stoppen na één lied", "Ze komen niet"],
+         "ans": "Ze spelen de hele nacht door", "why": "«parar» = stoppen."},
+        {"q": "«mezcla flamenco y música electrónica» — ¿qué hace?",
+         "opts": ["Ze combineert twee stijlen", "Ze kiest er één", "Ze speelt geen muziek"],
+         "ans": "Ze combineert twee stijlen", "why": "«mezclar» = mengen."},
+        {"q": "«Sus letras hablan de la costa» — ¿qué son «las letras»?",
+         "opts": ["de songteksten", "de letters van het alfabet", "de brieven"],
+         "ans": "de songteksten",
+         "why": "In muziek is «la letra» de tekst van een lied — een valstrik voor wie aan "
+                "letters denkt."},
+    ],
+    "produccion": {
+        "prompt": "Elige un concierto y escríbele un mensaje a un amigo (4–5 frases): a cuál "
+                  "vas, a qué hora, por qué te gusta ese grupo y qué no te gusta del programa.",
+        "modelo": "Voy a… a las… Me encanta… porque… No me gusta nada… ¿Quieres venir? "
+                  "¿Podemos quedar a las…?",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
          ("C5", 2): C5_U2, ("C6+", 2): C6P_U2,
-         ("C5", 3): C5_U3, ("C6+", 3): C6P_U3}
+         ("C5", 3): C5_U3, ("C6+", 3): C6P_U3,
+         ("C5", 4): C5_U4}
 
 
 def _texto_plano(t):
