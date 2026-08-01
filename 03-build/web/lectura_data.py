@@ -917,11 +917,128 @@ C5_U4 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C6+ · U4 «De viaje» — parada Chile
+# Tekstsoort: postal + diario de viaje. Nieuw genre: een handgeschreven kaart met
+# een kort dagboekje erbij. Het perfecto compuesto zit er natuurlijk in («he
+# estado», «he visto») en de leerling leest twee stemmen over dezelfde reis.
+# Het luisterfragment is een gesprek aan de balie van een hostal.
+# ---------------------------------------------------------------------------
+C6P_U4 = {
+    "id": "C6P-U4-LEC-01",
+    "ancla": "c6p-u4-lec-01",
+    "titulo": "Una postal desde Valparaíso",
+    "tipo": "postal + diario de viaje",
+    "emisor": "Nina, de viaje por Chile",
+    "receptor": "Su clase en Bélgica",
+    "objetivo": "Contar lo que ha hecho y lo que le falta por ver",
+    "prediccion": {
+        "q": "Kijk eerst alleen naar het postzegeltje, de aanhef en de datums in het "
+             "dagboekje. Wat voor tekst is dit?",
+        "opts": ["Een kaartje van iemand op reis", "Een reisgids", "Een hotelrekening"],
+        "ans": "Een kaartje van iemand op reis",
+        "why": "Een aanhef, een groet en een adres = een postkaart.",
+    },
+    "texto": [
+        ["titulo", "📮 POSTAL DESDE VALPARAÍSO"],
+        ["lema", "Para: 6ª clase de español · Instituto Santa Clara · Bélgica"],
+        ["p", "¡Hola a todos! Os escribo desde un café en el cerro Alegre. He estado tres días "
+              "en Valparaíso y todavía no he visto todos los murales. ¡La ciudad entera es un "
+              "museo al aire libre!"],
+        ["p", "He subido en los ascensores antiguos, he comido pescado en el mercado y he "
+              "sacado doscientas fotos. Lo mejor ha sido el atardecer desde el cerro. "
+              "Lo peor: he perdido el autobús dos veces."],
+        ["aviso", ["📓 MI DIARIO — lunes 14",
+                   "Hemos llegado a Santiago por la mañana. Hemos cogido un bus para "
+                   "Valparaíso. Cuatro horas por la carretera de la costa. Estoy cansada pero "
+                   "muy contenta."]],
+        ["aviso", ["📓 MI DIARIO — miércoles 16",
+                   "Hoy no he hecho nada especial y ha sido perfecto. He escrito estas "
+                   "postales, he hablado con una señora del barrio y he aprendido dos palabras "
+                   "nuevas: «micro» (el autobús) y «cachai» (¿entiendes?)."]],
+        ["p", "Mañana vamos para el sur, al lago Llanquihue. Nunca he visto un volcán de cerca."],
+        ["firma", "Un abrazo enorme, Nina · P.D.: todavía no he probado el pastel de choclo."],
+    ],
+    "traduccion": "POSTKAART UIT VALPARAÍSO. Voor: 6de klas Spaans · Instituto Santa Clara · "
+                  "België. Hallo allemaal! Ik schrijf jullie vanuit een café op de cerro Alegre. "
+                  "Ik ben hier drie dagen en ik heb nog niet alle muurschilderingen gezien. De "
+                  "hele stad is een openluchtmuseum! Ik ben met de oude liften naar boven "
+                  "gegaan, ik heb vis gegeten op de markt en ik heb tweehonderd foto's gemaakt. "
+                  "Het mooiste was de zonsondergang vanaf de heuvel. Het ergste: ik heb de bus "
+                  "twee keer gemist. — DAGBOEK maandag 14: we zijn 's ochtends in Santiago "
+                  "aangekomen. We hebben een bus naar Valparaíso genomen. Vier uur over de "
+                  "kustweg. Ik ben moe maar heel tevreden. — DAGBOEK woensdag 16: vandaag heb ik "
+                  "niets bijzonders gedaan en dat was perfect. Ik heb deze kaarten geschreven, "
+                  "ik heb met een buurvrouw gepraat en ik heb twee nieuwe woorden geleerd: "
+                  "«micro» (de bus) en «cachai» (snap je?). — Morgen gaan we naar het zuiden, "
+                  "naar het Llanquihuemeer. Ik heb nog nooit een vulkaan van dichtbij gezien. "
+                  "Een dikke knuffel, Nina. P.S.: ik heb de pastel de choclo nog niet geproefd.",
+    "global": {
+        "q": "¿De qué trata la postal?",
+        "opts": ["De lo que Nina ha hecho en Chile y de lo que le falta",
+                 "De cómo se reserva un hotel en Chile",
+                 "De la historia de los ascensores de Valparaíso"],
+        "ans": "De lo que Nina ha hecho en Chile y de lo que le falta",
+    },
+    "escanear": [
+        {"q": "¿Cuántos días ha estado Nina en Valparaíso? (en cifras)", "ans": "3",
+         "alt": ["tres", "tres días"], "why": "«He estado tres días en Valparaíso»"},
+        {"q": "¿Cuántas fotos ha sacado? (en cifras)", "ans": "200",
+         "alt": ["doscientas", "doscientas fotos"], "why": "«he sacado doscientas fotos»"},
+        {"q": "¿Cuánto dura el viaje de Santiago a Valparaíso?", "ans": "cuatro horas",
+         "alt": ["4 horas", "cuatro"], "why": "«Cuatro horas por la carretera de la costa»"},
+        {"q": "¿Qué significa «micro» en Chile?", "ans": "el autobús",
+         "alt": ["autobús", "autobus", "el bus", "bus"], "why": "«micro» (el autobús)"},
+        {"q": "¿Adónde va Nina mañana?", "ans": "al sur, al lago Llanquihue",
+         "alt": ["al sur", "el sur", "lago llanquihue", "llanquihue"],
+         "why": "«Mañana vamos para el sur, al lago Llanquihue»"},
+    ],
+    "vf": [
+        {"q": "Nina ya ha visto todos los murales.", "ans": False,
+         "prueba": "todavía no he visto todos los murales"},
+        {"q": "Nina ha perdido el autobús más de una vez.", "ans": True,
+         "prueba": "he perdido el autobús dos veces"},
+        {"q": "El miércoles Nina ha hecho una excursión larga.", "ans": False,
+         "prueba": "hoy no he hecho nada especial"},
+        {"q": "Nina ha aprendido palabras del español de Chile.", "ans": True,
+         "prueba": "he aprendido dos palabras nuevas"},
+        {"q": "Nina ya ha probado el pastel de choclo.", "ans": False,
+         "prueba": "todavía no he probado el pastel de choclo"},
+    ],
+    "contexto": [
+        {"q": "«un museo al aire libre» — ¿qué quiere decir Nina?",
+         "opts": ["De kunst hangt buiten, op straat", "Het museum heeft geen dak nodig",
+                  "Het museum is gratis"],
+         "ans": "De kunst hangt buiten, op straat",
+         "why": "Ze heeft het over de murales op de gevels."},
+        {"q": "«Lo mejor ha sido el atardecer» — ¿qué expresa «lo mejor»?",
+         "opts": ["het beste van alles", "de beste persoon", "de beste foto"],
+         "ans": "het beste van alles",
+         "why": "«lo + adjectief» maakt er een algemeen begrip van: het beste, het ergste."},
+        {"q": "«todavía no he probado…» — ¿qué significa «todavía no»?",
+         "opts": ["nog niet", "nooit meer", "meteen"], "ans": "nog niet",
+         "why": "Het staat tegenover «ya» (al)."},
+        {"q": "«P.D.» al final — ¿qué es?",
+         "opts": ["een naschrift, iets wat ze nog snel toevoegt", "haar handtekening",
+                  "het adres van de school"],
+         "ans": "een naschrift, iets wat ze nog snel toevoegt",
+         "why": "«posdata» = het Nederlandse P.S."},
+    ],
+    "produccion": {
+        "prompt": "Escribe tu propia postal (5–6 frases) desde un viaje real o inventado: dónde "
+                  "has estado, tres cosas que has hecho, lo mejor, lo peor y algo que todavía "
+                  "no has hecho.",
+        "modelo": "¡Hola! Te escribo desde… He estado… He visto… y he comido… Lo mejor ha "
+                  "sido… Lo peor… Todavía no he…",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
          ("C5", 2): C5_U2, ("C6+", 2): C6P_U2,
          ("C5", 3): C5_U3, ("C6+", 3): C6P_U3,
-         ("C5", 4): C5_U4}
+         ("C5", 4): C5_U4, ("C6+", 4): C6P_U4}
 
 
 def _texto_plano(t):

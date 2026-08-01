@@ -13,6 +13,11 @@ from gen_u0_print import (CSS, AV, TU, MOCH, qr, audiorow, act, regla, guide, lp
                           pcard, steun, sortcols, actx, tarea_com, obsbox, machine, blocks, tree,
                           mirror, fmu, scaffold, zoom, clusters, colloc, scale, vpairs, mispal, xray,
                           gustobars, menu)
+import sys as _sys
+_sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
+import print_bloques as PB
+import lectura_data as LD
+import escucha_data as ED
 
 BODY = []
 def P(*x): BODY.extend(x)
@@ -430,6 +435,21 @@ P(actx(AN(), "Ordena el relato del viaje",
   apoyo="MARCO"))
 sec_close()
 
+# ================= §6 LECTURA · §7 ESCUCHA =================
+# Zelfde bron als de digitale hub (lectura_data / escucha_data): papier en scherm
+# kunnen zo niet uit elkaar lopen. Elk op een eigen bladzijde (§14).
+P('<div class="page"><div class="parada sec">')
+P('<span class="num">6</span><span class="pk">§6 · Lectura — «Una postal desde Valparaíso»</span>')
+P('<div class="intro"><b>ES:</b> Una postal de verdad, con un diario de viaje. <b>No hace falta entenderlo todo</b> para sacar la información. <span class="gloss">Een echte postkaart met een reisdagboek erbij. Je hoeft niet alles te begrijpen — let op wat ze al gedaan heeft en wat nog niet.</span></div>')
+P(PB.lectura_print(LD.C6P_U4, "1"))
+P('</div>')
+
+P('<div class="page"><div class="parada sec">')
+P('<span class="num">7</span><span class="pk">§7 · Escucha — «En la recepción del hostal»</span>')
+P('<div class="intro"><b>ES:</b> Nina llega a las once de la noche y la reserva no coincide. <b>Escucha primero, escribe después.</b> <span class="gloss">Nina komt om elf uur \'s avonds aan en de reservering klopt niet. Eerst luisteren, dan schrijven; het transcript staat online en gaat pas open ná de taken.</span></div>')
+P(PB.escucha_print(ED.C6P_U4, "1"))
+P('</div>')
+
 # ================= CULTURA =================
 sec_open("C", "Cultura · el gran viaje hispano", 'La Spaanstalige wereld staat vol <b>reisiconen</b>: het <b>desierto de Atacama</b> (Chile), <b>Machu Picchu</b> (Perú), het <b>Camino de Santiago</b> (España) en <b>Rapa Nui</b> met haar moáis. <span class="gloss">De grote reisbestemmingen van de hispanofoon.</span>',
         lpd(("5","identiteit in diversiteit: el gran viaje hispano")))
@@ -589,7 +609,7 @@ EDITBAR = '''
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Español en la práctica · C6+ U4 De viaje</title><style>'
-        + CSS + CSS_OVR + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
+        + CSS + CSS_OVR + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/C6plus_U4.html"
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, "·", len(HTML), "bytes ·", _AN[0], "genummerde oefeningen (excl. V.1–V.5)")

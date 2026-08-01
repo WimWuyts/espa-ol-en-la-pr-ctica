@@ -730,11 +730,105 @@ C5_U4 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C6+ · U4 — trámite en la recepción. De leestekst van deze unit is een postkaart
+# vol «he visto, he comido»; hier moet de leerling een échte transactie volgen:
+# een reservering die niet klopt. Cijfers, dagen en een probleem dat opgelost
+# wordt — heel andere luistertaak dan een verhaal.
+# ---------------------------------------------------------------------------
+C6P_U4 = {
+    "id": "C6P-U4-ESC-01",
+    "ancla": "c6p-u4-esc-01",
+    "titulo": "En la recepción del hostal",
+    "audio": "audio/C6plus_U4.mp3",
+    "situacion": {
+        "lugar": "La recepción de un hostal en Valparaíso, a las once de la noche",
+        "quien": "Un recepcionista y Nina, que llega con su reserva",
+        "que": "La reserva no coincide y hay que arreglarlo",
+        "claves": ["tengo una reserva", "a nombre de…", "¿por cuántas noches?"],
+    },
+    "guion": [
+        {"who": "Recepcionista", "es": "Buenas noches. ¿En qué puedo ayudarla?",
+         "nl": "Goedenavond. Waarmee kan ik u helpen?"},
+        {"who": "Nina", "es": "Buenas noches. Tengo una reserva a nombre de Nina Quispe.",
+         "nl": "Goedenavond. Ik heb een reservering op naam van Nina Quispe."},
+        {"who": "Recepcionista", "es": "A ver… Quispe, sí. Una habitación doble para dos noches.",
+         "nl": "Even kijken… Quispe, ja. Een tweepersoonskamer voor twee nachten."},
+        {"who": "Nina", "es": "No, perdone. He reservado una individual para tres noches.",
+         "nl": "Nee, sorry. Ik heb een eenpersoonskamer voor drie nachten geboekt."},
+        {"who": "Recepcionista", "es": "Un momento… Tiene razón, hay dos reservas con el mismo "
+                                       "apellido. La suya es la 204.",
+         "nl": "Een momentje… U hebt gelijk, er staan twee reserveringen met dezelfde "
+               "achternaam. De uwe is 204."},
+        {"who": "Nina", "es": "Menos mal. ¿Y el desayuno está incluido?",
+         "nl": "Gelukkig. En is het ontbijt inbegrepen?"},
+        {"who": "Recepcionista", "es": "Sí, de siete a diez, en el patio. Y hay wifi gratis en "
+                                       "todo el hostal.",
+         "nl": "Ja, van zeven tot tien, op het binnenplein. En er is gratis wifi in het hele hostel."},
+        {"who": "Nina", "es": "Perfecto. Una cosa más: mañana salgo muy temprano para el sur. "
+                              "¿Puedo dejar la maleta aquí?",
+         "nl": "Perfect. Nog iets: morgen vertrek ik heel vroeg naar het zuiden. Mag ik mijn "
+               "koffer hier laten?"},
+        {"who": "Recepcionista", "es": "Claro. Detrás de la recepción, sin problema. ¿Ya ha "
+                                       "cenado?",
+         "nl": "Natuurlijk. Achter de receptie, geen probleem. Hebt u al gegeten?"},
+        {"who": "Nina", "es": "No, todavía no. ¿Hay algo abierto a esta hora?",
+         "nl": "Nee, nog niet. Is er iets open op dit uur?"},
+        {"who": "Recepcionista", "es": "La cocina del hostal está cerrada, pero hay una picada "
+                                       "en la esquina. Está abierta hasta la una.",
+         "nl": "De keuken van het hostel is gesloten, maar er is een eethuisje op de hoek. "
+               "Dat is open tot één uur."},
+        {"who": "Nina", "es": "Gracias por todo. Aquí tiene mi pasaporte.",
+         "nl": "Bedankt voor alles. Hier is mijn paspoort."},
+        {"who": "Recepcionista", "es": "Gracias a usted. Aquí tiene la llave. Que descanse.",
+         "nl": "Ik dank u. Hier is uw sleutel. Slaap wel."},
+    ],
+    "global": {
+        "q": "¿Qué pasa en la recepción?",
+        "opts": ["La reserva no coincide y el recepcionista lo arregla",
+                 "Nina quiere cambiar de hostal", "Nina paga la cuenta y se va"],
+        "ans": "La reserva no coincide y el recepcionista lo arregla",
+        "why": "twee reserveringen met dezelfde naam",
+    },
+    "detalle": [
+        {"q": "¿Qué habitación ha reservado Nina?",
+         "opts": ["Una individual para tres noches", "Una doble para dos noches",
+                  "Una doble para tres noches"], "ans": "Una individual para tres noches",
+         "why": "«He reservado una individual para tres noches»"},
+        {"q": "¿Cuál es el número de su habitación?", "opts": ["204", "240", "104"], "ans": "204",
+         "why": "«La suya es la 204»"},
+        {"q": "¿A qué hora es el desayuno?", "opts": ["De siete a diez", "De ocho a once",
+                                                       "De seis a nueve"], "ans": "De siete a diez",
+         "why": "«de siete a diez, en el patio»"},
+        {"q": "¿Dónde puede dejar la maleta?",
+         "opts": ["Detrás de la recepción", "En la habitación", "En el patio"],
+         "ans": "Detrás de la recepción", "why": "«Detrás de la recepción, sin problema»"},
+        {"q": "¿Hasta qué hora está abierta la picada de la esquina?",
+         "opts": ["Hasta la una", "Hasta las once", "Hasta las doce"], "ans": "Hasta la una",
+         "why": "«Está abierta hasta la una»"},
+    ],
+    "vf": [
+        {"q": "La wifi del hostal cuesta dinero.", "ans": False, "prueba": "hay wifi gratis"},
+        {"q": "Nina ya ha cenado.", "ans": False, "prueba": "no, todavía no"},
+        {"q": "Hay dos reservas con el mismo apellido.", "ans": True,
+         "prueba": "hay dos reservas con el mismo apellido"},
+    ],
+    "produccion": {
+        "prompt": "Ahora tú llegas al hostal. Graba el diálogo (cuatro turnos): saluda, di a "
+                  "nombre de quién está la reserva, cuántas noches y qué tipo de habitación, y "
+                  "pregunta una cosa práctica (desayuno, wifi, maleta).",
+        "modo": "grabar",
+        "modelo": "Buenas noches. Tengo una reserva a nombre de… He reservado una… para … "
+                  "noches. ¿Está incluido…? ¿Puedo…?",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
          ("C5", 2): C5_U2, ("C6+", 2): C6P_U2,
          ("C5", 3): C5_U3, ("C6+", 3): C6P_U3,
-         ("C5", 4): C5_U4}
+         ("C5", 4): C5_U4, ("C6+", 4): C6P_U4}
 
 
 def controla():

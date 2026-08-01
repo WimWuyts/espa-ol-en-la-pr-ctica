@@ -9,6 +9,7 @@ Grammatica: pretérito perfecto compuesto (haber + participio) · por/para (intr
 """
 import os
 import gen_u0_docente as E
+import lectura_data as _LD, escucha_data as _ED
 from gen_u0_docente import (
     slide, bg, rect, text, chip, avatar, card, sectionbar, footer, noodroute,
     exercise_solucion, check_badge, legend_func, link_to, register_reveal, notes, pg,
@@ -532,7 +533,10 @@ def s21_teacher():
 def _run_all(include_teacher=True):
     s01_title(); s02_menu(); s03_vocab(); s04_perfecto(); s05_perfecto_quiz(); s06_participios(); s07_porpara()
     s08_porpara_quiz(); s09_reading(); s10_listening(); s11_marcadores(); s12_mezcla_perf(); s13_speaking(); s14_writing()
-    s15_experiencias(); s16_taller(); s17_cultura(); s18_tarea(); s19_mezcla(); s20_repaso()
+    s15_experiencias(); s16_taller(); s17_cultura()
+    # Lectura en Escucha uit de gedeelde bron — zelfde inhoud als print en hub.
+    E.s_lectura(_LD.C6P_U4); E.s_escucha(_ED.C6P_U4)
+    s18_tarea(); s19_mezcla(); s20_repaso()
     if include_teacher:
         s21_teacher()
 

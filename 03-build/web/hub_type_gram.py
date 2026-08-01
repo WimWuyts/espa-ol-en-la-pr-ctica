@@ -476,6 +476,72 @@ SETS[("C6+", 2)] = [
          ]),
 ]
 
+SETS[("C6+", 4)] = [
+    dict(title="El pretérito perfecto — haber + participio", accents="strict",
+         desc="Schrijf <b>allebei</b> de woorden: de vorm van <i>haber</i> (he · has · ha · "
+              "hemos · habéis · han) en het participio. Bij <i>-ar</i> wordt dat <b>-ado</b>, "
+              "bij <i>-er</i> en <i>-ir</i> <b>-ido</b>.",
+         items=[
+             {"q": "Yo ___ (visitar) el desierto de Atacama.", "ans": "he visitado",
+              "hint": "h_ v_______", "why": "yo → he + -ado"},
+             {"q": "¿Tú ___ (viajar) alguna vez en barco?", "ans": "has viajado",
+              "hint": "h__ v______", "why": "tú → has"},
+             {"q": "Nina ___ (perder) el tren.", "ans": "ha perdido", "hint": "h_ p______",
+              "why": "-er → -ido"},
+             {"q": "Nosotros ___ (reservar) dos noches.", "ans": "hemos reservado",
+              "hint": "h____ r________", "why": "nosotros → hemos"},
+             {"q": "Mis padres ___ (alquilar) un coche.", "ans": "han alquilado",
+              "hint": "h__ a________", "why": "ellos → han"},
+             {"q": "Yo todavía no ___ (subir) a la montaña.", "ans": "he subido", "hint": "h_ s_____",
+              "why": "-ir → -ido"},
+             {"q": "¿Vosotros ___ (comer) ya?", "ans": "habéis comido", "hint": "h_____ c_____",
+              "why": "vosotros → habéis, mét tilde"},
+             {"q": "El vuelo ___ (salir) con retraso.", "ans": "ha salido", "hint": "h_ s_____"},
+             {"q": "Yo ___ (sacar) muchas fotos.", "ans": "he sacado", "hint": "h_ s_____"},
+             {"q": "Nosotras ___ (quedarse) tres días en Valparaíso.", "ans": "nos hemos quedado",
+              "hint": "n__ h____ q______",
+              "why": "reflexief: het pronombre komt vóór haber"},
+             {"q": "Ellos ___ (probar) el pescado del sur.", "ans": "han probado", "hint": "h__ p______"},
+             {"q": "¿___ (estar) tú en Chile alguna vez?", "ans": "Has estado", "hint": "H__ e_____"},
+         ]),
+    dict(title="Los participios irregulares", accents="strict",
+         desc="Acht werkwoorden weigeren de gewone uitgang. Schrijf het <b>participio</b> — "
+              "alleen dat woord, niet de hele vorm.",
+         items=[
+             {"q": "hacer → he ___", "ans": "hecho", "hint": "h____", "why": "hacer → hecho"},
+             {"q": "ver → he ___", "ans": "visto", "hint": "v____", "why": "ver → visto"},
+             {"q": "escribir → he ___", "ans": "escrito", "hint": "e______", "why": "escribir → escrito"},
+             {"q": "volver → he ___", "ans": "vuelto", "hint": "v_____", "why": "volver → vuelto"},
+             {"q": "poner → he ___", "ans": "puesto", "hint": "p_____", "why": "poner → puesto"},
+             {"q": "decir → he ___", "ans": "dicho", "hint": "d____", "why": "decir → dicho"},
+             {"q": "abrir → he ___", "ans": "abierto", "hint": "a______", "why": "abrir → abierto"},
+             {"q": "romper → he ___", "ans": "roto", "hint": "r___", "why": "romper → roto"},
+             {"q": "comer → he ___", "ans": "comido", "hint": "c_____", "why": "valstrik: comer is regelmatig"},
+             {"q": "vivir → he ___", "ans": "vivido", "hint": "v_____", "why": "valstrik: vivir is regelmatig"},
+             {"q": "descubrir → he ___", "ans": "descubierto", "hint": "d__________",
+              "why": "als abrir → descubierto"},
+             {"q": "devolver → he ___", "ans": "devuelto", "hint": "d_______", "why": "als volver → devuelto"},
+         ]),
+    dict(title="¿por o para? — escribe la preposición", accents="soft",
+         desc="Een korte vuistregel: <b>para</b> kijkt vooruit (doel, bestemming, ontvanger, "
+              "deadline) · <b>por</b> kijkt naar de weg ernaartoe (reden, ruil, middel, "
+              "doorheen, tijdsduur).",
+         items=[
+             {"q": "Este billete es ___ ti.", "ans": "para", "why": "ontvanger → para"},
+             {"q": "Vamos a Santiago ___ avión.", "ans": "por", "why": "middel → por"},
+             {"q": "Salimos ___ la montaña mañana.", "ans": "para", "why": "bestemming → para"},
+             {"q": "Nos quedamos ___ dos noches.", "ans": "por", "why": "tijdsduur → por"},
+             {"q": "Estudio español ___ viajar.", "ans": "para", "why": "doel + infinitivo → para"},
+             {"q": "Gracias ___ las fotos.", "ans": "por", "why": "reden/dank → por"},
+             {"q": "El tren pasa ___ el desierto.", "ans": "por", "why": "doorheen → por"},
+             {"q": "La reserva es ___ el viernes.", "ans": "para", "why": "deadline → para"},
+             {"q": "He pagado veinte euros ___ la habitación.", "ans": "por", "why": "ruil/prijs → por"},
+             {"q": "Este regalo es ___ mi hermana.", "ans": "para", "why": "ontvanger → para"},
+             {"q": "Andamos ___ la playa todas las tardes.", "ans": "por", "why": "doorheen/langs → por"},
+             {"q": "¿___ qué has venido a Chile?", "ans": "Por", "why": "«¿por qué?» = waarom — reden"},
+         ]),
+]
+
 SETS[("C6+", 3)] = [
     dict(title="Ir a + infinitivo — el futuro próximo", accents="strict",
          desc="Schrijf <b>alle drie</b> de stukken: de vorm van <i>ir</i>, het woordje "
