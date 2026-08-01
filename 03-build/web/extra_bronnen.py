@@ -379,6 +379,217 @@ BRONNEN[("C5", 3)] = [
     ]),
 ]
 
+BRONNEN[("C5", 4)] = [
+    ("§1 · El verbo gustar — gusta / gustan", [
+        ("Arche-ELE", "Gustar, encantar e interesar — la frase al revés · sirve también para el "
+                      "ocio y para el repaso final",
+         "https://arche-ele.com/me-gusta-gustar-verbos-aprende-espanol"),
+        ("ProfeDeELE", "Me gustas tú — gustar con personas",
+         "https://www.profedeele.es/actividad/me-gustas-tu/"),
+    ]),
+    ("§2 · Reaccionar — también, tampoco, a mí sí, a mí no", [
+        ("Más ProfeDeELE", "Me gusta / no me gusta — comparar gustos y reaccionar",
+         "https://mas.profedeele.es/descarga-062"),
+        ("Más ProfeDeELE", "Manual de nivel A1 — también, tampoco, a mí sí, a mí no",
+         "https://mas.profedeele.es/curso-nivel-a1"),
+    ]),
+    ("§3 · Querer y poder + infinitivo", [
+        ("Arche-ELE", "Querer y poder en presente — verbos irregulares",
+         "https://arche-ele.com/presente-irregular-indicativo-verbos-espanol"),
+        ("Más ProfeDeELE", "Querer / poder + infinitivo — ejercicios",
+         "https://mas.profedeele.es/descarga-101"),
+    ]),
+    ("Los pronombres OI — me, te, le, nos, os, les", [
+        ("ProfeDeELE", "Pronombres de objeto indirecto",
+         "https://www.profedeele.es/actividad/pronombres-objeto-indirecto/"),
+        ("Más ProfeDeELE", "Los pronombres OI — forma y uso",
+         "https://mas.profedeele.es/descarga-269"),
+    ]),
+    ("El ocio y el tiempo libre", [
+        ("Arche-ELE", "Las aficiones y los hobbies",
+         "https://arche-ele.com/aficiones-hobbies-vocabulario-aprende-espanol"),
+    ]),
+    ("La música y el cine", [
+        ("Arche-ELE", "La música — instrumentos y géneros · sirve también para la tarea "
+                      "«Mi playlist»",
+         "https://arche-ele.com/la-musica-vocabulario-instrumentos-generos-musicales"),
+        ("Arche-ELE", "El cine — películas y géneros",
+         "https://arche-ele.com/el-cine-vocabulario-peliculas-generos"),
+    ]),
+    ("Cultura · Rosalía y «La fama»", [
+        ("Más ProfeDeELE", "Rosalía — «La fama»",
+         "https://mas.profedeele.es/descarga-188"),
+    ]),
+]
+
+BRONNEN[("C5", 5)] = [
+    ("§1 · Las cantidades — mucho, poco, un poco de", [
+        ("Arche-ELE", "Muy o mucho — la diferencia y la concordancia",
+         "https://arche-ele.com/muy-o-mucho-diferencias-aprende-espanol"),
+        ("Más ProfeDeELE", "Manual de nivel A1 — las cantidades y el futuro próximo con ir a",
+         "https://mas.profedeele.es/curso-nivel-a1"),
+    ]),
+    ("§2 · Ir a + infinitivo — el futuro próximo", [
+        ("Arche-ELE", "Ir a + infinitivo",
+         "https://arche-ele.com/ir-a-infinitivo-futuro-proximo"),
+    ]),
+    ("§3 · Pedir en el restaurante — la cortesía", [
+        ("Arche-ELE", "En el restaurante — vocabulario, la mesa y diálogos · sirve también para "
+                      "la tarea «La carta»",
+         "https://arche-ele.com/en-el-restaurante-vocabulario-dialogos-aprende-espanol"),
+        ("ProfeDeELE", "En el restaurante — pedir con cortesía",
+         "https://www.profedeele.es/actividad/en-el-restaurante/"),
+    ]),
+    ("§4 · Los pronombres lo / la / los / las", [
+        ("ProfeDeELE", "Pronombres de objeto directo",
+         "https://www.profedeele.es/actividad/pronombres-objeto-directo/"),
+        ("Arche-ELE", "El objeto directo — lo, la, los, las",
+         "https://arche-ele.com/el-objeto-directo-od-pronombres"),
+        ("Más ProfeDeELE", "Manual de nivel A2 — pronombres OD y OI, y la fruta y la verdura",
+         "https://mas.profedeele.es/curso-nivel-a2"),
+    ]),
+    ("La comida, la fruta y la bebida", [
+        ("Arche-ELE", "La comida — vocabulario",
+         "https://arche-ele.com/la-comida-vocabulario-aprende-espanol-ele"),
+        ("ProfeDeELE", "Alimentos, comida y bebida",
+         "https://www.profedeele.es/actividad/alimentos-comida-bebida/"),
+        ("Más ProfeDeELE", "La fruta — ficha",
+         "https://mas.profedeele.es/descarga-252"),
+    ]),
+    ("Cultura · México", [
+        ("Más ProfeDeELE", "Cultureta — material de cultura hispana",
+         "https://mas.profedeele.es/pack-ahorro-profe-cultureta"),
+    ]),
+]
+
+BRONNEN[("C5", 6)] = [
+    ("§1 · Los pronombres lo / la / los / las", [
+        ("ProfeDeELE", "Pronombres de objeto directo",
+         "https://www.profedeele.es/actividad/pronombres-objeto-directo/"),
+        ("Arche-ELE", "El objeto directo — evitar la repetición",
+         "https://arche-ele.com/el-objeto-directo-od-pronombres"),
+        ("Más ProfeDeELE", "Manual de nivel A2 — pronombres OD y OI",
+         "https://mas.profedeele.es/curso-nivel-a2"),
+    ]),
+    ("§2 · Acabar de + infinitivo", [
+        ("ProfeDeELE", "Acabar de + infinitivo",
+         "https://www.profedeele.es/actividad/acabar-de-infinitivo/"),
+        ("Arche-ELE", "Las perífrasis verbales",
+         "https://arche-ele.com/perifrasis-verbales-aprende-espanol"),
+    ]),
+    ("§3 · Los demostrativos — este, ese, aquel", [
+        ("Arche-ELE", "Este, ese y aquel — según la distancia",
+         "https://arche-ele.com/los-demostrativos-ele-este-ese-aquel"),
+        ("Más ProfeDeELE", "Los demostrativos — explicación y ejercicios (A1–A2)",
+         "https://mas.profedeele.es/descarga-293-demostrativos-materiales-gramatica-a1-a2-ele"),
+    ]),
+    ("§4 · La concordancia — el color y la prenda", [
+        ("Arche-ELE", "Los colores",
+         "https://arche-ele.com/los-colores-ele-aprende-espanol-arche-ele"),
+        ("Más ProfeDeELE", "Los colores — ficha",
+         "https://mas.profedeele.es/descarga-120"),
+        ("Arche-ELE", "La ropa — y la concordancia entre el color y la prenda",
+         "https://arche-ele.com/la-ropa-clothes-vocabulario-aprende-espanol"),
+    ]),
+    ("La ropa, el calzado y la tienda", [
+        ("ProfeDeELE", "La ropa y los complementos",
+         "https://www.profedeele.es/actividad/la-ropa/"),
+        ("Más ProfeDeELE", "La ropa — ejercicios extra, diálogo y en la tienda: tallas, "
+                           "probador y caja",
+         "https://mas.profedeele.es/descarga-159"),
+        ("Arche-ELE", "Listas de vocabulario — el calzado y los accesorios",
+         "https://arche-ele.com/listas-de-vocabulario-list-of-vocabulary-espanol"),
+    ]),
+    ("Cultura · las rebajas y el consumo", [
+        ("ProfeDeELE", "La desaparición de lo cutre — consumo y tendencias",
+         "https://www.profedeele.es/actividad/la-desaparicion-de-lo-cutre/"),
+        ("Más ProfeDeELE", "Las rebajas — ficha",
+         "https://mas.profedeele.es/descarga-243"),
+    ]),
+]
+
+BRONNEN[("C5", 7)] = [
+    ("§1 · Hay o está(n)", [
+        ("ProfeDeELE", "Haber, estar y tener — distinguirlos",
+         "https://www.profedeele.es/actividad/haber-estar-tener/"),
+        ("Arche-ELE", "Ser, estar y hay — describir lugares",
+         "https://arche-ele.com/ser-estar-hay-describir-lugares"),
+    ]),
+    ("§2 · Las preposiciones de lugar", [
+        ("Arche-ELE", "Las preposiciones de lugar · nivel A1",
+         "https://arche-ele.com/preposiciones-de-lugar-a1"),
+    ]),
+    ("§3 · Estar + gerundio", [
+        ("Arche-ELE", "Estar + gerundio — las perífrasis de gerundio",
+         "https://arche-ele.com/estar-gerundio-perifrasis-verbales-de-gerundio"),
+        ("Más ProfeDeELE", "Gramática — estar + gerundio y el imperativo",
+         "https://mas.profedeele.es/gramatica"),
+    ]),
+    ("§4 · El imperativo — dar direcciones", [
+        ("Arche-ELE", "El imperativo afirmativo",
+         "https://arche-ele.com/el-imperativo-afirmativo-aprende-espanol"),
+    ]),
+    ("§5 · Los números ordinales", [
+        ("Más ProfeDeELE", "Pack de números — los ordinales y los pisos",
+         "https://mas.profedeele.es/pack-numeros"),
+    ]),
+    ("La casa y los muebles", [
+        ("Arche-ELE", "La casa — vocabulario",
+         "https://arche-ele.com/la-casa-vocabulario-aprende-espanol"),
+        ("Más ProfeDeELE", "Los muebles — ficha",
+         "https://mas.profedeele.es/descarga-63"),
+        ("Más ProfeDeELE", "Manual de nivel A2 — la casa, las preposiciones de lugar y dar "
+                           "direcciones",
+         "https://mas.profedeele.es/curso-nivel-a2"),
+    ]),
+    ("La ciudad y el barrio", [
+        ("Arche-ELE", "La ciudad — vocabulario · sirve también para la tarea «Mapa de mi barrio»",
+         "https://arche-ele.com/la-ciudad-en-espanol-vocabulario"),
+    ]),
+    ("El transporte", [
+        ("Arche-ELE", "Los medios de transporte",
+         "https://arche-ele.com/los-medios-de-transporte-vocabulario-ele"),
+        ("Más ProfeDeELE", "Medios de transporte — ficha",
+         "https://mas.profedeele.es/descarga-002"),
+    ]),
+]
+
+BRONNEN[("C5", 8)] = [
+    ("§1–§3 · El pretérito perfecto, los participios y los marcadores", [
+        ("Arche-ELE", "El pretérito perfecto — haber + participio, los participios irregulares "
+                      "y los marcadores ya · todavía no · alguna vez · nunca · sirve también "
+                      "para la tarea final",
+         "https://arche-ele.com/el-preterito-perfecto-pasados-aprende-espanol"),
+        ("Más ProfeDeELE", "Los participios irregulares — para practicar",
+         "https://mas.profedeele.es/pack-ahorro-profe-online"),
+        ("Más ProfeDeELE", "Manual de nivel A2 — el perfecto, los participios y el repaso de "
+                           "toda la ruta",
+         "https://mas.profedeele.es/curso-nivel-a2"),
+    ]),
+    ("§4 · El tiempo y el clima", [
+        ("Arche-ELE", "El tiempo atmosférico",
+         "https://arche-ele.com/el-tiempo-atmosferico-weather-aprende-espanol"),
+        ("Más ProfeDeELE", "Describir el tiempo — ficha",
+         "https://mas.profedeele.es/descarga-131"),
+    ]),
+    ("Los viajes y el transporte", [
+        ("Arche-ELE", "Los medios de transporte",
+         "https://arche-ele.com/los-medios-de-transporte-vocabulario-ele"),
+        ("Más ProfeDeELE", "Medios de transporte — ficha",
+         "https://mas.profedeele.es/descarga-002"),
+    ]),
+    ("Las vacaciones", [
+        ("ProfeDeELE", "Las vacaciones de verano",
+         "https://www.profedeele.es/actividad/vacaciones-verano/"),
+        ("Más ProfeDeELE", "Superpack de verano",
+         "https://mas.profedeele.es/superpack-verano-ahorro"),
+    ]),
+    ("Cultura · viajes y experiencias", [
+        ("Más ProfeDeELE", "Viajes y experiencias de vacaciones",
+         "https://mas.profedeele.es/descarga-191"),
+    ]),
+]
+
 BRONNEN[("C6+", 1)] = [
     ("§1 · Los verbos reflexivos y la rutina", [
         ("Arche-ELE", "Pronombres reflexivos · nivel A1 — la posición del pronombre",

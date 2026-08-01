@@ -62,5 +62,8 @@ Onder «✍️ Escribe tú — la gramática sin opciones», telkens twaalf item
 - De **PowerPoints** in deze zip zijn de vorige versie: de dia's §5 Lectura en §6 Escucha
   staan al in `gen_u8_docente.py` klaar, maar konden in deze bouwsessie niet gerenderd
   worden (zie `03-build/SETUP_OMGEVING.md`).
-- De **Extra**-tab toont de terugvalinhoud tot de bronnenlijst en de escape room van
-  deze unidad er zijn.
+- De **Extra**-tab bevat nu **10 links in 5 groepen** (ProfeDeELE · Más ProfeDeELE · Arche-ELE),
+  geordend zoals de unit zelf: elke pagina staat er precies één keer, onder het
+  onderwerp waar ze het meest bij helpt. Dient een pagina ook voor een ander
+  onderdeel, dan staat dat in de titel. De **escape room** ontbreekt nog; zodra er
+  een URL is, komt die bovenaan het tabblad.
