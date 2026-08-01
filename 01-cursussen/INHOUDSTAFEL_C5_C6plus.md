@@ -218,7 +218,7 @@ herhaling te vallen.
 
 ## C5 U7 «Mi casa y mi barrio» — parada **Colombia · Cartagena** 🇨🇴
 
-**Tarea final:** Mi barrio · **Vocabulario:** 66 woorden · **Print:** 42 blz. · **Spellen:** 20
+**Tarea final:** Mapa de mi barrio · **Vocabulario:** 66 woorden · **Print:** 42 blz. · **Spellen:** 20
 
 | § | Inhoud |
 |---|---|
@@ -254,7 +254,7 @@ en de verdieping benoemen met een ordinal.
 
 ## C5 U8 «¿Qué has hecho?» — parada **Perú · Cusco / Machu Picchu** 🇵🇪
 
-**Tarea final:** Mis vacaciones · **Vocabulario:** 64 woorden · **Print:** 38 blz. · **Spellen:** 18
+**Tarea final:** Diario de viaje · **Vocabulario:** 64 woorden · **Print:** 38 blz. · **Spellen:** 18
 
 | § | Inhoud |
 |---|---|
@@ -510,9 +510,10 @@ CDMX, Chile, Buenos Aires en Cusco.
 
 ## Openstaand
 
-1. **Tarea final van C5 U7 en U8.** De print zegt «Mi barrio» en «Mis vacaciones»;
-   CLAUDE.md §12 zegt «Mapa de mi barrio» en «Diario de viaje». Zeg welke klopt, dan trek ik
-   het gelijk in de print, de LEESMIJ en CLAUDE.md.
+1. ~~Tarea final van C5 U7 en U8.~~ **Opgelost (1 aug.):** «Mapa de mi barrio» en «Diario de
+   viaje» zijn de juiste namen. Gelijkgetrokken op 31 plaatsen — printgenerator, PowerPoint-
+   generator, cocktail-dossier en deze inhoudstafel — inclusief C6+ U2, dat dezelfde
+   scheeftrekking had.
 2. **`deberías` in de vocabulariolijst van C6+ U7** is een condicional en valt buiten de
    leerplanscope. In de nieuwe drills en teksten vermeden; laat weten of het uit de lijst mag.
 3. **De PowerPoints** missen nog de twee dia's §Lectura en §Escucha. De aanroep staat in alle

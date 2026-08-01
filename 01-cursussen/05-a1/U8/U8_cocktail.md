@@ -1,4 +1,4 @@
-# U8 «¿Qué has hecho?» — Cocktail-receta (parada Perú · Cusco · Machu Picchu · tarea «Mis vacaciones»)
+# U8 «¿Qué has hecho?» — Cocktail-receta (parada Perú · Cusco · Machu Picchu · tarea «Diario de viaje»)
 
 > Volgens de workflow uit **CLAUDE.md §14ter**. Per cursusonderdeel worden **reservoir-IDs** gekozen — bewust **nog niet/weinig gebruikte** items (uit `coverage.md`) → variatie groeit meetbaar. Quota onderaan afgevinkt.
 > Woordenschat gecureerd uit het outline-thema (weinig J5-U8-tags in de master-pool → uit het thema opgebouwd + aangevuld) → ~64 woorden. Grammatica-scope: **pretérito perfecto compuesto** = de A2-eindstructuur van jaar 5. **GÉÉN** indefinido/imperfecto/futuro/condicional/subjuntivo.
@@ -21,7 +21,7 @@ De **laatste parada** van jaar 5: **Perú (Cusco · Machu Picchu)**, gastvrouw *
 | **§5 Lectura** «El diario de viaje de Nina» | **SK-011** voorspellen vanuit titel/beeld · **SK-014** scannen · **SK-018** juist/fout + bewijs · **SK-025** productieve reactie · **SK-008** terugkerende tekstsoort (blog/postal) | reisblog met perfecto compuesto = volledige leesketen |
 | **Taller** | **tilde diacrítica** (tú/tu · él/el · qué/que · sí/si · más/mas) + accentoverzicht · conectores del relato (primero/luego/al final) | prescriptieve accentregel → foutenkliniek |
 | **Cultura** (Nina/Cusco) | Machu Picchu · los Andes · klimaatzones van Perú (costa·sierra·selva) · el tren a Aguas Calientes · **LAY-014**-stijl titelcapsule | parada verankerd in echte plek + klimaat (past bij §4) |
-| **Tarea «Mis vacaciones»** | reisverslag/vlog **mét perfecto compuesto** + fotoreportage | communicatief: afzender·ontvanger·doel·situatie·resultaat |
+| **Tarea «Diario de viaje»** | reisverslag/vlog **mét perfecto compuesto** + fotoreportage | communicatief: afzender·ontvanger·doel·situatie·resultaat |
 | **Repaso** | spiekkaart + semáforo (online repaso) | conform §16 |
 
 ## Hub-games (motor) — ≥8 verschillende types, in functie van de leerstof
@@ -31,12 +31,12 @@ De **laatste parada** van jaar 5: **Perú (Cusco · Machu Picchu)**, gastvrouw *
 - **Gap-fill** haber + participio (cloze werkwoord, nagerekend). **Substitutie-drill** ¿qué has hecho? per persoon. **Matching** participio ↔ infinitivo. **Dictee**: el parte meteorológico (weer + steden). **Ordenen**: el diario de viaje (1–6). **Transformación** presente → perfecto compuesto.
 
 ## Vaardigheden & ketens (SK-)
-- **Lezen→schrijven:** diario de viaje de Nina lezen → eigen «Mis vacaciones» schrijven.
+- **Lezen→schrijven:** diario de viaje de Nina lezen → eigen «Diario de viaje» schrijven.
 - **Luisteren→spreken:** parte del tiempo (TTS) → zelf het weer vertellen (paren).
 - **Opname (≥2, 4 gepland):** `repite el tiempo` (ListenRepeat) · `shadowing con Nina` · `mensaje de voz: tu viaje` (VoiceMessage) · `describe tus vacaciones` (RecordReflect).
 
 ## PowerPoint (docente + alumno .pptx)
-Put uit **PPT** (meerkeuze-feedback + reveal): tijdlijn perfecto compuesto, participio-machine, marcadores-contrast, weer-quiz, Lectura/Listening/Speaking/Writing-dia's, cultura Machu Picchu, Tarea Mis vacaciones, mezcla-quiz, repaso+semáforo, teacher-notes.
+Put uit **PPT** (meerkeuze-feedback + reveal): tijdlijn perfecto compuesto, participio-machine, marcadores-contrast, weer-quiz, Lectura/Listening/Speaking/Writing-dia's, cultura Machu Picchu, Tarea Diario de viaje, mezcla-quiz, repaso+semáforo, teacher-notes.
 
 ## Woordenschat — curatie (thema-gebaseerd; master-pool aanvullen)
 ~64 woorden, groepen: **viajes/vacaciones** · **el clima** · **el transporte** · **experiencias/marcadores** · **participios** (incl. irregulares) · **peru** (Machu Picchu, los Andes, la llama, las ruinas). Weinig J5-U8-tags in de master → uit het thema opgebouwd; terugschrijven naar de master aanbevolen.

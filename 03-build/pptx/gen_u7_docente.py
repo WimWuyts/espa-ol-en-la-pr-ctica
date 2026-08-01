@@ -66,7 +66,7 @@ def s01_title():
 def s02_menu():
     s = slide(); bg(s, PAPER)
     sectionbar(s, "MENÚ DE LA LECCIÓN", "El mapa de la Unidad 7",
-               "Kies je route — klik een tegel. Alles oefent naar de Tarea «Mi barrio» toe.", num=7)
+               "Kies je route — klik een tegel. Alles oefent naar de Tarea «Mapa de mi barrio» toe.", num=7)
     tiles = [
         ("§1", "Hay / estar", "er is · waar het staat", G, 3),
         ("§2", "Preposiciones", "encima de · al lado de", G, 6),
@@ -74,7 +74,7 @@ def s02_menu():
         ("§4", "El camino", "imperativo: gira, sigue", G, 12),
         ("§5", "Lectura + escucha", "anuncio de piso · barrio", G, 9),
         ("★", "Cultura · la plaza", "el barrio · Cartagena", GD, 16),
-        ("🏘️", "Tarea · Mi barrio", "plano + visita guiada", GD, 18),
+        ("🏘️", "Tarea · Mapa de mi barrio", "plano + visita guiada", GD, 18),
         ("◎", "Repaso + semáforo", "lo esencial · zelfevaluatie", GD, 20),
     ]
     cols, x0, y0 = 4, Inches(0.5), Inches(1.55)
@@ -273,7 +273,7 @@ def s09_reading():
              trigger=btn)
     foot(s)
     notes(s, "TEACHER · READING (lezen→spreken-keten). Eerst globaal (waarover?), dan scannen. Onthul de antwoorden pas na de klas. "
-             "Daarna: leerlingen beschrijven zelf een woning (transfer → Tarea Mi barrio).")
+             "Daarna: leerlingen beschrijven zelf een woning (transfer → Tarea Mapa de mi barrio).")
 
 # ============================================================ DIA 10 · LISTENING — Valen describe su barrio
 def s10_listening():
@@ -376,7 +376,7 @@ def s13_writing():
     register_reveal(s, rev)
     noodroute(s); foot(s)
     notes(s, "TEACHER · WRITING (lezen→schrijven). Checklist = zichtbare steun; onthul het model pas na het schrijven (retrieval). "
-             "Nakijkfocus: hay/estar, preposiciones, imperativo. Dit voedt de Tarea «Mi barrio».")
+             "Nakijkfocus: hay/estar, preposiciones, imperativo. Dit voedt de Tarea «Mapa de mi barrio».")
 
 # ============================================================ DIA 14 · VOCAB — muebles/barrio (reveal)
 def s14_muebles_barrio():
@@ -452,7 +452,7 @@ def s16_cultura():
              [[("Actividad: ", {"bold":True,"color":GD}), ("schrijf 3 zinnen over een plein of buurt bij jou (¿qué hay? ¿dónde está? ¿qué haces ahí?).", {"color":GD})]],
              trigger=btn)
     foot(s)
-    notes(s, "TEACHER · CULTURE (identiteit in diversiteit, LPD 5). Onthul per kaart. Vergelijk plazas ES/MX/CO/PE. Bruggetje naar de Tarea Mi barrio. "
+    notes(s, "TEACHER · CULTURE (identiteit in diversiteit, LPD 5). Onthul per kaart. Vergelijk plazas ES/MX/CO/PE. Bruggetje naar de Tarea Mapa de mi barrio. "
              "Online: «lugar ↔ país» (match).")
 
 # ============================================================ DIA 17 · QUIZ — la ruta / imperativo
@@ -482,7 +482,7 @@ def s18_tarea():
     s = slide(); bg(s, PAPER)
     rect(s, 0, 0, EMU_W, Inches(1.35), fill=GD)
     text(s, Inches(0.5), Inches(0.18), Inches(9), Inches(1.0),
-         [[("🏘️ Tarea final · Mi barrio", {"size":30,"bold":True,"color":WHITE,"font":DISPLAY})],
+         [[("🏘️ Tarea final · Mapa de mi barrio", {"size":30,"bold":True,"color":WHITE,"font":DISPLAY})],
           [("Maak el plano de tu barrio y da una visita guiada — di qué hay, dónde está y cómo llegar.", {"size":13,"italic":True,"color":GT})]])
     avatar(s, "mochila", Inches(11.6), Inches(0.2), Inches(1.0))
     pasos=[("1","Dibuja el plano","calles, plaza, tiendas, tu casa"),
@@ -564,7 +564,7 @@ def s21_teacher():
             ("Kernvalstrikken","Niet «hay el parque» (hay ≠ estar) · de+el=del · estoy comi-E-ndo · el primer/tercer piso (apócope, m. sing.) · hiato panadería/día/país."),
             ("Differentiatie (zij-instromers)","Alles start vanaf nul. Sterker: hele rondleiding + eigen plano + preguntas del visitante. Zwakker: hay/estar-kaart en preposición-ficha langer open, imperativo-frames houden."),
             ("Digitaal","20 spellen + flip cards + klikbare kaart + recorder (Hablar) + Lectura (anuncio + barrio) op de página digital. QR's in het boek → juiste anker. Conjugador = aparte tool."),
-            ("Evaluatie","Tarea «Mi barrio» met rúbrica (4 criteria). LPD 3·4·7·8 + 5 (cultura) + 1·2 (receptief: lezen/luisteren).")]
+            ("Evaluatie","Tarea «Mapa de mi barrio» met rúbrica (4 criteria). LPD 3·4·7·8 + 5 (cultura) + 1·2 (receptief: lezen/luisteren).")]
     y=Inches(1.4)
     for t,b in blocks:
         card(s, Inches(0.5), y, Inches(12.3), Inches(1.0), fill=RGBColor(0x1B,0x63,0x49), line=None)

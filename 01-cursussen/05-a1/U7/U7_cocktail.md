@@ -1,4 +1,4 @@
-# U7 «Mi casa y mi barrio» — Cocktail-receta (parada Colombia · Cartagena · tarea «Mi barrio»)
+# U7 «Mi casa y mi barrio» — Cocktail-receta (parada Colombia · Cartagena · tarea «Mapa de mi barrio»)
 
 > Volgens **CLAUDE.md §14/§14bis/§14ter**. Per cursusonderdeel worden **reservoir-IDs** gekozen — bewust **nog niet/weinig gebruikte** items (uit `coverage.md`) → variatie groeit meetbaar. Quota onderaan afgevinkt.
 > Woordenschat gecureerd uit thema + master-pool (J5-U7 heeft weinig tags → thema-gestuurd) → ~62 woorden. Grammatica-scope A1→A2: **hay/estar** · **preposiciones de lugar** · **estar + gerundio** · **imperativo** (de weg) · **rangtelwoorden + apocope**. GEEN futuro/condicional/subjuntivo.
@@ -22,7 +22,7 @@ Cartagena, Colombia — kleurrijke huizen, balcons met bloemen, de warme **plaza
 | **§6 Lectura** «Un paseo por Cartagena» / anuncio de piso | **SK-005** Voorspellen vanuit beeld · **SK-011** Informatieraster · **SK-013** Bewijs-onderstreping (V/F + prueba) | authentieke woningadvertentie + wandeltekst; volledige leesketen |
 | **Taller** | **ortografía diptongos/hiatos** (panadería·día·país) + **conectores de lugar** (a la derecha · enfrente · al final de la calle) | de sombrero-leerlijn U7 = diptongo↔hiato; prepo-conectoren voor de rondleiding |
 | **Cultura** (Valen/Cartagena) | **la plaza y el barrio** · casas de colores · vivienda en el mundo hispano (casa·piso·apartamento) · **LAY-018** Landkaart-weetjeskaart | **DS-010** cultuurpagina unit-eigen (niet enkel de kaart) |
-| **Tarea «Mi barrio»** | plattegrond tekenen + **rondleiding geven / iemand de weg uitleggen** (paren, informatiekloof) | communicatief: afzender·ontvanger·doel·situatie·resultaat |
+| **Tarea «Mapa de mi barrio»** | plattegrond tekenen + **rondleiding geven / iemand de weg uitleggen** (paren, informatiekloof) | communicatief: afzender·ontvanger·doel·situatie·resultaat |
 | **Repaso** | spiekkaart (SummaryQuadrant) + semáforo (online repaso) | conform §16 |
 
 ## Hub-games (motor) — ≥8 verschillende types, in functie van de leerstof

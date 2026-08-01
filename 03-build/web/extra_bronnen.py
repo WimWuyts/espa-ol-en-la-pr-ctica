@@ -20,6 +20,10 @@ SITES = {
     "ProfeDeELE":       ("PDE", "🎬"),
     "Arche-ELE":        ("ARE", "🧩"),
     "My Daily Spanish": ("MDS", "📺"),
+    # mas.profedeele.es is de downloadafdeling van ProfeDeELE: pdf's en het
+    # A1-handboek in plaats van online-oefeningen. Eigen badge, want voor de
+    # leerling is het verschil merkbaar — hier moet hij iets openen of afdrukken.
+    "Más ProfeDeELE":   ("MPD", "📄"),
 }
 
 BRONNEN = {}
@@ -257,6 +261,98 @@ BRONNEN[("C5", 1)] = [
     ]),
 ]
 
+
+BRONNEN[("C5", 2)] = [
+    ("§1 · La familia y el verbo tener", [
+        ("ProfeDeELE", "La familia — vocabulario y relaciones familiares",
+         "https://www.profedeele.es/actividad/la-familia/"),
+        ("Arche-ELE", "La familia — vocabulario, árbol genealógico y audios",
+         "https://arche-ele.com/la-familia-vocabulario-family-spanish-vocabulary"),
+        ("Más ProfeDeELE", "La familia — material extra y árboles genealógicos",
+         "https://mas.profedeele.es/descarga-66"),
+        ("Arche-ELE", "Ser y tener · nivel A1",
+         "https://arche-ele.com/ser-y-tener-nivel-a1-actividades"),
+        ("ProfeDeELE", "Presente irregular — tener y los demás",
+         "https://www.profedeele.es/actividad/presente-irregular/"),
+    ]),
+    ("§2 · Los posesivos — mi, tu, su, nuestro", [
+        ("Arche-ELE", "Los posesivos — mi, tu, su",
+         "https://arche-ele.com/los-posesivos-mi-tu-su-ele-aprender-espanol"),
+        ("Más ProfeDeELE", "Los posesivos — ficha de gramática",
+         "https://mas.profedeele.es/descarga-320"),
+        ("Arche-ELE", "Los posesivos aplicados a la familia",
+         "https://arche-ele.com/la-familia-vocabulario-family-spanish-vocabulary"),
+    ]),
+    ("§3 · Los adjetivos — el físico y el carácter", [
+        ("ProfeDeELE", "Descripción física",
+         "https://www.profedeele.es/actividad/descripcion-fisico-espanol/"),
+        ("ProfeDeELE", "Adjetivos de carácter y personalidad",
+         "https://www.profedeele.es/actividad/adjetivos-caracter-personalidad/"),
+        ("Arche-ELE", "Descripciones A1 — el físico, el carácter y la concordancia",
+         "https://arche-ele.com/descripciones-a1-fisicasydecaracter-en-espanol"),
+    ]),
+    ("§4 · Ser o estar — la gran trampa del «zijn»", [
+        ("Arche-ELE", "Ser y estar — la diferencia, explicada paso a paso",
+         "https://arche-ele.com/ser-y-estar-gramatica-cognitiva-ele-diferencia"),
+        ("My Daily Spanish", "Ser frente a estar — el vídeo",
+         "https://www.youtube.com/watch?v=X-7k7R3Ca9U"),
+        ("ProfeDeELE", "Haber, estar y tener — distinguirlos",
+         "https://www.profedeele.es/actividad/haber-estar-tener/"),
+        ("Más ProfeDeELE", "Haber, estar y tener — test extra",
+         "https://mas.profedeele.es/descarga-69"),
+    ]),
+    ("§5 · Los demostrativos — este y ese", [
+        ("Arche-ELE", "Los demostrativos — este, ese, aquel",
+         "https://arche-ele.com/los-demostrativos-ele-este-ese-aquel"),
+        ("Más ProfeDeELE", "Los demostrativos — explicación y ejercicios (A1–A2)",
+         "https://mas.profedeele.es/descarga-293-demostrativos-materiales-gramatica-a1-a2-ele"),
+    ]),
+    ("Taller de lengua — la acentuación y los conectores", [
+        ("Arche-ELE", "La acentuación — agudas, llanas y esdrújulas",
+         "https://arche-ele.com/la-acentuacion-en-espanol-agudas-llanas-esdrujulas"),
+        ("Más ProfeDeELE", "Manual de nivel A1 — conectores y ortografía",
+         "https://mas.profedeele.es/curso-nivel-a1"),
+    ]),
+    ("Escribir un correo — la lectura y la tarea final", [
+        ("Más ProfeDeELE", "Manual de nivel A1 — escribir un correo electrónico",
+         "https://mas.profedeele.es/curso-nivel-a1"),
+    ]),
+    ("El cuerpo humano", [
+        ("Arche-ELE", "El cuerpo humano",
+         "https://arche-ele.com/el-cuerpo-humano-human-body-espanol-spanish-ele"),
+        ("Más ProfeDeELE", "El cuerpo humano — ficha",
+         "https://mas.profedeele.es/descarga-125"),
+    ]),
+    ("Los colores", [
+        ("Arche-ELE", "Los colores",
+         "https://arche-ele.com/los-colores-ele-aprende-espanol-arche-ele"),
+        ("Más ProfeDeELE", "Los colores — ficha",
+         "https://mas.profedeele.es/descarga-120"),
+    ]),
+    ("Cultura · Frida Kahlo", [
+        ("Más ProfeDeELE", "Frida Kahlo — material de cultura",
+         "https://mas.profedeele.es/descarga-164"),
+    ]),
+    ("Tarea final · «Álbum de familia»", [
+        ("Arche-ELE", "La familia — para preparar tu álbum",
+         "https://arche-ele.com/la-familia-vocabulario-family-spanish-vocabulary"),
+        ("Arche-ELE", "Describir a tu familia con posesivos",
+         "https://arche-ele.com/los-posesivos-mi-tu-su-ele-aprender-espanol"),
+    ]),
+    # Deze vier bracht de auteur samen als voorbereiding op de escape room. Ze
+    # herhalen bewust materiaal van hierboven: dit is de plaats waar de leerling
+    # álles van de unidad nog eens in één keer doorneemt.
+    ("Repaso de toda la unidad", [
+        ("ProfeDeELE", "Reconstruir un árbol genealógico",
+         "https://www.profedeele.es/actividad/la-familia/"),
+        ("Arche-ELE", "¿Quién es quién? — identificar a los miembros de la familia",
+         "https://arche-ele.com/la-familia-vocabulario-family-spanish-vocabulary"),
+        ("Arche-ELE", "Identificar a una persona por su físico y su carácter",
+         "https://arche-ele.com/descripciones-a1-fisicasydecaracter-en-espanol"),
+        ("Arche-ELE", "Ser frente a estar — repaso",
+         "https://arche-ele.com/ser-y-estar-gramatica-cognitiva-ele-diferencia"),
+    ]),
+]
 
 BRONNEN[("C6+", 1)] = [
     ("§1 · Los verbos reflexivos y la rutina", [

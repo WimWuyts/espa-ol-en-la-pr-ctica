@@ -66,7 +66,7 @@ def s01_title():
 def s02_menu():
     s = slide(); bg(s, PAPER)
     sectionbar(s, "MENÚ DE LA LECCIÓN", "El mapa de la Unidad 8",
-               "Kies je route — klik een tegel. Alles oefent naar de Tarea «Mis vacaciones» toe.", num=8)
+               "Kies je route — klik een tegel. Alles oefent naar de Tarea «Diario de viaje» toe.", num=8)
     tiles = [
         ("§1", "He hecho…", "perfecto compuesto", G, 3),
         ("§2", "Participios", "-ado/-ido + irregular", G, 6),
@@ -74,7 +74,7 @@ def s02_menu():
         ("§4", "¿Qué tiempo hace?", "hace sol · llueve · nieva", G, 4),
         ("§5", "Lectura + escucha", "el diario de Nina", G, 9),
         ("★", "Cultura · Machu Picchu", "los Andes y el clima", GD, 16),
-        ("🎒", "Tarea · Mis vacaciones", "reisverslag (vlog/tekst)", GD, 18),
+        ("🎒", "Tarea · Diario de viaje", "reisverslag (vlog/tekst)", GD, 18),
         ("◎", "Repaso + semáforo", "lo esencial · zelfevaluatie", GD, 20),
     ]
     cols, x0, y0 = 4, Inches(0.5), Inches(1.55)
@@ -271,7 +271,7 @@ def s09_reading():
              trigger=btn)
     foot(s)
     notes(s, "TEACHER · READING (lezen→schrijven-keten). Eerst voorspellen (titel/foto), dan scannen. Onthul de antwoorden pas na de klas. "
-             "Daarna: leerlingen schrijven hun eigen dagboekdag (transfer → Tarea Mis vacaciones).")
+             "Daarna: leerlingen schrijven hun eigen dagboekdag (transfer → Tarea Diario de viaje).")
 
 # ============================================================ DIA 10 · LISTENING — ¿qué han hecho?
 def s10_listening():
@@ -368,7 +368,7 @@ def s13_writing():
     register_reveal(s, rev)
     noodroute(s); foot(s)
     notes(s, "TEACHER · WRITING (lezen→schrijven). Checklist = zichtbare steun; onthul het model pas na het schrijven (retrieval). "
-             "Nakijkfocus: perfecto compuesto (4×), participios, marcadores, het weer. Dit voedt de Tarea «Mis vacaciones».")
+             "Nakijkfocus: perfecto compuesto (4×), participios, marcadores, het weer. Dit voedt de Tarea «Diario de viaje».")
 
 # ============================================================ DIA 14 · VOCAB — transporte/clima (reveal)
 def s14_transporte():
@@ -444,7 +444,7 @@ def s16_cultura():
              [[("Actividad: ", {"bold":True,"color":GD}), ("schrijf 3 zinnen over het weer waar jij woont in verschillende seizoenen (¿qué tiempo hace en verano/invierno?).", {"color":GD})]],
              trigger=btn)
     foot(s)
-    notes(s, "TEACHER · CULTURE (identiteit in diversiteit, LPD 5). Onthul per kaart. Vergelijk de drie klimaatzones met België. Bruggetje naar de Tarea Mis vacaciones. "
+    notes(s, "TEACHER · CULTURE (identiteit in diversiteit, LPD 5). Onthul per kaart. Vergelijk de drie klimaatzones met België. Bruggetje naar de Tarea Diario de viaje. "
              "Online: «país ↔ clima» (match) + de kaart van de Spaanstalige wereld.")
 
 # ============================================================ DIA 17 · QUIZ — completa (perfecto)
@@ -474,7 +474,7 @@ def s18_tarea():
     s = slide(); bg(s, PAPER)
     rect(s, 0, 0, EMU_W, Inches(1.35), fill=GD)
     text(s, Inches(0.5), Inches(0.18), Inches(9), Inches(1.0),
-         [[("🎒 Tarea final · Mis vacaciones", {"size":30,"bold":True,"color":WHITE,"font":DISPLAY})],
+         [[("🎒 Tarea final · Diario de viaje", {"size":30,"bold":True,"color":WHITE,"font":DISPLAY})],
           [("Escribe (of graba en vlog) el diario de tus vacaciones con el perfecto compuesto.", {"size":13,"italic":True,"color":GT})]])
     avatar(s, "mochila", Inches(11.6), Inches(0.2), Inches(1.0))
     pasos=[("1","Elige un destino y el momento","echt of verzonnen"),
@@ -556,7 +556,7 @@ def s21_teacher():
             ("Kernvalstrikken","haber ≠ tener (has hecho, niet tienes hecho) · participio blijft gelijk (ha comidO) · irregulares (hecho/visto/dicho/escrito/vuelto/puesto/abierto/roto) · hace calor ≠ es caliente · tilde diacrítica (tú/tu · qué/que · sí/si · más/mas)."),
             ("Differentiatie (zij-instromers)","Alles start vanaf nul. Sterker: volledig reisverslag met marcadores + het weer + irregulares. Zwakker: haber-tabel + participio-lijst langer open, zinsframes houden."),
             ("Digitaal","18 spellen + flip cards + klikbare kaart + recorder (Hablar) + Lectura (diario de Nina) op de página digital. QR's in het boek → juiste anker. Conjugador = aparte tool (enkel presente)."),
-            ("Evaluatie","Tarea «Mis vacaciones» met rúbrica (4 criteria). LPD 3·4·7·8 + 5 (cultura) + 1·2 (receptief: lezen/luisteren). Scope: perfecto compuesto = A2-eindstructuur jaar 5 (géén indefinido/imperfecto/futuro/subjuntivo).")]
+            ("Evaluatie","Tarea «Diario de viaje» met rúbrica (4 criteria). LPD 3·4·7·8 + 5 (cultura) + 1·2 (receptief: lezen/luisteren). Scope: perfecto compuesto = A2-eindstructuur jaar 5 (géén indefinido/imperfecto/futuro/subjuntivo).")]
     y=Inches(1.4)
     for t,b in blocks:
         card(s, Inches(0.5), y, Inches(12.3), Inches(1.0), fill=RGBColor(0x1B,0x63,0x49), line=None)

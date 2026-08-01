@@ -82,7 +82,7 @@ def s02_menu():
         ("§5", "El barrio", "cómo llegar", G, 10),
         ("★", "Lectura + escucha", "mi barrio", GD, 9),
         ("🌺", "Cultura", "la vivienda hispana", GD, 17),
-        ("🗺️", "Tarea · Mi barrio", "plano + ruta", GD, 18),
+        ("🗺️", "Tarea · Mapa de mi barrio", "plano + ruta", GD, 18),
     ]
     cols, x0, y0 = 4, Inches(0.5), Inches(1.55)
     tw, th, gx, gy = Inches(3.0), Inches(2.45), Inches(0.14), Inches(0.2)

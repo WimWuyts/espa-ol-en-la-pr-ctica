@@ -446,7 +446,7 @@ P(f'''
   <div class="mini">
     <div class="se">Ruta de la unidad</div>
     <div class="steps">
-      <span><b>§0</b>Ponte al día</span><span><b>§1</b>Hay / estar</span><span><b>§2</b>Preposiciones</span><span><b>§3</b>Estar + gerundio</span><span><b>§4</b>El camino (imperativo)</span><span><b>§5</b>Ordinales</span><span><b>§6</b>Lectura</span><span><b>Taller</b>Diptongo/hiato</span><span><b>Cultura</b>La plaza y el barrio</span><span><b>Tarea</b>Mi barrio</span><span><b>Repaso</b>Semáforo</span>
+      <span><b>§0</b>Ponte al día</span><span><b>§1</b>Hay / estar</span><span><b>§2</b>Preposiciones</span><span><b>§3</b>Estar + gerundio</span><span><b>§4</b>El camino (imperativo)</span><span><b>§5</b>Ordinales</span><span><b>§6</b>Lectura</span><span><b>Taller</b>Diptongo/hiato</span><span><b>Cultura</b>La plaza y el barrio</span><span><b>Tarea</b>Mapa de mi barrio</span><span><b>Repaso</b>Semáforo</span>
     </div>
   </div>
   <div class="se" style="margin-top:8mm">Cómo trabajar esta unidad · leeswijzer</div>
@@ -1047,7 +1047,7 @@ P('</div>')  # page Cultura
 
 # ================= TAREA FINAL =================
 P('<div class="page"><div class="parada sec" style="border-top-color:var(--gd)">')
-P('<span class="num">✦</span><span class="pk" style="background:var(--gd)">Tarea final · Mi barrio</span>')
+P('<span class="num">✦</span><span class="pk" style="background:var(--gd)">Tarea final · Mapa de mi barrio</span>')
 P('<div class="intro"><b>ES:</b> Crea el <b>plano de tu barrio</b> (o de un barrio ideal) y da una <b>visita guiada</b>: di qué <b>hay</b>, dónde <b>está</b> cada cosa y <b>explica el camino</b> de tu casa a la plaza. <span class="gloss">Maak de plattegrond van je buurt en geef een rondleiding + de weg.</span></div>')
 P('<div class="route-note">🎯 <b>Communicatieve taak:</b> afzender = jij (de gids) · ontvanger = een bezoeker/nieuwe leerling · doel = je buurt voorstellen & de weg uitleggen · situatie = un paseo por el barrio · resultaat = ingevuld plano + gespeelde rondleiding.</div>')
 P(lpd(("3","doelgericht schrijven met een voorbeeld"), ("4","mondeling interageren (de weg)"), ("7","woordenschat casa/barrio"), ("8","hay/estar · preposiciones · imperativo")))
@@ -1069,7 +1069,7 @@ P('<table class="alf"><thead><tr><th>#</th><th>Frase</th></tr></thead><tbody>'
   '<tr><td>5</td><td><span class="wl full" style="margin:0"></span></td></tr></tbody></table>')
 P('<div class="se" style="margin-top:5mm">El camino de mi casa a la plaza <span class="gloss" style="font-size:8pt">· imperativo</span></div><div class="wbox sm"></div>')
 P(audiorow('<div class="ic">🎬</div><div><b>Graba la visita guiada</b> en la página digital (recorder + rúbrica).</div>',
-           qr("Escanea y graba", "Tarea · Mi barrio", seed=74)))
+           qr("Escanea y graba", "Tarea · Mapa de mi barrio", seed=74)))
 P('<div class="se" style="margin-top:5mm">Mini-encuesta: ¿qué hay en el barrio de la clase? <span class="gloss" style="font-size:8pt">— vraag 5 klasgenoten, teken de balken</span></div>')
 P(gustobars([("un parque", 60), ("una panadería", 50), ("una plaza", 40), ("un cine", 20)]))
 P('<p style="font-size:8.6pt" class="gloss">↳ vervang de voorbeeld-balken door je eigen resultaten (aantal /5 → %).</p>')

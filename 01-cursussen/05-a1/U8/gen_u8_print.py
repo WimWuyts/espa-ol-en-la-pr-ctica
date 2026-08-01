@@ -440,13 +440,13 @@ P(f'''
       <li><span class="ck">☐</span><div><span class="es">usar marcadores</span> (ya · todavía no · hoy · alguna vez · nunca) <span class="nl">tijdmarkeerders gebruiken</span></div></li>
       <li><span class="ck">☐</span><div><span class="es">hablar del tiempo</span> (hace sol/frío/calor · llueve · nieva) <span class="nl">over het weer praten</span></div></li>
       <li><span class="ck">☐</span><div><span class="es">nombrar viajes y transporte</span> (el avión, el tren, la maleta) <span class="nl">reizen & vervoer benoemen</span></div></li>
-      <li><span class="ck">☐</span><div><span class="es">escribir <b>«Mis vacaciones»</b></span> (reisverslag) <span class="nl">je reisverslag schrijven (eindtaak)</span></div></li>
+      <li><span class="ck">☐</span><div><span class="es">escribir <b>«Diario de viaje»</b></span> (reisverslag) <span class="nl">je reisverslag schrijven (eindtaak)</span></div></li>
     </ul>
   </div>
   <div class="mini">
     <div class="se">Ruta de la unidad</div>
     <div class="steps">
-      <span><b>§0</b>Ponte al día</span><span><b>§1</b>He hecho…</span><span><b>§2</b>Participios</span><span><b>§3</b>Marcadores</span><span><b>§4</b>¿Qué tiempo hace?</span><span><b>§5</b>Lectura</span><span><b>Taller</b>Tilde diacrítica</span><span><b>Cultura</b>Machu Picchu</span><span><b>Tarea</b>Mis vacaciones</span><span><b>Repaso</b>Semáforo</span>
+      <span><b>§0</b>Ponte al día</span><span><b>§1</b>He hecho…</span><span><b>§2</b>Participios</span><span><b>§3</b>Marcadores</span><span><b>§4</b>¿Qué tiempo hace?</span><span><b>§5</b>Lectura</span><span><b>Taller</b>Tilde diacrítica</span><span><b>Cultura</b>Machu Picchu</span><span><b>Tarea</b>Diario de viaje</span><span><b>Repaso</b>Semáforo</span>
     </div>
   </div>
   <div class="se" style="margin-top:8mm">Cómo trabajar esta unidad · leeswijzer</div>
@@ -958,7 +958,7 @@ P('</div>')  # page Cultura
 
 # ================= TAREA FINAL =================
 P('<div class="page"><div class="parada sec" style="border-top-color:var(--gd)">')
-P('<span class="num">✦</span><span class="pk" style="background:var(--gd)">Tarea final · Mis vacaciones</span>')
+P('<span class="num">✦</span><span class="pk" style="background:var(--gd)">Tarea final · Diario de viaje</span>')
 P('<div class="intro"><b>ES:</b> Escribe (o graba en vlog) el <b>diario de tus vacaciones</b>: ¿qué has hecho, dónde, con qué transporte y qué tiempo ha hecho? Usa el <b>perfecto compuesto</b>. <span class="gloss">Maak je reisverslag met perfecto compuesto — als tekst of vlog.</span></div>')
 P('<div class="route-note">🎯 <b>Communicatieve taak:</b> afzender = jij (de reiziger) · ontvanger = je familie/vrienden · doel = je reis navertellen · situatie = terug van vakantie · resultaat = een reisverslag (of vlog) met perfecto compuesto.</div>')
 P(lpd(("3","doelgericht schrijven met een voorbeeld"), ("4","mondeling vertellen (vlog)"), ("7","woordenschat viajes/clima"), ("8","perfecto compuesto · marcadores · el tiempo")))
@@ -977,7 +977,7 @@ P('<table class="alf"><thead><tr><th>Dato</th><th>Mi viaje</th></tr></thead><tbo
   '<tr><td>Tres cosas que has hecho</td><td><span class="wl lg"></span></td></tr></tbody></table>')
 P('<div class="se" style="margin-top:5mm">Mi diario de vacaciones <span class="gloss" style="font-size:8pt">· mín. 5 frases con perfecto compuesto</span></div><div class="wbox"></div>')
 P(audiorow('<div class="ic">🎬</div><div><b>Graba tu vlog</b> en la página digital (recorder + rúbrica).</div>',
-           qr("Escanea y graba", "Tarea · Mis vacaciones", seed=84)))
+           qr("Escanea y graba", "Tarea · Diario de viaje", seed=84)))
 P('<div class="se" style="margin-top:5mm">Mini-encuesta: ¿adónde ha viajado la clase? <span class="gloss" style="font-size:8pt">— vraag 5 klasgenoten, teken de balken</span></div>')
 P(gustobars([("a la playa", 60), ("a la montaña", 40), ("a otra ciudad", 50), ("a otro país", 30)]))
 P('<p style="font-size:8.6pt" class="gloss">↳ vervang de voorbeeld-balken door je eigen resultaten (aantal /5 → %).</p>')
