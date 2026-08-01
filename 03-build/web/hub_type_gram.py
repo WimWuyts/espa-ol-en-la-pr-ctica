@@ -690,6 +690,78 @@ SETS[("C6+", 2)] = [
          ]),
 ]
 
+SETS[("C6+", 7)] = [
+    dict(title="El imperativo — da un consejo", accents="strict",
+         desc="De <b>tú</b>-vorm van het bevel is meestal de <i>él</i>-vorm van het presente: "
+              "<i>come</i>, <i>bebe</i>, <i>recicla</i>. Acht werkwoorden zijn kort en "
+              "onregelmatig: <b>ve · haz · pon · ten · sal · di · ven · sé</b>.",
+         items=[
+             {"q": "___ (comer) más fruta y menos azúcar.", "ans": "Come", "hint": "C___"},
+             {"q": "___ (beber) dos litros de agua al día.", "ans": "Bebe", "hint": "B___"},
+             {"q": "___ (reciclar) el papel y el plástico.", "ans": "Recicla", "hint": "R______"},
+             {"q": "___ (hacer) deporte tres veces por semana.", "ans": "Haz", "hint": "H__",
+              "why": "hacer → haz"},
+             {"q": "___ (dormir) ocho horas.", "ans": "Duerme", "hint": "D_____", "why": "o → ue"},
+             {"q": "___ (apagar) la luz cuando sales.", "ans": "Apaga", "hint": "A____"},
+             {"q": "___ (ser) constante: un poco cada día.", "ans": "Sé", "hint": "S_",
+              "why": "ser → sé, mét tilde"},
+             {"q": "___ (salir) a caminar después de comer.", "ans": "Sal", "hint": "S__",
+              "why": "salir → sal"},
+             {"q": "___ (decir) que no al estrés.", "ans": "Di", "hint": "D_", "why": "decir → di"},
+             {"q": "___ (venir) al instituto en bici.", "ans": "Ven", "hint": "V__",
+              "why": "venir → ven"},
+             {"q": "___ (proteger) los árboles del barrio.", "ans": "Protege", "hint": "P______"},
+             {"q": "___ (evitar) las botellas de plástico.", "ans": "Evita", "hint": "E____"},
+         ]),
+    dict(title="El imperativo + pronombre — ¡y la tilde!", accents="strict",
+         desc="Het pronombre plakt <b>achteraan</b> vast. Daardoor schuift de klemtoon en "
+              "moet er vaak een <b>tilde</b> bij: <i>cuida</i> + <i>te</i> → <b>cuídate</b>. "
+              "Bij een woord van één lettergreep hoeft het niet: <i>haz</i> + <i>lo</i> → "
+              "<b>hazlo</b>.",
+         items=[
+             {"q": "cuidar + te → ___", "ans": "cuídate", "hint": "c______",
+              "why": "esdrújula → tilde"},
+             {"q": "mover + te → ___", "ans": "muévete", "hint": "m______",
+              "why": "o → ue én esdrújula → tilde"},
+             {"q": "reciclar + lo → ___", "ans": "recíclalo", "hint": "r________",
+              "why": "sobresdrújula → altijd tilde"},
+             {"q": "beber + la (el agua) → ___", "ans": "bébela", "hint": "b_____"},
+             {"q": "comer + lo → ___", "ans": "cómelo", "hint": "c_____"},
+             {"q": "hacer + lo → ___", "ans": "hazlo", "hint": "h____",
+              "why": "haz is één lettergreep → hazlo, llana op klinker, géén tilde"},
+             {"q": "decir + me → ___", "ans": "dime", "hint": "d___",
+              "why": "di is één lettergreep → dime, géén tilde"},
+             {"q": "poner + lo → ___", "ans": "ponlo", "hint": "p____", "why": "pon → ponlo, géén tilde"},
+             {"q": "relajar + te → ___", "ans": "relájate", "hint": "r_______"},
+             {"q": "lavar + te (las manos) → ___", "ans": "lávate", "hint": "l_____"},
+             {"q": "evitar + lo → ___", "ans": "evítalo", "hint": "e______"},
+             {"q": "ahorrar + la (el agua) → ___", "ans": "ahórrala", "hint": "a_______"},
+         ]),
+    dict(title="Los conectores — une tus argumentos", accents="soft",
+         desc="Vier verbindingswoorden met elk hun eigen werk: <b>porque</b> geeft de reden · "
+              "<b>por eso</b> het gevolg · <b>además</b> voegt toe · <b>sin embargo</b> zet er "
+              "iets tegenover. En let op de klassieke valstrik: «dus» is <b>por eso</b> of "
+              "<b>así que</b>, nooit <i>luego</i>.",
+         items=[
+             {"q": "Reciclo ___ quiero cuidar el planeta.", "ans": "porque", "why": "reden → porque"},
+             {"q": "No hay autobús; ___ voy en bici.", "ans": "por eso", "why": "gevolg → por eso"},
+             {"q": "El deporte es sano. ___, te ayuda a dormir mejor.", "ans": "Además",
+              "why": "extra argument → además"},
+             {"q": "Comer sano cuesta tiempo. ___, es más barato a la larga.", "ans": "Sin embargo",
+              "why": "tegenstelling → sin embargo"},
+             {"q": "Bebo mucha agua ___ hace calor.", "ans": "porque"},
+             {"q": "Tengo mucho estrés; ___ voy a caminar cada tarde.", "ans": "por eso"},
+             {"q": "El plástico contamina. ___, tarda cientos de años en desaparecer.",
+              "ans": "Además"},
+             {"q": "Me gusta la carne. ___, como menos que antes.", "ans": "Sin embargo"},
+             {"q": "Por un lado es cómodo; ___ otro lado, es caro.", "ans": "por",
+              "why": "vaste tweeling: por un lado… por otro lado…"},
+             {"q": "No fumo ___ es malo para la salud.", "ans": "porque"},
+             {"q": "La ciudad tiene mucho tráfico; ___ el aire está contaminado.", "ans": "por eso"},
+             {"q": "Apago la luz al salir. ___, desenchufo el cargador.", "ans": "Además"},
+         ]),
+]
+
 SETS[("C6+", 6)] = [
     dict(title="El imperfecto — cómo era antes", accents="strict",
          desc="De tijd van «vroeger deed ik». <b>-ar</b> → -aba · <b>-er/-ir</b> → -ía. "

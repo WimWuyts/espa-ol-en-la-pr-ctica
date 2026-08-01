@@ -1616,6 +1616,126 @@ C5_U7 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C6+ · U7 «¡Opina y cuídate!» — parada Costa Rica
+# Tekstsoort: carta al director (ingezonden brief). Nieuw genre en de natuurlijke
+# plaats voor de conectores: iemand die het niet eens is met een besluit en dat
+# stap voor stap opbouwt — porque · además · sin embargo · por eso.
+# De unit heeft al een tekst met tien tips (§5), dus hier bewust géén lijstje.
+# Het luisterfragment is een debat: dezelfde functie, maar gesproken en met
+# tegenspraak.
+# ---------------------------------------------------------------------------
+C6P_U7 = {
+    "id": "C6P-U7-LEC-01",
+    "ancla": "c6p-u7-lec-01",
+    "titulo": "Carta al director: el patio de nuestro instituto",
+    "tipo": "carta al director (opinión de una lectora)",
+    "emisor": "Sofía Vargas, alumna de sexto",
+    "receptor": "El periódico local de San José",
+    "objetivo": "Salvar los cuatro árboles del patio",
+    "prediccion": {
+        "q": "Kijk eerst alleen naar de aanhef «Señor director», de handtekening en de "
+             "verbindingswoorden in vet. Wat wil deze tekst?",
+        "opts": ["Iemand overtuigen", "Iets uitleggen zonder mening", "Iets verkopen"],
+        "ans": "Iemand overtuigen",
+        "why": "Een ingezonden brief verdedigt een standpunt.",
+    },
+    "texto": [
+        ["titulo", "✍️ CARTA AL DIRECTOR"],
+        ["lema", "San José, Costa Rica · sección «La voz de los lectores»"],
+        ["p", "Señor director: le escribo porque el mes que viene van a talar los cuatro "
+              "árboles del patio de mi instituto. Quieren poner un parqueo para los profesores. "
+              "Creo que es un error y voy a explicar por qué."],
+        ["p", "Primero, por la salud. En San José hace mucho calor y esos árboles son la única "
+              "sombra del patio. <b>Sin embargo</b>, en el plan nuevo no hay ni un árbol. "
+              "¿Dónde vamos a estar al mediodía?"],
+        ["p", "<b>Además</b>, esos árboles no son cualquier árbol: son guanacastes, el árbol "
+              "nacional. Los plantaron los alumnos hace treinta años. <b>Por eso</b> para nosotros "
+              "no son un adorno, son parte de la escuela."],
+        ["aviso", ["🤝 UNA PROPUESTA, NO SOLO UNA QUEJA",
+                   "No estoy en contra del parqueo. Los profesores también necesitan un lugar "
+                   "para el carro. Pero hay un terreno vacío detrás del gimnasio. Ahí caben "
+                   "veinte carros y no hay que cortar nada."]],
+        ["p", "Costa Rica es famosa en el mundo entero por proteger su naturaleza. Está muy "
+              "bien decirlo en los folletos. Pero la naturaleza empieza en el patio de una "
+              "escuela, <b>porque</b> ahí es donde los niños aprenden a cuidarla."],
+        ["firma", "Sofía Vargas, alumna de sexto · Instituto Nacional de San José"],
+    ],
+    "traduccion": "BRIEF AAN DE HOOFDREDACTEUR — San José, Costa Rica, rubriek «De stem van de "
+                  "lezers». Geachte heer: ik schrijf u omdat ze volgende maand de vier bomen op "
+                  "de speelplaats van mijn school gaan omhakken. Ze willen er een parking voor "
+                  "de leerkrachten van maken. Ik vind dat een vergissing en ik ga uitleggen "
+                  "waarom. Ten eerste, om de gezondheid. In San José is het erg warm en die "
+                  "bomen zijn de enige schaduw op de speelplaats. Toch staat er in het nieuwe "
+                  "plan geen enkele boom. Waar moeten wij 's middags staan? Bovendien zijn dat "
+                  "geen zomaar bomen: het zijn guanacastes, de nationale boom. Leerlingen hebben "
+                  "ze dertig jaar geleden geplant. Daarom zijn ze voor ons geen versiering, maar "
+                  "een deel van de school. EEN VOORSTEL, GEEN KLACHT: ik ben niet tegen de "
+                  "parking. De leerkrachten hebben ook een plek voor hun auto nodig. Maar "
+                  "achter de sporthal ligt een leeg terrein. Daar passen twintig auto's en hoeft "
+                  "er niets gekapt te worden. Costa Rica is wereldwijd bekend omdat het zijn "
+                  "natuur beschermt. Dat staat mooi in de folders. Maar de natuur begint op de "
+                  "speelplaats van een school, want daar leren kinderen ervoor te zorgen.",
+    "global": {
+        "q": "¿Qué quiere conseguir Sofía con esta carta?",
+        "opts": ["Salvar los árboles del patio", "Construir un gimnasio nuevo",
+                 "Prohibir el carro a los profesores"],
+        "ans": "Salvar los árboles del patio",
+    },
+    "escanear": [
+        {"q": "¿Cuántos árboles quieren talar? (en cifras)", "ans": "4",
+         "alt": ["cuatro", "cuatro árboles"], "why": "«los cuatro árboles del patio»"},
+        {"q": "¿Qué quieren poner en su lugar?", "ans": "un parqueo",
+         "alt": ["parqueo", "un parking", "un aparcamiento"],
+         "why": "«Quieren poner un parqueo para los profesores»"},
+        {"q": "¿Cómo se llama el árbol nacional de Costa Rica?", "ans": "el guanacaste",
+         "alt": ["guanacaste", "guanacastes", "el guanacastes"],
+         "why": "«son guanacastes, el árbol nacional»"},
+        {"q": "¿Hace cuántos años los plantaron? (en cifras)", "ans": "30",
+         "alt": ["treinta", "treinta años", "hace treinta años"],
+         "why": "«Los plantaron los alumnos hace treinta años»"},
+        {"q": "¿Dónde propone Sofía poner el parqueo?", "ans": "detrás del gimnasio",
+         "alt": ["detrás del gimnasio", "el terreno vacío", "un terreno vacío"],
+         "why": "«hay un terreno vacío detrás del gimnasio»"},
+    ],
+    "vf": [
+        {"q": "En el plan nuevo hay árboles.", "ans": False,
+         "prueba": "en el plan nuevo no hay ni un árbol"},
+        {"q": "Sofía está en contra del parqueo.", "ans": False, "prueba": "no estoy en contra del parqueo"},
+        {"q": "Los árboles dan la única sombra del patio.", "ans": True,
+         "prueba": "son la única sombra del patio"},
+        {"q": "En el terreno de detrás del gimnasio caben veinte carros.", "ans": True,
+         "prueba": "ahí caben veinte carros"},
+        {"q": "Los árboles los plantó el ayuntamiento.", "ans": False,
+         "prueba": "los plantaron los alumnos"},
+    ],
+    "contexto": [
+        {"q": "«talar» — ¿qué van a hacer con los árboles?",
+         "opts": ["Ze omhakken", "Ze verplanten", "Ze snoeien"], "ans": "Ze omhakken",
+         "why": "Er komt een parking in de plaats; de brief spreekt van «cortar»."},
+        {"q": "«Sin embargo» — ¿qué hace esta palabra en la frase?",
+         "opts": ["Ze zet er iets tegenover", "Ze geeft de reden", "Ze somt op"],
+         "ans": "Ze zet er iets tegenover",
+         "why": "Het is warm én er is schaduw nodig — maar het plan voorziet niets."},
+        {"q": "«Por eso» — ¿qué introduce?",
+         "opts": ["het gevolg", "de reden", "een tegenstelling"], "ans": "het gevolg",
+         "why": "Omdat leerlingen ze plantten, zijn ze deel van de school. Let op: «dus» is "
+                "nooit «luego»."},
+        {"q": "«Ahí caben veinte carros» — ¿qué significa «caber»?",
+         "opts": ["erin passen", "vallen", "kopen"], "ans": "erin passen",
+         "why": "Het gaat over de ruimte op het lege terrein."},
+    ],
+    "produccion": {
+        "prompt": "Escribe tu propia carta al director (7–8 frases) sobre algo que quieres "
+                  "cambiar en tu instituto o en tu barrio: di qué pasa, da dos argumentos con "
+                  "porque y además, pon una objeción con sin embargo, cierra con por eso y "
+                  "termina con una propuesta concreta.",
+        "modelo": "Señor director: le escribo porque… Primero,… Además,… Sin embargo,… "
+                  "Por eso propongo…",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
          ("C5", 2): C5_U2, ("C6+", 2): C6P_U2,
@@ -1623,7 +1743,7 @@ TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 4): C5_U4, ("C6+", 4): C6P_U4,
          ("C5", 5): C5_U5, ("C6+", 5): C6P_U5,
          ("C5", 6): C5_U6, ("C6+", 6): C6P_U6,
-         ("C5", 7): C5_U7}
+         ("C5", 7): C5_U7, ("C6+", 7): C6P_U7}
 
 
 def _texto_plano(t):

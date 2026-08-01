@@ -13,6 +13,11 @@ from gen_u0_print import (CSS, AV, TU, MOCH, qr, audiorow, act, regla, guide, lp
                           pcard, steun, sortcols, actx, tarea_com, obsbox, machine, blocks, tree,
                           mirror, fmu, scaffold, zoom, clusters, colloc, scale, vpairs, mispal, xray,
                           gustobars, menu)
+import sys as _sys
+_sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
+import print_bloques as PB
+import lectura_data as LD
+import escucha_data as ED
 
 BODY = []
 def P(*x): BODY.extend(x)
@@ -400,6 +405,21 @@ P(actx(AN(), "Completa con el conector",
   apoyo="BANCO"))
 sec_close()
 
+# ================= §6 LECTURA · §7 ESCUCHA =================
+# Zelfde bron als de digitale hub (lectura_data / escucha_data): papier en scherm
+# kunnen zo niet uit elkaar lopen. Elk op een eigen bladzijde (§14).
+P('<div class="page"><div class="parada sec">')
+P('<span class="num">6</span><span class="pk">§6 · Lectura — «Carta al director»</span>')
+P('<div class="intro"><b>ES:</b> Una carta al director de verdad, con todos los conectores en su sitio. <b>No hace falta entenderlo todo</b> para seguir el argumento. <span class="gloss">Een echte ingezonden brief, met alle verbindingswoorden op hun plaats. Je hoeft niet alles te begrijpen — volg de opbouw van het betoog.</span></div>')
+P(PB.lectura_print(LD.C6P_U7, "1"))
+P('</div>')
+
+P('<div class="page"><div class="parada sec">')
+P('<span class="num">7</span><span class="pk">§7 · Escucha — «En la consulta»</span>')
+P('<div class="intro"><b>ES:</b> Mateo duerme mal y recibe cuatro consejos; uno no lo acepta. <b>Escucha primero, escribe después.</b> <span class="gloss">Mateo slaapt slecht en krijgt vier adviezen; eentje weigert hij. Eerst luisteren, dan schrijven; het transcript staat online en gaat pas open ná de taken.</span></div>')
+P(PB.escucha_print(ED.C6P_U7, "1"))
+P('</div>')
+
 # ================= CULTURA =================
 sec_open("C", "Cultura · Costa Rica y la «pura vida»", 'Costa Rica es un país especial: <b>no tiene ejército</b> desde 1948, es líder mundial en <b>ecoturismo</b> y protege una <b>biodiversidad</b> enorme (¡el 5 % de las especies del planeta!). Su lema: «<b>pura vida</b>» — una forma de saludar, dar las gracias y decir que todo va bien. <span class="gloss">Costa Rica: geen leger, ecotoerisme, enorme biodiversiteit, en het motto «pura vida».</span>',
         lpd(("5","identiteit in diversiteit: Costa Rica")))
@@ -559,7 +579,7 @@ EDITBAR = '''
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Español en la práctica · C6+ U7 ¡Opina y cuídate!</title><style>'
-        + CSS + CSS_OVR + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
+        + CSS + CSS_OVR + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/C6plus_U7.html"
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, "·", len(HTML), "bytes ·", _AN[0], "genummerde oefeningen (excl. V.1–V.5)")

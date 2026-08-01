@@ -1269,6 +1269,101 @@ C5_U7 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C6+ · U7 — consulta médica. De leestekst van deze unit is een ingezonden brief
+# vol argumenten; hier krijgt de leerling het tegendeel: een gesprek waarin
+# iemand adviezen krijgt en er eentje van weigert. Imperativo mét pronombre in
+# levend gebruik (cuídate, muévete, bébela) en één moment van tegenspraak.
+# Laatste luisterfragment van de route — bewust een alledaagse situatie.
+# ---------------------------------------------------------------------------
+C6P_U7 = {
+    "id": "C6P-U7-ESC-01",
+    "ancla": "c6p-u7-esc-01",
+    "titulo": "En la consulta",
+    "audio": "audio/C6plus_U7.mp3",
+    "situacion": {
+        "lugar": "El consultorio del instituto, San José de Costa Rica",
+        "quien": "La doctora Solano y Mateo, que duerme mal",
+        "que": "Mateo cuenta su problema y recibe consejos; uno no le gusta",
+        "claves": ["¿qué te pasa?", "cuídate · muévete", "es importante + infinitivo"],
+    },
+    "guion": [
+        {"who": "Doctora", "es": "Buenos días, Mateo. Siéntate. ¿Qué te pasa?",
+         "nl": "Goedemorgen Mateo. Ga zitten. Wat scheelt er?"},
+        {"who": "Mateo", "es": "Duermo fatal. Me acuesto a las once, pero no me duermo hasta "
+                               "las dos.",
+         "nl": "Ik slaap heel slecht. Ik ga om elf uur naar bed, maar ik val pas om twee uur "
+               "in slaap."},
+        {"who": "Doctora", "es": "¿Y qué haces en la cama hasta las dos?",
+         "nl": "En wat doe je tot twee uur in bed?"},
+        {"who": "Mateo", "es": "El móvil, claro. Series, mensajes… un poco de todo.",
+         "nl": "Mijn gsm natuurlijk. Series, berichten… van alles wat."},
+        {"who": "Doctora", "es": "Ahí está el problema. Primer consejo: deja el móvil fuera del "
+                                 "cuarto. Cárgalo en la cocina.",
+         "nl": "Daar zit het probleem. Eerste advies: laat je gsm buiten je kamer. Laad hem op "
+               "in de keuken."},
+        {"who": "Mateo", "es": "¿Fuera del cuarto? Uf. ¿Y el despertador?",
+         "nl": "Buiten de kamer? Oef. En mijn wekker dan?"},
+        {"who": "Doctora", "es": "Compra un despertador de tres euros. Segundo consejo: "
+                                 "muévete. ¿Haces deporte?",
+         "nl": "Koop een wekker van drie euro. Tweede advies: beweeg. Doe je aan sport?"},
+        {"who": "Mateo", "es": "Antes jugaba fútbol, pero ahora no tengo tiempo.",
+         "nl": "Vroeger speelde ik voetbal, maar nu heb ik geen tijd."},
+        {"who": "Doctora", "es": "No hace falta un equipo. Camina media hora al día. "
+                                 "Y por la tarde, nada de café.",
+         "nl": "Je hebt geen ploeg nodig. Wandel een half uur per dag. En 's namiddags geen "
+               "koffie."},
+        {"who": "Mateo", "es": "Eso sí que no. El café de la tarde no lo dejo.",
+         "nl": "Dát nu net niet. Mijn namiddagkoffie geef ik niet op."},
+        {"who": "Doctora", "es": "Está bien, negociamos: uno, y antes de las cuatro. "
+                                 "Es importante beber agua, además. Dos litros al día.",
+         "nl": "Goed, we onderhandelen: eentje, en vóór vier uur. Het is trouwens belangrijk om "
+               "water te drinken. Twee liter per dag."},
+        {"who": "Mateo", "es": "Vale. Móvil fuera, caminar, un café antes de las cuatro y agua.",
+         "nl": "Oké. Gsm buiten, wandelen, één koffie vóór vier uur en water."},
+        {"who": "Doctora", "es": "Exacto. Prueba dos semanas y vuelve. Cuídate, Mateo.",
+         "nl": "Precies. Probeer het twee weken en kom terug. Zorg goed voor jezelf, Mateo."},
+    ],
+    "global": {
+        "q": "¿De qué hablan la doctora y Mateo?",
+        "opts": ["De por qué duerme mal y de qué puede cambiar",
+                 "De una lesión de fútbol", "De un examen de biología"],
+        "ans": "De por qué duerme mal y de qué puede cambiar",
+        "why": "probleem → vier adviezen → afspraak",
+    },
+    "detalle": [
+        {"q": "¿A qué hora se duerme Mateo?", "opts": ["A las dos", "A las once", "A las cuatro"],
+         "ans": "A las dos", "why": "«no me duermo hasta las dos»"},
+        {"q": "¿Dónde tiene que cargar el móvil?",
+         "opts": ["En la cocina", "En su cuarto", "En el instituto"], "ans": "En la cocina",
+         "why": "«Cárgalo en la cocina»"},
+        {"q": "¿Cuánto tiene que caminar al día?",
+         "opts": ["Media hora", "Dos horas", "Diez minutos"], "ans": "Media hora",
+         "why": "«Camina media hora al día»"},
+        {"q": "¿Qué consejo no acepta Mateo?",
+         "opts": ["Dejar el café de la tarde", "Caminar cada día", "Beber agua"],
+         "ans": "Dejar el café de la tarde", "why": "«El café de la tarde no lo dejo»"},
+        {"q": "¿Cuánta agua tiene que beber al día?",
+         "opts": ["Dos litros", "Un litro", "Tres litros"], "ans": "Dos litros",
+         "why": "«Dos litros al día»"},
+    ],
+    "vf": [
+        {"q": "Mateo juega al fútbol ahora.", "ans": False, "prueba": "ahora no tengo tiempo"},
+        {"q": "La doctora acepta un café antes de las cuatro.", "ans": True,
+         "prueba": "uno, y antes de las cuatro"},
+        {"q": "Mateo tiene que volver a la consulta.", "ans": True,
+         "prueba": "prueba dos semanas y vuelve"},
+    ],
+    "produccion": {
+        "prompt": "Un amigo te dice que está siempre cansado. Graba cuatro consejos con el "
+                  "imperativo (uno con pronombre: cuídate · muévete · bébela) y explica cada "
+                  "uno con porque, además o por eso.",
+        "modo": "grabar",
+        "modelo": "Primero, … porque… Además, … Y sobre todo, cuídate: … Por eso…",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
          ("C5", 2): C5_U2, ("C6+", 2): C6P_U2,
@@ -1276,7 +1371,7 @@ TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 4): C5_U4, ("C6+", 4): C6P_U4,
          ("C5", 5): C5_U5, ("C6+", 5): C6P_U5,
          ("C5", 6): C5_U6, ("C6+", 6): C6P_U6,
-         ("C5", 7): C5_U7}
+         ("C5", 7): C5_U7, ("C6+", 7): C6P_U7}
 
 
 def controla():

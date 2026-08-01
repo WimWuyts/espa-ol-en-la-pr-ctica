@@ -10,9 +10,9 @@ Paarse vervolgcursus (C6+), Unidad 7 — **de laatste unit (P3-capstone)**. Hier
 
 | Bestand | Wat | Hoe gebruiken |
 |---|---|---|
-| **C6plus_U7.pdf** | Print-cursus (28 genummerde + tarea/★ + 5 V oefeningen) | Afdrukken/projecteren. Niet bewerkbaar. |
+| **C6plus_U7.pdf** | Print-cursus (34 blz., 28 genummerde + tarea/★ + 5 V oefeningen, plus §6 Lectura en §7 Escucha) | Afdrukken/projecteren. Niet bewerkbaar. |
 | **C6plus_U7_BEWERKBAAR.html** | Bewerkbare laag van de PDF | Chrome/Edge → **«Bewerken»** · **«Opslaan als PDF»** · **«Bewaar»**. |
-| **C6plus_U7_web.html** | Digitale hub (standalone, offline) | 7 tabbladen: Vocabulario (flip cards) · Gramática (imperativo · opinar · conectores, interactief) · Lectura · Juegos (12 spellen) · Hablar (opname) · Cultura (klikbare kaart, Costa Rica ★) · Extra. 100+ inline-oefeningen + 12 games met «↻ otra serie». |
+| **C6plus_U7_web.html** | Digitale hub (standalone, offline) | 8 tabbladen: Vocabulario (flip cards) · Gramática (imperativo · opinar · conectores, interactief) · Lectura · **Escuchar 🎧** · Juegos (12 spellen) · Hablar (opname) · Cultura (klikbare kaart, Costa Rica ★) · Extra. 100+ inline-oefeningen + 12 games met «↻ otra serie». |
 | **C6plus_U7_docente.pptx** | PowerPoint docent (21 dia's) | Vrije navigatie, oplossingen + didactiek in notities. Klik-onthul. |
 | **C6plus_U7_alumno.pptx** | PowerPoint leerling (20 dia's) | **F5**; elke klik onthult het volgende antwoord. |
 
@@ -24,6 +24,19 @@ Paarse vervolgcursus (C6+), Unidad 7 — **de laatste unit (P3-capstone)**. Hier
 - **Traditioneel × modern:** visueel-eerste grammatica (imperativo-machine · enclitic-bouwstenen · meningsframe · conector-schuiver) **náást** een klassieke oefenbatterij (gap-fill · substitutie · matching · dictee · ordenen · foutenkliniek · transformeren).
 - **Werkwoordsvormen nagerekend:** regelmatige imperativo (-a/-e); de 8 onregelmatige (ten/ven/pon/haz/di/sal/sé/ve); enclitic + accent (cuídate/recíclalo/dímelo); opinar met indicativo (creo que es/debemos).
 - Échte LPD-codes (III-Spa-d): salud/medio ambiente **7**, imperativo/argumentatie **8**, advies geven **3**, interactie (mening/akkoord) **4**, lezen/cultuur **1·2·5**.
+
+## Nieuw in deze ronde (1 augustus)
+
+- **70 typvelden** waar de leerling zelf schrijft, geen keuzelijst: 34 in *Vocabulario*, 36 in *Gramática*. De drie grammatica-drills van deze unidad: **de imperativo** voor adviezen, inclusief de acht korte onregelmatige · **de imperativo mét pronombre**, waar de tilde de leerstof is (cuida + te → cuídate, maar haz + lo → hazlo) · **de conectores** porque, por eso, además en sin embargo, mét de valstrik dat «dus» nooit «luego» is.
+- **§6 Lectura — «Carta al director».** Een ingezonden brief over de bomen op de speelplaats: de natuurlijke plaats voor de conectores, want iemand bouwt hier stap voor stap een betoog op. De unit had al een tekst met tien tips (§5), dus bewust géén tweede lijstje. Nieuw genre.
+- **§7 Escucha — «En la consulta».** Mateo slaapt slecht en krijgt vier adviezen — eentje weigert hij. De imperativo mét pronombre in levend gebruik, en één moment van tegenspraak waar de leerling goed voor moet opletten. Zes treden, transcript pas ná de taken. Ander genre en andere inhoud dan de leestekst.
+- **Extra**-tabblad zonder «link volgt»: leerlingklare terugvalinhoud tot de bronnenlijst en de escape room van deze unidad er zijn.
+
+## Wat nog niet af is
+
+- De **QR-codes** in de print wijzen nog niet naar een echte pagina; dat gebeurt in één sweep zodra de site online staat.
+- Het **luisteren** gebruikt de stem van je browser (TTS). Zodra er echte opnames zijn, pikt de hub die automatisch op.
+- De **PowerPoints** in deze zip zijn nog de vorige versie. De dia's §5 Lectura en §6 Escucha staan in `03-build/pptx/gen_c6plus_u7_docente.py` klaar, maar konden in deze bouwsessie niet gerenderd worden: python-pptx is niet installeerbaar omdat de omgeving PyPI blokkeert (zie `03-build/SETUP_OMGEVING.md`). Eén keer het script draaien in een omgeving mét python-pptx volstaat.
 
 ## Kwaliteitscontrole (uitgevoerd)
 - Print: **div-balans == 0**, geen doorgesneden tabellen, geen bare slotblokken; bladspiegel gemeten (geen dunne pagina's).
