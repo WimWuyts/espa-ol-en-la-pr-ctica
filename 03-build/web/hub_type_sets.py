@@ -153,7 +153,11 @@ def _items_frase(vocab, n, skip):
         if not g:
             continue
         zin, weg = g
-        alt = [a for a in {strip_art(base), base, weg.lower()} if a and a != weg]
+        # sorted(): een set heeft geen vaste volgorde, dus zonder dit levert
+        # dezelfde bron bij elke build een andere `alt`-lijst op. Inhoudelijk
+        # maakt dat niets uit — alle alternatieven worden toch aanvaard — maar
+        # het zorgt voor spookverschillen in git bij elke herbouw.
+        alt = sorted(a for a in {strip_art(base), base, weg.lower()} if a and a != weg)
         items.append({"q": zin, "ans": weg, "alt": alt,
                       "hint": letterhint(weg), "why": w["nl"]})
         if len(items) >= n:
