@@ -911,12 +911,108 @@ C5_U5 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C6+ · U5 — visita guiada. De leestekst van deze unit is een leyenda: fictie,
+# met een moraal. Hier hoort de leerling ware geschiedenis met jaartallen en
+# moet hij die aan elkaar knopen — hetzelfde indefinido, een heel ander soort
+# vertellen. Ander genre: een gids die vragen krijgt uit de groep.
+# ---------------------------------------------------------------------------
+C6P_U5 = {
+    "id": "C6P-U5-ESC-01",
+    "ancla": "c6p-u5-esc-01",
+    "titulo": "Los que llegaron en barco",
+    "audio": "audio/C6plus_U5.mp3",
+    "situacion": {
+        "lugar": "Museo de la Inmigración, Buenos Aires — sala 2",
+        "quien": "Una guía y dos alumnos de intercambio",
+        "que": "La guía cuenta cómo llegaron los inmigrantes y de dónde salió el tango",
+        "claves": ["llegaron en barco", "entre 1880 y 1930", "por eso"],
+    },
+    "guion": [
+        {"who": "Guía", "es": "Bienvenidos a la sala dos. Aquí estamos en el antiguo Hotel de "
+                              "Inmigrantes.",
+         "nl": "Welkom in zaal twee. We staan hier in het vroegere Immigrantenhotel."},
+        {"who": "Guía", "es": "Entre mil ochocientos ochenta y mil novecientos treinta llegaron "
+                              "a Argentina millones de personas. La mayoría vino de Italia y de "
+                              "España.",
+         "nl": "Tussen 1880 en 1930 kwamen er miljoenen mensen naar Argentinië. De meesten "
+               "kwamen uit Italië en Spanje."},
+        {"who": "Alumno", "es": "¿Y dónde durmieron al llegar?",
+         "nl": "En waar sliepen ze als ze aankwamen?"},
+        {"who": "Guía", "es": "Aquí mismo. El Estado les dio cama y comida durante cinco días. "
+                              "Después buscaron trabajo y se mudaron a los conventillos.",
+         "nl": "Hier ter plaatse. De staat gaf hun vijf dagen lang bed en eten. Daarna zochten "
+               "ze werk en verhuisden ze naar de conventillos."},
+        {"who": "Alumna", "es": "¿Qué es un conventillo?", "nl": "Wat is een conventillo?"},
+        {"who": "Guía", "es": "Una casa grande con muchas familias. Cada familia tuvo una sola "
+                              "habitación, y todos compartieron el patio y la cocina.",
+         "nl": "Een groot huis met veel gezinnen. Elk gezin had één enkele kamer, en iedereen "
+               "deelde de binnenplaats en de keuken."},
+        {"who": "Guía", "es": "En ese patio nació buena parte del tango. Los vecinos "
+                              "escucharon la música de los otros y la mezclaron con la suya.",
+         "nl": "Op die binnenplaats is een groot deel van de tango ontstaan. De buren hoorden "
+               "elkaars muziek en mengden die met de hunne."},
+        {"who": "Alumno", "es": "¿Y el idioma? ¿No fue un problema?",
+         "nl": "En de taal? Was dat geen probleem?"},
+        {"who": "Guía", "es": "Fue un problema y una oportunidad. De esa mezcla salió el "
+                              "lunfardo. «Laburo», por ejemplo, es trabajo, y viene del italiano.",
+         "nl": "Het was een probleem én een kans. Uit die mengeling ontstond het lunfardo. "
+               "«Laburo» bijvoorbeeld betekent werk en komt uit het Italiaans."},
+        {"who": "Alumna", "es": "¿Y «pibe»?", "nl": "En «pibe»?"},
+        {"who": "Guía", "es": "Chico, muchacho. Todavía se usa todos los días en Buenos Aires.",
+         "nl": "Jongen, gast. Dat wordt nog elke dag gebruikt in Buenos Aires."},
+        {"who": "Guía", "es": "Por eso decimos que este museo no habla del pasado, sino de la "
+                              "ciudad de hoy. Pasamos a la sala tres.",
+         "nl": "Daarom zeggen we dat dit museum niet over het verleden gaat, maar over de stad "
+               "van vandaag. We gaan door naar zaal drie."},
+    ],
+    "global": {
+        "q": "¿De qué habla la guía?",
+        "opts": ["De cómo llegaron los inmigrantes y qué dejaron en la ciudad",
+                 "De cómo se construyó el puerto", "De un cantante de tango famoso"],
+        "ans": "De cómo llegaron los inmigrantes y qué dejaron en la ciudad",
+        "why": "aankomst → conventillo → tango → lunfardo",
+    },
+    "detalle": [
+        {"q": "¿Entre qué años llegaron millones de personas?",
+         "opts": ["Entre 1880 y 1930", "Entre 1780 y 1830", "Entre 1930 y 1980"],
+         "ans": "Entre 1880 y 1930", "why": "«Entre mil ochocientos ochenta y mil novecientos treinta»"},
+        {"q": "¿De qué dos países vino la mayoría?",
+         "opts": ["De Italia y de España", "De Francia y de Portugal", "De Alemania y de Polonia"],
+         "ans": "De Italia y de España", "why": "«vino de Italia y de España»"},
+        {"q": "¿Cuántos días les dio el Estado cama y comida?",
+         "opts": ["Cinco", "Quince", "Cincuenta"], "ans": "Cinco",
+         "why": "«durante cinco días»"},
+        {"q": "¿Qué compartieron las familias del conventillo?",
+         "opts": ["El patio y la cocina", "La habitación", "El trabajo"],
+         "ans": "El patio y la cocina", "why": "«todos compartieron el patio y la cocina»"},
+        {"q": "¿Qué significa «laburo»?", "opts": ["Trabajo", "Chico", "Casa"], "ans": "Trabajo",
+         "why": "«Laburo», por ejemplo, es trabajo"},
+    ],
+    "vf": [
+        {"q": "Cada familia tuvo su propia cocina.", "ans": False,
+         "prueba": "todos compartieron el patio y la cocina"},
+        {"q": "El lunfardo nació de la mezcla de idiomas.", "ans": True,
+         "prueba": "de esa mezcla salió el lunfardo"},
+        {"q": "La palabra «pibe» ya no se usa.", "ans": False,
+         "prueba": "todavía se usa todos los días"},
+    ],
+    "produccion": {
+        "prompt": "Sé tú la guía de una sala sobre tu propia ciudad o familia. Graba cinco "
+                  "frases en indefinido: quién llegó, cuándo, de dónde, dónde vivió y qué dejó "
+                  "(una comida, una palabra, una costumbre).",
+        "modo": "grabar",
+        "modelo": "Mi… llegó en… Vino de… Vivió en… Trabajó de… Por eso, hoy en mi casa…",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
          ("C5", 2): C5_U2, ("C6+", 2): C6P_U2,
          ("C5", 3): C5_U3, ("C6+", 3): C6P_U3,
          ("C5", 4): C5_U4, ("C6+", 4): C6P_U4,
-         ("C5", 5): C5_U5}
+         ("C5", 5): C5_U5, ("C6+", 5): C6P_U5}
 
 
 def controla():

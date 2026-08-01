@@ -10,9 +10,9 @@ Paarse vervolgcursus (C6+), Unidad 5. Bouwt de kern-verleden tijd (indefinido) e
 
 | Bestand | Wat | Hoe gebruiken |
 |---|---|---|
-| **C6plus_U5.pdf** | Print-cursus (29 genummerde + 4 ★/tarea + 5 V oefeningen) | Afdrukken/projecteren. Niet bewerkbaar. |
+| **C6plus_U5.pdf** | Print-cursus (36 blz., 29 genummerde + 4 ★/tarea + 5 V oefeningen, plus §6 Lectura en §7 Escucha) | Afdrukken/projecteren. Niet bewerkbaar. |
 | **C6plus_U5_BEWERKBAAR.html** | Bewerkbare laag van de PDF | Chrome/Edge → **«Bewerken»** · **«Opslaan als PDF»** · **«Bewaar»**. |
-| **C6plus_U5_web.html** | Digitale hub (standalone, offline) | 7 tabbladen: Vocabulario (flip cards) · Gramática (indefinido · fuertes · se lo, interactief) · Lectura · Juegos (12 spellen) · Hablar (opname) · Cultura (klikbare kaart, Argentina ★ persona) · Extra. 100+ inline-oefeningen + 12 games met «↻ otra serie». |
+| **C6plus_U5_web.html** | Digitale hub (standalone, offline) | 8 tabbladen: Vocabulario (flip cards) · Gramática (indefinido · fuertes · se lo, interactief) · Lectura · **Escuchar 🎧** · Juegos (12 spellen) · Hablar (opname) · Cultura (klikbare kaart, Argentina ★ persona) · Extra. 100+ inline-oefeningen + 12 games met «↻ otra serie». |
 | **C6plus_U5_docente.pptx** | PowerPoint docent (21 dia's) | Vrije navigatie, oplossingen + didactiek in notities. Klik-onthul. |
 | **C6plus_U5_alumno.pptx** | PowerPoint leerling (20 dia's) | **F5**; elke klik onthult het volgende antwoord. |
 
@@ -24,6 +24,19 @@ Paarse vervolgcursus (C6+), Unidad 5. Bouwt de kern-verleden tijd (indefinido) e
 - **Traditioneel × modern:** visueel-eerste grammatica (indefinido-machine · fuertes-paren · se lo-vervangingskaart) **náást** een klassieke oefenbatterij (gap-fill · substitutie · matching · dictee · ordenen · foutenkliniek · transformeren).
 - **Werkwoordsvormen nagerekend:** regelmatige indefinido (-é/-ó, -í/-ió); sterke vormen (fue/hizo/tuvo/estuvo/dijo/vino/dio/vio); se lo/se la-combinaties; yo-spelling (busqué/llegué/empecé).
 - Échte LPD-codes (III-Spa-d): biografía **7·6**, indefinido/se lo **8**, vertellen **3**, interactie **4**, literatuur **6**, lezen **1·2·5**, cultuur **5**.
+
+## Nieuw in deze ronde (1 augustus)
+
+- **70 typvelden** waar de leerling zelf schrijft, geen keuzelijst: 34 in *Vocabulario*, 36 in *Gramática*. De drie grammatica-drills van deze unidad: **het indefinido regelmatig** (waar de tilde de leerstof ís: hablo ↔ habló) · **de negen pretéritos fuertes**, die juist géén tilde dragen · **se lo / se la**, waar le en les vóór lo/la altijd se worden.
+- **§6 Lectura — «La leyenda de la yerba mate».** Een Guaraní-legende, volledig in het indefinido — het genre waar die tijd thuishoort. Bewust een traditioneel verhaal en geen biografie van een echt persoon: echte figuren horen in Cultura. Nieuw genre.
+- **§7 Escucha — «Los que llegaron en barco».** Een rondleiding in het Immigratiemuseum van Buenos Aires: ware geschiedenis met jaartallen, waar de leestekst fictie met een moraal is. Zes treden, transcript pas ná de taken. Ander genre en andere inhoud dan de leestekst.
+- **Extra**-tabblad zonder «link volgt»: leerlingklare terugvalinhoud tot de bronnenlijst en de escape room van deze unidad er zijn.
+
+## Wat nog niet af is
+
+- De **QR-codes** in de print wijzen nog niet naar een echte pagina; dat gebeurt in één sweep zodra de site online staat.
+- Het **luisteren** gebruikt de stem van je browser (TTS). Zodra er echte opnames zijn, pikt de hub die automatisch op.
+- De **PowerPoints** in deze zip zijn nog de vorige versie. De dia's §5 Lectura en §6 Escucha staan in `03-build/pptx/gen_c6plus_u5_docente.py` klaar, maar konden in deze bouwsessie niet gerenderd worden: python-pptx is niet installeerbaar omdat de omgeving PyPI blokkeert (zie `03-build/SETUP_OMGEVING.md`). Eén keer het script draaien in een omgeving mét python-pptx volstaat.
 
 ## Kwaliteitscontrole (uitgevoerd)
 - Print: **div-balans == 0**, geen doorgesneden tabellen, geen bare slotblokken; bladspiegel gemeten (geen dunne pagina's) + visueel gecontroleerd.

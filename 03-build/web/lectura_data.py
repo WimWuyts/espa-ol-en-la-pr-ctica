@@ -1147,12 +1147,132 @@ C5_U5 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C6+ · U5 «Érase una vez» — parada Buenos Aires
+# Tekstsoort: leyenda. Nieuw genre en precies het genre waar het indefinido thuis
+# is: een verhaal met een keten van gebeurtenissen. Bewust een traditionele
+# leyenda en geen biografie van een echte persoon — echte figuren horen in
+# Cultura (CLAUDE.md §12). Het luisterfragment is een rondleiding in een museum.
+# Let op: het imperfecto komt pas in U6, dus het verhaal staat volledig in het
+# indefinido, met de tegenwoordige tijd voor de omkadering.
+# ---------------------------------------------------------------------------
+C6P_U5 = {
+    "id": "C6P-U5-LEC-01",
+    "ancla": "c6p-u5-lec-01",
+    "titulo": "La leyenda de la yerba mate",
+    "tipo": "leyenda guaraní",
+    "emisor": "La tradición oral guaraní, recogida por escrito",
+    "receptor": "Quien quiere saber de dónde viene el mate",
+    "objetivo": "Explicar el origen de una planta y de una costumbre",
+    "prediccion": {
+        "q": "Kijk eerst alleen naar de titel, de aanhef «Érase una vez» en het slot. "
+             "Wat voor tekst is dit?",
+        "opts": ["Een oude vertelling die iets verklaart", "Een nieuwsbericht",
+                 "Een gebruiksaanwijzing"],
+        "ans": "Een oude vertelling die iets verklaart",
+        "why": "«Érase una vez» is de vaste opening van een verhaal.",
+    },
+    "texto": [
+        ["titulo", "🌿 LA LEYENDA DE LA YERBA MATE"],
+        ["lema", "Un relato guaraní · Argentina y Paraguay"],
+        ["p", "Érase una vez, en el monte, un viejo cazador y su hija. Un día, todos los "
+              "vecinos se fueron a buscar tierras nuevas, pero el cazador no quiso dejar solo "
+              "el monte y se quedó allí con la niña."],
+        ["p", "Una tarde, Yasí, la luna, bajó del cielo con su amiga Araí, la nube. Las dos "
+              "tomaron forma de mujer y caminaron por el monte para ver de cerca aquel lugar."],
+        ["p", "De repente, un yaguareté salió de entre los árboles. El viejo cazador oyó el "
+              "ruido, corrió hacia las dos mujeres y las salvó. Después volvió a su casa y no "
+              "dijo nada a nadie."],
+        ["aviso", ["🌙 EL REGALO DE YASÍ",
+                   "Esa noche, Yasí entró en el sueño del cazador y le habló: «Nos salvaste la "
+                   "vida y no pediste nada. Por eso te dejo una planta nueva. Sus hojas dan una "
+                   "bebida que une a las personas.»"]],
+        ["p", "A la mañana siguiente, el cazador y su hija encontraron delante de la casa un "
+              "árbol pequeño de hojas verdes. Prepararon la primera infusión y la compartieron "
+              "con todos los que pasaron por allí."],
+        ["p", "Por eso, hasta hoy, el mate no se toma solo: se pasa de mano en mano. "
+              "Compartirlo es el regalo, no la bebida."],
+        ["firma", "Relato tradicional guaraní · versión escolar"],
+    ],
+    "traduccion": "DE LEGENDE VAN DE YERBA MATE — een Guaraní-verhaal uit Argentinië en "
+                  "Paraguay. Er was eens, in het bos, een oude jager en zijn dochter. Op een dag "
+                  "trokken alle buren weg om nieuw land te zoeken, maar de jager wilde het bos "
+                  "niet alleen laten en bleef er met het meisje. Op een namiddag daalde Yasí, de "
+                  "maan, uit de hemel af met haar vriendin Araí, de wolk. De twee namen de "
+                  "gedaante van een vrouw aan en liepen door het bos om die plek van dichtbij te "
+                  "zien. Plots kwam er een jaguar tussen de bomen vandaan. De oude jager hoorde "
+                  "het geluid, liep naar de twee vrouwen toe en redde hen. Daarna ging hij naar "
+                  "huis en zei niets tegen niemand. HET GESCHENK VAN YASÍ: die nacht kwam Yasí "
+                  "in de droom van de jager en sprak hem toe: «Je hebt ons leven gered en je hebt "
+                  "niets gevraagd. Daarom laat ik je een nieuwe plant. Haar bladeren geven een "
+                  "drank die mensen verbindt.» De volgende ochtend vonden de jager en zijn "
+                  "dochter voor het huis een kleine boom met groene bladeren. Ze zetten het "
+                  "eerste aftreksel en deelden het met iedereen die voorbijkwam. Daarom wordt de "
+                  "mate tot vandaag niet alleen gedronken: hij gaat van hand tot hand. Het delen "
+                  "is het geschenk, niet de drank.",
+    "global": {
+        "q": "¿Qué explica esta leyenda?",
+        "opts": ["De dónde viene la yerba mate y por qué se comparte",
+                 "Cómo se cultiva la yerba mate hoy",
+                 "Por qué los guaraníes se fueron del monte"],
+        "ans": "De dónde viene la yerba mate y por qué se comparte",
+    },
+    "escanear": [
+        {"q": "¿Con quién vive el cazador?", "ans": "con su hija",
+         "alt": ["su hija", "la niña", "con la niña", "hija"], "why": "«un viejo cazador y su hija»"},
+        {"q": "¿Quién es Yasí?", "ans": "la luna", "alt": ["luna", "la luna"],
+         "why": "«Yasí, la luna»"},
+        {"q": "¿Quién es Araí?", "ans": "la nube", "alt": ["nube", "la nube"], "why": "«Araí, la nube»"},
+        {"q": "¿Qué animal aparece de repente?", "ans": "un yaguareté",
+         "alt": ["yaguareté", "yaguarete", "un jaguar", "jaguar"],
+         "why": "«un yaguareté salió de entre los árboles»"},
+        {"q": "¿Cuándo encontraron el árbol?", "ans": "a la mañana siguiente",
+         "alt": ["la mañana siguiente", "al día siguiente", "por la mañana"],
+         "why": "«A la mañana siguiente… encontraron… un árbol pequeño»"},
+    ],
+    "vf": [
+        {"q": "El cazador se fue con los vecinos.", "ans": False, "prueba": "se quedó allí con la niña"},
+        {"q": "El cazador contó a todo el mundo lo que pasó.", "ans": False,
+         "prueba": "no dijo nada a nadie"},
+        {"q": "Yasí le habló al cazador mientras dormía.", "ans": True,
+         "prueba": "yasí entró en el sueño del cazador"},
+        {"q": "El cazador pidió un regalo.", "ans": False, "prueba": "no pediste nada"},
+        {"q": "Compartieron la primera infusión con otras personas.", "ans": True,
+         "prueba": "la compartieron con todos los que pasaron"},
+    ],
+    "contexto": [
+        {"q": "«Érase una vez» — ¿cómo empieza este texto?",
+         "opts": ["Als een verhaal uit de oude doos", "Als een krantenbericht",
+                  "Als een uitnodiging"],
+         "ans": "Als een verhaal uit de oude doos",
+         "why": "Het is de vaste openingsformule, zoals ons «Er was eens»."},
+        {"q": "«tomaron forma de mujer» — ¿qué hicieron la luna y la nube?",
+         "opts": ["Ze veranderden in vrouwen", "Ze namen een foto", "Ze gaven iets weg"],
+         "ans": "Ze veranderden in vrouwen",
+         "why": "Erna lopen ze door het bos — ze hebben een lichaam gekregen."},
+        {"q": "«De repente» — ¿cómo pasó?",
+         "opts": ["plots, onverwacht", "langzaam", "elke dag opnieuw"], "ans": "plots, onverwacht",
+         "why": "Het markeert de omslag in het verhaal."},
+        {"q": "«se pasa de mano en mano» — ¿qué hacen con el mate?",
+         "opts": ["Ze geven hem aan elkaar door", "Ze verkopen hem", "Ze verbergen hem"],
+         "ans": "Ze geven hem aan elkaar door",
+         "why": "De laatste zin legt het uit: het delen is het geschenk."},
+    ],
+    "produccion": {
+        "prompt": "Escribe una leyenda corta (6–8 frases) que explique el origen de algo de tu "
+                  "región (una fiesta, una comida, un río, un nombre). Usa el indefinido y los "
+                  "conectores: érase una vez · un día · de repente · entonces · por eso.",
+        "modelo": "Érase una vez… Un día… De repente… Entonces… Al final… Por eso, hasta hoy…",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
          ("C5", 2): C5_U2, ("C6+", 2): C6P_U2,
          ("C5", 3): C5_U3, ("C6+", 3): C6P_U3,
          ("C5", 4): C5_U4, ("C6+", 4): C6P_U4,
-         ("C5", 5): C5_U5}
+         ("C5", 5): C5_U5, ("C6+", 5): C6P_U5}
 
 
 def _texto_plano(t):
