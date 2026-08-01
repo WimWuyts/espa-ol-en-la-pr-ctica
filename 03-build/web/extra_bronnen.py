@@ -266,7 +266,8 @@ BRONNEN[("C5", 2)] = [
     ("§1 · La familia y el verbo tener", [
         ("ProfeDeELE", "La familia — vocabulario y relaciones familiares",
          "https://www.profedeele.es/actividad/la-familia/"),
-        ("Arche-ELE", "La familia — vocabulario, árbol genealógico y audios",
+        ("Arche-ELE", "La familia — vocabulario, árbol genealógico y audios · "
+                      "sirve también para los posesivos y para la tarea final",
          "https://arche-ele.com/la-familia-vocabulario-family-spanish-vocabulary"),
         ("Más ProfeDeELE", "La familia — material extra y árboles genealógicos",
          "https://mas.profedeele.es/descarga-66"),
@@ -276,12 +277,10 @@ BRONNEN[("C5", 2)] = [
          "https://www.profedeele.es/actividad/presente-irregular/"),
     ]),
     ("§2 · Los posesivos — mi, tu, su, nuestro", [
-        ("Arche-ELE", "Los posesivos — mi, tu, su",
+        ("Arche-ELE", "Los posesivos — mi, tu, su · sirve también para la tarea final",
          "https://arche-ele.com/los-posesivos-mi-tu-su-ele-aprender-espanol"),
         ("Más ProfeDeELE", "Los posesivos — ficha de gramática",
          "https://mas.profedeele.es/descarga-320"),
-        ("Arche-ELE", "Los posesivos aplicados a la familia",
-         "https://arche-ele.com/la-familia-vocabulario-family-spanish-vocabulary"),
     ]),
     ("§3 · Los adjetivos — el físico y el carácter", [
         ("ProfeDeELE", "Descripción física",
@@ -307,14 +306,10 @@ BRONNEN[("C5", 2)] = [
         ("Más ProfeDeELE", "Los demostrativos — explicación y ejercicios (A1–A2)",
          "https://mas.profedeele.es/descarga-293-demostrativos-materiales-gramatica-a1-a2-ele"),
     ]),
-    ("Taller de lengua — la acentuación y los conectores", [
+    ("Taller de lengua — la acentuación, los conectores y el correo", [
         ("Arche-ELE", "La acentuación — agudas, llanas y esdrújulas",
          "https://arche-ele.com/la-acentuacion-en-espanol-agudas-llanas-esdrujulas"),
-        ("Más ProfeDeELE", "Manual de nivel A1 — conectores y ortografía",
-         "https://mas.profedeele.es/curso-nivel-a1"),
-    ]),
-    ("Escribir un correo — la lectura y la tarea final", [
-        ("Más ProfeDeELE", "Manual de nivel A1 — escribir un correo electrónico",
+        ("Más ProfeDeELE", "Manual de nivel A1 — conectores, ortografía y escribir un correo",
          "https://mas.profedeele.es/curso-nivel-a1"),
     ]),
     ("El cuerpo humano", [
@@ -333,117 +328,54 @@ BRONNEN[("C5", 2)] = [
         ("Más ProfeDeELE", "Frida Kahlo — material de cultura",
          "https://mas.profedeele.es/descarga-164"),
     ]),
-    ("Tarea final · «Álbum de familia»", [
-        ("Arche-ELE", "La familia — para preparar tu álbum",
-         "https://arche-ele.com/la-familia-vocabulario-family-spanish-vocabulary"),
-        ("Arche-ELE", "Describir a tu familia con posesivos",
-         "https://arche-ele.com/los-posesivos-mi-tu-su-ele-aprender-espanol"),
-    ]),
-    # Deze vier bracht de auteur samen als voorbereiding op de escape room. Ze
-    # herhalen bewust materiaal van hierboven: dit is de plaats waar de leerling
-    # álles van de unidad nog eens in één keer doorneemt.
-    ("Repaso de toda la unidad", [
-        ("ProfeDeELE", "Reconstruir un árbol genealógico",
-         "https://www.profedeele.es/actividad/la-familia/"),
-        ("Arche-ELE", "¿Quién es quién? — identificar a los miembros de la familia",
-         "https://arche-ele.com/la-familia-vocabulario-family-spanish-vocabulary"),
-        ("Arche-ELE", "Identificar a una persona por su físico y su carácter",
-         "https://arche-ele.com/descripciones-a1-fisicasydecaracter-en-espanol"),
-        ("Arche-ELE", "Ser frente a estar — repaso",
-         "https://arche-ele.com/ser-y-estar-gramatica-cognitiva-ele-diferencia"),
-    ]),
 ]
 
 BRONNEN[("C5", 3)] = [
     ("§1 · La hora — es la una / son las…", [
         ("ProfeDeELE", "La hora — ¿qué hora es?",
          "https://www.profedeele.es/actividad/la-hora/"),
-        ("Arche-ELE", "La hora — es la una frente a son las…",
+        ("Arche-ELE", "La hora — es la una frente a son las…, y los horarios de tren",
          "https://arche-ele.com/la-hora-time-que-hora-es-tienes-hora-ele"),
-        ("Más ProfeDeELE", "Manual de nivel A1 — la hora, ejercicios extra",
-         "https://mas.profedeele.es/curso-nivel-a1"),
     ]),
     ("§2 · La rutina y los verbos reflexivos", [
-        ("ProfeDeELE", "Las acciones habituales — y ponerlas en orden cronológico",
+        ("ProfeDeELE", "Las acciones habituales — ponerlas en orden cronológico · "
+                       "sirve también para la lectura, la cultura y la tarea final",
          "https://www.profedeele.es/actividad/acciones-habituales/"),
-        ("Arche-ELE", "La rutina diaria — con los verbos reflexivos",
+        ("Arche-ELE", "La rutina diaria con los verbos reflexivos · sirve también para la "
+                      "frecuencia, para la escucha y para la tarea final",
          "https://arche-ele.com/la-rutina-daily-routine-aprende-espanol-learn-spanish"),
         ("Arche-ELE", "Los pronombres reflexivos · nivel A1",
          "https://arche-ele.com/pronombres-reflexivos-1-nivel-a1"),
     ]),
     ("§3 · El presente irregular — el cambio de raíz", [
-        ("Arche-ELE", "El presente irregular — e→ie, o→ue, e→i",
+        ("Arche-ELE", "El presente irregular — e→ie, o→ue, e→i, y también hacer, ir y salir",
          "https://arche-ele.com/presente-irregular-indicativo-verbos-espanol"),
-        ("Más ProfeDeELE", "El presente irregular — explicación, audio y ejercicios",
+        ("Más ProfeDeELE", "El presente irregular — explicación, audio y ejercicios de conjugación",
          "https://mas.profedeele.es/descarga-101"),
-        ("Más ProfeDeELE", "Manual de nivel A1 — el presente irregular",
-         "https://mas.profedeele.es/curso-nivel-a1"),
     ]),
     ("§3b · hacer · ir · salir", [
-        ("Arche-ELE", "Conjugar hacer, ir y salir",
-         "https://arche-ele.com/presente-irregular-indicativo-verbos-espanol"),
-        ("Más ProfeDeELE", "Los irregulares — ejercicios de conjugación",
-         "https://mas.profedeele.es/descarga-101"),
         ("Más ProfeDeELE", "Los verbos irregulares — juegos de mesa",
          "https://mas.profedeele.es/descarga-92"),
     ]),
     ("§4 · La frecuencia, los días y los meses", [
-        ("Más ProfeDeELE", "Adverbios de frecuencia — siempre, normalmente, a veces, nunca",
+        ("Más ProfeDeELE", "Adverbios de frecuencia — siempre, normalmente, a veces, nunca · "
+                           "sirve también para leer un horario semanal",
          "https://mas.profedeele.es/descarga-286-adverbios-frecuencia-juegos-tarjetas"),
-        ("Arche-ELE", "La frecuencia aplicada a las costumbres diarias",
-         "https://arche-ele.com/la-rutina-daily-routine-aprende-espanol-learn-spanish"),
-        ("Arche-ELE", "Los días de la semana y los meses",
+        ("Arche-ELE", "Los días de la semana y los meses · sirve también para el chat de la lectura",
          "https://arche-ele.com/los-dias-y-los-meses-tiempo-semana-ano"),
         ("Más ProfeDeELE", "Días, meses y estaciones",
          "https://mas.profedeele.es/descarga-206"),
-        ("Más ProfeDeELE", "Manual de nivel A1 — días, meses y estaciones",
-         "https://mas.profedeele.es/curso-nivel-a1"),
     ]),
     ("Taller de lengua — la acentuación", [
         ("Arche-ELE", "La acentuación — agudas, llanas y esdrújulas",
          "https://arche-ele.com/la-acentuacion-en-espanol-agudas-llanas-esdrujulas"),
-        ("Más ProfeDeELE", "Manual de nivel A1 — la acentuación en la ortografía",
+        ("Más ProfeDeELE", "Manual de nivel A1 — la hora, el presente irregular, los días "
+                           "y la ortografía",
          "https://mas.profedeele.es/curso-nivel-a1"),
     ]),
-    ("Lectura — el horario y el chat", [
-        ("ProfeDeELE", "Reconstruir un horario con sus horas",
-         "https://www.profedeele.es/actividad/acciones-habituales/"),
-        ("Más ProfeDeELE", "Interpretar un horario semanal",
-         "https://mas.profedeele.es/descarga-286-adverbios-frecuencia-juegos-tarjetas"),
-        ("Arche-ELE", "Hablar de días y de citas — preparar el chat",
-         "https://arche-ele.com/los-dias-y-los-meses-tiempo-semana-ano"),
-    ]),
-    ("Escucha — la rutina y las horas", [
-        ("Arche-ELE", "Entender un horario y los momentos del día",
-         "https://arche-ele.com/la-rutina-daily-routine-aprende-espanol-learn-spanish"),
-    ]),
     ("Cultura · el horario español", [
-        ("ProfeDeELE", "Los horarios españoles y las costumbres diarias",
-         "https://www.profedeele.es/actividad/acciones-habituales/"),
-        ("Arche-ELE", "La rutina en un contexto español",
-         "https://arche-ele.com/la-rutina-daily-routine-aprende-espanol-learn-spanish"),
         ("Más ProfeDeELE", "Veranos y relojes",
          "https://mas.profedeele.es/descarga-200"),
-    ]),
-    ("Tarea final · «Un día en mi vida»", [
-        ("ProfeDeELE", "Las acciones habituales — para preparar tu día",
-         "https://www.profedeele.es/actividad/acciones-habituales/"),
-        ("Arche-ELE", "La rutina diaria — modelos para tu texto",
-         "https://arche-ele.com/la-rutina-daily-routine-aprende-espanol-learn-spanish"),
-    ]),
-    ("Repaso de toda la unidad", [
-        ("ProfeDeELE", "Poner un reloj parado en hora",
-         "https://www.profedeele.es/actividad/la-hora/"),
-        ("Arche-ELE", "Decir horas y horarios de tren",
-         "https://arche-ele.com/la-hora-time-que-hora-es-tienes-hora-ele"),
-        ("ProfeDeELE", "Ordenar las acciones del día",
-         "https://www.profedeele.es/actividad/acciones-habituales/"),
-        ("Arche-ELE", "Reconstruir los verbos reflexivos",
-         "https://arche-ele.com/pronombres-reflexivos-1-nivel-a1"),
-        ("Arche-ELE", "Resolver los cambios de raíz",
-         "https://arche-ele.com/presente-irregular-indicativo-verbos-espanol"),
-        ("Más ProfeDeELE", "Unir la frecuencia a un horario semanal",
-         "https://mas.profedeele.es/descarga-286-adverbios-frecuencia-juegos-tarjetas"),
     ]),
 ]
 

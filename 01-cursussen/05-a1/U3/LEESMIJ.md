@@ -58,7 +58,8 @@ Onder «✍️ Escribe tú — la gramática sin opciones», telkens twaalf item
   staan al in `gen_u3_docente.py` klaar, maar konden in deze bouwsessie niet gerenderd
   worden (zie `03-build/SETUP_OMGEVING.md`). Eén keer het script draaien in een omgeving
   mét python-pptx zet ze erin.
-- De **Extra**-tab bevat nu **34 links in 11 groepen** (ProfeDeELE · Más ProfeDeELE ·
-  Arche-ELE), geordend zoals de unit zelf. Het zijn 14 verschillende pagina's: sommige
-  dekken meerdere onderwerpen en staan daarom onder meer dan één kopje. De **escape room**
-  ontbreekt nog; zodra er een URL is, komt die bovenaan het tabblad.
+- De **Extra**-tab bevat nu **14 links in 7 groepen** (ProfeDeELE · Más ProfeDeELE ·
+  Arche-ELE), geordend zoals de unit zelf: elke pagina staat er precies één keer, onder
+  het onderwerp waar ze het meest bij helpt. Dient een pagina ook voor een ander
+  onderdeel, dan staat dat in de titel. De **escape room** ontbreekt nog; zodra er een
+  URL is, komt die bovenaan het tabblad.
