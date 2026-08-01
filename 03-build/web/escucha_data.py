@@ -1007,12 +1007,95 @@ C6P_U5 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C5 · U6 — en el probador. De leestekst van deze unit geeft tips om te wégen;
+# hier hoort de leerling twee vriendinnen die van mening verschíllen over wat
+# staat en wat niet. Geen transactie zoals in U5 (bestellen), maar meningen,
+# maten en een beslissing.
+# ---------------------------------------------------------------------------
+C5_U6 = {
+    "id": "C5-U6-ESC-01",
+    "ancla": "c5-u6-esc-01",
+    "titulo": "En el probador",
+    "audio": "audio/C5_U6.mp3",
+    "situacion": {
+        "lugar": "Una tienda de ropa en el centro, primer día de rebajas",
+        "quien": "Nina y Valen, y la dependienta",
+        "que": "Nina se prueba ropa y Valen le da su opinión",
+        "claves": ["¿me queda bien?", "esta / esa", "¿tienes una talla más?"],
+    },
+    "guion": [
+        {"who": "Nina", "es": "Valen, ¿me queda bien esta chaqueta verde?",
+         "nl": "Valen, staat dit groene jasje me goed?"},
+        {"who": "Valen", "es": "El color sí, pero te queda un poco ancha. ¿No hay una talla menos?",
+         "nl": "De kleur wel, maar hij zit een beetje wijd. Is er geen kleinere maat?"},
+        {"who": "Nina", "es": "Es la treinta y ocho. Voy a probarme la treinta y seis.",
+         "nl": "Dit is maat 38. Ik ga de 36 passen."},
+        {"who": "Dependienta", "es": "De la treinta y seis solo queda en negro y en rosa.",
+         "nl": "In maat 36 hebben we alleen nog zwart en roze."},
+        {"who": "Nina", "es": "En negro, entonces. ¿Y esos pantalones de rayas de ahí?",
+         "nl": "Dan zwart. En die gestreepte broek daar bij jou?"},
+        {"who": "Valen", "es": "¿Estos? Acabo de verlos. Cuestan veinticinco euros con el "
+                               "descuento.",
+         "nl": "Deze? Ik heb ze net gezien. Ze kosten vijfentwintig euro met de korting."},
+        {"who": "Nina", "es": "No están mal. Pero aquella falda del escaparate me gusta más.",
+         "nl": "Niet slecht. Maar dat rokje in de etalage vind ik mooier."},
+        {"who": "Valen", "es": "Esa es carísima y no está rebajada. Yo me llevo los pantalones.",
+         "nl": "Dat is peperduur en niet afgeprijsd. Ik neem de broek."},
+        {"who": "Nina", "es": "Vale. La chaqueta negra y los pantalones. ¿Cuánto es todo?",
+         "nl": "Oké. Het zwarte jasje en de broek. Hoeveel is dat samen?"},
+        {"who": "Dependienta", "es": "Cuarenta y siete euros. ¿En efectivo o con tarjeta?",
+         "nl": "Zevenenveertig euro. Cash of met de kaart?"},
+        {"who": "Nina", "es": "En efectivo. Es un truco: así veo lo que gasto.",
+         "nl": "Cash. Dat is een truc: zo zie ik wat ik uitgeef."},
+        {"who": "Valen", "es": "¡Y a ti todavía te queda dinero para un helado!",
+         "nl": "En jij houdt nog genoeg over voor een ijsje!"},
+    ],
+    "global": {
+        "q": "¿Qué hacen Nina y Valen?",
+        "opts": ["Nina se prueba ropa y Valen le aconseja", "Devuelven una chaqueta rota",
+                 "Buscan trabajo en la tienda"],
+        "ans": "Nina se prueba ropa y Valen le aconseja",
+        "why": "«¿me queda bien?» → opinie → beslissing",
+    },
+    "detalle": [
+        {"q": "¿Qué problema tiene la chaqueta verde?",
+         "opts": ["Le queda ancha", "Le queda corta", "El color no le gusta"],
+         "ans": "Le queda ancha", "why": "«te queda un poco ancha»"},
+        {"q": "¿En qué colores queda la talla treinta y seis?",
+         "opts": ["En negro y en rosa", "En verde y en negro", "Solo en verde"],
+         "ans": "En negro y en rosa", "why": "«solo queda en negro y en rosa»"},
+        {"q": "¿Cuánto cuestan los pantalones con el descuento?",
+         "opts": ["25 euros", "35 euros", "47 euros"], "ans": "25 euros",
+         "why": "«Cuestan veinticinco euros con el descuento»"},
+        {"q": "¿Cuánto paga Nina en total?", "opts": ["47 euros", "25 euros", "38 euros"],
+         "ans": "47 euros", "why": "«Cuarenta y siete euros»"},
+        {"q": "¿Cómo paga?", "opts": ["En efectivo", "Con tarjeta", "No paga"], "ans": "En efectivo",
+         "why": "«En efectivo. Es un truco»"},
+    ],
+    "vf": [
+        {"q": "Nina se lleva la chaqueta verde.", "ans": False, "prueba": "la chaqueta negra y los pantalones"},
+        {"q": "La falda del escaparate está rebajada.", "ans": False, "prueba": "no está rebajada"},
+        {"q": "Valen le aconseja los pantalones.", "ans": True, "prueba": "yo me llevo los pantalones"},
+    ],
+    "produccion": {
+        "prompt": "Estás en el probador con un amigo. Graba cuatro turnos: pregunta si te queda "
+                  "bien, pide otra talla o otro color, compara dos prendas (esta / esa / "
+                  "aquella) y decide qué te llevas.",
+        "modo": "grabar",
+        "modelo": "¿Me queda bien esta…? ¿Tienes una talla…? Prefiero esa… que aquella… "
+                  "Me llevo…",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
          ("C5", 2): C5_U2, ("C6+", 2): C6P_U2,
          ("C5", 3): C5_U3, ("C6+", 3): C6P_U3,
          ("C5", 4): C5_U4, ("C6+", 4): C6P_U4,
-         ("C5", 5): C5_U5, ("C6+", 5): C6P_U5}
+         ("C5", 5): C5_U5, ("C6+", 5): C6P_U5,
+         ("C5", 6): C5_U6}
 
 
 def controla():

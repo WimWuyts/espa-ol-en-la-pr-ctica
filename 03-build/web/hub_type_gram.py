@@ -426,6 +426,73 @@ SETS[("C5", 5)] = [
          ]),
 ]
 
+SETS[("C5", 6)] = [
+    dict(title="Acabar de + infinitivo — net gebeurd", accents="strict",
+         desc="«Ik heb net…» zeg je met <b>acabar de</b> + infinitivo. Je vervoegt alleen "
+              "<i>acabar</i>; het tweede werkwoord blijft in de infinitivo staan.",
+         items=[
+             {"q": "Yo ___ (acabar) de comprar unos vaqueros.", "ans": "acabo", "hint": "a____",
+              "why": "yo → acabo de + infinitivo"},
+             {"q": "Lucía ___ (acabar) de probarse el vestido.", "ans": "acaba", "hint": "a____"},
+             {"q": "Nosotros ___ (acabar) de pagar en la caja.", "ans": "acabamos", "hint": "a_______"},
+             {"q": "¿Tú ___ (acabar) de ver el escaparate?", "ans": "acabas", "hint": "a_____"},
+             {"q": "Mis amigas ___ (acabar) de entrar en la zapatería.", "ans": "acaban", "hint": "a_____"},
+             {"q": "Yo ___ (acabar) de encontrar mi talla.", "ans": "acabo", "hint": "a____"},
+             {"q": "El dependiente ___ (acabar) de abrir la tienda.", "ans": "acaba", "hint": "a____"},
+             {"q": "¿Vosotros ___ (acabar) de llegar al centro comercial?", "ans": "acabáis",
+              "hint": "a______", "why": "vosotros → acabáis, mét tilde"},
+             {"q": "Nosotras ___ (acabar) de ver las rebajas.", "ans": "acabamos", "hint": "a_______"},
+             {"q": "Ellos ___ (acabar) de salir del probador.", "ans": "acaban", "hint": "a_____"},
+             {"q": "Yo ___ (acabar) de gastar todo mi dinero.", "ans": "acabo", "hint": "a____"},
+             {"q": "Diego ___ (acabar) de regatear en el tianguis.", "ans": "acaba", "hint": "a____"},
+         ]),
+    dict(title="Este · ese · aquel — ¿cerca o lejos?", accents="soft",
+         desc="Drie afstanden: <b>este</b> hier bij mij · <b>ese</b> daar bij jou · "
+              "<b>aquel</b> ginder, ver van ons allebei. En het komt overeen met het kledingstuk: "
+              "<i>esta falda</i>, <i>estos zapatos</i>.",
+         items=[
+             {"q": "___ camiseta que tengo en la mano me gusta. (hier)", "ans": "Esta", "hint": "E___"},
+             {"q": "___ zapatos que llevas tú son bonitos. (daar bij jou)", "ans": "Esos", "hint": "E___"},
+             {"q": "___ abrigo del escaparate es carísimo. (ginder)", "ans": "Aquel", "hint": "A____"},
+             {"q": "¿Cuánto cuestan ___ botas de aquí?", "ans": "estas", "hint": "e____"},
+             {"q": "___ falda que tienes ahí es de rayas. (daar bij jou)", "ans": "Esa", "hint": "E__"},
+             {"q": "___ pantalones que llevo puestos son de algodón. (hier)", "ans": "Estos",
+              "hint": "E____"},
+             {"q": "___ tienda del final de la calle vende ropa de segunda mano. (ginder)",
+              "ans": "Aquella", "hint": "A______", "why": "la tienda → aquella"},
+             {"q": "___ sombrero que llevas puesto te queda bien. (daar bij jou)", "ans": "Ese",
+              "hint": "E__", "why": "el sombrero, bij jou → ese"},
+             {"q": "___ sandalias de allá son las más baratas.", "ans": "Aquellas", "hint": "A_______"},
+             {"q": "¿Te gusta ___ vestido que tengo aquí?", "ans": "este", "hint": "e___"},
+             {"q": "___ gafas de sol que llevas son geniales.", "ans": "Esas", "hint": "E___"},
+             {"q": "___ jersey de aquí es de lana.", "ans": "Este", "hint": "E___",
+              "why": "el jersey → este"},
+         ]),
+    dict(title="Concordancia — el color y la prenda", accents="strict",
+         desc="Het kleurwoord richt zich naar het kledingstuk. Let op de drie soorten: "
+              "<b>-o/-a</b> verandert (rojo → roja) · <b>-e</b> en medeklinker krijgen alleen "
+              "een <b>-s</b> (verde → verdes) · <b>rosa</b>, <b>naranja</b> en <b>lila</b> "
+              "veranderen <b>nooit</b>.",
+         items=[
+             {"q": "una camiseta ___ (rojo)", "ans": "roja", "hint": "r___", "why": "la camiseta → roja"},
+             {"q": "unos zapatos ___ (negro)", "ans": "negros", "hint": "n_____", "why": "los zapatos → negros"},
+             {"q": "una falda ___ (verde)", "ans": "verde", "hint": "v____", "why": "-e verandert niet"},
+             {"q": "unos calcetines ___ (blanco)", "ans": "blancos", "hint": "b______"},
+             {"q": "dos camisas ___ (azul)", "ans": "azules", "hint": "a_____",
+              "why": "medeklinker → alleen +es in het meervoud"},
+             {"q": "una chaqueta ___ (marrón)", "ans": "marrón", "hint": "m_____",
+              "why": "enkelvoud blijft marrón, mét tilde"},
+             {"q": "unas botas ___ (marrón)", "ans": "marrones", "hint": "m_______",
+              "why": "meervoud verliest de tilde: marrones"},
+             {"q": "una sudadera ___ (rosa)", "ans": "rosa", "hint": "r___", "why": "rosa verandert nooit"},
+             {"q": "unas zapatillas ___ (naranja)", "ans": "naranja", "hint": "n______",
+              "why": "naranja verandert nooit, ook niet in het meervoud"},
+             {"q": "un vestido ___ (morado)", "ans": "morado", "hint": "m_____"},
+             {"q": "unos pantalones ___ (gris)", "ans": "grises", "hint": "g_____"},
+             {"q": "una bufanda ___ (amarillo)", "ans": "amarilla", "hint": "a_______"},
+         ]),
+]
+
 SETS[("C6+", 1)] = [
     dict(title="Los verbos reflexivos — rellena", accents="strict",
          desc="Vergeet het <b>pronombre</b> niet: bij een reflexief werkwoord horen er twee "

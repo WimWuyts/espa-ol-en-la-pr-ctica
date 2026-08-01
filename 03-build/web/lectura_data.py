@@ -1267,12 +1267,136 @@ C6P_U5 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C5 · U6 «De tiendas» — parada México (los mercados)
+# Tekstsoort: artículo de consejos (listicle) uit een jeugdblad. Nieuw genre:
+# genummerde tips die de leerling moet wégen — welke tip past bij mij? — in
+# plaats van gegevens opzoeken. De tips staan bewust met «hay que», «es mejor»
+# en «puedes» + infinitivo: de imperativo komt pas in U7.
+# Het luisterfragment speelt in het pashokje: meningen, geen transactie.
+# ---------------------------------------------------------------------------
+C5_U6 = {
+    "id": "C5-U6-LEC-01",
+    "ancla": "c5-u6-lec-01",
+    "titulo": "Cinco trucos para ir de rebajas",
+    "tipo": "artículo de consejos (revista juvenil)",
+    "emisor": "La revista «Joven y Listo»",
+    "receptor": "Jóvenes que van de compras con poco dinero",
+    "objetivo": "Que gastes menos y compres mejor",
+    "prediccion": {
+        "q": "Kijk eerst alleen naar de titel en de vijf nummers. Wat gaat deze tekst doen?",
+        "opts": ["Tips geven", "Iets verkopen", "Een verhaal vertellen"],
+        "ans": "Tips geven",
+        "why": "«Cinco trucos» + genummerde punten = advies.",
+    },
+    "texto": [
+        ["titulo", "🛍️ CINCO TRUCOS PARA IR DE REBAJAS"],
+        ["lema", "Sin gastar de más · Joven y Listo · enero"],
+        ["p", "Llegan las rebajas y todo parece barato. Pero atención: no todo lo que está "
+              "rebajado es una buena compra. Estos cinco trucos funcionan."],
+        ["lista", [
+            "1 · Hay que mirar la etiqueta vieja. Si el precio antiguo no está, el descuento "
+            "no es real.",
+            "2 · Es mejor no comprar el primer día. Las tiendas bajan más los precios en la "
+            "segunda semana.",
+            "3 · Puedes probarte la ropa siempre, también en rebajas. Una talla no es igual "
+            "en todas las tiendas.",
+            "4 · Hay que llevar una lista. Con lista gastas menos; sin lista compras cosas "
+            "que no usas.",
+            "5 · Es mejor pagar en efectivo. Con tarjeta no ves el dinero y gastas más.",
+        ]],
+        ["aviso", ["♻️ UN TRUCO EXTRA: LA SEGUNDA MANO",
+                   "En el mercadillo y en las tiendas de segunda mano hay ropa buena y barata. "
+                   "Además es moda sostenible: una camiseta usada no gasta agua nueva."]],
+        ["p", "Y el truco más importante: si una prenda no te queda bien en la tienda, tampoco "
+              "te va a quedar bien en casa. Ese vestido barato que no te pones nunca es el más "
+              "caro de tu armario."],
+        ["firma", "¿Tienes otro truco? Escríbenos a trucos@jovenylisto.es"],
+    ],
+    "traduccion": "VIJF TRUCS VOOR DE SOLDEN — zonder te veel uit te geven. De solden komen "
+                  "eraan en alles lijkt goedkoop. Maar opgelet: niet alles wat afgeprijsd is, is "
+                  "een goede aankoop. Deze vijf trucs werken. 1 · Je moet naar het oude "
+                  "prijskaartje kijken. Staat de oude prijs er niet, dan is de korting niet echt. "
+                  "2 · Koop beter niet de eerste dag. Winkels verlagen de prijzen meer in de "
+                  "tweede week. 3 · Je mag altijd passen, ook in de solden. Een maat is niet in "
+                  "elke winkel hetzelfde. 4 · Je moet een lijstje meenemen. Met een lijstje geef "
+                  "je minder uit; zonder lijstje koop je dingen die je niet gebruikt. 5 · Betaal "
+                  "beter cash. Met de kaart zie je het geld niet en geef je meer uit. EXTRA TRUC: "
+                  "TWEEDEHANDS — op de rommelmarkt en in tweedehandswinkels vind je goede en "
+                  "goedkope kleren. Bovendien is het duurzame mode: een gedragen T-shirt "
+                  "verbruikt geen nieuw water. En de belangrijkste truc: als een kledingstuk je "
+                  "in de winkel niet goed staat, zal het je thuis ook niet goed staan. Dat "
+                  "goedkope kleedje dat je nooit draagt, is het duurste van je kast.",
+    "global": {
+        "q": "¿Para qué es este artículo?",
+        "opts": ["Para ayudarte a comprar mejor y gastar menos",
+                 "Para presentar la moda de este año",
+                 "Para explicar dónde están las tiendas"],
+        "ans": "Para ayudarte a comprar mejor y gastar menos",
+    },
+    "escanear": [
+        {"q": "¿Cuántos trucos da el artículo? (en cifras)", "ans": "5",
+         "alt": ["cinco", "5 trucos"], "why": "«CINCO TRUCOS PARA IR DE REBAJAS»"},
+        {"q": "¿En qué semana bajan más los precios?", "ans": "en la segunda",
+         "alt": ["la segunda", "segunda", "la segunda semana", "2"],
+         "why": "«bajan más los precios en la segunda semana»"},
+        {"q": "¿Qué hay que llevar a la tienda?", "ans": "una lista",
+         "alt": ["lista", "una lista de la compra"], "why": "«Hay que llevar una lista»"},
+        {"q": "¿Cómo es mejor pagar?", "ans": "en efectivo",
+         "alt": ["efectivo", "con dinero", "en cash"], "why": "«Es mejor pagar en efectivo»"},
+        {"q": "¿Dónde hay ropa buena y barata según el recuadro?", "ans": "en el mercadillo y en las tiendas de segunda mano",
+         "alt": ["el mercadillo", "mercadillo", "segunda mano", "tiendas de segunda mano"],
+         "why": "«En el mercadillo y en las tiendas de segunda mano»"},
+    ],
+    "vf": [
+        {"q": "Todo lo que está rebajado es una buena compra.", "ans": False,
+         "prueba": "no todo lo que está rebajado es una buena compra"},
+        {"q": "En rebajas no puedes probarte la ropa.", "ans": False,
+         "prueba": "puedes probarte la ropa siempre, también en rebajas"},
+        {"q": "Con tarjeta la gente gasta más.", "ans": True,
+         "prueba": "con tarjeta no ves el dinero y gastas más"},
+        {"q": "La ropa de segunda mano es cara.", "ans": False,
+         "prueba": "hay ropa buena y barata"},
+        {"q": "Una talla es igual en todas las tiendas.", "ans": False,
+         "prueba": "una talla no es igual en todas las tiendas"},
+    ],
+    "contexto": [
+        {"q": "«la etiqueta vieja» — ¿para qué sirve mirarla?",
+         "opts": ["Om te zien of de korting echt is", "Om de maat te vinden",
+                  "Om te weten van welke stof het is"],
+         "ans": "Om te zien of de korting echt is",
+         "why": "Er staat: zonder de oude prijs is de korting niet echt."},
+        {"q": "«no te queda bien» — ¿qué quiere decir?",
+         "opts": ["Het staat je niet", "Het blijft niet liggen", "Het is niet meer over"],
+         "ans": "Het staat je niet",
+         "why": "«quedar bien» over kleding = goed staan."},
+        {"q": "«moda sostenible» — ¿qué es?",
+         "opts": ["mode die het milieu spaart", "dure merkkleding", "mode die lang meegaat in de kast"],
+         "ans": "mode die het milieu spaart",
+         "why": "Het kader legt het uit: geen nieuw water."},
+        {"q": "«es el más caro de tu armario» — ¿por qué lo dice?",
+         "opts": ["Omdat je het nooit draagt, is elke euro weggegooid",
+                  "Omdat het uit een dure winkel komt",
+                  "Omdat het veel plaats inneemt"],
+         "ans": "Omdat je het nooit draagt, is elke euro weggegooid",
+         "why": "Het gaat over «ese vestido barato que no te pones nunca»."},
+    ],
+    "produccion": {
+        "prompt": "Escribe tus propios tres trucos para comprar ropa (5–6 frases). Usa: hay que "
+                  "+ infinitivo · es mejor + infinitivo · puedes + infinitivo. Añade un truco "
+                  "sobre la ropa de segunda mano.",
+        "modelo": "1 · Hay que… 2 · Es mejor no… 3 · Puedes… Y un truco extra: en el mercadillo…",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
          ("C5", 2): C5_U2, ("C6+", 2): C6P_U2,
          ("C5", 3): C5_U3, ("C6+", 3): C6P_U3,
          ("C5", 4): C5_U4, ("C6+", 4): C6P_U4,
-         ("C5", 5): C5_U5, ("C6+", 5): C6P_U5}
+         ("C5", 5): C5_U5, ("C6+", 5): C6P_U5,
+         ("C5", 6): C5_U6}
 
 
 def _texto_plano(t):

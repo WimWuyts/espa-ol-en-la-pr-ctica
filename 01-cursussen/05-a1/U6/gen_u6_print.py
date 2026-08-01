@@ -9,6 +9,11 @@ ROOT = "/home/user/espa-ol-en-la-pr-ctica"
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, f"{ROOT}/02-huisstijl/beeld/generators")
 import cast_gen as C
+import sys as _sys
+_sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
+import print_bloques as PB
+import lectura_data as LD
+import escucha_data as ED
 
 def b64(p): return base64.b64encode(open(p, "rb").read()).decode()
 def face(fam, fn, w):
@@ -940,6 +945,21 @@ P(actx(5, "Escribe: dos prendas con conector",
 P('<div class="route-note">🎮 <b>Practica online:</b> «sílaba tónica» en de conectoren-oefeningen met zelfcorrectie.</div>')
 P('</div>')  # page Taller
 
+# ================= §6 LECTURA · §7 ESCUCHA =================
+# Zelfde bron als de digitale hub (lectura_data / escucha_data): papier en scherm
+# kunnen zo niet uit elkaar lopen. Elk op een eigen bladzijde (§14).
+P('<div class="page"><div class="parada sec">')
+P('<span class="num">6</span><span class="pk">§6 · Lectura — «Cinco trucos para ir de rebajas»</span>')
+P('<div class="intro"><b>ES:</b> Un artículo de consejos de una revista juvenil. <b>No hace falta entenderlo todo</b> para sacar la información. <span class="gloss">Een tipsartikel uit een jeugdblad. Je hoeft niet alles te begrijpen — weeg elke tip: past hij bij jou?</span></div>')
+P(PB.lectura_print(LD.C5_U6, "1"))
+P('</div>')
+
+P('<div class="page"><div class="parada sec">')
+P('<span class="num">7</span><span class="pk">§7 · Escucha — «En el probador»</span>')
+P('<div class="intro"><b>ES:</b> Nina se prueba ropa y Valen le dice la verdad. <b>Escucha primero, escribe después.</b> <span class="gloss">Nina past kleren en Valen zegt eerlijk wat ze ervan vindt. Eerst luisteren, dan schrijven; het transcript staat online en gaat pas open ná de taken.</span></div>')
+P(PB.escucha_print(ED.C5_U6, "1"))
+P('</div>')
+
 # ================= CULTURA =================
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">★</span><span class="pk">Cultura · Rebajas, regateo y tianguis</span>')
@@ -1126,7 +1146,7 @@ EDITBAR = '''
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Español en la práctica · U6 De tiendas</title><style>'
-        + CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
+        + CSS + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/U6.html"
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, "·", len(HTML), "bytes")
