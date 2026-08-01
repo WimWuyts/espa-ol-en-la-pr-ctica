@@ -8,6 +8,11 @@ ROOT = "/home/user/espa-ol-en-la-pr-ctica"
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, f"{ROOT}/02-huisstijl/beeld/generators")
 import cast_gen as C
+import sys as _sys
+_sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
+import print_bloques as PB
+import lectura_data as LD
+import escucha_data as ED
 
 def b64(p): return base64.b64encode(open(p, "rb").read()).decode()
 def face(fam, fn, w):
@@ -1078,6 +1083,21 @@ P(actx(5, "Corrige la ortografía",
 P('<div class="route-note">🎮 <b>Juega online:</b> «conectores», «caza del adjetivo» en «ortografía» — meerdere reeksen met zelfcorrectie op de digitale pagina.</div>')
 P('</div>')  # page Taller
 
+# ================= §7 LECTURA · §8 ESCUCHA =================
+# Zelfde bron als de digitale hub (lectura_data / escucha_data): papier en scherm
+# kunnen zo niet uit elkaar lopen. Elk op een eigen bladzijde (§14).
+P('<div class="page"><div class="parada sec">')
+P('<span class="num">7</span><span class="pk">§7 · Lectura — «Mi familia en una foto»</span>')
+P('<div class="intro"><b>ES:</b> Un correo de verdad, con foto adjunta. <b>No hace falta entenderlo todo</b> para sacar la información. <span class="gloss">Een echte mail met een foto erbij. Je hoeft niet alles te begrijpen om de informatie te vinden — zoek gericht.</span></div>')
+P(PB.lectura_print(LD.C5_U2, "1"))
+P('</div>')
+
+P('<div class="page"><div class="parada sec">')
+P('<span class="num">8</span><span class="pk">§8 · Escucha — «¿Quién es quién? — el concurso de la clase»</span>')
+P('<div class="intro"><b>ES:</b> En clase juegan a adivinar quién es cada foto. <b>Escucha primero, escribe después.</b> <span class="gloss">In de klas raden ze wie er op elke foto staat. Eerst luisteren, dan schrijven; het transcript staat online en gaat pas open ná de taken.</span></div>')
+P(PB.escucha_print(ED.C5_U2, "1"))
+P('</div>')
+
 # ================= CULTURA =================
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">C</span><span class="pk">Cultura — La familia hispana</span>')
@@ -1231,7 +1251,7 @@ EDITBAR = '''
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Español en la práctica · U2 Mi gente</title><style>'
-        + CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
+        + CSS + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/U2.html"
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, "·", len(HTML), "bytes")

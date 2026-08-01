@@ -144,6 +144,70 @@ SETS[("C5", 1)] = [
          ]),
 ]
 
+SETS[("C5", 2)] = [
+    dict(title="El verbo «tener» — rellena", accents="strict",
+         desc="De klassieke invuloefening met het werkwoord van deze unidad. <b>tener</b> is "
+              "onregelmatig: de <i>e</i> van de stam wordt <b>ie</b> — behalve bij "
+              "<i>nosotros</i> en <i>vosotros</i>.",
+         items=[
+             {"q": "Yo ___ dos hermanos.", "ans": "tengo", "hint": "t____", "why": "yo → tengo (met -g-)"},
+             {"q": "Mi abuela ___ setenta años.", "ans": "tiene", "hint": "t____", "why": "ella → tiene (e → ie)"},
+             {"q": "¿Cuántos primos ___ tú?", "ans": "tienes", "hint": "t_____", "why": "tú → tienes (e → ie)"},
+             {"q": "Nosotros ___ una mascota.", "ans": "tenemos", "hint": "t______", "why": "nosotros → tenemos, zónder ie"},
+             {"q": "Mis padres ___ tres hijos.", "ans": "tienen", "hint": "t_____", "why": "ellos → tienen"},
+             {"q": "Lucía ___ el pelo rizado.", "ans": "tiene", "hint": "t____", "why": "ella → tiene"},
+             {"q": "Yo no ___ hermanas.", "ans": "tengo", "hint": "t____", "why": "yo → tengo"},
+             {"q": "¿Vosotros ___ abuelos en Sevilla?", "ans": "tenéis", "hint": "t_____",
+              "why": "vosotros → tenéis, zónder ie maar mét tilde"},
+             {"q": "Mi tío ___ barba.", "ans": "tiene", "hint": "t____", "why": "él → tiene"},
+             {"q": "Tú ___ los ojos verdes.", "ans": "tienes", "hint": "t_____", "why": "tú → tienes"},
+             {"q": "Mis primas ___ el pelo largo.", "ans": "tienen", "hint": "t_____", "why": "ellas → tienen"},
+             {"q": "Nosotras ___ una familia grande.", "ans": "tenemos", "hint": "t______", "why": "nosotras → tenemos"},
+         ]),
+    dict(title="Los posesivos — ¿mi, tu, su o nuestro?", accents="soft",
+         desc="Schrijf het bezittelijk voornaamwoord voluit. <b>De vorm richt zich naar het "
+              "díng, niet naar de bezitter</b>: <i>mis hermanas</i> (meervoud) · "
+              "<i>nuestra casa</i> (vrouwelijk).",
+         items=[
+             {"q": "___ (yo) hermano se llama Pablo.", "ans": "mi", "why": "één ding → mi"},
+             {"q": "___ (yo) hermanas son mayores.", "ans": "mis", "why": "meervoud ding → mis"},
+             {"q": "¿Cómo se llama ___ (tú) madre?", "ans": "tu", "why": "één ding → tu (zonder tilde!)"},
+             {"q": "___ (tú) abuelos viven en Cádiz.", "ans": "tus", "why": "meervoud → tus"},
+             {"q": "Lucía habla de ___ (ella) prima.", "ans": "su", "why": "su = zijn/haar/hun — één vorm"},
+             {"q": "Diego enseña una foto de ___ (él) tíos.", "ans": "sus", "why": "meervoud ding → sus"},
+             {"q": "___ (nosotros) casa está en Sevilla.", "ans": "nuestra", "why": "la casa → nuestra"},
+             {"q": "___ (nosotros) padres trabajan mucho.", "ans": "nuestros", "why": "los padres → nuestros"},
+             {"q": "___ (nosotros) abuelo tiene ochenta años.", "ans": "nuestro", "why": "el abuelo → nuestro"},
+             {"q": "___ (nosotros) primas son de Cádiz.", "ans": "nuestras", "why": "las primas → nuestras"},
+             {"q": "¿Es ___ (tú) mascota?", "ans": "tu", "why": "la mascota, één ding → tu"},
+             {"q": "Mis abuelos y ___ (ellos) hijos viven juntos.", "ans": "sus", "why": "los hijos → sus"},
+         ]),
+    dict(title="Los adjetivos — escribe la forma que concuerda", accents="strict",
+         desc="Schrijf het bijvoeglijk naamwoord tussen haakjes in de vorm die <b>overeenkomt</b>: "
+              "mannelijk of vrouwelijk, enkelvoud of meervoud. Let op de tildes — die horen bij "
+              "het woord.",
+         items=[
+             {"q": "Mi hermana es muy ___ (simpático).", "ans": "simpática", "hint": "s________",
+              "why": "vrouwelijk enkelvoud, tilde blijft"},
+             {"q": "Mis primos son ___ (gracioso).", "ans": "graciosos", "hint": "g________", "why": "mannelijk meervoud"},
+             {"q": "Lucía tiene el pelo ___ (rizado).", "ans": "rizado", "hint": "r_____",
+              "why": "valstrik: het gaat over «el pelo», niet over Lucía"},
+             {"q": "Mi abuelo tiene los ojos ___ (verde).", "ans": "verdes", "hint": "v_____",
+              "why": "-e → alleen +s in het meervoud"},
+             {"q": "Mis hermanas son ___ (rubio).", "ans": "rubias", "hint": "r_____", "why": "vrouwelijk meervoud"},
+             {"q": "Diego es ___ (moreno).", "ans": "moreno", "hint": "m_____", "why": "mannelijk enkelvoud"},
+             {"q": "Mi tía es ___ (trabajador).", "ans": "trabajadora", "hint": "t__________",
+              "why": "-dor krijgt wél een -a: trabajadora"},
+             {"q": "Los abuelos son muy ___ (hablador).", "ans": "habladores", "hint": "h_________",
+              "why": "-dor → -dores in het meervoud"},
+             {"q": "Mi madre y mi tía son ___ (inteligente).", "ans": "inteligentes", "hint": "i___________",
+              "why": "-e → +s, geen -a"},
+             {"q": "Mi primo tiene el pelo ___ (corto).", "ans": "corto", "hint": "c____", "why": "el pelo → mannelijk enkelvoud"},
+             {"q": "Mi hermana es ___ (tímido).", "ans": "tímida", "hint": "t_____", "why": "esdrújula → tilde blijft staan"},
+             {"q": "Mis padres son ___ (alegre).", "ans": "alegres", "hint": "a______", "why": "-e → +s"},
+         ]),
+]
+
 SETS[("C6+", 1)] = [
     dict(title="Los verbos reflexivos — rellena", accents="strict",
          desc="Vergeet het <b>pronombre</b> niet: bij een reflexief werkwoord horen er twee "

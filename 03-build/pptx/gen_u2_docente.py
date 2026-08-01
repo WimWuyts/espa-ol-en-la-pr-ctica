@@ -13,6 +13,7 @@ Gastvrouw = Lucía (Sevilla) — prominent. Werkwoordsvormen exact volgens U2_br
 """
 import os
 import gen_u0_docente as E
+import lectura_data as _LD, escucha_data as _ED
 from gen_u0_docente import (
     slide, bg, rect, text, chip, avatar, card, sectionbar, footer, noodroute,
     exercise_solucion, check_badge, legend_func, link_to, register_reveal, notes, pg,
@@ -689,7 +690,10 @@ def _run_all(include_teacher=True):
     s01_title(); s02_menu(); s03_familia(); s04_tener(); s05_cuantos(); s06_posesivos()
     s07_quiz_posesivo(); s08_fisico(); s09_congruencia(); s10_caracter(); s11_serestar_color()
     s12_serestar_formas(); s13_cloze(); s14_demostrativos(); s15_reading(); s16_listening()
-    s17_speaking(); s18_writing(); s19_taller(); s20_cultura(); s21_tarea(); s22_mezcla(); s23_repaso()
+    s17_speaking(); s18_writing(); s19_taller(); s20_cultura()
+    # Lectura en Escucha uit de gedeelde bron — zelfde inhoud als print en hub.
+    E.s_lectura(_LD.C5_U2); E.s_escucha(_ED.C5_U2)
+    s21_tarea(); s22_mezcla(); s23_repaso()
     if include_teacher:
         s24_teacher()
 

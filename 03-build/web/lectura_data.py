@@ -378,8 +378,111 @@ C6P_U1 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C5 · U2 «Mi gente» — parada Sevilla
+# Tekstsoort: correo electrónico. Nieuw genre naast anuncio (U0) en perfil (U1):
+# een persoonlijke brief met een aanhef, een kop met velden en een afsluiting,
+# zodat de leerling leert scannen in een mailkop én in doorlopend proza.
+# Het luisterfragment van deze unit is een klassenquiz — andere inhoud, ander genre.
+# ---------------------------------------------------------------------------
+C5_U2 = {
+    "id": "C5-U2-LEC-01",
+    "ancla": "c5-u2-lec-01",
+    "titulo": "Mi familia en una foto",
+    "tipo": "correo electrónico (con una foto adjunta)",
+    "emisor": "Lucía, desde Sevilla",
+    "receptor": "Sam, su compi de intercambio en Bélgica",
+    "objetivo": "Presentarte a toda su familia",
+    "prediccion": {
+        "q": "Kijk eerst alleen naar de kop (De · Para · Asunto) en de foto. Wat voor tekst is dit?",
+        "opts": ["Een persoonlijk bericht aan één iemand", "Een affiche voor de hele school",
+                 "Een krantenartikel"],
+        "ans": "Een persoonlijk bericht aan één iemand",
+        "why": "Een mail heeft één afzender en één ontvanger — dat staat bovenaan.",
+    },
+    "texto": [
+        ["titulo", "✉️ ¡MI FAMILIA EN UNA FOTO!"],
+        ["lista", [
+            "De: lucia.ramirez@correo.es",
+            "Para: sam@correo.be",
+            "Asunto: mi familia",
+            "Adjunto: familia.jpg",
+        ]],
+        ["p", "¡Hola, Sam! ¿Qué tal? Aquí te mando la foto de mi familia. "
+              "Somos seis en casa: mis padres, mis dos hermanos, mi abuela y yo."],
+        ["p", "Mi padre se llama Antonio y tiene cuarenta y ocho años. Es alto y moreno, "
+              "y lleva barba. Es muy tranquilo. Mi madre se llama Carmen. Tiene cuarenta y "
+              "cinco años, es baja y tiene el pelo rizado. Es profesora y es muy habladora."],
+        ["p", "Mi hermano mayor se llama Pablo. Tiene diecinueve años y estudia en Granada. "
+              "Mi hermana menor se llama Marta y tiene once años. Es pelirroja y es muy alegre."],
+        ["p", "Mi abuela Rosario vive con nosotros. Tiene setenta y nueve años y es la más "
+              "graciosa de la familia. También tenemos un perro pequeño. Se llama Curro."],
+        ["firma", "¿Y tu familia? ¿Cuántos sois en casa? Un abrazo, Lucía"],
+    ],
+    "traduccion": "Mijn familie op één foto. Hallo Sam! Hoe gaat het? Hierbij stuur ik je de foto "
+                  "van mijn familie. We zijn met zes thuis: mijn ouders, mijn twee broers en "
+                  "zussen, mijn oma en ik. Mijn vader heet Antonio en is achtenveertig. Hij is "
+                  "groot en donker, en hij heeft een baard. Hij is heel rustig. Mijn moeder heet "
+                  "Carmen. Ze is vijfenveertig, ze is klein en heeft krullend haar. Ze is lerares "
+                  "en ze praat heel veel. Mijn oudere broer heet Pablo. Hij is negentien en "
+                  "studeert in Granada. Mijn jongere zus heet Marta en is elf. Ze heeft rood haar "
+                  "en is heel vrolijk. Mijn oma Rosario woont bij ons. Ze is negenenzeventig en is "
+                  "de grappigste van de familie. We hebben ook een kleine hond. Hij heet Curro. "
+                  "En jouw familie? Met hoeveel zijn jullie thuis? Een dikke knuffel, Lucía.",
+    "global": {
+        "q": "¿Para qué escribe Lucía este correo?",
+        "opts": ["Para presentar a su familia", "Para invitar a Sam a una fiesta",
+                 "Para pedir ayuda con los deberes"],
+        "ans": "Para presentar a su familia",
+    },
+    "escanear": [
+        {"q": "¿Cuántas personas viven en casa de Lucía?", "ans": "6",
+         "alt": ["seis", "somos seis", "6 personas"], "why": "«Somos seis en casa»"},
+        {"q": "¿Cómo se llama el padre?", "ans": "Antonio",
+         "alt": ["antonio", "se llama antonio"], "why": "«Mi padre se llama Antonio»"},
+        {"q": "¿Cuántos años tiene la abuela? (en cifras)", "ans": "79",
+         "alt": ["setenta y nueve", "79 años"], "why": "«Tiene setenta y nueve años»"},
+        {"q": "¿Dónde estudia Pablo?", "ans": "en Granada", "alt": ["granada"],
+         "why": "«estudia en Granada»"},
+        {"q": "¿Cómo se llama el perro?", "ans": "Curro", "alt": ["curro"],
+         "why": "«Se llama Curro»"},
+    ],
+    "vf": [
+        {"q": "Lucía tiene dos hermanos.", "ans": True, "prueba": "mis dos hermanos"},
+        {"q": "El padre de Lucía es rubio.", "ans": False, "prueba": "es alto y moreno"},
+        {"q": "La madre de Lucía es profesora.", "ans": True, "prueba": "es profesora"},
+        {"q": "Marta es la hermana mayor.", "ans": False,
+         "prueba": "mi hermana menor se llama marta"},
+        {"q": "La abuela vive con la familia.", "ans": True, "prueba": "vive con nosotros"},
+    ],
+    "contexto": [
+        {"q": "«Somos seis en casa» — ¿qué cuenta Lucía aquí?",
+         "opts": ["Cuántas personas viven allí", "Cuántos años tiene", "Cuántas habitaciones hay"],
+         "ans": "Cuántas personas viven allí",
+         "why": "Erna volgt de opsomming van de personen."},
+        {"q": "«lleva barba» — ¿qué significa «lleva» aquí?",
+         "opts": ["heeft (draagt)", "brengt", "neemt mee"], "ans": "heeft (draagt)",
+         "why": "Het staat tussen twee uiterlijke kenmerken."},
+        {"q": "«mi hermano mayor» ↔ «mi hermana menor» — ¿qué contrastan?",
+         "opts": ["de leeftijd", "de lengte", "het karakter"], "ans": "de leeftijd",
+         "why": "Pablo is 19, Marta is 11 — mayor/menor gaat over ouder/jonger, niet groter/kleiner."},
+        {"q": "«la más graciosa de la familia» — ¿qué quiere decir?",
+         "opts": ["de grappigste van allemaal", "de oudste van allemaal", "de kleinste van allemaal"],
+         "ans": "de grappigste van allemaal",
+         "why": "«la más + adjectief» = de -ste."},
+    ],
+    "produccion": {
+        "prompt": "Contesta a Lucía (5–6 frases): cuántos sois en casa, quién es quién, "
+                  "cómo son (dos detalles físicos y uno de carácter) y si tienes mascota.",
+        "modelo": "Hola, Lucía. En casa somos… Mi… se llama… y tiene… años. Es… y tiene el pelo… "
+                  "Mi… es muy… También tenemos…",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
-         ("C5", 1): C5_U1, ("C6+", 1): C6P_U1}
+         ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
+         ("C5", 2): C5_U2}
 
 
 def _texto_plano(t):

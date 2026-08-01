@@ -52,3 +52,25 @@ elke volgende sessie start mét Impress op schijf — zonder wachttijd.
 
 Let op: wijzig je het setup-script of de toegestane domeinen, dan wordt de cache opnieuw
 opgebouwd. Dat is eenmalig trager.
+
+## Nagekomen (2026-08-01): pip bereikt PyPI niet meer
+
+In de bouwsessie van 1 augustus was **python-pptx afwezig** én niet te installeren:
+
+```
+$ pip install python-pptx
+ERROR: Could not find a version that satisfies the requirement python-pptx (from versions: none)
+$ curl -o /dev/null -w '%{http_code}' https://pypi.org/simple/python-pptx/
+403
+```
+
+Ook `apt-get update` gaf 403 op `archive.ubuntu.com`. Dat is geen certificaat- of
+cachekwestie maar een **egress-policy van de omgeving**: de proxy-status meldt
+`connect_rejected · gateway answered 403 to CONNECT`. Er valt niets omheen te werken —
+het setup-script hierboven kan de pakketten alleen ophalen als PyPI en het Ubuntu-archief
+in de toegestane domeinen van de omgeving staan.
+
+**Gevolg voor de bouw:** de dia's §5 Lectura en §6 Escucha zijn wél in de generatoren
+gezet (twee regels in elke `_run_all`), maar de `.pptx`-bestanden in de repo zijn nog de
+vorige versie. Eén keer per unit `python3 03-build/pptx/gen_u<n>_docente.py` draaien in een
+omgeving mét python-pptx volstaat; er hoeft niets herschreven te worden.

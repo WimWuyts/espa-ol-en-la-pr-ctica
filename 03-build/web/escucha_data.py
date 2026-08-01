@@ -298,8 +298,87 @@ C6P_U1 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C5 · U2 — concurso de clase «¿Quién es quién?». De leestekst van deze unit is
+# een mail over Lucía's familie; hier gaat het over het beschríjven van onbekende
+# gezichten. Andere inhoud, andere personen, ander genre (spelprogramma in plaats
+# van gesprek): de leerling moet écht luisteren naar het uiterlijk, niet naar de
+# familiebanden.
+# ---------------------------------------------------------------------------
+C5_U2 = {
+    "id": "C5-U2-ESC-01",
+    "ancla": "c5-u2-esc-01",
+    "titulo": "¿Quién es quién? — el concurso de la clase",
+    "audio": "audio/C5_U2.mp3",
+    "situacion": {
+        "lugar": "El aula de español — diez fotos en la pizarra",
+        "quien": "La profesora y dos concursantes: Diego y Nina",
+        "que": "La profesora describe a una persona y ellos adivinan quién es",
+        "claves": ["tiene el pelo…", "lleva gafas / barba", "es tímido / hablador"],
+    },
+    "guion": [
+        {"who": "Profesora", "es": "¡Bienvenidos al concurso «¿Quién es quién?»! Diego, Nina: "
+                                   "tenéis diez fotos delante.",
+         "nl": "Welkom bij de quiz «Wie is wie?»! Diego, Nina: jullie hebben tien foto's voor je."},
+        {"who": "Diego", "es": "¡Estamos listos!", "nl": "We zijn er klaar voor!"},
+        {"who": "Profesora", "es": "Número uno. Es alta, tiene el pelo largo y rizado y lleva gafas.",
+         "nl": "Nummer één. Ze is groot, ze heeft lang krullend haar en ze draagt een bril."},
+        {"who": "Diego", "es": "¿Es Rocío?", "nl": "Is het Rocío?"},
+        {"who": "Profesora", "es": "No. Rocío tiene el pelo corto. Segunda pista: es muy habladora.",
+         "nl": "Nee. Rocío heeft kort haar. Tweede aanwijzing: ze praat heel veel."},
+        {"who": "Nina", "es": "¡Es Elena!", "nl": "Het is Elena!"},
+        {"who": "Profesora", "es": "¡Correcto! Un punto para Nina. Número dos: es un chico moreno "
+                                   "y lleva barba.",
+         "nl": "Juist! Een punt voor Nina. Nummer twee: het is een donkere jongen met een baard."},
+        {"who": "Diego", "es": "¿Cuántos años tiene?", "nl": "Hoe oud is hij?"},
+        {"who": "Profesora", "es": "Tiene veintidós años. Es tímido, pero es muy simpático.",
+         "nl": "Hij is tweeëntwintig. Hij is verlegen, maar heel aardig."},
+        {"who": "Diego", "es": "¡Es Javi!", "nl": "Het is Javi!"},
+        {"who": "Profesora", "es": "¡Muy bien, Diego! Uno a uno. Y la última foto: es pelirroja, "
+                                   "es baja y es muy graciosa.",
+         "nl": "Heel goed, Diego! Eén-één. En de laatste foto: ze heeft rood haar, ze is klein "
+               "en ze is heel grappig."},
+        {"who": "Nina", "es": "¿Es la abuela de Elena?", "nl": "Is het de oma van Elena?"},
+        {"who": "Profesora", "es": "Sí, es Rosario. ¡Dos a uno! Gana Nina.",
+         "nl": "Ja, het is Rosario. Twee-één! Nina wint."},
+    ],
+    "global": {
+        "q": "¿Qué hacen en el concurso?",
+        "opts": ["Adivinan quién es cada persona por la descripción",
+                 "Cuentan su rutina de la mañana", "Preparan un examen de gramática"],
+        "ans": "Adivinan quién es cada persona por la descripción",
+        "why": "descripción física + carácter → adivinar",
+    },
+    "detalle": [
+        {"q": "¿Cómo tiene el pelo la persona número uno?",
+         "opts": ["Largo y rizado", "Corto y liso", "Largo y liso"], "ans": "Largo y rizado",
+         "why": "«tiene el pelo largo y rizado»"},
+        {"q": "¿Quién es la persona número uno?", "opts": ["Elena", "Rocío", "Rosario"],
+         "ans": "Elena", "why": "Rocío valt af: die heeft kort haar."},
+        {"q": "¿Cuántos años tiene Javi?", "opts": ["22", "20", "12"], "ans": "22",
+         "why": "«Tiene veintidós años»"},
+        {"q": "¿Cómo es Javi de carácter?", "opts": ["Tímido pero simpático", "Hablador", "Antipático"],
+         "ans": "Tímido pero simpático", "why": "«Es tímido, pero es muy simpático»"},
+        {"q": "¿Quién gana el concurso?", "opts": ["Nina", "Diego", "Nadie"], "ans": "Nina",
+         "why": "«¡Dos a uno! Gana Nina»"},
+    ],
+    "vf": [
+        {"q": "Rocío tiene el pelo largo.", "ans": False, "prueba": "rocío tiene el pelo corto"},
+        {"q": "Elena habla mucho.", "ans": True, "prueba": "es muy habladora"},
+        {"q": "Javi lleva barba.", "ans": True, "prueba": "es un chico moreno y lleva barba"},
+    ],
+    "produccion": {
+        "prompt": "Juega tú. Describe a alguien de tu clase sin decir su nombre, en cuatro frases: "
+                  "el pelo · los ojos · alto o bajo · el carácter. Tus compañeros adivinan.",
+        "modo": "grabar",
+        "modelo": "Es… Tiene el pelo… y los ojos… Lleva… Es muy… ¿Quién es?",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
-         ("C5", 1): C5_U1, ("C6+", 1): C6P_U1}
+         ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
+         ("C5", 2): C5_U2}
 
 
 def controla():
