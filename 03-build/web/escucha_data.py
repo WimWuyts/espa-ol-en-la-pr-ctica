@@ -460,9 +460,104 @@ C6P_U2 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C5 · U3 — mensajes de voz. De leestekst van deze unit is een chat waarin twee
+# klasgenoten een gaatje zoeken; hier vertelt Pau één zaterdag van begin tot eind.
+# Ander genre (gesproken monoloog in plaats van geschreven beurten) en andere
+# inhoud: daar plannen, hier vertellen.
+# ---------------------------------------------------------------------------
+C5_U3 = {
+    "id": "C5-U3-ESC-01",
+    "ancla": "c5-u3-esc-01",
+    "titulo": "Mi sábado en Barcelona",
+    "audio": "audio/C5_U3.mp3",
+    "situacion": {
+        "lugar": "En el móvil: unos audios entre Bélgica y Barcelona",
+        "quien": "Sam (Bélgica) y Pau (Barcelona)",
+        "que": "Pau le cuenta cómo es un sábado normal para él",
+        "claves": ["me levanto / me despierto", "primero… después…", "una vez por semana"],
+    },
+    "guion": [
+        {"who": "Sam", "es": "¡Hola, Pau! Una pregunta para la clase de español: ¿cómo es un "
+                             "sábado normal para ti?",
+         "nl": "Hallo Pau! Een vraag voor de Spaanse les: hoe ziet een gewone zaterdag er bij "
+               "jou uit?"},
+        {"who": "Pau", "es": "¡Buena pregunta! Pues mira: entre semana me levanto a las siete, "
+                             "pero el sábado no. El sábado me despierto a las nueve.",
+         "nl": "Goede vraag! Kijk: doordeweeks sta ik om zeven uur op, maar op zaterdag niet. "
+               "Op zaterdag word ik om negen uur wakker."},
+        {"who": "Pau", "es": "Me ducho, desayuno con mi hermana y a las once salgo de casa.",
+         "nl": "Ik douche, ontbijt met mijn zus en om elf uur ga ik de deur uit."},
+        {"who": "Pau", "es": "Voy en metro hasta la Sagrada Familia. Allí trabajo tres horas: "
+                             "enseño el barrio a los turistas.",
+         "nl": "Ik ga met de metro naar de Sagrada Família. Daar werk ik drie uur: ik laat "
+               "toeristen de wijk zien."},
+        {"who": "Pau", "es": "Almuerzo tarde, sobre las tres. En España almorzamos muy tarde, "
+                             "¿sabes?",
+         "nl": "Ik eet laat, rond drie uur. In Spanje eten we heel laat, weet je."},
+        {"who": "Pau", "es": "Por la tarde tengo ensayo de castellers. Es una vez por semana, "
+                             "siempre los sábados, de cinco a siete.",
+         "nl": "'s Namiddags heb ik repetitie van de castellers. Dat is één keer per week, "
+               "altijd op zaterdag, van vijf tot zeven."},
+        {"who": "Pau", "es": "¿Castellers? Son las torres humanas de Cataluña. Yo estoy casi "
+                             "arriba porque soy bajito.",
+         "nl": "Castellers? Dat zijn de menselijke torens van Catalonië. Ik sta bijna bovenaan, "
+               "want ik ben klein."},
+        {"who": "Pau", "es": "Después vuelvo a casa, ceno a las nueve y media y juego un rato "
+                             "con el ordenador.",
+         "nl": "Daarna ga ik naar huis, eet ik om half tien en speel ik nog even op de computer."},
+        {"who": "Pau", "es": "Me acuesto a las doce. ¡Los domingos duermo hasta tarde!",
+         "nl": "Ik ga om twaalf uur slapen. Op zondag slaap ik uit!"},
+        {"who": "Sam", "es": "¡Qué envidia! Yo el sábado me levanto a las diez y no hago nada.",
+         "nl": "Wat jaloers! Ik sta op zaterdag om tien uur op en doe niets."},
+        {"who": "Pau", "es": "Pues descansar también está bien. ¿Y a qué hora cenáis vosotros?",
+         "nl": "Uitrusten is ook goed hoor. En hoe laat eten jullie 's avonds?"},
+        {"who": "Sam", "es": "A las seis y media. ¡Muy temprano para ti!",
+         "nl": "Om half zeven. Heel vroeg voor jou!"},
+    ],
+    "global": {
+        "q": "¿De qué habla Pau?",
+        "opts": ["De cómo es su sábado, hora por hora", "De sus vacaciones de verano",
+                 "De un examen difícil"],
+        "ans": "De cómo es su sábado, hora por hora",
+        "why": "van het opstaan tot het slapengaan, met uren",
+    },
+    "detalle": [
+        {"q": "¿A qué hora se despierta Pau el sábado?",
+         "opts": ["A las nueve", "A las siete", "A las once"], "ans": "A las nueve",
+         "why": "«El sábado me despierto a las nueve»"},
+        {"q": "¿Qué hace Pau en la Sagrada Familia?",
+         "opts": ["Enseña el barrio a los turistas", "Estudia en la biblioteca", "Juega al fútbol"],
+         "ans": "Enseña el barrio a los turistas", "why": "«enseño el barrio a los turistas»"},
+        {"q": "¿A qué hora almuerza?", "opts": ["Sobre las tres", "Sobre la una", "Sobre las cinco"],
+         "ans": "Sobre las tres", "why": "«Almuerzo tarde, sobre las tres»"},
+        {"q": "¿Cuántas veces por semana tiene ensayo de castellers?",
+         "opts": ["Una", "Dos", "Tres"], "ans": "Una", "why": "«Es una vez por semana»"},
+        {"q": "¿A qué hora se acuesta?", "opts": ["A las doce", "A las diez", "A las nueve y media"],
+         "ans": "A las doce", "why": "«Me acuesto a las doce»"},
+    ],
+    "vf": [
+        {"q": "Entre semana Pau se levanta a las siete.", "ans": True,
+         "prueba": "entre semana me levanto a las siete"},
+        {"q": "Pau está abajo del todo en la torre humana.", "ans": False,
+         "prueba": "yo estoy casi arriba"},
+        {"q": "Sam cena a las seis y media.", "ans": True, "prueba": "a las seis y media"},
+    ],
+    "produccion": {
+        "prompt": "Contesta a Pau con un mensaje de voz: ¿cómo es tu sábado? A qué hora te "
+                  "levantas, qué haces por la mañana y por la tarde, y a qué hora te acuestas. "
+                  "Usa primero · después · normalmente.",
+        "modo": "grabar",
+        "modelo": "El sábado me levanto a las… Primero… Después… Por la tarde… Ceno a las… "
+                  "y me acuesto a las…",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
-         ("C5", 2): C5_U2, ("C6+", 2): C6P_U2}
+         ("C5", 2): C5_U2, ("C6+", 2): C6P_U2,
+         ("C5", 3): C5_U3}
 
 
 def controla():

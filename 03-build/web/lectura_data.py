@@ -586,9 +586,116 @@ C6P_U2 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C5 · U3 «El tiempo vuela» — parada Barcelona
+# Tekstsoort: chat de móvil. Nieuw genre: de tekst bestaat uit korte beurten met
+# een tijdstempel, dus de leerling leert lezen mét de tijdlijn erbij — precies wat
+# deze unit nodig heeft (uren, dagen, frequentie).
+# Het luisterfragment is een reeks spraakberichten over één zaterdag.
+# ---------------------------------------------------------------------------
+C5_U3 = {
+    "id": "C5-U3-LEC-01",
+    "ancla": "c5-u3-lec-01",
+    "titulo": "¿Quedamos esta semana?",
+    "tipo": "chat de móvil (conversación escrita)",
+    "emisor": "Marc, alumno en Barcelona",
+    "receptor": "Júlia, su compañera de clase",
+    "objetivo": "Encontrar un hueco libre para estudiar juntos",
+    "prediccion": {
+        "q": "Kijk eerst alleen naar de uren links van elk bericht en naar de dagen. "
+             "Waarover gaat dit?",
+        "opts": ["Over een afspraak zoeken in een drukke week", "Over een reis naar Barcelona",
+                 "Over een verjaardagsfeest"],
+        "ans": "Over een afspraak zoeken in een drukke week",
+        "why": "Korte beurten met tijdstempels + dagen van de week = plannen.",
+    },
+    "texto": [
+        ["titulo", "💬 CHAT · Marc y Júlia (Barcelona)"],
+        ["lema", "Jueves, 17:00 — «¿Quedamos esta semana?»"],
+        ["aviso", ["Marc · 17:02",
+                   "¡Hola, Júlia! ¿Quedamos esta semana para estudiar el examen de mates? "
+                   "Yo puedo casi todos los días."]],
+        ["aviso", ["Júlia · 17:09",
+                   "¡Vale! Pero esta semana tengo poco tiempo. Los martes y los jueves voy a "
+                   "natación de seis a siete y media. Y los lunes salgo tarde del instituto."]],
+        ["aviso", ["Marc · 17:11",
+                   "¿Y el miércoles? Yo termino a las cinco y no hago nada por la tarde."]],
+        ["aviso", ["Júlia · 17:14",
+                   "El miércoles perfecto. ¿A las cinco y media en la biblioteca de la plaza? "
+                   "Cierra a las ocho."]],
+        ["aviso", ["Marc · 17:15",
+                   "Genial. Yo normalmente llego cinco minutos tarde… ¡pero el miércoles no! 😄"]],
+        ["firma", "Júlia · 17:16 — «Te espero con los apuntes. ¡Hasta el miércoles!»"],
+    ],
+    "traduccion": "CHAT · Marc en Júlia (Barcelona). Donderdag 17:00 — «Spreken we deze week af?» "
+                  "Marc: Hallo Júlia! Spreken we deze week af om voor het wiskunde-examen te "
+                  "studeren? Ik kan bijna elke dag. — Júlia: Oké! Maar deze week heb ik weinig "
+                  "tijd. Op dinsdag en donderdag ga ik zwemmen van zes tot half acht. En op "
+                  "maandag kom ik laat van school. — Marc: En woensdag? Ik ben om vijf uur klaar "
+                  "en 's namiddags doe ik niets. — Júlia: Woensdag is perfect. Om half zes in de "
+                  "bibliotheek op het plein? Ze sluit om acht uur. — Marc: Top. Ik kom normaal "
+                  "vijf minuten te laat… maar woensdag niet! — Júlia: Ik wacht op je met de "
+                  "notities. Tot woensdag!",
+    "global": {
+        "q": "¿Para qué es este chat?",
+        "opts": ["Para buscar un momento libre para verse", "Para hablar de las vacaciones",
+                 "Para pedir ayuda con el móvil"],
+        "ans": "Para buscar un momento libre para verse",
+    },
+    "escanear": [
+        {"q": "¿A qué hora va Júlia a natación?", "ans": "de seis a siete y media",
+         "alt": ["seis a siete y media", "de 6 a 7:30", "a las seis"],
+         "why": "«voy a natación de seis a siete y media»"},
+        {"q": "¿Qué día quedan?", "ans": "el miércoles", "alt": ["miércoles", "miercoles"],
+         "why": "«El miércoles perfecto»"},
+        {"q": "¿A qué hora quedan?", "ans": "a las cinco y media",
+         "alt": ["cinco y media", "5:30", "17:30", "las cinco y media"],
+         "why": "«¿A las cinco y media en la biblioteca…?»"},
+        {"q": "¿Dónde quedan?", "ans": "en la biblioteca de la plaza",
+         "alt": ["la biblioteca", "biblioteca", "en la biblioteca"],
+         "why": "«en la biblioteca de la plaza»"},
+        {"q": "¿Para qué examen estudian?", "ans": "de mates",
+         "alt": ["mates", "matemáticas", "el examen de mates"], "why": "«el examen de mates»"},
+    ],
+    "vf": [
+        {"q": "Júlia va a natación dos días por semana.", "ans": True,
+         "prueba": "los martes y los jueves voy a natación"},
+        {"q": "Quedan el martes.", "ans": False, "prueba": "el miércoles perfecto"},
+        {"q": "La biblioteca cierra a las ocho.", "ans": True, "prueba": "cierra a las ocho"},
+        {"q": "Marc tiene actividades el miércoles por la tarde.", "ans": False,
+         "prueba": "no hago nada por la tarde"},
+        {"q": "Marc suele llegar puntual.", "ans": False,
+         "prueba": "normalmente llego cinco minutos tarde"},
+    ],
+    "contexto": [
+        {"q": "«¿Quedamos esta semana?» — ¿qué propone Marc?",
+         "opts": ["Afspreken om elkaar te zien", "Blijven zitten waar hij zit", "Iets kopen"],
+         "ans": "Afspreken om elkaar te zien",
+         "why": "Erna volgt meteen een dag en een uur."},
+        {"q": "«salgo tarde del instituto» — ¿qué es «tarde» aquí?",
+         "opts": ["laat op de dag", "de namiddag", "een taart"], "ans": "laat op de dag",
+         "why": "Als zelfstandig naamwoord is «la tarde» de namiddag; hier staat het bij een "
+                "werkwoord en betekent het «laat» — tegenover «temprano»."},
+        {"q": "«Cierra a las ocho» — ¿quién o qué cierra?",
+         "opts": ["La biblioteca", "Júlia", "El instituto"], "ans": "La biblioteca",
+         "why": "Het staat pal na de plaats van afspraak."},
+        {"q": "«Te espero con los apuntes» — ¿qué son «los apuntes»?",
+         "opts": ["de notities", "de afspraken", "de punten van een toets"], "ans": "de notities",
+         "why": "Ze gaan samen studeren voor een examen."},
+    ],
+    "produccion": {
+        "prompt": "Contesta tú a Marc (4–5 frases): di qué días no puedes y por qué, propón un "
+                  "día y una hora, y di dónde quedáis. Usa: los lunes… · de … a … · a las …",
+        "modelo": "Hola, Marc. Los… tengo… de … a … El… puedo. ¿Quedamos a las … en …? "
+                  "Normalmente llego…",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
-         ("C5", 2): C5_U2, ("C6+", 2): C6P_U2}
+         ("C5", 2): C5_U2, ("C6+", 2): C6P_U2,
+         ("C5", 3): C5_U3}
 
 
 def _texto_plano(t):

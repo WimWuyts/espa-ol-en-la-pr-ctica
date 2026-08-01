@@ -208,6 +208,81 @@ SETS[("C5", 2)] = [
          ]),
 ]
 
+SETS[("C5", 3)] = [
+    dict(title="Los verbos reflexivos — rellena", accents="strict",
+         desc="Bij een reflexief werkwoord horen er <b>twee woorden</b> in het gat: eerst het "
+              "pronombre, dan de vorm — <i>me levanto</i>, niet <i>levanto</i>. Let op: bij "
+              "<i>nosotros</i> verandert de stam níét.",
+         items=[
+             {"q": "Yo ___ (despertarse) a las siete.", "ans": "me despierto", "hint": "m_ d________",
+              "why": "yo → me · e → ie"},
+             {"q": "Pau ___ (levantarse) muy temprano.", "ans": "se levanta", "hint": "s_ l______",
+              "why": "él → se · regelmatig"},
+             {"q": "Nosotros ___ (ducharse) por la mañana.", "ans": "nos duchamos", "hint": "n__ d_______",
+              "why": "nosotros → nos"},
+             {"q": "¿A qué hora ___ (acostarse) tú?", "ans": "te acuestas", "hint": "t_ a_______",
+              "why": "tú → te · o → ue"},
+             {"q": "Mis hermanas ___ (vestirse) rápido.", "ans": "se visten", "hint": "s_ v______",
+              "why": "ellas → se · e → i"},
+             {"q": "Yo ___ (lavarse) las manos antes de comer.", "ans": "me lavo", "hint": "m_ l___",
+              "why": "yo → me · regelmatig"},
+             {"q": "Tú ___ (peinarse) delante del espejo.", "ans": "te peinas", "hint": "t_ p_____",
+              "why": "tú → te"},
+             {"q": "Nosotras ___ (acostarse) a las once.", "ans": "nos acostamos", "hint": "n__ a________",
+              "why": "nosotras → nos · géén o → ue"},
+             {"q": "Mi padre ___ (despertarse) con el móvil.", "ans": "se despierta", "hint": "s_ d________",
+              "why": "él → se · e → ie"},
+             {"q": "¿Vosotros ___ (levantarse) tarde los domingos?", "ans": "os levantáis",
+              "hint": "o_ l________", "why": "vosotros → os · levantáis mét tilde"},
+             {"q": "Los niños ___ (ducharse) por la noche.", "ans": "se duchan", "hint": "s_ d_____",
+              "why": "ellos → se"},
+             {"q": "Yo ___ (vestirse) en dos minutos.", "ans": "me visto", "hint": "m_ v____",
+              "why": "yo → me · e → i"},
+         ]),
+    dict(title="Presente irregular — el cambio de raíz", accents="strict",
+         desc="De klinker in de <b>stam</b> verandert — maar <b>nooit</b> bij <i>nosotros</i> en "
+              "<i>vosotros</i>. Drie soorten: <b>o → ue</b> · <b>e → ie</b> · <b>e → i</b> "
+              "(en <i>jugar</i> doet u → ue).",
+         items=[
+             {"q": "Yo ___ (dormir) ocho horas.", "ans": "duermo", "hint": "d_____", "why": "o → ue"},
+             {"q": "La clase ___ (empezar) a las nueve.", "ans": "empieza", "hint": "e______", "why": "e → ie"},
+             {"q": "Nosotros ___ (poder) ir contigo.", "ans": "podemos", "hint": "p______",
+              "why": "valstrik: bij nosotros géén o → ue"},
+             {"q": "¿Qué ___ (querer) tú?", "ans": "quieres", "hint": "q______", "why": "e → ie"},
+             {"q": "Pau ___ (volver) a casa a las seis.", "ans": "vuelve", "hint": "v_____", "why": "o → ue"},
+             {"q": "Yo ___ (pedir) un café.", "ans": "pido", "hint": "p___", "why": "e → i"},
+             {"q": "Mis amigos ___ (jugar) al baloncesto.", "ans": "juegan", "hint": "j_____", "why": "u → ue"},
+             {"q": "Nosotras ___ (dormir) poco entre semana.", "ans": "dormimos", "hint": "d_______",
+              "why": "valstrik: nosotras houdt de o"},
+             {"q": "¿Tú ___ (preferir) el té o el café?", "ans": "prefieres", "hint": "p________", "why": "e → ie"},
+             {"q": "Yo ___ (almorzar) en el instituto.", "ans": "almuerzo", "hint": "a_______", "why": "o → ue"},
+             {"q": "El camarero ___ (repetir) el pedido.", "ans": "repite", "hint": "r_____", "why": "e → i"},
+             {"q": "Vosotros ___ (querer) salir, ¿verdad?", "ans": "queréis", "hint": "q______",
+              "why": "vosotros houdt de e — mét tilde"},
+         ]),
+    dict(title="hacer · ir · salir — los tres del día", accents="strict",
+         desc="Drie werkwoorden die je elke dag nodig hebt, en alle drie onregelmatig. Twee "
+              "hebben een rare <b>yo</b>-vorm (<i>hago</i>, <i>salgo</i>); <i>ir</i> is helemaal "
+              "eigenzinnig.",
+         items=[
+             {"q": "Yo ___ (hacer) los deberes por la tarde.", "ans": "hago", "hint": "h___",
+              "why": "yo hago — met -g-"},
+             {"q": "¿Qué ___ (hacer) tú los sábados?", "ans": "haces", "hint": "h____", "why": "tú haces, normaal"},
+             {"q": "Nosotros ___ (hacer) deporte dos veces por semana.", "ans": "hacemos", "hint": "h______"},
+             {"q": "Mis padres ___ (hacer) la compra el viernes.", "ans": "hacen", "hint": "h____"},
+             {"q": "Yo ___ (ir) al instituto en bici.", "ans": "voy", "hint": "v__", "why": "ir → voy"},
+             {"q": "¿Adónde ___ (ir) tú ahora?", "ans": "vas", "hint": "v__"},
+             {"q": "Pau ___ (ir) al gimnasio los lunes.", "ans": "va", "hint": "v_"},
+             {"q": "Nosotras ___ (ir) al cine el fin de semana.", "ans": "vamos", "hint": "v____"},
+             {"q": "Yo ___ (salir) de casa a las ocho.", "ans": "salgo", "hint": "s____",
+              "why": "yo salgo — met -g-"},
+             {"q": "¿A qué hora ___ (salir) vosotros?", "ans": "salís", "hint": "s____",
+              "why": "salís mét tilde"},
+             {"q": "Mi hermana ___ (salir) con sus amigas.", "ans": "sale", "hint": "s___"},
+             {"q": "Ellos ___ (ir) a la playa en verano.", "ans": "van", "hint": "v__"},
+         ]),
+]
+
 SETS[("C6+", 1)] = [
     dict(title="Los verbos reflexivos — rellena", accents="strict",
          desc="Vergeet het <b>pronombre</b> niet: bij een reflexief werkwoord horen er twee "
