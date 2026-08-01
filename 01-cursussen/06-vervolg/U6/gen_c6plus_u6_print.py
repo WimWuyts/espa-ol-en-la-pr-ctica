@@ -428,7 +428,7 @@ P(PB.lectura_print(LD.C6P_U6, "1"))
 P('</div>')
 
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">7</span><span class="pk">§7 · Escucha — «Pódcast «Antes y ahora»»</span>')
+P('<span class="num">7</span><span class="pk">§7 · Escucha — Pódcast «Antes y ahora»</span>')
 P('<div class="intro"><b>ES:</b> Dos invitados comparan su infancia en el pódcast del instituto. <b>Escucha primero, escribe después.</b> <span class="gloss">Twee gasten vergelijken hun kindertijd in de schoolpodcast. Eerst luisteren, dan schrijven; het transcript staat online en gaat pas open ná de taken.</span></div>')
 P(PB.escucha_print(ED.C6P_U6, "1"))
 P('</div>')
