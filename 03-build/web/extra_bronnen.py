@@ -59,6 +59,24 @@ DESTACADO = {
         "tip": "Doe hem als afsluiting, nadat je de oefeningen hierboven hebt gemaakt — "
                "of samen met een klasgenoot, om beurten.",
     },
+    # De omschrijving hieronder is gebaseerd op de leerstof van de unidad en op
+    # de URL zelf (mi-gente · juegos · sevilla); de pagina kon niet ingekeken
+    # worden vanuit deze omgeving (403 op chatgpt.site). Klopt het scenario of
+    # de titel niet, dan volstaat het die twee regels aan te passen.
+    ("C5", 2): {
+        "kicker": "Repaso de toda la unidad",
+        "titel": "Mi gente · Sevilla",
+        "soort": "Escape room",
+        "url": "https://mi-gente-juegos-sevilla.wim-wuyts1979.chatgpt.site/",
+        "es": "Toda la unidad en un solo juego, en Sevilla: la familia y el verbo tener, los "
+              "posesivos, la concordancia de los adjetivos, ser frente a estar y los "
+              "demostrativos.",
+        "nl": "Álle leerstof van deze unidad in één spel, met Sevilla als decor: de "
+              "familiebanden en het werkwoord tener, de posesivos, de overeenkomst van het "
+              "adjectief, ser tegenover estar en de demostrativos.",
+        "tip": "Doe hem als afsluiting, nadat je de oefeningen hierboven hebt gemaakt — "
+               "of samen met een klasgenoot, om beurten.",
+    },
     ("C6+", 1): {
         "kicker": "Repaso de toda la unidad",
         "titel": "El martes desaparecido",
