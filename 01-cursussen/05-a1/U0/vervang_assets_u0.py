@@ -19,6 +19,12 @@ Het script werkt op de sleuteltekst van elk kader en is herhaalbaar: staat de
 nieuwe inhoud er al, dan doet het niets. Er wordt alleen vervangen, nooit iets
 weggelaten dat de leerling nodig heeft.
 
+Naast `U0.html` stond er een map `_html/` met een oudere momentopname van
+dezelfde secties. Die had geen enkele consument — geen enkel script bouwde de
+cursus eruit — en was intussen 4 tot 40 % van `U0.html` weg gedreven, dus als
+«bron» was ze vooral een valstrik. Ze is verwijderd; `U0.html` is de bron.
+Terughalen kan met `git show 69536af:01-cursussen/05-a1/U0/_html/<naam>.html`.
+
     python3 01-cursussen/05-a1/U0/vervang_assets_u0.py
     python3 01-cursussen/05-a1/U0/vervang_assets_u0.py --check   # alleen tellen
 """
@@ -29,7 +35,6 @@ import sys
 
 HIER = os.path.dirname(os.path.abspath(__file__))
 DOEL = os.path.join(HIER, "U0.html")
-ARCHIEF = os.path.join(HIER, "_html")
 
 # Per kader: (herkenningstekst uit het oude kader, nieuwe HTML).
 # De herkenningstekst is een fragment dat maar in één kader voorkomt.
@@ -93,19 +98,10 @@ def main():
     ap.add_argument("--check", action="store_true", help="alleen tellen, niets schrijven")
     a = ap.parse_args()
     if a.check:
-        for pad in [DOEL] + sorted(os.path.join(ARCHIEF, f) for f in os.listdir(ARCHIEF)):
-            n = len(ASSET.findall(open(pad, encoding="utf-8").read()))
-            print("  %-46s %2d asset-kaders" % (os.path.relpath(pad), n))
+        n = len(ASSET.findall(open(DOEL, encoding="utf-8").read()))
+        print("  %-46s %2d asset-kaders" % (os.path.relpath(DOEL), n))
         return 0
-    print("Leerlingeneditie:")
     _, over = vervang(DOEL)
-    # Het archief _html/ is een oudere momentopname van dezelfde pagina's; wat er
-    # ook daar staat, wordt meegenomen zodat een latere hersamenstelling de
-    # notities niet opnieuw binnenhaalt.
-    print("Archief _html/ (oudere momentopname):")
-    for f in sorted(os.listdir(ARCHIEF)):
-        if f.endswith(".html"):
-            vervang(os.path.join(ARCHIEF, f))
     return 0 if over == 0 else 1
 
 

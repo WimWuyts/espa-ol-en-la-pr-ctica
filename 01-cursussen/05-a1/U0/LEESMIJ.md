@@ -50,6 +50,11 @@ géén condicional, géén subjuntivo.
   schrijfruimte, een oefening per twee voor het spellen, en de legende bij de semáforo —
   die drie kolommen stonden er tot nu toe zonder uitleg bij. Zie
   `vervang_assets_u0.py` voor wat waar is gekomen.
+- De map **`_html/`** is opgeruimd. Dat was een oudere momentopname van dezelfde
+  secties, zonder enkele consument — geen script bouwde de cursus eruit — en intussen
+  4 tot 40 % van `U0.html` weg gedreven. Als «bron» was ze vooral een valstrik voor wie
+  later verder bouwt. **`U0.html` is de bron.** Terughalen kan altijd uit git:
+  `git show 69536af:01-cursussen/05-a1/U0/_html/<naam>.html`.
 - Eén van die kaders verklapte de **oplossing van het dictee**; die staat er niet meer
   (oplossingen horen in het docentendossier en in de zelfcorrectie online).
 - De **PDF is opnieuw gerenderd**. Hij telt nu 58 in plaats van 62 bladzijden: de vorige

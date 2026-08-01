@@ -578,7 +578,15 @@ P('<h3 style="margin-top:6mm">§1.1 · Los miembros de la familia — el vocabul
 # --- PAREL-2 · el árbol genealógico de Rosalía ---
 P('<p style="font-size:9.6pt">① <b>El árbol de Rosalía.</b> Antes de tu familia, conocemos a la familia de una cantante famosa: <b>Rosalía</b>. Explora su árbol y aprende el vocabulario de la familia. <span class="gloss">We leren het familievocabulaire via de stamboom van Rosalía.</span></p>')
 P('<div class="arbolwrap">')
-P('<div>' + arbol_rosalia() + '<div class="asset" style="margin-top:1mm">Los nombres de los abuelos son de ejemplo (poco se sabe públicamente).</div></div>')
+# Geen productienotitie maar een eerlijke bronvermelding: de stamboom gaat over een
+# echt persoon, dus moet erbij staan wat wél en niet vaststaat. Daarom in de
+# leerlingstijl (Spaans + NL-steun) en niet in het grijze asset-kader.
+P('<div>' + arbol_rosalia() + '<div class="hist" style="margin-top:1mm;font-size:8.6pt">'
+  '<b>Nota:</b> los nombres de los <b>abuelos</b> son inventados: de la familia de Rosalía '
+  'se sabe poco públicamente. El resto del árbol sí es real. '
+  '<span class="gloss">De namen van de grootouders zijn verzonnen — over Rosalía\'s familie is '
+  'weinig publiek bekend. De rest van de stamboom klopt wel. Zo weet je meteen wat je hier '
+  'als feit mag onthouden.</span></div></div>')
 P('<div class="ojofam"><div class="oh">💡 ¡Ojo! — «neef/nicht» = dos palabras</div>'
   '<p>En neerlandés <b>«neef/nicht»</b> son <b>dos cosas</b> en español:'
   '<span class="pair"><span class="k">el primo / la prima</span> = kind van je <b>oom of tante</b> <span class="gloss">(tío/tía)</span></span>'
