@@ -61,5 +61,5 @@ Onder «✍️ Escribe tú — la gramática sin opciones», telkens twaalf item
 - De **Extra**-tab bevat nu **14 links in 7 groepen** (ProfeDeELE · Más ProfeDeELE ·
   Arche-ELE), geordend zoals de unit zelf: elke pagina staat er precies één keer, onder
   het onderwerp waar ze het meest bij helpt. Dient een pagina ook voor een ander
-  onderdeel, dan staat dat in de titel. De **escape room** ontbreekt nog; zodra er een
-  URL is, komt die bovenaan het tabblad.
+  onderdeel, dan staat dat in de titel. Bovenaan staat de spellenverzameling
+  **«El tiempo vuela · Barcelona»**, uitgelicht als afsluiting van de unidad.

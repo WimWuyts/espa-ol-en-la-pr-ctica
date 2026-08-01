@@ -59,22 +59,38 @@ DESTACADO = {
         "tip": "Doe hem als afsluiting, nadat je de oefeningen hierboven hebt gemaakt — "
                "of samen met een klasgenoot, om beurten.",
     },
-    # De omschrijving hieronder is gebaseerd op de leerstof van de unidad en op
-    # de URL zelf (mi-gente · juegos · sevilla); de pagina kon niet ingekeken
-    # worden vanuit deze omgeving (403 op chatgpt.site). Klopt het scenario of
-    # de titel niet, dan volstaat het die twee regels aan te passen.
+    # Titel door de auteur bevestigd. Het is een spellenverzameling, geen escape
+    # room — vandaar het soort «Juegos» en het spelicoon in plaats van de sleutel.
     ("C5", 2): {
         "kicker": "Repaso de toda la unidad",
-        "titel": "Mi gente · Sevilla",
-        "soort": "Escape room",
+        "titel": "Dos juegos, una familia",
+        "soort": "Juegos",
+        "ico": "🎮",
         "url": "https://mi-gente-juegos-sevilla.wim-wuyts1979.chatgpt.site/",
-        "es": "Toda la unidad en un solo juego, en Sevilla: la familia y el verbo tener, los "
-              "posesivos, la concordancia de los adjetivos, ser frente a estar y los "
+        "es": "Dos juegos para repasar toda la unidad, en Sevilla: la familia y el verbo tener, "
+              "los posesivos, la concordancia de los adjetivos, ser frente a estar y los "
               "demostrativos.",
-        "nl": "Álle leerstof van deze unidad in één spel, met Sevilla als decor: de "
+        "nl": "Twee spellen om de hele unidad te herhalen, met Sevilla als decor: de "
               "familiebanden en het werkwoord tener, de posesivos, de overeenkomst van het "
               "adjectief, ser tegenover estar en de demostrativos.",
-        "tip": "Doe hem als afsluiting, nadat je de oefeningen hierboven hebt gemaakt — "
+        "tip": "Doe ze als afsluiting, nadat je de oefeningen hierboven hebt gemaakt — "
+               "of samen met een klasgenoot, om beurten.",
+    },
+    # De titel hieronder is afgeleid van de unidad en de URL: de pagina zelf kon
+    # niet ingekeken worden (403 op chatgpt.site vanuit deze omgeving). Heeft het
+    # spel een eigen naam, dan volstaat het die ene regel te vervangen.
+    ("C5", 3): {
+        "kicker": "Repaso de toda la unidad",
+        "titel": "El tiempo vuela · Barcelona",
+        "soort": "Juegos",
+        "ico": "🎮",
+        "url": "https://el-tiempo-vuela-barcelona.wim-wuyts1979.chatgpt.site/",
+        "es": "Juegos para repasar toda la unidad, en Barcelona: la hora, la rutina con los "
+              "verbos reflexivos, el presente irregular y las expresiones de frecuencia.",
+        "nl": "Spellen om de hele unidad te herhalen, met Barcelona als decor: het uur, de "
+              "dagindeling met de reflexieve werkwoorden, het presente irregular en de "
+              "frequentiewoorden.",
+        "tip": "Doe ze als afsluiting, nadat je de oefeningen hierboven hebt gemaakt — "
                "of samen met een klasgenoot, om beurten.",
     },
     ("C6+", 1): {
@@ -846,7 +862,7 @@ def html(course, unit):
     if d:
         uit.append(
             '<a class="destacado" href="%s" target="_blank" rel="noopener">'
-            '<span class="dest-ico" aria-hidden="true">🗝️</span>'
+            '<span class="dest-ico" aria-hidden="true">%s</span>'
             '<span class="dest-tekst">'
             '<span class="dest-kicker">%s</span>'
             '<span class="dest-titel">%s</span>'
@@ -854,8 +870,8 @@ def html(course, unit):
             '<span class="dest-nl">%s</span>'
             '<span class="dest-tip">💡 %s</span></span>'
             '<span class="dest-badge">%s</span></a>'
-            % (_esc(d["url"]), _esc(d["kicker"]), _esc(d["titel"]), _esc(d["es"]),
-               _esc(d["nl"]), _esc(d["tip"]), _esc(d["soort"])))
+            % (_esc(d["url"]), d.get("ico", "🗝️"), _esc(d["kicker"]), _esc(d["titel"]),
+               _esc(d["es"]), _esc(d["nl"]), _esc(d["tip"]), _esc(d["soort"])))
     for titel, items in groepen:
         uit.append('<div class="card brongroep"><h3>%s</h3><ul class="bronlijst">' % _esc(titel))
         for bron, naam, url in items:

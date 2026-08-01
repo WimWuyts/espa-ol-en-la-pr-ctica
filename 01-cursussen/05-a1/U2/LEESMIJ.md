@@ -66,4 +66,5 @@ Onder «✍️ Escribe tú — la gramática sin opciones», telkens twaalf item
 - De **Extra**-tab bevat **23 links in 9 groepen** (ProfeDeELE · Más ProfeDeELE ·
   Arche-ELE · My Daily Spanish), geordend zoals de unit zelf: elke pagina staat er
   precies één keer, onder het onderwerp waar ze het meest bij helpt. Bovenaan staat de
-  **escape room «Mi gente · Sevilla»**, uitgelicht als afsluiting van de unidad.
+  spellenverzameling **«Dos juegos, una familia»**, uitgelicht als afsluiting van de
+  unidad.
