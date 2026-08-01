@@ -426,6 +426,78 @@ SETS[("C5", 5)] = [
          ]),
 ]
 
+SETS[("C5", 7)] = [
+    dict(title="¿hay o está(n)? — escribe la forma", accents="strict",
+         desc="<b>hay</b> als het iets nieuws of ongeteld is (un · dos · mucho) · "
+              "<b>está / están</b> als het al bepaald is (el · la · mi · este). De tilde op "
+              "<i>está</i> hoort erbij.",
+         items=[
+             {"q": "En mi barrio ___ una panadería muy buena.", "ans": "hay", "why": "una → hay"},
+             {"q": "La panadería ___ enfrente del banco.", "ans": "está",
+              "why": "la panadería → está, mét tilde"},
+             {"q": "En el salón ___ dos sofás y una alfombra.", "ans": "hay", "why": "dos → hay"},
+             {"q": "Mis zapatos ___ debajo de la cama.", "ans": "están", "why": "mis zapatos → están"},
+             {"q": "¿Dónde ___ el museo?", "ans": "está", "why": "el museo → está"},
+             {"q": "Cerca de la plaza ___ un parque grande.", "ans": "hay", "why": "un → hay"},
+             {"q": "El espejo ___ encima del armario.", "ans": "está", "why": "el espejo → está"},
+             {"q": "En mi calle no ___ semáforos.", "ans": "hay", "why": "ontkend onbepaald → hay"},
+             {"q": "Las sillas ___ alrededor de la mesa.", "ans": "están", "why": "las sillas → están"},
+             {"q": "¿Cuántas habitaciones ___ en tu piso?", "ans": "hay", "why": "cuántas → tellen → hay"},
+             {"q": "La estación ___ lejos de aquí.", "ans": "está", "why": "la estación → está"},
+             {"q": "En la esquina ___ una farmacia de guardia.", "ans": "hay", "why": "una → hay"},
+         ]),
+    dict(title="El imperativo — explica el camino", accents="strict",
+         desc="De <b>tú</b>-vorm van het bevel is meestal gewoon de <i>él</i>-vorm van het "
+              "presente: <i>sigue</i>, <i>gira</i>, <i>cruza</i>. Acht werkwoorden zijn kort en "
+              "onregelmatig: <b>ve · haz · pon · ten · sal · di · ven · sé</b>.",
+         items=[
+             {"q": "___ (seguir) todo recto hasta la plaza.", "ans": "Sigue", "hint": "S____",
+              "why": "seguir → sigue (e → i)"},
+             {"q": "___ (girar) a la derecha en el semáforo.", "ans": "Gira", "hint": "G___"},
+             {"q": "___ (cruzar) la calle por el paso de peatones.", "ans": "Cruza", "hint": "C____"},
+             {"q": "___ (tomar) la segunda calle a la izquierda.", "ans": "Toma", "hint": "T___"},
+             {"q": "___ (bajar) en la parada del museo.", "ans": "Baja", "hint": "B___"},
+             {"q": "___ (subir) por la escalera, el ascensor no funciona.", "ans": "Sube", "hint": "S___"},
+             {"q": "___ (ir) hasta el final de la calle.", "ans": "Ve", "hint": "V_",
+              "why": "ir → ve, onregelmatig en kort"},
+             {"q": "___ (hacer) lo que dice el mapa.", "ans": "Haz", "hint": "H__",
+              "why": "hacer → haz"},
+             {"q": "___ (salir) del metro por la puerta norte.", "ans": "Sal", "hint": "S__",
+              "why": "salir → sal"},
+             {"q": "___ (decir) mi nombre en la recepción.", "ans": "Di", "hint": "D_",
+              "why": "decir → di"},
+             {"q": "___ (venir) a mi casa después de clase.", "ans": "Ven", "hint": "V__",
+              "why": "venir → ven"},
+             {"q": "___ (coger) el autobús número doce.", "ans": "Coge", "hint": "C___",
+              "why": "coger → coge, regelmatig"},
+         ]),
+    dict(title="Los ordinales — primero o primer", accents="strict",
+         desc="<b>primero</b> en <b>tercero</b> verliezen hun <b>-o</b> vlak vóór een "
+              "mannelijk enkelvoudig woord: <i>el <b>primer</b> piso</i>, maar <i>la "
+              "<b>primera</b> calle</i>. Alle andere ordinales veranderen alleen van "
+              "geslacht.",
+         items=[
+             {"q": "Vivo en el ___ (primero) piso.", "ans": "primer", "hint": "p_____",
+              "why": "vóór mannelijk enkelvoud → primer"},
+             {"q": "Es la ___ (primero) calle a la derecha.", "ans": "primera", "hint": "p______",
+              "why": "la calle → primera, volledig"},
+             {"q": "El museo está en la ___ (tercero) planta.", "ans": "tercera", "hint": "t______"},
+             {"q": "Toma la ___ (segundo) calle a la izquierda.", "ans": "segunda", "hint": "s______"},
+             {"q": "Mi abuela vive en el ___ (tercero) piso.", "ans": "tercer", "hint": "t_____",
+              "why": "vóór mannelijk enkelvoud → tercer"},
+             {"q": "Es el ___ (cuarto) edificio de la calle.", "ans": "cuarto", "hint": "c_____",
+              "why": "cuarto verliest niets"},
+             {"q": "Gira en el ___ (primero) semáforo.", "ans": "primer", "hint": "p_____"},
+             {"q": "Es la ___ (quinto) puerta del pasillo.", "ans": "quinta", "hint": "q_____"},
+             {"q": "El ascensor sube hasta el ___ (décimo) piso.", "ans": "décimo", "hint": "d_____",
+              "why": "décimo houdt zijn tilde"},
+             {"q": "Es el ___ (segundo) día que vengo aquí.", "ans": "segundo", "hint": "s______"},
+             {"q": "Baja en la ___ (sexto) parada.", "ans": "sexta", "hint": "s____"},
+             {"q": "Mi clase está en el ___ (primero) pasillo a la izquierda.", "ans": "primer",
+              "hint": "p_____"},
+         ]),
+]
+
 SETS[("C5", 6)] = [
     dict(title="Acabar de + infinitivo — net gebeurd", accents="strict",
          desc="«Ik heb net…» zeg je met <b>acabar de</b> + infinitivo. Je vervoegt alleen "

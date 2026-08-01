@@ -1183,13 +1183,100 @@ C6P_U6 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C5 · U7 — la visita a un piso. De leestekst van deze unit is een advertentie:
+# daar staat alles wat er wél is. Hier moet de leerling juist horen wat er
+# ontbreekt en wat er niet werkt — luisteren naar het gat in de belofte. Bewust
+# géén routebeschrijving: die staat al in C6+ U2 en zou hier hetzelfde vragen.
+# ---------------------------------------------------------------------------
+C5_U7 = {
+    "id": "C5-U7-ESC-01",
+    "ancla": "c5-u7-esc-01",
+    "titulo": "La visita al piso",
+    "audio": "audio/C5_U7.mp3",
+    "situacion": {
+        "lugar": "Un piso vacío en Cartagena, un sábado por la mañana",
+        "quien": "Una agente inmobiliaria, Sam y su madre",
+        "que": "Visitan el piso y descubren que no todo es como en el anuncio",
+        "claves": ["¿qué hay en…?", "está / están", "no hay"],
+    },
+    "guion": [
+        {"who": "Agente", "es": "Pasen, pasen. Este es el salón. Como ven, es muy luminoso.",
+         "nl": "Komt u binnen. Dit is de woonkamer. Zoals u ziet, is ze heel licht."},
+        {"who": "Madre", "es": "Sí, la ventana es grande. ¿Y qué hay detrás de esa puerta?",
+         "nl": "Ja, het raam is groot. En wat is er achter die deur?"},
+        {"who": "Agente", "es": "La cocina. Es pequeña, pero tiene de todo: nevera, horno y "
+                                "lavadora.",
+         "nl": "De keuken. Ze is klein, maar er is alles: koelkast, oven en wasmachine."},
+        {"who": "Sam", "es": "Perdone, aquí no hay lavadora. Está el hueco, pero está vacío.",
+         "nl": "Sorry, hier is geen wasmachine. De ruimte is er, maar hij is leeg."},
+        {"who": "Agente", "es": "Ah, tiene razón. La lavadora llega la semana que viene.",
+         "nl": "Ah, u hebt gelijk. De wasmachine komt volgende week."},
+        {"who": "Madre", "es": "¿Y los dormitorios?", "nl": "En de slaapkamers?"},
+        {"who": "Agente", "es": "Al final del pasillo. El grande está a la derecha; el pequeño, "
+                                "enfrente.",
+         "nl": "Aan het einde van de gang. De grote is rechts, de kleine ertegenover."},
+        {"who": "Sam", "es": "En el pequeño no hay armario.", "nl": "In de kleine is geen kast."},
+        {"who": "Agente", "es": "No, pero debajo de la cama hay dos cajones muy grandes.",
+         "nl": "Nee, maar onder het bed zitten twee heel grote laden."},
+        {"who": "Madre", "es": "¿Y el ruido? El anuncio dice «zona tranquila».",
+         "nl": "En het lawaai? De advertentie zegt «rustige buurt»."},
+        {"who": "Agente", "es": "De día sí. Los viernes y los sábados hay música en la plaza "
+                                "hasta las dos.",
+         "nl": "Overdag wel. Op vrijdag en zaterdag is er muziek op het plein tot twee uur."},
+        {"who": "Sam", "es": "A mí eso me gusta. Mamá, ¿qué opinas?",
+         "nl": "Mij bevalt dat wel. Mama, wat vind jij?"},
+        {"who": "Madre", "es": "Que el piso está bien, pero primero quiero ver la lavadora.",
+         "nl": "Dat het appartement goed is, maar dat ik eerst de wasmachine wil zien."},
+    ],
+    "global": {
+        "q": "¿Qué pasa durante la visita?",
+        "opts": ["Descubren que faltan cosas del anuncio", "Firman el contrato",
+                 "La agente les enseña el barrio"],
+        "ans": "Descubren que faltan cosas del anuncio",
+        "why": "geen wasmachine, geen kast, wel lawaai",
+    },
+    "detalle": [
+        {"q": "¿Qué falta en la cocina?", "opts": ["La lavadora", "La nevera", "El horno"],
+         "ans": "La lavadora", "why": "«aquí no hay lavadora»"},
+        {"q": "¿Cuándo llega la lavadora?", "opts": ["La semana que viene", "Hoy mismo",
+                                                      "El mes que viene"],
+         "ans": "La semana que viene", "why": "«La lavadora llega la semana que viene»"},
+        {"q": "¿Dónde está el dormitorio grande?", "opts": ["A la derecha", "A la izquierda",
+                                                             "Al lado del salón"],
+         "ans": "A la derecha", "why": "«El grande está a la derecha»"},
+        {"q": "¿Qué hay debajo de la cama del dormitorio pequeño?",
+         "opts": ["Dos cajones grandes", "Un armario", "Una alfombra"],
+         "ans": "Dos cajones grandes", "why": "«debajo de la cama hay dos cajones muy grandes»"},
+        {"q": "¿Qué días hay música en la plaza?",
+         "opts": ["Los viernes y los sábados", "Todos los días", "Los domingos"],
+         "ans": "Los viernes y los sábados", "why": "«Los viernes y los sábados hay música»"},
+    ],
+    "vf": [
+        {"q": "El salón tiene poca luz.", "ans": False, "prueba": "es muy luminoso"},
+        {"q": "En el dormitorio pequeño hay un armario.", "ans": False,
+         "prueba": "en el pequeño no hay armario"},
+        {"q": "A Sam el ruido de la plaza no le molesta.", "ans": True,
+         "prueba": "a mí eso me gusta"},
+    ],
+    "produccion": {
+        "prompt": "Enseña tú tu casa a alguien que la visita. Graba cinco frases: qué hay en "
+                  "cada habitación, dónde está cada mueble (encima de · debajo de · al lado de) "
+                  "y qué falta o qué no funciona.",
+        "modo": "grabar",
+        "modelo": "Este es… Aquí hay… El/La … está … de … En … no hay… y … no funciona.",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
          ("C5", 2): C5_U2, ("C6+", 2): C6P_U2,
          ("C5", 3): C5_U3, ("C6+", 3): C6P_U3,
          ("C5", 4): C5_U4, ("C6+", 4): C6P_U4,
          ("C5", 5): C5_U5, ("C6+", 5): C6P_U5,
-         ("C5", 6): C5_U6, ("C6+", 6): C6P_U6}
+         ("C5", 6): C5_U6, ("C6+", 6): C6P_U6,
+         ("C5", 7): C5_U7}
 
 
 def controla():

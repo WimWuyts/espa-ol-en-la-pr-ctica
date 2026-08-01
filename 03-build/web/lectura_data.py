@@ -1501,13 +1501,129 @@ C6P_U6 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C5 · U7 «Mi casa y mi barrio» — parada Cartagena
+# Tekstsoort: anuncio de alquiler con plano. Nieuw genre: een advertentie mét
+# een plattegrondbeschrijving, dus de leerling moet lezen én in zijn hoofd iets
+# tekenen. Dat is precies wat hay/estar + preposiciones vragen.
+# Het luisterfragment is een omroepbericht in de metro — luisteren zonder beeld.
+# ---------------------------------------------------------------------------
+C5_U7 = {
+    "id": "C5-U7-LEC-01",
+    "ancla": "c5-u7-lec-01",
+    "titulo": "Se alquila apartamento en el centro",
+    "tipo": "anuncio de alquiler (con descripción del plano)",
+    "emisor": "La agencia «Casas del Caribe», Cartagena",
+    "receptor": "Estudiantes que buscan piso",
+    "objetivo": "Que te imagines el piso y lo vengas a ver",
+    "prediccion": {
+        "q": "Kijk eerst alleen naar de prijs, de m² en de opsomming. Wat voor tekst is dit?",
+        "opts": ["Een advertentie voor een huurwoning", "Een reisverslag", "Een rekening"],
+        "ans": "Een advertentie voor een huurwoning",
+        "why": "Prijs + oppervlakte + kamers = een verhuuradvertentie.",
+    },
+    "texto": [
+        ["titulo", "🏠 SE ALQUILA · APARTAMENTO EN GETSEMANÍ"],
+        ["lema", "Cartagena de Indias · 62 m² · 900.000 pesos al mes"],
+        ["lista", [
+            "Segundo piso, sin ascensor",
+            "Dos dormitorios y un baño",
+            "Salón con balcón a la calle",
+            "Cocina pequeña, nevera incluida",
+            "Wifi y agua incluidos; luz aparte",
+        ]],
+        ["p", "El apartamento está en la calle del Pozo, en el barrio de Getsemaní. "
+              "Cuando entras, el pasillo está delante de ti. La cocina está a la derecha y "
+              "el baño, al lado de la cocina."],
+        ["p", "Los dos dormitorios están al final del pasillo, uno enfrente del otro. "
+              "En el dormitorio grande hay un armario empotrado y una cama de matrimonio. "
+              "En el pequeño solo hay una cama y una estantería."],
+        ["p", "El salón está a la izquierda de la entrada. Debajo de la ventana hay un sofá "
+              "azul, y encima de la mesa dejamos una lámpara. El balcón da a la calle: "
+              "por la noche se oye música."],
+        ["aviso", ["📍 EL BARRIO",
+                   "Getsemaní está muy cerca del centro histórico: a diez minutos a pie. "
+                   "En la esquina hay una panadería y, dos calles más allá, un supermercado. "
+                   "La parada del bus está enfrente de la iglesia."]],
+        ["firma", "Visitas: de lunes a viernes, de 9 a 12. Escribe a casas@delcaribe.co"],
+    ],
+    "traduccion": "TE HUUR · APPARTEMENT IN GETSEMANÍ. Cartagena de Indias · 62 m² · 900.000 "
+                  "peso per maand. Tweede verdieping, zonder lift · twee slaapkamers en één "
+                  "badkamer · woonkamer met balkon aan de straat · kleine keuken, koelkast "
+                  "inbegrepen · wifi en water inbegrepen, elektriciteit apart. Het appartement "
+                  "ligt in de calle del Pozo, in de wijk Getsemaní. Als je binnenkomt, ligt de "
+                  "gang recht voor je. De keuken is rechts en de badkamer ligt naast de keuken. "
+                  "De twee slaapkamers liggen aan het einde van de gang, tegenover elkaar. In de "
+                  "grote slaapkamer staat een ingebouwde kast en een tweepersoonsbed. In de "
+                  "kleine staat alleen een bed en een boekenrek. De woonkamer is links van de "
+                  "ingang. Onder het raam staat een blauwe zetel, en op de tafel laten we een "
+                  "lamp staan. Het balkon geeft uit op de straat: 's nachts hoor je muziek. DE "
+                  "WIJK: Getsemaní ligt heel dicht bij het historische centrum, op tien minuten "
+                  "te voet. Op de hoek is een bakkerij en twee straten verder een supermarkt. De "
+                  "bushalte ligt tegenover de kerk.",
+    "global": {
+        "q": "¿Para qué es este texto?",
+        "opts": ["Para alquilar un apartamento", "Para vender muebles",
+                 "Para explicar la historia del barrio"],
+        "ans": "Para alquilar un apartamento",
+    },
+    "escanear": [
+        {"q": "¿Cuántos metros cuadrados tiene? (en cifras)", "ans": "62",
+         "alt": ["62 m2", "62 m²", "sesenta y dos"], "why": "«62 m²»"},
+        {"q": "¿En qué piso está?", "ans": "en el segundo",
+         "alt": ["segundo", "el segundo", "2", "segundo piso"], "why": "«Segundo piso, sin ascensor»"},
+        {"q": "¿Cuántos dormitorios hay? (en cifras)", "ans": "2",
+         "alt": ["dos", "dos dormitorios"], "why": "«Dos dormitorios y un baño»"},
+        {"q": "¿Qué hay debajo de la ventana del salón?", "ans": "un sofá azul",
+         "alt": ["un sofá", "sofá", "el sofá azul"], "why": "«Debajo de la ventana hay un sofá azul»"},
+        {"q": "¿Dónde está la parada del bus?", "ans": "enfrente de la iglesia",
+         "alt": ["enfrente de la iglesia", "la iglesia", "frente a la iglesia"],
+         "why": "«La parada del bus está enfrente de la iglesia»"},
+    ],
+    "vf": [
+        {"q": "El edificio tiene ascensor.", "ans": False, "prueba": "segundo piso, sin ascensor"},
+        {"q": "La luz está incluida en el precio.", "ans": False, "prueba": "luz aparte"},
+        {"q": "El baño está al lado de la cocina.", "ans": True, "prueba": "al lado de la cocina"},
+        {"q": "Los dos dormitorios están uno al lado del otro.", "ans": False,
+         "prueba": "uno enfrente del otro"},
+        {"q": "El centro histórico está a diez minutos andando.", "ans": True,
+         "prueba": "a diez minutos a pie"},
+    ],
+    "contexto": [
+        {"q": "«Se alquila» — ¿qué se hace con el apartamento?",
+         "opts": ["Het wordt verhuurd", "Het wordt verkocht", "Het wordt afgebroken"],
+         "ans": "Het wordt verhuurd",
+         "why": "Erna volgt een maandprijs, geen totaalprijs."},
+        {"q": "«un armario empotrado» — ¿qué tipo de armario es?",
+         "opts": ["een ingebouwde kast", "een kapotte kast", "een kast op wieltjes"],
+         "ans": "een ingebouwde kast",
+         "why": "Het staat in de lijst van wat vást in de kamer zit."},
+        {"q": "«El balcón da a la calle» — ¿qué quiere decir «dar a»?",
+         "opts": ["uitkijken op", "iets geven aan", "geven om"], "ans": "uitkijken op",
+         "why": "Erna volgt: 's nachts hoor je muziek van beneden."},
+        {"q": "«dos calles más allá» — ¿dónde está el supermercado?",
+         "opts": ["twee straten verder", "twee verdiepingen hoger", "twee minuten geleden"],
+         "ans": "twee straten verder",
+         "why": "Het staat tegenover «en la esquina» — het gaat over afstand."},
+    ],
+    "produccion": {
+        "prompt": "Escribe el anuncio de tu propia casa o habitación (6–8 frases): dónde está, "
+                  "cuántas habitaciones hay, dónde está cada mueble (encima de · debajo de · al "
+                  "lado de · enfrente de) y qué hay en el barrio.",
+        "modelo": "Se alquila… Está en… Hay… El/La … está … de … En el barrio hay… "
+                  "La parada está…",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
          ("C5", 2): C5_U2, ("C6+", 2): C6P_U2,
          ("C5", 3): C5_U3, ("C6+", 3): C6P_U3,
          ("C5", 4): C5_U4, ("C6+", 4): C6P_U4,
          ("C5", 5): C5_U5, ("C6+", 5): C6P_U5,
-         ("C5", 6): C5_U6, ("C6+", 6): C6P_U6}
+         ("C5", 6): C5_U6, ("C6+", 6): C6P_U6,
+         ("C5", 7): C5_U7}
 
 
 def _texto_plano(t):
