@@ -11,7 +11,7 @@ géén condicional, géén subjuntivo.
 
 | Bestand | Wat | Hoe gebruiken |
 |---|---|---|
-| **C5_U0.pdf** | Print-cursus (62 blz.) | Afdrukken of projecteren. Niet bewerkbaar. |
+| **C5_U0.pdf** | Print-cursus (58 blz.) | Afdrukken of projecteren. Niet bewerkbaar. |
 | **C5_U0_BEWERKBAAR.html** | Bewerkbare laag van diezelfde cursus | Open in Chrome of Edge → **«Bewerken»** · **«Opslaan als PDF»** · **«Bewaar»**. |
 | **C5_U0_hub.html** | Digitale hub (standalone, werkt offline) | Tabbladen: Vocabulario · Gramática · Lectura · Escuchar 🎧 · Juegos (22) · Hablar 🎙️ · Cultura · Extra. |
 | **C5_U0_docente.pptx** | PowerPoint docent (23 dia's) | Vrije navigatie, oplossingen en didactiek in de notities. |
@@ -41,3 +41,18 @@ géén condicional, géén subjuntivo.
   sweep zodra de site online staat.
 - Het **luisteren** gebruikt de stem van je browser. Zodra er echte opnames zijn, pikt de
   hub die automatisch op — de oefeningen hoeven niet herbouwd te worden.
+
+## Bijgewerkt op 1 augustus
+
+- De elf **productienotities** die nog op de leerlingpagina stonden («[AUDIO: …]», «[BEELD: …]»,
+  «[ICOON: …]») zijn vervangen door échte inhoud: luisterstrategieën, de vergelijking
+  seseo ↔ ceceo met een keuzevakje, een invultabel *Nombre · Edad · Teléfono* met
+  schrijfruimte, een oefening per twee voor het spellen, en de legende bij de semáforo —
+  die drie kolommen stonden er tot nu toe zonder uitleg bij. Zie
+  `vervang_assets_u0.py` voor wat waar is gekomen.
+- Eén van die kaders verklapte de **oplossing van het dictee**; die staat er niet meer
+  (oplossingen horen in het docentendossier en in de zelfcorrectie online).
+- De **PDF is opnieuw gerenderd**. Hij telt nu 58 in plaats van 62 bladzijden: de vorige
+  PDF dateerde van vóór de overstap op de huisstijlfonts en was dus verouderd ten opzichte
+  van de cursus zelf.
+- Er is nu ook een **leveringszip** voor deze unidad; die was er nog niet.
