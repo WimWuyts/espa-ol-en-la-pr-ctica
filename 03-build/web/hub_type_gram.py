@@ -351,6 +351,81 @@ SETS[("C5", 4)] = [
          ]),
 ]
 
+SETS[("C5", 5)] = [
+    dict(title="Voy a comer — ir a + infinitivo", accents="strict",
+         desc="Zo praat je over straks: de vorm van <i>ir</i>, dan <b>a</b>, dan de infinitivo "
+              "die je <b>niet</b> vervoegt. Schrijf alle drie de stukken.",
+         items=[
+             {"q": "Hoy yo ___ (probar) el guacamole.", "ans": "voy a probar", "hint": "v__ a p_____",
+              "why": "yo → voy a + infinitivo"},
+             {"q": "Nosotros ___ (reservar) una mesa para cuatro.", "ans": "vamos a reservar",
+              "hint": "v____ a r_______", "why": "nosotros → vamos a"},
+             {"q": "¿Tú ___ (pedir) el menú del día?", "ans": "vas a pedir", "hint": "v__ a p____",
+              "why": "tú → vas a"},
+             {"q": "Diego ___ (tomar) un zumo de naranja.", "ans": "va a tomar", "hint": "v_ a t____"},
+             {"q": "Mis amigos ___ (comer) tacos en el mercado.", "ans": "van a comer",
+              "hint": "v__ a c____"},
+             {"q": "Yo no ___ (tomar) postre.", "ans": "voy a tomar", "hint": "v__ a t____"},
+             {"q": "¿Vosotros ___ (pagar) con tarjeta?", "ans": "vais a pagar", "hint": "v___ a p____",
+              "why": "vosotros → vais a"},
+             {"q": "El camarero ___ (traer) la cuenta.", "ans": "va a traer", "hint": "v_ a t____"},
+             {"q": "Nosotras ___ (compartir) una ración de churros.", "ans": "vamos a compartir",
+              "hint": "v____ a c________"},
+             {"q": "Mañana yo ___ (cocinar) para toda la familia.", "ans": "voy a cocinar",
+              "hint": "v__ a c______"},
+             {"q": "¿Qué ___ (tomar) usted de primer plato?", "ans": "va a tomar", "hint": "v_ a t____",
+              "why": "usted → va a"},
+             {"q": "Ellas ___ (beber) agua con limón.", "ans": "van a beber", "hint": "v__ a b____"},
+         ]),
+    dict(title="Cantidades — mucho · mucha · muchos · muchas", accents="strict",
+         desc="<b>mucho</b> past zich aan bij het woord erna: <i>mucha sal</i> · <i>muchos "
+              "tomates</i>. Maar vóór een <b>werkwoord</b> verandert het nooit: <i>como "
+              "mucho</i>. <b>Un poco de</b> blijft altijd hetzelfde.",
+         items=[
+             {"q": "En esta sopa hay ___ (mucho) sal.", "ans": "mucha", "hint": "m____",
+              "why": "la sal → mucha"},
+             {"q": "Como ___ (mucho) fruta por la mañana.", "ans": "mucha", "hint": "m____",
+              "why": "la fruta → mucha"},
+             {"q": "Hay ___ (mucho) tomates en la ensalada.", "ans": "muchos", "hint": "m_____",
+              "why": "los tomates → muchos"},
+             {"q": "Bebo ___ (mucho) agua.", "ans": "mucha", "hint": "m____",
+              "why": "el agua is femenino: mucha agua"},
+             {"q": "En México hay ___ (mucho) salsas diferentes.", "ans": "muchas", "hint": "m_____"},
+             {"q": "Mi hermano come ___ (mucho).", "ans": "mucho", "hint": "m____",
+              "why": "na een werkwoord verandert het niet"},
+             {"q": "Hay ___ (poco) leche en la nevera.", "ans": "poca", "hint": "p___",
+              "why": "la leche → poca"},
+             {"q": "¿Me pone ___ azúcar, por favor? (een beetje)", "ans": "un poco de",
+              "hint": "u_ p___ d_", "why": "vaste uitdrukking: un poco de — verandert nooit"},
+             {"q": "Tengo ___ (poco) tiempo para cocinar.", "ans": "poco", "hint": "p___",
+              "why": "el tiempo → poco"},
+             {"q": "El pollo tiene ___ (mucho) ajo.", "ans": "mucho", "hint": "m____",
+              "why": "el ajo → mucho"},
+             {"q": "En el mercado venden ___ (mucho) frutas tropicales.", "ans": "muchas",
+              "hint": "m_____"},
+             {"q": "Este plato tiene ___ (poco) verduras.", "ans": "pocas", "hint": "p____",
+              "why": "las verduras → pocas"},
+         ]),
+    dict(title="Lo · la · los · las — no repitas la palabra", accents="soft",
+         desc="Je hebt het gerecht al genoemd; nu vervang je het door één woordje. Het komt "
+              "overeen in geslacht en getal en staat <b>vóór</b> het werkwoord — <i>¿La "
+              "cuenta? La traigo.</i>",
+         items=[
+             {"q": "¿La cuenta? Ahora ___ traigo.", "ans": "la", "why": "la cuenta → la"},
+             {"q": "¿El menú? ___ tenemos aquí.", "ans": "lo", "why": "el menú → lo"},
+             {"q": "¿Los churros? ___ comemos con chocolate.", "ans": "los", "why": "los churros → los"},
+             {"q": "¿Las fresas? ___ compro en el mercado.", "ans": "las", "why": "las fresas → las"},
+             {"q": "¿El pescado? No ___ como nunca.", "ans": "lo", "why": "el pescado → lo"},
+             {"q": "¿La sopa? ___ prefiero caliente.", "ans": "la", "why": "la sopa → la"},
+             {"q": "¿Los tacos? ___ pedimos con carne.", "ans": "los", "why": "los tacos → los"},
+             {"q": "¿La propina? ___ dejamos en la mesa.", "ans": "la", "why": "la propina → la"},
+             {"q": "¿El café? ___ tomo sin azúcar.", "ans": "lo", "why": "el café → lo"},
+             {"q": "¿Las servilletas? ___ pongo yo.", "ans": "las", "why": "las servilletas → las"},
+             {"q": "¿El guacamole? ___ hago con aguacate y limón.", "ans": "lo", "why": "el guacamole → lo"},
+             {"q": "¿Las patatas? ___ quiero fritas.", "ans": "las", "why": "las patatas → las"},
+         ]),
+]
+
 SETS[("C6+", 1)] = [
     dict(title="Los verbos reflexivos — rellena", accents="strict",
          desc="Vergeet het <b>pronombre</b> niet: bij een reflexief werkwoord horen er twee "

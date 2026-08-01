@@ -824,11 +824,99 @@ C6P_U4 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C5 · U5 — en el restaurante. De leestekst van deze unit geeft cijfers over een
+# markt; hier moet de leerling een bestelling volgen en er een probleem in horen
+# (het gerecht is uitverkocht). Andere plaats, andere taalhandeling: daar lezen
+# om te weten, hier luisteren om te bestellen.
+# ---------------------------------------------------------------------------
+C5_U5 = {
+    "id": "C5-U5-ESC-01",
+    "ancla": "c5-u5-esc-01",
+    "titulo": "Una mesa para tres",
+    "audio": "audio/C5_U5.mp3",
+    "situacion": {
+        "lugar": "Un restaurante pequeño en el centro de Ciudad de México, a las dos",
+        "quien": "Un camarero, Diego y dos amigos",
+        "que": "Piden la comida, pero un plato ya no queda",
+        "claves": ["¿qué va a tomar?", "para mí…", "¿me trae…?"],
+    },
+    "guion": [
+        {"who": "Camarero", "es": "Buenas tardes. ¿Una mesa para tres?",
+         "nl": "Goedemiddag. Een tafel voor drie?"},
+        {"who": "Diego", "es": "Sí, por favor. ¿Nos trae la carta?",
+         "nl": "Ja, graag. Brengt u ons de kaart?"},
+        {"who": "Camarero", "es": "Aquí tienen. Hoy el menú del día cuesta ciento veinte pesos: "
+                                  "sopa, plato fuerte y postre.",
+         "nl": "Alstublieft. Vandaag kost het dagmenu honderdtwintig peso: soep, hoofdgerecht "
+               "en dessert."},
+        {"who": "Diego", "es": "Perfecto. Para mí, la sopa de tortilla y los tacos de pollo.",
+         "nl": "Perfect. Voor mij de tortillasoep en de kiptaco's."},
+        {"who": "Camarero", "es": "Lo siento, de tacos de pollo ya no quedan. ¿De carne o de "
+                                  "pescado?",
+         "nl": "Het spijt me, kiptaco's zijn er niet meer. Met vlees of met vis?"},
+        {"who": "Diego", "es": "De pescado, entonces. ¿Pican mucho?",
+         "nl": "Dan met vis. Zijn ze erg pikant?"},
+        {"who": "Camarero", "es": "Un poco. La salsa verde pica bastante; la roja casi nada.",
+         "nl": "Een beetje. De groene saus is redelijk pikant, de rode bijna niet."},
+        {"who": "Diego", "es": "Vale, con salsa roja. Y de postre, flan.",
+         "nl": "Oké, met rode saus. En als dessert, flan."},
+        {"who": "Camarero", "es": "¿Y para beber?", "nl": "En om te drinken?"},
+        {"who": "Diego", "es": "Un agua de horchata y dos refrescos, por favor.",
+         "nl": "Een horchata en twee frisdranken, alstublieft."},
+        {"who": "Camarero", "es": "Muy bien. Ahora se los traigo. ¡Que aproveche!",
+         "nl": "Heel goed. Ik breng ze zo. Smakelijk!"},
+        {"who": "Diego", "es": "Gracias. Ah, ¿nos trae también la cuenta con el postre? "
+                               "Tenemos prisa.",
+         "nl": "Bedankt. Ah, brengt u ook de rekening bij het dessert? We hebben haast."},
+        {"who": "Camarero", "es": "Claro que sí. ¿Todo junto o por separado?",
+         "nl": "Zeker. Alles samen of apart?"},
+    ],
+    "global": {
+        "q": "¿Qué pasa en el restaurante?",
+        "opts": ["Piden la comida y un plato ya no queda", "Reservan una mesa por teléfono",
+                 "Se quejan de la comida"],
+        "ans": "Piden la comida y un plato ya no queda",
+        "why": "«de tacos de pollo ya no quedan»",
+    },
+    "detalle": [
+        {"q": "¿Cuánto cuesta el menú del día?", "opts": ["120 pesos", "112 pesos", "150 pesos"],
+         "ans": "120 pesos", "why": "«cuesta ciento veinte pesos»"},
+        {"q": "¿Qué plato ya no queda?", "opts": ["Los tacos de pollo", "La sopa de tortilla",
+                                                   "El flan"], "ans": "Los tacos de pollo",
+         "why": "«de tacos de pollo ya no quedan»"},
+        {"q": "¿Qué salsa pide Diego?", "opts": ["La roja", "La verde", "Las dos"], "ans": "La roja",
+         "why": "«Vale, con salsa roja»"},
+        {"q": "¿Qué beben?", "opts": ["Una horchata y dos refrescos", "Tres aguas", "Dos cafés"],
+         "ans": "Una horchata y dos refrescos", "why": "«Un agua de horchata y dos refrescos»"},
+        {"q": "¿Por qué piden la cuenta con el postre?",
+         "opts": ["Porque tienen prisa", "Porque no les gusta el sitio", "Porque no hay postre"],
+         "ans": "Porque tienen prisa", "why": "«Tenemos prisa»"},
+    ],
+    "vf": [
+        {"q": "La salsa verde pica más que la roja.", "ans": True,
+         "prueba": "la salsa verde pica bastante; la roja casi nada"},
+        {"q": "El menú del día no incluye postre.", "ans": False,
+         "prueba": "sopa, plato fuerte y postre"},
+        {"q": "Son tres personas.", "ans": True, "prueba": "una mesa para tres"},
+    ],
+    "produccion": {
+        "prompt": "Ahora pides tú. Graba cuatro turnos: pide la carta, pide un primer plato y "
+                  "un segundo, pregunta si pica, y pide la cuenta. Usa: para mí… · ¿me trae…? · "
+                  "¿me pone…?",
+        "modo": "grabar",
+        "modelo": "Buenas tardes, ¿nos trae la carta? Para mí… y de segundo… ¿Pica mucho? "
+                  "¿Nos trae la cuenta, por favor?",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
          ("C5", 2): C5_U2, ("C6+", 2): C6P_U2,
          ("C5", 3): C5_U3, ("C6+", 3): C6P_U3,
-         ("C5", 4): C5_U4, ("C6+", 4): C6P_U4}
+         ("C5", 4): C5_U4, ("C6+", 4): C6P_U4,
+         ("C5", 5): C5_U5}
 
 
 def controla():

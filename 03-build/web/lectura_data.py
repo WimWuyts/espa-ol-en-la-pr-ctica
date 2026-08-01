@@ -1034,11 +1034,125 @@ C6P_U4 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C5 · U5 «¡Ñam!» — parada México (CDMX)
+# Tekstsoort: infografía. De unit heeft zelf al een menukaart en een mini-recept
+# in §5; een tweede recept zou dezelfde leeshouding vragen. Een infografie doet
+# iets anders: cijfers aflezen en ze in verband brengen met een lopende tekst.
+# Het luisterfragment speelt aan tafel in een restaurant.
+# ---------------------------------------------------------------------------
+C5_U5 = {
+    "id": "C5-U5-LEC-01",
+    "ancla": "c5-u5-lec-01",
+    "titulo": "El mercado de La Merced en cinco datos",
+    "tipo": "infografía (datos + texto)",
+    "emisor": "La revista de viajes «Sabores»",
+    "receptor": "Quien visita Ciudad de México por primera vez",
+    "objetivo": "Enseñarte de un vistazo cómo es el mercado más grande del país",
+    "prediccion": {
+        "q": "Kijk eerst alleen naar de vijf genummerde cijfers en de kop. Wat voor tekst is dit?",
+        "opts": ["Een infografie met feiten over een markt", "Een recept", "Een menukaart"],
+        "ans": "Een infografie met feiten over een markt",
+        "why": "Genummerde cijfers met een korte uitleg erbij = feiten in beeld.",
+    },
+    "texto": [
+        ["titulo", "🌽 EL MERCADO DE LA MERCED EN CINCO DATOS"],
+        ["lema", "Ciudad de México · el mercado de comida más grande del país"],
+        ["lista", [
+            "1 · Ocupa cuatro edificios y más de tres mil puestos.",
+            "2 · Abre todos los días a las seis de la mañana.",
+            "3 · Aquí hay más de sesenta clases de chile.",
+            "4 · Cada día entran unas ochenta mil personas.",
+            "5 · El puesto más antiguo tiene más de cien años.",
+        ]],
+        ["p", "En el pasillo de la fruta hay pirámides de naranjas, piñas y plátanos. "
+              "Los vendedores gritan los precios y te dan a probar un trozo: «¡Pruebe, pruebe!»"],
+        ["p", "En la zona de comida preparada puedes comer por muy poco dinero. Un taco cuesta "
+              "entre quince y veinticinco pesos. Con cien pesos comes muchísimo."],
+        ["aviso", ["🌶️ EL CHILE · dato curioso",
+                   "El chile habanero es el más picante del mercado. El poblano casi no pica. "
+                   "Si eres nuevo, empieza con poco: aquí «un poquito» ya es mucho."]],
+        ["p", "El mercado no es solo comida: es el lugar donde la ciudad se encuentra. "
+              "Muchas familias compran aquí desde hace tres generaciones."],
+        ["firma", "Datos: Gobierno de la Ciudad de México · Fotos: Diego"],
+    ],
+    "traduccion": "DE MARKT VAN LA MERCED IN VIJF CIJFERS. Mexico-Stad · de grootste "
+                  "voedingsmarkt van het land. 1 · Ze beslaat vier gebouwen en meer dan "
+                  "drieduizend kraampjes. 2 · Ze opent elke dag om zes uur \u2019s ochtends. "
+                  "3 · Er zijn hier meer dan zestig soorten chilipeper. 4 · Elke dag komen er "
+                  "zo\u2019n tachtigduizend mensen binnen. 5 · Het oudste kraam bestaat meer dan "
+                  "honderd jaar. — In het fruitgangpad liggen piramides van sinaasappels, "
+                  "ananassen en bananen. De verkopers roepen de prijzen en geven je een stukje "
+                  "om te proeven: «Proef eens, proef eens!» In de zone met bereide gerechten kun "
+                  "je voor heel weinig geld eten. Een taco kost tussen vijftien en vijfentwintig "
+                  "peso. Met honderd peso eet je heel veel. DE CHILI: de habanero is de "
+                  "pikantste van de markt. De poblano prikt bijna niet. Ben je nieuw, begin dan "
+                  "met weinig: hier is «een beetje» al veel. — De markt is niet alleen eten: het "
+                  "is de plek waar de stad elkaar tegenkomt. Veel families kopen hier al drie "
+                  "generaties lang.",
+    "global": {
+        "q": "¿Qué tipo de texto es?",
+        "opts": ["Una infografía con datos sobre un mercado", "Una receta de cocina",
+                 "La carta de un restaurante"],
+        "ans": "Una infografía con datos sobre un mercado",
+    },
+    "escanear": [
+        {"q": "¿Cuántos puestos hay? (en cifras)", "ans": "3000",
+         "alt": ["tres mil", "más de tres mil", "3.000", "3 000"], "why": "«más de tres mil puestos»"},
+        {"q": "¿A qué hora abre el mercado?", "ans": "a las seis de la mañana",
+         "alt": ["a las seis", "seis", "6", "las seis"], "why": "«a las seis de la mañana»"},
+        {"q": "¿Cuántas personas entran cada día? (en cifras)", "ans": "80000",
+         "alt": ["ochenta mil", "80.000", "80 000", "unas ochenta mil"],
+         "why": "«unas ochenta mil personas»"},
+        {"q": "¿Cuánto cuesta un taco?", "ans": "entre 15 y 25 pesos",
+         "alt": ["15 y 25", "entre quince y veinticinco pesos", "quince y veinticinco"],
+         "why": "«entre quince y veinticinco pesos»"},
+        {"q": "¿Cuál es el chile más picante del mercado?", "ans": "el habanero",
+         "alt": ["habanero", "el chile habanero"], "why": "«El chile habanero es el más picante»"},
+    ],
+    "vf": [
+        {"q": "El mercado abre solo los fines de semana.", "ans": False,
+         "prueba": "abre todos los días"},
+        {"q": "Hay más de sesenta clases de chile.", "ans": True,
+         "prueba": "más de sesenta clases de chile"},
+        {"q": "Comer en el mercado es caro.", "ans": False,
+         "prueba": "puedes comer por muy poco dinero"},
+        {"q": "El chile poblano es muy picante.", "ans": False, "prueba": "el poblano casi no pica"},
+        {"q": "El puesto más antiguo tiene más de cien años.", "ans": True,
+         "prueba": "más de cien años"},
+    ],
+    "contexto": [
+        {"q": "«los puestos» — ¿qué son?",
+         "opts": ["de kraampjes", "de posities in een rij", "de brievenbussen"],
+         "ans": "de kraampjes", "why": "Het staat naast «cuatro edificios» — het gaat over de markt."},
+        {"q": "«te dan a probar un trozo» — ¿qué te ofrecen?",
+         "opts": ["een stukje om te proeven", "een korting", "een zak"],
+         "ans": "een stukje om te proeven", "why": "Erna volgt de roep «¡Pruebe, pruebe!»"},
+        {"q": "«casi no pica» — ¿pica mucho o poco?",
+         "opts": ["Bijna niet", "Heel erg", "Alleen als hij rood is"], "ans": "Bijna niet",
+         "why": "Het staat tegenover «el más picante»."},
+        {"q": "«el lugar donde la ciudad se encuentra» — ¿qué quiere decir?",
+         "opts": ["De plek waar iedereen elkaar tegenkomt", "De plek waar de stad ligt",
+                  "De plek waar je iets verliest"],
+         "ans": "De plek waar iedereen elkaar tegenkomt",
+         "why": "Erna volgt: families die er al drie generaties komen."},
+    ],
+    "produccion": {
+        "prompt": "Escribe cinco datos sobre un mercado o un supermercado de tu ciudad "
+                  "(5–6 frases): cuándo abre, qué hay, qué cuesta poco, qué cuesta mucho y "
+                  "qué compras tú allí. Usa mucho/mucha/muchos/poco.",
+        "modelo": "1 · Abre… 2 · Hay muchos… y poca… 3 · Un/Una … cuesta… 4 · Lo más caro es… "
+                  "5 · Yo compro… porque…",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
          ("C5", 2): C5_U2, ("C6+", 2): C6P_U2,
          ("C5", 3): C5_U3, ("C6+", 3): C6P_U3,
-         ("C5", 4): C5_U4, ("C6+", 4): C6P_U4}
+         ("C5", 4): C5_U4, ("C6+", 4): C6P_U4,
+         ("C5", 5): C5_U5}
 
 
 def _texto_plano(t):
