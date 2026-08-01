@@ -13,6 +13,11 @@ from gen_u0_print import (CSS, AV, TU, MOCH, qr, audiorow, act, regla, guide, lp
                           pcard, steun, sortcols, actx, tarea_com, obsbox, machine, blocks, tree,
                           mirror, fmu, scaffold, zoom, clusters, colloc, scale, vpairs, mispal, xray,
                           gustobars, menu)
+import sys as _sys
+_sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
+import print_bloques as PB
+import lectura_data as LD
+import escucha_data as ED
 
 BODY = []
 def P(*x): BODY.extend(x)
@@ -413,6 +418,21 @@ P(actx(AN(), "Completa con el conector",
   apoyo="BANCO"))
 sec_close()
 
+# ================= §6 LECTURA · §7 ESCUCHA =================
+# Zelfde bron als de digitale hub (lectura_data / escucha_data): papier en scherm
+# kunnen zo niet uit elkaar lopen. Elk op een eigen bladzijde (§14).
+P('<div class="page"><div class="parada sec">')
+P('<span class="num">6</span><span class="pk">§6 · Lectura — «Carta de la abuela Rosario»</span>')
+P('<div class="intro"><b>ES:</b> Una carta de verdad, escrita a mano por una abuela. <b>No hace falta entenderlo todo</b> para sacar la información. <span class="gloss">Een echte handgeschreven brief van een oma. Je hoeft niet alles te begrijpen — let op wat vroeger gewoonte was en wat één keer gebeurde.</span></div>')
+P(PB.lectura_print(LD.C6P_U6, "1"))
+P('</div>')
+
+P('<div class="page"><div class="parada sec">')
+P('<span class="num">7</span><span class="pk">§7 · Escucha — «Pódcast «Antes y ahora»»</span>')
+P('<div class="intro"><b>ES:</b> Dos invitados comparan su infancia en el pódcast del instituto. <b>Escucha primero, escribe después.</b> <span class="gloss">Twee gasten vergelijken hun kindertijd in de schoolpodcast. Eerst luisteren, dan schrijven; het transcript staat online en gaat pas open ná de taken.</span></div>')
+P(PB.escucha_print(ED.C6P_U6, "1"))
+P('</div>')
+
 # ================= CULTURA =================
 sec_open("C", "Cultura · la infancia en el mundo hispano", 'Elke cultuur heeft haar <b>kinderrituelen</b>: in Latijns-Amerika de <b>quinceañera</b> (15de verjaardag), traditionele <b>juegos</b> (la rayuela, el trompo) en de grote rol van de <b>abuelos</b>. In de Andes groeit Nina op met verhalen en muziek. <span class="gloss">De jeugd in de Spaanstalige wereld: quinceañera, traditionele spelletjes, de grootouders.</span>',
         lpd(("5","identiteit in diversiteit: la infancia hispana")))
@@ -572,7 +592,7 @@ EDITBAR = '''
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Español en la práctica · C6+ U6 Cuando era pequeño</title><style>'
-        + CSS + CSS_OVR + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
+        + CSS + CSS_OVR + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/C6plus_U6.html"
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, "·", len(HTML), "bytes ·", _AN[0], "genummerde oefeningen (excl. V.1–V.5)")

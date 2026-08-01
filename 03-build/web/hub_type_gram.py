@@ -618,6 +618,90 @@ SETS[("C6+", 2)] = [
          ]),
 ]
 
+SETS[("C6+", 6)] = [
+    dict(title="El imperfecto — cómo era antes", accents="strict",
+         desc="De tijd van «vroeger deed ik». <b>-ar</b> → -aba · <b>-er/-ir</b> → -ía. "
+              "De -ía-vormen dragen <b>allemaal</b> een tilde. Slechts drie werkwoorden zijn "
+              "onregelmatig: ser, ir en ver.",
+         items=[
+             {"q": "De pequeño yo ___ (jugar) en el patio.", "ans": "jugaba", "hint": "j_____",
+              "why": "-ar → -aba"},
+             {"q": "Mi abuela ___ (vivir) en un pueblo cerca de Cusco.", "ans": "vivía",
+              "hint": "v____", "why": "-ir → -ía, mét tilde"},
+             {"q": "Nosotros ___ (ir) a la casa de campo cada verano.", "ans": "íbamos",
+              "hint": "í_____", "why": "ir is onregelmatig: iba, ibas… íbamos mét tilde"},
+             {"q": "¿Tú ___ (tener) muchos juguetes?", "ans": "tenías", "hint": "t_____"},
+             {"q": "Mis primos ___ (ser) mis mejores amigos.", "ans": "eran", "hint": "e___",
+              "why": "ser is onregelmatig: era, eras, era, éramos, erais, eran"},
+             {"q": "Yo ___ (ver) dibujos animados los sábados.", "ans": "veía", "hint": "v___",
+              "why": "ver is onregelmatig: veía"},
+             {"q": "En la escuela ___ (haber) un árbol enorme.", "ans": "había", "hint": "h____",
+              "why": "hay → había, altijd enkelvoud"},
+             {"q": "Nosotras ___ (soler) merendar en casa de la vecina.", "ans": "solíamos",
+              "hint": "s_______", "why": "soler + infinitivo = «placht te»"},
+             {"q": "Mi maestro siempre ___ (contar) historias.", "ans": "contaba", "hint": "c______",
+              "why": "in het imperfecto géén klinkerwissel"},
+             {"q": "¿Vosotros ___ (ir) al recreo juntos?", "ans": "ibais", "hint": "i____"},
+             {"q": "Yo ___ (ser) muy tímido de pequeño.", "ans": "era", "hint": "e__"},
+             {"q": "Mis abuelos ___ (cuidar) a los animales.", "ans": "cuidaban", "hint": "c_______"},
+         ]),
+    dict(title="Indefinido o imperfecto — ¿qué pasó, cómo era?", accents="strict",
+         desc="Twee verledens naast elkaar. <b>Indefinido</b> = wat er gebeurde, één keer, "
+              "af. <b>Imperfecto</b> = het decor: hoe het was, wat gewoonte was. Let op de "
+              "signaalwoorden: <i>un día · de repente · ayer</i> ↔ <i>siempre · todos los días · "
+              "antes</i>.",
+         items=[
+             {"q": "Todos los días yo ___ (ir) a la escuela a pie.", "ans": "iba", "hint": "i__",
+              "why": "todos los días → gewoonte → imperfecto"},
+             {"q": "Un día ___ (perder, yo) la mochila en el autobús.", "ans": "perdí", "hint": "p____",
+              "why": "un día → één keer → indefinido"},
+             {"q": "Antes mi pueblo ___ (ser) muy tranquilo.", "ans": "era", "hint": "e__",
+              "why": "antes → decor → imperfecto"},
+             {"q": "En 2019 nosotros ___ (mudarse) a la ciudad.", "ans": "nos mudamos",
+              "hint": "n__ m______", "why": "jaartal → afgesloten → indefinido"},
+             {"q": "De repente ___ (empezar) a llover.", "ans": "empezó", "hint": "e_____",
+              "why": "de repente → indefinido"},
+             {"q": "Mi abuelo siempre ___ (llevar) sombrero.", "ans": "llevaba", "hint": "l______",
+              "why": "siempre → gewoonte → imperfecto"},
+             {"q": "Ayer yo ___ (ver) a mi antigua maestra.", "ans": "vi", "hint": "v_",
+              "why": "ayer → indefinido"},
+             {"q": "Cuando ___ (tener, yo) diez años, vivía en Cusco.", "ans": "tenía", "hint": "t____",
+              "why": "leeftijd als decor → imperfecto"},
+             {"q": "El año pasado ellos ___ (visitar) Machu Picchu.", "ans": "visitaron",
+              "hint": "v________", "why": "el año pasado → indefinido"},
+             {"q": "Antes no ___ (haber) internet en el pueblo.", "ans": "había", "hint": "h____",
+              "why": "antes → imperfecto"},
+             {"q": "Aquella tarde ___ (llegar) una carta.", "ans": "llegó", "hint": "l____",
+              "why": "aquella tarde → één moment → indefinido"},
+             {"q": "Los domingos mi familia ___ (comer) en casa de los abuelos.", "ans": "comía",
+              "hint": "c____", "why": "los domingos → gewoonte → imperfecto"},
+         ]),
+    dict(title="Comparar — más · menos · tan · mejor", accents="soft",
+         desc="Drie bouwsels: <b>más/menos … que</b> (meer/minder dan) · <b>tan … como</b> "
+              "(even … als) · en vier woorden die hun eigen vorm hebben: "
+              "<b>mejor · peor · mayor · menor</b> — daar zeg je nooit «más bueno».",
+         items=[
+             {"q": "Cusco es ___ alto ___ Lima.", "ans": "más que", "why": "más + adjectief + que"},
+             {"q": "Mi pueblo es ___ grande ___ la ciudad.", "ans": "menos que",
+              "why": "menos + adjectief + que"},
+             {"q": "Ahora soy ___ alto ___ mi hermano. (even)", "ans": "tan como",
+              "why": "tan + adjectief + como"},
+             {"q": "Este juguete es ___ que el otro. (beter)", "ans": "mejor",
+              "why": "nooit «más bueno»"},
+             {"q": "El tiempo de hoy es ___ que el de ayer. (slechter)", "ans": "peor",
+              "why": "nooit «más malo»"},
+             {"q": "Mi hermana es ___ que yo: tiene veinte años. (ouder)", "ans": "mayor",
+              "why": "over leeftijd: mayor, niet «más viejo»"},
+             {"q": "Mi primo es ___ que yo: tiene ocho años. (jonger)", "ans": "menor"},
+             {"q": "Antes había ___ coches ___ ahora.", "ans": "menos que"},
+             {"q": "Esta escuela es ___ antigua ___ la mía. (even)", "ans": "tan como"},
+             {"q": "El campo es ___ tranquilo ___ la ciudad.", "ans": "más que"},
+             {"q": "Machu Picchu es el lugar ___ visitado del país. (het meest)", "ans": "más",
+              "why": "el/la más + adjectief = de -ste"},
+             {"q": "Mi abuela cocina ___ que nadie. (beter)", "ans": "mejor"},
+         ]),
+]
+
 SETS[("C6+", 5)] = [
     dict(title="El pretérito indefinido regular", accents="strict",
          desc="Hier ís het accent de leerstof: <b>hablo</b> (nu, ik) tegenover <b>habló</b> "

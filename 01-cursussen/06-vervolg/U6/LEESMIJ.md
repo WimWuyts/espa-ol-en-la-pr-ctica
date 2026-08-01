@@ -10,9 +10,9 @@ Paarse vervolgcursus (C6+), Unidad 6. Sluit de verleden-tijdenboog (U4–U6) af 
 
 | Bestand | Wat | Hoe gebruiken |
 |---|---|---|
-| **C6plus_U6.pdf** | Print-cursus (29 genummerde + tarea/★ + 5 V oefeningen) | Afdrukken/projecteren. Niet bewerkbaar. |
+| **C6plus_U6.pdf** | Print-cursus (36 blz., 28 genummerde + tarea/★ + 5 V oefeningen, plus §6 Lectura en §7 Escucha) | Afdrukken/projecteren. Niet bewerkbaar. |
 | **C6plus_U6_BEWERKBAAR.html** | Bewerkbare laag van de PDF | Chrome/Edge → **«Bewerken»** · **«Opslaan als PDF»** · **«Bewaar»**. |
-| **C6plus_U6_web.html** | Digitale hub (standalone, offline) | 7 tabbladen: Vocabulario (flip cards) · Gramática (imperfecto · contraste · comparativos, interactief) · Lectura · Juegos (12 spellen) · Hablar (opname) · Cultura (klikbare kaart, Perú ★ familia) · Extra. 100+ inline-oefeningen + 12 games met «↻ otra serie». |
+| **C6plus_U6_web.html** | Digitale hub (standalone, offline) | 8 tabbladen: Vocabulario (flip cards) · Gramática (imperfecto · contraste · comparativos, interactief) · Lectura · **Escuchar 🎧** · Juegos (12 spellen) · Hablar (opname) · Cultura (klikbare kaart, Perú ★ familia) · Extra. 100+ inline-oefeningen + 12 games met «↻ otra serie». |
 | **C6plus_U6_docente.pptx** | PowerPoint docent (21 dia's) | Vrije navigatie, oplossingen + didactiek in notities. Klik-onthul. |
 | **C6plus_U6_alumno.pptx** | PowerPoint leerling (20 dia's) | **F5**; elke klik onthult het volgende antwoord. |
 
@@ -24,6 +24,19 @@ Paarse vervolgcursus (C6+), Unidad 6. Sluit de verleden-tijdenboog (U4–U6) af 
 - **Traditioneel × modern:** visueel-eerste grammatica (imperfecto-machine · contrastkaart achtergrond/feit · vergelijkingsbalk más/menos/tan) **náást** een klassieke oefenbatterij (gap-fill · substitutie · matching · dictee · ordenen · foutenkliniek · transformeren).
 - **Werkwoordsvormen nagerekend:** regelmatige imperfecto (-aba/-ábamos; -ía/-íamos); de 3 onregelmatige (era/eras/era…; iba/ibas/iba…; veía/veías…); comparativos onregelmatig (mejor/peor/mayor/menor).
 - Échte LPD-codes (III-Spa-d): imperfecto/contrast/comparativos **8**, woordenschat **7**, beschrijven/vertellen **3**, interactie **4**, lezen/cultuur **1·2·5**.
+
+## Nieuw in deze ronde (1 augustus)
+
+- **70 typvelden** waar de leerling zelf schrijft, geen keuzelijst: 34 in *Vocabulario*, 36 in *Gramática*. De drie grammatica-drills van deze unidad: **het imperfecto** (waar élke -ía-vorm een tilde draagt, en alleen ser, ir en ver onregelmatig zijn) · **indefinido of imperfecto**, gestuurd door de signaalwoorden un día / de repente tegenover siempre / todos los días · **comparar** met más/menos… que, tan… como en de vier eigen vormen mejor, peor, mayor, menor.
+- **§6 Lectura — «Carta de la abuela Rosario».** Een handgeschreven brief van de oudere generatie aan de jongere: precies de plaats waar het imperfecto (hoe het wás) en het indefinido (wat één keer gebeurde) elkaar raken, mét het antes/ahora-contrast. Nieuw genre.
+- **§7 Escucha — «Pódcast «Antes y ahora»».** Twee gasten vergelijken hun kindertijd met elkáár — dezelfde tijden, maar nu als discussie tussen leeftijdsgenoten, met comparativos. Zes treden, transcript pas ná de taken. Ander genre en andere inhoud dan de leestekst.
+- **Extra**-tabblad zonder «link volgt»: leerlingklare terugvalinhoud tot de bronnenlijst en de escape room van deze unidad er zijn.
+
+## Wat nog niet af is
+
+- De **QR-codes** in de print wijzen nog niet naar een echte pagina; dat gebeurt in één sweep zodra de site online staat.
+- Het **luisteren** gebruikt de stem van je browser (TTS). Zodra er echte opnames zijn, pikt de hub die automatisch op.
+- De **PowerPoints** in deze zip zijn nog de vorige versie. De dia's §5 Lectura en §6 Escucha staan in `03-build/pptx/gen_c6plus_u6_docente.py` klaar, maar konden in deze bouwsessie niet gerenderd worden: python-pptx is niet installeerbaar omdat de omgeving PyPI blokkeert (zie `03-build/SETUP_OMGEVING.md`). Eén keer het script draaien in een omgeving mét python-pptx volstaat.
 
 ## Kwaliteitscontrole (uitgevoerd)
 - Print: **div-balans == 0**, geen doorgesneden tabellen, geen bare slotblokken; bladspiegel gemeten (geen dunne pagina's) + visueel gecontroleerd.

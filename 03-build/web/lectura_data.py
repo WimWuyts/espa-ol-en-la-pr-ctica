@@ -1390,13 +1390,124 @@ C5_U6 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C6+ · U6 «Cuando era pequeño» — parada Cusco
+# Tekstsoort: carta de una abuela. Nieuw genre: een handgeschreven brief van de
+# oudere generatie aan de jongere. Precies de plaats van het imperfecto (hoe het
+# vroeger wás) náást het indefinido (wat er één keer gebeurde), en het levert het
+# «antes ↔ ahora»-contrast vanzelf. Het luisterfragment is een podcast.
+# ---------------------------------------------------------------------------
+C6P_U6 = {
+    "id": "C6P-U6-LEC-01",
+    "ancla": "c6p-u6-lec-01",
+    "titulo": "Carta de la abuela Rosario",
+    "tipo": "carta manuscrita (de la abuela a su nieta)",
+    "emisor": "Rosario, 79 años, desde un pueblo cerca de Cusco",
+    "receptor": "Su nieta, que vive en la ciudad",
+    "objetivo": "Contarle cómo era su infancia y compararla con la de ahora",
+    "prediccion": {
+        "q": "Kijk eerst alleen naar de aanhef «Querida nieta», de plaats en de "
+             "handtekening. Wat voor tekst is dit?",
+        "opts": ["Een persoonlijke brief", "Een schoolopstel", "Een reclamefolder"],
+        "ans": "Een persoonlijke brief",
+        "why": "Aanhef + groet + handtekening = een brief aan één iemand.",
+    },
+    "texto": [
+        ["titulo", "✉️ QUERIDA NIETA"],
+        ["lema", "Ollantaytambo, cerca de Cusco · 12 de mayo"],
+        ["p", "Me preguntas cómo era mi vida de pequeña. Pues mira: yo vivía en esta misma "
+              "casa, pero todo era diferente. No había electricidad ni agua caliente. "
+              "Nos levantábamos a las cinco y caminábamos una hora hasta la escuela."],
+        ["p", "Éramos ocho hermanos. Mi madre cocinaba en el suelo, con leña, y siempre había "
+              "sopa. Yo no tenía juguetes: jugaba con piedras y con una muñeca de trapo que "
+              "me hizo mi tía."],
+        ["aviso", ["📅 EL DÍA QUE TODO CAMBIÓ",
+                   "En mil novecientos sesenta llegó la carretera. Un camión subió hasta la "
+                   "plaza y todo el pueblo salió a mirar. Yo tenía catorce años. Aquel día vi "
+                   "mi primera radio."]],
+        ["p", "Ahora tú tienes internet, agua caliente y un colegio a diez minutos. Vives "
+              "mejor que yo, eso está claro. Pero antes el pueblo era más tranquilo y todos "
+              "nos conocíamos."],
+        ["p", "Antes no era mejor. Era diferente. Lo que echo de menos no son las piedras: "
+              "es la plaza llena de gente al atardecer."],
+        ["firma", "Te espero en julio. Un beso enorme de tu abuela Rosario."],
+    ],
+    "traduccion": "LIEVE KLEINDOCHTER — Ollantaytambo, bij Cusco, 12 mei. Je vraagt me hoe mijn "
+                  "leven als kind was. Kijk: ik woonde in ditzelfde huis, maar alles was anders. "
+                  "Er was geen elektriciteit en geen warm water. We stonden om vijf uur op en "
+                  "liepen een uur naar school. We waren met acht kinderen. Mijn moeder kookte op "
+                  "de grond, op hout, en er was altijd soep. Ik had geen speelgoed: ik speelde "
+                  "met steentjes en met een lappenpop die mijn tante voor me maakte. DE DAG DAT "
+                  "ALLES VERANDERDE: in 1960 kwam de weg. Een vrachtwagen reed tot op het plein "
+                  "en het hele dorp liep buiten om te kijken. Ik was veertien. Die dag zag ik "
+                  "mijn eerste radio. — Nu heb jij internet, warm water en een school op tien "
+                  "minuten. Jij leeft beter dan ik, dat is duidelijk. Maar vroeger was het dorp "
+                  "rustiger en kenden we elkaar allemaal. Vroeger was niet beter. Het "
+                  "was anders. Wat ik mis zijn niet de steentjes: het "
+                  "is het plein vol mensen bij zonsondergang. Ik verwacht je in juli. Een dikke "
+                  "kus van je oma Rosario.",
+    "global": {
+        "q": "¿De qué habla la abuela en su carta?",
+        "opts": ["De cómo era su infancia y en qué se diferencia de la de ahora",
+                 "De un viaje que quiere hacer", "De una fiesta del pueblo"],
+        "ans": "De cómo era su infancia y en qué se diferencia de la de ahora",
+    },
+    "escanear": [
+        {"q": "¿A qué hora se levantaban?", "ans": "a las cinco",
+         "alt": ["las cinco", "cinco", "5"], "why": "«Nos levantábamos a las cinco»"},
+        {"q": "¿Cuánto tiempo caminaban hasta la escuela?", "ans": "una hora",
+         "alt": ["1 hora", "hora", "una"], "why": "«caminábamos una hora hasta la escuela»"},
+        {"q": "¿Cuántos hermanos eran? (en cifras)", "ans": "8",
+         "alt": ["ocho", "ocho hermanos"], "why": "«Éramos ocho hermanos»"},
+        {"q": "¿En qué año llegó la carretera? (en cifras)", "ans": "1960",
+         "alt": ["mil novecientos sesenta", "en 1960"], "why": "«En mil novecientos sesenta llegó la carretera»"},
+        {"q": "¿Cuántos años tenía la abuela ese día? (en cifras)", "ans": "14",
+         "alt": ["catorce", "catorce años"], "why": "«Yo tenía catorce años»"},
+    ],
+    "vf": [
+        {"q": "En la casa había agua caliente.", "ans": False,
+         "prueba": "no había electricidad ni agua caliente"},
+        {"q": "La abuela tenía muchos juguetes.", "ans": False, "prueba": "yo no tenía juguetes"},
+        {"q": "Su tía le hizo una muñeca.", "ans": True, "prueba": "una muñeca de trapo que me hizo mi tía"},
+        {"q": "La abuela piensa que la vida de su nieta es más fácil.", "ans": True,
+         "prueba": "vives mejor que yo"},
+        {"q": "La abuela echa de menos las piedras.", "ans": False,
+         "prueba": "lo que echo de menos no son las piedras"},
+    ],
+    "contexto": [
+        {"q": "«con leña» — ¿con qué cocinaba su madre?",
+         "opts": ["met hout", "met gas", "met elektriciteit"], "ans": "met hout",
+         "why": "Er stond net dat er geen elektriciteit was."},
+        {"q": "«una muñeca de trapo» — ¿de qué es?",
+         "opts": ["van stof, zelfgemaakt", "van plastic", "van hout"],
+         "ans": "van stof, zelfgemaakt", "why": "Haar tante maakte ze; er was geen speelgoed te koop."},
+        {"q": "«echar de menos» — ¿qué hace la abuela?",
+         "opts": ["Ze mist iets", "Ze gooit iets weg", "Ze telt iets"], "ans": "Ze mist iets",
+         "why": "Vaste uitdrukking — één van de lastigste voor Nederlandstaligen."},
+        {"q": "«Antes no era mejor. Era diferente.» — ¿qué hace aquí la abuela?",
+         "opts": ["Ze nuanceert wat ze net zei", "Ze spreekt zichzelf tegen",
+                  "Ze stelt een vraag"],
+         "ans": "Ze nuanceert wat ze net zei",
+         "why": "Ze zwakt «vroeger was alles beter» bewust af tot «anders»."},
+    ],
+    "produccion": {
+        "prompt": "Contesta a la abuela (6–8 frases): cómo es tu vida ahora, qué hacías tú de "
+                  "pequeño/-a, qué cambió y qué echas de menos. Usa el imperfecto para el "
+                  "decorado, el indefinido para lo que pasó una vez, y una comparación "
+                  "(más/menos… que · tan… como).",
+        "modelo": "Querida abuela: ahora yo… De pequeño/-a yo… y siempre… Un día… Ahora mi vida "
+                  "es más… que antes, pero echo de menos…",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
          ("C5", 2): C5_U2, ("C6+", 2): C6P_U2,
          ("C5", 3): C5_U3, ("C6+", 3): C6P_U3,
          ("C5", 4): C5_U4, ("C6+", 4): C6P_U4,
          ("C5", 5): C5_U5, ("C6+", 5): C6P_U5,
-         ("C5", 6): C5_U6}
+         ("C5", 6): C5_U6, ("C6+", 6): C6P_U6}
 
 
 def _texto_plano(t):

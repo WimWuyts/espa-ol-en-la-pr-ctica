@@ -1089,13 +1089,107 @@ C5_U6 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C6+ · U6 — pódcast escolar. De leestekst van deze unit is een brief van één
+# oma over hoe het vroeger wás; hier vergelijken twee jongeren hun eigen
+# kindertijd met elkaar — dezelfde tijd, maar nu als discussie tussen
+# leeftijdsgenoten, mét comparativos. Nieuw genre.
+# ---------------------------------------------------------------------------
+C6P_U6 = {
+    "id": "C6P-U6-ESC-01",
+    "ancla": "c6p-u6-esc-01",
+    "titulo": "Pódcast «Antes y ahora»",
+    "audio": "audio/C6plus_U6.mp3",
+    "situacion": {
+        "lugar": "El estudio del pódcast del instituto, episodio 7",
+        "quien": "Mateo (presentador) y dos invitados: Sofía y Aarón",
+        "que": "Comparan cómo era su infancia con la de ahora",
+        "claves": ["cuando era pequeño", "antes… ahora…", "más … que"],
+    },
+    "guion": [
+        {"who": "Mateo", "es": "Bienvenidos al episodio siete. Hoy hablamos de la infancia. "
+                               "Sofía, ¿cómo era la tuya?",
+         "nl": "Welkom bij aflevering zeven. Vandaag hebben we het over de kindertijd. Sofía, "
+               "hoe was die van jou?"},
+        {"who": "Sofía", "es": "Yo crecí en un pueblo pequeño. No teníamos parque, pero "
+                               "jugábamos en la calle hasta las nueve.",
+         "nl": "Ik groeide op in een klein dorp. We hadden geen park, maar we speelden op "
+               "straat tot negen uur."},
+        {"who": "Mateo", "es": "¿Y tú, Aarón?", "nl": "En jij, Aarón?"},
+        {"who": "Aarón", "es": "Yo vivía en la ciudad. Tenía más juguetes que Sofía, seguro, "
+                               "pero salía mucho menos.",
+         "nl": "Ik woonde in de stad. Ik had zeker meer speelgoed dan Sofía, maar ik ging veel "
+               "minder buiten."},
+        {"who": "Sofía", "es": "Eso es. Yo no tenía consola, y me daba igual.",
+         "nl": "Precies. Ik had geen spelconsole, en dat kon me niet schelen."},
+        {"who": "Mateo", "es": "¿Recordáis algún día concreto?",
+         "nl": "Herinneren jullie je een bepaalde dag?"},
+        {"who": "Aarón", "es": "Sí. Un día, con siete años, me perdí en el metro. Mi madre me "
+                               "encontró dos horas después. Nunca lo olvidé.",
+         "nl": "Ja. Op een dag, toen ik zeven was, verdwaalde ik in de metro. Mijn moeder vond "
+               "me twee uur later. Ik ben het nooit vergeten."},
+        {"who": "Sofía", "es": "El mío es más tonto: el día que llegó internet al pueblo. "
+                               "Toda la escuela fue a ver la pantalla.",
+         "nl": "Het mijne is dommer: de dag dat het internet in het dorp kwam. De hele school "
+               "ging naar het scherm kijken."},
+        {"who": "Mateo", "es": "Última pregunta: ¿se vivía mejor antes?",
+         "nl": "Laatste vraag: leefde men vroeger beter?"},
+        {"who": "Aarón", "es": "No. Se vivía distinto. Ahora tenemos más cosas y menos tiempo.",
+         "nl": "Nee. Men leefde anders. Nu hebben we meer spullen en minder tijd."},
+        {"who": "Sofía", "es": "Yo echo de menos el aburrimiento. Cuando te aburrías, "
+                               "inventabas algo.",
+         "nl": "Ik mis de verveling. Als je je verveelde, verzon je iets."},
+        {"who": "Mateo", "es": "Buena frase para terminar. ¡Hasta el próximo episodio!",
+         "nl": "Mooie zin om mee af te sluiten. Tot de volgende aflevering!"},
+    ],
+    "global": {
+        "q": "¿De qué trata el episodio?",
+        "opts": ["De comparar la infancia de antes con la de ahora",
+                 "De cómo se hace un pódcast", "De un viaje escolar"],
+        "ans": "De comparar la infancia de antes con la de ahora",
+        "why": "twee gasten, twee kindertijden, telkens vergeleken",
+    },
+    "detalle": [
+        {"q": "¿Dónde creció Sofía?", "opts": ["En un pueblo pequeño", "En la ciudad",
+                                                "En el extranjero"], "ans": "En un pueblo pequeño",
+         "why": "«Yo crecí en un pueblo pequeño»"},
+        {"q": "¿Hasta qué hora jugaba Sofía en la calle?",
+         "opts": ["Hasta las nueve", "Hasta las siete", "Hasta las once"], "ans": "Hasta las nueve",
+         "why": "«jugábamos en la calle hasta las nueve»"},
+        {"q": "¿Qué tenía Aarón más que Sofía?", "opts": ["Juguetes", "Amigos", "Tiempo libre"],
+         "ans": "Juguetes", "why": "«Tenía más juguetes que Sofía»"},
+        {"q": "¿Qué le pasó a Aarón a los siete años?",
+         "opts": ["Se perdió en el metro", "Se rompió una pierna", "Se mudó de ciudad"],
+         "ans": "Se perdió en el metro", "why": "«con siete años, me perdí en el metro»"},
+        {"q": "¿Cuál es el recuerdo de Sofía?",
+         "opts": ["El día que llegó internet al pueblo", "Su primer día de escuela",
+                  "Un viaje a Cusco"], "ans": "El día que llegó internet al pueblo",
+         "why": "«el día que llegó internet al pueblo»"},
+    ],
+    "vf": [
+        {"q": "Sofía tenía una consola de pequeña.", "ans": False, "prueba": "yo no tenía consola"},
+        {"q": "Aarón salía más que Sofía.", "ans": False, "prueba": "salía mucho menos"},
+        {"q": "Según Aarón, ahora tenemos menos tiempo.", "ans": True,
+         "prueba": "ahora tenemos más cosas y menos tiempo"},
+    ],
+    "produccion": {
+        "prompt": "Eres el tercer invitado del pódcast. Graba cinco frases: cómo era tu "
+                  "infancia (imperfecto), un día concreto que recuerdas (indefinido) y una "
+                  "comparación antes/ahora (más… que · menos… que · tan… como).",
+        "modo": "grabar",
+        "modelo": "Cuando era pequeño/-a, yo… y siempre… Un día… Ahora tengo más… que antes, "
+                  "pero menos…",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
          ("C5", 2): C5_U2, ("C6+", 2): C6P_U2,
          ("C5", 3): C5_U3, ("C6+", 3): C6P_U3,
          ("C5", 4): C5_U4, ("C6+", 4): C6P_U4,
          ("C5", 5): C5_U5, ("C6+", 5): C6P_U5,
-         ("C5", 6): C5_U6}
+         ("C5", 6): C5_U6, ("C6+", 6): C6P_U6}
 
 
 def controla():
