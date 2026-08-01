@@ -554,10 +554,99 @@ C5_U3 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C6+ · U3 — tutorial hablado. De leestekst van deze unit weegt meningen over
+# schermtijd; hier moet de leerling een reeks stappen volgen en onthouden in
+# welke volgorde ze komen. Ander genre (instructie) en andere inhoud (een app
+# instellen in plaats van erover discussiëren).
+# ---------------------------------------------------------------------------
+C6P_U3 = {
+    "id": "C6P-U3-ESC-01",
+    "ancla": "c6p-u3-esc-01",
+    "titulo": "Cómo hacer una videollamada con la abuela",
+    "audio": "audio/C6plus_U3.mp3",
+    "situacion": {
+        "lugar": "En la cocina, en Ciudad de México — con la tableta en la mesa",
+        "quien": "Diego y su abuela Elvira, que no usa mucho la tecnología",
+        "que": "Diego le explica paso a paso cómo llamar a la familia por vídeo",
+        "claves": ["primero… luego…", "vas a ver", "acabas de…"],
+    },
+    "guion": [
+        {"who": "Abuela", "es": "Diego, mi amor, yo con estas cosas no puedo. ¿Me enseñas?",
+         "nl": "Diego, schat, met die dingen kan ik niet overweg. Leer je het me?"},
+        {"who": "Diego", "es": "Claro, abuela. Es fácil. Primero enciende la tableta con este "
+                               "botón de arriba.",
+         "nl": "Natuurlijk, oma. Het is makkelijk. Zet eerst de tablet aan met deze knop bovenaan."},
+        {"who": "Abuela", "es": "Ya está. Veo muchos cuadritos de colores.",
+         "nl": "Klaar. Ik zie allemaal gekleurde vierkantjes."},
+        {"who": "Diego", "es": "Esas son las aplicaciones. Luego toca la verde, la del teléfono "
+                               "blanco.",
+         "nl": "Dat zijn de apps. Raak daarna de groene aan, die met de witte telefoon."},
+        {"who": "Abuela", "es": "¿Esta? Me pide una contraseña.",
+         "nl": "Deze? Hij vraagt me een wachtwoord."},
+        {"who": "Diego", "es": "No, esa es la wifi. La contraseña es la fecha de tu cumpleaños, "
+                               "sin espacios.",
+         "nl": "Nee, dat is de wifi. Het wachtwoord is je geboortedatum, zonder spaties."},
+        {"who": "Abuela", "es": "Listo. Ahora veo la lista de la familia.",
+         "nl": "Klaar. Nu zie ik de lijst van de familie."},
+        {"who": "Diego", "es": "Perfecto. Busca a mi tía Rosa y toca el icono de la cámara, no "
+                               "el del teléfono.",
+         "nl": "Perfect. Zoek tante Rosa en raak het camera-icoontje aan, niet dat van de telefoon."},
+        {"who": "Abuela", "es": "¿Y por qué la cámara?", "nl": "En waarom de camera?"},
+        {"who": "Diego", "es": "Porque con la cámara vas a ver su cara. Con el teléfono solo la "
+                               "vas a oír.",
+         "nl": "Omdat je met de camera haar gezicht gaat zien. Met de telefoon ga je haar alleen horen."},
+        {"who": "Abuela", "es": "¡Ay, ya suena! ¿Y si no contesta?",
+         "nl": "Ah, hij gaat al over! En als ze niet opneemt?"},
+        {"who": "Diego", "es": "Entonces cuelgas y le mandas un mensaje. Acabas de aprender lo "
+                               "más difícil, abuela.",
+         "nl": "Dan hang je op en stuur je haar een bericht. Je hebt net het moeilijkste geleerd, oma."},
+        {"who": "Abuela", "es": "¡Rosa! ¡Te veo! Mañana voy a llamar yo sola.",
+         "nl": "Rosa! Ik zie je! Morgen ga ik zelf bellen."},
+    ],
+    "global": {
+        "q": "¿Qué hace Diego en este audio?",
+        "opts": ["Le explica a su abuela cómo hacer una videollamada",
+                 "Le vende una tableta nueva", "Le cuenta un viaje a México"],
+        "ans": "Le explica a su abuela cómo hacer una videollamada",
+        "why": "primero · luego · busca · toca = stappen",
+    },
+    "detalle": [
+        {"q": "¿Qué hay que hacer primero?",
+         "opts": ["Encender la tableta", "Tocar el icono verde", "Buscar a la tía Rosa"],
+         "ans": "Encender la tableta", "why": "«Primero enciende la tableta»"},
+        {"q": "¿De qué color es la aplicación?", "opts": ["Verde", "Azul", "Roja"], "ans": "Verde",
+         "why": "«toca la verde, la del teléfono blanco»"},
+        {"q": "¿Cuál es la contraseña de la wifi?",
+         "opts": ["La fecha de su cumpleaños", "El nombre de su nieto", "Cuatro ceros"],
+         "ans": "La fecha de su cumpleaños", "why": "«La contraseña es la fecha de tu cumpleaños»"},
+        {"q": "¿A quién llama la abuela?", "opts": ["A la tía Rosa", "A Diego", "A la vecina"],
+         "ans": "A la tía Rosa", "why": "«Busca a mi tía Rosa»"},
+        {"q": "¿Qué hay que hacer si la otra persona no contesta?",
+         "opts": ["Colgar y mandar un mensaje", "Llamar otra vez enseguida", "Apagar la tableta"],
+         "ans": "Colgar y mandar un mensaje", "why": "«cuelgas y le mandas un mensaje»"},
+    ],
+    "vf": [
+        {"q": "Hay que tocar el icono del teléfono para ver la cara.", "ans": False,
+         "prueba": "toca el icono de la cámara, no el del teléfono"},
+        {"q": "La abuela quiere llamar sola la próxima vez.", "ans": True,
+         "prueba": "mañana voy a llamar yo sola"},
+        {"q": "Diego dice que es fácil.", "ans": True, "prueba": "es fácil"},
+    ],
+    "produccion": {
+        "prompt": "Ahora tú: explica en cuatro pasos cómo se hace algo con el móvil (subir una "
+                  "foto, cambiar la contraseña, apagar las notificaciones). Usa primero · "
+                  "luego · después · al final.",
+        "modo": "grabar",
+        "modelo": "Primero enciende… Luego toca… Después escribe… Al final vas a ver…",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
          ("C5", 2): C5_U2, ("C6+", 2): C6P_U2,
-         ("C5", 3): C5_U3}
+         ("C5", 3): C5_U3, ("C6+", 3): C6P_U3}
 
 
 def controla():

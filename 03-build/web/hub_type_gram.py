@@ -222,7 +222,7 @@ SETS[("C5", 3)] = [
               "why": "nosotros → nos"},
              {"q": "¿A qué hora ___ (acostarse) tú?", "ans": "te acuestas", "hint": "t_ a_______",
               "why": "tú → te · o → ue"},
-             {"q": "Mis hermanas ___ (vestirse) rápido.", "ans": "se visten", "hint": "s_ v______",
+             {"q": "Mis hermanas ___ (vestirse) rápido.", "ans": "se visten", "hint": "s_ v_____",
               "why": "ellas → se · e → i"},
              {"q": "Yo ___ (lavarse) las manos antes de comer.", "ans": "me lavo", "hint": "m_ l___",
               "why": "yo → me · regelmatig"},
@@ -363,29 +363,29 @@ SETS[("C6+", 2)] = [
               "-ar → <b>-ando</b> · -er/-ir → <b>-iendo</b>. Vier zijn onregelmatig: leyendo, "
               "durmiendo, pidiendo, diciendo.",
          items=[
-             {"q": "Mamá ___ (cocinar) en la cocina.", "ans": "está cocinando", "hint": "e____ c________",
+             {"q": "Mamá ___ (cocinar) en la cocina.", "ans": "está cocinando", "hint": "e___ c________",
               "why": "-ar → -ando"},
              {"q": "Yo ___ (comer) en la terraza.", "ans": "estoy comiendo", "hint": "e____ c_______",
               "why": "-er → -iendo"},
-             {"q": "Valen ___ (escribir) un mensaje.", "ans": "está escribiendo", "hint": "e____ e__________",
+             {"q": "Valen ___ (escribir) un mensaje.", "ans": "está escribiendo", "hint": "e___ e__________",
               "why": "-ir → -iendo"},
              {"q": "Nosotros ___ (ver) la tele en el salón.", "ans": "estamos viendo", "hint": "e______ v_____",
               "why": "ver → viendo"},
-             {"q": "Mis hermanos ___ (jugar) en el jardín.", "ans": "están jugando", "hint": "e_____ j______",
+             {"q": "Mis hermanos ___ (jugar) en el jardín.", "ans": "están jugando", "hint": "e____ j______",
               "why": "ellos → están"},
-             {"q": "¿Qué ___ (hacer) tú?", "ans": "estás haciendo", "hint": "e____ h________",
+             {"q": "¿Qué ___ (hacer) tú?", "ans": "estás haciendo", "hint": "e____ h_______",
               "why": "tú → estás (mét tilde)"},
-             {"q": "El abuelo ___ (dormir) en el sofá.", "ans": "está durmiendo", "hint": "e____ d_________",
+             {"q": "El abuelo ___ (dormir) en el sofá.", "ans": "está durmiendo", "hint": "e___ d________",
               "why": "onregelmatig: o → u"},
              {"q": "Yo ___ (leer) un libro.", "ans": "estoy leyendo", "hint": "e____ l______",
               "why": "onregelmatig: leer → leyendo"},
-             {"q": "Papá ___ (limpiar) el baño.", "ans": "está limpiando", "hint": "e____ l________",
+             {"q": "Papá ___ (limpiar) el baño.", "ans": "está limpiando", "hint": "e___ l________",
               "why": "-ar → -ando"},
              {"q": "Nosotras ___ (subir) la escalera.", "ans": "estamos subiendo", "hint": "e______ s_______",
               "why": "-ir → -iendo"},
-             {"q": "Los vecinos ___ (pedir) silencio.", "ans": "están pidiendo", "hint": "e_____ p________",
+             {"q": "Los vecinos ___ (pedir) silencio.", "ans": "están pidiendo", "hint": "e____ p_______",
               "why": "onregelmatig: e → i"},
-             {"q": "¿Vosotros ___ (buscar) la parada?", "ans": "estáis buscando", "hint": "e______ b_______",
+             {"q": "¿Vosotros ___ (buscar) la parada?", "ans": "estáis buscando", "hint": "e_____ b_______",
               "why": "vosotros → estáis (mét tilde)"},
          ]),
     dict(title="Los pronombres lo · la · los · las", accents="soft",
@@ -405,6 +405,76 @@ SETS[("C6+", 2)] = [
              {"q": "¿Coges el autobús? — Sí, ___ cojo en la esquina.", "ans": "lo", "why": "el autobús → lo"},
              {"q": "¿Ordenas tu habitación? — Sí, ___ ordeno los sábados.", "ans": "la", "why": "la habitación → la"},
              {"q": "¿Ves a Valen y a Nina? — Sí, ___ veo en el parque.", "ans": "las", "why": "twee meisjes → las"},
+         ]),
+]
+
+SETS[("C6+", 3)] = [
+    dict(title="Ir a + infinitivo — el futuro próximo", accents="strict",
+         desc="Schrijf <b>alle drie</b> de stukken: de vorm van <i>ir</i>, het woordje "
+              "<b>a</b> en de infinitivo. In het Spaans van deze cursus is dit dé manier om "
+              "over morgen te praten — de <i>futuro simple</i> komt hier niet aan te pas.",
+         items=[
+             {"q": "Mañana yo ___ (subir) una foto nueva.", "ans": "voy a subir", "hint": "v__ a s____",
+              "why": "yo → voy a + infinitivo"},
+             {"q": "Este fin de semana nosotros ___ (quedar) en el centro.", "ans": "vamos a quedar",
+              "hint": "v____ a q_____", "why": "nosotros → vamos a"},
+             {"q": "¿Tú ___ (contestar) el mensaje?", "ans": "vas a contestar", "hint": "v__ a c________",
+              "why": "tú → vas a"},
+             {"q": "Diego ___ (apagar) el móvil a las diez.", "ans": "va a apagar", "hint": "v_ a a_____",
+              "why": "él → va a"},
+             {"q": "Mis amigos ___ (hacer) una videollamada.", "ans": "van a hacer", "hint": "v__ a h____",
+              "why": "ellos → van a"},
+             {"q": "Luego yo ___ (descargar) la aplicación.", "ans": "voy a descargar", "hint": "v__ a d________"},
+             {"q": "¿Vosotros ___ (publicar) el vídeo?", "ans": "vais a publicar", "hint": "v___ a p_______",
+              "why": "vosotros → vais a"},
+             {"q": "El próximo mes nosotras ___ (cambiar) de contraseña.", "ans": "vamos a cambiar",
+              "hint": "v____ a c______"},
+             {"q": "Nina ___ (seguir) a tres cuentas nuevas.", "ans": "va a seguir", "hint": "v_ a s_____"},
+             {"q": "Pronto yo ___ (conectarse) a la wifi del instituto.", "ans": "voy a conectarme",
+              "hint": "v__ a c_________", "why": "reflexief: het pronombre hangt aan de infinitivo"},
+             {"q": "¿Cuándo ___ (llamar) tú a tus abuelos?", "ans": "vas a llamar", "hint": "v__ a l_____"},
+             {"q": "Ellos no ___ (compartir) la foto.", "ans": "van a compartir", "hint": "v__ a c________"},
+         ]),
+    dict(title="Los pronombres le · les — ¿a quién?", accents="soft",
+         desc="<b>le</b> = aan één persoon · <b>les</b> = aan meerdere. Het staat <b>vóór</b> het "
+              "vervoegde werkwoord. Let op de valstrik: het gaat over aan wíe, niet over wát — "
+              "<i>le escribo un mensaje</i> (aan hem/haar).",
+         items=[
+             {"q": "___ escribo un mensaje a mi hermana.", "ans": "le", "why": "één persoon → le"},
+             {"q": "___ mando fotos a mis primos.", "ans": "les", "why": "meerdere → les"},
+             {"q": "¿Qué ___ regalas a tu padre?", "ans": "le", "why": "één persoon → le"},
+             {"q": "___ contamos la noticia a nuestros amigos.", "ans": "les", "why": "meerdere → les"},
+             {"q": "La profesora ___ pregunta la contraseña a Diego.", "ans": "le", "why": "aan Diego → le"},
+             {"q": "___ enseño la app a mis abuelos.", "ans": "les", "why": "meerdere → les"},
+             {"q": "Nina ___ contesta al mensaje de Valen.", "ans": "le", "why": "aan Valen → le"},
+             {"q": "¿___ dices la verdad a tus padres?", "ans": "les", "why": "meerdere → les"},
+             {"q": "Yo ___ llamo a mi tía todos los domingos.", "ans": "le", "why": "aan één tante → le"},
+             {"q": "El profesor ___ manda los deberes a los alumnos.", "ans": "les", "why": "meerdere → les"},
+             {"q": "___ compartimos el vídeo a Mateo.", "ans": "le", "why": "aan Mateo → le"},
+             {"q": "¿Por qué no ___ respondes a tus amigas?", "ans": "les", "why": "meerdere → les"},
+         ]),
+    dict(title="Creo que… · acabar de… — escribe la frase", accents="strict",
+         desc="Twee bouwsels naast elkaar. <b>Creo que</b> + de gewóne tijd — nooit iets anders. "
+              "<b>Acabar de</b> + infinitivo = «net gedaan hebben»: je vervoegt <i>acabar</i>, "
+              "niet het tweede werkwoord.",
+         items=[
+             {"q": "Creo que las redes ___ (ser) útiles.", "ans": "son", "hint": "s__",
+              "why": "creo que + indicativo, gewoon presente"},
+             {"q": "Pienso que tú ___ (tener) razón.", "ans": "tienes", "hint": "t_____"},
+             {"q": "Me parece que la app no ___ (funcionar).", "ans": "funciona", "hint": "f_______"},
+             {"q": "Creo que nosotros ___ (pasar) mucho tiempo en la pantalla.", "ans": "pasamos",
+              "hint": "p______"},
+             {"q": "Creo que la wifi del instituto ___ (ir) muy lenta.", "ans": "va", "hint": "v_",
+              "why": "ir is onregelmatig: ella va"},
+             {"q": "Pienso que mis padres ___ (exagerar) un poco.", "ans": "exageran", "hint": "e_______"},
+             {"q": "Yo ___ (acabar) de subir la foto.", "ans": "acabo", "hint": "a____",
+              "why": "je vervoegt acabar: acabo de subir"},
+             {"q": "Diego ___ (acabar) de llamarme.", "ans": "acaba", "hint": "a____"},
+             {"q": "Nosotros ___ (acabar) de conectarnos a la wifi.", "ans": "acabamos", "hint": "a_______"},
+             {"q": "¿Tú ___ (acabar) de descargar la aplicación?", "ans": "acabas", "hint": "a_____"},
+             {"q": "Mis amigas ___ (acabar) de publicar el vídeo.", "ans": "acaban", "hint": "a_____"},
+             {"q": "En mi opinión, el móvil ___ (poder) ser adictivo.", "ans": "puede", "hint": "p____",
+              "why": "poder: o → ue"},
          ]),
 ]
 
@@ -464,6 +534,30 @@ SETS[("C6+", 0)] = [
 
 
 # --------------------------------------------------------------------------- #
+def controla():
+    """De pista moet bij het antwoord passen.
+
+    Een `hint` is de eerste letter van elk woord plus een liggend streepje per
+    ontbrekende letter. Klopt de lengte niet, dan telt de leerling streepjes die
+    er niet toe doen en raakt hij het antwoord juist kwijt — dat is erger dan
+    géén pista. Laat het hier falen, niet in de klas.
+    """
+    for (course, unit), sets in SETS.items():
+        assert len(sets) == 3, ("%s U%d: %d drills, verwacht 3" % (course, unit, len(sets)))
+        for s in sets:
+            assert len(s["items"]) == 12, (course, unit, s["title"], len(s["items"]))
+            for it in s["items"]:
+                h, a = it.get("hint"), it["ans"]
+                if not h:
+                    continue
+                assert len(h) == len(a) and all(
+                    c == "_" or c.lower() == d.lower() for c, d in zip(h, a)), (
+                    course, unit, s["title"], a, h)
+
+
+controla()
+
+
 def heeft(course, unit):
     return (course, unit) in SETS
 

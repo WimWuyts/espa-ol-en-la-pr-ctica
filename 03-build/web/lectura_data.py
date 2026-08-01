@@ -692,10 +692,127 @@ C5_U3 = {
 }
 
 
+# ---------------------------------------------------------------------------
+# C6+ · U3 «Conectados» — parada CDMX
+# Tekstsoort: artículo de revista escolar met een enquête. Nieuw genre: hier
+# staan cijfers én meningen naast elkaar, dus de leerling oefent scannen in een
+# grafiekje én het herkennen van standpunten (creo que · me parece que).
+# Het luisterfragment is een radiodebat — gesproken meningsvorming.
+# ---------------------------------------------------------------------------
+C6P_U3 = {
+    "id": "C6P-U3-LEC-01",
+    "ancla": "c6p-u3-lec-01",
+    "titulo": "¿Cuántas horas de pantalla?",
+    "tipo": "artículo de revista escolar (con encuesta)",
+    "emisor": "La redacción de la revista del instituto",
+    "receptor": "Los alumnos de cuarto, quinto y sexto",
+    "objetivo": "Enseñar los resultados de una encuesta y hacer pensar",
+    "prediccion": {
+        "q": "Kijk eerst alleen naar de titel, de percentages en de twee citaten. "
+             "Wat voor tekst is dit?",
+        "opts": ["Een artikel met de uitslag van een enquête", "Een handleiding voor een app",
+                 "Een advertentie voor een gsm"],
+        "ans": "Een artikel met de uitslag van een enquête",
+        "why": "Percentages + citaten van leerlingen = verslag van een bevraging.",
+    },
+    "texto": [
+        ["titulo", "📱 ¿CUÁNTAS HORAS DE PANTALLA?"],
+        ["lema", "Encuesta a 120 alumnos del instituto · marzo"],
+        ["p", "Este mes preguntamos a ciento veinte alumnos cuánto tiempo pasan al día con "
+              "el móvil. Estos son los resultados."],
+        ["lista", [
+            "Menos de dos horas al día: 15 %",
+            "Entre dos y cuatro horas: 48 %",
+            "Más de cuatro horas: 37 %",
+            "Duermen con el móvil en la habitación: 71 %",
+            "Apagan el móvil para estudiar: 22 %",
+        ]],
+        ["aviso", ["Rocío, 16 años",
+                   "«Creo que exageramos con el tema. Yo uso el móvil para estudiar: veo vídeos "
+                   "de mates y hablo con mis compañeras de los deberes. Me parece que el "
+                   "problema no es la pantalla, es lo que haces con ella.»"]],
+        ["aviso", ["Andrés, 17 años",
+                   "«Pienso que sí es un problema. Yo acabo de borrar dos aplicaciones porque "
+                   "me quitan demasiado tiempo. Ahora leo libros y duermo bien. No estoy "
+                   "de acuerdo con Rocío: la pantalla también cansa.»"]],
+        ["p", "La próxima semana vamos a organizar un debate en la biblioteca. Todos los cursos "
+              "están invitados."],
+        ["firma", "¿Quieres participar? Escribe a revista@instituto.mx antes del viernes."],
+    ],
+    "traduccion": "HOEVEEL SCHERMTIJD? Enquête bij 120 leerlingen van de school · maart. Deze "
+                  "maand vragen we aan honderdtwintig leerlingen hoeveel tijd ze per dag met hun "
+                  "gsm doorbrengen. Dit zijn de resultaten: minder dan twee uur per dag: 15 % · "
+                  "tussen twee en vier uur: 48 % · meer dan vier uur: 37 % · slaapt met de gsm "
+                  "op de kamer: 71 % · zet de gsm uit om te studeren: 22 %. — Rocío, 16 jaar: "
+                  "«Ik vind dat we overdrijven. Ik gebruik mijn gsm om te studeren: ik kijk "
+                  "wiskundefilmpjes en praat met mijn klasgenoten over het huiswerk. Volgens mij "
+                  "is het scherm niet het probleem, wel wat je ermee doet.» — Andrés, 17 jaar: "
+                  "«Ik denk dat het wél een probleem is. Ik heb net twee apps gewist omdat ze me "
+                  "te veel tijd afnemen. Nu lees ik boeken en slaap ik goed. Ik ben het niet "
+                  "eens met Rocío: een scherm vermoeit ook.» — Volgende week organiseren we een "
+                  "debat in de bibliotheek. Alle jaren zijn uitgenodigd.",
+    "global": {
+        "q": "¿Para qué es este artículo?",
+        "opts": ["Para enseñar los resultados de una encuesta y abrir un debate",
+                 "Para vender una aplicación nueva",
+                 "Para explicar cómo se configura un móvil"],
+        "ans": "Para enseñar los resultados de una encuesta y abrir un debate",
+    },
+    "escanear": [
+        {"q": "¿A cuántos alumnos preguntaron? (en cifras)", "ans": "120",
+         "alt": ["ciento veinte", "120 alumnos"], "why": "«Encuesta a 120 alumnos»"},
+        {"q": "¿Qué porcentaje pasa más de cuatro horas al día?", "ans": "37",
+         "alt": ["37 %", "37%", "treinta y siete"], "why": "«Más de cuatro horas: 37 %»"},
+        {"q": "¿Qué porcentaje duerme con el móvil en la habitación?", "ans": "71",
+         "alt": ["71 %", "71%", "setenta y uno"], "why": "«Duermen con el móvil en la habitación: 71 %»"},
+        {"q": "¿Cuántos años tiene Andrés? (en cifras)", "ans": "17",
+         "alt": ["diecisiete", "17 años"], "why": "«Andrés, 17 años»"},
+        {"q": "¿Dónde va a ser el debate?", "ans": "en la biblioteca",
+         "alt": ["la biblioteca", "biblioteca"], "why": "«un debate en la biblioteca»"},
+    ],
+    "vf": [
+        {"q": "Casi la mitad de los alumnos pasa entre dos y cuatro horas al día.", "ans": True,
+         "prueba": "entre dos y cuatro horas: 48 %"},
+        {"q": "Rocío piensa que la pantalla es el problema.", "ans": False,
+         "prueba": "el problema no es la pantalla"},
+        {"q": "Andrés ya no tiene dos de sus aplicaciones.", "ans": True,
+         "prueba": "acabo de borrar dos aplicaciones"},
+        {"q": "Rocío y Andrés opinan lo mismo.", "ans": False,
+         "prueba": "no estoy de acuerdo con rocío"},
+        {"q": "Solo una minoría apaga el móvil para estudiar.", "ans": True,
+         "prueba": "apagan el móvil para estudiar: 22 %"},
+    ],
+    "contexto": [
+        {"q": "«Me parece que…» — ¿qué hace Rocío con esas palabras?",
+         "opts": ["Ze geeft haar mening", "Ze stelt een vraag", "Ze geeft een bevel"],
+         "ans": "Ze geeft haar mening",
+         "why": "Net als «creo que» en «pienso que» kondigt het een standpunt aan."},
+        {"q": "«acabo de borrar dos aplicaciones» — ¿qué quiere decir «acabo de»?",
+         "opts": ["Net, kort geleden", "Volgend jaar", "Elke dag"], "ans": "Net, kort geleden",
+         "why": "«acabar de + infinitivo» = net iets gedaan hebben."},
+        {"q": "«No estoy de acuerdo con Rocío» — ¿qué dice Andrés?",
+         "opts": ["Hij is het niet met haar eens", "Hij kent haar niet", "Hij vindt haar aardig"],
+         "ans": "Hij is het niet met haar eens",
+         "why": "«estar de acuerdo» = het eens zijn."},
+        {"q": "«Todos los cursos están invitados» — ¿quién puede ir al debate?",
+         "opts": ["Alle jaren van de school", "Alleen de zesdejaars", "Alleen de redactie"],
+         "ans": "Alle jaren van de school",
+         "why": "«el curso» is hier het schooljaar, niet een cursus."},
+    ],
+    "produccion": {
+        "prompt": "Escribe tu opinión para la revista (5–6 frases): cuántas horas pasas tú, si "
+                  "te parece mucho o poco, con quién estás de acuerdo y por qué. Usa creo que · "
+                  "me parece que · (no) estoy de acuerdo · por un lado… por otro…",
+        "modelo": "Creo que… Yo paso … horas al día. Estoy de acuerdo con… porque… Por un lado…, "
+                  "pero por otro… Acabo de…",
+    },
+}
+
+
 TODOS = {("C5", 0): C5_U0, ("C6+", 0): C6P_U0,
          ("C5", 1): C5_U1, ("C6+", 1): C6P_U1,
          ("C5", 2): C5_U2, ("C6+", 2): C6P_U2,
-         ("C5", 3): C5_U3}
+         ("C5", 3): C5_U3, ("C6+", 3): C6P_U3}
 
 
 def _texto_plano(t):
