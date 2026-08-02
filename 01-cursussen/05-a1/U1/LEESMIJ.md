@@ -27,7 +27,9 @@ géén condicional, géén subjuntivo.
   **Ver solución** pas na een tweede poging.
 - **§5 Lectura** — «Busco un compi de intercambio», een profiel uit een uitwisselingsapp.
 - **§6 Escucha** — «El primer día en el instituto», Álex en Sam leren elkaar kennen · zes treden, transcript pas ná de taken.
-- **Extra** — 23 bronnen in 10 groepen + de escape room **Línea Cero · Madrid**.
+- **Extra** — 23 bronnen in 10 groepen.
+  Bovenaan staan twee spellen, uitgelicht als afsluiting van de unidad:
+  **«Línea Cero · Madrid»** · **«Cómic de Madrid»**.
 
 ## Inhoud
 

@@ -65,6 +65,6 @@ Onder «✍️ Escribe tú — la gramática sin opciones», telkens twaalf item
   draaien in een omgeving mét python-pptx zet ze erin.
 - De **Extra**-tab bevat **23 links in 9 groepen** (ProfeDeELE · Más ProfeDeELE ·
   Arche-ELE · My Daily Spanish), geordend zoals de unit zelf: elke pagina staat er
-  precies één keer, onder het onderwerp waar ze het meest bij helpt. Bovenaan staat de
-  spellenverzameling **«Dos juegos, una familia»**, uitgelicht als afsluiting van de
-  unidad.
+  precies één keer, onder het onderwerp waar ze het meest bij helpt.
+  Bovenaan staan twee spellen, uitgelicht als afsluiting van de unidad:
+  **«El casting de la persona borrada»** · **«Juego de mesa · Sevilla»**.

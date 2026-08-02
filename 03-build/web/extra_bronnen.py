@@ -28,102 +28,209 @@ SITES = {
 
 BRONNEN = {}
 
-# Eén uitgelicht geheel per unit: materiaal dat de héle unidad bestrijkt en dus
-# niet onder één onderwerp thuishoort. Het staat bovenaan, vóór de themalijsten.
 DESTACADO = {
-    ("C5", 0): {
-        "kicker": "Repaso de toda la unidad",
-        "titel": "El museo de las palabras perdidas",
-        "soort": "Escape room",
-        "url": "https://museo-palabras-perdidas.wim-wuyts1979.chatgpt.site/",
-        "es": "Un museo ha perdido sus palabras. Solo sales si superas las pruebas: "
-              "los sonidos, la tilde, los números, el género y los saludos.",
-        "nl": "Een museum is zijn woorden kwijt. Je raakt er alleen uit door de proeven te "
-              "doorstaan: de klanken, de tilde, de getallen, het geslacht en de saludos. "
-              "Álle leerstof van deze unidad in één spel.",
-        "tip": "Doe hem als afsluiting, nadat je de oefeningen hierboven hebt gemaakt — "
-               "of samen met een klasgenoot, om beurten.",
-    },
-    ("C5", 1): {
-        "kicker": "Repaso de toda la unidad",
-        "titel": "Línea Cero · Madrid",
-        "soort": "Escape room",
-        "url": "https://linea-cero-madrid.wim-wuyts1979.chatgpt.site/",
-        "es": "Estás en el metro de Madrid, en una línea que no existe en el plano. Para volver a "
-              "la superficie tienes que conjugar en presente, decidir entre ser y tener, hacer "
-              "las preguntas correctas y saber de dónde es cada pasajero.",
-        "nl": "Je zit in de metro van Madrid, op een lijn die niet op het plan staat. Om weer "
-              "boven te raken moet je vervoegen in het presente, kiezen tussen ser en tener, de "
-              "juiste vragen stellen en van elke passagier weten waar hij of zij vandaan komt. "
-              "Álle leerstof van deze unidad in één spel.",
-        "tip": "Doe hem als afsluiting, nadat je de oefeningen hierboven hebt gemaakt — "
-               "of samen met een klasgenoot, om beurten.",
-    },
-    # Titel door de auteur bevestigd. Het is een spellenverzameling, geen escape
-    # room — vandaar het soort «Juegos» en het spelicoon in plaats van de sleutel.
-    ("C5", 2): {
-        "kicker": "Repaso de toda la unidad",
-        "titel": "Dos juegos, una familia",
-        "soort": "Juegos",
-        "ico": "🎮",
-        "url": "https://mi-gente-juegos-sevilla.wim-wuyts1979.chatgpt.site/",
-        "es": "Dos juegos para repasar toda la unidad, en Sevilla: la familia y el verbo tener, "
-              "los posesivos, la concordancia de los adjetivos, ser frente a estar y los "
-              "demostrativos.",
-        "nl": "Twee spellen om de hele unidad te herhalen, met Sevilla als decor: de "
-              "familiebanden en het werkwoord tener, de posesivos, de overeenkomst van het "
-              "adjectief, ser tegenover estar en de demostrativos.",
-        "tip": "Doe ze als afsluiting, nadat je de oefeningen hierboven hebt gemaakt — "
-               "of samen met een klasgenoot, om beurten.",
-    },
-    # De titel hieronder is afgeleid van de unidad en de URL: de pagina zelf kon
-    # niet ingekeken worden (403 op chatgpt.site vanuit deze omgeving). Heeft het
-    # spel een eigen naam, dan volstaat het die ene regel te vervangen.
-    ("C5", 3): {
-        "kicker": "Repaso de toda la unidad",
-        "titel": "El tiempo vuela · Barcelona",
-        "soort": "Juegos",
-        "ico": "🎮",
-        "url": "https://el-tiempo-vuela-barcelona.wim-wuyts1979.chatgpt.site/",
-        "es": "Juegos para repasar toda la unidad, en Barcelona: la hora, la rutina con los "
-              "verbos reflexivos, el presente irregular y las expresiones de frecuencia.",
-        "nl": "Spellen om de hele unidad te herhalen, met Barcelona als decor: het uur, de "
-              "dagindeling met de reflexieve werkwoorden, het presente irregular en de "
-              "frequentiewoorden.",
-        "tip": "Doe ze als afsluiting, nadat je de oefeningen hierboven hebt gemaakt — "
-               "of samen met een klasgenoot, om beurten.",
-    },
-    ("C6+", 1): {
-        "kicker": "Repaso de toda la unidad",
-        "titel": "El martes desaparecido",
-        "soort": "Escape room",
-        "url": "https://martes-desaparecido.wim-wuyts1979.chatgpt.site/",
-        "es": "Un martes entero ha desaparecido del calendario. Para recuperarlo tienes que "
-              "reconstruir la rutina hora por hora: los verbos reflexivos, qué le gusta a cada "
-              "uno y cuándo se usa ser o estar.",
-        "nl": "Er is een hele dinsdag uit de kalender verdwenen. Om hem terug te krijgen moet je "
-              "de dagindeling uur na uur reconstrueren: de reflexieve werkwoorden, wie waarvan "
-              "houdt, en wanneer je ser of estar gebruikt. Álle leerstof van deze unidad in "
-              "één spel.",
-        "tip": "Doe hem als afsluiting, nadat je de oefeningen hierboven hebt gemaakt — "
-               "of samen met een klasgenoot, om beurten.",
-    },
-    ("C6+", 0): {
-        "kicker": "Repaso de toda la unidad",
-        "titel": "El vuelo 69",
-        "soort": "Escape room",
-        "url": "https://el-vuelo-69.wim-wuyts1979.chatgpt.site/",
-        "es": "Estás a bordo del vuelo 69 y no despega sin ti. Para salir tienes que conjugar en "
-              "presente, elegir entre ser y estar, acertar el género y decir de dónde es cada "
-              "pasajero.",
-        "nl": "Je zit aan boord van vlucht 69 en die vertrekt niet zonder jou. Om eruit te raken "
-              "moet je vervoegen in het presente, kiezen tussen ser en estar, het juiste geslacht "
-              "treffen en van elke passagier zeggen waar hij of zij vandaan komt. Álle leerstof "
-              "van deze unidad in één spel.",
-        "tip": "Doe hem als afsluiting, nadat je de oefeningen hierboven hebt gemaakt — "
-               "of samen met een klasgenoot, om beurten.",
-    },
+    # Uitgelicht materiaal dat de héle unidad bestrijkt en dus niet onder één
+    # onderwerp thuishoort. Staat bovenaan het tabblad, vóór de themalijsten.
+    #
+    # Per unit een LIJST: sinds 2026-08-02 levert de auteur meerdere spellen per
+    # unidad aan, elk met een eigen adres op c5-ruta-digital. Eén spel blijft
+    # gewoon een lijst van één.
+    #
+    # ── Over de titels ────────────────────────────────────────────────────────
+    # De pagina's zelf kunnen vanuit deze omgeving niet ingekeken worden
+    # (chatgpt.site geeft 403). De titels hieronder zijn daarom afgeleid van het
+    # adres dat de auteur doorgaf, behalve waar «bevestigd» staat: die zijn door
+    # de auteur zelf genoemd. Heeft een spel een andere naam op de pagina, dan
+    # volstaat het die ene regel te vervangen.
+    # De omschrijvingen komen uit de leerstof van de unidad, niet uit de pagina.
+    ("C5", 0): [
+        {
+            "titel": "El museo de las palabras perdidas",   # bevestigd door de auteur
+            "soort": "Escape room",
+            "ico": "🗝️",
+            "url": "https://c5-ruta-digital.wim-wuyts1979.chatgpt.site/u0/museo",
+            "es": "Un museo ha perdido sus palabras. Solo sales si superas las pruebas: "
+                  "los sonidos, la tilde, los números, el género y los saludos.",
+            "nl": "Een museum is zijn woorden kwijt. Je raakt er alleen uit door de proeven te "
+                  "doorstaan: de klanken, de tilde, de getallen, het geslacht en de saludos.",
+        },
+        {
+            "titel": "Archivo Cero",
+            "soort": "Juego",
+            "ico": "🎮",
+            "url": "https://c5-ruta-digital.wim-wuyts1979.chatgpt.site/u0/archivo-cero",
+            "es": "El archivo del principio: el alfabeto, los sonidos difíciles, los números y "
+                  "las primeras palabras de clase.",
+            "nl": "Het archief van het begin: het alfabet, de moeilijke klanken, de getallen en "
+                  "de eerste klaswoorden.",
+        },
+    ],
+    ("C5", 1): [
+        {
+            "titel": "Línea Cero · Madrid",                 # bevestigd door de auteur
+            "soort": "Escape room",
+            "ico": "🗝️",
+            "url": "https://c5-ruta-digital.wim-wuyts1979.chatgpt.site/u1/linea-cero",
+            "es": "Estás en el metro de Madrid, en una línea que no existe en el plano. Para "
+                  "volver a la superficie tienes que conjugar en presente, decidir entre ser y "
+                  "tener, hacer las preguntas correctas y saber de dónde es cada pasajero.",
+            "nl": "Je zit in de metro van Madrid, op een lijn die niet op het plan staat. Om weer "
+                  "boven te raken moet je vervoegen in het presente, kiezen tussen ser en tener, "
+                  "de juiste vragen stellen en van elke passagier weten waar die vandaan komt.",
+        },
+        {
+            "titel": "Cómic de Madrid",
+            "soort": "Juego",
+            "ico": "🎮",
+            "url": "https://c5-ruta-digital.wim-wuyts1979.chatgpt.site/u1/comic-madrid",
+            "es": "Presentarse en viñetas: el nombre, la edad, de dónde eres y las preguntas "
+                  "que abren una conversación.",
+            "nl": "Jezelf voorstellen in stripkaders: je naam, je leeftijd, waar je vandaan komt "
+                  "en de vragen waarmee een gesprek begint.",
+        },
+    ],
+    ("C5", 2): [
+        {
+            "titel": "El casting de la persona borrada",
+            "soort": "Juego",
+            "ico": "🎮",
+            "url": "https://c5-ruta-digital.wim-wuyts1979.chatgpt.site/u2/casting-persona-borrada",
+            "es": "Alguien ha desaparecido de la foto de familia. Descríbelo para recuperarlo: "
+                  "el físico, el carácter y la concordancia del adjetivo.",
+            "nl": "Er is iemand van de familiefoto verdwenen. Beschrijf die persoon om hem terug "
+                  "te krijgen: het uiterlijk, het karakter en de overeenkomst van het adjectief.",
+        },
+        {
+            "titel": "Juego de mesa · Sevilla",
+            "soort": "Juego",
+            "ico": "🎮",
+            "url": "https://c5-ruta-digital.wim-wuyts1979.chatgpt.site/u2/boardgame-sevilla",
+            "es": "Un tablero por Sevilla: la familia y el verbo tener, los posesivos, ser "
+                  "frente a estar y los demostrativos.",
+            "nl": "Een bordspel door Sevilla: de familie en het werkwoord tener, de posesivos, "
+                  "ser tegenover estar en de demostrativos.",
+        },
+    ],
+    ("C5", 3): [
+        {
+            "titel": "Barcelona en 24 horas",
+            "soort": "Juego",
+            "ico": "🎮",
+            "url": "https://c5-ruta-digital.wim-wuyts1979.chatgpt.site/u3/barcelona-24-horas",
+            "es": "Un día entero en Barcelona, hora por hora: decir la hora y ordenar la rutina.",
+            "nl": "Een hele dag in Barcelona, uur na uur: het uur zeggen en de dagindeling op "
+                  "volgorde zetten.",
+        },
+        {
+            "titel": "BCN ahora",
+            "soort": "Juego",
+            "ico": "🎮",
+            "url": "https://c5-ruta-digital.wim-wuyts1979.chatgpt.site/u3/bcn-ahora",
+            "es": "¿Qué pasa en la ciudad en este momento? El presente, también el irregular.",
+            "nl": "Wat gebeurt er op dit ogenblik in de stad? Het presente, ook de onregelmatige "
+                  "vormen.",
+        },
+        {
+            "titel": "Barcelona paso a paso",
+            "soort": "Juego",
+            "ico": "🎮",
+            "url": "https://c5-ruta-digital.wim-wuyts1979.chatgpt.site/u3/barcelona-paso-a-paso",
+            "es": "La rutina con los verbos reflexivos y las expresiones de frecuencia, "
+                  "paso a paso.",
+            "nl": "De dagindeling met de reflexieve werkwoorden en de frequentiewoorden, "
+                  "stap voor stap.",
+        },
+    ],
+    ("C5", 4): [
+        {
+            "titel": "Malvarrosa Sound Lab",
+            "soort": "Juego",
+            "ico": "🎮",
+            "url": "https://c5-ruta-digital.wim-wuyts1979.chatgpt.site/u4/malvarrosa-sound-lab",
+            "es": "En la playa de la Malvarrosa: qué te gusta y qué te encanta, y por qué la "
+                  "cosa manda sobre el verbo (gusta ↔ gustan).",
+            "nl": "Op het strand van de Malvarrosa: wat je graag hoort en wat je geweldig vindt, "
+                  "en waarom het ding de vorm bepaalt (gusta ↔ gustan).",
+        },
+        {
+            "titel": "Match Valencia",
+            "soort": "Juego",
+            "ico": "🎮",
+            "url": "https://c5-ruta-digital.wim-wuyts1979.chatgpt.site/u4/match-valencia",
+            "es": "¿Coincidís o no? También, tampoco, a mí sí y a mí no: reaccionar a lo que "
+                  "dice el otro.",
+            "nl": "Zijn jullie het eens of niet? También, tampoco, a mí sí en a mí no: reageren "
+                  "op wat de ander zegt.",
+        },
+        {
+            "titel": "Una tarde · playlist",
+            "soort": "Juego",
+            "ico": "🎮",
+            "url": "https://c5-ruta-digital.wim-wuyts1979.chatgpt.site/u4/una-tarde-playlist",
+            "es": "Montar un plan con querer y poder + infinitivo, y quedar con alguien.",
+            "nl": "Een plan maken met querer en poder + infinitief, en met iemand afspreken.",
+        },
+    ],
+    ("C5", 5): [
+        {
+            "titel": "Mercado nocturno",
+            "soort": "Juego",
+            "ico": "🎮",
+            "url": "https://c5-ruta-digital.wim-wuyts1979.chatgpt.site/u5/mercado-nocturno",
+            "es": "De noche en el mercado de la CDMX: las cantidades (mucho · poco · un poco de) "
+                  "y la comida.",
+            "nl": "'s Avonds op de markt van Mexico-Stad: de hoeveelheden (mucho · poco · un "
+                  "poco de) en het eten.",
+        },
+        {
+            "titel": "Mesa 13",
+            "soort": "Juego",
+            "ico": "🎮",
+            "url": "https://c5-ruta-digital.wim-wuyts1979.chatgpt.site/u5/mesa-13",
+            "es": "Pedir en el restaurante con cortesía, hablar de lo que vas a tomar "
+                  "(ir a + infinitivo) y usar lo · la · los · las.",
+            "nl": "Bestellen in het restaurant met de juiste beleefdheid, zeggen wat je gaat "
+                  "nemen (ir a + infinitief) en lo · la · los · las gebruiken.",
+        },
+    ],
+    # ── C6+ ───────────────────────────────────────────────────────────────────
+    # Deze twee staan nog op de óude adressen. De auteur gaf op 2026-08-02 enkel
+    # nieuwe adressen voor C5 door (het nieuwe domein heet dan ook c5-ruta-
+    # digital), dus deze blijven staan tot hij ze doorgeeft. Nooit zelf verzinnen.
+    ("C6+", 0): [
+        {
+            "titel": "El vuelo 69",
+            "soort": "Escape room",
+            "ico": "🗝️",
+            "url": "https://el-vuelo-69.wim-wuyts1979.chatgpt.site/",
+            "es": "Estás a bordo del vuelo 69 y no despega sin ti. Para salir tienes que "
+                  "conjugar en presente, elegir entre ser y estar, acertar el género y decir de "
+                  "dónde es cada pasajero.",
+            "nl": "Je zit aan boord van vlucht 69 en die vertrekt niet zonder jou. Om eruit te "
+                  "raken moet je vervoegen in het presente, kiezen tussen ser en estar, het "
+                  "juiste geslacht treffen en van elke passagier zeggen waar die vandaan komt.",
+        },
+    ],
+    ("C6+", 1): [
+        {
+            "titel": "El martes desaparecido",
+            "soort": "Escape room",
+            "ico": "🗝️",
+            "url": "https://martes-desaparecido.wim-wuyts1979.chatgpt.site/",
+            "es": "Un martes entero ha desaparecido del calendario. Para recuperarlo tienes que "
+                  "reconstruir la rutina hora por hora: los verbos reflexivos, qué le gusta a "
+                  "cada uno y cuándo se usa ser o estar.",
+            "nl": "Er is een hele dinsdag uit de kalender verdwenen. Om hem terug te krijgen moet "
+                  "je de dagindeling uur na uur reconstrueren: de reflexieve werkwoorden, wie "
+                  "waarvan houdt, en wanneer je ser of estar gebruikt.",
+        },
+    ],
 }
+
+# Boven de rij uitgelichte spellen. Eén regel, in de taal van de leerling.
+DEST_KICKER = "Repaso de toda la unidad"
+DEST_TIP = ("Doe ze als afsluiting, nadat je de oefeningen hierboven hebt gemaakt — "
+            "of samen met een klasgenoot, om beurten.")
 
 BRONNEN[("C5", 0)] = [
     ("§1 · Klanksysteem — letters, klanken en uitspraak", [
@@ -858,20 +965,24 @@ def html(course, unit):
            'onderwerpen van deze unidad. <span class="gloss">%d bronnen, geordend zoals de unit '
            'zelf. Ze openen in een nieuw tabblad.</span></p>' % n]
 
-    d = DESTACADO.get((course, unit))
-    if d:
+    spellen = DESTACADO.get((course, unit)) or []
+    for i, d in enumerate(spellen):
         uit.append(
             '<a class="destacado" href="%s" target="_blank" rel="noopener">'
             '<span class="dest-ico" aria-hidden="true">%s</span>'
-            '<span class="dest-tekst">'
-            '<span class="dest-kicker">%s</span>'
+            '<span class="dest-tekst">%s'
             '<span class="dest-titel">%s</span>'
             '<span class="dest-es">%s</span>'
-            '<span class="dest-nl">%s</span>'
-            '<span class="dest-tip">💡 %s</span></span>'
+            '<span class="dest-nl">%s</span>%s</span>'
             '<span class="dest-badge">%s</span></a>'
-            % (_esc(d["url"]), d.get("ico", "🗝️"), _esc(d["kicker"]), _esc(d["titel"]),
-               _esc(d["es"]), _esc(d["nl"]), _esc(d["tip"]), _esc(d["soort"])))
+            % (_esc(d["url"]), d.get("ico", "🗝️"),
+               # kicker en tip staan bij het eerste en het laatste spel: bij vier
+               # kaarten onder elkaar wordt dezelfde regel vier keer herhalen ruis.
+               ('<span class="dest-kicker">%s</span>' % _esc(d.get("kicker", DEST_KICKER))) if i == 0 else "",
+               _esc(d["titel"]), _esc(d["es"]), _esc(d["nl"]),
+               ('<span class="dest-tip">💡 %s</span>' % _esc(d.get("tip", DEST_TIP)))
+               if i == len(spellen) - 1 else "",
+               _esc(d["soort"])))
     for titel, items in groepen:
         uit.append('<div class="card brongroep"><h3>%s</h3><ul class="bronlijst">' % _esc(titel))
         for bron, naam, url in items:
