@@ -415,10 +415,41 @@ const TTS=('speechSynthesis'in window);
 if(TTS){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}
 const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
 const sn=document.getElementById('subnav');
-PANELS.forEach((p,i)=>{const b=document.createElement('button');b.textContent=p[1];if(i===0)b.classList.add('on');b.onclick=()=>{
-  document.querySelectorAll('.subnav button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+// ── tabbladen · het adres volgt mee ──────────────────────────────────────────
+// #escuchar opent dat tabblad; #lec_1 opent het paneel waar dat element in
+// staat en springt ernaartoe. Zo kan een QR-code of een gedeelde link meteen
+// op de juiste plek openen en werkt de terugknop van de browser.
+function toonPaneel(sleutel){
+  const i=PANELS.findIndex(p=>p[0]===sleutel), p=PANELS[i<0?0:i];
+  document.querySelectorAll('.subnav button').forEach((b,j)=>{
+    if(PANELS[j])b.classList.toggle('on',PANELS[j][0]===p[0]);});
   document.querySelectorAll('.panel').forEach(x=>x.classList.remove('show'));
-  document.querySelector('.panel[data-p="'+p[0]+'"]').classList.add('show');window.scrollTo({top:0,behavior:'smooth'});};sn.appendChild(b);});
+  const el=document.querySelector('.panel[data-p="'+p[0]+'"]');
+  if(el)el.classList.add('show');
+}
+function vanAdres(){
+  let h='';
+  try{h=decodeURIComponent((location.hash||'').slice(1));}catch(e){h=(location.hash||'').slice(1);}
+  if(!h){toonPaneel(PANELS[0][0]);return true;}
+  if(PANELS.some(p=>p[0]===h)){toonPaneel(h);window.scrollTo({top:0,behavior:'smooth'});return true;}
+  const doel=document.getElementById(h);
+  if(doel){
+    const paneel=doel.closest?doel.closest('.panel'):null;
+    if(paneel)toonPaneel(paneel.getAttribute('data-p'));
+    doel.scrollIntoView({behavior:'smooth',block:'start'});
+    return true;
+  }
+  return false;   // onbekend anker → laat de hub staan zoals ze opent
+}
+PANELS.forEach((p,i)=>{const b=document.createElement('button');b.textContent=p[1];if(i===0)b.classList.add('on');
+  b.onclick=()=>{
+    if((location.hash||'').slice(1)===p[0])vanAdres();   // al op dit tabblad → enkel naar boven
+    else location.hash=p[0];                             // anders: adres wijzigen, hashchange doet de rest
+  };sn.appendChild(b);});
+addEventListener('hashchange',vanAdres);
+// Bij het laden. Lukt het anker nog niet (element wordt later opgebouwd),
+// dan proberen we het na 'load' nog één keer.
+if(!vanAdres())addEventListener('load',vanAdres);
 
 // flashcards
 let FCorder=VOCAB.map((_,i)=>i);

@@ -798,6 +798,26 @@ h2.sec{font-family:var(--disp);font-weight:700;color:var(--gd);font-size:24px;ma
 <button class="dk" id="dk" title="licht/donker">🌙</button>
 <script>
 var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');
-tabs.forEach(function(b){b.onclick=function(){var k=b.getAttribute('data-t');tabs.forEach(function(x){x.classList.toggle('on',x===b);});panels.forEach(function(p){p.classList.toggle('show',p.id==='p_'+k);});window.scrollTo(0,0);};});
+// tabbladen · het adres volgt mee, zodat een QR-code meteen goed opent
+function toonTab(k){var g=false;
+  tabs.forEach(function(x){if(x.getAttribute('data-t')===k)g=true;});
+  if(!g)return false;   // eerst kijken, dan pas schakelen: een onbekend anker
+                        // mag de hub nooit zonder opgelicht tabblad achterlaten
+  tabs.forEach(function(x){x.classList.toggle('on',x.getAttribute('data-t')===k);});
+  panels.forEach(function(p){p.classList.toggle('show',p.id==='p_'+k);});return true;}
+function vanAdres(){var h='';
+  try{h=decodeURIComponent((location.hash||'').slice(1));}catch(e){h=(location.hash||'').slice(1);}
+  if(!h)return true;
+  if(toonTab(h)){window.scrollTo(0,0);return true;}
+  var d=document.getElementById(h);
+  if(d){var p=d.closest?d.closest('.panel'):null;
+    if(p&&p.id.indexOf('p_')===0)toonTab(p.id.slice(2));
+    d.scrollIntoView({behavior:'smooth',block:'start'});return true;}
+  return false;}
+tabs.forEach(function(b){b.onclick=function(){var k=b.getAttribute('data-t');
+  if((location.hash||'').slice(1)===k){toonTab(k);window.scrollTo(0,0);}
+  else location.hash=k;};});
+addEventListener('hashchange',vanAdres);
+if(!vanAdres())addEventListener('load',vanAdres);
 var dark=false;document.getElementById('dk').onclick=function(){dark=!dark;document.documentElement.setAttribute('data-theme',dark?'dark':'light');this.textContent=dark?'☀️':'🌙';document.querySelectorAll('iframe.frame').forEach(function(f){try{f.contentDocument.documentElement.setAttribute('data-theme',dark?'dark':'light');}catch(e){}});};
 </script></body></html>

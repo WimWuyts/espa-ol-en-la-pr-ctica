@@ -533,10 +533,41 @@ const TTS=('speechSynthesis'in window);
 if(TTS){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}
 const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
 const sn=document.getElementById('subnav');
-PANELS.forEach((p,i)=>{const b=document.createElement('button');b.textContent=p[1];if(i===0)b.classList.add('on');b.onclick=()=>{
-  document.querySelectorAll('.subnav button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+// ── tabbladen · het adres volgt mee ──────────────────────────────────────────
+// #escuchar opent dat tabblad; #lec_1 opent het paneel waar dat element in
+// staat en springt ernaartoe. Zo kan een QR-code of een gedeelde link meteen
+// op de juiste plek openen en werkt de terugknop van de browser.
+function toonPaneel(sleutel){
+  const i=PANELS.findIndex(p=>p[0]===sleutel), p=PANELS[i<0?0:i];
+  document.querySelectorAll('.subnav button').forEach((b,j)=>{
+    if(PANELS[j])b.classList.toggle('on',PANELS[j][0]===p[0]);});
   document.querySelectorAll('.panel').forEach(x=>x.classList.remove('show'));
-  document.querySelector('.panel[data-p="'+p[0]+'"]').classList.add('show');window.scrollTo({top:0,behavior:'smooth'});};sn.appendChild(b);});
+  const el=document.querySelector('.panel[data-p="'+p[0]+'"]');
+  if(el)el.classList.add('show');
+}
+function vanAdres(){
+  let h='';
+  try{h=decodeURIComponent((location.hash||'').slice(1));}catch(e){h=(location.hash||'').slice(1);}
+  if(!h){toonPaneel(PANELS[0][0]);return true;}
+  if(PANELS.some(p=>p[0]===h)){toonPaneel(h);window.scrollTo({top:0,behavior:'smooth'});return true;}
+  const doel=document.getElementById(h);
+  if(doel){
+    const paneel=doel.closest?doel.closest('.panel'):null;
+    if(paneel)toonPaneel(paneel.getAttribute('data-p'));
+    doel.scrollIntoView({behavior:'smooth',block:'start'});
+    return true;
+  }
+  return false;   // onbekend anker → laat de hub staan zoals ze opent
+}
+PANELS.forEach((p,i)=>{const b=document.createElement('button');b.textContent=p[1];if(i===0)b.classList.add('on');
+  b.onclick=()=>{
+    if((location.hash||'').slice(1)===p[0])vanAdres();   // al op dit tabblad → enkel naar boven
+    else location.hash=p[0];                             // anders: adres wijzigen, hashchange doet de rest
+  };sn.appendChild(b);});
+addEventListener('hashchange',vanAdres);
+// Bij het laden. Lukt het anker nog niet (element wordt later opgebouwd),
+// dan proberen we het na 'load' nog één keer.
+if(!vanAdres())addEventListener('load',vanAdres);
 
 // flashcards
 let FCorder=VOCAB.map((_,i)=>i);
@@ -1212,7 +1243,7 @@ window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');
 })();
 function buildVocabType(){
  buildType('vt_palabra',{title:"Escribe la palabra",desc:"Lees het Nederlands en <b>typ</b> het Spaanse woord. Klik op <b>pista</b> voor de beginletters.",accents:'soft',perBlock:12,expect:12,items:[{"q": "zijn (afkomstig zijn uit)", "ans": "ser", "alt": ["ser"], "hint": "s__", "why": "verbo"}, {"q": "wonen (in)", "ans": "vivir", "alt": ["vivir"], "hint": "v____", "why": "verbo"}, {"q": "spreken, praten", "ans": "hablar", "alt": [], "hint": "h_____", "why": "verbo -ar"}, {"q": "de leeftijd", "ans": "la edad", "alt": ["edad"], "hint": "e___", "why": "sust. f."}, {"q": "het land", "ans": "el país", "alt": ["país"], "hint": "p___", "why": "sust. m."}, {"q": "(heel erg) bedankt", "ans": "gracias", "alt": ["gracias"], "hint": "g______", "why": "expr."}, {"q": "heten", "ans": "llamarse", "alt": [], "hint": "l_______", "why": "verbo pron."}, {"q": "studeren", "ans": "estudiar", "alt": [], "hint": "e_______", "why": "verbo -ar"}, {"q": "werken", "ans": "trabajar", "alt": [], "hint": "t_______", "why": "verbo -ar"}, {"q": "leren", "ans": "aprender", "alt": [], "hint": "a_______", "why": "verbo -er"}, {"q": "het leerjaar / de klas", "ans": "el curso", "alt": ["curso"], "hint": "c____", "why": "sust. m."}, {"q": "de handtekening", "ans": "la firma", "alt": ["firma"], "hint": "f____", "why": "sust. f."}]});
- buildType('vt_frase',{title:"Completa la frase",desc:"Vul het ontbrekende woord in. De zin geeft je de betekenis; let op enkelvoud of meervoud.",accents:'soft',perBlock:12,expect:12,items:[{"q": "¿Cuál es tu ___? — Mi nombre es Leo.", "ans": "nombre", "alt": ["el nombre"], "hint": "n_____", "why": "de (voor)naam"}, {"q": "¿Cuál es tu ___?", "ans": "número", "alt": ["el número"], "hint": "n_____", "why": "het nummer"}, {"q": "Vivo en una ___ pequeña.", "ans": "ciudad", "alt": ["la ciudad"], "hint": "c_____", "why": "de stad"}, {"q": "Hablo tres ___.", "ans": "idiomas", "alt": ["idioma", "el idioma"], "hint": "i______", "why": "de taal"}, {"q": "Mi ___ es García.", "ans": "apellido", "alt": ["el apellido"], "hint": "a_______", "why": "de achternaam / familienaam"}, {"q": "¿Cuál es tu ___?", "ans": "teléfono", "alt": ["el teléfono"], "hint": "t_______", "why": "de telefoon / het nummer"}, {"q": "___, me llamo Ana.", "ans": "Buenos días", "alt": ["buenos días"], "hint": "B_____ d___", "why": "goedemorgen"}, {"q": "Mi ___ es calle Mayor, 3.", "ans": "dirección", "alt": ["la dirección"], "hint": "d________", "why": "het adres"}, {"q": "Mi ___ es belga.", "ans": "nacionalidad", "alt": ["la nacionalidad"], "hint": "n___________", "why": "de nationaliteit"}, {"q": "___: 9000.", "ans": "Código postal", "alt": ["el código postal", "código postal"], "hint": "C_____ p_____", "why": "de postcode"}, {"q": "___: 12/03/2011.", "ans": "Fecha de nacimiento", "alt": ["fecha de nacimiento", "la fecha de nacimiento"], "hint": "F____ d_ n_________", "why": "de geboortedatum"}, {"q": "___: Amberes.", "ans": "Lugar de nacimiento", "alt": ["el lugar de nacimiento", "lugar de nacimiento"], "hint": "L____ d_ n_________", "why": "de geboorteplaats"}]});
+ buildType('vt_frase',{title:"Completa la frase",desc:"Vul het ontbrekende woord in. De zin geeft je de betekenis; let op enkelvoud of meervoud.",accents:'soft',perBlock:12,expect:12,items:[{"q": "¿Cuál es tu ___? — Mi nombre es Leo.", "ans": "nombre", "alt": ["el nombre"], "hint": "n_____", "why": "de (voor)naam"}, {"q": "¿Cuál es tu ___?", "ans": "número", "alt": ["el número"], "hint": "n_____", "why": "het nummer"}, {"q": "Vivo en una ___ pequeña.", "ans": "ciudad", "alt": ["la ciudad"], "hint": "c_____", "why": "de stad"}, {"q": "Hablo tres ___.", "ans": "idiomas", "alt": ["el idioma", "idioma"], "hint": "i______", "why": "de taal"}, {"q": "Mi ___ es García.", "ans": "apellido", "alt": ["el apellido"], "hint": "a_______", "why": "de achternaam / familienaam"}, {"q": "¿Cuál es tu ___?", "ans": "teléfono", "alt": ["el teléfono"], "hint": "t_______", "why": "de telefoon / het nummer"}, {"q": "___, me llamo Ana.", "ans": "Buenos días", "alt": ["buenos días"], "hint": "B_____ d___", "why": "goedemorgen"}, {"q": "Mi ___ es calle Mayor, 3.", "ans": "dirección", "alt": ["la dirección"], "hint": "d________", "why": "het adres"}, {"q": "Mi ___ es belga.", "ans": "nacionalidad", "alt": ["la nacionalidad"], "hint": "n___________", "why": "de nationaliteit"}, {"q": "___: 9000.", "ans": "Código postal", "alt": ["código postal", "el código postal"], "hint": "C_____ p_____", "why": "de postcode"}, {"q": "___: 12/03/2011.", "ans": "Fecha de nacimiento", "alt": ["fecha de nacimiento", "la fecha de nacimiento"], "hint": "F____ d_ n_________", "why": "de geboortedatum"}, {"q": "___: Amberes.", "ans": "Lugar de nacimiento", "alt": ["el lugar de nacimiento", "lugar de nacimiento"], "hint": "L____ d_ n_________", "why": "de geboorteplaats"}]});
  buildType('vt_dictado',{title:"Dictado — escucha y escribe",desc:"Klik op 🔊, luister en <b>schrijf</b> het woord. Zo koppel je klank aan schriftbeeld.",accents:'soft',speak:true,perBlock:10,expect:9,items:[{"q": "···", "say": "el nombre", "ans": "el nombre", "alt": ["nombre"], "why": "de (voor)naam"}, {"q": "···", "say": "el número", "ans": "el número", "alt": ["número"], "why": "het nummer"}, {"q": "···", "say": "la ciudad", "ans": "la ciudad", "alt": ["ciudad"], "why": "de stad"}, {"q": "···", "say": "el idioma", "ans": "el idioma", "alt": ["idioma"], "why": "de taal"}, {"q": "···", "say": "el apellido", "ans": "el apellido", "alt": ["apellido"], "why": "de achternaam / familienaam"}, {"q": "···", "say": "el teléfono", "ans": "el teléfono", "alt": ["teléfono"], "why": "de telefoon / het nummer"}, {"q": "···", "say": "buenos días", "ans": "buenos días", "alt": [], "why": "goedemorgen"}, {"q": "···", "say": "la dirección", "ans": "la dirección", "alt": ["dirección"], "why": "het adres"}, {"q": "···", "say": "la nacionalidad", "ans": "la nacionalidad", "alt": ["nacionalidad"], "why": "de nationaliteit"}]});
 }
 buildVocabType();

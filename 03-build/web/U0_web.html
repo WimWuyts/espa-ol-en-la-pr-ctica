@@ -582,10 +582,41 @@ if(TTS){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}
 // subnav
 const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
 const sn=document.getElementById('subnav');
-PANELS.forEach((p,i)=>{const b=document.createElement('button');b.textContent=p[1];if(i===0)b.classList.add('on');b.onclick=()=>{
-  document.querySelectorAll('.subnav button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+// ── tabbladen · het adres volgt mee ──────────────────────────────────────────
+// #escuchar opent dat tabblad; #lec_1 opent het paneel waar dat element in
+// staat en springt ernaartoe. Zo kan een QR-code of een gedeelde link meteen
+// op de juiste plek openen en werkt de terugknop van de browser.
+function toonPaneel(sleutel){
+  const i=PANELS.findIndex(p=>p[0]===sleutel), p=PANELS[i<0?0:i];
+  document.querySelectorAll('.subnav button').forEach((b,j)=>{
+    if(PANELS[j])b.classList.toggle('on',PANELS[j][0]===p[0]);});
   document.querySelectorAll('.panel').forEach(x=>x.classList.remove('show'));
-  document.querySelector('.panel[data-p="'+p[0]+'"]').classList.add('show');window.scrollTo({top:0,behavior:'smooth'});};sn.appendChild(b);});
+  const el=document.querySelector('.panel[data-p="'+p[0]+'"]');
+  if(el)el.classList.add('show');
+}
+function vanAdres(){
+  let h='';
+  try{h=decodeURIComponent((location.hash||'').slice(1));}catch(e){h=(location.hash||'').slice(1);}
+  if(!h){toonPaneel(PANELS[0][0]);return true;}
+  if(PANELS.some(p=>p[0]===h)){toonPaneel(h);window.scrollTo({top:0,behavior:'smooth'});return true;}
+  const doel=document.getElementById(h);
+  if(doel){
+    const paneel=doel.closest?doel.closest('.panel'):null;
+    if(paneel)toonPaneel(paneel.getAttribute('data-p'));
+    doel.scrollIntoView({behavior:'smooth',block:'start'});
+    return true;
+  }
+  return false;   // onbekend anker → laat de hub staan zoals ze opent
+}
+PANELS.forEach((p,i)=>{const b=document.createElement('button');b.textContent=p[1];if(i===0)b.classList.add('on');
+  b.onclick=()=>{
+    if((location.hash||'').slice(1)===p[0])vanAdres();   // al op dit tabblad → enkel naar boven
+    else location.hash=p[0];                             // anders: adres wijzigen, hashchange doet de rest
+  };sn.appendChild(b);});
+addEventListener('hashchange',vanAdres);
+// Bij het laden. Lukt het anker nog niet (element wordt later opgebouwd),
+// dan proberen we het na 'load' nog één keer.
+if(!vanAdres())addEventListener('load',vanAdres);
 
 // ---------- flashcards ----------
 let FCorder=VOCAB.map((_,i)=>i);
@@ -1469,7 +1500,7 @@ window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');
 })();
 function buildVocabType(){
  buildType('vt_palabra',{title:"Escribe la palabra",desc:"Lees het Nederlands en <b>typ</b> het Spaanse woord. Klik op <b>pista</b> voor de beginletters.",accents:'soft',perBlock:12,expect:12,items:[{"q": "nul", "ans": "cero", "alt": [], "hint": "c___", "why": "núm."}, {"q": "honderd", "ans": "cien", "alt": [], "hint": "c___", "why": "núm."}, {"q": "klemtoon op de laatste", "ans": "aguda", "alt": [], "hint": "a____", "why": "adj."}, {"q": "klemtoon op de voorlaatste", "ans": "llana", "alt": [], "hint": "l____", "why": "adj."}, {"q": "Dag / Tot ziens", "ans": "Adiós", "alt": [], "hint": "A____", "why": "interj."}, {"q": "Ik ben …", "ans": "Soy …", "alt": [], "hint": "S__ …", "why": "verbo"}, {"q": "Ik weet het niet", "ans": "No sé", "alt": [], "hint": "N_ s_", "why": "expr. 🟡"}, {"q": "tellen", "ans": "contar", "alt": [], "hint": "c_____", "why": "verbo · 0 → 100"}, {"q": "Hallo!", "ans": "¡Hola!", "alt": [], "hint": "¡_____", "why": "interj."}, {"q": "de leeftijd", "ans": "la edad", "alt": ["edad"], "hint": "e___", "why": "sust. f."}, {"q": "(Heel erg) bedankt", "ans": "gracias", "alt": ["gracias"], "hint": "g______", "why": "expr."}, {"q": "het land", "ans": "el país", "alt": ["país"], "hint": "p___", "why": "sust. m."}]});
- buildType('vt_frase',{title:"Completa la frase",desc:"Vul het ontbrekende woord in. De zin geeft je de betekenis; let op enkelvoud of meervoud.",accents:'soft',perBlock:12,expect:12,items:[{"q": "Yo soy Sam. ___", "ans": "¿Y tú?", "alt": ["¿y tú?"], "hint": "¿_ t__", "why": "En jij?"}, {"q": "La palabra «hola» tiene cuatro ___.", "ans": "letras", "alt": ["letra", "la letra"], "hint": "l_____", "why": "de letter"}, {"q": "Las ___ son a, e, i, o, u.", "ans": "vocales", "alt": ["vocal", "la vocal"], "hint": "v______", "why": "de klinker"}, {"q": "¿Puedes ___ tu nombre?", "ans": "deletrear", "alt": [], "hint": "d________", "why": "spellen"}, {"q": "«Ca-sa» tiene dos ___.", "ans": "sílabas", "alt": ["sílaba", "la sílaba"], "hint": "s______", "why": "de lettergreep"}, {"q": "«México» es una palabra ___.", "ans": "esdrújula", "alt": [], "hint": "e________", "why": "klemtoon op de derde van achter"}, {"q": "¿Cuál es tu ___ de teléfono?", "ans": "número", "alt": ["el número"], "hint": "n_____", "why": "het getal / nummer"}, {"q": "¡Hola, Diego! ___", "ans": "¿Qué tal?", "alt": ["¿qué tal?"], "hint": "¿___ t___", "why": "Hoe gaat het?"}, {"q": "Más despacio, ___.", "ans": "por favor", "alt": ["Por favor"], "hint": "p__ f____", "why": "Alsjeblieft / a.u.b."}, {"q": "___, me llamo Nina.", "ans": "Buenos días", "alt": ["buenos días"], "hint": "B_____ d___", "why": "Goedemorgen"}, {"q": "___, Lucía.", "ans": "Hasta luego", "alt": ["hasta luego"], "hint": "H____ l____", "why": "Tot straks"}, {"q": "Perdón, ___.", "ans": "no entiendo", "alt": ["No entiendo"], "hint": "n_ e_______", "why": "Ik begrijp het niet"}]});
+ buildType('vt_frase',{title:"Completa la frase",desc:"Vul het ontbrekende woord in. De zin geeft je de betekenis; let op enkelvoud of meervoud.",accents:'soft',perBlock:12,expect:12,items:[{"q": "Yo soy Sam. ___", "ans": "¿Y tú?", "alt": ["¿y tú?"], "hint": "¿_ t__", "why": "En jij?"}, {"q": "La palabra «hola» tiene cuatro ___.", "ans": "letras", "alt": ["la letra", "letra"], "hint": "l_____", "why": "de letter"}, {"q": "Las ___ son a, e, i, o, u.", "ans": "vocales", "alt": ["la vocal", "vocal"], "hint": "v______", "why": "de klinker"}, {"q": "¿Puedes ___ tu nombre?", "ans": "deletrear", "alt": [], "hint": "d________", "why": "spellen"}, {"q": "«Ca-sa» tiene dos ___.", "ans": "sílabas", "alt": ["la sílaba", "sílaba"], "hint": "s______", "why": "de lettergreep"}, {"q": "«México» es una palabra ___.", "ans": "esdrújula", "alt": [], "hint": "e________", "why": "klemtoon op de derde van achter"}, {"q": "¿Cuál es tu ___ de teléfono?", "ans": "número", "alt": ["el número"], "hint": "n_____", "why": "het getal / nummer"}, {"q": "¡Hola, Diego! ___", "ans": "¿Qué tal?", "alt": ["¿qué tal?"], "hint": "¿___ t___", "why": "Hoe gaat het?"}, {"q": "Más despacio, ___.", "ans": "por favor", "alt": ["Por favor"], "hint": "p__ f____", "why": "Alsjeblieft / a.u.b."}, {"q": "___, me llamo Nina.", "ans": "Buenos días", "alt": ["buenos días"], "hint": "B_____ d___", "why": "Goedemorgen"}, {"q": "___, Lucía.", "ans": "Hasta luego", "alt": ["hasta luego"], "hint": "H____ l____", "why": "Tot straks"}, {"q": "Perdón, ___.", "ans": "no entiendo", "alt": ["No entiendo"], "hint": "n_ e_______", "why": "Ik begrijp het niet"}]});
  buildType('vt_dictado',{title:"Dictado — escucha y escribe",desc:"Klik op 🔊, luister en <b>schrijf</b> het woord. Zo koppel je klank aan schriftbeeld.",accents:'soft',speak:true,perBlock:10,expect:10,items:[{"q": "···", "say": "la letra", "ans": "la letra", "alt": ["letra"], "why": "de letter"}, {"q": "···", "say": "la vocal", "ans": "la vocal", "alt": ["vocal"], "why": "de klinker"}, {"q": "···", "say": "la sílaba", "ans": "la sílaba", "alt": ["sílaba"], "why": "de lettergreep"}, {"q": "···", "say": "el número", "ans": "el número", "alt": ["número"], "why": "het getal / nummer"}, {"q": "···", "say": "Por favor", "ans": "Por favor", "alt": [], "why": "Alsjeblieft / a.u.b."}, {"q": "···", "say": "No entiendo", "ans": "No entiendo", "alt": [], "why": "Ik begrijp het niet"}, {"q": "···", "say": "la mayúscula", "ans": "la mayúscula", "alt": ["mayúscula"], "why": "de hoofdletter"}, {"q": "···", "say": "la minúscula", "ans": "la minúscula", "alt": ["minúscula"], "why": "de kleine letter"}, {"q": "···", "say": "Buenas tardes", "ans": "Buenas tardes", "alt": [], "why": "Goeiemiddag"}, {"q": "···", "say": "Chao", "ans": "Chao", "alt": ["Chao"], "why": "Doei"}]});
 }
 buildVocabType();
