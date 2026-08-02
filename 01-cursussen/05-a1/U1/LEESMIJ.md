@@ -28,8 +28,6 @@ géén condicional, géén subjuntivo.
 - **§5 Lectura** — «Busco un compi de intercambio», een profiel uit een uitwisselingsapp.
 - **§6 Escucha** — «El primer día en el instituto», Álex en Sam leren elkaar kennen · zes treden, transcript pas ná de taken.
 - **Extra** — 23 bronnen in 10 groepen.
-  Bovenaan staan twee spellen, uitgelicht als afsluiting van de unidad:
-  **«Línea 0 · Kilómetro Cero»** · **«Madrid, primer día · cómic»**.
 
 ## Inhoud
 
@@ -39,6 +37,9 @@ géén condicional, géén subjuntivo.
 
 ## Wat nog niet af is
 
+- De **spellen** staan nog niet in de hub: de spelsite levert nog niet wat ze
+  belooft. De adressen en de titels zijn bewaard, dus zodra ze wel werkt staan
+  ze er met één herbouw weer in.
 - De **QR-codes** in de print wijzen nog niet naar een echte pagina; dat gebeurt in één
   sweep zodra de site online staat.
 - Het **luisteren** gebruikt de stem van je browser. Zodra er echte opnames zijn, pikt de

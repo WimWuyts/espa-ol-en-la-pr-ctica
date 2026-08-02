@@ -28,6 +28,14 @@ SITES = {
 
 BRONNEN = {}
 
+# ── Uitgelichte spellen: tijdelijk UIT (auteur 2026-08-02) ────────────────────
+# De spelsite leverde nog niet wat ze belooft, dus voorlopig verschijnt er in de
+# hubs géén verwijzing naar chatgpt.site. De adressen en titels blijven hieronder
+# staan — ze zijn door de auteur bevestigd en het zou zonde zijn ze weg te
+# gooien. Zet deze schakelaar op True zodra de site wél levert; er hoeft verder
+# niets aan de code te veranderen, enkel de hubs opnieuw bouwen.
+TOON_DESTACADO = False
+
 DESTACADO = {
     # Uitgelicht materiaal dat de héle unidad bestrijkt en dus niet onder één
     # onderwerp thuishoort. Staat bovenaan het tabblad, vóór de themalijsten.
@@ -966,7 +974,7 @@ def html(course, unit):
            'onderwerpen van deze unidad. <span class="gloss">%d bronnen, geordend zoals de unit '
            'zelf. Ze openen in een nieuw tabblad.</span></p>' % n]
 
-    spellen = DESTACADO.get((course, unit)) or []
+    spellen = (DESTACADO.get((course, unit)) or []) if TOON_DESTACADO else []
     for i, d in enumerate(spellen):
         uit.append(
             '<a class="destacado" href="%s" target="_blank" rel="noopener">'

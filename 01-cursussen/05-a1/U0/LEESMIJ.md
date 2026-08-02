@@ -28,8 +28,6 @@ géén condicional, géén subjuntivo.
 - **§5 Lectura** — «El Club de Español», een aanplakbiljet uit de gang.
 - **§6 Escucha** — «En la puerta de embarque», Lucía en jij wachten op dezelfde vlucht · zes treden, transcript pas ná de taken.
 - **Extra** — 37 bronnen in 9 groepen (ProfeDeELE · Arche-ELE · My Daily Spanish).
-  Bovenaan staan twee spellen, uitgelicht als afsluiting van de unidad:
-  **«El Museo de las Palabras Perdidas»** · **«Archivo Cero»**.
 
 ## Inhoud
 
@@ -39,6 +37,9 @@ géén condicional, géén subjuntivo.
 
 ## Wat nog niet af is
 
+- De **spellen** staan nog niet in de hub: de spelsite levert nog niet wat ze
+  belooft. De adressen en de titels zijn bewaard, dus zodra ze wel werkt staan
+  ze er met één herbouw weer in.
 - De **QR-codes** in de print wijzen nog niet naar een echte pagina; dat gebeurt in één
   sweep zodra de site online staat.
 - Het **luisteren** gebruikt de stem van je browser. Zodra er echte opnames zijn, pikt de

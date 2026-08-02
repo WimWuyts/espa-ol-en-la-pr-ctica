@@ -27,7 +27,7 @@ géén condicional, géén subjuntivo.
   **Ver solución** pas na een tweede poging.
 - **§5 Lectura** — «El tablón de anuncios», drie korte prikbordberichten.
 - **§6 Escucha** — «El primer día de curso», Diego en Valen zien elkaar terug op de speelplaats · zes treden, transcript pas ná de taken.
-- **Extra** — 63 bronnen in 16 groepen + de escape room **El vuelo 69**.
+- **Extra** — 63 bronnen in 16 groepen.
 
 ## Inhoud
 
@@ -37,6 +37,9 @@ géén condicional, géén subjuntivo.
 
 ## Wat nog niet af is
 
+- De **spellen** staan nog niet in de hub: de spelsite levert nog niet wat ze
+  belooft. De adressen en de titels zijn bewaard, dus zodra ze wel werkt staan
+  ze er met één herbouw weer in.
 - De **QR-codes** in de print wijzen nog niet naar een echte pagina; dat gebeurt in één
   sweep zodra de site online staat.
 - Het **luisteren** gebruikt de stem van je browser. Zodra er echte opnames zijn, pikt de

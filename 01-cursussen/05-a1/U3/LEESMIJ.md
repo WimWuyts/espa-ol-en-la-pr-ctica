@@ -50,6 +50,9 @@ Onder «✍️ Escribe tú — la gramática sin opciones», telkens twaalf item
 
 ## Wat nog niet af is
 
+- De **spellen** staan nog niet in de hub: de spelsite levert nog niet wat ze
+  belooft. De adressen en de titels zijn bewaard, dus zodra ze wel werkt staan
+  ze er met één herbouw weer in.
 - De **QR-codes** in de print wijzen nog niet naar een echte pagina; dat gebeurt in één
   sweep zodra de site online staat.
 - Het **luisteren** gebruikt de stem van je browser. Zodra er echte opnames zijn, pikt de
@@ -62,5 +65,3 @@ Onder «✍️ Escribe tú — la gramática sin opciones», telkens twaalf item
   Arche-ELE), geordend zoals de unit zelf: elke pagina staat er precies één keer, onder
   het onderwerp waar ze het meest bij helpt. Dient een pagina ook voor een ander
   onderdeel, dan staat dat in de titel.
-  Bovenaan staan drie spellen, uitgelicht als afsluiting van de unidad:
-  **«Barcelona en 24 horas»** · **«BCN Ahora»** · **«Barcelona paso a paso»**.

@@ -27,7 +27,7 @@ géén condicional, géén subjuntivo.
   **Ver solución** pas na een tweede poging.
 - **§5 Lectura** — «Un martes cualquiera», een blogpost van Marta uit Salamanca.
 - **§6 Escucha** — «Entrevista a un deportista», zwemmer Hugo over zijn dagindeling · zes treden, transcript pas ná de taken.
-- **Extra** — 12 bronnen in 5 groepen + de escape room **El martes desaparecido**.
+- **Extra** — 12 bronnen in 5 groepen.
 
 ## Inhoud
 
@@ -37,6 +37,9 @@ géén condicional, géén subjuntivo.
 
 ## Wat nog niet af is
 
+- De **spellen** staan nog niet in de hub: de spelsite levert nog niet wat ze
+  belooft. De adressen en de titels zijn bewaard, dus zodra ze wel werkt staan
+  ze er met één herbouw weer in.
 - De **QR-codes** in de print wijzen nog niet naar een echte pagina; dat gebeurt in één
   sweep zodra de site online staat.
 - Het **luisteren** gebruikt de stem van je browser. Zodra er echte opnames zijn, pikt de
