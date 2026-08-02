@@ -5,12 +5,12 @@ gebaseerd op het leerplan **III-Spa-d** (Katholiek Onderwijs Vlaanderen).
 
 ## De vier cursussen
 
-| Code | Jaar | Rol | Kleur |
-|------|------|-----|-------|
-| **C4** | 4 Moderne talen | «Welcome to Spanish» (buiten leerplan, videogedreven) | 🔴 rood |
-| **C5** | 5de | Kerncursus, A1 → eerste A2 | 🟢 groen |
-| **C6** | 6de (nieuw) | Clean vervolg, A2 → aanzet B1 | 🔵 blauw |
-| **C6+** | 6de (huidig) | Vervolg op de oude cursus *Español en la práctica* | 🟣 paars |
+| Code | Naam | Jaar | Rol | Kleur |
+|------|------|------|-----|-------|
+| **C4** | **¡Bienvenidos al español!** | 4 Moderne talen | Buiten leerplan, videogedreven introductie | 🔴 rood |
+| **C5** | **Español en la práctica** | 5de | Kerncursus, A1 → eerste A2 | 🟢 groen |
+| **C6** | **Más español en la práctica** | 6de (nieuw) | Clean vervolg, A2 → aanzet B1 | 🔵 blauw |
+| **C6+** | **Más español en la práctica · edición única** | 6de (huidig) | Eenmalig traject voor de cohorte die uit de oude cursus komt | 🟣 paars |
 
 Elke unit verschijnt in **vier formaten** met identieke, uitgeverswaardige layout:
 **Word · PDF · PowerPoint · interactieve HTML**.

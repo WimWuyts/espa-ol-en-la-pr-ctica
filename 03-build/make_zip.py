@@ -30,7 +30,7 @@ def p(*parts):
 # Elke waarde is (pad-op-schijf, naam-in-de-zip). {n} = unitnummer.
 COURSES = {
     "C4": {
-        "label": "C4 · «Welcome to Spanish» (4 Moderne talen)",
+        "label": "C4 · «Bienvenidos al español» (4 Moderne talen)",
         "units": range(1, 15),
         "files": [
             ("03-build/web/print/C4_U{n}.pdf",              "C4_U{n}.pdf"),

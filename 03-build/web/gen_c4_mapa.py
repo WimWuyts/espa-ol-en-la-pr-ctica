@@ -105,7 +105,7 @@ h2.sec{font-family:var(--disp);font-weight:700;color:var(--gd);font-size:22px;ma
    <div class="mapinfo" id="mapinfo"><p class="gloss" style="margin:0">👆 Klik op een gekleurd land (of de halte ★) om de fiche te lezen — vlag, hoofdstad, nationaliteit, taal en een weetje.</p></div>
  </div>
  <div class="legend"><span><b>★</b> = ¡Estás aquí! (parada de la ruta)</span><span>🗣️ Gentilicio = de nationaliteit</span><span>🌐 Idioma = de taal</span></div>
- <div class="foot">C4 · «Welcome to Spanish» · El mundo hispano — feitenlaag gedeeld over C4·C5·C6·C6+</div>
+ <div class="foot">C4 · «Bienvenidos al español» · El mundo hispano — feitenlaag gedeeld over C4·C5·C6·C6+</div>
 </div>
 <script>
 (function(){{

@@ -818,7 +818,7 @@ def s11_tarea():
     # FICHA · mini-weekschema met invulkolommen
     card(s, Inches(0.55), Inches(1.7), Inches(6.6), Inches(3.6), fill=WHITE, line=G, lw=1.6)
     rect(s, Inches(0.55), Inches(1.7), Inches(6.6), Inches(0.55), fill=G)
-    text(s, Inches(0.75), Inches(1.78), Inches(6.2), Inches(0.4), [[("MI HORARIO · Academia «Welcome to Spanish»", {"size": 12, "bold": True, "color": WHITE, "font": DISPLAY})]])
+    text(s, Inches(0.75), Inches(1.78), Inches(6.2), Inches(0.4), [[("MI HORARIO · Academia «Bienvenidos al español»", {"size": 12, "bold": True, "color": WHITE, "font": DISPLAY})]])
     dias = ["el lunes", "el miércoles", "el viernes", "el sábado"]
     cw = Inches(1.55); cx = Inches(0.68)
     for d in dias:

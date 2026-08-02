@@ -1,4 +1,4 @@
-# C4 «Welcome to Spanish» — Leerdoelen & Evaluatiekader
+# C4 «Bienvenidos al español» — Leerdoelen & Evaluatiekader
 
 > **Rol van dit document.** C4 (4 Moderne talen) ligt **buiten het leerplan** (Spaans start
 > officieel pas in de 3de graad). Er is dus géén extern doelenkader. Dit document is dat kader:
@@ -267,4 +267,4 @@ Bij het bouwen van elke C4-unit geldt de **overlapregel** uit CLAUDE.md §3:
 
 ---
 
-*C4 «Welcome to Spanish» · leerdoelen & evaluatie — werkdocument, af te stemmen op de video's.*
+*C4 «Bienvenidos al español» · leerdoelen & evaluatie — werkdocument, af te stemmen op de video's.*

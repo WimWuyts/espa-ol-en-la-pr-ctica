@@ -1,11 +1,11 @@
 # La playlist de la clase — Top 100 (Spaanstalige liedjes)
 
-> Bronlijst voor de officiële Spotify-playlist van «Welcome to Spanish» (C4).
+> Bronlijst voor de officiële Spotify-playlist van «Bienvenidos al español» (C4).
 > Curatie: cursusnummers · Ultratop-hits BE 1990–nu · viraal 2022–2025 · klassiekers.
 > **⚠️ = kies een clean/radio-versie** (check de tekst voor 14–18 j.). Vlaggen = land van de artiest.
 
 ## 🎬 Ya en el curso
-*Deze staan al in «Welcome to Spanish» (banda sonora per unit).*
+*Deze staan al in «Bienvenidos al español» (banda sonora per unit).*
 
 1. **Manu Chao** — *Me Gustas Tú* (2001, 🇪🇸🇫🇷)
 2. **Juanes** — *La Camisa Negra* (2005, 🇨🇴)
@@ -127,6 +127,6 @@
 Bad Gyal ft. Tokischa – *Chulo*; Yng Lvcas & Peso Pluma – *La Bebe (remix)*; Fuerza Regida / Junior H – corridos; Bad Bunny – *Callaíta*; Daddy Yankee – *Gasolina*. En overwegend Engelstalig (dus geen Spaanse oefening): *Hips Don't Lie*, *Taki Taki*.
 
 ### De playlist aanmaken
-1. Maak in Spotify een nieuwe **openbare** playlist «Welcome to Spanish — La playlist de la clase».
+1. Maak in Spotify een nieuwe **openbare** playlist «Bienvenidos al español — La playlist de la clase».
 2. Voeg de nummers hierboven toe (zoek titel + artiest).
 3. Stuur mij de **officiële deel-link** → ik vervang de placeholder in de Música-tab, de PDF-QR's en de PowerPoints.

@@ -134,7 +134,7 @@ def build(unit, out_name):
    <p>Una lectura y una audición cortas — para entender el español que ya conoces.</p>
    <div class="nl">Een korte lees- en luisteroefening — begrijp het Spaans dat je al kent.</div></div>
  {inner}
- <div class="foot">C4 · «Welcome to Spanish» · Lee y escucha · comprensión (lezen &amp; luisteren)</div>
+ <div class="foot">C4 · «Bienvenidos al español» · Lee y escucha · comprensión (lezen &amp; luisteren)</div>
 </div>
 <script>
 function esVoice(u){{var v=speechSynthesis.getVoices().find(function(x){{return /^es/i.test(x.lang)}});if(v)u.voice=v;}}

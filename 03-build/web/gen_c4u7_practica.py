@@ -56,7 +56,7 @@ HTML="""<!doctype html><html lang="es" data-theme="light"><head><meta charset="u
  <div class="game" id="g_fem"></div>
  <h2 class="subh">③ Producir &amp; comunicar <span class="pill">vrije productie</span></h2>
  <div class="game" id="g_dedicas"></div>
- <div class="foot">C4 · «Welcome to Spanish» · Unidad 7 · Las profesiones</div>
+ <div class="foot">C4 · «Bienvenidos al español» · Unidad 7 · Las profesiones</div>
 </main>
 <script>__JS__</script></body></html>"""
 

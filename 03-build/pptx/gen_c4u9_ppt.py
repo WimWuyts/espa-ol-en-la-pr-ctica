@@ -865,7 +865,7 @@ def s11_tarea():
     # FICHA · weekend-agenda met invulvakken
     card(s, Inches(0.55), Inches(1.7), Inches(6.6), Inches(3.6), fill=WHITE, line=G, lw=1.6)
     rect(s, Inches(0.55), Inches(1.7), Inches(6.6), Inches(0.5), fill=G)
-    text(s, Inches(0.75), Inches(1.76), Inches(6.2), Inches(0.4), [[("MI FINDE · Academia «Welcome to Spanish»", {"size": 12, "bold": True, "color": WHITE, "font": DISPLAY})]])
+    text(s, Inches(0.75), Inches(1.76), Inches(6.2), Inches(0.4), [[("MI FINDE · Academia «Bienvenidos al español»", {"size": 12, "bold": True, "color": WHITE, "font": DISPLAY})]])
     heads = [("¿Cuándo?", Inches(2.0)), ("Voy a… (plan)", Inches(2.2)), ("Tengo que… (obligación)", Inches(2.2))]
     hx = Inches(0.68)
     for h, hw in heads:

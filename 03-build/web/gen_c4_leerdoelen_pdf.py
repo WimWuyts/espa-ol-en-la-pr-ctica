@@ -45,7 +45,7 @@ h2,h3{page-break-after:avoid}
 
 HTML=f"""<!doctype html><html lang="nl"><head><meta charset="utf-8"><title>C4 · Leerdoelen &amp; Evaluatie</title><style>{CSS}</style></head><body>
 <div class="cover">
-  <div class="eyebrow">C4 · «Welcome to Spanish» · 4 Moderne talen</div>
+  <div class="eyebrow">C4 · «Bienvenidos al español» · 4 Moderne talen</div>
   <h1>Leerdoelen &amp; Evaluatiekader</h1>
   <p>Het kader voor de rode cursus: wat leerlingen moeten kunnen om C5 met een voorsprong te starten — en hoe we dat evalueren.</p>
 </div>

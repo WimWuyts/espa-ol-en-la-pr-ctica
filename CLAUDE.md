@@ -26,14 +26,32 @@
 
 ## 3 · De vier cursussen
 
-| Code | Jaar / doelgroep | Rol | Niveau | Dominante kleur |
-|------|------------------|-----|--------|-----------------|
-| **C4** | 4 Moderne talen | «Welcome to Spanish» — **buiten** leerplan, videogedreven introductie | pre-A1 → A1-mechaniek | **Rood** |
-| **C5** | 5de jaar | Kerncursus, **volgt leerplan** | A1-kern + eerste A2 | **Groen** |
-| **C6** | 6de jaar (nieuwe cohorte) | «Clean» vervolg op C5, **volgt leerplan** | A2 → aanzet B1 | **Blauw** |
-| **C6+** | 6de jaar (huidige cohorte) | **Vervolgcursus op *Español en la práctica*** — vult hiaten, haalt outlines 5 & 6 alsnog binnen | A2 → aanzet B1 | **Paars** |
+**De namen liggen vast (auteur 2026-08-02).** Ze horen zo geschreven te worden
+in álle formaten, de website en de communicatie:
 
-### C4 — «Welcome to Spanish» (4 MT)
+| Code | **Naam** | Jaar / doelgroep | Rol | Niveau | Kleur |
+|------|----------|------------------|-----|--------|-------|
+| **C4** | **¡Bienvenidos al español!** | 4 Moderne talen | **buiten** leerplan, videogedreven introductie | pre-A1 → A1-mechaniek | **Rood** |
+| **C5** | **Español en la práctica** | 5de jaar | Kerncursus, **volgt leerplan** | A1-kern + eerste A2 | **Groen** |
+| **C6** | **Más español en la práctica** | 6de jaar (nieuwe cohorte) | «Clean» vervolg op C5, **volgt leerplan** | A2 → aanzet B1 | **Blauw** |
+| **C6+** | **Más español en la práctica · edición única** | 6de jaar (huidige cohorte) | Vervolg op de óude cursus — vult hiaten, haalt outlines 5 & 6 alsnog binnen | A2 → aanzet B1 | **Paars** |
+
+**Twee schrijfwijzen voor C4, bewust:** `¡Bienvenidos al español!` waar de naam
+zelfstandig staat (titelpagina, website, portaal), en `«Bienvenidos al español»`
+binnen lopende tekst en als naam van de fictieve *academia* in de cursus — een
+uitroepteken tussen guillemets leest zwaar.
+
+**C6+ heet «edición única»** omdat die cursus één keer gegeven wordt, voor de
+huidige zesdes: zij komen uit de oude cursus en krijgen een eenmalig traject dat
+de hiaten opvult. Het is een bijzondere editie, geen mindere versie — vandaar
+*única* en niet *especial* of *puente*.
+
+> **Let op — één woord, twee betekenissen.** *Español en la práctica* is de naam
+> van **C5**, maar in `00-brondocumenten/` verwijst diezelfde titel naar de
+> **óude cursus** van de auteur (de bron voor de gap-analyse van C6+). Die
+> mappen zijn daarom bij het hernoemen bewust niet aangeraakt.
+
+### C4 — «¡Bienvenidos al español!» (4 MT)
 - **Bron:** 14 videolessen (Vimeo-downloads, in `00-brondocumenten/videos-jaar4/`). Video's zijn de **leidraad**.
 - **Doel:** communicatieve **chunks**, **uitspraak- en accentregels**, **basiswoordenschat**. Grammatica **louter functioneel**.
 - **Ontwerpprincipe (belangrijk):** leer vooral **automatismen/meta-vaardigheden** aan (klank–schriftbeeld, accent, hoogfrequente chunks, luister-/leerstrategieën) die het 5de **versnellen** zonder de leerplan-*inhoud* van het 5de formeel af te vinken. Zo krijgt de eigen 4de-leerling een **voorsprong in de mechaniek**, terwijl de leerplanstof in het 5de voor iedereen (ook zij-instromers) nieuw blijft.
@@ -42,15 +60,15 @@
 - **BLADSPIEGEL C4 (BESLIST 2026-07-26):** §14 blijft strikt — **elke hoofdsectie start op een nieuwe bladzijde** — én §13 «geen halflege pagina's» geldt onverkort. Verzoening voor de lichtere C4: **elke sectie wordt verríjkt tot ze een volle bladzijde vult** (min. ~90 % bladvulling; geen sectie op 30–50 %). Verrijken = échte, nuttige inhoud toevoegen (extra oefening met antwoordruimte, model-dialoog, noticing-kader, cognaten-warm-up, luistertaak, mini-auto-test…), nooit opvulling. **Meet elke print-unit** (sectiehoogte t.o.v. ~273 mm A4-bladhoogte) vóór levering. Geldt voor **PDF én Word**.
 - **SPREIDING & VARIATIE — reservoirsysteem C4 (BINDEND):** `01-cursussen/04-welcome/reservoir/` — zelfde reservoir-pool als C5 (453 items) met een **C4-filter** (systeem-grammaticaitems = ✗ → C5). Drie documenten: **`C4_coverage.md`** (dekkings-grootboek reservoir×14 thema's + **uitspraak-spreidingsmatrix A** (klanken verdeeld over U1–U14) + **chunk-recycling matrix B**), **`C4_reservoir_index.md`** (de plukvijver + 7 spreidingsregels), **`C4_cocktail_TEMPLATE.md`** (+ `U<N>_cocktail.md` per unit). **Bij elke nieuwe unit: eerst de cocktail invullen (nieuwe IDs, matrix A+B), na de build `C4_coverage.md` bijwerken.**
 
-### C5 — Kerncursus (5de) → `00-brondocumenten/outlines/Outline_Jaar5*.md`
+### C5 — «Español en la práctica», kerncursus (5de) → `00-brondocumenten/outlines/Outline_Jaar5*.md`
 - 9 unidades (U0 ¡Empezamos! → U8 ¿Qué has hecho?). Mascotte **Solecito**.
 - Streefniveau: **A1-kern + eerste A2-structuren** (t.e.m. perfecto compuesto).
 
-### C6 — Clean (6de) → `00-brondocumenten/outlines/Outline_Jaar6*.md`
+### C6 — «Más español en la práctica» (6de, clean) → `00-brondocumenten/outlines/Outline_Jaar6*.md`
 - 9 unidades (U0 ¡De vuelta! → U8 Nuestro mundo). Bouwt door op C5.
 - Nieuw in C6: indefinido · imperfecto · contrast · por/para · volledig pronomensysteem · comparativos + betrekkelijke bijzin *que* · imperativo · mening met **indicativo**.
 
-### C6+ — Vervolg op «Español en la práctica» (6de, huidige cohorte)
+### C6+ — «Más español en la práctica · edición única» (6de, huidige cohorte)
 - **De moeilijkste.** Werkwijze: (1) *Español en la práctica* **analyseren** → (2) **gap-analyse** t.o.v. leerplan + outlines 5 & 6 → (3) cursus bouwen die de **hiaten** invult en zoveel mogelijk van beide outlines alsnog aanleert/inoefent.
 - **Eindpunt = gelijk aan C6** (A2 → aanzet B1), maar via een ander vertrekpunt.
 - Oude cursus komt in `00-brondocumenten/espanol-en-la-practica/`; gap-analyse in `00-brondocumenten/gap-analyse/`.

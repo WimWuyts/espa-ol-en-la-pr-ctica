@@ -285,7 +285,7 @@ kids.push(p([r("🎮 Repasa jugando (online): oefen alles met spelletjes, flashc
 
 // ---- document ----
 const doc=new Document({
-  creator:"C4 · Welcome to Spanish",
+  creator:"C4 · Bienvenidos al español",
   title:"Unidad 1 · Presentaciones",
   styles:{ default:{ document:{ run:{ font:BODY, size:21, color:INK } } } },
   sections:[{

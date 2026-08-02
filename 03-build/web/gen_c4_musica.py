@@ -300,7 +300,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
  <p class="lead">Luister en vul de ontbrekende woorden in — leuk om je oor te trainen.</p>
  <div class="card" style="display:flex;gap:10px;flex-wrap:wrap">{lt_button("la-perla","La Perla — Rosalía")}{lt_button("me-gustas-tu","Me gustas tú — Manu Chao")}</div>
 
- <div class="foot">C4 · «Welcome to Spanish» · Música en español 🎧</div>
+ <div class="foot">C4 · «Bienvenidos al español» · Música en español 🎧</div>
 </main></body></html>"""
 
 os.makedirs(f"{ROOT}/03-build/web/componentes",exist_ok=True)

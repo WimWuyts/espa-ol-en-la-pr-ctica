@@ -56,7 +56,7 @@ HTML="""<!doctype html><html lang="es" data-theme="light"><head><meta charset="u
  <div class="game" id="g_hay"></div>
  <h2 class="subh">③ Producir &amp; comunicar <span class="pill">vrije productie</span></h2>
  <div class="game" id="g_identifica"></div>
- <div class="foot">C4 · «Welcome to Spanish» · Unidad 5 · Objetos cotidianos</div>
+ <div class="foot">C4 · «Bienvenidos al español» · Unidad 5 · Objetos cotidianos</div>
 </main>
 <script>__JS__</script></body></html>"""
 

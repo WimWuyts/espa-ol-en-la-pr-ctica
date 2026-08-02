@@ -141,7 +141,7 @@ TAREA=r"""
     <li><b>Cerrad un plan.</b> Vind samen tóch één moment dat past en spreek af (dag + uur).</li>
   </ol>
   <div class="carne">
-    <div class="carne-h">MI FINDE · Academia «Welcome to Spanish»</div>
+    <div class="carne-h">MI FINDE · Academia «Bienvenidos al español»</div>
     <div class="carne-b diario">
       <div class="di-row"><span class="di-ic">🗓️</span><div class="di-lines">
         <div><span>Voy a…</span><i></i></div><div><span>¿Cuándo?</span><i></i></div></div><span class="di-ok">☐</span></div>
@@ -278,7 +278,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
  {GRAM}
  <h2 class="subh">§5 · Tarea final <small>jouw communicatieve opdracht</small></h2>
  {TAREA}
- <div class="foot">C4 · «Welcome to Spanish» · Unidad 9 · Planes y obligaciones</div>
+ <div class="foot">C4 · «Bienvenidos al español» · Unidad 9 · Planes y obligaciones</div>
 </main>
 <script>
 function speak(t){{if(!('speechSynthesis'in window))return;var u=new SpeechSynthesisUtterance(t);u.lang='es-ES';u.rate=.9;var v=speechSynthesis.getVoices().find(function(x){{return /^es/i.test(x.lang)}});if(v)u.voice=v;speechSynthesis.cancel();speechSynthesis.speak(u);}}

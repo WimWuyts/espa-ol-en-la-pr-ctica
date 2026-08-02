@@ -57,7 +57,7 @@ HTML="""<!doctype html><html lang="es" data-theme="light"><head><meta charset="u
  <div class="game" id="g_tuusted"></div>
  <h2 class="subh">③ Producir &amp; comunicar <span class="pill">vrije productie</span></h2>
  <div class="game" id="g_presentate"></div>
- <div class="foot">C4 · «Welcome to Spanish» · Unidad 1 · Presentaciones</div>
+ <div class="foot">C4 · «Bienvenidos al español» · Unidad 1 · Presentaciones</div>
 </main>
 <script>__JS__</script></body></html>"""
 

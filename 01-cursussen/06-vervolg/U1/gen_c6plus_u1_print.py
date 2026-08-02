@@ -784,7 +784,7 @@ CSS_OVR = ('.act{break-inside:avoid;} .act .steun{break-before:avoid;} '
            '.esen{break-after:avoid;}')
 
 # ---------- ASSEMBLE ----------
-HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Español en la práctica · C6+ U1 El día a día</title><style>'
+HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Más español en la práctica · C6+ U1 El día a día</title><style>'
         + CSS + CSS_OVR + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/C6plus_U1.html"
 open(OUT, "w", encoding="utf-8").write(HTML)

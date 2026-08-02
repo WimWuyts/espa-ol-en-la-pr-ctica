@@ -250,10 +250,10 @@ def naslag_html():
 
 HTML = """<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Español en la práctica · C6+ U0 ¡Volvemos!</title>
+<title>Más español en la práctica · C6+ U0 ¡Volvemos!</title>
 <style>__CSS__</style></head><body>
 <header class="top"><div class="bar">
-  <div class="brand">Español en la práctica <small>· la página digital</small></div>
+  <div class="brand">Más español en la práctica <small>· edición única</small></div>
   <div class="tabs">
     <button class="tab" disabled>C4 · Welcome</button>
     <button class="tab" disabled>C5 · A1</button>
@@ -373,7 +373,7 @@ __TYPESLOTS__
     __BRONNEN__
   </section>
 
-  <div class="foot">Español en la práctica · C6+ · Unidad 0 «¡Volvemos!» — página digital. Uitbreiding op de PDF · huisstijl morado · print ↔ PowerPoint ↔ web.</div>
+  <div class="foot">Más español en la práctica · edición única · Unidad 0 «¡Volvemos!» — página digital. Uitbreiding op de PDF · huisstijl morado · print ↔ PowerPoint ↔ web.</div>
 </main>
 
 <div class="modal" id="gmodal"><div class="modalbox">

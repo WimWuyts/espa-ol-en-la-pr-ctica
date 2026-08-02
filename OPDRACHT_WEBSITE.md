@@ -31,10 +31,31 @@ navigatiedrager van de hele site:
 
 | Code | Naam | Jaar | Kleur | Hex (primary / dark / tint) |
 |---|---|---|---|---|
-| **C4** | Welcome to Spanish | 4 Moderne talen | **Rood** | `#D64550` / `#A8323B` / `#FBEAEC` |
-| **C5** | Español en la práctica | 5de jaar | **Groen** | `#1E9E74` / `#157355` / `#E4F4EE` |
-| **C6** | Historias y mundos | 6de jaar (nieuw) | **Blauw** | `#2E77C2` / `#1E5691` / `#E5EFF9` |
-| **C6+** | Vervolgcursus | 6de jaar (huidige groep) | **Paars** | `#7C56A9` / `#5B3E83` / `#EEE8F5` |
+| **C4** | **¡Bienvenidos al español!** | 4 Moderne talen | **Rood** | `#D64550` / `#A8323B` / `#FBEAEC` |
+| **C5** | **Español en la práctica** | 5de jaar | **Groen** | `#1E9E74` / `#157355` / `#E4F4EE` |
+| **C6** | **Más español en la práctica** | 6de jaar (nieuw) | **Blauw** | `#2E77C2` / `#1E5691` / `#E5EFF9` |
+| **C6+** | **Más español en la práctica · edición única** | 6de jaar (huidige groep) | **Paars** | `#7C56A9` / `#5B3E83` / `#EEE8F5` |
+
+De namen zijn **VAST** — schrijf ze exact zo, met leestekens. Wat je erover
+moet weten:
+
+- **C4 kent twee schrijfwijzen.** `¡Bienvenidos al español!` als de naam
+  zelfstandig staat (portaal, titel, menu), en `«Bienvenidos al español»`
+  binnen een lopende zin — een uitroepteken tussen guillemets leest zwaar.
+  Gebruik beide zoals hier beschreven en verzin geen derde variant.
+- **C5, C6 en C6+ vormen één familie**: *Español en la práctica* → *Más
+  español en la práctica* → *Más español en la práctica · edición única*.
+  Laat dat op de startpagina zien: drie stappen in één leerlijn, geen drie
+  losse producten.
+- **C6 en C6+ lijken bewust op elkaar** — twee routes naar hetzelfde eindpunt,
+  voor twee verschillende groepen zesdejaars. Zorg dat een bezoeker ze uit
+  elkaar houdt: het onderscheid is de kleur (blauw ↔ paars) plus de toevoeging
+  *edición única*. Eén verduidelijkende zin per portaal volstaat («voor wie dit
+  jaar in het zesde start» ↔ «voor de groep die vorig jaar de oude cursus
+  volgde»).
+- **«Edición única»** betekent dat C6+ één keer gegeven wordt, voor de huidige
+  zesdes. Een bijzondere editie, geen mindere: schrijf er nergens «tijdelijk»,
+  «overgang», «inhaal» of «versie B» bij.
 
 De rode draad door alle cursussen heet **«La Ruta»**: één doorlopende reis over
 de kaart van de Spaanstalige wereld. Elke unit is een *parada* (halte). C5 gaat

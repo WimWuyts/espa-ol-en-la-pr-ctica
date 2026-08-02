@@ -1071,7 +1071,7 @@ EDITBAR = '''
 </script>'''
 
 # ---------- ASSEMBLE ----------
-HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Español en la práctica · C6+ U0 ¡Volvemos!</title><style>'
+HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Más español en la práctica · C6+ U0 ¡Volvemos!</title><style>'
         + CSS + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/U0.html"
 open(OUT, "w", encoding="utf-8").write(HTML)

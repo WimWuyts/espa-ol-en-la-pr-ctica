@@ -1,4 +1,4 @@
-# C4 «Welcome to Spanish» — Dekkings-grootboek (reservoir × 14 thema's)
+# C4 «Bienvenidos al español» — Dekkings-grootboek (reservoir × 14 thema's)
 
 > **Doel:** garanderen dat tegen U14 de C4-geschikte reservoir-items **gespreid** zijn ingezet — géén werkvorm/patroon twee keer «met dezelfde jas», elke unit een **nieuwe mix**.
 > **Bron:** dezelfde reservoir-pool als C5 (453 items, 8 domeinen). **C4-filter:** grammatica-*systeem*items (vervoeging, tijden, volledig pronomensysteem, paradigma's) horen bij **C5/C6** en staan hier op **✗**; enkel **functionele/noticing**-varianten (`~`) en de communicatieve/woordenschat/vaardigheid/uitspraak-items (`✓`) vormen de **C4-plukvijver**.

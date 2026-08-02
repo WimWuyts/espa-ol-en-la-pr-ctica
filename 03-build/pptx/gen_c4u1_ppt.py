@@ -734,7 +734,7 @@ def s11_tarea():
     sectionbar(s, "§5 · TAREA FINAL", "El carné de la clase", "Maak je klaskaartje & stel je voor", num=5)
     card(s, Inches(0.55), Inches(1.7), Inches(6.0), Inches(3.5), fill=WHITE, line=G, lw=1.6)
     rect(s, Inches(0.55), Inches(1.7), Inches(6.0), Inches(0.55), fill=G)
-    text(s, Inches(0.75), Inches(1.78), Inches(5.6), Inches(0.4), [[("CARNÉ · academia Welcome to Spanish", {"size": 12, "bold": True, "color": WHITE, "font": DISPLAY})]])
+    text(s, Inches(0.75), Inches(1.78), Inches(5.6), Inches(0.4), [[("CARNÉ · academia Bienvenidos al español", {"size": 12, "bold": True, "color": WHITE, "font": DISPLAY})]])
     text(s, Inches(0.85), Inches(2.5), Inches(5.4), Inches(2.5),
          [[("Me llamo  ", {"size": 15, "bold": True, "color": INK}), ("________________", {"size": 15, "color": LINE})],
           [("Soy de  ", {"size": 15, "bold": True, "color": INK}), ("__________________", {"size": 15, "color": LINE})],

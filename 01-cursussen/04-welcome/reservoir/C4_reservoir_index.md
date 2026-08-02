@@ -1,4 +1,4 @@
-# C4-reservoir-index — de plukvijver voor «Welcome to Spanish»
+# C4-reservoir-index — de plukvijver voor «Bienvenidos al español»
 
 > **Wat dit is.** Een **C4-filter** op dezelfde reservoir-pool als C5 (453 items, 8 domeinen; volledige
 > beschrijvingen in de gedeelde `reservoir_index.md`). Hier staat **per domein** wat je in C4 **wél**

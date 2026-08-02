@@ -316,7 +316,7 @@ PRAC=f"""
 TAREA=f"""
 <div class="page sec" style="break-before:page">
   <div class="se">§5 · Tarea final</div><h2>¿Quién hace qué?</h2>
-  <div class="esen" style="margin-top:2mm"><b class="tt">Jouw opdracht.</b> Maak met je groep een <b>cuadro de tareas</b> voor de academie «Welcome to Spanish». Noteer <b>4 taken</b> die gedaan moeten worden (<b>hay que…</b>), zeg wat elk van jullie <b>kan</b> (<b>sé / no sé…</b>) en <b>verdeel</b> ze eerlijk (<b>tengo que… · tienes que… · yo te ayudo</b>). Stel jullie schema daarna voor aan de klas. <span class="gloss">Sin leer del papel — zonder van het blad af te lezen.</span></div>
+  <div class="esen" style="margin-top:2mm"><b class="tt">Jouw opdracht.</b> Maak met je groep een <b>cuadro de tareas</b> voor de academie «Bienvenidos al español». Noteer <b>4 taken</b> die gedaan moeten worden (<b>hay que…</b>), zeg wat elk van jullie <b>kan</b> (<b>sé / no sé…</b>) en <b>verdeel</b> ze eerlijk (<b>tengo que… · tienes que… · yo te ayudo</b>). Stel jullie schema daarna voor aan de klas. <span class="gloss">Sin leer del papel — zonder van het blad af te lezen.</span></div>
   <div style="margin-top:4mm"><div class="se">Nuestro cuadro de tareas · vul in</div>
     <table class="cuadro"><thead><tr><th style="width:12mm"></th><th>Hay que… (la tarea)</th><th>¿Quién? (tengo/tienes que…)</th><th style="width:44mm">¿Sabe hacerlo? (sé / no sé)</th></tr></thead>
       <tr><td class="h">🧹</td><td></td><td></td><td></td></tr>

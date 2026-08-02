@@ -1,4 +1,4 @@
-# HANDOVER C4 «Welcome to Spanish» — productiehandboek (U1 gelockt)
+# HANDOVER C4 «Bienvenidos al español» — productiehandboek (U1 gelockt)
 
 > **Lees dit vóór je een C4-unit bouwt.** U1 «Presentaciones» is de **goedgekeurde golden sample**.
 > Bouw U2–U14 met **exact dezelfde parameters/pijplijn**. Dit document is zelfstandig: alles wat je
@@ -209,7 +209,7 @@ De volledige 14-thema-tabel (met dominante doelcodes en eindtaken) staat in
 
 ```
 Nieuwe chat, zelfde project (Spaanse cursus, repo espa-ol-en-la-pr-ctica).
-We bouwen UNIDAD 2 van C4 «Welcome to Spanish» (thema: Saludos y cortesía).
+We bouwen UNIDAD 2 van C4 «Bienvenidos al español» (thema: Saludos y cortesía).
 
 Lees eerst:
 - CLAUDE.md                                   → projectgeheugen (§3 C4, §10 U1-lock, §13/§14 bladspiegel)

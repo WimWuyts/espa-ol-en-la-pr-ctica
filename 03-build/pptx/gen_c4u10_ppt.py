@@ -857,7 +857,7 @@ def s11_tarea():
     sectionbar(s, "§5 · TAREA FINAL", "¿Quién hace qué?", "Maak samen een cuadro de tareas: wat moet gebeuren, wie doet het, wie kán het", num=5)
     card(s, Inches(0.55), Inches(1.7), Inches(6.6), Inches(3.6), fill=WHITE, line=G, lw=1.6)
     rect(s, Inches(0.55), Inches(1.7), Inches(6.6), Inches(0.5), fill=G)
-    text(s, Inches(0.75), Inches(1.76), Inches(6.2), Inches(0.4), [[("CUADRO DE TAREAS · Academia «Welcome to Spanish»", {"size": 12, "bold": True, "color": WHITE, "font": DISPLAY})]])
+    text(s, Inches(0.75), Inches(1.76), Inches(6.2), Inches(0.4), [[("CUADRO DE TAREAS · Academia «Bienvenidos al español»", {"size": 12, "bold": True, "color": WHITE, "font": DISPLAY})]])
     heads = [("Hay que…", Inches(2.4)), ("¿Quién? (tengo/tienes que)", Inches(2.1)), ("¿Sabe? (sé/no sé)", Inches(1.9))]
     hx = Inches(0.68)
     for h, hw in heads:

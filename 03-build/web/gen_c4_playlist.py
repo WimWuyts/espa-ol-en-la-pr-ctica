@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # C4 — «La playlist de la clase» — DEFINITIEVE Top 100 Spaanstalige liedjes.
 # Bron van waarheid (één lijst) → HTML-pagina (huisstijl, offline, zoekbaar) + Markdown.
-# Curatie: (1) nummers die al in «Welcome to Spanish» staan · (2) Spaanstalige Ultratop-
+# Curatie: (1) nummers die al in «Bienvenidos al español» staan · (2) Spaanstalige Ultratop-
 # hits 2005-nu (BE) · (3) viraal in de laatste ~3 jaar · (4) tijdloze klassiekers.
 # School-context 14-18 j.: expliciete/grove nummers gefilterd; ⚠️ = kies een clean/radio-versie.
 import base64, os, json
@@ -16,7 +16,7 @@ SPOTIFY_URL="https://open.spotify.com/playlist/37i9dQZF1DXaxEKcoCdWHD"
 
 # categorie-labels
 CATS={
- "cursus":  ("🎬 Ya en el curso","Deze staan al in «Welcome to Spanish» (banda sonora per unit)."),
+ "cursus":  ("🎬 Ya en el curso","Deze staan al in «Bienvenidos al español» (banda sonora per unit)."),
  "ultratop":("📈 Greatest hits · Ultratop BE (1990–nu)","Spaanstalige nummers die de Belgische hitlijsten haalden — van de jaren 90 tot vandaag."),
  "viral":   ("🔥 Virales de hoy (2022–2025)","Recent viraal via TikTok/Reels/Spotify — herkenbaar voor tieners."),
  "clasico": ("🌟 Clásicos imprescindibles","Tijdloze nummers die (ook in Vlaanderen) iedereen kent."),
@@ -24,7 +24,7 @@ CATS={
 
 # (artiest, titel, jaar, vlag(gen), categorie, flag)  flag: ""=clean · "chk"=⚠️ kies clean-versie
 SONGS=[
- # ── 1) Cursus (in Welcome to Spanish) ──
+ # ── 1) Cursus (in Bienvenidos al español) ──
  ("Manu Chao","Me Gustas Tú",2001,"🇪🇸🇫🇷","cursus",""),
  ("Juanes","La Camisa Negra",2005,"🇨🇴","cursus",""),
  ("Luis Fonsi ft. Daddy Yankee","Despacito",2017,"🇵🇷","cursus","chk"),
@@ -202,7 +202,7 @@ FILTERS=('<button class="fbtn on" data-f="all">Todas (100)</button>'
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>La playlist de la clase · Top 100</title><style>{CSS}</style></head><body>
 <div class="hero">
-  <span class="kick">🎧 Música en español · C4 «Welcome to Spanish»</span>
+  <span class="kick">🎧 Música en español · C4 «Bienvenidos al español»</span>
   <h1>La playlist de la clase — Top 100</h1>
   <p>Honderd Spaanstalige nummers: de liedjes uit de cursus, de <b>greatest hits</b> die in de Belgische Ultratop stonden (<b>1990–nu</b>), de <b>virale</b> nummers van vandaag en de <b>tijdloze klassiekers</b>. Zoek, filter en klik ▶ om op YouTube te beluisteren.</p>
   <a class="spotbtn" href="{SPOTIFY_URL}" target="_blank" rel="noopener">▶ Abrir en Spotify</a>
@@ -216,7 +216,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
   {"".join(section(c) for c in ORDER)}
   <div class="none" id="none">Geen resultaten — probeer een andere zoekterm.</div>
   <div class="note">💡 <b>Voor de leerkracht:</b> deze lijst is de <b>bronlijst</b> voor de officiële Spotify-playlist. Maak de playlist aan in je eigen Spotify-account (zoek elk nummer of importeer de titels), zet ze op «openbaar», en deel de link — dan draad ik die overal in de cursus in (nu staat er nog een placeholder). Een handvol nummers (⚠️) heeft een expliciete origineel; kies daar de clean-versie.</div>
-  <div class="foot">C4 · «Welcome to Spanish» · La playlist de la clase — 100 canciones · {sum(1 for r in NUM if r[6]=="chk")} met ⚠️ (clean-versie kiezen)</div>
+  <div class="foot">C4 · «Bienvenidos al español» · La playlist de la clase — 100 canciones · {sum(1 for r in NUM if r[6]=="chk")} met ⚠️ (clean-versie kiezen)</div>
 </main>
 <button class="dk" id="dk" title="licht/donker">🌙</button>
 <script>
@@ -236,7 +236,7 @@ open(f"{ROOT}/03-build/web/componentes/C4_playlist.html","w",encoding="utf-8").w
 # ---------------- Markdown bronlijst ----------------
 md=["# La playlist de la clase — Top 100 (Spaanstalige liedjes)",
 "",
-"> Bronlijst voor de officiële Spotify-playlist van «Welcome to Spanish» (C4).",
+"> Bronlijst voor de officiële Spotify-playlist van «Bienvenidos al español» (C4).",
 "> Curatie: cursusnummers · Ultratop-hits BE 1990–nu · viraal 2022–2025 · klassiekers.",
 "> **⚠️ = kies een clean/radio-versie** (check de tekst voor 14–18 j.). Vlaggen = land van de artiest.",
 ""]
@@ -259,7 +259,7 @@ md.append("Bad Gyal ft. Tokischa – *Chulo*; Yng Lvcas & Peso Pluma – *La Beb
          "En overwegend Engelstalig (dus geen Spaanse oefening): *Hips Don't Lie*, *Taki Taki*.")
 md.append("")
 md.append("### De playlist aanmaken")
-md.append("1. Maak in Spotify een nieuwe **openbare** playlist «Welcome to Spanish — La playlist de la clase».")
+md.append("1. Maak in Spotify een nieuwe **openbare** playlist «Bienvenidos al español — La playlist de la clase».")
 md.append("2. Voeg de nummers hierboven toe (zoek titel + artiest).")
 md.append("3. Stuur mij de **officiële deel-link** → ik vervang de placeholder in de Música-tab, de PDF-QR's en de PowerPoints.")
 open(f"{ROOT}/01-cursussen/04-welcome/PLAYLIST_TOP100.md","w",encoding="utf-8").write("\n".join(md)+"\n")

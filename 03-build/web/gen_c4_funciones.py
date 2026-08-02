@@ -136,7 +136,7 @@ def build(unit, out_name):
 
  {tarea_block(unit)}
 
- <div class="foot">C4 · «Welcome to Spanish» · Funciones comunicativas — één groeiende ruggengraat over alle unidades</div>
+ <div class="foot">C4 · «Bienvenidos al español» · Funciones comunicativas — één groeiende ruggengraat over alle unidades</div>
 </div>
 <script>
 function speak(t){{if(!('speechSynthesis'in window))return;var u=new SpeechSynthesisUtterance(t);u.lang='es-ES';u.rate=.9;var v=speechSynthesis.getVoices().find(function(x){{return /^es/i.test(x.lang)}});if(v)u.voice=v;speechSynthesis.cancel();speechSynthesis.speak(u);}}

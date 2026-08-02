@@ -67,7 +67,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
 <nav class="tabbar">{"".join(tabbtn(i,t) for i,t in enumerate(TABS))}</nav>
 <main>
 {"".join(panel(i,t) for i,t in enumerate(TABS))}
-  <div class="foot">C4 · «Welcome to Spanish» · Unidad 2 · Saludos</div>
+  <div class="foot">C4 · «Bienvenidos al español» · Unidad 2 · Saludos</div>
 </main>
 <button class="dk" id="dk" title="licht/donker">🌙</button>
 <script>
