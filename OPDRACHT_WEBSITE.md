@@ -360,10 +360,15 @@ De belangrijkste pagina van de site na de hub zelf. Vaste opbouw:
 ### 6.4 Wat er nog niet is
 
 C6 is nog niet gebouwd, C4 heeft 10 van de 14 units, C6+ heeft er 8 van 9.
-De site moet dat **eerlijk en rustig** tonen: het portaal C6 bestaat, draagt zijn
-blauwe kleur, en zegt in één zin *«Deze cursus wordt in de loop van het jaar
-opgebouwd.»* Een ontbrekende unit is een grijze kaart met het nummer en het
-woord *Binnenkort*, niet een gat in de rij en niet een foutmelding.
+De site moet dat **eerlijk en rustig** tonen: het portaal van **Más español en
+la práctica** bestaat, draagt zijn blauwe kleur en zijn naam, en zegt in één zin
+*«Deze cursus wordt in de loop van het jaar opgebouwd.»* Een ontbrekende unit is
+een grijze kaart met het nummer en het woord *Binnenkort*, niet een gat in de rij
+en niet een foutmelding.
+
+Belangrijk: **een cursus zonder units heeft nog steeds zijn naam.** Zet er geen
+«C6» of «cursus 6» als tijdelijke titel; de naam ligt vast en hoort er vanaf de
+eerste dag te staan.
 
 Bouw dit zo dat het vanzelf omslaat: als het bestand er is, is de kaart actief.
 De auteur mag nooit op twee plekken iets moeten aanpassen om een unit
@@ -581,6 +586,14 @@ Loop dit letterlijk af voor je zegt dat de site af is:
 - [ ] Elke pagina heeft precies één `h1`.
 - [ ] Een pagina in grijswaarden afdrukken blijft leesbaar en begrijpelijk.
 - [ ] De vier cursuskleuren zijn exact de hex-waarden uit §1.
+- [ ] De vier cursusnamen staan er exact zoals in §1, mét leestekens —
+      `¡Bienvenidos al español!` · `Español en la práctica` ·
+      `Más español en la práctica` · `Más español en la práctica · edición única`.
+      Ook op het nog lege C6-portaal en in de paginatitels, de broodkruimels en
+      de metagegevens voor het delen van een link.
+- [ ] Nergens «C4», «C5», «C6» of «C6+» als zichtbare naam van een cursus.
+      Die codes zijn er voor de URL's en voor de leerkracht, niet voor de
+      leerling: op het scherm staat de naam.
 - [ ] Nergens Engels in de interface.
 - [ ] De Spaanse tekst in de interface is grammaticaal correct.
 - [ ] C6 en de ontbrekende units tonen «Binnenkort» en geen fout.
