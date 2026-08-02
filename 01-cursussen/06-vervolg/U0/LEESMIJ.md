@@ -1,6 +1,6 @@
 # C6+ · Unidad 0 «¡Volvemos!» — LEESMIJ
 
-Paarse vervolgcursus. Unidad 0 is een **diagnostische repaso**, geen heronderwijs: de cohorte deed *Español en la práctica* en we activeren de basis opnieuw.
+Paarse vervolgcursus. Unidad 0 is een **diagnostische repaso**, geen heronderwijs: de cohorte deed de oude cursus *Español en la práctica* en we activeren de basis opnieuw.
 
 **Parada op La Ruta:** el mundo hispano (de kaart voluit — enkel in U0 groot)
 **Scope:** presente regelmatig + de zeven kern-onregelmatige (ser · estar · tener · hacer · ir · dar · venir) · ser of estar · género · artículos · plural · concordancia · países en nacionalidades · números
