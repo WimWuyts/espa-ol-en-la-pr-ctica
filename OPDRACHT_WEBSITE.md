@@ -83,8 +83,8 @@ ingebed (CSS, JS, lettertypes, afbeeldingen als data-URI). **Groot: 0,5 tot
 | C6 | 0 (nog niet gebouwd) | — |
 | C6+ | 8 (van 9 gepland) | `C6plus_U0_web.html` … `C6plus_U7_web.html` |
 
-Elke hub heeft intern **acht tabbladen**, altijd in deze volgorde en met deze
-sleutels (het `data-p`-attribuut op de panelen):
+**C5 en C6+** hebben intern **acht tabbladen**, altijd in deze volgorde en met
+deze sleutels (het `data-p`-attribuut op de panelen):
 
 | # | Sleutel | Label in de hub |
 |---|---|---|
@@ -97,9 +97,23 @@ sleutels (het `data-p`-attribuut op de panelen):
 | 7 | `cultura` | Cultura |
 | 8 | `extra` | Extra |
 
-**Die acht sleutels zijn VAST.** De QR-codes in de gedrukte boeken gaan ze
-gebruiken als URL-fragment (`…/hub/#escuchar`). Verander ze niet, hernoem ze
-niet, en herschik de volgorde niet.
+**C4 is anders opgebouwd** en heeft er **zeven**, met eigen sleutels (het
+`data-t`-attribuut op de tabknoppen; de panelen heten `p_<sleutel>`):
+
+| # | Sleutel | Label in de hub |
+|---|---|---|
+| 1 | `escucha` | 🎬 Escucha |
+| 2 | `comprension` | 📖 Lee y escucha |
+| 3 | `mapa` | 🗺️ Mapa |
+| 4 | `funciones` | 🗣️ Funciones |
+| 5 | `kit` | 🧰 Kit |
+| 6 | `practica` | ✍️ Práctica |
+| 7 | `musica` | 🎧 Música |
+
+**Alle vijftien sleutels zijn VAST.** De QR-codes in de gedrukte boeken
+gebruiken ze als URL-fragment (`…/hub/#escuchar`). Verander ze niet, hernoem ze
+niet, en herschik de volgorde niet. Zie ook §4.3: dit gedrag zit al ín de
+hubs — je moet het alleen niet stukmaken.
 
 ### 2.2 Print-PDF's — 27 bestanden
 
@@ -230,8 +244,43 @@ Formaat van de code: `<cursus><unit><letter>`, bijvoorbeeld:
 Lever dit als **één tekstbestand met omleidingsregels** (bij Netlify:
 `_redirects`) dat de auteur kan bijwerken zonder de site opnieuw te bouwen.
 Elke regel is een permanente omleiding (301) **inclusief het fragment**. Zet er
-zelf al de regels in voor alle bestaande units en alle acht tabbladen — dat zijn
-27 × 9 = 243 regels, machinaal te genereren.
+zelf al de regels in voor alle bestaande units en al hun tabbladen — dat zijn
+17 × 9 + 10 × 8 = 233 regels, machinaal te genereren (C5 en C6+ hebben acht
+tabbladen, C4 er zeven; plus per unit één regel naar de hub zelf).
+
+### 4.3 De ankers bestaan al — je hoeft ze niet te maken
+
+Belangrijk om te weten: **de hubs ondersteunen dit gedrag al.** Ze lezen het
+fragment bij het laden, openen het juiste tabblad, schrijven het adres bij als
+de gebruiker op een tabblad klikt, en luisteren naar de terugknop. Jij hoeft
+daar niets voor te bouwen en er niets voor aan te passen — je moet het alleen
+**niet stukmaken**.
+
+Concreet: geen router, geen service worker en geen omleiding die het fragment
+opeet, en geen scriptje dat bij het laden `location.hash` leegmaakt of
+overschrijft.
+
+Er is bovendien meer mogelijk dan de acht tabbladen. In **C5 en C6+** heeft
+elke oefening een eigen anker, dus een QR-code kan naar één oefening wijzen:
+
+| Voorbeeld | Opent |
+|---|---|
+| `…/c5/u2/hub/#escuchar` | het tabblad Escuchar |
+| `…/c5/u2/hub/#lec_u2` | de leestekst, met het juiste tabblad al open |
+| `…/c5/u2/hub/#gx_tener` | de grammatica-oefening over *tener* |
+
+In **C4** zit de inhoud van elk tabblad in een `<iframe>`; daar is het tabblad
+het diepste niveau dat een link kan bereiken. Dat is geen probleem, wel iets om
+te weten als je de `/q/`-tabel opstelt.
+
+Over de hele set zijn er nu **630 bruikbare doelen** (206 tabbladen en 424
+oefeningen). De auteur beslist welke daarvan een QR-code krijgen; jij zorgt
+alleen dat ze alle 630 blijven werken.
+
+**Test dit expliciet** vóór je oplevert, met minstens één anker per cursus:
+plak de volledige URL met fragment in een verse browsertab en kijk of het
+juiste tabblad opent. Doe het ook via een `/q/`-code, want juist daar sneuvelt
+een fragment het snelst.
 
 ---
 
@@ -576,8 +625,9 @@ Loop dit letterlijk af voor je zegt dat de site af is:
 - [ ] Alle 27 hubs openen en werken **precies zoals ze in het bestand stonden**
       — vergelijk er drie zij aan zij met het origineel.
 - [ ] `…/hub/#escuchar` opent het juiste tabblad, ook als je de URL rechtstreeks
-      plakt en ook na een `/q/`-omleiding.
-- [ ] Alle 243 `/q/`-codes komen op de juiste plek uit.
+      plakt en ook na een `/q/`-omleiding. Test minstens één anker per cursus.
+- [ ] Ook een anker naar één oefening werkt in C5 en C6+ (`#lec_u2`, `#gx_tener`).
+- [ ] Alle `/q/`-codes komen op de juiste plek uit, mét hun fragment.
 - [ ] Geen enkele externe request op geen enkele pagina (controleer in het
       netwerkpaneel van de browser).
 - [ ] Een unit-pagina laadt onder 150 kB.
