@@ -67,4 +67,4 @@ Onder «✍️ Escribe tú — la gramática sin opciones», telkens twaalf item
   onderwerp waar ze het meest bij helpt. Dient een pagina ook voor een ander
   onderdeel, dan staat dat in de titel.
   Bovenaan staan twee spellen, uitgelicht als afsluiting van de unidad:
-  **«Mercado nocturno»** · **«Mesa 13»**.
+  **«Mercado Nocturno CDMX»** · **«Mesa 13»**.

@@ -29,7 +29,7 @@ géén condicional, géén subjuntivo.
 - **§6 Escucha** — «En la puerta de embarque», Lucía en jij wachten op dezelfde vlucht · zes treden, transcript pas ná de taken.
 - **Extra** — 37 bronnen in 9 groepen (ProfeDeELE · Arche-ELE · My Daily Spanish).
   Bovenaan staan twee spellen, uitgelicht als afsluiting van de unidad:
-  **«El museo de las palabras perdidas»** · **«Archivo Cero»**.
+  **«El Museo de las Palabras Perdidas»** · **«Archivo Cero»**.
 
 ## Inhoud
 

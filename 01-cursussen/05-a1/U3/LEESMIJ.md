@@ -63,4 +63,4 @@ Onder «✍️ Escribe tú — la gramática sin opciones», telkens twaalf item
   het onderwerp waar ze het meest bij helpt. Dient een pagina ook voor een ander
   onderdeel, dan staat dat in de titel.
   Bovenaan staan drie spellen, uitgelicht als afsluiting van de unidad:
-  **«Barcelona en 24 horas»** · **«BCN ahora»** · **«Barcelona paso a paso»**.
+  **«Barcelona en 24 horas»** · **«BCN Ahora»** · **«Barcelona paso a paso»**.

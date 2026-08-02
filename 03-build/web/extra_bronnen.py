@@ -37,15 +37,16 @@ DESTACADO = {
     # gewoon een lijst van één.
     #
     # ── Over de titels ────────────────────────────────────────────────────────
-    # De pagina's zelf kunnen vanuit deze omgeving niet ingekeken worden
-    # (chatgpt.site geeft 403). De titels hieronder zijn daarom afgeleid van het
-    # adres dat de auteur doorgaf, behalve waar «bevestigd» staat: die zijn door
-    # de auteur zelf genoemd. Heeft een spel een andere naam op de pagina, dan
-    # volstaat het die ene regel te vervangen.
-    # De omschrijvingen komen uit de leerstof van de unidad, niet uit de pagina.
+    # De C5-titels zijn door de auteur bevestigd (2026-08-02, uit het overzicht
+    # van de spelsite zelf) en staan hier letterlijk zoals daar, hoofdletters
+    # inbegrepen. Niet «verbeteren»: «BCN Ahora» en «Mercado Nocturno CDMX»
+    # horen zo.
+    # De pagina's kunnen vanuit deze omgeving niet ingekeken worden
+    # (chatgpt.site geeft 403), dus de omschrijvingen eronder komen uit de
+    # leerstof van de unidad, niet van de pagina.
     ("C5", 0): [
         {
-            "titel": "El museo de las palabras perdidas",   # bevestigd door de auteur
+            "titel": "El Museo de las Palabras Perdidas",
             "soort": "Escape room",
             "ico": "🗝️",
             "url": "https://c5-ruta-digital.wim-wuyts1979.chatgpt.site/u0/museo",
@@ -67,7 +68,7 @@ DESTACADO = {
     ],
     ("C5", 1): [
         {
-            "titel": "Línea Cero · Madrid",                 # bevestigd door de auteur
+            "titel": "Línea 0 · Kilómetro Cero",
             "soort": "Escape room",
             "ico": "🗝️",
             "url": "https://c5-ruta-digital.wim-wuyts1979.chatgpt.site/u1/linea-cero",
@@ -79,7 +80,7 @@ DESTACADO = {
                   "de juiste vragen stellen en van elke passagier weten waar die vandaan komt.",
         },
         {
-            "titel": "Cómic de Madrid",
+            "titel": "Madrid, primer día · cómic",
             "soort": "Juego",
             "ico": "🎮",
             "url": "https://c5-ruta-digital.wim-wuyts1979.chatgpt.site/u1/comic-madrid",
@@ -101,14 +102,14 @@ DESTACADO = {
                   "te krijgen: het uiterlijk, het karakter en de overeenkomst van het adjectief.",
         },
         {
-            "titel": "Juego de mesa · Sevilla",
+            "titel": "De Sevilla en familia",
             "soort": "Juego",
             "ico": "🎮",
             "url": "https://c5-ruta-digital.wim-wuyts1979.chatgpt.site/u2/boardgame-sevilla",
-            "es": "Un tablero por Sevilla: la familia y el verbo tener, los posesivos, ser "
+            "es": "Una partida por Sevilla, en familia: el verbo tener, los posesivos, ser "
                   "frente a estar y los demostrativos.",
-            "nl": "Een bordspel door Sevilla: de familie en het werkwoord tener, de posesivos, "
-                  "ser tegenover estar en de demostrativos.",
+            "nl": "Een spelronde door Sevilla, met de familie erbij: het werkwoord tener, de "
+                  "posesivos, ser tegenover estar en de demostrativos.",
         },
     ],
     ("C5", 3): [
@@ -122,7 +123,7 @@ DESTACADO = {
                   "volgorde zetten.",
         },
         {
-            "titel": "BCN ahora",
+            "titel": "BCN Ahora",
             "soort": "Juego",
             "ico": "🎮",
             "url": "https://c5-ruta-digital.wim-wuyts1979.chatgpt.site/u3/bcn-ahora",
@@ -163,7 +164,7 @@ DESTACADO = {
                   "op wat de ander zegt.",
         },
         {
-            "titel": "Una tarde · playlist",
+            "titel": "Una tarde · Playlist Draft",
             "soort": "Juego",
             "ico": "🎮",
             "url": "https://c5-ruta-digital.wim-wuyts1979.chatgpt.site/u4/una-tarde-playlist",
@@ -173,7 +174,7 @@ DESTACADO = {
     ],
     ("C5", 5): [
         {
-            "titel": "Mercado nocturno",
+            "titel": "Mercado Nocturno CDMX",
             "soort": "Juego",
             "ico": "🎮",
             "url": "https://c5-ruta-digital.wim-wuyts1979.chatgpt.site/u5/mercado-nocturno",

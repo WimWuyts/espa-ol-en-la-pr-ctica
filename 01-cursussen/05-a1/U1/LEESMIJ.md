@@ -29,7 +29,7 @@ géén condicional, géén subjuntivo.
 - **§6 Escucha** — «El primer día en el instituto», Álex en Sam leren elkaar kennen · zes treden, transcript pas ná de taken.
 - **Extra** — 23 bronnen in 10 groepen.
   Bovenaan staan twee spellen, uitgelicht als afsluiting van de unidad:
-  **«Línea Cero · Madrid»** · **«Cómic de Madrid»**.
+  **«Línea 0 · Kilómetro Cero»** · **«Madrid, primer día · cómic»**.
 
 ## Inhoud
 
