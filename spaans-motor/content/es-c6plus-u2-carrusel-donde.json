@@ -1,0 +1,90 @@
+{
+  "id": "es-c6plus-u2-carrusel-donde",
+  "title": "Carrusel · ¿dónde está?",
+  "subtitle": "U2 · zeg waar het staat",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "substitution",
+    "prompt": "Di dónde está el objeto y grábate",
+    "frame": "El ___ está ___ del ___.",
+    "frameLabel": "Modelo · vul de gemarkeerde delen in",
+    "items": [
+      {
+        "fills": [
+          "sofá",
+          "delante",
+          "televisor"
+        ],
+        "sub": "zetel vóór de tv",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "espejo",
+          "encima",
+          "lavabo"
+        ],
+        "sub": "spiegel boven de wastafel",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "perro",
+          "debajo",
+          "sofá"
+        ],
+        "sub": "hond onder de zetel",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "armario",
+          "al lado",
+          "cama"
+        ],
+        "sub": "kast naast het bed",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "parque",
+          "detrás",
+          "colegio"
+        ],
+        "sub": "park achter de school",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "banco",
+          "enfrente",
+          "supermercado"
+        ],
+        "sub": "bank tegenover de winkel",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "libro",
+          "dentro",
+          "cajón"
+        ],
+        "sub": "boek in de lade",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "coche",
+          "fuera",
+          "garaje"
+        ],
+        "sub": "auto buiten de garage",
+        "tag": "carr"
+      }
+    ]
+  }
+}

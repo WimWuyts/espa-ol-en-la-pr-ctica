@@ -1,0 +1,576 @@
+{
+  "id": "es-c6plus-u4-escribe-frase",
+  "title": "Escribe una frase",
+  "subtitle": "C6+ · U4 · vrije productie · structuurcheck + modeloplossing",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 8,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "open",
+    "items": [
+      {
+        "stimulus": "Escribe una frase con «el avión»",
+        "must": [
+          "avión"
+        ],
+        "model": "Voy a México en avión.",
+        "tag": "transporte",
+        "sub": "het vliegtuig"
+      },
+      {
+        "stimulus": "Escribe una frase con «el tren»",
+        "must": [
+          "tren"
+        ],
+        "model": "Cojo el tren a Barcelona.",
+        "tag": "transporte",
+        "sub": "de trein"
+      },
+      {
+        "stimulus": "Escribe una frase con «el autobús»",
+        "must": [
+          "autobús"
+        ],
+        "model": "El autobús sale a las ocho.",
+        "tag": "transporte",
+        "sub": "de bus"
+      },
+      {
+        "stimulus": "Escribe una frase con «el barco»",
+        "must": [
+          "barco"
+        ],
+        "model": "Cruzamos en barco.",
+        "tag": "transporte",
+        "sub": "de boot"
+      },
+      {
+        "stimulus": "Escribe una frase con «el billete»",
+        "must": [
+          "billete"
+        ],
+        "model": "Compro un billete de ida y vuelta.",
+        "tag": "transporte",
+        "sub": "het ticket"
+      },
+      {
+        "stimulus": "Escribe una frase con «el vuelo»",
+        "must": [
+          "vuelo"
+        ],
+        "model": "El vuelo dura dos horas.",
+        "tag": "transporte",
+        "sub": "de vlucht"
+      },
+      {
+        "stimulus": "Escribe una frase con «la maleta»",
+        "must": [
+          "maleta"
+        ],
+        "model": "Hago la maleta la noche antes.",
+        "tag": "transporte",
+        "sub": "de koffer"
+      },
+      {
+        "stimulus": "Escribe una frase con «el aeropuerto»",
+        "must": [
+          "aeropuerto"
+        ],
+        "model": "Llego al aeropuerto temprano.",
+        "tag": "transporte",
+        "sub": "de luchthaven"
+      },
+      {
+        "stimulus": "Escribe una frase con «la estación»",
+        "must": [
+          "estación"
+        ],
+        "model": "Te espero en la estación.",
+        "tag": "transporte",
+        "sub": "het station"
+      },
+      {
+        "stimulus": "Escribe una frase con «el equipaje»",
+        "must": [
+          "equipaje"
+        ],
+        "model": "Facturo el equipaje.",
+        "tag": "transporte",
+        "sub": "de bagage"
+      },
+      {
+        "stimulus": "Escribe una frase con «el hotel»",
+        "must": [
+          "hotel"
+        ],
+        "model": "El hotel está en el centro.",
+        "tag": "alojamiento",
+        "sub": "het hotel"
+      },
+      {
+        "stimulus": "Escribe una frase con «el hostal»",
+        "must": [
+          "hostal"
+        ],
+        "model": "Dormimos en un hostal barato.",
+        "tag": "alojamiento",
+        "sub": "de hostel/pension"
+      },
+      {
+        "stimulus": "Escribe una frase con «la habitación»",
+        "must": [
+          "habitación"
+        ],
+        "model": "Reservo una habitación doble.",
+        "tag": "alojamiento",
+        "sub": "de kamer"
+      },
+      {
+        "stimulus": "Escribe una frase con «la reserva»",
+        "must": [
+          "reserva"
+        ],
+        "model": "Tengo una reserva a mi nombre.",
+        "tag": "alojamiento",
+        "sub": "de reservering"
+      },
+      {
+        "stimulus": "Escribe una frase con «la llave»",
+        "must": [
+          "llave"
+        ],
+        "model": "¿Me da la llave, por favor?",
+        "tag": "alojamiento",
+        "sub": "de sleutel"
+      },
+      {
+        "stimulus": "Escribe una frase con «la recepción»",
+        "must": [
+          "recepción"
+        ],
+        "model": "Pregunto en la recepción.",
+        "tag": "alojamiento",
+        "sub": "de receptie"
+      },
+      {
+        "stimulus": "Escribe una frase con «la noche»",
+        "must": [
+          "noche"
+        ],
+        "model": "Nos quedamos tres noches.",
+        "tag": "alojamiento",
+        "sub": "de nacht"
+      },
+      {
+        "stimulus": "Escribe una frase con «viajar»",
+        "must": [
+          "viajar"
+        ],
+        "model": "Me encanta viajar.",
+        "tag": "viaje",
+        "sub": "reizen"
+      },
+      {
+        "stimulus": "Escribe una frase con «visitar»",
+        "must": [
+          "visitar"
+        ],
+        "model": "Visito el museo.",
+        "tag": "viaje",
+        "sub": "bezoeken"
+      },
+      {
+        "stimulus": "Escribe una frase con «reservar»",
+        "must": [
+          "reservar"
+        ],
+        "model": "Reservo el hotel por internet.",
+        "tag": "viaje",
+        "sub": "reserveren"
+      },
+      {
+        "stimulus": "Escribe una frase con «hacer la maleta»",
+        "must": [
+          "hacer la maleta"
+        ],
+        "model": "Hago la maleta rápido.",
+        "tag": "viaje",
+        "sub": "de koffer pakken"
+      },
+      {
+        "stimulus": "Escribe una frase con «sacar fotos»",
+        "must": [
+          "sacar fotos"
+        ],
+        "model": "Saco muchas fotos.",
+        "tag": "viaje",
+        "sub": "foto's maken"
+      },
+      {
+        "stimulus": "Escribe una frase con «perder»",
+        "must": [
+          "perder"
+        ],
+        "model": "¡He perdido el tren!",
+        "tag": "viaje",
+        "sub": "missen (de trein)"
+      },
+      {
+        "stimulus": "Escribe una frase con «quedarse»",
+        "must": [
+          "quedarse"
+        ],
+        "model": "Me quedo en un hostal.",
+        "tag": "viaje",
+        "sub": "verblijven / blijven"
+      },
+      {
+        "stimulus": "Escribe una frase con «alquilar»",
+        "must": [
+          "alquilar"
+        ],
+        "model": "Alquilamos una bici.",
+        "tag": "viaje",
+        "sub": "huren"
+      },
+      {
+        "stimulus": "Escribe una frase con «volver»",
+        "must": [
+          "volver"
+        ],
+        "model": "Vuelvo el domingo.",
+        "tag": "viaje",
+        "sub": "terugkeren"
+      },
+      {
+        "stimulus": "Escribe una frase con «he estado»",
+        "must": [
+          "he estado"
+        ],
+        "model": "He estado en Perú.",
+        "tag": "experiencias",
+        "sub": "ik ben geweest"
+      },
+      {
+        "stimulus": "Escribe una frase con «he visitado»",
+        "must": [
+          "he visitado"
+        ],
+        "model": "He visitado Madrid.",
+        "tag": "experiencias",
+        "sub": "ik heb bezocht"
+      },
+      {
+        "stimulus": "Escribe una frase con «he visto»",
+        "must": [
+          "he visto"
+        ],
+        "model": "He visto la catedral.",
+        "tag": "experiencias",
+        "sub": "ik heb gezien"
+      },
+      {
+        "stimulus": "Escribe una frase con «he comido»",
+        "must": [
+          "he comido"
+        ],
+        "model": "He comido tacos.",
+        "tag": "experiencias",
+        "sub": "ik heb gegeten"
+      },
+      {
+        "stimulus": "Escribe una frase con «he hecho»",
+        "must": [
+          "he hecho"
+        ],
+        "model": "He hecho muchas fotos.",
+        "tag": "experiencias",
+        "sub": "ik heb gedaan/gemaakt"
+      },
+      {
+        "stimulus": "Escribe una frase con «he probado»",
+        "must": [
+          "he probado"
+        ],
+        "model": "He probado la paella.",
+        "tag": "experiencias",
+        "sub": "ik heb geproefd"
+      },
+      {
+        "stimulus": "Escribe una frase con «ha sido»",
+        "must": [
+          "ha sido"
+        ],
+        "model": "El viaje ha sido genial.",
+        "tag": "experiencias",
+        "sub": "het is geweest"
+      },
+      {
+        "stimulus": "Escribe una frase con «me ha encantado»",
+        "must": [
+          "me ha encantado"
+        ],
+        "model": "Me ha encantado la playa.",
+        "tag": "experiencias",
+        "sub": "ik vond het geweldig"
+      },
+      {
+        "stimulus": "Escribe una frase con «la playa»",
+        "must": [
+          "playa"
+        ],
+        "model": "Vamos a la playa.",
+        "tag": "lugares",
+        "sub": "het strand"
+      },
+      {
+        "stimulus": "Escribe una frase con «la montaña»",
+        "must": [
+          "montaña"
+        ],
+        "model": "Subimos a la montaña.",
+        "tag": "lugares",
+        "sub": "de berg"
+      },
+      {
+        "stimulus": "Escribe una frase con «el museo»",
+        "must": [
+          "museo"
+        ],
+        "model": "El museo abre a las diez.",
+        "tag": "lugares",
+        "sub": "het museum"
+      },
+      {
+        "stimulus": "Escribe una frase con «la ciudad»",
+        "must": [
+          "ciudad"
+        ],
+        "model": "Es una ciudad preciosa.",
+        "tag": "lugares",
+        "sub": "de stad"
+      },
+      {
+        "stimulus": "Escribe una frase con «el pueblo»",
+        "must": [
+          "pueblo"
+        ],
+        "model": "Visitamos un pueblo pequeño.",
+        "tag": "lugares",
+        "sub": "het dorp"
+      },
+      {
+        "stimulus": "Escribe una frase con «la costa»",
+        "must": [
+          "costa"
+        ],
+        "model": "La costa chilena es larga.",
+        "tag": "lugares",
+        "sub": "de kust"
+      },
+      {
+        "stimulus": "Escribe una frase con «el desierto»",
+        "must": [
+          "desierto"
+        ],
+        "model": "El desierto de Atacama es seco.",
+        "tag": "lugares",
+        "sub": "de woestijn"
+      },
+      {
+        "stimulus": "Escribe una frase con «el paisaje»",
+        "must": [
+          "paisaje"
+        ],
+        "model": "El paisaje es impresionante.",
+        "tag": "lugares",
+        "sub": "het landschap"
+      },
+      {
+        "stimulus": "Escribe una frase con «para»",
+        "must": [
+          "para"
+        ],
+        "model": "Salgo para Chile mañana.",
+        "tag": "porpara",
+        "sub": "om te / naar (doel/bestemming)"
+      },
+      {
+        "stimulus": "Escribe una frase con «por»",
+        "must": [
+          "por"
+        ],
+        "model": "Viajo por avión.",
+        "tag": "porpara",
+        "sub": "door / via / gedurende"
+      },
+      {
+        "stimulus": "Escribe una frase con «para + infinitivo»",
+        "must": [
+          "para + infinitivo"
+        ],
+        "model": "Voy para descansar.",
+        "tag": "porpara",
+        "sub": "om te …"
+      },
+      {
+        "stimulus": "Escribe una frase con «por la mañana»",
+        "must": [
+          "por la mañana"
+        ],
+        "model": "Salimos por la mañana.",
+        "tag": "porpara",
+        "sub": "'s ochtends"
+      },
+      {
+        "stimulus": "Escribe una frase con «por dos días»",
+        "must": [
+          "por dos días"
+        ],
+        "model": "Me quedo por dos días.",
+        "tag": "porpara",
+        "sub": "voor twee dagen"
+      },
+      {
+        "stimulus": "Escribe una frase con «para ti»",
+        "must": [
+          "para ti"
+        ],
+        "model": "Este regalo es para ti.",
+        "tag": "porpara",
+        "sub": "voor jou"
+      },
+      {
+        "stimulus": "Escribe una frase con «¿qué tal el viaje?»",
+        "must": [
+          "¿qué tal el viaje?"
+        ],
+        "model": "—¿Qué tal el viaje? —¡Genial!",
+        "tag": "opinar",
+        "sub": "hoe was de reis?"
+      },
+      {
+        "stimulus": "Escribe una frase con «lo mejor»",
+        "must": [
+          "lo mejor"
+        ],
+        "model": "Lo mejor ha sido la playa.",
+        "tag": "opinar",
+        "sub": "het beste"
+      },
+      {
+        "stimulus": "Escribe una frase con «lo peor»",
+        "must": [
+          "lo peor"
+        ],
+        "model": "Lo peor ha sido el vuelo.",
+        "tag": "opinar",
+        "sub": "het ergste"
+      },
+      {
+        "stimulus": "Escribe una frase con «impresionante»",
+        "must": [
+          "impresionante"
+        ],
+        "model": "El paisaje es impresionante.",
+        "tag": "opinar",
+        "sub": "indrukwekkend"
+      },
+      {
+        "stimulus": "Escribe una frase con «inolvidable»",
+        "must": [
+          "inolvidable"
+        ],
+        "model": "Un viaje inolvidable.",
+        "tag": "opinar",
+        "sub": "onvergetelijk"
+      },
+      {
+        "stimulus": "Escribe una frase con «barato ↔ caro»",
+        "must": [
+          "barato ↔ caro"
+        ],
+        "model": "El hostal es barato.",
+        "tag": "opinar",
+        "sub": "goedkoop ↔ duur"
+      },
+      {
+        "stimulus": "Escribe una frase con «ya»",
+        "must": [
+          "ya"
+        ],
+        "model": "Ya he visitado el museo.",
+        "tag": "tiempo",
+        "sub": "al"
+      },
+      {
+        "stimulus": "Escribe una frase con «todavía no»",
+        "must": [
+          "todavía no"
+        ],
+        "model": "Todavía no he ido a la playa.",
+        "tag": "tiempo",
+        "sub": "nog niet"
+      },
+      {
+        "stimulus": "Escribe una frase con «nunca»",
+        "must": [
+          "nunca"
+        ],
+        "model": "Nunca he montado en avión.",
+        "tag": "tiempo",
+        "sub": "nooit"
+      },
+      {
+        "stimulus": "Escribe una frase con «alguna vez»",
+        "must": [
+          "alguna vez"
+        ],
+        "model": "¿Has estado alguna vez en Perú?",
+        "tag": "tiempo",
+        "sub": "ooit"
+      },
+      {
+        "stimulus": "Escribe una frase con «este año»",
+        "must": [
+          "este año"
+        ],
+        "model": "Este año he viajado mucho.",
+        "tag": "tiempo",
+        "sub": "dit jaar"
+      },
+      {
+        "stimulus": "Escribe una frase con «esta semana»",
+        "must": [
+          "esta semana"
+        ],
+        "model": "Esta semana he trabajado mucho.",
+        "tag": "tiempo",
+        "sub": "deze week"
+      },
+      {
+        "stimulus": "Escribe una frase con «hoy»",
+        "must": [
+          "hoy"
+        ],
+        "model": "Hoy he desayunado tarde.",
+        "tag": "tiempo",
+        "sub": "vandaag"
+      },
+      {
+        "stimulus": "Escribe una frase con «últimamente»",
+        "must": [
+          "últimamente"
+        ],
+        "model": "Últimamente he dormido poco.",
+        "tag": "tiempo",
+        "sub": "de laatste tijd"
+      }
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "id": "es-c6plus-u5-carrusel-ayer",
+  "title": "Carrusel · lo que pasó",
+  "subtitle": "U5 · zeg wat er gebeurde",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "substitution",
+    "prompt": "Di la frase con los datos nuevos y grábate",
+    "frame": "___ ___ y después ___.",
+    "frameLabel": "Modelo · vul de gemarkeerde delen in",
+    "items": [
+      {
+        "fills": [
+          "Ayer",
+          "estudié mucho",
+          "vi una serie"
+        ],
+        "sub": "gisteren",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "El sábado",
+          "fui al centro",
+          "comí con mi familia"
+        ],
+        "sub": "zaterdag",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "El año pasado",
+          "viajé a España",
+          "volví encantado"
+        ],
+        "sub": "vorig jaar",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "Un día",
+          "perdí el móvil",
+          "lo encontré en casa"
+        ],
+        "sub": "op een dag",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "Anoche",
+          "tuve un sueño raro",
+          "me desperté temprano"
+        ],
+        "sub": "vannacht",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "En julio",
+          "hice un curso",
+          "conocí a mucha gente"
+        ],
+        "sub": "in juli",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "El lunes",
+          "estuve enfermo",
+          "no fui a clase"
+        ],
+        "sub": "maandag",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "Hace dos años",
+          "me mudé",
+          "empecé en este instituto"
+        ],
+        "sub": "twee jaar geleden",
+        "tag": "carr"
+      }
+    ]
+  }
+}

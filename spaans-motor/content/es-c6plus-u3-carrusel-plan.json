@@ -1,0 +1,90 @@
+{
+  "id": "es-c6plus-u3-carrusel-plan",
+  "title": "Carrusel · el plan",
+  "subtitle": "U3 · zeg het plan met nieuwe gegevens",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "substitution",
+    "prompt": "Di el plan con los datos nuevos y grábate",
+    "frame": "El ___ voy a ___ con ___.",
+    "frameLabel": "Modelo · vul de gemarkeerde delen in",
+    "items": [
+      {
+        "fills": [
+          "sábado",
+          "ver una peli",
+          "mis amigos"
+        ],
+        "sub": "zaterdag · film",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "domingo",
+          "jugar al fútbol",
+          "mi hermano"
+        ],
+        "sub": "zondag · voetbal",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "viernes",
+          "quedar en la plaza",
+          "Lucía"
+        ],
+        "sub": "vrijdag · plein",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "lunes",
+          "estudiar",
+          "mi compañera"
+        ],
+        "sub": "maandag · studeren",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "miércoles",
+          "subir un vídeo",
+          "mi grupo"
+        ],
+        "sub": "woensdag · video",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "jueves",
+          "llamar",
+          "mis abuelos"
+        ],
+        "sub": "donderdag · bellen",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "martes",
+          "entrenar",
+          "el equipo"
+        ],
+        "sub": "dinsdag · trainen",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "finde",
+          "descansar",
+          "mi familia"
+        ],
+        "sub": "weekend · rusten",
+        "tag": "carr"
+      }
+    ]
+  }
+}

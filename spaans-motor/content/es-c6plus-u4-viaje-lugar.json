@@ -1,0 +1,64 @@
+{
+  "id": "es-c6plus-u4-viaje-lugar",
+  "title": "El viaje · palabra y lugar",
+  "subtitle": "U4 · koppel het woord aan de plek",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind het woord met waar je het gebruikt",
+    "pairs": [
+      {
+        "a": "la maleta",
+        "b": "la haces antes de salir 🧳"
+      },
+      {
+        "a": "el billete",
+        "b": "lo enseñas al subir 🎫"
+      },
+      {
+        "a": "el andén",
+        "b": "esperas el tren allí 🚉"
+      },
+      {
+        "a": "la puerta de embarque",
+        "b": "esperas el avión allí ✈️"
+      },
+      {
+        "a": "el albergue",
+        "b": "duermes barato allí 🛏️"
+      },
+      {
+        "a": "la recepción",
+        "b": "recoges la llave allí 🔑"
+      },
+      {
+        "a": "el equipaje",
+        "b": "lo facturas 🧳"
+      },
+      {
+        "a": "la reserva",
+        "b": "la haces por internet 💻"
+      },
+      {
+        "a": "el pasaporte",
+        "b": "lo necesitas para volar 🛂"
+      },
+      {
+        "a": "la estación",
+        "b": "coges el tren allí 🚆"
+      },
+      {
+        "a": "el mapa",
+        "b": "lo miras si te pierdes 🗺️"
+      },
+      {
+        "a": "la mochila",
+        "b": "la llevas a la espalda 🎒"
+      }
+    ]
+  }
+}

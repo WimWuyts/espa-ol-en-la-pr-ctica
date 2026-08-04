@@ -1,0 +1,511 @@
+{
+  "id": "es-c6plus-u4-completa-frase",
+  "title": "Completa la frase",
+  "subtitle": "C6+ · U4 · vul het ontbrekende woord in (betekenis uit de context)",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "Voy a México en ___.",
+        "answers": [
+          "el avión",
+          "avión",
+          "avión"
+        ],
+        "tag": "transporte",
+        "sub": "het vliegtuig"
+      },
+      {
+        "stimulus": "Cojo el ___ a Barcelona.",
+        "answers": [
+          "el tren",
+          "tren",
+          "tren"
+        ],
+        "tag": "transporte",
+        "sub": "de trein"
+      },
+      {
+        "stimulus": "El ___ sale a las ocho.",
+        "answers": [
+          "el autobús",
+          "autobús",
+          "autobús"
+        ],
+        "tag": "transporte",
+        "sub": "de bus"
+      },
+      {
+        "stimulus": "Cruzamos en ___.",
+        "answers": [
+          "el barco",
+          "barco",
+          "barco"
+        ],
+        "tag": "transporte",
+        "sub": "de boot"
+      },
+      {
+        "stimulus": "Compro un ___ de ida y vuelta.",
+        "answers": [
+          "el billete",
+          "billete",
+          "billete"
+        ],
+        "tag": "transporte",
+        "sub": "het ticket"
+      },
+      {
+        "stimulus": "El ___ dura dos horas.",
+        "answers": [
+          "el vuelo",
+          "vuelo",
+          "vuelo"
+        ],
+        "tag": "transporte",
+        "sub": "de vlucht"
+      },
+      {
+        "stimulus": "Hago la ___ la noche antes.",
+        "answers": [
+          "la maleta",
+          "maleta",
+          "maleta"
+        ],
+        "tag": "transporte",
+        "sub": "de koffer"
+      },
+      {
+        "stimulus": "Llego al ___ temprano.",
+        "answers": [
+          "el aeropuerto",
+          "aeropuerto",
+          "aeropuerto"
+        ],
+        "tag": "transporte",
+        "sub": "de luchthaven"
+      },
+      {
+        "stimulus": "Te espero en la ___.",
+        "answers": [
+          "la estación",
+          "estación",
+          "estación"
+        ],
+        "tag": "transporte",
+        "sub": "het station"
+      },
+      {
+        "stimulus": "Facturo el ___.",
+        "answers": [
+          "el equipaje",
+          "equipaje",
+          "equipaje"
+        ],
+        "tag": "transporte",
+        "sub": "de bagage"
+      },
+      {
+        "stimulus": "El ___ está en el centro.",
+        "answers": [
+          "el hotel",
+          "hotel",
+          "hotel"
+        ],
+        "tag": "alojamiento",
+        "sub": "het hotel"
+      },
+      {
+        "stimulus": "Dormimos en un ___ barato.",
+        "answers": [
+          "el hostal",
+          "hostal",
+          "hostal"
+        ],
+        "tag": "alojamiento",
+        "sub": "de hostel/pension"
+      },
+      {
+        "stimulus": "Reservo una ___ doble.",
+        "answers": [
+          "la habitación",
+          "habitación",
+          "habitación"
+        ],
+        "tag": "alojamiento",
+        "sub": "de kamer"
+      },
+      {
+        "stimulus": "Tengo una ___ a mi nombre.",
+        "answers": [
+          "la reserva",
+          "reserva",
+          "reserva"
+        ],
+        "tag": "alojamiento",
+        "sub": "de reservering"
+      },
+      {
+        "stimulus": "¿Me da la ___, por favor?",
+        "answers": [
+          "la llave",
+          "llave",
+          "llave"
+        ],
+        "tag": "alojamiento",
+        "sub": "de sleutel"
+      },
+      {
+        "stimulus": "Pregunto en la ___.",
+        "answers": [
+          "la recepción",
+          "recepción",
+          "recepción"
+        ],
+        "tag": "alojamiento",
+        "sub": "de receptie"
+      },
+      {
+        "stimulus": "Nos quedamos tres ___s.",
+        "answers": [
+          "la noche",
+          "noche",
+          "noche"
+        ],
+        "tag": "alojamiento",
+        "sub": "de nacht"
+      },
+      {
+        "stimulus": "Me encanta ___.",
+        "answers": [
+          "viajar",
+          "viajar"
+        ],
+        "tag": "viaje",
+        "sub": "reizen"
+      },
+      {
+        "stimulus": "___ en Perú.",
+        "answers": [
+          "he estado",
+          "he estado"
+        ],
+        "tag": "experiencias",
+        "sub": "ik ben geweest"
+      },
+      {
+        "stimulus": "___ Madrid.",
+        "answers": [
+          "he visitado",
+          "he visitado"
+        ],
+        "tag": "experiencias",
+        "sub": "ik heb bezocht"
+      },
+      {
+        "stimulus": "___ la catedral.",
+        "answers": [
+          "he visto",
+          "he visto"
+        ],
+        "tag": "experiencias",
+        "sub": "ik heb gezien"
+      },
+      {
+        "stimulus": "___ tacos.",
+        "answers": [
+          "he comido",
+          "he comido"
+        ],
+        "tag": "experiencias",
+        "sub": "ik heb gegeten"
+      },
+      {
+        "stimulus": "___ muchas fotos.",
+        "answers": [
+          "he hecho",
+          "he hecho"
+        ],
+        "tag": "experiencias",
+        "sub": "ik heb gedaan/gemaakt"
+      },
+      {
+        "stimulus": "___ la paella.",
+        "answers": [
+          "he probado",
+          "he probado"
+        ],
+        "tag": "experiencias",
+        "sub": "ik heb geproefd"
+      },
+      {
+        "stimulus": "El viaje ___ genial.",
+        "answers": [
+          "ha sido",
+          "ha sido"
+        ],
+        "tag": "experiencias",
+        "sub": "het is geweest"
+      },
+      {
+        "stimulus": "___ la playa.",
+        "answers": [
+          "me ha encantado",
+          "me ha encantado"
+        ],
+        "tag": "experiencias",
+        "sub": "ik vond het geweldig"
+      },
+      {
+        "stimulus": "Vamos a la ___.",
+        "answers": [
+          "la playa",
+          "playa",
+          "playa"
+        ],
+        "tag": "lugares",
+        "sub": "het strand"
+      },
+      {
+        "stimulus": "Subimos a la ___.",
+        "answers": [
+          "la montaña",
+          "montaña",
+          "montaña"
+        ],
+        "tag": "lugares",
+        "sub": "de berg"
+      },
+      {
+        "stimulus": "El ___ abre a las diez.",
+        "answers": [
+          "el museo",
+          "museo",
+          "museo"
+        ],
+        "tag": "lugares",
+        "sub": "het museum"
+      },
+      {
+        "stimulus": "Es una ___ preciosa.",
+        "answers": [
+          "la ciudad",
+          "ciudad",
+          "ciudad"
+        ],
+        "tag": "lugares",
+        "sub": "de stad"
+      },
+      {
+        "stimulus": "Visitamos un ___ pequeño.",
+        "answers": [
+          "el pueblo",
+          "pueblo",
+          "pueblo"
+        ],
+        "tag": "lugares",
+        "sub": "het dorp"
+      },
+      {
+        "stimulus": "La ___ chilena es larga.",
+        "answers": [
+          "la costa",
+          "costa",
+          "costa"
+        ],
+        "tag": "lugares",
+        "sub": "de kust"
+      },
+      {
+        "stimulus": "El ___ de Atacama es seco.",
+        "answers": [
+          "el desierto",
+          "desierto",
+          "desierto"
+        ],
+        "tag": "lugares",
+        "sub": "de woestijn"
+      },
+      {
+        "stimulus": "El ___ es impresionante.",
+        "answers": [
+          "el paisaje",
+          "paisaje",
+          "paisaje"
+        ],
+        "tag": "lugares",
+        "sub": "het landschap"
+      },
+      {
+        "stimulus": "Salgo ___ Chile mañana.",
+        "answers": [
+          "para",
+          "para"
+        ],
+        "tag": "porpara",
+        "sub": "om te / naar (doel/bestemming)"
+      },
+      {
+        "stimulus": "Viajo ___ avión.",
+        "answers": [
+          "por",
+          "por"
+        ],
+        "tag": "porpara",
+        "sub": "door / via / gedurende"
+      },
+      {
+        "stimulus": "Salimos ___.",
+        "answers": [
+          "por la mañana",
+          "por la mañana"
+        ],
+        "tag": "porpara",
+        "sub": "'s ochtends"
+      },
+      {
+        "stimulus": "Me quedo ___.",
+        "answers": [
+          "por dos días",
+          "por dos días"
+        ],
+        "tag": "porpara",
+        "sub": "voor twee dagen"
+      },
+      {
+        "stimulus": "Este regalo es ___.",
+        "answers": [
+          "para ti",
+          "para ti"
+        ],
+        "tag": "porpara",
+        "sub": "voor jou"
+      },
+      {
+        "stimulus": "—___ —¡Genial!",
+        "answers": [
+          "¿qué tal el viaje?",
+          "¿qué tal el viaje?"
+        ],
+        "tag": "opinar",
+        "sub": "hoe was de reis?"
+      },
+      {
+        "stimulus": "___ ha sido la playa.",
+        "answers": [
+          "lo mejor",
+          "lo mejor"
+        ],
+        "tag": "opinar",
+        "sub": "het beste"
+      },
+      {
+        "stimulus": "___ ha sido el vuelo.",
+        "answers": [
+          "lo peor",
+          "lo peor"
+        ],
+        "tag": "opinar",
+        "sub": "het ergste"
+      },
+      {
+        "stimulus": "El paisaje es ___.",
+        "answers": [
+          "impresionante",
+          "impresionante"
+        ],
+        "tag": "opinar",
+        "sub": "indrukwekkend"
+      },
+      {
+        "stimulus": "Un viaje ___.",
+        "answers": [
+          "inolvidable",
+          "inolvidable"
+        ],
+        "tag": "opinar",
+        "sub": "onvergetelijk"
+      },
+      {
+        "stimulus": "___ he visitado el museo.",
+        "answers": [
+          "ya",
+          "ya"
+        ],
+        "tag": "tiempo",
+        "sub": "al"
+      },
+      {
+        "stimulus": "___ he ido a la playa.",
+        "answers": [
+          "todavía no",
+          "todavía no"
+        ],
+        "tag": "tiempo",
+        "sub": "nog niet"
+      },
+      {
+        "stimulus": "___ he montado en avión.",
+        "answers": [
+          "nunca",
+          "nunca"
+        ],
+        "tag": "tiempo",
+        "sub": "nooit"
+      },
+      {
+        "stimulus": "¿Has estado ___ en Perú?",
+        "answers": [
+          "alguna vez",
+          "alguna vez"
+        ],
+        "tag": "tiempo",
+        "sub": "ooit"
+      },
+      {
+        "stimulus": "___ he viajado mucho.",
+        "answers": [
+          "este año",
+          "este año"
+        ],
+        "tag": "tiempo",
+        "sub": "dit jaar"
+      },
+      {
+        "stimulus": "___ he trabajado mucho.",
+        "answers": [
+          "esta semana",
+          "esta semana"
+        ],
+        "tag": "tiempo",
+        "sub": "deze week"
+      },
+      {
+        "stimulus": "___ he desayunado tarde.",
+        "answers": [
+          "hoy",
+          "hoy"
+        ],
+        "tag": "tiempo",
+        "sub": "vandaag"
+      },
+      {
+        "stimulus": "___ he dormido poco.",
+        "answers": [
+          "últimamente",
+          "últimamente"
+        ],
+        "tag": "tiempo",
+        "sub": "de laatste tijd"
+      }
+    ]
+  }
+}

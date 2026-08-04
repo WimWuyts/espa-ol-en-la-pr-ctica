@@ -1,0 +1,149 @@
+{
+  "id": "es-c6plus-u3-infinitivo-tap",
+  "title": "¿Qué verbo va detrás?",
+  "subtitle": "U3 · na ir a en acabar de komt de infinitief",
+  "lang": "es",
+  "template": "tap",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "tap": {
+    "prompt": "Tik het werkwoord dat in de infinitief blijft staan",
+    "joiner": " · ",
+    "items": [
+      {
+        "parts": [
+          "Voy",
+          "a",
+          "llamar",
+          "a Marta"
+        ],
+        "answer": 2,
+        "tag": "inf",
+        "sub": "llamar blijft infinitief"
+      },
+      {
+        "parts": [
+          "Acabo",
+          "de",
+          "colgar",
+          "el vídeo"
+        ],
+        "answer": 2,
+        "tag": "inf",
+        "sub": "colgar"
+      },
+      {
+        "parts": [
+          "Vamos",
+          "a",
+          "quedar",
+          "el viernes"
+        ],
+        "answer": 2,
+        "tag": "inf",
+        "sub": "quedar"
+      },
+      {
+        "parts": [
+          "Acaban",
+          "de",
+          "conectarse",
+          "al grupo"
+        ],
+        "answer": 2,
+        "tag": "inf",
+        "sub": "conectarse"
+      },
+      {
+        "parts": [
+          "¿Vas",
+          "a",
+          "subir",
+          "las fotos?"
+        ],
+        "answer": 2,
+        "tag": "inf",
+        "sub": "subir"
+      },
+      {
+        "parts": [
+          "Acabamos",
+          "de",
+          "ver",
+          "tu historia"
+        ],
+        "answer": 2,
+        "tag": "inf",
+        "sub": "ver"
+      },
+      {
+        "parts": [
+          "Van",
+          "a",
+          "publicar",
+          "el resultado"
+        ],
+        "answer": 2,
+        "tag": "inf",
+        "sub": "publicar"
+      },
+      {
+        "parts": [
+          "Acabo",
+          "de",
+          "cargar",
+          "el móvil"
+        ],
+        "answer": 2,
+        "tag": "inf",
+        "sub": "cargar"
+      },
+      {
+        "parts": [
+          "Voy",
+          "a",
+          "escribirle",
+          "esta noche"
+        ],
+        "answer": 2,
+        "tag": "inf",
+        "sub": "escribirle"
+      },
+      {
+        "parts": [
+          "Acaba",
+          "de",
+          "contestar",
+          "al mensaje"
+        ],
+        "answer": 2,
+        "tag": "inf",
+        "sub": "contestar"
+      },
+      {
+        "parts": [
+          "Vais",
+          "a",
+          "descargar",
+          "la aplicación"
+        ],
+        "answer": 2,
+        "tag": "inf",
+        "sub": "descargar"
+      },
+      {
+        "parts": [
+          "Acabas",
+          "de",
+          "apagar",
+          "la pantalla"
+        ],
+        "answer": 2,
+        "tag": "inf",
+        "sub": "apagar"
+      }
+    ]
+  }
+}

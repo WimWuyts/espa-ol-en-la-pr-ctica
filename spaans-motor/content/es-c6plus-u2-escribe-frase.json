@@ -1,0 +1,621 @@
+{
+  "id": "es-c6plus-u2-escribe-frase",
+  "title": "Escribe una frase",
+  "subtitle": "C6+ · U2 · vrije productie · structuurcheck + modeloplossing",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 8,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "open",
+    "items": [
+      {
+        "stimulus": "Escribe una frase con «la casa»",
+        "must": [
+          "casa"
+        ],
+        "model": "Vivo en una casa grande.",
+        "tag": "casa",
+        "sub": "het huis"
+      },
+      {
+        "stimulus": "Escribe una frase con «el piso»",
+        "must": [
+          "piso"
+        ],
+        "model": "Mi piso está en el centro.",
+        "tag": "casa",
+        "sub": "het appartement / de verdieping"
+      },
+      {
+        "stimulus": "Escribe una frase con «el apartamento»",
+        "must": [
+          "apartamento"
+        ],
+        "model": "Alquilo un apartamento pequeño.",
+        "tag": "casa",
+        "sub": "het appartement"
+      },
+      {
+        "stimulus": "Escribe una frase con «la habitación»",
+        "must": [
+          "habitación"
+        ],
+        "model": "Mi habitación es luminosa.",
+        "tag": "habitaciones",
+        "sub": "de kamer"
+      },
+      {
+        "stimulus": "Escribe una frase con «el dormitorio»",
+        "must": [
+          "dormitorio"
+        ],
+        "model": "El dormitorio está arriba.",
+        "tag": "habitaciones",
+        "sub": "de slaapkamer"
+      },
+      {
+        "stimulus": "Escribe una frase con «la cocina»",
+        "must": [
+          "cocina"
+        ],
+        "model": "Cocino en la cocina.",
+        "tag": "habitaciones",
+        "sub": "de keuken"
+      },
+      {
+        "stimulus": "Escribe una frase con «el salón»",
+        "must": [
+          "salón"
+        ],
+        "model": "Vemos la tele en el salón.",
+        "tag": "habitaciones",
+        "sub": "de woonkamer"
+      },
+      {
+        "stimulus": "Escribe una frase con «el baño»",
+        "must": [
+          "baño"
+        ],
+        "model": "El baño está al lado del dormitorio.",
+        "tag": "habitaciones",
+        "sub": "de badkamer"
+      },
+      {
+        "stimulus": "Escribe una frase con «el pasillo»",
+        "must": [
+          "pasillo"
+        ],
+        "model": "El pasillo es estrecho.",
+        "tag": "habitaciones",
+        "sub": "de gang"
+      },
+      {
+        "stimulus": "Escribe una frase con «la terraza»",
+        "must": [
+          "terraza"
+        ],
+        "model": "Desayuno en la terraza.",
+        "tag": "habitaciones",
+        "sub": "het terras"
+      },
+      {
+        "stimulus": "Escribe una frase con «el jardín»",
+        "must": [
+          "jardín"
+        ],
+        "model": "Hay flores en el jardín.",
+        "tag": "habitaciones",
+        "sub": "de tuin"
+      },
+      {
+        "stimulus": "Escribe una frase con «el garaje»",
+        "must": [
+          "garaje"
+        ],
+        "model": "El coche está en el garaje.",
+        "tag": "habitaciones",
+        "sub": "de garage"
+      },
+      {
+        "stimulus": "Escribe una frase con «la cama»",
+        "must": [
+          "cama"
+        ],
+        "model": "La cama está debajo de la ventana.",
+        "tag": "muebles",
+        "sub": "het bed"
+      },
+      {
+        "stimulus": "Escribe una frase con «la mesa»",
+        "must": [
+          "mesa"
+        ],
+        "model": "Hay una mesa en el centro.",
+        "tag": "muebles",
+        "sub": "de tafel"
+      },
+      {
+        "stimulus": "Escribe una frase con «la silla»",
+        "must": [
+          "silla"
+        ],
+        "model": "La silla está al lado de la mesa.",
+        "tag": "muebles",
+        "sub": "de stoel"
+      },
+      {
+        "stimulus": "Escribe una frase con «el sofá»",
+        "must": [
+          "sofá"
+        ],
+        "model": "El sofá está delante de la tele.",
+        "tag": "muebles",
+        "sub": "de zetel / bank"
+      },
+      {
+        "stimulus": "Escribe una frase con «el armario»",
+        "must": [
+          "armario"
+        ],
+        "model": "La ropa está en el armario.",
+        "tag": "muebles",
+        "sub": "de kast"
+      },
+      {
+        "stimulus": "Escribe una frase con «la estantería»",
+        "must": [
+          "estantería"
+        ],
+        "model": "Los libros están en la estantería.",
+        "tag": "muebles",
+        "sub": "de boekenkast / het rek"
+      },
+      {
+        "stimulus": "Escribe una frase con «la nevera»",
+        "must": [
+          "nevera"
+        ],
+        "model": "La leche está en la nevera.",
+        "tag": "muebles",
+        "sub": "de koelkast"
+      },
+      {
+        "stimulus": "Escribe una frase con «la lámpara»",
+        "must": [
+          "lámpara"
+        ],
+        "model": "La lámpara está encima de la mesa.",
+        "tag": "muebles",
+        "sub": "de lamp"
+      },
+      {
+        "stimulus": "Escribe una frase con «la ventana»",
+        "must": [
+          "ventana"
+        ],
+        "model": "La ventana está abierta.",
+        "tag": "muebles",
+        "sub": "het raam"
+      },
+      {
+        "stimulus": "Escribe una frase con «la puerta»",
+        "must": [
+          "puerta"
+        ],
+        "model": "La puerta está cerrada.",
+        "tag": "muebles",
+        "sub": "de deur"
+      },
+      {
+        "stimulus": "Escribe una frase con «el espejo»",
+        "must": [
+          "espejo"
+        ],
+        "model": "Me miro en el espejo.",
+        "tag": "muebles",
+        "sub": "de spiegel"
+      },
+      {
+        "stimulus": "Escribe una frase con «encima de»",
+        "must": [
+          "encima de"
+        ],
+        "model": "El libro está encima de la mesa.",
+        "tag": "preposiciones",
+        "sub": "op / boven(op)"
+      },
+      {
+        "stimulus": "Escribe una frase con «debajo de»",
+        "must": [
+          "debajo de"
+        ],
+        "model": "El gato está debajo de la cama.",
+        "tag": "preposiciones",
+        "sub": "onder"
+      },
+      {
+        "stimulus": "Escribe una frase con «al lado de»",
+        "must": [
+          "al lado de"
+        ],
+        "model": "El baño está al lado de la cocina.",
+        "tag": "preposiciones",
+        "sub": "naast"
+      },
+      {
+        "stimulus": "Escribe una frase con «delante de»",
+        "must": [
+          "delante de"
+        ],
+        "model": "El sofá está delante de la tele.",
+        "tag": "preposiciones",
+        "sub": "vóór"
+      },
+      {
+        "stimulus": "Escribe una frase con «detrás de»",
+        "must": [
+          "detrás de"
+        ],
+        "model": "El jardín está detrás de la casa.",
+        "tag": "preposiciones",
+        "sub": "achter"
+      },
+      {
+        "stimulus": "Escribe una frase con «entre»",
+        "must": [
+          "entre"
+        ],
+        "model": "La silla está entre la mesa y la pared.",
+        "tag": "preposiciones",
+        "sub": "tussen"
+      },
+      {
+        "stimulus": "Escribe una frase con «dentro de»",
+        "must": [
+          "dentro de"
+        ],
+        "model": "La ropa está dentro del armario.",
+        "tag": "preposiciones",
+        "sub": "binnen(in)"
+      },
+      {
+        "stimulus": "Escribe una frase con «fuera de»",
+        "must": [
+          "fuera de"
+        ],
+        "model": "El perro está fuera de la casa.",
+        "tag": "preposiciones",
+        "sub": "buiten"
+      },
+      {
+        "stimulus": "Escribe una frase con «cerca de»",
+        "must": [
+          "cerca de"
+        ],
+        "model": "Vivo cerca del centro.",
+        "tag": "preposiciones",
+        "sub": "dichtbij"
+      },
+      {
+        "stimulus": "Escribe una frase con «lejos de»",
+        "must": [
+          "lejos de"
+        ],
+        "model": "El instituto está lejos de mi casa.",
+        "tag": "preposiciones",
+        "sub": "ver van"
+      },
+      {
+        "stimulus": "Escribe una frase con «a la derecha de»",
+        "must": [
+          "a la derecha de"
+        ],
+        "model": "La farmacia está a la derecha del banco.",
+        "tag": "preposiciones",
+        "sub": "rechts van"
+      },
+      {
+        "stimulus": "Escribe una frase con «a la izquierda de»",
+        "must": [
+          "a la izquierda de"
+        ],
+        "model": "La tienda está a la izquierda.",
+        "tag": "preposiciones",
+        "sub": "links van"
+      },
+      {
+        "stimulus": "Escribe una frase con «hay»",
+        "must": [
+          "hay"
+        ],
+        "model": "En mi barrio hay un parque.",
+        "tag": "preposiciones",
+        "sub": "er is / er zijn"
+      },
+      {
+        "stimulus": "Escribe una frase con «estar»",
+        "must": [
+          "estar"
+        ],
+        "model": "El parque está en el centro.",
+        "tag": "preposiciones",
+        "sub": "zijn (plaats/toestand)"
+      },
+      {
+        "stimulus": "Escribe una frase con «el barrio»",
+        "must": [
+          "barrio"
+        ],
+        "model": "Mi barrio es tranquilo.",
+        "tag": "barrio",
+        "sub": "de buurt / wijk"
+      },
+      {
+        "stimulus": "Escribe una frase con «la calle»",
+        "must": [
+          "calle"
+        ],
+        "model": "Vivo en la calle Mayor.",
+        "tag": "barrio",
+        "sub": "de straat"
+      },
+      {
+        "stimulus": "Escribe una frase con «la plaza»",
+        "must": [
+          "plaza"
+        ],
+        "model": "La plaza está en el centro.",
+        "tag": "barrio",
+        "sub": "het plein"
+      },
+      {
+        "stimulus": "Escribe una frase con «el parque»",
+        "must": [
+          "parque"
+        ],
+        "model": "Paseo por el parque.",
+        "tag": "barrio",
+        "sub": "het park"
+      },
+      {
+        "stimulus": "Escribe una frase con «la tienda»",
+        "must": [
+          "tienda"
+        ],
+        "model": "Compro pan en la tienda.",
+        "tag": "barrio",
+        "sub": "de winkel"
+      },
+      {
+        "stimulus": "Escribe una frase con «el supermercado»",
+        "must": [
+          "supermercado"
+        ],
+        "model": "El supermercado está cerca.",
+        "tag": "barrio",
+        "sub": "de supermarkt"
+      },
+      {
+        "stimulus": "Escribe una frase con «la farmacia»",
+        "must": [
+          "farmacia"
+        ],
+        "model": "La farmacia está en la esquina.",
+        "tag": "barrio",
+        "sub": "de apotheek"
+      },
+      {
+        "stimulus": "Escribe una frase con «el banco»",
+        "must": [
+          "banco"
+        ],
+        "model": "Voy al banco los lunes.",
+        "tag": "barrio",
+        "sub": "de bank"
+      },
+      {
+        "stimulus": "Escribe una frase con «la parada»",
+        "must": [
+          "parada"
+        ],
+        "model": "La parada del bus está allí.",
+        "tag": "barrio",
+        "sub": "de halte"
+      },
+      {
+        "stimulus": "Escribe una frase con «la estación»",
+        "must": [
+          "estación"
+        ],
+        "model": "La estación está lejos.",
+        "tag": "barrio",
+        "sub": "het station"
+      },
+      {
+        "stimulus": "Escribe una frase con «el centro»",
+        "must": [
+          "centro"
+        ],
+        "model": "Trabajo en el centro.",
+        "tag": "barrio",
+        "sub": "het centrum"
+      },
+      {
+        "stimulus": "Escribe una frase con «la esquina»",
+        "must": [
+          "esquina"
+        ],
+        "model": "Gira en la esquina.",
+        "tag": "barrio",
+        "sub": "de hoek"
+      },
+      {
+        "stimulus": "Escribe una frase con «la ciudad»",
+        "must": [
+          "ciudad"
+        ],
+        "model": "Cartagena es una ciudad bonita.",
+        "tag": "ciudad",
+        "sub": "de stad"
+      },
+      {
+        "stimulus": "Escribe una frase con «el pueblo»",
+        "must": [
+          "pueblo"
+        ],
+        "model": "Mis abuelos viven en un pueblo.",
+        "tag": "ciudad",
+        "sub": "het dorp"
+      },
+      {
+        "stimulus": "Escribe una frase con «la vivienda»",
+        "must": [
+          "vivienda"
+        ],
+        "model": "La vivienda es cara en el centro.",
+        "tag": "ciudad",
+        "sub": "de woning"
+      },
+      {
+        "stimulus": "Escribe una frase con «¿cómo llego a…?»",
+        "must": [
+          "¿cómo llego a…?"
+        ],
+        "model": "¿Cómo llego a la plaza?",
+        "tag": "direcciones",
+        "sub": "hoe geraak ik bij…?"
+      },
+      {
+        "stimulus": "Escribe una frase con «sigue recto»",
+        "must": [
+          "sigue recto"
+        ],
+        "model": "Sigue recto hasta el semáforo.",
+        "tag": "direcciones",
+        "sub": "ga rechtdoor"
+      },
+      {
+        "stimulus": "Escribe una frase con «gira a la derecha»",
+        "must": [
+          "gira a la derecha"
+        ],
+        "model": "Gira a la derecha en la esquina.",
+        "tag": "direcciones",
+        "sub": "sla rechts af"
+      },
+      {
+        "stimulus": "Escribe una frase con «gira a la izquierda»",
+        "must": [
+          "gira a la izquierda"
+        ],
+        "model": "Gira a la izquierda después del banco.",
+        "tag": "direcciones",
+        "sub": "sla links af"
+      },
+      {
+        "stimulus": "Escribe una frase con «cruza la calle»",
+        "must": [
+          "cruza la calle"
+        ],
+        "model": "Cruza la calle en el paso de cebra.",
+        "tag": "direcciones",
+        "sub": "steek de straat over"
+      },
+      {
+        "stimulus": "Escribe una frase con «el semáforo»",
+        "must": [
+          "semáforo"
+        ],
+        "model": "Para en el semáforo.",
+        "tag": "direcciones",
+        "sub": "het verkeerslicht"
+      },
+      {
+        "stimulus": "Escribe una frase con «está a … minutos»",
+        "must": [
+          "está a … minutos"
+        ],
+        "model": "Está a cinco minutos a pie.",
+        "tag": "direcciones",
+        "sub": "het ligt op … minuten"
+      },
+      {
+        "stimulus": "Escribe una frase con «a pie»",
+        "must": [
+          "a pie"
+        ],
+        "model": "Voy al insti a pie.",
+        "tag": "direcciones",
+        "sub": "te voet"
+      },
+      {
+        "stimulus": "Escribe una frase con «andar»",
+        "must": [
+          "andar"
+        ],
+        "model": "Ando por el parque.",
+        "tag": "movimiento",
+        "sub": "lopen / wandelen"
+      },
+      {
+        "stimulus": "Escribe una frase con «cruzar»",
+        "must": [
+          "cruzar"
+        ],
+        "model": "Cruzo la plaza.",
+        "tag": "movimiento",
+        "sub": "oversteken"
+      },
+      {
+        "stimulus": "Escribe una frase con «girar»",
+        "must": [
+          "girar"
+        ],
+        "model": "Giro a la derecha.",
+        "tag": "movimiento",
+        "sub": "draaien / afslaan"
+      },
+      {
+        "stimulus": "Escribe una frase con «subir»",
+        "must": [
+          "subir"
+        ],
+        "model": "Subo al segundo piso.",
+        "tag": "movimiento",
+        "sub": "omhooggaan / instappen"
+      },
+      {
+        "stimulus": "Escribe una frase con «bajar»",
+        "must": [
+          "bajar"
+        ],
+        "model": "Bajo del autobús.",
+        "tag": "movimiento",
+        "sub": "omlaaggaan / uitstappen"
+      },
+      {
+        "stimulus": "Escribe una frase con «coger»",
+        "must": [
+          "coger"
+        ],
+        "model": "Cojo el autobús número 3.",
+        "tag": "movimiento",
+        "sub": "nemen / pakken"
+      },
+      {
+        "stimulus": "Escribe una frase con «pasar por»",
+        "must": [
+          "pasar por"
+        ],
+        "model": "Paso por la farmacia.",
+        "tag": "movimiento",
+        "sub": "voorbijgaan / passeren"
+      }
+    ]
+  }
+}

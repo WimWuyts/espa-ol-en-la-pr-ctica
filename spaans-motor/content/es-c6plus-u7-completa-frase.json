@@ -1,0 +1,403 @@
+{
+  "id": "es-c6plus-u7-completa-frase",
+  "title": "Completa la frase",
+  "subtitle": "C6+ · U7 · vul het ontbrekende woord in (betekenis uit de context)",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "La ___ es lo más importante.",
+        "answers": [
+          "la salud",
+          "salud",
+          "salud"
+        ],
+        "tag": "salud",
+        "sub": "de gezondheid"
+      },
+      {
+        "stimulus": "Cuida tu ___.",
+        "answers": [
+          "el cuerpo",
+          "cuerpo",
+          "cuerpo"
+        ],
+        "tag": "salud",
+        "sub": "het lichaam"
+      },
+      {
+        "stimulus": "Hago ___ cada día.",
+        "answers": [
+          "el ejercicio",
+          "ejercicio",
+          "ejercicio"
+        ],
+        "tag": "salud",
+        "sub": "de oefening/beweging"
+      },
+      {
+        "stimulus": "Necesito ___.",
+        "answers": [
+          "descansar",
+          "descansar"
+        ],
+        "tag": "salud",
+        "sub": "rusten"
+      },
+      {
+        "stimulus": "Tengo una ___ sana.",
+        "answers": [
+          "la dieta",
+          "dieta",
+          "dieta"
+        ],
+        "tag": "salud",
+        "sub": "het dieet/voeding"
+      },
+      {
+        "stimulus": "El ___ es malo para la salud.",
+        "answers": [
+          "el estrés",
+          "estrés",
+          "estrés"
+        ],
+        "tag": "salud",
+        "sub": "de stress"
+      },
+      {
+        "stimulus": "Come más ___.",
+        "answers": [
+          "la fruta",
+          "fruta",
+          "fruta"
+        ],
+        "tag": "salud",
+        "sub": "het fruit"
+      },
+      {
+        "stimulus": "Bebe mucha ___.",
+        "answers": [
+          "el agua",
+          "agua",
+          "agua"
+        ],
+        "tag": "salud",
+        "sub": "het water"
+      },
+      {
+        "stimulus": "Te doy un ___.",
+        "answers": [
+          "el consejo",
+          "consejo",
+          "consejo"
+        ],
+        "tag": "consejos",
+        "sub": "de raad/tip"
+      },
+      {
+        "stimulus": "Es importante ___.",
+        "answers": [
+          "comer sano",
+          "comer sano"
+        ],
+        "tag": "consejos",
+        "sub": "gezond eten"
+      },
+      {
+        "stimulus": "___ dormir bien.",
+        "answers": [
+          "es importante",
+          "es importante"
+        ],
+        "tag": "consejos",
+        "sub": "het is belangrijk"
+      },
+      {
+        "stimulus": "___ descansar más.",
+        "answers": [
+          "deberías",
+          "deberías"
+        ],
+        "tag": "consejos",
+        "sub": "je zou moeten"
+      },
+      {
+        "stimulus": "Cuidamos el ___.",
+        "answers": [
+          "el medio ambiente",
+          "medio ambiente",
+          "medio ambiente"
+        ],
+        "tag": "medioambiente",
+        "sub": "het milieu"
+      },
+      {
+        "stimulus": "Protege el ___.",
+        "answers": [
+          "el planeta",
+          "planeta",
+          "planeta"
+        ],
+        "tag": "medioambiente",
+        "sub": "de planeet"
+      },
+      {
+        "stimulus": "Me gusta la ___.",
+        "answers": [
+          "la naturaleza",
+          "naturaleza",
+          "naturaleza"
+        ],
+        "tag": "medioambiente",
+        "sub": "de natuur"
+      },
+      {
+        "stimulus": "No tires ___ al suelo.",
+        "answers": [
+          "la basura",
+          "basura",
+          "basura"
+        ],
+        "tag": "medioambiente",
+        "sub": "het afval"
+      },
+      {
+        "stimulus": "Hay mucha ___.",
+        "answers": [
+          "la contaminación",
+          "contaminación",
+          "contaminación"
+        ],
+        "tag": "medioambiente",
+        "sub": "de vervuiling"
+      },
+      {
+        "stimulus": "Usa ___ solar.",
+        "answers": [
+          "la energía",
+          "energía",
+          "energía"
+        ],
+        "tag": "medioambiente",
+        "sub": "de energie"
+      },
+      {
+        "stimulus": "Debemos ___ los bosques.",
+        "answers": [
+          "proteger",
+          "proteger"
+        ],
+        "tag": "medioambiente",
+        "sub": "beschermen"
+      },
+      {
+        "stimulus": "Planta un ___.",
+        "answers": [
+          "el árbol",
+          "árbol",
+          "árbol"
+        ],
+        "tag": "medioambiente",
+        "sub": "de boom"
+      },
+      {
+        "stimulus": "El ___ tropical es enorme.",
+        "answers": [
+          "el bosque",
+          "bosque",
+          "bosque"
+        ],
+        "tag": "medioambiente",
+        "sub": "het bos"
+      },
+      {
+        "stimulus": "___ el planeta.",
+        "answers": [
+          "cuida",
+          "cuida"
+        ],
+        "tag": "imperativo",
+        "sub": "zorg (jij)"
+      },
+      {
+        "stimulus": "___ más verdura.",
+        "answers": [
+          "come",
+          "come"
+        ],
+        "tag": "imperativo",
+        "sub": "eet (jij)"
+      },
+      {
+        "stimulus": "___ agua.",
+        "answers": [
+          "bebe",
+          "bebe"
+        ],
+        "tag": "imperativo",
+        "sub": "drink (jij)"
+      },
+      {
+        "stimulus": "___ deporte.",
+        "answers": [
+          "haz",
+          "haz"
+        ],
+        "tag": "imperativo",
+        "sub": "doe/maak (jij)"
+      },
+      {
+        "stimulus": "___ conmigo.",
+        "answers": [
+          "ven",
+          "ven"
+        ],
+        "tag": "imperativo",
+        "sub": "kom (jij)"
+      },
+      {
+        "stimulus": "___me la verdad.",
+        "answers": [
+          "di",
+          "di"
+        ],
+        "tag": "imperativo",
+        "sub": "zeg (jij)"
+      },
+      {
+        "stimulus": "___ responsable.",
+        "answers": [
+          "sé",
+          "sé"
+        ],
+        "tag": "imperativo",
+        "sub": "wees (jij)"
+      },
+      {
+        "stimulus": "___ siempre.",
+        "answers": [
+          "recicla",
+          "recicla"
+        ],
+        "tag": "imperativo",
+        "sub": "recycle (jij)"
+      },
+      {
+        "stimulus": "___ es verdad.",
+        "answers": [
+          "creo que",
+          "creo que"
+        ],
+        "tag": "opinar",
+        "sub": "ik denk dat"
+      },
+      {
+        "stimulus": "___ debemos reciclar.",
+        "answers": [
+          "pienso que",
+          "pienso que"
+        ],
+        "tag": "opinar",
+        "sub": "ik vind dat"
+      },
+      {
+        "stimulus": "___, el deporte es clave.",
+        "answers": [
+          "en mi opinión",
+          "en mi opinión"
+        ],
+        "tag": "opinar",
+        "sub": "volgens mij"
+      },
+      {
+        "stimulus": "___ tienes razón.",
+        "answers": [
+          "me parece que",
+          "me parece que"
+        ],
+        "tag": "opinar",
+        "sub": "het lijkt me dat"
+      },
+      {
+        "stimulus": "___ contigo.",
+        "answers": [
+          "estoy de acuerdo",
+          "estoy de acuerdo"
+        ],
+        "tag": "opinar",
+        "sub": "ik ben het eens"
+      },
+      {
+        "stimulus": "___ con eso.",
+        "answers": [
+          "no estoy de acuerdo",
+          "no estoy de acuerdo"
+        ],
+        "tag": "opinar",
+        "sub": "ik ben het oneens"
+      },
+      {
+        "stimulus": "Reciclo ___ es importante.",
+        "answers": [
+          "porque",
+          "porque"
+        ],
+        "tag": "conectores",
+        "sub": "omdat/want"
+      },
+      {
+        "stimulus": "___, ahorra dinero.",
+        "answers": [
+          "además",
+          "además"
+        ],
+        "tag": "conectores",
+        "sub": "bovendien"
+      },
+      {
+        "stimulus": "Contamina; ___ está prohibido.",
+        "answers": [
+          "por eso",
+          "por eso"
+        ],
+        "tag": "conectores",
+        "sub": "daarom"
+      },
+      {
+        "stimulus": "Es caro; ___, funciona.",
+        "answers": [
+          "sin embargo",
+          "sin embargo"
+        ],
+        "tag": "conectores",
+        "sub": "echter"
+      },
+      {
+        "stimulus": "___ es cómodo.",
+        "answers": [
+          "por un lado",
+          "por un lado"
+        ],
+        "tag": "conectores",
+        "sub": "enerzijds"
+      },
+      {
+        "stimulus": "___, contamina.",
+        "answers": [
+          "por otro lado",
+          "por otro lado"
+        ],
+        "tag": "conectores",
+        "sub": "anderzijds"
+      }
+    ]
+  }
+}

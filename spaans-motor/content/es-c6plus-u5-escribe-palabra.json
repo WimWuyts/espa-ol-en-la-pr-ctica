@@ -1,0 +1,533 @@
+{
+  "id": "es-c6plus-u5-escribe-palabra",
+  "title": "Escribe la palabra",
+  "subtitle": "C6+ · U5 · schrijf het Spaanse woord (letterhint als steun)",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "geboren worden",
+        "answers": [
+          "nacer"
+        ],
+        "hint": "n____",
+        "tag": "biografia",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "opgroeien",
+        "answers": [
+          "crecer"
+        ],
+        "hint": "c_____",
+        "tag": "biografia",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "studeren",
+        "answers": [
+          "estudiar"
+        ],
+        "hint": "e_______",
+        "tag": "biografia",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "trouwen",
+        "answers": [
+          "casarse"
+        ],
+        "hint": "c______",
+        "tag": "biografia",
+        "sub": "ww. refl."
+      },
+      {
+        "stimulus": "kinderen krijgen",
+        "answers": [
+          "tener hijos"
+        ],
+        "hint": "t____ h____",
+        "tag": "biografia",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "verhuizen",
+        "answers": [
+          "mudarse"
+        ],
+        "hint": "m______",
+        "tag": "biografia",
+        "sub": "ww. refl."
+      },
+      {
+        "stimulus": "sterven",
+        "answers": [
+          "morir"
+        ],
+        "hint": "m____",
+        "tag": "biografia",
+        "sub": "ww. (o→u)"
+      },
+      {
+        "stimulus": "het leven",
+        "answers": [
+          "la vida",
+          "vida"
+        ],
+        "hint": "v___",
+        "tag": "biografia",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "winnen",
+        "answers": [
+          "ganar"
+        ],
+        "hint": "g____",
+        "tag": "logros",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "schrijven",
+        "answers": [
+          "escribir"
+        ],
+        "hint": "e_______",
+        "tag": "logros",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "schilderen",
+        "answers": [
+          "pintar"
+        ],
+        "hint": "p_____",
+        "tag": "logros",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "componeren",
+        "answers": [
+          "componer"
+        ],
+        "hint": "c_______",
+        "tag": "logros",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "ontdekken",
+        "answers": [
+          "descubrir"
+        ],
+        "hint": "d________",
+        "tag": "logros",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "stichten/oprichten",
+        "answers": [
+          "fundar"
+        ],
+        "hint": "f_____",
+        "tag": "logros",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "creëren",
+        "answers": [
+          "crear"
+        ],
+        "hint": "c____",
+        "tag": "logros",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "de prijs",
+        "answers": [
+          "el premio",
+          "premio"
+        ],
+        "hint": "p_____",
+        "tag": "logros",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "het succes",
+        "answers": [
+          "el éxito",
+          "éxito"
+        ],
+        "hint": "é____",
+        "tag": "logros",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "de zanger(es)",
+        "answers": [
+          "el cantante",
+          "cantante"
+        ],
+        "hint": "c_______",
+        "tag": "persona",
+        "sub": "znw."
+      },
+      {
+        "stimulus": "de voetballer",
+        "answers": [
+          "el futbolista",
+          "futbolista"
+        ],
+        "hint": "f_________",
+        "tag": "persona",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "de leider",
+        "answers": [
+          "el líder",
+          "líder"
+        ],
+        "hint": "l____",
+        "tag": "persona",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "was / ging (ser/ir)",
+        "answers": [
+          "fue"
+        ],
+        "hint": "f__",
+        "tag": "indefinido",
+        "sub": "indef. irr."
+      },
+      {
+        "stimulus": "had (tener)",
+        "answers": [
+          "tuvo"
+        ],
+        "hint": "t___",
+        "tag": "indefinido",
+        "sub": "indef. irr."
+      },
+      {
+        "stimulus": "deed/maakte (hacer)",
+        "answers": [
+          "hizo"
+        ],
+        "hint": "h___",
+        "tag": "indefinido",
+        "sub": "indef. irr."
+      },
+      {
+        "stimulus": "was (estar)",
+        "answers": [
+          "estuvo"
+        ],
+        "hint": "e_____",
+        "tag": "indefinido",
+        "sub": "indef. irr."
+      },
+      {
+        "stimulus": "zei (decir)",
+        "answers": [
+          "dijo"
+        ],
+        "hint": "d___",
+        "tag": "indefinido",
+        "sub": "indef. irr."
+      },
+      {
+        "stimulus": "kwam (venir)",
+        "answers": [
+          "vino"
+        ],
+        "hint": "v___",
+        "tag": "indefinido",
+        "sub": "indef. irr."
+      },
+      {
+        "stimulus": "kon (poder)",
+        "answers": [
+          "pudo"
+        ],
+        "hint": "p___",
+        "tag": "indefinido",
+        "sub": "indef. irr."
+      },
+      {
+        "stimulus": "gaf (dar)",
+        "answers": [
+          "dio"
+        ],
+        "hint": "d__",
+        "tag": "indefinido",
+        "sub": "indef. irr."
+      },
+      {
+        "stimulus": "zag (ver)",
+        "answers": [
+          "vio"
+        ],
+        "hint": "v__",
+        "tag": "indefinido",
+        "sub": "indef. irr."
+      },
+      {
+        "stimulus": "gisteren",
+        "answers": [
+          "ayer"
+        ],
+        "hint": "a___",
+        "tag": "tiempo",
+        "sub": "bijw."
+      },
+      {
+        "stimulus": "eergisteren",
+        "answers": [
+          "anteayer"
+        ],
+        "hint": "a_______",
+        "tag": "tiempo",
+        "sub": "bijw."
+      },
+      {
+        "stimulus": "vorig jaar",
+        "answers": [
+          "el año pasado",
+          "año pasado"
+        ],
+        "hint": "a__ p_____",
+        "tag": "tiempo",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "vorige week",
+        "answers": [
+          "la semana pasada",
+          "semana pasada"
+        ],
+        "hint": "s_____ p_____",
+        "tag": "tiempo",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "in 1982",
+        "answers": [
+          "en 1982"
+        ],
+        "hint": "e_ 1___",
+        "tag": "tiempo",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "twee jaar geleden",
+        "answers": [
+          "hace dos años"
+        ],
+        "hint": "h___ d__ a___",
+        "tag": "tiempo",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "plots",
+        "answers": [
+          "de repente"
+        ],
+        "hint": "d_ r______",
+        "tag": "tiempo",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "toen / dus",
+        "answers": [
+          "entonces"
+        ],
+        "hint": "e_______",
+        "tag": "tiempo",
+        "sub": "bijw."
+      },
+      {
+        "stimulus": "het aan hem/haar",
+        "answers": [
+          "se lo"
+        ],
+        "hint": "s_ l_",
+        "tag": "odoi",
+        "sub": "pron. OD+OI"
+      },
+      {
+        "stimulus": "haar (het) aan hem/haar",
+        "answers": [
+          "se la"
+        ],
+        "hint": "s_ l_",
+        "tag": "odoi",
+        "sub": "pron. OD+OI"
+      },
+      {
+        "stimulus": "het aan hem/haar geven",
+        "answers": [
+          "dárselo"
+        ],
+        "hint": "d______",
+        "tag": "odoi",
+        "sub": "structuur"
+      },
+      {
+        "stimulus": "het aan hem/haar vertellen",
+        "answers": [
+          "contárselo"
+        ],
+        "hint": "c_________",
+        "tag": "odoi",
+        "sub": "structuur"
+      },
+      {
+        "stimulus": "hij/zij gaf het aan mij",
+        "answers": [
+          "me lo dio"
+        ],
+        "hint": "m_ l_ d__",
+        "tag": "odoi",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "hij/zij stuurde ze naar jou",
+        "answers": [
+          "te la mandó"
+        ],
+        "hint": "t_ l_ m____",
+        "tag": "odoi",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "het verhaal / de geschiedenis",
+        "answers": [
+          "la historia",
+          "historia"
+        ],
+        "hint": "h_______",
+        "tag": "relato",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "de legende",
+        "answers": [
+          "la leyenda",
+          "leyenda"
+        ],
+        "hint": "l______",
+        "tag": "relato",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "er was eens",
+        "answers": [
+          "érase una vez"
+        ],
+        "hint": "é____ u__ v__",
+        "tag": "relato",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "het personage",
+        "answers": [
+          "el personaje",
+          "personaje"
+        ],
+        "hint": "p________",
+        "tag": "relato",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "eerst … daarna",
+        "answers": [
+          "primero … después"
+        ],
+        "hint": "p______ … d______",
+        "tag": "relato",
+        "sub": "conector"
+      },
+      {
+        "stimulus": "uiteindelijk",
+        "answers": [
+          "al final"
+        ],
+        "hint": "a_ f____",
+        "tag": "relato",
+        "sub": "conector"
+      },
+      {
+        "stimulus": "daarom",
+        "answers": [
+          "por eso"
+        ],
+        "hint": "p__ e__",
+        "tag": "relato",
+        "sub": "conector"
+      },
+      {
+        "stimulus": "ongelooflijk",
+        "answers": [
+          "increíble"
+        ],
+        "hint": "i________",
+        "tag": "opinar",
+        "sub": "adj."
+      },
+      {
+        "stimulus": "belangrijk",
+        "answers": [
+          "importante"
+        ],
+        "hint": "i_________",
+        "tag": "opinar",
+        "sub": "adj."
+      },
+      {
+        "stimulus": "interessant",
+        "answers": [
+          "interesante"
+        ],
+        "hint": "i__________",
+        "tag": "opinar",
+        "sub": "adj."
+      },
+      {
+        "stimulus": "bewonderen",
+        "answers": [
+          "admirar"
+        ],
+        "hint": "a______",
+        "tag": "opinar",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "ik denk dat hij/zij was",
+        "answers": [
+          "creo que fue"
+        ],
+        "hint": "c___ q__ f__",
+        "tag": "opinar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "het belangrijkste",
+        "answers": [
+          "lo más importante"
+        ],
+        "hint": "l_ m__ i_________",
+        "tag": "opinar",
+        "sub": "expr."
+      }
+    ]
+  }
+}

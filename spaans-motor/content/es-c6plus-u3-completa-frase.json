@@ -1,0 +1,289 @@
+{
+  "id": "es-c6plus-u3-completa-frase",
+  "title": "Completa la frase",
+  "subtitle": "C6+ · U3 · vul het ontbrekende woord in (betekenis uit de context)",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "Siempre llevo el ___.",
+        "answers": [
+          "el móvil",
+          "móvil",
+          "móvil"
+        ],
+        "tag": "dispositivos",
+        "sub": "de gsm / mobiel"
+      },
+      {
+        "stimulus": "Estudio con el ___.",
+        "answers": [
+          "el ordenador",
+          "ordenador",
+          "ordenador"
+        ],
+        "tag": "dispositivos",
+        "sub": "de computer"
+      },
+      {
+        "stimulus": "Leo en la ___.",
+        "answers": [
+          "la tableta",
+          "tableta",
+          "tableta"
+        ],
+        "tag": "dispositivos",
+        "sub": "de tablet"
+      },
+      {
+        "stimulus": "La ___ es grande.",
+        "answers": [
+          "la pantalla",
+          "pantalla",
+          "pantalla"
+        ],
+        "tag": "dispositivos",
+        "sub": "het scherm"
+      },
+      {
+        "stimulus": "Escucho música con ___.",
+        "answers": [
+          "los auriculares",
+          "auriculares",
+          "auriculares"
+        ],
+        "tag": "dispositivos",
+        "sub": "de oortjes / koptelefoon"
+      },
+      {
+        "stimulus": "¿Tienes un ___?",
+        "answers": [
+          "el cargador",
+          "cargador",
+          "cargador"
+        ],
+        "tag": "dispositivos",
+        "sub": "de oplader"
+      },
+      {
+        "stimulus": "No tengo ___.",
+        "answers": [
+          "la batería",
+          "batería",
+          "batería"
+        ],
+        "tag": "dispositivos",
+        "sub": "de batterij"
+      },
+      {
+        "stimulus": "Busco información en ___.",
+        "answers": [
+          "internet",
+          "internet"
+        ],
+        "tag": "internet",
+        "sub": "internet"
+      },
+      {
+        "stimulus": "Paso mucho tiempo en las ___.",
+        "answers": [
+          "las redes sociales",
+          "redes sociales",
+          "redes sociales"
+        ],
+        "tag": "internet",
+        "sub": "de sociale media"
+      },
+      {
+        "stimulus": "¿Cuál es la contraseña de la ___?",
+        "answers": [
+          "la wifi",
+          "wifi",
+          "wifi"
+        ],
+        "tag": "internet",
+        "sub": "de wifi"
+      },
+      {
+        "stimulus": "No recuerdo mi ___.",
+        "answers": [
+          "la contraseña",
+          "contraseña",
+          "contraseña"
+        ],
+        "tag": "internet",
+        "sub": "het wachtwoord"
+      },
+      {
+        "stimulus": "Escribe tu ___ y contraseña.",
+        "answers": [
+          "el usuario",
+          "usuario",
+          "usuario"
+        ],
+        "tag": "internet",
+        "sub": "de gebruikersnaam / gebruiker"
+      },
+      {
+        "stimulus": "Tengo un ___ en Instagram.",
+        "answers": [
+          "el perfil",
+          "perfil",
+          "perfil"
+        ],
+        "tag": "internet",
+        "sub": "het profiel"
+      },
+      {
+        "stimulus": "Te mando un ___.",
+        "answers": [
+          "el mensaje",
+          "mensaje",
+          "mensaje"
+        ],
+        "tag": "internet",
+        "sub": "het bericht"
+      },
+      {
+        "stimulus": "Subo un ___ a YouTube.",
+        "answers": [
+          "el vídeo",
+          "vídeo",
+          "vídeo"
+        ],
+        "tag": "internet",
+        "sub": "de video"
+      },
+      {
+        "stimulus": "Hacemos una ___.",
+        "answers": [
+          "la videollamada",
+          "videollamada",
+          "videollamada"
+        ],
+        "tag": "internet",
+        "sub": "het videogesprek"
+      },
+      {
+        "stimulus": "___ voy a salir.",
+        "answers": [
+          "este fin de semana",
+          "este fin de semana"
+        ],
+        "tag": "planes",
+        "sub": "dit weekend"
+      },
+      {
+        "stimulus": "___ voy a jugar al fútbol.",
+        "answers": [
+          "mañana",
+          "mañana"
+        ],
+        "tag": "planes",
+        "sub": "morgen"
+      },
+      {
+        "stimulus": "___ voy a comprar un móvil nuevo.",
+        "answers": [
+          "pronto",
+          "pronto"
+        ],
+        "tag": "planes",
+        "sub": "binnenkort / snel"
+      },
+      {
+        "stimulus": "Vamos a ___ en la plaza.",
+        "answers": [
+          "quedar",
+          "quedar"
+        ],
+        "tag": "planes",
+        "sub": "afspreken"
+      },
+      {
+        "stimulus": "El sábado voy a ___ con amigos.",
+        "answers": [
+          "salir",
+          "salir"
+        ],
+        "tag": "planes",
+        "sub": "uitgaan"
+      },
+      {
+        "stimulus": "___ las redes son útiles.",
+        "answers": [
+          "creo que",
+          "creo que"
+        ],
+        "tag": "opinar",
+        "sub": "ik denk / vind dat"
+      },
+      {
+        "stimulus": "___ el móvil es práctico.",
+        "answers": [
+          "pienso que",
+          "pienso que"
+        ],
+        "tag": "opinar",
+        "sub": "ik denk dat"
+      },
+      {
+        "stimulus": "___ pasamos mucho tiempo online.",
+        "answers": [
+          "me parece que",
+          "me parece que"
+        ],
+        "tag": "opinar",
+        "sub": "het lijkt me dat"
+      },
+      {
+        "stimulus": "___, es un problema.",
+        "answers": [
+          "en mi opinión",
+          "en mi opinión"
+        ],
+        "tag": "opinar",
+        "sub": "volgens mij / naar mijn mening"
+      },
+      {
+        "stimulus": "No ___ contigo.",
+        "answers": [
+          "estoy de acuerdo no",
+          "estoy de acuerdo",
+          "estoy de acuerdo"
+        ],
+        "tag": "opinar",
+        "sub": "ik ben het (niet) eens"
+      },
+      {
+        "stimulus": "El móvil es muy ___.",
+        "answers": [
+          "útil",
+          "útil"
+        ],
+        "tag": "adjmedia",
+        "sub": "nuttig"
+      },
+      {
+        "stimulus": "Paso tres horas de ___ al día.",
+        "answers": [
+          "la pantalla tiempo de",
+          "pantalla tiempo de",
+          "la pantalla",
+          "pantalla",
+          "pantalla"
+        ],
+        "tag": "adjmedia",
+        "sub": "schermtijd"
+      }
+    ]
+  }
+}

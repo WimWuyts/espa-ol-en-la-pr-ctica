@@ -1,0 +1,647 @@
+{
+  "id": "es-c6plus-u1-que-palabra",
+  "title": "¿Qué palabra?",
+  "subtitle": "C6+ · U1 · van thema naar woord (ophalen zonder zin)",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "rutina → «wakker worden»",
+        "answers": [
+          "despertarse"
+        ],
+        "hint": "d__________",
+        "tag": "rutina",
+        "sub": "ww. refl. (e→ie)"
+      },
+      {
+        "stimulus": "rutina → «opstaan»",
+        "answers": [
+          "levantarse"
+        ],
+        "hint": "l_________",
+        "tag": "rutina",
+        "sub": "ww. refl."
+      },
+      {
+        "stimulus": "rutina → «(zich) douchen»",
+        "answers": [
+          "ducharse"
+        ],
+        "hint": "d_______",
+        "tag": "rutina",
+        "sub": "ww. refl."
+      },
+      {
+        "stimulus": "rutina → «de tanden poetsen»",
+        "answers": [
+          "lavarse los dientes"
+        ],
+        "hint": "l______ l__ d______",
+        "tag": "rutina",
+        "sub": "ww. refl."
+      },
+      {
+        "stimulus": "rutina → «zich aankleden»",
+        "answers": [
+          "vestirse"
+        ],
+        "hint": "v_______",
+        "tag": "rutina",
+        "sub": "ww. refl. (e→i)"
+      },
+      {
+        "stimulus": "rutina → «zich kammen»",
+        "answers": [
+          "peinarse"
+        ],
+        "hint": "p_______",
+        "tag": "rutina",
+        "sub": "ww. refl."
+      },
+      {
+        "stimulus": "rutina → «naar bed gaan»",
+        "answers": [
+          "acostarse"
+        ],
+        "hint": "a________",
+        "tag": "rutina",
+        "sub": "ww. refl. (o→ue)"
+      },
+      {
+        "stimulus": "rutina → «in slaap vallen»",
+        "answers": [
+          "dormirse"
+        ],
+        "hint": "d_______",
+        "tag": "rutina",
+        "sub": "ww. refl. (o→ue)"
+      },
+      {
+        "stimulus": "rutina → «gaan zitten»",
+        "answers": [
+          "sentarse"
+        ],
+        "hint": "s_______",
+        "tag": "rutina",
+        "sub": "ww. refl. (e→ie)"
+      },
+      {
+        "stimulus": "rutina → «ontbijten»",
+        "answers": [
+          "desayunar"
+        ],
+        "hint": "d________",
+        "tag": "rutina",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "rutina → «eten ('s middags)»",
+        "answers": [
+          "comer"
+        ],
+        "hint": "c____",
+        "tag": "rutina",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "rutina → «een tussendoortje eten»",
+        "answers": [
+          "merendar"
+        ],
+        "hint": "m_______",
+        "tag": "rutina",
+        "sub": "ww. (e→ie)"
+      },
+      {
+        "stimulus": "rutina → «avondeten»",
+        "answers": [
+          "cenar"
+        ],
+        "hint": "c____",
+        "tag": "rutina",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "rutina → «het huis uit gaan»",
+        "answers": [
+          "salir de casa"
+        ],
+        "hint": "s____ d_ c___",
+        "tag": "rutina",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "rutina → «naar huis terugkeren»",
+        "answers": [
+          "volver a casa"
+        ],
+        "hint": "v_____ a c___",
+        "tag": "rutina",
+        "sub": "ww. (o→ue)"
+      },
+      {
+        "stimulus": "rutina → «huiswerk maken»",
+        "answers": [
+          "hacer los deberes"
+        ],
+        "hint": "h____ l__ d______",
+        "tag": "rutina",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "rutina → «sporten»",
+        "answers": [
+          "hacer deporte"
+        ],
+        "hint": "h____ d______",
+        "tag": "rutina",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "rutina → «de hond uitlaten»",
+        "answers": [
+          "sacar al perro"
+        ],
+        "hint": "s____ a_ p____",
+        "tag": "rutina",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "rutina → «uitrusten»",
+        "answers": [
+          "descansar"
+        ],
+        "hint": "d________",
+        "tag": "rutina",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "rutina → «de routine / dagindeling»",
+        "answers": [
+          "la rutina",
+          "rutina"
+        ],
+        "hint": "r_____",
+        "tag": "rutina",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "hora → «hoe laat is het?»",
+        "answers": [
+          "¿Qué hora es?"
+        ],
+        "hint": "¿___ h___ e__",
+        "tag": "hora",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "hora → «om hoe laat?»",
+        "answers": [
+          "¿A qué hora?"
+        ],
+        "hint": "¿_ q__ h____",
+        "tag": "hora",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "hora → «het is één uur»",
+        "answers": [
+          "es la una"
+        ],
+        "hint": "e_ l_ u__",
+        "tag": "hora",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "hora → «het is twee uur»",
+        "answers": [
+          "son las dos"
+        ],
+        "hint": "s__ l__ d__",
+        "tag": "hora",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "hora → «kwart over»",
+        "answers": [
+          "y cuarto"
+        ],
+        "hint": "y c_____",
+        "tag": "hora",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "hora → «half»",
+        "answers": [
+          "y media"
+        ],
+        "hint": "y m____",
+        "tag": "hora",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "hora → «kwart voor»",
+        "answers": [
+          "menos cuarto"
+        ],
+        "hint": "m____ c_____",
+        "tag": "hora",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "hora → «precies (op het uur)»",
+        "answers": [
+          "en punto"
+        ],
+        "hint": "e_ p____",
+        "tag": "hora",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "hora → «'s ochtends (bij een uur)»",
+        "answers": [
+          "de la mañana"
+        ],
+        "hint": "d_ l_ m_____",
+        "tag": "hora",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "hora → «'s middags (bij een uur)»",
+        "answers": [
+          "de la tarde"
+        ],
+        "hint": "d_ l_ t____",
+        "tag": "hora",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "hora → «'s avonds (bij een uur)»",
+        "answers": [
+          "de la noche"
+        ],
+        "hint": "d_ l_ n____",
+        "tag": "hora",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "hora → «de middag (12u)»",
+        "answers": [
+          "el mediodía",
+          "mediodía"
+        ],
+        "hint": "m_______",
+        "tag": "hora",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "calendario → «de maandag»",
+        "answers": [
+          "el lunes",
+          "lunes"
+        ],
+        "hint": "l____",
+        "tag": "calendario",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "calendario → «vandaag»",
+        "answers": [
+          "hoy"
+        ],
+        "hint": "h__",
+        "tag": "calendario",
+        "sub": "bijw."
+      },
+      {
+        "stimulus": "calendario → «morgen»",
+        "answers": [
+          "mañana"
+        ],
+        "hint": "m_____",
+        "tag": "calendario",
+        "sub": "bijw."
+      },
+      {
+        "stimulus": "calendario → «januari»",
+        "answers": [
+          "enero"
+        ],
+        "hint": "e____",
+        "tag": "calendario",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "calendario → «juli»",
+        "answers": [
+          "julio"
+        ],
+        "hint": "j____",
+        "tag": "calendario",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "calendario → «de lente»",
+        "answers": [
+          "la primavera",
+          "primavera"
+        ],
+        "hint": "p________",
+        "tag": "calendario",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "calendario → «de zomer»",
+        "answers": [
+          "el verano",
+          "verano"
+        ],
+        "hint": "v_____",
+        "tag": "calendario",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "calendario → «de herfst»",
+        "answers": [
+          "el otoño",
+          "otoño"
+        ],
+        "hint": "o____",
+        "tag": "calendario",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "calendario → «de winter»",
+        "answers": [
+          "el invierno",
+          "invierno"
+        ],
+        "hint": "i_______",
+        "tag": "calendario",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "frecuencia → «altijd»",
+        "answers": [
+          "siempre"
+        ],
+        "hint": "s______",
+        "tag": "frecuencia",
+        "sub": "bijw."
+      },
+      {
+        "stimulus": "frecuencia → «bijna altijd»",
+        "answers": [
+          "casi siempre"
+        ],
+        "hint": "c___ s______",
+        "tag": "frecuencia",
+        "sub": "bijw."
+      },
+      {
+        "stimulus": "frecuencia → «meestal»",
+        "answers": [
+          "normalmente"
+        ],
+        "hint": "n__________",
+        "tag": "frecuencia",
+        "sub": "bijw."
+      },
+      {
+        "stimulus": "frecuencia → «soms»",
+        "answers": [
+          "a veces"
+        ],
+        "hint": "a v____",
+        "tag": "frecuencia",
+        "sub": "bijw."
+      },
+      {
+        "stimulus": "frecuencia → «vaak»",
+        "answers": [
+          "a menudo"
+        ],
+        "hint": "a m_____",
+        "tag": "frecuencia",
+        "sub": "bijw."
+      },
+      {
+        "stimulus": "frecuencia → «bijna nooit»",
+        "answers": [
+          "casi nunca"
+        ],
+        "hint": "c___ n____",
+        "tag": "frecuencia",
+        "sub": "bijw."
+      },
+      {
+        "stimulus": "frecuencia → «nooit»",
+        "answers": [
+          "nunca"
+        ],
+        "hint": "n____",
+        "tag": "frecuencia",
+        "sub": "bijw."
+      },
+      {
+        "stimulus": "frecuencia → «elke dag»",
+        "answers": [
+          "todos los días"
+        ],
+        "hint": "t____ l__ d___",
+        "tag": "frecuencia",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "conectores → «eerst»",
+        "answers": [
+          "primero"
+        ],
+        "hint": "p______",
+        "tag": "conectores",
+        "sub": "conector"
+      },
+      {
+        "stimulus": "conectores → «daarna / dan»",
+        "answers": [
+          "luego"
+        ],
+        "hint": "l____",
+        "tag": "conectores",
+        "sub": "conector"
+      },
+      {
+        "stimulus": "conectores → «daarna»",
+        "answers": [
+          "después"
+        ],
+        "hint": "d______",
+        "tag": "conectores",
+        "sub": "conector"
+      },
+      {
+        "stimulus": "conectores → «ten slotte»",
+        "answers": [
+          "por último"
+        ],
+        "hint": "p__ ú_____",
+        "tag": "conectores",
+        "sub": "conector"
+      },
+      {
+        "stimulus": "conectores → «vóór (+ inf.)»",
+        "answers": [
+          "antes de"
+        ],
+        "hint": "a____ d_",
+        "tag": "conectores",
+        "sub": "conector"
+      },
+      {
+        "stimulus": "conectores → «want / omdat»",
+        "answers": [
+          "porque"
+        ],
+        "hint": "p_____",
+        "tag": "conectores",
+        "sub": "conector"
+      },
+      {
+        "stimulus": "sentimientos → «verdrietig»",
+        "answers": [
+          "triste"
+        ],
+        "hint": "t_____",
+        "tag": "sentimientos",
+        "sub": "adj."
+      },
+      {
+        "stimulus": "ocio → «dansen»",
+        "answers": [
+          "bailar"
+        ],
+        "hint": "b_____",
+        "tag": "ocio",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "ocio → «lezen»",
+        "answers": [
+          "leer"
+        ],
+        "hint": "l___",
+        "tag": "ocio",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "ocio → «afspreken met vrienden»",
+        "answers": [
+          "quedar con amigos"
+        ],
+        "hint": "q_____ c__ a_____",
+        "tag": "ocio",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "ocio → «series kijken»",
+        "answers": [
+          "ver series"
+        ],
+        "hint": "v__ s_____",
+        "tag": "ocio",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "ocio → «muziek luisteren»",
+        "answers": [
+          "escuchar música"
+        ],
+        "hint": "e_______ m_____",
+        "tag": "ocio",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "ocio → «de hobby»",
+        "answers": [
+          "la afición",
+          "afición"
+        ],
+        "hint": "a______",
+        "tag": "ocio",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "gustar → «ik vind (het) leuk / lekker»",
+        "answers": [
+          "me gusta"
+        ],
+        "hint": "m_ g____",
+        "tag": "gustar",
+        "sub": "expr. (gustar)"
+      },
+      {
+        "stimulus": "gustar → «ik vind (ze) leuk»",
+        "answers": [
+          "me gustan"
+        ],
+        "hint": "m_ g_____",
+        "tag": "gustar",
+        "sub": "expr. (gustar)"
+      },
+      {
+        "stimulus": "gustar → «ik vind (het) geweldig»",
+        "answers": [
+          "me encanta"
+        ],
+        "hint": "m_ e______",
+        "tag": "gustar",
+        "sub": "expr. (encantar)"
+      },
+      {
+        "stimulus": "gustar → «vind jij (het) leuk?»",
+        "answers": [
+          "¿te gusta…?"
+        ],
+        "hint": "¿__ g______",
+        "tag": "gustar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "gustar → «ik ook (bij +)»",
+        "answers": [
+          "a mí también"
+        ],
+        "hint": "a m_ t______",
+        "tag": "gustar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "gustar → «ik ook niet (bij −)»",
+        "answers": [
+          "a mí tampoco"
+        ],
+        "hint": "a m_ t______",
+        "tag": "gustar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "gustar → «ik verkies / geef de voorkeur aan»",
+        "answers": [
+          "prefiero"
+        ],
+        "hint": "p_______",
+        "tag": "gustar",
+        "sub": "ww. (e→ie)"
+      }
+    ]
+  }
+}

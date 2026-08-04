@@ -1,0 +1,406 @@
+{
+  "id": "es-c6plus-u6-dictado",
+  "title": "Dictado",
+  "subtitle": "C6+ · U6 · luister en typ · lees eerst, dan afdekken",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "🔊 el recuerdo",
+        "answers": [
+          "el recuerdo",
+          "recuerdo"
+        ],
+        "tag": "infancia",
+        "sub": "de herinnering"
+      },
+      {
+        "stimulus": "🔊 la infancia",
+        "answers": [
+          "la infancia",
+          "infancia"
+        ],
+        "tag": "infancia",
+        "sub": "de kindertijd"
+      },
+      {
+        "stimulus": "🔊 el juguete",
+        "answers": [
+          "el juguete",
+          "juguete"
+        ],
+        "tag": "infancia",
+        "sub": "het speelgoed"
+      },
+      {
+        "stimulus": "🔊 jugar",
+        "answers": [
+          "jugar"
+        ],
+        "tag": "infancia",
+        "sub": "spelen"
+      },
+      {
+        "stimulus": "🔊 soñar",
+        "answers": [
+          "soñar"
+        ],
+        "tag": "infancia",
+        "sub": "dromen"
+      },
+      {
+        "stimulus": "🔊 pasarlo bien",
+        "answers": [
+          "pasarlo bien"
+        ],
+        "tag": "infancia",
+        "sub": "zich amuseren"
+      },
+      {
+        "stimulus": "🔊 la escuela",
+        "answers": [
+          "la escuela",
+          "escuela"
+        ],
+        "tag": "escuela",
+        "sub": "de school"
+      },
+      {
+        "stimulus": "🔊 el patio",
+        "answers": [
+          "el patio",
+          "patio"
+        ],
+        "tag": "escuela",
+        "sub": "de speelplaats"
+      },
+      {
+        "stimulus": "🔊 aprender",
+        "answers": [
+          "aprender"
+        ],
+        "tag": "escuela",
+        "sub": "leren"
+      },
+      {
+        "stimulus": "🔊 el recreo",
+        "answers": [
+          "el recreo",
+          "recreo"
+        ],
+        "tag": "escuela",
+        "sub": "de speeltijd/pauze"
+      },
+      {
+        "stimulus": "🔊 los abuelos",
+        "answers": [
+          "los abuelos",
+          "abuelos"
+        ],
+        "tag": "familia",
+        "sub": "de grootouders"
+      },
+      {
+        "stimulus": "🔊 el pueblo",
+        "answers": [
+          "el pueblo",
+          "pueblo"
+        ],
+        "tag": "familia",
+        "sub": "het dorp"
+      },
+      {
+        "stimulus": "🔊 la casa de campo",
+        "answers": [
+          "la casa de campo",
+          "casa de campo"
+        ],
+        "tag": "familia",
+        "sub": "het buitenhuis"
+      },
+      {
+        "stimulus": "🔊 la mascota",
+        "answers": [
+          "la mascota",
+          "mascota"
+        ],
+        "tag": "familia",
+        "sub": "het huisdier"
+      },
+      {
+        "stimulus": "🔊 cuidar",
+        "answers": [
+          "cuidar"
+        ],
+        "tag": "familia",
+        "sub": "verzorgen"
+      },
+      {
+        "stimulus": "🔊 era",
+        "answers": [
+          "era"
+        ],
+        "tag": "imperfecto",
+        "sub": "was (ser)"
+      },
+      {
+        "stimulus": "🔊 iba",
+        "answers": [
+          "iba"
+        ],
+        "tag": "imperfecto",
+        "sub": "ging (ir)"
+      },
+      {
+        "stimulus": "🔊 veía",
+        "answers": [
+          "veía"
+        ],
+        "tag": "imperfecto",
+        "sub": "zag / keek (ver)"
+      },
+      {
+        "stimulus": "🔊 tenía",
+        "answers": [
+          "tenía"
+        ],
+        "tag": "imperfecto",
+        "sub": "had (tener)"
+      },
+      {
+        "stimulus": "🔊 jugaba",
+        "answers": [
+          "jugaba"
+        ],
+        "tag": "imperfecto",
+        "sub": "speelde (jugar)"
+      },
+      {
+        "stimulus": "🔊 vivía",
+        "answers": [
+          "vivía"
+        ],
+        "tag": "imperfecto",
+        "sub": "woonde (vivir)"
+      },
+      {
+        "stimulus": "🔊 había",
+        "answers": [
+          "había"
+        ],
+        "tag": "imperfecto",
+        "sub": "er was/waren (haber)"
+      },
+      {
+        "stimulus": "🔊 solía",
+        "answers": [
+          "solía"
+        ],
+        "tag": "imperfecto",
+        "sub": "placht (soler)"
+      },
+      {
+        "stimulus": "🔊 antes",
+        "answers": [
+          "antes"
+        ],
+        "tag": "antesahora",
+        "sub": "vroeger"
+      },
+      {
+        "stimulus": "🔊 ahora",
+        "answers": [
+          "ahora"
+        ],
+        "tag": "antesahora",
+        "sub": "nu"
+      },
+      {
+        "stimulus": "🔊 ya no",
+        "answers": [
+          "ya no"
+        ],
+        "tag": "antesahora",
+        "sub": "niet meer"
+      },
+      {
+        "stimulus": "🔊 todavía",
+        "answers": [
+          "todavía"
+        ],
+        "tag": "antesahora",
+        "sub": "nog steeds"
+      },
+      {
+        "stimulus": "🔊 siempre",
+        "answers": [
+          "siempre"
+        ],
+        "tag": "antesahora",
+        "sub": "altijd"
+      },
+      {
+        "stimulus": "🔊 a menudo",
+        "answers": [
+          "a menudo"
+        ],
+        "tag": "antesahora",
+        "sub": "vaak"
+      },
+      {
+        "stimulus": "🔊 todos los días",
+        "answers": [
+          "todos los días"
+        ],
+        "tag": "antesahora",
+        "sub": "elke dag"
+      },
+      {
+        "stimulus": "🔊 de repente",
+        "answers": [
+          "de repente"
+        ],
+        "tag": "antesahora",
+        "sub": "plots"
+      },
+      {
+        "stimulus": "🔊 más … que",
+        "answers": [
+          "más … que"
+        ],
+        "tag": "comparar",
+        "sub": "meer/… -er dan"
+      },
+      {
+        "stimulus": "🔊 menos … que",
+        "answers": [
+          "menos … que"
+        ],
+        "tag": "comparar",
+        "sub": "minder … dan"
+      },
+      {
+        "stimulus": "🔊 tan … como",
+        "answers": [
+          "tan … como"
+        ],
+        "tag": "comparar",
+        "sub": "even … als"
+      },
+      {
+        "stimulus": "🔊 mejor que",
+        "answers": [
+          "mejor que"
+        ],
+        "tag": "comparar",
+        "sub": "beter dan"
+      },
+      {
+        "stimulus": "🔊 peor que",
+        "answers": [
+          "peor que"
+        ],
+        "tag": "comparar",
+        "sub": "slechter dan"
+      },
+      {
+        "stimulus": "🔊 mayor que",
+        "answers": [
+          "mayor que"
+        ],
+        "tag": "comparar",
+        "sub": "ouder/groter dan"
+      },
+      {
+        "stimulus": "🔊 menor que",
+        "answers": [
+          "menor que"
+        ],
+        "tag": "comparar",
+        "sub": "jonger/kleiner dan"
+      },
+      {
+        "stimulus": "🔊 que",
+        "answers": [
+          "que"
+        ],
+        "tag": "relativo",
+        "sub": "die/dat (betrekkelijk)"
+      },
+      {
+        "stimulus": "🔊 donde",
+        "answers": [
+          "donde"
+        ],
+        "tag": "relativo",
+        "sub": "waar"
+      },
+      {
+        "stimulus": "🔊 el lugar",
+        "answers": [
+          "el lugar",
+          "lugar"
+        ],
+        "tag": "relativo",
+        "sub": "de plek"
+      },
+      {
+        "stimulus": "🔊 la época",
+        "answers": [
+          "la época",
+          "época"
+        ],
+        "tag": "relativo",
+        "sub": "het tijdperk/de tijd"
+      },
+      {
+        "stimulus": "🔊 feliz",
+        "answers": [
+          "feliz"
+        ],
+        "tag": "opinar",
+        "sub": "gelukkig"
+      },
+      {
+        "stimulus": "🔊 diferente",
+        "answers": [
+          "diferente"
+        ],
+        "tag": "opinar",
+        "sub": "anders"
+      },
+      {
+        "stimulus": "🔊 echar de menos",
+        "answers": [
+          "echar de menos"
+        ],
+        "tag": "opinar",
+        "sub": "missen"
+      },
+      {
+        "stimulus": "🔊 me acuerdo de",
+        "answers": [
+          "me acuerdo de"
+        ],
+        "tag": "opinar",
+        "sub": "ik herinner me"
+      },
+      {
+        "stimulus": "🔊 creo que antes",
+        "answers": [
+          "creo que antes"
+        ],
+        "tag": "opinar",
+        "sub": "ik denk dat vroeger"
+      }
+    ]
+  }
+}

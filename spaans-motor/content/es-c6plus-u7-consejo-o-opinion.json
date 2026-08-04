@@ -1,0 +1,100 @@
+{
+  "id": "es-c6plus-u7-consejo-o-opinion",
+  "title": "¿Consejo u opinión?",
+  "subtitle": "U7 · raad geven of vinden",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Geeft de zin een raad (imperativo) of een mening?",
+    "categories": [
+      {
+        "id": "consejo",
+        "label": "consejo<br><small>imperativo</small>",
+        "glaze": "#E0A22F"
+      },
+      {
+        "id": "opinion",
+        "label": "opinión<br><small>creo que…</small>",
+        "glaze": "#8B5E9E"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "Bebe más agua.",
+        "answer": "consejo",
+        "tag": "con",
+        "sub": "imperativo"
+      },
+      {
+        "stimulus": "Creo que el reciclaje es necesario.",
+        "answer": "opinion",
+        "tag": "op",
+        "sub": "creo que"
+      },
+      {
+        "stimulus": "Duerme ocho horas.",
+        "answer": "consejo",
+        "tag": "con",
+        "sub": "imperativo"
+      },
+      {
+        "stimulus": "Me parece que comemos mal.",
+        "answer": "opinion",
+        "tag": "op",
+        "sub": "me parece"
+      },
+      {
+        "stimulus": "Recicla el plástico.",
+        "answer": "consejo",
+        "tag": "con",
+        "sub": "imperativo"
+      },
+      {
+        "stimulus": "Estoy de acuerdo contigo.",
+        "answer": "opinion",
+        "tag": "op",
+        "sub": "instemmen"
+      },
+      {
+        "stimulus": "Haz deporte tres veces por semana.",
+        "answer": "consejo",
+        "tag": "con",
+        "sub": "haz"
+      },
+      {
+        "stimulus": "No estoy de acuerdo con eso.",
+        "answer": "opinion",
+        "tag": "op",
+        "sub": "oneens"
+      },
+      {
+        "stimulus": "Ve al médico si te duele.",
+        "answer": "consejo",
+        "tag": "con",
+        "sub": "ve · ir"
+      },
+      {
+        "stimulus": "Pienso que el clima cambia.",
+        "answer": "opinion",
+        "tag": "op",
+        "sub": "pienso que"
+      },
+      {
+        "stimulus": "Apaga la luz al salir.",
+        "answer": "consejo",
+        "tag": "con",
+        "sub": "imperativo"
+      },
+      {
+        "stimulus": "En mi opinión, hay que actuar.",
+        "answer": "opinion",
+        "tag": "op",
+        "sub": "en mi opinión"
+      }
+    ]
+  }
+}

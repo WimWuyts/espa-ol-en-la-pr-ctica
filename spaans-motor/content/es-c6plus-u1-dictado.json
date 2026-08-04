@@ -1,0 +1,595 @@
+{
+  "id": "es-c6plus-u1-dictado",
+  "title": "Dictado",
+  "subtitle": "C6+ · U1 · luister en typ · lees eerst, dan afdekken",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "🔊 despertarse",
+        "answers": [
+          "despertarse"
+        ],
+        "tag": "rutina",
+        "sub": "wakker worden"
+      },
+      {
+        "stimulus": "🔊 levantarse",
+        "answers": [
+          "levantarse"
+        ],
+        "tag": "rutina",
+        "sub": "opstaan"
+      },
+      {
+        "stimulus": "🔊 ducharse",
+        "answers": [
+          "ducharse"
+        ],
+        "tag": "rutina",
+        "sub": "(zich) douchen"
+      },
+      {
+        "stimulus": "🔊 lavarse los dientes",
+        "answers": [
+          "lavarse los dientes"
+        ],
+        "tag": "rutina",
+        "sub": "de tanden poetsen"
+      },
+      {
+        "stimulus": "🔊 vestirse",
+        "answers": [
+          "vestirse"
+        ],
+        "tag": "rutina",
+        "sub": "zich aankleden"
+      },
+      {
+        "stimulus": "🔊 peinarse",
+        "answers": [
+          "peinarse"
+        ],
+        "tag": "rutina",
+        "sub": "zich kammen"
+      },
+      {
+        "stimulus": "🔊 acostarse",
+        "answers": [
+          "acostarse"
+        ],
+        "tag": "rutina",
+        "sub": "naar bed gaan"
+      },
+      {
+        "stimulus": "🔊 dormirse",
+        "answers": [
+          "dormirse"
+        ],
+        "tag": "rutina",
+        "sub": "in slaap vallen"
+      },
+      {
+        "stimulus": "🔊 sentarse",
+        "answers": [
+          "sentarse"
+        ],
+        "tag": "rutina",
+        "sub": "gaan zitten"
+      },
+      {
+        "stimulus": "🔊 desayunar",
+        "answers": [
+          "desayunar"
+        ],
+        "tag": "rutina",
+        "sub": "ontbijten"
+      },
+      {
+        "stimulus": "🔊 comer",
+        "answers": [
+          "comer"
+        ],
+        "tag": "rutina",
+        "sub": "eten ('s middags)"
+      },
+      {
+        "stimulus": "🔊 merendar",
+        "answers": [
+          "merendar"
+        ],
+        "tag": "rutina",
+        "sub": "een tussendoortje eten"
+      },
+      {
+        "stimulus": "🔊 cenar",
+        "answers": [
+          "cenar"
+        ],
+        "tag": "rutina",
+        "sub": "avondeten"
+      },
+      {
+        "stimulus": "🔊 salir de casa",
+        "answers": [
+          "salir de casa"
+        ],
+        "tag": "rutina",
+        "sub": "het huis uit gaan"
+      },
+      {
+        "stimulus": "🔊 volver a casa",
+        "answers": [
+          "volver a casa"
+        ],
+        "tag": "rutina",
+        "sub": "naar huis terugkeren"
+      },
+      {
+        "stimulus": "🔊 hacer los deberes",
+        "answers": [
+          "hacer los deberes"
+        ],
+        "tag": "rutina",
+        "sub": "huiswerk maken"
+      },
+      {
+        "stimulus": "🔊 hacer deporte",
+        "answers": [
+          "hacer deporte"
+        ],
+        "tag": "rutina",
+        "sub": "sporten"
+      },
+      {
+        "stimulus": "🔊 sacar al perro",
+        "answers": [
+          "sacar al perro"
+        ],
+        "tag": "rutina",
+        "sub": "de hond uitlaten"
+      },
+      {
+        "stimulus": "🔊 descansar",
+        "answers": [
+          "descansar"
+        ],
+        "tag": "rutina",
+        "sub": "uitrusten"
+      },
+      {
+        "stimulus": "🔊 la rutina",
+        "answers": [
+          "la rutina",
+          "rutina"
+        ],
+        "tag": "rutina",
+        "sub": "de routine / dagindeling"
+      },
+      {
+        "stimulus": "🔊 ¿Qué hora es?",
+        "answers": [
+          "¿Qué hora es?"
+        ],
+        "tag": "hora",
+        "sub": "hoe laat is het?"
+      },
+      {
+        "stimulus": "🔊 ¿A qué hora?",
+        "answers": [
+          "¿A qué hora?"
+        ],
+        "tag": "hora",
+        "sub": "om hoe laat?"
+      },
+      {
+        "stimulus": "🔊 es la una",
+        "answers": [
+          "es la una"
+        ],
+        "tag": "hora",
+        "sub": "het is één uur"
+      },
+      {
+        "stimulus": "🔊 son las dos",
+        "answers": [
+          "son las dos"
+        ],
+        "tag": "hora",
+        "sub": "het is twee uur"
+      },
+      {
+        "stimulus": "🔊 y cuarto",
+        "answers": [
+          "y cuarto"
+        ],
+        "tag": "hora",
+        "sub": "kwart over"
+      },
+      {
+        "stimulus": "🔊 y media",
+        "answers": [
+          "y media"
+        ],
+        "tag": "hora",
+        "sub": "half"
+      },
+      {
+        "stimulus": "🔊 menos cuarto",
+        "answers": [
+          "menos cuarto"
+        ],
+        "tag": "hora",
+        "sub": "kwart voor"
+      },
+      {
+        "stimulus": "🔊 en punto",
+        "answers": [
+          "en punto"
+        ],
+        "tag": "hora",
+        "sub": "precies (op het uur)"
+      },
+      {
+        "stimulus": "🔊 de la mañana",
+        "answers": [
+          "de la mañana"
+        ],
+        "tag": "hora",
+        "sub": "'s ochtends (bij een uur)"
+      },
+      {
+        "stimulus": "🔊 de la tarde",
+        "answers": [
+          "de la tarde"
+        ],
+        "tag": "hora",
+        "sub": "'s middags (bij een uur)"
+      },
+      {
+        "stimulus": "🔊 de la noche",
+        "answers": [
+          "de la noche"
+        ],
+        "tag": "hora",
+        "sub": "'s avonds (bij een uur)"
+      },
+      {
+        "stimulus": "🔊 el mediodía",
+        "answers": [
+          "el mediodía",
+          "mediodía"
+        ],
+        "tag": "hora",
+        "sub": "de middag (12u)"
+      },
+      {
+        "stimulus": "🔊 el lunes",
+        "answers": [
+          "el lunes",
+          "lunes"
+        ],
+        "tag": "calendario",
+        "sub": "de maandag"
+      },
+      {
+        "stimulus": "🔊 el fin de semana",
+        "answers": [
+          "el fin de semana",
+          "fin de semana"
+        ],
+        "tag": "calendario",
+        "sub": "het weekend"
+      },
+      {
+        "stimulus": "🔊 hoy",
+        "answers": [
+          "hoy"
+        ],
+        "tag": "calendario",
+        "sub": "vandaag"
+      },
+      {
+        "stimulus": "🔊 mañana",
+        "answers": [
+          "mañana"
+        ],
+        "tag": "calendario",
+        "sub": "morgen"
+      },
+      {
+        "stimulus": "🔊 enero",
+        "answers": [
+          "enero"
+        ],
+        "tag": "calendario",
+        "sub": "januari"
+      },
+      {
+        "stimulus": "🔊 julio",
+        "answers": [
+          "julio"
+        ],
+        "tag": "calendario",
+        "sub": "juli"
+      },
+      {
+        "stimulus": "🔊 la primavera",
+        "answers": [
+          "la primavera",
+          "primavera"
+        ],
+        "tag": "calendario",
+        "sub": "de lente"
+      },
+      {
+        "stimulus": "🔊 el verano",
+        "answers": [
+          "el verano",
+          "verano"
+        ],
+        "tag": "calendario",
+        "sub": "de zomer"
+      },
+      {
+        "stimulus": "🔊 el otoño",
+        "answers": [
+          "el otoño",
+          "otoño"
+        ],
+        "tag": "calendario",
+        "sub": "de herfst"
+      },
+      {
+        "stimulus": "🔊 el invierno",
+        "answers": [
+          "el invierno",
+          "invierno"
+        ],
+        "tag": "calendario",
+        "sub": "de winter"
+      },
+      {
+        "stimulus": "🔊 siempre",
+        "answers": [
+          "siempre"
+        ],
+        "tag": "frecuencia",
+        "sub": "altijd"
+      },
+      {
+        "stimulus": "🔊 casi siempre",
+        "answers": [
+          "casi siempre"
+        ],
+        "tag": "frecuencia",
+        "sub": "bijna altijd"
+      },
+      {
+        "stimulus": "🔊 normalmente",
+        "answers": [
+          "normalmente"
+        ],
+        "tag": "frecuencia",
+        "sub": "meestal"
+      },
+      {
+        "stimulus": "🔊 a veces",
+        "answers": [
+          "a veces"
+        ],
+        "tag": "frecuencia",
+        "sub": "soms"
+      },
+      {
+        "stimulus": "🔊 a menudo",
+        "answers": [
+          "a menudo"
+        ],
+        "tag": "frecuencia",
+        "sub": "vaak"
+      },
+      {
+        "stimulus": "🔊 casi nunca",
+        "answers": [
+          "casi nunca"
+        ],
+        "tag": "frecuencia",
+        "sub": "bijna nooit"
+      },
+      {
+        "stimulus": "🔊 nunca",
+        "answers": [
+          "nunca"
+        ],
+        "tag": "frecuencia",
+        "sub": "nooit"
+      },
+      {
+        "stimulus": "🔊 todos los días",
+        "answers": [
+          "todos los días"
+        ],
+        "tag": "frecuencia",
+        "sub": "elke dag"
+      },
+      {
+        "stimulus": "🔊 primero",
+        "answers": [
+          "primero"
+        ],
+        "tag": "conectores",
+        "sub": "eerst"
+      },
+      {
+        "stimulus": "🔊 luego",
+        "answers": [
+          "luego"
+        ],
+        "tag": "conectores",
+        "sub": "daarna / dan"
+      },
+      {
+        "stimulus": "🔊 después",
+        "answers": [
+          "después"
+        ],
+        "tag": "conectores",
+        "sub": "daarna"
+      },
+      {
+        "stimulus": "🔊 por último",
+        "answers": [
+          "por último"
+        ],
+        "tag": "conectores",
+        "sub": "ten slotte"
+      },
+      {
+        "stimulus": "🔊 antes de",
+        "answers": [
+          "antes de"
+        ],
+        "tag": "conectores",
+        "sub": "vóór (+ inf.)"
+      },
+      {
+        "stimulus": "🔊 porque",
+        "answers": [
+          "porque"
+        ],
+        "tag": "conectores",
+        "sub": "want / omdat"
+      },
+      {
+        "stimulus": "🔊 triste",
+        "answers": [
+          "triste"
+        ],
+        "tag": "sentimientos",
+        "sub": "verdrietig"
+      },
+      {
+        "stimulus": "🔊 bailar",
+        "answers": [
+          "bailar"
+        ],
+        "tag": "ocio",
+        "sub": "dansen"
+      },
+      {
+        "stimulus": "🔊 leer",
+        "answers": [
+          "leer"
+        ],
+        "tag": "ocio",
+        "sub": "lezen"
+      },
+      {
+        "stimulus": "🔊 quedar con amigos",
+        "answers": [
+          "quedar con amigos"
+        ],
+        "tag": "ocio",
+        "sub": "afspreken met vrienden"
+      },
+      {
+        "stimulus": "🔊 ver series",
+        "answers": [
+          "ver series"
+        ],
+        "tag": "ocio",
+        "sub": "series kijken"
+      },
+      {
+        "stimulus": "🔊 escuchar música",
+        "answers": [
+          "escuchar música"
+        ],
+        "tag": "ocio",
+        "sub": "muziek luisteren"
+      },
+      {
+        "stimulus": "🔊 la afición",
+        "answers": [
+          "la afición",
+          "afición"
+        ],
+        "tag": "ocio",
+        "sub": "de hobby"
+      },
+      {
+        "stimulus": "🔊 me gusta",
+        "answers": [
+          "me gusta"
+        ],
+        "tag": "gustar",
+        "sub": "ik vind (het) leuk / lekker"
+      },
+      {
+        "stimulus": "🔊 me gustan",
+        "answers": [
+          "me gustan"
+        ],
+        "tag": "gustar",
+        "sub": "ik vind (ze) leuk"
+      },
+      {
+        "stimulus": "🔊 me encanta",
+        "answers": [
+          "me encanta"
+        ],
+        "tag": "gustar",
+        "sub": "ik vind (het) geweldig"
+      },
+      {
+        "stimulus": "🔊 no me gusta nada",
+        "answers": [
+          "no me gusta nada"
+        ],
+        "tag": "gustar",
+        "sub": "ik vind (het) helemaal niet leuk"
+      },
+      {
+        "stimulus": "🔊 ¿te gusta…?",
+        "answers": [
+          "¿te gusta…?"
+        ],
+        "tag": "gustar",
+        "sub": "vind jij (het) leuk?"
+      },
+      {
+        "stimulus": "🔊 a mí también",
+        "answers": [
+          "a mí también"
+        ],
+        "tag": "gustar",
+        "sub": "ik ook (bij +)"
+      },
+      {
+        "stimulus": "🔊 a mí tampoco",
+        "answers": [
+          "a mí tampoco"
+        ],
+        "tag": "gustar",
+        "sub": "ik ook niet (bij −)"
+      },
+      {
+        "stimulus": "🔊 prefiero",
+        "answers": [
+          "prefiero"
+        ],
+        "tag": "gustar",
+        "sub": "ik verkies / geef de voorkeur aan"
+      }
+    ]
+  }
+}

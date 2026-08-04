@@ -1,0 +1,429 @@
+{
+  "id": "es-c6plus-u3-dictado",
+  "title": "Dictado",
+  "subtitle": "C6+ · U3 · luister en typ · lees eerst, dan afdekken",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "🔊 el móvil",
+        "answers": [
+          "el móvil",
+          "móvil"
+        ],
+        "tag": "dispositivos",
+        "sub": "de gsm / mobiel"
+      },
+      {
+        "stimulus": "🔊 el ordenador",
+        "answers": [
+          "el ordenador",
+          "ordenador"
+        ],
+        "tag": "dispositivos",
+        "sub": "de computer"
+      },
+      {
+        "stimulus": "🔊 la tableta",
+        "answers": [
+          "la tableta",
+          "tableta"
+        ],
+        "tag": "dispositivos",
+        "sub": "de tablet"
+      },
+      {
+        "stimulus": "🔊 la pantalla",
+        "answers": [
+          "la pantalla",
+          "pantalla"
+        ],
+        "tag": "dispositivos",
+        "sub": "het scherm"
+      },
+      {
+        "stimulus": "🔊 los auriculares",
+        "answers": [
+          "los auriculares",
+          "auriculares"
+        ],
+        "tag": "dispositivos",
+        "sub": "de oortjes / koptelefoon"
+      },
+      {
+        "stimulus": "🔊 el cargador",
+        "answers": [
+          "el cargador",
+          "cargador"
+        ],
+        "tag": "dispositivos",
+        "sub": "de oplader"
+      },
+      {
+        "stimulus": "🔊 la batería",
+        "answers": [
+          "la batería",
+          "batería"
+        ],
+        "tag": "dispositivos",
+        "sub": "de batterij"
+      },
+      {
+        "stimulus": "🔊 internet",
+        "answers": [
+          "internet"
+        ],
+        "tag": "internet",
+        "sub": "internet"
+      },
+      {
+        "stimulus": "🔊 las redes sociales",
+        "answers": [
+          "las redes sociales",
+          "redes sociales"
+        ],
+        "tag": "internet",
+        "sub": "de sociale media"
+      },
+      {
+        "stimulus": "🔊 la wifi",
+        "answers": [
+          "la wifi",
+          "wifi"
+        ],
+        "tag": "internet",
+        "sub": "de wifi"
+      },
+      {
+        "stimulus": "🔊 la contraseña",
+        "answers": [
+          "la contraseña",
+          "contraseña"
+        ],
+        "tag": "internet",
+        "sub": "het wachtwoord"
+      },
+      {
+        "stimulus": "🔊 el usuario",
+        "answers": [
+          "el usuario",
+          "usuario"
+        ],
+        "tag": "internet",
+        "sub": "de gebruikersnaam / gebruiker"
+      },
+      {
+        "stimulus": "🔊 el perfil",
+        "answers": [
+          "el perfil",
+          "perfil"
+        ],
+        "tag": "internet",
+        "sub": "het profiel"
+      },
+      {
+        "stimulus": "🔊 el mensaje",
+        "answers": [
+          "el mensaje",
+          "mensaje"
+        ],
+        "tag": "internet",
+        "sub": "het bericht"
+      },
+      {
+        "stimulus": "🔊 el vídeo",
+        "answers": [
+          "el vídeo",
+          "vídeo"
+        ],
+        "tag": "internet",
+        "sub": "de video"
+      },
+      {
+        "stimulus": "🔊 la videollamada",
+        "answers": [
+          "la videollamada",
+          "videollamada"
+        ],
+        "tag": "internet",
+        "sub": "het videogesprek"
+      },
+      {
+        "stimulus": "🔊 chatear",
+        "answers": [
+          "chatear"
+        ],
+        "tag": "digital",
+        "sub": "chatten"
+      },
+      {
+        "stimulus": "🔊 navegar",
+        "answers": [
+          "navegar"
+        ],
+        "tag": "digital",
+        "sub": "surfen (op internet)"
+      },
+      {
+        "stimulus": "🔊 subir",
+        "answers": [
+          "subir"
+        ],
+        "tag": "digital",
+        "sub": "uploaden / plaatsen"
+      },
+      {
+        "stimulus": "🔊 descargar",
+        "answers": [
+          "descargar"
+        ],
+        "tag": "digital",
+        "sub": "downloaden"
+      },
+      {
+        "stimulus": "🔊 compartir",
+        "answers": [
+          "compartir"
+        ],
+        "tag": "digital",
+        "sub": "delen"
+      },
+      {
+        "stimulus": "🔊 seguir",
+        "answers": [
+          "seguir"
+        ],
+        "tag": "digital",
+        "sub": "volgen"
+      },
+      {
+        "stimulus": "🔊 publicar",
+        "answers": [
+          "publicar"
+        ],
+        "tag": "digital",
+        "sub": "posten / publiceren"
+      },
+      {
+        "stimulus": "🔊 conectarse",
+        "answers": [
+          "conectarse"
+        ],
+        "tag": "digital",
+        "sub": "verbinden / inloggen"
+      },
+      {
+        "stimulus": "🔊 apagar",
+        "answers": [
+          "apagar"
+        ],
+        "tag": "digital",
+        "sub": "uitzetten"
+      },
+      {
+        "stimulus": "🔊 encender",
+        "answers": [
+          "encender"
+        ],
+        "tag": "digital",
+        "sub": "aanzetten"
+      },
+      {
+        "stimulus": "🔊 escribir",
+        "answers": [
+          "escribir"
+        ],
+        "tag": "comunicar",
+        "sub": "schrijven"
+      },
+      {
+        "stimulus": "🔊 llamar",
+        "answers": [
+          "llamar"
+        ],
+        "tag": "comunicar",
+        "sub": "(op)bellen"
+      },
+      {
+        "stimulus": "🔊 contar",
+        "answers": [
+          "contar"
+        ],
+        "tag": "comunicar",
+        "sub": "vertellen"
+      },
+      {
+        "stimulus": "🔊 decir",
+        "answers": [
+          "decir"
+        ],
+        "tag": "comunicar",
+        "sub": "zeggen"
+      },
+      {
+        "stimulus": "🔊 preguntar",
+        "answers": [
+          "preguntar"
+        ],
+        "tag": "comunicar",
+        "sub": "vragen"
+      },
+      {
+        "stimulus": "🔊 regalar",
+        "answers": [
+          "regalar"
+        ],
+        "tag": "comunicar",
+        "sub": "cadeau geven"
+      },
+      {
+        "stimulus": "🔊 ir a + infinitivo",
+        "answers": [
+          "ir a + infinitivo"
+        ],
+        "tag": "planes",
+        "sub": "gaan + inf. (nabije toekomst)"
+      },
+      {
+        "stimulus": "🔊 acabar de + inf.",
+        "answers": [
+          "acabar de + inf."
+        ],
+        "tag": "planes",
+        "sub": "net … hebben (gedaan)"
+      },
+      {
+        "stimulus": "🔊 este fin de semana",
+        "answers": [
+          "este fin de semana"
+        ],
+        "tag": "planes",
+        "sub": "dit weekend"
+      },
+      {
+        "stimulus": "🔊 mañana",
+        "answers": [
+          "mañana"
+        ],
+        "tag": "planes",
+        "sub": "morgen"
+      },
+      {
+        "stimulus": "🔊 pronto",
+        "answers": [
+          "pronto"
+        ],
+        "tag": "planes",
+        "sub": "binnenkort / snel"
+      },
+      {
+        "stimulus": "🔊 quedar",
+        "answers": [
+          "quedar"
+        ],
+        "tag": "planes",
+        "sub": "afspreken"
+      },
+      {
+        "stimulus": "🔊 salir",
+        "answers": [
+          "salir"
+        ],
+        "tag": "planes",
+        "sub": "uitgaan"
+      },
+      {
+        "stimulus": "🔊 hacer planes",
+        "answers": [
+          "hacer planes"
+        ],
+        "tag": "planes",
+        "sub": "plannen maken"
+      },
+      {
+        "stimulus": "🔊 creo que",
+        "answers": [
+          "creo que"
+        ],
+        "tag": "opinar",
+        "sub": "ik denk / vind dat"
+      },
+      {
+        "stimulus": "🔊 pienso que",
+        "answers": [
+          "pienso que"
+        ],
+        "tag": "opinar",
+        "sub": "ik denk dat"
+      },
+      {
+        "stimulus": "🔊 me parece que",
+        "answers": [
+          "me parece que"
+        ],
+        "tag": "opinar",
+        "sub": "het lijkt me dat"
+      },
+      {
+        "stimulus": "🔊 en mi opinión",
+        "answers": [
+          "en mi opinión"
+        ],
+        "tag": "opinar",
+        "sub": "volgens mij / naar mijn mening"
+      },
+      {
+        "stimulus": "🔊 estoy de acuerdo",
+        "answers": [
+          "estoy de acuerdo no",
+          "estoy de acuerdo"
+        ],
+        "tag": "opinar",
+        "sub": "ik ben het (niet) eens"
+      },
+      {
+        "stimulus": "🔊 tener razón",
+        "answers": [
+          "tener razón"
+        ],
+        "tag": "opinar",
+        "sub": "gelijk hebben"
+      },
+      {
+        "stimulus": "🔊 por un lado… por otro…",
+        "answers": [
+          "por un lado… por otro…"
+        ],
+        "tag": "opinar",
+        "sub": "enerzijds… anderzijds…"
+      },
+      {
+        "stimulus": "🔊 útil",
+        "answers": [
+          "útil"
+        ],
+        "tag": "adjmedia",
+        "sub": "nuttig"
+      },
+      {
+        "stimulus": "🔊 la pantalla",
+        "answers": [
+          "la pantalla tiempo de",
+          "pantalla tiempo de",
+          "la pantalla",
+          "pantalla"
+        ],
+        "tag": "adjmedia",
+        "sub": "schermtijd"
+      }
+    ]
+  }
+}

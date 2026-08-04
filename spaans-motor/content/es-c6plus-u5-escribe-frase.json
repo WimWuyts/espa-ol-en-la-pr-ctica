@@ -1,0 +1,468 @@
+{
+  "id": "es-c6plus-u5-escribe-frase",
+  "title": "Escribe una frase",
+  "subtitle": "C6+ · U5 · vrije productie · structuurcheck + modeloplossing",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 8,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "open",
+    "items": [
+      {
+        "stimulus": "Escribe una frase con «nacer»",
+        "must": [
+          "nacer"
+        ],
+        "model": "Nació en Argentina.",
+        "tag": "biografia",
+        "sub": "geboren worden"
+      },
+      {
+        "stimulus": "Escribe una frase con «crecer»",
+        "must": [
+          "crecer"
+        ],
+        "model": "Creció en un pueblo.",
+        "tag": "biografia",
+        "sub": "opgroeien"
+      },
+      {
+        "stimulus": "Escribe una frase con «casarse»",
+        "must": [
+          "casarse"
+        ],
+        "model": "Se casó joven.",
+        "tag": "biografia",
+        "sub": "trouwen"
+      },
+      {
+        "stimulus": "Escribe una frase con «tener hijos»",
+        "must": [
+          "tener hijos"
+        ],
+        "model": "Tuvo tres hijos.",
+        "tag": "biografia",
+        "sub": "kinderen krijgen"
+      },
+      {
+        "stimulus": "Escribe una frase con «mudarse»",
+        "must": [
+          "mudarse"
+        ],
+        "model": "Se mudó a Madrid.",
+        "tag": "biografia",
+        "sub": "verhuizen"
+      },
+      {
+        "stimulus": "Escribe una frase con «morir»",
+        "must": [
+          "morir"
+        ],
+        "model": "Murió en 1986.",
+        "tag": "biografia",
+        "sub": "sterven"
+      },
+      {
+        "stimulus": "Escribe una frase con «la vida»",
+        "must": [
+          "vida"
+        ],
+        "model": "Tuvo una vida difícil.",
+        "tag": "biografia",
+        "sub": "het leven"
+      },
+      {
+        "stimulus": "Escribe una frase con «ganar»",
+        "must": [
+          "ganar"
+        ],
+        "model": "Ganó el Mundial.",
+        "tag": "logros",
+        "sub": "winnen"
+      },
+      {
+        "stimulus": "Escribe una frase con «escribir»",
+        "must": [
+          "escribir"
+        ],
+        "model": "Escribió muchas novelas.",
+        "tag": "logros",
+        "sub": "schrijven"
+      },
+      {
+        "stimulus": "Escribe una frase con «componer»",
+        "must": [
+          "componer"
+        ],
+        "model": "Compuso tangos famosos.",
+        "tag": "logros",
+        "sub": "componeren"
+      },
+      {
+        "stimulus": "Escribe una frase con «descubrir»",
+        "must": [
+          "descubrir"
+        ],
+        "model": "Descubrió una vacuna.",
+        "tag": "logros",
+        "sub": "ontdekken"
+      },
+      {
+        "stimulus": "Escribe una frase con «fundar»",
+        "must": [
+          "fundar"
+        ],
+        "model": "Fundó un equipo.",
+        "tag": "logros",
+        "sub": "stichten/oprichten"
+      },
+      {
+        "stimulus": "Escribe una frase con «crear»",
+        "must": [
+          "crear"
+        ],
+        "model": "Creó un personaje.",
+        "tag": "logros",
+        "sub": "creëren"
+      },
+      {
+        "stimulus": "Escribe una frase con «el premio»",
+        "must": [
+          "premio"
+        ],
+        "model": "Recibió el premio Nobel.",
+        "tag": "logros",
+        "sub": "de prijs"
+      },
+      {
+        "stimulus": "Escribe una frase con «el éxito»",
+        "must": [
+          "éxito"
+        ],
+        "model": "Tuvo mucho éxito.",
+        "tag": "logros",
+        "sub": "het succes"
+      },
+      {
+        "stimulus": "Escribe una frase con «el cantante»",
+        "must": [
+          "cantante"
+        ],
+        "model": "Gardel fue un cantante.",
+        "tag": "persona",
+        "sub": "de zanger(es)"
+      },
+      {
+        "stimulus": "Escribe una frase con «el futbolista»",
+        "must": [
+          "futbolista"
+        ],
+        "model": "Messi es futbolista.",
+        "tag": "persona",
+        "sub": "de voetballer"
+      },
+      {
+        "stimulus": "Escribe una frase con «el líder»",
+        "must": [
+          "líder"
+        ],
+        "model": "Fue un líder político.",
+        "tag": "persona",
+        "sub": "de leider"
+      },
+      {
+        "stimulus": "Escribe una frase con «tuvo»",
+        "must": [
+          "tuvo"
+        ],
+        "model": "Tuvo mucho éxito.",
+        "tag": "indefinido",
+        "sub": "had (tener)"
+      },
+      {
+        "stimulus": "Escribe una frase con «estuvo»",
+        "must": [
+          "estuvo"
+        ],
+        "model": "Estuvo en Europa.",
+        "tag": "indefinido",
+        "sub": "was (estar)"
+      },
+      {
+        "stimulus": "Escribe una frase con «dijo»",
+        "must": [
+          "dijo"
+        ],
+        "model": "Dijo la verdad.",
+        "tag": "indefinido",
+        "sub": "zei (decir)"
+      },
+      {
+        "stimulus": "Escribe una frase con «vino»",
+        "must": [
+          "vino"
+        ],
+        "model": "Vino a la ciudad.",
+        "tag": "indefinido",
+        "sub": "kwam (venir)"
+      },
+      {
+        "stimulus": "Escribe una frase con «pudo»",
+        "must": [
+          "pudo"
+        ],
+        "model": "No pudo ir.",
+        "tag": "indefinido",
+        "sub": "kon (poder)"
+      },
+      {
+        "stimulus": "Escribe una frase con «dio»",
+        "must": [
+          "dio"
+        ],
+        "model": "Dio un concierto.",
+        "tag": "indefinido",
+        "sub": "gaf (dar)"
+      },
+      {
+        "stimulus": "Escribe una frase con «vio»",
+        "must": [
+          "vio"
+        ],
+        "model": "Vio el mar por primera vez.",
+        "tag": "indefinido",
+        "sub": "zag (ver)"
+      },
+      {
+        "stimulus": "Escribe una frase con «ayer»",
+        "must": [
+          "ayer"
+        ],
+        "model": "Ayer fui al cine.",
+        "tag": "tiempo",
+        "sub": "gisteren"
+      },
+      {
+        "stimulus": "Escribe una frase con «el año pasado»",
+        "must": [
+          "año pasado"
+        ],
+        "model": "El año pasado viajé a Perú.",
+        "tag": "tiempo",
+        "sub": "vorig jaar"
+      },
+      {
+        "stimulus": "Escribe una frase con «la semana pasada»",
+        "must": [
+          "semana pasada"
+        ],
+        "model": "La semana pasada estudié mucho.",
+        "tag": "tiempo",
+        "sub": "vorige week"
+      },
+      {
+        "stimulus": "Escribe una frase con «en 1982»",
+        "must": [
+          "en 1982"
+        ],
+        "model": "Nació en 1982.",
+        "tag": "tiempo",
+        "sub": "in 1982"
+      },
+      {
+        "stimulus": "Escribe una frase con «hace dos años»",
+        "must": [
+          "hace dos años"
+        ],
+        "model": "Hace dos años me mudé.",
+        "tag": "tiempo",
+        "sub": "twee jaar geleden"
+      },
+      {
+        "stimulus": "Escribe una frase con «de repente»",
+        "must": [
+          "de repente"
+        ],
+        "model": "De repente, todo cambió.",
+        "tag": "tiempo",
+        "sub": "plots"
+      },
+      {
+        "stimulus": "Escribe una frase con «entonces»",
+        "must": [
+          "entonces"
+        ],
+        "model": "Entonces empezó su carrera.",
+        "tag": "tiempo",
+        "sub": "toen / dus"
+      },
+      {
+        "stimulus": "Escribe una frase con «se lo»",
+        "must": [
+          "se lo"
+        ],
+        "model": "Se lo di a Mateo.",
+        "tag": "odoi",
+        "sub": "het aan hem/haar"
+      },
+      {
+        "stimulus": "Escribe una frase con «se la»",
+        "must": [
+          "se la"
+        ],
+        "model": "Se la conté a Nina.",
+        "tag": "odoi",
+        "sub": "haar (het) aan hem/haar"
+      },
+      {
+        "stimulus": "Escribe una frase con «dárselo»",
+        "must": [
+          "dárselo"
+        ],
+        "model": "Voy a dárselo mañana.",
+        "tag": "odoi",
+        "sub": "het aan hem/haar geven"
+      },
+      {
+        "stimulus": "Escribe una frase con «me lo dio»",
+        "must": [
+          "me lo dio"
+        ],
+        "model": "Me lo dio ayer.",
+        "tag": "odoi",
+        "sub": "hij/zij gaf het aan mij"
+      },
+      {
+        "stimulus": "Escribe una frase con «te la mandó»",
+        "must": [
+          "te la mandó"
+        ],
+        "model": "Te la mandó por correo.",
+        "tag": "odoi",
+        "sub": "hij/zij stuurde ze naar jou"
+      },
+      {
+        "stimulus": "Escribe una frase con «la historia»",
+        "must": [
+          "historia"
+        ],
+        "model": "Es una historia real.",
+        "tag": "relato",
+        "sub": "het verhaal / de geschiedenis"
+      },
+      {
+        "stimulus": "Escribe una frase con «la leyenda»",
+        "must": [
+          "leyenda"
+        ],
+        "model": "Una leyenda del tango.",
+        "tag": "relato",
+        "sub": "de legende"
+      },
+      {
+        "stimulus": "Escribe una frase con «érase una vez»",
+        "must": [
+          "érase una vez"
+        ],
+        "model": "Érase una vez un rey.",
+        "tag": "relato",
+        "sub": "er was eens"
+      },
+      {
+        "stimulus": "Escribe una frase con «el personaje»",
+        "must": [
+          "personaje"
+        ],
+        "model": "Un personaje inolvidable.",
+        "tag": "relato",
+        "sub": "het personage"
+      },
+      {
+        "stimulus": "Escribe una frase con «primero … después»",
+        "must": [
+          "primero … después"
+        ],
+        "model": "Primero estudió, después trabajó.",
+        "tag": "relato",
+        "sub": "eerst … daarna"
+      },
+      {
+        "stimulus": "Escribe una frase con «al final»",
+        "must": [
+          "al final"
+        ],
+        "model": "Al final, triunfó.",
+        "tag": "relato",
+        "sub": "uiteindelijk"
+      },
+      {
+        "stimulus": "Escribe una frase con «por eso»",
+        "must": [
+          "por eso"
+        ],
+        "model": "Por eso es famoso.",
+        "tag": "relato",
+        "sub": "daarom"
+      },
+      {
+        "stimulus": "Escribe una frase con «increíble»",
+        "must": [
+          "increíble"
+        ],
+        "model": "Una vida increíble.",
+        "tag": "opinar",
+        "sub": "ongelooflijk"
+      },
+      {
+        "stimulus": "Escribe una frase con «importante»",
+        "must": [
+          "importante"
+        ],
+        "model": "Un artista importante.",
+        "tag": "opinar",
+        "sub": "belangrijk"
+      },
+      {
+        "stimulus": "Escribe una frase con «interesante»",
+        "must": [
+          "interesante"
+        ],
+        "model": "Una historia interesante.",
+        "tag": "opinar",
+        "sub": "interessant"
+      },
+      {
+        "stimulus": "Escribe una frase con «admirar»",
+        "must": [
+          "admirar"
+        ],
+        "model": "Admiro a Frida Kahlo.",
+        "tag": "opinar",
+        "sub": "bewonderen"
+      },
+      {
+        "stimulus": "Escribe una frase con «creo que fue»",
+        "must": [
+          "creo que fue"
+        ],
+        "model": "Creo que fue un genio.",
+        "tag": "opinar",
+        "sub": "ik denk dat hij/zij was"
+      },
+      {
+        "stimulus": "Escribe una frase con «lo más importante»",
+        "must": [
+          "lo más importante"
+        ],
+        "model": "Lo más importante fue su música.",
+        "tag": "opinar",
+        "sub": "het belangrijkste"
+      }
+    ]
+  }
+}

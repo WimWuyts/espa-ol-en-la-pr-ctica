@@ -1,0 +1,62 @@
+{
+  "id": "es-c6plus-u6-cuando-era",
+  "title": "Cuando era pequeño",
+  "subtitle": "U6 · vertel over vroeger",
+  "lang": "es",
+  "template": "sim",
+  "options": {
+    "audio": false
+  },
+  "sim": {
+    "prompt": "Tarea comunicativa · schrijf in het Spaans",
+    "rounds": [
+      {
+        "scenario": "Cuenta cómo era tu vida cuando tenías ocho años.",
+        "tag": "imp",
+        "sub": "gebruik het imperfecto",
+        "min": 14,
+        "need": [
+          {
+            "re": "\\w+(aba|ía)\\w*\\b"
+          }
+        ]
+      },
+      {
+        "scenario": "Compara tu pueblo o barrio de antes con el de ahora.",
+        "tag": "comp",
+        "sub": "gebruik más… que of menos… que",
+        "min": 12,
+        "need": [
+          {
+            "re": "(más|menos) \\w+ que"
+          }
+        ]
+      },
+      {
+        "scenario": "Describe un juguete que tenías y que te encantaba.",
+        "tag": "rel",
+        "sub": "gebruik een bijzin met que",
+        "min": 10,
+        "need": [
+          {
+            "re": "\\bque\\b"
+          }
+        ]
+      },
+      {
+        "scenario": "Cuenta algo que pasó un día concreto de tu infancia.",
+        "tag": "contraste",
+        "sub": "gebruik imperfecto én indefinido",
+        "min": 14,
+        "need": [
+          {
+            "re": "\\w+(aba|ía)\\w*\\b"
+          },
+          {
+            "re": "\\w+(é|ó|í|ió)\\b"
+          }
+        ]
+      }
+    ]
+  }
+}

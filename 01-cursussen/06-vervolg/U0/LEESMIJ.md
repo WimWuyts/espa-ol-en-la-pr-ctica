@@ -13,7 +13,7 @@ géén condicional, géén subjuntivo.
 |---|---|---|
 | **C6plus_U0.pdf** | Print-cursus (41 blz.) | Afdrukken of projecteren. Niet bewerkbaar. |
 | **C6plus_U0_BEWERKBAAR.html** | Bewerkbare laag van diezelfde cursus | Open in Chrome of Edge → **«Bewerken»** · **«Opslaan als PDF»** · **«Bewaar»**. |
-| **C6plus_U0_hub.html** | Digitale hub (standalone, werkt offline) | Tabbladen: Vocabulario · Gramática · Lectura · Escuchar 🎧 · Juegos (18) · Hablar 🎙️ · Cultura · Extra. |
+| **C6plus_U0_hub.html** | Digitale hub (standalone, werkt offline) | Tabbladen: Vocabulario · Gramática · Lectura · Escuchar 🎧 · Juegos (22) · Hablar 🎙️ · Cultura · Extra. |
 | **C6plus_U0_docente.pptx** | PowerPoint docent (23 dia's) | Vrije navigatie, oplossingen en didactiek in de notities. |
 | **C6plus_U0_alumno.pptx** | PowerPoint leerling (22 dia's) | Druk **F5**; elke klik onthult het volgende antwoord. |
 

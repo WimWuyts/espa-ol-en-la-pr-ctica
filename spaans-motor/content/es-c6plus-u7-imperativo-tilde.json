@@ -1,0 +1,139 @@
+{
+  "id": "es-c6plus-u7-imperativo-tilde",
+  "title": "El imperativo + pronombre",
+  "subtitle": "U7 · waar valt de klemtoon?",
+  "lang": "es",
+  "template": "tap",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "tap": {
+    "prompt": "Tik de lettergreep die de klemtoon draagt",
+    "joiner": " · ",
+    "items": [
+      {
+        "parts": [
+          "cuí",
+          "da",
+          "te"
+        ],
+        "answer": 0,
+        "tag": "tilde",
+        "sub": "cuídate · tilde"
+      },
+      {
+        "parts": [
+          "re",
+          "cí",
+          "cla",
+          "lo"
+        ],
+        "answer": 1,
+        "tag": "tilde",
+        "sub": "recíclalo · tilde"
+      },
+      {
+        "parts": [
+          "bé",
+          "be",
+          "la"
+        ],
+        "answer": 0,
+        "tag": "tilde",
+        "sub": "bébela · tilde"
+      },
+      {
+        "parts": [
+          "dí",
+          "me",
+          "lo"
+        ],
+        "answer": 0,
+        "tag": "tilde",
+        "sub": "dímelo · tilde"
+      },
+      {
+        "parts": [
+          "a",
+          "pá",
+          "ga",
+          "la"
+        ],
+        "answer": 1,
+        "tag": "tilde",
+        "sub": "apágala · tilde"
+      },
+      {
+        "parts": [
+          "cóm",
+          "pra",
+          "lo"
+        ],
+        "answer": 0,
+        "tag": "tilde",
+        "sub": "cómpralo · tilde"
+      },
+      {
+        "parts": [
+          "es",
+          "cú",
+          "cha",
+          "me"
+        ],
+        "answer": 1,
+        "tag": "tilde",
+        "sub": "escúchame · tilde"
+      },
+      {
+        "parts": [
+          "lá",
+          "va",
+          "te"
+        ],
+        "answer": 0,
+        "tag": "tilde",
+        "sub": "lávate · tilde"
+      },
+      {
+        "parts": [
+          "se",
+          "pá",
+          "ra",
+          "la"
+        ],
+        "answer": 1,
+        "tag": "tilde",
+        "sub": "sepárala · tilde"
+      },
+      {
+        "parts": [
+          "hazlo"
+        ],
+        "answer": 0,
+        "tag": "geen",
+        "sub": "hazlo · geen tilde nodig"
+      },
+      {
+        "parts": [
+          "po",
+          "nlo"
+        ],
+        "answer": 0,
+        "tag": "geen",
+        "sub": "ponlo · geen tilde"
+      },
+      {
+        "parts": [
+          "a",
+          "yú",
+          "da",
+          "me"
+        ],
+        "answer": 1,
+        "tag": "tilde",
+        "sub": "ayúdame · tilde"
+      }
+    ]
+  }
+}

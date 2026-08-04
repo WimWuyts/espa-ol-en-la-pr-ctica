@@ -1,0 +1,82 @@
+{
+  "id": "es-c6plus-u4-carrusel-viaje",
+  "title": "Carrusel · lo que he hecho",
+  "subtitle": "U4 · zeg wat je gedaan hebt",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "substitution",
+    "prompt": "Di la frase con los datos nuevos y grábate",
+    "frame": "Esta semana he ___ y todavía no he ___.",
+    "frameLabel": "Modelo · vul de gemarkeerde delen in",
+    "items": [
+      {
+        "fills": [
+          "viajado en tren",
+          "visto el desierto"
+        ],
+        "sub": "trein · woestijn",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "visitado un museo",
+          "subido al volcán"
+        ],
+        "sub": "museum · vulkaan",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "escrito una postal",
+          "llamado a mis padres"
+        ],
+        "sub": "kaart · bellen",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "dormido en un albergue",
+          "probado el pescado"
+        ],
+        "sub": "hostel · vis",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "hecho muchas fotos",
+          "comprado recuerdos"
+        ],
+        "sub": "fotos · souvenirs",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "perdido el mapa",
+          "encontrado el hotel"
+        ],
+        "sub": "kaart kwijt",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "comido en el mercado",
+          "ido a la playa"
+        ],
+        "sub": "markt · strand",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "vuelto tarde",
+          "descansado bien"
+        ],
+        "sub": "laat terug",
+        "tag": "carr"
+      }
+    ]
+  }
+}

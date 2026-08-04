@@ -1,0 +1,100 @@
+{
+  "id": "es-c6plus-u2-dentro-fuera",
+  "title": "Dentro o fuera de casa",
+  "subtitle": "U2 · waar hoort het thuis?",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Hoort dit woord bij het huis of bij de wijk?",
+    "categories": [
+      {
+        "id": "casa",
+        "label": "la casa<br><small>binnen</small>",
+        "glaze": "#8B5E9E"
+      },
+      {
+        "id": "barrio",
+        "label": "el barrio<br><small>buiten</small>",
+        "glaze": "#2FA8A0"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "el dormitorio",
+        "answer": "casa",
+        "tag": "casa",
+        "sub": "de slaapkamer"
+      },
+      {
+        "stimulus": "la farmacia",
+        "answer": "barrio",
+        "tag": "barrio",
+        "sub": "de apotheek"
+      },
+      {
+        "stimulus": "la nevera",
+        "answer": "casa",
+        "tag": "casa",
+        "sub": "de koelkast"
+      },
+      {
+        "stimulus": "el semáforo",
+        "answer": "barrio",
+        "tag": "barrio",
+        "sub": "het verkeerslicht"
+      },
+      {
+        "stimulus": "el armario",
+        "answer": "casa",
+        "tag": "casa",
+        "sub": "de kast"
+      },
+      {
+        "stimulus": "la parada",
+        "answer": "barrio",
+        "tag": "barrio",
+        "sub": "de halte"
+      },
+      {
+        "stimulus": "el salón",
+        "answer": "casa",
+        "tag": "casa",
+        "sub": "de woonkamer"
+      },
+      {
+        "stimulus": "la plaza",
+        "answer": "barrio",
+        "tag": "barrio",
+        "sub": "het plein"
+      },
+      {
+        "stimulus": "la ducha",
+        "answer": "casa",
+        "tag": "casa",
+        "sub": "de douche"
+      },
+      {
+        "stimulus": "la esquina",
+        "answer": "barrio",
+        "tag": "barrio",
+        "sub": "de hoek"
+      },
+      {
+        "stimulus": "la estantería",
+        "answer": "casa",
+        "tag": "casa",
+        "sub": "de boekenkast"
+      },
+      {
+        "stimulus": "el supermercado",
+        "answer": "barrio",
+        "tag": "barrio",
+        "sub": "de supermarkt"
+      }
+    ]
+  }
+}

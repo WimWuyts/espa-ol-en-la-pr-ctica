@@ -1,0 +1,624 @@
+{
+  "id": "es-c6plus-u2-que-palabra",
+  "title": "¿Qué palabra?",
+  "subtitle": "C6+ · U2 · van thema naar woord (ophalen zonder zin)",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "casa → «het huis»",
+        "answers": [
+          "la casa",
+          "casa"
+        ],
+        "hint": "c___",
+        "tag": "casa",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "casa → «het appartement / de verdieping»",
+        "answers": [
+          "el piso",
+          "piso"
+        ],
+        "hint": "p___",
+        "tag": "casa",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "casa → «het appartement»",
+        "answers": [
+          "el apartamento",
+          "apartamento"
+        ],
+        "hint": "a__________",
+        "tag": "casa",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "habitaciones → «de kamer»",
+        "answers": [
+          "la habitación",
+          "habitación"
+        ],
+        "hint": "h_________",
+        "tag": "habitaciones",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "habitaciones → «de slaapkamer»",
+        "answers": [
+          "el dormitorio",
+          "dormitorio"
+        ],
+        "hint": "d_________",
+        "tag": "habitaciones",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "habitaciones → «de keuken»",
+        "answers": [
+          "la cocina",
+          "cocina"
+        ],
+        "hint": "c_____",
+        "tag": "habitaciones",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "habitaciones → «de woonkamer»",
+        "answers": [
+          "el salón",
+          "salón"
+        ],
+        "hint": "s____",
+        "tag": "habitaciones",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "habitaciones → «de badkamer»",
+        "answers": [
+          "el baño",
+          "baño"
+        ],
+        "hint": "b___",
+        "tag": "habitaciones",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "habitaciones → «de gang»",
+        "answers": [
+          "el pasillo",
+          "pasillo"
+        ],
+        "hint": "p______",
+        "tag": "habitaciones",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "habitaciones → «het terras»",
+        "answers": [
+          "la terraza",
+          "terraza"
+        ],
+        "hint": "t______",
+        "tag": "habitaciones",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "habitaciones → «de tuin»",
+        "answers": [
+          "el jardín",
+          "jardín"
+        ],
+        "hint": "j_____",
+        "tag": "habitaciones",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "habitaciones → «de garage»",
+        "answers": [
+          "el garaje",
+          "garaje"
+        ],
+        "hint": "g_____",
+        "tag": "habitaciones",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "muebles → «het bed»",
+        "answers": [
+          "la cama",
+          "cama"
+        ],
+        "hint": "c___",
+        "tag": "muebles",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "muebles → «de tafel»",
+        "answers": [
+          "la mesa",
+          "mesa"
+        ],
+        "hint": "m___",
+        "tag": "muebles",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "muebles → «de stoel»",
+        "answers": [
+          "la silla",
+          "silla"
+        ],
+        "hint": "s____",
+        "tag": "muebles",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "muebles → «de zetel / bank»",
+        "answers": [
+          "el sofá",
+          "sofá"
+        ],
+        "hint": "s___",
+        "tag": "muebles",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "muebles → «de kast»",
+        "answers": [
+          "el armario",
+          "armario"
+        ],
+        "hint": "a______",
+        "tag": "muebles",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "muebles → «de boekenkast / het rek»",
+        "answers": [
+          "la estantería",
+          "estantería"
+        ],
+        "hint": "e_________",
+        "tag": "muebles",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "muebles → «de koelkast»",
+        "answers": [
+          "la nevera",
+          "nevera"
+        ],
+        "hint": "n_____",
+        "tag": "muebles",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "muebles → «de lamp»",
+        "answers": [
+          "la lámpara",
+          "lámpara"
+        ],
+        "hint": "l______",
+        "tag": "muebles",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "muebles → «het raam»",
+        "answers": [
+          "la ventana",
+          "ventana"
+        ],
+        "hint": "v______",
+        "tag": "muebles",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "muebles → «de deur»",
+        "answers": [
+          "la puerta",
+          "puerta"
+        ],
+        "hint": "p_____",
+        "tag": "muebles",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "muebles → «de spiegel»",
+        "answers": [
+          "el espejo",
+          "espejo"
+        ],
+        "hint": "e_____",
+        "tag": "muebles",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "preposiciones → «op / boven(op)»",
+        "answers": [
+          "encima de"
+        ],
+        "hint": "e_____ d_",
+        "tag": "preposiciones",
+        "sub": "prep."
+      },
+      {
+        "stimulus": "preposiciones → «onder»",
+        "answers": [
+          "debajo de"
+        ],
+        "hint": "d_____ d_",
+        "tag": "preposiciones",
+        "sub": "prep."
+      },
+      {
+        "stimulus": "preposiciones → «naast»",
+        "answers": [
+          "al lado de"
+        ],
+        "hint": "a_ l___ d_",
+        "tag": "preposiciones",
+        "sub": "prep."
+      },
+      {
+        "stimulus": "preposiciones → «vóór»",
+        "answers": [
+          "delante de"
+        ],
+        "hint": "d______ d_",
+        "tag": "preposiciones",
+        "sub": "prep."
+      },
+      {
+        "stimulus": "preposiciones → «achter»",
+        "answers": [
+          "detrás de"
+        ],
+        "hint": "d_____ d_",
+        "tag": "preposiciones",
+        "sub": "prep."
+      },
+      {
+        "stimulus": "preposiciones → «tussen»",
+        "answers": [
+          "entre"
+        ],
+        "hint": "e____",
+        "tag": "preposiciones",
+        "sub": "prep."
+      },
+      {
+        "stimulus": "preposiciones → «binnen(in)»",
+        "answers": [
+          "dentro de"
+        ],
+        "hint": "d_____ d_",
+        "tag": "preposiciones",
+        "sub": "prep."
+      },
+      {
+        "stimulus": "preposiciones → «buiten»",
+        "answers": [
+          "fuera de"
+        ],
+        "hint": "f____ d_",
+        "tag": "preposiciones",
+        "sub": "prep."
+      },
+      {
+        "stimulus": "preposiciones → «dichtbij»",
+        "answers": [
+          "cerca de"
+        ],
+        "hint": "c____ d_",
+        "tag": "preposiciones",
+        "sub": "prep."
+      },
+      {
+        "stimulus": "preposiciones → «ver van»",
+        "answers": [
+          "lejos de"
+        ],
+        "hint": "l____ d_",
+        "tag": "preposiciones",
+        "sub": "prep."
+      },
+      {
+        "stimulus": "preposiciones → «er is / er zijn»",
+        "answers": [
+          "hay"
+        ],
+        "hint": "h__",
+        "tag": "preposiciones",
+        "sub": "ww. (haber)"
+      },
+      {
+        "stimulus": "preposiciones → «zijn (plaats/toestand)»",
+        "answers": [
+          "estar"
+        ],
+        "hint": "e____",
+        "tag": "preposiciones",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "barrio → «de buurt / wijk»",
+        "answers": [
+          "el barrio",
+          "barrio"
+        ],
+        "hint": "b_____",
+        "tag": "barrio",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "barrio → «de straat»",
+        "answers": [
+          "la calle",
+          "calle"
+        ],
+        "hint": "c____",
+        "tag": "barrio",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "barrio → «het plein»",
+        "answers": [
+          "la plaza",
+          "plaza"
+        ],
+        "hint": "p____",
+        "tag": "barrio",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "barrio → «het park»",
+        "answers": [
+          "el parque",
+          "parque"
+        ],
+        "hint": "p_____",
+        "tag": "barrio",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "barrio → «de winkel»",
+        "answers": [
+          "la tienda",
+          "tienda"
+        ],
+        "hint": "t_____",
+        "tag": "barrio",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "barrio → «de supermarkt»",
+        "answers": [
+          "el supermercado",
+          "supermercado"
+        ],
+        "hint": "s___________",
+        "tag": "barrio",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "barrio → «de apotheek»",
+        "answers": [
+          "la farmacia",
+          "farmacia"
+        ],
+        "hint": "f_______",
+        "tag": "barrio",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "barrio → «de bank»",
+        "answers": [
+          "el banco",
+          "banco"
+        ],
+        "hint": "b____",
+        "tag": "barrio",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "barrio → «de halte»",
+        "answers": [
+          "la parada",
+          "parada"
+        ],
+        "hint": "p_____",
+        "tag": "barrio",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "barrio → «het station»",
+        "answers": [
+          "la estación",
+          "estación"
+        ],
+        "hint": "e_______",
+        "tag": "barrio",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "barrio → «het centrum»",
+        "answers": [
+          "el centro",
+          "centro"
+        ],
+        "hint": "c_____",
+        "tag": "barrio",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "barrio → «de hoek»",
+        "answers": [
+          "la esquina",
+          "esquina"
+        ],
+        "hint": "e______",
+        "tag": "barrio",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "ciudad → «de stad»",
+        "answers": [
+          "la ciudad",
+          "ciudad"
+        ],
+        "hint": "c_____",
+        "tag": "ciudad",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "ciudad → «het dorp»",
+        "answers": [
+          "el pueblo",
+          "pueblo"
+        ],
+        "hint": "p_____",
+        "tag": "ciudad",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "ciudad → «de woning»",
+        "answers": [
+          "la vivienda",
+          "vivienda"
+        ],
+        "hint": "v_______",
+        "tag": "ciudad",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "direcciones → «hoe geraak ik bij…?»",
+        "answers": [
+          "¿cómo llego a…?"
+        ],
+        "hint": "¿____ l____ a__",
+        "tag": "direcciones",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "direcciones → «ga rechtdoor»",
+        "answers": [
+          "sigue recto"
+        ],
+        "hint": "s____ r____",
+        "tag": "direcciones",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "direcciones → «steek de straat over»",
+        "answers": [
+          "cruza la calle"
+        ],
+        "hint": "c____ l_ c____",
+        "tag": "direcciones",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "direcciones → «het verkeerslicht»",
+        "answers": [
+          "el semáforo",
+          "semáforo"
+        ],
+        "hint": "s_______",
+        "tag": "direcciones",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "direcciones → «te voet»",
+        "answers": [
+          "a pie"
+        ],
+        "hint": "a p__",
+        "tag": "direcciones",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "movimiento → «lopen / wandelen»",
+        "answers": [
+          "andar"
+        ],
+        "hint": "a____",
+        "tag": "movimiento",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "movimiento → «oversteken»",
+        "answers": [
+          "cruzar"
+        ],
+        "hint": "c_____",
+        "tag": "movimiento",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "movimiento → «draaien / afslaan»",
+        "answers": [
+          "girar"
+        ],
+        "hint": "g____",
+        "tag": "movimiento",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "movimiento → «volgen / doorgaan»",
+        "answers": [
+          "seguir"
+        ],
+        "hint": "s_____",
+        "tag": "movimiento",
+        "sub": "ww. (e→i)"
+      },
+      {
+        "stimulus": "movimiento → «omhooggaan / instappen»",
+        "answers": [
+          "subir"
+        ],
+        "hint": "s____",
+        "tag": "movimiento",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "movimiento → «omlaaggaan / uitstappen»",
+        "answers": [
+          "bajar"
+        ],
+        "hint": "b____",
+        "tag": "movimiento",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "movimiento → «nemen / pakken»",
+        "answers": [
+          "coger"
+        ],
+        "hint": "c____",
+        "tag": "movimiento",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "movimiento → «voorbijgaan / passeren»",
+        "answers": [
+          "pasar por"
+        ],
+        "hint": "p____ p__",
+        "tag": "movimiento",
+        "sub": "ww."
+      }
+    ]
+  }
+}

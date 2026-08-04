@@ -1,0 +1,90 @@
+{
+  "id": "es-c6plus-u7-carrusel-consejo",
+  "title": "Carrusel · el consejo",
+  "subtitle": "U7 · geef de raad met nieuwe gegevens",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "substitution",
+    "prompt": "Di el consejo con los datos nuevos y grábate",
+    "frame": "Si ___, ___ y no ___.",
+    "frameLabel": "Modelo · vul de gemarkeerde delen in",
+    "items": [
+      {
+        "fills": [
+          "te duele la cabeza",
+          "bebe agua",
+          "mires la pantalla"
+        ],
+        "sub": "hoofdpijn",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "estás cansado",
+          "duerme más",
+          "tomes café"
+        ],
+        "sub": "moe",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "tienes tos",
+          "ve al médico",
+          "salgas sin abrigo"
+        ],
+        "sub": "hoest",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "quieres ayudar al planeta",
+          "recicla",
+          "uses plástico"
+        ],
+        "sub": "milieu",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "te duele la espalda",
+          "haz ejercicio",
+          "lleves tanto peso"
+        ],
+        "sub": "rugpijn",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "hace calor",
+          "bebe mucha agua",
+          "corras al mediodía"
+        ],
+        "sub": "warm",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "tienes fiebre",
+          "quédate en casa",
+          "vayas a clase"
+        ],
+        "sub": "koorts",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "gastas mucha luz",
+          "apaga las lámparas",
+          "dejes todo encendido"
+        ],
+        "sub": "energie",
+        "tag": "carr"
+      }
+    ]
+  }
+}

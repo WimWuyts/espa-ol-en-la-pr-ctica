@@ -1,0 +1,62 @@
+{
+  "id": "es-c6plus-u2-describe-casa",
+  "title": "Describe tu casa",
+  "subtitle": "U2 · beschrijf waar je woont",
+  "lang": "es",
+  "template": "sim",
+  "options": {
+    "audio": false
+  },
+  "sim": {
+    "prompt": "Tarea comunicativa · schrijf in het Spaans",
+    "rounds": [
+      {
+        "scenario": "Un amigo colombiano quiere saber cómo es tu casa.",
+        "tag": "casa",
+        "sub": "gebruik hay én está(n)",
+        "min": 12,
+        "need": [
+          {
+            "re": "\\bhay\\b"
+          },
+          {
+            "re": "est[áa]n?"
+          }
+        ]
+      },
+      {
+        "scenario": "Explica dónde está la cocina respecto al salón.",
+        "tag": "prep",
+        "sub": "gebruik een preposición de lugar",
+        "min": 8,
+        "need": [
+          {
+            "re": "(al lado|enfrente|entre|detrás|delante|encima|debajo)"
+          }
+        ]
+      },
+      {
+        "scenario": "Son las ocho de la tarde: ¿qué está haciendo tu familia ahora?",
+        "tag": "gerundio",
+        "sub": "gebruik estar + gerundio",
+        "min": 10,
+        "need": [
+          {
+            "re": "est(á|án|oy|amos)\\s+\\w+(ando|iendo)"
+          }
+        ]
+      },
+      {
+        "scenario": "Un turista te pregunta cómo llegar a la plaza.",
+        "tag": "camino",
+        "sub": "geef minstens twee aanwijzingen",
+        "min": 10,
+        "need": [
+          {
+            "re": "(gira|sigue|cruza|toma|pasa)"
+          }
+        ]
+      }
+    ]
+  }
+}

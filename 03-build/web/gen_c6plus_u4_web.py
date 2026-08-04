@@ -34,7 +34,8 @@ MOTOR = [
  ['① Reconocer · woordenschat', [
    ['viaje-memoria', 'memoria del viaje', 'memory'],
    ['acciones-memoria', 'memoria de acciones', 'memory'],
-   ['verbo-participio', 'verbo ↔ participio', 'match']]],
+   ['verbo-participio', 'verbo ↔ participio', 'match'],
+   ['viaje-lugar', 'el viaje · palabra y lugar', 'match']]],
  ['② Distinguir · gramática', [
    ['participio-tipo', '¿regular o irregular?', 'classify'],
    ['por-para', '¿por o para?', 'classify']]],
@@ -43,11 +44,19 @@ MOTOR = [
    ['por-para-cloze', 'completa: por/para', 'cloze'],
    ['participio-tetris', 'participio: torres', 'tower'],
    ['viaje-order', 'ordena la frase', 'order'],
-   ['senala', 'señala', 'point']]],
+   ['senala', 'señala', 'point'],
+   ['participio-tap', 'tik het participio', 'tap']]],
  ['④ Hablar · grábate 🎙️', [
    ['repite-viaje', 'escucha y repite: mi viaje', 'speak'],
-   ['mensaje-viaje', 'mensaje de voz: mi viaje', 'speak']]],
-]
+   ['mensaje-viaje', 'mensaje de voz: mi viaje', 'speak'],
+   ['diario-viaje', 'tu diario de viaje', 'sim'],
+   ['carrusel-viaje', 'carrusel · lo que he hecho', 'speak']]],
+ ['⑤ Escribir · escríbelo tú ✍️', [
+   ['escribe-palabra', 'NL → escribe la palabra', 'type'],
+   ['completa-frase', 'completa la frase', 'type'],
+   ['que-palabra', '¿qué palabra es?', 'type'],
+   ['dictado', 'dictado', 'type'],
+   ['escribe-frase', 'escribe una frase', 'type']]]]
 GAMEDIR = f"{ROOT}/spaans-motor/games"
 slugs = [g[0] for grp in MOTOR for g in grp[1]]
 GAMES = {s: b64(f"{GAMEDIR}/es-c6plus-u4-{s}.html") for s in slugs if os.path.exists(f"{GAMEDIR}/es-c6plus-u4-{s}.html")}

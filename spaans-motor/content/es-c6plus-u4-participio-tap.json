@@ -1,0 +1,137 @@
+{
+  "id": "es-c6plus-u4-participio-tap",
+  "title": "Tik het participio",
+  "subtitle": "U4 · welk deel is het participio?",
+  "lang": "es",
+  "template": "tap",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "tap": {
+    "prompt": "Tik het woord dat het participio is",
+    "joiner": " · ",
+    "items": [
+      {
+        "parts": [
+          "He",
+          "visto",
+          "el mar"
+        ],
+        "answer": 1,
+        "tag": "irr",
+        "sub": "visto · ver"
+      },
+      {
+        "parts": [
+          "Hemos",
+          "viajado",
+          "en tren"
+        ],
+        "answer": 1,
+        "tag": "reg",
+        "sub": "viajado"
+      },
+      {
+        "parts": [
+          "Has",
+          "escrito",
+          "una postal"
+        ],
+        "answer": 1,
+        "tag": "irr",
+        "sub": "escrito"
+      },
+      {
+        "parts": [
+          "Ha",
+          "perdido",
+          "el billete"
+        ],
+        "answer": 1,
+        "tag": "reg",
+        "sub": "perdido"
+      },
+      {
+        "parts": [
+          "Han",
+          "hecho",
+          "la maleta"
+        ],
+        "answer": 1,
+        "tag": "irr",
+        "sub": "hecho"
+      },
+      {
+        "parts": [
+          "He",
+          "dormido",
+          "en un albergue"
+        ],
+        "answer": 1,
+        "tag": "reg",
+        "sub": "dormido"
+      },
+      {
+        "parts": [
+          "Hemos",
+          "vuelto",
+          "hoy"
+        ],
+        "answer": 1,
+        "tag": "irr",
+        "sub": "vuelto"
+      },
+      {
+        "parts": [
+          "Has",
+          "reservado",
+          "el hotel"
+        ],
+        "answer": 1,
+        "tag": "reg",
+        "sub": "reservado"
+      },
+      {
+        "parts": [
+          "Ha",
+          "puesto",
+          "las fotos"
+        ],
+        "answer": 1,
+        "tag": "irr",
+        "sub": "puesto"
+      },
+      {
+        "parts": [
+          "Han",
+          "subido",
+          "al volcán"
+        ],
+        "answer": 1,
+        "tag": "reg",
+        "sub": "subido"
+      },
+      {
+        "parts": [
+          "He",
+          "dicho",
+          "la verdad"
+        ],
+        "answer": 1,
+        "tag": "irr",
+        "sub": "dicho"
+      },
+      {
+        "parts": [
+          "Hemos",
+          "visitado",
+          "el museo"
+        ],
+        "answer": 1,
+        "tag": "reg",
+        "sub": "visitado"
+      }
+    ]
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "id": "es-c6plus-u5-acento-indefinido",
+  "title": "El acento del indefinido",
+  "subtitle": "U5 · waar staat de tilde?",
+  "lang": "es",
+  "template": "tap",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "tap": {
+    "prompt": "Tik de lettergreep met de tilde",
+    "joiner": " · ",
+    "items": [
+      {
+        "parts": [
+          "ha",
+          "blé"
+        ],
+        "answer": 1,
+        "tag": "yo",
+        "sub": "hablé · yo"
+      },
+      {
+        "parts": [
+          "ha",
+          "bló"
+        ],
+        "answer": 1,
+        "tag": "el",
+        "sub": "habló · él"
+      },
+      {
+        "parts": [
+          "co",
+          "mí"
+        ],
+        "answer": 1,
+        "tag": "yo",
+        "sub": "comí · yo"
+      },
+      {
+        "parts": [
+          "vi",
+          "vió"
+        ],
+        "answer": 1,
+        "tag": "el",
+        "sub": "vivió · él"
+      },
+      {
+        "parts": [
+          "es",
+          "tu",
+          "dié"
+        ],
+        "answer": 2,
+        "tag": "yo",
+        "sub": "estudié"
+      },
+      {
+        "parts": [
+          "na",
+          "ció"
+        ],
+        "answer": 1,
+        "tag": "el",
+        "sub": "nació"
+      },
+      {
+        "parts": [
+          "es",
+          "cri",
+          "bí"
+        ],
+        "answer": 2,
+        "tag": "yo",
+        "sub": "escribí"
+      },
+      {
+        "parts": [
+          "ga",
+          "nó"
+        ],
+        "answer": 1,
+        "tag": "el",
+        "sub": "ganó"
+      },
+      {
+        "parts": [
+          "vi",
+          "a",
+          "jé"
+        ],
+        "answer": 2,
+        "tag": "yo",
+        "sub": "viajé"
+      },
+      {
+        "parts": [
+          "mu",
+          "rió"
+        ],
+        "answer": 1,
+        "tag": "el",
+        "sub": "murió"
+      },
+      {
+        "parts": [
+          "tra",
+          "ba",
+          "jó"
+        ],
+        "answer": 2,
+        "tag": "el",
+        "sub": "trabajó"
+      },
+      {
+        "parts": [
+          "pu",
+          "bli",
+          "có"
+        ],
+        "answer": 2,
+        "tag": "el",
+        "sub": "publicó"
+      }
+    ]
+  }
+}

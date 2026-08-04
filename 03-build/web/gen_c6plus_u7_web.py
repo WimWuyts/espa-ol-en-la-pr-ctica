@@ -34,20 +34,30 @@ MOTOR = [
  ['① Reconocer · woordenschat', [
    ['salud-memoria', 'memoria de la salud', 'memory'],
    ['planeta-memoria', 'el planeta', 'memory'],
-   ['verbo-imperativo', 'verbo ↔ imperativo', 'match']]],
+   ['verbo-imperativo', 'verbo ↔ imperativo', 'match'],
+   ['cuerpo-dolor', 'el cuerpo y el dolor', 'match']]],
  ['② Distinguir · gramática', [
    ['salud-planeta', '¿salud o medio ambiente?', 'classify'],
-   ['favor-contra', '¿a favor o en contra?', 'classify']]],
+   ['favor-contra', '¿a favor o en contra?', 'classify'],
+   ['consejo-o-opinion', '¿consejo u opinión?', 'classify']]],
  ['③ Producir con apoyo', [
    ['imperativo', 'completa: el imperativo', 'cloze'],
    ['opinar', 'completa: opinar y conectar', 'cloze'],
    ['imper-tetris', 'imperativo: serpiente', 'snake'],
    ['argumento-order', 'ordena el argumento', 'order'],
-   ['senala', 'señala', 'point']]],
+   ['senala', 'señala', 'point'],
+   ['imperativo-tilde', 'el imperativo + pronombre', 'tap']]],
  ['④ Hablar · grábate 🎙️', [
    ['repite-consejos', 'escucha y repite: consejos', 'speak'],
-   ['mensaje-opinion', 'mensaje de voz: tu opinión', 'speak']]],
-]
+   ['mensaje-opinion', 'mensaje de voz: tu opinión', 'speak'],
+   ['opina-cuidate', 'opina y aconseja', 'sim'],
+   ['carrusel-consejo', 'carrusel · el consejo', 'speak']]],
+ ['⑤ Escribir · escríbelo tú ✍️', [
+   ['escribe-palabra', 'NL → escribe la palabra', 'type'],
+   ['completa-frase', 'completa la frase', 'type'],
+   ['que-palabra', '¿qué palabra es?', 'type'],
+   ['dictado', 'dictado', 'type'],
+   ['escribe-frase', 'escribe una frase', 'type']]]]
 GAMEDIR = f"{ROOT}/spaans-motor/games"
 slugs = [g[0] for grp in MOTOR for g in grp[1]]
 GAMES = {s: b64(f"{GAMEDIR}/es-c6plus-u7-{s}.html") for s in slugs if os.path.exists(f"{GAMEDIR}/es-c6plus-u7-{s}.html")}

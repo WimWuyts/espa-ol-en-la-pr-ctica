@@ -1,0 +1,82 @@
+{
+  "id": "es-c6plus-u6-carrusel-antes",
+  "title": "Carrusel · antes y ahora",
+  "subtitle": "U6 · vergelijk vroeger en nu",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "substitution",
+    "prompt": "Di la frase con los datos nuevos y grábate",
+    "frame": "Antes ___, pero ahora ___.",
+    "frameLabel": "Modelo · vul de gemarkeerde delen in",
+    "items": [
+      {
+        "fills": [
+          "jugaba en la calle",
+          "juego en casa"
+        ],
+        "sub": "spelen",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "vivía en un pueblo",
+          "vivo en la ciudad"
+        ],
+        "sub": "wonen",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "veía dibujos animados",
+          "veo series"
+        ],
+        "sub": "kijken",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "iba en bici",
+          "voy en autobús"
+        ],
+        "sub": "vervoer",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "tenía mucho tiempo libre",
+          "estudio mucho"
+        ],
+        "sub": "tijd",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "comía en casa de mis abuelos",
+          "como en el instituto"
+        ],
+        "sub": "eten",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "era muy tímido",
+          "hablo con todos"
+        ],
+        "sub": "karakter",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "leía cuentos",
+          "leo novelas"
+        ],
+        "sub": "lezen",
+        "tag": "carr"
+      }
+    ]
+  }
+}

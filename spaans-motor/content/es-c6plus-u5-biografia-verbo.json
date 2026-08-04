@@ -1,0 +1,64 @@
+{
+  "id": "es-c6plus-u5-biografia-verbo",
+  "title": "Una vida en verbos",
+  "subtitle": "U5 · koppel het werkwoord aan het moment",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind het werkwoord met het moment in een leven",
+    "pairs": [
+      {
+        "a": "nacer",
+        "b": "el primer día 👶"
+      },
+      {
+        "a": "crecer",
+        "b": "hacerse mayor 📏"
+      },
+      {
+        "a": "estudiar",
+        "b": "ir a la escuela 📚"
+      },
+      {
+        "a": "mudarse",
+        "b": "cambiar de casa 📦"
+      },
+      {
+        "a": "casarse",
+        "b": "la boda 💍"
+      },
+      {
+        "a": "trabajar",
+        "b": "ganar dinero 💼"
+      },
+      {
+        "a": "viajar",
+        "b": "conocer el mundo ✈️"
+      },
+      {
+        "a": "ganar un premio",
+        "b": "el reconocimiento 🏆"
+      },
+      {
+        "a": "publicar",
+        "b": "sacar un libro 📖"
+      },
+      {
+        "a": "jubilarse",
+        "b": "dejar de trabajar 🌅"
+      },
+      {
+        "a": "morir",
+        "b": "el último día 🕯️"
+      },
+      {
+        "a": "conocer",
+        "b": "el primer encuentro 🤝"
+      }
+    ]
+  }
+}

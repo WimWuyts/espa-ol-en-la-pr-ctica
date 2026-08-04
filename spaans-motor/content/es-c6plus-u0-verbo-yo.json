@@ -1,0 +1,64 @@
+{
+  "id": "es-c6plus-u0-verbo-yo",
+  "title": "El verbo y su yo",
+  "subtitle": "U0 · koppel de infinitief aan de yo-vorm",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind de infinitief met de vorm van yo",
+    "pairs": [
+      {
+        "a": "ser",
+        "b": "soy"
+      },
+      {
+        "a": "estar",
+        "b": "estoy"
+      },
+      {
+        "a": "tener",
+        "b": "tengo"
+      },
+      {
+        "a": "hacer",
+        "b": "hago"
+      },
+      {
+        "a": "ir",
+        "b": "voy"
+      },
+      {
+        "a": "dar",
+        "b": "doy"
+      },
+      {
+        "a": "venir",
+        "b": "vengo"
+      },
+      {
+        "a": "hablar",
+        "b": "hablo"
+      },
+      {
+        "a": "comer",
+        "b": "como"
+      },
+      {
+        "a": "vivir",
+        "b": "vivo"
+      },
+      {
+        "a": "salir",
+        "b": "salgo"
+      },
+      {
+        "a": "poner",
+        "b": "pongo"
+      }
+    ]
+  }
+}

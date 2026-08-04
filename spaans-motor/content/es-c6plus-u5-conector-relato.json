@@ -1,0 +1,105 @@
+{
+  "id": "es-c6plus-u5-conector-relato",
+  "title": "Los conectores del relato",
+  "subtitle": "U5 · begin, midden of einde",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Waar in het verhaal hoort dit conector?",
+    "categories": [
+      {
+        "id": "ini",
+        "label": "el principio",
+        "glaze": "#3D74D6"
+      },
+      {
+        "id": "med",
+        "label": "el medio",
+        "glaze": "#E0A22F"
+      },
+      {
+        "id": "fin",
+        "label": "el final",
+        "glaze": "#8B5E9E"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "Érase una vez…",
+        "answer": "ini",
+        "tag": "ini",
+        "sub": "er was eens"
+      },
+      {
+        "stimulus": "Un día…",
+        "answer": "ini",
+        "tag": "ini",
+        "sub": "op een dag"
+      },
+      {
+        "stimulus": "Entonces…",
+        "answer": "med",
+        "tag": "med",
+        "sub": "toen"
+      },
+      {
+        "stimulus": "De repente…",
+        "answer": "med",
+        "tag": "med",
+        "sub": "plots"
+      },
+      {
+        "stimulus": "Al final…",
+        "answer": "fin",
+        "tag": "fin",
+        "sub": "uiteindelijk"
+      },
+      {
+        "stimulus": "Hace muchos años…",
+        "answer": "ini",
+        "tag": "ini",
+        "sub": "lang geleden"
+      },
+      {
+        "stimulus": "Después…",
+        "answer": "med",
+        "tag": "med",
+        "sub": "daarna"
+      },
+      {
+        "stimulus": "Y colorín colorado…",
+        "answer": "fin",
+        "tag": "fin",
+        "sub": "slotformule"
+      },
+      {
+        "stimulus": "Al principio…",
+        "answer": "ini",
+        "tag": "ini",
+        "sub": "in het begin"
+      },
+      {
+        "stimulus": "Más tarde…",
+        "answer": "med",
+        "tag": "med",
+        "sub": "later"
+      },
+      {
+        "stimulus": "Por fin…",
+        "answer": "fin",
+        "tag": "fin",
+        "sub": "eindelijk"
+      },
+      {
+        "stimulus": "Mientras tanto…",
+        "answer": "med",
+        "tag": "med",
+        "sub": "ondertussen"
+      }
+    ]
+  }
+}

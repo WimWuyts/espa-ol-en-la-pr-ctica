@@ -1,0 +1,64 @@
+{
+  "id": "es-c6plus-u7-cuerpo-dolor",
+  "title": "El cuerpo y el dolor",
+  "subtitle": "U7 · koppel de klacht aan het lichaamsdeel",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind de klacht met wat er pijn doet",
+    "pairs": [
+      {
+        "a": "me duele la cabeza",
+        "b": "el dolor de cabeza 🤕"
+      },
+      {
+        "a": "me duele la garganta",
+        "b": "no puedo tragar 😷"
+      },
+      {
+        "a": "me duelen las piernas",
+        "b": "después de correr 🦵"
+      },
+      {
+        "a": "me duele el estómago",
+        "b": "he comido mal 🤢"
+      },
+      {
+        "a": "me duele la espalda",
+        "b": "la mochila pesa 🎒"
+      },
+      {
+        "a": "me duelen los ojos",
+        "b": "demasiada pantalla 👀"
+      },
+      {
+        "a": "tengo fiebre",
+        "b": "38 grados 🌡️"
+      },
+      {
+        "a": "tengo tos",
+        "b": "no paro de toser 😮‍💨"
+      },
+      {
+        "a": "estoy cansado",
+        "b": "he dormido poco 😴"
+      },
+      {
+        "a": "me duele una muela",
+        "b": "hay que ir al dentista 🦷"
+      },
+      {
+        "a": "tengo catarro",
+        "b": "me duele la nariz 🤧"
+      },
+      {
+        "a": "me duele el pie",
+        "b": "los zapatos son pequeños 🦶"
+      }
+    ]
+  }
+}

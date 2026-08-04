@@ -1,0 +1,90 @@
+{
+  "id": "es-c6plus-u0-carrusel-presentate",
+  "title": "Carrusel · preséntate",
+  "subtitle": "U0 · zeg de zin met nieuwe gegevens",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "substitution",
+    "prompt": "Di la frase con los datos nuevos y grábate",
+    "frame": "Me llamo ___, soy de ___ y tengo ___ años.",
+    "frameLabel": "Modelo · vul de gemarkeerde delen in",
+    "items": [
+      {
+        "fills": [
+          "Lucía",
+          "Sevilla",
+          "diecisiete"
+        ],
+        "sub": "Sevilla · 17",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "Diego",
+          "México",
+          "dieciséis"
+        ],
+        "sub": "Mexico · 16",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "Valen",
+          "Cartagena",
+          "diecisiete"
+        ],
+        "sub": "Cartagena · 17",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "Nina",
+          "Cusco",
+          "dieciocho"
+        ],
+        "sub": "Cusco · 18",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "Mateo",
+          "Buenos Aires",
+          "diecisiete"
+        ],
+        "sub": "Buenos Aires · 17",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "Sam",
+          "Bélgica",
+          "dieciséis"
+        ],
+        "sub": "België · 16",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "Marta",
+          "Salamanca",
+          "quince"
+        ],
+        "sub": "Salamanca · 15",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "Pau",
+          "Barcelona",
+          "dieciocho"
+        ],
+        "sub": "Barcelona · 18",
+        "tag": "carr"
+      }
+    ]
+  }
+}

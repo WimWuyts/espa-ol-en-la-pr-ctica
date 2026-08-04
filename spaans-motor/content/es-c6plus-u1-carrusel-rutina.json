@@ -1,0 +1,90 @@
+{
+  "id": "es-c6plus-u1-carrusel-rutina",
+  "title": "Carrusel · mi rutina",
+  "subtitle": "U1 · zeg de zin met nieuwe gegevens",
+  "lang": "es",
+  "template": "speak",
+  "options": {
+    "audio": false
+  },
+  "speak": {
+    "mode": "substitution",
+    "prompt": "Di la frase con los datos nuevos y grábate",
+    "frame": "Me ___ a ___ y luego ___.",
+    "frameLabel": "Modelo · vul de gemarkeerde delen in",
+    "items": [
+      {
+        "fills": [
+          "despierto",
+          "las siete",
+          "desayuno"
+        ],
+        "sub": "07.00 · ontbijten",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "levanto",
+          "las siete y media",
+          "me ducho"
+        ],
+        "sub": "07.30 · douchen",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "ducho",
+          "las ocho",
+          "me visto"
+        ],
+        "sub": "08.00 · aankleden",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "acuesto",
+          "las once",
+          "me duermo"
+        ],
+        "sub": "23.00 · slapen",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "despierto",
+          "las seis y cuarto",
+          "hago deporte"
+        ],
+        "sub": "06.15 · sporten",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "levanto",
+          "las nueve",
+          "desayuno con mi familia"
+        ],
+        "sub": "09.00 · weekend",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "ducho",
+          "las siete menos cuarto",
+          "salgo de casa"
+        ],
+        "sub": "06.45 · vertrekken",
+        "tag": "carr"
+      },
+      {
+        "fills": [
+          "acuesto",
+          "medianoche",
+          "leo un poco"
+        ],
+        "sub": "00.00 · lezen",
+        "tag": "carr"
+      }
+    ]
+  }
+}

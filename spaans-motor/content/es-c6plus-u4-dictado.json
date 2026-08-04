@@ -1,0 +1,540 @@
+{
+  "id": "es-c6plus-u4-dictado",
+  "title": "Dictado",
+  "subtitle": "C6+ · U4 · luister en typ · lees eerst, dan afdekken",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "🔊 el avión",
+        "answers": [
+          "el avión",
+          "avión"
+        ],
+        "tag": "transporte",
+        "sub": "het vliegtuig"
+      },
+      {
+        "stimulus": "🔊 el tren",
+        "answers": [
+          "el tren",
+          "tren"
+        ],
+        "tag": "transporte",
+        "sub": "de trein"
+      },
+      {
+        "stimulus": "🔊 el autobús",
+        "answers": [
+          "el autobús",
+          "autobús"
+        ],
+        "tag": "transporte",
+        "sub": "de bus"
+      },
+      {
+        "stimulus": "🔊 el barco",
+        "answers": [
+          "el barco",
+          "barco"
+        ],
+        "tag": "transporte",
+        "sub": "de boot"
+      },
+      {
+        "stimulus": "🔊 el billete",
+        "answers": [
+          "el billete",
+          "billete"
+        ],
+        "tag": "transporte",
+        "sub": "het ticket"
+      },
+      {
+        "stimulus": "🔊 el vuelo",
+        "answers": [
+          "el vuelo",
+          "vuelo"
+        ],
+        "tag": "transporte",
+        "sub": "de vlucht"
+      },
+      {
+        "stimulus": "🔊 la maleta",
+        "answers": [
+          "la maleta",
+          "maleta"
+        ],
+        "tag": "transporte",
+        "sub": "de koffer"
+      },
+      {
+        "stimulus": "🔊 el aeropuerto",
+        "answers": [
+          "el aeropuerto",
+          "aeropuerto"
+        ],
+        "tag": "transporte",
+        "sub": "de luchthaven"
+      },
+      {
+        "stimulus": "🔊 la estación",
+        "answers": [
+          "la estación",
+          "estación"
+        ],
+        "tag": "transporte",
+        "sub": "het station"
+      },
+      {
+        "stimulus": "🔊 el equipaje",
+        "answers": [
+          "el equipaje",
+          "equipaje"
+        ],
+        "tag": "transporte",
+        "sub": "de bagage"
+      },
+      {
+        "stimulus": "🔊 el hotel",
+        "answers": [
+          "el hotel",
+          "hotel"
+        ],
+        "tag": "alojamiento",
+        "sub": "het hotel"
+      },
+      {
+        "stimulus": "🔊 el hostal",
+        "answers": [
+          "el hostal",
+          "hostal"
+        ],
+        "tag": "alojamiento",
+        "sub": "de hostel/pension"
+      },
+      {
+        "stimulus": "🔊 la habitación",
+        "answers": [
+          "la habitación",
+          "habitación"
+        ],
+        "tag": "alojamiento",
+        "sub": "de kamer"
+      },
+      {
+        "stimulus": "🔊 la reserva",
+        "answers": [
+          "la reserva",
+          "reserva"
+        ],
+        "tag": "alojamiento",
+        "sub": "de reservering"
+      },
+      {
+        "stimulus": "🔊 la llave",
+        "answers": [
+          "la llave",
+          "llave"
+        ],
+        "tag": "alojamiento",
+        "sub": "de sleutel"
+      },
+      {
+        "stimulus": "🔊 la recepción",
+        "answers": [
+          "la recepción",
+          "recepción"
+        ],
+        "tag": "alojamiento",
+        "sub": "de receptie"
+      },
+      {
+        "stimulus": "🔊 la noche",
+        "answers": [
+          "la noche",
+          "noche"
+        ],
+        "tag": "alojamiento",
+        "sub": "de nacht"
+      },
+      {
+        "stimulus": "🔊 viajar",
+        "answers": [
+          "viajar"
+        ],
+        "tag": "viaje",
+        "sub": "reizen"
+      },
+      {
+        "stimulus": "🔊 visitar",
+        "answers": [
+          "visitar"
+        ],
+        "tag": "viaje",
+        "sub": "bezoeken"
+      },
+      {
+        "stimulus": "🔊 reservar",
+        "answers": [
+          "reservar"
+        ],
+        "tag": "viaje",
+        "sub": "reserveren"
+      },
+      {
+        "stimulus": "🔊 hacer la maleta",
+        "answers": [
+          "hacer la maleta"
+        ],
+        "tag": "viaje",
+        "sub": "de koffer pakken"
+      },
+      {
+        "stimulus": "🔊 sacar fotos",
+        "answers": [
+          "sacar fotos"
+        ],
+        "tag": "viaje",
+        "sub": "foto's maken"
+      },
+      {
+        "stimulus": "🔊 perder",
+        "answers": [
+          "perder el tren",
+          "perder"
+        ],
+        "tag": "viaje",
+        "sub": "missen (de trein)"
+      },
+      {
+        "stimulus": "🔊 quedarse",
+        "answers": [
+          "quedarse"
+        ],
+        "tag": "viaje",
+        "sub": "verblijven / blijven"
+      },
+      {
+        "stimulus": "🔊 alquilar",
+        "answers": [
+          "alquilar"
+        ],
+        "tag": "viaje",
+        "sub": "huren"
+      },
+      {
+        "stimulus": "🔊 volver",
+        "answers": [
+          "volver"
+        ],
+        "tag": "viaje",
+        "sub": "terugkeren"
+      },
+      {
+        "stimulus": "🔊 he estado",
+        "answers": [
+          "he estado"
+        ],
+        "tag": "experiencias",
+        "sub": "ik ben geweest"
+      },
+      {
+        "stimulus": "🔊 he visitado",
+        "answers": [
+          "he visitado"
+        ],
+        "tag": "experiencias",
+        "sub": "ik heb bezocht"
+      },
+      {
+        "stimulus": "🔊 he visto",
+        "answers": [
+          "he visto"
+        ],
+        "tag": "experiencias",
+        "sub": "ik heb gezien"
+      },
+      {
+        "stimulus": "🔊 he comido",
+        "answers": [
+          "he comido"
+        ],
+        "tag": "experiencias",
+        "sub": "ik heb gegeten"
+      },
+      {
+        "stimulus": "🔊 he hecho",
+        "answers": [
+          "he hecho"
+        ],
+        "tag": "experiencias",
+        "sub": "ik heb gedaan/gemaakt"
+      },
+      {
+        "stimulus": "🔊 he probado",
+        "answers": [
+          "he probado"
+        ],
+        "tag": "experiencias",
+        "sub": "ik heb geproefd"
+      },
+      {
+        "stimulus": "🔊 ha sido",
+        "answers": [
+          "ha sido"
+        ],
+        "tag": "experiencias",
+        "sub": "het is geweest"
+      },
+      {
+        "stimulus": "🔊 me ha encantado",
+        "answers": [
+          "me ha encantado"
+        ],
+        "tag": "experiencias",
+        "sub": "ik vond het geweldig"
+      },
+      {
+        "stimulus": "🔊 la playa",
+        "answers": [
+          "la playa",
+          "playa"
+        ],
+        "tag": "lugares",
+        "sub": "het strand"
+      },
+      {
+        "stimulus": "🔊 la montaña",
+        "answers": [
+          "la montaña",
+          "montaña"
+        ],
+        "tag": "lugares",
+        "sub": "de berg"
+      },
+      {
+        "stimulus": "🔊 el museo",
+        "answers": [
+          "el museo",
+          "museo"
+        ],
+        "tag": "lugares",
+        "sub": "het museum"
+      },
+      {
+        "stimulus": "🔊 la ciudad",
+        "answers": [
+          "la ciudad",
+          "ciudad"
+        ],
+        "tag": "lugares",
+        "sub": "de stad"
+      },
+      {
+        "stimulus": "🔊 el pueblo",
+        "answers": [
+          "el pueblo",
+          "pueblo"
+        ],
+        "tag": "lugares",
+        "sub": "het dorp"
+      },
+      {
+        "stimulus": "🔊 la costa",
+        "answers": [
+          "la costa",
+          "costa"
+        ],
+        "tag": "lugares",
+        "sub": "de kust"
+      },
+      {
+        "stimulus": "🔊 el desierto",
+        "answers": [
+          "el desierto",
+          "desierto"
+        ],
+        "tag": "lugares",
+        "sub": "de woestijn"
+      },
+      {
+        "stimulus": "🔊 el paisaje",
+        "answers": [
+          "el paisaje",
+          "paisaje"
+        ],
+        "tag": "lugares",
+        "sub": "het landschap"
+      },
+      {
+        "stimulus": "🔊 para",
+        "answers": [
+          "para"
+        ],
+        "tag": "porpara",
+        "sub": "om te / naar (doel/bestemming)"
+      },
+      {
+        "stimulus": "🔊 por",
+        "answers": [
+          "por"
+        ],
+        "tag": "porpara",
+        "sub": "door / via / gedurende"
+      },
+      {
+        "stimulus": "🔊 para + infinitivo",
+        "answers": [
+          "para + infinitivo"
+        ],
+        "tag": "porpara",
+        "sub": "om te …"
+      },
+      {
+        "stimulus": "🔊 por la mañana",
+        "answers": [
+          "por la mañana"
+        ],
+        "tag": "porpara",
+        "sub": "'s ochtends"
+      },
+      {
+        "stimulus": "🔊 por dos días",
+        "answers": [
+          "por dos días"
+        ],
+        "tag": "porpara",
+        "sub": "voor twee dagen"
+      },
+      {
+        "stimulus": "🔊 para ti",
+        "answers": [
+          "para ti"
+        ],
+        "tag": "porpara",
+        "sub": "voor jou"
+      },
+      {
+        "stimulus": "🔊 ¿qué tal el viaje?",
+        "answers": [
+          "¿qué tal el viaje?"
+        ],
+        "tag": "opinar",
+        "sub": "hoe was de reis?"
+      },
+      {
+        "stimulus": "🔊 lo mejor",
+        "answers": [
+          "lo mejor"
+        ],
+        "tag": "opinar",
+        "sub": "het beste"
+      },
+      {
+        "stimulus": "🔊 lo peor",
+        "answers": [
+          "lo peor"
+        ],
+        "tag": "opinar",
+        "sub": "het ergste"
+      },
+      {
+        "stimulus": "🔊 impresionante",
+        "answers": [
+          "impresionante"
+        ],
+        "tag": "opinar",
+        "sub": "indrukwekkend"
+      },
+      {
+        "stimulus": "🔊 inolvidable",
+        "answers": [
+          "inolvidable"
+        ],
+        "tag": "opinar",
+        "sub": "onvergetelijk"
+      },
+      {
+        "stimulus": "🔊 barato ↔ caro",
+        "answers": [
+          "barato ↔ caro"
+        ],
+        "tag": "opinar",
+        "sub": "goedkoop ↔ duur"
+      },
+      {
+        "stimulus": "🔊 ya",
+        "answers": [
+          "ya"
+        ],
+        "tag": "tiempo",
+        "sub": "al"
+      },
+      {
+        "stimulus": "🔊 todavía no",
+        "answers": [
+          "todavía no"
+        ],
+        "tag": "tiempo",
+        "sub": "nog niet"
+      },
+      {
+        "stimulus": "🔊 nunca",
+        "answers": [
+          "nunca"
+        ],
+        "tag": "tiempo",
+        "sub": "nooit"
+      },
+      {
+        "stimulus": "🔊 alguna vez",
+        "answers": [
+          "alguna vez"
+        ],
+        "tag": "tiempo",
+        "sub": "ooit"
+      },
+      {
+        "stimulus": "🔊 este año",
+        "answers": [
+          "este año"
+        ],
+        "tag": "tiempo",
+        "sub": "dit jaar"
+      },
+      {
+        "stimulus": "🔊 esta semana",
+        "answers": [
+          "esta semana"
+        ],
+        "tag": "tiempo",
+        "sub": "deze week"
+      },
+      {
+        "stimulus": "🔊 hoy",
+        "answers": [
+          "hoy"
+        ],
+        "tag": "tiempo",
+        "sub": "vandaag"
+      },
+      {
+        "stimulus": "🔊 últimamente",
+        "answers": [
+          "últimamente"
+        ],
+        "tag": "tiempo",
+        "sub": "de laatste tijd"
+      }
+    ]
+  }
+}

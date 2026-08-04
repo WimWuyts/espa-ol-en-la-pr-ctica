@@ -1,0 +1,493 @@
+{
+  "id": "es-c6plus-u7-que-palabra",
+  "title": "¿Qué palabra?",
+  "subtitle": "C6+ · U7 · van thema naar woord (ophalen zonder zin)",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "salud → «de gezondheid»",
+        "answers": [
+          "la salud",
+          "salud"
+        ],
+        "hint": "s____",
+        "tag": "salud",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "salud → «het lichaam»",
+        "answers": [
+          "el cuerpo",
+          "cuerpo"
+        ],
+        "hint": "c_____",
+        "tag": "salud",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "salud → «de oefening/beweging»",
+        "answers": [
+          "el ejercicio",
+          "ejercicio"
+        ],
+        "hint": "e________",
+        "tag": "salud",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "salud → «rusten»",
+        "answers": [
+          "descansar"
+        ],
+        "hint": "d________",
+        "tag": "salud",
+        "sub": "verbo"
+      },
+      {
+        "stimulus": "salud → «slapen»",
+        "answers": [
+          "dormir"
+        ],
+        "hint": "d_____",
+        "tag": "salud",
+        "sub": "verbo"
+      },
+      {
+        "stimulus": "salud → «het dieet/voeding»",
+        "answers": [
+          "la dieta",
+          "dieta"
+        ],
+        "hint": "d____",
+        "tag": "salud",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "salud → «de stress»",
+        "answers": [
+          "el estrés",
+          "estrés"
+        ],
+        "hint": "e_____",
+        "tag": "salud",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "salud → «voor zichzelf zorgen»",
+        "answers": [
+          "cuidarse"
+        ],
+        "hint": "c_______",
+        "tag": "salud",
+        "sub": "verbo"
+      },
+      {
+        "stimulus": "salud → «het fruit»",
+        "answers": [
+          "la fruta",
+          "fruta"
+        ],
+        "hint": "f____",
+        "tag": "salud",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "salud → «het water»",
+        "answers": [
+          "el agua",
+          "agua"
+        ],
+        "hint": "a___",
+        "tag": "salud",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "consejos → «de raad/tip»",
+        "answers": [
+          "el consejo",
+          "consejo"
+        ],
+        "hint": "c______",
+        "tag": "consejos",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "consejos → «gezond eten»",
+        "answers": [
+          "comer sano"
+        ],
+        "hint": "c____ s___",
+        "tag": "consejos",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "consejos → «sporten»",
+        "answers": [
+          "hacer deporte"
+        ],
+        "hint": "h____ d______",
+        "tag": "consejos",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "consejos → «water drinken»",
+        "answers": [
+          "beber agua"
+        ],
+        "hint": "b____ a___",
+        "tag": "consejos",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "consejos → «vermijden»",
+        "answers": [
+          "evitar"
+        ],
+        "hint": "e_____",
+        "tag": "consejos",
+        "sub": "verbo"
+      },
+      {
+        "stimulus": "consejos → «bewegen»",
+        "answers": [
+          "moverse"
+        ],
+        "hint": "m______",
+        "tag": "consejos",
+        "sub": "verbo"
+      },
+      {
+        "stimulus": "consejos → «ontspannen»",
+        "answers": [
+          "relajarse"
+        ],
+        "hint": "r________",
+        "tag": "consejos",
+        "sub": "verbo"
+      },
+      {
+        "stimulus": "consejos → «het is belangrijk»",
+        "answers": [
+          "es importante"
+        ],
+        "hint": "e_ i_________",
+        "tag": "consejos",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "consejos → «je zou moeten»",
+        "answers": [
+          "deberías"
+        ],
+        "hint": "d_______",
+        "tag": "consejos",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "medioambiente → «het milieu»",
+        "answers": [
+          "el medio ambiente",
+          "medio ambiente"
+        ],
+        "hint": "m____ a_______",
+        "tag": "medioambiente",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "medioambiente → «de planeet»",
+        "answers": [
+          "el planeta",
+          "planeta"
+        ],
+        "hint": "p______",
+        "tag": "medioambiente",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "medioambiente → «de natuur»",
+        "answers": [
+          "la naturaleza",
+          "naturaleza"
+        ],
+        "hint": "n_________",
+        "tag": "medioambiente",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "medioambiente → «recyclen»",
+        "answers": [
+          "reciclar"
+        ],
+        "hint": "r_______",
+        "tag": "medioambiente",
+        "sub": "verbo"
+      },
+      {
+        "stimulus": "medioambiente → «het afval»",
+        "answers": [
+          "la basura",
+          "basura"
+        ],
+        "hint": "b_____",
+        "tag": "medioambiente",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "medioambiente → «vervuilen»",
+        "answers": [
+          "contaminar"
+        ],
+        "hint": "c_________",
+        "tag": "medioambiente",
+        "sub": "verbo"
+      },
+      {
+        "stimulus": "medioambiente → «de vervuiling»",
+        "answers": [
+          "la contaminación",
+          "contaminación"
+        ],
+        "hint": "c____________",
+        "tag": "medioambiente",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "medioambiente → «besparen»",
+        "answers": [
+          "ahorrar"
+        ],
+        "hint": "a______",
+        "tag": "medioambiente",
+        "sub": "verbo"
+      },
+      {
+        "stimulus": "medioambiente → «de energie»",
+        "answers": [
+          "la energía",
+          "energía"
+        ],
+        "hint": "e______",
+        "tag": "medioambiente",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "medioambiente → «beschermen»",
+        "answers": [
+          "proteger"
+        ],
+        "hint": "p_______",
+        "tag": "medioambiente",
+        "sub": "verbo"
+      },
+      {
+        "stimulus": "medioambiente → «de boom»",
+        "answers": [
+          "el árbol",
+          "árbol"
+        ],
+        "hint": "á____",
+        "tag": "medioambiente",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "medioambiente → «het bos»",
+        "answers": [
+          "el bosque",
+          "bosque"
+        ],
+        "hint": "b_____",
+        "tag": "medioambiente",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "imperativo → «zorg (jij)»",
+        "answers": [
+          "cuida"
+        ],
+        "hint": "c____",
+        "tag": "imperativo",
+        "sub": "imper."
+      },
+      {
+        "stimulus": "imperativo → «eet (jij)»",
+        "answers": [
+          "come"
+        ],
+        "hint": "c___",
+        "tag": "imperativo",
+        "sub": "imper."
+      },
+      {
+        "stimulus": "imperativo → «drink (jij)»",
+        "answers": [
+          "bebe"
+        ],
+        "hint": "b___",
+        "tag": "imperativo",
+        "sub": "imper."
+      },
+      {
+        "stimulus": "imperativo → «doe/maak (jij)»",
+        "answers": [
+          "haz"
+        ],
+        "hint": "h__",
+        "tag": "imperativo",
+        "sub": "imper."
+      },
+      {
+        "stimulus": "imperativo → «kom (jij)»",
+        "answers": [
+          "ven"
+        ],
+        "hint": "v__",
+        "tag": "imperativo",
+        "sub": "imper."
+      },
+      {
+        "stimulus": "imperativo → «zeg (jij)»",
+        "answers": [
+          "di"
+        ],
+        "hint": "d_",
+        "tag": "imperativo",
+        "sub": "imper."
+      },
+      {
+        "stimulus": "imperativo → «wees (jij)»",
+        "answers": [
+          "sé"
+        ],
+        "hint": "s_",
+        "tag": "imperativo",
+        "sub": "imper."
+      },
+      {
+        "stimulus": "imperativo → «recycle (jij)»",
+        "answers": [
+          "recicla"
+        ],
+        "hint": "r______",
+        "tag": "imperativo",
+        "sub": "imper."
+      },
+      {
+        "stimulus": "opinar → «ik denk dat»",
+        "answers": [
+          "creo que"
+        ],
+        "hint": "c___ q__",
+        "tag": "opinar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "opinar → «ik vind dat»",
+        "answers": [
+          "pienso que"
+        ],
+        "hint": "p_____ q__",
+        "tag": "opinar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "opinar → «volgens mij»",
+        "answers": [
+          "en mi opinión"
+        ],
+        "hint": "e_ m_ o______",
+        "tag": "opinar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "opinar → «het lijkt me dat»",
+        "answers": [
+          "me parece que"
+        ],
+        "hint": "m_ p_____ q__",
+        "tag": "opinar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "opinar → «ik ben het eens»",
+        "answers": [
+          "estoy de acuerdo"
+        ],
+        "hint": "e____ d_ a______",
+        "tag": "opinar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "opinar → «gelijk hebben»",
+        "answers": [
+          "tener razón"
+        ],
+        "hint": "t____ r____",
+        "tag": "opinar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "conectores → «omdat/want»",
+        "answers": [
+          "porque"
+        ],
+        "hint": "p_____",
+        "tag": "conectores",
+        "sub": "conector"
+      },
+      {
+        "stimulus": "conectores → «bovendien»",
+        "answers": [
+          "además"
+        ],
+        "hint": "a_____",
+        "tag": "conectores",
+        "sub": "conector"
+      },
+      {
+        "stimulus": "conectores → «daarom»",
+        "answers": [
+          "por eso"
+        ],
+        "hint": "p__ e__",
+        "tag": "conectores",
+        "sub": "conector"
+      },
+      {
+        "stimulus": "conectores → «echter»",
+        "answers": [
+          "sin embargo"
+        ],
+        "hint": "s__ e______",
+        "tag": "conectores",
+        "sub": "conector"
+      },
+      {
+        "stimulus": "conectores → «enerzijds»",
+        "answers": [
+          "por un lado"
+        ],
+        "hint": "p__ u_ l___",
+        "tag": "conectores",
+        "sub": "conector"
+      },
+      {
+        "stimulus": "conectores → «anderzijds»",
+        "answers": [
+          "por otro lado"
+        ],
+        "hint": "p__ o___ l___",
+        "tag": "conectores",
+        "sub": "conector"
+      }
+    ]
+  }
+}

@@ -1,0 +1,450 @@
+{
+  "id": "es-c6plus-u7-dictado",
+  "title": "Dictado",
+  "subtitle": "C6+ · U7 · luister en typ · lees eerst, dan afdekken",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "🔊 la salud",
+        "answers": [
+          "la salud",
+          "salud"
+        ],
+        "tag": "salud",
+        "sub": "de gezondheid"
+      },
+      {
+        "stimulus": "🔊 el cuerpo",
+        "answers": [
+          "el cuerpo",
+          "cuerpo"
+        ],
+        "tag": "salud",
+        "sub": "het lichaam"
+      },
+      {
+        "stimulus": "🔊 el ejercicio",
+        "answers": [
+          "el ejercicio",
+          "ejercicio"
+        ],
+        "tag": "salud",
+        "sub": "de oefening/beweging"
+      },
+      {
+        "stimulus": "🔊 descansar",
+        "answers": [
+          "descansar"
+        ],
+        "tag": "salud",
+        "sub": "rusten"
+      },
+      {
+        "stimulus": "🔊 dormir",
+        "answers": [
+          "dormir"
+        ],
+        "tag": "salud",
+        "sub": "slapen"
+      },
+      {
+        "stimulus": "🔊 la dieta",
+        "answers": [
+          "la dieta",
+          "dieta"
+        ],
+        "tag": "salud",
+        "sub": "het dieet/voeding"
+      },
+      {
+        "stimulus": "🔊 el estrés",
+        "answers": [
+          "el estrés",
+          "estrés"
+        ],
+        "tag": "salud",
+        "sub": "de stress"
+      },
+      {
+        "stimulus": "🔊 cuidarse",
+        "answers": [
+          "cuidarse"
+        ],
+        "tag": "salud",
+        "sub": "voor zichzelf zorgen"
+      },
+      {
+        "stimulus": "🔊 la fruta",
+        "answers": [
+          "la fruta",
+          "fruta"
+        ],
+        "tag": "salud",
+        "sub": "het fruit"
+      },
+      {
+        "stimulus": "🔊 el agua",
+        "answers": [
+          "el agua",
+          "agua"
+        ],
+        "tag": "salud",
+        "sub": "het water"
+      },
+      {
+        "stimulus": "🔊 el consejo",
+        "answers": [
+          "el consejo",
+          "consejo"
+        ],
+        "tag": "consejos",
+        "sub": "de raad/tip"
+      },
+      {
+        "stimulus": "🔊 comer sano",
+        "answers": [
+          "comer sano"
+        ],
+        "tag": "consejos",
+        "sub": "gezond eten"
+      },
+      {
+        "stimulus": "🔊 hacer deporte",
+        "answers": [
+          "hacer deporte"
+        ],
+        "tag": "consejos",
+        "sub": "sporten"
+      },
+      {
+        "stimulus": "🔊 beber agua",
+        "answers": [
+          "beber agua"
+        ],
+        "tag": "consejos",
+        "sub": "water drinken"
+      },
+      {
+        "stimulus": "🔊 evitar",
+        "answers": [
+          "evitar"
+        ],
+        "tag": "consejos",
+        "sub": "vermijden"
+      },
+      {
+        "stimulus": "🔊 moverse",
+        "answers": [
+          "moverse"
+        ],
+        "tag": "consejos",
+        "sub": "bewegen"
+      },
+      {
+        "stimulus": "🔊 relajarse",
+        "answers": [
+          "relajarse"
+        ],
+        "tag": "consejos",
+        "sub": "ontspannen"
+      },
+      {
+        "stimulus": "🔊 es importante",
+        "answers": [
+          "es importante"
+        ],
+        "tag": "consejos",
+        "sub": "het is belangrijk"
+      },
+      {
+        "stimulus": "🔊 deberías",
+        "answers": [
+          "deberías"
+        ],
+        "tag": "consejos",
+        "sub": "je zou moeten"
+      },
+      {
+        "stimulus": "🔊 el medio ambiente",
+        "answers": [
+          "el medio ambiente",
+          "medio ambiente"
+        ],
+        "tag": "medioambiente",
+        "sub": "het milieu"
+      },
+      {
+        "stimulus": "🔊 el planeta",
+        "answers": [
+          "el planeta",
+          "planeta"
+        ],
+        "tag": "medioambiente",
+        "sub": "de planeet"
+      },
+      {
+        "stimulus": "🔊 la naturaleza",
+        "answers": [
+          "la naturaleza",
+          "naturaleza"
+        ],
+        "tag": "medioambiente",
+        "sub": "de natuur"
+      },
+      {
+        "stimulus": "🔊 reciclar",
+        "answers": [
+          "reciclar"
+        ],
+        "tag": "medioambiente",
+        "sub": "recyclen"
+      },
+      {
+        "stimulus": "🔊 la basura",
+        "answers": [
+          "la basura",
+          "basura"
+        ],
+        "tag": "medioambiente",
+        "sub": "het afval"
+      },
+      {
+        "stimulus": "🔊 contaminar",
+        "answers": [
+          "contaminar"
+        ],
+        "tag": "medioambiente",
+        "sub": "vervuilen"
+      },
+      {
+        "stimulus": "🔊 la contaminación",
+        "answers": [
+          "la contaminación",
+          "contaminación"
+        ],
+        "tag": "medioambiente",
+        "sub": "de vervuiling"
+      },
+      {
+        "stimulus": "🔊 ahorrar",
+        "answers": [
+          "ahorrar"
+        ],
+        "tag": "medioambiente",
+        "sub": "besparen"
+      },
+      {
+        "stimulus": "🔊 la energía",
+        "answers": [
+          "la energía",
+          "energía"
+        ],
+        "tag": "medioambiente",
+        "sub": "de energie"
+      },
+      {
+        "stimulus": "🔊 proteger",
+        "answers": [
+          "proteger"
+        ],
+        "tag": "medioambiente",
+        "sub": "beschermen"
+      },
+      {
+        "stimulus": "🔊 el árbol",
+        "answers": [
+          "el árbol",
+          "árbol"
+        ],
+        "tag": "medioambiente",
+        "sub": "de boom"
+      },
+      {
+        "stimulus": "🔊 el bosque",
+        "answers": [
+          "el bosque",
+          "bosque"
+        ],
+        "tag": "medioambiente",
+        "sub": "het bos"
+      },
+      {
+        "stimulus": "🔊 cuida",
+        "answers": [
+          "cuida"
+        ],
+        "tag": "imperativo",
+        "sub": "zorg (jij)"
+      },
+      {
+        "stimulus": "🔊 come",
+        "answers": [
+          "come"
+        ],
+        "tag": "imperativo",
+        "sub": "eet (jij)"
+      },
+      {
+        "stimulus": "🔊 bebe",
+        "answers": [
+          "bebe"
+        ],
+        "tag": "imperativo",
+        "sub": "drink (jij)"
+      },
+      {
+        "stimulus": "🔊 haz",
+        "answers": [
+          "haz"
+        ],
+        "tag": "imperativo",
+        "sub": "doe/maak (jij)"
+      },
+      {
+        "stimulus": "🔊 ven",
+        "answers": [
+          "ven"
+        ],
+        "tag": "imperativo",
+        "sub": "kom (jij)"
+      },
+      {
+        "stimulus": "🔊 di",
+        "answers": [
+          "di"
+        ],
+        "tag": "imperativo",
+        "sub": "zeg (jij)"
+      },
+      {
+        "stimulus": "🔊 sé",
+        "answers": [
+          "sé"
+        ],
+        "tag": "imperativo",
+        "sub": "wees (jij)"
+      },
+      {
+        "stimulus": "🔊 recicla",
+        "answers": [
+          "recicla"
+        ],
+        "tag": "imperativo",
+        "sub": "recycle (jij)"
+      },
+      {
+        "stimulus": "🔊 creo que",
+        "answers": [
+          "creo que"
+        ],
+        "tag": "opinar",
+        "sub": "ik denk dat"
+      },
+      {
+        "stimulus": "🔊 pienso que",
+        "answers": [
+          "pienso que"
+        ],
+        "tag": "opinar",
+        "sub": "ik vind dat"
+      },
+      {
+        "stimulus": "🔊 en mi opinión",
+        "answers": [
+          "en mi opinión"
+        ],
+        "tag": "opinar",
+        "sub": "volgens mij"
+      },
+      {
+        "stimulus": "🔊 me parece que",
+        "answers": [
+          "me parece que"
+        ],
+        "tag": "opinar",
+        "sub": "het lijkt me dat"
+      },
+      {
+        "stimulus": "🔊 estoy de acuerdo",
+        "answers": [
+          "estoy de acuerdo"
+        ],
+        "tag": "opinar",
+        "sub": "ik ben het eens"
+      },
+      {
+        "stimulus": "🔊 no estoy de acuerdo",
+        "answers": [
+          "no estoy de acuerdo"
+        ],
+        "tag": "opinar",
+        "sub": "ik ben het oneens"
+      },
+      {
+        "stimulus": "🔊 tener razón",
+        "answers": [
+          "tener razón"
+        ],
+        "tag": "opinar",
+        "sub": "gelijk hebben"
+      },
+      {
+        "stimulus": "🔊 porque",
+        "answers": [
+          "porque"
+        ],
+        "tag": "conectores",
+        "sub": "omdat/want"
+      },
+      {
+        "stimulus": "🔊 además",
+        "answers": [
+          "además"
+        ],
+        "tag": "conectores",
+        "sub": "bovendien"
+      },
+      {
+        "stimulus": "🔊 por eso",
+        "answers": [
+          "por eso"
+        ],
+        "tag": "conectores",
+        "sub": "daarom"
+      },
+      {
+        "stimulus": "🔊 sin embargo",
+        "answers": [
+          "sin embargo"
+        ],
+        "tag": "conectores",
+        "sub": "echter"
+      },
+      {
+        "stimulus": "🔊 por un lado",
+        "answers": [
+          "por un lado"
+        ],
+        "tag": "conectores",
+        "sub": "enerzijds"
+      },
+      {
+        "stimulus": "🔊 por otro lado",
+        "answers": [
+          "por otro lado"
+        ],
+        "tag": "conectores",
+        "sub": "anderzijds"
+      }
+    ]
+  }
+}

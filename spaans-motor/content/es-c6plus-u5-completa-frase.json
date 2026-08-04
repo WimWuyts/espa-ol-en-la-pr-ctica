@@ -1,0 +1,389 @@
+{
+  "id": "es-c6plus-u5-completa-frase",
+  "title": "Completa la frase",
+  "subtitle": "C6+ · U5 · vul het ontbrekende woord in (betekenis uit de context)",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "Tuvo una ___ difícil.",
+        "answers": [
+          "la vida",
+          "vida",
+          "vida"
+        ],
+        "tag": "biografia",
+        "sub": "het leven"
+      },
+      {
+        "stimulus": "Recibió el ___ Nobel.",
+        "answers": [
+          "el premio",
+          "premio",
+          "premio"
+        ],
+        "tag": "logros",
+        "sub": "de prijs"
+      },
+      {
+        "stimulus": "Tuvo mucho ___.",
+        "answers": [
+          "el éxito",
+          "éxito",
+          "éxito"
+        ],
+        "tag": "logros",
+        "sub": "het succes"
+      },
+      {
+        "stimulus": "Gardel fue un ___.",
+        "answers": [
+          "el cantante",
+          "cantante",
+          "cantante"
+        ],
+        "tag": "persona",
+        "sub": "de zanger(es)"
+      },
+      {
+        "stimulus": "Messi es ___.",
+        "answers": [
+          "el futbolista",
+          "futbolista",
+          "futbolista"
+        ],
+        "tag": "persona",
+        "sub": "de voetballer"
+      },
+      {
+        "stimulus": "Fue un ___ político.",
+        "answers": [
+          "el líder",
+          "líder",
+          "líder"
+        ],
+        "tag": "persona",
+        "sub": "de leider"
+      },
+      {
+        "stimulus": "___ presidente.",
+        "answers": [
+          "fue",
+          "fue"
+        ],
+        "tag": "indefinido",
+        "sub": "was / ging (ser/ir)"
+      },
+      {
+        "stimulus": "___ mucho éxito.",
+        "answers": [
+          "tuvo",
+          "tuvo"
+        ],
+        "tag": "indefinido",
+        "sub": "had (tener)"
+      },
+      {
+        "stimulus": "___ historia.",
+        "answers": [
+          "hizo",
+          "hizo"
+        ],
+        "tag": "indefinido",
+        "sub": "deed/maakte (hacer)"
+      },
+      {
+        "stimulus": "___ en Europa.",
+        "answers": [
+          "estuvo",
+          "estuvo"
+        ],
+        "tag": "indefinido",
+        "sub": "was (estar)"
+      },
+      {
+        "stimulus": "___ la verdad.",
+        "answers": [
+          "dijo",
+          "dijo"
+        ],
+        "tag": "indefinido",
+        "sub": "zei (decir)"
+      },
+      {
+        "stimulus": "___ a la ciudad.",
+        "answers": [
+          "vino",
+          "vino"
+        ],
+        "tag": "indefinido",
+        "sub": "kwam (venir)"
+      },
+      {
+        "stimulus": "No ___ ir.",
+        "answers": [
+          "pudo",
+          "pudo"
+        ],
+        "tag": "indefinido",
+        "sub": "kon (poder)"
+      },
+      {
+        "stimulus": "___ un concierto.",
+        "answers": [
+          "dio",
+          "dio"
+        ],
+        "tag": "indefinido",
+        "sub": "gaf (dar)"
+      },
+      {
+        "stimulus": "___ el mar por primera vez.",
+        "answers": [
+          "vio",
+          "vio"
+        ],
+        "tag": "indefinido",
+        "sub": "zag (ver)"
+      },
+      {
+        "stimulus": "___ fui al cine.",
+        "answers": [
+          "ayer",
+          "ayer"
+        ],
+        "tag": "tiempo",
+        "sub": "gisteren"
+      },
+      {
+        "stimulus": "___ llovió.",
+        "answers": [
+          "anteayer",
+          "anteayer"
+        ],
+        "tag": "tiempo",
+        "sub": "eergisteren"
+      },
+      {
+        "stimulus": "El ___ viajé a Perú.",
+        "answers": [
+          "el año pasado",
+          "año pasado",
+          "año pasado"
+        ],
+        "tag": "tiempo",
+        "sub": "vorig jaar"
+      },
+      {
+        "stimulus": "La ___ estudié mucho.",
+        "answers": [
+          "la semana pasada",
+          "semana pasada",
+          "semana pasada"
+        ],
+        "tag": "tiempo",
+        "sub": "vorige week"
+      },
+      {
+        "stimulus": "Nació ___.",
+        "answers": [
+          "en 1982",
+          "en 1982"
+        ],
+        "tag": "tiempo",
+        "sub": "in 1982"
+      },
+      {
+        "stimulus": "___ me mudé.",
+        "answers": [
+          "hace dos años",
+          "hace dos años"
+        ],
+        "tag": "tiempo",
+        "sub": "twee jaar geleden"
+      },
+      {
+        "stimulus": "___, todo cambió.",
+        "answers": [
+          "de repente",
+          "de repente"
+        ],
+        "tag": "tiempo",
+        "sub": "plots"
+      },
+      {
+        "stimulus": "___ empezó su carrera.",
+        "answers": [
+          "entonces",
+          "entonces"
+        ],
+        "tag": "tiempo",
+        "sub": "toen / dus"
+      },
+      {
+        "stimulus": "___ di a Mateo.",
+        "answers": [
+          "se lo",
+          "se lo"
+        ],
+        "tag": "odoi",
+        "sub": "het aan hem/haar"
+      },
+      {
+        "stimulus": "___ conté a Nina.",
+        "answers": [
+          "se la",
+          "se la"
+        ],
+        "tag": "odoi",
+        "sub": "haar (het) aan hem/haar"
+      },
+      {
+        "stimulus": "Voy a ___ mañana.",
+        "answers": [
+          "dárselo",
+          "dárselo"
+        ],
+        "tag": "odoi",
+        "sub": "het aan hem/haar geven"
+      },
+      {
+        "stimulus": "Quiero ___.",
+        "answers": [
+          "contárselo",
+          "contárselo"
+        ],
+        "tag": "odoi",
+        "sub": "het aan hem/haar vertellen"
+      },
+      {
+        "stimulus": "___ ayer.",
+        "answers": [
+          "me lo dio",
+          "me lo dio"
+        ],
+        "tag": "odoi",
+        "sub": "hij/zij gaf het aan mij"
+      },
+      {
+        "stimulus": "___ por correo.",
+        "answers": [
+          "te la mandó",
+          "te la mandó"
+        ],
+        "tag": "odoi",
+        "sub": "hij/zij stuurde ze naar jou"
+      },
+      {
+        "stimulus": "Es una ___ real.",
+        "answers": [
+          "la historia",
+          "historia",
+          "historia"
+        ],
+        "tag": "relato",
+        "sub": "het verhaal / de geschiedenis"
+      },
+      {
+        "stimulus": "Una ___ del tango.",
+        "answers": [
+          "la leyenda",
+          "leyenda",
+          "leyenda"
+        ],
+        "tag": "relato",
+        "sub": "de legende"
+      },
+      {
+        "stimulus": "___ un rey.",
+        "answers": [
+          "érase una vez",
+          "érase una vez"
+        ],
+        "tag": "relato",
+        "sub": "er was eens"
+      },
+      {
+        "stimulus": "Un ___ inolvidable.",
+        "answers": [
+          "el personaje",
+          "personaje",
+          "personaje"
+        ],
+        "tag": "relato",
+        "sub": "het personage"
+      },
+      {
+        "stimulus": "___, triunfó.",
+        "answers": [
+          "al final",
+          "al final"
+        ],
+        "tag": "relato",
+        "sub": "uiteindelijk"
+      },
+      {
+        "stimulus": "___ es famoso.",
+        "answers": [
+          "por eso",
+          "por eso"
+        ],
+        "tag": "relato",
+        "sub": "daarom"
+      },
+      {
+        "stimulus": "Una vida ___.",
+        "answers": [
+          "increíble",
+          "increíble"
+        ],
+        "tag": "opinar",
+        "sub": "ongelooflijk"
+      },
+      {
+        "stimulus": "Un artista ___.",
+        "answers": [
+          "importante",
+          "importante"
+        ],
+        "tag": "opinar",
+        "sub": "belangrijk"
+      },
+      {
+        "stimulus": "Una historia ___.",
+        "answers": [
+          "interesante",
+          "interesante"
+        ],
+        "tag": "opinar",
+        "sub": "interessant"
+      },
+      {
+        "stimulus": "___ un genio.",
+        "answers": [
+          "creo que fue",
+          "creo que fue"
+        ],
+        "tag": "opinar",
+        "sub": "ik denk dat hij/zij was"
+      },
+      {
+        "stimulus": "___ fue su música.",
+        "answers": [
+          "lo más importante",
+          "lo más importante"
+        ],
+        "tag": "opinar",
+        "sub": "het belangrijkste"
+      }
+    ]
+  }
+}

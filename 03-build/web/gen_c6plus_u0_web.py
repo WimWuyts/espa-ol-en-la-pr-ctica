@@ -33,7 +33,8 @@ MOTOR = [
  ['① Reconocer · woordenschat', [
    ['saludos-memoria', 'memoria del reencuentro', 'memory'],
    ['paises-memoria', 'banderas y países', 'memory'],
-   ['pais-nacionalidad', 'país ↔ nacionalidad', 'match']]],
+   ['pais-nacionalidad', 'país ↔ nacionalidad', 'match'],
+   ['verbo-yo', 'el verbo y su yo', 'match']]],
  ['② Distinguir · gramática', [
    ['formal-informal', '¿formal o informal?', 'classify'],
    ['genero', '¿el o la?', 'classify'],
@@ -43,11 +44,13 @@ MOTOR = [
    ['concordancia', 'completa: concordancia', 'cloze'],
    ['concordancia-tetris', 'concordancia Tetris', 'tetris'],
    ['presentacion-order', 'ordena la presentación', 'order'],
-   ['senala', 'señala', 'point']]],
+   ['senala', 'señala', 'point'],
+   ['acento-tap', '¿dónde va el acento?', 'tap']]],
  ['④ Hablar · grábate 🎙️', [
    ['repite-saludos', 'escucha y repite: saludos', 'speak'],
-   ['mensaje-presentate', 'mensaje de voz: preséntate', 'speak']]],
-]
+   ['mensaje-presentate', 'mensaje de voz: preséntate', 'speak'],
+   ['vuelve-presentate', 'preséntate otra vez', 'sim'],
+   ['carrusel-presentate', 'carrusel · preséntate', 'speak']]]]
 # De getypte woordenschatladder (make_vocab_type_games.py): ophalen en
 # produceren, de treden die boven het koppelen en aanwijzen liggen.
 _grupo = hub_bloques.grupo_escribir(

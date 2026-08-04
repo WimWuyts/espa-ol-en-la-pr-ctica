@@ -1,0 +1,442 @@
+{
+  "id": "es-c6plus-u3-que-palabra",
+  "title": "¿Qué palabra?",
+  "subtitle": "C6+ · U3 · van thema naar woord (ophalen zonder zin)",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "dispositivos → «de gsm / mobiel»",
+        "answers": [
+          "el móvil",
+          "móvil"
+        ],
+        "hint": "m____",
+        "tag": "dispositivos",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "dispositivos → «de computer»",
+        "answers": [
+          "el ordenador",
+          "ordenador"
+        ],
+        "hint": "o________",
+        "tag": "dispositivos",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "dispositivos → «de tablet»",
+        "answers": [
+          "la tableta",
+          "tableta"
+        ],
+        "hint": "t______",
+        "tag": "dispositivos",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "dispositivos → «het scherm»",
+        "answers": [
+          "la pantalla",
+          "pantalla"
+        ],
+        "hint": "p_______",
+        "tag": "dispositivos",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "dispositivos → «de oortjes / koptelefoon»",
+        "answers": [
+          "los auriculares",
+          "auriculares"
+        ],
+        "hint": "a__________",
+        "tag": "dispositivos",
+        "sub": "znw. m. mv."
+      },
+      {
+        "stimulus": "dispositivos → «de oplader»",
+        "answers": [
+          "el cargador",
+          "cargador"
+        ],
+        "hint": "c_______",
+        "tag": "dispositivos",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "dispositivos → «de batterij»",
+        "answers": [
+          "la batería",
+          "batería"
+        ],
+        "hint": "b______",
+        "tag": "dispositivos",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "internet → «internet»",
+        "answers": [
+          "internet"
+        ],
+        "hint": "i_______",
+        "tag": "internet",
+        "sub": "znw."
+      },
+      {
+        "stimulus": "internet → «de sociale media»",
+        "answers": [
+          "las redes sociales",
+          "redes sociales"
+        ],
+        "hint": "r____ s_______",
+        "tag": "internet",
+        "sub": "znw. v. mv."
+      },
+      {
+        "stimulus": "internet → «de wifi»",
+        "answers": [
+          "la wifi",
+          "wifi"
+        ],
+        "hint": "w___",
+        "tag": "internet",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "internet → «het wachtwoord»",
+        "answers": [
+          "la contraseña",
+          "contraseña"
+        ],
+        "hint": "c_________",
+        "tag": "internet",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "internet → «de gebruikersnaam / gebruiker»",
+        "answers": [
+          "el usuario",
+          "usuario"
+        ],
+        "hint": "u______",
+        "tag": "internet",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "internet → «het profiel»",
+        "answers": [
+          "el perfil",
+          "perfil"
+        ],
+        "hint": "p_____",
+        "tag": "internet",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "internet → «het bericht»",
+        "answers": [
+          "el mensaje",
+          "mensaje"
+        ],
+        "hint": "m______",
+        "tag": "internet",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "internet → «de video»",
+        "answers": [
+          "el vídeo",
+          "vídeo"
+        ],
+        "hint": "v____",
+        "tag": "internet",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "internet → «het videogesprek»",
+        "answers": [
+          "la videollamada",
+          "videollamada"
+        ],
+        "hint": "v___________",
+        "tag": "internet",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "digital → «chatten»",
+        "answers": [
+          "chatear"
+        ],
+        "hint": "c______",
+        "tag": "digital",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "digital → «surfen (op internet)»",
+        "answers": [
+          "navegar"
+        ],
+        "hint": "n______",
+        "tag": "digital",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "digital → «uploaden / plaatsen»",
+        "answers": [
+          "subir"
+        ],
+        "hint": "s____",
+        "tag": "digital",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "digital → «downloaden»",
+        "answers": [
+          "descargar"
+        ],
+        "hint": "d________",
+        "tag": "digital",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "digital → «delen»",
+        "answers": [
+          "compartir"
+        ],
+        "hint": "c________",
+        "tag": "digital",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "digital → «volgen»",
+        "answers": [
+          "seguir"
+        ],
+        "hint": "s_____",
+        "tag": "digital",
+        "sub": "ww. (e→i)"
+      },
+      {
+        "stimulus": "digital → «posten / publiceren»",
+        "answers": [
+          "publicar"
+        ],
+        "hint": "p_______",
+        "tag": "digital",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "digital → «verbinden / inloggen»",
+        "answers": [
+          "conectarse"
+        ],
+        "hint": "c_________",
+        "tag": "digital",
+        "sub": "ww. refl."
+      },
+      {
+        "stimulus": "digital → «uitzetten»",
+        "answers": [
+          "apagar"
+        ],
+        "hint": "a_____",
+        "tag": "digital",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "digital → «aanzetten»",
+        "answers": [
+          "encender"
+        ],
+        "hint": "e_______",
+        "tag": "digital",
+        "sub": "ww. (e→ie)"
+      },
+      {
+        "stimulus": "comunicar → «schrijven»",
+        "answers": [
+          "escribir"
+        ],
+        "hint": "e_______",
+        "tag": "comunicar",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "comunicar → «(op)bellen»",
+        "answers": [
+          "llamar"
+        ],
+        "hint": "l_____",
+        "tag": "comunicar",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "comunicar → «vertellen»",
+        "answers": [
+          "contar"
+        ],
+        "hint": "c_____",
+        "tag": "comunicar",
+        "sub": "ww. (o→ue)"
+      },
+      {
+        "stimulus": "comunicar → «zeggen»",
+        "answers": [
+          "decir"
+        ],
+        "hint": "d____",
+        "tag": "comunicar",
+        "sub": "ww. (e→i)"
+      },
+      {
+        "stimulus": "comunicar → «vragen»",
+        "answers": [
+          "preguntar"
+        ],
+        "hint": "p________",
+        "tag": "comunicar",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "comunicar → «cadeau geven»",
+        "answers": [
+          "regalar"
+        ],
+        "hint": "r______",
+        "tag": "comunicar",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "planes → «morgen»",
+        "answers": [
+          "mañana"
+        ],
+        "hint": "m_____",
+        "tag": "planes",
+        "sub": "bijw."
+      },
+      {
+        "stimulus": "planes → «binnenkort / snel»",
+        "answers": [
+          "pronto"
+        ],
+        "hint": "p_____",
+        "tag": "planes",
+        "sub": "bijw."
+      },
+      {
+        "stimulus": "planes → «afspreken»",
+        "answers": [
+          "quedar"
+        ],
+        "hint": "q_____",
+        "tag": "planes",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "planes → «uitgaan»",
+        "answers": [
+          "salir"
+        ],
+        "hint": "s____",
+        "tag": "planes",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "planes → «plannen maken»",
+        "answers": [
+          "hacer planes"
+        ],
+        "hint": "h____ p_____",
+        "tag": "planes",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "opinar → «ik denk / vind dat»",
+        "answers": [
+          "creo que"
+        ],
+        "hint": "c___ q__",
+        "tag": "opinar",
+        "sub": "expr. (opinión)"
+      },
+      {
+        "stimulus": "opinar → «ik denk dat»",
+        "answers": [
+          "pienso que"
+        ],
+        "hint": "p_____ q__",
+        "tag": "opinar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "opinar → «het lijkt me dat»",
+        "answers": [
+          "me parece que"
+        ],
+        "hint": "m_ p_____ q__",
+        "tag": "opinar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "opinar → «volgens mij / naar mijn mening»",
+        "answers": [
+          "en mi opinión"
+        ],
+        "hint": "e_ m_ o______",
+        "tag": "opinar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "opinar → «ik ben het (niet) eens»",
+        "answers": [
+          "estoy de acuerdo no",
+          "estoy de acuerdo"
+        ],
+        "hint": "e____ d_ a______",
+        "tag": "opinar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "opinar → «gelijk hebben»",
+        "answers": [
+          "tener razón"
+        ],
+        "hint": "t____ r____",
+        "tag": "opinar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "adjmedia → «nuttig»",
+        "answers": [
+          "útil"
+        ],
+        "hint": "ú___",
+        "tag": "adjmedia",
+        "sub": "adj."
+      },
+      {
+        "stimulus": "adjmedia → «schermtijd»",
+        "answers": [
+          "la pantalla tiempo de",
+          "pantalla tiempo de",
+          "la pantalla",
+          "pantalla"
+        ],
+        "hint": "p_______",
+        "tag": "adjmedia",
+        "sub": "expr."
+      }
+    ]
+  }
+}

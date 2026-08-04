@@ -34,20 +34,30 @@ MOTOR = [
  ['① Reconocer · woordenschat', [
    ['biografia-memoria', 'memoria de la vida', 'memory'],
    ['persona-memoria', 'memoria de oficios', 'memory'],
-   ['verbo-indefinido', 'verbo ↔ indefinido', 'match']]],
+   ['verbo-indefinido', 'verbo ↔ indefinido', 'match'],
+   ['biografia-verbo', 'una vida en verbos', 'match']]],
  ['② Distinguir · gramática', [
    ['indef-tipo', '¿regular o irregular?', 'classify'],
-   ['presente-pasado', '¿presente o pasado?', 'classify']]],
+   ['presente-pasado', '¿presente o pasado?', 'classify'],
+   ['conector-relato', 'los conectores del relato', 'classify']]],
  ['③ Producir con apoyo', [
    ['indefinido', 'completa: el indefinido', 'cloze'],
    ['se-lo', 'completa: se lo/se la', 'cloze'],
    ['indef-tetris', 'indefinido: pinball', 'pinball'],
    ['biografia-order', 'ordena la frase', 'order'],
-   ['senala', 'señala', 'point']]],
+   ['senala', 'señala', 'point'],
+   ['acento-indefinido', 'el acento del indefinido', 'tap']]],
  ['④ Hablar · grábate 🎙️', [
    ['repite-bio', 'escucha y repite: una biografía', 'speak'],
-   ['mensaje-bio', 'mensaje de voz: una biografía', 'speak']]],
-]
+   ['mensaje-bio', 'mensaje de voz: una biografía', 'speak'],
+   ['cuenta-historia', 'cuenta una historia', 'sim'],
+   ['carrusel-ayer', 'carrusel · lo que pasó', 'speak']]],
+ ['⑤ Escribir · escríbelo tú ✍️', [
+   ['escribe-palabra', 'NL → escribe la palabra', 'type'],
+   ['completa-frase', 'completa la frase', 'type'],
+   ['que-palabra', '¿qué palabra es?', 'type'],
+   ['dictado', 'dictado', 'type'],
+   ['escribe-frase', 'escribe una frase', 'type']]]]
 GAMEDIR = f"{ROOT}/spaans-motor/games"
 slugs = [g[0] for grp in MOTOR for g in grp[1]]
 GAMES = {s: b64(f"{GAMEDIR}/es-c6plus-u5-{s}.html") for s in slugs if os.path.exists(f"{GAMEDIR}/es-c6plus-u5-{s}.html")}

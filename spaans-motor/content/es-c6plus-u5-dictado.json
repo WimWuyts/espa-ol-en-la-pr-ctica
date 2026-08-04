@@ -1,0 +1,477 @@
+{
+  "id": "es-c6plus-u5-dictado",
+  "title": "Dictado",
+  "subtitle": "C6+ · U5 · luister en typ · lees eerst, dan afdekken",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "🔊 nacer",
+        "answers": [
+          "nacer"
+        ],
+        "tag": "biografia",
+        "sub": "geboren worden"
+      },
+      {
+        "stimulus": "🔊 crecer",
+        "answers": [
+          "crecer"
+        ],
+        "tag": "biografia",
+        "sub": "opgroeien"
+      },
+      {
+        "stimulus": "🔊 estudiar",
+        "answers": [
+          "estudiar"
+        ],
+        "tag": "biografia",
+        "sub": "studeren"
+      },
+      {
+        "stimulus": "🔊 casarse",
+        "answers": [
+          "casarse"
+        ],
+        "tag": "biografia",
+        "sub": "trouwen"
+      },
+      {
+        "stimulus": "🔊 tener hijos",
+        "answers": [
+          "tener hijos"
+        ],
+        "tag": "biografia",
+        "sub": "kinderen krijgen"
+      },
+      {
+        "stimulus": "🔊 mudarse",
+        "answers": [
+          "mudarse"
+        ],
+        "tag": "biografia",
+        "sub": "verhuizen"
+      },
+      {
+        "stimulus": "🔊 morir",
+        "answers": [
+          "morir"
+        ],
+        "tag": "biografia",
+        "sub": "sterven"
+      },
+      {
+        "stimulus": "🔊 la vida",
+        "answers": [
+          "la vida",
+          "vida"
+        ],
+        "tag": "biografia",
+        "sub": "het leven"
+      },
+      {
+        "stimulus": "🔊 ganar",
+        "answers": [
+          "ganar"
+        ],
+        "tag": "logros",
+        "sub": "winnen"
+      },
+      {
+        "stimulus": "🔊 escribir",
+        "answers": [
+          "escribir"
+        ],
+        "tag": "logros",
+        "sub": "schrijven"
+      },
+      {
+        "stimulus": "🔊 pintar",
+        "answers": [
+          "pintar"
+        ],
+        "tag": "logros",
+        "sub": "schilderen"
+      },
+      {
+        "stimulus": "🔊 componer",
+        "answers": [
+          "componer"
+        ],
+        "tag": "logros",
+        "sub": "componeren"
+      },
+      {
+        "stimulus": "🔊 descubrir",
+        "answers": [
+          "descubrir"
+        ],
+        "tag": "logros",
+        "sub": "ontdekken"
+      },
+      {
+        "stimulus": "🔊 fundar",
+        "answers": [
+          "fundar"
+        ],
+        "tag": "logros",
+        "sub": "stichten/oprichten"
+      },
+      {
+        "stimulus": "🔊 crear",
+        "answers": [
+          "crear"
+        ],
+        "tag": "logros",
+        "sub": "creëren"
+      },
+      {
+        "stimulus": "🔊 el premio",
+        "answers": [
+          "el premio",
+          "premio"
+        ],
+        "tag": "logros",
+        "sub": "de prijs"
+      },
+      {
+        "stimulus": "🔊 el éxito",
+        "answers": [
+          "el éxito",
+          "éxito"
+        ],
+        "tag": "logros",
+        "sub": "het succes"
+      },
+      {
+        "stimulus": "🔊 el cantante",
+        "answers": [
+          "el cantante",
+          "cantante"
+        ],
+        "tag": "persona",
+        "sub": "de zanger(es)"
+      },
+      {
+        "stimulus": "🔊 el futbolista",
+        "answers": [
+          "el futbolista",
+          "futbolista"
+        ],
+        "tag": "persona",
+        "sub": "de voetballer"
+      },
+      {
+        "stimulus": "🔊 el líder",
+        "answers": [
+          "el líder",
+          "líder"
+        ],
+        "tag": "persona",
+        "sub": "de leider"
+      },
+      {
+        "stimulus": "🔊 fue",
+        "answers": [
+          "fue"
+        ],
+        "tag": "indefinido",
+        "sub": "was / ging (ser/ir)"
+      },
+      {
+        "stimulus": "🔊 tuvo",
+        "answers": [
+          "tuvo"
+        ],
+        "tag": "indefinido",
+        "sub": "had (tener)"
+      },
+      {
+        "stimulus": "🔊 hizo",
+        "answers": [
+          "hizo"
+        ],
+        "tag": "indefinido",
+        "sub": "deed/maakte (hacer)"
+      },
+      {
+        "stimulus": "🔊 estuvo",
+        "answers": [
+          "estuvo"
+        ],
+        "tag": "indefinido",
+        "sub": "was (estar)"
+      },
+      {
+        "stimulus": "🔊 dijo",
+        "answers": [
+          "dijo"
+        ],
+        "tag": "indefinido",
+        "sub": "zei (decir)"
+      },
+      {
+        "stimulus": "🔊 vino",
+        "answers": [
+          "vino"
+        ],
+        "tag": "indefinido",
+        "sub": "kwam (venir)"
+      },
+      {
+        "stimulus": "🔊 pudo",
+        "answers": [
+          "pudo"
+        ],
+        "tag": "indefinido",
+        "sub": "kon (poder)"
+      },
+      {
+        "stimulus": "🔊 dio",
+        "answers": [
+          "dio"
+        ],
+        "tag": "indefinido",
+        "sub": "gaf (dar)"
+      },
+      {
+        "stimulus": "🔊 vio",
+        "answers": [
+          "vio"
+        ],
+        "tag": "indefinido",
+        "sub": "zag (ver)"
+      },
+      {
+        "stimulus": "🔊 ayer",
+        "answers": [
+          "ayer"
+        ],
+        "tag": "tiempo",
+        "sub": "gisteren"
+      },
+      {
+        "stimulus": "🔊 anteayer",
+        "answers": [
+          "anteayer"
+        ],
+        "tag": "tiempo",
+        "sub": "eergisteren"
+      },
+      {
+        "stimulus": "🔊 el año pasado",
+        "answers": [
+          "el año pasado",
+          "año pasado"
+        ],
+        "tag": "tiempo",
+        "sub": "vorig jaar"
+      },
+      {
+        "stimulus": "🔊 la semana pasada",
+        "answers": [
+          "la semana pasada",
+          "semana pasada"
+        ],
+        "tag": "tiempo",
+        "sub": "vorige week"
+      },
+      {
+        "stimulus": "🔊 en 1982",
+        "answers": [
+          "en 1982"
+        ],
+        "tag": "tiempo",
+        "sub": "in 1982"
+      },
+      {
+        "stimulus": "🔊 hace dos años",
+        "answers": [
+          "hace dos años"
+        ],
+        "tag": "tiempo",
+        "sub": "twee jaar geleden"
+      },
+      {
+        "stimulus": "🔊 de repente",
+        "answers": [
+          "de repente"
+        ],
+        "tag": "tiempo",
+        "sub": "plots"
+      },
+      {
+        "stimulus": "🔊 entonces",
+        "answers": [
+          "entonces"
+        ],
+        "tag": "tiempo",
+        "sub": "toen / dus"
+      },
+      {
+        "stimulus": "🔊 se lo",
+        "answers": [
+          "se lo"
+        ],
+        "tag": "odoi",
+        "sub": "het aan hem/haar"
+      },
+      {
+        "stimulus": "🔊 se la",
+        "answers": [
+          "se la"
+        ],
+        "tag": "odoi",
+        "sub": "haar (het) aan hem/haar"
+      },
+      {
+        "stimulus": "🔊 dárselo",
+        "answers": [
+          "dárselo"
+        ],
+        "tag": "odoi",
+        "sub": "het aan hem/haar geven"
+      },
+      {
+        "stimulus": "🔊 contárselo",
+        "answers": [
+          "contárselo"
+        ],
+        "tag": "odoi",
+        "sub": "het aan hem/haar vertellen"
+      },
+      {
+        "stimulus": "🔊 me lo dio",
+        "answers": [
+          "me lo dio"
+        ],
+        "tag": "odoi",
+        "sub": "hij/zij gaf het aan mij"
+      },
+      {
+        "stimulus": "🔊 te la mandó",
+        "answers": [
+          "te la mandó"
+        ],
+        "tag": "odoi",
+        "sub": "hij/zij stuurde ze naar jou"
+      },
+      {
+        "stimulus": "🔊 la historia",
+        "answers": [
+          "la historia",
+          "historia"
+        ],
+        "tag": "relato",
+        "sub": "het verhaal / de geschiedenis"
+      },
+      {
+        "stimulus": "🔊 la leyenda",
+        "answers": [
+          "la leyenda",
+          "leyenda"
+        ],
+        "tag": "relato",
+        "sub": "de legende"
+      },
+      {
+        "stimulus": "🔊 érase una vez",
+        "answers": [
+          "érase una vez"
+        ],
+        "tag": "relato",
+        "sub": "er was eens"
+      },
+      {
+        "stimulus": "🔊 el personaje",
+        "answers": [
+          "el personaje",
+          "personaje"
+        ],
+        "tag": "relato",
+        "sub": "het personage"
+      },
+      {
+        "stimulus": "🔊 primero … después",
+        "answers": [
+          "primero … después"
+        ],
+        "tag": "relato",
+        "sub": "eerst … daarna"
+      },
+      {
+        "stimulus": "🔊 al final",
+        "answers": [
+          "al final"
+        ],
+        "tag": "relato",
+        "sub": "uiteindelijk"
+      },
+      {
+        "stimulus": "🔊 por eso",
+        "answers": [
+          "por eso"
+        ],
+        "tag": "relato",
+        "sub": "daarom"
+      },
+      {
+        "stimulus": "🔊 increíble",
+        "answers": [
+          "increíble"
+        ],
+        "tag": "opinar",
+        "sub": "ongelooflijk"
+      },
+      {
+        "stimulus": "🔊 importante",
+        "answers": [
+          "importante"
+        ],
+        "tag": "opinar",
+        "sub": "belangrijk"
+      },
+      {
+        "stimulus": "🔊 interesante",
+        "answers": [
+          "interesante"
+        ],
+        "tag": "opinar",
+        "sub": "interessant"
+      },
+      {
+        "stimulus": "🔊 admirar",
+        "answers": [
+          "admirar"
+        ],
+        "tag": "opinar",
+        "sub": "bewonderen"
+      },
+      {
+        "stimulus": "🔊 creo que fue",
+        "answers": [
+          "creo que fue"
+        ],
+        "tag": "opinar",
+        "sub": "ik denk dat hij/zij was"
+      },
+      {
+        "stimulus": "🔊 lo más importante",
+        "answers": [
+          "lo más importante"
+        ],
+        "tag": "opinar",
+        "sub": "het belangrijkste"
+      }
+    ]
+  }
+}

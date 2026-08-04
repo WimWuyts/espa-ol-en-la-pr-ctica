@@ -1,0 +1,593 @@
+{
+  "id": "es-c6plus-u4-que-palabra",
+  "title": "¿Qué palabra?",
+  "subtitle": "C6+ · U4 · van thema naar woord (ophalen zonder zin)",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "transporte → «het vliegtuig»",
+        "answers": [
+          "el avión",
+          "avión"
+        ],
+        "hint": "a____",
+        "tag": "transporte",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "transporte → «de trein»",
+        "answers": [
+          "el tren",
+          "tren"
+        ],
+        "hint": "t___",
+        "tag": "transporte",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "transporte → «de bus»",
+        "answers": [
+          "el autobús",
+          "autobús"
+        ],
+        "hint": "a______",
+        "tag": "transporte",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "transporte → «de boot»",
+        "answers": [
+          "el barco",
+          "barco"
+        ],
+        "hint": "b____",
+        "tag": "transporte",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "transporte → «het ticket»",
+        "answers": [
+          "el billete",
+          "billete"
+        ],
+        "hint": "b______",
+        "tag": "transporte",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "transporte → «de vlucht»",
+        "answers": [
+          "el vuelo",
+          "vuelo"
+        ],
+        "hint": "v____",
+        "tag": "transporte",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "transporte → «de koffer»",
+        "answers": [
+          "la maleta",
+          "maleta"
+        ],
+        "hint": "m_____",
+        "tag": "transporte",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "transporte → «de luchthaven»",
+        "answers": [
+          "el aeropuerto",
+          "aeropuerto"
+        ],
+        "hint": "a_________",
+        "tag": "transporte",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "transporte → «het station»",
+        "answers": [
+          "la estación",
+          "estación"
+        ],
+        "hint": "e_______",
+        "tag": "transporte",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "transporte → «de bagage»",
+        "answers": [
+          "el equipaje",
+          "equipaje"
+        ],
+        "hint": "e_______",
+        "tag": "transporte",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "alojamiento → «het hotel»",
+        "answers": [
+          "el hotel",
+          "hotel"
+        ],
+        "hint": "h____",
+        "tag": "alojamiento",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "alojamiento → «de hostel/pension»",
+        "answers": [
+          "el hostal",
+          "hostal"
+        ],
+        "hint": "h_____",
+        "tag": "alojamiento",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "alojamiento → «de kamer»",
+        "answers": [
+          "la habitación",
+          "habitación"
+        ],
+        "hint": "h_________",
+        "tag": "alojamiento",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "alojamiento → «de reservering»",
+        "answers": [
+          "la reserva",
+          "reserva"
+        ],
+        "hint": "r______",
+        "tag": "alojamiento",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "alojamiento → «de sleutel»",
+        "answers": [
+          "la llave",
+          "llave"
+        ],
+        "hint": "l____",
+        "tag": "alojamiento",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "alojamiento → «de receptie»",
+        "answers": [
+          "la recepción",
+          "recepción"
+        ],
+        "hint": "r________",
+        "tag": "alojamiento",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "alojamiento → «de nacht»",
+        "answers": [
+          "la noche",
+          "noche"
+        ],
+        "hint": "n____",
+        "tag": "alojamiento",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "viaje → «reizen»",
+        "answers": [
+          "viajar"
+        ],
+        "hint": "v_____",
+        "tag": "viaje",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "viaje → «bezoeken»",
+        "answers": [
+          "visitar"
+        ],
+        "hint": "v______",
+        "tag": "viaje",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "viaje → «reserveren»",
+        "answers": [
+          "reservar"
+        ],
+        "hint": "r_______",
+        "tag": "viaje",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "viaje → «de koffer pakken»",
+        "answers": [
+          "hacer la maleta"
+        ],
+        "hint": "h____ l_ m_____",
+        "tag": "viaje",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "viaje → «foto's maken»",
+        "answers": [
+          "sacar fotos"
+        ],
+        "hint": "s____ f____",
+        "tag": "viaje",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "viaje → «missen (de trein)»",
+        "answers": [
+          "perder el tren",
+          "perder"
+        ],
+        "hint": "p_____",
+        "tag": "viaje",
+        "sub": "ww. (e→ie)"
+      },
+      {
+        "stimulus": "viaje → «verblijven / blijven»",
+        "answers": [
+          "quedarse"
+        ],
+        "hint": "q_______",
+        "tag": "viaje",
+        "sub": "ww. refl."
+      },
+      {
+        "stimulus": "viaje → «huren»",
+        "answers": [
+          "alquilar"
+        ],
+        "hint": "a_______",
+        "tag": "viaje",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "viaje → «terugkeren»",
+        "answers": [
+          "volver"
+        ],
+        "hint": "v_____",
+        "tag": "viaje",
+        "sub": "ww. (o→ue)"
+      },
+      {
+        "stimulus": "experiencias → «ik ben geweest»",
+        "answers": [
+          "he estado"
+        ],
+        "hint": "h_ e_____",
+        "tag": "experiencias",
+        "sub": "perf. (estar)"
+      },
+      {
+        "stimulus": "experiencias → «ik heb bezocht»",
+        "answers": [
+          "he visitado"
+        ],
+        "hint": "h_ v_______",
+        "tag": "experiencias",
+        "sub": "perf. (visitar)"
+      },
+      {
+        "stimulus": "experiencias → «ik heb gezien»",
+        "answers": [
+          "he visto"
+        ],
+        "hint": "h_ v____",
+        "tag": "experiencias",
+        "sub": "perf. irr. (ver)"
+      },
+      {
+        "stimulus": "experiencias → «ik heb gegeten»",
+        "answers": [
+          "he comido"
+        ],
+        "hint": "h_ c_____",
+        "tag": "experiencias",
+        "sub": "perf. (comer)"
+      },
+      {
+        "stimulus": "experiencias → «ik heb gedaan/gemaakt»",
+        "answers": [
+          "he hecho"
+        ],
+        "hint": "h_ h____",
+        "tag": "experiencias",
+        "sub": "perf. irr. (hacer)"
+      },
+      {
+        "stimulus": "experiencias → «ik heb geproefd»",
+        "answers": [
+          "he probado"
+        ],
+        "hint": "h_ p______",
+        "tag": "experiencias",
+        "sub": "perf. (probar)"
+      },
+      {
+        "stimulus": "experiencias → «het is geweest»",
+        "answers": [
+          "ha sido"
+        ],
+        "hint": "h_ s___",
+        "tag": "experiencias",
+        "sub": "perf. irr. (ser)"
+      },
+      {
+        "stimulus": "experiencias → «ik vond het geweldig»",
+        "answers": [
+          "me ha encantado"
+        ],
+        "hint": "m_ h_ e________",
+        "tag": "experiencias",
+        "sub": "perf. (encantar)"
+      },
+      {
+        "stimulus": "lugares → «het strand»",
+        "answers": [
+          "la playa",
+          "playa"
+        ],
+        "hint": "p____",
+        "tag": "lugares",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "lugares → «de berg»",
+        "answers": [
+          "la montaña",
+          "montaña"
+        ],
+        "hint": "m______",
+        "tag": "lugares",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "lugares → «het museum»",
+        "answers": [
+          "el museo",
+          "museo"
+        ],
+        "hint": "m____",
+        "tag": "lugares",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "lugares → «de stad»",
+        "answers": [
+          "la ciudad",
+          "ciudad"
+        ],
+        "hint": "c_____",
+        "tag": "lugares",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "lugares → «het dorp»",
+        "answers": [
+          "el pueblo",
+          "pueblo"
+        ],
+        "hint": "p_____",
+        "tag": "lugares",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "lugares → «de kust»",
+        "answers": [
+          "la costa",
+          "costa"
+        ],
+        "hint": "c____",
+        "tag": "lugares",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "lugares → «de woestijn»",
+        "answers": [
+          "el desierto",
+          "desierto"
+        ],
+        "hint": "d_______",
+        "tag": "lugares",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "lugares → «het landschap»",
+        "answers": [
+          "el paisaje",
+          "paisaje"
+        ],
+        "hint": "p______",
+        "tag": "lugares",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "porpara → «om te / naar (doel/bestemming)»",
+        "answers": [
+          "para"
+        ],
+        "hint": "p___",
+        "tag": "porpara",
+        "sub": "prep."
+      },
+      {
+        "stimulus": "porpara → «door / via / gedurende»",
+        "answers": [
+          "por"
+        ],
+        "hint": "p__",
+        "tag": "porpara",
+        "sub": "prep."
+      },
+      {
+        "stimulus": "porpara → «om te …»",
+        "answers": [
+          "para + infinitivo"
+        ],
+        "hint": "p___ + i_________",
+        "tag": "porpara",
+        "sub": "structuur"
+      },
+      {
+        "stimulus": "porpara → «'s ochtends»",
+        "answers": [
+          "por la mañana"
+        ],
+        "hint": "p__ l_ m_____",
+        "tag": "porpara",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "porpara → «voor twee dagen»",
+        "answers": [
+          "por dos días"
+        ],
+        "hint": "p__ d__ d___",
+        "tag": "porpara",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "porpara → «voor jou»",
+        "answers": [
+          "para ti"
+        ],
+        "hint": "p___ t_",
+        "tag": "porpara",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "opinar → «het beste»",
+        "answers": [
+          "lo mejor"
+        ],
+        "hint": "l_ m____",
+        "tag": "opinar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "opinar → «het ergste»",
+        "answers": [
+          "lo peor"
+        ],
+        "hint": "l_ p___",
+        "tag": "opinar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "opinar → «indrukwekkend»",
+        "answers": [
+          "impresionante"
+        ],
+        "hint": "i____________",
+        "tag": "opinar",
+        "sub": "adj."
+      },
+      {
+        "stimulus": "opinar → «onvergetelijk»",
+        "answers": [
+          "inolvidable"
+        ],
+        "hint": "i__________",
+        "tag": "opinar",
+        "sub": "adj."
+      },
+      {
+        "stimulus": "opinar → «goedkoop ↔ duur»",
+        "answers": [
+          "barato ↔ caro"
+        ],
+        "hint": "b_____ ↔ c___",
+        "tag": "opinar",
+        "sub": "adj."
+      },
+      {
+        "stimulus": "tiempo → «al»",
+        "answers": [
+          "ya"
+        ],
+        "hint": "y_",
+        "tag": "tiempo",
+        "sub": "bijw."
+      },
+      {
+        "stimulus": "tiempo → «nog niet»",
+        "answers": [
+          "todavía no"
+        ],
+        "hint": "t______ n_",
+        "tag": "tiempo",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "tiempo → «nooit»",
+        "answers": [
+          "nunca"
+        ],
+        "hint": "n____",
+        "tag": "tiempo",
+        "sub": "bijw."
+      },
+      {
+        "stimulus": "tiempo → «ooit»",
+        "answers": [
+          "alguna vez"
+        ],
+        "hint": "a_____ v__",
+        "tag": "tiempo",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "tiempo → «dit jaar»",
+        "answers": [
+          "este año"
+        ],
+        "hint": "e___ a__",
+        "tag": "tiempo",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "tiempo → «deze week»",
+        "answers": [
+          "esta semana"
+        ],
+        "hint": "e___ s_____",
+        "tag": "tiempo",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "tiempo → «vandaag»",
+        "answers": [
+          "hoy"
+        ],
+        "hint": "h__",
+        "tag": "tiempo",
+        "sub": "bijw."
+      },
+      {
+        "stimulus": "tiempo → «de laatste tijd»",
+        "answers": [
+          "últimamente"
+        ],
+        "hint": "ú__________",
+        "tag": "tiempo",
+        "sub": "bijw."
+      }
+    ]
+  }
+}

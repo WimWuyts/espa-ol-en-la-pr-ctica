@@ -1,0 +1,136 @@
+{
+  "id": "es-c6plus-u1-tilde-reflexivo",
+  "title": "¿Dónde va la tilde?",
+  "subtitle": "U1 · de tilde in de dagindeling",
+  "lang": "es",
+  "template": "tap",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "tap": {
+    "prompt": "Tik de lettergreep die de klemtoon draagt",
+    "joiner": " · ",
+    "items": [
+      {
+        "parts": [
+          "des",
+          "pier",
+          "to"
+        ],
+        "answer": 1,
+        "tag": "llana",
+        "sub": "me despierto"
+      },
+      {
+        "parts": [
+          "du",
+          "cho"
+        ],
+        "answer": 0,
+        "tag": "llana",
+        "sub": "me ducho"
+      },
+      {
+        "parts": [
+          "des",
+          "a",
+          "yu",
+          "no"
+        ],
+        "answer": 2,
+        "tag": "llana",
+        "sub": "desayuno"
+      },
+      {
+        "parts": [
+          "te",
+          "lé",
+          "fo",
+          "no"
+        ],
+        "answer": 1,
+        "tag": "esdrújula",
+        "sub": "teléfono · tilde"
+      },
+      {
+        "parts": [
+          "ca",
+          "fé"
+        ],
+        "answer": 1,
+        "tag": "aguda",
+        "sub": "café · tilde"
+      },
+      {
+        "parts": [
+          "clá",
+          "si",
+          "ca"
+        ],
+        "answer": 0,
+        "tag": "esdrújula",
+        "sub": "clásica · tilde"
+      },
+      {
+        "parts": [
+          "re",
+          "loj"
+        ],
+        "answer": 1,
+        "tag": "aguda",
+        "sub": "reloj"
+      },
+      {
+        "parts": [
+          "ma",
+          "ña",
+          "na"
+        ],
+        "answer": 1,
+        "tag": "llana",
+        "sub": "mañana"
+      },
+      {
+        "parts": [
+          "sá",
+          "ba",
+          "do"
+        ],
+        "answer": 0,
+        "tag": "esdrújula",
+        "sub": "sábado · tilde"
+      },
+      {
+        "parts": [
+          "a",
+          "cos",
+          "tar"
+        ],
+        "answer": 2,
+        "tag": "aguda",
+        "sub": "acostar"
+      },
+      {
+        "parts": [
+          "miér",
+          "co",
+          "les"
+        ],
+        "answer": 0,
+        "tag": "esdrújula",
+        "sub": "miércoles · tilde"
+      },
+      {
+        "parts": [
+          "ves",
+          "tir",
+          "se"
+        ],
+        "answer": 1,
+        "tag": "llana",
+        "sub": "vestirse"
+      }
+    ]
+  }
+}

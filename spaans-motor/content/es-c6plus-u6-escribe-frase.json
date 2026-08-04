@@ -1,0 +1,441 @@
+{
+  "id": "es-c6plus-u6-escribe-frase",
+  "title": "Escribe una frase",
+  "subtitle": "C6+ · U6 · vrije productie · structuurcheck + modeloplossing",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 8,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "open",
+    "items": [
+      {
+        "stimulus": "Escribe una frase con «el recuerdo»",
+        "must": [
+          "recuerdo"
+        ],
+        "model": "Tengo buenos recuerdos.",
+        "tag": "infancia",
+        "sub": "de herinnering"
+      },
+      {
+        "stimulus": "Escribe una frase con «la infancia»",
+        "must": [
+          "infancia"
+        ],
+        "model": "Mi infancia fue feliz.",
+        "tag": "infancia",
+        "sub": "de kindertijd"
+      },
+      {
+        "stimulus": "Escribe una frase con «el juguete»",
+        "must": [
+          "juguete"
+        ],
+        "model": "Mi juguete favorito era un oso.",
+        "tag": "infancia",
+        "sub": "het speelgoed"
+      },
+      {
+        "stimulus": "Escribe una frase con «jugar»",
+        "must": [
+          "jugar"
+        ],
+        "model": "Jugaba en la calle.",
+        "tag": "infancia",
+        "sub": "spelen"
+      },
+      {
+        "stimulus": "Escribe una frase con «soñar»",
+        "must": [
+          "soñar"
+        ],
+        "model": "Soñaba con ser futbolista.",
+        "tag": "infancia",
+        "sub": "dromen"
+      },
+      {
+        "stimulus": "Escribe una frase con «pasarlo bien»",
+        "must": [
+          "pasarlo bien"
+        ],
+        "model": "Lo pasábamos bien.",
+        "tag": "infancia",
+        "sub": "zich amuseren"
+      },
+      {
+        "stimulus": "Escribe una frase con «la escuela»",
+        "must": [
+          "escuela"
+        ],
+        "model": "Iba a la escuela a pie.",
+        "tag": "escuela",
+        "sub": "de school"
+      },
+      {
+        "stimulus": "Escribe una frase con «el patio»",
+        "must": [
+          "patio"
+        ],
+        "model": "Jugábamos en el patio.",
+        "tag": "escuela",
+        "sub": "de speelplaats"
+      },
+      {
+        "stimulus": "Escribe una frase con «aprender»",
+        "must": [
+          "aprender"
+        ],
+        "model": "Aprendíamos a leer.",
+        "tag": "escuela",
+        "sub": "leren"
+      },
+      {
+        "stimulus": "Escribe una frase con «el recreo»",
+        "must": [
+          "recreo"
+        ],
+        "model": "En el recreo comíamos pan.",
+        "tag": "escuela",
+        "sub": "de speeltijd/pauze"
+      },
+      {
+        "stimulus": "Escribe una frase con «los abuelos»",
+        "must": [
+          "abuelos"
+        ],
+        "model": "Visitaba a mis abuelos.",
+        "tag": "familia",
+        "sub": "de grootouders"
+      },
+      {
+        "stimulus": "Escribe una frase con «el pueblo»",
+        "must": [
+          "pueblo"
+        ],
+        "model": "Vivíamos en un pueblo.",
+        "tag": "familia",
+        "sub": "het dorp"
+      },
+      {
+        "stimulus": "Escribe una frase con «la casa de campo»",
+        "must": [
+          "casa de campo"
+        ],
+        "model": "Íbamos a la casa de campo.",
+        "tag": "familia",
+        "sub": "het buitenhuis"
+      },
+      {
+        "stimulus": "Escribe una frase con «la mascota»",
+        "must": [
+          "mascota"
+        ],
+        "model": "Tenía un perro de mascota.",
+        "tag": "familia",
+        "sub": "het huisdier"
+      },
+      {
+        "stimulus": "Escribe una frase con «cuidar»",
+        "must": [
+          "cuidar"
+        ],
+        "model": "Cuidaba a mi hermano.",
+        "tag": "familia",
+        "sub": "verzorgen"
+      },
+      {
+        "stimulus": "Escribe una frase con «era»",
+        "must": [
+          "era"
+        ],
+        "model": "Era un niño tranquilo.",
+        "tag": "imperfecto",
+        "sub": "was (ser)"
+      },
+      {
+        "stimulus": "Escribe una frase con «iba»",
+        "must": [
+          "iba"
+        ],
+        "model": "Iba a la escuela a pie.",
+        "tag": "imperfecto",
+        "sub": "ging (ir)"
+      },
+      {
+        "stimulus": "Escribe una frase con «veía»",
+        "must": [
+          "veía"
+        ],
+        "model": "Veía dibujos por la tarde.",
+        "tag": "imperfecto",
+        "sub": "zag / keek (ver)"
+      },
+      {
+        "stimulus": "Escribe una frase con «tenía»",
+        "must": [
+          "tenía"
+        ],
+        "model": "Tenía cinco años.",
+        "tag": "imperfecto",
+        "sub": "had (tener)"
+      },
+      {
+        "stimulus": "Escribe una frase con «jugaba»",
+        "must": [
+          "jugaba"
+        ],
+        "model": "Jugaba con mis amigos.",
+        "tag": "imperfecto",
+        "sub": "speelde (jugar)"
+      },
+      {
+        "stimulus": "Escribe una frase con «vivía»",
+        "must": [
+          "vivía"
+        ],
+        "model": "Vivía en Cusco.",
+        "tag": "imperfecto",
+        "sub": "woonde (vivir)"
+      },
+      {
+        "stimulus": "Escribe una frase con «había»",
+        "must": [
+          "había"
+        ],
+        "model": "Había un parque cerca.",
+        "tag": "imperfecto",
+        "sub": "er was/waren (haber)"
+      },
+      {
+        "stimulus": "Escribe una frase con «solía»",
+        "must": [
+          "solía"
+        ],
+        "model": "Solía leer antes de dormir.",
+        "tag": "imperfecto",
+        "sub": "placht (soler)"
+      },
+      {
+        "stimulus": "Escribe una frase con «antes»",
+        "must": [
+          "antes"
+        ],
+        "model": "Antes vivía en un pueblo.",
+        "tag": "antesahora",
+        "sub": "vroeger"
+      },
+      {
+        "stimulus": "Escribe una frase con «ahora»",
+        "must": [
+          "ahora"
+        ],
+        "model": "Ahora vivo en la ciudad.",
+        "tag": "antesahora",
+        "sub": "nu"
+      },
+      {
+        "stimulus": "Escribe una frase con «ya no»",
+        "must": [
+          "ya no"
+        ],
+        "model": "Ya no juego a eso.",
+        "tag": "antesahora",
+        "sub": "niet meer"
+      },
+      {
+        "stimulus": "Escribe una frase con «todavía»",
+        "must": [
+          "todavía"
+        ],
+        "model": "Todavía me gusta.",
+        "tag": "antesahora",
+        "sub": "nog steeds"
+      },
+      {
+        "stimulus": "Escribe una frase con «siempre»",
+        "must": [
+          "siempre"
+        ],
+        "model": "Siempre íbamos al parque.",
+        "tag": "antesahora",
+        "sub": "altijd"
+      },
+      {
+        "stimulus": "Escribe una frase con «a menudo»",
+        "must": [
+          "a menudo"
+        ],
+        "model": "A menudo visitaba a mis abuelos.",
+        "tag": "antesahora",
+        "sub": "vaak"
+      },
+      {
+        "stimulus": "Escribe una frase con «todos los días»",
+        "must": [
+          "todos los días"
+        ],
+        "model": "Todos los días jugaba fuera.",
+        "tag": "antesahora",
+        "sub": "elke dag"
+      },
+      {
+        "stimulus": "Escribe una frase con «de repente»",
+        "must": [
+          "de repente"
+        ],
+        "model": "De repente, empezó a llover.",
+        "tag": "antesahora",
+        "sub": "plots"
+      },
+      {
+        "stimulus": "Escribe una frase con «más … que»",
+        "must": [
+          "más … que"
+        ],
+        "model": "Soy más alto que mi hermano.",
+        "tag": "comparar",
+        "sub": "meer/… -er dan"
+      },
+      {
+        "stimulus": "Escribe una frase con «menos … que»",
+        "must": [
+          "menos … que"
+        ],
+        "model": "Es menos caro que el otro.",
+        "tag": "comparar",
+        "sub": "minder … dan"
+      },
+      {
+        "stimulus": "Escribe una frase con «tan … como»",
+        "must": [
+          "tan … como"
+        ],
+        "model": "Es tan alto como yo.",
+        "tag": "comparar",
+        "sub": "even … als"
+      },
+      {
+        "stimulus": "Escribe una frase con «mejor que»",
+        "must": [
+          "mejor que"
+        ],
+        "model": "Este libro es mejor que ese.",
+        "tag": "comparar",
+        "sub": "beter dan"
+      },
+      {
+        "stimulus": "Escribe una frase con «peor que»",
+        "must": [
+          "peor que"
+        ],
+        "model": "Hoy es peor que ayer.",
+        "tag": "comparar",
+        "sub": "slechter dan"
+      },
+      {
+        "stimulus": "Escribe una frase con «mayor que»",
+        "must": [
+          "mayor que"
+        ],
+        "model": "Mi hermana es mayor que yo.",
+        "tag": "comparar",
+        "sub": "ouder/groter dan"
+      },
+      {
+        "stimulus": "Escribe una frase con «menor que»",
+        "must": [
+          "menor que"
+        ],
+        "model": "Soy menor que mi primo.",
+        "tag": "comparar",
+        "sub": "jonger/kleiner dan"
+      },
+      {
+        "stimulus": "Escribe una frase con «que»",
+        "must": [
+          "que"
+        ],
+        "model": "El niño que jugaba era yo.",
+        "tag": "relativo",
+        "sub": "die/dat (betrekkelijk)"
+      },
+      {
+        "stimulus": "Escribe una frase con «donde»",
+        "must": [
+          "donde"
+        ],
+        "model": "La casa donde vivía era grande.",
+        "tag": "relativo",
+        "sub": "waar"
+      },
+      {
+        "stimulus": "Escribe una frase con «el lugar»",
+        "must": [
+          "lugar"
+        ],
+        "model": "Es el lugar donde crecí.",
+        "tag": "relativo",
+        "sub": "de plek"
+      },
+      {
+        "stimulus": "Escribe una frase con «la época»",
+        "must": [
+          "época"
+        ],
+        "model": "Era otra época.",
+        "tag": "relativo",
+        "sub": "het tijdperk/de tijd"
+      },
+      {
+        "stimulus": "Escribe una frase con «feliz»",
+        "must": [
+          "feliz"
+        ],
+        "model": "Era una infancia feliz.",
+        "tag": "opinar",
+        "sub": "gelukkig"
+      },
+      {
+        "stimulus": "Escribe una frase con «diferente»",
+        "must": [
+          "diferente"
+        ],
+        "model": "Todo era diferente.",
+        "tag": "opinar",
+        "sub": "anders"
+      },
+      {
+        "stimulus": "Escribe una frase con «echar de menos»",
+        "must": [
+          "echar de menos"
+        ],
+        "model": "Echo de menos mi pueblo.",
+        "tag": "opinar",
+        "sub": "missen"
+      },
+      {
+        "stimulus": "Escribe una frase con «me acuerdo de»",
+        "must": [
+          "me acuerdo de"
+        ],
+        "model": "Me acuerdo de mi escuela.",
+        "tag": "opinar",
+        "sub": "ik herinner me"
+      },
+      {
+        "stimulus": "Escribe una frase con «creo que antes»",
+        "must": [
+          "creo que antes"
+        ],
+        "model": "Creo que antes era mejor.",
+        "tag": "opinar",
+        "sub": "ik denk dat vroeger"
+      }
+    ]
+  }
+}

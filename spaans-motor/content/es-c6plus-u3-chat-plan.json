@@ -1,0 +1,59 @@
+{
+  "id": "es-c6plus-u3-chat-plan",
+  "title": "Organiza el finde",
+  "subtitle": "U3 · maak een plan via chat",
+  "lang": "es",
+  "template": "sim",
+  "options": {
+    "audio": false
+  },
+  "sim": {
+    "prompt": "Tarea comunicativa · schrijf in het Spaans",
+    "rounds": [
+      {
+        "scenario": "Escribe a un amigo para proponer un plan para el sábado.",
+        "tag": "plan",
+        "sub": "gebruik ir a + infinitivo",
+        "min": 10,
+        "need": [
+          {
+            "re": "(voy|vas|vamos|van) a \\w+"
+          }
+        ]
+      },
+      {
+        "scenario": "Dile a tu grupo lo que acabas de hacer hoy.",
+        "tag": "acabar",
+        "sub": "gebruik acabar de + infinitivo",
+        "min": 8,
+        "need": [
+          {
+            "re": "acab(o|as|a|amos|an) de \\w+"
+          }
+        ]
+      },
+      {
+        "scenario": "Da tu opinión sobre pasar mucho tiempo en el móvil.",
+        "tag": "opinion",
+        "sub": "begin met creo que…",
+        "min": 12,
+        "need": [
+          {
+            "re": "creo que"
+          }
+        ]
+      },
+      {
+        "scenario": "Cuenta qué le vas a regalar a tu mejor amigo y por qué.",
+        "tag": "oi",
+        "sub": "gebruik le",
+        "min": 10,
+        "need": [
+          {
+            "re": "\\ble\\b"
+          }
+        ]
+      }
+    ]
+  }
+}

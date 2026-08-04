@@ -34,20 +34,30 @@ MOTOR = [
  ['① Reconocer · woordenschat', [
    ['casa-memoria', 'memoria de la casa', 'memory'],
    ['barrio-memoria', 'memoria del barrio', 'memory'],
-   ['lugar-funcion', 'lugar ↔ función', 'match']]],
+   ['lugar-funcion', 'lugar ↔ función', 'match'],
+   ['preposicion-dibujo', '¿dónde está el gato?', 'match']]],
  ['② Distinguir · gramática', [
    ['hay-estar', '¿hay o está(n)?', 'classify'],
-   ['gerundio-tipo', '¿-ando o -iendo?', 'classify']]],
+   ['gerundio-tipo', '¿-ando o -iendo?', 'classify'],
+   ['dentro-fuera', 'dentro o fuera de casa', 'classify']]],
  ['③ Producir con apoyo', [
    ['gerundio', 'completa: estar + gerundio', 'cloze'],
    ['lo-la', 'completa: lo/la/los/las', 'cloze'],
    ['lo-la-tetris', 'lo/la: puertas', 'platform'],
    ['direcciones-order', 'ordena la ruta', 'order'],
-   ['senala', 'señala', 'point']]],
+   ['senala', 'señala', 'point'],
+   ['pronombre-tap', '¿qué sustituye el pronombre?', 'tap']]],
  ['④ Hablar · grábate 🎙️', [
    ['repite-casa', 'escucha y repite: mi casa', 'speak'],
-   ['mensaje-barrio', 'mensaje de voz: mi barrio', 'speak']]],
-]
+   ['mensaje-barrio', 'mensaje de voz: mi barrio', 'speak'],
+   ['describe-casa', 'describe tu casa', 'sim'],
+   ['carrusel-donde', 'carrusel · ¿dónde está?', 'speak']]],
+ ['⑤ Escribir · escríbelo tú ✍️', [
+   ['escribe-palabra', 'NL → escribe la palabra', 'type'],
+   ['completa-frase', 'completa la frase', 'type'],
+   ['que-palabra', '¿qué palabra es?', 'type'],
+   ['dictado', 'dictado', 'type'],
+   ['escribe-frase', 'escribe una frase', 'type']]]]
 GAMEDIR = f"{ROOT}/spaans-motor/games"
 slugs = [g[0] for grp in MOTOR for g in grp[1]]
 GAMES = {s: b64(f"{GAMEDIR}/es-c6plus-u2-{s}.html") for s in slugs if os.path.exists(f"{GAMEDIR}/es-c6plus-u2-{s}.html")}

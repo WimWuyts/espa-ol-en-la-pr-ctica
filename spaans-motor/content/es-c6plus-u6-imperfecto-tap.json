@@ -1,0 +1,137 @@
+{
+  "id": "es-c6plus-u6-imperfecto-tap",
+  "title": "Tik la forma del imperfecto",
+  "subtitle": "U6 · welk woord staat in het imperfecto?",
+  "lang": "es",
+  "template": "tap",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "tap": {
+    "prompt": "Tik het werkwoord dat in het imperfecto staat",
+    "joiner": " · ",
+    "items": [
+      {
+        "parts": [
+          "De niño",
+          "vivía",
+          "en Cusco"
+        ],
+        "answer": 1,
+        "tag": "imp",
+        "sub": "vivía"
+      },
+      {
+        "parts": [
+          "Antes",
+          "jugábamos",
+          "en la calle"
+        ],
+        "answer": 1,
+        "tag": "imp",
+        "sub": "jugábamos"
+      },
+      {
+        "parts": [
+          "Mi abuela",
+          "cocinaba",
+          "los domingos"
+        ],
+        "answer": 1,
+        "tag": "imp",
+        "sub": "cocinaba"
+      },
+      {
+        "parts": [
+          "Siempre",
+          "íbamos",
+          "al pueblo"
+        ],
+        "answer": 1,
+        "tag": "imp",
+        "sub": "íbamos · ir"
+      },
+      {
+        "parts": [
+          "La casa",
+          "era",
+          "muy grande"
+        ],
+        "answer": 1,
+        "tag": "imp",
+        "sub": "era · ser"
+      },
+      {
+        "parts": [
+          "Nosotros",
+          "teníamos",
+          "un perro"
+        ],
+        "answer": 1,
+        "tag": "imp",
+        "sub": "teníamos"
+      },
+      {
+        "parts": [
+          "Los sábados",
+          "veíamos",
+          "dibujos"
+        ],
+        "answer": 1,
+        "tag": "imp",
+        "sub": "veíamos · ver"
+      },
+      {
+        "parts": [
+          "Yo",
+          "llevaba",
+          "una mochila roja"
+        ],
+        "answer": 1,
+        "tag": "imp",
+        "sub": "llevaba"
+      },
+      {
+        "parts": [
+          "Mis padres",
+          "trabajaban",
+          "mucho"
+        ],
+        "answer": 1,
+        "tag": "imp",
+        "sub": "trabajaban"
+      },
+      {
+        "parts": [
+          "El patio",
+          "estaba",
+          "lleno de niños"
+        ],
+        "answer": 1,
+        "tag": "imp",
+        "sub": "estaba"
+      },
+      {
+        "parts": [
+          "Tú",
+          "querías",
+          "ser astronauta"
+        ],
+        "answer": 1,
+        "tag": "imp",
+        "sub": "querías"
+      },
+      {
+        "parts": [
+          "En verano",
+          "hacía",
+          "mucho calor"
+        ],
+        "answer": 1,
+        "tag": "imp",
+        "sub": "hacía"
+      }
+    ]
+  }
+}

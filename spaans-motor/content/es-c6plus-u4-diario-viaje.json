@@ -1,0 +1,62 @@
+{
+  "id": "es-c6plus-u4-diario-viaje",
+  "title": "Tu diario de viaje",
+  "subtitle": "U4 · vertel wat je gedaan hebt",
+  "lang": "es",
+  "template": "sim",
+  "options": {
+    "audio": false
+  },
+  "sim": {
+    "prompt": "Tarea comunicativa · schrijf in het Spaans",
+    "rounds": [
+      {
+        "scenario": "Escribe qué has hecho hoy en Chile.",
+        "tag": "perfecto",
+        "sub": "gebruik het perfecto compuesto",
+        "min": 12,
+        "need": [
+          {
+            "re": "h(e|as|a|emos|an) \\w+"
+          }
+        ]
+      },
+      {
+        "scenario": "Cuenta tres cosas que todavía no has hecho en tu vida.",
+        "tag": "marcador",
+        "sub": "gebruik todavía no",
+        "min": 10,
+        "need": [
+          {
+            "re": "todav[ií]a no"
+          }
+        ]
+      },
+      {
+        "scenario": "Explica por qué viajas y para qué sirve viajar.",
+        "tag": "porpara",
+        "sub": "gebruik por én para",
+        "min": 12,
+        "need": [
+          {
+            "re": "\\bpor\\b"
+          },
+          {
+            "re": "\\bpara\\b"
+          }
+        ]
+      },
+      {
+        "scenario": "Pregunta a un compañero si alguna vez ha estado en España.",
+        "tag": "pregunta",
+        "sub": "gebruik alguna vez",
+        "min": 8,
+        "need": [
+          {
+            "re": "alguna vez"
+          }
+        ]
+      }
+    ]
+  }
+}

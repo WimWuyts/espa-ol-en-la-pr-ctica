@@ -1,0 +1,62 @@
+{
+  "id": "es-c6plus-u7-opina-cuidate",
+  "title": "Opina y aconseja",
+  "subtitle": "U7 · geef je mening en je raad",
+  "lang": "es",
+  "template": "sim",
+  "options": {
+    "audio": false
+  },
+  "sim": {
+    "prompt": "Tarea comunicativa · schrijf in het Spaans",
+    "rounds": [
+      {
+        "scenario": "Un amigo duerme muy poco. Dale tres consejos.",
+        "tag": "imp",
+        "sub": "gebruik de imperativo",
+        "min": 12,
+        "need": [
+          {
+            "re": "\\b(come|bebe|duerme|haz|ve|apaga|deja|sal)\\b"
+          }
+        ]
+      },
+      {
+        "scenario": "Da tu opinión sobre el reciclaje en tu instituto.",
+        "tag": "op",
+        "sub": "gebruik creo que of me parece que",
+        "min": 12,
+        "need": [
+          {
+            "re": "(creo que|me parece que|pienso que)"
+          }
+        ]
+      },
+      {
+        "scenario": "Escribe un consejo con un pronombre: la botella, el papel…",
+        "tag": "pron",
+        "sub": "gebruik imperativo + pronombre",
+        "min": 8,
+        "need": [
+          {
+            "re": "\\w+(lo|la|los|las|te|me)\\b"
+          }
+        ]
+      },
+      {
+        "scenario": "Explica por qué no estás de acuerdo con usar coche para todo.",
+        "tag": "conect",
+        "sub": "gebruik porque en por eso of sin embargo",
+        "min": 14,
+        "need": [
+          {
+            "re": "porque"
+          },
+          {
+            "re": "(por eso|sin embargo|además)"
+          }
+        ]
+      }
+    ]
+  }
+}

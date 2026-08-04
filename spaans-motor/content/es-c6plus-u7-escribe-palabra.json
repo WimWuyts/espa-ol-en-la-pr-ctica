@@ -1,0 +1,493 @@
+{
+  "id": "es-c6plus-u7-escribe-palabra",
+  "title": "Escribe la palabra",
+  "subtitle": "C6+ · U7 · schrijf het Spaanse woord (letterhint als steun)",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "de gezondheid",
+        "answers": [
+          "la salud",
+          "salud"
+        ],
+        "hint": "s____",
+        "tag": "salud",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "het lichaam",
+        "answers": [
+          "el cuerpo",
+          "cuerpo"
+        ],
+        "hint": "c_____",
+        "tag": "salud",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "de oefening/beweging",
+        "answers": [
+          "el ejercicio",
+          "ejercicio"
+        ],
+        "hint": "e________",
+        "tag": "salud",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "rusten",
+        "answers": [
+          "descansar"
+        ],
+        "hint": "d________",
+        "tag": "salud",
+        "sub": "verbo"
+      },
+      {
+        "stimulus": "slapen",
+        "answers": [
+          "dormir"
+        ],
+        "hint": "d_____",
+        "tag": "salud",
+        "sub": "verbo"
+      },
+      {
+        "stimulus": "het dieet/voeding",
+        "answers": [
+          "la dieta",
+          "dieta"
+        ],
+        "hint": "d____",
+        "tag": "salud",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "de stress",
+        "answers": [
+          "el estrés",
+          "estrés"
+        ],
+        "hint": "e_____",
+        "tag": "salud",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "voor zichzelf zorgen",
+        "answers": [
+          "cuidarse"
+        ],
+        "hint": "c_______",
+        "tag": "salud",
+        "sub": "verbo"
+      },
+      {
+        "stimulus": "het fruit",
+        "answers": [
+          "la fruta",
+          "fruta"
+        ],
+        "hint": "f____",
+        "tag": "salud",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "het water",
+        "answers": [
+          "el agua",
+          "agua"
+        ],
+        "hint": "a___",
+        "tag": "salud",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "de raad/tip",
+        "answers": [
+          "el consejo",
+          "consejo"
+        ],
+        "hint": "c______",
+        "tag": "consejos",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "gezond eten",
+        "answers": [
+          "comer sano"
+        ],
+        "hint": "c____ s___",
+        "tag": "consejos",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "sporten",
+        "answers": [
+          "hacer deporte"
+        ],
+        "hint": "h____ d______",
+        "tag": "consejos",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "water drinken",
+        "answers": [
+          "beber agua"
+        ],
+        "hint": "b____ a___",
+        "tag": "consejos",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "vermijden",
+        "answers": [
+          "evitar"
+        ],
+        "hint": "e_____",
+        "tag": "consejos",
+        "sub": "verbo"
+      },
+      {
+        "stimulus": "bewegen",
+        "answers": [
+          "moverse"
+        ],
+        "hint": "m______",
+        "tag": "consejos",
+        "sub": "verbo"
+      },
+      {
+        "stimulus": "ontspannen",
+        "answers": [
+          "relajarse"
+        ],
+        "hint": "r________",
+        "tag": "consejos",
+        "sub": "verbo"
+      },
+      {
+        "stimulus": "het is belangrijk",
+        "answers": [
+          "es importante"
+        ],
+        "hint": "e_ i_________",
+        "tag": "consejos",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "je zou moeten",
+        "answers": [
+          "deberías"
+        ],
+        "hint": "d_______",
+        "tag": "consejos",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "het milieu",
+        "answers": [
+          "el medio ambiente",
+          "medio ambiente"
+        ],
+        "hint": "m____ a_______",
+        "tag": "medioambiente",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "de planeet",
+        "answers": [
+          "el planeta",
+          "planeta"
+        ],
+        "hint": "p______",
+        "tag": "medioambiente",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "de natuur",
+        "answers": [
+          "la naturaleza",
+          "naturaleza"
+        ],
+        "hint": "n_________",
+        "tag": "medioambiente",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "recyclen",
+        "answers": [
+          "reciclar"
+        ],
+        "hint": "r_______",
+        "tag": "medioambiente",
+        "sub": "verbo"
+      },
+      {
+        "stimulus": "het afval",
+        "answers": [
+          "la basura",
+          "basura"
+        ],
+        "hint": "b_____",
+        "tag": "medioambiente",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "vervuilen",
+        "answers": [
+          "contaminar"
+        ],
+        "hint": "c_________",
+        "tag": "medioambiente",
+        "sub": "verbo"
+      },
+      {
+        "stimulus": "de vervuiling",
+        "answers": [
+          "la contaminación",
+          "contaminación"
+        ],
+        "hint": "c____________",
+        "tag": "medioambiente",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "besparen",
+        "answers": [
+          "ahorrar"
+        ],
+        "hint": "a______",
+        "tag": "medioambiente",
+        "sub": "verbo"
+      },
+      {
+        "stimulus": "de energie",
+        "answers": [
+          "la energía",
+          "energía"
+        ],
+        "hint": "e______",
+        "tag": "medioambiente",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "beschermen",
+        "answers": [
+          "proteger"
+        ],
+        "hint": "p_______",
+        "tag": "medioambiente",
+        "sub": "verbo"
+      },
+      {
+        "stimulus": "de boom",
+        "answers": [
+          "el árbol",
+          "árbol"
+        ],
+        "hint": "á____",
+        "tag": "medioambiente",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "het bos",
+        "answers": [
+          "el bosque",
+          "bosque"
+        ],
+        "hint": "b_____",
+        "tag": "medioambiente",
+        "sub": "sust."
+      },
+      {
+        "stimulus": "zorg (jij)",
+        "answers": [
+          "cuida"
+        ],
+        "hint": "c____",
+        "tag": "imperativo",
+        "sub": "imper."
+      },
+      {
+        "stimulus": "eet (jij)",
+        "answers": [
+          "come"
+        ],
+        "hint": "c___",
+        "tag": "imperativo",
+        "sub": "imper."
+      },
+      {
+        "stimulus": "drink (jij)",
+        "answers": [
+          "bebe"
+        ],
+        "hint": "b___",
+        "tag": "imperativo",
+        "sub": "imper."
+      },
+      {
+        "stimulus": "doe/maak (jij)",
+        "answers": [
+          "haz"
+        ],
+        "hint": "h__",
+        "tag": "imperativo",
+        "sub": "imper."
+      },
+      {
+        "stimulus": "kom (jij)",
+        "answers": [
+          "ven"
+        ],
+        "hint": "v__",
+        "tag": "imperativo",
+        "sub": "imper."
+      },
+      {
+        "stimulus": "zeg (jij)",
+        "answers": [
+          "di"
+        ],
+        "hint": "d_",
+        "tag": "imperativo",
+        "sub": "imper."
+      },
+      {
+        "stimulus": "wees (jij)",
+        "answers": [
+          "sé"
+        ],
+        "hint": "s_",
+        "tag": "imperativo",
+        "sub": "imper."
+      },
+      {
+        "stimulus": "recycle (jij)",
+        "answers": [
+          "recicla"
+        ],
+        "hint": "r______",
+        "tag": "imperativo",
+        "sub": "imper."
+      },
+      {
+        "stimulus": "ik denk dat",
+        "answers": [
+          "creo que"
+        ],
+        "hint": "c___ q__",
+        "tag": "opinar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "ik vind dat",
+        "answers": [
+          "pienso que"
+        ],
+        "hint": "p_____ q__",
+        "tag": "opinar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "volgens mij",
+        "answers": [
+          "en mi opinión"
+        ],
+        "hint": "e_ m_ o______",
+        "tag": "opinar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "het lijkt me dat",
+        "answers": [
+          "me parece que"
+        ],
+        "hint": "m_ p_____ q__",
+        "tag": "opinar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "ik ben het eens",
+        "answers": [
+          "estoy de acuerdo"
+        ],
+        "hint": "e____ d_ a______",
+        "tag": "opinar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "gelijk hebben",
+        "answers": [
+          "tener razón"
+        ],
+        "hint": "t____ r____",
+        "tag": "opinar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "omdat/want",
+        "answers": [
+          "porque"
+        ],
+        "hint": "p_____",
+        "tag": "conectores",
+        "sub": "conector"
+      },
+      {
+        "stimulus": "bovendien",
+        "answers": [
+          "además"
+        ],
+        "hint": "a_____",
+        "tag": "conectores",
+        "sub": "conector"
+      },
+      {
+        "stimulus": "daarom",
+        "answers": [
+          "por eso"
+        ],
+        "hint": "p__ e__",
+        "tag": "conectores",
+        "sub": "conector"
+      },
+      {
+        "stimulus": "echter",
+        "answers": [
+          "sin embargo"
+        ],
+        "hint": "s__ e______",
+        "tag": "conectores",
+        "sub": "conector"
+      },
+      {
+        "stimulus": "enerzijds",
+        "answers": [
+          "por un lado"
+        ],
+        "hint": "p__ u_ l___",
+        "tag": "conectores",
+        "sub": "conector"
+      },
+      {
+        "stimulus": "anderzijds",
+        "answers": [
+          "por otro lado"
+        ],
+        "hint": "p__ o___ l___",
+        "tag": "conectores",
+        "sub": "conector"
+      }
+    ]
+  }
+}

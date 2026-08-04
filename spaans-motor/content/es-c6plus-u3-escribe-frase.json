@@ -1,0 +1,459 @@
+{
+  "id": "es-c6plus-u3-escribe-frase",
+  "title": "Escribe una frase",
+  "subtitle": "C6+ · U3 · vrije productie · structuurcheck + modeloplossing",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 8,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "open",
+    "items": [
+      {
+        "stimulus": "Escribe una frase con «el móvil»",
+        "must": [
+          "móvil"
+        ],
+        "model": "Siempre llevo el móvil.",
+        "tag": "dispositivos",
+        "sub": "de gsm / mobiel"
+      },
+      {
+        "stimulus": "Escribe una frase con «el ordenador»",
+        "must": [
+          "ordenador"
+        ],
+        "model": "Estudio con el ordenador.",
+        "tag": "dispositivos",
+        "sub": "de computer"
+      },
+      {
+        "stimulus": "Escribe una frase con «la tableta»",
+        "must": [
+          "tableta"
+        ],
+        "model": "Leo en la tableta.",
+        "tag": "dispositivos",
+        "sub": "de tablet"
+      },
+      {
+        "stimulus": "Escribe una frase con «la pantalla»",
+        "must": [
+          "pantalla"
+        ],
+        "model": "La pantalla es grande.",
+        "tag": "dispositivos",
+        "sub": "het scherm"
+      },
+      {
+        "stimulus": "Escribe una frase con «los auriculares»",
+        "must": [
+          "auriculares"
+        ],
+        "model": "Escucho música con auriculares.",
+        "tag": "dispositivos",
+        "sub": "de oortjes / koptelefoon"
+      },
+      {
+        "stimulus": "Escribe una frase con «el cargador»",
+        "must": [
+          "cargador"
+        ],
+        "model": "¿Tienes un cargador?",
+        "tag": "dispositivos",
+        "sub": "de oplader"
+      },
+      {
+        "stimulus": "Escribe una frase con «la batería»",
+        "must": [
+          "batería"
+        ],
+        "model": "No tengo batería.",
+        "tag": "dispositivos",
+        "sub": "de batterij"
+      },
+      {
+        "stimulus": "Escribe una frase con «internet»",
+        "must": [
+          "internet"
+        ],
+        "model": "Busco información en internet.",
+        "tag": "internet",
+        "sub": "internet"
+      },
+      {
+        "stimulus": "Escribe una frase con «las redes sociales»",
+        "must": [
+          "redes sociales"
+        ],
+        "model": "Paso mucho tiempo en las redes sociales.",
+        "tag": "internet",
+        "sub": "de sociale media"
+      },
+      {
+        "stimulus": "Escribe una frase con «la wifi»",
+        "must": [
+          "wifi"
+        ],
+        "model": "¿Cuál es la contraseña de la wifi?",
+        "tag": "internet",
+        "sub": "de wifi"
+      },
+      {
+        "stimulus": "Escribe una frase con «la contraseña»",
+        "must": [
+          "contraseña"
+        ],
+        "model": "No recuerdo mi contraseña.",
+        "tag": "internet",
+        "sub": "het wachtwoord"
+      },
+      {
+        "stimulus": "Escribe una frase con «el usuario»",
+        "must": [
+          "usuario"
+        ],
+        "model": "Escribe tu usuario y contraseña.",
+        "tag": "internet",
+        "sub": "de gebruikersnaam / gebruiker"
+      },
+      {
+        "stimulus": "Escribe una frase con «el perfil»",
+        "must": [
+          "perfil"
+        ],
+        "model": "Tengo un perfil en Instagram.",
+        "tag": "internet",
+        "sub": "het profiel"
+      },
+      {
+        "stimulus": "Escribe una frase con «el mensaje»",
+        "must": [
+          "mensaje"
+        ],
+        "model": "Te mando un mensaje.",
+        "tag": "internet",
+        "sub": "het bericht"
+      },
+      {
+        "stimulus": "Escribe una frase con «el vídeo»",
+        "must": [
+          "vídeo"
+        ],
+        "model": "Subo un vídeo a YouTube.",
+        "tag": "internet",
+        "sub": "de video"
+      },
+      {
+        "stimulus": "Escribe una frase con «la videollamada»",
+        "must": [
+          "videollamada"
+        ],
+        "model": "Hacemos una videollamada.",
+        "tag": "internet",
+        "sub": "het videogesprek"
+      },
+      {
+        "stimulus": "Escribe una frase con «chatear»",
+        "must": [
+          "chatear"
+        ],
+        "model": "Chateo con mis amigos.",
+        "tag": "digital",
+        "sub": "chatten"
+      },
+      {
+        "stimulus": "Escribe una frase con «navegar»",
+        "must": [
+          "navegar"
+        ],
+        "model": "Navego por internet.",
+        "tag": "digital",
+        "sub": "surfen (op internet)"
+      },
+      {
+        "stimulus": "Escribe una frase con «subir»",
+        "must": [
+          "subir"
+        ],
+        "model": "Subo una foto.",
+        "tag": "digital",
+        "sub": "uploaden / plaatsen"
+      },
+      {
+        "stimulus": "Escribe una frase con «descargar»",
+        "must": [
+          "descargar"
+        ],
+        "model": "Descargo una canción.",
+        "tag": "digital",
+        "sub": "downloaden"
+      },
+      {
+        "stimulus": "Escribe una frase con «compartir»",
+        "must": [
+          "compartir"
+        ],
+        "model": "Comparto el vídeo con la clase.",
+        "tag": "digital",
+        "sub": "delen"
+      },
+      {
+        "stimulus": "Escribe una frase con «seguir»",
+        "must": [
+          "seguir"
+        ],
+        "model": "Sigo a muchos artistas.",
+        "tag": "digital",
+        "sub": "volgen"
+      },
+      {
+        "stimulus": "Escribe una frase con «publicar»",
+        "must": [
+          "publicar"
+        ],
+        "model": "Publico una foto del finde.",
+        "tag": "digital",
+        "sub": "posten / publiceren"
+      },
+      {
+        "stimulus": "Escribe una frase con «conectarse»",
+        "must": [
+          "conectarse"
+        ],
+        "model": "Me conecto por la tarde.",
+        "tag": "digital",
+        "sub": "verbinden / inloggen"
+      },
+      {
+        "stimulus": "Escribe una frase con «apagar»",
+        "must": [
+          "apagar"
+        ],
+        "model": "Apago el móvil por la noche.",
+        "tag": "digital",
+        "sub": "uitzetten"
+      },
+      {
+        "stimulus": "Escribe una frase con «encender»",
+        "must": [
+          "encender"
+        ],
+        "model": "Enciendo el ordenador.",
+        "tag": "digital",
+        "sub": "aanzetten"
+      },
+      {
+        "stimulus": "Escribe una frase con «escribir»",
+        "must": [
+          "escribir"
+        ],
+        "model": "Le escribo a Diego.",
+        "tag": "comunicar",
+        "sub": "schrijven"
+      },
+      {
+        "stimulus": "Escribe una frase con «llamar»",
+        "must": [
+          "llamar"
+        ],
+        "model": "Llamo a mi abuela los domingos.",
+        "tag": "comunicar",
+        "sub": "(op)bellen"
+      },
+      {
+        "stimulus": "Escribe una frase con «contar»",
+        "must": [
+          "contar"
+        ],
+        "model": "Le cuento un secreto.",
+        "tag": "comunicar",
+        "sub": "vertellen"
+      },
+      {
+        "stimulus": "Escribe una frase con «decir»",
+        "must": [
+          "decir"
+        ],
+        "model": "Le digo la verdad.",
+        "tag": "comunicar",
+        "sub": "zeggen"
+      },
+      {
+        "stimulus": "Escribe una frase con «preguntar»",
+        "must": [
+          "preguntar"
+        ],
+        "model": "Le pregunto la contraseña.",
+        "tag": "comunicar",
+        "sub": "vragen"
+      },
+      {
+        "stimulus": "Escribe una frase con «regalar»",
+        "must": [
+          "regalar"
+        ],
+        "model": "Les regalo unos auriculares.",
+        "tag": "comunicar",
+        "sub": "cadeau geven"
+      },
+      {
+        "stimulus": "Escribe una frase con «ir a + infinitivo»",
+        "must": [
+          "ir a + infinitivo"
+        ],
+        "model": "Voy a estudiar esta tarde.",
+        "tag": "planes",
+        "sub": "gaan + inf. (nabije toekomst)"
+      },
+      {
+        "stimulus": "Escribe una frase con «acabar de + inf.»",
+        "must": [
+          "acabar de + inf."
+        ],
+        "model": "Acabo de mandar un mensaje.",
+        "tag": "planes",
+        "sub": "net … hebben (gedaan)"
+      },
+      {
+        "stimulus": "Escribe una frase con «este fin de semana»",
+        "must": [
+          "este fin de semana"
+        ],
+        "model": "Este fin de semana voy a salir.",
+        "tag": "planes",
+        "sub": "dit weekend"
+      },
+      {
+        "stimulus": "Escribe una frase con «mañana»",
+        "must": [
+          "mañana"
+        ],
+        "model": "Mañana voy a jugar al fútbol.",
+        "tag": "planes",
+        "sub": "morgen"
+      },
+      {
+        "stimulus": "Escribe una frase con «pronto»",
+        "must": [
+          "pronto"
+        ],
+        "model": "Pronto voy a comprar un móvil nuevo.",
+        "tag": "planes",
+        "sub": "binnenkort / snel"
+      },
+      {
+        "stimulus": "Escribe una frase con «quedar»",
+        "must": [
+          "quedar"
+        ],
+        "model": "Vamos a quedar en la plaza.",
+        "tag": "planes",
+        "sub": "afspreken"
+      },
+      {
+        "stimulus": "Escribe una frase con «salir»",
+        "must": [
+          "salir"
+        ],
+        "model": "El sábado voy a salir con amigos.",
+        "tag": "planes",
+        "sub": "uitgaan"
+      },
+      {
+        "stimulus": "Escribe una frase con «hacer planes»",
+        "must": [
+          "hacer planes"
+        ],
+        "model": "Hacemos planes para el finde.",
+        "tag": "planes",
+        "sub": "plannen maken"
+      },
+      {
+        "stimulus": "Escribe una frase con «creo que»",
+        "must": [
+          "creo que"
+        ],
+        "model": "Creo que las redes son útiles.",
+        "tag": "opinar",
+        "sub": "ik denk / vind dat"
+      },
+      {
+        "stimulus": "Escribe una frase con «pienso que»",
+        "must": [
+          "pienso que"
+        ],
+        "model": "Pienso que el móvil es práctico.",
+        "tag": "opinar",
+        "sub": "ik denk dat"
+      },
+      {
+        "stimulus": "Escribe una frase con «me parece que»",
+        "must": [
+          "me parece que"
+        ],
+        "model": "Me parece que pasamos mucho tiempo online.",
+        "tag": "opinar",
+        "sub": "het lijkt me dat"
+      },
+      {
+        "stimulus": "Escribe una frase con «en mi opinión»",
+        "must": [
+          "en mi opinión"
+        ],
+        "model": "En mi opinión, es un problema.",
+        "tag": "opinar",
+        "sub": "volgens mij / naar mijn mening"
+      },
+      {
+        "stimulus": "Escribe una frase con «estoy de acuerdo»",
+        "must": [
+          "estoy de acuerdo"
+        ],
+        "model": "No estoy de acuerdo contigo.",
+        "tag": "opinar",
+        "sub": "ik ben het (niet) eens"
+      },
+      {
+        "stimulus": "Escribe una frase con «tener razón»",
+        "must": [
+          "tener razón"
+        ],
+        "model": "Creo que tienes razón.",
+        "tag": "opinar",
+        "sub": "gelijk hebben"
+      },
+      {
+        "stimulus": "Escribe una frase con «por un lado… por otro…»",
+        "must": [
+          "por un lado… por otro…"
+        ],
+        "model": "Por un lado es útil, por otro es adictivo.",
+        "tag": "opinar",
+        "sub": "enerzijds… anderzijds…"
+      },
+      {
+        "stimulus": "Escribe una frase con «útil»",
+        "must": [
+          "útil"
+        ],
+        "model": "El móvil es muy útil.",
+        "tag": "adjmedia",
+        "sub": "nuttig"
+      },
+      {
+        "stimulus": "Escribe una frase con «la pantalla»",
+        "must": [
+          "pantalla"
+        ],
+        "model": "Paso tres horas de pantalla al día.",
+        "tag": "adjmedia",
+        "sub": "schermtijd"
+      }
+    ]
+  }
+}

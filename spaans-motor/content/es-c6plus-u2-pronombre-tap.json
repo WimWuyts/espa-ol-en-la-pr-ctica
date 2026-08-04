@@ -1,0 +1,137 @@
+{
+  "id": "es-c6plus-u2-pronombre-tap",
+  "title": "¿Qué sustituye el pronombre?",
+  "subtitle": "U2 · waar slaat lo/la/los/las op?",
+  "lang": "es",
+  "template": "tap",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "tap": {
+    "prompt": "Tik het woord dat het pronombre vervangt",
+    "joiner": " · ",
+    "items": [
+      {
+        "parts": [
+          "Compro",
+          "el pan",
+          "aquí"
+        ],
+        "answer": 1,
+        "tag": "lo",
+        "sub": "el pan → lo compro"
+      },
+      {
+        "parts": [
+          "Veo",
+          "la tele",
+          "por la noche"
+        ],
+        "answer": 1,
+        "tag": "la",
+        "sub": "la tele → la veo"
+      },
+      {
+        "parts": [
+          "Hago",
+          "los deberes",
+          "ahora"
+        ],
+        "answer": 1,
+        "tag": "los",
+        "sub": "los deberes → los hago"
+      },
+      {
+        "parts": [
+          "Limpio",
+          "las ventanas",
+          "el sábado"
+        ],
+        "answer": 1,
+        "tag": "las",
+        "sub": "las ventanas → las limpio"
+      },
+      {
+        "parts": [
+          "Busco",
+          "el móvil",
+          "en el salón"
+        ],
+        "answer": 1,
+        "tag": "lo",
+        "sub": "el móvil → lo busco"
+      },
+      {
+        "parts": [
+          "Riego",
+          "las plantas",
+          "cada día"
+        ],
+        "answer": 1,
+        "tag": "las",
+        "sub": "las plantas → las riego"
+      },
+      {
+        "parts": [
+          "Abro",
+          "la ventana",
+          "por la mañana"
+        ],
+        "answer": 1,
+        "tag": "la",
+        "sub": "la ventana → la abro"
+      },
+      {
+        "parts": [
+          "Guardo",
+          "los platos",
+          "en el armario"
+        ],
+        "answer": 1,
+        "tag": "los",
+        "sub": "los platos → los guardo"
+      },
+      {
+        "parts": [
+          "Escucho",
+          "la radio",
+          "en la cocina"
+        ],
+        "answer": 1,
+        "tag": "la",
+        "sub": "la radio → la escucho"
+      },
+      {
+        "parts": [
+          "Pinto",
+          "el dormitorio",
+          "de azul"
+        ],
+        "answer": 1,
+        "tag": "lo",
+        "sub": "el dormitorio → lo pinto"
+      },
+      {
+        "parts": [
+          "Ordeno",
+          "las sillas",
+          "del salón"
+        ],
+        "answer": 1,
+        "tag": "las",
+        "sub": "las sillas → las ordeno"
+      },
+      {
+        "parts": [
+          "Cierro",
+          "los armarios",
+          "siempre"
+        ],
+        "answer": 1,
+        "tag": "los",
+        "sub": "los armarios → los cierro"
+      }
+    ]
+  }
+}

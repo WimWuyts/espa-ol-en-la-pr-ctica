@@ -34,21 +34,31 @@ MOTOR = [
  ['① Reconocer · woordenschat', [
    ['digital-memoria', 'memoria digital', 'memory'],
    ['acciones-memoria', 'memoria de acciones', 'memory'],
-   ['verbo-objeto', 'verbo ↔ objeto', 'match']]],
+   ['verbo-objeto', 'verbo ↔ objeto', 'match'],
+   ['movil-acciones', 'el móvil y las redes', 'match']]],
  ['② Distinguir · gramática', [
    ['presente-futuro', '¿ahora o después?', 'classify'],
-   ['le-les', '¿le o les?', 'classify']]],
+   ['le-les', '¿le o les?', 'classify'],
+   ['ya-o-todavia', '¿acabar de o ir a?', 'classify']]],
  ['③ Producir con apoyo', [
    ['ir-a', 'completa: ir a + infinitivo', 'cloze'],
    ['le-les-cloze', 'completa: le/les', 'cloze'],
    ['creo-que', 'completa: creo que + indicativo', 'cloze'],
    ['ir-a-tetris', 'ir a + inf.: burbujas', 'bubble'],
    ['plan-order', 'ordena la frase', 'order'],
-   ['senala', 'señala', 'point']]],
+   ['senala', 'señala', 'point'],
+   ['infinitivo-tap', '¿qué verbo va detrás?', 'tap']]],
  ['④ Hablar · grábate 🎙️', [
    ['repite-planes', 'escucha y repite: mis planes', 'speak'],
-   ['mensaje-planes', 'mensaje de voz: mi finde', 'speak']]],
-]
+   ['mensaje-planes', 'mensaje de voz: mi finde', 'speak'],
+   ['chat-plan', 'organiza el finde', 'sim'],
+   ['carrusel-plan', 'carrusel · el plan', 'speak']]],
+ ['⑤ Escribir · escríbelo tú ✍️', [
+   ['escribe-palabra', 'NL → escribe la palabra', 'type'],
+   ['completa-frase', 'completa la frase', 'type'],
+   ['que-palabra', '¿qué palabra es?', 'type'],
+   ['dictado', 'dictado', 'type'],
+   ['escribe-frase', 'escribe una frase', 'type']]]]
 GAMEDIR = f"{ROOT}/spaans-motor/games"
 slugs = [g[0] for grp in MOTOR for g in grp[1]]
 GAMES = {s: b64(f"{GAMEDIR}/es-c6plus-u3-{s}.html") for s in slugs if os.path.exists(f"{GAMEDIR}/es-c6plus-u3-{s}.html")}

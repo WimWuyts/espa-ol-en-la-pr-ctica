@@ -1,0 +1,441 @@
+{
+  "id": "es-c6plus-u1-completa-frase",
+  "title": "Completa la frase",
+  "subtitle": "C6+ · U1 · vul het ontbrekende woord in (betekenis uit de context)",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "Mi ___ es siempre igual.",
+        "answers": [
+          "la rutina",
+          "rutina",
+          "rutina"
+        ],
+        "tag": "rutina",
+        "sub": "de routine / dagindeling"
+      },
+      {
+        "stimulus": "___ — Son las dos.",
+        "answers": [
+          "¿Qué hora es?",
+          "¿Qué hora es?"
+        ],
+        "tag": "hora",
+        "sub": "hoe laat is het?"
+      },
+      {
+        "stimulus": "___ en punto.",
+        "answers": [
+          "es la una",
+          "es la una"
+        ],
+        "tag": "hora",
+        "sub": "het is één uur"
+      },
+      {
+        "stimulus": "___ de la tarde.",
+        "answers": [
+          "son las dos",
+          "son las dos"
+        ],
+        "tag": "hora",
+        "sub": "het is twee uur"
+      },
+      {
+        "stimulus": "Son las tres ___.",
+        "answers": [
+          "y cuarto",
+          "y cuarto"
+        ],
+        "tag": "hora",
+        "sub": "kwart over"
+      },
+      {
+        "stimulus": "Son las tres ___.",
+        "answers": [
+          "y media",
+          "y media"
+        ],
+        "tag": "hora",
+        "sub": "half"
+      },
+      {
+        "stimulus": "Son las cuatro ___.",
+        "answers": [
+          "menos cuarto",
+          "menos cuarto"
+        ],
+        "tag": "hora",
+        "sub": "kwart voor"
+      },
+      {
+        "stimulus": "Son las cinco ___.",
+        "answers": [
+          "en punto",
+          "en punto"
+        ],
+        "tag": "hora",
+        "sub": "precies (op het uur)"
+      },
+      {
+        "stimulus": "Son las ocho ___.",
+        "answers": [
+          "de la mañana",
+          "de la mañana"
+        ],
+        "tag": "hora",
+        "sub": "'s ochtends (bij een uur)"
+      },
+      {
+        "stimulus": "Son las cuatro ___.",
+        "answers": [
+          "de la tarde",
+          "de la tarde"
+        ],
+        "tag": "hora",
+        "sub": "'s middags (bij een uur)"
+      },
+      {
+        "stimulus": "Son las once ___.",
+        "answers": [
+          "de la noche",
+          "de la noche"
+        ],
+        "tag": "hora",
+        "sub": "'s avonds (bij een uur)"
+      },
+      {
+        "stimulus": "A ___ como en casa.",
+        "answers": [
+          "el mediodía",
+          "mediodía",
+          "mediodía"
+        ],
+        "tag": "hora",
+        "sub": "de middag (12u)"
+      },
+      {
+        "stimulus": "El ___ tengo clase de español.",
+        "answers": [
+          "el lunes",
+          "lunes",
+          "lunes"
+        ],
+        "tag": "calendario",
+        "sub": "de maandag"
+      },
+      {
+        "stimulus": "El ___ salgo con amigos.",
+        "answers": [
+          "el fin de semana",
+          "fin de semana",
+          "fin de semana"
+        ],
+        "tag": "calendario",
+        "sub": "het weekend"
+      },
+      {
+        "stimulus": "___ es viernes.",
+        "answers": [
+          "hoy",
+          "hoy"
+        ],
+        "tag": "calendario",
+        "sub": "vandaag"
+      },
+      {
+        "stimulus": "___ es sábado.",
+        "answers": [
+          "mañana",
+          "mañana"
+        ],
+        "tag": "calendario",
+        "sub": "morgen"
+      },
+      {
+        "stimulus": "En ___ hace frío.",
+        "answers": [
+          "enero",
+          "enero"
+        ],
+        "tag": "calendario",
+        "sub": "januari"
+      },
+      {
+        "stimulus": "Voy de vacaciones en ___.",
+        "answers": [
+          "julio",
+          "julio"
+        ],
+        "tag": "calendario",
+        "sub": "juli"
+      },
+      {
+        "stimulus": "En ___ hace buen tiempo.",
+        "answers": [
+          "la primavera",
+          "primavera",
+          "primavera"
+        ],
+        "tag": "calendario",
+        "sub": "de lente"
+      },
+      {
+        "stimulus": "En ___ vamos a la playa.",
+        "answers": [
+          "el verano",
+          "verano",
+          "verano"
+        ],
+        "tag": "calendario",
+        "sub": "de zomer"
+      },
+      {
+        "stimulus": "En ___ hace viento.",
+        "answers": [
+          "el otoño",
+          "otoño",
+          "otoño"
+        ],
+        "tag": "calendario",
+        "sub": "de herfst"
+      },
+      {
+        "stimulus": "En ___ nieva.",
+        "answers": [
+          "el invierno",
+          "invierno",
+          "invierno"
+        ],
+        "tag": "calendario",
+        "sub": "de winter"
+      },
+      {
+        "stimulus": "___ desayuno en casa.",
+        "answers": [
+          "siempre",
+          "siempre"
+        ],
+        "tag": "frecuencia",
+        "sub": "altijd"
+      },
+      {
+        "stimulus": "___ voy en bici.",
+        "answers": [
+          "casi siempre",
+          "casi siempre"
+        ],
+        "tag": "frecuencia",
+        "sub": "bijna altijd"
+      },
+      {
+        "stimulus": "___ me levanto a las siete.",
+        "answers": [
+          "normalmente",
+          "normalmente"
+        ],
+        "tag": "frecuencia",
+        "sub": "meestal"
+      },
+      {
+        "stimulus": "___ ceno tarde.",
+        "answers": [
+          "a veces",
+          "a veces"
+        ],
+        "tag": "frecuencia",
+        "sub": "soms"
+      },
+      {
+        "stimulus": "___ quedo con amigos.",
+        "answers": [
+          "a menudo",
+          "a menudo"
+        ],
+        "tag": "frecuencia",
+        "sub": "vaak"
+      },
+      {
+        "stimulus": "___ veo la tele.",
+        "answers": [
+          "casi nunca",
+          "casi nunca"
+        ],
+        "tag": "frecuencia",
+        "sub": "bijna nooit"
+      },
+      {
+        "stimulus": "___ llego tarde.",
+        "answers": [
+          "nunca",
+          "nunca"
+        ],
+        "tag": "frecuencia",
+        "sub": "nooit"
+      },
+      {
+        "stimulus": "Estudio ___.",
+        "answers": [
+          "todos los días",
+          "todos los días"
+        ],
+        "tag": "frecuencia",
+        "sub": "elke dag"
+      },
+      {
+        "stimulus": "___ me levanto.",
+        "answers": [
+          "primero",
+          "primero"
+        ],
+        "tag": "conectores",
+        "sub": "eerst"
+      },
+      {
+        "stimulus": "___ desayuno.",
+        "answers": [
+          "luego",
+          "luego"
+        ],
+        "tag": "conectores",
+        "sub": "daarna / dan"
+      },
+      {
+        "stimulus": "___ voy al instituto.",
+        "answers": [
+          "después",
+          "después"
+        ],
+        "tag": "conectores",
+        "sub": "daarna"
+      },
+      {
+        "stimulus": "___, me acuesto.",
+        "answers": [
+          "por último",
+          "por último"
+        ],
+        "tag": "conectores",
+        "sub": "ten slotte"
+      },
+      {
+        "stimulus": "___ comer, me lavo las manos.",
+        "answers": [
+          "antes de",
+          "antes de"
+        ],
+        "tag": "conectores",
+        "sub": "vóór (+ inf.)"
+      },
+      {
+        "stimulus": "Me gusta el fútbol ___ es divertido.",
+        "answers": [
+          "porque",
+          "porque"
+        ],
+        "tag": "conectores",
+        "sub": "want / omdat"
+      },
+      {
+        "stimulus": "Está ___ porque llueve.",
+        "answers": [
+          "triste",
+          "triste"
+        ],
+        "tag": "sentimientos",
+        "sub": "verdrietig"
+      },
+      {
+        "stimulus": "Me gusta ___ salsa.",
+        "answers": [
+          "bailar",
+          "bailar"
+        ],
+        "tag": "ocio",
+        "sub": "dansen"
+      },
+      {
+        "stimulus": "Mi ___ favorita es el fútbol.",
+        "answers": [
+          "la afición",
+          "afición",
+          "afición"
+        ],
+        "tag": "ocio",
+        "sub": "de hobby"
+      },
+      {
+        "stimulus": "___ el chocolate.",
+        "answers": [
+          "me gusta",
+          "me gusta"
+        ],
+        "tag": "gustar",
+        "sub": "ik vind (het) leuk / lekker"
+      },
+      {
+        "stimulus": "___ los perros.",
+        "answers": [
+          "me gustan",
+          "me gustan"
+        ],
+        "tag": "gustar",
+        "sub": "ik vind (ze) leuk"
+      },
+      {
+        "stimulus": "___ bailar.",
+        "answers": [
+          "me encanta",
+          "me encanta"
+        ],
+        "tag": "gustar",
+        "sub": "ik vind (het) geweldig"
+      },
+      {
+        "stimulus": "___ el terror.",
+        "answers": [
+          "no me gusta nada",
+          "no me gusta nada"
+        ],
+        "tag": "gustar",
+        "sub": "ik vind (het) helemaal niet leuk"
+      },
+      {
+        "stimulus": "— Me gusta el pop. — ___.",
+        "answers": [
+          "a mí también",
+          "a mí también"
+        ],
+        "tag": "gustar",
+        "sub": "ik ook (bij +)"
+      },
+      {
+        "stimulus": "— No me gusta el jazz. — ___.",
+        "answers": [
+          "a mí tampoco",
+          "a mí tampoco"
+        ],
+        "tag": "gustar",
+        "sub": "ik ook niet (bij −)"
+      },
+      {
+        "stimulus": "___ el pop al rock.",
+        "answers": [
+          "prefiero",
+          "prefiero"
+        ],
+        "tag": "gustar",
+        "sub": "ik verkies / geef de voorkeur aan"
+      }
+    ]
+  }
+}

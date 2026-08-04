@@ -1,0 +1,62 @@
+{
+  "id": "es-c6plus-u5-cuenta-historia",
+  "title": "Cuenta una historia",
+  "subtitle": "U5 · vertel iets uit het verleden",
+  "lang": "es",
+  "template": "sim",
+  "options": {
+    "audio": false
+  },
+  "sim": {
+    "prompt": "Tarea comunicativa · schrijf in het Spaans",
+    "rounds": [
+      {
+        "scenario": "Cuenta qué hiciste el fin de semana pasado.",
+        "tag": "indef",
+        "sub": "gebruik het indefinido",
+        "min": 12,
+        "need": [
+          {
+            "re": "\\w+(é|ó|í|ió|aste|amos|aron|ieron)\\b"
+          }
+        ]
+      },
+      {
+        "scenario": "Escribe la biografía corta de alguien que admiras.",
+        "tag": "bio",
+        "sub": "gebruik nació en minstens twee andere werkwoorden",
+        "min": 14,
+        "need": [
+          {
+            "re": "naci[óo]"
+          }
+        ]
+      },
+      {
+        "scenario": "Empieza un cuento con «Érase una vez» y escribe tres frases.",
+        "tag": "cuento",
+        "sub": "gebruik een conector van het midden",
+        "min": 14,
+        "need": [
+          {
+            "re": "[ÉE]rase una vez"
+          },
+          {
+            "re": "(entonces|de repente|después|mientras)"
+          }
+        ]
+      },
+      {
+        "scenario": "Un amigo te pidió el libro. Dile que ya se lo diste.",
+        "tag": "selo",
+        "sub": "gebruik se lo of se la",
+        "min": 8,
+        "need": [
+          {
+            "re": "se l(o|a|os|as)"
+          }
+        ]
+      }
+    ]
+  }
+}

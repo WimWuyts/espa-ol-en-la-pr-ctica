@@ -1,0 +1,405 @@
+{
+  "id": "es-c6plus-u7-escribe-frase",
+  "title": "Escribe una frase",
+  "subtitle": "C6+ · U7 · vrije productie · structuurcheck + modeloplossing",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 8,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "open",
+    "items": [
+      {
+        "stimulus": "Escribe una frase con «la salud»",
+        "must": [
+          "salud"
+        ],
+        "model": "La salud es lo más importante.",
+        "tag": "salud",
+        "sub": "de gezondheid"
+      },
+      {
+        "stimulus": "Escribe una frase con «el cuerpo»",
+        "must": [
+          "cuerpo"
+        ],
+        "model": "Cuida tu cuerpo.",
+        "tag": "salud",
+        "sub": "het lichaam"
+      },
+      {
+        "stimulus": "Escribe una frase con «el ejercicio»",
+        "must": [
+          "ejercicio"
+        ],
+        "model": "Hago ejercicio cada día.",
+        "tag": "salud",
+        "sub": "de oefening/beweging"
+      },
+      {
+        "stimulus": "Escribe una frase con «dormir»",
+        "must": [
+          "dormir"
+        ],
+        "model": "Duerme ocho horas.",
+        "tag": "salud",
+        "sub": "slapen"
+      },
+      {
+        "stimulus": "Escribe una frase con «la dieta»",
+        "must": [
+          "dieta"
+        ],
+        "model": "Tengo una dieta sana.",
+        "tag": "salud",
+        "sub": "het dieet/voeding"
+      },
+      {
+        "stimulus": "Escribe una frase con «el estrés»",
+        "must": [
+          "estrés"
+        ],
+        "model": "El estrés es malo para la salud.",
+        "tag": "salud",
+        "sub": "de stress"
+      },
+      {
+        "stimulus": "Escribe una frase con «la fruta»",
+        "must": [
+          "fruta"
+        ],
+        "model": "Come más fruta.",
+        "tag": "salud",
+        "sub": "het fruit"
+      },
+      {
+        "stimulus": "Escribe una frase con «el agua»",
+        "must": [
+          "agua"
+        ],
+        "model": "Bebe mucha agua.",
+        "tag": "salud",
+        "sub": "het water"
+      },
+      {
+        "stimulus": "Escribe una frase con «el consejo»",
+        "must": [
+          "consejo"
+        ],
+        "model": "Te doy un consejo.",
+        "tag": "consejos",
+        "sub": "de raad/tip"
+      },
+      {
+        "stimulus": "Escribe una frase con «comer sano»",
+        "must": [
+          "comer sano"
+        ],
+        "model": "Es importante comer sano.",
+        "tag": "consejos",
+        "sub": "gezond eten"
+      },
+      {
+        "stimulus": "Escribe una frase con «hacer deporte»",
+        "must": [
+          "hacer deporte"
+        ],
+        "model": "Haz deporte tres veces por semana.",
+        "tag": "consejos",
+        "sub": "sporten"
+      },
+      {
+        "stimulus": "Escribe una frase con «beber agua»",
+        "must": [
+          "beber agua"
+        ],
+        "model": "Bebe agua a menudo.",
+        "tag": "consejos",
+        "sub": "water drinken"
+      },
+      {
+        "stimulus": "Escribe una frase con «evitar»",
+        "must": [
+          "evitar"
+        ],
+        "model": "Evita el azúcar.",
+        "tag": "consejos",
+        "sub": "vermijden"
+      },
+      {
+        "stimulus": "Escribe una frase con «relajarse»",
+        "must": [
+          "relajarse"
+        ],
+        "model": "Relájate un poco.",
+        "tag": "consejos",
+        "sub": "ontspannen"
+      },
+      {
+        "stimulus": "Escribe una frase con «es importante»",
+        "must": [
+          "es importante"
+        ],
+        "model": "Es importante dormir bien.",
+        "tag": "consejos",
+        "sub": "het is belangrijk"
+      },
+      {
+        "stimulus": "Escribe una frase con «deberías»",
+        "must": [
+          "deberías"
+        ],
+        "model": "Deberías descansar más.",
+        "tag": "consejos",
+        "sub": "je zou moeten"
+      },
+      {
+        "stimulus": "Escribe una frase con «el medio ambiente»",
+        "must": [
+          "medio ambiente"
+        ],
+        "model": "Cuidamos el medio ambiente.",
+        "tag": "medioambiente",
+        "sub": "het milieu"
+      },
+      {
+        "stimulus": "Escribe una frase con «el planeta»",
+        "must": [
+          "planeta"
+        ],
+        "model": "Protege el planeta.",
+        "tag": "medioambiente",
+        "sub": "de planeet"
+      },
+      {
+        "stimulus": "Escribe una frase con «la naturaleza»",
+        "must": [
+          "naturaleza"
+        ],
+        "model": "Me gusta la naturaleza.",
+        "tag": "medioambiente",
+        "sub": "de natuur"
+      },
+      {
+        "stimulus": "Escribe una frase con «reciclar»",
+        "must": [
+          "reciclar"
+        ],
+        "model": "Recicla el papel y el vidrio.",
+        "tag": "medioambiente",
+        "sub": "recyclen"
+      },
+      {
+        "stimulus": "Escribe una frase con «la basura»",
+        "must": [
+          "basura"
+        ],
+        "model": "No tires basura al suelo.",
+        "tag": "medioambiente",
+        "sub": "het afval"
+      },
+      {
+        "stimulus": "Escribe una frase con «contaminar»",
+        "must": [
+          "contaminar"
+        ],
+        "model": "Los coches contaminan mucho.",
+        "tag": "medioambiente",
+        "sub": "vervuilen"
+      },
+      {
+        "stimulus": "Escribe una frase con «la contaminación»",
+        "must": [
+          "contaminación"
+        ],
+        "model": "Hay mucha contaminación.",
+        "tag": "medioambiente",
+        "sub": "de vervuiling"
+      },
+      {
+        "stimulus": "Escribe una frase con «ahorrar»",
+        "must": [
+          "ahorrar"
+        ],
+        "model": "Ahorra agua y energía.",
+        "tag": "medioambiente",
+        "sub": "besparen"
+      },
+      {
+        "stimulus": "Escribe una frase con «la energía»",
+        "must": [
+          "energía"
+        ],
+        "model": "Usa energía solar.",
+        "tag": "medioambiente",
+        "sub": "de energie"
+      },
+      {
+        "stimulus": "Escribe una frase con «proteger»",
+        "must": [
+          "proteger"
+        ],
+        "model": "Debemos proteger los bosques.",
+        "tag": "medioambiente",
+        "sub": "beschermen"
+      },
+      {
+        "stimulus": "Escribe una frase con «el árbol»",
+        "must": [
+          "árbol"
+        ],
+        "model": "Planta un árbol.",
+        "tag": "medioambiente",
+        "sub": "de boom"
+      },
+      {
+        "stimulus": "Escribe una frase con «el bosque»",
+        "must": [
+          "bosque"
+        ],
+        "model": "El bosque tropical es enorme.",
+        "tag": "medioambiente",
+        "sub": "het bos"
+      },
+      {
+        "stimulus": "Escribe una frase con «cuida»",
+        "must": [
+          "cuida"
+        ],
+        "model": "Cuida el planeta.",
+        "tag": "imperativo",
+        "sub": "zorg (jij)"
+      },
+      {
+        "stimulus": "Escribe una frase con «come»",
+        "must": [
+          "come"
+        ],
+        "model": "Come más verdura.",
+        "tag": "imperativo",
+        "sub": "eet (jij)"
+      },
+      {
+        "stimulus": "Escribe una frase con «di»",
+        "must": [
+          "di"
+        ],
+        "model": "Dime la verdad.",
+        "tag": "imperativo",
+        "sub": "zeg (jij)"
+      },
+      {
+        "stimulus": "Escribe una frase con «creo que»",
+        "must": [
+          "creo que"
+        ],
+        "model": "Creo que es verdad.",
+        "tag": "opinar",
+        "sub": "ik denk dat"
+      },
+      {
+        "stimulus": "Escribe una frase con «pienso que»",
+        "must": [
+          "pienso que"
+        ],
+        "model": "Pienso que debemos reciclar.",
+        "tag": "opinar",
+        "sub": "ik vind dat"
+      },
+      {
+        "stimulus": "Escribe una frase con «en mi opinión»",
+        "must": [
+          "en mi opinión"
+        ],
+        "model": "En mi opinión, el deporte es clave.",
+        "tag": "opinar",
+        "sub": "volgens mij"
+      },
+      {
+        "stimulus": "Escribe una frase con «me parece que»",
+        "must": [
+          "me parece que"
+        ],
+        "model": "Me parece que tienes razón.",
+        "tag": "opinar",
+        "sub": "het lijkt me dat"
+      },
+      {
+        "stimulus": "Escribe una frase con «estoy de acuerdo»",
+        "must": [
+          "estoy de acuerdo"
+        ],
+        "model": "Estoy de acuerdo contigo.",
+        "tag": "opinar",
+        "sub": "ik ben het eens"
+      },
+      {
+        "stimulus": "Escribe una frase con «no estoy de acuerdo»",
+        "must": [
+          "no estoy de acuerdo"
+        ],
+        "model": "No estoy de acuerdo con eso.",
+        "tag": "opinar",
+        "sub": "ik ben het oneens"
+      },
+      {
+        "stimulus": "Escribe una frase con «porque»",
+        "must": [
+          "porque"
+        ],
+        "model": "Reciclo porque es importante.",
+        "tag": "conectores",
+        "sub": "omdat/want"
+      },
+      {
+        "stimulus": "Escribe una frase con «además»",
+        "must": [
+          "además"
+        ],
+        "model": "Además, ahorra dinero.",
+        "tag": "conectores",
+        "sub": "bovendien"
+      },
+      {
+        "stimulus": "Escribe una frase con «por eso»",
+        "must": [
+          "por eso"
+        ],
+        "model": "Contamina; por eso está prohibido.",
+        "tag": "conectores",
+        "sub": "daarom"
+      },
+      {
+        "stimulus": "Escribe una frase con «sin embargo»",
+        "must": [
+          "sin embargo"
+        ],
+        "model": "Es caro; sin embargo, funciona.",
+        "tag": "conectores",
+        "sub": "echter"
+      },
+      {
+        "stimulus": "Escribe una frase con «por un lado»",
+        "must": [
+          "por un lado"
+        ],
+        "model": "Por un lado es cómodo.",
+        "tag": "conectores",
+        "sub": "enerzijds"
+      },
+      {
+        "stimulus": "Escribe una frase con «por otro lado»",
+        "must": [
+          "por otro lado"
+        ],
+        "model": "Por otro lado, contamina.",
+        "tag": "conectores",
+        "sub": "anderzijds"
+      }
+    ]
+  }
+}

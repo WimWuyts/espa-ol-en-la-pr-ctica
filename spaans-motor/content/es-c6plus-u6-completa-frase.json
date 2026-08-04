@@ -1,0 +1,372 @@
+{
+  "id": "es-c6plus-u6-completa-frase",
+  "title": "Completa la frase",
+  "subtitle": "C6+ · U6 · vul het ontbrekende woord in (betekenis uit de context)",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "Tengo buenos ___s.",
+        "answers": [
+          "el recuerdo",
+          "recuerdo",
+          "recuerdo"
+        ],
+        "tag": "infancia",
+        "sub": "de herinnering"
+      },
+      {
+        "stimulus": "Mi ___ fue feliz.",
+        "answers": [
+          "la infancia",
+          "infancia",
+          "infancia"
+        ],
+        "tag": "infancia",
+        "sub": "de kindertijd"
+      },
+      {
+        "stimulus": "Mi ___ favorito era un oso.",
+        "answers": [
+          "el juguete",
+          "juguete",
+          "juguete"
+        ],
+        "tag": "infancia",
+        "sub": "het speelgoed"
+      },
+      {
+        "stimulus": "Iba a la ___ a pie.",
+        "answers": [
+          "la escuela",
+          "escuela",
+          "escuela"
+        ],
+        "tag": "escuela",
+        "sub": "de school"
+      },
+      {
+        "stimulus": "Jugábamos en el ___.",
+        "answers": [
+          "el patio",
+          "patio",
+          "patio"
+        ],
+        "tag": "escuela",
+        "sub": "de speelplaats"
+      },
+      {
+        "stimulus": "En el ___ comíamos pan.",
+        "answers": [
+          "el recreo",
+          "recreo",
+          "recreo"
+        ],
+        "tag": "escuela",
+        "sub": "de speeltijd/pauze"
+      },
+      {
+        "stimulus": "Visitaba a mis ___.",
+        "answers": [
+          "los abuelos",
+          "abuelos",
+          "abuelos"
+        ],
+        "tag": "familia",
+        "sub": "de grootouders"
+      },
+      {
+        "stimulus": "Vivíamos en un ___.",
+        "answers": [
+          "el pueblo",
+          "pueblo",
+          "pueblo"
+        ],
+        "tag": "familia",
+        "sub": "het dorp"
+      },
+      {
+        "stimulus": "Íbamos a la ___.",
+        "answers": [
+          "la casa de campo",
+          "casa de campo",
+          "casa de campo"
+        ],
+        "tag": "familia",
+        "sub": "het buitenhuis"
+      },
+      {
+        "stimulus": "Tenía un perro de ___.",
+        "answers": [
+          "la mascota",
+          "mascota",
+          "mascota"
+        ],
+        "tag": "familia",
+        "sub": "het huisdier"
+      },
+      {
+        "stimulus": "___ un niño tranquilo.",
+        "answers": [
+          "era",
+          "era"
+        ],
+        "tag": "imperfecto",
+        "sub": "was (ser)"
+      },
+      {
+        "stimulus": "___ a la escuela a pie.",
+        "answers": [
+          "iba",
+          "iba"
+        ],
+        "tag": "imperfecto",
+        "sub": "ging (ir)"
+      },
+      {
+        "stimulus": "___ dibujos por la tarde.",
+        "answers": [
+          "veía",
+          "veía"
+        ],
+        "tag": "imperfecto",
+        "sub": "zag / keek (ver)"
+      },
+      {
+        "stimulus": "___ cinco años.",
+        "answers": [
+          "tenía",
+          "tenía"
+        ],
+        "tag": "imperfecto",
+        "sub": "had (tener)"
+      },
+      {
+        "stimulus": "___ con mis amigos.",
+        "answers": [
+          "jugaba",
+          "jugaba"
+        ],
+        "tag": "imperfecto",
+        "sub": "speelde (jugar)"
+      },
+      {
+        "stimulus": "___ en Cusco.",
+        "answers": [
+          "vivía",
+          "vivía"
+        ],
+        "tag": "imperfecto",
+        "sub": "woonde (vivir)"
+      },
+      {
+        "stimulus": "___ un parque cerca.",
+        "answers": [
+          "había",
+          "había"
+        ],
+        "tag": "imperfecto",
+        "sub": "er was/waren (haber)"
+      },
+      {
+        "stimulus": "___ leer antes de dormir.",
+        "answers": [
+          "solía",
+          "solía"
+        ],
+        "tag": "imperfecto",
+        "sub": "placht (soler)"
+      },
+      {
+        "stimulus": "___ vivía en un pueblo.",
+        "answers": [
+          "antes",
+          "antes"
+        ],
+        "tag": "antesahora",
+        "sub": "vroeger"
+      },
+      {
+        "stimulus": "___ vivo en la ciudad.",
+        "answers": [
+          "ahora",
+          "ahora"
+        ],
+        "tag": "antesahora",
+        "sub": "nu"
+      },
+      {
+        "stimulus": "___ juego a eso.",
+        "answers": [
+          "ya no",
+          "ya no"
+        ],
+        "tag": "antesahora",
+        "sub": "niet meer"
+      },
+      {
+        "stimulus": "___ me gusta.",
+        "answers": [
+          "todavía",
+          "todavía"
+        ],
+        "tag": "antesahora",
+        "sub": "nog steeds"
+      },
+      {
+        "stimulus": "___ íbamos al parque.",
+        "answers": [
+          "siempre",
+          "siempre"
+        ],
+        "tag": "antesahora",
+        "sub": "altijd"
+      },
+      {
+        "stimulus": "___ visitaba a mis abuelos.",
+        "answers": [
+          "a menudo",
+          "a menudo"
+        ],
+        "tag": "antesahora",
+        "sub": "vaak"
+      },
+      {
+        "stimulus": "___ jugaba fuera.",
+        "answers": [
+          "todos los días",
+          "todos los días"
+        ],
+        "tag": "antesahora",
+        "sub": "elke dag"
+      },
+      {
+        "stimulus": "___, empezó a llover.",
+        "answers": [
+          "de repente",
+          "de repente"
+        ],
+        "tag": "antesahora",
+        "sub": "plots"
+      },
+      {
+        "stimulus": "Este libro es ___ ese.",
+        "answers": [
+          "mejor que",
+          "mejor que"
+        ],
+        "tag": "comparar",
+        "sub": "beter dan"
+      },
+      {
+        "stimulus": "Hoy es ___ ayer.",
+        "answers": [
+          "peor que",
+          "peor que"
+        ],
+        "tag": "comparar",
+        "sub": "slechter dan"
+      },
+      {
+        "stimulus": "Mi hermana es ___ yo.",
+        "answers": [
+          "mayor que",
+          "mayor que"
+        ],
+        "tag": "comparar",
+        "sub": "ouder/groter dan"
+      },
+      {
+        "stimulus": "Soy ___ mi primo.",
+        "answers": [
+          "menor que",
+          "menor que"
+        ],
+        "tag": "comparar",
+        "sub": "jonger/kleiner dan"
+      },
+      {
+        "stimulus": "El niño ___ jugaba era yo.",
+        "answers": [
+          "que",
+          "que"
+        ],
+        "tag": "relativo",
+        "sub": "die/dat (betrekkelijk)"
+      },
+      {
+        "stimulus": "La casa ___ vivía era grande.",
+        "answers": [
+          "donde",
+          "donde"
+        ],
+        "tag": "relativo",
+        "sub": "waar"
+      },
+      {
+        "stimulus": "Es el ___ donde crecí.",
+        "answers": [
+          "el lugar",
+          "lugar",
+          "lugar"
+        ],
+        "tag": "relativo",
+        "sub": "de plek"
+      },
+      {
+        "stimulus": "Era otra ___.",
+        "answers": [
+          "la época",
+          "época",
+          "época"
+        ],
+        "tag": "relativo",
+        "sub": "het tijdperk/de tijd"
+      },
+      {
+        "stimulus": "Era una infancia ___.",
+        "answers": [
+          "feliz",
+          "feliz"
+        ],
+        "tag": "opinar",
+        "sub": "gelukkig"
+      },
+      {
+        "stimulus": "Todo era ___.",
+        "answers": [
+          "diferente",
+          "diferente"
+        ],
+        "tag": "opinar",
+        "sub": "anders"
+      },
+      {
+        "stimulus": "___ mi escuela.",
+        "answers": [
+          "me acuerdo de",
+          "me acuerdo de"
+        ],
+        "tag": "opinar",
+        "sub": "ik herinner me"
+      },
+      {
+        "stimulus": "___ era mejor.",
+        "answers": [
+          "creo que antes",
+          "creo que antes"
+        ],
+        "tag": "opinar",
+        "sub": "ik denk dat vroeger"
+      }
+    ]
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "id": "es-c6plus-u0-acento-tap",
+  "title": "¿Dónde va el acento?",
+  "subtitle": "U0 · de klemtoon in bekende woorden",
+  "lang": "es",
+  "template": "tap",
+  "options": {
+    "rounds": 12,
+    "audio": false
+  },
+  "tap": {
+    "prompt": "Tik de lettergreep die de klemtoon draagt",
+    "joiner": " · ",
+    "items": [
+      {
+        "parts": [
+          "es",
+          "pa",
+          "ñol"
+        ],
+        "answer": 2,
+        "tag": "aguda",
+        "sub": "español"
+      },
+      {
+        "parts": [
+          "mé",
+          "xi",
+          "co"
+        ],
+        "answer": 0,
+        "tag": "esdrújula",
+        "sub": "México · tilde"
+      },
+      {
+        "parts": [
+          "ar",
+          "gen",
+          "ti",
+          "na"
+        ],
+        "answer": 2,
+        "tag": "llana",
+        "sub": "Argentina"
+      },
+      {
+        "parts": [
+          "pe",
+          "rú"
+        ],
+        "answer": 1,
+        "tag": "aguda",
+        "sub": "Perú · tilde"
+      },
+      {
+        "parts": [
+          "co",
+          "lom",
+          "bia"
+        ],
+        "answer": 1,
+        "tag": "llana",
+        "sub": "Colombia"
+      },
+      {
+        "parts": [
+          "pá",
+          "gi",
+          "na"
+        ],
+        "answer": 0,
+        "tag": "esdrújula",
+        "sub": "página · tilde"
+      },
+      {
+        "parts": [
+          "pro",
+          "fe",
+          "sor"
+        ],
+        "answer": 2,
+        "tag": "aguda",
+        "sub": "profesor"
+      },
+      {
+        "parts": [
+          "mú",
+          "si",
+          "ca"
+        ],
+        "answer": 0,
+        "tag": "esdrújula",
+        "sub": "música · tilde"
+      },
+      {
+        "parts": [
+          "a",
+          "mi",
+          "go"
+        ],
+        "answer": 1,
+        "tag": "llana",
+        "sub": "amigo"
+      },
+      {
+        "parts": [
+          "ciu",
+          "dad"
+        ],
+        "answer": 1,
+        "tag": "aguda",
+        "sub": "ciudad"
+      },
+      {
+        "parts": [
+          "fá",
+          "cil"
+        ],
+        "answer": 0,
+        "tag": "llana",
+        "sub": "fácil · tilde"
+      },
+      {
+        "parts": [
+          "te",
+          "lé",
+          "fo",
+          "no"
+        ],
+        "answer": 1,
+        "tag": "esdrújula",
+        "sub": "teléfono · tilde"
+      }
+    ]
+  }
+}

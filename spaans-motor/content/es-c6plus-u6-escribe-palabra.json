@@ -1,0 +1,443 @@
+{
+  "id": "es-c6plus-u6-escribe-palabra",
+  "title": "Escribe la palabra",
+  "subtitle": "C6+ · U6 · schrijf het Spaanse woord (letterhint als steun)",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "de herinnering",
+        "answers": [
+          "el recuerdo",
+          "recuerdo"
+        ],
+        "hint": "r_______",
+        "tag": "infancia",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "de kindertijd",
+        "answers": [
+          "la infancia",
+          "infancia"
+        ],
+        "hint": "i_______",
+        "tag": "infancia",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "het speelgoed",
+        "answers": [
+          "el juguete",
+          "juguete"
+        ],
+        "hint": "j______",
+        "tag": "infancia",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "spelen",
+        "answers": [
+          "jugar"
+        ],
+        "hint": "j____",
+        "tag": "infancia",
+        "sub": "ww. (u→ue)"
+      },
+      {
+        "stimulus": "dromen",
+        "answers": [
+          "soñar"
+        ],
+        "hint": "s____",
+        "tag": "infancia",
+        "sub": "ww. (o→ue)"
+      },
+      {
+        "stimulus": "zich amuseren",
+        "answers": [
+          "pasarlo bien"
+        ],
+        "hint": "p______ b___",
+        "tag": "infancia",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "de school",
+        "answers": [
+          "la escuela",
+          "escuela"
+        ],
+        "hint": "e______",
+        "tag": "escuela",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "de speelplaats",
+        "answers": [
+          "el patio",
+          "patio"
+        ],
+        "hint": "p____",
+        "tag": "escuela",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "leren",
+        "answers": [
+          "aprender"
+        ],
+        "hint": "a_______",
+        "tag": "escuela",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "de speeltijd/pauze",
+        "answers": [
+          "el recreo",
+          "recreo"
+        ],
+        "hint": "r_____",
+        "tag": "escuela",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "de grootouders",
+        "answers": [
+          "los abuelos",
+          "abuelos"
+        ],
+        "hint": "a______",
+        "tag": "familia",
+        "sub": "znw. m. mv."
+      },
+      {
+        "stimulus": "het dorp",
+        "answers": [
+          "el pueblo",
+          "pueblo"
+        ],
+        "hint": "p_____",
+        "tag": "familia",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "het huisdier",
+        "answers": [
+          "la mascota",
+          "mascota"
+        ],
+        "hint": "m______",
+        "tag": "familia",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "verzorgen",
+        "answers": [
+          "cuidar"
+        ],
+        "hint": "c_____",
+        "tag": "familia",
+        "sub": "ww."
+      },
+      {
+        "stimulus": "was (ser)",
+        "answers": [
+          "era"
+        ],
+        "hint": "e__",
+        "tag": "imperfecto",
+        "sub": "imperf. irr."
+      },
+      {
+        "stimulus": "ging (ir)",
+        "answers": [
+          "iba"
+        ],
+        "hint": "i__",
+        "tag": "imperfecto",
+        "sub": "imperf. irr."
+      },
+      {
+        "stimulus": "zag / keek (ver)",
+        "answers": [
+          "veía"
+        ],
+        "hint": "v___",
+        "tag": "imperfecto",
+        "sub": "imperf. irr."
+      },
+      {
+        "stimulus": "had (tener)",
+        "answers": [
+          "tenía"
+        ],
+        "hint": "t____",
+        "tag": "imperfecto",
+        "sub": "imperf."
+      },
+      {
+        "stimulus": "speelde (jugar)",
+        "answers": [
+          "jugaba"
+        ],
+        "hint": "j_____",
+        "tag": "imperfecto",
+        "sub": "imperf."
+      },
+      {
+        "stimulus": "woonde (vivir)",
+        "answers": [
+          "vivía"
+        ],
+        "hint": "v____",
+        "tag": "imperfecto",
+        "sub": "imperf."
+      },
+      {
+        "stimulus": "er was/waren (haber)",
+        "answers": [
+          "había"
+        ],
+        "hint": "h____",
+        "tag": "imperfecto",
+        "sub": "imperf."
+      },
+      {
+        "stimulus": "placht (soler)",
+        "answers": [
+          "solía"
+        ],
+        "hint": "s____",
+        "tag": "imperfecto",
+        "sub": "imperf."
+      },
+      {
+        "stimulus": "vroeger",
+        "answers": [
+          "antes"
+        ],
+        "hint": "a____",
+        "tag": "antesahora",
+        "sub": "bijw."
+      },
+      {
+        "stimulus": "nu",
+        "answers": [
+          "ahora"
+        ],
+        "hint": "a____",
+        "tag": "antesahora",
+        "sub": "bijw."
+      },
+      {
+        "stimulus": "niet meer",
+        "answers": [
+          "ya no"
+        ],
+        "hint": "y_ n_",
+        "tag": "antesahora",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "nog steeds",
+        "answers": [
+          "todavía"
+        ],
+        "hint": "t______",
+        "tag": "antesahora",
+        "sub": "bijw."
+      },
+      {
+        "stimulus": "altijd",
+        "answers": [
+          "siempre"
+        ],
+        "hint": "s______",
+        "tag": "antesahora",
+        "sub": "bijw."
+      },
+      {
+        "stimulus": "vaak",
+        "answers": [
+          "a menudo"
+        ],
+        "hint": "a m_____",
+        "tag": "antesahora",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "elke dag",
+        "answers": [
+          "todos los días"
+        ],
+        "hint": "t____ l__ d___",
+        "tag": "antesahora",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "plots",
+        "answers": [
+          "de repente"
+        ],
+        "hint": "d_ r______",
+        "tag": "antesahora",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "meer/… -er dan",
+        "answers": [
+          "más … que"
+        ],
+        "hint": "m__ … q__",
+        "tag": "comparar",
+        "sub": "comparativo"
+      },
+      {
+        "stimulus": "minder … dan",
+        "answers": [
+          "menos … que"
+        ],
+        "hint": "m____ … q__",
+        "tag": "comparar",
+        "sub": "comparativo"
+      },
+      {
+        "stimulus": "even … als",
+        "answers": [
+          "tan … como"
+        ],
+        "hint": "t__ … c___",
+        "tag": "comparar",
+        "sub": "comparativo"
+      },
+      {
+        "stimulus": "beter dan",
+        "answers": [
+          "mejor que"
+        ],
+        "hint": "m____ q__",
+        "tag": "comparar",
+        "sub": "comparativo irr."
+      },
+      {
+        "stimulus": "slechter dan",
+        "answers": [
+          "peor que"
+        ],
+        "hint": "p___ q__",
+        "tag": "comparar",
+        "sub": "comparativo irr."
+      },
+      {
+        "stimulus": "ouder/groter dan",
+        "answers": [
+          "mayor que"
+        ],
+        "hint": "m____ q__",
+        "tag": "comparar",
+        "sub": "comparativo irr."
+      },
+      {
+        "stimulus": "jonger/kleiner dan",
+        "answers": [
+          "menor que"
+        ],
+        "hint": "m____ q__",
+        "tag": "comparar",
+        "sub": "comparativo irr."
+      },
+      {
+        "stimulus": "die/dat (betrekkelijk)",
+        "answers": [
+          "que"
+        ],
+        "hint": "q__",
+        "tag": "relativo",
+        "sub": "pron. rel."
+      },
+      {
+        "stimulus": "waar",
+        "answers": [
+          "donde"
+        ],
+        "hint": "d____",
+        "tag": "relativo",
+        "sub": "pron. rel."
+      },
+      {
+        "stimulus": "de plek",
+        "answers": [
+          "el lugar",
+          "lugar"
+        ],
+        "hint": "l____",
+        "tag": "relativo",
+        "sub": "znw. m."
+      },
+      {
+        "stimulus": "het tijdperk/de tijd",
+        "answers": [
+          "la época",
+          "época"
+        ],
+        "hint": "é____",
+        "tag": "relativo",
+        "sub": "znw. v."
+      },
+      {
+        "stimulus": "gelukkig",
+        "answers": [
+          "feliz"
+        ],
+        "hint": "f____",
+        "tag": "opinar",
+        "sub": "adj."
+      },
+      {
+        "stimulus": "anders",
+        "answers": [
+          "diferente"
+        ],
+        "hint": "d________",
+        "tag": "opinar",
+        "sub": "adj."
+      },
+      {
+        "stimulus": "missen",
+        "answers": [
+          "echar de menos"
+        ],
+        "hint": "e____ d_ m____",
+        "tag": "opinar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "ik herinner me",
+        "answers": [
+          "me acuerdo de"
+        ],
+        "hint": "m_ a______ d_",
+        "tag": "opinar",
+        "sub": "expr."
+      },
+      {
+        "stimulus": "ik denk dat vroeger",
+        "answers": [
+          "creo que antes"
+        ],
+        "hint": "c___ q__ a____",
+        "tag": "opinar",
+        "sub": "expr."
+      }
+    ]
+  }
+}

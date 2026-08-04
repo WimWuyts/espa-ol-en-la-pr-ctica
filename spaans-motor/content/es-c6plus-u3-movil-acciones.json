@@ -1,0 +1,64 @@
+{
+  "id": "es-c6plus-u3-movil-acciones",
+  "title": "El móvil y las redes",
+  "subtitle": "U3 · koppel het woord aan wat je doet",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind het woord met de handeling",
+    "pairs": [
+      {
+        "a": "la pantalla",
+        "b": "lo que miras 📱"
+      },
+      {
+        "a": "la contraseña",
+        "b": "la escribes para entrar 🔒"
+      },
+      {
+        "a": "el enlace",
+        "b": "lo pinchas para abrir 🔗"
+      },
+      {
+        "a": "el mensaje",
+        "b": "lo mandas 💬"
+      },
+      {
+        "a": "la batería",
+        "b": "se acaba y cargas ⚡"
+      },
+      {
+        "a": "la foto",
+        "b": "la subes 📷"
+      },
+      {
+        "a": "el grupo",
+        "b": "escribes a todos a la vez 👥"
+      },
+      {
+        "a": "la llamada",
+        "b": "la contestas ☎️"
+      },
+      {
+        "a": "el vídeo",
+        "b": "lo publicas 🎬"
+      },
+      {
+        "a": "la aplicación",
+        "b": "la descargas ⬇️"
+      },
+      {
+        "a": "el wifi",
+        "b": "te conectas 📶"
+      },
+      {
+        "a": "la historia",
+        "b": "dura 24 horas ⏱️"
+      }
+    ]
+  }
+}

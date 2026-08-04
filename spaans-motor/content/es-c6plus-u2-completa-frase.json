@@ -1,0 +1,561 @@
+{
+  "id": "es-c6plus-u2-completa-frase",
+  "title": "Completa la frase",
+  "subtitle": "C6+ · U2 · vul het ontbrekende woord in (betekenis uit de context)",
+  "lang": "es",
+  "template": "type",
+  "options": {
+    "rounds": 12,
+    "series": 3,
+    "audio": false
+  },
+  "type": {
+    "prompt": "C6+",
+    "mode": "closed",
+    "items": [
+      {
+        "stimulus": "Vivo en una ___ grande.",
+        "answers": [
+          "la casa",
+          "casa",
+          "casa"
+        ],
+        "tag": "casa",
+        "sub": "het huis"
+      },
+      {
+        "stimulus": "Mi ___ está en el centro.",
+        "answers": [
+          "el piso",
+          "piso",
+          "piso"
+        ],
+        "tag": "casa",
+        "sub": "het appartement / de verdieping"
+      },
+      {
+        "stimulus": "Alquilo un ___ pequeño.",
+        "answers": [
+          "el apartamento",
+          "apartamento",
+          "apartamento"
+        ],
+        "tag": "casa",
+        "sub": "het appartement"
+      },
+      {
+        "stimulus": "Mi ___ es luminosa.",
+        "answers": [
+          "la habitación",
+          "habitación",
+          "habitación"
+        ],
+        "tag": "habitaciones",
+        "sub": "de kamer"
+      },
+      {
+        "stimulus": "El ___ está arriba.",
+        "answers": [
+          "el dormitorio",
+          "dormitorio",
+          "dormitorio"
+        ],
+        "tag": "habitaciones",
+        "sub": "de slaapkamer"
+      },
+      {
+        "stimulus": "Cocino en la ___.",
+        "answers": [
+          "la cocina",
+          "cocina",
+          "cocina"
+        ],
+        "tag": "habitaciones",
+        "sub": "de keuken"
+      },
+      {
+        "stimulus": "Vemos la tele en el ___.",
+        "answers": [
+          "el salón",
+          "salón",
+          "salón"
+        ],
+        "tag": "habitaciones",
+        "sub": "de woonkamer"
+      },
+      {
+        "stimulus": "El ___ está al lado del dormitorio.",
+        "answers": [
+          "el baño",
+          "baño",
+          "baño"
+        ],
+        "tag": "habitaciones",
+        "sub": "de badkamer"
+      },
+      {
+        "stimulus": "El ___ es estrecho.",
+        "answers": [
+          "el pasillo",
+          "pasillo",
+          "pasillo"
+        ],
+        "tag": "habitaciones",
+        "sub": "de gang"
+      },
+      {
+        "stimulus": "Desayuno en la ___.",
+        "answers": [
+          "la terraza",
+          "terraza",
+          "terraza"
+        ],
+        "tag": "habitaciones",
+        "sub": "het terras"
+      },
+      {
+        "stimulus": "Hay flores en el ___.",
+        "answers": [
+          "el jardín",
+          "jardín",
+          "jardín"
+        ],
+        "tag": "habitaciones",
+        "sub": "de tuin"
+      },
+      {
+        "stimulus": "El coche está en el ___.",
+        "answers": [
+          "el garaje",
+          "garaje",
+          "garaje"
+        ],
+        "tag": "habitaciones",
+        "sub": "de garage"
+      },
+      {
+        "stimulus": "La ___ está debajo de la ventana.",
+        "answers": [
+          "la cama",
+          "cama",
+          "cama"
+        ],
+        "tag": "muebles",
+        "sub": "het bed"
+      },
+      {
+        "stimulus": "Hay una ___ en el centro.",
+        "answers": [
+          "la mesa",
+          "mesa",
+          "mesa"
+        ],
+        "tag": "muebles",
+        "sub": "de tafel"
+      },
+      {
+        "stimulus": "La ___ está al lado de la mesa.",
+        "answers": [
+          "la silla",
+          "silla",
+          "silla"
+        ],
+        "tag": "muebles",
+        "sub": "de stoel"
+      },
+      {
+        "stimulus": "El ___ está delante de la tele.",
+        "answers": [
+          "el sofá",
+          "sofá",
+          "sofá"
+        ],
+        "tag": "muebles",
+        "sub": "de zetel / bank"
+      },
+      {
+        "stimulus": "La ropa está en el ___.",
+        "answers": [
+          "el armario",
+          "armario",
+          "armario"
+        ],
+        "tag": "muebles",
+        "sub": "de kast"
+      },
+      {
+        "stimulus": "Los libros están en la ___.",
+        "answers": [
+          "la estantería",
+          "estantería",
+          "estantería"
+        ],
+        "tag": "muebles",
+        "sub": "de boekenkast / het rek"
+      },
+      {
+        "stimulus": "La leche está en la ___.",
+        "answers": [
+          "la nevera",
+          "nevera",
+          "nevera"
+        ],
+        "tag": "muebles",
+        "sub": "de koelkast"
+      },
+      {
+        "stimulus": "La ___ está encima de la mesa.",
+        "answers": [
+          "la lámpara",
+          "lámpara",
+          "lámpara"
+        ],
+        "tag": "muebles",
+        "sub": "de lamp"
+      },
+      {
+        "stimulus": "La ___ está abierta.",
+        "answers": [
+          "la ventana",
+          "ventana",
+          "ventana"
+        ],
+        "tag": "muebles",
+        "sub": "het raam"
+      },
+      {
+        "stimulus": "La ___ está cerrada.",
+        "answers": [
+          "la puerta",
+          "puerta",
+          "puerta"
+        ],
+        "tag": "muebles",
+        "sub": "de deur"
+      },
+      {
+        "stimulus": "Me miro en el ___.",
+        "answers": [
+          "el espejo",
+          "espejo",
+          "espejo"
+        ],
+        "tag": "muebles",
+        "sub": "de spiegel"
+      },
+      {
+        "stimulus": "El libro está ___ la mesa.",
+        "answers": [
+          "encima de",
+          "encima de"
+        ],
+        "tag": "preposiciones",
+        "sub": "op / boven(op)"
+      },
+      {
+        "stimulus": "El gato está ___ la cama.",
+        "answers": [
+          "debajo de",
+          "debajo de"
+        ],
+        "tag": "preposiciones",
+        "sub": "onder"
+      },
+      {
+        "stimulus": "El baño está ___ la cocina.",
+        "answers": [
+          "al lado de",
+          "al lado de"
+        ],
+        "tag": "preposiciones",
+        "sub": "naast"
+      },
+      {
+        "stimulus": "El sofá está ___ la tele.",
+        "answers": [
+          "delante de",
+          "delante de"
+        ],
+        "tag": "preposiciones",
+        "sub": "vóór"
+      },
+      {
+        "stimulus": "El jardín está ___ la casa.",
+        "answers": [
+          "detrás de",
+          "detrás de"
+        ],
+        "tag": "preposiciones",
+        "sub": "achter"
+      },
+      {
+        "stimulus": "La silla está ___ la mesa y la pared.",
+        "answers": [
+          "entre",
+          "entre"
+        ],
+        "tag": "preposiciones",
+        "sub": "tussen"
+      },
+      {
+        "stimulus": "La ropa está ___l armario.",
+        "answers": [
+          "dentro de",
+          "dentro de"
+        ],
+        "tag": "preposiciones",
+        "sub": "binnen(in)"
+      },
+      {
+        "stimulus": "El perro está ___ la casa.",
+        "answers": [
+          "fuera de",
+          "fuera de"
+        ],
+        "tag": "preposiciones",
+        "sub": "buiten"
+      },
+      {
+        "stimulus": "Vivo ___l centro.",
+        "answers": [
+          "cerca de",
+          "cerca de"
+        ],
+        "tag": "preposiciones",
+        "sub": "dichtbij"
+      },
+      {
+        "stimulus": "El instituto está ___ mi casa.",
+        "answers": [
+          "lejos de",
+          "lejos de"
+        ],
+        "tag": "preposiciones",
+        "sub": "ver van"
+      },
+      {
+        "stimulus": "La farmacia está ___l banco.",
+        "answers": [
+          "a la derecha de",
+          "a la derecha de"
+        ],
+        "tag": "preposiciones",
+        "sub": "rechts van"
+      },
+      {
+        "stimulus": "En mi barrio ___ un parque.",
+        "answers": [
+          "hay",
+          "hay"
+        ],
+        "tag": "preposiciones",
+        "sub": "er is / er zijn"
+      },
+      {
+        "stimulus": "Mi ___ es tranquilo.",
+        "answers": [
+          "el barrio",
+          "barrio",
+          "barrio"
+        ],
+        "tag": "barrio",
+        "sub": "de buurt / wijk"
+      },
+      {
+        "stimulus": "Vivo en la ___ Mayor.",
+        "answers": [
+          "la calle",
+          "calle",
+          "calle"
+        ],
+        "tag": "barrio",
+        "sub": "de straat"
+      },
+      {
+        "stimulus": "La ___ está en el centro.",
+        "answers": [
+          "la plaza",
+          "plaza",
+          "plaza"
+        ],
+        "tag": "barrio",
+        "sub": "het plein"
+      },
+      {
+        "stimulus": "Paseo por el ___.",
+        "answers": [
+          "el parque",
+          "parque",
+          "parque"
+        ],
+        "tag": "barrio",
+        "sub": "het park"
+      },
+      {
+        "stimulus": "Compro pan en la ___.",
+        "answers": [
+          "la tienda",
+          "tienda",
+          "tienda"
+        ],
+        "tag": "barrio",
+        "sub": "de winkel"
+      },
+      {
+        "stimulus": "El ___ está cerca.",
+        "answers": [
+          "el supermercado",
+          "supermercado",
+          "supermercado"
+        ],
+        "tag": "barrio",
+        "sub": "de supermarkt"
+      },
+      {
+        "stimulus": "La ___ está en la esquina.",
+        "answers": [
+          "la farmacia",
+          "farmacia",
+          "farmacia"
+        ],
+        "tag": "barrio",
+        "sub": "de apotheek"
+      },
+      {
+        "stimulus": "Voy al ___ los lunes.",
+        "answers": [
+          "el banco",
+          "banco",
+          "banco"
+        ],
+        "tag": "barrio",
+        "sub": "de bank"
+      },
+      {
+        "stimulus": "La ___ del bus está allí.",
+        "answers": [
+          "la parada",
+          "parada",
+          "parada"
+        ],
+        "tag": "barrio",
+        "sub": "de halte"
+      },
+      {
+        "stimulus": "La ___ está lejos.",
+        "answers": [
+          "la estación",
+          "estación",
+          "estación"
+        ],
+        "tag": "barrio",
+        "sub": "het station"
+      },
+      {
+        "stimulus": "Trabajo en el ___.",
+        "answers": [
+          "el centro",
+          "centro",
+          "centro"
+        ],
+        "tag": "barrio",
+        "sub": "het centrum"
+      },
+      {
+        "stimulus": "Gira en la ___.",
+        "answers": [
+          "la esquina",
+          "esquina",
+          "esquina"
+        ],
+        "tag": "barrio",
+        "sub": "de hoek"
+      },
+      {
+        "stimulus": "Cartagena es una ___ bonita.",
+        "answers": [
+          "la ciudad",
+          "ciudad",
+          "ciudad"
+        ],
+        "tag": "ciudad",
+        "sub": "de stad"
+      },
+      {
+        "stimulus": "Mis abuelos viven en un ___.",
+        "answers": [
+          "el pueblo",
+          "pueblo",
+          "pueblo"
+        ],
+        "tag": "ciudad",
+        "sub": "het dorp"
+      },
+      {
+        "stimulus": "La ___ es cara en el centro.",
+        "answers": [
+          "la vivienda",
+          "vivienda",
+          "vivienda"
+        ],
+        "tag": "ciudad",
+        "sub": "de woning"
+      },
+      {
+        "stimulus": "___ hasta el semáforo.",
+        "answers": [
+          "sigue recto",
+          "sigue recto"
+        ],
+        "tag": "direcciones",
+        "sub": "ga rechtdoor"
+      },
+      {
+        "stimulus": "___ en la esquina.",
+        "answers": [
+          "gira a la derecha",
+          "gira a la derecha"
+        ],
+        "tag": "direcciones",
+        "sub": "sla rechts af"
+      },
+      {
+        "stimulus": "___ después del banco.",
+        "answers": [
+          "gira a la izquierda",
+          "gira a la izquierda"
+        ],
+        "tag": "direcciones",
+        "sub": "sla links af"
+      },
+      {
+        "stimulus": "___ en el paso de cebra.",
+        "answers": [
+          "cruza la calle",
+          "cruza la calle"
+        ],
+        "tag": "direcciones",
+        "sub": "steek de straat over"
+      },
+      {
+        "stimulus": "Para en el ___.",
+        "answers": [
+          "el semáforo",
+          "semáforo",
+          "semáforo"
+        ],
+        "tag": "direcciones",
+        "sub": "het verkeerslicht"
+      },
+      {
+        "stimulus": "Voy al insti ___.",
+        "answers": [
+          "a pie",
+          "a pie"
+        ],
+        "tag": "direcciones",
+        "sub": "te voet"
+      }
+    ]
+  }
+}

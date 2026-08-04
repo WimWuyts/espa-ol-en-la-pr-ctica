@@ -1,0 +1,100 @@
+{
+  "id": "es-c6plus-u3-ya-o-todavia",
+  "title": "¿Ya lo hiciste o vas a hacerlo?",
+  "subtitle": "U3 · net gedaan of straks",
+  "lang": "es",
+  "template": "classify",
+  "options": {
+    "rounds": 10,
+    "audio": false
+  },
+  "classify": {
+    "prompt": "Is het net gebeurd (acabar de) of komt het nog (ir a)?",
+    "categories": [
+      {
+        "id": "acabar",
+        "label": "acabar de<br><small>net gedaan</small>",
+        "glaze": "#E0A22F"
+      },
+      {
+        "id": "ir",
+        "label": "ir a<br><small>straks</small>",
+        "glaze": "#3D74D6"
+      }
+    ],
+    "items": [
+      {
+        "stimulus": "Acabo de mandarle un mensaje.",
+        "answer": "acabar",
+        "tag": "ac",
+        "sub": "net verstuurd"
+      },
+      {
+        "stimulus": "Voy a llamarte esta noche.",
+        "answer": "ir",
+        "tag": "ir",
+        "sub": "vanavond"
+      },
+      {
+        "stimulus": "Acabamos de colgar el vídeo.",
+        "answer": "acabar",
+        "tag": "ac",
+        "sub": "net online"
+      },
+      {
+        "stimulus": "Vamos a quedar el sábado.",
+        "answer": "ir",
+        "tag": "ir",
+        "sub": "zaterdag"
+      },
+      {
+        "stimulus": "Acaba de conectarse.",
+        "answer": "acabar",
+        "tag": "ac",
+        "sub": "net online gekomen"
+      },
+      {
+        "stimulus": "Van a publicar las fotos.",
+        "answer": "ir",
+        "tag": "ir",
+        "sub": "gaan posten"
+      },
+      {
+        "stimulus": "Acabo de ver tu historia.",
+        "answer": "acabar",
+        "tag": "ac",
+        "sub": "net gezien"
+      },
+      {
+        "stimulus": "Voy a apagar el móvil.",
+        "answer": "ir",
+        "tag": "ir",
+        "sub": "ga uitzetten"
+      },
+      {
+        "stimulus": "Acabas de escribirme.",
+        "answer": "acabar",
+        "tag": "ac",
+        "sub": "net geschreven"
+      },
+      {
+        "stimulus": "Vais a subir el vídeo, ¿no?",
+        "answer": "ir",
+        "tag": "ir",
+        "sub": "gaan uploaden"
+      },
+      {
+        "stimulus": "Acaban de responder al grupo.",
+        "answer": "acabar",
+        "tag": "ac",
+        "sub": "net geantwoord"
+      },
+      {
+        "stimulus": "Voy a contestarle mañana.",
+        "answer": "ir",
+        "tag": "ir",
+        "sub": "morgen"
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "id": "es-c6plus-u6-infancia-objeto",
+  "title": "La infancia",
+  "subtitle": "U6 · koppel het woord aan de herinnering",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind het woord met wat het betekent",
+    "pairs": [
+      {
+        "a": "el juguete",
+        "b": "con lo que jugabas 🧸"
+      },
+      {
+        "a": "el columpio",
+        "b": "en el parque 🛝"
+      },
+      {
+        "a": "el recreo",
+        "b": "el descanso en la escuela ⏰"
+      },
+      {
+        "a": "la mochila",
+        "b": "la llevabas a clase 🎒"
+      },
+      {
+        "a": "el cuento",
+        "b": "te lo leían antes de dormir 📖"
+      },
+      {
+        "a": "la bici",
+        "b": "aprendiste a montarla 🚲"
+      },
+      {
+        "a": "el patio",
+        "b": "jugabais allí 🏫"
+      },
+      {
+        "a": "los dibujos animados",
+        "b": "los veías por la tarde 📺"
+      },
+      {
+        "a": "el cromo",
+        "b": "los cambiabais 🃏"
+      },
+      {
+        "a": "la merienda",
+        "b": "comías a las cinco 🥪"
+      },
+      {
+        "a": "el pueblo",
+        "b": "ibas en verano 🏡"
+      },
+      {
+        "a": "los abuelos",
+        "b": "te cuidaban 👵"
+      }
+    ]
+  }
+}

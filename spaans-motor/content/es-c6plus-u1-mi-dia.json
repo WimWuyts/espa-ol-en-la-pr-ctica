@@ -1,0 +1,68 @@
+{
+  "id": "es-c6plus-u1-mi-dia",
+  "title": "Cuenta tu día",
+  "subtitle": "U1 · vertel je eigen dag",
+  "lang": "es",
+  "template": "sim",
+  "options": {
+    "audio": false
+  },
+  "sim": {
+    "prompt": "Tarea comunicativa · schrijf in het Spaans",
+    "rounds": [
+      {
+        "scenario": "Un amigo español te pregunta: ¿cómo es un día normal para ti?",
+        "tag": "rutina",
+        "sub": "gebruik minstens twee reflexieve werkwoorden en een uur",
+        "min": 12,
+        "need": [
+          {
+            "re": "me (levanto|despierto|ducho|acuesto)"
+          },
+          {
+            "re": "las? \\w+"
+          }
+        ]
+      },
+      {
+        "scenario": "Escribe qué te gusta y qué no te gusta de las mañanas.",
+        "tag": "gustar",
+        "sub": "gebruik gusta én gustan",
+        "min": 10,
+        "need": [
+          {
+            "re": "gusta"
+          },
+          {
+            "re": "gustan"
+          }
+        ]
+      },
+      {
+        "scenario": "Tu corresponsal pregunta a qué hora comes en Bélgica.",
+        "tag": "hora",
+        "sub": "antwoord met een uur voluit",
+        "min": 8,
+        "need": [
+          {
+            "re": "(a la|a las)"
+          }
+        ]
+      },
+      {
+        "scenario": "Describe a un compañero: ¿cómo es y cómo está hoy?",
+        "tag": "serestar",
+        "sub": "gebruik ser én estar",
+        "min": 10,
+        "need": [
+          {
+            "re": "\\bes\\b"
+          },
+          {
+            "re": "está"
+          }
+        ]
+      }
+    ]
+  }
+}

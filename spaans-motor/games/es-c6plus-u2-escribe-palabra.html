@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Escribe la palabra</title>
+<style>
+/* Gedeelde ontwerptokens — azulejo-stijl (Talavera-tegels). */
+:root{
+  --muro:#12264A; --muro-2:#0A1730; --cal:#F3ECDB; --cal-dim:#C8BFA9;
+  --barro:#D6C3A0; --barro-txt:#3A2E22; --roto:#7C7268;
+  --p1:#C4402C; --p2:#E0A22F; --p3:#2E8E68; --p4:#3D74D6; --p5:#8B5E9E; --p6:#EFE7D4;
+  --serif:"Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Courier New",monospace;
+}
+
+/* Gedeelde schil: pagina, kop, HUD, overlays, resultaten. Sjabloon-onafhankelijk. */
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  min-height:100vh;color:var(--cal);font-family:var(--sans);
+  background:
+    radial-gradient(120% 80% at 18% -10%, rgba(255,236,190,.16), transparent 60%),
+    radial-gradient(90% 70% at 100% 110%, rgba(61,116,214,.20), transparent 65%),
+    linear-gradient(180deg,var(--muro) 0%,var(--muro-2) 100%);
+  background-attachment:fixed;
+  display:flex;flex-direction:column;align-items:center;padding:14px 12px 28px;
+}
+#app{width:100%;max-width:1040px}
+header.mt{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+header.mt h1{font-family:var(--serif);font-weight:700;font-size:clamp(22px,4.5vw,38px);letter-spacing:.14em;margin:0;line-height:1;text-shadow:0 2px 0 rgba(0,0,0,.35)}
+header.mt h1 span{color:var(--p2)}
+header.mt .tag{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--cal-dim);margin:2px 0 0}
+header.mt .sp{flex:1}
+.mt-btn{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;background:transparent;color:var(--cal-dim);border:1px solid rgba(243,236,219,.28);border-radius:2px;padding:7px 12px;cursor:pointer;transition:.15s}
+.mt-btn:hover{color:var(--cal);border-color:var(--cal);background:rgba(243,236,219,.07)}
+.mt-btn:focus-visible{outline:2px solid var(--p2);outline-offset:2px}
+.mt-btn.bet.on{color:#12264A;background:linear-gradient(180deg,#E0A22F,#C4842A);border-color:#E0A22F;font-weight:700}
+.mt-wrap{display:grid;grid-template-columns:1fr 220px;gap:18px;align-items:start}
+@media(max-width:820px){.mt-wrap{grid-template-columns:1fr}}
+.mt-panel{display:flex;flex-direction:column;gap:10px}
+.mt-stat{background:rgba(243,236,219,.06);border:1px solid rgba(243,236,219,.16);border-radius:2px;padding:9px 12px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.mt-stat .k{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--cal-dim)}
+.mt-stat .v{font-family:var(--mono);font-size:20px;font-weight:600}
+.mt-stat .v.hot{color:var(--p2)}
+@media(max-width:820px){.mt-panel{flex-direction:row;flex-wrap:wrap}.mt-stat{flex:1 1 90px}}
+.mt-ov{position:fixed;inset:0;z-index:50;display:none;background:rgba(8,18,38,.90);backdrop-filter:blur(3px);overflow-y:auto;padding:24px 16px}
+.mt-ov.on{display:flex;align-items:flex-start;justify-content:center}
+.mt-sheet{width:100%;max-width:640px;margin:auto;background:linear-gradient(175deg,#FBF6E9,#EAE1CA);color:#12264A;border-radius:3px;box-shadow:0 20px 50px rgba(0,0,0,.6);padding:24px;position:relative;overflow:hidden}
+.mt-sheet::before{content:"";position:absolute;top:0;left:0;right:0;height:9px;background:repeating-linear-gradient(45deg,#12264A 0 5px,transparent 5px 10px),repeating-linear-gradient(-45deg,#12264A 0 5px,transparent 5px 10px);opacity:.55}
+.mt-sheet h2{font-family:var(--serif);font-size:26px;letter-spacing:.08em;margin:12px 0 3px;text-transform:uppercase}
+.mt-sheet .sub{font-family:var(--serif);font-style:italic;color:#6E6249;margin:0 0 18px;font-size:14.5px}
+.mt-go{width:100%;margin-top:8px;padding:15px;border:none;border-radius:2px;cursor:pointer;background:#C4402C;color:#FBF6E9;font-family:var(--serif);font-size:19px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;box-shadow:0 5px 0 #8E2C1D;transition:.1s}
+.mt-go:hover{background:#D14A34}.mt-go:active{transform:translateY(4px);box-shadow:0 1px 0 #8E2C1D}
+.mt-go.alt{background:#12264A;box-shadow:0 5px 0 #08152C}.mt-go.alt:hover{background:#1B3667}
+.mt-ghost{width:100%;margin-top:9px;padding:11px;border:1px solid #C3B99F;background:transparent;border-radius:2px;cursor:pointer;font-family:var(--serif);font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:#6E6249}
+.mt-ghost:hover{border-color:#12264A;color:#12264A}
+.mt-rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}
+.mt-rcell{background:rgba(18,38,74,.07);border:1px solid rgba(18,38,74,.14);border-radius:2px;padding:9px 6px;text-align:center}
+.mt-rcell .rk{font-size:9.5px;letter-spacing:.15em;text-transform:uppercase;color:#8A7F66}
+.mt-rcell .rv{font-family:var(--mono);font-size:20px;font-weight:600}
+.mt-bar{display:grid;grid-template-columns:96px 1fr 46px;align-items:center;gap:8px;margin-bottom:5px;font-size:13px}
+.mt-bar .bl{font-family:var(--serif);font-style:italic;text-align:right;color:#3A3222;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mt-bar .bt{height:15px;background:rgba(18,38,74,.10);border-radius:1px;overflow:hidden}
+.mt-bar .bf{height:100%;transition:width .5s ease}
+.mt-bar .bn{font-family:var(--mono);font-size:11.5px;color:#6E6249}
+.mt-mis{list-style:none;padding:0;margin:6px 0 0;font-size:13.5px}
+.mt-mis li{padding:6px 0;border-bottom:1px dotted rgba(18,38,74,.22);display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.mt-mis b{font-family:var(--serif);font-size:16px}
+.mt-mis .ok{color:#1F6B4C;font-weight:600}.mt-mis em{font-style:normal;color:#8E2C1D}
+.mt-grp{margin-bottom:15px}
+.mt-grp>label{display:block;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#8A7F66;margin-bottom:6px}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+
+/* Motor-features — meta-laag widgets (streak · heatmap · can-do). */
+.mf-panel{background:linear-gradient(175deg,#FBF6E9,#E9E0C9);border:1px solid rgba(0,0,0,.2);border-radius:3px;
+  box-shadow:0 4px 0 rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.85);padding:14px 16px}
+.mf-h{font-family:var(--serif);font-weight:700;font-size:16px;color:#12264A;margin-bottom:10px}
+.mf-nl,.mf-h .mf-nl{font-family:var(--sans);font-weight:400;font-style:italic;font-size:12px;color:#8A7F66}
+.mf-fire{filter:saturate(1.2)}
+.mf-empty{font-family:var(--serif);font-style:italic;color:#8A7F66;font-size:14px}
+
+/* streak-kalender */
+.mf-cal{display:flex;gap:4px;flex-wrap:wrap}
+.mf-day{display:flex;flex-direction:column;align-items:center;gap:3px;width:30px}
+.mf-day i{width:22px;height:22px;border-radius:5px;background:#E1D6BC;border:1px solid #C3B99F;box-shadow:inset 0 1px 2px rgba(0,0,0,.12)}
+.mf-day.on i{background:linear-gradient(180deg,#3E9E77,#2E8E68);border-color:#1F6B4C;box-shadow:0 0 6px rgba(46,142,104,.5)}
+.mf-day.today i{outline:2px solid #E0A22F;outline-offset:1px}
+.mf-day em{font-family:var(--mono);font-size:8px;color:#8A7F66;font-style:normal}
+
+/* heatmap */
+.mf-hrow{display:flex;align-items:center;gap:8px;margin:5px 0}
+.mf-hl{flex:0 0 40%;font-family:var(--serif);font-size:13px;color:#3A2E22;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mf-ht{flex:1;height:12px;border-radius:99px;background:#E1D6BC;overflow:hidden;border:1px solid #C3B99F}
+.mf-hf{display:block;height:100%;border-radius:99px;transition:width .4s}
+.mf-hn{flex:0 0 34px;text-align:right;font-family:var(--mono);font-size:11px;color:#6E6249}
+
+/* can-do */
+.mf-cando{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.mf-cbtn{display:flex;align-items:center;gap:10px;width:100%;text-align:left;cursor:pointer;
+  font-family:var(--serif);font-size:14px;color:#12264A;padding:8px 10px;border-radius:2px;
+  background:linear-gradient(180deg,#fff,#F3ECDB);border:1px solid #C3B99F;box-shadow:0 2px 0 rgba(0,0,0,.12)}
+.mf-cbox{flex:0 0 22px;height:22px;border-radius:4px;border:2px solid #C3B99F;background:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;color:#2E8E68;font-size:14px}
+.mf-ci.on .mf-cbtn{background:linear-gradient(180deg,#EAF7EE,#DFF3E4);border-color:#9FCDB4}
+.mf-ci.on .mf-cbox{border-color:#2E8E68;background:#DFF3E4}
+.mf-cbtn:active{transform:translateY(1px)}
+
+/* Sjabloon: typen (productieve laag). Stimuluskaart + invoerveld + accentbalk. */
+.ty-card{background:linear-gradient(175deg,#FBF6E9,#E9E0C9);border:1px solid rgba(0,0,0,.25);border-radius:3px;
+  box-shadow:0 6px 0 rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.9);padding:16px 16px 18px;text-align:center;
+  position:relative;overflow:hidden;min-height:170px;display:flex;flex-direction:column;justify-content:center}
+.ty-card::before,.ty-card::after{content:"";position:absolute;left:0;right:0;height:7px;
+  background:repeating-linear-gradient(45deg,#12264A 0 4px,transparent 4px 8px),repeating-linear-gradient(-45deg,#12264A 0 4px,transparent 4px 8px);opacity:.5}
+.ty-card::before{top:0}.ty-card::after{bottom:0}
+.ty-eye{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8A7F66}
+.ty-stim{font-family:var(--serif);font-weight:700;color:#12264A;font-size:clamp(20px,4.6vw,34px);line-height:1.14;word-break:break-word;margin-top:4px}
+.ty-stim .ty-mark{color:#C4402C;border-bottom:3px solid #E0A22F}
+.ty-gap{display:inline-block;min-width:1.6em;border-bottom:3px solid #12264A;margin:0 .06em;height:1.05em;vertical-align:-.15em}
+.ty-sub{font-family:var(--serif);font-style:italic;font-size:14px;color:#6E6249;margin-top:6px}
+.ty-hint{font-family:var(--mono);font-size:14px;color:#8A7F66;margin-top:6px;letter-spacing:.06em}
+.ty-hint .ty-hk{font-family:var(--sans);font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  background:#E9E0C9;border:1px solid #C3B99F;border-radius:2px;padding:1px 5px;margin-right:6px;color:#8A7F66}
+
+.ty-inrow{display:flex;gap:8px;margin-top:12px;max-width:520px;width:100%;align-self:center}
+.ty-in{flex:1;font-family:var(--serif);font-size:clamp(18px,3.2vw,24px);font-weight:600;color:#12264A;
+  padding:12px 14px;border-radius:2px;border:1px solid #C3B99F;border-bottom:3px solid #12264A;
+  background:linear-gradient(180deg,#fff,#FBF6E9);box-shadow:inset 0 1px 3px rgba(0,0,0,.08);outline:none;min-width:0}
+.ty-in:focus{border-color:#3D74D6;border-bottom-color:#3D74D6}
+.ty-in.ok{border-color:#1F6B4C;border-bottom-color:#1F6B4C;background:linear-gradient(180deg,#EAF7EE,#DFF3E4)}
+.ty-in.no{border-color:#8E2C1D;border-bottom-color:#8E2C1D;background:linear-gradient(180deg,#FBEDE9,#F7DAD3)}
+.ty-in::placeholder{color:#B6AA8E;font-style:italic;font-weight:400}
+.ty-go{flex:0 0 auto;font-size:20px;font-weight:700;color:#fff;padding:0 18px;border-radius:2px;cursor:pointer;
+  background:linear-gradient(180deg,#3E9E77,#2E8E68);border:1px solid #1F6B4C;border-bottom-width:3px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.3);transition:transform .08s,filter .12s}
+.ty-go:hover{filter:brightness(1.05)}.ty-go:active{transform:translateY(2px)}
+.ty-go:disabled{opacity:.5;cursor:default}
+.ty-go:focus-visible{outline:3px solid var(--cal);outline-offset:2px}
+
+.ty-acc{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-top:9px}
+.ty-accbtn{font-family:var(--serif);font-size:16px;font-weight:700;color:#12264A;min-width:32px;padding:5px 8px;
+  border-radius:2px;cursor:pointer;background:linear-gradient(180deg,#fff,#F3ECDB);border:1px solid #C3B99F;
+  box-shadow:0 2px 0 rgba(0,0,0,.15)}
+.ty-accbtn:hover{filter:brightness(1.04);border-color:#12264A}.ty-accbtn:active{transform:translateY(1px);box-shadow:none}
+
+.ty-fb{min-height:22px;margin-top:10px;font-family:var(--serif);font-size:16px;font-weight:700}
+.ty-fb.g{color:#1F6B4C}.ty-fb.b{color:#8E2C1D}
+.ty-fb .ty-alt{font-weight:400;font-style:italic;font-size:14px;color:#6E6249}
+.ty-card.good{animation:tyGood .4s}.ty-card.bad{animation:tyBad .5s}
+@keyframes tyGood{0%{background:#DFF3E4}100%{}}
+@keyframes tyBad{0%,100%{transform:translateX(0)}20%{transform:translateX(-7px)}40%{transform:translateX(7px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+
+.ty-round{display:inline-block;font-family:var(--serif);font-weight:700;color:#12264A;
+  border:2px solid #C3B99F;border-radius:99px;padding:6px 22px;background:linear-gradient(180deg,#fff,#F3ECDB);
+  box-shadow:0 3px 0 rgba(0,0,0,.14)}
+.ty-extra{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:10px}
+.ty-reveal,.ty-cont{font-family:var(--serif);font-weight:700;font-size:15px;padding:9px 16px;border-radius:2px;cursor:pointer;
+  border:1px solid #C3B99F;box-shadow:0 3px 0 rgba(0,0,0,.18);transition:transform .08s}
+.ty-reveal{color:#12264A;background:linear-gradient(180deg,#fff,#F3ECDB)}
+.ty-cont{color:#fff;background:linear-gradient(180deg,#4E82E0,#3D74D6);border-color:#2A5AB0}
+.ty-reveal:active,.ty-cont:active{transform:translateY(2px);box-shadow:none}
+.ty-model{font-family:var(--serif);font-size:16px;color:#12264A;background:#EAF7EE;border:1px solid #9FCDB4;
+  border-radius:2px;padding:8px 12px}
+.ty-model .ty-mk,.ty-extra .nl{font-family:var(--sans);font-size:11px}
+.ty-model .ty-mk{letter-spacing:.14em;text-transform:uppercase;color:#1F6B4C;margin-right:6px}
+.nl{color:#6E6249;font-style:italic}
+
+</style>
+</head>
+<body>
+<div id="app"></div>
+<!-- Gegenereerd door spaans-motor uit content/es-c6plus-u2-escribe-palabra.json -->
+<script>
+/* Typen (type): PRODUCTIEVE laag. De leerling TYPT het antwoord i.p.v. te
+   kiezen/klikken. Dekt V3·V4·G4·G5·G6 uit de grid (escribe-la-palabra,
+   gentilicio, concordancia-typen, verbo-cloze-libre, transforma, número en
+   letras, reconstruye la frase, build-a-sentence).
+
+   Twee modi (cfg.type.mode):
+   - "closed" (default, P-gesloten/goud): één of enkele juiste oplossingen →
+     auto-check via normalisatie (spaties/hoofdletters/leestekens-tolerant en
+     — tenzij accentSensitive — accent-tolerant, mét behoud van ñ).
+   - "open" (P-halfopen): vrijere productie (mini-zin) → STRUCTUURcheck
+     (bevat elk verplicht element uit `must`?) + «onthul modelo» ter
+     zelfcorrectie. Geen valse belofte van perfecte correctie.
+
+   Content (cfg.type):
+     prompt?, mode?, accentSensitive?(false), items:[{
+        stimulus,            // de opgave (mag ___ gat en **markering** bevatten)
+        answer|answers,      // closed: string of array aanvaarde antwoorden
+        must,                // open: array verplichte tokens (structuurcheck)
+        model,               // open: modeloplossing om te onthullen
+        hint,                // optionele letterhint (bv. "e_ p____")
+        tag, sub             // categorie + korte toelichting
+     }]
+
+   Iteratie identiek aan cloze: geschudde pool, `options.rounds` rondes. */
+window.MotorTemplates = window.MotorTemplates || {};
+window.MotorTemplates.type = {
+  init(api){
+    const cfg = api.config, el = api.el;
+    const conf = cfg.type || {};
+    const mode = conf.mode === "open" ? "open" : "closed";
+    const accentSensitive = !!conf.accentSensitive;
+    const pool = (conf.items || []).slice();
+    /* Series: `options.series` rondes van `options.rounds` items.
+       Elke ronde trekt VERSE items zolang de pool het toelaat; is de pool op,
+       dan wordt hij opnieuw geschud (herhaling = retrieval, geen bug). */
+    const perRound = (cfg.options && cfg.options.rounds) || pool.length;
+    const series = Math.max(1, (cfg.options && cfg.options.series) || 1);
+    const total = Math.min(perRound * series, Math.max(perRound, pool.length * series));
+    api.setTarget(total);
+
+    const root = api.root; root.innerHTML = "";
+    const card = el("div","ty-card");
+    card.innerHTML =
+      '<div class="ty-eye">'+esc(conf.prompt || (mode==="open"?"Escribe una frase":"Escribe la respuesta"))+'</div>'+
+      '<div class="ty-stim" id="tyStim">…</div>'+
+      '<div class="ty-sub" id="tySub">&nbsp;</div>'+
+      '<div class="ty-hint" id="tyHint"></div>'+
+      '<div class="ty-inrow">'+
+        '<input class="ty-in" id="tyIn" type="text" autocomplete="off" autocapitalize="off" '+
+          'autocorrect="off" spellcheck="false" inputmode="text" '+
+          'aria-label="Typ je antwoord" placeholder="escribe aquí…">'+
+        '<button class="ty-go" id="tyGo" type="button">✓</button>'+
+      '</div>'+
+      '<div class="ty-acc" id="tyAcc" aria-hidden="true"></div>'+
+      '<div class="ty-fb" id="tyFb">&nbsp;</div>'+
+      '<div class="ty-extra" id="tyExtra"></div>';
+    root.appendChild(card);
+
+    const stimEl = card.querySelector("#tyStim");
+    const subEl  = card.querySelector("#tySub");
+    const hintEl = card.querySelector("#tyHint");
+    const inEl   = card.querySelector("#tyIn");
+    const goEl   = card.querySelector("#tyGo");
+    const accEl  = card.querySelector("#tyAcc");
+    const fbEl   = card.querySelector("#tyFb");
+    const extraEl= card.querySelector("#tyExtra");
+
+    /* accentknoppen: snel á é í ó ú ñ ü ¿ ¡ invoegen (mobiel/AZERTY-vriendelijk) */
+    const ACCENTS = ["á","é","í","ó","ú","ñ","ü","¿","¡"];
+    ACCENTS.forEach(ch=>{
+      const b = el("button","ty-accbtn", ch); b.type="button"; b.tabIndex=-1;
+      b.addEventListener("click",()=>{ insertAtCursor(inEl, ch); inEl.focus(); });
+      accEl.appendChild(b);
+    });
+
+    /* bouw de volledige wachtrij: per ronde verse items, pool herschudden als hij op is */
+    let queue = [], rest = shuffle(pool.slice());
+    for(let s = 0; s < series; s++){
+      for(let i = 0; i < perRound; i++){
+        if(!rest.length) rest = shuffle(pool.slice());
+        queue.push(rest.shift());
+      }
+    }
+    const roundOf = i => Math.floor(i / perRound) + 1;   // 1-based rondenummer
+
+    let idx = 0, cur = null, locked = false, shownRound = 1;
+
+    function load(){
+      if(idx >= queue.length){ api.finish(); return; }
+      /* nieuwe ronde begonnen? → kort tussenscherm */
+      if(series > 1 && roundOf(idx) !== shownRound && idx % perRound === 0){
+        shownRound = roundOf(idx);
+        showBreak(shownRound);
+        return;
+      }
+      cur = queue[idx]; locked = false;
+      card.classList.remove("good","bad");
+      stimEl.innerHTML = fmt(cur.stimulus);
+      subEl.innerHTML  = cur.sub ? esc(cur.sub) : "&nbsp;";
+      const showHint = cur.hint && !(cfg.options && cfg.options.hint===false);
+      hintEl.innerHTML = showHint ? '<span class="ty-hk">pista</span> '+fmt(cur.hint) : "";
+      hintEl.style.display = showHint ? "" : "none";
+      fbEl.textContent = " "; fbEl.className = "ty-fb";
+      extraEl.innerHTML = ""; extraEl.className = "ty-extra";
+      inEl.value = ""; inEl.disabled = false; goEl.disabled = false;
+      inEl.classList.remove("ok","no");
+      inEl.focus();
+    }
+
+    /* ---- normalisatie & vergelijking ---- */
+    function norm(s){
+      s = String(s).toLowerCase().trim().replace(/\s+/g," ");
+      s = s.replace(/[.,;:!¡¿?"'«»…]/g,"").trim();
+      if(!accentSensitive){
+        // strip klemtoon-accenten op klinkers, maar BEHOUD ñ (año ≠ ano)
+        s = s.replace(/á/g,"a").replace(/é/g,"e").replace(/í/g,"i")
+             .replace(/ó/g,"o").replace(/ú/g,"u").replace(/ü/g,"u");
+      }
+      return s;
+    }
+    function accepted(){
+      let a = cur.answers || cur.answer || cur.model || "";
+      if(!Array.isArray(a)) a = [a];
+      return a.filter(x=>x!=null && String(x).length);
+    }
+    function isCorrectClosed(val){
+      const n = norm(val);
+      if(!n) return false;
+      return accepted().some(a => norm(a) === n);
+    }
+    function missingTokens(val){
+      const n = " "+norm(val)+" ";
+      return (cur.must || []).filter(tok => n.indexOf(" "+norm(tok)+" ") < 0 && n.indexOf(norm(tok)) < 0);
+    }
+
+    function submit(){
+      if(locked) return;
+      const val = inEl.value;
+      if(!val.trim()){ inEl.focus(); return; }
+      locked = true; inEl.disabled = true; goEl.disabled = true;
+      idx++; api.tick();
+      if(mode === "closed"){
+        const ok = isCorrectClosed(val);
+        api.judge(ok,{tag:cur.tag||"_", stimulus:strip(cur.stimulus), chosen:val, correct:accepted(), sub:cur.sub});
+        if(ok){
+          card.classList.add("good"); inEl.classList.add("ok");
+          fbEl.textContent = "¡correcto!"; fbEl.className = "ty-fb g";
+          next(api.calm?260:620);
+        }else{
+          card.classList.add("bad"); inEl.classList.add("no");
+          fbEl.innerHTML = "→ <b>"+esc(accepted()[0])+"</b>"+
+            (accepted().length>1 ? ' <span class="ty-alt">('+esc(accepted().slice(1).join(" / "))+')</span>' : "");
+          fbEl.className = "ty-fb b";
+          next(api.calm?700:1500);
+        }
+      } else {
+        // open: structuurcheck + onthul modelo
+        const miss = missingTokens(val);
+        const structOk = miss.length === 0;
+        api.judge(structOk,{tag:cur.tag||"_", stimulus:strip(cur.stimulus), chosen:val,
+          correct:(cur.must||[]).length?["incluye: "+(cur.must||[]).join(" + ")]:[cur.model||""], sub:cur.sub});
+        if(structOk){
+          card.classList.add("good"); inEl.classList.add("ok");
+          fbEl.textContent = "¡bien construido!"; fbEl.className = "ty-fb g";
+        }else{
+          card.classList.add("bad"); inEl.classList.add("no");
+          fbEl.innerHTML = 'Falta: <b>'+esc(miss.join(", "))+'</b> <span class="nl">(nog opnemen)</span>';
+          fbEl.className = "ty-fb b";
+        }
+        // modeloplossing onthullen ter zelfcorrectie
+        if(cur.model){
+          const rev = el("button","ty-reveal","👁 Ver modelo"); rev.type="button";
+          rev.addEventListener("click",()=>{
+            rev.outerHTML = '<div class="ty-model"><span class="ty-mk">modelo</span> '+esc(cur.model)+'</div>';
+          });
+          extraEl.appendChild(rev);
+        }
+        const cont = el("button","ty-cont", idx>=queue.length ? "Ver resultado →" : "Siguiente →"); cont.type="button";
+        cont.addEventListener("click",()=>{ next(0); });
+        extraEl.appendChild(cont);
+      }
+    }
+    function next(delay){ setTimeout(load, delay); }
+
+    /* tussenscherm tussen twee rondes: even ademen, dan door */
+    function showBreak(n){
+      stimEl.innerHTML = '<span class="ty-round">Ronda '+n+' / '+series+'</span>';
+      subEl.innerHTML = "&nbsp;"; hintEl.style.display="none";
+      fbEl.textContent = " "; fbEl.className="ty-fb";
+      inEl.value=""; inEl.disabled=true; goEl.disabled=true;
+      inEl.classList.remove("ok","no");
+      extraEl.innerHTML="";
+      const b = el("button","ty-cont","Empezar ronda "+n+" →"); b.type="button";
+      b.addEventListener("click", ()=>{ shownRound = n; extraEl.innerHTML=""; load(); });
+      extraEl.appendChild(b);
+      b.focus();
+    }
+
+    goEl.addEventListener("click", submit);
+    function onKey(e){
+      if(e.key === "Enter"){
+        e.preventDefault();
+        if(locked){ // in open-modus met continue-knop: Enter = door
+          const c = extraEl.querySelector(".ty-cont"); if(c) c.click();
+        } else submit();
+      }
+    }
+    inEl.addEventListener("keydown", onKey);
+    api._cleanup = ()=>{ inEl.removeEventListener("keydown", onKey); };
+
+    load();
+
+    /* ---- helpers ---- */
+    function insertAtCursor(input, text){
+      const s = input.selectionStart|0, e = input.selectionEnd|0, v = input.value;
+      input.value = v.slice(0,s) + text + v.slice(e);
+      const p = s + text.length; input.setSelectionRange(p,p);
+    }
+    function fmt(s){
+      return esc(String(s))
+        .replace(/___+/g, '<span class="ty-gap"></span>')
+        .replace(/\*\*(.+?)\*\*/g, '<b class="ty-mark">$1</b>');
+    }
+    function strip(s){ return String(s).replace(/\*\*/g,"").replace(/___+/g,"___"); }
+    function esc(s){ return String(s).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
+    function shuffle(a){ for(let i=a.length-1;i>0;i--){const j=(Math.random()*(i+1))|0;[a[i],a[j]]=[a[j],a[i]];} return a; }
+  }
+};
+
+;
+/* ============================================================
+   MOTOR-FEATURES — meta-laag (plan §4-D). Eén keer bouwen, overal inzetbaar.
+   Volledig offline, dependency-vrij, veilig als localStorage ontbreekt.
+
+   Bevat:
+   - Store          : persistente voortgang (dagen, tags, spellen, can-do)
+   - recordFinish() : de engine roept dit aan op het einde van elk spel
+   - mountStreak()  : streak-kalender-widget (speel elke dag)
+   - mountHeatmap() : fouten-/beheersings-heatmap per tag
+   - mountCanDo()   : zelfscan met can-do-uitspraken (persistent)
+   - Leitner        : spaced-repetition doosjes (1-5) voor een itempool
+   ============================================================ */
+(function(){
+"use strict";
+var KEY="motor:v1";
+
+function today(){ try{ return new Date().toISOString().slice(0,10); }catch(e){ return "0000-00-00"; } }
+function load(){
+  try{ return JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){ return {}; }
+}
+function save(d){
+  try{ localStorage.setItem(KEY, JSON.stringify(d)); return true; }catch(e){ return false; }
+}
+function base(d){
+  d.days=d.days||{}; d.tags=d.tags||{}; d.games=d.games||{}; d.cando=d.cando||{}; d.leitner=d.leitner||{};
+  return d;
+}
+
+/* --- de engine roept dit aan bij showResults --- */
+function recordFinish(sum){
+  try{
+    sum=sum||{};
+    var d=base(load()), t=today();
+    var day=d.days[t]||(d.days[t]={plays:0,ok:0,total:0});
+    day.plays++; day.ok+=(sum.ok|0); day.total+=(sum.total|0);
+    var ts=sum.tagStats||{}, tl=sum.tagLabels||{};
+    for(var tag in ts){ if(!ts.hasOwnProperty(tag)) continue;
+      var g=d.tags[tag]||(d.tags[tag]={ok:0,bad:0});
+      g.ok+=(ts[tag].ok|0); g.bad+=(ts[tag].bad|0);
+      if(tl[tag]) g.label=tl[tag];
+    }
+    if(sum.id){
+      var acc=sum.total? Math.round(sum.ok/sum.total*100):0;
+      var ge=d.games[sum.id]||(d.games[sum.id]={plays:0,best:0,last:0});
+      ge.plays++; ge.last=acc; if(acc>ge.best) ge.best=acc; if(sum.title) ge.title=sum.title;
+    }
+    save(d);
+  }catch(e){}
+}
+
+/* --- streak: opeenvolgende dagen met minstens één spel, eindigend vandaag --- */
+function streakCount(days){
+  var n=0, dt;
+  try{ dt=new Date(today()+"T00:00:00"); }catch(e){ return 0; }
+  for(var i=0;i<400;i++){
+    var key=dt.toISOString().slice(0,10);
+    if(days[key] && days[key].plays>0){ n++; dt.setDate(dt.getDate()-1); }
+    else if(i===0){ dt.setDate(dt.getDate()-1); } // vandaag nog niet gespeeld → kijk of gisteren telde
+    else break;
+  }
+  return n;
+}
+function mountStreak(elm){
+  if(!elm) return;
+  var d=base(load()), days=d.days, n=streakCount(days);
+  var html='<div class="mf-h"><span class="mf-fire">🔥</span> Racha: <b>'+n+'</b> día'+(n===1?"":"s")+
+    ' <span class="mf-nl">· dagen na elkaar</span></div><div class="mf-cal">';
+  var dt; try{ dt=new Date(today()+"T00:00:00"); }catch(e){ dt=null; }
+  var cells=[];
+  for(var i=13;i>=0;i--){
+    var key="—", played=false, lbl="";
+    if(dt){ var c=new Date(dt); c.setDate(c.getDate()-i); key=c.toISOString().slice(0,10);
+      played=!!(days[key]&&days[key].plays>0); lbl=key.slice(5); }
+    cells.push('<span class="mf-day'+(played?" on":"")+(i===0?" today":"")+'" title="'+key+'">'+
+      '<i></i><em>'+lbl+'</em></span>');
+  }
+  html+=cells.join("")+'</div>';
+  elm.innerHTML=html;
+}
+
+/* --- heatmap: beheersing per tag (groen=sterk, rood=zwak) --- */
+function mountHeatmap(elm){
+  if(!elm) return;
+  var d=base(load()), tags=d.tags, keys=Object.keys(tags);
+  if(!keys.length){ elm.innerHTML='<div class="mf-empty">Speel een spel om je beheersing per thema te zien.</div>'; return; }
+  keys.sort(function(a,b){ return acc(tags[a])-acc(tags[b]); }); // zwakste eerst
+  function acc(g){ var t=g.ok+g.bad; return t? g.ok/t : 0; }
+  var rows=keys.slice(0,24).map(function(k){
+    var g=tags[k], t=g.ok+g.bad, p=t?Math.round(g.ok/t*100):0;
+    var col = p>=80?"#2E8E68": p>=55?"#E0A22F": "#C4402C";
+    var name=(g.label||k).replace(/<[^>]+>/g," ").trim();
+    return '<div class="mf-hrow"><span class="mf-hl">'+esc(name)+'</span>'+
+      '<span class="mf-ht"><span class="mf-hf" style="width:'+p+'%;background:'+col+'"></span></span>'+
+      '<span class="mf-hn">'+p+'%</span></div>';
+  }).join("");
+  elm.innerHTML='<div class="mf-h">Tu dominio por tema <span class="mf-nl">· beheersing per thema</span></div>'+rows;
+}
+
+/* --- can-do zelfscan (persistent) --- */
+function mountCanDo(elm, items, poolId){
+  if(!elm) return;
+  items=items||[];
+  poolId=poolId||"generic";
+  var d=base(load()), store=d.cando;
+  var html='<div class="mf-h">Puedo… <span class="mf-nl">· wat kan ik al?</span></div><ul class="mf-cando">';
+  items.forEach(function(it,i){
+    var id=poolId+":"+(it.id||i);
+    var on=!!store[id];
+    html+='<li class="mf-ci'+(on?" on":"")+'" data-id="'+esc(id)+'">'+
+      '<button type="button" class="mf-cbtn" aria-pressed="'+on+'">'+
+      '<span class="mf-cbox">'+(on?"✓":"")+'</span>'+
+      '<span class="mf-clbl">'+esc(it.label||String(it))+'</span></button></li>';
+  });
+  html+='</ul>';
+  elm.innerHTML=html;
+  elm.querySelectorAll(".mf-ci").forEach(function(li){
+    li.querySelector(".mf-cbtn").addEventListener("click",function(){
+      var d2=base(load()), id=li.dataset.id, on=!d2.cando[id];
+      d2.cando[id]=on; save(d2);
+      li.classList.toggle("on",on);
+      li.querySelector(".mf-cbox").textContent=on?"✓":"";
+      li.querySelector(".mf-cbtn").setAttribute("aria-pressed",on);
+    });
+  });
+}
+
+/* --- Leitner-doosjes: spaced repetition (1=zwak … 5=beheerst) ---
+   Herbruikbaar door een template/feeder: kies vaker uit lage doosjes.
+   key = stabiele item-identiteit (bv. de stimulus-tekst). */
+function Leitner(poolId){
+  this.poolId=poolId||"pool";
+  var d=base(load());
+  this.boxes=(d.leitner[this.poolId]||(d.leitner[this.poolId]={}));
+}
+Leitner.prototype.box=function(k){ return this.boxes[k]||1; };
+Leitner.prototype.promote=function(k){ this.boxes[k]=Math.min(5,(this.boxes[k]||1)+1); this._save(); };
+Leitner.prototype.demote=function(k){ this.boxes[k]=1; this._save(); };
+Leitner.prototype.register=function(k,ok){ ok?this.promote(k):this.demote(k); };
+/* gewicht voor de adaptieve trekking: laag doosje = hoog gewicht (vaker) */
+Leitner.prototype.weight=function(k){ return 6-this.box(k); };
+Leitner.prototype._save=function(){ var d=base(load()); d.leitner[this.poolId]=this.boxes; save(d); };
+
+function esc(s){ return String(s).replace(/[&<>]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c];}); }
+function reset(){ try{ localStorage.removeItem(KEY); }catch(e){} }
+
+window.MotorFeatures = {
+  recordFinish: recordFinish,
+  mountStreak: mountStreak,
+  mountHeatmap: mountHeatmap,
+  mountCanDo: mountCanDo,
+  Leitner: Leitner,
+  reset: reset,
+  _load: load
+};
+})();
+
+;
+/* ============================================================
+   MOTOR — gedeelde kern. Sjabloon-onafhankelijk.
+   Een sjabloon rendert ALLEEN het speelveld en meldt per beurt
+   goed/fout via api.judge(). De motor doet de rest:
+   score, streak, niveau, adaptieve keuze, foutenlog, resultaten,
+   geluid, instellingen, toegankelijkheid.
+   ============================================================ */
+(function(){
+"use strict";
+
+const CALM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- geluid ---------- */
+function makeAudio(on){
+  let AC=null;
+  function ac(){ if(!AC && on){ try{AC=new (window.AudioContext||window.webkitAudioContext)();}catch(e){}} return AC; }
+  function beep(f,d,type,vol,to){ if(!on)return; const a=ac(); if(!a)return;
+    const o=a.createOscillator(),g=a.createGain(); o.type=type||"triangle";
+    o.frequency.setValueAtTime(f,a.currentTime);
+    if(to) o.frequency.exponentialRampToValueAtTime(to,a.currentTime+d);
+    g.gain.setValueAtTime(vol||.16,a.currentTime);
+    g.gain.exponentialRampToValueAtTime(.0008,a.currentTime+d);
+    o.connect(g);g.connect(a.destination);o.start();o.stop(a.currentTime+d); }
+  function noise(d,vol){ if(!on)return; const a=ac(); if(!a)return;
+    const n=Math.floor(a.sampleRate*d),buf=a.createBuffer(1,n,a.sampleRate),dt=buf.getChannelData(0);
+    for(let i=0;i<n;i++)dt[i]=(Math.random()*2-1)*(1-i/n);
+    const s=a.createBufferSource();s.buffer=buf;
+    const fl=a.createBiquadFilter();fl.type="lowpass";fl.frequency.value=900;
+    const g=a.createGain();g.gain.value=vol||.18;
+    s.connect(fl);fl.connect(g);g.connect(a.destination);s.start(); }
+  return {
+    unlock:ac,
+    setOn(v){on=v;},
+    ok(){ beep(740,.08,"triangle",.16); setTimeout(()=>beep(1108,.13,"triangle",.14),60); },
+    bad(){ noise(.22,.24); beep(150,.28,"sawtooth",.12,70); },
+    move(){ beep(620,.04,"square",.05); },
+    win(){ [523,659,784,1046,1319].forEach((f,i)=>setTimeout(()=>beep(f,.16,"triangle",.15),i*62)); }
+  };
+}
+
+/* ---------- helpers ---------- */
+function el(tag,cls,html){ const e=document.createElement(tag); if(cls)e.className=cls; if(html!=null)e.innerHTML=html; return e; }
+function shade(hex,f){ const n=parseInt(hex.slice(1),16);
+  const r=Math.max(0,Math.min(255,Math.round(((n>>16)&255)*f)));
+  const g=Math.max(0,Math.min(255,Math.round(((n>>8)&255)*f)));
+  const b=Math.max(0,Math.min(255,Math.round((n&255)*f)));
+  return "rgb("+r+","+g+","+b+")"; }
+
+/* ---------- adaptieve toevoer ----------
+   Trekt K kandidaten en kiest die met de zwakste tag. Werkt zowel voor
+   generatoren (source.make) als voor vaste itemlijsten (source.items). */
+function makeFeeder(source, tagStats){
+  const draw = source.make ? source.make
+             : () => source.items[(Math.random()*source.items.length)|0];
+  return function next(){
+    let best=null, bestScore=Infinity;
+    for(let i=0;i<4;i++){
+      const it = draw();
+      const st = tagStats[it.tag] || {ok:0,bad:0};
+      const acc = (st.ok+1)/(st.ok+st.bad+2);      // laag = zwak → voorrang
+      const score = acc + Math.random()*0.5;
+      if(score<bestScore){ bestScore=score; best=it; }
+    }
+    return best;
+  };
+}
+
+/* ============================================================
+   MOUNT
+   ============================================================ */
+function mount(app, cfg){
+  cfg.options = cfg.options || {};
+  const audio = makeAudio(cfg.options.audio !== false);
+
+  /* ---- schil bouwen ---- */
+  app.innerHTML = "";
+  const header = el("header","mt");
+  const titleWrap = el("div");
+  titleWrap.appendChild(el("h1",null, esc(cfg.title||"Oefening")));
+  if(cfg.subtitle) titleWrap.appendChild(el("p","tag", esc(cfg.subtitle)));
+  header.appendChild(titleWrap);
+  header.appendChild(el("div","sp"));
+  const bAgain = el("button","mt-btn","Opnieuw"); bAgain.type="button";
+  header.appendChild(bAgain);
+  /* confidence-betting (opt-in): ×2 punten én ×2 straf wanneer je zeker bent */
+  let bBet=null;
+  if(cfg.options.confidence){
+    bBet=el("button","mt-btn bet","🎲 ×1"); bBet.type="button";
+    bBet.title="Apuesta: dobla los puntos… y el riesgo";
+    header.appendChild(bBet);
+  }
+  app.appendChild(header);
+
+  const wrap = el("div","mt-wrap");
+  const fieldCol = el("div");
+  const field = el("div","mt-field");
+  fieldCol.appendChild(field);
+  wrap.appendChild(fieldCol);
+
+  const panel = el("div","mt-panel");
+  const sScore = statBox(panel,"Punten","0");
+  const sStreak = statBox(panel,"Reeks","0");
+  const sProg = statBox(panel,"Voortgang","–");
+  wrap.appendChild(panel);
+  app.appendChild(wrap);
+
+  /* ---- resultatenoverlay ---- */
+  const ov = el("div","mt-ov");
+  ov.innerHTML =
+    '<div class="mt-sheet"><h2>Klaar</h2><p class="sub" id="mtRSub"></p>'+
+    '<div class="mt-rgrid">'+
+      '<div class="mt-rcell"><div class="rk">Punten</div><div class="rv" id="mtRScore">0</div></div>'+
+      '<div class="mt-rcell"><div class="rk">Juist</div><div class="rv" id="mtRAcc">–</div></div>'+
+      '<div class="mt-rcell"><div class="rk">Beste reeks</div><div class="rv" id="mtRBest">0</div></div>'+
+    '</div>'+
+    '<div class="mt-grp" id="mtRBarsWrap"><label id="mtRBarsLbl">Per categorie</label><div id="mtRBars"></div></div>'+
+    '<div class="mt-grp" id="mtRMisWrap"><label>Waar het misging</label><ul class="mt-mis" id="mtRMis"></ul></div>'+
+    '<button class="mt-go" id="mtRAgain" type="button">Opnieuw</button></div>';
+  app.appendChild(ov);
+
+  /* ---- staat ---- */
+  const S = { score:0, streak:0, best:0, level:1, ok:0, total:0, tagStats:{}, log:[], done:0, target:0, bet:1 };
+  if(bBet){ bBet.addEventListener("click", ()=>{
+    S.bet = S.bet===1 ? 2 : 1;
+    bBet.textContent = "🎲 ×"+S.bet; bBet.classList.toggle("on", S.bet===2);
+    audio.move();
+  }); }
+
+  function statBox(parent,k,v){
+    const b=el("div","mt-stat"); b.innerHTML='<span class="k">'+k+'</span><span class="v">'+v+'</span>';
+    parent.appendChild(b); return b.querySelector(".v");
+  }
+  function esc(s){ return String(s).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c])); }
+
+  function hud(){
+    sScore.textContent=S.score;
+    sStreak.textContent=S.streak; sStreak.classList.toggle("hot",S.streak>=5);
+    sProg.textContent = S.target ? (S.done+"/"+S.target) : "–";
+  }
+
+  /* label voor een tag (categorie of persoon) t.b.v. resultaten */
+  function tagLabel(tag){
+    if(cfg._tagLabel){ const l=cfg._tagLabel(tag); if(l) return l; }
+    if(cfg.classify && cfg.classify.categories){
+      const c=cfg.classify.categories.find(x=>x.id===tag); if(c) return c.label.replace(/<[^>]+>/g," ").trim();
+    }
+    return tag;
+  }
+
+  /* ---- API voor het sjabloon ---- */
+  const feeder = cfg._source ? makeFeeder(cfg._source, S.tagStats) : null;
+
+  const api = {
+    root: field,
+    config: cfg,
+    calm: CALM,
+    sfx: audio,
+    el, shade,
+    categories: (cfg.classify && cfg.classify.categories) || [],
+
+    /* volgende stimulus (adaptief) — enkel voor stimulus→antwoord-sjablonen */
+    next(){ return feeder ? feeder() : null; },
+
+    /* aantal beurten instellen (voor voortgang + einde) */
+    setTarget(n){ S.target=n; hud(); },
+    tick(){ S.done++; hud(); },
+
+    /* losse puntenbonus (bv. tetris-lijn); telt niet mee in juist% */
+    bonus(n){ S.score += (n|0); hud(); },
+
+    /* kern: één beoordeling. meta = {tag, stimulus, chosen, correct[], sub} */
+    judge(ok, meta){
+      meta = meta || {};
+      S.total++;
+      const tag = meta.tag || "_";
+      const st = S.tagStats[tag] || (S.tagStats[tag]={ok:0,bad:0});
+      const bet = S.bet||1;
+      if(ok){
+        S.ok++; st.ok++; S.streak++; if(S.streak>S.best)S.best=S.streak;
+        S.score += (10 + Math.min(50,S.streak*3)) * bet;
+        if(S.ok % 10 === 0) S.level++;
+        audio.ok();
+      }else{
+        st.bad++; S.streak=0; S.score=Math.max(0,S.score-5*bet);
+        audio.bad();
+        if(meta.stimulus){
+          S.log.push({ stimulus:meta.stimulus, sub:meta.sub||"",
+            juist:(meta.correct||[]).map(tagLabel).join(" / "),
+            gekozen: meta.chosen!=null ? tagLabel(meta.chosen) : "" });
+        }
+      }
+      hud();
+      return { ok, streak:S.streak };
+    },
+
+    finish(){ showResults(); }
+  };
+
+  function showResults(){
+    const acc = S.total ? Math.round(S.ok/S.total*100) : 0;
+    ov.querySelector("#mtRScore").textContent=S.score;
+    ov.querySelector("#mtRAcc").textContent=acc+"%";
+    ov.querySelector("#mtRBest").textContent=S.best;
+    ov.querySelector("#mtRSub").textContent =
+      acc>=90 ? "Strak werk." : acc>=70 ? "Degelijk." : "Nog eens oefenen loont.";
+
+    /* balken per tag (alleen tonen als er >1 tag is) */
+    const tags = Object.keys(S.tagStats);
+    const barsWrap = ov.querySelector("#mtRBarsWrap");
+    const bars = ov.querySelector("#mtRBars"); bars.innerHTML="";
+    if(tags.length>1){
+      barsWrap.style.display="";
+      const palette=["#C4402C","#E0A22F","#2E8E68","#3D74D6","#8B5E9E","#6E6249"];
+      tags.forEach((t,i)=>{
+        const s=S.tagStats[t], tot=s.ok+s.bad, pct=tot?Math.round(s.ok/tot*100):0;
+        const row=el("div","mt-bar");
+        row.innerHTML='<span class="bl">'+esc(tagLabel(t))+'</span>'+
+          '<span class="bt"><span class="bf" style="width:'+pct+'%;background:'+palette[i%palette.length]+'"></span></span>'+
+          '<span class="bn">'+pct+'%</span>';
+        bars.appendChild(row);
+      });
+    } else barsWrap.style.display="none";
+
+    /* laatste fouten */
+    const misWrap=ov.querySelector("#mtRMisWrap");
+    const ul=ov.querySelector("#mtRMis"); ul.innerHTML="";
+    const last=S.log.slice(-8).reverse();
+    misWrap.style.display = last.length ? "" : "none";
+    last.forEach(m=>{
+      const li=el("li");
+      li.innerHTML="<b>"+esc(m.stimulus)+"</b> <span class='ok'>"+esc(m.juist)+"</span>"+
+        (m.gekozen?" <em>jij: "+esc(m.gekozen)+"</em>":"")+
+        (m.sub?" <span style='color:#8A7F66;font-size:12px'>("+esc(m.sub)+")</span>":"");
+      ul.appendChild(li);
+    });
+    if(acc>=90) audio.win();
+    ov.classList.add("on");
+
+    /* meta-laag: voortgang persisteren (streak · heatmap · spellen) */
+    if(window.MotorFeatures && window.MotorFeatures.recordFinish){
+      const tagLabels={}; Object.keys(S.tagStats).forEach(t=>{ tagLabels[t]=tagLabel(t); });
+      window.MotorFeatures.recordFinish({
+        id: cfg.id,
+        title: String(cfg.title||"").replace(/<[^>]+>/g,"").trim(),
+        ok: S.ok, total: S.total, tagStats: S.tagStats, tagLabels: tagLabels
+      });
+    }
+  }
+
+  /* ---- start / herstart ---- */
+  function reset(){
+    S.score=0;S.streak=0;S.best=0;S.level=1;S.ok=0;S.total=0;S.tagStats={};S.log=[];S.done=0;S.target=0;
+    if(api._cleanup){ api._cleanup(); api._cleanup=null; }
+    ov.classList.remove("on"); field.innerHTML=""; hud();
+    const tpl = window.MotorTemplates && window.MotorTemplates[cfg.template];
+    if(!tpl){ field.innerHTML="<p style='color:#C4402C'>Onbekend sjabloon: "+esc(cfg.template)+"</p>"; return; }
+    tpl.init(api);
+  }
+  bAgain.addEventListener("click", ()=>{ audio.unlock(); reset(); });
+  ov.querySelector("#mtRAgain").addEventListener("click", ()=>{ audio.unlock(); reset(); });
+
+  /* eerste tik ontgrendelt geluid op mobiel */
+  app.addEventListener("pointerdown", ()=>audio.unlock(), {once:true});
+
+  reset();
+}
+
+window.Motor = { mount };
+})();
+
+;
+(function(){
+var cfg = {"id":"es-c6plus-u2-escribe-palabra","title":"Escribe la palabra","subtitle":"C6+ · U2 · schrijf het Spaanse woord (letterhint als steun)","lang":"es","template":"type","options":{"rounds":12,"series":3,"audio":false},"type":{"prompt":"C6+","mode":"closed","items":[{"stimulus":"het huis","answers":["la casa","casa"],"hint":"c___","tag":"casa","sub":"znw. v."},{"stimulus":"het appartement / de verdieping","answers":["el piso","piso"],"hint":"p___","tag":"casa","sub":"znw. m."},{"stimulus":"het appartement","answers":["el apartamento","apartamento"],"hint":"a__________","tag":"casa","sub":"znw. m."},{"stimulus":"de kamer","answers":["la habitación","habitación"],"hint":"h_________","tag":"habitaciones","sub":"znw. v."},{"stimulus":"de slaapkamer","answers":["el dormitorio","dormitorio"],"hint":"d_________","tag":"habitaciones","sub":"znw. m."},{"stimulus":"de keuken","answers":["la cocina","cocina"],"hint":"c_____","tag":"habitaciones","sub":"znw. v."},{"stimulus":"de woonkamer","answers":["el salón","salón"],"hint":"s____","tag":"habitaciones","sub":"znw. m."},{"stimulus":"de badkamer","answers":["el baño","baño"],"hint":"b___","tag":"habitaciones","sub":"znw. m."},{"stimulus":"de gang","answers":["el pasillo","pasillo"],"hint":"p______","tag":"habitaciones","sub":"znw. m."},{"stimulus":"het terras","answers":["la terraza","terraza"],"hint":"t______","tag":"habitaciones","sub":"znw. v."},{"stimulus":"de tuin","answers":["el jardín","jardín"],"hint":"j_____","tag":"habitaciones","sub":"znw. m."},{"stimulus":"de garage","answers":["el garaje","garaje"],"hint":"g_____","tag":"habitaciones","sub":"znw. m."},{"stimulus":"het bed","answers":["la cama","cama"],"hint":"c___","tag":"muebles","sub":"znw. v."},{"stimulus":"de tafel","answers":["la mesa","mesa"],"hint":"m___","tag":"muebles","sub":"znw. v."},{"stimulus":"de stoel","answers":["la silla","silla"],"hint":"s____","tag":"muebles","sub":"znw. v."},{"stimulus":"de zetel / bank","answers":["el sofá","sofá"],"hint":"s___","tag":"muebles","sub":"znw. m."},{"stimulus":"de kast","answers":["el armario","armario"],"hint":"a______","tag":"muebles","sub":"znw. m."},{"stimulus":"de boekenkast / het rek","answers":["la estantería","estantería"],"hint":"e_________","tag":"muebles","sub":"znw. v."},{"stimulus":"de koelkast","answers":["la nevera","nevera"],"hint":"n_____","tag":"muebles","sub":"znw. v."},{"stimulus":"de lamp","answers":["la lámpara","lámpara"],"hint":"l______","tag":"muebles","sub":"znw. v."},{"stimulus":"het raam","answers":["la ventana","ventana"],"hint":"v______","tag":"muebles","sub":"znw. v."},{"stimulus":"de deur","answers":["la puerta","puerta"],"hint":"p_____","tag":"muebles","sub":"znw. v."},{"stimulus":"de spiegel","answers":["el espejo","espejo"],"hint":"e_____","tag":"muebles","sub":"znw. m."},{"stimulus":"op / boven(op)","answers":["encima de"],"hint":"e_____ d_","tag":"preposiciones","sub":"prep."},{"stimulus":"onder","answers":["debajo de"],"hint":"d_____ d_","tag":"preposiciones","sub":"prep."},{"stimulus":"naast","answers":["al lado de"],"hint":"a_ l___ d_","tag":"preposiciones","sub":"prep."},{"stimulus":"vóór","answers":["delante de"],"hint":"d______ d_","tag":"preposiciones","sub":"prep."},{"stimulus":"achter","answers":["detrás de"],"hint":"d_____ d_","tag":"preposiciones","sub":"prep."},{"stimulus":"tussen","answers":["entre"],"hint":"e____","tag":"preposiciones","sub":"prep."},{"stimulus":"binnen(in)","answers":["dentro de"],"hint":"d_____ d_","tag":"preposiciones","sub":"prep."},{"stimulus":"buiten","answers":["fuera de"],"hint":"f____ d_","tag":"preposiciones","sub":"prep."},{"stimulus":"dichtbij","answers":["cerca de"],"hint":"c____ d_","tag":"preposiciones","sub":"prep."},{"stimulus":"ver van","answers":["lejos de"],"hint":"l____ d_","tag":"preposiciones","sub":"prep."},{"stimulus":"er is / er zijn","answers":["hay"],"hint":"h__","tag":"preposiciones","sub":"ww. (haber)"},{"stimulus":"zijn (plaats/toestand)","answers":["estar"],"hint":"e____","tag":"preposiciones","sub":"ww."},{"stimulus":"de buurt / wijk","answers":["el barrio","barrio"],"hint":"b_____","tag":"barrio","sub":"znw. m."},{"stimulus":"de straat","answers":["la calle","calle"],"hint":"c____","tag":"barrio","sub":"znw. v."},{"stimulus":"het plein","answers":["la plaza","plaza"],"hint":"p____","tag":"barrio","sub":"znw. v."},{"stimulus":"het park","answers":["el parque","parque"],"hint":"p_____","tag":"barrio","sub":"znw. m."},{"stimulus":"de winkel","answers":["la tienda","tienda"],"hint":"t_____","tag":"barrio","sub":"znw. v."},{"stimulus":"de supermarkt","answers":["el supermercado","supermercado"],"hint":"s___________","tag":"barrio","sub":"znw. m."},{"stimulus":"de apotheek","answers":["la farmacia","farmacia"],"hint":"f_______","tag":"barrio","sub":"znw. v."},{"stimulus":"de bank","answers":["el banco","banco"],"hint":"b____","tag":"barrio","sub":"znw. m."},{"stimulus":"de halte","answers":["la parada","parada"],"hint":"p_____","tag":"barrio","sub":"znw. v."},{"stimulus":"het station","answers":["la estación","estación"],"hint":"e_______","tag":"barrio","sub":"znw. v."},{"stimulus":"het centrum","answers":["el centro","centro"],"hint":"c_____","tag":"barrio","sub":"znw. m."},{"stimulus":"de hoek","answers":["la esquina","esquina"],"hint":"e______","tag":"barrio","sub":"znw. v."},{"stimulus":"de stad","answers":["la ciudad","ciudad"],"hint":"c_____","tag":"ciudad","sub":"znw. v."},{"stimulus":"het dorp","answers":["el pueblo","pueblo"],"hint":"p_____","tag":"ciudad","sub":"znw. m."},{"stimulus":"de woning","answers":["la vivienda","vivienda"],"hint":"v_______","tag":"ciudad","sub":"znw. v."},{"stimulus":"ga rechtdoor","answers":["sigue recto"],"hint":"s____ r____","tag":"direcciones","sub":"expr."},{"stimulus":"steek de straat over","answers":["cruza la calle"],"hint":"c____ l_ c____","tag":"direcciones","sub":"expr."},{"stimulus":"het verkeerslicht","answers":["el semáforo","semáforo"],"hint":"s_______","tag":"direcciones","sub":"znw. m."},{"stimulus":"te voet","answers":["a pie"],"hint":"a p__","tag":"direcciones","sub":"expr."},{"stimulus":"lopen / wandelen","answers":["andar"],"hint":"a____","tag":"movimiento","sub":"ww."},{"stimulus":"oversteken","answers":["cruzar"],"hint":"c_____","tag":"movimiento","sub":"ww."},{"stimulus":"draaien / afslaan","answers":["girar"],"hint":"g____","tag":"movimiento","sub":"ww."},{"stimulus":"volgen / doorgaan","answers":["seguir"],"hint":"s_____","tag":"movimiento","sub":"ww. (e→i)"},{"stimulus":"omhooggaan / instappen","answers":["subir"],"hint":"s____","tag":"movimiento","sub":"ww."},{"stimulus":"omlaaggaan / uitstappen","answers":["bajar"],"hint":"b____","tag":"movimiento","sub":"ww."},{"stimulus":"nemen / pakken","answers":["coger"],"hint":"c____","tag":"movimiento","sub":"ww."},{"stimulus":"voorbijgaan / passeren","answers":["pasar por"],"hint":"p____ p__","tag":"movimiento","sub":"ww."}]}};
+Motor.mount(document.getElementById('app'), cfg);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+{
+  "id": "es-c6plus-u2-preposicion-dibujo",
+  "title": "¿Dónde está el gato?",
+  "subtitle": "U2 · de preposities van plaats",
+  "lang": "es",
+  "template": "match",
+  "options": {
+    "chunk": 6,
+    "audio": false
+  },
+  "match": {
+    "prompt": "Verbind de preposición met de betekenis",
+    "pairs": [
+      {
+        "a": "encima de",
+        "b": "op · bovenop ⬆️"
+      },
+      {
+        "a": "debajo de",
+        "b": "onder ⬇️"
+      },
+      {
+        "a": "delante de",
+        "b": "vóór ➡️"
+      },
+      {
+        "a": "detrás de",
+        "b": "achter ⬅️"
+      },
+      {
+        "a": "al lado de",
+        "b": "naast ↔️"
+      },
+      {
+        "a": "entre",
+        "b": "tussen ⇄"
+      },
+      {
+        "a": "dentro de",
+        "b": "binnenin 📦"
+      },
+      {
+        "a": "fuera de",
+        "b": "buiten 🚪"
+      },
+      {
+        "a": "enfrente de",
+        "b": "tegenover 🔁"
+      },
+      {
+        "a": "a la derecha de",
+        "b": "rechts van ➡️"
+      },
+      {
+        "a": "a la izquierda de",
+        "b": "links van ⬅️"
+      },
+      {
+        "a": "cerca de",
+        "b": "dichtbij 📍"
+      }
+    ]
+  }
+}

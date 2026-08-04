@@ -44,11 +44,19 @@ MOTOR = [
    ['gustar', 'completa: gustar', 'cloze'],
    ['pronombre-tetris', 'pronombre: cinta', 'belt'],
    ['rutina-order', 'ordena tu día', 'order'],
-   ['senala', 'señala', 'point']]],
+   ['senala', 'señala', 'point'],
+   ['tilde-reflexivo', '¿dónde va la tilde?', 'tap']]],
  ['④ Hablar · grábate 🎙️', [
    ['repite-dia', 'escucha y repite: mi día', 'speak'],
-   ['mensaje-dia', 'mensaje de voz: mi día a día', 'speak']]],
-]
+   ['mensaje-dia', 'mensaje de voz: mi día a día', 'speak'],
+   ['mi-dia', 'cuenta tu día', 'sim'],
+   ['carrusel-rutina', 'carrusel · mi rutina', 'speak']]],
+ ['⑤ Escribir · escríbelo tú ✍️', [
+   ['escribe-palabra', 'NL → escribe la palabra', 'type'],
+   ['completa-frase', 'completa la frase', 'type'],
+   ['que-palabra', '¿qué palabra es?', 'type'],
+   ['dictado', 'dictado', 'type'],
+   ['escribe-frase', 'escribe una frase', 'type']]]]
 GAMEDIR = f"{ROOT}/spaans-motor/games"
 slugs = [g[0] for grp in MOTOR for g in grp[1]]
 GAMES = {s: b64(f"{GAMEDIR}/es-c6plus-u1-{s}.html") for s in slugs if os.path.exists(f"{GAMEDIR}/es-c6plus-u1-{s}.html")}

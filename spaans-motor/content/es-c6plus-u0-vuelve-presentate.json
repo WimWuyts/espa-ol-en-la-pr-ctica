@@ -1,0 +1,65 @@
+{
+  "id": "es-c6plus-u0-vuelve-presentate",
+  "title": "Preséntate otra vez",
+  "subtitle": "U0 · stel jezelf opnieuw voor",
+  "lang": "es",
+  "template": "sim",
+  "options": {
+    "audio": false
+  },
+  "sim": {
+    "prompt": "Tarea comunicativa · schrijf in het Spaans",
+    "rounds": [
+      {
+        "scenario": "Es el primer día del curso. Preséntate a un compañero nuevo.",
+        "tag": "pres",
+        "sub": "naam, leeftijd en herkomst",
+        "min": 12,
+        "need": [
+          {
+            "re": "me llamo"
+          },
+          {
+            "re": "(soy de|vivo en)"
+          }
+        ]
+      },
+      {
+        "scenario": "Describe a tu mejor amigo: cómo es y cómo está hoy.",
+        "tag": "serestar",
+        "sub": "gebruik ser én estar",
+        "min": 12,
+        "need": [
+          {
+            "re": "\\bes\\b"
+          },
+          {
+            "re": "está"
+          }
+        ]
+      },
+      {
+        "scenario": "Escribe de qué países son tres personas de tu clase.",
+        "tag": "pais",
+        "sub": "gebruik ser de + land",
+        "min": 10,
+        "need": [
+          {
+            "re": "es de|son de"
+          }
+        ]
+      },
+      {
+        "scenario": "Cuenta qué haces normalmente los fines de semana.",
+        "tag": "presente",
+        "sub": "gebruik minstens drie werkwoorden in het presente",
+        "min": 12,
+        "need": [
+          {
+            "re": "\\w+(o|as|a|amos|an|es|e|emos|en)\\b"
+          }
+        ]
+      }
+    ]
+  }
+}
