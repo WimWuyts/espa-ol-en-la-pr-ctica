@@ -30,7 +30,7 @@ Paarse vervolgcursus (C6+), Unidad 5. Bouwt de kern-verleden tijd (indefinido) e
 - **70 typvelden** waar de leerling zelf schrijft, geen keuzelijst: 34 in *Vocabulario*, 36 in *Gramática*. De drie grammatica-drills van deze unidad: **het indefinido regelmatig** (waar de tilde de leerstof ís: hablo ↔ habló) · **de negen pretéritos fuertes**, die juist géén tilde dragen · **se lo / se la**, waar le en les vóór lo/la altijd se worden.
 - **§6 Lectura — «La leyenda de la yerba mate».** Een Guaraní-legende, volledig in het indefinido — het genre waar die tijd thuishoort. Bewust een traditioneel verhaal en geen biografie van een echt persoon: echte figuren horen in Cultura. Nieuw genre.
 - **§7 Escucha — «Los que llegaron en barco».** Een rondleiding in het Immigratiemuseum van Buenos Aires: ware geschiedenis met jaartallen, waar de leestekst fictie met een moraal is. Zes treden, transcript pas ná de taken. Ander genre en andere inhoud dan de leestekst.
-- **Extra**-tabblad zonder «link volgt»: leerlingklare terugvalinhoud tot de bronnenlijst en de escape room van deze unidad er zijn.
+- **Extra**-tabblad zonder «link volgt»: leerlingklare terugvalinhoud tot de bronnenlijst van deze unidad er is.
 
 ## Wat nog niet af is
 

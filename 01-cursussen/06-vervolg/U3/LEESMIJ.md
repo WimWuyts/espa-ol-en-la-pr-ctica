@@ -29,7 +29,7 @@ Paarse vervolgcursus (C6+), Unidad 3. Bouwt de A2-toekomst-motor: plannen maken,
 - **70 typvelden** waar de leerling zelf schrijft, geen keuzelijst: 34 in *Vocabulario*, 36 in *Gramática*. De drie grammatica-drills van deze unidad: **ir a + infinitivo** (alle drie de stukken schrijven, incl. *voy a conectarme*) · **le / les** (aan wie, niet wat) · **creo que… / acabar de…** (mening mét indicativo, en alleen *acabar* vervoegen).
 - **§7 Lectura — «¿Cuántas horas de pantalla?».** Een artikel uit de schoolkrant met de uitslag van een enquête én twee leerlingen die het oneens zijn. De leerling scant cijfers én weegt standpunten. Nieuw genre naast prikbord, blog en reseña.
 - **§8 Escucha — «Cómo hacer una videollamada con la abuela».** Diego legt zijn oma stap voor stap uit hoe ze videobelt: instructies volgen en de volgorde onthouden. Zes treden, transcript pas ná de taken. Ander genre en andere inhoud dan de leestekst.
-- **Extra**-tabblad zonder «link volgt»: leerlingklare terugvalinhoud tot de bronnenlijst en de escape room van deze unidad er zijn.
+- **Extra**-tabblad zonder «link volgt»: leerlingklare terugvalinhoud tot de bronnenlijst van deze unidad er is.
 
 ## Wat nog niet af is
 

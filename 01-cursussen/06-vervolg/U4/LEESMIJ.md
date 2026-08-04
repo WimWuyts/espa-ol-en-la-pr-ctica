@@ -29,7 +29,7 @@ Paarse vervolgcursus (C6+), Unidad 4. Bouwt de eerste échte verleden tijd: de v
 - **70 typvelden** waar de leerling zelf schrijft, geen keuzelijst: 34 in *Vocabulario*, 36 in *Gramática*. De drie grammatica-drills van deze unidad: **haber + participio** (allebei de woorden, incl. het reflexieve *nos hemos quedado*) · **de acht onregelmatige participios** mét twee valstrikken die juist regelmatig zijn · **por of para**, met een vuistregel die vooruitkijkt tegenover de weg ernaartoe.
 - **§6 Lectura — «Una postal desde Valparaíso».** Een postkaart met twee dagboekfragmenten: het perfecto compuesto zit er natuurlijk in en de leerling ziet meteen het verschil tussen «ya» en «todavía no». Nieuw genre.
 - **§7 Escucha — «En la recepción del hostal».** Nina komt om elf uur 's avonds aan met een reservering die niet klopt — een échte transactie volgen met cijfers, dagen en een probleem dat opgelost wordt. Zes treden, transcript pas ná de taken. Ander genre en andere inhoud dan de leestekst.
-- **Extra**-tabblad zonder «link volgt»: leerlingklare terugvalinhoud tot de bronnenlijst en de escape room van deze unidad er zijn.
+- **Extra**-tabblad zonder «link volgt»: leerlingklare terugvalinhoud tot de bronnenlijst van deze unidad er is.
 
 ## Wat nog niet af is
 

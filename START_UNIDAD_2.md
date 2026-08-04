@@ -4,7 +4,7 @@
 > Alles erboven is context voor de auteur.
 
 **Stand op 2026-07-31:** U0 en U1 zijn af voor C5 en C6+ — vier formaten, getypte
-oefeningen, leestekst, luisterfragment, bronnenlijst en escape room. Te gaan:
+oefeningen, leestekst, luisterfragment en bronnenlijst. Te gaan:
 **C5 U2–U8** (zeven units) en **C6+ U2–U7** (zes units). U1 is de norm.
 
 ---
@@ -68,11 +68,11 @@ E.s_lectura(_LD.C5_U<n>); E.s_escucha(_ED.C5_U<n>)  # in _run_all
 De twee dia-bouwers in de engine (`gen_u0_docente.py`) nemen hun data als argument, dus
 je hoeft niets te kopiëren. Elk deck komt zo op 23 dia's (docente) en 22 (alumno).
 
-**6 · Bronnen en escape room** — `03-build/web/extra_bronnen.py`
+**6 · Bronnen** — `03-build/web/extra_bronnen.py`
 De auteur levert per unit een linkenlijst en een escape-room-URL. Zolang die er niet
 zijn: **niets verzinnen** en het Extra-tabblad de terugvalinhoud laten tonen (die staat
 er al en is leerlingklaar). Komen ze wel: `BRONNEN[(cursus, n)]` in groepen die de
-volgorde van de unit volgen, en `DESTACADO[(cursus, n)]` voor de escape room.
+volgorde van de unit volgen.
 **Controleer altijd** dat elke aangeleverde unieke URL er precies één keer in staat —
 niets verloren, niets bijgekomen — en meld welke rijen je hebt samengevoegd.
 

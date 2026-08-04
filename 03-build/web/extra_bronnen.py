@@ -55,8 +55,8 @@ DESTACADO = {
     ("C5", 0): [
         {
             "titel": "El Museo de las Palabras Perdidas",
-            "soort": "Escape room",
-            "ico": "🗝️",
+            "soort": "Juego",
+            "ico": "🎮",
             "url": "https://c5-ruta-digital.wim-wuyts1979.chatgpt.site/u0/museo",
             "es": "Un museo ha perdido sus palabras. Solo sales si superas las pruebas: "
                   "los sonidos, la tilde, los números, el género y los saludos.",
@@ -77,8 +77,8 @@ DESTACADO = {
     ("C5", 1): [
         {
             "titel": "Línea 0 · Kilómetro Cero",
-            "soort": "Escape room",
-            "ico": "🗝️",
+            "soort": "Juego",
+            "ico": "🎮",
             "url": "https://c5-ruta-digital.wim-wuyts1979.chatgpt.site/u1/linea-cero",
             "es": "Estás en el metro de Madrid, en una línea que no existe en el plano. Para "
                   "volver a la superficie tienes que conjugar en presente, decidir entre ser y "
@@ -200,38 +200,6 @@ DESTACADO = {
                   "(ir a + infinitivo) y usar lo · la · los · las.",
             "nl": "Bestellen in het restaurant met de juiste beleefdheid, zeggen wat je gaat "
                   "nemen (ir a + infinitief) en lo · la · los · las gebruiken.",
-        },
-    ],
-    # ── C6+ ───────────────────────────────────────────────────────────────────
-    # Deze twee staan nog op de óude adressen. De auteur gaf op 2026-08-02 enkel
-    # nieuwe adressen voor C5 door (het nieuwe domein heet dan ook c5-ruta-
-    # digital), dus deze blijven staan tot hij ze doorgeeft. Nooit zelf verzinnen.
-    ("C6+", 0): [
-        {
-            "titel": "El vuelo 69",
-            "soort": "Escape room",
-            "ico": "🗝️",
-            "url": "https://el-vuelo-69.wim-wuyts1979.chatgpt.site/",
-            "es": "Estás a bordo del vuelo 69 y no despega sin ti. Para salir tienes que "
-                  "conjugar en presente, elegir entre ser y estar, acertar el género y decir de "
-                  "dónde es cada pasajero.",
-            "nl": "Je zit aan boord van vlucht 69 en die vertrekt niet zonder jou. Om eruit te "
-                  "raken moet je vervoegen in het presente, kiezen tussen ser en estar, het "
-                  "juiste geslacht treffen en van elke passagier zeggen waar die vandaan komt.",
-        },
-    ],
-    ("C6+", 1): [
-        {
-            "titel": "El martes desaparecido",
-            "soort": "Escape room",
-            "ico": "🗝️",
-            "url": "https://martes-desaparecido.wim-wuyts1979.chatgpt.site/",
-            "es": "Un martes entero ha desaparecido del calendario. Para recuperarlo tienes que "
-                  "reconstruir la rutina hora por hora: los verbos reflexivos, qué le gusta a "
-                  "cada uno y cuándo se usa ser o estar.",
-            "nl": "Er is een hele dinsdag uit de kalender verdwenen. Om hem terug te krijgen moet "
-                  "je de dagindeling uur na uur reconstrueren: de reflexieve werkwoorden, wie "
-                  "waarvan houdt, en wanneer je ser of estar gebruikt.",
         },
     ],
 }

@@ -30,7 +30,7 @@ Paarse vervolgcursus (C6+), Unidad 6. Sluit de verleden-tijdenboog (U4–U6) af 
 - **70 typvelden** waar de leerling zelf schrijft, geen keuzelijst: 34 in *Vocabulario*, 36 in *Gramática*. De drie grammatica-drills van deze unidad: **het imperfecto** (waar élke -ía-vorm een tilde draagt, en alleen ser, ir en ver onregelmatig zijn) · **indefinido of imperfecto**, gestuurd door de signaalwoorden un día / de repente tegenover siempre / todos los días · **comparar** met más/menos… que, tan… como en de vier eigen vormen mejor, peor, mayor, menor.
 - **§6 Lectura — «Carta de la abuela Rosario».** Een handgeschreven brief van de oudere generatie aan de jongere: precies de plaats waar het imperfecto (hoe het wás) en het indefinido (wat één keer gebeurde) elkaar raken, mét het antes/ahora-contrast. Nieuw genre.
 - **§7 Escucha — «Pódcast «Antes y ahora»».** Twee gasten vergelijken hun kindertijd met elkáár — dezelfde tijden, maar nu als discussie tussen leeftijdsgenoten, met comparativos. Zes treden, transcript pas ná de taken. Ander genre en andere inhoud dan de leestekst.
-- **Extra**-tabblad zonder «link volgt»: leerlingklare terugvalinhoud tot de bronnenlijst en de escape room van deze unidad er zijn.
+- **Extra**-tabblad zonder «link volgt»: leerlingklare terugvalinhoud tot de bronnenlijst van deze unidad er is.
 
 ## Wat nog niet af is
 

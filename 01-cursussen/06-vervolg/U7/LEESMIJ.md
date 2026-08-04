@@ -30,7 +30,7 @@ Paarse vervolgcursus (C6+), Unidad 7 — **de laatste unit (P3-capstone)**. Hier
 - **70 typvelden** waar de leerling zelf schrijft, geen keuzelijst: 34 in *Vocabulario*, 36 in *Gramática*. De drie grammatica-drills van deze unidad: **de imperativo** voor adviezen, inclusief de acht korte onregelmatige · **de imperativo mét pronombre**, waar de tilde de leerstof is (cuida + te → cuídate, maar haz + lo → hazlo) · **de conectores** porque, por eso, además en sin embargo, mét de valstrik dat «dus» nooit «luego» is.
 - **§6 Lectura — «Carta al director».** Een ingezonden brief over de bomen op de speelplaats: de natuurlijke plaats voor de conectores, want iemand bouwt hier stap voor stap een betoog op. De unit had al een tekst met tien tips (§5), dus bewust géén tweede lijstje. Nieuw genre.
 - **§7 Escucha — «En la consulta».** Mateo slaapt slecht en krijgt vier adviezen — eentje weigert hij. De imperativo mét pronombre in levend gebruik, en één moment van tegenspraak waar de leerling goed voor moet opletten. Zes treden, transcript pas ná de taken. Ander genre en andere inhoud dan de leestekst.
-- **Extra**-tabblad zonder «link volgt»: leerlingklare terugvalinhoud tot de bronnenlijst en de escape room van deze unidad er zijn.
+- **Extra**-tabblad zonder «link volgt»: leerlingklare terugvalinhoud tot de bronnenlijst van deze unidad er is.
 
 ## Wat nog niet af is
 
