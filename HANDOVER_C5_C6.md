@@ -136,6 +136,32 @@ Receptief→productief · **retrieval vóór herlezen** · **steun-afbouw** (mod
 6. **Kaart = échte geografie** (Natural Earth), **klikbaar** in HTML, met **vlaggen + landcodes**.
 7. QR's op print → naar de HTML-hub (niet rechtstreeks YouTube/PPTX).
 
+### 7bis · Audioscripts — waar ze staan (2026-08-04)
+
+Alle gesproken tekst van C5 en C6+ staat in **twee databronnen**, met hetzelfde
+`guion`-formaat (`{who, es, nl}`):
+
+| Bron | Wat | Aantal |
+|---|---|---|
+| `03-build/web/escucha_data.py` | het lange luisterfragment per unit (zesdelige begripsladder) | 17 |
+| `03-build/web/escucha_corta_data.py` | de korte audiotaken per unit (de `audiorow`-blokken met QR: microdictado, klankreeks, mini-dialoog, weerbericht, wegbeschrijving…) | 44 |
+
+- **Antwoordsleutels** zitten in het veld `clave` — die horen in het
+  docentendossier en de hub-zelfcorrectie, **nooit** op de leerlingpagina.
+- Het veld `etiqueta` bevat het etiket **letterlijk zoals het in de printunit
+  staat** («Audio 3.2 · Microdictado · 0:40»), zodat print en audio bij de
+  hosting-sweep één-op-één te matchen zijn.
+- Twee blokken hebben bewust **geen script en geen mp3**: de Rosalía-fragmenten
+  (`C5-U4-AUD-04`, `C6P-U1-AUD-03`). Bestaande muziek — extern afspelen, tekst
+  niet overnemen.
+- Renderen: `ELEVENLABS_API_KEY=… python3 03-build/web/gen_audio_elevenlabs.py C5 3`
+  (voegt lange + korte fragmenten samen; `--dry` toont wat er zou komen,
+  `--solo cortos` beperkt tot de korte taken). Het mp3-pad komt uit het
+  `audio`-veld van het fragment zelf, hetzelfde veld dat de hub gebruikt.
+- Enkele `nota`-velden melden een **mismatch met de gedrukte oefening** (o.a.
+  «zes zinnen» tegenover een rooster met vier rijen in C5 U1 en U4, en drie
+  tegenover vier steden in C5 U8). Bij een herbouw van die units mee rechtzetten.
+
 ---
 
 ## 8 · Build-commando's (samengevat)
