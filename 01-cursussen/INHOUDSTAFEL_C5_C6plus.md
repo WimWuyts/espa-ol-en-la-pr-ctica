@@ -1,4 +1,4 @@
-# Inhoudstafel · C5 U2–U8 en C6+ U2–U7
+# Inhoudstafel · C5 U2–U8 en C6+ U0–U7
 
 Werkdocument om (a) de **bronnenlijsten** per unit samen te stellen en (b) de **escape rooms**
 te ontwerpen. Alles hieronder komt uit de gebouwde cursus zelf, niet uit het geheugen: de
@@ -290,6 +290,64 @@ Spanje, Mexico, Colombia en Peru.
 ---
 
 # Deel 2 · C6+ (paars) — het zesde jaar, huidige cohorte
+
+> **Bronnenlijsten — stand van zaken.** U0 (63 links · 16 groepen) en U1
+> (12 links · 5 groepen) zijn ingevuld; **U2 t.e.m. U7 nog niet** — daar toont
+> het Extra-tabblad voorlopig leerlingklare terugvalinhoud. De onderwerpen
+> waarvoor links nodig zijn, staan per unit onderaan elk blok.
+> U1 is met twaalf links aan de magere kant tegenover de andere units.
+
+## C6+ U0 «¡Volvemos!» — parada **el mundo hispano** 🌍
+
+**Tarea final:** Tarjeta de reencuentro · **Vocabulario:** 69 woorden · **Print:** 48 blz.
+
+Geen heronderwijs maar een **diagnostische repaso**: de cohorte komt uit de oude
+cursus en we activeren de basis opnieuw. Enige unit met de kaart voluit.
+
+| § | Inhoud |
+|---|---|
+| §1 | Saludos y presentarse |
+| §2 | El presente — regulares · ser · de andere irregulares |
+| §3 | Género · artículos · número · adjetivos (concordancia) |
+| §4 | Países · nacionalidades · números |
+| T | Taller de lengua (la acentuación · los conectores) |
+| C | Cultura — el mundo hispano |
+| §5 · §6 | **Lectura** «El tablón de anuncios» · **Escucha** «El primer día de curso» |
+| ✓ · V | Repaso (semáforo) · Vocabulario |
+
+**Scope:** presente regelmatig + de zeven kern-onregelmatige (ser · estar · tener ·
+hacer · ir · dar · venir) · ser of estar · género · artículos · plural ·
+concordancia · países en nacionalidades · números.
+
+**Onderwerpen voor de bronnenlijst** — ✅ *ingevuld, 63 links in 16 groepen*
+
+---
+
+## C6+ U1 «El día a día» — parada **España** 🇪🇸
+
+**Tarea final:** Mi día a día · **Vocabulario:** 78 woorden · **Print:** 48 blz.
+
+| § | Inhoud |
+|---|---|
+| §1 | Los verbos reflexivos — incl. klinkerwisseling e→ie · o→ue · e→i |
+| §2 | Gustar — gusta/gustan + me · te · le · nos · les |
+| §3 | Ser of estar |
+| §4 | La hora |
+| T | Taller de lengua |
+| C | Cultura — el horario español |
+| §5 · §6 | **Lectura** «Un martes cualquiera» · **Escucha** |
+| ✓ · V | Repaso · Vocabulario |
+
+**Onderwerpen voor de bronnenlijst** — ⚠️ *ingevuld maar mager (12 links in 5 groepen);
+deze onderwerpen kunnen er nog bij*
+- `§1 · Los verbos reflexivos — la rutina diaria`
+- `§1b · El cambio de vocal en los reflexivos (e→ie · o→ue · e→i)`
+- `§2 · Gustar — y el porqué de gusta frente a gustan`
+- `§3 · Ser o estar — el contraste`
+- `§4 · La hora — ¿qué hora es? y ¿a qué hora?`
+- `Las rutinas y los momentos del día` · `Cultura — el horario español`
+
+---
 
 ## C6+ U2 «Aquí vivo» — parada **Cartagena** 🇨🇴
 
