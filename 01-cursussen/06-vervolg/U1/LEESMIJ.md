@@ -27,7 +27,7 @@ géén condicional, géén subjuntivo.
   **Ver solución** pas na een tweede poging.
 - **§5 Lectura** — «Un martes cualquiera», een blogpost van Marta uit Salamanca.
 - **§6 Escucha** — «Entrevista a un deportista», zwemmer Hugo over zijn dagindeling · zes treden, transcript pas ná de taken.
-- **Extra** — 12 bronnen in 5 groepen.
+- **Extra** — 19 bronnen in 7 groepen (ProfeDeELE · Más ProfeDeELE · Arche-ELE · My Daily Spanish), geordend zoals de unit zelf.
 
 ## Inhoud
 

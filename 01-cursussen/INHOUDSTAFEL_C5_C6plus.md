@@ -249,11 +249,9 @@ onderwerp in beide jaren tegenkomt.
 
 # Deel 2 · C6+ (paars) — het zesde jaar, huidige cohorte
 
-> **Bronnenlijsten — stand van zaken.** U0 (63 links · 16 groepen) en U1
-> (12 links · 5 groepen) zijn ingevuld; **U2 t.e.m. U7 nog niet** — daar toont
-> het Extra-tabblad voorlopig leerlingklare terugvalinhoud. De onderwerpen
-> waarvoor links nodig zijn, staan per unit onderaan elk blok.
-> U1 is met twaalf links aan de magere kant tegenover de andere units.
+> **Bronnenlijsten — compleet sinds 2026-08-04.** Alle acht de units hebben nu hun
+> eigen lijst: samen **140 links**. De terugvalinhoud is nergens nog nodig. Wat per
+> unit onderaan staat, is dus de *gerealiseerde* indeling.
 
 ## C6+ U0 «¡Volvemos!» — parada **el mundo hispano** 🌍
 
@@ -277,7 +275,7 @@ cursus en we activeren de basis opnieuw. Enige unit met de kaart voluit.
 hacer · ir · dar · venir) · ser of estar · género · artículos · plural ·
 concordancia · países en nacionalidades · números.
 
-**Onderwerpen voor de bronnenlijst** — ✅ *ingevuld, 63 links in 16 groepen*
+**Onderwerpen voor de bronnenlijst** — ✅ *ingevuld: 63 links in 16 groepen*
 
 ---
 
@@ -296,7 +294,7 @@ concordancia · países en nacionalidades · números.
 | §5 · §6 | **Lectura** «Un martes cualquiera» · **Escucha** |
 | ✓ · V | Repaso · Vocabulario |
 
-**Onderwerpen voor de bronnenlijst** — ⚠️ *ingevuld maar mager (12 links in 5 groepen);
+**Onderwerpen voor de bronnenlijst** — ✅ *ingevuld: 19 links in 7 groepen*
 deze onderwerpen kunnen er nog bij*
 - `§1 · Los verbos reflexivos — la rutina diaria`
 - `§1b · El cambio de vocal en los reflexivos (e→ie · o→ue · e→i)`
@@ -327,7 +325,7 @@ deze onderwerpen kunnen er nog bij*
 
 **Getypte drills:** hay of está(n) · estar + gerundio · lo/la/los/las
 
-**Onderwerpen voor de bronnenlijst**
+**Onderwerpen voor de bronnenlijst** — ✅ *ingevuld: 14 links in 6 groepen*
 - `§2 · Hay o está(n) + las preposiciones de lugar`
 - `§3 · Estar + gerundio — y los gerundios irregulares`
 - `§4 · Los pronombres lo / la / los / las`
@@ -361,13 +359,17 @@ deze onderwerpen kunnen er nog bij*
 
 **Getypte drills:** ir a + infinitivo · le/les · creo que & acabar de
 
-**Onderwerpen voor de bronnenlijst**
+**Onderwerpen voor de bronnenlijst** — ✅ *ingevuld: 8 links in 5 groepen*
 - `§2 · Ir a + infinitivo — el futuro próximo`
 - `§3 · Los pronombres le / les — el objeto indirecto`
 - `§4 · Creo que + indicativo — dar tu opinión`
 - `§4b · Acabar de + infinitivo`
 - `Los dispositivos y las redes sociales` · `Los verbos de comunicación`
 - `Hacer planes y quedar` · `Cultura — el español en internet`
+
+> **Geen bron gevonden voor:** *el móvil · las redes sociales · el español en internet.*
+> Op ProfeDeELE en Arche-ELE staat daarvoor niets dat specifiek genoeg is; een te brede
+> activiteit is bewust niet toegevoegd.
 
 ---
 
@@ -390,7 +392,7 @@ deze onderwerpen kunnen er nog bij*
 
 **Getypte drills:** haber + participio · los participios irregulares · por of para
 
-**Onderwerpen voor de bronnenlijst**
+**Onderwerpen voor de bronnenlijst** — ✅ *ingevuld: 8 links in 6 groepen*
 - `§2 · El pretérito perfecto compuesto`
 - `§2b · Los participios irregulares`
 - `§3 · Por y para`
@@ -400,6 +402,9 @@ deze onderwerpen kunnen er nog bij*
 
 > **Let op:** het perfecto en de participios komen ook in **C5 U8** voor. De C6+-versie heeft
 > er *por/para* bij; de C5-versie het *clima*.
+
+> **Geen bron gevonden voor:** *Atacama* en *Rapa Nui.* Het algemene reismateriaal is
+> bruikbaar, maar behandelt die bestemmingen niet rechtstreeks.
 
 ---
 
@@ -422,7 +427,7 @@ deze onderwerpen kunnen er nog bij*
 
 **Getypte drills:** el indefinido regular · los pretéritos fuertes · se lo / se la
 
-**Onderwerpen voor de bronnenlijst**
+**Onderwerpen voor de bronnenlijst** — ✅ *ingevuld: 12 links in 7 groepen*
 - `§2 · El pretérito indefinido — verbos regulares`
 - `§2b · Los pretéritos fuertes — ser, ir, tener, hacer, estar, decir, venir, poder, dar`
 - `§3 · Se lo, se la — dos pronombres juntos`
@@ -451,13 +456,17 @@ deze onderwerpen kunnen er nog bij*
 
 **Getypte drills:** el imperfecto · indefinido of imperfecto · comparar
 
-**Onderwerpen voor de bronnenlijst**
+**Onderwerpen voor de bronnenlijst** — ✅ *ingevuld: 8 links in 3 groepen*
 - `§2 · El pretérito imperfecto`
 - `§3 · Contraste — indefinido o imperfecto`
 - `§4 · Los comparativos — más/menos… que, tan… como, mejor, peor`
 - `§4b · La frase de relativo con «que»`
 - `La infancia y los juguetes` · `La escuela de antes` · `Antes y ahora`
 - `Cultura — la infancia en el mundo hispano`
+
+> **Geen bron gevonden voor:** *la frase de relativo con «que»* · *los juguetes* ·
+> *la escuela de antes.* De bronnen over het imperfecto en «antes y ahora» dekken de
+> context wel.
 
 ---
 
@@ -480,7 +489,7 @@ deze onderwerpen kunnen er nog bij*
 
 **Getypte drills:** el imperativo · el imperativo + pronombre (mét de tilde) · los conectores
 
-**Onderwerpen voor de bronnenlijst**
+**Onderwerpen voor de bronnenlijst** — ✅ *ingevuld: 8 links in 5 groepen*
 - `§2 · El imperativo afirmativo (tú)`
 - `§2b · El imperativo + pronombres — cuídate, recíclalo`
 - `§3 · Dar tu opinión — creo que, me parece que, (no) estoy de acuerdo`

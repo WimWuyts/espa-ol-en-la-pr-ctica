@@ -29,7 +29,7 @@ Paarse vervolgcursus (C6+), Unidad 2. Bouwt de A2-ruimte-motor: waar staat wat, 
 - **70 typvelden** waar de leerling zelf schrijft, geen keuzelijst: 34 in *Vocabulario*, 36 in *Gramática*. De drie grammatica-drills zijn **¿hay o está(n)?** (mét de tilde als deel van het antwoord), **estar + gerundio** (allebei de woorden, incl. leyendo/durmiendo/pidiendo/viendo) en **lo/la/los/las** (overeenkomst én plaats vóór het werkwoord).
 - **§7 Lectura — «Casa Azul»: dos reseñas.** Twee beoordelingen van dezelfde woning, één enthousiast en één kritisch: de leerling vergelijkt standpunten, niet alleen feiten. Nieuw tekstgenre naast het prikbord (U0) en de blog (U1).
 - **§8 Escucha — «Estoy perdido en Cartagena».** Sam belt Valen op voor de weg. Zes treden, transcript pas ná de taken. Ander genre en andere inhoud dan de leestekst: hier moet je een route volgen, niet een mening wegen.
-- **Extra**-tabblad zonder «link volgt»: leerlingklare terugvalinhoud tot de bronnenlijst van deze unidad er is.
+- **Extra** — 14 bronnen in 6 groepen (ProfeDeELE · Más ProfeDeELE · Arche-ELE), geordend zoals de unit zelf.
 
 ## Wat nog niet af is
 

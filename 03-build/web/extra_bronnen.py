@@ -708,42 +708,6 @@ BRONNEN[("C5", 8)] = [
     ]),
 ]
 
-BRONNEN[("C6+", 1)] = [
-    ("§1 · Los verbos reflexivos y la rutina", [
-        ("Arche-ELE", "Pronombres reflexivos · nivel A1 — la posición del pronombre",
-         "https://arche-ele.com/pronombres-reflexivos-1-nivel-a1"),
-        ("Arche-ELE", "La rutina — reflexieve werkwoorden in context",
-         "https://arche-ele.com/la-rutina-daily-routine-aprende-espanol-learn-spanish"),
-        ("ProfeDeELE", "Acciones habituales — dagelijkse handelingen",
-         "https://www.profedeele.es/actividad/acciones-habituales/"),
-    ]),
-    ("§2 · El verbo gustar", [
-        ("Arche-ELE", "Me gusta · gustar — me · te · le · nos · les",
-         "https://arche-ele.com/me-gusta-gustar-verbos-aprende-espanol"),
-        ("ProfeDeELE", "Me gustas tú — gusta tegenover gustan",
-         "https://www.profedeele.es/actividad/me-gustas-tu/"),
-        ("ProfeDeELE", "Gustos y preferencias — me gusta / no me gusta (download)",
-         "https://mas.profedeele.es/descarga-062"),
-    ]),
-    ("§3 · ¿ser o estar?", [
-        ("Arche-ELE", "Ser y estar — het verschil, cognitief uitgelegd",
-         "https://arche-ele.com/ser-y-estar-gramatica-cognitiva-ele-diferencia"),
-        ("My Daily Spanish", "Ser of estar? (video)",
-         "https://www.youtube.com/watch?v=X-7k7R3Ca9U"),
-        ("ProfeDeELE", "Haber · estar · tener — plaats en toestand",
-         "https://www.profedeele.es/actividad/haber-estar-tener/"),
-    ]),
-    ("§4 · La hora", [
-        ("ProfeDeELE", "La hora — es la una · son las… · y cuarto · y media · menos cuarto",
-         "https://www.profedeele.es/actividad/la-hora/"),
-        ("Arche-ELE", "La hora — ¿qué hora es? · ¿tienes hora?",
-         "https://arche-ele.com/la-hora-time-que-hora-es-tienes-hora-ele"),
-    ]),
-    ("Las comidas y la alimentación", [
-        ("Arche-ELE", "La comida — woordenschat",
-         "https://arche-ele.com/la-comida-vocabulario-aprende-espanol-ele"),
-    ]),
-]
 
 
 BRONNEN[("C6+", 0)] = [
@@ -1013,3 +977,264 @@ if __name__ == "__main__":
         print("%s U%d — %d onderwerpen, %d bronnen" % (c, u, len(g), sum(len(v) for _t, v in g)))
         alle = [x[2] for _t, v in g for x in v]
         print("   unieke links: %d van %d" % (len(set(alle)), len(alle)))
+
+# ══ C6+ · bronnen per unit (auteur 2026-08-04) ═══════════════════════════════
+# Aangeleverd per onderwerp. Waar de auteur dezelfde pagina onder twee
+# onderwerpen zette, staat ze hier één keer — onder het onderwerp waar ze het
+# meest bij helpt, met het tweede gebruik in de titel. Zo blijft de lijst
+# leesbaar en klikt de leerling nooit twee keer hetzelfde aan.
+
+BRONNEN[("C6+", 1)] = [
+    ("§1 · Los verbos reflexivos y la rutina", [
+        ("Arche-ELE", "Pronombres reflexivos · nivel A1 — la posición del pronombre",
+         "https://arche-ele.com/pronombres-reflexivos-1-nivel-a1"),
+        ("Arche-ELE", "La rutina — reflexieve werkwoorden in context",
+         "https://arche-ele.com/la-rutina-daily-routine-aprende-espanol-learn-spanish"),
+        ("ProfeDeELE", "Acciones habituales — dagelijkse handelingen",
+         "https://www.profedeele.es/actividad/acciones-habituales/"),
+        ("ProfeDeELE", "Un día normal de Mr. Bean — de rutina in beeld",
+         "https://www.profedeele.es/actividad/un-dia-normal-de-mr-bean/"),
+    ]),
+    ("§1b · El cambio de vocal en el presente (e→ie · o→ue · e→i)", [
+        ("Arche-ELE", "Presente irregular — el cambio de vocal en la raíz",
+         "https://arche-ele.com/presente-irregular-indicativo-verbos-espanol"),
+        ("ProfeDeELE", "El verbo en presente irregular",
+         "https://www.profedeele.es/actividad/verbo-presente-irregular/"),
+    ]),
+    ("§2 · El verbo gustar", [
+        ("Arche-ELE", "Me gusta · gustar — me · te · le · nos · les",
+         "https://arche-ele.com/me-gusta-gustar-verbos-aprende-espanol"),
+        ("ProfeDeELE", "Me gusta / no me gusta — gustos y preferencias",
+         "https://www.profedeele.es/actividad/me-gusta-no-me-gusta-gustos/"),
+        ("ProfeDeELE", "El verbo gustar referido a personas",
+         "https://www.profedeele.es/actividad/verbo-gustar-personas/"),
+        ("ProfeDeELE", "Me gustas tú — gusta tegenover gustan",
+         "https://www.profedeele.es/actividad/me-gustas-tu/"),
+        ("Más ProfeDeELE", "Gustos y preferencias — me gusta / no me gusta (download)",
+         "https://mas.profedeele.es/descarga-062"),
+    ]),
+    ("§3 · ¿Ser o estar?", [
+        ("Arche-ELE", "Ser y estar — het verschil, cognitief uitgelegd",
+         "https://arche-ele.com/ser-y-estar-gramatica-cognitiva-ele-diferencia"),
+        ("Arche-ELE", "Describir lugares con ser, estar y hay",
+         "https://arche-ele.com/describir-lugares-con-ser-estar-hay-learn-spanish"),
+        ("ProfeDeELE", "Haber · estar · tener — plaats en toestand",
+         "https://www.profedeele.es/actividad/haber-estar-tener/"),
+        ("My Daily Spanish", "Ser of estar? (video)",
+         "https://www.youtube.com/watch?v=X-7k7R3Ca9U"),
+    ]),
+    ("§4 · La hora", [
+        ("ProfeDeELE", "La hora — es la una · son las… · y cuarto · y media",
+         "https://www.profedeele.es/actividad/la-hora/"),
+        ("Arche-ELE", "La hora — ¿qué hora es? · ¿tienes hora?",
+         "https://arche-ele.com/la-hora-time-que-hora-es-tienes-hora-ele"),
+    ]),
+    ("Las rutinas · días, meses y estaciones", [
+        ("ProfeDeELE", "Días, meses y estaciones",
+         "https://www.profedeele.es/actividad/dias-meses-y-estaciones/"),
+    ]),
+    ("Las comidas y la alimentación", [
+        ("Arche-ELE", "La comida — woordenschat",
+         "https://arche-ele.com/la-comida-vocabulario-aprende-espanol-ele"),
+    ]),
+]
+
+BRONNEN[("C6+", 2)] = [
+    ("§1 · La casa y los muebles", [
+        ("Arche-ELE", "La casa — vocabulario",
+         "https://arche-ele.com/la-casa-vocabulario-aprende-espanol"),
+        ("Más ProfeDeELE", "La casa y los muebles (download)",
+         "https://mas.profedeele.es/descarga-63"),
+    ]),
+    ("§2 · Hay o está(n) + las preposiciones de lugar", [
+        ("ProfeDeELE", "Haber · estar · tener — bepaald tegenover onbepaald",
+         "https://www.profedeele.es/actividad/haber-estar-tener/"),
+        ("Arche-ELE", "Describir lugares con ser, estar y hay",
+         "https://arche-ele.com/describir-lugares-con-ser-estar-hay-learn-spanish"),
+        ("ProfeDeELE", "Preposiciones y adverbios de lugar",
+         "https://www.profedeele.es/actividad/preposiciones-adverbios-lugar/"),
+        ("Arche-ELE", "Preposiciones de lugar — ¿dónde está?",
+         "https://arche-ele.com/preposiciones-de-lugar-donde-esta-nivela1-ele"),
+    ]),
+    ("§3 · Estar + gerundio", [
+        ("Arche-ELE", "Estar + gerundio — perífrasis de gerundio",
+         "https://arche-ele.com/estar-gerundio-perifrasis-verbales-de-gerundio"),
+        ("ProfeDeELE", "Estar, seguir y llevar + gerundio",
+         "https://www.profedeele.es/actividad/perifrasis-verbales-aspectuales/"),
+        ("ProfeDeELE", "Servicio técnico — estar + gerundio in context (video)",
+         "https://www.profedeele.es/actividad/servicio-tecnico/"),
+    ]),
+    ("§4 · Los pronombres lo / la / los / las", [
+        ("Arche-ELE", "El objeto directo — lo · la · los · las",
+         "https://arche-ele.com/el-objeto-directo-od"),
+    ]),
+    ("§5 · El barrio, la ciudad y el transporte", [
+        ("Arche-ELE", "La ciudad — vocabulario",
+         "https://arche-ele.com/la-ciudad-the-city-vocabulario-aprende-espanol"),
+        ("Arche-ELE", "Los medios de transporte — vocabulario",
+         "https://arche-ele.com/los-medios-de-transporte-vocabulario-ele"),
+        ("Más ProfeDeELE", "Transporte y desplazamientos (download)",
+         "https://mas.profedeele.es/descarga-002"),
+    ]),
+    ("Repaso integrado · nivel A2", [
+        ("Arche-ELE", "Nivel A2 — casa, gerundio y pronombres samen",
+         "https://arche-ele.com/nivel-a2-aprende-espanol-learnspanish-waystage"),
+    ]),
+]
+
+BRONNEN[("C6+", 3)] = [
+    ("§2 · Ir a + infinitivo — el futuro próximo", [
+        ("Arche-ELE", "El verbo ir · ir a + infinitivo — ook om plannen te maken",
+         "https://arche-ele.com/el-verbo-ir-ir-a-infinitivo-ele-actividades"),
+        ("Arche-ELE", "Vacío de información — plannen maken in duo (Genially)",
+         "https://arche-ele.com/vacio-de-informacion-group-activities-genially"),
+        ("ProfeDeELE", "Perífrasis aspectuales — ir a, y ook acabar de (§4b)",
+         "https://www.profedeele.es/actividad/perifrasis-verbales-aspectuales/"),
+        ("ProfeDeELE", "Servicio técnico — perífrasis in context, ook §4b (video)",
+         "https://www.profedeele.es/actividad/servicio-tecnico/"),
+    ]),
+    ("§3 · Le / les — el objeto indirecto", [
+        ("Arche-ELE", "El objeto indirecto — le · les",
+         "https://arche-ele.com/el-objeto-indirecto-pronombres-aprender-espanol"),
+    ]),
+    ("§4 · Dar una opinión y los conectores", [
+        ("ProfeDeELE", "Marcadores discursivos y conectores",
+         "https://www.profedeele.es/actividad/marcadores-discursivos-conectores/"),
+    ]),
+    ("§4b · Acabar de + infinitivo", [
+        ("Arche-ELE", "Perífrasis verbales — actividades interactivas",
+         "https://arche-ele.com/perifrasis-verbales-actividades-interactivas-ele"),
+    ]),
+    ("Repaso integrado · nivel A2", [
+        ("Arche-ELE", "Nivel A2 — ir a, objeto indirecto y perífrasis samen",
+         "https://arche-ele.com/nivel-a2-aprende-espanol-learnspanish-waystage"),
+    ]),
+]
+
+BRONNEN[("C6+", 4)] = [
+    ("§2 · El pretérito perfecto compuesto", [
+        ("Arche-ELE", "El pretérito perfecto — ook de participios irregulares (§2b)",
+         "https://arche-ele.com/el-preterito-perfecto-pasados-aprende-espanol"),
+        ("ProfeDeELE", "Clara — cortometraje met pasados, ook ya en todavía no",
+         "https://www.profedeele.es/actividad/clara-corto-navidad-pasados-precariedad/"),
+    ]),
+    ("§2b · Los participios regulares e irregulares", [
+        ("ProfeDeELE", "Participios regulares e irregulares",
+         "https://www.profedeele.es/actividad/participios-regulares-irregulares/"),
+    ]),
+    ("§3 · Por y para", [
+        ("Arche-ELE", "Por o para — het verschil, interactief",
+         "https://arche-ele.com/por-o-para-diferencia-ele-actividades-interactivas"),
+    ]),
+    ("El transporte y el alojamiento", [
+        ("Arche-ELE", "Los medios de transporte — vocabulario",
+         "https://arche-ele.com/los-medios-de-transporte-vocabulario-ele"),
+        ("Más ProfeDeELE", "Transporte y desplazamientos (download)",
+         "https://mas.profedeele.es/descarga-002"),
+    ]),
+    ("El viaje — experiencias y desplazamientos", [
+        ("Arche-ELE", "Nivel A2 — reizen en ervaringen",
+         "https://arche-ele.com/nivel-a2-aprende-espanol-learnspanish-waystage"),
+    ]),
+    ("Cultura · El Camino de Santiago", [
+        ("Más ProfeDeELE", "El Camino de Santiago (download)",
+         "https://mas.profedeele.es/descarga-142"),
+    ]),
+]
+
+BRONNEN[("C6+", 5)] = [
+    ("§2 · El pretérito indefinido — los verbos regulares", [
+        ("Arche-ELE", "El pretérito indefinido — verbos regulares",
+         "https://arche-ele.com/el-preterito-indefinido-verbos-regulares-ele"),
+        ("ProfeDeELE", "El vendedor de humo — indefinido in een verhaal",
+         "https://www.profedeele.es/actividad/vendedor-de-humo-contraste-pasados/"),
+    ]),
+    ("§2b · Los pretéritos fuertes (irregulares)", [
+        ("Arche-ELE", "Indefinido — verbos irregulares",
+         "https://arche-ele.com/indefinido-verbos-irregulares-pasado-irregular-ele"),
+        ("Arche-ELE", "Canciones ELE — onregelmatige vormen in liedjes",
+         "https://arche-ele.com/canciones-ele-aprende-espanol-canta-y-aprende"),
+    ]),
+    ("§3 · Se lo, se la — dos pronombres juntos", [
+        ("Arche-ELE", "Combinación de pronombres",
+         "https://arche-ele.com/combinacion-de-pronombres-ele-actividades"),
+        ("Arche-ELE", "Repaso — el objeto directo",
+         "https://arche-ele.com/el-objeto-directo-od"),
+        ("Arche-ELE", "Repaso — el objeto indirecto",
+         "https://arche-ele.com/el-objeto-indirecto-pronombres-aprender-espanol"),
+    ]),
+    ("§4 · Contar una historia — los conectores del relato", [
+        ("ProfeDeELE", "La verdadera historia de Paco Pil — een verhaal opbouwen",
+         "https://www.profedeele.es/actividad/la-verdadera-historia-paco-pil/"),
+        ("ProfeDeELE", "Marcadores discursivos y conectores",
+         "https://www.profedeele.es/actividad/marcadores-discursivos-conectores/"),
+    ]),
+    ("La biografía y los logros", [
+        ("ProfeDeELE", "Mujeres con historia — biografieën",
+         "https://www.profedeele.es/actividad/mujeres-con-historia/"),
+    ]),
+    ("Las leyendas y los relatos", [
+        ("ProfeDeELE", "El eclipse — microrrelato van Augusto Monterroso",
+         "https://www.profedeele.es/actividad/el-eclipse-microrrelato-augusto-monterroso/"),
+    ]),
+    ("Repaso integrado · nivel A2", [
+        ("Arche-ELE", "Nivel A2 — indefinido en pronombres samen",
+         "https://arche-ele.com/nivel-a2-aprende-espanol-learnspanish-waystage"),
+    ]),
+]
+
+BRONNEN[("C6+", 6)] = [
+    ("§2 · El pretérito imperfecto", [
+        ("Arche-ELE", "El imperfecto — ook voor «antes y ahora»",
+         "https://arche-ele.com/imperfecto-pasados-ele-aprender-espanol-es-divertido"),
+        ("ProfeDeELE", "Un día en el parque — het imperfecto in een verhaal, ook la infancia",
+         "https://www.profedeele.es/actividad/un-dia-en-el-parque/"),
+    ]),
+    ("§3 · Contraste — indefinido o imperfecto", [
+        ("Arche-ELE", "¿Indefinido o imperfecto?",
+         "https://arche-ele.com/indefinido-o-imperfecto"),
+        ("ProfeDeELE", "Hablar del pasado — contraste de pasados",
+         "https://www.profedeele.es/actividad/hablar-del-pasado-contraste-de-pasados/"),
+        ("ProfeDeELE", "Caperucita Roja — het contrast in een sprookje",
+         "https://www.profedeele.es/actividad/caperucita-roja-contraste-pasados/"),
+        ("ProfeDeELE", "La mano — pasados in een animatiefilm",
+         "https://www.profedeele.es/actividad/actividad-con-pasados-la-mano/"),
+    ]),
+    ("§4 · Los comparativos", [
+        ("ProfeDeELE", "Oraciones comparativas",
+         "https://www.profedeele.es/actividad/oraciones-comparativas/"),
+        ("Arche-ELE", "Nivel A2 — comparativo de superioridad, inferioridad e igualdad",
+         "https://arche-ele.com/nivel-a2-aprende-espanol-learnspanish-waystage"),
+    ]),
+]
+
+BRONNEN[("C6+", 7)] = [
+    ("§2 · El imperativo afirmativo (tú)", [
+        ("Arche-ELE", "El imperativo afirmativo — tú · usted · vosotros · ustedes, "
+                      "ook voor consejos sobre el medio ambiente",
+         "https://arche-ele.com/el-imperativo-afirmativo-tu-usted-vosotros-ustedes"),
+        ("Arche-ELE", "Canciones ELE — de imperativo in liedjes",
+         "https://arche-ele.com/canciones-ele-aprende-espanol-canta-y-aprende"),
+    ]),
+    ("§2b · El imperativo + pronombres (cuídate · recíclalo)", [
+        ("Arche-ELE", "Repaso — el objeto directo",
+         "https://arche-ele.com/el-objeto-directo-od"),
+        ("Arche-ELE", "Nivel A2 — imperativo en pronombres samen",
+         "https://arche-ele.com/nivel-a2-aprende-espanol-learnspanish-waystage"),
+    ]),
+    ("§3 · Dar tu opinión · §4 · Los conectores", [
+        ("ProfeDeELE", "Marcadores discursivos y conectores — mening geven, "
+                       "toevoegen, contrasteren en besluiten",
+         "https://www.profedeele.es/actividad/marcadores-discursivos-conectores/"),
+    ]),
+    ("La salud y el cuerpo", [
+        ("Arche-ELE", "Salud y enfermedades · nivel A2",
+         "https://arche-ele.com/salud-y-enfermedades-en-espanol-nivela2"),
+        ("Arche-ELE", "El cuerpo humano — vocabulario",
+         "https://arche-ele.com/el-cuerpo-humano"),
+    ]),
+    ("El medio ambiente y el reciclaje", [
+        ("Arche-ELE", "El medio ambiente — vocabulario y actividades",
+         "https://arche-ele.com/el-medio-ambiente-vocabulario-actividades"),
+    ]),
+]
