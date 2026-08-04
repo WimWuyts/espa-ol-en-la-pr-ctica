@@ -59,6 +59,21 @@
 .escta:focus-visible,.escbtn:focus-visible,.escclave:focus-visible,.esctrsay:focus-visible{outline:3px solid var(--gd);outline-offset:2px}
 .escconteo{margin:4px 0 0}
 
+/* ── de korte audiotaken van de unit (escucha_corta_data.py) ─────────────────
+   Zelfde speler en transcript als het grote luisterblok, maar zonder de zes
+   treden: dit zijn microdictados en mini-dialogen van 30-60 s. Het transcript
+   gaat pas open na twee keer luisteren — anders leest de leerling mee. */
+.audcortos{margin-top:16px}
+.audit{border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:0 0 12px;background:var(--card)}
+.audit:last-child{margin-bottom:0}
+.audcab{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:5px}
+.audet{font-size:11px;font-weight:700;color:#fff;background:var(--g);border-radius:999px;padding:3px 10px}
+.audsec{font-size:11px;color:var(--mut);font-weight:600}
+.audit h4{font-family:var(--disp);font-size:16px;margin:0 0 4px;color:var(--gd)}
+.audtarea{margin:0 0 9px}
+.audveces{color:var(--mut);font-size:12px}
+.audtr{margin-top:2px}
+
 .lectipo{font-size:11px;font-weight:700;color:var(--gd);background:var(--gt);border-radius:999px;padding:3px 9px}
 .lecficha{display:flex;gap:14px;flex-wrap:wrap;background:var(--gt);border-radius:10px;padding:8px 12px;margin:8px 0 14px;font-size:12px}
 .lecficha b{display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--gd)}
@@ -920,6 +935,74 @@ function buildEscucha(id,cfg){
  if(P.modo==='grabar'&&typeof makeRecorder==='function')
    makeRecorder(id+'_rec',{title:'Tu respuesta hablada',desc:P.prompt||'',items:[{text:P.prompt||'',cue:'graba tu respuesta'}]});
 }
+// ── buildAudioCortos — de korte audiotaken van dezelfde unit ────────────────
+// Het grote luisterblok hierboven is één fragment met zes treden. Daarnaast
+// heeft elke unit kortere audiotaken (microdictado, klankreeks, mini-dialoog,
+// weerbericht, wegbeschrijving) die in print als QR-kaart staan. Die krijgen
+// hier hun speler en hun transcript.
+//
+// Dezelfde afspraak als bij het grote blok: het transcript blijft dicht tot de
+// leerling twee keer geluisterd heeft. Meelezen bij de eerste beurt is geen
+// luisteren meer. De antwoordsleutel staat hier NIET — die hoort in het
+// docentendossier (CLAUDE.md 14).
+//
+// Het blok maakt zijn eigen kaart aan, direct na het grote luisterblok, zodat
+// de unit-generatoren geen extra container in hun HTML nodig hebben.
+function buildAudioCortos(idEscucha,cfg){
+ const ancla=document.getElementById(idEscucha);if(!ancla)return;
+ const frags=(cfg.fragmentos||[]).filter(f=>f.guion&&f.guion.length);
+ if(!frags.length)return;
+ const caja=document.createElement('div');
+ caja.className='card ex audcortos';caja.id=idEscucha+'_cortos';
+ caja.innerHTML='<div class="exhead"><h3>🎧 Los otros audios de la unidad</h3>'+
+   '<span class="escfuente">'+frags.length+(frags.length===1?' fragmento':' fragmentos')+'</span></div>'+
+   '<p class="desc">De korte audiotaken uit het boek — dezelfde die op papier achter een QR-code staan. '+
+   'Luister <b>twee keer</b> voor je het transcript opent.</p><div class="audlista"></div>';
+ ancla.parentNode.insertBefore(caja,ancla.nextSibling);
+ const lista=caja.querySelector('.audlista');
+ frags.forEach((f,n)=>{
+   const it=document.createElement('div');it.className='audit';
+   const idt=idEscucha+'_c'+n;
+   it.innerHTML=
+     '<div class="audcab"><span class="audet">'+exEsc(f.etiqueta||'')+'</span>'+
+       '<span class="audsec">'+exEsc(f.seccion||'')+'</span></div>'+
+     '<h4>'+exEsc(f.titulo||'')+'</h4>'+
+     '<p class="desc audtarea">'+exEsc(f.tarea||'')+'</p>'+
+     '<div class="escplay">'+
+       '<button class="escbtn audplay" type="button">▶ Escuchar</button>'+
+       '<button class="escbtn escbtn-stop audotra" type="button">↺ Otra vez</button>'+
+       '<span class="escfuente audfuente" role="status" aria-live="polite"></span>'+
+       '<span class="desc audveces">0 × geluisterd</span>'+
+     '</div>'+
+     '<button class="escbtn esctrbtn audtr" type="button" disabled '+
+       'aria-controls="'+idt+'_tr">🔒 Ver transcripción</button>'+
+     '<div class="esctrbody" id="'+idt+'_tr" hidden></div>';
+   lista.appendChild(it);
+   const q=s=>it.querySelector(s);
+   const fuente=q('.audfuente'),btn=q('.audplay'),tr=q('.audtr'),body=q('#'+idt+'_tr');
+   let veces=0,sonando=false;
+   const player=escReproductor(f,(modo,activo)=>{
+     fuente.textContent=modo==='mp3'?'audio grabado':'voz del navegador';
+     btn.textContent=activo?'⏹ Parar':'▶ Escuchar';
+     if(!activo)sonando=false;});
+   fuente.textContent=f.audio?'audio grabado':'voz del navegador';
+   function cuenta(){veces++;q('.audveces').textContent=veces+' × geluisterd';
+     if(veces>=2){tr.disabled=false;tr.textContent='📄 Ver transcripción';}}
+   btn.onclick=()=>{if(sonando){player.parar();sonando=false;}
+     else{player.reproducir();sonando=true;cuenta();}};
+   q('.audotra').onclick=()=>{player.parar();player.reproducir();sonando=true;cuenta();};
+   tr.onclick=()=>{
+     if(!body.dataset.hecho){body.dataset.hecho='1';
+       f.guion.forEach((g,i)=>{const r=document.createElement('div');r.className='esctrl';
+         r.innerHTML='<button class="esctrsay" type="button" aria-label="Regel '+(i+1)+' opnieuw horen">🔊</button>'+
+           '<div><b class="esctrwho">'+exEsc(g.who||'')+'</b><span class="esctres">'+exEsc(g.es)+'</span>'+
+           (g.nl?'<span class="esctrnl">'+exEsc(g.nl)+'</span>':'')+'</div>';
+         r.querySelector('.esctrsay').onclick=()=>player.linea(i);body.appendChild(r);});
+       body.insertAdjacentHTML('afterbegin','<button class="otra audnlbtn" type="button">🇳🇱 vertaling aan/uit</button>');
+       body.querySelector('.audnlbtn').onclick=()=>body.classList.toggle('sinnl');}
+     body.hidden=!body.hidden;};
+ });
+}
 
 function lecTexto(bloques){let h='';
  bloques.forEach(b=>{const soort=b[0],c=b[1];
@@ -1013,6 +1096,7 @@ function buildLectura(id,cfg){
    $('.escconteo').textContent=n+' palabra'+(n===1?'':'s');});
  const bm=$('.lecmod');
  if(bm)bm.onclick=()=>{const m=$('.lecmodelo');m.hidden=!m.hidden;};
+
 }
 
 
@@ -1253,6 +1337,7 @@ function buildGramType(){
 }
 buildGramType();
 buildEscucha("esc_u1",{"title": "El primer día en el instituto", "audio": "audio/C5_U1.mp3", "expectDetalle": 5, "situacion": {"lugar": "El pasillo del IES Cervantes, Madrid", "quien": "Álex (de Madrid) y Sam, un alumno nuevo de Bélgica", "que": "Se conocen y se hacen preguntas", "claves": ["¿cómo te llamas?", "¿de dónde eres?", "¿cuántos años tienes?"]}, "guion": [{"who": "Álex", "es": "¡Hola! Tú eres nuevo, ¿verdad? Yo soy Álex.", "nl": "Hallo! Jij bent nieuw, hè? Ik ben Álex."}, {"who": "Sam", "es": "Sí, soy nuevo. Me llamo Sam.", "nl": "Ja, ik ben nieuw. Ik heet Sam."}, {"who": "Álex", "es": "¿Cómo se escribe? ¿Con ce o con ese?", "nl": "Hoe schrijf je dat? Met een c of met een s?"}, {"who": "Sam", "es": "Con ese: ese, a, eme.", "nl": "Met een s: s, a, m."}, {"who": "Álex", "es": "Vale. ¿Y de dónde eres, Sam?", "nl": "Oké. En waar kom jij vandaan, Sam?"}, {"who": "Sam", "es": "Soy de Bélgica, de Amberes. Soy belga.", "nl": "Ik kom uit België, uit Antwerpen. Ik ben Belg."}, {"who": "Álex", "es": "¡Qué bien! ¿Y cuántos años tienes?", "nl": "Wat leuk! En hoe oud ben je?"}, {"who": "Sam", "es": "Tengo quince años. ¿Y tú?", "nl": "Ik ben vijftien. En jij?"}, {"who": "Álex", "es": "Yo tengo dieciséis. Estudio francés y tú, ¿qué estudias?", "nl": "Ik ben zestien. Ik studeer Frans, en jij, wat studeer je?"}, {"who": "Sam", "es": "Estudio español, claro. Y también inglés.", "nl": "Spaans natuurlijk. En ook Engels."}, {"who": "Álex", "es": "Oye, ¿tienes hermanos?", "nl": "Zeg, heb je broers of zussen?"}, {"who": "Sam", "es": "Tengo una hermana. Se llama Anna y tiene doce años.", "nl": "Ik heb een zus. Ze heet Anna en ze is twaalf."}], "global": {"q": "¿Qué hacen Álex y Sam?", "opts": ["Se presentan y se hacen preguntas", "Hablan de un examen", "Compran material escolar"], "ans": "Se presentan y se hacen preguntas"}, "detalle": [{"q": "¿Cómo se escribe el nombre de Sam?", "opts": ["Con ese", "Con ce", "Con zeta"], "ans": "Con ese", "why": "«Con ese: ese, a, eme»"}, {"q": "¿De dónde es Sam?", "opts": ["De Amberes, Bélgica", "De Madrid", "De Sevilla"], "ans": "De Amberes, Bélgica", "why": "«Soy de Bélgica, de Amberes»"}, {"q": "¿Cuántos años tiene Sam?", "opts": ["15", "16", "12"], "ans": "15", "why": "«Tengo quince años»"}, {"q": "¿Qué lengua estudia Álex?", "opts": ["Francés", "Alemán", "Italiano"], "ans": "Francés", "why": "«Estudio francés»"}, {"q": "¿Cuántos años tiene la hermana de Sam?", "opts": ["12", "15", "16"], "ans": "12", "why": "«tiene doce años»"}], "vf": [{"q": "Álex tiene dieciséis años.", "ans": true, "prueba": "yo tengo dieciséis"}, {"q": "Sam estudia alemán.", "ans": false, "prueba": "estudio español, claro"}, {"q": "Sam tiene una hermana.", "ans": true, "prueba": "tengo una hermana"}], "produccion": {"prompt": "Álex te pregunta a ti: «¿Cómo te llamas, de dónde eres y cuántos años tienes?» Contesta en tres frases y añade una pregunta para él.", "modo": "escribir", "min": 3, "modelo": "Me llamo… Soy de… Tengo… años. Y tú, ¿…?"}});
+buildAudioCortos("esc_u1",{"fragmentos": [{"etiqueta": "Audio 1.1 · Datos · 0:55", "seccion": "§1 · Tus datos personales", "titulo": "Cuatro personas, un dato que falta", "tarea": "Vier korte voorstellingen. Elke persoon vergeet één gegeven — noteer welk.", "audio": "audio/C5_U1_01.mp3", "guion": [{"who": "Narradora", "es": "Cuatro personas se presentan. ¿Qué dato falta?", "nl": "Vier personen stellen zich voor. Welk gegeven ontbreekt?"}, {"who": "Narradora", "es": "Número uno.", "nl": "Nummer één."}, {"who": "Marta", "es": "Hola, me llamo Marta. Tengo quince años y vivo en Madrid.", "nl": "Hallo, ik heet Marta. Ik ben vijftien en ik woon in Madrid."}, {"who": "Narradora", "es": "Número dos.", "nl": "Nummer twee."}, {"who": "Andrés", "es": "Buenas. Soy Andrés, soy de Colombia y vivo en Cartagena.", "nl": "Hoi. Ik ben Andrés, ik kom uit Colombia en ik woon in Cartagena."}, {"who": "Narradora", "es": "Número tres.", "nl": "Nummer drie."}, {"who": "Yuki", "es": "Hola. Me llamo Yuki, tengo diecisiete años y hablo japonés y español.", "nl": "Hallo. Ik heet Yuki, ik ben zeventien en ik spreek Japans en Spaans."}, {"who": "Narradora", "es": "Número cuatro.", "nl": "Nummer vier."}, {"who": "Tom", "es": "¡Hola! Soy Tom, soy de Bélgica y vivo en Gante.", "nl": "Hallo! Ik ben Tom, ik kom uit België en ik woon in Gent."}]}, {"etiqueta": "Audio 2.1 · Ser · 0:45", "seccion": "§2 · El verbo SER + los pronombres", "titulo": "Seis frases con «ser» — ¿qué persona?", "tarea": "Kruis per zin aan welke persoon je hoort.", "audio": "audio/C5_U1_02.mp3", "guion": [{"who": "Narradora", "es": "Seis frases. ¿Qué persona oyes?", "nl": "Zes zinnen. Welke persoon hoor je?"}, {"who": "Narradora", "es": "Uno.", "nl": "Eén."}, {"who": "Voz", "es": "Soy de Bélgica.", "nl": "Ik kom uit België."}, {"who": "Narradora", "es": "Dos.", "nl": "Twee."}, {"who": "Voz", "es": "Marta es española.", "nl": "Marta is Spaans."}, {"who": "Narradora", "es": "Tres.", "nl": "Drie."}, {"who": "Voz", "es": "Somos estudiantes.", "nl": "Wij zijn studenten."}, {"who": "Narradora", "es": "Cuatro.", "nl": "Vier."}, {"who": "Voz", "es": "¿Eres de Madrid?", "nl": "Kom jij uit Madrid?"}, {"who": "Narradora", "es": "Cinco.", "nl": "Vijf."}, {"who": "Voz", "es": "Mis primos son de Perú.", "nl": "Mijn neven komen uit Peru."}, {"who": "Narradora", "es": "Seis.", "nl": "Zes."}, {"who": "Voz", "es": "Soy alumna de cuarto.", "nl": "Ik ben leerlinge van het vierde jaar."}]}, {"etiqueta": "Audio 3.2 · Microdictado · 0:40", "seccion": "§3 · El presente regular", "titulo": "Microdictado — tres frases en presente", "tarea": "Reconstrueer de drie zinnen; maak daarna één eigen variant.", "audio": "audio/C5_U1_03.mp3", "guion": [{"who": "Narradora", "es": "Microdictado. Tres frases, cada una dos veces.", "nl": "Microdictee. Drie zinnen, elk twee keer."}, {"who": "Narradora", "es": "Número uno.", "nl": "Nummer 1."}, {"who": "Narradora", "es": "Hablo neerlandés y un poco de español.", "nl": "Ik spreek Nederlands en een beetje Spaans."}, {"who": "Narradora", "es": "Hablo neerlandés y un poco de español.", "nl": "Ik spreek Nederlands en een beetje Spaans."}, {"who": "Narradora", "es": "Número dos.", "nl": "Nummer 2."}, {"who": "Narradora", "es": "Mi hermana estudia en Madrid.", "nl": "Mijn zus studeert in Madrid."}, {"who": "Narradora", "es": "Mi hermana estudia en Madrid.", "nl": "Mijn zus studeert in Madrid."}, {"who": "Narradora", "es": "Número tres.", "nl": "Nummer 3."}, {"who": "Narradora", "es": "Vivimos en una ciudad pequeña.", "nl": "Wij wonen in een kleine stad."}, {"who": "Narradora", "es": "Vivimos en una ciudad pequeña.", "nl": "Wij wonen in een kleine stad."}]}]});
 buildLectura("lec_u1",{"titulo": "Busco un compi de intercambio", "tipo": "perfil (app de intercambio lingüístico)", "emisor": "Álex, un chico de Madrid", "receptor": "Alumnos de español de toda Europa", "objetivo": "Encontrar a alguien para hablar español y neerlandés", "prediccion": {"q": "Kijk eerst alleen naar de kopjes, de vlaggen en de getallen. Wat voor tekst is dit?", "opts": ["Een profiel om iemand te leren kennen", "Een treinticket", "Een menukaart"], "ans": "Een profiel om iemand te leren kennen"}, "texto": [["titulo", "BUSCO COMPI DE INTERCAMBIO 🇪🇸 ↔ 🇧🇪"], ["lema", "Tú me hablas en neerlandés, yo te hablo en español."], ["lista", ["Nombre: Álex Moreno Gil", "Edad: tengo dieciséis años", "Ciudad: Madrid, España. Soy español.", "Instituto: IES Cervantes, cuarto curso", "Lenguas: hablo español e inglés. Estudio francés."]], ["p", "¡Hola! Me llamo Álex y vivo en Madrid, en el barrio de Lavapiés. Estudio en el IES Cervantes y este año aprendo francés."], ["p", "En mi tiempo libre escucho música, juego al baloncesto y leo cómics. Los sábados trabajo en la tienda de mi tía."], ["p", "Busco un compi de Bélgica o de los Países Bajos. Hablamos media hora en español y media hora en neerlandés. ¿Te apuntas?"], ["firma", "Escríbeme: alex.moreno@correo.es · ¿Cómo te llamas tú?"]], "traduccion": "Ik zoek een taalmaatje. Jij spreekt Nederlands tegen mij, ik spreek Spaans tegen jou. Hallo! Ik heet Álex en ik woon in Madrid, in de wijk Lavapiés. Ik zit op het IES Cervantes en dit jaar leer ik Frans. In mijn vrije tijd luister ik muziek, speel ik basket en lees ik strips. Op zaterdag werk ik in de winkel van mijn tante. Ik zoek een maatje uit België of Nederland. We praten een half uur Spaans en een half uur Nederlands. Doe je mee?", "global": {"q": "¿Para qué escribe Álex este perfil?", "opts": ["Para buscar a alguien con quien practicar lenguas", "Para vender cómics", "Para invitarte a su instituto"], "ans": "Para buscar a alguien con quien practicar lenguas"}, "escanear": [{"q": "¿Cuántos años tiene Álex?", "ans": "16", "alt": ["dieciséis", "dieciseis", "tiene dieciséis años", "16 años"], "why": "«tengo dieciséis años»"}, {"q": "¿En qué ciudad vive?", "ans": "Madrid", "alt": ["en madrid"], "why": "«vivo en Madrid»"}, {"q": "¿Cómo se llama su instituto?", "ans": "IES Cervantes", "alt": ["cervantes", "ies cervantes"], "why": "«Estudio en el IES Cervantes»"}, {"q": "¿Qué lengua estudia este año?", "ans": "francés", "alt": ["el francés", "frances"], "why": "«este año aprendo francés»"}, {"q": "¿Qué día trabaja?", "ans": "los sábados", "alt": ["sábados", "sabados", "el sábado", "los sabados"], "why": "«Los sábados trabajo en la tienda de mi tía»"}], "vf": [{"q": "Álex es español.", "ans": true, "prueba": "soy español"}, {"q": "Álex vive en Sevilla.", "ans": false, "prueba": "vivo en madrid"}, {"q": "Álex habla inglés.", "ans": true, "prueba": "hablo español e inglés"}, {"q": "Álex juega al fútbol.", "ans": false, "prueba": "juego al baloncesto"}, {"q": "Álex trabaja en la tienda de su tía.", "ans": true, "prueba": "trabajo en la tienda de mi tía"}], "contexto": [{"q": "«compi» — ¿qué es?", "opts": ["een maatje, een partner", "een boek", "een les"], "ans": "een maatje, een partner", "why": "Korte spreektaal voor «compañero» — de hele tekst gaat over samen oefenen."}, {"q": "«¿Te apuntas?» — ¿qué te pide Álex?", "opts": ["Of je meedoet", "Of je opschrijft wat hij zegt", "Of je hem aanwijst"], "ans": "Of je meedoet", "why": "Het staat aan het eind, als uitnodiging."}, {"q": "«en mi tiempo libre» — ¿cuándo?", "opts": ["Als hij geen school heeft", "Tijdens de les", "'s nachts"], "ans": "Als hij geen school heeft", "why": "Erna volgen hobby's, geen schoolvakken."}], "produccion": {"prompt": "Escribe tu propio perfil para Álex (4–5 frases): cómo te llamas, cuántos años tienes, de dónde eres, qué lenguas hablas y qué haces en tu tiempo libre.", "modelo": "Hola, Álex. Me llamo… Tengo… años. Soy de… y vivo en… Hablo… y estudio… En mi tiempo libre…"}});
 
 </script></body></html>

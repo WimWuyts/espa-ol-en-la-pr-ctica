@@ -59,6 +59,21 @@
 .escta:focus-visible,.escbtn:focus-visible,.escclave:focus-visible,.esctrsay:focus-visible{outline:3px solid var(--gd);outline-offset:2px}
 .escconteo{margin:4px 0 0}
 
+/* ── de korte audiotaken van de unit (escucha_corta_data.py) ─────────────────
+   Zelfde speler en transcript als het grote luisterblok, maar zonder de zes
+   treden: dit zijn microdictados en mini-dialogen van 30-60 s. Het transcript
+   gaat pas open na twee keer luisteren — anders leest de leerling mee. */
+.audcortos{margin-top:16px}
+.audit{border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:0 0 12px;background:var(--card)}
+.audit:last-child{margin-bottom:0}
+.audcab{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:5px}
+.audet{font-size:11px;font-weight:700;color:#fff;background:var(--g);border-radius:999px;padding:3px 10px}
+.audsec{font-size:11px;color:var(--mut);font-weight:600}
+.audit h4{font-family:var(--disp);font-size:16px;margin:0 0 4px;color:var(--gd)}
+.audtarea{margin:0 0 9px}
+.audveces{color:var(--mut);font-size:12px}
+.audtr{margin-top:2px}
+
 .lectipo{font-size:11px;font-weight:700;color:var(--gd);background:var(--gt);border-radius:999px;padding:3px 9px}
 .lecficha{display:flex;gap:14px;flex-wrap:wrap;background:var(--gt);border-radius:10px;padding:8px 12px;margin:8px 0 14px;font-size:12px}
 .lecficha b{display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--gd)}
@@ -911,6 +926,74 @@ function buildEscucha(id,cfg){
  if(P.modo==='grabar'&&typeof makeRecorder==='function')
    makeRecorder(id+'_rec',{title:'Tu respuesta hablada',desc:P.prompt||'',items:[{text:P.prompt||'',cue:'graba tu respuesta'}]});
 }
+// ── buildAudioCortos — de korte audiotaken van dezelfde unit ────────────────
+// Het grote luisterblok hierboven is één fragment met zes treden. Daarnaast
+// heeft elke unit kortere audiotaken (microdictado, klankreeks, mini-dialoog,
+// weerbericht, wegbeschrijving) die in print als QR-kaart staan. Die krijgen
+// hier hun speler en hun transcript.
+//
+// Dezelfde afspraak als bij het grote blok: het transcript blijft dicht tot de
+// leerling twee keer geluisterd heeft. Meelezen bij de eerste beurt is geen
+// luisteren meer. De antwoordsleutel staat hier NIET — die hoort in het
+// docentendossier (CLAUDE.md 14).
+//
+// Het blok maakt zijn eigen kaart aan, direct na het grote luisterblok, zodat
+// de unit-generatoren geen extra container in hun HTML nodig hebben.
+function buildAudioCortos(idEscucha,cfg){
+ const ancla=document.getElementById(idEscucha);if(!ancla)return;
+ const frags=(cfg.fragmentos||[]).filter(f=>f.guion&&f.guion.length);
+ if(!frags.length)return;
+ const caja=document.createElement('div');
+ caja.className='card ex audcortos';caja.id=idEscucha+'_cortos';
+ caja.innerHTML='<div class="exhead"><h3>🎧 Los otros audios de la unidad</h3>'+
+   '<span class="escfuente">'+frags.length+(frags.length===1?' fragmento':' fragmentos')+'</span></div>'+
+   '<p class="desc">De korte audiotaken uit het boek — dezelfde die op papier achter een QR-code staan. '+
+   'Luister <b>twee keer</b> voor je het transcript opent.</p><div class="audlista"></div>';
+ ancla.parentNode.insertBefore(caja,ancla.nextSibling);
+ const lista=caja.querySelector('.audlista');
+ frags.forEach((f,n)=>{
+   const it=document.createElement('div');it.className='audit';
+   const idt=idEscucha+'_c'+n;
+   it.innerHTML=
+     '<div class="audcab"><span class="audet">'+exEsc(f.etiqueta||'')+'</span>'+
+       '<span class="audsec">'+exEsc(f.seccion||'')+'</span></div>'+
+     '<h4>'+exEsc(f.titulo||'')+'</h4>'+
+     '<p class="desc audtarea">'+exEsc(f.tarea||'')+'</p>'+
+     '<div class="escplay">'+
+       '<button class="escbtn audplay" type="button">▶ Escuchar</button>'+
+       '<button class="escbtn escbtn-stop audotra" type="button">↺ Otra vez</button>'+
+       '<span class="escfuente audfuente" role="status" aria-live="polite"></span>'+
+       '<span class="desc audveces">0 × geluisterd</span>'+
+     '</div>'+
+     '<button class="escbtn esctrbtn audtr" type="button" disabled '+
+       'aria-controls="'+idt+'_tr">🔒 Ver transcripción</button>'+
+     '<div class="esctrbody" id="'+idt+'_tr" hidden></div>';
+   lista.appendChild(it);
+   const q=s=>it.querySelector(s);
+   const fuente=q('.audfuente'),btn=q('.audplay'),tr=q('.audtr'),body=q('#'+idt+'_tr');
+   let veces=0,sonando=false;
+   const player=escReproductor(f,(modo,activo)=>{
+     fuente.textContent=modo==='mp3'?'audio grabado':'voz del navegador';
+     btn.textContent=activo?'⏹ Parar':'▶ Escuchar';
+     if(!activo)sonando=false;});
+   fuente.textContent=f.audio?'audio grabado':'voz del navegador';
+   function cuenta(){veces++;q('.audveces').textContent=veces+' × geluisterd';
+     if(veces>=2){tr.disabled=false;tr.textContent='📄 Ver transcripción';}}
+   btn.onclick=()=>{if(sonando){player.parar();sonando=false;}
+     else{player.reproducir();sonando=true;cuenta();}};
+   q('.audotra').onclick=()=>{player.parar();player.reproducir();sonando=true;cuenta();};
+   tr.onclick=()=>{
+     if(!body.dataset.hecho){body.dataset.hecho='1';
+       f.guion.forEach((g,i)=>{const r=document.createElement('div');r.className='esctrl';
+         r.innerHTML='<button class="esctrsay" type="button" aria-label="Regel '+(i+1)+' opnieuw horen">🔊</button>'+
+           '<div><b class="esctrwho">'+exEsc(g.who||'')+'</b><span class="esctres">'+exEsc(g.es)+'</span>'+
+           (g.nl?'<span class="esctrnl">'+exEsc(g.nl)+'</span>':'')+'</div>';
+         r.querySelector('.esctrsay').onclick=()=>player.linea(i);body.appendChild(r);});
+       body.insertAdjacentHTML('afterbegin','<button class="otra audnlbtn" type="button">🇳🇱 vertaling aan/uit</button>');
+       body.querySelector('.audnlbtn').onclick=()=>body.classList.toggle('sinnl');}
+     body.hidden=!body.hidden;};
+ });
+}
 
 function lecTexto(bloques){let h='';
  bloques.forEach(b=>{const soort=b[0],c=b[1];
@@ -1004,6 +1087,7 @@ function buildLectura(id,cfg){
    $('.escconteo').textContent=n+' palabra'+(n===1?'':'s');});
  const bm=$('.lecmod');
  if(bm)bm.onclick=()=>{const m=$('.lecmodelo');m.hidden=!m.hidden;};
+
 }
 
 
@@ -1217,6 +1301,7 @@ function buildGramType(){
 }
 buildGramType();
 buildEscucha("esc_u8",{"title": "El tiempo en los Andes", "audio": "audio/C5_U8.mp3", "expectDetalle": 5, "situacion": {"lugar": "La radio de Cusco, boletín de las ocho de la mañana", "quien": "El presentador y Rosa Quispe, meteoróloga", "que": "Dan el tiempo de hoy y de mañana en Perú", "claves": ["hace sol / hace frío", "va a llover", "grados"]}, "guion": [{"who": "Presentador", "es": "Son las ocho. Rosa, ¿qué tiempo hace hoy en Cusco?", "nl": "Het is acht uur. Rosa, wat voor weer is het vandaag in Cusco?"}, {"who": "Rosa", "es": "Buenos días. Hoy hace sol, pero hace frío: solo cinco grados a esta hora.", "nl": "Goedemorgen. Vandaag is het zonnig, maar koud: maar vijf graden op dit uur."}, {"who": "Presentador", "es": "¿Y por la tarde?", "nl": "En vanmiddag?"}, {"who": "Rosa", "es": "Por la tarde sube a dieciséis grados. En los Andes la diferencia entre la mañana y la tarde es enorme.", "nl": "'s Namiddags stijgt het naar zestien graden. In de Andes is het verschil tussen de ochtend en de namiddag enorm."}, {"who": "Presentador", "es": "¿Necesitamos paraguas?", "nl": "Hebben we een paraplu nodig?"}, {"who": "Rosa", "es": "Hoy no. Pero mañana sí: va a llover toda la tarde, con tormenta en la montaña.", "nl": "Vandaag niet. Maar morgen wel: het gaat de hele namiddag regenen, met onweer in de bergen."}, {"who": "Presentador", "es": "¿Y en Machu Picchu?", "nl": "En in Machu Picchu?"}, {"who": "Rosa", "es": "Allí está nublado y llueve un poco. Es normal: estamos en temporada de lluvias.", "nl": "Daar is het bewolkt en regent het wat. Dat is normaal: we zitten in het regenseizoen."}, {"who": "Presentador", "es": "¿Hasta cuándo dura?", "nl": "Hoe lang duurt dat nog?"}, {"who": "Rosa", "es": "Hasta marzo. Después llegan los meses secos, de mayo a septiembre.", "nl": "Tot maart. Daarna komen de droge maanden, van mei tot september."}, {"who": "Presentador", "es": "¿Y en la costa, en Lima?", "nl": "En aan de kust, in Lima?"}, {"who": "Rosa", "es": "Veintidós grados y mucha nube, como casi siempre. Allí casi nunca llueve.", "nl": "Tweeëntwintig graden en veel bewolking, zoals bijna altijd. Daar regent het bijna nooit."}, {"who": "Presentador", "es": "Gracias, Rosa. Volvemos mañana a las ocho.", "nl": "Dank je, Rosa. Morgen om acht uur zijn we er weer."}], "global": {"q": "¿De qué habla este boletín?", "opts": ["Del tiempo de hoy y de mañana en Perú", "De un viaje a Machu Picchu", "De un accidente en la montaña"], "ans": "Del tiempo de hoy y de mañana en Perú", "why": "graden, wolken, regen — per plaats"}, "detalle": [{"q": "¿Cuántos grados hace en Cusco a las ocho de la mañana?", "opts": ["Cinco", "Quince", "Veinticinco"], "ans": "Cinco", "why": "«solo cinco grados a esta hora»"}, {"q": "¿Cuántos grados hace por la tarde?", "opts": ["Dieciséis", "Seis", "Veintiséis"], "ans": "Dieciséis", "why": "«sube a dieciséis grados»"}, {"q": "¿Cuándo va a llover?", "opts": ["Mañana por la tarde", "Hoy por la mañana", "El domingo"], "ans": "Mañana por la tarde", "why": "«mañana sí: va a llover toda la tarde»"}, {"q": "¿Hasta cuándo dura la temporada de lluvias?", "opts": ["Hasta marzo", "Hasta mayo", "Hasta septiembre"], "ans": "Hasta marzo", "why": "«Hasta marzo»"}, {"q": "¿Qué tiempo hace en Lima?", "opts": ["Nublado y veintidós grados", "Sol y treinta grados", "Nieve y frío"], "ans": "Nublado y veintidós grados", "why": "«Veintidós grados y mucha nube»"}], "vf": [{"q": "Hoy hace falta paraguas en Cusco.", "ans": false, "prueba": "hoy no"}, {"q": "En Machu Picchu está nublado.", "ans": true, "prueba": "allí está nublado y llueve un poco"}, {"q": "En Lima llueve mucho.", "ans": false, "prueba": "allí casi nunca llueve"}], "produccion": {"prompt": "Da tú el parte del tiempo de tu ciudad para hoy y mañana (cinco frases): qué tiempo hace, cuántos grados, si hace falta paraguas y qué va a pasar mañana. Usa: hace sol · está nublado · llueve · va a…", "modo": "grabar", "modelo": "Buenos días. Hoy en … hace… y hay … grados. Por la tarde… Mañana va a… Hasta mañana."}});
+buildAudioCortos("esc_u8",{"fragmentos": [{"etiqueta": "Audio 8.1 · ¿Qué han hecho? · 0:55", "seccion": "§1 · pretérito perfecto compuesto", "titulo": "Cuatro personas cuentan su verano", "tarea": "Kruis aan wie het gedaan heeft.", "audio": "audio/C5_U8_01.mp3", "guion": [{"who": "Narradora", "es": "Cuatro personas cuentan qué han hecho este verano.", "nl": "Vier personen vertellen wat ze deze zomer gedaan hebben."}, {"who": "Nina", "es": "Yo he subido a la montaña con mi tío. He sacado muchas fotos del valle.", "nl": "Ik ben de berg op geklommen met mijn oom. Ik heb veel foto's van de vallei gemaakt."}, {"who": "Diego", "es": "Pues yo he comido un ceviche riquísimo en la costa. ¡Qué rico!", "nl": "Nou, ik heb een heerlijke ceviche gegeten aan de kust. Wat lekker!"}, {"who": "Lucía", "es": "Yo he visto el mar por primera vez este año. He estado en Cádiz una semana.", "nl": "Ik heb dit jaar voor het eerst de zee gezien. Ik ben een week in Cádiz geweest."}, {"who": "Valen", "es": "Yo no he viajado. He trabajado en la tienda de mi madre todo el verano.", "nl": "Ik heb niet gereisd. Ik heb de hele zomer in de winkel van mijn moeder gewerkt."}]}, {"etiqueta": "Audio 8.2 · El parte del tiempo · 0:50", "seccion": "§4 · ¿Qué tiempo hace? · el clima", "titulo": "El parte del tiempo — Perú", "tarea": "Noteer per stad het weer (ciudad + tiempo), één per regel.", "audio": "audio/C5_U8_02.mp3", "guion": [{"who": "Presentador", "es": "Buenos días. El tiempo para hoy en Perú. Escucha con atención.", "nl": "Goedemorgen. Het weer voor vandaag in Peru. Luister aandachtig."}, {"who": "Presentador", "es": "En Lima está nublado y estamos a dieciocho grados.", "nl": "In Lima is het bewolkt en het is achttien graden."}, {"who": "Presentador", "es": "En Cusco hace sol, pero hace frío: nueve grados.", "nl": "In Cusco is het zonnig, maar koud: negen graden."}, {"who": "Presentador", "es": "En Iquitos, en la selva, llueve mucho y hace calor.", "nl": "In Iquitos, in het regenwoud, regent het veel en is het warm."}, {"who": "Presentador", "es": "Y en Arequipa hace viento, con veinte grados.", "nl": "En in Arequipa waait het, met twintig graden."}, {"who": "Presentador", "es": "Repito: Lima, nublado. Cusco, sol y frío. Iquitos, lluvia y calor. Arequipa, viento.", "nl": "Ik herhaal: Lima, bewolkt. Cusco, zon en koud. Iquitos, regen en warm. Arequipa, wind."}]}]});
 buildLectura("lec_u8",{"titulo": "¿Qué tipo de viajero eres?", "tipo": "test de revista (cuestionario con resultados)", "emisor": "La revista de viajes «Mochila»", "receptor": "Sus lectores jóvenes", "objetivo": "Que te pongas una nota y te reconozcas en un perfil", "prediccion": {"q": "Kijk eerst alleen naar de zes genummerde vragen en de drie gekleurde kaders onderaan. Wat voor tekst is dit?", "opts": ["Een test met een uitslag", "Een reisverslag", "Een advertentie voor een reis"], "ans": "Een test met een uitslag", "why": "Vragen + puntentelling + profielen = een tijdschrifttest."}, "texto": [["titulo", "🎒 ¿QUÉ TIPO DE VIAJERO ERES?"], ["lema", "Test · revista «Mochila» · marzo"], ["p", "Contesta sí o no. Cuenta un punto por cada «sí» y mira tu resultado al final."], ["lista", ["1 · ¿Has dormido alguna vez en una tienda de campaña?", "2 · ¿Has viajado alguna vez solo o sola?", "3 · ¿Has probado alguna vez una comida muy rara?", "4 · ¿Has hablado alguna vez con un desconocido en otro idioma?", "5 · ¿Has perdido alguna vez un tren o un avión?", "6 · ¿Has subido alguna vez a más de tres mil metros?"]], ["aviso", ["🟢 DE 0 A 2 PUNTOS — «El viajero de casa»", "Todavía no has salido mucho de tu zona. No pasa nada: todo el mundo empieza así. Este año puedes hacer una excursión de un día a un sitio nuevo."]], ["aviso", ["🟡 DE 3 A 4 PUNTOS — «El viajero curioso»", "Ya has visto cosas y ya has tenido algún problema. Sabes que un viaje no siempre sale como en las fotos, y eso es una buena noticia."]], ["aviso", ["🔴 DE 5 A 6 PUNTOS — «La mochila siempre lista»", "Has hecho de todo. Cuidado con una cosa: viajar mucho no es lo mismo que mirar. ¿De cuántas de esas ciudades te acuerdas de verdad?"]], ["p", "Nina, de Cusco, ha sacado seis puntos. «He subido a Machu Picchu tres veces», dice, «pero todavía no he visto el mar»."], ["firma", "¿Cuántos puntos has sacado tú? Cuéntanoslo en mochila@revista.pe"]], "traduccion": "WAT VOOR REIZIGER BEN JIJ? Test · tijdschrift «Mochila» · maart. Antwoord ja of nee. Tel één punt voor elke «ja» en kijk onderaan naar je uitslag. 1 · Heb je ooit in een tent geslapen? 2 · Heb je ooit alleen gereisd? 3 · Heb je ooit iets heel raars gegeten? 4 · Heb je ooit met een onbekende in een andere taal gepraat? 5 · Heb je ooit een trein of een vliegtuig gemist? 6 · Ben je ooit hoger dan drieduizend meter geweest? — 0 TOT 2 PUNTEN «De thuisreiziger»: je bent nog niet veel buiten je vertrouwde omgeving geweest. Dat geeft niet: iedereen begint zo. Dit jaar kun je een daguitstap maken naar een nieuwe plek. — 3 TOT 4 PUNTEN «De nieuwsgierige reiziger»: je hebt al dingen gezien en al eens een probleem gehad. Je weet dat een reis niet altijd verloopt zoals op de foto's, en dat is goed nieuws. — 5 TOT 6 PUNTEN «De rugzak staat altijd klaar»: je hebt van alles gedaan. Pas op voor één ding: veel reizen is niet hetzelfde als kijken. Hoeveel van die steden herinner je je echt? — Nina uit Cusco haalde zes punten. «Ik ben drie keer op Machu Picchu geweest», zegt ze, «maar ik heb de zee nog nooit gezien.»", "global": {"q": "¿Para qué es este texto?", "opts": ["Para descubrir qué tipo de viajero eres", "Para reservar un viaje a Perú", "Para explicar cómo se sube a Machu Picchu"], "ans": "Para descubrir qué tipo de viajero eres"}, "escanear": [{"q": "¿Cuántas preguntas tiene el test? (en cifras)", "ans": "6", "alt": ["seis", "6 preguntas"], "why": "de vragen zijn genummerd van 1 tot 6"}, {"q": "¿Cuántos puntos ha sacado Nina? (en cifras)", "ans": "6", "alt": ["seis", "seis puntos"], "why": "«ha sacado seis puntos»"}, {"q": "¿Cuántas veces ha subido Nina a Machu Picchu? (en cifras)", "ans": "3", "alt": ["tres", "tres veces"], "why": "«He subido a Machu Picchu tres veces»"}, {"q": "¿A partir de cuántos puntos eres «el viajero curioso»? (en cifras)", "ans": "3", "alt": ["tres", "de 3 a 4", "3 a 4"], "why": "«DE 3 A 4 PUNTOS — El viajero curioso»"}, {"q": "¿A qué dirección puedes escribir?", "ans": "mochila@revista.pe", "alt": ["mochila@revista.pe"], "why": "«Cuéntanoslo en mochila@revista.pe»"}], "vf": [{"q": "Cada «sí» vale un punto.", "ans": true, "prueba": "cuenta un punto por cada «sí»"}, {"q": "Nina ya ha estado en Machu Picchu.", "ans": true, "prueba": "he subido a machu picchu tres veces"}, {"q": "Nina ya ha visto el mar.", "ans": false, "prueba": "todavía no he visto el mar"}, {"q": "Con dos puntos has viajado mucho.", "ans": false, "prueba": "todavía no has salido mucho de tu zona"}, {"q": "Según el test, viajar mucho es lo mismo que mirar de verdad.", "ans": false, "prueba": "viajar mucho no es lo mismo que mirar"}], "contexto": [{"q": "«una tienda de campaña» — ¿qué es?", "opts": ["een tent", "een winkel op het platteland", "een boerderij"], "ans": "een tent", "why": "«la tienda» is winkel, maar «tienda de campaña» is een tent — een klassieke valstrik."}, {"q": "«Todavía no has salido mucho de tu zona» — ¿qué significa?", "opts": ["Je bent nog niet veel buiten je vertrouwde omgeving geweest", "Je bent nooit thuis", "Je mag niet meer weg"], "ans": "Je bent nog niet veel buiten je vertrouwde omgeving geweest", "why": "«todavía no» = nog niet — het kan nog komen."}, {"q": "«¿Cuántos puntos has sacado?» — ¿qué significa «sacar» aquí?", "opts": ["behalen", "fotograferen", "eruit halen"], "ans": "behalen", "why": "In een test haal je punten; «sacar fotos» is iets anders."}, {"q": "«No pasa nada» — ¿qué quiere decir?", "opts": ["Het geeft niet", "Er gebeurt hier nooit iets", "Het is verboden"], "ans": "Het geeft niet", "why": "Het is een geruststelling na een lage score."}], "produccion": {"prompt": "Escribe tu resultado y tres frases más (5–6 in totaal): cuántos puntos has sacado, dos cosas que ya has hecho y dos que todavía no has hecho. Usa ya · todavía no · nunca · alguna vez.", "modelo": "He sacado … puntos. Ya he… y ya he… Pero todavía no he… y nunca he… ¿Y tú, has … alguna vez?"}});
 
 </script></body></html>

@@ -60,7 +60,21 @@ def type_js(host_id, bloque, per_block=10):
     return "buildType(%s,%s);\n" % (_J(host_id), _J(cfg))
 
 
+def _unidad_de(frag_id):
+    """«C5-U5-ESC-01» -> ("C5", 5) · «C6P-U3-ESC-01» -> ("C6+", 3)."""
+    curso, unidad = frag_id.split("-")[:2]
+    return ("C6+" if curso == "C6P" else curso), int(unidad[1:])
+
+
 def escucha_js(host_id, frag):
+    """Het luisterpaneel van een unit: het lange fragment plus de korte audiotaken.
+
+    De korte taken (`escucha_corta_data.py`) hangen bewust aan dezelfde aanroep.
+    Ze horen didactisch in hetzelfde paneel, en zo hoeft geen enkele
+    unit-generator een extra container of extra regel te krijgen: het component
+    zet zijn eigen kaart net ná `host_id` in de DOM. Welke unit het is, staat al
+    in de id van het fragment.
+    """
     cfg = {
         "title": frag["titulo"],
         "audio": frag["audio"],
@@ -72,7 +86,18 @@ def escucha_js(host_id, frag):
         "vf": frag["vf"],
         "produccion": frag["produccion"],
     }
-    return "buildEscucha(%s,%s);\n" % (_J(host_id), _J(cfg))
+    js = "buildEscucha(%s,%s);\n" % (_J(host_id), _J(cfg))
+
+    import escucha_corta_data
+    cortos = escucha_corta_data.CORTOS.get(_unidad_de(frag["id"]), [])
+    # De `clave` gaat NIET mee naar de hub: antwoordsleutels horen in het
+    # docentendossier (CLAUDE.md §14), niet op de leerlingpagina.
+    frags = [{"etiqueta": f["etiqueta"], "seccion": f["seccion"], "titulo": f["titulo"],
+              "tarea": f["tarea"], "audio": f["audio"], "guion": f["guion"]}
+             for f in cortos if f["guion"]]
+    if frags:
+        js += "buildAudioCortos(%s,%s);\n" % (_J(host_id), _J({"fragmentos": frags}))
+    return js
 
 
 def lectura_js(host_id, texto):

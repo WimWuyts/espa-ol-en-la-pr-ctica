@@ -59,6 +59,21 @@
 .escta:focus-visible,.escbtn:focus-visible,.escclave:focus-visible,.esctrsay:focus-visible{outline:3px solid var(--gd);outline-offset:2px}
 .escconteo{margin:4px 0 0}
 
+/* ── de korte audiotaken van de unit (escucha_corta_data.py) ─────────────────
+   Zelfde speler en transcript als het grote luisterblok, maar zonder de zes
+   treden: dit zijn microdictados en mini-dialogen van 30-60 s. Het transcript
+   gaat pas open na twee keer luisteren — anders leest de leerling mee. */
+.audcortos{margin-top:16px}
+.audit{border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:0 0 12px;background:var(--card)}
+.audit:last-child{margin-bottom:0}
+.audcab{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:5px}
+.audet{font-size:11px;font-weight:700;color:#fff;background:var(--g);border-radius:999px;padding:3px 10px}
+.audsec{font-size:11px;color:var(--mut);font-weight:600}
+.audit h4{font-family:var(--disp);font-size:16px;margin:0 0 4px;color:var(--gd)}
+.audtarea{margin:0 0 9px}
+.audveces{color:var(--mut);font-size:12px}
+.audtr{margin-top:2px}
+
 .lectipo{font-size:11px;font-weight:700;color:var(--gd);background:var(--gt);border-radius:999px;padding:3px 9px}
 .lecficha{display:flex;gap:14px;flex-wrap:wrap;background:var(--gt);border-radius:10px;padding:8px 12px;margin:8px 0 14px;font-size:12px}
 .lecficha b{display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--gd)}
@@ -902,6 +917,74 @@ function buildEscucha(id,cfg){
  if(P.modo==='grabar'&&typeof makeRecorder==='function')
    makeRecorder(id+'_rec',{title:'Tu respuesta hablada',desc:P.prompt||'',items:[{text:P.prompt||'',cue:'graba tu respuesta'}]});
 }
+// ── buildAudioCortos — de korte audiotaken van dezelfde unit ────────────────
+// Het grote luisterblok hierboven is één fragment met zes treden. Daarnaast
+// heeft elke unit kortere audiotaken (microdictado, klankreeks, mini-dialoog,
+// weerbericht, wegbeschrijving) die in print als QR-kaart staan. Die krijgen
+// hier hun speler en hun transcript.
+//
+// Dezelfde afspraak als bij het grote blok: het transcript blijft dicht tot de
+// leerling twee keer geluisterd heeft. Meelezen bij de eerste beurt is geen
+// luisteren meer. De antwoordsleutel staat hier NIET — die hoort in het
+// docentendossier (CLAUDE.md 14).
+//
+// Het blok maakt zijn eigen kaart aan, direct na het grote luisterblok, zodat
+// de unit-generatoren geen extra container in hun HTML nodig hebben.
+function buildAudioCortos(idEscucha,cfg){
+ const ancla=document.getElementById(idEscucha);if(!ancla)return;
+ const frags=(cfg.fragmentos||[]).filter(f=>f.guion&&f.guion.length);
+ if(!frags.length)return;
+ const caja=document.createElement('div');
+ caja.className='card ex audcortos';caja.id=idEscucha+'_cortos';
+ caja.innerHTML='<div class="exhead"><h3>🎧 Los otros audios de la unidad</h3>'+
+   '<span class="escfuente">'+frags.length+(frags.length===1?' fragmento':' fragmentos')+'</span></div>'+
+   '<p class="desc">De korte audiotaken uit het boek — dezelfde die op papier achter een QR-code staan. '+
+   'Luister <b>twee keer</b> voor je het transcript opent.</p><div class="audlista"></div>';
+ ancla.parentNode.insertBefore(caja,ancla.nextSibling);
+ const lista=caja.querySelector('.audlista');
+ frags.forEach((f,n)=>{
+   const it=document.createElement('div');it.className='audit';
+   const idt=idEscucha+'_c'+n;
+   it.innerHTML=
+     '<div class="audcab"><span class="audet">'+exEsc(f.etiqueta||'')+'</span>'+
+       '<span class="audsec">'+exEsc(f.seccion||'')+'</span></div>'+
+     '<h4>'+exEsc(f.titulo||'')+'</h4>'+
+     '<p class="desc audtarea">'+exEsc(f.tarea||'')+'</p>'+
+     '<div class="escplay">'+
+       '<button class="escbtn audplay" type="button">▶ Escuchar</button>'+
+       '<button class="escbtn escbtn-stop audotra" type="button">↺ Otra vez</button>'+
+       '<span class="escfuente audfuente" role="status" aria-live="polite"></span>'+
+       '<span class="desc audveces">0 × geluisterd</span>'+
+     '</div>'+
+     '<button class="escbtn esctrbtn audtr" type="button" disabled '+
+       'aria-controls="'+idt+'_tr">🔒 Ver transcripción</button>'+
+     '<div class="esctrbody" id="'+idt+'_tr" hidden></div>';
+   lista.appendChild(it);
+   const q=s=>it.querySelector(s);
+   const fuente=q('.audfuente'),btn=q('.audplay'),tr=q('.audtr'),body=q('#'+idt+'_tr');
+   let veces=0,sonando=false;
+   const player=escReproductor(f,(modo,activo)=>{
+     fuente.textContent=modo==='mp3'?'audio grabado':'voz del navegador';
+     btn.textContent=activo?'⏹ Parar':'▶ Escuchar';
+     if(!activo)sonando=false;});
+   fuente.textContent=f.audio?'audio grabado':'voz del navegador';
+   function cuenta(){veces++;q('.audveces').textContent=veces+' × geluisterd';
+     if(veces>=2){tr.disabled=false;tr.textContent='📄 Ver transcripción';}}
+   btn.onclick=()=>{if(sonando){player.parar();sonando=false;}
+     else{player.reproducir();sonando=true;cuenta();}};
+   q('.audotra').onclick=()=>{player.parar();player.reproducir();sonando=true;cuenta();};
+   tr.onclick=()=>{
+     if(!body.dataset.hecho){body.dataset.hecho='1';
+       f.guion.forEach((g,i)=>{const r=document.createElement('div');r.className='esctrl';
+         r.innerHTML='<button class="esctrsay" type="button" aria-label="Regel '+(i+1)+' opnieuw horen">🔊</button>'+
+           '<div><b class="esctrwho">'+exEsc(g.who||'')+'</b><span class="esctres">'+exEsc(g.es)+'</span>'+
+           (g.nl?'<span class="esctrnl">'+exEsc(g.nl)+'</span>':'')+'</div>';
+         r.querySelector('.esctrsay').onclick=()=>player.linea(i);body.appendChild(r);});
+       body.insertAdjacentHTML('afterbegin','<button class="otra audnlbtn" type="button">🇳🇱 vertaling aan/uit</button>');
+       body.querySelector('.audnlbtn').onclick=()=>body.classList.toggle('sinnl');}
+     body.hidden=!body.hidden;};
+ });
+}
 
 function lecTexto(bloques){let h='';
  bloques.forEach(b=>{const soort=b[0],c=b[1];
@@ -995,6 +1078,7 @@ function buildLectura(id,cfg){
    $('.escconteo').textContent=n+' palabra'+(n===1?'':'s');});
  const bm=$('.lecmod');
  if(bm)bm.onclick=()=>{const m=$('.lecmodelo');m.hidden=!m.hidden;};
+
 }
 
 
@@ -1260,6 +1344,7 @@ function buildGramType(){
 }
 buildGramType();
 buildEscucha("esc_c6p_u6",{"title": "Pódcast «Antes y ahora»", "audio": "audio/C6plus_U6.mp3", "expectDetalle": 5, "situacion": {"lugar": "El estudio del pódcast del instituto, episodio 7", "quien": "Mateo (presentador) y dos invitados: Sofía y Aarón", "que": "Comparan cómo era su infancia con la de ahora", "claves": ["cuando era pequeño", "antes… ahora…", "más … que"]}, "guion": [{"who": "Mateo", "es": "Bienvenidos al episodio siete. Hoy hablamos de la infancia. Sofía, ¿cómo era la tuya?", "nl": "Welkom bij aflevering zeven. Vandaag hebben we het over de kindertijd. Sofía, hoe was die van jou?"}, {"who": "Sofía", "es": "Yo crecí en un pueblo pequeño. No teníamos parque, pero jugábamos en la calle hasta las nueve.", "nl": "Ik groeide op in een klein dorp. We hadden geen park, maar we speelden op straat tot negen uur."}, {"who": "Mateo", "es": "¿Y tú, Aarón?", "nl": "En jij, Aarón?"}, {"who": "Aarón", "es": "Yo vivía en la ciudad. Tenía más juguetes que Sofía, seguro, pero salía mucho menos.", "nl": "Ik woonde in de stad. Ik had zeker meer speelgoed dan Sofía, maar ik ging veel minder buiten."}, {"who": "Sofía", "es": "Eso es. Yo no tenía consola, y me daba igual.", "nl": "Precies. Ik had geen spelconsole, en dat kon me niet schelen."}, {"who": "Mateo", "es": "¿Recordáis algún día concreto?", "nl": "Herinneren jullie je een bepaalde dag?"}, {"who": "Aarón", "es": "Sí. Un día, con siete años, me perdí en el metro. Mi madre me encontró dos horas después. Nunca lo olvidé.", "nl": "Ja. Op een dag, toen ik zeven was, verdwaalde ik in de metro. Mijn moeder vond me twee uur later. Ik ben het nooit vergeten."}, {"who": "Sofía", "es": "El mío es más tonto: el día que llegó internet al pueblo. Toda la escuela fue a ver la pantalla.", "nl": "Het mijne is dommer: de dag dat het internet in het dorp kwam. De hele school ging naar het scherm kijken."}, {"who": "Mateo", "es": "Última pregunta: ¿se vivía mejor antes?", "nl": "Laatste vraag: leefde men vroeger beter?"}, {"who": "Aarón", "es": "No. Se vivía distinto. Ahora tenemos más cosas y menos tiempo.", "nl": "Nee. Men leefde anders. Nu hebben we meer spullen en minder tijd."}, {"who": "Sofía", "es": "Yo echo de menos el aburrimiento. Cuando te aburrías, inventabas algo.", "nl": "Ik mis de verveling. Als je je verveelde, verzon je iets."}, {"who": "Mateo", "es": "Buena frase para terminar. ¡Hasta el próximo episodio!", "nl": "Mooie zin om mee af te sluiten. Tot de volgende aflevering!"}], "global": {"q": "¿De qué trata el episodio?", "opts": ["De comparar la infancia de antes con la de ahora", "De cómo se hace un pódcast", "De un viaje escolar"], "ans": "De comparar la infancia de antes con la de ahora", "why": "twee gasten, twee kindertijden, telkens vergeleken"}, "detalle": [{"q": "¿Dónde creció Sofía?", "opts": ["En un pueblo pequeño", "En la ciudad", "En el extranjero"], "ans": "En un pueblo pequeño", "why": "«Yo crecí en un pueblo pequeño»"}, {"q": "¿Hasta qué hora jugaba Sofía en la calle?", "opts": ["Hasta las nueve", "Hasta las siete", "Hasta las once"], "ans": "Hasta las nueve", "why": "«jugábamos en la calle hasta las nueve»"}, {"q": "¿Qué tenía Aarón más que Sofía?", "opts": ["Juguetes", "Amigos", "Tiempo libre"], "ans": "Juguetes", "why": "«Tenía más juguetes que Sofía»"}, {"q": "¿Qué le pasó a Aarón a los siete años?", "opts": ["Se perdió en el metro", "Se rompió una pierna", "Se mudó de ciudad"], "ans": "Se perdió en el metro", "why": "«con siete años, me perdí en el metro»"}, {"q": "¿Cuál es el recuerdo de Sofía?", "opts": ["El día que llegó internet al pueblo", "Su primer día de escuela", "Un viaje a Cusco"], "ans": "El día que llegó internet al pueblo", "why": "«el día que llegó internet al pueblo»"}], "vf": [{"q": "Sofía tenía una consola de pequeña.", "ans": false, "prueba": "yo no tenía consola"}, {"q": "Aarón salía más que Sofía.", "ans": false, "prueba": "salía mucho menos"}, {"q": "Según Aarón, ahora tenemos menos tiempo.", "ans": true, "prueba": "ahora tenemos más cosas y menos tiempo"}], "produccion": {"prompt": "Eres el tercer invitado del pódcast. Graba cinco frases: cómo era tu infancia (imperfecto), un día concreto que recuerdas (indefinido) y una comparación antes/ahora (más… que · menos… que · tan… como).", "modo": "grabar", "modelo": "Cuando era pequeño/-a, yo… y siempre… Un día… Ahora tengo más… que antes, pero menos…"}});
+buildAudioCortos("esc_c6p_u6",{"fragmentos": [{"etiqueta": "§2 · ¿Cómo era tu infancia?", "seccion": "§2.3 · ¿Cómo era tu vida?", "titulo": "¿Cómo era tu infancia? — Nina", "tarea": "1ª: waar woonde ze? — 2ª: wat deed ze? Noteer de gegevens.", "audio": "audio/C6plus_U6_01.mp3", "guion": [{"who": "Nina", "es": "Cuando era pequeña, no vivía en Cusco. Vivíamos en un pueblo en las montañas, a tres horas de la ciudad.", "nl": "Toen ik klein was, woonde ik niet in Cusco. We woonden in een dorp in de bergen, op drie uur van de stad."}, {"who": "Nina", "es": "La casa era de piedra y siempre hacía frío por la noche.", "nl": "Het huis was van steen en 's nachts was het altijd koud."}, {"who": "Nina", "es": "Mi abuela cocinaba en el fuego y nosotros comíamos todos juntos.", "nl": "Mijn oma kookte op het vuur en wij aten allemaal samen."}, {"who": "Nina", "es": "Iba a la escuela a pie: eran cuarenta minutos, con lluvia o con sol.", "nl": "Ik ging te voet naar school: dat was veertig minuten, met regen of met zon."}, {"who": "Nina", "es": "Por la tarde jugaba con mis primos en el campo y cuidábamos las llamas de mi tío.", "nl": "'s Namiddags speelde ik met mijn neven en nichten op het veld en zorgden we voor de lama's van mijn oom."}, {"who": "Nina", "es": "No teníamos internet. Los domingos mi padre leía el periódico en voz alta y todos escuchábamos.", "nl": "We hadden geen internet. Op zondag las mijn vader de krant hardop voor en luisterden we allemaal."}, {"who": "Nina", "es": "Me gustaba mucho esa vida, pero ahora también me gusta la ciudad.", "nl": "Ik hield heel veel van dat leven, maar nu vind ik de stad ook fijn."}]}]});
 buildLectura("lec_c6p_u6",{"titulo": "Carta de la abuela Rosario", "tipo": "carta manuscrita (de la abuela a su nieta)", "emisor": "Rosario, 79 años, desde un pueblo cerca de Cusco", "receptor": "Su nieta, que vive en la ciudad", "objetivo": "Contarle cómo era su infancia y compararla con la de ahora", "prediccion": {"q": "Kijk eerst alleen naar de aanhef «Querida nieta», de plaats en de handtekening. Wat voor tekst is dit?", "opts": ["Een persoonlijke brief", "Een schoolopstel", "Een reclamefolder"], "ans": "Een persoonlijke brief", "why": "Aanhef + groet + handtekening = een brief aan één iemand."}, "texto": [["titulo", "✉️ QUERIDA NIETA"], ["lema", "Ollantaytambo, cerca de Cusco · 12 de mayo"], ["p", "Me preguntas cómo era mi vida de pequeña. Pues mira: yo vivía en esta misma casa, pero todo era diferente. No había electricidad ni agua caliente. Nos levantábamos a las cinco y caminábamos una hora hasta la escuela."], ["p", "Éramos ocho hermanos. Mi madre cocinaba en el suelo, con leña, y siempre había sopa. Yo no tenía juguetes: jugaba con piedras y con una muñeca de trapo que me hizo mi tía."], ["aviso", ["📅 EL DÍA QUE TODO CAMBIÓ", "En mil novecientos sesenta llegó la carretera. Un camión subió hasta la plaza y todo el pueblo salió a mirar. Yo tenía catorce años. Aquel día vi mi primera radio."]], ["p", "Ahora tú tienes internet, agua caliente y un colegio a diez minutos. Vives mejor que yo, eso está claro. Pero antes el pueblo era más tranquilo y todos nos conocíamos."], ["p", "Antes no era mejor. Era diferente. Lo que echo de menos no son las piedras: es la plaza llena de gente al atardecer."], ["firma", "Te espero en julio. Un beso enorme de tu abuela Rosario."]], "traduccion": "LIEVE KLEINDOCHTER — Ollantaytambo, bij Cusco, 12 mei. Je vraagt me hoe mijn leven als kind was. Kijk: ik woonde in ditzelfde huis, maar alles was anders. Er was geen elektriciteit en geen warm water. We stonden om vijf uur op en liepen een uur naar school. We waren met acht kinderen. Mijn moeder kookte op de grond, op hout, en er was altijd soep. Ik had geen speelgoed: ik speelde met steentjes en met een lappenpop die mijn tante voor me maakte. DE DAG DAT ALLES VERANDERDE: in 1960 kwam de weg. Een vrachtwagen reed tot op het plein en het hele dorp liep buiten om te kijken. Ik was veertien. Die dag zag ik mijn eerste radio. — Nu heb jij internet, warm water en een school op tien minuten. Jij leeft beter dan ik, dat is duidelijk. Maar vroeger was het dorp rustiger en kenden we elkaar allemaal. Vroeger was niet beter. Het was anders. Wat ik mis zijn niet de steentjes: het is het plein vol mensen bij zonsondergang. Ik verwacht je in juli. Een dikke kus van je oma Rosario.", "global": {"q": "¿De qué habla la abuela en su carta?", "opts": ["De cómo era su infancia y en qué se diferencia de la de ahora", "De un viaje que quiere hacer", "De una fiesta del pueblo"], "ans": "De cómo era su infancia y en qué se diferencia de la de ahora"}, "escanear": [{"q": "¿A qué hora se levantaban?", "ans": "a las cinco", "alt": ["las cinco", "cinco", "5"], "why": "«Nos levantábamos a las cinco»"}, {"q": "¿Cuánto tiempo caminaban hasta la escuela?", "ans": "una hora", "alt": ["1 hora", "hora", "una"], "why": "«caminábamos una hora hasta la escuela»"}, {"q": "¿Cuántos hermanos eran? (en cifras)", "ans": "8", "alt": ["ocho", "ocho hermanos"], "why": "«Éramos ocho hermanos»"}, {"q": "¿En qué año llegó la carretera? (en cifras)", "ans": "1960", "alt": ["mil novecientos sesenta", "en 1960"], "why": "«En mil novecientos sesenta llegó la carretera»"}, {"q": "¿Cuántos años tenía la abuela ese día? (en cifras)", "ans": "14", "alt": ["catorce", "catorce años"], "why": "«Yo tenía catorce años»"}], "vf": [{"q": "En la casa había agua caliente.", "ans": false, "prueba": "no había electricidad ni agua caliente"}, {"q": "La abuela tenía muchos juguetes.", "ans": false, "prueba": "yo no tenía juguetes"}, {"q": "Su tía le hizo una muñeca.", "ans": true, "prueba": "una muñeca de trapo que me hizo mi tía"}, {"q": "La abuela piensa que la vida de su nieta es más fácil.", "ans": true, "prueba": "vives mejor que yo"}, {"q": "La abuela echa de menos las piedras.", "ans": false, "prueba": "lo que echo de menos no son las piedras"}], "contexto": [{"q": "«con leña» — ¿con qué cocinaba su madre?", "opts": ["met hout", "met gas", "met elektriciteit"], "ans": "met hout", "why": "Er stond net dat er geen elektriciteit was."}, {"q": "«una muñeca de trapo» — ¿de qué es?", "opts": ["van stof, zelfgemaakt", "van plastic", "van hout"], "ans": "van stof, zelfgemaakt", "why": "Haar tante maakte ze; er was geen speelgoed te koop."}, {"q": "«echar de menos» — ¿qué hace la abuela?", "opts": ["Ze mist iets", "Ze gooit iets weg", "Ze telt iets"], "ans": "Ze mist iets", "why": "Vaste uitdrukking — één van de lastigste voor Nederlandstaligen."}, {"q": "«Antes no era mejor. Era diferente.» — ¿qué hace aquí la abuela?", "opts": ["Ze nuanceert wat ze net zei", "Ze spreekt zichzelf tegen", "Ze stelt een vraag"], "ans": "Ze nuanceert wat ze net zei", "why": "Ze zwakt «vroeger was alles beter» bewust af tot «anders»."}], "produccion": {"prompt": "Contesta a la abuela (6–8 frases): cómo es tu vida ahora, qué hacías tú de pequeño/-a, qué cambió y qué echas de menos. Usa el imperfecto para el decorado, el indefinido para lo que pasó una vez, y una comparación (más/menos… que · tan… como).", "modelo": "Querida abuela: ahora yo… De pequeño/-a yo… y siempre… Un día… Ahora mi vida es más… que antes, pero echo de menos…"}});
 
 </script></body></html>

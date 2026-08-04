@@ -59,6 +59,21 @@
 .escta:focus-visible,.escbtn:focus-visible,.escclave:focus-visible,.esctrsay:focus-visible{outline:3px solid var(--gd);outline-offset:2px}
 .escconteo{margin:4px 0 0}
 
+/* ── de korte audiotaken van de unit (escucha_corta_data.py) ─────────────────
+   Zelfde speler en transcript als het grote luisterblok, maar zonder de zes
+   treden: dit zijn microdictados en mini-dialogen van 30-60 s. Het transcript
+   gaat pas open na twee keer luisteren — anders leest de leerling mee. */
+.audcortos{margin-top:16px}
+.audit{border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:0 0 12px;background:var(--card)}
+.audit:last-child{margin-bottom:0}
+.audcab{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:5px}
+.audet{font-size:11px;font-weight:700;color:#fff;background:var(--g);border-radius:999px;padding:3px 10px}
+.audsec{font-size:11px;color:var(--mut);font-weight:600}
+.audit h4{font-family:var(--disp);font-size:16px;margin:0 0 4px;color:var(--gd)}
+.audtarea{margin:0 0 9px}
+.audveces{color:var(--mut);font-size:12px}
+.audtr{margin-top:2px}
+
 .lectipo{font-size:11px;font-weight:700;color:var(--gd);background:var(--gt);border-radius:999px;padding:3px 9px}
 .lecficha{display:flex;gap:14px;flex-wrap:wrap;background:var(--gt);border-radius:10px;padding:8px 12px;margin:8px 0 14px;font-size:12px}
 .lecficha b{display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--gd)}
@@ -904,6 +919,74 @@ function buildEscucha(id,cfg){
  if(P.modo==='grabar'&&typeof makeRecorder==='function')
    makeRecorder(id+'_rec',{title:'Tu respuesta hablada',desc:P.prompt||'',items:[{text:P.prompt||'',cue:'graba tu respuesta'}]});
 }
+// ── buildAudioCortos — de korte audiotaken van dezelfde unit ────────────────
+// Het grote luisterblok hierboven is één fragment met zes treden. Daarnaast
+// heeft elke unit kortere audiotaken (microdictado, klankreeks, mini-dialoog,
+// weerbericht, wegbeschrijving) die in print als QR-kaart staan. Die krijgen
+// hier hun speler en hun transcript.
+//
+// Dezelfde afspraak als bij het grote blok: het transcript blijft dicht tot de
+// leerling twee keer geluisterd heeft. Meelezen bij de eerste beurt is geen
+// luisteren meer. De antwoordsleutel staat hier NIET — die hoort in het
+// docentendossier (CLAUDE.md 14).
+//
+// Het blok maakt zijn eigen kaart aan, direct na het grote luisterblok, zodat
+// de unit-generatoren geen extra container in hun HTML nodig hebben.
+function buildAudioCortos(idEscucha,cfg){
+ const ancla=document.getElementById(idEscucha);if(!ancla)return;
+ const frags=(cfg.fragmentos||[]).filter(f=>f.guion&&f.guion.length);
+ if(!frags.length)return;
+ const caja=document.createElement('div');
+ caja.className='card ex audcortos';caja.id=idEscucha+'_cortos';
+ caja.innerHTML='<div class="exhead"><h3>🎧 Los otros audios de la unidad</h3>'+
+   '<span class="escfuente">'+frags.length+(frags.length===1?' fragmento':' fragmentos')+'</span></div>'+
+   '<p class="desc">De korte audiotaken uit het boek — dezelfde die op papier achter een QR-code staan. '+
+   'Luister <b>twee keer</b> voor je het transcript opent.</p><div class="audlista"></div>';
+ ancla.parentNode.insertBefore(caja,ancla.nextSibling);
+ const lista=caja.querySelector('.audlista');
+ frags.forEach((f,n)=>{
+   const it=document.createElement('div');it.className='audit';
+   const idt=idEscucha+'_c'+n;
+   it.innerHTML=
+     '<div class="audcab"><span class="audet">'+exEsc(f.etiqueta||'')+'</span>'+
+       '<span class="audsec">'+exEsc(f.seccion||'')+'</span></div>'+
+     '<h4>'+exEsc(f.titulo||'')+'</h4>'+
+     '<p class="desc audtarea">'+exEsc(f.tarea||'')+'</p>'+
+     '<div class="escplay">'+
+       '<button class="escbtn audplay" type="button">▶ Escuchar</button>'+
+       '<button class="escbtn escbtn-stop audotra" type="button">↺ Otra vez</button>'+
+       '<span class="escfuente audfuente" role="status" aria-live="polite"></span>'+
+       '<span class="desc audveces">0 × geluisterd</span>'+
+     '</div>'+
+     '<button class="escbtn esctrbtn audtr" type="button" disabled '+
+       'aria-controls="'+idt+'_tr">🔒 Ver transcripción</button>'+
+     '<div class="esctrbody" id="'+idt+'_tr" hidden></div>';
+   lista.appendChild(it);
+   const q=s=>it.querySelector(s);
+   const fuente=q('.audfuente'),btn=q('.audplay'),tr=q('.audtr'),body=q('#'+idt+'_tr');
+   let veces=0,sonando=false;
+   const player=escReproductor(f,(modo,activo)=>{
+     fuente.textContent=modo==='mp3'?'audio grabado':'voz del navegador';
+     btn.textContent=activo?'⏹ Parar':'▶ Escuchar';
+     if(!activo)sonando=false;});
+   fuente.textContent=f.audio?'audio grabado':'voz del navegador';
+   function cuenta(){veces++;q('.audveces').textContent=veces+' × geluisterd';
+     if(veces>=2){tr.disabled=false;tr.textContent='📄 Ver transcripción';}}
+   btn.onclick=()=>{if(sonando){player.parar();sonando=false;}
+     else{player.reproducir();sonando=true;cuenta();}};
+   q('.audotra').onclick=()=>{player.parar();player.reproducir();sonando=true;cuenta();};
+   tr.onclick=()=>{
+     if(!body.dataset.hecho){body.dataset.hecho='1';
+       f.guion.forEach((g,i)=>{const r=document.createElement('div');r.className='esctrl';
+         r.innerHTML='<button class="esctrsay" type="button" aria-label="Regel '+(i+1)+' opnieuw horen">🔊</button>'+
+           '<div><b class="esctrwho">'+exEsc(g.who||'')+'</b><span class="esctres">'+exEsc(g.es)+'</span>'+
+           (g.nl?'<span class="esctrnl">'+exEsc(g.nl)+'</span>':'')+'</div>';
+         r.querySelector('.esctrsay').onclick=()=>player.linea(i);body.appendChild(r);});
+       body.insertAdjacentHTML('afterbegin','<button class="otra audnlbtn" type="button">🇳🇱 vertaling aan/uit</button>');
+       body.querySelector('.audnlbtn').onclick=()=>body.classList.toggle('sinnl');}
+     body.hidden=!body.hidden;};
+ });
+}
 
 function lecTexto(bloques){let h='';
  bloques.forEach(b=>{const soort=b[0],c=b[1];
@@ -997,6 +1080,7 @@ function buildLectura(id,cfg){
    $('.escconteo').textContent=n+' palabra'+(n===1?'':'s');});
  const bm=$('.lecmod');
  if(bm)bm.onclick=()=>{const m=$('.lecmodelo');m.hidden=!m.hidden;};
+
 }
 
 
@@ -1270,6 +1354,7 @@ function buildGramType(){
 }
 buildGramType();
 buildEscucha("esc_c6p_u3",{"title": "Cómo hacer una videollamada con la abuela", "audio": "audio/C6plus_U3.mp3", "expectDetalle": 5, "situacion": {"lugar": "En la cocina, en Ciudad de México — con la tableta en la mesa", "quien": "Diego y su abuela Elvira, que no usa mucho la tecnología", "que": "Diego le explica paso a paso cómo llamar a la familia por vídeo", "claves": ["primero… luego…", "vas a ver", "acabas de…"]}, "guion": [{"who": "Abuela", "es": "Diego, mi amor, yo con estas cosas no puedo. ¿Me enseñas?", "nl": "Diego, schat, met die dingen kan ik niet overweg. Leer je het me?"}, {"who": "Diego", "es": "Claro, abuela. Es fácil. Primero enciende la tableta con este botón de arriba.", "nl": "Natuurlijk, oma. Het is makkelijk. Zet eerst de tablet aan met deze knop bovenaan."}, {"who": "Abuela", "es": "Ya está. Veo muchos cuadritos de colores.", "nl": "Klaar. Ik zie allemaal gekleurde vierkantjes."}, {"who": "Diego", "es": "Esas son las aplicaciones. Luego toca la verde, la del teléfono blanco.", "nl": "Dat zijn de apps. Raak daarna de groene aan, die met de witte telefoon."}, {"who": "Abuela", "es": "¿Esta? Me pide una contraseña.", "nl": "Deze? Hij vraagt me een wachtwoord."}, {"who": "Diego", "es": "No, esa es la wifi. La contraseña es la fecha de tu cumpleaños, sin espacios.", "nl": "Nee, dat is de wifi. Het wachtwoord is je geboortedatum, zonder spaties."}, {"who": "Abuela", "es": "Listo. Ahora veo la lista de la familia.", "nl": "Klaar. Nu zie ik de lijst van de familie."}, {"who": "Diego", "es": "Perfecto. Busca a mi tía Rosa y toca el icono de la cámara, no el del teléfono.", "nl": "Perfect. Zoek tante Rosa en raak het camera-icoontje aan, niet dat van de telefoon."}, {"who": "Abuela", "es": "¿Y por qué la cámara?", "nl": "En waarom de camera?"}, {"who": "Diego", "es": "Porque con la cámara vas a ver su cara. Con el teléfono solo la vas a oír.", "nl": "Omdat je met de camera haar gezicht gaat zien. Met de telefoon ga je haar alleen horen."}, {"who": "Abuela", "es": "¡Ay, ya suena! ¿Y si no contesta?", "nl": "Ah, hij gaat al over! En als ze niet opneemt?"}, {"who": "Diego", "es": "Entonces cuelgas y le mandas un mensaje. Acabas de aprender lo más difícil, abuela.", "nl": "Dan hang je op en stuur je haar een bericht. Je hebt net het moeilijkste geleerd, oma."}, {"who": "Abuela", "es": "¡Rosa! ¡Te veo! Mañana voy a llamar yo sola.", "nl": "Rosa! Ik zie je! Morgen ga ik zelf bellen."}], "global": {"q": "¿Qué hace Diego en este audio?", "opts": ["Le explica a su abuela cómo hacer una videollamada", "Le vende una tableta nueva", "Le cuenta un viaje a México"], "ans": "Le explica a su abuela cómo hacer una videollamada", "why": "primero · luego · busca · toca = stappen"}, "detalle": [{"q": "¿Qué hay que hacer primero?", "opts": ["Encender la tableta", "Tocar el icono verde", "Buscar a la tía Rosa"], "ans": "Encender la tableta", "why": "«Primero enciende la tableta»"}, {"q": "¿De qué color es la aplicación?", "opts": ["Verde", "Azul", "Roja"], "ans": "Verde", "why": "«toca la verde, la del teléfono blanco»"}, {"q": "¿Cuál es la contraseña de la wifi?", "opts": ["La fecha de su cumpleaños", "El nombre de su nieto", "Cuatro ceros"], "ans": "La fecha de su cumpleaños", "why": "«La contraseña es la fecha de tu cumpleaños»"}, {"q": "¿A quién llama la abuela?", "opts": ["A la tía Rosa", "A Diego", "A la vecina"], "ans": "A la tía Rosa", "why": "«Busca a mi tía Rosa»"}, {"q": "¿Qué hay que hacer si la otra persona no contesta?", "opts": ["Colgar y mandar un mensaje", "Llamar otra vez enseguida", "Apagar la tableta"], "ans": "Colgar y mandar un mensaje", "why": "«cuelgas y le mandas un mensaje»"}], "vf": [{"q": "Hay que tocar el icono del teléfono para ver la cara.", "ans": false, "prueba": "toca el icono de la cámara, no el del teléfono"}, {"q": "La abuela quiere llamar sola la próxima vez.", "ans": true, "prueba": "mañana voy a llamar yo sola"}, {"q": "Diego dice que es fácil.", "ans": true, "prueba": "es fácil"}], "produccion": {"prompt": "Ahora tú: explica en cuatro pasos cómo se hace algo con el móvil (subir una foto, cambiar la contraseña, apagar las notificaciones). Usa primero · luego · después · al final.", "modo": "grabar", "modelo": "Primero enciende… Luego toca… Después escribe… Al final vas a ver…"}});
+buildAudioCortos("esc_c6p_u3",{"fragmentos": [{"etiqueta": "§2 · Planes de finde", "seccion": "§2.3 · Practicar el futuro próximo", "titulo": "¿Qué vas a hacer el finde?", "tarea": "1ª: wat gaan ze doen? — 2ª: wanneer? Noteer de gegevens.", "audio": "audio/C6plus_U3_01.mp3", "guion": [{"who": "Sofía", "es": "Diego, ¿qué vas a hacer este finde?", "nl": "Diego, wat ga je dit weekend doen?"}, {"who": "Diego", "es": "El viernes por la noche voy a ver una peli con mi hermano. Vamos a pedir pizza también.", "nl": "Vrijdagavond ga ik een film kijken met mijn broer. We gaan ook pizza bestellen."}, {"who": "Sofía", "es": "¡Qué bien! Yo el sábado por la mañana voy a estudiar, porque tengo examen el lunes.", "nl": "Wat leuk! Ik ga zaterdagochtend studeren, want ik heb maandag examen."}, {"who": "Diego", "es": "¿Y por la tarde?", "nl": "En 's namiddags?"}, {"who": "Sofía", "es": "Por la tarde voy a jugar al fútbol con el equipo. ¿Vas a venir a vernos?", "nl": "'s Namiddags ga ik voetballen met de ploeg. Kom je kijken?"}, {"who": "Diego", "es": "Sí, voy a ir. Y el domingo mi familia y yo vamos a comer en casa de mis abuelos.", "nl": "Ja, ik ga komen. En zondag gaan mijn familie en ik bij mijn grootouders eten."}, {"who": "Sofía", "es": "Entonces el domingo no vas a salir.", "nl": "Dan ga je zondag niet uit."}, {"who": "Diego", "es": "No, el domingo por la noche voy a descansar. La semana va a ser larga.", "nl": "Nee, zondagavond ga ik rusten. De week wordt lang."}]}, {"etiqueta": "§5 · Quedamos el sábado", "seccion": "§5 · Comunicar y hacer planes", "titulo": "Quedamos el sábado", "tarea": "1ª: wat gaan ze doen? — 2ª: wanneer en waar spreken ze af?", "audio": "audio/C6plus_U3_02.mp3", "guion": [{"who": "Sofía", "es": "Diego, ¿quedamos el sábado? Quiero ver la expo del museo.", "nl": "Diego, spreken we zaterdag af? Ik wil de expo in het museum zien."}, {"who": "Diego", "es": "Vale. ¿A qué hora? Por la mañana no puedo, tengo entrenamiento.", "nl": "Oké. Hoe laat? 's Ochtends kan ik niet, ik heb training."}, {"who": "Sofía", "es": "¿Te va bien a las cinco?", "nl": "Past vijf uur je?"}, {"who": "Diego", "es": "A las cinco, perfecto. ¿Dónde quedamos?", "nl": "Vijf uur, perfect. Waar spreken we af?"}, {"who": "Sofía", "es": "En la puerta del museo, delante de la taquilla.", "nl": "Aan de deur van het museum, vóór de kassa."}, {"who": "Diego", "es": "Vale. Voy a mandarle un mensaje a Nina, ¿le decimos que venga con nosotros?", "nl": "Oké. Ik ga Nina een berichtje sturen; zeggen we haar dat ze meekomt?"}, {"who": "Sofía", "es": "Sí, y a Mateo y a Valen también. Les mando yo las fotos de la expo para convencerlos.", "nl": "Ja, en Mateo en Valen ook. Ik stuur hun de foto's van de expo om ze te overtuigen."}, {"who": "Diego", "es": "Genial. Entonces el sábado a las cinco, en el museo.", "nl": "Geweldig. Dus zaterdag om vijf uur, aan het museum."}, {"who": "Sofía", "es": "Hecho. Si llego tarde, te llamo.", "nl": "Afgesproken. Als ik te laat ben, bel ik je."}]}]});
 buildLectura("lec_c6p_u3",{"titulo": "¿Cuántas horas de pantalla?", "tipo": "artículo de revista escolar (con encuesta)", "emisor": "La redacción de la revista del instituto", "receptor": "Los alumnos de cuarto, quinto y sexto", "objetivo": "Enseñar los resultados de una encuesta y hacer pensar", "prediccion": {"q": "Kijk eerst alleen naar de titel, de percentages en de twee citaten. Wat voor tekst is dit?", "opts": ["Een artikel met de uitslag van een enquête", "Een handleiding voor een app", "Een advertentie voor een gsm"], "ans": "Een artikel met de uitslag van een enquête", "why": "Percentages + citaten van leerlingen = verslag van een bevraging."}, "texto": [["titulo", "📱 ¿CUÁNTAS HORAS DE PANTALLA?"], ["lema", "Encuesta a 120 alumnos del instituto · marzo"], ["p", "Este mes preguntamos a ciento veinte alumnos cuánto tiempo pasan al día con el móvil. Estos son los resultados."], ["lista", ["Menos de dos horas al día: 15 %", "Entre dos y cuatro horas: 48 %", "Más de cuatro horas: 37 %", "Duermen con el móvil en la habitación: 71 %", "Apagan el móvil para estudiar: 22 %"]], ["aviso", ["Rocío, 16 años", "«Creo que exageramos con el tema. Yo uso el móvil para estudiar: veo vídeos de mates y hablo con mis compañeras de los deberes. Me parece que el problema no es la pantalla, es lo que haces con ella.»"]], ["aviso", ["Andrés, 17 años", "«Pienso que sí es un problema. Yo acabo de borrar dos aplicaciones porque me quitan demasiado tiempo. Ahora leo libros y duermo bien. No estoy de acuerdo con Rocío: la pantalla también cansa.»"]], ["p", "La próxima semana vamos a organizar un debate en la biblioteca. Todos los cursos están invitados."], ["firma", "¿Quieres participar? Escribe a revista@instituto.mx antes del viernes."]], "traduccion": "HOEVEEL SCHERMTIJD? Enquête bij 120 leerlingen van de school · maart. Deze maand vragen we aan honderdtwintig leerlingen hoeveel tijd ze per dag met hun gsm doorbrengen. Dit zijn de resultaten: minder dan twee uur per dag: 15 % · tussen twee en vier uur: 48 % · meer dan vier uur: 37 % · slaapt met de gsm op de kamer: 71 % · zet de gsm uit om te studeren: 22 %. — Rocío, 16 jaar: «Ik vind dat we overdrijven. Ik gebruik mijn gsm om te studeren: ik kijk wiskundefilmpjes en praat met mijn klasgenoten over het huiswerk. Volgens mij is het scherm niet het probleem, wel wat je ermee doet.» — Andrés, 17 jaar: «Ik denk dat het wél een probleem is. Ik heb net twee apps gewist omdat ze me te veel tijd afnemen. Nu lees ik boeken en slaap ik goed. Ik ben het niet eens met Rocío: een scherm vermoeit ook.» — Volgende week organiseren we een debat in de bibliotheek. Alle jaren zijn uitgenodigd.", "global": {"q": "¿Para qué es este artículo?", "opts": ["Para enseñar los resultados de una encuesta y abrir un debate", "Para vender una aplicación nueva", "Para explicar cómo se configura un móvil"], "ans": "Para enseñar los resultados de una encuesta y abrir un debate"}, "escanear": [{"q": "¿A cuántos alumnos preguntaron? (en cifras)", "ans": "120", "alt": ["ciento veinte", "120 alumnos"], "why": "«Encuesta a 120 alumnos»"}, {"q": "¿Qué porcentaje pasa más de cuatro horas al día?", "ans": "37", "alt": ["37 %", "37%", "treinta y siete"], "why": "«Más de cuatro horas: 37 %»"}, {"q": "¿Qué porcentaje duerme con el móvil en la habitación?", "ans": "71", "alt": ["71 %", "71%", "setenta y uno"], "why": "«Duermen con el móvil en la habitación: 71 %»"}, {"q": "¿Cuántos años tiene Andrés? (en cifras)", "ans": "17", "alt": ["diecisiete", "17 años"], "why": "«Andrés, 17 años»"}, {"q": "¿Dónde va a ser el debate?", "ans": "en la biblioteca", "alt": ["la biblioteca", "biblioteca"], "why": "«un debate en la biblioteca»"}], "vf": [{"q": "Casi la mitad de los alumnos pasa entre dos y cuatro horas al día.", "ans": true, "prueba": "entre dos y cuatro horas: 48 %"}, {"q": "Rocío piensa que la pantalla es el problema.", "ans": false, "prueba": "el problema no es la pantalla"}, {"q": "Andrés ya no tiene dos de sus aplicaciones.", "ans": true, "prueba": "acabo de borrar dos aplicaciones"}, {"q": "Rocío y Andrés opinan lo mismo.", "ans": false, "prueba": "no estoy de acuerdo con rocío"}, {"q": "Solo una minoría apaga el móvil para estudiar.", "ans": true, "prueba": "apagan el móvil para estudiar: 22 %"}], "contexto": [{"q": "«Me parece que…» — ¿qué hace Rocío con esas palabras?", "opts": ["Ze geeft haar mening", "Ze stelt een vraag", "Ze geeft een bevel"], "ans": "Ze geeft haar mening", "why": "Net als «creo que» en «pienso que» kondigt het een standpunt aan."}, {"q": "«acabo de borrar dos aplicaciones» — ¿qué quiere decir «acabo de»?", "opts": ["Net, kort geleden", "Volgend jaar", "Elke dag"], "ans": "Net, kort geleden", "why": "«acabar de + infinitivo» = net iets gedaan hebben."}, {"q": "«No estoy de acuerdo con Rocío» — ¿qué dice Andrés?", "opts": ["Hij is het niet met haar eens", "Hij kent haar niet", "Hij vindt haar aardig"], "ans": "Hij is het niet met haar eens", "why": "«estar de acuerdo» = het eens zijn."}, {"q": "«Todos los cursos están invitados» — ¿quién puede ir al debate?", "opts": ["Alle jaren van de school", "Alleen de zesdejaars", "Alleen de redactie"], "ans": "Alle jaren van de school", "why": "«el curso» is hier het schooljaar, niet een cursus."}], "produccion": {"prompt": "Escribe tu opinión para la revista (5–6 frases): cuántas horas pasas tú, si te parece mucho o poco, con quién estás de acuerdo y por qué. Usa creo que · me parece que · (no) estoy de acuerdo · por un lado… por otro…", "modelo": "Creo que… Yo paso … horas al día. Estoy de acuerdo con… porque… Por un lado…, pero por otro… Acabo de…"}});
 
 </script></body></html>

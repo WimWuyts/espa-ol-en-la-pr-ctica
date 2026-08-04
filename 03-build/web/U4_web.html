@@ -59,6 +59,21 @@
 .escta:focus-visible,.escbtn:focus-visible,.escclave:focus-visible,.esctrsay:focus-visible{outline:3px solid var(--gd);outline-offset:2px}
 .escconteo{margin:4px 0 0}
 
+/* ── de korte audiotaken van de unit (escucha_corta_data.py) ─────────────────
+   Zelfde speler en transcript als het grote luisterblok, maar zonder de zes
+   treden: dit zijn microdictados en mini-dialogen van 30-60 s. Het transcript
+   gaat pas open na twee keer luisteren — anders leest de leerling mee. */
+.audcortos{margin-top:16px}
+.audit{border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:0 0 12px;background:var(--card)}
+.audit:last-child{margin-bottom:0}
+.audcab{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:5px}
+.audet{font-size:11px;font-weight:700;color:#fff;background:var(--g);border-radius:999px;padding:3px 10px}
+.audsec{font-size:11px;color:var(--mut);font-weight:600}
+.audit h4{font-family:var(--disp);font-size:16px;margin:0 0 4px;color:var(--gd)}
+.audtarea{margin:0 0 9px}
+.audveces{color:var(--mut);font-size:12px}
+.audtr{margin-top:2px}
+
 .lectipo{font-size:11px;font-weight:700;color:var(--gd);background:var(--gt);border-radius:999px;padding:3px 9px}
 .lecficha{display:flex;gap:14px;flex-wrap:wrap;background:var(--gt);border-radius:10px;padding:8px 12px;margin:8px 0 14px;font-size:12px}
 .lecficha b{display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--gd)}
@@ -955,6 +970,74 @@ function buildEscucha(id,cfg){
  if(P.modo==='grabar'&&typeof makeRecorder==='function')
    makeRecorder(id+'_rec',{title:'Tu respuesta hablada',desc:P.prompt||'',items:[{text:P.prompt||'',cue:'graba tu respuesta'}]});
 }
+// ── buildAudioCortos — de korte audiotaken van dezelfde unit ────────────────
+// Het grote luisterblok hierboven is één fragment met zes treden. Daarnaast
+// heeft elke unit kortere audiotaken (microdictado, klankreeks, mini-dialoog,
+// weerbericht, wegbeschrijving) die in print als QR-kaart staan. Die krijgen
+// hier hun speler en hun transcript.
+//
+// Dezelfde afspraak als bij het grote blok: het transcript blijft dicht tot de
+// leerling twee keer geluisterd heeft. Meelezen bij de eerste beurt is geen
+// luisteren meer. De antwoordsleutel staat hier NIET — die hoort in het
+// docentendossier (CLAUDE.md 14).
+//
+// Het blok maakt zijn eigen kaart aan, direct na het grote luisterblok, zodat
+// de unit-generatoren geen extra container in hun HTML nodig hebben.
+function buildAudioCortos(idEscucha,cfg){
+ const ancla=document.getElementById(idEscucha);if(!ancla)return;
+ const frags=(cfg.fragmentos||[]).filter(f=>f.guion&&f.guion.length);
+ if(!frags.length)return;
+ const caja=document.createElement('div');
+ caja.className='card ex audcortos';caja.id=idEscucha+'_cortos';
+ caja.innerHTML='<div class="exhead"><h3>🎧 Los otros audios de la unidad</h3>'+
+   '<span class="escfuente">'+frags.length+(frags.length===1?' fragmento':' fragmentos')+'</span></div>'+
+   '<p class="desc">De korte audiotaken uit het boek — dezelfde die op papier achter een QR-code staan. '+
+   'Luister <b>twee keer</b> voor je het transcript opent.</p><div class="audlista"></div>';
+ ancla.parentNode.insertBefore(caja,ancla.nextSibling);
+ const lista=caja.querySelector('.audlista');
+ frags.forEach((f,n)=>{
+   const it=document.createElement('div');it.className='audit';
+   const idt=idEscucha+'_c'+n;
+   it.innerHTML=
+     '<div class="audcab"><span class="audet">'+exEsc(f.etiqueta||'')+'</span>'+
+       '<span class="audsec">'+exEsc(f.seccion||'')+'</span></div>'+
+     '<h4>'+exEsc(f.titulo||'')+'</h4>'+
+     '<p class="desc audtarea">'+exEsc(f.tarea||'')+'</p>'+
+     '<div class="escplay">'+
+       '<button class="escbtn audplay" type="button">▶ Escuchar</button>'+
+       '<button class="escbtn escbtn-stop audotra" type="button">↺ Otra vez</button>'+
+       '<span class="escfuente audfuente" role="status" aria-live="polite"></span>'+
+       '<span class="desc audveces">0 × geluisterd</span>'+
+     '</div>'+
+     '<button class="escbtn esctrbtn audtr" type="button" disabled '+
+       'aria-controls="'+idt+'_tr">🔒 Ver transcripción</button>'+
+     '<div class="esctrbody" id="'+idt+'_tr" hidden></div>';
+   lista.appendChild(it);
+   const q=s=>it.querySelector(s);
+   const fuente=q('.audfuente'),btn=q('.audplay'),tr=q('.audtr'),body=q('#'+idt+'_tr');
+   let veces=0,sonando=false;
+   const player=escReproductor(f,(modo,activo)=>{
+     fuente.textContent=modo==='mp3'?'audio grabado':'voz del navegador';
+     btn.textContent=activo?'⏹ Parar':'▶ Escuchar';
+     if(!activo)sonando=false;});
+   fuente.textContent=f.audio?'audio grabado':'voz del navegador';
+   function cuenta(){veces++;q('.audveces').textContent=veces+' × geluisterd';
+     if(veces>=2){tr.disabled=false;tr.textContent='📄 Ver transcripción';}}
+   btn.onclick=()=>{if(sonando){player.parar();sonando=false;}
+     else{player.reproducir();sonando=true;cuenta();}};
+   q('.audotra').onclick=()=>{player.parar();player.reproducir();sonando=true;cuenta();};
+   tr.onclick=()=>{
+     if(!body.dataset.hecho){body.dataset.hecho='1';
+       f.guion.forEach((g,i)=>{const r=document.createElement('div');r.className='esctrl';
+         r.innerHTML='<button class="esctrsay" type="button" aria-label="Regel '+(i+1)+' opnieuw horen">🔊</button>'+
+           '<div><b class="esctrwho">'+exEsc(g.who||'')+'</b><span class="esctres">'+exEsc(g.es)+'</span>'+
+           (g.nl?'<span class="esctrnl">'+exEsc(g.nl)+'</span>':'')+'</div>';
+         r.querySelector('.esctrsay').onclick=()=>player.linea(i);body.appendChild(r);});
+       body.insertAdjacentHTML('afterbegin','<button class="otra audnlbtn" type="button">🇳🇱 vertaling aan/uit</button>');
+       body.querySelector('.audnlbtn').onclick=()=>body.classList.toggle('sinnl');}
+     body.hidden=!body.hidden;};
+ });
+}
 
 function lecTexto(bloques){let h='';
  bloques.forEach(b=>{const soort=b[0],c=b[1];
@@ -1048,6 +1131,7 @@ function buildLectura(id,cfg){
    $('.escconteo').textContent=n+' palabra'+(n===1?'':'s');});
  const bm=$('.lecmod');
  if(bm)bm.onclick=()=>{const m=$('.lecmodelo');m.hidden=!m.hidden;};
+
 }
 
 
@@ -1271,6 +1355,7 @@ function buildGramType(){
 }
 buildGramType();
 buildEscucha("esc_u4",{"title": "¿Qué haces en tu tiempo libre?", "audio": "audio/C5_U4.mp3", "expectDetalle": 5, "situacion": {"lugar": "En la calle, delante del instituto de València", "quien": "Marta (radio del instituto) y tres personas: un chico, una señora y una chica", "que": "Les pregunta qué les gusta hacer en su tiempo libre", "claves": ["me gusta / me encanta", "a mí también / a mí tampoco", "los fines de semana"]}, "guion": [{"who": "Marta", "es": "Buenos días. Somos la radio del instituto. ¿Qué haces tú en tu tiempo libre?", "nl": "Goedemorgen. Wij zijn de schoolradio. Wat doe jij in je vrije tijd?"}, {"who": "Chico", "es": "Yo juego al baloncesto tres veces por semana. Me encanta el deporte.", "nl": "Ik speel drie keer per week basket. Ik ben gek op sport."}, {"who": "Marta", "es": "¿Y la música? ¿Te gusta?", "nl": "En muziek? Vind je dat leuk?"}, {"who": "Chico", "es": "Sí, pero no toco ningún instrumento. Solo escucho.", "nl": "Ja, maar ik speel geen enkel instrument. Ik luister alleen."}, {"who": "Marta", "es": "Gracias. Y usted, señora, ¿qué le gusta hacer?", "nl": "Bedankt. En u, mevrouw, wat doet u graag?"}, {"who": "Señora", "es": "A mí me gusta mucho leer. Voy a la biblioteca los martes. No me gustan nada los videojuegos.", "nl": "Ik lees heel graag. Ik ga op dinsdag naar de bibliotheek. Videospelletjes vind ik helemaal niets."}, {"who": "Marta", "es": "A mí tampoco. ¿Y ve series?", "nl": "Ik ook niet. En kijkt u series?"}, {"who": "Señora", "es": "Sí, veo una serie española por la noche. Es muy divertida.", "nl": "Ja, ik kijk 's avonds naar een Spaanse serie. Ze is heel grappig."}, {"who": "Marta", "es": "Última pregunta, para ti: ¿qué haces los fines de semana?", "nl": "Laatste vraag, voor jou: wat doe jij in het weekend?"}, {"who": "Chica", "es": "Los sábados quedo con mis amigas en la playa. Nadamos y bailamos.", "nl": "Op zaterdag spreek ik af met mijn vriendinnen op het strand. We zwemmen en dansen."}, {"who": "Marta", "es": "¿Y no os aburrís?", "nl": "En vervelen jullie je niet?"}, {"who": "Chica", "es": "¡Qué va! A mí me encanta el mar. Pero mi hermana prefiere el cine: a ella no le gusta la playa.", "nl": "Welnee! Ik ben gek op de zee. Maar mijn zus gaat liever naar de film: zij houdt niet van het strand."}, {"who": "Marta", "es": "¡Gracias a los tres! Y ahora, música.", "nl": "Bedankt alle drie! En nu: muziek."}], "global": {"q": "¿Qué hace Marta en este audio?", "opts": ["Pregunta a tres personas qué les gusta hacer", "Presenta un concierto en la playa", "Explica un examen de música"], "ans": "Pregunta a tres personas qué les gusta hacer", "why": "drie keer dezelfde vraag, drie verschillende antwoorden"}, "detalle": [{"q": "¿Cuántas veces por semana juega al baloncesto el chico?", "opts": ["Tres", "Dos", "Cinco"], "ans": "Tres", "why": "«tres veces por semana»"}, {"q": "¿Toca el chico algún instrumento?", "opts": ["No, solo escucha", "Sí, la guitarra", "Sí, el piano"], "ans": "No, solo escucha", "why": "«no toco ningún instrumento. Solo escucho»"}, {"q": "¿Qué día va la señora a la biblioteca?", "opts": ["Los martes", "Los lunes", "Los sábados"], "ans": "Los martes", "why": "«Voy a la biblioteca los martes»"}, {"q": "¿Qué no le gusta nada a la señora?", "opts": ["Los videojuegos", "Las series", "Leer"], "ans": "Los videojuegos", "why": "«No me gustan nada los videojuegos»"}, {"q": "¿Qué prefiere la hermana de la chica?", "opts": ["El cine", "La playa", "El baloncesto"], "ans": "El cine", "why": "«mi hermana prefiere el cine»"}], "vf": [{"q": "A Marta tampoco le gustan los videojuegos.", "ans": true, "prueba": "a mí tampoco"}, {"q": "La chica queda con sus amigas los domingos.", "ans": false, "prueba": "los sábados quedo con mis amigas"}, {"q": "A la hermana de la chica le gusta la playa.", "ans": false, "prueba": "a ella no le gusta la playa"}], "produccion": {"prompt": "Contesta tú a la radio del instituto en cuatro frases: qué te gusta hacer, qué te encanta, qué no te gusta nada y con quién quedas los fines de semana.", "modo": "grabar", "modelo": "En mi tiempo libre… Me encanta… No me gusta nada… Los fines de semana quedo con… y…"}});
+buildAudioCortos("esc_u4",{"fragmentos": [{"etiqueta": "Audio 4.1 · Gustos · 0:55", "seccion": "§1 · Me gusta(n) · gustar & encantar", "titulo": "Tres jóvenes y sus gustos", "tarea": "Noteer per persoon één gusto.", "audio": "audio/C5_U4_01.mp3", "guion": [{"who": "Narradora", "es": "Tres jóvenes hablan de sus gustos.", "nl": "Drie jongeren praten over wat ze leuk vinden."}, {"who": "Narradora", "es": "Número uno: Bea.", "nl": "Nummer één: Bea."}, {"who": "Bea", "es": "A mí me encantan los conciertos. También me gusta la playa, pero no me gusta madrugar.", "nl": "Ik ben dol op concerten. Ik hou ook van het strand, maar vroeg opstaan vind ik niets."}, {"who": "Narradora", "es": "Número dos: Diego.", "nl": "Nummer twee: Diego."}, {"who": "Diego", "es": "A mí me gusta mucho el fútbol. Me encanta jugar los sábados. No me gustan las series largas.", "nl": "Ik hou heel erg van voetbal. Ik vind het geweldig om op zaterdag te spelen. Lange series vind ik niets."}, {"who": "Narradora", "es": "Número tres: Nina.", "nl": "Nummer drie: Nina."}, {"who": "Nina", "es": "A mí me gusta escuchar música y me encantan las montañas. No me gusta el ruido de la ciudad.", "nl": "Ik hou van muziek luisteren en ik ben dol op de bergen. Het lawaai van de stad vind ik niets."}]}, {"etiqueta": "Audio 4.2 · Reacciones · 0:50", "seccion": "§2 · también / tampoco · a mí sí / a mí no", "titulo": "Seis mini-diálogos — ¿qué reacción?", "tarea": "Kruis per dialoog aan: también / tampoco / a mí sí / a mí no.", "audio": "audio/C5_U4_02.mp3", "guion": [{"who": "Narradora", "es": "Seis mini-diálogos. ¿Qué reacción oyes?", "nl": "Zes minidialogen. Welke reactie hoor je?"}, {"who": "Narradora", "es": "Uno.", "nl": "Eén."}, {"who": "Bea", "es": "Me gusta el mar.", "nl": "Ik hou van de zee."}, {"who": "Diego", "es": "A mí también.", "nl": "Ik ook."}, {"who": "Narradora", "es": "Dos.", "nl": "Twee."}, {"who": "Diego", "es": "No me gusta el frío.", "nl": "Ik hou niet van kou."}, {"who": "Nina", "es": "A mí tampoco.", "nl": "Ik ook niet."}, {"who": "Narradora", "es": "Tres.", "nl": "Drie."}, {"who": "Nina", "es": "Me gustan las mates.", "nl": "Ik hou van wiskunde."}, {"who": "Bea", "es": "A mí no.", "nl": "Ik niet."}, {"who": "Narradora", "es": "Cuatro.", "nl": "Vier."}, {"who": "Bea", "es": "No me gustan los lunes.", "nl": "Ik hou niet van maandagen."}, {"who": "Diego", "es": "Pues a mí sí.", "nl": "Nou, ik wel."}, {"who": "Narradora", "es": "Cinco.", "nl": "Vijf."}, {"who": "Diego", "es": "Me encanta bailar.", "nl": "Ik ben dol op dansen."}, {"who": "Nina", "es": "A mí también.", "nl": "Ik ook."}, {"who": "Narradora", "es": "Seis.", "nl": "Zes."}, {"who": "Nina", "es": "No me gusta madrugar.", "nl": "Ik hou niet van vroeg opstaan."}, {"who": "Bea", "es": "A mí sí, me encanta la mañana.", "nl": "Ik wel, ik ben dol op de ochtend."}]}, {"etiqueta": "Audio 4.3 · Planes · 0:45", "seccion": "§3 · Proponer un plan · querer / poder + quedar", "titulo": "Microdictado — tres propuestas", "tarea": "Schrijf de drie voorstellen op.", "audio": "audio/C5_U4_03.mp3", "guion": [{"who": "Narradora", "es": "Tres propuestas. Cada una, dos veces.", "nl": "Drie voorstellen. Elk twee keer."}, {"who": "Narradora", "es": "Número uno.", "nl": "Nummer 1."}, {"who": "Narradora", "es": "¿Quieres ir a la playa el sábado?", "nl": "Wil je zaterdag naar het strand?"}, {"who": "Narradora", "es": "¿Quieres ir a la playa el sábado?", "nl": "Wil je zaterdag naar het strand?"}, {"who": "Narradora", "es": "Número dos.", "nl": "Nummer 2."}, {"who": "Narradora", "es": "¿Podemos quedar a las seis?", "nl": "Kunnen we om zes uur afspreken?"}, {"who": "Narradora", "es": "¿Podemos quedar a las seis?", "nl": "Kunnen we om zes uur afspreken?"}, {"who": "Narradora", "es": "Número tres.", "nl": "Nummer 3."}, {"who": "Narradora", "es": "Quiero ver una peli en mi casa.", "nl": "Ik wil een film kijken bij mij thuis."}, {"who": "Narradora", "es": "Quiero ver una peli en mi casa.", "nl": "Ik wil een film kijken bij mij thuis."}]}]});
 buildLectura("lec_u4",{"titulo": "Fiesta de la Música · València", "tipo": "programa de un festival", "emisor": "La organización del festival", "receptor": "Los jóvenes de la ciudad", "objetivo": "Ayudarte a elegir a qué concierto vas", "prediccion": {"q": "Kijk eerst alleen naar de uren, de namen in hoofdletters en de muziekstijlen tussen haakjes. Wat voor tekst is dit?", "opts": ["Het programma van een festival", "Een liedtekst", "Een treinregeling"], "ans": "Het programma van een festival", "why": "Uren + artiestennamen + podia = een programma."}, "texto": [["titulo", "🎶 FIESTA DE LA MÚSICA · València"], ["lema", "Sábado 21 de junio · Playa de la Malvarrosa · Entrada gratuita"], ["lista", ["17:00 · Escenario del Mar — LOS ALMENDROS (pop en valenciano)", "19:00 · Escenario del Mar — LA NIÑA DEL SUR (flamenco urbano)", "21:00 · Escenario Grande — TROPICANA (cumbia y salsa)", "23:00 · Escenario Grande — DJ MARÍA (electrónica)"]], ["p", "¿Te gusta bailar? Entonces tu grupo es TROPICANA: ocho músicos de Colombia y de Cuba que no paran en toda la noche."], ["p", "¿Prefieres escuchar tranquilo? LOS ALMENDROS tocan la guitarra y cantan en valenciano. Es un concierto relajante, perfecto para empezar la tarde."], ["p", "¿Te encanta el flamenco? Entonces te interesa LA NIÑA DEL SUR: mezcla flamenco y música electrónica. Sus letras hablan de la costa y del mar."], ["aviso", ["🍹 ZONA DE COMIDA", "Hay paella, horchata y bocadillos desde las cinco. No se puede entrar con botellas de cristal."]], ["firma", "Programa completo y letras de las canciones: fiestamusica.valencia.es"]], "traduccion": "MUZIEKFEEST · Valencia. Zaterdag 21 juni · Malvarrosastrand · Gratis toegang. 17:00 Zeepodium — LOS ALMENDROS (pop in het Valenciaans) · 19:00 Zeepodium — LA NIÑA DEL SUR (urban flamenco) · 21:00 Groot podium — TROPICANA (cumbia en salsa) · 23:00 Groot podium — DJ MARÍA (electro). Hou je van dansen? Dan is TROPICANA jouw groep: acht muzikanten uit Colombia en Cuba die de hele nacht doorgaan. Luister je liever rustig? LOS ALMENDROS spelen gitaar en zingen in het Valenciaans. Een ontspannen concert, ideaal om de avond mee te beginnen. Ben je gek op flamenco? Dan is LA NIÑA DEL SUR iets voor jou: ze mengt flamenco met electro. Haar teksten gaan over de kust en de zee. ETENSZONE: er is paella, horchata en broodjes vanaf vijf uur. Glazen flessen mogen niet binnen.", "global": {"q": "¿Para qué es este texto?", "opts": ["Para informar sobre los conciertos y ayudarte a elegir", "Para vender instrumentos de música", "Para explicar la historia de València"], "ans": "Para informar sobre los conciertos y ayudarte a elegir"}, "escanear": [{"q": "¿Qué día es el festival?", "ans": "el 21 de junio", "alt": ["21 de junio", "sábado 21 de junio", "21/6", "21"], "why": "«Sábado 21 de junio»"}, {"q": "¿Dónde es?", "ans": "en la playa de la Malvarrosa", "alt": ["la malvarrosa", "malvarrosa", "playa de la malvarrosa"], "why": "«Playa de la Malvarrosa»"}, {"q": "¿A qué hora toca TROPICANA?", "ans": "21:00", "alt": ["a las nueve", "las nueve", "21h", "9"], "why": "«21:00 · Escenario Grande — TROPICANA»"}, {"q": "¿Cuántos músicos tiene TROPICANA? (en cifras)", "ans": "8", "alt": ["ocho", "ocho músicos"], "why": "«ocho músicos de Colombia y de Cuba»"}, {"q": "¿Desde qué hora hay comida?", "ans": "desde las cinco", "alt": ["las cinco", "cinco", "17:00", "5"], "why": "«desde las cinco»"}], "vf": [{"q": "El festival es gratis.", "ans": true, "prueba": "entrada gratuita"}, {"q": "TROPICANA es un grupo de cumbia y salsa.", "ans": true, "prueba": "tropicana (cumbia y salsa)"}, {"q": "LOS ALMENDROS cantan en castellano.", "ans": false, "prueba": "cantan en valenciano"}, {"q": "Se puede entrar con botellas de cristal.", "ans": false, "prueba": "no se puede entrar con botellas de cristal"}, {"q": "Las letras de LA NIÑA DEL SUR hablan del mar.", "ans": true, "prueba": "hablan de la costa y del mar"}], "contexto": [{"q": "«Entrada gratuita» — ¿cuánto cuesta?", "opts": ["Nada", "Cinco euros", "Depende del escenario"], "ans": "Nada", "why": "«gratuito» = gratis."}, {"q": "«que no paran en toda la noche» — ¿qué quiere decir?", "opts": ["Ze spelen de hele nacht door", "Ze stoppen na één lied", "Ze komen niet"], "ans": "Ze spelen de hele nacht door", "why": "«parar» = stoppen."}, {"q": "«mezcla flamenco y música electrónica» — ¿qué hace?", "opts": ["Ze combineert twee stijlen", "Ze kiest er één", "Ze speelt geen muziek"], "ans": "Ze combineert twee stijlen", "why": "«mezclar» = mengen."}, {"q": "«Sus letras hablan de la costa» — ¿qué son «las letras»?", "opts": ["de songteksten", "de letters van het alfabet", "de brieven"], "ans": "de songteksten", "why": "In muziek is «la letra» de tekst van een lied — een valstrik voor wie aan letters denkt."}], "produccion": {"prompt": "Elige un concierto y escríbele un mensaje a un amigo (4–5 frases): a cuál vas, a qué hora, por qué te gusta ese grupo y qué no te gusta del programa.", "modelo": "Voy a… a las… Me encanta… porque… No me gusta nada… ¿Quieres venir? ¿Podemos quedar a las…?"}});
 
 </script></body></html>

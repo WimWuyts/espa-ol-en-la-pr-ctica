@@ -90,8 +90,9 @@ C5_U0_01 = {
     "audio": "audio/C5_U0_01.mp3",
     "guion": [L("Narradora", "El abecedario español. Veintisiete letras.",
                 "Het Spaanse alfabet. Zevenentwintig letters.")]
-             + [L("Narradora", "%s — se llama «%s» — %s." % (le, nom, ej),
-                  "%s — heet «%s» — %s." % (le, nom, ej))
+             # geen NL-steun per letter: «A — heet a — Ana, casa» voegt niets toe
+             # en zou het transcript op de hub met een kolom ruis vullen
+             + [L("Narradora", "%s — se llama «%s» — %s." % (le, nom, ej), "")
                 for le, nom, ej in _ABECEDARIO]
              + [L("Narradora", "Y recuerda: la hache no suena. Hola, hasta luego.",
                   "En denk eraan: de h hoor je niet. Hola, hasta luego.")],

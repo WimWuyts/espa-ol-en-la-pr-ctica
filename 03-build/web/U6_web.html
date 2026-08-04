@@ -59,6 +59,21 @@
 .escta:focus-visible,.escbtn:focus-visible,.escclave:focus-visible,.esctrsay:focus-visible{outline:3px solid var(--gd);outline-offset:2px}
 .escconteo{margin:4px 0 0}
 
+/* ── de korte audiotaken van de unit (escucha_corta_data.py) ─────────────────
+   Zelfde speler en transcript als het grote luisterblok, maar zonder de zes
+   treden: dit zijn microdictados en mini-dialogen van 30-60 s. Het transcript
+   gaat pas open na twee keer luisteren — anders leest de leerling mee. */
+.audcortos{margin-top:16px}
+.audit{border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:0 0 12px;background:var(--card)}
+.audit:last-child{margin-bottom:0}
+.audcab{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:5px}
+.audet{font-size:11px;font-weight:700;color:#fff;background:var(--g);border-radius:999px;padding:3px 10px}
+.audsec{font-size:11px;color:var(--mut);font-weight:600}
+.audit h4{font-family:var(--disp);font-size:16px;margin:0 0 4px;color:var(--gd)}
+.audtarea{margin:0 0 9px}
+.audveces{color:var(--mut);font-size:12px}
+.audtr{margin-top:2px}
+
 .lectipo{font-size:11px;font-weight:700;color:var(--gd);background:var(--gt);border-radius:999px;padding:3px 9px}
 .lecficha{display:flex;gap:14px;flex-wrap:wrap;background:var(--gt);border-radius:10px;padding:8px 12px;margin:8px 0 14px;font-size:12px}
 .lecficha b{display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--gd)}
@@ -912,6 +927,74 @@ function buildEscucha(id,cfg){
  if(P.modo==='grabar'&&typeof makeRecorder==='function')
    makeRecorder(id+'_rec',{title:'Tu respuesta hablada',desc:P.prompt||'',items:[{text:P.prompt||'',cue:'graba tu respuesta'}]});
 }
+// ── buildAudioCortos — de korte audiotaken van dezelfde unit ────────────────
+// Het grote luisterblok hierboven is één fragment met zes treden. Daarnaast
+// heeft elke unit kortere audiotaken (microdictado, klankreeks, mini-dialoog,
+// weerbericht, wegbeschrijving) die in print als QR-kaart staan. Die krijgen
+// hier hun speler en hun transcript.
+//
+// Dezelfde afspraak als bij het grote blok: het transcript blijft dicht tot de
+// leerling twee keer geluisterd heeft. Meelezen bij de eerste beurt is geen
+// luisteren meer. De antwoordsleutel staat hier NIET — die hoort in het
+// docentendossier (CLAUDE.md 14).
+//
+// Het blok maakt zijn eigen kaart aan, direct na het grote luisterblok, zodat
+// de unit-generatoren geen extra container in hun HTML nodig hebben.
+function buildAudioCortos(idEscucha,cfg){
+ const ancla=document.getElementById(idEscucha);if(!ancla)return;
+ const frags=(cfg.fragmentos||[]).filter(f=>f.guion&&f.guion.length);
+ if(!frags.length)return;
+ const caja=document.createElement('div');
+ caja.className='card ex audcortos';caja.id=idEscucha+'_cortos';
+ caja.innerHTML='<div class="exhead"><h3>🎧 Los otros audios de la unidad</h3>'+
+   '<span class="escfuente">'+frags.length+(frags.length===1?' fragmento':' fragmentos')+'</span></div>'+
+   '<p class="desc">De korte audiotaken uit het boek — dezelfde die op papier achter een QR-code staan. '+
+   'Luister <b>twee keer</b> voor je het transcript opent.</p><div class="audlista"></div>';
+ ancla.parentNode.insertBefore(caja,ancla.nextSibling);
+ const lista=caja.querySelector('.audlista');
+ frags.forEach((f,n)=>{
+   const it=document.createElement('div');it.className='audit';
+   const idt=idEscucha+'_c'+n;
+   it.innerHTML=
+     '<div class="audcab"><span class="audet">'+exEsc(f.etiqueta||'')+'</span>'+
+       '<span class="audsec">'+exEsc(f.seccion||'')+'</span></div>'+
+     '<h4>'+exEsc(f.titulo||'')+'</h4>'+
+     '<p class="desc audtarea">'+exEsc(f.tarea||'')+'</p>'+
+     '<div class="escplay">'+
+       '<button class="escbtn audplay" type="button">▶ Escuchar</button>'+
+       '<button class="escbtn escbtn-stop audotra" type="button">↺ Otra vez</button>'+
+       '<span class="escfuente audfuente" role="status" aria-live="polite"></span>'+
+       '<span class="desc audveces">0 × geluisterd</span>'+
+     '</div>'+
+     '<button class="escbtn esctrbtn audtr" type="button" disabled '+
+       'aria-controls="'+idt+'_tr">🔒 Ver transcripción</button>'+
+     '<div class="esctrbody" id="'+idt+'_tr" hidden></div>';
+   lista.appendChild(it);
+   const q=s=>it.querySelector(s);
+   const fuente=q('.audfuente'),btn=q('.audplay'),tr=q('.audtr'),body=q('#'+idt+'_tr');
+   let veces=0,sonando=false;
+   const player=escReproductor(f,(modo,activo)=>{
+     fuente.textContent=modo==='mp3'?'audio grabado':'voz del navegador';
+     btn.textContent=activo?'⏹ Parar':'▶ Escuchar';
+     if(!activo)sonando=false;});
+   fuente.textContent=f.audio?'audio grabado':'voz del navegador';
+   function cuenta(){veces++;q('.audveces').textContent=veces+' × geluisterd';
+     if(veces>=2){tr.disabled=false;tr.textContent='📄 Ver transcripción';}}
+   btn.onclick=()=>{if(sonando){player.parar();sonando=false;}
+     else{player.reproducir();sonando=true;cuenta();}};
+   q('.audotra').onclick=()=>{player.parar();player.reproducir();sonando=true;cuenta();};
+   tr.onclick=()=>{
+     if(!body.dataset.hecho){body.dataset.hecho='1';
+       f.guion.forEach((g,i)=>{const r=document.createElement('div');r.className='esctrl';
+         r.innerHTML='<button class="esctrsay" type="button" aria-label="Regel '+(i+1)+' opnieuw horen">🔊</button>'+
+           '<div><b class="esctrwho">'+exEsc(g.who||'')+'</b><span class="esctres">'+exEsc(g.es)+'</span>'+
+           (g.nl?'<span class="esctrnl">'+exEsc(g.nl)+'</span>':'')+'</div>';
+         r.querySelector('.esctrsay').onclick=()=>player.linea(i);body.appendChild(r);});
+       body.insertAdjacentHTML('afterbegin','<button class="otra audnlbtn" type="button">🇳🇱 vertaling aan/uit</button>');
+       body.querySelector('.audnlbtn').onclick=()=>body.classList.toggle('sinnl');}
+     body.hidden=!body.hidden;};
+ });
+}
 
 function lecTexto(bloques){let h='';
  bloques.forEach(b=>{const soort=b[0],c=b[1];
@@ -1005,6 +1088,7 @@ function buildLectura(id,cfg){
    $('.escconteo').textContent=n+' palabra'+(n===1?'':'s');});
  const bm=$('.lecmod');
  if(bm)bm.onclick=()=>{const m=$('.lecmodelo');m.hidden=!m.hidden;};
+
 }
 
 
@@ -1228,6 +1312,7 @@ function buildGramType(){
 }
 buildGramType();
 buildEscucha("esc_u6",{"title": "En el probador", "audio": "audio/C5_U6.mp3", "expectDetalle": 5, "situacion": {"lugar": "Una tienda de ropa en el centro, primer día de rebajas", "quien": "Nina y Valen, y la dependienta", "que": "Nina se prueba ropa y Valen le da su opinión", "claves": ["¿me queda bien?", "esta / esa", "¿tienes una talla más?"]}, "guion": [{"who": "Nina", "es": "Valen, ¿me queda bien esta chaqueta verde?", "nl": "Valen, staat dit groene jasje me goed?"}, {"who": "Valen", "es": "El color sí, pero te queda un poco ancha. ¿No hay una talla menos?", "nl": "De kleur wel, maar hij zit een beetje wijd. Is er geen kleinere maat?"}, {"who": "Nina", "es": "Es la treinta y ocho. Voy a probarme la treinta y seis.", "nl": "Dit is maat 38. Ik ga de 36 passen."}, {"who": "Dependienta", "es": "De la treinta y seis solo queda en negro y en rosa.", "nl": "In maat 36 hebben we alleen nog zwart en roze."}, {"who": "Nina", "es": "En negro, entonces. ¿Y esos pantalones de rayas de ahí?", "nl": "Dan zwart. En die gestreepte broek daar bij jou?"}, {"who": "Valen", "es": "¿Estos? Acabo de verlos. Cuestan veinticinco euros con el descuento.", "nl": "Deze? Ik heb ze net gezien. Ze kosten vijfentwintig euro met de korting."}, {"who": "Nina", "es": "No están mal. Pero aquella falda del escaparate me gusta más.", "nl": "Niet slecht. Maar dat rokje in de etalage vind ik mooier."}, {"who": "Valen", "es": "Esa es carísima y no está rebajada. Yo me llevo los pantalones.", "nl": "Dat is peperduur en niet afgeprijsd. Ik neem de broek."}, {"who": "Nina", "es": "Vale. La chaqueta negra y los pantalones. ¿Cuánto es todo?", "nl": "Oké. Het zwarte jasje en de broek. Hoeveel is dat samen?"}, {"who": "Dependienta", "es": "Cuarenta y siete euros. ¿En efectivo o con tarjeta?", "nl": "Zevenenveertig euro. Cash of met de kaart?"}, {"who": "Nina", "es": "En efectivo. Es un truco: así veo lo que gasto.", "nl": "Cash. Dat is een truc: zo zie ik wat ik uitgeef."}, {"who": "Valen", "es": "¡Y a ti todavía te queda dinero para un helado!", "nl": "En jij houdt nog genoeg over voor een ijsje!"}], "global": {"q": "¿Qué hacen Nina y Valen?", "opts": ["Nina se prueba ropa y Valen le aconseja", "Devuelven una chaqueta rota", "Buscan trabajo en la tienda"], "ans": "Nina se prueba ropa y Valen le aconseja", "why": "«¿me queda bien?» → opinie → beslissing"}, "detalle": [{"q": "¿Qué problema tiene la chaqueta verde?", "opts": ["Le queda ancha", "Le queda corta", "El color no le gusta"], "ans": "Le queda ancha", "why": "«te queda un poco ancha»"}, {"q": "¿En qué colores queda la talla treinta y seis?", "opts": ["En negro y en rosa", "En verde y en negro", "Solo en verde"], "ans": "En negro y en rosa", "why": "«solo queda en negro y en rosa»"}, {"q": "¿Cuánto cuestan los pantalones con el descuento?", "opts": ["25 euros", "35 euros", "47 euros"], "ans": "25 euros", "why": "«Cuestan veinticinco euros con el descuento»"}, {"q": "¿Cuánto paga Nina en total?", "opts": ["47 euros", "25 euros", "38 euros"], "ans": "47 euros", "why": "«Cuarenta y siete euros»"}, {"q": "¿Cómo paga?", "opts": ["En efectivo", "Con tarjeta", "No paga"], "ans": "En efectivo", "why": "«En efectivo. Es un truco»"}], "vf": [{"q": "Nina se lleva la chaqueta verde.", "ans": false, "prueba": "la chaqueta negra y los pantalones"}, {"q": "La falda del escaparate está rebajada.", "ans": false, "prueba": "no está rebajada"}, {"q": "Valen le aconseja los pantalones.", "ans": true, "prueba": "yo me llevo los pantalones"}], "produccion": {"prompt": "Estás en el probador con un amigo. Graba cuatro turnos: pregunta si te queda bien, pide otra talla o otro color, compara dos prendas (esta / esa / aquella) y decide qué te llevas.", "modo": "grabar", "modelo": "¿Me queda bien esta…? ¿Tienes una talla…? Prefiero esa… que aquella… Me llevo…"}});
+buildAudioCortos("esc_u6",{"fragmentos": [{"etiqueta": "Audio 6.1 · En la tienda · 1:05", "seccion": "§1 · lo / la / los / las · ¿la falda? → la compro", "titulo": "En la tienda — dependienta y cliente", "tarea": "1ª globaal, 2ª detail: welk voornaamwoord gebruiken ze?", "audio": "audio/C5_U6_01.mp3", "guion": [{"who": "Dependienta", "es": "¡Hola! ¿Te puedo ayudar?", "nl": "Hallo! Kan ik je helpen?"}, {"who": "Cliente", "es": "Sí, busco una camisa blanca.", "nl": "Ja, ik zoek een wit hemd."}, {"who": "Dependienta", "es": "Mira, esta es muy bonita. ¿Te gusta?", "nl": "Kijk, deze is heel mooi. Vind je hem leuk?"}, {"who": "Cliente", "es": "Sí, la quiero. ¿Cuánto cuesta?", "nl": "Ja, die wil ik. Hoeveel kost hij?"}, {"who": "Dependienta", "es": "Veinticinco euros. ¿Y los vaqueros? Están de oferta.", "nl": "Vijfentwintig euro. En de jeans? Die zijn in de aanbieding."}, {"who": "Cliente", "es": "No, no los necesito, gracias.", "nl": "Nee, die heb ik niet nodig, dank je."}, {"who": "Dependienta", "es": "¿Y este jersey? Es de algodón.", "nl": "En deze trui? Hij is van katoen."}, {"who": "Cliente", "es": "Mmm… lo veo un poco grande. ¿Tiene la talla mediana?", "nl": "Mmm… hij lijkt me een beetje groot. Hebt u maat medium?"}, {"who": "Dependienta", "es": "Un momento… Sí, aquí están las medianas.", "nl": "Een momentje… Ja, hier zijn de medium maten."}, {"who": "Cliente", "es": "Perfecto, las miro un segundo. Al final me llevo la camisa.", "nl": "Perfect, ik bekijk ze even. Uiteindelijk neem ik het hemd."}, {"who": "Dependienta", "es": "Muy bien. Son veinticinco euros. ¿Cómo lo pagas?", "nl": "Heel goed. Dat is vijfentwintig euro. Hoe betaal je?"}, {"who": "Cliente", "es": "Con tarjeta, por favor.", "nl": "Met kaart, alstublieft."}]}]});
 buildLectura("lec_u6",{"titulo": "Cinco trucos para ir de rebajas", "tipo": "artículo de consejos (revista juvenil)", "emisor": "La revista «Joven y Listo»", "receptor": "Jóvenes que van de compras con poco dinero", "objetivo": "Que gastes menos y compres mejor", "prediccion": {"q": "Kijk eerst alleen naar de titel en de vijf nummers. Wat gaat deze tekst doen?", "opts": ["Tips geven", "Iets verkopen", "Een verhaal vertellen"], "ans": "Tips geven", "why": "«Cinco trucos» + genummerde punten = advies."}, "texto": [["titulo", "🛍️ CINCO TRUCOS PARA IR DE REBAJAS"], ["lema", "Sin gastar de más · Joven y Listo · enero"], ["p", "Llegan las rebajas y todo parece barato. Pero atención: no todo lo que está rebajado es una buena compra. Estos cinco trucos funcionan."], ["lista", ["1 · Hay que mirar la etiqueta vieja. Si el precio antiguo no está, el descuento no es real.", "2 · Es mejor no comprar el primer día. Las tiendas bajan más los precios en la segunda semana.", "3 · Puedes probarte la ropa siempre, también en rebajas. Una talla no es igual en todas las tiendas.", "4 · Hay que llevar una lista. Con lista gastas menos; sin lista compras cosas que no usas.", "5 · Es mejor pagar en efectivo. Con tarjeta no ves el dinero y gastas más."]], ["aviso", ["♻️ UN TRUCO EXTRA: LA SEGUNDA MANO", "En el mercadillo y en las tiendas de segunda mano hay ropa buena y barata. Además es moda sostenible: una camiseta usada no gasta agua nueva."]], ["p", "Y el truco más importante: si una prenda no te queda bien en la tienda, tampoco te va a quedar bien en casa. Ese vestido barato que no te pones nunca es el más caro de tu armario."], ["firma", "¿Tienes otro truco? Escríbenos a trucos@jovenylisto.es"]], "traduccion": "VIJF TRUCS VOOR DE SOLDEN — zonder te veel uit te geven. De solden komen eraan en alles lijkt goedkoop. Maar opgelet: niet alles wat afgeprijsd is, is een goede aankoop. Deze vijf trucs werken. 1 · Je moet naar het oude prijskaartje kijken. Staat de oude prijs er niet, dan is de korting niet echt. 2 · Koop beter niet de eerste dag. Winkels verlagen de prijzen meer in de tweede week. 3 · Je mag altijd passen, ook in de solden. Een maat is niet in elke winkel hetzelfde. 4 · Je moet een lijstje meenemen. Met een lijstje geef je minder uit; zonder lijstje koop je dingen die je niet gebruikt. 5 · Betaal beter cash. Met de kaart zie je het geld niet en geef je meer uit. EXTRA TRUC: TWEEDEHANDS — op de rommelmarkt en in tweedehandswinkels vind je goede en goedkope kleren. Bovendien is het duurzame mode: een gedragen T-shirt verbruikt geen nieuw water. En de belangrijkste truc: als een kledingstuk je in de winkel niet goed staat, zal het je thuis ook niet goed staan. Dat goedkope kleedje dat je nooit draagt, is het duurste van je kast.", "global": {"q": "¿Para qué es este artículo?", "opts": ["Para ayudarte a comprar mejor y gastar menos", "Para presentar la moda de este año", "Para explicar dónde están las tiendas"], "ans": "Para ayudarte a comprar mejor y gastar menos"}, "escanear": [{"q": "¿Cuántos trucos da el artículo? (en cifras)", "ans": "5", "alt": ["cinco", "5 trucos"], "why": "«CINCO TRUCOS PARA IR DE REBAJAS»"}, {"q": "¿En qué semana bajan más los precios?", "ans": "en la segunda", "alt": ["la segunda", "segunda", "la segunda semana", "2"], "why": "«bajan más los precios en la segunda semana»"}, {"q": "¿Qué hay que llevar a la tienda?", "ans": "una lista", "alt": ["lista", "una lista de la compra"], "why": "«Hay que llevar una lista»"}, {"q": "¿Cómo es mejor pagar?", "ans": "en efectivo", "alt": ["efectivo", "con dinero", "en cash"], "why": "«Es mejor pagar en efectivo»"}, {"q": "¿Dónde hay ropa buena y barata según el recuadro?", "ans": "en el mercadillo y en las tiendas de segunda mano", "alt": ["el mercadillo", "mercadillo", "segunda mano", "tiendas de segunda mano"], "why": "«En el mercadillo y en las tiendas de segunda mano»"}], "vf": [{"q": "Todo lo que está rebajado es una buena compra.", "ans": false, "prueba": "no todo lo que está rebajado es una buena compra"}, {"q": "En rebajas no puedes probarte la ropa.", "ans": false, "prueba": "puedes probarte la ropa siempre, también en rebajas"}, {"q": "Con tarjeta la gente gasta más.", "ans": true, "prueba": "con tarjeta no ves el dinero y gastas más"}, {"q": "La ropa de segunda mano es cara.", "ans": false, "prueba": "hay ropa buena y barata"}, {"q": "Una talla es igual en todas las tiendas.", "ans": false, "prueba": "una talla no es igual en todas las tiendas"}], "contexto": [{"q": "«la etiqueta vieja» — ¿para qué sirve mirarla?", "opts": ["Om te zien of de korting echt is", "Om de maat te vinden", "Om te weten van welke stof het is"], "ans": "Om te zien of de korting echt is", "why": "Er staat: zonder de oude prijs is de korting niet echt."}, {"q": "«no te queda bien» — ¿qué quiere decir?", "opts": ["Het staat je niet", "Het blijft niet liggen", "Het is niet meer over"], "ans": "Het staat je niet", "why": "«quedar bien» over kleding = goed staan."}, {"q": "«moda sostenible» — ¿qué es?", "opts": ["mode die het milieu spaart", "dure merkkleding", "mode die lang meegaat in de kast"], "ans": "mode die het milieu spaart", "why": "Het kader legt het uit: geen nieuw water."}, {"q": "«es el más caro de tu armario» — ¿por qué lo dice?", "opts": ["Omdat je het nooit draagt, is elke euro weggegooid", "Omdat het uit een dure winkel komt", "Omdat het veel plaats inneemt"], "ans": "Omdat je het nooit draagt, is elke euro weggegooid", "why": "Het gaat over «ese vestido barato que no te pones nunca»."}], "produccion": {"prompt": "Escribe tus propios tres trucos para comprar ropa (5–6 frases). Usa: hay que + infinitivo · es mejor + infinitivo · puedes + infinitivo. Añade un truco sobre la ropa de segunda mano.", "modelo": "1 · Hay que… 2 · Es mejor no… 3 · Puedes… Y un truco extra: en el mercadillo…"}});
 
 </script></body></html>

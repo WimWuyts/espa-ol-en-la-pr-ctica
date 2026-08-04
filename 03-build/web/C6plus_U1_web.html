@@ -59,6 +59,21 @@
 .escta:focus-visible,.escbtn:focus-visible,.escclave:focus-visible,.esctrsay:focus-visible{outline:3px solid var(--gd);outline-offset:2px}
 .escconteo{margin:4px 0 0}
 
+/* ── de korte audiotaken van de unit (escucha_corta_data.py) ─────────────────
+   Zelfde speler en transcript als het grote luisterblok, maar zonder de zes
+   treden: dit zijn microdictados en mini-dialogen van 30-60 s. Het transcript
+   gaat pas open na twee keer luisteren — anders leest de leerling mee. */
+.audcortos{margin-top:16px}
+.audit{border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:0 0 12px;background:var(--card)}
+.audit:last-child{margin-bottom:0}
+.audcab{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:5px}
+.audet{font-size:11px;font-weight:700;color:#fff;background:var(--g);border-radius:999px;padding:3px 10px}
+.audsec{font-size:11px;color:var(--mut);font-weight:600}
+.audit h4{font-family:var(--disp);font-size:16px;margin:0 0 4px;color:var(--gd)}
+.audtarea{margin:0 0 9px}
+.audveces{color:var(--mut);font-size:12px}
+.audtr{margin-top:2px}
+
 .lectipo{font-size:11px;font-weight:700;color:var(--gd);background:var(--gt);border-radius:999px;padding:3px 9px}
 .lecficha{display:flex;gap:14px;flex-wrap:wrap;background:var(--gt);border-radius:10px;padding:8px 12px;margin:8px 0 14px;font-size:12px}
 .lecficha b{display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--gd)}
@@ -923,6 +938,74 @@ function buildEscucha(id,cfg){
  if(P.modo==='grabar'&&typeof makeRecorder==='function')
    makeRecorder(id+'_rec',{title:'Tu respuesta hablada',desc:P.prompt||'',items:[{text:P.prompt||'',cue:'graba tu respuesta'}]});
 }
+// ── buildAudioCortos — de korte audiotaken van dezelfde unit ────────────────
+// Het grote luisterblok hierboven is één fragment met zes treden. Daarnaast
+// heeft elke unit kortere audiotaken (microdictado, klankreeks, mini-dialoog,
+// weerbericht, wegbeschrijving) die in print als QR-kaart staan. Die krijgen
+// hier hun speler en hun transcript.
+//
+// Dezelfde afspraak als bij het grote blok: het transcript blijft dicht tot de
+// leerling twee keer geluisterd heeft. Meelezen bij de eerste beurt is geen
+// luisteren meer. De antwoordsleutel staat hier NIET — die hoort in het
+// docentendossier (CLAUDE.md 14).
+//
+// Het blok maakt zijn eigen kaart aan, direct na het grote luisterblok, zodat
+// de unit-generatoren geen extra container in hun HTML nodig hebben.
+function buildAudioCortos(idEscucha,cfg){
+ const ancla=document.getElementById(idEscucha);if(!ancla)return;
+ const frags=(cfg.fragmentos||[]).filter(f=>f.guion&&f.guion.length);
+ if(!frags.length)return;
+ const caja=document.createElement('div');
+ caja.className='card ex audcortos';caja.id=idEscucha+'_cortos';
+ caja.innerHTML='<div class="exhead"><h3>🎧 Los otros audios de la unidad</h3>'+
+   '<span class="escfuente">'+frags.length+(frags.length===1?' fragmento':' fragmentos')+'</span></div>'+
+   '<p class="desc">De korte audiotaken uit het boek — dezelfde die op papier achter een QR-code staan. '+
+   'Luister <b>twee keer</b> voor je het transcript opent.</p><div class="audlista"></div>';
+ ancla.parentNode.insertBefore(caja,ancla.nextSibling);
+ const lista=caja.querySelector('.audlista');
+ frags.forEach((f,n)=>{
+   const it=document.createElement('div');it.className='audit';
+   const idt=idEscucha+'_c'+n;
+   it.innerHTML=
+     '<div class="audcab"><span class="audet">'+exEsc(f.etiqueta||'')+'</span>'+
+       '<span class="audsec">'+exEsc(f.seccion||'')+'</span></div>'+
+     '<h4>'+exEsc(f.titulo||'')+'</h4>'+
+     '<p class="desc audtarea">'+exEsc(f.tarea||'')+'</p>'+
+     '<div class="escplay">'+
+       '<button class="escbtn audplay" type="button">▶ Escuchar</button>'+
+       '<button class="escbtn escbtn-stop audotra" type="button">↺ Otra vez</button>'+
+       '<span class="escfuente audfuente" role="status" aria-live="polite"></span>'+
+       '<span class="desc audveces">0 × geluisterd</span>'+
+     '</div>'+
+     '<button class="escbtn esctrbtn audtr" type="button" disabled '+
+       'aria-controls="'+idt+'_tr">🔒 Ver transcripción</button>'+
+     '<div class="esctrbody" id="'+idt+'_tr" hidden></div>';
+   lista.appendChild(it);
+   const q=s=>it.querySelector(s);
+   const fuente=q('.audfuente'),btn=q('.audplay'),tr=q('.audtr'),body=q('#'+idt+'_tr');
+   let veces=0,sonando=false;
+   const player=escReproductor(f,(modo,activo)=>{
+     fuente.textContent=modo==='mp3'?'audio grabado':'voz del navegador';
+     btn.textContent=activo?'⏹ Parar':'▶ Escuchar';
+     if(!activo)sonando=false;});
+   fuente.textContent=f.audio?'audio grabado':'voz del navegador';
+   function cuenta(){veces++;q('.audveces').textContent=veces+' × geluisterd';
+     if(veces>=2){tr.disabled=false;tr.textContent='📄 Ver transcripción';}}
+   btn.onclick=()=>{if(sonando){player.parar();sonando=false;}
+     else{player.reproducir();sonando=true;cuenta();}};
+   q('.audotra').onclick=()=>{player.parar();player.reproducir();sonando=true;cuenta();};
+   tr.onclick=()=>{
+     if(!body.dataset.hecho){body.dataset.hecho='1';
+       f.guion.forEach((g,i)=>{const r=document.createElement('div');r.className='esctrl';
+         r.innerHTML='<button class="esctrsay" type="button" aria-label="Regel '+(i+1)+' opnieuw horen">🔊</button>'+
+           '<div><b class="esctrwho">'+exEsc(g.who||'')+'</b><span class="esctres">'+exEsc(g.es)+'</span>'+
+           (g.nl?'<span class="esctrnl">'+exEsc(g.nl)+'</span>':'')+'</div>';
+         r.querySelector('.esctrsay').onclick=()=>player.linea(i);body.appendChild(r);});
+       body.insertAdjacentHTML('afterbegin','<button class="otra audnlbtn" type="button">🇳🇱 vertaling aan/uit</button>');
+       body.querySelector('.audnlbtn').onclick=()=>body.classList.toggle('sinnl');}
+     body.hidden=!body.hidden;};
+ });
+}
 
 function lecTexto(bloques){let h='';
  bloques.forEach(b=>{const soort=b[0],c=b[1];
@@ -1016,6 +1099,7 @@ function buildLectura(id,cfg){
    $('.escconteo').textContent=n+' palabra'+(n===1?'':'s');});
  const bm=$('.lecmod');
  if(bm)bm.onclick=()=>{const m=$('.lecmodelo');m.hidden=!m.hidden;};
+
 }
 
 
@@ -1314,6 +1398,7 @@ function buildGramType(){
 }
 buildGramType();
 buildEscucha("esc_c6p_u1",{"title": "Entrevista a un deportista", "audio": "audio/C6plus_U1.mp3", "expectDetalle": 5, "situacion": {"lugar": "La radio del instituto, Salamanca", "quien": "Una periodista escolar y Hugo, nadador de dieciocho años", "que": "Le pregunta por su rutina y por lo que le gusta", "claves": ["¿a qué hora?", "me levanto", "me gusta"]}, "guion": [{"who": "Periodista", "es": "Hugo, gracias por venir. ¿A qué hora te levantas?", "nl": "Hugo, bedankt dat je er bent. Hoe laat sta je op?"}, {"who": "Hugo", "es": "Me levanto a las cinco y media. Muy temprano, sí.", "nl": "Ik sta om half zes op. Heel vroeg, ja."}, {"who": "Periodista", "es": "¿Y qué haces primero?", "nl": "En wat doe je eerst?"}, {"who": "Hugo", "es": "Me ducho, desayuno mucho y voy a la piscina en bici.", "nl": "Ik douche, ontbijt veel en ga met de fiets naar het zwembad."}, {"who": "Periodista", "es": "¿Cuántas horas entrenas al día?", "nl": "Hoeveel uur train je per dag?"}, {"who": "Hugo", "es": "Entreno cuatro horas: dos por la mañana y dos por la tarde.", "nl": "Ik train vier uur: twee 's ochtends en twee 's middags."}, {"who": "Periodista", "es": "¿Te gusta madrugar?", "nl": "Hou je ervan om vroeg op te staan?"}, {"who": "Hugo", "es": "No, no me gusta nada. Pero me gustan mucho las carreras.", "nl": "Nee, helemaal niet. Maar ik hou wel erg van de wedstrijden."}, {"who": "Periodista", "es": "¿Estudias también?", "nl": "Studeer je ook?"}, {"who": "Hugo", "es": "Sí, estudio por la noche. Estoy cansado, pero estoy contento.", "nl": "Ja, ik studeer 's avonds. Ik ben moe, maar ik ben tevreden."}, {"who": "Periodista", "es": "Última pregunta: ¿a qué hora te acuestas?", "nl": "Laatste vraag: hoe laat ga je slapen?"}, {"who": "Hugo", "es": "Me acuesto a las diez. ¡Y me duermo en dos minutos!", "nl": "Ik ga om tien uur slapen. En ik val binnen twee minuten in slaap!"}], "global": {"q": "¿De qué habla Hugo en la entrevista?", "opts": ["De su rutina y de sus gustos", "De un viaje al extranjero", "De sus problemas en clase"], "ans": "De su rutina y de sus gustos"}, "detalle": [{"q": "¿A qué hora se levanta Hugo?", "opts": ["A las cinco y media", "A las seis y media", "A las siete"], "ans": "A las cinco y media", "why": "«Me levanto a las cinco y media»"}, {"q": "¿Cómo va a la piscina?", "opts": ["En bici", "En autobús", "Andando"], "ans": "En bici", "why": "«voy a la piscina en bici»"}, {"q": "¿Cuántas horas entrena al día?", "opts": ["Cuatro", "Dos", "Seis"], "ans": "Cuatro", "why": "«Entreno cuatro horas»"}, {"q": "¿Cuándo estudia?", "opts": ["Por la noche", "Por la mañana", "No estudia"], "ans": "Por la noche", "why": "«estudio por la noche»"}, {"q": "¿A qué hora se acuesta?", "opts": ["A las diez", "A las once", "A las nueve"], "ans": "A las diez", "why": "«Me acuesto a las diez»"}], "vf": [{"q": "A Hugo le gusta madrugar.", "ans": false, "prueba": "no me gusta nada"}, {"q": "A Hugo le gustan las carreras.", "ans": true, "prueba": "me gustan mucho las carreras"}, {"q": "Hugo se ducha antes de desayunar.", "ans": true, "prueba": "me ducho, desayuno mucho"}], "produccion": {"prompt": "Contesta tú a la periodista: ¿a qué hora te levantas, qué haces primero, qué te gusta y qué no te gusta, y a qué hora te acuestas?", "modo": "escribir", "min": 4, "modelo": "Me levanto a las… Primero me… Me gusta… pero no me gusta… Me acuesto a las…"}});
+buildAudioCortos("esc_c6p_u1",{"fragmentos": [{"etiqueta": "§1 · Dictado de horas", "seccion": "§1 · ¿Qué hora es?", "titulo": "Dictado de horas — seis veces", "tarea": "1ª ronde: het hele uur. 2ª ronde: hetzelfde uur met minuten. Noteer zes tijden.", "audio": "audio/C6plus_U1_01.mp3", "guion": [{"who": "Narradora", "es": "Primera ronda: la hora en punto.", "nl": "Eerste ronde: het hele uur."}, {"who": "Narradora", "es": "a) Son las ocho.", "nl": "a) Het is acht uur."}, {"who": "Narradora", "es": "b) Es la una.", "nl": "b) Het is één uur."}, {"who": "Narradora", "es": "c) Son las cuatro.", "nl": "c) Het is vier uur."}, {"who": "Narradora", "es": "d) Son las once.", "nl": "d) Het is elf uur."}, {"who": "Narradora", "es": "e) Son las seis.", "nl": "e) Het is zes uur."}, {"who": "Narradora", "es": "f) Son las doce.", "nl": "f) Het is twaalf uur."}, {"who": "Narradora", "es": "Segunda ronda: la misma hora, con minutos.", "nl": "Tweede ronde: hetzelfde uur, met minuten."}, {"who": "Narradora", "es": "a) Son las ocho y cuarto.", "nl": "a) Het is kwart over acht."}, {"who": "Narradora", "es": "b) Es la una y media.", "nl": "b) Het is half twee."}, {"who": "Narradora", "es": "c) Son las cuatro menos diez.", "nl": "c) Het is tien voor vier."}, {"who": "Narradora", "es": "d) Son las once y veinticinco.", "nl": "d) Het is vijfentwintig over elf."}, {"who": "Narradora", "es": "e) Son las seis menos cuarto.", "nl": "e) Het is kwart voor zes."}, {"who": "Narradora", "es": "f) Son las doce y cinco.", "nl": "f) Het is vijf over twaalf."}]}, {"etiqueta": "§2 · Un día con Lucía", "seccion": "§2 · Mi día a día — la rutina", "titulo": "Un día con Lucía", "tarea": "1ª: hoe laat staat ze op? — 2ª: wat doet ze 's namiddags? Vertel daarna je eigen dag.", "audio": "audio/C6plus_U1_02.mp3", "guion": [{"who": "Lucía", "es": "Hola, soy Lucía. Te cuento un día normal en Sevilla.", "nl": "Hallo, ik ben Lucía. Ik vertel je over een gewone dag in Sevilla."}, {"who": "Lucía", "es": "Me levanto a las siete menos cuarto. Siempre me despierto antes, pero me quedo cinco minutos en la cama.", "nl": "Ik sta op om kwart voor zeven. Ik word altijd eerder wakker, maar ik blijf nog vijf minuten in bed."}, {"who": "Lucía", "es": "Primero me ducho, luego desayuno con mi hermana y después me visto.", "nl": "Eerst douche ik, daarna ontbijt ik met mijn zus en vervolgens kleed ik me aan."}, {"who": "Lucía", "es": "Salgo de casa a las ocho y voy al instituto en autobús. Las clases empiezan a las ocho y media.", "nl": "Ik ga om acht uur van huis en ik ga met de bus naar school. De lessen beginnen om half negen."}, {"who": "Lucía", "es": "Como en el instituto a las dos. Por la tarde hago los deberes y a veces entreno con el equipo de baloncesto.", "nl": "Ik eet om twee uur op school. 's Namiddags maak ik mijn huiswerk en soms train ik met het basketbalteam."}, {"who": "Lucía", "es": "Los martes por la tarde nunca entreno: voy a clase de guitarra.", "nl": "Op dinsdagnamiddag train ik nooit: dan ga ik naar gitaarles."}, {"who": "Lucía", "es": "Ceno sobre las nueve y media y me acuesto a las once.", "nl": "Ik avondmaal rond half tien en ik ga om elf uur slapen."}, {"who": "Lucía", "es": "¿Y tú? ¿A qué hora te levantas?", "nl": "En jij? Hoe laat sta jij op?"}]}]});
 buildLectura("lec_c6p_u1",{"titulo": "Un martes cualquiera", "tipo": "entrada de blog", "emisor": "Marta, estudiante en Salamanca", "receptor": "Los lectores de su blog «Mi vida en España»", "objetivo": "Contar cómo es un día normal para ella", "prediccion": {"q": "Kijk eerst alleen naar de titel en de uren die in de tekst staan. Waarover gaat dit?", "opts": ["Over een gewone dag van begin tot eind", "Over een reis naar Amerika", "Over een examen"], "ans": "Over een gewone dag van begin tot eind"}, "texto": [["titulo", "UN MARTES CUALQUIERA ⏰"], ["lema", "Mi vida en España · entrada del 12 de marzo"], ["p", "Me despierto a las siete menos cuarto, pero no me levanto hasta las siete. Me ducho rápido, me visto y desayuno un café con tostadas."], ["p", "A las ocho salgo de casa. La facultad está lejos, así que voy en autobús. Las clases empiezan a las nueve y terminan a la una y media."], ["p", "Como con mis compañeros en la cafetería. Me gusta mucho la tortilla de patatas, pero no me gustan nada las lentejas."], ["lista", ["07:00 — me levanto", "08:00 — salgo de casa", "09:00 — empiezan las clases", "13:30 — termino y como", "17:00 — estudio en la biblioteca", "23:30 — me acuesto"]], ["p", "Por la tarde estudio en la biblioteca hasta las siete. Después voy al gimnasio dos días por semana. Estoy cansada, pero estoy contenta."], ["firma", "Me acuesto a las once y media. ¿Y tú? ¿A qué hora te acuestas?"]], "traduccion": "Een doordeweekse dinsdag. Ik word wakker om kwart voor zeven, maar ik sta pas om zeven uur op. Ik douche snel, kleed me aan en ontbijt met koffie en geroosterd brood. Om acht uur ga ik de deur uit. De faculteit is ver, dus ik ga met de bus. De lessen beginnen om negen uur en eindigen om half twee. Ik eet met mijn medestudenten in de cafetaria. Ik hou erg van aardappelomelet, maar ik hou helemaal niet van linzen. 's Middags studeer ik tot zeven uur in de bibliotheek. Daarna ga ik twee dagen per week naar de sportschool. Ik ben moe, maar ik ben tevreden. Ik ga om half twaalf slapen. En jij? Hoe laat ga jij slapen?", "global": {"q": "¿De qué trata la entrada?", "opts": ["De la rutina diaria de Marta", "De sus vacaciones", "De un examen difícil"], "ans": "De la rutina diaria de Marta"}, "escanear": [{"q": "¿A qué hora se levanta Marta?", "ans": "a las siete", "alt": ["siete", "las siete", "7:00", "07:00", "a las 7"], "why": "«no me levanto hasta las siete»"}, {"q": "¿Cómo va a la facultad?", "ans": "en autobús", "alt": ["autobús", "autobus", "en autobus", "el autobús"], "why": "«voy en autobús»"}, {"q": "¿A qué hora terminan las clases?", "ans": "a la una y media", "alt": ["la una y media", "una y media", "13:30", "1:30"], "why": "«terminan a la una y media»"}, {"q": "¿Dónde estudia por la tarde?", "ans": "en la biblioteca", "alt": ["la biblioteca", "biblioteca"], "why": "«estudio en la biblioteca»"}, {"q": "¿Cuántos días por semana va al gimnasio?", "ans": "dos", "alt": ["2", "dos días", "dos dias"], "why": "«dos días por semana»"}], "vf": [{"q": "Marta se ducha por la mañana.", "ans": true, "prueba": "me ducho rápido"}, {"q": "A Marta le gustan las lentejas.", "ans": false, "prueba": "no me gustan nada las lentejas"}, {"q": "Marta come sola.", "ans": false, "prueba": "como con mis compañeros"}, {"q": "Marta se acuesta a las once y media.", "ans": true, "prueba": "me acuesto a las once y media"}, {"q": "Marta va a la facultad en coche.", "ans": false, "prueba": "voy en autobús"}], "contexto": [{"q": "«no me levanto hasta las siete» — ¿qué significa «hasta»?", "opts": ["tot", "vanaf", "zonder"], "ans": "tot", "why": "Ze wordt eerder wakker, maar staat pas óm zeven uur op."}, {"q": "«así que voy en autobús» — ¿qué expresa «así que»?", "opts": ["een gevolg (dus)", "een tegenstelling (maar)", "een reden (omdat)"], "ans": "een gevolg (dus)", "why": "De faculteit is ver → dáárom de bus. Let op: «dus» is nooit «luego»."}, {"q": "«Estoy cansada, pero estoy contenta» — ¿por qué «estoy» y no «soy»?", "opts": ["Het is hoe ze zich nú voelt", "Het is haar karakter", "Het is haar beroep"], "ans": "Het is hoe ze zich nú voelt", "why": "Toestand van het moment → estar."}], "produccion": {"prompt": "Escribe tu propio martes (5–6 frases): a qué hora te levantas, cómo vas al instituto, cuándo empiezan y terminan las clases, qué te gusta comer y a qué hora te acuestas.", "modelo": "Me levanto a las… Voy al instituto en… Las clases empiezan a las… y terminan a las… Me gusta… pero no me gusta… Me acuesto a las…"}});
 
 </script></body></html>

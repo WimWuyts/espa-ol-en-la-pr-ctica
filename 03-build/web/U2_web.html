@@ -59,6 +59,21 @@
 .escta:focus-visible,.escbtn:focus-visible,.escclave:focus-visible,.esctrsay:focus-visible{outline:3px solid var(--gd);outline-offset:2px}
 .escconteo{margin:4px 0 0}
 
+/* ── de korte audiotaken van de unit (escucha_corta_data.py) ─────────────────
+   Zelfde speler en transcript als het grote luisterblok, maar zonder de zes
+   treden: dit zijn microdictados en mini-dialogen van 30-60 s. Het transcript
+   gaat pas open na twee keer luisteren — anders leest de leerling mee. */
+.audcortos{margin-top:16px}
+.audit{border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:0 0 12px;background:var(--card)}
+.audit:last-child{margin-bottom:0}
+.audcab{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:5px}
+.audet{font-size:11px;font-weight:700;color:#fff;background:var(--g);border-radius:999px;padding:3px 10px}
+.audsec{font-size:11px;color:var(--mut);font-weight:600}
+.audit h4{font-family:var(--disp);font-size:16px;margin:0 0 4px;color:var(--gd)}
+.audtarea{margin:0 0 9px}
+.audveces{color:var(--mut);font-size:12px}
+.audtr{margin-top:2px}
+
 .lectipo{font-size:11px;font-weight:700;color:var(--gd);background:var(--gt);border-radius:999px;padding:3px 9px}
 .lecficha{display:flex;gap:14px;flex-wrap:wrap;background:var(--gt);border-radius:10px;padding:8px 12px;margin:8px 0 14px;font-size:12px}
 .lecficha b{display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--gd)}
@@ -952,6 +967,74 @@ function buildEscucha(id,cfg){
  if(P.modo==='grabar'&&typeof makeRecorder==='function')
    makeRecorder(id+'_rec',{title:'Tu respuesta hablada',desc:P.prompt||'',items:[{text:P.prompt||'',cue:'graba tu respuesta'}]});
 }
+// ── buildAudioCortos — de korte audiotaken van dezelfde unit ────────────────
+// Het grote luisterblok hierboven is één fragment met zes treden. Daarnaast
+// heeft elke unit kortere audiotaken (microdictado, klankreeks, mini-dialoog,
+// weerbericht, wegbeschrijving) die in print als QR-kaart staan. Die krijgen
+// hier hun speler en hun transcript.
+//
+// Dezelfde afspraak als bij het grote blok: het transcript blijft dicht tot de
+// leerling twee keer geluisterd heeft. Meelezen bij de eerste beurt is geen
+// luisteren meer. De antwoordsleutel staat hier NIET — die hoort in het
+// docentendossier (CLAUDE.md 14).
+//
+// Het blok maakt zijn eigen kaart aan, direct na het grote luisterblok, zodat
+// de unit-generatoren geen extra container in hun HTML nodig hebben.
+function buildAudioCortos(idEscucha,cfg){
+ const ancla=document.getElementById(idEscucha);if(!ancla)return;
+ const frags=(cfg.fragmentos||[]).filter(f=>f.guion&&f.guion.length);
+ if(!frags.length)return;
+ const caja=document.createElement('div');
+ caja.className='card ex audcortos';caja.id=idEscucha+'_cortos';
+ caja.innerHTML='<div class="exhead"><h3>🎧 Los otros audios de la unidad</h3>'+
+   '<span class="escfuente">'+frags.length+(frags.length===1?' fragmento':' fragmentos')+'</span></div>'+
+   '<p class="desc">De korte audiotaken uit het boek — dezelfde die op papier achter een QR-code staan. '+
+   'Luister <b>twee keer</b> voor je het transcript opent.</p><div class="audlista"></div>';
+ ancla.parentNode.insertBefore(caja,ancla.nextSibling);
+ const lista=caja.querySelector('.audlista');
+ frags.forEach((f,n)=>{
+   const it=document.createElement('div');it.className='audit';
+   const idt=idEscucha+'_c'+n;
+   it.innerHTML=
+     '<div class="audcab"><span class="audet">'+exEsc(f.etiqueta||'')+'</span>'+
+       '<span class="audsec">'+exEsc(f.seccion||'')+'</span></div>'+
+     '<h4>'+exEsc(f.titulo||'')+'</h4>'+
+     '<p class="desc audtarea">'+exEsc(f.tarea||'')+'</p>'+
+     '<div class="escplay">'+
+       '<button class="escbtn audplay" type="button">▶ Escuchar</button>'+
+       '<button class="escbtn escbtn-stop audotra" type="button">↺ Otra vez</button>'+
+       '<span class="escfuente audfuente" role="status" aria-live="polite"></span>'+
+       '<span class="desc audveces">0 × geluisterd</span>'+
+     '</div>'+
+     '<button class="escbtn esctrbtn audtr" type="button" disabled '+
+       'aria-controls="'+idt+'_tr">🔒 Ver transcripción</button>'+
+     '<div class="esctrbody" id="'+idt+'_tr" hidden></div>';
+   lista.appendChild(it);
+   const q=s=>it.querySelector(s);
+   const fuente=q('.audfuente'),btn=q('.audplay'),tr=q('.audtr'),body=q('#'+idt+'_tr');
+   let veces=0,sonando=false;
+   const player=escReproductor(f,(modo,activo)=>{
+     fuente.textContent=modo==='mp3'?'audio grabado':'voz del navegador';
+     btn.textContent=activo?'⏹ Parar':'▶ Escuchar';
+     if(!activo)sonando=false;});
+   fuente.textContent=f.audio?'audio grabado':'voz del navegador';
+   function cuenta(){veces++;q('.audveces').textContent=veces+' × geluisterd';
+     if(veces>=2){tr.disabled=false;tr.textContent='📄 Ver transcripción';}}
+   btn.onclick=()=>{if(sonando){player.parar();sonando=false;}
+     else{player.reproducir();sonando=true;cuenta();}};
+   q('.audotra').onclick=()=>{player.parar();player.reproducir();sonando=true;cuenta();};
+   tr.onclick=()=>{
+     if(!body.dataset.hecho){body.dataset.hecho='1';
+       f.guion.forEach((g,i)=>{const r=document.createElement('div');r.className='esctrl';
+         r.innerHTML='<button class="esctrsay" type="button" aria-label="Regel '+(i+1)+' opnieuw horen">🔊</button>'+
+           '<div><b class="esctrwho">'+exEsc(g.who||'')+'</b><span class="esctres">'+exEsc(g.es)+'</span>'+
+           (g.nl?'<span class="esctrnl">'+exEsc(g.nl)+'</span>':'')+'</div>';
+         r.querySelector('.esctrsay').onclick=()=>player.linea(i);body.appendChild(r);});
+       body.insertAdjacentHTML('afterbegin','<button class="otra audnlbtn" type="button">🇳🇱 vertaling aan/uit</button>');
+       body.querySelector('.audnlbtn').onclick=()=>body.classList.toggle('sinnl');}
+     body.hidden=!body.hidden;};
+ });
+}
 
 function lecTexto(bloques){let h='';
  bloques.forEach(b=>{const soort=b[0],c=b[1];
@@ -1045,6 +1128,7 @@ function buildLectura(id,cfg){
    $('.escconteo').textContent=n+' palabra'+(n===1?'':'s');});
  const bm=$('.lecmod');
  if(bm)bm.onclick=()=>{const m=$('.lecmodelo');m.hidden=!m.hidden;};
+
 }
 
 // MEERKEUZE / GAP-FILL: pool item = {q, opts, ans, why}
@@ -1279,6 +1363,7 @@ function buildGramType(){
 }
 buildGramType();
 buildEscucha("esc_u2",{"title": "¿Quién es quién? — el concurso de la clase", "audio": "audio/C5_U2.mp3", "expectDetalle": 5, "situacion": {"lugar": "El aula de español — diez fotos en la pizarra", "quien": "La profesora y dos concursantes: Diego y Nina", "que": "La profesora describe a una persona y ellos adivinan quién es", "claves": ["tiene el pelo…", "lleva gafas / barba", "es tímido / hablador"]}, "guion": [{"who": "Profesora", "es": "¡Bienvenidos al concurso «¿Quién es quién?»! Diego, Nina: tenéis diez fotos delante.", "nl": "Welkom bij de quiz «Wie is wie?»! Diego, Nina: jullie hebben tien foto's voor je."}, {"who": "Diego", "es": "¡Estamos listos!", "nl": "We zijn er klaar voor!"}, {"who": "Profesora", "es": "Número uno. Es alta, tiene el pelo largo y rizado y lleva gafas.", "nl": "Nummer één. Ze is groot, ze heeft lang krullend haar en ze draagt een bril."}, {"who": "Diego", "es": "¿Es Rocío?", "nl": "Is het Rocío?"}, {"who": "Profesora", "es": "No. Rocío tiene el pelo corto. Segunda pista: es muy habladora.", "nl": "Nee. Rocío heeft kort haar. Tweede aanwijzing: ze praat heel veel."}, {"who": "Nina", "es": "¡Es Elena!", "nl": "Het is Elena!"}, {"who": "Profesora", "es": "¡Correcto! Un punto para Nina. Número dos: es un chico moreno y lleva barba.", "nl": "Juist! Een punt voor Nina. Nummer twee: het is een donkere jongen met een baard."}, {"who": "Diego", "es": "¿Cuántos años tiene?", "nl": "Hoe oud is hij?"}, {"who": "Profesora", "es": "Tiene veintidós años. Es tímido, pero es muy simpático.", "nl": "Hij is tweeëntwintig. Hij is verlegen, maar heel aardig."}, {"who": "Diego", "es": "¡Es Javi!", "nl": "Het is Javi!"}, {"who": "Profesora", "es": "¡Muy bien, Diego! Uno a uno. Y la última foto: es pelirroja, es baja y es muy graciosa.", "nl": "Heel goed, Diego! Eén-één. En de laatste foto: ze heeft rood haar, ze is klein en ze is heel grappig."}, {"who": "Nina", "es": "¿Es la abuela de Elena?", "nl": "Is het de oma van Elena?"}, {"who": "Profesora", "es": "Sí, es Rosario. ¡Dos a uno! Gana Nina.", "nl": "Ja, het is Rosario. Twee-één! Nina wint."}], "global": {"q": "¿Qué hacen en el concurso?", "opts": ["Adivinan quién es cada persona por la descripción", "Cuentan su rutina de la mañana", "Preparan un examen de gramática"], "ans": "Adivinan quién es cada persona por la descripción", "why": "descripción física + carácter → adivinar"}, "detalle": [{"q": "¿Cómo tiene el pelo la persona número uno?", "opts": ["Largo y rizado", "Corto y liso", "Largo y liso"], "ans": "Largo y rizado", "why": "«tiene el pelo largo y rizado»"}, {"q": "¿Quién es la persona número uno?", "opts": ["Elena", "Rocío", "Rosario"], "ans": "Elena", "why": "Rocío valt af: die heeft kort haar."}, {"q": "¿Cuántos años tiene Javi?", "opts": ["22", "20", "12"], "ans": "22", "why": "«Tiene veintidós años»"}, {"q": "¿Cómo es Javi de carácter?", "opts": ["Tímido pero simpático", "Hablador", "Antipático"], "ans": "Tímido pero simpático", "why": "«Es tímido, pero es muy simpático»"}, {"q": "¿Quién gana el concurso?", "opts": ["Nina", "Diego", "Nadie"], "ans": "Nina", "why": "«¡Dos a uno! Gana Nina»"}], "vf": [{"q": "Rocío tiene el pelo largo.", "ans": false, "prueba": "rocío tiene el pelo corto"}, {"q": "Elena habla mucho.", "ans": true, "prueba": "es muy habladora"}, {"q": "Javi lleva barba.", "ans": true, "prueba": "es un chico moreno y lleva barba"}], "produccion": {"prompt": "Juega tú. Describe a alguien de tu clase sin decir su nombre, en cuatro frases: el pelo · los ojos · alto o bajo · el carácter. Tus compañeros adivinan.", "modo": "grabar", "modelo": "Es… Tiene el pelo… y los ojos… Lleva… Es muy… ¿Quién es?"}});
+buildAudioCortos("esc_u2",{"fragmentos": [{"etiqueta": "Audio 1 · Mi familia · 0:45", "seccion": "§1 · La familia + tener", "titulo": "Lucía presenta a su familia", "tarea": "Noteer hoeveel broers/zussen, neven/nichten, huisdieren en grootouders ze heeft.", "audio": "audio/C5_U2_01.mp3", "guion": [{"who": "Lucía", "es": "¡Hola! Soy Lucía y vivo en Sevilla. Esta es mi familia.", "nl": "Hallo! Ik ben Lucía en ik woon in Sevilla. Dit is mijn familie."}, {"who": "Lucía", "es": "En mi casa somos cinco: mi madre, mi padre, mis dos hermanos y yo.", "nl": "Bij ons thuis zijn we met vijf: mijn moeder, mijn vader, mijn twee broers en ik."}, {"who": "Lucía", "es": "Mis hermanos se llaman Marco y Ana. Marco tiene veinte años y Ana tiene ocho.", "nl": "Mijn broer en zus heten Marco en Ana. Marco is twintig en Ana is acht."}, {"who": "Lucía", "es": "Tengo cuatro primos: tres en Sevilla y uno en Málaga.", "nl": "Ik heb vier neven en nichten: drie in Sevilla en één in Málaga."}, {"who": "Lucía", "es": "También tengo una mascota, un perro pequeño. Se llama Curro.", "nl": "Ik heb ook een huisdier, een klein hondje. Hij heet Curro."}, {"who": "Lucía", "es": "Y mis abuelos: tengo tres. Mi abuela Rosa vive con nosotros.", "nl": "En mijn grootouders: ik heb er drie. Mijn oma Rosa woont bij ons."}, {"who": "Lucía", "es": "¿Y tú? ¿Cuántos hermanos tienes?", "nl": "En jij? Hoeveel broers en zussen heb jij?"}]}, {"etiqueta": "Audio 1b · Dictado · 0:40", "seccion": "§1 · Dictado preparado", "titulo": "Dictado preparado — la familia de Lucía", "tarea": "Schrijf de vier zinnen; luister daarna opnieuw en herhaal elke zin hardop.", "audio": "audio/C5_U2_02.mp3", "guion": [{"who": "Narradora", "es": "Cuatro frases. Cada frase, dos veces.", "nl": "Vier zinnen. Elke zin twee keer."}, {"who": "Narradora", "es": "Número uno.", "nl": "Nummer 1."}, {"who": "Narradora", "es": "Lucía tiene dos hermanos.", "nl": "Lucía heeft twee broers en zussen."}, {"who": "Narradora", "es": "Lucía tiene dos hermanos.", "nl": "Lucía heeft twee broers en zussen."}, {"who": "Narradora", "es": "Número dos.", "nl": "Nummer 2."}, {"who": "Narradora", "es": "Su abuela se llama Rosa.", "nl": "Haar oma heet Rosa."}, {"who": "Narradora", "es": "Su abuela se llama Rosa.", "nl": "Haar oma heet Rosa."}, {"who": "Narradora", "es": "Número tres.", "nl": "Nummer 3."}, {"who": "Narradora", "es": "Tienen un perro pequeño.", "nl": "Ze hebben een klein hondje."}, {"who": "Narradora", "es": "Tienen un perro pequeño.", "nl": "Ze hebben een klein hondje."}, {"who": "Narradora", "es": "Número cuatro.", "nl": "Nummer 4."}, {"who": "Narradora", "es": "Mis primos viven en Málaga.", "nl": "Mijn neven en nichten wonen in Málaga."}, {"who": "Narradora", "es": "Mis primos viven en Málaga.", "nl": "Mijn neven en nichten wonen in Málaga."}]}]});
 buildLectura("lec_u2",{"titulo": "Mi familia en una foto", "tipo": "correo electrónico (con una foto adjunta)", "emisor": "Lucía, desde Sevilla", "receptor": "Sam, su compi de intercambio en Bélgica", "objetivo": "Presentarte a toda su familia", "prediccion": {"q": "Kijk eerst alleen naar de kop (De · Para · Asunto) en de foto. Wat voor tekst is dit?", "opts": ["Een persoonlijk bericht aan één iemand", "Een affiche voor de hele school", "Een krantenartikel"], "ans": "Een persoonlijk bericht aan één iemand", "why": "Een mail heeft één afzender en één ontvanger — dat staat bovenaan."}, "texto": [["titulo", "✉️ ¡MI FAMILIA EN UNA FOTO!"], ["lista", ["De: lucia.ramirez@correo.es", "Para: sam@correo.be", "Asunto: mi familia", "Adjunto: familia.jpg"]], ["p", "¡Hola, Sam! ¿Qué tal? Aquí te mando la foto de mi familia. Somos seis en casa: mis padres, mis dos hermanos, mi abuela y yo."], ["p", "Mi padre se llama Antonio y tiene cuarenta y ocho años. Es alto y moreno, y lleva barba. Es muy tranquilo. Mi madre se llama Carmen. Tiene cuarenta y cinco años, es baja y tiene el pelo rizado. Es profesora y es muy habladora."], ["p", "Mi hermano mayor se llama Pablo. Tiene diecinueve años y estudia en Granada. Mi hermana menor se llama Marta y tiene once años. Es pelirroja y es muy alegre."], ["p", "Mi abuela Rosario vive con nosotros. Tiene setenta y nueve años y es la más graciosa de la familia. También tenemos un perro pequeño. Se llama Curro."], ["firma", "¿Y tu familia? ¿Cuántos sois en casa? Un abrazo, Lucía"]], "traduccion": "Mijn familie op één foto. Hallo Sam! Hoe gaat het? Hierbij stuur ik je de foto van mijn familie. We zijn met zes thuis: mijn ouders, mijn twee broers en zussen, mijn oma en ik. Mijn vader heet Antonio en is achtenveertig. Hij is groot en donker, en hij heeft een baard. Hij is heel rustig. Mijn moeder heet Carmen. Ze is vijfenveertig, ze is klein en heeft krullend haar. Ze is lerares en ze praat heel veel. Mijn oudere broer heet Pablo. Hij is negentien en studeert in Granada. Mijn jongere zus heet Marta en is elf. Ze heeft rood haar en is heel vrolijk. Mijn oma Rosario woont bij ons. Ze is negenenzeventig en is de grappigste van de familie. We hebben ook een kleine hond. Hij heet Curro. En jouw familie? Met hoeveel zijn jullie thuis? Een dikke knuffel, Lucía.", "global": {"q": "¿Para qué escribe Lucía este correo?", "opts": ["Para presentar a su familia", "Para invitar a Sam a una fiesta", "Para pedir ayuda con los deberes"], "ans": "Para presentar a su familia"}, "escanear": [{"q": "¿Cuántas personas viven en casa de Lucía?", "ans": "6", "alt": ["seis", "somos seis", "6 personas"], "why": "«Somos seis en casa»"}, {"q": "¿Cómo se llama el padre?", "ans": "Antonio", "alt": ["antonio", "se llama antonio"], "why": "«Mi padre se llama Antonio»"}, {"q": "¿Cuántos años tiene la abuela? (en cifras)", "ans": "79", "alt": ["setenta y nueve", "79 años"], "why": "«Tiene setenta y nueve años»"}, {"q": "¿Dónde estudia Pablo?", "ans": "en Granada", "alt": ["granada"], "why": "«estudia en Granada»"}, {"q": "¿Cómo se llama el perro?", "ans": "Curro", "alt": ["curro"], "why": "«Se llama Curro»"}], "vf": [{"q": "Lucía tiene dos hermanos.", "ans": true, "prueba": "mis dos hermanos"}, {"q": "El padre de Lucía es rubio.", "ans": false, "prueba": "es alto y moreno"}, {"q": "La madre de Lucía es profesora.", "ans": true, "prueba": "es profesora"}, {"q": "Marta es la hermana mayor.", "ans": false, "prueba": "mi hermana menor se llama marta"}, {"q": "La abuela vive con la familia.", "ans": true, "prueba": "vive con nosotros"}], "contexto": [{"q": "«Somos seis en casa» — ¿qué cuenta Lucía aquí?", "opts": ["Cuántas personas viven allí", "Cuántos años tiene", "Cuántas habitaciones hay"], "ans": "Cuántas personas viven allí", "why": "Erna volgt de opsomming van de personen."}, {"q": "«lleva barba» — ¿qué significa «lleva» aquí?", "opts": ["heeft (draagt)", "brengt", "neemt mee"], "ans": "heeft (draagt)", "why": "Het staat tussen twee uiterlijke kenmerken."}, {"q": "«mi hermano mayor» ↔ «mi hermana menor» — ¿qué contrastan?", "opts": ["de leeftijd", "de lengte", "het karakter"], "ans": "de leeftijd", "why": "Pablo is 19, Marta is 11 — mayor/menor gaat over ouder/jonger, niet groter/kleiner."}, {"q": "«la más graciosa de la familia» — ¿qué quiere decir?", "opts": ["de grappigste van allemaal", "de oudste van allemaal", "de kleinste van allemaal"], "ans": "de grappigste van allemaal", "why": "«la más + adjectief» = de -ste."}], "produccion": {"prompt": "Contesta a Lucía (5–6 frases): cuántos sois en casa, quién es quién, cómo son (dos detalles físicos y uno de carácter) y si tienes mascota.", "modelo": "Hola, Lucía. En casa somos… Mi… se llama… y tiene… años. Es… y tiene el pelo… Mi… es muy… También tenemos…"}});
 
 </script></body></html>

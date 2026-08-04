@@ -59,6 +59,21 @@
 .escta:focus-visible,.escbtn:focus-visible,.escclave:focus-visible,.esctrsay:focus-visible{outline:3px solid var(--gd);outline-offset:2px}
 .escconteo{margin:4px 0 0}
 
+/* ── de korte audiotaken van de unit (escucha_corta_data.py) ─────────────────
+   Zelfde speler en transcript als het grote luisterblok, maar zonder de zes
+   treden: dit zijn microdictados en mini-dialogen van 30-60 s. Het transcript
+   gaat pas open na twee keer luisteren — anders leest de leerling mee. */
+.audcortos{margin-top:16px}
+.audit{border:1px solid var(--line);border-radius:14px;padding:12px 14px;margin:0 0 12px;background:var(--card)}
+.audit:last-child{margin-bottom:0}
+.audcab{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:5px}
+.audet{font-size:11px;font-weight:700;color:#fff;background:var(--g);border-radius:999px;padding:3px 10px}
+.audsec{font-size:11px;color:var(--mut);font-weight:600}
+.audit h4{font-family:var(--disp);font-size:16px;margin:0 0 4px;color:var(--gd)}
+.audtarea{margin:0 0 9px}
+.audveces{color:var(--mut);font-size:12px}
+.audtr{margin-top:2px}
+
 .lectipo{font-size:11px;font-weight:700;color:var(--gd);background:var(--gt);border-radius:999px;padding:3px 9px}
 .lecficha{display:flex;gap:14px;flex-wrap:wrap;background:var(--gt);border-radius:10px;padding:8px 12px;margin:8px 0 14px;font-size:12px}
 .lecficha b{display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--gd)}
@@ -918,6 +933,74 @@ function buildEscucha(id,cfg){
  if(P.modo==='grabar'&&typeof makeRecorder==='function')
    makeRecorder(id+'_rec',{title:'Tu respuesta hablada',desc:P.prompt||'',items:[{text:P.prompt||'',cue:'graba tu respuesta'}]});
 }
+// ── buildAudioCortos — de korte audiotaken van dezelfde unit ────────────────
+// Het grote luisterblok hierboven is één fragment met zes treden. Daarnaast
+// heeft elke unit kortere audiotaken (microdictado, klankreeks, mini-dialoog,
+// weerbericht, wegbeschrijving) die in print als QR-kaart staan. Die krijgen
+// hier hun speler en hun transcript.
+//
+// Dezelfde afspraak als bij het grote blok: het transcript blijft dicht tot de
+// leerling twee keer geluisterd heeft. Meelezen bij de eerste beurt is geen
+// luisteren meer. De antwoordsleutel staat hier NIET — die hoort in het
+// docentendossier (CLAUDE.md 14).
+//
+// Het blok maakt zijn eigen kaart aan, direct na het grote luisterblok, zodat
+// de unit-generatoren geen extra container in hun HTML nodig hebben.
+function buildAudioCortos(idEscucha,cfg){
+ const ancla=document.getElementById(idEscucha);if(!ancla)return;
+ const frags=(cfg.fragmentos||[]).filter(f=>f.guion&&f.guion.length);
+ if(!frags.length)return;
+ const caja=document.createElement('div');
+ caja.className='card ex audcortos';caja.id=idEscucha+'_cortos';
+ caja.innerHTML='<div class="exhead"><h3>🎧 Los otros audios de la unidad</h3>'+
+   '<span class="escfuente">'+frags.length+(frags.length===1?' fragmento':' fragmentos')+'</span></div>'+
+   '<p class="desc">De korte audiotaken uit het boek — dezelfde die op papier achter een QR-code staan. '+
+   'Luister <b>twee keer</b> voor je het transcript opent.</p><div class="audlista"></div>';
+ ancla.parentNode.insertBefore(caja,ancla.nextSibling);
+ const lista=caja.querySelector('.audlista');
+ frags.forEach((f,n)=>{
+   const it=document.createElement('div');it.className='audit';
+   const idt=idEscucha+'_c'+n;
+   it.innerHTML=
+     '<div class="audcab"><span class="audet">'+exEsc(f.etiqueta||'')+'</span>'+
+       '<span class="audsec">'+exEsc(f.seccion||'')+'</span></div>'+
+     '<h4>'+exEsc(f.titulo||'')+'</h4>'+
+     '<p class="desc audtarea">'+exEsc(f.tarea||'')+'</p>'+
+     '<div class="escplay">'+
+       '<button class="escbtn audplay" type="button">▶ Escuchar</button>'+
+       '<button class="escbtn escbtn-stop audotra" type="button">↺ Otra vez</button>'+
+       '<span class="escfuente audfuente" role="status" aria-live="polite"></span>'+
+       '<span class="desc audveces">0 × geluisterd</span>'+
+     '</div>'+
+     '<button class="escbtn esctrbtn audtr" type="button" disabled '+
+       'aria-controls="'+idt+'_tr">🔒 Ver transcripción</button>'+
+     '<div class="esctrbody" id="'+idt+'_tr" hidden></div>';
+   lista.appendChild(it);
+   const q=s=>it.querySelector(s);
+   const fuente=q('.audfuente'),btn=q('.audplay'),tr=q('.audtr'),body=q('#'+idt+'_tr');
+   let veces=0,sonando=false;
+   const player=escReproductor(f,(modo,activo)=>{
+     fuente.textContent=modo==='mp3'?'audio grabado':'voz del navegador';
+     btn.textContent=activo?'⏹ Parar':'▶ Escuchar';
+     if(!activo)sonando=false;});
+   fuente.textContent=f.audio?'audio grabado':'voz del navegador';
+   function cuenta(){veces++;q('.audveces').textContent=veces+' × geluisterd';
+     if(veces>=2){tr.disabled=false;tr.textContent='📄 Ver transcripción';}}
+   btn.onclick=()=>{if(sonando){player.parar();sonando=false;}
+     else{player.reproducir();sonando=true;cuenta();}};
+   q('.audotra').onclick=()=>{player.parar();player.reproducir();sonando=true;cuenta();};
+   tr.onclick=()=>{
+     if(!body.dataset.hecho){body.dataset.hecho='1';
+       f.guion.forEach((g,i)=>{const r=document.createElement('div');r.className='esctrl';
+         r.innerHTML='<button class="esctrsay" type="button" aria-label="Regel '+(i+1)+' opnieuw horen">🔊</button>'+
+           '<div><b class="esctrwho">'+exEsc(g.who||'')+'</b><span class="esctres">'+exEsc(g.es)+'</span>'+
+           (g.nl?'<span class="esctrnl">'+exEsc(g.nl)+'</span>':'')+'</div>';
+         r.querySelector('.esctrsay').onclick=()=>player.linea(i);body.appendChild(r);});
+       body.insertAdjacentHTML('afterbegin','<button class="otra audnlbtn" type="button">🇳🇱 vertaling aan/uit</button>');
+       body.querySelector('.audnlbtn').onclick=()=>body.classList.toggle('sinnl');}
+     body.hidden=!body.hidden;};
+ });
+}
 
 function lecTexto(bloques){let h='';
  bloques.forEach(b=>{const soort=b[0],c=b[1];
@@ -1011,6 +1094,7 @@ function buildLectura(id,cfg){
    $('.escconteo').textContent=n+' palabra'+(n===1?'':'s');});
  const bm=$('.lecmod');
  if(bm)bm.onclick=()=>{const m=$('.lecmodelo');m.hidden=!m.hidden;};
+
 }
 
 
@@ -1247,6 +1331,7 @@ function buildGramType(){
 }
 buildGramType();
 buildEscucha("esc_u7",{"title": "La visita al piso", "audio": "audio/C5_U7.mp3", "expectDetalle": 5, "situacion": {"lugar": "Un piso vacío en Cartagena, un sábado por la mañana", "quien": "Una agente inmobiliaria, Sam y su madre", "que": "Visitan el piso y descubren que no todo es como en el anuncio", "claves": ["¿qué hay en…?", "está / están", "no hay"]}, "guion": [{"who": "Agente", "es": "Pasen, pasen. Este es el salón. Como ven, es muy luminoso.", "nl": "Komt u binnen. Dit is de woonkamer. Zoals u ziet, is ze heel licht."}, {"who": "Madre", "es": "Sí, la ventana es grande. ¿Y qué hay detrás de esa puerta?", "nl": "Ja, het raam is groot. En wat is er achter die deur?"}, {"who": "Agente", "es": "La cocina. Es pequeña, pero tiene de todo: nevera, horno y lavadora.", "nl": "De keuken. Ze is klein, maar er is alles: koelkast, oven en wasmachine."}, {"who": "Sam", "es": "Perdone, aquí no hay lavadora. Está el hueco, pero está vacío.", "nl": "Sorry, hier is geen wasmachine. De ruimte is er, maar hij is leeg."}, {"who": "Agente", "es": "Ah, tiene razón. La lavadora llega la semana que viene.", "nl": "Ah, u hebt gelijk. De wasmachine komt volgende week."}, {"who": "Madre", "es": "¿Y los dormitorios?", "nl": "En de slaapkamers?"}, {"who": "Agente", "es": "Al final del pasillo. El grande está a la derecha; el pequeño, enfrente.", "nl": "Aan het einde van de gang. De grote is rechts, de kleine ertegenover."}, {"who": "Sam", "es": "En el pequeño no hay armario.", "nl": "In de kleine is geen kast."}, {"who": "Agente", "es": "No, pero debajo de la cama hay dos cajones muy grandes.", "nl": "Nee, maar onder het bed zitten twee heel grote laden."}, {"who": "Madre", "es": "¿Y el ruido? El anuncio dice «zona tranquila».", "nl": "En het lawaai? De advertentie zegt «rustige buurt»."}, {"who": "Agente", "es": "De día sí. Los viernes y los sábados hay música en la plaza hasta las dos.", "nl": "Overdag wel. Op vrijdag en zaterdag is er muziek op het plein tot twee uur."}, {"who": "Sam", "es": "A mí eso me gusta. Mamá, ¿qué opinas?", "nl": "Mij bevalt dat wel. Mama, wat vind jij?"}, {"who": "Madre", "es": "Que el piso está bien, pero primero quiero ver la lavadora.", "nl": "Dat het appartement goed is, maar dat ik eerst de wasmachine wil zien."}], "global": {"q": "¿Qué pasa durante la visita?", "opts": ["Descubren que faltan cosas del anuncio", "Firman el contrato", "La agente les enseña el barrio"], "ans": "Descubren que faltan cosas del anuncio", "why": "geen wasmachine, geen kast, wel lawaai"}, "detalle": [{"q": "¿Qué falta en la cocina?", "opts": ["La lavadora", "La nevera", "El horno"], "ans": "La lavadora", "why": "«aquí no hay lavadora»"}, {"q": "¿Cuándo llega la lavadora?", "opts": ["La semana que viene", "Hoy mismo", "El mes que viene"], "ans": "La semana que viene", "why": "«La lavadora llega la semana que viene»"}, {"q": "¿Dónde está el dormitorio grande?", "opts": ["A la derecha", "A la izquierda", "Al lado del salón"], "ans": "A la derecha", "why": "«El grande está a la derecha»"}, {"q": "¿Qué hay debajo de la cama del dormitorio pequeño?", "opts": ["Dos cajones grandes", "Un armario", "Una alfombra"], "ans": "Dos cajones grandes", "why": "«debajo de la cama hay dos cajones muy grandes»"}, {"q": "¿Qué días hay música en la plaza?", "opts": ["Los viernes y los sábados", "Todos los días", "Los domingos"], "ans": "Los viernes y los sábados", "why": "«Los viernes y los sábados hay música»"}], "vf": [{"q": "El salón tiene poca luz.", "ans": false, "prueba": "es muy luminoso"}, {"q": "En el dormitorio pequeño hay un armario.", "ans": false, "prueba": "en el pequeño no hay armario"}, {"q": "A Sam el ruido de la plaza no le molesta.", "ans": true, "prueba": "a mí eso me gusta"}], "produccion": {"prompt": "Enseña tú tu casa a alguien que la visita. Graba cinco frases: qué hay en cada habitación, dónde está cada mueble (encima de · debajo de · al lado de) y qué falta o qué no funciona.", "modo": "grabar", "modelo": "Este es… Aquí hay… El/La … está … de … En … no hay… y … no funciona."}});
+buildAudioCortos("esc_u7",{"fragmentos": [{"etiqueta": "Audio 7.1 · El barrio de Valen · 1:00", "seccion": "§1 · Hay / estar", "titulo": "Valen describe su barrio", "tarea": "1ª: ¿qué hay? — 2ª: ¿dónde está? Kruis aan en noteer waar.", "audio": "audio/C5_U7_01.mp3", "guion": [{"who": "Valen", "es": "¡Hola! Soy Valen y vivo en Cartagena, en Colombia. Te enseño mi barrio.", "nl": "Hallo! Ik ben Valen en ik woon in Cartagena, in Colombia. Ik laat je mijn buurt zien."}, {"who": "Valen", "es": "En mi barrio hay una plaza grande. La plaza está en el centro, delante de la iglesia.", "nl": "In mijn buurt is er een groot plein. Het plein ligt in het centrum, vóór de kerk."}, {"who": "Valen", "es": "También hay un supermercado. Está al lado de mi casa, muy cerca.", "nl": "Er is ook een supermarkt. Die ligt naast mijn huis, heel dichtbij."}, {"who": "Valen", "es": "Farmacia no hay. La farmacia está en el otro barrio, a diez minutos.", "nl": "Een apotheek is er niet. De apotheek ligt in de andere wijk, op tien minuten."}, {"who": "Valen", "es": "Y hay un parque pequeño. Está detrás del colegio, entre dos calles.", "nl": "En er is een klein park. Dat ligt achter de school, tussen twee straten."}, {"who": "Valen", "es": "Me gusta mucho mi barrio porque hay mucha vida. ¿Y en tu barrio qué hay?", "nl": "Ik hou heel veel van mijn buurt want er is veel leven. En wat is er in jouw buurt?"}]}, {"etiqueta": "Audio 7.2 · ¿Cómo se va? · 0:50", "seccion": "§4 · ¿Cómo se va? · el imperativo", "titulo": "Sigue las indicaciones", "tarea": "Volg de instructies op je plano. Waar kom je uit?", "audio": "audio/C5_U7_02.mp3", "guion": [{"who": "Turista", "es": "Perdona, ¿cómo se va desde la plaza?", "nl": "Sorry, hoe geraak ik vanaf het plein?"}, {"who": "Valen", "es": "Muy fácil. Sal de la plaza por la calle grande.", "nl": "Heel makkelijk. Verlaat het plein via de grote straat."}, {"who": "Valen", "es": "Sigue todo recto dos calles.", "nl": "Ga twee straten rechtdoor."}, {"who": "Valen", "es": "Gira a la derecha en el semáforo.", "nl": "Sla rechtsaf bij het verkeerslicht."}, {"who": "Valen", "es": "Cruza la avenida con cuidado.", "nl": "Steek voorzichtig de laan over."}, {"who": "Valen", "es": "Y está allí mismo, a la izquierda, al lado del banco.", "nl": "En het is daar meteen, aan de linkerkant, naast de bank."}, {"who": "Turista", "es": "¿Está lejos?", "nl": "Is het ver?"}, {"who": "Valen", "es": "No, cinco minutos a pie. No tiene pérdida.", "nl": "Nee, vijf minuten te voet. Je kunt het niet missen."}]}]});
 buildLectura("lec_u7",{"titulo": "Se alquila apartamento en el centro", "tipo": "anuncio de alquiler (con descripción del plano)", "emisor": "La agencia «Casas del Caribe», Cartagena", "receptor": "Estudiantes que buscan piso", "objetivo": "Que te imagines el piso y lo vengas a ver", "prediccion": {"q": "Kijk eerst alleen naar de prijs, de m² en de opsomming. Wat voor tekst is dit?", "opts": ["Een advertentie voor een huurwoning", "Een reisverslag", "Een rekening"], "ans": "Een advertentie voor een huurwoning", "why": "Prijs + oppervlakte + kamers = een verhuuradvertentie."}, "texto": [["titulo", "🏠 SE ALQUILA · APARTAMENTO EN GETSEMANÍ"], ["lema", "Cartagena de Indias · 62 m² · 900.000 pesos al mes"], ["lista", ["Segundo piso, sin ascensor", "Dos dormitorios y un baño", "Salón con balcón a la calle", "Cocina pequeña, nevera incluida", "Wifi y agua incluidos; luz aparte"]], ["p", "El apartamento está en la calle del Pozo, en el barrio de Getsemaní. Cuando entras, el pasillo está delante de ti. La cocina está a la derecha y el baño, al lado de la cocina."], ["p", "Los dos dormitorios están al final del pasillo, uno enfrente del otro. En el dormitorio grande hay un armario empotrado y una cama de matrimonio. En el pequeño solo hay una cama y una estantería."], ["p", "El salón está a la izquierda de la entrada. Debajo de la ventana hay un sofá azul, y encima de la mesa dejamos una lámpara. El balcón da a la calle: por la noche se oye música."], ["aviso", ["📍 EL BARRIO", "Getsemaní está muy cerca del centro histórico: a diez minutos a pie. En la esquina hay una panadería y, dos calles más allá, un supermercado. La parada del bus está enfrente de la iglesia."]], ["firma", "Visitas: de lunes a viernes, de 9 a 12. Escribe a casas@delcaribe.co"]], "traduccion": "TE HUUR · APPARTEMENT IN GETSEMANÍ. Cartagena de Indias · 62 m² · 900.000 peso per maand. Tweede verdieping, zonder lift · twee slaapkamers en één badkamer · woonkamer met balkon aan de straat · kleine keuken, koelkast inbegrepen · wifi en water inbegrepen, elektriciteit apart. Het appartement ligt in de calle del Pozo, in de wijk Getsemaní. Als je binnenkomt, ligt de gang recht voor je. De keuken is rechts en de badkamer ligt naast de keuken. De twee slaapkamers liggen aan het einde van de gang, tegenover elkaar. In de grote slaapkamer staat een ingebouwde kast en een tweepersoonsbed. In de kleine staat alleen een bed en een boekenrek. De woonkamer is links van de ingang. Onder het raam staat een blauwe zetel, en op de tafel laten we een lamp staan. Het balkon geeft uit op de straat: 's nachts hoor je muziek. DE WIJK: Getsemaní ligt heel dicht bij het historische centrum, op tien minuten te voet. Op de hoek is een bakkerij en twee straten verder een supermarkt. De bushalte ligt tegenover de kerk.", "global": {"q": "¿Para qué es este texto?", "opts": ["Para alquilar un apartamento", "Para vender muebles", "Para explicar la historia del barrio"], "ans": "Para alquilar un apartamento"}, "escanear": [{"q": "¿Cuántos metros cuadrados tiene? (en cifras)", "ans": "62", "alt": ["62 m2", "62 m²", "sesenta y dos"], "why": "«62 m²»"}, {"q": "¿En qué piso está?", "ans": "en el segundo", "alt": ["segundo", "el segundo", "2", "segundo piso"], "why": "«Segundo piso, sin ascensor»"}, {"q": "¿Cuántos dormitorios hay? (en cifras)", "ans": "2", "alt": ["dos", "dos dormitorios"], "why": "«Dos dormitorios y un baño»"}, {"q": "¿Qué hay debajo de la ventana del salón?", "ans": "un sofá azul", "alt": ["un sofá", "sofá", "el sofá azul"], "why": "«Debajo de la ventana hay un sofá azul»"}, {"q": "¿Dónde está la parada del bus?", "ans": "enfrente de la iglesia", "alt": ["enfrente de la iglesia", "la iglesia", "frente a la iglesia"], "why": "«La parada del bus está enfrente de la iglesia»"}], "vf": [{"q": "El edificio tiene ascensor.", "ans": false, "prueba": "segundo piso, sin ascensor"}, {"q": "La luz está incluida en el precio.", "ans": false, "prueba": "luz aparte"}, {"q": "El baño está al lado de la cocina.", "ans": true, "prueba": "al lado de la cocina"}, {"q": "Los dos dormitorios están uno al lado del otro.", "ans": false, "prueba": "uno enfrente del otro"}, {"q": "El centro histórico está a diez minutos andando.", "ans": true, "prueba": "a diez minutos a pie"}], "contexto": [{"q": "«Se alquila» — ¿qué se hace con el apartamento?", "opts": ["Het wordt verhuurd", "Het wordt verkocht", "Het wordt afgebroken"], "ans": "Het wordt verhuurd", "why": "Erna volgt een maandprijs, geen totaalprijs."}, {"q": "«un armario empotrado» — ¿qué tipo de armario es?", "opts": ["een ingebouwde kast", "een kapotte kast", "een kast op wieltjes"], "ans": "een ingebouwde kast", "why": "Het staat in de lijst van wat vást in de kamer zit."}, {"q": "«El balcón da a la calle» — ¿qué quiere decir «dar a»?", "opts": ["uitkijken op", "iets geven aan", "geven om"], "ans": "uitkijken op", "why": "Erna volgt: 's nachts hoor je muziek van beneden."}, {"q": "«dos calles más allá» — ¿dónde está el supermercado?", "opts": ["twee straten verder", "twee verdiepingen hoger", "twee minuten geleden"], "ans": "twee straten verder", "why": "Het staat tegenover «en la esquina» — het gaat over afstand."}], "produccion": {"prompt": "Escribe el anuncio de tu propia casa o habitación (6–8 frases): dónde está, cuántas habitaciones hay, dónde está cada mueble (encima de · debajo de · al lado de · enfrente de) y qué hay en el barrio.", "modelo": "Se alquila… Está en… Hay… El/La … está … de … En el barrio hay… La parada está…"}});
 
 </script></body></html>
