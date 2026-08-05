@@ -686,3 +686,161 @@ LECTURA_CSS = r"""
 .lecmodelo{font-size:13px;background:var(--gt);color:var(--gd);border-radius:9px;padding:8px 11px;margin-top:8px}
 .lecchk{flex:none}
 """
+
+
+# ---------------------------------------------------------------------------
+# buildRetos — de out-of-the-box oefeningen op de hub
+#
+# Niet elke reto hoort hier. Een veiling en een bewegingsspel leven op het grote
+# scherm, een info-gap op papier; die krijgen in print en hub alleen een
+# verwijzing. Hier staan de vier die techniek nodig hebben: opnemen en
+# terugluisteren, directe zelfcorrectie, en een kaart die meekleurt.
+#
+# Drie soorten lichaam, gekozen op `tipo`:
+#   grabar    -> makeRecorder met één item per situatie
+#   detector  -> zelfcorrectie waarbij je niet alleen aanduidt maar ook de
+#                regel moet kiezen; aanduiden zonder regel telt als fout
+#   mapa      -> haakt in op de bestaande wereldkaart en houdt een klasteller bij
+#
+# De antwoordsleutel komt hier NIET binnen (CLAUDE.md §14); wat de leerling ziet
+# is feedback per item, geen lijst met oplossingen.
+# ---------------------------------------------------------------------------
+RETOS_CSS = r"""
+.retos{display:grid;gap:16px}
+.reto{border:1px solid var(--line);border-radius:16px;padding:16px 18px;background:var(--card)}
+.reto .rcab{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:4px}
+.reto .rnum{background:var(--g);color:#fff;font-family:var(--disp);font-weight:700;
+  width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+.reto h3{margin:0;font-family:var(--disp);font-size:19px;color:var(--gd)}
+.reto .rlente{font-size:11px;font-weight:700;color:var(--gd);background:var(--gt);
+  border-radius:999px;padding:3px 9px}
+.reto .rgancho{margin:2px 0 0;font-size:15px}
+.reto .rnl{margin:2px 0 10px;font-size:13px;color:var(--mut);font-style:italic}
+.rregla{border-left:4px solid var(--amber,#B7860B);background:var(--amberbg,#FBF3D6);
+  border-radius:0 10px 10px 0;padding:9px 13px;margin:0 0 12px;font-size:13.5px;color:#20242E}
+.rregla b{display:block;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A6508}
+.rsit{border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:0 0 10px}
+.rsit b{color:var(--gd)}
+.rsit .rpista{display:block;font-size:12.5px;color:var(--mut);margin-top:3px}
+.det{display:grid;gap:8px}
+.detit{border:1px solid var(--line);border-radius:12px;padding:9px 12px}
+.detit .dpal{font-family:var(--disp);font-size:18px}
+.detbtns{display:flex;gap:8px;margin:6px 0}
+.detbtn{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:9px;
+  padding:6px 13px;cursor:pointer;font-weight:600;font-size:14px}
+.detbtn.ok{background:#DCFCE7;border-color:#16A34A}.detbtn.no{background:#FEE2E2;border-color:#DC2626}
+.detrule{margin-top:6px}
+.detrule select{width:100%;max-width:100%;border:1.5px solid var(--line);border-radius:9px;
+  padding:7px 9px;font-family:var(--body);font-size:14px;background:var(--card);color:var(--ink)}
+.detfb{margin-top:6px;font-size:13.5px;display:none}
+.detfb.show{display:block}.detfb.g{color:#166534}.detfb.b{color:#991B1B}
+.rmarca{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:0 0 10px}
+.rbarra{flex:1 1 200px;height:12px;border-radius:999px;background:var(--gt);overflow:hidden;min-width:160px}
+.rbarra i{display:block;height:100%;width:0;background:var(--g);transition:width .4s}
+.rcuenta{font-family:var(--disp);font-weight:700;color:var(--gd)}
+.rpais{display:flex;flex-wrap:wrap;gap:6px}
+.rpais button{border:1.5px solid var(--line);background:var(--card);color:var(--ink);
+  border-radius:999px;padding:5px 11px;cursor:pointer;font-size:13.5px}
+.rpais button.hecho{background:var(--g);border-color:var(--g);color:#fff}
+.rpais button .sil{font-size:11px;opacity:.8;margin-left:5px}
+"""
+
+RETOS_JS = r"""
+function buildRetos(id,cfg){
+ const host=document.getElementById(id);if(!host)return;
+ host.innerHTML='<div class="retos"></div>';
+ const lista=host.querySelector('.retos');
+ (cfg.retos||[]).forEach((r,n)=>{
+  const c=document.createElement('div');c.className='reto';
+  c.innerHTML='<div class="rcab"><span class="rnum">'+r.num+'</span><h3>'+exEsc(r.nombre)+'</h3>'+
+    '<span class="rlente">'+exEsc(r.lente)+'</span></div>'+
+    '<p class="rgancho"><b>'+exEsc(r.gancho_es)+'</b></p>'+
+    '<p class="rnl">'+exEsc(r.gancho_nl)+'</p>'+
+    '<p class="desc">'+exEsc(r.consigna_nl)+'</p>'+
+    '<div class="rregla"><b>La regla del reto</b>'+exEsc(r.regla)+'</div>'+
+    '<div class="rcuerpo" id="'+id+'_c'+n+'"></div>';
+  lista.appendChild(c);
+  const cuerpo=c.querySelector('.rcuerpo');
+  if(r.tipo==='grabar')retoGrabar(cuerpo,r,id+'_c'+n);
+  else if(r.tipo==='detector')retoDetector(cuerpo,r);
+  else if(r.tipo==='mapa')retoMapa(cuerpo,r);
+ });
+}
+
+function retoGrabar(cont,r,idBase){
+ (r.situaciones||[]).forEach(s=>{
+   const d=document.createElement('div');d.className='rsit';
+   d.innerHTML='<b>'+exEsc(s.es)+'</b><span class="rpista">'+exEsc(s.nl)+
+     (s.pista?' · <i>'+exEsc(s.pista)+'</i>':'')+'</span>';
+   cont.appendChild(d);});
+ const rec=document.createElement('div');rec.id=idBase+'_rec';cont.appendChild(rec);
+ if(typeof makeRecorder==='function')
+   makeRecorder(idBase+'_rec',{title:r.nombre,desc:r.consigna_es,
+     items:(r.items||[]).map(t=>({text:t.text,cue:t.cue}))});
+}
+
+function retoDetector(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ const reglas=r.reglas||[];
+ (r.items||[]).forEach((it,i)=>{
+   const d=document.createElement('div');d.className='detit';
+   const opts=reglas.map((g,k)=>'<option value="'+k+'">'+exEsc(g)+'</option>').join('');
+   d.innerHTML='<div class="dpal">'+exEsc(it.palabra)+'</div>'+
+     '<div class="detbtns"><button class="detbtn" type="button" data-v="1">✓ posible</button>'+
+     '<button class="detbtn" type="button" data-v="0">✗ imposible</button></div>'+
+     '<div class="detrule" hidden><label class="desc">¿Qué regla rompe?</label>'+
+     '<select><option value="-1">— elige la regla —</option>'+opts+'</select></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const fb=d.querySelector('.detfb'),rule=d.querySelector('.detrule'),sel=d.querySelector('select');
+   let cerrado=false;
+   d.querySelectorAll('.detbtn').forEach(b=>{b.onclick=()=>{
+     if(cerrado)return;
+     const dicho=b.dataset.v==='1';
+     if(!dicho){rule.hidden=false;sel.focus();
+       fb.className='detfb show';fb.textContent='Ahora acusa con pruebas: ¿qué regla rompe?';
+       cerrado=false;
+       sel.onchange=()=>{cerrado=true;
+         const bien=(!it.posible)&&(Number(sel.value)===it.regla);
+         d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);sel.disabled=true;
+         b.classList.add(bien?'ok':'no');
+         fb.className='detfb show '+(bien?'g':'b');
+         fb.innerHTML=bien?'<b>✓ acusación correcta</b> · '+exEsc(it.porque)
+           :(it.posible?'<b>✗ esta palabra sí existe</b> · '+exEsc(it.porque)
+                       :'<b>✗ la regla no es esa</b> · '+exEsc(it.porque));};
+       return;}
+     cerrado=true;
+     const bien=it.posible;
+     d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);
+     b.classList.add(bien?'ok':'no');
+     fb.className='detfb show '+(bien?'g':'b');
+     fb.innerHTML=(bien?'<b>✓ correcto</b> · ':'<b>✗ no</b> · ')+exEsc(it.porque);};});
+   caja.appendChild(d);});
+}
+
+function retoMapa(cont,r){
+ const paises=r.paises||[];
+ cont.innerHTML='<div class="rmarca"><span class="rcuenta">0 / '+paises.length+'</span>'+
+   '<div class="rbarra"><i></i></div>'+
+   '<button class="otra rreset" type="button">↺ empezar de nuevo</button></div>'+
+   '<p class="desc">Klik een land, zeg het hardop, laat iemand bevestigen — dan pas aanklikken. '+
+   'De teller is van de klas, niet van jou.</p><div class="rpais"></div>';
+ const cont2=cont.querySelector('.rpais'),cuenta=cont.querySelector('.rcuenta'),
+       barra=cont.querySelector('.rbarra i');
+ let hechos=0;
+ function pinta(iso){ // laat het land op de grote kaart meekleuren, als die er is
+   const svg=document.querySelector('#mapwrap svg');if(!svg)return;
+   const p=svg.querySelector('[data-c="'+iso+'"]');if(p)p.style.filter='saturate(1.6) brightness(1.05)';}
+ paises.forEach(p=>{
+   const b=document.createElement('button');b.type='button';
+   b.innerHTML=exEsc(p.nombre)+'<span class="sil">'+exEsc(p.silabas)+'</span>';
+   b.onclick=()=>{if(b.classList.contains('hecho'))return;
+     b.classList.add('hecho');hechos++;pinta(p.iso);
+     cuenta.textContent=hechos+' / '+paises.length;
+     barra.style.width=Math.round(hechos/paises.length*100)+'%';
+     if(typeof speak==='function')speak(p.nombre);
+     if(hechos===paises.length)cuenta.textContent='¡'+paises.length+' / '+paises.length+' — lo habéis conseguido!';};
+   cont2.appendChild(b);});
+ cont.querySelector('.rreset').onclick=()=>{hechos=0;cuenta.textContent='0 / '+paises.length;
+   barra.style.width='0';cont2.querySelectorAll('button').forEach(x=>x.classList.remove('hecho'));};
+}
+"""

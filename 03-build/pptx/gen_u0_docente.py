@@ -1532,10 +1532,133 @@ def s_escucha(f=None):
              "fragment ook voorlezen kan, met twee leerlingen in de rollen.")
 
 
+# ============================================================ RETOS · U0
+# De drie retos die op het grote scherm leven (retos_data.py, soporte="ppt").
+# De andere zeven staan in het boek of op de hub; die half naar een dia
+# overzetten helpt niemand — een opnameoefening op een dia is geen oefening.
+import retos_data as _RD
+
+_RETOS = {r["num"]: r for r in _RD.RETOS}
+
+
+def _reto_cabecera(s, r):
+    """Kop, haakje en de beperking — voor elke reto identiek opgebouwd."""
+    sectionbar(s, "RETO %d · %s" % (r["num"], r["lente"].split(" ", 1)[1].upper()),
+               r["nombre"], r["consigna_nl"], num=r["num"])
+    text(s, Inches(0.5), Inches(1.62), Inches(12.33), Inches(0.62),
+         [[(r["gancho_es"], {"size": 17, "bold": True, "color": GD, "font": DISPLAY})],
+          [(r["gancho_nl"], {"size": 11, "italic": True, "color": MUT})]], line=1.15)
+    # de regla: zonder die beperking is het een gewone oefening
+    # zelfde okerkader als in print (--amberbg), zodat de beperking overal
+    # dezelfde kleur heeft: papier, scherm en dia
+    rect(s, Inches(0.5), Inches(2.32), Inches(12.33), Inches(0.66),
+         fill=RGBColor(0xFB, 0xF3, 0xD6), round=True, radius=0.05)
+    rect(s, Inches(0.5), Inches(2.32), Inches(0.08), Inches(0.66), fill=AMBER)
+    text(s, Inches(0.72), Inches(2.36), Inches(11.9), Inches(0.58),
+         [[("LA REGLA DEL RETO   ", {"size": 9, "bold": True, "color": AMBER}),
+           (r["regla"], {"size": 11.5, "color": INK})]], line=1.12)
+    text(s, Inches(0.5), Inches(3.02), Inches(12.33), Inches(0.34),
+         [[("  ·  ".join([r["forma"], r["skill"], r["tiempo"], r["dificultad"]]),
+            {"size": 10, "color": MUT})]])
+
+
+def s_reto_radio():
+    """Reto 6 — Radio Nombres: spelshow op de letternamen."""
+    r = _RETOS[6]; s = slide(); bg(s, PAPER); _reto_cabecera(s, r)
+    y = Inches(3.5)
+    for i, (es, nl) in enumerate(r["pasos"]):
+        card(s, Inches(0.5) + Inches(3.12) * i, y, Inches(2.95), Inches(1.15))
+        text(s, Inches(0.66) + Inches(3.12) * i, y + Inches(0.1), Inches(2.66), Inches(0.98),
+             [[("%d" % (i + 1), {"size": 13, "bold": True, "color": G, "font": DISPLAY})],
+              [(es, {"size": 10.5, "bold": True, "color": INK})],
+              [(nl, {"size": 9, "italic": True, "color": MUT})]], line=1.1)
+    d = r["datos"]
+    text(s, Inches(0.5), Inches(4.84), Inches(6.0), Inches(0.3),
+         [[("Las ciudades:  ", {"size": 11, "bold": True, "color": GD}),
+           (" · ".join(d["ciudades"]), {"size": 11, "color": INK})]])
+    text(s, Inches(0.5), Inches(5.18), Inches(6.0), Inches(0.3),
+         [[("Las trampas:  ", {"size": 11, "bold": True, "color": RED}),
+           (" · ".join(d["trampas"]), {"size": 11, "color": INK})]])
+    x = Inches(6.9)
+    card(s, x, Inches(4.76), Inches(5.93), Inches(1.62))
+    text(s, x + Inches(0.2), Inches(4.84), Inches(5.5), Inches(0.3),
+         [[("Las letras que cuestan", {"size": 11, "bold": True, "color": GD, "font": DISPLAY})]])
+    for i, (le, nom, donde) in enumerate(d["letras_dificiles"]):
+        col, fila = i % 3, i // 3
+        text(s, x + Inches(0.2) + Inches(1.9) * col, Inches(5.18) + Inches(0.52) * fila,
+             Inches(1.8), Inches(0.48),
+             [[(le, {"size": 13, "bold": True, "color": G, "font": DISPLAY}),
+               ("  " + nom, {"size": 10, "color": INK})],
+              [(donde, {"size": 8.5, "italic": True, "color": MUT})]], line=1.06)
+    exercise_solucion(s, Inches(0.5), Inches(6.5), Inches(12.33), Inches(0.62), r["clave"][:2])
+    footer(s, page=pg())
+    notes(s, "TEACHER · RETO 6 (mediaformat). " + r["nota"] + "  SLEUTEL: " + "  |  ".join(r["clave"]))
+
+
+def s_reto_subasta():
+    """Reto 2 — La subasta de sonidos: bieden op klankparen."""
+    r = _RETOS[2]; s = slide(); bg(s, PAPER); _reto_cabecera(s, r)
+    lotes = r["datos"]["lotes"]
+    for i, (n, a, b, igual, regla, valor) in enumerate(lotes):
+        col, fila = i % 4, i // 4
+        x = Inches(0.5) + Inches(3.12) * col
+        y = Inches(3.5) + Inches(1.52) * fila
+        card(s, x, y, Inches(2.95), Inches(1.38))
+        chip(s, x + Inches(0.14), y + Inches(0.12), "LOTE %d · %d pts" % (n, valor),
+             fill=GT, tcolor=GD, size=9)
+        text(s, x + Inches(0.14), y + Inches(0.52), Inches(2.7), Inches(0.42),
+             [[(a, {"size": 15, "bold": True, "color": INK, "font": DISPLAY}),
+               ("   ·   ", {"size": 13, "color": MUT}),
+               (b, {"size": 15, "bold": True, "color": INK, "font": DISPLAY})]])
+        # het antwoord verschijnt pas bij klik
+        resp = rect(s, x + Inches(0.14), y + Inches(0.96), Inches(2.67), Inches(0.32),
+                    fill=GT, round=True, radius=0.1)
+        register_reveal(s, resp)
+        lab = text(s, x + Inches(0.22), y + Inches(0.99), Inches(2.5), Inches(0.28),
+                   [[("IGUAL" if igual else "DIFERENTE", {"size": 10, "bold": True,
+                      "color": RED if igual else GD}),
+                     ("  " + regla.split("·")[0].strip()[:26], {"size": 8, "color": MUT})]])
+        register_reveal(s, lab)
+    exercise_solucion(s, Inches(0.5), Inches(6.62), Inches(12.33), Inches(0.5), r["clave"][:1])
+    footer(s, page=pg())
+    notes(s, "TEACHER · RETO 2 (puzzel & escape). " + r["nota"] + "  SLEUTEL: " + "  |  ".join(r["clave"]))
+
+
+def s_reto_semaforo():
+    """Reto 5 — La tilde en el semáforo: de klas beweegt op de klemtoon."""
+    r = _RETOS[5]; s = slide(); bg(s, PAPER); _reto_cabecera(s, r)
+    zonas = [("IZQUIERDA", "aguda", "última sílaba", G),
+             ("CENTRO", "llana", "penúltima sílaba", GD),
+             ("DERECHA", "esdrújula", "antepenúltima", AMBER)]
+    for i, (donde, tipo, expl, col) in enumerate(zonas):
+        x = Inches(0.5) + Inches(4.16) * i
+        card(s, x, Inches(3.46), Inches(3.98), Inches(1.06))
+        rect(s, x, Inches(3.46), Inches(3.98), Inches(0.1), fill=col)
+        text(s, x + Inches(0.18), Inches(3.62), Inches(3.6), Inches(0.86),
+             [[(donde, {"size": 10, "bold": True, "color": MUT})],
+              [(tipo, {"size": 17, "bold": True, "color": col, "font": DISPLAY})],
+              [(expl, {"size": 9.5, "italic": True, "color": MUT})]], line=1.08)
+    pal = r["datos"]["palabras"]
+    for i, (w, tipo, sil) in enumerate(pal):
+        col, fila = i % 5, i // 5
+        x = Inches(0.5) + Inches(2.49) * col
+        y = Inches(4.72) + Inches(0.62) * fila
+        text(s, x, y, Inches(2.35), Inches(0.3),
+             [[(w, {"size": 14, "bold": True, "color": INK, "font": DISPLAY})]])
+        marca = text(s, x, y + Inches(0.28), Inches(2.35), Inches(0.26),
+                     [[(tipo, {"size": 9.5, "bold": True, "color": G}),
+                       ("  «%s»" % sil, {"size": 9.5, "color": MUT})]])
+        register_reveal(s, marca)
+    exercise_solucion(s, Inches(0.5), Inches(6.66), Inches(12.33), Inches(0.46), r["clave"][3:4])
+    footer(s, page=pg())
+    notes(s, "TEACHER · RETO 5 (puzzel & escape). " + r["nota"] + "  SLEUTEL: " + "  |  ".join(r["clave"]))
+
+
 def _run_all_slides(include_teacher=True):
     s01_title(); s02_menu(); s03_cast()
     s04_alfabeto(); s05_trampas(); s06_quiz1()
-    s07_tonica(); s08_sombrero(); s09_quiz2()
+    s_reto_radio(); s_reto_subasta()
+    s07_tonica(); s08_sombrero(); s09_quiz2(); s_reto_semaforo()
     s10_numeros(); s11_edad(); s12_quiz3()
     s13_saludos(); s14_dialogo(); s15_lenguaclase()
     s16_cultura(); s17_variatie()

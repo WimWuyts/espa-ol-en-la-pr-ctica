@@ -139,3 +139,47 @@ CSS_EXTRA = """
 .natid{font-size:10px;font-weight:700;color:var(--mut);background:var(--crema,#eee);border-radius:6px;padding:2px 6px;letter-spacing:.04em;vertical-align:middle}
 .exsay{border:none;background:var(--gt);color:var(--gd);border-radius:7px;padding:2px 7px;cursor:pointer;font-size:14px}
 """
+
+
+def retos_js(host_id, curso, unidad):
+    """De hub-retos van één unit.
+
+    Alleen de retos met soporte="hub" komen hier; de andere leven in print of in
+    de PowerPoint en zouden half overgezet niets toevoegen. De `clave` gaat niet
+    mee: antwoordsleutels horen in het docentendossier (CLAUDE.md §14).
+    """
+    import retos_data
+    salida = []
+    for r in retos_data.RETOS:
+        if r["curso"] != curso or r["unidad"] != unidad or r["soporte"] != "hub":
+            continue
+        base = {k: r[k] for k in ("num", "nombre", "lente", "gancho_es", "gancho_nl",
+                                  "consigna_es", "consigna_nl", "regla")}
+        d = r["datos"]
+        if r["id"] == "C5-U0-RETO-01":
+            base["tipo"] = "grabar"
+            base["situaciones"] = [{"es": es, "nl": nl, "pista": p}
+                                   for es, nl, p in d["situaciones"]]
+            base["items"] = [{"text": "¡Hola! Buenos días", "cue": nl}
+                             for _es, nl, _p in d["situaciones"]]
+        elif r["id"] == "C5-U0-RETO-09":
+            base["tipo"] = "grabar"
+            base["situaciones"] = [{"es": "Modelo — %s" % m, "nl": n, "pista": ""}
+                                   for n, m in d["modelos"]]
+            base["items"] = [{"text": "Mi firma sonora", "cue": "vijf seconden · één klank uitgerekt"}]
+        elif r["id"] == "C5-U0-RETO-04":
+            base["tipo"] = "detector"
+            reglas = sorted({p for _w, ok, p in d["items"] if not ok})
+            base["reglas"] = reglas
+            base["items"] = [{"palabra": w, "posible": ok, "porque": p,
+                              "regla": (reglas.index(p) if not ok else -1)}
+                             for w, ok, p in d["items"]]
+        elif r["id"] == "C5-U0-RETO-07":
+            base["tipo"] = "mapa"
+            base["paises"] = [{"iso": i, "nombre": n, "silabas": s} for i, n, s in d["paises"]]
+        else:
+            continue
+        salida.append(base)
+    if not salida:
+        return ""
+    return "buildRetos(%s,%s);\n" % (_J(host_id), _J({"retos": salida}))
