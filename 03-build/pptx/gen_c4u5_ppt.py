@@ -202,13 +202,27 @@ def rect(s, x, y, w, h, fill=None, line=None, lw=1.0, shadow=False, round=False,
     return shp
 
 def _soft_shadow(shp):
+    """Zachte slagschaduw — in de BESTAANDE effectLst, niet in een tweede.
+
+    `shp.shadow.inherit = False` (in rect()) laat python-ppt al een lege
+    <a:effectLst/> achter. Hingen we daar een tweede naast, dan had de vorm er
+    twee, en dat laat het schema niet toe (CT_ShapeProperties: hoogstens één).
+    PowerPoint vroeg daardoor bij elk deck om te «Repareren». Vandaar: hergebruik
+    wat er staat, en maak alleen een nieuwe aan als er nog geen is.
+    """
     spPr = shp._element.spPr
-    el = spPr.makeelement(qn('a:effectLst'), {})
+    el = spPr.find(qn('a:effectLst'))
+    if el is None:
+        el = spPr.makeelement(qn('a:effectLst'), {})
+        spPr.append(el)
+    else:
+        for viejo in list(el):          # leeg maken: één schaduw per vorm
+            el.remove(viejo)
     sh = el.makeelement(qn('a:outerShdw'),
                         {'blurRad': '90000', 'dist': '38000', 'dir': '5400000', 'rotWithShape': '0'})
     clr = sh.makeelement(qn('a:srgbClr'), {'val': '20242E'})
     alp = clr.makeelement(qn('a:alpha'), {'val': '22000'})
-    clr.append(alp); sh.append(clr); el.append(sh); spPr.append(el)
+    clr.append(alp); sh.append(clr); el.append(sh)
 
 def _p_spacing(p, before=0, after=2, line=None):
     p.space_before = Pt(before); p.space_after = Pt(after)
