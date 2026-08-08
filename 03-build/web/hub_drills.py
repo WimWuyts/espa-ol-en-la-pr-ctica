@@ -70,14 +70,14 @@ _ENGINES = {
    host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><button class="otra" type="button">↻ otra serie</button></div><p class="desc">'+cfg.desc+'</p><div class="qlist"></div><div class="exscore">Juist: <b class="ok">0</b>/'+series.length+'</div>';
    host.querySelector('.otra').onclick=render;const list=host.querySelector('.qlist'),scoreEl=host.querySelector('.ok');
    series.forEach(it=>{const q=document.createElement('div');q.className='exq';
-     q.innerHTML='<div class="qz">'+(it.say?'<button class="exsay" type="button" aria-label="Escuchar la palabra">🔊</button> ':'')+exFmt(it.q)+'</div><div class="exopts"></div><div class="exwhy"></div>';
+     q.innerHTML='<div class="qz">'+(it.say?'<button class="exsay" type="button" aria-label="Escuchar la palabra">'+IC.sound+'</button> ':'')+exFmt(it.q)+'</div><div class="exopts"></div><div class="exwhy"></div>';
      const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy');let locked=false;
      const bs=q.querySelector('.exsay');if(bs)bs.onclick=()=>speak(it.say);
      exSample(it.opts,it.opts.length).forEach(o=>{const b=document.createElement('button');b.className='exopt';b.type='button';b.textContent=o;
        b.onclick=()=>{if(locked)return;locked=true;const good=o===it.ans;
          opts.querySelectorAll('.exopt').forEach(x=>{x.disabled=true;if(x.textContent===it.ans)x.classList.add('ok');});
          if(good){ok++;scoreEl.textContent=ok;}else{b.classList.add('no');}
-         why.className='exwhy show '+(good?'g':'b');why.innerHTML=(good?'✅ ¡correcto! ':'❌ → '+exEsc(it.ans)+'. ')+(it.why?exEsc(it.why):'');};
+         why.className='exwhy show '+(good?'g':'b');why.innerHTML=(good?IC.bien+' ¡correcto! ':IC.mal+' → '+exEsc(it.ans)+'. ')+(it.why?exEsc(it.why):'');};
        opts.appendChild(b);});
      list.appendChild(q);});}
  render();}""",
@@ -104,8 +104,8 @@ _ENGINES = {
    exSample(round.items,round.items.length).forEach(it=>{const b=document.createElement('button');b.className='ochip';b.type='button';b.textContent=it.label;
      b.onclick=()=>{if(b.classList.contains('used'))return;const exp=sorted[pos];
        if(it.key===exp.key){b.classList.add('used');const sl=slots.querySelector('.oslot[data-pos="'+pos+'"]');sl.classList.add('filled');sl.textContent=(pos+1)+'. '+it.label;pos++;
-         if(pos>=sorted.length){why.className='exwhy show '+(mist===0?'g':'b');why.innerHTML=mist===0?'✅ ¡Perfecto! sin errores.':'✔ Completado con '+mist+' error(es). Prueba «otra ronda».';}}
-       else{mist++;b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake');why.className='exwhy show b';why.innerHTML='❌ Primero: <b>'+exEsc(exp.label)+'</b>';}};
+         if(pos>=sorted.length){why.className='exwhy show '+(mist===0?'g':'b');why.innerHTML=mist===0?IC.bien+' ¡Perfecto! sin errores.':'✔ Completado con '+mist+' error(es). Prueba «otra ronda».';}}
+       else{mist++;b.classList.remove('shake');void b.offsetWidth;b.classList.add('shake');why.className='exwhy show b';why.innerHTML=IC.mal+' Primero: <b>'+exEsc(exp.label)+'</b>';}};
      bank.appendChild(b);});}
  render();}""",
  "Odd":    r"""function buildOdd(id,cfg){
@@ -118,7 +118,7 @@ _ENGINES = {
      exSample(it.words.map((w,i)=>({w,i})),it.words.length).forEach(o=>{const b=document.createElement('button');b.className='exopt';b.type='button';b.textContent=o.w;
        b.onclick=()=>{if(locked)return;locked=true;const good=o.i===it.odd;opts.querySelectorAll('.exopt').forEach(x=>x.disabled=true);
          if(good){ok++;scoreEl.textContent=ok;b.classList.add('ok');}else{b.classList.add('no');opts.querySelectorAll('.exopt').forEach(x=>{if(x.textContent===it.words[it.odd])x.classList.add('ok');});}
-         why.className='exwhy show '+(good?'g':'b');why.innerHTML=(good?'✅ ¡bien! ':'❌ → '+exEsc(it.words[it.odd])+'. ')+(it.why?exEsc(it.why):'');};
+         why.className='exwhy show '+(good?'g':'b');why.innerHTML=(good?IC.bien+' ¡bien! ':IC.mal+' → '+exEsc(it.words[it.odd])+'. ')+(it.why?exEsc(it.why):'');};
        opts.appendChild(b);});
      list.appendChild(q);});}
  render();}""",
@@ -194,7 +194,7 @@ function buildType(id,cfg){
  const items=cfg.items||[],n=items.length,mode=cfg.accents||'soft',per=cfg.perBlock||10;
  if(cfg.expect)console.assert(n===cfg.expect,'buildType '+id+': '+n+' items, verwacht '+cfg.expect);
  let done=false;
- host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><span class="tymode">'+(mode==='strict'?'acentos obligatorios':'acentos tolerantes')+'</span></div><p class="desc">'+cfg.desc+'</p><div class="tywrap"></div><div class="tybar"><button class="otra tycheck" type="button">✓ Comprobar</button><button class="otra tyagain" type="button" hidden>↻ Reintentar</button><button class="otra tysol" type="button" hidden>👁 Ver solución</button><span class="exscore" role="status" aria-live="polite">Juist: <b class="ok">0</b>/'+n+'</span></div>';
+ host.innerHTML='<div class="exhead"><h3>'+cfg.title+'</h3><span class="tymode">'+(mode==='strict'?'acentos obligatorios':'acentos tolerantes')+'</span></div><p class="desc">'+cfg.desc+'</p><div class="tywrap"></div><div class="tybar"><button class="otra tycheck" type="button">'+IC.check+' Comprobar</button><button class="otra tyagain" type="button" hidden>↻ Reintentar</button><button class="otra tysol" type="button" hidden>👁 Ver solución</button><span class="exscore" role="status" aria-live="polite">Juist: <b class="ok">0</b>/'+n+'</span></div>';
  const wrap=host.querySelector('.tywrap'),bChk=host.querySelector('.tycheck'),bAgn=host.querySelector('.tyagain'),bSol=host.querySelector('.tysol'),scoreEl=host.querySelector('.ok');
  let blk=null;
  items.forEach((it,i)=>{
@@ -223,7 +223,7 @@ function buildType(id,cfg){
      if(val&&tyOk(val,it,mode)){ok++;inp.disabled=true;inp.classList.add('good');inp.setAttribute('aria-invalid','false');
        r.classList.add('tygood');why.className='exwhy show g';
        const exact=[it.ans].concat(it.alt||[]).indexOf(val)>-1;
-       why.innerHTML='<b>✓ correcto</b>'+(exact?'':' · schrijfwijze: <b>'+exEsc(it.ans)+'</b>')+(it.why?' · '+exEsc(it.why):'');}
+       why.innerHTML='<b>'+IC.bien+' correcto</b>'+(exact?'':' · schrijfwijze: <b>'+exEsc(it.ans)+'</b>')+(it.why?' · '+exEsc(it.why):'');}
      else{inp.classList.add('bad');inp.setAttribute('aria-invalid','true');
        r.classList.add('tybad');why.className='exwhy show b';
        why.innerHTML='<b>✗ nog niet</b>'+(val?' · jij schreef «'+exEsc(val)+'»':' · nog leeg')+(done?' · antwoord: <b>'+exEsc(it.ans)+'</b>':'')+(done&&it.why?' · '+exEsc(it.why):'');}});
@@ -386,7 +386,7 @@ function buildEscucha(id,cfg){
        opts.querySelectorAll('.exopt').forEach(x=>{x.disabled=true;if(x.textContent===it.ans)x.classList.add('ok');});
        if(!bien)b.classList.add('no');
        why.className='exwhy show '+(bien?'g':'b');
-       why.innerHTML=(bien?'<b>✓ correcto</b>':'<b>✗ no</b> → '+exEsc(it.ans))+(it.why?' · '+exEsc(it.why):'');
+       why.innerHTML=(bien?'<b>'+IC.bien+' correcto</b>':'<b>'+IC.mal+' no</b> → '+exEsc(it.ans))+(it.why?' · '+exEsc(it.why):'');
        alContestar&&alContestar(bien);};
      opts.appendChild(b);});
    cont.appendChild(q);}
@@ -399,7 +399,7 @@ function buildEscucha(id,cfg){
  vf.forEach((it,i)=>{const q=document.createElement('div');q.className='exq';
    q.innerHTML='<div class="qz"><span class="tynum">'+(i+1)+'</span><span>'+exFmt(it.q)+'</span></div>'+
      '<div class="exopts"><button class="exopt" type="button">Verdadero</button><button class="exopt" type="button">Falso</button></div>'+
-     '<div class="escprueba" hidden><label>Bewijs uit het fragment: <input type="text" class="tyfield escpr" autocomplete="off" aria-label="Bewijs bij stelling '+(i+1)+'"></label><button class="otra escprbtn" type="button">✓ Comprobar prueba</button></div>'+
+     '<div class="escprueba" hidden><label>Bewijs uit het fragment: <input type="text" class="tyfield escpr" autocomplete="off" aria-label="Bewijs bij stelling '+(i+1)+'"></label><button class="otra escprbtn" type="button">'+IC.check+' Comprobar prueba</button></div>'+
      '<div class="exwhy" role="status" aria-live="polite"></div>';
    const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy'),pr=q.querySelector('.escprueba');
    let cerrado=false;
@@ -409,13 +409,13 @@ function buildEscucha(id,cfg){
        if((x.textContent==='Verdadero')===!!it.ans)x.classList.add('ok');});
      if(!bien)b.classList.add('no');
      why.className='exwhy show '+(bien?'g':'b');
-     why.innerHTML=(bien?'<b>✓ correcto</b>':'<b>✗ no</b> → '+(it.ans?'verdadero':'falso'))+' · Schrijf nu wáár je dat hoort.';
+     why.innerHTML=(bien?'<b>'+IC.bien+' correcto</b>':'<b>'+IC.mal+' no</b> → '+(it.ans?'verdadero':'falso'))+' · Schrijf nu wáár je dat hoort.';
      pr.hidden=false;};});
    q.querySelector('.escprbtn').onclick=()=>{const v=q.querySelector('.escpr').value.trim();
      const a=tyNorm(v,'soft'),b=tyNorm(it.prueba||'','soft');
      const bien=a.length>2&&(b.indexOf(a)>-1||a.indexOf(b)>-1);
      why.className='exwhy show '+(bien?'g':'b');
-     why.innerHTML=bien?'<b>✓ buena prueba</b> · «'+exEsc(it.prueba)+'»':'<b>✗ esa prueba no está</b> · en el fragment: «'+exEsc(it.prueba)+'»';
+     why.innerHTML=bien?'<b>✓ buena prueba</b> · «'+exEsc(it.prueba)+'»':'<b>'+IC.mal+' esa prueba no está</b> · en el fragment: «'+exEsc(it.prueba)+'»';
      q.querySelector('.escprbtn').disabled=true;q.querySelector('.escpr').disabled=true;
      estado.vf++;revisa();};
    $('.escvf').appendChild(q);});
@@ -423,13 +423,13 @@ function buildEscucha(id,cfg){
  $('.esctr').innerHTML='<p class="desc esctrslot">Het transcript blijft dicht tot je de taken hierboven hebt gedaan — anders lees je mee in plaats van te luisteren.</p><button class="escbtn esctrbtn" type="button" disabled>🔒 Ver transcripción</button><div class="esctrbody" hidden></div>';
  function revisa(){const listo=(!cfg.global||estado.glob)&&estado.det>=det.length&&estado.vf>=vf.length;
    const b=$('.esctrbtn');if(!b)return;
-   b.disabled=!listo;b.textContent=listo?'📄 Ver transcripción':'🔒 Ver transcripción';
+   b.disabled=!listo;b.textContent=listo?IC.doc+' Ver transcripción':IC.lock+' Ver transcripción';
    if(listo)$('.esctrslot').textContent='Klaar — nu mag je meelezen. Klik een regel om ze opnieuw te horen.';}
  revisa();
  $('.esctrbtn').onclick=()=>{const body=$('.esctrbody');
    if(!body.dataset.hecho){body.dataset.hecho='1';
      G.forEach((g,i)=>{const r=document.createElement('div');r.className='esctrl';
-       r.innerHTML='<button class="esctrsay" type="button" aria-label="Regel '+(i+1)+' opnieuw horen">🔊</button>'+
+       r.innerHTML='<button class="esctrsay" type="button" aria-label="Regel '+(i+1)+' opnieuw horen">'+IC.sound+'</button>'+
          '<div><b class="esctrwho">'+exEsc(g.who||'')+'</b><span class="esctres">'+exEsc(g.es)+'</span>'+
          (g.nl?'<span class="esctrnl">'+exEsc(g.nl)+'</span>':'')+'</div>';
        r.querySelector('.esctrsay').onclick=()=>player.linea(i);body.appendChild(r);});
@@ -500,14 +500,14 @@ function buildAudioCortos(idEscucha,cfg){
      if(!activo)sonando=false;});
    fuente.textContent='voz del navegador';
    function cuenta(){veces++;q('.audveces').textContent=veces+' × geluisterd';
-     if(veces>=2){tr.disabled=false;tr.textContent='📄 Ver transcripción';}}
+     if(veces>=2){tr.disabled=false;tr.textContent=IC.doc+' Ver transcripción';}}
    btn.onclick=()=>{if(sonando){player.parar();sonando=false;}
      else{player.reproducir();sonando=true;cuenta();}};
    q('.audotra').onclick=()=>{player.parar();player.reproducir();sonando=true;cuenta();};
    tr.onclick=()=>{
      if(!body.dataset.hecho){body.dataset.hecho='1';
        f.guion.forEach((g,i)=>{const r=document.createElement('div');r.className='esctrl';
-         r.innerHTML='<button class="esctrsay" type="button" aria-label="Regel '+(i+1)+' opnieuw horen">🔊</button>'+
+         r.innerHTML='<button class="esctrsay" type="button" aria-label="Regel '+(i+1)+' opnieuw horen">'+IC.sound+'</button>'+
            '<div><b class="esctrwho">'+exEsc(g.who||'')+'</b><span class="esctres">'+exEsc(g.es)+'</span>'+
            (g.nl?'<span class="esctrnl">'+exEsc(g.nl)+'</span>':'')+'</div>';
          r.querySelector('.esctrsay').onclick=()=>player.linea(i);body.appendChild(r);});
@@ -613,7 +613,7 @@ function buildLectura(id,cfg){
        opts.querySelectorAll('.exopt').forEach(x=>{x.disabled=true;if(x.textContent===it.ans)x.classList.add('ok');});
        if(!bien)b.classList.add('no');
        why.className='exwhy show '+(bien?'g':'b');
-       why.innerHTML=(bien?'<b>✓ correcto</b>':'<b>✗ no</b> → '+exEsc(it.ans))+(it.why?' · '+exEsc(it.why):'');};
+       why.innerHTML=(bien?'<b>'+IC.bien+' correcto</b>':'<b>'+IC.mal+' no</b> → '+exEsc(it.ans))+(it.why?' · '+exEsc(it.why):'');};
      opts.appendChild(b);});
    cont.appendChild(q);}
  if(cfg.prediccion)mc($('.lecpred'),cfg.prediccion);
@@ -634,7 +634,7 @@ function buildLectura(id,cfg){
        const bien=v&&[it.ans].concat(it.alt||[]).some(a=>tyNorm(a,'soft')===tyNorm(v,'soft'));
        if(bien){ok++;cont.querySelector('.oke').textContent=ok;inp.disabled=true;btn.disabled=true;
          inp.classList.add('good');inp.setAttribute('aria-invalid','false');
-         why.className='exwhy show g';why.innerHTML='<b>✓ correcto</b>'+(it.why?' · '+exEsc(it.why):'');}
+         why.className='exwhy show g';why.innerHTML='<b>'+IC.bien+' correcto</b>'+(it.why?' · '+exEsc(it.why):'');}
        else{inp.classList.add('bad');inp.setAttribute('aria-invalid','true');
          why.className='exwhy show b';why.innerHTML='<b>✗ todavía no</b> · zoek nog eens in de tekst';}}
      btn.onclick=comprueba;
@@ -643,7 +643,7 @@ function buildLectura(id,cfg){
  vf.forEach((it,i)=>{const q=document.createElement('div');q.className='exq';
    q.innerHTML='<div class="qz"><span class="tynum">'+(i+1)+'</span><span>'+exFmt(it.q)+'</span></div>'+
      '<div class="exopts"><button class="exopt" type="button">Verdadero</button><button class="exopt" type="button">Falso</button></div>'+
-     '<div class="escprueba" hidden><label>Bewijs uit de tekst: <input type="text" class="tyfield lecpr" autocomplete="off" aria-label="Bewijs bij stelling '+(i+1)+'"></label><button class="otra lecprbtn" type="button">✓ Comprobar prueba</button></div>'+
+     '<div class="escprueba" hidden><label>Bewijs uit de tekst: <input type="text" class="tyfield lecpr" autocomplete="off" aria-label="Bewijs bij stelling '+(i+1)+'"></label><button class="otra lecprbtn" type="button">'+IC.check+' Comprobar prueba</button></div>'+
      '<div class="exwhy" role="status" aria-live="polite"></div>';
    const opts=q.querySelector('.exopts'),why=q.querySelector('.exwhy'),pr=q.querySelector('.escprueba');let cerrado=false;
    opts.querySelectorAll('.exopt').forEach(b=>{b.onclick=()=>{if(cerrado)return;cerrado=true;
@@ -651,13 +651,13 @@ function buildLectura(id,cfg){
      opts.querySelectorAll('.exopt').forEach(x=>{x.disabled=true;if((x.textContent==='Verdadero')===!!it.ans)x.classList.add('ok');});
      if(!bien)b.classList.add('no');
      why.className='exwhy show '+(bien?'g':'b');
-     why.innerHTML=(bien?'<b>✓ correcto</b>':'<b>✗ no</b> → '+(it.ans?'verdadero':'falso'))+' · Kopieer nu de zin die het bewijst.';
+     why.innerHTML=(bien?'<b>'+IC.bien+' correcto</b>':'<b>'+IC.mal+' no</b> → '+(it.ans?'verdadero':'falso'))+' · Kopieer nu de zin die het bewijst.';
      pr.hidden=false;};});
    q.querySelector('.lecprbtn').onclick=()=>{const v=q.querySelector('.lecpr').value.trim();
      const a=tyNorm(v,'soft'),b=tyNorm(it.prueba,'soft');
      const bien=a.length>2&&(b.indexOf(a)>-1||a.indexOf(b)>-1);
      why.className='exwhy show '+(bien?'g':'b');
-     why.innerHTML=bien?'<b>✓ buena prueba</b> · «'+exEsc(it.prueba)+'»':'<b>✗ esa prueba no está</b> · en el texto: «'+exEsc(it.prueba)+'»';
+     why.innerHTML=bien?'<b>✓ buena prueba</b> · «'+exEsc(it.prueba)+'»':'<b>'+IC.mal+' esa prueba no está</b> · en el texto: «'+exEsc(it.prueba)+'»';
      q.querySelector('.lecprbtn').disabled=true;q.querySelector('.lecpr').disabled=true;};
    $('.lecvf').appendChild(q);});
  const P=cfg.produccion||{};
@@ -928,7 +928,7 @@ function retoOpciones(cont,r){
          if(x.textContent===it.correcta)x.classList.add('ok');});
        if(!bien)b.classList.add('no');
        fb.className='detfb show '+(bien?'g':'b');
-       fb.innerHTML=(bien?'<b>✓ correcto</b>':'<b>✗ es «'+exEsc(it.correcta)+'»</b>')+
+       fb.innerHTML=(bien?'<b>'+IC.bien+' correcto</b>':'<b>✗ es «'+exEsc(it.correcta)+'»</b>')+
          (it.porque?' · '+exEsc(it.porque):'');};
      btns.appendChild(b);});
    const pl=d.querySelector('.opplay');

@@ -6,6 +6,7 @@
 # klikbare kaart (mundo hispano, parada 5 = México) + TTS + inline recorder + Lectura + editbar. Huisstijl groen.
 import json, base64, os, sys
 import hub_drills
+import hub_iconos
 import hub_type_sets
 import hub_type_gram
 import extra_bronnen
@@ -76,7 +77,7 @@ GAMEDIR = f"{ROOT}/spaans-motor/games"
 slugs = [g[0] for grp in MOTOR for g in grp[1]]
 GAMES = {s: b64(f"{GAMEDIR}/es-u8-{s}.html") for s in slugs if os.path.exists(f"{GAMEDIR}/es-u8-{s}.html")}
 
-CSS = FONTS + extra_bronnen.CSS + hub_drills.ESCUCHA_CSS + hub_drills.LECTURA_CSS + hub_drills.TYPE_CSS + """
+CSS = FONTS + hub_iconos.CSS + extra_bronnen.CSS + hub_drills.ESCUCHA_CSS + hub_drills.LECTURA_CSS + hub_drills.TYPE_CSS + """
 :root{--g:#1E9E74;--gd:#157355;--gt:#E4F4EE;--ink:#20242E;--mut:#6A6E78;--paper:#FCFBF8;--crema:#F3EEE4;--line:#E4E3DE;--red:#DC2626;--amber:#B7860B;--card:#fff;
 --onder:#2563EB;--ww:#EA7317;--voorw:#1E9E74;--tijd:#7C3AED;--plaats:#14B8A6;
 --disp:'Bricolage Grotesque',sans-serif;--body:'Inter',sans-serif;--hand:'Caveat',cursive}
@@ -408,10 +409,10 @@ __JS__
 
 JS = r"""
 function toggleTheme(){const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'}
-""" + hub_drills.SPEAK_JS + hub_drills.RETOS_JS + r"""
+""" + hub_iconos.js() + hub_drills.SPEAK_JS + hub_drills.RETOS_JS + r"""
 const TTS=('speechSynthesis'in window);
 if(TTS){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}
-const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['retos','Retos 🎯'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
+const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar'],['juegos','Juegos'],['retos','Retos'],['hablar','Hablar'],['cultura','Cultura'],['extra','Extra']];
 const sn=document.getElementById('subnav');
 // ── tabbladen · het adres volgt mee ──────────────────────────────────────────
 // #escuchar opent dat tabblad; #lec_1 opent het paneel waar dat element in
@@ -439,7 +440,7 @@ function vanAdres(){
   }
   return false;   // onbekend anker → laat de hub staan zoals ze opent
 }
-PANELS.forEach((p,i)=>{const b=document.createElement('button');b.textContent=p[1];if(i===0)b.classList.add('on');
+PANELS.forEach((p,i)=>{const b=document.createElement('button');b.innerHTML=(IC[p[0]]||'')+'<span>'+p[1]+'</span>';if(i===0)b.classList.add('on');
   b.onclick=()=>{
     if((location.hash||'').slice(1)===p[0])vanAdres();   // al op dit tabblad → enkel naar boven
     else location.hash=p[0];                             // anders: adres wijzigen, hashchange doet de rest

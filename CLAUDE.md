@@ -365,7 +365,13 @@ De richtlijnen zijn **geen proza om te "kennen" maar een plukvijver om uit te pu
   de cursuskleur. **Licentie = ISC**, niet MIT: dat gold alleen voor de van Feather
   afgeleide deelverzameling. De licentie staat verbatim naast de iconen.
   `BADGE` in `iconos.py` vertaalt de 26 emoji die nú in de cursus staan naar hun
-  tegenhanger. **Nog niet toegepast op de units** — zie de drukproef
+  tegenhanger. **Op de digitale pagina toegepast** (auteur 2026-08-08): de interface —
+  de negen tabbladen, de knoppen, goed/fout, geluid, transcript, de bewerkbalk — draait
+  op Lucide via `03-build/web/hub_iconos.py` (CSS-maskers, dus ze kleuren mee met de knop
+  waarin ze staan) en de nabewerking `hub_post_iconos.py`. **De woordkaartjes houden hun
+  kleur-emoji** (`vocab_emoji.py`, vastgelegd bij U5): een woordkaart toont een díng, en
+  daar is kleur een geheugensteun. De regel die daaruit volgt en die overal geldt:
+  **een icoon is interface, een emoji is betekenis.** In print **nog niet toegepast** — zie de drukproef
   `02-huisstijl/vendor/lucide/ejemplo_iconos.html`; de omschakeling is een beslissing
   van de auteur. Wat géén emoji is maar typografie (★☆ moeilijkheid · ☐ aankruisvak ·
   → in een keten · het semáforo · de vlaggen) blijft hoe dan ook staan.
