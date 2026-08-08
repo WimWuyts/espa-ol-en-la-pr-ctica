@@ -583,7 +583,7 @@ P(audiorow('<div class="ic">🎵</div><div><b>Escucha «La Perla» (Rosalía)</b
 P('</div>')  # sluit .page §5.3
 
 # ================= §6 · LECTURA =================
-sec_open("6", "§6 · Lectura — «¿Qué les gusta?»", 'Dos perfiles de la cast: su <b>día</b> y sus <b>gustos</b>. Lee, busca información y reacciona. <span class="gloss">Twee profielen: hun dag en hun smaken. Lezen, informatie zoeken, reageren.</span>',
+sec_open("6", "§6 · Lectura 1 — «¿Qué les gusta?»", 'Dos perfiles de la cast: su <b>día</b> y sus <b>gustos</b>. Lee, busca información y reacciona. <span class="gloss">Twee profielen: hun dag en hun smaken. Lezen, informatie zoeken, reageren.</span>',
         lpd(("1","lezen: onderwerp & hoofdgedachte"), ("2","lezen: relevante info selecteren"), ("5","identiteit & cultuur")))
 P('<div class="lecdoel"><b>Antes de leer:</b> mira los títulos y las fotos. ¿Qué tipo de texto es? ¿Qué información esperas (rutina, gustos)? <span class="gloss">Kijk vóór het lezen: welk soort tekst? Wat verwacht je?</span></div>')
 P('<div class="txtmeta"><span class="tm"><b>Tipo:</b> perfil / blog</span><span class="tm"><b>Fuente:</b> muro de clase</span><span class="tm"><b>Objetivo:</b> conocer su día y sus gustos</span></div>')
@@ -637,17 +637,17 @@ P(actx(AN(), "Completa con el conector correcto",
   apoyo="Banco de palabras"))
 sec_close()
 
-# ================= §5 LECTURA · §6 ESCUCHA =================
+# ================= LECTURA 2 · ESCUCHA =================
 # Zelfde bron als de hub (lectura_data / escucha_data), zodat papier en scherm
 # niet uit elkaar kunnen lopen. Elk op een eigen bladzijde (§14).
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">5</span><span class="pk">§5 · Lectura — «Un martes cualquiera»</span>')
+P('<span class="num">6.2</span><span class="pk">§6.2 · Lectura 2 — «Un martes cualquiera»</span>')
 P('<div class="intro"><b>ES:</b> Una entrada de blog de verdad. <b>No hace falta entenderlo todo</b> para sacar la información. <span class="gloss">Een echte blogpost. Je hoeft niet alles te begrijpen om de informatie te vinden — let vooral op de uren.</span></div>')
 P(PB.lectura_print(LD.C6P_U1, AN()))
 P('</div>')
 
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">6</span><span class="pk">§6 · Escucha — «Entrevista a un deportista»</span>')
+P('<span class="num">7</span><span class="pk">§7 · Escucha — «Entrevista a un deportista»</span>')
 P('<div class="intro"><b>ES:</b> Una periodista entrevista a Hugo, nadador. <b>Escucha primero, escribe después.</b> <span class="gloss">Een schooljournaliste interviewt zwemmer Hugo. Eerst luisteren, dan schrijven; het transcript staat online en gaat pas open ná de taken.</span></div>')
 P(PB.escucha_print(ED.C6P_U1, AN()))
 P('</div>')

@@ -854,7 +854,7 @@ retos("planes", "§3.4 · Retos — quedar de verdad",
       'Dos retos para cerrar un plan: una <b>cita a ciegas</b> por notas y un <b>presupuesto</b> que no da para todo.',
       'Twee retos om een plan te sluiten: een blind date via briefjes, en een budget dat niet voor alles volstaat.')
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">📖</span><span class="pk">§4 · Lectura — «Perfiles de gustos»</span>')
+P('<span class="num">📖</span><span class="pk">§4 · Lectura 1 — «Perfiles de gustos»</span>')
 P('<div class="intro"><b>ES:</b> Vas a leer dos perfiles de una app de música (tipo playlist). Primero <b>predices</b>, después lees con un <b>objetivo</b>. <span class="gloss">Je leest twee muziekprofielen: eerst voorspellen, dan lezen met een doel.</span></div>')
 P(lpd(("1","onderwerp/hoofdgedachte bij lezen"), ("2","relevante info selecteren"), ("3","doelgericht schrijven met steun")))
 P('</div>')
@@ -949,11 +949,11 @@ P(actx(5, "Corrige la opinión",
 P('<div class="route-note">🎮 <b>Practica online:</b> «¿por qué o porque?» en de conectoren-oefeningen met zelfcorrectie.</div>')
 P('</div>')  # page Taller
 
-# ================= §5 LECTURA · §6 ESCUCHA =================
+# ================= LECTURA 2 · ESCUCHA =================
 # Zelfde bron als de digitale hub (lectura_data / escucha_data): papier en scherm
 # kunnen zo niet uit elkaar lopen. Elk op een eigen bladzijde (§14).
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">5</span><span class="pk">§5 · Lectura — «Fiesta de la Música · València»</span>')
+P('<span class="num">5</span><span class="pk">§5 · Lectura 2 — «Fiesta de la Música · València»</span>')
 P('<div class="intro"><b>ES:</b> El programa de un festival de verdad. <b>No hace falta entenderlo todo</b> para elegir tu concierto. <span class="gloss">Het echte programma van een festival. Je hoeft niet alles te begrijpen om te kiezen — scan de uren en de stijlen.</span></div>')
 P(PB.lectura_print(LD.C5_U4, "1"))
 P('</div>')

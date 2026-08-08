@@ -401,7 +401,7 @@ retos("historia_c6p", "§4.4 · Retos — contar y comprobar",
       'Een legende met omgegooide volgorde, twee versies van dezelfde dag die niet overeenkomen, en een gedenkdag in dertig seconden.')
 
 # ================= §5 · LECTURA =================
-sec_open("5", "§5 · Lectura — «Una vida de película»", 'Dos minibiografías de figuras hispanas. Lee, busca información y reacciona. <span class="gloss">Twee korte biografieën van Spaanstalige figuren. Lezen, info zoeken, reageren.</span>',
+sec_open("5", "§5 · Lectura 1 — «Una vida de película»", 'Dos minibiografías de figuras hispanas. Lee, busca información y reacciona. <span class="gloss">Twee korte biografieën van Spaanstalige figuren. Lezen, info zoeken, reageren.</span>',
         lpd(("1","lezen: hoofdgedachte"), ("2","lezen: info selecteren"), ("6","literatuur"), ("5","identiteit & cultuur")))
 P('<div class="lecdoel"><b>Antes de leer:</b> mira los nombres. ¿Qué sabes ya de estas personas? <span class="gloss">Wat weet je al?</span></div>')
 P('<div class="txtmeta"><span class="tm"><b>Tipo:</b> biografía</span><span class="tm"><b>Fuente:</b> enciclopedia juvenil</span><span class="tm"><b>Objetivo:</b> conocer una vida</span></div>')
@@ -454,11 +454,11 @@ P(actx(AN(), "Une el conector con su función",
   apoyo=""))
 sec_close()
 
-# ================= §6 LECTURA · §7 ESCUCHA =================
+# ================= LECTURA 2 · ESCUCHA =================
 # Zelfde bron als de digitale hub (lectura_data / escucha_data): papier en scherm
 # kunnen zo niet uit elkaar lopen. Elk op een eigen bladzijde (§14).
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">6</span><span class="pk">§6 · Lectura — «La leyenda de la yerba mate»</span>')
+P('<span class="num">6</span><span class="pk">§6 · Lectura 2 — «La leyenda de la yerba mate»</span>')
 P('<div class="intro"><b>ES:</b> Una leyenda guaraní contada entera en indefinido. <b>No hace falta entenderlo todo</b> para seguir la historia. <span class="gloss">Een Guaraní-legende, volledig in het indefinido. Je hoeft niet alles te begrijpen om het verhaal te volgen — let op de volgorde van de gebeurtenissen.</span></div>')
 P(PB.lectura_print(LD.C6P_U5, AN()))
 P('</div>')

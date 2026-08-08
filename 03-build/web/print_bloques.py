@@ -27,6 +27,13 @@ CSS = """
 .qb-nl{font-style:italic}
 .qb-id{margin-left:auto;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:6.5pt;
        color:#B6BAC2;letter-spacing:.04em;align-self:flex-start}
+/* Het leesdoel en de online-verwijzing horen bij dit blok, dus staan ze hier en
+   niet in de unit-CSS — C5 U0 heeft geen generator en zou ze anders missen. */
+.lecdoel{background:var(--amberbg);border-left:3px solid var(--amber);border-radius:8pt;
+         padding:2.5mm 5mm;margin:3mm 0;font-size:9.6pt}
+.lecdoel b{color:var(--amber)}
+.route-note{font-size:8.5pt;color:var(--gd);background:var(--gt);border-radius:8pt;
+            padding:2.5mm 5mm;margin-top:4mm}
 .lecp{border:1px solid var(--line);border-left:1.2mm solid var(--g);border-radius:8pt;
       padding:3mm 4mm;background:#fff;break-inside:avoid;margin:3mm 0}
 .lecp h4{font-family:var(--disp);color:var(--gd);margin:0 0 1mm;font-size:12pt}
@@ -105,8 +112,24 @@ def nat_print(bloque, num, opgave_tekst=None, klasse="wl md", per_rij=4):
         balk(bloque.get("qr_id", bloque["id"])))
 
 
-def lectura_print(t, num):
-    """De leestekst met de volledige route en schrijfruimte per stap."""
+def lectura_print(t, num, sola=False):
+    """De tweede leestekst van de unit — bewust korter dan de eerste.
+
+    Elke unit heeft twee leesteksten, en dat is goed: één om lezen te léren, één
+    om te lezen. Wat niet goed was, is dat ze allebei dezelfde route aflegden.
+    Voorspellen en juist/fout-met-bewijs staan al bij de eerste tekst, in alle
+    zestien units; ze hier herhalen maakt van de tweede tekst een tweede oefening
+    in plaats van een tweede tekst.
+
+    Wat blijft: de tekst zelf met een leesdoel, scannen (dat is tekstgebonden en
+    telkens anders), betekenis uit de context — die stap staat in C6+ nérgens
+    anders — en de productieve reactie. Wat wegvalt, valt niet weg: het staat op
+    de digitale pagina, waar het zichzelf verbetert.
+
+    `sola=True` voor een unit met maar één leestekst (C5 U0). Dan is er niets om
+    dubbel te doen en loopt de volledige route: voorspellen, globaal begrip,
+    scannen, juist/fout met bewijs, context, reactie.
+    """
     cuerpo = []
     for soort, c in t["texto"]:
         if soort == "titulo":
@@ -125,41 +148,68 @@ def lectura_print(t, num):
     esc = "".join(
         '<div style="margin:2.4mm 0"><b>%d.</b> %s <span class="wl md"></span></div>' % (i + 1, e["q"])
         for i, e in enumerate(t["escanear"]))
+    ctx = "".join(
+        '<div style="margin:2.4mm 0"><b>%d.</b> %s <span class="wl md"></span></div>' % (i + 1, c["q"])
+        for i, c in enumerate(t["contexto"]))
     vf = "".join(
         '<div style="margin:2.4mm 0"><b>%d.</b> %s &nbsp; ☐ V &nbsp; ☐ F<br>'
         '<span style="font-size:8.4pt;color:var(--mut)">prueba:</span> <span class="wl full"></span></div>'
         % (i + 1, v["q"]) for i, v in enumerate(t["vf"]))
-    ctx = "".join(
-        '<div style="margin:2.4mm 0"><b>%d.</b> %s <span class="wl md"></span></div>' % (i + 1, c["q"])
-        for i, c in enumerate(t["contexto"]))
+
+    ficha = ('<div class="fichatxt"><span><b>Tekstsoort</b>%s</span><span><b>Afzender</b>%s</span>'
+             '<span><b>Ontvanger</b>%s</span><span><b>Leesdoel</b>%s</span></div>'
+             % (t["tipo"], t["emisor"], t["receptor"], t["objetivo"]))
+
+    pasos = []
+    n = [0]
+
+    def paso(kop, cuerpo_html):
+        n[0] += 1
+        pasos.append("<p><b>%d · %s</b></p>%s" % (n[0], kop, cuerpo_html))
+
+    if sola:
+        paso("Antes de leer. " + t["prediccion"]["q"],
+             '<div style="margin-left:12.5mm">☐ %s</div>'
+             % " &nbsp;&nbsp; ☐ ".join(t["prediccion"]["opts"]))
+        paso("El texto.", '<div class="lecp">%s</div>' % "".join(cuerpo))
+        paso("Comprensión global. " + t["global"]["q"],
+             '<div style="margin-left:12.5mm"><span class="wl full"></span></div>')
+    else:
+        # Voorspellen deed de leerling al bij de eerste tekst van de unit; hier
+        # staat het leesdoel er meteen, zodat er gericht gelezen wordt.
+        pasos.append('<div class="lecdoel">🎯 <b>Lee con este objetivo:</b> %s '
+                     '<span class="gloss">Lees met dat doel voor ogen — je hoeft niet elk woord '
+                     'te begrijpen.</span></div>' % t["global"]["q"])
+        paso("El texto.", '<div class="lecp">%s</div><div style="margin-left:12.5mm">Mi respuesta: '
+             '<span class="wl full"></span></div>' % "".join(cuerpo))
+
+    paso("Escanea. Beantwoord de vragen met één woord of één getal uit de tekst.",
+         '<div style="margin-left:12.5mm;font-size:9.6pt">%s</div>' % esc)
+    if sola:
+        paso("Verdadero o falso — con prueba. Kruis aan én schrijf de zin die het bewijst.",
+             '<div style="margin-left:12.5mm;font-size:9.6pt">%s</div>' % vf)
+        paso("El significado por el contexto.",
+             '<div style="margin-left:12.5mm;font-size:9.6pt">%s</div>' % ctx)
+    else:
+        paso("El significado por el contexto. Raad uit de zin eromheen, niet uit het woordenboek.",
+             '<div style="margin-left:12.5mm;font-size:9.6pt">%s</div>' % ctx)
+    paso("Tu reacción. " + t["produccion"]["prompt"], '<div class="wbox lg"></div>')
+
+    cola = "" if sola else (
+        '<div class="route-note">📖 <b>Verdadero o falso — con prueba:</b> die vragen bij déze tekst '
+        'staan online, met zelfcorrectie. Op papier oefen je ze bij de eerste lectura van de unit.</div>')
 
     return """<div class="act">
     %s
-    <div class="fichatxt"><span><b>Tekstsoort</b>%s</span><span><b>Afzender</b>%s</span><span><b>Ontvanger</b>%s</span><span><b>Leesdoel</b>%s</span></div>
-    <p><b>1 · Antes de leer.</b> %s</p>
-    <div style="margin-left:12.5mm">☐ %s</div>
-    <p><b>2 · El texto.</b></p>
-    <div class="lecp">%s</div>
-    <p><b>3 · Comprensión global.</b> %s</p>
-    <div style="margin-left:12.5mm"><span class="wl full"></span></div>
-    <p><b>4 · Escanea.</b> Beantwoord de vragen met één woord of één getal uit de tekst.</p>
-    <div style="margin-left:12.5mm;font-size:9.6pt">%s</div>
-    <p><b>5 · Verdadero o falso — con prueba.</b> Kruis aan én schrijf de zin die het bewijst.</p>
-    <div style="margin-left:12.5mm;font-size:9.6pt">%s</div>
-    <p><b>6 · El significado por el contexto.</b></p>
-    <div style="margin-left:12.5mm;font-size:9.6pt">%s</div>
-    <p><b>7 · Tu reacción.</b> %s</p>
-    <div class="wbox lg"></div>
+    %s
+    %s
     <span class="steun">tekst blijft zichtbaar · eerst herkennen, daarna zelf zeggen</span>
+    %s
     %s</div>""" % (
-        _acthead(num, "Lectura · %s" % t["titulo"],
-                 [("📖 Leer", True), ("✍️ Escribir", True), ("👤 Solo", False), ("± 20 min", False), ("★★☆", False)]),
-        t["tipo"], t["emisor"], t["receptor"], t["objetivo"],
-        t["prediccion"]["q"],
-        " &nbsp;&nbsp; ☐ ".join(t["prediccion"]["opts"]),
-        "".join(cuerpo),
-        t["global"]["q"], esc, vf, ctx,
-        t["produccion"]["prompt"],
+        _acthead(num, ("Lectura · %s" if sola else "Lectura 2 · %s") % t["titulo"],
+                 [("📖 Leer", True), ("✍️ Escribir", True), ("👤 Solo", False),
+                  ("± 20 min" if sola else "± 12 min", False), ("★★☆", False)]),
+        ficha, "".join(pasos), cola,
         puntero("Lectura", "de tekst met zelfcorrectie en de vertaling"))
 
 

@@ -413,7 +413,7 @@ P(audiorow('<div class="ic">🎧</div><div><b>Escucha «Experiencias de viaje»<
 sec_close()
 
 # ================= §5 · LECTURA =================
-sec_open("5", "§5 · Lectura — «Un viaje inolvidable»", 'Dos personas cuentan un viaje reciente. Lee, busca información y reacciona. <span class="gloss">Twee mensen vertellen over een recente reis. Lezen, info zoeken, reageren.</span>',
+sec_open("5", "§5 · Lectura 1 — «Un viaje inolvidable»", 'Dos personas cuentan un viaje reciente. Lee, busca información y reacciona. <span class="gloss">Twee mensen vertellen over een recente reis. Lezen, info zoeken, reageren.</span>',
         lpd(("1","lezen: hoofdgedachte"), ("2","lezen: info selecteren"), ("5","identiteit & cultuur")))
 P('<div class="lecdoel"><b>Antes de leer:</b> mira el título «Un viaje inolvidable». ¿Qué esperas encontrar? <span class="gloss">Wat verwacht je in de tekst?</span></div>')
 P('<div class="txtmeta"><span class="tm"><b>Tipo:</b> blog de viajes</span><span class="tm"><b>Fuente:</b> muro de clase</span><span class="tm"><b>Objetivo:</b> compartir un viaje</span></div>')
@@ -464,11 +464,11 @@ P(actx(AN(), "Ordena el relato del viaje",
   apoyo="Marco"))
 sec_close()
 
-# ================= §6 LECTURA · §7 ESCUCHA =================
+# ================= LECTURA 2 · ESCUCHA =================
 # Zelfde bron als de digitale hub (lectura_data / escucha_data): papier en scherm
 # kunnen zo niet uit elkaar lopen. Elk op een eigen bladzijde (§14).
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">6</span><span class="pk">§6 · Lectura — «Una postal desde Valparaíso»</span>')
+P('<span class="num">6</span><span class="pk">§6 · Lectura 2 — «Una postal desde Valparaíso»</span>')
 P('<div class="intro"><b>ES:</b> Una postal de verdad, con un diario de viaje. <b>No hace falta entenderlo todo</b> para sacar la información. <span class="gloss">Een echte postkaart met een reisdagboek erbij. Je hoeft niet alles te begrijpen — let op wat ze al gedaan heeft en wat nog niet.</span></div>')
 P(PB.lectura_print(LD.C6P_U4, AN()))
 P('</div>')

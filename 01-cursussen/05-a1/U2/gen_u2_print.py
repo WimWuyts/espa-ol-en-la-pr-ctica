@@ -1020,7 +1020,7 @@ P('</div>')  # page §5.2
 
 # ================= §6 · LECTURA =================
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">6</span><span class="pk">§6 · Lectura — «La familia de Lucía»</span>')
+P('<span class="num">6</span><span class="pk">§6 · Lectura 1 — «La familia de Lucía»</span>')
 P('<div class="intro"><b>ES:</b> Lees el álbum de Lucía. Antes de leer <b>predices</b>, luego <b>escaneas</b> y <b>compruebas</b> (verdadero/falso con prueba), y al final <b>reaccionas</b>. <span class="gloss">Volledige leesketen: voorspellen → scannen → juist/fout met bewijs → reageren.</span></div>')
 P(lpd(("1","hoofdgedachte begrijpen"), ("2","relevante info vinden"), ("7","woordenschat in context"), ("3","productieve reactie")))
 P('</div>')
@@ -1112,11 +1112,11 @@ P(actx(5, "Corrige la ortografía",
 P('<div class="route-note">🎮 <b>Juega online:</b> «conectores», «caza del adjetivo» en «ortografía» — meerdere reeksen met zelfcorrectie op de digitale pagina.</div>')
 P('</div>')  # page Taller
 
-# ================= §7 LECTURA · §8 ESCUCHA =================
+# ================= LECTURA 2 · ESCUCHA =================
 # Zelfde bron als de digitale hub (lectura_data / escucha_data): papier en scherm
 # kunnen zo niet uit elkaar lopen. Elk op een eigen bladzijde (§14).
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">7</span><span class="pk">§7 · Lectura — «Mi familia en una foto»</span>')
+P('<span class="num">7</span><span class="pk">§7 · Lectura 2 — «Mi familia en una foto»</span>')
 P('<div class="intro"><b>ES:</b> Un correo de verdad, con foto adjunta. <b>No hace falta entenderlo todo</b> para sacar la información. <span class="gloss">Een echte mail met een foto erbij. Je hoeft niet alles te begrijpen om de informatie te vinden — zoek gericht.</span></div>')
 P(PB.lectura_print(LD.C5_U2, "1"))
 P('</div>')

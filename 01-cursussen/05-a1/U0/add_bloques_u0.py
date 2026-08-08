@@ -57,7 +57,8 @@ def bloques():
              '<b>No hace falta entenderlo todo</b> para sacar la información. '
              '<span class="gloss">Een echt aanplakbiljet uit de gang. Je hoeft niet alles te begrijpen om de '
              'informatie eruit te halen — dat is precies wat lezen is.</span></div>')
-    p.append(PB.lectura_print(lectura_data.C5_U0, n + 2))
+    # U0 heeft maar één leestekst, dus hier loopt de volledige route.
+    p.append(PB.lectura_print(lectura_data.C5_U0, n + 2, sola=True))
     p.append('</div>')
 
     p.append('<div class="page">')

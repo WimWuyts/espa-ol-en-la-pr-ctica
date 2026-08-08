@@ -863,7 +863,7 @@ retos("concordancia_u6", "§4.4 · Retos — la ropa que te delata",
 
 # ================= §5 · LECTURA =================
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">📖</span><span class="pk">§5 · Lectura — «¡Rebajas! + una reseña»</span>')
+P('<span class="num">📖</span><span class="pk">§5 · Lectura 1 — «¡Rebajas! + una reseña»</span>')
 P('<div class="intro"><b>ES:</b> Vas a leer un <b>anuncio de rebajas</b> (una tienda) y una <b>reseña</b> (un cliente). Primero <b>predices</b>, después lees con un <b>objetivo</b>. <span class="gloss">Je leest een soldenadvertentie en een klantenreview: eerst voorspellen, dan doelgericht lezen. gelaagde teksten · tekstsoorten.</span></div>')
 P(lpd(("1","onderwerp/hoofdgedachte bij lezen"), ("2","relevante info selecteren"), ("3","doelgericht schrijven met steun")))
 P('</div>')
@@ -971,11 +971,11 @@ P(actx(5, "Escribe: dos prendas con conector",
 P('<div class="route-note">🎮 <b>Practica online:</b> «sílaba tónica» en de conectoren-oefeningen met zelfcorrectie.</div>')
 P('</div>')  # page Taller
 
-# ================= §6 LECTURA · §7 ESCUCHA =================
+# ================= LECTURA 2 · ESCUCHA =================
 # Zelfde bron als de digitale hub (lectura_data / escucha_data): papier en scherm
 # kunnen zo niet uit elkaar lopen. Elk op een eigen bladzijde (§14).
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">6</span><span class="pk">§6 · Lectura — «Cinco trucos para ir de rebajas»</span>')
+P('<span class="num">6</span><span class="pk">§6 · Lectura 2 — «Cinco trucos para ir de rebajas»</span>')
 P('<div class="intro"><b>ES:</b> Un artículo de consejos de una revista juvenil. <b>No hace falta entenderlo todo</b> para sacar la información. <span class="gloss">Een tipsartikel uit een jeugdblad. Je hoeft niet alles te begrijpen — weeg elke tip: past hij bij jou?</span></div>')
 P(PB.lectura_print(LD.C5_U6, "1"))
 P('</div>')

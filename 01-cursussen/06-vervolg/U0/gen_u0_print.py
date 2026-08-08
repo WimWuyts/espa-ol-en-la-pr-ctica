@@ -848,7 +848,7 @@ retos("paises", "§4.4 · Retos — el mundo hispano en datos",
 
 # ================= §5 · LECTURA =================
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">5</span><span class="pk">§5 · Lectura — «De vuelta al insti»</span>')
+P('<span class="num">5</span><span class="pk">§5 · Lectura 1 — «De vuelta al insti»</span>')
 P('<div class="intro"><b>ES:</b> Dos perfiles de la cast. Lee, busca información y reacciona. <span class="gloss">Twee profielen van de cast. Lezen, informatie zoeken en reageren.</span></div>')
 P(lpd(("4","leesvaardigheid: korte informatieve teksten"),("5","cultuur & identiteit")))
 P('</div>')
@@ -914,7 +914,7 @@ P(PB.nat_print(ND.C6P_U0_NAC_TYPE, AN(),
 P('</div>')
 
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">5.2</span><span class="pk">§5.2 · Lectura — «El tablón de anuncios»</span>')
+P('<span class="num">5.2</span><span class="pk">§5.2 · Lectura 2 — «El tablón de anuncios»</span>')
 P('<div class="intro"><b>ES:</b> Tres avisos de verdad, del pasillo. <b>No hace falta entenderlo todo</b> para sacar la información. <span class="gloss">Drie echte prikbordberichtjes. Je hoeft niet alles te begrijpen om de informatie te vinden.</span></div>')
 P(PB.lectura_print(LD.C6P_U0, AN()))
 P('</div>')

@@ -915,7 +915,7 @@ retos("ordinales", "§5.4 · Reto — el primer, el segundo, el tercer",
 
 # ================= §6 · LECTURA =================
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">📖</span><span class="pk">§6 · Lectura — «Un paseo por Cartagena»</span>')
+P('<span class="num">📖</span><span class="pk">§6 · Lectura 1 — «Un paseo por Cartagena»</span>')
 P('<div class="intro"><b>ES:</b> Vas a leer un <b>anuncio de piso</b> y un pequeño <b>texto</b> sobre el barrio de Valen. Primero <b>predices</b> desde la imagen, después lees con un <b>objetivo</b>. <span class="gloss">Je leest een woningadvertentie en een tekst over Valens buurt: eerst voorspellen, dan doelgericht lezen.</span></div>')
 P(lpd(("1","onderwerp/hoofdgedachte bij lezen"), ("2","relevante info selecteren"), ("3","doelgericht schrijven met steun")))
 P('</div>')
@@ -1020,11 +1020,11 @@ P(tarea_com("Tarea comunicativa · «Dame indicaciones»",
 P('<div class="route-note">🎮 <b>Practica online:</b> «diptongo o hiato» en de conectoren-oefeningen met zelfcorrectie.</div>')
 P('</div>')  # page Taller
 
-# ================= §7 LECTURA · §8 ESCUCHA =================
+# ================= LECTURA 2 · ESCUCHA =================
 # Zelfde bron als de digitale hub (lectura_data / escucha_data): papier en scherm
 # kunnen zo niet uit elkaar lopen. Elk op een eigen bladzijde (§14).
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">7</span><span class="pk">§7 · Lectura — «Se alquila apartamento en el centro»</span>')
+P('<span class="num">7</span><span class="pk">§7 · Lectura 2 — «Se alquila apartamento en el centro»</span>')
 P('<div class="intro"><b>ES:</b> Un anuncio de alquiler de verdad, con el plano descrito. <b>No hace falta entenderlo todo</b> para sacar la información. <span class="gloss">Een echte huuradvertentie waarin de plattegrond beschreven wordt. Je hoeft niet alles te begrijpen — teken in je hoofd mee.</span></div>')
 P(PB.lectura_print(LD.C5_U7, "1"))
 P('</div>')

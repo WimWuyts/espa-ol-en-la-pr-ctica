@@ -924,7 +924,7 @@ retos("preguntar", "§4.3 · Retos — preguntar de otra manera",
       'Tres retos sobre la pregunta: una <b>rueda de prensa</b>, tres preguntas <b>prohibidas</b> y doce objetos que <b>no existen</b>.',
       'Drie retos over de vraag: een persconferentie, drie verboden vragen en twaalf voorwerpen die niet bestaan.')
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">📖</span><span class="pk">§5 · Lectura — «Dos perfiles»</span>')
+P('<span class="num">📖</span><span class="pk">§5 · Lectura 1 — «Dos perfiles»</span>')
 P('<div class="intro"><b>ES:</b> Vas a leer dos perfiles de una app de intercambio. Primero <b>predices</b>, después lees con un <b>objetivo</b>. <span class="gloss">Je leest twee profielen van een uitwisselings-app: eerst voorspellen, dan lezen met een doel.</span></div>')
 P(lpd(("1","onderwerp/hoofdgedachte bij lezen"), ("2","relevante info selecteren"), ("3","doelgericht schrijven met steun")))
 P('</div>')
@@ -1030,11 +1030,11 @@ P(actx(5, "Escribe tu mini-perfil con conectores",
 P('<div class="route-note">🎮 <b>Practica online:</b> «Caza de mayúsculas» en de conectoren-oefeningen met zelfcorrectie.</div>')
 P('</div>')  # page Taller
 
-# ================= §5 LECTURA · §6 ESCUCHA =================
+# ================= LECTURA 2 · ESCUCHA =================
 # Zelfde bron als de digitale hub (lectura_data / escucha_data): papier en scherm
 # kunnen zo niet uit elkaar lopen. Elk op een eigen bladzijde (§14).
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">5</span><span class="pk">§5 · Lectura — «Busco un compi de intercambio»</span>')
+P('<span class="num">5.2</span><span class="pk">§5.2 · Lectura 2 — «Busco un compi de intercambio»</span>')
 P('<div class="intro"><b>ES:</b> Un perfil de verdad, de una app de intercambio. <b>No hace falta entenderlo todo</b> para sacar la información. <span class="gloss">Een echt profiel uit een uitwisselingsapp. Je hoeft niet alles te begrijpen om de informatie te vinden — zoek gericht.</span></div>')
 P(PB.lectura_print(LD.C5_U1, "1"))
 P('</div>')

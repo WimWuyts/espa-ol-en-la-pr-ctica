@@ -854,7 +854,7 @@ retos("pronombres_u5", "§4.4 · Reto — el pronombre decide",
 
 # ================= §5 · LECTURA =================
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">📖</span><span class="pk">§5 · Lectura — «Dos cartas / una receta»</span>')
+P('<span class="num">📖</span><span class="pk">§5 · Lectura 1 — «Dos cartas / una receta»</span>')
 P('<div class="intro"><b>ES:</b> Vas a leer <b>dos menús</b> (la carta de dos restaurantes) y una <b>mini-receta</b>. Primero <b>predices</b>, después lees con un <b>objetivo</b>. <span class="gloss">Je leest twee menu\'s en een recept: eerst voorspellen, dan doelgericht lezen. parallelle teksten.</span></div>')
 P(lpd(("1","onderwerp/hoofdgedachte bij lezen"), ("2","relevante info selecteren"), ("3","doelgericht schrijven met steun")))
 P('</div>')
@@ -956,11 +956,11 @@ P(actx(5, "Corrige la receta",
 P('<div class="route-note">🎮 <b>Practica online:</b> «ordena la receta» en de conectoren-oefeningen met zelfcorrectie.</div>')
 P('</div>')  # page Taller
 
-# ================= §6 LECTURA · §7 ESCUCHA =================
+# ================= LECTURA 2 · ESCUCHA =================
 # Zelfde bron als de digitale hub (lectura_data / escucha_data): papier en scherm
 # kunnen zo niet uit elkaar lopen. Elk op een eigen bladzijde (§14).
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">6</span><span class="pk">§6 · Lectura — «El mercado de La Merced en cinco datos»</span>')
+P('<span class="num">6</span><span class="pk">§6 · Lectura 2 — «El mercado de La Merced en cinco datos»</span>')
 P('<div class="intro"><b>ES:</b> Una infografía de verdad, con cifras. <b>No hace falta entenderlo todo</b> para sacar la información. <span class="gloss">Een echte infografie met cijfers. Je hoeft niet alles te begrijpen — lees de cijfers af en leg ze naast de tekst.</span></div>')
 P(PB.lectura_print(LD.C5_U5, "1"))
 P('</div>')

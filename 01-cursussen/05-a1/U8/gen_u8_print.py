@@ -831,7 +831,7 @@ retos("clima", "§4.4 · Retos — el tiempo que decide",
 
 # ================= §5 · LECTURA =================
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">📖</span><span class="pk">§5 · Lectura — «El diario de viaje de Nina»</span>')
+P('<span class="num">📖</span><span class="pk">§5 · Lectura 1 — «El diario de viaje de Nina»</span>')
 P('<div class="intro"><b>ES:</b> Vas a leer el <b>diario de viaje</b> de Nina en Perú. Primero <b>predices</b> desde el título y la foto, después lees con un <b>objetivo</b>. <span class="gloss">Je leest het reisdagboek van Nina: eerst voorspellen, dan doelgericht lezen. SK-011/SK-018.</span></div>')
 P(lpd(("1","onderwerp/hoofdgedachte bij lezen"), ("2","relevante info selecteren"), ("3","doelgericht schrijven met steun")))
 P('</div>')
@@ -928,11 +928,11 @@ P(actx(5, "Escribe tres frases del diario",
 P('<div class="route-note">🎮 <b>Practica online:</b> «tilde diacrítica» en «ordena el diario» met zelfcorrectie.</div>')
 P('</div>')  # page Taller
 
-# ================= §6 LECTURA · §7 ESCUCHA =================
+# ================= LECTURA 2 · ESCUCHA =================
 # Zelfde bron als de digitale hub (lectura_data / escucha_data): papier en scherm
 # kunnen zo niet uit elkaar lopen. Elk op een eigen bladzijde (§14).
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">6</span><span class="pk">§6 · Lectura — «¿Qué tipo de viajero eres?»</span>')
+P('<span class="num">6</span><span class="pk">§6 · Lectura 2 — «¿Qué tipo de viajero eres?»</span>')
 P('<div class="intro"><b>ES:</b> Un test de revista de verdad. <b>No hace falta entenderlo todo</b> para contestar y sacar tu resultado. <span class="gloss">Een echte tijdschrifttest. Je hoeft niet alles te begrijpen om te antwoorden en je uitslag te vinden.</span></div>')
 P(PB.lectura_print(LD.C5_U8, "1"))
 P('</div>')

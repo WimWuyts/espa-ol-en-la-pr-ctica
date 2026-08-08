@@ -399,7 +399,7 @@ retos("comparativos", "§4.4 · Retos — comparar para entender",
       'Kind zijn in drie landen, een proces tegen de nostalgie, en iets van vandaag uitgelegd aan iemand uit 1975.')
 
 # ================= §5 · LECTURA =================
-sec_open("5", "§5 · Lectura — «El pueblo de mi abuela»", 'Dos personas beschrijven hun jeugd. Lee, busca información y reacciona. <span class="gloss">Twee mensen beschrijven hun kindertijd. Lezen, info zoeken, reageren.</span>',
+sec_open("5", "§5 · Lectura 1 — «El pueblo de mi abuela»", 'Dos personas beschrijven hun jeugd. Lee, busca información y reacciona. <span class="gloss">Twee mensen beschrijven hun kindertijd. Lezen, info zoeken, reageren.</span>',
         lpd(("1","lezen: hoofdgedachte"), ("2","lezen: info selecteren"), ("5","identiteit & cultuur")))
 P('<div class="lecdoel"><b>Antes de leer:</b> mira el título. ¿Cómo era la vida «antes», crees? <span class="gloss">Hoe was het leven vroeger, denk je?</span></div>')
 P('<div class="txtmeta"><span class="tm"><b>Tipo:</b> recuerdo / relato</span><span class="tm"><b>Fuente:</b> muro de clase</span><span class="tm"><b>Objetivo:</b> compartir la infancia</span></div>')
@@ -451,11 +451,11 @@ P(actx(AN(), "Completa con el conector",
   apoyo="Banco de palabras"))
 sec_close()
 
-# ================= §6 LECTURA · §7 ESCUCHA =================
+# ================= LECTURA 2 · ESCUCHA =================
 # Zelfde bron als de digitale hub (lectura_data / escucha_data): papier en scherm
 # kunnen zo niet uit elkaar lopen. Elk op een eigen bladzijde (§14).
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">6</span><span class="pk">§6 · Lectura — «Carta de la abuela Rosario»</span>')
+P('<span class="num">6</span><span class="pk">§6 · Lectura 2 — «Carta de la abuela Rosario»</span>')
 P('<div class="intro"><b>ES:</b> Una carta de verdad, escrita a mano por una abuela. <b>No hace falta entenderlo todo</b> para sacar la información. <span class="gloss">Een echte handgeschreven brief van een oma. Je hoeft niet alles te begrijpen — let op wat vroeger gewoonte was en wat één keer gebeurde.</span></div>')
 P(PB.lectura_print(LD.C6P_U6, AN()))
 P('</div>')

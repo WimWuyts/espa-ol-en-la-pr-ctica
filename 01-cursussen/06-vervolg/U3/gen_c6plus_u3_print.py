@@ -489,7 +489,7 @@ P(audiorow('<div class="ic">🎧</div><div><b>Escucha «Quedamos el sábado»</b
 sec_close()
 
 # ================= §6 · LECTURA =================
-sec_open("6", "§6 · Lectura — «¿Adicto al móvil?»", 'Una encuesta y dos opiniones sobre el tiempo de pantalla. Lee, busca información y da tu opinión. <span class="gloss">Een enquête en twee meningen over schermtijd. Lezen, info zoeken, je mening geven.</span>',
+sec_open("6", "§6 · Lectura 1 — «¿Adicto al móvil?»", 'Una encuesta y dos opiniones sobre el tiempo de pantalla. Lee, busca información y da tu opinión. <span class="gloss">Een enquête en twee meningen over schermtijd. Lezen, info zoeken, je mening geven.</span>',
         lpd(("1","lezen: hoofdgedachte"), ("2","lezen: info selecteren"), ("5","identiteit & cultuur")))
 P('<div class="lecdoel"><b>Antes de leer:</b> mira el título «¿Adicto al móvil?». ¿De qué va a hablar el texto? <span class="gloss">Waar zal de tekst over gaan?</span></div>')
 P('<div class="txtmeta"><span class="tm"><b>Tipo:</b> encuesta / opiniones</span><span class="tm"><b>Fuente:</b> revista juvenil</span><span class="tm"><b>Objetivo:</b> reflexionar sobre el móvil</span></div>')
@@ -540,11 +540,11 @@ P(actx(AN(), "Ordena el plan con conectores",
   apoyo="Marco"))
 sec_close()
 
-# ================= §7 LECTURA · §8 ESCUCHA =================
+# ================= LECTURA 2 · ESCUCHA =================
 # Zelfde bron als de digitale hub (lectura_data / escucha_data): papier en scherm
 # kunnen zo niet uit elkaar lopen. Elk op een eigen bladzijde (§14).
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">7</span><span class="pk">§7 · Lectura — «¿Cuántas horas de pantalla?»</span>')
+P('<span class="num">7</span><span class="pk">§7 · Lectura 2 — «¿Cuántas horas de pantalla?»</span>')
 P('<div class="intro"><b>ES:</b> Un artículo con una encuesta de verdad. <b>No hace falta entenderlo todo</b> para sacar la información. <span class="gloss">Een echt artikel met een enquête. Je hoeft niet alles te begrijpen — zoek de cijfers én kijk wie wat vindt.</span></div>')
 P(PB.lectura_print(LD.C6P_U3, AN()))
 P('</div>')

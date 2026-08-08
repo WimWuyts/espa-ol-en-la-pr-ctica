@@ -517,7 +517,7 @@ retos("barrio_c6p", "§5.4 · Retos — el edificio y el barrio",
       'Zes geluiden op vijf verdiepingen, en een rondgang door je huis van precies veertig seconden.')
 
 # ================= §6 · LECTURA =================
-sec_open("6", "§6 · Lectura — «Mi barrio en Cartagena»", 'Valen describe su barrio. Lee, busca información y reacciona. <span class="gloss">Valen beschrijft haar buurt. Lezen, informatie zoeken, reageren.</span>',
+sec_open("6", "§6 · Lectura 1 — «Mi barrio en Cartagena»", 'Valen describe su barrio. Lee, busca información y reacciona. <span class="gloss">Valen beschrijft haar buurt. Lezen, informatie zoeken, reageren.</span>',
         lpd(("1","lezen: hoofdgedachte"), ("2","lezen: info selecteren"), ("5","identiteit & cultuur")))
 P('<div class="lecdoel"><b>Antes de leer:</b> mira el título. ¿Qué esperas (lugares, dónde están)? <span class="gloss">Kijk naar de titel: wat verwacht je?</span></div>')
 P('<div class="txtmeta"><span class="tm"><b>Tipo:</b> blog / descripción</span><span class="tm"><b>Fuente:</b> muro de clase</span><span class="tm"><b>Objetivo:</b> conocer su barrio</span></div>')
@@ -568,11 +568,11 @@ P(actx(AN(), "Completa con aquí / ahí / allí",
   apoyo="Banco de palabras"))
 sec_close()
 
-# ================= §7 LECTURA · §8 ESCUCHA =================
+# ================= LECTURA 2 · ESCUCHA =================
 # Zelfde bron als de digitale hub (lectura_data / escucha_data): papier en scherm
 # kunnen zo niet uit elkaar lopen. Elk op een eigen bladzijde (§14).
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">7</span><span class="pk">§7 · Lectura — «Casa Azul»: dos reseñas</span>')
+P('<span class="num">7</span><span class="pk">§7 · Lectura 2 — «Casa Azul»: dos reseñas</span>')
 P('<div class="intro"><b>ES:</b> Dos opiniones sobre la misma casa. <b>No hace falta entenderlo todo</b> para sacar la información. <span class="gloss">Twee meningen over hetzelfde huis. Je hoeft niet alles te begrijpen — zoek gericht, en let op waar ze het oneens zijn.</span></div>')
 P(PB.lectura_print(LD.C6P_U2, AN()))
 P('</div>')

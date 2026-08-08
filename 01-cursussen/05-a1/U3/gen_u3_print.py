@@ -923,7 +923,7 @@ P('</div>')  # page §4.2
 
 # ================= §5 · LECTURA =================
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">📖</span><span class="pk">§5 · Lectura — «El día de Pau»</span>')
+P('<span class="num">📖</span><span class="pk">§5 · Lectura 1 — «El día de Pau»</span>')
 P('<div class="intro"><b>ES:</b> Vas a leer el <b>horario</b> de un día de Pau en Barcelona. Primero <b>predices</b>, después lees con un <b>objetivo</b>. <span class="gloss">Je leest Pau\'s dagindeling: eerst voorspellen, dan lezen met een doel.</span></div>')
 P(lpd(("1","onderwerp/hoofdgedachte bij lezen"), ("2","relevante info selecteren"), ("3","doelgericht schrijven met steun")))
 P('</div>')
@@ -1009,11 +1009,11 @@ P(actx(4, "Escribe tu mini-rutina con conectores",
 P('<div class="route-note">🎮 <b>Practica online:</b> «caza del reflexivo» en de conectoren-/tilde-oefeningen met zelfcorrectie.</div>')
 P('</div>')  # page Taller
 
-# ================= §6 LECTURA · §7 ESCUCHA =================
+# ================= LECTURA 2 · ESCUCHA =================
 # Zelfde bron als de digitale hub (lectura_data / escucha_data): papier en scherm
 # kunnen zo niet uit elkaar lopen. Elk op een eigen bladzijde (§14).
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">6</span><span class="pk">§6 · Lectura — «¿Quedamos esta semana?»</span>')
+P('<span class="num">6</span><span class="pk">§6 · Lectura 2 — «¿Quedamos esta semana?»</span>')
 P('<div class="intro"><b>ES:</b> Un chat de verdad, con la hora en cada mensaje. <b>No hace falta entenderlo todo</b> para sacar la información. <span class="gloss">Een echte chat, met bij elk bericht het uur. Je hoeft niet alles te begrijpen — zoek gericht naar dagen en uren.</span></div>')
 P(PB.lectura_print(LD.C5_U3, "1"))
 P('</div>')

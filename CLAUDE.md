@@ -325,6 +325,21 @@ Naast de twee *visuele* specs (§13) zijn er twee *didactische* specs in `02-hui
 
 De vier didactische/visuele specs + de 100 werkvormen + de 25 HTML-grammaticatools + de 50 layout-ideeën + de PowerPoint-50 vormen samen één **reservoir**. **Elke unit combineert bewust verschillende ideeën/werkvormen uit het reservoir (variatie); inoefening staat centraal.** Bindend per unit:
 - **Traditionele cloze-werkwoordsoefening (VERPLICHT):** elke unit bevat minstens één klassieke **cloze** waarin de leerling **correcte werkwoordsvormen** invult (gap-fill in zinnen). Vormen nagerekend (motor/generator of geverifieerd).
+- **TWEE LECTURA'S PER UNIT, ÉÉN VOLLEDIGE ROUTE — BINDEND (2026-08-08):** elke unit
+  heeft twee leesteksten, en dat blijft zo: één om lezen te *leren*, één om te
+  *lezen*. Wat wél fout was: ze legden allebei dezelfde route af. Voorspellen en
+  juist/fout-met-bewijs stonden in álle zestien units twee keer, met een andere
+  tekst maar dezelfde beweging. **De regel nu:** `§N · Lectura 1` (unit-eigen,
+  in de inhoudelijke lijn) draagt de volledige route — voorspellen, scannen,
+  juist/fout met bewijs, betekenis uit context, reactie. `§N · Lectura 2` (het
+  gedeelde blok `print_bloques.lectura_print`, vóór de Escucha) is een
+  *transfer*-tekst: leesdoel → tekst → scannen → betekenis uit context →
+  reactie, ± 12 min in plaats van 20. Juist/fout-met-bewijs bij die tweede tekst
+  staat op de hub, mét zelfcorrectie en bewijsveld; de print verwijst ernaar.
+  *Betekenis uit context blijft* in Lectura 2 — in C6+ komt die stap nergens
+  anders voor. Een unit met maar één leestekst (C5 U0) roept
+  `lectura_print(..., sola=True)` en houdt de volledige route.
+  **Resultaat: 721 → 706 bladzijden, 56 → 45 halflege.**
 - **Leesvaardigheid in de cursus (print):** elke unit heeft een echte **leessectie (Lectura)** volgens `VIER_VAARDIGHEDEN_GEINTEGREERD.md §1`: visuele tekstintroductie (tekstsoort·afzender·ontvanger·leesdoel) → authentieke microtekst (chat·perfil·ficha·mensaje·anuncio) → *voorspellen* → globaal begrip → **scannen** → **juist/fout + bewijs** (evidence) → betekenis uit context → **productieve reactie**. Recycleert de unit-woordenschat/grammatica.
 - **Vaardigheden geïntegreerd (leerlijnen):** elke unit realiseert meerdere van de **8 vaardigheidsketens** (lezen→spreken, lezen→schrijven, luisteren→spreken, luisteren→schrijven, schrijven→spreken, spreken→schrijven, lezen+luisteren→bemiddelen, volledige eindtaak). Niet vier gescheiden blokken: een tekst leidt tot een gesprek, een luisterfragment tot schrijven, enz. Beweging per skill: oriënteren → receptief → analyseren → gestuurd → zelfstandig → transfer → feedback & herneming.
 - **HTML-pagina — opname-oefeningen (VERPLICHT):** de digitale pagina bevat **spreek-/opnamecomponenten** waar de leerling **zichzelf opneemt** (MediaRecorder: opnemen → terugluisteren → heropnemen), volgens `VIER_VAARDIGHEDEN §4.2`: **ListenRepeatRecorder · ShadowingPlayer · SubstitutionCarousel · VoiceMessageTask · SpeakingSelfAssessment/RecordReflectRetry**. Deze worden als **motor-templates** gebouwd (nieuw sjabloon `speak` = record+playback, offline; TTS-model optioneel). Web Speech-**herkenning** vereist internet → optioneel, nooit als enige beoordeling; **begrijpelijkheid/boodschap/interactie** blijven de criteria.

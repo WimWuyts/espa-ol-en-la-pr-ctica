@@ -391,7 +391,7 @@ retos("conectores", "§4.4 · Retos — enlazar lo que se dice",
       'Eerst geef je gelijk en pas dan nuanceer je. En op het eind: het manifest van de klas.')
 
 # ================= §5 · LECTURA =================
-sec_open("5", "§5 · Lectura — «Diez consejos para el planeta»", 'Een informatieve advies-/opinietekst. Lee, busca los consejos y reacciona. <span class="gloss">Een advies-/opinietekst. Lezen, de tips zoeken, reageren.</span>',
+sec_open("5", "§5 · Lectura 1 — «Diez consejos para el planeta»", 'Een informatieve advies-/opinietekst. Lee, busca los consejos y reacciona. <span class="gloss">Een advies-/opinietekst. Lezen, de tips zoeken, reageren.</span>',
         lpd(("1","lezen: hoofdgedachte"), ("2","lezen: info selecteren"), ("5","identiteit & cultuur")))
 P('<div class="lecdoel"><b>Antes de leer:</b> mira el título. ¿Qué consejos esperas encontrar? <span class="gloss">Welke tips verwacht je?</span></div>')
 P('<div class="txtmeta"><span class="tm"><b>Tipo:</b> artículo / decálogo</span><span class="tm"><b>Fuente:</b> revista escolar «Pura Vida»</span><span class="tm"><b>Objetivo:</b> convencer y aconsejar</span></div>')
@@ -438,11 +438,11 @@ P(actx(AN(), "Completa con el conector",
   apoyo="Banco de palabras"))
 sec_close()
 
-# ================= §6 LECTURA · §7 ESCUCHA =================
+# ================= LECTURA 2 · ESCUCHA =================
 # Zelfde bron als de digitale hub (lectura_data / escucha_data): papier en scherm
 # kunnen zo niet uit elkaar lopen. Elk op een eigen bladzijde (§14).
 P('<div class="page"><div class="parada sec">')
-P('<span class="num">6</span><span class="pk">§6 · Lectura — «Carta al director»</span>')
+P('<span class="num">6</span><span class="pk">§6 · Lectura 2 — «Carta al director»</span>')
 P('<div class="intro"><b>ES:</b> Una carta al director de verdad, con todos los conectores en su sitio. <b>No hace falta entenderlo todo</b> para seguir el argumento. <span class="gloss">Een echte ingezonden brief, met alle verbindingswoorden op hun plaats. Je hoeft niet alles te begrijpen — volg de opbouw van het betoog.</span></div>')
 P(PB.lectura_print(LD.C6P_U7, AN()))
 P('</div>')
