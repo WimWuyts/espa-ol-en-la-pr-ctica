@@ -130,12 +130,12 @@ P(actx(AN(), "¿ser o estar? (repaso)",
   '<p><i>kies (ser = identiteit/eigenschap · estar = plaats/toestand).</i></p>'
   '<p style="margin-left:12.5mm">1. Cartagena <span class="wl sm"></span> en Colombia. &nbsp; 2. La casa de Valen <span class="wl sm"></span> grande. &nbsp; 3. La ventana <span class="wl sm"></span> abierta.<br>'
   '4. El barrio <span class="wl sm"></span> tranquilo (eigenschap). &nbsp; 5. Yo <span class="wl sm"></span> en el salón. &nbsp; 6. Hoy Valen <span class="wl sm"></span> contenta.</p>',
-  apoyo="PISTA"))
+  apoyo="Pista"))
 P(actx(AN(), "Mi opinión · me gusta mi barrio porque…",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p><i>P3-strand (repaso gustar).</i> Schrijf 2 zinnen: wat vind je (niet) leuk aan waar je woont, met <b>porque</b>.</p>'
   '<p style="margin-left:12.5mm">Me gusta mi barrio porque <span class="wl lg"></span><br>No me gusta <span class="wl md"></span> porque <span class="wl md"></span></p>',
-  apoyo="MARCO"))
+  apoyo="Marco"))
 sec_close()
 
 # ================= §1 · LA CASA =================
@@ -160,21 +160,21 @@ P(actx(AN(), "Relaciona el mueble con la habitación",
   '<div class="wcol"><div class="ch">Mueble</div><div class="cb short">1. la cama &nbsp; 2. el sofá &nbsp; 3. la nevera &nbsp; 4. el espejo</div></div>'
   '<div class="wcol"><div class="ch">Habitación</div><div class="cb short">a. el salón &nbsp; b. el baño &nbsp; c. el dormitorio &nbsp; d. la cocina</div></div></div>'
   '<p style="margin-left:12.5mm">1-<span class="wl sm"></span> 2-<span class="wl sm"></span> 3-<span class="wl sm"></span> 4-<span class="wl sm"></span></p>',
-  apoyo="SIN AYUDA"))
+  apoyo=""))
 P(actx(AN(), "Clasifica: ¿qué habitación?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Zet elk meubel in de juiste kamer: <span class="words"><b>la cama · el sofá · la nevera · el armario · la estantería · las sillas</b></span></p>'
-  + sortcols([("El dormitorio",""),("El salón",""),("La cocina","")], eigen=True), apoyo="BANCO"))
+  + sortcols([("El dormitorio",""),("El salón",""),("La cocina","")], eigen=True), apoyo="Banco de palabras"))
 P(actx(AN(), "¿el o la? · el género de los muebles",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 2 min"},{"t":"★☆☆"}],
   '<p>___ cama · ___ sofá · ___ armario · ___ mesa · ___ nevera · ___ espejo · ___ silla · ___ salón</p>'
   '<p style="margin-left:12.5mm">1.<span class="wl sm"></span> 2.<span class="wl sm"></span> 3.<span class="wl sm"></span> 4.<span class="wl sm"></span> 5.<span class="wl sm"></span> 6.<span class="wl sm"></span> 7.<span class="wl sm"></span> 8.<span class="wl sm"></span></p>',
-  apoyo="PISTA (-o/-a; el sofá is m!)"))
+  apoyo="Pista: -o/-a; el sofá is m!"))
 P(actx(AN(), "¿Cómo es tu casa? · escribe",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Schrijf 3 zinnen over je huis: welke kamers, welk meubel je favoriet is.</p>'
   '<p style="margin-left:12.5mm">En mi casa hay <span class="wl lg"></span><br>Mi habitación favorita es <span class="wl md"></span> porque <span class="wl md"></span></p>',
-  apoyo="MARCO"))
+  apoyo="Marco"))
 sec_close()
 
 retos("casa_c6p", "§1.4 · Retos — la casa dicha de otra manera",
@@ -205,18 +205,18 @@ P(actx(AN(), "¿hay o está(n)? · completa",
   '<p style="margin-left:12.5mm">1. En mi barrio <span class="wl sm"></span> un supermercado. &nbsp; 2. El supermercado <span class="wl sm"></span> al lado del banco.<br>'
   '3. En el salón <span class="wl sm"></span> dos sofás. &nbsp; 4. Los sofás <span class="wl sm"></span> delante de la tele.<br>'
   '5. ¿<span class="wl sm"></span> una farmacia cerca? &nbsp; 6. La estación <span class="wl sm"></span> lejos.</p>',
-  apoyo="PISTA (un/dos → hay · el/la → está/están)"))
+  apoyo="Pista: un/dos → hay · el/la → está/están"))
 P(actx(AN(), "Clasifica: ¿hay o estar?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Welke zin vraagt <b>hay</b>, welke <b>está(n)</b>? <span class="words"><b>un parque · el parque · dos tiendas · las tiendas · una plaza · mi casa</b></span></p>'
-  + sortcols([("hay (onbepaald)",""),("está/están (bepaald)","")], eigen=False), apoyo="BANCO"))
+  + sortcols([("hay (onbepaald)",""),("está/están (bepaald)","")], eigen=False), apoyo="Banco de palabras"))
 P(actx(AN(), "Transforma · hay → está",
   [{"t":"🔁 Practicar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Herschrijf: van «er is een…» (hay) naar «het bepaalde… staat» (está).</p>'
   '<p style="margin-left:12.5mm">1. En el salón hay una mesa. → La mesa <span class="wl md"></span><br>'
   '2. En mi barrio hay dos parques. → Los parques <span class="wl md"></span><br>'
   '3. Cerca hay una farmacia. → La farmacia <span class="wl md"></span></p>',
-  apoyo="LETRA (está / están …)"))
+  apoyo="Primera letra: está / están …"))
 P('</div>')
 
 # §2.2 preposiciones
@@ -243,12 +243,12 @@ P(actx(AN(), "Completa con la preposición correcta",
   '<p style="margin-left:12.5mm">1. La lámpara está <span class="wl md"></span> la mesa. &nbsp; 2. El perro está <span class="wl md"></span> la cama.<br>'
   '3. El sofá está <span class="wl md"></span> la tele. &nbsp; 4. La farmacia está <span class="wl md"></span> el banco y la tienda.<br>'
   '5. El baño está <span class="wl md"></span> la cocina (naast).</p>',
-  apoyo="BANCO"))
+  apoyo="Banco de palabras"))
 P(actx(AN(), "Describe la escena · ¿dónde está?",
   [{"t":"✍️ Escribir","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Beschrijf je eigen kamer: waar staan 4 dingen? Gebruik <b>está/están + preposición</b>.</p>'
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span>4. <span class="wl full"></span></p>',
-  apoyo="MARCO → SIN AYUDA"))
+  apoyo="Marco"))
 P('</div>')
 
 # §2.3 drills + tarea com
@@ -263,7 +263,7 @@ P(actx(AN(), "Clínica de errores · hay/estar",
   '2. En el salón está un sofá. → <span class="wl md"></span><br>'
   '3. La lámpara está encima la mesa. → <span class="wl md"></span><br>'
   '4. Al lado de el banco hay una farmacia. → <span class="wl md"></span></p>',
-  apoyo="PISTA"))
+  apoyo="Pista"))
 P(actx(AN(), "Sustitución · cambia el mueble",
   [{"t":"🔁 Practicar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Model: <b>La cama está al lado de la ventana.</b> Herschrijf met een ander meubel/plaats.</p>'
@@ -271,12 +271,12 @@ P(actx(AN(), "Sustitución · cambia el mueble",
   '<tr><td class="p">el sofá / delante de</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td class="p">los libros / encima de</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td class="p">el gato / debajo de</td><td><span class="wl lg"></span></td></tr></tbody></table>',
-  apoyo="MARCO"))
+  apoyo="Marco"))
 P(actx("★", "Tarea comunicativa · el cuarto de mi compañero/a",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
   '<p>A beschrijft zijn kamer (hay + está + preposiciones), B tekent hem zonder te kijken. Vergelijk daarna. Noteer 2 dingen.</p>'
   '<p style="margin-left:12.5mm">En mi cuarto hay <span class="wl lg"></span> · … está <span class="wl lg"></span></p>',
-  apoyo="MARCO"))
+  apoyo="Marco"))
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha «La casa de Valen»</b> en la web (TTS). <b>1ª vez:</b> ¿qué habitaciones hay? · <b>2ª vez:</b> ¿dónde está cada mueble? Escribe los datos.</div>',
            qr("Escanea y escucha", "§2 · La casa de Valen", seed=201)))
 P('</div>')
@@ -302,14 +302,14 @@ P(actx(AN(), "Forma el gerundio",
   '<p>Vorm het gerundio van de acht werkwoorden. <b>Let op de drie onregelmatige.</b></p>'
   '<p style="margin-left:12.5mm">hablar → <span class="wl sm"></span> &nbsp; estudiar → <span class="wl sm"></span> &nbsp; comer → <span class="wl sm"></span><br>'
   'escribir → <span class="wl sm"></span> &nbsp; cocinar → <span class="wl sm"></span> &nbsp; beber → <span class="wl sm"></span></p>',
-  apoyo="MODELO (regla)"))
+  apoyo="Modelo: regla"))
 P(actx(AN(), "¿Qué está haciendo?",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Kijk naar de cue en schrijf met <b>estar + gerundio</b>.</p>'
   '<p style="margin-left:12.5mm">Valen (cocinar) → <span class="wl md"></span><br>'
   'Yo (estudiar) → <span class="wl md"></span><br>'
   'Los niños (jugar) → <span class="wl md"></span></p>',
-  apoyo="MARCO (está … / estoy … / están …)"))
+  apoyo="Marco: está … / estoy … / están …"))
 P(actx(AN(), "¿ahora o en general? · reconoce",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 2 min"},{"t":"★★☆"}],
   '<p>Gebeurt het <b>nú</b> (estar+gerundio) of <b>in het algemeen</b> (presente)? Vink aan.</p>'
@@ -317,7 +317,7 @@ P(actx(AN(), "¿ahora o en general? · reconoce",
   '☐ Ahora estoy comiendo. → <span class="wl sm"></span><br>'
   '☐ Valen está cocinando. → <span class="wl sm"></span><br>'
   '☐ Los sábados juego al fútbol. → <span class="wl sm"></span></p>',
-  apoyo="PISTA (estar+gerundio = nu)"))
+  apoyo="Pista: estar+gerundio = nu"))
 P('</div>')
 
 # §3.2 irregulares + cloze
@@ -338,12 +338,12 @@ P(actx(AN(), "La gran cloze · estar + gerundio",
   '3. Los niños <span class="wl md"></span> (dormir) ahora. &nbsp; 4. ¿Tú <span class="wl md"></span> (leer) un libro?<br>'
   '5. Nosotros <span class="wl md"></span> (comer) en la terraza. &nbsp; 6. Mamá <span class="wl md"></span> (escribir) un mensaje.<br>'
   '7. Diego <span class="wl md"></span> (pedir) una pizza. &nbsp; 8. Yo <span class="wl md"></span> (ver) la tele.</p>',
-  apoyo="BANCO: está cocinando · estoy estudiando · están durmiendo · estás leyendo · estamos comiendo · está escribiendo · está pidiendo · estoy viendo"))
+  apoyo="Banco de palabras: está cocinando · estoy estudiando · están durmiendo · estás leyendo · estamos comiendo · está escribiendo · está pidiendo · estoy viendo"))
 P(actx(AN(), "Sustitución · cambia la persona",
   [{"t":"🔁 Practicar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Model: <b>Yo estoy comiendo.</b> Herschrijf per persoon.</p>'
   '<p style="margin-left:12.5mm">tú → <span class="wl md"></span> &nbsp; ella → <span class="wl md"></span> &nbsp; nosotros → <span class="wl md"></span> &nbsp; ellos → <span class="wl md"></span></p>',
-  apoyo="LETRA (estás…)"))
+  apoyo="Primera letra: estás…"))
 P('</div>')
 
 # §3.3 ¿qué están haciendo? + tarea
@@ -359,17 +359,17 @@ P(actx(AN(), "La familia de Valen · ¿qué están haciendo?",
   '<tr><td>Valen · el salón (ver la tele)</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td>el hermano · el dormitorio (dormir)</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td>tú · ¿? </td><td><span class="wl lg"></span></td></tr></tbody></table>',
-  apoyo="MARCO"))
+  apoyo="Marco"))
 P(actx(AN(), "Dictado · ¿qué está pasando?",
   [{"t":"👂 Escuchar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Luister en schrijf de 5 zinnen (met estar + gerundio).</p>'
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span>4. <span class="wl full"></span>5. <span class="wl full"></span></p>',
-  apoyo="SIN AYUDA (docent leest voor)"))
+  apoyo="docent leest voor"))
 P(actx("★", "Tarea comunicativa · llamada de vídeo",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Je belt (video) met je buur. Vraag: «¿Qué estás haciendo?» en antwoord met <b>estar + gerundio</b>. Noteer 2 antwoorden.</p>'
   '<p style="margin-left:12.5mm">— ¿Qué estás haciendo? — <span class="wl lg"></span></p>',
-  apoyo="MARCO"))
+  apoyo="Marco"))
 P('<div class="guide"><div class="ic">🎡</div><div><span class="hand">Online:</span> <span class="g">de <b>werkwoordmachine</b> en het <b>gerundio-spel</b> op de hub oefenen elke -ando/-iendo-vorm; + cloze en foutenkliniek.</span></div></div>')
 P('</div>')
 
@@ -399,7 +399,7 @@ P(actx(AN(), "¿lo, la, los o las?",
   '<p style="margin-left:12.5mm">1. ¿El sofá? <span class="wl sm"></span> pongo en el salón. &nbsp; 2. ¿La cama? <span class="wl sm"></span> pongo aquí.<br>'
   '3. ¿Los platos? <span class="wl sm"></span> lavo. &nbsp; 4. ¿Las sillas? <span class="wl sm"></span> pongo en la cocina.<br>'
   '5. ¿La tele? <span class="wl sm"></span> veo por la noche. &nbsp; 6. ¿El coche? <span class="wl sm"></span> aparco en el garaje.</p>',
-  apoyo="MODELO (tabla)"))
+  apoyo="Modelo: tabla"))
 P(actx(AN(), "Transforma la frase · usa lo/la/los/las",
   [{"t":"🔁 Practicar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Vervang het onderstreepte voorwerp door het pronomen (vóór het werkwoord).</p>'
@@ -407,7 +407,7 @@ P(actx(AN(), "Transforma la frase · usa lo/la/los/las",
   '2. Compro <u>los muebles</u>. → <span class="wl md"></span><br>'
   '3. Pongo <u>el espejo</u> aquí. → <span class="wl md"></span><br>'
   '4. Limpio <u>las ventanas</u>. → <span class="wl md"></span></p>',
-  apoyo="LETRA (La veo…)"))
+  apoyo="Primera letra: La veo…"))
 P('</div>')
 
 # §4.2 concordancia + drills
@@ -421,7 +421,7 @@ P(actx(AN(), "Responde con el pronombre (cloze)",
   '<p style="margin-left:12.5mm">1. ¿Compras el sofá? — Sí, <span class="wl md"></span> compro. &nbsp; 2. ¿Ves la plaza? — Sí, <span class="wl md"></span> veo.<br>'
   '3. ¿Pones los libros aquí? — Sí, <span class="wl md"></span> pongo aquí. &nbsp; 4. ¿Limpias las ventanas? — Sí, <span class="wl md"></span> limpio.<br>'
   '5. ¿Coges el autobús? — Sí, <span class="wl md"></span> cojo.</p>',
-  apoyo="BANCO: lo · la · los · las · lo"))
+  apoyo="Banco de palabras: lo · la · los · las · lo"))
 P(actx(AN(), "Empareja: pregunta ↔ respuesta",
   [{"t":"🔗 Emparejar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Verbind de vraag met het juiste antwoord.</p>'
@@ -429,7 +429,7 @@ P(actx(AN(), "Empareja: pregunta ↔ respuesta",
   '<div class="wcol"><div class="ch">Pregunta</div><div class="cb short">1. ¿Ves la tele? &nbsp; 2. ¿Compras los muebles? &nbsp; 3. ¿Pones el espejo? &nbsp; 4. ¿Lavas las sillas?</div></div>'
   '<div class="wcol"><div class="ch">Respuesta</div><div class="cb short">a. Sí, los compro. &nbsp; b. Sí, la veo. &nbsp; c. Sí, las lavo. &nbsp; d. Sí, lo pongo.</div></div></div>'
   '<p style="margin-left:12.5mm">1-<span class="wl sm"></span> 2-<span class="wl sm"></span> 3-<span class="wl sm"></span> 4-<span class="wl sm"></span></p>',
-  apoyo="SIN AYUDA"))
+  apoyo=""))
 P('</div>')
 
 # §4.3 posición + foutenkliniek + tarea
@@ -446,7 +446,7 @@ P(actx(AN(), "Reescribe con el pronombre (posición)",
   '2. Voy a limpiar la cocina. → <span class="wl lg"></span><br>'
   '3. Estoy leyendo el libro. → <span class="wl lg"></span><br>'
   '4. Pongo las sillas aquí. → <span class="wl md"></span></p>',
-  apoyo="PISTA (Lo compro · Voy a limpiarla / La voy a limpiar…)"))
+  apoyo="Pista: Lo compro · Voy a limpiarla / La voy a limpiar…"))
 P(actx(AN(), "Clínica de errores · lo/la",
   [{"t":"🔍 Analizar","skill":True},{"t":"👥 En parejas"},{"t":"± 4 min"},{"t":"★★★"}],
   '<p>Elke zin heeft één fout (keuze of plaats). Verbeter.</p>'
@@ -454,12 +454,12 @@ P(actx(AN(), "Clínica de errores · lo/la",
   '2. ¿Los muebles? Las compro. → <span class="wl md"></span><br>'
   '3. ¿El sofá? La pongo aquí. → <span class="wl md"></span><br>'
   '4. Voy a lo comprar. → <span class="wl md"></span></p>',
-  apoyo="PISTA (concordancia + plaats)"))
+  apoyo="Pista: concordancia + plaats"))
 P(actx("★", "Tarea comunicativa · ¿lo tienes?",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>Vraag je buur of hij dingen heeft/doet; antwoord kort met lo/la/los/las. «¿Tienes el libro? — Sí, lo tengo.» Noteer 3 antwoorden.</p>'
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>',
-  apoyo="MARCO"))
+  apoyo="Marco"))
 P('</div>')
 
 retos("pronombres_c6p2", "§4.4 · Reto — diez cosas, ni una más",
@@ -487,27 +487,27 @@ P(actx(AN(), "Relaciona el lugar con su función",
   '<div class="wcol"><div class="ch">Lugar</div><div class="cb short">1. la farmacia &nbsp; 2. la parada &nbsp; 3. el supermercado &nbsp; 4. el parque</div></div>'
   '<div class="wcol"><div class="ch">Función</div><div class="cb short">a. coger el autobús &nbsp; b. comprar comida &nbsp; c. pasear &nbsp; d. comprar medicinas</div></div></div>'
   '<p style="margin-left:12.5mm">1-<span class="wl sm"></span> 2-<span class="wl sm"></span> 3-<span class="wl sm"></span> 4-<span class="wl sm"></span></p>',
-  apoyo="SIN AYUDA"))
+  apoyo=""))
 P(actx(AN(), "Completa las direcciones",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Vul aan met <b>sigue · gira · cruza · está</b>.</p>'
   '<p style="margin-left:12.5mm">Para ir a la plaza: <span class="wl sm"></span> recto hasta el semáforo, luego <span class="wl sm"></span> a la derecha y <span class="wl sm"></span> la calle. La plaza <span class="wl sm"></span> a la izquierda, a dos minutos.</p>',
-  apoyo="BANCO"))
+  apoyo="Banco de palabras"))
 P(actx(AN(), "Sustitución · da la ruta a otro lugar",
   [{"t":"🔁 Practicar","skill":True},{"t":"👥 En parejas"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Model: «Para ir a la plaza, sigue recto y gira a la derecha.» Herschrijf voor een ander doel/andere richting.</p>'
   '<p style="margin-left:12.5mm">→ a la farmacia: <span class="wl full"></span>→ al parque: <span class="wl full"></span></p>',
-  apoyo="MARCO"))
+  apoyo="Marco"))
 P(actx(AN(), "Dictado · el camino",
   [{"t":"👂 Escuchar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Luister naar de weg en teken/noteer de route (4 stappen).</p>'
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span>4. <span class="wl full"></span></p>',
-  apoyo="SIN AYUDA (docent/audio)"))
+  apoyo="docent/audio"))
 P(actx("★", "Info-gap · ¿cómo llego a…?",
   [{"t":"🗣️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
   '<p>A vraagt de weg naar 2 plekken; B geeft die met sigue/gira/cruza + afstand. Wissel daarna. Noteer één route.</p>'
   '<p style="margin-left:12.5mm">— ¿Cómo llego a <span class="wl sm"></span>? — <span class="wl full"></span></p>',
-  apoyo="MARCO"))
+  apoyo="Marco"))
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha «¿Cómo llego a la plaza?»</b> en la web (TTS) y sigue la ruta en el plano. <b>1ª vez:</b> ¿adónde va? · <b>2ª vez:</b> anota las direcciones.</div>',
            qr("Escanea y escucha", "§5 · ¿Cómo llego?", seed=202)))
 sec_close()
@@ -533,7 +533,7 @@ P(actx(AN(), "Verdadero o falso — con prueba",
   '<tr><td>Delante de la casa de Valen hay una plaza.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>El barrio de Valen es ruidoso todo el día.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Diego coge el metro cada día.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr></tbody></table>',
-  apoyo="MODELO"))
+  apoyo="Modelo"))
 P(actx(AN(), "Escanea — completa la ficha",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Zoek de gegevens per persoon terug in de tekst en vul de tabel aan. Eén woord of getal per vak.</p>'
@@ -541,12 +541,12 @@ P(actx(AN(), "Escanea — completa la ficha",
   '<tr><td>¿Cómo es el barrio?</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>¿Qué hay cerca?</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>¿Qué transporte usa?</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr></tbody></table>',
-  apoyo="SIN AYUDA"))
+  apoyo=""))
 P(actx(AN(), "Reacciona — ¿y tu barrio?",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>¿Tu barrio se parece más al de Valen o al de Diego? Schrijf 2–3 zinnen met <b>hay/está + porque</b>.</p>'
   '<div class="wbox sm"></div>',
-  apoyo="MARCO (Mi barrio se parece al de … porque …)"))
+  apoyo="Marco: Mi barrio se parece al de … porque …"))
 sec_close()
 
 # ================= TALLER =================
@@ -557,7 +557,7 @@ P(actx(AN(), "¿b o v? · completa",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Vul <b>b</b> of <b>v</b> in.</p>'
   '<p style="margin-left:12.5mm">la _entana · _ivir · el _arrio · el _alcón · el _año · la _i_lioteca · el _ar</p>',
-  apoyo="PISTA (ventana, vivir, barrio, balcón, baño, biblioteca, bar)"))
+  apoyo="Pista: ventana, vivir, barrio, balcón, baño, biblioteca, bar"))
 P('<h3 style="margin-top:6mm">2 · Adverbios de lugar — aquí · ahí · allí</h3>')
 P(colloc("aquí · ahí · allí", ["aquí = hier (dichtbij)","ahí = daar (bij jou)","allí/allá = daar (ver)","cerca ↔ lejos"]))
 P(actx(AN(), "Completa con aquí / ahí / allí",
@@ -565,7 +565,7 @@ P(actx(AN(), "Completa con aquí / ahí / allí",
   '<p>Vul <b>aquí</b>, <b>ahí</b> of <b>allí</b> in. De afstand staat tussen haakjes achter de zin.</p>'
   '<p style="margin-left:12.5mm">1. La cama está <span class="wl sm"></span>, a mi lado (hier). &nbsp; 2. El parque está <span class="wl sm"></span>, muy lejos (daar-ver).<br>'
   '3. Pon la silla <span class="wl sm"></span>, cerca de ti (daar-bij jou).</p>',
-  apoyo="BANCO"))
+  apoyo="Banco de palabras"))
 sec_close()
 
 # ================= §7 LECTURA · §8 ESCUCHA =================
@@ -595,7 +595,7 @@ P(actx(AN(), "Compara · tu casa y una casa hispana",
   [{"t":"🌍 Cultura","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>Vergelijk. Wat is anders/gelijk tussen jouw woning en een patio/balcón-huis? Schrijf 2 zinnen met <b>hay / está</b>.</p>'
   '<div class="wbox sm"></div>',
-  apoyo="MARCO"))
+  apoyo="Marco"))
 P(actx(AN(), "Datos curiosos — une",
   [{"t":"🌍 Cultura","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Verbind (schrijf de letter).</p>'
@@ -603,7 +603,7 @@ P(actx(AN(), "Datos curiosos — une",
   '<div class="wcol"><div class="ch">Lugar</div><div class="cb short">1. el patio andaluz &nbsp; 2. Cartagena &nbsp; 3. la plaza &nbsp; 4. el balcón</div></div>'
   '<div class="wcol"><div class="ch">Dato</div><div class="cb short">a. corazón del barrio (mercado, terrazas) &nbsp; b. binnentuin koel in de zomer &nbsp; c. ciudad amurallada, UNESCO &nbsp; d. vol bloemen, kleurrijk</div></div></div>'
   '<p style="margin-left:12.5mm">1-<span class="wl sm"></span> 2-<span class="wl sm"></span> 3-<span class="wl sm"></span> 4-<span class="wl sm"></span></p>',
-  apoyo="BANCO"))
+  apoyo="Banco de palabras"))
 sec_close()
 
 retos("cultura_c6p2", "Reto — dos maneras de construir una casa",
@@ -672,7 +672,7 @@ GRP = [("habitaciones","Las habitaciones"), ("muebles","Los muebles"), ("casa","
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">V</span><span class="pk">§V · Vocabulario</span>')
 P('<div class="intro"><b>ES:</b> Todas las palabras de la unidad. En la página digital: <b>flip cards</b> (ES↔NL), audio (TTS) y buscador. <span class="gloss">Online: flip cards, audio en zoekfunctie.</span></div>')
-P(lpd(("7","woordenschat inzetten (receptief & productief)")))
+P(lpd(("7","woordenschat inzetten (begrijpen en zelf gebruiken)")))
 P('</div>')
 P('<p style="font-size:9.6pt">Las palabras de <b>tu casa y tu barrio</b> como red — tres familias:</p>')
 P(clusters([
@@ -689,21 +689,21 @@ for key, titel in GRP:
 P('<div class="divider">Escalera de práctica · V.1–V.5</div>')
 P(actx("V.1", "Reconocer — ES → NL",
   [{"t":"🔍 Leer","skill":True},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Schrijf de vertaling. el dormitorio = <span class="wl md"></span> · al lado de = <span class="wl md"></span> · la plaza = <span class="wl md"></span> · hay = <span class="wl md"></span></p>', apoyo="MODELO"))
+  '<p>Schrijf de vertaling. el dormitorio = <span class="wl md"></span> · al lado de = <span class="wl md"></span> · la plaza = <span class="wl md"></span> · hay = <span class="wl md"></span></p>', apoyo="Modelo"))
 P(actx("V.2", "Distinguir — sorteer per familia",
   [{"t":"🔍 Analizar","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Sorteer: <span class="words"><b>la cama · la plaza · encima de · el sofá · la farmacia · debajo de · el armario · cerca de</b></span></p>'
-  + sortcols([("mueble",""),("lugar del barrio",""),("preposición","")], eigen=False), apoyo="BANCO"))
+  + sortcols([("mueble",""),("lugar del barrio",""),("preposición","")], eigen=False), apoyo="Banco de palabras"))
 P(actx("V.3", "Recordar — NL → ES (con letra)",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Vul aan (beginletter). de keuken = <b>c</b>___ · naast = <b>a</b>___ l___ d___ · het park = <b>p</b>___ · er is = <b>h</b>___<br><span class="wl full"></span></p>', apoyo="LETRA INICIAL"))
+  '<p>Vul aan (beginletter). de keuken = <b>c</b>___ · naast = <b>a</b>___ l___ d___ · het park = <b>p</b>___ · er is = <b>h</b>___<br><span class="wl full"></span></p>', apoyo="Primera letra"))
 P(actx("V.4", "Producir — una frase con tres palabras",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★★"}],
-  '<p>Maak één correcte zin met <b>hay · al lado de · el parque</b>.</p><div class="wbox sm"></div>', apoyo="SIN AYUDA"))
+  '<p>Maak één correcte zin met <b>hay · al lado de · el parque</b>.</p><div class="wbox sm"></div>', apoyo=""))
 P(actx("V.5", "Comunicar — mi barrio en 3 frases",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Schrijf 3 zinnen over je buurt (qué hay · dónde está · una opinión) en zeg ze hardop.</p>'
-  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="MARCO → SIN AYUDA"))
+  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="Marco"))
 P('<div class="se" style="margin-top:6mm">Mi plano de palabras <span class="gloss" style="font-size:8pt">— teken je barrio en label 6 plekken/meubels in het Spaans</span></div>')
 P('<div class="wbox lg"></div>')
 P(mispal("Mis palabras de la unidad", 7))

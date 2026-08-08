@@ -93,7 +93,7 @@ def nat_print(bloque, num, opgave_tekst=None, klasse="wl md", per_rij=4):
     <p>%s <span class="gloss">%s</span></p>
     <p style="margin-left:12.5mm;font-size:9.6pt"><b>%s</b></p>
     %s
-    <span class="steun">Apoyo: sin ayuda · productief · zelfde reeks online (QR)</span>
+    <span class="steun">zelfde reeks online (QR)</span>
     %s</div>""" % (
         _acthead(num, bloque["titulo"],
                  [("✍️ Escribir", True), ("👤 Solo", False), ("± %d min" % max(4, bloque["aantal"] // 3), False),
@@ -150,7 +150,7 @@ def lectura_print(t, num):
     <div style="margin-left:12.5mm;font-size:9.6pt">%s</div>
     <p><b>7 · Tu reacción.</b> %s</p>
     <div class="wbox lg"></div>
-    <span class="steun">Apoyo: tekst blijft zichtbaar · van receptief naar productief</span>
+    <span class="steun">tekst blijft zichtbaar · eerst herkennen, daarna zelf zeggen</span>
     %s</div>""" % (
         _acthead(num, "Lectura · %s" % t["titulo"],
                  [("📖 Leer", True), ("✍️ Escribir", True), ("👤 Solo", False), ("± 20 min", False), ("★★☆", False)]),
@@ -189,7 +189,7 @@ def escucha_print(f, num, qr_html=None):
     <p><b>5 · La transcripción</b> staat online, en pas <i>ná</i> de taken. <span class="gloss">Eerst luisteren, dan pas meelezen — anders lees je in plaats van te luisteren.</span></p>
     <p><b>6 · Tu reacción.</b> %s</p>
     <div class="wbox lg"></div>
-    <span class="steun">Apoyo: situatie vooraf → geen steun bij de details · scan de QR om te luisteren</span>
+    <span class="steun">situatie vooraf → geen steun bij de details · scan de QR om te luisteren</span>
     %s</div>""" % (
         _acthead(num, "Escucha · %s" % f["titulo"],
                  [("👂 Escuchar", True), ("✍️ Escribir", True), ("👤 Solo", False), ("± 20 min", False), ("★★☆", False)]),

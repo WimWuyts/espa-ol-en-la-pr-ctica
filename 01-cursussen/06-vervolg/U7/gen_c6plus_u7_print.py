@@ -130,12 +130,12 @@ P(actx(AN(), "¿Consejo u opinión? (repaso)",
   '<p>Is het een <b>advies</b> (imperativo) of een <b>mening</b> (creo que…)? Vink aan.</p>'
   '<p style="margin-left:12.5mm">1. Come más fruta. → <span class="wl sm"></span> &nbsp; 2. Creo que el deporte es importante. → <span class="wl sm"></span><br>'
   '3. Recicla el papel. → <span class="wl sm"></span> &nbsp; 4. En mi opinión, hay mucha basura. → <span class="wl sm"></span></p>',
-  apoyo="PISTA (bevel → consejo · creo que/en mi opinión → opinión)"))
+  apoyo="Pista: bevel → consejo · creo que/en mi opinión → opinión"))
 P(actx(AN(), "Mis hábitos · escribe",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Schrijf 2 dingen die jij doet voor je gezondheid of het milieu (presente).</p>'
   '<p style="margin-left:12.5mm">Para mi salud, yo <span class="wl lg"></span><br>Por el medio ambiente, yo <span class="wl lg"></span></p>',
-  apoyo="MARCO"))
+  apoyo="Marco"))
 sec_close()
 
 # ================= §1 · SALUD Y MEDIO AMBIENTE =================
@@ -154,11 +154,11 @@ P(actx(AN(), "Relaciona la palabra con el grupo",
   '<div class="wcol"><div class="ch">Palabra</div><div class="cb short">1. reciclar &nbsp; 2. el ejercicio &nbsp; 3. la basura &nbsp; 4. dormir</div></div>'
   '<div class="wcol"><div class="ch">Grupo</div><div class="cb short">a. salud (acción) &nbsp; b. medio ambiente (problema) &nbsp; c. medio ambiente (acción) &nbsp; d. salud (descanso)</div></div></div>'
   '<p style="margin-left:12.5mm">1-<span class="wl sm"></span> 2-<span class="wl sm"></span> 3-<span class="wl sm"></span> 4-<span class="wl sm"></span></p>',
-  apoyo="SIN AYUDA"))
+  apoyo=""))
 P(actx(AN(), "Clasifica: ¿salud o medio ambiente?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Zet elk woord in de juiste kolom: <span class="words"><b>el cuerpo · reciclar · la dieta · la contaminación · el deporte · el árbol · descansar · la energía</b></span></p>'
-  + sortcols([("La salud",""),("El medio ambiente","")], eigen=True), apoyo="BANCO"))
+  + sortcols([("La salud",""),("El medio ambiente","")], eigen=True), apoyo="Banco de palabras"))
 P(actx(AN(), "Contrarios · empareja",
   [{"t":"🔗 Emparejar","skill":True},{"t":"👤 Solo"},{"t":"± 2 min"},{"t":"★★☆"}],
   '<p>Verbind elk woord links met zijn tegengestelde rechts. Schrijf de letter.</p>'
@@ -166,12 +166,12 @@ P(actx(AN(), "Contrarios · empareja",
   '<div class="wcol"><div class="ch">—</div><div class="cb short">1. sano &nbsp; 2. ahorrar &nbsp; 3. proteger &nbsp; 4. limpio</div></div>'
   '<div class="wcol"><div class="ch">—</div><div class="cb short">a. contaminar &nbsp; b. sucio &nbsp; c. enfermo &nbsp; d. gastar</div></div></div>'
   '<p style="margin-left:12.5mm">1-<span class="wl sm"></span> 2-<span class="wl sm"></span> 3-<span class="wl sm"></span> 4-<span class="wl sm"></span></p>',
-  apoyo="SIN AYUDA"))
+  apoyo=""))
 P(actx(AN(), "Mis consejos · escribe",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Schrijf 3 tips (gebruik de infinitief: comer sano, reciclar…).</p>'
   '<p style="margin-left:12.5mm">Para estar sano: <span class="wl md"></span> y <span class="wl md"></span><br>Por el planeta: <span class="wl lg"></span></p>',
-  apoyo="MARCO"))
+  apoyo="Marco"))
 sec_close()
 
 retos("salud_c6p", "§1.4 · Retos — la salud en cifras y en treinta segundos",
@@ -201,7 +201,7 @@ P(actx(AN(), "Forma el imperativo (tú)",
   '<p>Vorm de imperativo voor <b>tú</b>. Acht werkwoorden, waarvan er drie onregelmatig zijn.</p>'
   '<p style="margin-left:12.5mm">cuidar → <span class="wl sm"></span> &nbsp; beber → <span class="wl sm"></span> &nbsp; reciclar → <span class="wl sm"></span><br>'
   'hacer → <span class="wl sm"></span> &nbsp; venir → <span class="wl sm"></span> &nbsp; decir → <span class="wl sm"></span></p>',
-  apoyo="MODELO (-a / -e; haz/ven/di)"))
+  apoyo="Modelo: -a / -e; haz/ven/di"))
 P(actx(AN(), "La gran cloze · imperativo (consejos de salud)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>Vul de <b>imperativo (tú)</b> in (infinitivo tussen haakjes).</p>'
@@ -209,14 +209,14 @@ P(actx(AN(), "La gran cloze · imperativo (consejos de salud)",
   '3. <span class="wl md"></span> (hacer) deporte tres veces por semana. &nbsp; 4. <span class="wl md"></span> (dormir) ocho horas.<br>'
   '5. <span class="wl md"></span> (reciclar) el plástico. &nbsp; 6. <span class="wl md"></span> (ahorrar) energía.<br>'
   '7. <span class="wl md"></span> (ir) al médico una vez al año. &nbsp; 8. <span class="wl md"></span> (ser) responsable con la basura.</p>',
-  apoyo="BANCO: come · bebe · haz · duerme · recicla · ahorra · ve · sé"))
+  apoyo="Banco de palabras: come · bebe · haz · duerme · recicla · ahorra · ve · sé"))
 P(actx(AN(), "Del infinitivo al consejo · transforma",
   [{"t":"🔁 Practicar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Maak van elke tip een <b>bevel</b> (imperativo).</p>'
   '<p style="margin-left:12.5mm">1. Es bueno comer fruta. → <span class="wl md"></span> fruta.<br>'
   '2. Hay que hacer deporte. → <span class="wl md"></span> deporte.<br>'
   '3. Es importante reciclar. → <span class="wl md"></span></p>',
-  apoyo="LETRA (come · haz · recicla)"))
+  apoyo="Primera letra: come · haz · recicla"))
 P('</div>')
 
 # §2.2 pronombres enclíticos
@@ -231,7 +231,7 @@ P(actx(AN(), "Añade el pronombre",
   '<p>Plak het pronomen vast (let op het accent).</p>'
   '<p style="margin-left:12.5mm">cuida + te → <span class="wl sm"></span> &nbsp; haz + lo → <span class="wl sm"></span> &nbsp; recicla + lo → <span class="wl sm"></span><br>'
   'bebe + la → <span class="wl sm"></span> &nbsp; di + me → <span class="wl sm"></span> &nbsp; protege + lo → <span class="wl sm"></span></p>',
-  apoyo="LETRA (cuídate · hazlo · recíclalo · bébela · dime · protégelo)"))
+  apoyo="Primera letra: cuídate · hazlo · recíclalo · bébela · dime · protégelo"))
 P(actx(AN(), "Clínica de errores · imperativo",
   [{"t":"🔍 Analizar","skill":True},{"t":"👥 En parejas"},{"t":"± 3 min"},{"t":"★★★"}],
   '<p>Elke zin heeft één fout (vorm, pronomen of accent). Verbeter.</p>'
@@ -239,12 +239,12 @@ P(actx(AN(), "Clínica de errores · imperativo",
   '2. Cuida te mucho. → <span class="wl md"></span><br>'
   '3. El papel: recicla lo. → <span class="wl md"></span><br>'
   '4. Ir al médico. (bevel) → <span class="wl md"></span></p>',
-  apoyo="PISTA (haz · cuídate · recíclalo · ve)"))
+  apoyo="Pista: haz · cuídate · recíclalo · ve"))
 P(actx(AN(), "Cinco consejos para un amigo",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Je vriend is moe en gestrest. Geef 5 tips met de imperativo (+ pronomen waar mogelijk).</p>'
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span>4. <span class="wl full"></span>5. <span class="wl full"></span></p>',
-  apoyo="BANCO (duerme · relájate · come sano · haz deporte · cuídate)"))
+  apoyo="Banco de palabras: duerme · relájate · come sano · haz deporte · cuídate"))
 P('</div>')
 
 # §2.3 aplicar + tarea com
@@ -260,13 +260,13 @@ P(actx(AN(), "Mi mini-cartel · el medio ambiente",
   '<tr><td>el papel/plástico</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td>la energía</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td>los árboles</td><td><span class="wl lg"></span></td></tr></tbody></table>',
-  apoyo="MARCO (Ahorra… · Recicla… · Apaga… · Protege…)"))
+  apoyo="Marco: Ahorra… · Recicla… · Apaga… · Protege…"))
 P(actx("★", "Tarea comunicativa · un consejo para tu compañero/a",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
   '<p>Je buur wil gezonder leven. Geef 3 mondelinge tips (imperativo) en luister naar zijn/haar tips voor jou. Noteer 2.</p>'
   '<p style="margin-left:12.5mm">Mis consejos: <span class="wl full"></span></p>'
   '<p style="margin-left:12.5mm">Consejos para mí: 1. <span class="wl full"></span>2. <span class="wl full"></span></p>',
-  apoyo="MARCO"))
+  apoyo="Marco"))
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha «¿Qué opinas del medio ambiente?»</b> en la web (TTS): Valen y Diego opinan. <b>1ª vez:</b> ¿de qué hablan? · <b>2ª vez:</b> ¿qué consejo dan? Escribe.</div>',
            qr("Escanea y escucha", "§2 · ¿Qué opinas del medio ambiente?", seed=701)))
 P('</div>')
@@ -295,13 +295,13 @@ P(actx(AN(), "Da tu opinión · completa",
   '<p style="margin-left:12.5mm">1. Creo que el deporte <span class="wl lg"></span><br>'
   '2. En mi opinión, el medio ambiente <span class="wl lg"></span><br>'
   '3. Me parece que la comida rápida <span class="wl lg"></span></p>',
-  apoyo="MARCO (… es importante / … está en peligro)"))
+  apoyo="Marco: … es importante / … está en peligro"))
 P(actx(AN(), "¿De acuerdo o no? · reacciona",
   [{"t":"🗣️ Interacción","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Reageer op elke stelling met <b>estoy de acuerdo</b> of <b>no estoy de acuerdo</b> + waarom.</p>'
   '<p style="margin-left:12.5mm">1. «El coche es mejor que la bici.» → <span class="wl lg"></span><br>'
   '2. «Reciclar no sirve para nada.» → <span class="wl lg"></span></p>',
-  apoyo="MARCO (No estoy de acuerdo porque…)"))
+  apoyo="Marco: No estoy de acuerdo porque…"))
 P('</div>')
 
 # §3.2 practicar + tarea com
@@ -317,13 +317,13 @@ P(actx(AN(), "Encuesta · ¿qué opinas?",
   '<tr><td>la comida sana</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td>reciclar</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td>los coches en la ciudad</td><td><span class="wl lg"></span></td></tr></tbody></table>',
-  apoyo="MARCO"))
+  apoyo="Marco"))
 P(actx("★", "Tarea comunicativa · mini-debate",
   [{"t":"🗣️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
   '<p>Kies een stelling. Eén is <b>a favor</b>, één <b>en contra</b>. Geef je mening + één argument (porque…). Noteer.</p>'
   '<p style="margin-left:12.5mm">Tema: <span class="wl md"></span></p>'
   '<p style="margin-left:12.5mm">A favor: <span class="wl full"></span>En contra: <span class="wl full"></span></p>',
-  apoyo="MARCO (Creo que… porque…)"))
+  apoyo="Marco: Creo que… porque…"))
 P('<div class="guide"><div class="ic">🎡</div><div><span class="hand">Online:</span> <span class="g">de <b>meningszinnen</b> en de spellen op de hub oefenen opinar/argumentar; + cloze en foutenkliniek.</span></div></div>')
 P('</div>')
 
@@ -354,14 +354,14 @@ P(actx(AN(), "Completa con el conector",
   '2. Hago deporte; <span class="wl md"></span>, duermo mejor.<br>'
   '3. El plástico contamina; <span class="wl md"></span> lo reciclo.<br>'
   '4. Es caro; <span class="wl md"></span>, funciona muy bien.</p>',
-  apoyo="BANCO"))
+  apoyo="Banco de palabras"))
 P(actx(AN(), "Ordena el argumento",
   [{"t":"🔁 Practicar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Zet in een logische volgorde (1–4): opinión → argumento → toevoeging → conclusie.</p>'
   '<p style="margin-left:12.5mm">☐ Por eso, en mi ciudad hay muchas bicis. &nbsp; ☐ Creo que la bici es genial.<br>'
   '☐ Además, es bueno para la salud. &nbsp; ☐ Porque no contamina.</p>'
   '<p style="margin-left:12.5mm">Orden: <span class="wl sm"></span> - <span class="wl sm"></span> - <span class="wl sm"></span> - <span class="wl sm"></span></p>',
-  apoyo="PISTA (opinión eerst, conclusie laatst)"))
+  apoyo="Pista: opinión eerst, conclusie laatst"))
 P('</div>')
 
 # §4.2 a favor / en contra + relativo
@@ -372,18 +372,18 @@ P('</div>')
 P(actx(AN(), "Clasifica: ¿a favor o en contra? (del coche en la ciudad)",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Zet elk argument in de juiste kolom: <span class="words"><b>es rápido · contamina · es cómodo · hace ruido · gasta gasolina · protege de la lluvia</b></span></p>'
-  + sortcols([("A favor",""),("En contra","")], eigen=True), apoyo="BANCO"))
+  + sortcols([("A favor",""),("En contra","")], eigen=True), apoyo="Banco de palabras"))
 P(actx(AN(), "Mi mini-texto de opinión",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Schrijf 4 zinnen: mening + reden (porque) + toevoeging (además) + conclusie (por eso).</p>'
   '<div class="wbox sm"></div>',
-  apoyo="MARCO (Creo que… porque… Además… Por eso…)"))
+  apoyo="Marco: Creo que… porque… Además… Por eso…"))
 P(actx(AN(), "Une con que / porque",
   [{"t":"🔁 Practicar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Verbind de zinnen met <b>que</b> (die/dat) of <b>porque</b> (omdat).</p>'
   '<p style="margin-left:12.5mm">1. Uso una botella. La botella es reutilizable. → <span class="wl lg"></span><br>'
   '2. Reciclo. Es importante para el planeta. → <span class="wl lg"></span></p>',
-  apoyo="LETRA (…que es reutilizable · …porque es importante)"))
+  apoyo="Primera letra: …que es reutilizable · …porque es importante"))
 P('</div>')
 
 retos("conectores", "§4.4 · Retos — enlazar lo que se dice",
@@ -405,17 +405,17 @@ P(actx(AN(), "Verdadero o falso — con prueba",
   '<tr><td>El texto recomienda usar el coche.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Aconseja comer más verdura.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Dice que el planeta es de todos.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr></tbody></table>',
-  apoyo="MODELO"))
+  apoyo="Modelo"))
 P(actx(AN(), "Escanea — busca los imperativos",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Zoek in de tekst en schrijf 5 <b>bevelen</b> (imperativo) op.</p>'
   '<p style="margin-left:12.5mm">1. <span class="wl sm"></span> 2. <span class="wl sm"></span> 3. <span class="wl sm"></span> 4. <span class="wl sm"></span> 5. <span class="wl sm"></span></p>',
-  apoyo="SIN AYUDA"))
+  apoyo=""))
 P(actx(AN(), "Reacciona — ¿y tú?",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>¿Qué consejo te parece el más importante? Schrijf 2–3 zinnen met een <b>mening</b> (creo que…) + un <b>conector</b> (porque/además).</p>'
   '<div class="wbox sm"></div>',
-  apoyo="MARCO (Para mí, el consejo más importante es… porque…)"))
+  apoyo="Marco: Para mí, el consejo más importante es… porque…"))
 sec_close()
 
 # ================= TALLER =================
@@ -426,7 +426,7 @@ P(actx(AN(), "¿Falta el acento? · corrige",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>cuidate · comelo · protegelo · dimelo · hazlo · dime</p>'
   '<p style="margin-left:12.5mm"><span class="wl full"></span></p>',
-  apoyo="PISTA (cuídate, cómelo, protégelo, dímelo, hazlo ✓, dime ✓)"))
+  apoyo="Pista: cuídate, cómelo, protégelo, dímelo, hazlo ✓, dime ✓"))
 P('<h3 style="margin-top:6mm">2 · Conectores de argumentación</h3>')
 P(colloc("porque · además · por eso · sin embargo", ["porque = want/omdat","además = bovendien","por eso = daarom","sin embargo = echter"]))
 P(actx(AN(), "Completa con el conector",
@@ -435,7 +435,7 @@ P(actx(AN(), "Completa con el conector",
   '<p style="margin-left:12.5mm">1. Voy en bici <span class="wl md"></span> no contamina.<br>'
   '2. La bici es sana; <span class="wl md"></span>, es barata.<br>'
   '3. El aire está sucio; <span class="wl md"></span> uso mascarilla.</p>',
-  apoyo="BANCO"))
+  apoyo="Banco de palabras"))
 sec_close()
 
 # ================= §6 LECTURA · §7 ESCUCHA =================
@@ -465,7 +465,7 @@ P(actx(AN(), "Opina · ¿pura vida?",
   [{"t":"🌍 Cultura","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>¿Te parece bien un país sin ejército? Geef je mening (creo que…) + un argumento (porque…). Schrijf 2 zinnen.</p>'
   '<div class="wbox sm"></div>',
-  apoyo="MARCO"))
+  apoyo="Marco"))
 P(actx(AN(), "Datos curiosos — une",
   [{"t":"🌍 Cultura","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Verbind (schrijf de letter).</p>'
@@ -473,7 +473,7 @@ P(actx(AN(), "Datos curiosos — une",
   '<div class="wcol"><div class="ch">Elemento</div><div class="cb short">1. 1948 &nbsp; 2. pura vida &nbsp; 3. ecoturismo &nbsp; 4. biodiversidad</div></div>'
   '<div class="wcol"><div class="ch">Dato</div><div class="cb short">a. saludo y filosofía tica &nbsp; b. fin del ejército &nbsp; c. 5 % de las especies &nbsp; d. turismo en la naturaleza</div></div></div>'
   '<p style="margin-left:12.5mm">1-<span class="wl sm"></span> 2-<span class="wl sm"></span> 3-<span class="wl sm"></span> 4-<span class="wl sm"></span></p>',
-  apoyo="BANCO"))
+  apoyo="Banco de palabras"))
 sec_close()
 
 retos("cultura_c6p7", "Reto — una campaña que cruza el océano",
@@ -541,7 +541,7 @@ GRP = [("salud","La salud"), ("consejos","Los consejos"), ("medioambiente","El m
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">V</span><span class="pk">§V · Vocabulario</span>')
 P('<div class="intro"><b>ES:</b> Todas las palabras de la unidad. En la página digital: <b>flip cards</b> (ES↔NL), audio (TTS) y buscador. <span class="gloss">Online: flip cards, audio en zoekfunctie.</span></div>')
-P(lpd(("7","woordenschat inzetten (receptief & productief)")))
+P(lpd(("7","woordenschat inzetten (begrijpen en zelf gebruiken)")))
 P('</div>')
 P('<p style="font-size:9.6pt">Las palabras de la <b>salud</b> y el <b>medio ambiente</b> como red — tres familias:</p>')
 P(clusters([
@@ -558,21 +558,21 @@ for key, titel in GRP:
 P('<div class="divider">Escalera de práctica · V.1–V.5</div>')
 P(actx("V.1", "Reconocer — ES → NL",
   [{"t":"🔍 Leer","skill":True},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Schrijf de vertaling. sano = <span class="wl md"></span> · reciclar = <span class="wl md"></span> · el consejo = <span class="wl md"></span> · además = <span class="wl md"></span></p>', apoyo="MODELO"))
+  '<p>Schrijf de vertaling. sano = <span class="wl md"></span> · reciclar = <span class="wl md"></span> · el consejo = <span class="wl md"></span> · además = <span class="wl md"></span></p>', apoyo="Modelo"))
 P(actx("V.2", "Distinguir — sorteer per familia",
   [{"t":"🔍 Analizar","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Sorteer: <span class="words"><b>el cuerpo · reciclar · dormir · la basura · el deporte · ahorrar · la dieta · proteger</b></span></p>'
-  + sortcols([("salud",""),("medio ambiente","")], eigen=False), apoyo="BANCO"))
+  + sortcols([("salud",""),("medio ambiente","")], eigen=False), apoyo="Banco de palabras"))
 P(actx("V.3", "Recordar — NL → ES (con letra)",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Vul aan (beginletter). gezond = <b>s</b>___ · recyclen = <b>r</b>___ · ik denk dat = <b>c</b>___ que · daarom = <b>p</b>___ e___<br><span class="wl full"></span></p>', apoyo="LETRA INICIAL"))
+  '<p>Vul aan (beginletter). gezond = <b>s</b>___ · recyclen = <b>r</b>___ · ik denk dat = <b>c</b>___ que · daarom = <b>p</b>___ e___<br><span class="wl full"></span></p>', apoyo="Primera letra"))
 P(actx("V.4", "Producir — un consejo con imperativo",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★★"}],
-  '<p>Maak één advies (imperativo) met <b>reciclar · el papel</b>.</p><div class="wbox sm"></div>', apoyo="SIN AYUDA"))
+  '<p>Maak één advies (imperativo) met <b>reciclar · el papel</b>.</p><div class="wbox sm"></div>', apoyo=""))
 P(actx("V.5", "Comunicar — mi opinión en 3 frases",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Schrijf 3 zinnen over gezondheid of milieu (una opinión + un consejo + un conector) en zeg ze hardop.</p>'
-  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="MARCO → SIN AYUDA"))
+  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="Marco"))
 P('<div class="se" style="margin-top:6mm">Mi cartel de la «pura vida» <span class="gloss" style="font-size:8pt">— teken een affiche en label 6 dingen in het Spaans</span></div>')
 P('<div class="wbox lg"></div>')
 P(mispal("Mis palabras de la unidad", 7))

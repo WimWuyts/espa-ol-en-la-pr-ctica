@@ -298,7 +298,7 @@ def retos(ancla, titulo, intro_es, intro_nl):
 def pcard(t, body): return f'<div class="pcard"><div class="t">{t}</div>{body}</div>'
 
 def steun(niveau):
-    return f'<div class="steun" style="margin-left:12.5mm">Apoyo: {niveau}</div>'
+    return (f'<div class="steun" style="margin-left:12.5mm">{niveau}</div>' if niveau else '')
 
 def sortcols(cols, height="short", eigen=True):
     n = len(cols)
@@ -494,34 +494,34 @@ P(clusters([
 P(actx(1, "Calentamiento: ¿qué haces normalmente?",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 4 min"},{"t":"★☆☆"}],
   '<p>Zeg drie dingen die je vaak doet, in het <b>presente</b>. Je buur noteert. Wissel. <span class="gloss">Dit heb je nodig om straks «he hecho» te bouwen.</span></p>'
-  '<p style="margin-left:12.5mm">Modelo: <i>«Normalmente estudio, veo la tele y hago deporte.»</i><br>Mi compañero/a hace: <span class="wl full"></span></p>', apoyo="MODELO → SIN AYUDA"))
+  '<p style="margin-left:12.5mm">Modelo: <i>«Normalmente estudio, veo la tele y hago deporte.»</i><br>Mi compañero/a hace: <span class="wl full"></span></p>', apoyo="Modelo"))
 P(actx(2, "El presente de haber (base)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Het werkwoord <b>haber</b> gebruik je straks als hulpwerkwoord. Vul aan (pista gegeven).</p>'
   '<table class="mp"><thead><tr><th>Persona</th><th>haber</th></tr></thead><tbody>'
   '<tr><td>yo</td><td>h<span class="wl sm"></span> <span class="gloss">(he)</span></td></tr>'
   '<tr><td>tú</td><td>h<span class="wl sm"></span> <span class="gloss">(has)</span></td></tr>'
-  '<tr><td>él/ella</td><td>h<span class="wl sm"></span> <span class="gloss">(ha)</span></td></tr></tbody></table>', apoyo="LETRA INICIAL (h…)"))
+  '<tr><td>él/ella</td><td>h<span class="wl sm"></span> <span class="gloss">(ha)</span></td></tr></tbody></table>', apoyo="Primera letra: h…"))
 P(actx(3, "Ordena tus experiencias",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Zet op een lijn van <b>nunca</b> (0) naar <b>muchas veces</b> (vaak).</p>'
   + scale(["nunca","alguna vez","a veces","muchas veces"]) +
-  '<p style="margin-left:12.5mm">He viajado en avión: <span class="wl md"></span></p>', apoyo="MODELO (lijn gegeven)"))
+  '<p style="margin-left:12.5mm">He viajado en avión: <span class="wl md"></span></p>', apoyo="Modelo: lijn gegeven"))
 P(actx(4, "Empareja: actividad con lugar",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Verbind (schrijf de letter). Repaso ruta + actividades.</p>'
   '<table class="mp"><thead><tr><th>Actividad</th><th></th><th>Lugar</th></tr></thead><tbody>'
   '<tr><td>1 · comer tacos</td><td><span class="wl sm"></span></td><td>A · Perú 🇵🇪</td></tr>'
   '<tr><td>2 · ver Machu Picchu</td><td><span class="wl sm"></span></td><td>B · España 🇪🇸</td></tr>'
-  '<tr><td>3 · visitar la Sagrada Família</td><td><span class="wl sm"></span></td><td>C · México 🇲🇽</td></tr></tbody></table>', apoyo="BANCO"))
+  '<tr><td>3 · visitar la Sagrada Família</td><td><span class="wl sm"></span></td><td>C · México 🇲🇽</td></tr></tbody></table>', apoyo="Banco de palabras"))
 P(actx(5, "Dos cosas que haces hoy (presente)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Schrijf twee ware zinnen in het <b>presente</b> over vandaag (met <b>hago</b> en <b>veo</b>).</p>'
-  '<div class="wbox sm"></div>', apoyo="MARCO (hoy hago… / hoy veo…)"))
+  '<div class="wbox sm"></div>', apoyo="Marco: hoy hago… / hoy veo…"))
 P(actx(6, "Verdadero para mí",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Zet ✔ als het klopt, ✘ als niet. Verbeter er één met een presente-zin.</p>'
-  '<p style="margin-left:12.5mm">☐ Viajo mucho. &nbsp; ☐ Veo muchas series. &nbsp; ☐ Hago deporte cada día.<br>Mi corrección: <span class="wl full"></span></p>', apoyo="MODELO"))
+  '<p style="margin-left:12.5mm">☐ Viajo mucho. &nbsp; ☐ Veo muchas series. &nbsp; ☐ Hago deporte cada día.<br>Mi corrección: <span class="wl full"></span></p>', apoyo="Modelo"))
 P('<div class="route-note">🎮 <b>Repasa jugando (online):</b> presente, actividades en la ruta hasta aquí met zelfcorrectie op de digitale pagina.</div>')
 P('</div>')  # close §0
 
@@ -576,7 +576,7 @@ P('<div class="divider">Practicar · §1.2</div>')
 P(actx(1, "Conjuga haber",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Vul de vorm van <b>haber</b> in.</p>'
-  '<p style="margin-left:12.5mm">yo <span class="wl sm"></span> · tú <span class="wl sm"></span> · él <span class="wl sm"></span> · nosotros <span class="wl sm"></span> · vosotros <span class="wl sm"></span> · ellos <span class="wl sm"></span></p>', apoyo="PISTA (h-e, h-a-s…)"))
+  '<p style="margin-left:12.5mm">yo <span class="wl sm"></span> · tú <span class="wl sm"></span> · él <span class="wl sm"></span> · nosotros <span class="wl sm"></span> · vosotros <span class="wl sm"></span> · ellos <span class="wl sm"></span></p>', apoyo="Pista: h-e, h-a-s…"))
 P(actx(2, "Substitutie: cambia la persona",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Herschrijf <b>«he viajado»</b> voor elke persoon.</p>'
@@ -584,7 +584,7 @@ P(actx(2, "Substitutie: cambia la persona",
   '<tr><td>tú</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>nosotros</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>ella</td><td><span class="wl md"></span></td></tr>'
-  '<tr><td>ellos</td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="MARCO (tabla haber) → SIN AYUDA"))
+  '<tr><td>ellos</td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Marco: tabla haber)"))
 P(actx(3, "Completa con haber + participio (cloze)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 7 min"},{"t":"★★☆"}],
   '<p>Vul <b>haber + participio</b> aan (persoon + infinitief tussen haakjes). <span class="gloss">Let op de onregelmatige participios (hacer→hecho, ver→visto…).</span></p>'
@@ -596,7 +596,7 @@ P(actx(3, "Completa con haber + participio (cloze)",
   '6. Hoy (yo) todavía no <span class="wl md"></span>. <i>(comer)</i><br>'
   '7. ¿(Vosotros) <span class="wl md"></span> la maleta? <i>(hacer)</i><br>'
   '8. Diego <span class="wl md"></span> del viaje. <i>(volver)</i></p>'
-  '<p style="margin-left:12.5mm" class="gloss">✅ De oplossingen staan online (zelfcorrectie op de digitale pagina).</p>', apoyo="PISTA (haber gegeven) → SIN AYUDA"))
+  '<p style="margin-left:12.5mm" class="gloss">✅ De oplossingen staan online (zelfcorrectie op de digitale pagina).</p>', apoyo="Pista: haber gegeven)"))
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha: ¿qué han hecho?</b> Cuatro personas cuentan qué han hecho este verano. Escucha y marca. <span class="gloss">Luisteren — 1ª globaal, 2ª detail.</span></div>',
            qr("Escanea y escucha", "Audio 8.1 · ¿Qué han hecho? · 0:55", seed=81)))
 P(actx(4, "Escucha: ¿quién lo ha hecho?",
@@ -606,23 +606,23 @@ P(actx(4, "Escucha: ¿quién lo ha hecho?",
   '<tr><td>ha subido a la montaña</td><td>☐</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>ha comido un ceviche</td><td>☐</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>ha visto el mar</td><td>☐</td><td>☐</td><td>☐</td></tr>'
-  '<tr><td>ha sacado muchas fotos</td><td>☐</td><td>☐</td><td>☐</td></tr></tbody></table>', apoyo="MODELO (audio 2×)"))
+  '<tr><td>ha sacado muchas fotos</td><td>☐</td><td>☐</td><td>☐</td></tr></tbody></table>', apoyo="Modelo: audio 2×"))
 P(actx(5, "Transforma: presente → perfecto compuesto",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Zet in het perfecto compuesto (voeg <b>hoy</b> toe).</p>'
   '<table class="mp"><thead><tr><th>Presente</th><th>Hoy… (perfecto)</th></tr></thead><tbody>'
   '<tr><td>Como un ceviche.</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Viajamos en tren.</td><td><span class="wl md"></span></td></tr>'
-  '<tr><td>Ves las ruinas.</td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="PISTA (haber + participio) → SIN AYUDA"))
+  '<tr><td>Ves las ruinas.</td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Pista: haber + participio)"))
 P(actx(6, "¿Qué has hecho hoy? — escribe",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Schrijf drie ware zinnen over vandaag met <b>he + participio</b>.</p>'
-  '<div class="wbox sm"></div>', apoyo="MARCO (Hoy he… / Todavía no he…)"))
+  '<div class="wbox sm"></div>', apoyo="Marco: Hoy he… / Todavía no he…"))
 P(tarea_com("Tarea comunicativa · «¿Qué has hecho esta semana?»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
-  '<p><b>Afzender·ontvanger·doel·situatie·resultaat:</b> vraag elkaar wat je <b>deze week gedaan hebt</b> (perfecto compuesto) en noteer twee dingen van je buur. <span class="gloss">«¿Qué has hecho esta semana? —He estudiado y he visto una serie.»</span></p>'
+  '<p><b>Situación:</b> vraag elkaar wat je <b>deze week gedaan hebt</b> (perfecto compuesto) en noteer twee dingen van je buur. <span class="gloss">«¿Qué has hecho esta semana? —He estudiado y he visto una serie.»</span></p>'
   '<p style="margin-left:12.5mm">Mi compañero/a ha…: <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Apoyo: MARCO (¿Qué has hecho? · He…) → SIN AYUDA</div>'))
+  '<div class="steun" style="margin-left:12.5mm">Marco: ¿Qué has hecho? · He…</div>'))
 P('<div class="route-note">🎮 <b>Juega online:</b> «haber + participio (cloze)», «haber Tetris» en de vraag-spiegel met zelfcorrectie.</div>')
 P('</div>')  # page §1.2
 
@@ -664,17 +664,17 @@ P('<div class="divider">Practicar · §2.2</div>')
 P(actx(1, "¿-ado o -ido?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★☆☆"}],
   '<p>Schrijf de regelmatige participio.</p>'
-  '<p style="margin-left:12.5mm">viajar → <span class="wl sm"></span> · comer → <span class="wl sm"></span> · vivir → <span class="wl sm"></span> · estudiar → <span class="wl sm"></span> · beber → <span class="wl sm"></span> · subir → <span class="wl sm"></span></p>', apoyo="MODELO (regel §2.1)"))
+  '<p style="margin-left:12.5mm">viajar → <span class="wl sm"></span> · comer → <span class="wl sm"></span> · vivir → <span class="wl sm"></span> · estudiar → <span class="wl sm"></span> · beber → <span class="wl sm"></span> · subir → <span class="wl sm"></span></p>', apoyo="Modelo: regel §2.1"))
 P(actx(2, "Clasifica: regular o irregular",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>Sorteer de infinitieven: krijgt de participio de <b>gewone</b> uitgang (-ado/-ido) of is hij <b>irregular</b>? '
   '<span class="words"><b>comer · hacer · viajar · ver · vivir · escribir · estudiar · volver</b></span></p>'
-  + sortcols([("regular","-ado / -ido"),("irregular","uit het hoofd")]), apoyo="BANCO → +1 eigen woord"))
+  + sortcols([("regular","-ado / -ido"),("irregular","uit het hoofd")]), apoyo="Banco de palabras"))
 P(actx(3, "Escribe el participio irregular (cloze)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>Vul de <b>onregelmatige</b> participio in.</p>'
   '<p style="margin-left:12.5mm">a) hacer → he <span class="wl sm"></span> &nbsp; b) ver → has <span class="wl sm"></span> &nbsp; c) escribir → ha <span class="wl sm"></span><br>'
-  'd) volver → hemos <span class="wl sm"></span> &nbsp; e) poner → habéis <span class="wl sm"></span> &nbsp; f) abrir → han <span class="wl sm"></span><br><span class="gloss">✅ Zelfcorrectie op de digitale pagina.</span></p>', apoyo="PISTA (-to / -cho) → SIN AYUDA"))
+  'd) volver → hemos <span class="wl sm"></span> &nbsp; e) poner → habéis <span class="wl sm"></span> &nbsp; f) abrir → han <span class="wl sm"></span><br><span class="gloss">✅ Zelfcorrectie op de digitale pagina.</span></p>', apoyo="Pista: -to / -cho)"))
 P(actx(4, "Empareja: infinitivo ↔ participio",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Verbind (schrijf de letter).</p>'
@@ -682,7 +682,7 @@ P(actx(4, "Empareja: infinitivo ↔ participio",
   '<tr><td>1 · decir</td><td><span class="wl sm"></span></td><td>A · roto</td></tr>'
   '<tr><td>2 · romper</td><td><span class="wl sm"></span></td><td>B · dicho</td></tr>'
   '<tr><td>3 · poner</td><td><span class="wl sm"></span></td><td>C · abierto</td></tr>'
-  '<tr><td>4 · abrir</td><td><span class="wl sm"></span></td><td>D · puesto</td></tr></tbody></table>', apoyo="BANCO"))
+  '<tr><td>4 · abrir</td><td><span class="wl sm"></span></td><td>D · puesto</td></tr></tbody></table>', apoyo="Banco de palabras"))
 P(actx(5, "¿Es correcto? — ejemplo o no-ejemplo",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Kruis ✔ (goed) of ✘ (fout) aan en verbeter de foute participio.</p>'
@@ -690,12 +690,12 @@ P(actx(5, "¿Es correcto? — ejemplo o no-ejemplo",
   '<tr><td>He <span class="trap">hacido</span> la maleta.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Has viajado a Perú.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Ha <span class="trap">veido</span> las llamas.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
-  '<tr><td>Hemos comido ceviche.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="PISTA (irregular?) → SIN AYUDA"))
+  '<tr><td>Hemos comido ceviche.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Pista: irregular?)"))
 P(tarea_com("Tarea comunicativa · «Cadena de experiencias»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★☆"}],
-  '<p><b>Afzender·ontvanger·doel·situatie·resultaat:</b> in een ketting: A zegt «He viajado», B herhaalt + voegt toe «He viajado y he comido…», enz. Gebruik zoveel mogelijk <b>irregulares</b>. <span class="gloss">He hecho, he visto, he vuelto…</span></p>'
+  '<p><b>Situación:</b> in een ketting: A zegt «He viajado», B herhaalt + voegt toe «He viajado y he comido…», enz. Gebruik zoveel mogelijk <b>irregulares</b>. <span class="gloss">He hecho, he visto, he vuelto…</span></p>'
   '<p style="margin-left:12.5mm">Nuestra cadena más larga: <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Apoyo: BANCO (lista de participios) → SIN AYUDA</div>'))
+  '<div class="steun" style="margin-left:12.5mm">Banco de palabras: lista de participios</div>'))
 P('<div class="route-note">🎮 <b>Juega online:</b> «participio ↔ infinitivo» (match), «regular o irregular» (classify) en «participio irregular» (cloze).</div>')
 P('</div>')  # page §2.2
 
@@ -737,28 +737,28 @@ P(actx(1, "¿ya o todavía no?",
   '<tr><td>___ he hecho la maleta ✅</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>___ he reservado el hotel ⏳</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>___ hemos comprado los billetes ✅</td><td>☐</td><td>☐</td></tr>'
-  '<tr><td>___ he visto Machu Picchu ⏳</td><td>☐</td><td>☐</td></tr></tbody></table>', apoyo="MODELO (regel §3.1)"))
+  '<tr><td>___ he visto Machu Picchu ⏳</td><td>☐</td><td>☐</td></tr></tbody></table>', apoyo="Modelo: regel §3.1"))
 P(actx(2, "Gap-fill: el marcador correcto",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Vul de marcador in (hoy · esta semana · alguna vez · nunca · ya).</p>'
   '<p style="margin-left:12.5mm">a) ___ he estudiado dos horas (vandaag).<br>'
   'b) ¿Has viajado ___ en barco? (ooit)<br>'
   'c) ___ he estado en Perú (nooit).<br>'
-  'd) ___ hemos ido al cine dos veces (deze week).<br><span class="gloss">banco: hoy · alguna vez · nunca · esta semana</span></p>', apoyo="BANCO"))
+  'd) ___ hemos ido al cine dos veces (deze week).<br><span class="gloss">banco: hoy · alguna vez · nunca · esta semana</span></p>', apoyo="Banco de palabras"))
 P(actx(3, "Clasifica el marcador",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Periode-die-loopt of ervaring? '
   '<span class="words"><b>hoy · nunca · esta semana · alguna vez · este año · muchas veces</b></span></p>'
-  + sortcols([("periodo abierto","hoy, este año…"),("experiencia","nunca, alguna vez…")], eigen=False), apoyo="BANCO"))
+  + sortcols([("periodo abierto","hoy, este año…"),("experiencia","nunca, alguna vez…")], eigen=False), apoyo="Banco de palabras"))
 P(actx(4, "Mi lista de experiencias",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Schrijf twee zinnen met <b>alguna vez / nunca</b> over jouw leven.</p>'
-  '<div class="wbox sm"></div>', apoyo="MARCO (Nunca he… / Alguna vez he…) → SIN AYUDA"))
+  '<div class="wbox sm"></div>', apoyo="Marco: Nunca he… / Alguna vez he…)"))
 P(tarea_com("Tarea comunicativa · «¿Lo has hecho alguna vez?»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 7 min"},{"t":"★★★"}],
-  '<p><b>Afzender·ontvanger·doel·situatie·resultaat:</b> stel elkaar drie vragen met <b>alguna vez</b> (viajar en avión, comer ceviche, ver la nieve…). Antwoord met <b>ya / nunca / muchas veces</b>. <span class="gloss">«¿Has visto la nieve alguna vez? —Sí, ya la he visto. / No, nunca.»</span></p>'
+  '<p><b>Situación:</b> stel elkaar drie vragen met <b>alguna vez</b> (viajar en avión, comer ceviche, ver la nieve…). Antwoord met <b>ya / nunca / muchas veces</b>. <span class="gloss">«¿Has visto la nieve alguna vez? —Sí, ya la he visto. / No, nunca.»</span></p>'
   '<p style="margin-left:12.5mm">Una respuesta interesante de mi compañero/a: <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Apoyo: MARCO (¿Has…? · Sí, ya… / No, nunca…) → SIN AYUDA</div>'))
+  '<div class="steun" style="margin-left:12.5mm">Marco: ¿Has…? · Sí, ya… / No, nunca…</div>'))
 P('<div class="route-note">🎮 <b>Juega online:</b> «ya o todavía no» (cloze) en «experiencia o periodo» (classify) met zelfcorrectie.</div>')
 P('</div>')  # page §3.2
 
@@ -799,7 +799,7 @@ P(actx(1, "¿hace, está o un verbo?",
   '<tr><td>___ nublado</td><td>☐</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>___ (regenen)</td><td>☐</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>___ frío</td><td>☐</td><td>☐</td><td>☐</td></tr>'
-  '<tr><td>___ (sneeuwen)</td><td>☐</td><td>☐</td><td>☐</td></tr></tbody></table>', apoyo="MODELO (regel §4.1)"))
+  '<tr><td>___ (sneeuwen)</td><td>☐</td><td>☐</td><td>☐</td></tr></tbody></table>', apoyo="Modelo: regel §4.1"))
 P(actx(2, "Empareja: símbolo ↔ tiempo",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Verbind het symbool met de uitdrukking (schrijf de letter).</p>'
@@ -807,21 +807,21 @@ P(actx(2, "Empareja: símbolo ↔ tiempo",
   '<tr><td>1 · ☀️</td><td><span class="wl sm"></span></td><td>A · nieva</td></tr>'
   '<tr><td>2 · 🌧️</td><td><span class="wl sm"></span></td><td>B · hace sol</td></tr>'
   '<tr><td>3 · ❄️</td><td><span class="wl sm"></span></td><td>C · está nublado</td></tr>'
-  '<tr><td>4 · ☁️</td><td><span class="wl sm"></span></td><td>D · llueve</td></tr></tbody></table>', apoyo="BANCO"))
+  '<tr><td>4 · ☁️</td><td><span class="wl sm"></span></td><td>D · llueve</td></tr></tbody></table>', apoyo="Banco de palabras"))
 P(actx(3, "Dictado: el parte del tiempo",
   [{"t":"👂 Escuchar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>Schrijf het weer van vier steden (ciudad + tiempo), één per regel.</p>'
   '<p style="margin-left:12.5mm">1. <span class="wl lg"></span> 2. <span class="wl lg"></span><br>'
-  '3. <span class="wl lg"></span> 4. <span class="wl lg"></span></p>', apoyo="MODELO (2×)"))
+  '3. <span class="wl lg"></span> 4. <span class="wl lg"></span></p>', apoyo="Modelo: 2×"))
 P(actx(4, "¿Qué tiempo hace hoy? — escribe",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Schrijf drie zinnen over het weer van vandaag bij jou.</p>'
-  '<div class="wbox sm"></div>', apoyo="MARCO (Hoy hace… / Está…)"))
+  '<div class="wbox sm"></div>', apoyo="Marco: Hoy hace… / Está…"))
 P(tarea_com("Tarea comunicativa · «El tiempo en tu ciudad»",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★☆"}],
-  '<p><b>Keten luisteren → spreken.</b> A is de weerman/-vrouw en vertelt het weer van een stad (verzonnen); B tekent het symbool en zegt of hij/zij daar naartoe wil. Wissel. <span class="gloss">«Hoy en Cusco hace frío y está nublado.»</span></p>'
+  '<p><b></b> A is de weerman/-vrouw en vertelt het weer van een stad (verzonnen); B tekent het symbool en zegt of hij/zij daar naartoe wil. Wissel. <span class="gloss">«Hoy en Cusco hace frío y está nublado.»</span></p>'
   '<p style="margin-left:12.5mm">El tiempo de mi compañero/a: <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Apoyo: MARCO (Hoy hace… · está…) → SIN AYUDA</div>'))
+  '<div class="steun" style="margin-left:12.5mm">Marco: Hoy hace… · está…</div>'))
 P('<div class="route-note">🎮 <b>Juega online:</b> «¿qué tiempo hace?» (classify), «símbolo ↔ tiempo» (match) en el parte del tiempo (audio).</div>')
 P('</div>')  # page §4.2
 
@@ -839,7 +839,7 @@ P('<div class="txtmeta"><span class="tm"><b>Tipo:</b> diario de viaje / blog</sp
 P(actx(1, "Antes de leer: predice",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 2 min"},{"t":"★☆☆"}],
   '<p>Titel = «El diario de viaje de Nina». ¿Qué crees que ha hecho Nina?</p>'
-  '<p style="margin-left:12.5mm">Creo que Nina ha…: <span class="wl full"></span></p>', apoyo="MODELO (ha subido, ha visto…)"))
+  '<p style="margin-left:12.5mm">Creo que Nina ha…: <span class="wl full"></span></p>', apoyo="Modelo: ha subido, ha visto…"))
 P('<div class="ptexts">'
   f'<div class="ptext"><div class="ph"><div class="av">{AV["nina"]}</div><div><div class="nm">Nina · día 1 (Cusco)</div><div class="fr">diario de viaje 🇵🇪</div></div></div>'
   '<p><b>Lunes.</b> ¡Por fin <span class="evi">he llegado</span> a Cusco! <span class="evi">He viajado</span> en avión desde Lima. Aquí, a 3400 metros, <span class="evi">hace frío</span> y <span class="evi">está nublado</span>. Esta tarde <span class="evi">he visto</span> la Plaza de Armas y <span class="evi">he comido</span> un plato típico. Todavía no <span class="evi">he subido</span> a la montaña.</p></div>'
@@ -854,7 +854,7 @@ P(actx(2, "Escanea: ¿qué ha hecho Nina?",
   '<table class="mp"><thead><tr><th></th><th>Transporte</th><th>Tiempo (clima)</th><th>Una cosa que ha hecho</th></tr></thead><tbody>'
   '<tr><td><b>Día 1 · Cusco</b></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td><b>Día 2 · Machu Picchu</b></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
-  '</tbody></table>', apoyo="MODELO (tekst boven)"))
+  '</tbody></table>', apoyo="Modelo: tekst boven"))
 P(actx(3, "¿Verdadero o falso? + prueba",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>Waar of niet waar? Noteer de <b>woorden uit het dagboek</b> die het bewijzen.</p>'
@@ -863,21 +863,21 @@ P(actx(3, "¿Verdadero o falso? + prueba",
   '<tr><td>En Machu Picchu ha llovido todo el día.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Nina ha escrito una postal.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>El día 1 ya ha subido a la montaña.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
-  '</tbody></table>', apoyo="PISTA (onderstreep in de tekst)"))
+  '</tbody></table>', apoyo="Pista: onderstreep in de tekst"))
 P(actx(4, "Del contexto: ¿qué significa?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Wat betekent <b>«he tomado el tren»</b> en <b>«una postal»</b>? Kies + leg uit welke aanwijzing hielp.</p>'
-  '<p style="margin-left:12.5mm">he tomado = ☐ ik heb genomen ☐ ik heb gekocht &nbsp;·&nbsp; una postal = ☐ een ansichtkaart ☐ een koffer<br>Pista que me ayudó: <span class="wl lg"></span></p>', apoyo="PISTA"))
+  '<p style="margin-left:12.5mm">he tomado = ☐ ik heb genomen ☐ ik heb gekocht &nbsp;·&nbsp; una postal = ☐ een ansichtkaart ☐ een koffer<br>Pista que me ayudó: <span class="wl lg"></span></p>', apoyo="Pista"))
 P(actx(5, "Ordena el viaje de Nina",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p><i>zinnen ordenen (1–5).</i> Zet de reis van Nina in de juiste volgorde.</p>'
   '<p style="margin-left:12.5mm">___ Ha subido a Machu Picchu. &nbsp; ___ Ha llegado a Cusco en avión. &nbsp; ___ Ha visto la Plaza de Armas.<br>'
-  '___ Ha tomado el tren muy pronto. &nbsp; ___ Ha escrito una postal.</p>', apoyo="BANCO (día 1 → día 2)"))
+  '___ Ha tomado el tren muy pronto. &nbsp; ___ Ha escrito una postal.</p>', apoyo="Banco de palabras: día 1 → día 2"))
 P(tarea_com("Tarea comunicativa · «Tu propio día de viaje» (keten lezen→schrijven)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 8 min"},{"t":"★★★"}],
-  '<p><b>Keten lezen → schrijven.</b> Schrijf, zoals Nina, één dagboekdag over een (echte of verzonnen) reis. Gebruik minstens <b>vier</b> keer perfecto compuesto + één marcador + het weer. <span class="gloss">«Hoy he llegado a… He visto… Ha hecho…»</span></p>'
+  '<p><b></b> Schrijf, zoals Nina, één dagboekdag over een (echte of verzonnen) reis. Gebruik minstens <b>vier</b> keer perfecto compuesto + één marcador + het weer. <span class="gloss">«Hoy he llegado a… He visto… Ha hecho…»</span></p>'
   '<div class="wbox sm"></div>'
-  '<div class="steun" style="margin-left:0mm">Apoyo: MARCO (Hoy he… · He visto… · Ha hecho…) → SIN AYUDA</div>'))
+  '<div class="steun" style="margin-left:0mm">Marco: Hoy he… · He visto… · Ha hecho…</div>'))
 P('<div class="route-note">🎮 <b>Sigue online:</b> luister het diario (TTS), doe de begripsquiz en neem je eigen dag op (recorder) op de digitale pagina.</div>')
 P('</div>')  # page §5b
 
@@ -903,28 +903,28 @@ P(actx(1, "¿Con tilde o sin tilde?",
   'b) Este es (él / el) ___ tren a Cusco.<br>'
   'c) ¿(Qué / Que) ___ has visto hoy?<br>'
   'd) —¿Has comido? —(Sí / Si) ___ .<br>'
-  'e) Quiero ver (más / mas) ___ ruinas.<br><span class="gloss">✅ Zelfcorrectie op de digitale pagina.</span></p>', apoyo="MODELO (tabla boven) → SIN AYUDA"))
+  'e) Quiero ver (más / mas) ___ ruinas.<br><span class="gloss">✅ Zelfcorrectie op de digitale pagina.</span></p>', apoyo="Modelo: tabla boven)"))
 P(actx(2, "Corrige las tildes",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Zet het streepje waar het hoort en herschrijf.</p>'
   '<p style="margin-left:12.5mm">1) <span class="trap">¿Que has hecho tu hoy?</span> → <span class="wl lg"></span><br>'
   '2) <span class="trap">El ha viajado en el tren.</span> → <span class="wl lg"></span><br>'
-  '3) <span class="trap">Si, quiero mas fotos.</span> → <span class="wl lg"></span></p>', apoyo="PISTA (persoon/vraag/ja/meer) → SIN AYUDA"))
+  '3) <span class="trap">Si, quiero mas fotos.</span> → <span class="wl lg"></span></p>', apoyo="Pista: persoon/vraag/ja/meer)"))
 P('<h3 style="margin-top:6mm">Conectores del relato · primero · luego · después · al final</h3>')
 P('<p style="font-size:9.6pt">② <b>Voor je reisverslag — la secuencia del día:</b></p>')
 P(scale(["primero","luego","después","al final"]))
 P(actx(3, "Ordena el diario con conectores",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Vul het verbindingswoord in (primero/luego/después/al final).</p>'
-  '<p style="margin-left:12.5mm">___ , he tomado el tren. ___ , he subido a Machu Picchu. ___ , he sacado fotos. ___ , he vuelto al hotel.<br><span class="wl full"></span></p>', apoyo="BANCO"))
+  '<p style="margin-left:12.5mm">___ , he tomado el tren. ___ , he subido a Machu Picchu. ___ , he sacado fotos. ___ , he vuelto al hotel.<br><span class="wl full"></span></p>', apoyo="Banco de palabras"))
 P(actx(4, "Dictado corto del viaje",
   [{"t":"👂 Escuchar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p><i>dictee (reconstrueren).</i> Escucha y escribe cuatro palabras del viaje (con tilde donde toca).</p>'
-  '<p style="margin-left:12.5mm">1. <span class="wl md"></span> 2. <span class="wl md"></span> 3. <span class="wl md"></span> 4. <span class="wl md"></span></p>', apoyo="MODELO (2×)"))
+  '<p style="margin-left:12.5mm">1. <span class="wl md"></span> 2. <span class="wl md"></span> 3. <span class="wl md"></span> 4. <span class="wl md"></span></p>', apoyo="Modelo: 2×"))
 P(actx(5, "Escribe tres frases del diario",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Schrijf drie zinnen van jouw reisdag met <b>primero · luego · al final</b> + perfecto compuesto.</p>'
-  '<div class="wbox sm"></div>', apoyo="SIN AYUDA"))
+  '<div class="wbox sm"></div>', apoyo=""))
 P('<div class="route-note">🎮 <b>Practica online:</b> «tilde diacrítica» en «ordena el diario» met zelfcorrectie.</div>')
 P('</div>')  # page Taller
 
@@ -967,18 +967,18 @@ P(actx(1, "Comprensión — verdadero o falso",
   '<table class="mp"><thead><tr><th>Afirmación</th><th>V/F</th><th>Corrección</th></tr></thead><tbody>'
   '<tr><td>En Cusco hace frío.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>En la selva nieva mucho.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
-  '<tr><td>A Machu Picchu se llega en tren.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="MODELO (tekst boven)"))
+  '<tr><td>A Machu Picchu se llega en tren.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Modelo: tekst boven"))
 P(actx(2, "El clima de mi país / mi región",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Schrijf 2–3 zinnen over het weer waar jij woont in verschillende seizoenen (¿qué tiempo hace en verano/invierno?). Presenteer aan je buur.</p>'
-  '<div class="wbox sm"></div>', apoyo="MARCO (En verano hace… · En invierno…) → SIN AYUDA"))
+  '<div class="wbox sm"></div>', apoyo="Marco: En verano hace… · En invierno…)"))
 P(actx(3, "Empareja: zona ↔ clima",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Verbind de zone met het weer (schrijf de letter).</p>'
   '<table class="mp"><thead><tr><th>Zona</th><th></th><th>Clima</th></tr></thead><tbody>'
   '<tr><td>1 · la costa</td><td><span class="wl sm"></span></td><td>A · hace frío, nieva</td></tr>'
   '<tr><td>2 · la sierra</td><td><span class="wl sm"></span></td><td>B · hace calor, llueve</td></tr>'
-  '<tr><td>3 · la selva</td><td><span class="wl sm"></span></td><td>C · seco, hace sol</td></tr></tbody></table>', apoyo="BANCO"))
+  '<tr><td>3 · la selva</td><td><span class="wl sm"></span></td><td>C · seco, hace sol</td></tr></tbody></table>', apoyo="Banco de palabras"))
 P('<div class="route-note">🎮 <b>Sigue online:</b> «país ↔ clima» (match) en de kaart van de Spaanstalige wereld op de digitale pagina.</div>')
 P('</div>')  # page Cultura
 
@@ -1033,7 +1033,7 @@ P('<div class="esen"><b class="tt">Lo esencial de un vistazo</b><ul>'
   '<li><b>Marcadores:</b> hoy · esta semana · este año (periode) · ya ↔ todavía no · alguna vez · nunca · muchas veces (ervaring).</li>'
   '<li><b>El tiempo:</b> hace sol/calor/frío/viento · llueve · nieva · está nublado · estamos a … grados.</li>'
   '<li><b>Las trampas:</b> 🔴 <b>haber</b> ≠ tener (has hecho, niet tienes hecho) · 🔴 participio blijft gelijk (ha comid<b>o</b>) · 🔴 tilde diacrítica (tú/tu · qué/que).</li></ul></div>')
-P('<div class="route-note">🎮 <b>Repasa jugando (online):</b> 13 spelletjes met zelfcorrectie en spreiding op de digitale pagina.</div>')
+P('<div class="route-note">🎮 <b>Repasa jugando (online):</b> 13 spelletjes met zelfcorrectie op de digitale pagina.</div>')
 P('<div class="se" style="margin-top:6mm">Semáforo — ¿cómo lo llevas?</div>')
 P('<table class="sem"><tr class="semrow"><th>Puedo…</th><th>🔴 nog niet</th><th>🟠 met steun</th><th>🟢 zelfstandig</th></tr>'
   '<tr><td>vertellen wat ik <b>gedaan heb</b> (perfecto compuesto)</td><td>☐</td><td>☐</td><td>☐</td></tr>'
@@ -1053,7 +1053,7 @@ GRP = [("viajes","Viajes y vacaciones"),("clima","El tiempo · el clima"),("tran
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">V</span><span class="pk">§V · Vocabulario</span>')
 P('<div class="intro"><b>ES:</b> Todas las palabras de la unidad. En la página digital: <b>flip cards</b> (ES↔NL), audio (TTS) y buscador. <span class="gloss">Online: flip cards, audio en zoekfunctie.</span></div>')
-P(lpd(("7","woordenschat inzetten (receptief & productief)")))
+P(lpd(("7","woordenschat inzetten (begrijpen en zelf gebruiken)")))
 P('</div>')
 P('<p style="font-size:9.6pt">El <b>viaje</b> als netwerk — drie families die de hele unit dragen:</p>')
 P(clusters([
@@ -1071,21 +1071,21 @@ for key, titel in GRP:
 P('<div class="divider">Escalera de práctica · V.1–V.5</div>')
 P(actx("V.1", "Reconocer — ES → NL",
   [{"t":"🔍 Leer","skill":True},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Schrijf de vertaling. el viaje = <span class="wl md"></span> · la maleta = <span class="wl md"></span> · hace frío = <span class="wl md"></span> · he visto = <span class="wl md"></span></p>', apoyo="MODELO"))
+  '<p>Schrijf de vertaling. el viaje = <span class="wl md"></span> · la maleta = <span class="wl md"></span> · hace frío = <span class="wl md"></span> · he visto = <span class="wl md"></span></p>', apoyo="Modelo"))
 P(actx("V.2", "Distinguir — sorteer per familia",
   [{"t":"🔍 Analizar","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Sorteer: <span class="words"><b>el avión · hace sol · la maleta · nieva · el tren · el pasaporte</b></span></p>'
-  + sortcols([("viajes",""),("clima",""),("transporte","")], eigen=False), apoyo="BANCO"))
+  + sortcols([("viajes",""),("clima",""),("transporte","")], eigen=False), apoyo="Banco de palabras"))
 P(actx("V.3", "Recordar — NL → ES (con letra)",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Vul het Spaanse woord aan (beginletter gegeven). de koffer = <b>m</b>___ · de regen = <b>ll</b>___ · het vliegtuig = <b>a</b>___ · gedaan = <b>h</b>___<br><span class="wl full"></span></p>', apoyo="LETRA INICIAL"))
+  '<p>Vul het Spaanse woord aan (beginletter gegeven). de koffer = <b>m</b>___ · de regen = <b>ll</b>___ · het vliegtuig = <b>a</b>___ · gedaan = <b>h</b>___<br><span class="wl full"></span></p>', apoyo="Primera letra"))
 P(actx("V.4", "Producir — una frase con tres palabras",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★★"}],
-  '<p>Maak één correcte zin met <b>he viajado · en tren · hace frío</b>.</p><div class="wbox sm"></div>', apoyo="SIN AYUDA"))
+  '<p>Maak één correcte zin met <b>he viajado · en tren · hace frío</b>.</p><div class="wbox sm"></div>', apoyo=""))
 P(actx("V.5", "Comunicar — mi mejor viaje",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Schrijf drie zinnen over je beste reis met <b>he + participio</b> + het weer. Zeg het daarna hardop tegen je buur.</p>'
-  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="MARCO (He ido a… · He visto… · Ha hecho…) → SIN AYUDA"))
+  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="Marco: He ido a… · He visto… · Ha hecho…)"))
 P(mispal("Mis palabras de la unidad", 4))
 P('<div class="guide"><div class="ic">🎴</div><div><span class="hand">Sigue en la página digital:</span> <span class="g">flip cards (ES↔NL), audio en de 13 spellen bouwen de steun verder af.</span></div></div>')
 P('</div>')  # page §V

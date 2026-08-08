@@ -298,7 +298,7 @@ def retos(ancla, titulo, intro_es, intro_nl):
 def pcard(t, body): return f'<div class="pcard"><div class="t">{t}</div>{body}</div>'
 
 def steun(niveau):
-    return f'<div class="steun" style="margin-left:12.5mm">Apoyo: {niveau}</div>'
+    return (f'<div class="steun" style="margin-left:12.5mm">{niveau}</div>' if niveau else '')
 
 def sortcols(cols, height="short", eigen=True):
     n = len(cols)
@@ -494,34 +494,34 @@ P(clusters([
 P(actx(1, "Calentamiento: ¿qué comes normalmente?",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 4 min"},{"t":"★☆☆"}],
   '<p>Zeg drie dingen die je vaak eet of drinkt, met <b>me gusta(n)</b>. Je buur noteert. Wissel.</p>'
-  '<p style="margin-left:12.5mm">Modelo: <i>«Me gusta la pasta y me gustan las manzanas.»</i><br>Mi compañero/a come/bebe: <span class="wl full"></span></p>', apoyo="MODELO → SIN AYUDA"))
+  '<p style="margin-left:12.5mm">Modelo: <i>«Me gusta la pasta y me gustan las manzanas.»</i><br>Mi compañero/a come/bebe: <span class="wl full"></span></p>', apoyo="Modelo"))
 P(actx(2, "Números para los precios",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Schrijf de prijs voluit (¿cuánto cuesta?).</p>'
   '<table class="mp"><thead><tr><th>Precio</th><th>En letras</th></tr></thead><tbody>'
   '<tr><td>12 €</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>25 €</td><td><span class="wl md"></span></td></tr>'
-  '<tr><td>100 €</td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="PISTA (doce · veinticinco · cien)"))
+  '<tr><td>100 €</td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Pista: doce · veinticinco · cien"))
 P(actx(3, "Ordena por hambre",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Zet op een lijn van <b>nada</b> (0) naar <b>mucha hambre</b> (100%).</p>'
   + scale(["nada","un poco","bastante","mucha hambre"]) +
-  '<p style="margin-left:12.5mm">Ik heb nu: <span class="wl md"></span> hambre.</p>', apoyo="MODELO (lijn gegeven)"))
+  '<p style="margin-left:12.5mm">Ik heb nu: <span class="wl md"></span> hambre.</p>', apoyo="Modelo: lijn gegeven"))
 P(actx(4, "Empareja la comida con la comida del día",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Verbind (schrijf de letter). Repaso rutina (U3) + comida.</p>'
   '<table class="mp"><thead><tr><th>Momento</th><th></th><th>Comida típica</th></tr></thead><tbody>'
   '<tr><td>1 · el desayuno</td><td><span class="wl sm"></span></td><td>A · una sopa y pollo</td></tr>'
   '<tr><td>2 · el almuerzo / la comida</td><td><span class="wl sm"></span></td><td>B · café con leche y tostada</td></tr>'
-  '<tr><td>3 · la cena</td><td><span class="wl sm"></span></td><td>C · una ensalada ligera</td></tr></tbody></table>', apoyo="BANCO"))
+  '<tr><td>3 · la cena</td><td><span class="wl sm"></span></td><td>C · una ensalada ligera</td></tr></tbody></table>', apoyo="Banco de palabras"))
 P(actx(5, "Mi comida favorita en presente",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Schrijf twee ware zinnen: één met <b>como</b> en één met <b>bebo</b>.</p>'
-  '<div class="wbox sm"></div>', apoyo="MARCO (yo como… / yo bebo…)"))
+  '<div class="wbox sm"></div>', apoyo="Marco: yo como… / yo bebo…"))
 P(actx(6, "Verdadero para mí",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Zet ✔ als het klopt, ✘ als niet. Verbeter er één met een presente-zin.</p>'
-  '<p style="margin-left:12.5mm">☐ Me gusta el pescado. &nbsp; ☐ Bebo mucha agua. &nbsp; ☐ No como carne.<br>Mi corrección: <span class="wl full"></span></p>', apoyo="MODELO"))
+  '<p style="margin-left:12.5mm">☐ Me gusta el pescado. &nbsp; ☐ Bebo mucha agua. &nbsp; ☐ No como carne.<br>Mi corrección: <span class="wl full"></span></p>', apoyo="Modelo"))
 P('<div class="route-note">🎮 <b>Repasa jugando (online):</b> números, gustar en comida-básica met zelfcorrectie op de digitale pagina.</div>')
 P('</div>')  # close §0
 
@@ -569,28 +569,28 @@ P(actx(1, "¿mucho, mucha, muchos o muchas?",
   '<tr><td>___ fruta</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>___ tomates</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>___ manzanas</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>'
-  '<tr><td>___ agua</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></tbody></table>', apoyo="MODELO (regel §1.1 zichtbaar)"))
+  '<tr><td>___ agua</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></tbody></table>', apoyo="Modelo: regel §1.1 zichtbaar"))
 P(actx(2, "Clasifica: contable o no contable",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>Sorteer: krijgt het <b>un poco de</b> (niet-telbaar) of <b>muchos/-as</b> (telbaar)? '
   '<span class="words"><b>queso · manzanas · agua · tomates · leche · huevos · arroz · uvas</b></span></p>'
-  + sortcols([("un poco de","niet telbaar"),("muchos / muchas","telbaar mv.")]), apoyo="BANCO → +1 eigen woord"))
+  + sortcols([("un poco de","niet telbaar"),("muchos / muchas","telbaar mv.")]), apoyo="Banco de palabras"))
 P(actx(3, "Gap-fill: la lista de la compra",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Vul de cantidad in (un kilo de · una botella de · un paquete de · un poco de).</p>'
   '<p style="margin-left:12.5mm">a) ___ agua &nbsp; b) ___ tomates &nbsp; c) ___ arroz &nbsp; d) ___ queso<br>'
-  'e) ___ leche &nbsp; f) ___ manzanas<br><span class="gloss">banco: un kilo de · una botella de · un paquete de · un poco de</span></p>', apoyo="BANCO"))
+  'e) ___ leche &nbsp; f) ___ manzanas<br><span class="gloss">banco: un kilo de · una botella de · un paquete de · un poco de</span></p>', apoyo="Banco de palabras"))
 P(audiorow('<div class="ic">🎧</div><div><b>El dictado de la compra.</b> Diego dicteert een boodschappenlijst. Escucha dos veces y escribe (cantidad + producto). <span class="gloss">Dictee — 1ª betekenis, 2ª schrijven.</span></div>',
            qr("Escanea y escucha", "Audio 5.1 · La lista · 0:50", seed=51)))
 P(actx(4, "Dictado: la lista de la compra",
   [{"t":"👂 Escuchar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>Schrijf de zes producten met hun hoeveelheid (één per regel).</p>'
   '<p style="margin-left:12.5mm">1. <span class="wl lg"></span> 2. <span class="wl lg"></span> 3. <span class="wl lg"></span><br>'
-  '4. <span class="wl lg"></span> 5. <span class="wl lg"></span> 6. <span class="wl lg"></span></p>', apoyo="MODELO (twee keer beluisteren)"))
+  '4. <span class="wl lg"></span> 5. <span class="wl lg"></span> 6. <span class="wl lg"></span></p>', apoyo="Modelo: twee keer beluisteren"))
 P(actx(5, "Escribe tu lista de la compra",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Schrijf vijf producten met een <b>juiste cantidad</b> voor een feestje.</p>'
-  '<div class="wbox sm"></div>', apoyo="MARCO (un kilo de… / una botella de…)"))
+  '<div class="wbox sm"></div>', apoyo="Marco: un kilo de… / una botella de…"))
 P(actx(6, "¿Es correcto? — ejemplo o no-ejemplo",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Kruis ✔ (goed) of ✘ (fout) aan en verbeter de foute.</p>'
@@ -598,7 +598,7 @@ P(actx(6, "¿Es correcto? — ejemplo o no-ejemplo",
   '<tr><td>mucho fruta</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>muchas manzanas</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>un poco de leche</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
-  '<tr><td>muchos agua</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="PISTA (m/v · telbaar) → SIN AYUDA"))
+  '<tr><td>muchos agua</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Pista: m/v · telbaar)"))
 P(actx(7, "Empareja: cantidad ↔ producto",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Welke cantidad past logisch? Verbind (schrijf de letter).</p>'
@@ -606,16 +606,16 @@ P(actx(7, "Empareja: cantidad ↔ producto",
   '<tr><td>1 · una botella de</td><td><span class="wl sm"></span></td><td>A · arroz</td></tr>'
   '<tr><td>2 · un kilo de</td><td><span class="wl sm"></span></td><td>B · agua</td></tr>'
   '<tr><td>3 · un paquete de</td><td><span class="wl sm"></span></td><td>C · queso</td></tr>'
-  '<tr><td>4 · un poco de</td><td><span class="wl sm"></span></td><td>D · tomates</td></tr></tbody></table>', apoyo="BANCO"))
+  '<tr><td>4 · un poco de</td><td><span class="wl sm"></span></td><td>D · tomates</td></tr></tbody></table>', apoyo="Banco de palabras"))
 P(regla("Regla · cantidades",
   '<p><b>mucho/-a/-os/-as</b> past zich aan bij het woord (much<b>o</b> pan · much<b>a</b> fruta · much<b>os</b> tomates · much<b>as</b> uvas). '
   '<b>un poco de</b> (= een beetje) blijft altijd gelijk en gebruik je bij <b>niet-telbare</b> dingen (queso, leche, agua). '
   '<br>🔴 Envases: <b>un kilo de</b>, <b>una botella de</b>, <b>un paquete de</b> + product.</p>'))
 P(tarea_com("Tarea comunicativa · «En el mercado»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
-  '<p><b>Afzender·ontvanger·doel·situatie·resultaat:</b> A = cliente met een lijst, B = vendedor/a in de mercado. Vraag om producten met een <b>cantidad</b>; B antwoordt met de prijs. Wissel. <span class="gloss">«¿Me pone un kilo de tomates? —Claro, son dos euros.»</span></p>'
+  '<p><b>Situación:</b> A = cliente met een lijst, B = vendedor/a in de mercado. Vraag om producten met een <b>cantidad</b>; B antwoordt met de prijs. Wissel. <span class="gloss">«¿Me pone un kilo de tomates? —Claro, son dos euros.»</span></p>'
   '<p style="margin-left:12.5mm">Mi compra (3 productos + cantidad): <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Apoyo: MARCO (¿me pone…? + cantidad) → SIN AYUDA</div>'))
+  '<div class="steun" style="margin-left:12.5mm">Marco: ¿me pone…? + cantidad</div>'))
 P('<div class="route-note">🎮 <b>Juega online:</b> «cantidades» (tetris), «un poco de o muchos» en «señala en el mercado» met zelfcorrectie.</div>')
 P('</div>')  # page §1.2
 
@@ -665,7 +665,7 @@ P('<div class="divider">Practicar · §2.2</div>')
 P(actx(1, "Conjuga ir",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Vul de vorm van <b>ir</b> in.</p>'
-  '<p style="margin-left:12.5mm">yo <span class="wl sm"></span> · tú <span class="wl sm"></span> · él <span class="wl sm"></span> · nosotros <span class="wl sm"></span> · ellos <span class="wl sm"></span></p>', apoyo="PISTA (v-o-y…) "))
+  '<p style="margin-left:12.5mm">yo <span class="wl sm"></span> · tú <span class="wl sm"></span> · él <span class="wl sm"></span> · nosotros <span class="wl sm"></span> · ellos <span class="wl sm"></span></p>', apoyo="Pista: v-o-y…"))
 P(actx(2, "Substitutie: cambia la persona",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Herschrijf de zin <b>«voy a comer»</b> voor elke persoon.</p>'
@@ -673,7 +673,7 @@ P(actx(2, "Substitutie: cambia la persona",
   '<tr><td>tú</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>nosotros</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>ella</td><td><span class="wl md"></span></td></tr>'
-  '<tr><td>ellos</td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="MARCO (tabla ir) → SIN AYUDA"))
+  '<tr><td>ellos</td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Marco: tabla ir)"))
 P(actx(3, "Completa con la forma correcta (cloze)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 6 min"},{"t":"★★☆"}],
   '<p>Vul <b>ir a + infinitivo</b> aan (persoon tussen haakjes). <span class="gloss">Let op: vorm van ir + a + infinitief.</span></p>'
@@ -685,20 +685,20 @@ P(actx(3, "Completa con la forma correcta (cloze)",
   '6. (Yo) no <span class="wl md"></span> beber refresco. <i>(beber)</i><br>'
   '7. ¿(Vosotros) <span class="wl md"></span> cenar en casa? <i>(cenar)</i><br>'
   '8. Lucía <span class="wl md"></span> preparar una tortilla. <i>(preparar)</i></p>'
-  '<p style="margin-left:12.5mm" class="gloss">✅ De oplossingen staan online (zelfcorrectie op de digitale pagina).</p>', apoyo="PISTA (vorm van ir gegeven idee) → SIN AYUDA"))
+  '<p style="margin-left:12.5mm" class="gloss">✅ De oplossingen staan online (zelfcorrectie op de digitale pagina).</p>', apoyo="Pista: vorm van ir gegeven idee)"))
 P(actx(4, "Cadena de transformación",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Begin met <b>«Voy a comer un taco.»</b> en voer elke opdracht uit (schrijf de hele zin).</p>'
-  '<p style="margin-left:12.5mm">→ maak er een <b>vraag</b> van (tú): <span class="wl lg"></span><br>→ verander naar <b>nosotros</b>: <span class="wl lg"></span><br>→ maak <b>ontkennend</b> (yo): <span class="wl lg"></span><br>→ voeg <b>«mañana»</b> toe: <span class="wl lg"></span></p>', apoyo="PISTA → SIN AYUDA"))
+  '<p style="margin-left:12.5mm">→ maak er een <b>vraag</b> van (tú): <span class="wl lg"></span><br>→ verander naar <b>nosotros</b>: <span class="wl lg"></span><br>→ maak <b>ontkennend</b> (yo): <span class="wl lg"></span><br>→ voeg <b>«mañana»</b> toe: <span class="wl lg"></span></p>', apoyo="Pista"))
 P(actx(5, "¿Qué vas a pedir? — escribe",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Schrijf drie zinnen: wat je <b>vas a comer</b>, <b>a beber</b> en <b>a probar</b> in México.</p>'
-  '<div class="wbox sm"></div>', apoyo="MARCO (Voy a … / Voy a probar …)"))
+  '<div class="wbox sm"></div>', apoyo="Marco: Voy a … / Voy a probar …"))
 P(tarea_com("Tarea comunicativa · «Nuestros planes para la cena»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 7 min"},{"t":"★★★"}],
-  '<p><b>Afzender·ontvanger·doel·situatie·resultaat:</b> vertel elkaar wat jullie vanavond <b>gaan eten en drinken</b> (ir a + infinitivo) en noteer één plan van je buur. <span class="gloss">«Esta noche voy a cenar pasta. ¿Y tú?»</span></p>'
+  '<p><b>Situación:</b> vertel elkaar wat jullie vanavond <b>gaan eten en drinken</b> (ir a + infinitivo) en noteer één plan van je buur. <span class="gloss">«Esta noche voy a cenar pasta. ¿Y tú?»</span></p>'
   '<p style="margin-left:12.5mm">El plan de mi compañero/a: <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Apoyo: MARCO (Voy a … · Vamos a …) → SIN AYUDA</div>'))
+  '<div class="steun" style="margin-left:12.5mm">Marco: Voy a … · Vamos a …</div>'))
 P('<div class="route-note">🎮 <b>Juega online:</b> «voy a… (cloze)», «ordena la cena» en de presente-Tetris met zelfcorrectie.</div>')
 P('</div>')  # page §2.2
 
@@ -747,16 +747,16 @@ P(actx(1, "Escucha: ¿camarero o cliente?",
   '<tr><td>Para mí, una ensalada.</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>¿Me pone un refresco?</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>¿Y para beber?</td><td>☐</td><td>☐</td></tr>'
-  '<tr><td>La cuenta, por favor.</td><td>☐</td><td>☐</td></tr></tbody></table>', apoyo="MODELO (dialoog §3.1)"))
+  '<tr><td>La cuenta, por favor.</td><td>☐</td><td>☐</td></tr></tbody></table>', apoyo="Modelo: dialoog §3.1"))
 P(actx(2, "Ordena el diálogo del restaurante",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p><i>zinnen ordenen (1–6).</i> Zet de bestel-dialoog in de juiste volgorde.</p>'
   '<p style="margin-left:12.5mm">___ ¿Y para beber? &nbsp; ___ Buenas tardes, ¿qué va a tomar? &nbsp; ___ La cuenta, por favor.<br>'
-  '___ Para mí, de segundo, pollo. &nbsp; ___ ¿Me pone agua? &nbsp; ___ ¡Que aproveche!</p>', apoyo="BANCO (nummers 1–6)"))
+  '___ Para mí, de segundo, pollo. &nbsp; ___ ¿Me pone agua? &nbsp; ___ ¡Que aproveche!</p>', apoyo="Banco de palabras: nummers 1–6"))
 P(actx(3, "Completa el diálogo (gap-fill)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Vul de handige zinnen aan.</p>'
-  '<p style="margin-left:12.5mm">—Buenas, ¿qué ___ a tomar? &nbsp;—___ mí, una sopa. &nbsp;—¿Me ___ agua? &nbsp;—Sí. La ___, por favor.<br><span class="gloss">banco: va · Para · pone · cuenta</span></p>', apoyo="BANCO"))
+  '<p style="margin-left:12.5mm">—Buenas, ¿qué ___ a tomar? &nbsp;—___ mí, una sopa. &nbsp;—¿Me ___ agua? &nbsp;—Sí. La ___, por favor.<br><span class="gloss">banco: va · Para · pone · cuenta</span></p>', apoyo="Banco de palabras"))
 P(actx(4, "Empareja: plato ↔ categoría",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Verbind het gerecht met de gang (schrijf de letter).</p>'
@@ -764,16 +764,16 @@ P(actx(4, "Empareja: plato ↔ categoría",
   '<tr><td>1 · una sopa</td><td><span class="wl sm"></span></td><td>A · de postre</td></tr>'
   '<tr><td>2 · pollo con arroz</td><td><span class="wl sm"></span></td><td>B · de primero</td></tr>'
   '<tr><td>3 · fruta / churros</td><td><span class="wl sm"></span></td><td>C · de segundo</td></tr>'
-  '<tr><td>4 · agua / refresco</td><td><span class="wl sm"></span></td><td>D · para beber</td></tr></tbody></table>', apoyo="BANCO"))
+  '<tr><td>4 · agua / refresco</td><td><span class="wl sm"></span></td><td>D · para beber</td></tr></tbody></table>', apoyo="Banco de palabras"))
 P(actx(5, "Pide para ti (escribe tu pedido)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Schrijf jouw bestelling: primero, segundo, postre y bebida — met cortesía.</p>'
-  '<div class="wbox sm"></div>', apoyo="MARCO (Para mí… / ¿Me pone…?) → SIN AYUDA"))
+  '<div class="wbox sm"></div>', apoyo="Marco: Para mí… / ¿Me pone…?)"))
 P(tarea_com("Tarea comunicativa · «En el restaurante»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 9 min"},{"t":"★★★"}],
-  '<p><b>Afzender·ontvanger·doel·situatie·resultaat:</b> A = camarero/a, B = cliente. Speel de hele scène: begroeten → bestellen (primero/segundo/beber) → ¡que aproveche! → la cuenta. Wissel van rol. <span class="gloss">Gebruik: ¿Qué va a tomar? · Para mí… · ¿Me pone…? · La cuenta, por favor.</span></p>'
+  '<p><b>Situación:</b> A = camarero/a, B = cliente. Speel de hele scène: begroeten → bestellen (primero/segundo/beber) → ¡que aproveche! → la cuenta. Wissel van rol. <span class="gloss">Gebruik: ¿Qué va a tomar? · Para mí… · ¿Me pone…? · La cuenta, por favor.</span></p>'
   '<p style="margin-left:12.5mm">☐ begroet · ☐ primero · ☐ segundo · ☐ bebida · ☐ la cuenta<br>Mijn bestelling: <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Apoyo: MARCO (rollenkaart) → SIN AYUDA</div>'))
+  '<div class="steun" style="margin-left:12.5mm">Marco: rollenkaart</div>'))
 P('<div class="route-note">🎮 <b>Juega online:</b> «ordena el diálogo», «¿camarero o cliente?» en de simulatie «¡Pide en el restaurante!».</div>')
 P('</div>')  # page §3.2
 
@@ -815,21 +815,21 @@ P(actx(1, "¿lo, la, los o las?",
   '<tr><td>el pan</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>los tacos</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>las gambas</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>'
-  '<tr><td>la carta</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></tbody></table>', apoyo="MODELO (regel §4.1)"))
+  '<tr><td>la carta</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></tbody></table>', apoyo="Modelo: regel §4.1"))
 P(actx(2, "Responde con el pronombre (cloze)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>Antwoord met <b>lo/la/los/las</b> + het werkwoord.</p>'
   '<p style="margin-left:12.5mm">a) ¿Me trae la cuenta? —Sí, ___ traigo.<br>'
   'b) ¿Quieres el postre? —Sí, ___ quiero.<br>'
   'c) ¿Traes los refrescos? —___ traigo ahora.<br>'
-  'd) ¿Pides las gambas? —Sí, ___ pido.<br><span class="gloss">✅ Zelfcorrectie op de digitale pagina.</span></p>', apoyo="PISTA (m/v · ev/mv) → SIN AYUDA"))
+  'd) ¿Pides las gambas? —Sí, ___ pido.<br><span class="gloss">✅ Zelfcorrectie op de digitale pagina.</span></p>', apoyo="Pista: m/v · ev/mv)"))
 P(actx(3, "Transforma sin repetir",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★★"}],
   '<p>Herschrijf zonder het voorwerp te herhalen.</p>'
   '<table class="mp"><thead><tr><th>Frase</th><th>Con pronombre</th></tr></thead><tbody>'
   '<tr><td>Traigo la carta.</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Quiero el café.</td><td><span class="wl md"></span></td></tr>'
-  '<tr><td>Pido los tacos.</td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="MARCO (lo/la/los/las) → SIN AYUDA"))
+  '<tr><td>Pido los tacos.</td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Marco: lo/la/los/las)"))
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha y marca el pronombre.</b> Cuatro respuestas cortas del camarero. <span class="gloss">Kruis aan welk pronomen je hoort.</span></div>',
            qr("Escanea y escucha", "Audio 5.3 · ¿lo/la/los/las? · 0:40", seed=53)))
 P(actx(4, "Escucha: ¿qué pronombre oyes?",
@@ -839,12 +839,12 @@ P(actx(4, "Escucha: ¿qué pronombre oyes?",
   '<tr><td>1</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>2</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>3</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>'
-  '<tr><td>4</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></tbody></table>', apoyo="MODELO (vier opties open)"))
+  '<tr><td>4</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></tbody></table>', apoyo="Modelo: vier opties open"))
 P(tarea_com("Tarea comunicativa · «¿Me lo trae?»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★☆"}],
-  '<p><b>Afzender·ontvanger·doel·situatie·resultaat:</b> A vraagt om iets (la carta, el pan, los tacos…), B antwoordt kort met het pronomen. Wissel. <span class="gloss">«¿Me trae la carta? —Sí, la traigo.»</span></p>'
+  '<p><b>Situación:</b> A vraagt om iets (la carta, el pan, los tacos…), B antwoordt kort met het pronomen. Wissel. <span class="gloss">«¿Me trae la carta? —Sí, la traigo.»</span></p>'
   '<p style="margin-left:12.5mm">Un ejemplo nuestro: <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Apoyo: MARCO (lo/la/los/las) → SIN AYUDA</div>'))
+  '<div class="steun" style="margin-left:12.5mm">Marco: lo/la/los/las</div>'))
 P('<div class="route-note">🎮 <b>Juega online:</b> «¿lo, la, los o las?» met zelfcorrectie.</div>')
 P('</div>')  # page §4.2
 
@@ -862,7 +862,7 @@ P('<div class="txtmeta"><span class="tm"><b>Tipo:</b> la carta (menú) · receta
 P(actx(1, "Antes de leer: predice",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 2 min"},{"t":"★☆☆"}],
   '<p>Bekijk de vorm en titels. ¿Qué platos esperas encontrar?</p>'
-  '<p style="margin-left:12.5mm">Espero leer sobre: <span class="wl full"></span></p>', apoyo="MODELO (sopa, pollo, postre…)"))
+  '<p style="margin-left:12.5mm">Espero leer sobre: <span class="wl full"></span></p>', apoyo="Modelo: sopa, pollo, postre…"))
 P('<div class="fams" style="margin-top:2mm">')
 P(menu("La Cocina de Lucía 🇪🇸", [
   ("De primero", [("Sopa de tomate","4 €"),("Ensalada mixta","5 €")]),
@@ -884,7 +884,7 @@ P(actx(2, "Escanea: completa la tabla",
   '<table class="mp"><thead><tr><th></th><th>Un primero / entrante</th><th>Un segundo / fuerte</th><th>Un postre</th></tr></thead><tbody>'
   '<tr><td><b>Lucía 🇪🇸</b></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td><b>Diego 🇲🇽</b></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
-  '</tbody></table>', apoyo="MODELO (menús boven)"))
+  '</tbody></table>', apoyo="Modelo: menús boven"))
 P(actx(3, "¿Verdadero o falso? + prueba",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p><i>juist/fout + bewijs (evidence).</i> Waar of niet waar? Noteer de <b>woorden uit de carta</b> die het bewijzen.</p>'
@@ -893,11 +893,11 @@ P(actx(3, "¿Verdadero o falso? + prueba",
   '<tr><td>El pollo con patatas cuesta 9 €.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Los dos tienen postre de fruta.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>El ceviche es un postre.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
-  '</tbody></table>', apoyo="PISTA (onderstreep in de carta)"))
+  '</tbody></table>', apoyo="Pista: onderstreep in de carta"))
 P(actx(4, "Del contexto: ¿qué significa?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Wat betekent <b>«plato fuerte»</b> en <b>«casero»</b>? Kies + leg uit welke aanwijzing hielp.</p>'
-  '<p style="margin-left:12.5mm">plato fuerte = ☐ hoofdgerecht ☐ dessert &nbsp;·&nbsp; casero = ☐ zelfgemaakt ☐ duur<br>Pista que me ayudó: <span class="wl lg"></span></p>', apoyo="PISTA"))
+  '<p style="margin-left:12.5mm">plato fuerte = ☐ hoofdgerecht ☐ dessert &nbsp;·&nbsp; casero = ☐ zelfgemaakt ☐ duur<br>Pista que me ayudó: <span class="wl lg"></span></p>', apoyo="Pista"))
 P('<div class="ptexts">'
   f'<div class="ptext"><div class="ph"><div class="av">{AV["diego"]}</div><div><div class="nm">Diego · una receta</div><div class="fr">guacamole en 3 pasos</div></div></div>'
   '<p><b>Ingredientes:</b> un <span class="evi">aguacate</span>, un <span class="evi">tomate</span>, un poco de <span class="evi">cebolla</span> y <span class="evi">lima</span>.<br>'
@@ -907,12 +907,12 @@ P('<div class="ptexts">'
 P(actx(5, "Ordena la receta",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Zet de stappen van de receta in volgorde (1–4) met de conectores.</p>'
-  '<p style="margin-left:12.5mm">___ Después, exprime la lima. &nbsp; ___ Primero, abre el aguacate. &nbsp; ___ ¡Que aproveche! &nbsp; ___ Luego, añade el tomate y la cebolla.</p>', apoyo="BANCO (primero/luego/después)"))
+  '<p style="margin-left:12.5mm">___ Después, exprime la lima. &nbsp; ___ Primero, abre el aguacate. &nbsp; ___ ¡Que aproveche! &nbsp; ___ Luego, añade el tomate y la cebolla.</p>', apoyo="Banco de palabras: primero/luego/después"))
 P(tarea_com("Tarea comunicativa · «¿Qué vas a pedir?» (keten lezen→spreken)",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
-  '<p><b>Keten lezen → spreken.</b> Kies één van de twee cartas. Zeg wat je <b>vas a pedir</b> (primero, segundo, postre, bebida) én waarom. Je buur bestelt uit de andere carta. <span class="gloss">«Voy a pedir tacos de pollo porque me gusta el pollo.»</span></p>'
+  '<p><b></b> Kies één van de twee cartas. Zeg wat je <b>vas a pedir</b> (primero, segundo, postre, bebida) én waarom. Je buur bestelt uit de andere carta. <span class="gloss">«Voy a pedir tacos de pollo porque me gusta el pollo.»</span></p>'
   '<div class="wbox sm"></div>'
-  '<div class="steun" style="margin-left:0mm">Apoyo: MARCO (Voy a pedir… porque…) → SIN AYUDA</div>'))
+  '<div class="steun" style="margin-left:0mm">Marco: Voy a pedir… porque…</div>'))
 P('<div class="route-note">🎮 <b>Sigue online:</b> luister de cartas (TTS), lees de receta en neem je bestelling op (recorder) op de digitale pagina.</div>')
 P('</div>')  # page §5b
 
@@ -932,27 +932,27 @@ P('<table class="mp"><thead><tr><th>Conector</th><th>Uso</th><th>Ejemplo (receta
 P(actx(1, "Une la receta con conectores",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Vul het juiste verbindingswoord in (primero/luego/después/por último).</p>'
-  '<p style="margin-left:12.5mm">___ , pon el arroz en el agua. ___ , añade la sal. ___ , espera 15 minutos. ___ , ¡a comer!<br><span class="wl full"></span></p>', apoyo="BANCO"))
+  '<p style="margin-left:12.5mm">___ , pon el arroz en el agua. ___ , añade la sal. ___ , espera 15 minutos. ___ , ¡a comer!<br><span class="wl full"></span></p>', apoyo="Banco de palabras"))
 P('<h3 style="margin-top:6mm">Ortografía · la ñ y los sonidos de la comida</h3>')
 P('<div class="truc"><b>🔴 La ñ:</b> <b>ñ</b> klinkt als «nj»: <b>ñam-ñam</b>, la <b>pi<span class="trap">ñ</span>a</b>, el <b>ni<span class="trap">ñ</span>o</b>. Verwar niet met <b>n</b>: <i>pena</i> ≠ <i>peña</i>.</div>')
 P(actx(2, "¿n o ñ?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Vul <b>n</b> of <b>ñ</b> in.</p>'
-  '<p style="margin-left:12.5mm">la pi__a (ananas) · ma__a__a (morgen) · el ni__o · la ca__a · a__o (jaar)<br><span class="gloss">Let op: piña, mañana, niño, caña, año.</span></p>', apoyo="PISTA (klank «nj»)"))
+  '<p style="margin-left:12.5mm">la pi__a (ananas) · ma__a__a (morgen) · el ni__o · la ca__a · a__o (jaar)<br><span class="gloss">Let op: piña, mañana, niño, caña, año.</span></p>', apoyo="Pista: klank «nj»"))
 P(actx(3, "Dictado corto de la cocina",
   [{"t":"👂 Escuchar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p><i>dictee (reconstrueren).</i> Escucha y escribe cuatro palabras de comida (con tilde/ñ).</p>'
-  '<p style="margin-left:12.5mm">1. <span class="wl md"></span> 2. <span class="wl md"></span> 3. <span class="wl md"></span> 4. <span class="wl md"></span></p>', apoyo="MODELO (2×)"))
+  '<p style="margin-left:12.5mm">1. <span class="wl md"></span> 2. <span class="wl md"></span> 3. <span class="wl md"></span> 4. <span class="wl md"></span></p>', apoyo="Modelo: 2×"))
 P(actx(4, "Escribe tu mini-receta con conectores",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Schrijf een receta van 3–4 stappen (un bocadillo, una ensalada…) met <b>primero · luego · después · por último</b>.</p>'
-  '<div class="wbox sm"></div>', apoyo="SIN AYUDA"))
+  '<div class="wbox sm"></div>', apoyo=""))
 P(actx(5, "Corrige la receta",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Zoek de fout (conector, cantidad of ñ/spelling) en herschrijf correct.</p>'
   '<p style="margin-left:12.5mm">1) <span class="trap">Primero corta el tomate. Primero añade la sal.</span> → <span class="wl lg"></span><br>'
   '2) <span class="trap">Necesito mucho fruta.</span> → <span class="wl lg"></span><br>'
-  '3) <span class="trap">Me gusta la pina y la cana.</span> → <span class="wl lg"></span></p>', apoyo="MODELO → SIN AYUDA"))
+  '3) <span class="trap">Me gusta la pina y la cana.</span> → <span class="wl lg"></span></p>', apoyo="Modelo"))
 P('<div class="route-note">🎮 <b>Practica online:</b> «ordena la receta» en de conectoren-oefeningen met zelfcorrectie.</div>')
 P('</div>')  # page Taller
 
@@ -995,11 +995,11 @@ P(actx(1, "Comprensión — verdadero o falso",
   '<table class="mp"><thead><tr><th>Afirmación</th><th>V/F</th><th>Corrección</th></tr></thead><tbody>'
   '<tr><td>El taco es de maíz.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>En España se cena a las 18:00.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
-  '<tr><td>La arepa es de Colombia.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="MODELO (tekst boven)"))
+  '<tr><td>La arepa es de Colombia.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Modelo: tekst boven"))
 P(actx(2, "Un plato de mi país / mi familia",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Schrijf 2–3 zinnen over een typisch gerecht bij jou thuis (¿qué es? ¿qué lleva? ¿cuándo lo comes?). Presenteer aan je buur.</p>'
-  '<div class="wbox sm"></div>', apoyo="MARCO (Es… · Lleva… · Lo comemos…) → SIN AYUDA"))
+  '<div class="wbox sm"></div>', apoyo="Marco: Es… · Lleva… · Lo comemos…)"))
 P(actx(3, "Empareja: plato ↔ país",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Verbind het typische gerecht met het land (schrijf de letter).</p>'
@@ -1007,7 +1007,7 @@ P(actx(3, "Empareja: plato ↔ país",
   '<tr><td>1 · los tacos</td><td><span class="wl sm"></span></td><td>A · España 🇪🇸</td></tr>'
   '<tr><td>2 · la paella</td><td><span class="wl sm"></span></td><td>B · Perú 🇵🇪</td></tr>'
   '<tr><td>3 · la arepa</td><td><span class="wl sm"></span></td><td>C · México 🇲🇽</td></tr>'
-  '<tr><td>4 · el ceviche</td><td><span class="wl sm"></span></td><td>D · Colombia 🇨🇴</td></tr></tbody></table>', apoyo="BANCO"))
+  '<tr><td>4 · el ceviche</td><td><span class="wl sm"></span></td><td>D · Colombia 🇨🇴</td></tr></tbody></table>', apoyo="Banco de palabras"))
 P('<div class="route-note">🎮 <b>Sigue online:</b> «plato ↔ país» (match) en de mercado-spellen op de digitale pagina.</div>')
 P('</div>')  # page Cultura
 
@@ -1062,7 +1062,7 @@ P('<div class="esen"><b class="tt">Lo esencial de un vistazo</b><ul>'
   '<li><b>Pedir con cortesía:</b> ¿Qué va a tomar? · Para mí… · ¿Me pone…? · ¿Me trae…? · La cuenta, por favor. De primero/segundo/postre.</li>'
   '<li><b>lo/la/los/las:</b> ¿La cuenta? → <b>La</b> traigo. ¿Los tacos? → <b>Los</b> quiero (vóór het werkwoord).</li>'
   '<li><b>Las trampas:</b> 🔴 much<b>a</b> fruta ≠ mucho · 🔴 voy <b>a</b> comer (a niet vergeten) · 🔴 pide con cortesía, niet enkel «quiero» · 🔴 la ñ (piña).</li></ul></div>')
-P('<div class="route-note">🎮 <b>Repasa jugando (online):</b> 14 spelletjes met zelfcorrectie en spreiding op de digitale pagina.</div>')
+P('<div class="route-note">🎮 <b>Repasa jugando (online):</b> 14 spelletjes met zelfcorrectie op de digitale pagina.</div>')
 P('<div class="se" style="margin-top:6mm">Semáforo — ¿cómo lo llevas?</div>')
 P('<table class="sem"><tr class="semrow"><th>Puedo…</th><th>🔴 nog niet</th><th>🟠 met steun</th><th>🟢 zelfstandig</th></tr>'
   '<tr><td><b>comida y bebida</b> benoemen (fruta, verdura, la mesa)</td><td>☐</td><td>☐</td><td>☐</td></tr>'
@@ -1083,7 +1083,7 @@ GRP = [("comida","Comida · platos y básicos"),("fruta","La fruta"),("verdura",
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">V</span><span class="pk">§V · Vocabulario</span>')
 P('<div class="intro"><b>ES:</b> Todas las palabras de la unidad. En la página digital: <b>flip cards</b> (ES↔NL), audio (TTS) y buscador. <span class="gloss">Online: flip cards, audio en zoekfunctie.</span></div>')
-P(lpd(("7","woordenschat inzetten (receptief & productief)")))
+P(lpd(("7","woordenschat inzetten (begrijpen en zelf gebruiken)")))
 P('</div>')
 P('<p style="font-size:9.6pt">La <b>comida</b> als netwerk — drie families die de hele unit dragen:</p>')
 P(clusters([
@@ -1101,21 +1101,21 @@ for key, titel in GRP:
 P('<div class="divider">Escalera de práctica · V.1–V.5</div>')
 P(actx("V.1", "Reconocer — ES → NL",
   [{"t":"🔍 Leer","skill":True},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Schrijf de vertaling. el pollo = <span class="wl md"></span> · la cuenta = <span class="wl md"></span> · un kilo de = <span class="wl md"></span> · el aguacate = <span class="wl md"></span></p>', apoyo="MODELO"))
+  '<p>Schrijf de vertaling. el pollo = <span class="wl md"></span> · la cuenta = <span class="wl md"></span> · un kilo de = <span class="wl md"></span> · el aguacate = <span class="wl md"></span></p>', apoyo="Modelo"))
 P(actx("V.2", "Distinguir — sorteer per familia",
   [{"t":"🔍 Analizar","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Sorteer: <span class="words"><b>la manzana · el tenedor · el zumo · la carta · la lechuga · el vaso</b></span></p>'
-  + sortcols([("fruta/verdura",""),("bebida",""),("mesa/restaurante","")], eigen=False), apoyo="BANCO"))
+  + sortcols([("fruta/verdura",""),("bebida",""),("mesa/restaurante","")], eigen=False), apoyo="Banco de palabras"))
 P(actx("V.3", "Recordar — NL → ES (con letra)",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Vul het Spaanse woord aan (beginletter gegeven). de rekening = <b>c</b>___ · het brood = <b>p</b>___ · de vork = <b>t</b>___ · lekker = <b>r</b>___<br><span class="wl full"></span></p>', apoyo="LETRA INICIAL"))
+  '<p>Vul het Spaanse woord aan (beginletter gegeven). de rekening = <b>c</b>___ · het brood = <b>p</b>___ · de vork = <b>t</b>___ · lekker = <b>r</b>___<br><span class="wl full"></span></p>', apoyo="Primera letra"))
 P(actx("V.4", "Producir — una frase con tres palabras",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★★"}],
-  '<p>Maak één correcte zin met <b>voy a · un poco de · rico</b>.</p><div class="wbox sm"></div>', apoyo="SIN AYUDA"))
+  '<p>Maak één correcte zin met <b>voy a · un poco de · rico</b>.</p><div class="wbox sm"></div>', apoyo=""))
 P(actx("V.5", "Comunicar — mi menú ideal",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Schrijf jouw ideale menu (primero, segundo, postre, bebida) met <b>voy a pedir…</b> én telkens waarom. Zeg het daarna hardop tegen je buur, die als camarero reageert.</p>'
-  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="MARCO (Voy a pedir … porque …) → SIN AYUDA"))
+  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="Marco: Voy a pedir … porque …)"))
 P(mispal("Mis palabras de la unidad", 4))
 P('<div class="guide"><div class="ic">🎴</div><div><span class="hand">Sigue en la página digital:</span> <span class="g">flip cards (ES↔NL), audio en de 20 spellen bouwen de steun verder af.</span></div></div>')
 P('</div>')  # page §V

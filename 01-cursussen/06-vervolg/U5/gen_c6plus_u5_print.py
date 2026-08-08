@@ -130,12 +130,12 @@ P(actx(AN(), "¿perfecto o indefinido? (repaso)",
   '<p>Welke marker hoort bij welke tijd? Vul <b>perfecto</b> of <b>indefinido</b> in.</p>'
   '<p style="margin-left:12.5mm">1. hoy → <span class="wl md"></span> &nbsp; 2. en 1919 → <span class="wl md"></span> &nbsp; 3. esta semana → <span class="wl md"></span><br>'
   '4. ayer → <span class="wl md"></span> &nbsp; 5. el año pasado → <span class="wl md"></span> &nbsp; 6. últimamente → <span class="wl md"></span></p>',
-  apoyo="PISTA (hoy/esta semana/últimamente → perfecto · en …/ayer/el año pasado → indefinido)"))
+  apoyo="Pista: hoy/esta semana/últimamente → perfecto · en …/ayer/el año pasado → indefinido"))
 P(actx(AN(), "Presente → una acción del pasado (repaso)",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Schrijf 2 dingen die je <b>gisteren</b> deed (probeer een verleden-vorm; we oefenen ze zo).</p>'
   '<p style="margin-left:12.5mm">Ayer <span class="wl lg"></span><br>El fin de semana pasado <span class="wl lg"></span></p>',
-  apoyo="MARCO"))
+  apoyo="Marco"))
 sec_close()
 
 # ================= §1 · BIOGRAFÍA Y LOGROS =================
@@ -154,21 +154,21 @@ P(actx(AN(), "Relaciona la persona con su logro",
   '<div class="wcol"><div class="ch">Persona</div><div class="cb short">1. el escritor &nbsp; 2. la pintora &nbsp; 3. el futbolista &nbsp; 4. el cantante</div></div>'
   '<div class="wcol"><div class="ch">Logro</div><div class="cb short">a. ganó el Mundial &nbsp; b. escribió novelas &nbsp; c. compuso canciones &nbsp; d. pintó cuadros</div></div></div>'
   '<p style="margin-left:12.5mm">1-<span class="wl sm"></span> 2-<span class="wl sm"></span> 3-<span class="wl sm"></span> 4-<span class="wl sm"></span></p>',
-  apoyo="SIN AYUDA"))
+  apoyo=""))
 P(actx(AN(), "Clasifica: ¿etapa, logro o persona?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Zet elk woord in de juiste kolom: <span class="words"><b>nacer · ganar · el pintor · casarse · escribir · el cantante · morir · descubrir</b></span></p>'
-  + sortcols([("Etapa de la vida",""),("Logro (verbo)",""),("Persona (oficio)","")], eigen=True), apoyo="BANCO"))
+  + sortcols([("Etapa de la vida",""),("Logro (verbo)",""),("Persona (oficio)","")], eigen=True), apoyo="Banco de palabras"))
 P(actx(AN(), "La familia de palabras",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Vul het beroep aan.</p>'
   '<p style="margin-left:12.5mm">escribir → el <span class="wl sm"></span> · pintar → el <span class="wl sm"></span> · cantar → el <span class="wl sm"></span> · la ciencia → el <span class="wl sm"></span></p>',
-  apoyo="PISTA (escritor · pintor · cantante · científico)"))
+  apoyo="Pista: escritor · pintor · cantante · científico"))
 P(actx(AN(), "Mi persona admirada · escribe",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Schrijf 3 zinnen over een persoon die je bewondert (beroep, wat hij/zij deed).</p>'
   '<p style="margin-left:12.5mm">Admiro a <span class="wl md"></span>. Fue <span class="wl md"></span>.<br>Es famoso/a porque <span class="wl lg"></span></p>',
-  apoyo="MARCO"))
+  apoyo="Marco"))
 sec_close()
 
 retos("biografia", "§1.4 · Retos — una vida en objetos y en cifras",
@@ -201,7 +201,7 @@ P(actx(AN(), "Forma el indefinido (regular)",
   '<p>Vorm het indefinido van de regelmatige werkwoorden. <b>Let op het accent</b> bij yo en él/ella.</p>'
   '<p style="margin-left:12.5mm">ganar → <span class="wl sm"></span> &nbsp; escribir → <span class="wl sm"></span> &nbsp; nacer → <span class="wl sm"></span><br>'
   'estudiar → <span class="wl sm"></span> &nbsp; vivir → <span class="wl sm"></span> &nbsp; pintar → <span class="wl sm"></span></p>',
-  apoyo="MODELO (-ó / -ió)"))
+  apoyo="Modelo: -ó / -ió"))
 P(actx(AN(), "La gran cloze · indefinido (biografía)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>Vul de <b>indefinido</b> in (infinitivo tussen haakjes).</p>'
@@ -209,12 +209,12 @@ P(actx(AN(), "La gran cloze · indefinido (biografía)",
   '3. Frida Kahlo <span class="wl md"></span> (pintar) autorretratos. &nbsp; 4. Messi <span class="wl md"></span> (ganar) el Mundial.<br>'
   '5. (Yo) <span class="wl md"></span> (estudiar) mucho ayer. &nbsp; 6. Nosotros <span class="wl md"></span> (comer) en el centro.<br>'
   '7. Gardel <span class="wl md"></span> (vivir) en Buenos Aires. &nbsp; 8. ¿(Tú) <span class="wl md"></span> (viajar) el año pasado?</p>',
-  apoyo="BANCO: nació · escribió · pintó · ganó · estudié · comimos · vivió · viajaste"))
+  apoyo="Banco de palabras: nació · escribió · pintó · ganó · estudié · comimos · vivió · viajaste"))
 P(actx(AN(), "Sustitución · cambia la persona",
   [{"t":"🔁 Practicar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Model: <b>Yo estudié y trabajé.</b> Herschrijf per persoon.</p>'
   '<p style="margin-left:12.5mm">tú → <span class="wl md"></span> &nbsp; ella → <span class="wl md"></span> &nbsp; nosotros → <span class="wl md"></span> &nbsp; ellos → <span class="wl md"></span></p>',
-  apoyo="LETRA (estudiaste y trabajaste…)"))
+  apoyo="Primera letra: estudiaste y trabajaste…"))
 P('</div>')
 
 # §2.2 fuertes + cloze
@@ -238,21 +238,21 @@ P(actx(AN(), "Empareja: infinitivo ↔ indefinido (él)",
   '<div class="wcol"><div class="ch">Infinitivo</div><div class="cb short">1. hacer &nbsp; 2. ser/ir &nbsp; 3. tener &nbsp; 4. decir &nbsp; 5. venir</div></div>'
   '<div class="wcol"><div class="ch">Indefinido</div><div class="cb short">a. tuvo &nbsp; b. vino &nbsp; c. hizo &nbsp; d. dijo &nbsp; e. fue</div></div></div>'
   '<p style="margin-left:12.5mm">1-<span class="wl sm"></span> 2-<span class="wl sm"></span> 3-<span class="wl sm"></span> 4-<span class="wl sm"></span> 5-<span class="wl sm"></span></p>',
-  apoyo="SIN AYUDA"))
+  apoyo=""))
 P(actx(AN(), "Cloze · pretéritos fuertes",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p><i>cloze (irregular).</i> Vul de <b>indefinido</b> in.</p>'
   '<p style="margin-left:12.5mm">1. Evita <span class="wl md"></span> (ser) muy importante. &nbsp; 2. Maradona <span class="wl md"></span> (hacer) el «gol del siglo».<br>'
   '3. (Yo) <span class="wl md"></span> (tener) un buen día. &nbsp; 4. Gardel <span class="wl md"></span> (ir) a París.<br>'
   '5. El equipo <span class="wl md"></span> (estar) en la final. &nbsp; 6. Ella me <span class="wl md"></span> (dar) un regalo.</p>',
-  apoyo="BANCO: fue · hizo · tuve · fue · estuvo · dio"))
+  apoyo="Banco de palabras: fue · hizo · tuve · fue · estuvo · dio"))
 P(actx(AN(), "Del presente al indefinido · transforma",
   [{"t":"🔁 Practicar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Herschrijf de zin in de indefinido (ayer / el año pasado).</p>'
   '<p style="margin-left:12.5mm">1. Hace historia. → El año pasado <span class="wl md"></span><br>'
   '2. Va a París. → En 1933 <span class="wl md"></span> a París.<br>'
   '3. Tiene mucho éxito. → <span class="wl md"></span> mucho éxito.</p>',
-  apoyo="LETRA (hizo · fue · tuvo)"))
+  apoyo="Primera letra: hizo · fue · tuvo"))
 P('</div>')
 
 # §2.3 practicar + tarea com
@@ -267,18 +267,18 @@ P(actx(AN(), "Clínica de errores · el indefinido",
   '2. Frida pintó y tenió una vida difícil. → <span class="wl md"></span><br>'
   '3. Yo estudie mucho ayer. → <span class="wl md"></span><br>'
   '4. Messi ganó y fui campeón. → <span class="wl md"></span></p>',
-  apoyo="PISTA (hizo · tuvo · estudié · fue)"))
+  apoyo="Pista: hizo · tuvo · estudié · fue"))
 P(actx(AN(), "Sustitución · cambia la persona",
   [{"t":"🔁 Practicar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Model: <b>Yo escribí una carta.</b> Herschrijf per persoon.</p>'
   '<p style="margin-left:12.5mm">tú → <span class="wl md"></span> &nbsp; ella → <span class="wl md"></span> &nbsp; nosotros → <span class="wl md"></span> &nbsp; ellos → <span class="wl md"></span></p>',
-  apoyo="LETRA (escribiste…)"))
+  apoyo="Primera letra: escribiste…"))
 P(actx("★", "Tarea comunicativa · ¿qué hiciste ayer?",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
   '<p>Vraag je buur wat hij gisteren deed (¿qué hiciste ayer?) en antwoord met de <b>indefinido</b>. Noteer 2 dingen.</p>'
   '<p style="margin-left:12.5mm">— ¿Qué hiciste ayer? — <span class="wl lg"></span></p>'
   '<p style="margin-left:12.5mm">Mi compañero/a: 1. <span class="wl full"></span>2. <span class="wl full"></span></p>',
-  apoyo="MARCO"))
+  apoyo="Marco"))
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha «¿Quién fue…?»</b> en la web (TTS): una minibiografía misteriosa. <b>1ª vez:</b> ¿de qué oficio habla? · <b>2ª vez:</b> ¿qué hizo? Escribe los datos.</div>',
            qr("Escanea y escucha", "§2 · ¿Quién fue…?", seed=501)))
 P('</div>')
@@ -309,7 +309,7 @@ P(actx(AN(), "¿lo, la, los o las? (con se)",
   '<p style="margin-left:12.5mm">1. ¿El libro? Se <span class="wl sm"></span> di a Mateo. &nbsp; 2. ¿La carta? Se <span class="wl sm"></span> mandé.<br>'
   '3. ¿Los discos? Se <span class="wl sm"></span> presté. &nbsp; 4. ¿Las fotos? Se <span class="wl sm"></span> enseñé.<br>'
   '5. ¿El secreto? Se <span class="wl sm"></span> conté. &nbsp; 6. ¿La noticia? Se <span class="wl sm"></span> dije.</p>',
-  apoyo="MODELO (el→lo · la→la · los→los · las→las)"))
+  apoyo="Modelo: el→lo · la→la · los→los · las→las"))
 P(actx(AN(), "Empareja: pregunta ↔ respuesta (se lo)",
   [{"t":"🔗 Emparejar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Verbind de vraag met het juiste antwoord.</p>'
@@ -317,7 +317,7 @@ P(actx(AN(), "Empareja: pregunta ↔ respuesta (se lo)",
   '<div class="wcol"><div class="ch">Pregunta</div><div class="cb short">1. ¿El libro a Mateo? &nbsp; 2. ¿La carta a Nina? &nbsp; 3. ¿Los discos a Diego? &nbsp; 4. ¿Las fotos a Valen?</div></div>'
   '<div class="wcol"><div class="ch">Respuesta</div><div class="cb short">a. Se las enseñé. &nbsp; b. Se lo di. &nbsp; c. Se los presté. &nbsp; d. Se la mandé.</div></div></div>'
   '<p style="margin-left:12.5mm">1-<span class="wl sm"></span> 2-<span class="wl sm"></span> 3-<span class="wl sm"></span> 4-<span class="wl sm"></span></p>',
-  apoyo="SIN AYUDA"))
+  apoyo=""))
 P(actx(AN(), "Transforma · usa se lo / se la",
   [{"t":"🔁 Practicar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Vervang OI + OD door <b>se + lo/la/los/las</b>.</p>'
@@ -325,7 +325,7 @@ P(actx(AN(), "Transforma · usa se lo / se la",
   '2. Mandé las fotos a Nina. → <span class="wl md"></span><br>'
   '3. Conté la historia a mis amigos. → <span class="wl md"></span><br>'
   '4. Presté los discos a Diego. → <span class="wl md"></span></p>',
-  apoyo="LETRA (Se lo di…)"))
+  apoyo="Primera letra: Se lo di…"))
 P('</div>')
 
 # §3.2 practicar + tarea com
@@ -338,19 +338,19 @@ P(actx(AN(), "Responde con se lo/se la (cloze)",
   '<p>Antwoord met <b>se + lo/la/los/las</b> + het werkwoord.</p>'
   '<p style="margin-left:12.5mm">1. ¿Diste el libro a Mateo? — Sí, <span class="wl md"></span> di. &nbsp; 2. ¿Mandaste la carta a Nina? — Sí, <span class="wl md"></span> mandé.<br>'
   '3. ¿Contaste el secreto a Diego? — Sí, <span class="wl md"></span> conté. &nbsp; 4. ¿Enseñaste las fotos a Valen? — Sí, <span class="wl md"></span> enseñé.</p>',
-  apoyo="BANCO: se lo · se la · se lo · se las"))
+  apoyo="Banco de palabras: se lo · se la · se lo · se las"))
 P(actx(AN(), "Clínica de errores · se lo",
   [{"t":"🔍 Analizar","skill":True},{"t":"👥 En parejas"},{"t":"± 3 min"},{"t":"★★★"}],
   '<p>Elke zin heeft één fout (le lo → se lo, of volgorde). Verbeter.</p>'
   '<p style="margin-left:12.5mm">1. ¿El libro? Le lo di. → <span class="wl md"></span><br>'
   '2. ¿La carta? Se le mandé. → <span class="wl md"></span><br>'
   '3. ¿Las fotos? Se lo enseñé. → <span class="wl md"></span></p>',
-  apoyo="PISTA (Se lo di · Se la mandé · Se las enseñé)"))
+  apoyo="Pista: Se lo di · Se la mandé · Se las enseñé"))
 P(actx("★", "Tarea comunicativa · ¿se lo diste?",
   [{"t":"🗣️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>Vraag je buur of hij dingen aan iemand gaf/stuurde; antwoord met <b>se lo/se la</b>. «¿El regalo a tu madre? — Sí, se lo di.» Noteer 3 antwoorden.</p>'
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>',
-  apoyo="MARCO"))
+  apoyo="Marco"))
 P('<div class="guide"><div class="ic">🎡</div><div><span class="hand">Online:</span> <span class="g">de <b>dubbele-vervangingsanimatie</b> en de spellen op de hub oefenen se lo/se la; + cloze en foutenkliniek.</span></div></div>')
 P('</div>')
 
@@ -376,22 +376,22 @@ P(actx(AN(), "Ordena la biografía (1–5)",
   '<span class="wl sm"></span> Entonces escribió «Cien años de soledad».<br>'
   '<span class="wl sm"></span> Primero estudió y trabajó de periodista.<br>'
   '<span class="wl sm"></span> Después ganó el premio Nobel.</p>',
-  apoyo="PISTA (nació → estudió → escribió → Nobel → murió)"))
+  apoyo="Pista: nació → estudió → escribió → Nobel → murió"))
 P(actx(AN(), "Completa el relato con conectores",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Vul aan met <b>érase una vez · primero · después · entonces · al final</b>.</p>'
   '<p style="margin-left:12.5mm"><span class="wl md"></span> un niño pobre. <span class="wl sm"></span> creció en un pueblo. <span class="wl sm"></span> se mudó a la ciudad. <span class="wl sm"></span> empezó a cantar. <span class="wl sm"></span>, se hizo famoso.</p>',
-  apoyo="BANCO"))
+  apoyo="Banco de palabras"))
 P(actx(AN(), "Dictado · una minibiografía",
   [{"t":"👂 Escuchar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Luister en schrijf de 5 zinnen (met el indefinido).</p>'
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span>4. <span class="wl full"></span>5. <span class="wl full"></span></p>',
-  apoyo="SIN AYUDA (docent/audio leest voor)"))
+  apoyo="docent/audio leest voor"))
 P(actx("★", "Info-gap · adivina el personaje",
   [{"t":"🗣️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
   '<p>A beschrijft een figuur met de indefinido (nació…, ganó…, escribió…) zonder de naam; B raadt. Wissel. Noteer wie het is.</p>'
   '<p style="margin-left:12.5mm">Personaje 1: <span class="wl full"></span>Personaje 2: <span class="wl full"></span></p>',
-  apoyo="MARCO"))
+  apoyo="Marco"))
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha «Una leyenda del tango»</b> en la web (TTS). <b>1ª vez:</b> ¿de quién habla? · <b>2ª vez:</b> ordena los hechos de su vida.</div>',
            qr("Escanea y escucha", "§4 · Una leyenda", seed=502)))
 sec_close()
@@ -417,7 +417,7 @@ P(actx(AN(), "Verdadero o falso — con prueba",
   '<tr><td>Frida empezó a pintar después de un accidente.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Messi nació en Buenos Aires.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Messi fue campeón del Mundo en 2022.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr></tbody></table>',
-  apoyo="MODELO"))
+  apoyo="Modelo"))
 P(actx(AN(), "Escanea — completa la ficha",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Zoek de gegevens per persoon terug in de tekst en vul de tabel aan. Eén woord of getal per vak.</p>'
@@ -425,12 +425,12 @@ P(actx(AN(), "Escanea — completa la ficha",
   '<tr><td>¿Dónde y cuándo nació?</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>¿Qué hizo (logro)?</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>¿Por qué es famoso/a?</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr></tbody></table>',
-  apoyo="SIN AYUDA"))
+  apoyo=""))
 P(actx(AN(), "Reacciona — tu opinión",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>¿A quién admiras más? Schrijf 2–3 zinnen met <b>creo que fue… porque…</b> (mini-mening).</p>'
   '<div class="wbox sm"></div>',
-  apoyo="MARCO (Admiro a … Creo que fue … porque …)"))
+  apoyo="Marco: Admiro a … Creo que fue … porque …"))
 sec_close()
 
 # ================= TALLER =================
@@ -441,7 +441,7 @@ P(actx(AN(), "Escribe la forma «yo»",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Vorm de <b>yo</b>-vorm van de indefinido.</p>'
   '<p style="margin-left:12.5mm">buscar → <span class="wl sm"></span> · llegar → <span class="wl sm"></span> · empezar → <span class="wl sm"></span> · sacar → <span class="wl sm"></span> · jugar → <span class="wl sm"></span></p>',
-  apoyo="PISTA (busqué, llegué, empecé, saqué, jugué)"))
+  apoyo="Pista: busqué, llegué, empecé, saqué, jugué"))
 P('<h3 style="margin-top:6mm">2 · Conectores del relato</h3>')
 P(colloc("primero · después · entonces · al final", ["primero = eerst","después/luego = daarna","entonces = toen/dus","al final = uiteindelijk"]))
 P(actx(AN(), "Une el conector con su función",
@@ -451,7 +451,7 @@ P(actx(AN(), "Une el conector con su función",
   '<div class="wcol"><div class="ch">Conector</div><div class="cb short">1. érase una vez &nbsp; 2. después &nbsp; 3. al final &nbsp; 4. por eso</div></div>'
   '<div class="wcol"><div class="ch">Función</div><div class="cb short">a. gevolg (daarom) &nbsp; b. begin (er was eens) &nbsp; c. einde (uiteindelijk) &nbsp; d. vervolg (daarna)</div></div></div>'
   '<p style="margin-left:12.5mm">1-<span class="wl sm"></span> 2-<span class="wl sm"></span> 3-<span class="wl sm"></span> 4-<span class="wl sm"></span></p>',
-  apoyo="SIN AYUDA"))
+  apoyo=""))
 sec_close()
 
 # ================= §6 LECTURA · §7 ESCUCHA =================
@@ -484,12 +484,12 @@ P(actx(AN(), "Une la figura con su logro",
   '<div class="wcol"><div class="ch">Figura</div><div class="cb short">1. Gardel &nbsp; 2. Messi &nbsp; 3. Frida Kahlo &nbsp; 4. García Márquez</div></div>'
   '<div class="wcol"><div class="ch">Logro</div><div class="cb short">a. Nobel de Literatura &nbsp; b. leyenda del tango &nbsp; c. autorretratos &nbsp; d. campeón del Mundo 2022</div></div></div>'
   '<p style="margin-left:12.5mm">1-<span class="wl sm"></span> 2-<span class="wl sm"></span> 3-<span class="wl sm"></span> 4-<span class="wl sm"></span></p>',
-  apoyo="BANCO"))
+  apoyo="Banco de palabras"))
 P(actx(AN(), "El voseo de Mateo · observa",
   [{"t":"🌍 Cultura","skill":True},{"t":"👥 En parejas"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Mateo dice «¿de dónde <b>sos</b>?» y «vos <b>tenés</b> razón». Dat is <b>voseo</b> (vos i.p.v. tú). Vergelijk: tú eres → vos sos · tú tienes → vos tenés. Schrijf de tú-vorm ernaast.</p>'
   '<p style="margin-left:12.5mm">vos sos → tú <span class="wl sm"></span> · vos tenés → tú <span class="wl sm"></span> · vos hablás → tú <span class="wl sm"></span></p>',
-  apoyo="PISTA (eres · tienes · hablas)"))
+  apoyo="Pista: eres · tienes · hablas"))
 sec_close()
 
 retos("cultura_c6p5", "Reto — la misma vida, para alguien de ocho años",
@@ -557,7 +557,7 @@ GRP = [("biografia","Las etapas de la vida"), ("logros","Los logros"), ("persona
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">V</span><span class="pk">§V · Vocabulario</span>')
 P('<div class="intro"><b>ES:</b> Todas las palabras de la unidad. En la página digital: <b>flip cards</b> (ES↔NL), audio (TTS) y buscador. <span class="gloss">Online: flip cards, audio en zoekfunctie.</span></div>')
-P(lpd(("7","woordenschat inzetten (receptief & productief)")))
+P(lpd(("7","woordenschat inzetten (begrijpen en zelf gebruiken)")))
 P('</div>')
 P('<p style="font-size:9.6pt">Las palabras de la <b>biografía</b> como red — tres familias:</p>')
 P(clusters([
@@ -574,21 +574,21 @@ for key, titel in GRP:
 P('<div class="divider">Escalera de práctica · V.1–V.5</div>')
 P(actx("V.1", "Reconocer — ES → NL",
   [{"t":"🔍 Leer","skill":True},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Schrijf de vertaling. nacer = <span class="wl md"></span> · fue = <span class="wl md"></span> · el escritor = <span class="wl md"></span> · ayer = <span class="wl md"></span></p>', apoyo="MODELO"))
+  '<p>Schrijf de vertaling. nacer = <span class="wl md"></span> · fue = <span class="wl md"></span> · el escritor = <span class="wl md"></span> · ayer = <span class="wl md"></span></p>', apoyo="Modelo"))
 P(actx("V.2", "Distinguir — sorteer per familia",
   [{"t":"🔍 Analizar","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Sorteer: <span class="words"><b>nacer · fue · el pintor · ganar · hizo · el cantante · morir · tuvo</b></span></p>'
-  + sortcols([("etapa/logro (infinitivo)",""),("forma indefinido",""),("persona","")], eigen=False), apoyo="BANCO"))
+  + sortcols([("etapa/logro (infinitivo)",""),("forma indefinido",""),("persona","")], eigen=False), apoyo="Banco de palabras"))
 P(actx("V.3", "Recordar — NL → ES (con letra)",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Vul aan (beginletter). geboren worden = <b>n</b>___ · winnen = <b>g</b>___ · was/ging = <b>f</b>___ · gisteren = <b>a</b>___<br><span class="wl full"></span></p>', apoyo="LETRA INICIAL"))
+  '<p>Vul aan (beginletter). geboren worden = <b>n</b>___ · winnen = <b>g</b>___ · was/ging = <b>f</b>___ · gisteren = <b>a</b>___<br><span class="wl full"></span></p>', apoyo="Primera letra"))
 P(actx("V.4", "Producir — una frase con tres palabras",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★★"}],
-  '<p>Maak één correcte zin met <b>nació · en 1919 · escribió</b>.</p><div class="wbox sm"></div>', apoyo="SIN AYUDA"))
+  '<p>Maak één correcte zin met <b>nació · en 1919 · escribió</b>.</p><div class="wbox sm"></div>', apoyo=""))
 P(actx("V.5", "Comunicar — una minibiografía en 3 frases",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Schrijf 3 zinnen over een figuur (nació · hizo · una opinión) en zeg ze hardop.</p>'
-  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="MARCO → SIN AYUDA"))
+  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="Marco"))
 P('<div class="se" style="margin-top:6mm">Mi línea de tiempo <span class="gloss" style="font-size:8pt">— teken een tijdlijn en label 5 momenten in het Spaans</span></div>')
 P('<div class="wbox lg"></div>')
 P(mispal("Mis palabras de la unidad", 7))
