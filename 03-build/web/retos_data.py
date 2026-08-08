@@ -3456,8 +3456,8 @@ U7_RETO_07 = {
              "zijn». Wél «hay», «está», «tiene» en «se puede».",
     "pasos": [("Piensa en tres cosas que hoy no existen.",
                "Denk aan drie dingen die vandaag niet bestaan."),
-              ("Descríbelas como si estuvieran ahí ahora.",
-               "Beschrijf ze alsof ze er nu staan."),
+              ("Descríbelas en presente, como en una foto de hoy.",
+               "Beschrijf ze in het presente, als op een foto van vandaag."),
               ("Di dónde está cada una.", "Zeg waar elk ding staat."),
               ("Lee en voz alta. La clase busca un futuro escondido.",
                "Lees hardop voor. De klas zoekt een verstopte toekomende tijd.")],
@@ -6014,10 +6014,1029 @@ RETOS_C6P_U3 = [P3_RETO_01, P3_RETO_02, P3_RETO_03, P3_RETO_04, P3_RETO_05,
                 P3_RETO_06, P3_RETO_07, P3_RETO_08, P3_RETO_09, P3_RETO_10]
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# C6+ · U4 «De viaje» — parada Chile, het grote reizen
+# ═══════════════════════════════════════════════════════════════════════════
+P4 = 4
+
+P4_RETO_02 = {
+    "id": "C6P-U4-RETO-02", "num": 2, "curso": "C6+", "unidad": P4,
+    "seccion": "§3.4", "ancla": "por_para", "soporte": "print",
+    "nombre": "Sellos del pasaporte",
+    "lente": "🕵️ forensisch", "forma": "👤 Solo", "skill": "👁️ Leer",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Ocho sellos, ninguna explicación. ¿Por dónde pasó y para qué fue?",
+    "gancho_nl": "Acht stempels, geen enkele uitleg. Waarlangs ging hij en waarvoor?",
+    "consigna_es": "Reconstruye la ruta y da la razón de cada viaje, con por y para.",
+    "consigna_nl": "Reconstrueer de route en geef de reden van elke reis, met por en para.",
+    "regla": "Elke etappe krijgt één zin met «por» (de weg, de doorgang) én één met «para» (het "
+             "doel). Wie de twee door elkaar haalt, verliest die etappe — dat is precies de test.",
+    "pasos": [("Ordena los ocho sellos por fecha.", "Zet de acht stempels op datum."),
+              ("Marca los que son solo de paso.", "Markeer welke enkel doorreis zijn."),
+              ("Escribe una frase con por y una con para por etapa.",
+               "Schrijf per etappe één zin met por en één met para."),
+              ("Un sello no encaja. ¿Cuál?", "Eén stempel past niet. Welke?")],
+    "datos": {
+        # (datum, plaats, type stempel, wat het verraadt)
+        "sellos": [
+            ("3 ENE", "Madrid–Barajas", "salida", "el punto de partida"),
+            ("3 ENE", "Bogotá", "entrada, tránsito 4 h", "solo pasó por allí"),
+            ("4 ENE", "Santiago de Chile", "entrada", "aquí empieza de verdad"),
+            ("11 ENE", "Mendoza (Argentina)", "entrada por tierra", "cruzó los Andes en bus"),
+            ("14 ENE", "Santiago de Chile", "entrada", "volvió"),
+            ("22 ENE", "Punta Arenas", "vuelo nacional", "bajó al sur del todo"),
+            ("28 ENE", "Lima", "entrada, tránsito 2 h", "otra vez solo de paso"),
+            ("28 ENE", "Ámsterdam", "entrada", "y en Ámsterdam no vive nadie de esta historia"),
+        ],
+        "razones": ["para estudiar un semestre", "para ver a la familia",
+                    "para hacer una ruta de senderismo", "para trabajar dos semanas",
+                    "para un congreso", "para asistir a una boda"],
+        "marco": ["Pasó por … para llegar a …", "Fue a … para …",
+                  "En … solo estuvo … horas: fue un tránsito.",
+                  "El sello de … no encaja porque …"],
+    },
+    "clave": [
+        "Drie stempels zijn pure doorreis: Bogotá (4 u), Lima (2 u) en Amsterdam. Alleen bij die "
+        "drie is «por» de enige juiste keuze.",
+        "Mendoza is de mooiste etappe: «entrada por tierra» betekent dat hij de Andes over ging "
+        "met de bus — «cruzó los Andes por tierra para llegar a Mendoza» gebruikt beide in één zin.",
+        "De stempel die niet past is Amsterdam: alle andere liggen in de Spaanstalige wereld, en "
+        "het is de enige plek zonder reden in de lijst. Het is een tussenlanding op de terugweg.",
+        "Toets het onderscheid: «por» = de weg of de doorgang, «para» = het doel. Elke etappe "
+        "levert dat contrast op, en één zin per etappe is genoeg om het te bewijzen.",
+    ],
+    "nota": "Werkt sterk met een echte (afgeplakte) paspoortpagina op het scherm. Wie er een heeft, "
+            "mag zijn eigen stempels meebrengen — maar niemand moet.",
+}
+
+P4_RETO_04 = {
+    "id": "C6P-U4-RETO-04", "num": 4, "curso": "C6+", "unidad": P4,
+    "seccion": "§1.4", "ancla": "viaje_c6p", "soporte": "print",
+    "nombre": "La reseña de un hostal",
+    "lente": "✍️ creatieve beperking", "forma": "👥 En parejas", "skill": "✍️ Escribir",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Los mismos hechos. Cinco estrellas y una estrella.",
+    "gancho_nl": "Dezelfde feiten. Vijf sterren en één ster.",
+    "consigna_es": "Escribid las dos reseñas usando exactamente los mismos ocho datos.",
+    "consigna_nl": "Schrijf beide recensies met exact dezelfde acht gegevens.",
+    "regla": "Alle acht de feiten staan in béide recensies. Je mag niets weglaten en niets "
+             "verzinnen — alleen de volgorde, de conectoren en de toon mag je veranderen.",
+    "pasos": [("Leed los ocho datos del hostal.", "Lees de acht gegevens van de hostel."),
+              ("Escribid la reseña de cinco estrellas.", "Schrijf de vijfsterrenrecensie."),
+              ("Ahora la de una, con los mismos datos.",
+               "Nu die van één ster, met dezelfde gegevens."),
+              ("Comparad: ¿qué palabra hace el trabajo?",
+               "Vergelijk: welk woord doet het werk?")],
+    "datos": {
+        "hostal": "Hostal Andino · Santiago de Chile · 14 € la noche",
+        "datos": ["la habitación es compartida, con ocho camas",
+                  "está a veinte minutos del centro, andando",
+                  "el desayuno es pan, mermelada y café, siempre lo mismo",
+                  "hay una terraza en el tejado",
+                  "las paredes son finas",
+                  "la dueña habla contigo media hora cada mañana",
+                  "no hay ascensor y está en el cuarto piso",
+                  "cierran la puerta a la una de la madrugada"],
+        "marco_bien": ["Lo mejor es que …", "Además, …", "Y aunque … , la verdad es que …",
+                       "Para el precio que tiene, …"],
+        "marco_mal": ["El problema es que …", "Y encima …", "Sí, hay … , pero …",
+                      "Por catorce euros no pides mucho, pero …"],
+    },
+    "clave": [
+        "Elk gegeven is neutraal en kan beide kanten op. «La dueña habla contigo media hora» is "
+        "gastvrijheid óf tijdverlies; «cierran a la una» is veiligheid óf avondklok.",
+        "De conectoren doen het werk: «aunque» plaatst het nadeel eerst en het voordeel na, «y "
+        "encima» stapelt het negatieve. Dezelfde feiten, andere volgorde.",
+        "Toets of alle acht in béide teksten staan. Wie er één laat vallen, heeft niet "
+        "geherformuleerd maar geselecteerd — en dat is precies wat echte recensies doen.",
+        "Sluit af met de vraag: welke van de twee is «waar»? Beide. Dat inzicht is het doel.",
+    ],
+    "nota": "Vergelijk daarna met twee echte recensies van dezelfde plek op internet. De klas ziet "
+            "meteen dezelfde techniek terug.",
+}
+
+P4_RETO_09 = {
+    "id": "C6P-U4-RETO-09", "num": 9, "curso": "C6+", "unidad": P4,
+    "seccion": "Cultura", "ancla": "cultura_c6p4", "soporte": "print",
+    "nombre": "Turismo que hace daño",
+    "lente": "🔬 onderzoek & data", "forma": "👥 En parejas", "skill": "👁️ Leer",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Barcelona tiene más camas de turista que habitantes en algunos barrios.",
+    "gancho_nl": "Barcelona heeft in sommige wijken meer toeristenbedden dan inwoners.",
+    "consigna_es": "Lee los datos y escribe tu postura en tres frases con cifras.",
+    "consigna_nl": "Lees de gegevens en schrijf je standpunt in drie zinnen met cijfers.",
+    "regla": "Elke zin van je standpunt bevat een cijfer uit de tabel. En één van de drie moet "
+             "de ándere kant erkennen — een standpunt zonder tegenargument is een mening, geen positie.",
+    "pasos": [("Leed la tabla de las dos ciudades.", "Lees de tabel van de twee steden."),
+              ("Buscad el dato que más os choca.", "Zoek het cijfer dat jullie het meest raakt."),
+              ("Escribid tres frases con cifra.", "Schrijf drie zinnen met een cijfer."),
+              ("Una de las tres da la razón al otro lado.",
+               "Eén van de drie geeft de andere kant gelijk.")],
+    "datos": {
+        "tabla": [("Barcelona", "1,6 millones de habitantes",
+                   "unos 12 millones de visitantes al año", "el turismo es un 12 % de la economía"),
+                  ("Cusco", "unos 430 000 habitantes",
+                   "más de 3 millones de visitantes al año", "y casi todos suben a Machu Picchu"),
+                  ("Barcelona · Barceloneta", "unos 15 000 vecinos",
+                   "el barrio con más pisos turísticos", "los alquileres han subido mucho"),
+                  ("Cusco · centro", "casi sin vecinos jóvenes",
+                   "hoteles donde antes había casas", "el suelo cuesta más que el sueldo medio")],
+        "voces": [("una vecina de la Barceloneta", "«Ya no conozco a nadie en mi escalera.»"),
+                  ("un guía de Cusco", "«Mi trabajo existe gracias al turismo.»"),
+                  ("un camarero", "«Sin turistas cierro en tres meses.»"),
+                  ("un estudiante", "«No encuentro piso en mi propia ciudad.»")],
+        "marco": ["En … hay … visitantes por cada habitante.",
+                  "Por un lado, … ; por otro, …",
+                  "Entiendo que … , pero …",
+                  "Mi postura es que … , porque …"],
+    },
+    "clave": [
+        "Barcelona telt ongeveer 7,5 bezoekers per inwoner per jaar, Cusco ongeveer 7. Bijna "
+        "identiek — en dat verrast, want de steden lijken onvergelijkbaar.",
+        "De vier stemmen zijn bewust niet te verzoenen: de gids en de kelner leven ervan, de buurvrouw "
+        "en de student niet. Wie dat in één positie samenbrengt, doet het werk van de reto.",
+        "«Por un lado…, por otro…» is de conector die het leerplan vraagt voor een genuanceerd "
+        "standpunt, en die hier vanzelf nodig is.",
+        "Cijfers zijn ordes van grootte uit publieke bronnen; noem dat. Een standpunt hoeft geen "
+        "exacte statistiek, maar wel eerlijke cijfers.",
+    ],
+    "nota": "Trek de lijn door naar de eigen omgeving: Brugge en Gent kennen hetzelfde debat. Dat "
+            "maakt het onmiddellijk minder ver weg.",
+}
+
+P4_RETO_10 = {
+    "id": "C6P-U4-RETO-10", "num": 10, "curso": "C6+", "unidad": P4,
+    "seccion": "§2.4", "ancla": "perfecto_c6p", "soporte": "print",
+    "nombre": "He estado, no he estado",
+    "lente": "🔓 puzzel & escape", "forma": "🏫 Toda la clase", "skill": "🗣️ Hablar",
+    "tiempo": "± 15 min", "dificultad": "★★☆",
+    "gancho_es": "Bingo de experiencias. Pero una firma no basta: hay que preguntar más.",
+    "gancho_nl": "Ervaringenbingo. Maar één handtekening volstaat niet: je moet doorvragen.",
+    "consigna_es": "Llena el cartón, y por cada casilla haz una pregunta extra en perfecto.",
+    "consigna_nl": "Vul de kaart, en stel bij elk vakje één extra vraag in het perfecto.",
+    "regla": "Eén naam per vakje en niemand twee keer op je kaart. En bij elke handtekening stel "
+             "je één doorvraag in het perfecto — het antwoord noteer je erbij, anders telt het vakje niet.",
+    "pasos": [("Levantaos y preguntad: «¿Has …?»", "Sta op en vraag: «¿Has …?»"),
+              ("Si dice que sí, firma y contesta tu pregunta extra.",
+               "Bij ja: handtekening plus antwoord op je doorvraag."),
+              ("Una persona, una casilla. Nadie repite.",
+               "Eén persoon, één vakje. Niemand twee keer."),
+              ("¿Cartón lleno? Contad las historias, no las firmas.",
+               "Kaart vol? Vertel de verhalen, niet de handtekeningen.")],
+    "datos": {
+        "casillas": ["ha dormido en un tren", "ha perdido una maleta",
+                     "ha viajado solo/-a", "ha comido algo que no sabía qué era",
+                     "ha perdido un avión o un bus", "ha estado en tres países en un año",
+                     "ha hablado español fuera de clase", "se ha perdido en una ciudad",
+                     "ha hecho un viaje de más de diez horas", "ha dormido en un aeropuerto",
+                     "ha ido a un sitio sin plan", "ha vuelto antes de tiempo"],
+        "extra": ["¿Dónde ha sido?", "¿Con quién has ido?", "¿Cuánto tiempo has estado?",
+                  "¿Y qué has hecho después?", "¿Lo has vuelto a hacer?",
+                  "¿Se lo has contado a alguien?"],
+        "marco": ["¿Has …?", "Sí, … / No, nunca he …",
+                  "¿Y dónde ha sido?", "Firma aquí, por favor."],
+    },
+    "clave": [
+        "De doorvraag is de hele didactiek: zonder haar is bingo een handtekeningenjacht. Met "
+        "haar levert elk vakje twee perfecto-vormen op — de vraag en het antwoord.",
+        "«Se lo has contado a alguien?» is de brug naar U5 (se lo/se la) en zit er bewust in als "
+        "vooruitwijzing.",
+        "Toets de genoteerde antwoorden, niet de handtekeningen. Wie twaalf namen heeft en nul "
+        "antwoorden, heeft niet gepraat maar verzameld.",
+        "Wie nooit gereisd heeft, kan bijna elk vakje toch invullen: «se ha perdido en una "
+        "ciudad» of «ha comido algo que no sabía qué era» hoeft geen vliegtuig. Dat is bewust zo "
+        "gekozen.",
+    ],
+    "nota": "Twaalf vakjes is meer dan een klas van twintig aankan in één ronde. Dat is de "
+            "bedoeling: niemand vult alles, iedereen praat.",
+}
+
+P4_RETO_06 = {
+    "id": "C6P-U4-RETO-06", "num": 6, "curso": "C6+", "unidad": P4,
+    "seccion": "§2.4", "ancla": "perfecto_c6p", "soporte": "hub",
+    "nombre": "El viaje que no hice",
+    "lente": "🎭 simulatie met beperking", "forma": "👤 Solo", "skill": "🗣️ Hablar",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Cuenta un viaje que nunca hiciste. Y que no se note.",
+    "gancho_nl": "Vertel een reis die je nooit maakte. En laat het niet merken.",
+    "consigna_es": "Graba un minuto sobre un viaje inventado, todo en perfecto.",
+    "consigna_nl": "Neem één minuut op over een verzonnen reis, alles in het perfecto.",
+    "regla": "Alles in het perfecto compuesto, en minstens één detail dat niemand zou verzinnen. "
+             "Maar geen enkele leugen over een echt bestaande plek die je fout beschrijft — dat "
+             "is het gat dat de klas zoekt.",
+    "pasos": [("Elige un destino que conoces solo de fotos.",
+               "Kies een bestemming die je alleen van foto's kent."),
+              ("Busca dos datos reales: el clima y el transporte.",
+               "Zoek twee echte gegevens: het weer en het vervoer."),
+              ("Graba un minuto, todo en perfecto.", "Neem één minuut op, alles in het perfecto."),
+              ("La clase busca el hueco. ¿Lo encuentran?",
+               "De klas zoekt het gat. Vinden ze het?")],
+    "datos": {
+        "marco": ["He estado en … este verano.",
+                  "He llegado en … , porque no hay …",
+                  "Lo que más me ha sorprendido ha sido …",
+                  "He comido … , y no ha sido lo que esperaba.",
+                  "No he podido … , y eso me ha dado rabia."],
+        "detalles": ["el precio de algo pequeño", "un olor", "una cola inesperada",
+                     "cómo se paga el bus", "a qué hora oscurece",
+                     "qué te dijo alguien en la calle"],
+    },
+    "clave": [
+        "De regel «minstens één detail dat niemand zou verzinnen» is wat het verhaal geloofwaardig "
+        "maakt — en meteen de reden waarom leerlingen echte informatie gaan opzoeken.",
+        "«No he podido…» is de zin die het vaakst ontbreekt en die het verhaal het meest echt "
+        "maakt: elke reis heeft iets dat mislukte.",
+        "Toets de perfecto-vormen en de vlotheid van één minuut. Of het gat gevonden wordt, is "
+        "een spel, geen beoordeling.",
+        "Niemand hoeft te doen alsof hij gereisd heeft: de opdracht ís fictie, en dat is voor de "
+        "hele klas hetzelfde vertrekpunt.",
+    ],
+    "nota": "Laat de klas ná de opname vragen stellen. Wie zijn verzonnen reis kan verdedigen "
+            "onder ondervraging, spreekt echt.",
+}
+
+P4_RETO_07 = {
+    "id": "C6P-U4-RETO-07", "num": 7, "curso": "C6+", "unidad": P4,
+    "seccion": "§1.4", "ancla": "viaje_c6p", "soporte": "hub",
+    "nombre": "Anuncio de megafonía",
+    "lente": "📻 mediaformat", "forma": "👥 En parejas", "skill": "🗣️ Hablar",
+    "tiempo": "± 10 min", "dificultad": "★★☆",
+    "gancho_es": "«Señores pasajeros, el tren con destino…». Rápido, formal, y se entiende.",
+    "gancho_nl": "«Señores pasajeros, el tren con destino…». Snel, formeel, en verstaanbaar.",
+    "consigna_es": "Graba tres anuncios de estación con las fórmulas exactas.",
+    "consigna_nl": "Neem drie stationsomroepen op met de exacte formules.",
+    "regla": "Usted-vorm, geen enkel woord te veel, en de drie vaste onderdelen in deze volgorde: "
+             "aanspreking, informatie, instructie. Wie «tú» gebruikt, is geen omroeper.",
+    "pasos": [("Escucha el modelo dos veces.", "Luister het model twee keer."),
+              ("Fíjate en el orden: quién, qué, qué hay que hacer.",
+               "Let op de volgorde: wie, wat, wat te doen."),
+              ("Graba los tres anuncios seguidos.", "Neem de drie omroepen na elkaar op."),
+              ("Escucha: ¿se entiende a la primera?",
+               "Luister terug: begrijp je het meteen?")],
+    "datos": {
+        "marco": ["Señores pasajeros, buenos días.",
+                  "El tren con destino a … va a efectuar su salida por la vía …",
+                  "Rogamos a los pasajeros que se dirijan a la puerta …",
+                  "Última llamada para el vuelo … con destino a …",
+                  "Disculpen las molestias."],
+        "situaciones": [("un retraso de cuarenta minutos", "hay que explicar y disculparse"),
+                        ("un cambio de vía a última hora", "hay que dar la nueva vía dos veces"),
+                        ("un pasajero que no se ha presentado", "hay que llamarlo por su nombre")],
+    },
+    "clave": [
+        "De drie vaste onderdelen (aanspreking · informatie · instructie) zitten in elke echte "
+        "omroep. Wie ze in die volgorde zet, klinkt onmiddellijk professioneel.",
+        "«Rogamos a los pasajeros que se dirijan» bevat subjuntivo. Die hoort niet in dit "
+        "leerplan: het is een vaste formule om te herkénnen en na te zeggen, niet om te "
+        "analyseren. Zeg dat er expliciet bij.",
+        "Het wisselen van perron moet twee keer gezegd worden — dat is geen taalregel maar een "
+        "beroepsregel, en het maakt de opdracht meteen echt.",
+        "Toets verstaanbaarheid en de usted-vorm, niet de snelheid. Een omroep die niemand "
+        "verstaat, is geen goede omroep, hoe snel ook.",
+    ],
+    "nota": "Speel een echte opname van Renfe of van een luchthaven vooraf. Het verschil in "
+            "intonatie is meteen hoorbaar en heel leerzaam.",
+}
+
+P4_RETO_08 = {
+    "id": "C6P-U4-RETO-08", "num": 8, "curso": "C6+", "unidad": P4,
+    "seccion": "Cultura", "ancla": "cultura_c6p4", "soporte": "hub",
+    "nombre": "Choque cultural",
+    "lente": "🤝 bemiddelen", "forma": "👨‍👩‍👧 En grupos", "skill": "🔀 Bemiddelen",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Cuatro situaciones reales donde un belga mete la pata sin saberlo.",
+    "gancho_nl": "Vier echte situaties waarin een Belg de bal misslaat zonder het te weten.",
+    "consigna_es": "Elige qué se dice de verdad en cada situación.",
+    "consigna_nl": "Kies wat je in elke situatie echt zegt.",
+    "regla": "Geen enkele optie is grammaticaal fout. Je kiest op register en gewoonte — en dat "
+             "is precies waarom letterlijk vertalen hier niet werkt.",
+    "pasos": [("Lee la situación entera.", "Lees de hele situatie."),
+              ("Piensa qué espera la otra persona.",
+               "Denk na wat de ander verwacht."),
+              ("Elige y comprueba por qué.", "Kies en controleer waarom.")],
+    "datos": {
+        "items": [
+            ("Llegas a una comida familiar en Chile a la hora exacta. No hay nadie listo.",
+             "No pasa nada, llegar veinte minutos tarde es lo normal.",
+             ["No pasa nada, llegar veinte minutos tarde es lo normal.",
+              "Has hecho bien: la puntualidad se agradece.",
+              "Es mejor avisar antes."],
+             "een uitnodiging om twee uur betekent in veel families half drie; te vroeg zetten "
+             "gastheren onder druk"),
+            ("En el hostal te ofrecen más comida y ya no puedes más. Dices «no, gracias».",
+             "Añade una razón: «no, gracias, es que ya no me cabe más, estaba buenísimo».",
+             ["Añade una razón: «no, gracias, es que ya no me cabe más, estaba buenísimo».",
+              "«No, gracias» es suficiente.",
+              "Hay que aceptar siempre."],
+             "een kaal «nee bedankt» klinkt kortaf; de reden plus een compliment doet het werk"),
+            ("Un camarero te tutea desde el primer momento. Tú le hablas de usted.",
+             "Puedes pasar al tú: te lo está ofreciendo.",
+             ["Puedes pasar al tú: te lo está ofreciendo.",
+              "Sigue con usted, es más educado.",
+              "Es una falta de respeto por su parte."],
+             "de ander zet de toon; blijven usteden schept juist afstand"),
+            ("Alguien te pregunta cuánto ganan tus padres. En Bélgica no se pregunta eso.",
+             "Contesta en general y devuelve la pregunta: «depende, ¿y aquí?».",
+             ["Contesta en general y devuelve la pregunta: «depende, ¿y aquí?».",
+              "Contesta con la cifra exacta.",
+              "Di que es una pregunta maleducada."],
+             "de vraag is niet onbeleefd bedoeld; algemeen antwoorden plus terugkaatsen houdt "
+             "het gesprek open"),
+        ],
+    },
+    "clave": [
+        "De vier situaties gaan over hetzelfde: het Vlaamse standaardgedrag is niet fout, maar "
+        "het komt anders aan. Bemiddelen begint met dat inzien.",
+        "Item 2 is didactisch het belangrijkste: «no, gracias» plus een reden is een taalpatroon "
+        "dat leerlingen meteen kunnen toepassen, ook in het Nederlands.",
+        "Item 4 heeft geen absoluut juist antwoord — in sommige kringen is de vraag wél "
+        "ongepast. De verantwoording telt, niet de keuze.",
+        "Vermijd te generaliseren over «de Chilenen» of «de Spanjaarden». Deze gewoontes "
+        "verschillen per familie en per streek; benoem dat.",
+    ],
+    "nota": "Draai het om: welke Vlaamse gewoontes zouden een Chileense uitwisselingsstudent "
+            "verbazen? Die lijst maakt de klas altijd graag.",
+}
+
+P4_RETO_01 = {
+    "id": "C6P-U4-RETO-01", "num": 1, "curso": "C6+", "unidad": P4,
+    "seccion": "§1.4", "ancla": "viaje_c6p", "soporte": "ppt",
+    "nombre": "El vuelo cancelado",
+    "lente": "⚖️ onderhandeling & dilemma", "forma": "👥 En parejas", "skill": "🗣️ Hablar",
+    "tiempo": "± 18 min", "dificultad": "★★★",
+    "gancho_es": "Tú tienes derechos. El mostrador tiene normas. Los dos tenéis razón.",
+    "gancho_nl": "Jij hebt rechten. De balie heeft regels. Jullie hebben allebei gelijk.",
+    "consigna_es": "Negociad una solución. Cada uno tiene una instrucción secreta.",
+    "consigna_nl": "Onderhandel over een oplossing. Elk heeft een geheime instructie.",
+    "regla": "Je geheime instructie mag je niet voorlezen en niet vertalen — je moet ernaar "
+             "hándelen. En niemand mag de stem verheffen: dit is een balie, geen ruzie.",
+    "pasos": [("Repartid los papeles y leed la instrucción en secreto.",
+               "Verdeel de rollen en lees je instructie in het geheim."),
+              ("El pasajero empieza. El mostrador escucha antes de contestar.",
+               "De passagier begint. De balie luistert vóór ze antwoordt."),
+              ("Negociad hasta un acuerdo, o hasta el bloqueo.",
+               "Onderhandel tot een akkoord, of tot een impasse."),
+              ("Contad a la clase qué habéis acordado y por qué.",
+               "Vertel de klas wat jullie afspraken en waarom.")],
+    "datos": {
+        "situacion": "Vuelo Santiago–Madrid, cancelado a las 22:40. El próximo es dentro de 26 horas.",
+        "instruccion_pasajero": [
+            "Tienes un examen pasado mañana a las nueve de la mañana.",
+            "No te puedes permitir un hotel de tu bolsillo.",
+            "Sabes que tienes derecho a comida y alojamiento, pero no sabes decirlo con esas palabras.",
+        ],
+        "instruccion_mostrador": [
+            "Solo puedes dar un vale de comida de 12 €, salvo que el pasajero lo pida claramente.",
+            "Tienes dos plazas en un vuelo de otra compañía, pero son para casos urgentes.",
+            "Llevas nueve horas de turno y eres la única persona en el mostrador.",
+        ],
+        "marco_pasajero": ["Entiendo que no es culpa suya, pero …",
+                           "Tengo que estar en … el … a las …",
+                           "¿Qué opciones hay?", "¿Y si me pone en otro vuelo?"],
+        "marco_mostrador": ["Lo siento mucho, en este momento …",
+                            "Lo que sí puedo hacer es …", "Deme un momento, lo compruebo.",
+                            "Si es urgente, tengo otra opción."],
+    },
+    "clave": [
+        "De sleutel zit in de tweede instructie van de balie: er zijn twee plaatsen, maar alleen "
+        "voor dringende gevallen. De passagier moet dus zijn examen noemen — en dat is een "
+        "spreekhandeling, geen woordenschatoefening.",
+        "«Lo que sí puedo hacer es…» is de belangrijkste chunk aan de baliekant: iets weigeren "
+        "en tegelijk een uitweg bieden.",
+        "De impasse is een geldig einde. Twee duo's die vastlopen maar beleefd blijven, hebben de "
+        "reto beter gedaan dan een duo dat meteen alles krijgt.",
+        "Toets de spreekhandelingen (klacht formuleren, alternatief vragen, weigeren met uitweg), "
+        "niet wie wint.",
+    ],
+    "nota": "Draai daarna de rollen om met dezelfde instructies. De tweede ronde is altijd beter, "
+            "en de klas hoort dat zelf.",
+}
+
+P4_RETO_03 = {
+    "id": "C6P-U4-RETO-03", "num": 3, "curso": "C6+", "unidad": P4,
+    "seccion": "§3.4", "ancla": "por_para", "soporte": "ppt",
+    "nombre": "Presupuesto de mochilero",
+    "lente": "🔬 onderzoek & data", "forma": "👨‍👩‍👧 En grupos", "skill": "✍️ Escribir",
+    "tiempo": "± 18 min", "dificultad": "★★★",
+    "gancho_es": "Diez días, tres países, seiscientos euros. Y hay que dormir en algún sitio.",
+    "gancho_nl": "Tien dagen, drie landen, zeshonderd euro. En slapen moet ergens.",
+    "consigna_es": "Montad el viaje dentro del presupuesto y justificad cada gasto con por o para.",
+    "consigna_nl": "Stel de reis samen binnen het budget en verantwoord elke uitgave met por of para.",
+    "regla": "Zeshonderd euro, geen cent meer, en tien nachten moeten gedekt zijn. Elke uitgave "
+             "wordt verantwoord met «por» (het bedrag, de ruil) of «para» (het doel).",
+    "pasos": [("Mirad los precios de los tres países.",
+               "Bekijk de prijzen van de drie landen."),
+              ("Decidid la ruta y contad las noches.",
+               "Bepaal de route en tel de nachten."),
+              ("Justificad cada gasto con por o para.",
+               "Verantwoord elke uitgave met por of para."),
+              ("¿Cabe en 600 €? Si no, ¿qué quitáis?",
+               "Past het in 600 €? Zo niet, wat schrappen jullie?")],
+    "datos": {
+        "precios": [("Chile · hostal", "unos 18 € la noche"),
+                    ("Chile · comida del día", "unos 9 €"),
+                    ("Chile · bus largo (10 h)", "unos 30 €"),
+                    ("Perú · hostal", "unos 11 € la noche"),
+                    ("Perú · comida del día", "unos 6 €"),
+                    ("Perú · bus largo (10 h)", "unos 18 €"),
+                    ("Bolivia · hostal", "unos 8 € la noche"),
+                    ("Bolivia · comida del día", "unos 5 €"),
+                    ("Bolivia · bus largo (10 h)", "unos 12 €"),
+                    ("entrada a un parque nacional", "entre 15 € y 40 €"),
+                    ("vuelo interno", "entre 60 € y 120 €")],
+        "marco": ["Vamos en bus por … euros.", "Reservamos … para dormir en …",
+                  "Cambiamos el vuelo por el bus, porque …",
+                  "Nos quedan … euros para …", "Por ese precio no vale la pena …"],
+    },
+    "clave": [
+        "Het budget klopt alleen als de groep tijd inruilt tegen geld: de bus van tien uur in "
+        "plaats van de binnenlandse vlucht. Dat is de kern van backpacken en meteen de beste "
+        "«por»-zin: «cambiamos el vuelo por el bus».",
+        "Chili is bijna dubbel zo duur als Bolivia. Wie de route van zuid naar noord legt, houdt "
+        "geld over voor de parken; omgekeerd niet.",
+        "«Por» voor het bedrag en de ruil, «para» voor het doel — het budget maakt dat verschil "
+        "concreet in plaats van abstract.",
+        "Toets de tien gedekte nachten, het bedrag, en of elke uitgave een por- of para-zin heeft.",
+    ],
+    "nota": "Prijzen zijn ordes van grootte. Wie actuele prijzen opzoekt, mag ze gebruiken — dan "
+            "wordt de oefening alleen maar echter.",
+}
+
+P4_RETO_05 = {
+    "id": "C6P-U4-RETO-05", "num": 5, "curso": "C6+", "unidad": P4,
+    "seccion": "§3.4", "ancla": "por_para", "soporte": "ppt",
+    "nombre": "Equipaje de mano",
+    "lente": "⚖️ onderhandeling & dilemma", "forma": "👨‍👩‍👧 En grupos", "skill": "🗣️ Hablar",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Siete kilos. Treinta días. Cuatro personas que no están de acuerdo.",
+    "gancho_nl": "Zeven kilo. Dertig dagen. Vier mensen die het oneens zijn.",
+    "consigna_es": "Decidid qué entra en la mochila. Cada objeto se defiende con para.",
+    "consigna_nl": "Beslis wat de rugzak in gaat. Elk voorwerp wordt verdedigd met para.",
+    "regla": "Zeven kilo, geen gram meer. Elk voorwerp krijgt een «para»-zin die zegt waarvóór "
+             "het dient — «para el frío de la noche», niet «porque es útil». Zonder «para» blijft "
+             "het thuis.",
+    "pasos": [("Mirad la lista y los pesos.", "Bekijk de lijst en de gewichten."),
+              ("Cada uno defiende tres objetos con para.",
+               "Elk verdedigt drie voorwerpen met para."),
+              ("Sumad. ¿Pasáis de siete kilos?", "Tel op. Zitten jullie boven zeven kilo?"),
+              ("Negociad hasta llegar justo.", "Onderhandel tot het precies past."),
+              ("Y ahora: ¿qué habéis dejado y os va a hacer falta?",
+               "En nu: wat lieten jullie achter en gaan jullie missen?")],
+    "datos": {
+        "objetos": [("dos pantalones", 900), ("cuatro camisetas", 600),
+                    ("un jersey de lana", 500), ("un chubasquero", 350),
+                    ("botas de montaña", 1200), ("chanclas", 200),
+                    ("saco de dormir fino", 700), ("toalla de microfibra", 150),
+                    ("neceser completo", 600), ("botiquín", 300),
+                    ("cargador y cables", 250), ("libro de papel", 400),
+                    ("cámara pequeña", 450), ("candado y cuerda", 200),
+                    ("bañador", 150), ("gorro y guantes", 250)],
+        "destino": "Del desierto de Atacama a la Patagonia: 35 °C de día en el norte, "
+                   "0 °C de noche en el sur.",
+        "marco": ["Llevo … para …", "Sin … no puedo, porque …",
+                  "Eso lo dejamos: para … ya tenemos …",
+                  "¿Y para qué lo quieres exactamente?",
+                  "Nos pasamos de … gramos. ¿Qué quitamos?"],
+    },
+    "clave": [
+        "De volledige lijst weegt ongeveer 7,2 kilo: net te veel. Er móet dus geschrapt worden, "
+        "en dat is opzet.",
+        "De bestemming beslist: van Atacama naar Patagonië betekent 35 graden én nul graden. Wie "
+        "de muts schrapt, heeft de opdracht niet gelezen; wie het boek houdt boven de "
+        "regenjas, moet dat kunnen verdedigen.",
+        "«¿Y para qué lo quieres exactamente?» is de vraag die de hele reto draagt: hij dwingt de "
+        "ander tot een tweede, preciezere para-zin.",
+        "Toets de para-zinnen en het eindgewicht. Welke voorwerpen meegaan, is aan de groep.",
+    ],
+    "nota": "Weeg het echt na als je een weegschaal hebt en de klas eigen spullen meebrengt. Het "
+            "verschil tussen geschat en gewogen gewicht is altijd een verrassing.",
+}
+
+RETOS_C6P_U4 = [P4_RETO_01, P4_RETO_02, P4_RETO_03, P4_RETO_04, P4_RETO_05,
+                P4_RETO_06, P4_RETO_07, P4_RETO_08, P4_RETO_09, P4_RETO_10]
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# C6+ · U5 «Érase una vez» — parada Buenos Aires, gastheer Mateo (voseo)
+# ═══════════════════════════════════════════════════════════════════════════
+P5 = 5
+
+P5_RETO_02 = {
+    "id": "C6P-U5-RETO-02", "num": 2, "curso": "C6+", "unidad": P5,
+    "seccion": "§2.4", "ancla": "indefinido", "soporte": "print",
+    "nombre": "La línea del tiempo saboteada",
+    "lente": "🕵️ forensisch", "forma": "👥 En parejas", "skill": "👁️ Leer",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Ocho hechos de una vida. Dos no ocurrieron nunca.",
+    "gancho_nl": "Acht feiten uit één leven. Twee gebeurden nooit.",
+    "consigna_es": "Ordena los hechos y descarta los dos falsos, con un argumento.",
+    "consigna_nl": "Zet de feiten op volgorde en gooi de twee valse eruit, met een argument.",
+    "regla": "Aanwijzen volstaat niet: je zegt met welk ánder feit de valse botst. Een leugen die "
+             "alleen «raar klinkt», blijft staan.",
+    "pasos": [("Leed los ocho hechos.", "Lees de acht feiten."),
+              ("Ordenadlos por fecha.", "Zet ze op datum."),
+              ("Buscad los dos que chocan con otro hecho.",
+               "Zoek de twee die botsen met een ander feit."),
+              ("Escribid la línea del tiempo definitiva.",
+               "Schrijf de definitieve tijdlijn.")],
+    "datos": {
+        # (jaar, gebeurtenis, klopt het?, waarom niet)
+        "hechos": [
+            ("1910", "Nació en un pueblo de la provincia de Buenos Aires.", True, ""),
+            ("1928", "Se mudó a la capital y empezó a trabajar en una imprenta.", True, ""),
+            ("1931", "Publicó su primer libro de poemas, con dinero prestado.", True, ""),
+            ("1936", "Viajó a España y volvió justo antes de la guerra.", True, ""),
+            ("1940", "Ganó un premio nacional que no existía hasta 1958.", False,
+             "el premio se creó dieciocho años después"),
+            ("1947", "Abrió una librería que sigue abierta hoy.", True, ""),
+            ("1952", "Se fue a vivir a México y no volvió nunca.", False,
+             "en 1968 dio una conferencia en Buenos Aires"),
+            ("1968", "Dio una conferencia en Buenos Aires ante mil personas.", True, ""),
+        ],
+        "marco": ["Primero … y después …", "En … , … años más tarde, …",
+                  "Este hecho no puede ser verdad, porque en … ya …",
+                  "Choca con el hecho de …"],
+    },
+    "clave": [
+        "De twee valse: de prijs van 1940 (bestond pas vanaf 1958) en het definitieve vertrek "
+        "naar Mexico in 1952 (want in 1968 gaf hij een lezing in Buenos Aires).",
+        "Alleen de tweede botst met een ánder feit uit de lijst — dat is de moeilijkste en de "
+        "belangrijkste. De eerste botst met een gegeven dát in de zin zelf staat.",
+        "De zin over Spanje stond eerst met een subjuntivo («antes de que empezara»). Die vorm "
+        "hoort niet in dit leerplan en is vervangen door «justo antes de la guerra» — dezelfde "
+        "informatie, binnen bereik.",
+        "Toets het argument, niet het aanwijzen. Twee keer «die is vals» zonder botsing is nul.",
+    ],
+    "nota": "Het personage is fictief en samengesteld: zo kan niemand het antwoord opzoeken en "
+            "moet de klas écht redeneren.",
+}
+
+P5_RETO_04 = {
+    "id": "C6P-U5-RETO-04", "num": 4, "curso": "C6+", "unidad": P5,
+    "seccion": "§1.4", "ancla": "biografia", "soporte": "print",
+    "nombre": "Museo de una sola sala",
+    "lente": "🎭 simulatie met beperking", "forma": "👨‍👩‍👧 En grupos", "skill": "✍️ Escribir",
+    "tiempo": "± 18 min", "dificultad": "★★★",
+    "gancho_es": "Una sala, cinco objetos. Toda una vida tiene que caber ahí.",
+    "gancho_nl": "Eén zaal, vijf voorwerpen. Een heel leven moet daarin passen.",
+    "consigna_es": "Elegid cinco objetos y escribid su cartela: qué es, de cuándo, por qué está aquí.",
+    "consigna_nl": "Kies vijf voorwerpen en schrijf hun bijschrift: wat, van wanneer, waarom het hier staat.",
+    "regla": "Vijf voorwerpen, niet zes. Elk bijschrift heeft drie regels — wat het is, uit welk "
+             "jaar, en wat er met dat voorwerp gebeurde — en die derde regel staat altijd in het "
+             "indefinido.",
+    "pasos": [("Elegid una figura del mundo hispano.",
+               "Kies een figuur uit de Spaanstalige wereld."),
+              ("Buscad cinco momentos de su vida.", "Zoek vijf momenten uit haar leven."),
+              ("Convertid cada momento en un objeto.",
+               "Zet elk moment om in een voorwerp."),
+              ("Escribid las cinco cartelas.", "Schrijf de vijf bijschriften."),
+              ("Colocad los objetos en la sala. ¿Por dónde entra el visitante?",
+               "Plaats de voorwerpen in de zaal. Waar komt de bezoeker binnen?")],
+    "datos": {
+        "figuras": [("Frida Kahlo", "México · pintora"),
+                    ("Gabriel García Márquez", "Colombia · escritor"),
+                    ("Rigoberta Menchú", "Guatemala · activista, Nobel de la Paz"),
+                    ("Violeta Parra", "Chile · música y folclorista"),
+                    ("Mercedes Sosa", "Argentina · cantante"),
+                    ("Pau Casals", "Cataluña · violonchelista"),
+                    ("José Martí", "Cuba · escritor y político"),
+                    ("Chavela Vargas", "Costa Rica y México · cantante")],
+        "tipos_objeto": ["algo que usó todos los días", "algo que perdió",
+                         "algo que le regalaron", "algo que hizo con sus manos",
+                         "algo que nunca llegó a usar"],
+        "marco_cartela": ["Qué es: …", "Año: …",
+                          "En … , … lo/la … y desde entonces …"],
+    },
+    "clave": [
+        "De vijf voorwerptypes zijn zo gekozen dat ze verschillende werkwoorden uitlokken: usar, "
+        "perder, regalar, hacer, llegar a. Samen dekken ze de onregelmatige indefinido-vormen af.",
+        "«Algo que nunca llegó a usar» levert altijd het interessantste bijschrift op: het dwingt "
+        "tot een verhaal over wat níet gebeurde.",
+        "Toets de derde regel van elk bijschrift: staat er een indefinido in, en gaat het om één "
+        "afgerond moment? Bijschriften in het presente zijn de meest voorkomende fout.",
+        "Vijf is een harde grens. Een zesde voorwerp betekent één te weinig doordacht.",
+    ],
+    "nota": "Hang de vijf bijschriften echt op in de klas, elk op een A5. De klas loopt de zaal "
+            "rond en dat is de presentatie — geen enkele spreekbeurt nodig.",
+}
+
+P5_RETO_08 = {
+    "id": "C6P-U5-RETO-08", "num": 8, "curso": "C6+", "unidad": P5,
+    "seccion": "§4.4", "ancla": "historia_c6p", "soporte": "print",
+    "nombre": "Dos versiones del mismo hecho",
+    "lente": "🕵️ forensisch", "forma": "👥 En parejas", "skill": "👁️ Leer",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Dos textos, un mismo día, y no coinciden en casi nada.",
+    "gancho_nl": "Twee teksten, dezelfde dag, en ze komen bijna nergens overeen.",
+    "consigna_es": "Separa lo que es hecho de lo que es interpretación, en las dos versiones.",
+    "consigna_nl": "Scheid feit van interpretatie, in beide versies.",
+    "regla": "Een feit is wat beide teksten zeggen of wat te controleren valt. Alles wat maar in "
+             "één versie staat, is een claim tot bewijs van het tegendeel — ook als het waar klinkt.",
+    "pasos": [("Leed las dos versiones enteras.", "Lees beide versies helemaal."),
+              ("Subrayad lo que dicen las dos.", "Onderstreep wat beide zeggen."),
+              ("Marcad lo que dice solo una.", "Markeer wat maar één zegt."),
+              ("Escribid los tres hechos seguros.", "Schrijf de drie zekere feiten op.")],
+    "datos": {
+        "version_a": [
+            "El 12 de octubre de 1954 se inauguró el puente.",
+            "Vinieron más de cinco mil personas.",
+            "El alcalde habló durante veinte minutos.",
+            "Fue el día más importante de la historia del pueblo.",
+            "Todo el mundo estaba feliz.",
+        ],
+        "version_b": [
+            "El puente se abrió el 12 de octubre de 1954.",
+            "Se calcula que asistieron unas dos mil personas.",
+            "El alcalde dio un discurso largo.",
+            "Muchos vecinos no fueron: llevaban meses protestando por el precio de la obra.",
+            "Aquella tarde llovió y la fiesta terminó pronto.",
+        ],
+        "marco": ["Las dos versiones dicen que …", "Solo la A dice que …",
+                  "Esto es un hecho, porque …", "Esto es interpretación, porque …",
+                  "No se puede saber si …"],
+    },
+    "clave": [
+        "Drie zekere feiten: de datum (12 oktober 1954), de opening van de brug, en de lange "
+        "toespraak van de burgemeester. Meer is er niet.",
+        "Het bezoekersaantal verschilt met een factor 2,5 en is dus geen feit maar een schatting — "
+        "let op «se calcula que» in versie B: die tekst geeft zelf toe dat hij schat.",
+        "«Todo el mundo estaba feliz» is de zuiverste interpretatie: onmeetbaar én weerlegd door "
+        "de protesten in versie B.",
+        "De regen staat maar in één versie en is toch waarschijnlijk waar. Bespreek dat: "
+        "«alleen in één bron» betekent niet «vals», het betekent «niet bevestigd».",
+    ],
+    "nota": "Dezelfde oefening werkt met twee echte krantenartikels over vandaag. Doe dat één "
+            "keer per jaar; het effect op hoe de klas nieuws leest, is blijvend.",
+}
+
+P5_RETO_09 = {
+    "id": "C6P-U5-RETO-09", "num": 9, "curso": "C6+", "unidad": P5,
+    "seccion": "§1.4", "ancla": "biografia", "soporte": "print",
+    "nombre": "La biografía en datos",
+    "lente": "🔬 onderzoek & data", "forma": "👥 En parejas", "skill": "✍️ Escribir",
+    "tiempo": "± 15 min", "dificultad": "★★☆",
+    "gancho_es": "Una vida en ocho cifras. Ni una sola frase bonita.",
+    "gancho_nl": "Een leven in acht cijfers. Geen enkele mooie zin.",
+    "consigna_es": "Convertid las cifras en una línea del tiempo y en cinco frases en indefinido.",
+    "consigna_nl": "Zet de cijfers om in een tijdlijn en in vijf indefinido-zinnen.",
+    "regla": "Elke zin bevat één cijfer en één werkwoord in het indefinido. Bijvoeglijke "
+             "naamwoorden zijn verboden — geen «grande», geen «famosa». De cijfers doen het werk.",
+    "pasos": [("Leed las ocho cifras.", "Lees de acht cijfers."),
+              ("Dibujad la línea del tiempo.", "Teken de tijdlijn."),
+              ("Escribid cinco frases con cifra e indefinido.",
+               "Schrijf vijf zinnen met cijfer en indefinido."),
+              ("¿Qué cifra dice más que las otras? ¿Por qué?",
+               "Welk cijfer zegt meer dan de andere? Waarom?")],
+    "datos": {
+        # (soort cijfer, waarde) — een samengesteld portret op basis van
+        # publiek bekende ordes van grootte
+        "cifras": [("años que vivió", "47"),
+                   ("años que pasó en el extranjero", "19"),
+                   ("libros que publicó en vida", "6"),
+                   ("libros que se publicaron después de morir", "11"),
+                   ("lenguas a las que se tradujo", "34"),
+                   ("años entre el primer y el segundo libro", "9"),
+                   ("veces que cambió de país", "5"),
+                   ("edad a la que publicó el primero", "21")],
+        "marco": ["Publicó su primer libro a los … años.",
+                  "Pasó … de sus … años fuera de su país.",
+                  "Entre el primero y el segundo pasaron … años.",
+                  "Después de morir se publicaron … libros más.",
+                  "Se tradujo a … lenguas."],
+    },
+    "clave": [
+        "Het veelzeggendste cijfer is elf boeken ná zijn dood tegenover zes tijdens zijn leven: "
+        "meer dan de helft van zijn werk verscheen postuum. Dat vraagt geen enkel bijvoeglijk "
+        "naamwoord.",
+        "Negentien van de zevenenveertig jaar in het buitenland is bijna de helft — een tweede "
+        "cijfer dat een heel leven samenvat.",
+        "Negen jaar tussen boek één en twee is de stilte die de klas zelf moet opmerken. Vraag "
+        "wat daar gebeurd kan zijn; er is geen antwoord en dat is het punt.",
+        "Toets: vijf zinnen, vijf cijfers, vijf indefinido's, nul bijvoeglijke naamwoorden.",
+    ],
+    "nota": "Laat de klas daarna hun eigen leven in acht cijfers zetten. Het werkt verrassend "
+            "goed en het is meteen de opwarming voor de tarea final.",
+}
+
+P5_RETO_03 = {
+    "id": "C6P-U5-RETO-03", "num": 3, "curso": "C6+", "unidad": P5,
+    "seccion": "§3.4", "ancla": "se_lo", "soporte": "hub",
+    "nombre": "Se lo di a…",
+    "lente": "🔓 puzzel & escape", "forma": "🏫 Toda la clase", "skill": "🗣️ Hablar",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Cinco objetos recorren la clase. Al final nadie sabe dónde acabaron.",
+    "gancho_nl": "Vijf voorwerpen gaan de klas rond. Op het eind weet niemand waar ze belandden.",
+    "consigna_es": "Reconstruye quién se lo dio a quién.",
+    "consigna_nl": "Reconstrueer wie het aan wie gaf.",
+    "regla": "Altijd met «se lo», «se la», «se los» of «se las» — het voorwerp en de persoon "
+             "verdwijnen allebei in het pronomen. Wie de naam van het voorwerp nog uitspreekt, "
+             "geeft de puzzel weg.",
+    "pasos": [("Fíjate en el objeto y en quién lo recibe.",
+               "Let op het voorwerp en op wie het krijgt."),
+              ("Reconstruye la cadena.", "Reconstrueer de ketting."),
+              ("Elige la frase correcta.", "Kies de juiste zin.")],
+    "datos": {
+        "items": [
+            ("Ana tenía el libro y ahora lo tiene Beto. ¿Qué pasó?",
+             "Ana se lo dio a Beto.",
+             ["Ana se lo dio a Beto.", "Ana lo se dio a Beto.", "Ana le lo dio a Beto."],
+             "«le + lo» wordt altijd «se lo» — nooit «le lo», dat bestaat niet"),
+            ("Beto tenía las llaves y ahora las tiene Carla.",
+             "Beto se las dio a Carla.",
+             ["Beto se las dio a Carla.", "Beto se lo dio a Carla.", "Beto las le dio a Carla."],
+             "«las llaves» is vrouwelijk meervoud: se las"),
+            ("Carla tenía los apuntes y ahora los tienen Diego y Elena.",
+             "Carla se los dio a ellos.",
+             ["Carla se los dio a ellos.", "Carla les los dio.", "Carla se les dio."],
+             "twee ontvangers verandert niets aan «se»: alleen het voorwerp bepaalt lo/la/los/las"),
+            ("Diego tenía la foto. Ya no la tiene y Elena tampoco.",
+             "Se la dio a otra persona.",
+             ["Se la dio a otra persona.", "La se dio a otra persona.",
+              "Se lo dio a otra persona."],
+             "«la foto» is vrouwelijk enkelvoud: se la"),
+            ("Elena tenía el cargador y se lo pidió Ana. ¿Qué le contesta Elena?",
+             "Ahora mismo te lo doy.",
+             ["Ahora mismo te lo doy.", "Ahora mismo se lo doy.", "Ahora mismo lo te doy."],
+             "tegen de persoon zelf is het «te lo», niet «se lo» — «se» is alleen derde persoon"),
+            ("Al final del juego, ¿quién tiene el libro?",
+             "No se sabe: hay que reconstruir toda la cadena.",
+             ["No se sabe: hay que reconstruir toda la cadena.",
+              "Beto, porque Ana se lo dio.",
+              "Ana, porque era suyo."],
+             "Beto kreeg het maar kon het doorgeven; alleen de volledige ketting geeft antwoord"),
+        ],
+    },
+    "clave": [
+        "De hele regel in één zin: «le/les + lo/la/los/las» wordt «se + lo/la/los/las». Item 1 "
+        "en 3 bewijzen dat het aantal ontvangers niets verandert.",
+        "Item 5 is de belangrijkste uitzondering: tegen de persoon zélf is het «te lo». Wie "
+        "overal «se lo» zegt, heeft de regel te breed toegepast.",
+        "Item 6 is geen grammatica maar logica: het spel is pas opgelost als de hele ketting "
+        "klopt. Dat sluit de reto af zoals hij begon.",
+    ],
+    "nota": "Speel het eerst met echte voorwerpen in de klas, en doe daarna de hub-oefening. De "
+            "volgorde maakt het verschil: eerst voelen, dan formaliseren.",
+}
+
+P5_RETO_07 = {
+    "id": "C6P-U5-RETO-07", "num": 7, "curso": "C6+", "unidad": P5,
+    "seccion": "§4.4", "ancla": "historia_c6p", "soporte": "hub",
+    "nombre": "Efeméride del día",
+    "lente": "📻 mediaformat", "forma": "👤 Solo", "skill": "🗣️ Hablar",
+    "tiempo": "± 12 min", "dificultad": "★★☆",
+    "gancho_es": "Un día como hoy, en algún sitio del mundo hispano, pasó algo.",
+    "gancho_nl": "Op een dag als vandaag gebeurde er ergens in de Spaanstalige wereld iets.",
+    "consigna_es": "Graba un flash informativo de treinta segundos sobre esa efeméride.",
+    "consigna_nl": "Neem een nieuwsflits van dertig seconden op over die gebeurtenis.",
+    "regla": "Dertig seconden, en de vier w's in de eerste zin: qué, quién, cuándo, dónde. De "
+             "reden of het gevolg komt pas daarna — een nieuwsflits begint nooit met de uitleg.",
+    "pasos": [("Busca qué pasó un día como hoy.",
+               "Zoek wat er op een dag als vandaag gebeurde."),
+              ("Escribe la primera frase con las cuatro w.",
+               "Schrijf de eerste zin met de vier w's."),
+              ("Añade dos frases: por qué importó.",
+               "Voeg twee zinnen toe: waarom het uitmaakte."),
+              ("Graba en treinta segundos. Ni más ni menos.",
+               "Neem op in dertig seconden. Niet meer, niet minder.")],
+    "datos": {
+        "marco": ["Un día como hoy, en … , … .",
+                  "Ocurrió en … , y lo protagonizó …",
+                  "A partir de ese día, …",
+                  "Y por eso hoy se recuerda como …",
+                  "Han pasado … años."],
+        "verbos": ["ocurrió", "empezó", "terminó", "nació", "murió", "se publicó",
+                   "se estrenó", "se firmó", "se descubrió", "cambió"],
+    },
+    "clave": [
+        "De volgorde is de didactiek: eerst het feit, dan de betekenis. Wie begint met «esto fue "
+        "muy importante porque…», heeft een opstel gemaakt in plaats van een nieuwsbericht.",
+        "De werkwoordenbank staat volledig in het indefinido, derde persoon. Dat is precies de "
+        "vorm die de unit oefent, en een nieuwsflits gebruikt geen andere.",
+        "«Han pasado … años» is de enige perfecto-zin in het frame en hij is verplicht: hij "
+        "verbindt het verleden met vandaag. Dat contrast tussen indefinido en perfecto is de "
+        "grammaticale winst.",
+        "Toets de dertig seconden en de vier w's in de eerste zin. De rest is inhoud.",
+    ],
+    "nota": "Maak er een vast ritueel van: elke les één efeméride, één leerling, dertig seconden. "
+            "Na twintig lessen heeft de klas een eigen kalender van de Spaanstalige wereld.",
+}
+
+P5_RETO_10 = {
+    "id": "C6P-U5-RETO-10", "num": 10, "curso": "C6+", "unidad": P5,
+    "seccion": "Cultura", "ancla": "cultura_c6p5", "soporte": "hub",
+    "nombre": "Cuéntaselo a un niño",
+    "lente": "🤝 bemiddelen", "forma": "👤 Solo", "skill": "🔀 Bemiddelen",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "La misma biografía, para alguien de ocho años. Sin mentir y sin aburrir.",
+    "gancho_nl": "Dezelfde biografie, voor iemand van acht. Zonder te liegen en zonder te vervelen.",
+    "consigna_es": "Elige la versión que un niño entiende sin perder la verdad.",
+    "consigna_nl": "Kies de versie die een kind zou begrijpen zonder de waarheid te verliezen.",
+    "regla": "Vereenvoudigen is niet weglaten. Elke versie die het moeilijke deel gewoon schrapt, "
+             "is fout — ook als ze mooi klinkt.",
+    "pasos": [("Lee la frase original.", "Lees de originele zin."),
+              ("Piensa qué palabra es la difícil.", "Denk na welk woord het moeilijke is."),
+              ("Elige la versión que la explica, no la que la esconde.",
+               "Kies de versie die het uitlegt, niet die het verstopt.")],
+    "datos": {
+        "items": [
+            ("«Se exilió en 1939 y no volvió a su país hasta 1977.»",
+             "Tuvo que irse de su país porque allí ya no podía vivir seguro. Volvió treinta y "
+             "ocho años después.",
+             ["Tuvo que irse de su país porque allí ya no podía vivir seguro. Volvió treinta y "
+              "ocho años después.",
+              "Se fue de viaje muchos años.",
+              "Vivió en otro país."],
+             "«se fue de viaje» is niet waar: hij had geen keuze, en dat is precies de kern"),
+            ("«Su obra fue censurada durante dos décadas.»",
+             "Durante veinte años no se pudieron vender sus libros: el gobierno no dejaba.",
+             ["Durante veinte años no se pudieron vender sus libros: el gobierno no dejaba.",
+              "Sus libros no eran famosos.",
+              "No escribió durante veinte años."],
+             "de twee andere veranderen het feit; alleen de eerste vertaalt «censurada» in "
+             "kindertaal"),
+            ("«Recibió un reconocimiento póstumo.»",
+             "Le dieron un premio, pero él murió antes.",
+             ["Le dieron un premio, pero él murió antes.",
+              "Ganó un premio muy tarde.",
+              "Fue muy importante después."],
+             "«póstumo» heeft geen kinderwoord; je legt het uit met een gewone zin"),
+            ("«Fue una figura clave en la reivindicación de los derechos indígenas.»",
+             "Trabajó mucho para conseguir los mismos derechos para su pueblo.",
+             ["Trabajó mucho para conseguir los mismos derechos para su pueblo.",
+              "Ayudó a mucha gente.",
+              "Era muy conocida."],
+             "«ayudó a mucha gente» klopt maar zegt niets; het waarvóór moet erin blijven"),
+        ],
+    },
+    "clave": [
+        "Het patroon van elke goede versie: het moeilijke woord wordt vervangen door een zin, "
+        "niet door een vager woord. «Póstumo» → «pero él ya había muerto».",
+        "De foute antwoorden zijn zelden onwaar — ze zijn leeg. Dat is het lastigste om te zien "
+        "en meteen de belangrijkste vaardigheid van bemiddelen.",
+        "De juiste versies staan bewust volledig binnen bereik van de leerling: indefinido plus "
+        "infinitief. Vereenvoudigen mag de taal niet moeilijker maken dan het origineel — dat "
+        "zou de hele oefening omkeren.",
+        "Toets de vier keuzes plus één eigen omzetting van een zin uit de leestekst.",
+    ],
+    "nota": "Laat het echt uitproberen op een broer of zus van acht. Het antwoord op «snapte "
+            "die het?» is eerlijker dan elke rubriek.",
+}
+
+P5_RETO_01 = {
+    "id": "C6P-U5-RETO-01", "num": 1, "curso": "C6+", "unidad": P5,
+    "seccion": "§1.4", "ancla": "biografia", "soporte": "ppt",
+    "nombre": "El obituario del héroe anónimo",
+    "lente": "✍️ creatieve beperking", "forma": "👤 Solo", "skill": "✍️ Escribir",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Nunca salió en los periódicos. Y sin embargo cambió algo.",
+    "gancho_nl": "Hij haalde nooit de krant. En tóch veranderde hij iets.",
+    "consigna_es": "Escribe el obituario de alguien que no fue famoso, en ocho frases.",
+    "consigna_nl": "Schrijf het overlijdensbericht van iemand die niet beroemd werd, in acht zinnen.",
+    "regla": "Geen beroemdheid, geen uitvinder, geen held. Iemand uit een gewoon leven — en toch "
+             "moet je in één zin kunnen zeggen wat er zonder deze persoon níet zou bestaan.",
+    "pasos": [("Piensa en alguien real o inventado, pero corriente.",
+               "Denk aan iemand echt of verzonnen, maar gewoon."),
+              ("Escribe la frase «gracias a él/ella, …».",
+               "Schrijf de zin «gracias a él/ella, …»."),
+              ("Construye las otras siete alrededor.",
+               "Bouw de andere zeven eromheen."),
+              ("Léelo en voz alta. ¿Se nota que importó?",
+               "Lees hardop voor. Merk je dat hij ertoe deed?")],
+    "datos": {
+        "ejemplos_de_vida": [("la mujer que abrió la primera biblioteca del barrio", ""),
+                             ("el hombre que arregló bicicletas gratis durante cuarenta años", ""),
+                             ("la maestra que enseñó a leer a tres generaciones", ""),
+                             ("el vecino que plantó todos los árboles de la calle", ""),
+                             ("la enfermera del turno de noche que nadie vio nunca", "")],
+        "marco": ["Nació en … en …", "Trabajó … años en …",
+                  "Nunca … , pero sí …", "Gracias a él/ella, …",
+                  "Murió en … , y … personas fueron a despedirlo/-la.",
+                  "Hoy … sigue …"],
+        "verbos": ["nació", "creció", "empezó", "trabajó", "abrió", "enseñó",
+                   "plantó", "arregló", "cuidó", "murió"],
+    },
+    "clave": [
+        "De verplichte zin «gracias a él/ella, …» is het hart: hij dwingt tot een gevolg dat nog "
+        "bestaat, en dus tot een contrast tussen indefinido (het leven) en presente (het gevolg).",
+        "«Nunca… , pero sí…» is de tweede sleutelzin: hij maakt de anonimiteit expliciet in "
+        "plaats van hem te verzwijgen.",
+        "De vijf voorbeelden zijn expres alledaags. Wie toch een beroemdheid kiest, heeft de "
+        "beperking gemist — en de beperking ís de opdracht.",
+        "Toets de acht zinnen, de indefinido-vormen en de aanwezigheid van de gracias-zin.",
+    ],
+    "nota": "Sommige leerlingen schrijven over een eigen grootouder. Dat mag, en het levert de "
+            "beste teksten op — maar niemand hoeft voor te lezen.",
+}
+
+P5_RETO_05 = {
+    "id": "C6P-U5-RETO-05", "num": 5, "curso": "C6+", "unidad": P5,
+    "seccion": "§4.4", "ancla": "historia_c6p", "soporte": "ppt",
+    "nombre": "La leyenda mal contada",
+    "lente": "✍️ creatieve beperking", "forma": "👥 En parejas", "skill": "🗣️ Hablar",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "La leyenda está bien. El orden, no.",
+    "gancho_nl": "De legende klopt. De volgorde niet.",
+    "consigna_es": "Ordenad las ocho partes y contadla con vuestras palabras.",
+    "consigna_nl": "Zet de acht delen op volgorde en vertel ze in eigen woorden.",
+    "regla": "Bij het navertellen mag je geen enkele zin letterlijk overnemen. Je gebruikt de "
+             "conectoren van het verhaal — érase una vez, entonces, al final — en je eigen woorden.",
+    "pasos": [("Leed las ocho partes, desordenadas.",
+               "Lees de acht delen, door elkaar."),
+              ("Ordenadlas. Dos pistas: quién aparece primero y qué causa qué.",
+               "Zet ze op volgorde. Twee sporen: wie eerst verschijnt en wat wat veroorzaakt."),
+              ("Contadla sin leer, con vuestras palabras.",
+               "Vertel ze zonder lezen, in eigen woorden."),
+              ("¿Qué explica esta leyenda?", "Wat verklaart deze legende?")],
+    "datos": {
+        # De legende van de Popocatépetl en de Iztaccíhuatl (México), vrij naverteld
+        "partes": [
+            ("A", "Érase una vez una princesa, Iztaccíhuatl, y un guerrero, Popocatépetl, "
+                  "que se querían."),
+            ("B", "El padre de ella aceptó, pero con una condición: volver vencedor de la guerra."),
+            ("C", "Popocatépetl pidió permiso para casarse con ella."),
+            ("D", "Mientras él estaba lejos, alguien mintió y dijo que había muerto."),
+            ("E", "Iztaccíhuatl se murió de tristeza."),
+            ("F", "Popocatépetl volvió vencedor y la encontró muerta."),
+            ("G", "La llevó a la montaña y se quedó a su lado con una antorcha."),
+            ("H", "Por eso hoy hay dos volcanes: uno dormido y otro que todavía echa humo."),
+        ],
+        "conectores": ["Érase una vez", "Un día", "Entonces", "Mientras tanto",
+                       "Cuando volvió", "Desde entonces", "Al final", "Por eso"],
+    },
+    "clave": [
+        "De juiste volgorde is A · C · B · D · E · F · G · H.",
+        "De moeilijkste is C vóór B: eerst vraagt hij toestemming, dán stelt de vader zijn "
+        "voorwaarde. Wie B eerst zet, keert oorzaak en gevolg om.",
+        "H is het slot dat de legende zijn functie geeft: een verklaring voor twee echte vulkanen "
+        "naast Mexico-Stad. Zonder H is het een liefdesverhaal, mét H is het een mythe.",
+        "Toets het navertellen, niet het ordenen. Wie de volgorde heeft maar voorleest, heeft de "
+        "reto niet gedaan.",
+        "«Se querían» en «estaba lejos» staan in het imperfecto, de verteltijd van elke "
+        "legende. Dat is U6-stof: hier alleen herkennen, en bij het navertellen mag de leerling "
+        "ze als vaste formule overnemen. Vraag er geen analyse over.",
+    ],
+    "nota": "Toon een foto van de twee vulkanen ná het navertellen. De vorm van de Iztaccíhuatl — "
+            "«la mujer dormida» — maakt het verhaal in één beeld af.",
+}
+
+P5_RETO_06 = {
+    "id": "C6P-U5-RETO-06", "num": 6, "curso": "C6+", "unidad": P5,
+    "seccion": "§2.4", "ancla": "indefinido", "soporte": "ppt",
+    "nombre": "Entrevista al pasado",
+    "lente": "🎭 simulatie met beperking", "forma": "🏫 Toda la clase", "skill": "🗣️ Hablar",
+    "tiempo": "± 18 min", "dificultad": "★★★",
+    "gancho_es": "Una silla, un personaje histórico y toda la clase con preguntas.",
+    "gancho_nl": "Eén stoel, één historisch personage en de hele klas met vragen.",
+    "consigna_es": "Entrevistad al personaje. Todas las respuestas en indefinido.",
+    "consigna_nl": "Interview het personage. Alle antwoorden in het indefinido.",
+    "regla": "Het personage antwoordt uitsluitend in het indefinido — hij vertelt afgeronde "
+             "feiten, geen gewoontes en geen meningen. Wie «yo creo que» zegt, is uit zijn rol.",
+    "pasos": [("Un/a voluntario/-a elige un personaje y se sienta.",
+               "Een vrijwilliger kiest een personage en gaat zitten."),
+              ("La clase prepara dos preguntas cada uno, en indefinido.",
+               "De klas bereidt elk twee vragen voor, in het indefinido."),
+              ("Entrevista de cinco minutos. Sin pausas largas.",
+               "Interview van vijf minuten. Zonder lange stiltes."),
+              ("Cambiad de personaje.", "Wissel van personage."),
+              ("¿Qué pregunta ha sido la mejor? ¿Por qué?",
+               "Welke vraag was de beste? Waarom?")],
+    "datos": {
+        "personajes": [("Frida Kahlo", "México, 1907–1954 · pintora"),
+                       ("Simón Bolívar", "Venezuela, 1783–1830 · libertador"),
+                       ("Rigoberta Menchú", "Guatemala, 1959 · Nobel de la Paz"),
+                       ("Violeta Parra", "Chile, 1917–1967 · música"),
+                       ("Bartolomé de las Casas", "España, 1484–1566 · cronista"),
+                       ("Mercedes Sosa", "Argentina, 1935–2009 · cantante")],
+        "preguntas_modelo": ["¿Cuándo salió usted de su país por primera vez?",
+                             "¿Qué hizo el día más difícil de su vida?",
+                             "¿Quién le ayudó cuando nadie más lo hizo?",
+                             "¿De qué decisión se arrepintió después?",
+                             "¿Cuándo supo que su trabajo importaba?"],
+        "prohibido_al_personaje": ["yo creo que", "normalmente", "siempre hacía",
+                                   "hoy en día", "en mi opinión"],
+    },
+    "clave": [
+        "Het verbod op meningen dwingt tot feiten, en feiten dwingen tot het indefinido. Dat is "
+        "de hele constructie: de rolregel produceert de grammatica.",
+        "Elke modelvraag staat bewust in het indefinido, ook «¿de qué decisión se arrepintió?» — "
+        "een vraag in het presente laat het personage meteen uit zijn tijd stappen.",
+        "De beste vragen zijn die met «cuándo» en «qué hizo»: ze laten geen ontsnappingsroute "
+        "naar het presente.",
+        "Toets de vragen van de klas, niet het antwoord van het personage. Twee goede vragen per "
+        "leerling is de opdracht.",
+    ],
+    "nota": "Bereid één personage zelf voor als de klas vastloopt. Vijf minuten in de stoel is "
+            "langer dan het lijkt, en een leerkracht die het voordoet, breekt het ijs.",
+}
+
+RETOS_C6P_U5 = [P5_RETO_01, P5_RETO_02, P5_RETO_03, P5_RETO_04, P5_RETO_05,
+                P5_RETO_06, P5_RETO_07, P5_RETO_08, P5_RETO_09, P5_RETO_10]
+
+
 RETOS = (RETOS_U0 + RETOS_U1 + RETOS_U2 + RETOS_U3 + RETOS_U4
          + RETOS_U5 + RETOS_U6 + RETOS_U7 + RETOS_U8
          + RETOS_C6P_U0 + RETOS_C6P_U1 + RETOS_C6P_U2
-         + RETOS_C6P_U3)
+         + RETOS_C6P_U3 + RETOS_C6P_U4 + RETOS_C6P_U5)
 
 # Waar in de printcursus elke sectie eindigt — hier wordt een print-reto ingevoegd.
 ANCLAS = ["alfabeto", "sonidos", "sonido_letra", "acento", "numeros", "saludos", "cultura",
@@ -6043,7 +7062,11 @@ ANCLAS = ["alfabeto", "sonidos", "sonido_letra", "acento", "numeros", "saludos",
           "casa_c6p", "hay_estar_c6p", "gerundio_c6p", "pronombres_c6p2",
           "barrio_c6p", "cultura_c6p2",
           # C6+ U3
-          "movil_c6p", "ir_a_c6p", "oi_c6p", "acabar_c6p", "cultura_c6p3"]
+          "movil_c6p", "ir_a_c6p", "oi_c6p", "acabar_c6p", "cultura_c6p3",
+          # C6+ U4
+          "viaje_c6p", "perfecto_c6p", "por_para", "cultura_c6p4",
+          # C6+ U5
+          "biografia", "indefinido", "se_lo", "historia_c6p", "cultura_c6p5"]
 
 
 def de(curso, unidad):

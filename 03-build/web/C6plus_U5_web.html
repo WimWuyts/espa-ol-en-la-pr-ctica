@@ -405,6 +405,11 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
     <div id="motorlink"></div>
   </section>
 
+  <section class="panel" data-p="retos">
+    <h2 class="sec">Retos · tres desafíos 🎯</h2>
+    <p class="lead">Drie retos met <b>één harde regel</b>: vijf voorwerpen gaan de klas rond en je reconstrueert met <b>se lo, se la, se los, se las</b> wie wat aan wie gaf, je brengt een gedenkdag als nieuwsflits van <b>dertig seconden</b> (de vier w's in de eerste zin), en je vertelt een ingewikkelde biografie na voor een kind van acht — <b>vereenvoudigen zonder te liegen</b>. <span class="gloss">De zeven andere retos van deze unit staan in het boek en in de PowerPoint.</span></p>
+    <div id="retos_c6p_u5"></div>
+  </section>
   <section class="panel" data-p="hablar">
     <h2 class="sec">Hablar · grábate 🎙️</h2>
     <p class="lead">Neem <b>jezelf</b> op: luister naar het model, spreek in, luister terug, en neem opnieuw op. <span class="gloss">Werkt in Chrome/Edge; sta de micro toe. Print blijft bruikbaar zonder opname.</span></p>
@@ -539,9 +544,291 @@ const GAMES={"biografia-memoria": "PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9Im5sIj4KP
 function toggleTheme(){const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'}
 function speak(t,rate){if(!('speechSynthesis'in window))return;const u=new SpeechSynthesisUtterance(t);u.lang='es-ES';u.rate=rate||.92;
   const vs=speechSynthesis.getVoices();const es=vs.find(v=>/^es/i.test(v.lang));if(es)u.voice=es;try{speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}
+function buildRetos(id,cfg){
+ const host=document.getElementById(id);if(!host)return;
+ host.innerHTML='<div class="retos"></div>';
+ const lista=host.querySelector('.retos');
+ (cfg.retos||[]).forEach((r,n)=>{
+  const c=document.createElement('div');c.className='reto';
+  c.innerHTML='<div class="rcab"><span class="rnum">'+r.num+'</span><h3>'+exEsc(r.nombre)+'</h3>'+
+    '<span class="rlente">'+exEsc(r.lente)+'</span></div>'+
+    '<p class="rgancho"><b>'+exEsc(r.gancho_es)+'</b></p>'+
+    '<p class="rnl">'+exEsc(r.gancho_nl)+'</p>'+
+    '<p class="desc">'+exEsc(r.consigna_nl)+'</p>'+
+    '<div class="rregla"><b>La regla del reto</b>'+exEsc(r.regla)+'</div>'+
+    '<div class="rcuerpo" id="'+id+'_c'+n+'"></div>';
+  lista.appendChild(c);
+  const cuerpo=c.querySelector('.rcuerpo');
+  if(r.tipo==='grabar')retoGrabar(cuerpo,r,id+'_c'+n);
+  else if(r.tipo==='detector')retoDetector(cuerpo,r);
+  else if(r.tipo==='mapa')retoMapa(cuerpo,r);
+  else if(r.tipo==='articulo')retoArticulo(cuerpo,r);
+  else if(r.tipo==='escena')retoEscena(cuerpo,r);
+  else if(r.tipo==='retrato')retoRetrato(cuerpo,r);
+  else if(r.tipo==='voces')retoVoces(cuerpo,r);
+  else if(r.tipo==='opciones')retoOpciones(cuerpo,r);
+ });
+}
+
+function retoGrabar(cont,r,idBase){
+ (r.situaciones||[]).forEach(s=>{
+   const d=document.createElement('div');d.className='rsit';
+   d.innerHTML='<b>'+exEsc(s.es)+'</b><span class="rpista">'+exEsc(s.nl)+
+     (s.pista?' · <i>'+exEsc(s.pista)+'</i>':'')+'</span>';
+   cont.appendChild(d);});
+ const rec=document.createElement('div');rec.id=idBase+'_rec';cont.appendChild(rec);
+ if(typeof makeRecorder==='function')
+   makeRecorder(idBase+'_rec',{title:r.nombre,desc:r.consigna_es,
+     items:(r.items||[]).map(t=>({text:t.text,cue:t.cue}))});
+}
+
+function retoDetector(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ const reglas=r.reglas||[];
+ (r.items||[]).forEach((it,i)=>{
+   const d=document.createElement('div');d.className='detit';
+   const opts=reglas.map((g,k)=>'<option value="'+k+'">'+exEsc(g)+'</option>').join('');
+   d.innerHTML='<div class="dpal">'+exEsc(it.palabra)+'</div>'+
+     '<div class="detbtns"><button class="detbtn" type="button" data-v="1">✓ posible</button>'+
+     '<button class="detbtn" type="button" data-v="0">✗ imposible</button></div>'+
+     '<div class="detrule" hidden><label class="desc">¿Qué regla rompe?</label>'+
+     '<select><option value="-1">— elige la regla —</option>'+opts+'</select></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const fb=d.querySelector('.detfb'),rule=d.querySelector('.detrule'),sel=d.querySelector('select');
+   let cerrado=false;
+   d.querySelectorAll('.detbtn').forEach(b=>{b.onclick=()=>{
+     if(cerrado)return;
+     const dicho=b.dataset.v==='1';
+     if(!dicho){rule.hidden=false;sel.focus();
+       fb.className='detfb show';fb.textContent='Ahora acusa con pruebas: ¿qué regla rompe?';
+       cerrado=false;
+       sel.onchange=()=>{cerrado=true;
+         const bien=(!it.posible)&&(Number(sel.value)===it.regla);
+         d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);sel.disabled=true;
+         b.classList.add(bien?'ok':'no');
+         fb.className='detfb show '+(bien?'g':'b');
+         fb.innerHTML=bien?'<b>✓ acusación correcta</b> · '+exEsc(it.porque)
+           :(it.posible?'<b>✗ esta palabra sí existe</b> · '+exEsc(it.porque)
+                       :'<b>✗ la regla no es esa</b> · '+exEsc(it.porque));};
+       return;}
+     cerrado=true;
+     const bien=it.posible;
+     d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);
+     b.classList.add(bien?'ok':'no');
+     fb.className='detfb show '+(bien?'g':'b');
+     fb.innerHTML=(bien?'<b>✓ correcto</b> · ':'<b>✗ no</b> · ')+exEsc(it.porque);};});
+   caja.appendChild(d);});
+}
+
+// ── artículo: el/la op verzonnen woorden ───────────────────────────────────
+// Het lidwoord alléén zegt niets: wie «la» kiest bij een -ma-woord heeft geraden,
+// ook als het toevallig klopt. Daarom moet de leerling er de regel bij kiezen, en
+// telt het pas als het allebei klopt.
+// ── retrato hablado: luister en kies het juiste portret ────────────────────
+// De portretten worden getekend, niet beschreven: stonden de kenmerken in
+// woorden op de kaart, dan werd het woorden matchen in plaats van luisteren.
+function retoCara(x,y,r,p){
+ const pelo = p.pelo.indexOf('largo')>=0
+   ? (p.pelo.indexOf('rizado')>=0
+      ? '<path d="M'+(x-r-4)+' '+(y+r+6)+' q-6,-'+(r+18)+' '+(r+6)+',-'+(r+14)+' q'+r+',-8 '+(r+6)+','+(r+14)+' q6,'+(r+8)+' -4,'+(r+2)+' q-'+r+',-14 -'+(2*r-4)+',0 Z" fill="#5C4433"/>'
+      : '<path d="M'+(x-r-2)+' '+(y+r+8)+' l0,-'+(r+16)+' q'+(r+2)+',-14 '+(2*r+4)+',0 l0,'+(r+16)+' l-8,0 l0,-'+r+' q-'+r+',-10 -'+(2*r-8)+',0 l0,'+r+' Z" fill="#5C4433"/>')
+   : (p.pelo.indexOf('rizado')>=0
+      ? '<path d="M'+(x-r-2)+' '+y+' q2,-'+(r+14)+' '+(r+2)+',-'+(r+10)+' q'+r+',-6 '+(r+2)+','+(r+10)+' q2,10 -6,6 q-'+r+',-14 -'+(2*r-8)+',0 q-8,4 -6,-6 Z" fill="#5C4433"/>'
+      : '<path d="M'+(x-r-2)+' '+(y-2)+' q0,-'+(r+12)+' '+(r+2)+',-'+(r+12)+' q'+(r+2)+',0 '+(r+2)+','+(r+12)+' l-6,2 q-'+r+',-12 -'+(2*r-4)+',0 Z" fill="#5C4433"/>');
+ const gafas = p.gafas
+   ? '<g fill="none" stroke="#20242E" stroke-width="2.4"><circle cx="'+(x-r/2.4)+'" cy="'+(y+2)+'" r="'+(r/3.4)+'"/>'
+     +'<circle cx="'+(x+r/2.4)+'" cy="'+(y+2)+'" r="'+(r/3.4)+'"/>'
+     +'<line x1="'+(x-r/2.4+r/3.4)+'" y1="'+(y+2)+'" x2="'+(x+r/2.4-r/3.4)+'" y2="'+(y+2)+'"/></g>'
+   : '<circle cx="'+(x-r/2.4)+'" cy="'+(y+1)+'" r="2.6" fill="#20242E"/>'
+     +'<circle cx="'+(x+r/2.4)+'" cy="'+(y+1)+'" r="2.6" fill="#20242E"/>';
+ const boca = p.sonrie
+   ? '<path d="M'+(x-r/2.6)+' '+(y+r/2.2)+' q'+(r/2.6)+','+(r/3.2)+' '+(r/1.3)+',0" stroke="#20242E" stroke-width="2.4" fill="none" stroke-linecap="round"/>'
+   : '<line x1="'+(x-r/3)+'" y1="'+(y+r/1.9)+'" x2="'+(x+r/3)+'" y2="'+(y+r/1.9)+'" stroke="#20242E" stroke-width="2.4" stroke-linecap="round"/>';
+ return '<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="#F2D3B6"/>'+pelo+gafas+boca;
+}
+
+function retoRetrato(cont,r){
+ const rs=r.retratos||[], ds=r.descripciones||[];
+ let i=0, aciertos=0;
+ cont.innerHTML='<div class="rmarca"><button class="escbtn rplay" type="button">▶ Escuchar la descripción</button>'+
+   '<span class="rcuenta rvuelta">1 / '+ds.length+'</span>'+
+   '<span class="desc rtanteo">aciertos: 0</span></div>'+
+   '<div class="retratos"></div><div class="detfb rfb" role="status" aria-live="polite"></div>';
+ const caja=cont.querySelector('.retratos');
+ rs.forEach(p=>{
+   const b=document.createElement('button');b.type='button';b.className='retrato';b.dataset.n=p.n;
+   b.innerHTML='<svg viewBox="0 0 100 100" aria-hidden="true">'+retoCara(50,52,26,p)+'</svg>'+
+     '<span class="rnum2">'+p.n+'</span>';
+   b.onclick=()=>{
+     if(!ds[i])return;
+     const fb=cont.querySelector('.rfb'), bien=Number(b.dataset.n)===ds[i].correcto;
+     b.classList.add(bien?'ok':'no');
+     fb.className='detfb show rfb '+(bien?'g':'b');
+     fb.innerHTML=bien?'<b>✓ correcto</b> · '+exEsc(ds[i].texto)
+       :'<b>✗ no</b> · era el '+ds[i].correcto+' — '+exEsc(ds[i].texto);
+     if(bien)aciertos++;
+     cont.querySelector('.rtanteo').textContent='aciertos: '+aciertos;
+     i++;
+     setTimeout(()=>{caja.querySelectorAll('.retrato').forEach(x=>x.classList.remove('ok','no'));
+       if(i<ds.length){cont.querySelector('.rvuelta').textContent=(i+1)+' / '+ds.length;fb.className='detfb rfb';}
+       else{cont.querySelector('.rvuelta').textContent='hecho';
+         fb.className='detfb show rfb g';fb.innerHTML='<b>Listo</b> · ahora describe tú uno a tu compañero/a.';}},1400);};
+   caja.appendChild(b);});
+ cont.querySelector('.rplay').onclick=()=>{if(ds[i]&&typeof speak==='function')speak(ds[i].texto);};
+}
+
+// ── drie stemmen, één samenvatting: bemiddelen ─────────────────────────────
+// ── opciones: kies uit N, mét verplichte uitleg ────────────────────────────
+// Breed inzetbaar: welk werkwoord past bij dit uur, welke Spaanse uitdrukking
+// dekt deze Vlaamse. Er is telkens één juist antwoord, en de feedback zegt niet
+// alleen wát maar ook waarom — anders leert een gokker niets.
+function retoOpciones(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ (r.items||[]).forEach(it=>{
+   const d=document.createElement('div');d.className='detit';
+   d.innerHTML=(it.audio?'<button class="escbtn opplay" type="button">▶ Escuchar</button>':'')+
+     '<div class="dpal">'+exEsc(it.enunciado)+'</div>'+
+     '<div class="detbtns"></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const btns=d.querySelector('.detbtns'), fb=d.querySelector('.detfb');
+   let cerrado=false;
+   (it.opciones||[]).forEach(o=>{
+     const b=document.createElement('button');b.type='button';b.className='detbtn';b.textContent=o;
+     b.onclick=()=>{if(cerrado)return;cerrado=true;
+       const bien=o===it.correcta;
+       btns.querySelectorAll('.detbtn').forEach(x=>{x.disabled=true;
+         if(x.textContent===it.correcta)x.classList.add('ok');});
+       if(!bien)b.classList.add('no');
+       fb.className='detfb show '+(bien?'g':'b');
+       fb.innerHTML=(bien?'<b>✓ correcto</b>':'<b>✗ es «'+exEsc(it.correcta)+'»</b>')+
+         (it.porque?' · '+exEsc(it.porque):'');};
+     btns.appendChild(b);});
+   const pl=d.querySelector('.opplay');
+   if(pl)pl.onclick=()=>{if(typeof speak==='function')speak(it.enunciado);};
+   caja.appendChild(d);});
+}
+
+function retoVoces(cont,r){
+ cont.innerHTML='<div class="voces"></div>'+
+   '<p class="desc">Schrijf je samenvatting in drie zinnen — korter dan wat je hoorde, en niemand mag wegvallen.</p>'+
+   '<textarea class="escta" rows="5" aria-label="Jouw samenvatting" placeholder="1. Rosa vindt…"></textarea>';
+ const caja=cont.querySelector('.voces');
+ (r.voces||[]).forEach(v=>{
+   const d=document.createElement('div');d.className='voz';
+   d.innerHTML='<button class="escbtn vozbtn" type="button">▶</button>'+
+     '<div><b>'+exEsc(v.quien)+'</b><span class="vozt">'+exEsc(v.texto)+'</span></div>';
+   d.querySelector('.vozbtn').onclick=()=>{if(typeof speak==='function')speak(v.texto);};
+   caja.appendChild(d);});
+}
+
+function retoArticulo(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ const reglas=r.reglas||[];
+ (r.objetos||[]).forEach(it=>{
+   const d=document.createElement('div');d.className='detit';
+   const opts=reglas.map((g,k)=>'<option value="'+g.clave+'">'+exEsc(g.texto)+'</option>').join('');
+   d.innerHTML='<div class="dpal">¿… '+exEsc(it.palabra)+'?</div>'+
+     '<div class="detbtns"><button class="detbtn" type="button" data-a="el">el</button>'+
+     '<button class="detbtn" type="button" data-a="la">la</button></div>'+
+     '<div class="detrule" hidden><label class="desc">¿Qué regla usas?</label>'+
+     '<select><option value="">— elige la regla —</option>'+opts+'</select></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const fb=d.querySelector('.detfb'),rule=d.querySelector('.detrule'),sel=d.querySelector('select');
+   let elegido=null;
+   d.querySelectorAll('.detbtn').forEach(b=>{b.onclick=()=>{
+     if(elegido)return;
+     elegido=b.dataset.a;rule.hidden=false;sel.focus();
+     fb.className='detfb show';fb.textContent='¿Y por qué? Elige la regla.';};});
+   sel.onchange=()=>{
+     if(!sel.value)return;
+     const bienArt=elegido===it.articulo, bienRegla=sel.value===it.regla;
+     d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);sel.disabled=true;
+     const b=d.querySelector('.detbtn[data-a="'+elegido+'"]');
+     b.classList.add(bienArt&&bienRegla?'ok':'no');
+     fb.className='detfb show '+(bienArt&&bienRegla?'g':'b');
+     if(bienArt&&bienRegla)fb.innerHTML='<b>✓ correcto</b> · '+exEsc(it.porque);
+     else if(bienArt)fb.innerHTML='<b>✗ el artículo sí, la regla no</b> · '+exEsc(it.porque)+
+       ' — con la regla equivocada, has adivinado.';
+     else fb.innerHTML='<b>✗ es «'+exEsc(it.articulo)+' '+exEsc(it.palabra)+'»</b> · '+exEsc(it.porque);};
+   caja.appendChild(d);});
+}
+
+// ── escena: dezelfde plek, twee tijden ─────────────────────────────────────
+// Twee panelen naast elkaar; klik een voorwerp en je hoort en ziet hoe het heet.
+// De twee voorwerpen die in beide scènes staan, zijn de controle: wie die als
+// verschil noteert, heeft te snel gekeken.
+function retoEscena(cont,r){
+ const items=r.escena||[];
+ function panel(cual,titulo,sub){
+   const propios=items.filter(i=>i.cuando===cual||i.cuando==='ambas');
+   const formas=propios.map((i,k)=>i.forma==='circ'
+     ? '<circle class="eob" data-k="'+k+'" data-c="'+cual+'" cx="'+(i.x+i.w/2)+'" cy="'+(i.y+i.h/2)+
+       '" r="'+(i.w/2)+'" fill="'+i.color+'"/>'
+     : '<rect class="eob" data-k="'+k+'" data-c="'+cual+'" x="'+i.x+'" y="'+i.y+'" width="'+i.w+
+       '" height="'+i.h+'" rx="1.5" fill="'+i.color+'"/>').join('');
+   return '<figure class="esc"><figcaption><b>'+exEsc(titulo)+'</b> <span>'+exEsc(sub)+'</span></figcaption>'+
+     '<svg viewBox="0 0 100 84" role="img" aria-label="'+exEsc(titulo)+'">'+
+     '<rect x="0" y="0" width="100" height="52" fill="#E8F1F7"/>'+          // lucht
+     '<rect x="0" y="52" width="100" height="32" fill="#EDE7DC"/>'+          // plein
+     '<rect x="0" y="30" width="100" height="22" fill="#D8CFC0"/>'+          // gevelrij
+     '<rect x="6" y="24" width="16" height="28" fill="#C6B9A6"/>'+
+     '<rect x="44" y="20" width="18" height="32" fill="#C6B9A6"/>'+
+     '<rect x="76" y="26" width="18" height="26" fill="#C6B9A6"/>'+
+     formas+'</svg><p class="escnom" role="status" aria-live="polite">Klik een voorwerp.</p></figure>';
+ }
+ cont.innerHTML='<div class="escenas">'+panel('antes','1985','la misma plaza, hace cuarenta años')+
+   panel('ahora','ahora','la plaza hoy')+'</div>'+
+   '<p class="desc">De twee dingen die in <b>allebei</b> de scènes staan, zijn de controle: die zijn géén verschil.</p>';
+ cont.querySelectorAll('.eob').forEach(el=>{
+   el.style.cursor='pointer';
+   el.addEventListener('click',()=>{
+     const cual=el.dataset.c, k=Number(el.dataset.k);
+     const propios=items.filter(i=>i.cuando===cual||i.cuando==='ambas');
+     const it=propios[k];if(!it)return;
+     const fig=el.closest('figure');
+     fig.querySelector('.escnom').innerHTML='<b>'+exEsc(it.es)+'</b> — '+exEsc(it.nl)+
+       (it.cuando==='ambas'?' <i>(en las dos escenas)</i>':'');
+     el.style.stroke='#157355';el.style.strokeWidth='1.4';
+     if(typeof speak==='function')speak(it.es);});});
+ const marco=document.createElement('div');marco.className='rsit';
+ marco.innerHTML='<b>Tu marco</b><span class="rpista">'+
+   (r.marco||[]).map(exEsc).join(' · ')+'</span>';
+ cont.appendChild(marco);
+ const ta=document.createElement('textarea');ta.className='escta';ta.rows=5;
+ ta.setAttribute('aria-label','Jouw vijf zinnen');ta.placeholder='1. En la plaza de ahora hay…';
+ cont.appendChild(ta);
+}
+
+function retoMapa(cont,r){
+ const paises=r.paises||[];
+ cont.innerHTML='<div class="rmarca"><span class="rcuenta">0 / '+paises.length+'</span>'+
+   '<div class="rbarra"><i></i></div>'+
+   '<button class="otra rreset" type="button">↺ empezar de nuevo</button></div>'+
+   '<p class="desc">Klik een land, zeg het hardop, laat iemand bevestigen — dan pas aanklikken. '+
+   'De teller is van de klas, niet van jou.</p><div class="rpais"></div>';
+ const cont2=cont.querySelector('.rpais'),cuenta=cont.querySelector('.rcuenta'),
+       barra=cont.querySelector('.rbarra i');
+ let hechos=0;
+ function pinta(iso){ // laat het land op de grote kaart meekleuren, als die er is
+   const svg=document.querySelector('#mapwrap svg');if(!svg)return;
+   const p=svg.querySelector('[data-c="'+iso+'"]');if(p)p.style.filter='saturate(1.6) brightness(1.05)';}
+ paises.forEach(p=>{
+   const b=document.createElement('button');b.type='button';
+   b.innerHTML=exEsc(p.nombre)+'<span class="sil">'+exEsc(p.silabas)+'</span>';
+   b.onclick=()=>{if(b.classList.contains('hecho'))return;
+     b.classList.add('hecho');hechos++;pinta(p.iso);
+     cuenta.textContent=hechos+' / '+paises.length;
+     barra.style.width=Math.round(hechos/paises.length*100)+'%';
+     if(typeof speak==='function')speak(p.nombre);
+     if(hechos===paises.length)cuenta.textContent='¡'+paises.length+' / '+paises.length+' — lo habéis conseguido!';};
+   cont2.appendChild(b);});
+ cont.querySelector('.rreset').onclick=()=>{hechos=0;cuenta.textContent='0 / '+paises.length;
+   barra.style.width='0';cont2.querySelectorAll('button').forEach(x=>x.classList.remove('hecho'));};
+}
+
 const TTS=('speechSynthesis'in window);
 if(TTS){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}
-const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
+const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['retos','Retos 🎯'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
 const sn=document.getElementById('subnav');
 // ── tabbladen · het adres volgt mee ──────────────────────────────────────────
 // #escuchar opent dat tabblad; #lec_1 opent het paneel waar dat element in
@@ -1358,6 +1645,7 @@ function buildGramType(){
  buildType('gt_3',{title:"Se lo · se la — dos pronombres seguidos",desc:"Twee voornaamwoorden na elkaar: eerst aan wíe, dan wát. Vóór <i>lo/la/los/las</i> wordt <b>le</b> en <b>les</b> altijd <b>se</b> — <i>le lo</i> bestaat niet.",accents:'soft',perBlock:12,expect:12,items:[{"q": "¿El libro a María? ___ ___ di ayer.", "ans": "se lo", "why": "le + lo → se lo"}, {"q": "¿La carta a sus padres? ___ ___ mandó por correo.", "ans": "se la", "why": "les + la → se la"}, {"q": "¿Los cuadros al museo? ___ ___ regaló en 1980.", "ans": "se los", "why": "le + los → se los"}, {"q": "¿Las fotos a nosotros? ___ ___ enseñó anteayer.", "ans": "nos las", "why": "aan ons → nos, blijft nos"}, {"q": "¿El secreto a mí? ___ ___ contó de repente.", "ans": "me lo", "why": "aan mij → me"}, {"q": "¿La historia a ti? ___ ___ conté yo.", "ans": "te la", "why": "aan jou → te"}, {"q": "¿El premio a la científica? ___ ___ dieron en Estocolmo.", "ans": "se lo", "why": "le + lo → se lo"}, {"q": "¿Las llaves a sus hermanos? ___ ___ dejó en la mesa.", "ans": "se las", "why": "les + las → se las"}, {"q": "¿La canción a su madre? ___ ___ compuso para su cumpleaños.", "ans": "se la", "why": "le + la → se la"}, {"q": "¿Los apuntes a mí? ___ ___ prestó el lunes.", "ans": "me los", "why": "aan mij → me"}, {"q": "¿El cuadro a vosotros? ___ ___ vendió barato.", "ans": "os lo", "why": "aan jullie → os"}, {"q": "¿La verdad a ellos? ___ ___ dijo al final.", "ans": "se la", "why": "les + la → se la"}]});
 }
 buildGramType();
+buildRetos("retos_c6p_u5",{"retos": [{"num": 3, "nombre": "Se lo di a…", "lente": "🔓 puzzel & escape", "gancho_es": "Cinco objetos recorren la clase. Al final nadie sabe dónde acabaron.", "gancho_nl": "Vijf voorwerpen gaan de klas rond. Op het eind weet niemand waar ze belandden.", "consigna_es": "Reconstruye quién se lo dio a quién.", "consigna_nl": "Reconstrueer wie het aan wie gaf.", "regla": "Altijd met «se lo», «se la», «se los» of «se las» — het voorwerp en de persoon verdwijnen allebei in het pronomen. Wie de naam van het voorwerp nog uitspreekt, geeft de puzzel weg.", "tipo": "opciones", "items": [{"enunciado": "Ana tenía el libro y ahora lo tiene Beto. ¿Qué pasó?", "correcta": "Ana se lo dio a Beto.", "opciones": ["Ana se lo dio a Beto.", "Ana lo se dio a Beto.", "Ana le lo dio a Beto."], "porque": "«le + lo» wordt altijd «se lo» — nooit «le lo», dat bestaat niet"}, {"enunciado": "Beto tenía las llaves y ahora las tiene Carla.", "correcta": "Beto se las dio a Carla.", "opciones": ["Beto se las dio a Carla.", "Beto se lo dio a Carla.", "Beto las le dio a Carla."], "porque": "«las llaves» is vrouwelijk meervoud: se las"}, {"enunciado": "Carla tenía los apuntes y ahora los tienen Diego y Elena.", "correcta": "Carla se los dio a ellos.", "opciones": ["Carla se los dio a ellos.", "Carla les los dio.", "Carla se les dio."], "porque": "twee ontvangers verandert niets aan «se»: alleen het voorwerp bepaalt lo/la/los/las"}, {"enunciado": "Diego tenía la foto. Ya no la tiene y Elena tampoco.", "correcta": "Se la dio a otra persona.", "opciones": ["Se la dio a otra persona.", "La se dio a otra persona.", "Se lo dio a otra persona."], "porque": "«la foto» is vrouwelijk enkelvoud: se la"}, {"enunciado": "Elena tenía el cargador y se lo pidió Ana. ¿Qué le contesta Elena?", "correcta": "Ahora mismo te lo doy.", "opciones": ["Ahora mismo te lo doy.", "Ahora mismo se lo doy.", "Ahora mismo lo te doy."], "porque": "tegen de persoon zelf is het «te lo», niet «se lo» — «se» is alleen derde persoon"}, {"enunciado": "Al final del juego, ¿quién tiene el libro?", "correcta": "No se sabe: hay que reconstruir toda la cadena.", "opciones": ["No se sabe: hay que reconstruir toda la cadena.", "Beto, porque Ana se lo dio.", "Ana, porque era suyo."], "porque": "Beto kreeg het maar kon het doorgeven; alleen de volledige ketting geeft antwoord"}]}, {"num": 7, "nombre": "Efeméride del día", "lente": "📻 mediaformat", "gancho_es": "Un día como hoy, en algún sitio del mundo hispano, pasó algo.", "gancho_nl": "Op een dag als vandaag gebeurde er ergens in de Spaanstalige wereld iets.", "consigna_es": "Graba un flash informativo de treinta segundos sobre esa efeméride.", "consigna_nl": "Neem een nieuwsflits van dertig seconden op over die gebeurtenis.", "regla": "Dertig seconden, en de vier w's in de eerste zin: qué, quién, cuándo, dónde. De reden of het gevolg komt pas daarna — een nieuwsflits begint nooit met de uitleg.", "tipo": "grabar", "situaciones": [{"es": "Un día como hoy, en … , … .", "nl": "", "pista": ""}, {"es": "Ocurrió en … , y lo protagonizó …", "nl": "", "pista": ""}, {"es": "A partir de ese día, …", "nl": "", "pista": ""}, {"es": "Y por eso hoy se recuerda como …", "nl": "", "pista": ""}, {"es": "Han pasado … años.", "nl": "", "pista": ""}], "items": [{"text": "La efeméride de hoy", "cue": "dertig seconden · de vier w's in de eerste zin · indefinido: ocurrió · empezó · terminó · nació · murió · se publicó"}]}, {"num": 10, "nombre": "Cuéntaselo a un niño", "lente": "🤝 bemiddelen", "gancho_es": "La misma biografía, para alguien de ocho años. Sin mentir y sin aburrir.", "gancho_nl": "Dezelfde biografie, voor iemand van acht. Zonder te liegen en zonder te vervelen.", "consigna_es": "Elige la versión que un niño entiende sin perder la verdad.", "consigna_nl": "Kies de versie die een kind zou begrijpen zonder de waarheid te verliezen.", "regla": "Vereenvoudigen is niet weglaten. Elke versie die het moeilijke deel gewoon schrapt, is fout — ook als ze mooi klinkt.", "tipo": "opciones", "items": [{"enunciado": "«Se exilió en 1939 y no volvió a su país hasta 1977.»", "correcta": "Tuvo que irse de su país porque allí ya no podía vivir seguro. Volvió treinta y ocho años después.", "opciones": ["Tuvo que irse de su país porque allí ya no podía vivir seguro. Volvió treinta y ocho años después.", "Se fue de viaje muchos años.", "Vivió en otro país."], "porque": "«se fue de viaje» is niet waar: hij had geen keuze, en dat is precies de kern"}, {"enunciado": "«Su obra fue censurada durante dos décadas.»", "correcta": "Durante veinte años no se pudieron vender sus libros: el gobierno no dejaba.", "opciones": ["Durante veinte años no se pudieron vender sus libros: el gobierno no dejaba.", "Sus libros no eran famosos.", "No escribió durante veinte años."], "porque": "de twee andere veranderen het feit; alleen de eerste vertaalt «censurada» in kindertaal"}, {"enunciado": "«Recibió un reconocimiento póstumo.»", "correcta": "Le dieron un premio, pero él murió antes.", "opciones": ["Le dieron un premio, pero él murió antes.", "Ganó un premio muy tarde.", "Fue muy importante después."], "porque": "«póstumo» heeft geen kinderwoord; je legt het uit met een gewone zin"}, {"enunciado": "«Fue una figura clave en la reivindicación de los derechos indígenas.»", "correcta": "Trabajó mucho para conseguir los mismos derechos para su pueblo.", "opciones": ["Trabajó mucho para conseguir los mismos derechos para su pueblo.", "Ayudó a mucha gente.", "Era muy conocida."], "porque": "«ayudó a mucha gente» klopt maar zegt niets; het waarvóór moet erin blijven"}]}]});
 buildEscucha("esc_c6p_u5",{"title": "Los que llegaron en barco", "audio": "audio/C6plus_U5.mp3", "expectDetalle": 5, "situacion": {"lugar": "Museo de la Inmigración, Buenos Aires — sala 2", "quien": "Una guía y dos alumnos de intercambio", "que": "La guía cuenta cómo llegaron los inmigrantes y de dónde salió el tango", "claves": ["llegaron en barco", "entre 1880 y 1930", "por eso"]}, "guion": [{"who": "Guía", "es": "Bienvenidos a la sala dos. Aquí estamos en el antiguo Hotel de Inmigrantes.", "nl": "Welkom in zaal twee. We staan hier in het vroegere Immigrantenhotel."}, {"who": "Guía", "es": "Entre mil ochocientos ochenta y mil novecientos treinta llegaron a Argentina millones de personas. La mayoría vino de Italia y de España.", "nl": "Tussen 1880 en 1930 kwamen er miljoenen mensen naar Argentinië. De meesten kwamen uit Italië en Spanje."}, {"who": "Alumno", "es": "¿Y dónde durmieron al llegar?", "nl": "En waar sliepen ze als ze aankwamen?"}, {"who": "Guía", "es": "Aquí mismo. El Estado les dio cama y comida durante cinco días. Después buscaron trabajo y se mudaron a los conventillos.", "nl": "Hier ter plaatse. De staat gaf hun vijf dagen lang bed en eten. Daarna zochten ze werk en verhuisden ze naar de conventillos."}, {"who": "Alumna", "es": "¿Qué es un conventillo?", "nl": "Wat is een conventillo?"}, {"who": "Guía", "es": "Una casa grande con muchas familias. Cada familia tuvo una sola habitación, y todos compartieron el patio y la cocina.", "nl": "Een groot huis met veel gezinnen. Elk gezin had één enkele kamer, en iedereen deelde de binnenplaats en de keuken."}, {"who": "Guía", "es": "En ese patio nació buena parte del tango. Los vecinos escucharon la música de los otros y la mezclaron con la suya.", "nl": "Op die binnenplaats is een groot deel van de tango ontstaan. De buren hoorden elkaars muziek en mengden die met de hunne."}, {"who": "Alumno", "es": "¿Y el idioma? ¿No fue un problema?", "nl": "En de taal? Was dat geen probleem?"}, {"who": "Guía", "es": "Fue un problema y una oportunidad. De esa mezcla salió el lunfardo. «Laburo», por ejemplo, es trabajo, y viene del italiano.", "nl": "Het was een probleem én een kans. Uit die mengeling ontstond het lunfardo. «Laburo» bijvoorbeeld betekent werk en komt uit het Italiaans."}, {"who": "Alumna", "es": "¿Y «pibe»?", "nl": "En «pibe»?"}, {"who": "Guía", "es": "Chico, muchacho. Todavía se usa todos los días en Buenos Aires.", "nl": "Jongen, gast. Dat wordt nog elke dag gebruikt in Buenos Aires."}, {"who": "Guía", "es": "Por eso decimos que este museo no habla del pasado, sino de la ciudad de hoy. Pasamos a la sala tres.", "nl": "Daarom zeggen we dat dit museum niet over het verleden gaat, maar over de stad van vandaag. We gaan door naar zaal drie."}], "global": {"q": "¿De qué habla la guía?", "opts": ["De cómo llegaron los inmigrantes y qué dejaron en la ciudad", "De cómo se construyó el puerto", "De un cantante de tango famoso"], "ans": "De cómo llegaron los inmigrantes y qué dejaron en la ciudad", "why": "aankomst → conventillo → tango → lunfardo"}, "detalle": [{"q": "¿Entre qué años llegaron millones de personas?", "opts": ["Entre 1880 y 1930", "Entre 1780 y 1830", "Entre 1930 y 1980"], "ans": "Entre 1880 y 1930", "why": "«Entre mil ochocientos ochenta y mil novecientos treinta»"}, {"q": "¿De qué dos países vino la mayoría?", "opts": ["De Italia y de España", "De Francia y de Portugal", "De Alemania y de Polonia"], "ans": "De Italia y de España", "why": "«vino de Italia y de España»"}, {"q": "¿Cuántos días les dio el Estado cama y comida?", "opts": ["Cinco", "Quince", "Cincuenta"], "ans": "Cinco", "why": "«durante cinco días»"}, {"q": "¿Qué compartieron las familias del conventillo?", "opts": ["El patio y la cocina", "La habitación", "El trabajo"], "ans": "El patio y la cocina", "why": "«todos compartieron el patio y la cocina»"}, {"q": "¿Qué significa «laburo»?", "opts": ["Trabajo", "Chico", "Casa"], "ans": "Trabajo", "why": "«Laburo», por ejemplo, es trabajo"}], "vf": [{"q": "Cada familia tuvo su propia cocina.", "ans": false, "prueba": "todos compartieron el patio y la cocina"}, {"q": "El lunfardo nació de la mezcla de idiomas.", "ans": true, "prueba": "de esa mezcla salió el lunfardo"}, {"q": "La palabra «pibe» ya no se usa.", "ans": false, "prueba": "todavía se usa todos los días"}], "produccion": {"prompt": "Sé tú la guía de una sala sobre tu propia ciudad o familia. Graba cinco frases en indefinido: quién llegó, cuándo, de dónde, dónde vivió y qué dejó (una comida, una palabra, una costumbre).", "modo": "grabar", "modelo": "Mi… llegó en… Vino de… Vivió en… Trabajó de… Por eso, hoy en mi casa…"}});
 buildAudioCortos("esc_c6p_u5",{"fragmentos": [{"etiqueta": "§2 · ¿Quién fue…?", "seccion": "§2.3 · Practicar el indefinido", "titulo": "¿Quién fue…? — una minibiografía misteriosa", "tarea": "1ª: over welk beroep gaat het? — 2ª: wat deed die persoon? Noteer de gegevens.", "audio": "audio/C6plus_U5_01.mp3", "guion": [{"who": "Narradora", "es": "Escucha. ¿De qué oficio hablamos? No decimos el nombre hasta el final.", "nl": "Luister. Over welk beroep hebben we het? De naam zeggen we pas op het einde."}, {"who": "Narradora", "es": "Nació en un pueblo pequeño de Colombia en mil novecientos veintisiete.", "nl": "Hij werd geboren in een klein dorp in Colombia in 1927."}, {"who": "Narradora", "es": "De niño vivió con sus abuelos, y su abuela le contó muchas historias de fantasmas.", "nl": "Als kind woonde hij bij zijn grootouders, en zijn oma vertelde hem veel spookverhalen."}, {"who": "Narradora", "es": "Estudió derecho, pero no terminó la carrera: prefirió escribir en los periódicos.", "nl": "Hij studeerde rechten, maar maakte het niet af: hij schreef liever voor de kranten."}, {"who": "Narradora", "es": "Trabajó como periodista en Bogotá, en París y en México.", "nl": "Hij werkte als journalist in Bogotá, in Parijs en in Mexico."}, {"who": "Narradora", "es": "En mil novecientos sesenta y siete publicó su novela más famosa, «Cien años de soledad».", "nl": "In 1967 publiceerde hij zijn beroemdste roman, «Cien años de soledad»."}, {"who": "Narradora", "es": "En mil novecientos ochenta y dos recibió el Premio Nobel de Literatura.", "nl": "In 1982 kreeg hij de Nobelprijs voor Literatuur."}, {"who": "Narradora", "es": "Murió en México en dos mil catorce. Sus amigos lo llamaban «Gabo».", "nl": "Hij stierf in Mexico in 2014. Zijn vrienden noemden hem «Gabo»."}, {"who": "Narradora", "es": "¿Quién fue? Fue Gabriel García Márquez, escritor y periodista.", "nl": "Wie was het? Het was Gabriel García Márquez, schrijver en journalist."}]}, {"etiqueta": "§4 · Una leyenda", "seccion": "§4 · Contar una historia", "titulo": "Una leyenda del tango", "tarea": "1ª: over wie gaat het? — 2ª: zet de gebeurtenissen van zijn leven op volgorde.", "audio": "audio/C6plus_U5_02.mp3", "guion": [{"who": "Narradora", "es": "En Buenos Aires todo el mundo conoce esta cara. Es una leyenda del tango.", "nl": "In Buenos Aires kent iedereen dit gezicht. Het is een legende van de tango."}, {"who": "Narradora", "es": "Nadie sabe con certeza dónde nació. Unos dicen que en Francia, otros que en Uruguay, alrededor de mil ochocientos noventa.", "nl": "Niemand weet met zekerheid waar hij geboren is. Sommigen zeggen in Frankrijk, anderen in Uruguay, rond 1890."}, {"who": "Narradora", "es": "Lo que sí es seguro: creció en un barrio de Buenos Aires y empezó a cantar en los cafés del barrio.", "nl": "Wat wel zeker is: hij groeide op in een wijk van Buenos Aires en begon te zingen in de cafés van de buurt."}, {"who": "Narradora", "es": "Grabó sus primeros discos y poco a poco se hizo famoso en toda América Latina.", "nl": "Hij nam zijn eerste platen op en werd stilaan beroemd in heel Latijns-Amerika."}, {"who": "Narradora", "es": "Viajó a París y a Nueva York, y también actuó en varias películas.", "nl": "Hij reisde naar Parijs en New York, en speelde ook in verschillende films."}, {"who": "Narradora", "es": "Su canción «El día que me quieras» es todavía hoy un clásico.", "nl": "Zijn lied «El día que me quieras» is vandaag nog altijd een klassieker."}, {"who": "Narradora", "es": "En mil novecientos treinta y cinco murió en un accidente de avión en Medellín, en Colombia. Tenía cuarenta y cuatro años.", "nl": "In 1935 stierf hij bij een vliegtuigongeluk in Medellín, in Colombia. Hij was vierenveertig."}, {"who": "Narradora", "es": "Se llamaba Carlos Gardel. En Buenos Aires dicen que «cada día canta mejor».", "nl": "Hij heette Carlos Gardel. In Buenos Aires zeggen ze dat hij «elke dag beter zingt»."}]}]});
 buildLectura("lec_c6p_u5",{"titulo": "La leyenda de la yerba mate", "tipo": "leyenda guaraní", "emisor": "La tradición oral guaraní, recogida por escrito", "receptor": "Quien quiere saber de dónde viene el mate", "objetivo": "Explicar el origen de una planta y de una costumbre", "prediccion": {"q": "Kijk eerst alleen naar de titel, de aanhef «Érase una vez» en het slot. Wat voor tekst is dit?", "opts": ["Een oude vertelling die iets verklaart", "Een nieuwsbericht", "Een gebruiksaanwijzing"], "ans": "Een oude vertelling die iets verklaart", "why": "«Érase una vez» is de vaste opening van een verhaal."}, "texto": [["titulo", "🌿 LA LEYENDA DE LA YERBA MATE"], ["lema", "Un relato guaraní · Argentina y Paraguay"], ["p", "Érase una vez, en el monte, un viejo cazador y su hija. Un día, todos los vecinos se fueron a buscar tierras nuevas, pero el cazador no quiso dejar solo el monte y se quedó allí con la niña."], ["p", "Una tarde, Yasí, la luna, bajó del cielo con su amiga Araí, la nube. Las dos tomaron forma de mujer y caminaron por el monte para ver de cerca aquel lugar."], ["p", "De repente, un yaguareté salió de entre los árboles. El viejo cazador oyó el ruido, corrió hacia las dos mujeres y las salvó. Después volvió a su casa y no dijo nada a nadie."], ["aviso", ["🌙 EL REGALO DE YASÍ", "Esa noche, Yasí entró en el sueño del cazador y le habló: «Nos salvaste la vida y no pediste nada. Por eso te dejo una planta nueva. Sus hojas dan una bebida que une a las personas.»"]], ["p", "A la mañana siguiente, el cazador y su hija encontraron delante de la casa un árbol pequeño de hojas verdes. Prepararon la primera infusión y la compartieron con todos los que pasaron por allí."], ["p", "Por eso, hasta hoy, el mate no se toma solo: se pasa de mano en mano. Compartirlo es el regalo, no la bebida."], ["firma", "Relato tradicional guaraní · versión escolar"]], "traduccion": "DE LEGENDE VAN DE YERBA MATE — een Guaraní-verhaal uit Argentinië en Paraguay. Er was eens, in het bos, een oude jager en zijn dochter. Op een dag trokken alle buren weg om nieuw land te zoeken, maar de jager wilde het bos niet alleen laten en bleef er met het meisje. Op een namiddag daalde Yasí, de maan, uit de hemel af met haar vriendin Araí, de wolk. De twee namen de gedaante van een vrouw aan en liepen door het bos om die plek van dichtbij te zien. Plots kwam er een jaguar tussen de bomen vandaan. De oude jager hoorde het geluid, liep naar de twee vrouwen toe en redde hen. Daarna ging hij naar huis en zei niets tegen niemand. HET GESCHENK VAN YASÍ: die nacht kwam Yasí in de droom van de jager en sprak hem toe: «Je hebt ons leven gered en je hebt niets gevraagd. Daarom laat ik je een nieuwe plant. Haar bladeren geven een drank die mensen verbindt.» De volgende ochtend vonden de jager en zijn dochter voor het huis een kleine boom met groene bladeren. Ze zetten het eerste aftreksel en deelden het met iedereen die voorbijkwam. Daarom wordt de mate tot vandaag niet alleen gedronken: hij gaat van hand tot hand. Het delen is het geschenk, niet de drank.", "global": {"q": "¿Qué explica esta leyenda?", "opts": ["De dónde viene la yerba mate y por qué se comparte", "Cómo se cultiva la yerba mate hoy", "Por qué los guaraníes se fueron del monte"], "ans": "De dónde viene la yerba mate y por qué se comparte"}, "escanear": [{"q": "¿Con quién vive el cazador?", "ans": "con su hija", "alt": ["su hija", "la niña", "con la niña", "hija"], "why": "«un viejo cazador y su hija»"}, {"q": "¿Quién es Yasí?", "ans": "la luna", "alt": ["luna", "la luna"], "why": "«Yasí, la luna»"}, {"q": "¿Quién es Araí?", "ans": "la nube", "alt": ["nube", "la nube"], "why": "«Araí, la nube»"}, {"q": "¿Qué animal aparece de repente?", "ans": "un yaguareté", "alt": ["yaguareté", "yaguarete", "un jaguar", "jaguar"], "why": "«un yaguareté salió de entre los árboles»"}, {"q": "¿Cuándo encontraron el árbol?", "ans": "a la mañana siguiente", "alt": ["la mañana siguiente", "al día siguiente", "por la mañana"], "why": "«A la mañana siguiente… encontraron… un árbol pequeño»"}], "vf": [{"q": "El cazador se fue con los vecinos.", "ans": false, "prueba": "se quedó allí con la niña"}, {"q": "El cazador contó a todo el mundo lo que pasó.", "ans": false, "prueba": "no dijo nada a nadie"}, {"q": "Yasí le habló al cazador mientras dormía.", "ans": true, "prueba": "yasí entró en el sueño del cazador"}, {"q": "El cazador pidió un regalo.", "ans": false, "prueba": "no pediste nada"}, {"q": "Compartieron la primera infusión con otras personas.", "ans": true, "prueba": "la compartieron con todos los que pasaron"}], "contexto": [{"q": "«Érase una vez» — ¿cómo empieza este texto?", "opts": ["Als een verhaal uit de oude doos", "Als een krantenbericht", "Als een uitnodiging"], "ans": "Als een verhaal uit de oude doos", "why": "Het is de vaste openingsformule, zoals ons «Er was eens»."}, {"q": "«tomaron forma de mujer» — ¿qué hicieron la luna y la nube?", "opts": ["Ze veranderden in vrouwen", "Ze namen een foto", "Ze gaven iets weg"], "ans": "Ze veranderden in vrouwen", "why": "Erna lopen ze door het bos — ze hebben een lichaam gekregen."}, {"q": "«De repente» — ¿cómo pasó?", "opts": ["plots, onverwacht", "langzaam", "elke dag opnieuw"], "ans": "plots, onverwacht", "why": "Het markeert de omslag in het verhaal."}, {"q": "«se pasa de mano en mano» — ¿qué hacen con el mate?", "opts": ["Ze geven hem aan elkaar door", "Ze verkopen hem", "Ze verbergen hem"], "ans": "Ze geven hem aan elkaar door", "why": "De laatste zin legt het uit: het delen is het geschenk."}], "produccion": {"prompt": "Escribe una leyenda corta (6–8 frases) que explique el origen de algo de tu región (una fiesta, una comida, un río, un nombre). Usa el indefinido y los conectores: érase una vez · un día · de repente · entonces · por eso.", "modelo": "Érase una vez… Un día… De repente… Entonces… Al final… Por eso, hasta hoy…"}});

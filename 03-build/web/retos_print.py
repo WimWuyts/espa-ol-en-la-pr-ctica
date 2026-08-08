@@ -1319,6 +1319,208 @@ def _notificacion(r):
         '<p style="font-size:9.8pt;margin:2.5mm 0 1mm">Señales nombradas en el segundo mensaje: '
         '<span class="wl sm"></span> de 5</p>' % (sen, mf, ma))
 
+def _sellos(r):
+    """Acht paspoortstempels om te ordenen, met de por/para-kolommen."""
+    d = r["datos"]
+    sellos = "".join(
+        '<div class="ficha fid"><b>%s</b><span>%s</span><span class="fl">%s</span></div>'
+        % (E(f), E(lug), E(tipo)) for f, lug, tipo, _pista in d["sellos"])
+    raz = "".join('<span>%s</span>' % E(x) for x in d["razones"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    filas = "".join(
+        '<tr><td style="font-size:9.4pt">%d</td><td><span class="wl md"></span></td>'
+        '<td><span class="wl md"></span></td><td><span class="wl md"></span></td></tr>'
+        % i for i in range(1, 7))
+    return (
+        '<div class="rol">🛂 Ocho sellos, sin una sola explicación</div>'
+        '<div class="fichas f4">%s</div>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Las razones posibles</b> — no todas se usan:</p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2mm 0 1mm"><b>La ruta.</b> Por etapa: por dónde pasó, '
+        'y para qué. <span class="gloss">Per etappe: waarlangs, en waarvoor.</span></p>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:8mm">#</th>'
+        '<th>Etapa</th><th>Pasó por… (la vía)</th><th>Fue para… (el objetivo)</th>'
+        '</tr></thead><tbody>%s</tbody></table>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Los sellos de puro tránsito son</b> '
+        '<span class="wl md"></span> &nbsp;·&nbsp; <b>y el que no encaja es</b> '
+        '<span class="wl sm"></span> <b>, porque</b> <span class="wl md"></span></p>'
+        % (sellos, raz, filas, marco))
+
+
+def _resena_hostal(r):
+    """Acht neutrale feiten, twee recensies."""
+    d = r["datos"]
+    datos = "".join('<tr><td style="text-align:center;font-size:9pt;color:var(--mut)">%d</td>'
+                    '<td class="fr">%s</td><td style="text-align:center">☐ ☐</td></tr>'
+                    % (i, E(x)) for i, x in enumerate(d["datos"], 1))
+    mb = "".join('<span>%s</span>' % E(m) for m in d["marco_bien"])
+    mm = "".join('<span>%s</span>' % E(m) for m in d["marco_mal"])
+    return (
+        '<div class="decl"><b>%s</b><span>Ocho datos. Ni uno se puede omitir.</span></div>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:8mm">#</th>'
+        '<th>El dato</th><th style="width:26mm">★★★★★ / ★</th></tr></thead>'
+        '<tbody>%s</tbody></table>'
+        '<p style="font-size:9.4pt;margin:1.5mm 0 0;color:var(--mut)">Marca las dos casillas '
+        'cuando el dato esté en las dos reseñas.</p>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>★★★★★ · el viajero contento</b></p>'
+        '<div class="tira">%s</div><div class="wbox" style="height:40mm"></div>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>★ · el viajero descontento</b></p>'
+        '<div class="tira">%s</div><div class="wbox" style="height:40mm"></div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>La palabra que hace todo el trabajo es</b> '
+        '<span class="wl md"></span> &nbsp;·&nbsp; ¿cuál de las dos es verdad? '
+        '<span class="wl md"></span></p>'
+        % (E(d["hostal"]), datos, mb, mm))
+
+
+def _turismo(r):
+    """Cijfers over overtoerisme plus vier stemmen."""
+    d = r["datos"]
+    filas = "".join(
+        '<tr><td class="fr"><b>%s</b></td><td style="font-size:9.4pt">%s</td>'
+        '<td style="font-size:9.4pt">%s</td><td style="font-size:9pt;color:var(--mut)">%s</td></tr>'
+        % (E(c), E(h), E(v), E(x)) for c, h, v, x in d["tabla"])
+    voces = "".join('<div class="decl"><b>%s</b><span>%s</span></div>' % (E(q), E(t))
+                    for q, t in d["voces"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:44mm">Dónde</th>'
+        '<th style="width:40mm">Habitantes</th><th style="width:44mm">Visitantes</th>'
+        '<th>Y además</th></tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.4pt;margin:1.5mm 0 0;color:var(--mut)">Cifras redondeadas de '
+        'fuentes públicas.</p>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Visitantes por habitante y año:</b> '
+        'Barcelona <span class="wl sm"></span> · Cusco <span class="wl sm"></span></p>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Cuatro voces</b> — ninguna miente:</p>%s'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Tu postura en tres frases,</b> cada una '
+        'con una cifra. Una de las tres da la razón al otro lado:</p>'
+        '<div class="tira">%s</div>%s' % (filas, voces, marco, _lineas(3, "wl full")))
+
+
+def _bingo(r):
+    """Bingokaart met twaalf ervaringen + de verplichte doorvraag."""
+    d = r["datos"]
+    cas = "".join(
+        '<div class="wcol"><div class="ch" style="font-size:8.4pt">%s</div>'
+        '<div style="padding:2mm;font-size:8.4pt;color:var(--mut)">firma:</div>'
+        '<div class="cb short"></div></div>' % E(c) for c in d["casillas"])
+    extra = "".join('<span>%s</span>' % E(x) for x in d["extra"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<p style="font-size:9.8pt;margin:0 0 1mm"><b>Una persona, una casilla.</b> Y en cada '
+        'casilla, además de la firma, la respuesta a tu pregunta extra. '
+        '<span class="gloss">Eén persoon, één vakje — plus het antwoord op je doorvraag.</span></p>'
+        '<div class="tira">%s</div>'
+        '<div class="wcols" style="grid-template-columns:repeat(4,1fr)">%s</div>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Tus preguntas extra</b> — siempre en '
+        'perfecto:</p><div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>La mejor historia que has oído hoy:</b></p>'
+        '<div style="margin:1mm 0"><span class="wl full"></span></div>' % (marco, cas, extra))
+
+
+def _linea_saboteada(r):
+    """Acht feiten door elkaar; twee zijn vals."""
+    d = r["datos"]
+    # vaste, bewust gekozen volgorde: door elkaar maar elke druk identiek
+    orden = [4, 0, 6, 2, 7, 1, 5, 3]
+    filas = "".join(
+        '<tr><td style="text-align:center;font-size:9pt;color:var(--mut)">%s</td>'
+        '<td style="font-size:9.6pt"><b>%s</b></td><td class="fr">%s</td>'
+        '<td><span class="wl sm"></span></td><td style="text-align:center">☐</td></tr>'
+        % (chr(65 + k), E(d["hechos"][i][0]), E(d["hechos"][i][1]))
+        for k, i in enumerate(orden))
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<div class="rol">🗓️ Ocho hechos, desordenados</div>'
+        '<p style="font-size:9.6pt;margin:0 0 1.5mm">En la cuarta columna, el orden (1–8). En la '
+        'quinta, marca si crees que es falso. <span class="gloss">Vierde kolom: de volgorde. '
+        'Vijfde: aankruisen wat vals is.</span></p>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:8mm"></th>'
+        '<th style="width:16mm">Año</th><th>El hecho</th>'
+        '<th style="width:18mm">Orden</th><th style="width:18mm">¿Falso?</th>'
+        '</tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Los dos falsos, con el hecho que los '
+        'delata:</b> <span class="gloss">De twee valse, met het feit waarmee ze botsen.</span></p>'
+        '<div class="tira">%s</div>%s'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>La línea del tiempo definitiva,</b> en '
+        'tres frases con conectores:</p>%s'
+        % (filas, marco, _lineas(2, "wl full"), _lineas(3, "wl full")))
+
+
+def _museo(r):
+    """Vijf bijschriften van drie regels, met de zaalplattegrond."""
+    d = r["datos"]
+    fig = "".join('<div class="ficha fid"><b>%s</b><span class="fl">%s</span>'
+                  '<span>☐ la elegimos</span></div>' % (E(n), E(s)) for n, s in d["figuras"])
+    tipos = "".join('<span>%s</span>' % E(t) for t in d["tipos_objeto"])
+    cart = "".join(
+        '<div class="wcol"><div class="ch">Objeto %d</div>'
+        '<div style="padding:2mm 2.5mm;font-size:8.4pt;color:var(--mut);line-height:2.4">'
+        'Qué es:<br>Año:<br>En … ,</div><div class="cb"></div></div>' % i
+        for i in range(1, 6))
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco_cartela"])
+    return (
+        '<p style="font-size:9.8pt;margin:0 0 1mm"><b>Elegid vuestra figura:</b></p>'
+        '<div class="fichas f4">%s</div>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Cinco tipos de objeto</b> — uno de cada:</p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:1.5mm 0 1mm"><b>La cartela</b>: tres líneas, y la '
+        'tercera siempre en indefinido.</p>'
+        '<div class="tira">%s</div>'
+        '<div class="wcols" style="grid-template-columns:repeat(5,1fr)">%s</div>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>El plano de la sala.</b> ¿Por dónde entra '
+        'el visitante y en qué orden ve los objetos?</p>'
+        '<div class="wbox" style="height:38mm"></div>' % (fig, tipos, marco, cart))
+
+
+def _dos_versiones(r):
+    """Twee versies naast elkaar + de scheiding feit/interpretatie."""
+    d = r["datos"]
+    a = "".join('<tr><td style="font-size:9pt;color:var(--mut)">%d</td><td class="fr">%s</td>'
+                '<td style="text-align:center">☐</td></tr>' % (i, E(x))
+                for i, x in enumerate(d["version_a"], 1))
+    b = "".join('<tr><td style="font-size:9pt;color:var(--mut)">%d</td><td class="fr">%s</td>'
+                '<td style="text-align:center">☐</td></tr>' % (i, E(x))
+                for i, x in enumerate(d["version_b"], 1))
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<p style="font-size:9.8pt;margin:0 0 1.5mm">Marca ☐ lo que dicen <b>las dos</b> versiones. '
+        'Lo demás es una afirmación, no un hecho. <span class="gloss">Kruis aan wat in béide '
+        'staat. De rest is een bewering.</span></p>'
+        '<div class="rol">📰 Versión A · el boletín municipal</div>'
+        '<table class="wtab" style="width:100%%"><tbody>%s</tbody></table>'
+        '<div class="rol" style="margin-top:3mm">🗞️ Versión B · el periódico de la comarca</div>'
+        '<table class="wtab" style="width:100%%"><tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Los tres hechos seguros:</b></p>%s'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Dos interpretaciones,</b> y por qué lo son:</p>'
+        '<div class="tira">%s</div>%s'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Algo que solo dice una versión y aun '
+        'así puede ser verdad:</b> <span class="wl md"></span></p>'
+        % (a, b, _lineas(3, "wl full"), marco, _lineas(2, "wl full")))
+
+
+def _bio_datos(r):
+    """Acht cijfers, een tijdlijn en vijf indefinido-zinnen."""
+    d = r["datos"]
+    filas = "".join('<tr><td class="fr">%s</td><td style="text-align:right"><b>%s</b></td></tr>'
+                    % (E(k), E(v)) for k, v in d["cifras"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<div class="prohib" style="display:inline-block">Prohibidos los adjetivos: nada de '
+        '«grande», «famoso» ni «importante». Las cifras hablan solas.</div>'
+        '<table class="wtab" style="width:100%%;margin-top:2.5mm"><thead><tr>'
+        '<th>El dato</th><th style="width:26mm;text-align:right">Cuánto</th></tr></thead>'
+        '<tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>La línea del tiempo.</b> Marca los años '
+        'que puedes deducir:</p>'
+        '<div class="wbox" style="height:34mm"></div>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Cinco frases: una cifra, un indefinido, '
+        'cero adjetivos.</b></p>'
+        '<div class="tira">%s</div>%s'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>La cifra que dice más que las otras es</b> '
+        '<span class="wl sm"></span> <b>, porque</b> <span class="wl md"></span></p>'
+        % (filas, marco, _lineas(5, "wl full")))
+
 _MATERIAL = {"C5-U0-RETO-03": _gps, "C5-U0-RETO-08": _numeros, "C5-U0-RETO-10": _pasaporte,
              "C5-U1-RETO-02": _identidad, "C5-U1-RETO-03": _censo,
              "C5-U1-RETO-06": _aeropuerto, "C5-U1-RETO-08": _error_caro,
@@ -1343,7 +1545,11 @@ _MATERIAL = {"C5-U0-RETO-03": _gps, "C5-U0-RETO-08": _numeros, "C5-U0-RETO-10": 
              "C6P-U2-RETO-01": _casa_crimen, "C6P-U2-RETO-04": _metros,
              "C6P-U2-RETO-06": _cuarto_sin, "C6P-U2-RETO-10": _mudanza_etapas,
              "C6P-U3-RETO-01": _hilo, "C6P-U3-RETO-05": _sin_emoji,
-             "C6P-U3-RETO-07": _acabo_voy, "C6P-U3-RETO-10": _notificacion}
+             "C6P-U3-RETO-07": _acabo_voy, "C6P-U3-RETO-10": _notificacion,
+             "C6P-U4-RETO-02": _sellos, "C6P-U4-RETO-04": _resena_hostal,
+             "C6P-U4-RETO-09": _turismo, "C6P-U4-RETO-10": _bingo,
+             "C6P-U5-RETO-02": _linea_saboteada, "C6P-U5-RETO-04": _museo,
+             "C6P-U5-RETO-08": _dos_versiones, "C6P-U5-RETO-09": _bio_datos}
 
 
 def reto_print(r):

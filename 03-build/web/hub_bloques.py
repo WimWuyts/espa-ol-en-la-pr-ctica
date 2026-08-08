@@ -355,6 +355,36 @@ def retos_js(host_id, curso, unidad):
             base["tipo"] = "opciones"
             base["items"] = [{"enunciado": term, "correcta": c, "opciones": o, "porque": p}
                              for term, c, o, p in d["items"]]
+        elif r["id"] == "C6P-U4-RETO-06":
+            base["tipo"] = "grabar"
+            base["situaciones"] = [{"es": m, "nl": "", "pista": ""} for m in d["marco"]]
+            base["items"] = [{"text": "El viaje que no hice",
+                              "cue": "één minuut · alles in het perfecto · minstens één detail "
+                                     "dat niemand zou verzinnen: " + " · ".join(d["detalles"][:4])}]
+        elif r["id"] == "C6P-U4-RETO-07":
+            base["tipo"] = "grabar"
+            base["situaciones"] = [{"es": m, "nl": "", "pista": ""} for m in d["marco"]]
+            base["items"] = [{"text": "Tres anuncios de megafonía",
+                              "cue": "usted · aanspreking, informatie, instructie — in die "
+                                     "volgorde: " + " · ".join(t for t, _ in d["situaciones"])}]
+        elif r["id"] == "C6P-U4-RETO-08":
+            base["tipo"] = "opciones"
+            base["items"] = [{"enunciado": sit, "correcta": c, "opciones": o, "porque": p}
+                             for sit, c, o, p in d["items"]]
+        elif r["id"] == "C6P-U5-RETO-03":
+            base["tipo"] = "opciones"
+            base["items"] = [{"enunciado": sit, "correcta": c, "opciones": o, "porque": p}
+                             for sit, c, o, p in d["items"]]
+        elif r["id"] == "C6P-U5-RETO-07":
+            base["tipo"] = "grabar"
+            base["situaciones"] = [{"es": m, "nl": "", "pista": ""} for m in d["marco"]]
+            base["items"] = [{"text": "La efeméride de hoy",
+                              "cue": "dertig seconden · de vier w's in de eerste zin · "
+                                     "indefinido: " + " · ".join(d["verbos"][:6])}]
+        elif r["id"] == "C6P-U5-RETO-10":
+            base["tipo"] = "opciones"
+            base["items"] = [{"enunciado": orig, "correcta": c, "opciones": o, "porque": p}
+                             for orig, c, o, p in d["items"]]
         else:
             continue
         salida.append(base)

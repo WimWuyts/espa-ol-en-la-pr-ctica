@@ -18,9 +18,24 @@ _sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
 import print_bloques as PB
 import lectura_data as LD
 import escucha_data as ED
+import retos_data as RD
+import retos_print as RP
 
 BODY = []
 def P(*x): BODY.extend(x)
+
+
+def retos(ancla, titulo, intro_es, intro_nl):
+    """Retoblok van één sectie — volledige oefening voor print, verwijskaartje
+    voor wat op de hub of in de PowerPoint leeft."""
+    P('<div class="page">')
+    P(f'<div class="divider">{titulo}</div>')
+    P(f'<div class="intro" style="margin-top:1mm"><b>ES:</b> {intro_es} '
+      f'<span class="gloss">{intro_nl}</span></div>')
+    for r in sorted(RD.por_ancla(ancla), key=lambda x: x["num"]):
+        P(RP.reto_print(r) if r["soporte"] == "print" else RP.reto_puntero(r))
+    P('</div>')
+
 _AN = [0]
 def AN():
     _AN[0] += 1
@@ -154,6 +169,10 @@ P(actx(AN(), "Mi persona admirada · escribe",
   apoyo="MARCO"))
 sec_close()
 
+retos("biografia", "§1.4 · Retos — una vida en objetos y en cifras",
+      'El obituario de alguien que <b>nunca fue famoso</b>, un museo de una sola sala, y una biografía contada solo con <b>números</b>.',
+      'Het overlijdensbericht van iemand die nooit beroemd werd, een museum van één zaal, en een biografie verteld in enkel cijfers.')
+
 # ================= §2 · PRETÉRITO INDEFINIDO =================
 sec_open("2", "§2 · El pretérito indefinido", 'Voor <b>afgeronde feiten</b> in het verleden: de <b>indefinido</b>. Regelmatig: -ar → <b>-é/-aste/-ó…</b>, -er/-ir → <b>-í/-iste/-ió…</b>. <i>Estudió medicina. Escribió novelas. Nació en 1919.</i> <span class="gloss">De voltooid verleden tijd voor afgesloten gebeurtenissen.</span>',
         lpd(("8","taalsysteem: indefinido regular"), ("7","woordenschat: la vida"), ("3","vertellen")))
@@ -262,6 +281,10 @@ P(audiorow('<div class="ic">🎧</div><div><b>Escucha «¿Quién fue…?»</b> e
            qr("Escanea y escucha", "§2 · ¿Quién fue…?", seed=501)))
 P('</div>')
 
+retos("indefinido", "§2.4 · Retos — lo que pasó de verdad",
+      'Ocho hechos de una vida, de los que <b>dos no ocurrieron nunca</b>, y una silla donde se sienta un personaje histórico.',
+      'Acht feiten uit één leven, waarvan er twee nooit gebeurden, en een stoel waarop een historisch personage plaatsneemt.')
+
 # ================= §3 · OD+OI JUNTOS (se lo) =================
 sec_open("3", "§3 · Los pronombres juntos — se lo / se la", 'Als je <b>OI (le/les)</b> én <b>OD (lo/la)</b> samen gebruikt, verandert <b>le/les</b> in <b>se</b>. <i>Le di el libro → <b>Se lo</b> di.</i> <span class="gloss">le + lo → se lo. Twee voornaamwoorden na elkaar: eerst wie ontvangt (se), dan wat (lo/la).</span>',
         lpd(("8","taalsysteem: OD+OI se lo"), ("7","woordenschat")))
@@ -329,6 +352,10 @@ P(actx("★", "Tarea comunicativa · ¿se lo diste?",
 P('<div class="guide"><div class="ic">🎡</div><div><span class="hand">Online:</span> <span class="g">de <b>dubbele-vervangingsanimatie</b> en de spellen op de hub oefenen se lo/se la; + cloze en foutenkliniek.</span></div></div>')
 P('</div>')
 
+retos("se_lo", "§3.4 · Reto — se lo di a…",
+      'Cinco objetos recorren la clase y al final <b>nadie sabe dónde acabaron</b>.',
+      'Vijf voorwerpen gaan de klas rond en op het eind weet niemand waar ze belandden.')
+
 # ================= §4 · CONTAR UNA HISTORIA =================
 sec_open("4", "§4 · Contar una historia", 'Om een <b>verhaal</b> te vertellen: de <b>conectoren</b> van volgorde (primero, después, entonces, al final) en de opbouw «érase una vez… al final». <span class="gloss">De verhaalconnectoren om een biografie of leyenda te structureren.</span>',
         lpd(("6","literatuur: leyenda/relato"), ("3","schrijven: een verhaal"), ("4","interactie")))
@@ -366,6 +393,10 @@ P(actx("★", "Info-gap · adivina el personaje",
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha «Una leyenda del tango»</b> en la web (TTS). <b>1ª vez:</b> ¿de quién habla? · <b>2ª vez:</b> ordena los hechos de su vida.</div>',
            qr("Escanea y escucha", "§4 · Una leyenda", seed=502)))
 sec_close()
+
+retos("historia_c6p", "§4.4 · Retos — contar y comprobar",
+      'Una leyenda con el orden <b>cambiado</b>, dos versiones del mismo día que no coinciden, y una efeméride en treinta segundos.',
+      'Een legende met omgegooide volgorde, twee versies van dezelfde dag die niet overeenkomen, en een gedenkdag in dertig seconden.')
 
 # ================= §5 · LECTURA =================
 sec_open("5", "§5 · Lectura — «Una vida de película»", 'Dos minibiografías de figuras hispanas. Lee, busca información y reacciona. <span class="gloss">Twee korte biografieën van Spaanstalige figuren. Lezen, info zoeken, reageren.</span>',
@@ -458,6 +489,10 @@ P(actx(AN(), "El voseo de Mateo · observa",
   '<p style="margin-left:12.5mm">vos sos → tú <span class="wl sm"></span> · vos tenés → tú <span class="wl sm"></span> · vos hablás → tú <span class="wl sm"></span></p>',
   apoyo="PISTA (eres · tienes · hablas)"))
 sec_close()
+
+retos("cultura_c6p5", "Reto — la misma vida, para alguien de ocho años",
+      'Simplificar <b>sin mentir</b> es más difícil que traducir.',
+      'Vereenvoudigen zonder te liegen is moeilijker dan vertalen.')
 
 # ================= TAREA FINAL =================
 sec_open("★", "Tarea final · «Una biografía»", 'Escribe la <b>biografía</b> de una persona (real o inventada) met de <b>indefinido</b>, conectoren en una <b>mini-mening</b>. <span class="gloss">Schrijf een biografie met de indefinido, connectoren en een mening.</span>')
@@ -595,7 +630,7 @@ EDITBAR = '''
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Más español en la práctica · C6+ U5 Érase una vez</title><style>'
-        + CSS + CSS_OVR + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
+        + CSS + CSS_OVR + RP.CSS + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/C6plus_U5.html"
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, "·", len(HTML), "bytes ·", _AN[0], "genummerde oefeningen (excl. V.1–V.5)")

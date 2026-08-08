@@ -18,9 +18,24 @@ _sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
 import print_bloques as PB
 import lectura_data as LD
 import escucha_data as ED
+import retos_data as RD
+import retos_print as RP
 
 BODY = []
 def P(*x): BODY.extend(x)
+
+
+def retos(ancla, titulo, intro_es, intro_nl):
+    """Retoblok van één sectie — volledige oefening voor print, verwijskaartje
+    voor wat op de hub of in de PowerPoint leeft."""
+    P('<div class="page">')
+    P(f'<div class="divider">{titulo}</div>')
+    P(f'<div class="intro" style="margin-top:1mm"><b>ES:</b> {intro_es} '
+      f'<span class="gloss">{intro_nl}</span></div>')
+    for r in sorted(RD.por_ancla(ancla), key=lambda x: x["num"]):
+        P(RP.reto_print(r) if r["soporte"] == "print" else RP.reto_puntero(r))
+    P('</div>')
+
 _AN = [0]
 def AN():
     _AN[0] += 1
@@ -162,6 +177,10 @@ P(actx(AN(), "Mi viaje ideal · escribe",
   apoyo="MARCO"))
 sec_close()
 
+retos("viaje_c6p", "§1.4 · Retos — el viaje que empieza en el mostrador",
+      'Un vuelo cancelado donde <b>los dos tenéis razón</b>, dos reseñas del mismo hostal con los <b>mismos ocho datos</b>, y una megafonía de estación.',
+      'Een geannuleerde vlucht waarin jullie allebei gelijk hebben, twee recensies van dezelfde hostel met dezelfde acht gegevens, en een stationsomroep.')
+
 # ================= §2 · PERFECTO COMPUESTO =================
 sec_open("2", "§2 · El pretérito perfecto compuesto", 'Voor <b>recente ervaringen</b> en «wat je ooit gedaan hebt»: <b>haber</b> (he/has/ha/hemos/habéis/han) + <b>participio</b> (-ado/-ido). <i>He viajado a Chile. ¿Has visto el mar?</i> <span class="gloss">De voltooide tijd: haber + deelwoord. Je eerste verleden tijd.</span>',
         lpd(("8","taalsysteem: perfecto compuesto"), ("7","woordenschat: experiencias"), ("3","spreken: ervaringen")))
@@ -270,6 +289,10 @@ P(audiorow('<div class="ic">🎧</div><div><b>Escucha «¿Qué tal el viaje?»</
            qr("Escanea y escucha", "§2 · ¿Qué tal el viaje?", seed=401)))
 P('</div>')
 
+retos("perfecto_c6p", "§2.4 · Retos — lo que has hecho y lo que no",
+      'Un bingo de experiencias donde <b>una firma no basta</b>, y un viaje que nunca hiciste contado como si sí.',
+      'Een ervaringenbingo waar één handtekening niet volstaat, en een reis die je nooit maakte alsof je er was.')
+
 # ================= §3 · POR / PARA =================
 sec_open("3", "§3 · Por y para", '<b>para</b> = doel/bestemming (para Chile, para descansar) · <b>por</b> = middel/duur/reden (por avión, por dos días, por el mal tiempo). <span class="gloss">para = waarheen/waarvoor · por = waardoor/hoelang/waarmee.</span>',
         lpd(("8","taalsysteem: por/para"), ("7","woordenschat: el viaje")))
@@ -338,6 +361,10 @@ P(actx("★", "Tarea comunicativa · planificamos un viaje",
   apoyo="MARCO"))
 P('<div class="guide"><div class="ic">🎡</div><div><span class="hand">Online:</span> <span class="g">de <b>por/para-schuifregelaar</b> en de spellen op de hub oefenen elk geval; + cloze en foutenkliniek.</span></div></div>')
 P('</div>')
+
+retos("por_para", "§3.4 · Retos — por dónde y para qué",
+      'Ocho sellos sin explicación, seiscientos euros para diez días, y siete kilos para treinta días.',
+      'Acht stempels zonder uitleg, zeshonderd euro voor tien dagen, en zeven kilo voor dertig dagen.')
 
 # ================= §4 · EXPERIENCIAS Y LUGARES =================
 sec_open("4", "§4 · Experiencias y lugares", 'Vertel wat je <b>ooit</b> (of <b>nog niet</b>) hebt gedaan: met <b>ya</b> (al), <b>todavía no</b> (nog niet), <b>nunca</b> (nooit), <b>alguna vez</b> (ooit). <i>¿Has estado alguna vez en Perú? — Todavía no.</i> <span class="gloss">Ervaringen met ya/todavía no/nunca/alguna vez + reisbestemmingen.</span>',
@@ -472,6 +499,10 @@ P(actx(AN(), "Datos curiosos — une",
   '<p style="margin-left:12.5mm">1-<span class="wl sm"></span> 2-<span class="wl sm"></span> 3-<span class="wl sm"></span> 4-<span class="wl sm"></span></p>',
   apoyo="BANCO"))
 sec_close()
+
+retos("cultura_c6p4", "Retos — el viaje visto desde el otro lado",
+      'Cuántos visitantes caben en Barcelona y en Cusco, y cuatro situaciones donde un belga <b>mete la pata sin saberlo</b>.',
+      'Hoeveel bezoekers er passen in Barcelona en Cusco, en vier situaties waarin een Belg de bal misslaat zonder het te weten.')
 
 # ================= TAREA FINAL =================
 sec_open("★", "Tarea final · «Mi mejor viaje»", 'Escribe un <b>blog/postal</b> sobre un viaje (real o inventado) met <b>el perfecto</b>, <b>por/para</b> y una <b>mini-opinión</b>. <span class="gloss">Schrijf een reisblog met de voltooide tijd, por/para en een mening.</span>')
@@ -609,7 +640,7 @@ EDITBAR = '''
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Más español en la práctica · C6+ U4 De viaje</title><style>'
-        + CSS + CSS_OVR + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
+        + CSS + CSS_OVR + RP.CSS + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/C6plus_U4.html"
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, "·", len(HTML), "bytes ·", _AN[0], "genummerde oefeningen (excl. V.1–V.5)")

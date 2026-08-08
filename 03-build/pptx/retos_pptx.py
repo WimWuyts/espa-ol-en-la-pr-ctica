@@ -309,6 +309,34 @@ def tarjetas_de(r):
                 + [("ida · le", m, None) for m in d["marco_ida"]]
                 + [("vuelta · les", m, None) for m in d["marco_vuelta"]]
                 + [("La trampa", d["trampa"], None)])
+    if i == "C6P-U4-RETO-01":
+        return ([("La situación", d["situacion"], None)]
+                + [("Pasajero · secreto", x, None) for x in d["instruccion_pasajero"]]
+                + [("Mostrador · secreto", x, None) for x in d["instruccion_mostrador"]]
+                + [("marco · pasajero", m, None) for m in d["marco_pasajero"]]
+                + [("marco · mostrador", m, None) for m in d["marco_mostrador"]])
+    if i == "C6P-U4-RETO-03":
+        pr = ["%s: %s" % (k, v) for k, v in d["precios"]]
+        return ([("Precios", " · ".join(pr[k:k + 3]), None) for k in range(0, len(pr), 3)]
+                + [("marco", m, None) for m in d["marco"]])
+    if i == "C6P-U4-RETO-05":
+        ob = ["%s (%d g)" % (x, g) for x, g in d["objetos"]]
+        return ([("El destino", d["destino"], None)]
+                + [("La mochila", " · ".join(ob[k:k + 4]), None) for k in range(0, len(ob), 4)]
+                + [("marco", m, None) for m in d["marco"]])
+    if i == "C6P-U5-RETO-01":
+        return ([("una vida corriente", v, None) for v, _x in d["ejemplos_de_vida"]]
+                + [("marco", m, None) for m in d["marco"]]
+                + [("Verbos", " · ".join(d["verbos"][k:k + 5]), None)
+                   for k in range(0, len(d["verbos"]), 5)])
+    if i == "C6P-U5-RETO-05":
+        return ([(letra, txt, "¿en qué lugar va?") for letra, txt in d["partes"]]
+                + [("Conectores", " · ".join(d["conectores"][k:k + 4]), None)
+                   for k in range(0, len(d["conectores"]), 4)])
+    if i == "C6P-U5-RETO-06":
+        return ([(n, s, None) for n, s in d["personajes"]]
+                + [("pregunta modelo", q, None) for q in d["preguntas_modelo"]]
+                + [("PROHIBIDO al personaje", " · ".join(d["prohibido_al_personaje"]), None)])
     if i == "C5-U1-RETO-09":
         return ([("Tu perfil", m, None) for m in d["marco_perfil"]]
                 + [("El algoritmo", m, None) for m in d["marco_algoritmo"]]
