@@ -221,6 +221,36 @@ def tarjetas_de(r):
     if i == "C5-U6-RETO-08":
         return ([(n, t, None) for n, t in d["tipos"]]
                 + [("Vendedor/a", m, None) for m in d["marco_vendedor"]])
+    if i == "C5-U7-RETO-03":
+        # twaalf losse opties werden twintig kaarten; per vier gebundeld blijft
+        # de prijslijst leesbaar
+        op = ["%s (%d)" % (o, p) for o, p in d["opciones"]]
+        return ([("Precios", " · ".join(op[k:k + 4]), None) for k in range(0, len(op), 4)]
+                + [("marco", m, None) for m in d["marco"]]
+                + [("El dilema", x, None) for x in d["dilemas"]])
+    if i == "C5-U7-RETO-07":
+        return ([("Arranque", a, None) for a in d["arranque"]]
+                + [("ejemplo", e, None) for e, _por in d["ejemplos"]]
+                + [("PROHIBIDO", p, None) for p in d["prohibido"]])
+    if i == "C5-U7-RETO-08":
+        return ([(quien, sit, None) for quien, sit in d["situacion"]]
+                + [("imperativo", v, None) for v in d["imperativos"]]
+                + [("cortesía", c, None) for c in d["cortesia"]])
+    if i == "C5-U8-RETO-02":
+        ar = d["arranques"]
+        return ([("Empieza así", " · ".join(ar[k:k + 3]), None) for k in range(0, len(ar), 3)]
+                + [("segura", s, None) for s in d["seguras"]]
+                + [("reacción", x, None) for x in d["reaccion"]])
+    if i == "C5-U8-RETO-06":
+        return ([(k, v, None) for k, v in d["guia"]]
+                + [("modelo", q, None) for q in d["preguntas_modelo"]]
+                + [("cerrada ✗", q, "reformúlala: ¿qué? ¿cuánto?")
+                   for q in d["cerradas"]])
+    if i == "C5-U8-RETO-07":
+        return ([(dia, "%s — %s" % (tiempo, cons), "¿lo habéis dicho?")
+                 for dia, tiempo, cons in d["dias"]]
+                + [("marco", m, None) for m in d["marco"]]
+                + [("El dilema", d["dilema"], None)])
     if i == "C5-U1-RETO-09":
         return ([("Tu perfil", m, None) for m in d["marco_perfil"]]
                 + [("El algoritmo", m, None) for m in d["marco_algoritmo"]]

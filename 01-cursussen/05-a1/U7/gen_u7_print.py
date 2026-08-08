@@ -14,6 +14,8 @@ _sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
 import print_bloques as PB
 import lectura_data as LD
 import escucha_data as ED
+import retos_data as RD
+import retos_print as RP
 
 def b64(p): return base64.b64encode(open(p, "rb").read()).decode()
 def face(fam, fn, w):
@@ -285,6 +287,19 @@ def lpd(*chips):
     return f'<div class="lpd"><span class="lpdlab">Leerplandoelen III-Spa-d</span>{c}</div>'
 
 def divider(t): return f'<div class="divider">{t}</div>'
+
+
+def retos(ancla, titulo, intro_es, intro_nl):
+    """Retoblok van één sectie — volledige oefening voor print, verwijskaartje
+    voor wat op de hub of in de PowerPoint leeft."""
+    P('<div class="page">')
+    P(f'<div class="divider">{titulo}</div>')
+    P(f'<div class="intro" style="margin-top:1mm"><b>ES:</b> {intro_es} '
+      f'<span class="gloss">{intro_nl}</span></div>')
+    for r in sorted(RD.por_ancla(ancla), key=lambda x: x["num"]):
+        P(RP.reto_print(r) if r["soporte"] == "print" else RP.reto_puntero(r))
+    P('</div>')
+
 def pcard(t, body): return f'<div class="pcard"><div class="t">{t}</div>{body}</div>'
 
 def steun(niveau):
@@ -602,6 +617,10 @@ P(tarea_com("Tarea comunicativa · «Mi habitación»",
 P('<div class="route-note">🎮 <b>Juega online:</b> «¿hay o está?» (classify), «señala en la habitación» (point) en de casa-Memoria met zelfcorrectie.</div>')
 P('</div>')  # page §1.2
 
+retos("hay_estar", "§1.4 · Retos — lo que hay y donde está",
+      'Un anuncio que <b>miente</b> tres veces, y la misma calle en <b>tres épocas</b>.',
+      'Een advertentie die drie keer liegt, en dezelfde straat in drie tijdperken.')
+
 # ================= §2 · PREPOSICIONES DE LUGAR =================
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">2</span><span class="pk">§2 · ¿Dónde está? · preposiciones de lugar</span>')
@@ -680,6 +699,10 @@ P(tarea_com("Tarea comunicativa · «¿Dónde está?»",
   '<div class="steun" style="margin-left:12.5mm">Apoyo: MARCO (¿Está … de …?) → SIN AYUDA · [CROSS: HTML «preposición de lugar» + «señala en el plano»]</div>'))
 P('<div class="route-note">🎮 <b>Juega online:</b> «preposición de lugar» (cloze), «señala en el plano del barrio» (point) en de preposiciones-Tetris.</div>')
 P('</div>')  # page §2.2
+
+retos("preposiciones", "§2.4 · Retos — el espacio dicho en voz alta",
+      'Una mudanza <b>a ciegas</b> y una audioguía de tu propia calle. Aquí «ahí» no existe.',
+      'Een verhuis op de tast en een audiogids van je eigen straat. «Daar» bestaat hier niet.')
 
 # ================= §3 · ESTAR + GERUNDIO =================
 P('<div class="page"><div class="parada sec">')
@@ -767,6 +790,10 @@ P(tarea_com("Tarea comunicativa · «¿Qué están haciendo?»",
 P('<div class="route-note">🎮 <b>Juega online:</b> «estar + gerundio» (cloze), «¿qué estás haciendo?» en de gerundio-drills met zelfcorrectie.</div>')
 P('</div>')  # page §3.2
 
+retos("gerundio", "§3.4 · Reto — ¿quién está haciendo qué?",
+      'Seis ruidos en un piso de Cartagena. Cada uno delata una <b>acción</b>, no un objeto.',
+      'Zes geluiden in een appartement in Cartagena. Elk verraadt een handeling, geen voorwerp.')
+
 # ================= §4 · IMPERATIVO (EL CAMINO) =================
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">4</span><span class="pk">§4 · ¿Cómo se va? · el imperativo (el camino)</span>')
@@ -832,6 +859,10 @@ P(tarea_com("Tarea comunicativa · «¿Cómo se va a…?»",
 P('<div class="route-note">🎮 <b>Juega online:</b> «ordena las instrucciones», «imperativo (la ruta)» (cloze) en de simulatie «¡explica el camino!».</div>')
 P('</div>')  # page §4.2
 
+retos("imperativo", "§4.4 · Retos — dar órdenes que funcionen",
+      'Un robot que lo toma todo <b>literalmente</b>, y dos vecinos que tienen los dos razón.',
+      'Een robot die alles letterlijk neemt, en twee buren die allebei gelijk hebben.')
+
 # ================= §5 · ORDINALES + APOCOPE =================
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">5</span><span class="pk">§5 · Los ordinales · primero → el primer piso</span>')
@@ -882,6 +913,10 @@ P(actx(4, "Escribe: ¿en qué piso vives?",
   '<div class="wbox sm"></div>', apoyo="MARCO (Vivo en el… piso) → SIN AYUDA"))
 P('<div class="route-note">🎮 <b>Juega online:</b> «primero o primer» en de ordinales-drills met zelfcorrectie.</div>')
 P('</div>')  # page §5.2
+
+retos("ordinales", "§5.4 · Reto — el primer, el segundo, el tercer",
+      'Guías a alguien que <b>no ve</b> el edificio. Solo cuenta lo que se puede contar o tocar.',
+      'Je gidst iemand die het gebouw niet ziet. Alleen wat je kunt tellen of voelen telt.')
 
 # ================= §6 · LECTURA =================
 P('<div class="page"><div class="parada sec">')
@@ -1045,6 +1080,10 @@ P(actx(3, "Empareja: lugar ↔ país",
 P('<div class="route-note">🎮 <b>Sigue online:</b> «lugar ↔ país» (match) en de barrio-spellen op de digitale pagina.</div>')
 P('</div>')  # page Cultura
 
+retos("cultura_u7", "Retos — el barrio que construyes tú",
+      'Doce puntos para un barrio entero, y una casa del futuro <b>sin futuro</b>.',
+      'Twaalf punten voor een hele wijk, en een huis van de toekomst zonder toekomende tijd.')
+
 # ================= TAREA FINAL =================
 P('<div class="page"><div class="parada sec" style="border-top-color:var(--gd)">')
 P('<span class="num">✦</span><span class="pk" style="background:var(--gd)">Tarea final · Mapa de mi barrio</span>')
@@ -1184,7 +1223,7 @@ EDITBAR = '''
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Español en la práctica · U7 Mi casa y mi barrio</title><style>'
-        + CSS + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
+        + CSS + PB.CSS + RP.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/U7.html"
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, "·", len(HTML), "bytes")

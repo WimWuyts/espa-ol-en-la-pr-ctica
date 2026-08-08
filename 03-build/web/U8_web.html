@@ -395,6 +395,11 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
     <div id="motorlink"></div>
   </section>
 
+  <section class="panel" data-p="retos">
+    <h2 class="sec">Retos · tres desafíos 🎯</h2>
+    <p class="lead">Drie retos met <b>één harde regel</b>: je presenteert het weer van drie Peruaanse steden in <b>één minuut</b>, je schrijft een kaart aan wie je in september was met <b>ya, todavía no en nunca</b> elk precies één keer, en je vertelt een Nederlandse reisblog na in het Spaans — samenvattend, niet woord voor woord. <span class="gloss">De zeven andere retos van deze unit staan in het boek en in de PowerPoint.</span></p>
+    <div id="retos_u8"></div>
+  </section>
   <section class="panel" data-p="hablar">
     <h2 class="sec">Hablar · grábate 🎙️</h2>
     <p class="lead">Neem <b>jezelf</b> op: luister naar het model, spreek in, luister terug, en neem opnieuw op. <span class="gloss">Werkt in Chrome/Edge; sta de micro toe. Print blijft bruikbaar zonder opname.</span></p>
@@ -531,9 +536,291 @@ const GAMES={"viajes-memoria": "PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9Im5sIj4KPGhl
 function toggleTheme(){const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'}
 function speak(t,rate){if(!('speechSynthesis'in window))return;const u=new SpeechSynthesisUtterance(t);u.lang='es-ES';u.rate=rate||.92;
   const vs=speechSynthesis.getVoices();const es=vs.find(v=>/^es/i.test(v.lang));if(es)u.voice=es;try{speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}
+function buildRetos(id,cfg){
+ const host=document.getElementById(id);if(!host)return;
+ host.innerHTML='<div class="retos"></div>';
+ const lista=host.querySelector('.retos');
+ (cfg.retos||[]).forEach((r,n)=>{
+  const c=document.createElement('div');c.className='reto';
+  c.innerHTML='<div class="rcab"><span class="rnum">'+r.num+'</span><h3>'+exEsc(r.nombre)+'</h3>'+
+    '<span class="rlente">'+exEsc(r.lente)+'</span></div>'+
+    '<p class="rgancho"><b>'+exEsc(r.gancho_es)+'</b></p>'+
+    '<p class="rnl">'+exEsc(r.gancho_nl)+'</p>'+
+    '<p class="desc">'+exEsc(r.consigna_nl)+'</p>'+
+    '<div class="rregla"><b>La regla del reto</b>'+exEsc(r.regla)+'</div>'+
+    '<div class="rcuerpo" id="'+id+'_c'+n+'"></div>';
+  lista.appendChild(c);
+  const cuerpo=c.querySelector('.rcuerpo');
+  if(r.tipo==='grabar')retoGrabar(cuerpo,r,id+'_c'+n);
+  else if(r.tipo==='detector')retoDetector(cuerpo,r);
+  else if(r.tipo==='mapa')retoMapa(cuerpo,r);
+  else if(r.tipo==='articulo')retoArticulo(cuerpo,r);
+  else if(r.tipo==='escena')retoEscena(cuerpo,r);
+  else if(r.tipo==='retrato')retoRetrato(cuerpo,r);
+  else if(r.tipo==='voces')retoVoces(cuerpo,r);
+  else if(r.tipo==='opciones')retoOpciones(cuerpo,r);
+ });
+}
+
+function retoGrabar(cont,r,idBase){
+ (r.situaciones||[]).forEach(s=>{
+   const d=document.createElement('div');d.className='rsit';
+   d.innerHTML='<b>'+exEsc(s.es)+'</b><span class="rpista">'+exEsc(s.nl)+
+     (s.pista?' · <i>'+exEsc(s.pista)+'</i>':'')+'</span>';
+   cont.appendChild(d);});
+ const rec=document.createElement('div');rec.id=idBase+'_rec';cont.appendChild(rec);
+ if(typeof makeRecorder==='function')
+   makeRecorder(idBase+'_rec',{title:r.nombre,desc:r.consigna_es,
+     items:(r.items||[]).map(t=>({text:t.text,cue:t.cue}))});
+}
+
+function retoDetector(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ const reglas=r.reglas||[];
+ (r.items||[]).forEach((it,i)=>{
+   const d=document.createElement('div');d.className='detit';
+   const opts=reglas.map((g,k)=>'<option value="'+k+'">'+exEsc(g)+'</option>').join('');
+   d.innerHTML='<div class="dpal">'+exEsc(it.palabra)+'</div>'+
+     '<div class="detbtns"><button class="detbtn" type="button" data-v="1">✓ posible</button>'+
+     '<button class="detbtn" type="button" data-v="0">✗ imposible</button></div>'+
+     '<div class="detrule" hidden><label class="desc">¿Qué regla rompe?</label>'+
+     '<select><option value="-1">— elige la regla —</option>'+opts+'</select></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const fb=d.querySelector('.detfb'),rule=d.querySelector('.detrule'),sel=d.querySelector('select');
+   let cerrado=false;
+   d.querySelectorAll('.detbtn').forEach(b=>{b.onclick=()=>{
+     if(cerrado)return;
+     const dicho=b.dataset.v==='1';
+     if(!dicho){rule.hidden=false;sel.focus();
+       fb.className='detfb show';fb.textContent='Ahora acusa con pruebas: ¿qué regla rompe?';
+       cerrado=false;
+       sel.onchange=()=>{cerrado=true;
+         const bien=(!it.posible)&&(Number(sel.value)===it.regla);
+         d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);sel.disabled=true;
+         b.classList.add(bien?'ok':'no');
+         fb.className='detfb show '+(bien?'g':'b');
+         fb.innerHTML=bien?'<b>✓ acusación correcta</b> · '+exEsc(it.porque)
+           :(it.posible?'<b>✗ esta palabra sí existe</b> · '+exEsc(it.porque)
+                       :'<b>✗ la regla no es esa</b> · '+exEsc(it.porque));};
+       return;}
+     cerrado=true;
+     const bien=it.posible;
+     d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);
+     b.classList.add(bien?'ok':'no');
+     fb.className='detfb show '+(bien?'g':'b');
+     fb.innerHTML=(bien?'<b>✓ correcto</b> · ':'<b>✗ no</b> · ')+exEsc(it.porque);};});
+   caja.appendChild(d);});
+}
+
+// ── artículo: el/la op verzonnen woorden ───────────────────────────────────
+// Het lidwoord alléén zegt niets: wie «la» kiest bij een -ma-woord heeft geraden,
+// ook als het toevallig klopt. Daarom moet de leerling er de regel bij kiezen, en
+// telt het pas als het allebei klopt.
+// ── retrato hablado: luister en kies het juiste portret ────────────────────
+// De portretten worden getekend, niet beschreven: stonden de kenmerken in
+// woorden op de kaart, dan werd het woorden matchen in plaats van luisteren.
+function retoCara(x,y,r,p){
+ const pelo = p.pelo.indexOf('largo')>=0
+   ? (p.pelo.indexOf('rizado')>=0
+      ? '<path d="M'+(x-r-4)+' '+(y+r+6)+' q-6,-'+(r+18)+' '+(r+6)+',-'+(r+14)+' q'+r+',-8 '+(r+6)+','+(r+14)+' q6,'+(r+8)+' -4,'+(r+2)+' q-'+r+',-14 -'+(2*r-4)+',0 Z" fill="#5C4433"/>'
+      : '<path d="M'+(x-r-2)+' '+(y+r+8)+' l0,-'+(r+16)+' q'+(r+2)+',-14 '+(2*r+4)+',0 l0,'+(r+16)+' l-8,0 l0,-'+r+' q-'+r+',-10 -'+(2*r-8)+',0 l0,'+r+' Z" fill="#5C4433"/>')
+   : (p.pelo.indexOf('rizado')>=0
+      ? '<path d="M'+(x-r-2)+' '+y+' q2,-'+(r+14)+' '+(r+2)+',-'+(r+10)+' q'+r+',-6 '+(r+2)+','+(r+10)+' q2,10 -6,6 q-'+r+',-14 -'+(2*r-8)+',0 q-8,4 -6,-6 Z" fill="#5C4433"/>'
+      : '<path d="M'+(x-r-2)+' '+(y-2)+' q0,-'+(r+12)+' '+(r+2)+',-'+(r+12)+' q'+(r+2)+',0 '+(r+2)+','+(r+12)+' l-6,2 q-'+r+',-12 -'+(2*r-4)+',0 Z" fill="#5C4433"/>');
+ const gafas = p.gafas
+   ? '<g fill="none" stroke="#20242E" stroke-width="2.4"><circle cx="'+(x-r/2.4)+'" cy="'+(y+2)+'" r="'+(r/3.4)+'"/>'
+     +'<circle cx="'+(x+r/2.4)+'" cy="'+(y+2)+'" r="'+(r/3.4)+'"/>'
+     +'<line x1="'+(x-r/2.4+r/3.4)+'" y1="'+(y+2)+'" x2="'+(x+r/2.4-r/3.4)+'" y2="'+(y+2)+'"/></g>'
+   : '<circle cx="'+(x-r/2.4)+'" cy="'+(y+1)+'" r="2.6" fill="#20242E"/>'
+     +'<circle cx="'+(x+r/2.4)+'" cy="'+(y+1)+'" r="2.6" fill="#20242E"/>';
+ const boca = p.sonrie
+   ? '<path d="M'+(x-r/2.6)+' '+(y+r/2.2)+' q'+(r/2.6)+','+(r/3.2)+' '+(r/1.3)+',0" stroke="#20242E" stroke-width="2.4" fill="none" stroke-linecap="round"/>'
+   : '<line x1="'+(x-r/3)+'" y1="'+(y+r/1.9)+'" x2="'+(x+r/3)+'" y2="'+(y+r/1.9)+'" stroke="#20242E" stroke-width="2.4" stroke-linecap="round"/>';
+ return '<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="#F2D3B6"/>'+pelo+gafas+boca;
+}
+
+function retoRetrato(cont,r){
+ const rs=r.retratos||[], ds=r.descripciones||[];
+ let i=0, aciertos=0;
+ cont.innerHTML='<div class="rmarca"><button class="escbtn rplay" type="button">▶ Escuchar la descripción</button>'+
+   '<span class="rcuenta rvuelta">1 / '+ds.length+'</span>'+
+   '<span class="desc rtanteo">aciertos: 0</span></div>'+
+   '<div class="retratos"></div><div class="detfb rfb" role="status" aria-live="polite"></div>';
+ const caja=cont.querySelector('.retratos');
+ rs.forEach(p=>{
+   const b=document.createElement('button');b.type='button';b.className='retrato';b.dataset.n=p.n;
+   b.innerHTML='<svg viewBox="0 0 100 100" aria-hidden="true">'+retoCara(50,52,26,p)+'</svg>'+
+     '<span class="rnum2">'+p.n+'</span>';
+   b.onclick=()=>{
+     if(!ds[i])return;
+     const fb=cont.querySelector('.rfb'), bien=Number(b.dataset.n)===ds[i].correcto;
+     b.classList.add(bien?'ok':'no');
+     fb.className='detfb show rfb '+(bien?'g':'b');
+     fb.innerHTML=bien?'<b>✓ correcto</b> · '+exEsc(ds[i].texto)
+       :'<b>✗ no</b> · era el '+ds[i].correcto+' — '+exEsc(ds[i].texto);
+     if(bien)aciertos++;
+     cont.querySelector('.rtanteo').textContent='aciertos: '+aciertos;
+     i++;
+     setTimeout(()=>{caja.querySelectorAll('.retrato').forEach(x=>x.classList.remove('ok','no'));
+       if(i<ds.length){cont.querySelector('.rvuelta').textContent=(i+1)+' / '+ds.length;fb.className='detfb rfb';}
+       else{cont.querySelector('.rvuelta').textContent='hecho';
+         fb.className='detfb show rfb g';fb.innerHTML='<b>Listo</b> · ahora describe tú uno a tu compañero/a.';}},1400);};
+   caja.appendChild(b);});
+ cont.querySelector('.rplay').onclick=()=>{if(ds[i]&&typeof speak==='function')speak(ds[i].texto);};
+}
+
+// ── drie stemmen, één samenvatting: bemiddelen ─────────────────────────────
+// ── opciones: kies uit N, mét verplichte uitleg ────────────────────────────
+// Breed inzetbaar: welk werkwoord past bij dit uur, welke Spaanse uitdrukking
+// dekt deze Vlaamse. Er is telkens één juist antwoord, en de feedback zegt niet
+// alleen wát maar ook waarom — anders leert een gokker niets.
+function retoOpciones(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ (r.items||[]).forEach(it=>{
+   const d=document.createElement('div');d.className='detit';
+   d.innerHTML=(it.audio?'<button class="escbtn opplay" type="button">▶ Escuchar</button>':'')+
+     '<div class="dpal">'+exEsc(it.enunciado)+'</div>'+
+     '<div class="detbtns"></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const btns=d.querySelector('.detbtns'), fb=d.querySelector('.detfb');
+   let cerrado=false;
+   (it.opciones||[]).forEach(o=>{
+     const b=document.createElement('button');b.type='button';b.className='detbtn';b.textContent=o;
+     b.onclick=()=>{if(cerrado)return;cerrado=true;
+       const bien=o===it.correcta;
+       btns.querySelectorAll('.detbtn').forEach(x=>{x.disabled=true;
+         if(x.textContent===it.correcta)x.classList.add('ok');});
+       if(!bien)b.classList.add('no');
+       fb.className='detfb show '+(bien?'g':'b');
+       fb.innerHTML=(bien?'<b>✓ correcto</b>':'<b>✗ es «'+exEsc(it.correcta)+'»</b>')+
+         (it.porque?' · '+exEsc(it.porque):'');};
+     btns.appendChild(b);});
+   const pl=d.querySelector('.opplay');
+   if(pl)pl.onclick=()=>{if(typeof speak==='function')speak(it.enunciado);};
+   caja.appendChild(d);});
+}
+
+function retoVoces(cont,r){
+ cont.innerHTML='<div class="voces"></div>'+
+   '<p class="desc">Schrijf je samenvatting in drie zinnen — korter dan wat je hoorde, en niemand mag wegvallen.</p>'+
+   '<textarea class="escta" rows="5" aria-label="Jouw samenvatting" placeholder="1. Rosa vindt…"></textarea>';
+ const caja=cont.querySelector('.voces');
+ (r.voces||[]).forEach(v=>{
+   const d=document.createElement('div');d.className='voz';
+   d.innerHTML='<button class="escbtn vozbtn" type="button">▶</button>'+
+     '<div><b>'+exEsc(v.quien)+'</b><span class="vozt">'+exEsc(v.texto)+'</span></div>';
+   d.querySelector('.vozbtn').onclick=()=>{if(typeof speak==='function')speak(v.texto);};
+   caja.appendChild(d);});
+}
+
+function retoArticulo(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ const reglas=r.reglas||[];
+ (r.objetos||[]).forEach(it=>{
+   const d=document.createElement('div');d.className='detit';
+   const opts=reglas.map((g,k)=>'<option value="'+g.clave+'">'+exEsc(g.texto)+'</option>').join('');
+   d.innerHTML='<div class="dpal">¿… '+exEsc(it.palabra)+'?</div>'+
+     '<div class="detbtns"><button class="detbtn" type="button" data-a="el">el</button>'+
+     '<button class="detbtn" type="button" data-a="la">la</button></div>'+
+     '<div class="detrule" hidden><label class="desc">¿Qué regla usas?</label>'+
+     '<select><option value="">— elige la regla —</option>'+opts+'</select></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const fb=d.querySelector('.detfb'),rule=d.querySelector('.detrule'),sel=d.querySelector('select');
+   let elegido=null;
+   d.querySelectorAll('.detbtn').forEach(b=>{b.onclick=()=>{
+     if(elegido)return;
+     elegido=b.dataset.a;rule.hidden=false;sel.focus();
+     fb.className='detfb show';fb.textContent='¿Y por qué? Elige la regla.';};});
+   sel.onchange=()=>{
+     if(!sel.value)return;
+     const bienArt=elegido===it.articulo, bienRegla=sel.value===it.regla;
+     d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);sel.disabled=true;
+     const b=d.querySelector('.detbtn[data-a="'+elegido+'"]');
+     b.classList.add(bienArt&&bienRegla?'ok':'no');
+     fb.className='detfb show '+(bienArt&&bienRegla?'g':'b');
+     if(bienArt&&bienRegla)fb.innerHTML='<b>✓ correcto</b> · '+exEsc(it.porque);
+     else if(bienArt)fb.innerHTML='<b>✗ el artículo sí, la regla no</b> · '+exEsc(it.porque)+
+       ' — con la regla equivocada, has adivinado.';
+     else fb.innerHTML='<b>✗ es «'+exEsc(it.articulo)+' '+exEsc(it.palabra)+'»</b> · '+exEsc(it.porque);};
+   caja.appendChild(d);});
+}
+
+// ── escena: dezelfde plek, twee tijden ─────────────────────────────────────
+// Twee panelen naast elkaar; klik een voorwerp en je hoort en ziet hoe het heet.
+// De twee voorwerpen die in beide scènes staan, zijn de controle: wie die als
+// verschil noteert, heeft te snel gekeken.
+function retoEscena(cont,r){
+ const items=r.escena||[];
+ function panel(cual,titulo,sub){
+   const propios=items.filter(i=>i.cuando===cual||i.cuando==='ambas');
+   const formas=propios.map((i,k)=>i.forma==='circ'
+     ? '<circle class="eob" data-k="'+k+'" data-c="'+cual+'" cx="'+(i.x+i.w/2)+'" cy="'+(i.y+i.h/2)+
+       '" r="'+(i.w/2)+'" fill="'+i.color+'"/>'
+     : '<rect class="eob" data-k="'+k+'" data-c="'+cual+'" x="'+i.x+'" y="'+i.y+'" width="'+i.w+
+       '" height="'+i.h+'" rx="1.5" fill="'+i.color+'"/>').join('');
+   return '<figure class="esc"><figcaption><b>'+exEsc(titulo)+'</b> <span>'+exEsc(sub)+'</span></figcaption>'+
+     '<svg viewBox="0 0 100 84" role="img" aria-label="'+exEsc(titulo)+'">'+
+     '<rect x="0" y="0" width="100" height="52" fill="#E8F1F7"/>'+          // lucht
+     '<rect x="0" y="52" width="100" height="32" fill="#EDE7DC"/>'+          // plein
+     '<rect x="0" y="30" width="100" height="22" fill="#D8CFC0"/>'+          // gevelrij
+     '<rect x="6" y="24" width="16" height="28" fill="#C6B9A6"/>'+
+     '<rect x="44" y="20" width="18" height="32" fill="#C6B9A6"/>'+
+     '<rect x="76" y="26" width="18" height="26" fill="#C6B9A6"/>'+
+     formas+'</svg><p class="escnom" role="status" aria-live="polite">Klik een voorwerp.</p></figure>';
+ }
+ cont.innerHTML='<div class="escenas">'+panel('antes','1985','la misma plaza, hace cuarenta años')+
+   panel('ahora','ahora','la plaza hoy')+'</div>'+
+   '<p class="desc">De twee dingen die in <b>allebei</b> de scènes staan, zijn de controle: die zijn géén verschil.</p>';
+ cont.querySelectorAll('.eob').forEach(el=>{
+   el.style.cursor='pointer';
+   el.addEventListener('click',()=>{
+     const cual=el.dataset.c, k=Number(el.dataset.k);
+     const propios=items.filter(i=>i.cuando===cual||i.cuando==='ambas');
+     const it=propios[k];if(!it)return;
+     const fig=el.closest('figure');
+     fig.querySelector('.escnom').innerHTML='<b>'+exEsc(it.es)+'</b> — '+exEsc(it.nl)+
+       (it.cuando==='ambas'?' <i>(en las dos escenas)</i>':'');
+     el.style.stroke='#157355';el.style.strokeWidth='1.4';
+     if(typeof speak==='function')speak(it.es);});});
+ const marco=document.createElement('div');marco.className='rsit';
+ marco.innerHTML='<b>Tu marco</b><span class="rpista">'+
+   (r.marco||[]).map(exEsc).join(' · ')+'</span>';
+ cont.appendChild(marco);
+ const ta=document.createElement('textarea');ta.className='escta';ta.rows=5;
+ ta.setAttribute('aria-label','Jouw vijf zinnen');ta.placeholder='1. En la plaza de ahora hay…';
+ cont.appendChild(ta);
+}
+
+function retoMapa(cont,r){
+ const paises=r.paises||[];
+ cont.innerHTML='<div class="rmarca"><span class="rcuenta">0 / '+paises.length+'</span>'+
+   '<div class="rbarra"><i></i></div>'+
+   '<button class="otra rreset" type="button">↺ empezar de nuevo</button></div>'+
+   '<p class="desc">Klik een land, zeg het hardop, laat iemand bevestigen — dan pas aanklikken. '+
+   'De teller is van de klas, niet van jou.</p><div class="rpais"></div>';
+ const cont2=cont.querySelector('.rpais'),cuenta=cont.querySelector('.rcuenta'),
+       barra=cont.querySelector('.rbarra i');
+ let hechos=0;
+ function pinta(iso){ // laat het land op de grote kaart meekleuren, als die er is
+   const svg=document.querySelector('#mapwrap svg');if(!svg)return;
+   const p=svg.querySelector('[data-c="'+iso+'"]');if(p)p.style.filter='saturate(1.6) brightness(1.05)';}
+ paises.forEach(p=>{
+   const b=document.createElement('button');b.type='button';
+   b.innerHTML=exEsc(p.nombre)+'<span class="sil">'+exEsc(p.silabas)+'</span>';
+   b.onclick=()=>{if(b.classList.contains('hecho'))return;
+     b.classList.add('hecho');hechos++;pinta(p.iso);
+     cuenta.textContent=hechos+' / '+paises.length;
+     barra.style.width=Math.round(hechos/paises.length*100)+'%';
+     if(typeof speak==='function')speak(p.nombre);
+     if(hechos===paises.length)cuenta.textContent='¡'+paises.length+' / '+paises.length+' — lo habéis conseguido!';};
+   cont2.appendChild(b);});
+ cont.querySelector('.rreset').onclick=()=>{hechos=0;cuenta.textContent='0 / '+paises.length;
+   barra.style.width='0';cont2.querySelectorAll('button').forEach(x=>x.classList.remove('hecho'));};
+}
+
 const TTS=('speechSynthesis'in window);
 if(TTS){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}
-const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
+const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['retos','Retos 🎯'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
 const sn=document.getElementById('subnav');
 // ── tabbladen · het adres volgt mee ──────────────────────────────────────────
 // #escuchar opent dat tabblad; #lec_1 opent het paneel waar dat element in
@@ -1300,6 +1587,7 @@ function buildGramType(){
  buildType('gt_3',{title:"Marcadores — ya · todavía no · nunca · alguna vez",desc:"Vier woorden die zeggen <b>waar je staat</b> in een reeks ervaringen. <b>ya</b> = al · <b>todavía no</b> = nog niet · <b>nunca</b> = nooit · <b>alguna vez</b> = ooit (alleen in een vraag).",accents:'strict',perBlock:12,expect:12,items:[{"q": "— ¿Has visto Machu Picchu? — Sí, ___ lo he visto.", "ans": "ya", "why": "bevestigend en afgevinkt → ya"}, {"q": "— ¿Has subido a la montaña? — No, ___ ___ he subido.", "ans": "todavía no", "why": "nog niet, maar het kan nog → todavía no"}, {"q": "¿Has viajado ___ ___ en barco?", "ans": "alguna vez", "why": "in een vraag naar ervaring → alguna vez"}, {"q": "Yo ___ he comido cuy. (nooit)", "ans": "nunca"}, {"q": "— ¿Habéis hecho las maletas? — Sí, ___ están listas.", "ans": "ya"}, {"q": "Mi hermano ___ ha visto la nieve. (nooit)", "ans": "nunca"}, {"q": "— ¿Has escrito la postal? — No, ___ ___ la he escrito.", "ans": "todavía no"}, {"q": "¿Has estado ___ ___ en Perú?", "ans": "alguna vez"}, {"q": "El tren ___ ha salido: son las nueve y cinco.", "ans": "ya"}, {"q": "Nosotros ___ hemos perdido una maleta. (nooit)", "ans": "nunca"}, {"q": "— ¿Ha llegado el guía? — No, ___ ___ ha llegado.", "ans": "todavía no"}, {"q": "¿Habéis probado ___ ___ la comida andina?", "ans": "alguna vez"}]});
 }
 buildGramType();
+buildRetos("retos_u8",{"retos": [{"num": 3, "nombre": "El parte del tiempo en directo", "lente": "📻 mediaformat", "gancho_es": "Tres ciudades, un minuto, y la cámara está en directo.", "gancho_nl": "Drie steden, één minuut, en de camera staat live.", "consigna_es": "Graba el parte del tiempo de tres ciudades peruanas, con gestos y todo.", "consigna_nl": "Neem het weerbericht van drie Peruaanse steden op, gebaren inbegrepen.", "regla": "Eén minuut, drie steden, geen pauze langer dan drie seconden. Elke stad krijgt een temperatuur, een weertype en één advies («lleva…»).", "tipo": "grabar", "situaciones": [{"es": "Buenos días, aquí el tiempo para hoy.", "nl": "", "pista": ""}, {"es": "En … hace … y la temperatura es de … grados.", "nl": "", "pista": ""}, {"es": "Por la tarde …", "nl": "", "pista": ""}, {"es": "Si sales, lleva …", "nl": "", "pista": ""}, {"es": "Y hasta aquí el parte. ¡Hasta mañana!", "nl": "", "pista": ""}], "items": [{"text": "El parte del tiempo", "cue": "één minuut · Lima · Cusco · Iquitos · elk met temperatuur, weertype en één advies"}]}, {"num": 9, "nombre": "Postal para el yo de septiembre", "lente": "✍️ creatieve beperking", "gancho_es": "Escribe a quien eras en septiembre. Cuenta lo que no esperaba.", "gancho_nl": "Schrijf aan wie je in september was. Vertel wat die niet verwachtte.", "consigna_es": "Escribe la postal con ya, todavía no y nunca — cada uno una vez.", "consigna_nl": "Schrijf de kaart met ya, todavía no en nunca — elk één keer.", "regla": "Alle drie de marcadores komen erin, elk precies één keer, en elk in een zin die écht over jou gaat. Een lijstje met de drie woorden is geen kaart.", "tipo": "grabar", "situaciones": [{"es": "Querido yo de septiembre:", "nl": "", "pista": ""}, {"es": "Ya he …", "nl": "", "pista": ""}, {"es": "Todavía no he …", "nl": "", "pista": ""}, {"es": "Nunca he … , y eso me sorprende.", "nl": "", "pista": ""}, {"es": "Nos vemos en septiembre. Un abrazo,", "nl": "", "pista": ""}], "items": [{"text": "Mi postal para septiembre", "cue": "vijf zinnen · ya, todavía no en nunca — elk precies één keer"}]}, {"num": 10, "nombre": "Traduce la aventura", "lente": "🤝 bemiddelen", "gancho_es": "Un blog en neerlandés. Cuéntalo en español, más corto y más claro.", "gancho_nl": "Een blog in het Nederlands. Vertel het in het Spaans, korter en duidelijker.", "consigna_es": "Resume cada fragmento en dos frases de perfecto. No traduzcas palabra por palabra.", "consigna_nl": "Vat elk fragment samen in twee perfecto-zinnen. Vertaal niet woord voor woord.", "regla": "Twee zinnen per fragment, geen drie. Woord-voor-woord vertalen is fout, ook als het klopt: je vertelt wat er gebeurd is, niet hoe het er stond.", "tipo": "opciones", "items": [{"enunciado": "Onze bus vertrok om vijf uur 's ochtends en het was ijskoud. Halverwege stopten we bij een klein dorp waar we soep aten.", "correcta": "Hemos salido muy temprano y hemos parado en un pueblo a comer sopa.", "opciones": ["Hemos salido muy temprano y hemos parado en un pueblo a comer sopa.", "Nuestro bus ha salido a las cinco de la mañana y ha hecho mucho frío y en el medio hemos parado en un pueblo pequeño donde hemos comido sopa.", "El bus sale a las cinco y hace frío."], "porque": "de tweede is een correcte vertaling maar geen samenvatting; de derde staat in het presente"}, {"enunciado": "Ik had mijn regenjas thuisgelaten, dus ik ben doorweekt aangekomen. Gelukkig had het hostel warme douches.", "correcta": "He olvidado el chubasquero y he llegado empapada. Por suerte, el hostal tenía duchas calientes.", "opciones": ["He olvidado el chubasquero y he llegado empapada. Por suerte, el hostal tenía duchas calientes.", "Yo he dejado mi chaqueta de lluvia en casa así que yo he llegado muy mojada.", "Olvido el chubasquero."], "porque": "de tweede vertaalt «dus» en «mijn» letterlijk; in het Spaans zijn beide overbodig"}, {"enunciado": "De gids sprak Quechua met de vrouwen op de markt. Ik verstond niets, maar ik begreep alles aan hun handen.", "correcta": "El guía ha hablado quechua con las mujeres. No he entendido las palabras, pero sí los gestos.", "opciones": ["El guía ha hablado quechua con las mujeres. No he entendido las palabras, pero sí los gestos.", "El guía ha hablado quechua con las mujeres en el mercado. Yo no he entendido nada pero yo he entendido todo con sus manos.", "El guía habla quechua y yo no entiendo."], "porque": "«alles aan hun handen» wordt in het Spaans «los gestos» — daar zit de bemiddeling"}, {"enunciado": "We zijn niet tot boven geraakt. Het pad was gesloten door de regen en we moesten terug. Volgende keer beter.", "correcta": "No hemos podido subir: han cerrado el camino por la lluvia. Todavía no hemos llegado arriba.", "opciones": ["No hemos podido subir: han cerrado el camino por la lluvia. Todavía no hemos llegado arriba.", "Nosotros no hemos llegado hasta arriba porque el camino ha sido cerrado por la lluvia y hemos tenido que volver.", "No hemos subido nunca."], "porque": "«volgende keer beter» wordt «todavía no» — geen futuro, dat is C6-stof"}]}]});
 buildEscucha("esc_u8",{"title": "El tiempo en los Andes", "audio": "audio/C5_U8.mp3", "expectDetalle": 5, "situacion": {"lugar": "La radio de Cusco, boletín de las ocho de la mañana", "quien": "El presentador y Rosa Quispe, meteoróloga", "que": "Dan el tiempo de hoy y de mañana en Perú", "claves": ["hace sol / hace frío", "va a llover", "grados"]}, "guion": [{"who": "Presentador", "es": "Son las ocho. Rosa, ¿qué tiempo hace hoy en Cusco?", "nl": "Het is acht uur. Rosa, wat voor weer is het vandaag in Cusco?"}, {"who": "Rosa", "es": "Buenos días. Hoy hace sol, pero hace frío: solo cinco grados a esta hora.", "nl": "Goedemorgen. Vandaag is het zonnig, maar koud: maar vijf graden op dit uur."}, {"who": "Presentador", "es": "¿Y por la tarde?", "nl": "En vanmiddag?"}, {"who": "Rosa", "es": "Por la tarde sube a dieciséis grados. En los Andes la diferencia entre la mañana y la tarde es enorme.", "nl": "'s Namiddags stijgt het naar zestien graden. In de Andes is het verschil tussen de ochtend en de namiddag enorm."}, {"who": "Presentador", "es": "¿Necesitamos paraguas?", "nl": "Hebben we een paraplu nodig?"}, {"who": "Rosa", "es": "Hoy no. Pero mañana sí: va a llover toda la tarde, con tormenta en la montaña.", "nl": "Vandaag niet. Maar morgen wel: het gaat de hele namiddag regenen, met onweer in de bergen."}, {"who": "Presentador", "es": "¿Y en Machu Picchu?", "nl": "En in Machu Picchu?"}, {"who": "Rosa", "es": "Allí está nublado y llueve un poco. Es normal: estamos en temporada de lluvias.", "nl": "Daar is het bewolkt en regent het wat. Dat is normaal: we zitten in het regenseizoen."}, {"who": "Presentador", "es": "¿Hasta cuándo dura?", "nl": "Hoe lang duurt dat nog?"}, {"who": "Rosa", "es": "Hasta marzo. Después llegan los meses secos, de mayo a septiembre.", "nl": "Tot maart. Daarna komen de droge maanden, van mei tot september."}, {"who": "Presentador", "es": "¿Y en la costa, en Lima?", "nl": "En aan de kust, in Lima?"}, {"who": "Rosa", "es": "Veintidós grados y mucha nube, como casi siempre. Allí casi nunca llueve.", "nl": "Tweeëntwintig graden en veel bewolking, zoals bijna altijd. Daar regent het bijna nooit."}, {"who": "Presentador", "es": "Gracias, Rosa. Volvemos mañana a las ocho.", "nl": "Dank je, Rosa. Morgen om acht uur zijn we er weer."}], "global": {"q": "¿De qué habla este boletín?", "opts": ["Del tiempo de hoy y de mañana en Perú", "De un viaje a Machu Picchu", "De un accidente en la montaña"], "ans": "Del tiempo de hoy y de mañana en Perú", "why": "graden, wolken, regen — per plaats"}, "detalle": [{"q": "¿Cuántos grados hace en Cusco a las ocho de la mañana?", "opts": ["Cinco", "Quince", "Veinticinco"], "ans": "Cinco", "why": "«solo cinco grados a esta hora»"}, {"q": "¿Cuántos grados hace por la tarde?", "opts": ["Dieciséis", "Seis", "Veintiséis"], "ans": "Dieciséis", "why": "«sube a dieciséis grados»"}, {"q": "¿Cuándo va a llover?", "opts": ["Mañana por la tarde", "Hoy por la mañana", "El domingo"], "ans": "Mañana por la tarde", "why": "«mañana sí: va a llover toda la tarde»"}, {"q": "¿Hasta cuándo dura la temporada de lluvias?", "opts": ["Hasta marzo", "Hasta mayo", "Hasta septiembre"], "ans": "Hasta marzo", "why": "«Hasta marzo»"}, {"q": "¿Qué tiempo hace en Lima?", "opts": ["Nublado y veintidós grados", "Sol y treinta grados", "Nieve y frío"], "ans": "Nublado y veintidós grados", "why": "«Veintidós grados y mucha nube»"}], "vf": [{"q": "Hoy hace falta paraguas en Cusco.", "ans": false, "prueba": "hoy no"}, {"q": "En Machu Picchu está nublado.", "ans": true, "prueba": "allí está nublado y llueve un poco"}, {"q": "En Lima llueve mucho.", "ans": false, "prueba": "allí casi nunca llueve"}], "produccion": {"prompt": "Da tú el parte del tiempo de tu ciudad para hoy y mañana (cinco frases): qué tiempo hace, cuántos grados, si hace falta paraguas y qué va a pasar mañana. Usa: hace sol · está nublado · llueve · va a…", "modo": "grabar", "modelo": "Buenos días. Hoy en … hace… y hay … grados. Por la tarde… Mañana va a… Hasta mañana."}});
 buildAudioCortos("esc_u8",{"fragmentos": [{"etiqueta": "Audio 8.1 · ¿Qué han hecho? · 0:55", "seccion": "§1 · pretérito perfecto compuesto", "titulo": "Cuatro personas cuentan su verano", "tarea": "Kruis aan wie het gedaan heeft.", "audio": "audio/C5_U8_01.mp3", "guion": [{"who": "Narradora", "es": "Cuatro personas cuentan qué han hecho este verano.", "nl": "Vier personen vertellen wat ze deze zomer gedaan hebben."}, {"who": "Nina", "es": "Yo he subido a la montaña con mi tío. He sacado muchas fotos del valle.", "nl": "Ik ben de berg op geklommen met mijn oom. Ik heb veel foto's van de vallei gemaakt."}, {"who": "Diego", "es": "Pues yo he comido un ceviche riquísimo en la costa. ¡Qué rico!", "nl": "Nou, ik heb een heerlijke ceviche gegeten aan de kust. Wat lekker!"}, {"who": "Lucía", "es": "Yo he visto el mar por primera vez este año. He estado en Cádiz una semana.", "nl": "Ik heb dit jaar voor het eerst de zee gezien. Ik ben een week in Cádiz geweest."}, {"who": "Valen", "es": "Yo no he viajado. He trabajado en la tienda de mi madre todo el verano.", "nl": "Ik heb niet gereisd. Ik heb de hele zomer in de winkel van mijn moeder gewerkt."}]}, {"etiqueta": "Audio 8.2 · El parte del tiempo · 0:50", "seccion": "§4 · ¿Qué tiempo hace? · el clima", "titulo": "El parte del tiempo — Perú", "tarea": "Noteer per stad het weer (ciudad + tiempo), één per regel.", "audio": "audio/C5_U8_02.mp3", "guion": [{"who": "Presentador", "es": "Buenos días. El tiempo para hoy en Perú. Escucha con atención.", "nl": "Goedemorgen. Het weer voor vandaag in Peru. Luister aandachtig."}, {"who": "Presentador", "es": "En Lima está nublado y estamos a dieciocho grados.", "nl": "In Lima is het bewolkt en het is achttien graden."}, {"who": "Presentador", "es": "En Cusco hace sol, pero hace frío: nueve grados.", "nl": "In Cusco is het zonnig, maar koud: negen graden."}, {"who": "Presentador", "es": "En Iquitos, en la selva, llueve mucho y hace calor.", "nl": "In Iquitos, in het regenwoud, regent het veel en is het warm."}, {"who": "Presentador", "es": "Y en Arequipa hace viento, con veinte grados.", "nl": "En in Arequipa waait het, met twintig graden."}, {"who": "Presentador", "es": "Repito: Lima, nublado. Cusco, sol y frío. Iquitos, lluvia y calor. Arequipa, viento.", "nl": "Ik herhaal: Lima, bewolkt. Cusco, zon en koud. Iquitos, regen en warm. Arequipa, wind."}]}]});
 buildLectura("lec_u8",{"titulo": "¿Qué tipo de viajero eres?", "tipo": "test de revista (cuestionario con resultados)", "emisor": "La revista de viajes «Mochila»", "receptor": "Sus lectores jóvenes", "objetivo": "Que te pongas una nota y te reconozcas en un perfil", "prediccion": {"q": "Kijk eerst alleen naar de zes genummerde vragen en de drie gekleurde kaders onderaan. Wat voor tekst is dit?", "opts": ["Een test met een uitslag", "Een reisverslag", "Een advertentie voor een reis"], "ans": "Een test met een uitslag", "why": "Vragen + puntentelling + profielen = een tijdschrifttest."}, "texto": [["titulo", "🎒 ¿QUÉ TIPO DE VIAJERO ERES?"], ["lema", "Test · revista «Mochila» · marzo"], ["p", "Contesta sí o no. Cuenta un punto por cada «sí» y mira tu resultado al final."], ["lista", ["1 · ¿Has dormido alguna vez en una tienda de campaña?", "2 · ¿Has viajado alguna vez solo o sola?", "3 · ¿Has probado alguna vez una comida muy rara?", "4 · ¿Has hablado alguna vez con un desconocido en otro idioma?", "5 · ¿Has perdido alguna vez un tren o un avión?", "6 · ¿Has subido alguna vez a más de tres mil metros?"]], ["aviso", ["🟢 DE 0 A 2 PUNTOS — «El viajero de casa»", "Todavía no has salido mucho de tu zona. No pasa nada: todo el mundo empieza así. Este año puedes hacer una excursión de un día a un sitio nuevo."]], ["aviso", ["🟡 DE 3 A 4 PUNTOS — «El viajero curioso»", "Ya has visto cosas y ya has tenido algún problema. Sabes que un viaje no siempre sale como en las fotos, y eso es una buena noticia."]], ["aviso", ["🔴 DE 5 A 6 PUNTOS — «La mochila siempre lista»", "Has hecho de todo. Cuidado con una cosa: viajar mucho no es lo mismo que mirar. ¿De cuántas de esas ciudades te acuerdas de verdad?"]], ["p", "Nina, de Cusco, ha sacado seis puntos. «He subido a Machu Picchu tres veces», dice, «pero todavía no he visto el mar»."], ["firma", "¿Cuántos puntos has sacado tú? Cuéntanoslo en mochila@revista.pe"]], "traduccion": "WAT VOOR REIZIGER BEN JIJ? Test · tijdschrift «Mochila» · maart. Antwoord ja of nee. Tel één punt voor elke «ja» en kijk onderaan naar je uitslag. 1 · Heb je ooit in een tent geslapen? 2 · Heb je ooit alleen gereisd? 3 · Heb je ooit iets heel raars gegeten? 4 · Heb je ooit met een onbekende in een andere taal gepraat? 5 · Heb je ooit een trein of een vliegtuig gemist? 6 · Ben je ooit hoger dan drieduizend meter geweest? — 0 TOT 2 PUNTEN «De thuisreiziger»: je bent nog niet veel buiten je vertrouwde omgeving geweest. Dat geeft niet: iedereen begint zo. Dit jaar kun je een daguitstap maken naar een nieuwe plek. — 3 TOT 4 PUNTEN «De nieuwsgierige reiziger»: je hebt al dingen gezien en al eens een probleem gehad. Je weet dat een reis niet altijd verloopt zoals op de foto's, en dat is goed nieuws. — 5 TOT 6 PUNTEN «De rugzak staat altijd klaar»: je hebt van alles gedaan. Pas op voor één ding: veel reizen is niet hetzelfde als kijken. Hoeveel van die steden herinner je je echt? — Nina uit Cusco haalde zes punten. «Ik ben drie keer op Machu Picchu geweest», zegt ze, «maar ik heb de zee nog nooit gezien.»", "global": {"q": "¿Para qué es este texto?", "opts": ["Para descubrir qué tipo de viajero eres", "Para reservar un viaje a Perú", "Para explicar cómo se sube a Machu Picchu"], "ans": "Para descubrir qué tipo de viajero eres"}, "escanear": [{"q": "¿Cuántas preguntas tiene el test? (en cifras)", "ans": "6", "alt": ["seis", "6 preguntas"], "why": "de vragen zijn genummerd van 1 tot 6"}, {"q": "¿Cuántos puntos ha sacado Nina? (en cifras)", "ans": "6", "alt": ["seis", "seis puntos"], "why": "«ha sacado seis puntos»"}, {"q": "¿Cuántas veces ha subido Nina a Machu Picchu? (en cifras)", "ans": "3", "alt": ["tres", "tres veces"], "why": "«He subido a Machu Picchu tres veces»"}, {"q": "¿A partir de cuántos puntos eres «el viajero curioso»? (en cifras)", "ans": "3", "alt": ["tres", "de 3 a 4", "3 a 4"], "why": "«DE 3 A 4 PUNTOS — El viajero curioso»"}, {"q": "¿A qué dirección puedes escribir?", "ans": "mochila@revista.pe", "alt": ["mochila@revista.pe"], "why": "«Cuéntanoslo en mochila@revista.pe»"}], "vf": [{"q": "Cada «sí» vale un punto.", "ans": true, "prueba": "cuenta un punto por cada «sí»"}, {"q": "Nina ya ha estado en Machu Picchu.", "ans": true, "prueba": "he subido a machu picchu tres veces"}, {"q": "Nina ya ha visto el mar.", "ans": false, "prueba": "todavía no he visto el mar"}, {"q": "Con dos puntos has viajado mucho.", "ans": false, "prueba": "todavía no has salido mucho de tu zona"}, {"q": "Según el test, viajar mucho es lo mismo que mirar de verdad.", "ans": false, "prueba": "viajar mucho no es lo mismo que mirar"}], "contexto": [{"q": "«una tienda de campaña» — ¿qué es?", "opts": ["een tent", "een winkel op het platteland", "een boerderij"], "ans": "een tent", "why": "«la tienda» is winkel, maar «tienda de campaña» is een tent — een klassieke valstrik."}, {"q": "«Todavía no has salido mucho de tu zona» — ¿qué significa?", "opts": ["Je bent nog niet veel buiten je vertrouwde omgeving geweest", "Je bent nooit thuis", "Je mag niet meer weg"], "ans": "Je bent nog niet veel buiten je vertrouwde omgeving geweest", "why": "«todavía no» = nog niet — het kan nog komen."}, {"q": "«¿Cuántos puntos has sacado?» — ¿qué significa «sacar» aquí?", "opts": ["behalen", "fotograferen", "eruit halen"], "ans": "behalen", "why": "In een test haal je punten; «sacar fotos» is iets anders."}, {"q": "«No pasa nada» — ¿qué quiere decir?", "opts": ["Het geeft niet", "Er gebeurt hier nooit iets", "Het is verboden"], "ans": "Het geeft niet", "why": "Het is een geruststelling na een lage score."}], "produccion": {"prompt": "Escribe tu resultado y tres frases más (5–6 in totaal): cuántos puntos has sacado, dos cosas que ya has hecho y dos que todavía no has hecho. Usa ya · todavía no · nunca · alguna vez.", "modelo": "He sacado … puntos. Ya he… y ya he… Pero todavía no he… y nunca he… ¿Y tú, has … alguna vez?"}});

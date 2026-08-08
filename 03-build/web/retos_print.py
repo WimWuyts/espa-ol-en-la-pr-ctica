@@ -709,6 +709,224 @@ def _escaparate(r):
         % (prendas, marco, rejilla))
 
 
+def _plano(r):
+    """Advertentie naast een plattegrond: de leugen aanwijzen én citeren."""
+    d = r["datos"]
+    anuncio = "".join(
+        '<tr><td style="text-align:center;font-size:9pt;color:var(--mut)">%d</td>'
+        '<td class="fr">%s</td><td style="text-align:center">☐</td></tr>'
+        % (i, E(f)) for i, (f, _ok, _v) in enumerate(d["anuncio"], 1))
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    pruebas = "".join(
+        '<tr><td><span class="wl sm"></span></td><td><span class="wl lg"></span></td></tr>'
+        for _ in range(3))
+    return (
+        '<div class="rol">🏠 Se alquila · el anuncio</div>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:8mm">#</th>'
+        '<th>Lo que dice el anuncio</th><th style="width:20mm">¿Miente?</th>'
+        '</tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>El plano.</b> Dibújalo mientras lees: '
+        'cada habitación en su sitio. <span class="gloss">Teken het plan terwijl je leest — '
+        'wie tekent, ziet de tegenspraak vanzelf.</span></p>'
+        '<div class="wbox" style="height:42mm"></div>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Las tres mentiras,</b> con la frase '
+        'que las delata:</p>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:16mm">Frase n.º</th>'
+        '<th>El anuncio dice… pero en el plano…</th></tr></thead><tbody>%s</tbody></table>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>La trampa:</b> una frase parece falsa '
+        'y es verdadera. ¿Cuál? <span class="wl md"></span></p>'
+        % (anuncio, pruebas, marco))
+
+
+def _mudanza(r):
+    """Info-gap met een leeg grondplan: A dicteert, B tekent blind."""
+    d = r["datos"]
+    dictado = "".join(
+        '<div style="margin:1.8mm 0;font-size:9.6pt"><b>%d.</b> %s — <i>%s</i></div>'
+        % (i, E(m), E(donde)) for i, (m, donde) in enumerate(d["plano_a"], 1))
+    muebles = "".join('<span>%s</span>' % E(m) for m in d["muebles"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<div class="rol">🗣️ Alumno A · el que dicta</div>'
+        '<p style="font-size:9.6pt;margin:0 0 1.5mm">Dicta mueble por mueble. No enseñes esta '
+        'parte y no señales. <span class="gloss">Dicteer meubel per meubel. Laat dit deel niet '
+        'zien en wijs niet.</span></p>'
+        + dictado +
+        '<div class="pliegue">✂ Doblar aquí · hier vouwen</div>'
+        '<div class="rol">✏️ Alumno B · el que coloca</div>'
+        '<p style="font-size:9.6pt;margin:0 0 1mm">Estos son tus muebles. Escríbelos en el plano '
+        'donde te digan. <span class="gloss">Dit zijn jouw meubels. Schrijf ze op het plan waar '
+        'je het hoort.</span></p>'
+        '<div class="tira">%s</div>'
+        '<div class="wbox" style="height:56mm"></div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Preguntas que puedes hacer</b> — en '
+        'español, siempre:</p><div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Después de comparar:</b> ¿dónde se '
+        'rompió la comunicación, y por qué?</p>%s'
+        % (muebles, marco, _lineas(2, "wl full")))
+
+
+def _capas(r):
+    """Drie tijdlagen van dezelfde straat, in drie kolommen."""
+    d = r["datos"]
+    cols = "".join(
+        '<div class="wcol"><div class="ch">%s</div>'
+        '<div style="font-size:8.8pt;line-height:1.5;padding:2mm 2.5mm">%s</div>'
+        '<div class="cb short"></div></div>'
+        % (E(anno), "<br>".join("· " + E(x) for x in items))
+        for anno, items in d["capas"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<p style="font-size:9.8pt;margin:0 0 1.5mm"><b>La misma calle, tres veces.</b> Debajo '
+        'de cada capa escribes <u>una</u> frase con <b>hay</b> y <u>una</u> con <b>está</b>. '
+        '<span class="gloss">Onder elke laag: één zin met hay en één met está.</span></p>'
+        '<div class="wcols" style="grid-template-columns:repeat(3,1fr)">%s</div>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>¿Qué ha cambiado de sitio?</b> Una cosa '
+        'está en las tres capas, pero no hace lo mismo:</p>'
+        '<div style="margin:1mm 0"><span class="wl full"></span></div>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Tres frases que empiezan por «Ya no hay…»:</b></p>%s'
+        % (cols, marco, _lineas(3, "wl full")))
+
+
+def _robot(r):
+    """Route in imperatieven, met een hindernisbaan die vaagheid afstraft."""
+    d = r["datos"]
+    ordenes = "".join('<span><b>%s</b></span>' % E(o) for o in d["ordenes"])
+    obst = "".join(
+        '<tr><td class="fr">%s</td><td style="text-align:center">☐ resuelto</td></tr>'
+        % E(o) for o, _por in d["obstaculos"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<p style="font-size:9.8pt;margin:0 0 1mm"><b>Tus únicas órdenes.</b> Cada paso = un '
+        'verbo + un número o un nombre. <span class="gloss">Elke stap is één werkwoord plus een '
+        'getal of een naam.</span></p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:1.5mm 0 1mm"><b>La pista de obstáculos.</b> El robot '
+        'choca en cada uno si tu orden es vaga. <span class="gloss">Bij elk obstakel botst de '
+        'robot als je opdracht vaag is.</span></p>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th>El obstáculo</th>'
+        '<th style="width:30mm">¿Lo has resuelto?</th></tr></thead><tbody>%s</tbody></table>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Vuestra ruta</b> — una orden por línea:</p>%s'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Después de la ejecución:</b> ¿en qué '
+        'orden chocó, y cómo la habéis corregido?</p>'
+        '<div style="margin:1mm 0"><span class="wl full"></span></div>'
+        % (ordenes, obst, marco, _lineas(8, "wl full")))
+
+
+def _maleta(r):
+    """Vijftien voorwerpen om uit te knippen + het conclusieblad met bewijs."""
+    d = r["datos"]
+    fichas = "".join('<div class="ficha">%s</div>' % E(o) for o in d["objetos"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    filas = "".join(
+        '<tr><td style="font-size:9.4pt">%d</td><td><span class="wl lg"></span></td>'
+        '<td><span class="wl md"></span></td></tr>' % i for i in range(1, 6))
+    return (
+        '<div class="rol">🧳 Objetos perdidos · aeropuerto de Cusco</div>'
+        '<p style="font-size:9.8pt;margin:0 0 1.5mm">Quince objetos y ni un nombre. '
+        '<span class="gloss">Vijftien voorwerpen en geen enkele naam.</span></p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Cinco conclusiones, cinco pruebas.</b> '
+        'Cada frase en perfecto. <span class="gloss">Elke zin in het perfecto, met het voorwerp '
+        'dat haar bewijst.</span></p>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:8mm">#</th>'
+        '<th>Ha … (en perfecto)</th><th style="width:46mm">Lo prueba…</th>'
+        '</tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Un objeto no encaja.</b> ¿Cuál, y qué '
+        'significa? <span class="gloss">Eén voorwerp past niet. Welk, en wat betekent dat?</span></p>'
+        '<div style="margin:1mm 0"><span class="wl full"></span></div>'
+        '<div class="pliegue">✂ Objetos para recortar · voorwerpen om uit te knippen</div>'
+        '<div class="fichas f3">%s</div>' % (marco, filas, fichas))
+
+
+def _diario(r):
+    """Vier foto-aanzetten, zes perfecto-zinnen, één te veel."""
+    d = r["datos"]
+    fotos = "".join(
+        '<div class="ficha fid"><b>%s</b><span class="fl">%s</span><span>☐ la elijo</span></div>'
+        % (E(t), E(sub)) for t, sub in d["fotos"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<p style="font-size:9.8pt;margin:0 0 1mm"><b>Elige una foto.</b> Nadie tiene que haber '
+        'estado allí. <span class="gloss">Niemand hoeft er geweest te zijn — dat is net de opzet.</span></p>'
+        '<div class="fichas f4">%s</div>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Tu marco</b> — seis frases, todas en '
+        'perfecto:</p><div class="tira">%s</div>'
+        '%s'
+        '<div class="prohib" style="display:inline-block;margin-top:2mm">La frase inventada va '
+        'en el medio (3, 4 o 5). Nunca la última.</div>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Al escuchar a los demás:</b> ¿qué frase '
+        'es la falsa, y por qué?</p>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:34mm">Compañero/a</th>'
+        '<th style="width:16mm">Frase n.º</th><th>Porque…</th></tr></thead><tbody>%s</tbody></table>'
+        % (fotos, marco, _lineas(6, "wl full"),
+           "".join('<tr><td><span class="wl sm"></span></td>'
+                   '<td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
+                   for _ in range(4))))
+
+
+def _machu(r):
+    """Bezoekerstabel + conclusies met een cijfer, en het dilemma."""
+    d = r["datos"]
+    filas = "".join(
+        '<tr><td style="text-align:center"><b>%s</b></td><td class="fr">%s</td>'
+        '<td style="font-size:9.4pt;color:var(--mut)">%s</td></tr>'
+        % (E(a), E(v), E(lim)) for a, v, lim in d["tabla"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<div class="rol">📈 Visitantes de Machu Picchu</div>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:20mm">Año</th>'
+        '<th>Visitantes</th><th style="width:52mm">Límite diario</th>'
+        '</tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.4pt;margin:1.5mm 0 0;color:var(--mut)">Cifras redondeadas — para '
+        'ver el orden de magnitud, no para citar como estadística oficial.</p>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>La subida más grande</b> está entre '
+        '<span class="wl sm"></span> y <span class="wl sm"></span> · '
+        '<b>la única bajada</b> es en <span class="wl sm"></span>, porque '
+        '<span class="wl md"></span></p>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Tres conclusiones,</b> cada una con '
+        'una cifra y un verbo en perfecto:</p>'
+        '<div class="tira">%s</div>%s'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>¿El límite es justo?</b> Una frase a '
+        'favor y una en contra — las dos:</p>'
+        '<div class="wcols" style="grid-template-columns:1fr 1fr">'
+        '<div class="wcol"><div class="ch">A favor</div><div class="cb short"></div></div>'
+        '<div class="wcol"><div class="ch">En contra</div><div class="cb short"></div></div></div>'
+        % (filas, marco, _lineas(3, "wl full")))
+
+
+def _balance(r):
+    """Acht zinnen, acht participia, en ser/estar op slot."""
+    d = r["datos"]
+    banco = "".join('<span>%s</span>' % E(v) for v in d["banco"])
+    irr = "".join('<span><b>%s</b> → %s</span>' % (E(inf), E(part))
+                  for inf, part in d["irregulares"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    filas = "".join(
+        '<tr><td style="font-size:9.4pt">%d</td><td><span class="wl lg"></span></td>'
+        '<td><span class="wl sm"></span></td></tr>' % i for i in range(1, 9))
+    return (
+        '<div class="prohib" style="display:inline-block">Prohibido: he sido · he estado · '
+        'ha sido · ha estado</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>El banco de verbos.</b> Elige ocho '
+        'distintos. <span class="gloss">Kies er acht verschillende.</span></p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:1mm 0 1mm"><b>Los irregulares</b> — los que valen doble:</p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Tu balance.</b> Una frase por línea; '
+        'en la última columna escribe el participio que has usado.</p>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:8mm">#</th>'
+        '<th>Este año he…</th><th style="width:30mm">Participio</th>'
+        '</tr></thead><tbody>%s</tbody></table>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm">Irregulares usados: '
+        '<span class="wl sm"></span> de 9 &nbsp;·&nbsp; ¿algún participio repetido? ☐ sí ☐ no</p>'
+        % (banco, irr, filas, marco))
+
+
 _MATERIAL = {"C5-U0-RETO-03": _gps, "C5-U0-RETO-08": _numeros, "C5-U0-RETO-10": _pasaporte,
              "C5-U1-RETO-02": _identidad, "C5-U1-RETO-03": _censo,
              "C5-U1-RETO-06": _aeropuerto, "C5-U1-RETO-08": _error_caro,
@@ -721,7 +939,11 @@ _MATERIAL = {"C5-U0-RETO-03": _gps, "C5-U0-RETO-08": _numeros, "C5-U0-RETO-10": 
              "C5-U5-RETO-02": _carta_intrusa, "C5-U5-RETO-03": _resena,
              "C5-U5-RETO-05": _precio_justo, "C5-U5-RETO-10": _lo_pido,
              "C5-U6-RETO-03": _equipacion, "C5-U6-RETO-04": _armario,
-             "C5-U6-RETO-05": _moda_circular, "C5-U6-RETO-07": _escaparate}
+             "C5-U6-RETO-05": _moda_circular, "C5-U6-RETO-07": _escaparate,
+             "C5-U7-RETO-01": _plano, "C5-U7-RETO-02": _mudanza,
+             "C5-U7-RETO-04": _capas, "C5-U7-RETO-06": _robot,
+             "C5-U8-RETO-01": _maleta, "C5-U8-RETO-04": _diario,
+             "C5-U8-RETO-05": _machu, "C5-U8-RETO-08": _balance}
 
 
 def reto_print(r):

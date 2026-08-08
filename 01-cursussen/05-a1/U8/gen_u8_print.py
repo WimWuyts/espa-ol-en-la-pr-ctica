@@ -14,6 +14,8 @@ _sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
 import print_bloques as PB
 import lectura_data as LD
 import escucha_data as ED
+import retos_data as RD
+import retos_print as RP
 
 def b64(p): return base64.b64encode(open(p, "rb").read()).decode()
 def face(fam, fn, w):
@@ -285,6 +287,19 @@ def lpd(*chips):
     return f'<div class="lpd"><span class="lpdlab">Leerplandoelen III-Spa-d</span>{c}</div>'
 
 def divider(t): return f'<div class="divider">{t}</div>'
+
+
+def retos(ancla, titulo, intro_es, intro_nl):
+    """Retoblok van één sectie — volledige oefening voor print, verwijskaartje
+    voor wat op de hub of in de PowerPoint leeft."""
+    P('<div class="page">')
+    P(f'<div class="divider">{titulo}</div>')
+    P(f'<div class="intro" style="margin-top:1mm"><b>ES:</b> {intro_es} '
+      f'<span class="gloss">{intro_nl}</span></div>')
+    for r in sorted(RD.por_ancla(ancla), key=lambda x: x["num"]):
+        P(RP.reto_print(r) if r["soporte"] == "print" else RP.reto_puntero(r))
+    P('</div>')
+
 def pcard(t, body): return f'<div class="pcard"><div class="t">{t}</div>{body}</div>'
 
 def steun(niveau):
@@ -616,6 +631,10 @@ P(tarea_com("Tarea comunicativa · «¿Qué has hecho esta semana?»",
 P('<div class="route-note">🎮 <b>Juega online:</b> «haber + participio (cloze)», «haber Tetris» en de vraag-spiegel met zelfcorrectie.</div>')
 P('</div>')  # page §1.2
 
+retos("perfecto", "§1.4 · Retos — reconstruir lo que ha pasado",
+      'Una maleta perdida que lo cuenta todo, y un diario de un viaje que <b>no has hecho</b>.',
+      'Een verloren koffer die alles vertelt, en een dagboek van een reis die je niet maakte.')
+
 # ================= §2 · PARTICIPIOS =================
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">2</span><span class="pk">§2 · Los participios · -ado / -ido (+ irregulares)</span>')
@@ -685,6 +704,10 @@ P(tarea_com("Tarea comunicativa · «Cadena de experiencias»",
 P('<div class="route-note">🎮 <b>Juega online:</b> «participio ↔ infinitivo» (match), «regular o irregular» (classify) en «participio irregular» (cloze).</div>')
 P('</div>')  # page §2.2
 
+retos("participios", "§2.4 · Retos — ocho participios, ni uno repetido",
+      'Tu año entero <b>sin ser y sin estar</b>, y una guía que lleva treinta años subiendo.',
+      'Je hele jaar zonder ser en zonder estar, en een gids die al dertig jaar de berg op gaat.')
+
 # ================= §3 · MARCADORES =================
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">3</span><span class="pk">§3 · Marcadores · ya · todavía no · hoy · alguna vez · nunca</span>')
@@ -744,6 +767,10 @@ P(tarea_com("Tarea comunicativa · «¿Lo has hecho alguna vez?»",
 P('<div class="route-note">🎮 <b>Juega online:</b> «ya o todavía no» (cloze) en «experiencia o periodo» (classify) met zelfcorrectie.</div>')
 P('</div>')  # page §3.2
 
+retos("marcadores", "§3.4 · Retos — ya, todavía no, nunca",
+      'Un juego de cinco dedos y una postal a quien eras en <b>septiembre</b>.',
+      'Een spel met vijf vingers en een kaart aan wie je in september was.')
+
 # ================= §4 · ¿QUÉ TIEMPO HACE? =================
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">4</span><span class="pk">§4 · ¿Qué tiempo hace? · el clima</span>')
@@ -802,6 +829,10 @@ P(tarea_com("Tarea comunicativa · «El tiempo en tu ciudad»",
   '<div class="steun" style="margin-left:12.5mm">Apoyo: MARCO (Hoy hace… · está…) → SIN AYUDA · [CROSS: HTML «¿qué tiempo hace?» + recorder «repite el tiempo»]</div>'))
 P('<div class="route-note">🎮 <b>Juega online:</b> «¿qué tiempo hace?» (classify), «símbolo ↔ tiempo» (match) en el parte del tiempo (audio).</div>')
 P('</div>')  # page §4.2
+
+retos("clima", "§4.4 · Retos — el tiempo que decide",
+      'Un parte del tiempo <b>en directo</b> y tres pronósticos para una sola caminata.',
+      'Een weerbericht live, en drie voorspellingen voor één trektocht.')
 
 # ================= §5 · LECTURA =================
 P('<div class="page"><div class="parada sec">')
@@ -956,6 +987,10 @@ P(actx(3, "Empareja: zona ↔ clima",
 P('<div class="route-note">🎮 <b>Sigue online:</b> «país ↔ clima» (match) en de kaart van de Spaanstalige wereld op de digitale pagina.</div>')
 P('</div>')  # page Cultura
 
+retos("cultura_u8", "Retos — la montaña en cifras",
+      'Cuántos caben en Machu Picchu, y un blog neerlandés que hay que <b>contar</b>, no traducir.',
+      'Hoeveel mensen er passen op Machu Picchu, en een Nederlandse blog die je navertelt, niet vertaalt.')
+
 # ================= TAREA FINAL =================
 P('<div class="page"><div class="parada sec" style="border-top-color:var(--gd)">')
 P('<span class="num">✦</span><span class="pk" style="background:var(--gd)">Tarea final · Diario de viaje</span>')
@@ -1090,7 +1125,7 @@ EDITBAR = '''
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Español en la práctica · U8 ¿Qué has hecho?</title><style>'
-        + CSS + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
+        + CSS + PB.CSS + RP.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/U8.html"
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, "·", len(HTML), "bytes")

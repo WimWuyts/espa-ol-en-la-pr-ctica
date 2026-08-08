@@ -265,6 +265,38 @@ def retos_js(host_id, curso, unidad):
             base["tipo"] = "opciones"
             base["items"] = [{"enunciado": e, "correcta": c, "opciones": o, "porque": p}
                              for e, c, o, p in d["items"]]
+        elif r["id"] == "C5-U7-RETO-05":
+            base["tipo"] = "grabar"
+            base["situaciones"] = [{"es": m, "nl": "", "pista": ""} for m in d["marco"]]
+            base["items"] = [{"text": "Mi audioguía",
+                              "cue": "één minuut · vijf verschillende voorzetsels: "
+                                     + " · ".join(d["preposiciones"][:6])}]
+        elif r["id"] == "C5-U7-RETO-09":
+            # het geluid wordt beschreven, niet getoond: vandaar audio
+            base["tipo"] = "opciones"
+            base["items"] = [{"enunciado": ruido, "correcta": c, "opciones": o, "audio": True,
+                              "porque": p} for ruido, c, o, p in d["items"]]
+        elif r["id"] == "C5-U7-RETO-10":
+            base["tipo"] = "grabar"
+            base["situaciones"] = [{"es": m, "nl": "", "pista": ""} for m in d["marco"]]
+            base["items"] = [{"text": "Mi ruta para quien no ve",
+                              "cue": "geen kleur, geen «daar», geen wijzen — wél ordinalen en "
+                                     "aantallen treden"}]
+        elif r["id"] == "C5-U8-RETO-03":
+            base["tipo"] = "grabar"
+            base["situaciones"] = [{"es": m, "nl": "", "pista": ""} for m in d["marco"]]
+            base["items"] = [{"text": "El parte del tiempo",
+                              "cue": "één minuut · " + " · ".join(c for c, *_ in d["ciudades"])
+                                     + " · elk met temperatuur, weertype en één advies"}]
+        elif r["id"] == "C5-U8-RETO-09":
+            base["tipo"] = "grabar"
+            base["situaciones"] = [{"es": m, "nl": "", "pista": ""} for m in d["marco"]]
+            base["items"] = [{"text": "Mi postal para septiembre",
+                              "cue": "vijf zinnen · ya, todavía no en nunca — elk precies één keer"}]
+        elif r["id"] == "C5-U8-RETO-10":
+            base["tipo"] = "opciones"
+            base["items"] = [{"enunciado": nl, "correcta": c, "opciones": o, "porque": p}
+                             for nl, c, o, p in d["items"]]
         else:
             continue
         salida.append(base)
