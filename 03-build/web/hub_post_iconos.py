@@ -100,8 +100,11 @@ def procesar(ruta):
 
 def main():
     tot = 0
+    # C4 bundelt zijn tabbladen als srcdoc-iframes in één hub-bestand; de
+    # onderdelen staan er letterlijk in, dus die worden in één keer meegenomen.
     for ruta in sorted(glob.glob(os.path.join(AQUI, "U*_web.html")) +
-                       glob.glob(os.path.join(AQUI, "C6plus_U*_web.html"))):
+                       glob.glob(os.path.join(AQUI, "C6plus_U*_web.html")) +
+                       glob.glob(os.path.join(AQUI, "componentes", "C4_U*_hub.html"))):
         n = procesar(ruta)
         tot += n
         print("%-22s %3d interface-iconen" % (os.path.basename(ruta), n))

@@ -143,7 +143,16 @@ Elke unit/les levert **vier formaten met een identieke, uitgeverswaardige layout
 - [x] Reisgezel-mascotte = **«La mochila viajera»**; de klas kiest de naam. Tekenstijl (AI ↔ vector) nog te bepalen. — 2026-07-25
 - [x] Beeld-aanpak: **AI-personages** (cast «Estilo Exploración», via Drive) · AI-foto's · flat-vector iconen/kaarten/mockups (Claude) · SVG→PNG voor print (zie §15). — 2026-07-25 (personages bijgesteld: flat-vector → AI)
 - [x] Toolchain voor de "één bron → 4 formaten"-generatie — **VASTGELEGD bij golden sample U0** (zie `HANDOVER_C5_C6.md` §3 + §8). — 2026-07-26
-- [ ] Bestaand C5-materiaal (netlify/afgewerkte U0–U6) importeren in deze repo?
+- [x] **Bestaand C5-materiaal (sjbespanol.netlify.app, U0–U6 afgewerkt): geïmporteerd als
+  brónmateriaal, niet als cursus.** De bestanden staan in
+  `00-brondocumenten/materiales-vorig-project/` (`Unidad_0_v1.pdf`…`Unidad_6_v1.pdf` +
+  `index_u0.html`…`index_u6.html`). De keuze was: die zeven units overnemen, of C5 opnieuw
+  bouwen in de nieuwe huisstijl. Het is het tweede geworden — C5 U0–U8 zijn van nul
+  opgebouwd. Het oude materiaal is wél uitgemijnd en blijft dat doen: de parels
+  (`02-huisstijl/reservoir/PARELS_materiales.md`), de woordenschatpool
+  (`Cursus_Spaans_Woordenschat_Master_v8.xlsx`) en de emoji-stijl van de flashcards
+  (`vocab_emoji.py`). — vastgesteld 2026-08-08, achteraf: de vraag was al beantwoord door
+  wat er gebouwd is.
 
 ### U5 «¡Ñam!» = GELOCKT (2026-07-26) — norm voor het reservoir/cocktail-tijdperk
 U5 is door de auteur goedgekeurd en vastgezet als **referentie-unit voor de nieuwe pijplijn** (na §14ter). Wat U5 vastlegt voor U6–U8 (en de latere U0–U4-tweak): **cocktail-receta → reservoir plukken → coverage bijwerken**; **flashcard-iconen = Materiales-emoji-stijl** (`vocab_emoji.py`); **ruta-kaart discreet** (klein vanaf U1, groot enkel U0); **Cultura verrijkt** (unit-eigen kaarten uit `materiales-vorig-project`, niet enkel de kaart); **HTML-hub ≥100 interactieve oefeningen** met meerdere reeksen per oefening (§14ter); **master-vocab als kandidatenpool**. Niet meer aan U5 raken zonder expliciete vraag.

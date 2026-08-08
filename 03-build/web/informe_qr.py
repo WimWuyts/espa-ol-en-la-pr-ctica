@@ -29,6 +29,11 @@ import enlaces as EN          # noqa: E402
 PANELES = ("vocab", "gram", "lectura", "escuchar", "juegos", "retos",
            "hablar", "cultura", "extra")
 
+# C4 is anders gebouwd: zeven tabbladen, elk één srcdoc-iframe. Een tabblad ís
+# daar de oefening — dieper kan een adres niet reiken en hoeft het ook niet. Ze
+# tellen dus als «specifiek», niet als paneelverwijzing.
+TABS_C4 = ("escucha", "comprension", "mapa", "funciones", "kit", "practica", "musica")
+
 TARJETA = re.compile(
     r'<div class="qr" data-url="(?P<url>[^"]*)".*?'
     r'<div class="lab">(?P<lab>.*?)</div>'
@@ -36,6 +41,10 @@ TARJETA = re.compile(
 
 
 def unidades():
+    for u in range(1, 15):
+        p = os.path.join(HERE, "print", "C4_U%d.html" % u)
+        if os.path.exists(p):
+            yield ("C4", u, p, os.path.join(HERE, EN.fuente("C4", u)))
     for u in range(9):
         p = "%s/01-cursussen/05-a1/U%d/U%d.html" % (ROOT, u, u)
         if os.path.exists(p):
@@ -62,6 +71,9 @@ def anclas_de(ruta_hub):
     # (`if(f.ancla)it.id=f.ancla`). Het anker staat wél in de meegeleverde
     # data, dus dáár tellen we ze — anders meldt de controle vals alarm.
     ids |= set(re.findall(r'["\']ancla["\']\s*:\s*["\']([a-z0-9-]+)["\']', d))
+    # C4 routeert zijn tabbladen op naam (`toonTab(h)`), net als de panelen
+    # hierboven: het id in de HTML heet `p_escucha`, het adres `#escucha`.
+    ids |= {t for t in TABS_C4 if ("p_" + t) in ids}
     return ids
 
 
@@ -76,7 +88,9 @@ def main():
         for m in TARJETA.finditer(doc):
             url, lab = m.group("url"), re.sub(r"<[^>]+>", "", m.group("lab") or "")
             ancla = url.split("#")[1] if "#" in url else ""
-            especifico = bool(ancla) and ancla not in PANELES
+            if not url.startswith(EN.BASE):
+                continue          # een code naar buiten (Spotify, YouTube) valt hier niet na te kijken
+            especifico = bool(ancla) and (ancla not in PANELES or curso == "C4")
             existe = ids is None or not ancla or ancla in ids
             n_tot += 1
             n_esp += especifico

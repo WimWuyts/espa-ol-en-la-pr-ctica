@@ -237,6 +237,7 @@ LECTURA = {
 
 AUDIO = {
  1: {  # ── DEMO (U1) ──
+   "audio": "audio/C4_U1.mp3",
    "tipo": "3 personas se presentan",
    "guion": [
      ["Ana", "¡Hola! Me llamo Ana. Soy estudiante. Estoy muy bien."],
@@ -254,6 +255,7 @@ AUDIO = {
    "rallentado": ["me llamo", "encantado", "estudiante"],
  },
  2: {
+   "audio": "audio/C4_U2.mp3",
    "tipo": "3 mini-diálogos de saludo",
    "guion": [
      ["Ana", "Buenos días, Marta. ¿Qué tal?"], ["Marta", "Buenos días. Estoy muy bien, gracias. ¿Y tú?"], ["Ana", "Bien también. ¡Hasta luego!"],
@@ -271,6 +273,7 @@ AUDIO = {
    "rallentado": ["buenas tardes", "cansado", "hasta mañana"],
  },
  3: {
+   "audio": "audio/C4_U3.mp3",
    "tipo": "entrevista en la calle",
    "guion": [
      ["Reportero", "¡Hola! ¿De dónde eres?"], ["Chica", "Hola. Soy de Colombia, de Bogotá."],
@@ -288,6 +291,7 @@ AUDIO = {
    "rallentado": ["de dónde eres", "español", "francés"],
  },
  4: {
+   "audio": "audio/C4_U4.mp3",
    "tipo": "alguien describe a su familia",
    "guion": [
      ["Pablo", "Hola. En mi familia somos cuatro."],
@@ -306,6 +310,7 @@ AUDIO = {
    "rallentado": ["mi madre", "amable", "divertido"],
  },
  5: {
+   "audio": "audio/C4_U5.mp3",
    "tipo": "una visita a la habitación",
    "guion": [
      ["Ana", "Mira, esta es mi habitación."],
@@ -326,6 +331,7 @@ AUDIO = {
    "rallentado": ["esto es", "guitarra", "no hay ordenador"],
  },
  6: {
+   "audio": "audio/C4_U6.mp3",
    "tipo": "¿dónde está? · buscar cosas en casa",
    "guion": [
      ["Marta", "¿Dónde está mi bolso? No lo encuentro."],
@@ -345,6 +351,7 @@ AUDIO = {
    "rallentado": ["dónde está", "encima del sofá", "debajo de la mesa"],
  },
  7: {
+   "audio": "audio/C4_U7.mp3",
    "tipo": "una entrevista · ¿en qué trabajas?",
    "guion": [
      ["Sofía", "Hola, Óscar. ¿A qué te dedicas?"],
@@ -364,6 +371,7 @@ AUDIO = {
    "rallentado": ["a qué te dedicas", "trabajo en una tienda", "estoy muy contento"],
  },
  8: {
+   "audio": "audio/C4_U8.mp3",
    "tipo": "quedar por teléfono · ¿a qué hora?",
    "guion": [
      ["Elena", "¿Sí? Hola, Tomás."],
@@ -383,6 +391,7 @@ AUDIO = {
    "rallentado": ["a qué hora", "a las siete y media", "quedamos en el cine"],
  },
  9: {
+   "audio": "audio/C4_U9.mp3",
    "tipo": "planes · ¿qué vas a hacer?",
    "guion": [
      ["Lucas", "¿Qué vas a hacer este finde?"],
@@ -402,6 +411,7 @@ AUDIO = {
    "rallentado": ["qué vas a hacer", "tengo que trabajar", "vamos a tomar algo"],
  },
  10: {
+   "audio": "audio/C4_U10.mp3",
    "tipo": "repartir las tareas · ¿me ayudas?",
    "guion": [
      ["Rosa", "¡Qué desorden! Hay que limpiar la cocina."],

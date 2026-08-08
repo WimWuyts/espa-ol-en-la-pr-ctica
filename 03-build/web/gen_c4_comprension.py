@@ -96,16 +96,33 @@ def lectura_section(L):
             f'<div class="transfer">✍️ {esc(L["transfer"])} <span style="font-weight:400;color:var(--mut)">— schrijf of zeg je antwoord.</span></div>'
             f'{gloss_block(L["glosario"])}</div>')
 
-AUDIO_DIR=f"{ROOT}/03-build/web/componentes/audio"
-def audio_b64(unit):
-    p=f"{AUDIO_DIR}/C4_U{unit}_audio.mp3"
-    return base64.b64encode(open(p,"rb").read()).decode() if os.path.exists(p) else None
+WEB=f"{ROOT}/03-build/web"
+def audio_b64(A):
+    """De opname van dit fragment, ingebed als data-URL.
+
+    Het pad komt uit `comprension_data.AUDIO[..]["audio"]`, hetzelfde veld dat de
+    generator gebruikt om het bestand te máken — zo kunnen speler en opname niet
+    uit elkaar lopen. De gegevens noemen `.mp3`; op schijf staat voorlopig `.wav`,
+    want er is geen omzetter in deze omgeving. Daarom probeert hij beide, en
+    zet hij het juiste type erbij: een browser die `audio/mpeg` te horen krijgt
+    waar WAV staat, speelt niets af.
+
+    Ingebed en niet als los bestand, omdat de C4-hub standalone en offline moet
+    werken (§16). Dat kost hier 0,5 à 1 MB per unit — bij C5/C6+ zou dat met
+    zestig fragmenten niet gaan, en daar staat de audio dus wél naast de pagina.
+    """
+    rel=(A or {}).get("audio") or ""
+    for p,mime in ((f"{WEB}/{rel}","audio/mpeg"),
+                   (f"{WEB}/{rel[:-4]}.wav" if rel.endswith(".mp3") else None,"audio/wav")):
+        if p and os.path.exists(p):
+            return base64.b64encode(open(p,"rb").read()).decode(), mime
+    return None, None
 
 def audio_section(A, unit):
     transcript="".join(f'<div class="bub l"><span class="who">{esc(w)}</span>{esc(l)}</div>' for w,l in A["guion"])
-    mp3=audio_b64(unit)
-    if mp3:  # echte mp3 (natuurlijke stemmen) → speelt op elk toestel, los van browserstemmen
-        player=(f'<audio id="aud" preload="metadata" src="data:audio/mpeg;base64,{mp3}"></audio>'
+    mp3,mime=audio_b64(A)
+    if mp3:  # echte opname (onze acht Castiliaanse stemmen) → speelt op elk toestel
+        player=(f'<audio id="aud" preload="metadata" src="data:{mime};base64,{mp3}"></audio>'
                 f'<div class="toolbar"><button class="btn play" id="audPlay">▶ Reproducir</button>'
                 f'<button class="btn" id="audSlow">🐢 Lento</button>'
                 f'<button class="btn" id="audTr">👁️ Ver transcripción</button></div>')

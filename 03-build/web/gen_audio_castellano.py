@@ -32,6 +32,7 @@ import wave
 AQUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, AQUI)
 
+import comprension_data as CD            # noqa: E402
 import escucha_corta_data as EC          # noqa: E402
 import escucha_data as ED                # noqa: E402
 import voces as V                        # noqa: E402
@@ -46,6 +47,17 @@ MUESTRA = "C5-U5-ESC-01"
 # ─────────────────────────────────────────────────────────────────────────────
 def fragmentos():
     out = []
+    # C4 bewaart zijn eigen luisterfragment naast de leestekst: de sitcom-video
+    # is er de leidraad, dus dit is het énige fragment per unit dat wij inspreken
+    # — de video zelf blijft de opname met echte stemmen.
+    for u, v in sorted(CD.AUDIO.items()):
+        if v and v.get("guion"):
+            out.append(("C4", u, {
+                "id": "C4-U%d-ESC" % u,
+                "titulo": v.get("tipo", ""),
+                "audio": v.get("audio"),
+                "guion": [{"who": r[0], "es": r[1]} for r in v["guion"]],
+            }))
     for (curso, u), lista in sorted(EC.CORTOS.items()):
         for f in lista:
             if f.get("tipo") == "cancion" or not f.get("guion"):
@@ -208,7 +220,7 @@ def donde():
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("curso", nargs="?", choices=["C5", "C6+"])
+    ap.add_argument("curso", nargs="?", choices=["C4", "C5", "C6+"])
     ap.add_argument("unidad", nargs="?", type=int)
     ap.add_argument("--muestra", action="store_true")
     ap.add_argument("--solo")

@@ -149,8 +149,7 @@ def paginas(ruta):
     return salida
 
 
-def informe(nombre):
-    ruta = os.path.join(PDF, nombre + ".pdf")
+def informe(ruta):
     p = paginas(ruta)
     if not p:
         return None
@@ -171,9 +170,14 @@ def main():
     tot_p = tot_f = 0
     tot_llen = 0.0
     print("unit            blz    vulling   halflege bladzijden")
-    for ruta in sorted(glob.glob(os.path.join(PDF, "*.pdf"))):
+    # C4 zet zijn PDF's naast de print-HTML, C5 en C6+ in 03-build/pdf.
+    c4 = os.path.join(os.path.dirname(PDF), "web", "print")
+    rutas = (sorted(glob.glob(os.path.join(c4, "C4_U*.pdf")),
+                    key=lambda p: int(re.search(r"U(\d+)", p).group(1)))
+             + sorted(glob.glob(os.path.join(PDF, "*.pdf"))))
+    for ruta in rutas:
         nombre = os.path.basename(ruta)[:-4]
-        r = informe(nombre)
+        r = informe(ruta)
         if not r:
             continue
         n, medio, flacas = r

@@ -4,18 +4,13 @@
 import os, sys, re, io
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import comprension_data as CD
-try:
-    import segno
-except Exception:
-    segno = None
+from qr_codigo import qr_svg          # eigen encoder: PyPI is hier geblokkeerd
 
 def _wl(cls=""): return f'<span class="wl {cls}"></span>'
 
 def _qr(url):
-    if not segno or not url: return ""
-    buf = io.BytesIO(); segno.make(url, error='m').save(buf, kind='svg', scale=1, border=0, dark="#A8323B")
-    svg = buf.getvalue().decode(); svg = re.sub(r'<\?xml[^>]*\?>', '', svg)
-    return svg.replace('<svg ', '<svg style="width:22mm;height:22mm" ', 1)
+    """Dezelfde code als in de rest van de cursus — zie qr_codigo.py."""
+    return qr_svg(url, mm=22, nivel="Q", color="#A8323B") if url else ""
 
 def _mc(qs):
     out = ""
@@ -32,9 +27,17 @@ def print_section(unit, hub_url=None):
              '<div class="se">Lee y escucha · comprensión</div><h2>Lezen &amp; luisteren</h2>']
     # ── LEZEN ──
     if L:
+        # De chatregels staan strakker dan de `.tl` van het sitcom-transcript.
+        # Reden: die leestekst is de énige die van unit tot unit sterk in lengte
+        # verschilt — U1 heeft er acht, de meeste drie tot vijf — en de sectie
+        # heeft in C4 precies één bladzijde (CLAUDE.md §3). Met de gewone
+        # regelafstand liep U1 er een millimeter of acht overheen en kreeg blad 4
+        # een sliver inhoud met de rest leeg. Een chat mag typografisch dicht
+        # staan, dus dit kost niets aan leesbaarheid en houdt de regel intact.
         texto = "".join(
-            (f'<div class="tl"><span class="sp">{w}</span><span class="tx">{ln}</span></div>' if w
-             else f'<p style="font-size:9.6pt;margin:1mm 0">{ln}</p>')
+            (f'<div class="tl" style="padding:.35mm 0"><span class="sp">{w}</span>'
+             f'<span class="tx">{ln}</span></div>' if w
+             else f'<p style="font-size:9.6pt;margin:.8mm 0">{ln}</p>')
             for w, ln in L["texto"])
         det = "".join(
             f'<tr><td>{i+1}. {q["q"]}</td><td class="b">☐ V ☐ F</td><td>{_wl("")}</td></tr>'
@@ -53,12 +56,15 @@ def print_section(unit, hub_url=None):
             f'<div class="cogn" style="margin-top:2mm">{gloss}</div>')
     # ── LUISTEREN (audio online → begripsvragen op papier; luisteren gebeurt in de hub) ──
     if A:
-        qr = _qr((hub_url or "") + "#comprension")
+        import enlaces as EN
+        destino = EN.url("C4", unit, EN.ancla_c4("comprension"))
+        qr = _qr(destino)
         parts.append(
             f'<div class="se" style="margin-top:3mm">🎧 Escucha · {A["tipo"]}</div>'
             f'<div class="audiorow"><div class="call"><span class="ic">🎧</span><div>'
             f'<b>{A["tarea_nl"]}</b> Scan de code, beluister het fragment online (▶ / 🐢 lento) en beantwoord dan de vragen.</div></div>'
-            + (f'<div class="qr"><div class="lab">Audio online</div>{qr}<div class="meta">hub · Lee y escucha</div></div>' if qr else "")
+            + (f'<div class="qr" data-url="{destino}"><div class="lab">Audio online</div>{qr}'
+               f'<div class="meta">hub · Lee y escucha</div></div>' if qr else "")
             + '</div>'
             f'<p style="font-size:9pt;margin:2mm 0 1mm"><b>Preguntas</b> — kruis aan wat je hoort:</p>{_mc(A["preguntas"])}')
     parts.append('</div>')

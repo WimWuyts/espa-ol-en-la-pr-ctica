@@ -31,6 +31,25 @@ def chromium():
     return c[0] if c else None
 
 
+# ── C4 ───────────────────────────────────────────────────────────────────────
+# C4 wordt anders gebouwd dan C5/C6+: geen map per unit, maar generatoren die
+# naast elkaar in 03-build/web staan, plus vier gedeelde componenten die hun
+# unit uit een omgevingsvariabele halen. Het thema hoort daar ook bij — het
+# bepaalt welke banda sonora de unit krijgt — en stond tot nu alleen in de
+# hand-getypte bouwregels in HANDOVER_C4.md. Nu staat het hier.
+C4_TEMA = {
+    1: "presentaciones", 2: "saludos", 3: "nacionalidades", 4: "familia",
+    5: "objetos", 6: "casa", 7: "profesiones", 8: "horas", 9: "planes",
+    10: "tareas", 11: "ropa", 12: "tiempo", 13: "hotel", 14: "presentaciones",
+}
+
+
+def unidades_c4():
+    """De C4-units waarvoor er een printgenerator bestaat."""
+    return [u for u in range(1, 15)
+            if os.path.exists(os.path.join(WEB, "gen_c4u%d_pdf.py" % u))]
+
+
 def unidades(curso=None, unidad=None):
     """[(curso, unidad, map, generator|None, print-html, hub-generator)]"""
     out = []
@@ -53,21 +72,65 @@ def unidades(curso=None, unidad=None):
     return out
 
 
-def corre(cmd, cwd=None):
-    r = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True)
+def corre(cmd, cwd=None, entorno=None):
+    r = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True,
+                       env=dict(os.environ, **entorno) if entorno else None)
     return r.returncode == 0, (r.stdout + r.stderr).strip()
+
+
+def construye_c4(u):
+    """Eén C4-unit: eerst de zeven onderdelen, dan de hub, dan de print.
+
+    De volgorde is niet vrij. De hub bundelt de zeven componenten als
+    srcdoc-iframes, dus die moeten er ál zijn; en de print-PDF haalt zijn
+    «Lee y escucha»-sectie uit dezelfde gegevens als het comprension-onderdeel,
+    dus die twee mogen niet uit elkaar lopen.
+    """
+    pasos = [
+        (["python3", "gen_c4u%d_escucha.py" % u], None),
+        (["python3", "gen_c4u%d_kgt.py" % u], None),
+        (["python3", "gen_c4u%d_practica.py" % u], None),
+        (["python3", "gen_c4_comprension.py"],
+         {"C4_UNIT": str(u), "C4_COMPR_OUT": "C4_U%d_comprension.html" % u}),
+        (["python3", "gen_c4_mapa.py"],
+         {"C4_UNIT": str(u), "C4_MAPA_OUT": "C4_U%d_mapa.html" % u}),
+        (["python3", "gen_c4_funciones.py"],
+         {"C4_UNIT": str(u), "C4_FUNC_OUT": "C4_U%d_funciones.html" % u}),
+        (["python3", "gen_c4_musica.py"],
+         {"C4_TEMA": C4_TEMA.get(u, "presentaciones"),
+          "C4_MUSICA_OUT": "C4_U%d_musica.html" % u}),
+        (["python3", "gen_c4u%d_hub.py" % u], None),      # ná de zeven onderdelen
+        (["python3", "gen_c4u%d_pdf.py" % u], None),
+    ]
+    for cmd, ent in pasos:
+        if not os.path.exists(os.path.join(WEB, cmd[1])):
+            return False, "ontbreekt: " + cmd[1]
+        ok, salida = corre(cmd, cwd=WEB, entorno=ent)
+        if not ok:
+            return False, "%s: %s" % (cmd[1], salida[-260:])
+    return True, ""
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("curso", nargs="?", choices=["C5", "C6+"])
+    ap.add_argument("curso", nargs="?", choices=["C4", "C5", "C6+"])
     ap.add_argument("unidad", nargs="?", type=int)
     ap.add_argument("--sin-pdf", action="store_true", help="sla de PDF-render over")
     ap.add_argument("--sin-hub", action="store_true")
     a = ap.parse_args()
 
-    trabajo = unidades(a.curso, a.unidad)
+    trabajo = [] if a.curso == "C4" else unidades(a.curso, a.unidad)
+    c4 = ([] if a.curso in ("C5", "C6+") else
+          [u for u in unidades_c4() if a.unidad is None or u == a.unidad])
     fallos = []
+
+    if c4:
+        print("── 0 · C4: onderdelen → hub → print ─────────────────────────────")
+        for u in c4:
+            ok, salida = construye_c4(u)
+            print("   C4   U%-2d %s" % (u, "ok" if ok else "MISLUKT — " + salida))
+            if not ok:
+                fallos.append("C4 U%d: %s" % (u, salida))
 
     print("── 1 · printgeneratoren ─────────────────────────────────────────")
     for curso, u, d, gen, html, _ in trabajo:
@@ -132,11 +195,15 @@ def main():
             print("   geen Chromium gevonden — PDF overgeslagen")
         else:
             os.makedirs(PDF, exist_ok=True)
-            for curso, u, d, gen, html, _ in trabajo:
+            paginas = [("C4", u, os.path.join(WEB, "print", "C4_U%d.html" % u),
+                        os.path.join(WEB, "print", "C4_U%d.pdf" % u)) for u in c4]
+            paginas += [(curso, u, html,
+                         os.path.join(PDF, "%s_U%d.pdf" % (
+                             "C5" if curso == "C5" else "C6plus", u)))
+                        for curso, u, d, gen, html, _ in trabajo]
+            for curso, u, html, salida_pdf in paginas:
                 if not os.path.exists(html):
                     continue
-                salida_pdf = os.path.join(
-                    PDF, "%s_U%d.pdf" % ("C5" if curso == "C5" else "C6plus", u))
                 ok, _s = corre([chrome, "--headless", "--no-sandbox", "--disable-gpu",
                                 "--no-pdf-header-footer",
                                 "--print-to-pdf=" + salida_pdf, html])
@@ -144,7 +211,7 @@ def main():
                 if os.path.exists(salida_pdf):
                     datos = open(salida_pdf, "rb").read()
                     n = len(re.findall(rb"/Type\s*/Page[^s]", datos))
-                print("   %-4s U%d  %2d bladzijden" % (curso, u, n))
+                print("   %-4s U%-2d %2d bladzijden" % (curso, u, n))
 
         print("── 9 · bladzijdenummers in de PDF ───────────────────────────────")
         ok, salida = corre(["python3", "paginar.py"], cwd=os.path.join(ROOT, "03-build"))

@@ -22,13 +22,14 @@ import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+RAIZ = os.path.dirname(os.path.dirname(HERE))          # de wortel van de repo
 sys.path.insert(0, HERE)
 
 BASE = "https://espanol-en-la-practica.wim-wuyts1979.chatgpt.site/"
 
 # Hoe de gebouwde hub op de site heet. Links zijn de bron in de repo, rechts de
 # naam waaronder het bestand geüpload wordt — kort, kleine letters, voorspelbaar.
-_SLUG = {"C5": "c5", "C6+": "c6plus"}
+_SLUG = {"C4": "c4", "C5": "c5", "C6+": "c6plus"}
 
 
 def pagina(curso, unidad):
@@ -38,6 +39,8 @@ def pagina(curso, unidad):
 
 def fuente(curso, unidad):
     """Het gebouwde bestand in de repo dat daarheen geüpload moet worden."""
+    if curso == "C4":
+        return os.path.join("componentes", "C4_U%d_hub.html" % unidad)
     return ("U%d_web.html" % unidad if curso == "C5"
             else "C6plus_U%d_web.html" % unidad)
 
@@ -87,6 +90,24 @@ def ancla_juego(slug):
     return "g_" + slug
 
 
+# ── C4 ──────────────────────────────────────────────────────────────────────
+# De C4-hub is anders gebouwd dan die van C5/C6+: zeven tabbladen, elk een
+# `srcdoc`-iframe, zodat de pagina offline werkt zonder losse bestanden. Een
+# adres kán daarom niet dieper reiken dan het tabblad — een anker binnen een
+# srcdoc-iframe is van buitenaf niet aanspreekbaar. Dat is geen slordigheid
+# maar de prijs van «standalone»; het tabblad opent wél meteen op de juiste
+# oefening, want elk tabblad ís één oefening.
+C4_TABS = ("escucha", "comprension", "mapa", "funciones", "kit", "practica", "musica")
+
+
+def ancla_c4(tab):
+    """Eén tabblad van de C4-hub. Onbekende naam = programmeerfout, geen stille
+    terugval naar de paginatop: dan zou een QR-code het weer niet weten."""
+    if tab not in C4_TABS:
+        raise ValueError("onbekend C4-tabblad %r — ken: %s" % (tab, ", ".join(C4_TABS)))
+    return tab
+
+
 # ── de QR-kaart voor in het boek ────────────────────────────────────────────
 
 def tarjeta_qr(destino, etiqueta, meta="", mm=17, nivel="Q"):
@@ -107,13 +128,47 @@ def tarjeta_qr(destino, etiqueta, meta="", mm=17, nivel="Q"):
             % (destino, svg, etiqueta, m))
 
 
+def impreso(curso, unidad):
+    """De gebouwde print-HTML van één unit — de bron van de PDF.
+
+    C4 schrijft naar `03-build/web/print/`, C5 en C6+ naar hun eigen unitmap.
+    C6+ heeft twee namen in omloop (de oudste units heten nog `U<n>.html`).
+    """
+    if curso == "C4":
+        return os.path.join(HERE, "print", "C4_U%d.html" % unidad)
+    if curso == "C5":
+        return os.path.join(RAIZ, "01-cursussen", "05-a1",
+                            "U%d" % unidad, "U%d.html" % unidad)
+    d = os.path.join(RAIZ, "01-cursussen", "06-vervolg", "U%d" % unidad)
+    p = os.path.join(d, "C6plus_U%d.html" % unidad)
+    return p if os.path.exists(p) else os.path.join(d, "U%d.html" % unidad)
+
+
+def unidades(cursos=("C4", "C5", "C6+")):
+    """(curso, unidad, print-HTML, hub-HTML) voor alles wat gebouwd is.
+
+    Zes nabewerkingsscripts hadden elk hun eigen kopie van deze lijst. Dat gaat
+    goed tot er een cursus bijkomt — dan moet je zes keer dezelfde regel
+    toevoegen en vergeet je er één. Daarom staat ze hier, naast de adressen
+    waar ze bij hoort.
+    """
+    rangos = {"C4": range(1, 15), "C5": range(9), "C6+": range(8)}
+    for curso in cursos:
+        for u in rangos[curso]:
+            p = impreso(curso, u)
+            if os.path.exists(p):
+                yield (curso, u, p, os.path.join(HERE, fuente(curso, u)))
+
+
 def manifiesto():
     """Wat er waarheen moet op de site — de uploadlijst voor de auteur."""
     filas = []
-    for curso, n in (("C5", 9), ("C6+", 8)):
-        for u in range(n):
-            filas.append((os.path.join("03-build", "web", fuente(curso, u)),
-                          pagina(curso, u), "%s · unidad %d" % (curso, u)))
+    for curso, unidades in (("C4", range(1, 15)), ("C5", range(9)), ("C6+", range(8))):
+        for u in unidades:
+            src = os.path.join("03-build", "web", fuente(curso, u))
+            if not os.path.exists(os.path.join(HERE, fuente(curso, u))):
+                continue          # nog niet gebouwd — niet op de uploadlijst zetten
+            filas.append((src, pagina(curso, u), "%s · unidad %d" % (curso, u)))
     return filas
 
 

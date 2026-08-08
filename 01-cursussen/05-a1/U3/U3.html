@@ -390,6 +390,21 @@ p,li,dd,td,.intro,.hist,.rgancho,.rconsigna{ orphans:3; widows:3; }
 /* 6 · koppen houden hun tekst vast, maar alleen koppen: .intro, .route-note,
       .lpd en .asset zijn inhoud en mogen breken */
 h2,h3,.pk,.divider,.se{ break-after:avoid; }
+
+/* 7 · C4 · «.sec» betekent daar iets anders.
+      In C5 en C6+ is .sec het kópblok — nummer, titel, inleiding, LPD-chips —
+      en volgt de inhoud eronder als broer. In C4 is .sec de héle bladzijde
+      (<div class="page sec">). De regels hierboven kloppen dus niet voor C4:
+      break-inside:avoid op een blok van een volle bladzijde duwt dat blok
+      vooruit en laat een blanco blad achter (gemeten: C4 U1 ging van elf naar
+      twaalf bladzijden, met blad 4 op 1 % vulling).
+
+      C4 houdt bovendien bewust zijn eigen bladspiegelregel (CLAUDE.md §3):
+      élke sectie opent een blad, en elke sectie is verrijkt tot ze dat blad
+      vult. Dat is gemeten en het werkt — 88 tot 94 % vulling, nul halflege
+      bladzijden — dus het blijft zoals het is. */
+body.c4 .sec{ break-before:page; break-inside:auto; break-after:auto; margin-top:0; }
+body.c4 .sec:first-of-type{ break-before:auto; }
 /* @bladspiegel:fin */
 </style></head><body>
 

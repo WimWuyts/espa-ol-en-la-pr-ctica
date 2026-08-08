@@ -27,6 +27,10 @@ import sys
 
 ROOT = "/home/user/espa-ol-en-la-pr-ctica"
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import enlaces as EN          # noqa: E402
+
+
 ETIQUETA = {"MODELO": "Modelo", "BANCO": "Banco de palabras", "MARCO": "Marco",
             "PISTA": "Pista", "LETRA": "Primera letra",
             "LETRA INICIAL": "Primera letra", "CUE": "Pista"}
@@ -69,18 +73,18 @@ SUSTITUCIONES = [
 
 
 def unidades():
-    for u in range(9):
-        p = "%s/01-cursussen/05-a1/U%d/U%d.html" % (ROOT, u, u)
-        if os.path.exists(p):
-            yield ("C5", u, p, None)
-    for u in range(8):
-        d = "%s/01-cursussen/06-vervolg/U%d" % (ROOT, u)
-        for nombre in ("C6plus_U%d.html" % u, "U%d.html" % u):
-            p = os.path.join(d, nombre)
-            if os.path.exists(p):
-                yield ("C6+", u, p,
-                       os.path.join(d, "C6plus_U%d_BEWERKBAAR.html" % u))
-                break
+    """(curso, unidad, print-HTML, bewerkbare kopie|None).
+
+    De lijst zelf staat in enlaces.py. De bewerkbare kopie hoort daar niet bij:
+    die bestaat alleen in C6+, waar hij naast de PDF geleverd wordt (§10, de
+    leveringsregel). Waar hij niet bestaat, is er niets te kopiëren.
+    """
+    for curso, u, impreso, _hub in EN.unidades():
+        copia = None
+        if curso == "C6+":
+            copia = os.path.join(os.path.dirname(impreso),
+                                 "C6plus_U%d_BEWERKBAAR.html" % u)
+        yield (curso, u, impreso, copia)
 
 
 def main():

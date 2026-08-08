@@ -168,13 +168,9 @@ def _titulos(ruta_pdf):
     """
     nombre = os.path.basename(ruta_pdf)[:-4]
     curso, u = nombre.split("_U")
-    if curso == "C5":
-        html = os.path.join(ROOT, "01-cursussen", "05-a1", "U%s" % u, "U%s.html" % u)
-    else:
-        d = os.path.join(ROOT, "01-cursussen", "06-vervolg", "U%s" % u)
-        html = os.path.join(d, "C6plus_U%s.html" % u)
-        if not os.path.exists(html):
-            html = os.path.join(d, "U%s.html" % u)
+    sys.path.insert(0, os.path.join(ROOT, "03-build", "web"))
+    import enlaces as EN
+    html = EN.impreso({"C6plus": "C6+"}.get(curso, curso), int(u))
     if not os.path.exists(html):
         return {}
     doc = open(html, encoding="utf-8").read()
@@ -310,7 +306,10 @@ def paginar(ruta):
 
 def main():
     objetivo = sys.argv[1] if len(sys.argv) > 1 else None
-    rutas = sorted(glob.glob(os.path.join(PDF, "*.pdf")))
+    # C4 zet zijn PDF's naast de print-HTML, C5 en C6+ in 03-build/pdf.
+    rutas = (sorted(glob.glob(os.path.join(ROOT, "03-build", "web", "print", "C4_U*.pdf")),
+                    key=lambda x: int(re.search(r"U(\d+)", x).group(1)))
+             + sorted(glob.glob(os.path.join(PDF, "*.pdf"))))
     if objetivo:
         rutas = [p for p in rutas if objetivo in os.path.basename(p)]
     for ruta in rutas:

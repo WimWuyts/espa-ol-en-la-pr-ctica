@@ -33,6 +33,10 @@ import re
 import sys
 
 ROOT = "/home/user/espa-ol-en-la-pr-ctica"
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import enlaces as EN          # noqa: E402
+
 KIT = os.path.join(ROOT, "02-huisstijl", "templates", "cursus-print.css")
 
 MARCA = "/* bladspiegel.py — gedeelde kit, laatste woord */"
@@ -63,43 +67,63 @@ def bloque():
 
 
 def unidades():
-    for u in range(9):
-        p = "%s/01-cursussen/05-a1/U%d/U%d.html" % (ROOT, u, u)
-        if os.path.exists(p):
-            yield ("C5", u, p)
-    for u in range(8):
-        d = "%s/01-cursussen/06-vervolg/U%d" % (ROOT, u)
-        for nombre in ("C6plus_U%d.html" % u, "U%d.html" % u):
-            p = os.path.join(d, nombre)
-            if os.path.exists(p):
-                yield ("C6+", u, p)
-                break
+    """(curso, unidad, print-HTML) — de lijst staat in enlaces.py, zie daar."""
+    for curso, u, impreso, _hub in EN.unidades():
+        yield (curso, u, impreso)
 
 
 # De zeventien units schrijven hun sectiekop op twee manieren: C5 zet het
 # nummer in een <span class="num">, de handgebouwde U0 in een <div>, met
 # regeleinden ertussen. Daarom: het openingsdiv, dan alles tot de eerste
 # `pk`-span, zolang er geen tweede sectie tussen zit.
+# De sectiekop staat in twee gedaanten in de repo, en dat is geen slordigheid:
+# C5 en C6+ zetten hem in een <span class="pk"> naast een achtergrondcijfer, C4
+# in een strakkere <div class="se"> zonder cijfer. Eén patroon voor beide zou
+# onleesbaar worden, dus het zijn er twee die dezelfde bewerking delen.
 SECCION = re.compile(
     r'<div class="(?P<cls>[^"]*\bsec\b[^"]*)"(?P<resto>[^>]*)>'
     r'(?P<medio>(?:(?!<div class="[^"]*\bsec\b).){0,400}?)'
     r'<span class="pk"(?P<pkat>[^>]*)>(?P<tit>[^<]+)</span>', re.S)
+
+SECCION_C4 = re.compile(
+    r'<div class="(?P<cls>[^"]*\bsec\b[^"]*)"(?P<resto>[^>]*)>'
+    r'(?P<medio>(?:(?!<div class="[^"]*\bsec\b).){0,400}?)'
+    r'<div class="se"(?P<pkat>[^>]*)>(?P<tit>[^<]+)</div>', re.S)
 
 
 def es_mojon(titulo):
     return any(m in titulo for m in MOJONES)
 
 
-def procesar(ruta):
+def procesar(ruta, curso="C5"):
+    """Zet de mijlpaalsecties op een nieuwe bladzijde en legt de ankers.
+
+    C4 wijkt hier bewust af, en dat is geen inconsistentie maar een gemeten
+    keuze. In C5/C6+ was «elke sectie een eigen blad» de hoofdoorzaak van 198
+    halflege bladzijden, dus daar openen alleen de mijlpalen nog een blad. In
+    C4 is diezelfde regel opgelost met verrijking: elke sectie is aangevuld tot
+    ze een blad vult, en de meting geeft 88 tot 94 % vulling met nul halflege
+    bladzijden. Daar iets aan veranderen zou een werkende oplossing kapotmaken.
+    C4 houdt dus zijn strikte regel; wat het overneemt zijn de ankers, want die
+    zijn de motor van de bladwijzers in de PDF.
+
+    De gedeelde breukregels gaan om diezelfde reden niet mee naar C4. `.sec`
+    betekent er iets anders: in C5/C6+ is het het kopblok, in C4 de hele
+    bladzijde. `break-inside:avoid` op een blok van een volle bladzijde duwt dat
+    blok vooruit en laat een leeg blad achter — precies wat er gebeurde toen ik
+    het blok wél injecteerde: C4 U1 ging van elf naar twaalf bladzijden met een
+    blanco blad 4.
+    """
+    estricto = (curso == "C4")
     doc = open(ruta, encoding="utf-8").read()
     puestos, corridos = [], []
 
     indice = []
 
-    def sustituir(m):
+    def sustituir(m, envoltura="pk"):
         cls = m.group("cls").replace(" major", "")
         tit = m.group("tit").strip()
-        if es_mojon(tit):
+        if estricto or es_mojon(tit):
             cls += " major"
             puestos.append(tit)
         else:
@@ -114,11 +138,15 @@ def procesar(ruta):
         resto = m.group("resto")
         if "id=" not in resto:
             resto = ' id="%s"%s' % (ancla, resto)
+        if envoltura == "se":
+            return ('<div class="%s"%s>%s<div class="se"%s>%s</div>'
+                    % (cls, resto, m.group("medio"), m.group("pkat"), m.group("tit")))
         return ('<div class="%s"%s>%s<span class="pk"%s>%s</span>'
                 % (cls, resto, m.group("medio"), m.group("pkat"), m.group("tit")))
 
     doc = re.sub(r'<nav class="indice-pdf">.*?</nav>', "", doc, flags=re.S)
     doc = SECCION.sub(sustituir, doc)
+    doc = SECCION_C4.sub(lambda m: sustituir(m, "se"), doc)
 
     if indice:
         enlaces = "".join('<a href="#%s">%s</a>' % (a, t) for a, t in indice)
@@ -131,10 +159,11 @@ def procesar(ruta):
 
     # het blok als laatste in de <style>; een oude versie wordt vervangen
     doc = re.sub(re.escape(MARCA) + r".*?/\* @bladspiegel:fin \*/", "", doc, flags=re.S)
-    i = doc.rfind("</style>")
-    if i < 0:
-        sys.exit("%s heeft geen </style>" % ruta)
-    doc = doc[:i] + "\n" + MARCA + "\n" + bloque() + "\n" + doc[i:]
+    if not estricto:
+        i = doc.rfind("</style>")
+        if i < 0:
+            sys.exit("%s heeft geen </style>" % ruta)
+        doc = doc[:i] + "\n" + MARCA + "\n" + bloque() + "\n" + doc[i:]
 
     open(ruta, "w", encoding="utf-8").write(doc)
     return puestos, corridos
@@ -150,7 +179,7 @@ def main():
             p = [t for t in tit if es_mojon(t)]
             c = [t for t in tit if not es_mojon(t)]
         else:
-            p, c = procesar(ruta)
+            p, c = procesar(ruta, curso)
         tot_p += len(p); tot_c += len(c)
         print("%-4s U%d  %2d nieuwe bladzijde, %2d doorlopend" % (curso, u, len(p), len(c)))
     print("\n%d secties openen een blad, %d vloeien door" % (tot_p, tot_c))

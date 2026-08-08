@@ -97,6 +97,29 @@ ROLES = {
     "Tom":          "davefx",
     "Voz_España":   "davefx",
     "Voz_América":  "coqui",
+
+    # ── C4 «¡Bienvenidos al español!» ────────────────────────────────────────
+    # Twintig sprekers over tien fragmenten. Ze staan hier en niet in de cast,
+    # want het zijn geen doorlopende personages: elk fragment is een eigen
+    # scène. Acht van de twintig hadden hierboven al een stem (Diego, Sofía,
+    # Marta, Abuela, Rosa, Chica, Chico) — die krijgen er geen tweede, anders
+    # klinkt dezelfde naam in twee cursussen anders. Wat wél moet kloppen is
+    # het geslacht: Abuela met een mannenstem is geen compromis maar een fout.
+    # Het zwaarste fragment (U2) heeft zes sprekers, vier daarvan vrouwelijk —
+    # precies wat er is.
+    "Ana":          "sharvard-v",
+    "Nieta":        "daniela-b",
+    "Elena":        "sharvard-v",
+    "Alba":         "daniela",
+    "Luis":         "davefx",
+    "Sr. López":    "coqui",       # ouder, formeler — de rustigste stem
+    "Reportero":    "sharvard-m",
+    "Pablo":        "davefx",
+    "Nico":         "carlfm",
+    "Óscar":        "coqui",
+    "Tomás":        "sharvard-m",
+    "Lucas":        "davefx",
+    "Iván":         "carlfm",
 }
 
 # Nina is uit Cusco en zou een Andes-stem verdienen; die zit niet bij de acht.
@@ -185,10 +208,17 @@ def reparto(hablantes):
 
 def controla():
     """Rekent de rolverdeling na op alle fragmenten. Geeft de problemen terug."""
+    import comprension_data as CD
     import escucha_corta_data as EC
     import escucha_data as ED
 
     frag = []
+    # C4 bewaart zijn luisterfragmenten elders — de sitcom is de leidraad, dus
+    # het eigen fragment hangt aan de leestekst in comprension_data.
+    for u, v in sorted(CD.AUDIO.items()):
+        if v and v.get("guion"):
+            frag.append(("C4-U%d-ESC" % u, v.get("tipo", ""),
+                         [{"who": r[0], "es": r[1]} for r in v["guion"]]))
     for (curso, u), lista in sorted(EC.CORTOS.items()):
         for f in lista:
             if f.get("tipo") == "cancion" or not f.get("guion"):

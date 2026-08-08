@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # C4 · Unidad 7 — PRINT (HTML=bron → PDF via Chromium). Golden-sample print-kit, C4-rood.
 # Thema: Las profesiones · ¿a qué te dedicas? · ser+profesión (sin un/una) · ser vs estar · trabajo/trabajas/trabaja. Zelfde pijplijn als U1–U6.
-import base64, os, re, segno, io, sys
+import base64, os, re, io, sys
 ROOT="/home/user/espa-ol-en-la-pr-ctica"
 sys.path.insert(0, f"{ROOT}/03-build/web")
 from funciones_print import print_section
@@ -14,13 +14,38 @@ FONTS="".join([face("Bricolage Grotesque","BricolageGrotesque-700.woff2","700"),
  face("Bricolage Grotesque XBold","BricolageGrotesque-800.woff2","800","Bricolage Grotesque XBold"),
  face("Inter","Inter-400.woff2","400"),face("Inter","Inter-600.woff2","600"),face("Caveat","Caveat-700.woff2","700")])
 PRINTCSS=open(f"{ROOT}/02-huisstijl/templates/cursus-print.css").read()
+# Het bladspiegel-blok uit de gedeelde kit hoort NIET in C4, en dat is geen
+# uitzondering-om-de-uitzondering. Dat blok is geschreven voor C5 en C6+, waar
+# `.sec` het kópblok van een sectie is en de inhoud eronder als broer volgt. In
+# C4 is `.sec` de héle bladzijde (`<div class="page sec">`), en dan doen
+# dezelfde regels het omgekeerde van wat ze moeten doen: break-inside:avoid op
+# een blok van een volle bladzijde duwt dat blok vooruit en laat een blanco
+# blad achter. Gemeten toen het er wél in stond: C4 U1 ging van elf naar twaalf
+# bladzijden, met blad 4 op 1 % vulling.
+#
+# C4 houdt bewust zijn eigen bladspiegelregel (CLAUDE.md §3): elke sectie opent
+# een blad en is verrijkt tot ze dat blad vult. De meting geeft die regel
+# gelijk — 88 tot 94 % vulling, nul halflege bladzijden — dus ze blijft.
+PRINTCSS=re.sub(r"/\* @bladspiegel:ini.*?@bladspiegel:fin \*/", "", PRINTCSS, flags=re.S)
 
 def qr(data):
-    buf=io.BytesIO(); segno.make(data,error='m').save(buf,kind='svg',scale=1,border=0,dark="#A8323B")
-    svg=buf.getvalue().decode()
-    svg=re.sub(r'<\?xml[^>]*\?>','',svg); svg=svg.replace('<svg ','<svg style="width:26mm;height:26mm" ',1)
-    return svg
-HUB_URL="https://hablacon-ene.local/C4/U7"
+    """Een echte QR-code, met onze eigen encoder.
+
+    Niet met `segno`: PyPI is in deze bouwomgeving geblokkeerd, dus die
+    bibliotheek is er niet en zal er niet komen. `qr_codigo.py` is daarom in
+    huis geschreven (ISO/IEC 18004, byte-modus) en is dezelfde encoder die C5
+    en C6+ gebruiken — één soort code in de hele cursus.
+
+    Niveau Q: een schoolboek krijgt vouwen, vingers en kopieerstreepjes te
+    verduren, en op Q blijft een code leesbaar tot ongeveer een kwart van het
+    oppervlak beschadigd is.
+    """
+    from qr_codigo import qr_svg
+    return qr_svg(data, mm=26, nivel="Q", color="#A8323B")
+# Het adres van de hub van deze unit komt uit `enlaces.py`, net als bij C5/C6+ —
+# één plaats voor alle verwijzingen, zodat boek en site niet uit elkaar lopen.
+import enlaces as EN
+HUB_URL=EN.url("C4", 7)
 import comprension_print
 COMPR_SEC=comprension_print.print_section(7, HUB_URL)
 SPOTIFY="https://open.spotify.com/playlist/37i9dQZF1DXaxEKcoCdWHD"
@@ -171,7 +196,7 @@ ESCUCHA=f"""
   <div class="se">§1 · ¡Escucha!</div><h2>Bekijk de scène en lees mee</h2>
   <div class="audiorow">
     <div class="call"><span class="ic">🎬</span><div><b>Sitcom · Episodio 7 · Las profesiones.</b> Scan de code en bekijk de aflevering op de digitale pagina. Fernando ondervraagt María («yo trabajo aquí, tú trabajas aquí…»), en waarzegster Josefina <b>gist</b> beroepen uit de kaarten. Luister eerst zónder te lezen; daarna lees je mee. De <b>vetgedrukte</b> woorden zijn chunks om mee te nemen.</div></div>
-    <div class="qr"><div class="lab">Vídeo online</div>{qr(HUB_URL+"#escucha")}<div class="meta">hub · Escucha</div></div>
+    <div class="qr" data-url="{EN.url('C4', 7, EN.ancla_c4('escucha'))}"><div class="lab">Vídeo online</div>{qr(EN.url("C4", 7, EN.ancla_c4("escucha")))}<div class="meta">hub · Escucha</div></div>
   </div>
   <div class="truc"><b>Antes de escuchar · vóór je luistert.</b> Welke <b>beroepen</b> ga je horen, denk je? <span style="font-size:8.8pt;color:var(--mut)">(gis gerust)</span>
     <div style="margin-top:1.5mm;font-size:9.6pt;line-height:2.2">Una profesión: {wl('sm')} &nbsp;&nbsp; Otra profesión: {wl('sm')} &nbsp;&nbsp; Un lugar de trabajo: {wl('sm')}</div>
@@ -319,7 +344,7 @@ MUSICA=f"""
   <div class="bandas">{"".join(banda(*b) for b in BANDAS)}</div>
   <div class="musrow">
     <div class="call"><span class="ic">🎧</span><div><b>Spotify · la playlist de la clase.</b> Scan en luister. Op de digitale pagina vind je ook <b>LyricsTraining</b> en de <b>wereldkaart</b>.</div></div>
-    <div class="qr"><div class="lab">Playlist</div>{qr(SPOTIFY)}<div class="meta">Spotify</div></div>
+    <div class="qr" data-url="{SPOTIFY}"><div class="lab">Playlist</div>{qr(SPOTIFY)}<div class="meta">Spotify</div></div>
   </div>
   <div class="truc" style="margin-top:5mm"><b>Profesiones famosas · ¿quién es quién?</b> Verbind (gis gerust):
     <table class="mtab" style="margin-top:1mm"><tr><td class="a">Frida Kahlo era…</td><td>{wl('sm')}</td><td class="b">a. escritor (Cien años de soledad)</td></tr>
@@ -387,7 +412,7 @@ document.getElementById('btnsave').onclick=function(){var html='<!doctype html>'
 """
 
 HTML=f"""<!doctype html><html lang="es"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · Unidad 7 · Las profesiones</title><style>{CSS}</style></head><body>
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · Unidad 7 · Las profesiones</title><style>{CSS}</style></head><body class="c4">
 {EDITBAR}
 {HERO}{ESCUCHA}{COMPR_SEC}{KIT}{GRAM}{PRAC}{TAREA}{MUSICA}{FUNCIONES_SEC}{REPASO}
 {SCRIPT}

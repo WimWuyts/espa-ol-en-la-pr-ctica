@@ -21,6 +21,8 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
+import enlaces as EN          # noqa: E402
+
 import puentes as PU          # noqa: E402
 
 ROOT = "/home/user/espa-ol-en-la-pr-ctica"
@@ -28,17 +30,9 @@ MARCA_INI = "<!-- puente-ppt -->"
 
 # Welk gebouwd bestand hoort bij welke unit.
 def unidades():
-    for u in range(9):
-        p = "%s/01-cursussen/05-a1/U%d/U%d.html" % (ROOT, u, u)
-        if os.path.exists(p):
-            yield ("C5", u, p)
-    for u in range(8):
-        d = "%s/01-cursussen/06-vervolg/U%d" % (ROOT, u)
-        for nombre in ("C6plus_U%d.html" % u, "U%d.html" % u):
-            p = os.path.join(d, nombre)
-            if os.path.exists(p):
-                yield ("C6+", u, p)
-                break
+    """(curso, unidad, print-HTML) — de lijst staat in enlaces.py, zie daar."""
+    for curso, u, impreso, _hub in EN.unidades():
+        yield (curso, u, impreso)
 
 
 # De sectiekop ziet er zo uit: <span class="pk">§2 · El verbo SER …</span>

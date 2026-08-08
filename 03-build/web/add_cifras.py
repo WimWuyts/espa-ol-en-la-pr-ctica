@@ -20,22 +20,17 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import enlaces as EN          # noqa: E402
+
+
 # «20 spellen», «24 spelletjes», «20 juegos», «20 spelletjes online»
 CIFRA = re.compile(r"\b(\d{1,3})\s+(spellen|spelletjes|juegos)\b")
 
 
 def unidades():
-    for u in range(9):
-        p = "%s/01-cursussen/05-a1/U%d/U%d.html" % (ROOT, u, u)
-        if os.path.exists(p):
-            yield ("C5", u, p, os.path.join(HERE, "U%d_web.html" % u))
-    for u in range(8):
-        d = "%s/01-cursussen/06-vervolg/U%d" % (ROOT, u)
-        for nombre in ("C6plus_U%d.html" % u, "U%d.html" % u):
-            p = os.path.join(d, nombre)
-            if os.path.exists(p):
-                yield ("C6+", u, p, os.path.join(HERE, "C6plus_U%d_web.html" % u))
-                break
+    """(curso, unidad, print-HTML, hub-HTML) — de lijst staat in enlaces.py."""
+    return EN.unidades()
 
 
 def cuenta(ruta_hub):
