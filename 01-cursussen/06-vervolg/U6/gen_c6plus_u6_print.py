@@ -305,7 +305,7 @@ P(actx(AN(), "Completa el relato · indef/imperf",
   '<p style="margin-left:12.5mm">1. (Yo) <span class="wl md"></span> (jugar) en el patio cuando <span class="wl md"></span> (llegar) mi madre.<br>'
   '2. <span class="wl md"></span> (ser) de noche y <span class="wl md"></span> (empezar) a llover.<br>'
   '3. Nina <span class="wl md"></span> (vivir) en Cusco cuando <span class="wl md"></span> (nacer) su hermano.</p>',
-  apoyo="Pista: jugaba/llegó · era/empezó · vivía/nació"))
+  apoyo="Pista: achtergrond = imperfecto · gebeurtenis = indefinido"))
 P('</div>')
 
 # §3.2 practicar + tarea com
@@ -319,7 +319,7 @@ P(actx(AN(), "Clínica de errores · contraste",
   '<p style="margin-left:12.5mm">1. Ayer jugaba al fútbol y ganamos. → <span class="wl md"></span><br>'
   '2. Cuando era niño, un día fui al circo. (¿cuál es el fondo?) → <span class="wl md"></span><br>'
   '3. Llovió mientras yo estudiaba. → <span class="wl md"></span> (¿correcto?)</p>',
-  apoyo="Pista: jugaba → jugué? nee: het spel als achtergrond kan; kies logisch"))
+  apoyo="Pista: vraag je af of de handeling het decor is of de gebeurtenis"))
 P(actx("★", "Tarea comunicativa · un recuerdo",
   [{"t":"🗣️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
   '<p>Vertel een klein voorval uit je jeugd: zet het <b>decor</b> (imperfecto) en de <b>gebeurtenis</b> (indefinido). Noteer je verhaal in 3 zinnen.</p>'
@@ -355,7 +355,7 @@ P(actx(AN(), "Completa con más / menos / tan … que/como",
   '2. Antes yo era <span class="wl sm"></span> tímido <span class="wl sm"></span> ahora (minder).<br>'
   '3. Mi hermano es <span class="wl sm"></span> alto <span class="wl sm"></span> yo (even).<br>'
   '4. Hoy hace <span class="wl sm"></span> calor <span class="wl sm"></span> ayer (meer).</p>',
-  apoyo="Pista: más…que · menos…que · tan…como · más…que"))
+  apoyo="Banco de palabras: más … que · menos … que · tan … como"))
 P(actx(AN(), "Los irregulares · elige",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Kies per zin de juiste vorm. Er zijn er maar drie onregelmatig in het imperfecto: <b>ser · ir · ver</b>.</p>'
@@ -439,7 +439,7 @@ P(actx(AN(), "¿Falta el acento? · corrige",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Schrijf correct: tenia · vivia · comiamos · veia · hacia · jugabamos</p>'
   '<p style="margin-left:12.5mm"><span class="wl full"></span></p>',
-  apoyo="Pista: tenía, vivía, comíamos, veía, hacía, jugábamos"))
+  apoyo=""))
 P('<h3 style="margin-top:6mm">2 · Conectores de contraste</h3>')
 P(colloc("en cambio · mientras · sin embargo", ["antes… en cambio, ahora…","mientras = terwijl","sin embargo = echter","pero = maar"]))
 P(actx(AN(), "Completa con el conector",

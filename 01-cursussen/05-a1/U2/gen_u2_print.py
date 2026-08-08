@@ -553,17 +553,17 @@ P(actx(1, "Repasa el presente regular",
   '<tr><td>llamarse</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr></tbody></table>', apoyo="Banco de palabras: tabel open"))
 P(actx(2, "¿ser o tener?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Vul <b>ser</b> of <b>tener</b> in (let op de leeftijd-valstrik uit U1: leeftijd = <b>tener</b>).</p>'
+  '<p>Vul <b>ser</b> of <b>tener</b> in.</p>'
   '<p style="margin-left:12.5mm">a) Yo <span class="wl sm"></span> de Bélgica. &nbsp; b) Lucía <span class="wl sm"></span> 16 años. &nbsp; c) Nosotros <span class="wl sm"></span> estudiantes. &nbsp; d) ¿Tú <span class="wl sm"></span> hermanos?</p>', apoyo="Pista: edad = tener"))
 P(actx(3, "Los números para contar",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Schrijf het getal voluit (recyclen U0) — je hebt ze nodig om je familie te tellen.</p>'
+  '<p>Schrijf het getal voluit in letters.</p>'
   '<table class="mp"><thead><tr><th>Cifra</th><th>En letras</th><th>Cifra</th><th>En letras</th></tr></thead>'
   '<tbody><tr><td>2</td><td><span class="wl md"></span></td><td>5</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>13</td><td><span class="wl md"></span></td><td>40</td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Modelo"))
 P(actx(4, "La lengua de clase",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Verbind de klaszin met zijn functie (schrijf de letter) — recyclen lengua de clase.</p>'
+  '<p>Verbind de klaszin met zijn functie (schrijf de letter).</p>'
   '<table class="mp"><thead><tr><th>Frase</th><th></th><th>Función</th></tr></thead><tbody>'
   '<tr><td>1 · ¿Cómo se dice…?</td><td><span class="wl sm"></span></td><td>A · ik begrijp het niet</td></tr>'
   '<tr><td>2 · No entiendo.</td><td><span class="wl sm"></span></td><td>B · hoe zeg je…?</td></tr>'
@@ -684,7 +684,7 @@ P(actx(6, "Conjuga tener (cloze)",
   '3. Lucía <span class="wl md"></span> el pelo largo.<br>'
   '4. Nosotros <span class="wl md"></span> una familia grande.<br>'
   '5. Mis tíos <span class="wl md"></span> tres hijos.</p>'
-  '<p style="margin-left:12.5mm" class="gloss">✅ De oplossingen staan online (zelfcorrectie op de digitale pagina).</p>', apoyo="Pista: kijk naar de persoon)"))
+  '<p style="margin-left:12.5mm" class="gloss">✅ De oplossingen staan online (zelfcorrectie op de digitale pagina).</p>', apoyo="Pista: kijk naar de persoon"))
 P(actx(7, "¿Cuántos tienes? — pregunta y responde",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Vraag je buur naar zijn/haar familie en noteer de aantallen.</p>'
@@ -705,7 +705,7 @@ P(audiorow('<div class="ic">🎧</div><div><b>Escucha a Lucía presentar a su fa
            qr("Escanea y escucha", "Audio 1 · Mi familia · 0:45", seed=221)))
 P(actx(9, "Escucha y anota",
   [{"t":"👂 Escuchar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Vul in wat je hoort over de familie van Lucía.</p>'
+  '<p>Luister en noteer bij elk woord het aantal dat je hoort.</p>'
   '<p style="margin-left:12.5mm">hermanos: <span class="wl sm"></span> · primos: <span class="wl sm"></span> · mascota: <span class="wl md"></span> · abuelos: <span class="wl sm"></span></p>', apoyo="Pista: números"))
 P(tarea_com("Tarea comunicativa · Preséntame a tu gente",
   [{"t":"🎙️ Hablar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
@@ -714,12 +714,12 @@ P(tarea_com("Tarea comunicativa · Preséntame a tu gente",
   '<div class="steun" style="margin-left:0mm">Modelo: Lucía</div>'))
 P(actx(10, "Dictado preparado — la familia de Lucía",
   [{"t":"👂 Escuchar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Luister naar de audio (of je leerkracht leest voor) en schrijf de vier zinnen op. Let op de familiewoorden en <b>tener</b>.</p>'
+  '<p>Luister en schrijf de vier zinnen op.</p>'
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>'
   '2. <span class="wl full"></span>'
   '3. <span class="wl full"></span>'
   '4. <span class="wl full"></span></p>'
-  '<p style="margin-left:12.5mm" class="gloss">✅ Vergelijk daarna met de tekst online (zelfcorrectie).</p>', apoyo="Banco de palabras: familiewoorden)"))
+  '<p style="margin-left:12.5mm" class="gloss">✅ Vergelijk daarna met de tekst online (zelfcorrectie).</p>', apoyo="Banco de palabras: familiewoorden"))
 P(audiorow('<div class="ic">🎧</div><div><b>Repite en voz alta.</b> <span class="gloss">Luister opnieuw en herhaal elke zin — let op de klemtoon van de namen.</span></div>',
            qr("Escanea y repite", "Audio 1b · Dictado · 0:40", seed=222)))
 P('<div class="route-note">🎮 <b>Juega online:</b> «memoria de la familia», «parentesco» en «tener (cloze)» — met zelfcorrectie en meerdere reeksen op de digitale pagina.</div>')
@@ -777,16 +777,16 @@ P(regla("Regla · los posesivos",
   '<br>🔴 <b>Valstrik NL:</b> in het Spaans staat er <b>geen</b> apart woordje «van»: <i>mi madre</i> = «mijn moeder», <i>el perro de mi tía</i> = «de hond van mijn tante».</p>'))
 P(actx(3, "Completa con el posesivo (cloze)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Vul <b>mi/mis · tu/tus · su/sus</b> in (let op enkelvoud/meervoud).</p>'
+  '<p>Vul <b>mi/mis · tu/tus · su/sus</b> in.</p>'
   '<p style="margin-left:12.5mm">1. (yo) <span class="wl sm"></span> madre es de Sevilla.<br>'
   '2. (yo) <span class="wl sm"></span> hermanos son mayores.<br>'
   '3. (tú) ¿Cómo se llama <span class="wl sm"></span> padre?<br>'
   '4. (tú) ¿Y <span class="wl sm"></span> primas?<br>'
   '5. (él) <span class="wl sm"></span> abuelos viven en Madrid.</p>'
-  '<p style="margin-left:12.5mm" class="gloss">✅ Zelfcorrectie online.</p>', apoyo="Pista: kijk of het meervoud is)"))
+  '<p style="margin-left:12.5mm" class="gloss">✅ Zelfcorrectie online.</p>', apoyo="Pista: kijk of het meervoud is"))
 P(actx(4, "Transforma a plural",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★★"}],
-  '<p>Zet naar het meervoud (let op posesivo én zelfstandig naamwoord).</p>'
+  '<p>Zet posesivo én zelfstandig naamwoord in het meervoud.</p>'
   '<p style="margin-left:12.5mm">mi hermana → <span class="wl lg"></span><br>tu primo → <span class="wl lg"></span><br>su tío → <span class="wl lg"></span></p>', apoyo="Modelo: mi hermana → mis hermanas"))
 P(tarea_com("Tarea comunicativa · El árbol de mi compañero/a",
   [{"t":"🎙️ Hablar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👥 En parejas"},{"t":"± 7 min"},{"t":"★★★"}],
@@ -815,7 +815,7 @@ P(clusters([
 ]))
 P('<p style="font-size:9.6pt">② <b>Parejas de contrarios.</b> Leer ze samen als tegenstellingen:</p>')
 P(vpairs([("alto","bajo"),("delgado","gordito"),("largo","corto"),("liso","rizado"),("joven","mayor"),("moreno","rubio")]))
-P(actx(1, "Empareja adjetivo ↔ dibujo/def",
+P(actx(1, "Empareja adjetivo ↔ definición",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Verbind het adjectief met de vertaling (schrijf de letter).</p>'
   '<table class="mp"><thead><tr><th>Adjetivo</th><th>Letra</th><th></th><th>NL</th></tr></thead><tbody>'
@@ -825,7 +825,7 @@ P(actx(1, "Empareja adjetivo ↔ dibujo/def",
   '<tr><td>4 · pelirrojo</td><td><span class="wl sm"></span></td><td>D</td><td>roodharig</td></tr></tbody></table>', apoyo="Banco de palabras"))
 P(actx(2, "Describe el pelo y los ojos",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Vul aan met een kleur/vorm. <span class="words"><b>largo · corto · rizado · azules · verdes · marrones</b></span></p>'
+  '<p>Vul de vier gaten aan met een woord uit het banco. <span class="words"><b>largo · corto · rizado · azules · verdes · marrones</b></span></p>'
   '<p style="margin-left:12.5mm">Lucía tiene el pelo <span class="wl md"></span> y los ojos <span class="wl md"></span>.<br>Mi mejor amigo/a tiene el pelo <span class="wl md"></span> y los ojos <span class="wl md"></span>.</p>', apoyo="Banco de palabras"))
 P('</div>')  # page §3.1
 # §3.2 congruencia
@@ -878,7 +878,7 @@ P(actx(6, "Empareja carácter ↔ situación",
   '<p style="margin-left:12.5mm">a) Habla mucho con todos. → es muy <span class="wl md"></span><br>b) No dice casi nada, es reservado. → es <span class="wl md"></span><br>c) Siempre está contento y ríe. → es <span class="wl md"></span></p>', apoyo="Banco de palabras: hablador · tímido · alegre"))
 P(actx(7, "Describe a un familiar",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
-  '<p>Beschrijf iemand uit je familie met minstens twee fysieke en twee karaktereigenschappen. Let op de <b>overeenkomst</b>.</p>'
+  '<p>Beschrijf iemand uit je familie: minstens twee fysieke en twee karaktereigenschappen.</p>'
   '<div class="wbox"></div>', apoyo=""))
 P(tarea_com("Tarea comunicativa · ¿A quién describo?",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 7 min"},{"t":"★★★"}],
@@ -948,7 +948,7 @@ P(actx(3, "Elige ser o estar",
   '<p style="margin-left:12.5mm">a) Mi padre ☐ es ☐ está alto. &nbsp; b) Mi hermana ☐ es ☐ está en Madrid.<br>c) Hoy yo ☐ soy ☐ estoy cansado. &nbsp; d) Nosotros ☐ somos ☐ estamos de Bélgica.</p>', apoyo="Pista: blijvend? → ser"))
 P(actx(4, "Completa con ser o estar (cloze)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 6 min"},{"t":"★★★"}],
-  '<p><i>cloze klassiek · tener + ser/estar · vormen nagerekend.</i> Vul de juiste vorm in.</p>'
+  '<p>Vul de juiste vorm in. Het infinitief staat tussen haakjes.</p>'
   '<p style="margin-left:12.5mm">1. Mi abuela <span class="wl md"></span> <i>(ser)</i> simpática y hoy <span class="wl md"></span> <i>(estar)</i> en Sevilla.<br>'
   '2. Yo <span class="wl md"></span> <i>(tener)</i> dos primos.<br>'
   '3. Mis padres <span class="wl md"></span> <i>(ser)</i> de Andalucía.<br>'
@@ -957,7 +957,7 @@ P(actx(4, "Completa con ser o estar (cloze)",
   '6. Lucía <span class="wl md"></span> <i>(tener)</i> el pelo largo y <span class="wl md"></span> <i>(ser)</i> morena.<br>'
   '7. Mi hermano <span class="wl md"></span> <i>(estar)</i> cansado.<br>'
   '8. Vosotros <span class="wl md"></span> <i>(ser)</i> muy majos.</p>'
-  '<p style="margin-left:12.5mm" class="gloss">✅ De sleutel staat online (zelfcorrectie op de digitale pagina).</p>', apoyo="Pista: ser/estar/tener)"))
+  '<p style="margin-left:12.5mm" class="gloss">✅ De sleutel staat online (zelfcorrectie op de digitale pagina).</p>', apoyo="Pista: ser/estar/tener"))
 P(tarea_com("Tarea comunicativa · ¿Cómo es y cómo está hoy?",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
   '<p><b>Situatie:</b> beschrijf een familielid met <b>ser</b> (blijvend) én zeg hoe hij/zij zich <b>vandaag</b> voelt of waar hij/zij is met <b>estar</b>. Je buur reageert. <span class="gloss">«Mi tía es muy alegre, pero hoy está un poco cansada.»</span></p>'
@@ -985,7 +985,7 @@ P(obsbox([
 ], vragen='<b>1)</b> Wanneer gebruik je <i>este</i> en wanneer <i>ese</i>? <b>2)</b> Wat verandert bij vrouwelijk/meervoud?'))
 P(actx(1, "¿este o ese? — según la distancia",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Dichtbij = <b>este</b>, verder = <b>ese</b>.</p>'
+  '<p>Vul este of ese in. Tussen haakjes staat hoe ver de persoon staat.</p>'
   '<p style="margin-left:12.5mm">a) (dichtbij) <span class="wl sm"></span> es mi hermana. &nbsp; b) (verder) <span class="wl sm"></span> es mi abuelo.<br>c) (dichtbij) <span class="wl sm"></span> son mis padres. &nbsp; d) (verder) <span class="wl sm"></span> es mi prima.</p>', apoyo="Pista: cerca = este"))
 P('</div>')  # page §5.1
 # §5.2 congruencia
@@ -1093,15 +1093,15 @@ P(actx(3, "¿por qué? — responde con porque",
   '<p>Antwoord op elke vraag met een reden. <span class="gloss">«¿Por qué…? — Porque…»</span></p>'
   '<p style="margin-left:12.5mm">1. ¿Por qué te gusta tu familia? → Porque <span class="wl lg"></span><br>'
   '2. ¿Por qué es especial tu abuelo/a? → Porque <span class="wl lg"></span><br>'
-  '3. ¿Por qué es simpático tu mejor amigo/a? → Porque <span class="wl lg"></span></p>', apoyo="Marco: Porque es… / tiene…)"))
+  '3. ¿Por qué es simpático tu mejor amigo/a? → Porque <span class="wl lg"></span></p>', apoyo="Marco: Porque es… / tiene…"))
 P(actx(4, "Ordena las palabras — construye la frase",
   [{"t":"🔍 Analizar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Zet de woorden in de juiste volgorde tot een correcte zin (let op hoofdletter + punt).</p>'
+  '<p>Zet de woorden in de juiste volgorde. Schrijf met hoofdletter en punt.</p>'
   '<p style="margin-left:12.5mm">1. simpática · mi · muy · es · hermana → <span class="wl lg"></span><br>'
   '2. alto · pero · mi · es · tímido · primo → <span class="wl lg"></span><br>'
   '3. porque · me · familia · alegre · gusta · es · mi → <span class="wl full"></span>'
   '4. también · mi · morena · abuela · es → <span class="wl lg"></span></p>'
-  '<p style="margin-left:12.5mm" class="gloss">✅ Zelfcorrectie online.</p>', apoyo="Pista: begin met het onderwerp)"))
+  '<p style="margin-left:12.5mm" class="gloss">✅ Zelfcorrectie online.</p>', apoyo="Pista: begin met het onderwerp"))
 P(actx(5, "Corrige la ortografía",
   [{"t":"🔍 Analizar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Zoek en verbeter de fout in elke zin (hoofdletter, concordancia of edad).</p>'

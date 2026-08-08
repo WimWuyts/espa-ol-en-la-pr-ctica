@@ -163,7 +163,7 @@ P(actx(AN(), "La familia de palabras",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Vul het beroep aan.</p>'
   '<p style="margin-left:12.5mm">escribir → el <span class="wl sm"></span> · pintar → el <span class="wl sm"></span> · cantar → el <span class="wl sm"></span> · la ciencia → el <span class="wl sm"></span></p>',
-  apoyo="Pista: escritor · pintor · cantante · científico"))
+  apoyo="Primera letra: e… · p… · c… · c…"))
 P(actx(AN(), "Mi persona admirada · escribe",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Schrijf 3 zinnen over een persoon die je bewondert (beroep, wat hij/zij deed).</p>'
@@ -441,7 +441,7 @@ P(actx(AN(), "Escribe la forma «yo»",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Vorm de <b>yo</b>-vorm van de indefinido.</p>'
   '<p style="margin-left:12.5mm">buscar → <span class="wl sm"></span> · llegar → <span class="wl sm"></span> · empezar → <span class="wl sm"></span> · sacar → <span class="wl sm"></span> · jugar → <span class="wl sm"></span></p>',
-  apoyo="Pista: busqué, llegué, empecé, saqué, jugué"))
+  apoyo="Modelo: c → qu · g → gu · z → c vóór -é"))
 P('<h3 style="margin-top:6mm">2 · Conectores del relato</h3>')
 P(colloc("primero · después · entonces · al final", ["primero = eerst","después/luego = daarna","entonces = toen/dus","al final = uiteindelijk"]))
 P(actx(AN(), "Une el conector con su función",

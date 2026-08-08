@@ -646,17 +646,17 @@ P(scaffold([
 ]))
 P(actx(4, "Completa: gusta o gustan",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Vul <b>gusta</b> of <b>gustan</b> in (let op ev./mv./infinitivo).</p>'
+  '<p>Vul <b>gusta</b> of <b>gustan</b> in.</p>'
   '<p style="margin-left:12.5mm">a) Me ___ los videojuegos. &nbsp; b) Me ___ el cine. &nbsp; c) Me ___ nadar.<br>'
-  'd) A Bea le ___ las canciones. &nbsp; e) Nos ___ la playa. &nbsp; f) ¿Te ___ los deportes?</p>', apoyo="Pista: tel de dingen)"))
+  'd) A Bea le ___ las canciones. &nbsp; e) Nos ___ la playa. &nbsp; f) ¿Te ___ los deportes?</p>', apoyo="Pista: tel de dingen"))
 P(actx(5, "Transforma con el pronombre correcto",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Herschrijf voor de nieuwe persoon (verander het OI-woord én let op gusta/gustan).</p>'
+  '<p>Herschrijf elke zin voor de nieuwe persoon.</p>'
   '<table class="mp"><thead><tr><th>Modelo</th><th>Nieuwe persoon → jouw zin</th></tr></thead><tbody>'
   '<tr><td>Me gusta el mar.</td><td>(a ti) <span class="wl md"></span></td></tr>'
   '<tr><td>Me gustan las series.</td><td>(a nosotros) <span class="wl md"></span></td></tr>'
   '<tr><td>Me encanta bailar.</td><td>(a ella) <span class="wl md"></span></td></tr>'
-  '<tr><td>Me gustan los conciertos.</td><td>(a ellos) <span class="wl md"></span></td></tr></tbody></table>', apoyo="Marco: OI-tabel)"))
+  '<tr><td>Me gustan los conciertos.</td><td>(a ellos) <span class="wl md"></span></td></tr></tbody></table>', apoyo="Marco: OI-tabel"))
 P(actx(6, "Escribe tres gustos y un «no me gusta»",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
   '<p>Schrijf drie dingen die je leuk/geweldig vindt en één dat je <b>niet</b> leuk vindt. Zeg ze daarna hardop.</p>'
@@ -726,7 +726,7 @@ P(actx(2, "Reacciona con la verdad",
   '<tr><td>Me gustan los videojuegos.</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>No me gusta madrugar.</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Me encanta la playa.</td><td><span class="wl md"></span></td></tr>'
-  '<tr><td>No me gustan las series largas.</td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Marco: vier reacties)"))
+  '<tr><td>No me gustan las series largas.</td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Marco: vier reacties"))
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha seis mini-diálogos y marca la reacción.</b> <span class="gloss">Kruis per dialoog aan: también / tampoco / a mí sí / a mí no.</span></div>',
            qr("Escanea y escucha", "Audio 4.2 · Reacciones · 0:50", seed=42)))
 P(actx(3, "Escucha y marca la reacción",
@@ -741,7 +741,7 @@ P(actx(3, "Escucha y marca la reacción",
   '<tr><td>6</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></tbody></table>', apoyo="Modelo: vier opties open"))
 P(actx(4, "Completa la reacción",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Vul de reactie aan (kijk naar +/– én naar akkoord/oneens).</p>'
+  '<p>Vul de reactie aan. Tussen haakjes staat wat je bedoelt.</p>'
   '<p style="margin-left:12.5mm">a) «Me gusta el mar.» —A mí ___ . <span class="gloss">(ik ook)</span><br>'
   'b) «No me gusta el frío.» —A mí ___ . <span class="gloss">(ik ook niet)</span><br>'
   'c) «Me gustan las mates.» —A mí ___ . <span class="gloss">(ik niet)</span><br>'
@@ -803,17 +803,17 @@ P('<div class="chat">'
 P(colloc("proponer", ["¿Quieres…?","¿Por qué no…?","¿Podemos…?","¿Quedamos…?","¡Vale! / De acuerdo","¿A qué hora?"]))
 P(actx(1, "Conjuga querer y poder",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Vervoeg (let op de stamwissel — nosotros/vosotros zonder wissel).</p>'
+  '<p>Vervoeg querer en poder voor yo, tú, nosotros en ellos.</p>'
   '<table class="mp"><thead><tr><th>Infinitivo</th><th>yo</th><th>tú</th><th>nosotros</th><th>ellos</th></tr></thead><tbody>'
   '<tr><td>querer</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
-  '<tr><td>poder</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr></tbody></table>', apoyo="Modelo: tabel §3.1 open) → PISTA"))
+  '<tr><td>poder</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr></tbody></table>', apoyo="Modelo: tabel §3.1 open → PISTA"))
 P(actx(2, "Completa el diálogo",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Vul de handige zinnen aan (proponer/quedar).</p>'
+  '<p>Vul de vijf gaten in de dialoog aan met een woord uit het banco.</p>'
   '<p style="margin-left:12.5mm">—¿___ ir al cine? &nbsp;—¡___! ¿A qué ___ quedamos? &nbsp;—¿___ quedar a las seis? &nbsp;—De ___.<br><span class="gloss">banco: Quieres · Vale · hora · Podemos · acuerdo</span></p>', apoyo="Banco de palabras"))
 P(actx(3, "Completa con la forma correcta (cloze)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 6 min"},{"t":"★★☆"}],
-  '<p>Vul de <b>juiste werkwoordsvorm</b> in (infinitief tussen haakjes). <span class="gloss">gustar-constructie + querer/poder — vormen nagerekend.</span></p>'
+  '<p>Vul de <b>juiste werkwoordsvorm</b> in (infinitief tussen haakjes). </p>'
   '<p style="margin-left:12.5mm">1. A nosotros nos <span class="wl md"></span> <i>(gustar)</i> las playas.<br>'
   '2. ¿<span class="wl md"></span> <i>(querer, tú)</i> quedar el sábado?<br>'
   '3. (A mí) me <span class="wl md"></span> <i>(encantar)</i> la música.<br>'
@@ -824,7 +824,7 @@ P(actx(3, "Completa con la forma correcta (cloze)",
   '8. A ellos les <span class="wl md"></span> <i>(gustar)</i> bailar.<br>'
   '9. ¿<span class="wl md"></span> <i>(poder, vosotros)</i> venir a la playa?<br>'
   '10. (A mí) me <span class="wl md"></span> <i>(gustar)</i> la horchata.</p>'
-  '<p style="margin-left:12.5mm" class="gloss">✅ De oplossingen staan online (zelfcorrectie op de digitale pagina).</p>', apoyo="Pista: infinitief gegeven)"))
+  '<p style="margin-left:12.5mm" class="gloss">✅ De oplossingen staan online (zelfcorrectie op de digitale pagina).</p>', apoyo="Pista: infinitief gegeven"))
 P(actx(4, "Cadena de transformación",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Begin met <b>«Quiero ir a la playa.»</b> en voer elke opdracht uit (schrijf de hele zin).</p>'
@@ -837,9 +837,9 @@ P(actx(5, "Propón un plan",
   '<div class="wbox sm"></div>', apoyo="Marco: ¿Quieres…? ¿Podemos…?"))
 P(actx(6, "¿querer o poder?",
   [{"t":"🔍 Analizar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Kies <b>querer</b> (willen) of <b>poder</b> (kunnen/mogen) en vervoeg voor de gegeven persoon.</p>'
+  '<p>Kies querer of poder en vervoeg voor de persoon tussen haakjes.</p>'
   '<p style="margin-left:12.5mm">a) (yo, wens) ___ ir a la playa. &nbsp; b) (tú, mogelijkheid) ¿___ quedar hoy?<br>'
-  'c) (nosotros, wens) ___ ver una peli. &nbsp; d) (ellos, kunnen) no ___ venir.<br><span class="wl full"></span></p>', apoyo="Pista: tabel §3.1)"))
+  'c) (nosotros, wens) ___ ver una peli. &nbsp; d) (ellos, kunnen) no ___ venir.<br><span class="wl full"></span></p>', apoyo="Pista: tabel §3.1"))
 P(tarea_com("Tarea comunicativa · «Quedamos el finde»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
   '<p><b>Situación:</b> stel elkaar een plan voor, ga akkoord of stel iets anders voor, en spreek een <b>uur en plaats</b> af. <span class="gloss">«¿Quieres…? —Vale. ¿A qué hora quedamos?»</span></p>'
@@ -861,7 +861,7 @@ P('</div>')
 P('<div class="txtmeta"><span class="tm"><b>Tipo:</b> perfil de música (app)</span><span class="tm"><b>De:</b> Lucía · Diego</span><span class="tm"><b>Para:</b> compartir gustos</span><span class="tm">🎯 saber qué música les gusta</span></div>')
 P(actx(1, "Antes de leer: predice",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 2 min"},{"t":"★☆☆"}],
-  '<p>Bekijk alleen de vorm en de titels. ¿Qué gustos esperas encontrar?</p>'
+  '<p>Bekijk alleen de vorm en de titels. Noteer drie gustos die je verwacht te vinden.</p>'
   '<p style="margin-left:12.5mm">Espero leer sobre: <span class="wl full"></span></p>', apoyo="Modelo: música, película, deporte…"))
 P('<div class="ptexts">'
   f'<div class="ptext"><div class="ph"><div class="av">{AV["lucia"]}</div><div><div class="nm">Lucía</div><div class="fr">app · mi playlist</div></div></div>'
@@ -877,10 +877,10 @@ P(actx(2, "Escanea: completa la tabla",
   '<table class="mp"><thead><tr><th></th><th>Le encanta…</th><th>Le gusta…</th><th>No le gusta…</th></tr></thead><tbody>'
   '<tr><td><b>Lucía</b></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td><b>Diego</b></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
-  '</tbody></table>', apoyo="Modelo: evidence gemarkeerd in de tekst"))
+  '</tbody></table>', apoyo="Modelo: de bewijszinnen staan gemarkeerd in de tekst"))
 P(actx(3, "¿Verdadero o falso? + prueba",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Waar of niet waar? Noteer de <b>woorden uit de tekst</b> die het bewijzen (evidence).</p>'
+  '<p>Waar of niet waar? Noteer de woorden uit de tekst die het bewijzen (evidencia).</p>'
   '<table class="mp"><thead><tr><th>Afirmación</th><th>V/F</th><th>Prueba (palabras del texto)</th></tr></thead><tbody>'
   '<tr><td>A Lucía le encanta Rosalía.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>A Diego le gustan los videojuegos.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
@@ -1003,12 +1003,12 @@ P(actx(2, "Escanea la reseña: ¿verdadero o falso?",
   '<table class="mp"><thead><tr><th>Afirmación</th><th>V/F</th><th>Prueba</th></tr></thead><tbody>'
   '<tr><td>A @musiclover le encanta la letra.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>A @diego_mx no le gusta la canción.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
-  '<tr><td>Diego prefiere el reguetón.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Pista: evidence gemarkeerd"))
+  '<tr><td>Diego prefiere el reguetón.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Pista: de bewijszinnen staan gemarkeerd"))
 P(actx(3, "Escribe tu mini-reseña",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
   '<p>Schrijf 3–4 zinnen over een artiest/lied dat jij leuk vindt, met <b>me gusta/encanta + porque + conectores</b>. Presenteer daarna aan je buur.</p>'
   '<p style="margin-left:12.5mm">Mi artista/canción: <span class="wl lg"></span></p>'
-  '<div class="wbox sm"></div>', apoyo="Marco: Me encanta… porque… además…)"))
+  '<div class="wbox sm"></div>', apoyo="Marco: Me encanta… porque… además…"))
 P('<div class="route-note">🎮 <b>Sigue online:</b> escucha una canción, lee la letra y reacciona met de gustos-spellen op de digitale pagina.</div>')
 P('</div>')  # page Cultura 2
 
@@ -1060,7 +1060,7 @@ P(actx(1, "Coloca en la escala",
 P(actx(2, "¿Qué artista y por qué? (mini-reseña con la escala)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Kies twee artiesten hierboven. Schrijf per artiest één zin met een <b>niveau van de escala</b> (odio / no me gusta / me gusta / me encanta) én een reden met <b>porque</b>.</p>'
-  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span></p>', apoyo="Marco: Me encanta … porque …)"))
+  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span></p>', apoyo="Marco: Me encanta … porque …"))
 P(tarea_com("Tarea comunicativa · «La playlist de la clase»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
   '<p><b>Situación:</b> vergelijk met je buur welke van de zes artiesten jullie <b>me encanta / me gusta / no me gusta / odio</b> vinden. Reageer met <b>también/tampoco/a mí sí/no</b> en kies samen één nummer voor de klasplaylist.</p>'
@@ -1163,7 +1163,7 @@ P('<div class="divider">Escalera de práctica · V.1–V.7</div>')
 P(actx("V.1", "Reconocer — ES → NL",
   [{"t":"🔍 Leer","skill":True},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Schrijf de vertaling. la canción = <span class="wl md"></span> · el deporte = <span class="wl md"></span> · encantar = <span class="wl md"></span> · a menudo = <span class="wl md"></span></p>', apoyo="Modelo"))
-P(actx("V.2", "Distinguir — sorteer per familia",
+P(actx("V.2", "Distinguir — sorteer per thema",
   [{"t":"🔍 Analizar","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Sorteer: <span class="words"><b>bailar · la película · siempre · quedar · el mar · a veces</b></span></p>'
   + sortcols([("ocio/música",""),("frecuencia",""),("planes/valencia","")], eigen=False), apoyo="Banco de palabras"))
@@ -1176,7 +1176,7 @@ P(actx("V.4", "Producir — una frase con tres palabras",
 P(actx("V.5", "Comunicar — mi top-3 de gustos",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Schrijf je <b>top-3</b> favoriete dingen met de juiste vorm (gusta/gustan/encanta) én telkens een reden met <b>porque</b>. Zeg ze daarna hardop tegen je buur, die reageert (también/tampoco/sí/no).</p>'
-  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="Marco: Me encanta … porque …)"))
+  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="Marco: Me encanta … porque …"))
 P(actx("V.6", "Definiciones — ¿qué palabra es?",
   [{"t":"🔍 Analizar","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Lees de definitie in het Spaans en schrijf het juiste woord uit de unit.</p>'

@@ -93,7 +93,7 @@ def nat_print(bloque, num, opgave_tekst=None, klasse="wl md", per_rij=4):
     <p>%s <span class="gloss">%s</span></p>
     <p style="margin-left:12.5mm;font-size:9.6pt"><b>%s</b></p>
     %s
-    <span class="steun">zelfde reeks online (QR)</span>
+    <span class="steun">Dezelfde reeks staat online</span>
     %s</div>""" % (
         _acthead(num, bloque["titulo"],
                  [("✍️ Escribir", True), ("👤 Solo", False), ("± %d min" % max(4, bloque["aantal"] // 3), False),
@@ -136,13 +136,13 @@ def lectura_print(t, num):
     return """<div class="act">
     %s
     <div class="fichatxt"><span><b>Tekstsoort</b>%s</span><span><b>Afzender</b>%s</span><span><b>Ontvanger</b>%s</span><span><b>Leesdoel</b>%s</span></div>
-    <p><b>1 · Antes de leer.</b> %s <span class="gloss">Kijk alleen naar titel, vlaggen en getallen.</span></p>
+    <p><b>1 · Antes de leer.</b> %s</p>
     <div style="margin-left:12.5mm">☐ %s</div>
     <p><b>2 · El texto.</b></p>
     <div class="lecp">%s</div>
     <p><b>3 · Comprensión global.</b> %s</p>
     <div style="margin-left:12.5mm"><span class="wl full"></span></div>
-    <p><b>4 · Escanea.</b> Zoek het gegeven in de tekst.</p>
+    <p><b>4 · Escanea.</b> Beantwoord de vragen met één woord of één getal uit de tekst.</p>
     <div style="margin-left:12.5mm;font-size:9.6pt">%s</div>
     <p><b>5 · Verdadero o falso — con prueba.</b> Kruis aan én schrijf de zin die het bewijst.</p>
     <div style="margin-left:12.5mm;font-size:9.6pt">%s</div>
@@ -177,19 +177,19 @@ def escucha_print(f, num, qr_html=None):
     claves = " &nbsp;·&nbsp; ".join("<b>%s</b>" % c for c in f["situacion"]["claves"])
     return """<div class="act">
     %s
-    <p><b>1 · Antes de escuchar.</b> <span class="gloss">Lees eerst de situatie — dan weet je waar je op moet letten.</span></p>
+    <p><b>1 · Antes de escuchar.</b> Lees de fiche en de palabras clave. Noteer één vraag die je verwacht te horen: <span class="wl md"></span></p>
     <div class="fichatxt"><span><b>¿Dónde?</b>%s</span><span><b>¿Quién?</b>%s</span><span><b>¿Qué pasa?</b>%s</span></div>
     <p style="margin-left:12.5mm;font-size:9.6pt">Palabras clave: %s</p>
     <p><b>2 · Escucha global.</b> %s</p>
     <div style="margin-left:12.5mm">☐ %s</div>
-    <p><b>3 · Escucha con detalle.</b> Luister opnieuw en noteer.</p>
+    <p><b>3 · Escucha con detalle.</b> Luister opnieuw en beantwoord de vragen in het Spaans (één tot drie woorden).</p>
     <div style="margin-left:12.5mm;font-size:9.6pt">%s</div>
     <p><b>4 · Verdadero o falso — con prueba.</b> Kruis aan én schrijf wat je hoort.</p>
     <div style="margin-left:12.5mm;font-size:9.6pt">%s</div>
-    <p><b>5 · La transcripción</b> staat online, en pas <i>ná</i> de taken. <span class="gloss">Eerst luisteren, dan pas meelezen — anders lees je in plaats van te luisteren.</span></p>
+    <p><b>5 · La transcripción</b> staat online. Open ze pas ná opdracht 4.</p>
     <p><b>6 · Tu reacción.</b> %s</p>
     <div class="wbox lg"></div>
-    <span class="steun">situatie vooraf → geen steun bij de details · scan de QR om te luisteren</span>
+    <span class="steun">Scan de QR om te luisteren</span>
     %s</div>""" % (
         _acthead(num, "Escucha · %s" % f["titulo"],
                  [("👂 Escuchar", True), ("✍️ Escribir", True), ("👤 Solo", False), ("± 20 min", False), ("★★☆", False)]),

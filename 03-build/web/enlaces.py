@@ -100,8 +100,11 @@ def tarjeta_qr(destino, etiqueta, meta="", mm=17, nivel="Q"):
     from qr_codigo import qr_svg
     svg = qr_svg(destino, mm=mm, nivel=nivel)
     m = ('<div class="meta">%s</div>' % meta) if meta else ""
-    return ('<div class="qr">%s<div class="lab">%s</div>%s</div>'
-            % (svg, etiqueta, m))
+    # het doel staat ook als attribuut in de HTML: onzichtbaar op papier, maar
+    # zo is bij elke bouw na te gaan waar elke code heen wijst zonder hem te
+    # moeten scannen (zie `informe_qr.py`)
+    return ('<div class="qr" data-url="%s">%s<div class="lab">%s</div>%s</div>'
+            % (destino, svg, etiqueta, m))
 
 
 def manifiesto():

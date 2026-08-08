@@ -131,7 +131,7 @@ P(actx(AN(), "Presente · verbos del viaje (repaso)",
   '<p style="margin-left:12.5mm">1. Yo <span class="wl sm"></span> (viajar) mucho. &nbsp; 2. Nosotros <span class="wl sm"></span> (visitar) el museo.<br>'
   '3. ¿Tú <span class="wl sm"></span> (hacer) la maleta? &nbsp; 4. El tren <span class="wl sm"></span> (salir) a las ocho.<br>'
   '5. Yo <span class="wl sm"></span> (volver, o→ue) el domingo. &nbsp; 6. Ellos <span class="wl sm"></span> (ver) la costa.</p>',
-  apoyo="Pista: viajo · visitamos · haces · sale · vuelvo · ven"))
+  apoyo="Banco de palabras: viajar · visitar · hacer · salir · volver · ver"))
 P(actx(AN(), "Mis planes de viaje · ir a + infinitivo (repaso)",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p><i>repaso U3.</i> Schrijf 2 reisplannen met <b>ir a + infinitivo</b>.</p>'
@@ -164,7 +164,7 @@ P(actx(AN(), "¿el o la? · el género del viaje",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 2 min"},{"t":"★☆☆"}],
   '<p>___ avión · ___ maleta · ___ billete · ___ reserva · ___ hotel · ___ playa · ___ museo · ___ llave</p>'
   '<p style="margin-left:12.5mm">1.<span class="wl sm"></span> 2.<span class="wl sm"></span> 3.<span class="wl sm"></span> 4.<span class="wl sm"></span> 5.<span class="wl sm"></span> 6.<span class="wl sm"></span> 7.<span class="wl sm"></span> 8.<span class="wl sm"></span></p>',
-  apoyo="Pista: el avión · la maleta · el billete · la reserva · el hotel · la playa · el museo · la llave"))
+  apoyo=""))
 P(actx(AN(), "El intruso · ¿qué palabra sobra?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 2 min"},{"t":"★★☆"}],
   '<p>Streep het woord door dat er niet bij hoort en zeg waarom.</p>'
@@ -335,7 +335,7 @@ P(actx(AN(), "Traduce · por / para",
   '2. Ik reis per trein. → Viajo <span class="wl sm"></span> tren.<br>'
   '3. Ik studeer om te reizen. → Estudio <span class="wl sm"></span> viajar.<br>'
   '4. Het is voor jou. → Es <span class="wl sm"></span> ti.</p>',
-  apoyo="Pista: para · por · para · para"))
+  apoyo=""))
 P('</div>')
 
 # §3.2 practicar + tarea com

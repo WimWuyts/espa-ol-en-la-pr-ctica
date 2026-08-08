@@ -26,6 +26,8 @@ MANUAL = {
     "Audio V · Decks A–E · 5:00": EN.ancla_panel("vocab"),
 }
 
+# Matcht zowel de oorspronkelijke nep-kaart als een al vervangen kaart die nog
+# geen `data-url` draagt, zodat het script ook na een eerdere ronde nog werkt.
 PATRON = re.compile(
     r'<div class="qr">\s*<svg.*?</svg>\s*'
     r'<div class="lab">(?P<lab>.*?)</div><div class="meta">(?P<meta>.*?)</div></div>',
@@ -35,8 +37,8 @@ PATRON = re.compile(
 def main():
     QRP.fijar("C5", 0)
     doc = open(DOEL, encoding="utf-8").read()
-    if 'aria-label="QR-code"' in doc:
-        print("U0.html heeft al echte codes — niets gedaan")
+    if 'data-url=' in doc:
+        print("U0.html is al bijgewerkt — niets gedaan")
         return
 
     hechos = []

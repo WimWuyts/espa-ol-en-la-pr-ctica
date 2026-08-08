@@ -231,7 +231,7 @@ P(actx(AN(), "Añade el pronombre",
   '<p>Plak het pronomen vast (let op het accent).</p>'
   '<p style="margin-left:12.5mm">cuida + te → <span class="wl sm"></span> &nbsp; haz + lo → <span class="wl sm"></span> &nbsp; recicla + lo → <span class="wl sm"></span><br>'
   'bebe + la → <span class="wl sm"></span> &nbsp; di + me → <span class="wl sm"></span> &nbsp; protege + lo → <span class="wl sm"></span></p>',
-  apoyo="Primera letra: cuídate · hazlo · recíclalo · bébela · dime · protégelo"))
+  apoyo="Modelo: werkwoord + pronomen = één woord; het accent blijft op de klemtoon van het werkwoord"))
 P(actx(AN(), "Clínica de errores · imperativo",
   [{"t":"🔍 Analizar","skill":True},{"t":"👥 En parejas"},{"t":"± 3 min"},{"t":"★★★"}],
   '<p>Elke zin heeft één fout (vorm, pronomen of accent). Verbeter.</p>'
@@ -426,7 +426,7 @@ P(actx(AN(), "¿Falta el acento? · corrige",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>cuidate · comelo · protegelo · dimelo · hazlo · dime</p>'
   '<p style="margin-left:12.5mm"><span class="wl full"></span></p>',
-  apoyo="Pista: cuídate, cómelo, protégelo, dímelo, hazlo ✓, dime ✓"))
+  apoyo=""))
 P('<h3 style="margin-top:6mm">2 · Conectores de argumentación</h3>')
 P(colloc("porque · además · por eso · sin embargo", ["porque = want/omdat","además = bovendien","por eso = daarom","sin embargo = echter"]))
 P(actx(AN(), "Completa con el conector",

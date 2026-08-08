@@ -501,7 +501,7 @@ P(actx(2, "Números para los precios",
   '<table class="mp"><thead><tr><th>Precio</th><th>En letras</th></tr></thead><tbody>'
   '<tr><td>15 €</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>40 €</td><td><span class="wl md"></span></td></tr>'
-  '<tr><td>100 €</td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Pista: quince · cuarenta · cien"))
+  '<tr><td>100 €</td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Pista: schrijf als één woord, zonder «y»"))
 P(actx(3, "Empareja: prenda con imagen",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Verbind het woord met de emoji (schrijf de letter).</p>'
@@ -513,7 +513,7 @@ P(actx(3, "Empareja: prenda con imagen",
 P(actx(4, "¿el, la, los o las?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Vul het juiste lidwoord in (kijk naar m./v. · ev./mv.).</p>'
-  '<p style="margin-left:12.5mm">___ camiseta &nbsp; ___ zapatos &nbsp; ___ falda &nbsp; ___ pantalones &nbsp; ___ abrigo &nbsp; ___ botas<br><span class="gloss">Let op: la · los · la · los · el · las.</span></p>', apoyo="Pista: el/la · los/las"))
+  '<p style="margin-left:12.5mm">___ camiseta &nbsp; ___ zapatos &nbsp; ___ falda &nbsp; ___ pantalones &nbsp; ___ abrigo &nbsp; ___ botas<br></p>', apoyo="Pista: el/la · los/las"))
 P(actx(5, "Mi ropa favorita en presente",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Schrijf twee ware zinnen: één met <b>llevo</b> en één met <b>me gusta(n)</b>.</p>'
@@ -578,7 +578,7 @@ P(actx(2, "Responde con el pronombre (cloze)",
   'c) ¿Llevas los zapatos? —___ llevo hoy.<br>'
   'd) ¿Te pruebas las botas? —Sí, ___ pruebo.<br>'
   'e) ¿Ves el vestido del escaparate? —Sí, ___ veo.<br>'
-  'f) ¿Buscas las gafas? —Sí, ___ busco.<br><span class="gloss">✅ Zelfcorrectie op de digitale pagina.</span></p>', apoyo="Pista: m/v · ev/mv)"))
+  'f) ¿Buscas las gafas? —Sí, ___ busco.<br><span class="gloss">✅ Zelfcorrectie op de digitale pagina.</span></p>', apoyo="Pista: m/v · ev/mv"))
 P(actx(3, "Transforma sin repetir",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★★"}],
   '<p>Herschrijf zonder de prenda te herhalen (zet het pronomen vóór het ww).</p>'
@@ -586,15 +586,15 @@ P(actx(3, "Transforma sin repetir",
   '<tr><td>Compro la camisa.</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Quiero el cinturón.</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Llevo los calcetines.</td><td><span class="wl md"></span></td></tr>'
-  '<tr><td>Busco las sandalias.</td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Marco: lo/la/los/las)"))
+  '<tr><td>Busco las sandalias.</td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Marco: lo/la/los/las"))
 P(actx(4, "¿Dónde va el pronombre?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p><i>plaatsing (rieles).</i> Kies de juiste zin. ☐ voor de goede.</p>'
+  '<p>Kies de juiste zin. ☐ voor de goede.</p>'
   '<p style="margin-left:12.5mm">1) ☐ La compro. &nbsp; ☐ Compro la.<br>'
   '2) ☐ Voy a comprarla. &nbsp; ☐ Voy la a comprar.<br>'
   '3) ☐ Los quiero. &nbsp; ☐ Quiero los.<br>'
   '4) ☐ Quiero probármela. &nbsp; ☐ Quiero me la probar.<br><span class="gloss">✅ Zelfcorrectie op de digitale pagina.</span></p>', apoyo="Modelo"))
-P(audiorow('<div class="ic">🎧</div><div><b>En la tienda.</b> Escucha el diálogo entre el/la dependiente/-a y el cliente. ¿Qué pronombre usan? <span class="gloss">Luisterdialoog (script + TTS op de hub). 1ª globaal · 2ª detail.</span></div>',
+P(audiorow('<div class="ic">🎧</div><div><b>En la tienda.</b> Escucha el diálogo entre el/la dependiente/-a y el cliente. ¿Qué pronombre usan? <span class="gloss">Luister twee keer: 1ª voor het geheel, 2ª voor de details.</span></div>',
            qr("Escanea y escucha", "Audio 6.1 · En la tienda · 1:05", seed=61)))
 P(actx(5, "Escucha: ¿qué pronombre oyes?",
   [{"t":"👂 Escuchar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
@@ -611,7 +611,7 @@ P(actx(6, "¿Es correcto? — ejemplo o no-ejemplo",
   '<tr><td>Compro la.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>¿La falda? La quiero.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Los zapatos, la compro.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
-  '<tr><td>Voy a comprarlo.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Pista: m/v · plaats)"))
+  '<tr><td>Voy a comprarlo.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Pista: m/v · plaats"))
 P(tarea_com("Tarea comunicativa · «¿Te lo llevas?»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 7 min"},{"t":"★★★"}],
   '<p><b>Situación:</b> A = dependiente/a, B = cliente. A vraagt over prendas («¿Te gusta esta camisa?»), B antwoordt kort met het pronomen («Sí, la quiero» / «No, no la quiero»). Wissel. <span class="gloss">«¿Los vaqueros? —Sí, me los llevo.»</span></p>'
@@ -667,7 +667,7 @@ P(actx(2, "Substitutie: cambia la persona",
   '<tr><td>tú</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>nosotros</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>ella</td><td><span class="wl md"></span></td></tr>'
-  '<tr><td>ellos</td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Marco: tabla acabar)"))
+  '<tr><td>ellos</td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Marco: tabla acabar"))
 P(actx(3, "Completa con acabar de + infinitivo (cloze)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 6 min"},{"t":"★★☆"}],
   '<p>Vul <b>acabar de + infinitivo</b> aan (persoon tussen haakjes). <span class="gloss">Let op: vorm van acabar + de + infinitief.</span></p>'
@@ -679,7 +679,7 @@ P(actx(3, "Completa con acabar de + infinitivo (cloze)",
   '6. Lucía <span class="wl md"></span> encontrar unas botas. <i>(encontrar)</i><br>'
   '7. ¿(Vosotros) <span class="wl md"></span> entrar en la tienda? <i>(entrar)</i><br>'
   '8. (Yo) <span class="wl md"></span> elegir la talla M. <i>(elegir)</i></p>'
-  '<p style="margin-left:12.5mm" class="gloss">✅ De oplossingen staan online (zelfcorrectie op de digitale pagina).</p>', apoyo="Pista: vorm van acabar)"))
+  '<p style="margin-left:12.5mm" class="gloss">✅ De oplossingen staan online (zelfcorrectie op de digitale pagina).</p>', apoyo="Pista: vorm van acabar"))
 P(actx(4, "Cadena de transformación",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Begin met <b>«Acabo de comprar una camisa.»</b> en voer elke opdracht uit (schrijf de hele zin).</p>'
@@ -804,7 +804,7 @@ P('<div class="divider">PAREL · §4.2 · Colorea la equipación 🎽</div>')
 P('<p style="font-size:9.6pt">② <b>«Colorea la equipación» (collocaties · cultura del fútbol).</b> Elke selección heeft een <b>camiseta</b> met een <b>color</b> en soms een <b>patrón</b> (de rayas · de cuadros · de lunares · liso). Schrijf de <b>concordantie</b> correct (la camiseta is v.). <span class="gloss">Kleur de shirts en schrijf de kleur + patroon correct — let op de v.-uitgang.</span></p>')
 P(actx(1, "Grupo A · el mundo hispano",
   [{"t":"🎨 Colorear","skill":True},{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 6 min"},{"t":"★★☆"}],
-  '<p>Kleur het shirt (□) en vul de kleur/patroon in (v.: <b>-a</b> waar nodig).</p>'
+  '<p>Schrijf per selección de zin «La camiseta es + kleur (+ patroon)». Let op de uitgang van de kleur.</p>'
   '<table class="alf"><thead><tr><th>Selección</th><th>Color</th><th>Patrón</th><th>«La camiseta es…»</th></tr></thead><tbody>'
   '<tr><td>🇦🇷 Argentina</td><td>celeste</td><td>de rayas</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>🇪🇸 España</td><td>rojo</td><td>lisa</td><td><span class="wl md"></span></td></tr>'
@@ -816,7 +816,7 @@ P(actx(1, "Grupo A · el mundo hispano",
   '<p style="margin-left:12.5mm" class="gloss">Modelo: 🇦🇷 → «La camiseta es <b>celeste, de rayas</b>.» · 🇪🇸 → «La camiseta es <b>roja, lisa</b>.»</p>', apoyo="Modelo"))
 P(actx(2, "Grupo B · Top de la FIFA",
   [{"t":"🎨 Colorear","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Idem: schrijf «La camiseta es + color (+ patrón)».</p>'
+  '<p>Zelfde werkwijze, nu voor de FIFA-top: schrijf per selección de zin «La camiseta es + kleur (+ patroon)».</p>'
   '<table class="alf"><thead><tr><th>Selección</th><th>Color</th><th>Patrón</th><th>«La camiseta es…»</th></tr></thead><tbody>'
   '<tr><td>🇫🇷 Francia</td><td>azul</td><td>lisa</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>🇳🇱 Países Bajos</td><td>naranja</td><td>lisa</td><td><span class="wl md"></span></td></tr>'
@@ -824,13 +824,13 @@ P(actx(2, "Grupo B · Top de la FIFA",
   '<tr><td>🇭🇷 Croacia</td><td>rojo</td><td>de cuadros</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>🇮🇹 Italia</td><td>azul</td><td>lisa</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>🇧🇷 Brasil</td><td>amarillo</td><td>lisa</td><td><span class="wl md"></span></td></tr></tbody></table>'
-  '<p style="margin-left:12.5mm" class="gloss">🔴 Let op: 🇫🇷 azul → «azul» (geen -a) · 🇭🇷 «roja, de cuadros» · 🇧🇷 «amarilla, lisa».</p>', apoyo="Pista: azul verandert niet)"))
+  '<p style="margin-left:12.5mm" class="gloss">🔴 Let op: niet elke kleur krijgt een -a.</p>', apoyo="Pista: azul verandert niet"))
 P(actx(3, "Concordancia: color ↔ prenda (cloze)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>Vul de kleur in de juiste vorm in (tussen haakjes de basis).</p>'
   '<p style="margin-left:12.5mm">1. una camiseta <span class="wl sm"></span> <i>(rojo)</i> &nbsp; 2. unos pantalones <span class="wl sm"></span> <i>(negro)</i><br>'
   '3. una falda <span class="wl sm"></span> <i>(azul)</i> &nbsp; 4. unas botas <span class="wl sm"></span> <i>(marrón)</i><br>'
-  '5. un vestido <span class="wl sm"></span> <i>(blanco)</i> &nbsp; 6. unos calcetines <span class="wl sm"></span> <i>(verde)</i><br><span class="gloss">✅ Zelfcorrectie op de digitale pagina.</span></p>', apoyo="Pista: m/v · ev/mv)"))
+  '5. un vestido <span class="wl sm"></span> <i>(blanco)</i> &nbsp; 6. unos calcetines <span class="wl sm"></span> <i>(verde)</i><br><span class="gloss">✅ Zelfcorrectie op de digitale pagina.</span></p>', apoyo="Pista: m/v · ev/mv"))
 P(actx(4, "Clasifica: ¿cambia de género o no?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Sorteer de kleuren: verandert de kleur van geslacht (rojo/roja) of niet (azul)? '
@@ -839,7 +839,7 @@ P(actx(4, "Clasifica: ¿cambia de género o no?",
 P(actx(5, "Describe una prenda del escaparate",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★★"}],
   '<p>Beschrijf drie prendas met kleur + patroon/materiaal (let op concordantie).</p>'
-  '<div class="wbox sm"></div>', apoyo="Marco: una … + color + de …)"))
+  '<div class="wbox sm"></div>', apoyo="Marco: una … + color + de …"))
 P(tarea_com("Tarea comunicativa · «¿De qué color es tu equipación?»",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
   '<p><b>Situación:</b> beschrijf de <b>camiseta</b> van je lievelingsploeg (of van je school) met kleur + patroon; je buur raadt de selección/ploeg. <span class="gloss">«Mi camiseta es azul y blanca, de rayas. ¿Qué selección es?»</span></p>'
@@ -847,13 +847,13 @@ P(tarea_com("Tarea comunicativa · «¿De qué color es tu equipación?»",
   '<div class="steun" style="margin-left:12.5mm">Marco: Mi camiseta es + color + de + patrón</div>'))
 P(actx(6, "Traduce y concuerda",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p><i>NL → ES met concordantie.</i> Vertaal en let op de uitgang van de kleur.</p>'
+  '<p>Vertaal en let op de uitgang van de kleur.</p>'
   '<table class="mp"><thead><tr><th>Nederlands</th><th>Español</th></tr></thead><tbody>'
   '<tr><td>een rode rok</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>zwarte schoenen</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>een blauwe jurk</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>witte sokken</td><td><span class="wl md"></span></td></tr></tbody></table>'
-  '<p style="margin-left:12.5mm" class="gloss">✅ De oplossingen staan online (zelfcorrectie op de digitale pagina).</p>', apoyo="Pista: m/v · ev/mv)"))
+  '<p style="margin-left:12.5mm" class="gloss">✅ De oplossingen staan online (zelfcorrectie op de digitale pagina).</p>', apoyo="Pista: m/v · ev/mv"))
 P('<div class="route-note">🎮 <b>Juega online:</b> «color + prenda» (match), de concordancia-Tetris en «masculino/femenino» met zelfcorrectie.</div>')
 P('</div>')  # page §4.2
 
@@ -895,7 +895,7 @@ P(actx(2, "Escanea: completa la tabla de precios",
   '<tr><td>vestidos de lunares</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr></tbody></table>', apoyo="Modelo: anuncio boven"))
 P(actx(3, "¿Verdadero o falso? + prueba",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p><i>juist/fout + bewijs (evidence).</i> Waar of niet waar? Noteer de <b>woorden uit de tekst</b> die het bewijzen.</p>'
+  '<p>Waar of niet waar? Noteer de <b>woorden uit de tekst</b> die het bewijzen.</p>'
   '<table class="mp"><thead><tr><th>Afirmación</th><th>V/F</th><th>Prueba</th></tr></thead><tbody>'
   '<tr><td>Valen compró unos vaqueros.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Los vaqueros costaban 40 € antes.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
@@ -907,7 +907,7 @@ P(actx(4, "Del contexto: ¿qué significa?",
   '<p style="margin-left:12.5mm">me quedan bien = ☐ ze staan me goed ☐ ze zijn duur &nbsp;·&nbsp; regatear = ☐ afdingen ☐ betalen<br>Pista que me ayudó: <span class="wl lg"></span></p>', apoyo="Pista"))
 P(actx(5, "Del anuncio: ¿la, lo, los o las?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>terugkoppeling §1.</i> In de reseña staat «no <b>la</b> tenían». Waar verwijst <b>la</b> naar? En vul aan: «Me <b>los</b> probé» → los = ___?</p>'
+  '<p>Kijk terug naar §1. In de reseña staat «no <b>la</b> tenían». Waar verwijst <b>la</b> naar? En vul aan: «Me <b>los</b> probé» → los = ___?</p>'
   '<p style="margin-left:12.5mm">«la» = <span class="wl md"></span> &nbsp;·&nbsp; «los» = <span class="wl md"></span><br><span class="gloss">✅ Zelfcorrectie op de digitale pagina.</span></p>', apoyo="Pista: zoek de prenda ervoor"))
 P(tarea_com("Tarea comunicativa · «Escribe tu reseña» (keten lezen→schrijven)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 8 min"},{"t":"★★★"}],
@@ -945,7 +945,7 @@ P(actx(1, "Clasifica: aguda, llana o esdrújula",
 P(actx(2, "El plural con tilde",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Zet in het meervoud (let op de tilde!).</p>'
-  '<p style="margin-left:12.5mm">el pantalón → <span class="wl md"></span> · el marrón → <span class="wl md"></span> · el cinturón → <span class="wl md"></span><br><span class="gloss">Let op: los pantalones · los marrones · los cinturones (tilde weg).</span></p>', apoyo="Pista: tilde valt weg)"))
+  '<p style="margin-left:12.5mm">el pantalón → <span class="wl md"></span> · el marrón → <span class="wl md"></span> · el cinturón → <span class="wl md"></span><br><span class="gloss">Let op: bij het meervoud verschuift de klemtoonregel.</span></p>', apoyo="Pista: tilde valt weg"))
 P('<h3 style="margin-top:6mm">Conectores · y→e · o→u · pero / sino · así que / por eso</h3>')
 P('<table class="mp"><thead><tr><th>Conector</th><th>Uso</th><th>Ejemplo</th></tr></thead><tbody>'
   '<tr><td><b>y → e</b></td><td>«en» vóór i-/hi-</td><td>zapatos <b>e</b> hijos · madre <b>e</b> hija</td></tr>'
@@ -953,7 +953,7 @@ P('<table class="mp"><thead><tr><th>Conector</th><th>Uso</th><th>Ejemplo</th></t
   '<tr><td><b>pero / sino</b></td><td>maar / maar wel (na ontkenning)</td><td>No es roja <b>sino</b> rosa.</td></tr>'
   '<tr><td><b>así que / por eso</b></td><td>dus</td><td>Hay rebajas, <b>así que</b> compro.</td></tr></tbody></table>')
 P('<div class="truc"><b>🔴 NL-valstrik:</b> «dus» = <b>así que / por eso</b> (niet <span class="trap">luego</span>). «want» én «omdat» = <b>porque</b>. Na een ontkenning: «maar wel» = <b>sino</b> (No es azul, <b>sino</b> verde).</div>')
-P(actx(3, "Une con el conector correcto (gap-fill)",
+P(actx(3, "Une con el conector correcto ",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Vul in: <b>e · u · pero · sino · así que · por eso</b>.</p>'
   '<p style="margin-left:12.5mm">a) Compro una camisa ___ hijos… (¡nee: «e» vóór i-) → madre ___ hija.<br>'
@@ -962,7 +962,7 @@ P(actx(3, "Une con el conector correcto (gap-fill)",
   'd) Hay rebajas, ___ me lo llevo.<br><span class="gloss">✅ Zelfcorrectie op de digitale pagina.</span></p>', apoyo="Banco de palabras"))
 P(actx(4, "Dictado corto de la tienda",
   [{"t":"👂 Escuchar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>dictee (reconstrueren).</i> Escucha y escribe cuatro palabras de ropa (met de juiste tilde).</p>'
+  '<p>Escucha y escribe cuatro palabras de ropa (met de juiste tilde).</p>'
   '<p style="margin-left:12.5mm">1. <span class="wl md"></span> 2. <span class="wl md"></span> 3. <span class="wl md"></span> 4. <span class="wl md"></span></p>', apoyo="Modelo: 2×"))
 P(actx(5, "Escribe: dos prendas con conector",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★★"}],
@@ -1015,7 +1015,7 @@ P(actx(1, "Comprensión — verdadero o falso",
 P(actx(2, "La moda en mi vida",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Schrijf 2–3 zinnen: ¿compras ropa nueva o de segunda mano? ¿regateas? ¿te gusta la moda sostenible? Presenteer aan je buur.</p>'
-  '<div class="wbox sm"></div>', apoyo="Marco: Compro… · (No) regateo… · Me gusta…)"))
+  '<div class="wbox sm"></div>', apoyo="Marco: Compro… · (No) regateo… · Me gusta…"))
 P(actx(3, "Empareja: refrán ↔ significado",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Verbind het refrán met de betekenis (schrijf de letter).</p>'
@@ -1131,7 +1131,7 @@ P(actx("V.4", "Producir — una frase con tres palabras",
 P(actx("V.5", "Comunicar — mi tienda ideal",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Schrijf jouw ideale outfit (3 prendas + color) met <b>me gusta / me lo llevo</b> én telkens waarom. Zeg het daarna hardop tegen je buur, die als dependiente reageert.</p>'
-  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="Marco: Me gusta … porque …)"))
+  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="Marco: Me gusta … porque …"))
 P(actx("V.6", "Bingo del vocabulario",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Kies uit elke rij één woord dat bij de categorie hoort en omcirkel het.</p>'

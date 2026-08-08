@@ -136,14 +136,14 @@ P('<table class="conj"><thead><tr><th>—</th><th>hablar</th><th>comer</th><th>v
   '<tr><td class="p">ellos</td><td class="v">habl<span class="end">an</span></td><td class="v">com<span class="end">en</span></td><td class="v">viv<span class="end">en</span></td><td class="v">son</td><td class="v">van</td></tr></tbody></table>')
 P(actx(AN(), "Calienta · el presente (cloze)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p><i>vul het presente in (infinitivo tussen haakjes) — repaso.</i></p>'
+  '<p><i>Vul het presente in (infinitivo tussen haakjes).</i></p>'
   '<p style="margin-left:12.5mm">1. Yo <span class="wl sm"></span> (estudiar) español. &nbsp; 2. ¿Tú <span class="wl sm"></span> (vivir) en Gante? &nbsp; 3. Lucía <span class="wl sm"></span> (ser) de Sevilla.<br>'
   '4. Nosotros <span class="wl sm"></span> (comer) a las dos. &nbsp; 5. Ellos <span class="wl sm"></span> (ir) al instituto. &nbsp; 6. Yo <span class="wl sm"></span> (hacer) deporte.</p>',
   apoyo="Banco de palabras: estudio · vives · es · comemos · van · hago"))
 P('<div class="truc"><b>Repaso ser/estar (U0):</b> <b>ser</b> = wie/wat je bent (soy belga, soy simpático) · <b>estar</b> = waar/hoe je bent (estoy en clase, estoy bien). <span class="gloss">In §4 zetten we dit contrast helemaal op scherp.</span></div>')
 P(actx(AN(), "¿ser o estar? (repaso rápido)",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 2 min"},{"t":"★☆☆"}],
-  '<p><i>kies (soy = identiteit · estoy = plaats/gevoel).</i></p>'
+  '<p><i>Kies soy of estoy.</i></p>'
   '<p style="margin-left:12.5mm">1. Yo <span class="wl sm"></span> de Bélgica. &nbsp; 2. Hoy <span class="wl sm"></span> cansado. &nbsp; 3. <span class="wl sm"></span> estudiante. &nbsp; 4. <span class="wl sm"></span> en el instituto.</p>',
   apoyo="Pista"))
 sec_close()
@@ -187,7 +187,7 @@ P(audiorow('<div class="ic">🎧</div><div><b>Dictado de horas.</b> Escucha en l
            qr("Escanea y escucha", "§1 · Dictado de horas", seed=101)))
 P(actx(AN(), "Dictado · escribe la hora que oyes",
   [{"t":"👂 Escuchar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p>Luister en noteer de zes tijden (in cijfers óf voluit).</p>'
+  '<p>Luister en schrijf de zes tijden voluit (son las…).</p>'
   '<p style="margin-left:12.5mm">a) <span class="wl sm"></span> &nbsp; b) <span class="wl sm"></span> &nbsp; c) <span class="wl sm"></span> &nbsp; d) <span class="wl sm"></span> &nbsp; e) <span class="wl sm"></span> &nbsp; f) <span class="wl sm"></span></p>',
   apoyo="docent leest voor"))
 P('<div class="se" style="margin-top:5mm">Los días, meses y estaciones <span class="gloss" style="font-size:8pt">— el calendario del año</span></div>')
@@ -198,7 +198,7 @@ P('<div class="clusters" style="grid-template-columns:1fr 1fr 1fr">'
 P('<div class="truc"><b>¡Ojo!</b> Los días y meses se escriben con <b>minúscula</b> (lunes, enero — niet <span class="trap">Lunes, Enero</span>). «Op maandag» = <b>el lunes</b>; «elke maandag» = <b>los lunes</b>.</div>')
 P(actx(AN(), "El calendario · completa",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Vul de ontbrekende dagen en maanden aan. Schrijf daarna één zin over je favoriete seizoen.</p>'
+  '<p>Vul de ontbrekende dagen aan. Vul daarna de twee zinnen over je favoriete maand en het seizoen aan.</p>'
   '<p style="margin-left:12.5mm">lunes — <span class="wl sm"></span> — miércoles — <span class="wl sm"></span> — viernes — <span class="wl sm"></span> — <span class="wl sm"></span><br>'
   'Mi mes favorito es <span class="wl sm"></span> porque <span class="wl md"></span>. &nbsp; En <span class="wl sm"></span> (estación) hace buen tiempo.</p>',
   apoyo="Pista"))
@@ -313,7 +313,7 @@ P('<div class="fams" style="grid-template-columns:1fr 1fr;margin-top:2mm">'
 P('<div class="truc"><b>La bota (§4 U0-repaso):</b> de klinker wisselt in <b>yo · tú · él · ellos</b>, maar <b>niet</b> in <i>nosotros / vosotros</i> — die vier vormen tekenen samen een laarsje. Bij <b>vestirse</b> (e→i): me v<b>i</b>sto, te vistes… nos vestimos.</div>')
 P(actx(AN(), "Conjuga · completa la tabla",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Vervoeg (vergeet het pronomen niet!).</p>'
+  '<p>Vul de tabel in met het presente: pronombre reflexivo + werkwoordsvorm.</p>'
   '<table class="alf"><thead><tr><th>—</th><th>vestirse (e→i)</th><th>acostarse (o→ue)</th><th>peinarse</th></tr></thead><tbody>'
   '<tr><td class="p">yo</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td class="p">tú</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
@@ -329,7 +329,7 @@ P(actx(AN(), "La gran cloze reflexiva · el presente",
   apoyo="Banco de palabras: me levanto · te duchas · se despierta · nos acostamos · se viste · se peinan · me duermo · os sentáis"))
 P(actx(AN(), "Sustitución · cambia la persona",
   [{"t":"🔁 Practicar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Herschrijf <b>Yo me levanto a las siete y me ducho</b> voor elke persoon.</p>'
+  '<p>Modelo: <b>Yo me levanto a las siete y me ducho.</b> Herschrijf per persoon.</p>'
   '<table class="alf"><thead><tr><th>Persona</th><th>Frase</th></tr></thead><tbody>'
   '<tr><td class="p">tú</td><td>Tú <span class="wl lg"></span></td></tr>'
   '<tr><td class="p">ella</td><td>Ella <span class="wl lg"></span></td></tr>'
@@ -356,7 +356,7 @@ P(actx(AN(), "Clínica de errores · busca y corrige",
   apoyo="Pista: kijk naar de persoon → juist pronomen"))
 P(actx(AN(), "¿Quién de la clase…? (encuesta)",
   [{"t":"🗣️ Interacción","skill":True},{"t":"👥 Clase"},{"t":"± 6 min"},{"t":"★★★"}],
-  '<p><i>zoek iemand die….</i> Sta op en vraag rond: «¿Te acuestas antes de las 22:00?». Schrijf de naam.</p>'
+  '<p><i>Sta op en vraag rond. Schrijf bij elke zin een naam.</i> Sta op en vraag rond: «¿Te acuestas antes de las 22:00?». Schrijf de naam.</p>'
   '<table class="alf"><thead><tr><th>¿Quién de la clase…?</th><th>Nombre</th></tr></thead><tbody>'
   '<tr><td>…se levanta antes de las 6:30</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>…se ducha por la noche</td><td><span class="wl md"></span></td></tr>'
@@ -434,7 +434,7 @@ P(actx(AN(), "¿Cómo están? · completa con estar + adjetivo",
   apoyo="Banco de palabras: está cansado · está contenta · estoy nervioso/a · están ocupados"))
 P(actx(AN(), "¿Y tú? · ¿cómo estás en estos momentos?",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p><i>vrije productie + porque (mini-mening).</i> Schrijf hoe je je voelt in deze situaties, mét <b>porque</b>.</p>'
+  '<p>Schrijf hoe je je voelt in deze situaties, mét <b>porque</b>.</p>'
   '<p style="margin-left:12.5mm">El lunes por la mañana: <span class="wl lg"></span><br>'
   'El viernes por la tarde: <span class="wl lg"></span><br>'
   'Antes de un examen: <span class="wl lg"></span></p>'
@@ -478,7 +478,7 @@ retos("ser_estar_c6p", "§4.4 · Retos — es aburrido o está aburrido",
 
 # ================= §5 · GUSTAR + OI =================
 sec_open("5", "§5 · Gustar + OI — me gusta", 'El <b>corazón</b> de la unidad para hablar de <b>gustos</b>. Pero ¡ojo! gustar funciona <b>al revés</b>: <i>Me gusta la música</i> = de muziek bevalt míj. Y al final: <b>«me gusta… porque…»</b>, tu primera opinión. <span class="gloss">Gustar werkt omgekeerd. Op het einde geef je je eerste mening met «porque».</span>',
-        lpd(("8","taalsysteem: gustar + OI-pronomina"), ("7","woordenschat: ocio & gustos"), ("3","mening geven (P3-seed)")))
+        lpd(("8","taalsysteem: gustar + OI-pronomina"), ("7","woordenschat: ocio & gustos"), ("3","mening geven")))
 
 # ---- §5.1 gusta/gustan ----
 P('<h3>§5.1 · gustar «al revés» — ¿gusta o gustan?</h3>')
@@ -523,7 +523,7 @@ P(actx(AN(), "Completa con el pronombre correcto",
   apoyo="Modelo: tabla"))
 P(actx(AN(), "Traduce al español · ¡ojo con la estructura!",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★★"}],
-  '<p>Let op de omgekeerde structuur.</p>'
+  '<p>Vertaal de vier zinnen naar het Spaans met gustar. Het Nederlandse lijdend voorwerp wordt in het Spaans het onderwerp.</p>'
   '<p style="margin-left:12.5mm">1. Ik hou van honden. → <span class="wl lg"></span><br>'
   '2. Ik vind voetbal leuk. → <span class="wl lg"></span><br>'
   '3. Hij houdt van reizen. → <span class="wl lg"></span><br>'
@@ -531,7 +531,7 @@ P(actx(AN(), "Traduce al español · ¡ojo con la estructura!",
   apoyo="Pista: Me gustan los perros…"))
 P(actx(AN(), "Clínica de errores · gustar",
   [{"t":"🔍 Analizar","skill":True},{"t":"👥 En parejas"},{"t":"± 3 min"},{"t":"★★★"}],
-  '<p>Schrijf de juiste zin.</p>'
+  '<p>Elke zin heeft één fout (gustar). Verbeter.</p>'
   '<p style="margin-left:12.5mm">1. Yo gusto el fútbol. → <span class="wl md"></span><br>'
   '2. Me gusta los perros. → <span class="wl md"></span><br>'
   '3. Me gusta tenis. → <span class="wl md"></span><br>'
@@ -553,12 +553,12 @@ P('<div class="scale"><div class="track">'
 P('<div class="truc"><b>me encanta = het maximum</b> (encantar werkt zoals gustar: me encanta / me encantan). Gebruik het <b>niet</b> met «mucho» of in de ontkenning (<span class="trap">me encanta mucho / no me encanta</span>).</div>')
 P(xray('A mí me gusta el fútbol porque es divertido.', [
   ('A mí me', 'aan wie (OI)'), ('gusta', 'ww. (al revés)'), ('el fútbol', 'wat (onderwerp)'), ('porque', 'want/omdat'), ('es divertido', 'reden = mening')]))
-P(regla("P3-seed · mi primera opinión", '<p>Combineer een gustar-zin met een reden: <b>Me gusta / No me gusta … porque …</b><br>'
+P(regla("Mi primera opinión", '<p>Combineer een gustar-zin met een reden: <b>Me gusta / No me gusta … porque …</b><br>'
   '<i>Me gusta la música latina <b>porque</b> es alegre. No me gustan los lunes <b>porque</b> estoy cansado/a.</i><br>'
   '<span class="gloss">Zo geef je je eerste mening. In U3 komt «creo que…»; nu volstaat «porque».</span></p>'))
 P(actx(AN(), "Reacciona · me gusta… porque…",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"± 5 min"},{"t":"★★★"}],
-  '<p><i>P3-seed: mening met porque.</i> Geef je mening over elk onderwerp met de schaal <b>én</b> een reden met <b>porque</b>.</p>'
+  '<p>Geef je mening over elk onderwerp met de schaal <b>én</b> een reden met <b>porque</b>.</p>'
   '<p style="margin-left:12.5mm">El fútbol: <span class="wl lg"></span><br>'
   'La música clásica: <span class="wl lg"></span><br>'
   'Los videojuegos: <span class="wl lg"></span><br>'
@@ -603,7 +603,7 @@ P(actx(AN(), "Verdadero o falso — con prueba",
   apoyo="Modelo"))
 P(actx(AN(), "Escanea — completa la ficha",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p>Zoek de gegevens en vul in.</p>'
+  '<p>Zoek de gegevens per persoon terug in de tekst en vul de tabel aan. Eén woord of getal per vak.</p>'
   '<table class="alf"><thead><tr><th>—</th><th>Lucía</th><th>Diego</th></tr></thead><tbody>'
   '<tr><td>¿A qué hora se levanta?</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>Le gusta(n)…</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
@@ -662,7 +662,7 @@ P('<div class="fams three" style="margin-top:2mm">'
 P('<div class="route-note" style="margin-top:5mm">🗺️ <b>En la web:</b> compara tu horario con el de Lucía (Sevilla) y Diego (CDMX) en la página digital. <span class="gloss">Online: vergelijk jouw dagindeling met die van de cast.</span></div>')
 P(actx(AN(), "Compara los horarios",
   [{"t":"🌍 Cultura","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Vergelijk. Schrijf bij elk moment de gebruikelijke tijd in España en bij jou.</p>'
+  '<p>Schrijf bij elk moment de gebruikelijke tijd in España en bij jou thuis.</p>'
   '<table class="alf"><thead><tr><th>Momento</th><th>En España</th><th>En tu casa</th></tr></thead><tbody>'
   '<tr><td>el desayuno</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>la comida</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
@@ -691,7 +691,7 @@ P('<ol class="pasos">'
   '<li><b>Escribe tu blog</b> (6–8 frases) con <b>verbos reflexivos</b>, <b>conectores</b> (primero, luego, después), <b>la hora</b> y <b>la frecuencia</b> (siempre, a veces).</li>'
   '<li><b>Añade tus gustos y tu ánimo</b>: «Me gusta… porque…» y «Por la mañana estoy…».</li>'
   '<li><b>Preséntalo en pareja</b>: lee tu día en voz alta; tu compañero/a anota una hora y hace una pregunta.</li>'
-  '<li><b>Graba</b> tu presentación en la web y escúchate. ¿Suena bien? Repite mejor.</li></ol>')
+  '<li><b>Graba</b> te en la página digital, escúchate y vuelve a grabar una vez.</li></ol>')
 P('<div class="se" style="margin-top:4mm">Mi día · el borrador <span class="gloss" style="font-size:8pt">· schrijf je 6–8 zinnen (geruit)</span></div><div class="wbox"></div>')
 P(audiorow('<div class="ic">🎬</div><div><b>Graba tu «día a día»</b> en la página digital (recorder + rúbrica). Escucha, compara con el modelo y vuelve a grabar.</div>',
            qr("Escanea y graba", "Tarea · Mi día a día", seed=170)))
