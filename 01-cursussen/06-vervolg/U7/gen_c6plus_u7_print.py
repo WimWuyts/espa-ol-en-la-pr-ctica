@@ -18,9 +18,24 @@ _sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
 import print_bloques as PB
 import lectura_data as LD
 import escucha_data as ED
+import retos_data as RD
+import retos_print as RP
 
 BODY = []
 def P(*x): BODY.extend(x)
+
+
+def retos(ancla, titulo, intro_es, intro_nl):
+    """Retoblok van één sectie — volledige oefening voor print, verwijskaartje
+    voor wat op de hub of in de PowerPoint leeft."""
+    P('<div class="page">')
+    P(f'<div class="divider">{titulo}</div>')
+    P(f'<div class="intro" style="margin-top:1mm"><b>ES:</b> {intro_es} '
+      f'<span class="gloss">{intro_nl}</span></div>')
+    for r in sorted(RD.por_ancla(ancla), key=lambda x: x["num"]):
+        P(RP.reto_print(r) if r["soporte"] == "print" else RP.reto_puntero(r))
+    P('</div>')
+
 _AN = [0]
 def AN():
     _AN[0] += 1
@@ -157,6 +172,10 @@ P(actx(AN(), "Mis consejos · escribe",
   apoyo="MARCO"))
 sec_close()
 
+retos("salud_c6p", "§1.4 · Retos — la salud en cifras y en treinta segundos",
+      'La huella de la clase, calculada de verdad, y una cuña de radio con <b>problema, consecuencia y consejo</b>.',
+      'De voetafdruk van de klas, echt berekend, en een radiospot met probleem, gevolg en advies.')
+
 # ================= §2 · EL IMPERATIVO =================
 sec_open("2", "§2 · El imperativo (tú) — dar consejos", 'Om <b>advies of instructies te geven</b>: het <b>imperativo</b> (tú). Regelmatig heel kort: -ar → <b>-a</b> (cuida), -er/-ir → <b>-e</b> (come, vive). Slechts <b>8 onregelmatige</b>: <b>ten, ven, pon, haz, di, sal, sé, ve</b>. <span class="gloss">De gebiedende wijs (jij-vorm) — voor tips en instructies.</span>',
         lpd(("8","taalsysteem: imperativo afirmativo"), ("7","woordenschat: salud"), ("3","advies geven")))
@@ -250,6 +269,10 @@ P(audiorow('<div class="ic">🎧</div><div><b>Escucha «¿Qué opinas del medio 
            qr("Escanea y escucha", "§2 · ¿Qué opinas del medio ambiente?", seed=701)))
 P('</div>')
 
+retos("imperativo_c6p", "§2.4 · Retos — mandar sin sonar a sermón",
+      'Un consejo que nadie pidió, un cartel de <b>tres palabras</b>, y una consulta médica imposible.',
+      'Advies waar niemand om vroeg, een affiche van drie woorden, en een onmogelijk doktersconsult.')
+
 # ================= §3 · OPINAR Y ARGUMENTAR =================
 sec_open("3", "§3 · Opinar y argumentar", 'Om je <b>mening te geven</b>: <b>creo que</b>, <b>pienso que</b>, <b>en mi opinión</b>, <b>me parece que</b> + de <b>indicativo</b> (géén subjuntivo). Om te reageren: <b>estoy de acuerdo</b> / <b>no estoy de acuerdo</b>, <b>tienes razón</b>. <span class="gloss">Je mening geven en op de mening van een ander reageren.</span>',
         lpd(("8","taalsysteem: opinar con indicativo"), ("4","interactie: mening & akkoord")))
@@ -301,6 +324,10 @@ P(actx("★", "Tarea comunicativa · mini-debate",
   apoyo="MARCO (Creo que… porque…)"))
 P('<div class="guide"><div class="ic">🎡</div><div><span class="hand">Online:</span> <span class="g">de <b>meningszinnen</b> en de spellen op de hub oefenen opinar/argumentar; + cloze en foutenkliniek.</span></div></div>')
 P('</div>')
+
+retos("opinar", "§3.4 · Retos — creer, comprobar y defender lo contrario",
+      'Cuatro afirmaciones sobre salud de las que <b>dos son falsas</b>, y un debate donde defiendes lo que no piensas.',
+      'Vier beweringen over gezondheid waarvan er twee vals zijn, en een debat waarin je verdedigt wat je niet vindt.')
 
 # ================= §4 · CONECTORES =================
 sec_open("4", "§4 · Conectores — argumentar", 'Om te <b>argumenteren</b> koppel je je meningen met <b>conectoren</b>: <b>porque</b> (omdat), <b>además</b> (bovendien), <b>por eso</b> (daarom), <b>sin embargo</b> (echter), <b>por un lado / por otro lado</b> (enerzijds/anderzijds). <span class="gloss">De verbindingswoorden die van losse zinnen een argument maken.</span>',
@@ -356,6 +383,10 @@ P(actx(AN(), "Une con que / porque",
   '2. Reciclo. Es importante para el planeta. → <span class="wl lg"></span></p>',
   apoyo="LETRA (…que es reutilizable · …porque es importante)"))
 P('</div>')
+
+retos("conectores", "§4.4 · Retos — enlazar lo que se dice",
+      'Primero le das la razón y solo después matizas. Y al final: el <b>manifiesto</b> de la clase.',
+      'Eerst geef je gelijk en pas dan nuanceer je. En op het eind: het manifest van de klas.')
 
 # ================= §5 · LECTURA =================
 sec_open("5", "§5 · Lectura — «Diez consejos para el planeta»", 'Een informatieve advies-/opinietekst. Lee, busca los consejos y reacciona. <span class="gloss">Een advies-/opinietekst. Lezen, de tips zoeken, reageren.</span>',
@@ -442,6 +473,10 @@ P(actx(AN(), "Datos curiosos — une",
   '<p style="margin-left:12.5mm">1-<span class="wl sm"></span> 2-<span class="wl sm"></span> 3-<span class="wl sm"></span> 4-<span class="wl sm"></span></p>',
   apoyo="BANCO"))
 sec_close()
+
+retos("cultura_c6p7", "Reto — una campaña que cruza el océano",
+      'Lo que funciona en Gante no siempre dice nada en Cartagena. Cambiar la forma, mantener la idea.',
+      'Wat in Gent werkt, zegt in Cartagena soms niets. Verander de vorm, houd het idee.')
 
 # ================= TAREA FINAL =================
 sec_open("★", "Tarea final · «Mi cartel de opinión»", 'Crea un <b>cartel</b> sobre la salud of het milieu: geef <b>advies</b> (imperativo) én je <b>beargumenteerde mening</b> (creo que… porque… además…). <span class="gloss">Maak een affiche met advies (imperativo) + je beargumenteerde mening. De capstone van de reis.</span>')
@@ -579,7 +614,7 @@ EDITBAR = '''
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Más español en la práctica · C6+ U7 ¡Opina y cuídate!</title><style>'
-        + CSS + CSS_OVR + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
+        + CSS + CSS_OVR + RP.CSS + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/C6plus_U7.html"
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, "·", len(HTML), "bytes ·", _AN[0], "genummerde oefeningen (excl. V.1–V.5)")

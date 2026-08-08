@@ -18,9 +18,24 @@ _sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
 import print_bloques as PB
 import lectura_data as LD
 import escucha_data as ED
+import retos_data as RD
+import retos_print as RP
 
 BODY = []
 def P(*x): BODY.extend(x)
+
+
+def retos(ancla, titulo, intro_es, intro_nl):
+    """Retoblok van één sectie — volledige oefening voor print, verwijskaartje
+    voor wat op de hub of in de PowerPoint leeft."""
+    P('<div class="page">')
+    P(f'<div class="divider">{titulo}</div>')
+    P(f'<div class="intro" style="margin-top:1mm"><b>ES:</b> {intro_es} '
+      f'<span class="gloss">{intro_nl}</span></div>')
+    for r in sorted(RD.por_ancla(ancla), key=lambda x: x["num"]):
+        P(RP.reto_print(r) if r["soporte"] == "print" else RP.reto_puntero(r))
+    P('</div>')
+
 _AN = [0]
 def AN():
     _AN[0] += 1
@@ -157,6 +172,10 @@ P(actx(AN(), "Mi infancia · escribe",
   apoyo="MARCO"))
 sec_close()
 
+retos("infancia", "§1.4 · Retos — la infancia contada por otros",
+      'Un juguete en dos tiempos, y lo que un adulto <b>podía hacer</b> y ya no.',
+      'Eén speeltje in twee tijden, en wat een volwassene vroeger mocht en nu niet meer.')
+
 # ================= §2 · EL IMPERFECTO =================
 sec_open("2", "§2 · El pretérito imperfecto", 'Voor <b>gewoontes, achtergrond en beschrijving</b> in het verleden: het <b>imperfecto</b>. Regelmatig: -ar → <b>-aba</b>, -er/-ir → <b>-ía</b>. <i>Jugaba, comía, vivía.</i> Slechts <b>3 onregelmatige</b>: <b>era, iba, veía</b>. <span class="gloss">De onvoltooid verleden tijd — heel regelmatig, maar 3 uitzonderingen.</span>',
         lpd(("8","taalsysteem: imperfecto"), ("7","woordenschat: la infancia"), ("3","beschrijven")))
@@ -252,6 +271,10 @@ P(audiorow('<div class="ic">🎧</div><div><b>Escucha «¿Cómo era tu infancia?
            qr("Escanea y escucha", "§2 · ¿Cómo era tu infancia?", seed=601)))
 P('</div>')
 
+retos("imperfecto", "§2.4 · Retos — la nostalgia, con y sin ironía",
+      'Un texto nostálgico sobre algo que era <b>claramente peor</b>, y dos personas que recuerdan lo mismo distinto.',
+      'Een nostalgische tekst over iets dat duidelijk slechter was, en twee mensen die zich hetzelfde anders herinneren.')
+
 # ================= §3 · CONTRASTE INDEF/IMPERF =================
 sec_open("3", "§3 · Contraste — indefinido ↔ imperfecto", 'In een verhaal werken de twee verleden tijden <b>samen</b>: het <b>imperfecto</b> geeft de <b>achtergrond</b> (wat er al aan de gang was), de <b>indefinido</b> geeft de <b>gebeurtenis</b> (wat er toen gebeurde). <i>Jugaba en el patio cuando, de repente, empezó a llover.</i> <span class="gloss">imperfecto = decor/achtergrond · indefinido = de gebeurtenis die het verhaal vooruitduwt.</span>',
         lpd(("8","taalsysteem: contraste indef./imperf."), ("3","vertellen")))
@@ -302,6 +325,10 @@ P(actx("★", "Tarea comunicativa · un recuerdo",
   apoyo="MARCO (Era… / Tenía… cuando, de repente, … pasó)"))
 P('<div class="guide"><div class="ic">🎡</div><div><span class="hand">Online:</span> <span class="g">de <b>contrast-beslisboom</b> en de spellen op de hub oefenen indef/imperf; + cloze en foutenkliniek.</span></div></div>')
 P('</div>')
+
+retos("contraste_c6p", "§3.4 · Retos — el fondo y el hecho",
+      'Una foto de clase de 1998, un cuento que se corta, y doce frases que cambian de tiempo.',
+      'Een klasfoto uit 1998, een verhaal dat afbreekt, en twaalf zinnen die van tijd wisselen.')
 
 # ================= §4 · COMPARATIVOS =================
 sec_open("4", "§4 · Comparativos + que", 'Om te <b>vergelijken</b>: <b>más … que</b> (meer dan), <b>menos … que</b> (minder dan), <b>tan … como</b> (even … als). Onregelmatig: <b>mejor/peor/mayor/menor</b>. En de <b>betrekkelijke que</b>: <i>el niño que jugaba…</i> <span class="gloss">Vergelijkingen + de betrekkelijke bijzin met que.</span>',
@@ -364,6 +391,10 @@ P(actx(AN(), "Antes ↔ ahora · compara",
   '3. Antes <span class="wl md"></span>, y todavía <span class="wl md"></span></p>',
   apoyo="MARCO"))
 P('</div>')
+
+retos("comparativos", "§4.4 · Retos — comparar para entender",
+      'Ser niño en tres países, un juicio a la nostalgia, y algo de hoy explicado a alguien de 1975.',
+      'Kind zijn in drie landen, een proces tegen de nostalgie, en iets van vandaag uitgelegd aan iemand uit 1975.')
 
 # ================= §5 · LECTURA =================
 sec_open("5", "§5 · Lectura — «El pueblo de mi abuela»", 'Dos personas beschrijven hun jeugd. Lee, busca información y reacciona. <span class="gloss">Twee mensen beschrijven hun kindertijd. Lezen, info zoeken, reageren.</span>',
@@ -592,7 +623,7 @@ EDITBAR = '''
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Más español en la práctica · C6+ U6 Cuando era pequeño</title><style>'
-        + CSS + CSS_OVR + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
+        + CSS + CSS_OVR + RP.CSS + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/C6plus_U6.html"
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, "·", len(HTML), "bytes ·", _AN[0], "genummerde oefeningen (excl. V.1–V.5)")

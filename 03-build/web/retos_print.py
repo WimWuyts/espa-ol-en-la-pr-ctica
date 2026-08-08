@@ -1521,6 +1521,205 @@ def _bio_datos(r):
         '<span class="wl sm"></span> <b>, porque</b> <span class="wl md"></span></p>'
         % (filas, marco, _lineas(5, "wl full")))
 
+def _foto_1998(r):
+    """Twaalf zinnen classificeren: achtergrond of feit."""
+    d = r["datos"]
+    filas = "".join(
+        '<tr><td style="font-size:9.2pt">%d</td><td class="fr">%s</td>'
+        '<td style="text-align:center;font-size:9pt">☐ fondo ☐ hecho</td>'
+        '<td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
+        % (i, E(f)) for i, (f, _t, _v, _p) in enumerate(d["frases"], 1))
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<div class="rol">📷 Escuela primaria · curso 1997–1998</div>'
+        '<p style="font-size:9.6pt;margin:0 0 1.5mm"><b>Fondo</b> = cómo era todo · <b>hecho</b> = '
+        'lo que pasó ese día. <span class="gloss">Achtergrond = hoe alles was · feit = wat er die '
+        'dag gebeurde.</span></p>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:8mm">#</th>'
+        '<th>La frase</th><th style="width:30mm">¿Qué es?</th>'
+        '<th style="width:24mm">La forma</th><th style="width:38mm">¿Por qué?</th>'
+        '</tr></thead><tbody>%s</tbody></table>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Dos frases caben en las dos.</b> '
+        '¿Cuáles, y qué cambia el significado?</p>%s'
+        % (filas, marco, _lineas(2, "wl full")))
+
+
+def _tres_infancias(r):
+    """Drie kindertijden in kolommen + vier vergelijkingen."""
+    d = r["datos"]
+    filas = "".join(
+        '<tr><td style="font-size:9.2pt;color:var(--mut)"><b>%s</b></td>'
+        '<td class="fr">%s</td><td class="fr">%s</td><td class="fr">%s</td></tr>'
+        % (E(a), E(c1), E(c2), E(c3)) for a, c1, c2, c3 in d["tabla"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:38mm"></th>'
+        '<th>Cusco 🇵🇪</th><th>Cartagena 🇨🇴</th><th>Gante 🇧🇪</th></tr></thead>'
+        '<tbody>%s</tbody></table>'
+        '<p style="font-size:9.4pt;margin:1.5mm 0 0;color:var(--mut)">Los años noventa, no hoy.</p>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Cuatro comparaciones,</b> cada una con un '
+        'dato de la tabla. Una tiene que ir en contra de lo que esperabais:</p>'
+        '<div class="tira">%s</div>%s'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Y en esto se parecen los tres sitios:</b></p>'
+        '<div style="margin:1mm 0"><span class="wl full"></span></div>'
+        % (filas, marco, _lineas(4, "wl full")))
+
+
+def _cuento(r):
+    """Verhaalbegin + schrijfvlak voor de voortzetting."""
+    d = r["datos"]
+    ini = "".join('<div style="margin:1.4mm 0;font-size:10pt">%s</div>' % E(x)
+                  for x in d["principio"])
+    bf = "".join('<span>%s</span>' % E(v) for v in d["banco_fondo"])
+    bh = "".join('<span>%s</span>' % E(v) for v in d["banco_hecho"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<div class="rol">📖 El principio · subrayad fondo y hecho</div>'
+        + ini +
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Fondo</b> (imperfecto):</p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:0 0 1mm"><b>Hecho</b> (indefinido):</p>'
+        '<div class="tira">%s</div>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2mm 0 1mm"><b>Vuestras diez líneas.</b> Mínimo tres de '
+        'fondo y tres de hecho, mezclados:</p>'
+        '<div class="wbox" style="height:62mm"></div>'
+        '<div class="pliegue">✂ Aquí se corta y se pasa al grupo de al lado</div>'
+        '<p style="font-size:9.8pt;margin:1mm 0 1mm"><b>El final, escrito por el otro grupo:</b></p>'
+        '<div class="wbox" style="height:38mm"></div>' % (bf, bh, marco))
+
+
+def _nostalgia(r):
+    """Nostalgische tekst over iets dat slechter was."""
+    d = r["datos"]
+    temas = "".join(
+        '<div class="ficha fid"><b>%s</b><span class="fl">%s</span>'
+        '<span>☐ lo elegimos</span></div>' % (E(t), E(x)) for t, x in d["temas"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    prohib = "".join('<span class="prohib" style="font-size:8.6pt">%s</span>' % E(x)
+                     for x in d["prohibido"])
+    return (
+        '<div class="fichas f3">%s</div>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Tu marco</b> — todo en imperfecto, todo '
+        'positivo:</p><div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:1.5mm 0 1mm"><b>Y nada de esto:</b></p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2mm 0 1mm"><b>Ocho frases nostálgicas:</b></p>%s'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm">Imperfectos usados: '
+        '<span class="wl sm"></span> de 8 &nbsp;·&nbsp; ¿alguien ha notado que era broma? '
+        '☐ sí ☐ no</p>' % (temas, marco, prohib, _lineas(8, "wl full")))
+
+
+def _consejo(r):
+    """Advies herschrijven van bevel naar aanbod."""
+    d = r["datos"]
+    sit = "".join(
+        '<tr><td style="text-align:center;font-size:9pt;color:var(--mut)">%d</td>'
+        '<td class="fr">%s</td><td style="font-size:9pt;color:var(--gd)">%s</td>'
+        '<td style="text-align:center">☐</td></tr>' % (i, E(s), E(t))
+        for i, (s, t) in enumerate(d["situaciones"], 1))
+    suaves = "".join('<span>%s</span>' % E(x) for x in d["suaves"])
+    prohib = "".join('<span class="prohib" style="font-size:8.6pt">%s</span>' % E(x)
+                     for x in d["prohibido"])
+    return (
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:8mm">#</th>'
+        '<th>La situación</th><th style="width:26mm">El tema</th>'
+        '<th style="width:20mm">La elegimos</th></tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Paso 1 — el consejo directo.</b> Escríbelo '
+        'tal cual sale. <span class="gloss">Schrijf het zoals het eruit komt — het mág belerend '
+        'klinken.</span></p>'
+        '<div style="margin:1mm 0"><span class="wl full"></span></div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Prohibido en la versión final:</b></p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:0 0 1mm"><b>Las fórmulas suaves</b> — dos imperativos, '
+        'pero amables:</p><div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2mm 0 1mm"><b>Paso 2 — el consejo que sí se acepta,</b> '
+        'en cinco frases:</p>%s'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm">Imperativos: <span class="wl sm"></span> '
+        'de 2 &nbsp;·&nbsp; ¿lo aceptaría tu compañero/a? ☐ sí ☐ no'
+        % (sit, prohib, suaves, _lineas(5, "wl full")))
+
+
+def _factcheck(r):
+    """Vier beweringen beoordelen met «creo que»."""
+    d = r["datos"]
+    filas = "".join(
+        '<tr><td style="font-size:9.2pt">%d</td><td class="fr">%s</td>'
+        '<td style="text-align:center;font-size:9pt">☐ V ☐ F</td>'
+        '<td><span class="wl lg"></span></td></tr>' % (i, E(a))
+        for i, (a, _ok, _por) in enumerate(d["afirmaciones"], 1))
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    prohib = "".join('<span class="prohib" style="font-size:8.6pt">%s</span>' % E(x)
+                     for x in d["prohibido"])
+    return (
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:8mm">#</th>'
+        '<th>La afirmación</th><th style="width:24mm">Veredicto</th>'
+        '<th style="width:52mm">Creo que… porque…</th></tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Ojo con la forma:</b> después de '
+        '<b>creo que</b> va el indicativo — «creo que <u>es</u> verdad», «creo que <u>no es</u> '
+        'verdad». <span class="gloss">Na «creo que» komt de indicativo.</span></p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:1.5mm 0 1mm"><b>No vale decir:</b></p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2mm 0 1mm"><b>Para estar seguros, vamos a comprobar…</b> '
+        '(¿qué, y dónde?)</p>%s' % (filas, marco, prohib, _lineas(2, "wl full")))
+
+
+def _cartel(r):
+    """Affiche van precies drie woorden."""
+    d = r["datos"]
+    temas = "".join('<span>%s</span>' % E(t) for t in d["temas"])
+    ej = "".join(
+        '<tr><td class="fr" style="font-size:11pt"><b>%s</b></td>'
+        '<td style="font-size:9pt;color:var(--mut)">%s</td></tr>' % (E(x), E(por))
+        for x, por in d["ejemplos"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<p style="font-size:9.8pt;margin:0 0 1mm"><b>Vuestro tema:</b></p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:1.5mm 0 1mm"><b>Cuatro ejemplos</b> — uno de ellos '
+        'incumple la regla. ¿Cuál? <span class="gloss">Eén ervan breekt de regel.</span></p>'
+        '<table class="wtab" style="width:100%%"><tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Diez versiones.</b> Sí, diez — tachar es '
+        'la mitad del trabajo:</p>%s'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>El cartel definitivo</b> (tres palabras '
+        'grandes) y la imagen:</p>'
+        '<div class="wbox" style="height:56mm"></div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm">Palabras: <span class="wl sm"></span> '
+        '(tiene que ser 3) &nbsp;·&nbsp; ¿cuál es el imperativo? <span class="wl sm"></span> '
+        '&nbsp;·&nbsp; ¿se entiende sin explicación? ☐ sí ☐ no</p>'
+        % (temas, ej, _lineas(10, "wl md"), marco))
+
+
+def _manifiesto(r):
+    """Tien engagementen, tien conectoren, één per stuk."""
+    d = r["datos"]
+    con = "".join('<span>☐ <b>%s</b></span>' % E(c) for c in d["conectores"])
+    ej = "".join('<div class="decl"><span>%s</span></div>' % E(x)
+                 for x in d["ejemplos_compromiso"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    filas = "".join(
+        '<tr><td style="font-size:9.4pt">%d</td><td><span class="wl sm"></span></td>'
+        '<td><span class="wl full"></span></td></tr>' % i for i in range(1, 11))
+    return (
+        '<p style="font-size:9.8pt;margin:0 0 1mm"><b>Los diez conectores.</b> Cada uno exactamente '
+        'una vez — marcadlos según los uséis. <span class="gloss">Elk precies één keer; vink af '
+        'terwijl je schrijft.</span></p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2mm 0 1mm"><b>Así suena un compromiso concreto:</b></p>%s'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Vuestros diez compromisos.</b> En la '
+        'segunda columna, el conector que usáis:</p>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:8mm">#</th>'
+        '<th style="width:26mm">Conector</th><th>El compromiso</th></tr></thead>'
+        '<tbody>%s</tbody></table>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Firmado por la clase de</b> '
+        '<span class="wl sm"></span> <b>, el</b> <span class="wl sm"></span> <b>de</b> '
+        '<span class="wl sm"></span> <b>de 20</b><span class="wl sm"></span></p>'
+        '<div class="wbox" style="height:26mm"></div>' % (con, ej, filas, marco))
+
 _MATERIAL = {"C5-U0-RETO-03": _gps, "C5-U0-RETO-08": _numeros, "C5-U0-RETO-10": _pasaporte,
              "C5-U1-RETO-02": _identidad, "C5-U1-RETO-03": _censo,
              "C5-U1-RETO-06": _aeropuerto, "C5-U1-RETO-08": _error_caro,
@@ -1549,7 +1748,11 @@ _MATERIAL = {"C5-U0-RETO-03": _gps, "C5-U0-RETO-08": _numeros, "C5-U0-RETO-10": 
              "C6P-U4-RETO-02": _sellos, "C6P-U4-RETO-04": _resena_hostal,
              "C6P-U4-RETO-09": _turismo, "C6P-U4-RETO-10": _bingo,
              "C6P-U5-RETO-02": _linea_saboteada, "C6P-U5-RETO-04": _museo,
-             "C6P-U5-RETO-08": _dos_versiones, "C6P-U5-RETO-09": _bio_datos}
+             "C6P-U5-RETO-08": _dos_versiones, "C6P-U5-RETO-09": _bio_datos,
+             "C6P-U6-RETO-01": _foto_1998, "C6P-U6-RETO-04": _tres_infancias,
+             "C6P-U6-RETO-05": _cuento, "C6P-U6-RETO-07": _nostalgia,
+             "C6P-U7-RETO-01": _consejo, "C6P-U7-RETO-04": _factcheck,
+             "C6P-U7-RETO-05": _cartel, "C6P-U7-RETO-10": _manifiesto}
 
 
 def reto_print(r):

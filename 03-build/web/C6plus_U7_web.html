@@ -405,6 +405,11 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
     <div id="motorlink"></div>
   </section>
 
+  <section class="panel" data-p="retos">
+    <h2 class="sec">Retos · tres desafíos 🎯</h2>
+    <p class="lead">Drie retos met <b>één harde regel</b>: een radiospot van <b>dertig seconden</b> waarin het advies pas in de laatste tien komt, een kringspel waarin je <b>eerst gelijk moet geven</b> en pas daarna mag nuanceren, en vier Vlaamse campagnes die je bruikbaar maakt voor Cartagena — de vorm verandert, het idee blijft. <span class="gloss">De zeven andere retos van deze unit staan in het boek en in de PowerPoint.</span></p>
+    <div id="retos_c6p_u7"></div>
+  </section>
   <section class="panel" data-p="hablar">
     <h2 class="sec">Hablar · grábate 🎙️</h2>
     <p class="lead">Neem <b>jezelf</b> op: luister naar het model, spreek in, luister terug, en neem opnieuw op. <span class="gloss">Werkt in Chrome/Edge; sta de micro toe. Print blijft bruikbaar zonder opname.</span></p>
@@ -531,9 +536,291 @@ const GAMES={"salud-memoria": "PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9Im5sIj4KPGhlY
 function toggleTheme(){const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'}
 function speak(t,rate){if(!('speechSynthesis'in window))return;const u=new SpeechSynthesisUtterance(t);u.lang='es-ES';u.rate=rate||.92;
   const vs=speechSynthesis.getVoices();const es=vs.find(v=>/^es/i.test(v.lang));if(es)u.voice=es;try{speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}
+function buildRetos(id,cfg){
+ const host=document.getElementById(id);if(!host)return;
+ host.innerHTML='<div class="retos"></div>';
+ const lista=host.querySelector('.retos');
+ (cfg.retos||[]).forEach((r,n)=>{
+  const c=document.createElement('div');c.className='reto';
+  c.innerHTML='<div class="rcab"><span class="rnum">'+r.num+'</span><h3>'+exEsc(r.nombre)+'</h3>'+
+    '<span class="rlente">'+exEsc(r.lente)+'</span></div>'+
+    '<p class="rgancho"><b>'+exEsc(r.gancho_es)+'</b></p>'+
+    '<p class="rnl">'+exEsc(r.gancho_nl)+'</p>'+
+    '<p class="desc">'+exEsc(r.consigna_nl)+'</p>'+
+    '<div class="rregla"><b>La regla del reto</b>'+exEsc(r.regla)+'</div>'+
+    '<div class="rcuerpo" id="'+id+'_c'+n+'"></div>';
+  lista.appendChild(c);
+  const cuerpo=c.querySelector('.rcuerpo');
+  if(r.tipo==='grabar')retoGrabar(cuerpo,r,id+'_c'+n);
+  else if(r.tipo==='detector')retoDetector(cuerpo,r);
+  else if(r.tipo==='mapa')retoMapa(cuerpo,r);
+  else if(r.tipo==='articulo')retoArticulo(cuerpo,r);
+  else if(r.tipo==='escena')retoEscena(cuerpo,r);
+  else if(r.tipo==='retrato')retoRetrato(cuerpo,r);
+  else if(r.tipo==='voces')retoVoces(cuerpo,r);
+  else if(r.tipo==='opciones')retoOpciones(cuerpo,r);
+ });
+}
+
+function retoGrabar(cont,r,idBase){
+ (r.situaciones||[]).forEach(s=>{
+   const d=document.createElement('div');d.className='rsit';
+   d.innerHTML='<b>'+exEsc(s.es)+'</b><span class="rpista">'+exEsc(s.nl)+
+     (s.pista?' · <i>'+exEsc(s.pista)+'</i>':'')+'</span>';
+   cont.appendChild(d);});
+ const rec=document.createElement('div');rec.id=idBase+'_rec';cont.appendChild(rec);
+ if(typeof makeRecorder==='function')
+   makeRecorder(idBase+'_rec',{title:r.nombre,desc:r.consigna_es,
+     items:(r.items||[]).map(t=>({text:t.text,cue:t.cue}))});
+}
+
+function retoDetector(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ const reglas=r.reglas||[];
+ (r.items||[]).forEach((it,i)=>{
+   const d=document.createElement('div');d.className='detit';
+   const opts=reglas.map((g,k)=>'<option value="'+k+'">'+exEsc(g)+'</option>').join('');
+   d.innerHTML='<div class="dpal">'+exEsc(it.palabra)+'</div>'+
+     '<div class="detbtns"><button class="detbtn" type="button" data-v="1">✓ posible</button>'+
+     '<button class="detbtn" type="button" data-v="0">✗ imposible</button></div>'+
+     '<div class="detrule" hidden><label class="desc">¿Qué regla rompe?</label>'+
+     '<select><option value="-1">— elige la regla —</option>'+opts+'</select></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const fb=d.querySelector('.detfb'),rule=d.querySelector('.detrule'),sel=d.querySelector('select');
+   let cerrado=false;
+   d.querySelectorAll('.detbtn').forEach(b=>{b.onclick=()=>{
+     if(cerrado)return;
+     const dicho=b.dataset.v==='1';
+     if(!dicho){rule.hidden=false;sel.focus();
+       fb.className='detfb show';fb.textContent='Ahora acusa con pruebas: ¿qué regla rompe?';
+       cerrado=false;
+       sel.onchange=()=>{cerrado=true;
+         const bien=(!it.posible)&&(Number(sel.value)===it.regla);
+         d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);sel.disabled=true;
+         b.classList.add(bien?'ok':'no');
+         fb.className='detfb show '+(bien?'g':'b');
+         fb.innerHTML=bien?'<b>✓ acusación correcta</b> · '+exEsc(it.porque)
+           :(it.posible?'<b>✗ esta palabra sí existe</b> · '+exEsc(it.porque)
+                       :'<b>✗ la regla no es esa</b> · '+exEsc(it.porque));};
+       return;}
+     cerrado=true;
+     const bien=it.posible;
+     d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);
+     b.classList.add(bien?'ok':'no');
+     fb.className='detfb show '+(bien?'g':'b');
+     fb.innerHTML=(bien?'<b>✓ correcto</b> · ':'<b>✗ no</b> · ')+exEsc(it.porque);};});
+   caja.appendChild(d);});
+}
+
+// ── artículo: el/la op verzonnen woorden ───────────────────────────────────
+// Het lidwoord alléén zegt niets: wie «la» kiest bij een -ma-woord heeft geraden,
+// ook als het toevallig klopt. Daarom moet de leerling er de regel bij kiezen, en
+// telt het pas als het allebei klopt.
+// ── retrato hablado: luister en kies het juiste portret ────────────────────
+// De portretten worden getekend, niet beschreven: stonden de kenmerken in
+// woorden op de kaart, dan werd het woorden matchen in plaats van luisteren.
+function retoCara(x,y,r,p){
+ const pelo = p.pelo.indexOf('largo')>=0
+   ? (p.pelo.indexOf('rizado')>=0
+      ? '<path d="M'+(x-r-4)+' '+(y+r+6)+' q-6,-'+(r+18)+' '+(r+6)+',-'+(r+14)+' q'+r+',-8 '+(r+6)+','+(r+14)+' q6,'+(r+8)+' -4,'+(r+2)+' q-'+r+',-14 -'+(2*r-4)+',0 Z" fill="#5C4433"/>'
+      : '<path d="M'+(x-r-2)+' '+(y+r+8)+' l0,-'+(r+16)+' q'+(r+2)+',-14 '+(2*r+4)+',0 l0,'+(r+16)+' l-8,0 l0,-'+r+' q-'+r+',-10 -'+(2*r-8)+',0 l0,'+r+' Z" fill="#5C4433"/>')
+   : (p.pelo.indexOf('rizado')>=0
+      ? '<path d="M'+(x-r-2)+' '+y+' q2,-'+(r+14)+' '+(r+2)+',-'+(r+10)+' q'+r+',-6 '+(r+2)+','+(r+10)+' q2,10 -6,6 q-'+r+',-14 -'+(2*r-8)+',0 q-8,4 -6,-6 Z" fill="#5C4433"/>'
+      : '<path d="M'+(x-r-2)+' '+(y-2)+' q0,-'+(r+12)+' '+(r+2)+',-'+(r+12)+' q'+(r+2)+',0 '+(r+2)+','+(r+12)+' l-6,2 q-'+r+',-12 -'+(2*r-4)+',0 Z" fill="#5C4433"/>');
+ const gafas = p.gafas
+   ? '<g fill="none" stroke="#20242E" stroke-width="2.4"><circle cx="'+(x-r/2.4)+'" cy="'+(y+2)+'" r="'+(r/3.4)+'"/>'
+     +'<circle cx="'+(x+r/2.4)+'" cy="'+(y+2)+'" r="'+(r/3.4)+'"/>'
+     +'<line x1="'+(x-r/2.4+r/3.4)+'" y1="'+(y+2)+'" x2="'+(x+r/2.4-r/3.4)+'" y2="'+(y+2)+'"/></g>'
+   : '<circle cx="'+(x-r/2.4)+'" cy="'+(y+1)+'" r="2.6" fill="#20242E"/>'
+     +'<circle cx="'+(x+r/2.4)+'" cy="'+(y+1)+'" r="2.6" fill="#20242E"/>';
+ const boca = p.sonrie
+   ? '<path d="M'+(x-r/2.6)+' '+(y+r/2.2)+' q'+(r/2.6)+','+(r/3.2)+' '+(r/1.3)+',0" stroke="#20242E" stroke-width="2.4" fill="none" stroke-linecap="round"/>'
+   : '<line x1="'+(x-r/3)+'" y1="'+(y+r/1.9)+'" x2="'+(x+r/3)+'" y2="'+(y+r/1.9)+'" stroke="#20242E" stroke-width="2.4" stroke-linecap="round"/>';
+ return '<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="#F2D3B6"/>'+pelo+gafas+boca;
+}
+
+function retoRetrato(cont,r){
+ const rs=r.retratos||[], ds=r.descripciones||[];
+ let i=0, aciertos=0;
+ cont.innerHTML='<div class="rmarca"><button class="escbtn rplay" type="button">▶ Escuchar la descripción</button>'+
+   '<span class="rcuenta rvuelta">1 / '+ds.length+'</span>'+
+   '<span class="desc rtanteo">aciertos: 0</span></div>'+
+   '<div class="retratos"></div><div class="detfb rfb" role="status" aria-live="polite"></div>';
+ const caja=cont.querySelector('.retratos');
+ rs.forEach(p=>{
+   const b=document.createElement('button');b.type='button';b.className='retrato';b.dataset.n=p.n;
+   b.innerHTML='<svg viewBox="0 0 100 100" aria-hidden="true">'+retoCara(50,52,26,p)+'</svg>'+
+     '<span class="rnum2">'+p.n+'</span>';
+   b.onclick=()=>{
+     if(!ds[i])return;
+     const fb=cont.querySelector('.rfb'), bien=Number(b.dataset.n)===ds[i].correcto;
+     b.classList.add(bien?'ok':'no');
+     fb.className='detfb show rfb '+(bien?'g':'b');
+     fb.innerHTML=bien?'<b>✓ correcto</b> · '+exEsc(ds[i].texto)
+       :'<b>✗ no</b> · era el '+ds[i].correcto+' — '+exEsc(ds[i].texto);
+     if(bien)aciertos++;
+     cont.querySelector('.rtanteo').textContent='aciertos: '+aciertos;
+     i++;
+     setTimeout(()=>{caja.querySelectorAll('.retrato').forEach(x=>x.classList.remove('ok','no'));
+       if(i<ds.length){cont.querySelector('.rvuelta').textContent=(i+1)+' / '+ds.length;fb.className='detfb rfb';}
+       else{cont.querySelector('.rvuelta').textContent='hecho';
+         fb.className='detfb show rfb g';fb.innerHTML='<b>Listo</b> · ahora describe tú uno a tu compañero/a.';}},1400);};
+   caja.appendChild(b);});
+ cont.querySelector('.rplay').onclick=()=>{if(ds[i]&&typeof speak==='function')speak(ds[i].texto);};
+}
+
+// ── drie stemmen, één samenvatting: bemiddelen ─────────────────────────────
+// ── opciones: kies uit N, mét verplichte uitleg ────────────────────────────
+// Breed inzetbaar: welk werkwoord past bij dit uur, welke Spaanse uitdrukking
+// dekt deze Vlaamse. Er is telkens één juist antwoord, en de feedback zegt niet
+// alleen wát maar ook waarom — anders leert een gokker niets.
+function retoOpciones(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ (r.items||[]).forEach(it=>{
+   const d=document.createElement('div');d.className='detit';
+   d.innerHTML=(it.audio?'<button class="escbtn opplay" type="button">▶ Escuchar</button>':'')+
+     '<div class="dpal">'+exEsc(it.enunciado)+'</div>'+
+     '<div class="detbtns"></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const btns=d.querySelector('.detbtns'), fb=d.querySelector('.detfb');
+   let cerrado=false;
+   (it.opciones||[]).forEach(o=>{
+     const b=document.createElement('button');b.type='button';b.className='detbtn';b.textContent=o;
+     b.onclick=()=>{if(cerrado)return;cerrado=true;
+       const bien=o===it.correcta;
+       btns.querySelectorAll('.detbtn').forEach(x=>{x.disabled=true;
+         if(x.textContent===it.correcta)x.classList.add('ok');});
+       if(!bien)b.classList.add('no');
+       fb.className='detfb show '+(bien?'g':'b');
+       fb.innerHTML=(bien?'<b>✓ correcto</b>':'<b>✗ es «'+exEsc(it.correcta)+'»</b>')+
+         (it.porque?' · '+exEsc(it.porque):'');};
+     btns.appendChild(b);});
+   const pl=d.querySelector('.opplay');
+   if(pl)pl.onclick=()=>{if(typeof speak==='function')speak(it.enunciado);};
+   caja.appendChild(d);});
+}
+
+function retoVoces(cont,r){
+ cont.innerHTML='<div class="voces"></div>'+
+   '<p class="desc">Schrijf je samenvatting in drie zinnen — korter dan wat je hoorde, en niemand mag wegvallen.</p>'+
+   '<textarea class="escta" rows="5" aria-label="Jouw samenvatting" placeholder="1. Rosa vindt…"></textarea>';
+ const caja=cont.querySelector('.voces');
+ (r.voces||[]).forEach(v=>{
+   const d=document.createElement('div');d.className='voz';
+   d.innerHTML='<button class="escbtn vozbtn" type="button">▶</button>'+
+     '<div><b>'+exEsc(v.quien)+'</b><span class="vozt">'+exEsc(v.texto)+'</span></div>';
+   d.querySelector('.vozbtn').onclick=()=>{if(typeof speak==='function')speak(v.texto);};
+   caja.appendChild(d);});
+}
+
+function retoArticulo(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ const reglas=r.reglas||[];
+ (r.objetos||[]).forEach(it=>{
+   const d=document.createElement('div');d.className='detit';
+   const opts=reglas.map((g,k)=>'<option value="'+g.clave+'">'+exEsc(g.texto)+'</option>').join('');
+   d.innerHTML='<div class="dpal">¿… '+exEsc(it.palabra)+'?</div>'+
+     '<div class="detbtns"><button class="detbtn" type="button" data-a="el">el</button>'+
+     '<button class="detbtn" type="button" data-a="la">la</button></div>'+
+     '<div class="detrule" hidden><label class="desc">¿Qué regla usas?</label>'+
+     '<select><option value="">— elige la regla —</option>'+opts+'</select></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const fb=d.querySelector('.detfb'),rule=d.querySelector('.detrule'),sel=d.querySelector('select');
+   let elegido=null;
+   d.querySelectorAll('.detbtn').forEach(b=>{b.onclick=()=>{
+     if(elegido)return;
+     elegido=b.dataset.a;rule.hidden=false;sel.focus();
+     fb.className='detfb show';fb.textContent='¿Y por qué? Elige la regla.';};});
+   sel.onchange=()=>{
+     if(!sel.value)return;
+     const bienArt=elegido===it.articulo, bienRegla=sel.value===it.regla;
+     d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);sel.disabled=true;
+     const b=d.querySelector('.detbtn[data-a="'+elegido+'"]');
+     b.classList.add(bienArt&&bienRegla?'ok':'no');
+     fb.className='detfb show '+(bienArt&&bienRegla?'g':'b');
+     if(bienArt&&bienRegla)fb.innerHTML='<b>✓ correcto</b> · '+exEsc(it.porque);
+     else if(bienArt)fb.innerHTML='<b>✗ el artículo sí, la regla no</b> · '+exEsc(it.porque)+
+       ' — con la regla equivocada, has adivinado.';
+     else fb.innerHTML='<b>✗ es «'+exEsc(it.articulo)+' '+exEsc(it.palabra)+'»</b> · '+exEsc(it.porque);};
+   caja.appendChild(d);});
+}
+
+// ── escena: dezelfde plek, twee tijden ─────────────────────────────────────
+// Twee panelen naast elkaar; klik een voorwerp en je hoort en ziet hoe het heet.
+// De twee voorwerpen die in beide scènes staan, zijn de controle: wie die als
+// verschil noteert, heeft te snel gekeken.
+function retoEscena(cont,r){
+ const items=r.escena||[];
+ function panel(cual,titulo,sub){
+   const propios=items.filter(i=>i.cuando===cual||i.cuando==='ambas');
+   const formas=propios.map((i,k)=>i.forma==='circ'
+     ? '<circle class="eob" data-k="'+k+'" data-c="'+cual+'" cx="'+(i.x+i.w/2)+'" cy="'+(i.y+i.h/2)+
+       '" r="'+(i.w/2)+'" fill="'+i.color+'"/>'
+     : '<rect class="eob" data-k="'+k+'" data-c="'+cual+'" x="'+i.x+'" y="'+i.y+'" width="'+i.w+
+       '" height="'+i.h+'" rx="1.5" fill="'+i.color+'"/>').join('');
+   return '<figure class="esc"><figcaption><b>'+exEsc(titulo)+'</b> <span>'+exEsc(sub)+'</span></figcaption>'+
+     '<svg viewBox="0 0 100 84" role="img" aria-label="'+exEsc(titulo)+'">'+
+     '<rect x="0" y="0" width="100" height="52" fill="#E8F1F7"/>'+          // lucht
+     '<rect x="0" y="52" width="100" height="32" fill="#EDE7DC"/>'+          // plein
+     '<rect x="0" y="30" width="100" height="22" fill="#D8CFC0"/>'+          // gevelrij
+     '<rect x="6" y="24" width="16" height="28" fill="#C6B9A6"/>'+
+     '<rect x="44" y="20" width="18" height="32" fill="#C6B9A6"/>'+
+     '<rect x="76" y="26" width="18" height="26" fill="#C6B9A6"/>'+
+     formas+'</svg><p class="escnom" role="status" aria-live="polite">Klik een voorwerp.</p></figure>';
+ }
+ cont.innerHTML='<div class="escenas">'+panel('antes','1985','la misma plaza, hace cuarenta años')+
+   panel('ahora','ahora','la plaza hoy')+'</div>'+
+   '<p class="desc">De twee dingen die in <b>allebei</b> de scènes staan, zijn de controle: die zijn géén verschil.</p>';
+ cont.querySelectorAll('.eob').forEach(el=>{
+   el.style.cursor='pointer';
+   el.addEventListener('click',()=>{
+     const cual=el.dataset.c, k=Number(el.dataset.k);
+     const propios=items.filter(i=>i.cuando===cual||i.cuando==='ambas');
+     const it=propios[k];if(!it)return;
+     const fig=el.closest('figure');
+     fig.querySelector('.escnom').innerHTML='<b>'+exEsc(it.es)+'</b> — '+exEsc(it.nl)+
+       (it.cuando==='ambas'?' <i>(en las dos escenas)</i>':'');
+     el.style.stroke='#157355';el.style.strokeWidth='1.4';
+     if(typeof speak==='function')speak(it.es);});});
+ const marco=document.createElement('div');marco.className='rsit';
+ marco.innerHTML='<b>Tu marco</b><span class="rpista">'+
+   (r.marco||[]).map(exEsc).join(' · ')+'</span>';
+ cont.appendChild(marco);
+ const ta=document.createElement('textarea');ta.className='escta';ta.rows=5;
+ ta.setAttribute('aria-label','Jouw vijf zinnen');ta.placeholder='1. En la plaza de ahora hay…';
+ cont.appendChild(ta);
+}
+
+function retoMapa(cont,r){
+ const paises=r.paises||[];
+ cont.innerHTML='<div class="rmarca"><span class="rcuenta">0 / '+paises.length+'</span>'+
+   '<div class="rbarra"><i></i></div>'+
+   '<button class="otra rreset" type="button">↺ empezar de nuevo</button></div>'+
+   '<p class="desc">Klik een land, zeg het hardop, laat iemand bevestigen — dan pas aanklikken. '+
+   'De teller is van de klas, niet van jou.</p><div class="rpais"></div>';
+ const cont2=cont.querySelector('.rpais'),cuenta=cont.querySelector('.rcuenta'),
+       barra=cont.querySelector('.rbarra i');
+ let hechos=0;
+ function pinta(iso){ // laat het land op de grote kaart meekleuren, als die er is
+   const svg=document.querySelector('#mapwrap svg');if(!svg)return;
+   const p=svg.querySelector('[data-c="'+iso+'"]');if(p)p.style.filter='saturate(1.6) brightness(1.05)';}
+ paises.forEach(p=>{
+   const b=document.createElement('button');b.type='button';
+   b.innerHTML=exEsc(p.nombre)+'<span class="sil">'+exEsc(p.silabas)+'</span>';
+   b.onclick=()=>{if(b.classList.contains('hecho'))return;
+     b.classList.add('hecho');hechos++;pinta(p.iso);
+     cuenta.textContent=hechos+' / '+paises.length;
+     barra.style.width=Math.round(hechos/paises.length*100)+'%';
+     if(typeof speak==='function')speak(p.nombre);
+     if(hechos===paises.length)cuenta.textContent='¡'+paises.length+' / '+paises.length+' — lo habéis conseguido!';};
+   cont2.appendChild(b);});
+ cont.querySelector('.rreset').onclick=()=>{hechos=0;cuenta.textContent='0 / '+paises.length;
+   barra.style.width='0';cont2.querySelectorAll('button').forEach(x=>x.classList.remove('hecho'));};
+}
+
 const TTS=('speechSynthesis'in window);
 if(TTS){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}
-const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
+const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['retos','Retos 🎯'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
 const sn=document.getElementById('subnav');
 // ── tabbladen · het adres volgt mee ──────────────────────────────────────────
 // #escuchar opent dat tabblad; #lec_1 opent het paneel waar dat element in
@@ -1348,6 +1635,7 @@ function buildGramType(){
  buildType('gt_3',{title:"Los conectores — une tus argumentos",desc:"Vier verbindingswoorden met elk hun eigen werk: <b>porque</b> geeft de reden · <b>por eso</b> het gevolg · <b>además</b> voegt toe · <b>sin embargo</b> zet er iets tegenover. En let op de klassieke valstrik: «dus» is <b>por eso</b> of <b>así que</b>, nooit <i>luego</i>.",accents:'soft',perBlock:12,expect:12,items:[{"q": "Reciclo ___ quiero cuidar el planeta.", "ans": "porque", "why": "reden → porque"}, {"q": "No hay autobús; ___ voy en bici.", "ans": "por eso", "why": "gevolg → por eso"}, {"q": "El deporte es sano. ___, te ayuda a dormir mejor.", "ans": "Además", "why": "extra argument → además"}, {"q": "Comer sano cuesta tiempo. ___, es más barato a la larga.", "ans": "Sin embargo", "why": "tegenstelling → sin embargo"}, {"q": "Bebo mucha agua ___ hace calor.", "ans": "porque"}, {"q": "Tengo mucho estrés; ___ voy a caminar cada tarde.", "ans": "por eso"}, {"q": "El plástico contamina. ___, tarda cientos de años en desaparecer.", "ans": "Además"}, {"q": "Me gusta la carne. ___, como menos que antes.", "ans": "Sin embargo"}, {"q": "Por un lado es cómodo; ___ otro lado, es caro.", "ans": "por", "why": "vaste tweeling: por un lado… por otro lado…"}, {"q": "No fumo ___ es malo para la salud.", "ans": "porque"}, {"q": "La ciudad tiene mucho tráfico; ___ el aire está contaminado.", "ans": "por eso"}, {"q": "Apago la luz al salir. ___, desenchufo el cargador.", "ans": "Además"}]});
 }
 buildGramType();
+buildRetos("retos_c6p_u7",{"retos": [{"num": 7, "nombre": "Anuncio de servicio público", "lente": "📻 mediaformat", "gancho_es": "Treinta segundos para cambiar una costumbre. Problema, consecuencia, consejo.", "gancho_nl": "Dertig seconden om een gewoonte te veranderen. Probleem, gevolg, advies.", "consigna_es": "Grabad la cuña de radio con las tres partes, en ese orden.", "consigna_nl": "Neem de radiospot op met de drie delen, in die volgorde.", "regla": "Drie delen, in deze volgorde: probleem, gevolg, advies. Het advies staat in de imperatief en komt pas in de laatste tien seconden — een spot die met het advies begint, luistert niemand uit.", "tipo": "grabar", "situaciones": [{"es": "¿Sabías que …?", "nl": "", "pista": ""}, {"es": "Cada año, en … , …", "nl": "", "pista": ""}, {"es": "Y eso significa que …", "nl": "", "pista": ""}, {"es": "Por eso: … , … y … .", "nl": "", "pista": ""}, {"es": "Un mensaje de la clase de español.", "nl": "", "pista": ""}], "items": [{"text": "Mi cuña de radio", "cue": "dertig seconden · problema (unos 10 segundos) → consecuencia (unos 12 segundos) → consejo (unos 8 segundos, en imperativo)"}]}, {"num": 8, "nombre": "De acuerdo pero…", "lente": "🔓 puzzel & escape", "gancho_es": "Primero le das la razón. Y solo después matizas.", "gancho_nl": "Eerst geef je gelijk. En pas daarna nuanceer je.", "consigna_es": "Elige la reacción que primero acepta y luego matiza.", "consigna_nl": "Kies de reactie die eerst instemt en pas dan nuanceert.", "regla": "Je mag pas nuanceren nadat je hebt ingestemd. Wie meteen tegenspreekt, valt af — ook als hij gelijk heeft.", "tipo": "opciones", "items": [{"enunciado": "«Hay que prohibir los móviles en todo el instituto.»", "correcta": "Estoy de acuerdo en que distraen, aunque en algunas clases nos hacen falta.", "opciones": ["Estoy de acuerdo en que distraen, aunque en algunas clases nos hacen falta.", "No, eso es una tontería.", "Sí, totalmente."], "porque": "instemmen mét het deel dat klopt, en dan pas de beperking — «sí, totalmente» nuanceert niet"}, {"enunciado": "«Reciclar en casa no sirve para nada si las fábricas siguen igual.»", "correcta": "Tienes razón en que las fábricas contaminan más, sin embargo lo pequeño también cuenta.", "opciones": ["Tienes razón en que las fábricas contaminan más, sin embargo lo pequeño también cuenta.", "Eso no es verdad.", "Es cierto, no sirve de nada."], "porque": "de derde optie stemt in maar nuanceert niet: dan is er geen gesprek meer"}, {"enunciado": "«Hacer deporte no es para todo el mundo.»", "correcta": "Es verdad que no a todos les gusta, aunque moverse un poco sí es para todos.", "opciones": ["Es verdad que no a todos les gusta, aunque moverse un poco sí es para todos.", "Claro que sí lo es.", "Pues yo hago deporte todos los días."], "porque": "de derde is geen reactie maar een verandering van onderwerp"}, {"enunciado": "«En Costa Rica todo el mundo vive tranquilo, por eso dicen pura vida.»", "correcta": "Es una expresión bonita, es decir, dice más de cómo se saludan que de cómo viven.", "opciones": ["Es una expresión bonita, es decir, dice más de cómo se saludan que de cómo viven.", "Sí, allí no hay problemas.", "Eso es un cliché."], "porque": "«eso es un cliché» klopt maar spreekt meteen tegen; de eerste nuanceert én blijft beleefd"}, {"enunciado": "«Las campañas de salud no cambian nada.»", "correcta": "Puede ser que muchas no funcionen, por otro lado algunas sí han cambiado costumbres.", "opciones": ["Puede ser que muchas no funcionen, por otro lado algunas sí han cambiado costumbres.", "No estoy de acuerdo.", "Depende."], "porque": "«depende» is geen nuance maar een ontwijking: er komt geen tweede deel"}]}, {"num": 9, "nombre": "Traduce la campaña", "lente": "🤝 bemiddelen", "gancho_es": "La campaña funciona en Gante. En Cartagena, no dice nada.", "gancho_nl": "De campagne werkt in Gent. In Cartagena zegt ze niets.", "consigna_es": "Elige qué hay que cambiar para que la campaña funcione allí.", "consigna_nl": "Kies wat er moet veranderen zodat de campagne daar werkt.", "regla": "Vertalen volstaat niet: je verandert wat cultureel niet werkt en zet er iets gelijkwaardigs voor in de plaats. Alleen de woorden omzetten is de foute keuze.", "tipo": "opciones", "items": [{"enunciado": "«Ga met de fiets naar school» — met een beeld van een fietsstraat.", "correcta": "Cambiar la bici por el transporte que sí existe allí, y mantener la idea de moverse.", "opciones": ["Cambiar la bici por el transporte que sí existe allí, y mantener la idea de moverse.", "Traducirla: «Ve en bici al instituto».", "No usarla: allí no hay bicis."], "porque": "de fiets is in Cartagena geen dagelijks schoolvervoer; het idee (bewegen) wél overdraagbaar"}, {"enunciado": "«Drink water uit de kraan» — tegen plastic flessen.", "correcta": "Adaptarla: hablar del agua filtrada o de la fuente del barrio, según lo que se pueda beber.", "opciones": ["Adaptarla: hablar del agua filtrada o de la fuente del barrio, según lo que se pueda beber.", "Traducirla igual: «Bebe agua del grifo».", "Quitar el tema del agua."], "porque": "kraanwater is niet overal drinkbaar; de boodschap letterlijk overnemen kan schadelijk zijn"}, {"enunciado": "«Praat erover» — over mentale gezondheid, met een lege stoel.", "correcta": "Mantener la idea pero cambiar la imagen por una conversación en un sitio cotidiano.", "opciones": ["Mantener la idea pero cambiar la imagen por una conversación en un sitio cotidiano.", "Traducirla: «Habla de ello».", "Cambiar el tema por otro menos personal."], "porque": "de lege stoel verwijst naar een therapietraditie die niet overal gedeeld wordt; het gesprek zelf wel"}, {"enunciado": "«Sorteer je afval in vier bakken» — met de kleurcodes van hier.", "correcta": "Cambiar los colores y el número de contenedores por los del sitio, y mantener el gesto.", "opciones": ["Cambiar los colores y el número de contenedores por los del sitio, y mantener el gesto.", "Traducir los colores.", "Explicar el sistema belga."], "porque": "kleurcodes zijn lokaal; wie het Belgische systeem uitlegt, maakt een les in plaats van een campagne"}]}]});
 buildEscucha("esc_c6p_u7",{"title": "En la consulta", "audio": "audio/C6plus_U7.mp3", "expectDetalle": 5, "situacion": {"lugar": "El consultorio del instituto, San José de Costa Rica", "quien": "La doctora Solano y Mateo, que duerme mal", "que": "Mateo cuenta su problema y recibe consejos; uno no le gusta", "claves": ["¿qué te pasa?", "cuídate · muévete", "es importante + infinitivo"]}, "guion": [{"who": "Doctora", "es": "Buenos días, Mateo. Siéntate. ¿Qué te pasa?", "nl": "Goedemorgen Mateo. Ga zitten. Wat scheelt er?"}, {"who": "Mateo", "es": "Duermo fatal. Me acuesto a las once, pero no me duermo hasta las dos.", "nl": "Ik slaap heel slecht. Ik ga om elf uur naar bed, maar ik val pas om twee uur in slaap."}, {"who": "Doctora", "es": "¿Y qué haces en la cama hasta las dos?", "nl": "En wat doe je tot twee uur in bed?"}, {"who": "Mateo", "es": "El móvil, claro. Series, mensajes… un poco de todo.", "nl": "Mijn gsm natuurlijk. Series, berichten… van alles wat."}, {"who": "Doctora", "es": "Ahí está el problema. Primer consejo: deja el móvil fuera del cuarto. Cárgalo en la cocina.", "nl": "Daar zit het probleem. Eerste advies: laat je gsm buiten je kamer. Laad hem op in de keuken."}, {"who": "Mateo", "es": "¿Fuera del cuarto? Uf. ¿Y el despertador?", "nl": "Buiten de kamer? Oef. En mijn wekker dan?"}, {"who": "Doctora", "es": "Compra un despertador de tres euros. Segundo consejo: muévete. ¿Haces deporte?", "nl": "Koop een wekker van drie euro. Tweede advies: beweeg. Doe je aan sport?"}, {"who": "Mateo", "es": "Antes jugaba fútbol, pero ahora no tengo tiempo.", "nl": "Vroeger speelde ik voetbal, maar nu heb ik geen tijd."}, {"who": "Doctora", "es": "No hace falta un equipo. Camina media hora al día. Y por la tarde, nada de café.", "nl": "Je hebt geen ploeg nodig. Wandel een half uur per dag. En 's namiddags geen koffie."}, {"who": "Mateo", "es": "Eso sí que no. El café de la tarde no lo dejo.", "nl": "Dát nu net niet. Mijn namiddagkoffie geef ik niet op."}, {"who": "Doctora", "es": "Está bien, negociamos: uno, y antes de las cuatro. Es importante beber agua, además. Dos litros al día.", "nl": "Goed, we onderhandelen: eentje, en vóór vier uur. Het is trouwens belangrijk om water te drinken. Twee liter per dag."}, {"who": "Mateo", "es": "Vale. Móvil fuera, caminar, un café antes de las cuatro y agua.", "nl": "Oké. Gsm buiten, wandelen, één koffie vóór vier uur en water."}, {"who": "Doctora", "es": "Exacto. Prueba dos semanas y vuelve. Cuídate, Mateo.", "nl": "Precies. Probeer het twee weken en kom terug. Zorg goed voor jezelf, Mateo."}], "global": {"q": "¿De qué hablan la doctora y Mateo?", "opts": ["De por qué duerme mal y de qué puede cambiar", "De una lesión de fútbol", "De un examen de biología"], "ans": "De por qué duerme mal y de qué puede cambiar", "why": "probleem → vier adviezen → afspraak"}, "detalle": [{"q": "¿A qué hora se duerme Mateo?", "opts": ["A las dos", "A las once", "A las cuatro"], "ans": "A las dos", "why": "«no me duermo hasta las dos»"}, {"q": "¿Dónde tiene que cargar el móvil?", "opts": ["En la cocina", "En su cuarto", "En el instituto"], "ans": "En la cocina", "why": "«Cárgalo en la cocina»"}, {"q": "¿Cuánto tiene que caminar al día?", "opts": ["Media hora", "Dos horas", "Diez minutos"], "ans": "Media hora", "why": "«Camina media hora al día»"}, {"q": "¿Qué consejo no acepta Mateo?", "opts": ["Dejar el café de la tarde", "Caminar cada día", "Beber agua"], "ans": "Dejar el café de la tarde", "why": "«El café de la tarde no lo dejo»"}, {"q": "¿Cuánta agua tiene que beber al día?", "opts": ["Dos litros", "Un litro", "Tres litros"], "ans": "Dos litros", "why": "«Dos litros al día»"}], "vf": [{"q": "Mateo juega al fútbol ahora.", "ans": false, "prueba": "ahora no tengo tiempo"}, {"q": "La doctora acepta un café antes de las cuatro.", "ans": true, "prueba": "uno, y antes de las cuatro"}, {"q": "Mateo tiene que volver a la consulta.", "ans": true, "prueba": "prueba dos semanas y vuelve"}], "produccion": {"prompt": "Un amigo te dice que está siempre cansado. Graba cuatro consejos con el imperativo (uno con pronombre: cuídate · muévete · bébela) y explica cada uno con porque, además o por eso.", "modo": "grabar", "modelo": "Primero, … porque… Además, … Y sobre todo, cuídate: … Por eso…"}});
 buildAudioCortos("esc_c6p_u7",{"fragmentos": [{"etiqueta": "§2 · ¿Qué opinas del medio ambiente?", "seccion": "§2.3 · Un cartel de consejos", "titulo": "¿Qué opinas del medio ambiente? — Valen y Diego", "tarea": "1ª: waarover praten ze? — 2ª: welke raad geven ze? Schrijf op.", "audio": "audio/C6plus_U7_01.mp3", "guion": [{"who": "Valen", "es": "Diego, ¿qué opinas del medio ambiente? En mi barrio casi nadie recicla.", "nl": "Diego, wat vind jij van het milieu? In mijn buurt recycleert bijna niemand."}, {"who": "Diego", "es": "Creo que es el problema más importante de nuestra generación. En mi opinión, tenemos que cambiar cosas pequeñas cada día.", "nl": "Ik denk dat het het belangrijkste probleem van onze generatie is. Volgens mij moeten we elke dag kleine dingen veranderen."}, {"who": "Valen", "es": "Estoy de acuerdo. Pienso que el plástico es lo peor: en la playa de Cartagena hay botellas por todas partes.", "nl": "Ik ben het ermee eens. Ik vind plastic het ergste: op het strand van Cartagena liggen overal flessen."}, {"who": "Diego", "es": "Pues yo no estoy de acuerdo del todo. Me parece que el transporte contamina más que el plástico.", "nl": "Nou, ik ben het er niet helemaal mee eens. Het lijkt me dat vervoer meer vervuilt dan plastic."}, {"who": "Valen", "es": "Tienes razón en eso. ¿Y qué consejo das tú?", "nl": "Daarin heb je gelijk. En welke raad geef jij?"}, {"who": "Diego", "es": "Muy fácil: usa la bici o el bus, y no cojas el coche para dos calles.", "nl": "Heel eenvoudig: gebruik de fiets of de bus, en neem de auto niet voor twee straten."}, {"who": "Valen", "es": "Yo doy otro: lleva siempre una botella tuya y no compres agua en plástico.", "nl": "Ik geef er nog een: neem altijd je eigen fles mee en koop geen water in plastic."}, {"who": "Diego", "es": "Y un tercero, para el instituto: apaga la luz cuando sales del aula.", "nl": "En een derde, voor op school: doe het licht uit als je het lokaal verlaat."}, {"who": "Valen", "es": "Perfecto. Creo que ya tenemos nuestro cartel.", "nl": "Perfect. Ik denk dat we ons affiche al hebben."}]}]});
 buildLectura("lec_c6p_u7",{"titulo": "Carta al director: el patio de nuestro instituto", "tipo": "carta al director (opinión de una lectora)", "emisor": "Sofía Vargas, alumna de sexto", "receptor": "El periódico local de San José", "objetivo": "Salvar los cuatro árboles del patio", "prediccion": {"q": "Kijk eerst alleen naar de aanhef «Señor director», de handtekening en de verbindingswoorden in vet. Wat wil deze tekst?", "opts": ["Iemand overtuigen", "Iets uitleggen zonder mening", "Iets verkopen"], "ans": "Iemand overtuigen", "why": "Een ingezonden brief verdedigt een standpunt."}, "texto": [["titulo", "✍️ CARTA AL DIRECTOR"], ["lema", "San José, Costa Rica · sección «La voz de los lectores»"], ["p", "Señor director: le escribo porque el mes que viene van a talar los cuatro árboles del patio de mi instituto. Quieren poner un parqueo para los profesores. Creo que es un error y voy a explicar por qué."], ["p", "Primero, por la salud. En San José hace mucho calor y esos árboles son la única sombra del patio. <b>Sin embargo</b>, en el plan nuevo no hay ni un árbol. ¿Dónde vamos a estar al mediodía?"], ["p", "<b>Además</b>, esos árboles no son cualquier árbol: son guanacastes, el árbol nacional. Los plantaron los alumnos hace treinta años. <b>Por eso</b> para nosotros no son un adorno, son parte de la escuela."], ["aviso", ["🤝 UNA PROPUESTA, NO SOLO UNA QUEJA", "No estoy en contra del parqueo. Los profesores también necesitan un lugar para el carro. Pero hay un terreno vacío detrás del gimnasio. Ahí caben veinte carros y no hay que cortar nada."]], ["p", "Costa Rica es famosa en el mundo entero por proteger su naturaleza. Está muy bien decirlo en los folletos. Pero la naturaleza empieza en el patio de una escuela, <b>porque</b> ahí es donde los niños aprenden a cuidarla."], ["firma", "Sofía Vargas, alumna de sexto · Instituto Nacional de San José"]], "traduccion": "BRIEF AAN DE HOOFDREDACTEUR — San José, Costa Rica, rubriek «De stem van de lezers». Geachte heer: ik schrijf u omdat ze volgende maand de vier bomen op de speelplaats van mijn school gaan omhakken. Ze willen er een parking voor de leerkrachten van maken. Ik vind dat een vergissing en ik ga uitleggen waarom. Ten eerste, om de gezondheid. In San José is het erg warm en die bomen zijn de enige schaduw op de speelplaats. Toch staat er in het nieuwe plan geen enkele boom. Waar moeten wij 's middags staan? Bovendien zijn dat geen zomaar bomen: het zijn guanacastes, de nationale boom. Leerlingen hebben ze dertig jaar geleden geplant. Daarom zijn ze voor ons geen versiering, maar een deel van de school. EEN VOORSTEL, GEEN KLACHT: ik ben niet tegen de parking. De leerkrachten hebben ook een plek voor hun auto nodig. Maar achter de sporthal ligt een leeg terrein. Daar passen twintig auto's en hoeft er niets gekapt te worden. Costa Rica is wereldwijd bekend omdat het zijn natuur beschermt. Dat staat mooi in de folders. Maar de natuur begint op de speelplaats van een school, want daar leren kinderen ervoor te zorgen.", "global": {"q": "¿Qué quiere conseguir Sofía con esta carta?", "opts": ["Salvar los árboles del patio", "Construir un gimnasio nuevo", "Prohibir el carro a los profesores"], "ans": "Salvar los árboles del patio"}, "escanear": [{"q": "¿Cuántos árboles quieren talar? (en cifras)", "ans": "4", "alt": ["cuatro", "cuatro árboles"], "why": "«los cuatro árboles del patio»"}, {"q": "¿Qué quieren poner en su lugar?", "ans": "un parqueo", "alt": ["parqueo", "un parking", "un aparcamiento"], "why": "«Quieren poner un parqueo para los profesores»"}, {"q": "¿Cómo se llama el árbol nacional de Costa Rica?", "ans": "el guanacaste", "alt": ["guanacaste", "guanacastes", "el guanacastes"], "why": "«son guanacastes, el árbol nacional»"}, {"q": "¿Hace cuántos años los plantaron? (en cifras)", "ans": "30", "alt": ["treinta", "treinta años", "hace treinta años"], "why": "«Los plantaron los alumnos hace treinta años»"}, {"q": "¿Dónde propone Sofía poner el parqueo?", "ans": "detrás del gimnasio", "alt": ["detrás del gimnasio", "el terreno vacío", "un terreno vacío"], "why": "«hay un terreno vacío detrás del gimnasio»"}], "vf": [{"q": "En el plan nuevo hay árboles.", "ans": false, "prueba": "en el plan nuevo no hay ni un árbol"}, {"q": "Sofía está en contra del parqueo.", "ans": false, "prueba": "no estoy en contra del parqueo"}, {"q": "Los árboles dan la única sombra del patio.", "ans": true, "prueba": "son la única sombra del patio"}, {"q": "En el terreno de detrás del gimnasio caben veinte carros.", "ans": true, "prueba": "ahí caben veinte carros"}, {"q": "Los árboles los plantó el ayuntamiento.", "ans": false, "prueba": "los plantaron los alumnos"}], "contexto": [{"q": "«talar» — ¿qué van a hacer con los árboles?", "opts": ["Ze omhakken", "Ze verplanten", "Ze snoeien"], "ans": "Ze omhakken", "why": "Er komt een parking in de plaats; de brief spreekt van «cortar»."}, {"q": "«Sin embargo» — ¿qué hace esta palabra en la frase?", "opts": ["Ze zet er iets tegenover", "Ze geeft de reden", "Ze somt op"], "ans": "Ze zet er iets tegenover", "why": "Het is warm én er is schaduw nodig — maar het plan voorziet niets."}, {"q": "«Por eso» — ¿qué introduce?", "opts": ["het gevolg", "de reden", "een tegenstelling"], "ans": "het gevolg", "why": "Omdat leerlingen ze plantten, zijn ze deel van de school. Let op: «dus» is nooit «luego»."}, {"q": "«Ahí caben veinte carros» — ¿qué significa «caber»?", "opts": ["erin passen", "vallen", "kopen"], "ans": "erin passen", "why": "Het gaat over de ruimte op het lege terrein."}], "produccion": {"prompt": "Escribe tu propia carta al director (7–8 frases) sobre algo que quieres cambiar en tu instituto o en tu barrio: di qué pasa, da dos argumentos con porque y además, pon una objeción con sin embargo, cierra con por eso y termina con una propuesta concreta.", "modelo": "Señor director: le escribo porque… Primero,… Además,… Sin embargo,… Por eso propongo…"}});

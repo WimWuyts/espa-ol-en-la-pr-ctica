@@ -337,6 +337,33 @@ def tarjetas_de(r):
         return ([(n, s, None) for n, s in d["personajes"]]
                 + [("pregunta modelo", q, None) for q in d["preguntas_modelo"]]
                 + [("PROHIBIDO al personaje", " · ".join(d["prohibido_al_personaje"]), None)])
+    if i == "C6P-U6-RETO-02":
+        ob = d["objetos"]
+        return ([("Objetos", " · ".join(ob[k:k + 3]), None) for k in range(0, len(ob), 3)]
+                + [("Parte 1 · imperfecto", m, None) for m in d["marco_parte1"]]
+                + [("Parte 2 · indefinido", m, None) for m in d["marco_parte2"]]
+                + [("Aviso", d["aviso"], None)])
+    if i == "C6P-U6-RETO-03":
+        return ([("pregunta", q, None) for q in d["preguntas"]]
+                + [("marco", m, None) for m in d["marco"]]
+                + [("Aviso", d["aviso"], None)])
+    if i == "C6P-U6-RETO-09":
+        return ([(t, x, None) for t, x in d["temas"]]
+                + [("marco", m, None) for m in d["marco"]])
+    if i == "C6P-U7-RETO-02":
+        ref = ["%s → %s" % (a, b) for a, b in d["referencias"]]
+        return ([("Referencias", " · ".join(ref[k:k + 2]), None) for k in range(0, len(ref), 2)]
+                + [("paso %s" % n, t, None) for n, t in d["pasos_calculo"]]
+                + [("marco", m, None) for m in d["marco"]])
+    if i == "C6P-U7-RETO-03":
+        return ([("tema", t, None) for t, _x in d["temas"]]
+                + [("marco", m, None) for m in d["marco"]]
+                + [("Aviso", d["aviso"], None)])
+    if i == "C6P-U7-RETO-06":
+        sin = d["sintomas"]
+        return ([("Síntomas", " · ".join(sin[k:k + 2]), None) for k in range(0, len(sin), 2)]
+                + [("consejo", c, por) for c, por in d["consejos"]]
+                + [("marco · médico/-a", m, None) for m in d["marco_medico"]])
     if i == "C5-U1-RETO-09":
         return ([("Tu perfil", m, None) for m in d["marco_perfil"]]
                 + [("El algoritmo", m, None) for m in d["marco_algoritmo"]]

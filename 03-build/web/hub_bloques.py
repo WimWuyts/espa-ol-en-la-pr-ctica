@@ -385,6 +385,34 @@ def retos_js(host_id, curso, unidad):
             base["tipo"] = "opciones"
             base["items"] = [{"enunciado": orig, "correcta": c, "opciones": o, "porque": p}
                              for orig, c, o, p in d["items"]]
+        elif r["id"] == "C6P-U6-RETO-06":
+            base["tipo"] = "opciones"
+            base["items"] = [{"enunciado": fr, "correcta": c, "opciones": o, "audio": True,
+                              "porque": p} for fr, c, o, p in d["items"]]
+        elif r["id"] == "C6P-U6-RETO-08":
+            base["tipo"] = "grabar"
+            base["situaciones"] = [{"es": m, "nl": "", "pista": ""} for m in d["marco"]]
+            base["items"] = [{"text": "Radio recuerdos",
+                              "cue": "twee minuten · drie punten waarop jullie het oneens zijn: "
+                                     + " · ".join(d["puntos"])}]
+        elif r["id"] == "C6P-U6-RETO-10":
+            base["tipo"] = "opciones"
+            base["items"] = [{"enunciado": fen, "correcta": c, "opciones": o, "porque": p}
+                             for fen, c, o, p in d["items"]]
+        elif r["id"] == "C6P-U7-RETO-07":
+            base["tipo"] = "grabar"
+            base["situaciones"] = [{"es": m, "nl": "", "pista": ""} for m in d["marco"]]
+            base["items"] = [{"text": "Mi cuña de radio",
+                              "cue": "dertig seconden · "
+                                     + " → ".join("%s (%s)" % (a, b) for a, b in d["estructura"])}]
+        elif r["id"] == "C6P-U7-RETO-08":
+            base["tipo"] = "opciones"
+            base["items"] = [{"enunciado": dicho, "correcta": c, "opciones": o, "porque": p}
+                             for dicho, c, o, p in d["items"]]
+        elif r["id"] == "C6P-U7-RETO-09":
+            base["tipo"] = "opciones"
+            base["items"] = [{"enunciado": camp, "correcta": c, "opciones": o, "porque": p}
+                             for camp, c, o, p in d["items"]]
         else:
             continue
         salida.append(base)

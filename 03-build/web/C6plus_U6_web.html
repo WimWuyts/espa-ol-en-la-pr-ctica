@@ -405,6 +405,11 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
     <div id="motorlink"></div>
   </section>
 
+  <section class="panel" data-p="retos">
+    <h2 class="sec">Retos · tres desafíos 🎯</h2>
+    <p class="lead">Drie retos met <b>één harde regel</b>: twaalf zinnen waarin je hoort of het <b>achtergrond of gebeurtenis</b> is (en twee zinnen zijn allebei tegelijk), een radioprogramma waarin twee mensen zich hetzelfde <b>anders</b> herinneren zonder elkaar leugenaar te noemen, en vijf dingen van vandaag uitgelegd aan iemand uit 1975 — je mag alleen <b>vergelijken</b>. <span class="gloss">De zeven andere retos van deze unit staan in het boek en in de PowerPoint.</span></p>
+    <div id="retos_c6p_u6"></div>
+  </section>
   <section class="panel" data-p="hablar">
     <h2 class="sec">Hablar · grábate 🎙️</h2>
     <p class="lead">Neem <b>jezelf</b> op: luister naar het model, spreek in, luister terug, en neem opnieuw op. <span class="gloss">Werkt in Chrome/Edge; sta de micro toe. Print blijft bruikbaar zonder opname.</span></p>
@@ -527,9 +532,291 @@ const GAMES={"infancia-memoria": "PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9Im5sIj4KPG
 function toggleTheme(){const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'}
 function speak(t,rate){if(!('speechSynthesis'in window))return;const u=new SpeechSynthesisUtterance(t);u.lang='es-ES';u.rate=rate||.92;
   const vs=speechSynthesis.getVoices();const es=vs.find(v=>/^es/i.test(v.lang));if(es)u.voice=es;try{speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}
+function buildRetos(id,cfg){
+ const host=document.getElementById(id);if(!host)return;
+ host.innerHTML='<div class="retos"></div>';
+ const lista=host.querySelector('.retos');
+ (cfg.retos||[]).forEach((r,n)=>{
+  const c=document.createElement('div');c.className='reto';
+  c.innerHTML='<div class="rcab"><span class="rnum">'+r.num+'</span><h3>'+exEsc(r.nombre)+'</h3>'+
+    '<span class="rlente">'+exEsc(r.lente)+'</span></div>'+
+    '<p class="rgancho"><b>'+exEsc(r.gancho_es)+'</b></p>'+
+    '<p class="rnl">'+exEsc(r.gancho_nl)+'</p>'+
+    '<p class="desc">'+exEsc(r.consigna_nl)+'</p>'+
+    '<div class="rregla"><b>La regla del reto</b>'+exEsc(r.regla)+'</div>'+
+    '<div class="rcuerpo" id="'+id+'_c'+n+'"></div>';
+  lista.appendChild(c);
+  const cuerpo=c.querySelector('.rcuerpo');
+  if(r.tipo==='grabar')retoGrabar(cuerpo,r,id+'_c'+n);
+  else if(r.tipo==='detector')retoDetector(cuerpo,r);
+  else if(r.tipo==='mapa')retoMapa(cuerpo,r);
+  else if(r.tipo==='articulo')retoArticulo(cuerpo,r);
+  else if(r.tipo==='escena')retoEscena(cuerpo,r);
+  else if(r.tipo==='retrato')retoRetrato(cuerpo,r);
+  else if(r.tipo==='voces')retoVoces(cuerpo,r);
+  else if(r.tipo==='opciones')retoOpciones(cuerpo,r);
+ });
+}
+
+function retoGrabar(cont,r,idBase){
+ (r.situaciones||[]).forEach(s=>{
+   const d=document.createElement('div');d.className='rsit';
+   d.innerHTML='<b>'+exEsc(s.es)+'</b><span class="rpista">'+exEsc(s.nl)+
+     (s.pista?' · <i>'+exEsc(s.pista)+'</i>':'')+'</span>';
+   cont.appendChild(d);});
+ const rec=document.createElement('div');rec.id=idBase+'_rec';cont.appendChild(rec);
+ if(typeof makeRecorder==='function')
+   makeRecorder(idBase+'_rec',{title:r.nombre,desc:r.consigna_es,
+     items:(r.items||[]).map(t=>({text:t.text,cue:t.cue}))});
+}
+
+function retoDetector(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ const reglas=r.reglas||[];
+ (r.items||[]).forEach((it,i)=>{
+   const d=document.createElement('div');d.className='detit';
+   const opts=reglas.map((g,k)=>'<option value="'+k+'">'+exEsc(g)+'</option>').join('');
+   d.innerHTML='<div class="dpal">'+exEsc(it.palabra)+'</div>'+
+     '<div class="detbtns"><button class="detbtn" type="button" data-v="1">✓ posible</button>'+
+     '<button class="detbtn" type="button" data-v="0">✗ imposible</button></div>'+
+     '<div class="detrule" hidden><label class="desc">¿Qué regla rompe?</label>'+
+     '<select><option value="-1">— elige la regla —</option>'+opts+'</select></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const fb=d.querySelector('.detfb'),rule=d.querySelector('.detrule'),sel=d.querySelector('select');
+   let cerrado=false;
+   d.querySelectorAll('.detbtn').forEach(b=>{b.onclick=()=>{
+     if(cerrado)return;
+     const dicho=b.dataset.v==='1';
+     if(!dicho){rule.hidden=false;sel.focus();
+       fb.className='detfb show';fb.textContent='Ahora acusa con pruebas: ¿qué regla rompe?';
+       cerrado=false;
+       sel.onchange=()=>{cerrado=true;
+         const bien=(!it.posible)&&(Number(sel.value)===it.regla);
+         d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);sel.disabled=true;
+         b.classList.add(bien?'ok':'no');
+         fb.className='detfb show '+(bien?'g':'b');
+         fb.innerHTML=bien?'<b>✓ acusación correcta</b> · '+exEsc(it.porque)
+           :(it.posible?'<b>✗ esta palabra sí existe</b> · '+exEsc(it.porque)
+                       :'<b>✗ la regla no es esa</b> · '+exEsc(it.porque));};
+       return;}
+     cerrado=true;
+     const bien=it.posible;
+     d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);
+     b.classList.add(bien?'ok':'no');
+     fb.className='detfb show '+(bien?'g':'b');
+     fb.innerHTML=(bien?'<b>✓ correcto</b> · ':'<b>✗ no</b> · ')+exEsc(it.porque);};});
+   caja.appendChild(d);});
+}
+
+// ── artículo: el/la op verzonnen woorden ───────────────────────────────────
+// Het lidwoord alléén zegt niets: wie «la» kiest bij een -ma-woord heeft geraden,
+// ook als het toevallig klopt. Daarom moet de leerling er de regel bij kiezen, en
+// telt het pas als het allebei klopt.
+// ── retrato hablado: luister en kies het juiste portret ────────────────────
+// De portretten worden getekend, niet beschreven: stonden de kenmerken in
+// woorden op de kaart, dan werd het woorden matchen in plaats van luisteren.
+function retoCara(x,y,r,p){
+ const pelo = p.pelo.indexOf('largo')>=0
+   ? (p.pelo.indexOf('rizado')>=0
+      ? '<path d="M'+(x-r-4)+' '+(y+r+6)+' q-6,-'+(r+18)+' '+(r+6)+',-'+(r+14)+' q'+r+',-8 '+(r+6)+','+(r+14)+' q6,'+(r+8)+' -4,'+(r+2)+' q-'+r+',-14 -'+(2*r-4)+',0 Z" fill="#5C4433"/>'
+      : '<path d="M'+(x-r-2)+' '+(y+r+8)+' l0,-'+(r+16)+' q'+(r+2)+',-14 '+(2*r+4)+',0 l0,'+(r+16)+' l-8,0 l0,-'+r+' q-'+r+',-10 -'+(2*r-8)+',0 l0,'+r+' Z" fill="#5C4433"/>')
+   : (p.pelo.indexOf('rizado')>=0
+      ? '<path d="M'+(x-r-2)+' '+y+' q2,-'+(r+14)+' '+(r+2)+',-'+(r+10)+' q'+r+',-6 '+(r+2)+','+(r+10)+' q2,10 -6,6 q-'+r+',-14 -'+(2*r-8)+',0 q-8,4 -6,-6 Z" fill="#5C4433"/>'
+      : '<path d="M'+(x-r-2)+' '+(y-2)+' q0,-'+(r+12)+' '+(r+2)+',-'+(r+12)+' q'+(r+2)+',0 '+(r+2)+','+(r+12)+' l-6,2 q-'+r+',-12 -'+(2*r-4)+',0 Z" fill="#5C4433"/>');
+ const gafas = p.gafas
+   ? '<g fill="none" stroke="#20242E" stroke-width="2.4"><circle cx="'+(x-r/2.4)+'" cy="'+(y+2)+'" r="'+(r/3.4)+'"/>'
+     +'<circle cx="'+(x+r/2.4)+'" cy="'+(y+2)+'" r="'+(r/3.4)+'"/>'
+     +'<line x1="'+(x-r/2.4+r/3.4)+'" y1="'+(y+2)+'" x2="'+(x+r/2.4-r/3.4)+'" y2="'+(y+2)+'"/></g>'
+   : '<circle cx="'+(x-r/2.4)+'" cy="'+(y+1)+'" r="2.6" fill="#20242E"/>'
+     +'<circle cx="'+(x+r/2.4)+'" cy="'+(y+1)+'" r="2.6" fill="#20242E"/>';
+ const boca = p.sonrie
+   ? '<path d="M'+(x-r/2.6)+' '+(y+r/2.2)+' q'+(r/2.6)+','+(r/3.2)+' '+(r/1.3)+',0" stroke="#20242E" stroke-width="2.4" fill="none" stroke-linecap="round"/>'
+   : '<line x1="'+(x-r/3)+'" y1="'+(y+r/1.9)+'" x2="'+(x+r/3)+'" y2="'+(y+r/1.9)+'" stroke="#20242E" stroke-width="2.4" stroke-linecap="round"/>';
+ return '<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="#F2D3B6"/>'+pelo+gafas+boca;
+}
+
+function retoRetrato(cont,r){
+ const rs=r.retratos||[], ds=r.descripciones||[];
+ let i=0, aciertos=0;
+ cont.innerHTML='<div class="rmarca"><button class="escbtn rplay" type="button">▶ Escuchar la descripción</button>'+
+   '<span class="rcuenta rvuelta">1 / '+ds.length+'</span>'+
+   '<span class="desc rtanteo">aciertos: 0</span></div>'+
+   '<div class="retratos"></div><div class="detfb rfb" role="status" aria-live="polite"></div>';
+ const caja=cont.querySelector('.retratos');
+ rs.forEach(p=>{
+   const b=document.createElement('button');b.type='button';b.className='retrato';b.dataset.n=p.n;
+   b.innerHTML='<svg viewBox="0 0 100 100" aria-hidden="true">'+retoCara(50,52,26,p)+'</svg>'+
+     '<span class="rnum2">'+p.n+'</span>';
+   b.onclick=()=>{
+     if(!ds[i])return;
+     const fb=cont.querySelector('.rfb'), bien=Number(b.dataset.n)===ds[i].correcto;
+     b.classList.add(bien?'ok':'no');
+     fb.className='detfb show rfb '+(bien?'g':'b');
+     fb.innerHTML=bien?'<b>✓ correcto</b> · '+exEsc(ds[i].texto)
+       :'<b>✗ no</b> · era el '+ds[i].correcto+' — '+exEsc(ds[i].texto);
+     if(bien)aciertos++;
+     cont.querySelector('.rtanteo').textContent='aciertos: '+aciertos;
+     i++;
+     setTimeout(()=>{caja.querySelectorAll('.retrato').forEach(x=>x.classList.remove('ok','no'));
+       if(i<ds.length){cont.querySelector('.rvuelta').textContent=(i+1)+' / '+ds.length;fb.className='detfb rfb';}
+       else{cont.querySelector('.rvuelta').textContent='hecho';
+         fb.className='detfb show rfb g';fb.innerHTML='<b>Listo</b> · ahora describe tú uno a tu compañero/a.';}},1400);};
+   caja.appendChild(b);});
+ cont.querySelector('.rplay').onclick=()=>{if(ds[i]&&typeof speak==='function')speak(ds[i].texto);};
+}
+
+// ── drie stemmen, één samenvatting: bemiddelen ─────────────────────────────
+// ── opciones: kies uit N, mét verplichte uitleg ────────────────────────────
+// Breed inzetbaar: welk werkwoord past bij dit uur, welke Spaanse uitdrukking
+// dekt deze Vlaamse. Er is telkens één juist antwoord, en de feedback zegt niet
+// alleen wát maar ook waarom — anders leert een gokker niets.
+function retoOpciones(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ (r.items||[]).forEach(it=>{
+   const d=document.createElement('div');d.className='detit';
+   d.innerHTML=(it.audio?'<button class="escbtn opplay" type="button">▶ Escuchar</button>':'')+
+     '<div class="dpal">'+exEsc(it.enunciado)+'</div>'+
+     '<div class="detbtns"></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const btns=d.querySelector('.detbtns'), fb=d.querySelector('.detfb');
+   let cerrado=false;
+   (it.opciones||[]).forEach(o=>{
+     const b=document.createElement('button');b.type='button';b.className='detbtn';b.textContent=o;
+     b.onclick=()=>{if(cerrado)return;cerrado=true;
+       const bien=o===it.correcta;
+       btns.querySelectorAll('.detbtn').forEach(x=>{x.disabled=true;
+         if(x.textContent===it.correcta)x.classList.add('ok');});
+       if(!bien)b.classList.add('no');
+       fb.className='detfb show '+(bien?'g':'b');
+       fb.innerHTML=(bien?'<b>✓ correcto</b>':'<b>✗ es «'+exEsc(it.correcta)+'»</b>')+
+         (it.porque?' · '+exEsc(it.porque):'');};
+     btns.appendChild(b);});
+   const pl=d.querySelector('.opplay');
+   if(pl)pl.onclick=()=>{if(typeof speak==='function')speak(it.enunciado);};
+   caja.appendChild(d);});
+}
+
+function retoVoces(cont,r){
+ cont.innerHTML='<div class="voces"></div>'+
+   '<p class="desc">Schrijf je samenvatting in drie zinnen — korter dan wat je hoorde, en niemand mag wegvallen.</p>'+
+   '<textarea class="escta" rows="5" aria-label="Jouw samenvatting" placeholder="1. Rosa vindt…"></textarea>';
+ const caja=cont.querySelector('.voces');
+ (r.voces||[]).forEach(v=>{
+   const d=document.createElement('div');d.className='voz';
+   d.innerHTML='<button class="escbtn vozbtn" type="button">▶</button>'+
+     '<div><b>'+exEsc(v.quien)+'</b><span class="vozt">'+exEsc(v.texto)+'</span></div>';
+   d.querySelector('.vozbtn').onclick=()=>{if(typeof speak==='function')speak(v.texto);};
+   caja.appendChild(d);});
+}
+
+function retoArticulo(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ const reglas=r.reglas||[];
+ (r.objetos||[]).forEach(it=>{
+   const d=document.createElement('div');d.className='detit';
+   const opts=reglas.map((g,k)=>'<option value="'+g.clave+'">'+exEsc(g.texto)+'</option>').join('');
+   d.innerHTML='<div class="dpal">¿… '+exEsc(it.palabra)+'?</div>'+
+     '<div class="detbtns"><button class="detbtn" type="button" data-a="el">el</button>'+
+     '<button class="detbtn" type="button" data-a="la">la</button></div>'+
+     '<div class="detrule" hidden><label class="desc">¿Qué regla usas?</label>'+
+     '<select><option value="">— elige la regla —</option>'+opts+'</select></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const fb=d.querySelector('.detfb'),rule=d.querySelector('.detrule'),sel=d.querySelector('select');
+   let elegido=null;
+   d.querySelectorAll('.detbtn').forEach(b=>{b.onclick=()=>{
+     if(elegido)return;
+     elegido=b.dataset.a;rule.hidden=false;sel.focus();
+     fb.className='detfb show';fb.textContent='¿Y por qué? Elige la regla.';};});
+   sel.onchange=()=>{
+     if(!sel.value)return;
+     const bienArt=elegido===it.articulo, bienRegla=sel.value===it.regla;
+     d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);sel.disabled=true;
+     const b=d.querySelector('.detbtn[data-a="'+elegido+'"]');
+     b.classList.add(bienArt&&bienRegla?'ok':'no');
+     fb.className='detfb show '+(bienArt&&bienRegla?'g':'b');
+     if(bienArt&&bienRegla)fb.innerHTML='<b>✓ correcto</b> · '+exEsc(it.porque);
+     else if(bienArt)fb.innerHTML='<b>✗ el artículo sí, la regla no</b> · '+exEsc(it.porque)+
+       ' — con la regla equivocada, has adivinado.';
+     else fb.innerHTML='<b>✗ es «'+exEsc(it.articulo)+' '+exEsc(it.palabra)+'»</b> · '+exEsc(it.porque);};
+   caja.appendChild(d);});
+}
+
+// ── escena: dezelfde plek, twee tijden ─────────────────────────────────────
+// Twee panelen naast elkaar; klik een voorwerp en je hoort en ziet hoe het heet.
+// De twee voorwerpen die in beide scènes staan, zijn de controle: wie die als
+// verschil noteert, heeft te snel gekeken.
+function retoEscena(cont,r){
+ const items=r.escena||[];
+ function panel(cual,titulo,sub){
+   const propios=items.filter(i=>i.cuando===cual||i.cuando==='ambas');
+   const formas=propios.map((i,k)=>i.forma==='circ'
+     ? '<circle class="eob" data-k="'+k+'" data-c="'+cual+'" cx="'+(i.x+i.w/2)+'" cy="'+(i.y+i.h/2)+
+       '" r="'+(i.w/2)+'" fill="'+i.color+'"/>'
+     : '<rect class="eob" data-k="'+k+'" data-c="'+cual+'" x="'+i.x+'" y="'+i.y+'" width="'+i.w+
+       '" height="'+i.h+'" rx="1.5" fill="'+i.color+'"/>').join('');
+   return '<figure class="esc"><figcaption><b>'+exEsc(titulo)+'</b> <span>'+exEsc(sub)+'</span></figcaption>'+
+     '<svg viewBox="0 0 100 84" role="img" aria-label="'+exEsc(titulo)+'">'+
+     '<rect x="0" y="0" width="100" height="52" fill="#E8F1F7"/>'+          // lucht
+     '<rect x="0" y="52" width="100" height="32" fill="#EDE7DC"/>'+          // plein
+     '<rect x="0" y="30" width="100" height="22" fill="#D8CFC0"/>'+          // gevelrij
+     '<rect x="6" y="24" width="16" height="28" fill="#C6B9A6"/>'+
+     '<rect x="44" y="20" width="18" height="32" fill="#C6B9A6"/>'+
+     '<rect x="76" y="26" width="18" height="26" fill="#C6B9A6"/>'+
+     formas+'</svg><p class="escnom" role="status" aria-live="polite">Klik een voorwerp.</p></figure>';
+ }
+ cont.innerHTML='<div class="escenas">'+panel('antes','1985','la misma plaza, hace cuarenta años')+
+   panel('ahora','ahora','la plaza hoy')+'</div>'+
+   '<p class="desc">De twee dingen die in <b>allebei</b> de scènes staan, zijn de controle: die zijn géén verschil.</p>';
+ cont.querySelectorAll('.eob').forEach(el=>{
+   el.style.cursor='pointer';
+   el.addEventListener('click',()=>{
+     const cual=el.dataset.c, k=Number(el.dataset.k);
+     const propios=items.filter(i=>i.cuando===cual||i.cuando==='ambas');
+     const it=propios[k];if(!it)return;
+     const fig=el.closest('figure');
+     fig.querySelector('.escnom').innerHTML='<b>'+exEsc(it.es)+'</b> — '+exEsc(it.nl)+
+       (it.cuando==='ambas'?' <i>(en las dos escenas)</i>':'');
+     el.style.stroke='#157355';el.style.strokeWidth='1.4';
+     if(typeof speak==='function')speak(it.es);});});
+ const marco=document.createElement('div');marco.className='rsit';
+ marco.innerHTML='<b>Tu marco</b><span class="rpista">'+
+   (r.marco||[]).map(exEsc).join(' · ')+'</span>';
+ cont.appendChild(marco);
+ const ta=document.createElement('textarea');ta.className='escta';ta.rows=5;
+ ta.setAttribute('aria-label','Jouw vijf zinnen');ta.placeholder='1. En la plaza de ahora hay…';
+ cont.appendChild(ta);
+}
+
+function retoMapa(cont,r){
+ const paises=r.paises||[];
+ cont.innerHTML='<div class="rmarca"><span class="rcuenta">0 / '+paises.length+'</span>'+
+   '<div class="rbarra"><i></i></div>'+
+   '<button class="otra rreset" type="button">↺ empezar de nuevo</button></div>'+
+   '<p class="desc">Klik een land, zeg het hardop, laat iemand bevestigen — dan pas aanklikken. '+
+   'De teller is van de klas, niet van jou.</p><div class="rpais"></div>';
+ const cont2=cont.querySelector('.rpais'),cuenta=cont.querySelector('.rcuenta'),
+       barra=cont.querySelector('.rbarra i');
+ let hechos=0;
+ function pinta(iso){ // laat het land op de grote kaart meekleuren, als die er is
+   const svg=document.querySelector('#mapwrap svg');if(!svg)return;
+   const p=svg.querySelector('[data-c="'+iso+'"]');if(p)p.style.filter='saturate(1.6) brightness(1.05)';}
+ paises.forEach(p=>{
+   const b=document.createElement('button');b.type='button';
+   b.innerHTML=exEsc(p.nombre)+'<span class="sil">'+exEsc(p.silabas)+'</span>';
+   b.onclick=()=>{if(b.classList.contains('hecho'))return;
+     b.classList.add('hecho');hechos++;pinta(p.iso);
+     cuenta.textContent=hechos+' / '+paises.length;
+     barra.style.width=Math.round(hechos/paises.length*100)+'%';
+     if(typeof speak==='function')speak(p.nombre);
+     if(hechos===paises.length)cuenta.textContent='¡'+paises.length+' / '+paises.length+' — lo habéis conseguido!';};
+   cont2.appendChild(b);});
+ cont.querySelector('.rreset').onclick=()=>{hechos=0;cuenta.textContent='0 / '+paises.length;
+   barra.style.width='0';cont2.querySelectorAll('button').forEach(x=>x.classList.remove('hecho'));};
+}
+
 const TTS=('speechSynthesis'in window);
 if(TTS){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}
-const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
+const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['retos','Retos 🎯'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
 const sn=document.getElementById('subnav');
 // ── tabbladen · het adres volgt mee ──────────────────────────────────────────
 // #escuchar opent dat tabblad; #lec_1 opent het paneel waar dat element in
@@ -1343,6 +1630,7 @@ function buildGramType(){
  buildType('gt_3',{title:"Comparar — más · menos · tan · mejor",desc:"Drie bouwsels: <b>más/menos … que</b> (meer/minder dan) · <b>tan … como</b> (even … als) · en vier woorden die hun eigen vorm hebben: <b>mejor · peor · mayor · menor</b> — daar zeg je nooit «más bueno».",accents:'soft',perBlock:12,expect:12,items:[{"q": "Cusco es ___ alto ___ Lima.", "ans": "más que", "why": "más + adjectief + que"}, {"q": "Mi pueblo es ___ grande ___ la ciudad.", "ans": "menos que", "why": "menos + adjectief + que"}, {"q": "Ahora soy ___ alto ___ mi hermano. (even)", "ans": "tan como", "why": "tan + adjectief + como"}, {"q": "Este juguete es ___ que el otro. (beter)", "ans": "mejor", "why": "nooit «más bueno»"}, {"q": "El tiempo de hoy es ___ que el de ayer. (slechter)", "ans": "peor", "why": "nooit «más malo»"}, {"q": "Mi hermana es ___ que yo: tiene veinte años. (ouder)", "ans": "mayor", "why": "over leeftijd: mayor, niet «más viejo»"}, {"q": "Mi primo es ___ que yo: tiene ocho años. (jonger)", "ans": "menor"}, {"q": "Antes había ___ coches ___ ahora.", "ans": "menos que"}, {"q": "Esta escuela es ___ antigua ___ la mía. (even)", "ans": "tan como"}, {"q": "El campo es ___ tranquilo ___ la ciudad.", "ans": "más que"}, {"q": "Machu Picchu es el lugar ___ visitado del país. (het meest)", "ans": "más", "why": "el/la más + adjectief = de -ste"}, {"q": "Mi abuela cocina ___ que nadie. (beter)", "ans": "mejor"}]});
 }
 buildGramType();
+buildRetos("retos_c6p_u6",{"retos": [{"num": 6, "nombre": "El detector de tiempos", "lente": "🔓 puzzel & escape", "gancho_es": "El relato cambia de tiempo doce veces. ¿Las oyes todas?", "gancho_nl": "Het verhaal wisselt twaalf keer van tijd. Hoor je ze allemaal?", "consigna_es": "Escucha la frase y di si es fondo (imperfecto) o hecho (indefinido).", "consigna_nl": "Luister naar de zin en zeg of het achtergrond (imperfecto) of feit (indefinido) is.", "regla": "Je beslist op wat je hóórt, niet op wat logisch lijkt. En bij elke keuze hoort de reden — de uitgang alleen is geen antwoord.", "tipo": "opciones", "items": [{"enunciado": "«Aquel verano íbamos a la playa todos los días.»", "correcta": "fondo · imperfecto", "opciones": ["fondo · imperfecto", "hecho · indefinido"], "audio": true, "porque": "«todos los días» maakt er een gewoonte van, geen moment"}, {"enunciado": "«Aquel verano fuimos a la playa una sola vez.»", "correcta": "hecho · indefinido", "opciones": ["hecho · indefinido", "fondo · imperfecto"], "audio": true, "porque": "«una sola vez» is precies het tegenovergestelde: één afgerond moment"}, {"enunciado": "«Llovía cuando salimos de casa.»", "correcta": "las dos: fondo + hecho", "opciones": ["las dos: fondo + hecho", "solo fondo", "solo hecho"], "audio": true, "porque": "de regen is het decor, het buitengaan is de gebeurtenis — samen in één zin"}, {"enunciado": "«De pequeña, Nina hablaba quechua con su abuela.»", "correcta": "fondo · imperfecto", "opciones": ["fondo · imperfecto", "hecho · indefinido"], "audio": true, "porque": "«de pequeña» kadert een hele periode af"}, {"enunciado": "«El día que su abuela murió, dejó de hablarlo.»", "correcta": "hecho · indefinido", "opciones": ["hecho · indefinido", "fondo · imperfecto"], "audio": true, "porque": "«el día que» wijst één dag aan"}, {"enunciado": "«La casa tenía un patio con dos naranjos.»", "correcta": "fondo · imperfecto", "opciones": ["fondo · imperfecto", "hecho · indefinido"], "audio": true, "porque": "beschrijving van hoe iets was"}, {"enunciado": "«En 2003 vendieron la casa.»", "correcta": "hecho · indefinido", "opciones": ["hecho · indefinido", "fondo · imperfecto"], "audio": true, "porque": "een jaartal plus een afgeronde handeling"}, {"enunciado": "«Cada domingo comíamos allí y nunca nos aburríamos.»", "correcta": "fondo · imperfecto", "opciones": ["fondo · imperfecto", "hecho · indefinido"], "audio": true, "porque": "«cada domingo» is herhaling, dus gewoonte"}, {"enunciado": "«Un domingo no fue nadie.»", "correcta": "hecho · indefinido", "opciones": ["hecho · indefinido", "fondo · imperfecto"], "audio": true, "porque": "«un domingo» — één keer, en dat is de breuk in de gewoonte"}, {"enunciado": "«Mientras jugábamos, sonó el teléfono.»", "correcta": "las dos: fondo + hecho", "opciones": ["las dos: fondo + hecho", "solo fondo", "solo hecho"], "audio": true, "porque": "«mientras» plus imperfecto is altijd de achtergrond waar een feit in valt"}, {"enunciado": "«Nina era la más pequeña de la casa.»", "correcta": "fondo · imperfecto", "opciones": ["fondo · imperfecto", "hecho · indefinido"], "audio": true, "porque": "een blijvende eigenschap in die periode"}, {"enunciado": "«Aquella tarde fue la última vez que la vio.»", "correcta": "hecho · indefinido", "opciones": ["hecho · indefinido", "fondo · imperfecto"], "audio": true, "porque": "«aquella tarde» plus «la última vez»: onherhaalbaar moment"}]}, {"num": 8, "nombre": "Radio recuerdos", "lente": "📻 mediaformat", "gancho_es": "Dos personas, un mismo recuerdo, dos versiones que no coinciden.", "gancho_nl": "Twee mensen, één herinnering, twee versies die niet overeenkomen.", "consigna_es": "Grabad dos minutos: los dos recordáis lo mismo, pero distinto.", "consigna_nl": "Neem twee minuten op: jullie herinneren zich hetzelfde, maar anders.", "regla": "Jullie spreken elkaar tegen op minstens drie punten, en niemand zegt dat de ander liegt. De formule is altijd «yo lo recuerdo distinto: …».", "tipo": "grabar", "situaciones": [{"es": "Yo me acuerdo de que …", "nl": "", "pista": ""}, {"es": "Pues yo lo recuerdo distinto: …", "nl": "", "pista": ""}, {"es": "¿Seguro? Yo creo que …", "nl": "", "pista": ""}, {"es": "A lo mejor los dos tenemos razón.", "nl": "", "pista": ""}, {"es": "Lo que sí es verdad es que …", "nl": "", "pista": ""}], "items": [{"text": "Radio recuerdos", "cue": "twee minuten · drie punten waarop jullie het oneens zijn: quién estaba · qué hora era · qué tiempo hacía · quién dijo qué · cómo terminó"}]}, {"num": 10, "nombre": "Mi abuelo no lo entendería", "lente": "🤝 bemiddelen", "gancho_es": "Explica algo de hoy a alguien de 1975. Solo puedes comparar.", "gancho_nl": "Leg iets van vandaag uit aan iemand uit 1975. Je mag alleen vergelijken.", "consigna_es": "Elige la comparación que de verdad explica el fenómeno.", "consigna_nl": "Kies de vergelijking die het fenomeen echt uitlegt.", "regla": "Je enige gereedschap is de vergelijking: «es como… pero…». Geen enkel woord dat in 1975 nog niet bestond — dat is precies wat je moet omzeilen.", "tipo": "opciones", "items": [{"enunciado": "un pódcast", "correcta": "Es como un programa de radio, pero lo escuchas cuando tú quieres, no cuando lo ponen.", "opciones": ["Es como un programa de radio, pero lo escuchas cuando tú quieres, no cuando lo ponen.", "Es una radio moderna.", "Es como un disco, pero hablado."], "porque": "de kern is niet het geluid maar de tijdsvrijheid; alleen de eerste noemt die"}, {"enunciado": "un mensaje de voz", "correcta": "Es como una carta que se oye, pero llega en un segundo y nadie la escribe.", "opciones": ["Es como una carta que se oye, pero llega en un segundo y nadie la escribe.", "Es como una llamada corta.", "Es una grabación."], "porque": "een oproep is synchroon; het verschil zit in «llega» — je wacht niet op elkaar"}, {"enunciado": "una videollamada con la familia", "correcta": "Es como una visita, pero sin viaje y sin café.", "opciones": ["Es como una visita, pero sin viaje y sin café.", "Es un teléfono con imagen.", "Es como la tele, pero al revés."], "porque": "«un teléfono con imagen» is technisch juist en zegt niets over wat het vervángt"}, {"enunciado": "las reseñas de restaurantes en internet", "correcta": "Es como preguntar a cien vecinos a la vez, pero sin saber quiénes son.", "opciones": ["Es como preguntar a cien vecinos a la vez, pero sin saber quiénes son.", "Es una guía de restaurantes.", "Es como el periódico, pero de comida."], "porque": "de gids bestond al in 1975; wat nieuw is, is het aantal en de anonimiteit"}, {"enunciado": "un altavoz que te contesta cuando le hablas", "correcta": "Es como tener a alguien en casa que solo sabe lo que le preguntas.", "opciones": ["Es como tener a alguien en casa que solo sabe lo que le preguntas.", "Es un robot.", "Es como una radio que habla."], "porque": "«robot» roept in 1975 een heel ander beeld op — dat vertroebelt in plaats van uit te leggen"}]}]});
 buildEscucha("esc_c6p_u6",{"title": "Pódcast «Antes y ahora»", "audio": "audio/C6plus_U6.mp3", "expectDetalle": 5, "situacion": {"lugar": "El estudio del pódcast del instituto, episodio 7", "quien": "Mateo (presentador) y dos invitados: Sofía y Aarón", "que": "Comparan cómo era su infancia con la de ahora", "claves": ["cuando era pequeño", "antes… ahora…", "más … que"]}, "guion": [{"who": "Mateo", "es": "Bienvenidos al episodio siete. Hoy hablamos de la infancia. Sofía, ¿cómo era la tuya?", "nl": "Welkom bij aflevering zeven. Vandaag hebben we het over de kindertijd. Sofía, hoe was die van jou?"}, {"who": "Sofía", "es": "Yo crecí en un pueblo pequeño. No teníamos parque, pero jugábamos en la calle hasta las nueve.", "nl": "Ik groeide op in een klein dorp. We hadden geen park, maar we speelden op straat tot negen uur."}, {"who": "Mateo", "es": "¿Y tú, Aarón?", "nl": "En jij, Aarón?"}, {"who": "Aarón", "es": "Yo vivía en la ciudad. Tenía más juguetes que Sofía, seguro, pero salía mucho menos.", "nl": "Ik woonde in de stad. Ik had zeker meer speelgoed dan Sofía, maar ik ging veel minder buiten."}, {"who": "Sofía", "es": "Eso es. Yo no tenía consola, y me daba igual.", "nl": "Precies. Ik had geen spelconsole, en dat kon me niet schelen."}, {"who": "Mateo", "es": "¿Recordáis algún día concreto?", "nl": "Herinneren jullie je een bepaalde dag?"}, {"who": "Aarón", "es": "Sí. Un día, con siete años, me perdí en el metro. Mi madre me encontró dos horas después. Nunca lo olvidé.", "nl": "Ja. Op een dag, toen ik zeven was, verdwaalde ik in de metro. Mijn moeder vond me twee uur later. Ik ben het nooit vergeten."}, {"who": "Sofía", "es": "El mío es más tonto: el día que llegó internet al pueblo. Toda la escuela fue a ver la pantalla.", "nl": "Het mijne is dommer: de dag dat het internet in het dorp kwam. De hele school ging naar het scherm kijken."}, {"who": "Mateo", "es": "Última pregunta: ¿se vivía mejor antes?", "nl": "Laatste vraag: leefde men vroeger beter?"}, {"who": "Aarón", "es": "No. Se vivía distinto. Ahora tenemos más cosas y menos tiempo.", "nl": "Nee. Men leefde anders. Nu hebben we meer spullen en minder tijd."}, {"who": "Sofía", "es": "Yo echo de menos el aburrimiento. Cuando te aburrías, inventabas algo.", "nl": "Ik mis de verveling. Als je je verveelde, verzon je iets."}, {"who": "Mateo", "es": "Buena frase para terminar. ¡Hasta el próximo episodio!", "nl": "Mooie zin om mee af te sluiten. Tot de volgende aflevering!"}], "global": {"q": "¿De qué trata el episodio?", "opts": ["De comparar la infancia de antes con la de ahora", "De cómo se hace un pódcast", "De un viaje escolar"], "ans": "De comparar la infancia de antes con la de ahora", "why": "twee gasten, twee kindertijden, telkens vergeleken"}, "detalle": [{"q": "¿Dónde creció Sofía?", "opts": ["En un pueblo pequeño", "En la ciudad", "En el extranjero"], "ans": "En un pueblo pequeño", "why": "«Yo crecí en un pueblo pequeño»"}, {"q": "¿Hasta qué hora jugaba Sofía en la calle?", "opts": ["Hasta las nueve", "Hasta las siete", "Hasta las once"], "ans": "Hasta las nueve", "why": "«jugábamos en la calle hasta las nueve»"}, {"q": "¿Qué tenía Aarón más que Sofía?", "opts": ["Juguetes", "Amigos", "Tiempo libre"], "ans": "Juguetes", "why": "«Tenía más juguetes que Sofía»"}, {"q": "¿Qué le pasó a Aarón a los siete años?", "opts": ["Se perdió en el metro", "Se rompió una pierna", "Se mudó de ciudad"], "ans": "Se perdió en el metro", "why": "«con siete años, me perdí en el metro»"}, {"q": "¿Cuál es el recuerdo de Sofía?", "opts": ["El día que llegó internet al pueblo", "Su primer día de escuela", "Un viaje a Cusco"], "ans": "El día que llegó internet al pueblo", "why": "«el día que llegó internet al pueblo»"}], "vf": [{"q": "Sofía tenía una consola de pequeña.", "ans": false, "prueba": "yo no tenía consola"}, {"q": "Aarón salía más que Sofía.", "ans": false, "prueba": "salía mucho menos"}, {"q": "Según Aarón, ahora tenemos menos tiempo.", "ans": true, "prueba": "ahora tenemos más cosas y menos tiempo"}], "produccion": {"prompt": "Eres el tercer invitado del pódcast. Graba cinco frases: cómo era tu infancia (imperfecto), un día concreto que recuerdas (indefinido) y una comparación antes/ahora (más… que · menos… que · tan… como).", "modo": "grabar", "modelo": "Cuando era pequeño/-a, yo… y siempre… Un día… Ahora tengo más… que antes, pero menos…"}});
 buildAudioCortos("esc_c6p_u6",{"fragmentos": [{"etiqueta": "§2 · ¿Cómo era tu infancia?", "seccion": "§2.3 · ¿Cómo era tu vida?", "titulo": "¿Cómo era tu infancia? — Nina", "tarea": "1ª: waar woonde ze? — 2ª: wat deed ze? Noteer de gegevens.", "audio": "audio/C6plus_U6_01.mp3", "guion": [{"who": "Nina", "es": "Cuando era pequeña, no vivía en Cusco. Vivíamos en un pueblo en las montañas, a tres horas de la ciudad.", "nl": "Toen ik klein was, woonde ik niet in Cusco. We woonden in een dorp in de bergen, op drie uur van de stad."}, {"who": "Nina", "es": "La casa era de piedra y siempre hacía frío por la noche.", "nl": "Het huis was van steen en 's nachts was het altijd koud."}, {"who": "Nina", "es": "Mi abuela cocinaba en el fuego y nosotros comíamos todos juntos.", "nl": "Mijn oma kookte op het vuur en wij aten allemaal samen."}, {"who": "Nina", "es": "Iba a la escuela a pie: eran cuarenta minutos, con lluvia o con sol.", "nl": "Ik ging te voet naar school: dat was veertig minuten, met regen of met zon."}, {"who": "Nina", "es": "Por la tarde jugaba con mis primos en el campo y cuidábamos las llamas de mi tío.", "nl": "'s Namiddags speelde ik met mijn neven en nichten op het veld en zorgden we voor de lama's van mijn oom."}, {"who": "Nina", "es": "No teníamos internet. Los domingos mi padre leía el periódico en voz alta y todos escuchábamos.", "nl": "We hadden geen internet. Op zondag las mijn vader de krant hardop voor en luisterden we allemaal."}, {"who": "Nina", "es": "Me gustaba mucho esa vida, pero ahora también me gusta la ciudad.", "nl": "Ik hield heel veel van dat leven, maar nu vind ik de stad ook fijn."}]}]});
 buildLectura("lec_c6p_u6",{"titulo": "Carta de la abuela Rosario", "tipo": "carta manuscrita (de la abuela a su nieta)", "emisor": "Rosario, 79 años, desde un pueblo cerca de Cusco", "receptor": "Su nieta, que vive en la ciudad", "objetivo": "Contarle cómo era su infancia y compararla con la de ahora", "prediccion": {"q": "Kijk eerst alleen naar de aanhef «Querida nieta», de plaats en de handtekening. Wat voor tekst is dit?", "opts": ["Een persoonlijke brief", "Een schoolopstel", "Een reclamefolder"], "ans": "Een persoonlijke brief", "why": "Aanhef + groet + handtekening = een brief aan één iemand."}, "texto": [["titulo", "✉️ QUERIDA NIETA"], ["lema", "Ollantaytambo, cerca de Cusco · 12 de mayo"], ["p", "Me preguntas cómo era mi vida de pequeña. Pues mira: yo vivía en esta misma casa, pero todo era diferente. No había electricidad ni agua caliente. Nos levantábamos a las cinco y caminábamos una hora hasta la escuela."], ["p", "Éramos ocho hermanos. Mi madre cocinaba en el suelo, con leña, y siempre había sopa. Yo no tenía juguetes: jugaba con piedras y con una muñeca de trapo que me hizo mi tía."], ["aviso", ["📅 EL DÍA QUE TODO CAMBIÓ", "En mil novecientos sesenta llegó la carretera. Un camión subió hasta la plaza y todo el pueblo salió a mirar. Yo tenía catorce años. Aquel día vi mi primera radio."]], ["p", "Ahora tú tienes internet, agua caliente y un colegio a diez minutos. Vives mejor que yo, eso está claro. Pero antes el pueblo era más tranquilo y todos nos conocíamos."], ["p", "Antes no era mejor. Era diferente. Lo que echo de menos no son las piedras: es la plaza llena de gente al atardecer."], ["firma", "Te espero en julio. Un beso enorme de tu abuela Rosario."]], "traduccion": "LIEVE KLEINDOCHTER — Ollantaytambo, bij Cusco, 12 mei. Je vraagt me hoe mijn leven als kind was. Kijk: ik woonde in ditzelfde huis, maar alles was anders. Er was geen elektriciteit en geen warm water. We stonden om vijf uur op en liepen een uur naar school. We waren met acht kinderen. Mijn moeder kookte op de grond, op hout, en er was altijd soep. Ik had geen speelgoed: ik speelde met steentjes en met een lappenpop die mijn tante voor me maakte. DE DAG DAT ALLES VERANDERDE: in 1960 kwam de weg. Een vrachtwagen reed tot op het plein en het hele dorp liep buiten om te kijken. Ik was veertien. Die dag zag ik mijn eerste radio. — Nu heb jij internet, warm water en een school op tien minuten. Jij leeft beter dan ik, dat is duidelijk. Maar vroeger was het dorp rustiger en kenden we elkaar allemaal. Vroeger was niet beter. Het was anders. Wat ik mis zijn niet de steentjes: het is het plein vol mensen bij zonsondergang. Ik verwacht je in juli. Een dikke kus van je oma Rosario.", "global": {"q": "¿De qué habla la abuela en su carta?", "opts": ["De cómo era su infancia y en qué se diferencia de la de ahora", "De un viaje que quiere hacer", "De una fiesta del pueblo"], "ans": "De cómo era su infancia y en qué se diferencia de la de ahora"}, "escanear": [{"q": "¿A qué hora se levantaban?", "ans": "a las cinco", "alt": ["las cinco", "cinco", "5"], "why": "«Nos levantábamos a las cinco»"}, {"q": "¿Cuánto tiempo caminaban hasta la escuela?", "ans": "una hora", "alt": ["1 hora", "hora", "una"], "why": "«caminábamos una hora hasta la escuela»"}, {"q": "¿Cuántos hermanos eran? (en cifras)", "ans": "8", "alt": ["ocho", "ocho hermanos"], "why": "«Éramos ocho hermanos»"}, {"q": "¿En qué año llegó la carretera? (en cifras)", "ans": "1960", "alt": ["mil novecientos sesenta", "en 1960"], "why": "«En mil novecientos sesenta llegó la carretera»"}, {"q": "¿Cuántos años tenía la abuela ese día? (en cifras)", "ans": "14", "alt": ["catorce", "catorce años"], "why": "«Yo tenía catorce años»"}], "vf": [{"q": "En la casa había agua caliente.", "ans": false, "prueba": "no había electricidad ni agua caliente"}, {"q": "La abuela tenía muchos juguetes.", "ans": false, "prueba": "yo no tenía juguetes"}, {"q": "Su tía le hizo una muñeca.", "ans": true, "prueba": "una muñeca de trapo que me hizo mi tía"}, {"q": "La abuela piensa que la vida de su nieta es más fácil.", "ans": true, "prueba": "vives mejor que yo"}, {"q": "La abuela echa de menos las piedras.", "ans": false, "prueba": "lo que echo de menos no son las piedras"}], "contexto": [{"q": "«con leña» — ¿con qué cocinaba su madre?", "opts": ["met hout", "met gas", "met elektriciteit"], "ans": "met hout", "why": "Er stond net dat er geen elektriciteit was."}, {"q": "«una muñeca de trapo» — ¿de qué es?", "opts": ["van stof, zelfgemaakt", "van plastic", "van hout"], "ans": "van stof, zelfgemaakt", "why": "Haar tante maakte ze; er was geen speelgoed te koop."}, {"q": "«echar de menos» — ¿qué hace la abuela?", "opts": ["Ze mist iets", "Ze gooit iets weg", "Ze telt iets"], "ans": "Ze mist iets", "why": "Vaste uitdrukking — één van de lastigste voor Nederlandstaligen."}, {"q": "«Antes no era mejor. Era diferente.» — ¿qué hace aquí la abuela?", "opts": ["Ze nuanceert wat ze net zei", "Ze spreekt zichzelf tegen", "Ze stelt een vraag"], "ans": "Ze nuanceert wat ze net zei", "why": "Ze zwakt «vroeger was alles beter» bewust af tot «anders»."}], "produccion": {"prompt": "Contesta a la abuela (6–8 frases): cómo es tu vida ahora, qué hacías tú de pequeño/-a, qué cambió y qué echas de menos. Usa el imperfecto para el decorado, el indefinido para lo que pasó una vez, y una comparación (más/menos… que · tan… como).", "modelo": "Querida abuela: ahora yo… De pequeño/-a yo… y siempre… Un día… Ahora mi vida es más… que antes, pero echo de menos…"}});
