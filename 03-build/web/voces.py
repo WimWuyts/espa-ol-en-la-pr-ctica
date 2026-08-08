@@ -29,37 +29,33 @@ import sys
 #
 # naam → (geslacht, herkomst, hoe je hem aanroept, omschrijving)
 VOCES = {
-    "davefx":    ("m", "piper",  "vits-piper-es_ES-davefx-medium",   "121 Hz · warm, duidelijk"),
-    "sharvard-m":("m", "piper",  "vits-piper-es_ES-sharvard-medium", "130 Hz · neutraal (sid 0)"),
-    "sharvard-v":("v", "piper",  "vits-piper-es_ES-sharvard-medium", "218 Hz · neutraal (sid 1)"),
-    "carlfm":    ("m", "piper",  "vits-piper-es_ES-carlfm-x_low",    "128 Hz · lichter, jonger"),
-    "coqui":     ("m", "coqui",  "vits-coqui-es-css10",              "139 Hz · iets formeler"),
-    "dora":      ("v", "kokoro", "kokoro-multi-lang-v1_0",           "216 Hz · Kokoro, 24 kHz"),
-    # Een derde vrouwenstem, want er waren er maar twee en de cast heeft vier
-    # vrouwelijke personages. Dit is `sharvard-v` met de toonhoogte 7 % omlaag:
-    # herbemonstering, zoals een plaat trager laten draaien. Klein genoeg om
-    # natuurlijk te blijven, groot genoeg om als een andere vrouw te horen — en
-    # het lagere timbre past bij de oma- en mevrouw-rollen.
-    "sharvard-v2":("v","piper",  "vits-piper-es_ES-sharvard-medium", "warmer, lager (sid 1, −7 %)"),
-    # En een vierde, om dezelfde reden: «Cuatro personas cuentan su verano» zet
-    # vier vrouwelijke personages naast elkaar. Dora, 6 % hoger — jonger van klank.
-    "dora-alta": ("v", "kokoro", "kokoro-multi-lang-v1_0",           "jonger, hoger (sid 28, +6 %)"),
+    # mannen — alle vier Castiliaans, alle vier goedgekeurd
+    "davefx":     ("m", "piper", "vits-piper-es_ES-davefx-medium",   "121 Hz · warm, duidelijk"),
+    "sharvard-m": ("m", "piper", "vits-piper-es_ES-sharvard-medium", "130 Hz · neutraal (sid 0)"),
+    "carlfm":     ("m", "piper", "vits-piper-es_ES-carlfm-x_low",    "128 Hz · lichter, jonger"),
+    "coqui":      ("m", "coqui", "vits-coqui-es-css10",              "139 Hz · iets formeler"),
+    # vrouwen — hier was het schaars
+    "sharvard-v": ("v", "piper", "vits-piper-es_ES-sharvard-medium", "218 Hz · Castiliaans (sid 1)"),
+    "daniela":    ("v", "piper", "vits-piper-es_AR-daniela-high",    "Argentijns, maar native"),
+    # twee varianten: dezelfde opname, herbemonsterd. Nodig omdat er maar twee
+    # echte vrouwenstemmen te vinden waren en de cursus er vier rollen voor heeft.
+    "sharvard-v2":("v", "piper", "vits-piper-es_ES-sharvard-medium", "warmer, lager (sid 1, −7 %)"),
+    "daniela-b":  ("v", "piper", "vits-piper-es_AR-daniela-high",    "iets hoger (+5 %)"),
 }
 
-# de vlaggen die de speler nodig heeft, per stem
-SID = {"sharvard-m": 0, "sharvard-v": 1, "sharvard-v2": 1,
-       "dora": 28, "dora-alta": 28}
-
-# toonhoogte-verschuiving na het inspreken (1.0 = ongewijzigd)
-TONO = {"sharvard-v2": 0.93, "dora-alta": 1.06}
+SID = {"sharvard-m": 0, "sharvard-v": 1, "sharvard-v2": 1}
+TONO = {"sharvard-v2": 0.93, "daniela-b": 1.05}
 
 # ── de vaste cast: één stem, de hele cursus lang ─────────────────────────────
 CAST = {
-    "Narradora":    "sharvard-v",    # de verteller van de oefeningen
-    "Lucía":        "dora",          # Sevilla
+    # De verteller is geen personage: ze moet alleen niet klinken als iemand die
+    # in hetzelfde fragment praat. Ze hoort dus niet in de schaarse voorraad
+    # échte vrouwenstemmen — daarmee is er precies één per personage vrij.
+    "Narradora":    "sharvard-v2",
+    "Lucía":        "sharvard-v",    # Sevilla
+    "Nina":         "daniela",       # Cusco
+    "Valen":        "daniela-b",     # Cartagena
     "Diego":        "davefx",        # Mexico-Stad — Castiliaans, Mexicaans decor
-    "Valen":        "sharvard-v",    # Cartagena (zie NOTA)
-    "Nina":         "dora",          # Cusco (zie NOTA)
     "Mateo":        "sharvard-m",    # Buenos Aires
     "Pau":          "carlfm",        # Barcelona
     "Sam":          "coqui",         # de Vlaamse leerling
@@ -73,31 +69,31 @@ ROLES = {
     "Camarero":     "carlfm",
     "Cliente":      "davefx",
     "Dependienta":  "sharvard-v",
-    "Recepcionista": "dora",
+    "Recepcionista": "daniela",
     "Doctora":      "sharvard-v2",
     "Guía":         "coqui",
     "Turista":      "carlfm",
-    "Profesora":    "dora",
+    "Profesora":    "sharvard-v",
     "Presentador":  "davefx",
     "Periodista":   "sharvard-m",
     "Agente":       "coqui",
     "Abuela":       "sharvard-v2",
-    "Madre":        "dora",
+    "Madre":        "sharvard-v2",
     "Señora":       "sharvard-v2",
     "Chico":        "carlfm",
-    "Chica":        "dora",
+    "Chica":        "daniela-b",
     "Alumno":       "sharvard-m",
     "Alumna":       "sharvard-v",
     "Voz":          "davefx",
-    "Sofía":        "dora",
+    "Sofía":        "sharvard-v",
     "Bea":          "sharvard-v",
-    "Rosa":         "dora",
+    "Rosa":         "daniela",
     "Marta":        "sharvard-v2",
     "Hugo":         "coqui",
     "Álex":         "carlfm",
     "Aarón":        "davefx",
     "Andrés":       "sharvard-m",
-    "Yuki":         "dora",
+    "Yuki":         "daniela-b",
     "Tom":          "davefx",
     "Voz_España":   "davefx",
     "Voz_América":  "coqui",
@@ -108,26 +104,28 @@ ROLES = {
 # die een ánder accent zou suggereren dan het personage heeft.
 NOTA = """Wat er niet perfect kan, en waarom.
 
-1. **Zeven stemmen, veertig sprekers.** Dat hoeft geen probleem te zijn: de vaste
-   cast houdt zijn eigen stem de hele cursus door, en de bijrollen delen wat
-   overblijft — zolang ze niet in hetzelfde fragment staan. `controla()` rekent
-   dat na op alle 59 fragmenten.
+1. **Er zijn maar twee echte Spaanse vrouwenstemmen te vinden.** Kokoro heeft er
+   wel, maar die spreken Spaans met een zwaar Engels accent (auteur, 2026-08-08)
+   en zijn daarom verworpen. Mimic3 leek uitkomst te bieden, maar de ene klonk
+   niet goed en de andere bleek bij beluistering een man — mijn toonhoogtegrens
+   van 160 Hz lag te laag. Vandaar twee varianten: dezelfde opname, 5 tot 7 %
+   verschoven. Klein genoeg om natuurlijk te blijven, groot genoeg om als een
+   ander persoon te lezen.
 
-2. **Vier vrouwelijke personages, drie vrouwenstemmen.** Narradora, Lucía, Valen
-   en Nina komen alle zes mogelijke paren tegen elkaar in beeld, dus twee van
-   hen moeten delen. Waar het botst, leent er een; het script zegt waar.
+2. **Daniela is Argentijns, niet Castiliaans.** Ze is wél een moedertaalspreker,
+   en dat weegt zwaarder dan het accent: een Engels aandoend Spaans is storender
+   voor een leerling dan een Zuid-Amerikaanse klank.
 
-3. **Alles Castiliaans.** Er zijn wél Mexicaanse en Argentijnse Piper-stemmen,
-   maar de auteur koos (2026-08-08) voor één accent: de cursus is Castiliaans,
-   met Mexico als decor. Dat is ook eerlijker dan een half-Mexicaans klankbeeld
-   dat toch niet klopt met Colombia of Peru."""
+3. **De verteller staat bewust op een variantstem.** Ze is geen personage en
+   hoeft niet «zichzelf» te klinken zoals Lucía dat moet — alleen anders dan wie
+   er in hetzelfde fragment praat. Zo blijft er één echte stem per personage."""
 
 TODAS = dict(CAST)
 TODAS.update({k: v for k, v in ROLES.items() if k not in TODAS})
 
 # reservestemmen, in volgorde, voor als er in één fragment tóch een botsing is
-RESERVA = ["davefx", "sharvard-m", "carlfm", "coqui", "sharvard-v", "dora",
-           "sharvard-v2", "dora-alta"]
+RESERVA = ["davefx", "sharvard-m", "carlfm", "coqui",
+           "sharvard-v", "daniela", "sharvard-v2", "daniela-b"]
 
 
 # Wie er als eerste zijn eigen stem mag houden als twee castleden botsen.
