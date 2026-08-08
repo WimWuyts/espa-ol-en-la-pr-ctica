@@ -360,6 +360,15 @@ __TYPESLOTS__
   </section>
 
   <section class="panel" data-p="cultura">
+    <div class="card" id="c6p-u1-cancion" style="border-left:6px solid var(--g)">
+      <h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px;display:flex;align-items:center;gap:8px">🎵 «La Perla» — Rosalía 🇪🇸 <span class="ge" style="display:inline-block;background:var(--gt);color:var(--gd);border-radius:20px;padding:2px 9px;font-size:11px;font-weight:600">canción de la unidad</span></h3>
+      <p><b>ES:</b> Rosalía es de <b>Barcelona</b> y mezcla el <b>flamenco</b> con el pop. «La Perla» está en su álbum <b>LUX (2025)</b>. <b>Escúchala</b> (playlist o LyricsTraining) y contesta: ¿qué tipo de música es? ¿Te gusta? ¿Por qué? <span class="gloss">Luister en geef je mening met «me gusta / me encanta … porque …».</span></p>
+      <ol style="margin:8px 0 0 18px;padding:0">
+        <li>Escribe tu opinión: <b>Me gusta / No me gusta … porque …</b></li>
+        <li>Pregunta a tu compañero/a: <b>¿Te gusta? ¿Por qué?</b></li>
+        <li>Cuéntalo a la clase en <b>3ª persona</b>: <b>A … le gusta … porque …</b></li>
+      </ol>
+      <p class="gloss" style="margin:6px 0 0">Zelfde nummer als in C5 U4, maar nu ga je een stap verder: van je eigen mening naar het verslag over iemand anders.</p></div>
     <h2 class="sec">Cultura · el horario español</h2>
     <p class="lead">Parada 1 = <b>España</b>. Un día hispano tiene su propio ritmo: se <b>come</b> a las 2–3 y se <b>cena</b> a las 9–10. <span class="gloss">In Spanje eet men laat; de dagindeling verschilt per land.</span></p>
     <div class="card"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px">🍽️ Se come tarde</h3>

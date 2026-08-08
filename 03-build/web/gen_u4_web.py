@@ -379,7 +379,7 @@ __TYPESLOTS__
       <div class="bandas" id="bandas"></div>
       <p class="gloss" style="margin:8px 0 0">🔊 Klik op een kaartje om de artiest + het nummer te horen (TTS). Alle nummers staan in de klas-playlist hieronder.</p>
     </div>
-    <div class="card perla"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px;display:flex;align-items:center;gap:8px">⭐ «La Perla» — Rosalía 🇪🇸 <span class="ge" style="display:inline-block;background:var(--gt);color:var(--gd);border-radius:20px;padding:2px 9px;font-size:11px;font-weight:600">canción de la unidad</span></h3>
+    <div class="card perla" id="c5-u4-cancion"><h3 style="font-family:var(--disp);color:var(--gd);margin:0 0 6px;display:flex;align-items:center;gap:8px">⭐ «La Perla» — Rosalía 🇪🇸 <span class="ge" style="display:inline-block;background:var(--gt);color:var(--gd);border-radius:20px;padding:2px 9px;font-size:11px;font-weight:600">canción de la unidad</span></h3>
       <p><b>ES:</b> «La Perla» está en el álbum <b>LUX (2025)</b> de Rosalía. La canción habla, con humor, de una persona que no es de fiar («una perla»). <b>Escúchala</b> y di en la escala: ¿la <b>odias</b>, <b>no te gusta</b>, <b>te gusta</b> o <b>te encanta</b>? <span class="gloss">Uit het album LUX (2025). Gebruik de gustar-schaal om je mening te geven — dé U4-structuur.</span></p>
       <div class="escala">
         <div class="st" style="background:#fde8e8;border-color:#f5b5b5"><span class="em">😡</span>La odio</div>

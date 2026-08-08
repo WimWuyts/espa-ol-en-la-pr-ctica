@@ -53,9 +53,12 @@ def destino_de(lab, meta):
         if f["etiqueta"] == meta:
             return EN.url(curso, unidad, f["ancla"]), "audio: " + f["id"]
 
-    # 2 · een opnametaak wijst naar het spreekpaneel
+    # 2 · een opnametaak wijst naar de opnamekaart zelf, niet naar het paneel
     texto = (lab + " " + meta).lower()
     if "graba" in texto or "grabar" in texto:
+        tarjeta = _tarjeta_de_voz()
+        if tarjeta:
+            return EN.url(curso, unidad, tarjeta), "opnamekaart"
         return EN.url(curso, unidad, EN.ancla_panel("hablar")), "spreekpaneel"
 
     # 3 · het lange luisterfragment
@@ -90,3 +93,23 @@ def resumen():
         marca = "  " if hoe != "GEEN MATCH" else "! "
         out.append("%s%-22s %-42s %s" % (marca, lab, meta[:42], hoe))
     return "\n".join(out)
+
+def _tarjeta_de_voz():
+    """Het id van de «mensaje de voz»-opnamekaart op de hub van deze unit.
+
+    De QR bij de eindtaak vroeg om «graba», en landde daarmee op het hele
+    spreekpaneel — drie kaarten, waarvan er maar één bij de taak hoort. Welke
+    dat is, staat niet vast in de naam: de id's heten in twaalf units nog
+    `rec_pedido`, ook waar het over een biografie gaat. Daarom zoeken we de
+    kaart op haar titel, in de gebouwde hub, op het moment van de bouw.
+    """
+    import re
+    ruta = os.path.join(HERE, EN.fuente(_ACTUAL["curso"], _ACTUAL["unidad"]))
+    if not os.path.exists(ruta):
+        return None
+    doc = open(ruta, encoding="utf-8").read()
+    tarjetas = re.findall(r"(rec_[a-z0-9_]+)'\s*,\s*\{title:'([^']*)'", doc)
+    for tid, titulo in tarjetas:
+        if "mensaje de voz" in titulo.lower():
+            return tid
+    return tarjetas[-1][0] if tarjetas else None

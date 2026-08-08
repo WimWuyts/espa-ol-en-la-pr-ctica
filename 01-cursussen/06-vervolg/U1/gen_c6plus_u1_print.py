@@ -578,8 +578,8 @@ P(actx(AN(), "Reacciona · ¿a mí también o a mí tampoco?",
   '– Me gustan los deportes. → <span class="wl md"></span><br>'
   '– No me gusta la música clásica. → <span class="wl md"></span></p>',
   apoyo="Modelo"))
-P(audiorow('<div class="ic">🎧</div><div><b>Escucha «La Perla» (Rosalía)</b> en la página digital y completa los huecos (cloze). Después: ¿qué tipo de música es? ¿Te gusta? ¿Por qué? <span class="gloss">A Rosalía le gusta mezclar flamenco y pop.</span></div>',
-           qr("Escanea y escucha", "§5 · Canción «La Perla»", seed=103)))
+P(audiorow('<div class="ic">🎵</div><div><b>Escucha «La Perla» (Rosalía)</b> en la página digital. Escribe tu opinión con <b>me gusta / me encanta … porque …</b>, pregunta la suya a tu compañero/a y cuéntalo en <b>3ª persona</b>. <span class="gloss">Luister, geef je mening, vraag die van je buur en vertel ze daarna in de derde persoon.</span></div>',
+           qr("Escanea y escucha", "§5 · Canción «La Perla»", seed=103, ancla="c6p-u1-cancion")))
 P('</div>')  # sluit .page §5.3
 
 # ================= §6 · LECTURA =================

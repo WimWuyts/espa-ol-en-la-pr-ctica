@@ -1153,6 +1153,8 @@ function escReproductor(cfg,onEstado){
  const guion=cfg.guion||[],hablantes=[];
  guion.forEach(g=>{if(hablantes.indexOf(g.who)<0)hablantes.push(g.who);});
  let modo=cfg.audio?'mp3':'tts',el=null,idx=0,parado=true;
+ // het etiket start op «voz del navegador» en gaat pas naar «audio grabado»
+ // als de mp3 werkelijk begint te spelen (zie reproducir)
  // De mp3 wordt pas bij de eerste klik geladen. Zou het component het bestand al
  // bij het openen van de pagina proberen, dan logt de browser een netwerkfout
  // zolang er nog geen opname bestaat — en dan is «geen consolefouten» geen
@@ -1176,7 +1178,7 @@ function escReproductor(cfg,onEstado){
   get modo(){return modo;},
   reproducir(){parado=false;onEstado&&onEstado(modo,true);
     const a=modo==='mp3'?fuente():null;
-    if(a){a.play().catch(()=>{modo='tts';onEstado&&onEstado(modo,true);idx=0;ttsSecuencia();});}
+    if(a){a.play().then(()=>{onEstado&&onEstado('mp3',true);}).catch(()=>{modo='tts';onEstado&&onEstado(modo,true);idx=0;ttsSecuencia();});}
     else{try{speechSynthesis.cancel();}catch(e){}idx=0;ttsSecuencia();}},
   parar(){parado=true;if(el){el.pause();el.currentTime=0;}try{speechSynthesis.cancel();}catch(e){}onEstado&&onEstado(modo,false);},
   linea(i){const u=(cfg.audioLineas||[])[i];
@@ -1203,7 +1205,7 @@ function buildEscucha(id,cfg){
  const player=escReproductor(cfg,(modo,sonando)=>{
    fuente.textContent=modo==='mp3'?'audio grabado':'voz del navegador';
    const b=$('.escbtn-play');if(b)b.textContent=sonando?'⏹ Parar':'▶ Escuchar';});
- fuente.textContent=cfg.audio?'audio grabado':'voz del navegador';
+ fuente.textContent='voz del navegador';
  // 1 · situatie vooraf
  $('.escsit').innerHTML='<div class="escficha">'+
    (S.lugar?'<p><b>¿Dónde?</b> '+exEsc(S.lugar)+'</p>':'')+
@@ -1340,7 +1342,7 @@ function buildAudioCortos(idEscucha,cfg){
      fuente.textContent=modo==='mp3'?'audio grabado':'voz del navegador';
      btn.textContent=activo?'⏹ Parar':'▶ Escuchar';
      if(!activo)sonando=false;});
-   fuente.textContent=f.audio?'audio grabado':'voz del navegador';
+   fuente.textContent='voz del navegador';
    function cuenta(){veces++;q('.audveces').textContent=veces+' × geluisterd';
      if(veces>=2){tr.disabled=false;tr.textContent='📄 Ver transcripción';}}
    btn.onclick=()=>{if(sonando){player.parar();sonando=false;}

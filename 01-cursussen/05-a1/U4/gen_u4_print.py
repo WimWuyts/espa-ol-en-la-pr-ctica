@@ -1041,7 +1041,7 @@ P(banda([
 ]))
 P('<div class="truc"><b>🟡 Dato:</b> el <b>español</b> es de los idiomas <b>más escuchados</b> en Spotify y YouTube. Cuatro de estos seis artistas son de <b>Colombia</b> o del <b>Caribe</b> — la ruta te lleva allí en U7 y U8.</div>')
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha «La Perla» de Rosalía</b> (o un fragmento) y anota <b>tres palabras</b> que reconoces. <span class="gloss">Luister; noteer drie woorden die je herkent — LyricsTraining staat online.</span></div>',
-           qr("Escanea y escucha", "Banda sonora · playlist U4", seed=45)))
+           qr("Escanea y escucha", "Banda sonora · playlist U4", seed=45, ancla="c5-u4-cancion")))
 P('</div>')  # page Banda 1
 P('<div class="page">')
 P('<div class="divider">La escala del gusto · «La Perla»</div>')
