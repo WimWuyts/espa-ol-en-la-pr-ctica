@@ -92,6 +92,12 @@ CSS = """
 .vida{ color:var(--red); font-size:12pt; }
 .wtab td.op{ font-size:8.8pt; color:var(--mut); }
 .wtab td.fr{ font-size:9.8pt; }
+.decl{ border-left:2mm solid var(--gt); padding:1.4mm 3mm; margin:1.6mm 0; }
+.decl b{ color:var(--gd); font-family:var(--disp); font-size:10pt; }
+.decl span{ display:block; font-size:9.6pt; }
+.prohib{ background:#FEF2F2; border:.4pt solid var(--red); color:var(--red);
+         border-radius:2mm; padding:1.2mm 2.6mm; font-size:9pt; font-weight:600; }
+.barra{ display:inline-block; height:3.4mm; background:var(--g); border-radius:1mm; }
 """
 
 _ICONO = {"hub": "🎮", "ppt": "📊", "print": "📄"}
@@ -310,9 +316,73 @@ def _error_caro(r):
         % (filas, _lineas(6, "wl full"), vidas, vidas))
 
 
+def _arbol(r):
+    d = r["datos"]
+    decl = "".join(
+        '<div class="decl"><b>%s</b><span>«%s»</span></div>' % (E(q), E(t))
+        for q, t in d["declaraciones"])
+    return (
+        '<p style="font-size:9.8pt;margin:0 0 1.5mm"><b>Las cuatro declaraciones.</b> '
+        '<span class="gloss">Lees ze eerst helemaal, zonder te schrijven.</span></p>%s'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Vuestro árbol</b> — dibujadlo con lo '
+        'que todos confirman: <span class="gloss">Teken de stamboom met wat álle vier bevestigen.</span></p>'
+        '<div class="wbox" style="height:34mm"></div>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Miente:</b> '
+        '<span class="wl md"></span> &nbsp; <b>La prueba (cita exacta):</b></p>'
+        '<div style="margin:1mm 0"><span class="wl full"></span></div>' % decl)
+
+
+def _familias(r):
+    d = r["datos"]
+    filas = "".join(
+        '<tr><td>%s</td><td style="text-align:center"><b>%s</b></td>'
+        '<td><span class="barra" style="width:%dmm"></span></td></tr>'
+        % (E(p), ("%.1f" % n).replace(".", ","), int(n * 14)) for p, n in d["tabla"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:34mm">País</th>'
+        '<th style="width:22mm">Personas</th><th>&nbsp;</th></tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Tres frases con «tener»</b> y un número '
+        'de verdad: <span class="gloss">Drie zinnen met tener en een echt getal.</span></p>'
+        '<div class="tira">%s</div>%s' % (filas, marco, _lineas(4, "wl full")))
+
+
+def _sin_familia(r):
+    d = r["datos"]
+    proh = "".join('<span class="prohib">%s</span>' % E(w) for w in d["prohibidas"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<p style="font-size:9.8pt;margin:0 0 1.5mm"><b>Palabras prohibidas:</b></p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1.5mm"><b>Tu marco</b> — cógelo o déjalo:</p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Mi gente</b> — cinco frases:</p>'
+        '<div class="wbox" style="height:42mm"></div>' % (proh, marco))
+
+
+def _adjetivo(r):
+    d = r["datos"]
+    proh = "".join('<span class="prohib">%s</span>' % E(w) for w in d["prohibidas"])
+    banco = "".join('<span>%s</span>' % E(w) for w in d["banco"])
+    filas = "".join(
+        '<tr><td><span class="wl sm"></span></td><td><span class="wl md"></span></td>'
+        '<td><span class="wl md"></span></td><td style="text-align:center">☐</td></tr>'
+        for _ in range(3))
+    return (
+        '<p style="font-size:9.8pt;margin:0 0 1.5mm"><b>Prohibidos:</b></p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1.5mm"><b>Banco</b> — para empezar; '
+        'los fuertes trabajan sin él:</p><div class="tira">%s</div>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:34mm">¿Quién?</th>'
+        '<th>Adjetivo 1</th><th>Adjetivo 2</th><th style="width:22mm">¿Adivinado?</th></tr>'
+        '</thead><tbody>%s</tbody></table>' % (proh, banco, filas))
+
+
 _MATERIAL = {"C5-U0-RETO-03": _gps, "C5-U0-RETO-08": _numeros, "C5-U0-RETO-10": _pasaporte,
              "C5-U1-RETO-02": _identidad, "C5-U1-RETO-03": _censo,
-             "C5-U1-RETO-06": _aeropuerto, "C5-U1-RETO-08": _error_caro}
+             "C5-U1-RETO-06": _aeropuerto, "C5-U1-RETO-08": _error_caro,
+             "C5-U2-RETO-01": _arbol, "C5-U2-RETO-05": _familias,
+             "C5-U2-RETO-06": _sin_familia, "C5-U2-RETO-10": _adjetivo}
 
 
 def reto_print(r):

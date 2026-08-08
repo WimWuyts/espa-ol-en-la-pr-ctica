@@ -13,6 +13,8 @@ _sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
 import print_bloques as PB
 import lectura_data as LD
 import escucha_data as ED
+import retos_data as RD
+import retos_print as RP
 
 def b64(p): return base64.b64encode(open(p, "rb").read()).decode()
 def face(fam, fn, w):
@@ -292,6 +294,18 @@ def lpd(*chips):
 
 def divider(t): return f'<div class="divider">{t}</div>'
 def pcard(t, body): return f'<div class="pcard"><div class="t">{t}</div>{body}</div>'
+
+def retos(ancla, titulo, intro_es, intro_nl):
+    """Retoblok van één sectie — volledige oefening voor print, verwijskaartje
+    voor wat op de hub of in de PowerPoint leeft."""
+    P('<div class="page">')
+    P(f'<div class="divider">{titulo}</div>')
+    P(f'<div class="intro" style="margin-top:1mm"><b>ES:</b> {intro_es} '
+      f'<span class="gloss">{intro_nl}</span></div>')
+    for r in sorted(RD.por_ancla(ancla), key=lambda x: x["num"]):
+        P(RP.reto_print(r) if r["soporte"] == "print" else RP.reto_puntero(r))
+    P('</div>')
+
 
 def steun(niveau):
     return f'<div class="steun" style="margin-left:12.5mm">Apoyo: {niveau}</div>'
@@ -717,6 +731,9 @@ P('<div class="route-note">🎮 <b>Juega online:</b> «memoria de la familia», 
 P('</div>')  # page §1.3
 
 # ================= §2 · LOS POSESIVOS =================
+retos("familia", "§1.4 · Retos — tu gente de verdad",
+      'Tres retos sobre las personas que cuentan: un <b>árbol imposible</b>, los <b>números</b> del mundo hispano y un texto con <b>palabras prohibidas</b>.',
+      'Drie retos over de mensen die tellen: een onmogelijke stamboom, de cijfers van de Spaanstalige wereld, en een tekst met verboden woorden.')
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">2</span><span class="pk">§2 · Los posesivos — mi, tu, su, nuestro</span>')
 P('<div class="intro"><b>ES:</b> Para decir <b>de quién</b> es la familia usas los posesivos: <b>mi</b> madre, <b>tu</b> primo, <b>su</b> perro. Y en plural: <b>mis</b> hermanos, <b>tus</b> tíos. La ruta: observar → patrón → regla → practicar → comunicar. <span class="gloss">Bezittelijke voornaamwoorden: mijn/jouw/zijn·haar + de meervoudsvorm.</span></div>')
@@ -785,6 +802,9 @@ P('<div class="route-note">🎮 <b>Juega online:</b> «posesivo (cloze)» en «s
 P('</div>')  # page §2.2
 
 # ================= §3 · LOS ADJETIVOS =================
+retos("posesivos", "§2.4 · Retos — ¿de quién es?",
+      'Dos retos donde el posesivo decide: una <b>telenovela</b> que la clase escribe junta y una <b>herencia</b> que hay que repartir.',
+      'Twee retos waarin het bezittelijk voornaamwoord beslist: een telenovela die de klas samen schrijft, en een erfenis die verdeeld moet worden.')
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">3</span><span class="pk">§3 · Los adjetivos — describir a las personas</span>')
 P('<div class="intro"><b>ES:</b> Para <b>describir</b> a tu gente usas adjetivos: físicos (alto, moreno) y de carácter (simpático, tímido). Aprendes la <b>concordancia</b> (género/número) y la <b>posición</b> (después del sustantivo). <span class="gloss">Beschrijven met bijvoeglijke naamwoorden — met overeenkomst en plaats.</span></div>')
@@ -874,6 +894,9 @@ P('<div class="route-note">🎮 <b>Juega online:</b> «físico vs. carácter», 
 P('</div>')  # page §3.3
 
 # ================= §4 · SER / ESTAR =================
+retos("adjetivos", "§3.4 · Retos — describir sin lo fácil",
+      'Dos retos que te sacan de los tres adjetivos de siempre.',
+      'Twee retos die je weghalen bij de drie bijvoeglijke naamwoorden van altijd.')
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">4</span><span class="pk">§4 · Ser o estar — la gran trampa del «zijn»</span>')
 P('<div class="intro"><b>ES:</b> En neerlandés «zijn» es <b>una</b> palabra, pero en español hay <b>dos</b>: <b>ser</b> (identidad, descripción) y <b>estar</b> (estado, lugar). Aquí lo descubres con una <b>máquina de decisión</b>. <span class="gloss">De grote valstrik: ser vs. estar — allebei «zijn».</span></div>')
@@ -949,6 +972,9 @@ P('<div class="route-note">🎮 <b>Juega online:</b> «ser o estar» (clasifica)
 P('</div>')  # page §4.2
 
 # ================= §5 · LOS DEMOSTRATIVOS =================
+retos("ser_estar", "§4.4 · Reto — la foto que delata",
+      'Una foto, tres pies, y una palabra que lo decide todo.',
+      'Eén foto, drie onderschriften, en één woord dat alles beslist.')
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">5</span><span class="pk">§5 · Los demostrativos — este y ese</span>')
 P('<div class="intro"><b>ES:</b> Con el álbum en la mano señalas: <b>este</b> es mi hermano (cerca), <b>ese</b> es mi tío (más lejos). Aprendes <b>este/esta/estos/estas</b> y <b>ese/esa/esos/esas</b>. <span class="gloss">Aanwijzen bij de foto’s: dit (dichtbij) / dat (verder).</span></div>')
@@ -1130,6 +1156,9 @@ P('<div class="route-note">🎮 <b>Explora online:</b> foto\'s van una quinceañ
 P('</div>')  # page Cultura
 
 # ================= TAREA FINAL =================
+retos("cultura_u2", "Retos — escuchar a Sevilla",
+      'Dos retos con voces de verdad: un abuelo que te escribe y tres vecinos que no se ponen de acuerdo.',
+      'Twee retos met echte stemmen: een opa die je schrijft en drie buren die het niet eens zijn.')
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">★</span><span class="pk">Tarea final — «Álbum de familia»</span>')
 P('<div class="intro"><b>ES:</b> Como Lucía, creas tu <b>álbum de familia</b>: un árbol genealógico, fotos con descripciones y un juego «¿Quién es?». <span class="gloss">Jouw familiealbum + stamboom + raadspel.</span></div>')
@@ -1259,7 +1288,7 @@ EDITBAR = '''
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Español en la práctica · U2 Mi gente</title><style>'
-        + CSS + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
+        + CSS + PB.CSS + RP.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/U2.html"
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, "·", len(HTML), "bytes")

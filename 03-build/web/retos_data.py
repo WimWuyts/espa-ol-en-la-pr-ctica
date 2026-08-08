@@ -1089,17 +1089,478 @@ U1_RETO_10 = {
 }
 
 
+# ===========================================================================
+# C5 · U2 — Mi gente  (parada: Andalucía · Sevilla)
+# ===========================================================================
+
+U2 = 2
+
+U2_RETO_01 = {
+    "id": "C5-U2-RETO-01", "num": 1, "curso": "C5", "unidad": U2,
+    "seccion": "§1.3", "ancla": "familia", "soporte": "print",
+    "nombre": "El árbol imposible",
+    "lente": "🕵️ forensisch",
+    "forma": "👨‍👩‍👧 En grupos", "skill": "👁️ Leer",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Cuatro testigos, una sola familia. Uno de ellos miente.",
+    "gancho_nl": "Vier getuigen, één familie. Eén van hen liegt.",
+    "consigna_es": "Reconstruye el árbol genealógico con las cuatro declaraciones y señala "
+                   "quién miente, con la frase exacta como prueba.",
+    "consigna_nl": "Reconstrueer de stamboom met de vier verklaringen en wijs aan wie liegt — "
+                   "met de exacte zin als bewijs.",
+    "regla": "Je beschuldiging telt alleen mét citaat. «Marco liegt» is geen antwoord; "
+             "«Marco liegt, want hij zegt X en Ana zegt Y» wel.",
+    "pasos": [
+        ("Lee las cuatro declaraciones sin escribir nada.",
+         "Lees de vier verklaringen zonder iets te schrijven."),
+        ("Dibuja el árbol con lo que TODOS confirman.",
+         "Teken de stamboom met wat álle vier bevestigen."),
+        ("Busca la declaración que no encaja. Cita la frase.",
+         "Zoek de verklaring die niet past. Citeer de zin."),
+        ("Comparad en grupo: ¿habéis acusado a la misma persona?",
+         "Vergelijk in groep: hebben jullie dezelfde persoon beschuldigd?"),
+    ],
+    "datos": {
+        "declaraciones": [
+            ("Rosa", "Tengo dos hijos: Carmen y Paco. Carmen tiene una hija, Lola."),
+            ("Carmen", "Mi madre se llama Rosa. Mi hermano Paco no tiene hijos."),
+            ("Paco", "Soy el tío de Lola. Mi hermana Carmen vive en Sevilla."),
+            ("Lola", "Mi abuela Rosa tiene tres hijos y yo tengo dos primos."),
+        ],
+    },
+    "clave": [
+        "Wie liegt: Lola. Zij zegt «tres hijos» en «dos primos», terwijl Rosa zelf "
+        "«dos hijos» zegt en Carmen bevestigt dat Paco geen kinderen heeft.",
+        "De stamboom: Rosa → Carmen en Paco. Carmen → Lola. Paco is Lola's oom.",
+        "Bewijs uit twee richtingen: Rosa's «Tengo dos hijos» én Carmen's «Paco no tiene "
+        "hijos». Eén verklaring alleen volstaat niet.",
+    ],
+    "nota": "Laat de stamboom écht tekenen. Wie alleen leest, ziet de tegenspraak niet; "
+            "wie tekent, botst er vanzelf op.",
+}
+
+U2_RETO_05 = {
+    "id": "C5-U2-RETO-05", "num": 5, "curso": "C5", "unidad": U2,
+    "seccion": "§1.3", "ancla": "familia", "soporte": "print",
+    "nombre": "Familias del mundo hispano",
+    "lente": "🔬 onderzoek & data",
+    "forma": "👤 Solo", "skill": "👁️ Leer",
+    "tiempo": "± 10 min", "dificultad": "★★☆",
+    "gancho_es": "¿Cuántos sois en casa? En el mundo hispano la respuesta cambia mucho.",
+    "gancho_nl": "Met hoeveel zijn jullie thuis? In de Spaanstalige wereld verschilt dat sterk.",
+    "consigna_es": "Lee la tabla y escribe tres frases con «tener» que comparen los países "
+                   "con Bélgica.",
+    "consigna_nl": "Lees de tabel en schrijf drie zinnen met «tener» die de landen met "
+                   "België vergelijken.",
+    "regla": "Elke zin bevat een écht getal uit de tabel én het werkwoord tener. "
+             "«En México las familias son grandes» telt niet — «En México una familia "
+             "tiene 3,6 personas» wel.",
+    "pasos": [
+        ("Mira la tabla. ¿Qué país te sorprende?",
+         "Bekijk de tabel. Welk land verrast je?"),
+        ("Escribe tres frases con un número de verdad.",
+         "Schrijf drie zinnen met een echt getal."),
+        ("Y tu casa, ¿dónde encaja? Escribe una cuarta frase.",
+         "En jouw gezin, waar past dat? Schrijf een vierde zin."),
+    ],
+    "datos": {
+        # gemiddelde huishoudgrootte, afgerond — bron in de docentnota
+        "tabla": [("México", 3.6), ("Guatemala", 4.4), ("Colombia", 3.1),
+                  ("España", 2.5), ("Argentina", 3.0), ("Bélgica", 2.3)],
+        "marco": ["En … una familia tiene … personas.",
+                  "En … las familias tienen más/menos personas que en Bélgica.",
+                  "En mi casa somos … : tengo …"],
+    },
+    "clave": [
+        "Grootst: Guatemala (4,4) · kleinst: België (2,3) — dat verschil is bijna het "
+        "dubbele en is meestal de verrassing.",
+        "Modelzin: «En Guatemala una familia tiene cuatro coma cuatro personas; en "
+        "Bélgica tiene dos coma tres.»",
+        "Let op het decimaalteken: in het Spaans lees je «tres coma seis», niet «tres punto seis».",
+    ],
+    "nota": "Cijfers zijn afgeronde gemiddelden voor de huishoudgrootte en dienen om te "
+            "vergelijken, niet om uit het hoofd te leren. Controleer ze vóór gebruik als je "
+            "ze als feit presenteert.",
+}
+
+U2_RETO_06 = {
+    "id": "C5-U2-RETO-06", "num": 6, "curso": "C5", "unidad": U2,
+    "seccion": "§1.3", "ancla": "familia", "soporte": "print",
+    "nombre": "Mi gente, sin la palabra «familia»",
+    "lente": "✍️ creatieve beperking",
+    "forma": "👤 Solo", "skill": "✍️ Escribir",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Escribe sobre las personas que cuentan para ti. Pero hay palabras prohibidas.",
+    "gancho_nl": "Schrijf over de mensen die voor jou tellen. Maar er zijn verboden woorden.",
+    "consigna_es": "Cinco frases sobre tu gente, sin usar «familia», «madre», «padre» ni "
+                   "«hermano/a».",
+    "consigna_nl": "Vijf zinnen over jouw mensen, zonder «familia», «madre», «padre» of "
+                   "«hermano/a» te gebruiken.",
+    "regla": "Die vier woorden zijn verboden. Je moet dus omschrijven: wie die persoon is, "
+             "wat die doet, waarom die telt. Niet iedereen woont in hetzelfde huis — dat mag.",
+    "pasos": [
+        ("Piensa en tres personas. No escribas sus papeles todavía.",
+         "Denk aan drie personen. Schrijf hun rol nog niet op."),
+        ("Descríbelas: qué hacen, cómo son, dónde viven.",
+         "Beschrijf ze: wat ze doen, hoe ze zijn, waar ze wonen."),
+        ("Lee tu texto a tu compañero/a. ¿Adivina quién es quién?",
+         "Lees je tekst voor aan je buur. Raadt die wie wie is?"),
+    ],
+    "datos": {
+        "prohibidas": ["familia", "madre", "padre", "hermano", "hermana"],
+        "marco": ["Vivo con …", "… trabaja en …", "… es muy … y siempre …",
+                  "Para mí … es importante porque …", "Los domingos … "],
+    },
+    "clave": [
+        "Er is geen juist antwoord — wel een meetbare beperking: staat er geen enkel "
+        "verboden woord in, en herkent de buur de personen?",
+        "Sterke omwegen die leerlingen vinden: «la persona que me despierta», «el que "
+        "cocina los domingos», «la que vive arriba».",
+        "Deze reto maakt ruimte voor gezinnen die niet in het standaardschema passen. "
+        "Dat is de didactische winst, naast de woordenschat.",
+    ],
+    "nota": "Dwing niemand om voor te lezen. De beperking is talig bedoeld, niet als "
+            "uitnodiging om over de thuissituatie te vertellen.",
+}
+
+U2_RETO_10 = {
+    "id": "C5-U2-RETO-10", "num": 10, "curso": "C5", "unidad": U2,
+    "seccion": "§3.3", "ancla": "adjetivos", "soporte": "print",
+    "nombre": "El adjetivo prohibido",
+    "lente": "✍️ creatieve beperking",
+    "forma": "👥 En parejas", "skill": "🗣️ Hablar",
+    "tiempo": "± 10 min", "dificultad": "★★☆",
+    "gancho_es": "Describe a tres personas. Pero los tres adjetivos fáciles están prohibidos.",
+    "gancho_nl": "Beschrijf drie personen. Maar de drie makkelijke bijvoeglijke naamwoorden "
+                 "zijn verboden.",
+    "consigna_es": "Describe a tres personas sin decir «simpático», «bueno» ni «grande». "
+                   "Tu compañero/a adivina de quién hablas.",
+    "consigna_nl": "Beschrijf drie personen zonder «simpático», «bueno» of «grande» te "
+                   "zeggen. Je buur raadt over wie je het hebt.",
+    "regla": "Die drie zijn verboden, en je mag ze ook niet omzeilen met «muy bueno» of "
+             "«no es malo». Je moet naar een ánder woord grijpen.",
+    "pasos": [
+        ("Elige tres personas que los dos conocéis.",
+         "Kies drie personen die jullie allebei kennen."),
+        ("Escribe dos adjetivos por persona, sin los prohibidos.",
+         "Schrijf twee bijvoeglijke naamwoorden per persoon, zonder de verboden woorden."),
+        ("Describe. Tu compañero/a adivina. Cambiad.",
+         "Beschrijf. Je buur raadt. Wissel."),
+    ],
+    "datos": {
+        "prohibidas": ["simpático/-a", "bueno/-a", "grande"],
+        "banco": ["divertido/-a", "tranquilo/-a", "hablador/-a", "generoso/-a", "tímido/-a",
+                  "trabajador/-a", "cariñoso/-a", "despistado/-a", "valiente", "paciente"],
+    },
+    "clave": [
+        "Let op de overeenkomst: trabajador → trabajadora, hablador → habladora. "
+        "Adjectieven op -e (valiente, paciente) veranderen níét.",
+        "Wie «no es malo» gebruikt, omzeilt de regel en doet het opnieuw.",
+        "De bank is een steiger: laat sterke leerlingen zonder werken.",
+    ],
+    "nota": "Tien woorden in de bank is genoeg. Meer aanbieden maakt van de oefening "
+            "een leeslijst in plaats van een spreekopdracht.",
+}
+
+U2_RETO_04 = {
+    "id": "C5-U2-RETO-04", "num": 4, "curso": "C5", "unidad": U2,
+    "seccion": "§3.3", "ancla": "adjetivos", "soporte": "hub",
+    "nombre": "Retrato hablado",
+    "lente": "🎭 simulatie met beperking",
+    "forma": "👥 En parejas", "skill": "👂 Escuchar",
+    "tiempo": "± 10 min", "dificultad": "★★☆",
+    "gancho_es": "La policía busca a alguien. Solo tiene la descripción.",
+    "gancho_nl": "De politie zoekt iemand. Ze hebben alleen de beschrijving.",
+    "consigna_es": "Escucha la descripción y elige el retrato correcto. Después describe tú "
+                   "uno y que tu compañero/a lo encuentre.",
+    "consigna_nl": "Luister naar de beschrijving en kies het juiste portret. Beschrijf daarna "
+                   "zelf iemand en laat je buur die vinden.",
+    "regla": "Je mag geen vragen stellen tijdens het luisteren. Eén keer horen, dan kiezen. "
+             "Wie het mis heeft, luistert opnieuw — maar verliest zijn punt.",
+    "pasos": [
+        ("Escucha la primera descripción. No mires los retratos todavía.",
+         "Luister naar de eerste beschrijving. Kijk nog niet naar de portretten."),
+        ("Ahora mira y elige. ¿Qué detalle decide?",
+         "Kijk nu en kies. Welk detail geeft de doorslag?"),
+        ("Te toca: describe uno sin decir el número.",
+         "Jouw beurt: beschrijf er een zonder het nummer te zeggen."),
+    ],
+    "datos": {
+        # (nummer, haar, ogen/bril, extra, adjetivo)
+        "retratos": [
+            (1, "pelo largo y rizado", "lleva gafas", "sonríe", "habladora"),
+            (2, "pelo largo y liso", "sin gafas", "sonríe", "tranquila"),
+            (3, "pelo corto y rizado", "lleva gafas", "serio", "tímido"),
+            (4, "pelo corto y liso", "sin gafas", "serio", "trabajador"),
+            (5, "pelo largo y rizado", "sin gafas", "serio", "valiente"),
+            (6, "pelo corto y rizado", "sin gafas", "sonríe", "divertido"),
+        ],
+        "descripciones": [
+            (3, "Tiene el pelo corto y rizado, lleva gafas y es bastante serio. Es tímido."),
+            (5, "Tiene el pelo largo y rizado, no lleva gafas y no sonríe. Es valiente."),
+            (6, "Tiene el pelo corto y rizado, no lleva gafas y sonríe mucho. Es divertido."),
+        ],
+    },
+    "clave": [
+        "Portret 3 · 5 · 6, in die volgorde.",
+        "Portret 1 en 5 verschillen alleen in de bril; 3 en 6 alleen in bril én uitdrukking. "
+        "Wie half luistert, kiest de buur ernaast.",
+        "Het beslissende detail is bijna nooit het haar — dat delen er telkens twee.",
+    ],
+    "nota": "Zes portretten is het maximum: bij meer wordt het zoeken in plaats van luisteren.",
+}
+
+U2_RETO_07 = {
+    "id": "C5-U2-RETO-07", "num": 7, "curso": "C5", "unidad": U2,
+    "seccion": "Cultura", "ancla": "cultura_u2", "soporte": "hub",
+    "nombre": "El podcast del abuelo",
+    "lente": "📻 mediaformat",
+    "forma": "👤 Solo", "skill": "🗣️ Hablar",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Un abuelo de Sevilla te manda un mensaje de voz. Te toca contestar.",
+    "gancho_nl": "Een opa uit Sevilla stuurt je een spraakbericht. Jij mag antwoorden.",
+    "consigna_es": "Escucha la carta sonora del abuelo Curro y graba tu respuesta de treinta "
+                   "segundos: preséntale a tu gente.",
+    "consigna_nl": "Luister naar de geluidsbrief van abuelo Curro en neem je antwoord van "
+                   "dertig seconden op: stel jouw mensen aan hem voor.",
+    "regla": "Je antwoordt op wat hij écht vraagt — niet op wat je toevallig kunt zeggen. "
+             "Zijn drie vragen moeten alle drie een antwoord krijgen.",
+    "pasos": [
+        ("Escucha una vez sin notas. ¿Qué te pregunta?",
+         "Luister één keer zonder te noteren. Wat vraagt hij je?"),
+        ("Escucha otra vez y anota sus tres preguntas.",
+         "Luister opnieuw en noteer zijn drie vragen."),
+        ("Graba treinta segundos. Contesta las tres.",
+         "Neem dertig seconden op. Beantwoord alle drie."),
+    ],
+    "datos": {
+        "guion": [
+            ("Abuelo Curro", "¡Hola, muchacho! Soy Curro, el abuelo de Lucía, desde Sevilla."),
+            ("Abuelo Curro", "Aquí en casa somos muchos: mis dos hijas, sus maridos y cinco nietos."),
+            ("Abuelo Curro", "Dime una cosa: ¿cuántos sois en tu casa?"),
+            ("Abuelo Curro", "¿Y tienes hermanos o eres hijo único?"),
+            ("Abuelo Curro", "Ah, y lo más importante: ¿tenéis animales? Aquí tenemos dos gatos."),
+            ("Abuelo Curro", "Cuéntamelo todo. ¡Hasta pronto!"),
+        ],
+        "marco": ["Hola, Curro. En mi casa somos …", "Tengo … / No tengo …",
+                  "Sí, tenemos … / No, no tenemos animales."],
+    },
+    "clave": [
+        "Zijn drie vragen: hoeveel zijn jullie thuis · heb je broers of zussen · hebben "
+        "jullie huisdieren.",
+        "Beoordeel op alle drie beantwoord, niet op vloeiendheid. Wie er twee doet, "
+        "luistert opnieuw.",
+        "Curro gebruikt «somos» en «tenemos» — precies de twee vormen die het antwoord "
+        "nodig heeft.",
+    ],
+    "nota": "Het fragment staat als script in de hub en wordt voorgelezen door de "
+            "computerstem zolang er geen opname is.",
+}
+
+U2_RETO_09 = {
+    "id": "C5-U2-RETO-09", "num": 9, "curso": "C5", "unidad": U2,
+    "seccion": "Cultura", "ancla": "cultura_u2", "soporte": "hub",
+    "nombre": "Sevilla en tres voces",
+    "lente": "🤝 bemiddelen",
+    "forma": "👤 Solo", "skill": "🔀 Mediar",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Tres sevillanos, tres opiniones sobre el mismo barrio.",
+    "gancho_nl": "Drie inwoners van Sevilla, drie meningen over dezelfde buurt.",
+    "consigna_es": "Escucha a los tres y resume para un amigo flamenco quién piensa qué. "
+                   "No traduzcas: resume.",
+    "consigna_nl": "Luister naar alle drie en vat voor een Vlaamse vriend samen wie wat "
+                   "vindt. Niet vertalen: samenvatten.",
+    "regla": "Je samenvatting is korter dan wat je hoorde. Je mag dus schrappen — maar niet "
+             "verzinnen, en geen van de drie mag wegvallen.",
+    "pasos": [
+        ("Escucha las tres voces seguidas. No escribas.",
+         "Luister de drie stemmen na elkaar. Schrijf niet."),
+        ("Escucha otra vez y anota una palabra por persona.",
+         "Luister opnieuw en noteer één woord per persoon."),
+        ("Escribe tu resumen en tres frases, en neerlandés.",
+         "Schrijf je samenvatting in drie zinnen, in het Nederlands."),
+        ("Compara: ¿has dejado fuera algo importante?",
+         "Vergelijk: heb je iets belangrijks weggelaten?"),
+    ],
+    "datos": {
+        "voces": [
+            ("Rosa, 71", "Mi barrio es tranquilo y todos nos conocemos. Los vecinos son "
+                         "como mi familia: siempre hay alguien en la calle."),
+            ("Javi, 17", "A mí el barrio me parece aburrido. No hay nada para los jóvenes: "
+                         "ni cine, ni polideportivo. Los fines de semana voy al centro."),
+            ("Amina, 34", "Es un barrio muy vivo pero caro. Mi piso es pequeño y cuesta "
+                          "mucho. Lo bueno es que mi hija va al colegio a dos calles."),
+        ],
+    },
+    "clave": [
+        "Rosa: rustig, iedereen kent elkaar, buren als familie — positief.",
+        "Javi: saai, niets voor jongeren, gaat naar het centrum — negatief.",
+        "Amina: levendig maar duur, klein appartement, school dichtbij — gemengd.",
+        "De valkuil is Amina: leerlingen maken haar positief óf negatief, terwijl ze "
+        "allebei zegt. «Maar» in de samenvatting is het teken dat het gelukt is.",
+    ],
+    "nota": "Bemiddelen mag in het Nederlands: het doel is dat de informatie overkomt, "
+            "niet dat de leerling het in het Spaans navertelt.",
+}
+
+U2_RETO_02 = {
+    "id": "C5-U2-RETO-02", "num": 2, "curso": "C5", "unidad": U2,
+    "seccion": "§2.3", "ancla": "posesivos", "soporte": "ppt",
+    "nombre": "La familia de la telenovela",
+    "lente": "🎭 simulatie met beperking",
+    "forma": "🏫 Toda la clase", "skill": "✍️ Escribir",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "La clase escribe una telenovela. Pero primero hay que saber quién es de quién.",
+    "gancho_nl": "De klas schrijft een telenovela. Maar eerst moet je weten wie van wie is.",
+    "consigna_es": "Entre todos inventáis la familia. Cada personaje se conecta con otro "
+                   "usando un posesivo.",
+    "consigna_nl": "Samen verzinnen jullie de familie. Elk personage wordt met een bezittelijk "
+                   "voornaamwoord aan een ander gekoppeld.",
+    "regla": "Elk nieuw personage moet met minstens twee bezittelijke voornaamwoorden aan de "
+             "bestaande familie hangen. Een personage dat aan niemand hangt, komt er niet in.",
+    "pasos": [
+        ("Empezamos con Rosalía, la abuela. Todo cuelga de ella.",
+         "We beginnen met Rosalía, de oma. Alles hangt aan haar."),
+        ("Cada alumno/a añade un personaje y lo conecta.",
+         "Elke leerling voegt een personage toe en verbindt het."),
+        ("El/la profe dibuja el árbol en la pizarra mientras tanto.",
+         "De leerkracht tekent de stamboom ondertussen op het bord."),
+        ("Al final: una frase de escándalo con «su» o «sus».",
+         "Op het einde: één schandaalzin met «su» of «sus»."),
+    ],
+    "datos": {
+        "semilla": [("Rosalía", "la abuela · 78 años · vive en Triana"),
+                    ("Curro", "su marido · toca la guitarra")],
+        "marco": ["… es mi/tu/su …", "Sus hijos se llaman …",
+                  "Nuestra abuela vive en …", "Su perro se llama …"],
+        "escandalo": ["¡Su marido no es su marido!", "¡Sus hijos no saben que …!",
+                      "¡Nuestra abuela tiene un secreto!"],
+    },
+    "clave": [
+        "De regel te bewaken: «su» hoort bij het bezeten ding, niet bij de bezitter — "
+        "«sus hijos» is meervoud omdat er meer kinderen zijn, niet omdat er meer ouders zijn.",
+        "«Nuestro/-a» beweegt wél mee in geslacht: nuestra abuela, nuestro abuelo.",
+        "Laat de stamboom op het bord staan: bij de eindtaak «Álbum de familia» is hij "
+        "het model.",
+    ],
+    "nota": "Werkt het best als de leerkracht meetekent. Zonder zichtbare stamboom "
+            "verliest de klas na zes personages het overzicht.",
+}
+
+U2_RETO_03 = {
+    "id": "C5-U2-RETO-03", "num": 3, "curso": "C5", "unidad": U2,
+    "seccion": "§2.3", "ancla": "posesivos", "soporte": "ppt",
+    "nombre": "Herencia con condiciones",
+    "lente": "⚖️ onderhandeling & dilemma",
+    "forma": "👨‍👩‍👧 En grupos", "skill": "🗣️ Hablar",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "La tía Amparo deja cinco cosas. Y una nota que no aclara nada.",
+    "gancho_nl": "Tante Amparo laat vijf dingen na. En een briefje dat niets verduidelijkt.",
+    "consigna_es": "Decidid quién recibe qué. Cada decisión se defiende solo con una "
+                   "relación de familia.",
+    "consigna_nl": "Beslis wie wat krijgt. Elke beslissing verdedig je alleen met een "
+                   "familierelatie.",
+    "regla": "Alleen familieargumenten tellen. «Ik wil het» of «het past bij mij» is geen "
+             "argument; «es de su hermana, no de la mía» wel.",
+    "pasos": [
+        ("Leed la nota de la tía. No decide nada.",
+         "Lees het briefje van de tante. Het beslist niets."),
+        ("Cada uno elige un objeto y prepara su argumento.",
+         "Ieder kiest een voorwerp en bereidt zijn argument voor."),
+        ("Negociad. Solo argumentos de parentesco.",
+         "Onderhandel. Alleen verwantschapsargumenten."),
+        ("¿No hay acuerdo? El objeto va al museo del pueblo.",
+         "Geen akkoord? Het voorwerp gaat naar het dorpsmuseum."),
+    ],
+    "datos": {
+        "objetos": [("la guitarra de Curro", "su marido la tocaba cada domingo"),
+                    ("el anillo de la bisabuela", "pasa de madre a hija desde 1890"),
+                    ("las fotos del pueblo", "las hizo su hermano Paco"),
+                    ("la casa de Triana", "vale mucho dinero"),
+                    ("el gato Manolo", "tiene catorce años y muerde")],
+        "marco": ["Es de mi …, no de la tuya.", "Su … la tocaba, entonces …",
+                  "Nuestros … la usaban.", "No estoy de acuerdo: sus … "],
+    },
+    "clave": [
+        "Er is geen juiste verdeling. Beoordeel of élke toewijzing met een familierelatie "
+        "verdedigd is en of de bezittelijke voornaamwoorden kloppen.",
+        "De ring is de scherpste casus: «de madre a hija» sluit de zonen uit — laat de klas "
+        "dat zelf ontdekken en betwisten.",
+        "De kat is bewust de minst begeerde: daar hoor je «no lo quiero» en dus de "
+        "ontkenning met pronomen.",
+    ],
+    "nota": "Zet een klok van acht minuten. Zonder tijdsdruk blijft de klas bij het eerste "
+            "voorwerp hangen.",
+}
+
+U2_RETO_08 = {
+    "id": "C5-U2-RETO-08", "num": 8, "curso": "C5", "unidad": U2,
+    "seccion": "§4.3", "ancla": "ser_estar", "soporte": "ppt",
+    "nombre": "La foto sin pie",
+    "lente": "🕵️ forensisch",
+    "forma": "👥 En parejas", "skill": "👁️ Leer",
+    "tiempo": "± 10 min", "dificultad": "★★★",
+    "gancho_es": "Una foto, tres pies de foto. Solo uno dice la verdad.",
+    "gancho_nl": "Eén foto, drie onderschriften. Maar één ervan klopt.",
+    "consigna_es": "Elige el pie correcto y di qué palabra lo delata. Casi siempre es «ser» "
+                   "o «estar».",
+    "consigna_nl": "Kies het juiste onderschrift en zeg welk woord het verraadt. Bijna altijd "
+                   "is dat «ser» of «estar».",
+    "regla": "Je moet het verraderlijke wóórd aanwijzen, niet het onderschrift. Wie het "
+             "juiste kiest maar het woord niet vindt, heeft geraden.",
+    "pasos": [
+        ("Mira la escena. ¿Qué ves exactamente?",
+         "Bekijk de scène. Wat zie je precies?"),
+        ("Lee los tres pies. Dos chocan con la foto.",
+         "Lees de drie onderschriften. Twee botsen met de foto."),
+        ("Señala la palabra que decide.",
+         "Wijs het woord aan dat beslist."),
+    ],
+    "datos": {
+        "casos": [
+            ("Una chica sonríe en una fiesta, rodeada de gente.",
+             [("Está contenta porque es su cumpleaños.", True, "está = hoe ze zich nu voelt"),
+              ("Es contenta porque está su cumpleaños.", False, "ser/estar omgewisseld"),
+              ("Está simpática y es cansada.", False, "eigenschap met estar, toestand met ser")]),
+            ("Un abuelo con delantal, en la cocina, cortando cebolla.",
+             [("Es cocinero y está en la cocina.", True, "beroep = ser, plaats = estar"),
+              ("Está cocinero y es en la cocina.", False, "allebei omgewisseld"),
+              ("Es en la cocina y está cocinero.", False, "idem, andere volgorde")]),
+            ("Dos hermanos idénticos, uno con gafas.",
+             [("Son gemelos, pero uno está con gafas.", False, "bril dragen = llevar, niet estar"),
+              ("Son gemelos y uno lleva gafas.", True, "llevar voor kleding en bril"),
+              ("Están gemelos y uno es gafas.", False, "familieband is ser, en «es gafas» bestaat niet")]),
+        ],
+    },
+    "clave": [
+        "Casus 1: het eerste. Beslissend woord: «está» (gevoel van dit moment).",
+        "Casus 2: het eerste. Beslissend woord: «es cocinero» (beroep gaat met ser).",
+        "Casus 3: het tweede. Beslissend woord: «lleva» — een bril draag je, die ben of "
+        "sta je niet.",
+        "Casus 3 is de moeilijkste omdat geen van de drie fout is op ser/estar alleen: "
+        "je moet zien dat het werkwoord zelf verkeerd gekozen is.",
+    ],
+    "nota": "De scènes worden op de dia beschreven, niet getoond: de leerling moet ze zich "
+            "voorstellen en dan pas de zinnen toetsen. Dat maakt het een taaloefening en "
+            "geen zoekplaatje.",
+}
+
+
 # --- register per unit ---
 RETOS_U0 = [RETO_01, RETO_02, RETO_03, RETO_04, RETO_05,
             RETO_06, RETO_07, RETO_08, RETO_09, RETO_10]
 RETOS_U1 = [U1_RETO_01, U1_RETO_02, U1_RETO_03, U1_RETO_04, U1_RETO_05,
             U1_RETO_06, U1_RETO_07, U1_RETO_08, U1_RETO_09, U1_RETO_10]
-RETOS = RETOS_U0 + RETOS_U1
+RETOS_U2 = [U2_RETO_01, U2_RETO_02, U2_RETO_03, U2_RETO_04, U2_RETO_05,
+            U2_RETO_06, U2_RETO_07, U2_RETO_08, U2_RETO_09, U2_RETO_10]
+RETOS = RETOS_U0 + RETOS_U1 + RETOS_U2
 
 # Waar in de printcursus elke sectie eindigt — hier wordt een print-reto ingevoegd.
 ANCLAS = ["alfabeto", "sonidos", "sonido_letra", "acento", "numeros", "saludos", "cultura",
           # C5 U1
-          "datos", "ser", "presente", "preguntar", "cultura_u1"]
+          "datos", "ser", "presente", "preguntar", "cultura_u1",
+          # C5 U2
+          "familia", "posesivos", "adjetivos", "ser_estar", "cultura_u2"]
 
 
 def de(curso, unidad):

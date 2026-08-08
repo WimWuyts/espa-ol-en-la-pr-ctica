@@ -155,6 +155,20 @@ def tarjetas_de(r):
     if i == "C5-U1-RETO-04":
         return ([("PROHIBIDA", q, None) for q, _w in d["prohibidas"]]
                 + [("rodeo", q, waarom) for q, waarom in d["rodeos"]])
+    if i == "C5-U2-RETO-02":
+        return ([(n, sub, None) for n, sub in d["semilla"]]
+                + [("marco", m, None) for m in d["marco"]]
+                + [("¡Escándalo!", e, None) for e in d["escandalo"]])
+    if i == "C5-U2-RETO-03":
+        return ([(o, por, None) for o, por in d["objetos"]]
+                + [("marco", m, None) for m in d["marco"]])
+    if i == "C5-U2-RETO-08":
+        salida = []
+        for k, (escena, pies) in enumerate(d["casos"], 1):
+            salida.append(("Foto %d" % k, escena, None))
+            for pie, ok, porque in pies:
+                salida.append(("" if ok else "", pie, ("✓ " if ok else "✗ ") + porque))
+        return salida
     if i == "C5-U1-RETO-09":
         return ([("Tu perfil", m, None) for m in d["marco_perfil"]]
                 + [("El algoritmo", m, None) for m in d["marco_algoritmo"]]

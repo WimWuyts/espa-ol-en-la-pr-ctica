@@ -195,6 +195,20 @@ def retos_js(host_id, curso, unidad):
             base["items"] = [{"text": "Te presento a mi compañero/a",
                               "cue": "één minuut, derde persoon, voor iemand die geen "
                                      "Nederlands kent"}]
+        elif r["id"] == "C5-U2-RETO-04":
+            base["tipo"] = "retrato"
+            base["retratos"] = [{"n": n, "pelo": pelo, "gafas": "lleva" in gaf,
+                                 "sonrie": son == "sonríe"}
+                                for n, pelo, gaf, son, _adj in d["retratos"]]
+            base["descripciones"] = [{"correcto": n, "texto": t} for n, t in d["descripciones"]]
+        elif r["id"] == "C5-U2-RETO-07":
+            base["tipo"] = "grabar"
+            base["situaciones"] = [{"es": t, "nl": "", "pista": ""} for _q, t in d["guion"]]
+            base["items"] = [{"text": "Mi respuesta a Curro",
+                              "cue": "dertig seconden · beantwoord zijn drie vragen"}]
+        elif r["id"] == "C5-U2-RETO-09":
+            base["tipo"] = "voces"
+            base["voces"] = [{"quien": q, "texto": t} for q, t in d["voces"]]
         else:
             continue
         salida.append(base)
