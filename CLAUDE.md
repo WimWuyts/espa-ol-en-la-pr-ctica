@@ -359,7 +359,16 @@ De richtlijnen zijn **geen proza om te "kennen" maar een plukvijver om uit te pu
 - **Mochila-mascotte:** flat-vector rugzak met gezichtje (kompas/kaart/ster-varianten). De klas kiest de naam.
 - **Kaarten = ECHTE geografie (BINDEND, auteur 2026-07-26):** géén gestileerde/abstracte kaart. De *mapa del mundo hispano* wordt gerenderd uit **Natural Earth** (public domain, `ne_110m_admin_0_countries.geojson`) via `build_map.py` — equirectangular, alle Spaanstalige landen opgelicht, paradas met cast-avatars. Zelfde aanpak voor latere kaarten.
 - **Foto's / scènes:** **niet vereist** — vervangen door eigen vector-illustratie. Wil de auteur tóch echte foto's van plekken, dan levert hij rechtenvrije foto's (Unsplash/Pexels) aan; Claude plaatst ze. De Drive-map «Estilo Exploración» blijft optioneel/aanvullend, niet blokkerend.
-- **Iconen:** open lijniconenset **Lucide** (MIT) als basis.
+- **Iconen: Lucide — nu in de repo** (`02-huisstijl/vendor/lucide/`). 1766 iconen als
+  één `lucide.json` (enkel de tekenpaden), plus `iconos.py` dat er inline SVG van maakt
+  in onze eigen maten en kleuren — een icoon erft `currentColor` en kleurt dus mee met
+  de cursuskleur. **Licentie = ISC**, niet MIT: dat gold alleen voor de van Feather
+  afgeleide deelverzameling. De licentie staat verbatim naast de iconen.
+  `BADGE` in `iconos.py` vertaalt de 26 emoji die nú in de cursus staan naar hun
+  tegenhanger. **Nog niet toegepast op de units** — zie de drukproef
+  `02-huisstijl/vendor/lucide/ejemplo_iconos.html`; de omschakeling is een beslissing
+  van de auteur. Wat géén emoji is maar typografie (★☆ moeilijkheid · ☐ aankruisvak ·
+  → in een keten · het semáforo · de vlaggen) blijft hoe dan ook staan.
 - **Mockups (chat/ficha/ticket/menu/bingo/poster/profiel…), infographics, spot-illustraties, kleurvlakken:** vector (SVG), in huis gebouwd (zie `assets2.py`).
 - **Technische pijplijn:** SVG = bron → **300 dpi PNG** voor Word/PDF (python-docx plaatst PNG kraakhelder), **SVG** rechtstreeks in HTML. Foto's als hoge-resolutie JPEG/PNG.
 - **Altijd:** alt-tekst bij elk beeld · **grijswaarden-veilig** · kleur nooit als enige informatiedrager (ook label/vorm/icoon).
