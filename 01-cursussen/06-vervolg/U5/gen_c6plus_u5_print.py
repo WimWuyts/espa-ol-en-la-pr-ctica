@@ -9,12 +9,14 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = "/home/user/espa-ol-en-la-pr-ctica"
 sys.path.insert(0, f"{ROOT}/01-cursussen/06-vervolg/U0")
 import gen_u0_print as U0
-from gen_u0_print import (CSS, AV, TU, MOCH, qr, audiorow, act, regla, guide, lpd, divider,
+from gen_u0_print import (CSS, AV, TU, MOCH, audiorow, act, regla, guide, lpd, divider,
                           pcard, steun, sortcols, actx, tarea_com, obsbox, machine, blocks, tree,
                           mirror, fmu, scaffold, zoom, clusters, colloc, scale, vpairs, mispal, xray,
                           gustobars, menu)
 import sys as _sys
 _sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
+import qr_print as QRP; QRP.fijar("C6+", 5)
+from qr_print import qr
 import print_bloques as PB
 import lectura_data as LD
 import escucha_data as ED
@@ -120,18 +122,18 @@ P(f'''
 ''')
 
 # ================= §0 · ¡PONTE AL DÍA! =================
-sec_open("0", "§0 · ¡Ponte al día!", 'We komen van de <b>perfecto</b> (U4: he viajado). Nu de <b>indefinido</b>: dezelfde «wat gebeurde», maar voor <b>afgeronde</b> feiten met een datum (ayer, en 1919). <span class="gloss">Van de voltooide tijd (perfecto) naar de voltooid verleden tijd (indefinido) — afgeronde feiten.</span>',
+sec_open("0", "§0 · ¡Ponte al día!", 'We komen van de <b>perfecto</b> (U4: he viajado). Nu de <b>indefinido</b>: dezelfde «wat gebeurde», maar voor <b>afgeronde</b> feiten met een datum (ayer, en 1919). <span class="gloss">Van de voltooide tijd (perfecto) naar de onvoltooid verleden tijd (indefinido) — afgeronde feiten.</span>',
         lpd(("8","taalsysteem: perfecto → indefinido"), ("7","woordenschat")))
 P('<div class="truc"><b>Perfecto ↔ indefinido:</b> <b>hoy/esta semana he viajado</b> (perfecto, dichtbij) tegenover <b>ayer/en 2019 viajé</b> (indefinido, afgerond verleden). In U5 vertellen we <b>biografieën</b> → altijd indefinido.</div>')
 P(actx(AN(), "¿perfecto o indefinido? (repaso)",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>onderscheiden.</i> Welke marker hoort bij welke tijd? Vul <b>perfecto</b> of <b>indefinido</b> in.</p>'
+  '<p>Welke marker hoort bij welke tijd? Vul <b>perfecto</b> of <b>indefinido</b> in.</p>'
   '<p style="margin-left:12.5mm">1. hoy → <span class="wl md"></span> &nbsp; 2. en 1919 → <span class="wl md"></span> &nbsp; 3. esta semana → <span class="wl md"></span><br>'
   '4. ayer → <span class="wl md"></span> &nbsp; 5. el año pasado → <span class="wl md"></span> &nbsp; 6. últimamente → <span class="wl md"></span></p>',
   apoyo="PISTA (hoy/esta semana/últimamente → perfecto · en …/ayer/el año pasado → indefinido)"))
 P(actx(AN(), "Presente → una acción del pasado (repaso)",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>opstap.</i> Schrijf 2 dingen die je <b>gisteren</b> deed (probeer een verleden-vorm; we oefenen ze zo).</p>'
+  '<p>Schrijf 2 dingen die je <b>gisteren</b> deed (probeer een verleden-vorm; we oefenen ze zo).</p>'
   '<p style="margin-left:12.5mm">Ayer <span class="wl lg"></span><br>El fin de semana pasado <span class="wl lg"></span></p>',
   apoyo="MARCO"))
 sec_close()
@@ -144,10 +146,10 @@ P('<div class="clusters" style="grid-template-columns:1fr 1fr 1fr">'
   '<div class="clu"><div class="ch"><span class="ci">👤</span>Las etapas</div><ul><li>nacer · crecer</li><li>estudiar · casarse</li><li>mudarse · morir</li></ul><div class="ex">Nació en Argentina.</div></div>'
   '<div class="clu"><div class="ch"><span class="ci">🏆</span>Los logros</div><ul><li>ganar · escribir</li><li>pintar · componer</li><li>descubrir · fundar</li></ul><div class="ex">Ganó un premio.</div></div>'
   '<div class="clu"><div class="ch"><span class="ci">🎭</span>Las personas</div><ul><li>el escritor · la pintora</li><li>el cantante · el futbolista</li><li>el científico · el líder</li></ul><div class="ex">Fue un gran escritor.</div></div></div>')
-P('<div class="truc"><b>Woordfamilie:</b> escrib<b>ir</b> → el escrit<b>or</b> / la escrit<b>ora</b> · pint<b>ar</b> → el pint<b>or</b> · cant<b>ar</b> → el cant<b>ante</b> · cient<b>ífico</b> ← la cient<b>ia</b>. Het beroep hangt vast aan de actie.</div>')
+P('<div class="truc"><b>Woordfamilie:</b> escrib<b>ir</b> → el escrit<b>or</b> / la escrit<b>ora</b> · pint<b>ar</b> → el pint<b>or</b> · cant<b>ar</b> → el cant<b>ante</b> · cient<b>ífico</b> ← la cien<b>cia</b>. Het beroep hangt vast aan de actie.</div>')
 P(actx(AN(), "Relaciona la persona con su logro",
   [{"t":"🔗 Emparejar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p><i>matching.</i> Verbind (schrijf de letter).</p>'
+  '<p>Verbind (schrijf de letter).</p>'
   '<div class="wcols" style="grid-template-columns:1fr 1fr;margin-left:12.5mm">'
   '<div class="wcol"><div class="ch">Persona</div><div class="cb short">1. el escritor &nbsp; 2. la pintora &nbsp; 3. el futbolista &nbsp; 4. el cantante</div></div>'
   '<div class="wcol"><div class="ch">Logro</div><div class="cb short">a. ganó el Mundial &nbsp; b. escribió novelas &nbsp; c. compuso canciones &nbsp; d. pintó cuadros</div></div></div>'
@@ -155,16 +157,16 @@ P(actx(AN(), "Relaciona la persona con su logro",
   apoyo="SIN AYUDA"))
 P(actx(AN(), "Clasifica: ¿etapa, logro o persona?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>sorteren.</i> Zet elk woord in de juiste kolom: <span class="words"><b>nacer · ganar · el pintor · casarse · escribir · el cantante · morir · descubrir</b></span></p>'
+  '<p>Zet elk woord in de juiste kolom: <span class="words"><b>nacer · ganar · el pintor · casarse · escribir · el cantante · morir · descubrir</b></span></p>'
   + sortcols([("Etapa de la vida",""),("Logro (verbo)",""),("Persona (oficio)","")], eigen=True), apoyo="BANCO"))
 P(actx(AN(), "La familia de palabras",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>woordfamilie.</i> Vul het beroep aan.</p>'
+  '<p>Vul het beroep aan.</p>'
   '<p style="margin-left:12.5mm">escribir → el <span class="wl sm"></span> · pintar → el <span class="wl sm"></span> · cantar → el <span class="wl sm"></span> · la ciencia → el <span class="wl sm"></span></p>',
   apoyo="PISTA (escritor · pintor · cantante · científico)"))
 P(actx(AN(), "Mi persona admirada · escribe",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p><i>gestuurd produceren.</i> Schrijf 3 zinnen over een persoon die je bewondert (beroep, wat hij/zij deed).</p>'
+  '<p>Schrijf 3 zinnen over een persoon die je bewondert (beroep, wat hij/zij deed).</p>'
   '<p style="margin-left:12.5mm">Admiro a <span class="wl md"></span>. Fue <span class="wl md"></span>.<br>Es famoso/a porque <span class="wl lg"></span></p>',
   apoyo="MARCO"))
 sec_close()
@@ -174,7 +176,7 @@ retos("biografia", "§1.4 · Retos — una vida en objetos y en cifras",
       'Het overlijdensbericht van iemand die nooit beroemd werd, een museum van één zaal, en een biografie verteld in enkel cijfers.')
 
 # ================= §2 · PRETÉRITO INDEFINIDO =================
-sec_open("2", "§2 · El pretérito indefinido", 'Voor <b>afgeronde feiten</b> in het verleden: de <b>indefinido</b>. Regelmatig: -ar → <b>-é/-aste/-ó…</b>, -er/-ir → <b>-í/-iste/-ió…</b>. <i>Estudió medicina. Escribió novelas. Nació en 1919.</i> <span class="gloss">De voltooid verleden tijd voor afgesloten gebeurtenissen.</span>',
+sec_open("2", "§2 · El pretérito indefinido", 'Voor <b>afgeronde feiten</b> in het verleden: de <b>indefinido</b>. Regelmatig: -ar → <b>-é/-aste/-ó…</b>, -er/-ir → <b>-í/-iste/-ió…</b>. <i>Estudió medicina. Escribió novelas. Nació en 1919.</i> <span class="gloss">De onvoltooid verleden tijd voor afgesloten gebeurtenissen.</span>',
         lpd(("8","taalsysteem: indefinido regular"), ("7","woordenschat: la vida"), ("3","vertellen")))
 
 # §2.1 el sistema
@@ -196,13 +198,13 @@ P(regla("Regla · indefinido regular", '<table class="conj" style="margin-top:1m
   '<p style="margin:2mm 0 0"><span class="gloss">🔴 De klemtoon staat op de uitgang: habl<b>é</b>, habl<b>ó</b>, com<b>í</b>, com<b>ió</b>. -er en -ir hebben dezelfde uitgangen.</span></p>'))
 P(actx(AN(), "Forma el indefinido (regular)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p><i>vorm de él/ella-vorm.</i></p>'
+  '<p>Vorm het indefinido van de regelmatige werkwoorden. <b>Let op het accent</b> bij yo en él/ella.</p>'
   '<p style="margin-left:12.5mm">ganar → <span class="wl sm"></span> &nbsp; escribir → <span class="wl sm"></span> &nbsp; nacer → <span class="wl sm"></span><br>'
   'estudiar → <span class="wl sm"></span> &nbsp; vivir → <span class="wl sm"></span> &nbsp; pintar → <span class="wl sm"></span></p>',
   apoyo="MODELO (-ó / -ió)"))
 P(actx(AN(), "La gran cloze · indefinido (biografía)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p><i>de verplichte werkwoord-cloze.</i> Vul de <b>indefinido</b> in (infinitivo tussen haakjes).</p>'
+  '<p>Vul de <b>indefinido</b> in (infinitivo tussen haakjes).</p>'
   '<p style="margin-left:12.5mm">1. García Márquez <span class="wl md"></span> (nacer) en Colombia. &nbsp; 2. <span class="wl md"></span> (escribir) «Cien años de soledad».<br>'
   '3. Frida Kahlo <span class="wl md"></span> (pintar) autorretratos. &nbsp; 4. Messi <span class="wl md"></span> (ganar) el Mundial.<br>'
   '5. (Yo) <span class="wl md"></span> (estudiar) mucho ayer. &nbsp; 6. Nosotros <span class="wl md"></span> (comer) en el centro.<br>'
@@ -210,7 +212,7 @@ P(actx(AN(), "La gran cloze · indefinido (biografía)",
   apoyo="BANCO: nació · escribió · pintó · ganó · estudié · comimos · vivió · viajaste"))
 P(actx(AN(), "Sustitución · cambia la persona",
   [{"t":"🔁 Practicar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>substitutietabel.</i> Model: <b>Yo estudié y trabajé.</b> Herschrijf per persoon.</p>'
+  '<p>Model: <b>Yo estudié y trabajé.</b> Herschrijf per persoon.</p>'
   '<p style="margin-left:12.5mm">tú → <span class="wl md"></span> &nbsp; ella → <span class="wl md"></span> &nbsp; nosotros → <span class="wl md"></span> &nbsp; ellos → <span class="wl md"></span></p>',
   apoyo="LETRA (estudiaste y trabajaste…)"))
 P('</div>')
@@ -231,7 +233,7 @@ P('<table class="conj"><thead><tr><th>Infinitivo</th><th>yo</th><th>él/ella</th
 P('<div class="truc"><b>¡Ojo!</b> <b>hizo</b> met <b>z</b> (niet <span class="trap">hició</span>) · <b>fue</b> = zowel «was» (ser) als «ging» (ir): <i>Fue médico / Fue a París</i>. Geen accent op fue, hizo, tuvo, dio, vio.</div>')
 P(actx(AN(), "Empareja: infinitivo ↔ indefinido (él)",
   [{"t":"🔗 Emparejar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>matching.</i> Verbind het werkwoord met de él/ella-vorm.</p>'
+  '<p>Verbind het werkwoord met de él/ella-vorm.</p>'
   '<div class="wcols" style="grid-template-columns:1fr 1fr;margin-left:12.5mm">'
   '<div class="wcol"><div class="ch">Infinitivo</div><div class="cb short">1. hacer &nbsp; 2. ser/ir &nbsp; 3. tener &nbsp; 4. decir &nbsp; 5. venir</div></div>'
   '<div class="wcol"><div class="ch">Indefinido</div><div class="cb short">a. tuvo &nbsp; b. vino &nbsp; c. hizo &nbsp; d. dijo &nbsp; e. fue</div></div></div>'
@@ -246,7 +248,7 @@ P(actx(AN(), "Cloze · pretéritos fuertes",
   apoyo="BANCO: fue · hizo · tuve · fue · estuvo · dio"))
 P(actx(AN(), "Del presente al indefinido · transforma",
   [{"t":"🔁 Practicar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>transformatie.</i> Herschrijf de zin in de indefinido (ayer / el año pasado).</p>'
+  '<p>Herschrijf de zin in de indefinido (ayer / el año pasado).</p>'
   '<p style="margin-left:12.5mm">1. Hace historia. → El año pasado <span class="wl md"></span><br>'
   '2. Va a París. → En 1933 <span class="wl md"></span> a París.<br>'
   '3. Tiene mucho éxito. → <span class="wl md"></span> mucho éxito.</p>',
@@ -260,7 +262,7 @@ P('<div class="intro"><b>ES:</b> Ahora entrenamos: corregir, cambiar la persona 
 P('</div>')
 P(actx(AN(), "Clínica de errores · el indefinido",
   [{"t":"🔍 Analizar","skill":True},{"t":"👥 En parejas"},{"t":"± 4 min"},{"t":"★★★"}],
-  '<p><i>foutenkliniek.</i> Elke zin heeft één fout (vorm of accent). Verbeter.</p>'
+  '<p>Elke zin heeft één fout (vorm of accent). Verbeter.</p>'
   '<p style="margin-left:12.5mm">1. Nació en 1919 y hació muchas cosas. → <span class="wl md"></span><br>'
   '2. Frida pintó y tenió una vida difícil. → <span class="wl md"></span><br>'
   '3. Yo estudie mucho ayer. → <span class="wl md"></span><br>'
@@ -268,12 +270,12 @@ P(actx(AN(), "Clínica de errores · el indefinido",
   apoyo="PISTA (hizo · tuvo · estudié · fue)"))
 P(actx(AN(), "Sustitución · cambia la persona",
   [{"t":"🔁 Practicar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>substitutietabel.</i> Model: <b>Yo escribí una carta.</b> Herschrijf per persoon.</p>'
+  '<p>Model: <b>Yo escribí una carta.</b> Herschrijf per persoon.</p>'
   '<p style="margin-left:12.5mm">tú → <span class="wl md"></span> &nbsp; ella → <span class="wl md"></span> &nbsp; nosotros → <span class="wl md"></span> &nbsp; ellos → <span class="wl md"></span></p>',
   apoyo="LETRA (escribiste…)"))
 P(actx("★", "Tarea comunicativa · ¿qué hiciste ayer?",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
-  '<p><i>afzender·ontvanger·doel·situatie·resultaat.</i> Vraag je buur wat hij gisteren deed (¿qué hiciste ayer?) en antwoord met de <b>indefinido</b>. Noteer 2 dingen.</p>'
+  '<p>Vraag je buur wat hij gisteren deed (¿qué hiciste ayer?) en antwoord met de <b>indefinido</b>. Noteer 2 dingen.</p>'
   '<p style="margin-left:12.5mm">— ¿Qué hiciste ayer? — <span class="wl lg"></span></p>'
   '<p style="margin-left:12.5mm">Mi compañero/a: 1. <span class="wl full"></span>2. <span class="wl full"></span></p>',
   apoyo="MARCO"))
@@ -310,7 +312,7 @@ P(actx(AN(), "¿lo, la, los o las? (con se)",
   apoyo="MODELO (el→lo · la→la · los→los · las→las)"))
 P(actx(AN(), "Empareja: pregunta ↔ respuesta (se lo)",
   [{"t":"🔗 Emparejar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>matching.</i> Verbind de vraag met het juiste antwoord.</p>'
+  '<p>Verbind de vraag met het juiste antwoord.</p>'
   '<div class="wcols" style="grid-template-columns:1fr 1fr;margin-left:12.5mm">'
   '<div class="wcol"><div class="ch">Pregunta</div><div class="cb short">1. ¿El libro a Mateo? &nbsp; 2. ¿La carta a Nina? &nbsp; 3. ¿Los discos a Diego? &nbsp; 4. ¿Las fotos a Valen?</div></div>'
   '<div class="wcol"><div class="ch">Respuesta</div><div class="cb short">a. Se las enseñé. &nbsp; b. Se lo di. &nbsp; c. Se los presté. &nbsp; d. Se la mandé.</div></div></div>'
@@ -318,7 +320,7 @@ P(actx(AN(), "Empareja: pregunta ↔ respuesta (se lo)",
   apoyo="SIN AYUDA"))
 P(actx(AN(), "Transforma · usa se lo / se la",
   [{"t":"🔁 Practicar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>transformatie.</i> Vervang OI + OD door <b>se + lo/la/los/las</b>.</p>'
+  '<p>Vervang OI + OD door <b>se + lo/la/los/las</b>.</p>'
   '<p style="margin-left:12.5mm">1. Di el libro a Mateo. → <span class="wl md"></span><br>'
   '2. Mandé las fotos a Nina. → <span class="wl md"></span><br>'
   '3. Conté la historia a mis amigos. → <span class="wl md"></span><br>'
@@ -333,20 +335,20 @@ P('<div class="intro"><b>ES:</b> Entrenamos con corrección y producción propia
 P('</div>')
 P(actx(AN(), "Responde con se lo/se la (cloze)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p><i>de verplichte cloze.</i> Antwoord met <b>se + lo/la/los/las</b> + het werkwoord.</p>'
+  '<p>Antwoord met <b>se + lo/la/los/las</b> + het werkwoord.</p>'
   '<p style="margin-left:12.5mm">1. ¿Diste el libro a Mateo? — Sí, <span class="wl md"></span> di. &nbsp; 2. ¿Mandaste la carta a Nina? — Sí, <span class="wl md"></span> mandé.<br>'
   '3. ¿Contaste el secreto a Diego? — Sí, <span class="wl md"></span> conté. &nbsp; 4. ¿Enseñaste las fotos a Valen? — Sí, <span class="wl md"></span> enseñé.</p>',
   apoyo="BANCO: se lo · se la · se lo · se las"))
 P(actx(AN(), "Clínica de errores · se lo",
   [{"t":"🔍 Analizar","skill":True},{"t":"👥 En parejas"},{"t":"± 3 min"},{"t":"★★★"}],
-  '<p><i>foutenkliniek.</i> Elke zin heeft één fout (le lo → se lo, of volgorde). Verbeter.</p>'
+  '<p>Elke zin heeft één fout (le lo → se lo, of volgorde). Verbeter.</p>'
   '<p style="margin-left:12.5mm">1. ¿El libro? Le lo di. → <span class="wl md"></span><br>'
   '2. ¿La carta? Se le mandé. → <span class="wl md"></span><br>'
   '3. ¿Las fotos? Se lo enseñé. → <span class="wl md"></span></p>',
   apoyo="PISTA (Se lo di · Se la mandé · Se las enseñé)"))
 P(actx("★", "Tarea comunicativa · ¿se lo diste?",
   [{"t":"🗣️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p><i>interactie.</i> Vraag je buur of hij dingen aan iemand gaf/stuurde; antwoord met <b>se lo/se la</b>. «¿El regalo a tu madre? — Sí, se lo di.» Noteer 3 antwoorden.</p>'
+  '<p>Vraag je buur of hij dingen aan iemand gaf/stuurde; antwoord met <b>se lo/se la</b>. «¿El regalo a tu madre? — Sí, se lo di.» Noteer 3 antwoorden.</p>'
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>',
   apoyo="MARCO"))
 P('<div class="guide"><div class="ic">🎡</div><div><span class="hand">Online:</span> <span class="g">de <b>dubbele-vervangingsanimatie</b> en de spellen op de hub oefenen se lo/se la; + cloze en foutenkliniek.</span></div></div>')
@@ -367,7 +369,7 @@ P('<div class="fams three" style="margin-top:1mm">'
 P('<div class="truc"><b>Chunks:</b> <b>Érase una vez…</b> · <b>Primero nació en…</b> · <b>Después estudió…</b> · <b>Entonces empezó su carrera…</b> · <b>Al final, murió en…</b> · <b>Por eso es famoso/a.</b></div>')
 P(actx(AN(), "Ordena la biografía (1–5)",
   [{"t":"🔢 Ordenar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>ordenen.</i> Zet de biografie in een logische volgorde (1–5).</p>'
+  '<p>Zet de biografie in een logische volgorde (1–5).</p>'
   '<p style="margin-left:12.5mm">'
   '<span class="wl sm"></span> Al final, murió en 2014, muy famoso.<br>'
   '<span class="wl sm"></span> Nació en Colombia en 1927.<br>'
@@ -377,17 +379,17 @@ P(actx(AN(), "Ordena la biografía (1–5)",
   apoyo="PISTA (nació → estudió → escribió → Nobel → murió)"))
 P(actx(AN(), "Completa el relato con conectores",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p><i>gap-fill.</i> Vul aan met <b>érase una vez · primero · después · entonces · al final</b>.</p>'
+  '<p>Vul aan met <b>érase una vez · primero · después · entonces · al final</b>.</p>'
   '<p style="margin-left:12.5mm"><span class="wl md"></span> un niño pobre. <span class="wl sm"></span> creció en un pueblo. <span class="wl sm"></span> se mudó a la ciudad. <span class="wl sm"></span> empezó a cantar. <span class="wl sm"></span>, se hizo famoso.</p>',
   apoyo="BANCO"))
 P(actx(AN(), "Dictado · una minibiografía",
   [{"t":"👂 Escuchar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p><i>microdictee.</i> Luister en schrijf de 5 zinnen (met el indefinido).</p>'
+  '<p>Luister en schrijf de 5 zinnen (met el indefinido).</p>'
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span>4. <span class="wl full"></span>5. <span class="wl full"></span></p>',
   apoyo="SIN AYUDA (docent/audio leest voor)"))
 P(actx("★", "Info-gap · adivina el personaje",
   [{"t":"🗣️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
-  '<p><i>info-gap.</i> A beschrijft een figuur met de indefinido (nació…, ganó…, escribió…) zonder de naam; B raadt. Wissel. Noteer wie het is.</p>'
+  '<p>A beschrijft een figuur met de indefinido (nació…, ganó…, escribió…) zonder de naam; B raadt. Wissel. Noteer wie het is.</p>'
   '<p style="margin-left:12.5mm">Personaje 1: <span class="wl full"></span>Personaje 2: <span class="wl full"></span></p>',
   apoyo="MARCO"))
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha «Una leyenda del tango»</b> en la web (TTS). <b>1ª vez:</b> ¿de quién habla? · <b>2ª vez:</b> ordena los hechos de su vida.</div>',
@@ -410,7 +412,7 @@ P(f'<div class="ptexts">'
   f'<p>Lionel Messi <span class="evi">nació</span> en Rosario, Argentina, en 1987. De niño <span class="evi">jugó</span> en un equipo local y luego <span class="evi">se mudó</span> a Barcelona. <span class="evi">Ganó</span> muchos títulos y en 2022 <span class="evi">fue</span> campeón del Mundo. Mucha gente <span class="evi">dijo</span> que <span class="evi">hizo</span> historia. Para muchos, es el mejor de todos los tiempos.</p></div></div>')
 P(actx(AN(), "Verdadero o falso — con prueba",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p><i>juist/fout + bewijs.</i> Waar (V) of niet waar (F)? Onderstreep het bewijs.</p>'
+  '<p>Waar (V) of niet waar (F)? Onderstreep het bewijs.</p>'
   '<table class="alf"><thead><tr><th>Afirmación</th><th>V/F</th><th>Prueba (cita)</th></tr></thead><tbody>'
   '<tr><td>Frida empezó a pintar después de un accidente.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Messi nació en Buenos Aires.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
@@ -418,7 +420,7 @@ P(actx(AN(), "Verdadero o falso — con prueba",
   apoyo="MODELO"))
 P(actx(AN(), "Escanea — completa la ficha",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>informatieraster.</i> Zoek en vul in.</p>'
+  '<p>Zoek de gegevens per persoon terug in de tekst en vul de tabel aan. Eén woord of getal per vak.</p>'
   '<table class="alf"><thead><tr><th>—</th><th>Frida</th><th>Messi</th></tr></thead><tbody>'
   '<tr><td>¿Dónde y cuándo nació?</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>¿Qué hizo (logro)?</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
@@ -426,7 +428,7 @@ P(actx(AN(), "Escanea — completa la ficha",
   apoyo="SIN AYUDA"))
 P(actx(AN(), "Reacciona — tu opinión",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
-  '<p><i>productieve reactie.</i> ¿A quién admiras más? Schrijf 2–3 zinnen met <b>creo que fue… porque…</b> (mini-mening).</p>'
+  '<p>¿A quién admiras más? Schrijf 2–3 zinnen met <b>creo que fue… porque…</b> (mini-mening).</p>'
   '<div class="wbox sm"></div>',
   apoyo="MARCO (Admiro a … Creo que fue … porque …)"))
 sec_close()
@@ -437,14 +439,14 @@ P('<h3>1 · Ortografía — c→qu / g→gu / z→c (yo)</h3>')
 P(regla("Para conservar el sonido", '<p>Bij <b>yo</b> in de indefinido verandert de spelling om de klank te bewaren: <b>c → qu</b> (buscar → bus<b>qu</b>é), <b>g → gu</b> (llegar → lle<b>gu</b>é), <b>z → c</b> (empezar → empe<b>c</b>é).<br><span class="gloss">Enkel bij <b>yo</b>! (buscó blijft met c). Zo: sacar → saqué, jugar → jugué, tocar → toqué.</span></p>'))
 P(actx(AN(), "Escribe la forma «yo»",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>gap-fill spelling.</i> Vorm de <b>yo</b>-vorm van de indefinido.</p>'
+  '<p>Vorm de <b>yo</b>-vorm van de indefinido.</p>'
   '<p style="margin-left:12.5mm">buscar → <span class="wl sm"></span> · llegar → <span class="wl sm"></span> · empezar → <span class="wl sm"></span> · sacar → <span class="wl sm"></span> · jugar → <span class="wl sm"></span></p>',
   apoyo="PISTA (busqué, llegué, empecé, saqué, jugué)"))
 P('<h3 style="margin-top:6mm">2 · Conectores del relato</h3>')
 P(colloc("primero · después · entonces · al final", ["primero = eerst","después/luego = daarna","entonces = toen/dus","al final = uiteindelijk"]))
 P(actx(AN(), "Une el conector con su función",
   [{"t":"🔗 Emparejar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p><i>matching.</i> Verbind (schrijf de letter).</p>'
+  '<p>Verbind (schrijf de letter).</p>'
   '<div class="wcols" style="grid-template-columns:1fr 1fr;margin-left:12.5mm">'
   '<div class="wcol"><div class="ch">Conector</div><div class="cb short">1. érase una vez &nbsp; 2. después &nbsp; 3. al final &nbsp; 4. por eso</div></div>'
   '<div class="wcol"><div class="ch">Función</div><div class="cb short">a. gevolg (daarom) &nbsp; b. begin (er was eens) &nbsp; c. einde (uiteindelijk) &nbsp; d. vervolg (daarna)</div></div></div>'
@@ -458,13 +460,13 @@ sec_close()
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">6</span><span class="pk">§6 · Lectura — «La leyenda de la yerba mate»</span>')
 P('<div class="intro"><b>ES:</b> Una leyenda guaraní contada entera en indefinido. <b>No hace falta entenderlo todo</b> para seguir la historia. <span class="gloss">Een Guaraní-legende, volledig in het indefinido. Je hoeft niet alles te begrijpen om het verhaal te volgen — let op de volgorde van de gebeurtenissen.</span></div>')
-P(PB.lectura_print(LD.C6P_U5, "1"))
+P(PB.lectura_print(LD.C6P_U5, AN()))
 P('</div>')
 
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">7</span><span class="pk">§7 · Escucha — «Los que llegaron en barco»</span>')
 P('<div class="intro"><b>ES:</b> Una visita guiada en el Museo de la Inmigración. <b>Escucha primero, escribe después.</b> <span class="gloss">Een rondleiding in het immigratiemuseum van Buenos Aires. Eerst luisteren, dan schrijven; het transcript staat online en gaat pas open ná de taken.</span></div>')
-P(PB.escucha_print(ED.C6P_U5, "1"))
+P(PB.escucha_print(ED.C6P_U5, AN()))
 P('</div>')
 
 # ================= CULTURA =================
@@ -477,7 +479,7 @@ P('<div class="fams three" style="margin-top:2mm">'
 P('<div class="route-note" style="margin-top:5mm">🗺️ <b>En la web:</b> haz clic en Argentina (★) en el mapa para descubrir Buenos Aires y sus figuras. <span class="gloss">Online: klik op Argentinië voor de figuras-fiche.</span></div>')
 P(actx(AN(), "Une la figura con su logro",
   [{"t":"🌍 Cultura","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>matching.</i> Verbind (schrijf de letter).</p>'
+  '<p>Verbind (schrijf de letter).</p>'
   '<div class="wcols" style="grid-template-columns:1fr 1fr;margin-left:12.5mm">'
   '<div class="wcol"><div class="ch">Figura</div><div class="cb short">1. Gardel &nbsp; 2. Messi &nbsp; 3. Frida Kahlo &nbsp; 4. García Márquez</div></div>'
   '<div class="wcol"><div class="ch">Logro</div><div class="cb short">a. Nobel de Literatura &nbsp; b. leyenda del tango &nbsp; c. autorretratos &nbsp; d. campeón del Mundo 2022</div></div></div>'
@@ -582,10 +584,10 @@ P(actx("V.3", "Recordar — NL → ES (con letra)",
   '<p>Vul aan (beginletter). geboren worden = <b>n</b>___ · winnen = <b>g</b>___ · was/ging = <b>f</b>___ · gisteren = <b>a</b>___<br><span class="wl full"></span></p>', apoyo="LETRA INICIAL"))
 P(actx("V.4", "Producir — una frase con tres palabras",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★★"}],
-  '<p><i>verplichte-woorden-zin.</i> Maak één correcte zin met <b>nació · en 1919 · escribió</b>.</p><div class="wbox sm"></div>', apoyo="SIN AYUDA"))
+  '<p>Maak één correcte zin met <b>nació · en 1919 · escribió</b>.</p><div class="wbox sm"></div>', apoyo="SIN AYUDA"))
 P(actx("V.5", "Comunicar — una minibiografía en 3 frases",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"± 5 min"},{"t":"★★★"}],
-  '<p><i>vrije productie → transfer.</i> Schrijf 3 zinnen over een figuur (nació · hizo · una opinión) en zeg ze hardop.</p>'
+  '<p>Schrijf 3 zinnen over een figuur (nació · hizo · una opinión) en zeg ze hardop.</p>'
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="MARCO → SIN AYUDA"))
 P('<div class="se" style="margin-top:6mm">Mi línea de tiempo <span class="gloss" style="font-size:8pt">— teken een tijdlijn en label 5 momenten in het Spaans</span></div>')
 P('<div class="wbox lg"></div>')

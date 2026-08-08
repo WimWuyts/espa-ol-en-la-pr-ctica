@@ -2004,7 +2004,7 @@ U4_RETO_07 = {
     "nombre": "El anuncio que no miente",
     "lente": "✍️ creatieve beperking", "forma": "👥 En parejas", "skill": "✍️ Escribir",
     "tiempo": "± 15 min", "dificultad": "★★★",
-    "gancho_es": "Escribe un anuncio de València en el que todo sea verdad. También lo malo.",
+    "gancho_es": "Escribe un anuncio de València con solo cosas verdaderas. También lo malo.",
     "gancho_nl": "Schrijf een reclame voor València waarin alles waar is. Ook het slechte.",
     "consigna_es": "Seis frases: tres cosas buenas, dos menos buenas, y una que sigue "
                    "convenciendo igual.",

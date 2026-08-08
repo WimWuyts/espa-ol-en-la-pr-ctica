@@ -1282,7 +1282,7 @@ C5_U6 = {
     "tipo": "artículo de consejos (revista juvenil)",
     "emisor": "La revista «Joven y Listo»",
     "receptor": "Jóvenes que van de compras con poco dinero",
-    "objetivo": "Que gastes menos y compres mejor",
+    "objetivo": "Gastar menos y comprar mejor",
     "prediccion": {
         "q": "Kijk eerst alleen naar de titel en de vijf nummers. Wat gaat deze tekst doen?",
         "opts": ["Tips geven", "Iets verkopen", "Een verhaal vertellen"],
@@ -1515,7 +1515,7 @@ C5_U7 = {
     "tipo": "anuncio de alquiler (con descripción del plano)",
     "emisor": "La agencia «Casas del Caribe», Cartagena",
     "receptor": "Estudiantes que buscan piso",
-    "objetivo": "Que te imagines el piso y lo vengas a ver",
+    "objetivo": "Imaginar el piso y decidir si vas a verlo",
     "prediccion": {
         "q": "Kijk eerst alleen naar de prijs, de m² en de opsomming. Wat voor tekst is dit?",
         "opts": ["Een advertentie voor een huurwoning", "Een reisverslag", "Een rekening"],
@@ -1750,7 +1750,7 @@ C5_U8 = {
     "tipo": "test de revista (cuestionario con resultados)",
     "emisor": "La revista de viajes «Mochila»",
     "receptor": "Sus lectores jóvenes",
-    "objetivo": "Que te pongas una nota y te reconozcas en un perfil",
+    "objetivo": "Ponerte una nota y encontrar tu perfil",
     "prediccion": {
         "q": "Kijk eerst alleen naar de zes genummerde vragen en de drie gekleurde kaders "
              "onderaan. Wat voor tekst is dit?",

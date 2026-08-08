@@ -9,12 +9,14 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = "/home/user/espa-ol-en-la-pr-ctica"
 sys.path.insert(0, f"{ROOT}/01-cursussen/06-vervolg/U0")
 import gen_u0_print as U0
-from gen_u0_print import (CSS, AV, TU, MOCH, qr, audiorow, act, regla, guide, lpd, divider,
+from gen_u0_print import (CSS, AV, TU, MOCH, audiorow, act, regla, guide, lpd, divider,
                           pcard, steun, sortcols, actx, tarea_com, obsbox, machine, blocks, tree,
                           mirror, fmu, scaffold, zoom, clusters, colloc, scale, vpairs, mispal, xray,
                           gustobars, menu)
 import sys as _sys
 _sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
+import qr_print as QRP; QRP.fijar("C6+", 6)
+from qr_print import qr
 import print_bloques as PB
 import lectura_data as LD
 import escucha_data as ED
@@ -125,13 +127,13 @@ sec_open("0", "§0 · ¡Ponte al día!", 'We komen van de <b>indefinido</b> (U5:
 P('<div class="truc"><b>Indefinido ↔ imperfecto:</b> <b>Ayer jugué</b> (één afgerond feit) tegenover <b>De pequeño jugaba siempre</b> (gewoonte, achtergrond). In U6 draait alles om <b>hoe het vroeger was</b> → imperfecto.</div>')
 P(actx(AN(), "¿acción única o costumbre? (repaso)",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>onderscheiden.</i> Is het een <b>afgerond feit</b> (indefinido) of een <b>gewoonte/achtergrond</b> (imperfecto)? Vink aan.</p>'
+  '<p>Is het een <b>afgerond feit</b> (indefinido) of een <b>gewoonte/achtergrond</b> (imperfecto)? Vink aan.</p>'
   '<p style="margin-left:12.5mm">1. Ayer fui al cine. → <span class="wl sm"></span> &nbsp; 2. De pequeño iba al parque cada día. → <span class="wl sm"></span><br>'
   '3. En 2019 ganó un premio. → <span class="wl sm"></span> &nbsp; 4. Cuando era niña vivía en Cusco. → <span class="wl sm"></span></p>',
   apoyo="PISTA (afgerond feit → indefinido · gewoonte/achtergrond → imperfecto)"))
 P(actx(AN(), "Mi último recuerdo · escribe",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>opstap.</i> Schrijf 2 dingen die je <b>vroeger vaak</b> deed (probeer «-aba / -ía»; we oefenen ze zo).</p>'
+  '<p>Schrijf 2 dingen die je <b>vroeger vaak</b> deed (probeer «-aba / -ía»; we oefenen ze zo).</p>'
   '<p style="margin-left:12.5mm">De pequeño/a <span class="wl lg"></span><br>Todos los días <span class="wl lg"></span></p>',
   apoyo="MARCO"))
 sec_close()
@@ -147,7 +149,7 @@ P('<div class="clusters" style="grid-template-columns:1fr 1fr 1fr">'
 P('<div class="truc"><b>Tegenstellingen antes ↔ ahora:</b> <b>antes</b> (vroeger) ↔ <b>ahora</b> (nu) · <b>ya no</b> (niet meer) ↔ <b>todavía</b> (nog steeds) · <b>siempre / a menudo / todos los días</b> (gewoonte-markers → imperfecto).</div>')
 P(actx(AN(), "Relaciona la palabra con el grupo",
   [{"t":"🔗 Emparejar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p><i>matching.</i> Verbind (schrijf de letter).</p>'
+  '<p>Verbind (schrijf de letter).</p>'
   '<div class="wcols" style="grid-template-columns:1fr 1fr;margin-left:12.5mm">'
   '<div class="wcol"><div class="ch">Palabra</div><div class="cb short">1. el patio &nbsp; 2. el juguete &nbsp; 3. los abuelos &nbsp; 4. la maestra</div></div>'
   '<div class="wcol"><div class="ch">Grupo</div><div class="cb short">a. la infancia &nbsp; b. la familia &nbsp; c. la escuela (persona) &nbsp; d. la escuela (lugar)</div></div></div>'
@@ -155,11 +157,11 @@ P(actx(AN(), "Relaciona la palabra con el grupo",
   apoyo="SIN AYUDA"))
 P(actx(AN(), "Clasifica: ¿infancia, escuela o familia?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>sorteren.</i> Zet elk woord in de juiste kolom: <span class="words"><b>el recuerdo · el recreo · los abuelos · el juguete · la maestra · la mascota · jugar · el pueblo</b></span></p>'
+  '<p>Zet elk woord in de juiste kolom: <span class="words"><b>el recuerdo · el recreo · los abuelos · el juguete · la maestra · la mascota · jugar · el pueblo</b></span></p>'
   + sortcols([("La infancia",""),("La escuela",""),("La familia","")], eigen=True), apoyo="BANCO"))
 P(actx(AN(), "Antes ↔ ahora · empareja",
   [{"t":"🔗 Emparejar","skill":True},{"t":"👤 Solo"},{"t":"± 2 min"},{"t":"★★☆"}],
-  '<p><i>tegenstellingsparen.</i> Verbind het paar.</p>'
+  '<p>Verbind elk woord links met zijn tegengestelde rechts. Schrijf de letter.</p>'
   '<div class="wcols" style="grid-template-columns:1fr 1fr;margin-left:12.5mm">'
   '<div class="wcol"><div class="ch">—</div><div class="cb short">1. antes &nbsp; 2. ya no &nbsp; 3. a menudo &nbsp; 4. feliz</div></div>'
   '<div class="wcol"><div class="ch">—</div><div class="cb short">a. todavía &nbsp; b. ahora &nbsp; c. triste &nbsp; d. casi nunca</div></div></div>'
@@ -167,7 +169,7 @@ P(actx(AN(), "Antes ↔ ahora · empareja",
   apoyo="SIN AYUDA"))
 P(actx(AN(), "Mi infancia · escribe",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p><i>gestuurd produceren.</i> Schrijf 3 zinnen over je jeugd (waar je woonde, wat je speelde, wie je bezocht).</p>'
+  '<p>Schrijf 3 zinnen over je jeugd (waar je woonde, wat je speelde, wie je bezocht).</p>'
   '<p style="margin-left:12.5mm">De pequeño/a vivía en <span class="wl md"></span> y jugaba a <span class="wl md"></span><br>Visitaba a <span class="wl lg"></span></p>',
   apoyo="MARCO"))
 sec_close()
@@ -199,13 +201,13 @@ P(regla("Regla · imperfecto", '<table class="conj" style="margin-top:1mm"><thea
   '<p style="margin:2mm 0 0"><b>Sólo 3 irregulares:</b> <b>ser</b> → era/eras/era/éramos/erais/eran · <b>ir</b> → iba/ibas/iba/íbamos/ibais/iban · <b>ver</b> → veía/veías/veía… <span class="gloss">🔴 yo = él/ella (jugaba, comía). Let op de <b>accent</b> op -ía.</span></p>'))
 P(actx(AN(), "Forma el imperfecto",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p><i>vorm de yo/él-vorm.</i></p>'
+  '<p>Vorm het imperfecto. Goed nieuws: yo en él/ella hebben dezelfde vorm.</p>'
   '<p style="margin-left:12.5mm">jugar → <span class="wl sm"></span> &nbsp; comer → <span class="wl sm"></span> &nbsp; vivir → <span class="wl sm"></span><br>'
   'ser → <span class="wl sm"></span> &nbsp; ir → <span class="wl sm"></span> &nbsp; tener → <span class="wl sm"></span></p>',
   apoyo="MODELO (-aba / -ía; era/iba)"))
 P(actx(AN(), "La gran cloze · imperfecto (la infancia)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p><i>de verplichte werkwoord-cloze.</i> Vul het <b>imperfecto</b> in (infinitivo tussen haakjes).</p>'
+  '<p>Vul het <b>imperfecto</b> in (infinitivo tussen haakjes).</p>'
   '<p style="margin-left:12.5mm">1. De pequeña, Nina <span class="wl md"></span> (vivir) en un pueblo. &nbsp; 2. <span class="wl md"></span> (ser) muy tímida.<br>'
   '3. Todos los días <span class="wl md"></span> (ir) a la escuela. &nbsp; 4. <span class="wl md"></span> (tener) un perro.<br>'
   '5. (Yo) <span class="wl md"></span> (jugar) en el patio. &nbsp; 6. Nosotros <span class="wl md"></span> (comer) en casa de la abuela.<br>'
@@ -213,7 +215,7 @@ P(actx(AN(), "La gran cloze · imperfecto (la infancia)",
   apoyo="BANCO: vivía · era · iba · tenía · jugaba · comíamos · veía · soñaban"))
 P(actx(AN(), "Del presente al imperfecto · transforma",
   [{"t":"🔁 Practicar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>transformatie.</i> Herschrijf naar het imperfecto (antes / de pequeño).</p>'
+  '<p>Herschrijf naar het imperfecto (antes / de pequeño).</p>'
   '<p style="margin-left:12.5mm">1. Vivo en la ciudad. → Antes <span class="wl md"></span><br>'
   '2. Voy al parque. → De pequeño <span class="wl md"></span><br>'
   '3. Soy tímido. → De niño <span class="wl md"></span></p>',
@@ -227,19 +229,19 @@ P('<div class="intro"><b>ES:</b> Seguimos: cambiar la persona y describir cómo 
 P('</div>')
 P(actx(AN(), "Sustitución · cambia la persona",
   [{"t":"🔁 Practicar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>substitutietabel.</i> Model: <b>Yo jugaba y comía en casa.</b> Herschrijf per persoon.</p>'
+  '<p>Model: <b>Yo jugaba y comía en casa.</b> Herschrijf per persoon.</p>'
   '<p style="margin-left:12.5mm">tú → <span class="wl md"></span> &nbsp; ella → <span class="wl md"></span> &nbsp; nosotros → <span class="wl md"></span> &nbsp; ellos → <span class="wl md"></span></p>',
   apoyo="LETRA (jugabas y comías…)"))
 P(actx(AN(), "¿Cómo era? · describe con imperfecto",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p><i>gestuurd → vrij.</i> Beschrijf hoe deze dingen vroeger waren (imperfecto).</p>'
+  '<p>Beschrijf hoe deze dingen vroeger waren (imperfecto).</p>'
   '<p style="margin-left:12.5mm">1. Mi pueblo (ser) → <span class="wl md"></span><br>'
   '2. Mi escuela (tener) → <span class="wl md"></span><br>'
   '3. Mis abuelos (vivir) → <span class="wl md"></span></p>',
   apoyo="MARCO (era… / tenía… / vivían…)"))
 P(actx(AN(), "Clínica de errores · imperfecto",
   [{"t":"🔍 Analizar","skill":True},{"t":"👥 En parejas"},{"t":"± 3 min"},{"t":"★★★"}],
-  '<p><i>foutenkliniek.</i> Elke zin heeft één fout (vorm of accent). Verbeter.</p>'
+  '<p>Elke zin heeft één fout (vorm of accent). Verbeter.</p>'
   '<p style="margin-left:12.5mm">1. De pequeño yo jugava mucho. → <span class="wl md"></span><br>'
   '2. Nosotros comiamos en casa. → <span class="wl md"></span><br>'
   '3. Ella era tímida y tení un perro. → <span class="wl md"></span><br>'
@@ -254,7 +256,7 @@ P('<div class="intro"><b>ES:</b> Aplicamos: describe tu propia infancia y compá
 P('</div>')
 P(actx(AN(), "Mi vida de pequeño/a · la ficha",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p><i>informatiekader.</i> Vul in met het imperfecto.</p>'
+  '<p>Vul in met het imperfecto.</p>'
   '<table class="alf"><thead><tr><th>—</th><th>Cuando era pequeño/a</th></tr></thead><tbody>'
   '<tr><td>¿Dónde vivías?</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td>¿Qué te gustaba hacer?</td><td><span class="wl lg"></span></td></tr>'
@@ -263,7 +265,7 @@ P(actx(AN(), "Mi vida de pequeño/a · la ficha",
   apoyo="MARCO"))
 P(actx("★", "Tarea comunicativa · ¿cómo era tu infancia?",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
-  '<p><i>afzender·ontvanger·doel·situatie·resultaat.</i> Vraag je buur hoe zijn jeugd was (¿cómo era tu infancia?) en antwoord met het <b>imperfecto</b>. Noteer 2 dingen.</p>'
+  '<p>Vraag je buur hoe zijn jeugd was (¿cómo era tu infancia?) en antwoord met het <b>imperfecto</b>. Noteer 2 dingen.</p>'
   '<p style="margin-left:12.5mm">— ¿Cómo era tu infancia? — <span class="wl lg"></span></p>'
   '<p style="margin-left:12.5mm">Mi compañero/a: 1. <span class="wl full"></span>2. <span class="wl full"></span></p>',
   apoyo="MARCO"))
@@ -295,11 +297,11 @@ P(regla("Regla · imperfecto + indefinido", '<p><b>Imperfecto</b> = het decor: h
   '<span class="gloss">Vaak samen: <i>Jugaba (imperf.) cuando, de repente, empezó (indef.) a llover.</i></span></p>'))
 P(actx(AN(), "Clasifica: ¿indefinido o imperfecto?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p><i>onderscheiden.</i> Welke tijd hoort erbij? <span class="words"><b>Era de noche · sonó el teléfono · llovía · llegó mi abuela · siempre jugaba · un día empezó</b></span></p>'
+  '<p>Welke tijd hoort erbij? <span class="words"><b>Era de noche · sonó el teléfono · llovía · llegó mi abuela · siempre jugaba · un día empezó</b></span></p>'
   + sortcols([("imperfecto (achtergrond)",""),("indefinido (gebeurtenis)","")], eigen=False), apoyo="BANCO"))
 P(actx(AN(), "Completa el relato · indef/imperf",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★★"}],
-  '<p><i>cloze contrast.</i> Vul in: imperfecto (achtergrond) of indefinido (gebeurtenis)?</p>'
+  '<p>Vul in: imperfecto (achtergrond) of indefinido (gebeurtenis)?</p>'
   '<p style="margin-left:12.5mm">1. (Yo) <span class="wl md"></span> (jugar) en el patio cuando <span class="wl md"></span> (llegar) mi madre.<br>'
   '2. <span class="wl md"></span> (ser) de noche y <span class="wl md"></span> (empezar) a llover.<br>'
   '3. Nina <span class="wl md"></span> (vivir) en Cusco cuando <span class="wl md"></span> (nacer) su hermano.</p>',
@@ -313,14 +315,14 @@ P('<div class="intro"><b>ES:</b> Entrenamos con corrección y una historia propi
 P('</div>')
 P(actx(AN(), "Clínica de errores · contraste",
   [{"t":"🔍 Analizar","skill":True},{"t":"👥 En parejas"},{"t":"± 3 min"},{"t":"★★★"}],
-  '<p><i>foutenkliniek.</i> Kies de juiste tijd (achtergrond of feit). Verbeter.</p>'
+  '<p>Kies de juiste tijd (achtergrond of feit). Verbeter.</p>'
   '<p style="margin-left:12.5mm">1. Ayer jugaba al fútbol y ganamos. → <span class="wl md"></span><br>'
   '2. Cuando era niño, un día fui al circo. (¿cuál es el fondo?) → <span class="wl md"></span><br>'
   '3. Llovió mientras yo estudiaba. → <span class="wl md"></span> (¿correcto?)</p>',
   apoyo="PISTA (jugaba → jugué? nee: het spel als achtergrond kan; kies logisch)"))
 P(actx("★", "Tarea comunicativa · un recuerdo",
   [{"t":"🗣️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
-  '<p><i>vertel een herinnering.</i> Vertel een klein voorval uit je jeugd: zet het <b>decor</b> (imperfecto) en de <b>gebeurtenis</b> (indefinido). Noteer je verhaal in 3 zinnen.</p>'
+  '<p>Vertel een klein voorval uit je jeugd: zet het <b>decor</b> (imperfecto) en de <b>gebeurtenis</b> (indefinido). Noteer je verhaal in 3 zinnen.</p>'
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>',
   apoyo="MARCO (Era… / Tenía… cuando, de repente, … pasó)"))
 P('<div class="guide"><div class="ic">🎡</div><div><span class="hand">Online:</span> <span class="g">de <b>contrast-beslisboom</b> en de spellen op de hub oefenen indef/imperf; + cloze en foutenkliniek.</span></div></div>')
@@ -348,7 +350,7 @@ P('<div class="fams three" style="margin-top:2mm">'
 P('<div class="truc"><b>¡Ojo! irregulares:</b> niet «más bueno/malo» maar <b>mejor</b> (beter) / <b>peor</b> (slechter); niet «más viejo/joven» (voor personen) maar <b>mayor</b> (ouder) / <b>menor</b> (jonger). Superlativo: <b>el/la más …</b> (de meeste): «el más rápido de la clase».</div>')
 P(actx(AN(), "Completa con más / menos / tan … que/como",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p><i>gap-fill.</i> Vul de vergelijking aan.</p>'
+  '<p>Vul de vergelijking aan.</p>'
   '<p style="margin-left:12.5mm">1. La ciudad es <span class="wl sm"></span> grande <span class="wl sm"></span> el pueblo (groter).<br>'
   '2. Antes yo era <span class="wl sm"></span> tímido <span class="wl sm"></span> ahora (minder).<br>'
   '3. Mi hermano es <span class="wl sm"></span> alto <span class="wl sm"></span> yo (even).<br>'
@@ -356,7 +358,7 @@ P(actx(AN(), "Completa con más / menos / tan … que/como",
   apoyo="PISTA (más…que · menos…que · tan…como · más…que)"))
 P(actx(AN(), "Los irregulares · elige",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>kies de juiste onregelmatige comparativo.</i></p>'
+  '<p>Kies per zin de juiste vorm. Er zijn er maar drie onregelmatig in het imperfecto: <b>ser · ir · ver</b>.</p>'
   '<p style="margin-left:12.5mm">1. Este libro es (bueno) <span class="wl sm"></span> que ese. &nbsp; 2. Hoy es (malo) <span class="wl sm"></span> que ayer.<br>'
   '3. Mi hermana es (viejo) <span class="wl sm"></span> que yo. &nbsp; 4. Soy (joven) <span class="wl sm"></span> que mi primo.</p>',
   apoyo="BANCO (mejor · peor · mayor · menor)"))
@@ -378,14 +380,14 @@ P('<div class="agree"><div class="w">La casa. La casa era grande. → La casa <u
 P('<div class="agree"><div class="w">El lugar. Yo crecí allí. → El lugar <u>donde</u> crecí…</div><div class="tie">donde = waar</div></div>')
 P(actx(AN(), "Une las frases con que / donde",
   [{"t":"🔁 Practicar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>koppelen.</i> Verbind de twee zinnen met <b>que</b> of <b>donde</b>.</p>'
+  '<p>Verbind de twee zinnen met <b>que</b> of <b>donde</b>.</p>'
   '<p style="margin-left:12.5mm">1. El niño. El niño jugaba en la calle. → <span class="wl lg"></span><br>'
   '2. La escuela. Yo estudiaba en la escuela. → <span class="wl lg"></span><br>'
   '3. El perro. El perro tenía manchas. → <span class="wl md"></span></p>',
   apoyo="LETRA (El niño que… · La escuela donde…)"))
 P(actx(AN(), "Antes ↔ ahora · compara",
   [{"t":"✍️ Escribir","skill":True},{"t":"👥 En parejas"},{"t":"± 4 min"},{"t":"★★★"}],
-  '<p><i>vergelijking + imperfecto.</i> Schrijf 3 vergelijkingen tussen <b>vroeger</b> (imperfecto) en <b>nu</b> (presente).</p>'
+  '<p>Schrijf 3 vergelijkingen tussen <b>vroeger</b> (imperfecto) en <b>nu</b> (presente).</p>'
   '<p style="margin-left:12.5mm">1. Antes <span class="wl md"></span>, ahora <span class="wl md"></span> (más…que).<br>'
   '2. Antes <span class="wl md"></span>, pero ahora ya no.<br>'
   '3. Antes <span class="wl md"></span>, y todavía <span class="wl md"></span></p>',
@@ -408,7 +410,7 @@ P(f'<div class="ptexts">'
   f'<p>Yo <span class="evi">crecí</span> en la ciudad. De niño <span class="evi">veía</span> mucha tele y <span class="evi">jugaba</span> a videojuegos. Mi barrio <span class="evi">era más ruidoso que</span> el de Nina. <span class="evi">Tenía</span> muchos amigos y <span class="evi">íbamos</span> al parque. Un día <span class="evi">gané</span> un concurso de dibujo en la escuela. Ahora todo es diferente, pero también me gusta.</p></div></div>')
 P(actx(AN(), "Verdadero o falso — con prueba",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p><i>juist/fout + bewijs.</i> Waar (V) of niet waar (F)? Onderstreep het bewijs.</p>'
+  '<p>Waar (V) of niet waar (F)? Onderstreep het bewijs.</p>'
   '<table class="alf"><thead><tr><th>Afirmación</th><th>V/F</th><th>Prueba (cita)</th></tr></thead><tbody>'
   '<tr><td>Nina vivía en un pueblo cerca de Cusco.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Para Nina, todo era más ruidoso que ahora.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
@@ -416,7 +418,7 @@ P(actx(AN(), "Verdadero o falso — con prueba",
   apoyo="MODELO"))
 P(actx(AN(), "Escanea — completa la ficha",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>informatieraster.</i> Zoek en vul in.</p>'
+  '<p>Zoek de gegevens per persoon terug in de tekst en vul de tabel aan. Eén woord of getal per vak.</p>'
   '<table class="alf"><thead><tr><th>—</th><th>Nina</th><th>Diego</th></tr></thead><tbody>'
   '<tr><td>¿Dónde vivía/crecía?</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>¿Qué hacía (imperfecto)?</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
@@ -424,7 +426,7 @@ P(actx(AN(), "Escanea — completa la ficha",
   apoyo="SIN AYUDA"))
 P(actx(AN(), "Reacciona — ¿y tú?",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
-  '<p><i>productieve reactie.</i> ¿Tu infancia se parece más a la de Nina o a la de Diego? Schrijf 2–3 zinnen met het <b>imperfecto</b> + una comparación (más… que).</p>'
+  '<p>¿Tu infancia se parece más a la de Nina o a la de Diego? Schrijf 2–3 zinnen met het <b>imperfecto</b> + una comparación (más… que).</p>'
   '<div class="wbox sm"></div>',
   apoyo="MARCO (De pequeño/a yo… Mi vida era más… que…)"))
 sec_close()
@@ -435,14 +437,14 @@ P('<h3>1 · Ortografía — el acento en -ía</h3>')
 P(regla("El acento del imperfecto", '<p>De -er/-ir-werkwoorden dragen in het imperfecto altijd een <b>accent</b> op de <b>í</b>: com<b>í</b>a, viv<b>í</b>a, ten<b>í</b>a, hac<b>í</b>a, ve<b>í</b>a. Ook nosotros -ábamos (jug<b>á</b>bamos).<br><span class="gloss">🔴 Zonder accent verandert de betekenis of klopt het niet: <i>tenia</i> → ten<b>í</b>a.</span></p>'))
 P(actx(AN(), "¿Falta el acento? · corrige",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>plaats de accenten.</i> Schrijf correct: tenia · vivia · comiamos · veia · hacia · jugabamos</p>'
+  '<p>Schrijf correct: tenia · vivia · comiamos · veia · hacia · jugabamos</p>'
   '<p style="margin-left:12.5mm"><span class="wl full"></span></p>',
   apoyo="PISTA (tenía, vivía, comíamos, veía, hacía, jugábamos)"))
 P('<h3 style="margin-top:6mm">2 · Conectores de contraste</h3>')
 P(colloc("en cambio · mientras · sin embargo", ["antes… en cambio, ahora…","mientras = terwijl","sin embargo = echter","pero = maar"]))
 P(actx(AN(), "Completa con el conector",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>gap-fill.</i> Vul aan met <b>en cambio · mientras · sin embargo</b>.</p>'
+  '<p>Vul aan met <b>en cambio · mientras · sin embargo</b>.</p>'
   '<p style="margin-left:12.5mm">1. Antes vivía en un pueblo; <span class="wl md"></span>, ahora vivo en la ciudad.<br>'
   '2. Jugaba en el patio <span class="wl md"></span> mis padres trabajaban.<br>'
   '3. Todo era más tranquilo; <span class="wl md"></span>, también más aburrido.</p>',
@@ -455,13 +457,13 @@ sec_close()
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">6</span><span class="pk">§6 · Lectura — «Carta de la abuela Rosario»</span>')
 P('<div class="intro"><b>ES:</b> Una carta de verdad, escrita a mano por una abuela. <b>No hace falta entenderlo todo</b> para sacar la información. <span class="gloss">Een echte handgeschreven brief van een oma. Je hoeft niet alles te begrijpen — let op wat vroeger gewoonte was en wat één keer gebeurde.</span></div>')
-P(PB.lectura_print(LD.C6P_U6, "1"))
+P(PB.lectura_print(LD.C6P_U6, AN()))
 P('</div>')
 
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">7</span><span class="pk">§7 · Escucha — Pódcast «Antes y ahora»</span>')
 P('<div class="intro"><b>ES:</b> Dos invitados comparan su infancia en el pódcast del instituto. <b>Escucha primero, escribe después.</b> <span class="gloss">Twee gasten vergelijken hun kindertijd in de schoolpodcast. Eerst luisteren, dan schrijven; het transcript staat online en gaat pas open ná de taken.</span></div>')
-P(PB.escucha_print(ED.C6P_U6, "1"))
+P(PB.escucha_print(ED.C6P_U6, AN()))
 P('</div>')
 
 # ================= CULTURA =================
@@ -470,7 +472,7 @@ sec_open("C", "Cultura · la infancia en el mundo hispano", 'Elke cultuur heeft 
 P('<div class="fams three" style="margin-top:2mm">'
   '<div class="pcard"><div class="t">🎉 La quinceañera</div><div class="ej" style="margin-top:2mm">In veel Latijns-Amerikaanse landen viert een meisje haar <b>15de verjaardag</b> met een groot feest: de <b>quinceañera</b>. Het markeert de overgang van kind naar jongvolwassene.</div></div>'
   '<div class="pcard"><div class="t">🪀 Los juegos tradicionales</div><div class="ej" style="margin-top:2mm">Vroeger speelden kinderen <b>la rayuela</b> (hinkelen), <b>el trompo</b> (tol) en <b>las canicas</b> (knikkers) op straat. Nina «jugaba» ze allemaal in het dorp.</div></div>'
-  '<div class="pcard"><div class="t">👵 Los abuelos</div><div class="ej" style="margin-top:2mm">In de hispanofoon spelen de <b>abuelos</b> een grote rol: ze passen op, vertellen verhalen en geven de <b>traditie</b> door. «Iba a casa de mi abuela» is een klassieke jeugdherinnering.</div></div></div>')
+  '<div class="pcard"><div class="t">👵 Los abuelos</div><div class="ej" style="margin-top:2mm">In de Spaanstalige wereld spelen de <b>abuelos</b> een grote rol: ze passen op, vertellen verhalen en geven de <b>traditie</b> door. «Iba a casa de mi abuela» is een klassieke jeugdherinnering.</div></div></div>')
 P('<div class="route-note" style="margin-top:5mm">🗺️ <b>En la web:</b> haz clic en Perú (★) en el mapa para descubrir Cusco y la infancia andina. <span class="gloss">Online: klik op Perú voor de familia-fiche.</span></div>')
 P(actx(AN(), "Compara · tu infancia y la hispana",
   [{"t":"🌍 Cultura","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★☆"}],
@@ -479,7 +481,7 @@ P(actx(AN(), "Compara · tu infancia y la hispana",
   apoyo="MARCO"))
 P(actx(AN(), "Datos curiosos — une",
   [{"t":"🌍 Cultura","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>matching.</i> Verbind (schrijf de letter).</p>'
+  '<p>Verbind (schrijf de letter).</p>'
   '<div class="wcols" style="grid-template-columns:1fr 1fr;margin-left:12.5mm">'
   '<div class="wcol"><div class="ch">Elemento</div><div class="cb short">1. la quinceañera &nbsp; 2. la rayuela &nbsp; 3. los abuelos &nbsp; 4. el trompo</div></div>'
   '<div class="wcol"><div class="ch">Dato</div><div class="cb short">a. juego de calle (hinkelen) &nbsp; b. 15º cumpleaños &nbsp; c. juguete que gira (tol) &nbsp; d. transmiten la tradición</div></div></div>'
@@ -575,10 +577,10 @@ P(actx("V.3", "Recordar — NL → ES (con letra)",
   '<p>Vul aan (beginletter). als kind = <b>d</b>___ p___ · was = <b>e</b>___ · vroeger = <b>a</b>___ · beter dan = <b>m</b>___ que<br><span class="wl full"></span></p>', apoyo="LETRA INICIAL"))
 P(actx("V.4", "Producir — una frase con tres palabras",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★★"}],
-  '<p><i>verplichte-woorden-zin.</i> Maak één correcte zin met <b>de pequeño · jugaba · el patio</b>.</p><div class="wbox sm"></div>', apoyo="SIN AYUDA"))
+  '<p>Maak één correcte zin met <b>de pequeño · jugaba · el patio</b>.</p><div class="wbox sm"></div>', apoyo="SIN AYUDA"))
 P(actx("V.5", "Comunicar — mi infancia en 3 frases",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"± 5 min"},{"t":"★★★"}],
-  '<p><i>vrije productie → transfer.</i> Schrijf 3 zinnen over je jeugd (dónde vivías · qué hacías · una comparación) en zeg ze hardop.</p>'
+  '<p>Schrijf 3 zinnen over je jeugd (dónde vivías · qué hacías · una comparación) en zeg ze hardop.</p>'
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="MARCO → SIN AYUDA"))
 P('<div class="se" style="margin-top:6mm">Mi mapa de recuerdos <span class="gloss" style="font-size:8pt">— teken je jeugdplek en label 6 dingen in het Spaans</span></div>')
 P('<div class="wbox lg"></div>')

@@ -471,6 +471,8 @@ function buildAudioCortos(idEscucha,cfg){
  const lista=caja.querySelector('.audlista');
  frags.forEach((f,n)=>{
    const it=document.createElement('div');it.className='audit';
+   // stabiel anker: de QR-code in het boek wijst hierheen (#c5-u0-aud-03)
+   if(f.ancla)it.id=f.ancla;
    const idt=idEscucha+'_c'+n;
    it.innerHTML=
      '<div class="audcab"><span class="audet">'+exEsc(f.etiqueta||'')+'</span>'+
@@ -772,6 +774,8 @@ function buildRetos(id,cfg){
  const lista=host.querySelector('.retos');
  (cfg.retos||[]).forEach((r,n)=>{
   const c=document.createElement('div');c.className='reto';
+  // stabiel anker voor de verwijzing vanuit boek en PowerPoint (#reto-c5-u5-01)
+  if(r.ancla)c.id=r.ancla;
   c.innerHTML='<div class="rcab"><span class="rnum">'+r.num+'</span><h3>'+exEsc(r.nombre)+'</h3>'+
     '<span class="rlente">'+exEsc(r.lente)+'</span></div>'+
     '<p class="rgancho"><b>'+exEsc(r.gancho_es)+'</b></p>'+

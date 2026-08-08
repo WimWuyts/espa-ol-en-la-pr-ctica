@@ -93,7 +93,9 @@ def escucha_js(host_id, frag):
     # De `clave` gaat NIET mee naar de hub: antwoordsleutels horen in het
     # docentendossier (CLAUDE.md §14), niet op de leerlingpagina.
     frags = [{"etiqueta": f["etiqueta"], "seccion": f["seccion"], "titulo": f["titulo"],
-              "tarea": f["tarea"], "audio": f["audio"], "guion": f["guion"]}
+              "tarea": f["tarea"], "audio": f["audio"], "guion": f["guion"],
+              # het anker waar de QR-code uit het boek op uitkomt
+              "ancla": f["ancla"]}
              for f in cortos if f["guion"]]
     if frags:
         js += "buildAudioCortos(%s,%s);\n" % (_J(host_id), _J({"fragmentos": frags}))
@@ -155,6 +157,9 @@ def retos_js(host_id, curso, unidad):
             continue
         base = {k: r[k] for k in ("num", "nombre", "lente", "gancho_es", "gancho_nl",
                                   "consigna_es", "consigna_nl", "regla")}
+        # het anker waarnaar boek en PowerPoint verwijzen
+        import enlaces
+        base["ancla"] = enlaces.ancla_reto(r["id"])
         d = r["datos"]
         if r["id"] == "C5-U0-RETO-01":
             base["tipo"] = "grabar"
