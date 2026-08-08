@@ -155,6 +155,27 @@ def tarjetas_de(r):
     if i == "C5-U1-RETO-04":
         return ([("PROHIBIDA", q, None) for q, _w in d["prohibidas"]]
                 + [("rodeo", q, waarom) for q, waarom in d["rodeos"]])
+    if i == "C5-U3-RETO-02":
+        return ([(z, ("misma hora que Gante" if h == 0 else "%d horas menos" % -h), None)
+                 for z, h in d["zonas"]]
+                + [("marco", m, None) for m in d["marco"]])
+    if i == "C5-U3-RETO-08":
+        return ([(n, t, None) for n, t in d["roles"]]
+                + [("marco", m, None) for m in d["marco"]])
+    if i == "C5-U3-RETO-10":
+        return ([("Pregunta %d" % k, q, wat) for k, (q, wat) in enumerate(d["preguntas"], 1)]
+                + [("marco", m, None) for m in d["marco"]])
+    if i == "C5-U4-RETO-01":
+        return ([("Escala", " → ".join(d["escala"]), None)]
+                + [("tema", t, None) for t in d["temas"]]
+                + [("marco", m, None) for m in d["marco"]])
+    if i == "C5-U4-RETO-03":
+        return ([("Tú llamas", m, None) for m in d["marco_llamada"]]
+                + [("El presentador", m, None) for m in d["marco_presentador"]]
+                + [("canción", c, None) for c in d["canciones"]])
+    if i == "C5-U4-RETO-08":
+        return ([("Arranque", a, None) for a in d["arranque"]]
+                + [("reacción", x, "usada ✗") for x in d["reacciones"]])
     if i == "C5-U2-RETO-02":
         return ([(n, sub, None) for n, sub in d["semilla"]]
                 + [("marco", m, None) for m in d["marco"]]

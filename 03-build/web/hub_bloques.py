@@ -209,6 +209,31 @@ def retos_js(host_id, curso, unidad):
         elif r["id"] == "C5-U2-RETO-09":
             base["tipo"] = "voces"
             base["voces"] = [{"quien": q, "texto": t} for q, t in d["voces"]]
+        elif r["id"] == "C5-U3-RETO-05":
+            base["tipo"] = "opciones"
+            base["items"] = [{"enunciado": e, "correcta": c, "opciones": o, "audio": True,
+                              "porque": "let op het uur"} for e, c, o in d["items"]]
+        elif r["id"] == "C5-U3-RETO-04":
+            base["tipo"] = "grabar"
+            base["situaciones"] = [{"es": m, "nl": "", "pista": ""} for m in d["marco"]]
+            base["items"] = [{"text": "Mi día en 60 segundos",
+                              "cue": "exact een minuut · pas de inhoud aan, niet je tempo"}]
+        elif r["id"] == "C5-U3-RETO-09":
+            base["tipo"] = "voces"
+            base["voces"] = [{"quien": "Frase %d" % k, "texto": f}
+                             for k, (f, _sub) in enumerate(d["frases"], 1)]
+        elif r["id"] == "C5-U4-RETO-02":
+            base["tipo"] = "voces"
+            base["voces"] = [{"quien": t, "texto": g} for t, g in d["playlist"]]
+        elif r["id"] == "C5-U4-RETO-06":
+            base["tipo"] = "grabar"
+            base["situaciones"] = [{"es": m, "nl": "", "pista": ""} for m in d["marco"]]
+            base["items"] = [{"text": "Antes y ahora",
+                              "cue": "vier contrasten · alles in het presente"}]
+        elif r["id"] == "C5-U4-RETO-09":
+            base["tipo"] = "opciones"
+            base["items"] = [{"enunciado": nl, "correcta": c, "opciones": o, "porque": p}
+                             for nl, c, o, p in d["items"]]
         else:
             continue
         salida.append(base)

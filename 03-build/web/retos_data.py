@@ -1546,6 +1546,754 @@ U2_RETO_08 = {
 }
 
 
+# ===========================================================================
+# C5 · U3 — El tiempo vuela  (parada: Barcelona)
+# ===========================================================================
+
+U3 = 3
+
+U3_RETO_01 = {
+    "id": "C5-U3-RETO-01", "num": 1, "curso": "C5", "unidad": U3,
+    "seccion": "§1.3", "ancla": "hora", "soporte": "print",
+    "nombre": "El horario imposible",
+    "lente": "🔓 puzzel & escape", "forma": "👥 En parejas", "skill": "👁️ Leer",
+    "tiempo": "± 12 min", "dificultad": "★★☆",
+    "gancho_es": "El sábado de Pau no cabe en un día. Tres citas se pisan.",
+    "gancho_nl": "De zaterdag van Pau past niet in één dag. Drie afspraken botsen.",
+    "consigna_es": "Encuentra los choques y reescribe la agenda para que todo quepa.",
+    "consigna_nl": "Vind de botsingen en herschrijf de agenda zodat alles past.",
+    "regla": "Je mag niets schrappen: alle zeven afspraken moeten erin blijven. Je mag "
+             "alleen verschuiven, en elke nieuwe tijd schrijf je voluit in het Spaans.",
+    "pasos": [("Lee la agenda entera antes de tocar nada.", "Lees de hele agenda vóór je iets aanraakt."),
+              ("Marca los tres choques con un color.", "Markeer de drie botsingen met een kleur."),
+              ("Reescribe las horas. Todo tiene que caber.", "Herschrijf de uren. Alles moet passen."),
+              ("Compara con tu compañero/a: ¿misma solución?", "Vergelijk met je buur: dezelfde oplossing?")],
+    "datos": {
+        "agenda": [("9:00", "clase de guitarra", "1 hora"),
+                   ("9:30", "desayuno con Marta", "45 minutos"),
+                   ("11:00", "entrenamiento de baloncesto", "2 horas"),
+                   ("12:30", "comida en casa de la abuela", "1 hora y media"),
+                   ("15:00", "deberes de mates", "1 hora"),
+                   ("15:30", "cine con Jordi", "2 horas"),
+                   ("20:00", "cena en familia", "1 hora")],
+        "marco": ["La clase de guitarra es a las …", "El desayuno no puede ser a las …, "
+                  "porque …", "Lo cambio a las …"],
+    },
+    "clave": [
+        "Drie botsingen: guitarra 9:00–10:00 tegen desayuno 9:30 · entrenamiento 11:00–13:00 "
+        "tegen comida 12:30 · deberes 15:00–16:00 tegen cine 15:30.",
+        "Eén werkende oplossing: desayuno naar 10:15, comida naar 13:15, deberes naar 18:00. "
+        "Andere verschuivingen mogen, zolang niets meer overlapt.",
+        "Let op «y media» en «y cuarto» in de herschrijving — daar zit de eigenlijke oefening.",
+    ],
+    "nota": "Het rekenen is licht; de moeilijkheid is dat een botsing pas zichtbaar wordt als "
+            "je de duur meetelt. Wijs daar niet vooraf op.",
+}
+
+U3_RETO_03 = {
+    "id": "C5-U3-RETO-03", "num": 3, "curso": "C5", "unidad": U3,
+    "seccion": "§2.3", "ancla": "rutina", "soporte": "print",
+    "nombre": "La rutina al revés",
+    "lente": "🕵️ forensisch", "forma": "👤 Solo", "skill": "👁️ Leer",
+    "tiempo": "± 10 min", "dificultad": "★★☆",
+    "gancho_es": "Este día está contado de atrás hacia adelante. Ponlo derecho.",
+    "gancho_nl": "Deze dag is van achter naar voor verteld. Zet hem recht.",
+    "consigna_es": "Numera las frases en el orden real y añade el conector que falta.",
+    "consigna_nl": "Nummer de zinnen in de echte volgorde en voeg de ontbrekende conector toe.",
+    "regla": "Je mag niet op de uren afgaan — die staan er niet. Alleen de logica van de dag "
+             "en de reflexieve werkwoorden verraden de volgorde.",
+    "pasos": [("Lee las ocho frases. No numeres todavía.", "Lees de acht zinnen. Nummer nog niet."),
+              ("Busca la primera y la última. Esas son fáciles.", "Zoek de eerste en de laatste. Die zijn makkelijk."),
+              ("Numera el resto y escribe el conector.", "Nummer de rest en schrijf de conector erbij.")],
+    "datos": {
+        "frases": ["Me acuesto sobre las once.", "Ceno con mi familia.",
+                   "Hago los deberes en mi habitación.", "Vuelvo a casa en metro.",
+                   "Como en el instituto.", "Empiezan las clases.",
+                   "Me ducho y me visto.", "Me despierto con el móvil."],
+        "conectores": ["primero", "luego", "después", "más tarde", "por último"],
+    },
+    "clave": [
+        "Volgorde: 1 me despierto · 2 me ducho y me visto · 3 empiezan las clases · "
+        "4 como en el instituto · 5 vuelvo a casa · 6 hago los deberes · 7 ceno · 8 me acuesto.",
+        "De valstrik is «hago los deberes»: die kan vóór of ná het eten, maar niet vóór "
+        "«vuelvo a casa» — het huiswerk gebeurt in de kamer.",
+        "Conectoren zijn niet uniek: elke ketting die logisch loopt, telt.",
+    ],
+    "nota": "Zonder uren erbij wordt dit een redeneeroefening in plaats van een leesoefening. "
+            "Voeg ze dus niet toe als steun.",
+}
+
+U3_RETO_06 = {
+    "id": "C5-U3-RETO-06", "num": 6, "curso": "C5", "unidad": U3,
+    "seccion": "§2.3", "ancla": "rutina", "soporte": "print",
+    "nombre": "Rutinas de otros oficios",
+    "lente": "🔬 onderzoek & data", "forma": "👨‍👩‍👧 En grupos", "skill": "✍️ Escribir",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Un panadero, una enfermera de noche, un futbolista. Sus días no se parecen al tuyo.",
+    "gancho_nl": "Een bakker, een nachtverpleegkundige, een profvoetballer. Hun dagen lijken "
+                 "niet op de jouwe.",
+    "consigna_es": "Reconstruye el día de uno de los tres y compáralo con el tuyo.",
+    "consigna_nl": "Reconstrueer de dag van één van de drie en vergelijk hem met de jouwe.",
+    "regla": "Je moet minstens twee dingen vinden die op een ándere tijd gebeuren dan bij "
+             "jou, en dat mét het uur zeggen. «Werkt 's nachts» volstaat niet.",
+    "pasos": [("Elegid un oficio por grupo.", "Kies één beroep per groep."),
+              ("Con las pistas, escribid su día en orden.", "Schrijf met de aanwijzingen zijn dag op volgorde."),
+              ("Comparad con vuestro día: ¿qué choca?", "Vergelijk met jullie dag: wat botst?"),
+              ("Presentad en un minuto.", "Presenteer in één minuut.")],
+    "datos": {
+        "oficios": [
+            ("el panadero", ["Se levanta a las tres y media de la mañana.",
+                             "El pan está listo a las siete.",
+                             "Come a la una y duerme la siesta.",
+                             "Se acuesta a las nueve de la noche."]),
+            ("la enfermera de noche", ["Se despierta a las cuatro de la tarde.",
+                                       "Empieza a trabajar a las ocho de la tarde.",
+                                       "Cena a medianoche en el hospital.",
+                                       "Vuelve a casa a las ocho de la mañana."]),
+            ("el futbolista", ["Se levanta a las siete y desayuna mucho.",
+                               "Entrena de nueve a doce.",
+                               "Duerme la siesta después de comer.",
+                               "El sábado juega a las nueve de la noche."]),
+        ],
+        "marco": ["… se levanta a las …, pero yo me levanto a las …",
+                  "Yo ceno a las …; él/ella cena a las …", "Lo más raro para mí es que …"],
+    },
+    "clave": [
+        "De verpleegkundige is de scherpste vergelijking: haar «ontbijt» is ons avondeten.",
+        "Let op de reflexieven in de derde persoon: se levanta, se acuesta, se despierta — "
+        "leerlingen vergeten het pronomen zodra ze over iemand anders praten.",
+        "«Duerme la siesta» komt twee keer voor: bruikbaar als cultureel haakje.",
+    ],
+    "nota": "Laat elke groep een ánder beroep nemen; bij de presentatie hoort de klas dan "
+            "drie contrasten in plaats van drie keer hetzelfde.",
+}
+
+U3_RETO_07 = {
+    "id": "C5-U3-RETO-07", "num": 7, "curso": "C5", "unidad": U3,
+    "seccion": "§3.3", "ancla": "irregular", "soporte": "print",
+    "nombre": "La app que te juzga",
+    "lente": "✍️ creatieve beperking", "forma": "👤 Solo", "skill": "✍️ Escribir",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Instalas una app que analiza tu día. Y tiene opinión.",
+    "gancho_nl": "Je installeert een app die je dag analyseert. En die heeft een mening.",
+    "consigna_es": "Escribe tres frases sobre tu día y luego la respuesta que te daría la app.",
+    "consigna_nl": "Schrijf drie zinnen over je dag en daarna het antwoord dat de app je zou geven.",
+    "regla": "De app antwoordt altijd met een werkwoord met klankverandering (empezar, poder, "
+             "dormir, querer, jugar). Zonder zo'n werkwoord is het geen antwoord van de app.",
+    "pasos": [("Escribe tres frases verdaderas sobre tu día.", "Schrijf drie ware zinnen over je dag."),
+              ("Ahora eres la app. Contesta a cada una.", "Nu ben jij de app. Antwoord op elke zin."),
+              ("¿Es dura o amable tu app? Elige y sé constante.", "Is jouw app streng of vriendelijk? Kies en hou vol.")],
+    "datos": {
+        "modelos": [("Duermo cinco horas.", "No puedes dormir cinco horas. Empieza a las diez."),
+                    ("Juego dos horas al móvil.", "¿Quieres jugar menos? Prueba una hora.")],
+        "verbos": ["empezar (e→ie)", "poder (o→ue)", "dormir (o→ue)", "querer (e→ie)",
+                   "jugar (u→ue)", "pedir (e→i)"],
+    },
+    "clave": [
+        "Elk app-antwoord moet minstens één werkwoord met klankverandering bevatten, correct "
+        "vervoegd. Dat is het toetsbare deel.",
+        "Veelgemaakte fout: «podes» in plaats van «puedes», en «dormo» in plaats van «duermo».",
+        "De nosotros-vorm verandert níét: «podemos», «dormimos» — laat dat opvallen als "
+        "iemand de app in de wij-vorm laat spreken.",
+    ],
+    "nota": "De toon van de app is vrij. Laat leerlingen kiezen: dat is waar het plezier zit, "
+            "en de grammatica ligt er los van.",
+}
+
+U3_RETO_05 = {
+    "id": "C5-U3-RETO-05", "num": 5, "curso": "C5", "unidad": U3,
+    "seccion": "§2.3", "ancla": "rutina", "soporte": "hub",
+    "nombre": "El reloj de la ciudad",
+    "lente": "📻 mediaformat", "forma": "👤 Solo", "skill": "👂 Escuchar",
+    "tiempo": "± 10 min", "dificultad": "★★☆",
+    "gancho_es": "Barcelona se despierta por partes. Escucha y di qué pasa a esa hora.",
+    "gancho_nl": "Barcelona wordt in stukken wakker. Luister en zeg wat er op dat uur gebeurt.",
+    "consigna_es": "Oyes una hora y una escena. Elige el verbo reflexivo que encaja.",
+    "consigna_nl": "Je hoort een uur en een scène. Kies het reflexieve werkwoord dat past.",
+    "regla": "Je kiest op wat je hoort, niet op wat logisch lijkt. Twee scènes passen bij "
+             "hetzelfde werkwoord — daar beslist het uur.",
+    "pasos": [("Escucha la escena entera antes de elegir.", "Luister de hele scène af vóór je kiest."),
+              ("Elige el verbo. Fíjate en la hora.", "Kies het werkwoord. Let op het uur."),
+              ("¿Fallas? Vuelve a escuchar antes de leer.", "Fout? Luister opnieuw vóór je leest.")],
+    "datos": {
+        "items": [
+            ("Son las siete menos cuarto. Suena el despertador en toda la escalera.",
+             "se despiertan", ["se despiertan", "se acuestan", "se duchan"]),
+            ("Son las siete y media. Se oye el agua en todos los pisos.",
+             "se duchan", ["se duchan", "se peinan", "se van"]),
+            ("Son las ocho. La puerta del portal no para de abrirse.",
+             "se van", ["se van", "se levantan", "se sientan"]),
+            ("Son las dos. En el bar de abajo no cabe nadie más.",
+             "se sientan", ["se sientan", "se duermen", "se lavan"]),
+            ("Son las cuatro. En el parque casi nadie habla.",
+             "se duermen", ["se duermen", "se despiertan", "se visten"]),
+            ("Son las once de la noche. Se apagan las luces una a una.",
+             "se acuestan", ["se acuestan", "se levantan", "se duchan"]),
+        ],
+    },
+    "clave": [
+        "se despiertan · se duchan · se van · se sientan · se duermen · se acuestan",
+        "Item 1 en 6 delen het thema slapen; alleen het uur (7:45 tegenover 23:00) beslist.",
+        "Alle werkwoorden staan in de derde persoon meervoud: het gaat over de stad, niet "
+        "over één iemand.",
+    ],
+    "nota": "Zolang er geen opnames zijn, leest de computerstem de scènes voor. Dat werkt: "
+            "de zinnen zijn kort en de klemtoon ligt op het uur.",
+}
+
+U3_RETO_04 = {
+    "id": "C5-U3-RETO-04", "num": 4, "curso": "C5", "unidad": U3,
+    "seccion": "§3.3", "ancla": "irregular", "soporte": "hub",
+    "nombre": "Un día en 60 segundos",
+    "lente": "🎭 simulatie met beperking", "forma": "👥 En parejas", "skill": "🗣️ Hablar",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Tu día entero en exactamente sesenta segundos. Ni más, ni menos.",
+    "gancho_nl": "Je hele dag in exact zestig seconden. Niet meer, niet minder.",
+    "consigna_es": "Graba tu día tres veces. Cada vez tienes que llegar más cerca del minuto.",
+    "consigna_nl": "Neem je dag drie keer op. Elke keer moet je dichter bij de minuut komen.",
+    "regla": "Exact zestig seconden. Te kort betekent dat je iets moet toevoegen, te lang dat "
+             "je moet schrappen — niet dat je sneller mag praten.",
+    "pasos": [("Primer intento: cuenta tu día sin preparar.", "Eerste poging: vertel je dag zonder voorbereiding."),
+              ("Mira el tiempo. ¿Sobra o falta?", "Kijk naar de tijd. Te veel of te weinig?"),
+              ("Segundo intento: ajusta el contenido, no la velocidad.", "Tweede poging: pas de inhoud aan, niet je tempo."),
+              ("Tercer intento: el bueno.", "Derde poging: de goede.")],
+    "datos": {
+        "marco": ["Me levanto a las …", "Primero … , luego …", "A mediodía …",
+                  "Por la tarde … porque …", "Y por último …"],
+        "modelos": [("demasiado corto", "voeg een reden toe met «porque» of een frequentie "
+                                        "met «siempre / a veces / nunca»"),
+                    ("demasiado largo", "schrap de details van het ontbijt — die vertelt iedereen")],
+    },
+    "clave": [
+        "Beoordeel de derde opname, niet de eerste. De winst zit in het aanpassen.",
+        "Wie te kort zit, voegt meestal geen inhoud maar stopwoorden toe. Stuur naar «porque» "
+        "en naar frequentiewoorden.",
+        "Zestig seconden is ongeveer acht tot tien zinnen op dit niveau.",
+    ],
+    "nota": "De timer op de hub telt mee. Laat leerlingen niet naar de klok kijken tijdens "
+            "het spreken — dat maakt van de oefening een leesbeurt.",
+}
+
+U3_RETO_09 = {
+    "id": "C5-U3-RETO-09", "num": 9, "curso": "C5", "unidad": U3,
+    "seccion": "Cultura", "ancla": "cultura_u3", "soporte": "hub",
+    "nombre": "Subtítulos para la abuela",
+    "lente": "🤝 bemiddelen", "forma": "👥 En parejas", "skill": "🔀 Mediar",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Tu abuela no sigue el vídeo: van demasiado rápido.",
+    "gancho_nl": "Je oma volgt de video niet: ze praten te snel.",
+    "consigna_es": "Convierte cada frase rápida en un subtítulo corto y claro.",
+    "consigna_nl": "Zet elke snelle zin om in een korte, heldere ondertitel.",
+    "regla": "Maximaal acht woorden per ondertitel, en de betekenis moet heel blijven. "
+             "Je comprimeert, je vertaalt niet.",
+    "pasos": [("Escucha la frase entera.", "Luister de hele zin af."),
+              ("¿Qué es lo esencial? Quita el resto.", "Wat is de kern? Schrap de rest."),
+              ("Escribe el subtítulo. Cuenta las palabras.", "Schrijf de ondertitel. Tel je woorden.")],
+    "datos": {
+        "frases": [
+            ("Pues mira, normalmente me levanto sobre las siete menos cuarto, aunque los "
+             "viernes me quedo un ratito más en la cama.", "Me levanto a las siete menos cuarto."),
+            ("La verdad es que no desayuno casi nunca porque no tengo hambre tan temprano "
+             "por la mañana.", "Casi nunca desayuno."),
+            ("Los martes por la tarde tengo clase de guitarra y luego, si me da tiempo, "
+             "quedo con Jordi en la plaza.", "Los martes: guitarra y luego Jordi."),
+            ("Suelo acostarme bastante tarde, sobre las once y media o incluso las doce si "
+             "estoy viendo una serie.", "Me acuesto a las once y media."),
+        ],
+    },
+    "clave": [
+        "Modelondertitels staan hierboven; elke variant van acht woorden of minder die de "
+        "kern behoudt, is goed.",
+        "Zin 3 is de moeilijkste: er zitten twee gebeurtenissen in en beide moeten blijven.",
+        "Wat mag sneuvelen: «pues mira», «la verdad es que», «suelo». Wat niet: het uur, "
+        "de dag, en de ontkenning.",
+    ],
+    "nota": "De limiet van acht woorden is het hele punt. Zonder harde limiet schrijven "
+            "leerlingen de zin gewoon over.",
+}
+
+U3_RETO_02 = {
+    "id": "C5-U3-RETO-02", "num": 2, "curso": "C5", "unidad": U3,
+    "seccion": "§1.3", "ancla": "hora", "soporte": "ppt",
+    "nombre": "Zona horaria",
+    "lente": "🔬 onderzoek & data", "forma": "👨‍👩‍👧 En grupos", "skill": "✍️ Escribir",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Una videollamada con Cusco, CDMX y Sevilla. Alguien siempre está durmiendo.",
+    "gancho_nl": "Een videogesprek met Cusco, CDMX en Sevilla. Er slaapt altijd iemand.",
+    "consigna_es": "Encontrad la única hora en la que los cuatro estáis despiertos.",
+    "consigna_nl": "Zoek het enige uur waarop jullie alle vier wakker zijn.",
+    "regla": "Iedereen moet tussen 8:00 en 22:00 lokale tijd zitten. Eén persoon buiten dat "
+             "venster en het voorstel valt af.",
+    "pasos": [("Mirad las cuatro zonas horarias.", "Bekijk de vier tijdzones."),
+              ("Probad una hora. ¿Quién duerme?", "Probeer een uur. Wie slaapt er?"),
+              ("Buscad la ventana común.", "Zoek het gemeenschappelijke venster."),
+              ("Escribid la invitación con la hora de cada uno.", "Schrijf de uitnodiging met ieders lokale uur.")],
+    "datos": {
+        "zonas": [("Gante (Bélgica)", 0), ("Sevilla (España)", 0),
+                  ("Ciudad de México", -7), ("Cusco (Perú)", -6)],
+        "marco": ["En Gante son las …, en México son las … y en Cusco son las …",
+                  "A las … de Bélgica, en México es demasiado temprano.",
+                  "Quedamos a las … hora belga."],
+    },
+    "clave": [
+        "Venster: 15:00–22:00 Belgische tijd. Dan is het 8:00–15:00 in Mexico en "
+        "9:00–16:00 in Cusco.",
+        "16:00 Belgisch is een veilige keuze: 9:00 in CDMX, 10:00 in Cusco, 16:00 in Sevilla.",
+        "Sevilla en Gante delen de tijdzone — dat is de gratis vereenvoudiging die de klas "
+        "meestal over het hoofd ziet.",
+        "Verschillen zijn winterwaarden; met zomertijd schuift het één uur. Vermeld dat als "
+        "een leerling ernaar vraagt.",
+    ],
+    "nota": "Reken met hele uren. Zodra de klas over zomertijd begint, wordt het een "
+            "rekenles in plaats van een taalles.",
+}
+
+U3_RETO_08 = {
+    "id": "C5-U3-RETO-08", "num": 8, "curso": "C5", "unidad": U3,
+    "seccion": "§2.3", "ancla": "rutina", "soporte": "ppt",
+    "nombre": "Negocia el despertador",
+    "lente": "⚖️ onderhandeling & dilemma", "forma": "👥 En parejas", "skill": "🗣️ Hablar",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Dos compañeros de habitación, dos mañanas incompatibles. Una sola alarma.",
+    "gancho_nl": "Twee kamergenoten, twee onverenigbare ochtenden. Eén wekker.",
+    "consigna_es": "Negociad un horario común. Los dos tenéis que ceder en algo.",
+    "consigna_nl": "Onderhandel één gezamenlijk schema. Jullie moeten allebei iets opgeven.",
+    "regla": "Elk voorstel bevat een uur én een reden met «porque». Een voorstel zonder "
+             "reden mag de ander zonder meer weigeren.",
+    "pasos": [("Coge tu rol. No lo enseñes.", "Neem je rol. Laat hem niet zien."),
+              ("Propón tu hora con una razón.", "Stel je uur voor met een reden."),
+              ("Ceded hasta llegar a un acuerdo.", "Geef toe tot jullie akkoord zijn."),
+              ("Escribid la hora final en la pizarra.", "Schrijf het eindresultaat op het bord.")],
+    "datos": {
+        "roles": [("Álex", "Entrenas a las siete de la mañana. Necesitas la ducha primero. "
+                           "Te acuestas a las diez."),
+                  ("Noa", "Estudias hasta la una de la madrugada. No puedes levantarte antes "
+                          "de las nueve. La luz te despierta.")],
+        "marco": ["Quiero levantarme a las … porque …", "No puedo … porque …",
+                  "¿Y si … a las …?", "Vale, pero entonces tú …"],
+    },
+    "clave": [
+        "Er is geen juiste uitkomst, wel een toetsbare: bevat elk voorstel een uur én "
+        "«porque», en heeft élk van de twee iets opgegeven?",
+        "De meest gevonden oplossing: wekker om 6:45 met de douche 's avonds voor Álex, en "
+        "een slaapmasker voor Noa.",
+        "Let op «poder»: «no puedo levantarme» — de o→ue-verandering zit precies in het "
+        "werkwoord dat de hele onderhandeling draagt.",
+    ],
+    "nota": "Geef de rollen echt gescheiden. Zien de leerlingen elkaars kaart, dan verdwijnt "
+            "de onderhandeling en blijft er een invuloefening over.",
+}
+
+U3_RETO_10 = {
+    "id": "C5-U3-RETO-10", "num": 10, "curso": "C5", "unidad": U3,
+    "seccion": "Cultura", "ancla": "cultura_u3", "soporte": "ppt",
+    "nombre": "La coartada",
+    "lente": "🕵️ forensisch", "forma": "🏫 Toda la clase", "skill": "🗣️ Hablar",
+    "tiempo": "± 20 min", "dificultad": "★★★",
+    "gancho_es": "Ha desaparecido la mascota de la clase. Todos tenéis que dar cuentas.",
+    "gancho_nl": "De klasmascotte is verdwenen. Iedereen moet rekenschap geven.",
+    "consigna_es": "En parejas inventáis una coartada con cinco horas. La clase os interroga.",
+    "consigna_nl": "Per twee verzinnen jullie een alibi met vijf uren. De klas verhoort jullie.",
+    "regla": "Jullie twee verhalen moeten op de vijf uren identiek zijn — maar jullie worden "
+             "apart ondervraagd. Eén verschil en het alibi valt.",
+    "pasos": [("En parejas: inventad vuestra tarde, hora por hora.", "Per twee: verzin jullie namiddag, uur per uur."),
+              ("Memorizad. No podéis mirar notas en el interrogatorio.", "Onthoud het. Bij het verhoor geen notities."),
+              ("Uno sale del aula. La clase interroga al otro.", "Eén verlaat het lokaal. De klas verhoort de ander."),
+              ("Entra el segundo. ¿Coinciden?", "De tweede komt binnen. Komen ze overeen?")],
+    "datos": {
+        "preguntas": [("¿A qué hora salisteis del instituto?", "vertrek"),
+                      ("¿Dónde estabais a las cinco?", "plaats"),
+                      ("¿Qué hacíais a las seis?", "bezigheid"),
+                      ("¿A qué hora volvisteis a casa?", "terugkeer"),
+                      ("¿Con quién estabais?", "getuige")],
+        "marco": ["A las … salimos del instituto.", "A las … estamos en …",
+                  "Después vamos a … y volvemos a las …"],
+    },
+    "clave": [
+        "Het alibi valt bijna altijd op vraag 3 of 5: de bezigheid en de getuige worden "
+        "zelden even gedetailleerd afgesproken als de uren.",
+        "Alles blijft in het presente: de vragen staan hier in de verleden tijd omdat de "
+        "leerkracht ze stelt, maar de antwoorden mogen in het presente («a las cinco "
+        "estamos en el parque»). Geen verleden tijd vragen van de leerlingen.",
+        "Wie een detail vergeet, mag het niet verzinnen: dan valt het alibi. Dat is de motor.",
+    ],
+    "nota": "Werkt met maximaal zes duo's; daarna zakt de spanning. Laat de rest van de klas "
+            "de tegenstrijdigheden noteren, dan luistert iedereen mee.",
+}
+
+
+# ===========================================================================
+# C5 · U4 — Me gusta  (parada: València · la costa)
+# ===========================================================================
+
+U4 = 4
+
+U4_RETO_04 = {
+    "id": "C5-U4-RETO-04", "num": 4, "curso": "C5", "unidad": U4,
+    "seccion": "§3.3", "ancla": "planes", "soporte": "print",
+    "nombre": "Cita a ciegas de planes",
+    "lente": "🎭 simulatie met beperking", "forma": "👨‍👩‍👧 En grupos", "skill": "✍️ Escribir",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Propones un plan a alguien que no ves. Solo pasan papelitos.",
+    "gancho_nl": "Je stelt een plan voor aan iemand die je niet ziet. Alleen briefjes gaan heen en weer.",
+    "consigna_es": "Tres rondas de notas: proponer, reaccionar, cerrar la cita. Sin hablar.",
+    "consigna_nl": "Drie rondes briefjes: voorstellen, reageren, de afspraak sluiten. Zonder praten.",
+    "regla": "Er wordt niet gesproken en niet gewezen. Alles gaat via het briefje, en elke "
+             "reactie begint met «a mí también», «a mí tampoco», «a mí sí» of «a mí no».",
+    "pasos": [("Ronda 1: escribe un plan y un gusto tuyo.", "Ronde 1: schrijf een plan en één eigen gusto."),
+              ("Ronda 2: reacciona al plan que recibes.", "Ronde 2: reageer op het plan dat je krijgt."),
+              ("Ronda 3: cerrad hora y lugar.", "Ronde 3: spreek uur en plaats af."),
+              ("Y ahora sí: mirad quién era.", "En nu pas: kijk wie het was.")],
+    "datos": {
+        "marco_1": ["Me gusta … y quiero …", "¿Quieres … el sábado?"],
+        "marco_2": ["A mí también, pero …", "A mí no. Prefiero …", "A mí tampoco me gusta …"],
+        "marco_3": ["¿Quedamos a las … en …?", "Vale, pero mejor a las …"],
+        "planes": ["ir a la playa", "ver una peli", "jugar al pádel", "ir al mercado",
+                   "escuchar música en el parque", "hacer una ruta en bici"],
+    },
+    "clave": [
+        "De vier reacties moeten alle vier ergens in de klas voorkomen. Vraag er achteraf "
+        "naar: wie heeft «a mí tampoco» gebruikt?",
+        "«A mí tampoco» kan alleen ná een ontkenning — dat is de valstrik. Wie het na een "
+        "positieve zin schrijft, herschrijft het briefje.",
+        "Ronde 3 dwingt «quedamos» af: het is de enige manier om uur én plaats in één zin te "
+        "zetten.",
+    ],
+    "nota": "Briefjes anoniem houden tot het einde. Zodra leerlingen weten met wie ze "
+            "schrijven, praten ze — en dan is de beperking weg.",
+}
+
+U4_RETO_05 = {
+    "id": "C5-U4-RETO-05", "num": 5, "curso": "C5", "unidad": U4,
+    "seccion": "§3.3", "ancla": "planes", "soporte": "print",
+    "nombre": "El presupuesto del finde",
+    "lente": "⚖️ onderhandeling & dilemma", "forma": "👨‍👩‍👧 En grupos", "skill": "🗣️ Hablar",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Veinticinco euros, cuatro planes, un fin de semana. No cabe todo.",
+    "gancho_nl": "Vijfentwintig euro, vier plannen, één weekend. Alles past niet.",
+    "consigna_es": "Elegid juntos qué hacéis. Cada uno tiene que renunciar a un plan propio.",
+    "consigna_nl": "Kies samen wat jullie doen. Ieder moet één eigen plan opgeven.",
+    "regla": "Het budget is hard: vijfentwintig euro voor de hele groep. En iedereen moet "
+             "minstens één keer «a mí no me gusta» of «prefiero» gebruiken om iets te schrappen.",
+    "pasos": [("Cada uno elige su plan favorito y su precio.", "Ieder kiest zijn favoriete plan en de prijs."),
+              ("Sumad. ¿Cuánto os pasáis?", "Tel op. Hoeveel gaan jullie erover?"),
+              ("Negociad hasta llegar a veinticinco.", "Onderhandel tot jullie op vijfentwintig zitten."),
+              ("Escribid el plan final con horas.", "Schrijf het eindplan met uren.")],
+    "datos": {
+        "planes": [("entrada al cine", 8), ("bocadillo y bebida", 6), ("bus a la playa", 4),
+                   ("alquilar una bici", 7), ("entrada al museo", 5), ("helado", 3),
+                   ("pádel una hora", 10), ("mercado: fruta para todos", 6)],
+        "marco": ["A mí me gustaría … , pero cuesta …", "Prefiero … porque es más barato.",
+                  "Si quitamos …, nos quedan … euros.", "Entonces quedamos a las … en …"],
+    },
+    "clave": [
+        "Er is geen juiste combinatie; er zijn er meerdere die op precies vijfentwintig "
+        "uitkomen (bijvoorbeeld bus 4 + bocadillo 6 + helado 3 + museo 5 + fruta 6 = 24).",
+        "Toets twee dingen: klopt de som, en heeft élk groepslid één keer geschrapt met een "
+        "gusto-uitdrukking?",
+        "«Me gustaría» staat bewust in het marco als chunk, niet als tijd om te leren — het "
+        "is geen condicional-les.",
+    ],
+    "nota": "Vijfentwintig euro is krap gekozen. Bij een ruimer budget verdwijnt de "
+            "onderhandeling en blijft er een boodschappenlijst over.",
+}
+
+U4_RETO_07 = {
+    "id": "C5-U4-RETO-07", "num": 7, "curso": "C5", "unidad": U4,
+    "seccion": "Cultura", "ancla": "cultura_u4", "soporte": "print",
+    "nombre": "El anuncio que no miente",
+    "lente": "✍️ creatieve beperking", "forma": "👥 En parejas", "skill": "✍️ Escribir",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Escribe un anuncio de València en el que todo sea verdad. También lo malo.",
+    "gancho_nl": "Schrijf een reclame voor València waarin alles waar is. Ook het slechte.",
+    "consigna_es": "Seis frases: tres cosas buenas, dos menos buenas, y una que sigue "
+                   "convenciendo igual.",
+    "consigna_nl": "Zes zinnen: drie goede dingen, twee minder goede, en één die tóch nog "
+                   "overtuigt.",
+    "regla": "Niets weglaten en niets overdrijven. «Siempre hace sol» mag niet — «en verano "
+             "hace mucho calor, a veces demasiado» wel.",
+    "pasos": [("Mirad los datos. Elegid tres cosas buenas.", "Bekijk de gegevens. Kies drie goede dingen."),
+              ("Elegid dos menos buenas. No las suavicéis.", "Kies twee minder goede. Verzacht ze niet."),
+              ("Escribid la frase final: ¿por qué venir igualmente?", "Schrijf de slotzin: waarom tóch komen?")],
+    "datos": {
+        "hechos": [("playa en la ciudad", "bueno"), ("paella valenciana", "bueno"),
+                   ("bicis por todas partes", "bueno"), ("Ciudad de las Artes", "bueno"),
+                   ("en agosto: 35 grados y mucha humedad", "menos bueno"),
+                   ("en verano hay muchísimos turistas", "menos bueno"),
+                   ("el centro es caro para comer", "menos bueno"),
+                   ("las Fallas: ruido día y noche en marzo", "depende")],
+        "marco": ["En València hay …", "Me gusta … porque …", "No me gusta … , pero …",
+                  "Si te gusta … , València te encanta."],
+    },
+    "clave": [
+        "«Las Fallas» is het scharnier: voor de één een reden om te komen, voor de ander om "
+        "weg te blijven. Beide zijn juist, mits onderbouwd.",
+        "Toets op de twee negatieve zinnen: staan ze er écht, en zonder «pero» meteen "
+        "weggepoetst?",
+        "Sterke slotzinnen gebruiken een voorwaarde met «si» plus gustar — dat is precies de "
+        "structuur van de unit.",
+    ],
+    "nota": "De opdracht traint eerlijk schrijven én genuanceerd smaakgebruik. Laat de "
+            "negatieve zinnen niet wegvallen in de correctie.",
+}
+
+U4_RETO_10 = {
+    "id": "C5-U4-RETO-10", "num": 10, "curso": "C5", "unidad": U4,
+    "seccion": "Cultura", "ancla": "cultura_u4", "soporte": "print",
+    "nombre": "La encuesta de la costa",
+    "lente": "🔬 onderzoek & data", "forma": "👤 Solo", "skill": "✍️ Escribir",
+    "tiempo": "± 15 min", "dificultad": "★★☆",
+    "gancho_es": "¿Playa o montaña? Pregúntalo de verdad y cuenta los votos.",
+    "gancho_nl": "Strand of bergen? Vraag het echt en tel de stemmen.",
+    "consigna_es": "Encuesta a tres compañeros, dibuja el diagrama y defiende una conclusión.",
+    "consigna_nl": "Ondervraag drie klasgenoten, teken het diagram en verdedig één conclusie.",
+    "regla": "Je conclusie moet een getal bevatten én een reactie met también of tampoco. "
+             "Een conclusie zonder cijfer is een mening, geen resultaat.",
+    "pasos": [("Haz las tres preguntas a tres personas.", "Stel de drie vragen aan drie personen."),
+              ("Anota las respuestas tal cual.", "Noteer de antwoorden letterlijk."),
+              ("Dibuja el diagrama y escribe la conclusión.", "Teken het diagram en schrijf de conclusie."),
+              ("Léela a la clase. ¿Están de acuerdo?", "Lees ze voor. Is de klas het ermee eens?")],
+    "datos": {
+        "preguntas": [("¿Te gusta más la playa o la montaña?", "playa / montaña"),
+                      ("¿Te gusta madrugar en vacaciones?", "sí / no"),
+                      ("¿Qué prefieres: música o silencio?", "música / silencio")],
+        "marco": ["A … de tres personas les gusta …", "A mí también / a mí no.",
+                  "Solo a … le gusta …", "A nadie le gusta …"],
+    },
+    "clave": [
+        "Let op de vorm: «A dos personas LES gusta» (meervoud) tegenover «A una persona LE "
+        "gusta». Daar gaat het het vaakst mis.",
+        "«A nadie le gusta» is enkelvoud — een geliefde valstrik.",
+        "De cijfers verschillen per klas; toets de vorm en de aanwezigheid van een reactie.",
+    ],
+    "nota": "Drie respondenten is genoeg. Bij meer wordt het turven belangrijker dan het "
+            "formuleren.",
+}
+
+U4_RETO_02 = {
+    "id": "C5-U4-RETO-02", "num": 2, "curso": "C5", "unidad": U4,
+    "seccion": "§1.3", "ancla": "gustar", "soporte": "hub",
+    "nombre": "La playlist heredada",
+    "lente": "🕵️ forensisch", "forma": "👤 Solo", "skill": "✍️ Escribir",
+    "tiempo": "± 12 min", "dificultad": "★★☆",
+    "gancho_es": "Encuentras un móvil con una playlist. ¿Quién es esta persona?",
+    "gancho_nl": "Je vindt een gsm met een playlist erop. Wie is deze persoon?",
+    "consigna_es": "Escucha los ocho títulos y deduce sus gustos. Escribe su perfil en cinco frases.",
+    "consigna_nl": "Beluister de acht titels en leid haar smaak af. Schrijf haar profiel in vijf zinnen.",
+    "regla": "Elke zin over die persoon moet met «le gusta» of «le encanta» — niet met «me». "
+             "Je praat over iemand anders, niet over jezelf.",
+    "pasos": [("Escucha la playlist entera.", "Beluister de hele playlist."),
+              ("¿Qué se repite? ¿Qué falta?", "Wat komt terug? Wat ontbreekt?"),
+              ("Escribe cinco frases sobre esa persona.", "Schrijf vijf zinnen over die persoon."),
+              ("Compara con la clase: ¿misma persona?", "Vergelijk met de klas: dezelfde persoon?")],
+    "datos": {
+        "playlist": [("Flamenco de Jerez, vol. 2", "flamenco"),
+                     ("Rosalía — grandes éxitos", "flamenco-pop"),
+                     ("Sonidos del mar (para dormir)", "relajación"),
+                     ("Reggaetón 2019", "reguetón"),
+                     ("Camarón de la Isla", "flamenco"),
+                     ("Clásicos de guitarra española", "clásica"),
+                     ("Estudiar sin distracciones", "concentración"),
+                     ("Salsa en la cocina", "salsa")],
+        "marco": ["Le gusta …", "Le encanta … porque …", "No le gustan …",
+                  "Creo que … porque tiene …", "Es una persona …"],
+    },
+    "clave": [
+        "Vijf van de acht titels wijzen naar Spaanse en flamenco-muziek; twee naar rust en "
+        "studeren; één (reguetón, van 2019) valt eruit — een oude playlist die is blijven staan.",
+        "Sterke deducties: houdt van gitaar, studeert veel, luistert naar muziek om te slapen.",
+        "Toets de vorm: «le gusta» enkelvoud, «le gustan» bij meervoud (los sonidos, los "
+        "clásicos). Dat is de eigenlijke grammaticawinst.",
+    ],
+    "nota": "De titels zijn verzonnen behalve de artiestennamen; Camarón en Rosalía zijn "
+            "echt en horen bij de Cultura-sectie van deze unit.",
+}
+
+U4_RETO_06 = {
+    "id": "C5-U4-RETO-06", "num": 6, "curso": "C5", "unidad": U4,
+    "seccion": "§1.3", "ancla": "gustar", "soporte": "hub",
+    "nombre": "Gustos que cambian",
+    "lente": "✍️ creatieve beperking", "forma": "👥 En parejas", "skill": "🗣️ Hablar",
+    "tiempo": "± 10 min", "dificultad": "★★☆",
+    "gancho_es": "Lo que te gustaba a los diez años no es lo que te gusta hoy.",
+    "gancho_nl": "Wat je op je tiende leuk vond, is niet wat je nu leuk vindt.",
+    "consigna_es": "Graba cuatro contrastes: antes y ahora. Todo en presente.",
+    "consigna_nl": "Neem vier contrasten op: vroeger en nu. Alles in het presente.",
+    "regla": "Je mag geen verleden tijd gebruiken — die ken je nog niet. Je zegt dus «a los "
+             "diez años me gusta…» met een tijdsbepaling, niet «me gustaba».",
+    "pasos": [("Piensa en cuatro cosas que han cambiado.", "Denk aan vier dingen die veranderd zijn."),
+              ("Formula cada una con una expresión de tiempo.", "Formuleer elk met een tijdsbepaling."),
+              ("Graba los cuatro contrastes seguidos.", "Neem de vier contrasten na elkaar op."),
+              ("Escúchate: ¿se entiende el cambio?", "Luister terug: is de verandering duidelijk?")],
+    "datos": {
+        "marco": ["A los diez años me gusta … ; ahora me gusta más …",
+                  "Antes me encanta … ; hoy no tanto.",
+                  "De pequeño/-a no me gusta … ; ahora sí."],
+        "ejemplos": ["los dibujos animados", "el chocolate", "levantarme temprano",
+                     "los videojuegos", "leer", "el deporte", "la música de mis padres"],
+    },
+    "clave": [
+        "De opdracht bereidt het imperfecto voor zonder het te geven: leerlingen voelen dat "
+        "er een vorm ontbreekt. Benoem dat — het komt in het zesde jaar.",
+        "Toets alleen op presente plus tijdsbepaling. Wie «me gustaba» gebruikt omdat hij het "
+        "ergens oppikte, corrigeer je niet, maar reken je ook niet aan.",
+        "Vier contrasten is genoeg voor ongeveer veertig seconden.",
+    ],
+    "nota": "Hier zit de brug naar C6+ U6 «Cuando era pequeño». Zeg dat er hardop bij: "
+            "leerlingen onthouden een tekort beter dan een regel.",
+}
+
+U4_RETO_09 = {
+    "id": "C5-U4-RETO-09", "num": 9, "curso": "C5", "unidad": U4,
+    "seccion": "§2.3", "ancla": "reacciones", "soporte": "hub",
+    "nombre": "Traduce el gusto, no la palabra",
+    "lente": "🤝 bemiddelen", "forma": "👥 En parejas", "skill": "🔀 Mediar",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Cuatro frases flamencas que, traducidas palabra por palabra, no significan nada.",
+    "gancho_nl": "Vier Vlaamse uitdrukkingen die, woord voor woord vertaald, niets betekenen.",
+    "consigna_es": "Elige lo que diría de verdad un/a joven español/-a. Y di por qué la "
+                   "traducción literal falla.",
+    "consigna_nl": "Kies wat een Spaanse tiener écht zou zeggen. En zeg waarom de letterlijke "
+                   "vertaling misloopt.",
+    "regla": "Het juiste antwoord kiezen volstaat niet: je moet erbij zeggen wat er misgaat "
+             "in de letterlijke versie. Zonder die uitleg telt het als gokken.",
+    "pasos": [("Lee la frase flamenca. No traduzcas todavía.", "Lees de Vlaamse zin. Vertaal nog niet."),
+              ("Elige la versión que suena natural.", "Kies de versie die natuurlijk klinkt."),
+              ("Explica qué falla en la literal.", "Leg uit wat er misloopt in de letterlijke.")],
+    "datos": {
+        "items": [
+            ("Ik heb er niks mee.", "No me dice nada.",
+             ["No me dice nada.", "No tengo nada con eso.", "No tengo nada."],
+             "«hebben met» bestaat niet als uitdrukking; het Spaans gebruikt «decir»"),
+            ("Dat is echt mijn ding.", "Eso es lo mío.",
+             ["Eso es lo mío.", "Eso es mi cosa.", "Eso es mi asunto."],
+             "«mijn ding» wordt «lo mío», niet «mi cosa»"),
+            ("Ik vind er niks aan.", "No me gusta nada.",
+             ["No me gusta nada.", "No encuentro nada a eso.", "No hay nada para mí."],
+             "«vinden» is hier smaak, geen zoeken — dus gustar, niet encontrar"),
+            ("Daar kan ik niet tegen.", "No lo aguanto.",
+             ["No lo aguanto.", "No puedo contra eso.", "No estoy contra eso."],
+             "«tegen kunnen» is verdragen: aguantar, niet «poder contra»"),
+        ],
+    },
+    "clave": [
+        "No me dice nada · Eso es lo mío · No me gusta nada · No lo aguanto.",
+        "De rode draad: het Nederlands gebruikt hebben, vinden en kunnen waar het Spaans een "
+        "eigen werkwoord heeft (decir, gustar, aguantar).",
+        "«No lo aguanto» sluit aan bij de escala uit de Cultura-sectie, tussen «no me gusta» "
+        "en «odio».",
+    ],
+    "nota": "Dit is bemiddelen in de strikte zin: betekenis overzetten, niet woorden. Laat de "
+            "letterlijke versies hardop lezen — het lachen is de didactiek.",
+}
+
+U4_RETO_01 = {
+    "id": "C5-U4-RETO-01", "num": 1, "curso": "C5", "unidad": U4,
+    "seccion": "§1.3", "ancla": "gustar", "soporte": "ppt",
+    "nombre": "El termómetro de la clase",
+    "lente": "🔬 onderzoek & data", "forma": "🏫 Toda la clase · de pie", "skill": "🗣️ Hablar",
+    "tiempo": "± 15 min", "dificultad": "★★☆",
+    "gancho_es": "De pie. La clase es una escala: de «odio» a «me encanta».",
+    "gancho_nl": "Rechtstaan. De klas is een schaal: van «odio» tot «me encanta».",
+    "consigna_es": "Colócate en la línea según lo que sientas. Después contamos y sacamos "
+                   "una conclusión.",
+    "consigna_nl": "Ga op de lijn staan naargelang wat je vindt. Daarna tellen we en trekken "
+                   "we een conclusie.",
+    "regla": "Je mag niet in het midden blijven hangen: kies een van de vier plaatsen. En wie "
+             "gevraagd wordt, verantwoordt zijn plek met «porque».",
+    "pasos": [("El/la profe dice una cosa. Todos se colocan.", "De leerkracht noemt iets. Iedereen gaat staan."),
+              ("Dos alumnos explican su sitio con «porque».", "Twee leerlingen verantwoorden hun plek met «porque»."),
+              ("Contamos y anotamos el número.", "We tellen en noteren het getal."),
+              ("Al final: tres conclusiones con «a … le gusta».", "Op het einde: drie conclusies met «a … le gusta».")],
+    "datos": {
+        "escala": ["odio", "no me gusta", "me gusta", "me encanta"],
+        "temas": ["madrugar", "la playa", "el reguetón", "cocinar", "los lunes",
+                  "los viajes en tren", "hablar en público", "el chocolate negro"],
+        "marco": ["Estoy aquí porque …", "A … personas les encanta …",
+                  "A nadie le gusta …", "Casi todos …"],
+    },
+    "clave": [
+        "De conclusies zijn de eigenlijke opbrengst: «a doce personas les gusta la playa» "
+        "vraagt les plus meervoud, en dat is precies wat leerlingen vergeten.",
+        "«Hablar en público» geeft meestal de breedste spreiding en dus het interessantste "
+        "gesprek.",
+        "Tel echt en schrijf het getal op het bord: zonder cijfer wordt het een meningenronde.",
+    ],
+    "nota": "Werkt alleen als de klas fysiek kan bewegen. Lukt dat niet, laat de leerlingen "
+            "dan met vier vingers stemmen — maar tel nog steeds.",
+}
+
+U4_RETO_03 = {
+    "id": "C5-U4-RETO-03", "num": 3, "curso": "C5", "unidad": U4,
+    "seccion": "§2.3", "ancla": "reacciones", "soporte": "ppt",
+    "nombre": "Radio Valencia: la llamada",
+    "lente": "📻 mediaformat", "forma": "🏫 Toda la clase", "skill": "🗣️ Hablar",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Estás en directo. Pides una canción y dices por qué.",
+    "gancho_nl": "Je bent live in de uitzending. Je vraagt een nummer aan en zegt waarom.",
+    "consigna_es": "Llama a la radio, saluda, pide tu canción y explica. El presentador reacciona.",
+    "consigna_nl": "Bel de radio, groet, vraag je nummer aan en licht toe. De presentator reageert.",
+    "regla": "De presentator reageert altijd met también, tampoco, a mí sí of a mí no — en "
+             "nooit twee keer dezelfde in één uitzending.",
+    "pasos": [("El/la profe es el presentador. Empieza la emisión.", "De leerkracht is presentator. De uitzending begint."),
+              ("Llamas: saludo, canción, razón.", "Je belt: groet, nummer, reden."),
+              ("El presentador reacciona y pasa al siguiente.", "De presentator reageert en gaat door."),
+              ("Cambio de presentador cada cuatro llamadas.", "Elke vier oproepen wisselt de presentator.")],
+    "datos": {
+        "marco_llamada": ["Hola, buenas tardes. Llamo desde …",
+                          "Quiero pedir … porque me encanta …",
+                          "Es para mi … , que hoy cumple años."],
+        "marco_presentador": ["¡A mí también me encanta!", "Pues a mí no, pero la ponemos.",
+                              "A mí tampoco me gusta mucho, la verdad.",
+                              "¿Ah sí? A mí sí, y mucho."],
+        "canciones": ["una de Rosalía", "algo de flamenco", "reguetón del verano",
+                      "una canción tranquila", "la de la película", "algo para bailar"],
+    },
+    "clave": [
+        "De regel «nooit twee keer dezelfde reactie» dwingt de presentator door alle vier de "
+        "vormen. Dat is de didactische winst, niet het bellen.",
+        "Bij «a mí tampoco» moet de beller iets negatiefs gezegd hebben — anders klopt de "
+        "reactie niet en corrigeert de klas.",
+        "Laat leerlingen presentator zijn: die rol oefent meer dan de belrol.",
+    ],
+    "nota": "Een echte jingle en een microfoon (of een pen als microfoon) tillen dit op. "
+            "Zonder radio-inkleding wordt het een gewone beurtronde.",
+}
+
+U4_RETO_08 = {
+    "id": "C5-U4-RETO-08", "num": 8, "curso": "C5", "unidad": U4,
+    "seccion": "§2.3", "ancla": "reacciones", "soporte": "ppt",
+    "nombre": "Cadena rota",
+    "lente": "🔓 puzzel & escape", "forma": "🏫 Toda la clase", "skill": "🗣️ Hablar",
+    "tiempo": "± 10 min", "dificultad": "★★★",
+    "gancho_es": "La cadena da la vuelta a la clase. Si se rompe, vuelve a empezar.",
+    "gancho_nl": "De ketting gaat de klas rond. Breekt hij, dan begin je opnieuw.",
+    "consigna_es": "Reacciona a tu vecino/a y añade un gusto tuyo. Sin repetir reacciones.",
+    "consigna_nl": "Reageer op je buur en voeg een eigen gusto toe. Zonder reacties te herhalen.",
+    "regla": "Een reactie die al gebruikt is, breekt de ketting — ook als ze klopt. De klas "
+             "moet dus bijhouden wat al voorbijkwam.",
+    "pasos": [("El primero dice un gusto.", "De eerste zegt een gusto."),
+              ("El siguiente reacciona y añade el suyo.", "De volgende reageert en voegt de zijne toe."),
+              ("¿Reacción repetida? Se rompe: vuelta a empezar.", "Reactie herhaald? Gebroken: opnieuw."),
+              ("Meta: dar la vuelta entera a la clase.", "Doel: één keer de hele klas rond.")],
+    "datos": {
+        "reacciones": ["A mí también.", "A mí tampoco.", "A mí sí.", "A mí no.",
+                       "Yo igual.", "Pues yo no.", "A mí me encanta.", "A mí no me gusta nada."],
+        "arranque": ["Me gusta la playa.", "No me gusta madrugar.",
+                     "Me encantan los viajes.", "No me gustan los lunes."],
+    },
+    "clave": [
+        "Acht reacties betekent dat de ketting minstens acht leerlingen ver kan komen. "
+        "Daarna moet de klas ze hergebruiken — dan pas mag herhalen.",
+        "De klassieke breuk: «a mí también» na een ontkenning. Dat moet «a mí tampoco» zijn.",
+        "Noteer de gebruikte reacties zichtbaar; zonder dat spoor is de regel niet te "
+        "handhaven.",
+    ],
+    "nota": "Speel maximaal drie rondes. Daarna wordt het onthouden belangrijker dan het "
+            "spreken, en dat is niet het doel.",
+}
+
+
 # --- register per unit ---
 RETOS_U0 = [RETO_01, RETO_02, RETO_03, RETO_04, RETO_05,
             RETO_06, RETO_07, RETO_08, RETO_09, RETO_10]
@@ -1553,14 +2301,22 @@ RETOS_U1 = [U1_RETO_01, U1_RETO_02, U1_RETO_03, U1_RETO_04, U1_RETO_05,
             U1_RETO_06, U1_RETO_07, U1_RETO_08, U1_RETO_09, U1_RETO_10]
 RETOS_U2 = [U2_RETO_01, U2_RETO_02, U2_RETO_03, U2_RETO_04, U2_RETO_05,
             U2_RETO_06, U2_RETO_07, U2_RETO_08, U2_RETO_09, U2_RETO_10]
-RETOS = RETOS_U0 + RETOS_U1 + RETOS_U2
+RETOS_U3 = [U3_RETO_01, U3_RETO_02, U3_RETO_03, U3_RETO_04, U3_RETO_05,
+            U3_RETO_06, U3_RETO_07, U3_RETO_08, U3_RETO_09, U3_RETO_10]
+RETOS_U4 = [U4_RETO_01, U4_RETO_02, U4_RETO_03, U4_RETO_04, U4_RETO_05,
+            U4_RETO_06, U4_RETO_07, U4_RETO_08, U4_RETO_09, U4_RETO_10]
+RETOS = RETOS_U0 + RETOS_U1 + RETOS_U2 + RETOS_U3 + RETOS_U4
 
 # Waar in de printcursus elke sectie eindigt — hier wordt een print-reto ingevoegd.
 ANCLAS = ["alfabeto", "sonidos", "sonido_letra", "acento", "numeros", "saludos", "cultura",
           # C5 U1
           "datos", "ser", "presente", "preguntar", "cultura_u1",
           # C5 U2
-          "familia", "posesivos", "adjetivos", "ser_estar", "cultura_u2"]
+          "familia", "posesivos", "adjetivos", "ser_estar", "cultura_u2",
+          # C5 U3
+          "hora", "rutina", "irregular", "cultura_u3",
+          # C5 U4
+          "gustar", "reacciones", "planes", "cultura_u4"]
 
 
 def de(curso, unidad):

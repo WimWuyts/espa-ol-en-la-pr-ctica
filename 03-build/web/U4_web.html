@@ -74,6 +74,64 @@
 .audveces{color:var(--mut);font-size:12px}
 .audtr{margin-top:2px}
 
+.retos{display:grid;gap:16px}
+.reto{border:1px solid var(--line);border-radius:16px;padding:16px 18px;background:var(--card)}
+.reto .rcab{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:4px}
+.reto .rnum{background:var(--g);color:#fff;font-family:var(--disp);font-weight:700;
+  width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+.reto h3{margin:0;font-family:var(--disp);font-size:19px;color:var(--gd)}
+.reto .rlente{font-size:11px;font-weight:700;color:var(--gd);background:var(--gt);
+  border-radius:999px;padding:3px 9px}
+.reto .rgancho{margin:2px 0 0;font-size:15px}
+.reto .rnl{margin:2px 0 10px;font-size:13px;color:var(--mut);font-style:italic}
+.rregla{border-left:4px solid var(--amber,#B7860B);background:var(--amberbg,#FBF3D6);
+  border-radius:0 10px 10px 0;padding:9px 13px;margin:0 0 12px;font-size:13.5px;color:#20242E}
+.rregla b{display:block;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A6508}
+.rsit{border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:0 0 10px}
+.rsit b{color:var(--gd)}
+.rsit .rpista{display:block;font-size:12.5px;color:var(--mut);margin-top:3px}
+.det{display:grid;gap:8px}
+.detit{border:1px solid var(--line);border-radius:12px;padding:9px 12px}
+.detit .dpal{font-family:var(--disp);font-size:18px}
+.detbtns{display:flex;gap:8px;margin:6px 0}
+.detbtn{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:9px;
+  padding:6px 13px;cursor:pointer;font-weight:600;font-size:14px}
+.detbtn.ok{background:#DCFCE7;border-color:#16A34A}.detbtn.no{background:#FEE2E2;border-color:#DC2626}
+.detrule{margin-top:6px}
+.detrule select{width:100%;max-width:100%;border:1.5px solid var(--line);border-radius:9px;
+  padding:7px 9px;font-family:var(--body);font-size:14px;background:var(--card);color:var(--ink)}
+.detfb{margin-top:6px;font-size:13.5px;display:none}
+.detfb.show{display:block}.detfb.g{color:#166534}.detfb.b{color:#991B1B}
+.rmarca{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:0 0 10px}
+.rbarra{flex:1 1 200px;height:12px;border-radius:999px;background:var(--gt);overflow:hidden;min-width:160px}
+.rbarra i{display:block;height:100%;width:0;background:var(--g);transition:width .4s}
+.rcuenta{font-family:var(--disp);font-weight:700;color:var(--gd)}
+.rpais{display:flex;flex-wrap:wrap;gap:6px}
+.rpais button{border:1.5px solid var(--line);background:var(--card);color:var(--ink);
+  border-radius:999px;padding:5px 11px;cursor:pointer;font-size:13.5px}
+.rpais button.hecho{background:var(--g);border-color:var(--g);color:#fff}
+.rpais button .sil{font-size:11px;opacity:.8;margin-left:5px}
+.escenas{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.escenas{grid-template-columns:1fr}}
+.esc{margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
+.esc figcaption{padding:8px 12px;font-size:13px;background:var(--gt);color:var(--gd)}
+.esc figcaption b{font-family:var(--disp);font-size:15px;margin-right:6px}
+.esc svg{display:block;width:100%;height:auto}
+.escnom{margin:0;padding:8px 12px;font-size:14px;border-top:1px solid var(--line);min-height:38px}
+.retratos{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+@media(max-width:640px){.retratos{grid-template-columns:repeat(3,1fr)}}
+.retrato{position:relative;border:2px solid var(--line);border-radius:12px;background:var(--card);
+  cursor:pointer;padding:4px}
+.retrato svg{width:100%;height:auto;display:block}
+.retrato.ok{border-color:#16A34A;background:#DCFCE7}.retrato.no{border-color:#DC2626;background:#FEE2E2}
+.rnum2{position:absolute;top:4px;left:6px;font-family:var(--disp);font-weight:700;color:var(--gd);font-size:13px}
+.rtanteo{color:var(--mut)}
+.voces{display:grid;gap:9px;margin-bottom:10px}
+.voz{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:9px 11px}
+.voz b{color:var(--gd);display:block;font-size:13px}
+.vozt{font-size:14px}
+.opplay{margin-bottom:6px}
+
 .lectipo{font-size:11px;font-weight:700;color:var(--gd);background:var(--gt);border-radius:999px;padding:3px 9px}
 .lecficha{display:flex;gap:14px;flex-wrap:wrap;background:var(--gt);border-radius:10px;padding:8px 12px;margin:8px 0 14px;font-size:12px}
 .lecficha b{display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--gd)}
@@ -410,6 +468,11 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
     <div id="motorlink"></div>
   </section>
 
+  <section class="panel" data-p="retos">
+    <h2 class="sec">Retos · tres desafíos 🎯</h2>
+    <p class="lead">Drie opdrachten met <b>één harde regel</b>: je leidt iemands smaak af uit haar playlist en schrijft over <b>haar</b>, je vertelt vroeger-en-nu <b>zonder verleden tijd</b>, en je kiest niet alleen de juiste Spaanse uitdrukking maar zegt ook wat er misloopt in de letterlijke. <span class="gloss">De zeven andere retos van deze unit staan in het boek en in de PowerPoint.</span></p>
+    <div id="retos_u4"></div>
+  </section>
   <section class="panel" data-p="hablar">
     <h2 class="sec">Hablar · grábate 🎙️</h2>
     <p class="lead">Neem <b>jezelf</b> op: luister naar het model, spreek in, luister terug, en neem opnieuw op. <span class="gloss">Werkt in Chrome/Edge; sta de micro toe. Print blijft bruikbaar zonder opname.</span></p>
@@ -565,9 +628,291 @@ const GAMES={"gustos-memoria": "PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9Im5sIj4KPGhl
 function toggleTheme(){const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'}
 function speak(t,rate){if(!('speechSynthesis'in window))return;const u=new SpeechSynthesisUtterance(t);u.lang='es-ES';u.rate=rate||.92;
   const vs=speechSynthesis.getVoices();const es=vs.find(v=>/^es/i.test(v.lang));if(es)u.voice=es;try{speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}
+function buildRetos(id,cfg){
+ const host=document.getElementById(id);if(!host)return;
+ host.innerHTML='<div class="retos"></div>';
+ const lista=host.querySelector('.retos');
+ (cfg.retos||[]).forEach((r,n)=>{
+  const c=document.createElement('div');c.className='reto';
+  c.innerHTML='<div class="rcab"><span class="rnum">'+r.num+'</span><h3>'+exEsc(r.nombre)+'</h3>'+
+    '<span class="rlente">'+exEsc(r.lente)+'</span></div>'+
+    '<p class="rgancho"><b>'+exEsc(r.gancho_es)+'</b></p>'+
+    '<p class="rnl">'+exEsc(r.gancho_nl)+'</p>'+
+    '<p class="desc">'+exEsc(r.consigna_nl)+'</p>'+
+    '<div class="rregla"><b>La regla del reto</b>'+exEsc(r.regla)+'</div>'+
+    '<div class="rcuerpo" id="'+id+'_c'+n+'"></div>';
+  lista.appendChild(c);
+  const cuerpo=c.querySelector('.rcuerpo');
+  if(r.tipo==='grabar')retoGrabar(cuerpo,r,id+'_c'+n);
+  else if(r.tipo==='detector')retoDetector(cuerpo,r);
+  else if(r.tipo==='mapa')retoMapa(cuerpo,r);
+  else if(r.tipo==='articulo')retoArticulo(cuerpo,r);
+  else if(r.tipo==='escena')retoEscena(cuerpo,r);
+  else if(r.tipo==='retrato')retoRetrato(cuerpo,r);
+  else if(r.tipo==='voces')retoVoces(cuerpo,r);
+  else if(r.tipo==='opciones')retoOpciones(cuerpo,r);
+ });
+}
+
+function retoGrabar(cont,r,idBase){
+ (r.situaciones||[]).forEach(s=>{
+   const d=document.createElement('div');d.className='rsit';
+   d.innerHTML='<b>'+exEsc(s.es)+'</b><span class="rpista">'+exEsc(s.nl)+
+     (s.pista?' · <i>'+exEsc(s.pista)+'</i>':'')+'</span>';
+   cont.appendChild(d);});
+ const rec=document.createElement('div');rec.id=idBase+'_rec';cont.appendChild(rec);
+ if(typeof makeRecorder==='function')
+   makeRecorder(idBase+'_rec',{title:r.nombre,desc:r.consigna_es,
+     items:(r.items||[]).map(t=>({text:t.text,cue:t.cue}))});
+}
+
+function retoDetector(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ const reglas=r.reglas||[];
+ (r.items||[]).forEach((it,i)=>{
+   const d=document.createElement('div');d.className='detit';
+   const opts=reglas.map((g,k)=>'<option value="'+k+'">'+exEsc(g)+'</option>').join('');
+   d.innerHTML='<div class="dpal">'+exEsc(it.palabra)+'</div>'+
+     '<div class="detbtns"><button class="detbtn" type="button" data-v="1">✓ posible</button>'+
+     '<button class="detbtn" type="button" data-v="0">✗ imposible</button></div>'+
+     '<div class="detrule" hidden><label class="desc">¿Qué regla rompe?</label>'+
+     '<select><option value="-1">— elige la regla —</option>'+opts+'</select></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const fb=d.querySelector('.detfb'),rule=d.querySelector('.detrule'),sel=d.querySelector('select');
+   let cerrado=false;
+   d.querySelectorAll('.detbtn').forEach(b=>{b.onclick=()=>{
+     if(cerrado)return;
+     const dicho=b.dataset.v==='1';
+     if(!dicho){rule.hidden=false;sel.focus();
+       fb.className='detfb show';fb.textContent='Ahora acusa con pruebas: ¿qué regla rompe?';
+       cerrado=false;
+       sel.onchange=()=>{cerrado=true;
+         const bien=(!it.posible)&&(Number(sel.value)===it.regla);
+         d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);sel.disabled=true;
+         b.classList.add(bien?'ok':'no');
+         fb.className='detfb show '+(bien?'g':'b');
+         fb.innerHTML=bien?'<b>✓ acusación correcta</b> · '+exEsc(it.porque)
+           :(it.posible?'<b>✗ esta palabra sí existe</b> · '+exEsc(it.porque)
+                       :'<b>✗ la regla no es esa</b> · '+exEsc(it.porque));};
+       return;}
+     cerrado=true;
+     const bien=it.posible;
+     d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);
+     b.classList.add(bien?'ok':'no');
+     fb.className='detfb show '+(bien?'g':'b');
+     fb.innerHTML=(bien?'<b>✓ correcto</b> · ':'<b>✗ no</b> · ')+exEsc(it.porque);};});
+   caja.appendChild(d);});
+}
+
+// ── artículo: el/la op verzonnen woorden ───────────────────────────────────
+// Het lidwoord alléén zegt niets: wie «la» kiest bij een -ma-woord heeft geraden,
+// ook als het toevallig klopt. Daarom moet de leerling er de regel bij kiezen, en
+// telt het pas als het allebei klopt.
+// ── retrato hablado: luister en kies het juiste portret ────────────────────
+// De portretten worden getekend, niet beschreven: stonden de kenmerken in
+// woorden op de kaart, dan werd het woorden matchen in plaats van luisteren.
+function retoCara(x,y,r,p){
+ const pelo = p.pelo.indexOf('largo')>=0
+   ? (p.pelo.indexOf('rizado')>=0
+      ? '<path d="M'+(x-r-4)+' '+(y+r+6)+' q-6,-'+(r+18)+' '+(r+6)+',-'+(r+14)+' q'+r+',-8 '+(r+6)+','+(r+14)+' q6,'+(r+8)+' -4,'+(r+2)+' q-'+r+',-14 -'+(2*r-4)+',0 Z" fill="#5C4433"/>'
+      : '<path d="M'+(x-r-2)+' '+(y+r+8)+' l0,-'+(r+16)+' q'+(r+2)+',-14 '+(2*r+4)+',0 l0,'+(r+16)+' l-8,0 l0,-'+r+' q-'+r+',-10 -'+(2*r-8)+',0 l0,'+r+' Z" fill="#5C4433"/>')
+   : (p.pelo.indexOf('rizado')>=0
+      ? '<path d="M'+(x-r-2)+' '+y+' q2,-'+(r+14)+' '+(r+2)+',-'+(r+10)+' q'+r+',-6 '+(r+2)+','+(r+10)+' q2,10 -6,6 q-'+r+',-14 -'+(2*r-8)+',0 q-8,4 -6,-6 Z" fill="#5C4433"/>'
+      : '<path d="M'+(x-r-2)+' '+(y-2)+' q0,-'+(r+12)+' '+(r+2)+',-'+(r+12)+' q'+(r+2)+',0 '+(r+2)+','+(r+12)+' l-6,2 q-'+r+',-12 -'+(2*r-4)+',0 Z" fill="#5C4433"/>');
+ const gafas = p.gafas
+   ? '<g fill="none" stroke="#20242E" stroke-width="2.4"><circle cx="'+(x-r/2.4)+'" cy="'+(y+2)+'" r="'+(r/3.4)+'"/>'
+     +'<circle cx="'+(x+r/2.4)+'" cy="'+(y+2)+'" r="'+(r/3.4)+'"/>'
+     +'<line x1="'+(x-r/2.4+r/3.4)+'" y1="'+(y+2)+'" x2="'+(x+r/2.4-r/3.4)+'" y2="'+(y+2)+'"/></g>'
+   : '<circle cx="'+(x-r/2.4)+'" cy="'+(y+1)+'" r="2.6" fill="#20242E"/>'
+     +'<circle cx="'+(x+r/2.4)+'" cy="'+(y+1)+'" r="2.6" fill="#20242E"/>';
+ const boca = p.sonrie
+   ? '<path d="M'+(x-r/2.6)+' '+(y+r/2.2)+' q'+(r/2.6)+','+(r/3.2)+' '+(r/1.3)+',0" stroke="#20242E" stroke-width="2.4" fill="none" stroke-linecap="round"/>'
+   : '<line x1="'+(x-r/3)+'" y1="'+(y+r/1.9)+'" x2="'+(x+r/3)+'" y2="'+(y+r/1.9)+'" stroke="#20242E" stroke-width="2.4" stroke-linecap="round"/>';
+ return '<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="#F2D3B6"/>'+pelo+gafas+boca;
+}
+
+function retoRetrato(cont,r){
+ const rs=r.retratos||[], ds=r.descripciones||[];
+ let i=0, aciertos=0;
+ cont.innerHTML='<div class="rmarca"><button class="escbtn rplay" type="button">▶ Escuchar la descripción</button>'+
+   '<span class="rcuenta rvuelta">1 / '+ds.length+'</span>'+
+   '<span class="desc rtanteo">aciertos: 0</span></div>'+
+   '<div class="retratos"></div><div class="detfb rfb" role="status" aria-live="polite"></div>';
+ const caja=cont.querySelector('.retratos');
+ rs.forEach(p=>{
+   const b=document.createElement('button');b.type='button';b.className='retrato';b.dataset.n=p.n;
+   b.innerHTML='<svg viewBox="0 0 100 100" aria-hidden="true">'+retoCara(50,52,26,p)+'</svg>'+
+     '<span class="rnum2">'+p.n+'</span>';
+   b.onclick=()=>{
+     if(!ds[i])return;
+     const fb=cont.querySelector('.rfb'), bien=Number(b.dataset.n)===ds[i].correcto;
+     b.classList.add(bien?'ok':'no');
+     fb.className='detfb show rfb '+(bien?'g':'b');
+     fb.innerHTML=bien?'<b>✓ correcto</b> · '+exEsc(ds[i].texto)
+       :'<b>✗ no</b> · era el '+ds[i].correcto+' — '+exEsc(ds[i].texto);
+     if(bien)aciertos++;
+     cont.querySelector('.rtanteo').textContent='aciertos: '+aciertos;
+     i++;
+     setTimeout(()=>{caja.querySelectorAll('.retrato').forEach(x=>x.classList.remove('ok','no'));
+       if(i<ds.length){cont.querySelector('.rvuelta').textContent=(i+1)+' / '+ds.length;fb.className='detfb rfb';}
+       else{cont.querySelector('.rvuelta').textContent='hecho';
+         fb.className='detfb show rfb g';fb.innerHTML='<b>Listo</b> · ahora describe tú uno a tu compañero/a.';}},1400);};
+   caja.appendChild(b);});
+ cont.querySelector('.rplay').onclick=()=>{if(ds[i]&&typeof speak==='function')speak(ds[i].texto);};
+}
+
+// ── drie stemmen, één samenvatting: bemiddelen ─────────────────────────────
+// ── opciones: kies uit N, mét verplichte uitleg ────────────────────────────
+// Breed inzetbaar: welk werkwoord past bij dit uur, welke Spaanse uitdrukking
+// dekt deze Vlaamse. Er is telkens één juist antwoord, en de feedback zegt niet
+// alleen wát maar ook waarom — anders leert een gokker niets.
+function retoOpciones(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ (r.items||[]).forEach(it=>{
+   const d=document.createElement('div');d.className='detit';
+   d.innerHTML=(it.audio?'<button class="escbtn opplay" type="button">▶ Escuchar</button>':'')+
+     '<div class="dpal">'+exEsc(it.enunciado)+'</div>'+
+     '<div class="detbtns"></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const btns=d.querySelector('.detbtns'), fb=d.querySelector('.detfb');
+   let cerrado=false;
+   (it.opciones||[]).forEach(o=>{
+     const b=document.createElement('button');b.type='button';b.className='detbtn';b.textContent=o;
+     b.onclick=()=>{if(cerrado)return;cerrado=true;
+       const bien=o===it.correcta;
+       btns.querySelectorAll('.detbtn').forEach(x=>{x.disabled=true;
+         if(x.textContent===it.correcta)x.classList.add('ok');});
+       if(!bien)b.classList.add('no');
+       fb.className='detfb show '+(bien?'g':'b');
+       fb.innerHTML=(bien?'<b>✓ correcto</b>':'<b>✗ es «'+exEsc(it.correcta)+'»</b>')+
+         (it.porque?' · '+exEsc(it.porque):'');};
+     btns.appendChild(b);});
+   const pl=d.querySelector('.opplay');
+   if(pl)pl.onclick=()=>{if(typeof speak==='function')speak(it.enunciado);};
+   caja.appendChild(d);});
+}
+
+function retoVoces(cont,r){
+ cont.innerHTML='<div class="voces"></div>'+
+   '<p class="desc">Schrijf je samenvatting in drie zinnen — korter dan wat je hoorde, en niemand mag wegvallen.</p>'+
+   '<textarea class="escta" rows="5" aria-label="Jouw samenvatting" placeholder="1. Rosa vindt…"></textarea>';
+ const caja=cont.querySelector('.voces');
+ (r.voces||[]).forEach(v=>{
+   const d=document.createElement('div');d.className='voz';
+   d.innerHTML='<button class="escbtn vozbtn" type="button">▶</button>'+
+     '<div><b>'+exEsc(v.quien)+'</b><span class="vozt">'+exEsc(v.texto)+'</span></div>';
+   d.querySelector('.vozbtn').onclick=()=>{if(typeof speak==='function')speak(v.texto);};
+   caja.appendChild(d);});
+}
+
+function retoArticulo(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ const reglas=r.reglas||[];
+ (r.objetos||[]).forEach(it=>{
+   const d=document.createElement('div');d.className='detit';
+   const opts=reglas.map((g,k)=>'<option value="'+g.clave+'">'+exEsc(g.texto)+'</option>').join('');
+   d.innerHTML='<div class="dpal">¿… '+exEsc(it.palabra)+'?</div>'+
+     '<div class="detbtns"><button class="detbtn" type="button" data-a="el">el</button>'+
+     '<button class="detbtn" type="button" data-a="la">la</button></div>'+
+     '<div class="detrule" hidden><label class="desc">¿Qué regla usas?</label>'+
+     '<select><option value="">— elige la regla —</option>'+opts+'</select></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const fb=d.querySelector('.detfb'),rule=d.querySelector('.detrule'),sel=d.querySelector('select');
+   let elegido=null;
+   d.querySelectorAll('.detbtn').forEach(b=>{b.onclick=()=>{
+     if(elegido)return;
+     elegido=b.dataset.a;rule.hidden=false;sel.focus();
+     fb.className='detfb show';fb.textContent='¿Y por qué? Elige la regla.';};});
+   sel.onchange=()=>{
+     if(!sel.value)return;
+     const bienArt=elegido===it.articulo, bienRegla=sel.value===it.regla;
+     d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);sel.disabled=true;
+     const b=d.querySelector('.detbtn[data-a="'+elegido+'"]');
+     b.classList.add(bienArt&&bienRegla?'ok':'no');
+     fb.className='detfb show '+(bienArt&&bienRegla?'g':'b');
+     if(bienArt&&bienRegla)fb.innerHTML='<b>✓ correcto</b> · '+exEsc(it.porque);
+     else if(bienArt)fb.innerHTML='<b>✗ el artículo sí, la regla no</b> · '+exEsc(it.porque)+
+       ' — con la regla equivocada, has adivinado.';
+     else fb.innerHTML='<b>✗ es «'+exEsc(it.articulo)+' '+exEsc(it.palabra)+'»</b> · '+exEsc(it.porque);};
+   caja.appendChild(d);});
+}
+
+// ── escena: dezelfde plek, twee tijden ─────────────────────────────────────
+// Twee panelen naast elkaar; klik een voorwerp en je hoort en ziet hoe het heet.
+// De twee voorwerpen die in beide scènes staan, zijn de controle: wie die als
+// verschil noteert, heeft te snel gekeken.
+function retoEscena(cont,r){
+ const items=r.escena||[];
+ function panel(cual,titulo,sub){
+   const propios=items.filter(i=>i.cuando===cual||i.cuando==='ambas');
+   const formas=propios.map((i,k)=>i.forma==='circ'
+     ? '<circle class="eob" data-k="'+k+'" data-c="'+cual+'" cx="'+(i.x+i.w/2)+'" cy="'+(i.y+i.h/2)+
+       '" r="'+(i.w/2)+'" fill="'+i.color+'"/>'
+     : '<rect class="eob" data-k="'+k+'" data-c="'+cual+'" x="'+i.x+'" y="'+i.y+'" width="'+i.w+
+       '" height="'+i.h+'" rx="1.5" fill="'+i.color+'"/>').join('');
+   return '<figure class="esc"><figcaption><b>'+exEsc(titulo)+'</b> <span>'+exEsc(sub)+'</span></figcaption>'+
+     '<svg viewBox="0 0 100 84" role="img" aria-label="'+exEsc(titulo)+'">'+
+     '<rect x="0" y="0" width="100" height="52" fill="#E8F1F7"/>'+          // lucht
+     '<rect x="0" y="52" width="100" height="32" fill="#EDE7DC"/>'+          // plein
+     '<rect x="0" y="30" width="100" height="22" fill="#D8CFC0"/>'+          // gevelrij
+     '<rect x="6" y="24" width="16" height="28" fill="#C6B9A6"/>'+
+     '<rect x="44" y="20" width="18" height="32" fill="#C6B9A6"/>'+
+     '<rect x="76" y="26" width="18" height="26" fill="#C6B9A6"/>'+
+     formas+'</svg><p class="escnom" role="status" aria-live="polite">Klik een voorwerp.</p></figure>';
+ }
+ cont.innerHTML='<div class="escenas">'+panel('antes','1985','la misma plaza, hace cuarenta años')+
+   panel('ahora','ahora','la plaza hoy')+'</div>'+
+   '<p class="desc">De twee dingen die in <b>allebei</b> de scènes staan, zijn de controle: die zijn géén verschil.</p>';
+ cont.querySelectorAll('.eob').forEach(el=>{
+   el.style.cursor='pointer';
+   el.addEventListener('click',()=>{
+     const cual=el.dataset.c, k=Number(el.dataset.k);
+     const propios=items.filter(i=>i.cuando===cual||i.cuando==='ambas');
+     const it=propios[k];if(!it)return;
+     const fig=el.closest('figure');
+     fig.querySelector('.escnom').innerHTML='<b>'+exEsc(it.es)+'</b> — '+exEsc(it.nl)+
+       (it.cuando==='ambas'?' <i>(en las dos escenas)</i>':'');
+     el.style.stroke='#157355';el.style.strokeWidth='1.4';
+     if(typeof speak==='function')speak(it.es);});});
+ const marco=document.createElement('div');marco.className='rsit';
+ marco.innerHTML='<b>Tu marco</b><span class="rpista">'+
+   (r.marco||[]).map(exEsc).join(' · ')+'</span>';
+ cont.appendChild(marco);
+ const ta=document.createElement('textarea');ta.className='escta';ta.rows=5;
+ ta.setAttribute('aria-label','Jouw vijf zinnen');ta.placeholder='1. En la plaza de ahora hay…';
+ cont.appendChild(ta);
+}
+
+function retoMapa(cont,r){
+ const paises=r.paises||[];
+ cont.innerHTML='<div class="rmarca"><span class="rcuenta">0 / '+paises.length+'</span>'+
+   '<div class="rbarra"><i></i></div>'+
+   '<button class="otra rreset" type="button">↺ empezar de nuevo</button></div>'+
+   '<p class="desc">Klik een land, zeg het hardop, laat iemand bevestigen — dan pas aanklikken. '+
+   'De teller is van de klas, niet van jou.</p><div class="rpais"></div>';
+ const cont2=cont.querySelector('.rpais'),cuenta=cont.querySelector('.rcuenta'),
+       barra=cont.querySelector('.rbarra i');
+ let hechos=0;
+ function pinta(iso){ // laat het land op de grote kaart meekleuren, als die er is
+   const svg=document.querySelector('#mapwrap svg');if(!svg)return;
+   const p=svg.querySelector('[data-c="'+iso+'"]');if(p)p.style.filter='saturate(1.6) brightness(1.05)';}
+ paises.forEach(p=>{
+   const b=document.createElement('button');b.type='button';
+   b.innerHTML=exEsc(p.nombre)+'<span class="sil">'+exEsc(p.silabas)+'</span>';
+   b.onclick=()=>{if(b.classList.contains('hecho'))return;
+     b.classList.add('hecho');hechos++;pinta(p.iso);
+     cuenta.textContent=hechos+' / '+paises.length;
+     barra.style.width=Math.round(hechos/paises.length*100)+'%';
+     if(typeof speak==='function')speak(p.nombre);
+     if(hechos===paises.length)cuenta.textContent='¡'+paises.length+' / '+paises.length+' — lo habéis conseguido!';};
+   cont2.appendChild(b);});
+ cont.querySelector('.rreset').onclick=()=>{hechos=0;cuenta.textContent='0 / '+paises.length;
+   barra.style.width='0';cont2.querySelectorAll('button').forEach(x=>x.classList.remove('hecho'));};
+}
+
 const TTS=('speechSynthesis'in window);
 if(TTS){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}
-const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
+const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['retos','Retos 🎯'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
 const sn=document.getElementById('subnav');
 // ── tabbladen · het adres volgt mee ──────────────────────────────────────────
 // #escuchar opent dat tabblad; #lec_1 opent het paneel waar dat element in
@@ -1354,6 +1699,7 @@ function buildGramType(){
  buildType('gt_3',{title:"Proponer un plan — querer · poder + infinitivo",desc:"Twee werkwoorden met een klinkerwissel (<b>e → ie</b> en <b>o → ue</b>) plus een infinitivo die je <b>niet</b> vervoegt. Bij <i>nosotros</i> blijft de stam gewoon.",accents:'strict',perBlock:12,expect:12,items:[{"q": "Yo ___ (querer) ir a la playa.", "ans": "quiero", "hint": "q_____", "why": "e → ie"}, {"q": "¿Tú ___ (poder) salir el sábado?", "ans": "puedes", "hint": "p_____", "why": "o → ue"}, {"q": "Nosotros ___ (querer) quedar a las seis.", "ans": "queremos", "hint": "q_______", "why": "valstrik: nosotros houdt de e"}, {"q": "Diego no ___ (poder) venir hoy.", "ans": "puede", "hint": "p____"}, {"q": "Mis amigas ___ (querer) ver la película.", "ans": "quieren", "hint": "q______"}, {"q": "¿___ (querer) tú tocar la guitarra conmigo?", "ans": "Quieres", "hint": "Q______"}, {"q": "Yo ___ (poder) quedar después de clase.", "ans": "puedo", "hint": "p____"}, {"q": "Nosotras ___ (poder) ir en bici.", "ans": "podemos", "hint": "p______", "why": "valstrik: nosotras houdt de o"}, {"q": "¿Vosotros ___ (querer) escuchar mi playlist?", "ans": "queréis", "hint": "q______", "why": "vosotros houdt de e — mét tilde"}, {"q": "Nina ___ (querer) aprender a nadar.", "ans": "quiere", "hint": "q_____"}, {"q": "Ellos no ___ (poder) jugar al baloncesto los lunes.", "ans": "pueden", "hint": "p_____"}, {"q": "¿A qué hora ___ (poder) quedar nosotros?", "ans": "podemos", "hint": "p______"}]});
 }
 buildGramType();
+buildRetos("retos_u4",{"retos": [{"num": 2, "nombre": "La playlist heredada", "lente": "🕵️ forensisch", "gancho_es": "Encuentras un móvil con una playlist. ¿Quién es esta persona?", "gancho_nl": "Je vindt een gsm met een playlist erop. Wie is deze persoon?", "consigna_es": "Escucha los ocho títulos y deduce sus gustos. Escribe su perfil en cinco frases.", "consigna_nl": "Beluister de acht titels en leid haar smaak af. Schrijf haar profiel in vijf zinnen.", "regla": "Elke zin over die persoon moet met «le gusta» of «le encanta» — niet met «me». Je praat over iemand anders, niet over jezelf.", "tipo": "voces", "voces": [{"quien": "Flamenco de Jerez, vol. 2", "texto": "flamenco"}, {"quien": "Rosalía — grandes éxitos", "texto": "flamenco-pop"}, {"quien": "Sonidos del mar (para dormir)", "texto": "relajación"}, {"quien": "Reggaetón 2019", "texto": "reguetón"}, {"quien": "Camarón de la Isla", "texto": "flamenco"}, {"quien": "Clásicos de guitarra española", "texto": "clásica"}, {"quien": "Estudiar sin distracciones", "texto": "concentración"}, {"quien": "Salsa en la cocina", "texto": "salsa"}]}, {"num": 6, "nombre": "Gustos que cambian", "lente": "✍️ creatieve beperking", "gancho_es": "Lo que te gustaba a los diez años no es lo que te gusta hoy.", "gancho_nl": "Wat je op je tiende leuk vond, is niet wat je nu leuk vindt.", "consigna_es": "Graba cuatro contrastes: antes y ahora. Todo en presente.", "consigna_nl": "Neem vier contrasten op: vroeger en nu. Alles in het presente.", "regla": "Je mag geen verleden tijd gebruiken — die ken je nog niet. Je zegt dus «a los diez años me gusta…» met een tijdsbepaling, niet «me gustaba».", "tipo": "grabar", "situaciones": [{"es": "A los diez años me gusta … ; ahora me gusta más …", "nl": "", "pista": ""}, {"es": "Antes me encanta … ; hoy no tanto.", "nl": "", "pista": ""}, {"es": "De pequeño/-a no me gusta … ; ahora sí.", "nl": "", "pista": ""}], "items": [{"text": "Antes y ahora", "cue": "vier contrasten · alles in het presente"}]}, {"num": 9, "nombre": "Traduce el gusto, no la palabra", "lente": "🤝 bemiddelen", "gancho_es": "Cuatro frases flamencas que, traducidas palabra por palabra, no significan nada.", "gancho_nl": "Vier Vlaamse uitdrukkingen die, woord voor woord vertaald, niets betekenen.", "consigna_es": "Elige lo que diría de verdad un/a joven español/-a. Y di por qué la traducción literal falla.", "consigna_nl": "Kies wat een Spaanse tiener écht zou zeggen. En zeg waarom de letterlijke vertaling misloopt.", "regla": "Het juiste antwoord kiezen volstaat niet: je moet erbij zeggen wat er misgaat in de letterlijke versie. Zonder die uitleg telt het als gokken.", "tipo": "opciones", "items": [{"enunciado": "Ik heb er niks mee.", "correcta": "No me dice nada.", "opciones": ["No me dice nada.", "No tengo nada con eso.", "No tengo nada."], "porque": "«hebben met» bestaat niet als uitdrukking; het Spaans gebruikt «decir»"}, {"enunciado": "Dat is echt mijn ding.", "correcta": "Eso es lo mío.", "opciones": ["Eso es lo mío.", "Eso es mi cosa.", "Eso es mi asunto."], "porque": "«mijn ding» wordt «lo mío», niet «mi cosa»"}, {"enunciado": "Ik vind er niks aan.", "correcta": "No me gusta nada.", "opciones": ["No me gusta nada.", "No encuentro nada a eso.", "No hay nada para mí."], "porque": "«vinden» is hier smaak, geen zoeken — dus gustar, niet encontrar"}, {"enunciado": "Daar kan ik niet tegen.", "correcta": "No lo aguanto.", "opciones": ["No lo aguanto.", "No puedo contra eso.", "No estoy contra eso."], "porque": "«tegen kunnen» is verdragen: aguantar, niet «poder contra»"}]}]});
 buildEscucha("esc_u4",{"title": "¿Qué haces en tu tiempo libre?", "audio": "audio/C5_U4.mp3", "expectDetalle": 5, "situacion": {"lugar": "En la calle, delante del instituto de València", "quien": "Marta (radio del instituto) y tres personas: un chico, una señora y una chica", "que": "Les pregunta qué les gusta hacer en su tiempo libre", "claves": ["me gusta / me encanta", "a mí también / a mí tampoco", "los fines de semana"]}, "guion": [{"who": "Marta", "es": "Buenos días. Somos la radio del instituto. ¿Qué haces tú en tu tiempo libre?", "nl": "Goedemorgen. Wij zijn de schoolradio. Wat doe jij in je vrije tijd?"}, {"who": "Chico", "es": "Yo juego al baloncesto tres veces por semana. Me encanta el deporte.", "nl": "Ik speel drie keer per week basket. Ik ben gek op sport."}, {"who": "Marta", "es": "¿Y la música? ¿Te gusta?", "nl": "En muziek? Vind je dat leuk?"}, {"who": "Chico", "es": "Sí, pero no toco ningún instrumento. Solo escucho.", "nl": "Ja, maar ik speel geen enkel instrument. Ik luister alleen."}, {"who": "Marta", "es": "Gracias. Y usted, señora, ¿qué le gusta hacer?", "nl": "Bedankt. En u, mevrouw, wat doet u graag?"}, {"who": "Señora", "es": "A mí me gusta mucho leer. Voy a la biblioteca los martes. No me gustan nada los videojuegos.", "nl": "Ik lees heel graag. Ik ga op dinsdag naar de bibliotheek. Videospelletjes vind ik helemaal niets."}, {"who": "Marta", "es": "A mí tampoco. ¿Y ve series?", "nl": "Ik ook niet. En kijkt u series?"}, {"who": "Señora", "es": "Sí, veo una serie española por la noche. Es muy divertida.", "nl": "Ja, ik kijk 's avonds naar een Spaanse serie. Ze is heel grappig."}, {"who": "Marta", "es": "Última pregunta, para ti: ¿qué haces los fines de semana?", "nl": "Laatste vraag, voor jou: wat doe jij in het weekend?"}, {"who": "Chica", "es": "Los sábados quedo con mis amigas en la playa. Nadamos y bailamos.", "nl": "Op zaterdag spreek ik af met mijn vriendinnen op het strand. We zwemmen en dansen."}, {"who": "Marta", "es": "¿Y no os aburrís?", "nl": "En vervelen jullie je niet?"}, {"who": "Chica", "es": "¡Qué va! A mí me encanta el mar. Pero mi hermana prefiere el cine: a ella no le gusta la playa.", "nl": "Welnee! Ik ben gek op de zee. Maar mijn zus gaat liever naar de film: zij houdt niet van het strand."}, {"who": "Marta", "es": "¡Gracias a los tres! Y ahora, música.", "nl": "Bedankt alle drie! En nu: muziek."}], "global": {"q": "¿Qué hace Marta en este audio?", "opts": ["Pregunta a tres personas qué les gusta hacer", "Presenta un concierto en la playa", "Explica un examen de música"], "ans": "Pregunta a tres personas qué les gusta hacer", "why": "drie keer dezelfde vraag, drie verschillende antwoorden"}, "detalle": [{"q": "¿Cuántas veces por semana juega al baloncesto el chico?", "opts": ["Tres", "Dos", "Cinco"], "ans": "Tres", "why": "«tres veces por semana»"}, {"q": "¿Toca el chico algún instrumento?", "opts": ["No, solo escucha", "Sí, la guitarra", "Sí, el piano"], "ans": "No, solo escucha", "why": "«no toco ningún instrumento. Solo escucho»"}, {"q": "¿Qué día va la señora a la biblioteca?", "opts": ["Los martes", "Los lunes", "Los sábados"], "ans": "Los martes", "why": "«Voy a la biblioteca los martes»"}, {"q": "¿Qué no le gusta nada a la señora?", "opts": ["Los videojuegos", "Las series", "Leer"], "ans": "Los videojuegos", "why": "«No me gustan nada los videojuegos»"}, {"q": "¿Qué prefiere la hermana de la chica?", "opts": ["El cine", "La playa", "El baloncesto"], "ans": "El cine", "why": "«mi hermana prefiere el cine»"}], "vf": [{"q": "A Marta tampoco le gustan los videojuegos.", "ans": true, "prueba": "a mí tampoco"}, {"q": "La chica queda con sus amigas los domingos.", "ans": false, "prueba": "los sábados quedo con mis amigas"}, {"q": "A la hermana de la chica le gusta la playa.", "ans": false, "prueba": "a ella no le gusta la playa"}], "produccion": {"prompt": "Contesta tú a la radio del instituto en cuatro frases: qué te gusta hacer, qué te encanta, qué no te gusta nada y con quién quedas los fines de semana.", "modo": "grabar", "modelo": "En mi tiempo libre… Me encanta… No me gusta nada… Los fines de semana quedo con… y…"}});
 buildAudioCortos("esc_u4",{"fragmentos": [{"etiqueta": "Audio 4.1 · Gustos · 0:55", "seccion": "§1 · Me gusta(n) · gustar & encantar", "titulo": "Tres jóvenes y sus gustos", "tarea": "Noteer per persoon één gusto.", "audio": "audio/C5_U4_01.mp3", "guion": [{"who": "Narradora", "es": "Tres jóvenes hablan de sus gustos.", "nl": "Drie jongeren praten over wat ze leuk vinden."}, {"who": "Narradora", "es": "Número uno: Bea.", "nl": "Nummer één: Bea."}, {"who": "Bea", "es": "A mí me encantan los conciertos. También me gusta la playa, pero no me gusta madrugar.", "nl": "Ik ben dol op concerten. Ik hou ook van het strand, maar vroeg opstaan vind ik niets."}, {"who": "Narradora", "es": "Número dos: Diego.", "nl": "Nummer twee: Diego."}, {"who": "Diego", "es": "A mí me gusta mucho el fútbol. Me encanta jugar los sábados. No me gustan las series largas.", "nl": "Ik hou heel erg van voetbal. Ik vind het geweldig om op zaterdag te spelen. Lange series vind ik niets."}, {"who": "Narradora", "es": "Número tres: Nina.", "nl": "Nummer drie: Nina."}, {"who": "Nina", "es": "A mí me gusta escuchar música y me encantan las montañas. No me gusta el ruido de la ciudad.", "nl": "Ik hou van muziek luisteren en ik ben dol op de bergen. Het lawaai van de stad vind ik niets."}]}, {"etiqueta": "Audio 4.2 · Reacciones · 0:50", "seccion": "§2 · también / tampoco · a mí sí / a mí no", "titulo": "Seis mini-diálogos — ¿qué reacción?", "tarea": "Kruis per dialoog aan: también / tampoco / a mí sí / a mí no.", "audio": "audio/C5_U4_02.mp3", "guion": [{"who": "Narradora", "es": "Seis mini-diálogos. ¿Qué reacción oyes?", "nl": "Zes minidialogen. Welke reactie hoor je?"}, {"who": "Narradora", "es": "Uno.", "nl": "Eén."}, {"who": "Bea", "es": "Me gusta el mar.", "nl": "Ik hou van de zee."}, {"who": "Diego", "es": "A mí también.", "nl": "Ik ook."}, {"who": "Narradora", "es": "Dos.", "nl": "Twee."}, {"who": "Diego", "es": "No me gusta el frío.", "nl": "Ik hou niet van kou."}, {"who": "Nina", "es": "A mí tampoco.", "nl": "Ik ook niet."}, {"who": "Narradora", "es": "Tres.", "nl": "Drie."}, {"who": "Nina", "es": "Me gustan las mates.", "nl": "Ik hou van wiskunde."}, {"who": "Bea", "es": "A mí no.", "nl": "Ik niet."}, {"who": "Narradora", "es": "Cuatro.", "nl": "Vier."}, {"who": "Bea", "es": "No me gustan los lunes.", "nl": "Ik hou niet van maandagen."}, {"who": "Diego", "es": "Pues a mí sí.", "nl": "Nou, ik wel."}, {"who": "Narradora", "es": "Cinco.", "nl": "Vijf."}, {"who": "Diego", "es": "Me encanta bailar.", "nl": "Ik ben dol op dansen."}, {"who": "Nina", "es": "A mí también.", "nl": "Ik ook."}, {"who": "Narradora", "es": "Seis.", "nl": "Zes."}, {"who": "Nina", "es": "No me gusta madrugar.", "nl": "Ik hou niet van vroeg opstaan."}, {"who": "Bea", "es": "A mí sí, me encanta la mañana.", "nl": "Ik wel, ik ben dol op de ochtend."}]}, {"etiqueta": "Audio 4.3 · Planes · 0:45", "seccion": "§3 · Proponer un plan · querer / poder + quedar", "titulo": "Microdictado — tres propuestas", "tarea": "Schrijf de drie voorstellen op.", "audio": "audio/C5_U4_03.mp3", "guion": [{"who": "Narradora", "es": "Tres propuestas. Cada una, dos veces.", "nl": "Drie voorstellen. Elk twee keer."}, {"who": "Narradora", "es": "Número uno.", "nl": "Nummer 1."}, {"who": "Narradora", "es": "¿Quieres ir a la playa el sábado?", "nl": "Wil je zaterdag naar het strand?"}, {"who": "Narradora", "es": "¿Quieres ir a la playa el sábado?", "nl": "Wil je zaterdag naar het strand?"}, {"who": "Narradora", "es": "Número dos.", "nl": "Nummer 2."}, {"who": "Narradora", "es": "¿Podemos quedar a las seis?", "nl": "Kunnen we om zes uur afspreken?"}, {"who": "Narradora", "es": "¿Podemos quedar a las seis?", "nl": "Kunnen we om zes uur afspreken?"}, {"who": "Narradora", "es": "Número tres.", "nl": "Nummer 3."}, {"who": "Narradora", "es": "Quiero ver una peli en mi casa.", "nl": "Ik wil een film kijken bij mij thuis."}, {"who": "Narradora", "es": "Quiero ver una peli en mi casa.", "nl": "Ik wil een film kijken bij mij thuis."}]}]});
 buildLectura("lec_u4",{"titulo": "Fiesta de la Música · València", "tipo": "programa de un festival", "emisor": "La organización del festival", "receptor": "Los jóvenes de la ciudad", "objetivo": "Ayudarte a elegir a qué concierto vas", "prediccion": {"q": "Kijk eerst alleen naar de uren, de namen in hoofdletters en de muziekstijlen tussen haakjes. Wat voor tekst is dit?", "opts": ["Het programma van een festival", "Een liedtekst", "Een treinregeling"], "ans": "Het programma van een festival", "why": "Uren + artiestennamen + podia = een programma."}, "texto": [["titulo", "🎶 FIESTA DE LA MÚSICA · València"], ["lema", "Sábado 21 de junio · Playa de la Malvarrosa · Entrada gratuita"], ["lista", ["17:00 · Escenario del Mar — LOS ALMENDROS (pop en valenciano)", "19:00 · Escenario del Mar — LA NIÑA DEL SUR (flamenco urbano)", "21:00 · Escenario Grande — TROPICANA (cumbia y salsa)", "23:00 · Escenario Grande — DJ MARÍA (electrónica)"]], ["p", "¿Te gusta bailar? Entonces tu grupo es TROPICANA: ocho músicos de Colombia y de Cuba que no paran en toda la noche."], ["p", "¿Prefieres escuchar tranquilo? LOS ALMENDROS tocan la guitarra y cantan en valenciano. Es un concierto relajante, perfecto para empezar la tarde."], ["p", "¿Te encanta el flamenco? Entonces te interesa LA NIÑA DEL SUR: mezcla flamenco y música electrónica. Sus letras hablan de la costa y del mar."], ["aviso", ["🍹 ZONA DE COMIDA", "Hay paella, horchata y bocadillos desde las cinco. No se puede entrar con botellas de cristal."]], ["firma", "Programa completo y letras de las canciones: fiestamusica.valencia.es"]], "traduccion": "MUZIEKFEEST · Valencia. Zaterdag 21 juni · Malvarrosastrand · Gratis toegang. 17:00 Zeepodium — LOS ALMENDROS (pop in het Valenciaans) · 19:00 Zeepodium — LA NIÑA DEL SUR (urban flamenco) · 21:00 Groot podium — TROPICANA (cumbia en salsa) · 23:00 Groot podium — DJ MARÍA (electro). Hou je van dansen? Dan is TROPICANA jouw groep: acht muzikanten uit Colombia en Cuba die de hele nacht doorgaan. Luister je liever rustig? LOS ALMENDROS spelen gitaar en zingen in het Valenciaans. Een ontspannen concert, ideaal om de avond mee te beginnen. Ben je gek op flamenco? Dan is LA NIÑA DEL SUR iets voor jou: ze mengt flamenco met electro. Haar teksten gaan over de kust en de zee. ETENSZONE: er is paella, horchata en broodjes vanaf vijf uur. Glazen flessen mogen niet binnen.", "global": {"q": "¿Para qué es este texto?", "opts": ["Para informar sobre los conciertos y ayudarte a elegir", "Para vender instrumentos de música", "Para explicar la historia de València"], "ans": "Para informar sobre los conciertos y ayudarte a elegir"}, "escanear": [{"q": "¿Qué día es el festival?", "ans": "el 21 de junio", "alt": ["21 de junio", "sábado 21 de junio", "21/6", "21"], "why": "«Sábado 21 de junio»"}, {"q": "¿Dónde es?", "ans": "en la playa de la Malvarrosa", "alt": ["la malvarrosa", "malvarrosa", "playa de la malvarrosa"], "why": "«Playa de la Malvarrosa»"}, {"q": "¿A qué hora toca TROPICANA?", "ans": "21:00", "alt": ["a las nueve", "las nueve", "21h", "9"], "why": "«21:00 · Escenario Grande — TROPICANA»"}, {"q": "¿Cuántos músicos tiene TROPICANA? (en cifras)", "ans": "8", "alt": ["ocho", "ocho músicos"], "why": "«ocho músicos de Colombia y de Cuba»"}, {"q": "¿Desde qué hora hay comida?", "ans": "desde las cinco", "alt": ["las cinco", "cinco", "17:00", "5"], "why": "«desde las cinco»"}], "vf": [{"q": "El festival es gratis.", "ans": true, "prueba": "entrada gratuita"}, {"q": "TROPICANA es un grupo de cumbia y salsa.", "ans": true, "prueba": "tropicana (cumbia y salsa)"}, {"q": "LOS ALMENDROS cantan en castellano.", "ans": false, "prueba": "cantan en valenciano"}, {"q": "Se puede entrar con botellas de cristal.", "ans": false, "prueba": "no se puede entrar con botellas de cristal"}, {"q": "Las letras de LA NIÑA DEL SUR hablan del mar.", "ans": true, "prueba": "hablan de la costa y del mar"}], "contexto": [{"q": "«Entrada gratuita» — ¿cuánto cuesta?", "opts": ["Nada", "Cinco euros", "Depende del escenario"], "ans": "Nada", "why": "«gratuito» = gratis."}, {"q": "«que no paran en toda la noche» — ¿qué quiere decir?", "opts": ["Ze spelen de hele nacht door", "Ze stoppen na één lied", "Ze komen niet"], "ans": "Ze spelen de hele nacht door", "why": "«parar» = stoppen."}, {"q": "«mezcla flamenco y música electrónica» — ¿qué hace?", "opts": ["Ze combineert twee stijlen", "Ze kiest er één", "Ze speelt geen muziek"], "ans": "Ze combineert twee stijlen", "why": "«mezclar» = mengen."}, {"q": "«Sus letras hablan de la costa» — ¿qué son «las letras»?", "opts": ["de songteksten", "de letters van het alfabet", "de brieven"], "ans": "de songteksten", "why": "In muziek is «la letra» de tekst van een lied — een valstrik voor wie aan letters denkt."}], "produccion": {"prompt": "Elige un concierto y escríbele un mensaje a un amigo (4–5 frases): a cuál vas, a qué hora, por qué te gusta ese grupo y qué no te gusta del programa.", "modelo": "Voy a… a las… Me encanta… porque… No me gusta nada… ¿Quieres venir? ¿Podemos quedar a las…?"}});

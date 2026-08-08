@@ -762,6 +762,7 @@ RETOS_CSS = r"""
 .voz{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;padding:9px 11px}
 .voz b{color:var(--gd);display:block;font-size:13px}
 .vozt{font-size:14px}
+.opplay{margin-bottom:6px}
 """
 
 RETOS_JS = r"""
@@ -787,6 +788,7 @@ function buildRetos(id,cfg){
   else if(r.tipo==='escena')retoEscena(cuerpo,r);
   else if(r.tipo==='retrato')retoRetrato(cuerpo,r);
   else if(r.tipo==='voces')retoVoces(cuerpo,r);
+  else if(r.tipo==='opciones')retoOpciones(cuerpo,r);
  });
 }
 
@@ -898,6 +900,36 @@ function retoRetrato(cont,r){
 }
 
 // ── drie stemmen, één samenvatting: bemiddelen ─────────────────────────────
+// ── opciones: kies uit N, mét verplichte uitleg ────────────────────────────
+// Breed inzetbaar: welk werkwoord past bij dit uur, welke Spaanse uitdrukking
+// dekt deze Vlaamse. Er is telkens één juist antwoord, en de feedback zegt niet
+// alleen wát maar ook waarom — anders leert een gokker niets.
+function retoOpciones(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ (r.items||[]).forEach(it=>{
+   const d=document.createElement('div');d.className='detit';
+   d.innerHTML=(it.audio?'<button class="escbtn opplay" type="button">▶ Escuchar</button>':'')+
+     '<div class="dpal">'+exEsc(it.enunciado)+'</div>'+
+     '<div class="detbtns"></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const btns=d.querySelector('.detbtns'), fb=d.querySelector('.detfb');
+   let cerrado=false;
+   (it.opciones||[]).forEach(o=>{
+     const b=document.createElement('button');b.type='button';b.className='detbtn';b.textContent=o;
+     b.onclick=()=>{if(cerrado)return;cerrado=true;
+       const bien=o===it.correcta;
+       btns.querySelectorAll('.detbtn').forEach(x=>{x.disabled=true;
+         if(x.textContent===it.correcta)x.classList.add('ok');});
+       if(!bien)b.classList.add('no');
+       fb.className='detfb show '+(bien?'g':'b');
+       fb.innerHTML=(bien?'<b>✓ correcto</b>':'<b>✗ es «'+exEsc(it.correcta)+'»</b>')+
+         (it.porque?' · '+exEsc(it.porque):'');};
+     btns.appendChild(b);});
+   const pl=d.querySelector('.opplay');
+   if(pl)pl.onclick=()=>{if(typeof speak==='function')speak(it.enunciado);};
+   caja.appendChild(d);});
+}
+
 function retoVoces(cont,r){
  cont.innerHTML='<div class="voces"></div>'+
    '<p class="desc">Schrijf je samenvatting in drie zinnen — korter dan wat je hoorde, en niemand mag wegvallen.</p>'+

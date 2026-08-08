@@ -378,11 +378,132 @@ def _adjetivo(r):
         '</thead><tbody>%s</tbody></table>' % (proh, banco, filas))
 
 
+def _horario(r):
+    d = r["datos"]
+    filas = "".join('<tr><td><b>%s</b></td><td>%s</td><td>%s</td>'
+                    '<td style="text-align:center">☐</td><td><span class="wl sm"></span></td></tr>'
+                    % (E(h), E(q), E(dur)) for h, q, dur in d["agenda"])
+    return ('<table class="wtab" style="width:100%%"><thead><tr><th style="width:18mm">Hora</th>'
+            '<th>Cita</th><th style="width:28mm">Dura</th><th style="width:16mm">¿choca?</th>'
+            '<th style="width:26mm">Nueva hora</th></tr></thead><tbody>%s</tbody></table>'
+            '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Los tres choques</b>, con la razón:</p>%s'
+            % (filas, _lineas(3, "wl full")))
+
+
+def _al_reves(r):
+    d = r["datos"]
+    fr = "".join('<tr><td style="width:14mm"><span class="wl sm"></span></td><td>%s</td>'
+                 '<td style="width:34mm"><span class="wl md"></span></td></tr>' % E(f)
+                 for f in d["frases"])
+    con = "".join('<span>%s</span>' % E(c) for c in d["conectores"])
+    return ('<p style="font-size:9.8pt;margin:0 0 1.5mm"><b>Conectores</b> para la tercera columna:</p>'
+            '<div class="tira">%s</div>'
+            '<table class="wtab" style="width:100%%"><thead><tr><th>Nº</th><th>La frase</th>'
+            '<th>Conector</th></tr></thead><tbody>%s</tbody></table>' % (con, fr))
+
+
+def _oficios(r):
+    d = r["datos"]
+    bloques = "".join(
+        '<div class="decl"><b>%s</b>%s</div>'
+        % (E(o), "".join('<span>· %s</span>' % E(p) for p in pistas))
+        for o, pistas in d["oficios"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return ('%s<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Su día, en orden</b> '
+            '(elegid uno):</p>%s'
+            '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Y comparado con el vuestro:</b></p>'
+            '<div class="tira">%s</div>%s'
+            % (bloques, _lineas(4, "wl full"), marco, _lineas(2, "wl full")))
+
+
+def _app(r):
+    d = r["datos"]
+    mod = "".join('<div class="decl"><b>Tú</b><span>%s</span><b>La app</b><span>%s</span></div>'
+                  % (E(a), E(b)) for a, b in d["modelos"])
+    vb = "".join('<span>%s</span>' % E(v) for v in d["verbos"])
+    filas = "".join('<tr><td><span class="wl lg"></span></td><td><span class="wl lg"></span></td></tr>'
+                    for _ in range(3))
+    return ('%s<p style="font-size:9.8pt;margin:2.5mm 0 1.5mm"><b>Verbos que la app usa siempre:</b></p>'
+            '<div class="tira">%s</div>'
+            '<table class="wtab" style="width:100%%"><thead><tr><th style="width:50%%">Tu día</th>'
+            '<th>La respuesta de la app</th></tr></thead><tbody>%s</tbody></table>'
+            % (mod, vb, filas))
+
+
+def _cita_ciegas(r):
+    d = r["datos"]
+    def tira(k):
+        return "".join('<span>%s</span>' % E(m) for m in d[k])
+    planes = "".join('<div class="ficha">%s</div>' % E(p) for p in d["planes"])
+    return ('<p style="font-size:9.8pt;margin:0 0 1mm"><b>Ronda 1 — propón:</b></p>'
+            '<div class="tira">%s</div><div style="margin:1mm 0"><span class="wl full"></span></div>'
+            '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Ronda 2 — reacciona:</b></p>'
+            '<div class="tira">%s</div><div style="margin:1mm 0"><span class="wl full"></span></div>'
+            '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Ronda 3 — cierra:</b></p>'
+            '<div class="tira">%s</div><div style="margin:1mm 0"><span class="wl full"></span></div>'
+            '<div class="pliegue">✂ Planes para repartir · plannen om uit te knippen</div>'
+            '<div class="fichas f3">%s</div>'
+            % (tira("marco_1"), tira("marco_2"), tira("marco_3"), planes))
+
+
+def _presupuesto(r):
+    d = r["datos"]
+    filas = "".join('<tr><td>%s</td><td style="text-align:center"><b>%d €</b></td>'
+                    '<td style="text-align:center">☐</td></tr>' % (E(p), c)
+                    for p, c in d["planes"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return ('<table class="wtab" style="width:100%%"><thead><tr><th>El plan</th>'
+            '<th style="width:22mm">Cuesta</th><th style="width:22mm">¿lo hacemos?</th></tr>'
+            '</thead><tbody>%s</tbody></table>'
+            '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Total:</b> '
+            '<span class="wl sm"></span> € &nbsp; <b>de 25 €</b> — ¿cuánto sobra o falta? '
+            '<span class="wl sm"></span></p>'
+            '<div class="tira">%s</div>'
+            '<p style="font-size:9.8pt;margin:2mm 0 1mm"><b>Nuestro plan final</b>, con horas:</p>%s'
+            % (filas, marco, _lineas(3, "wl full")))
+
+
+def _anuncio(r):
+    d = r["datos"]
+    hechos = "".join('<span class="%s">%s</span>'
+                     % ("prohib" if v == "menos bueno" else "", E(h))
+                     for h, v in d["hechos"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return ('<p style="font-size:9.8pt;margin:0 0 1.5mm"><b>Los datos.</b> Lo rojo es lo menos '
+            'bueno — y también tiene que salir. <span class="gloss">Het rode moet er óók in.</span></p>'
+            '<div class="tira">%s</div>'
+            '<div class="tira">%s</div>'
+            '<p style="font-size:9.8pt;margin:2mm 0 1mm"><b>Tu anuncio</b> — seis frases:</p>'
+            '<div class="wbox" style="height:44mm"></div>' % (hechos, marco))
+
+
+def _encuesta(r):
+    d = r["datos"]
+    filas = "".join('<tr><td style="font-size:9.6pt">%d</td><td>%s</td><td class="op">%s</td>'
+                    '<td><span class="wl sm"></span></td><td><span class="wl sm"></span></td>'
+                    '<td><span class="wl sm"></span></td></tr>'
+                    % (i, E(q), E(o)) for i, (q, o) in enumerate(d["preguntas"], 1))
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return ('<table class="wtab" style="width:100%%"><thead><tr><th style="width:8mm">#</th>'
+            '<th>La pregunta</th><th style="width:34mm">Opciones</th>'
+            '<th>Persona 1</th><th>Persona 2</th><th>Persona 3</th></tr></thead>'
+            '<tbody>%s</tbody></table>'
+            '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Tu diagrama:</b></p>'
+            '<div class="wbox" style="height:30mm"></div>'
+            '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Mi conclusión</b> — con un número '
+            'y una reacción:</p><div class="tira">%s</div>%s'
+            % (filas, marco, _lineas(2, "wl full")))
+
+
 _MATERIAL = {"C5-U0-RETO-03": _gps, "C5-U0-RETO-08": _numeros, "C5-U0-RETO-10": _pasaporte,
              "C5-U1-RETO-02": _identidad, "C5-U1-RETO-03": _censo,
              "C5-U1-RETO-06": _aeropuerto, "C5-U1-RETO-08": _error_caro,
              "C5-U2-RETO-01": _arbol, "C5-U2-RETO-05": _familias,
-             "C5-U2-RETO-06": _sin_familia, "C5-U2-RETO-10": _adjetivo}
+             "C5-U2-RETO-06": _sin_familia, "C5-U2-RETO-10": _adjetivo,
+             "C5-U3-RETO-01": _horario, "C5-U3-RETO-03": _al_reves,
+             "C5-U3-RETO-06": _oficios, "C5-U3-RETO-07": _app,
+             "C5-U4-RETO-04": _cita_ciegas, "C5-U4-RETO-05": _presupuesto,
+             "C5-U4-RETO-07": _anuncio, "C5-U4-RETO-10": _encuesta}
 
 
 def reto_print(r):

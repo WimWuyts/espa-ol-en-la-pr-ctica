@@ -13,6 +13,8 @@ _sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
 import print_bloques as PB
 import lectura_data as LD
 import escucha_data as ED
+import retos_data as RD
+import retos_print as RP
 
 def b64(p): return base64.b64encode(open(p, "rb").read()).decode()
 def face(fam, fn, w):
@@ -283,6 +285,18 @@ def lpd(*chips):
 
 def divider(t): return f'<div class="divider">{t}</div>'
 def pcard(t, body): return f'<div class="pcard"><div class="t">{t}</div>{body}</div>'
+
+def retos(ancla, titulo, intro_es, intro_nl):
+    """Retoblok van één sectie — volledige oefening voor print, verwijskaartje
+    voor wat op de hub of in de PowerPoint leeft."""
+    P('<div class="page">')
+    P(f'<div class="divider">{titulo}</div>')
+    P(f'<div class="intro" style="margin-top:1mm"><b>ES:</b> {intro_es} '
+      f'<span class="gloss">{intro_nl}</span></div>')
+    for r in sorted(RD.por_ancla(ancla), key=lambda x: x["num"]):
+        P(RP.reto_print(r) if r["soporte"] == "print" else RP.reto_puntero(r))
+    P('</div>')
+
 
 def steun(niveau):
     return f'<div class="steun" style="margin-left:12.5mm">Apoyo: {niveau}</div>'
@@ -611,6 +625,9 @@ P('<div class="route-note">🎮 <b>Juega online:</b> «La hora» (reloj ↔ fras
 P('</div>')  # page §1.2
 
 # ================= §2 · MI RUTINA + REFLEXIVOS =================
+retos("hora", "§1.4 · Retos — la hora que no cuadra",
+      'Dos retos donde la hora decide: una <b>agenda imposible</b> y una llamada a <b>tres husos horarios</b>.',
+      'Twee retos waarin het uur beslist: een onmogelijke agenda en een gesprek over drie tijdzones.')
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">2</span><span class="pk">§2 · Mi rutina — verbos reflexivos</span>')
 P('<div class="intro"><b>ES:</b> Para contar tu día usas verbos <b>reflexivos</b> (una acción sobre ti mismo): <i>me levanto, me ducho, me visto…</i> La ruta: contexto → observar → patrón → regla → practicar → comunicar. <span class="gloss">Om je dag te vertellen gebruik je wederkerende werkwoorden.</span></div>')
@@ -707,6 +724,9 @@ P('<div class="route-note">🎮 <b>Juega online:</b> «¿reflexivo o no?», «me
 P('</div>')  # page §2.2
 
 # ================= §3 · PRESENTE IRREGULAR (cambio de raíz) =================
+retos("rutina", "§2.4 · Retos — la rutina de otros",
+      'Cuatro retos sobre el día: uno al <b>revés</b>, otros <b>oficios</b>, una ciudad que <b>suena</b> y un despertador que hay que <b>negociar</b>.',
+      'Vier retos over de dag: één omgekeerd, andere beroepen, een stad die klínkt, en een wekker om over te onderhandelen.')
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">3</span><span class="pk">§3 · Presente irregular — cambio de raíz</span>')
 P('<div class="intro"><b>ES:</b> Algunos verbos cambian la <b>raíz</b> en presente (¡pero no siempre!). Descúbrelo como una <b>máquina</b>: la vocal de la raíz cambia… menos en <i>nosotros/vosotros</i>. <span class="gloss">Sommige werkwoorden wijzigen hun stam — behalve bij nosotros/vosotros.</span></div>')
@@ -836,6 +856,9 @@ P('<div class="route-note">🔁 <b>Ojo — conjugador online:</b> alle vervoegin
 P('</div>')  # page §3.3
 
 # ================= §4 · FRECUENCIA + DÍAS/MESES/ESTACIONES =================
+retos("irregular", "§3.4 · Retos — el presente que cambia",
+      'Dos retos con los verbos que cambian de raíz: una <b>app</b> con opinión y tu día en <b>sesenta segundos</b>.',
+      'Twee retos met de werkwoorden die van stam veranderen: een app met een mening, en je dag in zestig seconden.')
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">4</span><span class="pk">§4 · Frecuencia + días, meses y estaciones</span>')
 P('<div class="intro"><b>ES:</b> ¿Con qué frecuencia haces las cosas? Con <b>siempre, a veces, nunca…</b> y con los <b>días</b> y <b>meses</b> sitúas tu rutina en el tiempo. <span class="gloss">Hoe vaak? En op welke dag/maand — zo plaats je je routine in de tijd.</span></div>')
@@ -1080,6 +1103,9 @@ P('<div class="mispal" style="margin-top:3mm"><div class="mh">🤝 Co-evaluació
 P('</div>')  # page Tarea
 
 # ================= REPASO =================
+retos("cultura_u3", "Retos — el tiempo de los demás",
+      'Dos retos finales: <b>subtitular</b> para quien no sigue, y una <b>coartada</b> que no puede fallar.',
+      'Twee slotretos: ondertitelen voor wie niet volgt, en een alibi dat niet mag sneuvelen.')
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">✓</span><span class="pk">Repaso · lo esencial</span>')
 P('<div class="intro"><b>ES:</b> Lo más importante de un vistazo. El <b>repaso completo</b> (quiz, drills, 20 juegos) está <b>online</b>. <span class="gloss">Het belangrijkste in één oogopslag.</span></div>')
@@ -1181,7 +1207,7 @@ EDITBAR = '''
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Español en la práctica · U3 El tiempo vuela</title><style>'
-        + CSS + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
+        + CSS + PB.CSS + RP.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/U3.html"
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, "·", len(HTML), "bytes")

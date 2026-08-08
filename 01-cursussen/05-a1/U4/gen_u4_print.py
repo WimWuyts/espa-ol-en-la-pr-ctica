@@ -13,6 +13,8 @@ _sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
 import print_bloques as PB
 import lectura_data as LD
 import escucha_data as ED
+import retos_data as RD
+import retos_print as RP
 
 def b64(p): return base64.b64encode(open(p, "rb").read()).decode()
 def face(fam, fn, w):
@@ -296,6 +298,18 @@ def lpd(*chips):
 
 def divider(t): return f'<div class="divider">{t}</div>'
 def pcard(t, body): return f'<div class="pcard"><div class="t">{t}</div>{body}</div>'
+
+def retos(ancla, titulo, intro_es, intro_nl):
+    """Retoblok van één sectie — volledige oefening voor print, verwijskaartje
+    voor wat op de hub of in de PowerPoint leeft."""
+    P('<div class="page">')
+    P(f'<div class="divider">{titulo}</div>')
+    P(f'<div class="intro" style="margin-top:1mm"><b>ES:</b> {intro_es} '
+      f'<span class="gloss">{intro_nl}</span></div>')
+    for r in sorted(RD.por_ancla(ancla), key=lambda x: x["num"]):
+        P(RP.reto_print(r) if r["soporte"] == "print" else RP.reto_puntero(r))
+    P('</div>')
+
 
 def steun(niveau):
     return f'<div class="steun" style="margin-left:12.5mm">Apoyo: {niveau}</div>'
@@ -673,6 +687,9 @@ P('<div class="route-note">🎮 <b>Juega online:</b> «¿gusta o gustan?», «pr
 P('</div>')  # page §1.2b
 
 # ================= §2 · TAMBIÉN / TAMPOCO + A MÍ SÍ / A MÍ NO =================
+retos("gustar", "§1.4 · Retos — lo que te gusta, medido",
+      'Tres retos sobre el gusto: la clase como <b>termómetro</b>, una <b>playlist</b> ajena y los gustos que <b>cambian</b>.',
+      'Drie retos over smaak: de klas als thermometer, andermans playlist, en smaken die veranderen.')
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">2</span><span class="pk">§2 · Estar de acuerdo · también/tampoco · a mí sí/no</span>')
 P('<div class="intro"><b>ES:</b> Para reaccionar a un gusto (¿de acuerdo o no?) tienes cuatro respuestas cortas. La ruta: contexto → observar → regla → practicar → comunicar. <span class="gloss">Om te reageren op een smaak heb je vier korte antwoorden.</span></div>')
@@ -747,6 +764,9 @@ P('<div class="route-note">🎮 <b>Juega online:</b> «Espejo de reacciones» (t
 P('</div>')  # page §2.2
 
 # ================= §3 · QUERER / PODER + INFINITIVO + QUEDAR =================
+retos("reacciones", "§2.4 · Retos — reaccionar de verdad",
+      'Tres retos donde la reacción cuenta: la <b>radio</b>, una <b>cadena</b> que se rompe, y cuatro frases que no se traducen.',
+      'Drie retos waarin de reactie telt: de radio, een ketting die breekt, en vier zinnen die niet te vertalen zijn.')
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">3</span><span class="pk">§3 · Proponer un plan · querer / poder + quedar</span>')
 P('<div class="intro"><b>ES:</b> Para <b>proponer</b> un plan usas <b>querer</b> y <b>poder</b> + infinitivo, y <b>quedar</b> para citar. Ojo: querer y poder cambian la raíz (e→ie, o→ue). <span class="gloss">Om een plan voor te stellen: querer/poder + infinitief, en quedar om af te spreken.</span></div>')
@@ -835,6 +855,9 @@ P('<div class="route-note">🔁 <b>Ojo — conjugador online:</b> alle vervoegin
 P('</div>')  # page §3.2
 
 # ================= §4 · LECTURA =================
+retos("planes", "§3.4 · Retos — quedar de verdad",
+      'Dos retos para cerrar un plan: una <b>cita a ciegas</b> por notas y un <b>presupuesto</b> que no da para todo.',
+      'Twee retos om een plan te sluiten: een blind date via briefjes, en een budget dat niet voor alles volstaat.')
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">📖</span><span class="pk">§4 · Lectura — «Perfiles de gustos»</span>')
 P('<div class="intro"><b>ES:</b> Vas a leer dos perfiles de una app de música (tipo playlist). Primero <b>predices</b>, después lees con un <b>objetivo</b>. <span class="gloss">Je leest twee muziekprofielen: eerst voorspellen, dan lezen met een doel.</span></div>')
@@ -1091,6 +1114,9 @@ P('<div class="mispal" style="margin-top:3mm"><div class="mh">🤝 Co-evaluació
 P('</div>')  # page Tarea
 
 # ================= REPASO =================
+retos("cultura_u4", "Retos — València sin mentiras",
+      'Dos retos finales: un <b>anuncio</b> en el que todo es verdad y una <b>encuesta</b> de verdad.',
+      'Twee slotretos: een reclame waarin alles waar is, en een echte enquête.')
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">✓</span><span class="pk">Repaso · lo esencial</span>')
 P('<div class="intro"><b>ES:</b> Lo más importante de un vistazo. El <b>repaso completo</b> (quiz, drills, 20 juegos) está <b>online</b>. <span class="gloss">Het belangrijkste in één oogopslag.</span></div>')
@@ -1209,7 +1235,7 @@ EDITBAR = '''
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Español en la práctica · U4 Me gusta</title><style>'
-        + CSS + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
+        + CSS + PB.CSS + RP.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/U4.html"
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, "·", len(HTML), "bytes")

@@ -65,7 +65,7 @@ GAMEDIR = f"{ROOT}/spaans-motor/games"
 slugs = [g[0] for grp in MOTOR for g in grp[1]]
 GAMES = {s: b64(f"{GAMEDIR}/es-u4-{s}.html") for s in slugs if os.path.exists(f"{GAMEDIR}/es-u4-{s}.html")}
 
-CSS = FONTS + extra_bronnen.CSS + hub_drills.ESCUCHA_CSS + hub_drills.LECTURA_CSS + hub_drills.TYPE_CSS + """
+CSS = FONTS + extra_bronnen.CSS + hub_drills.ESCUCHA_CSS + hub_drills.RETOS_CSS + hub_drills.LECTURA_CSS + hub_drills.TYPE_CSS + """
 :root{--g:#1E9E74;--gd:#157355;--gt:#E4F4EE;--ink:#20242E;--mut:#6A6E78;--paper:#FCFBF8;--crema:#F3EEE4;--line:#E4E3DE;--red:#DC2626;--amber:#B7860B;--card:#fff;
 --onder:#2563EB;--ww:#EA7317;--voorw:#1E9E74;--tijd:#7C3AED;--plaats:#14B8A6;
 --disp:'Bricolage Grotesque',sans-serif;--body:'Inter',sans-serif;--hand:'Caveat',cursive}
@@ -352,6 +352,11 @@ __TYPESLOTS__
     <div id="motorlink"></div>
   </section>
 
+  <section class="panel" data-p="retos">
+    <h2 class="sec">Retos · tres desafíos 🎯</h2>
+    <p class="lead">Drie opdrachten met <b>één harde regel</b>: je leidt iemands smaak af uit haar playlist en schrijft over <b>haar</b>, je vertelt vroeger-en-nu <b>zonder verleden tijd</b>, en je kiest niet alleen de juiste Spaanse uitdrukking maar zegt ook wat er misloopt in de letterlijke. <span class="gloss">De zeven andere retos van deze unit staan in het boek en in de PowerPoint.</span></p>
+    <div id="retos_u4"></div>
+  </section>
   <section class="panel" data-p="hablar">
     <h2 class="sec">Hablar · grábate 🎙️</h2>
     <p class="lead">Neem <b>jezelf</b> op: luister naar het model, spreek in, luister terug, en neem opnieuw op. <span class="gloss">Werkt in Chrome/Edge; sta de micro toe. Print blijft bruikbaar zonder opname.</span></p>
@@ -420,10 +425,10 @@ __JS__
 
 JS = r"""
 function toggleTheme(){const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'}
-""" + hub_drills.SPEAK_JS + r"""
+""" + hub_drills.SPEAK_JS + hub_drills.RETOS_JS + r"""
 const TTS=('speechSynthesis'in window);
 if(TTS){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}
-const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
+const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['retos','Retos 🎯'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
 const sn=document.getElementById('subnav');
 // ── tabbladen · het adres volgt mee ──────────────────────────────────────────
 // #escuchar opent dat tabblad; #lec_1 opent het paneel waar dat element in
@@ -750,6 +755,7 @@ window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');
 # Getypte woordenschat-drills (fase ophalen + produceren) in het paneel zelf.
 JS += hub_type_sets.vocab_type_js(vocab)
 JS += hub_type_gram.js('C5', 4)
+JS += hub_bloques.retos_js('retos_u4', 'C5', 4)
 JS += (hub_bloques.escucha_js("esc_u4", escucha_data.C5_U4)
        + hub_bloques.lectura_js("lec_u4", lectura_data.C5_U4))
 HTML = HTML.replace("__GRAMSLOTS__", hub_type_gram.slots('C5', 4))
