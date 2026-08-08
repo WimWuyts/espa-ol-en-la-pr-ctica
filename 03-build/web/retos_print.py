@@ -1132,6 +1132,193 @@ def _sustituto(r):
         % (verbos, marco, bloques))
 
 
+def _casa_crimen(r):
+    """Plattegrond, vier alibi's en de details die ze tegenspreken."""
+    d = r["datos"]
+    plano = "".join('<span>%s</span>' % E(x) for x in d["plano"])
+    coart = "".join(
+        '<div class="decl"><b>%s</b><span>«%s»</span>'
+        '<span style="font-size:8.8pt;color:var(--mut)">dice que está en: %s</span></div>'
+        % (E(n), E(txt), E(hab)) for n, txt, hab, _ok in d["coartadas"])
+    det = "".join('<tr><td class="fr">%s</td></tr>' % E(x) for x in d["detalles"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<div class="rol">🏠 El plano del piso</div>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2mm 0 1mm"><b>Las cuatro coartadas.</b></p>%s'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Lo que sabemos del piso</b> — aquí está '
+        'la contradicción: <span class="gloss">Hier zit de tegenspraak.</span></p>'
+        '<table class="wtab" style="width:100%%"><tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Las dos frases que no pueden ser verdad '
+        'a la vez:</b></p>%s'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Acusamos a…</b> y esto es lo que '
+        'estaba haciendo de verdad:</p>'
+        '<div style="margin:1mm 0"><span class="wl full"></span></div>'
+        % (plano, coart, det, _lineas(2, "wl full"), marco))
+
+
+def _metros(r):
+    """Woonoppervlakte per persoon in vijf steden."""
+    d = r["datos"]
+    filas = "".join(
+        '<tr><td class="fr"><b>%s</b></td><td style="text-align:center">%s</td>'
+        '<td style="font-size:9.4pt">%s</td><td style="font-size:9pt;color:var(--mut)">%s</td></tr>'
+        % (E(c), E(m2), E(viv), E(obs)) for c, m2, viv, obs in d["tabla"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:34mm">La ciudad</th>'
+        '<th style="width:26mm">Por persona</th><th style="width:44mm">Vivienda típica</th>'
+        '<th>Y además…</th></tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.4pt;margin:1.5mm 0 0;color:var(--mut)">Cifras redondeadas de '
+        'estadística pública de vivienda.</p>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Mi habitación mide, más o menos,</b> '
+        '<span class="wl sm"></span> m² · <b>y en casa somos</b> <span class="wl sm"></span> '
+        '<b>personas.</b></p>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Tres conclusiones</b> — cada una con '
+        'una cifra y con <b>hay</b> o <b>está</b>. Una tiene que ser sobre vosotros:</p>'
+        '<div class="tira">%s</div>%s' % (filas, marco, _lineas(3, "wl full")))
+
+
+def _cuarto_sin(r):
+    """Tien regels beschrijven zonder één voorwerp te noemen."""
+    d = r["datos"]
+    perm = "".join('<span>%s</span>' % E(x) for x in d["permitido"])
+    prohib = "".join('<span class="prohib" style="font-size:8.6pt">%s</span>' % E(x)
+                     for x in d["prohibido"])
+    tipos = "".join('<div class="ficha">%s</div>' % E(t) for t in d["tipos"])
+    return (
+        '<p style="font-size:9.8pt;margin:0 0 1mm"><b>Lo que sí puedes usar:</b></p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:1.5mm 0 1mm"><b>Lo que no, ni una vez:</b></p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2mm 0 1mm"><b>Elige tu habitación</b> (o inventa otra):</p>'
+        '<div class="fichas" style="grid-template-columns:repeat(5,1fr)">%s</div>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Diez líneas, cero objetos:</b></p>%s'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm">Objetos nombrados: '
+        '<span class="wl sm"></span> (tiene que ser 0) &nbsp;·&nbsp; ¿adivinan qué habitación es? '
+        '☐ sí ☐ no</p>' % (perm, prohib, tipos, _lineas(10, "wl full")))
+
+
+def _mudanza_etapas(r):
+    """Zestien voorwerpen, tien plaatsen, en de pronomenregel."""
+    d = r["datos"]
+    obj = "".join('<span>☐ %s</span>' % E(o) for o in d["objetos"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    filas = "".join(
+        '<tr><td style="font-size:9.4pt">%d</td><td><span class="wl md"></span></td>'
+        '<td><span class="wl lg"></span></td></tr>' % i for i in range(1, 11))
+    return (
+        '<div class="decl"><b>El piso nuevo</b><span>%s</span></div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Dieciséis cosas, diez plazas.</b> '
+        'Marcad las que os lleváis. <span class="gloss">Zestien dingen, tien plaatsen.</span></p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:1.5mm 0 1mm"><b>A partir de la segunda mención: '
+        'pronombre.</b> <span class="gloss">Vanaf de tweede vermelding: voornaamwoord.</span></p>'
+        '<div class="tira">%s</div>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:8mm">#</th>'
+        '<th style="width:44mm">Nos la/lo llevamos…</th><th>… porque</th>'
+        '</tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Y lo que dejamos</b> — una frase por cosa, '
+        'con pronombre:</p>%s'
+        % (E(d["espacio"]), obj, marco, filas, _lineas(3, "wl full")))
+
+
+def _hilo(r):
+    """De chatdraad met de ontvangerkolom leeg."""
+    d = r["datos"]
+    filas = "".join(
+        '<tr><td style="font-size:9.4pt">%d</td>'
+        '<td style="font-size:9.4pt;color:var(--gd);font-weight:600">%s</td>'
+        '<td class="fr">%s</td><td><span class="wl sm"></span></td></tr>'
+        % (i, E(q), E(t)) for i, (q, t, _a) in enumerate(d["hilo"], 1))
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<div class="rol">💬 Grupo «Cancha viernes» · 14 mensajes</div>'
+        '<p style="font-size:9.6pt;margin:0 0 1.5mm">En la última columna escribe a quién va: '
+        'un nombre, o <b>todos</b>. <span class="gloss">Schrijf in de laatste kolom aan wie het '
+        'gericht is: een naam, of «todos».</span></p>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:8mm">#</th>'
+        '<th style="width:22mm">¿Quién?</th><th>El mensaje</th>'
+        '<th style="width:26mm">¿A quién?</th></tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Siete frases con «le» o «les».</b> Ojo: '
+        'en español el pronombre <u>y</u> la persona van juntos («le dije <b>a</b> Camila»).</p>'
+        '<div class="tira">%s</div>%s'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>El malentendido empieza en el mensaje '
+        'n.º</b> <span class="wl sm"></span> <b>, porque…</b></p>'
+        '<div style="margin:1mm 0"><span class="wl full"></span></div>'
+        % (filas, marco, _lineas(7, "wl full")))
+
+
+def _sin_emoji(r):
+    """Vijf berichten herschrijven zonder emoji."""
+    d = r["datos"]
+    filas = "".join(
+        '<tr><td style="font-size:9.4pt">%d</td><td class="fr" style="font-size:11pt">%s</td>'
+        '<td><span class="wl sm"></span></td><td><span class="wl lg"></span></td></tr>'
+        % (i, E(m)) for i, (m, _tono, _por) in enumerate(d["mensajes"], 1))
+    banco = "".join('<span>%s</span>' % E(b) for b in d["banco"])
+    return (
+        '<div class="prohib" style="display:inline-block">Prohibido: emojis · MAYÚSCULAS para '
+        'gritar · !!!!!</div>'
+        '<table class="wtab" style="width:100%%;margin-top:2.5mm"><thead><tr>'
+        '<th style="width:8mm">#</th><th style="width:34mm">El mensaje</th>'
+        '<th style="width:26mm">El tono</th><th>En palabras</th></tr></thead>'
+        '<tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>El banco</b> — así se marca el tono en '
+        'español, con palabras:</p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2mm 0 1mm"><b>Lo que se pierde sin emoji es…</b></p>'
+        '<div style="margin:1mm 0"><span class="wl full"></span></div>' % (filas, banco))
+
+
+def _acabo_voy(r):
+    """Twaalf scènes, twee zinnen per scène."""
+    d = r["datos"]
+    filas = "".join(
+        '<tr><td style="font-size:9.2pt">%d</td><td class="fr">%s</td>'
+        '<td><span class="wl md"></span></td><td><span class="wl md"></span></td></tr>'
+        % (i, E(e)) for i, (e, _a, _b) in enumerate(d["escenas"], 1))
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<div class="prohib" style="display:inline-block">Prohibido el presente: «hay un vaso» no '
+        'vale. Solo <b>acaba de</b> y <b>va a</b>.</div>'
+        '<table class="wtab" style="width:100%%;margin-top:2.5mm"><thead><tr>'
+        '<th style="width:8mm">#</th><th>La escena</th>'
+        '<th style="width:42mm">Acaba de…</th><th style="width:42mm">Y ahora va a…</th>'
+        '</tr></thead><tbody>%s</tbody></table>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>La escena más difícil ha sido la n.º</b> '
+        '<span class="wl sm"></span> <b>, porque…</b></p>'
+        '<div style="margin:1mm 0"><span class="wl full"></span></div>' % (filas, marco))
+
+
+def _notificacion(r):
+    """De vijf alarmsignalen, het valse bericht en het ontmaskerende."""
+    d = r["datos"]
+    sen = "".join(
+        '<tr><td class="fr"><b>%s</b></td><td style="font-size:9.4pt">%s</td>'
+        '<td style="text-align:center">☐</td></tr>' % (E(n), E(por))
+        for n, por in d["senales"])
+    mf = "".join('<span>%s</span>' % E(m) for m in d["marco_falso"])
+    ma = "".join('<span>%s</span>' % E(m) for m in d["marco_aviso"])
+    return (
+        '<div class="prohib" style="display:inline-block">Sin marcas reales, sin enlaces reales, '
+        'sin números reales. Es un modelo, no un cebo.</div>'
+        '<table class="wtab" style="width:100%%;margin-top:2.5mm"><thead><tr>'
+        '<th style="width:38mm">La señal</th><th>Por qué funciona</th>'
+        '<th style="width:20mm">¿La usáis?</th></tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>1 · El mensaje falso</b> (usted, '
+        'imperativo, las cinco señales dentro):</p>'
+        '<div class="tira">%s</div>'
+        '<div class="wbox" style="height:44mm"></div>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>2 · El mensaje que lo desmonta</b> (tú, '
+        'señal por señal):</p>'
+        '<div class="tira">%s</div>'
+        '<div class="wbox" style="height:44mm"></div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm">Señales nombradas en el segundo mensaje: '
+        '<span class="wl sm"></span> de 5</p>' % (sen, mf, ma))
+
 _MATERIAL = {"C5-U0-RETO-03": _gps, "C5-U0-RETO-08": _numeros, "C5-U0-RETO-10": _pasaporte,
              "C5-U1-RETO-02": _identidad, "C5-U1-RETO-03": _censo,
              "C5-U1-RETO-06": _aeropuerto, "C5-U1-RETO-08": _error_caro,
@@ -1152,7 +1339,11 @@ _MATERIAL = {"C5-U0-RETO-03": _gps, "C5-U0-RETO-08": _numeros, "C5-U0-RETO-10": 
              "C6P-U0-RETO-01": _test_falso, "C6P-U0-RETO-02": _quien_es_quien,
              "C6P-U0-RETO-04": _lenguas, "C6P-U0-RETO-05": _adjetivos_sitio,
              "C6P-U1-RETO-01": _turno_noche, "C6P-U1-RETO-03": _agenda,
-             "C6P-U1-RETO-05": _diario_objeto, "C6P-U1-RETO-09": _sustituto}
+             "C6P-U1-RETO-05": _diario_objeto, "C6P-U1-RETO-09": _sustituto,
+             "C6P-U2-RETO-01": _casa_crimen, "C6P-U2-RETO-04": _metros,
+             "C6P-U2-RETO-06": _cuarto_sin, "C6P-U2-RETO-10": _mudanza_etapas,
+             "C6P-U3-RETO-01": _hilo, "C6P-U3-RETO-05": _sin_emoji,
+             "C6P-U3-RETO-07": _acabo_voy, "C6P-U3-RETO-10": _notificacion}
 
 
 def reto_print(r):

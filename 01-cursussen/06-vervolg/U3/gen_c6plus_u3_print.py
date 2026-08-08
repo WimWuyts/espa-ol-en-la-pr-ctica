@@ -18,9 +18,24 @@ _sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
 import print_bloques as PB
 import lectura_data as LD
 import escucha_data as ED
+import retos_data as RD
+import retos_print as RP
 
 BODY = []
 def P(*x): BODY.extend(x)
+
+
+def retos(ancla, titulo, intro_es, intro_nl):
+    """Retoblok van één sectie — volledige oefening voor print, verwijskaartje
+    voor wat op de hub of in de PowerPoint leeft."""
+    P('<div class="page">')
+    P(f'<div class="divider">{titulo}</div>')
+    P(f'<div class="intro" style="margin-top:1mm"><b>ES:</b> {intro_es} '
+      f'<span class="gloss">{intro_nl}</span></div>')
+    for r in sorted(RD.por_ancla(ancla), key=lambda x: x["num"]):
+        P(RP.reto_print(r) if r["soporte"] == "print" else RP.reto_puntero(r))
+    P('</div>')
+
 _AN = [0]
 def AN():
     _AN[0] += 1
@@ -162,6 +177,10 @@ P(actx(AN(), "Mi mundo digital · escribe",
   apoyo="MARCO"))
 sec_close()
 
+retos("movil_c6p", "§1.4 · Retos — la pantalla, medida y traducida",
+      'Cinco mensajes que <b>sin emoji</b> ya no significan nada, tu tiempo de pantalla real, y las palabras que nadie traduce.',
+      'Vijf berichten die zonder emoji niets meer betekenen, je echte schermtijd, en de woorden die niemand vertaalt.')
+
 # ================= §2 · IR A + INFINITIVO =================
 sec_open("2", "§2 · Ir a + infinitivo — el futuro próximo", 'Om te zeggen wat je <b>gaat doen</b> (straks, morgen, dit weekend): <b>ir</b> (vervoegd) + <b>a</b> + <b>infinitivo</b>. <i>Voy a subir un vídeo. Vamos a quedar en la plaza.</i> <span class="gloss">De nabije toekomst: ir vervoegd + a + hele werkwoord.</span>',
         lpd(("8","taalsysteem: ir a + infinitivo"), ("3","spreken/schrijven: planes"), ("7","woordenschat: planes")))
@@ -259,6 +278,10 @@ P(audiorow('<div class="ic">🎧</div><div><b>Escucha «¿Qué vas a hacer el fi
            qr("Escanea y escucha", "§2 · Planes de finde", seed=301)))
 P('</div>')
 
+retos("ir_a_c6p", "§2.4 · Reto — veinticuatro horas sin pantalla",
+      'Planificad el día entero con <b>vamos a</b> — y sobrevivid a tres pegas.',
+      'Plan de hele dag met «vamos a» — en overleef drie tegenwerpingen.')
+
 # ================= §3 · OI-PRONOMINA le/les =================
 sec_open("3", "§3 · Los pronombres le/les — ¿a quién?", 'Als je zegt <b>aan wie</b> je iets doet (schrijven, sturen, vertellen), gebruik je een <b>meewerkend voorwerp</b>: <b>me/te/le/nos/os/les</b>. <i>Le escribo a Diego. Les mando fotos a mis amigos.</i> <span class="gloss">Het meewerkend voorwerp (aan wie?): le = aan hem/haar/u · les = aan hen.</span>',
         lpd(("8","taalsysteem: OI-pronomina le/les"), ("7","woordenschat: comunicar"), ("4","interactie")))
@@ -349,6 +372,10 @@ P(actx("★", "Tarea comunicativa · ¿a quién le escribes?",
 P('<div class="guide"><div class="ic">🎡</div><div><span class="hand">Online:</span> <span class="g">de <b>vervangingsanimatie le/les</b> en de spellen op de hub oefenen elke keuze én plaats; + cloze en foutenkliniek.</span></div></div>')
 P('</div>')
 
+retos("oi_c6p", "§3.4 · Retos — ¿a quién se lo dices?",
+      'Catorce mensajes en un grupo donde ya nadie sabe quién le contestó a quién, y un favor que <b>recorre la clase</b>.',
+      'Veertien berichten in een groep waar niemand nog weet wie aan wie antwoordde, en een gunst die de hele klas rondgaat.')
+
 # ================= §4 · ACABAR DE + CREO QUE =================
 sec_open("4", "§4 · Acabar de + creo que — net gedaan & je mening", 'Twee handige structuren: <b>acabar de + infinitivo</b> = «net … gedaan hebben» (<i>acabo de subir una foto</i>) en <b>creo que / pienso que + indicativo</b> = je <b>mening</b> geven (<i>creo que las redes son útiles</i>). <span class="gloss">acabar de + inf. = net gedaan · creo que + indicativo = je mening.</span>',
         lpd(("8","taalsysteem: acabar de · creo que + indicativo"), ("3","mening geven"), ("7","woordenschat: opinar")))
@@ -417,6 +444,10 @@ P(actx("★", "Tarea comunicativa · debate exprés",
   '<p style="margin-left:12.5mm">A: <span class="wl full"></span>B: <span class="wl full"></span></p>',
   apoyo="MARCO → SIN AYUDA"))
 P('</div>')
+
+retos("acabar_c6p", "§4.4 · Retos — medio segundo antes, medio segundo después",
+      'Doce escenas congeladas, y un podcast donde estáis <b>de acuerdo en no estar de acuerdo</b>.',
+      'Twaalf bevroren scènes, en een podcast waarin jullie het eens zijn dat jullie het oneens zijn.')
 
 # ================= §5 · COMUNICAR Y HACER PLANES =================
 sec_open("5", "§5 · Comunicar y hacer planes", 'Alles komt samen: de <b>werkwoorden van communicatie</b> (escribir, llamar, mandar, contestar) en de woorden om een <b>afspraak</b> te maken (quedar, salir, ¿cuándo?, ¿dónde?). <span class="gloss">Communiceren en afspreken — met le/les en ir a.</span>',
@@ -544,6 +575,10 @@ P(actx(AN(), "Datos curiosos — une",
   '<p style="margin-left:12.5mm">1-<span class="wl sm"></span> 2-<span class="wl sm"></span> 3-<span class="wl sm"></span> 4-<span class="wl sm"></span></p>',
   apoyo="BANCO"))
 sec_close()
+
+retos("cultura_c6p3", "Retos — explicar y desmontar",
+      'El algoritmo explicado a tu abuela <b>sin una palabra en inglés</b>, y el mensaje falso que aprendes a reconocer escribiéndolo tú.',
+      'Het algoritme uitgelegd aan je grootmoeder zonder één Engels woord, en het valse bericht dat je leert herkennen door het zelf te schrijven.')
 
 # ================= TAREA FINAL =================
 sec_open("★", "Tarea final · «Mi plan de fin de semana»", 'Escribe un <b>chat/post</b> con tus <b>planes de fin de semana</b> (ir a + infinitivo), di <b>a quién</b> vas a escribir (le/les) y da tu <b>opinión</b> (creo que…). <span class="gloss">Schrijf een chat/post met je weekendplannen, aan wie je schrijft en een mening.</span>')
@@ -681,7 +716,7 @@ EDITBAR = '''
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Más español en la práctica · C6+ U3 Conectados</title><style>'
-        + CSS + CSS_OVR + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
+        + CSS + CSS_OVR + RP.CSS + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/C6plus_U3.html"
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, "·", len(HTML), "bytes ·", _AN[0], "genummerde oefeningen (excl. V.1–V.5)")

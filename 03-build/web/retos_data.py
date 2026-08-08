@@ -5015,9 +5015,1009 @@ RETOS_C6P_U1 = [P1_RETO_01, P1_RETO_02, P1_RETO_03, P1_RETO_04, P1_RETO_05,
                 P1_RETO_06, P1_RETO_07, P1_RETO_08, P1_RETO_09, P1_RETO_10]
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# C6+ · U2 «Aquí vivo» — parada Cartagena (Colombia), gastvrouw Valen
+# ═══════════════════════════════════════════════════════════════════════════
+P2 = 2
+
+P2_RETO_01 = {
+    "id": "C6P-U2-RETO-01", "num": 1, "curso": "C6+", "unidad": P2,
+    "seccion": "§3.4", "ancla": "gerundio_c6p", "soporte": "print",
+    "nombre": "La casa del crimen",
+    "lente": "🕵️ forensisch", "forma": "👨‍👩‍👧 En grupos", "skill": "👁️ Leer",
+    "tiempo": "± 18 min", "dificultad": "★★★",
+    "gancho_es": "Ha desaparecido el portátil. Cuatro personas, cuatro coartadas, un plano.",
+    "gancho_nl": "De laptop is verdwenen. Vier mensen, vier alibi's, één plattegrond.",
+    "consigna_es": "Cruza las coartadas con el plano y di quién no pudo estar donde dice.",
+    "consigna_nl": "Leg de alibi's naast de plattegrond en zeg wie niet kon zijn waar hij zegt.",
+    "regla": "Elke beschuldiging staat in estar + gerundio én noemt de kamer. En je hebt twee "
+             "verklaringen nodig die elkaar tegenspreken — één rare zin is geen bewijs.",
+    "pasos": [("Leed las cuatro coartadas.", "Lees de vier alibi's."),
+              ("Situadlas en el plano, habitación por habitación.",
+               "Zet ze op het plan, kamer per kamer."),
+              ("Buscad dos que no pueden ser verdad a la vez.",
+               "Zoek er twee die niet tegelijk waar kunnen zijn."),
+              ("Acusad, con las dos frases como prueba.",
+               "Beschuldig, met de twee zinnen als bewijs.")],
+    "datos": {
+        "plano": ["el salón (con la ventana a la calle)", "la cocina (al lado del salón)",
+                  "el baño (sin ventana)", "la habitación grande (con balcón)",
+                  "la habitación pequeña (al fondo del pasillo)", "la terraza (arriba)"],
+        # (persoon, alibi, in welke kamer, klopt het?)
+        "coartadas": [
+            ("Valen", "Estaba duchándome, por eso no oí nada.", "el baño", True),
+            ("Andrés", "Estaba viendo pasar la gente por la ventana de la cocina.",
+             "la cocina", False),
+            ("Camila", "Estaba tendiendo la ropa arriba y saludé a Andrés, que estaba en el salón.",
+             "la terraza", True),
+            ("Tomás", "Estaba estudiando en la habitación del fondo con la puerta abierta.",
+             "la habitación pequeña", True),
+        ],
+        "detalles": ["La cocina no tiene ventana a la calle: la ventana está en el salón.",
+                     "Desde la terraza se ve el salón, no la cocina.",
+                     "Del pasillo se ve la puerta del baño y la del salón.",
+                     "El portátil estaba en el salón."],
+        "marco": ["… dice que estaba … en …", "Pero desde … no se ve …",
+                  "Los dos no pueden tener razón: uno dice … y el otro …",
+                  "Creemos que … estaba … en el salón, porque …"],
+    },
+    "clave": [
+        "Andrés is de dader: hij zegt dat hij door het keukenraam keek, maar de keuken heeft geen "
+        "raam aan de straat — dat raam zit in de salón, waar de laptop lag.",
+        "Camila levert onbewust het tweede bewijs: zij zag Andrés «en el salón». Twee verklaringen "
+        "die elkaar tegenspreken, precies wat de regla eist.",
+        "Valens alibi is niet te controleren (badkamer zonder raam) en juist daarom verdacht — "
+        "dat is de val: onverifieerbaar is niet hetzelfde als vals.",
+        "Toets de vorm: «estaba duchándome» is imperfecto en dat is C6-stof. In deze unit werkt "
+        "het presente-alibi even goed: «Valen dice que está en el baño». Laat beide toe, maar "
+        "eis dat het gerundio erin zit.",
+    ],
+    "nota": "De alibi's staan in het imperfecto omdat een verhoor nu eenmaal over het verleden "
+            "gaat; de leerling hoeft die vorm alleen te herkennen, niet te produceren.",
+}
+
+P2_RETO_04 = {
+    "id": "C6P-U2-RETO-04", "num": 4, "curso": "C6+", "unidad": P2,
+    "seccion": "§2.4", "ancla": "hay_estar_c6p", "soporte": "print",
+    "nombre": "Metros cuadrados reales",
+    "lente": "🔬 onderzoek & data", "forma": "👥 En parejas", "skill": "👁️ Leer",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Tu habitación mide más que la casa entera de alguien.",
+    "gancho_nl": "Jouw kamer is groter dan iemands hele huis.",
+    "consigna_es": "Compara los datos y escribe tres conclusiones con hay y está.",
+    "consigna_nl": "Vergelijk de cijfers en schrijf drie conclusies met hay en está.",
+    "regla": "Elke conclusie bevat een cijfer én «hay» of «está». En één van de drie moet over "
+             "jóuw eigen situatie gaan — anders blijft het een tabel in plaats van een inzicht.",
+    "pasos": [("Leed la tabla entera.", "Lees de hele tabel."),
+              ("Medid vuestra propia habitación, más o menos.",
+               "Meet je eigen kamer, ongeveer."),
+              ("Escribid tres conclusiones con cifra.", "Schrijf drie conclusies met een cijfer."),
+              ("Una de las tres, sobre vosotros.", "Eén van de drie gaat over jullie zelf.")],
+    "datos": {
+        # (stad, m² per persoon, typische woning, opmerking)
+        "tabla": [("Bruselas", "unos 40 m²", "un piso de dos habitaciones",
+                   "muchas casas estrechas y altas"),
+                  ("Madrid", "unos 32 m²", "un piso de tres habitaciones",
+                   "se vive mucho fuera de casa"),
+                  ("Bogotá", "unos 20 m²", "un apartamento pequeño",
+                   "y en los barrios populares, menos"),
+                  ("Cartagena", "unos 22 m²", "casa baja o apartamento",
+                   "el patio cuenta como sala"),
+                  ("Ciudad de México", "unos 18 m²", "un departamento",
+                   "las distancias hacen el resto")],
+        "marco": ["En … hay unos … metros cuadrados por persona.",
+                  "Mi habitación está … y mide unos … metros.",
+                  "En … la gente vive en …, y por eso …",
+                  "La diferencia entre … y … es de … metros."],
+    },
+    "clave": [
+        "Brussel tegenover Mexico-Stad is meer dan een verdubbeling: ongeveer 40 tegen 18 m² per "
+        "persoon. Dat cijfer landt harder dan welke tekst ook.",
+        "De opmerking bij Cartagena («el patio cuenta como sala») is het echte cultuurpunt: "
+        "leefruimte is niet overal binnen. Wie dat oppikt, schrijft de beste derde zin.",
+        "Let op «hay» tegenover «está»: «en Bogotá hay unos 20 m²» (bestaan/hoeveelheid) maar «mi "
+        "habitación está arriba» (plaats). Verwarring hier is de meest voorkomende fout.",
+        "Cijfers zijn ordes van grootte uit publieke woonstatistiek, geen exacte meting. Zeg dat "
+        "erbij — de conclusie moet ook met een benadering kloppen.",
+    ],
+    "nota": "Vraag niet door naar de thuissituatie. Wie liever niet over zijn eigen kamer schrijft, "
+            "neemt een kamer op school of een verzonnen kamer.",
+}
+
+P2_RETO_06 = {
+    "id": "C6P-U2-RETO-06", "num": 6, "curso": "C6+", "unidad": P2,
+    "seccion": "§1.4", "ancla": "casa_c6p", "soporte": "print",
+    "nombre": "El cuarto sin objetos",
+    "lente": "✍️ creatieve beperking", "forma": "👤 Solo", "skill": "✍️ Escribir",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Describe una habitación sin nombrar ni un solo mueble.",
+    "gancho_nl": "Beschrijf een kamer zonder één meubel te noemen.",
+    "consigna_es": "Escribe diez líneas usando solo luz, sonido, distancia y temperatura.",
+    "consigna_nl": "Schrijf tien regels met alleen licht, geluid, afstand en temperatuur.",
+    "regla": "Geen enkel voorwerp bij naam. Geen cama, geen mesa, geen ventana. Wél: waar het "
+             "licht vandaan komt, wat je hoort, hoe ver iets is en of het er koud is.",
+    "pasos": [("Cierra los ojos y piensa en una habitación real.",
+               "Sluit je ogen en denk aan een echte kamer."),
+              ("Apunta lo que se oye, no lo que se ve.",
+               "Noteer wat je hoort, niet wat je ziet."),
+              ("Escribe diez líneas, sin objetos.", "Schrijf tien regels, zonder voorwerpen."),
+              ("Léela. ¿Adivinan qué habitación es?", "Lees voor. Raden ze welke kamer het is?")],
+    "datos": {
+        "permitido": ["la luz entra por…", "se oye…", "huele a…", "está a … pasos",
+                      "hace frío / calor", "el suelo es duro / blando",
+                      "el eco…", "desde fuera llega…", "aquí siempre está…"],
+        "prohibido": ["la cama", "la mesa", "la silla", "el armario", "la ventana",
+                      "la puerta", "la lámpara", "el sofá", "la tele"],
+        "tipos": ["una cocina a las siete de la mañana", "un aula vacía a las cinco",
+                  "un baño de una casa antigua", "una terraza en Cartagena a mediodía",
+                  "el pasillo de un hospital"],
+    },
+    "clave": [
+        "Het verbod op voorwerpen dwingt tot precies de taal die de unit oefent: plaatsbepalingen "
+        "en «hay/está» zonder houvast van concrete zelfstandige naamwoorden.",
+        "«La luz entra por…» is de zin die het lastigst is zonder «ventana» — leerlingen komen "
+        "vanzelf uit op «por arriba», «desde la izquierda», «por una abertura». Dat is winst.",
+        "Toets de tien regels en de nul voorwerpen. Eén meubel is één regel minder — hard, maar "
+        "het is precies wat de opdracht meetbaar maakt.",
+    ],
+    "nota": "Lees er drie hardop voor zonder te zeggen welk soort kamer het is. Het raden is de "
+            "bekroning, niet de oefening.",
+}
+
+P2_RETO_10 = {
+    "id": "C6P-U2-RETO-10", "num": 10, "curso": "C6+", "unidad": P2,
+    "seccion": "§4.4", "ancla": "pronombres_c6p2", "soporte": "print",
+    "nombre": "Mudanza por etapas",
+    "lente": "⚖️ onderhandeling & dilemma", "forma": "👨‍👩‍👧 En grupos", "skill": "🗣️ Hablar",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Os mudáis a un piso minúsculo. Solo caben diez cosas.",
+    "gancho_nl": "Jullie verhuizen naar een piepklein appartement. Er passen maar tien dingen in.",
+    "consigna_es": "Negociad las diez y hablad de ellas con pronombres, no con nombres.",
+    "consigna_nl": "Onderhandel over de tien en praat erover met voornaamwoorden, niet met namen.",
+    "regla": "Vanaf de tweede keer dat je iets noemt, gebruik je een pronomen: «la nevera → la "
+             "llevamos». Wie het zelfstandig naamwoord blijft herhalen, verliest zijn beurt.",
+    "pasos": [("Cada uno elige tres cosas de la lista.", "Elk kiest drie dingen uit de lijst."),
+              ("Defended cada una en una frase.", "Verdedig elk in één zin."),
+              ("A partir de la segunda mención: pronombre.",
+               "Vanaf de tweede vermelding: voornaamwoord."),
+              ("Negociad hasta llegar a diez exactas.", "Onderhandel tot je op precies tien zit."),
+              ("Y ahora, ¿qué dejáis? Una frase por cosa.",
+               "En wat laten jullie achter? Eén zin per ding.")],
+    "datos": {
+        "objetos": ["la nevera", "el sofá", "la mesa", "las sillas", "la cama",
+                    "el armario", "la lavadora", "el escritorio", "la tele",
+                    "la estantería", "las plantas", "la bici", "los libros",
+                    "el microondas", "la alfombra", "las lámparas"],
+        "marco": ["Yo me llevo … porque …", "¿La llevamos o la dejamos?",
+                  "Los dejamos: no caben.", "Sin ella no se puede vivir.",
+                  "Lo cambiamos por …", "Vale, la llevamos, pero entonces …"],
+        "espacio": "Treinta metros cuadrados. Una habitación, una cocina pequeña y un baño.",
+    },
+    "clave": [
+        "De pronomen-regel is de hele didactiek: zodra het voorwerp bekend is, moet het "
+        "verdwijnen uit de zin. «¿La llevamos?» dwingt tot geslacht én getal in één beslissing.",
+        "«Los libros → los dejamos» tegenover «la bici → la dejamos» is de plek waar de klas "
+        "struikelt: meervoud en geslacht tegelijk.",
+        "Er is geen juist lijstje. Wat telt is dat elke keuze verdedigd wordt en dat de "
+        "voornaamwoorden kloppen — dat is objectief te horen.",
+    ],
+    "nota": "Werkt sterk na de leestekst over wonen in Cartagena: dertig vierkante meter is daar "
+            "geen studentikoze uitzondering maar een gewoon gezinsappartement.",
+}
+
+P2_RETO_03 = {
+    "id": "C6P-U2-RETO-03", "num": 3, "curso": "C6+", "unidad": P2,
+    "seccion": "§3.4", "ancla": "gerundio_c6p", "soporte": "hub",
+    "nombre": "La videollamada sospechosa",
+    "lente": "🎭 simulatie met beperking", "forma": "👥 En parejas", "skill": "🗣️ Hablar",
+    "tiempo": "± 12 min", "dificultad": "★★☆",
+    "gancho_es": "Ves la habitación pero no a la persona. ¿Qué está pasando ahí?",
+    "gancho_nl": "Je ziet de kamer maar niet de persoon. Wat gebeurt daar?",
+    "consigna_es": "Graba tu descripción: qué se ve, qué se oye, qué está haciendo alguien.",
+    "consigna_nl": "Neem je beschrijving op: wat je ziet, wat je hoort, wat iemand aan het doen is.",
+    "regla": "Minstens vijf zinnen met estar + gerundio, en geen enkele met «creo que». Je "
+             "beschrijft wat er gebeurt, je speculeert niet — dat komt pas op het einde.",
+    "pasos": [("Escucha el modelo.", "Luister naar het model."),
+              ("Describe lo que se ve y lo que se oye.",
+               "Beschrijf wat je ziet en wat je hoort."),
+              ("Cinco frases con estar + gerundio.", "Vijf zinnen met estar + gerundio."),
+              ("Solo al final: una hipótesis.", "Pas op het einde: één hypothese.")],
+    "datos": {
+        "marco": ["En la pantalla se ve …", "Alguien está … , pero no lo veo.",
+                  "Se oye a alguien que está …", "La luz viene de …",
+                  "Al fondo hay … y encima está …",
+                  "Y al final, mi hipótesis: creo que están …"],
+        "gerundios": ["cocinando", "hablando", "estudiando", "buscando algo", "discutiendo",
+                      "moviendo muebles", "escuchando música", "esperando a alguien"],
+    },
+    "clave": [
+        "Het uitstel van «creo que» is de hele oefening: eerst waarnemen, dan pas interpreteren. "
+        "Dat onderscheid tussen observatie en hypothese is een denkvaardigheid, geen taalregel — "
+        "maar hij wordt hier taalkundig afdwingbaar.",
+        "Onregelmatige gerundios («durmiendo», «diciendo», «leyendo») komen bijna altijd voor. "
+        "Noteer welke de klas zelf produceert; die zijn geleerd, niet gedrild.",
+        "Beoordeel de vijf gerundio's en de ene hypothese aan het eind. Zes hypotheses is de "
+        "reto niet gedaan.",
+    ],
+    "nota": "Werkt ook zonder scherm: de leerkracht beschrijft een scène en de klas neemt op wat "
+            "er volgens hen gebeurt.",
+}
+
+P2_RETO_07 = {
+    "id": "C6P-U2-RETO-07", "num": 7, "curso": "C6+", "unidad": P2,
+    "seccion": "§5.4", "ancla": "barrio_c6p", "soporte": "hub",
+    "nombre": "Ruidos de vecinos",
+    "lente": "🕵️ forensisch", "forma": "👤 Solo", "skill": "👂 Escuchar",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Un edificio de cinco pisos y seis ruidos. ¿Quién, qué y en qué planta?",
+    "gancho_nl": "Een gebouw van vijf verdiepingen en zes geluiden. Wie, wat en op welke verdieping?",
+    "consigna_es": "Elige qué está pasando y en qué planta.",
+    "consigna_nl": "Kies wat er gebeurt en op welke verdieping.",
+    "regla": "Je antwoordt met estar + gerundio én met het rangtelwoord van de verdieping. En "
+             "let op de apócope: «el tercer piso», niet «el tercero piso».",
+    "pasos": [("Escucha el ruido entero.", "Luister het geluid helemaal af."),
+              ("Piensa: ¿arriba o abajo? El sonido lo dice.",
+               "Denk na: boven of beneden? Het geluid verraadt het."),
+              ("Elige la acción y la planta.", "Kies de handeling en de verdieping.")],
+    "datos": {
+        "items": [
+            ("Un golpe seco y luego algo que rueda, justo encima de tu cabeza.",
+             "Alguien está moviendo muebles en el cuarto piso.",
+             ["Alguien está moviendo muebles en el cuarto piso.",
+              "Alguien está bajando la basura en el primer piso.",
+              "Alguien está jugando en la calle."],
+             "«justo encima» plus jouw derde verdieping geeft de vierde"),
+            ("Música con mucho bajo que llega por el suelo, no por las paredes.",
+             "Alguien está escuchando música en el segundo piso.",
+             ["Alguien está escuchando música en el segundo piso.",
+              "Alguien está escuchando música en el cuarto piso.",
+              "Hay una fiesta en la terraza."],
+             "bas door de vloer betekent van beneden, dus onder jou"),
+            ("Un motor que arranca y una puerta metálica que sube.",
+             "Alguien está sacando el coche del garaje.",
+             ["Alguien está sacando el coche del garaje.",
+              "Alguien está usando la lavadora en el primer piso.",
+              "Alguien está subiendo en el ascensor."],
+             "de metalen poort is de garage, dus onder de begane grond"),
+            ("Voces que suben por el hueco de la escalera, cada vez más cerca.",
+             "Alguien está subiendo por la escalera.",
+             ["Alguien está subiendo por la escalera.",
+              "Alguien está hablando en el quinto piso.",
+              "Alguien está esperando el ascensor."],
+             "«cada vez más cerca» is beweging, geen vaste plek"),
+            ("Agua que corre en la pared, empieza y para tres veces.",
+             "Alguien está fregando los platos en el piso de al lado.",
+             ["Alguien está fregando los platos en el piso de al lado.",
+              "Alguien está duchándose arriba.",
+              "Está lloviendo."],
+             "starten en stoppen hoort bij de afwas; een douche loopt door"),
+            ("Un timbre, pasos rápidos y una puerta que se cierra en la planta baja.",
+             "Alguien está recibiendo un paquete en la planta baja.",
+             ["Alguien está recibiendo un paquete en la planta baja.",
+              "Alguien está saliendo al patio.",
+              "Alguien está llamando al ascensor."],
+             "bel plus snelle stappen plus deur: een levering"),
+        ],
+    },
+    "clave": [
+        "Drie geluiden verraden de richting: van boven (klap door het plafond), van beneden (bas "
+        "door de vloer) en van opzij (water in de muur). Dat onderscheid is de kern.",
+        "Twee items hebben géén verdieping: de trap (beweging) en de garage (onder de grond). "
+        "Wie overal een rangtelwoord bij plakt, valt daar door de mand.",
+        "«El primer piso» in Spanje is niet de begane grond: «la planta baja» is gelijkvloers en "
+        "«el primero» is er één hoger. Dat verschil met het Nederlands is een echte valstrik.",
+    ],
+    "nota": "Zolang er nog geen opnames zijn, leest de leerkracht de omschrijving voor of maakt "
+            "het geluid zelf — de deductie werkt ook dan.",
+}
+
+P2_RETO_08 = {
+    "id": "C6P-U2-RETO-08", "num": 8, "curso": "C6+", "unidad": P2,
+    "seccion": "Cultura", "ancla": "cultura_c6p2", "soporte": "hub",
+    "nombre": "Casa cartagenera, casa flamenca",
+    "lente": "🤝 bemiddelen", "forma": "👥 En parejas", "skill": "🔀 Bemiddelen",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "¿Por qué las casas flamencas son tan estrechas? Explícaselo a Valen.",
+    "gancho_nl": "Waarom zijn Vlaamse huizen zo smal? Leg het uit aan Valen.",
+    "consigna_es": "Elige la explicación que Valen entiende de verdad.",
+    "consigna_nl": "Kies de uitleg die Valen écht zou begrijpen.",
+    "regla": "Je legt uit, je vertaalt niet. Geen Nederlandse woorden, en geen uitleg die "
+             "veronderstelt dat de ander al weet hoe een Vlaams huis eruitziet.",
+    "pasos": [("Lee lo que Valen no entiende.", "Lees wat Valen niet begrijpt."),
+              ("Elige la mejor explicación.", "Kies de beste uitleg."),
+              ("Fíjate: la más corta no siempre es la más clara.",
+               "Let op: de kortste is niet altijd de duidelijkste.")],
+    "datos": {
+        "items": [
+            ("Valen: «¿Por qué las casas son tan estrechas y tan altas?»",
+             "Antes se pagaba impuesto por lo ancho de la fachada, y por eso se construía "
+             "estrecho y alto.",
+             ["Antes se pagaba impuesto por lo ancho de la fachada, y por eso se construía "
+              "estrecho y alto.",
+              "Porque hace frío.",
+              "Es la tradición flamenca."],
+             "«es la tradición» legt niets uit; de belastingreden is concreet en te snappen"),
+            ("Valen: «¿Y dónde está el patio? Aquí todas las casas tienen patio.»",
+             "En vez de patio hay un jardín detrás, y muchos días hace demasiado frío para "
+             "estar fuera.",
+             ["En vez de patio hay un jardín detrás, y muchos días hace demasiado frío para "
+              "estar fuera.",
+              "No hay patio.",
+              "El patio está dentro."],
+             "je vervangt het begrip door zijn equivalent, plus de reden waarom het anders werkt"),
+            ("Valen: «¿La gente vive en la calle o dentro?»",
+             "Aquí se vive más dentro: en invierno oscurece a las cinco y llueve mucho.",
+             ["Aquí se vive más dentro: en invierno oscurece a las cinco y llueve mucho.",
+              "Dentro, siempre.",
+              "Depende de la persona."],
+             "je geeft de reden, niet alleen het antwoord — dat is bemiddelen"),
+            ("Valen: «¿Y por qué las ventanas son tan grandes si hace frío?»",
+             "Justo por eso: hay poca luz, y las ventanas grandes dejan entrar la que hay.",
+             ["Justo por eso: hay poca luz, y las ventanas grandes dejan entrar la que hay.",
+              "Para ver la calle.",
+              "No sé, siempre han sido así."],
+             "de tegenintuïtieve reden is de juiste, en die moet je durven uitleggen"),
+        ],
+    },
+    "clave": [
+        "Alle vier de juiste antwoorden hebben dezelfde vorm: verschijnsel plus reden. De foute "
+        "antwoorden zijn niet onwaar, ze zijn onvolledig — dat is het lastigste om te zien.",
+        "«En vez de» is de sleutelchunk van bemiddelen: je vervangt een begrip dat de ander wél "
+        "kent door zijn equivalent.",
+        "Het vierde item is tegenintuïtief: grote ramen ondanks de kou, júist vanwege het weinige "
+        "licht. Wie dat uitlegt, bemiddelt echt tussen twee leefwerelden.",
+    ],
+    "nota": "Draai het om als afsluiter: laat de klas vragen bedenken die Valen over Cartagena "
+            "zou moeten beantwoorden. Bemiddelen gaat twee richtingen uit.",
+}
+
+P2_RETO_02 = {
+    "id": "C6P-U2-RETO-02", "num": 2, "curso": "C6+", "unidad": P2,
+    "seccion": "§1.4", "ancla": "casa_c6p", "soporte": "ppt",
+    "nombre": "Airbnb honesto",
+    "lente": "✍️ creatieve beperking", "forma": "👥 En parejas", "skill": "✍️ Escribir",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Todos los defectos tienen que salir. Y aún así hay que alquilarlo.",
+    "gancho_nl": "Alle gebreken moeten erin. En tóch moet het verhuurd raken.",
+    "consigna_es": "Escribid el anuncio con los seis defectos incluidos y sin mentir.",
+    "consigna_nl": "Schrijf de advertentie met de zes gebreken erin, en zonder te liegen.",
+    "regla": "Alle zes de gebreken staan erin, letterlijk. Je mag ze omkaderen maar niet "
+             "weglaten, en je mag niets verzinnen dat er niet is.",
+    "pasos": [("Leed el piso y sus seis defectos.", "Lees het appartement en zijn zes gebreken."),
+              ("Buscad para cada defecto su lado bueno.",
+               "Zoek bij elk gebrek de goede kant."),
+              ("Escribid el anuncio: ocho frases.", "Schrijf de advertentie: acht zinnen."),
+              ("La clase vota: ¿lo alquilan o no?", "De klas stemt: huren ze het of niet?")],
+    "datos": {
+        "piso": [("dónde", "en el centro, a dos minutos de la plaza"),
+                 ("tamaño", "35 m², una habitación"),
+                 ("precio", "450 € al mes")],
+        "defectos": ["está en un cuarto piso y no hay ascensor",
+                     "la ventana da a un patio interior: hay poca luz",
+                     "el bar de abajo cierra a las dos de la mañana",
+                     "no hay lavadora",
+                     "la cocina está dentro del salón",
+                     "las paredes son muy finas"],
+        "marco": ["Se alquila … en …", "Es pequeño, pero …",
+                  "No tiene …, aunque …", "Está en …, así que …",
+                  "Ideal para quien …", "Lo mejor: …"],
+    },
+    "clave": [
+        "De opdracht traint precies wat het leerplan «functioneel taalgebruik» noemt: dezelfde "
+        "waarheid anders kaderen zonder te liegen. «No hay ascensor» wordt «un cuarto piso sin "
+        "ascensor: subes las escaleras y ya has hecho deporte».",
+        "«Aunque» en «así que» zijn de twee conectoren die het werk doen. Wie er geen enkele "
+        "gebruikt, heeft een lijst geschreven, geen advertentie.",
+        "De stemming aan het eind is de toets: als niemand het zou huren, is het te eerlijk "
+        "geworden; als iedereen het zou huren, is er iets weggemoffeld. Kijk na welk gebrek.",
+    ],
+    "nota": "Vergelijk met een echte advertentie op het scherm. De klas ziet meteen welke "
+            "gebreken daar níet in staan — en dat is het beste gesprek van de les.",
+}
+
+P2_RETO_05 = {
+    "id": "C6P-U2-RETO-05", "num": 5, "curso": "C6+", "unidad": P2,
+    "seccion": "§2.4", "ancla": "hay_estar_c6p", "soporte": "ppt",
+    "nombre": "Reforma con 500 €",
+    "lente": "⚖️ onderhandeling & dilemma", "forma": "👨‍👩‍👧 En grupos", "skill": "🗣️ Hablar",
+    "tiempo": "± 18 min", "dificultad": "★★★",
+    "gancho_es": "Quinientos euros, una habitación fea y cuatro opiniones.",
+    "gancho_nl": "Vijfhonderd euro, een lelijke kamer en vier meningen.",
+    "consigna_es": "Decidid qué compráis y decid exactamente dónde va cada cosa.",
+    "consigna_nl": "Beslis wat jullie kopen en zeg exact waar elk ding komt.",
+    "regla": "Vijfhonderd euro, geen cent meer. En elke aankoop wordt verdedigd met een "
+             "plaatsbepaling: «la estantería, encima del escritorio, porque…». Zonder plaats "
+             "telt het voorstel niet.",
+    "pasos": [("Mirad la habitación y la lista de precios.",
+               "Bekijk de kamer en de prijslijst."),
+              ("Cada uno propone dos cosas, con su sitio.",
+               "Elk stelt twee dingen voor, met hun plaats."),
+              ("Negociad hasta los 500 €.", "Onderhandel tot aan de 500 €."),
+              ("Presentad la habitación nueva a la clase.",
+               "Presenteer de nieuwe kamer aan de klas.")],
+    "datos": {
+        "habitacion": "Doce metros cuadrados. Paredes blancas, una ventana pequeña, "
+                      "una cama y nada más.",
+        "precios": [("una estantería", 60), ("un escritorio", 120), ("una silla de escritorio", 90),
+                    ("una lámpara de pie", 45), ("una alfombra", 55), ("cortinas", 35),
+                    ("pintura para una pared", 40), ("un espejo grande", 70),
+                    ("plantas", 25), ("un armario pequeño", 150),
+                    ("una mesita de noche", 40), ("cuadros o pósters", 20)],
+        "marco": ["Yo pongo …", "Ponemos … encima de … porque …",
+                  "Debajo de la ventana no cabe …",
+                  "Sin … la habitación sigue igual.",
+                  "Nos quedan … euros. ¿Qué hacemos?"],
+    },
+    "clave": [
+        "De kamer is twaalf vierkante meter: de kast van 150 € vreet bijna een derde van het "
+        "budget én de ruimte. Elke groep botst op die keuze.",
+        "De plaatsbepaling is de taalopdracht; het budget is alleen de motor. Toets of elk "
+        "voorstel een voorzetsel bevat.",
+        "De vorm die op de tong ligt («yo pondría») is condicional en hoort niet in dit leerplan. "
+        "Het marco geeft daarom «yo pongo»; «propongo poner» werkt even goed.",
+    ],
+    "nota": "Werk met echte prijzen van een echte winkel als je die bij de hand hebt. Het verschil "
+            "in ernst is meteen hoorbaar.",
+}
+
+P2_RETO_09 = {
+    "id": "C6P-U2-RETO-09", "num": 9, "curso": "C6+", "unidad": P2,
+    "seccion": "§5.4", "ancla": "barrio_c6p", "soporte": "ppt",
+    "nombre": "Tour de 40 segundos",
+    "lente": "📻 mediaformat", "forma": "👤 Solo", "skill": "🗣️ Hablar",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Cuarenta segundos, una sola toma, toda la casa.",
+    "gancho_nl": "Veertig seconden, één take, het hele huis.",
+    "consigna_es": "Haz el recorrido hablando: seis preposiciones y tres gerundios, sin parar.",
+    "consigna_nl": "Doe de rondgang al pratend: zes voorzetsels en drie gerundio's, zonder te stoppen.",
+    "regla": "Eén doorlopende take van veertig seconden. Stoppen mag niet, herbeginnen wel — maar "
+             "dan vanaf nul. Zes verschillende voorzetsels en drie gerundio's.",
+    "pasos": [("Planifica la ruta: de la puerta al último sitio.",
+               "Plan de route: van de deur tot de laatste plek."),
+              ("Escribe las seis preposiciones que vas a usar.",
+               "Schrijf de zes voorzetsels op die je gaat gebruiken."),
+              ("Graba de una vez, sin cortes.", "Neem in één keer op, zonder knippen."),
+              ("¿Cuarenta segundos? ¿Seis y tres? Si no, otra vez.",
+               "Veertig seconden? Zes en drie? Zo niet: opnieuw.")],
+    "datos": {
+        "preposiciones": ["al lado de", "enfrente de", "detrás de", "debajo de",
+                          "encima de", "entre", "al final de", "a la derecha de"],
+        "gerundios": ["entrando", "pasando", "subiendo", "girando", "saliendo", "llegando"],
+        "marco": ["Empezamos aquí, entrando por …",
+                  "A la derecha de … está …",
+                  "Pasando por el pasillo llegamos a …",
+                  "Entre … y … hay …",
+                  "Y al final, saliendo a …, se ve …"],
+    },
+    "clave": [
+        "De combinatie is de moeilijkheid: gerundio's om de beweging te dragen («pasando», "
+        "«subiendo») en voorzetsels om de plaatsen vast te zetten. In één take betekent dat "
+        "vooruit denken terwijl je praat.",
+        "Veertig seconden is bewust krap: het dwingt tot een route in plaats van een opsomming.",
+        "Wie zijn eigen huis niet wil filmen, doet de school, een verzonnen huis of alleen de "
+        "audio. Beoordeeld wordt de taal, niet het beeld.",
+    ],
+    "nota": "Zonder camera werkt het even goed: ogen dicht en de rondgang alleen in woorden. "
+            "Sommige leerlingen leveren dan hun beste Spaans.",
+}
+
+RETOS_C6P_U2 = [P2_RETO_01, P2_RETO_02, P2_RETO_03, P2_RETO_04, P2_RETO_05,
+                P2_RETO_06, P2_RETO_07, P2_RETO_08, P2_RETO_09, P2_RETO_10]
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# C6+ · U3 «Conectados» — parada CDMX, gastheer Diego
+# ═══════════════════════════════════════════════════════════════════════════
+P3 = 3
+
+P3_RETO_01 = {
+    "id": "C6P-U3-RETO-01", "num": 1, "curso": "C6+", "unidad": P3,
+    "seccion": "§3.4", "ancla": "oi_c6p", "soporte": "print",
+    "nombre": "El hilo que se descontrola",
+    "lente": "🕵️ forensisch", "forma": "👥 En parejas", "skill": "👁️ Leer",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Catorce mensajes en el grupo. Y nadie sabe ya quién le contestó a quién.",
+    "gancho_nl": "Veertien berichten in de groep. En niemand weet nog wie aan wie antwoordde.",
+    "consigna_es": "Reconstruye el hilo: quién le dice qué a quién, con le o les.",
+    "consigna_nl": "Reconstrueer de draad: wie zegt wat tegen wie, met le of les.",
+    "regla": "Elke reconstructie gebruikt «le» of «les» — en je moet kunnen aanwijzen waaruit "
+             "blijkt wie de ontvanger is. Eén bericht is aan de héle groep gericht; dat wordt «les».",
+    "pasos": [("Leed los catorce mensajes en orden.", "Lees de veertien berichten op volgorde."),
+              ("Marcad a quién va dirigido cada uno.", "Markeer aan wie elk bericht gericht is."),
+              ("Escribid siete frases con le o les.", "Schrijf zeven zinnen met le of les."),
+              ("¿Dónde empezó el malentendido?", "Waar begon het misverstand?")],
+    "datos": {
+        # (afzender, bericht, aan wie)
+        "hilo": [
+            ("Diego", "Mañana a las seis en la cancha, ¿va?", "todos"),
+            ("Camila", "Yo no puedo antes de las siete.", "Diego"),
+            ("Andrés", "¿A las seis o a las siete? 😅", "todos"),
+            ("Valen", "Yo le dije a Camila que llegábamos tarde.", "Andrés"),
+            ("Diego", "Camila, ¿te va bien a las siete?", "Camila"),
+            ("Camila", "Sí, perfecto.", "Diego"),
+            ("Andrés", "Entonces ¿a las siete?", "todos"),
+            ("Valen", "Yo llevo el balón.", "todos"),
+            ("Diego", "Andrés, tú traes agua.", "Andrés"),
+            ("Andrés", "Vale, pero ¿a qué hora?", "Diego"),
+            ("Camila", "A las siete, ya lo dijimos tres veces 😭", "Andrés"),
+            ("Valen", "Perdón, yo entendí seis.", "todos"),
+            ("Diego", "Les repito: SIETE.", "todos"),
+            ("Andrés", "Ahora sí. Nos vemos.", "todos"),
+        ],
+        "marco": ["Diego les dice a todos que …", "Camila le contesta a … que …",
+                  "Valen le explica a … que …", "Andrés les pregunta … a …",
+                  "El malentendido empieza cuando … le …"],
+    },
+    "clave": [
+        "Zeven berichten zijn aan één persoon gericht (le), zeven aan de groep (les). De tekst "
+        "verraadt het telkens: een naam in de aanhef, of «les repito».",
+        "Het misverstand begint bij bericht 4: Valen antwoordt Andrés over wat zíj tegen Camila "
+        "zei — een derde persoon in een tweede gesprek. Daar loopt de draad vast.",
+        "«Yo le dije a Camila» is de zin die het dubbele gebruik toont: het pronomen «le» stáát er "
+        "al én de ontvanger wordt herhaald met «a Camila». Dat is correct Spaans en verrast bijna "
+        "elke Nederlandstalige.",
+        "Toets de zeven zinnen op le/les én op die verdubbeling. Wie «dije a Camila» schrijft "
+        "zonder «le», heeft de kern gemist.",
+    ],
+    "nota": "Het bericht met het huilende emoji is bewust het enige met gevoel: laat de klas zien "
+            "dat de frustratie in de draad zelf te lezen is.",
+}
+
+P3_RETO_05 = {
+    "id": "C6P-U3-RETO-05", "num": 5, "curso": "C6+", "unidad": P3,
+    "seccion": "§1.4", "ancla": "movil_c6p", "soporte": "print",
+    "nombre": "Mensajes sin emoji",
+    "lente": "✍️ creatieve beperking", "forma": "👤 Solo", "skill": "✍️ Escribir",
+    "tiempo": "± 12 min", "dificultad": "★★☆",
+    "gancho_es": "Quita los emojis y el mensaje ya no significa nada. Escríbelo otra vez.",
+    "gancho_nl": "Haal de emoji weg en het bericht betekent niets meer. Schrijf het opnieuw.",
+    "consigna_es": "Reescribe los cinco mensajes en palabras, sin perder el tono.",
+    "consigna_nl": "Herschrijf de vijf berichten in woorden, zonder de toon te verliezen.",
+    "regla": "Nul emoji, nul hoofdletters om te schreeuwen, nul uitroeptekens-in-rijtjes. Alleen "
+             "woorden — en de ontvanger moet dezelfde toon aanvoelen als in het origineel.",
+    "pasos": [("Lee el mensaje con sus emojis.", "Lees het bericht met zijn emoji's."),
+              ("Di en una palabra qué tono tiene.", "Zeg in één woord welke toon het heeft."),
+              ("Reescríbelo en palabras.", "Herschrijf het in woorden."),
+              ("Compara: ¿se entiende igual?", "Vergelijk: begrijp je het even goed?")],
+    "datos": {
+        # (bericht met emoji, toon, waar het om draait)
+        "mensajes": [
+            ("Vale 🙄", "resignatie met ergernis", "«vale» alleen klinkt neutraal; het oogrollen doet het werk"),
+            ("Sí, claro 😂😂😂", "sarcasme", "zonder emoji lees je het als instemming — precies omgekeerd"),
+            ("¿Vienes? 👀", "nieuwsgierig aandringen", "de ogen maken van een vraag een por-favor"),
+            ("Ya te dije 🤷", "ik geef het op", "de schouderophaal zegt: ik herhaal het niet nog eens"),
+            ("Buenísimo 🔥🔥", "enthousiasme", "de vlammen versterken; zonder hen klinkt het beleefd"),
+        ],
+        "banco": ["la verdad es que…", "no me apetece mucho, pero…", "lo digo en serio",
+                  "te lo digo otra vez, porque…", "me hace mucha ilusión",
+                  "no pasa nada, de verdad", "es broma", "lo digo de broma, ¿eh?"],
+        "marco": ["Tono: …", "En palabras: …", "Lo que se pierde sin emoji es …"],
+    },
+    "clave": [
+        "«Sí, claro 😂😂😂» is de belangrijkste: zonder emoji betekent hij het tegenovergestelde. "
+        "Dat maakt zichtbaar dat toon informatie is, niet versiering.",
+        "De bank bevat «es broma» en «lo digo en serio»: precies de expliciete markeerders die "
+        "het Spaans gebruikt waar wij een emoji zetten.",
+        "Toets of de toon overkomt, niet of de vertaling letterlijk is. Vraag een klasgenoot om "
+        "de toon te benoemen zonder het origineel gezien te hebben — dat is de echte test.",
+    ],
+    "nota": "Sluit aan bij digitale geletterdheid: dezelfde tekst zonder emoji naar een leerkracht "
+            "of een werkgever sturen is een vaardigheid, geen taalspelletje.",
+}
+
+P3_RETO_07 = {
+    "id": "C6P-U3-RETO-07", "num": 7, "curso": "C6+", "unidad": P3,
+    "seccion": "§4.4", "ancla": "acabar_c6p", "soporte": "print",
+    "nombre": "Acabo de… y ahora voy a…",
+    "lente": "🎭 simulatie met beperking", "forma": "👥 En parejas", "skill": "🗣️ Hablar",
+    "tiempo": "± 12 min", "dificultad": "★★☆",
+    "gancho_es": "Doce fotos de medio segundo. ¿Qué acaba de pasar y qué va a pasar?",
+    "gancho_nl": "Twaalf foto's van een halve seconde. Wat is er net gebeurd en wat gaat er gebeuren?",
+    "consigna_es": "Por cada escena: una frase con acabar de y otra con ir a.",
+    "consigna_nl": "Per scène: één zin met acabar de en één met ir a.",
+    "regla": "Altijd twee zinnen, altijd in die volgorde: eerst wat net gebeurd is, dan wat gaat "
+             "komen. En het presente is verboden — die scène zíe je al.",
+    "pasos": [("Mirad la escena.", "Bekijk de scène."),
+              ("Uno dice qué acaba de pasar.", "De ene zegt wat er net gebeurd is."),
+              ("El otro dice qué va a pasar.", "De andere zegt wat er gaat gebeuren."),
+              ("Cambiad de papel en la escena siguiente.",
+               "Wissel van rol bij de volgende scène.")],
+    "datos": {
+        # (scène, wat er net gebeurde, wat er gaat gebeuren)
+        "escenas": [
+            ("Un vaso en el aire, a diez centímetros del suelo.",
+             "se le acaba de caer", "va a romperse"),
+            ("Alguien con la boca abierta delante de una pantalla.",
+             "acaba de leer algo", "va a contárselo a alguien"),
+            ("Una puerta entreabierta y una maleta en el pasillo.",
+             "acaba de llegar", "va a deshacer la maleta"),
+            ("Un móvil con el 1 % de batería.",
+             "acaba de avisar", "se va a apagar"),
+            ("Dos personas de espaldas, una con el brazo levantado.",
+             "acaba de despedirse", "va a irse"),
+            ("Un plato vacío y un tenedor en la mesa.",
+             "acaba de comer", "va a fregar"),
+            ("Una bici en el suelo y una rueda girando todavía.",
+             "acaba de caerse", "va a levantarse"),
+            ("Una pantalla con «Enviado» y un dedo aún en el aire.",
+             "acaba de mandar un mensaje", "va a esperar la respuesta"),
+            ("Un paraguas cerrado y el suelo mojado.",
+             "acaba de dejar de llover", "va a salir sin paraguas"),
+            ("Alguien mirando el reloj en una parada vacía.",
+             "acaba de perder el bus", "va a llegar tarde"),
+            ("Un cuaderno abierto en una página en blanco y un boli en la mano.",
+             "acaba de sentarse", "va a empezar"),
+            ("Dos manos aplaudiendo y una persona de pie delante de la clase.",
+             "acaba de terminar", "va a sentarse"),
+        ],
+        "marco": ["Acaba de … , se nota porque …", "Y ahora va a …",
+                  "Se le acaba de …", "Dentro de un segundo va a …"],
+    },
+    "clave": [
+        "«Se le acaba de caer» is de vorm die iedereen wil vermijden en die je juist moet oefenen: "
+        "het onvrijwillige «se» plus het meewerkend voornaamwoord. Scène 1 en 7 lokken hem uit.",
+        "Scène 9 («acaba de dejar de llover») stapelt twee perifrasen: acabar de plus dejar de. "
+        "Dat is aanzet-B1-niveau en het mooiste wat deze reto kan opleveren.",
+        "Toets de twee zinnen per scène en het verbod op het presente. Wie «hay un vaso en el "
+        "aire» zegt, beschrijft in plaats van te concluderen.",
+    ],
+    "nota": "De twaalf scènes staan in woorden zodat de reto ook werkt zonder beeld; met eigen "
+            "foto's erbij wordt hij sterker, maar hij hoeft ze niet.",
+}
+
+P3_RETO_10 = {
+    "id": "C6P-U3-RETO-10", "num": 10, "curso": "C6+", "unidad": P3,
+    "seccion": "Cultura", "ancla": "cultura_c6p3", "soporte": "print",
+    "nombre": "La notificación falsa",
+    "lente": "🕵️ forensisch", "forma": "👥 En parejas", "skill": "✍️ Escribir",
+    "tiempo": "± 18 min", "dificultad": "★★★",
+    "gancho_es": "Escribid el mensaje que engaña. Y después, el que lo desmonta.",
+    "gancho_nl": "Schrijf het bericht dat misleidt. En daarna het bericht dat het ontmaskert.",
+    "consigna_es": "Escribid los dos mensajes y marcad las cinco señales de alarma.",
+    "consigna_nl": "Schrijf beide berichten en markeer de vijf alarmsignalen.",
+    "regla": "Geen echte merknamen, geen echte links, geen echte telefoonnummers. Het valse "
+             "bericht is een oefenmodel, geen werkend lokaas — en het tweede bericht moet elk "
+             "van de vijf signalen bij naam noemen.",
+    "pasos": [("Leed las cinco señales de alarma.", "Lees de vijf alarmsignalen."),
+              ("Escribid el mensaje falso con las cinco dentro.",
+               "Schrijf het valse bericht met de vijf erin."),
+              ("Intercambiad con otra pareja.", "Wissel met een ander duo."),
+              ("Escribid el mensaje que lo desmonta, señal por señal.",
+               "Schrijf het ontmaskerende bericht, signaal per signaal.")],
+    "datos": {
+        "senales": [("la urgencia", "«tienes veinticuatro horas» — la prisa impide pensar"),
+                    ("el premio inesperado", "nadie regala nada a quien no ha participado"),
+                    ("los datos personales", "ningún banco los pide por mensaje"),
+                    ("la dirección rara", "una letra cambiada en el nombre"),
+                    ("los errores de lengua", "traducción automática, tildes que faltan")],
+        "marco_falso": ["Estimado cliente: …", "Su cuenta va a …",
+                        "Haga clic aquí antes de …", "Necesitamos confirmar …",
+                        "Si no responde, …"],
+        "marco_aviso": ["Ojo con este mensaje: …", "Primero, te pide … , y eso no lo hace nadie.",
+                        "Además, dice … , pero …", "Fíjate en …",
+                        "Lo que hay que hacer es … , y nunca …"],
+    },
+    "clave": [
+        "De vijf signalen zijn precies de vijf die de politie ook noemt: urgentie, onverwachte "
+        "prijs, gegevensvraag, vreemd adres, taalfouten. De reto is dus echte digitale "
+        "geletterdheid, in het Spaans.",
+        "Het valse bericht gebruikt vanzelf usted-vormen en de imperativo («haga clic»); het "
+        "waarschuwende bericht staat in tú. Dat registercontrast is de grammaticale winst.",
+        "Toets het tweede bericht: alle vijf de signalen bij naam. Het eerste bericht is alleen "
+        "het materiaal.",
+        "Laat geen echte merknamen of links toe, ook niet als grap. Een oefenmodel dat buiten de "
+        "klas belandt, is geen oefenmodel meer.",
+    ],
+    "nota": "Werkt goed samen met de mediawijsheidsles: dezelfde inhoud, maar in het Spaans "
+            "geformuleerd, blijft aantoonbaar beter hangen.",
+}
+
+P3_RETO_04 = {
+    "id": "C6P-U3-RETO-04", "num": 4, "curso": "C6+", "unidad": P3,
+    "seccion": "§1.4", "ancla": "movil_c6p", "soporte": "hub",
+    "nombre": "Tiempo de pantalla real",
+    "lente": "🔬 onderzoek & data", "forma": "🏫 Toda la clase", "skill": "✍️ Escribir",
+    "tiempo": "± 15 min", "dificultad": "★★☆",
+    "gancho_es": "Tu móvil ya lo sabe. Ahora lo sabe la clase — pero sin nombres.",
+    "gancho_nl": "Je gsm weet het al. Nu weet de klas het ook — maar zonder namen.",
+    "consigna_es": "Elige qué conclusión se puede sacar de verdad de cada dato.",
+    "consigna_nl": "Kies welke conclusie je echt uit elk cijfer kunt trekken.",
+    "regla": "Alles anoniem. En je conclusie mag niet verder gaan dan het cijfer: uit een "
+             "gemiddelde volgt geen uitspraak over één persoon.",
+    "pasos": [("Cada uno mira su tiempo de pantalla y lo apunta en anónimo.",
+               "Iedereen bekijkt zijn schermtijd en noteert die anoniem."),
+              ("La clase hace el gráfico.", "De klas maakt de grafiek."),
+              ("Elegid qué se puede concluir y qué no.",
+               "Kies wat je wél en niet kunt concluderen.")],
+    "datos": {
+        "items": [
+            ("La media de la clase es de 5 horas al día.",
+             "La mitad de la clase pasa más de cinco horas y la otra mitad menos… o no.",
+             ["La mitad de la clase pasa más de cinco horas y la otra mitad menos… o no.",
+              "Todos pasan cinco horas al día.",
+              "Nadie pasa más de cinco horas."],
+             "een gemiddelde zegt niets over de verdeling — dat is de valstrik van elk gemiddelde"),
+            ("El día con más uso es el domingo.",
+             "El domingo se usa más el móvil que los otros días.",
+             ["El domingo se usa más el móvil que los otros días.",
+              "El domingo la gente está más aburrida.",
+              "El domingo nadie estudia."],
+             "de reden staat niet in de data; de conclusie mag niet verder gaan dan het cijfer"),
+            ("Tres personas pasan más de ocho horas.",
+             "Hay tres casos muy por encima de la media.",
+             ["Hay tres casos muy por encima de la media.",
+              "Tres personas son adictas.",
+              "La mayoría pasa ocho horas."],
+             "«adicto» is een diagnose, geen conclusie uit een cijfer"),
+            ("El 70 % dice que quiere bajar su tiempo de pantalla.",
+             "La mayoría no está contenta con su tiempo de pantalla.",
+             ["La mayoría no está contenta con su tiempo de pantalla.",
+              "El 70 % va a bajar su tiempo de pantalla.",
+              "El 30 % pasa poco tiempo."],
+             "willen is niet gaan doen, en de andere 30 % zegt alleen dat ze niet willen minderen"),
+        ],
+    },
+    "clave": [
+        "De vier foute antwoorden zijn elk een ander type denkfout: het gemiddelde als norm, de "
+        "reden verzinnen, een diagnose stellen, en intentie met gedrag verwarren.",
+        "Het eerste item is het belangrijkste en het minst intuïtieve: uit een gemiddelde van vijf "
+        "uur volgt niet dat de helft erboven zit. Laat de klas een tegenvoorbeeld bedenken.",
+        "Toets de vier keuzes plus één eigen conclusie uit de echte klasgrafiek. Die laatste is "
+        "waar de taal en het denken samenkomen.",
+        "Houd het anoniem en vergelijk niemand. Wie zijn cijfer niet wil delen, doet niet mee aan "
+        "de meting maar wel aan de conclusies.",
+    ],
+    "nota": "De grafiek van de eigen klas is altijd interessanter dan een cijfer uit een krant — "
+            "en het is meteen een echte reden om Spaans te schrijven.",
+}
+
+P3_RETO_08 = {
+    "id": "C6P-U3-RETO-08", "num": 8, "curso": "C6+", "unidad": P3,
+    "seccion": "§4.4", "ancla": "acabar_c6p", "soporte": "hub",
+    "nombre": "El podcast de dos opiniones",
+    "lente": "📻 mediaformat", "forma": "👥 En parejas", "skill": "🗣️ Hablar",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Dos minutos, dos opiniones opuestas, y ni una sola voz alta.",
+    "gancho_nl": "Twee minuten, twee tegengestelde meningen, en geen enkele verheven stem.",
+    "consigna_es": "Grabad el debate sobre los móviles en clase. En desacuerdo, pero sin pelear.",
+    "consigna_nl": "Neem het debat op over gsm's in de klas. Oneens, maar zonder ruzie.",
+    "regla": "Je bent het écht oneens, en je onderbreekt nooit. Elke beurt begint met wat de "
+             "ander gezegd heeft («entiendo que…», «tienes razón en que…») vóór je je eigen punt "
+             "maakt.",
+    "pasos": [("Repartid las posturas: a favor y en contra.",
+               "Verdeel de standpunten: voor en tegen."),
+              ("Cada uno escribe tres argumentos.", "Elk schrijft drie argumenten."),
+              ("Grabad dos minutos, por turnos, sin interrumpir.",
+               "Neem twee minuten op, om beurten, zonder onderbreken."),
+              ("Escuchad: ¿se oye que os escucháis?",
+               "Luister terug: hoor je dat jullie naar elkaar luisteren?")],
+    "datos": {
+        "posturas": [("a favor de los móviles en clase",
+                      "sirven para buscar, traducir, grabar y organizarse"),
+                     ("en contra",
+                      "distraen, y el trabajo de grupo funciona peor con pantallas")],
+        "marco": ["Entiendo que … , pero yo creo que …",
+                  "Tienes razón en que … , aunque …",
+                  "A mí me parece que … porque …",
+                  "¿Y qué haces cuando …?",
+                  "En eso estamos de acuerdo: …"],
+        "prohibido": ["interrumpir", "subir la voz", "«eso es una tontería»",
+                      "hablar más de treinta segundos seguidos"],
+    },
+    "clave": [
+        "«Creo que» plus indicativo is precies wat deze unit aanbrengt en wat het leerplan "
+        "toelaat: meningen zónder subjuntivo. Elke beurt levert er een.",
+        "De verplichte opening («entiendo que…») is de bemiddelingsvaardigheid uit het leerplan: "
+        "je moet de ander eerst correct samenvatten. Dat is moeilijker dan tegenspreken.",
+        "De regel «geen beurt langer dan dertig seconden» dwingt vier beurten in twee minuten — "
+        "dus echt gesprek in plaats van twee monologen.",
+        "Toets de beurtwisseling en de openingszinnen, niet wie gelijk heeft.",
+    ],
+    "nota": "Laat de klas naar twee opnames luisteren en raden wie welk standpunt echt aanhangt. "
+            "Meestal is dat niet te horen — en dat is precies het compliment.",
+}
+
+P3_RETO_09 = {
+    "id": "C6P-U3-RETO-09", "num": 9, "curso": "C6+", "unidad": P3,
+    "seccion": "§1.4", "ancla": "movil_c6p", "soporte": "hub",
+    "nombre": "Términos que no se traducen",
+    "lente": "🤝 bemiddelen", "forma": "👨‍👩‍👧 En grupos", "skill": "🔀 Bemiddelen",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "«Scrollear» existe. «Ghostear» también. Pero ¿es eso español?",
+    "gancho_nl": "«Scrollear» bestaat. «Ghostear» ook. Maar is dat Spaans?",
+    "consigna_es": "Elige el equivalente español que de verdad funciona.",
+    "consigna_nl": "Kies het Spaanse equivalent dat echt werkt.",
+    "regla": "Een equivalent telt alleen als een Spaanstalige het zou begrijpen zonder het "
+             "Engelse woord te kennen. Mooi bedacht maar onbegrijpelijk is fout.",
+    "pasos": [("Leed el término y lo que significa de verdad.",
+               "Lees de term en wat hij echt betekent."),
+              ("Elegid el equivalente que funciona.", "Kies het equivalent dat werkt."),
+              ("Y decid por qué los otros no.", "En zeg waarom de andere niet werken.")],
+    "datos": {
+        "items": [
+            ("scrollear — bajar por una pantalla sin buscar nada concreto",
+             "deslizar (la pantalla)",
+             ["deslizar (la pantalla)", "rodar", "bajar la computadora"],
+             "«deslizar» bestaat al en wordt in heel LatAm zo gebruikt"),
+            ("ghostear — dejar de contestar a alguien sin decir nada",
+             "dejar en visto",
+             ["dejar en visto", "hacer el fantasma", "desaparecer la persona"],
+             "«dejar en visto» is de bestaande Spaanse uitdrukking en iedereen snapt hem"),
+            ("postear — publicar algo en una red",
+             "publicar",
+             ["publicar", "postar", "poner un post"],
+             "het gewone woord bestaat gewoon al; een leenwoord is hier niet nodig"),
+            ("stalkear — mirar el perfil de alguien una y otra vez",
+             "cotillear el perfil",
+             ["cotillear el perfil", "acechar", "vigilar a alguien"],
+             "«acechar» en «vigilar» klinken dreigend; «cotillear» treft de toon"),
+            ("spoilear — contar el final de algo",
+             "hacer un spoiler / destripar",
+             ["hacer un spoiler / destripar", "arruinar", "contar el fin"],
+             "«destripar» is het Spaanse woord dat er echt voor bestaat, naast het leenwoord"),
+        ],
+    },
+    "clave": [
+        "Twee van de vijf hebben een volwaardig Spaans woord dat al bestond («publicar», "
+        "«destripar»); drie hebben een uitdrukking in plaats van een woord («dejar en visto»). "
+        "Dat onderscheid is de eigenlijke ontdekking.",
+        "«Acechar» tegenover «cotillear» is een register- en toonverschil, geen betekenisverschil. "
+        "Precies daar is bemiddelen moeilijker dan vertalen.",
+        "Er is geen academisch juist antwoord: talen lenen en dat is normaal. Toets de "
+        "verantwoording, niet het woord.",
+        "Sluit af met de omgekeerde vraag: welke Nederlandse woorden lenen wíj uit het Engels, en "
+        "waarom stoort dat niemand?",
+    ],
+    "nota": "De Real Academia neemt sommige van deze woorden inmiddels op. Als een leerling dat "
+            "aanhaalt: gelijk geven — een levende taal beslist door gebruik.",
+}
+
+P3_RETO_02 = {
+    "id": "C6P-U3-RETO-02", "num": 2, "curso": "C6+", "unidad": P3,
+    "seccion": "§2.4", "ancla": "ir_a_c6p", "soporte": "ppt",
+    "nombre": "Detox de 24 horas",
+    "lente": "⚖️ onderhandeling & dilemma", "forma": "👨‍👩‍👧 En grupos", "skill": "🗣️ Hablar",
+    "tiempo": "± 18 min", "dificultad": "★★★",
+    "gancho_es": "Un día entero sin pantalla. Planificadlo hora por hora — y defendedlo.",
+    "gancho_nl": "Een hele dag zonder scherm. Plan hem uur per uur — en verdedig hem.",
+    "consigna_es": "Presentad el plan con voy a / vamos a y responded a los escépticos.",
+    "consigna_nl": "Presenteer het plan met voy a / vamos a en antwoord de sceptici.",
+    "regla": "Elk blok van de dag krijgt een «vamos a»-zin met een concrete activiteit. En je "
+             "moet drie tegenwerpingen weerleggen — het plan telt pas als het de test doorstaat.",
+    "pasos": [("Repartid el día en cinco bloques.", "Verdeel de dag in vijf blokken."),
+              ("Cada bloque, una frase con vamos a.", "Elk blok één zin met vamos a."),
+              ("Los escépticos ponen tres pegas.", "De sceptici werpen drie bezwaren op."),
+              ("Contestad. El plan gana o pierde.", "Antwoord. Het plan wint of verliest."),
+              ("La clase vota: ¿lo hacen o no?", "De klas stemt: doen ze het of niet?")],
+    "datos": {
+        "bloques": [("la mañana", "de 8:00 a 12:00"), ("la comida", "de 12:00 a 14:00"),
+                    ("la tarde", "de 14:00 a 18:00"), ("la cena", "de 18:00 a 21:00"),
+                    ("la noche", "de 21:00 a 23:00")],
+        "pegas": ["¿Y si alguien tiene que avisar de algo urgente?",
+                  "¿Cómo vais a quedar sin móvil?",
+                  "¿Y el despertador?",
+                  "¿Qué hacéis cuando os aburráis a las cuatro de la tarde?",
+                  "¿Y si el plan no funciona a los veinte minutos?"],
+        "marco": ["Por la mañana vamos a …", "Después de comer vamos a …",
+                  "Para eso vamos a …, así no hace falta el móvil.",
+                  "Tienes razón, por eso vamos a …",
+                  "Si no funciona, vamos a …"],
+    },
+    "clave": [
+        "«Vamos a» plus infinitief is de hele grammatica van §2, en de bezwaren dwingen tot "
+        "hérgebruik: elk antwoord op een pega is opnieuw een «vamos a»-zin.",
+        "De wekkervraag is de leukste: bijna niemand heeft nog een wekker die geen telefoon is. "
+        "Daar wordt het plan concreet in plaats van principieel.",
+        "De laatste pega («¿y si el plan no funciona?») is de belangrijkste: hij dwingt tot een "
+        "si-zin met presente plus «vamos a» — de conditionele constructie die in dit leerplan mag.",
+        "Toets de vijf blokken en de drie weerleggingen. Of de klas het écht zou doen, is bijzaak.",
+    ],
+    "nota": "Als een groep het daadwerkelijk uitprobeert, laat ze er de week erna over vertellen. "
+            "Dan wordt de reto opeens een echte tarea.",
+}
+
+P3_RETO_03 = {
+    "id": "C6P-U3-RETO-03", "num": 3, "curso": "C6+", "unidad": P3,
+    "seccion": "Cultura", "ancla": "cultura_c6p3", "soporte": "ppt",
+    "nombre": "El algoritmo explicado",
+    "lente": "🤝 bemiddelen", "forma": "👥 En parejas", "skill": "🔀 Bemiddelen",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Explícale a tu abuela por qué el móvil «sabe» lo que le gusta. Sin palabras en inglés.",
+    "gancho_nl": "Leg je grootmoeder uit waarom de gsm «weet» wat ze leuk vindt. Zonder Engelse woorden.",
+    "consigna_es": "Explicad el algoritmo en cinco frases, en español sencillo y sin anglicismos.",
+    "consigna_nl": "Leg het algoritme uit in vijf zinnen, in eenvoudig Spaans en zonder anglicismen.",
+    "regla": "Geen enkel Engels woord — geen algorithm, geen feed, geen like, geen data. En geen "
+             "enkele zin langer dan twaalf woorden. Wat je niet kunt uitleggen, heb je niet begrepen.",
+    "pasos": [("Escribid qué hace un algoritmo, en una frase.",
+               "Schrijf in één zin wat een algoritme doet."),
+              ("Buscad una palabra española para cada anglicismo.",
+               "Zoek een Spaans woord voor elk Engels woord."),
+              ("Explicadlo en cinco frases cortas.", "Leg het uit in vijf korte zinnen."),
+              ("Probadlo con alguien que no sepa nada.",
+               "Test het op iemand die er niets van weet.")],
+    "datos": {
+        "prohibidas": [("algoritmo", "es una palabra española, pero hay que explicarla igual"),
+                       ("feed", "→ lo que te sale / lo que ves"),
+                       ("like", "→ me gusta"),
+                       ("data / datos personales", "→ lo que el móvil sabe de ti"),
+                       ("engagement", "→ el tiempo que te quedas mirando"),
+                       ("recomendación personalizada", "→ lo que te enseña a ti y no a otro")],
+        "pasos_explicacion": [("1", "El móvil apunta lo que miras y cuánto tiempo."),
+                              ("2", "Lo compara con lo que miran otras personas parecidas."),
+                              ("3", "Te enseña más de lo que te hace quedarte."),
+                              ("4", "Por eso a ti y a mí no nos sale lo mismo."),
+                              ("5", "Y por eso a veces parece que te lee la mente.")],
+        "marco": ["Es como si … , pero con …", "No es magia: es que …",
+                  "Cuanto más …, más …", "A ti te sale … y a mí …"],
+    },
+    "clave": [
+        "De vijf stappen in de data zijn samen een correcte, volledige uitleg zonder één Engels "
+        "woord. Toon ze pas ná de eerste poging — de klas komt er zelf verrassend dicht bij.",
+        "«Cuanto más…, más…» is de constructie die de terugkoppeling uitdrukt en die op aanzet-B1 "
+        "hoort. Wie hem gebruikt, heeft het mechanisme echt begrepen.",
+        "«No es magia: es que…» is de sleutelzin van bemiddelen: eerst het misverstand wegnemen, "
+        "dan uitleggen.",
+        "Toets op begrijpelijkheid voor de gedachte grootmoeder, niet op technische juistheid. "
+        "Een uitleg die klopt maar niet aankomt, is hier fout.",
+    ],
+    "nota": "Laat het echt testen op iemand buiten de klas, in het Nederlands of het Spaans. De "
+            "vraag «snapte die persoon het?» is de eerlijkste beoordeling die er is.",
+}
+
+P3_RETO_06 = {
+    "id": "C6P-U3-RETO-06", "num": 6, "curso": "C6+", "unidad": P3,
+    "seccion": "§3.4", "ancla": "oi_c6p", "soporte": "ppt",
+    "nombre": "La cadena de favores",
+    "lente": "🔓 puzzel & escape", "forma": "🏫 Toda la clase", "skill": "🗣️ Hablar",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Un favor recorre la clase entera. Y tiene que volver.",
+    "gancho_nl": "Eén gunst gaat de hele klas rond. En hij moet terugkomen.",
+    "consigna_es": "Pasa el favor con le y devuélvelo con les. Sin romper la cadena.",
+    "consigna_nl": "Geef de gunst door met le en stuur hem terug met les. Zonder de ketting te breken.",
+    "regla": "Heen gaat het altijd via «le» (aan één persoon), terug altijd via «les» (aan de "
+             "groep). Wie de verkeerde vorm gebruikt, breekt de ketting en die begint opnieuw "
+             "bij hem.",
+    "pasos": [("En círculo. El primero pide un favor a su vecino.",
+               "In een kring. De eerste vraagt zijn buur een gunst."),
+              ("«Le pido a … que …» y pasa.", "«Le pido a … que …» en doorgeven."),
+              ("Al llegar al final, vuelve: «Les digo a todos que …».",
+               "Aan het eind keert het terug: «Les digo a todos que …»."),
+              ("¿Ha llegado el favor entero? Contadlo.",
+               "Is de gunst heel aangekomen? Vertel na.")],
+    "datos": {
+        "favores": ["prestar los apuntes de ayer", "explicar el ejercicio 4",
+                    "cambiar el turno del viernes", "traer el cargador mañana",
+                    "guardar un sitio en el comedor", "avisar cuando llegue el profe",
+                    "compartir la foto del examen de prueba", "acompañar a secretaría"],
+        "marco_ida": ["Le pido a … que me …", "Le digo a … que …",
+                      "Le pregunto a … si puede …"],
+        "marco_vuelta": ["Les digo a todos que …", "Les explico que …",
+                         "Les cuento lo que ha pasado con el favor."],
+        "trampa": "Si el favor va a dos personas, ya no es «le» sino «les». "
+                  "Eso pasa al menos una vez por ronda.",
+    },
+    "clave": [
+        "Het onderscheid le/les hangt niet aan het werkwoord maar aan het aantal ontvangers. De "
+        "kettingvorm maakt dat fysiek zichtbaar: één buur is «le», de hele kring is «les».",
+        "De trampa («als de gunst naar twee mensen gaat») komt elke ronde minstens één keer voor. "
+        "Laat de kring die zelf betrappen in plaats van hem aan te wijzen.",
+        "«Le pido que me preste» lokt de subjuntivo uit («preste»). Die hoort niet in dit "
+        "leerplan: laat de kortere vorm toe, «le pido los apuntes», en stuur weg van «que».",
+        "Toets of de ketting rondkomt. Twee volledige rondes is beter dan één foutloze — de "
+        "tweede loopt altijd sneller.",
+    ],
+    "nota": "Een echt voorwerp dat rondgaat (een sleutel, een bal) helpt enorm: wie het vasthoudt, "
+            "praat. De rest luistert, en dat is de helft van de oefening.",
+}
+
+RETOS_C6P_U3 = [P3_RETO_01, P3_RETO_02, P3_RETO_03, P3_RETO_04, P3_RETO_05,
+                P3_RETO_06, P3_RETO_07, P3_RETO_08, P3_RETO_09, P3_RETO_10]
+
+
 RETOS = (RETOS_U0 + RETOS_U1 + RETOS_U2 + RETOS_U3 + RETOS_U4
          + RETOS_U5 + RETOS_U6 + RETOS_U7 + RETOS_U8
-         + RETOS_C6P_U0 + RETOS_C6P_U1)
+         + RETOS_C6P_U0 + RETOS_C6P_U1 + RETOS_C6P_U2
+         + RETOS_C6P_U3)
 
 # Waar in de printcursus elke sectie eindigt — hier wordt een print-reto ingevoegd.
 ANCLAS = ["alfabeto", "sonidos", "sonido_letra", "acento", "numeros", "saludos", "cultura",
@@ -5038,7 +6038,12 @@ ANCLAS = ["alfabeto", "sonidos", "sonido_letra", "acento", "numeros", "saludos",
           # C6+ U0
           "saludos_c6p", "presente_c6p", "genero", "paises", "cultura_c6p0",
           # C6+ U1
-          "hora_c6p", "rutina_c6p", "reflexivos", "ser_estar_c6p", "cultura_c6p1"]
+          "hora_c6p", "rutina_c6p", "reflexivos", "ser_estar_c6p", "cultura_c6p1",
+          # C6+ U2
+          "casa_c6p", "hay_estar_c6p", "gerundio_c6p", "pronombres_c6p2",
+          "barrio_c6p", "cultura_c6p2",
+          # C6+ U3
+          "movil_c6p", "ir_a_c6p", "oi_c6p", "acabar_c6p", "cultura_c6p3"]
 
 
 def de(curso, unidad):

@@ -281,6 +281,34 @@ def tarjetas_de(r):
     if i == "C6P-U1-RETO-07":
         return ([(quien, rut, None) for quien, rut in d["rutinas"]]
                 + [("marco", m, None) for m in d["marco"]])
+    if i == "C6P-U2-RETO-02":
+        return ([(k, v, None) for k, v in d["piso"]]
+                + [("defecto", x, None) for x in d["defectos"]]
+                + [("marco", m, None) for m in d["marco"]])
+    if i == "C6P-U2-RETO-05":
+        pr = ["%s (%d €)" % (x, c) for x, c in d["precios"]]
+        return ([("La habitación", d["habitacion"], None)]
+                + [("Precios", " · ".join(pr[k:k + 3]), None) for k in range(0, len(pr), 3)]
+                + [("marco", m, None) for m in d["marco"]])
+    if i == "C6P-U2-RETO-09":
+        pre, ger = d["preposiciones"], d["gerundios"]
+        return ([("Preposiciones", " · ".join(pre[k:k + 4]), None) for k in range(0, len(pre), 4)]
+                + [("Gerundios", " · ".join(ger[k:k + 3]), None) for k in range(0, len(ger), 3)]
+                + [("marco", m, None) for m in d["marco"]])
+    if i == "C6P-U3-RETO-02":
+        return ([(b, h, None) for b, h in d["bloques"]]
+                + [("La pega", p, None) for p in d["pegas"]]
+                + [("marco", m, None) for m in d["marco"]])
+    if i == "C6P-U3-RETO-03":
+        return ([("PROHIBIDA", "%s — %s" % (w, alt), None) for w, alt in d["prohibidas"]]
+                + [("paso %s" % n, t, None) for n, t in d["pasos_explicacion"]]
+                + [("marco", m, None) for m in d["marco"]])
+    if i == "C6P-U3-RETO-06":
+        fav = d["favores"]
+        return ([("Favores", " · ".join(fav[k:k + 2]), None) for k in range(0, len(fav), 2)]
+                + [("ida · le", m, None) for m in d["marco_ida"]]
+                + [("vuelta · les", m, None) for m in d["marco_vuelta"]]
+                + [("La trampa", d["trampa"], None)])
     if i == "C5-U1-RETO-09":
         return ([("Tu perfil", m, None) for m in d["marco_perfil"]]
                 + [("El algoritmo", m, None) for m in d["marco_algoritmo"]]

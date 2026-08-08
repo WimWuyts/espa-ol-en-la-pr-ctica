@@ -327,6 +327,34 @@ def retos_js(host_id, curso, unidad):
             base["tipo"] = "opciones"
             base["items"] = [{"enunciado": sit, "correcta": c, "opciones": o, "porque": p}
                              for sit, c, o, p in d["items"]]
+        elif r["id"] == "C6P-U2-RETO-03":
+            base["tipo"] = "grabar"
+            base["situaciones"] = [{"es": m, "nl": "", "pista": ""} for m in d["marco"]]
+            base["items"] = [{"text": "La videollamada",
+                              "cue": "vijf zinnen met estar + gerundio · pas op het einde één "
+                                     "hypothese met «creo que»"}]
+        elif r["id"] == "C6P-U2-RETO-07":
+            base["tipo"] = "opciones"
+            base["items"] = [{"enunciado": ruido, "correcta": c, "opciones": o, "audio": True,
+                              "porque": p} for ruido, c, o, p in d["items"]]
+        elif r["id"] == "C6P-U2-RETO-08":
+            base["tipo"] = "opciones"
+            base["items"] = [{"enunciado": q, "correcta": c, "opciones": o, "porque": p}
+                             for q, c, o, p in d["items"]]
+        elif r["id"] == "C6P-U3-RETO-04":
+            base["tipo"] = "opciones"
+            base["items"] = [{"enunciado": dato, "correcta": c, "opciones": o, "porque": p}
+                             for dato, c, o, p in d["items"]]
+        elif r["id"] == "C6P-U3-RETO-08":
+            base["tipo"] = "grabar"
+            base["situaciones"] = [{"es": m, "nl": "", "pista": ""} for m in d["marco"]]
+            base["items"] = [{"text": "El podcast de dos opiniones",
+                              "cue": "twee minuten · nooit onderbreken · elke beurt begint met "
+                                     "wat de ander zei"}]
+        elif r["id"] == "C6P-U3-RETO-09":
+            base["tipo"] = "opciones"
+            base["items"] = [{"enunciado": term, "correcta": c, "opciones": o, "porque": p}
+                             for term, c, o, p in d["items"]]
         else:
             continue
         salida.append(base)

@@ -345,6 +345,11 @@ __TYPESLOTS__
     <div id="motorlink"></div>
   </section>
 
+  <section class="panel" data-p="retos">
+    <h2 class="sec">Retos · tres desafíos 🎯</h2>
+    <p class="lead">Drie retos met <b>één harde regel</b>: je kijkt wat je écht uit een schermtijdcijfer mag concluderen (en wat niet), je neemt een podcast van twee minuten op waarin je het oneens bent <b>zonder te onderbreken</b>, en je zoekt Spaanse equivalenten voor <i>scrollear</i>, <i>ghostear</i> en <i>stalkear</i> die een Spaanstalige ook zonder Engels begrijpt. <span class="gloss">De zeven andere retos van deze unit staan in het boek en in de PowerPoint.</span></p>
+    <div id="retos_c6p_u3"></div>
+  </section>
   <section class="panel" data-p="hablar">
     <h2 class="sec">Hablar · grábate 🎙️</h2>
     <p class="lead">Neem <b>jezelf</b> op: luister naar het model, spreek in, luister terug, en neem opnieuw op. <span class="gloss">Werkt in Chrome/Edge; sta de micro toe. Print blijft bruikbaar zonder opname.</span></p>
@@ -392,10 +397,10 @@ __JS__
 
 JS = r"""
 function toggleTheme(){const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'}
-""" + hub_drills.SPEAK_JS + r"""
+""" + hub_drills.SPEAK_JS + hub_drills.RETOS_JS + r"""
 const TTS=('speechSynthesis'in window);
 if(TTS){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}
-const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
+const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['retos','Retos 🎯'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
 const sn=document.getElementById('subnav');
 // ── tabbladen · het adres volgt mee ──────────────────────────────────────────
 // #escuchar opent dat tabblad; #lec_1 opent het paneel waar dat element in
@@ -755,6 +760,7 @@ window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');
 # Getypte woordenschat-drills (fase ophalen + produceren) in het paneel zelf.
 JS += hub_type_sets.vocab_type_js(vocab)
 JS += hub_type_gram.js('C6+', 3)
+JS += hub_bloques.retos_js('retos_c6p_u3', 'C6+', 3)
 JS += (hub_bloques.escucha_js("esc_c6p_u3", escucha_data.C6P_U3)
        + hub_bloques.lectura_js("lec_c6p_u3", lectura_data.C6P_U3))
 HTML = HTML.replace("__GRAMSLOTS__", hub_type_gram.slots('C6+', 3))

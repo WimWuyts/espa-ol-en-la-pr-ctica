@@ -405,6 +405,11 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
     <div id="motorlink"></div>
   </section>
 
+  <section class="panel" data-p="retos">
+    <h2 class="sec">Retos · tres desafíos 🎯</h2>
+    <p class="lead">Drie retos met <b>één harde regel</b>: je beschrijft een videogesprek waarin je de kamer ziet maar de persoon niet (vijf keer <i>estar + gerundio</i>, en pas op het einde één hypothese), je plaatst zes geluiden in een gebouw van vijf verdiepingen, en je legt aan Valen uit waarom Vlaamse huizen smal zijn — <b>uitleggen, niet vertalen</b>. <span class="gloss">De zeven andere retos van deze unit staan in het boek en in de PowerPoint.</span></p>
+    <div id="retos_c6p_u2"></div>
+  </section>
   <section class="panel" data-p="hablar">
     <h2 class="sec">Hablar · grábate 🎙️</h2>
     <p class="lead">Neem <b>jezelf</b> op: luister naar het model, spreek in, luister terug, en neem opnieuw op. <span class="gloss">Werkt in Chrome/Edge; sta de micro toe. Print blijft bruikbaar zonder opname.</span></p>
@@ -539,9 +544,291 @@ const GAMES={"casa-memoria": "PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9Im5sIj4KPGhlYW
 function toggleTheme(){const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'}
 function speak(t,rate){if(!('speechSynthesis'in window))return;const u=new SpeechSynthesisUtterance(t);u.lang='es-ES';u.rate=rate||.92;
   const vs=speechSynthesis.getVoices();const es=vs.find(v=>/^es/i.test(v.lang));if(es)u.voice=es;try{speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}
+function buildRetos(id,cfg){
+ const host=document.getElementById(id);if(!host)return;
+ host.innerHTML='<div class="retos"></div>';
+ const lista=host.querySelector('.retos');
+ (cfg.retos||[]).forEach((r,n)=>{
+  const c=document.createElement('div');c.className='reto';
+  c.innerHTML='<div class="rcab"><span class="rnum">'+r.num+'</span><h3>'+exEsc(r.nombre)+'</h3>'+
+    '<span class="rlente">'+exEsc(r.lente)+'</span></div>'+
+    '<p class="rgancho"><b>'+exEsc(r.gancho_es)+'</b></p>'+
+    '<p class="rnl">'+exEsc(r.gancho_nl)+'</p>'+
+    '<p class="desc">'+exEsc(r.consigna_nl)+'</p>'+
+    '<div class="rregla"><b>La regla del reto</b>'+exEsc(r.regla)+'</div>'+
+    '<div class="rcuerpo" id="'+id+'_c'+n+'"></div>';
+  lista.appendChild(c);
+  const cuerpo=c.querySelector('.rcuerpo');
+  if(r.tipo==='grabar')retoGrabar(cuerpo,r,id+'_c'+n);
+  else if(r.tipo==='detector')retoDetector(cuerpo,r);
+  else if(r.tipo==='mapa')retoMapa(cuerpo,r);
+  else if(r.tipo==='articulo')retoArticulo(cuerpo,r);
+  else if(r.tipo==='escena')retoEscena(cuerpo,r);
+  else if(r.tipo==='retrato')retoRetrato(cuerpo,r);
+  else if(r.tipo==='voces')retoVoces(cuerpo,r);
+  else if(r.tipo==='opciones')retoOpciones(cuerpo,r);
+ });
+}
+
+function retoGrabar(cont,r,idBase){
+ (r.situaciones||[]).forEach(s=>{
+   const d=document.createElement('div');d.className='rsit';
+   d.innerHTML='<b>'+exEsc(s.es)+'</b><span class="rpista">'+exEsc(s.nl)+
+     (s.pista?' · <i>'+exEsc(s.pista)+'</i>':'')+'</span>';
+   cont.appendChild(d);});
+ const rec=document.createElement('div');rec.id=idBase+'_rec';cont.appendChild(rec);
+ if(typeof makeRecorder==='function')
+   makeRecorder(idBase+'_rec',{title:r.nombre,desc:r.consigna_es,
+     items:(r.items||[]).map(t=>({text:t.text,cue:t.cue}))});
+}
+
+function retoDetector(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ const reglas=r.reglas||[];
+ (r.items||[]).forEach((it,i)=>{
+   const d=document.createElement('div');d.className='detit';
+   const opts=reglas.map((g,k)=>'<option value="'+k+'">'+exEsc(g)+'</option>').join('');
+   d.innerHTML='<div class="dpal">'+exEsc(it.palabra)+'</div>'+
+     '<div class="detbtns"><button class="detbtn" type="button" data-v="1">✓ posible</button>'+
+     '<button class="detbtn" type="button" data-v="0">✗ imposible</button></div>'+
+     '<div class="detrule" hidden><label class="desc">¿Qué regla rompe?</label>'+
+     '<select><option value="-1">— elige la regla —</option>'+opts+'</select></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const fb=d.querySelector('.detfb'),rule=d.querySelector('.detrule'),sel=d.querySelector('select');
+   let cerrado=false;
+   d.querySelectorAll('.detbtn').forEach(b=>{b.onclick=()=>{
+     if(cerrado)return;
+     const dicho=b.dataset.v==='1';
+     if(!dicho){rule.hidden=false;sel.focus();
+       fb.className='detfb show';fb.textContent='Ahora acusa con pruebas: ¿qué regla rompe?';
+       cerrado=false;
+       sel.onchange=()=>{cerrado=true;
+         const bien=(!it.posible)&&(Number(sel.value)===it.regla);
+         d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);sel.disabled=true;
+         b.classList.add(bien?'ok':'no');
+         fb.className='detfb show '+(bien?'g':'b');
+         fb.innerHTML=bien?'<b>✓ acusación correcta</b> · '+exEsc(it.porque)
+           :(it.posible?'<b>✗ esta palabra sí existe</b> · '+exEsc(it.porque)
+                       :'<b>✗ la regla no es esa</b> · '+exEsc(it.porque));};
+       return;}
+     cerrado=true;
+     const bien=it.posible;
+     d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);
+     b.classList.add(bien?'ok':'no');
+     fb.className='detfb show '+(bien?'g':'b');
+     fb.innerHTML=(bien?'<b>✓ correcto</b> · ':'<b>✗ no</b> · ')+exEsc(it.porque);};});
+   caja.appendChild(d);});
+}
+
+// ── artículo: el/la op verzonnen woorden ───────────────────────────────────
+// Het lidwoord alléén zegt niets: wie «la» kiest bij een -ma-woord heeft geraden,
+// ook als het toevallig klopt. Daarom moet de leerling er de regel bij kiezen, en
+// telt het pas als het allebei klopt.
+// ── retrato hablado: luister en kies het juiste portret ────────────────────
+// De portretten worden getekend, niet beschreven: stonden de kenmerken in
+// woorden op de kaart, dan werd het woorden matchen in plaats van luisteren.
+function retoCara(x,y,r,p){
+ const pelo = p.pelo.indexOf('largo')>=0
+   ? (p.pelo.indexOf('rizado')>=0
+      ? '<path d="M'+(x-r-4)+' '+(y+r+6)+' q-6,-'+(r+18)+' '+(r+6)+',-'+(r+14)+' q'+r+',-8 '+(r+6)+','+(r+14)+' q6,'+(r+8)+' -4,'+(r+2)+' q-'+r+',-14 -'+(2*r-4)+',0 Z" fill="#5C4433"/>'
+      : '<path d="M'+(x-r-2)+' '+(y+r+8)+' l0,-'+(r+16)+' q'+(r+2)+',-14 '+(2*r+4)+',0 l0,'+(r+16)+' l-8,0 l0,-'+r+' q-'+r+',-10 -'+(2*r-8)+',0 l0,'+r+' Z" fill="#5C4433"/>')
+   : (p.pelo.indexOf('rizado')>=0
+      ? '<path d="M'+(x-r-2)+' '+y+' q2,-'+(r+14)+' '+(r+2)+',-'+(r+10)+' q'+r+',-6 '+(r+2)+','+(r+10)+' q2,10 -6,6 q-'+r+',-14 -'+(2*r-8)+',0 q-8,4 -6,-6 Z" fill="#5C4433"/>'
+      : '<path d="M'+(x-r-2)+' '+(y-2)+' q0,-'+(r+12)+' '+(r+2)+',-'+(r+12)+' q'+(r+2)+',0 '+(r+2)+','+(r+12)+' l-6,2 q-'+r+',-12 -'+(2*r-4)+',0 Z" fill="#5C4433"/>');
+ const gafas = p.gafas
+   ? '<g fill="none" stroke="#20242E" stroke-width="2.4"><circle cx="'+(x-r/2.4)+'" cy="'+(y+2)+'" r="'+(r/3.4)+'"/>'
+     +'<circle cx="'+(x+r/2.4)+'" cy="'+(y+2)+'" r="'+(r/3.4)+'"/>'
+     +'<line x1="'+(x-r/2.4+r/3.4)+'" y1="'+(y+2)+'" x2="'+(x+r/2.4-r/3.4)+'" y2="'+(y+2)+'"/></g>'
+   : '<circle cx="'+(x-r/2.4)+'" cy="'+(y+1)+'" r="2.6" fill="#20242E"/>'
+     +'<circle cx="'+(x+r/2.4)+'" cy="'+(y+1)+'" r="2.6" fill="#20242E"/>';
+ const boca = p.sonrie
+   ? '<path d="M'+(x-r/2.6)+' '+(y+r/2.2)+' q'+(r/2.6)+','+(r/3.2)+' '+(r/1.3)+',0" stroke="#20242E" stroke-width="2.4" fill="none" stroke-linecap="round"/>'
+   : '<line x1="'+(x-r/3)+'" y1="'+(y+r/1.9)+'" x2="'+(x+r/3)+'" y2="'+(y+r/1.9)+'" stroke="#20242E" stroke-width="2.4" stroke-linecap="round"/>';
+ return '<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="#F2D3B6"/>'+pelo+gafas+boca;
+}
+
+function retoRetrato(cont,r){
+ const rs=r.retratos||[], ds=r.descripciones||[];
+ let i=0, aciertos=0;
+ cont.innerHTML='<div class="rmarca"><button class="escbtn rplay" type="button">▶ Escuchar la descripción</button>'+
+   '<span class="rcuenta rvuelta">1 / '+ds.length+'</span>'+
+   '<span class="desc rtanteo">aciertos: 0</span></div>'+
+   '<div class="retratos"></div><div class="detfb rfb" role="status" aria-live="polite"></div>';
+ const caja=cont.querySelector('.retratos');
+ rs.forEach(p=>{
+   const b=document.createElement('button');b.type='button';b.className='retrato';b.dataset.n=p.n;
+   b.innerHTML='<svg viewBox="0 0 100 100" aria-hidden="true">'+retoCara(50,52,26,p)+'</svg>'+
+     '<span class="rnum2">'+p.n+'</span>';
+   b.onclick=()=>{
+     if(!ds[i])return;
+     const fb=cont.querySelector('.rfb'), bien=Number(b.dataset.n)===ds[i].correcto;
+     b.classList.add(bien?'ok':'no');
+     fb.className='detfb show rfb '+(bien?'g':'b');
+     fb.innerHTML=bien?'<b>✓ correcto</b> · '+exEsc(ds[i].texto)
+       :'<b>✗ no</b> · era el '+ds[i].correcto+' — '+exEsc(ds[i].texto);
+     if(bien)aciertos++;
+     cont.querySelector('.rtanteo').textContent='aciertos: '+aciertos;
+     i++;
+     setTimeout(()=>{caja.querySelectorAll('.retrato').forEach(x=>x.classList.remove('ok','no'));
+       if(i<ds.length){cont.querySelector('.rvuelta').textContent=(i+1)+' / '+ds.length;fb.className='detfb rfb';}
+       else{cont.querySelector('.rvuelta').textContent='hecho';
+         fb.className='detfb show rfb g';fb.innerHTML='<b>Listo</b> · ahora describe tú uno a tu compañero/a.';}},1400);};
+   caja.appendChild(b);});
+ cont.querySelector('.rplay').onclick=()=>{if(ds[i]&&typeof speak==='function')speak(ds[i].texto);};
+}
+
+// ── drie stemmen, één samenvatting: bemiddelen ─────────────────────────────
+// ── opciones: kies uit N, mét verplichte uitleg ────────────────────────────
+// Breed inzetbaar: welk werkwoord past bij dit uur, welke Spaanse uitdrukking
+// dekt deze Vlaamse. Er is telkens één juist antwoord, en de feedback zegt niet
+// alleen wát maar ook waarom — anders leert een gokker niets.
+function retoOpciones(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ (r.items||[]).forEach(it=>{
+   const d=document.createElement('div');d.className='detit';
+   d.innerHTML=(it.audio?'<button class="escbtn opplay" type="button">▶ Escuchar</button>':'')+
+     '<div class="dpal">'+exEsc(it.enunciado)+'</div>'+
+     '<div class="detbtns"></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const btns=d.querySelector('.detbtns'), fb=d.querySelector('.detfb');
+   let cerrado=false;
+   (it.opciones||[]).forEach(o=>{
+     const b=document.createElement('button');b.type='button';b.className='detbtn';b.textContent=o;
+     b.onclick=()=>{if(cerrado)return;cerrado=true;
+       const bien=o===it.correcta;
+       btns.querySelectorAll('.detbtn').forEach(x=>{x.disabled=true;
+         if(x.textContent===it.correcta)x.classList.add('ok');});
+       if(!bien)b.classList.add('no');
+       fb.className='detfb show '+(bien?'g':'b');
+       fb.innerHTML=(bien?'<b>✓ correcto</b>':'<b>✗ es «'+exEsc(it.correcta)+'»</b>')+
+         (it.porque?' · '+exEsc(it.porque):'');};
+     btns.appendChild(b);});
+   const pl=d.querySelector('.opplay');
+   if(pl)pl.onclick=()=>{if(typeof speak==='function')speak(it.enunciado);};
+   caja.appendChild(d);});
+}
+
+function retoVoces(cont,r){
+ cont.innerHTML='<div class="voces"></div>'+
+   '<p class="desc">Schrijf je samenvatting in drie zinnen — korter dan wat je hoorde, en niemand mag wegvallen.</p>'+
+   '<textarea class="escta" rows="5" aria-label="Jouw samenvatting" placeholder="1. Rosa vindt…"></textarea>';
+ const caja=cont.querySelector('.voces');
+ (r.voces||[]).forEach(v=>{
+   const d=document.createElement('div');d.className='voz';
+   d.innerHTML='<button class="escbtn vozbtn" type="button">▶</button>'+
+     '<div><b>'+exEsc(v.quien)+'</b><span class="vozt">'+exEsc(v.texto)+'</span></div>';
+   d.querySelector('.vozbtn').onclick=()=>{if(typeof speak==='function')speak(v.texto);};
+   caja.appendChild(d);});
+}
+
+function retoArticulo(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ const reglas=r.reglas||[];
+ (r.objetos||[]).forEach(it=>{
+   const d=document.createElement('div');d.className='detit';
+   const opts=reglas.map((g,k)=>'<option value="'+g.clave+'">'+exEsc(g.texto)+'</option>').join('');
+   d.innerHTML='<div class="dpal">¿… '+exEsc(it.palabra)+'?</div>'+
+     '<div class="detbtns"><button class="detbtn" type="button" data-a="el">el</button>'+
+     '<button class="detbtn" type="button" data-a="la">la</button></div>'+
+     '<div class="detrule" hidden><label class="desc">¿Qué regla usas?</label>'+
+     '<select><option value="">— elige la regla —</option>'+opts+'</select></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const fb=d.querySelector('.detfb'),rule=d.querySelector('.detrule'),sel=d.querySelector('select');
+   let elegido=null;
+   d.querySelectorAll('.detbtn').forEach(b=>{b.onclick=()=>{
+     if(elegido)return;
+     elegido=b.dataset.a;rule.hidden=false;sel.focus();
+     fb.className='detfb show';fb.textContent='¿Y por qué? Elige la regla.';};});
+   sel.onchange=()=>{
+     if(!sel.value)return;
+     const bienArt=elegido===it.articulo, bienRegla=sel.value===it.regla;
+     d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);sel.disabled=true;
+     const b=d.querySelector('.detbtn[data-a="'+elegido+'"]');
+     b.classList.add(bienArt&&bienRegla?'ok':'no');
+     fb.className='detfb show '+(bienArt&&bienRegla?'g':'b');
+     if(bienArt&&bienRegla)fb.innerHTML='<b>✓ correcto</b> · '+exEsc(it.porque);
+     else if(bienArt)fb.innerHTML='<b>✗ el artículo sí, la regla no</b> · '+exEsc(it.porque)+
+       ' — con la regla equivocada, has adivinado.';
+     else fb.innerHTML='<b>✗ es «'+exEsc(it.articulo)+' '+exEsc(it.palabra)+'»</b> · '+exEsc(it.porque);};
+   caja.appendChild(d);});
+}
+
+// ── escena: dezelfde plek, twee tijden ─────────────────────────────────────
+// Twee panelen naast elkaar; klik een voorwerp en je hoort en ziet hoe het heet.
+// De twee voorwerpen die in beide scènes staan, zijn de controle: wie die als
+// verschil noteert, heeft te snel gekeken.
+function retoEscena(cont,r){
+ const items=r.escena||[];
+ function panel(cual,titulo,sub){
+   const propios=items.filter(i=>i.cuando===cual||i.cuando==='ambas');
+   const formas=propios.map((i,k)=>i.forma==='circ'
+     ? '<circle class="eob" data-k="'+k+'" data-c="'+cual+'" cx="'+(i.x+i.w/2)+'" cy="'+(i.y+i.h/2)+
+       '" r="'+(i.w/2)+'" fill="'+i.color+'"/>'
+     : '<rect class="eob" data-k="'+k+'" data-c="'+cual+'" x="'+i.x+'" y="'+i.y+'" width="'+i.w+
+       '" height="'+i.h+'" rx="1.5" fill="'+i.color+'"/>').join('');
+   return '<figure class="esc"><figcaption><b>'+exEsc(titulo)+'</b> <span>'+exEsc(sub)+'</span></figcaption>'+
+     '<svg viewBox="0 0 100 84" role="img" aria-label="'+exEsc(titulo)+'">'+
+     '<rect x="0" y="0" width="100" height="52" fill="#E8F1F7"/>'+          // lucht
+     '<rect x="0" y="52" width="100" height="32" fill="#EDE7DC"/>'+          // plein
+     '<rect x="0" y="30" width="100" height="22" fill="#D8CFC0"/>'+          // gevelrij
+     '<rect x="6" y="24" width="16" height="28" fill="#C6B9A6"/>'+
+     '<rect x="44" y="20" width="18" height="32" fill="#C6B9A6"/>'+
+     '<rect x="76" y="26" width="18" height="26" fill="#C6B9A6"/>'+
+     formas+'</svg><p class="escnom" role="status" aria-live="polite">Klik een voorwerp.</p></figure>';
+ }
+ cont.innerHTML='<div class="escenas">'+panel('antes','1985','la misma plaza, hace cuarenta años')+
+   panel('ahora','ahora','la plaza hoy')+'</div>'+
+   '<p class="desc">De twee dingen die in <b>allebei</b> de scènes staan, zijn de controle: die zijn géén verschil.</p>';
+ cont.querySelectorAll('.eob').forEach(el=>{
+   el.style.cursor='pointer';
+   el.addEventListener('click',()=>{
+     const cual=el.dataset.c, k=Number(el.dataset.k);
+     const propios=items.filter(i=>i.cuando===cual||i.cuando==='ambas');
+     const it=propios[k];if(!it)return;
+     const fig=el.closest('figure');
+     fig.querySelector('.escnom').innerHTML='<b>'+exEsc(it.es)+'</b> — '+exEsc(it.nl)+
+       (it.cuando==='ambas'?' <i>(en las dos escenas)</i>':'');
+     el.style.stroke='#157355';el.style.strokeWidth='1.4';
+     if(typeof speak==='function')speak(it.es);});});
+ const marco=document.createElement('div');marco.className='rsit';
+ marco.innerHTML='<b>Tu marco</b><span class="rpista">'+
+   (r.marco||[]).map(exEsc).join(' · ')+'</span>';
+ cont.appendChild(marco);
+ const ta=document.createElement('textarea');ta.className='escta';ta.rows=5;
+ ta.setAttribute('aria-label','Jouw vijf zinnen');ta.placeholder='1. En la plaza de ahora hay…';
+ cont.appendChild(ta);
+}
+
+function retoMapa(cont,r){
+ const paises=r.paises||[];
+ cont.innerHTML='<div class="rmarca"><span class="rcuenta">0 / '+paises.length+'</span>'+
+   '<div class="rbarra"><i></i></div>'+
+   '<button class="otra rreset" type="button">↺ empezar de nuevo</button></div>'+
+   '<p class="desc">Klik een land, zeg het hardop, laat iemand bevestigen — dan pas aanklikken. '+
+   'De teller is van de klas, niet van jou.</p><div class="rpais"></div>';
+ const cont2=cont.querySelector('.rpais'),cuenta=cont.querySelector('.rcuenta'),
+       barra=cont.querySelector('.rbarra i');
+ let hechos=0;
+ function pinta(iso){ // laat het land op de grote kaart meekleuren, als die er is
+   const svg=document.querySelector('#mapwrap svg');if(!svg)return;
+   const p=svg.querySelector('[data-c="'+iso+'"]');if(p)p.style.filter='saturate(1.6) brightness(1.05)';}
+ paises.forEach(p=>{
+   const b=document.createElement('button');b.type='button';
+   b.innerHTML=exEsc(p.nombre)+'<span class="sil">'+exEsc(p.silabas)+'</span>';
+   b.onclick=()=>{if(b.classList.contains('hecho'))return;
+     b.classList.add('hecho');hechos++;pinta(p.iso);
+     cuenta.textContent=hechos+' / '+paises.length;
+     barra.style.width=Math.round(hechos/paises.length*100)+'%';
+     if(typeof speak==='function')speak(p.nombre);
+     if(hechos===paises.length)cuenta.textContent='¡'+paises.length+' / '+paises.length+' — lo habéis conseguido!';};
+   cont2.appendChild(b);});
+ cont.querySelector('.rreset').onclick=()=>{hechos=0;cuenta.textContent='0 / '+paises.length;
+   barra.style.width='0';cont2.querySelectorAll('button').forEach(x=>x.classList.remove('hecho'));};
+}
+
 const TTS=('speechSynthesis'in window);
 if(TTS){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}
-const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
+const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['retos','Retos 🎯'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
 const sn=document.getElementById('subnav');
 // ── tabbladen · het adres volgt mee ──────────────────────────────────────────
 // #escuchar opent dat tabblad; #lec_1 opent het paneel waar dat element in
@@ -1370,6 +1657,7 @@ function buildGramType(){
  buildType('gt_3',{title:"Los pronombres lo · la · los · las",desc:"Vervang het <b>lijdend voorwerp</b> door één woordje. Het komt overeen in geslacht en getal, en het staat <b>vóór</b> het werkwoord — anders dan in het Nederlands, waar het erachter kan staan.",accents:'soft',perBlock:12,expect:12,items:[{"q": "¿Ves la plaza? — Sí, ___ veo.", "ans": "la", "why": "la plaza → la"}, {"q": "¿Compras el pan? — Sí, ___ compro.", "ans": "lo", "why": "el pan → lo"}, {"q": "¿Tienes las llaves? — Sí, ___ tengo.", "ans": "las", "why": "las llaves → las"}, {"q": "¿Conoces a mis vecinos? — Sí, ___ conozco.", "ans": "los", "why": "mis vecinos (m. mv.) → los"}, {"q": "¿Dónde pongo el sofá? — ___ pones aquí.", "ans": "lo", "why": "el sofá → lo"}, {"q": "¿Limpias la cocina hoy? — No, ___ limpio mañana.", "ans": "la", "why": "la cocina → la"}, {"q": "¿Necesitas los muebles? — No, no ___ necesito.", "ans": "los", "why": "los muebles → los"}, {"q": "¿Abres las ventanas? — Sí, ___ abro.", "ans": "las", "why": "las ventanas → las"}, {"q": "¿Buscas la farmacia? — Sí, ___ busco.", "ans": "la", "why": "la farmacia → la"}, {"q": "¿Coges el autobús? — Sí, ___ cojo en la esquina.", "ans": "lo", "why": "el autobús → lo"}, {"q": "¿Ordenas tu habitación? — Sí, ___ ordeno los sábados.", "ans": "la", "why": "la habitación → la"}, {"q": "¿Ves a Valen y a Nina? — Sí, ___ veo en el parque.", "ans": "las", "why": "twee meisjes → las"}]});
 }
 buildGramType();
+buildRetos("retos_c6p_u2",{"retos": [{"num": 3, "nombre": "La videollamada sospechosa", "lente": "🎭 simulatie met beperking", "gancho_es": "Ves la habitación pero no a la persona. ¿Qué está pasando ahí?", "gancho_nl": "Je ziet de kamer maar niet de persoon. Wat gebeurt daar?", "consigna_es": "Graba tu descripción: qué se ve, qué se oye, qué está haciendo alguien.", "consigna_nl": "Neem je beschrijving op: wat je ziet, wat je hoort, wat iemand aan het doen is.", "regla": "Minstens vijf zinnen met estar + gerundio, en geen enkele met «creo que». Je beschrijft wat er gebeurt, je speculeert niet — dat komt pas op het einde.", "tipo": "grabar", "situaciones": [{"es": "En la pantalla se ve …", "nl": "", "pista": ""}, {"es": "Alguien está … , pero no lo veo.", "nl": "", "pista": ""}, {"es": "Se oye a alguien que está …", "nl": "", "pista": ""}, {"es": "La luz viene de …", "nl": "", "pista": ""}, {"es": "Al fondo hay … y encima está …", "nl": "", "pista": ""}, {"es": "Y al final, mi hipótesis: creo que están …", "nl": "", "pista": ""}], "items": [{"text": "La videollamada", "cue": "vijf zinnen met estar + gerundio · pas op het einde één hypothese met «creo que»"}]}, {"num": 7, "nombre": "Ruidos de vecinos", "lente": "🕵️ forensisch", "gancho_es": "Un edificio de cinco pisos y seis ruidos. ¿Quién, qué y en qué planta?", "gancho_nl": "Een gebouw van vijf verdiepingen en zes geluiden. Wie, wat en op welke verdieping?", "consigna_es": "Elige qué está pasando y en qué planta.", "consigna_nl": "Kies wat er gebeurt en op welke verdieping.", "regla": "Je antwoordt met estar + gerundio én met het rangtelwoord van de verdieping. En let op de apócope: «el tercer piso», niet «el tercero piso».", "tipo": "opciones", "items": [{"enunciado": "Un golpe seco y luego algo que rueda, justo encima de tu cabeza.", "correcta": "Alguien está moviendo muebles en el cuarto piso.", "opciones": ["Alguien está moviendo muebles en el cuarto piso.", "Alguien está bajando la basura en el primer piso.", "Alguien está jugando en la calle."], "audio": true, "porque": "«justo encima» plus jouw derde verdieping geeft de vierde"}, {"enunciado": "Música con mucho bajo que llega por el suelo, no por las paredes.", "correcta": "Alguien está escuchando música en el segundo piso.", "opciones": ["Alguien está escuchando música en el segundo piso.", "Alguien está escuchando música en el cuarto piso.", "Hay una fiesta en la terraza."], "audio": true, "porque": "bas door de vloer betekent van beneden, dus onder jou"}, {"enunciado": "Un motor que arranca y una puerta metálica que sube.", "correcta": "Alguien está sacando el coche del garaje.", "opciones": ["Alguien está sacando el coche del garaje.", "Alguien está usando la lavadora en el primer piso.", "Alguien está subiendo en el ascensor."], "audio": true, "porque": "de metalen poort is de garage, dus onder de begane grond"}, {"enunciado": "Voces que suben por el hueco de la escalera, cada vez más cerca.", "correcta": "Alguien está subiendo por la escalera.", "opciones": ["Alguien está subiendo por la escalera.", "Alguien está hablando en el quinto piso.", "Alguien está esperando el ascensor."], "audio": true, "porque": "«cada vez más cerca» is beweging, geen vaste plek"}, {"enunciado": "Agua que corre en la pared, empieza y para tres veces.", "correcta": "Alguien está fregando los platos en el piso de al lado.", "opciones": ["Alguien está fregando los platos en el piso de al lado.", "Alguien está duchándose arriba.", "Está lloviendo."], "audio": true, "porque": "starten en stoppen hoort bij de afwas; een douche loopt door"}, {"enunciado": "Un timbre, pasos rápidos y una puerta que se cierra en la planta baja.", "correcta": "Alguien está recibiendo un paquete en la planta baja.", "opciones": ["Alguien está recibiendo un paquete en la planta baja.", "Alguien está saliendo al patio.", "Alguien está llamando al ascensor."], "audio": true, "porque": "bel plus snelle stappen plus deur: een levering"}]}, {"num": 8, "nombre": "Casa cartagenera, casa flamenca", "lente": "🤝 bemiddelen", "gancho_es": "¿Por qué las casas flamencas son tan estrechas? Explícaselo a Valen.", "gancho_nl": "Waarom zijn Vlaamse huizen zo smal? Leg het uit aan Valen.", "consigna_es": "Elige la explicación que Valen entiende de verdad.", "consigna_nl": "Kies de uitleg die Valen écht zou begrijpen.", "regla": "Je legt uit, je vertaalt niet. Geen Nederlandse woorden, en geen uitleg die veronderstelt dat de ander al weet hoe een Vlaams huis eruitziet.", "tipo": "opciones", "items": [{"enunciado": "Valen: «¿Por qué las casas son tan estrechas y tan altas?»", "correcta": "Antes se pagaba impuesto por lo ancho de la fachada, y por eso se construía estrecho y alto.", "opciones": ["Antes se pagaba impuesto por lo ancho de la fachada, y por eso se construía estrecho y alto.", "Porque hace frío.", "Es la tradición flamenca."], "porque": "«es la tradición» legt niets uit; de belastingreden is concreet en te snappen"}, {"enunciado": "Valen: «¿Y dónde está el patio? Aquí todas las casas tienen patio.»", "correcta": "En vez de patio hay un jardín detrás, y muchos días hace demasiado frío para estar fuera.", "opciones": ["En vez de patio hay un jardín detrás, y muchos días hace demasiado frío para estar fuera.", "No hay patio.", "El patio está dentro."], "porque": "je vervangt het begrip door zijn equivalent, plus de reden waarom het anders werkt"}, {"enunciado": "Valen: «¿La gente vive en la calle o dentro?»", "correcta": "Aquí se vive más dentro: en invierno oscurece a las cinco y llueve mucho.", "opciones": ["Aquí se vive más dentro: en invierno oscurece a las cinco y llueve mucho.", "Dentro, siempre.", "Depende de la persona."], "porque": "je geeft de reden, niet alleen het antwoord — dat is bemiddelen"}, {"enunciado": "Valen: «¿Y por qué las ventanas son tan grandes si hace frío?»", "correcta": "Justo por eso: hay poca luz, y las ventanas grandes dejan entrar la que hay.", "opciones": ["Justo por eso: hay poca luz, y las ventanas grandes dejan entrar la que hay.", "Para ver la calle.", "No sé, siempre han sido así."], "porque": "de tegenintuïtieve reden is de juiste, en die moet je durven uitleggen"}]}]});
 buildEscucha("esc_c6p_u2",{"title": "Estoy perdido en Cartagena", "audio": "audio/C6plus_U2.mp3", "expectDetalle": 5, "situacion": {"lugar": "Por teléfono — Sam está en algún lugar del centro histórico", "quien": "Sam (perdido) y Valen (en su casa)", "que": "Valen le explica el camino paso a paso", "claves": ["sigue recto", "gira a la derecha", "está a … minutos"]}, "guion": [{"who": "Valen", "es": "¿Sí? ¿Sam? ¿Dónde estás?", "nl": "Ja? Sam? Waar ben je?"}, {"who": "Sam", "es": "Estoy perdido. Estoy buscando tu calle, pero no la encuentro.", "nl": "Ik ben verdwaald. Ik zoek jouw straat, maar ik vind hem niet."}, {"who": "Valen", "es": "Tranquilo. ¿Qué ves?", "nl": "Rustig maar. Wat zie je?"}, {"who": "Sam", "es": "Hay una plaza grande con muchos coches amarillos. Y hay una torre con un reloj.", "nl": "Er is een groot plein met veel gele auto's. En er is een toren met een klok."}, {"who": "Valen", "es": "¡Ah! Estás en la Plaza de los Coches, debajo de la Torre del Reloj. Estás muy cerca.", "nl": "Ah! Je staat op de Plaza de los Coches, onder de Torre del Reloj. Je bent vlakbij."}, {"who": "Sam", "es": "¿Sí? ¡Qué bien!", "nl": "Echt? Wat fijn!"}, {"who": "Valen", "es": "Mira: sigue recto por la calle grande y en el segundo semáforo gira a la derecha.", "nl": "Kijk: ga rechtdoor de grote straat in en sla bij het tweede stoplicht rechts af."}, {"who": "Sam", "es": "Vale… a la derecha en el segundo semáforo.", "nl": "Oké… rechts bij het tweede stoplicht."}, {"who": "Valen", "es": "Después cruza la plaza pequeña. Mi calle está a la izquierda, al lado de una farmacia verde.", "nl": "Steek daarna het kleine plein over. Mijn straat ligt links, naast een groene apotheek."}, {"who": "Sam", "es": "¿Y tu casa?", "nl": "En jouw huis?"}, {"who": "Valen", "es": "Es la casa azul, entre la farmacia y una tienda de sombreros. Está a cinco minutos a pie.", "nl": "Het is het blauwe huis, tussen de apotheek en een hoedenwinkel. Het is vijf minuten te voet."}, {"who": "Sam", "es": "Perfecto. Ya estoy andando. ¡Hasta ahora!", "nl": "Perfect. Ik ben al onderweg. Tot zo!"}, {"who": "Valen", "es": "¡Te espero en el balcón!", "nl": "Ik wacht op je op het balkon!"}], "global": {"q": "¿Qué hace Valen por teléfono?", "opts": ["Le explica a Sam cómo llegar a su casa", "Le invita a una fiesta", "Le describe su habitación"], "ans": "Le explica a Sam cómo llegar a su casa", "why": "sigue · gira · cruza = het pad, niet de woning"}, "detalle": [{"q": "¿Dónde está Sam al principio?", "opts": ["En la Plaza de los Coches", "En el parque", "En la estación"], "ans": "En la Plaza de los Coches", "why": "«Estás en la Plaza de los Coches»"}, {"q": "¿Qué monumento ve Sam?", "opts": ["La Torre del Reloj", "La catedral", "La muralla"], "ans": "La Torre del Reloj", "why": "«una torre con un reloj»"}, {"q": "¿En qué semáforo tiene que girar?", "opts": ["En el segundo", "En el primero", "En el tercero"], "ans": "En el segundo", "why": "«en el segundo semáforo gira a la derecha»"}, {"q": "¿Qué hay al lado de la calle de Valen?", "opts": ["Una farmacia verde", "Un banco", "Un supermercado"], "ans": "Una farmacia verde", "why": "«al lado de una farmacia verde»"}, {"q": "¿A cuántos minutos está la casa?", "opts": ["Cinco", "Quince", "Dos"], "ans": "Cinco", "why": "«Está a cinco minutos a pie»"}], "vf": [{"q": "Sam sabe dónde está su calle.", "ans": false, "prueba": "estoy buscando tu calle, pero no la encuentro"}, {"q": "La casa de Valen es azul.", "ans": true, "prueba": "es la casa azul"}, {"q": "Valen espera a Sam en el balcón.", "ans": true, "prueba": "te espero en el balcón"}], "produccion": {"prompt": "Ahora tú. Alguien está en la parada de tu barrio y quiere llegar a tu casa. Explícale el camino en cuatro frases: sigue recto · gira · cruza · está a … minutos.", "modo": "grabar", "modelo": "Sigue recto por la calle… En el… semáforo gira a la… Cruza… Mi casa está al lado de… Está a … minutos a pie."}});
 buildAudioCortos("esc_c6p_u2",{"fragmentos": [{"etiqueta": "§2 · La casa de Valen", "seccion": "§2.3 · Practicar hay/estar + preposiciones", "titulo": "La casa de Valen", "tarea": "1ª: welke kamers zijn er? — 2ª: waar staat elk meubel?", "audio": "audio/C6plus_U2_01.mp3", "guion": [{"who": "Valen", "es": "Te enseño mi casa en Cartagena. No es grande, pero me encanta.", "nl": "Ik laat je mijn huis in Cartagena zien. Het is niet groot, maar ik ben er dol op."}, {"who": "Valen", "es": "Abajo hay un salón, una cocina y un baño pequeño.", "nl": "Beneden zijn er een woonkamer, een keuken en een kleine badkamer."}, {"who": "Valen", "es": "En el salón hay un sofá azul. El sofá está debajo de la ventana.", "nl": "In de woonkamer staat een blauwe zitbank. De bank staat onder het raam."}, {"who": "Valen", "es": "La mesa está en el medio, entre el sofá y la cocina.", "nl": "De tafel staat in het midden, tussen de bank en de keuken."}, {"who": "Valen", "es": "Arriba hay dos habitaciones. Mi habitación está al lado de la de mi madre.", "nl": "Boven zijn er twee slaapkamers. Mijn kamer ligt naast die van mijn moeder."}, {"who": "Valen", "es": "En mi habitación tengo una cama, un armario y un escritorio. El escritorio está delante de la ventana y el armario, detrás de la puerta.", "nl": "In mijn kamer heb ik een bed, een kast en een bureau. Het bureau staat vóór het raam en de kast achter de deur."}, {"who": "Valen", "es": "Ah, y no hay garaje. La bici está en el patio, al lado de las plantas.", "nl": "Ah, en er is geen garage. De fiets staat op de binnenkoer, naast de planten."}]}, {"etiqueta": "§5 · ¿Cómo llego?", "seccion": "§5 · El barrio y cómo llegar", "titulo": "¿Cómo llego a la plaza?", "tarea": "1ª: waar gaat hij naartoe? — 2ª: noteer de aanwijzingen en volg de route op het plano.", "audio": "audio/C6plus_U2_02.mp3", "guion": [{"who": "Turista", "es": "Perdona, ¿cómo llego a la plaza principal? Estoy perdido.", "nl": "Sorry, hoe geraak ik op het hoofdplein? Ik ben verdwaald."}, {"who": "Valen", "es": "Tranquilo, está cerca. Mira: sigue esta calle todo recto.", "nl": "Rustig, het is dichtbij. Kijk: volg deze straat rechtdoor."}, {"who": "Turista", "es": "¿Hasta el final?", "nl": "Tot het einde?"}, {"who": "Valen", "es": "Hasta el semáforo, sí. Allí gira a la izquierda.", "nl": "Tot het verkeerslicht, ja. Sla daar linksaf."}, {"who": "Valen", "es": "Después cruza el puente pequeño y toma la segunda calle a la derecha.", "nl": "Daarna steek je het kleine brugje over en neem je de tweede straat rechts."}, {"who": "Turista", "es": "La segunda, vale. ¿Y luego?", "nl": "De tweede, oké. En dan?"}, {"who": "Valen", "es": "Luego pasa por delante de la iglesia amarilla. La plaza está justo detrás.", "nl": "Dan loop je vóór de gele kerk langs. Het plein ligt er vlak achter."}, {"who": "Turista", "es": "¿Está lejos a pie?", "nl": "Is het ver te voet?"}, {"who": "Valen", "es": "No, unos diez minutos. Y si te pierdes otra vez, pregunta en el quiosco.", "nl": "Nee, een minuut of tien. En als je opnieuw verdwaalt, vraag het in de kiosk."}, {"who": "Turista", "es": "¡Muchas gracias!", "nl": "Heel erg bedankt!"}]}]});
 buildLectura("lec_c6p_u2",{"titulo": "«Casa Azul» — dos reseñas", "tipo": "reseñas (web de alojamiento)", "emisor": "Dos viajeros: Marta y Tomás", "receptor": "Quien busca dónde dormir en Cartagena", "objetivo": "Contar cómo es la casa de verdad", "prediccion": {"q": "Kijk eerst alleen naar de sterren, het cijfer en de namen. Wat voor tekst is dit?", "opts": ["Meningen van gasten over een woning", "Een routebeschrijving", "Een menukaart"], "ans": "Meningen van gasten over een woning", "why": "Sterren + een gemiddelde + namen van personen = beoordelingen."}, "texto": [["titulo", "⭐ RESEÑAS · «Casa Azul» — Centro Histórico, Cartagena"], ["lema", "4,6 sobre 5 · 128 opiniones · Anfitriona: Valen"], ["aviso", ["★★★★★ Marta, de Madrid — «Un balcón lleno de flores»", "El apartamento está en la calle de la Iglesia, muy cerca de la muralla. Hay dos dormitorios, un salón grande y una cocina pequeña. Encima de la cama hay un ventilador, y eso es importante: en Cartagena hace mucho calor. El balcón está lleno de flores. El barrio es antiguo y por la mañana está muy tranquilo."]], ["aviso", ["★★★☆☆ Tomás, de Lima — «Bonito, pero ruidoso»", "La casa es bonita y está muy limpia. El problema es el ruido: debajo del balcón hay un bar y la música no para hasta las dos. Si duermes poco, pide la habitación de detrás. La parada del bus está a cinco minutos a pie."]], ["p", "Respuesta de la anfitriona: «¡Gracias por vuestros comentarios! Es verdad que el centro es ruidoso los fines de semana. Entre semana está mucho más tranquilo. La habitación de detrás no da a la calle.»"], ["firma", "Solo puedes escribir una reseña si duermes una noche en la casa."]], "traduccion": "BEOORDELINGEN · «Casa Azul», historisch centrum, Cartagena. 4,6 op 5 · 128 meningen · Gastvrouw: Valen. ★★★★★ Marta, uit Madrid — «Een balkon vol bloemen»: het appartement ligt in de calle de la Iglesia, vlak bij de stadsmuur. Er zijn twee slaapkamers, een grote woonkamer en een kleine keuken. Boven het bed hangt een ventilator, en dat is belangrijk: in Cartagena is het erg warm. Het balkon staat vol bloemen. De buurt is oud en 's ochtends heel rustig. ★★★☆☆ Tomás, uit Lima — «Mooi, maar lawaaierig»: het huis is mooi en heel proper. Het probleem is het lawaai: onder het balkon is een café en de muziek stopt pas om twee uur. Als je weinig slaapt, vraag dan de kamer achteraan. De bushalte ligt op vijf minuten te voet. Antwoord van de gastvrouw: «Bedankt voor jullie commentaar! Het klopt dat het centrum in het weekend lawaaierig is. Doordeweeks is het veel rustiger. De kamer achteraan kijkt niet uit op de straat.»", "global": {"q": "¿Qué son estos textos?", "opts": ["Opiniones de viajeros sobre un apartamento", "Un anuncio de venta de una casa", "Un artículo sobre la historia de Cartagena"], "ans": "Opiniones de viajeros sobre un apartamento"}, "escanear": [{"q": "¿En qué calle está el apartamento?", "ans": "la calle de la Iglesia", "alt": ["calle de la iglesia", "de la iglesia", "la iglesia"], "why": "«está en la calle de la Iglesia»"}, {"q": "¿Cuántos dormitorios hay? (en cifras)", "ans": "2", "alt": ["dos", "2 dormitorios"], "why": "«Hay dos dormitorios»"}, {"q": "¿Qué hay encima de la cama?", "ans": "un ventilador", "alt": ["ventilador", "el ventilador"], "why": "«Encima de la cama hay un ventilador»"}, {"q": "¿Hasta qué hora hay música?", "ans": "hasta las dos", "alt": ["las dos", "dos", "2"], "why": "«la música no para hasta las dos»"}, {"q": "¿A cuántos minutos está la parada del bus? (en cifras)", "ans": "5", "alt": ["cinco", "cinco minutos", "5 minutos"], "why": "«a cinco minutos a pie»"}], "vf": [{"q": "El apartamento tiene dos dormitorios.", "ans": true, "prueba": "hay dos dormitorios"}, {"q": "La casa está lejos de la muralla.", "ans": false, "prueba": "muy cerca de la muralla"}, {"q": "Debajo del balcón hay un bar.", "ans": true, "prueba": "debajo del balcón hay un bar"}, {"q": "Tomás dice que la casa está sucia.", "ans": false, "prueba": "está muy limpia"}, {"q": "La parada del bus está a cinco minutos andando.", "ans": true, "prueba": "está a cinco minutos a pie"}], "contexto": [{"q": "«El balcón está lleno de flores» — ¿qué significa «lleno de»?", "opts": ["vol met", "ver van", "zonder"], "ans": "vol met", "why": "Het gaat over hoeveel bloemen er staan."}, {"q": "«la música no para hasta las dos» — ¿qué quiere decir «no para»?", "opts": ["ze stopt niet", "ze staat niet stil", "ze begint niet"], "ans": "ze stopt niet", "why": "«parar» = stoppen; het is de klacht over lawaai."}, {"q": "«pide la habitación de detrás» — ¿por qué lo aconseja Tomás?", "opts": ["Omdat die niet aan de straat ligt", "Omdat die groter is", "Omdat die goedkoper is"], "ans": "Omdat die niet aan de straat ligt", "why": "De gastvrouw legt het uit: «no da a la calle»."}, {"q": "«Entre semana está mucho más tranquilo» — ¿cuándo?", "opts": ["Van maandag tot vrijdag", "In het weekend", "In de vakantie"], "ans": "Van maandag tot vrijdag", "why": "Het staat tegenover «los fines de semana»."}], "produccion": {"prompt": "Escribe tu propia reseña de tu casa o de tu barrio (5–6 frases): cuántas estrellas le das, qué hay, dónde está cada cosa, qué es lo mejor y qué es lo peor.", "modelo": "★★★★☆ — En mi casa hay… El/La… está… Lo mejor es que… Lo peor es que… La parada está a … minutos."}});

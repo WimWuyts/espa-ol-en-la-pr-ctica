@@ -18,9 +18,24 @@ _sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
 import print_bloques as PB
 import lectura_data as LD
 import escucha_data as ED
+import retos_data as RD
+import retos_print as RP
 
 BODY = []
 def P(*x): BODY.extend(x)
+
+
+def retos(ancla, titulo, intro_es, intro_nl):
+    """Retoblok van één sectie — volledige oefening voor print, verwijskaartje
+    voor wat op de hub of in de PowerPoint leeft."""
+    P('<div class="page">')
+    P(f'<div class="divider">{titulo}</div>')
+    P(f'<div class="intro" style="margin-top:1mm"><b>ES:</b> {intro_es} '
+      f'<span class="gloss">{intro_nl}</span></div>')
+    for r in sorted(RD.por_ancla(ancla), key=lambda x: x["num"]):
+        P(RP.reto_print(r) if r["soporte"] == "print" else RP.reto_puntero(r))
+    P('</div>')
+
 _AN = [0]
 def AN():
     _AN[0] += 1
@@ -160,6 +175,10 @@ P(actx(AN(), "¿Cómo es tu casa? · escribe",
   apoyo="MARCO"))
 sec_close()
 
+retos("casa_c6p", "§1.4 · Retos — la casa dicha de otra manera",
+      'Un anuncio que <b>no esconde nada</b> y una habitación descrita <b>sin nombrar un solo mueble</b>.',
+      'Een advertentie die niets verbergt, en een kamer beschreven zonder één meubel te noemen.')
+
 # ================= §2 · HAY VS ESTAR + PREPOSICIONES =================
 sec_open("2", "§2 · Hay vs estar + preposiciones", 'Voor <b>waar iets staat</b>: <b>hay</b> zegt <b>dát</b> er iets is (onbepaald), <b>estar</b> zegt <b>waar</b> iets bepaalds staat. En de <b>preposiciones</b> (encima de, al lado de…) preciseren de plaats. <span class="gloss">hay = er is (onbepaald) · está = staat (bepaald) · voorzetsels van plaats erbij.</span>',
         lpd(("8","taalsysteem: hay/estar + preposiciones"), ("7","woordenschat: la casa"), ("4","interactie: dónde")))
@@ -260,6 +279,10 @@ P(audiorow('<div class="ic">🎧</div><div><b>Escucha «La casa de Valen»</b> e
            qr("Escanea y escucha", "§2 · La casa de Valen", seed=201)))
 P('</div>')
 
+retos("hay_estar_c6p", "§2.4 · Retos — metros cuadrados y quinientos euros",
+      'Cuánto espacio tiene una persona en Bruselas, en Bogotá y en tu casa. Y una reforma con <b>presupuesto real</b>.',
+      'Hoeveel ruimte iemand heeft in Brussel, in Bogotá en bij jou thuis. En een verbouwing met een echt budget.')
+
 # ================= §3 · ESTAR + GERUNDIO =================
 sec_open("3", "§3 · Estar + gerundio — ahora mismo", 'Para decir <b>qué pasa en este momento</b>: <b>estar</b> + la forma <b>-ando/-iendo</b>. <i>Valen <b>está cocinando</b>. Yo <b>estoy estudiando</b>.</i> <span class="gloss">Om te zeggen wat er nú aan het gebeuren is: estar + het -ando/-iendo-deelwoord.</span>',
         lpd(("8","taalsysteem: estar + gerundio"), ("7","woordenschat: acciones")))
@@ -348,6 +371,10 @@ P(actx("★", "Tarea comunicativa · llamada de vídeo",
 P('<div class="guide"><div class="ic">🎡</div><div><span class="hand">Online:</span> <span class="g">de <b>werkwoordmachine</b> en het <b>gerundio-spel</b> op de hub oefenen elke -ando/-iendo-vorm; + cloze en foutenkliniek.</span></div></div>')
 P('</div>')
 
+retos("gerundio_c6p", "§3.4 · Retos — ¿qué está pasando ahí?",
+      'Un portátil desaparecido con cuatro coartadas, y una videollamada donde ves la habitación pero <b>no a la persona</b>.',
+      "Een verdwenen laptop met vier alibi's, en een videogesprek waarin je de kamer ziet maar de persoon niet.")
+
 # ================= §4 · OD-PRONOMINA lo/la/los/las =================
 sec_open("4", "§4 · Los pronombres lo/la/los/las", 'Om niet steeds hetzelfde te herhalen, vervang je het <b>lijdend voorwerp</b> door <b>lo/la/los/las</b>. <i>¿Ves la casa? Sí, <b>la</b> veo.</i> <span class="gloss">Het lijdend voorwerp korter maken met lo/la/los/las — het staat vóór het werkwoord.</span>',
         lpd(("8","taalsysteem: OD-pronomina lo/la"), ("7","woordenschat: la casa")))
@@ -433,6 +460,10 @@ P(actx("★", "Tarea comunicativa · ¿lo tienes?",
   apoyo="MARCO"))
 P('</div>')
 
+retos("pronombres_c6p2", "§4.4 · Reto — diez cosas, ni una más",
+      'Os mudáis a treinta metros cuadrados. A partir de la segunda vez, la cosa ya <b>no tiene nombre</b>.',
+      'Jullie verhuizen naar dertig vierkante meter. Vanaf de tweede keer heeft het ding geen naam meer.')
+
 # ================= §5 · EL BARRIO Y CÓMO LLEGAR =================
 sec_open("5", "§5 · El barrio y cómo llegar", 'Los <b>lugares</b> del barrio (la plaza, la farmacia, la parada…) y cómo <b>dar direcciones</b>: sigue recto, gira a la derecha, cruza la calle. <span class="gloss">De plekken in de buurt en hoe je de weg wijst.</span>',
         lpd(("7","woordenschat: el barrio"), ("4","mondelinge interactie: de weg"), ("9","strategieën")))
@@ -478,6 +509,10 @@ P(actx("★", "Info-gap · ¿cómo llego a…?",
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha «¿Cómo llego a la plaza?»</b> en la web (TTS) y sigue la ruta en el plano. <b>1ª vez:</b> ¿adónde va? · <b>2ª vez:</b> anota las direcciones.</div>',
            qr("Escanea y escucha", "§5 · ¿Cómo llego?", seed=202)))
 sec_close()
+
+retos("barrio_c6p", "§5.4 · Retos — el edificio y el barrio",
+      'Seis ruidos en cinco plantas, y un recorrido por tu casa de <b>cuarenta segundos exactos</b>.',
+      'Zes geluiden op vijf verdiepingen, en een rondgang door je huis van precies veertig seconden.')
 
 # ================= §6 · LECTURA =================
 sec_open("6", "§6 · Lectura — «Mi barrio en Cartagena»", 'Valen describe su barrio. Lee, busca información y reacciona. <span class="gloss">Valen beschrijft haar buurt. Lezen, informatie zoeken, reageren.</span>',
@@ -568,6 +603,10 @@ P(actx(AN(), "Datos curiosos — une",
   '<p style="margin-left:12.5mm">1-<span class="wl sm"></span> 2-<span class="wl sm"></span> 3-<span class="wl sm"></span> 4-<span class="wl sm"></span></p>',
   apoyo="BANCO"))
 sec_close()
+
+retos("cultura_c6p2", "Reto — dos maneras de construir una casa",
+      'Por qué las casas flamencas son estrechas y las cartageneras tienen patio. Explícaselo a Valen.',
+      'Waarom Vlaamse huizen smal zijn en die in Cartagena een patio hebben. Leg het uit aan Valen.')
 
 # ================= TAREA FINAL =================
 sec_open("★", "Tarea final · «Mapa de mi barrio»", 'Dibuja el <b>mapa de tu barrio</b> y haz una <b>ruta guiada</b>: di qué hay, dónde está y cómo llegar. <span class="gloss">Teken de plattegrond van je buurt en geef een rondleiding.</span>')
@@ -706,7 +745,7 @@ EDITBAR = '''
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Más español en la práctica · C6+ U2 Aquí vivo</title><style>'
-        + CSS + CSS_OVR + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
+        + CSS + CSS_OVR + RP.CSS + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/C6plus_U2.html"
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, "·", len(HTML), "bytes ·", _AN[0], "genummerde oefeningen (excl. V.1–V.5)")
