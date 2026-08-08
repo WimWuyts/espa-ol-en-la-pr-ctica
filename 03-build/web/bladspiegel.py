@@ -94,6 +94,8 @@ def procesar(ruta):
     doc = open(ruta, encoding="utf-8").read()
     puestos, corridos = [], []
 
+    indice = []
+
     def sustituir(m):
         cls = m.group("cls").replace(" major", "")
         tit = m.group("tit").strip()
@@ -102,10 +104,30 @@ def procesar(ruta):
             puestos.append(tit)
         else:
             corridos.append(tit)
+        # Een anker per sectie, en verderop een verborgen lijst die ernaar linkt.
+        # Chromium schrijft van élk gelinkt anker een /Dests-ingang in de PDF, mét
+        # de bladzijde waarop het beland is — en dát is de enige manier om ná de
+        # opmaak te weten waar een sectie begint. Zonder link geen ingang, dus de
+        # verborgen lijst is geen sierstuk maar de motor van de bladwijzers.
+        ancla = "sec-%d" % (len(indice) + 1)
+        indice.append((ancla, tit))
+        resto = m.group("resto")
+        if "id=" not in resto:
+            resto = ' id="%s"%s' % (ancla, resto)
         return ('<div class="%s"%s>%s<span class="pk"%s>%s</span>'
-                % (cls, m.group("resto"), m.group("medio"), m.group("pkat"), m.group("tit")))
+                % (cls, resto, m.group("medio"), m.group("pkat"), m.group("tit")))
 
+    doc = re.sub(r'<nav class="indice-pdf">.*?</nav>', "", doc, flags=re.S)
     doc = SECCION.sub(sustituir, doc)
+
+    if indice:
+        enlaces = "".join('<a href="#%s">%s</a>' % (a, t) for a, t in indice)
+        # laat staan in de opmaak (anders schrijft Chromium geen bestemming),
+        # maar zonder hoogte, zonder breedte en niet te zien
+        nav = ('<nav class="indice-pdf" aria-hidden="true" style="position:absolute;'
+               'width:0;height:0;overflow:hidden;visibility:hidden">%s</nav>' % enlaces)
+        i = doc.rfind("</body>")
+        doc = doc[:i] + nav + doc[i:] if i > 0 else doc + nav
 
     # het blok als laatste in de <style>; een oude versie wordt vervangen
     doc = re.sub(re.escape(MARCA) + r".*?/\* @bladspiegel:fin \*/", "", doc, flags=re.S)
