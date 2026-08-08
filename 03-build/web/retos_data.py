@@ -4001,8 +4001,1023 @@ RETOS_U8 = [U8_RETO_01, U8_RETO_02, U8_RETO_03, U8_RETO_04, U8_RETO_05,
 
 RETOS_U6 = [U6_RETO_01, U6_RETO_02, U6_RETO_03, U6_RETO_04, U6_RETO_05,
             U6_RETO_06, U6_RETO_07, U6_RETO_08, U6_RETO_09, U6_RETO_10]
+# ═══════════════════════════════════════════════════════════════════════════
+# C6+ · U0 «¡Volvemos!» — parada CDMX, terug bij nul mét de zij-instromers
+# ═══════════════════════════════════════════════════════════════════════════
+P0 = 0
+
+P0_RETO_01 = {
+    "id": "C6P-U0-RETO-01", "num": 1, "curso": "C6+", "unidad": P0,
+    "seccion": "§2.4", "ancla": "presente_c6p", "soporte": "print",
+    "nombre": "El test de nivel falso",
+    "lente": "🕵️ forensisch", "forma": "👤 Solo", "skill": "👁️ Leer",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Diez frases de un test de nivel. Tú no lo haces: tú lo corriges.",
+    "gancho_nl": "Tien zinnen uit een niveautest. Jij maakt hem niet: jij verbetert hem.",
+    "consigna_es": "Marca las frases incorrectas, corrígelas y di qué regla falla.",
+    "consigna_nl": "Kruis de foute zinnen aan, verbeter ze en zeg welke regel er misgaat.",
+    "regla": "Verbeteren volstaat niet: bij elke fout schrijf je in één woord welke regel het "
+             "betreft (persona · irregular · género · plural · ser/estar). Zonder die naam telt hij niet.",
+    "pasos": [("Lee las diez frases de una vez.", "Lees de tien zinnen in één keer."),
+              ("Marca las que no suenan bien.", "Kruis aan wat niet goed klinkt."),
+              ("Corrige y nombra la regla.", "Verbeter en benoem de regel."),
+              ("Cuenta: ¿cuántas has encontrado de las seis?",
+               "Tel: hoeveel van de zes heb je gevonden?")],
+    "datos": {
+        # (zin, klopt?, correctie, regelnaam)
+        "frases": [
+            ("Yo soy de Bélgica y hablo neerlandés.", True, "", ""),
+            ("Mi hermana tiene quince años y es muy simpática.", True, "", ""),
+            ("Nosotros vivimos en Gante y estudiamos español.", True, "", ""),
+            ("Ella son profesora de matemáticas.", False, "Ella es profesora de matemáticas.", "persona"),
+            ("Los problemas es difíciles este año.", False, "Los problemas son difíciles este año.", "plural"),
+            ("Yo tengo dieciséis años y estoy belga.", False, "…y soy belga.", "ser/estar"),
+            ("Mi padre trabaja en un hospital grande.", True, "", ""),
+            ("El mano de mi hermano está roto.", False, "La mano de mi hermano está rota.", "género"),
+            ("Vosotros habláis muy rápido, no entiendo nada.", True, "", ""),
+            ("Yo no puedo ir porque tiengo que estudiar.", False, "…porque tengo que estudiar.", "irregular"),
+        ],
+        "reglas": ["persona", "irregular", "género", "plural", "ser/estar"],
+    },
+    "clave": [
+        "Zes fouten: «ella son» (persona), «los problemas es» (plural), «estoy belga» (ser/estar), "
+        "«el mano … roto» (género, twee keer in één zin), «tiengo» (irregular: tener → tengo).",
+        "Dat zijn er vijf zinnen met zes fouten — «el mano roto» bevat er twee. Wie op zes komt "
+        "met vijf zinnen, heeft écht gelezen.",
+        "«La mano» is de klassieke uitzondering: eindigt op -o en is vrouwelijk. Precies daarom "
+        "staat hij erin.",
+        "Het punt van de reto is diagnose zonder examenstress: de leerling ziet in tien minuten "
+        "waar zijn eigen zwakke plek zit, zonder dat er een cijfer aan hangt.",
+    ],
+    "nota": "Ideaal in de eerste week: de zij-instromers merken dat ze meer herkennen dan ze "
+            "dachten, en de eigen leerlingen zien dat ze niet alles nog paraat hebben.",
+}
+
+P0_RETO_02 = {
+    "id": "C6P-U0-RETO-02", "num": 2, "curso": "C6+", "unidad": P0,
+    "seccion": "§4.4", "ancla": "paises", "soporte": "print",
+    "nombre": "Quién es quién del mundo hispano",
+    "lente": "🔓 puzzel & escape", "forma": "👥 En parejas", "skill": "🗣️ Hablar",
+    "tiempo": "± 15 min", "dificultad": "★★☆",
+    "gancho_es": "Veinte personas, veinte países. Cinco preguntas para acertar.",
+    "gancho_nl": "Twintig mensen, twintig landen. Vijf vragen om het te raden.",
+    "consigna_es": "Adivina la ficha de tu compañero/a con preguntas de sí o no.",
+    "consigna_nl": "Raad de fiche van je buur met ja-of-nee-vragen.",
+    "regla": "Alleen ja/nee-vragen, en de landnaam mag pas in je láátste vraag vallen. Vraag je "
+             "«¿es de México?» als tweede vraag, dan heb je gegokt in plaats van uitgesloten.",
+    "pasos": [("Cada uno coge una ficha en secreto.", "Elk neemt in het geheim een fiche."),
+              ("Preguntad por turnos. Solo sí o no.", "Vraag om beurten. Alleen ja of nee."),
+              ("Apunta lo que descartas.", "Noteer wat je uitsluit."),
+              ("¿Lo tienes en cinco? Cambiad de ficha.",
+               "Heb je het in vijf? Wissel van fiche.")],
+    "datos": {
+        # (naam, land, continent/zone, extra taal, kenmerk om naar te vragen)
+        "fichas": [
+            ("Sofía", "México", "Norteamérica", "náhuatl en la familia", "vive junto al mar"),
+            ("Mateo", "Argentina", "Cono Sur", "italiano de los abuelos", "usa «vos»"),
+            ("Camila", "Colombia", "Andes/Caribe", "—", "vive en la costa"),
+            ("Diego", "España", "Europa", "gallego", "vive en el noroeste"),
+            ("Valentina", "Chile", "Cono Sur", "mapudungun cerca", "el país más largo"),
+            ("Joaquín", "Perú", "Andes", "quechua", "vive a 3 000 metros"),
+            ("Lucía", "Cuba", "Caribe", "—", "una isla"),
+            ("Emilia", "Paraguay", "Cono Sur", "guaraní (oficial)", "dos lenguas oficiales"),
+            ("Tomás", "Uruguay", "Cono Sur", "portugués en la frontera", "el país más pequeño del sur"),
+            ("Isabela", "Venezuela", "Caribe", "wayuunaiki", "el salto de agua más alto"),
+            ("Andrés", "Ecuador", "Andes", "quechua", "el país del centro del mundo"),
+            ("Renata", "Bolivia", "Andes", "aymara y quechua", "dos capitales"),
+            ("Gabriel", "Costa Rica", "Centroamérica", "—", "sin ejército"),
+            ("Daniela", "Guatemala", "Centroamérica", "maya k'iche'", "muchos volcanes"),
+            ("Nicolás", "Panamá", "Centroamérica", "—", "un canal famoso"),
+            ("Marta", "Honduras", "Centroamérica", "garífuna", "ruinas mayas en Copán"),
+            ("Sebastián", "El Salvador", "Centroamérica", "—", "el país más pequeño del continente"),
+            ("Paula", "Nicaragua", "Centroamérica", "miskito", "el lago más grande de la zona"),
+            ("Rodrigo", "República Dominicana", "Caribe", "—", "comparte isla con otro país"),
+            ("Elena", "Guinea Ecuatorial", "África", "fang", "el único país hispanohablante de África"),
+        ],
+        "preguntas": [("¿Está en Europa?", "Ligt het in Europa?"),
+                      ("¿Está en Centroamérica?", "Ligt het in Midden-Amerika?"),
+                      ("¿Es una isla?", "Is het een eiland?"),
+                      ("¿Tiene costa en el Caribe?", "Heeft het kust aan de Caraïben?"),
+                      ("¿Se habla otra lengua oficial?", "Wordt er een andere officiële taal gesproken?"),
+                      ("¿Está en los Andes?", "Ligt het in de Andes?"),
+                      ("¿Es el país más grande de su zona?", "Is het het grootste land van zijn zone?")],
+    },
+    "clave": [
+        "De slimste eerste vraag is «¿está en Centroamérica?»: zeven van de twintig fiches liggen "
+        "daar. Wie met «¿es una isla?» begint, sluit er maar twee uit.",
+        "Guinea Ecuatorial is de fiche die bijna niemand vindt — en precies daarom hoort hij erbij: "
+        "de Spaanstalige wereld stopt niet in Amerika.",
+        "Paraguay en Bolivia zijn de twee fiches met meerdere officiële talen; die vraag halveert "
+        "de Andes-groep meteen.",
+        "Toets het uitsluitblad, niet de winnaar. Wie noteert wat hij uitsluit, wint vanzelf.",
+    ],
+    "nota": "Werkt ook als hele klas met de fiches op de rug geplakt — dan moet iedereen rondlopen "
+            "en Spaans praten met iedereen.",
+}
+
+P0_RETO_04 = {
+    "id": "C6P-U0-RETO-04", "num": 4, "curso": "C6+", "unidad": P0,
+    "seccion": "§4.4", "ancla": "paises", "soporte": "print",
+    "nombre": "El mapa de las lenguas",
+    "lente": "🔬 onderzoek & data", "forma": "👨‍👩‍👧 En grupos", "skill": "👁️ Leer",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "En el mundo hispano no solo se habla español. Ni de lejos.",
+    "gancho_nl": "In de Spaanstalige wereld spreekt men niet alleen Spaans. Lang niet.",
+    "consigna_es": "Lee la tabla y escribe tres frases con «se habla» y una cifra.",
+    "consigna_nl": "Lees de tabel en schrijf drie zinnen met «se habla» en een cijfer.",
+    "regla": "Elke zin bevat «se habla» of «se hablan» én een getal uit de tabel. En let op het "
+             "meervoud: «se hablan dos lenguas» — het werkwoord volgt het aantal talen, niet de spreker.",
+    "pasos": [("Leed la tabla entera.", "Lees de hele tabel."),
+              ("Buscad la lengua con más hablantes que no es el español.",
+               "Zoek de taal met de meeste sprekers die niet het Spaans is."),
+              ("Escribid tres frases con «se habla(n)» y una cifra.",
+               "Schrijf drie zinnen met «se habla(n)» en een cijfer."),
+              ("¿Qué os sorprende más? Una frase.", "Wat verrast jullie het meest? Eén zin.")],
+    "datos": {
+        # (taal, waar, ongeveer aantal sprekers, status)
+        "lenguas": [
+            ("el quechua", "Perú, Bolivia, Ecuador", "unos 8 millones", "oficial en Perú y Bolivia"),
+            ("el guaraní", "Paraguay", "unos 6 millones", "oficial, la habla casi todo el país"),
+            ("el náhuatl", "México", "más de 1,5 millones", "lengua nacional reconocida"),
+            ("el aymara", "Bolivia, Perú", "unos 2 millones", "oficial en Bolivia"),
+            ("el maya yucateco", "México", "unos 800 000", "lengua nacional reconocida"),
+            ("el catalán", "España, Andorra", "unos 9 millones", "cooficial; oficial en Andorra"),
+            ("el gallego", "España", "unos 2,4 millones", "cooficial en Galicia"),
+            ("el euskera", "España, Francia", "unos 750 000", "cooficial; no se parece a ninguna otra"),
+            ("el mapudungun", "Chile, Argentina", "unos 250 000", "sin estatus oficial estatal"),
+            ("el garífuna", "Honduras, Guatemala, Belice", "unos 200 000", "patrimonio de la UNESCO"),
+        ],
+        "marco": ["En … se habla … y también …",
+                  "El … lo hablan unos … de personas.",
+                  "En Paraguay se hablan dos lenguas oficiales: … y …",
+                  "Lo que más nos sorprende es que …"],
+    },
+    "clave": [
+        "Het quechua heeft de meeste sprekers van de inheemse talen (ongeveer 8 miljoen), maar "
+        "het catalaans staat met ongeveer 9 miljoen bovenaan de hele tabel — dat verrast bijna "
+        "elke klas.",
+        "Paraguay is het enige land waar een inheemse taal door bijna de hele bevolking gesproken "
+        "wordt. Dat is de sterkste «se hablan»-zin uit de tabel.",
+        "Let op de vormfout: «se habla dos lenguas» hoort «se hablan» te zijn. Het is de enige "
+        "grammaticale valstrik en hij komt bijna altijd voor.",
+        "Cijfers zijn afgeronde ordes van grootte; verschillende bronnen tellen anders. Zeg dat "
+        "erbij — een conclusie moet ook met een benadering kloppen.",
+    ],
+    "nota": "Sluit rechtstreeks aan bij de leerplancomponent «Identiteit in diversiteit»: de klas "
+            "ontdekt dat eentaligheid de uitzondering is, niet de regel.",
+}
+
+P0_RETO_05 = {
+    "id": "C6P-U0-RETO-05", "num": 5, "curso": "C6+", "unidad": P0,
+    "seccion": "§3.4", "ancla": "genero", "soporte": "print",
+    "nombre": "Adjetivos que cambian de sitio",
+    "lente": "🕵️ forensisch", "forma": "👥 En parejas", "skill": "👁️ Leer",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "«Un gran hombre» y «un hombre grande» no son la misma persona.",
+    "gancho_nl": "«Un gran hombre» en «un hombre grande» zijn niet dezelfde persoon.",
+    "consigna_es": "Lee los seis pares en su contexto y deduce qué significa cada posición.",
+    "consigna_nl": "Lees de zes paren in hun context en leid af wat elke plaats betekent.",
+    "regla": "Je mag de regel niet opzoeken en niet vragen. Je leidt hem af uit de zes contexten "
+             "en schrijft hem in één zin op. Pas dan vergelijk je met een ander duo.",
+    "pasos": [("Leed los seis pares con su contexto.", "Lees de zes paren met hun context."),
+              ("Escribid qué significa cada posición.", "Schrijf op wat elke plaats betekent."),
+              ("Formulad la regla en una frase.", "Formuleer de regel in één zin."),
+              ("Comparad con otra pareja. ¿Coincidís?", "Vergelijk met een ander duo. Komt het overeen?")],
+    "datos": {
+        # (voor, na, context die de betekenis verraadt)
+        "pares": [
+            ("un gran hombre", "un hombre grande",
+             "Mandela fue … · Mi tío mide dos metros: es …"),
+            ("un viejo amigo", "un amigo viejo",
+             "Nos conocemos desde los seis años: es … · Tiene ochenta años: es …"),
+            ("un pobre chico", "un chico pobre",
+             "Hoy todo le sale mal: … · No tiene dinero para el bus: …"),
+            ("una nueva casa", "una casa nueva",
+             "Nos mudamos otra vez: es … · Solo tiene un año: es …"),
+            ("el mismo libro", "el libro mismo",
+             "Leemos … que ayer · No lo dice el profe, lo dice …"),
+            ("cierta noticia", "una noticia cierta",
+             "Me cuentan … · Está comprobado: es …"),
+        ],
+        "marco": ["Delante significa …", "Detrás significa …",
+                  "Nuestra regla en una frase: …"],
+    },
+    "clave": [
+        "De regel: vóór het zelfstandig naamwoord staat de betekenis subjectief of figuurlijk "
+        "(een oordeel van de spreker); erna staat ze objectief en letterlijk (een eigenschap van "
+        "het ding zelf).",
+        "«Gran» is bovendien apocope: vóór een enkelvoudig zelfstandig naamwoord verliest «grande» "
+        "zijn slot. Dat is een tweede vondst die de klas er gratis bij krijgt.",
+        "«El mismo libro» (hetzelfde) tegenover «el libro mismo» (het boek zelf) is het paar dat "
+        "het verst van het Nederlands ligt en dus het langst duurt.",
+        "Toets de geformuleerde regel, niet de zes paren. Wie de paren juist heeft maar geen regel "
+        "kan schrijven, heeft gegokt.",
+    ],
+    "nota": "Deze reto is bewust inductief: de klas ontdekt de regel zelf. Geef hem niet vooraf, "
+            "ook niet als het stil wordt — de stilte is de oefening.",
+}
+
+P0_RETO_06 = {
+    "id": "C6P-U0-RETO-06", "num": 6, "curso": "C6+", "unidad": P0,
+    "seccion": "§3.4", "ancla": "genero", "soporte": "hub",
+    "nombre": "Retrato en negativo",
+    "lente": "✍️ creatieve beperking", "forma": "👤 Solo", "skill": "🗣️ Hablar",
+    "tiempo": "± 12 min", "dificultad": "★★☆",
+    "gancho_es": "Descríbete sin decir ni una sola vez lo que sí eres.",
+    "gancho_nl": "Beschrijf jezelf zonder één keer te zeggen wat je wél bent.",
+    "consigna_es": "Graba seis frases que empiecen por «No soy…» o «Nunca…». La clase adivina quién eres.",
+    "consigna_nl": "Neem zes zinnen op die beginnen met «No soy…» of «Nunca…». De klas raadt wie je bent.",
+    "regla": "Elke zin is een ontkenning, en elk adjectief komt maar één keer voor. «No soy alto» "
+             "en daarna «no soy bajo» mag niet: je moet echt kiezen wat je níet bent.",
+    "pasos": [("Piensa en seis cosas que no eres o no haces.",
+               "Denk aan zes dingen die je niet bent of niet doet."),
+              ("Cuida la concordancia: no soy tímido / tímida.",
+               "Let op de overeenkomst: no soy tímido / tímida."),
+              ("Graba las seis frases seguidas.", "Neem de zes zinnen na elkaar op."),
+              ("Escucha: ¿se adivina quién eres?", "Luister terug: is het te raden wie je bent?")],
+    "datos": {
+        "marco": ["No soy nada …", "Nunca llego …", "No me gusta …",
+                  "No soy de los que …", "Nunca he sido …", "Y no, tampoco soy …"],
+        "adjetivos": ["tímido/-a", "ruidoso/-a", "ordenado/-a", "puntual", "deportista",
+                      "madrugador/-a", "hablador/-a", "paciente", "friolero/-a", "goloso/-a"],
+    },
+    "clave": [
+        "De ontkenning dwingt tot precieze overeenkomst: «no soy ordenada» met -a, «no soy "
+        "puntual» zonder. De adjectieven op -a/-o en die op medeklinker staan door elkaar in "
+        "de lijst, precies daarom.",
+        "«Nunca he sido…» is een perfecto en dus C5-herhaling: laat het staan, het is de brug "
+        "naar wat de zij-instromers nog moeten leren.",
+        "Beoordeel de zes ontkenningen en de overeenkomst. Wie geraden wordt, heeft bonus — maar "
+        "het doel is de adjectiefvorm, niet het raadspel.",
+    ],
+    "nota": "Een negatief zelfportret is minder blootgevend dan een positief: je zegt wat je níet "
+            "bent, en dat is voor veel leerlingen makkelijker in september.",
+}
+
+P0_RETO_07 = {
+    "id": "C6P-U0-RETO-07", "num": 7, "curso": "C6+", "unidad": P0,
+    "seccion": "§1.4", "ancla": "saludos_c6p", "soporte": "hub",
+    "nombre": "Radio bienvenida",
+    "lente": "📻 mediaformat", "forma": "👥 En parejas", "skill": "🗣️ Hablar",
+    "tiempo": "± 12 min", "dificultad": "★★☆",
+    "gancho_es": "Treinta segundos para que alguien que empieza de cero se sienta bienvenido.",
+    "gancho_nl": "Dertig seconden om iemand die van nul begint welkom te laten voelen.",
+    "consigna_es": "Graba un mensaje de bienvenida en español lento y claro.",
+    "consigna_nl": "Neem een welkomstboodschap op in traag en helder Spaans.",
+    "regla": "Dertig seconden, en je publiek kent nog geen Spaans. Dus: korte zinnen, geen "
+             "jargon, en elk moeilijk woord meteen uitgelegd met een ander Spaans woord — niet "
+             "met Nederlands.",
+    "pasos": [("Pensad en quién os escucha: alguien que empieza hoy.",
+               "Denk aan wie luistert: iemand die vandaag begint."),
+              ("Escribid cinco frases cortas.", "Schrijf vijf korte zinnen."),
+              ("Grabad despacio. Sin correr.", "Neem traag op. Niet haasten."),
+              ("Escuchad: ¿lo entiende alguien que empieza de cero?",
+               "Luister terug: zou iemand van nul het snappen?")],
+    "datos": {
+        "marco": ["¡Hola! Bienvenido a la clase de español.",
+                  "Aquí no pasa nada si te equivocas — de verdad.",
+                  "En esta clase … , es decir, …",
+                  "Si no entiendes algo, dices: «¿puedes repetir, por favor?»",
+                  "Nos vemos el … . ¡Hasta pronto!"],
+        "trucos": [("habla despacio", "el ritmo importa más que el vocabulario"),
+                   ("repite lo importante", "una vez al principio y otra al final"),
+                   ("explica en español", "«el aula, es decir, la clase»"),
+                   ("usa la voz", "una sonrisa se oye")],
+    },
+    "clave": [
+        "«Es decir» is de sleutelchunk: uitleggen in het Spaans zelf in plaats van terugvallen op "
+        "het Nederlands. Wie hem twee keer gebruikt, heeft de opdracht begrepen.",
+        "Toets op tempo en begrijpelijkheid, niet op woordenschat. Een boodschap van vijf simpele "
+        "zinnen die aankomt, is beter dan tien mooie die te snel gaan.",
+        "De zin over fouten maken is er niet toevallig: hij zet meteen het veilige klimaat neer "
+        "dat het leerplan vraagt — in het Spaans, door een medeleerling.",
+    ],
+    "nota": "Speel de beste opnames écht af in de eerste les van het volgende schooljaar. Dat "
+            "maakt van de opdracht een echte, en de klas weet dat.",
+}
+
+P0_RETO_08 = {
+    "id": "C6P-U0-RETO-08", "num": 8, "curso": "C6+", "unidad": P0,
+    "seccion": "§1.4", "ancla": "saludos_c6p", "soporte": "hub",
+    "nombre": "El intercambio",
+    "lente": "🤝 bemiddelen", "forma": "👤 Solo", "skill": "🔀 Bemiddelen",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Un correo de Buenos Aires con tres preguntas que no entiendes del todo.",
+    "gancho_nl": "Een mail uit Buenos Aires met drie vragen die je niet helemaal begrijpt.",
+    "consigna_es": "Elige la mejor forma de pedir aclaración. En español, siempre.",
+    "consigna_nl": "Kies de beste manier om verduidelijking te vragen. In het Spaans, altijd.",
+    "regla": "Niet doen alsof je het begrijpt, en niet overschakelen op het Engels. Je vraagt in "
+             "het Spaans wat je niet snapt — en je zegt erbij wát je wél begrepen hebt.",
+    "pasos": [("Lee el correo entero.", "Lees de hele mail."),
+              ("Marca lo que no entiendes.", "Markeer wat je niet begrijpt."),
+              ("Elige cómo lo preguntas.", "Kies hoe je het vraagt.")],
+    "datos": {
+        # (zin uit de mail, beste reactie, opties, waarom)
+        "items": [
+            ("«¿Vos tenés clases los sábados?»",
+             "¿«Vos tenés» es lo mismo que «tú tienes»?",
+             ["¿«Vos tenés» es lo mismo que «tú tienes»?",
+              "Sorry, I don't understand.",
+              "Sí, sí, claro."],
+             "je vraagt naar de vórm die je niet kent — en je toont dat je de rest wel snapte"),
+            ("«Acá el cole empieza en marzo, ¿allá también?»",
+             "Entiendo «empieza en marzo». ¿«El cole» es el instituto?",
+             ["Entiendo «empieza en marzo». ¿«El cole» es el instituto?",
+              "No entiendo nada.",
+              "¿Puedes escribir en inglés?"],
+             "zeggen wat je wél begreep maakt de vraag korter en beleefder"),
+            ("«Te mando un audio, así practicás.»",
+             "¿«Practicás» es «practicas»? Es que aquí no usamos «vos».",
+             ["¿«Practicás» es «practicas»? Es que aquí no usamos «vos».",
+              "Vale, gracias.",
+              "¿Qué significa todo eso?"],
+             "«¿qué significa todo eso?» is te vaag: de ander weet niet wat hij moet uitleggen"),
+            ("«¿Qué onda con el finde?»",
+             "¿«Qué onda» quiere decir «qué tal»? ¿Y «el finde»?",
+             ["¿«Qué onda» quiere decir «qué tal»? ¿Y «el finde»?",
+              "Sí, todo bien.",
+              "No sé qué contestar."],
+             "twee onbekende woorden in één zin: vraag ze allebei, in één keer"),
+        ],
+    },
+    "clave": [
+        "De sleutel is telkens hetzelfde: benoem wát je niet begrijpt en zeg wat je wél begreep. "
+        "«No entiendo nada» is bijna altijd onwaar en helpt de ander niet.",
+        "De mail is in Argentijns Spaans: «vos tenés», «practicás», «acá», «el cole», «el finde», "
+        "«qué onda». Dat is geen fout maar een variëteit — en dat inzicht is de cultuurinhoud.",
+        "Wie in het Engels antwoordt, heeft de reto verloren, ook al is de vraag correct. "
+        "Bemiddelen is hier: binnen de taal blijven.",
+    ],
+    "nota": "Mateo uit Buenos Aires komt in C6 terug als vast castlid met voseo. Deze reto is "
+            "zijn eerste optreden.",
+}
+
+P0_RETO_03 = {
+    "id": "C6P-U0-RETO-03", "num": 3, "curso": "C6+", "unidad": P0,
+    "seccion": "§2.4", "ancla": "presente_c6p", "soporte": "ppt",
+    "nombre": "La entrevista de trabajo absurda",
+    "lente": "🎭 simulatie met beperking", "forma": "👥 En parejas", "skill": "🗣️ Hablar",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Probador de camas. Cuidador de pandas. Catador de helados. Y hay que convencer.",
+    "gancho_nl": "Beroepsslaper. Pandaverzorger. IJsproever. En je moet overtuigen.",
+    "consigna_es": "Haz la entrevista. Todo en presente, y con un argumento por respuesta.",
+    "consigna_nl": "Doe het sollicitatiegesprek. Alles in het presente, met één argument per antwoord.",
+    "regla": "Alles in het presente — geen verleden, geen toekomst. En op elke vraag antwoord je "
+             "met een reden («porque…»), nooit met alleen «sí».",
+    "pasos": [("Elegid un trabajo absurdo.", "Kies een absurde baan."),
+              ("El entrevistador elige cinco preguntas.", "De interviewer kiest vijf vragen."),
+              ("El candidato contesta en presente, con porque.",
+               "De kandidaat antwoordt in het presente, met porque."),
+              ("Cambiad de papel.", "Wissel van rol."),
+              ("La clase decide quién contrata a quién.",
+               "De klas beslist wie wie aanneemt.")],
+    "datos": {
+        "trabajos": [("probador/-a de camas", "duermes ocho horas al día, por trabajo"),
+                     ("cuidador/-a de pandas", "en China, con dos pandas de un año"),
+                     ("catador/-a de helados", "veinte sabores al día, todo el año"),
+                     ("paseador/-a de perros", "quince perros a la vez, en el centro"),
+                     ("probador/-a de toboganes", "en parques acuáticos de todo el mundo"),
+                     ("oledor/-a de perfumes", "y no puedes resfriarte nunca")],
+        "preguntas": ["¿Por qué quiere este trabajo?", "¿Qué hace usted un día normal?",
+                      "¿Cuál es su mayor defecto?", "¿Trabaja mejor solo o en equipo?",
+                      "¿Qué hace si algo sale mal?", "¿Cuántas horas duerme?",
+                      "¿Habla otras lenguas?", "¿Por qué usted y no otro?"],
+        "marco": ["Quiero este trabajo porque …", "Normalmente … y después …",
+                  "Mi defecto es que … , pero …", "Si algo sale mal, …",
+                  "Soy la persona ideal porque …"],
+    },
+    "clave": [
+        "De usted-vorm in de vragen tegenover de yo-vorm in de antwoorden is de eigenlijke drill: "
+        "elke beurt oefent twee persoonsvormen tegelijk.",
+        "«¿Cuál es su mayor defecto?» is de moeilijkste: het antwoord vraagt om een «pero»-zin, "
+        "en dat is precies de conector die het leerplan wil.",
+        "Het absurde is geen decor maar een didactisch middel: niemand kan een voorbereid antwoord "
+        "uit het hoofd opzeggen over pandaverzorging, dus iedereen moet echt formuleren.",
+    ],
+    "nota": "Werkt sterk in de eerste weken: er is geen goed antwoord, dus zij-instromers en "
+            "doorstromers staan even sterk.",
+}
+
+P0_RETO_09 = {
+    "id": "C6P-U0-RETO-09", "num": 9, "curso": "C6+", "unidad": P0,
+    "seccion": "§4.4", "ancla": "paises", "soporte": "ppt",
+    "nombre": "Un país en cinco datos",
+    "lente": "🔬 onderzoek & data", "forma": "👤 Solo", "skill": "🗣️ Hablar",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Cinco cifras y ni una vez el nombre del país.",
+    "gancho_nl": "Vijf cijfers en geen enkele keer de naam van het land.",
+    "consigna_es": "Presenta tu país en cinco datos. La clase adivina cuál es.",
+    "consigna_nl": "Presenteer je land in vijf cijfers. De klas raadt welk het is.",
+    "regla": "De landnaam, de hoofdstad en de vlag zijn verboden. Alleen cijfers, en elk cijfer "
+             "krijgt een zin met een werkwoord — een lijstje getallen is geen presentatie.",
+    "pasos": [("Elige un país hispanohablante.", "Kies een Spaanstalig land."),
+              ("Busca cinco cifras de verdad.", "Zoek vijf echte cijfers."),
+              ("Escribe una frase por cifra.", "Schrijf één zin per cijfer."),
+              ("Presenta. La clase adivina.", "Presenteer. De klas raadt."),
+              ("¿Han acertado antes del quinto dato? Eran demasiado fáciles.",
+               "Geraden vóór het vijfde cijfer? Dan waren ze te makkelijk.")],
+    "datos": {
+        "tipos_de_dato": ["habitantes", "kilómetros de costa", "número de lenguas oficiales",
+                          "altura de la capital", "años de independencia",
+                          "temperatura media en enero", "número de países vecinos",
+                          "porcentaje del país que es selva o montaña"],
+        "marco": ["En mi país viven … millones de personas.",
+                  "Tiene … kilómetros de costa.", "Se hablan … lenguas oficiales.",
+                  "La capital está a … metros.", "Limita con … países."],
+        "ejemplo": [("dato 1", "Viven unos 6,5 millones de personas."),
+                    ("dato 2", "Se hablan dos lenguas oficiales."),
+                    ("dato 3", "No tiene costa."),
+                    ("dato 4", "Limita con cinco países."),
+                    ("dato 5", "El 90 % habla una lengua indígena.")],
+    },
+    "clave": [
+        "Het voorbeeld is Paraguay: binnenland, twee officiële talen, guaraní bij bijna iedereen. "
+        "Laat het pas zien ná de eerste ronde, anders kiest de halve klas datzelfde land.",
+        "Van makkelijk naar moeilijk ordenen is de kunst: begin met het cijfer dat het minst "
+        "verraadt en houd het meest kenmerkende voor het laatst.",
+        "Toets de vijf zinnen (werkwoord plus cijfer), niet of het geraden wordt. Te snel geraden "
+        "betekent alleen dat de volgorde beter kon.",
+    ],
+    "nota": "Laat elk land maar één keer kiezen: zo dekt de klas samen de hele Spaanstalige wereld "
+            "af in één les.",
+}
+
+P0_RETO_10 = {
+    "id": "C6P-U0-RETO-10", "num": 10, "curso": "C6+", "unidad": P0,
+    "seccion": "Cultura", "ancla": "cultura_c6p0", "soporte": "ppt",
+    "nombre": "La clase perfecta",
+    "lente": "⚖️ onderhandeling & dilemma", "forma": "🏫 Toda la clase", "skill": "🗣️ Hablar",
+    "tiempo": "± 18 min", "dificultad": "★★★",
+    "gancho_es": "Vosotros escribís las reglas de este curso. Pero en español.",
+    "gancho_nl": "Jullie schrijven de afspraken van dit schooljaar. Maar in het Spaans.",
+    "consigna_es": "Proponed, negociad y votad diez reglas. Cada propuesta con ser o estar.",
+    "consigna_nl": "Stel voor, onderhandel en stem over tien afspraken. Elk voorstel met ser of estar.",
+    "regla": "Elk voorstel bevat een zin met «es» of «está» — «es importante que hablemos "
+             "español» mag niet, want dat is subjuntivo; «es importante hablar español» wel. "
+             "Een voorstel zonder ser of estar komt niet op het bord.",
+    "pasos": [("Cada uno escribe dos propuestas.", "Iedereen schrijft twee voorstellen."),
+              ("Se leen en voz alta. Solo las que llevan ser o estar.",
+               "Ze worden voorgelezen. Alleen die met ser of estar."),
+              ("Se negocian las parecidas.", "De gelijkaardige worden samengevoegd."),
+              ("Se vota. Diez reglas, ni una más.", "Er wordt gestemd. Tien afspraken, geen elf."),
+              ("Se cuelgan en la pared, en español.", "Ze gaan aan de muur, in het Spaans.")],
+    "datos": {
+        "ejemplos": [("Es importante llegar a tiempo.", "una regla de todos"),
+                     ("Está prohibido usar el móvil en los ejercicios orales.", "una prohibición"),
+                     ("Es normal equivocarse: así se aprende.", "el clima de la clase"),
+                     ("Estamos aquí para hablar, no solo para escribir.", "la prioridad"),
+                     ("Es mejor preguntar que quedarse callado.", "una invitación")],
+        "marco": ["Es importante …", "Está prohibido …", "Es mejor … que …",
+                  "Estamos aquí para …", "No es justo que …"],
+        "dilemas": ["¿Se corrige delante de toda la clase o no?",
+                    "¿Se puede usar el traductor?",
+                    "¿Qué pasa si alguien no ha estudiado nunca español?"],
+    },
+    "clave": [
+        "De grammaticale grens is hier de leerstof: «es importante + infinitivo» werkt, «es "
+        "importante que + subjuntivo» niet — en subjuntivo hoort niet in dit leerplan. Dat "
+        "verschil is meteen een echte les.",
+        "Het derde dilemma is voor deze groep het belangrijkste: de klas zit vol zij-instromers. "
+        "Laat de afspraak daarover écht gemaakt worden, niet weggestemd.",
+        "Toets de tien afspraken op vorm (ser of estar) en op het feit dat ze in het Spaans aan "
+        "de muur hangen. De inhoud is van de klas, niet van de leerkracht.",
+    ],
+    "nota": "Hang ze echt op en verwijs er het hele jaar naar. Een afspraak die na één les "
+            "verdwijnt, leert de klas dat de reto een spelletje was.",
+}
+
+RETOS_C6P_U0 = [P0_RETO_01, P0_RETO_02, P0_RETO_03, P0_RETO_04, P0_RETO_05,
+                P0_RETO_06, P0_RETO_07, P0_RETO_08, P0_RETO_09, P0_RETO_10]
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# C6+ · U1 «El día a día» — parada España, het Spaanse dagritme
+# ═══════════════════════════════════════════════════════════════════════════
+P1 = 1
+
+P1_RETO_01 = {
+    "id": "C6P-U1-RETO-01", "num": 1, "curso": "C6+", "unidad": P1,
+    "seccion": "§3.4", "ancla": "reflexivos", "soporte": "print",
+    "nombre": "El turno de noche",
+    "lente": "🔬 onderzoek & data", "forma": "👥 En parejas", "skill": "✍️ Escribir",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Se despierta a las seis. De la tarde. Todo lo demás también cambia.",
+    "gancho_nl": "Hij wordt wakker om zes uur. 's Avonds. En al de rest schuift mee.",
+    "consigna_es": "Reconstruye su día completo y marca qué reflexivos cambian de hora.",
+    "consigna_nl": "Reconstrueer zijn hele dag en markeer welke reflexieve werkwoorden van uur veranderen.",
+    "regla": "Je mag geen enkel uur verzinnen: elk uur volgt uit een gegeven. En elke zin bevat "
+             "een reflexief werkwoord met het pronomen op de juiste plaats.",
+    "pasos": [("Leed los ocho datos sueltos.", "Lees de acht losse gegevens."),
+              ("Ordenad el día de las 18:00 a las 10:00.",
+               "Zet de dag op volgorde, van 18 u tot 10 u."),
+              ("Escribid cada paso con un verbo reflexivo.",
+               "Schrijf elke stap met een reflexief werkwoord."),
+              ("Comparad con vuestro propio día: ¿qué se invierte?",
+               "Vergelijk met je eigen dag: wat draait om?")],
+    "datos": {
+        # (los gegeven, welk uur eruit volgt)
+        "pistas": [
+            ("Entra a trabajar a las diez de la noche.", "22:00"),
+            ("Necesita cuatro horas entre despertarse y trabajar.", "se despierta a las 18:00"),
+            ("Cena justo antes de salir de casa.", "cena sobre las 21:00"),
+            ("Se ducha nada más levantarse, nunca antes de dormir.", "se ducha sobre las 18:15"),
+            ("La pausa es a mitad del turno.", "sobre las 02:00"),
+            ("Sale del trabajo ocho horas después de entrar.", "06:00"),
+            ("Desayuna con su hija antes de que ella vaya al insti.", "07:30"),
+            ("Se acuesta cuando la calle ya está llena de gente.", "sobre las 09:00"),
+        ],
+        "verbos": ["despertarse", "levantarse", "ducharse", "vestirse", "irse",
+                   "sentarse", "acostarse", "dormirse", "peinarse", "afeitarse"],
+        "marco": ["Se despierta a las … , cuando los demás …",
+                  "Después de …, se …", "Mientras nosotros …, él …",
+                  "Lo más raro es que se … a las …"],
+    },
+    "clave": [
+        "De volgorde: 18:00 wakker · 18:15 douche · 21:00 avondeten · 22:00 start · 02:00 pauze · "
+        "06:00 einde · 07:30 ontbijt met de dochter · 09:00 slapen.",
+        "De omkering die de klas moet zien: hij ontbijt ná zijn werkdag en gaat slapen als "
+        "iedereen begint. «Desayunar» blijft op zijn plaats in de vólgorde, niet op de klok.",
+        "«Se ducha nada más levantarse» is de enige aanwijzing die twee uren tegelijk vastlegt — "
+        "wie hem overslaat, komt er niet.",
+        "Toets de plaats van het pronomen: «se despierta» maar «va a despertarse / se va a "
+        "despertar». Beide zijn juist; «va a se despertar» niet.",
+    ],
+    "nota": "Ploegenarbeid is voor veel leerlingen thuis heel herkenbaar. Laat wie wil vertellen "
+            "over de eigen thuissituatie, maar verplicht niemand.",
+}
+
+P1_RETO_03 = {
+    "id": "C6P-U1-RETO-03", "num": 3, "curso": "C6+", "unidad": P1,
+    "seccion": "§1.4", "ancla": "hora_c6p", "soporte": "print",
+    "nombre": "La agenda saboteada",
+    "lente": "🔓 puzzel & escape", "forma": "👨‍👩‍👧 En grupos", "skill": "🗣️ Hablar",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Alguien ha cambiado cinco cosas en tu agenda. No sabes cuáles.",
+    "gancho_nl": "Iemand heeft vijf dingen in je agenda veranderd. Je weet niet welke.",
+    "consigna_es": "Descubre las cinco diferencias hablando con tres compañeros. No enseñes tu agenda.",
+    "consigna_nl": "Ontdek de vijf verschillen door met drie klasgenoten te praten. Toon je agenda niet.",
+    "regla": "Niemand mag zijn agenda laten zien. Alle uren worden hardop in woorden gezegd — "
+             "«las siete y media», nooit «7.30» — en je noteert alleen wat je hóórt.",
+    "pasos": [("Cada uno recibe una agenda. Cuatro son distintas.",
+               "Elk krijgt een agenda. Vier zijn verschillend."),
+              ("Preguntad y comparad, sin enseñar nada.",
+               "Vraag en vergelijk, zonder iets te tonen."),
+              ("Anotad cada diferencia con las dos horas.",
+               "Noteer elk verschil met beide uren."),
+              ("¿Cuál es la agenda original? Decidid en grupo.",
+               "Welke is de originele agenda? Beslis in groep.")],
+    "datos": {
+        # (dag+moment, wat er in de "originele" agenda staat)
+        "agenda": [("lunes, por la mañana", "clase de español a las nueve menos cuarto"),
+                   ("lunes, por la tarde", "dentista a las cinco y media"),
+                   ("martes", "entrenamiento de las siete a las nueve"),
+                   ("miércoles", "examen de mates a las once en punto"),
+                   ("jueves", "trabajo de grupo a las dos y cuarto"),
+                   ("viernes", "cumpleaños de Lucía a las ocho de la tarde"),
+                   ("sábado", "trabajo en el súper de nueve a una"),
+                   ("domingo", "comida familiar a las tres")],
+        "sabotajes": [("lunes, por la tarde", "dentista a las siete y media", "cambio de hora"),
+                      ("miércoles", "examen de mates a las once y media", "media hora más tarde"),
+                      ("viernes", "cumpleaños de Lucía a las ocho de la mañana", "mañana en vez de tarde"),
+                      ("sábado", "trabajo en el súper de nueve a tres", "dos horas más"),
+                      ("domingo", "comida familiar a la una", "dos horas antes")],
+        "marco": ["¿A qué hora tienes …?", "Yo lo tengo a las …",
+                  "Entonces no coincidimos: tú a las … y yo a las …",
+                  "¿Estás seguro/-a? Repítelo, por favor.",
+                  "La diferencia está en …"],
+    },
+    "clave": [
+        "De vijf sabotages: tandarts 17:30 → 19:30, examen 11:00 → 11:30, verjaardag 20 u → 8 u "
+        "'s ochtends, werk tot 13 u → 15 u, familiemaaltijd 15 u → 13 u.",
+        "De lastigste is de verjaardag: «las ocho» klopt in beide agenda's — alleen «de la tarde» "
+        "tegenover «de la mañana» verschilt. Wie het dagdeel niet uitspreekt, vindt hem nooit.",
+        "«Las once y media» tegenover «las once en punto» is de tweede val: «en punto» wordt vaak "
+        "weggelaten en dan lijken de agenda's gelijk.",
+        "Toets het uitspreken van de uren in woorden. Wie «once treinta» zegt, heeft §1 omzeild.",
+    ],
+    "nota": "Print de vier agenda's apart en deel ze willekeurig uit; welke de echte is, weet "
+            "alleen jij. De klas moet het beredeneren, niet vragen.",
+}
+
+P1_RETO_05 = {
+    "id": "C6P-U1-RETO-05", "num": 5, "curso": "C6+", "unidad": P1,
+    "seccion": "§2.4", "ancla": "rutina_c6p", "soporte": "print",
+    "nombre": "El diario de un objeto",
+    "lente": "✍️ creatieve beperking", "forma": "👤 Solo", "skill": "✍️ Escribir",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Tu móvil también tiene un día. Cuéntalo desde dentro.",
+    "gancho_nl": "Je gsm heeft ook een dag. Vertel hem van binnenuit.",
+    "consigna_es": "Escribe el día de tu objeto en primera persona, con seis verbos reflexivos.",
+    "consigna_nl": "Schrijf de dag van je voorwerp in de ik-vorm, met zes reflexieve werkwoorden.",
+    "regla": "Je bent het voorwerp: alles staat in de ik-vorm. Minstens zes reflexieve "
+             "werkwoorden, en minstens twee ervan gebruik je figuurlijk («me apago», «me pierdo»).",
+    "pasos": [("Elige tu objeto: móvil, bici, mochila, despertador…",
+               "Kies je voorwerp: gsm, fiets, rugzak, wekker…"),
+              ("Piensa en su día, hora por hora.", "Denk aan zijn dag, uur per uur."),
+              ("Escribe en yo, con verbos reflexivos.", "Schrijf in de ik-vorm, met reflexieven."),
+              ("Subraya los seis reflexivos.", "Onderstreep de zes reflexieve werkwoorden.")],
+    "datos": {
+        "objetos": [("el móvil", "se carga, se apaga, se cae, se raya"),
+                    ("la bici", "se moja, se oxida, se aparca, se pierde"),
+                    ("la mochila", "se llena, se abre, se rompe, se olvida"),
+                    ("el despertador", "se enciende, se apaga, se retrasa, se calla"),
+                    ("los auriculares", "se enredan, se caen, se quedan, se comparten")],
+        "reflexivos": ["despertarse", "levantarse", "moverse", "quedarse", "perderse",
+                       "caerse", "apagarse", "encenderse", "llenarse", "romperse",
+                       "olvidarse", "callarse"],
+        "marco": ["A las siete me … y ya empieza todo.",
+                  "Durante la clase me … y no digo nada.",
+                  "Por la tarde me … otra vez.",
+                  "Lo peor del día es cuando me …",
+                  "A las once me … , por fin."],
+    },
+    "clave": [
+        "De figuurlijke reflexieven zijn het eigenlijke doel: «me apago» (ik val uit / ik geef er "
+        "de brui aan) en «me pierdo» (ik raak zoek / ik haak af) werken voor een voorwerp én voor "
+        "een mens. Dat dubbele leven is de literaire winst.",
+        "Let op «me quedo» versus «quedo»: alleen de reflexieve vorm betekent «blijven». Dat is de "
+        "meest voorkomende fout in deze reto.",
+        "Toets de zes reflexieven en de consequente ik-vorm. Wie halverwege naar «él» overschakelt, "
+        "is uit het personage gevallen — laat dat zien in plaats van het te rekenen als fout.",
+    ],
+    "nota": "Levert vaak de leukste teksten van het jaar. Bundel ze tot een «diario de los objetos "
+            "de la clase» voor aan de muur.",
+}
+
+P1_RETO_09 = {
+    "id": "C6P-U1-RETO-09", "num": 9, "curso": "C6+", "unidad": P1,
+    "seccion": "§3.4", "ancla": "reflexivos", "soporte": "print",
+    "nombre": "Instrucciones para mi sustituto",
+    "lente": "✍️ creatieve beperking", "forma": "👥 En parejas", "skill": "✍️ Escribir",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Mañana alguien vive tu vida. Y no sabe nada.",
+    "gancho_nl": "Morgen leeft iemand jouw leven. En hij weet niets.",
+    "consigna_es": "Escribe el manual de tu día: horas exactas y verbos reflexivos.",
+    "consigna_nl": "Schrijf de handleiding van je dag: exacte uren en reflexieve werkwoorden.",
+    "regla": "Elke instructie heeft een uur én een reflexief werkwoord. En één regel is "
+             "verplicht: «lo que no debes hacer» — precies één ding dat je vervanger absoluut "
+             "níet mag doen.",
+    "pasos": [("Escribe tu día de la mañana a la noche.",
+               "Schrijf je dag van 's ochtends tot 's avonds."),
+              ("Añade la hora a cada instrucción.", "Zet een uur bij elke instructie."),
+              ("Añade la línea «lo que no debes hacer».",
+               "Voeg de regel «wat je niet mag doen» toe."),
+              ("Intercambiad. ¿Puede tu compañero/a vivir tu día?",
+               "Wissel. Kan je buur jouw dag leven?")],
+    "datos": {
+        "bloques": [("por la mañana", "de las 6:30 a las 8:30"),
+                    ("en el insti", "de las 8:30 a las 16:00"),
+                    ("por la tarde", "de las 16:00 a las 19:00"),
+                    ("por la noche", "de las 19:00 a las 23:00")],
+        "verbos": ["despertarse", "levantarse", "ducharse", "vestirse", "desayunar",
+                   "irse", "sentarse", "quedarse", "acostarse", "prepararse"],
+        "marco": ["A las … te … y no lo dejes para después.",
+                  "Antes de …, tienes que …", "No te olvides de …",
+                  "Sobre las … te … , siempre en el mismo sitio.",
+                  "Lo que NO debes hacer: …"],
+    },
+    "clave": [
+        "De instructievorm dwingt tot de tú-imperatief mét pronomen: «levántate», «no te olvides». "
+        "Dat is het lastigste stukje §3 en hier komt het vanzelf.",
+        "Bevestigend gaat het pronomen vást aan het werkwoord («levántate», met accent), ontkennend "
+        "ervóór («no te levantes»). Dat contrast is de kern van de nabespreking.",
+        "De regel «lo que no debes hacer» levert altijd de beste zin op, en het is meteen de "
+        "enige verplichte ontkennende imperatief.",
+        "Toets of de vervanger de dag écht zou kunnen leven: een instructie zonder uur of zonder "
+        "plaats is onbruikbaar, en dat merkt de buur meteen.",
+    ],
+    "nota": "Wie zijn eigen dag liever niet deelt, schrijft de handleiding voor een verzonnen "
+            "persoon — de grammatica blijft dezelfde.",
+}
+
+P1_RETO_02 = {
+    "id": "C6P-U1-RETO-02", "num": 2, "curso": "C6+", "unidad": P1,
+    "seccion": "§4.4", "ancla": "ser_estar_c6p", "soporte": "hub",
+    "nombre": "Es aburrido / está aburrido",
+    "lente": "🕵️ forensisch", "forma": "👤 Solo", "skill": "👁️ Leer",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "La misma palabra, dos personas distintas. Solo la escena lo dice.",
+    "gancho_nl": "Hetzelfde woord, twee verschillende mensen. Alleen het beeld beslist.",
+    "consigna_es": "Elige ser o estar y di qué de la escena lo demuestra.",
+    "consigna_nl": "Kies ser of estar en zeg wat in het beeld het bewijst.",
+    "regla": "Kiezen volstaat niet: bij elke keuze hoort het detail uit de scène dat het bewijst. "
+             "Wie kiest op gevoel, haalt de helft — en dat is precies de valstrik van dit paar.",
+    "pasos": [("Lee la escena entera, no solo la frase.",
+               "Lees de hele scène, niet alleen de zin."),
+              ("Decide: ¿característica o momento?", "Beslis: eigenschap of moment?"),
+              ("Comprueba con el detalle de la escena.",
+               "Controleer met het detail uit de scène.")],
+    "datos": {
+        # (scène, juist antwoord, opties, waarom)
+        "items": [
+            ("Carla lleva veinte minutos mirando el reloj en clase de historia.",
+             "Está aburrida.", ["Está aburrida.", "Es aburrida."],
+             "het is dit moment, niet haar karakter: de klok verraadt de duur"),
+            ("Nadie quiere sentarse al lado de Pablo: siempre cuenta lo mismo.",
+             "Es aburrido.", ["Es aburrido.", "Está aburrido."],
+             "«siempre» maakt er een eigenschap van"),
+            ("Marta ha dormido tres horas y bosteza sin parar.",
+             "Está cansada.", ["Está cansada.", "Es cansada."],
+             "vermoeidheid is altijd een toestand; «es cansada» bestaat niet zo"),
+            ("Este ejercicio tiene ocho pasos y cada uno depende del anterior.",
+             "Es complicado.", ["Es complicado.", "Está complicado."],
+             "de opbouw van de oefening is een eigenschap"),
+            ("La sopa lleva media hora en la mesa.",
+             "Está fría.", ["Está fría.", "Es fría."],
+             "de soep is koud gewórden — een verandering, dus estar"),
+            ("A Luis no le gusta hablar con desconocidos, nunca.",
+             "Es callado.", ["Es callado.", "Está callado."],
+             "«nunca» wijst op karakter"),
+            ("Luis no ha dicho nada en toda la reunión, y eso que normalmente habla mucho.",
+             "Está callado.", ["Está callado.", "Es callado."],
+             "«normalmente habla mucho» maakt het uitzonderlijk, dus een moment"),
+            ("El plátano tiene manchas negras por todas partes.",
+             "Está malo.", ["Está malo.", "Es malo."],
+             "«es malo» over eten betekent «van slechte kwaliteit», niet «bedorven»"),
+            ("Mi abuelo tiene noventa años y todavía sale a caminar cada día.",
+             "Está bien.", ["Está bien.", "Es bien."],
+             "«es bien» bestaat niet: met bien gaat altijd estar"),
+            ("Este bar abre a las seis de la mañana y cierra a las dos.",
+             "Es abierto.", ["Está abierto.", "Es abierto."],
+             "hier gaat het over de openingsuren als eigenschap — al is «está abierto» over "
+             "dít moment ook correct Spaans, de scène beschrijft geen moment"),
+            ("Sara sonríe a todo el mundo, incluso a las siete de la mañana.",
+             "Es alegre.", ["Es alegre.", "Está alegre."],
+             "«incluso a las siete» toont dat het altijd zo is"),
+            ("Han aprobado todos y Sara no para de reírse.",
+             "Está alegre.", ["Está alegre.", "Es alegre."],
+             "de reden staat erbij: dus dit moment"),
+        ],
+    },
+    "clave": [
+        "De zes paren zijn bewust twee aan twee gebouwd: aburrido, callado en alegre komen elk "
+        "twee keer voor, één keer als eigenschap en één keer als moment. Wie het paar ziet, "
+        "heeft de regel.",
+        "«Es bien» bestaat niet en «es cansada» betekent iets heel anders dan «está cansada». Die "
+        "twee zijn geen keuze maar een vorm die je moet kennen.",
+        "«El plátano está malo» (bedorven) tegenover «es malo» (van slechte kwaliteit) is de "
+        "grappigste en blijft het langst hangen.",
+        "Item tien is de moeilijkste en heeft geen absoluut fout alternatief: «está abierto» is "
+        "correct Spaans, maar niet voor déze scène. Bespreek hem klassikaal.",
+    ],
+    "nota": "Op de hub geeft elke keuze zijn reden terug; laat de klas ná de twaalf items zelf de "
+            "regel in één zin schrijven.",
+}
+
+P1_RETO_08 = {
+    "id": "C6P-U1-RETO-08", "num": 8, "curso": "C6+", "unidad": P1,
+    "seccion": "§2.4", "ancla": "rutina_c6p", "soporte": "hub",
+    "nombre": "Podcast: cinco minutos de mi día",
+    "lente": "📻 mediaformat", "forma": "👤 Solo", "skill": "🗣️ Hablar",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "No pasa nada especial. Ese es el reto.",
+    "gancho_nl": "Er gebeurt niets bijzonders. Dát is de uitdaging.",
+    "consigna_es": "Graba dos minutos sobre cinco minutos cualquiera de tu día.",
+    "consigna_nl": "Neem twee minuten op over vijf willekeurige minuten uit je dag.",
+    "regla": "Er mag niets spannends gebeuren — geen ongeluk, geen verrassing. Wat het boeiend "
+             "maakt zijn de conectoren: minstens zes verschillende, en geen twee keer dezelfde.",
+    "pasos": [("Elige cinco minutos aburridos: la cola del súper, el bus, el pasillo.",
+               "Kies vijf saaie minuten: de rij in de winkel, de bus, de gang."),
+              ("Escribe qué pasa, en orden.", "Schrijf op wat er gebeurt, op volgorde."),
+              ("Añade seis conectores distintos.", "Voeg zes verschillende conectoren toe."),
+              ("Graba. Escucha. ¿Se sigue sin esfuerzo?",
+               "Neem op. Luister terug. Volgt het vanzelf?")],
+    "datos": {
+        "conectores": ["primero", "luego", "mientras", "de repente", "entonces",
+                       "al final", "por eso", "aunque", "además", "sin embargo",
+                       "justo después", "en ese momento"],
+        "escenarios": ["la cola del supermercado", "el bus de las ocho menos diez",
+                       "el pasillo entre dos clases", "la sala de espera",
+                       "los cinco minutos antes de dormir"],
+        "marco": ["Son las … y estoy en …", "Primero … , luego …",
+                  "Mientras …, alguien …", "Aunque no pasa nada, …",
+                  "Al final … y ya está."],
+    },
+    "clave": [
+        "«De repente» is de val: hij lokt een gebeurtenis uit, en die is verboden. Wie hem "
+        "gebruikt, moet hem laten slaan op iets minuscuuls («de repente la fila avanza»).",
+        "«Aunque» en «sin embargo» zijn de twee conectoren die het niveau optillen van A2 naar "
+        "aanzet B1 — beloon wie ze correct gebruikt.",
+        "Toets het aantal verschillende conectoren en de vlotheid, niet de inhoud. Saai is de "
+        "opdracht, niet het probleem.",
+    ],
+    "nota": "Speel er twee af zonder te zeggen van wie. De klas hoort meteen dat de conectoren "
+            "het verschil maken en niet het onderwerp.",
+}
+
+P1_RETO_10 = {
+    "id": "C6P-U1-RETO-10", "num": 10, "curso": "C6+", "unidad": P1,
+    "seccion": "Cultura", "ancla": "cultura_c6p1", "soporte": "hub",
+    "nombre": "La cita imposible",
+    "lente": "⚖️ onderhandeling & dilemma", "forma": "👨‍👩‍👧 En grupos", "skill": "🗣️ Hablar",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Cuatro agendas, un solo hueco. O ninguno.",
+    "gancho_nl": "Vier agenda's, één gaatje. Of geen enkel.",
+    "consigna_es": "Encuentra el único momento posible — o demuestra que no existe.",
+    "consigna_nl": "Vind het enige mogelijke moment — of bewijs dat het niet bestaat.",
+    "regla": "Niemand mag een afspraak schrappen of verzetten. Je zoekt binnen wat er is, en je "
+             "verantwoordt elke uitsluiting met het uur én de reden.",
+    "pasos": [("Leed las cuatro agendas.", "Lees de vier agenda's."),
+              ("Descartad hora por hora, en voz alta.", "Sluit uur per uur uit, hardop."),
+              ("Elegid el momento posible.", "Kies het mogelijke moment.")],
+    "datos": {
+        # (situatie, juist antwoord, opties, waarom)
+        "items": [
+            ("Ana entrena de 18:00 a 20:00 los martes y jueves. Beto trabaja los sábados de "
+             "9:00 a 15:00. Carla tiene clase de música los miércoles a las 17:00. Dani no "
+             "puede antes de las 17:00 ningún día. ¿Cuándo quedáis, si necesitáis dos horas?",
+             "El sábado a las cinco de la tarde.",
+             ["El sábado a las cinco de la tarde.",
+              "El martes a las seis.",
+              "El miércoles a las cinco."],
+             "zaterdag na drie uur is Beto vrij, Dani kan vanaf vijf uur, en Ana traint niet"),
+            ("Mismo grupo. Ahora solo tenéis una hora y tiene que ser entre semana. ¿Cuándo?",
+             "El lunes a las cinco.",
+             ["El lunes a las cinco.", "El jueves a las seis.", "El miércoles a las seis."],
+             "maandag heeft niemand iets staan, en Dani kan vanaf vijf uur"),
+            ("Beto cambia de turno: ahora trabaja los sábados de 15:00 a 21:00. ¿Sigue "
+             "funcionando el sábado?",
+             "No, ya no. Hay que buscar entre semana.",
+             ["No, ya no. Hay que buscar entre semana.",
+              "Sí, a las cinco igual.",
+              "Sí, pero solo una hora."],
+             "zijn nieuwe shift dekt precies het gaatje dat jullie hadden gevonden"),
+            ("Carla dice: «Yo puedo el miércoles si empezamos a las siete.» ¿Es posible?",
+             "Sí, si a Dani le va bien a las siete.",
+             ["Sí, si a Dani le va bien a las siete.",
+              "No, Carla tiene música.",
+              "No, es demasiado tarde para todos."],
+             "haar muziekles is óm zeven uur gedaan; het probleem verschuift naar Dani"),
+        ],
+    },
+    "clave": [
+        "Ronde één: zaterdag 17 u. Ronde twee: maandag 17 u. Ronde drie: het zaterdaggaatje valt "
+        "weg door Beto's nieuwe shift. Ronde vier: woensdag 19 u kán, maar hangt van Dani af.",
+        "De vierde is de belangrijkste: het antwoord is voorwaardelijk. «Sí, si…» met presente is "
+        "precies de conditionele zin die binnen dit leerplan mag — geen condicional nodig.",
+        "Toets het hardop uitsluiten. Een groep die meteen het juiste uur roept, heeft gegokt; de "
+        "taal zit in «el martes no, porque Ana entrena hasta las ocho».",
+        "Het Spaanse dagritme uit de Cultura-sectie speelt mee: zeven uur 's avonds is daar geen "
+        "laat uur om af te spreken, hier wel. Benoem dat verschil.",
+    ],
+    "nota": "Sluit rechtstreeks aan bij «el horario español»: dezelfde agenda voelt in Madrid "
+            "anders dan in Gent.",
+}
+
+P1_RETO_04 = {
+    "id": "C6P-U1-RETO-04", "num": 4, "curso": "C6+", "unidad": P1,
+    "seccion": "§3.4", "ancla": "reflexivos", "soporte": "ppt",
+    "nombre": "Terapia de compañeros de piso",
+    "lente": "⚖️ onderhandeling & dilemma", "forma": "👨‍👩‍👧 En grupos", "skill": "🗣️ Hablar",
+    "tiempo": "± 18 min", "dificultad": "★★★",
+    "gancho_es": "Uno se levanta a las seis. El otro se acuesta a las tres. Viven juntos.",
+    "gancho_nl": "De ene staat op om zes uur. De andere gaat slapen om drie uur. Ze wonen samen.",
+    "consigna_es": "Dos exponen, uno media. El mediador resume las dos posturas antes de proponer.",
+    "consigna_nl": "Twee leggen uit, één bemiddelt. De bemiddelaar vat beide standpunten samen vóór hij voorstelt.",
+    "regla": "De bemiddelaar mag pas een oplossing voorstellen nadat hij béide standpunten heeft "
+             "samengevat — in de derde persoon, met reflexieve werkwoorden. Vóór die samenvatting "
+             "is elk voorstel ongeldig.",
+    "pasos": [("Repartid los papeles: A, B y mediador/-a.",
+               "Verdeel de rollen: A, B en bemiddelaar."),
+              ("A y B cuentan su rutina y su queja.",
+               "A en B vertellen hun routine en hun klacht."),
+              ("El mediador resume las dos posturas en tercera persona.",
+               "De bemiddelaar vat beide standpunten samen in de derde persoon."),
+              ("Solo entonces: una propuesta concreta con horas.",
+               "Pas dan: één concreet voorstel met uren."),
+              ("¿Firman los dos? Cambiad de papel.", "Tekenen ze allebei? Wissel van rol.")],
+    "datos": {
+        "roles": [("Compañero/a A",
+                   "Te levantas a las seis, te duchas con música y desayunas en la cocina. "
+                   "A las diez de la noche ya estás dormido/-a."),
+                  ("Compañero/a B",
+                   "Te acuestas a las tres, te levantas a mediodía y estudias de noche. "
+                   "La ducha de las seis te despierta cada día."),
+                  ("Mediador/-a",
+                   "No tomas partido. Resumes primero, propones después.")],
+        "quejas": ["La ducha de las seis se oye en toda la casa.",
+                   "La cocina está sucia a mediodía.",
+                   "La luz del salón está encendida a las dos de la mañana.",
+                   "Nadie se acuerda de sacar la basura."],
+        "marco_mediador": ["Si te he entendido bien, tú te … a las …",
+                           "Y tú, en cambio, te … a las …",
+                           "Los dos tenéis razón en que …",
+                           "¿Qué os parece si …?",
+                           "¿Estáis de acuerdo con esto?"],
+    },
+    "clave": [
+        "De samenvatting in de derde persoon is de eigenlijke oefening: «se levanta a las seis» "
+        "tegenover «te levantas a las seis». Wie de rol van bemiddelaar goed speelt, vervoegt "
+        "het hele reflexieve paradigma zonder dat het een drill lijkt.",
+        "«Si te he entendido bien» is de sleutelchunk van bemiddelen en komt in elke ronde terug.",
+        "Beide bewoners hebben gelijk: er is geen schuldige. Elk voorstel dat één van de twee "
+        "vraagt zijn ritme volledig om te gooien, wordt niet getekend — en dat hoort zo.",
+    ],
+    "nota": "Drie ronden met wisselende rollen zorgt dat iedereen één keer bemiddelaar is. Dat is "
+            "de rol waar het meeste Spaans in zit.",
+}
+
+P1_RETO_06 = {
+    "id": "C6P-U1-RETO-06", "num": 6, "curso": "C6+", "unidad": P1,
+    "seccion": "§4.4", "ancla": "ser_estar_c6p", "soporte": "ppt",
+    "nombre": "El termómetro emocional",
+    "lente": "🔬 onderzoek & data", "forma": "🏫 Toda la clase", "skill": "✍️ Escribir",
+    "tiempo": "± 15 min", "dificultad": "★★☆",
+    "gancho_es": "¿Cómo está la clase hoy? En cifras, y sin nombres.",
+    "gancho_nl": "Hoe is de klas er vandaag aan toe? In cijfers, en zonder namen.",
+    "consigna_es": "Votad en anónimo, haced el gráfico y describid la semana con estar.",
+    "consigna_nl": "Stem anoniem, maak de grafiek en beschrijf de week met estar.",
+    "regla": "Alles anoniem, en elke conclusie gebruikt «estar» met een percentage of een aantal. "
+             "«La clase es cansada» is fout in twee opzichten — vorm én inhoud.",
+    "pasos": [("Cada uno vota en anónimo: ¿cómo estás hoy, del uno al cinco?",
+               "Iedereen stemt anoniem: hoe voel je je vandaag, van één tot vijf?"),
+              ("Contad y haced el gráfico en la pizarra.",
+               "Tel en maak de grafiek op het bord."),
+              ("Escribid tres frases con estar y una cifra.",
+               "Schrijf drie zinnen met estar en een cijfer."),
+              ("Repetid el viernes. ¿Ha cambiado algo?",
+               "Herhaal op vrijdag. Is er iets veranderd?")],
+    "datos": {
+        "escala": [("1", "fatal", "estoy fatal"), ("2", "regular", "estoy regular"),
+                   ("3", "normal", "estoy bien"), ("4", "contento/-a", "estoy contento/-a"),
+                   ("5", "genial", "estoy genial")],
+        "marco": ["El … % de la clase está …",
+                  "Hoy hay más gente … que el lunes.",
+                  "Nadie está … , y eso es buena señal.",
+                  "La media de la clase es de … sobre cinco.",
+                  "El viernes la clase está … que el lunes."],
+        "aviso": "Nadie tiene que decir por qué. El termómetro mide la clase, no a las personas.",
+    },
+    "clave": [
+        "Het contrast dat de reto bewijst: «estoy» voor de stemming van vandaag, «es» alleen voor "
+        "het gemiddelde als getal («la media es de 3,4»). Dat ene «es» temidden van al die "
+        "«estoy»-vormen maakt de regel zichtbaar.",
+        "«Está mejor que el lunes» introduceert de comparativo, die verderop in C6 terugkomt — een "
+        "vooruitwijzing zonder er les van te maken.",
+        "Toets de drie zinnen, niet het gemiddelde. En herhaal de meting: pas de tweéde keer zien "
+        "leerlingen dat een klas een stemming heeft die verandert.",
+    ],
+    "nota": "Houd het anoniem en vraag nooit door. Wie zich slecht voelt, mag dat aangeven zonder "
+            "dat er een gesprek volgt — dat is de afspraak die de reto veilig maakt.",
+}
+
+P1_RETO_07 = {
+    "id": "C6P-U1-RETO-07", "num": 7, "curso": "C6+", "unidad": P1,
+    "seccion": "§2.4", "ancla": "rutina_c6p", "soporte": "ppt",
+    "nombre": "Rutinas extremas",
+    "lente": "🎭 simulatie met beperking", "forma": "👥 En parejas", "skill": "🗣️ Hablar",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Astronauta, panadero de noche, nadadora olímpica. ¿Quién tiene el peor despertador?",
+    "gancho_nl": "Astronaut, nachtbakker, olympisch zwemster. Wie heeft de ergste wekker?",
+    "consigna_es": "Compara una rutina extrema con la tuya y di qué te parece imposible.",
+    "consigna_nl": "Vergelijk een extreme routine met de jouwe en zeg wat jou onmogelijk lijkt.",
+    "regla": "Elke vergelijking noemt twee uren: het zijne en het jouwe. «Se levanta muy "
+             "temprano» telt niet; «se levanta a las cuatro y yo a las siete» wel.",
+    "pasos": [("Elegid una rutina extrema.", "Kies een extreme routine."),
+              ("Comparad hora por hora con la vuestra.",
+               "Vergelijk uur per uur met die van jullie."),
+              ("Decid qué os parece imposible y por qué.",
+               "Zeg wat jullie onmogelijk lijkt en waarom."),
+              ("¿Podéis vivir así una semana? Votad.",
+               "Zouden jullie zo een week kunnen leven? Stem.")],
+    "datos": {
+        "rutinas": [("astronauta en la EEI",
+                     "se despierta a las 6:00 UTC · hace deporte dos horas al día · "
+                     "ve dieciséis amaneceres · se duerme atado"),
+                    ("panadero/-a de noche",
+                     "entra a las 23:00 · el primer pan sale a las 5:00 · "
+                     "se acuesta a las 14:00 · libra los domingos"),
+                    ("nadador/-a olímpico/-a",
+                     "se levanta a las 4:45 · dos entrenamientos al día · "
+                     "come cinco veces · se acuesta a las 21:00"),
+                    ("médico/-a de urgencias",
+                     "turnos de doce horas · come cuando puede · "
+                     "duerme de día una semana de cada tres")],
+        "marco": ["Se levanta a las … y yo a las …",
+                  "Mientras él/ella …, yo …",
+                  "Lo que me parece imposible es …",
+                  "Yo no puedo … , porque …",
+                  "En eso nos parecemos: los dos nos …"],
+    },
+    "clave": [
+        "De astronaut is de leukste maar de zwemmer is didactisch de beste: zijn dag botst het "
+        "hardst met een schooldag, dus de vergelijkingen komen vanzelf.",
+        "«Mientras» plus presente is de conector die de reto binnenhaalt: twee handelingen op "
+        "hetzelfde moment, twee verschillende personen.",
+        "De vorm die op de tong ligt («yo no podría») is condicional en hoort niet in dit "
+        "leerplan. Daarom geeft het marco «yo no puedo»; «para mí es imposible» werkt even goed.",
+    ],
+    "nota": "De zestien zonsopgangen per dag in het ruimtestation zorgen altijd voor discussie. "
+            "Laat die even lopen: het is echte inhoud, in het Spaans.",
+}
+
+RETOS_C6P_U1 = [P1_RETO_01, P1_RETO_02, P1_RETO_03, P1_RETO_04, P1_RETO_05,
+                P1_RETO_06, P1_RETO_07, P1_RETO_08, P1_RETO_09, P1_RETO_10]
+
+
 RETOS = (RETOS_U0 + RETOS_U1 + RETOS_U2 + RETOS_U3 + RETOS_U4
-         + RETOS_U5 + RETOS_U6 + RETOS_U7 + RETOS_U8)
+         + RETOS_U5 + RETOS_U6 + RETOS_U7 + RETOS_U8
+         + RETOS_C6P_U0 + RETOS_C6P_U1)
 
 # Waar in de printcursus elke sectie eindigt — hier wordt een print-reto ingevoegd.
 ANCLAS = ["alfabeto", "sonidos", "sonido_letra", "acento", "numeros", "saludos", "cultura",
@@ -4019,7 +5034,11 @@ ANCLAS = ["alfabeto", "sonidos", "sonido_letra", "acento", "numeros", "saludos",
           "pronombres_u6", "acabar", "demostrativos", "concordancia_u6", "cultura_u6",
           # C5 U7 en U8
           "hay_estar", "preposiciones", "gerundio", "imperativo", "ordinales", "cultura_u7",
-          "perfecto", "participios", "marcadores", "clima", "cultura_u8"]
+          "perfecto", "participios", "marcadores", "clima", "cultura_u8",
+          # C6+ U0
+          "saludos_c6p", "presente_c6p", "genero", "paises", "cultura_c6p0",
+          # C6+ U1
+          "hora_c6p", "rutina_c6p", "reflexivos", "ser_estar_c6p", "cultura_c6p1"]
 
 
 def de(curso, unidad):

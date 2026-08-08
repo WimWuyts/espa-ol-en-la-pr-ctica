@@ -297,6 +297,36 @@ def retos_js(host_id, curso, unidad):
             base["tipo"] = "opciones"
             base["items"] = [{"enunciado": nl, "correcta": c, "opciones": o, "porque": p}
                              for nl, c, o, p in d["items"]]
+        elif r["id"] == "C6P-U0-RETO-06":
+            base["tipo"] = "grabar"
+            base["situaciones"] = [{"es": m, "nl": "", "pista": ""} for m in d["marco"]]
+            base["items"] = [{"text": "Mi retrato en negativo",
+                              "cue": "zes ontkenningen · elk adjectief maar één keer · let op "
+                                     "de uitgang -o/-a"}]
+        elif r["id"] == "C6P-U0-RETO-07":
+            base["tipo"] = "grabar"
+            base["situaciones"] = [{"es": m, "nl": "", "pista": ""} for m in d["marco"]]
+            base["items"] = [{"text": "Radio bienvenida",
+                              "cue": "dertig seconden · traag · elk moeilijk woord uitleggen "
+                                     "in het Spaans met «es decir»"}]
+        elif r["id"] == "C6P-U0-RETO-08":
+            base["tipo"] = "opciones"
+            base["items"] = [{"enunciado": linea, "correcta": c, "opciones": o, "porque": p}
+                             for linea, c, o, p in d["items"]]
+        elif r["id"] == "C6P-U1-RETO-02":
+            base["tipo"] = "opciones"
+            base["items"] = [{"enunciado": escena, "correcta": c, "opciones": o, "porque": p}
+                             for escena, c, o, p in d["items"]]
+        elif r["id"] == "C6P-U1-RETO-08":
+            base["tipo"] = "grabar"
+            base["situaciones"] = [{"es": m, "nl": "", "pista": ""} for m in d["marco"]]
+            base["items"] = [{"text": "Cinco minutos de mi día",
+                              "cue": "twee minuten · zes verschillende conectoren: "
+                                     + " · ".join(d["conectores"][:8])}]
+        elif r["id"] == "C6P-U1-RETO-10":
+            base["tipo"] = "opciones"
+            base["items"] = [{"enunciado": sit, "correcta": c, "opciones": o, "porque": p}
+                             for sit, c, o, p in d["items"]]
         else:
             continue
         salida.append(base)

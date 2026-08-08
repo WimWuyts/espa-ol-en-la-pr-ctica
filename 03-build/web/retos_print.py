@@ -927,6 +927,211 @@ def _balance(r):
         % (banco, irr, filas, marco))
 
 
+# ── C6+ ──────────────────────────────────────────────────────────────────────
+
+def _test_falso(r):
+    """Tien testzinnen om te corrigeren, mét de naam van de regel."""
+    d = r["datos"]
+    filas = "".join(
+        '<tr><td style="font-size:9.4pt">%d</td><td class="fr">%s</td>'
+        '<td style="text-align:center">☐</td><td><span class="wl md"></span></td>'
+        '<td><span class="wl sm"></span></td></tr>' % (i, E(f))
+        for i, (f, _ok, _cor, _reg) in enumerate(d["frases"], 1))
+    reglas = "".join('<span><b>%s</b></span>' % E(x) for x in d["reglas"])
+    return (
+        '<div class="rol">📝 Test de nivel · versión del corrector</div>'
+        '<p style="font-size:9.8pt;margin:0 0 1mm">Cinco nombres de regla. Uno por error. '
+        '<span class="gloss">Vijf regelnamen. Eén per fout — schrijf hem in de laatste kolom.</span></p>'
+        '<div class="tira">%s</div>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:8mm">#</th>'
+        '<th>La frase</th><th style="width:16mm">¿Mal?</th><th style="width:48mm">Corrección</th>'
+        '<th style="width:26mm">Regla</th></tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>He encontrado</b> '
+        '<span class="wl sm"></span> <b>errores de 6.</b> Ojo: una frase lleva dos. '
+        '<span class="gloss">Let op: één zin bevat er twee.</span></p>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Mi punto débil</b> — la regla que más '
+        'se me escapa: <span class="wl md"></span></p>' % (reglas, filas))
+
+
+def _quien_es_quien(r):
+    """Twintig knipfiches met land en kenmerk + het uitsluitblad."""
+    d = r["datos"]
+    fichas = "".join(
+        '<div class="ficha fid"><b>%s</b><span>%s</span><span>%s</span>'
+        '<span class="fl">%s</span></div>'
+        % (E(n), E(pais), E(zona), E(extra if extra != "—" else rasgo))
+        for n, pais, zona, extra, rasgo in d["fichas"])
+    preg = "".join('<span><b>%s</b> %s</span>' % (E(q), E(nl)) for q, nl in d["preguntas"])
+    filas = "".join(
+        '<tr><td style="font-size:9.4pt">%d</td><td><span class="wl lg"></span></td>'
+        '<td style="text-align:center;font-size:9.2pt">☐ sí ☐ no</td>'
+        '<td><span class="wl md"></span></td></tr>' % i for i in range(1, 6))
+    return (
+        '<p style="font-size:9.8pt;margin:0 0 1mm"><b>Banco de preguntas.</b> Solo sí o no — y el '
+        'nombre del país solo en la última. <span class="gloss">Alleen ja/nee. De landnaam mag '
+        'pas in je laatste vraag.</span></p>'
+        '<div class="tira">%s</div>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:8mm">#</th>'
+        '<th>Mi pregunta</th><th style="width:24mm">Respuesta</th>'
+        '<th style="width:40mm">Descarto…</th></tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Mi conclusión:</b> es de… '
+        '<span class="wl md"></span> &nbsp;·&nbsp; ¿en cuántas preguntas? '
+        '<span class="wl sm"></span></p>'
+        '<div class="pliegue">✂ Veinte fichas · twintig fiches om uit te knippen</div>'
+        '<div class="fichas f4">%s</div>' % (preg, filas, fichas))
+
+
+def _lenguas(r):
+    """Talentabel met sprekersaantallen + «se habla(n)»-zinnen."""
+    d = r["datos"]
+    filas = "".join(
+        '<tr><td class="fr"><b>%s</b></td><td style="font-size:9.4pt">%s</td>'
+        '<td style="text-align:right">%s</td><td style="font-size:9pt;color:var(--mut)">%s</td></tr>'
+        % (E(l), E(donde), E(n), E(st)) for l, donde, n, st in d["lenguas"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<div class="rol">🗣️ Lenguas del mundo hispano</div>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:34mm">La lengua</th>'
+        '<th style="width:44mm">¿Dónde?</th><th style="width:30mm">Hablantes</th>'
+        '<th>Estatus</th></tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.4pt;margin:1.5mm 0 0;color:var(--mut)">Cifras redondeadas: cada '
+        'fuente cuenta de otra manera.</p>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>La lengua con más hablantes de toda la '
+        'tabla</b> es <span class="wl md"></span> · <b>y la indígena con más hablantes</b> es '
+        '<span class="wl md"></span></p>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Tres frases con «se habla» o «se '
+        'hablan»</b> y una cifra. Ojo al plural:</p>'
+        '<div class="tira">%s</div>%s'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Lo que más nos sorprende:</b></p>'
+        '<div style="margin:1mm 0"><span class="wl full"></span></div>'
+        % (filas, marco, _lineas(3, "wl full")))
+
+
+def _adjetivos_sitio(r):
+    """Zes paren in context; de regel wordt zelf geformuleerd."""
+    d = r["datos"]
+    filas = "".join(
+        '<tr><td class="fr"><b>%s</b></td><td class="fr"><b>%s</b></td>'
+        '<td style="font-size:9.2pt;color:var(--mut)">%s</td></tr>'
+        % (E(a), E(b), E(ctx)) for a, b, ctx in d["pares"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<div class="prohib" style="display:inline-block">Prohibido buscar la regla y prohibido '
+        'preguntar. Se deduce.</div>'
+        '<table class="wtab" style="width:100%%;margin-top:2.5mm"><thead><tr>'
+        '<th style="width:34mm">Delante</th><th style="width:34mm">Detrás</th>'
+        '<th>El contexto que lo delata</th></tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>¿Qué significa cada posición?</b></p>'
+        '<div class="wcols" style="grid-template-columns:1fr 1fr">'
+        '<div class="wcol"><div class="ch">Delante del sustantivo</div><div class="cb short"></div></div>'
+        '<div class="wcol"><div class="ch">Detrás del sustantivo</div><div class="cb short"></div></div>'
+        '</div>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Nuestra regla, en una sola frase:</b></p>'
+        '<div style="margin:1mm 0"><span class="wl full"></span></div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm">Y un descubrimiento extra: ¿qué le pasa a '
+        '<b>grande</b> cuando va delante? <span class="wl md"></span></p>' % (filas, marco))
+
+
+def _turno_noche(r):
+    """Acht losse aanwijzingen → één omgekeerde dag."""
+    d = r["datos"]
+    pistas = "".join(
+        '<div style="margin:1.6mm 0;font-size:9.6pt"><b>%d.</b> %s</div>'
+        % (i, E(p)) for i, (p, _h) in enumerate(d["pistas"], 1))
+    verbos = "".join('<span>%s</span>' % E(v) for v in d["verbos"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    filas = "".join(
+        '<tr><td><span class="wl sm"></span></td><td><span class="wl lg"></span></td></tr>'
+        for _ in range(8))
+    return (
+        '<div class="rol">🌙 Ocho pistas · ni un solo horario dado</div>'
+        + pistas +
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Su día, de las seis de la tarde a las '
+        'diez de la mañana.</b> Cada línea: la hora y una frase con reflexivo.</p>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:22mm">Hora</th>'
+        '<th>Lo que hace</th></tr></thead><tbody>%s</tbody></table>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Comparad con vuestro día:</b> ¿qué se '
+        'invierte del todo?</p><div class="tira">%s</div>%s'
+        % (filas, verbos, marco, _lineas(2, "wl full")))
+
+
+def _agenda(r):
+    """Vier agenda's om uit te knippen + het verschilblad."""
+    d = r["datos"]
+    original = "".join(
+        '<tr><td style="font-size:9.4pt;color:var(--mut)">%s</td><td class="fr">%s</td></tr>'
+        % (E(dia), E(x)) for dia, x in d["agenda"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    filas = "".join(
+        '<tr><td style="font-size:9.4pt">%d</td><td><span class="wl md"></span></td>'
+        '<td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
+        % i for i in range(1, 6))
+    return (
+        '<div class="rol">📅 Tu agenda · no la enseñes a nadie</div>'
+        '<p style="font-size:9.6pt;margin:0 0 1.5mm">Todas las horas se dicen <b>en palabras</b>. '
+        '<span class="gloss">Alle uren zeg je voluit: «las nueve menos cuarto», nooit «8.45».</span></p>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:44mm">¿Cuándo?</th>'
+        '<th>¿Qué?</th></tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Las cinco diferencias</b> — con las dos '
+        'horas, la tuya y la suya:</p>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:8mm">#</th>'
+        '<th>¿Qué actividad?</th><th style="width:32mm">Yo tengo…</th>'
+        '<th style="width:32mm">Él/ella tiene…</th></tr></thead><tbody>%s</tbody></table>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>¿Cuál es la agenda original?</b> '
+        'Decidid en grupo y explicad por qué:</p>'
+        '<div style="margin:1mm 0"><span class="wl full"></span></div>'
+        % (original, filas, marco))
+
+
+def _diario_objeto(r):
+    """Voorwerpkaarten + reflexievenbank + schrijfvlak."""
+    d = r["datos"]
+    obj = "".join('<div class="ficha fid"><b>%s</b><span class="fl">%s</span>'
+                  '<span>☐ lo elijo</span></div>' % (E(o), E(v)) for o, v in d["objetos"])
+    refl = "".join('<span>%s</span>' % E(v) for v in d["reflexivos"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<div class="fichas f3">%s</div>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>El banco de reflexivos.</b> Necesitas '
+        'seis, y dos en sentido figurado. <span class="gloss">Zes stuks, waarvan twee '
+        'figuurlijk.</span></p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:1.5mm 0 1mm"><b>Tu marco</b> — todo en primera persona:</p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2mm 0 1mm"><b>El diario de mi objeto:</b></p>'
+        '<div class="wbox" style="height:66mm"></div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm">Reflexivos usados: '
+        '<span class="wl sm"></span> de 6 &nbsp;·&nbsp; ¿cuáles son los dos figurados? '
+        '<span class="wl md"></span></p>' % (obj, refl, marco))
+
+
+def _sustituto(r):
+    """Handleiding per dagdeel, met de verplichte niet-doen-regel."""
+    d = r["datos"]
+    bloques = "".join(
+        '<div class="wcol"><div class="ch">%s<small>%s</small></div><div class="cb"></div></div>'
+        % (E(b), E(h)) for b, h in d["bloques"])
+    verbos = "".join('<span>%s</span>' % E(v) for v in d["verbos"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<p style="font-size:9.8pt;margin:0 0 1mm"><b>Los verbos que necesitas</b> — en '
+        'imperativo, con el pronombre en su sitio: <span class="gloss">in de gebiedende wijs, met '
+        'het voornaamwoord op de juiste plaats.</span></p>'
+        '<div class="tira">%s</div>'
+        '<div class="tira">%s</div>'
+        '<div class="wcols" style="grid-template-columns:repeat(4,1fr)">%s</div>'
+        '<div class="prohib" style="display:inline-block;margin-top:3mm">Obligatorio: una línea '
+        '«Lo que NO debes hacer». Una sola.</div>'
+        '<div style="margin:2mm 0"><span class="wl full"></span></div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Después de intercambiar:</b> ¿qué le '
+        'faltaba a tu manual para que funcionara?</p>'
+        '<div style="margin:1mm 0"><span class="wl full"></span></div>'
+        % (verbos, marco, bloques))
+
+
 _MATERIAL = {"C5-U0-RETO-03": _gps, "C5-U0-RETO-08": _numeros, "C5-U0-RETO-10": _pasaporte,
              "C5-U1-RETO-02": _identidad, "C5-U1-RETO-03": _censo,
              "C5-U1-RETO-06": _aeropuerto, "C5-U1-RETO-08": _error_caro,
@@ -943,7 +1148,11 @@ _MATERIAL = {"C5-U0-RETO-03": _gps, "C5-U0-RETO-08": _numeros, "C5-U0-RETO-10": 
              "C5-U7-RETO-01": _plano, "C5-U7-RETO-02": _mudanza,
              "C5-U7-RETO-04": _capas, "C5-U7-RETO-06": _robot,
              "C5-U8-RETO-01": _maleta, "C5-U8-RETO-04": _diario,
-             "C5-U8-RETO-05": _machu, "C5-U8-RETO-08": _balance}
+             "C5-U8-RETO-05": _machu, "C5-U8-RETO-08": _balance,
+             "C6P-U0-RETO-01": _test_falso, "C6P-U0-RETO-02": _quien_es_quien,
+             "C6P-U0-RETO-04": _lenguas, "C6P-U0-RETO-05": _adjetivos_sitio,
+             "C6P-U1-RETO-01": _turno_noche, "C6P-U1-RETO-03": _agenda,
+             "C6P-U1-RETO-05": _diario_objeto, "C6P-U1-RETO-09": _sustituto}
 
 
 def reto_print(r):

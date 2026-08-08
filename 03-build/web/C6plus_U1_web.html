@@ -407,6 +407,11 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
     <div id="motorlink"></div>
   </section>
 
+  <section class="panel" data-p="retos">
+    <h2 class="sec">Retos · tres desafíos 🎯</h2>
+    <p class="lead">Drie retos met <b>één harde regel</b>: twaalf scènes waarin alleen het <b>detail</b> beslist tussen <i>es</i> en <i>está</i>, een podcast van twee minuten waarin <b>niets</b> mag gebeuren (zes verschillende conectoren maken het boeiend), en vier agenda's waarin je het enige mogelijke moment zoekt — of bewijst dat het niet bestaat. <span class="gloss">De zeven andere retos van deze unit staan in het boek en in de PowerPoint.</span></p>
+    <div id="retos_c6p_u1"></div>
+  </section>
   <section class="panel" data-p="hablar">
     <h2 class="sec">Hablar · grábate 🎙️</h2>
     <p class="lead">Neem <b>jezelf</b> op: luister naar het model, spreek in, luister terug, en neem opnieuw op. <span class="gloss">Werkt in Chrome/Edge; sta de micro toe. Print blijft bruikbaar zonder opname.</span></p>
@@ -548,9 +553,291 @@ const GAMES={"rutina-memoria": "PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9Im5sIj4KPGhl
 function toggleTheme(){const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'}
 function speak(t,rate){if(!('speechSynthesis'in window))return;const u=new SpeechSynthesisUtterance(t);u.lang='es-ES';u.rate=rate||.92;
   const vs=speechSynthesis.getVoices();const es=vs.find(v=>/^es/i.test(v.lang));if(es)u.voice=es;try{speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}
+function buildRetos(id,cfg){
+ const host=document.getElementById(id);if(!host)return;
+ host.innerHTML='<div class="retos"></div>';
+ const lista=host.querySelector('.retos');
+ (cfg.retos||[]).forEach((r,n)=>{
+  const c=document.createElement('div');c.className='reto';
+  c.innerHTML='<div class="rcab"><span class="rnum">'+r.num+'</span><h3>'+exEsc(r.nombre)+'</h3>'+
+    '<span class="rlente">'+exEsc(r.lente)+'</span></div>'+
+    '<p class="rgancho"><b>'+exEsc(r.gancho_es)+'</b></p>'+
+    '<p class="rnl">'+exEsc(r.gancho_nl)+'</p>'+
+    '<p class="desc">'+exEsc(r.consigna_nl)+'</p>'+
+    '<div class="rregla"><b>La regla del reto</b>'+exEsc(r.regla)+'</div>'+
+    '<div class="rcuerpo" id="'+id+'_c'+n+'"></div>';
+  lista.appendChild(c);
+  const cuerpo=c.querySelector('.rcuerpo');
+  if(r.tipo==='grabar')retoGrabar(cuerpo,r,id+'_c'+n);
+  else if(r.tipo==='detector')retoDetector(cuerpo,r);
+  else if(r.tipo==='mapa')retoMapa(cuerpo,r);
+  else if(r.tipo==='articulo')retoArticulo(cuerpo,r);
+  else if(r.tipo==='escena')retoEscena(cuerpo,r);
+  else if(r.tipo==='retrato')retoRetrato(cuerpo,r);
+  else if(r.tipo==='voces')retoVoces(cuerpo,r);
+  else if(r.tipo==='opciones')retoOpciones(cuerpo,r);
+ });
+}
+
+function retoGrabar(cont,r,idBase){
+ (r.situaciones||[]).forEach(s=>{
+   const d=document.createElement('div');d.className='rsit';
+   d.innerHTML='<b>'+exEsc(s.es)+'</b><span class="rpista">'+exEsc(s.nl)+
+     (s.pista?' · <i>'+exEsc(s.pista)+'</i>':'')+'</span>';
+   cont.appendChild(d);});
+ const rec=document.createElement('div');rec.id=idBase+'_rec';cont.appendChild(rec);
+ if(typeof makeRecorder==='function')
+   makeRecorder(idBase+'_rec',{title:r.nombre,desc:r.consigna_es,
+     items:(r.items||[]).map(t=>({text:t.text,cue:t.cue}))});
+}
+
+function retoDetector(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ const reglas=r.reglas||[];
+ (r.items||[]).forEach((it,i)=>{
+   const d=document.createElement('div');d.className='detit';
+   const opts=reglas.map((g,k)=>'<option value="'+k+'">'+exEsc(g)+'</option>').join('');
+   d.innerHTML='<div class="dpal">'+exEsc(it.palabra)+'</div>'+
+     '<div class="detbtns"><button class="detbtn" type="button" data-v="1">✓ posible</button>'+
+     '<button class="detbtn" type="button" data-v="0">✗ imposible</button></div>'+
+     '<div class="detrule" hidden><label class="desc">¿Qué regla rompe?</label>'+
+     '<select><option value="-1">— elige la regla —</option>'+opts+'</select></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const fb=d.querySelector('.detfb'),rule=d.querySelector('.detrule'),sel=d.querySelector('select');
+   let cerrado=false;
+   d.querySelectorAll('.detbtn').forEach(b=>{b.onclick=()=>{
+     if(cerrado)return;
+     const dicho=b.dataset.v==='1';
+     if(!dicho){rule.hidden=false;sel.focus();
+       fb.className='detfb show';fb.textContent='Ahora acusa con pruebas: ¿qué regla rompe?';
+       cerrado=false;
+       sel.onchange=()=>{cerrado=true;
+         const bien=(!it.posible)&&(Number(sel.value)===it.regla);
+         d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);sel.disabled=true;
+         b.classList.add(bien?'ok':'no');
+         fb.className='detfb show '+(bien?'g':'b');
+         fb.innerHTML=bien?'<b>✓ acusación correcta</b> · '+exEsc(it.porque)
+           :(it.posible?'<b>✗ esta palabra sí existe</b> · '+exEsc(it.porque)
+                       :'<b>✗ la regla no es esa</b> · '+exEsc(it.porque));};
+       return;}
+     cerrado=true;
+     const bien=it.posible;
+     d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);
+     b.classList.add(bien?'ok':'no');
+     fb.className='detfb show '+(bien?'g':'b');
+     fb.innerHTML=(bien?'<b>✓ correcto</b> · ':'<b>✗ no</b> · ')+exEsc(it.porque);};});
+   caja.appendChild(d);});
+}
+
+// ── artículo: el/la op verzonnen woorden ───────────────────────────────────
+// Het lidwoord alléén zegt niets: wie «la» kiest bij een -ma-woord heeft geraden,
+// ook als het toevallig klopt. Daarom moet de leerling er de regel bij kiezen, en
+// telt het pas als het allebei klopt.
+// ── retrato hablado: luister en kies het juiste portret ────────────────────
+// De portretten worden getekend, niet beschreven: stonden de kenmerken in
+// woorden op de kaart, dan werd het woorden matchen in plaats van luisteren.
+function retoCara(x,y,r,p){
+ const pelo = p.pelo.indexOf('largo')>=0
+   ? (p.pelo.indexOf('rizado')>=0
+      ? '<path d="M'+(x-r-4)+' '+(y+r+6)+' q-6,-'+(r+18)+' '+(r+6)+',-'+(r+14)+' q'+r+',-8 '+(r+6)+','+(r+14)+' q6,'+(r+8)+' -4,'+(r+2)+' q-'+r+',-14 -'+(2*r-4)+',0 Z" fill="#5C4433"/>'
+      : '<path d="M'+(x-r-2)+' '+(y+r+8)+' l0,-'+(r+16)+' q'+(r+2)+',-14 '+(2*r+4)+',0 l0,'+(r+16)+' l-8,0 l0,-'+r+' q-'+r+',-10 -'+(2*r-8)+',0 l0,'+r+' Z" fill="#5C4433"/>')
+   : (p.pelo.indexOf('rizado')>=0
+      ? '<path d="M'+(x-r-2)+' '+y+' q2,-'+(r+14)+' '+(r+2)+',-'+(r+10)+' q'+r+',-6 '+(r+2)+','+(r+10)+' q2,10 -6,6 q-'+r+',-14 -'+(2*r-8)+',0 q-8,4 -6,-6 Z" fill="#5C4433"/>'
+      : '<path d="M'+(x-r-2)+' '+(y-2)+' q0,-'+(r+12)+' '+(r+2)+',-'+(r+12)+' q'+(r+2)+',0 '+(r+2)+','+(r+12)+' l-6,2 q-'+r+',-12 -'+(2*r-4)+',0 Z" fill="#5C4433"/>');
+ const gafas = p.gafas
+   ? '<g fill="none" stroke="#20242E" stroke-width="2.4"><circle cx="'+(x-r/2.4)+'" cy="'+(y+2)+'" r="'+(r/3.4)+'"/>'
+     +'<circle cx="'+(x+r/2.4)+'" cy="'+(y+2)+'" r="'+(r/3.4)+'"/>'
+     +'<line x1="'+(x-r/2.4+r/3.4)+'" y1="'+(y+2)+'" x2="'+(x+r/2.4-r/3.4)+'" y2="'+(y+2)+'"/></g>'
+   : '<circle cx="'+(x-r/2.4)+'" cy="'+(y+1)+'" r="2.6" fill="#20242E"/>'
+     +'<circle cx="'+(x+r/2.4)+'" cy="'+(y+1)+'" r="2.6" fill="#20242E"/>';
+ const boca = p.sonrie
+   ? '<path d="M'+(x-r/2.6)+' '+(y+r/2.2)+' q'+(r/2.6)+','+(r/3.2)+' '+(r/1.3)+',0" stroke="#20242E" stroke-width="2.4" fill="none" stroke-linecap="round"/>'
+   : '<line x1="'+(x-r/3)+'" y1="'+(y+r/1.9)+'" x2="'+(x+r/3)+'" y2="'+(y+r/1.9)+'" stroke="#20242E" stroke-width="2.4" stroke-linecap="round"/>';
+ return '<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="#F2D3B6"/>'+pelo+gafas+boca;
+}
+
+function retoRetrato(cont,r){
+ const rs=r.retratos||[], ds=r.descripciones||[];
+ let i=0, aciertos=0;
+ cont.innerHTML='<div class="rmarca"><button class="escbtn rplay" type="button">▶ Escuchar la descripción</button>'+
+   '<span class="rcuenta rvuelta">1 / '+ds.length+'</span>'+
+   '<span class="desc rtanteo">aciertos: 0</span></div>'+
+   '<div class="retratos"></div><div class="detfb rfb" role="status" aria-live="polite"></div>';
+ const caja=cont.querySelector('.retratos');
+ rs.forEach(p=>{
+   const b=document.createElement('button');b.type='button';b.className='retrato';b.dataset.n=p.n;
+   b.innerHTML='<svg viewBox="0 0 100 100" aria-hidden="true">'+retoCara(50,52,26,p)+'</svg>'+
+     '<span class="rnum2">'+p.n+'</span>';
+   b.onclick=()=>{
+     if(!ds[i])return;
+     const fb=cont.querySelector('.rfb'), bien=Number(b.dataset.n)===ds[i].correcto;
+     b.classList.add(bien?'ok':'no');
+     fb.className='detfb show rfb '+(bien?'g':'b');
+     fb.innerHTML=bien?'<b>✓ correcto</b> · '+exEsc(ds[i].texto)
+       :'<b>✗ no</b> · era el '+ds[i].correcto+' — '+exEsc(ds[i].texto);
+     if(bien)aciertos++;
+     cont.querySelector('.rtanteo').textContent='aciertos: '+aciertos;
+     i++;
+     setTimeout(()=>{caja.querySelectorAll('.retrato').forEach(x=>x.classList.remove('ok','no'));
+       if(i<ds.length){cont.querySelector('.rvuelta').textContent=(i+1)+' / '+ds.length;fb.className='detfb rfb';}
+       else{cont.querySelector('.rvuelta').textContent='hecho';
+         fb.className='detfb show rfb g';fb.innerHTML='<b>Listo</b> · ahora describe tú uno a tu compañero/a.';}},1400);};
+   caja.appendChild(b);});
+ cont.querySelector('.rplay').onclick=()=>{if(ds[i]&&typeof speak==='function')speak(ds[i].texto);};
+}
+
+// ── drie stemmen, één samenvatting: bemiddelen ─────────────────────────────
+// ── opciones: kies uit N, mét verplichte uitleg ────────────────────────────
+// Breed inzetbaar: welk werkwoord past bij dit uur, welke Spaanse uitdrukking
+// dekt deze Vlaamse. Er is telkens één juist antwoord, en de feedback zegt niet
+// alleen wát maar ook waarom — anders leert een gokker niets.
+function retoOpciones(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ (r.items||[]).forEach(it=>{
+   const d=document.createElement('div');d.className='detit';
+   d.innerHTML=(it.audio?'<button class="escbtn opplay" type="button">▶ Escuchar</button>':'')+
+     '<div class="dpal">'+exEsc(it.enunciado)+'</div>'+
+     '<div class="detbtns"></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const btns=d.querySelector('.detbtns'), fb=d.querySelector('.detfb');
+   let cerrado=false;
+   (it.opciones||[]).forEach(o=>{
+     const b=document.createElement('button');b.type='button';b.className='detbtn';b.textContent=o;
+     b.onclick=()=>{if(cerrado)return;cerrado=true;
+       const bien=o===it.correcta;
+       btns.querySelectorAll('.detbtn').forEach(x=>{x.disabled=true;
+         if(x.textContent===it.correcta)x.classList.add('ok');});
+       if(!bien)b.classList.add('no');
+       fb.className='detfb show '+(bien?'g':'b');
+       fb.innerHTML=(bien?'<b>✓ correcto</b>':'<b>✗ es «'+exEsc(it.correcta)+'»</b>')+
+         (it.porque?' · '+exEsc(it.porque):'');};
+     btns.appendChild(b);});
+   const pl=d.querySelector('.opplay');
+   if(pl)pl.onclick=()=>{if(typeof speak==='function')speak(it.enunciado);};
+   caja.appendChild(d);});
+}
+
+function retoVoces(cont,r){
+ cont.innerHTML='<div class="voces"></div>'+
+   '<p class="desc">Schrijf je samenvatting in drie zinnen — korter dan wat je hoorde, en niemand mag wegvallen.</p>'+
+   '<textarea class="escta" rows="5" aria-label="Jouw samenvatting" placeholder="1. Rosa vindt…"></textarea>';
+ const caja=cont.querySelector('.voces');
+ (r.voces||[]).forEach(v=>{
+   const d=document.createElement('div');d.className='voz';
+   d.innerHTML='<button class="escbtn vozbtn" type="button">▶</button>'+
+     '<div><b>'+exEsc(v.quien)+'</b><span class="vozt">'+exEsc(v.texto)+'</span></div>';
+   d.querySelector('.vozbtn').onclick=()=>{if(typeof speak==='function')speak(v.texto);};
+   caja.appendChild(d);});
+}
+
+function retoArticulo(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ const reglas=r.reglas||[];
+ (r.objetos||[]).forEach(it=>{
+   const d=document.createElement('div');d.className='detit';
+   const opts=reglas.map((g,k)=>'<option value="'+g.clave+'">'+exEsc(g.texto)+'</option>').join('');
+   d.innerHTML='<div class="dpal">¿… '+exEsc(it.palabra)+'?</div>'+
+     '<div class="detbtns"><button class="detbtn" type="button" data-a="el">el</button>'+
+     '<button class="detbtn" type="button" data-a="la">la</button></div>'+
+     '<div class="detrule" hidden><label class="desc">¿Qué regla usas?</label>'+
+     '<select><option value="">— elige la regla —</option>'+opts+'</select></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const fb=d.querySelector('.detfb'),rule=d.querySelector('.detrule'),sel=d.querySelector('select');
+   let elegido=null;
+   d.querySelectorAll('.detbtn').forEach(b=>{b.onclick=()=>{
+     if(elegido)return;
+     elegido=b.dataset.a;rule.hidden=false;sel.focus();
+     fb.className='detfb show';fb.textContent='¿Y por qué? Elige la regla.';};});
+   sel.onchange=()=>{
+     if(!sel.value)return;
+     const bienArt=elegido===it.articulo, bienRegla=sel.value===it.regla;
+     d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);sel.disabled=true;
+     const b=d.querySelector('.detbtn[data-a="'+elegido+'"]');
+     b.classList.add(bienArt&&bienRegla?'ok':'no');
+     fb.className='detfb show '+(bienArt&&bienRegla?'g':'b');
+     if(bienArt&&bienRegla)fb.innerHTML='<b>✓ correcto</b> · '+exEsc(it.porque);
+     else if(bienArt)fb.innerHTML='<b>✗ el artículo sí, la regla no</b> · '+exEsc(it.porque)+
+       ' — con la regla equivocada, has adivinado.';
+     else fb.innerHTML='<b>✗ es «'+exEsc(it.articulo)+' '+exEsc(it.palabra)+'»</b> · '+exEsc(it.porque);};
+   caja.appendChild(d);});
+}
+
+// ── escena: dezelfde plek, twee tijden ─────────────────────────────────────
+// Twee panelen naast elkaar; klik een voorwerp en je hoort en ziet hoe het heet.
+// De twee voorwerpen die in beide scènes staan, zijn de controle: wie die als
+// verschil noteert, heeft te snel gekeken.
+function retoEscena(cont,r){
+ const items=r.escena||[];
+ function panel(cual,titulo,sub){
+   const propios=items.filter(i=>i.cuando===cual||i.cuando==='ambas');
+   const formas=propios.map((i,k)=>i.forma==='circ'
+     ? '<circle class="eob" data-k="'+k+'" data-c="'+cual+'" cx="'+(i.x+i.w/2)+'" cy="'+(i.y+i.h/2)+
+       '" r="'+(i.w/2)+'" fill="'+i.color+'"/>'
+     : '<rect class="eob" data-k="'+k+'" data-c="'+cual+'" x="'+i.x+'" y="'+i.y+'" width="'+i.w+
+       '" height="'+i.h+'" rx="1.5" fill="'+i.color+'"/>').join('');
+   return '<figure class="esc"><figcaption><b>'+exEsc(titulo)+'</b> <span>'+exEsc(sub)+'</span></figcaption>'+
+     '<svg viewBox="0 0 100 84" role="img" aria-label="'+exEsc(titulo)+'">'+
+     '<rect x="0" y="0" width="100" height="52" fill="#E8F1F7"/>'+          // lucht
+     '<rect x="0" y="52" width="100" height="32" fill="#EDE7DC"/>'+          // plein
+     '<rect x="0" y="30" width="100" height="22" fill="#D8CFC0"/>'+          // gevelrij
+     '<rect x="6" y="24" width="16" height="28" fill="#C6B9A6"/>'+
+     '<rect x="44" y="20" width="18" height="32" fill="#C6B9A6"/>'+
+     '<rect x="76" y="26" width="18" height="26" fill="#C6B9A6"/>'+
+     formas+'</svg><p class="escnom" role="status" aria-live="polite">Klik een voorwerp.</p></figure>';
+ }
+ cont.innerHTML='<div class="escenas">'+panel('antes','1985','la misma plaza, hace cuarenta años')+
+   panel('ahora','ahora','la plaza hoy')+'</div>'+
+   '<p class="desc">De twee dingen die in <b>allebei</b> de scènes staan, zijn de controle: die zijn géén verschil.</p>';
+ cont.querySelectorAll('.eob').forEach(el=>{
+   el.style.cursor='pointer';
+   el.addEventListener('click',()=>{
+     const cual=el.dataset.c, k=Number(el.dataset.k);
+     const propios=items.filter(i=>i.cuando===cual||i.cuando==='ambas');
+     const it=propios[k];if(!it)return;
+     const fig=el.closest('figure');
+     fig.querySelector('.escnom').innerHTML='<b>'+exEsc(it.es)+'</b> — '+exEsc(it.nl)+
+       (it.cuando==='ambas'?' <i>(en las dos escenas)</i>':'');
+     el.style.stroke='#157355';el.style.strokeWidth='1.4';
+     if(typeof speak==='function')speak(it.es);});});
+ const marco=document.createElement('div');marco.className='rsit';
+ marco.innerHTML='<b>Tu marco</b><span class="rpista">'+
+   (r.marco||[]).map(exEsc).join(' · ')+'</span>';
+ cont.appendChild(marco);
+ const ta=document.createElement('textarea');ta.className='escta';ta.rows=5;
+ ta.setAttribute('aria-label','Jouw vijf zinnen');ta.placeholder='1. En la plaza de ahora hay…';
+ cont.appendChild(ta);
+}
+
+function retoMapa(cont,r){
+ const paises=r.paises||[];
+ cont.innerHTML='<div class="rmarca"><span class="rcuenta">0 / '+paises.length+'</span>'+
+   '<div class="rbarra"><i></i></div>'+
+   '<button class="otra rreset" type="button">↺ empezar de nuevo</button></div>'+
+   '<p class="desc">Klik een land, zeg het hardop, laat iemand bevestigen — dan pas aanklikken. '+
+   'De teller is van de klas, niet van jou.</p><div class="rpais"></div>';
+ const cont2=cont.querySelector('.rpais'),cuenta=cont.querySelector('.rcuenta'),
+       barra=cont.querySelector('.rbarra i');
+ let hechos=0;
+ function pinta(iso){ // laat het land op de grote kaart meekleuren, als die er is
+   const svg=document.querySelector('#mapwrap svg');if(!svg)return;
+   const p=svg.querySelector('[data-c="'+iso+'"]');if(p)p.style.filter='saturate(1.6) brightness(1.05)';}
+ paises.forEach(p=>{
+   const b=document.createElement('button');b.type='button';
+   b.innerHTML=exEsc(p.nombre)+'<span class="sil">'+exEsc(p.silabas)+'</span>';
+   b.onclick=()=>{if(b.classList.contains('hecho'))return;
+     b.classList.add('hecho');hechos++;pinta(p.iso);
+     cuenta.textContent=hechos+' / '+paises.length;
+     barra.style.width=Math.round(hechos/paises.length*100)+'%';
+     if(typeof speak==='function')speak(p.nombre);
+     if(hechos===paises.length)cuenta.textContent='¡'+paises.length+' / '+paises.length+' — lo habéis conseguido!';};
+   cont2.appendChild(b);});
+ cont.querySelector('.rreset').onclick=()=>{hechos=0;cuenta.textContent='0 / '+paises.length;
+   barra.style.width='0';cont2.querySelectorAll('button').forEach(x=>x.classList.remove('hecho'));};
+}
+
 const TTS=('speechSynthesis'in window);
 if(TTS){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}
-const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
+const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['retos','Retos 🎯'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
 const sn=document.getElementById('subnav');
 // ── tabbladen · het adres volgt mee ──────────────────────────────────────────
 // #escuchar opent dat tabblad; #lec_1 opent het paneel waar dat element in
@@ -1397,6 +1684,7 @@ function buildGramType(){
  buildType('gt_3',{title:"La hora — escríbela en letras",desc:"Schrijf het uur voluit. Eén uur is <b>es la una</b>, alle andere uren zijn <b>son las…</b> — dat verschil is de hele oefening.",accents:'soft',perBlock:12,expect:12,items:[{"q": "3:00 →", "ans": "Son las tres", "hint": "S__ l__ t___"}, {"q": "1:00 →", "ans": "Es la una", "hint": "E_ l_ u__", "why": "enkelvoud: es la una"}, {"q": "3:15 →", "ans": "Son las tres y cuarto", "hint": "S__ l__ t___ y c_____"}, {"q": "5:30 →", "ans": "Son las cinco y media", "hint": "S__ l__ c____ y m____"}, {"q": "8:45 →", "ans": "Son las nueve menos cuarto", "hint": "S__ l__ n____ m____ c_____", "why": "vanaf 31 minuten reken je terug naar het volgende uur"}, {"q": "2:10 →", "ans": "Son las dos y diez", "hint": "S__ l__ d__ y d___"}, {"q": "7:50 →", "ans": "Son las ocho menos diez", "hint": "S__ l__ o___ m____ d___"}, {"q": "12:00 →", "ans": "Son las doce", "hint": "S__ l__ d___"}, {"q": "6:20 →", "ans": "Son las seis y veinte", "hint": "S__ l__ s___ y v_____"}, {"q": "10:40 →", "ans": "Son las once menos veinte", "hint": "S__ l__ o___ m____ v_____"}, {"q": "1:30 →", "ans": "Es la una y media", "hint": "E_ l_ u__ y m____", "why": "één uur blijft «es la»"}, {"q": "4:05 →", "ans": "Son las cuatro y cinco", "hint": "S__ l__ c_____ y c____"}]});
 }
 buildGramType();
+buildRetos("retos_c6p_u1",{"retos": [{"num": 2, "nombre": "Es aburrido / está aburrido", "lente": "🕵️ forensisch", "gancho_es": "La misma palabra, dos personas distintas. Solo la escena lo dice.", "gancho_nl": "Hetzelfde woord, twee verschillende mensen. Alleen het beeld beslist.", "consigna_es": "Elige ser o estar y di qué de la escena lo demuestra.", "consigna_nl": "Kies ser of estar en zeg wat in het beeld het bewijst.", "regla": "Kiezen volstaat niet: bij elke keuze hoort het detail uit de scène dat het bewijst. Wie kiest op gevoel, haalt de helft — en dat is precies de valstrik van dit paar.", "tipo": "opciones", "items": [{"enunciado": "Carla lleva veinte minutos mirando el reloj en clase de historia.", "correcta": "Está aburrida.", "opciones": ["Está aburrida.", "Es aburrida."], "porque": "het is dit moment, niet haar karakter: de klok verraadt de duur"}, {"enunciado": "Nadie quiere sentarse al lado de Pablo: siempre cuenta lo mismo.", "correcta": "Es aburrido.", "opciones": ["Es aburrido.", "Está aburrido."], "porque": "«siempre» maakt er een eigenschap van"}, {"enunciado": "Marta ha dormido tres horas y bosteza sin parar.", "correcta": "Está cansada.", "opciones": ["Está cansada.", "Es cansada."], "porque": "vermoeidheid is altijd een toestand; «es cansada» bestaat niet zo"}, {"enunciado": "Este ejercicio tiene ocho pasos y cada uno depende del anterior.", "correcta": "Es complicado.", "opciones": ["Es complicado.", "Está complicado."], "porque": "de opbouw van de oefening is een eigenschap"}, {"enunciado": "La sopa lleva media hora en la mesa.", "correcta": "Está fría.", "opciones": ["Está fría.", "Es fría."], "porque": "de soep is koud gewórden — een verandering, dus estar"}, {"enunciado": "A Luis no le gusta hablar con desconocidos, nunca.", "correcta": "Es callado.", "opciones": ["Es callado.", "Está callado."], "porque": "«nunca» wijst op karakter"}, {"enunciado": "Luis no ha dicho nada en toda la reunión, y eso que normalmente habla mucho.", "correcta": "Está callado.", "opciones": ["Está callado.", "Es callado."], "porque": "«normalmente habla mucho» maakt het uitzonderlijk, dus een moment"}, {"enunciado": "El plátano tiene manchas negras por todas partes.", "correcta": "Está malo.", "opciones": ["Está malo.", "Es malo."], "porque": "«es malo» over eten betekent «van slechte kwaliteit», niet «bedorven»"}, {"enunciado": "Mi abuelo tiene noventa años y todavía sale a caminar cada día.", "correcta": "Está bien.", "opciones": ["Está bien.", "Es bien."], "porque": "«es bien» bestaat niet: met bien gaat altijd estar"}, {"enunciado": "Este bar abre a las seis de la mañana y cierra a las dos.", "correcta": "Es abierto.", "opciones": ["Está abierto.", "Es abierto."], "porque": "hier gaat het over de openingsuren als eigenschap — al is «está abierto» over dít moment ook correct Spaans, de scène beschrijft geen moment"}, {"enunciado": "Sara sonríe a todo el mundo, incluso a las siete de la mañana.", "correcta": "Es alegre.", "opciones": ["Es alegre.", "Está alegre."], "porque": "«incluso a las siete» toont dat het altijd zo is"}, {"enunciado": "Han aprobado todos y Sara no para de reírse.", "correcta": "Está alegre.", "opciones": ["Está alegre.", "Es alegre."], "porque": "de reden staat erbij: dus dit moment"}]}, {"num": 8, "nombre": "Podcast: cinco minutos de mi día", "lente": "📻 mediaformat", "gancho_es": "No pasa nada especial. Ese es el reto.", "gancho_nl": "Er gebeurt niets bijzonders. Dát is de uitdaging.", "consigna_es": "Graba dos minutos sobre cinco minutos cualquiera de tu día.", "consigna_nl": "Neem twee minuten op over vijf willekeurige minuten uit je dag.", "regla": "Er mag niets spannends gebeuren — geen ongeluk, geen verrassing. Wat het boeiend maakt zijn de conectoren: minstens zes verschillende, en geen twee keer dezelfde.", "tipo": "grabar", "situaciones": [{"es": "Son las … y estoy en …", "nl": "", "pista": ""}, {"es": "Primero … , luego …", "nl": "", "pista": ""}, {"es": "Mientras …, alguien …", "nl": "", "pista": ""}, {"es": "Aunque no pasa nada, …", "nl": "", "pista": ""}, {"es": "Al final … y ya está.", "nl": "", "pista": ""}], "items": [{"text": "Cinco minutos de mi día", "cue": "twee minuten · zes verschillende conectoren: primero · luego · mientras · de repente · entonces · al final · por eso · aunque"}]}, {"num": 10, "nombre": "La cita imposible", "lente": "⚖️ onderhandeling & dilemma", "gancho_es": "Cuatro agendas, un solo hueco. O ninguno.", "gancho_nl": "Vier agenda's, één gaatje. Of geen enkel.", "consigna_es": "Encuentra el único momento posible — o demuestra que no existe.", "consigna_nl": "Vind het enige mogelijke moment — of bewijs dat het niet bestaat.", "regla": "Niemand mag een afspraak schrappen of verzetten. Je zoekt binnen wat er is, en je verantwoordt elke uitsluiting met het uur én de reden.", "tipo": "opciones", "items": [{"enunciado": "Ana entrena de 18:00 a 20:00 los martes y jueves. Beto trabaja los sábados de 9:00 a 15:00. Carla tiene clase de música los miércoles a las 17:00. Dani no puede antes de las 17:00 ningún día. ¿Cuándo quedáis, si necesitáis dos horas?", "correcta": "El sábado a las cinco de la tarde.", "opciones": ["El sábado a las cinco de la tarde.", "El martes a las seis.", "El miércoles a las cinco."], "porque": "zaterdag na drie uur is Beto vrij, Dani kan vanaf vijf uur, en Ana traint niet"}, {"enunciado": "Mismo grupo. Ahora solo tenéis una hora y tiene que ser entre semana. ¿Cuándo?", "correcta": "El lunes a las cinco.", "opciones": ["El lunes a las cinco.", "El jueves a las seis.", "El miércoles a las seis."], "porque": "maandag heeft niemand iets staan, en Dani kan vanaf vijf uur"}, {"enunciado": "Beto cambia de turno: ahora trabaja los sábados de 15:00 a 21:00. ¿Sigue funcionando el sábado?", "correcta": "No, ya no. Hay que buscar entre semana.", "opciones": ["No, ya no. Hay que buscar entre semana.", "Sí, a las cinco igual.", "Sí, pero solo una hora."], "porque": "zijn nieuwe shift dekt precies het gaatje dat jullie hadden gevonden"}, {"enunciado": "Carla dice: «Yo puedo el miércoles si empezamos a las siete.» ¿Es posible?", "correcta": "Sí, si a Dani le va bien a las siete.", "opciones": ["Sí, si a Dani le va bien a las siete.", "No, Carla tiene música.", "No, es demasiado tarde para todos."], "porque": "haar muziekles is óm zeven uur gedaan; het probleem verschuift naar Dani"}]}]});
 buildEscucha("esc_c6p_u1",{"title": "Entrevista a un deportista", "audio": "audio/C6plus_U1.mp3", "expectDetalle": 5, "situacion": {"lugar": "La radio del instituto, Salamanca", "quien": "Una periodista escolar y Hugo, nadador de dieciocho años", "que": "Le pregunta por su rutina y por lo que le gusta", "claves": ["¿a qué hora?", "me levanto", "me gusta"]}, "guion": [{"who": "Periodista", "es": "Hugo, gracias por venir. ¿A qué hora te levantas?", "nl": "Hugo, bedankt dat je er bent. Hoe laat sta je op?"}, {"who": "Hugo", "es": "Me levanto a las cinco y media. Muy temprano, sí.", "nl": "Ik sta om half zes op. Heel vroeg, ja."}, {"who": "Periodista", "es": "¿Y qué haces primero?", "nl": "En wat doe je eerst?"}, {"who": "Hugo", "es": "Me ducho, desayuno mucho y voy a la piscina en bici.", "nl": "Ik douche, ontbijt veel en ga met de fiets naar het zwembad."}, {"who": "Periodista", "es": "¿Cuántas horas entrenas al día?", "nl": "Hoeveel uur train je per dag?"}, {"who": "Hugo", "es": "Entreno cuatro horas: dos por la mañana y dos por la tarde.", "nl": "Ik train vier uur: twee 's ochtends en twee 's middags."}, {"who": "Periodista", "es": "¿Te gusta madrugar?", "nl": "Hou je ervan om vroeg op te staan?"}, {"who": "Hugo", "es": "No, no me gusta nada. Pero me gustan mucho las carreras.", "nl": "Nee, helemaal niet. Maar ik hou wel erg van de wedstrijden."}, {"who": "Periodista", "es": "¿Estudias también?", "nl": "Studeer je ook?"}, {"who": "Hugo", "es": "Sí, estudio por la noche. Estoy cansado, pero estoy contento.", "nl": "Ja, ik studeer 's avonds. Ik ben moe, maar ik ben tevreden."}, {"who": "Periodista", "es": "Última pregunta: ¿a qué hora te acuestas?", "nl": "Laatste vraag: hoe laat ga je slapen?"}, {"who": "Hugo", "es": "Me acuesto a las diez. ¡Y me duermo en dos minutos!", "nl": "Ik ga om tien uur slapen. En ik val binnen twee minuten in slaap!"}], "global": {"q": "¿De qué habla Hugo en la entrevista?", "opts": ["De su rutina y de sus gustos", "De un viaje al extranjero", "De sus problemas en clase"], "ans": "De su rutina y de sus gustos"}, "detalle": [{"q": "¿A qué hora se levanta Hugo?", "opts": ["A las cinco y media", "A las seis y media", "A las siete"], "ans": "A las cinco y media", "why": "«Me levanto a las cinco y media»"}, {"q": "¿Cómo va a la piscina?", "opts": ["En bici", "En autobús", "Andando"], "ans": "En bici", "why": "«voy a la piscina en bici»"}, {"q": "¿Cuántas horas entrena al día?", "opts": ["Cuatro", "Dos", "Seis"], "ans": "Cuatro", "why": "«Entreno cuatro horas»"}, {"q": "¿Cuándo estudia?", "opts": ["Por la noche", "Por la mañana", "No estudia"], "ans": "Por la noche", "why": "«estudio por la noche»"}, {"q": "¿A qué hora se acuesta?", "opts": ["A las diez", "A las once", "A las nueve"], "ans": "A las diez", "why": "«Me acuesto a las diez»"}], "vf": [{"q": "A Hugo le gusta madrugar.", "ans": false, "prueba": "no me gusta nada"}, {"q": "A Hugo le gustan las carreras.", "ans": true, "prueba": "me gustan mucho las carreras"}, {"q": "Hugo se ducha antes de desayunar.", "ans": true, "prueba": "me ducho, desayuno mucho"}], "produccion": {"prompt": "Contesta tú a la periodista: ¿a qué hora te levantas, qué haces primero, qué te gusta y qué no te gusta, y a qué hora te acuestas?", "modo": "escribir", "min": 4, "modelo": "Me levanto a las… Primero me… Me gusta… pero no me gusta… Me acuesto a las…"}});
 buildAudioCortos("esc_c6p_u1",{"fragmentos": [{"etiqueta": "§1 · Dictado de horas", "seccion": "§1 · ¿Qué hora es?", "titulo": "Dictado de horas — seis veces", "tarea": "1ª ronde: het hele uur. 2ª ronde: hetzelfde uur met minuten. Noteer zes tijden.", "audio": "audio/C6plus_U1_01.mp3", "guion": [{"who": "Narradora", "es": "Primera ronda: la hora en punto.", "nl": "Eerste ronde: het hele uur."}, {"who": "Narradora", "es": "a) Son las ocho.", "nl": "a) Het is acht uur."}, {"who": "Narradora", "es": "b) Es la una.", "nl": "b) Het is één uur."}, {"who": "Narradora", "es": "c) Son las cuatro.", "nl": "c) Het is vier uur."}, {"who": "Narradora", "es": "d) Son las once.", "nl": "d) Het is elf uur."}, {"who": "Narradora", "es": "e) Son las seis.", "nl": "e) Het is zes uur."}, {"who": "Narradora", "es": "f) Son las doce.", "nl": "f) Het is twaalf uur."}, {"who": "Narradora", "es": "Segunda ronda: la misma hora, con minutos.", "nl": "Tweede ronde: hetzelfde uur, met minuten."}, {"who": "Narradora", "es": "a) Son las ocho y cuarto.", "nl": "a) Het is kwart over acht."}, {"who": "Narradora", "es": "b) Es la una y media.", "nl": "b) Het is half twee."}, {"who": "Narradora", "es": "c) Son las cuatro menos diez.", "nl": "c) Het is tien voor vier."}, {"who": "Narradora", "es": "d) Son las once y veinticinco.", "nl": "d) Het is vijfentwintig over elf."}, {"who": "Narradora", "es": "e) Son las seis menos cuarto.", "nl": "e) Het is kwart voor zes."}, {"who": "Narradora", "es": "f) Son las doce y cinco.", "nl": "f) Het is vijf over twaalf."}]}, {"etiqueta": "§2 · Un día con Lucía", "seccion": "§2 · Mi día a día — la rutina", "titulo": "Un día con Lucía", "tarea": "1ª: hoe laat staat ze op? — 2ª: wat doet ze 's namiddags? Vertel daarna je eigen dag.", "audio": "audio/C6plus_U1_02.mp3", "guion": [{"who": "Lucía", "es": "Hola, soy Lucía. Te cuento un día normal en Sevilla.", "nl": "Hallo, ik ben Lucía. Ik vertel je over een gewone dag in Sevilla."}, {"who": "Lucía", "es": "Me levanto a las siete menos cuarto. Siempre me despierto antes, pero me quedo cinco minutos en la cama.", "nl": "Ik sta op om kwart voor zeven. Ik word altijd eerder wakker, maar ik blijf nog vijf minuten in bed."}, {"who": "Lucía", "es": "Primero me ducho, luego desayuno con mi hermana y después me visto.", "nl": "Eerst douche ik, daarna ontbijt ik met mijn zus en vervolgens kleed ik me aan."}, {"who": "Lucía", "es": "Salgo de casa a las ocho y voy al instituto en autobús. Las clases empiezan a las ocho y media.", "nl": "Ik ga om acht uur van huis en ik ga met de bus naar school. De lessen beginnen om half negen."}, {"who": "Lucía", "es": "Como en el instituto a las dos. Por la tarde hago los deberes y a veces entreno con el equipo de baloncesto.", "nl": "Ik eet om twee uur op school. 's Namiddags maak ik mijn huiswerk en soms train ik met het basketbalteam."}, {"who": "Lucía", "es": "Los martes por la tarde nunca entreno: voy a clase de guitarra.", "nl": "Op dinsdagnamiddag train ik nooit: dan ga ik naar gitaarles."}, {"who": "Lucía", "es": "Ceno sobre las nueve y media y me acuesto a las once.", "nl": "Ik avondmaal rond half tien en ik ga om elf uur slapen."}, {"who": "Lucía", "es": "¿Y tú? ¿A qué hora te levantas?", "nl": "En jij? Hoe laat sta jij op?"}]}]});
 buildLectura("lec_c6p_u1",{"titulo": "Un martes cualquiera", "tipo": "entrada de blog", "emisor": "Marta, estudiante en Salamanca", "receptor": "Los lectores de su blog «Mi vida en España»", "objetivo": "Contar cómo es un día normal para ella", "prediccion": {"q": "Kijk eerst alleen naar de titel en de uren die in de tekst staan. Waarover gaat dit?", "opts": ["Over een gewone dag van begin tot eind", "Over een reis naar Amerika", "Over een examen"], "ans": "Over een gewone dag van begin tot eind"}, "texto": [["titulo", "UN MARTES CUALQUIERA ⏰"], ["lema", "Mi vida en España · entrada del 12 de marzo"], ["p", "Me despierto a las siete menos cuarto, pero no me levanto hasta las siete. Me ducho rápido, me visto y desayuno un café con tostadas."], ["p", "A las ocho salgo de casa. La facultad está lejos, así que voy en autobús. Las clases empiezan a las nueve y terminan a la una y media."], ["p", "Como con mis compañeros en la cafetería. Me gusta mucho la tortilla de patatas, pero no me gustan nada las lentejas."], ["lista", ["07:00 — me levanto", "08:00 — salgo de casa", "09:00 — empiezan las clases", "13:30 — termino y como", "17:00 — estudio en la biblioteca", "23:30 — me acuesto"]], ["p", "Por la tarde estudio en la biblioteca hasta las siete. Después voy al gimnasio dos días por semana. Estoy cansada, pero estoy contenta."], ["firma", "Me acuesto a las once y media. ¿Y tú? ¿A qué hora te acuestas?"]], "traduccion": "Een doordeweekse dinsdag. Ik word wakker om kwart voor zeven, maar ik sta pas om zeven uur op. Ik douche snel, kleed me aan en ontbijt met koffie en geroosterd brood. Om acht uur ga ik de deur uit. De faculteit is ver, dus ik ga met de bus. De lessen beginnen om negen uur en eindigen om half twee. Ik eet met mijn medestudenten in de cafetaria. Ik hou erg van aardappelomelet, maar ik hou helemaal niet van linzen. 's Middags studeer ik tot zeven uur in de bibliotheek. Daarna ga ik twee dagen per week naar de sportschool. Ik ben moe, maar ik ben tevreden. Ik ga om half twaalf slapen. En jij? Hoe laat ga jij slapen?", "global": {"q": "¿De qué trata la entrada?", "opts": ["De la rutina diaria de Marta", "De sus vacaciones", "De un examen difícil"], "ans": "De la rutina diaria de Marta"}, "escanear": [{"q": "¿A qué hora se levanta Marta?", "ans": "a las siete", "alt": ["siete", "las siete", "7:00", "07:00", "a las 7"], "why": "«no me levanto hasta las siete»"}, {"q": "¿Cómo va a la facultad?", "ans": "en autobús", "alt": ["autobús", "autobus", "en autobus", "el autobús"], "why": "«voy en autobús»"}, {"q": "¿A qué hora terminan las clases?", "ans": "a la una y media", "alt": ["la una y media", "una y media", "13:30", "1:30"], "why": "«terminan a la una y media»"}, {"q": "¿Dónde estudia por la tarde?", "ans": "en la biblioteca", "alt": ["la biblioteca", "biblioteca"], "why": "«estudio en la biblioteca»"}, {"q": "¿Cuántos días por semana va al gimnasio?", "ans": "dos", "alt": ["2", "dos días", "dos dias"], "why": "«dos días por semana»"}], "vf": [{"q": "Marta se ducha por la mañana.", "ans": true, "prueba": "me ducho rápido"}, {"q": "A Marta le gustan las lentejas.", "ans": false, "prueba": "no me gustan nada las lentejas"}, {"q": "Marta come sola.", "ans": false, "prueba": "como con mis compañeros"}, {"q": "Marta se acuesta a las once y media.", "ans": true, "prueba": "me acuesto a las once y media"}, {"q": "Marta va a la facultad en coche.", "ans": false, "prueba": "voy en autobús"}], "contexto": [{"q": "«no me levanto hasta las siete» — ¿qué significa «hasta»?", "opts": ["tot", "vanaf", "zonder"], "ans": "tot", "why": "Ze wordt eerder wakker, maar staat pas óm zeven uur op."}, {"q": "«así que voy en autobús» — ¿qué expresa «así que»?", "opts": ["een gevolg (dus)", "een tegenstelling (maar)", "een reden (omdat)"], "ans": "een gevolg (dus)", "why": "De faculteit is ver → dáárom de bus. Let op: «dus» is nooit «luego»."}, {"q": "«Estoy cansada, pero estoy contenta» — ¿por qué «estoy» y no «soy»?", "opts": ["Het is hoe ze zich nú voelt", "Het is haar karakter", "Het is haar beroep"], "ans": "Het is hoe ze zich nú voelt", "why": "Toestand van het moment → estar."}], "produccion": {"prompt": "Escribe tu propio martes (5–6 frases): a qué hora te levantas, cómo vas al instituto, cuándo empiezan y terminan las clases, qué te gusta comer y a qué hora te acuestas.", "modelo": "Me levanto a las… Voy al instituto en… Las clases empiezan a las… y terminan a las… Me gusta… pero no me gusta… Me acuesto a las…"}});

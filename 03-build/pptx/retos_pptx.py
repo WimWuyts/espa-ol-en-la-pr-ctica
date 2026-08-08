@@ -37,7 +37,11 @@ import retos_data as RD          # noqa: E402
 EMU = 914400
 W, H = 12191695, 6858000         # 13,33" × 7,5"
 
-G, GD, GT = "1E9E74", "157355", "E4F4EE"
+# Cursuskleur (CLAUDE.md §6): C5 groen, C6+ paars. `dia_reto` zet de module-
+# globals per deck, zodat dezelfde generator beide huisstijlen bedient.
+PALETA = {"C5": ("1E9E74", "157355", "E4F4EE"),
+          "C6+": ("7C56A9", "5B3E83", "EEE8F5")}
+G, GD, GT = PALETA["C5"]
 INK, MUT, PAPER, CREMA = "20242E", "6A6E78", "FCFBF8", "F3EEE4"
 AMBER, AMBERBG, RED, WHITE, LINE = "B7860B", "FBF3D6", "DC2626", "FFFFFF", "E4E3DE"
 DISP, BODY = "Bricolage Grotesque", "Inter"
@@ -251,6 +255,32 @@ def tarjetas_de(r):
                  for dia, tiempo, cons in d["dias"]]
                 + [("marco", m, None) for m in d["marco"]]
                 + [("El dilema", d["dilema"], None)])
+    if i == "C6P-U0-RETO-03":
+        pr = d["preguntas"]
+        return ([(t, desc, None) for t, desc in d["trabajos"]]
+                + [("Preguntas", " · ".join(pr[k:k + 3]), None) for k in range(0, len(pr), 3)]
+                + [("marco", m, None) for m in d["marco"]])
+    if i == "C6P-U0-RETO-09":
+        tipos = d["tipos_de_dato"]
+        return ([("Tipos de dato", " · ".join(tipos[k:k + 3]), None)
+                 for k in range(0, len(tipos), 3)]
+                + [("marco", m, None) for m in d["marco"]]
+                + [(etq, txt, None) for etq, txt in d["ejemplo"]])
+    if i == "C6P-U0-RETO-10":
+        return ([("ejemplo", e, por) for e, por in d["ejemplos"]]
+                + [("marco", m, None) for m in d["marco"]]
+                + [("El dilema", x, None) for x in d["dilemas"]])
+    if i == "C6P-U1-RETO-04":
+        return ([(quien, txt, None) for quien, txt in d["roles"]]
+                + [("la queja", q, None) for q in d["quejas"]]
+                + [("mediador/-a", m, None) for m in d["marco_mediador"]])
+    if i == "C6P-U1-RETO-06":
+        return ([("%s · %s" % (n, etq), ej, None) for n, etq, ej in d["escala"]]
+                + [("marco", m, None) for m in d["marco"]]
+                + [("Acuerdo", d["aviso"], None)])
+    if i == "C6P-U1-RETO-07":
+        return ([(quien, rut, None) for quien, rut in d["rutinas"]]
+                + [("marco", m, None) for m in d["marco"]])
     if i == "C5-U1-RETO-09":
         return ([("Tu perfil", m, None) for m in d["marco_perfil"]]
                 + [("El algoritmo", m, None) for m in d["marco_algoritmo"]]
@@ -260,6 +290,8 @@ def tarjetas_de(r):
 
 def dia_reto(r):
     """Bouwt de volledige slideN.xml van één reto."""
+    global G, GD, GT
+    G, GD, GT = PALETA.get(r["curso"], PALETA["C5"])
     sid = 2
     sp, reveals = [], []
 

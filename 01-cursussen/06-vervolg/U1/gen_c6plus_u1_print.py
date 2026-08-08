@@ -21,9 +21,24 @@ _sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
 import print_bloques as PB
 import lectura_data as LD
 import escucha_data as ED
+import retos_data as RD
+import retos_print as RP
 
 BODY = []
 def P(*x): BODY.extend(x)
+
+
+def retos(ancla, titulo, intro_es, intro_nl):
+    """Retoblok van één sectie — volledige oefening voor print, verwijskaartje
+    voor wat op de hub of in de PowerPoint leeft."""
+    P('<div class="page">')
+    P(f'<div class="divider">{titulo}</div>')
+    P(f'<div class="intro" style="margin-top:1mm"><b>ES:</b> {intro_es} '
+      f'<span class="gloss">{intro_nl}</span></div>')
+    for r in sorted(RD.por_ancla(ancla), key=lambda x: x["num"]):
+        P(RP.reto_print(r) if r["soporte"] == "print" else RP.reto_puntero(r))
+    P('</div>')
+
 _AN = [0]
 def AN():
     _AN[0] += 1
@@ -187,6 +202,10 @@ P(actx(AN(), "El calendario · completa",
   apoyo="PISTA"))
 sec_close()
 
+retos("hora_c6p", "§1.4 · Retos — la hora que decide",
+      'Una agenda <b>saboteada</b> y cuatro agendas que casi no encajan.',
+      "Een gesaboteerde agenda en vier agenda's die bijna niet passen.")
+
 # ================= §2 · MI RUTINA (vocab + conectores + frecuencia) =================
 sec_open("2", "§2 · Mi día a día — la rutina", 'Las <b>acciones</b> de un día normal, en orden con <b>conectores</b> (primero, luego, después) y con qué <b>frecuencia</b> (siempre, a veces, nunca). <span class="gloss">De acties van je dag, in volgorde met verbindingswoorden en frequentie-woorden.</span>',
         lpd(("7","woordenschat: acciones de la rutina"), ("8","taalsysteem: conectores"), ("3","spreken/schrijven over jezelf")))
@@ -235,6 +254,10 @@ P(actx(AN(), "¿Con qué frecuencia? · escribe 4 frases",
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha «Un día con Lucía»</b> en la página digital (TTS). <b>1ª vez:</b> ¿a qué hora se levanta? · <b>2ª vez:</b> ¿qué hace por la tarde? Escribe los datos y luego cuenta tu día.</div>',
            qr("Escanea y escucha", "§2 · Un día con Lucía", seed=102)))
 sec_close()
+
+retos("rutina_c6p", "§2.4 · Retos — el día más normal del mundo",
+      'El día de tu <b>móvil</b>, cinco minutos de podcast sin que pase nada, y tres rutinas extremas.',
+      'De dag van je gsm, vijf minuten podcast zonder dat er iets gebeurt, en drie extreme routines.')
 
 # ================= §3 · LOS VERBOS REFLEXIVOS =================
 sec_open("3", "§3 · Los verbos reflexivos", 'La <b>estrella</b> de la unidad. En «me levanto» la acción <b>vuelve a mí</b>: pronombre (<b>me·te·se·nos·os·se</b>) + verbo. Aprendes a formarlos y a colocarlos. <span class="gloss">De ster van deze unit: bij reflexieve werkwoorden keert de handeling terug naar het onderwerp — pronomen + werkwoord.</span>',
@@ -353,6 +376,10 @@ P(actx("★", "Tarea comunicativa · la rutina de tu compañero/a",
 P('<div class="guide"><div class="ic">🎡</div><div><span class="hand">Online:</span> <span class="g">de <b>vervangingsanimatie</b> en het <b>vervoegingswiel</b> op de digitale pagina oefenen elke reflexieve vorm; + cloze-, sorteer- en tetris-spellen (me/te/se…).</span></div></div>')
 P('</div>')  # sluit .page §3.3
 
+retos("reflexivos", "§3.4 · Retos — la acción vuelve a mí",
+      'Un día <b>del revés</b>, un manual para tu sustituto, y dos compañeros de piso que no se aguantan.',
+      'Een omgekeerde dag, een handleiding voor je vervanger, en twee huisgenoten die elkaar niet verdragen.')
+
 # ================= §4 · SER VS ESTAR (contrast) =================
 sec_open("4", "§4 · Ser vs estar — el contraste", 'Beide zijn «zijn», maar met een verschil. <b>ser</b> = wie/wat je <b>bent</b> (permanent, identiteit, karakter). <b>estar</b> = <b>waar</b> je bent en <b>hoe</b> je je <b>voelt</b> (plaats, toestand, gevoel). <span class="gloss">ser = permanent/identiteit · estar = plaats & gevoel. In U0 zag je enkel soy/estoy; nu het volledige contrast.</span>',
         lpd(("8","taalsysteem: ser vs estar"), ("7","woordenschat: sentimientos")))
@@ -442,6 +469,10 @@ P(actx("★", "Tarea comunicativa · ¿cómo es y cómo está?",
   '<p style="margin-left:12.5mm">Mi compañero/a <b>es</b> <span class="wl md"></span> y <span class="wl md"></span>, y hoy <b>está</b> <span class="wl md"></span>.</p>',
   apoyo="MARCO"))
 P('</div>')  # sluit .page §4.3
+
+retos("ser_estar_c6p", "§4.4 · Retos — es aburrido o está aburrido",
+      'Doce escenas donde solo el <b>detalle</b> decide, y un termómetro de la clase en cifras.',
+      'Twaalf scènes waar enkel het detail beslist, en een klasthermometer in cijfers.')
 
 # ================= §5 · GUSTAR + OI =================
 sec_open("5", "§5 · Gustar + OI — me gusta", 'El <b>corazón</b> de la unidad para hablar de <b>gustos</b>. Pero ¡ojo! gustar funciona <b>al revés</b>: <i>Me gusta la música</i> = de muziek bevalt míj. Y al final: <b>«me gusta… porque…»</b>, tu primera opinión. <span class="gloss">Gustar werkt omgekeerd. Op het einde geef je je eerste mening met «porque».</span>',
@@ -646,6 +677,10 @@ P(actx(AN(), "Datos curiosos — une país y horario",
   apoyo="BANCO"))
 sec_close()
 
+retos("cultura_c6p1", "Reto — encontrar el hueco imposible",
+      'Cuatro agendas y un solo momento. O ninguno — y también hay que <b>demostrarlo</b>.',
+      "Vier agenda's en één moment. Of geen enkel — en dat moet je ook bewijzen.")
+
 # ================= TAREA FINAL =================
 sec_open("★", "Tarea final · «Mi día a día»", 'Crea tu <b>blog «Mi día a día»</b> para el muro de la clase y preséntalo en pareja: tu rutina (reflexivos), tu hora, cómo te sientes y qué te gusta. <span class="gloss">Maak je dagblog voor de klasmuur en stel het voor in duo.</span>')
 P(fmu('tus compañeros de clase (el muro)', 'compartir cómo es un día en tu vida', 'un texto/blog + una presentación oral (± 1 min)'))
@@ -785,7 +820,7 @@ CSS_OVR = ('.act{break-inside:avoid;} .act .steun{break-before:avoid;} '
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Más español en la práctica · C6+ U1 El día a día</title><style>'
-        + CSS + CSS_OVR + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
+        + CSS + CSS_OVR + RP.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/C6plus_U1.html"
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, "·", len(HTML), "bytes ·", _AN[0], "genummerde oefeningen (excl. V.1–V.5)")

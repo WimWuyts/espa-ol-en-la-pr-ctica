@@ -53,6 +53,11 @@ PARADA = {
     ("C5", 4): "València · la costa", ("C5", 5): "México · CDMX",
     ("C5", 6): "México · mercados", ("C5", 7): "Colombia · Cartagena",
     ("C5", 8): "Perú · Cusco",
+    # C6+ pikt de route op waar de oude cursus eindigde
+    ("C6+", 0): "El mundo hispano → México · CDMX", ("C6+", 1): "España · el horario",
+    ("C6+", 2): "Colombia · Cartagena", ("C6+", 3): "México · CDMX",
+    ("C6+", 4): "Chile · el gran viaje", ("C6+", 5): "Argentina · Buenos Aires",
+    ("C6+", 6): "Perú · Cusco", ("C6+", 7): "Costa Rica · pura vida",
 }
 
 

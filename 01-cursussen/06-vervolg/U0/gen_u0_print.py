@@ -389,9 +389,24 @@ import sys as _sys
 _sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
 import print_bloques as PB
 import nat_data as ND, lectura_data as LD, escucha_data as ED
+import retos_data as RD
+import retos_print as RP
 
 BODY = []
 def P(*x): BODY.extend(x)
+
+
+def retos(ancla, titulo, intro_es, intro_nl):
+    """Retoblok van één sectie — volledige oefening voor print, verwijskaartje
+    voor wat op de hub of in de PowerPoint leeft."""
+    P('<div class="page">')
+    P(f'<div class="divider">{titulo}</div>')
+    P(f'<div class="intro" style="margin-top:1mm"><b>ES:</b> {intro_es} '
+      f'<span class="gloss">{intro_nl}</span></div>')
+    for r in sorted(RD.por_ancla(ancla), key=lambda x: x["num"]):
+        P(RP.reto_print(r) if r["soporte"] == "print" else RP.reto_puntero(r))
+    P('</div>')
+
 _AN=[0]
 def AN():
     _AN[0]+=1
@@ -680,6 +695,10 @@ P(actx(AN(), "Dictado corto · escribe las frases",
 P('<div class="guide"><div class="ic">🎡</div><div><span class="hand">Online:</span> <span class="g">de <b>rueda de conjugación</b> en de <b>Conjugador</b> geven je elk werkwoord in presente; + cloze-, substitutie- en tetris-spellen om de vormen te automatiseren.</span></div></div>')
 P('</div>')  # page §2.3
 
+retos("presente_c6p", "§2.4 · Retos — el presente puesto a prueba",
+      'Un test de nivel que <b>tú</b> corriges, y una entrevista para un trabajo imposible.',
+      'Een niveautest die jíj verbetert, en een sollicitatie voor een onmogelijke baan.')
+
 # ================= §3 · GÉNERO, ARTÍCULOS Y NÚMERO =================
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">3</span><span class="pk">§3 · Género · artículos · número · adjetivos</span>')
@@ -767,6 +786,10 @@ P(actx(AN(), "Describe · tres personas de la clase",
   '<p style="margin-left:12.5mm" class="gloss">Modelo: <i>Lucía es una chica alta y simpática.</i></p>', apoyo="MARCO → SIN AYUDA"))
 P('</div>')  # page §3.3
 
+retos("genero", "§3.4 · Retos — la posición y la forma",
+      'Un adjetivo que cambia de <b>significado</b> según dónde esté, y un retrato hecho solo de <b>negaciones</b>.',
+      'Een bijvoeglijk naamwoord dat van betekenis verandert naargelang zijn plaats, en een portret dat enkel uit ontkenningen bestaat.')
+
 # ================= §4 · PAÍSES, NACIONALIDADES Y LENGUAS =================
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">4</span><span class="pk">§4 · Países · nacionalidades · lenguas</span>')
@@ -823,6 +846,10 @@ P('<div class="fichacard"><div>'
   '<div class="row"><span class="k">Lengua(s) (hablo…)</span><span class="v"><span class="wl md"></span></span></div>'
   '<div class="row"><span class="k">Ciudad (vivo en…)</span><span class="v"><span class="wl md"></span></span></div></div></div>')
 P('</div>')  # page §4
+
+retos("paises", "§4.4 · Retos — el mundo hispano en datos",
+      'Veinte fichas, un mapa de lenguas y un país presentado <b>sin decir su nombre</b>.',
+      'Twintig fiches, een talenkaart en een land dat je presenteert zonder zijn naam te noemen.')
 
 # ================= §5 · LECTURA =================
 P('<div class="page"><div class="parada sec">')
@@ -903,6 +930,10 @@ P('<div class="intro"><b>ES:</b> Diego y Valen se reencuentran en el patio. <b>E
 P(PB.escucha_print(ED.C6P_U0, AN()))
 P('</div>')
 
+retos("saludos_c6p", "§1.4 · Retos — hablar para alguien que empieza",
+      'Un mensaje de bienvenida de treinta segundos y un correo que <b>no entiendes del todo</b>.',
+      'Een welkomstboodschap van dertig seconden en een mail die je niet helemaal begrijpt.')
+
 # ================= CULTURA =================
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">C</span><span class="pk">Cultura · el mundo hispano</span>')
@@ -927,6 +958,10 @@ P(actx(AN(), "Datos curiosos — une país y dato",
   '<div class="wcol"><div class="ch">Dato</div><div class="cb short">a. único país hispano de África &nbsp; b. aquí se habla quechua &nbsp; c. el país hispano más grande &nbsp; d. tiene catalán y gallego</div></div></div>'
   '<p style="margin-left:12.5mm">1-<span class="wl sm"></span> 2-<span class="wl sm"></span> 3-<span class="wl sm"></span> 4-<span class="wl sm"></span> · ¿Qué dato te sorprende más? <span class="wl md"></span></p>', apoyo="BANCO"))
 P('</div>')  # page Cultura
+
+retos("cultura_c6p0", "Reto — las reglas las escribís vosotros",
+      'Diez reglas para este curso. En español, y cada propuesta con <b>ser</b> o <b>estar</b>.',
+      'Tien afspraken voor dit schooljaar. In het Spaans, en elk voorstel met ser of estar.')
 
 # ================= TAREA FINAL =================
 P('<div class="page"><div class="parada sec">')
@@ -1072,7 +1107,7 @@ EDITBAR = '''
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Más español en la práctica · C6+ U0 ¡Volvemos!</title><style>'
-        + CSS + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
+        + CSS + PB.CSS + RP.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/U0.html"
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, "·", len(HTML), "bytes")
