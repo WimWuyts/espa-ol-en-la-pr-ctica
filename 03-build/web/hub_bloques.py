@@ -177,6 +177,24 @@ def retos_js(host_id, curso, unidad):
         elif r["id"] == "C5-U0-RETO-07":
             base["tipo"] = "mapa"
             base["paises"] = [{"iso": i, "nombre": n, "silabas": s} for i, n, s in d["paises"]]
+        elif r["id"] == "C5-U1-RETO-05":
+            base["tipo"] = "articulo"
+            reglas = {k: t for k, t in d["reglas"]}
+            base["reglas"] = [{"clave": k, "texto": t} for k, t in d["reglas"]]
+            base["objetos"] = [{"palabra": w, "articulo": art, "regla": k,
+                                "porque": reglas[k]} for w, art, k in d["objetos"]]
+        elif r["id"] == "C5-U1-RETO-07":
+            base["tipo"] = "escena"
+            base["escena"] = [{"x": x, "y": y, "w": w, "h": h, "forma": f, "color": c,
+                               "es": es, "nl": nl, "cuando": cu}
+                              for x, y, w, h, f, c, es, nl, cu in d["escena"]]
+            base["marco"] = d["marco"]
+        elif r["id"] == "C5-U1-RETO-10":
+            base["tipo"] = "grabar"
+            base["situaciones"] = [{"es": m, "nl": "", "pista": ""} for m in d["marco"]]
+            base["items"] = [{"text": "Te presento a mi compañero/a",
+                              "cue": "één minuut, derde persoon, voor iemand die geen "
+                                     "Nederlands kent"}]
         else:
             continue
         salida.append(base)

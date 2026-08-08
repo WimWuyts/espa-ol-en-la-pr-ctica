@@ -1552,7 +1552,16 @@ def s_escucha(f=None):
 # overzetten helpt niemand — een opnameoefening op een dia is geen oefening.
 import retos_data as _RD
 
-_RETOS = {r["num"]: r for r in _RD.RETOS}
+def reto(curso, unidad, num):
+    """Eén reto uit de gedeelde bron. Per unit lopen de nummers van 1 tot 10,
+    dus zonder curso/unidad zou U1 de retos van U0 overschrijven."""
+    for r in _RD.de(curso, unidad):
+        if r["num"] == num:
+            return r
+    raise KeyError("geen reto %s U%s nr %s" % (curso, unidad, num))
+
+
+_RETOS = {r["num"]: r for r in _RD.de("C5", 0)}
 
 
 def _reto_cabecera(s, r):

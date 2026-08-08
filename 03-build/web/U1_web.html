@@ -74,6 +74,51 @@
 .audveces{color:var(--mut);font-size:12px}
 .audtr{margin-top:2px}
 
+.retos{display:grid;gap:16px}
+.reto{border:1px solid var(--line);border-radius:16px;padding:16px 18px;background:var(--card)}
+.reto .rcab{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:4px}
+.reto .rnum{background:var(--g);color:#fff;font-family:var(--disp);font-weight:700;
+  width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none}
+.reto h3{margin:0;font-family:var(--disp);font-size:19px;color:var(--gd)}
+.reto .rlente{font-size:11px;font-weight:700;color:var(--gd);background:var(--gt);
+  border-radius:999px;padding:3px 9px}
+.reto .rgancho{margin:2px 0 0;font-size:15px}
+.reto .rnl{margin:2px 0 10px;font-size:13px;color:var(--mut);font-style:italic}
+.rregla{border-left:4px solid var(--amber,#B7860B);background:var(--amberbg,#FBF3D6);
+  border-radius:0 10px 10px 0;padding:9px 13px;margin:0 0 12px;font-size:13.5px;color:#20242E}
+.rregla b{display:block;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#8A6508}
+.rsit{border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:0 0 10px}
+.rsit b{color:var(--gd)}
+.rsit .rpista{display:block;font-size:12.5px;color:var(--mut);margin-top:3px}
+.det{display:grid;gap:8px}
+.detit{border:1px solid var(--line);border-radius:12px;padding:9px 12px}
+.detit .dpal{font-family:var(--disp);font-size:18px}
+.detbtns{display:flex;gap:8px;margin:6px 0}
+.detbtn{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:9px;
+  padding:6px 13px;cursor:pointer;font-weight:600;font-size:14px}
+.detbtn.ok{background:#DCFCE7;border-color:#16A34A}.detbtn.no{background:#FEE2E2;border-color:#DC2626}
+.detrule{margin-top:6px}
+.detrule select{width:100%;max-width:100%;border:1.5px solid var(--line);border-radius:9px;
+  padding:7px 9px;font-family:var(--body);font-size:14px;background:var(--card);color:var(--ink)}
+.detfb{margin-top:6px;font-size:13.5px;display:none}
+.detfb.show{display:block}.detfb.g{color:#166534}.detfb.b{color:#991B1B}
+.rmarca{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:0 0 10px}
+.rbarra{flex:1 1 200px;height:12px;border-radius:999px;background:var(--gt);overflow:hidden;min-width:160px}
+.rbarra i{display:block;height:100%;width:0;background:var(--g);transition:width .4s}
+.rcuenta{font-family:var(--disp);font-weight:700;color:var(--gd)}
+.rpais{display:flex;flex-wrap:wrap;gap:6px}
+.rpais button{border:1.5px solid var(--line);background:var(--card);color:var(--ink);
+  border-radius:999px;padding:5px 11px;cursor:pointer;font-size:13.5px}
+.rpais button.hecho{background:var(--g);border-color:var(--g);color:#fff}
+.rpais button .sil{font-size:11px;opacity:.8;margin-left:5px}
+.escenas{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.escenas{grid-template-columns:1fr}}
+.esc{margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
+.esc figcaption{padding:8px 12px;font-size:13px;background:var(--gt);color:var(--gd)}
+.esc figcaption b{font-family:var(--disp);font-size:15px;margin-right:6px}
+.esc svg{display:block;width:100%;height:auto}
+.escnom{margin:0;padding:8px 12px;font-size:14px;border-top:1px solid var(--line);min-height:38px}
+
 .lectipo{font-size:11px;font-weight:700;color:var(--gd);background:var(--gt);border-radius:999px;padding:3px 9px}
 .lecficha{display:flex;gap:14px;flex-wrap:wrap;background:var(--gt);border-radius:10px;padding:8px 12px;margin:8px 0 14px;font-size:12px}
 .lecficha b{display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--gd)}
@@ -392,6 +437,11 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
     <div id="motorlink"></div>
   </section>
 
+  <section class="panel" data-p="retos">
+    <h2 class="sec">Retos · tres desafíos 🎯</h2>
+    <p class="lead">Drie opdrachten met <b>één harde regel</b> die de makkelijke weg afsnijdt: het juiste lidwoord telt pas als je ook de <b>regel</b> kiest, de plaza van 1985 beschrijf je in het <b>presente</b>, en je partner stel je voor aan iemand die <b>geen Nederlands</b> kent. <span class="gloss">De zeven andere retos van deze unit staan in het boek en in de PowerPoint.</span></p>
+    <div id="retos_u1"></div>
+  </section>
   <section class="panel" data-p="hablar">
     <h2 class="sec">Hablar · grábate 🎙️</h2>
     <p class="lead">Neem <b>jezelf</b> op: luister naar het model, spreek in, luister terug, en neem opnieuw op. <span class="gloss">Werkt in Chrome/Edge; sta de micro toe. Print blijft bruikbaar zonder opname.</span></p>
@@ -543,9 +593,191 @@ const GAMES={"pais-nacionalidad": "PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9Im5sIj4KP
 function toggleTheme(){const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'}
 function speak(t,rate){if(!('speechSynthesis'in window))return;const u=new SpeechSynthesisUtterance(t);u.lang='es-ES';u.rate=rate||.92;
   const vs=speechSynthesis.getVoices();const es=vs.find(v=>/^es/i.test(v.lang));if(es)u.voice=es;try{speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}
+function buildRetos(id,cfg){
+ const host=document.getElementById(id);if(!host)return;
+ host.innerHTML='<div class="retos"></div>';
+ const lista=host.querySelector('.retos');
+ (cfg.retos||[]).forEach((r,n)=>{
+  const c=document.createElement('div');c.className='reto';
+  c.innerHTML='<div class="rcab"><span class="rnum">'+r.num+'</span><h3>'+exEsc(r.nombre)+'</h3>'+
+    '<span class="rlente">'+exEsc(r.lente)+'</span></div>'+
+    '<p class="rgancho"><b>'+exEsc(r.gancho_es)+'</b></p>'+
+    '<p class="rnl">'+exEsc(r.gancho_nl)+'</p>'+
+    '<p class="desc">'+exEsc(r.consigna_nl)+'</p>'+
+    '<div class="rregla"><b>La regla del reto</b>'+exEsc(r.regla)+'</div>'+
+    '<div class="rcuerpo" id="'+id+'_c'+n+'"></div>';
+  lista.appendChild(c);
+  const cuerpo=c.querySelector('.rcuerpo');
+  if(r.tipo==='grabar')retoGrabar(cuerpo,r,id+'_c'+n);
+  else if(r.tipo==='detector')retoDetector(cuerpo,r);
+  else if(r.tipo==='mapa')retoMapa(cuerpo,r);
+  else if(r.tipo==='articulo')retoArticulo(cuerpo,r);
+  else if(r.tipo==='escena')retoEscena(cuerpo,r);
+ });
+}
+
+function retoGrabar(cont,r,idBase){
+ (r.situaciones||[]).forEach(s=>{
+   const d=document.createElement('div');d.className='rsit';
+   d.innerHTML='<b>'+exEsc(s.es)+'</b><span class="rpista">'+exEsc(s.nl)+
+     (s.pista?' · <i>'+exEsc(s.pista)+'</i>':'')+'</span>';
+   cont.appendChild(d);});
+ const rec=document.createElement('div');rec.id=idBase+'_rec';cont.appendChild(rec);
+ if(typeof makeRecorder==='function')
+   makeRecorder(idBase+'_rec',{title:r.nombre,desc:r.consigna_es,
+     items:(r.items||[]).map(t=>({text:t.text,cue:t.cue}))});
+}
+
+function retoDetector(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ const reglas=r.reglas||[];
+ (r.items||[]).forEach((it,i)=>{
+   const d=document.createElement('div');d.className='detit';
+   const opts=reglas.map((g,k)=>'<option value="'+k+'">'+exEsc(g)+'</option>').join('');
+   d.innerHTML='<div class="dpal">'+exEsc(it.palabra)+'</div>'+
+     '<div class="detbtns"><button class="detbtn" type="button" data-v="1">✓ posible</button>'+
+     '<button class="detbtn" type="button" data-v="0">✗ imposible</button></div>'+
+     '<div class="detrule" hidden><label class="desc">¿Qué regla rompe?</label>'+
+     '<select><option value="-1">— elige la regla —</option>'+opts+'</select></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const fb=d.querySelector('.detfb'),rule=d.querySelector('.detrule'),sel=d.querySelector('select');
+   let cerrado=false;
+   d.querySelectorAll('.detbtn').forEach(b=>{b.onclick=()=>{
+     if(cerrado)return;
+     const dicho=b.dataset.v==='1';
+     if(!dicho){rule.hidden=false;sel.focus();
+       fb.className='detfb show';fb.textContent='Ahora acusa con pruebas: ¿qué regla rompe?';
+       cerrado=false;
+       sel.onchange=()=>{cerrado=true;
+         const bien=(!it.posible)&&(Number(sel.value)===it.regla);
+         d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);sel.disabled=true;
+         b.classList.add(bien?'ok':'no');
+         fb.className='detfb show '+(bien?'g':'b');
+         fb.innerHTML=bien?'<b>✓ acusación correcta</b> · '+exEsc(it.porque)
+           :(it.posible?'<b>✗ esta palabra sí existe</b> · '+exEsc(it.porque)
+                       :'<b>✗ la regla no es esa</b> · '+exEsc(it.porque));};
+       return;}
+     cerrado=true;
+     const bien=it.posible;
+     d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);
+     b.classList.add(bien?'ok':'no');
+     fb.className='detfb show '+(bien?'g':'b');
+     fb.innerHTML=(bien?'<b>✓ correcto</b> · ':'<b>✗ no</b> · ')+exEsc(it.porque);};});
+   caja.appendChild(d);});
+}
+
+// ── artículo: el/la op verzonnen woorden ───────────────────────────────────
+// Het lidwoord alléén zegt niets: wie «la» kiest bij een -ma-woord heeft geraden,
+// ook als het toevallig klopt. Daarom moet de leerling er de regel bij kiezen, en
+// telt het pas als het allebei klopt.
+function retoArticulo(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ const reglas=r.reglas||[];
+ (r.objetos||[]).forEach(it=>{
+   const d=document.createElement('div');d.className='detit';
+   const opts=reglas.map((g,k)=>'<option value="'+g.clave+'">'+exEsc(g.texto)+'</option>').join('');
+   d.innerHTML='<div class="dpal">¿… '+exEsc(it.palabra)+'?</div>'+
+     '<div class="detbtns"><button class="detbtn" type="button" data-a="el">el</button>'+
+     '<button class="detbtn" type="button" data-a="la">la</button></div>'+
+     '<div class="detrule" hidden><label class="desc">¿Qué regla usas?</label>'+
+     '<select><option value="">— elige la regla —</option>'+opts+'</select></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const fb=d.querySelector('.detfb'),rule=d.querySelector('.detrule'),sel=d.querySelector('select');
+   let elegido=null;
+   d.querySelectorAll('.detbtn').forEach(b=>{b.onclick=()=>{
+     if(elegido)return;
+     elegido=b.dataset.a;rule.hidden=false;sel.focus();
+     fb.className='detfb show';fb.textContent='¿Y por qué? Elige la regla.';};});
+   sel.onchange=()=>{
+     if(!sel.value)return;
+     const bienArt=elegido===it.articulo, bienRegla=sel.value===it.regla;
+     d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);sel.disabled=true;
+     const b=d.querySelector('.detbtn[data-a="'+elegido+'"]');
+     b.classList.add(bienArt&&bienRegla?'ok':'no');
+     fb.className='detfb show '+(bienArt&&bienRegla?'g':'b');
+     if(bienArt&&bienRegla)fb.innerHTML='<b>✓ correcto</b> · '+exEsc(it.porque);
+     else if(bienArt)fb.innerHTML='<b>✗ el artículo sí, la regla no</b> · '+exEsc(it.porque)+
+       ' — con la regla equivocada, has adivinado.';
+     else fb.innerHTML='<b>✗ es «'+exEsc(it.articulo)+' '+exEsc(it.palabra)+'»</b> · '+exEsc(it.porque);};
+   caja.appendChild(d);});
+}
+
+// ── escena: dezelfde plek, twee tijden ─────────────────────────────────────
+// Twee panelen naast elkaar; klik een voorwerp en je hoort en ziet hoe het heet.
+// De twee voorwerpen die in beide scènes staan, zijn de controle: wie die als
+// verschil noteert, heeft te snel gekeken.
+function retoEscena(cont,r){
+ const items=r.escena||[];
+ function panel(cual,titulo,sub){
+   const propios=items.filter(i=>i.cuando===cual||i.cuando==='ambas');
+   const formas=propios.map((i,k)=>i.forma==='circ'
+     ? '<circle class="eob" data-k="'+k+'" data-c="'+cual+'" cx="'+(i.x+i.w/2)+'" cy="'+(i.y+i.h/2)+
+       '" r="'+(i.w/2)+'" fill="'+i.color+'"/>'
+     : '<rect class="eob" data-k="'+k+'" data-c="'+cual+'" x="'+i.x+'" y="'+i.y+'" width="'+i.w+
+       '" height="'+i.h+'" rx="1.5" fill="'+i.color+'"/>').join('');
+   return '<figure class="esc"><figcaption><b>'+exEsc(titulo)+'</b> <span>'+exEsc(sub)+'</span></figcaption>'+
+     '<svg viewBox="0 0 100 84" role="img" aria-label="'+exEsc(titulo)+'">'+
+     '<rect x="0" y="0" width="100" height="52" fill="#E8F1F7"/>'+          // lucht
+     '<rect x="0" y="52" width="100" height="32" fill="#EDE7DC"/>'+          // plein
+     '<rect x="0" y="30" width="100" height="22" fill="#D8CFC0"/>'+          // gevelrij
+     '<rect x="6" y="24" width="16" height="28" fill="#C6B9A6"/>'+
+     '<rect x="44" y="20" width="18" height="32" fill="#C6B9A6"/>'+
+     '<rect x="76" y="26" width="18" height="26" fill="#C6B9A6"/>'+
+     formas+'</svg><p class="escnom" role="status" aria-live="polite">Klik een voorwerp.</p></figure>';
+ }
+ cont.innerHTML='<div class="escenas">'+panel('antes','1985','la misma plaza, hace cuarenta años')+
+   panel('ahora','ahora','la plaza hoy')+'</div>'+
+   '<p class="desc">De twee dingen die in <b>allebei</b> de scènes staan, zijn de controle: die zijn géén verschil.</p>';
+ cont.querySelectorAll('.eob').forEach(el=>{
+   el.style.cursor='pointer';
+   el.addEventListener('click',()=>{
+     const cual=el.dataset.c, k=Number(el.dataset.k);
+     const propios=items.filter(i=>i.cuando===cual||i.cuando==='ambas');
+     const it=propios[k];if(!it)return;
+     const fig=el.closest('figure');
+     fig.querySelector('.escnom').innerHTML='<b>'+exEsc(it.es)+'</b> — '+exEsc(it.nl)+
+       (it.cuando==='ambas'?' <i>(en las dos escenas)</i>':'');
+     el.style.stroke='#157355';el.style.strokeWidth='1.4';
+     if(typeof speak==='function')speak(it.es);});});
+ const marco=document.createElement('div');marco.className='rsit';
+ marco.innerHTML='<b>Tu marco</b><span class="rpista">'+
+   (r.marco||[]).map(exEsc).join(' · ')+'</span>';
+ cont.appendChild(marco);
+ const ta=document.createElement('textarea');ta.className='escta';ta.rows=5;
+ ta.setAttribute('aria-label','Jouw vijf zinnen');ta.placeholder='1. En la plaza de ahora hay…';
+ cont.appendChild(ta);
+}
+
+function retoMapa(cont,r){
+ const paises=r.paises||[];
+ cont.innerHTML='<div class="rmarca"><span class="rcuenta">0 / '+paises.length+'</span>'+
+   '<div class="rbarra"><i></i></div>'+
+   '<button class="otra rreset" type="button">↺ empezar de nuevo</button></div>'+
+   '<p class="desc">Klik een land, zeg het hardop, laat iemand bevestigen — dan pas aanklikken. '+
+   'De teller is van de klas, niet van jou.</p><div class="rpais"></div>';
+ const cont2=cont.querySelector('.rpais'),cuenta=cont.querySelector('.rcuenta'),
+       barra=cont.querySelector('.rbarra i');
+ let hechos=0;
+ function pinta(iso){ // laat het land op de grote kaart meekleuren, als die er is
+   const svg=document.querySelector('#mapwrap svg');if(!svg)return;
+   const p=svg.querySelector('[data-c="'+iso+'"]');if(p)p.style.filter='saturate(1.6) brightness(1.05)';}
+ paises.forEach(p=>{
+   const b=document.createElement('button');b.type='button';
+   b.innerHTML=exEsc(p.nombre)+'<span class="sil">'+exEsc(p.silabas)+'</span>';
+   b.onclick=()=>{if(b.classList.contains('hecho'))return;
+     b.classList.add('hecho');hechos++;pinta(p.iso);
+     cuenta.textContent=hechos+' / '+paises.length;
+     barra.style.width=Math.round(hechos/paises.length*100)+'%';
+     if(typeof speak==='function')speak(p.nombre);
+     if(hechos===paises.length)cuenta.textContent='¡'+paises.length+' / '+paises.length+' — lo habéis conseguido!';};
+   cont2.appendChild(b);});
+ cont.querySelector('.rreset').onclick=()=>{hechos=0;cuenta.textContent='0 / '+paises.length;
+   barra.style.width='0';cont2.querySelectorAll('button').forEach(x=>x.classList.remove('hecho'));};
+}
+
 const TTS=('speechSynthesis'in window);
 if(TTS){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}
-const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
+const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['retos','Retos 🎯'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
 const sn=document.getElementById('subnav');
 // ── tabbladen · het adres volgt mee ──────────────────────────────────────────
 // #escuchar opent dat tabblad; #lec_1 opent het paneel waar dat element in
@@ -1336,6 +1568,7 @@ function buildGramType(){
  buildType('gt_3',{title:"Las palabras interrogativas — escribe la pregunta",desc:"Vul het vraagwoord in. <b>Elk vraagwoord draagt een accent</b> — dat is geen versiering maar het verschil tussen een vraag en een gewone zin.",accents:'strict',perBlock:12,expect:12,items:[{"q": "¿___ te llamas? — Me llamo Nina.", "ans": "Cómo", "hint": "C___", "why": "cómo = hoe"}, {"q": "¿De ___ eres? — Soy de Madrid.", "ans": "dónde", "hint": "d____", "why": "de dónde = waarvandaan"}, {"q": "¿___ años tienes? — Tengo quince.", "ans": "Cuántos", "hint": "C______", "why": "cuántos = hoeveel (mv.)"}, {"q": "¿___ es tu profesora? — La señora Ruiz.", "ans": "Quién", "hint": "Q____", "why": "quién = wie"}, {"q": "¿___ estudias? — Español.", "ans": "Qué", "hint": "Q__", "why": "qué = wat"}, {"q": "¿___ es tu cumpleaños? — En mayo.", "ans": "Cuándo", "hint": "C_____", "why": "cuándo = wanneer"}, {"q": "¿___ vives? — En Sevilla.", "ans": "Dónde", "hint": "D____", "why": "dónde = waar"}, {"q": "¿___ hermanos tienes? — Dos.", "ans": "Cuántos", "hint": "C______", "why": "cuántos hermanos"}, {"q": "¿___ tal? — Bien, gracias.", "ans": "Qué", "hint": "Q__", "why": "¿Qué tal? = hoe gaat het?"}, {"q": "¿___ se dice «mochila» en neerlandés?", "ans": "Cómo", "hint": "C___", "why": "cómo se dice = hoe zeg je"}, {"q": "¿___ son ellos? — Son mis primos.", "ans": "Quiénes", "hint": "Q______", "why": "meervoud van quién"}, {"q": "¿___ es tu número de teléfono?", "ans": "Cuál", "hint": "C___", "why": "cuál = welk(e), bij een keuze uit veel"}]});
 }
 buildGramType();
+buildRetos("retos_u1",{"retos": [{"num": 5, "nombre": "La tienda de los objetos raros", "lente": "🕵️ forensisch", "gancho_es": "Doce objetos que no existen. Pero su artículo sí se puede saber.", "gancho_nl": "Twaalf voorwerpen die niet bestaan. Maar hun lidwoord valt wél te weten.", "consigna_es": "Elige «el» o «la» y di POR QUÉ. Ningún diccionario te va a ayudar: solo la regla.", "consigna_nl": "Kies «el» of «la» en zeg WAAROM. Geen woordenboek helpt je hier — alleen de regel.", "regla": "Bij elk woord moet je de regel kiezen die je gebruikt. Het juiste lidwoord met de verkeerde regel telt als fout: dan had je geraden.", "tipo": "articulo", "reglas": [{"clave": "-o", "texto": "eindigt op -o → el"}, {"clave": "-a", "texto": "eindigt op -a → la"}, {"clave": "-ma", "texto": "eindigt op -ma → el (uitzondering, zoals el problema)"}, {"clave": "-ción", "texto": "eindigt op -ción → la (zoals la dirección)"}, {"clave": "-dad", "texto": "eindigt op -dad → la (zoals la ciudad)"}], "objetos": [{"palabra": "nurbo", "articulo": "el", "regla": "-o", "porque": "eindigt op -o → el"}, {"palabra": "trepa", "articulo": "la", "regla": "-a", "porque": "eindigt op -a → la"}, {"palabra": "fartema", "articulo": "el", "regla": "-ma", "porque": "eindigt op -ma → el (uitzondering, zoals el problema)"}, {"palabra": "glinda", "articulo": "la", "regla": "-a", "porque": "eindigt op -a → la"}, {"palabra": "zampo", "articulo": "el", "regla": "-o", "porque": "eindigt op -o → el"}, {"palabra": "nurbación", "articulo": "la", "regla": "-ción", "porque": "eindigt op -ción → la (zoals la dirección)"}, {"palabra": "clisma", "articulo": "el", "regla": "-ma", "porque": "eindigt op -ma → el (uitzondering, zoals el problema)"}, {"palabra": "mosta", "articulo": "la", "regla": "-a", "porque": "eindigt op -a → la"}, {"palabra": "cluvo", "articulo": "el", "regla": "-o", "porque": "eindigt op -o → el"}, {"palabra": "vurtad", "articulo": "la", "regla": "-dad", "porque": "eindigt op -dad → la (zoals la ciudad)"}, {"palabra": "pandema", "articulo": "el", "regla": "-ma", "porque": "eindigt op -ma → el (uitzondering, zoals el problema)"}, {"palabra": "niebra", "articulo": "la", "regla": "-a", "porque": "eindigt op -a → la"}]}, {"num": 7, "nombre": "Madrid: entonces y ahora", "lente": "🔬 onderzoek & data", "gancho_es": "La misma plaza de Madrid, con cuarenta años de diferencia.", "gancho_nl": "Hetzelfde plein in Madrid, veertig jaar uit elkaar.", "consigna_es": "Busca las diferencias y descríbelas en presente: qué hay ahora y qué ya no hay.", "consigna_nl": "Zoek de verschillen en beschrijf ze in het presente: wat er nu is en wat er niet meer is.", "regla": "Alles in het presente, ook als je over 1985 praat. Je zegt dus «en la foto antigua hay…», niet «había». Die verleden tijd leer je pas in het zesde.", "tipo": "escena", "escena": [{"x": 14, "y": 58, "w": 12, "h": 22, "forma": "rect", "color": "#B07A4E", "es": "la cabina de teléfono", "nl": "de telefooncel", "cuando": "antes"}, {"x": 36, "y": 62, "w": 20, "h": 18, "forma": "rect", "color": "#C9A227", "es": "el quiosco de prensa", "nl": "de krantenkiosk", "cuando": "antes"}, {"x": 64, "y": 66, "w": 24, "h": 12, "forma": "rect", "color": "#8E5B4A", "es": "el coche antiguo", "nl": "de oude auto", "cuando": "antes"}, {"x": 90, "y": 44, "w": 5, "h": 36, "forma": "rect", "color": "#6A6E78", "es": "la farola", "nl": "de straatlantaarn", "cuando": "ambas"}, {"x": 14, "y": 60, "w": 12, "h": 20, "forma": "rect", "color": "#2FA8A0", "es": "el carril bici", "nl": "het fietspad", "cuando": "ahora"}, {"x": 36, "y": 60, "w": 22, "h": 20, "forma": "rect", "color": "#E07A5F", "es": "la terraza", "nl": "het terras", "cuando": "ahora"}, {"x": 66, "y": 68, "w": 10, "h": 12, "forma": "rect", "color": "#157355", "es": "el patinete eléctrico", "nl": "de e-step", "cuando": "ahora"}, {"x": 82, "y": 52, "w": 14, "h": 10, "forma": "rect", "color": "#1E9E74", "es": "el panel solar", "nl": "het zonnepaneel", "cuando": "ahora"}, {"x": 52, "y": 40, "w": 8, "h": 8, "forma": "circ", "color": "#D69A2E", "es": "el reloj de la plaza", "nl": "de pleinklok", "cuando": "ambas"}], "marco": ["En la plaza de ahora hay …", "Ya no hay …", "Ahora la gente … (usar, mirar, tomar)", "Antes la gente …"]}, {"num": 10, "nombre": "Un minuto sobre ti", "lente": "🤝 bemiddelen", "gancho_es": "Tu compañero/a no habla español. Tú sí. Preséntalo tú.", "gancho_nl": "Je partner spreekt geen Spaans. Jij wel. Stel hem of haar voor.", "consigna_es": "Entrevista a tu compañero/a en neerlandés y graba un minuto en español presentándolo a Lucía, que no entiende ni una palabra de neerlandés.", "consigna_nl": "Interview je partner in het Nederlands en neem één minuut Spaans op waarin je hem voorstelt aan Lucía, die geen woord Nederlands verstaat.", "regla": "Je vertaalt niet, je vertélt. Alles in de derde persoon, en je laat weg wat je niet kunt zeggen — een minuut die klopt is beter dan twee die vastlopen.", "tipo": "grabar", "situaciones": [{"es": "Te presento a …", "nl": "", "pista": ""}, {"es": "Es de … y vive en …", "nl": "", "pista": ""}, {"es": "Tiene … años.", "nl": "", "pista": ""}, {"es": "Habla … y estudia …", "nl": "", "pista": ""}, {"es": "En su tiempo libre …", "nl": "", "pista": ""}, {"es": "Creo que es una persona …", "nl": "", "pista": ""}], "items": [{"text": "Te presento a mi compañero/a", "cue": "één minuut, derde persoon, voor iemand die geen Nederlands kent"}]}]});
 buildEscucha("esc_u1",{"title": "El primer día en el instituto", "audio": "audio/C5_U1.mp3", "expectDetalle": 5, "situacion": {"lugar": "El pasillo del IES Cervantes, Madrid", "quien": "Álex (de Madrid) y Sam, un alumno nuevo de Bélgica", "que": "Se conocen y se hacen preguntas", "claves": ["¿cómo te llamas?", "¿de dónde eres?", "¿cuántos años tienes?"]}, "guion": [{"who": "Álex", "es": "¡Hola! Tú eres nuevo, ¿verdad? Yo soy Álex.", "nl": "Hallo! Jij bent nieuw, hè? Ik ben Álex."}, {"who": "Sam", "es": "Sí, soy nuevo. Me llamo Sam.", "nl": "Ja, ik ben nieuw. Ik heet Sam."}, {"who": "Álex", "es": "¿Cómo se escribe? ¿Con ce o con ese?", "nl": "Hoe schrijf je dat? Met een c of met een s?"}, {"who": "Sam", "es": "Con ese: ese, a, eme.", "nl": "Met een s: s, a, m."}, {"who": "Álex", "es": "Vale. ¿Y de dónde eres, Sam?", "nl": "Oké. En waar kom jij vandaan, Sam?"}, {"who": "Sam", "es": "Soy de Bélgica, de Amberes. Soy belga.", "nl": "Ik kom uit België, uit Antwerpen. Ik ben Belg."}, {"who": "Álex", "es": "¡Qué bien! ¿Y cuántos años tienes?", "nl": "Wat leuk! En hoe oud ben je?"}, {"who": "Sam", "es": "Tengo quince años. ¿Y tú?", "nl": "Ik ben vijftien. En jij?"}, {"who": "Álex", "es": "Yo tengo dieciséis. Estudio francés y tú, ¿qué estudias?", "nl": "Ik ben zestien. Ik studeer Frans, en jij, wat studeer je?"}, {"who": "Sam", "es": "Estudio español, claro. Y también inglés.", "nl": "Spaans natuurlijk. En ook Engels."}, {"who": "Álex", "es": "Oye, ¿tienes hermanos?", "nl": "Zeg, heb je broers of zussen?"}, {"who": "Sam", "es": "Tengo una hermana. Se llama Anna y tiene doce años.", "nl": "Ik heb een zus. Ze heet Anna en ze is twaalf."}], "global": {"q": "¿Qué hacen Álex y Sam?", "opts": ["Se presentan y se hacen preguntas", "Hablan de un examen", "Compran material escolar"], "ans": "Se presentan y se hacen preguntas"}, "detalle": [{"q": "¿Cómo se escribe el nombre de Sam?", "opts": ["Con ese", "Con ce", "Con zeta"], "ans": "Con ese", "why": "«Con ese: ese, a, eme»"}, {"q": "¿De dónde es Sam?", "opts": ["De Amberes, Bélgica", "De Madrid", "De Sevilla"], "ans": "De Amberes, Bélgica", "why": "«Soy de Bélgica, de Amberes»"}, {"q": "¿Cuántos años tiene Sam?", "opts": ["15", "16", "12"], "ans": "15", "why": "«Tengo quince años»"}, {"q": "¿Qué lengua estudia Álex?", "opts": ["Francés", "Alemán", "Italiano"], "ans": "Francés", "why": "«Estudio francés»"}, {"q": "¿Cuántos años tiene la hermana de Sam?", "opts": ["12", "15", "16"], "ans": "12", "why": "«tiene doce años»"}], "vf": [{"q": "Álex tiene dieciséis años.", "ans": true, "prueba": "yo tengo dieciséis"}, {"q": "Sam estudia alemán.", "ans": false, "prueba": "estudio español, claro"}, {"q": "Sam tiene una hermana.", "ans": true, "prueba": "tengo una hermana"}], "produccion": {"prompt": "Álex te pregunta a ti: «¿Cómo te llamas, de dónde eres y cuántos años tienes?» Contesta en tres frases y añade una pregunta para él.", "modo": "escribir", "min": 3, "modelo": "Me llamo… Soy de… Tengo… años. Y tú, ¿…?"}});
 buildAudioCortos("esc_u1",{"fragmentos": [{"etiqueta": "Audio 1.1 · Datos · 0:55", "seccion": "§1 · Tus datos personales", "titulo": "Cuatro personas, un dato que falta", "tarea": "Vier korte voorstellingen. Elke persoon vergeet één gegeven — noteer welk.", "audio": "audio/C5_U1_01.mp3", "guion": [{"who": "Narradora", "es": "Cuatro personas se presentan. ¿Qué dato falta?", "nl": "Vier personen stellen zich voor. Welk gegeven ontbreekt?"}, {"who": "Narradora", "es": "Número uno.", "nl": "Nummer één."}, {"who": "Marta", "es": "Hola, me llamo Marta. Tengo quince años y vivo en Madrid.", "nl": "Hallo, ik heet Marta. Ik ben vijftien en ik woon in Madrid."}, {"who": "Narradora", "es": "Número dos.", "nl": "Nummer twee."}, {"who": "Andrés", "es": "Buenas. Soy Andrés, soy de Colombia y vivo en Cartagena.", "nl": "Hoi. Ik ben Andrés, ik kom uit Colombia en ik woon in Cartagena."}, {"who": "Narradora", "es": "Número tres.", "nl": "Nummer drie."}, {"who": "Yuki", "es": "Hola. Me llamo Yuki, tengo diecisiete años y hablo japonés y español.", "nl": "Hallo. Ik heet Yuki, ik ben zeventien en ik spreek Japans en Spaans."}, {"who": "Narradora", "es": "Número cuatro.", "nl": "Nummer vier."}, {"who": "Tom", "es": "¡Hola! Soy Tom, soy de Bélgica y vivo en Gante.", "nl": "Hallo! Ik ben Tom, ik kom uit België en ik woon in Gent."}]}, {"etiqueta": "Audio 2.1 · Ser · 0:45", "seccion": "§2 · El verbo SER + los pronombres", "titulo": "Seis frases con «ser» — ¿qué persona?", "tarea": "Kruis per zin aan welke persoon je hoort.", "audio": "audio/C5_U1_02.mp3", "guion": [{"who": "Narradora", "es": "Seis frases. ¿Qué persona oyes?", "nl": "Zes zinnen. Welke persoon hoor je?"}, {"who": "Narradora", "es": "Uno.", "nl": "Eén."}, {"who": "Voz", "es": "Soy de Bélgica.", "nl": "Ik kom uit België."}, {"who": "Narradora", "es": "Dos.", "nl": "Twee."}, {"who": "Voz", "es": "Marta es española.", "nl": "Marta is Spaans."}, {"who": "Narradora", "es": "Tres.", "nl": "Drie."}, {"who": "Voz", "es": "Somos estudiantes.", "nl": "Wij zijn studenten."}, {"who": "Narradora", "es": "Cuatro.", "nl": "Vier."}, {"who": "Voz", "es": "¿Eres de Madrid?", "nl": "Kom jij uit Madrid?"}, {"who": "Narradora", "es": "Cinco.", "nl": "Vijf."}, {"who": "Voz", "es": "Mis primos son de Perú.", "nl": "Mijn neven komen uit Peru."}, {"who": "Narradora", "es": "Seis.", "nl": "Zes."}, {"who": "Voz", "es": "Soy alumna de cuarto.", "nl": "Ik ben leerlinge van het vierde jaar."}]}, {"etiqueta": "Audio 3.2 · Microdictado · 0:40", "seccion": "§3 · El presente regular", "titulo": "Microdictado — tres frases en presente", "tarea": "Reconstrueer de drie zinnen; maak daarna één eigen variant.", "audio": "audio/C5_U1_03.mp3", "guion": [{"who": "Narradora", "es": "Microdictado. Tres frases, cada una dos veces.", "nl": "Microdictee. Drie zinnen, elk twee keer."}, {"who": "Narradora", "es": "Número uno.", "nl": "Nummer 1."}, {"who": "Narradora", "es": "Hablo neerlandés y un poco de español.", "nl": "Ik spreek Nederlands en een beetje Spaans."}, {"who": "Narradora", "es": "Hablo neerlandés y un poco de español.", "nl": "Ik spreek Nederlands en een beetje Spaans."}, {"who": "Narradora", "es": "Número dos.", "nl": "Nummer 2."}, {"who": "Narradora", "es": "Mi hermana estudia en Madrid.", "nl": "Mijn zus studeert in Madrid."}, {"who": "Narradora", "es": "Mi hermana estudia en Madrid.", "nl": "Mijn zus studeert in Madrid."}, {"who": "Narradora", "es": "Número tres.", "nl": "Nummer 3."}, {"who": "Narradora", "es": "Vivimos en una ciudad pequeña.", "nl": "Wij wonen in een kleine stad."}, {"who": "Narradora", "es": "Vivimos en una ciudad pequeña.", "nl": "Wij wonen in een kleine stad."}]}]});
 buildLectura("lec_u1",{"titulo": "Busco un compi de intercambio", "tipo": "perfil (app de intercambio lingüístico)", "emisor": "Álex, un chico de Madrid", "receptor": "Alumnos de español de toda Europa", "objetivo": "Encontrar a alguien para hablar español y neerlandés", "prediccion": {"q": "Kijk eerst alleen naar de kopjes, de vlaggen en de getallen. Wat voor tekst is dit?", "opts": ["Een profiel om iemand te leren kennen", "Een treinticket", "Een menukaart"], "ans": "Een profiel om iemand te leren kennen"}, "texto": [["titulo", "BUSCO COMPI DE INTERCAMBIO 🇪🇸 ↔ 🇧🇪"], ["lema", "Tú me hablas en neerlandés, yo te hablo en español."], ["lista", ["Nombre: Álex Moreno Gil", "Edad: tengo dieciséis años", "Ciudad: Madrid, España. Soy español.", "Instituto: IES Cervantes, cuarto curso", "Lenguas: hablo español e inglés. Estudio francés."]], ["p", "¡Hola! Me llamo Álex y vivo en Madrid, en el barrio de Lavapiés. Estudio en el IES Cervantes y este año aprendo francés."], ["p", "En mi tiempo libre escucho música, juego al baloncesto y leo cómics. Los sábados trabajo en la tienda de mi tía."], ["p", "Busco un compi de Bélgica o de los Países Bajos. Hablamos media hora en español y media hora en neerlandés. ¿Te apuntas?"], ["firma", "Escríbeme: alex.moreno@correo.es · ¿Cómo te llamas tú?"]], "traduccion": "Ik zoek een taalmaatje. Jij spreekt Nederlands tegen mij, ik spreek Spaans tegen jou. Hallo! Ik heet Álex en ik woon in Madrid, in de wijk Lavapiés. Ik zit op het IES Cervantes en dit jaar leer ik Frans. In mijn vrije tijd luister ik muziek, speel ik basket en lees ik strips. Op zaterdag werk ik in de winkel van mijn tante. Ik zoek een maatje uit België of Nederland. We praten een half uur Spaans en een half uur Nederlands. Doe je mee?", "global": {"q": "¿Para qué escribe Álex este perfil?", "opts": ["Para buscar a alguien con quien practicar lenguas", "Para vender cómics", "Para invitarte a su instituto"], "ans": "Para buscar a alguien con quien practicar lenguas"}, "escanear": [{"q": "¿Cuántos años tiene Álex?", "ans": "16", "alt": ["dieciséis", "dieciseis", "tiene dieciséis años", "16 años"], "why": "«tengo dieciséis años»"}, {"q": "¿En qué ciudad vive?", "ans": "Madrid", "alt": ["en madrid"], "why": "«vivo en Madrid»"}, {"q": "¿Cómo se llama su instituto?", "ans": "IES Cervantes", "alt": ["cervantes", "ies cervantes"], "why": "«Estudio en el IES Cervantes»"}, {"q": "¿Qué lengua estudia este año?", "ans": "francés", "alt": ["el francés", "frances"], "why": "«este año aprendo francés»"}, {"q": "¿Qué día trabaja?", "ans": "los sábados", "alt": ["sábados", "sabados", "el sábado", "los sabados"], "why": "«Los sábados trabajo en la tienda de mi tía»"}], "vf": [{"q": "Álex es español.", "ans": true, "prueba": "soy español"}, {"q": "Álex vive en Sevilla.", "ans": false, "prueba": "vivo en madrid"}, {"q": "Álex habla inglés.", "ans": true, "prueba": "hablo español e inglés"}, {"q": "Álex juega al fútbol.", "ans": false, "prueba": "juego al baloncesto"}, {"q": "Álex trabaja en la tienda de su tía.", "ans": true, "prueba": "trabajo en la tienda de mi tía"}], "contexto": [{"q": "«compi» — ¿qué es?", "opts": ["een maatje, een partner", "een boek", "een les"], "ans": "een maatje, een partner", "why": "Korte spreektaal voor «compañero» — de hele tekst gaat over samen oefenen."}, {"q": "«¿Te apuntas?» — ¿qué te pide Álex?", "opts": ["Of je meedoet", "Of je opschrijft wat hij zegt", "Of je hem aanwijst"], "ans": "Of je meedoet", "why": "Het staat aan het eind, als uitnodiging."}, {"q": "«en mi tiempo libre» — ¿cuándo?", "opts": ["Als hij geen school heeft", "Tijdens de les", "'s nachts"], "ans": "Als hij geen school heeft", "why": "Erna volgen hobby's, geen schoolvakken."}], "produccion": {"prompt": "Escribe tu propio perfil para Álex (4–5 frases): cómo te llamas, cuántos años tienes, de dónde eres, qué lenguas hablas y qué haces en tu tiempo libre.", "modelo": "Hola, Álex. Me llamo… Tengo… años. Soy de… y vivo en… Hablo… y estudio… En mi tiempo libre…"}});

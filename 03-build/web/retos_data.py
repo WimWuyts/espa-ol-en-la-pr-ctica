@@ -549,15 +549,569 @@ RETO_07 = {
 # Register + zelfcontrole
 # ---------------------------------------------------------------------------
 
-RETOS = [RETO_01, RETO_02, RETO_03, RETO_04, RETO_05,
-         RETO_06, RETO_07, RETO_08, RETO_09, RETO_10]
+# ===========================================================================
+# C5 · U1 — ¿Quién eres?  (parada: Madrid)
+# ===========================================================================
+
+U1 = 1
+
+# ---------------------------------------------------------------------------
+# §1 · Tus datos personales
+# ---------------------------------------------------------------------------
+
+U1_RETO_02 = {
+    "id": "C5-U1-RETO-02", "num": 2, "curso": "C5", "unidad": U1,
+    "seccion": "§1.2", "ancla": "datos", "soporte": "print",
+    "nombre": "Identidad prestada",
+    "lente": "🎭 simulatie met beperking",
+    "forma": "🏫 Toda la clase", "skill": "🗣️ Hablar",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Hoy no eres tú. Coge una ficha y preséntate como esa persona.",
+    "gancho_nl": "Vandaag ben jij het niet. Neem een fiche en stel je voor als die persoon.",
+    "consigna_es": "Preséntate en primera persona con los datos de la ficha. La clase "
+                   "escucha y busca quién eres entre las doce fichas de la pared.",
+    "consigna_nl": "Stel je voor in de ik-vorm met de gegevens van de fiche. De klas "
+                   "luistert en zoekt wie je bent tussen de twaalf fiches op het bord.",
+    "regla": "Alles in de ik-vorm, ook al ben jij het niet, en je mag de naam op je "
+             "fiche niet zeggen. Eén keer «él es» of «ella vive» en je bent ontmaskerd.",
+    "pasos": [
+        ("Coge una ficha al azar. No la enseñes.",
+         "Neem een willekeurige fiche. Laat ze niet zien."),
+        ("Prepara cinco frases: nombre no, pero sí edad, país, ciudad y lenguas.",
+         "Bereid vijf zinnen voor: geen naam, wel leeftijd, land, stad en talen."),
+        ("Preséntate a la clase. La clase señala la ficha que cree que es.",
+         "Stel je voor aan de klas. De klas wijst de fiche aan waarvan ze denkt dat het is."),
+        ("¿Te han encontrado? Di por fin tu nombre prestado.",
+         "Gevonden? Zeg dan eindelijk je geleende naam."),
+    ],
+    "datos": {
+        "fichas": [
+            ("Aitana", 16, "España", "Madrid", "español, inglés"),
+            ("Bilal", 17, "Marruecos", "Tánger", "árabe, francés, español"),
+            ("Camila", 15, "Colombia", "Medellín", "español"),
+            ("Dries", 16, "Bélgica", "Amberes", "neerlandés, inglés, español"),
+            ("Elena", 18, "Argentina", "Rosario", "español, italiano"),
+            ("Fabio", 15, "Italia", "Nápoles", "italiano, español"),
+            ("Gabriela", 17, "México", "Puebla", "español, náhuatl"),
+            ("Hugo", 16, "Perú", "Arequipa", "español, quechua"),
+            ("Inés", 14, "España", "Bilbao", "español, euskera"),
+            ("Joaquín", 18, "Chile", "Valparaíso", "español, inglés"),
+            ("Karim", 17, "Bélgica", "Gante", "neerlandés, árabe, francés"),
+            ("Lucía", 16, "España", "Sevilla", "español, inglés"),
+        ],
+        "marco": ["Me llamo…  (¡no lo digas!)", "Tengo … años.", "Soy de …",
+                  "Vivo en …", "Hablo … y …"],
+    },
+    "clave": [
+        "Er is geen fout antwoord — wel een fout perspectief. Let bij het luisteren "
+        "vooral op: valt de leerling terug in de derde persoon?",
+        "Fiches met dezelfde leeftijd (Aitana/Dries/Lucía = 16) dwingen de klas om "
+        "door te luisteren tot het land of de stad valt.",
+        "Karim en Dries zijn allebei Belgen: alleen de stad en de talen onderscheiden ze.",
+    ],
+    "nota": "Hang de twaalf fiches vooraf op het bord, zodat de klas iets heeft om naar "
+            "te wijzen. Zonder dat visuele anker wordt het gokken in plaats van luisteren.",
+}
+
+U1_RETO_03 = {
+    "id": "C5-U1-RETO-03", "num": 3, "curso": "C5", "unidad": U1,
+    "seccion": "§1.2", "ancla": "datos", "soporte": "print",
+    "nombre": "El censo de la clase",
+    "lente": "🔬 onderzoek & data",
+    "forma": "👨‍👩‍👧 En grupos", "skill": "✍️ Escribir",
+    "tiempo": "± 15 min", "dificultad": "★★☆",
+    "gancho_es": "¿Quiénes sois, en números? Haced el censo de vuestra propia clase.",
+    "gancho_nl": "Wie zijn jullie, in cijfers? Maak de volkstelling van je eigen klas.",
+    "consigna_es": "Recoged los datos, dibujad el gráfico y escribid tres conclusiones "
+                   "con «somos» y «son».",
+    "consigna_nl": "Verzamel de gegevens, teken de grafiek en schrijf drie conclusies "
+                   "met «somos» en «son».",
+    "regla": "Elke conclusie moet een écht getal uit jullie grafiek bevatten en met "
+             "«somos» of «son» beginnen. «Muchos alumnos hablan inglés» telt niet — "
+             "«Somos catorce que hablamos inglés» wel.",
+    "pasos": [
+        ("Elegid una pregunta por grupo: edad, lenguas, ciudad o transporte.",
+         "Kies één vraag per groep: leeftijd, talen, stad of vervoer."),
+        ("Preguntad a toda la clase en español. Anotad con palitos.",
+         "Bevraag de hele klas in het Spaans. Turf de antwoorden."),
+        ("Dibujad el gráfico de barras con los números reales.",
+         "Teken de staafgrafiek met de echte cijfers."),
+        ("Escribid tres conclusiones y presentadlas en treinta segundos.",
+         "Schrijf drie conclusies en presenteer ze in dertig seconden."),
+    ],
+    "datos": {
+        "preguntas": [
+            ("¿Cuántos años tienes?", "14 · 15 · 16 · 17 · 18"),
+            ("¿Qué lenguas hablas?", "neerlandés · francés · inglés · español · otra"),
+            ("¿Dónde vives?", "en la ciudad · en un pueblo · en el campo"),
+            ("¿Cómo vienes al instituto?", "en bici · a pie · en bus · en coche · en tren"),
+        ],
+        "marco": ["Somos … alumnos en total.", "Somos … que …",
+                  "… alumnos son de …", "La mayoría son …", "Solo … es …"],
+    },
+    "clave": [
+        "De cijfers zijn per klas anders — controleer niet het antwoord maar de vórm.",
+        "Veelgemaakte fout: «somos» met een enkelvoudig getal («somos uno»). "
+        "Bij één persoon hoort «solo uno es…» of «solo una alumna…».",
+        "Tweede valstrik: «son» vergeten te laten meebewegen — «cinco alumnos ES de "
+        "Gante» in plaats van «SON de Gante».",
+        "Wiskundig: laat de staven optellen tot het klastotaal; klopt het niet, dan is "
+        "er iemand vergeten of dubbel geteld.",
+    ],
+    "nota": "Dit is de eerste keer dat de klas met echte eigen data werkt. De grafiek "
+            "mag met de hand: het gaat om de conclusie, niet om de vormgeving.",
+}
+
+U1_RETO_09 = {
+    "id": "C5-U1-RETO-09", "num": 9, "curso": "C5", "unidad": U1,
+    "seccion": "§1.2", "ancla": "datos", "soporte": "ppt",
+    "nombre": "Perfil para el algoritmo",
+    "lente": "⚖️ onderhandeling & dilemma",
+    "forma": "🏫 Toda la clase", "skill": "✍️ Escribir",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Escribe tu perfil. Hoy la clase es el algoritmo, y tiene que justificarse.",
+    "gancho_nl": "Schrijf je profiel. Vandaag is de klas het algoritme — en het moet zich "
+                 "verantwoorden.",
+    "consigna_es": "El algoritmo propone parejas de intercambio. Cada propuesta se defiende "
+                   "con «son… porque…». Sin razón, no hay pareja.",
+    "consigna_nl": "Het algoritme stelt uitwisselingsduo's voor. Elk voorstel wordt verdedigd "
+                   "met «son… porque…». Zonder reden geen match.",
+    "regla": "Het algoritme mag niemand koppelen op naam of op wie bevriend is. Alleen "
+             "gegevens uit de profielen tellen, en de reden moet met «son» of «tienen» "
+             "geformuleerd worden.",
+    "pasos": [
+        ("Escribe tu perfil en cuatro frases. Sin nombre.",
+         "Schrijf je profiel in vier zinnen. Zonder naam."),
+        ("Los perfiles van al azar a la pizarra, numerados.",
+         "De profielen gaan willekeurig en genummerd op het bord."),
+        ("El algoritmo (tres alumnos) propone parejas y las justifica.",
+         "Het algoritme (drie leerlingen) stelt duo's voor en verantwoordt ze."),
+        ("La clase acepta o rechaza. ¿Rechazo? Hay que dar una razón mejor.",
+         "De klas aanvaardt of verwerpt. Verworpen? Dan moet er een beter argument komen."),
+    ],
+    "datos": {
+        "marco_perfil": ["Tengo … años.", "Soy de … y vivo en …",
+                         "Hablo … y estudio …", "En mi tiempo libre …"],
+        "marco_algoritmo": ["El uno y el siete son pareja porque los dos son de …",
+                            "… porque tienen la misma edad.",
+                            "… porque los dos hablan …",
+                            "No, porque uno vive en la ciudad y el otro en un pueblo."],
+        "ejemplos": [
+            ("Perfil 3", "Tengo 16 años. Soy de Bélgica y vivo en un pueblo. "
+                         "Hablo neerlandés e inglés."),
+            ("Perfil 8", "Tengo 16 años. Soy de Bélgica y vivo en Gante. "
+                         "Hablo neerlandés, francés y un poco de español."),
+        ],
+    },
+    "clave": [
+        "De didactische winst zit in het weigeren: wie «nee» zegt, moet een béter "
+        "argument geven, en dus opnieuw een zin met ser of tener bouwen.",
+        "Model: «El tres y el ocho son pareja porque los dos son belgas y tienen "
+        "dieciséis años.» — «No, porque uno vive en un pueblo y el otro en la ciudad.»",
+        "Let op de valstrik van §2: nationaliteit met kleine letter (belgas, no Belgas).",
+    ],
+    "nota": "Werkt alleen anoniem. Zodra er namen bij komen, gaat het over vriendschappen "
+            "in plaats van over gegevens — en dan verdwijnt het Spaans.",
+}
+
+
+# ---------------------------------------------------------------------------
+# §2 · El verbo SER + los pronombres
+# ---------------------------------------------------------------------------
+
+U1_RETO_06 = {
+    "id": "C5-U1-RETO-06", "num": 6, "curso": "C5", "unidad": U1,
+    "seccion": "§2.1", "ancla": "ser", "soporte": "print",
+    "nombre": "La cola del aeropuerto",
+    "lente": "🔓 puzzel & escape",
+    "forma": "🏫 Toda la clase · de pie", "skill": "🗣️ Hablar",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Ocho pasajeros, ocho tarjetas de embarque. Una sola es la tuya.",
+    "gancho_nl": "Acht passagiers, acht instapkaarten. Eén ervan is de jouwe.",
+    "consigna_es": "Busca por la clase a la persona cuyos datos coinciden con tu tarjeta. "
+                   "Solo puedes preguntar con «¿eres…?» y «¿de dónde…?».",
+    "consigna_nl": "Zoek in de klas de persoon van wie de gegevens bij jouw instapkaart "
+                   "passen. Je mag alleen vragen met «¿eres…?» en «¿de dónde…?».",
+    "regla": "Je mag je rolkaart nooit laten lezen en niet in het Nederlands vragen. "
+             "Twee passagiers verschillen maar op één gegeven — die vind je alleen door "
+             "door te vragen.",
+    "pasos": [
+        ("Coge una tarjeta de embarque y una ficha de pasajero.",
+         "Neem één instapkaart en één passagiersfiche."),
+        ("Levántate y pregunta. Anota a quién ya has descartado.",
+         "Sta op en vraag rond. Noteer wie je al hebt uitgesloten."),
+        ("¿Coincidís en los tres datos? Sentaos juntos: sois pareja de vuelo.",
+         "Kloppen de drie gegevens? Ga samen zitten: jullie zijn vluchtgenoten."),
+        ("Al final: presenta a tu pareja a la clase, en tercera persona.",
+         "Op het einde: stel je partner voor aan de klas, in de derde persoon."),
+    ],
+    "datos": {
+        # (nombre, nacionalidad, ciudad, asiento)
+        "pasajeros": [
+            ("Ana", "española", "Madrid", "12A"), ("Bruno", "italiano", "Roma", "12B"),
+            ("Clara", "española", "Bilbao", "14C"), ("Diego", "mexicano", "Puebla", "14D"),
+            ("Eva", "belga", "Gante", "16E"), ("Farid", "belga", "Amberes", "16F"),
+            ("Gala", "colombiana", "Cali", "18A"), ("Hugo", "peruano", "Lima", "18B"),
+        ],
+        "preguntas": [("¿Eres español/-a?", "Ben je Spaans?"),
+                      ("¿De dónde eres?", "Waar kom je vandaan?"),
+                      ("¿Eres de Madrid o de Bilbao?", "Kom je uit Madrid of uit Bilbao?"),
+                      ("¿Cuál es tu asiento?", "Wat is je stoelnummer?")],
+    },
+    "clave": [
+        "Eva (Gante) en Farid (Amberes) zijn allebei belga — alleen de stad scheidt ze. "
+        "Ana en Clara zijn allebei española — idem.",
+        "Het stoelnummer staat alleen op de instapkaart, niet op de passagiersfiche: "
+        "niemand kent dus zijn eigen stoel en de puzzel valt niet op te lossen door "
+        "nummers te vergelijken.",
+        "Slotpresentatie in de derde persoon is het echte doel: «Ella es Eva, es belga, "
+        "es de Gante.»",
+    ],
+    "nota": "Knip de fiches en de instapkaarten vooraf uit en hou ze gescheiden. Bij een "
+            "klas van meer dan zestien: druk het blad twee keer af en speel in twee rondes.",
+}
+
+U1_RETO_08 = {
+    "id": "C5-U1-RETO-08", "num": 8, "curso": "C5", "unidad": U1,
+    "seccion": "§2.2", "ancla": "ser", "soporte": "print",
+    "nombre": "El error caro",
+    "lente": "🕵️ forensisch",
+    "forma": "👨‍👩‍👧 En equipos", "skill": "👁️ Leer",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Cada equipo tiene cinco vidas. Cazar errores cuesta caro… si te equivocas.",
+    "gancho_nl": "Elk team heeft vijf levens. Op foutenjacht gaan kost duur… als je zelf "
+                 "misslaat.",
+    "consigna_es": "Encuentra los errores de «ser» y «tener» del equipo rival. Cada error "
+                   "real le cuesta una vida. Cada acusación falsa te cuesta una a ti.",
+    "consigna_nl": "Zoek de ser- en tener-fouten van het andere team. Elke echte fout kost "
+                   "hun een leven. Elke valse beschuldiging kost jou er een.",
+    "regla": "Je moet zeggen wát er fout is én de juiste vorm geven. «Dat klopt niet» "
+             "telt als een valse beschuldiging, ook als de zin écht fout is.",
+    "pasos": [
+        ("Ronda 0 — kalentamiento: caza los errores del banco de abajo.",
+         "Ronde 0 — opwarming: jaag op de fouten in de bank hieronder."),
+        ("Cada equipo escribe seis frases sobre sí mismo: cuatro correctas, dos con "
+         "trampa.", "Elk team schrijft zes zinnen over zichzelf: vier correcte, twee met "
+         "een valstrik."),
+        ("Intercambiad las hojas. Buscad y acusad, con la corrección.",
+         "Wissel de bladen. Zoek en beschuldig, mét de verbetering."),
+        ("Contad las vidas. ¿Empate? Gana quien mejor explicó el porqué.",
+         "Tel de levens. Gelijkspel? Wint wie het waarom het best uitlegde."),
+    ],
+    "datos": {
+        # (zin, is_correct, correctie/uitleg)
+        "banco": [
+            ("Soy 15 años.", False, "Tengo 15 años — leeftijd gaat met tener"),
+            ("Yo es de Bélgica.", False, "Yo soy de Bélgica — eerste persoon"),
+            ("Nosotros somos Español.", False, "Somos españoles — kleine letter én meervoud"),
+            ("Mi hermana tiene catorce años.", True, "correct"),
+            ("Ellos son de Madrid.", True, "correct"),
+            ("Tú eres belga, ¿verdad?", True, "correct"),
+            ("Ella tiene profesora.", False, "Ella es profesora — beroep gaat met ser"),
+            ("Vosotros tenéis razón.", True, "correct — «gelijk hebben» gaat wél met tener"),
+        ],
+    },
+    "clave": [
+        "Fout: 1 (soy 15 → tengo), 2 (yo es → yo soy), 3 (somos Español → somos españoles), "
+        "7 (tiene profesora → es profesora).",
+        "Correct: 4, 5, 6, 8. Zin 8 is de valstrik in de andere richting: «tener razón» "
+        "is wél met tener, en wie die aankruist verliest een leven.",
+        "Zin 3 heeft twéé fouten (hoofdletter én enkelvoud) — reken het als één vondst, "
+        "maar vraag beide correcties.",
+    ],
+    "nota": "De straf op valse beschuldigingen is de motor: zonder die regel kruist een team "
+            "gewoon alles aan. Hou de levens zichtbaar op het bord.",
+}
+
+
+# ---------------------------------------------------------------------------
+# §3 · El presente regular
+# ---------------------------------------------------------------------------
+
+U1_RETO_07 = {
+    "id": "C5-U1-RETO-07", "num": 7, "curso": "C5", "unidad": U1,
+    "seccion": "§3.2", "ancla": "presente", "soporte": "hub",
+    "nombre": "Madrid: entonces y ahora",
+    "lente": "🔬 onderzoek & data",
+    "forma": "👥 En parejas", "skill": "✍️ Escribir",
+    "tiempo": "± 12 min", "dificultad": "★★☆",
+    "gancho_es": "La misma plaza de Madrid, con cuarenta años de diferencia.",
+    "gancho_nl": "Hetzelfde plein in Madrid, veertig jaar uit elkaar.",
+    "consigna_es": "Busca las diferencias y descríbelas en presente: qué hay ahora y qué "
+                   "ya no hay.",
+    "consigna_nl": "Zoek de verschillen en beschrijf ze in het presente: wat er nu is en "
+                   "wat er niet meer is.",
+    "regla": "Alles in het presente, ook als je over 1985 praat. Je zegt dus «en la foto "
+             "antigua hay…», niet «había». Die verleden tijd leer je pas in het zesde.",
+    "pasos": [
+        ("Mira las dos escenas sin escribir. ¿Qué te llama la atención?",
+         "Bekijk de twee scènes zonder te schrijven. Wat valt je op?"),
+        ("Haz clic en un objeto para ver cómo se llama en español.",
+         "Klik op een voorwerp om te zien hoe het in het Spaans heet."),
+        ("Escribe cinco frases: tres con «hay» y dos con «ya no hay».",
+         "Schrijf vijf zinnen: drie met «hay» en twee met «ya no hay»."),
+        ("Compara con tu compañero/a: ¿habéis visto lo mismo?",
+         "Vergelijk met je partner: hebben jullie hetzelfde gezien?"),
+    ],
+    "datos": {
+        # (x, y, breedte, hoogte, vorm, kleur, es, nl, in welke scène)
+        "escena": [
+            (14, 58, 12, 22, "rect", "#B07A4E", "la cabina de teléfono", "de telefooncel", "antes"),
+            (36, 62, 20, 18, "rect", "#C9A227", "el quiosco de prensa", "de krantenkiosk", "antes"),
+            (64, 66, 24, 12, "rect", "#8E5B4A", "el coche antiguo", "de oude auto", "antes"),
+            (90, 44, 5, 36, "rect", "#6A6E78", "la farola", "de straatlantaarn", "ambas"),
+            (14, 60, 12, 20, "rect", "#2FA8A0", "el carril bici", "het fietspad", "ahora"),
+            (36, 60, 22, 20, "rect", "#E07A5F", "la terraza", "het terras", "ahora"),
+            (66, 68, 10, 12, "rect", "#157355", "el patinete eléctrico", "de e-step", "ahora"),
+            (82, 52, 14, 10, "rect", "#1E9E74", "el panel solar", "het zonnepaneel", "ahora"),
+            (52, 40, 8, 8, "circ", "#D69A2E", "el reloj de la plaza", "de pleinklok", "ambas"),
+        ],
+        "marco": ["En la plaza de ahora hay …", "Ya no hay …",
+                  "Ahora la gente … (usar, mirar, tomar)", "Antes la gente …"],
+    },
+    "clave": [
+        "Alleen vroeger: la cabina de teléfono · el quiosco de prensa · el coche antiguo",
+        "Alleen nu: el carril bici · la terraza · el patinete eléctrico · el panel solar",
+        "In beide: la farola · el reloj de la plaza — die twee zijn de controle: wie ze "
+        "als verschil noteert, heeft te snel gekeken.",
+        "Modelzinnen: «En la plaza de ahora hay un carril bici.» · «Ya no hay cabina de "
+        "teléfono.» · «Ahora la gente toma algo en la terraza.»",
+    ],
+    "nota": "«Ya no hay» is nieuw maar kost niets: het is een chunk, geen tijd. Het geeft "
+            "de leerling wél meteen iets om over verandering te praten zónder verleden tijd.",
+}
+
+
+# ---------------------------------------------------------------------------
+# §4 · Preguntar: interrogativos + el/la
+# ---------------------------------------------------------------------------
+
+U1_RETO_01 = {
+    "id": "C5-U1-RETO-01", "num": 1, "curso": "C5", "unidad": U1,
+    "seccion": "§4.1", "ancla": "preguntar", "soporte": "ppt",
+    "nombre": "Rueda de prensa",
+    "lente": "🎭 simulatie met beperking",
+    "forma": "🏫 Toda la clase", "skill": "🗣️ Hablar",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Silencio, empieza la rueda de prensa. Tenéis tres minutos con la estrella.",
+    "gancho_nl": "Stilte, de persconferentie begint. Jullie krijgen drie minuten met de ster.",
+    "consigna_es": "La prensa pregunta, la estrella contesta. Solo cuentan las preguntas "
+                   "con palabra interrogativa.",
+    "consigna_nl": "De pers vraagt, de ster antwoordt. Alleen vragen mét een vraagwoord tellen.",
+    "regla": "Een ja/nee-vraag kost je je beurt. Je moet dus met qué, quién, dónde, "
+             "cuándo, cómo, cuánto of por qué beginnen — en niemand mag hetzelfde "
+             "vraagwoord twee keer gebruiken.",
+    "pasos": [
+        ("La estrella coge una ficha secreta y se sienta delante.",
+         "De ster neemt een geheime fiche en gaat vooraan zitten."),
+        ("La prensa levanta la mano. Una pregunta por periodista.",
+         "De pers steekt de hand op. Eén vraag per journalist."),
+        ("El/la profe tacha el interrogativo usado: ya no se puede repetir.",
+         "De leerkracht schrapt het gebruikte vraagwoord: dat mag niet meer terug."),
+        ("Al final la prensa escribe el titular en una frase.",
+         "Op het einde schrijft de pers de krantenkop in één zin."),
+    ],
+    "datos": {
+        "interrogativos": [("¿Qué…?", "wat"), ("¿Quién…?", "wie"), ("¿Dónde…?", "waar"),
+                           ("¿Cuándo…?", "wanneer"), ("¿Cómo…?", "hoe"),
+                           ("¿Cuántos…?", "hoeveel"), ("¿Por qué…?", "waarom")],
+        "estrellas": [
+            ("una futbolista del Real Madrid", "speelt sinds haar zesde, woont in Madrid, "
+                                               "spreekt drie talen"),
+            ("un cantante de Sevilla", "zingt flamenco-pop, twintig jaar, woont bij zijn oma"),
+            ("una astronauta mexicana", "werkt in Houston, spreekt Spaans en Engels, "
+                                        "heeft twee kinderen"),
+            ("un cocinero peruano", "restaurant in Lima, kookt ceviche, veertig jaar"),
+        ],
+        "titular": "TITULAR:  «… es … y vive en …»",
+    },
+    "clave": [
+        "De zeven vraagwoorden zijn precies die van §4.1 — het spel dwingt de klas ze "
+        "alle zeven te gebruiken in plaats van drie keer «¿qué?».",
+        "«¿Por qué…?» is de moeilijkste en blijft meestal tot het laatst over. Hou hem "
+        "bewust achter de hand voor de sterkste leerling.",
+        "Valstrik: «¿Cuántos años tienes?» — leerlingen zeggen vaak «¿Cuánto años?». "
+        "Cuántos beweegt mee met años.",
+    ],
+    "nota": "Het verbod op herhaling is wat het spel maakt. Zet de zeven vraagwoorden op "
+            "het scherm en streep ze zichtbaar door — de spanning stijgt met elke doorhaling.",
+}
+
+U1_RETO_04 = {
+    "id": "C5-U1-RETO-04", "num": 4, "curso": "C5", "unidad": U1,
+    "seccion": "§4.1", "ancla": "preguntar", "soporte": "ppt",
+    "nombre": "Preguntas prohibidas",
+    "lente": "✍️ creatieve beperking",
+    "forma": "👥 En parejas", "skill": "🗣️ Hablar",
+    "tiempo": "± 10 min", "dificultad": "★★★",
+    "gancho_es": "Necesitas la misma información. Pero tres preguntas están prohibidas.",
+    "gancho_nl": "Je hebt dezelfde informatie nodig. Maar drie vragen zijn verboden.",
+    "consigna_es": "Averigua la edad, la ciudad y las lenguas de tu compañero/a sin usar "
+                   "«¿cuántos años…?», «¿dónde…?» ni «¿qué lenguas…?».",
+    "consigna_nl": "Achterhaal leeftijd, stad en talen van je partner zónder «¿cuántos "
+                   "años…?», «¿dónde…?» of «¿qué lenguas…?» te gebruiken.",
+    "regla": "De drie rechtstreekse vragen zijn verboden. Je moet er dus omheen: met een "
+             "voorstel, een vergelijking of een gok die je laat bevestigen.",
+    "pasos": [
+        ("Mira las tres preguntas prohibidas. Piensa un rodeo para cada una.",
+         "Bekijk de drie verboden vragen. Bedenk voor elk een omweg."),
+        ("Pregunta. Tu compañero/a solo contesta lo que le preguntas de verdad.",
+         "Stel je vraag. Je partner antwoordt alleen op wat je écht vraagt."),
+        ("Anota los tres datos. ¿Los tienes todos? Cambiad de papel.",
+         "Noteer de drie gegevens. Alle drie? Wissel van rol."),
+        ("Comparad: ¿qué rodeo ha funcionado mejor?",
+         "Vergelijk: welke omweg werkte het best?"),
+    ],
+    "datos": {
+        "prohibidas": [("¿Cuántos años tienes?", "de leeftijd"),
+                       ("¿Dónde vives?", "de stad"),
+                       ("¿Qué lenguas hablas?", "de talen")],
+        "rodeos": [
+            ("¿Eres del dos mil nueve?", "gok het geboortejaar en laat bevestigen"),
+            ("¿Tienes la misma edad que yo?", "vergelijk met jezelf"),
+            ("¿Vienes al instituto en bici o en tren?", "vervoer verraadt de afstand"),
+            ("¿Tu ciudad es grande?", "eigenschap in plaats van naam"),
+            ("¿Hablas español en casa?", "test één taal per keer"),
+            ("¿Ves series en inglés sin subtítulos?", "gewoonte verraadt het niveau"),
+        ],
+    },
+    "clave": [
+        "Er is geen enkel juist antwoord — wel een meetbaar resultaat: heb je de drie "
+        "gegevens binnen zonder de verboden vragen?",
+        "De sterkste omweg is meestal de gok met bevestiging («¿Eres del dos mil nueve?»): "
+        "die levert een getal op zonder ernaar te vragen.",
+        "Deze reto bereidt de omweg-strategie voor die in U2 terugkomt bij «Mi gente, sin "
+        "la palabra familia».",
+    ],
+    "nota": "Kort houden. Tien minuten is genoeg; daarna wordt de beperking een spel op "
+            "zich en verdwijnt het luisteren.",
+}
+
+U1_RETO_05 = {
+    "id": "C5-U1-RETO-05", "num": 5, "curso": "C5", "unidad": U1,
+    "seccion": "§4.2", "ancla": "preguntar", "soporte": "hub",
+    "nombre": "La tienda de los objetos raros",
+    "lente": "🕵️ forensisch",
+    "forma": "👥 En parejas", "skill": "👁️ Leer",
+    "tiempo": "± 10 min", "dificultad": "★★★",
+    "gancho_es": "Doce objetos que no existen. Pero su artículo sí se puede saber.",
+    "gancho_nl": "Twaalf voorwerpen die niet bestaan. Maar hun lidwoord valt wél te weten.",
+    "consigna_es": "Elige «el» o «la» y di POR QUÉ. Ningún diccionario te va a ayudar: "
+                   "solo la regla.",
+    "consigna_nl": "Kies «el» of «la» en zeg WAAROM. Geen woordenboek helpt je hier — "
+                   "alleen de regel.",
+    "regla": "Bij elk woord moet je de regel kiezen die je gebruikt. Het juiste lidwoord "
+             "met de verkeerde regel telt als fout: dan had je geraden.",
+    "pasos": [
+        ("Mira la terminación, no la palabra entera.",
+         "Kijk naar de uitgang, niet naar het hele woord."),
+        ("Elige el artículo y la regla que lo justifica.",
+         "Kies het lidwoord én de regel die het verantwoordt."),
+        ("Cuidado: hay cuatro palabras que rompen la regla fácil.",
+         "Let op: vier woorden breken de makkelijke regel."),
+    ],
+    "datos": {
+        # (woord, lidwoord, regelsleutel)
+        "objetos": [
+            ("nurbo", "el", "-o"), ("trepa", "la", "-a"), ("fartema", "el", "-ma"),
+            ("glinda", "la", "-a"), ("zampo", "el", "-o"), ("nurbación", "la", "-ción"),
+            ("clisma", "el", "-ma"), ("mosta", "la", "-a"), ("cluvo", "el", "-o"),
+            ("vurtad", "la", "-dad"), ("pandema", "el", "-ma"), ("niebra", "la", "-a"),
+        ],
+        "reglas": [
+            ("-o", "eindigt op -o → el"),
+            ("-a", "eindigt op -a → la"),
+            ("-ma", "eindigt op -ma → el (uitzondering, zoals el problema)"),
+            ("-ción", "eindigt op -ción → la (zoals la dirección)"),
+            ("-dad", "eindigt op -dad → la (zoals la ciudad)"),
+        ],
+    },
+    "clave": [
+        "el: nurbo · fartema · zampo · clisma · cluvo · pandema",
+        "la: trepa · glinda · nurbación · mosta · vurtad · niebra",
+        "De vier valstrikken zijn de -ma-woorden (fartema, clisma, pandema) plus vurtad: "
+        "wie op de klank afgaat, kiest daar «la» en «el».",
+        "Precies dezelfde uitgangen als in de echte woordenschat van §4.2: problema, "
+        "dirección, ciudad, nacionalidad.",
+    ],
+    "nota": "Verzonnen woorden zijn hier geen grap maar het meetinstrument: op echte "
+            "woorden kan een leerling het lidwoord uit het geheugen halen, hier niet.",
+}
+
+
+# ---------------------------------------------------------------------------
+# Cultura · Madrid y los nombres hispanos
+# ---------------------------------------------------------------------------
+
+U1_RETO_10 = {
+    "id": "C5-U1-RETO-10", "num": 10, "curso": "C5", "unidad": U1,
+    "seccion": "Cultura", "ancla": "cultura_u1", "soporte": "hub",
+    "nombre": "Un minuto sobre ti",
+    "lente": "🤝 bemiddelen",
+    "forma": "👥 En parejas", "skill": "🔀 Mediar",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Tu compañero/a no habla español. Tú sí. Preséntalo tú.",
+    "gancho_nl": "Je partner spreekt geen Spaans. Jij wel. Stel hem of haar voor.",
+    "consigna_es": "Entrevista a tu compañero/a en neerlandés y graba un minuto en español "
+                   "presentándolo a Lucía, que no entiende ni una palabra de neerlandés.",
+    "consigna_nl": "Interview je partner in het Nederlands en neem één minuut Spaans op "
+                   "waarin je hem voorstelt aan Lucía, die geen woord Nederlands verstaat.",
+    "regla": "Je vertaalt niet, je vertélt. Alles in de derde persoon, en je laat weg wat "
+             "je niet kunt zeggen — een minuut die klopt is beter dan twee die vastlopen.",
+    "pasos": [
+        ("Entrevista en neerlandés. Anota solo palabras clave, no frases.",
+         "Interview in het Nederlands. Noteer alleen sleutelwoorden, geen zinnen."),
+        ("Elige qué cuentas y qué dejas fuera. No cabe todo.",
+         "Kies wat je vertelt en wat je weglaat. Alles past niet."),
+        ("Graba un minuto en tercera persona. Escúchate.",
+         "Neem één minuut op in de derde persoon. Luister terug."),
+        ("Tu compañero/a escucha: ¿se reconoce en lo que has dicho?",
+         "Je partner luistert: herkent die zich in wat je gezegd hebt?"),
+    ],
+    "datos": {
+        "marco": ["Te presento a …", "Es de … y vive en …", "Tiene … años.",
+                  "Habla … y estudia …", "En su tiempo libre …", "Creo que es una persona …"],
+        "criterios": [
+            ("Begrijpelijk voor iemand die geen Nederlands kent", "geen leenwoorden"),
+            ("Derde persoon volgehouden", "es · tiene · habla · vive"),
+            ("Bewust weggelaten wat niet lukt", "geen halve zinnen"),
+        ],
+    },
+    "clave": [
+        "Beoordeel niet op volledigheid maar op verstaanbaarheid: zou Lucía dit begrijpen?",
+        "Meest voorkomende breuk: halverwege terugvallen op de ik-vorm, meestal bij de "
+        "hobby's. Wijs erop dat «su tiempo libre» de vorm vasthoudt.",
+        "Dit is de eerste echte bemiddelingsopdracht van de cursus: informatie uit taal A "
+        "bruikbaar maken in taal B, met verlies — en dat verlies is toegestaan.",
+    ],
+    "nota": "Het weglaten expliciet toestaan is essentieel. Leerlingen die alles willen "
+            "vertalen, lopen vast; wie durft te schrappen, spreekt een vlotte minuut.",
+}
+
+
+# --- register per unit ---
+RETOS_U0 = [RETO_01, RETO_02, RETO_03, RETO_04, RETO_05,
+            RETO_06, RETO_07, RETO_08, RETO_09, RETO_10]
+RETOS_U1 = [U1_RETO_01, U1_RETO_02, U1_RETO_03, U1_RETO_04, U1_RETO_05,
+            U1_RETO_06, U1_RETO_07, U1_RETO_08, U1_RETO_09, U1_RETO_10]
+RETOS = RETOS_U0 + RETOS_U1
 
 # Waar in de printcursus elke sectie eindigt — hier wordt een print-reto ingevoegd.
-ANCLAS = ["alfabeto", "sonidos", "sonido_letra", "acento", "numeros", "saludos", "cultura"]
+ANCLAS = ["alfabeto", "sonidos", "sonido_letra", "acento", "numeros", "saludos", "cultura",
+          # C5 U1
+          "datos", "ser", "presente", "preguntar", "cultura_u1"]
 
 
-def por_soporte(soporte):
-    return [r for r in RETOS if r["soporte"] == soporte]
+def de(curso, unidad):
+    """De tien retos van één unit, op volgnummer."""
+    return sorted((r for r in RETOS if r["curso"] == curso and r["unidad"] == unidad),
+                  key=lambda r: r["num"])
+
+
+def por_soporte(soporte, curso=None, unidad=None):
+    return [r for r in RETOS if r["soporte"] == soporte
+            and (curso is None or r["curso"] == curso)
+            and (unidad is None or r["unidad"] == unidad)]
 
 
 def por_ancla(ancla):
@@ -580,17 +1134,26 @@ def controla():
         assert r["clave"], "%s heeft geen antwoordsleutel" % r["id"]
         # de beperking is wat een reto een reto maakt
         assert len(r["regla"]) > 40, "%s: de regla is te dun" % r["id"]
-    nums = sorted(r["num"] for r in RETOS)
-    assert nums == list(range(1, 11)), nums
+    # elke unit telt tien retos, genummerd 1 t.e.m. 10
+    for clave in {(r["curso"], r["unidad"]) for r in RETOS}:
+        nums = sorted(r["num"] for r in de(*clave))
+        assert nums == list(range(1, 11)), (clave, nums)
+        # en de dragers zijn gespreid: geen unit die volledig op één drager leunt
+        dragers = {r["soporte"] for r in de(*clave)}
+        assert len(dragers) == 3, (clave, dragers)
 
 
-controla()
+def resumen():
+    """Overzicht voor wie een unit gaat bouwen."""
+    for clave in sorted({(r["curso"], r["unidad"]) for r in RETOS}):
+        print("\n=== %s U%d ===" % clave)
+        print("%-16s %-34s %-7s %-26s %s" % ("id", "nombre", "drager", "lens", "sectie"))
+        for r in de(*clave):
+            print("%-16s %-34s %-7s %-26s %s"
+                  % (r["id"], r["nombre"], r["soporte"], r["lente"], r["seccion"]))
+        from collections import Counter
+        print("dragers:", dict(Counter(r["soporte"] for r in de(*clave))))
 
 
 if __name__ == "__main__":
-    print("%-16s %-34s %-7s %-26s %s" % ("id", "nombre", "drager", "lens", "sectie"))
-    for r in sorted(RETOS, key=lambda x: x["num"]):
-        print("%-16s %-34s %-7s %-26s %s"
-              % (r["id"], r["nombre"], r["soporte"], r["lente"], r["seccion"]))
-    from collections import Counter
-    print("\ndragers:", dict(Counter(r["soporte"] for r in RETOS)))
+    resumen()

@@ -86,7 +86,9 @@ def punto_de_insercion(doc, clave):
 
 
 def bloque_html(clave, nums, titulo, intro_es, intro_nl):
-    retos = {r["num"]: r for r in RD.RETOS}
+    # per unit lopen de nummers van 1 tot 10, dus zonder deze afbakening
+    # zou U0 de retos van U1 oppikken
+    retos = {r["num"]: r for r in RD.de("C5", 0)}
     p = ['<div class="page">',
          '<div class="divider">%s</div>' % titulo,
          '<div class="intro" style="margin-top:1mm"><b>ES:</b> %s '

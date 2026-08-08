@@ -598,10 +598,101 @@ def s21_teacher():
     footer(s, tab=TAB, page=pg())
     notes(s, "Alleen in het docentdeck. Volledige LPD-dekking en didactische route staan in het cursusdossier (bron.md).")
 
+# ============================================================ RETOS · U1
+# De drie retos die klassikaal op het scherm leven. De vier print-retos staan in
+# het boek, de drie hub-retos op de digitale pagina — die hier half overzetten
+# helpt niemand (zie retos_data.py).
+
+def _reto(num):
+    return E.reto("C5", 1, num)
+
+
+def s_reto_prensa():
+    """Reto 1 — Rueda de prensa: alleen vragen mét vraagwoord tellen."""
+    r = _reto(1); s = slide(); bg(s, PAPER); E._reto_cabecera(s, r)
+    d = r["datos"]
+    # de zeven vraagwoorden: ze worden doorstreept zodra ze gebruikt zijn
+    for i, (q, nl) in enumerate(d["interrogativos"]):
+        x = Inches(0.5) + Inches(1.78) * i
+        card(s, x, Inches(3.5), Inches(1.66), Inches(0.92))
+        text(s, x + Inches(0.1), Inches(3.6), Inches(1.5), Inches(0.72),
+             [[(q, {"size": 15, "bold": True, "color": GD, "font": DISPLAY})],
+              [(nl, {"size": 9.5, "italic": True, "color": MUT})]], line=1.1)
+        tach = rect(s, x + Inches(0.1), Inches(3.96), Inches(1.46), Inches(0.05), fill=RED)
+        register_reveal(s, tach)          # klik = vraagwoord opgebruikt
+    text(s, Inches(0.5), Inches(4.56), Inches(12.33), Inches(0.3),
+         [[("Cada clic tacha un interrogativo: ya no se puede repetir.",
+            {"size": 10.5, "italic": True, "color": MUT})]])
+    for i, (quien, datos) in enumerate(d["estrellas"]):
+        col, fila = i % 2, i // 2
+        x = Inches(0.5) + Inches(6.26) * col
+        y = Inches(4.98) + Inches(0.78) * fila
+        card(s, x, y, Inches(6.06), Inches(0.68), fill=CREMA)
+        text(s, x + Inches(0.16), y + Inches(0.06), Inches(5.8), Inches(0.58),
+             [[("★ " + quien, {"size": 11.5, "bold": True, "color": INK})],
+              [(datos, {"size": 9.5, "italic": True, "color": MUT})]], line=1.08)
+    text(s, Inches(0.5), Inches(6.6), Inches(12.33), Inches(0.4),
+         [[(d["titular"], {"size": 13, "bold": True, "color": GD, "font": DISPLAY})]])
+    footer(s, page=pg())
+    notes(s, "TEACHER · RETO 1. " + r["nota"] + "  SLEUTEL: " + "  |  ".join(r["clave"]))
+
+
+def s_reto_prohibidas():
+    """Reto 4 — Preguntas prohibidas: dezelfde info via een omweg."""
+    r = _reto(4); s = slide(); bg(s, PAPER); E._reto_cabecera(s, r)
+    d = r["datos"]
+    text(s, Inches(0.5), Inches(3.46), Inches(5.9), Inches(0.3),
+         [[("PROHIBIDAS", {"size": 10, "bold": True, "color": RED})]])
+    for i, (q, wat) in enumerate(d["prohibidas"]):
+        y = Inches(3.8) + Inches(0.86) * i
+        card(s, Inches(0.5), y, Inches(5.9), Inches(0.74), fill=RGBColor(0xFE, 0xF2, 0xF2), line=RED)
+        text(s, Inches(0.68), y + Inches(0.08), Inches(5.5), Inches(0.62),
+             [[(q, {"size": 14, "bold": True, "color": RED, "font": DISPLAY})],
+              [("je zoekt: " + wat, {"size": 9.5, "italic": True, "color": MUT})]], line=1.1)
+    text(s, Inches(6.9), Inches(3.46), Inches(5.9), Inches(0.3),
+         [[("LOS RODEOS — verschijnen bij klik", {"size": 10, "bold": True, "color": GD})]])
+    for i, (q, waarom) in enumerate(d["rodeos"]):
+        y = Inches(3.8) + Inches(0.58) * i
+        caja = card(s, Inches(6.9), y, Inches(5.93), Inches(0.5), fill=GT, line=G)
+        register_reveal(s, caja)
+        lab = text(s, Inches(7.06), y + Inches(0.04), Inches(5.6), Inches(0.42),
+                   [[(q, {"size": 11.5, "bold": True, "color": INK})],
+                    [(waarom, {"size": 8.5, "italic": True, "color": MUT})]], line=1.05)
+        register_reveal(s, lab)
+    footer(s, page=pg())
+    notes(s, "TEACHER · RETO 4. " + r["nota"] + "  SLEUTEL: " + "  |  ".join(r["clave"]))
+
+
+def s_reto_algoritmo():
+    """Reto 9 — Perfil para el algoritmo: elke match moet verdedigd worden."""
+    r = _reto(9); s = slide(); bg(s, PAPER); E._reto_cabecera(s, r)
+    d = r["datos"]
+    text(s, Inches(0.5), Inches(3.46), Inches(6.0), Inches(0.3),
+         [[("1 · Tu perfil, sin nombre", {"size": 11, "bold": True, "color": GD, "font": DISPLAY})]])
+    for i, m in enumerate(d["marco_perfil"]):
+        text(s, Inches(0.6), Inches(3.82) + Inches(0.36) * i, Inches(5.9), Inches(0.32),
+             [[("· " + m, {"size": 12, "color": INK})]])
+    text(s, Inches(6.9), Inches(3.46), Inches(5.9), Inches(0.3),
+         [[("2 · El algoritmo se justifica", {"size": 11, "bold": True, "color": GD, "font": DISPLAY})]])
+    for i, m in enumerate(d["marco_algoritmo"]):
+        text(s, Inches(7.0), Inches(3.82) + Inches(0.36) * i, Inches(5.8), Inches(0.32),
+             [[("· " + m, {"size": 11.5, "color": INK})]])
+    # twee voorbeeldprofielen: de klas oefent de verdediging op deze twee
+    for i, (etiq, txt) in enumerate(d["ejemplos"]):
+        x = Inches(0.5) + Inches(6.26) * i
+        card(s, x, Inches(5.42), Inches(6.06), Inches(0.86), fill=CREMA)
+        text(s, x + Inches(0.16), Inches(5.5), Inches(5.8), Inches(0.74),
+             [[(etiq, {"size": 10.5, "bold": True, "color": GD})],
+              [(txt, {"size": 10.5, "color": INK})]], line=1.12)
+    exercise_solucion(s, Inches(0.5), Inches(6.42), Inches(12.33), Inches(0.62), r["clave"][1:2])
+    footer(s, page=pg())
+    notes(s, "TEACHER · RETO 9. " + r["nota"] + "  SLEUTEL: " + "  |  ".join(r["clave"]))
+
+
 # ============================================================ RUN + BUILD
 def _run_all(include_teacher=True):
-    s01_title(); s02_menu(); s03_datos(); s04_presentarse(); s05_ser_tener(); s06_ser(); s07_presente()
-    s08_quiz_ella(); s09_reading(); s10_listening(); s11_interrog(); s12_speaking(); s13_writing()
+    s01_title(); s02_menu(); s03_datos(); s_reto_algoritmo(); s04_presentarse(); s05_ser_tener(); s06_ser(); s07_presente()
+    s08_quiz_ella(); s09_reading(); s10_listening(); s11_interrog(); s_reto_prensa(); s_reto_prohibidas(); s12_speaking(); s13_writing()
     s14_paises(); s15_taller(); s16_cultura(); s17_quiz_pregunta()
     # Lectura en Escucha uit de gedeelde bron — zelfde inhoud als print en hub.
     E.s_lectura(_LD.C5_U1); E.s_escucha(_ED.C5_U1)

@@ -66,6 +66,32 @@ CSS = """
 .tira span{ border:.4pt solid var(--line); border-radius:2mm; padding:1.2mm 2.4mm; font-size:8.8pt;
             background:#fff; }
 .tira b{ color:var(--gd); }
+/* fiches met meerdere regels, knipbaar */
+.fichas.f3{ grid-template-columns:repeat(3,1fr); }
+.fichas.f4{ grid-template-columns:repeat(4,1fr); }
+.ficha.fid{ text-align:left; font-family:var(--body); font-size:8.6pt; line-height:1.3; padding:2.5mm 3mm; }
+.ficha.fid b{ font-family:var(--disp); font-size:10.5pt; color:var(--gd); display:block; }
+.ficha.fid span{ display:block; color:var(--mut); }
+.ficha.fid .fl{ color:var(--ink); }
+.ficha.tarjeta{ background:var(--gt); text-align:left; padding:2.5mm 3mm; }
+.ficha.tarjeta .tk{ display:block; font-size:6.6pt; letter-spacing:.14em; color:var(--gd); }
+.ficha.tarjeta b{ font-family:var(--dispx); font-size:13pt; display:block; }
+.ficha.tarjeta span{ display:block; font-size:8.4pt; color:var(--mut); }
+/* het rooster voor de staafgrafiek van het censo */
+.grafico{ display:flex; gap:2mm; margin:1.5mm 0 0; }
+.grafico .ejey{ display:flex; flex-direction:column; justify-content:space-between;
+                font-size:7.4pt; color:var(--mut); height:38mm; padding-top:.5mm; }
+.grafico .rejilla{ flex:1; height:38mm; border-left:.6pt solid var(--line2);
+                   border-bottom:.6pt solid var(--line2);
+                   background-image:linear-gradient(to right, var(--line) .3pt, transparent .3pt),
+                                    linear-gradient(to bottom, var(--line) .3pt, transparent .3pt);
+                   background-size:5mm 7.6mm; }
+/* levens bij el error caro */
+.vidas{ display:flex; align-items:center; gap:1.5mm; margin:3mm 0 0; font-size:9.4pt;
+        color:var(--mut); flex-wrap:wrap; }
+.vida{ color:var(--red); font-size:12pt; }
+.wtab td.op{ font-size:8.8pt; color:var(--mut); }
+.wtab td.fr{ font-size:9.8pt; }
 """
 
 _ICONO = {"hub": "🎮", "ppt": "📊", "print": "📄"}
@@ -175,7 +201,118 @@ def _pasaporte(r):
         '<div class="fichas">%s</div>' % (banco, filas, fichas))
 
 
-_MATERIAL = {"C5-U0-RETO-03": _gps, "C5-U0-RETO-08": _numeros, "C5-U0-RETO-10": _pasaporte}
+def _identidad(r):
+    """Twaalf knipfiches: je stelt je voor als iemand anders."""
+    d = r["datos"]
+    fichas = "".join(
+        '<div class="ficha fid"><b>%s</b><span>%d años</span><span>%s</span>'
+        '<span>%s</span><span class="fl">%s</span></div>'
+        % (E(n), ed, E(pa), E(ci), E(le)) for n, ed, pa, ci, le in d["fichas"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<p style="font-size:9.8pt;margin:0 0 1.5mm"><b>Tu marco.</b> Cinco frases, todas en '
+        'primera persona. <span class="gloss">Vijf zinnen, allemaal in de ik-vorm.</span></p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Mis notas</b> — lo que voy a decir:</p>'
+        '%s'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Al escuchar a los demás:</b> ¿quién '
+        'crees que es? <span class="gloss">Noteer per voorstelling welke fiche je denkt.</span></p>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:34mm">Compañero/a</th>'
+        '<th>Creo que es…</th><th style="width:30mm">¿Por qué?</th></tr></thead><tbody>%s</tbody></table>'
+        '<div class="pliegue">✂ Recortar las fichas · fiches uitknippen</div>'
+        '<div class="fichas f3">%s</div>'
+        % (marco, _lineas(5, "wl full"),
+           "".join('<tr><td><span class="wl sm"></span></td><td><span class="wl md"></span></td>'
+                   '<td><span class="wl sm"></span></td></tr>' for _ in range(4)),
+           fichas))
+
+
+def _censo(r):
+    """Datablad: turven, grafiek tekenen, conclusies schrijven."""
+    d = r["datos"]
+    preg = "".join(
+        '<tr><td style="font-size:9.6pt"><b>%d</b></td><td>%s</td><td class="op">%s</td></tr>'
+        % (i, E(q), E(o)) for i, (q, o) in enumerate(d["preguntas"], 1))
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    # geruit vlak voor de staafgrafiek, met een assenlijn
+    grafico = ('<div class="grafico"><div class="ejey">'
+               + "".join('<span>%d</span>' % v for v in (20, 15, 10, 5, 0))
+               + '</div><div class="rejilla"></div></div>')
+    return (
+        '<p style="font-size:9.8pt;margin:0 0 1.5mm"><b>Paso 1 — elegid vuestra pregunta</b> '
+        'y marcad con palitos. <span class="gloss">Kies je vraag en turf de antwoorden.</span></p>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:8mm">#</th>'
+        '<th style="width:52mm">La pregunta</th><th>Las respuestas · marca con palitos</th>'
+        '</tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Paso 2 — el gráfico.</b> Una barra por '
+        'respuesta. <span class="gloss">Eén staaf per antwoord; schrijf eronder wat ze voorstelt.</span></p>'
+        '%s'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Paso 3 — tres conclusiones</b> con '
+        '<b>somos</b> o <b>son</b> y un número de verdad:</p>'
+        '<div class="tira">%s</div>%s'
+        % (preg, grafico, marco, _lineas(3, "wl full")))
+
+
+def _aeropuerto(r):
+    """Rolkaarten + instapkaarten om uit te knippen, plus een uitsluitingslijst."""
+    d = r["datos"]
+    # BEWUST zonder stoelnummer: staat het er wél op, dan lost de klas de puzzel
+    # op door nummers te vergelijken in plaats van te vragen.
+    pas = "".join(
+        '<div class="ficha fid"><b>%s</b><span>%s</span><span class="fl">%s</span></div>'
+        % (E(n), E(na), E(ci)) for n, na, ci, _a in d["pasajeros"])
+    tar = "".join(
+        '<div class="ficha tarjeta"><span class="tk">BOARDING</span><b>%s</b>'
+        '<span>%s · %s</span></div>' % (E(a), E(na), E(ci))
+        for _n, na, ci, a in d["pasajeros"])
+    preg = "".join('<span><b>%s</b> %s</span>' % (E(q), E(nl)) for q, nl in d["preguntas"])
+    return (
+        '<p style="font-size:9.8pt;margin:0 0 1.5mm"><b>Dos tarjetas.</b> La <b>ficha de pasajero</b> dice quién eres; la <b>tarjeta de embarque</b> dice a quién buscas. '
+        '<span class="gloss">De passagiersfiche zegt wie jij bent; de instapkaart zegt wie je zoekt. Je eigen stoelnummer weet je dus niet.</span></p>'
+        '<p style="font-size:9.8pt;margin:0 0 1.5mm"><b>Solo estas preguntas.</b> '
+        '<span class="gloss">Alleen deze vragen — in het Spaans, ook als het traag gaat.</span></p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Ya descartados</b> — a quién has '
+        'preguntado ya: <span class="gloss">Wie je al hebt uitgesloten, en waarom.</span></p>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:40mm">Nombre</th>'
+        '<th>No es, porque…</th></tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Mi pareja de vuelo es…</b> '
+        '(preséntala en tercera persona)</p><div style="margin:1mm 0"><span class="wl full"></span></div>'
+        '<div class="pliegue">✂ Fichas de pasajero · passagiersfiches</div>'
+        '<div class="fichas f4">%s</div>'
+        '<div class="pliegue">✂ Tarjetas de embarque · instapkaarten</div>'
+        '<div class="fichas f4">%s</div>'
+        % (preg,
+           "".join('<tr><td><span class="wl sm"></span></td><td><span class="wl lg"></span></td></tr>'
+                   for _ in range(5)),
+           pas, tar))
+
+
+def _error_caro(r):
+    """Opwarmbank met geplante fouten + het uitwisselblad met levens."""
+    d = r["datos"]
+    filas = "".join(
+        '<tr><td style="font-size:9.6pt"><b>%d</b></td><td class="fr">%s</td>'
+        '<td style="text-align:center">☐</td><td><span class="wl md"></span></td></tr>'
+        % (i, E(f)) for i, (f, _ok, _c) in enumerate(d["banco"], 1))
+    vidas = "".join('<span class="vida">♥</span>' for _ in range(5))
+    return (
+        '<p style="font-size:9.8pt;margin:0 0 1.5mm"><b>Ronda 0 — calentamiento.</b> Marca ☐ si '
+        'la frase tiene un error y escribe la corrección. <span class="gloss">Kruis aan bij een '
+        'fout én schrijf de verbetering — aanwijzen alleen telt niet.</span></p>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:8mm">#</th>'
+        '<th>La frase</th><th style="width:14mm">¿error?</th><th style="width:48mm">Corrección</th>'
+        '</tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Ronda 1 — nuestras seis frases</b> '
+        '(cuatro correctas, dos con trampa):</p>%s'
+        '<div class="vidas"><span>Nuestras vidas:</span>%s'
+        '<span style="margin-left:auto">Vidas del equipo rival:</span>%s</div>'
+        % (filas, _lineas(6, "wl full"), vidas, vidas))
+
+
+_MATERIAL = {"C5-U0-RETO-03": _gps, "C5-U0-RETO-08": _numeros, "C5-U0-RETO-10": _pasaporte,
+             "C5-U1-RETO-02": _identidad, "C5-U1-RETO-03": _censo,
+             "C5-U1-RETO-06": _aeropuerto, "C5-U1-RETO-08": _error_caro}
 
 
 def reto_print(r):

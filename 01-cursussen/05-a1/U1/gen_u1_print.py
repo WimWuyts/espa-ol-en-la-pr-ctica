@@ -12,6 +12,8 @@ sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
 import print_bloques as PB
 import lectura_data as LD
 import escucha_data as ED
+import retos_data as RD
+import retos_print as RP
 
 def b64(p): return base64.b64encode(open(p, "rb").read()).decode()
 def face(fam, fn, w):
@@ -305,6 +307,19 @@ def lpd(*chips):
     return f'<div class="lpd"><span class="lpdlab">Leerplandoelen III-Spa-d</span>{c}</div>'
 
 def divider(t): return f'<div class="divider">{t}</div>'
+
+def retos(ancla, titulo, intro_es, intro_nl):
+    """Het retoblok van één sectie: volledige oefening voor de print-retos,
+    een verwijskaartje voor wie op de hub of in de PowerPoint leeft."""
+    P('<div class="page">')
+    P(divider(titulo))
+    P(f'<div class="intro" style="margin-top:1mm"><b>ES:</b> {intro_es} '
+      f'<span class="gloss">{intro_nl}</span></div>')
+    for r in sorted(RD.por_ancla(ancla), key=lambda x: x["num"]):
+        P(RP.reto_print(r) if r["soporte"] == "print" else RP.reto_puntero(r))
+    P('</div>')
+
+
 def pcard(t, body): return f'<div class="pcard"><div class="t">{t}</div>{body}</div>'
 
 def steun(niveau):
@@ -673,6 +688,9 @@ P('<div class="route-note">🎮 <b>Juega online:</b> «Memoria de los datos», �
 P('</div>')  # page §1.2b
 
 # ================= §2 · EL VERBO SER =================
+retos("datos", "§1.3 · Retos — tus datos, de verdad",
+      'Ya sabes decir quién eres. Ahora lo usas: <b>prestando</b> otra identidad, <b>contando</b> la clase entera y dejando que un <b>algoritmo</b> te empareje.',
+      'Je kunt al zeggen wie je bent. Nu ga je het gebruiken: door een andere identiteit te lenen, de hele klas te tellen, en je door een algoritme te laten koppelen.')
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">2</span><span class="pk">§2 · El verbo SER + los pronombres</span>')
 P('<div class="intro"><b>ES:</b> Para decir <b>quién eres</b> y <b>de dónde eres</b> usas <b>ser</b>. La ruta: contexto → observar → patrón → regla → practicar → comunicar. <span class="gloss">Om te zeggen wie je bent gebruik je «ser».</span></div>')
@@ -741,6 +759,9 @@ P('<div class="route-note">🎮 <b>Juega online:</b> «El verbo SER» (welke per
 P('</div>')  # page §2.1 práctica
 
 # ================= §3 · EL PRESENTE REGULAR =================
+retos("ser", "§2.3 · Retos — ser bajo presión",
+      'Dos retos donde <b>ser</b> decide: uno para encontrar a alguien, otro para cazar errores ajenos — con castigo si te equivocas.',
+      'Twee retos waarin ser beslist: één om iemand te vinden, één om andermans fouten te vangen — met straf als je ernaast zit.')
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">3</span><span class="pk">§3 · El presente regular (-ar · -er · -ir)</span>')
 P('<div class="intro"><b>ES:</b> Casi todos los verbos siguen un <b>patrón</b>. Descúbrelo como una <b>máquina</b>: quita la terminación del infinitivo y añade la nueva. <span class="gloss">Ontdek het patroon als een machine.</span></div>')
@@ -825,6 +846,9 @@ P('<div class="route-note">🔁 <b>Ojo — conjugador online:</b> alle vervoegin
 P('</div>')  # page §3.2
 
 # ================= §4 · PREGUNTAR + GÉNERO =================
+retos("presente", "§3.3 · Reto — el presente en la calle",
+      'Una plaza de Madrid, cuarenta años de diferencia, y todo en <b>presente</b>.',
+      'Eén plein in Madrid, veertig jaar verschil, en alles in het presente.')
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">4</span><span class="pk">§4 · Preguntar: interrogativos + el/la</span>')
 P('<div class="intro"><b>ES:</b> Ya sabes presentarte; ahora aprende a <b>preguntar</b> — y a poner el <b>artículo</b> correcto. <span class="gloss">Nu leer je vragen stellen en het juiste lidwoord kiezen.</span></div>')
@@ -900,6 +924,9 @@ P('<div class="route-note">🎮 <b>Juega online:</b> «Palabras interrogativas»
 P('</div>')  # page §4.2
 
 # ================= §5 · LECTURA (leesvaardigheid) =================
+retos("preguntar", "§4.3 · Retos — preguntar de otra manera",
+      'Tres retos sobre la pregunta: una <b>rueda de prensa</b>, tres preguntas <b>prohibidas</b> y doce objetos que <b>no existen</b>.',
+      'Drie retos over de vraag: een persconferentie, drie verboden vragen en twaalf voorwerpen die niet bestaan.')
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">📖</span><span class="pk">§5 · Lectura — «Dos perfiles»</span>')
 P('<div class="intro"><b>ES:</b> Vas a leer dos perfiles de una app de intercambio. Primero <b>predices</b>, después lees con un <b>objetivo</b>. <span class="gloss">Je leest twee profielen van een uitwisselings-app: eerst voorspellen, dan lezen met een doel.</span></div>')
@@ -1050,6 +1077,9 @@ P(actx(2, "Escribe y elige tú/usted",
 P('</div>')  # page Cultura
 
 # ================= TAREA FINAL =================
+retos("cultura_u1", "Reto — hablar por otro",
+      'El último reto de la unidad no va de ti: va de <b>tu compañero/a</b>.',
+      'De laatste reto van de unit gaat niet over jou, maar over je partner.')
 P('<div class="page"><div class="parada sec" style="border-top-color:var(--gd)">')
 P('<span class="num">✦</span><span class="pk" style="background:var(--gd)">Tarea final · Mi pasaporte</span>')
 P('<div class="intro"><b>ES:</b> Crea tu <b>pasaporte de La Ruta</b> y preséntate (identidad real o nueva). <span class="gloss">Maak je paspoort en stel je voor.</span></div>')
@@ -1184,7 +1214,7 @@ EDITBAR = '''
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Español en la práctica · U1 ¿Quién eres?</title><style>'
-        + CSS + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
+        + CSS + PB.CSS + RP.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/U1.html"
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, "·", len(HTML), "bytes")
