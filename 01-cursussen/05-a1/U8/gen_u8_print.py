@@ -760,7 +760,7 @@ P(clusters([
 P('<p style="font-size:9.6pt">② <b>Pares de opuestos (VS-007):</b></p>')
 P(vpairs([("hace calor 🥵","hace frío 🥶"),("hace sol ☀️","está nublado ☁️"),("hace buen tiempo","hace mal tiempo"),("llueve 🌧️","nieva ❄️")]))
 P('<p style="font-size:9.6pt">③ <b>La temperatura:</b> <i>Estamos a 20 grados. Hace 5 grados en Cusco.</i></p>')
-P(audiorow('<div class="ic">🎧</div><div><b>El parte del tiempo.</b> Escucha el pronóstico de tres ciudades (Lima, Cusco, la selva) y anota el tiempo. <span class="gloss">Weerbericht — 1ª betekenis, 2ª schrijven.</span></div>',
+P(audiorow('<div class="ic">🎧</div><div><b>El parte del tiempo.</b> Escucha el pronóstico de cuatro ciudades (Lima, Cusco, Iquitos y Arequipa) y anota el tiempo. <span class="gloss">Weerbericht — 1ª betekenis, 2ª schrijven.</span></div>',
            qr("Escanea y escucha", "Audio 8.2 · El parte del tiempo · 0:50", seed=82)))
 P(regla("Regla · ¿qué tiempo hace?",
   '<p>Drie manieren: (1) <b>hace</b> + sol / calor / frío / viento / buen tiempo / mal tiempo · (2) een werkwoord alleen: <b>llueve</b> (la lluvia) · <b>nieva</b> (la nieve) · (3) <b>está</b> nublado / <b>hay</b> tormenta. '

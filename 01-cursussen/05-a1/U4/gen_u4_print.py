@@ -724,7 +724,9 @@ P(actx(3, "Escucha y marca la reacción",
   '<tr><td>1</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>2</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>3</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>'
-  '<tr><td>4</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></tbody></table>', apoyo="MODELO (vier opties open)"))
+  '<tr><td>4</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>'
+  '<tr><td>5</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>'
+  '<tr><td>6</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></tbody></table>', apoyo="MODELO (vier opties open)"))
 P(actx(4, "Completa la reacción",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p><i>cloze klassiek.</i> Vul de reactie aan (kijk naar +/– én naar akkoord/oneens).</p>'

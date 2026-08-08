@@ -385,9 +385,8 @@ C5_U1_02 = {
         L("Voz", "Soy alumna de cuarto.", "Ik ben leerlinge van het vierde jaar."),
     ],
     "clave": ["1. yo", "2. él/ella", "3. nosotros", "4. tú", "5. ellos", "6. yo"],
-    "nota": "LET OP — mismatch in de printunit: de instructie zegt «seis frases», maar het "
-            "rooster in oefening 3 heeft maar vier rijen. Ofwel het rooster naar zes rijen "
-            "brengen, ofwel de instructie op vier zetten (dan vallen 5 en 6 weg).",
+    "nota": "Het rooster van oefening 3 telt zes rijen, gelijk aan de zes zinnen hier "
+            "(rechtgezet 2026-08-08; het stond eerder op vier).",
 }
 
 C5_U1_03 = {
@@ -591,9 +590,8 @@ C5_U4_02 = {
     ],
     "clave": ["1. también", "2. tampoco", "3. a mí no", "4. a mí sí",
               "5. también", "6. a mí sí"],
-    "nota": "LET OP — mismatch in de printunit: de instructie zegt «seis mini-diálogos», het "
-            "rooster van oefening 3 heeft vier rijen. Rooster naar zes rijen brengen, of de "
-            "instructie op vier zetten (dan vallen 5 en 6 weg).",
+    "nota": "Het rooster van oefening 3 telt zes rijen, gelijk aan de zes mini-dialogen hier "
+            "(rechtgezet 2026-08-08; het stond eerder op vier).",
 }
 
 C5_U4_03 = {
@@ -892,11 +890,9 @@ C5_U8_02 = {
     ],
     "clave": ["1. Lima — está nublado, 18 grados", "2. Cusco — hace sol, hace frío, 9 grados",
               "3. Iquitos (la selva) — llueve, hace calor", "4. Arequipa — hace viento, 20 grados"],
-    "nota": "LET OP — mismatch in de printunit: het openingsblok kondigt drie steden aan "
-            "(«Lima, Cusco, la selva»), maar dictee-oefening 3 vraagt er vier. Dit script "
-            "geeft er vier, met Iquitos als de stad ín de selva; zet het openingsblok bij een "
-            "herbouw op «cuatro ciudades». De drie constructies uit de regla (hace / está / "
-            "werkwoord alleen) komen alle drie voor.",
+    "nota": "Vier steden, gelijk aan wat het openingsblok aankondigt en wat dictee-oefening 3 "
+            "vraagt (rechtgezet 2026-08-08; het blok sprak eerder van drie). De drie "
+            "constructies uit de regla (hace / está / werkwoord alleen) komen alle drie voor.",
 }
 
 

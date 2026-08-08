@@ -739,7 +739,9 @@ P(actx(3, "Escucha y marca la persona",
   '<tr><td>1</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>2</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>3</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>'
-  '<tr><td>4</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></tbody></table>', apoyo="MODELO (tabel ser open)"))
+  '<tr><td>4</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>'
+  '<tr><td>5</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>'
+  '<tr><td>6</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></tbody></table>', apoyo="MODELO (tabel ser open)"))
 P(actx(4, "Clínica de errores",
   [{"t":"🔍 Analizar","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p><i>foutenkliniek.</i> Zoek de fout, verbeter, en leg uit <b>waarom</b> (het correcte model staat als laatste).</p>'
