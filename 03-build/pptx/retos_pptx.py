@@ -190,6 +190,37 @@ def tarjetas_de(r):
             for pie, ok, porque in pies:
                 salida.append(("" if ok else "", pie, ("✓ " if ok else "✗ ") + porque))
         return salida
+    if i == "C5-U5-RETO-04":
+        # kaart en formules gebundeld: los per gerecht werden het 21 kaarten en
+        # dan houdt een kaart nog maar één tekstregel over
+        def _trio(xs, n=3):
+            return [" · ".join(xs[k:k + n]) for k in range(0, len(xs), n)]
+        return ([("La carta", t, None) for t in _trio(d["carta"])]
+                + [("Fórmulas", t, None) for t in _trio(d["formulas"])]
+                + [("El camarero", n, "cambia de plato y de fórmula")
+                   for n in d["no_hay"]])
+    if i == "C5-U5-RETO-07":
+        return ([(p, "", "descrito ✓") for p in d["productos"]]
+                + [("marco", m, None) for m in d["marco"]])
+    if i == "C5-U5-RETO-08":
+        return ([("La cuenta", "%s — %d pesos" % (x, c), None) for x, c in d["cuenta"]]
+                + [("TOTAL", "%d pesos" % sum(c for _x, c in d["cuenta"]), None)]
+                + [(n, t, None) for n, t in d["roles"]]
+                + [("marco", m, None) for m in d["marco"]])
+    if i == "C5-U6-RETO-01":
+        # de bodemprijs is het geheim van de verkoper: pas ná het afdingen
+        # onthullen, anders valt er niets meer te onderhandelen
+        return ([(p, "pide %d pesos" % pide, "solo al final: ≈ %d pesos" % suelo)
+                 for p, pide, suelo in d["productos"]]
+                + [("Vendedor/a", m, None) for m in d["marco_vendedor"]]
+                + [("Cliente", m, None) for m in d["marco_cliente"]])
+    if i == "C5-U6-RETO-02":
+        return ([("La tienda dice", n, None) for n in d["negativas"]]
+                + [("Tu argumento", a, None) for a in d["argumentos"]]
+                + [("salida posible", s, None) for s in d["salidas"]])
+    if i == "C5-U6-RETO-08":
+        return ([(n, t, None) for n, t in d["tipos"]]
+                + [("Vendedor/a", m, None) for m in d["marco_vendedor"]])
     if i == "C5-U1-RETO-09":
         return ([("Tu perfil", m, None) for m in d["marco_perfil"]]
                 + [("El algoritmo", m, None) for m in d["marco_algoritmo"]]

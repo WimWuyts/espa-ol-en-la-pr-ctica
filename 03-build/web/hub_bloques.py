@@ -234,6 +234,37 @@ def retos_js(host_id, curso, unidad):
             base["tipo"] = "opciones"
             base["items"] = [{"enunciado": nl, "correcta": c, "opciones": o, "porque": p}
                              for nl, c, o, p in d["items"]]
+        elif r["id"] == "C5-U5-RETO-01":
+            # de stap wordt voorgelezen, niet getoond: daarom audio
+            base["tipo"] = "opciones"
+            base["items"] = [{"enunciado": paso, "correcta": c, "opciones": o, "audio": True,
+                              "porque": "let op de hoeveelheid, niet op het product"}
+                             for paso, c, o in d["pasos_receta"]]
+        elif r["id"] == "C5-U5-RETO-06":
+            base["tipo"] = "opciones"
+            base["items"] = [{"enunciado": "«%s» — ¿cuánto es eso?" % expr,
+                              "correcta": c, "opciones": o, "porque": p}
+                             for expr, c, o, p in d["items"]]
+        elif r["id"] == "C5-U5-RETO-09":
+            base["tipo"] = "grabar"
+            base["situaciones"] = [{"es": m, "nl": "", "pista": ""} for m in d["marco"]]
+            base["items"] = [{"text": "Mi receta en directo",
+                              "cue": "één minuut · minstens vijf van de zeven kookwerkwoorden: "
+                                     + " · ".join(d["verbos"])}]
+        elif r["id"] == "C5-U6-RETO-06":
+            base["tipo"] = "opciones"
+            base["items"] = [{"enunciado": e, "correcta": c, "opciones": o, "porque": p}
+                             for e, c, o, p in d["items"]]
+        elif r["id"] == "C5-U6-RETO-09":
+            base["tipo"] = "grabar"
+            base["situaciones"] = [{"es": m, "nl": "", "pista": ""} for m in d["marco"]]
+            base["items"] = [{"text": "Mi anuncio de radio",
+                              "cue": "exact 20 seconden · één kledingstuk uit: "
+                                     + " · ".join(d["prendas"])}]
+        elif r["id"] == "C5-U6-RETO-10":
+            base["tipo"] = "opciones"
+            base["items"] = [{"enunciado": e, "correcta": c, "opciones": o, "porque": p}
+                             for e, c, o, p in d["items"]]
         else:
             continue
         salida.append(base)

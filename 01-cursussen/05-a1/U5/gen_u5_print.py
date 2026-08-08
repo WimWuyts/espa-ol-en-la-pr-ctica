@@ -14,6 +14,8 @@ _sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
 import print_bloques as PB
 import lectura_data as LD
 import escucha_data as ED
+import retos_data as RD
+import retos_print as RP
 
 def b64(p): return base64.b64encode(open(p, "rb").read()).decode()
 def face(fam, fn, w):
@@ -285,6 +287,19 @@ def lpd(*chips):
     return f'<div class="lpd"><span class="lpdlab">Leerplandoelen III-Spa-d</span>{c}</div>'
 
 def divider(t): return f'<div class="divider">{t}</div>'
+
+
+def retos(ancla, titulo, intro_es, intro_nl):
+    """Retoblok van één sectie — volledige oefening voor print, verwijskaartje
+    voor wat op de hub of in de PowerPoint leeft."""
+    P('<div class="page">')
+    P(f'<div class="divider">{titulo}</div>')
+    P(f'<div class="intro" style="margin-top:1mm"><b>ES:</b> {intro_es} '
+      f'<span class="gloss">{intro_nl}</span></div>')
+    for r in sorted(RD.por_ancla(ancla), key=lambda x: x["num"]):
+        P(RP.reto_print(r) if r["soporte"] == "print" else RP.reto_puntero(r))
+    P('</div>')
+
 def pcard(t, body): return f'<div class="pcard"><div class="t">{t}</div>{body}</div>'
 
 def steun(niveau):
@@ -609,6 +624,10 @@ P(tarea_com("Tarea comunicativa · «En el mercado»",
 P('<div class="route-note">🎮 <b>Juega online:</b> «cantidades» (tetris), «un poco de o muchos» en «señala en el mercado» met zelfcorrectie.</div>')
 P('</div>')  # page §1.2
 
+retos("cantidades", "§1.4 · Retos — la cantidad, con consecuencias",
+      'Tres retos sobre cantidades: una receta que solo se <b>oye</b>, un mercado con <b>precios de verdad</b> y un producto en <b>cinco palabras</b>.',
+      'Drie retos over hoeveelheden: een recept dat je alleen hoort, een markt met echte prijzen, en een product in vijf woorden.')
+
 # ================= §2 · IR A + INFINITIVO =================
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">2</span><span class="pk">§2 · Voy a comer · ir a + infinitivo</span>')
@@ -688,6 +707,10 @@ P(tarea_com("Tarea comunicativa · «Nuestros planes para la cena»",
 P('<div class="route-note">🎮 <b>Juega online:</b> «voy a… (cloze)», «ordena la cena» en de presente-Tetris met zelfcorrectie.</div>')
 P('</div>')  # page §2.2
 
+retos("comida", "§2.4 · Retos — la comida bajo sospecha",
+      'Una carta con <b>intrusos</b> y una receta explicada <b>en directo</b>, sin poder parar.',
+      'Een menukaart met indringers, en een recept dat je live uitlegt zonder te kunnen stoppen.')
+
 # ================= §3 · PEDIR & CORTESÍA =================
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">3</span><span class="pk">§3 · Pedir en el restaurante · la cortesía</span>')
@@ -759,6 +782,10 @@ P(tarea_com("Tarea comunicativa · «En el restaurante»",
 P('<div class="route-note">🎮 <b>Juega online:</b> «ordena el diálogo», «¿camarero o cliente?» en de simulatie «¡Pide en el restaurante!».</div>')
 P('</div>')  # page §3.2
 
+retos("pedir", "§3.4 · Retos — pedir cuando todo sale mal",
+      'Tres retos en la mesa: un camarero que dice <b>«no hay»</b>, una reseña de <b>una estrella</b> sin insultos, y una cuenta que <b>nadie</b> quiere pagar.',
+      'Drie retos aan tafel: een ober die «no hay» zegt, een recensie van één ster zonder scheldwoorden, en een rekening die niemand wil betalen.')
+
 # ================= §4 · OD-PRONOMBRES (la cuenta → la traigo) =================
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">4</span><span class="pk">§4 · La cuenta → la traigo · lo / la / los / las</span>')
@@ -825,6 +852,10 @@ P(tarea_com("Tarea comunicativa · «¿Me lo trae?»",
   '<div class="steun" style="margin-left:12.5mm">Apoyo: MARCO (lo/la/los/las) → SIN AYUDA · [CROSS: HTML «la cuenta → la traigo»]</div>'))
 P('<div class="route-note">🎮 <b>Juega online:</b> «¿lo, la, los o las?» met zelfcorrectie.</div>')
 P('</div>')  # page §4.2
+
+retos("pronombres_u5", "§4.4 · Reto — el pronombre decide",
+      'Sin pronombre no hay respuesta. Aquí lo compruebas plato por plato.',
+      'Zonder voornaamwoord krijg je geen antwoord. Hier bewijs je dat, gerecht per gerecht.')
 
 # ================= §5 · LECTURA =================
 P('<div class="page"><div class="parada sec">')
@@ -985,6 +1016,10 @@ P(actx(3, "Empareja: plato ↔ país",
 P('<div class="route-note">🎮 <b>Sigue online:</b> «plato ↔ país» (match) en de mercado-spellen op de digitale pagina.</div>')
 P('</div>')  # page Cultura
 
+retos("cultura_u5", "Retos — la cocina que no se mide",
+      'La abuela nunca dice cuánto. Tú tienes que <b>traducirlo a gramos</b>.',
+      'De grootmoeder zegt nooit hoeveel. Jij moet het omzetten naar grammen.')
+
 # ================= TAREA FINAL =================
 P('<div class="page"><div class="parada sec" style="border-top-color:var(--gd)">')
 P('<span class="num">✦</span><span class="pk" style="background:var(--gd)">Tarea final · La carta</span>')
@@ -1120,7 +1155,7 @@ EDITBAR = '''
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Español en la práctica · U5 ¡Ñam!</title><style>'
-        + CSS + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
+        + CSS + PB.CSS + RP.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/U5.html"
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, "·", len(HTML), "bytes")

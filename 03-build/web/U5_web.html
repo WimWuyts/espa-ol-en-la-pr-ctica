@@ -395,6 +395,11 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
     <div id="motorlink"></div>
   </section>
 
+  <section class="panel" data-p="retos">
+    <h2 class="sec">Retos · tres desafíos 🎯</h2>
+    <p class="lead">Drie retos met <b>één harde regel</b>: je kookt een recept dat je alleen <b>hoort</b> (en twee stappen gebruiken hetzelfde product met een andere hoeveelheid), je zet de maten van een grootmoeder om in <b>echte grammen</b>, en je legt een recept <b>live</b> uit zonder te kunnen stoppen. <span class="gloss">De zeven andere retos van deze unit staan in het boek en in de PowerPoint.</span></p>
+    <div id="retos_u5"></div>
+  </section>
   <section class="panel" data-p="hablar">
     <h2 class="sec">Hablar · grábate 🎙️</h2>
     <p class="lead">Neem <b>jezelf</b> op: luister naar het model, spreek in, luister terug, en neem opnieuw op. <span class="gloss">Werkt in Chrome/Edge; sta de micro toe. Print blijft bruikbaar zonder opname.</span></p>
@@ -535,9 +540,291 @@ const GAMES={"comida-memoria": "PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9Im5sIj4KPGhl
 function toggleTheme(){const r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'}
 function speak(t,rate){if(!('speechSynthesis'in window))return;const u=new SpeechSynthesisUtterance(t);u.lang='es-ES';u.rate=rate||.92;
   const vs=speechSynthesis.getVoices();const es=vs.find(v=>/^es/i.test(v.lang));if(es)u.voice=es;try{speechSynthesis.cancel();speechSynthesis.speak(u);}catch(e){}}
+function buildRetos(id,cfg){
+ const host=document.getElementById(id);if(!host)return;
+ host.innerHTML='<div class="retos"></div>';
+ const lista=host.querySelector('.retos');
+ (cfg.retos||[]).forEach((r,n)=>{
+  const c=document.createElement('div');c.className='reto';
+  c.innerHTML='<div class="rcab"><span class="rnum">'+r.num+'</span><h3>'+exEsc(r.nombre)+'</h3>'+
+    '<span class="rlente">'+exEsc(r.lente)+'</span></div>'+
+    '<p class="rgancho"><b>'+exEsc(r.gancho_es)+'</b></p>'+
+    '<p class="rnl">'+exEsc(r.gancho_nl)+'</p>'+
+    '<p class="desc">'+exEsc(r.consigna_nl)+'</p>'+
+    '<div class="rregla"><b>La regla del reto</b>'+exEsc(r.regla)+'</div>'+
+    '<div class="rcuerpo" id="'+id+'_c'+n+'"></div>';
+  lista.appendChild(c);
+  const cuerpo=c.querySelector('.rcuerpo');
+  if(r.tipo==='grabar')retoGrabar(cuerpo,r,id+'_c'+n);
+  else if(r.tipo==='detector')retoDetector(cuerpo,r);
+  else if(r.tipo==='mapa')retoMapa(cuerpo,r);
+  else if(r.tipo==='articulo')retoArticulo(cuerpo,r);
+  else if(r.tipo==='escena')retoEscena(cuerpo,r);
+  else if(r.tipo==='retrato')retoRetrato(cuerpo,r);
+  else if(r.tipo==='voces')retoVoces(cuerpo,r);
+  else if(r.tipo==='opciones')retoOpciones(cuerpo,r);
+ });
+}
+
+function retoGrabar(cont,r,idBase){
+ (r.situaciones||[]).forEach(s=>{
+   const d=document.createElement('div');d.className='rsit';
+   d.innerHTML='<b>'+exEsc(s.es)+'</b><span class="rpista">'+exEsc(s.nl)+
+     (s.pista?' · <i>'+exEsc(s.pista)+'</i>':'')+'</span>';
+   cont.appendChild(d);});
+ const rec=document.createElement('div');rec.id=idBase+'_rec';cont.appendChild(rec);
+ if(typeof makeRecorder==='function')
+   makeRecorder(idBase+'_rec',{title:r.nombre,desc:r.consigna_es,
+     items:(r.items||[]).map(t=>({text:t.text,cue:t.cue}))});
+}
+
+function retoDetector(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ const reglas=r.reglas||[];
+ (r.items||[]).forEach((it,i)=>{
+   const d=document.createElement('div');d.className='detit';
+   const opts=reglas.map((g,k)=>'<option value="'+k+'">'+exEsc(g)+'</option>').join('');
+   d.innerHTML='<div class="dpal">'+exEsc(it.palabra)+'</div>'+
+     '<div class="detbtns"><button class="detbtn" type="button" data-v="1">✓ posible</button>'+
+     '<button class="detbtn" type="button" data-v="0">✗ imposible</button></div>'+
+     '<div class="detrule" hidden><label class="desc">¿Qué regla rompe?</label>'+
+     '<select><option value="-1">— elige la regla —</option>'+opts+'</select></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const fb=d.querySelector('.detfb'),rule=d.querySelector('.detrule'),sel=d.querySelector('select');
+   let cerrado=false;
+   d.querySelectorAll('.detbtn').forEach(b=>{b.onclick=()=>{
+     if(cerrado)return;
+     const dicho=b.dataset.v==='1';
+     if(!dicho){rule.hidden=false;sel.focus();
+       fb.className='detfb show';fb.textContent='Ahora acusa con pruebas: ¿qué regla rompe?';
+       cerrado=false;
+       sel.onchange=()=>{cerrado=true;
+         const bien=(!it.posible)&&(Number(sel.value)===it.regla);
+         d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);sel.disabled=true;
+         b.classList.add(bien?'ok':'no');
+         fb.className='detfb show '+(bien?'g':'b');
+         fb.innerHTML=bien?'<b>✓ acusación correcta</b> · '+exEsc(it.porque)
+           :(it.posible?'<b>✗ esta palabra sí existe</b> · '+exEsc(it.porque)
+                       :'<b>✗ la regla no es esa</b> · '+exEsc(it.porque));};
+       return;}
+     cerrado=true;
+     const bien=it.posible;
+     d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);
+     b.classList.add(bien?'ok':'no');
+     fb.className='detfb show '+(bien?'g':'b');
+     fb.innerHTML=(bien?'<b>✓ correcto</b> · ':'<b>✗ no</b> · ')+exEsc(it.porque);};});
+   caja.appendChild(d);});
+}
+
+// ── artículo: el/la op verzonnen woorden ───────────────────────────────────
+// Het lidwoord alléén zegt niets: wie «la» kiest bij een -ma-woord heeft geraden,
+// ook als het toevallig klopt. Daarom moet de leerling er de regel bij kiezen, en
+// telt het pas als het allebei klopt.
+// ── retrato hablado: luister en kies het juiste portret ────────────────────
+// De portretten worden getekend, niet beschreven: stonden de kenmerken in
+// woorden op de kaart, dan werd het woorden matchen in plaats van luisteren.
+function retoCara(x,y,r,p){
+ const pelo = p.pelo.indexOf('largo')>=0
+   ? (p.pelo.indexOf('rizado')>=0
+      ? '<path d="M'+(x-r-4)+' '+(y+r+6)+' q-6,-'+(r+18)+' '+(r+6)+',-'+(r+14)+' q'+r+',-8 '+(r+6)+','+(r+14)+' q6,'+(r+8)+' -4,'+(r+2)+' q-'+r+',-14 -'+(2*r-4)+',0 Z" fill="#5C4433"/>'
+      : '<path d="M'+(x-r-2)+' '+(y+r+8)+' l0,-'+(r+16)+' q'+(r+2)+',-14 '+(2*r+4)+',0 l0,'+(r+16)+' l-8,0 l0,-'+r+' q-'+r+',-10 -'+(2*r-8)+',0 l0,'+r+' Z" fill="#5C4433"/>')
+   : (p.pelo.indexOf('rizado')>=0
+      ? '<path d="M'+(x-r-2)+' '+y+' q2,-'+(r+14)+' '+(r+2)+',-'+(r+10)+' q'+r+',-6 '+(r+2)+','+(r+10)+' q2,10 -6,6 q-'+r+',-14 -'+(2*r-8)+',0 q-8,4 -6,-6 Z" fill="#5C4433"/>'
+      : '<path d="M'+(x-r-2)+' '+(y-2)+' q0,-'+(r+12)+' '+(r+2)+',-'+(r+12)+' q'+(r+2)+',0 '+(r+2)+','+(r+12)+' l-6,2 q-'+r+',-12 -'+(2*r-4)+',0 Z" fill="#5C4433"/>');
+ const gafas = p.gafas
+   ? '<g fill="none" stroke="#20242E" stroke-width="2.4"><circle cx="'+(x-r/2.4)+'" cy="'+(y+2)+'" r="'+(r/3.4)+'"/>'
+     +'<circle cx="'+(x+r/2.4)+'" cy="'+(y+2)+'" r="'+(r/3.4)+'"/>'
+     +'<line x1="'+(x-r/2.4+r/3.4)+'" y1="'+(y+2)+'" x2="'+(x+r/2.4-r/3.4)+'" y2="'+(y+2)+'"/></g>'
+   : '<circle cx="'+(x-r/2.4)+'" cy="'+(y+1)+'" r="2.6" fill="#20242E"/>'
+     +'<circle cx="'+(x+r/2.4)+'" cy="'+(y+1)+'" r="2.6" fill="#20242E"/>';
+ const boca = p.sonrie
+   ? '<path d="M'+(x-r/2.6)+' '+(y+r/2.2)+' q'+(r/2.6)+','+(r/3.2)+' '+(r/1.3)+',0" stroke="#20242E" stroke-width="2.4" fill="none" stroke-linecap="round"/>'
+   : '<line x1="'+(x-r/3)+'" y1="'+(y+r/1.9)+'" x2="'+(x+r/3)+'" y2="'+(y+r/1.9)+'" stroke="#20242E" stroke-width="2.4" stroke-linecap="round"/>';
+ return '<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="#F2D3B6"/>'+pelo+gafas+boca;
+}
+
+function retoRetrato(cont,r){
+ const rs=r.retratos||[], ds=r.descripciones||[];
+ let i=0, aciertos=0;
+ cont.innerHTML='<div class="rmarca"><button class="escbtn rplay" type="button">▶ Escuchar la descripción</button>'+
+   '<span class="rcuenta rvuelta">1 / '+ds.length+'</span>'+
+   '<span class="desc rtanteo">aciertos: 0</span></div>'+
+   '<div class="retratos"></div><div class="detfb rfb" role="status" aria-live="polite"></div>';
+ const caja=cont.querySelector('.retratos');
+ rs.forEach(p=>{
+   const b=document.createElement('button');b.type='button';b.className='retrato';b.dataset.n=p.n;
+   b.innerHTML='<svg viewBox="0 0 100 100" aria-hidden="true">'+retoCara(50,52,26,p)+'</svg>'+
+     '<span class="rnum2">'+p.n+'</span>';
+   b.onclick=()=>{
+     if(!ds[i])return;
+     const fb=cont.querySelector('.rfb'), bien=Number(b.dataset.n)===ds[i].correcto;
+     b.classList.add(bien?'ok':'no');
+     fb.className='detfb show rfb '+(bien?'g':'b');
+     fb.innerHTML=bien?'<b>✓ correcto</b> · '+exEsc(ds[i].texto)
+       :'<b>✗ no</b> · era el '+ds[i].correcto+' — '+exEsc(ds[i].texto);
+     if(bien)aciertos++;
+     cont.querySelector('.rtanteo').textContent='aciertos: '+aciertos;
+     i++;
+     setTimeout(()=>{caja.querySelectorAll('.retrato').forEach(x=>x.classList.remove('ok','no'));
+       if(i<ds.length){cont.querySelector('.rvuelta').textContent=(i+1)+' / '+ds.length;fb.className='detfb rfb';}
+       else{cont.querySelector('.rvuelta').textContent='hecho';
+         fb.className='detfb show rfb g';fb.innerHTML='<b>Listo</b> · ahora describe tú uno a tu compañero/a.';}},1400);};
+   caja.appendChild(b);});
+ cont.querySelector('.rplay').onclick=()=>{if(ds[i]&&typeof speak==='function')speak(ds[i].texto);};
+}
+
+// ── drie stemmen, één samenvatting: bemiddelen ─────────────────────────────
+// ── opciones: kies uit N, mét verplichte uitleg ────────────────────────────
+// Breed inzetbaar: welk werkwoord past bij dit uur, welke Spaanse uitdrukking
+// dekt deze Vlaamse. Er is telkens één juist antwoord, en de feedback zegt niet
+// alleen wát maar ook waarom — anders leert een gokker niets.
+function retoOpciones(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ (r.items||[]).forEach(it=>{
+   const d=document.createElement('div');d.className='detit';
+   d.innerHTML=(it.audio?'<button class="escbtn opplay" type="button">▶ Escuchar</button>':'')+
+     '<div class="dpal">'+exEsc(it.enunciado)+'</div>'+
+     '<div class="detbtns"></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const btns=d.querySelector('.detbtns'), fb=d.querySelector('.detfb');
+   let cerrado=false;
+   (it.opciones||[]).forEach(o=>{
+     const b=document.createElement('button');b.type='button';b.className='detbtn';b.textContent=o;
+     b.onclick=()=>{if(cerrado)return;cerrado=true;
+       const bien=o===it.correcta;
+       btns.querySelectorAll('.detbtn').forEach(x=>{x.disabled=true;
+         if(x.textContent===it.correcta)x.classList.add('ok');});
+       if(!bien)b.classList.add('no');
+       fb.className='detfb show '+(bien?'g':'b');
+       fb.innerHTML=(bien?'<b>✓ correcto</b>':'<b>✗ es «'+exEsc(it.correcta)+'»</b>')+
+         (it.porque?' · '+exEsc(it.porque):'');};
+     btns.appendChild(b);});
+   const pl=d.querySelector('.opplay');
+   if(pl)pl.onclick=()=>{if(typeof speak==='function')speak(it.enunciado);};
+   caja.appendChild(d);});
+}
+
+function retoVoces(cont,r){
+ cont.innerHTML='<div class="voces"></div>'+
+   '<p class="desc">Schrijf je samenvatting in drie zinnen — korter dan wat je hoorde, en niemand mag wegvallen.</p>'+
+   '<textarea class="escta" rows="5" aria-label="Jouw samenvatting" placeholder="1. Rosa vindt…"></textarea>';
+ const caja=cont.querySelector('.voces');
+ (r.voces||[]).forEach(v=>{
+   const d=document.createElement('div');d.className='voz';
+   d.innerHTML='<button class="escbtn vozbtn" type="button">▶</button>'+
+     '<div><b>'+exEsc(v.quien)+'</b><span class="vozt">'+exEsc(v.texto)+'</span></div>';
+   d.querySelector('.vozbtn').onclick=()=>{if(typeof speak==='function')speak(v.texto);};
+   caja.appendChild(d);});
+}
+
+function retoArticulo(cont,r){
+ const caja=document.createElement('div');caja.className='det';cont.appendChild(caja);
+ const reglas=r.reglas||[];
+ (r.objetos||[]).forEach(it=>{
+   const d=document.createElement('div');d.className='detit';
+   const opts=reglas.map((g,k)=>'<option value="'+g.clave+'">'+exEsc(g.texto)+'</option>').join('');
+   d.innerHTML='<div class="dpal">¿… '+exEsc(it.palabra)+'?</div>'+
+     '<div class="detbtns"><button class="detbtn" type="button" data-a="el">el</button>'+
+     '<button class="detbtn" type="button" data-a="la">la</button></div>'+
+     '<div class="detrule" hidden><label class="desc">¿Qué regla usas?</label>'+
+     '<select><option value="">— elige la regla —</option>'+opts+'</select></div>'+
+     '<div class="detfb" role="status" aria-live="polite"></div>';
+   const fb=d.querySelector('.detfb'),rule=d.querySelector('.detrule'),sel=d.querySelector('select');
+   let elegido=null;
+   d.querySelectorAll('.detbtn').forEach(b=>{b.onclick=()=>{
+     if(elegido)return;
+     elegido=b.dataset.a;rule.hidden=false;sel.focus();
+     fb.className='detfb show';fb.textContent='¿Y por qué? Elige la regla.';};});
+   sel.onchange=()=>{
+     if(!sel.value)return;
+     const bienArt=elegido===it.articulo, bienRegla=sel.value===it.regla;
+     d.querySelectorAll('.detbtn').forEach(x=>x.disabled=true);sel.disabled=true;
+     const b=d.querySelector('.detbtn[data-a="'+elegido+'"]');
+     b.classList.add(bienArt&&bienRegla?'ok':'no');
+     fb.className='detfb show '+(bienArt&&bienRegla?'g':'b');
+     if(bienArt&&bienRegla)fb.innerHTML='<b>✓ correcto</b> · '+exEsc(it.porque);
+     else if(bienArt)fb.innerHTML='<b>✗ el artículo sí, la regla no</b> · '+exEsc(it.porque)+
+       ' — con la regla equivocada, has adivinado.';
+     else fb.innerHTML='<b>✗ es «'+exEsc(it.articulo)+' '+exEsc(it.palabra)+'»</b> · '+exEsc(it.porque);};
+   caja.appendChild(d);});
+}
+
+// ── escena: dezelfde plek, twee tijden ─────────────────────────────────────
+// Twee panelen naast elkaar; klik een voorwerp en je hoort en ziet hoe het heet.
+// De twee voorwerpen die in beide scènes staan, zijn de controle: wie die als
+// verschil noteert, heeft te snel gekeken.
+function retoEscena(cont,r){
+ const items=r.escena||[];
+ function panel(cual,titulo,sub){
+   const propios=items.filter(i=>i.cuando===cual||i.cuando==='ambas');
+   const formas=propios.map((i,k)=>i.forma==='circ'
+     ? '<circle class="eob" data-k="'+k+'" data-c="'+cual+'" cx="'+(i.x+i.w/2)+'" cy="'+(i.y+i.h/2)+
+       '" r="'+(i.w/2)+'" fill="'+i.color+'"/>'
+     : '<rect class="eob" data-k="'+k+'" data-c="'+cual+'" x="'+i.x+'" y="'+i.y+'" width="'+i.w+
+       '" height="'+i.h+'" rx="1.5" fill="'+i.color+'"/>').join('');
+   return '<figure class="esc"><figcaption><b>'+exEsc(titulo)+'</b> <span>'+exEsc(sub)+'</span></figcaption>'+
+     '<svg viewBox="0 0 100 84" role="img" aria-label="'+exEsc(titulo)+'">'+
+     '<rect x="0" y="0" width="100" height="52" fill="#E8F1F7"/>'+          // lucht
+     '<rect x="0" y="52" width="100" height="32" fill="#EDE7DC"/>'+          // plein
+     '<rect x="0" y="30" width="100" height="22" fill="#D8CFC0"/>'+          // gevelrij
+     '<rect x="6" y="24" width="16" height="28" fill="#C6B9A6"/>'+
+     '<rect x="44" y="20" width="18" height="32" fill="#C6B9A6"/>'+
+     '<rect x="76" y="26" width="18" height="26" fill="#C6B9A6"/>'+
+     formas+'</svg><p class="escnom" role="status" aria-live="polite">Klik een voorwerp.</p></figure>';
+ }
+ cont.innerHTML='<div class="escenas">'+panel('antes','1985','la misma plaza, hace cuarenta años')+
+   panel('ahora','ahora','la plaza hoy')+'</div>'+
+   '<p class="desc">De twee dingen die in <b>allebei</b> de scènes staan, zijn de controle: die zijn géén verschil.</p>';
+ cont.querySelectorAll('.eob').forEach(el=>{
+   el.style.cursor='pointer';
+   el.addEventListener('click',()=>{
+     const cual=el.dataset.c, k=Number(el.dataset.k);
+     const propios=items.filter(i=>i.cuando===cual||i.cuando==='ambas');
+     const it=propios[k];if(!it)return;
+     const fig=el.closest('figure');
+     fig.querySelector('.escnom').innerHTML='<b>'+exEsc(it.es)+'</b> — '+exEsc(it.nl)+
+       (it.cuando==='ambas'?' <i>(en las dos escenas)</i>':'');
+     el.style.stroke='#157355';el.style.strokeWidth='1.4';
+     if(typeof speak==='function')speak(it.es);});});
+ const marco=document.createElement('div');marco.className='rsit';
+ marco.innerHTML='<b>Tu marco</b><span class="rpista">'+
+   (r.marco||[]).map(exEsc).join(' · ')+'</span>';
+ cont.appendChild(marco);
+ const ta=document.createElement('textarea');ta.className='escta';ta.rows=5;
+ ta.setAttribute('aria-label','Jouw vijf zinnen');ta.placeholder='1. En la plaza de ahora hay…';
+ cont.appendChild(ta);
+}
+
+function retoMapa(cont,r){
+ const paises=r.paises||[];
+ cont.innerHTML='<div class="rmarca"><span class="rcuenta">0 / '+paises.length+'</span>'+
+   '<div class="rbarra"><i></i></div>'+
+   '<button class="otra rreset" type="button">↺ empezar de nuevo</button></div>'+
+   '<p class="desc">Klik een land, zeg het hardop, laat iemand bevestigen — dan pas aanklikken. '+
+   'De teller is van de klas, niet van jou.</p><div class="rpais"></div>';
+ const cont2=cont.querySelector('.rpais'),cuenta=cont.querySelector('.rcuenta'),
+       barra=cont.querySelector('.rbarra i');
+ let hechos=0;
+ function pinta(iso){ // laat het land op de grote kaart meekleuren, als die er is
+   const svg=document.querySelector('#mapwrap svg');if(!svg)return;
+   const p=svg.querySelector('[data-c="'+iso+'"]');if(p)p.style.filter='saturate(1.6) brightness(1.05)';}
+ paises.forEach(p=>{
+   const b=document.createElement('button');b.type='button';
+   b.innerHTML=exEsc(p.nombre)+'<span class="sil">'+exEsc(p.silabas)+'</span>';
+   b.onclick=()=>{if(b.classList.contains('hecho'))return;
+     b.classList.add('hecho');hechos++;pinta(p.iso);
+     cuenta.textContent=hechos+' / '+paises.length;
+     barra.style.width=Math.round(hechos/paises.length*100)+'%';
+     if(typeof speak==='function')speak(p.nombre);
+     if(hechos===paises.length)cuenta.textContent='¡'+paises.length+' / '+paises.length+' — lo habéis conseguido!';};
+   cont2.appendChild(b);});
+ cont.querySelector('.rreset').onclick=()=>{hechos=0;cuenta.textContent='0 / '+paises.length;
+   barra.style.width='0';cont2.querySelectorAll('button').forEach(x=>x.classList.remove('hecho'));};
+}
+
 const TTS=('speechSynthesis'in window);
 if(TTS){speechSynthesis.getVoices();speechSynthesis.onvoiceschanged=()=>{};}
-const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
+const PANELS=[['vocab','Vocabulario'],['gram','Gramática'],['lectura','Lectura'],['escuchar','Escuchar 🎧'],['juegos','Juegos'],['retos','Retos 🎯'],['hablar','Hablar 🎙️'],['cultura','Cultura'],['extra','Extra']];
 const sn=document.getElementById('subnav');
 // ── tabbladen · het adres volgt mee ──────────────────────────────────────────
 // #escuchar opent dat tabblad; #lec_1 opent het paneel waar dat element in
@@ -1295,6 +1582,7 @@ function buildGramType(){
  buildType('gt_3',{title:"Lo · la · los · las — no repitas la palabra",desc:"Je hebt het gerecht al genoemd; nu vervang je het door één woordje. Het komt overeen in geslacht en getal en staat <b>vóór</b> het werkwoord — <i>¿La cuenta? La traigo.</i>",accents:'soft',perBlock:12,expect:12,items:[{"q": "¿La cuenta? Ahora ___ traigo.", "ans": "la", "why": "la cuenta → la"}, {"q": "¿El menú? ___ tenemos aquí.", "ans": "lo", "why": "el menú → lo"}, {"q": "¿Los churros? ___ comemos con chocolate.", "ans": "los", "why": "los churros → los"}, {"q": "¿Las fresas? ___ compro en el mercado.", "ans": "las", "why": "las fresas → las"}, {"q": "¿El pescado? No ___ como nunca.", "ans": "lo", "why": "el pescado → lo"}, {"q": "¿La sopa? ___ prefiero caliente.", "ans": "la", "why": "la sopa → la"}, {"q": "¿Los tacos? ___ pedimos con carne.", "ans": "los", "why": "los tacos → los"}, {"q": "¿La propina? ___ dejamos en la mesa.", "ans": "la", "why": "la propina → la"}, {"q": "¿El café? ___ tomo sin azúcar.", "ans": "lo", "why": "el café → lo"}, {"q": "¿Las servilletas? ___ pongo yo.", "ans": "las", "why": "las servilletas → las"}, {"q": "¿El guacamole? ___ hago con aguacate y limón.", "ans": "lo", "why": "el guacamole → lo"}, {"q": "¿Las patatas? ___ quiero fritas.", "ans": "las", "why": "las patatas → las"}]});
 }
 buildGramType();
+buildRetos("retos_u5",{"retos": [{"num": 1, "nombre": "La cocina a ciegas", "lente": "🎭 simulatie met beperking", "gancho_es": "Tú tienes los ingredientes. La receta la oyes, no la ves.", "gancho_nl": "Jij hebt de ingrediënten. Het recept hoor je, je ziet het niet.", "consigna_es": "Escucha cada paso y elige la cantidad correcta. Una mal y el plato se estropea.", "consigna_nl": "Luister naar elke stap en kies de juiste hoeveelheid. Eén fout en het gerecht mislukt.", "regla": "Je kiest op wat je hóórt, niet op wat logisch lijkt. Twee stappen gebruiken hetzelfde product met een ándere hoeveelheid — daar gaat het mis.", "tipo": "opciones", "items": [{"enunciado": "Primero pon un kilo de tomates en la olla.", "correcta": "un kilo de", "opciones": ["un kilo de", "un poco de", "una botella de"], "audio": true, "porque": "let op de hoeveelheid, niet op het product"}, {"enunciado": "Añade un poco de sal, no mucha.", "correcta": "un poco de", "opciones": ["un poco de", "un kilo de", "un paquete de"], "audio": true, "porque": "let op de hoeveelheid, niet op het product"}, {"enunciado": "Ahora echa media cebolla, solo media.", "correcta": "media", "opciones": ["media", "una", "dos"], "audio": true, "porque": "let op de hoeveelheid, niet op het product"}, {"enunciado": "Pon un paquete de arroz entero.", "correcta": "un paquete de", "opciones": ["un paquete de", "un poco de", "medio paquete de"], "audio": true, "porque": "let op de hoeveelheid, niet op het product"}, {"enunciado": "Añade dos vasos de agua.", "correcta": "dos vasos de", "opciones": ["dos vasos de", "una botella de", "un vaso de"], "audio": true, "porque": "let op de hoeveelheid, niet op het product"}, {"enunciado": "Y al final, muy poco picante.", "correcta": "muy poco", "opciones": ["muy poco", "mucho", "bastante"], "audio": true, "porque": "let op de hoeveelheid, niet op het product"}]}, {"num": 6, "nombre": "La receta de la abuela, sin medidas", "lente": "🤝 bemiddelen", "gancho_es": "«Un poquito», «al gusto», «un chorrito». ¿Y eso cuánto es?", "gancho_nl": "«Een beetje», «naar smaak», «een scheutje». En hoeveel is dat?", "consigna_es": "Convierte la receta de la abuela en medidas exactas para alguien que nunca ha cocinado.", "consigna_nl": "Zet het recept van de oma om in exacte maten voor iemand die nooit gekookt heeft.", "regla": "Elke vage maat wordt een getal met eenheid. Je mag niet «een beetje» laten staan, en je mag ook niets weglaten.", "tipo": "opciones", "items": [{"enunciado": "«un poquito de sal» — ¿cuánto es eso?", "correcta": "una cucharadita", "opciones": ["una cucharadita", "cien gramos", "medio kilo"], "porque": "«un poquito» bij zout is ongeveer een theelepel, geen honderd gram"}, {"enunciado": "«un chorrito de aceite» — ¿cuánto es eso?", "correcta": "dos cucharadas", "opciones": ["dos cucharadas", "medio litro", "una gota"], "porque": "een scheutje olie is twee eetlepels — een halve liter is frituren"}, {"enunciado": "«harina, la que pida» — ¿cuánto es eso?", "correcta": "doscientos cincuenta gramos", "opciones": ["doscientos cincuenta gramos", "un kilo", "una cucharadita"], "porque": "«la que pida» betekent tot het deeg samenhangt: voor dit recept 250 g"}, {"enunciado": "«azúcar al gusto» — ¿cuánto es eso?", "correcta": "cuatro cucharadas", "opciones": ["cuatro cucharadas", "un kilo", "una pizca"], "porque": "«al gusto» is geen snufje: bij een dessert is het enkele eetlepels"}, {"enunciado": "«se hace hasta que esté» — ¿cuánto es eso?", "correcta": "veinte minutos", "opciones": ["veinte minutos", "cinco horas", "dos minutos"], "porque": "«hasta que esté» is bij dit gerecht ongeveer twintig minuten"}]}, {"num": 9, "nombre": "Cocina en directo", "lente": "📻 mediaformat", "gancho_es": "Treinta segundos en directo. La clase hace exactamente lo que dices.", "gancho_nl": "Dertig seconden live. De klas doet exact wat jij zegt.", "consigna_es": "Graba una instrucción de cocina de treinta segundos. Sin usar «poner».", "consigna_nl": "Neem een kookinstructie van dertig seconden op. Zonder «poner» te gebruiken.", "regla": "Het werkwoord «poner» is verboden — en dat is precies het werkwoord dat je wilt gebruiken. Je moet naar añadir, echar, cortar, mezclar, calentar grijpen.", "tipo": "grabar", "situaciones": [{"es": "Primero corta … en trozos.", "nl": "", "pista": ""}, {"es": "Después añade …", "nl": "", "pista": ""}, {"es": "Mezcla todo durante …", "nl": "", "pista": ""}, {"es": "Calienta … minutos.", "nl": "", "pista": ""}, {"es": "Y ya está: sirve con …", "nl": "", "pista": ""}], "items": [{"text": "Mi receta en directo", "cue": "één minuut · minstens vijf van de zeven kookwerkwoorden: añadir · echar · cortar · mezclar · calentar · cocer · servir"}]}]});
 buildEscucha("esc_u5",{"title": "Una mesa para tres", "audio": "audio/C5_U5.mp3", "expectDetalle": 5, "situacion": {"lugar": "Un restaurante pequeño en el centro de Ciudad de México, a las dos", "quien": "Un camarero, Diego y dos amigos", "que": "Piden la comida, pero un plato ya no queda", "claves": ["¿qué va a tomar?", "para mí…", "¿me trae…?"]}, "guion": [{"who": "Camarero", "es": "Buenas tardes. ¿Una mesa para tres?", "nl": "Goedemiddag. Een tafel voor drie?"}, {"who": "Diego", "es": "Sí, por favor. ¿Nos trae la carta?", "nl": "Ja, graag. Brengt u ons de kaart?"}, {"who": "Camarero", "es": "Aquí tienen. Hoy el menú del día cuesta ciento veinte pesos: sopa, plato fuerte y postre.", "nl": "Alstublieft. Vandaag kost het dagmenu honderdtwintig peso: soep, hoofdgerecht en dessert."}, {"who": "Diego", "es": "Perfecto. Para mí, la sopa de tortilla y los tacos de pollo.", "nl": "Perfect. Voor mij de tortillasoep en de kiptaco's."}, {"who": "Camarero", "es": "Lo siento, de tacos de pollo ya no quedan. ¿De carne o de pescado?", "nl": "Het spijt me, kiptaco's zijn er niet meer. Met vlees of met vis?"}, {"who": "Diego", "es": "De pescado, entonces. ¿Pican mucho?", "nl": "Dan met vis. Zijn ze erg pikant?"}, {"who": "Camarero", "es": "Un poco. La salsa verde pica bastante; la roja casi nada.", "nl": "Een beetje. De groene saus is redelijk pikant, de rode bijna niet."}, {"who": "Diego", "es": "Vale, con salsa roja. Y de postre, flan.", "nl": "Oké, met rode saus. En als dessert, flan."}, {"who": "Camarero", "es": "¿Y para beber?", "nl": "En om te drinken?"}, {"who": "Diego", "es": "Un agua de horchata y dos refrescos, por favor.", "nl": "Een horchata en twee frisdranken, alstublieft."}, {"who": "Camarero", "es": "Muy bien. Ahora se los traigo. ¡Que aproveche!", "nl": "Heel goed. Ik breng ze zo. Smakelijk!"}, {"who": "Diego", "es": "Gracias. Ah, ¿nos trae también la cuenta con el postre? Tenemos prisa.", "nl": "Bedankt. Ah, brengt u ook de rekening bij het dessert? We hebben haast."}, {"who": "Camarero", "es": "Claro que sí. ¿Todo junto o por separado?", "nl": "Zeker. Alles samen of apart?"}], "global": {"q": "¿Qué pasa en el restaurante?", "opts": ["Piden la comida y un plato ya no queda", "Reservan una mesa por teléfono", "Se quejan de la comida"], "ans": "Piden la comida y un plato ya no queda", "why": "«de tacos de pollo ya no quedan»"}, "detalle": [{"q": "¿Cuánto cuesta el menú del día?", "opts": ["120 pesos", "112 pesos", "150 pesos"], "ans": "120 pesos", "why": "«cuesta ciento veinte pesos»"}, {"q": "¿Qué plato ya no queda?", "opts": ["Los tacos de pollo", "La sopa de tortilla", "El flan"], "ans": "Los tacos de pollo", "why": "«de tacos de pollo ya no quedan»"}, {"q": "¿Qué salsa pide Diego?", "opts": ["La roja", "La verde", "Las dos"], "ans": "La roja", "why": "«Vale, con salsa roja»"}, {"q": "¿Qué beben?", "opts": ["Una horchata y dos refrescos", "Tres aguas", "Dos cafés"], "ans": "Una horchata y dos refrescos", "why": "«Un agua de horchata y dos refrescos»"}, {"q": "¿Por qué piden la cuenta con el postre?", "opts": ["Porque tienen prisa", "Porque no les gusta el sitio", "Porque no hay postre"], "ans": "Porque tienen prisa", "why": "«Tenemos prisa»"}], "vf": [{"q": "La salsa verde pica más que la roja.", "ans": true, "prueba": "la salsa verde pica bastante; la roja casi nada"}, {"q": "El menú del día no incluye postre.", "ans": false, "prueba": "sopa, plato fuerte y postre"}, {"q": "Son tres personas.", "ans": true, "prueba": "una mesa para tres"}], "produccion": {"prompt": "Ahora pides tú. Graba cuatro turnos: pide la carta, pide un primer plato y un segundo, pregunta si pica, y pide la cuenta. Usa: para mí… · ¿me trae…? · ¿me pone…?", "modo": "grabar", "modelo": "Buenas tardes, ¿nos trae la carta? Para mí… y de segundo… ¿Pica mucho? ¿Nos trae la cuenta, por favor?"}});
 buildAudioCortos("esc_u5",{"fragmentos": [{"etiqueta": "Audio 5.1 · La lista · 0:50", "seccion": "§1 · Cantidades · mucho / poco / un poco de", "titulo": "El dictado de la compra", "tarea": "Schrijf de zes producten met hun hoeveelheid, één per regel.", "audio": "audio/C5_U5_01.mp3", "guion": [{"who": "Diego", "es": "Te dicto la lista de la compra. Seis cosas, dos veces cada una.", "nl": "Ik dicteer je het boodschappenlijstje. Zes dingen, elk twee keer."}, {"who": "Diego", "es": "Número uno.", "nl": "Nummer 1."}, {"who": "Diego", "es": "un kilo de tomates", "nl": "een kilo tomaten"}, {"who": "Diego", "es": "un kilo de tomates", "nl": "een kilo tomaten"}, {"who": "Diego", "es": "Número dos.", "nl": "Nummer 2."}, {"who": "Diego", "es": "una botella de agua", "nl": "een fles water"}, {"who": "Diego", "es": "una botella de agua", "nl": "een fles water"}, {"who": "Diego", "es": "Número tres.", "nl": "Nummer 3."}, {"who": "Diego", "es": "un paquete de arroz", "nl": "een pak rijst"}, {"who": "Diego", "es": "un paquete de arroz", "nl": "een pak rijst"}, {"who": "Diego", "es": "Número cuatro.", "nl": "Nummer 4."}, {"who": "Diego", "es": "doscientos gramos de queso", "nl": "tweehonderd gram kaas"}, {"who": "Diego", "es": "doscientos gramos de queso", "nl": "tweehonderd gram kaas"}, {"who": "Diego", "es": "Número cinco.", "nl": "Nummer 5."}, {"who": "Diego", "es": "un poco de leche", "nl": "een beetje melk"}, {"who": "Diego", "es": "un poco de leche", "nl": "een beetje melk"}, {"who": "Diego", "es": "Número seis.", "nl": "Nummer 6."}, {"who": "Diego", "es": "muchas manzanas", "nl": "veel appels"}, {"who": "Diego", "es": "muchas manzanas", "nl": "veel appels"}, {"who": "Diego", "es": "Y ya está. ¡Gracias!", "nl": "En dat is het. Bedankt!"}]}, {"etiqueta": "Audio 5.2 · En el restaurante · 1:05", "seccion": "§3 · Pedir en el restaurante · la cortesía", "titulo": "Pedir en el restaurante — camarero y cliente", "tarea": "Volg met je vinger: 1ª globaal, 2ª detail. Wie zegt wat?", "audio": "audio/C5_U5_02.mp3", "guion": [{"who": "Camarero", "es": "Buenas tardes, ¿qué va a tomar?", "nl": "Goedemiddag, wat gaat u nemen?"}, {"who": "Cliente", "es": "Para mí, una ensalada de primero.", "nl": "Voor mij een salade als voorgerecht."}, {"who": "Camarero", "es": "Muy bien. ¿Y de segundo?", "nl": "Heel goed. En als hoofdgerecht?"}, {"who": "Cliente", "es": "Para mí, de segundo, pollo.", "nl": "Voor mij, als hoofdgerecht, kip."}, {"who": "Camarero", "es": "¿Y para beber?", "nl": "En om te drinken?"}, {"who": "Cliente", "es": "¿Me pone un refresco, por favor?", "nl": "Doet u mij een frisdrank, alstublieft?"}, {"who": "Camarero", "es": "Enseguida. ¿Algo de postre?", "nl": "Komt eraan. Iets als dessert?"}, {"who": "Cliente", "es": "No, gracias. La cuenta, por favor.", "nl": "Nee, dank u. De rekening, alstublieft."}, {"who": "Camarero", "es": "Aquí tiene. ¡Que aproveche!", "nl": "Alstublieft. Smakelijk!"}]}, {"etiqueta": "Audio 5.3 · ¿lo/la/los/las? · 0:40", "seccion": "§4 · lo / la / los / las", "titulo": "Cuatro respuestas cortas del camarero", "tarea": "Kruis aan welk pronomen je in het antwoord hoort.", "audio": "audio/C5_U5_03.mp3", "guion": [{"who": "Narradora", "es": "Cuatro preguntas y cuatro respuestas. ¿Qué pronombre oyes?", "nl": "Vier vragen en vier antwoorden. Welk voornaamwoord hoor je?"}, {"who": "Narradora", "es": "Uno.", "nl": "Eén."}, {"who": "Cliente", "es": "¿Me trae la carta?", "nl": "Brengt u mij de kaart?"}, {"who": "Camarero", "es": "Sí, la traigo ahora mismo.", "nl": "Ja, ik breng hem meteen."}, {"who": "Narradora", "es": "Dos.", "nl": "Twee."}, {"who": "Cliente", "es": "¿Y los tacos?", "nl": "En de taco's?"}, {"who": "Camarero", "es": "Los preparo en cinco minutos.", "nl": "Die maak ik binnen vijf minuten klaar."}, {"who": "Narradora", "es": "Tres.", "nl": "Drie."}, {"who": "Cliente", "es": "¿Me pone el postre?", "nl": "Doet u mij het dessert?"}, {"who": "Camarero", "es": "Claro, lo traigo enseguida.", "nl": "Natuurlijk, ik breng het meteen."}, {"who": "Narradora", "es": "Cuatro.", "nl": "Vier."}, {"who": "Cliente", "es": "¿Tienen las bebidas frías?", "nl": "Hebt u de drankjes koud?"}, {"who": "Camarero", "es": "Sí, las tenemos en la nevera.", "nl": "Ja, we hebben ze in de koelkast."}]}]});
 buildLectura("lec_u5",{"titulo": "El mercado de La Merced en cinco datos", "tipo": "infografía (datos + texto)", "emisor": "La revista de viajes «Sabores»", "receptor": "Quien visita Ciudad de México por primera vez", "objetivo": "Enseñarte de un vistazo cómo es el mercado más grande del país", "prediccion": {"q": "Kijk eerst alleen naar de vijf genummerde cijfers en de kop. Wat voor tekst is dit?", "opts": ["Een infografie met feiten over een markt", "Een recept", "Een menukaart"], "ans": "Een infografie met feiten over een markt", "why": "Genummerde cijfers met een korte uitleg erbij = feiten in beeld."}, "texto": [["titulo", "🌽 EL MERCADO DE LA MERCED EN CINCO DATOS"], ["lema", "Ciudad de México · el mercado de comida más grande del país"], ["lista", ["1 · Ocupa cuatro edificios y más de tres mil puestos.", "2 · Abre todos los días a las seis de la mañana.", "3 · Aquí hay más de sesenta clases de chile.", "4 · Cada día entran unas ochenta mil personas.", "5 · El puesto más antiguo tiene más de cien años."]], ["p", "En el pasillo de la fruta hay pirámides de naranjas, piñas y plátanos. Los vendedores gritan los precios y te dan a probar un trozo: «¡Pruebe, pruebe!»"], ["p", "En la zona de comida preparada puedes comer por muy poco dinero. Un taco cuesta entre quince y veinticinco pesos. Con cien pesos comes muchísimo."], ["aviso", ["🌶️ EL CHILE · dato curioso", "El chile habanero es el más picante del mercado. El poblano casi no pica. Si eres nuevo, empieza con poco: aquí «un poquito» ya es mucho."]], ["p", "El mercado no es solo comida: es el lugar donde la ciudad se encuentra. Muchas familias compran aquí desde hace tres generaciones."], ["firma", "Datos: Gobierno de la Ciudad de México · Fotos: Diego"]], "traduccion": "DE MARKT VAN LA MERCED IN VIJF CIJFERS. Mexico-Stad · de grootste voedingsmarkt van het land. 1 · Ze beslaat vier gebouwen en meer dan drieduizend kraampjes. 2 · Ze opent elke dag om zes uur ’s ochtends. 3 · Er zijn hier meer dan zestig soorten chilipeper. 4 · Elke dag komen er zo’n tachtigduizend mensen binnen. 5 · Het oudste kraam bestaat meer dan honderd jaar. — In het fruitgangpad liggen piramides van sinaasappels, ananassen en bananen. De verkopers roepen de prijzen en geven je een stukje om te proeven: «Proef eens, proef eens!» In de zone met bereide gerechten kun je voor heel weinig geld eten. Een taco kost tussen vijftien en vijfentwintig peso. Met honderd peso eet je heel veel. DE CHILI: de habanero is de pikantste van de markt. De poblano prikt bijna niet. Ben je nieuw, begin dan met weinig: hier is «een beetje» al veel. — De markt is niet alleen eten: het is de plek waar de stad elkaar tegenkomt. Veel families kopen hier al drie generaties lang.", "global": {"q": "¿Qué tipo de texto es?", "opts": ["Una infografía con datos sobre un mercado", "Una receta de cocina", "La carta de un restaurante"], "ans": "Una infografía con datos sobre un mercado"}, "escanear": [{"q": "¿Cuántos puestos hay? (en cifras)", "ans": "3000", "alt": ["tres mil", "más de tres mil", "3.000", "3 000"], "why": "«más de tres mil puestos»"}, {"q": "¿A qué hora abre el mercado?", "ans": "a las seis de la mañana", "alt": ["a las seis", "seis", "6", "las seis"], "why": "«a las seis de la mañana»"}, {"q": "¿Cuántas personas entran cada día? (en cifras)", "ans": "80000", "alt": ["ochenta mil", "80.000", "80 000", "unas ochenta mil"], "why": "«unas ochenta mil personas»"}, {"q": "¿Cuánto cuesta un taco?", "ans": "entre 15 y 25 pesos", "alt": ["15 y 25", "entre quince y veinticinco pesos", "quince y veinticinco"], "why": "«entre quince y veinticinco pesos»"}, {"q": "¿Cuál es el chile más picante del mercado?", "ans": "el habanero", "alt": ["habanero", "el chile habanero"], "why": "«El chile habanero es el más picante»"}], "vf": [{"q": "El mercado abre solo los fines de semana.", "ans": false, "prueba": "abre todos los días"}, {"q": "Hay más de sesenta clases de chile.", "ans": true, "prueba": "más de sesenta clases de chile"}, {"q": "Comer en el mercado es caro.", "ans": false, "prueba": "puedes comer por muy poco dinero"}, {"q": "El chile poblano es muy picante.", "ans": false, "prueba": "el poblano casi no pica"}, {"q": "El puesto más antiguo tiene más de cien años.", "ans": true, "prueba": "más de cien años"}], "contexto": [{"q": "«los puestos» — ¿qué son?", "opts": ["de kraampjes", "de posities in een rij", "de brievenbussen"], "ans": "de kraampjes", "why": "Het staat naast «cuatro edificios» — het gaat over de markt."}, {"q": "«te dan a probar un trozo» — ¿qué te ofrecen?", "opts": ["een stukje om te proeven", "een korting", "een zak"], "ans": "een stukje om te proeven", "why": "Erna volgt de roep «¡Pruebe, pruebe!»"}, {"q": "«casi no pica» — ¿pica mucho o poco?", "opts": ["Bijna niet", "Heel erg", "Alleen als hij rood is"], "ans": "Bijna niet", "why": "Het staat tegenover «el más picante»."}, {"q": "«el lugar donde la ciudad se encuentra» — ¿qué quiere decir?", "opts": ["De plek waar iedereen elkaar tegenkomt", "De plek waar de stad ligt", "De plek waar je iets verliest"], "ans": "De plek waar iedereen elkaar tegenkomt", "why": "Erna volgt: families die er al drie generaties komen."}], "produccion": {"prompt": "Escribe cinco datos sobre un mercado o un supermercado de tu ciudad (5–6 frases): cuándo abre, qué hay, qué cuesta poco, qué cuesta mucho y qué compras tú allí. Usa mucho/mucha/muchos/poco.", "modelo": "1 · Abre… 2 · Hay muchos… y poca… 3 · Un/Una … cuesta… 4 · Lo más caro es… 5 · Yo compro… porque…"}});

@@ -495,6 +495,220 @@ def _encuesta(r):
             % (filas, marco, _lineas(2, "wl full")))
 
 
+def _carta_intrusa(r):
+    """Menukaart met indringers: aankruisen én het echte land noteren."""
+    d = r["datos"]
+    filas = "".join(
+        '<tr><td style="text-align:center">☐</td><td class="fr">%s</td>'
+        '<td><span class="wl md"></span></td></tr>' % E(p)
+        for p, _pais, _mex in d["carta"])
+    return (
+        '<div class="rol">🍽️ La carta de «Sabor de México»</div>'
+        '<p style="font-size:9.8pt;margin:0 0 2mm">Diez platos, diez banderas. Pero cuatro no '
+        'son de aquí. <span class="gloss">Tien gerechten — vier horen er niet thuis. Kruis ze aan '
+        'en schrijf het echte land ernaast.</span></p>'
+        '<table class="wtab" style="width:100%%"><thead><tr>'
+        '<th style="width:14mm">¿Intruso?</th><th>El plato</th>'
+        '<th style="width:44mm">Es de… (país)</th></tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>La trampa.</b> Dos platos suenan '
+        'extranjeros y son mexicanos de toda la vida. ¿Cuáles? '
+        '<span class="gloss">Twee gerechten klinken buitenlands en zijn door en door Mexicaans.</span></p>'
+        '%s'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Vuestra puntuación:</b> '
+        'intrusos acertados <span class="wl sm"></span> × 1 &nbsp;−&nbsp; mexicanos marcados '
+        '<span class="wl sm"></span> × 2 &nbsp;=&nbsp; <b><span class="wl sm"></span> puntos</b></p>'
+        % (filas, _lineas(2, "wl lg")))
+
+
+def _resena(r):
+    """Eén ster geven zonder één lelijk woord — beleefd vernietigend."""
+    d = r["datos"]
+    quejas = "".join('<span>%s</span>' % E(q) for q in d["quejas"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    estrellas = ('<div class="vidas"><span class="vida">★</span>'
+                 '<span style="color:var(--line2);font-size:12pt">★★★★</span>'
+                 '<span>una estrella de cinco · één ster op vijf</span></div>')
+    return (
+        '<div class="prohib" style="display:inline-block">Prohibido: malo · horrible · fatal · '
+        'asqueroso · no me gusta nada</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Paso 1 — elige cinco quejas.</b> '
+        '<span class="gloss">Kies vijf klachten en kruis ze aan.</span></p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:1mm 0 1mm"><b>Paso 2 — tu único material.</b> '
+        'Todo lo demás está prohibido. <span class="gloss">Alleen met deze vijf frames.</span></p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Paso 3 — la reseña.</b> Cinco frases '
+        'y una despedida amable:</p>'
+        '<div class="wbox" style="height:46mm"></div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Tu estrella y tu título</b> — cinco '
+        'palabras como máximo:</p>%s%s'
+        % (quejas, marco, estrellas,
+           '<div style="margin:1.5mm 0"><span class="wl full"></span></div>'))
+
+
+def _precio_justo(r):
+    """Peso ↔ euro: omrekenen, vergelijken, conclusies met een hoeveelheid."""
+    d = r["datos"]
+    filas = "".join(
+        '<tr><td class="fr">%s</td><td style="text-align:center">%d</td>'
+        '<td><span class="wl sm"></span> €</td><td style="text-align:center">%s €</td>'
+        '<td><span class="wl sm"></span></td></tr>'
+        % (E(p), pesos, ("%.2f" % be).replace(".", ","))
+        for p, pesos, be in d["productos"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<div class="decl"><b>El cambio de hoy</b><span>%s</span></div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1.5mm"><b>Paso 1 — convertid.</b> Dividid los '
+        'pesos entre 20. <span class="gloss">Deel de peso\'s door 20 — dat is de omrekening.</span></p>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th>El producto</th>'
+        '<th style="width:18mm">Pesos</th><th style="width:22mm">= euros</th>'
+        '<th style="width:22mm">En Bélgica</th><th style="width:26mm">¿Más caro dónde?</th>'
+        '</tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.4pt;margin:1.5mm 0 0;color:var(--mut)">En la última columna escribe '
+        '<b>MX</b> o <b>BE</b>. <span class="gloss">Schrijf waar het duurder is.</span></p>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Paso 2 — tres conclusiones,</b> cada una '
+        'con una cantidad <u>y</u> un precio:</p>'
+        '<div class="tira">%s</div>%s'
+        % (E(d["cambio"]), filas, marco, _lineas(3, "wl full")))
+
+
+def _lo_pido(r):
+    """Info-gap met pronomen: A ziet het ingrediënt, B moet ernaar vragen."""
+    d = r["datos"]
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    # Alumno A krijgt de ingrediëntkolom, B alleen de gerechten — anders valt er
+    # niets te vragen.
+    lista_a = "".join(
+        '<tr><td style="font-size:9.4pt">%d</td><td class="fr">%s</td>'
+        '<td style="font-size:9.4pt;color:var(--gd)">%s</td></tr>'
+        % (i, E(p), E(ing)) for i, (p, ing) in enumerate(d["platos"], 1))
+    lista_b = "".join(
+        '<tr><td style="font-size:9.4pt">%d</td><td class="fr">%s</td>'
+        '<td style="text-align:center;font-size:9.2pt">☐ lo pido &nbsp; ☐ no lo pido</td>'
+        '<td><span class="wl md"></span></td></tr>'
+        % (i, E(p)) for i, (p, _ing) in enumerate(d["platos"], 1))
+    return (
+        '<p style="font-size:9.8pt;margin:0 0 1.5mm"><b>Tu marco.</b> Sin pronombre no hay '
+        'respuesta. <span class="gloss">Zonder voornaamwoord krijg je geen antwoord.</span></p>'
+        '<div class="tira">%s</div>'
+        '<div class="rol">🍳 Alumno A · la cocina lo sabe todo</div>'
+        '<p style="font-size:9.6pt;margin:0 0 1mm">Contesta solo <b>sí, lo lleva</b> o '
+        '<b>no, no lo lleva</b>. No leas la lista en voz alta. '
+        '<span class="gloss">Antwoord alleen ja of nee. Lees de lijst niet voor.</span></p>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:8mm">#</th>'
+        '<th>El plato</th><th style="width:52mm">Lleva…</th></tr></thead><tbody>%s</tbody></table>'
+        '<div class="pliegue">✂ Doblar aquí · hier vouwen</div>'
+        '<div class="rol">🙋 Alumno B · tú decides</div>'
+        '<p style="font-size:9.6pt;margin:0 0 1mm">Pregunta, decide y escribe <b>por qué</b>. '
+        '<span class="gloss">Vraag, beslis en schrijf waarom.</span></p>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:8mm">#</th>'
+        '<th>El plato</th><th style="width:38mm">Mi decisión</th><th>Porque…</th>'
+        '</tr></thead><tbody>%s</tbody></table>'
+        % (marco, lista_a, lista_b))
+
+
+def _equipacion(r):
+    """Knipkaarten met truitjes: beschrijven op kleur, de groep raadt."""
+    d = r["datos"]
+    tarjetas = "".join(
+        '<div class="ficha fid"><b>%s</b><span>%s</span><span class="fl">%s</span></div>'
+        % (E(eq), E(pais), E(desc)) for eq, pais, desc in d["equipos"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    filas = "".join(
+        '<tr><td style="font-size:9.4pt">%d</td><td><span class="wl md"></span></td>'
+        '<td><span class="wl sm"></span></td><td style="text-align:center;font-size:9.2pt">'
+        '☐ sí ☐ no</td></tr>' % i for i in range(1, 9))
+    return (
+        '<div class="prohib" style="display:inline-block">Prohibido decir: el nombre del club · '
+        'la ciudad · el país</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Tu marco</b> — mínimo dos prendas por '
+        'descripción: <span class="gloss">minstens twee kledingwoorden per beschrijving.</span></p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2mm 0 1mm"><b>El marcador del grupo.</b> '
+        '<span class="gloss">Noteer per beurt welke club en welk land jullie gokken.</span></p>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:8mm">#</th>'
+        '<th>Creemos que es…</th><th style="width:30mm">País</th>'
+        '<th style="width:24mm">¿Acertado?</th></tr></thead><tbody>%s</tbody></table>'
+        '<div class="pliegue">✂ Tarjetas de equipación · truitjeskaarten</div>'
+        '<div class="fichas f4">%s</div>' % (marco, filas, tarjetas))
+
+
+def _armario(r):
+    """Inventaris van een kast; elke conclusie heeft een bewijsstuk."""
+    d = r["datos"]
+    inv = "".join('<tr><td style="text-align:center;font-size:9pt;color:var(--mut)">%d</td>'
+                  '<td class="fr">%s</td></tr>' % (i, E(x))
+                  for i, x in enumerate(d["armario"], 1))
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    pruebas = "".join(
+        '<tr><td><span class="wl md"></span></td><td><span class="wl lg"></span></td></tr>'
+        for _ in range(3))
+    return (
+        '<div class="rol">🚪 El armario de… ¿de quién?</div>'
+        '<p style="font-size:9.8pt;margin:0 0 2mm">Nadie te dice quién vive aquí. Solo tienes '
+        'lo que hay dentro — y lo que <b>no</b> hay. '
+        '<span class="gloss">Niemand zegt wie hier woont. Je hebt alleen wat erin ligt — en wat er '
+        '<b>niet</b> ligt.</span></p>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:8mm">#</th>'
+        '<th>En el armario hay…</th></tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Tres conclusiones, tres pruebas.</b> '
+        'Una conclusión sin prenda no vale. <span class="gloss">Een conclusie zonder kledingstuk '
+        'telt niet.</span></p>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th style="width:52mm">Creo que…</th>'
+        '<th>… porque en el armario hay/no hay…</th></tr></thead><tbody>%s</tbody></table>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>Mi personaje en una frase</b> — oficio, '
+        'edad más o menos y dónde vive:</p>'
+        '<div style="margin:1mm 0"><span class="wl full"></span></div>'
+        % (inv, pruebas, marco))
+
+
+def _moda_circular(r):
+    """Waterdata + eigen aankopen, in «acabar de»-zinnen."""
+    d = r["datos"]
+    filas = "".join('<tr><td class="fr">%s</td><td style="text-align:right"><b>%s</b></td></tr>'
+                    % (E(q), E(v)) for q, v in d["tabla"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    return (
+        '<div class="rol">💧 La ropa en cifras</div>'
+        '<table class="wtab" style="width:100%%"><thead><tr><th>El dato</th>'
+        '<th style="width:44mm;text-align:right">Cuánto</th></tr></thead><tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>El dato que más nos sorprende</b> y por qué:</p>'
+        '<div style="margin:1mm 0"><span class="wl full"></span></div>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Vuestras tres últimas compras</b> — con '
+        '«acabar de» y un número de la tabla:</p>'
+        '<div class="tira">%s</div>%s'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm"><b>Una promesa realista</b> para el próximo mes '
+        '(sin prometer imposibles):</p>'
+        '<div style="margin:1mm 0"><span class="wl full"></span></div>'
+        % (filas, marco, _lineas(3, "wl full")))
+
+
+def _escaparate(r):
+    """Precies dertig woorden — met een telrooster om echt te tellen."""
+    d = r["datos"]
+    prendas = "".join('<span><b>%s</b> %s</span>' % (E(p), E(pr)) for p, pr in d["prendas"])
+    marco = "".join('<span>%s</span>' % E(m) for m in d["marco"])
+    # zes rijen van vijf hokjes = precies dertig woorden, één woord per hokje
+    rejilla = "".join(
+        '<tr>%s</tr>' % "".join('<td><span class="wl sm"></span></td>' for _ in range(5))
+        for _ in range(6))
+    return (
+        '<p style="font-size:9.8pt;margin:0 0 1mm"><b>Elegid una prenda.</b></p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:1mm 0 1mm"><b>Fórmulas con pronombre</b> — necesitáis '
+        'cuatro como mínimo: <span class="gloss">minstens vier keer lo, la, los of las.</span></p>'
+        '<div class="tira">%s</div>'
+        '<p style="font-size:9.8pt;margin:2.5mm 0 1mm"><b>El cartel.</b> Una palabra por casilla. '
+        'Seis filas de cinco = treinta exactas. <span class="gloss">Eén woord per hokje. Zes rijen '
+        'van vijf = precies dertig — het rooster telt voor je.</span></p>'
+        '<table class="wtab" style="width:100%%"><tbody>%s</tbody></table>'
+        '<p style="font-size:9.8pt;margin:3mm 0 1mm">Pronombres usados: '
+        '<span class="wl sm"></span> &nbsp;·&nbsp; ¿llegáis a treinta? ☐ sí ☐ no — '
+        '¿qué habéis quitado? <span class="wl md"></span></p>'
+        % (prendas, marco, rejilla))
+
+
 _MATERIAL = {"C5-U0-RETO-03": _gps, "C5-U0-RETO-08": _numeros, "C5-U0-RETO-10": _pasaporte,
              "C5-U1-RETO-02": _identidad, "C5-U1-RETO-03": _censo,
              "C5-U1-RETO-06": _aeropuerto, "C5-U1-RETO-08": _error_caro,
@@ -503,7 +717,11 @@ _MATERIAL = {"C5-U0-RETO-03": _gps, "C5-U0-RETO-08": _numeros, "C5-U0-RETO-10": 
              "C5-U3-RETO-01": _horario, "C5-U3-RETO-03": _al_reves,
              "C5-U3-RETO-06": _oficios, "C5-U3-RETO-07": _app,
              "C5-U4-RETO-04": _cita_ciegas, "C5-U4-RETO-05": _presupuesto,
-             "C5-U4-RETO-07": _anuncio, "C5-U4-RETO-10": _encuesta}
+             "C5-U4-RETO-07": _anuncio, "C5-U4-RETO-10": _encuesta,
+             "C5-U5-RETO-02": _carta_intrusa, "C5-U5-RETO-03": _resena,
+             "C5-U5-RETO-05": _precio_justo, "C5-U5-RETO-10": _lo_pido,
+             "C5-U6-RETO-03": _equipacion, "C5-U6-RETO-04": _armario,
+             "C5-U6-RETO-05": _moda_circular, "C5-U6-RETO-07": _escaparate}
 
 
 def reto_print(r):

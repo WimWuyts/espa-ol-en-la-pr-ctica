@@ -14,6 +14,8 @@ _sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
 import print_bloques as PB
 import lectura_data as LD
 import escucha_data as ED
+import retos_data as RD
+import retos_print as RP
 
 def b64(p): return base64.b64encode(open(p, "rb").read()).decode()
 def face(fam, fn, w):
@@ -285,6 +287,19 @@ def lpd(*chips):
     return f'<div class="lpd"><span class="lpdlab">Leerplandoelen III-Spa-d</span>{c}</div>'
 
 def divider(t): return f'<div class="divider">{t}</div>'
+
+
+def retos(ancla, titulo, intro_es, intro_nl):
+    """Retoblok van één sectie — volledige oefening voor print, verwijskaartje
+    voor wat op de hub of in de PowerPoint leeft."""
+    P('<div class="page">')
+    P(f'<div class="divider">{titulo}</div>')
+    P(f'<div class="intro" style="margin-top:1mm"><b>ES:</b> {intro_es} '
+      f'<span class="gloss">{intro_nl}</span></div>')
+    for r in sorted(RD.por_ancla(ancla), key=lambda x: x["num"]):
+        P(RP.reto_print(r) if r["soporte"] == "print" else RP.reto_puntero(r))
+    P('</div>')
+
 def pcard(t, body): return f'<div class="pcard"><div class="t">{t}</div>{body}</div>'
 
 def steun(niveau):
@@ -610,6 +625,10 @@ P(tarea_com("Tarea comunicativa · «¿Te lo llevas?»",
 P('<div class="route-note">🎮 <b>Juega online:</b> «¿lo, la, los o las?» (cloze), de vervangingsanimatie en «ordena el diálogo de la tienda» met zelfcorrectie.</div>')
 P('</div>')  # page §1.2
 
+retos("pronombres_u6", "§1.4 · Retos — el pronombre en el escaparate",
+      'Tres retos con <b>lo, la, los, las</b>: un cartel de <b>treinta palabras exactas</b>, un anuncio de radio de <b>veinte segundos</b> y un dilema de compra.',
+      'Drie retos met lo, la, los, las: een affiche van precies dertig woorden, een radiospot van twintig seconden en een koopdilemma.')
+
 # ================= §2 · ACABAR DE + INFINITIVO =================
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">2</span><span class="pk">§2 · Acabar de + infinitivo · net iets gedaan</span>')
@@ -682,6 +701,10 @@ P(tarea_com("Tarea comunicativa · «¡Acabo de comprarlo!»",
 P('<div class="route-note">🎮 <b>Juega online:</b> «acabar de + infinitivo» (cloze) en de tijdlijn-oefening met zelfcorrectie.</div>')
 P('</div>')  # page §2.2
 
+retos("acabar", "§2.4 · Retos — lo que acabas de hacer",
+      'Una devolución <b>imposible</b> y unos datos de moda que cambian lo que <b>acabas de comprar</b>.',
+      'Een onmogelijke terugbetaling, en modecijfers die veranderen hoe je kijkt naar wat je net kocht.')
+
 # ================= §3 · DEMOSTRATIVOS =================
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">3</span><span class="pk">§3 · este / ese / aquel · cerca ↔ lejos</span>')
@@ -749,6 +772,10 @@ P(tarea_com("Tarea comunicativa · «Señala y pregunta»",
   '<div class="steun" style="margin-left:12.5mm">Apoyo: MARCO (¿Cuánto cuesta este/ese/aquel…?) → SIN AYUDA · [CROSS: HTML «este/ese/aquel» + «señala en el escaparate»]</div>'))
 P('<div class="route-note">🎮 <b>Juega online:</b> «este/ese/aquel» (cloze) en «señala en el escaparate» (point) met zelfcorrectie.</div>')
 P('</div>')  # page §3.2
+
+retos("demostrativos", "§3.4 · Retos — este, ese, aquel… ¿y cuánto?",
+      'Se regatea señalando: <b>este</b> sombrero, <b>esa</b> manta. Y una talla que <b>no existe</b> donde estás.',
+      'Afdingen doe je wijzend: deze hoed, die deken. En een maat die niet bestaat waar jij bent.')
 
 # ================= §4 · CONCORDANCIA DEL ADJETIVO =================
 P('<div class="page"><div class="parada sec">')
@@ -834,6 +861,10 @@ P(actx(6, "Traduce y concuerda",
   '<p style="margin-left:12.5mm" class="gloss">[online] una falda roja · unos zapatos negros · un vestido azul · unos calcetines blancos</p>', apoyo="PISTA (m/v · ev/mv) → SIN AYUDA"))
 P('<div class="route-note">🎮 <b>Juega online:</b> «color + prenda» (match), de concordancia-Tetris en «masculino/femenino» met zelfcorrectie.</div>')
 P('</div>')  # page §4.2
+
+retos("concordancia_u6", "§4.4 · Retos — la ropa que te delata",
+      'Dos retos de concordancia: una <b>equipación</b> descrita solo por colores, y un <b>armario</b> que dice quién eres.',
+      'Twee retos over overeenkomst: een voetbaltruitje enkel in kleuren beschreven, en een kast die verraadt wie je bent.')
 
 # ================= §5 · LECTURA =================
 P('<div class="page"><div class="parada sec">')
@@ -1000,6 +1031,10 @@ P(actx(3, "Empareja: refrán ↔ significado",
 P('<div class="route-note">🎮 <b>Sigue online:</b> «prenda ↔ tienda» (match) en de mercado-spellen op de digitale pagina.</div>')
 P('</div>')  # page Cultura
 
+retos("cultura_u6", "Retos — el cliente que no se rinde",
+      'Cinco clientes imposibles. Uno detrás de otro, sin repetir la misma frase.',
+      'Vijf onmogelijke klanten. De een na de ander, zonder één zin te herhalen.')
+
 # ================= TAREA FINAL =================
 P('<div class="page"><div class="parada sec" style="border-top-color:var(--gd)">')
 P('<span class="num">✦</span><span class="pk" style="background:var(--gd)">Tarea final · Abre tu tienda</span>')
@@ -1146,7 +1181,7 @@ EDITBAR = '''
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Español en la práctica · U6 De tiendas</title><style>'
-        + CSS + PB.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
+        + CSS + PB.CSS + RP.CSS + '</style></head><body>\n' + "".join(BODY) + EDITBAR + '\n</body></html>')
 OUT = f"{HERE}/U6.html"
 open(OUT, "w", encoding="utf-8").write(HTML)
 print("wrote", OUT, "·", len(HTML), "bytes")

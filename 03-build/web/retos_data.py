@@ -2294,6 +2294,769 @@ U4_RETO_08 = {
 }
 
 
+# ===========================================================================
+# C5 · U5 — ¡Ñam!  (parada: México · CDMX)
+# ===========================================================================
+
+U5 = 5
+
+U5_RETO_02 = {
+    "id": "C5-U5-RETO-02", "num": 2, "curso": "C5", "unidad": U5,
+    "seccion": "§2.3", "ancla": "comida", "soporte": "print",
+    "nombre": "El menú del país equivocado",
+    "lente": "🕵️ forensisch", "forma": "👨‍👩‍👧 En grupos", "skill": "👁️ Leer",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Un restaurante «mexicano» con una carta que no cuadra.",
+    "gancho_nl": "Een «Mexicaans» restaurant met een kaart die niet klopt.",
+    "consigna_es": "Marca los platos que no son mexicanos y di de dónde son en realidad.",
+    "consigna_nl": "Kruis de gerechten aan die niet Mexicaans zijn en zeg waar ze wél vandaan komen.",
+    "regla": "Aanwijzen volstaat niet: bij elk fout gerecht zeg je het land. Wie een echt "
+             "Mexicaans gerecht aankruist, verliest twee punten in plaats van er één te winnen.",
+    "pasos": [("Leed la carta entera antes de marcar.", "Lees de hele kaart vóór je aankruist."),
+              ("Marcad los intrusos y escribid su país.", "Kruis de indringers aan en schrijf hun land."),
+              ("Cuidado: dos platos parecen extranjeros y son mexicanos.",
+               "Let op: twee gerechten lijken buitenlands en zijn Mexicaans.")],
+    "datos": {
+        "carta": [("tacos al pastor", "México", True), ("paella valenciana", "España", False),
+                  ("gazpacho andaluz", "España", False), ("mole poblano", "México", True),
+                  ("ceviche", "Perú", False), ("chiles en nogada", "México", True),
+                  ("tortilla de patatas", "España", False), ("pozole", "México", True),
+                  ("empanadas argentinas", "Argentina", False), ("horchata de arroz", "México", True)],
+    },
+    "clave": [
+        "Indringers (5): paella valenciana (Spanje) · gazpacho andaluz (Spanje) · ceviche "
+        "(Peru) · tortilla de patatas (Spanje) · empanadas argentinas (Argentinië).",
+        "Mexicaans, ook al klinkt het niet zo: chiles en nogada en horchata de arroz. "
+        "Horchata bestaat óók in Spanje, maar dan van chufa — vandaar de verwarring.",
+        "Mole poblano en pozole zijn de twee waar leerlingen het minst zeker over zijn; laat "
+        "hen die opzoeken in plaats van te gokken.",
+    ],
+    "nota": "De strafpunten maken het spel. Zonder die regel kruist een groep gewoon alles "
+            "aan wat ze niet kent.",
+}
+
+U5_RETO_03 = {
+    "id": "C5-U5-RETO-03", "num": 3, "curso": "C5", "unidad": U5,
+    "seccion": "§3.3", "ancla": "pedir", "soporte": "print",
+    "nombre": "Reseña de una estrella",
+    "lente": "✍️ creatieve beperking", "forma": "👤 Solo", "skill": "✍️ Escribir",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "La peor cena de tu vida. Y tienes que contarla con educación.",
+    "gancho_nl": "Het slechtste avondmaal van je leven. En je moet het beleefd vertellen.",
+    "consigna_es": "Escribe una reseña de una estrella sin una sola palabra fea.",
+    "consigna_nl": "Schrijf een recensie van één ster zonder één lelijk woord.",
+    "regla": "Geen scheldwoorden en geen «malo». Je beschikt alleen over «no me gusta», "
+             "«un poco», «demasiado» en «no mucho». Beleefd vernietigend is de opdracht.",
+    "pasos": [("Elige cinco cosas que salieron mal.", "Kies vijf dingen die misliepen."),
+              ("Formula cada una en negativo suave.", "Formuleer elk in zacht negatief."),
+              ("Cierra con una frase que suene amable y no lo sea.",
+               "Sluit af met een zin die vriendelijk klinkt en het niet is.")],
+    "datos": {
+        "quejas": ["la sopa fría", "esperar cuarenta minutos", "el camarero no vuelve",
+                   "demasiado picante", "la cuenta con un error", "música muy alta",
+                   "no quedan tacos", "la mesa cerca de la puerta"],
+        "marco": ["No me gusta mucho …", "… está un poco …", "… es demasiado … para mí",
+                  "Todo bien, pero …", "Seguro que otro día …"],
+    },
+    "clave": [
+        "Toets twee dingen: staat er geen enkel verboden woord, en is elke klacht toch "
+        "herkenbaar als klacht?",
+        "«Demasiado» is de sterkste: «demasiado picante para mí» klinkt beleefd en zegt alles.",
+        "De slotzin is waar het vernuft zit — «seguro que otro día está mejor» is "
+        "vriendelijk en vernietigend tegelijk.",
+    ],
+    "nota": "Deze reto oefent register, niet woordenschat. Wijs erop dat je in het Spaans "
+            "zelden rechtstreeks klaagt in een recensie.",
+}
+
+U5_RETO_05 = {
+    "id": "C5-U5-RETO-05", "num": 5, "curso": "C5", "unidad": U5,
+    "seccion": "§1.3", "ancla": "cantidades", "soporte": "print",
+    "nombre": "Precio justo",
+    "lente": "🔬 onderzoek & data", "forma": "👥 En parejas", "skill": "✍️ Escribir",
+    "tiempo": "± 12 min", "dificultad": "★★☆",
+    "gancho_es": "El mismo desayuno en CDMX y en Gante. ¿Cuánto cambia?",
+    "gancho_nl": "Hetzelfde ontbijt in CDMX en in Gent. Hoeveel scheelt dat?",
+    "consigna_es": "Convierte los precios, compara y escribe tres conclusiones con cantidades.",
+    "consigna_nl": "Reken de prijzen om, vergelijk en schrijf drie conclusies met hoeveelheden.",
+    "regla": "Elke conclusie bevat een hoeveelheid (un kilo de, una botella de, un paquete "
+             "de) én een prijs. Alleen «es más barato» telt niet.",
+    "pasos": [("Convertid los pesos a euros con el cambio de arriba.",
+               "Reken de peso's om naar euro met de koers hierboven."),
+              ("Comparad producto por producto.", "Vergelijk product per product."),
+              ("Escribid tres conclusiones con cantidad y precio.",
+               "Schrijf drie conclusies met hoeveelheid en prijs.")],
+    "datos": {
+        "cambio": "1 euro ≈ 20 pesos mexicanos (redondeamos para calcular)",
+        "productos": [("un kilo de tomates", 30, 2.60), ("una botella de agua (1,5 l)", 18, 1.10),
+                      ("un paquete de arroz (1 kg)", 26, 1.80), ("un kilo de aguacates", 60, 7.50),
+                      ("una docena de tortillas", 20, 3.20), ("un café en el bar", 35, 2.40)],
+        "marco": ["Un kilo de … cuesta … pesos, o sea … euros.",
+                  "En Bélgica … cuesta … euros más.", "Lo más caro en México es …"],
+    },
+    "clave": [
+        "Omgerekend: tomaten €1,50 tegen €2,60 · water €0,90 tegen €1,10 · rijst €1,30 "
+        "tegen €1,80 · avocado's €3,00 tegen €7,50 · tortilla's €1,00 tegen €3,20 · "
+        "koffie €1,75 tegen €2,40.",
+        "Grootste verschil: avocado's en tortilla's — precies de twee producten die in "
+        "Mexico lokaal zijn en bij ons ingevoerd.",
+        "Wisselkoersen bewegen; deze is afgerond om te kunnen rekenen. Zeg dat erbij als een "
+        "leerling het natrekt.",
+    ],
+    "nota": "Het rekenwerk is bewust deelbaar door twintig. De oefening gaat over de "
+            "hoeveelheidsuitdrukking, niet over hoofdrekenen.",
+}
+
+U5_RETO_10 = {
+    "id": "C5-U5-RETO-10", "num": 10, "curso": "C5", "unidad": U5,
+    "seccion": "§4.3", "ancla": "pronombres_u5", "soporte": "print",
+    "nombre": "¿Lo pido o no lo pido?",
+    "lente": "🕵️ forensisch", "forma": "👥 En parejas", "skill": "🗣️ Hablar",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Doce platos, y en cada uno un ingrediente escondido.",
+    "gancho_nl": "Twaalf gerechten, en in elk zit een verborgen ingrediënt.",
+    "consigna_es": "Pregunta por el ingrediente con un pronombre, decide y justifica.",
+    "consigna_nl": "Vraag naar het ingrediënt met een voornaamwoord, beslis en verantwoord.",
+    "regla": "Je vraag moet het pronomen bevatten («¿lo lleva picante?»), en je beslissing "
+             "ook («no lo pido»). Een vraag zonder pronomen wordt niet beantwoord.",
+    "pasos": [("Elige un plato. No mires la columna del ingrediente.",
+               "Kies een gerecht. Kijk niet in de ingrediëntkolom."),
+              ("Pregunta a tu compañero/a con el pronombre.", "Vraag het je buur, met het voornaamwoord."),
+              ("Decide: lo pido / no lo pido. Y di por qué.", "Beslis: ik bestel het of niet. En zeg waarom.")],
+    "datos": {
+        "platos": [("el mole poblano", "lleva chocolate"), ("los chiles en nogada", "llevan nuez"),
+                   ("la sopa de tortilla", "lleva picante"), ("las quesadillas", "llevan queso"),
+                   ("el pozole", "lleva carne de cerdo"), ("los tamales", "llevan manteca"),
+                   ("la horchata", "lleva canela"), ("el guacamole", "lleva cebolla cruda"),
+                   ("los tacos al pastor", "llevan piña"), ("las enchiladas", "llevan salsa verde"),
+                   ("el flan", "lleva huevo"), ("el agua de jamaica", "lleva azúcar")],
+        "marco": ["¿Lo/la/los/las lleva …?", "Sí, lo lleva. / No, no lo lleva.",
+                  "Entonces lo pido. / Entonces no lo pido, porque …"],
+    },
+    "clave": [
+        "De pronomina volgen het gerecht: el mole → lo · los chiles → los · la sopa → la · "
+        "las quesadillas → las.",
+        "Twee verrassingen die het gesprek dragen: chocolade in de mole en ananas op de tacos "
+        "al pastor.",
+        "Wie «¿lleva picante la sopa?» vraagt zonder pronomen, herformuleert. Dat is de regel "
+        "en meteen de oefening.",
+    ],
+    "nota": "Laat de ingrediëntkolom afdekken met een blad. Zonder dat wordt het voorlezen.",
+}
+
+U5_RETO_01 = {
+    "id": "C5-U5-RETO-01", "num": 1, "curso": "C5", "unidad": U5,
+    "seccion": "§1.3", "ancla": "cantidades", "soporte": "hub",
+    "nombre": "La cocina a ciegas",
+    "lente": "🎭 simulatie met beperking", "forma": "👥 En parejas", "skill": "👂 Escuchar",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Tú tienes los ingredientes. La receta la oyes, no la ves.",
+    "gancho_nl": "Jij hebt de ingrediënten. Het recept hoor je, je ziet het niet.",
+    "consigna_es": "Escucha cada paso y elige la cantidad correcta. Una mal y el plato se estropea.",
+    "consigna_nl": "Luister naar elke stap en kies de juiste hoeveelheid. Eén fout en het "
+                   "gerecht mislukt.",
+    "regla": "Je kiest op wat je hóórt, niet op wat logisch lijkt. Twee stappen gebruiken "
+             "hetzelfde product met een ándere hoeveelheid — daar gaat het mis.",
+    "pasos": [("Escucha el paso entero antes de elegir.", "Luister de hele stap af vóór je kiest."),
+              ("Elige la cantidad. Fíjate en la palabra, no en el producto.",
+               "Kies de hoeveelheid. Let op het woord, niet op het product."),
+              ("¿Fallas? Vuelve a escuchar.", "Fout? Luister opnieuw.")],
+    "datos": {
+        "pasos_receta": [
+            ("Primero pon un kilo de tomates en la olla.", "un kilo de",
+             ["un kilo de", "un poco de", "una botella de"]),
+            ("Añade un poco de sal, no mucha.", "un poco de",
+             ["un poco de", "un kilo de", "un paquete de"]),
+            ("Ahora echa media cebolla, solo media.", "media",
+             ["media", "una", "dos"]),
+            ("Pon un paquete de arroz entero.", "un paquete de",
+             ["un paquete de", "un poco de", "medio paquete de"]),
+            ("Añade dos vasos de agua.", "dos vasos de",
+             ["dos vasos de", "una botella de", "un vaso de"]),
+            ("Y al final, muy poco picante.", "muy poco",
+             ["muy poco", "mucho", "bastante"]),
+        ],
+    },
+    "clave": [
+        "un kilo de · un poco de · media · un paquete de · dos vasos de · muy poco",
+        "Stap 1 en 2 gaan allebei over «poner» maar met tegengestelde hoeveelheden — daar "
+        "vallen de snelle luisteraars.",
+        "«Media cebolla» zonder «de» is de vormvalstrik: hoeveelheden met een breuk laten "
+        "het voorzetsel vallen.",
+    ],
+    "nota": "Werkt ook klassikaal: laat de leerkracht voorlezen terwijl de klas op de hub kiest.",
+}
+
+U5_RETO_06 = {
+    "id": "C5-U5-RETO-06", "num": 6, "curso": "C5", "unidad": U5,
+    "seccion": "Cultura", "ancla": "cultura_u5", "soporte": "hub",
+    "nombre": "La receta de la abuela, sin medidas",
+    "lente": "🤝 bemiddelen", "forma": "👤 Solo", "skill": "🔀 Mediar",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "«Un poquito», «al gusto», «un chorrito». ¿Y eso cuánto es?",
+    "gancho_nl": "«Een beetje», «naar smaak», «een scheutje». En hoeveel is dat?",
+    "consigna_es": "Convierte la receta de la abuela en medidas exactas para alguien que "
+                   "nunca ha cocinado.",
+    "consigna_nl": "Zet het recept van de oma om in exacte maten voor iemand die nooit "
+                   "gekookt heeft.",
+    "regla": "Elke vage maat wordt een getal met eenheid. Je mag niet «een beetje» laten "
+             "staan, en je mag ook niets weglaten.",
+    "pasos": [("Lee la receta. Marca lo que no es exacto.", "Lees het recept. Markeer wat niet exact is."),
+              ("Elige la medida que mejor lo traduce.", "Kies de maat die het best vertaalt."),
+              ("Comprueba: ¿podría cocinarlo alguien sin experiencia?",
+               "Controleer: zou iemand zonder ervaring dit kunnen koken?")],
+    "datos": {
+        "items": [
+            ("un poquito de sal", "una cucharadita",
+             ["una cucharadita", "cien gramos", "medio kilo"],
+             "«un poquito» bij zout is ongeveer een theelepel, geen honderd gram"),
+            ("un chorrito de aceite", "dos cucharadas",
+             ["dos cucharadas", "medio litro", "una gota"],
+             "een scheutje olie is twee eetlepels — een halve liter is frituren"),
+            ("harina, la que pida", "doscientos cincuenta gramos",
+             ["doscientos cincuenta gramos", "un kilo", "una cucharadita"],
+             "«la que pida» betekent tot het deeg samenhangt: voor dit recept 250 g"),
+            ("azúcar al gusto", "cuatro cucharadas",
+             ["cuatro cucharadas", "un kilo", "una pizca"],
+             "«al gusto» is geen snufje: bij een dessert is het enkele eetlepels"),
+            ("se hace hasta que esté", "veinte minutos",
+             ["veinte minutos", "cinco horas", "dos minutos"],
+             "«hasta que esté» is bij dit gerecht ongeveer twintig minuten"),
+        ],
+    },
+    "clave": [
+        "una cucharadita · dos cucharadas · doscientos cincuenta gramos · cuatro cucharadas · "
+        "veinte minutos",
+        "De kern van bemiddelen zit hier: je zet niet om van taal naar taal, maar van "
+        "ervaringskennis naar instructie. Er gaat iets verloren, en dat mag.",
+        "«Una pizca» bestaat wel degelijk, maar niet voor suiker in een dessert — dat is de "
+        "valstrik in item 4.",
+    ],
+    "nota": "Sluit aan bij de eindtaak «La carta»: wie hier exacte maten leert, schrijft "
+            "daarna een bruikbaar recept.",
+}
+
+U5_RETO_09 = {
+    "id": "C5-U5-RETO-09", "num": 9, "curso": "C5", "unidad": U5,
+    "seccion": "§2.3", "ancla": "comida", "soporte": "hub",
+    "nombre": "Cocina en directo",
+    "lente": "📻 mediaformat", "forma": "👤 Solo", "skill": "🗣️ Hablar",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Treinta segundos en directo. La clase hace exactamente lo que dices.",
+    "gancho_nl": "Dertig seconden live. De klas doet exact wat jij zegt.",
+    "consigna_es": "Graba una instrucción de cocina de treinta segundos. Sin usar «poner».",
+    "consigna_nl": "Neem een kookinstructie van dertig seconden op. Zonder «poner» te gebruiken.",
+    "regla": "Het werkwoord «poner» is verboden — en dat is precies het werkwoord dat je "
+             "wilt gebruiken. Je moet naar añadir, echar, cortar, mezclar, calentar grijpen.",
+    "pasos": [("Elige un plato muy simple.", "Kies een heel eenvoudig gerecht."),
+              ("Escribe los pasos sin «poner».", "Schrijf de stappen zonder «poner»."),
+              ("Graba. Treinta segundos, ni uno más.", "Neem op. Dertig seconden, geen seconde meer."),
+              ("La clase escucha y ejecuta. ¿Sale?", "De klas luistert en voert uit. Lukt het?")],
+    "datos": {
+        "verbos": ["añadir", "echar", "cortar", "mezclar", "calentar", "cocer", "servir"],
+        "marco": ["Primero corta … en trozos.", "Después añade …", "Mezcla todo durante …",
+                  "Calienta … minutos.", "Y ya está: sirve con …"],
+    },
+    "clave": [
+        "Toets twee dingen: nul keer «poner», en kan iemand het uitvoeren zonder vragen te "
+        "stellen?",
+        "De meest gebruikte vervangers zijn añadir en echar. Wie ze alle twee gebruikt, "
+        "heeft de opdracht begrepen.",
+        "Dertig seconden is ongeveer vijf stappen. Wie er tien wil, moet schrappen.",
+    ],
+    "nota": "Het verbod op «poner» is niet willekeurig: het is het werkwoord dat alles "
+            "afdekt, en dus het werkwoord dat de woordenschat tegenhoudt.",
+}
+
+U5_RETO_04 = {
+    "id": "C5-U5-RETO-04", "num": 4, "curso": "C5", "unidad": U5,
+    "seccion": "§3.3", "ancla": "pedir", "soporte": "ppt",
+    "nombre": "El pedido imposible",
+    "lente": "🎭 simulatie met beperking", "forma": "👥 En parejas", "skill": "🗣️ Hablar",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "El camarero dice que no a casi todo. Tú tienes que cenar igual.",
+    "gancho_nl": "De ober zegt op bijna alles nee. Jij moet tóch eten.",
+    "consigna_es": "Consigue un menú completo: primero, segundo, bebida y postre.",
+    "consigna_nl": "Krijg een volledig menu binnen: voorgerecht, hoofdgerecht, drank en dessert.",
+    "regla": "Elke «lo siento» dwingt je tot een nieuw voorstel — en je mag nooit twee keer "
+             "dezelfde beleefdheidsformule gebruiken.",
+    "pasos": [("El camarero coge su lista de «no hay».", "De ober neemt zijn lijst met «niet meer»."),
+              ("Pides. Te dicen que no. Propón otra cosa.", "Je bestelt. Ze zeggen nee. Stel iets anders voor."),
+              ("Sigue hasta tener los cuatro platos.", "Ga door tot je de vier gangen hebt."),
+              ("Cambiad de papel.", "Wissel van rol.")],
+    "datos": {
+        "no_hay": ["No hay tacos de pollo.", "Se acabó el pozole.", "El flan está terminado.",
+                   "No queda agua de jamaica.", "Hoy no hacemos mole.", "La sopa está fría."],
+        "formulas": ["Para mí, …", "¿Me pone …?", "¿Me trae …?", "¿Y tienen …?",
+                     "Entonces …, por favor.", "¿Qué me recomienda?"],
+        "carta": ["sopa de tortilla", "quesadillas", "tacos al pastor", "enchiladas",
+                  "pozole", "horchata", "agua de jamaica", "flan", "arroz con leche"],
+    },
+    "clave": [
+        "Zes formules voor vier gangen: er is speling, maar niet veel. Wie herhaalt, "
+        "begint opnieuw.",
+        "«¿Qué me recomienda?» is de ontsnappingsroute — laat leerlingen die zelf ontdekken "
+        "in plaats van hem aan te reiken.",
+        "De ober mag niet op alles nee zeggen: minstens vier gerechten blijven beschikbaar, "
+        "anders loopt het spel vast.",
+    ],
+    "nota": "Geef de «no hay»-lijst alleen aan de ober. Ziet de klant hem, dan verdwijnt het "
+            "improviseren.",
+}
+
+U5_RETO_07 = {
+    "id": "C5-U5-RETO-07", "num": 7, "curso": "C5", "unidad": U5,
+    "seccion": "§1.3", "ancla": "cantidades", "soporte": "ppt",
+    "nombre": "Cinco palabras para el mercado",
+    "lente": "🔓 puzzel & escape", "forma": "👥 En parejas", "skill": "🗣️ Hablar",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Quieres comprar algo cuyo nombre no sabes. Tienes cinco palabras.",
+    "gancho_nl": "Je wil iets kopen waarvan je de naam niet kent. Je hebt vijf woorden.",
+    "consigna_es": "Consigue el producto usando como máximo cinco palabras por intento.",
+    "consigna_nl": "Krijg het product te pakken met maximaal vijf woorden per poging.",
+    "regla": "Vijf woorden per poging, gebaren mogen niet, en de naam van het product mag "
+             "niet vallen — ook niet in het Nederlands of het Engels.",
+    "pasos": [("Coge una tarjeta de producto. No la enseñes.", "Neem een productkaart. Laat ze niet zien."),
+              ("Describe en cinco palabras. Cuenta en voz alta.", "Beschrijf in vijf woorden. Tel hardop mee."),
+              ("¿No lo adivina? Otro intento, otras cinco.", "Raadt hij het niet? Nieuwe poging, vijf nieuwe woorden."),
+              ("Máximo tres intentos por producto.", "Maximaal drie pogingen per product.")],
+    "datos": {
+        "productos": ["el aguacate", "la sandía", "el cilantro", "la calabaza", "el chile",
+                      "la piña", "el maíz", "la cebolla", "el limón", "la tortilla"],
+        "marco": ["Es verde y grande.", "Se come con sal.", "Es de color …",
+                  "Está en la sopa.", "Cuesta poco.", "Es dulce, no salado."],
+    },
+    "clave": [
+        "Sterke omschrijvingen gebruiken kleur, smaak en gebruik — precies de woordenschat "
+        "van §1 en §2.",
+        "«El chile» en «el cilantro» zijn de moeilijkste: beide vragen om smaak in plaats "
+        "van vorm.",
+        "Vijf woorden dwingt tot ser en estar zonder franje: «es verde», «está en la sopa».",
+    ],
+    "nota": "Tel de woorden echt. Zonder tellen wordt het een gewone omschrijfoefening en "
+            "verdwijnt de druk die de zinnen kort houdt.",
+}
+
+U5_RETO_08 = {
+    "id": "C5-U5-RETO-08", "num": 8, "curso": "C5", "unidad": U5,
+    "seccion": "§3.3", "ancla": "pedir", "soporte": "ppt",
+    "nombre": "La sobremesa",
+    "lente": "⚖️ onderhandeling & dilemma", "forma": "👨‍👩‍👧 En grupos", "skill": "🗣️ Hablar",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "Habéis cenado bien. Ahora llega la cuenta.",
+    "gancho_nl": "Jullie hebben goed gegeten. Nu komt de rekening.",
+    "consigna_es": "Repartid la cuenta. Cada uno tiene una instrucción secreta.",
+    "consigna_nl": "Verdeel de rekening. Ieder heeft een geheime instructie.",
+    "regla": "Je geheime instructie moet je volgen, maar je mag ze niet uitspreken. Wie zegt "
+             "«ik heb weinig geld», heeft verloren — je moet het láten merken.",
+    "pasos": [("Coge tu instrucción secreta. No la enseñes.", "Neem je geheime instructie. Laat ze niet zien."),
+              ("Mirad la cuenta juntos.", "Bekijk de rekening samen."),
+              ("Negociad hasta que todos paguen algo.", "Onderhandel tot iedereen iets betaalt."),
+              ("Al final: ¿quién tenía qué instrucción?", "Op het einde: wie had welke instructie?")],
+    "datos": {
+        "cuenta": [("sopa de tortilla", 45), ("dos quesadillas", 120), ("tacos al pastor", 95),
+                   ("tres horchatas", 75), ("flan", 40), ("propina", 40)],
+        "roles": [("Diego", "Estás sin dinero, pero te da vergüenza decirlo."),
+                  ("Valen", "Quieres invitar a todos, pero sin ofender a nadie."),
+                  ("Nina", "Solo has comido el flan. No quieres pagar lo demás."),
+                  ("Tú", "Has olvidado la cartera en casa. De verdad.")],
+        "marco": ["Yo pago …", "Yo solo he tomado …", "¿Y si …?",
+                  "No hace falta, de verdad.", "Entonces la próxima vez invito yo."],
+    },
+    "clave": [
+        "Totaal: 415 pesos, ongeveer 21 euro. Eerlijk delen door vier is ruim 100 elk — "
+        "precies wat de vier instructies onmogelijk maken.",
+        "De spanning zit bij Nina en Diego: allebei willen minder betalen, maar om "
+        "tegengestelde redenen.",
+        "Toets of niemand zijn instructie heeft uitgesproken. Dat is de regel én de reden "
+        "dat er echt onderhandeld wordt.",
+    ],
+    "nota": "«La sobremesa» is cultureel echt: in Mexico en Spanje blijft men na het eten "
+            "aan tafel. Zeg dat erbij, dan is de scène niet alleen een rekensom.",
+}
+
+
+# ===========================================================================
+# C5 · U6 — De tiendas  (parada: México · mercados)
+# ===========================================================================
+
+U6 = 6
+
+U6_RETO_03 = {
+    "id": "C5-U6-RETO-03", "num": 3, "curso": "C5", "unidad": U6,
+    "seccion": "§4.3", "ancla": "concordancia_u6", "soporte": "print",
+    "nombre": "La equipación",
+    "lente": "🔓 puzzel & escape", "forma": "👨‍👩‍👧 En grupos", "skill": "🗣️ Hablar",
+    "tiempo": "± 12 min", "dificultad": "★★☆",
+    "gancho_es": "Ocho camisetas, ocho clubes. Descríbelas sin decir el nombre.",
+    "gancho_nl": "Acht truitjes, acht clubs. Beschrijf ze zonder de naam te noemen.",
+    "consigna_es": "Describe la equipación por colores y detalles. Tu grupo adivina el club "
+                   "y el país.",
+    "consigna_nl": "Beschrijf het truitje op kleur en details. Je groep raadt de club en het land.",
+    "regla": "De clubnaam en de stad zijn verboden. Alleen kleuren, strepen en kledingstukken. "
+             "En elke beschrijving bevat minstens twee kledingwoorden.",
+    "pasos": [("Coge una tarjeta de equipación.", "Neem een truitjeskaart."),
+              ("Describe: colores, rayas, pantalón, medias.", "Beschrijf: kleuren, strepen, broek, kousen."),
+              ("El grupo adivina club y país.", "De groep raadt club en land."),
+              ("¿Acertáis los ocho? Sois de la casa.", "Alle acht juist? Dan horen jullie erbij.")],
+    "datos": {
+        "equipos": [("el Barça", "España", "camiseta azul y roja a rayas, pantalón azul"),
+                    ("el Real Madrid", "España", "camiseta blanca, pantalón blanco, todo blanco"),
+                    ("Boca Juniors", "Argentina", "camiseta azul con una raya amarilla ancha"),
+                    ("el América", "México", "camiseta amarilla con azul, muy llamativa"),
+                    ("el Nacional", "Uruguay", "camiseta blanca con una banda azul"),
+                    ("Colo-Colo", "Chile", "camiseta blanca con una raya negra y un jefe indígena"),
+                    ("el Cruz Azul", "México", "camiseta azul oscura con una cruz"),
+                    ("Millonarios", "Colombia", "camiseta azul clara, pantalón azul")],
+        "marco": ["La camiseta es … y …", "Lleva una raya …", "El pantalón es …",
+                  "Las medias son …"],
+    },
+    "clave": [
+        "Kleuren dragen de oefening: rayas azules y rojas (Barça) tegenover azul con raya "
+        "amarilla (Boca).",
+        "Colo-Colo is de moeilijkste en de mooiste: het embleem verwijst naar een Mapuche-"
+        "leider, wat meteen een cultureel gesprek opent.",
+        "Toets op twee kledingwoorden per beschrijving — anders blijft het bij kleuren.",
+    ],
+    "nota": "Deze reto komt uit de parels van het vorige project. Wie de clubs niet kent, "
+            "kan nog steeds beschrijven — het raden mag met de kaart erbij.",
+}
+
+U6_RETO_04 = {
+    "id": "C5-U6-RETO-04", "num": 4, "curso": "C5", "unidad": U6,
+    "seccion": "§4.3", "ancla": "concordancia_u6", "soporte": "print",
+    "nombre": "El armario del personaje",
+    "lente": "🕵️ forensisch", "forma": "👤 Solo", "skill": "👁️ Leer",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Solo ves su armario. ¿Quién vive aquí?",
+    "gancho_nl": "Je ziet alleen zijn kleerkast. Wie woont hier?",
+    "consigna_es": "Deduce oficio, edad y país. Cada conclusión con la prenda que la prueba.",
+    "consigna_nl": "Leid beroep, leeftijd en land af. Elke conclusie mét het kledingstuk dat "
+                   "het bewijst.",
+    "regla": "Elke conclusie heeft een bewijsstuk. «Ik denk dat hij jong is» telt niet; "
+             "«es joven porque tiene cinco camisetas de grupos de música» wel.",
+    "pasos": [("Lee el inventario entero.", "Lees de hele inventaris."),
+              ("Busca lo que se repite y lo que falta.", "Zoek wat terugkeert en wat ontbreekt."),
+              ("Escribe tres conclusiones con su prueba.", "Schrijf drie conclusies met hun bewijs.")],
+    "datos": {
+        "armario": ["tres delantales blancos, muy usados", "dos pantalones de cuadros",
+                    "unos zapatos negros cómodos, sin tacón", "una chaqueta gruesa",
+                    "cero corbatas", "un gorro blanco alto", "seis camisetas de conciertos",
+                    "unas botas de montaña con barro", "un abrigo largo para el frío",
+                    "ninguna ropa de playa"],
+        "marco": ["Creo que es … porque tiene …", "No es … porque no hay …",
+                  "Vive en un sitio … porque …"],
+    },
+    "clave": [
+        "Beroep: kok — de schorten, de geblokte broek en vooral de hoge witte muts.",
+        "Leeftijd: jong — zes concert-T-shirts en geen enkele das.",
+        "Land: ergens koud en bergachtig — dikke jas, lange mantel, bergschoenen met modder, "
+        "en géén strandkleding.",
+        "Het sterkste bewijs is wat er níét is: zonder dassen en zonder strandkleding valt "
+        "de helft van de mogelijkheden weg.",
+    ],
+    "nota": "Wijs op de negatieve bewijzen. Leerlingen kijken vanzelf naar wat er staat; "
+            "de afwezigheid zien is de eigenlijke vaardigheid.",
+}
+
+U6_RETO_05 = {
+    "id": "C5-U6-RETO-05", "num": 5, "curso": "C5", "unidad": U6,
+    "seccion": "§2.3", "ancla": "acabar", "soporte": "print",
+    "nombre": "Moda circular",
+    "lente": "🔬 onderzoek & data", "forma": "👥 En parejas", "skill": "👁️ Leer",
+    "tiempo": "± 12 min", "dificultad": "★★☆",
+    "gancho_es": "Un vaquero necesita más agua de la que bebes en años.",
+    "gancho_nl": "Eén jeans kost meer water dan jij in jaren drinkt.",
+    "consigna_es": "Lee los datos y escribe tres frases con «acabar de» sobre tus últimas compras.",
+    "consigna_nl": "Lees de gegevens en schrijf drie zinnen met «acabar de» over je laatste aankopen.",
+    "regla": "Elke zin bevat «acabo de» plus een getal uit de tabel. Zonder cijfer is het "
+             "een mening, geen conclusie.",
+    "pasos": [("Leed la tabla. ¿Qué dato os sorprende?", "Lees de tabel. Welk cijfer verrast jullie?"),
+              ("Pensad en vuestras tres últimas compras.", "Denk aan jullie drie laatste aankopen."),
+              ("Escribid las frases con «acabar de» y el dato.", "Schrijf de zinnen met «acabar de» en het cijfer.")],
+    "datos": {
+        "tabla": [("un vaquero", "7 500 litros de agua"), ("una camiseta de algodón", "2 700 litros"),
+                  ("ropa comprada al año, por persona en Europa", "unos 26 kilos"),
+                  ("ropa tirada al año, por persona", "unos 11 kilos"),
+                  ("veces que se lleva una prenda antes de tirarla", "unas 7"),
+                  ("ropa que se recicla de verdad", "menos del 1 %")],
+        "marco": ["Acabo de comprar … y ahora sé que …",
+                  "Acabamos de leer que … litros …", "No acabo de entender por qué …"],
+    },
+    "clave": [
+        "Het cijfer dat altijd blijft hangen: minder dan één procent wordt echt gerecycleerd.",
+        "«Acabar de» is hier geen trucje: het zet de aankoop van net tegenover een cijfer, "
+        "en dat contrast is de opdracht.",
+        "Cijfers zijn orders of magnitude uit gangbare rapporten; ze dienen om te vergelijken. "
+        "Wie ze als feit publiceert, controleert ze eerst.",
+    ],
+    "nota": "Deze reto raakt aan het thema van C6+ U7 (medio ambiente). Een vroege draad die "
+            "je daar kunt oppakken.",
+}
+
+U6_RETO_07 = {
+    "id": "C5-U6-RETO-07", "num": 7, "curso": "C5", "unidad": U6,
+    "seccion": "§1.3", "ancla": "pronombres_u6", "soporte": "print",
+    "nombre": "Escaparate en 30 palabras",
+    "lente": "✍️ creatieve beperking", "forma": "👥 En parejas", "skill": "✍️ Escribir",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Un cartel de escaparate. Exactamente treinta palabras.",
+    "gancho_nl": "Een etalageaffiche. Precies dertig woorden.",
+    "consigna_es": "Escribe el cartel con treinta palabras exactas y al menos cuatro pronombres.",
+    "consigna_nl": "Schrijf het affiche met exact dertig woorden en minstens vier voornaamwoorden.",
+    "regla": "Precies dertig — niet negenentwintig, niet eenendertig — en minstens vier keer "
+             "lo, la, los of las. Tel na afloop hardop.",
+    "pasos": [("Elegid una prenda y su precio.", "Kies een kledingstuk en zijn prijs."),
+              ("Escribid el cartel sin contar.", "Schrijf het affiche zonder te tellen."),
+              ("Ahora contad. ¿Sobran o faltan?", "Tel nu. Te veel of te weinig?"),
+              ("Ajustad hasta llegar a treinta exactas.", "Pas aan tot je precies op dertig zit.")],
+    "datos": {
+        "prendas": [("la camisa de flores", "25 €"), ("los vaqueros clásicos", "40 €"),
+                    ("las botas de piel", "60 €"), ("el jersey de lana", "35 €")],
+        "marco": ["¿Te gusta? Llévatela.", "La tienes en tres colores.",
+                  "Los tenemos en todas las tallas.", "No lo pienses más."],
+    },
+    "clave": [
+        "Toets exact dertig woorden en minstens vier pronomina. Beide zijn objectief te tellen.",
+        "De vier voorbeeldzinnen in het marco bevatten samen precies vier pronomina — "
+        "bruikbaar als model, niet als oplossing.",
+        "Wie te veel woorden heeft, schrapt bijna altijd een pronomen. Wijs erop dat die "
+        "juist moeten blijven.",
+    ],
+    "nota": "De harde telling is het hele punt: schrijven met een limiet dwingt tot kiezen, "
+            "en kiezen is waar de taal zit.",
+}
+
+U6_RETO_06 = {
+    "id": "C5-U6-RETO-06", "num": 6, "curso": "C5", "unidad": U6,
+    "seccion": "§3.3", "ancla": "demostrativos", "soporte": "hub",
+    "nombre": "La talla que no existe",
+    "lente": "🤝 bemiddelen", "forma": "👤 Solo", "skill": "🔀 Mediar",
+    "tiempo": "± 10 min", "dificultad": "★★☆",
+    "gancho_es": "Tu talla en Bélgica no es tu talla en México. ¿Cuál pides?",
+    "gancho_nl": "Jouw maat in België is niet jouw maat in Mexico. Welke vraag je?",
+    "consigna_es": "Convierte la talla y elige lo que dirías por teléfono.",
+    "consigna_nl": "Reken de maat om en kies wat je door de telefoon zou zeggen.",
+    "regla": "Je zegt niet het getal van je eigen systeem. Je moet omrekenen én de zin "
+             "kiezen die in de winkel werkt.",
+    "pasos": [("Mira las tres tablas.", "Bekijk de drie tabellen."),
+              ("Convierte y elige la frase correcta.", "Reken om en kies de juiste zin."),
+              ("¿Fallas? Mira qué sistema has usado.", "Fout? Kijk welk systeem je gebruikte.")],
+    "datos": {
+        "items": [
+            ("Tu talla europea de camiseta es la 38. En México te dicen S, M o L. ¿Qué pides?",
+             "Una mediana, por favor.",
+             ["Una mediana, por favor.", "Una treinta y ocho, por favor.", "Una pequeña, por favor."],
+             "EU 38 ≈ M (mediana); het Europese getal zegt daar niets"),
+            ("Calzas un 40 europeo. En México usan el sistema mexicano. ¿Qué número pides?",
+             "El siete, más o menos.",
+             ["El siete, más o menos.", "El cuarenta.", "El once."],
+             "EU 40 ≈ MX 7 voor dames; het Europese getal bestaat er niet"),
+            ("Quieres unos vaqueros. En México las tallas van por pulgadas. ¿Qué preguntas?",
+             "¿Qué talla es la treinta en centímetros?",
+             ["¿Qué talla es la treinta en centímetros?", "¿Tienen la cuarenta?",
+              "¿Es grande o pequeña?"],
+             "bij inches vraag je om te vertalen, niet om een getal dat er niet is"),
+            ("No estás seguro/-a de la talla. ¿Qué dices?",
+             "¿Me la puedo probar?",
+             ["¿Me la puedo probar?", "¿Cuánto cuesta?", "¿La tienen en azul?"],
+             "passen lost het op als de tabellen niet helpen — met pronomen"),
+        ],
+    },
+    "clave": [
+        "Una mediana · el siete · ¿qué talla es la treinta en centímetros? · ¿me la puedo probar?",
+        "De rode draad: bij een ander systeem vraag je om vertaling of om passen, je noemt "
+        "niet je eigen getal.",
+        "Item 4 brengt het pronomen terug: «me la puedo probar» — la verwijst naar de prenda.",
+    ],
+    "nota": "Maattabellen verschillen per merk. De omrekeningen hier zijn benaderingen, en "
+            "juist dat maakt «¿me la puedo probar?» het beste antwoord.",
+}
+
+U6_RETO_09 = {
+    "id": "C5-U6-RETO-09", "num": 9, "curso": "C5", "unidad": U6,
+    "seccion": "§1.3", "ancla": "pronombres_u6", "soporte": "hub",
+    "nombre": "Anuncio de radio de 20 segundos",
+    "lente": "📻 mediaformat", "forma": "👥 En parejas", "skill": "🗣️ Hablar",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Veinte segundos de radio para vender una sola prenda.",
+    "gancho_nl": "Twintig seconden radio om één kledingstuk te verkopen.",
+    "consigna_es": "Graba un anuncio de veinte segundos con el pronombre repetido tres veces.",
+    "consigna_nl": "Neem een spot van twintig seconden op waarin het voornaamwoord drie keer "
+                   "terugkeert.",
+    "regla": "Hetzelfde pronomen moet er drie keer in — en de naam van het kledingstuk mag "
+             "maar één keer vallen. Daarna verwijs je er alleen nog naar.",
+    "pasos": [("Elegid la prenda. Decid su nombre una sola vez.", "Kies het kledingstuk. Noem het één keer."),
+              ("Escribid el texto con tres pronombres.", "Schrijf de tekst met drie voornaamwoorden."),
+              ("Grabad. Veinte segundos.", "Neem op. Twintig seconden."),
+              ("Escuchad: ¿se entiende de qué habláis?", "Luister: begrijp je waarover het gaat?")],
+    "datos": {
+        "marco": ["¿Buscas … ? La tenemos.", "La llevas en verano y en invierno.",
+                  "Y la puedes lavar en casa.", "Los tenemos en tres colores.",
+                  "No lo pienses más: es tuyo."],
+        "prendas": ["la camisa de flores", "los vaqueros", "las botas", "el jersey"],
+    },
+    "clave": [
+        "Toets drie dingen: één keer de naam, drie keer het pronomen, twintig seconden.",
+        "Wie het kledingstuk blijft herhalen, hoort meteen waarom pronomina bestaan — dat is "
+        "de didactische winst.",
+        "Meervoud (los vaqueros, las botas) is moeilijker en dus interessanter: los/las moet "
+        "meebewegen.",
+    ],
+    "nota": "Laat de spots klassikaal beluisteren. Het contrast tussen een spot mét en zonder "
+            "pronomina hoor je onmiddellijk.",
+}
+
+U6_RETO_10 = {
+    "id": "C5-U6-RETO-10", "num": 10, "curso": "C5", "unidad": U6,
+    "seccion": "§1.3", "ancla": "pronombres_u6", "soporte": "hub",
+    "nombre": "Lo compro / no lo compro",
+    "lente": "⚖️ onderhandeling & dilemma", "forma": "👨‍👩‍👧 En grupos", "skill": "🗣️ Hablar",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Cuatro compras, cuatro dudas. Ninguna respuesta es fácil.",
+    "gancho_nl": "Vier aankopen, vier twijfels. Geen enkel antwoord is makkelijk.",
+    "consigna_es": "Decide en cada caso y justifica con un pronombre en la frase.",
+    "consigna_nl": "Beslis per geval en verantwoord met een voornaamwoord in de zin.",
+    "regla": "Je antwoord bevat altijd het pronomen: «lo compro porque…» of «no la compro "
+             "porque…». Een antwoord zonder pronomen telt niet.",
+    "pasos": [("Lee el caso. No decidas todavía.", "Lees de casus. Beslis nog niet."),
+              ("Elige y di por qué, con el pronombre.", "Kies en zeg waarom, met het voornaamwoord."),
+              ("Comparad en grupo: ¿todos igual?", "Vergelijk in groep: iedereen hetzelfde?")],
+    "datos": {
+        "items": [
+            ("Una camiseta preciosa, pero cuesta 5 € y sabes cómo se fabrica.",
+             "No la compro.", ["No la compro.", "La compro.", "Lo compro."],
+             "camiseta is vrouwelijk: la, niet lo — en het dilemma is de prijs tegenover de herkomst"),
+            ("Unos vaqueros de segunda mano, casi nuevos, a mitad de precio.",
+             "Los compro.", ["Los compro.", "Lo compro.", "Las compro."],
+             "vaqueros is mannelijk meervoud: los"),
+            ("Un jersey de lana local, muy caro, que dura diez años.",
+             "Lo compro.", ["Lo compro.", "La compro.", "Los compro."],
+             "jersey is mannelijk enkelvoud: lo"),
+            ("Unas botas que te encantan pero te quedan un poco pequeñas.",
+             "No las compro.", ["No las compro.", "No los compro.", "No la compro."],
+             "botas is vrouwelijk meervoud: las"),
+        ],
+    },
+    "clave": [
+        "no la compro · los compro · lo compro · no las compro",
+        "De beslissing is vrij; de vórm niet. Daarom staat er telkens maar één antwoord met "
+        "het juiste pronomen tussen de opties.",
+        "Casus 1 en 3 zetten prijs tegenover duurzaamheid — laat het gesprek daar even lopen "
+        "vóór je naar de vorm kijkt.",
+    ],
+    "nota": "De vier casussen sluiten aan bij Moda circular. Wie beide doet, heeft de cijfers "
+            "én het dilemma.",
+}
+
+U6_RETO_01 = {
+    "id": "C5-U6-RETO-01", "num": 1, "curso": "C5", "unidad": U6,
+    "seccion": "§3.3", "ancla": "demostrativos", "soporte": "ppt",
+    "nombre": "El regateo",
+    "lente": "⚖️ onderhandeling & dilemma", "forma": "👥 En parejas", "skill": "🗣️ Hablar",
+    "tiempo": "± 15 min", "dificultad": "★★★",
+    "gancho_es": "En el mercado el primer precio nunca es el precio.",
+    "gancho_nl": "Op de markt is de eerste prijs nooit de prijs.",
+    "consigna_es": "Regatead hasta cerrar un trato. Cada uno tiene un límite secreto.",
+    "consigna_nl": "Onderhandel tot jullie een deal hebben. Ieder heeft een geheime grens.",
+    "regla": "De verkoper mag niet onder zijn bodemprijs, de koper niet boven zijn budget. "
+             "En elk nieuw bod moet met een reden komen — een getal alleen telt niet.",
+    "pasos": [("Coge tu tarjeta: precio mínimo o presupuesto.", "Neem je kaart: bodemprijs of budget."),
+              ("El vendedor empieza. Siempre alto.", "De verkoper begint. Altijd hoog."),
+              ("Regatead con razones, no solo con números.", "Onderhandel met redenen, niet alleen met getallen."),
+              ("¿No hay trato? También es un resultado.", "Geen deal? Dat is ook een uitkomst.")],
+    "datos": {
+        "productos": [("un sombrero", 250, 120), ("una manta de lana", 600, 350),
+                      ("unos aretes de plata", 400, 200), ("una bolsa bordada", 500, 260)],
+        "marco_vendedor": ["Le hago un buen precio.", "Es hecho a mano, mire.",
+                           "Se lo dejo en …", "No puedo bajar más."],
+        "marco_cliente": ["¿Cuánto cuesta?", "Es un poco caro para mí.",
+                          "¿Me lo deja en …?", "Entonces me lo llevo."],
+    },
+    "clave": [
+        "Getallen zijn (vraagprijs, bodemprijs) in peso's. Een deal ligt altijd tussen de "
+        "bodemprijs en het budget van de koper.",
+        "De pronomina zitten in de formules: «se lo dejo en…», «me lo llevo». Wijs erop dat "
+        "onderhandelen in het Spaans bijna niet kan zonder.",
+        "«No puedo bajar más» is het sluitstuk: wie het te vroeg zegt, verliest zijn ruimte.",
+    ],
+    "nota": "Afdingen is op Mexicaanse markten gebruikelijk in ambachtelijke kramen, niet in "
+            "winkels met vaste prijzen. Zeg dat erbij, anders leren leerlingen het verkeerd.",
+}
+
+U6_RETO_02 = {
+    "id": "C5-U6-RETO-02", "num": 2, "curso": "C5", "unidad": U6,
+    "seccion": "§2.3", "ancla": "acabar", "soporte": "ppt",
+    "nombre": "Devolución imposible",
+    "lente": "🎭 simulatie met beperking", "forma": "👥 En parejas", "skill": "🗣️ Hablar",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "Quieres devolver algo. No tienes el ticket.",
+    "gancho_nl": "Je wil iets terugbrengen. Je hebt geen kassabon.",
+    "consigna_es": "Consigue el cambio. El vendedor tiene tres negativas y tú tres argumentos.",
+    "consigna_nl": "Krijg de ruil rond. De verkoper heeft drie weigeringen en jij drie argumenten.",
+    "regla": "Je mag elk argument maar één keer gebruiken. Op wie in herhaling valt, hoeft "
+             "de verkoper niet meer te antwoorden.",
+    "pasos": [("El cliente explica el problema.", "De klant legt het probleem uit."),
+              ("El vendedor dice que no. Primera negativa.", "De verkoper zegt nee. Eerste weigering."),
+              ("El cliente usa su siguiente argumento.", "De klant gebruikt zijn volgende argument."),
+              ("¿Cambio, vale de tienda o nada?", "Ruil, tegoedbon of niets?")],
+    "datos": {
+        "negativas": ["Sin ticket no puedo hacer nada.",
+                      "Ya la ha llevado, mire la etiqueta.",
+                      "La política de la tienda es de quince días."],
+        "argumentos": ["La compré aquí la semana pasada, me acuerdo del vendedor.",
+                       "No la he llevado, solo me la he probado en casa.",
+                       "Solo quiero cambiarla por otra talla, no el dinero."],
+        "salidas": ["cambio por otra talla", "vale para la tienda", "nada de nada"],
+    },
+    "clave": [
+        "Het sterkste argument is het derde: wie alleen een andere maat vraagt, ontwijkt het "
+        "hele bonverhaal. Laat leerlingen dat zelf ontdekken.",
+        "Alle drie de weigeringen en alle drie de argumenten bevatten een pronomen — dat is "
+        "geen toeval maar het doel van de unit.",
+        "«Vale para la tienda» is de realistische uitkomst en een prima compromis.",
+    ],
+    "nota": "Wissel de rollen halverwege. De verkoperrol oefent meer dan de klantrol, omdat "
+            "die moet reageren op wat er komt.",
+}
+
+U6_RETO_08 = {
+    "id": "C5-U6-RETO-08", "num": 8, "curso": "C5", "unidad": U6,
+    "seccion": "Cultura", "ancla": "cultura_u6", "soporte": "ppt",
+    "nombre": "El cliente imposible",
+    "lente": "🎭 simulatie met beperking", "forma": "👥 En parejas", "skill": "🗣️ Hablar",
+    "tiempo": "± 12 min", "dificultad": "★★★",
+    "gancho_es": "El vendedor tiene que adivinar qué tipo de cliente le ha tocado.",
+    "gancho_nl": "De verkoper moet raden wat voor klant hij tegenover zich heeft.",
+    "consigna_es": "Interpreta tu tipo sin decirlo. El vendedor adivina al final.",
+    "consigna_nl": "Speel je type zonder het te zeggen. De verkoper raadt op het einde.",
+    "regla": "Je mag je type niet benoemen en niet overdrijven tot karikatuur. Het moet uit "
+             "je vragen en je reacties blijken.",
+    "pasos": [("Coge tu tarjeta de tipo. En secreto.", "Neem je typekaart. In het geheim."),
+              ("Comprad algo. Cinco turnos como máximo.", "Koop iets. Maximaal vijf beurten."),
+              ("El vendedor dice qué tipo cree que eres.", "De verkoper zegt welk type hij denkt."),
+              ("¿Acierta? Cambiad de papel.", "Juist? Wissel van rol.")],
+    "datos": {
+        "tipos": [("el indeciso", "Todo te gusta y nada te convence. Preguntas mucho."),
+                  ("el ahorrador", "Solo miras el precio. Siempre buscas algo más barato."),
+                  ("el que tiene prisa", "Quieres salir en dos minutos. Nada de charla."),
+                  ("el desconfiado", "Quieres saber de dónde viene todo y si se puede devolver."),
+                  ("el que va a regalar", "No es para ti. No sabes la talla del otro.")],
+        "marco_vendedor": ["¿Le ayudo?", "Este le queda muy bien.", "Se lo puedo enseñar en otro color.",
+                           "¿Se lo envuelvo para regalo?"],
+    },
+    "clave": [
+        "«El que va a regalar» is het makkelijkst te raden (die vraagt naar andermans maat), "
+        "«el desconfiado» het moeilijkst.",
+        "De verkoper oefent hier het meest: die moet vijf beurten lang blijven aanbieden met "
+        "pronomina.",
+        "Overdrijven bederft het spel én de taal: wie karikaturaal speelt, hoeft geen zinnen "
+        "meer te bouwen.",
+    ],
+    "nota": "Vijf beurten is genoeg. Langer en de klant valt uit zijn rol.",
+}
+
+
 # --- register per unit ---
 RETOS_U0 = [RETO_01, RETO_02, RETO_03, RETO_04, RETO_05,
             RETO_06, RETO_07, RETO_08, RETO_09, RETO_10]
@@ -2305,7 +3068,12 @@ RETOS_U3 = [U3_RETO_01, U3_RETO_02, U3_RETO_03, U3_RETO_04, U3_RETO_05,
             U3_RETO_06, U3_RETO_07, U3_RETO_08, U3_RETO_09, U3_RETO_10]
 RETOS_U4 = [U4_RETO_01, U4_RETO_02, U4_RETO_03, U4_RETO_04, U4_RETO_05,
             U4_RETO_06, U4_RETO_07, U4_RETO_08, U4_RETO_09, U4_RETO_10]
-RETOS = RETOS_U0 + RETOS_U1 + RETOS_U2 + RETOS_U3 + RETOS_U4
+RETOS_U5 = [U5_RETO_01, U5_RETO_02, U5_RETO_03, U5_RETO_04, U5_RETO_05,
+            U5_RETO_06, U5_RETO_07, U5_RETO_08, U5_RETO_09, U5_RETO_10]
+RETOS_U6 = [U6_RETO_01, U6_RETO_02, U6_RETO_03, U6_RETO_04, U6_RETO_05,
+            U6_RETO_06, U6_RETO_07, U6_RETO_08, U6_RETO_09, U6_RETO_10]
+RETOS = (RETOS_U0 + RETOS_U1 + RETOS_U2 + RETOS_U3 + RETOS_U4
+         + RETOS_U5 + RETOS_U6)
 
 # Waar in de printcursus elke sectie eindigt — hier wordt een print-reto ingevoegd.
 ANCLAS = ["alfabeto", "sonidos", "sonido_letra", "acento", "numeros", "saludos", "cultura",
@@ -2316,7 +3084,10 @@ ANCLAS = ["alfabeto", "sonidos", "sonido_letra", "acento", "numeros", "saludos",
           # C5 U3
           "hora", "rutina", "irregular", "cultura_u3",
           # C5 U4
-          "gustar", "reacciones", "planes", "cultura_u4"]
+          "gustar", "reacciones", "planes", "cultura_u4",
+          # C5 U5 en U6
+          "cantidades", "comida", "pedir", "pronombres_u5", "cultura_u5",
+          "pronombres_u6", "acabar", "demostrativos", "concordancia_u6", "cultura_u6"]
 
 
 def de(curso, unidad):
