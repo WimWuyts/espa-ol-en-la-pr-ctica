@@ -182,6 +182,12 @@ def main():
     if not ok:
         fallos.append("jargon: " + salida[-300:])
 
+    print("── 6b · Lucide-iconen in de gedrukte cursus ─────────────────────")
+    ok, salida = corre(["python3", "print_iconos.py"], cwd=WEB)
+    print("   %s" % (salida.splitlines()[-1] if salida else "ok"))
+    if not ok:
+        fallos.append("print-iconen: " + salida[-300:])
+
     print("── 7 · bladspiegel: mijlpaalsecties + gedeelde breukregels ───────")
     ok, salida = corre(["python3", "bladspiegel.py"], cwd=WEB)
     print("   %s" % (salida.splitlines()[-1] if salida else "ok"))

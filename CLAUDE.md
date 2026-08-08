@@ -395,10 +395,15 @@ De richtlijnen zijn **geen proza om te "kennen" maar een plukvijver om uit te pu
   waarin ze staan) en de nabewerking `hub_post_iconos.py`. **De woordkaartjes houden hun
   kleur-emoji** (`vocab_emoji.py`, vastgelegd bij U5): een woordkaart toont een díng, en
   daar is kleur een geheugensteun. De regel die daaruit volgt en die overal geldt:
-  **een icoon is interface, een emoji is betekenis.** In print **nog niet toegepast** — zie de drukproef
-  `02-huisstijl/vendor/lucide/ejemplo_iconos.html`; de omschakeling is een beslissing
-  van de auteur. Wat géén emoji is maar typografie (★☆ moeilijkheid · ☐ aankruisvak ·
-  → in een keten · het semáforo · de vlaggen) blijft hoe dan ook staan.
+  **een icoon is interface, een emoji is betekenis.** **In print óók toegepast**
+  (auteur 2026-08-08): `03-build/web/print_iconos.py` zet na de bouw 3026 interface-emoji
+  om naar inline Lucide-SVG in alle 27 print-units (C4 · C5 · C6+), met `currentColor`
+  zodat een icoon in een groene badge groen wordt. De twee tegenlijsten staan in
+  `iconos.py`: **`BADGE`** (42 emoji die interface zijn → icoon) en **`NO_TRADUCIR`**
+  (typografie die blijft). Onaangeroerd blijven: de **woordkaartjes** en §V-tabellen,
+  het **semáforo**, de **vlaggen**, de **familieleden**, alle **voorwerp-emoji**, en wat
+  géén emoji is maar typografie (★☆ moeilijkheid · ☐ aankruisvak · → in een keten ·
+  ①②③ stappen). Kosten: 816 → 819 bladzijden.
 - **Mockups (chat/ficha/ticket/menu/bingo/poster/profiel…), infographics, spot-illustraties, kleurvlakken:** vector (SVG), in huis gebouwd (zie `assets2.py`).
 - **Technische pijplijn:** SVG = bron → **300 dpi PNG** voor Word/PDF (python-docx plaatst PNG kraakhelder), **SVG** rechtstreeks in HTML. Foto's als hoge-resolutie JPEG/PNG.
 - **Altijd:** alt-tekst bij elk beeld · **grijswaarden-veilig** · kleur nooit als enige informatiedrager (ook label/vorm/icoon).

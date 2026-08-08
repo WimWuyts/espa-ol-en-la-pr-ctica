@@ -100,7 +100,43 @@ BADGE = {
     "🍽": "utensils",
     "👕": "shirt",
     "🏠": "house",
+    # ── erbij toen print aan de beurt kwam (2026-08-08) ─────────────────────
+    # Geteld in de zevenentwintig gebouwde units: dit zijn de emoji die daar
+    # interface zijn — een knop, een werkvorm, een wegwijzer — en dus geen
+    # betekenis dragen die de leerling moet onthouden.
+    "🔊": "volume-2",         # luister / speel af
+    "🎬": "clapperboard",     # video / scène
+    "🖨": "printer",          # opslaan als PDF
+    "💾": "save",             # bewaren
+    "✅": "check",            # goed (de kléúr-emoji; ✓ blijft typografie)
+    "🔬": "microscope",       # analyseren
+    "⚖": "scale",             # contrast / afwegen
+    "💡": "lightbulb",        # tip
+    "🔎": "zoom-in",          # nader bekijken
+    "🔢": "hash",             # cijfers
+    "🎨": "palette",          # creatief
+    "🧩": "puzzle",           # puzzel
+    "🎲": "dices",            # kans / willekeurig
+    "🔀": "shuffle",          # husselen
+    "🏫": "school",           # op school
+    "👀": "eye",              # kijk goed
 }
+
+# Wat géén icoon wordt, en waarom. Dit is de tegenlijst: even belangrijk als
+# BADGE, want zonder haar zou een sweep álle emoji omzetten en daarmee
+# betekenis vernielen.
+#
+#   ★ ☆      moeilijkheidssterren — typografie, geen icoon
+#   ☐ ✓ ✗    aankruisvak en correctie — typografie
+#   → ↔ ↳    ketens en verwijzingen — typografie
+#   ① ② ③    genummerde stappen — typografie
+#   ♀ ♂      grammaticaal geslacht — betekenis
+#   🔴🟡🟢🟠🔵  het semáforo — kleur ís hier de informatie
+#   🇪🇸 🇲🇽 …  vlaggen — betekenis
+#   👨👩👧👦   familieleden in U2 — betekenis, geen werkvorm
+#   alle overige voorwerp-emoji (eten, kleding, meubels) op woordkaartjes:
+#   daar is de kleur een geheugensteun (CLAUDE.md §15, vastgelegd bij U5).
+NO_TRADUCIR = set("★☆☐✓✗✔✘→↔↳←⇒①②③④⑤♀♂🔴🟡🟢🟠🔵🟣⚪⚫")
 
 
 def badge(emoji, mm=MM_BADGE, **kw):
