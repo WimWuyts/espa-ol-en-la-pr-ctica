@@ -16,7 +16,7 @@ Paarse vervolgcursus (C6+), Unidad 3. Bouwt de A2-toekomst-motor: plannen maken,
 | **C6plus_U3_docente.pptx** | PowerPoint docent (21 dia's) | Vrije navigatie, oplossingen + didactiek in notities. Klik-onthul. |
 | **C6plus_U3_alumno.pptx** | PowerPoint leerling (20 dia's) | **F5**; elke klik onthult het volgende antwoord. |
 
-> **Let op (PowerPoint):** PowerPoint kan bij het openen «Repareren» vragen — dat is normaal (de klik-onthul-animaties). Bevestigen; de animaties werken dan.
+> **PowerPoint:** opent gewoon, zonder reparatievraag. Kwam die vroeger wél, dan had je een versie van vóór 2026-08-05: toen zat er een schemafout in elke vorm met een slagschaduw (twee `<a:effectLst>` in één `<p:spPr>`). Opgelost in de generatoren én in alle bestaande decks.
 
 ## Inhoud & didactiek
 - **§0 ¡Ponte al día!** (repaso presente + gustar→le/les) → **§1 el móvil y las redes** (aparatos · redes · acciones) → **§2 ir a + infinitivo** (§2.1 sistema/máquina · §2.2 expresiones de tiempo · §2.3 practicar) → **§3 le/les** (§3.1 ¿qué es? · §3.2 verbos de comunicación · §3.3 posición) → **§4 acabar de + creo que + indicativo** (§4.1 acabar de · §4.2 creo que · vrije mening) → **§5 comunicar y hacer planes** (chat + info-gap) → **§6 Lectura** («¿Adicto al móvil?» — Diego/Lucía) → **Taller** (c/z/qu + conectores de tiempo) → **Cultura** (el mundo digital hispano: reguetón, WhatsApp, el español online) → **Tarea «Mi plan de fin de semana»** → **Repaso** (semáforo) → **§V Vocabulario** (74 woorden, 7 groepen).

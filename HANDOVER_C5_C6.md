@@ -71,7 +71,7 @@ Vaste sectiestructuur (CLAUDE.md §6): `§0 ¡Ponte al día!` → `§1…§N` �
 
 ### 3c · PowerPoint (2 decks) — GEANIMEERD format (LOCKED)
 - Generator `gen_u<N>_docente.py`, `build(mode,out)` → **docente `.pptx`** (oplossingen + spreker-notities) + **alumno `.pptx`** (leerling drukt **F5** voor de diavoorstelling). **NB:** lever de alumno NIET als `.ppsx` — dat slideshow-contenttype wordt door PowerPoint geweigerd («kan niet worden gelezen»). `to_ppsx()` blijft in de engine maar wordt niet meer voor levering gebruikt.
-- **Klik-animaties** via geïnjecteerde `<p:timing>` (verschijnen-bij-klik). ⚠️ PowerPoint toont bij openen soms een **reparatie-dialoog** → **«Repareren»** en de animaties werken. De auteur accepteert dit format. **Geen kioskmodus.**
+- **Klik-animaties** via geïnjecteerde `<p:timing>` (verschijnen-bij-klik). **Geen kioskmodus.** De decks openen zonder reparatievraag; die kwam van een dubbele `<a:effectLst>` in `_soft_shadow()`, niet van de animaties (opgelost 2026-08-05, zie `03-build/pptx/repara_effectlst.py`).
 - Diamaster-layouts + regels: CLAUDE.md §16 (TITLE·LESSON_MENU·VOCABULARY·GRAMMAR·READING·LISTENING·SPEAKING·WRITING·QUIZ·FEEDBACK·CULTURE·FINAL_MISSION·TEACHER_NOTES), noodroute-hyperlinks, echte cast-avatars, huisstijl, ≥20 dia's.
 - Echte cast-avatar-PNG's: `03-build/pptx/assets/` (gerenderd via `03-build/pptx/render_avatars.py` uit `cast_gen.py`).
 
@@ -131,7 +131,7 @@ Receptief→productief · **retrieval vóór herlezen** · **steun-afbouw** (mod
 1. Motor-spellen **azulejo-stijl behouden** (contrast). Niet omkleuren.
 2. Audio = **browser-TTS** voorlopig (geen eigen opnames).
 3. **Conjugador = aparte cursus-tool**, ~1000 werkwoorden, 2 lagen, enkel presente. Werkwoordsvervoeging **niet** in de units.
-4. **PowerPoint = geanimeerd format** (klik-animaties; «Repareren» is aanvaard), 2 decks, geen kiosk.
+4. **PowerPoint = geanimeerd format** (klik-animaties), 2 decks, geen kiosk. Opent zonder reparatievraag.
 5. **Bewerkbare laag** op zowel PDF-cursus (`U<N>.html`) als HTML-hub (contenteditable + Opslaan-als-PDF + Bewaar).
 6. **Kaart = échte geografie** (Natural Earth), **klikbaar** in HTML, met **vlaggen + landcodes**.
 7. QR's op print → naar de HTML-hub (niet rechtstreeks YouTube/PPTX).
@@ -195,7 +195,7 @@ CHROME = `/opt/pw-browsers/chromium-*/chrome-linux/chrome`. Verifieer visueel me
 - [ ] **Traditionele cloze-werkwoordsoefening** aanwezig in de cursus (§14bis) + als motor-spel op de hub.
 - [ ] **Leessectie (Lectura)** aanwezig in de cursus (§14bis) — visuele tekstintro → voorspellen → scannen → V/F+bewijs → productieve reactie.
 - [ ] Games gekozen **in functie van de leerstof** + **variatie** (put uit >100 motor-oefentypes; geen speltype 2× met dezelfde jas). Ontbreekt een geschikt speltype → **motor-sjabloon bijbouwen**.
-- [ ] PPTX: 2 decks, **beide `.pptx`** (alumno NIET als `.ppsx` — dat weigert PowerPoint), echte avatars, ≥20 dia's, animaties aanwezig (na «Repareren»), vier vaardigheden gedekt, print↔HTML-kruisverwijzing.
+- [ ] PPTX: 2 decks, **beide `.pptx`** (alumno NIET als `.ppsx` — dat weigert PowerPoint), echte avatars, ≥20 dia's, animaties aanwezig, vier vaardigheden gedekt, print↔HTML-kruisverwijzing.
 - [ ] **Getallen/tellingen kloppen** (bv. «N spellen» in print = werkelijk aantal games in de hub).
 - [ ] **§0-repaso klopt met de vorige unit** (haal enkel op wat écht is aangeleerd — verifieer tegen `U<N-1>_bron.md`).
 - [ ] LPD-codes ingevuld; eindtaak communicatief.

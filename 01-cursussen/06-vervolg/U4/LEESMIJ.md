@@ -16,7 +16,7 @@ Paarse vervolgcursus (C6+), Unidad 4. Bouwt de eerste échte verleden tijd: de v
 | **C6plus_U4_docente.pptx** | PowerPoint docent (21 dia's) | Vrije navigatie, oplossingen + didactiek in notities. Klik-onthul. |
 | **C6plus_U4_alumno.pptx** | PowerPoint leerling (20 dia's) | **F5**; elke klik onthult het volgende antwoord. |
 
-> **Let op (PowerPoint):** PowerPoint kan bij het openen «Repareren» vragen — dat is normaal (de klik-onthul-animaties). Bevestigen; de animaties werken dan.
+> **PowerPoint:** opent gewoon, zonder reparatievraag. Kwam die vroeger wél, dan had je een versie van vóór 2026-08-05: toen zat er een schemafout in elke vorm met een slagschaduw (twee `<a:effectLst>` in één `<p:spPr>`). Opgelost in de generatoren én in alle bestaande decks.
 
 ## Inhoud & didactiek
 - **§0 ¡Ponte al día!** (repaso presente + ir a) → **§1 transporte y alojamiento** → **§2 el perfecto compuesto** (§2.1 sistema/máquina · §2.2 participios irregulares · §2.3 practicar) → **§3 por / para** (§3.1 contraste · §3.2 practicar) → **§4 experiencias y lugares** (ya/todavía no/nunca/alguna vez) → **§5 Lectura** («Un viaje inolvidable» — Nina/Diego) → **Taller** (h muda + conectores de secuencia) → **Cultura** (el gran viaje hispano: Atacama, Camino de Santiago, Rapa Nui) → **Tarea «Mi mejor viaje»** → **Repaso** (semáforo) → **§V Vocabulario** (72 woorden, 8 groepen).

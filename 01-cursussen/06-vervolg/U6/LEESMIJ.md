@@ -16,7 +16,7 @@ Paarse vervolgcursus (C6+), Unidad 6. Sluit de verleden-tijdenboog (U4–U6) af 
 | **C6plus_U6_docente.pptx** | PowerPoint docent (21 dia's) | Vrije navigatie, oplossingen + didactiek in notities. Klik-onthul. |
 | **C6plus_U6_alumno.pptx** | PowerPoint leerling (20 dia's) | **F5**; elke klik onthult het volgende antwoord. |
 
-> **Let op (PowerPoint):** PowerPoint kan bij het openen «Repareren» vragen — dat is normaal (de klik-onthul-animaties). Bevestigen; de animaties werken dan.
+> **PowerPoint:** opent gewoon, zonder reparatievraag. Kwam die vroeger wél, dan had je een versie van vóór 2026-08-05: toen zat er een schemafout in elke vorm met een slagschaduw (twee `<a:effectLst>` in één `<p:spPr>`). Opgelost in de generatoren én in alle bestaande decks.
 
 ## Inhoud & didactiek
 - **§0 ¡Ponte al día!** (indefinido → imperfecto) → **§1 la infancia** (woordenschat + antes↔ahora) → **§2 el imperfecto** (§2.1 machine/regla · §2.2 irregulares era/iba/veía · §2.3 practicar) → **§3 contraste indef. ↔ imperf.** (achtergrond of feit?) → **§4 comparativos + que** (más/menos/tan + betrekkelijke que) → **§5 Lectura** («El pueblo de mi abuela» — recuerdo) → **Taller** (acentos in het imperfecto -ía + y/ll + conectoren van vergelijking) → **Cultura** (la infancia en el mundo hispano · Cusco/Perú) → **Tarea «Cuando era pequeño/a»** → **Repaso** (semáforo) → **§V Vocabulario** (54 woorden, groepen infancia/escuela/familia/imperfecto/antes-ahora/comparar/relativo/opinar).

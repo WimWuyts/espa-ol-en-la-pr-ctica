@@ -60,7 +60,7 @@ HANDOVER_C4.md                                        ← dit document
 |---|---|---|---|
 | **HTML-hub** | `gen_c4u1_hub.py` (bundelt de 4 componenten in `srcdoc`-iframes, tabbladen) | — (standalone, offline) | fonts base64-embed; `allow`-permissies op `.frame` voor de video |
 | **PDF (print)** | `gen_c4u1_pdf.py` (HTML-bron met print-CSS + editbar) | Chromium `--headless --print-to-pdf` | **primeair print-formaat**; bevat bewerkbare `U<N>.html`-laag |
-| **PowerPoint** | `gen_c4u1_ppt.py` (python-pptx + `<p:timing>`) | — | docente `.pptx` + alumno `.ppsx`; «Repareren»-dialoog aanvaard |
+| **PowerPoint** | `gen_c4u1_ppt.py` (python-pptx + `<p:timing>`) | — | docente `.pptx` + alumno `.ppsx`; opent zonder reparatievraag (zie CLAUDE.md §10) |
 | **Word (optioneel)** | `gen_c4u1_docx.js` (docx-js) | LibreOffice **werkt niet in sandbox** | bouwbaar + XSD-valide, maar niet te renderen → PDF primeert |
 
 **Render-commando's (werken in deze sandbox):**

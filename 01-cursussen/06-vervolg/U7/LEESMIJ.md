@@ -16,7 +16,7 @@ Paarse vervolgcursus (C6+), Unidad 7 — **de laatste unit (P3-capstone)**. Hier
 | **C6plus_U7_docente.pptx** | PowerPoint docent (21 dia's) | Vrije navigatie, oplossingen + didactiek in notities. Klik-onthul. |
 | **C6plus_U7_alumno.pptx** | PowerPoint leerling (20 dia's) | **F5**; elke klik onthult het volgende antwoord. |
 
-> **Let op (PowerPoint):** PowerPoint kan bij het openen «Repareren» vragen — dat is normaal (de klik-onthul-animaties). Bevestigen; de animaties werken dan.
+> **PowerPoint:** opent gewoon, zonder reparatievraag. Kwam die vroeger wél, dan had je een versie van vóór 2026-08-05: toen zat er een schemafout in elke vorm met een slagschaduw (twee `<a:effectLst>` in één `<p:spPr>`). Opgelost in de generatoren én in alle bestaande decks.
 
 ## Inhoud & didactiek
 - **§0 ¡Ponte al día!** (imperfecto → advies/mening) → **§1 salud y medio ambiente** (woordenschat) → **§2 el imperativo** (§2.1 formas/machine · §2.2 + pronombres enclíticos · §2.3 cartel de consejos) → **§3 opinar y argumentar** (creo que + indicativo · reageren) → **§4 conectores** (porque/además/por eso/sin embargo · a favor/en contra) → **§5 Lectura** («Diez consejos para el planeta») → **Taller** (acento enclítico + conectoren argumentativos) → **Cultura** (Costa Rica · pura vida) → **Tarea «Mi cartel de opinión»** (capstone) → **Repaso** (semáforo + cierre de la ruta) → **§V Vocabulario** (54 woorden, groepen salud/consejos/medioambiente/imperativo/opinar/conectores).

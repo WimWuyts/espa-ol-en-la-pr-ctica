@@ -16,7 +16,7 @@ Paarse vervolgcursus (C6+), Unidad 2. Bouwt de A2-ruimte-motor: waar staat wat, 
 | **C6plus_U2_docente.pptx** | PowerPoint docent (21 dia's) | Vrije navigatie, oplossingen + didactiek in notities. Klik-onthul. |
 | **C6plus_U2_alumno.pptx** | PowerPoint leerling (20 dia's) | **F5**; elke klik onthult het volgende antwoord. |
 
-> **Let op (PowerPoint):** PowerPoint kan bij het openen «Repareren» vragen — dat is normaal (de klik-onthul-animaties). Bevestigen; de animaties werken dan.
+> **PowerPoint:** opent gewoon, zonder reparatievraag. Kwam die vroeger wél, dan had je een versie van vóór 2026-08-05: toen zat er een schemafout in elke vorm met een slagschaduw (twee `<a:effectLst>` in één `<p:spPr>`). Opgelost in de generatoren én in alle bestaande decks.
 
 ## Inhoud & didactiek
 - **§0 ¡Ponte al día!** (repaso ser/estar + gustar) → **§1 la casa** (habitaciones · muebles) → **§2 hay vs estar + preposiciones** (§2.1/2.2/2.3) → **§3 estar + gerundio** (§3.1/3.2/3.3, incl. onregelmatige leyendo/durmiendo/pidiendo) → **§4 OD-pronomina lo/la/los/las** (§4.1/4.2/4.3, concordancia + plaats) → **§5 el barrio y cómo llegar** (de weg vragen/wijzen) → **§6 Lectura** → **Taller** (b/v + aquí/ahí/allí) → **§7 Lectura «Casa Azul»** → **§8 Escucha «Estoy perdido en Cartagena»** → **Cultura** (la vivienda hispana: patios, balcones, plazas) → **Tarea «Mapa de mi barrio»** → **Repaso** (semáforo) → **§V Vocabulario** (73 woorden, 8 groepen).

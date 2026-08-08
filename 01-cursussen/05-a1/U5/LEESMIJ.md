@@ -21,8 +21,7 @@ poco · un poco de) · pedir met cortesía · de OD-pronomina lo / la / los / la
 | **C5_U5_docente.pptx** | PowerPoint docent | Vrije navigatie, oplossingen en didactiek in de notities. |
 | **C5_U5_alumno.pptx** | PowerPoint leerling | Druk **F5**; elke klik onthult het volgende antwoord. |
 
-> **Let op (PowerPoint):** PowerPoint vraagt bij het openen soms «Repareren» — dat hoort
-> bij de klik-onthul-animaties. Bevestigen; daarna werkt alles.
+> **PowerPoint:** opent gewoon, zonder reparatievraag. Kwam die vroeger wél, dan had je een versie van vóór 2026-08-05: toen zat er een schemafout in elke vorm met een slagschaduw (twee `<a:effectLst>` in één `<p:spPr>`). Opgelost in de generatoren én in alle bestaande decks.
 
 ## Wat er in de hub zit
 

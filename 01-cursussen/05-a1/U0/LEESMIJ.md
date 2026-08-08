@@ -17,8 +17,7 @@ géén condicional, géén subjuntivo.
 | **C5_U0_docente.pptx** | PowerPoint docent (23 dia's) | Vrije navigatie, oplossingen en didactiek in de notities. |
 | **C5_U0_alumno.pptx** | PowerPoint leerling (22 dia's) | Druk **F5**; elke klik onthult het volgende antwoord. |
 
-> **Let op (PowerPoint):** PowerPoint vraagt bij het openen soms «Repareren» — dat hoort
-> bij de klik-onthul-animaties. Bevestigen; daarna werkt alles.
+> **PowerPoint:** opent gewoon, zonder reparatievraag. Kwam die vroeger wél, dan had je een versie van vóór 2026-08-05: toen zat er een schemafout in elke vorm met een slagschaduw (twee `<a:effectLst>` in één `<p:spPr>`). Opgelost in de generatoren én in alle bestaande decks.
 
 ## Wat er in de hub zit
 
