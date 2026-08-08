@@ -1216,9 +1216,20 @@ function escReproductor(cfg,onEstado){
  // bij het openen van de pagina proberen, dan logt de browser een netwerkfout
  // zolang er nog geen opname bestaat — en dan is «geen consolefouten» geen
  // bruikbare rooktest meer bij het bouwen van een unit.
+ // Het pad in de gegevens zegt .mp3, maar de opnames zijn wav (er is geen
+ // ffmpeg in de bouwomgeving). In plaats van de gegevens te laten liegen over
+ // wat er staat, probeert de speler beide: eerst het opgegeven pad, dan dezelfde
+ // naam met de andere extensie, en pas dán de stem van de browser. Zo werkt het
+ // vóór én na een omzetting naar mp3, zonder dat er iets bijgewerkt moet worden.
+ let alternado=false;
+ function otraExtension(u){return /\.mp3$/i.test(u)?u.replace(/\.mp3$/i,'.wav')
+                                                  :u.replace(/\.wav$/i,'.mp3');}
  function fuente(){if(el||!cfg.audio)return el;
    el=new Audio(cfg.audio);el.preload='none';
-   el.addEventListener('error',()=>{modo='tts';onEstado&&onEstado(modo,!parado);if(!parado){idx=0;ttsSecuencia();}});
+   el.addEventListener('error',()=>{
+     if(!alternado){alternado=true;el.src=otraExtension(cfg.audio);
+       if(!parado)el.play().catch(()=>{});return;}
+     modo='tts';onEstado&&onEstado(modo,!parado);if(!parado){idx=0;ttsSecuencia();}});
    el.addEventListener('ended',()=>{parado=true;onEstado&&onEstado(modo,false);});
    return el;}
  function ttsLinea(i,despues){
