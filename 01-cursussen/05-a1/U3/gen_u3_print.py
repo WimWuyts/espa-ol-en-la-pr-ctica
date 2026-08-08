@@ -51,12 +51,12 @@ html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 body{ margin:0; font-family:var(--body); color:var(--ink); background:var(--paper); font-size:10.3pt; line-height:1.5; }
 .page{ padding:0 15mm; }
 .gloss{ color:var(--mut); font-style:italic; }
-h2,h3,.pk,.divider,.se,.acthead,.intro,.route-note,.lpd,.asset{ break-after:avoid; }
+
 .regla,.truc,.pcard,.call,.qr,.guide,.esen,.audiorow,.wcols,.wbox,.sem,.acthead,.chatline,.fichacard{ break-inside:avoid; }
-.newpage{ break-before:page; }
+
 .act{ break-inside:auto; }
 .alf tr,.mp tr,.sem tr,.conj tr{ break-inside:avoid; } .alf thead,.mp thead,.sem thead,.conj thead{ display:table-header-group; }
-.sec{ break-before:page; } .hero + .page{ break-before:avoid; }
+ 
 /* schrijf-componenten */
 .wl{ display:inline-block; border-bottom:1.6px solid var(--line2); min-width:34mm; height:6mm; vertical-align:-1.6mm; }
 .wl.sm{ min-width:18mm } .wl.md{ min-width:50mm } .wl.lg{ min-width:72mm }

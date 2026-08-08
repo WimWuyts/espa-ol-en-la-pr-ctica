@@ -25,7 +25,7 @@ E = lambda s: html.escape(s or "")
 CSS = """
 /* ── retos — de out-of-the-box oefeningen ────────────────────────────────── */
 .reto{ border:.5pt solid var(--line2); border-radius:4mm; padding:4mm 5mm 4.5mm;
-       margin:4mm 0 5mm; break-inside:avoid; background:#FFFDF9; }
+       margin:4mm 0 5mm; break-inside:auto; background:#FFFDF9; }
 .reto .rcab{ display:flex; gap:2.5mm; align-items:center; flex-wrap:wrap; margin-bottom:1.5mm; }
 .reto .rnum{ background:var(--g); color:#fff; font-family:var(--dispx); font-size:11pt;
              width:8.5mm; height:8.5mm; border-radius:50%; display:flex; align-items:center;
@@ -98,6 +98,22 @@ CSS = """
 .prohib{ background:#FEF2F2; border:.4pt solid var(--red); color:var(--red);
          border-radius:2mm; padding:1.2mm 2.6mm; font-size:9pt; font-weight:600; }
 .barra{ display:inline-block; height:3.4mm; background:var(--g); border-radius:1mm; }
+
+/* ── bladspiegel · uit 02-huisstijl/templates/cursus-print.css ───────────── */
+p,li,dd,td,.intro,.hist,.rgancho,.rconsigna{ orphans:3; widows:3; }
+.sec{ break-before:auto; break-inside:auto; margin-top:12mm; }
+.sec.major{ break-before:page; margin-top:0; }
+.sec:first-of-type{ margin-top:0; }
+.regla,.truc,.pcard,.call,.qr,.guide,.esen,.mp,.audiorow,.wcols,.wbox,.sem,
+.acthead,.obsbox,.machine,.tree,.zoom,.fmu,.xray,.colloc,.clusters,.vpairs,
+.blocks,.agree,.rpunt,.fichacard,.mispal,.scale{ break-inside:avoid; }
+.act,.reto,.lectura,table{ break-inside:auto; }
+.act > .acthead,.reto .rcab,.reto > h3{ break-after:avoid; }
+.reto,.act,.esen,.obsbox{ -webkit-box-decoration-break:clone; box-decoration-break:clone; }
+.alf tr,.mp tr,.sem tr,.conj tr,.wtab tr{ break-inside:avoid; }
+.alf thead,.mp thead,.sem thead,.conj thead,.wtab thead{ display:table-header-group; }
+.page .page{ padding-left:0; padding-right:0; }
+h2,h3,.pk,.divider,.se{ break-after:avoid; }
 """
 
 _ICONO = {"hub": "🎮", "ppt": "📊", "print": "📄"}

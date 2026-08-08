@@ -813,12 +813,12 @@ EDITBAR = '''
 # ---------- OVERRIDE (bladspiegel-hygiëne, U1) ----------
 # Voorkom weesregels/orphan-staarten: een activiteit + zijn APOYO-badge blijven samen op één pagina
 # (anders spilt de trailing steun-badge alleen op een lege pagina). Tabellen/wboxen niet doorsnijden.
-CSS_OVR = ('.act{break-inside:avoid;} .act .steun{break-before:avoid;} '
+CSS_OVR = (' .act .steun{break-before:avoid;} '
            '.fams,.machine,.obsbox,.scale,.tree,.zoom,.fmu,.xray,.colloc,.clusters,.vpairs,.blocks,.agree{break-inside:avoid;} '
            '.ptexts,.fichacard,.menu,.gustobars{break-inside:avoid;} '
            # trailing slotblokken (guide/verwijzing/bridge) mogen nooit alleen op een pagina spillen:
-           '.bridge,.guide,.route-note,.truc,.audiorow{break-before:avoid;} '
-           '.esen{break-after:avoid;}')
+           ' '
+           '')
 
 # ---------- ASSEMBLE ----------
 HTML = ('<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Más español en la práctica · C6+ U1 El día a día</title><style>'

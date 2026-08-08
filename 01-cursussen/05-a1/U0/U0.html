@@ -613,7 +613,7 @@ body.editing [contenteditable="true"]:focus{ outline:2px solid #157355; backgrou
 </div><!-- ===== retos · sonidos (einde) ===== -->
 <div class="page">
   <!-- ===== §2 PARADA HEADER ===== -->
-  <div class="parada sec">
+  <div class="parada sec major">
     <div class="num">2</div>
     <span class="pk">§2 · Taller de lengua — El acento «la regla del sombrero»</span>
     <div class="intro">Ya sabes <b>cómo suena</b> cada letra. Ahora, algo pequeño con grandes consecuencias: <b>qué sílaba dices más fuerte</b> (la sílaba tónica) y <b>cuándo escribes un pequeño sombrero</b> — la <b>tilde</b> (´). Domínalo y leerás cada palabra nueva del viaje con la <b>acentuación correcta</b>.
@@ -1945,6 +1945,65 @@ body.editing [contenteditable="true"]:focus{ outline:2px solid #157355; backgrou
 .tira span{ border:.4pt solid var(--line); border-radius:2mm; padding:1.2mm 2.4mm; font-size:8.8pt;
             background:#fff; }
 .tira b{ color:var(--gd); }
+
+
+
+
+
+/* bladspiegel.py — gedeelde kit, laatste woord */
+/* @bladspiegel:ini — alles tot @bladspiegel:fin wordt door bladspiegel.py uit
+   dit bestand gelezen en als laatste blok in elke gebouwde unit gezet, zodat
+   er één bron van waarheid is voor het breukgedrag. Niet verplaatsen. */
+/* ── BLADSPIEGEL ───────────────────────────────────────────────────────────
+   Gemeten, niet bedacht: het oude «elke sectie op een nieuwe bladzijde» kostte
+   58 tot 75 % van al het verspilde papier, en in C6+ U1 was een op de drie
+   bladzijden halfleeg. Deze kit is nu de ENIGE plaats waar breukgedrag staat;
+   generatoren mogen deze selectoren niet meer overschrijven.
+   ────────────────────────────────────────────────────────────────────────── */
+
+/* 1 · regelniveau — geen losse kop- of staartregel over een paginagrens */
+p,li,dd,td,.intro,.hist,.rgancho,.rconsigna{ orphans:3; widows:3; }
+
+/* 2 · een nieuwe bladzijde is voor de mijlpalen, niet voor elke sectie.
+      §0, Taller, Cultura, Tarea, Repaso en §V krijgen .major; de genummerde
+      inhoudssecties vloeien door en worden gemarkeerd door hun bovenmarge
+      en de gekleurde lijn van .parada.
+      Taller, Cultura, Tarea final, Repaso en §V zijn de mijlpalen; §0 niet,
+      want die volgt op de opener en vult er samen mee één bladzijde.
+
+      Het `sec`-blok is alléén de kop (nummer + titel + inleiding + LPD-chips);
+   de inhoud volgt eronder als broer. Daarom mag het niet breken en niet als
+   laatste op een bladzijde blijven staan: een sectietitel zonder zijn sectie. */
+.sec{ break-before:auto; break-inside:avoid; break-after:avoid; margin-top:12mm; }
+.sec.major{ break-before:page; margin-top:0; }
+.sec:first-of-type{ margin-top:0; }
+
+/* 3 · onbreekbaar is alleen wat op een blad past. break-inside:avoid op een
+      blok van 300–500 mm levert een lege bladzijde op én snijdt het blok
+      daarna alsnog doormidden — de slechtst mogelijke uitkomst. */
+.regla,.truc,.pcard,.call,.qr,.guide,.esen,.mp,.audiorow,.wcols,.wbox,.sem,
+.acthead,.obsbox,.machine,.tree,.zoom,.fmu,.xray,.colloc,.clusters,.vpairs,
+.blocks,.agree,.rpunt,.fichacard,.mispal,.scale{ break-inside:avoid; }
+.act,.reto,.lectura,table{ break-inside:auto; }
+.act > .acthead,.reto .rcab,.reto > h3{ break-after:avoid; }
+
+/* een kader dat tóch breekt, krijgt op beide helften zijn volledige omranding,
+   zodat het als twee complete panelen leest in plaats van als een snee */
+.reto,.act,.esen,.obsbox{ -webkit-box-decoration-break:clone; box-decoration-break:clone; }
+
+/* 4 · tabellen: rijen heel, kop herhaalt — .wtab hoorde hier altijd al bij */
+.alf tr,.mp tr,.sem tr,.conj tr,.wtab tr{ break-inside:avoid; }
+.alf thead,.mp thead,.sem thead,.conj thead,.wtab thead{ display:table-header-group; }
+
+/* 5 · één tekstkolom van 180 mm. Geneste .page-divs stapelden hun padding,
+      waardoor 27 tot 40 % van de inhoud in een kolom van 150 of 120 mm stond —
+      dat is wat er als «verspringen» te zien was. */
+.page .page{ padding-left:0; padding-right:0; }
+
+/* 6 · koppen houden hun tekst vast, maar alleen koppen: .intro, .route-note,
+      .lpd en .asset zijn inhoud en mogen breken */
+h2,h3,.pk,.divider,.se{ break-after:avoid; }
+/* @bladspiegel:fin */
 </style></defs><rect x="6" y="6" width="326" height="100" rx="12" fill="#fff" stroke="#E4E3DE"/><circle cx="30" cy="31" r="14" fill="#E4F4EE"/><text x="30" y="36" text-anchor="middle" font-size="14">🗺️</text><text x="52" y="36" font-size="12" class="d" fill="#157355">EL MUNDO</text><text x="21" y="56" font-size="9" fill="#20242E">+20 países · España → México · Colombia</text><text x="21" y="71" font-size="9" fill="#20242E">Perú</text><rect x="388" y="6" width="326" height="100" rx="12" fill="#fff" stroke="#E4E3DE"/><circle cx="412" cy="31" r="14" fill="#E4F4EE"/><text x="412" y="36" text-anchor="middle" font-size="14">🔊</text><text x="434" y="36" font-size="12" class="d" fill="#157355">EL SONIDO</text><text x="403" y="56" font-size="9" fill="#20242E">h muda · b=v · j/ge/gi=jota · ll/y=«j»</text><text x="403" y="71" font-size="9" fill="#20242E">ñ=«nj» · z/ce/ci=«th»</text><rect x="6" y="132" width="326" height="100" rx="12" fill="#fff" stroke="#E4E3DE"/><circle cx="30" cy="157" r="14" fill="#E4F4EE"/><text x="30" y="162" text-anchor="middle" font-size="14">＾</text><text x="52" y="162" font-size="12" class="d" fill="#157355">EL SOMBRERO</text><text x="21" y="182" font-size="9" fill="#20242E">aguda/llana/esdrújula · esdrújula→siempre ´</text><text x="21" y="197" font-size="9" fill="#20242E">aguda -n/-s/vocal → ´</text><rect x="388" y="132" width="326" height="100" rx="12" fill="#fff" stroke="#E4E3DE"/><circle cx="412" cy="157" r="14" fill="#E4F4EE"/><text x="412" y="162" text-anchor="middle" font-size="14">123</text><text x="434" y="162" font-size="12" class="d" fill="#157355">NÚMEROS & SALUDOS</text><text x="403" y="182" font-size="9" fill="#20242E">0–15 · 16–29 één woord</text><text x="403" y="197" font-size="9" fill="#20242E">30+ decena y unidad · Hola/¿Qué tal?</text><circle cx="360" cy="119" r="22" fill="#1E9E74"/><text x="360" y="127" text-anchor="middle" font-size="20">🎒</text></svg></div>
 
   <div class="bridge"><b>» De vista al recuerdo.</b> Ya tienes el vistazo. Ahora <b>ciérralo</b> y recupera de memoria — mezclando secciones, sin pista previa. <span class="gloss">Nu heb je het overzicht; sluit het en haal alles uit je hoofd op — secties door elkaar, zonder aangeduide regel.</span></div>

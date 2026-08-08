@@ -589,11 +589,11 @@ P('<div class="guide"><div class="ic">🎴</div><div><span class="hand">Sigue en
 sec_close()
 
 # ---------- OVERRIDE (bladspiegel-hygiëne) ----------
-CSS_OVR = ('.act{break-inside:avoid;} .act .steun{break-before:avoid;} '
+CSS_OVR = (' .act .steun{break-before:avoid;} '
            '.fams,.machine,.obsbox,.scale,.tree,.zoom,.fmu,.xray,.colloc,.clusters,.vpairs,.blocks,.agree{break-inside:avoid;} '
            '.ptexts,.fichacard,.menu,.gustobars{break-inside:avoid;} '
-           '.bridge,.guide,.route-note,.truc,.audiorow{break-before:avoid;} '
-           '.esen{break-after:avoid;}')
+           ' '
+           '')
 
 # ---------- EDITBAR ----------
 EDITBAR = '''

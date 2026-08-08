@@ -286,7 +286,29 @@ Naast de twee *visuele* specs (§13) zijn er twee *didactische* specs in `02-hui
   - *Vrije productie (voorstellen, mini-tekst, eigen zin)* → geruit schrijfvlak (`.wbox`), maat naar lengte.
   - *Transformeren/herschrijven* → gegeven → `.wl` voor de herschrijving (twee kolommen of regel-per-regel).
   - *Spreken/interactie (paar)* → notitielijn(en) voor eigen antwoord/afspraak + ☐ «gedaan», of een mini-invulframe; print blijft bruikbaar zónder opname.
-- **Paginaovergangen — BINDEND (auteur 2026-07-26):** **elke hoofdsectie** (§1…§V, Cultura, Tarea, Repaso) **start op een nieuwe bladzijde** (`.sec{break-before:page}`); **geen sectiekop onderaan** (weesregel) en **geen kader/tabel doorgesneden of «ghost»** over de paginagrens (coherente blokken `break-inside:avoid`; absoluut-gepositioneerde badges enkel binnen niet-brekende blokken).
+- **Paginaovergangen — BINDEND (auteur 2026-07-26, HERZIEN NA METING 2026-08-08):**
+  de oorspronkelijke regel «élke hoofdsectie start op een nieuwe bladzijde»
+  (`.sec{break-before:page}`) botste frontaal met de bladspiegelregel hieronder,
+  en de meting wees uit dat zíj de hoofdschuldige was: over de zeventien units
+  stond **198 van de 856 bladzijden halfleeg** (in C6+ U1 één op de drie), en de
+  gemiddelde vulling was 76 %. Een sectie van vier regels kreeg een eigen blad.
+  **De regel nu:** een nieuwe bladzijde is voor de **mijlpalen** — Taller de
+  lengua, Cultura, Tarea final, Repaso en §V Vocabulario (`.sec.major`). De
+  genummerde inhoudssecties **vloeien door** en worden herkenbaar gemaakt door
+  hun bovenmarge en de gekleurde parada-lijn; §0 ¡Ponte al día! sluit aan op de
+  opener, samen precies één bladzijde. Onveranderd blijft: **geen sectiekop
+  onderaan** (`.sec{break-inside:avoid;break-after:avoid}` — het sec-blok is
+  alleen de kop) en **geen kader/tabel doorgesneden of «ghost»** over de
+  paginagrens. Nieuw: `break-inside:avoid` geldt **alleen voor blokken die op
+  een blad passen** — op een blok van 300–500 mm levert het een lege bladzijde
+  óf een snee op; grote blokken (`.act`, `.reto`, `.lectura`, `table`) breken
+  met `box-decoration-break:clone`, zodat beide helften hun volledige omranding
+  houden. **Al het breukgedrag staat op één plaats**
+  (`02-huisstijl/templates/cursus-print.css`, blok `@bladspiegel`); generatoren
+  mogen die selectoren niet overschrijven. Nabewerking + meting:
+  `03-build/web/bladspiegel.py` en `03-build/medir_bladspiegel.py`.
+  **Resultaat: 856 → 721 bladzijden, vulling 76 % → 87 %, halflege bladzijden
+  198 → 56.**
 - **OEFENDICHTHEID — BINDEND (auteur 2026-07-26, na U0↔U1-vergelijking):** élke unit haalt de **dichtheid van de golden sample U0** (≈50 p print · ≈45–50 oefeningen). Dit is de norm voor **álle** units en **álle** formaten, telkens met **unit-eigen mechanismen en visuals** (geen kopie van U0's fonetiek-oefeningen, wél hetzelfde *niveau*). Concreet, per unit:
   - **Fijnmazige leercyclus per kernpunt:** splits elke grammatica-/woordenschatstap in **§x.1/§x.2/§x.3** met de volle route *context → observeren → patroon → compacte regla → oefenen (steun afbouwt) → communiceren* (niet één regla + 2 oefeningen).
   - **≈4 oefeningen per subsectie**, geordend over de **vijf fasen** (herkennen → onderscheiden → ophalen → gestuurd produceren → vrij produceren), elk met expliciet **steunniveau** (MODELO → BANCO → MARCO/LETRA → PISTA → SIN AYUDA).

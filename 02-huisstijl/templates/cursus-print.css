@@ -19,10 +19,60 @@ html{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 body{ margin:0; font-family:var(--body); color:var(--ink); background:var(--paper); font-size:10.3pt; line-height:1.5; }
 .page{ padding:0 15mm; }
 .gloss{ color:var(--mut); font-style:italic; }
+/* @bladspiegel:ini — alles tot @bladspiegel:fin wordt door bladspiegel.py uit
+   dit bestand gelezen en als laatste blok in elke gebouwde unit gezet, zodat
+   er één bron van waarheid is voor het breukgedrag. Niet verplaatsen. */
+/* ── BLADSPIEGEL ───────────────────────────────────────────────────────────
+   Gemeten, niet bedacht: het oude «elke sectie op een nieuwe bladzijde» kostte
+   58 tot 75 % van al het verspilde papier, en in C6+ U1 was een op de drie
+   bladzijden halfleeg. Deze kit is nu de ENIGE plaats waar breukgedrag staat;
+   generatoren mogen deze selectoren niet meer overschrijven.
+   ────────────────────────────────────────────────────────────────────────── */
+
+/* 1 · regelniveau — geen losse kop- of staartregel over een paginagrens */
+p,li,dd,td,.intro,.hist,.rgancho,.rconsigna{ orphans:3; widows:3; }
+
+/* 2 · een nieuwe bladzijde is voor de mijlpalen, niet voor elke sectie.
+      §0, Taller, Cultura, Tarea, Repaso en §V krijgen .major; de genummerde
+      inhoudssecties vloeien door en worden gemarkeerd door hun bovenmarge
+      en de gekleurde lijn van .parada.
+      Taller, Cultura, Tarea final, Repaso en §V zijn de mijlpalen; §0 niet,
+      want die volgt op de opener en vult er samen mee één bladzijde.
+
+      Het `sec`-blok is alléén de kop (nummer + titel + inleiding + LPD-chips);
+   de inhoud volgt eronder als broer. Daarom mag het niet breken en niet als
+   laatste op een bladzijde blijven staan: een sectietitel zonder zijn sectie. */
+.sec{ break-before:auto; break-inside:avoid; break-after:avoid; margin-top:12mm; }
+.sec.major{ break-before:page; margin-top:0; }
+.sec:first-of-type{ margin-top:0; }
+
+/* 3 · onbreekbaar is alleen wat op een blad past. break-inside:avoid op een
+      blok van 300–500 mm levert een lege bladzijde op én snijdt het blok
+      daarna alsnog doormidden — de slechtst mogelijke uitkomst. */
+.regla,.truc,.pcard,.call,.qr,.guide,.esen,.mp,.audiorow,.wcols,.wbox,.sem,
+.acthead,.obsbox,.machine,.tree,.zoom,.fmu,.xray,.colloc,.clusters,.vpairs,
+.blocks,.agree,.rpunt,.fichacard,.mispal,.scale{ break-inside:avoid; }
+.act,.reto,.lectura,table{ break-inside:auto; }
+.act > .acthead,.reto .rcab,.reto > h3{ break-after:avoid; }
+
+/* een kader dat tóch breekt, krijgt op beide helften zijn volledige omranding,
+   zodat het als twee complete panelen leest in plaats van als een snee */
+.reto,.act,.esen,.obsbox{ -webkit-box-decoration-break:clone; box-decoration-break:clone; }
+
+/* 4 · tabellen: rijen heel, kop herhaalt — .wtab hoorde hier altijd al bij */
+.alf tr,.mp tr,.sem tr,.conj tr,.wtab tr{ break-inside:avoid; }
+.alf thead,.mp thead,.sem thead,.conj thead,.wtab thead{ display:table-header-group; }
+
+/* 5 · één tekstkolom van 180 mm. Geneste .page-divs stapelden hun padding,
+      waardoor 27 tot 40 % van de inhoud in een kolom van 150 of 120 mm stond —
+      dat is wat er als «verspringen» te zien was. */
+.page .page{ padding-left:0; padding-right:0; }
+
+/* 6 · koppen houden hun tekst vast, maar alleen koppen: .intro, .route-note,
+      .lpd en .asset zijn inhoud en mogen breken */
 h2,h3,.pk,.divider,.se{ break-after:avoid; }
-.regla,.truc,.pcard,.call,.qr,.guide,.esen,.mp{ break-inside:avoid; }
-.acthead{ break-after:avoid; } .act{ break-inside:auto; }
-.alf tr{ break-inside:avoid; } .alf thead{ display:table-header-group; }
+/* @bladspiegel:fin */
+
 /* hero */
 .hero{ background:var(--g); color:#fff; padding:15mm 15mm 12mm; position:relative; }
 .hero .eyebrow{ font-size:9pt; letter-spacing:.16em; font-weight:600; opacity:.9; }
