@@ -17,6 +17,16 @@
 !03-build/web/
 03-build/web/*
 !03-build/web/*.py
+!03-build/web/*.md
+
+# Idem voor de scripts die rechtstreeks in 03-build/ liggen: construir.py (de
+# bouwvolgorde), paginar.py (bladzijdenummers + bladwijzers) en
+# medir_bladspiegel.py (de vullingsmeting) zijn bron, geen output. Ze vielen
+# stil buiten git tot 2026-08-08 — de regel «03-build/*» hierboven ving ze op en
+# er stond geen uitzondering tegenover, dus `git add -A` deed niets en de commit
+# slaagde zonder ze. Vandaar deze regel.
+!03-build/*.py
+!03-build/*.md
 
 # Rommel
 .DS_Store
