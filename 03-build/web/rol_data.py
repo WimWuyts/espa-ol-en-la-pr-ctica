@@ -17,9 +17,19 @@ Elke `paso` is één beurt van de ober plus wat de leerling daarop kan zeggen:
 
   di       wat de ober zegt (Spaans) + `nl` als steun eronder
   meta     wat de leerling in deze beurt moet klaarspelen (staat op het scherm)
-  opciones drie antwoorden om uit te kiezen — precies één is goed. De twee
-           andere zijn niet willekeurig fout: het zijn de fouten die déze
-           leerling maakt (een Nederlandse constructie, een verkeerd lidwoord).
+  hueco    het invulkader: een zin met twee gaten die de leerling zelf typt,
+           plus een woordbank als steun. Dit is de bélangrijkste stand — bij
+           aanklikken kan een leerling gokken, bij twee gaten moet hij de vorm
+           produceren. `respuestas` geeft per gat de aanvaarde antwoorden;
+           `mal` legt uit wat er misgaat bij de fout die hier het meest gemaakt
+           wordt.
+  opciones antwoorden om uit te kiezen — precies één is goed (in één beurt twee,
+           omdat afslaan er ook bij hoort). De foute zijn niet willekeurig: het
+           zijn de fouten die déze leerling maakt, zoals een verkeerd lidwoord.
+           **Twee opties mag.** Waar er maar één zinnige afleider bestaat, is een
+           derde erbij verzinnen erger dan niets: een stroman met een Nederlands
+           woord erin herkent de leerling meteen als «die zal het niet zijn», en
+           dan oefent hij het uitsluiten van onzin in plaats van Spaans.
   acepta   voor wie zelf typt: de patronen die als goed gelden. **Eén ervan
            volstaat** — het zijn alternatieven, geen eisen die allemaal moeten
            kloppen. Ruim genomen, want «quiero una sopa», «para mí una sopa» en
@@ -51,12 +61,15 @@ ROLES = {
    {"di": "¡Buenas tardes! Bienvenido. ¿Mesa para cuántas personas?",
     "nl": "Goedemiddag! Welkom. Een tafel voor hoeveel personen?",
     "meta": "Vraag een tafel voor twee.",
+    "hueco": {"marco": "___ mesa ___ dos, por favor.",
+              "respuestas": [["una"], ["para"]],
+              "banco": ["un", "una", "para", "por", "de"],
+              "mal": ["<b>Mesa</b> is vrouwelijk — het lidwoord moet meeveranderen.",
+                      "«Voor twee personen» is <b>para</b> dos. <i>Por</i> betekent iets anders."]},
     "opciones": [
       ("Una mesa para dos, por favor.", True, None),
       ("Un mesa para dos, por favor.", False,
        "<b>Mesa</b> is vrouwelijk: <i>una</i> mesa."),
-      ("Quiero een tafel voor twee.", False,
-       "Er staat Nederlands in je zin. Alles in het Spaans, ook al is het maar half."),
     ],
     "acepta": [r"(una\s+)?mesa\s+para\s+(dos|2)", r"para\s+(dos|2)\s+personas",
                r"somos\s+(dos|2)"],
@@ -66,6 +79,11 @@ ROLES = {
    {"di": "Perfecto, por aquí. Aquí tienen la carta. ¿Qué van a tomar?",
     "nl": "Prima, deze kant op. Hier is de kaart. Wat wilt u drinken?",
     "meta": "Bestel iets te drinken. Beleefd graag.",
+    "hueco": {"marco": "¿___ ___ un agua, por favor?",
+              "respuestas": [["me"], ["pone", "trae"]],
+              "banco": ["me", "yo", "pone", "trae", "gusta"],
+              "mal": ["Het is <b>me</b> pone — «zet u míj». «Yo pone» bestaat niet.",
+                      "Gebruik <b>pone</b> (zet u me) of <b>trae</b> (brengt u me)."]},
     "opciones": [
       ("¿Me pone un agua, por favor?", True, None),
       ("Quiero un agua.", False,
@@ -84,6 +102,11 @@ ROLES = {
    {"di": "Muy bien. De primer plato tenemos sopa, ensalada y guacamole con totopos.",
     "nl": "Heel goed. Als voorgerecht hebben we soep, salade en guacamole met chips.",
     "meta": "Kies een voorgerecht.",
+    "hueco": {"marco": "Para ___, ___ sopa.",
+              "respuestas": [["mi", "mí"], ["la"]],
+              "banco": ["mí", "yo", "la", "el", "una"],
+              "mal": ["Na een voorzetsel wordt <i>yo</i> → <b>mí</b>: «para mí».",
+                      "<b>La sopa</b> — dit woord is vrouwelijk."]},
     "opciones": [
       ("Para mí, la sopa.", True, None),
       ("Para mí, el sopa.", False,
@@ -100,6 +123,11 @@ ROLES = {
    {"di": "¿Y de plato fuerte? Hay tacos de pollo, pescado a la plancha y arroz con verduras.",
     "nl": "En als hoofdgerecht? Er zijn kiptaco's, gegrilde vis en rijst met groenten.",
     "meta": "Kies een hoofdgerecht. Zeg er iets bij: waarom, of hoe je het wil.",
+    "hueco": {"marco": "Quiero los tacos de pollo. Me ___ mucho ___ son ricos.",
+              "respuestas": [["gustan"], ["porque"]],
+              "banco": ["gusta", "gustan", "porque", "por qué", "luego"],
+              "mal": ["Meer dan één ding → <b>me gustan</b>, met -n.",
+                      "«Want» én «omdat» zijn allebei <b>porque</b>, aan elkaar en zonder accent."]},
     "opciones": [
       ("Quiero los tacos de pollo, por favor. Me gustan mucho.", True, None),
       ("Quiero los tacos de pollo. Yo gusto mucho.", False,
@@ -118,6 +146,11 @@ ROLES = {
    {"di": "¡Que aproveche!  …  ¿Todo bien? ¿Van a tomar postre? Hay churros y fruta.",
     "nl": "Eet smakelijk!  …  Alles goed? Neemt u een nagerecht? Er zijn churros en fruit.",
     "meta": "Zeg dat het lekker was en kies een nagerecht — of sla het beleefd af.",
+    "hueco": {"marco": "___ muy rico, gracias. De postre, ___ churros.",
+              "respuestas": [["esta", "está"], ["los"]],
+              "banco": ["está", "es", "los", "el", "las"],
+              "mal": ["Hoe iets nú smaakt is <b>está</b>, niet <i>es</i>.",
+                      "<b>Los churros</b> — meervoud."]},
     "opciones": [
       ("Está muy rico, gracias. De postre, los churros.", True, None),
       ("Está muy rico, gracias. De postre, el churros.", False,
@@ -133,12 +166,15 @@ ROLES = {
    {"di": "Claro que sí. ¿Algo más?",
     "nl": "Natuurlijk. Nog iets anders?",
     "meta": "Vraag de rekening.",
+    "hueco": {"marco": "¿Me ___ ___ cuenta, por favor?",
+              "respuestas": [["trae", "pone"], ["la"]],
+              "banco": ["trae", "pone", "la", "el", "una"],
+              "mal": ["<b>Trae</b> = brengt u me. Dat is wat je hier vraagt.",
+                      "<b>La cuenta</b> — vrouwelijk."]},
     "opciones": [
       ("¿Me trae la cuenta, por favor?", True, None),
       ("¿Me trae el cuenta, por favor?", False,
        "<b>La cuenta</b> — vrouwelijk."),
-      ("La rekening, por favor.", False,
-       "«De rekening» is <b>la cuenta</b>."),
     ],
     "acepta": [r"(la\s+)?cuenta"],
     "pista": "Het woord dat je zoekt staat bij «restaurante» in je woordenlijst: "

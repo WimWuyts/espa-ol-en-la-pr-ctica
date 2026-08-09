@@ -20,11 +20,14 @@ De corrector kent alleen de fouten die wij erin gestopt hebben. Hij zegt dus
 nooit «goed!», maar «ik zie geen fouten die ik ken». Zie de kop van
 `corrector_data.py` voor het waarom.
 
-TWEE MOEILIJKHEIDSGRADEN
-«Elegir» geeft drie antwoorden waarvan er één klopt; de twee andere zijn de
-fouten die déze leerling maakt, met uitleg als hij erin trapt. «Escribir» laat
-hem zelf typen — dan telt het patroon uit `acepta`, en de corrector kijkt
-daarnaast mee. Wie vastloopt vraagt een pista of het model; dat wordt geteld,
+DRIE MOEILIJKHEIDSGRADEN, EN «COMPLETAR» IS DE BELANGRIJKSTE
+«Completar» geeft de zin met twee gaten en een woordbank: de leerling typt de
+vorm zelf. Dat is bewust de eerste stand (auteur 2026-08-09) — bij aanklikken
+kan hij gokken en heeft hij niets geproduceerd, bij een gat moet hij kiezen
+tussen *un* en *una*, tussen *gusta* en *gustan*, en dat is precies waar het om
+draait. «Elegir» blijft eronder staan als lichtere trede, en «Escribir» laat
+hem de hele zin zelf maken; daar telt het patroon uit `acepta` en kijkt de
+corrector mee. Wie vastloopt vraagt een pista of het model; dat wordt geteld,
 zodat het slot eerlijk kan zeggen hoeveel er zelfstandig ging.
 
     python3 gen_rol.py C5 5            # → componentes/C5_U5_rol.html (los te bekijken)
@@ -70,6 +73,20 @@ CSS = """
 .rol .op:disabled{cursor:default;opacity:.55}
 .rol .op.mal{border-color:#C0392B;background:#C0392B12}
 .rol .op.bien{border-color:var(--g);background:var(--gt)}
+.rol .hue{font-size:16px;line-height:2.1;margin:2px 0 10px}
+.rol .gap{display:inline-block;width:7.5em;border:none;border-bottom:2px solid var(--g);
+  background:transparent;font:inherit;font-size:16px;text-align:center;padding:1px 3px;
+  color:inherit}
+.rol .gap:focus{outline:none;background:var(--gt)}
+.rol .gap.bien{border-color:var(--g);background:var(--gt);font-weight:700}
+.rol .gap.mal{border-color:#C0392B;background:#C0392B14}
+.rol .gap:disabled{opacity:1}
+.rol .banco{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.rol .banco b{font-size:12.5px;color:var(--mut);font-weight:600;align-self:center;
+  margin-right:2px}
+.rol .banco span{background:var(--crema);border:1px solid var(--line);border-radius:16px;
+  padding:3px 11px;font-size:13.5px;cursor:pointer;user-select:none}
+.rol .banco span:hover{background:var(--gt);border-color:var(--g)}
 .rol .esc-in{display:flex;gap:8px;flex-wrap:wrap}
 .rol input.tec{flex:1 1 260px;border:1.5px solid var(--line);border-radius:12px;
   padding:10px 13px;font:inherit;font-size:15px;background:var(--card);color:inherit}
@@ -123,7 +140,7 @@ function corrige(txt){
   return out;
 }
 
-let paso=0, modo='elegir', ayudas=0, solos=0, avisos=[];
+let paso=0, modo='completar', ayudas=0, solos=0, avisos=[];
 const esc=raiz.querySelector('.esc'), zona=raiz.querySelector('.zona'),
       barra=raiz.querySelector('.barra');
 
@@ -170,7 +187,22 @@ function muestra(){
   let usado=false;                       // hulp gebruikt in déze beurt
   burbuja('otro',p.di,p.nl);
   let h='<div class="meta"><span class="pill">Tu turno</span>'+p.meta+'</div>';
-  if(modo==='elegir'){
+  if(modo==='completar'){
+    // de zin met gaten; het aantal invulvakken volgt uit het kader zelf
+    const trozos=p.hueco.marco.split('___');
+    let frase='';
+    trozos.forEach(function(t,i){
+      frase+=t.replace(/</g,'&lt;');
+      if(i<trozos.length-1)
+        frase+='<input class="gap" data-g="'+i+'" type="text" autocomplete="off" '+
+               'spellcheck="false" aria-label="Vul woord '+(i+1)+' in">';
+    });
+    h+='<div class="banco"><b>Banco:</b>'+p.hueco.banco.map(function(w){
+         return '<span>'+w+'</span>';}).join('')+'</div>';
+    h+='<div class="hue">'+frase+'</div>';
+    h+='<div class="esc-in"><button class="btn" data-comp>Comprobar</button>'+
+       '<button class="btn sec small" data-modelo>Muéstrame</button></div>';
+  }else if(modo==='elegir'){
     h+='<div class="ops">'+p.opciones.map(function(o,i){
       return '<button class="op" data-i="'+i+'">'+o[0]+'</button>';}).join('')+'</div>';
   }else{
@@ -185,7 +217,52 @@ function muestra(){
   const fb=zona.querySelector('.fb');
   function di(clase,texto){fb.hidden=false;fb.className='fb '+clase;fb.innerHTML=texto;}
 
-  if(modo==='elegir'){
+  if(modo==='completar'){
+    const gaps=[].slice.call(zona.querySelectorAll('.gap'));
+    // een woord uit de bank zetten we in het vak waar de cursor staat
+    let foco=gaps[0];
+    gaps.forEach(function(g){g.addEventListener('focus',function(){foco=g;});});
+    zona.querySelectorAll('.banco span').forEach(function(ch){
+      ch.onclick=function(){
+        if(!foco||foco.disabled) foco=gaps.filter(function(g){return !g.disabled;})[0];
+        if(!foco) return;
+        foco.value=ch.textContent; foco.focus();
+      };
+    });
+    zona.querySelector('[data-modelo]').onclick=function(){
+      usado=true; ayudas++;
+      di('','<b>Zo kan het:</b><span class="mod">'+p.modelo+'</span>');};
+    function comprueba(){
+      let todo=true, primerFallo=-1;
+      gaps.forEach(function(g,i){
+        const bien=p.hueco.respuestas[i].some(function(r){
+          return normaliza(r)===normaliza(g.value);});
+        g.classList.toggle('bien',bien);
+        g.classList.toggle('mal',!bien&&g.value.trim()!=='');
+        if(bien){ g.disabled=true; }
+        else { todo=false; if(primerFallo<0&&g.value.trim()!=='') primerFallo=i; }
+      });
+      if(todo){
+        if(!usado) solos++;
+        let dicho=p.hueco.marco;
+        p.hueco.respuestas.forEach(function(r){dicho=dicho.replace('___',r[r.length-1]);});
+        di('ok','<b>Klopt.</b> Zo zeg je het.');
+        setTimeout(function(){avanza(dicho.charAt(0).toUpperCase()+dicho.slice(1));},700);
+      }else{
+        usado=true;
+        if(primerFallo>=0){
+          avisos.push(p.hueco.mal[primerFallo].replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+p.hueco.mal[primerFallo]);
+        }else{
+          di('mal','Vul allebei de vakjes in. '+p.pista);
+        }
+      }
+    }
+    zona.querySelector('[data-comp]').onclick=comprueba;
+    gaps.forEach(function(g){g.addEventListener('keydown',function(e){
+      if(e.key==='Enter'){e.preventDefault();comprueba();}});});
+    gaps[0].focus();
+  }else if(modo==='elegir'){
     zona.querySelectorAll('.op').forEach(function(b){
       b.onclick=function(){
         const o=p.opciones[+b.dataset.i];
@@ -266,6 +343,7 @@ def componente(curso, unidad, id_base=None):
         "final": r["final"], "final_nl": r["final_nl"],
         "pasos": [{"di": p["di"], "nl": p["nl"], "meta": p["meta"],
                    "opciones": [[t, ok, w or ""] for t, ok, w in p["opciones"]],
+                   "hueco": p["hueco"],
                    "acepta": p["acepta"], "pista": p["pista"],
                    "modelo": p["modelo"]} for p in r["pasos"]],
     }
@@ -279,7 +357,8 @@ def componente(curso, unidad, id_base=None):
   <p class="lead" style="margin:6px 0 12px"><b>%(tu)s</b> tegenover <b>%(otro)s</b>.
     %(mision)s <span class="gloss">%(mision_es)s</span></p>
   <div class="modo">
-    <button data-modo="elegir" class="on">Elegir · kiezen</button>
+    <button data-modo="completar" class="on">Completar · invullen</button>
+    <button data-modo="elegir">Elegir · kiezen</button>
     <button data-modo="escribir">Escribir · zelf typen</button>
   </div>
   <div class="barra"></div>
