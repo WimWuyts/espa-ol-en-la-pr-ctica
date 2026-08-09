@@ -69,7 +69,7 @@ ESCENAS = {
       "Maar wat is het daar koud… Zo koud is het nooit in Madrid."),
      ("Camarero", "Lo bueno es que, por lo menos, puedes estar con tu familia.",
       "Het goede is dat je tenminste bij je familie kan zijn."),
-     ("Julio", "Pasas las fiestas de Navidad con los tuyos. Con tus padres, tus tíos, tus hermanos.",
+     ("Camarero", "Pasas las fiestas de Navidad con los tuyos. Con tus padres, tus tíos, tus hermanos.",
       "Je brengt de kerstdagen door met de jouwen. Met je ouders, je ooms en tantes, je broers en zussen."),
      ("Camarero", "Tus cuñados.",
       "Je schoonbroers en schoonzussen."),

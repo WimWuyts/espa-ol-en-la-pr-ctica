@@ -153,7 +153,9 @@ def procesar(ruta, curso="C5"):
         return ('<div class="%s"%s>%s<span class="pk"%s>%s</span>'
                 % (cls, resto, m.group("medio"), m.group("pkat"), m.group("tit")))
 
-    doc = re.sub(r'<nav class="indice-pdf">.*?</nav>', "", doc, flags=re.S)
+    # de oude index eerst weg — de nav draagt attributen, dus [^>]* is nodig;
+    # zonder dat stapelde elke bouwronde er een verborgen kopie bovenop
+    doc = re.sub(r'<nav class="indice-pdf"[^>]*>.*?</nav>', "", doc, flags=re.S)
     doc = SECCION.sub(sustituir, doc)
     doc = SECCION_C4.sub(lambda m: sustituir(m, "se"), doc)
 
@@ -167,7 +169,9 @@ def procesar(ruta, curso="C5"):
         doc = doc[:i] + nav + doc[i:] if i > 0 else doc + nav
 
     # het blok als laatste in de <style>; een oude versie wordt vervangen
-    doc = re.sub(re.escape(MARCA) + r".*?/\* @bladspiegel:fin \*/", "", doc, flags=re.S)
+    # ook de lege regel ervóór mee, anders groeit het bestand elke ronde met één
+    doc = re.sub(r"\n*" + re.escape(MARCA) + r".*?/\* @bladspiegel:fin \*/",
+                 "", doc, flags=re.S)
     if not estricto:
         i = doc.rfind("</style>")
         if i < 0:
