@@ -211,7 +211,7 @@ def escucha():
 # anders bevraagd (met zelfcorrectie), en die twee hoeven niet identiek te zijn.
 PREGUNTAS_ESCENA = {
  11: ["¿Adónde va ella de vacaciones?", "¿Qué tiempo hace siempre en Canarias?",
-      "¿Adónde va Julio y con quién?", "¿Qué le gusta hacer a Julio en el Caribe?",
+      "¿Adónde va Julio de vacaciones?", "¿Qué le gusta hacer al camarero en el Caribe?",
       "¿Cuántas veces por semana va la clienta al gimnasio?"],
  12: ["¿Qué tiempo hace en Bariloche?", "¿Cuántos grados hace en Cartagena?",
       "¿Qué va a hacer Alba hoy?", "¿Cuál es la estación favorita de Iván?",
