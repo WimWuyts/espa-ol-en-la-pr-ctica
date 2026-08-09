@@ -187,7 +187,13 @@ def main():
             if not ok:
                 fallos.append("hub %s U%d: %s" % (curso, u, salida[-300:]))
 
-        print("── 4b · Lucide-iconen in de hub-interface ───────────────────────")
+        print("── 4b · luisterfragmenten in de pagina bakken ───────────────────")
+        ok, salida = corre(["python3", "hub_audio.py"], cwd=WEB)
+        print("   %s" % (salida.splitlines()[-1] if salida else "ok"))
+        if not ok:
+            fallos.append("hub-audio: " + salida[-300:])
+
+        print("── 4c · Lucide-iconen in de hub-interface ───────────────────────")
         ok, salida = corre(["python3", "hub_post_iconos.py"], cwd=WEB)
         print("   %s" % (salida.splitlines()[-1] if salida else "ok"))
         if not ok:

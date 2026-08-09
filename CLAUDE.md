@@ -166,7 +166,19 @@ U0 (C5) is goedgekeurd en vastgezet als norm voor álle volgende units. **Bij au
 - [x] **PowerPoint = geanimeerd format** (verschijnen-bij-klik via `<p:timing>`). Geen kiosk. 2 decks (docente + alumno, beide `.pptx`). — 2026-07-26
 - [x] **De «Repareren»-melding was géén bijwerking van de animaties** (dat stond hier eerder ten onrechte). Oorzaak: `shp.shadow.inherit = False` liet een lege `<a:effectLst/>` achter en `_soft_shadow()` hing er een tweede naast — twee stuks in één `<p:spPr>`, wat het schema verbiedt. De `<p:timing>`-blokken waren altijd al in orde. Opgelost in de elf generatoren; bestaande decks te herstellen met `03-build/pptx/repara_effectlst.py` (werkt op de XML, heeft geen python-pptx nodig). — 2026-08-05
 - [x] **Motor-spellen = azulejo-stijl behouden** (contrast, niet omkleuren). — 2026-07-26
-- [x] **Audio = browser-TTS** voorlopig (geen eigen opnames). — 2026-07-26
+- [x] **Audio = browser-TTS** voorlopig (geen eigen opnames). — 2026-07-26 · **VERVANGEN
+  2026-08-09:** alle **73 luisterfragmenten zijn ingesproken** met acht Castiliaanse
+  stemmen (`voces.py` + `gen_audio_castellano.py`), omgezet naar **MP3** met
+  `wav_a_mp3.js` (114 MB → 21 MB, 5,4×) en **ingebakken in de digitale pagina's**
+  van alle drie de cursussen (`hub_audio.py`). De browserstem blijft alleen nog
+  als terugval waar een opname zou ontbreken.
+- [x] **GELUID IN DE PAGINA, NIET ERNAAST (auteur 2026-08-09).** De hubs dragen hun
+  eigen audio als data-URL. Reden: een aparte audiomap moet mee geüpload worden én op
+  de juiste plaats belanden — vergeet dat en élke luisteroefening valt stil zonder dat
+  iemand het merkt; en een leerling die de pagina bewaart, hield een pagina zónder
+  geluid over. Kosten: 16 van de 17 C5/C6+-pagina's staan op 2,4–3,3 MB, C5 U0 op
+  7,8 MB (tien fragmenten, negen minuten). C4 lag al zo. **Nagerekend in een echte
+  browser:** alle geteste fragmenten decoderen met de juiste speelduur.
 - [x] **Conjugador = aparte cursus-tool** (`03-build/web/Conjugador.html`), enkel presente, ~1000 werkwoorden (nagerekend via motor-engine), 2 lagen (opzoeken + zelf vervoegen). **Werkwoordsvervoeging hoort NIET in de units.** — 2026-07-26
 - [x] **Kaart = échte geografie (Natural Earth), klikbaar in HTML, met vlaggen + landcodes.** — 2026-07-26
 - [x] **QR's op print → naar de HTML-hub** (niet rechtstreeks YouTube/PPTX). — 2026-07-26
