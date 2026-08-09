@@ -109,6 +109,14 @@ def tarea_block(unit):
             f'<div class="chips">{ch}</div>')
 
 def build(unit, out_name):
+    # U1–U10 hangen aan een sitcom-aflevering, U11–U14 aan een ingesproken scène.
+    # Een filmklapper boven een unit zónder film laat de leerling zoeken naar
+    # iets wat er niet is; vandaar de koptelefoon daar.
+    con_video = os.path.exists(os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "gen_c4u%d_escucha.py" % unit))
+    icono_escena = "🎬" if con_video else "🎧"
+    verbo_escena = ("Kijk terug naar de scène." if con_video
+                    else "Luister terug naar de scène.")
     total=len(FD.FUNCIONES)
     have=len(FD.funciones_hasta(unit))
     dots="".join(f'<span class="dot{" on" if i<have else ""}"></span>' for i in range(total))
@@ -122,8 +130,8 @@ def build(unit, out_name):
  </div>
  <div class="grow"><b>Tu repertorio:</b> {have} / {total} funciones {dots} <span>· hoe verder op de ruta, hoe meer je kunt zeggen</span></div>
 
- <h2 class="sec">¿Qué hacen con el idioma? 🎬</h2>
- <p class="lead">Kijk terug naar de scène. Wat <b>doen</b> de personages met taal? Klik elke zin en ontdek de <i>función</i>.</p>
+ <h2 class="sec">¿Qué hacen con el idioma? {icono_escena}</h2>
+ <p class="lead">{verbo_escena} Wat <b>doen</b> de personages met taal? Klik elke zin en ontdek de <i>función</i>.</p>
  {noticing_block(unit)}
 
  <h2 class="sec">Esta unidad añade… ✨</h2>
