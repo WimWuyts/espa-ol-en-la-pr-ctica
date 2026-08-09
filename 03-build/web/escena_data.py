@@ -22,6 +22,24 @@ Nico, Alba en Iván — zodat de leerling ze door de laatste vier units heen lee
 kennen in plaats van elke keer nieuwe namen te krijgen.
 """
 
+# ── de sitcom-afleveringen ──────────────────────────────────────────────────
+# De video's stáán er wel (Google Drive, gedeeld als «iedereen met de link mag
+# lezen» — nagekeken op 2026-08-09); alleen de transcripten ontbreken nog. De
+# video is dus ingebouwd en de leerling kan kijken; de scène hieronder is
+# voorlopig het materiaal om mee te lezen en mee te oefenen.
+#
+# Zodra een transcript er is: zet het in `escenas` van die unit, precies zoals
+# U1–U10 het doen, en de meelees-laag hangt vanzelf onder de video.
+VIDEO = {
+ 11: ("drive", "1saLd6_-eTVUTVbv1v8KbKwfYp3Ale6-D"),   # Spanish Sitcom 11
+ 12: ("drive", "1RYpXlOwL3g5FBwSviROpE0AvkwNlh5fZ"),   # Spanish Sitcom 12
+ 13: ("drive", "1ic6FvmvjPQsM05DsiMY0DVlPBBlMsNYK"),   # Spanish Sitcom 13
+ 14: ("drive", "1Vuh5f76hi_hnuMaCMLroSUMEDnJ3t3kZ"),   # Spanish Sitcom 14
+}
+
+# Er is ook een aflevering 15 (1OMxB9gRZ9LdYYDGOl5_JiiGEAkXPsxfi). C4 heeft
+# veertien thema's, dus die blijft voorlopig ongebruikt.
+
 # unit → (titel, ondertitel-NL, [(kop, intro-NL, [(spreker, es, nl)])], [chunks])
 ESCENAS = {
  11: {

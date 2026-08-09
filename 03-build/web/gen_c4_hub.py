@@ -35,11 +35,13 @@ def srcdoc(path):
     return h.replace("&","&amp;").replace('"',"&quot;")
 
 TABS=[
- # Koptelefoon en geen filmklapper: U11–U14 hebben geen aflevering, ze hebben een
- # ingesproken scène. Een icoon dat een video belooft die er niet is, laat de
- # leerling zoeken naar iets wat niet bestaat.
- ("escucha","🎧 Escucha",f"C4_U{UNIT}_escucha.html",
-  f"Luister naar «{TITULO}» en lees mee — de chunks komen uit je oren."),
+ # Het icoon volgt of er een aflevering is: filmklapper met, koptelefoon zonder.
+ # Zo belooft de tab nooit beeld dat er niet is.
+ ("escucha", ("🎬 Escucha" if UNIT in ED.VIDEO else "🎧 Escucha"),
+  f"C4_U{UNIT}_escucha.html",
+  (f"Bekijk de aflevering en luister naar «{TITULO}» — de chunks komen uit je oren."
+   if UNIT in ED.VIDEO else
+   f"Luister naar «{TITULO}» en lees mee — de chunks komen uit je oren.")),
  ("comprension","📖 Lee y escucha",f"C4_U{UNIT}_comprension.html",
   "Een korte lees- en luisteroefening — begrijp het Spaans dat je al kent."),
  ("mapa","🗺️ Mapa",f"C4_U{UNIT}_mapa.html",

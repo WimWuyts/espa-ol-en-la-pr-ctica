@@ -112,8 +112,10 @@ def build(unit, out_name):
     # U1–U10 hangen aan een sitcom-aflevering, U11–U14 aan een ingesproken scène.
     # Een filmklapper boven een unit zónder film laat de leerling zoeken naar
     # iets wat er niet is; vandaar de koptelefoon daar.
-    con_video = os.path.exists(os.path.join(
+    import escena_data as _ED
+    con_video = (os.path.exists(os.path.join(
         os.path.dirname(os.path.abspath(__file__)), "gen_c4u%d_escucha.py" % unit))
+        or unit in _ED.VIDEO)
     icono_escena = "🎬" if con_video else "🎧"
     verbo_escena = ("Kijk terug naar de scène." if con_video
                     else "Luister terug naar de scène.")

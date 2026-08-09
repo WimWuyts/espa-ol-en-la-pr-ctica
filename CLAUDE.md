@@ -197,10 +197,16 @@ De veertien thema's staan er. Wat er deze ronde bijkwam en veranderde:
   `escena_data.py` (4 scènes, U11–U14) met de acht Castiliaanse stemmen. Ingebed als
   data-URL, want de C4-hub moet standalone blijven. **De sitcom-transcripten blijven bij de
   video**: echte acteurs vervang je niet door synthese.
-- [x] **U11–U14 zonder video.** `00-brondocumenten/videos-jaar4/` is leeg en er zijn geen
-  transcripten voor aflevering 11–14. Conform `HANDOVER_C4.md` («zonder transcript: bouw
-  native op de kernwoordenschat») hebben die vier een **eigen scène** in `escena_data.py`.
-  Komt de aflevering er alsnog, dan is dat één wijziging in dat bestand.
+- [x] **U11–U14: de video's stáán er, de transcripten nog niet** (auteur 2026-08-09). De
+  vier afleveringen staan in Google Drive en zijn **ingebouwd** — zelfde `/preview`-kader
+  als U8–U10, met zichtbare terugvallink. Deelrechten nagekeken: alle vier `role=reader /
+  type=anyone`. De ID's staan in **`escena_data.VIDEO`**.
+  Zolang het transcript ontbreekt is de **eigen ingesproken scène** het meelees- en
+  oefenmateriaal (conform `HANDOVER_C4.md`: «zonder transcript: bouw native op de
+  kernwoordenschat»). Komt het transcript, dan vervangt het `escenas` van die unit en
+  hangt de meelees-laag vanzelf onder de video — de oefeningen, print en PPT volgen mee.
+  **Aflevering 15 bestaat ook** (`1OMxB9gRZ9LdYYDGOl5_JiiGEAkXPsxfi`) maar C4 heeft
+  veertien thema's, dus die blijft ongebruikt.
 - [x] **Gedeelde generatoren voor U11–U14**: `gen_c4_escena.py` · `gen_c4_kit.py` ·
   `gen_c4_practica.py` · `gen_c4_hub.py` · `gen_c4_pdf.py`, gevoed uit `escena_data.py` en
   `kit_data.py`. Vier bijna-identieke kopieën zouden vier plaatsen opleveren waar een

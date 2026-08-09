@@ -98,6 +98,34 @@ def audio_datos(unit):
     return None, None
 
 
+ALLOW = ("accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; "
+         "picture-in-picture; fullscreen; web-share")
+
+
+def video(unit):
+    """De sitcom-aflevering, als die er is. (kader, kijk-adres) of (None, None).
+
+    Dezelfde vorm als U1–U10: bij Drive een `/preview`-kader, bij YouTube de
+    nocookie-variant. De zichtbare terugvallink erbij, want een ingebed kader
+    wordt op sommige schoolnetwerken geblokkeerd en dan moet de leerling nog
+    ergens heen kunnen.
+    """
+    src = ED.VIDEO.get(unit)
+    if not src:
+        return None, None
+    tipo, vid = src
+    if tipo == "youtube":
+        marco = ('<iframe src="https://www.youtube-nocookie.com/embed/%s?rel=0&playsinline=1" '
+                 'title="Sitcom · Episodio %d" loading="lazy" '
+                 'referrerpolicy="strict-origin-when-cross-origin" '
+                 'allow="%s" allowfullscreen></iframe>' % (vid, unit, ALLOW))
+        return marco, "https://www.youtube.com/watch?v=" + vid
+    marco = ('<iframe src="https://drive.google.com/file/d/%s/preview" '
+             'title="Sitcom · Episodio %d" loading="lazy" allow="%s" '
+             'allowfullscreen></iframe>' % (vid, unit, ALLOW))
+    return marco, "https://drive.google.com/file/d/%s/view" % vid
+
+
 CSS = FONTS + """
 :root{--g:#D64550;--gd:#A8323B;--gt:#FBEAEC;--ink:#20242E;--mut:#6A6E78;--paper:#FCFBF8;
       --crema:#F3EEE4;--line:#E7E1DF;--card:#fff;--disp:'Bricolage Grotesque',sans-serif;
@@ -113,6 +141,12 @@ main{max-width:1080px;margin:0 auto;padding:18px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 @media(max-width:820px){.grid{grid-template-columns:1fr}}
 .aud{position:sticky;top:12px;align-self:start}
+.vidbox{position:relative;padding-top:56.25%;border-radius:14px;overflow:hidden;
+        border:1px solid var(--line);background:#000;margin-bottom:12px}
+.vidbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vidhint{font-size:12px;color:var(--mut);margin:8px 0 0}
+.vidhint a{color:var(--gd);font-weight:600}
+a.btn{text-decoration:none;display:inline-flex;align-items:center;gap:5px}
 .audbox{border:1px solid var(--line);border-radius:14px;background:var(--card);padding:16px 18px}
 .audbox h2{font-family:var(--disp);color:var(--gd);margin:0 0 4px;font-size:18px}
 .audbox p{margin:0 0 12px;color:var(--mut);font-size:13.5px}
@@ -156,6 +190,13 @@ def construir(unit):
         nota = ('<p class="legend">De opname staat nog niet klaar; '
                 'voorlopig leest de browserstem voor.</p>')
 
+    marco, ver = video(unit)
+    bloque_video = ("" if not marco else
+        '<div class="vidbox">%s</div>'
+        '<p class="vidhint">Speelt de video niet af? '
+        '<a href="%s" target="_blank" rel="noopener">Open ze in een nieuw tabblad</a>.</p>'
+        % (marco, ver))
+
     return """<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>C4 · Unidad %(u)d · Escucha</title><style>%(css)s</style></head><body>
@@ -164,13 +205,14 @@ def construir(unit):
 <main>
  <div class="grid">
   <div class="aud">
+    %(video)s
     <div class="audbox">
       <h2>%(tit)s</h2>
       <p>%(tema)s</p>
       %(rep)s
       %(nota)s
       <ol class="pasos">
-        <li>Luister één keer <b>zonder</b> mee te lezen.</li>
+        <li>%(paso1)s</li>
         <li>Luister opnieuw en lees mee.</li>
         <li>Zet het Nederlands aan als je vastzit.</li>
         <li>Klik op een regel om ze apart te horen.</li>
@@ -207,7 +249,11 @@ if(leer)leer.onclick=function(){var i=0,ls=[].slice.call(document.querySelectorA
   u.lang='es-ES';u.rate=.9;u.onend=function(){i++;setTimeout(nx,320);};speechSynthesis.speak(u);})();};
 </script></body></html>""" % {
         "u": unit, "css": CSS, "tit": esc(e["titulo"]), "tema": esc(e["tema"]),
-        "intro": e["intro"], "rep": reproductor, "nota": nota, "cuerpo": cuerpo}
+        "intro": e["intro"], "rep": reproductor, "nota": nota, "cuerpo": cuerpo,
+        "video": bloque_video,
+        "paso1": ("Bekijk eerst de aflevering hierboven — je hoeft niet alles te "
+                  "verstaan." if marco else
+                  "Luister één keer <b>zonder</b> mee te lezen.")}
 
 
 def main():
