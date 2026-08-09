@@ -39,6 +39,22 @@ herkomst vragen, corrigeren, iets vragen, tellen…). Elke unit:
 | F20 | Expresar obligación | zeggen wat je moet doen (tener que + inf.) | expresar obligación | C4-TS-3 |
 | F21 | Ofrecer y pedir ayuda | hulp aanbieden & vragen | ofrecer/pedir ayuda | C4-GE-3 |
 | F22 | Decir lo que sé hacer | zeggen wat je kunt/weet te doen (saber + inf.) | expresar habilidad | C4-SP-2 |
+| F23 | Comprar: precio, talla y cantidad | kopen: prijs, maat en hoeveelheid | transacción de compra | C4-SP-1 |
+| F24 | Hablar del tiempo que hace | over het weer praten | describir el entorno | C4-WS-1 |
+| F25 | Reaccionar con una exclamación | reageren met een uitroep | expresar una reacción | C4-GE-2 |
+| F27 | Decir lo que te gusta y con qué frecuencia | zeggen wat je graag doet | expresar gustos y preferencias | C4-SP-2 |
+| F28 | Hablar de cómo te sientes | zeggen hoe jij je voelt | sensaciones físicas | C4-GE-2 |
+| F29 | Hablar de la rutina diaria | over je dagelijkse routine praten | acciones habituales (reflexivos) | C4-TS-4 |
+| F30 | Preguntar y dar la razón | naar de reden vragen en ze geven | causa y consecuencia | C4-TS-3 |
+| F31 | Desenvolverse en un restaurante | je redden in een restaurant | transacción de restaurante | C4-SP-1 |
+| F32 | Mostrar acuerdo y desacuerdo | het eens of oneens zijn | expresar (des)acuerdo | C4-GE-2 |
+| F33 | Valorar la comida y las personas | eten en mensen beoordelen | valorar con el superlativo | C4-SP-2 |
+
+> **F26 (hotel) bestaat niet.** Ze was voorzien voor U13, maar geen van de
+> veertien afleveringen speelt in een hotel: U13 gaat over de markt. Een functie
+> in het repertoire zetten waar geen les bij hoort, zou de leerling laten zien
+> dat hij iets «kan» dat hij nooit geleerd heeft. Reserveren komt in C5 terug.
+> Het nummer blijft leeg om de andere niet te laten opschuiven.
 
 ## Matrix C — functie × unit (● intro · ▲ uptrade/nivel+ · · recycle)
 | ID | U1 | U2 | U3 | U4 | U5 | … | Exponentes die groeien |
@@ -65,6 +81,16 @@ herkomst vragen, corrigeren, iets vragen, tellen…). Elke unit:
 | F20 Expresar obligación | | | | | | | ● (U9) — tengo que + infinitivo · tengo cosas que hacer · tengo hambre/sueño ▲ (U10) hay que + infinitivo (onpersoonlijk) · no tienes que molestarte |
 | F21 Ofrecer y pedir ayuda | | | | | | | ● (U10) — yo te ayudo · ¿te ayudo? · ¿qué tengo que hacer? · no es molestia · déjame, lo hago yo |
 | F22 Decir lo que sé hacer | | | | | | | ● (U10) — sé + infinitivo · ¿sabes…? · ¿sabes cómo funciona? · sabemos… · claro que sé |
+| F23 Comprar (precio/talla) | | | | | | | ● (U12) — ¿cuánto cuesta? · ¿qué talla lleva? · me queda ancho/bien ▲ (U13) ¿cuánto cuestan? · un kilo · es una oferta · ¿dónde venden…? |
+| F24 El tiempo que hace | | | | | | | ● (U11) — hace sol/frío/calor · está nublado · llueve · nieva · ¿qué tiempo hace? |
+| F25 Exclamación | | | | | | | ● (U11) — ¡qué frío! · ¡qué calor! ▲ (U14) ¡qué rico! · ¡qué tensión! |
+| F27 Gustos y frecuencia | | | | | | | ● (U11) — me/te/le gusta · me encanta · no soporto · prefiero · siempre…nunca |
+| F28 Cómo te sientes | | | | | | | ● (U11) — tengo frío/calor/hambre/sueño ▲ (U13) estoy enfermo · no tienes buen aspecto · tienes que cuidarte |
+| F29 La rutina diaria | | | | | | | ● (U12) — me levanto · me ducho · me peino · se afeita · os ducháis · me pongo la chaqueta |
+| F30 Preguntar la razón | | | | | | | ● (U13) — ¿por qué…? · porque… · por eso… · no lo sé |
+| F31 En el restaurante | | | | | | | ● (U14) — mesa para cuatro · ¿quiere algo de beber? · de primero/segundo/postre · les recomiendo · la cuenta |
+| F32 Acuerdo y desacuerdo | | | | | | | ● (U14) — yo también · yo tampoco · yo sí · yo no · exacto |
+| F33 Valorar (-ísimo) | | | | | | | ● (U14) — está buenísimo · es guapísimo · son simpatiquísimos · ¡qué rico! |
 
 *(NB: F05 kreeg in U7 een ▲-uptrade: estamos todos bien · ¿estáis bien? · ser↔estar-contrast.
 F07 en F08 kregen in U8 een ▲-uptrade: F07 números → **las horas** (y media · en veinte minutos) ·
@@ -103,6 +129,10 @@ U10 = **22** (+ofrecer y pedir ayuda, +decir lo que sé hacer; F20 uptrade → *
 - **U8 «Mi horario»** = F17 + F18 + F07
 - **U9 «Mi finde»** = F19 + F20 + F18
 - **U10 «¿Quién hace qué?»** = F21 + F22 + F20
+- **U11 «El tiempo y mis vacaciones»** = F24 + F27 + F28
+- **U12 «El desfile de la clase»** = F10 + F29 + F23
+- **U13 «Mi lista de la compra»** = F23 + F07 + F30
+- **U14 «La cena del año»** = F31 + F06 + F32 + F33
 
 ## Zeven ontwerpregels
 1. **Video-afgeleid:** elke functie begint bij een citaat uit de scène (noticing), nooit abstract.
@@ -113,7 +143,7 @@ U10 = **22** (+ofrecer y pedir ayuda, +decir lo que sé hacer; F20 uptrade → *
 6. **Zelf-evaluatie per functie:** semáforo (🟢🟡🔴) op functieniveau, receptief/productief apart mogelijk.
 7. **CEFR + doelcode op de docentenpagina:** de leerlingpagina toont enkel función + exponentes + CEFR-chip; de codes staan hier (docentdossier).
 
-## Uitbreiden naar U4+
+## Uitbreiden of bijstellen
 Voeg in `funciones_data.py` bij bestaande functies een nieuwe `exp[<unit>]` (= uptrade) of een nieuwe
 functie met `exp[<intro-unit>]`, vul `NOTICING[<unit>]` en `TAREA_FUN[<unit>]`. Herbouw
 `gen_c4_funciones.py` per unit + de hub. Werk deze matrix bij.

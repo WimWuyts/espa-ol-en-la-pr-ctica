@@ -213,14 +213,21 @@ PREGUNTAS_ESCENA = {
  11: ["¿Adónde va ella de vacaciones?", "¿Qué tiempo hace siempre en Canarias?",
       "¿Adónde va Julio de vacaciones?", "¿Qué le gusta hacer al camarero en el Caribe?",
       "¿Cuántas veces por semana va la clienta al gimnasio?"],
- 12: ["¿Qué tiempo hace en Bariloche?", "¿Cuántos grados hace en Cartagena?",
-      "¿Qué va a hacer Alba hoy?", "¿Cuál es la estación favorita de Iván?",
-      "¿Por qué le gusta esa estación?"],
- 13: ["¿A nombre de quién es la reserva?", "¿Para cuántas noches es?",
-      "¿A qué hora es el desayuno?", "¿En qué piso está la habitación?",
-      "¿Qué dos cosas no funcionan o faltan?"],
- 14: ["¿De dónde es Ana?", "¿Dónde vive Nico?", "¿Qué sabe hacer Alba?",
-      "¿Qué tiene que llevar Iván en invierno?", "¿Qué te preguntan al final?"],
+ 12: ["¿De qué color es la chaqueta de Paul?",
+      "¿Qué lleva Julio: un jersey o una camisa? ¿De qué color?",
+      "¿Quién lleva corbata, Paul o Julio?",
+      "¿Qué zapatos lleva Julio?",
+      "¿Qué verbo reflexivo dice la alumna?"],
+ 13: ["¿Por qué no va Julio a la academia?",
+      "¿Qué tres cosas hay en la cesta de Julio?",
+      "¿Cuánto cuestan los tomates?",
+      "¿Qué tiene que comprar María en la carnicería?",
+      "¿Dónde venden pescado fresco?"],
+ 14: ["¿Cuánto tiempo llevan juntos Julio y María?",
+      "¿Quién elige la mesa?",
+      "¿Qué bebe Julio? ¿Y sus padres?",
+      "¿Qué recomienda el camarero de carne y de pescado?",
+      "¿Qué postre piden al final?"],
 }
 
 
@@ -306,18 +313,19 @@ SUSTITUCION = {
       ("A mí me gusta la playa.", "→ a él"),
       ("Me gusta el cine.", "→ me encanta"),
       ("Voy a la playa en avión.", "→ a la montaña, en tren")],
- 12: [("Hoy hace sol.", "→ frío"),
-      ("Hoy hace sol.", "→ nublado (let op: hace of está?)"),
-      ("Hoy hace sol.", "→ llover"),
-      ("En verano hace calor.", "→ en invierno")],
- 13: [("¿Puede repetir, por favor?", "→ tú"),
-      ("¿Tiene una habitación doble?", "→ individual"),
-      ("El desayuno está incluido.", "→ el wifi"),
-      ("Aquí tiene la llave.", "→ las toallas")],
- 14: [("Me llamo Ana y soy de Sevilla.", "→ jouw naam en stad"),
-      ("Tengo que estudiar esta tarde.", "→ voy a"),
-      ("Sé nadar muy bien.", "→ no sé"),
-      ("Me gusta el verano porque hace calor.", "→ el invierno")],
+ 12: [("Yo me ducho por la mañana.", "→ tú"),
+      ("Yo me ducho por la mañana.", "→ él"),
+      ("Yo me ducho por la mañana.", "→ vosotros"),
+      ("Paul lleva una chaqueta negra.", "→ una camiseta blanca"),
+      ("Paul es alto.", "→ está cansado (ser of estar?)")],
+ 13: [("¿Cuánto cuesta la lechuga?", "→ los tomates"),
+      ("Las manzanas son baratas.", "→ caras"),
+      ("Yo puedo ir al mercado.", "→ tú"),
+      ("No voy porque estoy enfermo.", "→ por eso (herschrijf de hele zin)")],
+ 14: [("Yo quiero agua.", "→ una cerveza"),
+      ("Yo quiero vino.", "→ yo tampoco (maak er een ontkenning van)"),
+      ("La paella está buena.", "→ buenísima"),
+      ("Ésa es la mesa que nos gusta.", "→ el restaurante")],
 }
 
 
@@ -331,24 +339,28 @@ CLOZE = {
       "En Canarias ____ buen tiempo. (hace/tengo)",
       "Cierra la ventana: ____ frío. (hace/tengo — het weer)",
       "Ponme un abrigo: ____ frío. (hace/tengo — ík)"],
- 12: ["Hoy ____ sol y calor. (hace/está)",
-      "En Bilbao ____ nublado. (hace/está)",
-      "En invierno ____ mucho en la montaña. (nieva/hace)",
-      "____ mucho viento en la costa. (Hace/Está)",
-      "Creo que mañana ____. (llueve/hace)",
-      "En otoño no ____ ni frío ni calor. (hace/está)"],
- 13: ["¿____ repetir, por favor? (Puede/Puedes — tegen de receptionist)",
-      "Aquí ____ usted la llave. (tiene/tienes)",
-      "¿____ una habitación doble? (Tiene/Tienes — beleefd)",
-      "Perdone, ¿____ mirar el aire acondicionado? (puede/puedes)",
-      "¿A qué hora ____ el desayuno? (es/está)",
-      "El wifi ____ incluido. (es/está)"],
- 14: ["Me ____ Ana y ____ de Sevilla. (llamo/soy)",
-      "____ dieciséis años y ____ en Madrid. (tengo/vivo)",
-      "Mañana ____ a ir a la playa. (voy/tengo)",
-      "Hoy ____ que estudiar para el examen. (voy/tengo)",
-      "____ nadar, pero no ____ esquiar. (sé/sé)",
-      "Me gusta el verano ____ hace calor. (porque/así que)"],
+ 12: ["Yo ____ ducho a las siete. (me/te)",
+      "¿Tú ____ peinas antes de salir? (me/te)",
+      "Paul ____ afeita todos los días. (se/te)",
+      "Vosotros ____ ducháis después del deporte. (os/se)",
+      "Paul ____ una chaqueta negra. (lleva/tiene — wat hij nú aanheeft)",
+      "Yo no ____ corbatas. (llevo/tengo — bezit)",
+      "Paul ____ alto y guapo. (es/está)",
+      "Hoy Julio ____ cansado. (es/está)"],
+ 13: ["¿Cuánto ____ los tomates? (cuesta/cuestan)",
+      "¿Cuánto ____ un kilo de manzanas? (cuesta/cuestan)",
+      "¿____ pagar con tarjeta? (Puedo/Puedes — ik)",
+      "Nosotros ____ ir al mercado el sábado. (podemos/puedo)",
+      "¿____ no comes carne? (Por qué/Porque)",
+      "No como carne ____ soy vegetariano. (por qué/porque)",
+      "Estoy enfermo, ____ no voy a la academia. (por eso/porque)"],
+ 14: ["Ésa es la mesa ____ nos gusta. (que/qué)",
+      "Somos cuatro personas ____ van a cenar. (que/qué)",
+      "¿Quiere agua ____ vino? (o/y)",
+      "Yo quiero cerveza. — Yo ____. (también/tampoco — ik ook)",
+      "Yo no quiero vino. — Yo ____. (también/tampoco — ik ook niet)",
+      "La sopa está buena → está buen____. (-ísima/-ísimo)",
+      "Mis padres son simpáticos → son simpatiqu____. (-ísimos/-ísimas)"],
 }
 
 
@@ -408,12 +420,16 @@ def practica():
 CORRIGE = {
  11: ["Yo gusto la playa.", "A mí me gusta el frío, ¿y a tú?",
       "Estoy frío, cierra la ventana.", "Voy a la playa con avión."],
- 12: ["Hoy es frío en Bilbao.", "Está sol y calor en Madrid.",
-      "Mi estación favorito es el otoño.", "Hace nublado desde ayer."],
- 13: ["¿Puedes repetir, por favor, señora?", "Tengo una reserva a nombre para Ana.",
-      "El desayuno es incluido.", "¿Hay un wifi en la habitación?"],
- 14: ["Me llamo Ana y soy en Sevilla.", "Tengo dieciséis años y vivo a Madrid.",
-      "Mañana tengo a estudiar.", "Me gusta el verano, luego voy a la playa."],
+ 12: ["Yo ducho a las siete.", "Paul tiene una chaqueta negra hoy.",
+      "Paul está alto y guapo.", "Vosotros se peináis.",
+      "Llevo un jersey verdes."],
+ 13: ["¿Cuánto costan los tomates?", "¿Por qué no vas? Por qué estoy enfermo.",
+      "Las manzanas son barato.", "Compro pescado en la carnicería.",
+      "Estoy enfermo, luego no voy a la academia."],
+ 14: ["Ésa es la mesa qué nos gusta.", "Yo no quiero vino. — Yo también.",
+      "La paella está buenísima y el cordero está buenísima.",
+      "Somos cuatro personas van a cenar.",
+      "Mis padres son simpaticísimos."],
 }
 
 
@@ -422,32 +438,36 @@ ORDENA = {
       "submarinismo / gusta / hacer / me",
       "ópera / voy / a / casi / la / nunca",
       "gimnasio / semana / al / veces / por / tres / voy"],
- 12: ["hace / ¡ / frío / qué / !",
-      "nublado / está / hoy",
-      "favorita / mi / es / el / estación / otoño",
-      "llover / va / mañana / a"],
- 13: ["reserva / una / tengo / nombre / a / de / Ana",
-      "incluido / ¿ / desayuno / está / el / ?",
-      "piso / la / en / está / habitación / tercer / el",
-      "repetir / ¿ / puede / favor / por / ?"],
- 14: ["Sevilla / soy / de / y / Ana / llamo / me",
-      "insti / voy / ocho / al / a / las",
-      "abrigo / que / llevar / tengo / invierno / en",
-      "verano / gusta / el / me / calor / hace / porque"],
+ 12: ["negra / lleva / chaqueta / Paul / una",
+      "ojos / los / tiene / azules / Paul",
+      "peino / me / mañanas / las / por / me / ducho / y",
+      "cambio / yo / zapatillas / en / llevo / viejas"],
+ 13: ["cuestan / ¿ / cuánto / tomates / los / ?",
+      "enfermo / estoy / eso / no / por / voy",
+      "fresco / ¿ / venden / dónde / pescado / ?",
+      "carnicería / la / falta / nos / por / pasar"],
+ 14: ["cuatro / mesa / para / una / por / favor",
+      "gusta / la / ésa / mesa / es / nos / que",
+      "vino / quiero / tampoco / yo / no",
+      "cordero / de / les / el / recomiendo / carne"],
 }
 
 PAREJAS = {
  11: ["¿Qué tiempo hace hoy aquí?", "¿Adónde vas de vacaciones? ¿Cómo vas?",
       "¿Qué te gusta hacer en vacaciones?",
       "¿Con qué frecuencia lo haces: siempre, a veces o casi nunca?"],
- 12: ["¿Qué tiempo hace hoy?", "¿Cuál es tu estación favorita?",
-      "¿Qué haces cuando llueve?", "¿Prefieres el frío o el calor? ¿Por qué?"],
- 13: ["¿Prefieres un hotel o una casa? ¿Por qué?",
-      "¿Qué necesitas en una habitación?", "¿A qué hora desayunas tú?",
-      "¿Qué haces si algo no funciona?"],
- 14: ["¿Cómo te llamas y de dónde eres?", "¿Cómo es un día normal para ti?",
-      "¿Qué vas a hacer este fin de semana?",
-      "¿Qué país hispano quieres visitar? ¿Por qué?"],
+ 12: ["¿Qué ropa llevas hoy? ¿De qué color?",
+      "¿A qué hora te levantas y te duchas?",
+      "¿Cómo es tu mejor amigo/a? (alto, guapo, simpático…)",
+      "¿Qué ropa te queda bien y qué ropa no te gusta?"],
+ 13: ["¿Qué comes normalmente: carne, pescado o verdura?",
+      "¿Dónde compra tu familia: en el mercado o en el supermercado?",
+      "¿Cuánto cuesta un kilo de manzanas aquí?",
+      "¿Qué no compras nunca? ¿Por qué?"],
+ 14: ["¿Cuál es tu plato favorito? ¿Y tu bebida?",
+      "¿Vas mucho al restaurante? ¿Con quién?",
+      "Yo prefiero algo dulce de postre. ¿Y tú? (yo también / yo no)",
+      "¿Qué plato español o latinoamericano quieres probar? ¿Por qué?"],
 }
 
 
@@ -494,31 +514,42 @@ CULTURA = {
       ["Wat betekent <i>ir al pueblo</i>, en heb jij zoiets?",
        "Zoek de temperatuur van vandaag in Madrid en in Las Palmas.",
        "Waarom is het op de Canarias het hele jaar zacht? Zoek het op."]),
- 12: ("Dos hemisferios", "Kerstmis op het strand, en dat is geen grap",
-      "De Spaanstalige wereld ligt op <b>twee halfronden</b>. Als het in Madrid "
-      "winter is, is het in Buenos Aires zomer. In Argentinië en Chili valt "
-      "Kerstmis dus middenin de zomervakantie; in Colombia, dicht bij de evenaar, "
-      "verandert er het hele jaar door bijna niets.",
-      ["Zoek op: welk seizoen is het nu in Argentinië?",
-       "Welke twee Spaanstalige landen liggen op de evenaar?",
-       "Waarom is het in Bariloche koud en in Cartagena warm?"]),
- 13: ("La hora española", "Waarom het hotel pas om twee uur opengaat",
-      "Spanje leeft later dan België. Men <b>eet</b> tussen twee en drie, en "
-      "<b>soupeert</b> vanaf negen uur. Daarom is de <i>entrada</i> in een hotel "
-      "vaak pas vanaf 14:00 en zijn de winkels tussen twee en vijf soms gesloten. "
-      "Het is geen luiheid maar een ander ritme.",
-      ["Hoe laat eet jij 's middags, en hoe laat in Spanje?",
-       "Wat is een <i>siesta</i>, en wie doet er nog een?",
-       "Zoek de openingsuren van een Spaanse winkel en vergelijk."]),
- 14: ("Veintiún países", "Eén taal, honderden manieren om ze te spreken",
-      "Spaans is de moedertaal van ongeveer <b>500 miljoen</b> mensen in "
-      "<b>21 landen</b>. Het klinkt overal anders — de <i>c</i> van Madrid, de "
-      "<i>ll</i> van Buenos Aires, de zangerige toon van Bogotá — maar iedereen "
-      "verstaat elkaar. Dat is wat je dit jaar geleerd hebt: niet één Spaans, "
-      "maar een taal met veel stemmen.",
-      ["Noem drie Spaanstalige landen die je dit jaar tegenkwam.",
-       "Welk accent vond je het mooist, en waarom?",
-       "Welk land wil je bezoeken? Schrijf één zin met <i>voy a…</i>"]),
+ 12: ("La ropa que cuenta algo", "Van de guayabera tot de sneakers van Madrid",
+      "Kleding is nooit alleen kleding. In het Caribisch gebied draagt men de "
+      "<b>guayabera</b>, een licht overhemd met plooien dat je zelfs op een "
+      "trouwfeest mag aanhebben; in de Andes de <b>poncho</b>, geweven in de "
+      "kleuren van de streek; in Guatemala de <b>huipil</b>, waarvan het "
+      "borduurwerk verraadt uit welk dorp je komt. En in Madrid? Daar dragen "
+      "tieners ongeveer hetzelfde als jij. Eén detail is wel anders: "
+      "<i>llevar</i> is «aanhebben», terwijl wij «dragen» zeggen — en dat woord "
+      "betekent in het Spaans iets heel anders.",
+      ["Zoek een foto van een <i>guayabera</i> en van een <i>huipil</i>. Beschrijf "
+       "er één in het Spaans: <i>Lleva…</i>",
+       "Welke kleuren zie je het meest in de traditionele kleding van de Andes?",
+       "Wat draag jij vandaag? Schrijf drie zinnen met <i>llevo</i> + kleur."]),
+ 13: ("El mercado de barrio", "Waarom de Spanjaard nog altijd bij vier winkels langsgaat",
+      "In Spanje en Latijns-Amerika is <b>el mercado</b> geen folklore maar een "
+      "gewone maandagochtend. Onder één dak staan losse kraampjes: de "
+      "<b>pescadería</b> voor vis, de <b>carnicería</b> voor vlees, de "
+      "<b>frutería</b> voor groenten en fruit. Je koopt er per stuk of per kilo, "
+      "je vraagt de prijs hardop, en de verkoper kent je naam. In Mexico heet "
+      "zo'n rondtrekkende markt een <i>tianguis</i>, een woord uit het Nahuatl — "
+      "ouder dus dan het Spaans zelf.",
+      ["Zoek een Spaanse marktfolder en noteer drie prijzen per kilo.",
+       "Wat is een <i>tianguis</i>? Uit welke taal komt het woord?",
+       "Waar koopt jouw gezin: markt, winkel of online? Schrijf één zin met "
+       "<i>compramos… porque…</i>"]),
+ 14: ("La mesa española", "Twee uur aan tafel, en niemand die haast heeft",
+      "Wie in Spanje uit eten gaat, eet later en langer. De <b>comida</b> is "
+      "tussen twee en vier, de <b>cena</b> begint pas om negen of tien. "
+      "'s Middags bestaat het <b>menú del día</b>: voorgerecht, hoofdgerecht, "
+      "nagerecht, brood en drank voor één prijs — het goedkoopste warme eten van "
+      "het land. Na het nagerecht komt de koffie, en die blijft staan: de "
+      "<i>sobremesa</i>, het napraten aan tafel, hoort bij de maaltijd. De "
+      "rekening vraag je zelf; ze wordt niet gebracht.",
+      ["Zoek een echt <i>menú del día</i> online. Wat kost het en wat krijg je?",
+       "Wat is <i>la sobremesa</i>? Bestaat daar een Nederlands woord voor?",
+       "Stel jouw menú del día samen in het Spaans: primer plato, segundo, postre."]),
 }
 
 
@@ -585,6 +616,62 @@ def repaso():
                              for _ in range(5))}
 
 
+# ─── het slot van het jaar (alleen de laatste unidad) ───────────────────────
+# De veertien parada's met per parada één can-do. Ze staan hier uitgeschreven en
+# worden niet uit de units getrokken: U1–U10 hebben elk hun eigen generator, en
+# een terugblik die van tien andere bestanden afhangt breekt bij de eerste
+# hernoeming. Dit is één bladzijde die één keer bestaat.
+EL_AÑO = [
+ (1, "Presentaciones", "Me llamo… · ¿Cómo te llamas?"),
+ (2, "Saludos", "Buenos días · ¿Qué tal? · Hasta luego"),
+ (3, "Nacionalidades y países", "Soy de… · ¿De dónde eres?"),
+ (4, "La familia", "Esta es mi madre · es alto y simpático"),
+ (5, "Objetos cotidianos", "¿Qué es esto? · sirve para…"),
+ (6, "La casa y los lugares", "¿Dónde está? · encima de · al lado de"),
+ (7, "Las profesiones", "¿A qué te dedicas? · soy profesor"),
+ (8, "La hora y los días", "¿Qué hora es? · ¿Quieres quedar?"),
+ (9, "Planes y obligaciones", "Voy a… · tengo que…"),
+ (10, "Las tareas de casa", "Yo te ayudo · sé cocinar"),
+ (11, "El tiempo y las vacaciones", "Hace sol · me gusta · casi nunca"),
+ (12, "La ropa y los colores", "Lleva una chaqueta negra · me ducho"),
+ (13, "En el mercado", "¿Cuánto cuestan? · porque · por eso"),
+ (14, "En el restaurante", "Yo quiero… · yo también · buenísimo"),
+]
+
+
+def cierre():
+    """De slotbladzijde van het jaar. Alleen de laatste unidad heeft ze."""
+    if UNIT != max(KD.PORTADA):
+        return ""
+    filas = "".join(
+        "<tr><td><b>%d</b></td><td>%s</td><td>%s</td>"
+        "<td>🔴</td><td>🟡</td><td>🟢</td></tr>" % (n, esc(t), esc(c))
+        for n, t, c in EL_AÑO)
+    return """
+<div class="sec">
+  <div class="se">¡Ya hablas español! · veertien parada's later</div>
+  <p style="font-size:9.8pt"><b>Hace un año no sabías decir nada en español. Ahora
+    puedes presentarte, describir tu casa, quedar con alguien, comprar en el
+    mercado y pedir una cena entera.</b>
+    <span class="gloss">Een jaar geleden kon je hier nog niets zeggen. Nu stel je
+    jezelf voor, beschrijf je je huis, maak je een afspraak, doe je boodschappen
+    op de markt en bestel je een volledig menu.</span>
+    Loop de veertien parada's na en kleur eerlijk in: wat rood of oranje blijft,
+    staat online klaar om te herhalen.</p>
+  <div class="truc"><b>¿Y ahora?</b> Dit was «¡Bienvenidos al español!». De
+    klanken, het accent en de chunks die je hier opbouwde, zijn precies waarmee
+    de volgende cursus vertrekt.
+    <span class="gloss">Aquí termina el primer viaje; el siguiente empieza donde
+    este acaba.</span></div>
+  <table class="mp" style="margin-top:3mm"><thead><tr><th>#</th><th>Parada</th>
+    <th>Ya sé decir…</th><th>nog niet</th><th>bijna</th><th>ja</th></tr></thead>
+    <tbody>%(filas)s</tbody></table>
+  <div style="margin-left:6mm;font-size:9.6pt;margin-top:3mm">
+    <b>Mi frase del año</b> — de Spaanse zin die je nooit meer wil vergeten:
+    %(l)s</div>
+</div>"""  % {"filas": filas, "l": wl("full")}
+
+
 # ─── het geheel ─────────────────────────────────────────────────────────────
 def main():
     nr, tit = KD.PORTADA[UNIT][0], KD.PORTADA[UNIT][1]
@@ -592,7 +679,7 @@ def main():
               + comprension_print.print_section(UNIT, HUB)
               + suena() + gramatica() + practica() + tarea() + cultura()
               + funciones_print.print_section(UNIT)
-              + repaso())
+              + repaso() + cierre())
     # De gedeelde blokken (comprensión, funciones) zetten zelf een harde
     # paginabreuk: dat klopt in U1–U10, waar élke sectie een blad opent. Hier
     # vloeit alles behalve de vier mijlpalen, dus die inline breuk moet eruit —

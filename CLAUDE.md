@@ -197,16 +197,38 @@ De veertien thema's staan er. Wat er deze ronde bijkwam en veranderde:
   `escena_data.py` (4 scènes, U11–U14) met de acht Castiliaanse stemmen. Ingebed als
   data-URL, want de C4-hub moet standalone blijven. **De sitcom-transcripten blijven bij de
   video**: echte acteurs vervang je niet door synthese.
-- [x] **U11–U14: de video's stáán er, de transcripten nog niet** (auteur 2026-08-09). De
-  vier afleveringen staan in Google Drive en zijn **ingebouwd** — zelfde `/preview`-kader
+- [x] **U11–U14: video's én transcripten binnen** (auteur 2026-08-09). De vier
+  afleveringen staan in Google Drive en zijn **ingebouwd** — zelfde `/preview`-kader
   als U8–U10, met zichtbare terugvallink. Deelrechten nagekeken: alle vier `role=reader /
-  type=anyone`. De ID's staan in **`escena_data.VIDEO`**.
-  Zolang het transcript ontbreekt is de **eigen ingesproken scène** het meelees- en
-  oefenmateriaal (conform `HANDOVER_C4.md`: «zonder transcript: bouw native op de
-  kernwoordenschat»). Komt het transcript, dan vervangt het `escenas` van die unit en
-  hangt de meelees-laag vanzelf onder de video — de oefeningen, print en PPT volgen mee.
+  type=anyone`. De ID's staan in **`escena_data.VIDEO`**. De transcripten volgden
+  dezelfde dag; de vier units draaien nu op de échte tekst.
   **Aflevering 15 bestaat ook** (`1OMxB9gRZ9LdYYDGOl5_JiiGEAkXPsxfi`) maar C4 heeft
   veertien thema's, dus die blijft ongebruikt.
+- [x] **DE VIDEO IS DE LEIDRAAD — vier thema's bijgesteld (2026-08-09).** De
+  oorspronkelijke themalijst bleek bij álle vier de laatste afleveringen iets anders te
+  voorspellen dan er in beeld gezegd wordt. Nu: **U11 el tiempo** (was «ropa») ·
+  **U12 la ropa y los colores** (was «tiempo») · **U13 en el mercado** (was «hotel») ·
+  **U14 en el restaurante** (was «repaso»). Woordenschat, grammatica, oefeningen,
+  cultura, banda sonora, leestekst, luisterfragment, eindtaak en de funciones-matrix zijn
+  meeverhuisd. Wat níet meeschoof is de **klankfocus** (matrix A): die ligt vast zodat
+  elke klank precies één keer aan de beurt komt — alleen de voorbeeldwoorden komen nu uit
+  de nieuwe scène. **Er is geen hotelunit meer**; `F26` is daarom uit de functielijst
+  gehaald (reserveren komt in C5 terug) en `F23` (winkelen) is uit de parkeerstand: intro
+  in U12 (talla/precio), uptrade in U13 (kilo/oferta). Nieuw: `F29` rutina · `F30` razón ·
+  `F31` restaurante · `F32` acuerdo · `F33` valorar.
+- [x] **Sprekerslabels hersteld in aflevering 11 en 13.** In de aangeleverde transcripten
+  stonden regels op de verkeerde naam. Bij 11 bevestigde de auteur dat (de ober troost
+  Julio, niet omgekeerd); bij 13 wees het bewijs in de tekst zelf op dezelfde
+  verschuiving — María zegt daar «no soy vegetariano» — en is ze op dezelfde manier
+  hersteld. Beide staan gedocumenteerd in de kop van `escena_data.py`.
+- [x] **Géén ingesproken scène meer waar er een video is.** Zolang het transcript
+  ontbrak werd de eigen scène gesynthetiseerd; nu de aflevering er is, ís de video de
+  opname — echte acteurs vervang je niet. `gen_audio_castellano.fragmentos()` slaat units
+  in `escena_data.VIDEO` over, net als `gen_c4_escena.audio_datos()`. Het enige
+  gesynthetiseerde fragment per unit is dat bij de leestekst.
+- [x] **U14 sluit het jaar af.** De laatste unit heeft een slotbladzijde
+  (`gen_c4_pdf.cierre()`): de veertien parada's met per parada één can-do en een semáforo,
+  een «¿Y ahora?»-brug naar C5 en «mi frase del año». Alleen `max(PORTADA)` krijgt ze.
 - [x] **Gedeelde generatoren voor U11–U14**: `gen_c4_escena.py` · `gen_c4_kit.py` ·
   `gen_c4_practica.py` · `gen_c4_hub.py` · `gen_c4_pdf.py`, gevoed uit `escena_data.py` en
   `kit_data.py`. Vier bijna-identieke kopieën zouden vier plaatsen opleveren waar een

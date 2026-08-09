@@ -29,11 +29,14 @@ FUNCIONES = [
          7:["Estamos todos bien / tranquilos","¿Estáis bien?","estar = toestand · ser = wie/wat je bent"]}},
  {"id":"F06","es":"Pedir algo","nl":"iets vragen/bestellen",
   "cefr":"A1 · peticiones básicas","code":"C4-GE-3",
-  "exp":{3:["…, por favor","¿Me da…?"]}},
+  "exp":{3:["…, por favor","¿Me da…?"],
+         14:["Yo quiero…","Para mí, …","Yo prefiero algo dulce","La cuenta, por favor"]}},
  {"id":"F07","es":"Contar (números 0–20)","nl":"tellen",
   "cefr":"A1 · números","code":"C4-WS-1",
   "exp":{3:["uno · dos · tres · cinco","diez · veinte"],
-         8:["las horas: la una · las doce","y media · y cuarto · menos cuarto","en veinte minutos"]}},
+         8:["las horas: la una · las doce","y media · y cuarto · menos cuarto","en veinte minutos"],
+         13:["los precios: dos con veinte · uno con ochenta","un kilo · medio kilo · una lata",
+             "el euro y los céntimos"]}},
  {"id":"F08","es":"Gestionar la comprensión","nl":"om verduidelijking vragen (luisterstrategie)",
   "cefr":"A1 · estrategias de comprensión","code":"C4-STR-1",
   "exp":{1:["¿Cómo?","Otra vez, por favor"],
@@ -45,7 +48,9 @@ FUNCIONES = [
   "exp":{4:["mi madre · mi padre","mi hermano/a · mi abuelo/a","el tío / la tía","la hermana de María (de + nombre)"]}},
  {"id":"F10","es":"Describir a alguien","nl":"iemand beschrijven (fysiek & karakter)",
   "cefr":"A1 · descripción de personas","code":"C4-SP-2",
-  "exp":{4:["es alto/a · bajo/a · guapo/a","es simpático/a · divertido/a · inteligente","es muy… · un poco…"]}},
+  "exp":{4:["es alto/a · bajo/a · guapo/a","es simpático/a · divertido/a · inteligente","es muy… · un poco…"],
+         12:["tiene los ojos azules","está fuerte · está cansado (ahora)",
+             "lleva una chaqueta negra","es guapo (siempre) ↔ está fuerte (ahora)"]}},
  {"id":"F11","es":"Identificar objetos","nl":"voorwerpen benoemen (¿qué es esto?)",
   "cefr":"A1 · identificar cosas","code":"C4-WS-1",
   "exp":{5:["¿Qué es esto?","Esto es un/una…","Esto son… (meervoud)","un libro · una mesa (el/la)"]}},
@@ -90,34 +95,54 @@ FUNCIONES = [
   "exp":{10:["Sé + infinitivo (sé pasar la aspiradora)","¿Sabes…? · ¿Sabes cómo funciona?",
              "Sabemos… (nosotros)","Claro que sé"]}},
 
- # F23 (winkelen) staat GEPARKEERD. Ze was gepland voor U11, maar aflevering 11
- # blijkt over het weer en de vakantie te gaan. Zodra een transcript van 12, 13
- # of 14 over winkelen gaat, krijgt ze daar haar unitnummer; tot dan hoort ze
- # nergens en zou ze in het repertoire een functie tonen die nooit geleerd is.
- # {"id":"F23","es":"Comprar: preguntar precio y talla", … zie git-geschiedenis}
+ {"id":"F23","es":"Comprar: preguntar precio, talla y cantidad","nl":"kopen: prijs, maat en hoeveelheid",
+  "cefr":"A1 · transacción de compra","code":"C4-SP-1",
+  "exp":{12:["¿Cuánto cuesta?","¿Qué talla lleva?","¿La tiene en azul?",
+             "Me queda ancho/estrecho","Me queda bien"],
+         13:["¿Cuánto cuestan los tomates?","Un kilo, por favor","Es una oferta",
+             "Es caro/barato","¿Dónde venden…?"]}},
  {"id":"F24","es":"Hablar del tiempo que hace","nl":"over het weer praten",
   "cefr":"A1 · describir el entorno","code":"C4-WS-1",
-  "exp":{11:["Hace sol / frío / calor","Está nublado","Llueve","Nieva","¿Qué tiempo hace?"],
-         14:["Hace muy buen tiempo","Hace mucho viento","En invierno nieva"]}},
+  "exp":{11:["Hace sol / frío / calor","Está nublado","Llueve","Nieva","¿Qué tiempo hace?"]}},
  {"id":"F25","es":"Reaccionar con una exclamación","nl":"reageren met een uitroep",
   "cefr":"A1 · expresar una reacción","code":"C4-GE-2",
   "exp":{11:["¡Qué frío!","¡Qué calor!","¡Qué bonito!"],
-         14:["¡Qué bien!","¡Qué pena!","¡Qué interesante!"]}},
- {"id":"F26","es":"Reservar y registrarse en un hotel","nl":"reserveren en inchecken",
-  "cefr":"A1 · transacción de viaje","code":"C4-SP-1",
-  "exp":{13:["Tengo una reserva a nombre de…","Una habitación doble, por favor",
-             "¿El desayuno está incluido?","¿Hay wifi?"],
-         14:["¿A qué hora es la salida?","¿Puede repetir, por favor?"]}},
+         14:["¡Qué rico!","¡Qué tensión!","¡Qué bien!"]}},
+
+ # F26 (hotel) stond hier voor U13. De aflevering blijkt over de markt te gaan
+ # en er is in geen van de veertien video's een hotelscène, dus de functie hoort
+ # nergens: ze zou in het repertoire staan als iets dat de leerling geleerd
+ # heeft, terwijl er geen les bij hoort. Het reserveren zelf komt in C5 terug.
+ # {"id":"F26","es":"Reservar y registrarse en un hotel", … zie git-geschiedenis}
 
  {"id":"F27","es":"Decir lo que te gusta y con qué frecuencia","nl":"zeggen wat je graag doet",
   "cefr":"A1 · expresar gustos y preferencias","code":"C4-SP-2",
   "exp":{11:["Me gusta / te gusta / le gusta","Me encanta…","No soporto…","Prefiero…",
-             "siempre · a menudo · a veces · casi nunca · nunca"],
-         14:["A mí también / a mí tampoco","¿Y a ti? ¿Qué te gusta?"]}},
+             "siempre · a menudo · a veces · casi nunca · nunca"]}},
  {"id":"F28","es":"Hablar de cómo te sientes","nl":"zeggen hoe jij je voelt",
   "cefr":"A1 · sensaciones físicas","code":"C4-GE-2",
   "exp":{11:["Tengo frío / calor","Tengo hambre / sueño","Estoy cansado/a"],
-         14:["¿Tienes frío?","Estoy muy bien, gracias"]}},
+         13:["Estoy enfermo/a","No tienes muy buen aspecto","Tienes que cuidarte"]}},
+
+ {"id":"F29","es":"Hablar de la rutina diaria","nl":"over je dagelijkse routine praten",
+  "cefr":"A1 · acciones habituales (verbos reflexivos)","code":"C4-TS-4",
+  "exp":{12:["Me levanto · me ducho · me peino","Te duchas · te peinas",
+             "Se afeita","Vosotros os ducháis","Me pongo la chaqueta"]}},
+ {"id":"F30","es":"Preguntar y dar la razón","nl":"naar de reden vragen en ze geven",
+  "cefr":"A1 · causa y consecuencia","code":"C4-TS-3",
+  "exp":{13:["¿Por qué…?","Porque…","Por eso…","No lo sé"]}},
+ {"id":"F31","es":"Desenvolverse en un restaurante","nl":"je redden in een restaurant",
+  "cefr":"A1 · transacción de restaurante","code":"C4-SP-1",
+  "exp":{14:["Mesa para cuatro, por favor","¿Quiere algo de beber?",
+             "De primero… · de segundo… · de postre…","Les recomiendo…",
+             "La cuenta, por favor"]}},
+ {"id":"F32","es":"Mostrar acuerdo y desacuerdo","nl":"het eens of oneens zijn",
+  "cefr":"A1 · expresar (des)acuerdo","code":"C4-GE-2",
+  "exp":{14:["Yo también","Yo tampoco","Yo sí","Yo no","Exacto"]}},
+ {"id":"F33","es":"Valorar la comida y las personas","nl":"eten en mensen beoordelen",
+  "cefr":"A1 · valorar con el superlativo","code":"C4-SP-2",
+  "exp":{14:["Está buenísimo/a","Es guapísimo/a","Son simpatiquísimos",
+             "Está muy bueno","¡Qué rico!"]}},
 ]
 FMAP={f["id"]:f for f in FUNCIONES}
 
@@ -153,19 +178,33 @@ NOTICING={
      ("«Voy al gimnasio tres veces por semana.»","F27"),
      ("«¡Qué bien!»","F25"),
      ("«A mí me gusta más el frío.»","F27")],
- 12:[("«¡Qué frío hace hoy!»","F25"),("«Está nublado.»","F24"),
-     ("«Creo que va a llover.»","F24"),("«Hace muchísimo calor.»","F24"),
-     ("«Mi estación favorita es el otoño.»","F10"),("«Porque no hace ni frío ni calor.»","F10")],
- 13:[("«Tengo una reserva a nombre de…»","F26"),("«Una habitación doble, por favor.»","F26"),
-     ("«¿El desayuno está incluido?»","F26"),("«¿Hay wifi en la habitación?»","F12"),
-     ("«Está en el tercer piso.»","F13"),("«Aquí tiene la llave.»","F21")],
- 14:[("«Me llamo… y soy de…»","F02"),("«Tengo dieciséis años.»","F03"),
-     ("«Sé nadar muy bien.»","F22"),("«Tengo que llevar abrigo.»","F20"),
-     ("«¿Y tú? ¿De dónde eres?»","F03"),("«¡Ahora te toca a ti!»","F21")],
+ 12:[("«Paul lleva una chaqueta negra, buena.»","F10"),
+     ("«Yo, en cambio, llevo un jersey verde, barato.»","F10"),
+     ("«Paul es alto y yo no.»","F10"),
+     ("«Paul está fuerte.»","F10"),
+     ("«¿Paul se afeita?»","F29"),
+     ("«La gente por las mañanas se ducha, se peina.»","F29"),
+     ("«Vosotros os ducháis, os peináis.»","F29"),
+     ("«A Paul la ropa le queda muy bien.»","F23")],
+ 13:[("«¿Cuánto cuestan los tomates?»","F23"),
+     ("«Dos con veinte el kilo.»","F07"),
+     ("«Es una oferta, son baratas.»","F23"),
+     ("«¿Dónde venden pescado fresco?»","F23"),
+     ("«Estoy enfermo, por eso no voy a la academia.»","F30"),
+     ("«¿Por qué? No lo sé.»","F30"),
+     ("«No tienes muy buen aspecto.»","F28")],
+ 14:[("«Mesa para cuatro. Esa, si puede ser.»","F31"),
+     ("«¿Quieren algo de beber mientras miran el menú?»","F31"),
+     ("«De carne les recomiendo el cordero.»","F31"),
+     ("«Yo también estoy encantada.»","F32"),
+     ("«Yo tampoco quiero vino.»","F32"),
+     ("«Yo prefiero algo dulce.»","F06"),
+     ("«Paella, excelente, y calamares buenísimos.»","F33"),
+     ("«Tarta de chocolate, ¡qué rica!»","F25")],
 }
 # welke functies de eindtaak van elke unit combineert (afzender·ontvanger·doel — recycling zichtbaar).
-TAREA_FUN={1:["F01","F02","F03"],2:["F01","F05","F04"],3:["F02","F03","F08"],4:["F09","F10","F02"],5:["F11","F12","F10"],6:["F13","F12","F14"],7:["F15","F16","F03"],8:["F17","F18","F07"],9:["F19","F20","F18"],10:["F21","F22","F20"],11:["F24","F27","F28"],12:["F24","F25","F10"],13:["F26","F13","F21"],14:["F02","F22","F20","F27"]}
-TAREA_TITEL={1:"Mi presentación",2:"Un día de saludos",3:"Mi mapa · ¿de dónde eres?",4:"Mi árbol de familia",5:"Diccionario de la clase",6:"Plano de mi casa",7:"¿Quién soy? · adivina",8:"Mi horario",9:"Mi finde",10:"¿Quién hace qué?",11:"El tiempo y mis vacaciones",12:"El parte del tiempo de mi ciudad",13:"Reservo mi habitación",14:"Mi mundo hispano: mi presentación final"}
+TAREA_FUN={1:["F01","F02","F03"],2:["F01","F05","F04"],3:["F02","F03","F08"],4:["F09","F10","F02"],5:["F11","F12","F10"],6:["F13","F12","F14"],7:["F15","F16","F03"],8:["F17","F18","F07"],9:["F19","F20","F18"],10:["F21","F22","F20"],11:["F24","F27","F28"],12:["F10","F29","F23"],13:["F23","F07","F30"],14:["F31","F06","F32","F33"]}
+TAREA_TITEL={1:"Mi presentación",2:"Un día de saludos",3:"Mi mapa · ¿de dónde eres?",4:"Mi árbol de familia",5:"Diccionario de la clase",6:"Plano de mi casa",7:"¿Quién soy? · adivina",8:"Mi horario",9:"Mi finde",10:"¿Quién hace qué?",11:"El tiempo y mis vacaciones",12:"El desfile de la clase",13:"Mi lista de la compra",14:"La cena del año"}
 
 def funciones_hasta(unit):
     """Alle functies met intro-unit <= unit (het cumulatieve repertoire tot hier)."""

@@ -40,9 +40,11 @@ def chromium():
 C4_TEMA = {
     1: "presentaciones", 2: "saludos", 3: "nacionalidades", 4: "familia",
     5: "objetos", 6: "casa", 7: "profesiones", 8: "horas", 9: "planes",
-    # U11 volgt aflevering 11 («Aquí hace demasiado calor») en niet de
-    # oorspronkelijke themalijst; vandaar «tiempo» in plaats van «ropa».
-    10: "tareas", 11: "tiempo", 12: "tiempo", 13: "hotel", 14: "presentaciones",
+    # De laatste vier volgen hun aflevering en niet de oorspronkelijke
+    # themalijst: 11 gaat over het weer (niet «ropa»), 13 over de markt (niet
+    # «hotel») en 14 over het restaurant (niet «repaso»). In C4 is de vídeo de
+    # leidraad (CLAUDE.md §3), dus het thema volgt wat er gezegd wordt.
+    10: "tareas", 11: "tiempo", 12: "ropa", 13: "mercado", 14: "restaurante",
 }
 
 

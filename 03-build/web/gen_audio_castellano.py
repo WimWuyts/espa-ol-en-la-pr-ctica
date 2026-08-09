@@ -59,8 +59,14 @@ def fragmentos():
                 "audio": v.get("audio"),
                 "guion": [{"who": r[0], "es": r[1]} for r in v["guion"]],
             }))
-    # De scènes van U11–U14, die geen sitcom-aflevering hebben (escena_data.py).
+    # De scènes van U11–U14. Zolang er geen video was, werd de scène ingesproken
+    # zodat de leerling íets te horen had. Nu de vier afleveringen er zijn, is de
+    # video zélf de opname — met echte acteurs, en die vervang je niet door
+    # synthese. Een unit met een video krijgt hier dus geen eigen scène-opname;
+    # `gen_c4_escena.audio_datos()` slaat ze om dezelfde reden over.
     for u in sorted(EE.ESCENAS):
+        if u in EE.VIDEO:
+            continue
         out.append(("C4", u, {
             "id": "C4-U%d-ESCENA" % u,
             "titulo": EE.ESCENAS[u]["titulo"],

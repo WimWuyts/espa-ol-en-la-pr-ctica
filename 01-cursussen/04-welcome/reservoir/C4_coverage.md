@@ -24,10 +24,18 @@
 | **U8** | La hora y los días | **d** (zacht, intervocalisch) · getallen | klemtoon in getallen | c/qu |
 | **U9** | Planes y obligaciones | **diptongos ie/ue** (qu**ie**ro, p**ue**do) | tilde bij diptong | d, esdrújula |
 | **U10** | Las tareas de casa <sup>†</sup> | **g / gu** (a**g**ua, **gu**apo, **gui**tarra) | herhaling aguda/llana | diptongos, c/qu, jota |
-| **U11** | De compras / la ropa | **s** (altijd stemloos, nooit /z/) | klemtoon in prijzen/getallen | g/gu |
-| **U12** | El tiempo y estaciones | **entonación** (uitroep ¡qué frío!) | signos **¡! ¿?** + intonatiecurve | s |
-| **U13** | En el hotel / viajar | **enlace** (woorden aaneen: en_el_hotel) | vraagintonatie | entonación |
-| **U14** | Repaso · Mi mundo hispano | **álle klanken** door elkaar (transfer) | tilde-regels samengevat (aguda·llana·esdrújula) | **alles** |
+| **U11** | El tiempo y las vacaciones | **s** (altijd stemloos, nooit /z/) | klemtoon in de seizoenen | g/gu |
+| **U12** | La ropa y los colores | **entonación** (vraag · uitroep · mededeling) | signos **¡! ¿?** + intonatiecurve | s |
+| **U13** | En el mercado | **enlace** (woorden aaneen: en_el_mercado) | vraagintonatie ↗ ↘ | entonación |
+| **U14** | En el restaurante | **álle klanken** door elkaar (transfer) | tilde-regels samengevat (aguda·llana·esdrújula) | **alles** |
+
+> **Thema's van U11–U14 bijgesteld op 2026-08-09.** De transcripten van de vier
+> laatste afleveringen kwamen later dan de units, en ze bleken alle vier over
+> iets anders te gaan dan de oorspronkelijke themalijst voorzag. In C4 is de
+> vídeo de leidraad (CLAUDE.md §3), dus het thema volgt wat er gezegd wordt. De
+> **klankfocus is níet mee verschoven**: die ligt vast in matrix A, zodat elke
+> klank precies één keer aan de beurt komt — alleen de voorbeeldwoorden komen nu
+> uit de nieuwe scène.
 
 <sup>†</sup> **Thema-afwijking U10 (2026-07-29).** De themalijst in `C4_LEERDOELEN_EVALUATIE.md` plant hier «La comida / en el bar», maar **aflevering 10 van de sitcom gaat over de huistaken** («¡No tenemos asistenta!»). Conform CLAUDE.md (*de video's zijn de leidraad voor C4*) is U10 op de vídeo gebouwd; de klankfocus **g/gu** past onveranderd. Het eten/bar-thema schuift dus op — **beslissing auteur nodig**: de themalijst hernummeren, óf de lijst behandelen als een themavijver die losstaat van de video-volgorde.
 
