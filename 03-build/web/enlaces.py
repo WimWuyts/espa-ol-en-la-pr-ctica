@@ -160,9 +160,22 @@ def unidades(cursos=("C4", "C5", "C6+")):
                 yield (curso, u, p, os.path.join(HERE, fuente(curso, u)))
 
 
+# Wat er naast de units nog op de site hoort. De portaalpagina heet daar
+# `index.html`, want dat is het bestand dat een webserver toont als iemand
+# alleen het adres intikt — zonder die naam krijgt de bezoeker een lijst met
+# bestanden te zien in plaats van de voordeur.
+EXTRA = [
+    ("portal.html", "index.html", "de voordeur · drie cursussen"),
+    ("Conjugador.html", "conjugador.html", "Conjugador · werkwoorden"),
+]
+
+
 def manifiesto():
     """Wat er waarheen moet op de site — de uploadlijst voor de auteur."""
     filas = []
+    for src, dest, wat in EXTRA:
+        if os.path.exists(os.path.join(HERE, src)):
+            filas.append((os.path.join("03-build", "web", src), dest, wat))
     for curso, unidades in (("C4", range(1, 15)), ("C5", range(9)), ("C6+", range(8))):
         for u in unidades:
             src = os.path.join("03-build", "web", fuente(curso, u))
