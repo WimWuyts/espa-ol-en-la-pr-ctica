@@ -11,6 +11,7 @@ import hub_type_sets
 import hub_type_gram
 import extra_bronnen
 import hub_bloques
+import gen_rol
 import escucha_data, lectura_data
 ROOT = "/home/user/espa-ol-en-la-pr-ctica"
 GEN = f"{ROOT}/02-huisstijl/beeld/generators"
@@ -341,8 +342,13 @@ __TYPESLOTS__
     <div id="retos_u5"></div>
   </section>
   <section class="panel" data-p="hablar">
-    <h2 class="sec">Hablar · grábate 🎙️</h2>
-    <p class="lead">Neem <b>jezelf</b> op: luister naar het model, spreek in, luister terug, en neem opnieuw op. <span class="gloss">Werkt in Chrome/Edge; sta de micro toe. Print blijft bruikbaar zonder opname.</span></p>
+    <h2 class="sec">Hablar · ensaya y grábate 🎙️</h2>
+    <p class="lead">Eerst <b>oefenen met een partner</b> die je verbetert, dan
+      <b>jezelf opnemen</b>. <span class="gloss">Allebei werken ze zonder internet;
+      voor de opname sta je de micro toe. Print blijft bruikbaar zonder allebei.</span></p>
+    __ROL__
+    <h3 class="sec" style="font-size:18px;margin-top:22px">Grábate</h3>
+    <p class="lead">Luister naar het model, spreek in, luister terug, en neem opnieuw op.</p>
     <div class="card" id="rec_repite"></div>
     <div class="card" id="rec_pedido"></div>
     <div class="card" id="rec_plato"></div>
@@ -703,6 +709,18 @@ HTML = HTML.replace("__GRAMSLOTS__", hub_type_gram.slots('C5', 5))
 HTML = HTML.replace("__NGAMES__", str(len(GAMES)))
 HTML = HTML.replace("__BRONNEN__", extra_bronnen.html('C5', 5))
 HTML = HTML.replace("__TYPESLOTS__", hub_type_sets.SLOTS_HTML)
+
+# Het rollenspel: offline oefenpartner in het Hablar-paneel. Het component
+# levert zijn eigen opmaak en script mee, zodat de hub er niets van hoeft te
+# weten behalve waar het moet staan.
+_rol = gen_rol.componente('C5', 5)
+if _rol:
+    _rol_html, _rol_css, _rol_js = _rol
+    HTML = HTML.replace("__ROL__", _rol_html)
+    CSS += _rol_css
+    JS += _rol_js
+else:
+    HTML = HTML.replace("__ROL__", "")
 
 html=(HTML.replace("__CSS__",CSS).replace("__MOCH__",moch).replace("__FC__",flashcards_html())
       .replace("__NAS__",naslag_html()).replace("__MAP__",mapsvg).replace("__DATA__",data_js()).replace("__JS__",JS))
