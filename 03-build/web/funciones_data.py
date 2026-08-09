@@ -90,23 +90,34 @@ FUNCIONES = [
   "exp":{10:["Sé + infinitivo (sé pasar la aspiradora)","¿Sabes…? · ¿Sabes cómo funciona?",
              "Sabemos… (nosotros)","Claro que sé"]}},
 
- {"id":"F23","es":"Comprar: preguntar precio y talla","nl":"prijs en maat vragen",
-  "cefr":"A1 · transacción sencilla","code":"C4-SP-1",
-  "exp":{11:["¿Cuánto cuesta?","¿Qué talla tienes?","¿Puedo probármelo?","Me lo llevo"],
-         14:["¿Tiene una talla más grande?","Es un poco caro","¿Me hace un descuento?"]}},
+ # F23 (winkelen) staat GEPARKEERD. Ze was gepland voor U11, maar aflevering 11
+ # blijkt over het weer en de vakantie te gaan. Zodra een transcript van 12, 13
+ # of 14 over winkelen gaat, krijgt ze daar haar unitnummer; tot dan hoort ze
+ # nergens en zou ze in het repertoire een functie tonen die nooit geleerd is.
+ # {"id":"F23","es":"Comprar: preguntar precio y talla", … zie git-geschiedenis}
  {"id":"F24","es":"Hablar del tiempo que hace","nl":"over het weer praten",
   "cefr":"A1 · describir el entorno","code":"C4-WS-1",
-  "exp":{12:["Hace sol / frío / calor","Está nublado","Llueve","Nieva","¿Qué tiempo hace?"],
+  "exp":{11:["Hace sol / frío / calor","Está nublado","Llueve","Nieva","¿Qué tiempo hace?"],
          14:["Hace muy buen tiempo","Hace mucho viento","En invierno nieva"]}},
  {"id":"F25","es":"Reaccionar con una exclamación","nl":"reageren met een uitroep",
   "cefr":"A1 · expresar una reacción","code":"C4-GE-2",
-  "exp":{12:["¡Qué frío!","¡Qué calor!","¡Qué bonito!"],
+  "exp":{11:["¡Qué frío!","¡Qué calor!","¡Qué bonito!"],
          14:["¡Qué bien!","¡Qué pena!","¡Qué interesante!"]}},
  {"id":"F26","es":"Reservar y registrarse en un hotel","nl":"reserveren en inchecken",
   "cefr":"A1 · transacción de viaje","code":"C4-SP-1",
   "exp":{13:["Tengo una reserva a nombre de…","Una habitación doble, por favor",
              "¿El desayuno está incluido?","¿Hay wifi?"],
          14:["¿A qué hora es la salida?","¿Puede repetir, por favor?"]}},
+
+ {"id":"F27","es":"Decir lo que te gusta y con qué frecuencia","nl":"zeggen wat je graag doet",
+  "cefr":"A1 · expresar gustos y preferencias","code":"C4-SP-2",
+  "exp":{11:["Me gusta / te gusta / le gusta","Me encanta…","No soporto…","Prefiero…",
+             "siempre · a menudo · a veces · casi nunca · nunca"],
+         14:["A mí también / a mí tampoco","¿Y a ti? ¿Qué te gusta?"]}},
+ {"id":"F28","es":"Hablar de cómo te sientes","nl":"zeggen hoe jij je voelt",
+  "cefr":"A1 · sensaciones físicas","code":"C4-GE-2",
+  "exp":{11:["Tengo frío / calor","Tengo hambre / sueño","Estoy cansado/a"],
+         14:["¿Tienes frío?","Estoy muy bien, gracias"]}},
 ]
 FMAP={f["id"]:f for f in FUNCIONES}
 
@@ -134,9 +145,14 @@ NOTICING={
      ("«Hay que limpiar esto.»","F20"),("«¿Sabes pasar la aspiradora?»","F22"),
      ("«Los hombres también sabemos pasar la aspiradora.»","F22")],
 
- 11:[("«¿Cuánto cuesta esta camiseta?»","F23"),("«¿Qué talla necesitas?»","F23"),
-     ("«¿Puedo probármela?»","F23"),("«Está de rebajas.»","F23"),
-     ("«El probador está al fondo a la derecha.»","F13"),("«Me lo llevo.»","F23")],
+ 11:[("«Siempre hace buen tiempo en Canarias.»","F24"),
+     ("«Pero hace un frío… Nunca hace ese frío en Madrid.»","F24"),
+     ("«Me gusta hacer submarinismo.»","F27"),
+     ("«A ella también le gusta hacer submarinismo.»","F27"),
+     ("«Casi nunca voy a la ópera.»","F27"),
+     ("«Voy al gimnasio tres veces por semana.»","F27"),
+     ("«¡Qué bien!»","F25"),
+     ("«A mí me gusta más el frío.»","F27")],
  12:[("«¡Qué frío hace hoy!»","F25"),("«Está nublado.»","F24"),
      ("«Creo que va a llover.»","F24"),("«Hace muchísimo calor.»","F24"),
      ("«Mi estación favorita es el otoño.»","F10"),("«Porque no hace ni frío ni calor.»","F10")],
@@ -148,8 +164,8 @@ NOTICING={
      ("«¿Y tú? ¿De dónde eres?»","F03"),("«¡Ahora te toca a ti!»","F21")],
 }
 # welke functies de eindtaak van elke unit combineert (afzender·ontvanger·doel — recycling zichtbaar).
-TAREA_FUN={1:["F01","F02","F03"],2:["F01","F05","F04"],3:["F02","F03","F08"],4:["F09","F10","F02"],5:["F11","F12","F10"],6:["F13","F12","F14"],7:["F15","F16","F03"],8:["F17","F18","F07"],9:["F19","F20","F18"],10:["F21","F22","F20"],11:["F23","F13","F09"],12:["F24","F25","F10"],13:["F26","F13","F21"],14:["F02","F22","F20","F24"]}
-TAREA_TITEL={1:"Mi presentación",2:"Un día de saludos",3:"Mi mapa · ¿de dónde eres?",4:"Mi árbol de familia",5:"Diccionario de la clase",6:"Plano de mi casa",7:"¿Quién soy? · adivina",8:"Mi horario",9:"Mi finde",10:"¿Quién hace qué?",11:"En la tienda: mi lista de compras",12:"El parte del tiempo de mi ciudad",13:"Reservo mi habitación",14:"Mi mundo hispano: mi presentación final"}
+TAREA_FUN={1:["F01","F02","F03"],2:["F01","F05","F04"],3:["F02","F03","F08"],4:["F09","F10","F02"],5:["F11","F12","F10"],6:["F13","F12","F14"],7:["F15","F16","F03"],8:["F17","F18","F07"],9:["F19","F20","F18"],10:["F21","F22","F20"],11:["F24","F27","F28"],12:["F24","F25","F10"],13:["F26","F13","F21"],14:["F02","F22","F20","F27"]}
+TAREA_TITEL={1:"Mi presentación",2:"Un día de saludos",3:"Mi mapa · ¿de dónde eres?",4:"Mi árbol de familia",5:"Diccionario de la clase",6:"Plano de mi casa",7:"¿Quién soy? · adivina",8:"Mi horario",9:"Mi finde",10:"¿Quién hace qué?",11:"El tiempo y mis vacaciones",12:"El parte del tiempo de mi ciudad",13:"Reservo mi habitación",14:"Mi mundo hispano: mi presentación final"}
 
 def funciones_hasta(unit):
     """Alle functies met intro-unit <= unit (het cumulatieve repertoire tot hier)."""

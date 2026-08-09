@@ -90,7 +90,15 @@ def escena(titulo, intro, lineas, chunks):
 
 
 def audio_datos(unit):
-    """De opname van deze scène, als data-URL. `.wav` zolang er geen omzetter is."""
+    """De opname van deze scène, als data-URL — alléén waar er geen video is.
+
+    Waar wél een aflevering staat, ís de scène het transcript van die aflevering.
+    Die door de spraakmotor laten voorlezen zou echte acteurs vervangen door
+    synthese, en dat is precies wat we nergens doen. Daar hoort de leerling de
+    video en leest hij mee.
+    """
+    if unit in ED.VIDEO:
+        return None, None
     for ext, mime in ((".mp3", "audio/mpeg"), (".wav", "audio/wav")):
         p = os.path.join(AQUI, "audio", "C4_U%d_escena%s" % (unit, ext))
         if os.path.exists(p):
@@ -182,6 +190,10 @@ def construir(unit):
     if datos:
         reproductor = ('<audio id="aud" controls preload="metadata" '
                        'src="data:%s;base64,%s"></audio>' % (mime, datos))
+        nota = ""
+    elif unit in ED.VIDEO:
+        # De video hierboven ís de opname; er hoort geen tweede speler onder.
+        reproductor = ""
         nota = ""
     else:
         # Geen opname gevonden: dan leest de browserstem voor. Dat staat er

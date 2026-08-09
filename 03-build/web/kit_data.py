@@ -22,28 +22,39 @@ werkvorm. Voor deze vier:
 # ── woordenschat, in clusters ───────────────────────────────────────────────
 # (naam, ondertitel-NL, icoon, [(es, nl)])
 CLUSTERS = {
+ # ── U11 · gebouwd op aflevering 11 «Aquí hace demasiado calor» ────────────
+ # De themalijst plande hier «De compras / la ropa», maar de aflevering gaat
+ # over het weer, de vakantie en wat je graag doet. In C4 is de vídeo de
+ # leidraad (CLAUDE.md), dus de unit volgt de aflevering — net zoals bij U10.
+ # Het kleding-/winkelmateriaal staat onderaan dit bestand geparkeerd.
  11: [
-  ("La ropa", "de kleren", "👕", [
-    ("la camiseta", "het T-shirt"), ("los pantalones", "de broek"),
-    ("los vaqueros", "de jeans"), ("el vestido", "de jurk"),
-    ("la falda", "de rok"), ("las zapatillas", "de sneakers"),
-    ("la chaqueta", "de jas/vest"), ("los calcetines", "de sokken")]),
-  ("Preguntar el precio", "naar de prijs vragen", "💶", [
-    ("¿Cuánto cuesta?", "Hoeveel kost het?"),
-    ("¿Cuánto es todo?", "Hoeveel is het samen?"),
-    ("Cuesta nueve euros", "Het kost negen euro"),
-    ("Es un poco caro", "Het is een beetje duur"),
-    ("Es barato", "Het is goedkoop"),
-    ("a mitad de precio", "voor de helft van de prijs")]),
-  ("La talla", "de maat", "📏", [
-    ("¿Qué talla?", "Welke maat?"), ("pequeña · mediana · grande", "S · M · L"),
-    ("¿Puedo probármela?", "Mag ik ze passen?"),
-    ("el probador", "het paskamertje"),
-    ("¿Tiene una talla más grande?", "Hebt u een grotere maat?")]),
-  ("En la caja", "aan de kassa", "🧾", [
-    ("Me lo llevo", "Ik neem het"), ("en efectivo", "cash"),
-    ("con tarjeta", "met kaart"), ("las rebajas", "de solden"),
-    ("el descuento", "de korting")]),
+  ("¿Qué tiempo hace?", "het weer", "🌤️", [
+    ("hace buen tiempo", "het is mooi weer"), ("hace calor", "het is warm"),
+    ("hace frío", "het is koud"), ("hace viento", "het waait"),
+    ("hace sol", "het is zonnig"), ("llueve", "het regent"),
+    ("nieva", "het sneeuwt"), ("hay niebla", "het is mistig")]),
+  ("Las estaciones", "de seizoenen", "🍂", [
+    ("la primavera", "de lente"), ("el verano", "de zomer"),
+    ("el otoño", "de herfst"), ("el invierno", "de winter"),
+    ("en verano · en invierno", "in de zomer · in de winter")]),
+  ("¿Cómo vas?", "vervoer", "🚆", [
+    ("en tren", "met de trein"), ("en avión", "met het vliegtuig"),
+    ("en barco · en ferry", "met de boot · met de veerboot"),
+    ("en coche", "met de auto"), ("en bici", "met de fiets"),
+    ("en moto", "met de motor")]),
+  ("¿Adónde vas?", "bestemmingen", "🏝️", [
+    ("a la playa", "naar het strand"), ("a la montaña", "naar de bergen"),
+    ("al mar", "naar de zee"), ("a una isla", "naar een eiland"),
+    ("a la ciudad", "naar de stad"), ("al pueblo", "naar het dorp")]),
+  ("¿Con qué frecuencia?", "hoe vaak", "🔁", [
+    ("siempre", "altijd"), ("a menudo", "vaak"),
+    ("a veces", "soms"), ("casi nunca", "bijna nooit"),
+    ("nunca", "nooit"), ("todos los años", "elk jaar"),
+    ("tres veces por semana", "drie keer per week")]),
+  ("Tengo frío", "hoe jij je voelt", "🥶", [
+    ("tengo frío", "ik heb het koud"), ("tengo calor", "ik heb het warm"),
+    ("tengo sueño", "ik ben slaperig"), ("tengo hambre", "ik heb honger"),
+    ("estoy cansado/a", "ik ben moe")]),
  ],
  12: [
   ("¿Qué tiempo hace?", "het weer", "🌤️", [
@@ -109,14 +120,17 @@ CLUSTERS = {
 # ── gramática: één kernpunt per unit, visueel ───────────────────────────────
 # (titel, ondertitel-NL, [(vorm, uitleg-ES, uitleg-NL)], valstrik)
 GRAMATICA = {
- 11: ("Este · esta · estos · estas",
-      "wijzen: dít hemd, díe broek",
-      [("<b>este</b> vestido", "masculino singular", "dit kleed (m.)"),
-       ("<b>esta</b> camiseta", "femenino singular", "dit T-shirt (v.)"),
-       ("<b>estos</b> pantalones", "masculino plural", "deze broek (mv.)"),
-       ("<b>estas</b> zapatillas", "femenino plural", "deze sneakers (mv.)")],
-      "In het Nederlands is het één woord («deze/dit»); in het Spaans vier. "
-      "Het richt zich naar het woord erna, niet naar jou."),
+ 11: ("Me gusta · te gusta · le gusta",
+      "zeggen wat je graag doet — en hoe graag",
+      [("<b>A mí me</b> gusta el cine", "yo", "ík vind film leuk"),
+       ("<b>A ti te</b> gusta el yoga", "tú", "jíj vindt yoga leuk"),
+       ("<b>A él/ella le</b> gusta el submarinismo", "él · ella", "hij/zij duikt graag"),
+       ("Me <b>encanta</b> la playa", "más fuerte", "ik vind het strand geweldig"),
+       ("<b>No soporto</b> el frío", "lo contrario", "ik kan niet tegen de kou"),
+       ("<b>Prefiero</b> el verano", "elegir", "ik verkies de zomer")],
+      "Twee dingen tegelijk. Eén: het is <b>me gusta</b>, niet «yo gusto» — "
+      "het Spaans zegt letterlijk «het bevalt mij». Twee: <b>hace frío</b> gaat "
+      "over het wéér, <b>tengo frío</b> over jóú. «Estoy frío» bestaat niet."),
  12: ("Hace · está · llueve",
       "drie manieren om het weer te zeggen",
       [("<b>hace</b> sol / calor / frío / viento", "con un sustantivo",
@@ -150,12 +164,15 @@ GRAMATICA = {
 SUENA = {
  11: ("La <b>s</b> española — siempre sorda",
       "De Spaanse <b>s</b> is áltijd stemloos, zoals in het Nederlandse «sok». "
-      "Nooit als de <b>z</b> in «zon». Ook tussen twee klinkers niet.",
-      ["camiseta", "vestido", "blusa", "los pantalones", "las zapatillas", "es barato"],
-      ("El acento en los precios",
-       "In prijzen en getallen ligt de klemtoon vast. Klap mee.",
-       [("nueve", "NUE·ve"), ("quince", "QUIN·ce"), ("veinticinco", "vein·ti·CIN·co"),
-        ("treinta", "TREIN·ta"), ("cincuenta", "cin·CUEN·ta")])),
+      "Nooit als de <b>z</b> in «zon» — ook niet tussen twee klinkers. Deze unidad "
+      "zit er vol mee: <i>siempre</i>, <i>vacaciones</i>, <i>estaciones</i>.",
+      ["siempre", "vacaciones", "las estaciones", "submarinismo",
+       "casi nunca", "tres veces"],
+      ("El acento en las estaciones y la frecuencia",
+       "De klemtoon ligt vast. Klap mee terwijl je het zegt.",
+       [("primavera", "pri·ma·VE·ra"), ("verano", "ve·RA·no"),
+        ("otoño", "o·TO·ño"), ("invierno", "in·VIER·no"),
+        ("siempre", "SIEM·pre"), ("a menudo", "a me·NU·do")])),
  12: ("La entonación — la música de la frase",
       "Spaans laat je hóren wat voor zin het is. Een uitroep gaat omhoog en "
       "dan kort omlaag; een mededeling zakt gewoon.",
@@ -187,14 +204,14 @@ SUENA = {
 # ── de eindtaak van de unit ────────────────────────────────────────────────
 # (titel, situatie-ES, situatie-NL, [pasos])
 TAREA = {
- 11: ("Mi lista de compras",
-      "Vas de rebajas con veinte euros. ¿Qué compras?",
-      "Je gaat naar de solden met twintig euro. Wat koop je?",
-      ["Kies drie kledingstukken uit de klas-etalage.",
-       "Schrijf per stuk: <b>¿qué es?</b> · <b>¿cuánto cuesta?</b> · <b>¿qué talla?</b>",
-       "Speel de scène met je buur: klant en verkoper.",
-       "De klant vraagt minstens één keer «¿Puedo probármelo?»",
-       "Sluit af aan de kassa: «Me lo llevo. ¿Cuánto es todo?»"]),
+ 11: ("El tiempo y mis vacaciones",
+      "Cuenta qué tiempo hace, adónde vas y qué te gusta hacer.",
+      "Vertel wat voor weer het is, waar je heen gaat en wat je graag doet.",
+      ["Zeg wat voor weer het vandaag is: <b>hace…</b> of <b>está…</b>",
+       "Kies een bestemming en zeg hoe je er geraakt: <b>voy a… en…</b>",
+       "Zeg wat je daar graag doet met <b>me gusta</b> of <b>me encanta</b>.",
+       "Voeg één woord toe dat zegt hóé vaak: <b>siempre · a veces · nunca</b>.",
+       "Vraag het je buur: «¿Y a ti? ¿Qué te gusta hacer en vacaciones?»"]),
  12: ("El parte del tiempo de mi ciudad",
       "Eres el hombre o la mujer del tiempo. Presenta el tiempo de hoy.",
       "Jij bent de weerman of weervrouw. Presenteer het weer van vandaag.",
@@ -233,18 +250,20 @@ if __name__ == "__main__":
 # (parada-nr, titel, ondertitel-NL, ondertitel-ES, citaat uit de scène,
 #  [can-do's: (es, nl)], gids-tekst, [transparante woorden])
 PORTADA = {
- 11: (11, "De compras", "Kopen, kiezen en betalen — en durven vragen wat iets kost.",
-      "la ropa · ¿cuánto cuesta? · la talla · las rebajas",
-      "¿Cuánto cuesta esta camiseta? — Nueve euros, está de rebajas.",
-      [("Nombrar la <b>ropa</b>", "la camiseta · los vaqueros · las zapatillas"),
-       ("Preguntar el <b>precio</b> y la <b>talla</b>", "¿cuánto cuesta? · ¿qué talla?"),
-       ("Usar <b>este · esta · estos · estas</b>", "wijzen naar wat je wil"),
-       ("Cerrar la compra", "me lo llevo · en efectivo o con tarjeta")],
-      "Ana en Nico gaan naar de solden. Alles wat je hoort, heb je zelf nodig zodra "
-      "je in een Spaanse winkel staat: vragen wat iets kost, om een andere maat vragen, "
-      "en aan de kassa zeggen dat je het neemt.",
-      ["la blusa", "los pantalones", "el euro", "el descuento", "la tarjeta",
-       "el probador", "la talla", "en efectivo"]),
+ 11: (11, "Aquí hace demasiado calor",
+      "Praten over het weer, over vakantie, en over wat je graag doet.",
+      "el tiempo · las estaciones · me gusta · siempre y nunca",
+      "Siempre hace buen tiempo en Canarias. — Pero hace un frío…",
+      [("Decir <b>qué tiempo hace</b>", "hace sol · hace frío · llueve · hay niebla"),
+       ("Hablar de <b>vacaciones</b>", "voy a la playa en avión · al pueblo en coche"),
+       ("Decir lo que <b>te gusta</b>", "me gusta · me encanta · no soporto · prefiero"),
+       ("Decir <b>con qué frecuencia</b>", "siempre · a menudo · a veces · casi nunca")],
+      "Julio zit in een bar en hoort dat iedereen ergens anders heen gaat: zij naar "
+      "de Canarische Eilanden, hij naar het dorp van zijn ouders in Ávila, waar het "
+      "ijskoud is. Alles wat ze zeggen heb je zelf nodig zodra iemand vraagt waar "
+      "jij naartoe gaat — en wat voor weer het daar is.",
+      ["las vacaciones", "el clima", "la temperatura", "el hotel", "el restaurante",
+       "flexible", "el gimnasio", "la ópera"]),
  12: (12, "El tiempo", "Zeggen wat voor weer het is — en erop reageren.",
       "hace sol · está nublado · llueve · las estaciones",
       "¡Qué frío hace! Nieva desde ayer. — Aquí hace sol y calor.",

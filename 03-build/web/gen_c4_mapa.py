@@ -36,10 +36,11 @@ UNIT_TEMA = {
  # U10 hergebruikt bewust «familia» (spaced recycling, §14): in U4 was de vraag «hoe is de familie?»,
  # in U10 is de invalshoek «wie helpt er in huis?» — zelfde feiten, andere didactische hoek.
  10:("familia", "🏠 ¿Quién ayuda en casa?"),    # tareas domésticas → rollen in het gezin per land
- # U11 hergebruikt «compras» uit U5, maar met een andere vraag: daar ging het over
- # een typisch product, hier over wat je er aantrekt. Zelfde kaart, andere blik (§14).
- 11:("compras", "👕 ¿Qué se lleva aquí?"),      # la ropa → typische kleding per land
- 12:("simbolo", "🌦️ ¿Qué tiempo hace?"),        # el tiempo → klimaat/seizoen per land
+ # U11 volgt aflevering 11 («Aquí hace demasiado calor»): het weer en de vakantie.
+ # De kledingkaart die hier gepland stond, schuift mee met het winkelthema — waar
+ # dat terechtkomt hangt af van de transcripten van 12, 13 en 14.
+ 11:("simbolo", "🌦️ ¿Qué tiempo hace allí?"),   # el tiempo → klimaat/seizoen per land
+ 12:("compras", "👕 ¿Qué se lleva aquí?"),      # VOORLOPIG — wacht op transcript 12
  13:("viaje",   "🏨 ¿Dónde te alojas?"),        # el hotel/viajar → typisch verblijf per land
  # U14 is het repaso: de kaart toont alles wat het jaar door verzameld is.
  14:("persona", "🌍 Mi mundo hispano"),
@@ -64,10 +65,10 @@ INTRO = {
      "Wat doen ze voor werk? Klik op een land en ontdek een bekende persoon… én zijn/haar beroep."),
  8: ("¿A qué hora se come? Cada país tiene su ritmo. Haz clic en un país y descúbrelo.",
      "Hoe laat eet men er? Elk land heeft zijn eigen ritme. Klik op een land en ontdek het."),
- 11:("¿Qué ropa se lleva en cada país? Haz clic y descúbrelo.",
-     "Welke kleren draagt men in elk land? Klik en ontdek het."),
- 12:("¿Qué tiempo hace allí ahora? Un país, un clima. Haz clic en el mapa.",
+ 11:("¿Qué tiempo hace allí ahora? Un país, un clima. Haz clic en el mapa.",
      "Wat voor weer is het daar nu? Eén land, één klimaat. Klik op de kaart."),
+ 12:("¿Qué ropa se lleva en cada país? Haz clic y descúbrelo.",
+     "Welke kleren draagt men in elk land? Klik en ontdek het."),
  13:("¿Dónde te alojas cuando viajas? Haz clic en un país y descúbrelo.",
      "Waar verblijf je als je reist? Klik op een land en ontdek het."),
  14:("Todo el año en un mapa. Haz clic en un país y cuenta lo que ya sabes decir.",

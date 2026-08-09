@@ -169,10 +169,10 @@ def escucha():
 <div class="page sec major">
   <div class="se">§1 · ¡Escucha!</div><h2>%(tit)s</h2>
   <div class="audiorow">
-    <div class="call"><span class="ic">🎧</span><div><b>%(tit)s</b> —
-      scan de code en luister de scène op de digitale pagina. Luister <b>eerst
-      zonder mee te lezen</b>: je hoeft niet alles te verstaan. Daarna lees je mee.</div></div>
-    <div class="qr" data-url="%(url)s"><div class="lab">Escucha online</div>%(qr)s
+    <div class="call"><span class="ic">%(icono)s</span><div><b>%(tit)s</b> —
+      %(consigna)s <b>Eerst zonder mee te lezen</b>: je hoeft niet alles te
+      verstaan. Daarna lees je mee.</div></div>
+    <div class="qr" data-url="%(url)s"><div class="lab">%(lab)s</div>%(qr)s
       <div class="meta">hub · Escucha</div></div>
   </div>
   <div class="se" style="margin-top:4mm">Antes de escuchar · voorspel</div>
@@ -196,6 +196,11 @@ def escucha():
 </div>""" % {"tit": esc(e["titulo"]), "url": destino, "qr": qr(destino),
               "lineas": lineas, "chunks": chunks, "preg": preguntas,
               "wl": wl("full"),
+              "icono": "🎬" if UNIT in ED.VIDEO else "🎧",
+              "lab": "Vídeo online" if UNIT in ED.VIDEO else "Escucha online",
+              "consigna": ("scan de code en bekijk de aflevering op de digitale pagina."
+                           if UNIT in ED.VIDEO else
+                           "scan de code en luister de scène op de digitale pagina."),
               "caza": "".join("<tr><td>%s</td><td>%s</td></tr>"
                               % (esc(c.replace("_", " ")), wl("md"))
                               for c in e["chunks"][:6])}
@@ -205,9 +210,9 @@ def escucha():
 # omdat ze bij de práct van het bóek horen: online worden dezelfde feiten
 # anders bevraagd (met zelfcorrectie), en die twee hoeven niet identiek te zijn.
 PREGUNTAS_ESCENA = {
- 11: ["¿Cuánto cuesta la camiseta azul?", "¿Qué talla necesita Nico?",
-      "¿Dónde está el probador?", "¿Paga en efectivo o con tarjeta?",
-      "¿Hay descuento para estudiantes?"],
+ 11: ["¿Adónde va ella de vacaciones?", "¿Qué tiempo hace siempre en Canarias?",
+      "¿Adónde va Julio y con quién?", "¿Qué le gusta hacer a Julio en el Caribe?",
+      "¿Cuántas veces por semana va la clienta al gimnasio?"],
  12: ["¿Qué tiempo hace en Bariloche?", "¿Cuántos grados hace en Cartagena?",
       "¿Qué va a hacer Alba hoy?", "¿Cuál es la estación favorita de Iván?",
       "¿Por qué le gusta esa estación?"],
@@ -297,10 +302,10 @@ def gramatica():
 # De substitutieketen: één modelzin, telkens één ding anders. Klassiek, en het
 # werkt — de leerling ziet wat er mee verandert zonder dat het uitgelegd wordt.
 SUSTITUCION = {
- 11: [("Esta camiseta cuesta nueve euros.", "→ el vestido"),
-      ("Esta camiseta cuesta nueve euros.", "→ los pantalones"),
-      ("Esta camiseta cuesta nueve euros.", "→ las zapatillas"),
-      ("¿Puedo probarme esta falda?", "→ este vestido")],
+ 11: [("A mí me gusta la playa.", "→ a ti"),
+      ("A mí me gusta la playa.", "→ a él"),
+      ("Me gusta el cine.", "→ me encanta"),
+      ("Voy a la playa en avión.", "→ a la montaña, en tren")],
  12: [("Hoy hace sol.", "→ frío"),
       ("Hoy hace sol.", "→ nublado (let op: hace of está?)"),
       ("Hoy hace sol.", "→ llover"),
@@ -320,12 +325,12 @@ SUSTITUCION = {
 # gewone invulzinnen naast de visuele uitleg hierboven: de leerling heeft
 # allebei nodig.
 CLOZE = {
- 11: ["¿Cuánto cuesta ____ camiseta? (este/esta)",
-      "Me llevo ____ pantalones vaqueros. (estos/estas)",
-      "____ zapatillas son muy caras. (estos/estas)",
-      "¿Puedo probarme ____ vestido? (este/esta)",
-      "____ falda cuesta doce euros. (este/esta)",
-      "No me gustan ____ calcetines. (estos/estas)"],
+ 11: ["A mí ____ gusta la playa. (me/te)",
+      "¿A ti ____ gusta el yoga? (me/te)",
+      "A Julio ____ gusta el submarinismo. (le/te)",
+      "En Canarias ____ buen tiempo. (hace/tengo)",
+      "Cierra la ventana: ____ frío. (hace/tengo — het weer)",
+      "Ponme un abrigo: ____ frío. (hace/tengo — ík)"],
  12: ["Hoy ____ sol y calor. (hace/está)",
       "En Bilbao ____ nublado. (hace/está)",
       "En invierno ____ mucho en la montaña. (nieva/hace)",
@@ -401,8 +406,8 @@ def practica():
 # leerling écht doet: het verkeerde aanwijzend voornaamwoord, «es» waar «hace»
 # hoort, «tú» tegen een receptionist, «luego» voor «dus».
 CORRIGE = {
- 11: ["Esta pantalones son muy caros.", "¿Cuánto cuesta estos zapatillas?",
-      "Me lo llevo, pero es un poco cara.", "¿Puedo probarme este camiseta?"],
+ 11: ["Yo gusto la playa.", "A mí me gusta el frío, ¿y a tú?",
+      "Estoy frío, cierra la ventana.", "Voy a la playa con avión."],
  12: ["Hoy es frío en Bilbao.", "Está sol y calor en Madrid.",
       "Mi estación favorito es el otoño.", "Hace nublado desde ayer."],
  13: ["¿Puedes repetir, por favor, señora?", "Tengo una reserva a nombre para Ana.",
@@ -413,10 +418,10 @@ CORRIGE = {
 
 
 ORDENA = {
- 11: ["cuesta / ¿ / camiseta / esta / cuánto / ?",
-      "probármela / ¿ / puedo / ?",
-      "rebajas / está / de / vestido / el",
-      "llevo / lo / me / tarjeta / con"],
+ 11: ["tiempo / buen / hace / Canarias / en / siempre",
+      "submarinismo / gusta / hacer / me",
+      "ópera / voy / a / casi / la / nunca",
+      "gimnasio / semana / al / veces / por / tres / voy"],
  12: ["hace / ¡ / frío / qué / !",
       "nublado / está / hoy",
       "favorita / mi / es / el / estación / otoño",
@@ -432,8 +437,9 @@ ORDENA = {
 }
 
 PAREJAS = {
- 11: ["¿Qué ropa llevas hoy?", "¿Cuánto cuesta tu camiseta favorita?",
-      "¿Qué talla usas?", "¿Te gustan las rebajas? ¿Por qué?"],
+ 11: ["¿Qué tiempo hace hoy aquí?", "¿Adónde vas de vacaciones? ¿Cómo vas?",
+      "¿Qué te gusta hacer en vacaciones?",
+      "¿Con qué frecuencia lo haces: siempre, a veces o casi nunca?"],
  12: ["¿Qué tiempo hace hoy?", "¿Cuál es tu estación favorita?",
       "¿Qué haces cuando llueve?", "¿Prefieres el frío o el calor? ¿Por qué?"],
  13: ["¿Prefieres un hotel o una casa? ¿Por qué?",
@@ -478,14 +484,16 @@ def tarea():
 
 # ─── cultura ────────────────────────────────────────────────────────────────
 CULTURA = {
- 11: ("Las rebajas", "Twee keer per jaar, en heel Spanje weet wanneer",
-      "In Spanje beginnen de <b>rebajas</b> op vaste momenten: begin januari en "
-      "begin juli. Het is bijna een seizoen op zich — winkelstraten hangen vol "
-      "borden met percentages, en de eerste dag staan er rijen. In Latijns-Amerika "
-      "heten ze vaker <b>ofertas</b> of <b>descuentos</b>.",
-      ["¿Wanneer zijn er in België solden?",
-       "Wat kost een T-shirt bij jou, en wat in de tekst?",
-       "Zoek één Spaans kledingmerk en noteer waar het vandaan komt."]),
+ 11: ("España en verano", "Waarom half Madrid in augustus verdwijnt",
+      "In augustus loopt Madrid leeg: wie kan, vertrekt naar de <b>costa</b> of naar "
+      "<b>el pueblo</b> — het dorp waar de familie vandaan komt. Julio doet precies "
+      "dat. Het binnenland kent extremen: 40 graden in de zomer, en in de bergen bij "
+      "Ávila vriest het 's winters hard. Op de <b>Canarias</b>, voor de kust van "
+      "Afrika, is het het hele jaar door 20 tot 26 graden — daarom heten ze "
+      "<i>las islas de la eterna primavera</i>.",
+      ["Wat betekent <i>ir al pueblo</i>, en heb jij zoiets?",
+       "Zoek de temperatuur van vandaag in Madrid en in Las Palmas.",
+       "Waarom is het op de Canarias het hele jaar zacht? Zoek het op."]),
  12: ("Dos hemisferios", "Kerstmis op het strand, en dat is geen grap",
       "De Spaanstalige wereld ligt op <b>twee halfronden</b>. Als het in Madrid "
       "winter is, is het in Buenos Aires zomer. In Argentinië en Chili valt "

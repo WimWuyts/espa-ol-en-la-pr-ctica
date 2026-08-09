@@ -40,7 +40,9 @@ def chromium():
 C4_TEMA = {
     1: "presentaciones", 2: "saludos", 3: "nacionalidades", 4: "familia",
     5: "objetos", 6: "casa", 7: "profesiones", 8: "horas", 9: "planes",
-    10: "tareas", 11: "ropa", 12: "tiempo", 13: "hotel", 14: "presentaciones",
+    # U11 volgt aflevering 11 («Aquí hace demasiado calor») en niet de
+    # oorspronkelijke themalijst; vandaar «tiempo» in plaats van «ropa».
+    10: "tareas", 11: "tiempo", 12: "tiempo", 13: "hotel", 14: "presentaciones",
 }
 
 

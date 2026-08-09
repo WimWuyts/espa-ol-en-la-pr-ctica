@@ -1,6 +1,10 @@
 # C4 · U11 — cocktail-receta
 
-> **Thema:** De compras / la ropa
+> **Thema:** El tiempo · las vacaciones · lo que me gusta
+> **HERBOUWD 2026-08-09** op het echte transcript van aflevering 11 «Aquí hace
+> demasiado calor». De themalijst plande hier «De compras / la ropa»; de
+> aflevering gaat over het weer. In C4 is de video de leidraad, dus de unit
+> volgt de aflevering — net als bij U10.
 > **Gebouwd:** 2026-08-08 · met de gedeelde generatoren (`gen_c4_escena/kit/practica/hub/pdf.py`).
 
 ## Waarom deze unit anders gebouwd is
@@ -19,7 +23,7 @@ de oefeningen, de print en de hub volgen vanzelf.
 
 | Klankfocus (nieuw) | Acentuación-laag | Werkvorm |
 |---|---|---|
-| **s (siempre sorda)** | klemtoon in prijzen en getallen | luister-en-herhaal + klap de klemtoon + dictee + hardop lezen met ✓/✗ van je buur |
+| **s (siempre sorda)** | klemtoon in seizoenen en frequentie | luister-en-herhaal + klap de klemtoon + dictee + hardop lezen met ✓/✗ van je buur |
 
 ## Matrix B · chunk-recycling
 
@@ -29,12 +33,12 @@ gaten) én in de caza-de-chunks op papier.
 
 ## Matrix C · funciones comunicativas
 
-Nieuw in deze unit: **F23**. Zie `funciones_data.py` en
+Nieuw in deze unit: **F24 · F25 · F27 · F28**. Zie `funciones_data.py` en
 `C4_funciones_matrix.md`.
 
 ## Gramática
 
-**este · esta · estos · estas** — visueel aangeboden (voorbeelden → patroon → valstrik), daarna een
+**me gusta · te gusta · le gusta** — visueel aangeboden (voorbeelden → patroon → valstrik), daarna een
 klassieke cloze én een substitutieketen. Zie `kit_data.GRAMATICA[11]`.
 
 ## Quota
