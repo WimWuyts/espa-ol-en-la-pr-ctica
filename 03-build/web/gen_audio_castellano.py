@@ -33,6 +33,7 @@ AQUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, AQUI)
 
 import comprension_data as CD            # noqa: E402
+import escena_data as EE                # noqa: E402
 import escucha_corta_data as EC          # noqa: E402
 import escucha_data as ED                # noqa: E402
 import voces as V                        # noqa: E402
@@ -58,6 +59,14 @@ def fragmentos():
                 "audio": v.get("audio"),
                 "guion": [{"who": r[0], "es": r[1]} for r in v["guion"]],
             }))
+    # De scènes van U11–U14, die geen sitcom-aflevering hebben (escena_data.py).
+    for u in sorted(EE.ESCENAS):
+        out.append(("C4", u, {
+            "id": "C4-U%d-ESCENA" % u,
+            "titulo": EE.ESCENAS[u]["titulo"],
+            "audio": "audio/C4_U%d_escena.mp3" % u,
+            "guion": [{"who": sp, "es": es} for sp, es in EE.guion(u)],
+        }))
     for (curso, u), lista in sorted(EC.CORTOS.items()):
         for f in lista:
             if f.get("tipo") == "cancion" or not f.get("guion"):

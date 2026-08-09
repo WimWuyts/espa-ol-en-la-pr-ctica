@@ -55,9 +55,14 @@ import iconos as IC           # noqa: E402
 
 # Waar een emoji staat, bepaalt hoe groot zijn icoon moet zijn. In een badge
 # staat hij naast tekst van 7,4 pt, in een sectiekop naast 14 pt.
-MM_BADGE = 3.3
-MM_TEXTO = 3.9
-MM_KOP = 4.6
+#
+# De maten zijn naar beneden bijgesteld nadat de meting liet zien dat de iconen
+# C4 U1 en U10 net over een blad duwden: een emoji zit binnen de regelhoogte,
+# een SVG van 3,3 mm rekte haar op. Met 2,9 mm en `line-height:0` op de svg
+# blijft de regel even hoog als voorheen.
+MM_BADGE = 2.9
+MM_TEXTO = 3.5
+MM_KOP = 4.2
 
 # Blokken die met rust gelaten worden. De woordenschat is de belangrijkste: daar
 # ís de emoji de betekenis (zie de kop van dit bestand).

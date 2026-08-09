@@ -64,7 +64,7 @@ def icono(nombre, mm=MM_TEXTO, trazo=1.9, color="currentColor", clase="ic"):
     return ('<svg class="%s" width="%.2fmm" height="%.2fmm" viewBox="0 0 24 24" '
             'fill="none" stroke="%s" stroke-width="%.2f" stroke-linecap="round" '
             'stroke-linejoin="round" aria-hidden="true" '
-            'style="vertical-align:-.14em">%s</svg>'
+            'style="vertical-align:-.14em;line-height:0">%s</svg>'
             % (clase, mm, mm, color, trazo, datos[nombre]))
 
 

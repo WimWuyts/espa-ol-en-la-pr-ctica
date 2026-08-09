@@ -171,6 +171,36 @@ U0 (C5) is goedgekeurd en vastgezet als norm voor álle volgende units. **Bij au
 - [x] **Kaart = échte geografie (Natural Earth), klikbaar in HTML, met vlaggen + landcodes.** — 2026-07-26
 - [x] **QR's op print → naar de HTML-hub** (niet rechtstreeks YouTube/PPTX). — 2026-07-26
 
+### C4 IS VOLLEDIG (2026-08-08) — U11–U14 gebouwd, alles in één bouwketen
+De veertien thema's staan er. Wat er deze ronde bijkwam en veranderde:
+- [x] **C4 draait mee in `03-build/construir.py`** — onderdelen → hub → print → cijfers →
+  bouwtaal → Lucide → bladspiegel → PDF → bladzijdenummers + bladwijzers. Het thema per
+  unit (voor de banda sonora) staat nu in `C4_TEMA` in dat script i.p.v. in hand-getypte
+  regels. De unitlijst van álle drie de cursussen staat op één plaats: `enlaces.unidades()`.
+- [x] **QR-codes echt** — ze wezen naar het verzonnen `hablacon-ene.local`; nu naar de
+  gehoste hub + het juiste tabblad, via `enlaces.py`. `segno` bestaat hier niet: ze draaien
+  op onze eigen encoder (`qr_codigo.py`), dezelfde als C5/C6+. **100 codes in de repo,
+  98 naar een specifieke oefening.**
+- [x] **Luisterfragmenten ingesproken** — `comprension_data.AUDIO` (10 dialogen, U1–U10) en
+  `escena_data.py` (4 scènes, U11–U14) met de acht Castiliaanse stemmen. Ingebed als
+  data-URL, want de C4-hub moet standalone blijven. **De sitcom-transcripten blijven bij de
+  video**: echte acteurs vervang je niet door synthese.
+- [x] **U11–U14 zonder video.** `00-brondocumenten/videos-jaar4/` is leeg en er zijn geen
+  transcripten voor aflevering 11–14. Conform `HANDOVER_C4.md` («zonder transcript: bouw
+  native op de kernwoordenschat») hebben die vier een **eigen scène** in `escena_data.py`.
+  Komt de aflevering er alsnog, dan is dat één wijziging in dat bestand.
+- [x] **Gedeelde generatoren voor U11–U14**: `gen_c4_escena.py` · `gen_c4_kit.py` ·
+  `gen_c4_practica.py` · `gen_c4_hub.py` · `gen_c4_pdf.py`, gevoed uit `escena_data.py` en
+  `kit_data.py`. Vier bijna-identieke kopieën zouden vier plaatsen opleveren waar een
+  verbetering apart moet.
+- [x] **BLADSPIEGEL — U11–U14 wijken bewust af.** De C4-regel («elke sectie een blad,
+  verrijkt tot ze het vult») werkt in U1–U10 omdat die secties met de hand op maat zijn
+  gemaakt. Gegenereerde secties hebben wisselende lengte, en elke gedwongen breuk kostte
+  gemeten een halve bladzijde (81–83 % vulling). Nu opent alléén de scène een nieuw blad;
+  de rest vloeit door. **Resultaat: 11 bladzijden per unit, 89–91 % — gelijk aan U1–U10.**
+- [x] **Bladspiegel-nabewerking respecteert C4**: `bladspiegel.py` zet in C4 géén `major`
+  meer, want de generator beslist dat zelf. Het legt er alleen de ankers voor de bladwijzers.
+
 ### GOLDEN SAMPLE C4 · U1 «Presentaciones» = GELOCKT (2026-07-26) → productieregels in `HANDOVER_C4.md`
 U1 (C4) is goedgekeurd en vastgezet als norm voor álle C4-units (U2–U14). **Bij het bouwen van U2… exact dezelfde parameters/pijplijn als U1.** Volledige handleiding: **`HANDOVER_C4.md`** (lees dit vóór je een C4-unit bouwt). Gelockt voor C4:
 - [x] **4 formaten** = HTML-hub (tabbladen, srcdoc-iframes, offline) · print-PDF (+ bewerkbare `U<N>.html`-laag/editbar) · PowerPoint 2 decks (docente `.pptx` + alumno `.ppsx`, geanimeerd) · muziek-/motor-componenten. **Print-formaat = PDF** (Word bouwbaar maar in sandbox niet te renderen → PDF primeert, §18).

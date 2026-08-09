@@ -45,9 +45,25 @@ C4_TEMA = {
 
 
 def unidades_c4():
-    """De C4-units waarvoor er een printgenerator bestaat."""
-    return [u for u in range(1, 15)
-            if os.path.exists(os.path.join(WEB, "gen_c4u%d_pdf.py" % u))]
+    """De C4-units die gebouwd kunnen worden.
+
+    U1–U10 hebben elk hun eigen generatoren, gebouwd op de sitcom-aflevering.
+    Voor U11–U14 bestaat die aflevering niet in de repo — geen video, geen
+    transcript — dus die draaien op de gedeelde generatoren met eigen scènes
+    (`escena_data.py`, `kit_data.py`). Zie `gen_c4_escena.py` voor het waarom.
+    """
+    return ([u for u in range(1, 11)
+             if os.path.exists(os.path.join(WEB, "gen_c4u%d_pdf.py" % u))]
+            + [u for u in range(11, 15)
+               if os.path.exists(os.path.join(WEB, "gen_c4_pdf.py"))])
+
+
+# U11–U14 delen hun generatoren; hun unitnummer gaat via de omgeving mee.
+C4_COMPARTIDAS = {
+    "escucha":   ("gen_c4_escena.py", "C4_ESCENA_OUT", "C4_U%d_escucha.html"),
+    "kit":       ("gen_c4_kit.py", "C4_KIT_OUT", "C4_U%d_kgt.html"),
+    "practica":  ("gen_c4_practica.py", "C4_PRACTICA_OUT", "C4_U%d_practica.html"),
+}
 
 
 def unidades(curso=None, unidad=None):
@@ -86,10 +102,15 @@ def construye_c4(u):
     «Lee y escucha»-sectie uit dezelfde gegevens als het comprension-onderdeel,
     dus die twee mogen niet uit elkaar lopen.
     """
-    pasos = [
-        (["python3", "gen_c4u%d_escucha.py" % u], None),
-        (["python3", "gen_c4u%d_kgt.py" % u], None),
-        (["python3", "gen_c4u%d_practica.py" % u], None),
+    propio = os.path.exists(os.path.join(WEB, "gen_c4u%d_pdf.py" % u))
+    if propio:
+        primeros = [(["python3", "gen_c4u%d_escucha.py" % u], None),
+                    (["python3", "gen_c4u%d_kgt.py" % u], None),
+                    (["python3", "gen_c4u%d_practica.py" % u], None)]
+    else:
+        primeros = [(["python3", script], {"C4_UNIT": str(u), var: patron % u})
+                    for script, var, patron in C4_COMPARTIDAS.values()]
+    pasos = primeros + [
         (["python3", "gen_c4_comprension.py"],
          {"C4_UNIT": str(u), "C4_COMPR_OUT": "C4_U%d_comprension.html" % u}),
         (["python3", "gen_c4_mapa.py"],
@@ -99,9 +120,11 @@ def construye_c4(u):
         (["python3", "gen_c4_musica.py"],
          {"C4_TEMA": C4_TEMA.get(u, "presentaciones"),
           "C4_MUSICA_OUT": "C4_U%d_musica.html" % u}),
-        (["python3", "gen_c4u%d_hub.py" % u], None),      # ná de zeven onderdelen
-        (["python3", "gen_c4u%d_pdf.py" % u], None),
     ]
+    pasos += ([(["python3", "gen_c4u%d_hub.py" % u], None),   # ná de zeven onderdelen
+                (["python3", "gen_c4u%d_pdf.py" % u], None)] if propio else
+              [(["python3", "gen_c4_hub.py"], {"C4_UNIT": str(u)}),
+               (["python3", "gen_c4_pdf.py"], {"C4_UNIT": str(u)})])
     for cmd, ent in pasos:
         if not os.path.exists(os.path.join(WEB, cmd[1])):
             return False, "ontbreekt: " + cmd[1]

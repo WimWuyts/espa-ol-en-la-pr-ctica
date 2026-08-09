@@ -121,13 +121,22 @@ def procesar(ruta, curso="C5"):
     indice = []
 
     def sustituir(m, envoltura="pk"):
-        cls = m.group("cls").replace(" major", "")
+        cls = m.group("cls")
         tit = m.group("tit").strip()
-        if estricto or es_mojon(tit):
-            cls += " major"
-            puestos.append(tit)
+        if estricto:
+            # C4 beslist zelf. U1–U10 zetten `break-before:page` als inline
+            # stijl op elke sectie; U11–U14 worden gegenereerd en zetten
+            # `major` alleen op de mijlpalen. Hier iets overschrijven zou een
+            # van beide kapotmaken — dit script legt in C4 alleen de ankers.
+            (puestos if "major" in cls or "break-before:page" in m.group("resto")
+             else corridos).append(tit)
         else:
-            corridos.append(tit)
+            cls = cls.replace(" major", "")
+            if es_mojon(tit):
+                cls += " major"
+                puestos.append(tit)
+            else:
+                corridos.append(tit)
         # Een anker per sectie, en verderop een verborgen lijst die ernaar linkt.
         # Chromium schrijft van élk gelinkt anker een /Dests-ingang in de PDF, mét
         # de bladzijde waarop het beland is — en dát is de enige manier om ná de

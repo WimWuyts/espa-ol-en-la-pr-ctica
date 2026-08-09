@@ -233,6 +233,110 @@ LECTURA = {
    "transfer": "¿Y en tu casa? ¿Quién hace qué? ¿Qué sabes hacer tú?",
    "glosario": [["hay que + inf.", "men moet / er moet …"], ["sé cocinar", "ik kan koken"], ["pasar la aspiradora", "stofzuigen"], ["fregar los platos", "de vaat doen"], ["limpiar el polvo", "afstoffen"]],
  },
+
+ # ── U11 · De compras / la ropa ────────────────────────────────────────────
+ 11: {
+   "tipo": "un cartel de rebajas en el escaparate",
+   "contexto_nl": "Een uitverkoopaffiche in de etalage van een kledingwinkel.",
+   "texto": [
+     ["", "¡REBAJAS DE VERANO! Todo con descuento hasta el domingo."],
+     ["", "Camisetas de algodón: antes 15 €, ahora 9 €."],
+     ["", "Pantalones vaqueros: 25 € el segundo a mitad de precio."],
+     ["", "Vestidos y faldas: desde 12 €. Zapatillas blancas: 30 €."],
+     ["", "¿Necesitas otra talla? Pregunta al dependiente. Cambios hasta el 30 de julio."],
+   ],
+   "global": [
+     {"q": "¿Qué es este texto?", "opts": ["Un menú", "Un cartel de rebajas", "Una carta"], "a": 1},
+     {"q": "¿Hasta cuándo hay descuento?", "opts": ["Hasta el sábado", "Hasta el domingo", "Todo el verano"], "a": 1},
+   ],
+   "detalle": [
+     {"q": "Una camiseta cuesta ahora nueve euros.", "vf": True},
+     {"q": "Las zapatillas cuestan doce euros.", "vf": False},
+     {"q": "El segundo pantalón cuesta la mitad.", "vf": True},
+     {"q": "No se puede cambiar la ropa.", "vf": False},
+   ],
+   "transfer": "¿Y tú? ¿Qué ropa llevas hoy? ¿Cuánto cuesta más o menos?",
+   "glosario": [["las rebajas", "de solden"], ["el descuento", "de korting"],
+                ["la talla", "de maat"], ["el dependiente", "de verkoper"],
+                ["a mitad de precio", "voor de helft van de prijs"]],
+ },
+ # ── U12 · El tiempo y las estaciones ──────────────────────────────────────
+ 12: {
+   "tipo": "el parte del tiempo de una app",
+   "contexto_nl": "Het weerbericht van een app, voor vier steden.",
+   "texto": [
+     ["", "EL TIEMPO HOY · lunes 14"],
+     ["", "Madrid: hace sol y calor, 34 grados. ¡Qué calor!"],
+     ["", "Bilbao: está nublado y llueve por la tarde, 19 grados."],
+     ["", "Bariloche: en invierno nieva mucho en la montaña, 2 grados."],
+     ["", "Cartagena: hace buen tiempo, 31 grados, pero hace mucho viento."],
+   ],
+   "global": [
+     {"q": "¿Qué es este texto?", "opts": ["Un horario", "El parte del tiempo", "Un anuncio"], "a": 1},
+     {"q": "¿Dónde hace más calor?", "opts": ["En Madrid", "En Bilbao", "En Bariloche"], "a": 0},
+   ],
+   "detalle": [
+     {"q": "En Bilbao llueve por la tarde.", "vf": True},
+     {"q": "En Bariloche hace calor.", "vf": False},
+     {"q": "En Cartagena hace viento.", "vf": True},
+     {"q": "En Madrid está nublado.", "vf": False},
+   ],
+   "transfer": "¿Y hoy en tu ciudad? ¿Qué tiempo hace? ¿Cuál es tu estación favorita?",
+   "glosario": [["hace sol", "het is zonnig"], ["está nublado", "het is bewolkt"],
+                ["llueve", "het regent"], ["nieva", "het sneeuwt"],
+                ["hace viento", "het waait"]],
+ },
+ # ── U13 · En el hotel / viajar ────────────────────────────────────────────
+ 13: {
+   "tipo": "la confirmación de una reserva",
+   "contexto_nl": "De bevestigingsmail van een hotelreservering.",
+   "texto": [
+     ["", "HOTEL PLAZA MAYOR · Confirmación de reserva nº 4471"],
+     ["", "Habitación doble con baño, para dos noches: 15 y 16 de agosto."],
+     ["", "Precio: 78 € por noche, desayuno incluido."],
+     ["", "La habitación está en el tercer piso. Hay ascensor y wifi gratis."],
+     ["", "La entrada es a partir de las 14:00 y la salida antes de las 12:00."],
+   ],
+   "global": [
+     {"q": "¿Qué es este texto?", "opts": ["Un billete de tren", "Una confirmación de hotel", "Un menú"], "a": 1},
+     {"q": "¿Cuántas noches son?", "opts": ["Una", "Dos", "Tres"], "a": 1},
+   ],
+   "detalle": [
+     {"q": "El desayuno está incluido.", "vf": True},
+     {"q": "La habitación está en el primer piso.", "vf": False},
+     {"q": "Hay wifi gratis.", "vf": True},
+     {"q": "Se puede entrar a las once de la mañana.", "vf": False},
+   ],
+   "transfer": "¿Y tú? ¿Qué necesitas en un hotel? Escribe tres cosas importantes para ti.",
+   "glosario": [["la reserva", "de reservering"], ["la habitación doble", "de tweepersoonskamer"],
+                ["el desayuno incluido", "ontbijt inbegrepen"], ["el ascensor", "de lift"],
+                ["gratis", "gratis"]],
+ },
+ # ── U14 · Repaso · Mi mundo hispano ───────────────────────────────────────
+ 14: {
+   "tipo": "cuatro postales de cuatro países",
+   "contexto_nl": "Vier korte kaartjes uit vier landen — alles van het jaar komt terug.",
+   "texto": [
+     ["Ana", "¡Hola desde Sevilla! Hace mucho calor. Por la mañana visito la catedral y por la tarde tomo un helado. ¡Qué bonito!"],
+     ["Nico", "Estoy en Ciudad de México. Hoy voy al mercado: hay fruta, ropa y flores. Tengo que comprar un regalo."],
+     ["Alba", "Cartagena es increíble. Mi habitación está cerca del mar. Sé nadar, así que voy a la playa todos los días."],
+     ["Iván", "Aquí en Bariloche nieva. Llevo abrigo y bufanda. En invierno hay que llevar ropa de abrigo."],
+   ],
+   "global": [
+     {"q": "¿Qué son estos textos?", "opts": ["Cuatro postales", "Un menú", "Un horario"], "a": 0},
+     {"q": "¿Quién está en México?", "opts": ["Ana", "Nico", "Alba"], "a": 1},
+   ],
+   "detalle": [
+     {"q": "En Sevilla hace frío.", "vf": False},
+     {"q": "Nico tiene que comprar un regalo.", "vf": True},
+     {"q": "Alba sabe nadar.", "vf": True},
+     {"q": "En Bariloche hace sol y calor.", "vf": False},
+   ],
+   "transfer": "Escribe tu propia postal: ¿dónde estás, qué tiempo hace y qué haces hoy?",
+   "glosario": [["visito", "ik bezoek"], ["el regalo", "het cadeau"],
+                ["sé nadar", "ik kan zwemmen"], ["el abrigo", "de jas"],
+                ["la bufanda", "de sjaal"]],
+ },
 }
 
 AUDIO = {
@@ -429,6 +533,91 @@ AUDIO = {
    ],
    "glosario": [["hay que limpiar", "er moet gepoetst worden"], ["yo te ayudo", "ik help je"], ["¿sabes…?", "kan je…?"], ["fregar los platos", "de vaat doen"], ["ordenar los armarios", "de kasten opruimen"]],
    "rallentado": ["hay que limpiar", "yo te ayudo", "sabes pasar la aspiradora"],
+ },
+
+ 11: {
+   "audio": "audio/C4_U11.mp3",
+   "tipo": "en la tienda de ropa · ¿qué talla?",
+   "guion": [
+     ["Chica", "Hola, buenas. ¿Cuánto cuesta esta camiseta?"],
+     ["Dependienta", "Nueve euros, está de rebajas. ¿Qué talla necesitas?"],
+     ["Chica", "La mediana. ¿Puedo probármela?"],
+     ["Dependienta", "Claro, el probador está al fondo a la derecha."],
+     ["Chica", "Gracias. ¿Y estos pantalones vaqueros?"],
+     ["Dependienta", "Veinticinco euros. El segundo, a mitad de precio."],
+   ],
+   "tarea_nl": "Luister: welk kledingstuk, welke maat en welke prijs?",
+   "preguntas": [
+     {"q": "¿Cuánto cuesta la camiseta?", "opts": ["Nueve euros", "Quince euros", "Veinticinco euros"], "a": 0},
+     {"q": "¿Qué talla necesita la chica?", "opts": ["Pequeña", "Mediana", "Grande"], "a": 1},
+     {"q": "¿Dónde está el probador?", "opts": ["Al fondo a la derecha", "A la izquierda", "Arriba"], "a": 0},
+   ],
+   "glosario": [["¿cuánto cuesta?", "hoeveel kost het?"], ["la talla", "de maat"],
+                ["probarse", "passen"], ["el probador", "het paskamertje"]],
+   "rallentado": ["¿cuánto cuesta?", "qué talla", "a mitad de precio"],
+ },
+ 12: {
+   "audio": "audio/C4_U12.mp3",
+   "tipo": "dos amigos hablan del tiempo y de los planes",
+   "guion": [
+     ["Lucas", "¡Qué frío hace hoy! ¿Vas a salir?"],
+     ["Elena", "No sé. Está nublado y creo que va a llover."],
+     ["Lucas", "Pues en verano aquí hace muchísimo calor."],
+     ["Elena", "Sí, pero mi estación favorita es el otoño."],
+     ["Lucas", "¿El otoño? ¿Por qué?"],
+     ["Elena", "Porque no hace ni frío ni calor. ¡Es perfecto!"],
+   ],
+   "tarea_nl": "Luister: welk weer, welk seizoen en waarom?",
+   "preguntas": [
+     {"q": "¿Qué tiempo hace hoy?", "opts": ["Hace sol", "Hace frío y está nublado", "Nieva"], "a": 1},
+     {"q": "¿Cuál es la estación favorita de Elena?", "opts": ["El verano", "El invierno", "El otoño"], "a": 2},
+     {"q": "¿Por qué le gusta?", "opts": ["Porque hace calor", "Porque no hace ni frío ni calor", "Porque llueve"], "a": 1},
+   ],
+   "glosario": [["¡qué frío!", "wat koud!"], ["está nublado", "het is bewolkt"],
+                ["la estación", "het seizoen"], ["ni… ni…", "noch… noch…"]],
+   "rallentado": ["¡qué frío hace!", "está nublado", "mi estación favorita"],
+ },
+ 13: {
+   "audio": "audio/C4_U13.mp3",
+   "tipo": "en la recepción del hotel",
+   "guion": [
+     ["Tomás", "Buenas tardes. Tengo una reserva a nombre de Tomás Vidal."],
+     ["Recepcionista", "Buenas tardes. Sí, una habitación doble para dos noches."],
+     ["Tomás", "Exacto. ¿El desayuno está incluido?"],
+     ["Recepcionista", "Sí, de siete a diez, en el primer piso."],
+     ["Tomás", "Perfecto. ¿Y hay wifi en la habitación?"],
+     ["Recepcionista", "Sí, gratis. Aquí tiene la llave: habitación trescientos dos."],
+   ],
+   "tarea_nl": "Luister: welke kamer, hoeveel nachten en wat is inbegrepen?",
+   "preguntas": [
+     {"q": "¿Qué tipo de habitación es?", "opts": ["Individual", "Doble", "Triple"], "a": 1},
+     {"q": "¿A qué hora es el desayuno?", "opts": ["De seis a nueve", "De siete a diez", "De ocho a once"], "a": 1},
+     {"q": "¿Cuál es el número de la habitación?", "opts": ["302", "203", "320"], "a": 0},
+   ],
+   "glosario": [["la reserva", "de reservering"], ["incluido", "inbegrepen"],
+                ["la llave", "de sleutel"], ["gratis", "gratis"]],
+   "rallentado": ["tengo una reserva", "el desayuno está incluido", "aquí tiene la llave"],
+ },
+ 14: {
+   "audio": "audio/C4_U14.mp3",
+   "tipo": "cuatro personas se presentan · repaso del año",
+   "guion": [
+     ["Ana", "Hola, me llamo Ana, soy de Sevilla y tengo dieciséis años."],
+     ["Nico", "Yo soy Nico, soy mexicano. Vivo en una casa cerca del mercado."],
+     ["Alba", "Me llamo Alba, soy colombiana y sé nadar muy bien."],
+     ["Iván", "Yo soy Iván, argentino. En invierno tengo que llevar abrigo."],
+     ["Ana", "¿Y tú? ¿Cómo te llamas y de dónde eres?"],
+     ["Nico", "¡Ahora te toca a ti!"],
+   ],
+   "tarea_nl": "Luister: wie is wie? Noteer naam, land en één detail.",
+   "preguntas": [
+     {"q": "¿De dónde es Ana?", "opts": ["De México", "De Sevilla", "De Colombia"], "a": 1},
+     {"q": "¿Qué sabe hacer Alba?", "opts": ["Cocinar", "Nadar", "Planchar"], "a": 1},
+     {"q": "¿Qué tiene que llevar Iván en invierno?", "opts": ["Una camiseta", "Un abrigo", "Zapatillas"], "a": 1},
+   ],
+   "glosario": [["soy de…", "ik kom uit…"], ["cerca de", "dicht bij"],
+                ["sé nadar", "ik kan zwemmen"], ["tengo que llevar", "ik moet dragen"]],
+   "rallentado": ["me llamo", "soy de", "tengo que llevar"],
  },
 }
 
