@@ -524,7 +524,21 @@ De richtlijnen zijn **geen proza om te "kennen" maar een plukvijver om uit te pu
 ## 18 · Productie (WERKWIJZE — gestart 2026-07-25)
 
 - **LEERLINGENEDITIE = NUL META (BINDEND, auteur 2026-07-27):** de finale leerling-editie bevat **geen enkele meta/placeholder-opmerking** — geen `[BEELD:…]`/`[AUDIO:…]`-hooks, geen «link volgt», «leerkracht vult aan», «nog te …», «volgt later», TODO's e.d. **Ontbrekende content wordt gegenereerd** (beeld/oefening/tekst); externe-bron-placeholders (profedeele/arche-ele) worden ingevuld met de door de auteur geleverde links óf verwijderd. **Scan elke unit hierop vóór finale levering.** (NB: «todo» = Spaans woord *alles*, geen placeholder; `placeholder="…"` = zoekveld-hint, geen meta.)
-- **FINALE «hosting + links + audio»-SWEEP (BINDEND, auteur 2026-07-27):** QR-codes, externe links en audio worden **in één sweep op het einde** afgewerkt (wanneer alle units klaar zijn én de Netlify-pagina bestaat). Dan: (1) de **nep-`qr()`** vervangen door **echte QR-codes** (bv. `segno`) die naar de **gehoste hub-URL + het juiste anker** verwijzen; (2) **anker-ID's** per audio/oefening op de hub; (3) de Extra-tab-links (profedeele/arche-ele) invullen of verwijderen; (4) audio-labels eerlijk maken (browser-TTS i.p.v. «Audio 5.1 · 0:50»-opnames, tenzij echt opgenomen). **Host = Netlify** (auteur regelt de pagina/URL). Tot dan blijven de QR's cosmetisch — meld dit eerlijk.
+- **FINALE «hosting + links + audio»-SWEEP (auteur 2026-07-27) — UITGEVOERD.** De sweep is
+  af: de nep-`qr()` is vervangen door **echte QR-codes** (eigen encoder `qr_codigo.py`, want
+  `segno` bestaat hier niet), elke code wijst naar de **gehoste hub-URL + het juiste anker**,
+  de ankers bestaan (nagerekend: 100 codes, 98 naar een specifieke oefening), en de audio is
+  ingesproken en in de pagina's gebakken in plaats van «browser-TTS».
+- **HOST = `espanol-en-la-practica.wim-wuyts1979.chatgpt.site` (auteur 2026-08-09).** Eerder
+  stond hier **Netlify**; dat is achterhaald — de unidades komen op een door ChatGPT
+  gegenereerde site. Het adres staat op één plaats in de code: **`BASE` in
+  `03-build/web/enlaces.py`**, en alle QR-codes en kruisverwijzingen worden daaruit
+  afgeleid. Verhuist de site, dan is dat één regel + de units herbouwen.
+  (`sjbespanol.netlify.app` in §10 is iets anders: dat is de óude cursus, als bronmateriaal.)
+  **Gevolg voor de AI-laag:** op zo'n gehoste pagina is er geen plek om een geheime sleutel
+  te bewaren, dus een AI-partner die een externe dienst aanroept is daar sowieso niet veilig
+  te bouwen. De keuze voor een **offline** oefenpartner (auteur 2026-08-09) is dus niet
+  alleen een privacykeuze maar ook de enige route die op deze host werkt.
 - **Volgorde:** **eerst U0 volledig** (bron → Word · PDF · PowerPoint · HTML), goedkeuren, **dan hetzelfde proces** voor alle units van jaar 5 (C5) en 6 (C6/C6+).
 - **Één bron eerst:** per unit een **single-source contentbestand** (`01-cursussen/<cursus>/<unit>/<unit>_bron.md`) → daaruit de formaten.
 - **Kernstandpunt (BINDEND):** álles wat in de vier md-specs (grammatica · woordenschat · vaardigheden · PowerPoint) + de 100 spelvormen staat, moet **ergens terugkomen** → **VARIATIE is key** (>200 suggesties; geen herhaling van dezelfde werkvorm). Geldt ook voor de generator-oefeningen.
