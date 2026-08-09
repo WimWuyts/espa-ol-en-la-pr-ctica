@@ -92,13 +92,16 @@ def titulo_unidad(curso, u):
     return (m.group(1) if m else t).strip(" ·")
 
 
-# Waar een unit al ergens online staat, wijst het portaal daar rechtstreeks
-# naartoe; de rest houdt de korte bestandsnaam, die werkt zodra alles op één
-# site staat. Zo kan er stap voor stap gepubliceerd worden zonder dat het
-# portaal ondertussen kapot is.
-PUBLICADO = {
-    ("C5", 5): "https://claude.ai/code/artifact/a5f6382f-eeec-4f78-9b63-5f5dd18d73e1",
-}
+# Uitzonderingen: een unit die ergens ánders staat dan naast dit portaal krijgt
+# hier zijn volledige adres. Normaal blijft dit leeg — alles staat op één site
+# en de korte bestandsnaam volstaat.
+#
+# LEEG, EN DAT IS EEN BESLISSING (auteur 2026-08-09). Er is even een proef
+# geweest met de pagina's op claude.ai. Die is afgevoerd: **een leerling mag
+# geen account of abonnement nodig hebben om bij zijn cursus te kunnen.** Het
+# portaal en de units horen dus op de eigen site, en niets hier mag naar een
+# platform wijzen waar eerst ingelogd moet worden.
+PUBLICADO = {}
 
 
 def enlace(curso, u):
