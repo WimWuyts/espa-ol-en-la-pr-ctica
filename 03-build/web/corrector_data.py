@@ -63,8 +63,15 @@ REGLAS = [
   "Soy de Gante y vivo en Brujas.", None),
 
  # ── voegwoorden: de twee die CLAUDE.md §4 met naam noemt ──────────────────
- ("luego-dus", r"\bluego\b",
-  "«Dus» is <b>así que</b> of <b>por eso</b>. <i>Luego</i> betekent «later».",
+ # «Luego» is niet verboden — het betekent gewoon «daarna», en zo staat het ook
+ # in de cursus («todo recto y luego a la izquierda», «pero luego hizo frío»).
+ # Mijn eerste versie vlagde élk «luego» en sloeg dus alarm op correcte zinnen.
+ # Wat wél fout is, is «luego» als vertaling van «dus», en die staat vrijwel
+ # altijd achter een komma zonder y of pero ervoor.
+ ("luego-dus", r",\s*luego\b",
+  "Als je hier «dus» bedoelt, is dat <b>así que</b> of <b>por eso</b>. "
+  "<i>Luego</i> betekent «daarna» — dat kan wél, maar dan zonder komma: "
+  "«y luego…».",
   "Hace calor, así que voy a la playa.", None),
  ("porque-pregunta", r"\bporque\s+(no\s+)?(vas|vienes|comes|quieres|est[aá]s)\b\s*\?",
   "In een vráág schrijf je <b>por qué</b>: twee woorden, met accent. "
@@ -111,7 +118,10 @@ REGLAS = [
  ("acento-que", r"\bque\s+(quiere|quieres|va|tal)\b\s*\?",
   "In een vraag draagt <b>qué</b> een accent.",
   "¿Qué quiere tomar?", None),
- ("apertura", r"^[^¿¡]*\w[^.!?]*\?\s*$",
+ # De vooruitblik eist dat er nérgens een ¿ staat. Mijn eerste versie keek
+ # alleen naar het begin van de zin, en sloeg dus alarm op «Sí: ¿cómo te
+ # llamas?» — een zin waar het openingsteken netjes stond, alleen niet vooraan.
+ ("apertura", r"^(?![^?]*¿)[^?]*\w[^?]*\?\s*$",
   "In het Spaans staat het vraagteken er <b>twee keer</b>: ¿ aan het begin en "
   "? aan het eind.",
   "¿Cuánto cuesta?", None),
@@ -163,7 +173,11 @@ if __name__ == "__main__":
         "¿Me trae la cuenta, por favor?", "Una mesa para dos, por favor.",
         "Quiero un taco de pollo, por favor.", "De postre, los churros.",
         "Voy a tomar un refresco.", "Sí, gracias.", "¿Cuánto cuesta?",
-        "Me gustan los tacos.", "Buenas tardes.", "La cuenta, por favor.")]
+        "Me gustan los tacos.", "Buenas tardes.", "La cuenta, por favor.",
+        "Sí: ¿cómo te llamas?", "Encantado, Sergio. Mucho gusto.",
+        "¿A las cuatro y media?", "Vale, nos vemos mañana.",
+        "Entonces todo recto y luego a la izquierda.",
+        "Por la mañana ha hecho sol, pero luego ha hecho mucho frío.")]
     prueba += [(f, True) for f in ("Quiero una sopa.", "Dame un café.")]
 
     fallos = 0

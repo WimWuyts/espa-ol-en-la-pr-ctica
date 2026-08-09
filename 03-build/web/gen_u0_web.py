@@ -12,6 +12,7 @@ import hub_type_sets
 import hub_type_gram
 import extra_bronnen
 import nat_data, escucha_data, lectura_data
+import gen_rol
 
 ROOT="/home/user/espa-ol-en-la-pr-ctica"
 GEN=f"{ROOT}/02-huisstijl/beeld/generators"
@@ -322,6 +323,7 @@ __TYPESLOTS__
     <div id="retos_u0"></div>
   </section>
   <section class="panel" data-p="hablar">
+    __ROL__
     <h2 class="sec">Hablar · grábate 🎙️</h2>
     <p class="lead">Neem <b>jezelf</b> op: luister naar het model, spreek in, luister terug, en neem opnieuw op. <span class="gloss">Werkt in Chrome/Edge; sta de micro toe. Print blijft bruikbaar zonder opname.</span></p>
     <div class="card" id="rec_saluda"></div>
@@ -938,6 +940,16 @@ JS += hub_bloques.retos_js('retos_u0', 'C5', 0)
 HTML = HTML.replace("__GRAMSLOTS__", hub_type_gram.slots('C5', 0))
 HTML = HTML.replace("__BRONNEN__", extra_bronnen.html("C5", 0))
 HTML = HTML.replace("__TYPESLOTS__", hub_type_sets.SLOTS_HTML)
+
+# Het rollenspel: offline oefenpartner in het Hablar-paneel.
+_rol = gen_rol.componente("C5", 0)
+if _rol:
+    _rol_html, _rol_css, _rol_js = _rol
+    HTML = HTML.replace("__ROL__", _rol_html)
+    CSS += _rol_css
+    JS += _rol_js
+else:
+    HTML = HTML.replace("__ROL__", "")
 
 html=(HTML.replace("__CSS__",CSS).replace("__MOCH__",moch).replace("__FC__",flashcards_html())
       .replace("__NAS__",naslag_html())
