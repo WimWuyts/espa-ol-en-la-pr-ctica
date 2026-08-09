@@ -212,6 +212,16 @@ De veertien thema's staan er. Wat er deze ronde bijkwam en veranderde:
   de rest vloeit door. **Resultaat: 11 bladzijden per unit, 89–91 % — gelijk aan U1–U10.**
 - [x] **Bladspiegel-nabewerking respecteert C4**: `bladspiegel.py` zet in C4 géén `major`
   meer, want de generator beslist dat zelf. Het legt er alleen de ankers voor de bladwijzers.
+- [x] **PowerPoints U11–U14 (2026-08-09).** `python-pptx` staat niet meer in de bouwomgeving
+  en PyPI is geblokkeerd, dus die weg is dicht. `03-build/pptx/gen_c4_ppt.cjs` bouwt ze met
+  **pptxgenjs** (via `git clone`, want npm is óók dicht) — een .pptx is een zip met XML, en
+  welke taal die schrijft maakt het bestand niets uit. Docente 17 dia's, alumno 15 (zonder
+  de oplossingsdia's). Gevoed uit dezelfde gegevens als hub en print. **Beperking:
+  LibreOffice kan in deze sandbox géén enkele .pptx openen** — ook de eerder met python-pptx
+  gebouwde niet — dus ze zijn structureel nagerekend (zip, XML, alle verwijzingen) en op
+  inhoud, niet visueel gerenderd.
+- [x] **C4 IS COMPLEET: 14 units × 4 formaten** — print-PDF · digitale hub · PowerPoint
+  (docente + alumno) · ingesproken audio.
 
 ### GOLDEN SAMPLE C4 · U1 «Presentaciones» = GELOCKT (2026-07-26) → productieregels in `HANDOVER_C4.md`
 U1 (C4) is goedgekeurd en vastgezet als norm voor álle C4-units (U2–U14). **Bij het bouwen van U2… exact dezelfde parameters/pijplijn als U1.** Volledige handleiding: **`HANDOVER_C4.md`** (lees dit vóór je een C4-unit bouwt). Gelockt voor C4:
