@@ -1,0 +1,2247 @@
+<!doctype html><html lang="nl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>C5 · de oefenpartner per unidad</title>
+<style>
+:root{--g:#1E9E74;--gd:#157355;--gt:#E4F4EE;--ink:#20242E;--mut:#6A6E78;
+  --line:#E4E3DE;--card:#fff;--crema:#F3EEE4;--paper:#FCFBF8;
+  --disp:system-ui,-apple-system,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ink:#ECEBE6;--mut:#9BA0AA;--line:#2C2E36;--card:#1C1E24;--crema:#1E2026;
+  --paper:#15161A;--gt:#12352A}}
+:root[data-theme="dark"]{--ink:#ECEBE6;--mut:#9BA0AA;--line:#2C2E36;
+  --card:#1C1E24;--crema:#1E2026;--paper:#15161A;--gt:#12352A}
+*{box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;background:var(--paper);
+  color:var(--ink);margin:0;padding:22px 18px 60px;line-height:1.55}
+.wrap{max-width:760px;margin:0 auto}
+h1{font-family:var(--disp);font-weight:800;font-size:26px;margin:0 0 4px;
+  letter-spacing:-.01em}
+.sub{color:var(--mut);margin:0 0 18px;font-size:15px}
+.nav{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 18px}
+.nav button{border:1.5px solid var(--line);background:var(--card);color:inherit;
+  border-radius:10px;padding:7px 13px;font:inherit;font-size:14px;font-weight:600;
+  cursor:pointer}
+.nav button.on{background:var(--g);color:#fff;border-color:var(--g)}
+.nav button:focus-visible{outline:3px solid var(--g);outline-offset:2px}
+.uno{display:none}.uno.on{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;
+  padding:18px 20px;margin:14px 0}
+.lead{color:var(--mut);margin:0 0 14px}
+.gloss{color:var(--mut);font-style:italic}
+.pill{display:inline-block;background:var(--gt);color:var(--gd);border-radius:20px;
+  padding:3px 10px;font-size:12px;font-weight:600}
+.btn{border:none;background:var(--g);color:#fff;font-weight:700;border-radius:10px;
+  padding:9px 16px;cursor:pointer;font-size:14px;font-family:inherit}
+.btn.sec{background:var(--crema);color:var(--ink)}
+.btn.small{padding:6px 11px;font-size:13px}
+.btn:focus-visible{outline:3px solid var(--gd);outline-offset:2px}
+footer{color:var(--mut);font-size:12.5px;margin-top:28px;text-align:center}
+
+.rol{--rb:var(--gt);}
+.rol .esc{background:var(--crema);border-radius:14px;padding:14px;min-height:120px;
+  max-height:340px;overflow-y:auto;display:flex;flex-direction:column;gap:10px}
+.rol .b{display:flex;gap:9px;align-items:flex-start;max-width:86%;
+  animation:rolin .22s ease-out}
+@keyframes rolin{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.rol .b.yo{align-self:flex-end;flex-direction:row-reverse}
+.rol .av{width:30px;height:30px;border-radius:50%;background:var(--gt);flex:0 0 auto;
+  display:flex;align-items:center;justify-content:center;font-size:16px}
+.rol .b.yo .av{background:var(--g);color:#fff;font-size:13px;font-weight:700}
+.rol .tx{background:var(--card);border:1px solid var(--line);border-radius:13px;
+  padding:9px 12px;font-size:14.5px;line-height:1.45}
+.rol .b.yo .tx{background:var(--g);color:#fff;border-color:transparent}
+.rol .tx .nl{display:block;font-size:12.5px;opacity:.72;font-style:italic;margin-top:3px}
+.rol .meta{margin:12px 0 8px;font-weight:600;font-size:14px}
+.rol .meta .pill{margin-right:7px}
+.rol .ops{display:grid;gap:8px}
+.rol .op{text-align:left;border:1.5px solid var(--line);background:var(--card);
+  border-radius:12px;padding:10px 13px;font:inherit;font-size:14.5px;cursor:pointer;
+  transition:.14s;color:inherit}
+.rol .op:hover:not(:disabled){border-color:var(--g);background:var(--gt)}
+.rol .op:disabled{cursor:default;opacity:.55}
+.rol .op.mal{border-color:#C0392B;background:#C0392B12}
+.rol .op.bien{border-color:var(--g);background:var(--gt)}
+.rol .hue{font-size:16px;line-height:2.1;margin:2px 0 10px}
+.rol .gap{display:inline-block;width:7.5em;border:none;border-bottom:2px solid var(--g);
+  background:transparent;font:inherit;font-size:16px;text-align:center;padding:1px 3px;
+  color:inherit}
+.rol .gap:focus{outline:none;background:var(--gt)}
+.rol .gap.bien{border-color:var(--g);background:var(--gt);font-weight:700}
+.rol .gap.mal{border-color:#C0392B;background:#C0392B14}
+.rol .gap:disabled{opacity:1}
+.rol .banco{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.rol .banco b{font-size:12.5px;color:var(--mut);font-weight:600;align-self:center;
+  margin-right:2px}
+.rol .banco span{background:var(--crema);border:1px solid var(--line);border-radius:16px;
+  padding:3px 11px;font-size:13.5px;cursor:pointer;user-select:none}
+.rol .banco span:hover{background:var(--gt);border-color:var(--g)}
+.rol .esc-in{display:flex;gap:8px;flex-wrap:wrap}
+.rol input.tec{flex:1 1 260px;border:1.5px solid var(--line);border-radius:12px;
+  padding:10px 13px;font:inherit;font-size:15px;background:var(--card);color:inherit}
+.rol input.tec:focus{outline:none;border-color:var(--g)}
+.rol .fb{margin-top:10px;border-radius:12px;padding:10px 13px;font-size:14px;
+  border:1px solid var(--line);background:var(--card)}
+.rol .fb.mal{border-color:#C0392B;background:#C0392B0f}
+.rol .fb.ok{border-color:var(--g);background:var(--gt)}
+.rol .fb b{font-weight:700}
+.rol .fb .mod{display:block;margin-top:6px;font-family:var(--disp);font-size:15px}
+.rol .barra{display:flex;gap:4px;margin:0 0 12px}
+.rol .barra i{flex:1;height:5px;border-radius:3px;background:var(--line)}
+.rol .barra i.on{background:var(--g)}
+.rol .modo{display:flex;gap:6px;margin:0 0 12px}
+.rol .modo button{border:1.5px solid var(--line);background:var(--card);color:inherit;
+  border-radius:10px;padding:6px 13px;font:inherit;font-size:13.5px;font-weight:600;
+  cursor:pointer}
+.rol .modo button.on{background:var(--g);color:#fff;border-color:var(--g)}
+.rol .fin{text-align:center;padding:6px 0}
+.rol .fin .grande{font-family:var(--disp);font-size:20px;font-weight:800;margin:6px 0}
+.rol .tally{list-style:none;padding:0;margin:10px 0 0;font-size:14px;text-align:left}
+.rol .tally li{padding:4px 0;border-bottom:1px dashed var(--line)}
+@media (prefers-reduced-motion:reduce){.rol .b{animation:none}}
+</style></head><body>
+<div class="wrap">
+  <h1>De oefenpartner van C5</h1>
+  <p class="sub">9 scènes, één per unidad. Kies een unidad en speel ze uit.
+    Elke scène heeft drie standen: <b>invullen</b> (twee gaten en een woordbank),
+    <b>kiezen</b> en <b>zelf typen</b>. Alles werkt zonder internet.</p>
+  <nav class="nav"><button data-ir="0" class="on">U0</button><button data-ir="1" class="">U1</button><button data-ir="2" class="">U2</button><button data-ir="3" class="">U3</button><button data-ir="4" class="">U4</button><button data-ir="5" class="">U5</button><button data-ir="6" class="">U6</button><button data-ir="7" class="">U7</button><button data-ir="8" class="">U8</button></nav>
+  <section class="uno on" data-uno="0">
+<div class="card rol" id="rol_c5_u0">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;
+              flex-wrap:wrap;gap:8px">
+    <h3 style="margin:0;font-family:var(--disp)">El primer día</h3>
+    <span class="gloss" style="font-size:13px">Madrid · la secretaría del instituto</span>
+  </div>
+  <p class="lead" style="margin:6px 0 12px"><b>Tú, de nieuwe leerling</b> tegenover <b>La secretaria</b>.
+    Meld je aan op je eerste schooldag: groet, zeg hoe je heet, spel je naam, zeg hoe oud je bent en waar je vandaan komt. <span class="gloss">Preséntate en la secretaría: nombre, edad y país.</span></p>
+  <div class="modo">
+    <button data-modo="completar" class="on">Completar · invullen</button>
+    <button data-modo="elegir">Elegir · kiezen</button>
+    <button data-modo="escribir">Escribir · zelf typen</button>
+  </div>
+  <div class="barra"></div>
+  <div class="esc" aria-live="polite"></div>
+  <div class="zona" style="margin-top:12px"></div>
+  <p class="gloss" style="font-size:12.5px;margin:10px 0 0">Deze partner werkt
+    zonder internet en kent alleen de fouten die erin zitten. Twijfel je over
+    iets wat hij níet aanstipt? Vraag het aan je leerkracht.</p>
+</div></section><section class="uno " data-uno="1">
+<div class="card rol" id="rol_c5_u1">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;
+              flex-wrap:wrap;gap:8px">
+    <h3 style="margin:0;font-family:var(--disp)">La ficha del club</h3>
+    <span class="gloss" style="font-size:13px">Madrid · el club de baloncesto del barrio</span>
+  </div>
+  <p class="lead" style="margin:6px 0 12px"><b>Tú, die lid wil worden</b> tegenover <b>El monitor</b>.
+    Word lid van de club: geef je naam, leeftijd, waar je woont en je nationaliteit, en vraag zelf iets terug. <span class="gloss">Rellena la ficha del club: nombre, edad, dónde vives, nacionalidad.</span></p>
+  <div class="modo">
+    <button data-modo="completar" class="on">Completar · invullen</button>
+    <button data-modo="elegir">Elegir · kiezen</button>
+    <button data-modo="escribir">Escribir · zelf typen</button>
+  </div>
+  <div class="barra"></div>
+  <div class="esc" aria-live="polite"></div>
+  <div class="zona" style="margin-top:12px"></div>
+  <p class="gloss" style="font-size:12.5px;margin:10px 0 0">Deze partner werkt
+    zonder internet en kent alleen de fouten die erin zitten. Twijfel je over
+    iets wat hij níet aanstipt? Vraag het aan je leerkracht.</p>
+</div></section><section class="uno " data-uno="2">
+<div class="card rol" id="rol_c5_u2">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;
+              flex-wrap:wrap;gap:8px">
+    <h3 style="margin:0;font-family:var(--disp)">La foto de familia</h3>
+    <span class="gloss" style="font-size:13px">Sevilla · en casa de Lucía</span>
+  </div>
+  <p class="lead" style="margin:6px 0 12px"><b>Tú, op bezoek</b> tegenover <b>Lucía</b>.
+    Lucía toont je een foto van haar familie en vraagt daarna naar de jouwe. Beschrijf wie er op staat en hoe ze zijn. <span class="gloss">Habla de tu familia: quién es quién y cómo es cada uno.</span></p>
+  <div class="modo">
+    <button data-modo="completar" class="on">Completar · invullen</button>
+    <button data-modo="elegir">Elegir · kiezen</button>
+    <button data-modo="escribir">Escribir · zelf typen</button>
+  </div>
+  <div class="barra"></div>
+  <div class="esc" aria-live="polite"></div>
+  <div class="zona" style="margin-top:12px"></div>
+  <p class="gloss" style="font-size:12.5px;margin:10px 0 0">Deze partner werkt
+    zonder internet en kent alleen de fouten die erin zitten. Twijfel je over
+    iets wat hij níet aanstipt? Vraag het aan je leerkracht.</p>
+</div></section><section class="uno " data-uno="3">
+<div class="card rol" id="rol_c5_u3">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;
+              flex-wrap:wrap;gap:8px">
+    <h3 style="margin:0;font-family:var(--disp)">¿Quedamos?</h3>
+    <span class="gloss" style="font-size:13px">Barcelona · por mensaje con Pau</span>
+  </div>
+  <p class="lead" style="margin:6px 0 12px"><b>Tú</b> tegenover <b>Pau</b>.
+    Maak een afspraak met Pau: zeg hoe laat je kan, waarom het vroeger niet lukt, en spreek een dag en een uur af. <span class="gloss">Queda con Pau: di a qué hora puedes y por qué antes no.</span></p>
+  <div class="modo">
+    <button data-modo="completar" class="on">Completar · invullen</button>
+    <button data-modo="elegir">Elegir · kiezen</button>
+    <button data-modo="escribir">Escribir · zelf typen</button>
+  </div>
+  <div class="barra"></div>
+  <div class="esc" aria-live="polite"></div>
+  <div class="zona" style="margin-top:12px"></div>
+  <p class="gloss" style="font-size:12.5px;margin:10px 0 0">Deze partner werkt
+    zonder internet en kent alleen de fouten die erin zitten. Twijfel je over
+    iets wat hij níet aanstipt? Vraag het aan je leerkracht.</p>
+</div></section><section class="uno " data-uno="4">
+<div class="card rol" id="rol_c5_u4">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;
+              flex-wrap:wrap;gap:8px">
+    <h3 style="margin:0;font-family:var(--disp)">El plan del finde</h3>
+    <span class="gloss" style="font-size:13px">València · en la playa de la Malvarrosa</span>
+  </div>
+  <p class="lead" style="margin:6px 0 12px"><b>Tú</b> tegenover <b>Diego</b>.
+    Maak samen een plan voor het weekend: zeg wat je graag doet, wat je níet leuk vindt, en stel iets voor. <span class="gloss">Habla de tus gustos y propón un plan para el finde.</span></p>
+  <div class="modo">
+    <button data-modo="completar" class="on">Completar · invullen</button>
+    <button data-modo="elegir">Elegir · kiezen</button>
+    <button data-modo="escribir">Escribir · zelf typen</button>
+  </div>
+  <div class="barra"></div>
+  <div class="esc" aria-live="polite"></div>
+  <div class="zona" style="margin-top:12px"></div>
+  <p class="gloss" style="font-size:12.5px;margin:10px 0 0">Deze partner werkt
+    zonder internet en kent alleen de fouten die erin zitten. Twijfel je over
+    iets wat hij níet aanstipt? Vraag het aan je leerkracht.</p>
+</div></section><section class="uno " data-uno="5">
+<div class="card rol" id="rol_c5_u5">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;
+              flex-wrap:wrap;gap:8px">
+    <h3 style="margin:0;font-family:var(--disp)">En el restaurante</h3>
+    <span class="gloss" style="font-size:13px">Ciudad de México · un restaurante en la Roma</span>
+  </div>
+  <p class="lead" style="margin:6px 0 12px"><b>Tú, de klant</b> tegenover <b>El mesero</b>.
+    Bestel een volledige maaltijd: een tafel, iets te drinken, een eerste gerecht, een hoofdgerecht en een nagerecht. Vraag daarna de rekening. <span class="gloss">Pide una comida completa y, al final, la cuenta.</span></p>
+  <div class="modo">
+    <button data-modo="completar" class="on">Completar · invullen</button>
+    <button data-modo="elegir">Elegir · kiezen</button>
+    <button data-modo="escribir">Escribir · zelf typen</button>
+  </div>
+  <div class="barra"></div>
+  <div class="esc" aria-live="polite"></div>
+  <div class="zona" style="margin-top:12px"></div>
+  <p class="gloss" style="font-size:12.5px;margin:10px 0 0">Deze partner werkt
+    zonder internet en kent alleen de fouten die erin zitten. Twijfel je over
+    iets wat hij níet aanstipt? Vraag het aan je leerkracht.</p>
+</div></section><section class="uno " data-uno="6">
+<div class="card rol" id="rol_c5_u6">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;
+              flex-wrap:wrap;gap:8px">
+    <h3 style="margin:0;font-family:var(--disp)">En la tienda de ropa</h3>
+    <span class="gloss" style="font-size:13px">Ciudad de México · una tienda en la Condesa</span>
+  </div>
+  <p class="lead" style="margin:6px 0 12px"><b>Tú, de klant</b> tegenover <b>La dependienta</b>.
+    Koop een kledingstuk: zeg wat je zoekt en in welke kleur, vraag je maat, pas het, vraag de prijs en beslis. <span class="gloss">Compra una prenda: color, talla, probador y precio.</span></p>
+  <div class="modo">
+    <button data-modo="completar" class="on">Completar · invullen</button>
+    <button data-modo="elegir">Elegir · kiezen</button>
+    <button data-modo="escribir">Escribir · zelf typen</button>
+  </div>
+  <div class="barra"></div>
+  <div class="esc" aria-live="polite"></div>
+  <div class="zona" style="margin-top:12px"></div>
+  <p class="gloss" style="font-size:12.5px;margin:10px 0 0">Deze partner werkt
+    zonder internet en kent alleen de fouten die erin zitten. Twijfel je over
+    iets wat hij níet aanstipt? Vraag het aan je leerkracht.</p>
+</div></section><section class="uno " data-uno="7">
+<div class="card rol" id="rol_c5_u7">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;
+              flex-wrap:wrap;gap:8px">
+    <h3 style="margin:0;font-family:var(--disp)">¿Por dónde se va?</h3>
+    <span class="gloss" style="font-size:13px">Cartagena · en la calle, cerca de la plaza</span>
+  </div>
+  <p class="lead" style="margin:6px 0 12px"><b>Tú, die de weg zoekt</b> tegenover <b>Valen</b>.
+    Vraag de weg naar de bakker, begrijp de uitleg, en vertel daarna waar jij woont en hoe je huis eruitziet. <span class="gloss">Pregunta el camino y describe dónde vives.</span></p>
+  <div class="modo">
+    <button data-modo="completar" class="on">Completar · invullen</button>
+    <button data-modo="elegir">Elegir · kiezen</button>
+    <button data-modo="escribir">Escribir · zelf typen</button>
+  </div>
+  <div class="barra"></div>
+  <div class="esc" aria-live="polite"></div>
+  <div class="zona" style="margin-top:12px"></div>
+  <p class="gloss" style="font-size:12.5px;margin:10px 0 0">Deze partner werkt
+    zonder internet en kent alleen de fouten die erin zitten. Twijfel je over
+    iets wat hij níet aanstipt? Vraag het aan je leerkracht.</p>
+</div></section><section class="uno " data-uno="8">
+<div class="card rol" id="rol_c5_u8">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;
+              flex-wrap:wrap;gap:8px">
+    <h3 style="margin:0;font-family:var(--disp)">El diario de viaje</h3>
+    <span class="gloss" style="font-size:13px">Cusco · en el hostal, por la noche</span>
+  </div>
+  <p class="lead" style="margin:6px 0 12px"><b>Tú, terug van een dagtocht</b> tegenover <b>Nina</b>.
+    Vertel wat je vandaag gedaan hebt. Gebruik de voltooide tijd (he visitado, he comido…) en zeg ook wat je nóg niet gedaan hebt. <span class="gloss">Cuenta qué has hecho hoy y qué no has hecho todavía.</span></p>
+  <div class="modo">
+    <button data-modo="completar" class="on">Completar · invullen</button>
+    <button data-modo="elegir">Elegir · kiezen</button>
+    <button data-modo="escribir">Escribir · zelf typen</button>
+  </div>
+  <div class="barra"></div>
+  <div class="esc" aria-live="polite"></div>
+  <div class="zona" style="margin-top:12px"></div>
+  <p class="gloss" style="font-size:12.5px;margin:10px 0 0">Deze partner werkt
+    zonder internet en kent alleen de fouten die erin zitten. Twijfel je over
+    iets wat hij níet aanstipt? Vraag het aan je leerkracht.</p>
+</div></section>
+  <footer>Kijkpagina voor de auteur — in de cursus staat elke scène in het
+    tabblad «Hablar» van haar eigen unidad.</footer>
+</div>
+<script>
+document.querySelectorAll('.nav button').forEach(function(b){
+  b.onclick=function(){
+    document.querySelectorAll('.nav button').forEach(function(x){
+      x.classList.toggle('on',x===b);});
+    document.querySelectorAll('.uno').forEach(function(s){
+      s.classList.toggle('on',s.dataset.uno===b.dataset.ir);});
+    window.scrollTo({top:0,behavior:'smooth'});
+  };
+});
+
+(function(){
+const D={"avatar": "🗂️", "final": "Claro: es la lista de tus clases. ¡Bienvenido y mucha suerte!", "final_nl": "Natuurlijk: dat is de lijst van je lessen. Welkom en veel succes!", "pasos": [{"di": "¡Buenos días! ¿Qué tal? Yo soy Marta, la secretaria. ¿Cómo te llamas?", "nl": "Goedemorgen! Hoe gaat het? Ik ben Marta, de secretaresse. Hoe heet jij?", "meta": "Groet terug en zeg hoe je heet.", "opciones": [["Buenos días. Me llamo Lars.", true, ""], ["Buenos días. Yo llamo Lars.", false, "<b>Me llamo</b> — zonder <i>me</i> betekent het «ik bel»."]], "hueco": {"marco": "Buenos días. ___ ___ Lars.", "respuestas": [["me"], ["llamo"]], "banco": ["me", "yo", "llamo", "llamas", "soy"], "mal": ["Het werkwoord is wederkerend: <b>me</b> llamo, letterlijk «ik noem mij».", "Bij <i>yo</i> hoort <b>llamo</b>. <i>Llamas</i> is de jij-vorm."]}, "acepta": ["me\\s+llamo\\s+\\w+", "(yo\\s+)?soy\\s+\\w+"], "pista": "Twee mogelijkheden: «Me llamo …» of «Soy …».", "modelo": "Buenos días. Me llamo Lars."}, {"di": "Mucho gusto, Lars. ¿Puedes deletrear tu apellido, por favor?", "nl": "Aangenaam, Lars. Kan je je achternaam spellen, alsjeblieft?", "meta": "Spel je achternaam. In het Spaans heet de w «uve doble» en de j «jota».", "opciones": [["Sí, claro: uve doble, a, ene, ese, e, ene.", true, ""], ["Sí, claro: we, a, en, es, e, en.", false, "Dat zijn de Nederlandse lettergrepen. In het Spaans: <b>uve doble · a · ene · ese · e · ene</b>."]], "hueco": {"marco": "Sí, claro: ___-A-N-___-E-N.", "respuestas": [["uve doble", "uvedoble", "doble uve", "w"], ["s", "ese"]], "banco": ["uve doble", "jota", "hache", "ese", "ce"], "mal": ["De <b>w</b> heet in het Spaans <i>uve doble</i>.", "De <b>s</b> heet <i>ese</i> — schrijf de letter of haar naam."]}, "acepta": ["(uve\\s*doble|doble\\s*uve|w)", "\\b(ese|s)\\b"], "pista": "De letters die je nodig hebt: uve doble · a · ene · ese · e · ene.", "modelo": "Sí, claro: uve doble, a, ene, ese, e, ene."}, {"di": "Gracias. ¿Y cuántos años tienes?", "nl": "Dank je. En hoe oud ben je?", "meta": "Zeg hoe oud je bent. Let op: in het Spaans «heb» je jaren.", "opciones": [["Tengo dieciséis años.", true, ""], ["Soy dieciséis años.", false, "Met <i>ser</i> zeg je wát je bent. Leeftijd gaat met <b>tener</b>: «tengo dieciséis años»."]], "hueco": {"marco": "___ dieciséis ___.", "respuestas": [["tengo"], ["anos", "años"]], "banco": ["tengo", "soy", "años", "año", "edad"], "mal": ["Leeftijd krijgt <b>tener</b>: je «hébt» zestien jaar.", "Meervoud: <b>años</b>, met ñ."]}, "acepta": ["tengo\\s+\\w+\\s*a[ñn]os"], "pista": "Begin met «Tengo…» en eindig met «…años».", "modelo": "Tengo dieciséis años."}, {"di": "Muy bien. ¿Y de dónde eres?", "nl": "Heel goed. En waar kom je vandaan?", "meta": "Zeg uit welk land je komt.", "opciones": [["Soy de Bélgica.", true, ""], ["Soy en Bélgica.", false, "«Soy de» = ik kom uit. «Estoy en» = ik ben (nu) in."], ["Estoy de Bélgica.", false, "Herkomst gaat met <b>ser</b>, niet met <i>estar</i>: «soy de Bélgica»."]], "hueco": {"marco": "___ ___ Bélgica.", "respuestas": [["soy"], ["de"]], "banco": ["soy", "estoy", "de", "en", "a"], "mal": ["Waar je vandaan komt, zeg je met <b>ser</b>: «soy de…».", "Herkomst krijgt <b>de</b>: soy <i>de</i> Bélgica."]}, "acepta": ["soy\\s+de\\s+\\w+", "soy\\s+belga"], "pista": "«Soy de …» + je land. Of in één woord: «Soy belga».", "modelo": "Soy de Bélgica."}, {"di": "Perfecto. Aquí tienes tu horario. ¿Alguna pregunta?", "nl": "Perfect. Hier is je uurrooster. Nog een vraag?", "meta": "Je verstond één woord niet. Vraag wat het betekent.", "opciones": [["Perdona, ¿qué significa «horario»? No entiendo.", true, ""], ["Perdona, ¿cómo se dice «horario»? No entiendo.", false, "<b>¿Cómo se dice…?</b> vraag je als je het Spaanse wóórd zoekt. Wil je de betekenis weten, dan is het <b>¿qué significa…?</b>"]], "hueco": {"marco": "Perdona, ¿qué ___ «horario»? No ___.", "respuestas": [["significa"], ["entiendo"]], "banco": ["significa", "dice", "entiendo", "entiendes", "repites"], "mal": ["«Wat betekent…?» is <b>¿qué significa…?</b>", "Bij <i>yo</i>: <b>entiendo</b>. <i>Entiendes</i> is de jij-vorm."]}, "acepta": ["qu[eé]\\s+significa", "no\\s+entiendo", "puedes\\s+repetir"], "pista": "Drie klasuitdrukkingen: ¿qué significa…? · no entiendo · ¿puedes repetir?", "modelo": "Perdona, ¿qué significa «horario»? No entiendo."}]}, R=[{"id": "gustar-yo", "re": "\\byo\\s+gust", "nl": "«Ik vind leuk» is in het Spaans omgekeerd: het ding bevalt <b>mij</b>. Dus niet «yo gusto» maar <b>me gusta</b>.", "bien": "Me gusta el chocolate."}, {"id": "gustar-tu", "re": "\\bt[uú]\\s+gustas\\b", "nl": "Ook hier omgekeerd: niet «tú gustas» maar <b>te gusta</b>.", "bien": "¿Te gusta la paella?"}, {"id": "gustar-concordancia", "re": "\\bme\\s+gusta\\s+los\\b|\\bme\\s+gusta\\s+las\\b", "nl": "Meervoud: bij meer dan één ding wordt het <b>me gustan</b>.", "bien": "Me gustan los tacos."}, {"id": "estar-frio-persoon", "re": "\\b(estoy|est[aá]s|est[aá])\\s+(fr[ií]o|calor)\\b", "nl": "Over jezelf gebruik je <b>tener</b>: «tengo frío». «Estoy frío» betekent dat je lichaam koud aanvoelt — dat is iets heel anders.", "bien": "Tengo frío. · Hace frío."}, {"id": "hacer-tiempo", "re": "\\b(es|est[aá])\\s+(fr[ií]o|calor|sol|viento)\\b", "nl": "Het weer krijgt <b>hacer</b>: «hace frío», «hace sol».", "bien": "Hoy hace mucho calor."}, {"id": "ser-lugar", "re": "\\bes\\s+en\\s+(la|el|mi|tu)\\b", "nl": "Waar iets is, zeg je met <b>estar</b>, niet met «ser».", "bien": "El libro está en la mesa."}, {"id": "soy-anos", "re": "\\bsoy\\s+\\w*\\s*a[ñn]os\\b|\\bsoy\\s+\\d+\\s*a[ñn]os\\b", "nl": "Leeftijd krijgt <b>tener</b>: je «hébt» jaren in het Spaans.", "bien": "Tengo dieciséis años."}, {"id": "soy-de-ciudad-vivir", "re": "\\bsoy\\s+en\\s+\\w+", "nl": "«Ik kom uit» is <b>soy de</b>; «ik woon in» is <b>vivo en</b>.", "bien": "Soy de Gante y vivo en Brujas."}, {"id": "luego-dus", "re": ",\\s*luego\\b", "nl": "Als je hier «dus» bedoelt, is dat <b>así que</b> of <b>por eso</b>. <i>Luego</i> betekent «daarna» — dat kan wél, maar dan zonder komma: «y luego…».", "bien": "Hace calor, así que voy a la playa."}, {"id": "porque-pregunta", "re": "\\bporque\\s+(no\\s+)?(vas|vienes|comes|quieres|est[aá]s)\\b\\s*\\?", "nl": "In een vráág schrijf je <b>por qué</b>: twee woorden, met accent. <i>Porque</i> (aan elkaar) is het antwoord.", "bien": "¿Por qué no vienes? — Porque estoy enfermo."}, {"id": "want-omdat", "re": "\\b(want|omdat|dus)\\b", "nl": "Er staat een Nederlands woord in je zin. «Want» én «omdat» zijn allebei <b>porque</b>; «dus» is <b>así que</b>.", "bien": "No como carne porque soy vegetariano."}, {"id": "ir-a", "re": "\\bvoy\\s+(el|la|los|las)\\b", "nl": "Na <b>ir</b> hoort <b>a</b>: «voy a la playa», «voy al mercado».", "bien": "Voy a la escuela."}, {"id": "tener-que", "re": "\\btengo\\s+(de|a)\\s+\\w+ar\\b|\\btengo\\s+(de|a)\\s+\\w+er\\b", "nl": "«Ik moet» is <b>tengo que</b> + hele werkwoord.", "bien": "Tengo que estudiar."}, {"id": "ir-a-inf", "re": "\\bvoy\\s+\\w+ar\\b(?!\\s)", "nl": "Een plan maak je met <b>voy a</b> + hele werkwoord.", "bien": "Voy a comer."}, {"id": "el-agua-la", "re": "\\bla\\s+agua\\b", "nl": "<b>El agua</b> — het is wél vrouwelijk, maar krijgt <i>el</i> omdat het met een beklemtoonde a begint. Het bijvoeglijk naamwoord blijft vrouwelijk.", "bien": "El agua está fría."}, {"id": "un-una-comida", "re": "\\bun\\s+(sopa|carta|cuenta|mesa|servilleta|cuchara|manzana|naranja|piña|lechuga|cebolla)\\b", "nl": "Dit woord is vrouwelijk: <b>una</b>, niet «un».", "bien": "Una sopa, por favor."}, {"id": "una-masculino", "re": "\\buna\\s+(pan|queso|pollo|pescado|arroz|plato|vaso|tenedor|cuchillo|caf[eé]|men[uú])\\b", "nl": "Dit woord is mannelijk: <b>un</b>, niet «una».", "bien": "Un café, por favor."}, {"id": "quiero-seco", "re": "^(?!.*por\\s+favor)\\s*(quiero|dame|trae)\\b[^?]*$", "nl": "Dit klinkt kortaf. Zet er <b>por favor</b> bij, of gebruik <b>¿me pone…?</b> of <b>para mí…</b>.", "bien": "¿Me pone un café, por favor?"}, {"id": "acento-que", "re": "\\bque\\s+(quiere|quieres|va|tal)\\b\\s*\\?", "nl": "In een vraag draagt <b>qué</b> een accent.", "bien": "¿Qué quiere tomar?"}, {"id": "apertura", "re": "^(?![^?]*¿)[^?]*\\w[^?]*\\?\\s*$", "nl": "In het Spaans staat het vraagteken er <b>twee keer</b>: ¿ aan het begin en ? aan het eind.", "bien": "¿Cuánto cuesta?"}, {"id": "nn-ñ", "re": "\\b(anos|manana|nino|espanol|senor)\\b", "nl": "Hier hoort een <b>ñ</b>: años · mañana · niño · español · señor.", "bien": "Tengo dieciséis años."}];
+const raiz=document.getElementById('rol_c5_u0');
+if(!raiz) return;
+
+// accenten en hoofdletters mogen niet uitmaken: een leerling die «cafe» typt
+// bedoelt «café», en daar is deze oefening het moment niet voor.
+function normaliza(s){
+  return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+         .replace(/\s+/g,' ').trim();
+}
+function casa(txt,pats){
+  const t=normaliza(txt);
+  return pats.some(function(p){
+    return new RegExp(p.normalize('NFD').replace(/[\u0300-\u036f]/g,''),'i').test(t);
+  });
+}
+// De corrector kent alleen wat in corrector_data.py staat. Hij mag daarom
+// nooit «goed!» zeggen — zie de kop van dat bestand.
+function corrige(txt){
+  const out=[];
+  R.forEach(function(r){
+    if(new RegExp(r.re,'i').test(txt)) out.push(r);
+  });
+  return out;
+}
+
+let paso=0, modo='completar', ayudas=0, solos=0, avisos=[];
+const esc=raiz.querySelector('.esc'), zona=raiz.querySelector('.zona'),
+      barra=raiz.querySelector('.barra');
+
+function burbuja(quien,txt,nl){
+  const b=document.createElement('div');
+  b.className='b'+(quien==='yo'?' yo':'');
+  b.innerHTML='<div class="av">'+(quien==='yo'?'TÚ':D.avatar)+'</div>'+
+    '<div class="tx">'+txt+(nl?'<span class="nl">'+nl+'</span>':'')+'</div>';
+  esc.appendChild(b); esc.scrollTop=esc.scrollHeight;
+}
+function pinta(){
+  barra.innerHTML=D.pasos.map(function(_,i){
+    return '<i class="'+(i<paso?'on':'')+'"></i>';}).join('');
+}
+
+function avanza(dicho){
+  burbuja('yo',dicho);
+  paso++; pinta();
+  if(paso>=D.pasos.length){ return fin(); }
+  setTimeout(muestra,340);
+}
+
+function fin(){
+  const p=D.pasos.length;
+  burbuja('otro',D.final,D.final_nl);
+  let li='';
+  li+='<li>Beurten zonder hulp: <b>'+solos+' van de '+p+'</b></li>';
+  li+='<li>Hulp gevraagd: <b>'+ayudas+'×</b></li>';
+  if(avisos.length){
+    li+='<li>Waar je op mag letten:<br>'+
+        avisos.filter(function(v,i,a){return a.indexOf(v)===i;})
+              .map(function(v){return '• '+v;}).join('<br>')+'</li>';
+  }
+  zona.innerHTML='<div class="fin"><div class="grande">¡Ya está! 🎉</div>'+
+    '<p class="lead" style="margin:0 auto">Je hebt de hele scène afgewerkt.</p>'+
+    '<ul class="tally">'+li+'</ul>'+
+    '<button class="btn" style="margin-top:12px" data-otra>Otra vez</button></div>';
+  zona.querySelector('[data-otra]').onclick=function(){
+    paso=0;ayudas=0;solos=0;avisos=[];esc.innerHTML='';pinta();muestra();};
+}
+
+function muestra(){
+  const p=D.pasos[paso];
+  let usado=false;                       // hulp gebruikt in déze beurt
+  burbuja('otro',p.di,p.nl);
+  let h='<div class="meta"><span class="pill">Tu turno</span>'+p.meta+'</div>';
+  if(modo==='completar'){
+    // de zin met gaten; het aantal invulvakken volgt uit het kader zelf
+    const trozos=p.hueco.marco.split('___');
+    let frase='';
+    trozos.forEach(function(t,i){
+      frase+=t.replace(/</g,'&lt;');
+      if(i<trozos.length-1)
+        frase+='<input class="gap" data-g="'+i+'" type="text" autocomplete="off" '+
+               'spellcheck="false" aria-label="Vul woord '+(i+1)+' in">';
+    });
+    h+='<div class="banco"><b>Banco:</b>'+p.hueco.banco.map(function(w){
+         return '<span>'+w+'</span>';}).join('')+'</div>';
+    h+='<div class="hue">'+frase+'</div>';
+    h+='<div class="esc-in"><button class="btn" data-comp>Comprobar</button>'+
+       '<button class="btn sec small" data-modelo>Muéstrame</button></div>';
+  }else if(modo==='elegir'){
+    h+='<div class="ops">'+p.opciones.map(function(o,i){
+      return '<button class="op" data-i="'+i+'">'+o[0]+'</button>';}).join('')+'</div>';
+  }else{
+    h+='<div class="esc-in"><input class="tec" type="text" autocomplete="off" '+
+       'placeholder="Escribe tu respuesta en español…" aria-label="Jouw antwoord">'+
+       '<button class="btn" data-env>Decir</button>'+
+       '<button class="btn sec small" data-pista>Pista</button>'+
+       '<button class="btn sec small" data-modelo>Muéstrame</button></div>';
+  }
+  h+='<div class="fb" hidden></div>';
+  zona.innerHTML=h;
+  const fb=zona.querySelector('.fb');
+  function di(clase,texto){fb.hidden=false;fb.className='fb '+clase;fb.innerHTML=texto;}
+
+  if(modo==='completar'){
+    const gaps=[].slice.call(zona.querySelectorAll('.gap'));
+    // een woord uit de bank zetten we in het vak waar de cursor staat
+    let foco=gaps[0];
+    gaps.forEach(function(g){g.addEventListener('focus',function(){foco=g;});});
+    zona.querySelectorAll('.banco span').forEach(function(ch){
+      ch.onclick=function(){
+        if(!foco||foco.disabled) foco=gaps.filter(function(g){return !g.disabled;})[0];
+        if(!foco) return;
+        foco.value=ch.textContent; foco.focus();
+      };
+    });
+    zona.querySelector('[data-modelo]').onclick=function(){
+      usado=true; ayudas++;
+      di('','<b>Zo kan het:</b><span class="mod">'+p.modelo+'</span>');};
+    function comprueba(){
+      let todo=true, primerFallo=-1;
+      gaps.forEach(function(g,i){
+        const bien=p.hueco.respuestas[i].some(function(r){
+          return normaliza(r)===normaliza(g.value);});
+        g.classList.toggle('bien',bien);
+        g.classList.toggle('mal',!bien&&g.value.trim()!=='');
+        if(bien){ g.disabled=true; }
+        else { todo=false; if(primerFallo<0&&g.value.trim()!=='') primerFallo=i; }
+      });
+      if(todo){
+        if(!usado) solos++;
+        let dicho=p.hueco.marco;
+        p.hueco.respuestas.forEach(function(r){dicho=dicho.replace('___',r[r.length-1]);});
+        di('ok','<b>Klopt.</b> Zo zeg je het.');
+        setTimeout(function(){avanza(dicho.charAt(0).toUpperCase()+dicho.slice(1));},700);
+      }else{
+        usado=true;
+        if(primerFallo>=0){
+          avisos.push(p.hueco.mal[primerFallo].replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+p.hueco.mal[primerFallo]);
+        }else{
+          di('mal','Vul allebei de vakjes in. '+p.pista);
+        }
+      }
+    }
+    zona.querySelector('[data-comp]').onclick=comprueba;
+    gaps.forEach(function(g){g.addEventListener('keydown',function(e){
+      if(e.key==='Enter'){e.preventDefault();comprueba();}});});
+    gaps[0].focus();
+  }else if(modo==='elegir'){
+    zona.querySelectorAll('.op').forEach(function(b){
+      b.onclick=function(){
+        const o=p.opciones[+b.dataset.i];
+        if(o[1]){
+          b.classList.add('bien');
+          zona.querySelectorAll('.op').forEach(function(x){x.disabled=true;});
+          if(!usado) solos++;
+          setTimeout(function(){avanza(o[0]);},420);
+        }else{
+          b.classList.add('mal'); b.disabled=true; usado=true;
+          avisos.push(o[2].replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+o[2]);
+        }
+      };
+    });
+  }else{
+    const inp=zona.querySelector('.tec');
+    zona.querySelector('[data-pista]').onclick=function(){
+      usado=true; ayudas++; di('','<b>Pista.</b> '+p.pista);};
+    zona.querySelector('[data-modelo]').onclick=function(){
+      usado=true; ayudas++;
+      di('','<b>Zo kan het:</b><span class="mod">'+p.modelo+'</span>');};
+    function enviar(){
+      const t=inp.value.trim();
+      if(!t) return;
+      const notas=corrige(t);
+      if(casa(t,p.acepta)){
+        if(notas.length){
+          avisos.push(notas[0].nl.replace(/<[^>]+>/g,''));
+          di('ok','<b>Begrepen!</b> Eén ding nog: '+notas[0].nl+
+             '<span class="mod">'+notas[0].bien+'</span>');
+        }else{
+          // bewust géén «goed!»: de corrector kent niet alles
+          di('ok','<b>Begrepen.</b> Ik zie hier geen fouten die ik ken.');
+        }
+        if(!usado) solos++;
+        inp.disabled=true;
+        setTimeout(function(){avanza(t);},notas.length?1500:700);
+      }else{
+        usado=true;
+        if(notas.length){
+          avisos.push(notas[0].nl.replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+notas[0].nl+
+             '<span class="mod">'+notas[0].bien+'</span>');
+        }else{
+          di('mal','<b>Dat verstaat de mesero niet.</b> '+p.pista);
+        }
+      }
+    }
+    zona.querySelector('[data-env]').onclick=enviar;
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter')enviar();});
+    inp.focus();
+  }
+}
+
+raiz.querySelectorAll('.modo button').forEach(function(b){
+  b.onclick=function(){
+    modo=b.dataset.modo;
+    raiz.querySelectorAll('.modo button').forEach(function(x){
+      x.classList.toggle('on',x===b);});
+    paso=0;ayudas=0;solos=0;avisos=[];esc.innerHTML='';pinta();muestra();
+  };
+});
+pinta(); muestra();
+})();
+
+(function(){
+const D={"avatar": "🏀", "final": "¡Nos vemos el martes a las seis! Hasta luego.", "final_nl": "Tot dinsdag om zes uur! Tot ziens.", "pasos": [{"di": "¡Hola! ¿Quieres apuntarte? Necesito rellenar tu ficha. ¿Cuál es tu nombre completo?", "nl": "Hallo! Wil je je inschrijven? Ik moet je fiche invullen. Wat is je volledige naam?", "meta": "Geef je voornaam én je achternaam.", "opciones": [["Mi nombre es Lars y mi apellido es Wansen.", true, ""], ["Mi apellido es Lars y mi nombre es Wansen.", false, "Omgekeerd: <b>nombre</b> is je voornaam, <b>apellido</b> je achternaam."]], "hueco": {"marco": "Mi ___ es Lars y mi ___ es Wansen.", "respuestas": [["nombre"], ["apellido"]], "banco": ["nombre", "apellido", "edad", "firma", "curso"], "mal": ["Je voornaam is <b>el nombre</b>.", "Je achternaam is <b>el apellido</b> — niet te verwarren met <i>nombre</i>."]}, "acepta": ["(mi\\s+)?nombre\\s+es\\s+\\w+", "me\\s+llamo\\s+\\w+"], "pista": "«Mi nombre es …» en «mi apellido es …».", "modelo": "Mi nombre es Lars y mi apellido es Wansen."}, {"di": "Vale. ¿Y dónde vives exactamente?", "nl": "Oké. En waar woon je precies?", "meta": "Zeg in welke stad je woont.", "opciones": [["Vivo en Gante, en Bélgica.", true, ""], ["Vivo de Gante, en Bélgica.", false, "<b>Vivo en</b> — met <i>de</i> zeg je waar je vandaan komt, niet waar je woont."], ["Soy en Gante, en Bélgica.", false, "«Ik woon» is <b>vivo</b>. «Soy» zou «ik ben» zijn."]], "hueco": {"marco": "___ ___ Gante, en Bélgica.", "respuestas": [["vivo"], ["en"]], "banco": ["vivo", "soy", "en", "de", "a"], "mal": ["Wonen is <b>vivir</b>: bij <i>yo</i> wordt dat <b>vivo</b>.", "Waar je woont krijgt <b>en</b>. <i>De</i> gebruik je voor je herkomst."]}, "acepta": ["vivo\\s+en\\s+\\w+"], "pista": "«Vivo en …» + je stad.", "modelo": "Vivo en Gante, en Bélgica."}, {"di": "¿Y qué nacionalidad tienes?", "nl": "En welke nationaliteit heb je?", "meta": "Zeg je nationaliteit. Let op: die schrijf je zonder hoofdletter.", "opciones": [["Soy belga.", true, ""], ["Soy Bélgica.", false, "<b>Bélgica</b> is het land, <b>belga</b> is de nationaliteit."], ["Tengo belga.", false, "Nationaliteit gaat met <b>ser</b>, niet met <i>tener</i>."]], "hueco": {"marco": "___ ___.", "respuestas": [["soy"], ["belga"]], "banco": ["soy", "tengo", "belga", "Bélgica", "belgo"], "mal": ["Nationaliteit gaat met <b>ser</b>: «soy belga».", "Het woord is <b>belga</b> — hetzelfde voor jongens en meisjes, en met kleine letter."]}, "acepta": ["soy\\s+belga", "soy\\s+de\\s+b[eé]lgica"], "pista": "Eén woord volstaat na «soy»: belga.", "modelo": "Soy belga."}, {"di": "Perfecto. Los entrenamientos son los martes y los jueves. ¿Alguna pregunta para mí?", "nl": "Perfect. De trainingen zijn op dinsdag en donderdag. Nog een vraag voor mij?", "meta": "Vraag hém iets terug: hoe hij heet.", "opciones": [["Sí: ¿cómo te llamas?", true, ""], ["Sí: ¿cómo me llamo?", false, "Dan vraag je hoe jíj heet. Aan hem is het <b>¿cómo te llamas?</b>"]], "hueco": {"marco": "Sí: ¿___ te ___?", "respuestas": [["como", "cómo"], ["llamas"]], "banco": ["cómo", "qué", "llamas", "llamo", "llama"], "mal": ["«Hoe» is <b>cómo</b>, met accent in een vraag.", "Je vraagt het aan hém: <b>te llamas</b>."]}, "acepta": ["c[oó]mo\\s+te\\s+llamas", "y\\s+t[uú]"], "pista": "De vraag die je in de eerste les leerde: ¿Cómo te …?", "modelo": "Sí: ¿cómo te llamas?"}, {"di": "Me llamo Sergio. ¡Bienvenido al equipo!", "nl": "Ik heet Sergio. Welkom bij het team!", "meta": "Reageer beleefd op de kennismaking.", "opciones": [["Encantado, Sergio. Mucho gusto.", true, ""], ["Encantado, Sergio. Muy gusto.", false, "Het is <b>mucho gusto</b>. <i>Muy</i> staat alleen bij een bijvoeglijk naamwoord: «muy bien»."]], "hueco": {"marco": "___, Sergio. ___ gusto.", "respuestas": [["encantado", "encantada"], ["mucho"]], "banco": ["encantado", "adiós", "mucho", "muy", "gracias"], "mal": ["Bij een kennismaking zeg je <b>encantado</b> (jongen) of <b>encantada</b> (meisje).", "De vaste uitdrukking is <b>mucho gusto</b>, niet «muy gusto»."]}, "acepta": ["encantad[oa]", "mucho\\s+gusto", "igualmente"], "pista": "Drie mogelijkheden: encantado/a · mucho gusto · igualmente.", "modelo": "Encantado, Sergio. Mucho gusto."}]}, R=[{"id": "gustar-yo", "re": "\\byo\\s+gust", "nl": "«Ik vind leuk» is in het Spaans omgekeerd: het ding bevalt <b>mij</b>. Dus niet «yo gusto» maar <b>me gusta</b>.", "bien": "Me gusta el chocolate."}, {"id": "gustar-tu", "re": "\\bt[uú]\\s+gustas\\b", "nl": "Ook hier omgekeerd: niet «tú gustas» maar <b>te gusta</b>.", "bien": "¿Te gusta la paella?"}, {"id": "gustar-concordancia", "re": "\\bme\\s+gusta\\s+los\\b|\\bme\\s+gusta\\s+las\\b", "nl": "Meervoud: bij meer dan één ding wordt het <b>me gustan</b>.", "bien": "Me gustan los tacos."}, {"id": "estar-frio-persoon", "re": "\\b(estoy|est[aá]s|est[aá])\\s+(fr[ií]o|calor)\\b", "nl": "Over jezelf gebruik je <b>tener</b>: «tengo frío». «Estoy frío» betekent dat je lichaam koud aanvoelt — dat is iets heel anders.", "bien": "Tengo frío. · Hace frío."}, {"id": "hacer-tiempo", "re": "\\b(es|est[aá])\\s+(fr[ií]o|calor|sol|viento)\\b", "nl": "Het weer krijgt <b>hacer</b>: «hace frío», «hace sol».", "bien": "Hoy hace mucho calor."}, {"id": "ser-lugar", "re": "\\bes\\s+en\\s+(la|el|mi|tu)\\b", "nl": "Waar iets is, zeg je met <b>estar</b>, niet met «ser».", "bien": "El libro está en la mesa."}, {"id": "soy-anos", "re": "\\bsoy\\s+\\w*\\s*a[ñn]os\\b|\\bsoy\\s+\\d+\\s*a[ñn]os\\b", "nl": "Leeftijd krijgt <b>tener</b>: je «hébt» jaren in het Spaans.", "bien": "Tengo dieciséis años."}, {"id": "soy-de-ciudad-vivir", "re": "\\bsoy\\s+en\\s+\\w+", "nl": "«Ik kom uit» is <b>soy de</b>; «ik woon in» is <b>vivo en</b>.", "bien": "Soy de Gante y vivo en Brujas."}, {"id": "luego-dus", "re": ",\\s*luego\\b", "nl": "Als je hier «dus» bedoelt, is dat <b>así que</b> of <b>por eso</b>. <i>Luego</i> betekent «daarna» — dat kan wél, maar dan zonder komma: «y luego…».", "bien": "Hace calor, así que voy a la playa."}, {"id": "porque-pregunta", "re": "\\bporque\\s+(no\\s+)?(vas|vienes|comes|quieres|est[aá]s)\\b\\s*\\?", "nl": "In een vráág schrijf je <b>por qué</b>: twee woorden, met accent. <i>Porque</i> (aan elkaar) is het antwoord.", "bien": "¿Por qué no vienes? — Porque estoy enfermo."}, {"id": "want-omdat", "re": "\\b(want|omdat|dus)\\b", "nl": "Er staat een Nederlands woord in je zin. «Want» én «omdat» zijn allebei <b>porque</b>; «dus» is <b>así que</b>.", "bien": "No como carne porque soy vegetariano."}, {"id": "ir-a", "re": "\\bvoy\\s+(el|la|los|las)\\b", "nl": "Na <b>ir</b> hoort <b>a</b>: «voy a la playa», «voy al mercado».", "bien": "Voy a la escuela."}, {"id": "tener-que", "re": "\\btengo\\s+(de|a)\\s+\\w+ar\\b|\\btengo\\s+(de|a)\\s+\\w+er\\b", "nl": "«Ik moet» is <b>tengo que</b> + hele werkwoord.", "bien": "Tengo que estudiar."}, {"id": "ir-a-inf", "re": "\\bvoy\\s+\\w+ar\\b(?!\\s)", "nl": "Een plan maak je met <b>voy a</b> + hele werkwoord.", "bien": "Voy a comer."}, {"id": "el-agua-la", "re": "\\bla\\s+agua\\b", "nl": "<b>El agua</b> — het is wél vrouwelijk, maar krijgt <i>el</i> omdat het met een beklemtoonde a begint. Het bijvoeglijk naamwoord blijft vrouwelijk.", "bien": "El agua está fría."}, {"id": "un-una-comida", "re": "\\bun\\s+(sopa|carta|cuenta|mesa|servilleta|cuchara|manzana|naranja|piña|lechuga|cebolla)\\b", "nl": "Dit woord is vrouwelijk: <b>una</b>, niet «un».", "bien": "Una sopa, por favor."}, {"id": "una-masculino", "re": "\\buna\\s+(pan|queso|pollo|pescado|arroz|plato|vaso|tenedor|cuchillo|caf[eé]|men[uú])\\b", "nl": "Dit woord is mannelijk: <b>un</b>, niet «una».", "bien": "Un café, por favor."}, {"id": "quiero-seco", "re": "^(?!.*por\\s+favor)\\s*(quiero|dame|trae)\\b[^?]*$", "nl": "Dit klinkt kortaf. Zet er <b>por favor</b> bij, of gebruik <b>¿me pone…?</b> of <b>para mí…</b>.", "bien": "¿Me pone un café, por favor?"}, {"id": "acento-que", "re": "\\bque\\s+(quiere|quieres|va|tal)\\b\\s*\\?", "nl": "In een vraag draagt <b>qué</b> een accent.", "bien": "¿Qué quiere tomar?"}, {"id": "apertura", "re": "^(?![^?]*¿)[^?]*\\w[^?]*\\?\\s*$", "nl": "In het Spaans staat het vraagteken er <b>twee keer</b>: ¿ aan het begin en ? aan het eind.", "bien": "¿Cuánto cuesta?"}, {"id": "nn-ñ", "re": "\\b(anos|manana|nino|espanol|senor)\\b", "nl": "Hier hoort een <b>ñ</b>: años · mañana · niño · español · señor.", "bien": "Tengo dieciséis años."}];
+const raiz=document.getElementById('rol_c5_u1');
+if(!raiz) return;
+
+// accenten en hoofdletters mogen niet uitmaken: een leerling die «cafe» typt
+// bedoelt «café», en daar is deze oefening het moment niet voor.
+function normaliza(s){
+  return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+         .replace(/\s+/g,' ').trim();
+}
+function casa(txt,pats){
+  const t=normaliza(txt);
+  return pats.some(function(p){
+    return new RegExp(p.normalize('NFD').replace(/[\u0300-\u036f]/g,''),'i').test(t);
+  });
+}
+// De corrector kent alleen wat in corrector_data.py staat. Hij mag daarom
+// nooit «goed!» zeggen — zie de kop van dat bestand.
+function corrige(txt){
+  const out=[];
+  R.forEach(function(r){
+    if(new RegExp(r.re,'i').test(txt)) out.push(r);
+  });
+  return out;
+}
+
+let paso=0, modo='completar', ayudas=0, solos=0, avisos=[];
+const esc=raiz.querySelector('.esc'), zona=raiz.querySelector('.zona'),
+      barra=raiz.querySelector('.barra');
+
+function burbuja(quien,txt,nl){
+  const b=document.createElement('div');
+  b.className='b'+(quien==='yo'?' yo':'');
+  b.innerHTML='<div class="av">'+(quien==='yo'?'TÚ':D.avatar)+'</div>'+
+    '<div class="tx">'+txt+(nl?'<span class="nl">'+nl+'</span>':'')+'</div>';
+  esc.appendChild(b); esc.scrollTop=esc.scrollHeight;
+}
+function pinta(){
+  barra.innerHTML=D.pasos.map(function(_,i){
+    return '<i class="'+(i<paso?'on':'')+'"></i>';}).join('');
+}
+
+function avanza(dicho){
+  burbuja('yo',dicho);
+  paso++; pinta();
+  if(paso>=D.pasos.length){ return fin(); }
+  setTimeout(muestra,340);
+}
+
+function fin(){
+  const p=D.pasos.length;
+  burbuja('otro',D.final,D.final_nl);
+  let li='';
+  li+='<li>Beurten zonder hulp: <b>'+solos+' van de '+p+'</b></li>';
+  li+='<li>Hulp gevraagd: <b>'+ayudas+'×</b></li>';
+  if(avisos.length){
+    li+='<li>Waar je op mag letten:<br>'+
+        avisos.filter(function(v,i,a){return a.indexOf(v)===i;})
+              .map(function(v){return '• '+v;}).join('<br>')+'</li>';
+  }
+  zona.innerHTML='<div class="fin"><div class="grande">¡Ya está! 🎉</div>'+
+    '<p class="lead" style="margin:0 auto">Je hebt de hele scène afgewerkt.</p>'+
+    '<ul class="tally">'+li+'</ul>'+
+    '<button class="btn" style="margin-top:12px" data-otra>Otra vez</button></div>';
+  zona.querySelector('[data-otra]').onclick=function(){
+    paso=0;ayudas=0;solos=0;avisos=[];esc.innerHTML='';pinta();muestra();};
+}
+
+function muestra(){
+  const p=D.pasos[paso];
+  let usado=false;                       // hulp gebruikt in déze beurt
+  burbuja('otro',p.di,p.nl);
+  let h='<div class="meta"><span class="pill">Tu turno</span>'+p.meta+'</div>';
+  if(modo==='completar'){
+    // de zin met gaten; het aantal invulvakken volgt uit het kader zelf
+    const trozos=p.hueco.marco.split('___');
+    let frase='';
+    trozos.forEach(function(t,i){
+      frase+=t.replace(/</g,'&lt;');
+      if(i<trozos.length-1)
+        frase+='<input class="gap" data-g="'+i+'" type="text" autocomplete="off" '+
+               'spellcheck="false" aria-label="Vul woord '+(i+1)+' in">';
+    });
+    h+='<div class="banco"><b>Banco:</b>'+p.hueco.banco.map(function(w){
+         return '<span>'+w+'</span>';}).join('')+'</div>';
+    h+='<div class="hue">'+frase+'</div>';
+    h+='<div class="esc-in"><button class="btn" data-comp>Comprobar</button>'+
+       '<button class="btn sec small" data-modelo>Muéstrame</button></div>';
+  }else if(modo==='elegir'){
+    h+='<div class="ops">'+p.opciones.map(function(o,i){
+      return '<button class="op" data-i="'+i+'">'+o[0]+'</button>';}).join('')+'</div>';
+  }else{
+    h+='<div class="esc-in"><input class="tec" type="text" autocomplete="off" '+
+       'placeholder="Escribe tu respuesta en español…" aria-label="Jouw antwoord">'+
+       '<button class="btn" data-env>Decir</button>'+
+       '<button class="btn sec small" data-pista>Pista</button>'+
+       '<button class="btn sec small" data-modelo>Muéstrame</button></div>';
+  }
+  h+='<div class="fb" hidden></div>';
+  zona.innerHTML=h;
+  const fb=zona.querySelector('.fb');
+  function di(clase,texto){fb.hidden=false;fb.className='fb '+clase;fb.innerHTML=texto;}
+
+  if(modo==='completar'){
+    const gaps=[].slice.call(zona.querySelectorAll('.gap'));
+    // een woord uit de bank zetten we in het vak waar de cursor staat
+    let foco=gaps[0];
+    gaps.forEach(function(g){g.addEventListener('focus',function(){foco=g;});});
+    zona.querySelectorAll('.banco span').forEach(function(ch){
+      ch.onclick=function(){
+        if(!foco||foco.disabled) foco=gaps.filter(function(g){return !g.disabled;})[0];
+        if(!foco) return;
+        foco.value=ch.textContent; foco.focus();
+      };
+    });
+    zona.querySelector('[data-modelo]').onclick=function(){
+      usado=true; ayudas++;
+      di('','<b>Zo kan het:</b><span class="mod">'+p.modelo+'</span>');};
+    function comprueba(){
+      let todo=true, primerFallo=-1;
+      gaps.forEach(function(g,i){
+        const bien=p.hueco.respuestas[i].some(function(r){
+          return normaliza(r)===normaliza(g.value);});
+        g.classList.toggle('bien',bien);
+        g.classList.toggle('mal',!bien&&g.value.trim()!=='');
+        if(bien){ g.disabled=true; }
+        else { todo=false; if(primerFallo<0&&g.value.trim()!=='') primerFallo=i; }
+      });
+      if(todo){
+        if(!usado) solos++;
+        let dicho=p.hueco.marco;
+        p.hueco.respuestas.forEach(function(r){dicho=dicho.replace('___',r[r.length-1]);});
+        di('ok','<b>Klopt.</b> Zo zeg je het.');
+        setTimeout(function(){avanza(dicho.charAt(0).toUpperCase()+dicho.slice(1));},700);
+      }else{
+        usado=true;
+        if(primerFallo>=0){
+          avisos.push(p.hueco.mal[primerFallo].replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+p.hueco.mal[primerFallo]);
+        }else{
+          di('mal','Vul allebei de vakjes in. '+p.pista);
+        }
+      }
+    }
+    zona.querySelector('[data-comp]').onclick=comprueba;
+    gaps.forEach(function(g){g.addEventListener('keydown',function(e){
+      if(e.key==='Enter'){e.preventDefault();comprueba();}});});
+    gaps[0].focus();
+  }else if(modo==='elegir'){
+    zona.querySelectorAll('.op').forEach(function(b){
+      b.onclick=function(){
+        const o=p.opciones[+b.dataset.i];
+        if(o[1]){
+          b.classList.add('bien');
+          zona.querySelectorAll('.op').forEach(function(x){x.disabled=true;});
+          if(!usado) solos++;
+          setTimeout(function(){avanza(o[0]);},420);
+        }else{
+          b.classList.add('mal'); b.disabled=true; usado=true;
+          avisos.push(o[2].replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+o[2]);
+        }
+      };
+    });
+  }else{
+    const inp=zona.querySelector('.tec');
+    zona.querySelector('[data-pista]').onclick=function(){
+      usado=true; ayudas++; di('','<b>Pista.</b> '+p.pista);};
+    zona.querySelector('[data-modelo]').onclick=function(){
+      usado=true; ayudas++;
+      di('','<b>Zo kan het:</b><span class="mod">'+p.modelo+'</span>');};
+    function enviar(){
+      const t=inp.value.trim();
+      if(!t) return;
+      const notas=corrige(t);
+      if(casa(t,p.acepta)){
+        if(notas.length){
+          avisos.push(notas[0].nl.replace(/<[^>]+>/g,''));
+          di('ok','<b>Begrepen!</b> Eén ding nog: '+notas[0].nl+
+             '<span class="mod">'+notas[0].bien+'</span>');
+        }else{
+          // bewust géén «goed!»: de corrector kent niet alles
+          di('ok','<b>Begrepen.</b> Ik zie hier geen fouten die ik ken.');
+        }
+        if(!usado) solos++;
+        inp.disabled=true;
+        setTimeout(function(){avanza(t);},notas.length?1500:700);
+      }else{
+        usado=true;
+        if(notas.length){
+          avisos.push(notas[0].nl.replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+notas[0].nl+
+             '<span class="mod">'+notas[0].bien+'</span>');
+        }else{
+          di('mal','<b>Dat verstaat de mesero niet.</b> '+p.pista);
+        }
+      }
+    }
+    zona.querySelector('[data-env]').onclick=enviar;
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter')enviar();});
+    inp.focus();
+  }
+}
+
+raiz.querySelectorAll('.modo button').forEach(function(b){
+  b.onclick=function(){
+    modo=b.dataset.modo;
+    raiz.querySelectorAll('.modo button').forEach(function(x){
+      x.classList.toggle('on',x===b);});
+    paso=0;ayudas=0;solos=0;avisos=[];esc.innerHTML='';pinta();muestra();
+  };
+});
+pinta(); muestra();
+})();
+
+(function(){
+const D={"avatar": "🌺", "final": "¡Qué familia tan maja! Un día tienes que enseñarme una foto.", "final_nl": "Wat een leuke familie! Je moet me eens een foto tonen.", "pasos": [{"di": "Mira, esta es mi familia. Este es mi padre y esta es mi madre. ¿Tienes hermanos?", "nl": "Kijk, dit is mijn familie. Dit is mijn vader en dit is mijn moeder. Heb jij broers of zussen?", "meta": "Zeg hoeveel broers of zussen je hebt.", "opciones": [["Sí, tengo una hermana y un hermano.", true, ""], ["Sí, tengo una hermano y un hermana.", false, "De lidwoorden staan omgewisseld: <b>una hermana</b>, <b>un hermano</b>."]], "hueco": {"marco": "Sí, ___ una ___ y un hermano.", "respuestas": [["tengo"], ["hermana"]], "banco": ["tengo", "soy", "hermana", "hermano", "prima"], "mal": ["Bezit gaat met <b>tener</b>: «tengo…».", "Een zus is <b>la hermana</b> — met -a."]}, "acepta": ["tengo\\s+(un|una|dos|tres)\\s+herman", "no\\s+tengo\\s+herman", "soy\\s+hij[oa]\\s+[uú]nic[oa]"], "pista": "«Tengo un hermano / una hermana». Geen? Dan: «Soy hijo/hija único/a».", "modelo": "Sí, tengo una hermana y un hermano."}, {"di": "¡Qué bien! ¿Y cómo es tu hermana? ¿Se parece a ti?", "nl": "Wat leuk! En hoe is je zus? Lijkt ze op jou?", "meta": "Beschrijf haar uiterlijk: lengte en haar.", "opciones": [["Es alta y tiene el pelo rubio.", true, ""], ["Es alto y tiene el pelo rubia.", false, "Twee keer mis: <b>alta</b> hoort bij háár, maar <b>rubio</b> hoort bij <i>el pelo</i>, dat mannelijk is."], ["Es alta y tiene el pelo rubia.", false, "Bijna. <i>El pelo</i> is mannelijk, dus <b>el pelo rubio</b> — ook bij een meisje."]], "hueco": {"marco": "Es ___ y tiene el pelo ___.", "respuestas": [["alta"], ["rubio"]], "banco": ["alta", "alto", "rubio", "rubia", "largo"], "mal": ["Ze is een meisje: het bijvoeglijk naamwoord wordt <b>alta</b>.", "Het gaat over <i>el pelo</i> — mannelijk — dus <b>rubio</b>, ook al is zíj een meisje."]}, "acepta": ["es\\s+(alta|baja|delgada|morena|rubia|guapa)", "tiene\\s+el\\s+pelo\\s+\\w+"], "pista": "Twee bouwstenen: «Es + hoe ze is» en «Tiene el pelo + kleur/lengte».", "modelo": "Es alta y tiene el pelo rubio."}, {"di": "¿Y de carácter? ¿Cómo es?", "nl": "En qua karakter? Hoe is ze?", "meta": "Beschrijf haar karakter met twee eigenschappen.", "opciones": [["Es muy simpática pero un poco tímida.", true, ""], ["Es muy simpático pero un poco tímido.", false, "Ze is een meisje: <b>simpática</b> en <b>tímida</b>."]], "hueco": {"marco": "Es muy ___ ___ un poco tímida.", "respuestas": [["simpatica", "simpática"], ["pero"]], "banco": ["simpática", "simpático", "pero", "y", "también"], "mal": ["Over een meisje: <b>simpática</b>.", "Twee dingen die botsen verbind je met <b>pero</b> («maar»)."]}, "acepta": ["es\\s+(muy\\s+)?(simp[aá]tica|maja|graciosa|trabajadora|inteligente|habladora|tranquila|t[ií]mida)"], "pista": "Kies uit: simpática · maja · graciosa · trabajadora · inteligente · tímida. Zet er «muy» of «un poco» voor.", "modelo": "Es muy simpática pero un poco tímida."}, {"di": "Se parece a mi prima. ¿Y tus abuelos? ¿Viven cerca?", "nl": "Ze lijkt op mijn nicht. En je grootouders? Wonen die dichtbij?", "meta": "Vertel iets over je grootouders.", "opciones": [["Mi abuela vive cerca, pero mis abuelos viven lejos.", true, ""], ["Mi abuela vive cerca, pero mis abuelo viven lejos.", false, "Na <i>mis</i> komt een meervoud: <b>mis abuelos</b>."]], "hueco": {"marco": "Mi ___ vive cerca, pero mis ___ viven lejos.", "respuestas": [["abuela"], ["abuelos"]], "banco": ["abuela", "abuelo", "abuelos", "padres", "tíos"], "mal": ["Eén oma is <b>la abuela</b>.", "Bij <i>mis</i> hoort een meervoud: <b>abuelos</b>."]}, "acepta": ["mi[s]?\\s+abuel[oa]s?\\s+viv", "viven?\\s+(cerca|lejos)"], "pista": "«Mi abuela vive…» (één) of «Mis abuelos viven…» (meer dan één).", "modelo": "Mi abuela vive cerca, pero mis abuelos viven lejos."}, {"di": "En mi familia somos seis. ¿Y en la tuya?", "nl": "Bij ons thuis zijn we met zes. En bij jou?", "meta": "Zeg met hoeveel jullie thuis zijn.", "opciones": [["En mi familia somos cuatro: mis padres, mi hermana y yo.", true, ""], ["En mi familia son cuatro: mis padres, mi hermana y yo.", false, "Jij zit er zelf bij, dus <b>somos</b> (wij zijn), niet <i>son</i>."]], "hueco": {"marco": "En mi familia ___ cuatro: mis padres, mi hermana ___ yo.", "respuestas": [["somos"], ["y"]], "banco": ["somos", "son", "estamos", "y", "pero"], "mal": ["Jij hoort erbij, dus <i>nosotros</i>: <b>somos</b>.", "Een opsomming verbind je met <b>y</b>."]}, "acepta": ["somos\\s+\\w+", "en\\s+mi\\s+familia"], "pista": "«En mi familia somos …» + een getal.", "modelo": "En mi familia somos cuatro: mis padres, mi hermana y yo."}]}, R=[{"id": "gustar-yo", "re": "\\byo\\s+gust", "nl": "«Ik vind leuk» is in het Spaans omgekeerd: het ding bevalt <b>mij</b>. Dus niet «yo gusto» maar <b>me gusta</b>.", "bien": "Me gusta el chocolate."}, {"id": "gustar-tu", "re": "\\bt[uú]\\s+gustas\\b", "nl": "Ook hier omgekeerd: niet «tú gustas» maar <b>te gusta</b>.", "bien": "¿Te gusta la paella?"}, {"id": "gustar-concordancia", "re": "\\bme\\s+gusta\\s+los\\b|\\bme\\s+gusta\\s+las\\b", "nl": "Meervoud: bij meer dan één ding wordt het <b>me gustan</b>.", "bien": "Me gustan los tacos."}, {"id": "estar-frio-persoon", "re": "\\b(estoy|est[aá]s|est[aá])\\s+(fr[ií]o|calor)\\b", "nl": "Over jezelf gebruik je <b>tener</b>: «tengo frío». «Estoy frío» betekent dat je lichaam koud aanvoelt — dat is iets heel anders.", "bien": "Tengo frío. · Hace frío."}, {"id": "hacer-tiempo", "re": "\\b(es|est[aá])\\s+(fr[ií]o|calor|sol|viento)\\b", "nl": "Het weer krijgt <b>hacer</b>: «hace frío», «hace sol».", "bien": "Hoy hace mucho calor."}, {"id": "ser-lugar", "re": "\\bes\\s+en\\s+(la|el|mi|tu)\\b", "nl": "Waar iets is, zeg je met <b>estar</b>, niet met «ser».", "bien": "El libro está en la mesa."}, {"id": "soy-anos", "re": "\\bsoy\\s+\\w*\\s*a[ñn]os\\b|\\bsoy\\s+\\d+\\s*a[ñn]os\\b", "nl": "Leeftijd krijgt <b>tener</b>: je «hébt» jaren in het Spaans.", "bien": "Tengo dieciséis años."}, {"id": "soy-de-ciudad-vivir", "re": "\\bsoy\\s+en\\s+\\w+", "nl": "«Ik kom uit» is <b>soy de</b>; «ik woon in» is <b>vivo en</b>.", "bien": "Soy de Gante y vivo en Brujas."}, {"id": "luego-dus", "re": ",\\s*luego\\b", "nl": "Als je hier «dus» bedoelt, is dat <b>así que</b> of <b>por eso</b>. <i>Luego</i> betekent «daarna» — dat kan wél, maar dan zonder komma: «y luego…».", "bien": "Hace calor, así que voy a la playa."}, {"id": "porque-pregunta", "re": "\\bporque\\s+(no\\s+)?(vas|vienes|comes|quieres|est[aá]s)\\b\\s*\\?", "nl": "In een vráág schrijf je <b>por qué</b>: twee woorden, met accent. <i>Porque</i> (aan elkaar) is het antwoord.", "bien": "¿Por qué no vienes? — Porque estoy enfermo."}, {"id": "want-omdat", "re": "\\b(want|omdat|dus)\\b", "nl": "Er staat een Nederlands woord in je zin. «Want» én «omdat» zijn allebei <b>porque</b>; «dus» is <b>así que</b>.", "bien": "No como carne porque soy vegetariano."}, {"id": "ir-a", "re": "\\bvoy\\s+(el|la|los|las)\\b", "nl": "Na <b>ir</b> hoort <b>a</b>: «voy a la playa», «voy al mercado».", "bien": "Voy a la escuela."}, {"id": "tener-que", "re": "\\btengo\\s+(de|a)\\s+\\w+ar\\b|\\btengo\\s+(de|a)\\s+\\w+er\\b", "nl": "«Ik moet» is <b>tengo que</b> + hele werkwoord.", "bien": "Tengo que estudiar."}, {"id": "ir-a-inf", "re": "\\bvoy\\s+\\w+ar\\b(?!\\s)", "nl": "Een plan maak je met <b>voy a</b> + hele werkwoord.", "bien": "Voy a comer."}, {"id": "el-agua-la", "re": "\\bla\\s+agua\\b", "nl": "<b>El agua</b> — het is wél vrouwelijk, maar krijgt <i>el</i> omdat het met een beklemtoonde a begint. Het bijvoeglijk naamwoord blijft vrouwelijk.", "bien": "El agua está fría."}, {"id": "un-una-comida", "re": "\\bun\\s+(sopa|carta|cuenta|mesa|servilleta|cuchara|manzana|naranja|piña|lechuga|cebolla)\\b", "nl": "Dit woord is vrouwelijk: <b>una</b>, niet «un».", "bien": "Una sopa, por favor."}, {"id": "una-masculino", "re": "\\buna\\s+(pan|queso|pollo|pescado|arroz|plato|vaso|tenedor|cuchillo|caf[eé]|men[uú])\\b", "nl": "Dit woord is mannelijk: <b>un</b>, niet «una».", "bien": "Un café, por favor."}, {"id": "quiero-seco", "re": "^(?!.*por\\s+favor)\\s*(quiero|dame|trae)\\b[^?]*$", "nl": "Dit klinkt kortaf. Zet er <b>por favor</b> bij, of gebruik <b>¿me pone…?</b> of <b>para mí…</b>.", "bien": "¿Me pone un café, por favor?"}, {"id": "acento-que", "re": "\\bque\\s+(quiere|quieres|va|tal)\\b\\s*\\?", "nl": "In een vraag draagt <b>qué</b> een accent.", "bien": "¿Qué quiere tomar?"}, {"id": "apertura", "re": "^(?![^?]*¿)[^?]*\\w[^?]*\\?\\s*$", "nl": "In het Spaans staat het vraagteken er <b>twee keer</b>: ¿ aan het begin en ? aan het eind.", "bien": "¿Cuánto cuesta?"}, {"id": "nn-ñ", "re": "\\b(anos|manana|nino|espanol|senor)\\b", "nl": "Hier hoort een <b>ñ</b>: años · mañana · niño · español · señor.", "bien": "Tengo dieciséis años."}];
+const raiz=document.getElementById('rol_c5_u2');
+if(!raiz) return;
+
+// accenten en hoofdletters mogen niet uitmaken: een leerling die «cafe» typt
+// bedoelt «café», en daar is deze oefening het moment niet voor.
+function normaliza(s){
+  return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+         .replace(/\s+/g,' ').trim();
+}
+function casa(txt,pats){
+  const t=normaliza(txt);
+  return pats.some(function(p){
+    return new RegExp(p.normalize('NFD').replace(/[\u0300-\u036f]/g,''),'i').test(t);
+  });
+}
+// De corrector kent alleen wat in corrector_data.py staat. Hij mag daarom
+// nooit «goed!» zeggen — zie de kop van dat bestand.
+function corrige(txt){
+  const out=[];
+  R.forEach(function(r){
+    if(new RegExp(r.re,'i').test(txt)) out.push(r);
+  });
+  return out;
+}
+
+let paso=0, modo='completar', ayudas=0, solos=0, avisos=[];
+const esc=raiz.querySelector('.esc'), zona=raiz.querySelector('.zona'),
+      barra=raiz.querySelector('.barra');
+
+function burbuja(quien,txt,nl){
+  const b=document.createElement('div');
+  b.className='b'+(quien==='yo'?' yo':'');
+  b.innerHTML='<div class="av">'+(quien==='yo'?'TÚ':D.avatar)+'</div>'+
+    '<div class="tx">'+txt+(nl?'<span class="nl">'+nl+'</span>':'')+'</div>';
+  esc.appendChild(b); esc.scrollTop=esc.scrollHeight;
+}
+function pinta(){
+  barra.innerHTML=D.pasos.map(function(_,i){
+    return '<i class="'+(i<paso?'on':'')+'"></i>';}).join('');
+}
+
+function avanza(dicho){
+  burbuja('yo',dicho);
+  paso++; pinta();
+  if(paso>=D.pasos.length){ return fin(); }
+  setTimeout(muestra,340);
+}
+
+function fin(){
+  const p=D.pasos.length;
+  burbuja('otro',D.final,D.final_nl);
+  let li='';
+  li+='<li>Beurten zonder hulp: <b>'+solos+' van de '+p+'</b></li>';
+  li+='<li>Hulp gevraagd: <b>'+ayudas+'×</b></li>';
+  if(avisos.length){
+    li+='<li>Waar je op mag letten:<br>'+
+        avisos.filter(function(v,i,a){return a.indexOf(v)===i;})
+              .map(function(v){return '• '+v;}).join('<br>')+'</li>';
+  }
+  zona.innerHTML='<div class="fin"><div class="grande">¡Ya está! 🎉</div>'+
+    '<p class="lead" style="margin:0 auto">Je hebt de hele scène afgewerkt.</p>'+
+    '<ul class="tally">'+li+'</ul>'+
+    '<button class="btn" style="margin-top:12px" data-otra>Otra vez</button></div>';
+  zona.querySelector('[data-otra]').onclick=function(){
+    paso=0;ayudas=0;solos=0;avisos=[];esc.innerHTML='';pinta();muestra();};
+}
+
+function muestra(){
+  const p=D.pasos[paso];
+  let usado=false;                       // hulp gebruikt in déze beurt
+  burbuja('otro',p.di,p.nl);
+  let h='<div class="meta"><span class="pill">Tu turno</span>'+p.meta+'</div>';
+  if(modo==='completar'){
+    // de zin met gaten; het aantal invulvakken volgt uit het kader zelf
+    const trozos=p.hueco.marco.split('___');
+    let frase='';
+    trozos.forEach(function(t,i){
+      frase+=t.replace(/</g,'&lt;');
+      if(i<trozos.length-1)
+        frase+='<input class="gap" data-g="'+i+'" type="text" autocomplete="off" '+
+               'spellcheck="false" aria-label="Vul woord '+(i+1)+' in">';
+    });
+    h+='<div class="banco"><b>Banco:</b>'+p.hueco.banco.map(function(w){
+         return '<span>'+w+'</span>';}).join('')+'</div>';
+    h+='<div class="hue">'+frase+'</div>';
+    h+='<div class="esc-in"><button class="btn" data-comp>Comprobar</button>'+
+       '<button class="btn sec small" data-modelo>Muéstrame</button></div>';
+  }else if(modo==='elegir'){
+    h+='<div class="ops">'+p.opciones.map(function(o,i){
+      return '<button class="op" data-i="'+i+'">'+o[0]+'</button>';}).join('')+'</div>';
+  }else{
+    h+='<div class="esc-in"><input class="tec" type="text" autocomplete="off" '+
+       'placeholder="Escribe tu respuesta en español…" aria-label="Jouw antwoord">'+
+       '<button class="btn" data-env>Decir</button>'+
+       '<button class="btn sec small" data-pista>Pista</button>'+
+       '<button class="btn sec small" data-modelo>Muéstrame</button></div>';
+  }
+  h+='<div class="fb" hidden></div>';
+  zona.innerHTML=h;
+  const fb=zona.querySelector('.fb');
+  function di(clase,texto){fb.hidden=false;fb.className='fb '+clase;fb.innerHTML=texto;}
+
+  if(modo==='completar'){
+    const gaps=[].slice.call(zona.querySelectorAll('.gap'));
+    // een woord uit de bank zetten we in het vak waar de cursor staat
+    let foco=gaps[0];
+    gaps.forEach(function(g){g.addEventListener('focus',function(){foco=g;});});
+    zona.querySelectorAll('.banco span').forEach(function(ch){
+      ch.onclick=function(){
+        if(!foco||foco.disabled) foco=gaps.filter(function(g){return !g.disabled;})[0];
+        if(!foco) return;
+        foco.value=ch.textContent; foco.focus();
+      };
+    });
+    zona.querySelector('[data-modelo]').onclick=function(){
+      usado=true; ayudas++;
+      di('','<b>Zo kan het:</b><span class="mod">'+p.modelo+'</span>');};
+    function comprueba(){
+      let todo=true, primerFallo=-1;
+      gaps.forEach(function(g,i){
+        const bien=p.hueco.respuestas[i].some(function(r){
+          return normaliza(r)===normaliza(g.value);});
+        g.classList.toggle('bien',bien);
+        g.classList.toggle('mal',!bien&&g.value.trim()!=='');
+        if(bien){ g.disabled=true; }
+        else { todo=false; if(primerFallo<0&&g.value.trim()!=='') primerFallo=i; }
+      });
+      if(todo){
+        if(!usado) solos++;
+        let dicho=p.hueco.marco;
+        p.hueco.respuestas.forEach(function(r){dicho=dicho.replace('___',r[r.length-1]);});
+        di('ok','<b>Klopt.</b> Zo zeg je het.');
+        setTimeout(function(){avanza(dicho.charAt(0).toUpperCase()+dicho.slice(1));},700);
+      }else{
+        usado=true;
+        if(primerFallo>=0){
+          avisos.push(p.hueco.mal[primerFallo].replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+p.hueco.mal[primerFallo]);
+        }else{
+          di('mal','Vul allebei de vakjes in. '+p.pista);
+        }
+      }
+    }
+    zona.querySelector('[data-comp]').onclick=comprueba;
+    gaps.forEach(function(g){g.addEventListener('keydown',function(e){
+      if(e.key==='Enter'){e.preventDefault();comprueba();}});});
+    gaps[0].focus();
+  }else if(modo==='elegir'){
+    zona.querySelectorAll('.op').forEach(function(b){
+      b.onclick=function(){
+        const o=p.opciones[+b.dataset.i];
+        if(o[1]){
+          b.classList.add('bien');
+          zona.querySelectorAll('.op').forEach(function(x){x.disabled=true;});
+          if(!usado) solos++;
+          setTimeout(function(){avanza(o[0]);},420);
+        }else{
+          b.classList.add('mal'); b.disabled=true; usado=true;
+          avisos.push(o[2].replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+o[2]);
+        }
+      };
+    });
+  }else{
+    const inp=zona.querySelector('.tec');
+    zona.querySelector('[data-pista]').onclick=function(){
+      usado=true; ayudas++; di('','<b>Pista.</b> '+p.pista);};
+    zona.querySelector('[data-modelo]').onclick=function(){
+      usado=true; ayudas++;
+      di('','<b>Zo kan het:</b><span class="mod">'+p.modelo+'</span>');};
+    function enviar(){
+      const t=inp.value.trim();
+      if(!t) return;
+      const notas=corrige(t);
+      if(casa(t,p.acepta)){
+        if(notas.length){
+          avisos.push(notas[0].nl.replace(/<[^>]+>/g,''));
+          di('ok','<b>Begrepen!</b> Eén ding nog: '+notas[0].nl+
+             '<span class="mod">'+notas[0].bien+'</span>');
+        }else{
+          // bewust géén «goed!»: de corrector kent niet alles
+          di('ok','<b>Begrepen.</b> Ik zie hier geen fouten die ik ken.');
+        }
+        if(!usado) solos++;
+        inp.disabled=true;
+        setTimeout(function(){avanza(t);},notas.length?1500:700);
+      }else{
+        usado=true;
+        if(notas.length){
+          avisos.push(notas[0].nl.replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+notas[0].nl+
+             '<span class="mod">'+notas[0].bien+'</span>');
+        }else{
+          di('mal','<b>Dat verstaat de mesero niet.</b> '+p.pista);
+        }
+      }
+    }
+    zona.querySelector('[data-env]').onclick=enviar;
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter')enviar();});
+    inp.focus();
+  }
+}
+
+raiz.querySelectorAll('.modo button').forEach(function(b){
+  b.onclick=function(){
+    modo=b.dataset.modo;
+    raiz.querySelectorAll('.modo button').forEach(function(x){
+      x.classList.toggle('on',x===b);});
+    paso=0;ayudas=0;solos=0;avisos=[];esc.innerHTML='';pinta();muestra();
+  };
+});
+pinta(); muestra();
+})();
+
+(function(){
+const D={"avatar": "⌚", "final": "¡Genial! Hasta mañana entonces. ¡Que descanses!", "final_nl": "Top! Tot morgen dan. Slaap lekker!", "pasos": [{"di": "¡Ey! ¿Quieres quedar mañana por la tarde?", "nl": "Hey! Wil je morgennamiddag afspreken?", "meta": "Zeg ja, maar niet te vroeg — je hebt school tot vier uur.", "opciones": [["¡Vale! Pero tengo clase hasta las cuatro.", true, ""], ["¡Vale! Pero soy clase hasta las cuatro.", false, "«Ik heb les» is <b>tengo clase</b>, met <i>tener</i>."]], "hueco": {"marco": "¡Vale! Pero ___ ___ hasta las cuatro.", "respuestas": [["tengo"], ["clase", "clases"]], "banco": ["tengo", "soy", "clase", "hora", "tiempo"], "mal": ["«Ik heb les» is <b>tengo clase</b>.", "Het woord dat je zoekt is <b>clase</b> (of <i>clases</i>)."]}, "acepta": ["tengo\\s+(clase|clases)", "hasta\\s+las?\\s+\\w+", "vale|de\\s+acuerdo"], "pista": "«Vale» om ja te zeggen, en dan «tengo clase hasta las…».", "modelo": "¡Vale! Pero tengo clase hasta las cuatro."}, {"di": "Sin problema. ¿A qué hora quedamos entonces?", "nl": "Geen probleem. Hoe laat spreken we dan af?", "meta": "Stel half vijf voor.", "opciones": [["¿A las cuatro y media?", true, ""], ["¿A las cuatro y medio?", false, "Het is <b>y media</b> — het verwijst naar <i>la hora</i>, vrouwelijk."], ["¿En las cuatro y media?", false, "Een uur krijgt <b>a</b>, niet <i>en</i>: «a las cuatro y media»."]], "hueco": {"marco": "¿___ las cuatro ___ media?", "respuestas": [["a"], ["y"]], "banco": ["a", "en", "y", "menos", "de"], "mal": ["Een tijdstip krijgt <b>a</b>: «a las cuatro».", "Half vijf is in het Spaans «vier uur <b>y</b> media»."]}, "acepta": ["a\\s+las?\\s+\\w+", "y\\s+(media|cuarto)", "menos\\s+cuarto"], "pista": "«A las …» + het uur. Half = <i>y media</i>, kwart over = <i>y cuarto</i>.", "modelo": "¿A las cuatro y media?"}, {"di": "Perfecto. Oye, ¿tú a qué hora te levantas normalmente?", "nl": "Perfect. Zeg, hoe laat sta jij normaal op?", "meta": "Vertel over je ochtend: opstaan en douchen.", "opciones": [["Me levanto a las siete y me ducho.", true, ""], ["Yo levanto a las siete y ducho.", false, "Allebei wederkerend: <b>me levanto</b> en <b>me ducho</b>."]], "hueco": {"marco": "___ ___ a las siete y me ducho.", "respuestas": [["me"], ["levanto"]], "banco": ["me", "yo", "levanto", "levantas", "despierto"], "mal": ["Wederkerend werkwoord: <b>me</b> levanto.", "Bij <i>yo</i>: <b>levanto</b>. <i>Levantas</i> is de jij-vorm."]}, "acepta": ["me\\s+(levanto|despierto)", "a\\s+las?\\s+\\w+"], "pista": "«Me levanto a las …». Vergeet het kleine woordje <i>me</i> niet.", "modelo": "Me levanto a las siete y me ducho."}, {"di": "¡Qué pronto! Yo prefiero dormir. ¿Y los fines de semana?", "nl": "Wat vroeg! Ik slaap liever uit. En in het weekend?", "meta": "Zeg hoe vaak je uitslaapt. Gebruik een woord voor «hoe vaak».", "opciones": [["Los fines de semana casi siempre duermo hasta las diez.", true, ""], ["Los fines de semana casi nunca duermo hasta las diez.", false, "Dat is het omgekeerde: <i>casi nunca</i> = bijna nooit."]], "hueco": {"marco": "Los fines de semana ___ ___ hasta las diez.", "respuestas": [["casi"], ["siempre"]], "banco": ["casi", "nunca", "siempre", "a veces", "normalmente"], "mal": ["«Bijna» is <b>casi</b>.", "«Bijna altijd» = casi <b>siempre</b>. Let op: <i>casi nunca</i> betekent net het omgekeerde."]}, "acepta": ["(siempre|normalmente|a\\s+veces|casi\\s+nunca|nunca|casi\\s+siempre)", "duermo|me\\s+levanto"], "pista": "Kies een frequentiewoord: siempre · normalmente · a veces · casi nunca · nunca.", "modelo": "Los fines de semana casi siempre duermo hasta las diez."}, {"di": "Yo igual. Entonces, ¿mañana a las cuatro y media en la plaza?", "nl": "Ik ook. Dus morgen om half vijf op het plein?", "meta": "Bevestig de afspraak.", "opciones": [["Vale, nos vemos mañana.", true, ""], ["Vale, me veo mañana.", false, "<b>Nos vemos</b> — jullie zien elkáár, niet jij jezelf."]], "hueco": {"marco": "___, ___ vemos mañana.", "respuestas": [["vale", "sí"], ["nos"]], "banco": ["vale", "no", "nos", "me", "te"], "mal": ["Afspraken bevestig je met <b>vale</b> of <b>de acuerdo</b>.", "«Tot ziens» is <b>nos vemos</b> — wij zien elkáár."]}, "acepta": ["(vale|de\\s+acuerdo|perfecto|s[ií])", "nos\\s+vemos|hasta\\s+ma[ñn]ana"], "pista": "«Vale» + «nos vemos mañana» of «hasta mañana».", "modelo": "Vale, nos vemos mañana."}]}, R=[{"id": "gustar-yo", "re": "\\byo\\s+gust", "nl": "«Ik vind leuk» is in het Spaans omgekeerd: het ding bevalt <b>mij</b>. Dus niet «yo gusto» maar <b>me gusta</b>.", "bien": "Me gusta el chocolate."}, {"id": "gustar-tu", "re": "\\bt[uú]\\s+gustas\\b", "nl": "Ook hier omgekeerd: niet «tú gustas» maar <b>te gusta</b>.", "bien": "¿Te gusta la paella?"}, {"id": "gustar-concordancia", "re": "\\bme\\s+gusta\\s+los\\b|\\bme\\s+gusta\\s+las\\b", "nl": "Meervoud: bij meer dan één ding wordt het <b>me gustan</b>.", "bien": "Me gustan los tacos."}, {"id": "estar-frio-persoon", "re": "\\b(estoy|est[aá]s|est[aá])\\s+(fr[ií]o|calor)\\b", "nl": "Over jezelf gebruik je <b>tener</b>: «tengo frío». «Estoy frío» betekent dat je lichaam koud aanvoelt — dat is iets heel anders.", "bien": "Tengo frío. · Hace frío."}, {"id": "hacer-tiempo", "re": "\\b(es|est[aá])\\s+(fr[ií]o|calor|sol|viento)\\b", "nl": "Het weer krijgt <b>hacer</b>: «hace frío», «hace sol».", "bien": "Hoy hace mucho calor."}, {"id": "ser-lugar", "re": "\\bes\\s+en\\s+(la|el|mi|tu)\\b", "nl": "Waar iets is, zeg je met <b>estar</b>, niet met «ser».", "bien": "El libro está en la mesa."}, {"id": "soy-anos", "re": "\\bsoy\\s+\\w*\\s*a[ñn]os\\b|\\bsoy\\s+\\d+\\s*a[ñn]os\\b", "nl": "Leeftijd krijgt <b>tener</b>: je «hébt» jaren in het Spaans.", "bien": "Tengo dieciséis años."}, {"id": "soy-de-ciudad-vivir", "re": "\\bsoy\\s+en\\s+\\w+", "nl": "«Ik kom uit» is <b>soy de</b>; «ik woon in» is <b>vivo en</b>.", "bien": "Soy de Gante y vivo en Brujas."}, {"id": "luego-dus", "re": ",\\s*luego\\b", "nl": "Als je hier «dus» bedoelt, is dat <b>así que</b> of <b>por eso</b>. <i>Luego</i> betekent «daarna» — dat kan wél, maar dan zonder komma: «y luego…».", "bien": "Hace calor, así que voy a la playa."}, {"id": "porque-pregunta", "re": "\\bporque\\s+(no\\s+)?(vas|vienes|comes|quieres|est[aá]s)\\b\\s*\\?", "nl": "In een vráág schrijf je <b>por qué</b>: twee woorden, met accent. <i>Porque</i> (aan elkaar) is het antwoord.", "bien": "¿Por qué no vienes? — Porque estoy enfermo."}, {"id": "want-omdat", "re": "\\b(want|omdat|dus)\\b", "nl": "Er staat een Nederlands woord in je zin. «Want» én «omdat» zijn allebei <b>porque</b>; «dus» is <b>así que</b>.", "bien": "No como carne porque soy vegetariano."}, {"id": "ir-a", "re": "\\bvoy\\s+(el|la|los|las)\\b", "nl": "Na <b>ir</b> hoort <b>a</b>: «voy a la playa», «voy al mercado».", "bien": "Voy a la escuela."}, {"id": "tener-que", "re": "\\btengo\\s+(de|a)\\s+\\w+ar\\b|\\btengo\\s+(de|a)\\s+\\w+er\\b", "nl": "«Ik moet» is <b>tengo que</b> + hele werkwoord.", "bien": "Tengo que estudiar."}, {"id": "ir-a-inf", "re": "\\bvoy\\s+\\w+ar\\b(?!\\s)", "nl": "Een plan maak je met <b>voy a</b> + hele werkwoord.", "bien": "Voy a comer."}, {"id": "el-agua-la", "re": "\\bla\\s+agua\\b", "nl": "<b>El agua</b> — het is wél vrouwelijk, maar krijgt <i>el</i> omdat het met een beklemtoonde a begint. Het bijvoeglijk naamwoord blijft vrouwelijk.", "bien": "El agua está fría."}, {"id": "un-una-comida", "re": "\\bun\\s+(sopa|carta|cuenta|mesa|servilleta|cuchara|manzana|naranja|piña|lechuga|cebolla)\\b", "nl": "Dit woord is vrouwelijk: <b>una</b>, niet «un».", "bien": "Una sopa, por favor."}, {"id": "una-masculino", "re": "\\buna\\s+(pan|queso|pollo|pescado|arroz|plato|vaso|tenedor|cuchillo|caf[eé]|men[uú])\\b", "nl": "Dit woord is mannelijk: <b>un</b>, niet «una».", "bien": "Un café, por favor."}, {"id": "quiero-seco", "re": "^(?!.*por\\s+favor)\\s*(quiero|dame|trae)\\b[^?]*$", "nl": "Dit klinkt kortaf. Zet er <b>por favor</b> bij, of gebruik <b>¿me pone…?</b> of <b>para mí…</b>.", "bien": "¿Me pone un café, por favor?"}, {"id": "acento-que", "re": "\\bque\\s+(quiere|quieres|va|tal)\\b\\s*\\?", "nl": "In een vraag draagt <b>qué</b> een accent.", "bien": "¿Qué quiere tomar?"}, {"id": "apertura", "re": "^(?![^?]*¿)[^?]*\\w[^?]*\\?\\s*$", "nl": "In het Spaans staat het vraagteken er <b>twee keer</b>: ¿ aan het begin en ? aan het eind.", "bien": "¿Cuánto cuesta?"}, {"id": "nn-ñ", "re": "\\b(anos|manana|nino|espanol|senor)\\b", "nl": "Hier hoort een <b>ñ</b>: años · mañana · niño · español · señor.", "bien": "Tengo dieciséis años."}];
+const raiz=document.getElementById('rol_c5_u3');
+if(!raiz) return;
+
+// accenten en hoofdletters mogen niet uitmaken: een leerling die «cafe» typt
+// bedoelt «café», en daar is deze oefening het moment niet voor.
+function normaliza(s){
+  return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+         .replace(/\s+/g,' ').trim();
+}
+function casa(txt,pats){
+  const t=normaliza(txt);
+  return pats.some(function(p){
+    return new RegExp(p.normalize('NFD').replace(/[\u0300-\u036f]/g,''),'i').test(t);
+  });
+}
+// De corrector kent alleen wat in corrector_data.py staat. Hij mag daarom
+// nooit «goed!» zeggen — zie de kop van dat bestand.
+function corrige(txt){
+  const out=[];
+  R.forEach(function(r){
+    if(new RegExp(r.re,'i').test(txt)) out.push(r);
+  });
+  return out;
+}
+
+let paso=0, modo='completar', ayudas=0, solos=0, avisos=[];
+const esc=raiz.querySelector('.esc'), zona=raiz.querySelector('.zona'),
+      barra=raiz.querySelector('.barra');
+
+function burbuja(quien,txt,nl){
+  const b=document.createElement('div');
+  b.className='b'+(quien==='yo'?' yo':'');
+  b.innerHTML='<div class="av">'+(quien==='yo'?'TÚ':D.avatar)+'</div>'+
+    '<div class="tx">'+txt+(nl?'<span class="nl">'+nl+'</span>':'')+'</div>';
+  esc.appendChild(b); esc.scrollTop=esc.scrollHeight;
+}
+function pinta(){
+  barra.innerHTML=D.pasos.map(function(_,i){
+    return '<i class="'+(i<paso?'on':'')+'"></i>';}).join('');
+}
+
+function avanza(dicho){
+  burbuja('yo',dicho);
+  paso++; pinta();
+  if(paso>=D.pasos.length){ return fin(); }
+  setTimeout(muestra,340);
+}
+
+function fin(){
+  const p=D.pasos.length;
+  burbuja('otro',D.final,D.final_nl);
+  let li='';
+  li+='<li>Beurten zonder hulp: <b>'+solos+' van de '+p+'</b></li>';
+  li+='<li>Hulp gevraagd: <b>'+ayudas+'×</b></li>';
+  if(avisos.length){
+    li+='<li>Waar je op mag letten:<br>'+
+        avisos.filter(function(v,i,a){return a.indexOf(v)===i;})
+              .map(function(v){return '• '+v;}).join('<br>')+'</li>';
+  }
+  zona.innerHTML='<div class="fin"><div class="grande">¡Ya está! 🎉</div>'+
+    '<p class="lead" style="margin:0 auto">Je hebt de hele scène afgewerkt.</p>'+
+    '<ul class="tally">'+li+'</ul>'+
+    '<button class="btn" style="margin-top:12px" data-otra>Otra vez</button></div>';
+  zona.querySelector('[data-otra]').onclick=function(){
+    paso=0;ayudas=0;solos=0;avisos=[];esc.innerHTML='';pinta();muestra();};
+}
+
+function muestra(){
+  const p=D.pasos[paso];
+  let usado=false;                       // hulp gebruikt in déze beurt
+  burbuja('otro',p.di,p.nl);
+  let h='<div class="meta"><span class="pill">Tu turno</span>'+p.meta+'</div>';
+  if(modo==='completar'){
+    // de zin met gaten; het aantal invulvakken volgt uit het kader zelf
+    const trozos=p.hueco.marco.split('___');
+    let frase='';
+    trozos.forEach(function(t,i){
+      frase+=t.replace(/</g,'&lt;');
+      if(i<trozos.length-1)
+        frase+='<input class="gap" data-g="'+i+'" type="text" autocomplete="off" '+
+               'spellcheck="false" aria-label="Vul woord '+(i+1)+' in">';
+    });
+    h+='<div class="banco"><b>Banco:</b>'+p.hueco.banco.map(function(w){
+         return '<span>'+w+'</span>';}).join('')+'</div>';
+    h+='<div class="hue">'+frase+'</div>';
+    h+='<div class="esc-in"><button class="btn" data-comp>Comprobar</button>'+
+       '<button class="btn sec small" data-modelo>Muéstrame</button></div>';
+  }else if(modo==='elegir'){
+    h+='<div class="ops">'+p.opciones.map(function(o,i){
+      return '<button class="op" data-i="'+i+'">'+o[0]+'</button>';}).join('')+'</div>';
+  }else{
+    h+='<div class="esc-in"><input class="tec" type="text" autocomplete="off" '+
+       'placeholder="Escribe tu respuesta en español…" aria-label="Jouw antwoord">'+
+       '<button class="btn" data-env>Decir</button>'+
+       '<button class="btn sec small" data-pista>Pista</button>'+
+       '<button class="btn sec small" data-modelo>Muéstrame</button></div>';
+  }
+  h+='<div class="fb" hidden></div>';
+  zona.innerHTML=h;
+  const fb=zona.querySelector('.fb');
+  function di(clase,texto){fb.hidden=false;fb.className='fb '+clase;fb.innerHTML=texto;}
+
+  if(modo==='completar'){
+    const gaps=[].slice.call(zona.querySelectorAll('.gap'));
+    // een woord uit de bank zetten we in het vak waar de cursor staat
+    let foco=gaps[0];
+    gaps.forEach(function(g){g.addEventListener('focus',function(){foco=g;});});
+    zona.querySelectorAll('.banco span').forEach(function(ch){
+      ch.onclick=function(){
+        if(!foco||foco.disabled) foco=gaps.filter(function(g){return !g.disabled;})[0];
+        if(!foco) return;
+        foco.value=ch.textContent; foco.focus();
+      };
+    });
+    zona.querySelector('[data-modelo]').onclick=function(){
+      usado=true; ayudas++;
+      di('','<b>Zo kan het:</b><span class="mod">'+p.modelo+'</span>');};
+    function comprueba(){
+      let todo=true, primerFallo=-1;
+      gaps.forEach(function(g,i){
+        const bien=p.hueco.respuestas[i].some(function(r){
+          return normaliza(r)===normaliza(g.value);});
+        g.classList.toggle('bien',bien);
+        g.classList.toggle('mal',!bien&&g.value.trim()!=='');
+        if(bien){ g.disabled=true; }
+        else { todo=false; if(primerFallo<0&&g.value.trim()!=='') primerFallo=i; }
+      });
+      if(todo){
+        if(!usado) solos++;
+        let dicho=p.hueco.marco;
+        p.hueco.respuestas.forEach(function(r){dicho=dicho.replace('___',r[r.length-1]);});
+        di('ok','<b>Klopt.</b> Zo zeg je het.');
+        setTimeout(function(){avanza(dicho.charAt(0).toUpperCase()+dicho.slice(1));},700);
+      }else{
+        usado=true;
+        if(primerFallo>=0){
+          avisos.push(p.hueco.mal[primerFallo].replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+p.hueco.mal[primerFallo]);
+        }else{
+          di('mal','Vul allebei de vakjes in. '+p.pista);
+        }
+      }
+    }
+    zona.querySelector('[data-comp]').onclick=comprueba;
+    gaps.forEach(function(g){g.addEventListener('keydown',function(e){
+      if(e.key==='Enter'){e.preventDefault();comprueba();}});});
+    gaps[0].focus();
+  }else if(modo==='elegir'){
+    zona.querySelectorAll('.op').forEach(function(b){
+      b.onclick=function(){
+        const o=p.opciones[+b.dataset.i];
+        if(o[1]){
+          b.classList.add('bien');
+          zona.querySelectorAll('.op').forEach(function(x){x.disabled=true;});
+          if(!usado) solos++;
+          setTimeout(function(){avanza(o[0]);},420);
+        }else{
+          b.classList.add('mal'); b.disabled=true; usado=true;
+          avisos.push(o[2].replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+o[2]);
+        }
+      };
+    });
+  }else{
+    const inp=zona.querySelector('.tec');
+    zona.querySelector('[data-pista]').onclick=function(){
+      usado=true; ayudas++; di('','<b>Pista.</b> '+p.pista);};
+    zona.querySelector('[data-modelo]').onclick=function(){
+      usado=true; ayudas++;
+      di('','<b>Zo kan het:</b><span class="mod">'+p.modelo+'</span>');};
+    function enviar(){
+      const t=inp.value.trim();
+      if(!t) return;
+      const notas=corrige(t);
+      if(casa(t,p.acepta)){
+        if(notas.length){
+          avisos.push(notas[0].nl.replace(/<[^>]+>/g,''));
+          di('ok','<b>Begrepen!</b> Eén ding nog: '+notas[0].nl+
+             '<span class="mod">'+notas[0].bien+'</span>');
+        }else{
+          // bewust géén «goed!»: de corrector kent niet alles
+          di('ok','<b>Begrepen.</b> Ik zie hier geen fouten die ik ken.');
+        }
+        if(!usado) solos++;
+        inp.disabled=true;
+        setTimeout(function(){avanza(t);},notas.length?1500:700);
+      }else{
+        usado=true;
+        if(notas.length){
+          avisos.push(notas[0].nl.replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+notas[0].nl+
+             '<span class="mod">'+notas[0].bien+'</span>');
+        }else{
+          di('mal','<b>Dat verstaat de mesero niet.</b> '+p.pista);
+        }
+      }
+    }
+    zona.querySelector('[data-env]').onclick=enviar;
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter')enviar();});
+    inp.focus();
+  }
+}
+
+raiz.querySelectorAll('.modo button').forEach(function(b){
+  b.onclick=function(){
+    modo=b.dataset.modo;
+    raiz.querySelectorAll('.modo button').forEach(function(x){
+      x.classList.toggle('on',x===b);});
+    paso=0;ayudas=0;solos=0;avisos=[];esc.innerHTML='';pinta();muestra();
+  };
+});
+pinta(); muestra();
+})();
+
+(function(){
+const D={"avatar": "🎧", "final": "¡Genial! Nos vemos el sábado a las nueve. ¡Hasta luego!", "final_nl": "Top! Tot zaterdag om negen uur. Tot dan!", "pasos": [{"di": "¿Qué te gusta hacer en tu tiempo libre?", "nl": "Wat doe je graag in je vrije tijd?", "meta": "Zeg wat je graag doet. Let goed op de vorm van «gustar».", "opciones": [["Me gusta escuchar música y nadar.", true, ""], ["Yo gusto escuchar música y nadar.", false, "«Ik vind leuk» is <b>me gusta</b>, nooit «yo gusto»."], ["Me gustan escuchar música y nadar.", false, "Bij een werkwoord blijft het <b>me gusta</b>, in het enkelvoud."]], "hueco": {"marco": "___ ___ escuchar música y nadar.", "respuestas": [["me"], ["gusta"]], "banco": ["me", "yo", "gusta", "gustan", "gusto"], "mal": ["Het is omgekeerd in het Spaans: <b>me</b> gusta, «het bevalt mij».", "Na <i>me</i> staat een werkwoord in de infinitief → enkelvoud: <b>gusta</b>."]}, "acepta": ["me\\s+(gusta|encanta)\\s+\\w+"], "pista": "«Me gusta + werkwoord» of «me encanta + werkwoord».", "modelo": "Me gusta escuchar música y nadar."}, {"di": "¡A mí también! ¿Y los deportes? ¿Te gusta el fútbol?", "nl": "Ik ook! En sport? Vind je voetbal leuk?", "meta": "Zeg dat je het niet leuk vindt, maar noem iets wat je wél leuk vindt.", "opciones": [["No mucho, pero me gustan los videojuegos.", true, ""], ["No mucho, pero me gusta los videojuegos.", false, "Meervoud: <b>me gustan</b> los videojuegos."], ["No mucho, pero yo gusto los videojuegos.", false, "Nooit «yo gusto». Bij meervoud: <b>me gustan</b>."]], "hueco": {"marco": "No mucho, ___ me ___ los videojuegos.", "respuestas": [["pero"], ["gustan"]], "banco": ["pero", "y", "gusta", "gustan", "encanta"], "mal": ["Twee dingen die tegen elkaar in gaan verbind je met <b>pero</b>.", "<i>Los videojuegos</i> is meervoud → <b>me gustan</b>, met -n."]}, "acepta": ["me\\s+gustan\\s+l[oa]s", "prefiero\\s+\\w+", "me\\s+encantan?\\s+"], "pista": "Meer dan één ding → <b>me gustan</b>. Of gebruik «prefiero…».", "modelo": "No mucho, pero me gustan los videojuegos."}, {"di": "Oye, ¿y qué tal si vamos al cine el sábado?", "nl": "Zeg, wat als we zaterdag naar de film gaan?", "meta": "Ga akkoord en stel een uur voor.", "opciones": [["¡Vale! ¿A qué hora quedamos?", true, ""], ["¡Vale! ¿En qué hora quedamos?", false, "Het is <b>¿a qué hora?</b> — met <i>a</i>."]], "hueco": {"marco": "¡___! ¿___ qué hora quedamos?", "respuestas": [["vale", "genial"], ["a"]], "banco": ["vale", "no", "a", "en", "de"], "mal": ["Instemmen doe je met <b>vale</b>, <b>genial</b> of <b>de acuerdo</b>.", "«Hoe laat» is <b>¿a qué hora?</b>"]}, "acepta": ["(vale|genial|guay|de\\s+acuerdo|perfecto)", "a\\s+qu[eé]\\s+hora"], "pista": "Zeg «Vale» en vraag dan «¿A qué hora…?».", "modelo": "¡Vale! ¿A qué hora quedamos?"}, {"di": "¿A las siete? Después podemos tomar una horchata.", "nl": "Om zeven uur? Daarna kunnen we een horchata drinken.", "meta": "Zeg dat je die avond niet kan en geef de reden.", "opciones": [["No puedo a las siete porque tengo que estudiar.", true, ""], ["No puedo a las siete por qué tengo que estudiar.", false, "<b>Porque</b> aan elkaar en zonder accent — dat is het antwoord. <i>Por qué</i> met accent is de vráág."], ["No puedo a las siete, luego tengo que estudiar.", false, "«Want» is <b>porque</b>. <i>Luego</i> betekent «later»."]], "hueco": {"marco": "No ___ a las siete ___ tengo que estudiar.", "respuestas": [["puedo"], ["porque"]], "banco": ["puedo", "puedes", "porque", "por qué", "luego"], "mal": ["Bij <i>yo</i>: <b>puedo</b> (o → ue).", "«Want» én «omdat» zijn allebei <b>porque</b>, aan elkaar en zonder accent."]}, "acepta": ["no\\s+puedo", "porque\\s+\\w+"], "pista": "«No puedo … porque …» — let op het aan elkaar geschreven <i>porque</i>.", "modelo": "No puedo a las siete porque tengo que estudiar."}, {"di": "Vale, ¿y a las nueve entonces?", "nl": "Oké, en om negen uur dan?", "meta": "Stem in en zeg dat je er zin in hebt.", "opciones": [["¡Perfecto! Me encanta el plan.", true, ""], ["¡Perfecto! Me encantan el plan.", false, "<i>El plan</i> is enkelvoud: <b>me encanta</b>, zonder -n."]], "hueco": {"marco": "¡___! Me ___ el plan.", "respuestas": [["perfecto", "genial", "vale"], ["encanta", "gusta"]], "banco": ["perfecto", "aburrido", "encanta", "encantan", "odio"], "mal": ["Iets positiefs: perfecto · genial · vale.", "<i>El plan</i> is enkelvoud → <b>me encanta</b> (of <i>me gusta</i>)."]}, "acepta": ["(perfecto|genial|guay|vale)", "me\\s+(encanta|gusta)"], "pista": "«¡Perfecto!» + «me encanta el plan».", "modelo": "¡Perfecto! Me encanta el plan."}]}, R=[{"id": "gustar-yo", "re": "\\byo\\s+gust", "nl": "«Ik vind leuk» is in het Spaans omgekeerd: het ding bevalt <b>mij</b>. Dus niet «yo gusto» maar <b>me gusta</b>.", "bien": "Me gusta el chocolate."}, {"id": "gustar-tu", "re": "\\bt[uú]\\s+gustas\\b", "nl": "Ook hier omgekeerd: niet «tú gustas» maar <b>te gusta</b>.", "bien": "¿Te gusta la paella?"}, {"id": "gustar-concordancia", "re": "\\bme\\s+gusta\\s+los\\b|\\bme\\s+gusta\\s+las\\b", "nl": "Meervoud: bij meer dan één ding wordt het <b>me gustan</b>.", "bien": "Me gustan los tacos."}, {"id": "estar-frio-persoon", "re": "\\b(estoy|est[aá]s|est[aá])\\s+(fr[ií]o|calor)\\b", "nl": "Over jezelf gebruik je <b>tener</b>: «tengo frío». «Estoy frío» betekent dat je lichaam koud aanvoelt — dat is iets heel anders.", "bien": "Tengo frío. · Hace frío."}, {"id": "hacer-tiempo", "re": "\\b(es|est[aá])\\s+(fr[ií]o|calor|sol|viento)\\b", "nl": "Het weer krijgt <b>hacer</b>: «hace frío», «hace sol».", "bien": "Hoy hace mucho calor."}, {"id": "ser-lugar", "re": "\\bes\\s+en\\s+(la|el|mi|tu)\\b", "nl": "Waar iets is, zeg je met <b>estar</b>, niet met «ser».", "bien": "El libro está en la mesa."}, {"id": "soy-anos", "re": "\\bsoy\\s+\\w*\\s*a[ñn]os\\b|\\bsoy\\s+\\d+\\s*a[ñn]os\\b", "nl": "Leeftijd krijgt <b>tener</b>: je «hébt» jaren in het Spaans.", "bien": "Tengo dieciséis años."}, {"id": "soy-de-ciudad-vivir", "re": "\\bsoy\\s+en\\s+\\w+", "nl": "«Ik kom uit» is <b>soy de</b>; «ik woon in» is <b>vivo en</b>.", "bien": "Soy de Gante y vivo en Brujas."}, {"id": "luego-dus", "re": ",\\s*luego\\b", "nl": "Als je hier «dus» bedoelt, is dat <b>así que</b> of <b>por eso</b>. <i>Luego</i> betekent «daarna» — dat kan wél, maar dan zonder komma: «y luego…».", "bien": "Hace calor, así que voy a la playa."}, {"id": "porque-pregunta", "re": "\\bporque\\s+(no\\s+)?(vas|vienes|comes|quieres|est[aá]s)\\b\\s*\\?", "nl": "In een vráág schrijf je <b>por qué</b>: twee woorden, met accent. <i>Porque</i> (aan elkaar) is het antwoord.", "bien": "¿Por qué no vienes? — Porque estoy enfermo."}, {"id": "want-omdat", "re": "\\b(want|omdat|dus)\\b", "nl": "Er staat een Nederlands woord in je zin. «Want» én «omdat» zijn allebei <b>porque</b>; «dus» is <b>así que</b>.", "bien": "No como carne porque soy vegetariano."}, {"id": "ir-a", "re": "\\bvoy\\s+(el|la|los|las)\\b", "nl": "Na <b>ir</b> hoort <b>a</b>: «voy a la playa», «voy al mercado».", "bien": "Voy a la escuela."}, {"id": "tener-que", "re": "\\btengo\\s+(de|a)\\s+\\w+ar\\b|\\btengo\\s+(de|a)\\s+\\w+er\\b", "nl": "«Ik moet» is <b>tengo que</b> + hele werkwoord.", "bien": "Tengo que estudiar."}, {"id": "ir-a-inf", "re": "\\bvoy\\s+\\w+ar\\b(?!\\s)", "nl": "Een plan maak je met <b>voy a</b> + hele werkwoord.", "bien": "Voy a comer."}, {"id": "el-agua-la", "re": "\\bla\\s+agua\\b", "nl": "<b>El agua</b> — het is wél vrouwelijk, maar krijgt <i>el</i> omdat het met een beklemtoonde a begint. Het bijvoeglijk naamwoord blijft vrouwelijk.", "bien": "El agua está fría."}, {"id": "un-una-comida", "re": "\\bun\\s+(sopa|carta|cuenta|mesa|servilleta|cuchara|manzana|naranja|piña|lechuga|cebolla)\\b", "nl": "Dit woord is vrouwelijk: <b>una</b>, niet «un».", "bien": "Una sopa, por favor."}, {"id": "una-masculino", "re": "\\buna\\s+(pan|queso|pollo|pescado|arroz|plato|vaso|tenedor|cuchillo|caf[eé]|men[uú])\\b", "nl": "Dit woord is mannelijk: <b>un</b>, niet «una».", "bien": "Un café, por favor."}, {"id": "quiero-seco", "re": "^(?!.*por\\s+favor)\\s*(quiero|dame|trae)\\b[^?]*$", "nl": "Dit klinkt kortaf. Zet er <b>por favor</b> bij, of gebruik <b>¿me pone…?</b> of <b>para mí…</b>.", "bien": "¿Me pone un café, por favor?"}, {"id": "acento-que", "re": "\\bque\\s+(quiere|quieres|va|tal)\\b\\s*\\?", "nl": "In een vraag draagt <b>qué</b> een accent.", "bien": "¿Qué quiere tomar?"}, {"id": "apertura", "re": "^(?![^?]*¿)[^?]*\\w[^?]*\\?\\s*$", "nl": "In het Spaans staat het vraagteken er <b>twee keer</b>: ¿ aan het begin en ? aan het eind.", "bien": "¿Cuánto cuesta?"}, {"id": "nn-ñ", "re": "\\b(anos|manana|nino|espanol|senor)\\b", "nl": "Hier hoort een <b>ñ</b>: años · mañana · niño · español · señor.", "bien": "Tengo dieciséis años."}];
+const raiz=document.getElementById('rol_c5_u4');
+if(!raiz) return;
+
+// accenten en hoofdletters mogen niet uitmaken: een leerling die «cafe» typt
+// bedoelt «café», en daar is deze oefening het moment niet voor.
+function normaliza(s){
+  return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+         .replace(/\s+/g,' ').trim();
+}
+function casa(txt,pats){
+  const t=normaliza(txt);
+  return pats.some(function(p){
+    return new RegExp(p.normalize('NFD').replace(/[\u0300-\u036f]/g,''),'i').test(t);
+  });
+}
+// De corrector kent alleen wat in corrector_data.py staat. Hij mag daarom
+// nooit «goed!» zeggen — zie de kop van dat bestand.
+function corrige(txt){
+  const out=[];
+  R.forEach(function(r){
+    if(new RegExp(r.re,'i').test(txt)) out.push(r);
+  });
+  return out;
+}
+
+let paso=0, modo='completar', ayudas=0, solos=0, avisos=[];
+const esc=raiz.querySelector('.esc'), zona=raiz.querySelector('.zona'),
+      barra=raiz.querySelector('.barra');
+
+function burbuja(quien,txt,nl){
+  const b=document.createElement('div');
+  b.className='b'+(quien==='yo'?' yo':'');
+  b.innerHTML='<div class="av">'+(quien==='yo'?'TÚ':D.avatar)+'</div>'+
+    '<div class="tx">'+txt+(nl?'<span class="nl">'+nl+'</span>':'')+'</div>';
+  esc.appendChild(b); esc.scrollTop=esc.scrollHeight;
+}
+function pinta(){
+  barra.innerHTML=D.pasos.map(function(_,i){
+    return '<i class="'+(i<paso?'on':'')+'"></i>';}).join('');
+}
+
+function avanza(dicho){
+  burbuja('yo',dicho);
+  paso++; pinta();
+  if(paso>=D.pasos.length){ return fin(); }
+  setTimeout(muestra,340);
+}
+
+function fin(){
+  const p=D.pasos.length;
+  burbuja('otro',D.final,D.final_nl);
+  let li='';
+  li+='<li>Beurten zonder hulp: <b>'+solos+' van de '+p+'</b></li>';
+  li+='<li>Hulp gevraagd: <b>'+ayudas+'×</b></li>';
+  if(avisos.length){
+    li+='<li>Waar je op mag letten:<br>'+
+        avisos.filter(function(v,i,a){return a.indexOf(v)===i;})
+              .map(function(v){return '• '+v;}).join('<br>')+'</li>';
+  }
+  zona.innerHTML='<div class="fin"><div class="grande">¡Ya está! 🎉</div>'+
+    '<p class="lead" style="margin:0 auto">Je hebt de hele scène afgewerkt.</p>'+
+    '<ul class="tally">'+li+'</ul>'+
+    '<button class="btn" style="margin-top:12px" data-otra>Otra vez</button></div>';
+  zona.querySelector('[data-otra]').onclick=function(){
+    paso=0;ayudas=0;solos=0;avisos=[];esc.innerHTML='';pinta();muestra();};
+}
+
+function muestra(){
+  const p=D.pasos[paso];
+  let usado=false;                       // hulp gebruikt in déze beurt
+  burbuja('otro',p.di,p.nl);
+  let h='<div class="meta"><span class="pill">Tu turno</span>'+p.meta+'</div>';
+  if(modo==='completar'){
+    // de zin met gaten; het aantal invulvakken volgt uit het kader zelf
+    const trozos=p.hueco.marco.split('___');
+    let frase='';
+    trozos.forEach(function(t,i){
+      frase+=t.replace(/</g,'&lt;');
+      if(i<trozos.length-1)
+        frase+='<input class="gap" data-g="'+i+'" type="text" autocomplete="off" '+
+               'spellcheck="false" aria-label="Vul woord '+(i+1)+' in">';
+    });
+    h+='<div class="banco"><b>Banco:</b>'+p.hueco.banco.map(function(w){
+         return '<span>'+w+'</span>';}).join('')+'</div>';
+    h+='<div class="hue">'+frase+'</div>';
+    h+='<div class="esc-in"><button class="btn" data-comp>Comprobar</button>'+
+       '<button class="btn sec small" data-modelo>Muéstrame</button></div>';
+  }else if(modo==='elegir'){
+    h+='<div class="ops">'+p.opciones.map(function(o,i){
+      return '<button class="op" data-i="'+i+'">'+o[0]+'</button>';}).join('')+'</div>';
+  }else{
+    h+='<div class="esc-in"><input class="tec" type="text" autocomplete="off" '+
+       'placeholder="Escribe tu respuesta en español…" aria-label="Jouw antwoord">'+
+       '<button class="btn" data-env>Decir</button>'+
+       '<button class="btn sec small" data-pista>Pista</button>'+
+       '<button class="btn sec small" data-modelo>Muéstrame</button></div>';
+  }
+  h+='<div class="fb" hidden></div>';
+  zona.innerHTML=h;
+  const fb=zona.querySelector('.fb');
+  function di(clase,texto){fb.hidden=false;fb.className='fb '+clase;fb.innerHTML=texto;}
+
+  if(modo==='completar'){
+    const gaps=[].slice.call(zona.querySelectorAll('.gap'));
+    // een woord uit de bank zetten we in het vak waar de cursor staat
+    let foco=gaps[0];
+    gaps.forEach(function(g){g.addEventListener('focus',function(){foco=g;});});
+    zona.querySelectorAll('.banco span').forEach(function(ch){
+      ch.onclick=function(){
+        if(!foco||foco.disabled) foco=gaps.filter(function(g){return !g.disabled;})[0];
+        if(!foco) return;
+        foco.value=ch.textContent; foco.focus();
+      };
+    });
+    zona.querySelector('[data-modelo]').onclick=function(){
+      usado=true; ayudas++;
+      di('','<b>Zo kan het:</b><span class="mod">'+p.modelo+'</span>');};
+    function comprueba(){
+      let todo=true, primerFallo=-1;
+      gaps.forEach(function(g,i){
+        const bien=p.hueco.respuestas[i].some(function(r){
+          return normaliza(r)===normaliza(g.value);});
+        g.classList.toggle('bien',bien);
+        g.classList.toggle('mal',!bien&&g.value.trim()!=='');
+        if(bien){ g.disabled=true; }
+        else { todo=false; if(primerFallo<0&&g.value.trim()!=='') primerFallo=i; }
+      });
+      if(todo){
+        if(!usado) solos++;
+        let dicho=p.hueco.marco;
+        p.hueco.respuestas.forEach(function(r){dicho=dicho.replace('___',r[r.length-1]);});
+        di('ok','<b>Klopt.</b> Zo zeg je het.');
+        setTimeout(function(){avanza(dicho.charAt(0).toUpperCase()+dicho.slice(1));},700);
+      }else{
+        usado=true;
+        if(primerFallo>=0){
+          avisos.push(p.hueco.mal[primerFallo].replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+p.hueco.mal[primerFallo]);
+        }else{
+          di('mal','Vul allebei de vakjes in. '+p.pista);
+        }
+      }
+    }
+    zona.querySelector('[data-comp]').onclick=comprueba;
+    gaps.forEach(function(g){g.addEventListener('keydown',function(e){
+      if(e.key==='Enter'){e.preventDefault();comprueba();}});});
+    gaps[0].focus();
+  }else if(modo==='elegir'){
+    zona.querySelectorAll('.op').forEach(function(b){
+      b.onclick=function(){
+        const o=p.opciones[+b.dataset.i];
+        if(o[1]){
+          b.classList.add('bien');
+          zona.querySelectorAll('.op').forEach(function(x){x.disabled=true;});
+          if(!usado) solos++;
+          setTimeout(function(){avanza(o[0]);},420);
+        }else{
+          b.classList.add('mal'); b.disabled=true; usado=true;
+          avisos.push(o[2].replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+o[2]);
+        }
+      };
+    });
+  }else{
+    const inp=zona.querySelector('.tec');
+    zona.querySelector('[data-pista]').onclick=function(){
+      usado=true; ayudas++; di('','<b>Pista.</b> '+p.pista);};
+    zona.querySelector('[data-modelo]').onclick=function(){
+      usado=true; ayudas++;
+      di('','<b>Zo kan het:</b><span class="mod">'+p.modelo+'</span>');};
+    function enviar(){
+      const t=inp.value.trim();
+      if(!t) return;
+      const notas=corrige(t);
+      if(casa(t,p.acepta)){
+        if(notas.length){
+          avisos.push(notas[0].nl.replace(/<[^>]+>/g,''));
+          di('ok','<b>Begrepen!</b> Eén ding nog: '+notas[0].nl+
+             '<span class="mod">'+notas[0].bien+'</span>');
+        }else{
+          // bewust géén «goed!»: de corrector kent niet alles
+          di('ok','<b>Begrepen.</b> Ik zie hier geen fouten die ik ken.');
+        }
+        if(!usado) solos++;
+        inp.disabled=true;
+        setTimeout(function(){avanza(t);},notas.length?1500:700);
+      }else{
+        usado=true;
+        if(notas.length){
+          avisos.push(notas[0].nl.replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+notas[0].nl+
+             '<span class="mod">'+notas[0].bien+'</span>');
+        }else{
+          di('mal','<b>Dat verstaat de mesero niet.</b> '+p.pista);
+        }
+      }
+    }
+    zona.querySelector('[data-env]').onclick=enviar;
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter')enviar();});
+    inp.focus();
+  }
+}
+
+raiz.querySelectorAll('.modo button').forEach(function(b){
+  b.onclick=function(){
+    modo=b.dataset.modo;
+    raiz.querySelectorAll('.modo button').forEach(function(x){
+      x.classList.toggle('on',x===b);});
+    paso=0;ayudas=0;solos=0;avisos=[];esc.innerHTML='';pinta();muestra();
+  };
+});
+pinta(); muestra();
+})();
+
+(function(){
+const D={"avatar": "🧑‍🍳", "final": "Son doscientos ochenta pesos. ¡Muchas gracias y hasta pronto!", "final_nl": "Dat is tweehonderdtachtig peso. Hartelijk dank en tot ziens!", "pasos": [{"di": "¡Buenas tardes! Bienvenido. ¿Mesa para cuántas personas?", "nl": "Goedemiddag! Welkom. Een tafel voor hoeveel personen?", "meta": "Vraag een tafel voor twee.", "opciones": [["Una mesa para dos, por favor.", true, ""], ["Un mesa para dos, por favor.", false, "<b>Mesa</b> is vrouwelijk: <i>una</i> mesa."]], "hueco": {"marco": "___ mesa ___ dos, por favor.", "respuestas": [["una"], ["para"]], "banco": ["un", "una", "para", "por", "de"], "mal": ["<b>Mesa</b> is vrouwelijk — het lidwoord moet meeveranderen.", "«Voor twee personen» is <b>para</b> dos. <i>Por</i> betekent iets anders."]}, "acepta": ["(una\\s+)?mesa\\s+para\\s+(dos|2)", "para\\s+(dos|2)\\s+personas", "somos\\s+(dos|2)"], "pista": "Begin met «Una mesa para…» en zeg hoeveel personen.", "modelo": "Una mesa para dos, por favor."}, {"di": "Perfecto, por aquí. Aquí tienen la carta. ¿Qué van a tomar?", "nl": "Prima, deze kant op. Hier is de kaart. Wat wilt u drinken?", "meta": "Bestel iets te drinken. Beleefd graag.", "opciones": [["¿Me pone un agua, por favor?", true, ""], ["Quiero un agua.", false, "Inhoudelijk juist, maar het klinkt kortaf. Zet er <b>por favor</b> bij, of gebruik <b>¿me pone…?</b>"], ["Yo gusto un refresco.", false, "«Ik wil» is niet «yo gusto». Gebruik <b>quiero</b>, <b>para mí</b> of <b>¿me pone…?</b> — en <i>me gusta</i> betekent «ik vind lekker»."]], "hueco": {"marco": "¿___ ___ un agua, por favor?", "respuestas": [["me"], ["pone", "trae"]], "banco": ["me", "yo", "pone", "trae", "gusta"], "mal": ["Het is <b>me</b> pone — «zet u míj». «Yo pone» bestaat niet.", "Gebruik <b>pone</b> (zet u me) of <b>trae</b> (brengt u me)."]}, "acepta": ["(me\\s+pone|me\\s+trae|quiero|para\\s+m[ií]|voy\\s+a\\s+tomar)", "(un|una|el|la)\\s+(agua|refresco|zumo|caf[eé]|t[eé]|leche)"], "pista": "Kies uit: el agua · el refresco · el zumo · el café · el té. Zeg het met «¿Me pone…?» of «Para mí…».", "modelo": "¿Me pone un agua, por favor?"}, {"di": "Muy bien. De primer plato tenemos sopa, ensalada y guacamole con totopos.", "nl": "Heel goed. Als voorgerecht hebben we soep, salade en guacamole met chips.", "meta": "Kies een voorgerecht.", "opciones": [["Para mí, la sopa.", true, ""], ["Para mí, el sopa.", false, "<b>La sopa</b> — dit woord is vrouwelijk."], ["Yo quiero la sopa porque tengo hambre y la sopa está muy rico.", false, "Bijna! Maar <b>la sopa</b> is vrouwelijk, dus: «está muy <i>rica</i>»."]], "hueco": {"marco": "Para ___, ___ sopa.", "respuestas": [["mi", "mí"], ["la"]], "banco": ["mí", "yo", "la", "el", "una"], "mal": ["Na een voorzetsel wordt <i>yo</i> → <b>mí</b>: «para mí».", "<b>La sopa</b> — dit woord is vrouwelijk."]}, "acepta": ["(para\\s+m[ií]|quiero|me\\s+pone|voy\\s+a\\s+tomar)", "(la\\s+)?(sopa|ensalada|guacamole)"], "pista": "Zeg «Para mí, …» en kies: la sopa · la ensalada · el guacamole.", "modelo": "Para mí, la sopa, por favor."}, {"di": "¿Y de plato fuerte? Hay tacos de pollo, pescado a la plancha y arroz con verduras.", "nl": "En als hoofdgerecht? Er zijn kiptaco's, gegrilde vis en rijst met groenten.", "meta": "Kies een hoofdgerecht. Zeg er iets bij: waarom, of hoe je het wil.", "opciones": [["Quiero los tacos de pollo, por favor. Me gustan mucho.", true, ""], ["Quiero los tacos de pollo. Yo gusto mucho.", false, "Bijna. «Ik vind ze lekker» is <b>me gustan</b> — bij meerdere dingen wordt het <i>gustan</i>."], ["Quiero el pescado, luego no como carne.", false, "«Dus» is niet <i>luego</i> (= later). Hier past <b>porque</b>: «…porque no como carne»."]], "hueco": {"marco": "Quiero los tacos de pollo. Me ___ mucho ___ son ricos.", "respuestas": [["gustan"], ["porque"]], "banco": ["gusta", "gustan", "porque", "por qué", "luego"], "mal": ["Meer dan één ding → <b>me gustan</b>, met -n.", "«Want» én «omdat» zijn allebei <b>porque</b>, aan elkaar en zonder accent."]}, "acepta": ["(quiero|para\\s+m[ií]|me\\s+pone|voy\\s+a\\s+tomar)", "(tacos|pescado|arroz|pollo)"], "pista": "Kies: los tacos de pollo · el pescado · el arroz. Voeg er iets aan toe met «me gusta(n)» of «porque…».", "modelo": "Quiero los tacos de pollo, por favor. Me gustan mucho."}, {"di": "¡Que aproveche!  …  ¿Todo bien? ¿Van a tomar postre? Hay churros y fruta.", "nl": "Eet smakelijk!  …  Alles goed? Neemt u een nagerecht? Er zijn churros en fruit.", "meta": "Zeg dat het lekker was en kies een nagerecht — of sla het beleefd af.", "opciones": [["Está muy rico, gracias. De postre, los churros.", true, ""], ["Está muy rico, gracias. De postre, el churros.", false, "<b>Los churros</b> — het is meervoud."], ["No, gracias. Estoy lleno.", true, ""]], "hueco": {"marco": "___ muy rico, gracias. De postre, ___ churros.", "respuestas": [["esta", "está"], ["los"]], "banco": ["está", "es", "los", "el", "las"], "mal": ["Hoe iets nú smaakt is <b>está</b>, niet <i>es</i>.", "<b>Los churros</b> — meervoud."]}, "acepta": ["(churros|fruta|manzana|pl[aá]tano|fresa|uvas|pi[ñn]a)", "no,?\\s*gracias"], "pista": "Zeg eerst dat het lekker is («está muy rico») en kies dan: los churros · la fruta. Of sla af met «No, gracias».", "modelo": "Está muy rico, gracias. De postre, los churros."}, {"di": "Claro que sí. ¿Algo más?", "nl": "Natuurlijk. Nog iets anders?", "meta": "Vraag de rekening.", "opciones": [["¿Me trae la cuenta, por favor?", true, ""], ["¿Me trae el cuenta, por favor?", false, "<b>La cuenta</b> — vrouwelijk."]], "hueco": {"marco": "¿Me ___ ___ cuenta, por favor?", "respuestas": [["trae", "pone"], ["la"]], "banco": ["trae", "pone", "la", "el", "una"], "mal": ["<b>Trae</b> = brengt u me. Dat is wat je hier vraagt.", "<b>La cuenta</b> — vrouwelijk."]}, "acepta": ["(la\\s+)?cuenta"], "pista": "Het woord dat je zoekt staat bij «restaurante» in je woordenlijst: la c___.", "modelo": "¿Me trae la cuenta, por favor?"}]}, R=[{"id": "gustar-yo", "re": "\\byo\\s+gust", "nl": "«Ik vind leuk» is in het Spaans omgekeerd: het ding bevalt <b>mij</b>. Dus niet «yo gusto» maar <b>me gusta</b>.", "bien": "Me gusta el chocolate."}, {"id": "gustar-tu", "re": "\\bt[uú]\\s+gustas\\b", "nl": "Ook hier omgekeerd: niet «tú gustas» maar <b>te gusta</b>.", "bien": "¿Te gusta la paella?"}, {"id": "gustar-concordancia", "re": "\\bme\\s+gusta\\s+los\\b|\\bme\\s+gusta\\s+las\\b", "nl": "Meervoud: bij meer dan één ding wordt het <b>me gustan</b>.", "bien": "Me gustan los tacos."}, {"id": "estar-frio-persoon", "re": "\\b(estoy|est[aá]s|est[aá])\\s+(fr[ií]o|calor)\\b", "nl": "Over jezelf gebruik je <b>tener</b>: «tengo frío». «Estoy frío» betekent dat je lichaam koud aanvoelt — dat is iets heel anders.", "bien": "Tengo frío. · Hace frío."}, {"id": "hacer-tiempo", "re": "\\b(es|est[aá])\\s+(fr[ií]o|calor|sol|viento)\\b", "nl": "Het weer krijgt <b>hacer</b>: «hace frío», «hace sol».", "bien": "Hoy hace mucho calor."}, {"id": "ser-lugar", "re": "\\bes\\s+en\\s+(la|el|mi|tu)\\b", "nl": "Waar iets is, zeg je met <b>estar</b>, niet met «ser».", "bien": "El libro está en la mesa."}, {"id": "soy-anos", "re": "\\bsoy\\s+\\w*\\s*a[ñn]os\\b|\\bsoy\\s+\\d+\\s*a[ñn]os\\b", "nl": "Leeftijd krijgt <b>tener</b>: je «hébt» jaren in het Spaans.", "bien": "Tengo dieciséis años."}, {"id": "soy-de-ciudad-vivir", "re": "\\bsoy\\s+en\\s+\\w+", "nl": "«Ik kom uit» is <b>soy de</b>; «ik woon in» is <b>vivo en</b>.", "bien": "Soy de Gante y vivo en Brujas."}, {"id": "luego-dus", "re": ",\\s*luego\\b", "nl": "Als je hier «dus» bedoelt, is dat <b>así que</b> of <b>por eso</b>. <i>Luego</i> betekent «daarna» — dat kan wél, maar dan zonder komma: «y luego…».", "bien": "Hace calor, así que voy a la playa."}, {"id": "porque-pregunta", "re": "\\bporque\\s+(no\\s+)?(vas|vienes|comes|quieres|est[aá]s)\\b\\s*\\?", "nl": "In een vráág schrijf je <b>por qué</b>: twee woorden, met accent. <i>Porque</i> (aan elkaar) is het antwoord.", "bien": "¿Por qué no vienes? — Porque estoy enfermo."}, {"id": "want-omdat", "re": "\\b(want|omdat|dus)\\b", "nl": "Er staat een Nederlands woord in je zin. «Want» én «omdat» zijn allebei <b>porque</b>; «dus» is <b>así que</b>.", "bien": "No como carne porque soy vegetariano."}, {"id": "ir-a", "re": "\\bvoy\\s+(el|la|los|las)\\b", "nl": "Na <b>ir</b> hoort <b>a</b>: «voy a la playa», «voy al mercado».", "bien": "Voy a la escuela."}, {"id": "tener-que", "re": "\\btengo\\s+(de|a)\\s+\\w+ar\\b|\\btengo\\s+(de|a)\\s+\\w+er\\b", "nl": "«Ik moet» is <b>tengo que</b> + hele werkwoord.", "bien": "Tengo que estudiar."}, {"id": "ir-a-inf", "re": "\\bvoy\\s+\\w+ar\\b(?!\\s)", "nl": "Een plan maak je met <b>voy a</b> + hele werkwoord.", "bien": "Voy a comer."}, {"id": "el-agua-la", "re": "\\bla\\s+agua\\b", "nl": "<b>El agua</b> — het is wél vrouwelijk, maar krijgt <i>el</i> omdat het met een beklemtoonde a begint. Het bijvoeglijk naamwoord blijft vrouwelijk.", "bien": "El agua está fría."}, {"id": "un-una-comida", "re": "\\bun\\s+(sopa|carta|cuenta|mesa|servilleta|cuchara|manzana|naranja|piña|lechuga|cebolla)\\b", "nl": "Dit woord is vrouwelijk: <b>una</b>, niet «un».", "bien": "Una sopa, por favor."}, {"id": "una-masculino", "re": "\\buna\\s+(pan|queso|pollo|pescado|arroz|plato|vaso|tenedor|cuchillo|caf[eé]|men[uú])\\b", "nl": "Dit woord is mannelijk: <b>un</b>, niet «una».", "bien": "Un café, por favor."}, {"id": "quiero-seco", "re": "^(?!.*por\\s+favor)\\s*(quiero|dame|trae)\\b[^?]*$", "nl": "Dit klinkt kortaf. Zet er <b>por favor</b> bij, of gebruik <b>¿me pone…?</b> of <b>para mí…</b>.", "bien": "¿Me pone un café, por favor?"}, {"id": "acento-que", "re": "\\bque\\s+(quiere|quieres|va|tal)\\b\\s*\\?", "nl": "In een vraag draagt <b>qué</b> een accent.", "bien": "¿Qué quiere tomar?"}, {"id": "apertura", "re": "^(?![^?]*¿)[^?]*\\w[^?]*\\?\\s*$", "nl": "In het Spaans staat het vraagteken er <b>twee keer</b>: ¿ aan het begin en ? aan het eind.", "bien": "¿Cuánto cuesta?"}, {"id": "nn-ñ", "re": "\\b(anos|manana|nino|espanol|senor)\\b", "nl": "Hier hoort een <b>ñ</b>: años · mañana · niño · español · señor.", "bien": "Tengo dieciséis años."}];
+const raiz=document.getElementById('rol_c5_u5');
+if(!raiz) return;
+
+// accenten en hoofdletters mogen niet uitmaken: een leerling die «cafe» typt
+// bedoelt «café», en daar is deze oefening het moment niet voor.
+function normaliza(s){
+  return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+         .replace(/\s+/g,' ').trim();
+}
+function casa(txt,pats){
+  const t=normaliza(txt);
+  return pats.some(function(p){
+    return new RegExp(p.normalize('NFD').replace(/[\u0300-\u036f]/g,''),'i').test(t);
+  });
+}
+// De corrector kent alleen wat in corrector_data.py staat. Hij mag daarom
+// nooit «goed!» zeggen — zie de kop van dat bestand.
+function corrige(txt){
+  const out=[];
+  R.forEach(function(r){
+    if(new RegExp(r.re,'i').test(txt)) out.push(r);
+  });
+  return out;
+}
+
+let paso=0, modo='completar', ayudas=0, solos=0, avisos=[];
+const esc=raiz.querySelector('.esc'), zona=raiz.querySelector('.zona'),
+      barra=raiz.querySelector('.barra');
+
+function burbuja(quien,txt,nl){
+  const b=document.createElement('div');
+  b.className='b'+(quien==='yo'?' yo':'');
+  b.innerHTML='<div class="av">'+(quien==='yo'?'TÚ':D.avatar)+'</div>'+
+    '<div class="tx">'+txt+(nl?'<span class="nl">'+nl+'</span>':'')+'</div>';
+  esc.appendChild(b); esc.scrollTop=esc.scrollHeight;
+}
+function pinta(){
+  barra.innerHTML=D.pasos.map(function(_,i){
+    return '<i class="'+(i<paso?'on':'')+'"></i>';}).join('');
+}
+
+function avanza(dicho){
+  burbuja('yo',dicho);
+  paso++; pinta();
+  if(paso>=D.pasos.length){ return fin(); }
+  setTimeout(muestra,340);
+}
+
+function fin(){
+  const p=D.pasos.length;
+  burbuja('otro',D.final,D.final_nl);
+  let li='';
+  li+='<li>Beurten zonder hulp: <b>'+solos+' van de '+p+'</b></li>';
+  li+='<li>Hulp gevraagd: <b>'+ayudas+'×</b></li>';
+  if(avisos.length){
+    li+='<li>Waar je op mag letten:<br>'+
+        avisos.filter(function(v,i,a){return a.indexOf(v)===i;})
+              .map(function(v){return '• '+v;}).join('<br>')+'</li>';
+  }
+  zona.innerHTML='<div class="fin"><div class="grande">¡Ya está! 🎉</div>'+
+    '<p class="lead" style="margin:0 auto">Je hebt de hele scène afgewerkt.</p>'+
+    '<ul class="tally">'+li+'</ul>'+
+    '<button class="btn" style="margin-top:12px" data-otra>Otra vez</button></div>';
+  zona.querySelector('[data-otra]').onclick=function(){
+    paso=0;ayudas=0;solos=0;avisos=[];esc.innerHTML='';pinta();muestra();};
+}
+
+function muestra(){
+  const p=D.pasos[paso];
+  let usado=false;                       // hulp gebruikt in déze beurt
+  burbuja('otro',p.di,p.nl);
+  let h='<div class="meta"><span class="pill">Tu turno</span>'+p.meta+'</div>';
+  if(modo==='completar'){
+    // de zin met gaten; het aantal invulvakken volgt uit het kader zelf
+    const trozos=p.hueco.marco.split('___');
+    let frase='';
+    trozos.forEach(function(t,i){
+      frase+=t.replace(/</g,'&lt;');
+      if(i<trozos.length-1)
+        frase+='<input class="gap" data-g="'+i+'" type="text" autocomplete="off" '+
+               'spellcheck="false" aria-label="Vul woord '+(i+1)+' in">';
+    });
+    h+='<div class="banco"><b>Banco:</b>'+p.hueco.banco.map(function(w){
+         return '<span>'+w+'</span>';}).join('')+'</div>';
+    h+='<div class="hue">'+frase+'</div>';
+    h+='<div class="esc-in"><button class="btn" data-comp>Comprobar</button>'+
+       '<button class="btn sec small" data-modelo>Muéstrame</button></div>';
+  }else if(modo==='elegir'){
+    h+='<div class="ops">'+p.opciones.map(function(o,i){
+      return '<button class="op" data-i="'+i+'">'+o[0]+'</button>';}).join('')+'</div>';
+  }else{
+    h+='<div class="esc-in"><input class="tec" type="text" autocomplete="off" '+
+       'placeholder="Escribe tu respuesta en español…" aria-label="Jouw antwoord">'+
+       '<button class="btn" data-env>Decir</button>'+
+       '<button class="btn sec small" data-pista>Pista</button>'+
+       '<button class="btn sec small" data-modelo>Muéstrame</button></div>';
+  }
+  h+='<div class="fb" hidden></div>';
+  zona.innerHTML=h;
+  const fb=zona.querySelector('.fb');
+  function di(clase,texto){fb.hidden=false;fb.className='fb '+clase;fb.innerHTML=texto;}
+
+  if(modo==='completar'){
+    const gaps=[].slice.call(zona.querySelectorAll('.gap'));
+    // een woord uit de bank zetten we in het vak waar de cursor staat
+    let foco=gaps[0];
+    gaps.forEach(function(g){g.addEventListener('focus',function(){foco=g;});});
+    zona.querySelectorAll('.banco span').forEach(function(ch){
+      ch.onclick=function(){
+        if(!foco||foco.disabled) foco=gaps.filter(function(g){return !g.disabled;})[0];
+        if(!foco) return;
+        foco.value=ch.textContent; foco.focus();
+      };
+    });
+    zona.querySelector('[data-modelo]').onclick=function(){
+      usado=true; ayudas++;
+      di('','<b>Zo kan het:</b><span class="mod">'+p.modelo+'</span>');};
+    function comprueba(){
+      let todo=true, primerFallo=-1;
+      gaps.forEach(function(g,i){
+        const bien=p.hueco.respuestas[i].some(function(r){
+          return normaliza(r)===normaliza(g.value);});
+        g.classList.toggle('bien',bien);
+        g.classList.toggle('mal',!bien&&g.value.trim()!=='');
+        if(bien){ g.disabled=true; }
+        else { todo=false; if(primerFallo<0&&g.value.trim()!=='') primerFallo=i; }
+      });
+      if(todo){
+        if(!usado) solos++;
+        let dicho=p.hueco.marco;
+        p.hueco.respuestas.forEach(function(r){dicho=dicho.replace('___',r[r.length-1]);});
+        di('ok','<b>Klopt.</b> Zo zeg je het.');
+        setTimeout(function(){avanza(dicho.charAt(0).toUpperCase()+dicho.slice(1));},700);
+      }else{
+        usado=true;
+        if(primerFallo>=0){
+          avisos.push(p.hueco.mal[primerFallo].replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+p.hueco.mal[primerFallo]);
+        }else{
+          di('mal','Vul allebei de vakjes in. '+p.pista);
+        }
+      }
+    }
+    zona.querySelector('[data-comp]').onclick=comprueba;
+    gaps.forEach(function(g){g.addEventListener('keydown',function(e){
+      if(e.key==='Enter'){e.preventDefault();comprueba();}});});
+    gaps[0].focus();
+  }else if(modo==='elegir'){
+    zona.querySelectorAll('.op').forEach(function(b){
+      b.onclick=function(){
+        const o=p.opciones[+b.dataset.i];
+        if(o[1]){
+          b.classList.add('bien');
+          zona.querySelectorAll('.op').forEach(function(x){x.disabled=true;});
+          if(!usado) solos++;
+          setTimeout(function(){avanza(o[0]);},420);
+        }else{
+          b.classList.add('mal'); b.disabled=true; usado=true;
+          avisos.push(o[2].replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+o[2]);
+        }
+      };
+    });
+  }else{
+    const inp=zona.querySelector('.tec');
+    zona.querySelector('[data-pista]').onclick=function(){
+      usado=true; ayudas++; di('','<b>Pista.</b> '+p.pista);};
+    zona.querySelector('[data-modelo]').onclick=function(){
+      usado=true; ayudas++;
+      di('','<b>Zo kan het:</b><span class="mod">'+p.modelo+'</span>');};
+    function enviar(){
+      const t=inp.value.trim();
+      if(!t) return;
+      const notas=corrige(t);
+      if(casa(t,p.acepta)){
+        if(notas.length){
+          avisos.push(notas[0].nl.replace(/<[^>]+>/g,''));
+          di('ok','<b>Begrepen!</b> Eén ding nog: '+notas[0].nl+
+             '<span class="mod">'+notas[0].bien+'</span>');
+        }else{
+          // bewust géén «goed!»: de corrector kent niet alles
+          di('ok','<b>Begrepen.</b> Ik zie hier geen fouten die ik ken.');
+        }
+        if(!usado) solos++;
+        inp.disabled=true;
+        setTimeout(function(){avanza(t);},notas.length?1500:700);
+      }else{
+        usado=true;
+        if(notas.length){
+          avisos.push(notas[0].nl.replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+notas[0].nl+
+             '<span class="mod">'+notas[0].bien+'</span>');
+        }else{
+          di('mal','<b>Dat verstaat de mesero niet.</b> '+p.pista);
+        }
+      }
+    }
+    zona.querySelector('[data-env]').onclick=enviar;
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter')enviar();});
+    inp.focus();
+  }
+}
+
+raiz.querySelectorAll('.modo button').forEach(function(b){
+  b.onclick=function(){
+    modo=b.dataset.modo;
+    raiz.querySelectorAll('.modo button').forEach(function(x){
+      x.classList.toggle('on',x===b);});
+    paso=0;ayudas=0;solos=0;avisos=[];esc.innerHTML='';pinta();muestra();
+  };
+});
+pinta(); muestra();
+})();
+
+(function(){
+const D={"avatar": "👕", "final": "¡Perfecto! Pase por la caja, por favor. ¡Que la disfrute!", "final_nl": "Perfect! Gaat u naar de kassa, alstublieft. Veel plezier ermee!", "pasos": [{"di": "¡Buenas! ¿Qué desea?", "nl": "Goeiedag! Waarmee kan ik u helpen?", "meta": "Zeg wat je zoekt en in welke kleur.", "opciones": [["Busco una camiseta negra.", true, ""], ["Busco un camiseta negro.", false, "Twee keer mis: <b>una</b> camiseta (vrouwelijk) en dus ook <b>negra</b>."]], "hueco": {"marco": "Busco ___ camiseta ___.", "respuestas": [["una"], ["negra"]], "banco": ["un", "una", "negro", "negra", "azul"], "mal": ["<b>Camiseta</b> is vrouwelijk: <i>una</i> camiseta.", "De kleur past zich aan: bij <i>camiseta</i> hoort <b>negra</b>."]}, "acepta": ["busco\\s+(un|una)\\s+\\w+", "quiero\\s+(un|una)\\s+\\w+", "(camiseta|camisa|jersey|sudadera|chaqueta|pantalones|falda|vestido)"], "pista": "«Busco una …» + kledingstuk + kleur. Let op: de kleur volgt het woord.", "modelo": "Busco una camiseta negra."}, {"di": "Tenemos varias. ¿Qué talla usa?", "nl": "We hebben er verschillende. Welke maat hebt u?", "meta": "Zeg je maat.", "opciones": [["Uso la talla eme.", true, ""], ["Soy la talla eme.", false, "Met <i>ser</i> zeg je wie je bént. Voor een maat: <b>uso</b> of <b>llevo</b>."], ["Uso el número eme.", false, "<b>La talla</b> is voor kleren; <i>el número</i> gebruik je voor schoenen."]], "hueco": {"marco": "___ la ___ eme.", "respuestas": [["uso", "llevo"], ["talla"]], "banco": ["uso", "soy", "talla", "número", "medida"], "mal": ["Voor kleding zeg je <b>uso</b> of <b>llevo</b> la talla…", "Bij kleding is het <b>la talla</b>; <i>el número</i> is voor schoenen."]}, "acepta": ["(uso|llevo)\\s+la\\s+talla", "\\btalla\\b", "\\b(eme|ese|ele|\\d+)\\b"], "pista": "«Uso la talla …» — eme, ese of ele.", "modelo": "Uso la talla eme."}, {"di": "Aquí tiene. El probador está al fondo, a la derecha.", "nl": "Alstublieft. De paskamer is achteraan, rechts.", "meta": "Vraag of je het mag passen.", "opciones": [["¿Puedo probármela?", true, ""], ["¿Puedo probármelo?", false, "Het gaat over <i>la camiseta</i>, vrouwelijk: <b>probármela</b>."]], "hueco": {"marco": "¿___ ___?", "respuestas": [["puedo"], ["probármela", "probarmela", "probármelo"]], "banco": ["puedo", "puedes", "probármela", "probar", "llevar"], "mal": ["Bij <i>yo</i>: <b>puedo</b> (o → ue).", "Het is <b>probármela</b>: passen + mij + haar (de camiseta)."]}, "acepta": ["puedo\\s+prob", "\\bprob[a\\u00e1]r"], "pista": "«¿Puedo probárme…?» — en dan -la voor <i>la camiseta</i>.", "modelo": "¿Puedo probármela?"}, {"di": "¡Claro! … ¿Qué tal le queda?", "nl": "Natuurlijk! … Hoe zit hij?", "meta": "Zeg dat hij goed zit, en vraag de prijs.", "opciones": [["Me queda bien. ¿Cuánto cuesta?", true, ""], ["Me quedan bien. ¿Cuánto cuesta?", false, "Één camiseta → <b>me queda</b>. Met <i>quedan</i> praat je over meerdere stuks."], ["Me queda bien. ¿Cómo cuesta?", false, "Naar een prijs vraag je met <b>cuánto</b>, niet <i>cómo</i>."]], "hueco": {"marco": "Me ___ bien. ¿___ cuesta?", "respuestas": [["queda"], ["cuánto", "cuanto"]], "banco": ["queda", "quedan", "cuánto", "cómo", "qué"], "mal": ["Één kledingstuk → <b>me queda</b>, zonder -n.", "Naar een prijs vraag je met <b>¿cuánto cuesta?</b>"]}, "acepta": ["me\\s+queda", "cu[a\\u00e1]nto\\s+cuesta"], "pista": "Twee stukken: «Me queda bien» en «¿Cuánto cuesta?».", "modelo": "Me queda bien. ¿Cuánto cuesta?"}, {"di": "Doscientos cincuenta pesos. Está de rebajas.", "nl": "Tweehonderdvijftig peso. Hij is afgeprijsd.", "meta": "Beslis: je neemt hem.", "opciones": [["Vale, me la llevo.", true, ""], ["Vale, me lo llevo.", false, "Het gaat over <i>la camiseta</i>, vrouwelijk: <b>me la llevo</b>."]], "hueco": {"marco": "Vale, ___ ___ llevo.", "respuestas": [["me"], ["la"]], "banco": ["me", "te", "la", "lo", "los"], "mal": ["De vaste uitdrukking is <b>me lo/la llevo</b> — «ik neem hem mee».", "Het gaat over <i>la camiseta</i>: <b>la</b>."]}, "acepta": ["me\\s+l[oa]\\s+llevo", "\\bllevo\\b"], "pista": "De vaste uitdrukking: «me la llevo».", "modelo": "Vale, me la llevo."}]}, R=[{"id": "gustar-yo", "re": "\\byo\\s+gust", "nl": "«Ik vind leuk» is in het Spaans omgekeerd: het ding bevalt <b>mij</b>. Dus niet «yo gusto» maar <b>me gusta</b>.", "bien": "Me gusta el chocolate."}, {"id": "gustar-tu", "re": "\\bt[uú]\\s+gustas\\b", "nl": "Ook hier omgekeerd: niet «tú gustas» maar <b>te gusta</b>.", "bien": "¿Te gusta la paella?"}, {"id": "gustar-concordancia", "re": "\\bme\\s+gusta\\s+los\\b|\\bme\\s+gusta\\s+las\\b", "nl": "Meervoud: bij meer dan één ding wordt het <b>me gustan</b>.", "bien": "Me gustan los tacos."}, {"id": "estar-frio-persoon", "re": "\\b(estoy|est[aá]s|est[aá])\\s+(fr[ií]o|calor)\\b", "nl": "Over jezelf gebruik je <b>tener</b>: «tengo frío». «Estoy frío» betekent dat je lichaam koud aanvoelt — dat is iets heel anders.", "bien": "Tengo frío. · Hace frío."}, {"id": "hacer-tiempo", "re": "\\b(es|est[aá])\\s+(fr[ií]o|calor|sol|viento)\\b", "nl": "Het weer krijgt <b>hacer</b>: «hace frío», «hace sol».", "bien": "Hoy hace mucho calor."}, {"id": "ser-lugar", "re": "\\bes\\s+en\\s+(la|el|mi|tu)\\b", "nl": "Waar iets is, zeg je met <b>estar</b>, niet met «ser».", "bien": "El libro está en la mesa."}, {"id": "soy-anos", "re": "\\bsoy\\s+\\w*\\s*a[ñn]os\\b|\\bsoy\\s+\\d+\\s*a[ñn]os\\b", "nl": "Leeftijd krijgt <b>tener</b>: je «hébt» jaren in het Spaans.", "bien": "Tengo dieciséis años."}, {"id": "soy-de-ciudad-vivir", "re": "\\bsoy\\s+en\\s+\\w+", "nl": "«Ik kom uit» is <b>soy de</b>; «ik woon in» is <b>vivo en</b>.", "bien": "Soy de Gante y vivo en Brujas."}, {"id": "luego-dus", "re": ",\\s*luego\\b", "nl": "Als je hier «dus» bedoelt, is dat <b>así que</b> of <b>por eso</b>. <i>Luego</i> betekent «daarna» — dat kan wél, maar dan zonder komma: «y luego…».", "bien": "Hace calor, así que voy a la playa."}, {"id": "porque-pregunta", "re": "\\bporque\\s+(no\\s+)?(vas|vienes|comes|quieres|est[aá]s)\\b\\s*\\?", "nl": "In een vráág schrijf je <b>por qué</b>: twee woorden, met accent. <i>Porque</i> (aan elkaar) is het antwoord.", "bien": "¿Por qué no vienes? — Porque estoy enfermo."}, {"id": "want-omdat", "re": "\\b(want|omdat|dus)\\b", "nl": "Er staat een Nederlands woord in je zin. «Want» én «omdat» zijn allebei <b>porque</b>; «dus» is <b>así que</b>.", "bien": "No como carne porque soy vegetariano."}, {"id": "ir-a", "re": "\\bvoy\\s+(el|la|los|las)\\b", "nl": "Na <b>ir</b> hoort <b>a</b>: «voy a la playa», «voy al mercado».", "bien": "Voy a la escuela."}, {"id": "tener-que", "re": "\\btengo\\s+(de|a)\\s+\\w+ar\\b|\\btengo\\s+(de|a)\\s+\\w+er\\b", "nl": "«Ik moet» is <b>tengo que</b> + hele werkwoord.", "bien": "Tengo que estudiar."}, {"id": "ir-a-inf", "re": "\\bvoy\\s+\\w+ar\\b(?!\\s)", "nl": "Een plan maak je met <b>voy a</b> + hele werkwoord.", "bien": "Voy a comer."}, {"id": "el-agua-la", "re": "\\bla\\s+agua\\b", "nl": "<b>El agua</b> — het is wél vrouwelijk, maar krijgt <i>el</i> omdat het met een beklemtoonde a begint. Het bijvoeglijk naamwoord blijft vrouwelijk.", "bien": "El agua está fría."}, {"id": "un-una-comida", "re": "\\bun\\s+(sopa|carta|cuenta|mesa|servilleta|cuchara|manzana|naranja|piña|lechuga|cebolla)\\b", "nl": "Dit woord is vrouwelijk: <b>una</b>, niet «un».", "bien": "Una sopa, por favor."}, {"id": "una-masculino", "re": "\\buna\\s+(pan|queso|pollo|pescado|arroz|plato|vaso|tenedor|cuchillo|caf[eé]|men[uú])\\b", "nl": "Dit woord is mannelijk: <b>un</b>, niet «una».", "bien": "Un café, por favor."}, {"id": "quiero-seco", "re": "^(?!.*por\\s+favor)\\s*(quiero|dame|trae)\\b[^?]*$", "nl": "Dit klinkt kortaf. Zet er <b>por favor</b> bij, of gebruik <b>¿me pone…?</b> of <b>para mí…</b>.", "bien": "¿Me pone un café, por favor?"}, {"id": "acento-que", "re": "\\bque\\s+(quiere|quieres|va|tal)\\b\\s*\\?", "nl": "In een vraag draagt <b>qué</b> een accent.", "bien": "¿Qué quiere tomar?"}, {"id": "apertura", "re": "^(?![^?]*¿)[^?]*\\w[^?]*\\?\\s*$", "nl": "In het Spaans staat het vraagteken er <b>twee keer</b>: ¿ aan het begin en ? aan het eind.", "bien": "¿Cuánto cuesta?"}, {"id": "nn-ñ", "re": "\\b(anos|manana|nino|espanol|senor)\\b", "nl": "Hier hoort een <b>ñ</b>: años · mañana · niño · español · señor.", "bien": "Tengo dieciséis años."}];
+const raiz=document.getElementById('rol_c5_u6');
+if(!raiz) return;
+
+// accenten en hoofdletters mogen niet uitmaken: een leerling die «cafe» typt
+// bedoelt «café», en daar is deze oefening het moment niet voor.
+function normaliza(s){
+  return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+         .replace(/\s+/g,' ').trim();
+}
+function casa(txt,pats){
+  const t=normaliza(txt);
+  return pats.some(function(p){
+    return new RegExp(p.normalize('NFD').replace(/[\u0300-\u036f]/g,''),'i').test(t);
+  });
+}
+// De corrector kent alleen wat in corrector_data.py staat. Hij mag daarom
+// nooit «goed!» zeggen — zie de kop van dat bestand.
+function corrige(txt){
+  const out=[];
+  R.forEach(function(r){
+    if(new RegExp(r.re,'i').test(txt)) out.push(r);
+  });
+  return out;
+}
+
+let paso=0, modo='completar', ayudas=0, solos=0, avisos=[];
+const esc=raiz.querySelector('.esc'), zona=raiz.querySelector('.zona'),
+      barra=raiz.querySelector('.barra');
+
+function burbuja(quien,txt,nl){
+  const b=document.createElement('div');
+  b.className='b'+(quien==='yo'?' yo':'');
+  b.innerHTML='<div class="av">'+(quien==='yo'?'TÚ':D.avatar)+'</div>'+
+    '<div class="tx">'+txt+(nl?'<span class="nl">'+nl+'</span>':'')+'</div>';
+  esc.appendChild(b); esc.scrollTop=esc.scrollHeight;
+}
+function pinta(){
+  barra.innerHTML=D.pasos.map(function(_,i){
+    return '<i class="'+(i<paso?'on':'')+'"></i>';}).join('');
+}
+
+function avanza(dicho){
+  burbuja('yo',dicho);
+  paso++; pinta();
+  if(paso>=D.pasos.length){ return fin(); }
+  setTimeout(muestra,340);
+}
+
+function fin(){
+  const p=D.pasos.length;
+  burbuja('otro',D.final,D.final_nl);
+  let li='';
+  li+='<li>Beurten zonder hulp: <b>'+solos+' van de '+p+'</b></li>';
+  li+='<li>Hulp gevraagd: <b>'+ayudas+'×</b></li>';
+  if(avisos.length){
+    li+='<li>Waar je op mag letten:<br>'+
+        avisos.filter(function(v,i,a){return a.indexOf(v)===i;})
+              .map(function(v){return '• '+v;}).join('<br>')+'</li>';
+  }
+  zona.innerHTML='<div class="fin"><div class="grande">¡Ya está! 🎉</div>'+
+    '<p class="lead" style="margin:0 auto">Je hebt de hele scène afgewerkt.</p>'+
+    '<ul class="tally">'+li+'</ul>'+
+    '<button class="btn" style="margin-top:12px" data-otra>Otra vez</button></div>';
+  zona.querySelector('[data-otra]').onclick=function(){
+    paso=0;ayudas=0;solos=0;avisos=[];esc.innerHTML='';pinta();muestra();};
+}
+
+function muestra(){
+  const p=D.pasos[paso];
+  let usado=false;                       // hulp gebruikt in déze beurt
+  burbuja('otro',p.di,p.nl);
+  let h='<div class="meta"><span class="pill">Tu turno</span>'+p.meta+'</div>';
+  if(modo==='completar'){
+    // de zin met gaten; het aantal invulvakken volgt uit het kader zelf
+    const trozos=p.hueco.marco.split('___');
+    let frase='';
+    trozos.forEach(function(t,i){
+      frase+=t.replace(/</g,'&lt;');
+      if(i<trozos.length-1)
+        frase+='<input class="gap" data-g="'+i+'" type="text" autocomplete="off" '+
+               'spellcheck="false" aria-label="Vul woord '+(i+1)+' in">';
+    });
+    h+='<div class="banco"><b>Banco:</b>'+p.hueco.banco.map(function(w){
+         return '<span>'+w+'</span>';}).join('')+'</div>';
+    h+='<div class="hue">'+frase+'</div>';
+    h+='<div class="esc-in"><button class="btn" data-comp>Comprobar</button>'+
+       '<button class="btn sec small" data-modelo>Muéstrame</button></div>';
+  }else if(modo==='elegir'){
+    h+='<div class="ops">'+p.opciones.map(function(o,i){
+      return '<button class="op" data-i="'+i+'">'+o[0]+'</button>';}).join('')+'</div>';
+  }else{
+    h+='<div class="esc-in"><input class="tec" type="text" autocomplete="off" '+
+       'placeholder="Escribe tu respuesta en español…" aria-label="Jouw antwoord">'+
+       '<button class="btn" data-env>Decir</button>'+
+       '<button class="btn sec small" data-pista>Pista</button>'+
+       '<button class="btn sec small" data-modelo>Muéstrame</button></div>';
+  }
+  h+='<div class="fb" hidden></div>';
+  zona.innerHTML=h;
+  const fb=zona.querySelector('.fb');
+  function di(clase,texto){fb.hidden=false;fb.className='fb '+clase;fb.innerHTML=texto;}
+
+  if(modo==='completar'){
+    const gaps=[].slice.call(zona.querySelectorAll('.gap'));
+    // een woord uit de bank zetten we in het vak waar de cursor staat
+    let foco=gaps[0];
+    gaps.forEach(function(g){g.addEventListener('focus',function(){foco=g;});});
+    zona.querySelectorAll('.banco span').forEach(function(ch){
+      ch.onclick=function(){
+        if(!foco||foco.disabled) foco=gaps.filter(function(g){return !g.disabled;})[0];
+        if(!foco) return;
+        foco.value=ch.textContent; foco.focus();
+      };
+    });
+    zona.querySelector('[data-modelo]').onclick=function(){
+      usado=true; ayudas++;
+      di('','<b>Zo kan het:</b><span class="mod">'+p.modelo+'</span>');};
+    function comprueba(){
+      let todo=true, primerFallo=-1;
+      gaps.forEach(function(g,i){
+        const bien=p.hueco.respuestas[i].some(function(r){
+          return normaliza(r)===normaliza(g.value);});
+        g.classList.toggle('bien',bien);
+        g.classList.toggle('mal',!bien&&g.value.trim()!=='');
+        if(bien){ g.disabled=true; }
+        else { todo=false; if(primerFallo<0&&g.value.trim()!=='') primerFallo=i; }
+      });
+      if(todo){
+        if(!usado) solos++;
+        let dicho=p.hueco.marco;
+        p.hueco.respuestas.forEach(function(r){dicho=dicho.replace('___',r[r.length-1]);});
+        di('ok','<b>Klopt.</b> Zo zeg je het.');
+        setTimeout(function(){avanza(dicho.charAt(0).toUpperCase()+dicho.slice(1));},700);
+      }else{
+        usado=true;
+        if(primerFallo>=0){
+          avisos.push(p.hueco.mal[primerFallo].replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+p.hueco.mal[primerFallo]);
+        }else{
+          di('mal','Vul allebei de vakjes in. '+p.pista);
+        }
+      }
+    }
+    zona.querySelector('[data-comp]').onclick=comprueba;
+    gaps.forEach(function(g){g.addEventListener('keydown',function(e){
+      if(e.key==='Enter'){e.preventDefault();comprueba();}});});
+    gaps[0].focus();
+  }else if(modo==='elegir'){
+    zona.querySelectorAll('.op').forEach(function(b){
+      b.onclick=function(){
+        const o=p.opciones[+b.dataset.i];
+        if(o[1]){
+          b.classList.add('bien');
+          zona.querySelectorAll('.op').forEach(function(x){x.disabled=true;});
+          if(!usado) solos++;
+          setTimeout(function(){avanza(o[0]);},420);
+        }else{
+          b.classList.add('mal'); b.disabled=true; usado=true;
+          avisos.push(o[2].replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+o[2]);
+        }
+      };
+    });
+  }else{
+    const inp=zona.querySelector('.tec');
+    zona.querySelector('[data-pista]').onclick=function(){
+      usado=true; ayudas++; di('','<b>Pista.</b> '+p.pista);};
+    zona.querySelector('[data-modelo]').onclick=function(){
+      usado=true; ayudas++;
+      di('','<b>Zo kan het:</b><span class="mod">'+p.modelo+'</span>');};
+    function enviar(){
+      const t=inp.value.trim();
+      if(!t) return;
+      const notas=corrige(t);
+      if(casa(t,p.acepta)){
+        if(notas.length){
+          avisos.push(notas[0].nl.replace(/<[^>]+>/g,''));
+          di('ok','<b>Begrepen!</b> Eén ding nog: '+notas[0].nl+
+             '<span class="mod">'+notas[0].bien+'</span>');
+        }else{
+          // bewust géén «goed!»: de corrector kent niet alles
+          di('ok','<b>Begrepen.</b> Ik zie hier geen fouten die ik ken.');
+        }
+        if(!usado) solos++;
+        inp.disabled=true;
+        setTimeout(function(){avanza(t);},notas.length?1500:700);
+      }else{
+        usado=true;
+        if(notas.length){
+          avisos.push(notas[0].nl.replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+notas[0].nl+
+             '<span class="mod">'+notas[0].bien+'</span>');
+        }else{
+          di('mal','<b>Dat verstaat de mesero niet.</b> '+p.pista);
+        }
+      }
+    }
+    zona.querySelector('[data-env]').onclick=enviar;
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter')enviar();});
+    inp.focus();
+  }
+}
+
+raiz.querySelectorAll('.modo button').forEach(function(b){
+  b.onclick=function(){
+    modo=b.dataset.modo;
+    raiz.querySelectorAll('.modo button').forEach(function(x){
+      x.classList.toggle('on',x===b);});
+    paso=0;ayudas=0;solos=0;avisos=[];esc.innerHTML='';pinta();muestra();
+  };
+});
+pinta(); muestra();
+})();
+
+(function(){
+const D={"avatar": "🗺️", "final": "¡Qué práctico! Bueno, la panadería cierra a las dos. ¡Corre!", "final_nl": "Wat handig! Goed, de bakker sluit om twee uur. Loop maar snel!", "pasos": [{"di": "¡Hola! Te veo perdido. ¿Buscas algo?", "nl": "Hallo! Je lijkt verdwaald. Zoek je iets?", "meta": "Vraag waar de bakkerij is.", "opciones": [["Sí, ¿dónde está la panadería?", true, ""], ["Sí, ¿dónde es la panadería?", false, "Waar iets is, gaat met <b>estar</b>: «¿dónde está…?»"]], "hueco": {"marco": "Sí, ¿___ ___ la panadería?", "respuestas": [["dónde", "donde"], ["está", "esta"]], "banco": ["dónde", "cómo", "está", "es", "hay"], "mal": ["«Waar» is <b>dónde</b>, met accent in een vraag.", "De plaats van iets vraag je met <b>está</b>, niet met <i>es</i>."]}, "acepta": ["d[o\\u00f3]nde\\s+est[a\\u00e1]", "hay\\s+una?\\s+\\w+"], "pista": "«¿Dónde está …?» of «¿Hay una panadería por aquí?»", "modelo": "Sí, ¿dónde está la panadería?"}, {"di": "Sigue todo recto y gira a la izquierda en el semáforo. ¿Entiendes?", "nl": "Ga rechtdoor en sla links af bij het stoplicht. Begrijp je het?", "meta": "Herhaal het om zeker te zijn: rechtdoor en dan links.", "opciones": [["Entonces todo recto y luego a la izquierda.", true, ""], ["Entonces todo recto y luego a la derecha.", false, "Ze zei <b>a la izquierda</b> — links, niet rechts."]], "hueco": {"marco": "Entonces todo ___ y luego a la ___.", "respuestas": [["recto"], ["izquierda"]], "banco": ["recto", "derecha", "izquierda", "esquina", "cerca"], "mal": ["«Rechtdoor» is <b>todo recto</b>.", "Zij zei <b>izquierda</b> (links). <i>Derecha</i> is rechts."]}, "acepta": ["todo\\s+recto", "a\\s+la\\s+izquierda"], "pista": "De twee stukken uit haar uitleg: «todo recto» en «a la izquierda».", "modelo": "Entonces todo recto y luego a la izquierda."}, {"di": "¡Exacto! Está al lado del banco. ¿Tú vives por aquí?", "nl": "Precies! Ze ligt naast de bank. Woon jij hier in de buurt?", "meta": "Zeg waar je woont en op welke verdieping.", "opciones": [["Vivo en un piso, en el tercer piso.", true, ""], ["Vivo a un piso, en el tercer piso.", false, "Wonen gaat met <b>en</b>, niet met <i>a</i>."]], "hueco": {"marco": "Vivo ___ un piso, ___ el tercer piso.", "respuestas": [["en"], ["en"]], "banco": ["en", "a", "de", "sobre", "con"], "mal": ["Wonen ínergens: <b>vivo en</b>.", "Ook een verdieping krijgt <b>en</b>: «en el tercer piso»."]}, "acepta": ["vivo\\s+en\\s+\\w+", "(piso|casa|apartamento)"], "pista": "«Vivo en …» — una casa, un piso of un apartamento.", "modelo": "Vivo en un piso, en el tercer piso."}, {"di": "¿Y cómo es tu casa? ¿Es grande?", "nl": "En hoe is je huis? Is het groot?", "meta": "Beschrijf je huis: zeg hoeveel kamers er zijn.", "opciones": [["No es muy grande. Hay tres habitaciones y una cocina.", true, ""], ["No es muy grande. Son tres habitaciones y una cocina.", false, "Om te zeggen dát iets er is, gebruik je <b>hay</b>."], ["No es muy grande. Están tres habitaciones y una cocina.", false, "<b>Hay</b> zegt dát iets bestaat; <i>está</i> zegt wáár iets is."]], "hueco": {"marco": "No es muy grande. ___ tres ___ y una cocina.", "respuestas": [["hay"], ["habitaciones"]], "banco": ["hay", "son", "están", "habitaciones", "muebles"], "mal": ["«Er is / er zijn» is <b>hay</b> — altijd dezelfde vorm.", "Kamers zijn <b>habitaciones</b> (of <i>dormitorios</i> voor slaapkamers)."]}, "acepta": ["\\bhay\\s+\\w+", "(habitacion|dormitorio|cocina|sal[o\\u00f3]n|ba[n\\u00f1]o)"], "pista": "«Hay + aantal + kamers». Denk aan het verschil tussen <i>hay</i> en <i>está</i>.", "modelo": "No es muy grande. Hay tres habitaciones y una cocina."}, {"di": "¡Qué bien! ¿Y tienes tienda cerca?", "nl": "Wat fijn! En heb je een winkel in de buurt?", "meta": "Zeg wat er naast of dichtbij je huis ligt.", "opciones": [["Sí, hay un supermercado al lado de mi casa.", true, ""], ["Sí, hay un supermercado a el lado de mi casa.", false, "<i>A + el</i> wordt altijd <b>al</b>: «al lado de»."]], "hueco": {"marco": "Sí, hay un supermercado ___ ___ de mi casa.", "respuestas": [["al"], ["lado"]], "banco": ["al", "el", "lado", "cerca", "delante"], "mal": ["De uitdrukking is <b>al lado de</b> — a + el wordt <i>al</i>.", "Het woord dat je zoekt is <b>lado</b>: al <i>lado</i> de."]}, "acepta": ["(al\\s+lado|cerca|enfrente|detr[a\\u00e1]s|delante)\\s*(de)?", "hay\\s+un"], "pista": "Kies een plaatsbepaling: al lado de · cerca de · enfrente de.", "modelo": "Sí, hay un supermercado al lado de mi casa."}]}, R=[{"id": "gustar-yo", "re": "\\byo\\s+gust", "nl": "«Ik vind leuk» is in het Spaans omgekeerd: het ding bevalt <b>mij</b>. Dus niet «yo gusto» maar <b>me gusta</b>.", "bien": "Me gusta el chocolate."}, {"id": "gustar-tu", "re": "\\bt[uú]\\s+gustas\\b", "nl": "Ook hier omgekeerd: niet «tú gustas» maar <b>te gusta</b>.", "bien": "¿Te gusta la paella?"}, {"id": "gustar-concordancia", "re": "\\bme\\s+gusta\\s+los\\b|\\bme\\s+gusta\\s+las\\b", "nl": "Meervoud: bij meer dan één ding wordt het <b>me gustan</b>.", "bien": "Me gustan los tacos."}, {"id": "estar-frio-persoon", "re": "\\b(estoy|est[aá]s|est[aá])\\s+(fr[ií]o|calor)\\b", "nl": "Over jezelf gebruik je <b>tener</b>: «tengo frío». «Estoy frío» betekent dat je lichaam koud aanvoelt — dat is iets heel anders.", "bien": "Tengo frío. · Hace frío."}, {"id": "hacer-tiempo", "re": "\\b(es|est[aá])\\s+(fr[ií]o|calor|sol|viento)\\b", "nl": "Het weer krijgt <b>hacer</b>: «hace frío», «hace sol».", "bien": "Hoy hace mucho calor."}, {"id": "ser-lugar", "re": "\\bes\\s+en\\s+(la|el|mi|tu)\\b", "nl": "Waar iets is, zeg je met <b>estar</b>, niet met «ser».", "bien": "El libro está en la mesa."}, {"id": "soy-anos", "re": "\\bsoy\\s+\\w*\\s*a[ñn]os\\b|\\bsoy\\s+\\d+\\s*a[ñn]os\\b", "nl": "Leeftijd krijgt <b>tener</b>: je «hébt» jaren in het Spaans.", "bien": "Tengo dieciséis años."}, {"id": "soy-de-ciudad-vivir", "re": "\\bsoy\\s+en\\s+\\w+", "nl": "«Ik kom uit» is <b>soy de</b>; «ik woon in» is <b>vivo en</b>.", "bien": "Soy de Gante y vivo en Brujas."}, {"id": "luego-dus", "re": ",\\s*luego\\b", "nl": "Als je hier «dus» bedoelt, is dat <b>así que</b> of <b>por eso</b>. <i>Luego</i> betekent «daarna» — dat kan wél, maar dan zonder komma: «y luego…».", "bien": "Hace calor, así que voy a la playa."}, {"id": "porque-pregunta", "re": "\\bporque\\s+(no\\s+)?(vas|vienes|comes|quieres|est[aá]s)\\b\\s*\\?", "nl": "In een vráág schrijf je <b>por qué</b>: twee woorden, met accent. <i>Porque</i> (aan elkaar) is het antwoord.", "bien": "¿Por qué no vienes? — Porque estoy enfermo."}, {"id": "want-omdat", "re": "\\b(want|omdat|dus)\\b", "nl": "Er staat een Nederlands woord in je zin. «Want» én «omdat» zijn allebei <b>porque</b>; «dus» is <b>así que</b>.", "bien": "No como carne porque soy vegetariano."}, {"id": "ir-a", "re": "\\bvoy\\s+(el|la|los|las)\\b", "nl": "Na <b>ir</b> hoort <b>a</b>: «voy a la playa», «voy al mercado».", "bien": "Voy a la escuela."}, {"id": "tener-que", "re": "\\btengo\\s+(de|a)\\s+\\w+ar\\b|\\btengo\\s+(de|a)\\s+\\w+er\\b", "nl": "«Ik moet» is <b>tengo que</b> + hele werkwoord.", "bien": "Tengo que estudiar."}, {"id": "ir-a-inf", "re": "\\bvoy\\s+\\w+ar\\b(?!\\s)", "nl": "Een plan maak je met <b>voy a</b> + hele werkwoord.", "bien": "Voy a comer."}, {"id": "el-agua-la", "re": "\\bla\\s+agua\\b", "nl": "<b>El agua</b> — het is wél vrouwelijk, maar krijgt <i>el</i> omdat het met een beklemtoonde a begint. Het bijvoeglijk naamwoord blijft vrouwelijk.", "bien": "El agua está fría."}, {"id": "un-una-comida", "re": "\\bun\\s+(sopa|carta|cuenta|mesa|servilleta|cuchara|manzana|naranja|piña|lechuga|cebolla)\\b", "nl": "Dit woord is vrouwelijk: <b>una</b>, niet «un».", "bien": "Una sopa, por favor."}, {"id": "una-masculino", "re": "\\buna\\s+(pan|queso|pollo|pescado|arroz|plato|vaso|tenedor|cuchillo|caf[eé]|men[uú])\\b", "nl": "Dit woord is mannelijk: <b>un</b>, niet «una».", "bien": "Un café, por favor."}, {"id": "quiero-seco", "re": "^(?!.*por\\s+favor)\\s*(quiero|dame|trae)\\b[^?]*$", "nl": "Dit klinkt kortaf. Zet er <b>por favor</b> bij, of gebruik <b>¿me pone…?</b> of <b>para mí…</b>.", "bien": "¿Me pone un café, por favor?"}, {"id": "acento-que", "re": "\\bque\\s+(quiere|quieres|va|tal)\\b\\s*\\?", "nl": "In een vraag draagt <b>qué</b> een accent.", "bien": "¿Qué quiere tomar?"}, {"id": "apertura", "re": "^(?![^?]*¿)[^?]*\\w[^?]*\\?\\s*$", "nl": "In het Spaans staat het vraagteken er <b>twee keer</b>: ¿ aan het begin en ? aan het eind.", "bien": "¿Cuánto cuesta?"}, {"id": "nn-ñ", "re": "\\b(anos|manana|nino|espanol|senor)\\b", "nl": "Hier hoort een <b>ñ</b>: años · mañana · niño · español · señor.", "bien": "Tengo dieciséis años."}];
+const raiz=document.getElementById('rol_c5_u7');
+if(!raiz) return;
+
+// accenten en hoofdletters mogen niet uitmaken: een leerling die «cafe» typt
+// bedoelt «café», en daar is deze oefening het moment niet voor.
+function normaliza(s){
+  return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+         .replace(/\s+/g,' ').trim();
+}
+function casa(txt,pats){
+  const t=normaliza(txt);
+  return pats.some(function(p){
+    return new RegExp(p.normalize('NFD').replace(/[\u0300-\u036f]/g,''),'i').test(t);
+  });
+}
+// De corrector kent alleen wat in corrector_data.py staat. Hij mag daarom
+// nooit «goed!» zeggen — zie de kop van dat bestand.
+function corrige(txt){
+  const out=[];
+  R.forEach(function(r){
+    if(new RegExp(r.re,'i').test(txt)) out.push(r);
+  });
+  return out;
+}
+
+let paso=0, modo='completar', ayudas=0, solos=0, avisos=[];
+const esc=raiz.querySelector('.esc'), zona=raiz.querySelector('.zona'),
+      barra=raiz.querySelector('.barra');
+
+function burbuja(quien,txt,nl){
+  const b=document.createElement('div');
+  b.className='b'+(quien==='yo'?' yo':'');
+  b.innerHTML='<div class="av">'+(quien==='yo'?'TÚ':D.avatar)+'</div>'+
+    '<div class="tx">'+txt+(nl?'<span class="nl">'+nl+'</span>':'')+'</div>';
+  esc.appendChild(b); esc.scrollTop=esc.scrollHeight;
+}
+function pinta(){
+  barra.innerHTML=D.pasos.map(function(_,i){
+    return '<i class="'+(i<paso?'on':'')+'"></i>';}).join('');
+}
+
+function avanza(dicho){
+  burbuja('yo',dicho);
+  paso++; pinta();
+  if(paso>=D.pasos.length){ return fin(); }
+  setTimeout(muestra,340);
+}
+
+function fin(){
+  const p=D.pasos.length;
+  burbuja('otro',D.final,D.final_nl);
+  let li='';
+  li+='<li>Beurten zonder hulp: <b>'+solos+' van de '+p+'</b></li>';
+  li+='<li>Hulp gevraagd: <b>'+ayudas+'×</b></li>';
+  if(avisos.length){
+    li+='<li>Waar je op mag letten:<br>'+
+        avisos.filter(function(v,i,a){return a.indexOf(v)===i;})
+              .map(function(v){return '• '+v;}).join('<br>')+'</li>';
+  }
+  zona.innerHTML='<div class="fin"><div class="grande">¡Ya está! 🎉</div>'+
+    '<p class="lead" style="margin:0 auto">Je hebt de hele scène afgewerkt.</p>'+
+    '<ul class="tally">'+li+'</ul>'+
+    '<button class="btn" style="margin-top:12px" data-otra>Otra vez</button></div>';
+  zona.querySelector('[data-otra]').onclick=function(){
+    paso=0;ayudas=0;solos=0;avisos=[];esc.innerHTML='';pinta();muestra();};
+}
+
+function muestra(){
+  const p=D.pasos[paso];
+  let usado=false;                       // hulp gebruikt in déze beurt
+  burbuja('otro',p.di,p.nl);
+  let h='<div class="meta"><span class="pill">Tu turno</span>'+p.meta+'</div>';
+  if(modo==='completar'){
+    // de zin met gaten; het aantal invulvakken volgt uit het kader zelf
+    const trozos=p.hueco.marco.split('___');
+    let frase='';
+    trozos.forEach(function(t,i){
+      frase+=t.replace(/</g,'&lt;');
+      if(i<trozos.length-1)
+        frase+='<input class="gap" data-g="'+i+'" type="text" autocomplete="off" '+
+               'spellcheck="false" aria-label="Vul woord '+(i+1)+' in">';
+    });
+    h+='<div class="banco"><b>Banco:</b>'+p.hueco.banco.map(function(w){
+         return '<span>'+w+'</span>';}).join('')+'</div>';
+    h+='<div class="hue">'+frase+'</div>';
+    h+='<div class="esc-in"><button class="btn" data-comp>Comprobar</button>'+
+       '<button class="btn sec small" data-modelo>Muéstrame</button></div>';
+  }else if(modo==='elegir'){
+    h+='<div class="ops">'+p.opciones.map(function(o,i){
+      return '<button class="op" data-i="'+i+'">'+o[0]+'</button>';}).join('')+'</div>';
+  }else{
+    h+='<div class="esc-in"><input class="tec" type="text" autocomplete="off" '+
+       'placeholder="Escribe tu respuesta en español…" aria-label="Jouw antwoord">'+
+       '<button class="btn" data-env>Decir</button>'+
+       '<button class="btn sec small" data-pista>Pista</button>'+
+       '<button class="btn sec small" data-modelo>Muéstrame</button></div>';
+  }
+  h+='<div class="fb" hidden></div>';
+  zona.innerHTML=h;
+  const fb=zona.querySelector('.fb');
+  function di(clase,texto){fb.hidden=false;fb.className='fb '+clase;fb.innerHTML=texto;}
+
+  if(modo==='completar'){
+    const gaps=[].slice.call(zona.querySelectorAll('.gap'));
+    // een woord uit de bank zetten we in het vak waar de cursor staat
+    let foco=gaps[0];
+    gaps.forEach(function(g){g.addEventListener('focus',function(){foco=g;});});
+    zona.querySelectorAll('.banco span').forEach(function(ch){
+      ch.onclick=function(){
+        if(!foco||foco.disabled) foco=gaps.filter(function(g){return !g.disabled;})[0];
+        if(!foco) return;
+        foco.value=ch.textContent; foco.focus();
+      };
+    });
+    zona.querySelector('[data-modelo]').onclick=function(){
+      usado=true; ayudas++;
+      di('','<b>Zo kan het:</b><span class="mod">'+p.modelo+'</span>');};
+    function comprueba(){
+      let todo=true, primerFallo=-1;
+      gaps.forEach(function(g,i){
+        const bien=p.hueco.respuestas[i].some(function(r){
+          return normaliza(r)===normaliza(g.value);});
+        g.classList.toggle('bien',bien);
+        g.classList.toggle('mal',!bien&&g.value.trim()!=='');
+        if(bien){ g.disabled=true; }
+        else { todo=false; if(primerFallo<0&&g.value.trim()!=='') primerFallo=i; }
+      });
+      if(todo){
+        if(!usado) solos++;
+        let dicho=p.hueco.marco;
+        p.hueco.respuestas.forEach(function(r){dicho=dicho.replace('___',r[r.length-1]);});
+        di('ok','<b>Klopt.</b> Zo zeg je het.');
+        setTimeout(function(){avanza(dicho.charAt(0).toUpperCase()+dicho.slice(1));},700);
+      }else{
+        usado=true;
+        if(primerFallo>=0){
+          avisos.push(p.hueco.mal[primerFallo].replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+p.hueco.mal[primerFallo]);
+        }else{
+          di('mal','Vul allebei de vakjes in. '+p.pista);
+        }
+      }
+    }
+    zona.querySelector('[data-comp]').onclick=comprueba;
+    gaps.forEach(function(g){g.addEventListener('keydown',function(e){
+      if(e.key==='Enter'){e.preventDefault();comprueba();}});});
+    gaps[0].focus();
+  }else if(modo==='elegir'){
+    zona.querySelectorAll('.op').forEach(function(b){
+      b.onclick=function(){
+        const o=p.opciones[+b.dataset.i];
+        if(o[1]){
+          b.classList.add('bien');
+          zona.querySelectorAll('.op').forEach(function(x){x.disabled=true;});
+          if(!usado) solos++;
+          setTimeout(function(){avanza(o[0]);},420);
+        }else{
+          b.classList.add('mal'); b.disabled=true; usado=true;
+          avisos.push(o[2].replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+o[2]);
+        }
+      };
+    });
+  }else{
+    const inp=zona.querySelector('.tec');
+    zona.querySelector('[data-pista]').onclick=function(){
+      usado=true; ayudas++; di('','<b>Pista.</b> '+p.pista);};
+    zona.querySelector('[data-modelo]').onclick=function(){
+      usado=true; ayudas++;
+      di('','<b>Zo kan het:</b><span class="mod">'+p.modelo+'</span>');};
+    function enviar(){
+      const t=inp.value.trim();
+      if(!t) return;
+      const notas=corrige(t);
+      if(casa(t,p.acepta)){
+        if(notas.length){
+          avisos.push(notas[0].nl.replace(/<[^>]+>/g,''));
+          di('ok','<b>Begrepen!</b> Eén ding nog: '+notas[0].nl+
+             '<span class="mod">'+notas[0].bien+'</span>');
+        }else{
+          // bewust géén «goed!»: de corrector kent niet alles
+          di('ok','<b>Begrepen.</b> Ik zie hier geen fouten die ik ken.');
+        }
+        if(!usado) solos++;
+        inp.disabled=true;
+        setTimeout(function(){avanza(t);},notas.length?1500:700);
+      }else{
+        usado=true;
+        if(notas.length){
+          avisos.push(notas[0].nl.replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+notas[0].nl+
+             '<span class="mod">'+notas[0].bien+'</span>');
+        }else{
+          di('mal','<b>Dat verstaat de mesero niet.</b> '+p.pista);
+        }
+      }
+    }
+    zona.querySelector('[data-env]').onclick=enviar;
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter')enviar();});
+    inp.focus();
+  }
+}
+
+raiz.querySelectorAll('.modo button').forEach(function(b){
+  b.onclick=function(){
+    modo=b.dataset.modo;
+    raiz.querySelectorAll('.modo button').forEach(function(x){
+      x.classList.toggle('on',x===b);});
+    paso=0;ayudas=0;solos=0;avisos=[];esc.innerHTML='';pinta();muestra();
+  };
+});
+pinta(); muestra();
+})();
+
+(function(){
+const D={"avatar": "🏔️", "final": "Suena a un día perfecto. ¡Mañana el ceviche, entonces! Que descanses.", "final_nl": "Klinkt als een perfecte dag. Morgen dan de ceviche! Slaap lekker.", "pasos": [{"di": "¡Hola! ¿Qué tal el día? ¿Qué has hecho?", "nl": "Hallo! Hoe was je dag? Wat heb je gedaan?", "meta": "Zeg wat je bezocht hebt. Gebruik de voltooide tijd.", "opciones": [["He visitado las ruinas.", true, ""], ["Has visitado las ruinas.", false, "<b>He</b> visitado — <i>has</i> zou over jóu gaan, niet over mij."], ["He visitar las ruinas.", false, "Na <i>he</i> komt het voltooid deelwoord: <b>visitado</b>."]], "hueco": {"marco": "___ ___ las ruinas.", "respuestas": [["he"], ["visitado"]], "banco": ["he", "has", "visitado", "visito", "visitar"], "mal": ["Bij <i>yo</i> is het hulpwerkwoord <b>he</b>. <i>Has</i> is de jij-vorm.", "Het voltooid deelwoord van <i>visitar</i> is <b>visitado</b>."]}, "acepta": ["he\\s+\\w+[ai]do", "he\\s+(hecho|visto|dicho|escrito|vuelto|puesto|roto|abierto)"], "pista": "«He + voltooid deelwoord»: visitado · comido · subido.", "modelo": "He visitado las ruinas."}, {"di": "¡Qué envidia! ¿Y has visto llamas?", "nl": "Wat jaloers! En heb je lama's gezien?", "meta": "Zeg ja — en let op: <i>ver</i> heeft een onregelmatig deelwoord.", "opciones": [["Sí, he visto muchas llamas.", true, ""], ["Sí, he veido muchas llamas.", false, "<i>Ver</i> is onregelmatig: <b>visto</b>."]], "hueco": {"marco": "Sí, ___ ___ muchas llamas.", "respuestas": [["he"], ["visto"]], "banco": ["he", "has", "visto", "vido", "veido"], "mal": ["Bij <i>yo</i>: <b>he</b>.", "<i>Ver</i> is onregelmatig: het deelwoord is <b>visto</b>, niet «veido»."]}, "acepta": ["he\\s+visto"], "pista": "Acht onregelmatige: hecho · <b>visto</b> · dicho · escrito · vuelto · puesto · abierto · roto.", "modelo": "Sí, he visto muchas llamas."}, {"di": "¿Y has probado el ceviche? Es típico de aquí.", "nl": "En heb je ceviche geproefd? Dat is hier typisch.", "meta": "Zeg dat je dat nóg niet gedaan hebt.", "opciones": [["No, todavía no lo he probado.", true, ""], ["No, ya no lo he probado.", false, "<i>Ya</i> betekent «al». «Nog niet» is <b>todavía no</b>."]], "hueco": {"marco": "No, ___ ___ no lo he probado.", "respuestas": [["todavía", "todavia"], ["no"]], "banco": ["todavía", "ya", "no", "nunca", "siempre"], "mal": ["«Nog niet» begint met <b>todavía</b>.", "De vaste combinatie is <b>todavía no</b>."]}, "acepta": ["todav[i\\u00ed]a\\s+no", "nunca\\s+(lo\\s+)?he", "no\\s+lo\\s+he"], "pista": "«Todavía no …» of «Nunca he …».", "modelo": "No, todavía no lo he probado."}, {"di": "¡Pues tienes que probarlo! ¿Has estado alguna vez en la selva?", "nl": "Dan moet je het proberen! Ben je ooit in het regenwoud geweest?", "meta": "Zeg dat je daar nog nooit geweest bent.", "opciones": [["No, nunca he estado en la selva.", true, ""], ["No, nunca estoy en la selva.", false, "Over je hele leven tot nu gebruik je de voltooide tijd: <b>nunca he estado</b>."]], "hueco": {"marco": "No, ___ ___ estado en la selva.", "respuestas": [["nunca"], ["he"]], "banco": ["nunca", "siempre", "he", "has", "estoy"], "mal": ["«Nooit» is <b>nunca</b>.", "Bij <i>yo</i>: <b>he</b> estado."]}, "acepta": ["nunca\\s+he", "todav[i\\u00ed]a\\s+no"], "pista": "«Nunca he estado …» — met <i>he</i> erbij.", "modelo": "No, nunca he estado en la selva."}, {"di": "¿Y qué tiempo ha hecho hoy en la montaña?", "nl": "En wat voor weer was het vandaag in de bergen?", "meta": "Zeg wat voor weer het was.", "opciones": [["Por la mañana ha hecho sol, pero luego ha hecho mucho frío.", true, ""], ["Por la mañana ha sido sol, pero luego ha estado frío.", false, "Het weer gaat met <b>hacer</b>: «ha hecho sol», «ha hecho frío»."]], "hueco": {"marco": "Por la mañana ___ sol, pero luego ___ mucho frío.", "respuestas": [["hacía", "hacia", "ha hecho", "hizo"], ["hacía", "hacia", "hizo", "ha hecho"]], "banco": ["hacía", "era", "estaba", "hizo", "tenía"], "mal": ["Het weer krijgt altijd <b>hacer</b>: «hacía sol».", "Ook hier <b>hacer</b>: «hacía frío». Nooit <i>era</i> of <i>estaba</i>."]}, "acepta": ["(hac[i\\u00ed]a|ha\\s+hecho|hizo)\\s+(sol|calor|fr[i\\u00ed]o|viento)", "(llov[i\\u00ed]a|ha\\s+llovido|nevaba)"], "pista": "Het weer krijgt <b>hacer</b>: hacía sol · hacía frío · ha hecho viento.", "modelo": "Por la mañana ha hecho sol, pero luego ha hecho mucho frío."}]}, R=[{"id": "gustar-yo", "re": "\\byo\\s+gust", "nl": "«Ik vind leuk» is in het Spaans omgekeerd: het ding bevalt <b>mij</b>. Dus niet «yo gusto» maar <b>me gusta</b>.", "bien": "Me gusta el chocolate."}, {"id": "gustar-tu", "re": "\\bt[uú]\\s+gustas\\b", "nl": "Ook hier omgekeerd: niet «tú gustas» maar <b>te gusta</b>.", "bien": "¿Te gusta la paella?"}, {"id": "gustar-concordancia", "re": "\\bme\\s+gusta\\s+los\\b|\\bme\\s+gusta\\s+las\\b", "nl": "Meervoud: bij meer dan één ding wordt het <b>me gustan</b>.", "bien": "Me gustan los tacos."}, {"id": "estar-frio-persoon", "re": "\\b(estoy|est[aá]s|est[aá])\\s+(fr[ií]o|calor)\\b", "nl": "Over jezelf gebruik je <b>tener</b>: «tengo frío». «Estoy frío» betekent dat je lichaam koud aanvoelt — dat is iets heel anders.", "bien": "Tengo frío. · Hace frío."}, {"id": "hacer-tiempo", "re": "\\b(es|est[aá])\\s+(fr[ií]o|calor|sol|viento)\\b", "nl": "Het weer krijgt <b>hacer</b>: «hace frío», «hace sol».", "bien": "Hoy hace mucho calor."}, {"id": "ser-lugar", "re": "\\bes\\s+en\\s+(la|el|mi|tu)\\b", "nl": "Waar iets is, zeg je met <b>estar</b>, niet met «ser».", "bien": "El libro está en la mesa."}, {"id": "soy-anos", "re": "\\bsoy\\s+\\w*\\s*a[ñn]os\\b|\\bsoy\\s+\\d+\\s*a[ñn]os\\b", "nl": "Leeftijd krijgt <b>tener</b>: je «hébt» jaren in het Spaans.", "bien": "Tengo dieciséis años."}, {"id": "soy-de-ciudad-vivir", "re": "\\bsoy\\s+en\\s+\\w+", "nl": "«Ik kom uit» is <b>soy de</b>; «ik woon in» is <b>vivo en</b>.", "bien": "Soy de Gante y vivo en Brujas."}, {"id": "luego-dus", "re": ",\\s*luego\\b", "nl": "Als je hier «dus» bedoelt, is dat <b>así que</b> of <b>por eso</b>. <i>Luego</i> betekent «daarna» — dat kan wél, maar dan zonder komma: «y luego…».", "bien": "Hace calor, así que voy a la playa."}, {"id": "porque-pregunta", "re": "\\bporque\\s+(no\\s+)?(vas|vienes|comes|quieres|est[aá]s)\\b\\s*\\?", "nl": "In een vráág schrijf je <b>por qué</b>: twee woorden, met accent. <i>Porque</i> (aan elkaar) is het antwoord.", "bien": "¿Por qué no vienes? — Porque estoy enfermo."}, {"id": "want-omdat", "re": "\\b(want|omdat|dus)\\b", "nl": "Er staat een Nederlands woord in je zin. «Want» én «omdat» zijn allebei <b>porque</b>; «dus» is <b>así que</b>.", "bien": "No como carne porque soy vegetariano."}, {"id": "ir-a", "re": "\\bvoy\\s+(el|la|los|las)\\b", "nl": "Na <b>ir</b> hoort <b>a</b>: «voy a la playa», «voy al mercado».", "bien": "Voy a la escuela."}, {"id": "tener-que", "re": "\\btengo\\s+(de|a)\\s+\\w+ar\\b|\\btengo\\s+(de|a)\\s+\\w+er\\b", "nl": "«Ik moet» is <b>tengo que</b> + hele werkwoord.", "bien": "Tengo que estudiar."}, {"id": "ir-a-inf", "re": "\\bvoy\\s+\\w+ar\\b(?!\\s)", "nl": "Een plan maak je met <b>voy a</b> + hele werkwoord.", "bien": "Voy a comer."}, {"id": "el-agua-la", "re": "\\bla\\s+agua\\b", "nl": "<b>El agua</b> — het is wél vrouwelijk, maar krijgt <i>el</i> omdat het met een beklemtoonde a begint. Het bijvoeglijk naamwoord blijft vrouwelijk.", "bien": "El agua está fría."}, {"id": "un-una-comida", "re": "\\bun\\s+(sopa|carta|cuenta|mesa|servilleta|cuchara|manzana|naranja|piña|lechuga|cebolla)\\b", "nl": "Dit woord is vrouwelijk: <b>una</b>, niet «un».", "bien": "Una sopa, por favor."}, {"id": "una-masculino", "re": "\\buna\\s+(pan|queso|pollo|pescado|arroz|plato|vaso|tenedor|cuchillo|caf[eé]|men[uú])\\b", "nl": "Dit woord is mannelijk: <b>un</b>, niet «una».", "bien": "Un café, por favor."}, {"id": "quiero-seco", "re": "^(?!.*por\\s+favor)\\s*(quiero|dame|trae)\\b[^?]*$", "nl": "Dit klinkt kortaf. Zet er <b>por favor</b> bij, of gebruik <b>¿me pone…?</b> of <b>para mí…</b>.", "bien": "¿Me pone un café, por favor?"}, {"id": "acento-que", "re": "\\bque\\s+(quiere|quieres|va|tal)\\b\\s*\\?", "nl": "In een vraag draagt <b>qué</b> een accent.", "bien": "¿Qué quiere tomar?"}, {"id": "apertura", "re": "^(?![^?]*¿)[^?]*\\w[^?]*\\?\\s*$", "nl": "In het Spaans staat het vraagteken er <b>twee keer</b>: ¿ aan het begin en ? aan het eind.", "bien": "¿Cuánto cuesta?"}, {"id": "nn-ñ", "re": "\\b(anos|manana|nino|espanol|senor)\\b", "nl": "Hier hoort een <b>ñ</b>: años · mañana · niño · español · señor.", "bien": "Tengo dieciséis años."}];
+const raiz=document.getElementById('rol_c5_u8');
+if(!raiz) return;
+
+// accenten en hoofdletters mogen niet uitmaken: een leerling die «cafe» typt
+// bedoelt «café», en daar is deze oefening het moment niet voor.
+function normaliza(s){
+  return (s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+         .replace(/\s+/g,' ').trim();
+}
+function casa(txt,pats){
+  const t=normaliza(txt);
+  return pats.some(function(p){
+    return new RegExp(p.normalize('NFD').replace(/[\u0300-\u036f]/g,''),'i').test(t);
+  });
+}
+// De corrector kent alleen wat in corrector_data.py staat. Hij mag daarom
+// nooit «goed!» zeggen — zie de kop van dat bestand.
+function corrige(txt){
+  const out=[];
+  R.forEach(function(r){
+    if(new RegExp(r.re,'i').test(txt)) out.push(r);
+  });
+  return out;
+}
+
+let paso=0, modo='completar', ayudas=0, solos=0, avisos=[];
+const esc=raiz.querySelector('.esc'), zona=raiz.querySelector('.zona'),
+      barra=raiz.querySelector('.barra');
+
+function burbuja(quien,txt,nl){
+  const b=document.createElement('div');
+  b.className='b'+(quien==='yo'?' yo':'');
+  b.innerHTML='<div class="av">'+(quien==='yo'?'TÚ':D.avatar)+'</div>'+
+    '<div class="tx">'+txt+(nl?'<span class="nl">'+nl+'</span>':'')+'</div>';
+  esc.appendChild(b); esc.scrollTop=esc.scrollHeight;
+}
+function pinta(){
+  barra.innerHTML=D.pasos.map(function(_,i){
+    return '<i class="'+(i<paso?'on':'')+'"></i>';}).join('');
+}
+
+function avanza(dicho){
+  burbuja('yo',dicho);
+  paso++; pinta();
+  if(paso>=D.pasos.length){ return fin(); }
+  setTimeout(muestra,340);
+}
+
+function fin(){
+  const p=D.pasos.length;
+  burbuja('otro',D.final,D.final_nl);
+  let li='';
+  li+='<li>Beurten zonder hulp: <b>'+solos+' van de '+p+'</b></li>';
+  li+='<li>Hulp gevraagd: <b>'+ayudas+'×</b></li>';
+  if(avisos.length){
+    li+='<li>Waar je op mag letten:<br>'+
+        avisos.filter(function(v,i,a){return a.indexOf(v)===i;})
+              .map(function(v){return '• '+v;}).join('<br>')+'</li>';
+  }
+  zona.innerHTML='<div class="fin"><div class="grande">¡Ya está! 🎉</div>'+
+    '<p class="lead" style="margin:0 auto">Je hebt de hele scène afgewerkt.</p>'+
+    '<ul class="tally">'+li+'</ul>'+
+    '<button class="btn" style="margin-top:12px" data-otra>Otra vez</button></div>';
+  zona.querySelector('[data-otra]').onclick=function(){
+    paso=0;ayudas=0;solos=0;avisos=[];esc.innerHTML='';pinta();muestra();};
+}
+
+function muestra(){
+  const p=D.pasos[paso];
+  let usado=false;                       // hulp gebruikt in déze beurt
+  burbuja('otro',p.di,p.nl);
+  let h='<div class="meta"><span class="pill">Tu turno</span>'+p.meta+'</div>';
+  if(modo==='completar'){
+    // de zin met gaten; het aantal invulvakken volgt uit het kader zelf
+    const trozos=p.hueco.marco.split('___');
+    let frase='';
+    trozos.forEach(function(t,i){
+      frase+=t.replace(/</g,'&lt;');
+      if(i<trozos.length-1)
+        frase+='<input class="gap" data-g="'+i+'" type="text" autocomplete="off" '+
+               'spellcheck="false" aria-label="Vul woord '+(i+1)+' in">';
+    });
+    h+='<div class="banco"><b>Banco:</b>'+p.hueco.banco.map(function(w){
+         return '<span>'+w+'</span>';}).join('')+'</div>';
+    h+='<div class="hue">'+frase+'</div>';
+    h+='<div class="esc-in"><button class="btn" data-comp>Comprobar</button>'+
+       '<button class="btn sec small" data-modelo>Muéstrame</button></div>';
+  }else if(modo==='elegir'){
+    h+='<div class="ops">'+p.opciones.map(function(o,i){
+      return '<button class="op" data-i="'+i+'">'+o[0]+'</button>';}).join('')+'</div>';
+  }else{
+    h+='<div class="esc-in"><input class="tec" type="text" autocomplete="off" '+
+       'placeholder="Escribe tu respuesta en español…" aria-label="Jouw antwoord">'+
+       '<button class="btn" data-env>Decir</button>'+
+       '<button class="btn sec small" data-pista>Pista</button>'+
+       '<button class="btn sec small" data-modelo>Muéstrame</button></div>';
+  }
+  h+='<div class="fb" hidden></div>';
+  zona.innerHTML=h;
+  const fb=zona.querySelector('.fb');
+  function di(clase,texto){fb.hidden=false;fb.className='fb '+clase;fb.innerHTML=texto;}
+
+  if(modo==='completar'){
+    const gaps=[].slice.call(zona.querySelectorAll('.gap'));
+    // een woord uit de bank zetten we in het vak waar de cursor staat
+    let foco=gaps[0];
+    gaps.forEach(function(g){g.addEventListener('focus',function(){foco=g;});});
+    zona.querySelectorAll('.banco span').forEach(function(ch){
+      ch.onclick=function(){
+        if(!foco||foco.disabled) foco=gaps.filter(function(g){return !g.disabled;})[0];
+        if(!foco) return;
+        foco.value=ch.textContent; foco.focus();
+      };
+    });
+    zona.querySelector('[data-modelo]').onclick=function(){
+      usado=true; ayudas++;
+      di('','<b>Zo kan het:</b><span class="mod">'+p.modelo+'</span>');};
+    function comprueba(){
+      let todo=true, primerFallo=-1;
+      gaps.forEach(function(g,i){
+        const bien=p.hueco.respuestas[i].some(function(r){
+          return normaliza(r)===normaliza(g.value);});
+        g.classList.toggle('bien',bien);
+        g.classList.toggle('mal',!bien&&g.value.trim()!=='');
+        if(bien){ g.disabled=true; }
+        else { todo=false; if(primerFallo<0&&g.value.trim()!=='') primerFallo=i; }
+      });
+      if(todo){
+        if(!usado) solos++;
+        let dicho=p.hueco.marco;
+        p.hueco.respuestas.forEach(function(r){dicho=dicho.replace('___',r[r.length-1]);});
+        di('ok','<b>Klopt.</b> Zo zeg je het.');
+        setTimeout(function(){avanza(dicho.charAt(0).toUpperCase()+dicho.slice(1));},700);
+      }else{
+        usado=true;
+        if(primerFallo>=0){
+          avisos.push(p.hueco.mal[primerFallo].replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+p.hueco.mal[primerFallo]);
+        }else{
+          di('mal','Vul allebei de vakjes in. '+p.pista);
+        }
+      }
+    }
+    zona.querySelector('[data-comp]').onclick=comprueba;
+    gaps.forEach(function(g){g.addEventListener('keydown',function(e){
+      if(e.key==='Enter'){e.preventDefault();comprueba();}});});
+    gaps[0].focus();
+  }else if(modo==='elegir'){
+    zona.querySelectorAll('.op').forEach(function(b){
+      b.onclick=function(){
+        const o=p.opciones[+b.dataset.i];
+        if(o[1]){
+          b.classList.add('bien');
+          zona.querySelectorAll('.op').forEach(function(x){x.disabled=true;});
+          if(!usado) solos++;
+          setTimeout(function(){avanza(o[0]);},420);
+        }else{
+          b.classList.add('mal'); b.disabled=true; usado=true;
+          avisos.push(o[2].replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+o[2]);
+        }
+      };
+    });
+  }else{
+    const inp=zona.querySelector('.tec');
+    zona.querySelector('[data-pista]').onclick=function(){
+      usado=true; ayudas++; di('','<b>Pista.</b> '+p.pista);};
+    zona.querySelector('[data-modelo]').onclick=function(){
+      usado=true; ayudas++;
+      di('','<b>Zo kan het:</b><span class="mod">'+p.modelo+'</span>');};
+    function enviar(){
+      const t=inp.value.trim();
+      if(!t) return;
+      const notas=corrige(t);
+      if(casa(t,p.acepta)){
+        if(notas.length){
+          avisos.push(notas[0].nl.replace(/<[^>]+>/g,''));
+          di('ok','<b>Begrepen!</b> Eén ding nog: '+notas[0].nl+
+             '<span class="mod">'+notas[0].bien+'</span>');
+        }else{
+          // bewust géén «goed!»: de corrector kent niet alles
+          di('ok','<b>Begrepen.</b> Ik zie hier geen fouten die ik ken.');
+        }
+        if(!usado) solos++;
+        inp.disabled=true;
+        setTimeout(function(){avanza(t);},notas.length?1500:700);
+      }else{
+        usado=true;
+        if(notas.length){
+          avisos.push(notas[0].nl.replace(/<[^>]+>/g,''));
+          di('mal','<b>Nog niet.</b> '+notas[0].nl+
+             '<span class="mod">'+notas[0].bien+'</span>');
+        }else{
+          di('mal','<b>Dat verstaat de mesero niet.</b> '+p.pista);
+        }
+      }
+    }
+    zona.querySelector('[data-env]').onclick=enviar;
+    inp.addEventListener('keydown',function(e){if(e.key==='Enter')enviar();});
+    inp.focus();
+  }
+}
+
+raiz.querySelectorAll('.modo button').forEach(function(b){
+  b.onclick=function(){
+    modo=b.dataset.modo;
+    raiz.querySelectorAll('.modo button').forEach(function(x){
+      x.classList.toggle('on',x===b);});
+    paso=0;ayudas=0;solos=0;avisos=[];esc.innerHTML='';pinta();muestra();
+  };
+});
+pinta(); muestra();
+})();
+
+</script></body></html>
