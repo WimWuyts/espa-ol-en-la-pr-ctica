@@ -20,6 +20,13 @@ Wat er nagekeken wordt, en waarom:
   corrector    de goede antwoorden mogen géén corrector-regel doen afgaan —
                vals alarm op je eigen modelzin is het ergste wat er is
   regex        alle patronen moeten geldig zijn
+  invullen     **de belangrijkste.** Vul het kader in met het eerste (canonieke)
+               antwoord van elk gat: dat moet létterlijk het modelantwoord
+               opleveren. Anders klopt de oefening niet met wat «muéstrame»
+               toont, en in het ergste geval levert ze een onmogelijke zin op.
+               Zo kwam «una botella ___ agua» aan het licht: twee gaten, maar
+               het woordje *de* stond nergens, dus het juiste antwoord viel
+               niet in te vullen. Twaalf kaders bleken zo scheef te staan.
 
     python3 rol_check.py
 """
@@ -38,6 +45,11 @@ def normaliza(s):
     import unicodedata
     s = unicodedata.normalize("NFD", (s or "").lower())
     return re.sub(r"\s+", " ", "".join(c for c in s if not unicodedata.combining(c))).strip()
+
+
+def _plano(s):
+    """Alleen de woorden — leestekens en hoofdletters doen er niet toe."""
+    return re.sub(r"[^a-z0-9 ]", "", normaliza(s))
 
 
 def revisa(curso, unidad, r):
@@ -59,6 +71,15 @@ def revisa(curso, unidad, r):
                              for a in alt):
                     fallos.append("%s: gat %d — geen enkel antwoord (%s) staat in "
                                   "de bank" % (marca, j + 1, "/".join(alt)))
+        # het ingevulde kader moet het modelantwoord zijn
+        if h:
+            lleno = h["marco"]
+            for alt in h["respuestas"]:
+                lleno = lleno.replace("___", alt[0] if alt else "?", 1)
+            if _plano(lleno) != _plano(p["modelo"]):
+                fallos.append("%s: het ingevulde kader geeft niet het model\n"
+                              "        ingevuld: %s\n        model   : %s"
+                              % (marca, lleno, p["modelo"]))
         for pat in p["acepta"]:
             try:
                 re.compile(pat)
