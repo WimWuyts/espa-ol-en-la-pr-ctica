@@ -124,6 +124,10 @@ def construye_c4(u):
         (["python3", "gen_c4_musica.py"],
          {"C4_TEMA": C4_TEMA.get(u, "presentaciones"),
           "C4_MUSICA_OUT": "C4_U%d_musica.html" % u}),
+        # De offline oefenpartner. In C4 is dit een eigen tabblad (de hub laadt
+        # zijn tabbladen als aparte bestanden in), in C5 en C6+ zit hij in het
+        # Hablar-paneel van de pagina zelf.
+        (["python3", "gen_rol.py", "C4", str(u)], None),
     ]
     pasos += ([(["python3", "gen_c4u%d_hub.py" % u], None),   # ná de zeven onderdelen
                 (["python3", "gen_c4u%d_pdf.py" % u], None)] if propio else

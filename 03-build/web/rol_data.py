@@ -48,9 +48,13 @@ toegepast (zie `gen_rol.py`, functie `normaliza`), zodat «cafe» ook telt.
 # Eén bestand met dertig scènes wordt onleesbaar; per cursus blijft het te
 # overzien en kan er aan C4 gewerkt worden zonder C5 aan te raken.
 import rol_c5                                  # noqa: E402
+import rol_c4                                  # noqa: E402
+import rol_c6p                                 # noqa: E402
 
 ROLES = {}
+ROLES.update({("C4", u): r for u, r in rol_c4.ROLES.items()})
 ROLES.update({("C5", u): r for u, r in rol_c5.ROLES.items()})
+ROLES.update({("C6+", u): r for u, r in rol_c6p.ROLES.items()})
 
 
 def rol(curso, unidad):

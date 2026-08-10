@@ -20,6 +20,8 @@ TABS=[
  ("funciones","🗣️ Funciones","C4_U10_funciones.html","Wat je met het Spaans kunt DOEN — je repertoire groeit elke unit."),
  ("kit","🧰 Kit","C4_U10_kgt.html","Uitspraak (g/gu), de taakverdeler, de taal per situatie, gramática (hay que ↔ tengo que · saber + inf.) & tarea."),
  ("practica","✍️ Práctica","C4_U10_practica.html","Oefen zelfcorrigerend: herkennen → kiezen → zelf zeggen."),
+ ("rol","🎭 Ensaya","C4_U10_rol.html",
+  "Speel de scène zelf: de partner verbetert je en werkt zonder internet."),
  ("musica","🎧 Música","C4_U10_musica.html","Cultura (el reparto de tareas) + banda sonora — leer Spaans via muziek."),
 ]
 

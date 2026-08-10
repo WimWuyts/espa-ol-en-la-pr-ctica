@@ -52,6 +52,8 @@ TABS=[
   f"De woorden, de uitspraak ({SUENA}), het patroon ({GRAM}) en de tarea."),
  ("practica","✍️ Práctica",f"C4_U{UNIT}_practica.html",
   "Oefen zelfcorrigerend: herkennen → kiezen → zelf zeggen → opnemen."),
+ ("rol","🎭 Ensaya",f"C4_U{UNIT}_rol.html",
+  "Speel de scène zelf: de partner verbetert je en werkt zonder internet."),
  ("musica","🎧 Música",f"C4_U{UNIT}_musica.html",
   "Cultura + banda sonora — leer Spaans via muziek."),
 ]

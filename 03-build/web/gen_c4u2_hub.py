@@ -21,6 +21,8 @@ TABS=[
  ("funciones","🗣️ Funciones","C4_U2_funciones.html","Wat je met het Spaans kunt DOEN — je repertoire groeit elke unit."),
  ("kit","🧰 Kit","C4_U2_kgt.html","Uitspraak (jota, h muda), de taal per situatie, gramática & tarea."),
  ("practica","✍️ Práctica","C4_U2_practica.html","Oefen zelfcorrigerend: herkennen → kiezen → zelf zeggen."),
+ ("rol","🎭 Ensaya","C4_U2_rol.html",
+  "Speel de scène zelf: de partner verbetert je en werkt zonder internet."),
  ("musica","🎧 Música","C4_U2_musica.html","Banda sonora — leer Spaans via muziek die jullie kennen."),
 ]
 

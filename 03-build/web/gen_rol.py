@@ -377,18 +377,21 @@ def componente(curso, unidad, id_base=None):
     return html_out, CSS, js
 
 
-def main():
-    curso = sys.argv[1] if len(sys.argv) > 1 else "C5"
-    unidad = int(sys.argv[2]) if len(sys.argv) > 2 else 5
+def suelto(curso, unidad):
+    """Het component als losstaande pagina — voor de C4-hubs, die hun
+    tabbladen als aparte bestanden inladen, en om los te bekijken."""
     hecho = componente(curso, unidad)
     if not hecho:
-        sys.exit("geen rollenspel voor %s U%d" % (curso, unidad))
+        return None
     cuerpo, css, js = hecho
     # los bekijkbaar, met een minimale schil zodat de klassen van de hub bestaan
+    COL = {"C4": ("#D64550", "#A8323B", "#FBEAEC"),
+           "C5": ("#1E9E74", "#157355", "#E4F4EE"),
+           "C6+": ("#7C56A9", "#5B3E83", "#EEE8F5")}[curso]
     demo = """<!doctype html><html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>%s U%d · rollenspel</title><style>
-:root{--g:#1E9E74;--gd:#157355;--gt:#E4F4EE;--ink:#20242E;--mut:#6A6E78;
+:root{--g:%s;--gd:%s;--gt:%s;--ink:#20242E;--mut:#6A6E78;
       --line:#E4E3DE;--card:#fff;--crema:#F3EEE4;--disp:system-ui,sans-serif}
 body{font-family:system-ui,sans-serif;background:#FCFBF8;color:var(--ink);
      margin:0;padding:24px;line-height:1.55}
@@ -401,15 +404,25 @@ body{font-family:system-ui,sans-serif;background:#FCFBF8;color:var(--ink);
      padding:9px 16px;cursor:pointer;font-size:14px}
 .btn.sec{background:var(--crema);color:var(--ink)}.btn.small{padding:6px 11px;font-size:13px}
 %s</style></head><body>%s<script>%s</script></body></html>""" % (
-        curso, unidad, css, cuerpo, js)
+        curso, unidad, COL[0], COL[1], COL[2], css, cuerpo, js)
     ruta = os.path.join(AQUI, "componentes",
                         "%s_U%d_rol.html" % (curso.replace("+", "plus"), unidad))
     os.makedirs(os.path.dirname(ruta), exist_ok=True)
     open(ruta, "w", encoding="utf-8").write(demo)
+    return ruta
+
+
+def main():
+    curso = sys.argv[1] if len(sys.argv) > 1 else "C5"
+    unidad = int(sys.argv[2]) if len(sys.argv) > 2 else 5
+    ruta = suelto(curso, unidad)
+    if not ruta:
+        sys.exit("geen rollenspel voor %s U%d" % (curso, unidad))
     r = RD.rol(curso, unidad)
     print("%s geschreven: %d beurten · %d corrector-regels · %.0f kB"
           % (os.path.basename(ruta), len(r["pasos"]),
-             len(CD.reglas_para(curso, unidad)), len(demo) / 1024))
+             len(CD.reglas_para(curso, unidad)),
+             os.path.getsize(ruta) / 1024))
 
 
 if __name__ == "__main__":

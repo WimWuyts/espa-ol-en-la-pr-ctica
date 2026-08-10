@@ -12,6 +12,7 @@ import hub_type_gram
 import extra_bronnen
 import hub_bloques
 import escucha_data, lectura_data
+import gen_rol
 ROOT = "/home/user/espa-ol-en-la-pr-ctica"
 GEN = f"{ROOT}/02-huisstijl/beeld/generators"
 sys.path.insert(0, GEN); import cast_gen as C; import vocab_icons as VI; import vocab_emoji as VE
@@ -352,6 +353,7 @@ __TYPESLOTS__
     <div id="retos_c6p_u1"></div>
   </section>
   <section class="panel" data-p="hablar">
+    __ROL__
     <h2 class="sec">Hablar · grábate 🎙️</h2>
     <p class="lead">Neem <b>jezelf</b> op: luister naar het model, spreek in, luister terug, en neem opnieuw op. <span class="gloss">Werkt in Chrome/Edge; sta de micro toe. Print blijft bruikbaar zonder opname.</span></p>
     <div class="card" id="rec_repite"></div>
@@ -805,6 +807,16 @@ HTML = HTML.replace("__BRONNEN__", extra_bronnen.html('C6+', 1))
 # Aantal spellen wordt geteld, niet met de hand bijgehouden.
 HTML = HTML.replace("__NGAMES__", str(len(GAMES)))
 HTML = HTML.replace("__TYPESLOTS__", hub_type_sets.SLOTS_HTML)
+
+# Het rollenspel: offline oefenpartner in het Hablar-paneel.
+_rol = gen_rol.componente("C6+", 1)
+if _rol:
+    _rol_html, _rol_css, _rol_js = _rol
+    HTML = HTML.replace("__ROL__", _rol_html)
+    CSS += _rol_css
+    JS += _rol_js
+else:
+    HTML = HTML.replace("__ROL__", "")
 
 html=(HTML.replace("__CSS__",CSS).replace("__MOCH__",moch).replace("__FC__",flashcards_html())
       .replace("__NAS__",naslag_html()).replace("__MAP__",mapsvg).replace("__DATA__",data_js()).replace("__JS__",JS))

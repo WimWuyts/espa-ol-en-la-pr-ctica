@@ -19,6 +19,8 @@ TABS=[
  ("funciones","🗣️ Funciones","C4_U6_funciones.html","Wat je met het Spaans kunt DOEN — je repertoire groeit elke unit."),
  ("kit","🧰 Kit","C4_U6_kgt.html","Uitspraak (b=v, llana/aguda), de taal per situatie, gramática (preposiciones · hay/está · poder) & tarea."),
  ("practica","✍️ Práctica","C4_U6_practica.html","Oefen zelfcorrigerend: herkennen → kiezen → zelf zeggen."),
+ ("rol","🎭 Ensaya","C4_U6_rol.html",
+  "Speel de scène zelf: de partner verbetert je en werkt zonder internet."),
  ("musica","🎧 Música","C4_U6_musica.html","Cultura (la casa hispana) + banda sonora — leer Spaans via muziek."),
 ]
 

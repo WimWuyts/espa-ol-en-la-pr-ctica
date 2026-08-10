@@ -21,6 +21,8 @@ TABS=[
  ("funciones","🗣️ Funciones","C4_U1_funciones.html","Wat je met het Spaans kunt DOEN — je repertoire groeit elke unit."),
  ("kit","🧰 Kit","C4_U1_kgt.html","Uitspraak (klanken), de taal per situatie, gramática & tarea."),
  ("practica","✍️ Práctica","C4_U1_practica.html","Oefen zelfcorrigerend: herkennen → kiezen → zelf zeggen."),
+ ("rol","🎭 Ensaya","C4_U1_rol.html",
+  "Speel de scène zelf: de partner verbetert je en werkt zonder internet."),
  ("musica","🎧 Música","C4_musica.html","Banda sonora — leer Spaans via muziek die jullie kennen."),
 ]
 # kgt bevat §2 Kit + §4 Gramática + §5 Tarea; we tonen het onder "Kit" én verwijzen ernaar.
