@@ -21,6 +21,8 @@ TABS=[
  ("practica","✍️ Práctica","C4_U7_practica.html","Oefen zelfcorrigerend: herkennen → kiezen → zelf zeggen."),
  ("rol","🎭 Ensaya","C4_U7_rol.html",
   "Speel de scène zelf: de partner verbetert je en werkt zonder internet."),
+ ("coach","📝 Entrega","C4_U7_coach.html",
+  "Schrijf je eindtaak en laat ze nakijken vóór je ze afgeeft."),
  ("musica","🎧 Música","C4_U7_musica.html","Cultura (el trabajo hispano) + banda sonora — leer Spaans via muziek."),
 ]
 

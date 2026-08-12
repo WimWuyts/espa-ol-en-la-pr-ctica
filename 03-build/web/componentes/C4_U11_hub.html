@@ -23,7 +23,7 @@ main{max-width:1120px;margin:0 auto;padding:14px 16px 30px}
   <h1>Unidad 11 · El tiempo · las vacaciones · lo que me gusta</h1>
   <p>De asistenta is ziek — dus <b>hay que limpiar</b>. Zeg wat er móet gebeuren, wat <b>jij</b> moet doen, en bied hulp aan: <b>yo te ayudo</b> · <b>¿qué tengo que hacer?</b> · <b>¿sabes pasar la aspiradora?</b> <i>Survival in Spanish.</i></p>
 </div>
-<nav class="tabbar"><button class="tab on" data-t="escucha">🎬 Escucha</button><button class="tab" data-t="comprension">📖 Lee y escucha</button><button class="tab" data-t="mapa">🗺️ Mapa</button><button class="tab" data-t="funciones">🗣️ Funciones</button><button class="tab" data-t="kit">🧰 Kit</button><button class="tab" data-t="practica">✍️ Práctica</button><button class="tab" data-t="rol">🎭 Ensaya</button><button class="tab" data-t="musica"><i class=ic-escuchar></i> Música</button></nav>
+<nav class="tabbar"><button class="tab on" data-t="escucha">🎬 Escucha</button><button class="tab" data-t="comprension">📖 Lee y escucha</button><button class="tab" data-t="mapa">🗺️ Mapa</button><button class="tab" data-t="funciones">🗣️ Funciones</button><button class="tab" data-t="kit">🧰 Kit</button><button class="tab" data-t="practica">✍️ Práctica</button><button class="tab" data-t="rol">🎭 Ensaya</button><button class="tab" data-t="coach">📝 Entrega</button><button class="tab" data-t="musica"><i class=ic-escuchar></i> Música</button></nav>
 <main>
 <section class="panel show" id="p_escucha"><p class="psub">Bekijk de aflevering en luister naar «Aquí hace demasiado calor» — de chunks komen uit je oren.</p><div class="fw"><iframe class="frame" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen; web-share" allowfullscreen srcdoc="<!doctype html><html lang=&quot;es&quot; data-theme=&quot;light&quot;><head><meta charset=&quot;utf-8&quot;>
 <meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;>
@@ -1009,6 +1009,150 @@ raiz.querySelectorAll('.modo button').forEach(function(b){
   };
 });
 pinta(); muestra();
+})();
+</script></body></html>"></iframe></div></section><section class="panel" id="p_coach"><p class="psub">Schrijf je eindtaak en laat ze nakijken vóór je ze afgeeft.</p><div class="fw"><iframe class="frame" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen; web-share" allowfullscreen srcdoc="<!doctype html><html lang=&quot;nl&quot;><head><meta charset=&quot;utf-8&quot;>
+<meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;>
+<title>C4 U11 · schrijfcoach</title><style>
+:root{--g:#D64550;--gd:#A8323B;--gt:#FBEAEC;--ink:#20242E;--mut:#6A6E78;--line:#E4E3DE;
+      --card:#fff;--crema:#F3EEE4;--disp:system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme=&quot;light&quot;]){
+  --ink:#ECEBE6;--mut:#9BA0AA;--line:#2C2E36;--card:#1C1E24;--crema:#1E2026}}
+:root[data-theme=&quot;dark&quot;]{--ink:#ECEBE6;--mut:#9BA0AA;--line:#2C2E36;
+  --card:#1C1E24;--crema:#1E2026}
+body{font-family:system-ui,sans-serif;background:var(--card);color:var(--ink);
+     margin:0;padding:24px;line-height:1.55}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;
+      padding:18px 20px;margin:0 auto;max-width:720px}
+.lead{color:var(--mut);margin:0 0 14px}
+.btn{border:none;background:var(--g);color:#fff;font-weight:700;border-radius:10px;
+     padding:9px 16px;cursor:pointer;font-size:14px;font-family:inherit}
+.btn.sec{background:var(--crema);color:var(--ink)}
+.btn.small{padding:6px 11px;font-size:13px}
+.btn:focus-visible{outline:3px solid var(--gd);outline-offset:2px}
+
+.coach .brief{background:var(--gt);border-radius:14px;padding:13px 16px;margin:0 0 12px}
+.coach .brief b{font-weight:700}
+.coach .brief dl{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;margin:8px 0 0;
+  font-size:14px}
+.coach .brief dt{font-weight:600;color:var(--gd)}
+.coach .brief dd{margin:0}
+.coach textarea{width:100%;min-height:190px;border:1.5px solid var(--line);
+  border-radius:13px;padding:12px 14px;font:inherit;font-size:15.5px;line-height:1.6;
+  background:var(--card);color:inherit;resize:vertical}
+.coach textarea:focus{outline:none;border-color:var(--g)}
+.coach .barra2{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0 0}
+.coach .cuenta{font-size:13px;color:var(--mut);margin-left:auto}
+.coach .cuenta b{color:var(--ink)}
+.coach .res{margin-top:14px}
+.coach .bloque{border:1px solid var(--line);border-radius:13px;padding:12px 14px;
+  margin:0 0 10px;background:var(--card)}
+.coach .bloque h4{margin:0 0 7px;font-size:14px;font-family:var(--disp);font-weight:700}
+.coach ul.chk{list-style:none;margin:0;padding:0;font-size:14.5px}
+.coach ul.chk li{padding:3px 0 3px 24px;position:relative}
+.coach ul.chk li:before{position:absolute;left:0;top:3px;font-weight:700}
+.coach ul.chk li.si:before{content:&quot;✓&quot;;color:var(--g)}
+.coach ul.chk li.no:before{content:&quot;○&quot;;color:var(--mut)}
+.coach ul.chk li.no{color:var(--mut)}
+.coach .uno{border-color:#C0392B;background:#C0392B0d}
+.coach .uno .zin{display:block;margin-top:7px;padding:8px 11px;background:var(--card);
+  border-radius:9px;border:1px dashed var(--line);font-size:14.5px}
+.coach .arreglo{width:100%;margin-top:8px;border:1.5px solid var(--line);
+  border-radius:10px;padding:9px 12px;font:inherit;font-size:15px;background:var(--card);
+  color:inherit}
+.coach .arreglo:focus{outline:none;border-color:var(--g)}
+.coach .nota{font-size:12.5px;color:var(--mut);margin:10px 0 0}
+</style></head><body>
+<div class=&quot;card coach&quot; id=&quot;coach_c4_u11&quot;>
+  <h3 style=&quot;margin:0 0 4px;font-family:var(--disp)&quot;>Antes de entregar · El tiempo y mis vacaciones</h3>
+  <p class=&quot;lead&quot; style=&quot;margin:0 0 10px&quot;>Schrijf je eindtaak hier en laat ze
+    nakijken vóór je ze afgeeft. De coach werkt zonder internet en je tekst
+    blijft op je eigen toestel.</p>
+  <div class=&quot;brief&quot;>
+    <b>De opdracht</b>
+    <dl><dt>Aan wie</dt><dd>je klasgenoten</dd>
+        <dt>Waarvoor</dt><dd>vertellen waar je heen gaat en waarom</dd>
+        <dt>Hoe lang</dt><dd>25 tot 45 woorden</dd></dl>
+  </div>
+  <textarea aria-label=&quot;Jouw tekst&quot; placeholder=&quot;Escribe aquí tu tarea…&quot;></textarea>
+  <div class=&quot;barra2&quot;>
+    <button class=&quot;btn&quot; data-rev>Nakijken</button>
+    <button class=&quot;btn sec small&quot; data-guarda>Bewaar als tekstbestand</button>
+    <span class=&quot;cuenta&quot;></span>
+  </div>
+  <div class=&quot;res&quot;></div>
+  <p class=&quot;nota&quot;>De coach kijkt naar de onderdelen van de opdracht en naar een
+    vaste lijst met veelgemaakte fouten. Hij geeft geen cijfer en ziet niet
+    alles — je leerkracht heeft het laatste woord.</p>
+</div><script>
+(function(){
+const D={&quot;titulo&quot;: &quot;El tiempo y mis vacaciones&quot;, &quot;min&quot;: 25, &quot;meta&quot;: 45, &quot;criterios&quot;: [{&quot;nl&quot;: &quot;Zeg waar je heen gaat en hoe&quot;, &quot;re&quot;: [&quot;voy\\s+a\\s+\\w+&quot;]}, {&quot;nl&quot;: &quot;Zeg wat voor weer het hier vandaag is&quot;, &quot;re&quot;: [&quot;hace\\s+(fr[ií]o|calor|sol|viento|buen|mal)&quot;, &quot;(llueve|nieva)&quot;]}, {&quot;nl&quot;: &quot;Zeg wat je graag doet&quot;, &quot;re&quot;: [&quot;me\\s+(gusta|encanta)\\s+\\w+&quot;]}], &quot;archivo&quot;: &quot;C4_U11_el&quot;}, R=[{&quot;id&quot;: &quot;gustar-yo&quot;, &quot;re&quot;: &quot;\\byo\\s+gust&quot;, &quot;nl&quot;: &quot;«Ik vind leuk» is in het Spaans omgekeerd: het ding bevalt <b>mij</b>. Dus niet «yo gusto» maar <b>me gusta</b>.&quot;, &quot;bien&quot;: &quot;Me gusta el chocolate.&quot;}, {&quot;id&quot;: &quot;gustar-tu&quot;, &quot;re&quot;: &quot;\\bt[uú]\\s+gustas\\b&quot;, &quot;nl&quot;: &quot;Ook hier omgekeerd: niet «tú gustas» maar <b>te gusta</b>.&quot;, &quot;bien&quot;: &quot;¿Te gusta la paella?&quot;}, {&quot;id&quot;: &quot;gustar-concordancia&quot;, &quot;re&quot;: &quot;\\bme\\s+gusta\\s+los\\b|\\bme\\s+gusta\\s+las\\b&quot;, &quot;nl&quot;: &quot;Meervoud: bij meer dan één ding wordt het <b>me gustan</b>.&quot;, &quot;bien&quot;: &quot;Me gustan los tacos.&quot;}, {&quot;id&quot;: &quot;estar-frio-persoon&quot;, &quot;re&quot;: &quot;\\b(estoy|est[aá]s|est[aá])\\s+(fr[ií]o|calor)\\b&quot;, &quot;nl&quot;: &quot;Over jezelf gebruik je <b>tener</b>: «tengo frío». «Estoy frío» betekent dat je lichaam koud aanvoelt — dat is iets heel anders.&quot;, &quot;bien&quot;: &quot;Tengo frío. · Hace frío.&quot;}, {&quot;id&quot;: &quot;hacer-tiempo&quot;, &quot;re&quot;: &quot;\\b(es|est[aá])\\s+(fr[ií]o|calor|sol|viento)\\b&quot;, &quot;nl&quot;: &quot;Het weer krijgt <b>hacer</b>: «hace frío», «hace sol».&quot;, &quot;bien&quot;: &quot;Hoy hace mucho calor.&quot;}, {&quot;id&quot;: &quot;ser-lugar&quot;, &quot;re&quot;: &quot;\\bes\\s+en\\s+(la|el|mi|tu)\\b&quot;, &quot;nl&quot;: &quot;Waar iets is, zeg je met <b>estar</b>, niet met «ser».&quot;, &quot;bien&quot;: &quot;El libro está en la mesa.&quot;}, {&quot;id&quot;: &quot;soy-anos&quot;, &quot;re&quot;: &quot;\\bsoy\\s+\\w*\\s*a[ñn]os\\b|\\bsoy\\s+\\d+\\s*a[ñn]os\\b&quot;, &quot;nl&quot;: &quot;Leeftijd krijgt <b>tener</b>: je «hébt» jaren in het Spaans.&quot;, &quot;bien&quot;: &quot;Tengo dieciséis años.&quot;}, {&quot;id&quot;: &quot;soy-de-ciudad-vivir&quot;, &quot;re&quot;: &quot;\\bsoy\\s+en\\s+\\w+&quot;, &quot;nl&quot;: &quot;«Ik kom uit» is <b>soy de</b>; «ik woon in» is <b>vivo en</b>.&quot;, &quot;bien&quot;: &quot;Soy de Gante y vivo en Brujas.&quot;}, {&quot;id&quot;: &quot;luego-dus&quot;, &quot;re&quot;: &quot;,\\s*luego\\b&quot;, &quot;nl&quot;: &quot;Als je hier «dus» bedoelt, is dat <b>así que</b> of <b>por eso</b>. <i>Luego</i> betekent «daarna» — dat kan wél, maar dan zonder komma: «y luego…».&quot;, &quot;bien&quot;: &quot;Hace calor, así que voy a la playa.&quot;}, {&quot;id&quot;: &quot;porque-pregunta&quot;, &quot;re&quot;: &quot;\\bporque\\s+(no\\s+)?(vas|vienes|comes|quieres|est[aá]s)\\b\\s*\\?&quot;, &quot;nl&quot;: &quot;In een vráág schrijf je <b>por qué</b>: twee woorden, met accent. <i>Porque</i> (aan elkaar) is het antwoord.&quot;, &quot;bien&quot;: &quot;¿Por qué no vienes? — Porque estoy enfermo.&quot;}, {&quot;id&quot;: &quot;want-omdat&quot;, &quot;re&quot;: &quot;\\b(want|omdat|dus)\\b&quot;, &quot;nl&quot;: &quot;Er staat een Nederlands woord in je zin. «Want» én «omdat» zijn allebei <b>porque</b>; «dus» is <b>así que</b>.&quot;, &quot;bien&quot;: &quot;No como carne porque soy vegetariano.&quot;}, {&quot;id&quot;: &quot;ir-a&quot;, &quot;re&quot;: &quot;\\bvoy\\s+(el|la|los|las)\\b&quot;, &quot;nl&quot;: &quot;Na <b>ir</b> hoort <b>a</b>: «voy a la playa», «voy al mercado».&quot;, &quot;bien&quot;: &quot;Voy a la escuela.&quot;}, {&quot;id&quot;: &quot;tener-que&quot;, &quot;re&quot;: &quot;\\btengo\\s+(de|a)\\s+\\w+ar\\b|\\btengo\\s+(de|a)\\s+\\w+er\\b&quot;, &quot;nl&quot;: &quot;«Ik moet» is <b>tengo que</b> + hele werkwoord.&quot;, &quot;bien&quot;: &quot;Tengo que estudiar.&quot;}, {&quot;id&quot;: &quot;ir-a-inf&quot;, &quot;re&quot;: &quot;\\bvoy\\s+\\w+ar\\b(?!\\s)&quot;, &quot;nl&quot;: &quot;Een plan maak je met <b>voy a</b> + hele werkwoord.&quot;, &quot;bien&quot;: &quot;Voy a comer.&quot;}, {&quot;id&quot;: &quot;el-agua-la&quot;, &quot;re&quot;: &quot;\\bla\\s+agua\\b&quot;, &quot;nl&quot;: &quot;<b>El agua</b> — het is wél vrouwelijk, maar krijgt <i>el</i> omdat het met een beklemtoonde a begint. Het bijvoeglijk naamwoord blijft vrouwelijk.&quot;, &quot;bien&quot;: &quot;El agua está fría.&quot;}, {&quot;id&quot;: &quot;un-una-comida&quot;, &quot;re&quot;: &quot;\\bun\\s+(sopa|carta|cuenta|mesa|servilleta|cuchara|manzana|naranja|piña|lechuga|cebolla)\\b&quot;, &quot;nl&quot;: &quot;Dit woord is vrouwelijk: <b>una</b>, niet «un».&quot;, &quot;bien&quot;: &quot;Una sopa, por favor.&quot;}, {&quot;id&quot;: &quot;una-masculino&quot;, &quot;re&quot;: &quot;\\buna\\s+(pan|queso|pollo|pescado|arroz|plato|vaso|tenedor|cuchillo|caf[eé]|men[uú])\\b&quot;, &quot;nl&quot;: &quot;Dit woord is mannelijk: <b>un</b>, niet «una».&quot;, &quot;bien&quot;: &quot;Un café, por favor.&quot;}, {&quot;id&quot;: &quot;quiero-seco&quot;, &quot;re&quot;: &quot;^(?!.*por\\s+favor)\\s*(quiero|dame|trae)\\b[^?]*$&quot;, &quot;nl&quot;: &quot;Dit klinkt kortaf. Zet er <b>por favor</b> bij, of gebruik <b>¿me pone…?</b> of <b>para mí…</b>.&quot;, &quot;bien&quot;: &quot;¿Me pone un café, por favor?&quot;}, {&quot;id&quot;: &quot;acento-que&quot;, &quot;re&quot;: &quot;\\bque\\s+(quiere|quieres|va|tal)\\b\\s*\\?&quot;, &quot;nl&quot;: &quot;In een vraag draagt <b>qué</b> een accent.&quot;, &quot;bien&quot;: &quot;¿Qué quiere tomar?&quot;}, {&quot;id&quot;: &quot;apertura&quot;, &quot;re&quot;: &quot;^(?![^?]*¿)[^?]*\\w[^?]*\\?\\s*$&quot;, &quot;nl&quot;: &quot;In het Spaans staat het vraagteken er <b>twee keer</b>: ¿ aan het begin en ? aan het eind.&quot;, &quot;bien&quot;: &quot;¿Cuánto cuesta?&quot;}, {&quot;id&quot;: &quot;nn-ñ&quot;, &quot;re&quot;: &quot;\\b(anos|manana|nino|espanol|senor)\\b&quot;, &quot;nl&quot;: &quot;Hier hoort een <b>ñ</b>: años · mañana · niño · español · señor.&quot;, &quot;bien&quot;: &quot;Tengo dieciséis años.&quot;}];
+const raiz=document.getElementById('coach_c4_u11');
+if(!raiz) return;
+const ta=raiz.querySelector('textarea'), res=raiz.querySelector('.res'),
+      cuenta=raiz.querySelector('.cuenta');
+
+function palabras(t){ return (t.trim().match(/[\wáéíóúñü]+/gi)||[]).length; }
+function pinta(){
+  const n=palabras(ta.value);
+  cuenta.innerHTML='<b>'+n+'</b> woorden · streefdoel '+D.min+'–'+D.meta;
+}
+ta.addEventListener('input',pinta); pinta();
+
+// De zin waarin de fout staat, zodat de leerling weet wélke hij herschrijft.
+function fraseCon(txt,re){
+  const partes=txt.split(/(?<=[.!?¿¡\n])\s+/).filter(Boolean);
+  for(const f of partes){ if(new RegExp(re,'i').test(f)) return f.trim(); }
+  return txt.trim().slice(0,120);
+}
+
+raiz.querySelector('[data-rev]').onclick=function(){
+  const t=ta.value.trim();
+  if(!t){ res.innerHTML='<div class=&quot;bloque&quot;>Schrijf eerst je tekst hierboven.</div>'; return; }
+  const n=palabras(t);
+  const hechos=[], faltan=[];
+  D.criterios.forEach(function(c){
+    (c.re.some(function(p){return new RegExp(p,'i').test(t);}) ? hechos : faltan).push(c.nl);
+  });
+  // één ding om te verbeteren — nooit een hele lijst
+  let fallo=null;
+  for(const g of R){ if(new RegExp(g.re,'i').test(t)){ fallo=g; break; } }
+
+  let h='';
+  h+='<div class=&quot;bloque&quot;><h4>Onderdelen die ik terugvind</h4><ul class=&quot;chk&quot;>'+
+     (hechos.map(function(x){return '<li class=&quot;si&quot;>'+x+'</li>';}).join('')
+      || '<li class=&quot;no&quot;>nog geen enkel onderdeel van de opdracht</li>')+'</ul></div>';
+  if(faltan.length){
+    h+='<div class=&quot;bloque&quot;><h4>Onderdelen die ik nog niet vind</h4><ul class=&quot;chk&quot;>'+
+       faltan.map(function(x){return '<li class=&quot;no&quot;>'+x+'</li>';}).join('')+'</ul></div>';
+  }
+  if(n<D.min){
+    h+='<div class=&quot;bloque&quot;><h4>Lengte</h4>Je tekst telt <b>'+n+'</b> woorden. '+
+       'Voor deze taak zijn er minstens <b>'+D.min+'</b> nodig — er mag dus nog iets bij.</div>';
+  }
+  if(fallo){
+    h+='<div class=&quot;bloque uno&quot;><h4>Eén ding om te verbeteren</h4>'+fallo.nl+
+       '<span class=&quot;zin&quot;>'+fraseCon(t,fallo.re).replace(/</g,'&amp;lt;')+'</span>'+
+       '<input class=&quot;arreglo&quot; type=&quot;text&quot; placeholder=&quot;Herschrijf die ene zin hier…&quot; '+
+       'aria-label=&quot;Herschrijf de zin&quot;>'+
+       '<div class=&quot;nota&quot;>Zo kan het: <b>'+fallo.bien+'</b></div></div>';
+  }else{
+    // bewust géén «goed» — de coach kent niet alles
+    h+='<div class=&quot;bloque&quot;><h4>Fouten</h4>Ik zie hier geen fouten die ik ken. '+
+       'Dat betekent niet dat er geen zijn — laat je tekst nog aan je leerkracht zien.</div>';
+  }
+  res.innerHTML=h;
+  const arr=res.querySelector('.arreglo'); if(arr) arr.focus();
+};
+
+raiz.querySelector('[data-guarda]').onclick=function(){
+  const t=ta.value;
+  if(!t.trim()) return;
+  const b=new Blob([D.titulo+'\n\n'+t+'\n'],{type:'text/plain;charset=utf-8'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(b);
+  a.download=D.archivo+'.txt'; a.click();
+  URL.revokeObjectURL(a.href);
+};
 })();
 </script></body></html>"></iframe></div></section><section class="panel" id="p_musica"><p class="psub">Cultura + banda sonora — leer Spaans via muziek.</p><div class="fw"><iframe class="frame" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen; web-share" allowfullscreen srcdoc="<!doctype html><html lang=&quot;es&quot; data-theme=&quot;light&quot;><head><meta charset=&quot;utf-8&quot;>
 <meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;><title>C4 · Música en español</title>

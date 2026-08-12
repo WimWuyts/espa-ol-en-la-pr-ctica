@@ -12,6 +12,7 @@ import hub_type_gram
 import extra_bronnen
 import hub_bloques
 import escucha_data, lectura_data
+import gen_coach
 import gen_rol
 ROOT = "/home/user/espa-ol-en-la-pr-ctica"
 GEN = f"{ROOT}/02-huisstijl/beeld/generators"
@@ -351,6 +352,7 @@ __TYPESLOTS__
     <h2 class="sec">Retos · tres desafíos 🎯</h2>
     <p class="lead">Drie retos met <b>één harde regel</b>: je kijkt wat je écht uit een schermtijdcijfer mag concluderen (en wat niet), je neemt een podcast van twee minuten op waarin je het oneens bent <b>zonder te onderbreken</b>, en je zoekt Spaanse equivalenten voor <i>scrollear</i>, <i>ghostear</i> en <i>stalkear</i> die een Spaanstalige ook zonder Engels begrijpt. <span class="gloss">De zeven andere retos van deze unit staan in het boek en in de PowerPoint.</span></p>
     <div id="retos_c6p_u3"></div>
+      __COACH__
   </section>
   <section class="panel" data-p="hablar">
     __ROL__
@@ -772,6 +774,16 @@ HTML = HTML.replace("__BRONNEN__", extra_bronnen.html('C6+', 3))
 HTML = HTML.replace("__TYPESLOTS__", hub_type_sets.SLOTS_HTML)
 
 # Het rollenspel: offline oefenpartner in het Hablar-paneel.
+# De schrijfcoach bij de eindtaak, onderaan het Retos-paneel.
+_co = gen_coach.componente("C6+", 3)
+if _co:
+    _co_html, _co_css, _co_js = _co
+    HTML = HTML.replace("__COACH__", _co_html)
+    CSS += _co_css
+    JS += _co_js
+else:
+    HTML = HTML.replace("__COACH__", "")
+
 _rol = gen_rol.componente("C6+", 3)
 if _rol:
     _rol_html, _rol_css, _rol_js = _rol

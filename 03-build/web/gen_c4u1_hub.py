@@ -23,6 +23,8 @@ TABS=[
  ("practica","✍️ Práctica","C4_U1_practica.html","Oefen zelfcorrigerend: herkennen → kiezen → zelf zeggen."),
  ("rol","🎭 Ensaya","C4_U1_rol.html",
   "Speel de scène zelf: de partner verbetert je en werkt zonder internet."),
+ ("coach","📝 Entrega","C4_U1_coach.html",
+  "Schrijf je eindtaak en laat ze nakijken vóór je ze afgeeft."),
  ("musica","🎧 Música","C4_musica.html","Banda sonora — leer Spaans via muziek die jullie kennen."),
 ]
 # kgt bevat §2 Kit + §4 Gramática + §5 Tarea; we tonen het onder "Kit" én verwijzen ernaar.

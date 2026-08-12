@@ -54,6 +54,8 @@ TABS=[
   "Oefen zelfcorrigerend: herkennen → kiezen → zelf zeggen → opnemen."),
  ("rol","🎭 Ensaya",f"C4_U{UNIT}_rol.html",
   "Speel de scène zelf: de partner verbetert je en werkt zonder internet."),
+ ("coach","📝 Entrega",f"C4_U{UNIT}_coach.html",
+  "Schrijf je eindtaak en laat ze nakijken vóór je ze afgeeft."),
  ("musica","🎧 Música",f"C4_U{UNIT}_musica.html",
   "Cultura + banda sonora — leer Spaans via muziek."),
 ]

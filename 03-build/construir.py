@@ -128,6 +128,7 @@ def construye_c4(u):
         # zijn tabbladen als aparte bestanden in), in C5 en C6+ zit hij in het
         # Hablar-paneel van de pagina zelf.
         (["python3", "gen_rol.py", "C4", str(u)], None),
+        (["python3", "gen_coach.py", "C4", str(u)], None),
     ]
     pasos += ([(["python3", "gen_c4u%d_hub.py" % u], None),   # ná de zeven onderdelen
                 (["python3", "gen_c4u%d_pdf.py" % u], None)] if propio else
