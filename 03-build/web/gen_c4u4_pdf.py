@@ -99,6 +99,7 @@ def wl(cls=""): return f'<span class="wl {cls}"></span>'
 
 CSS=FONTS+PRINTCSS+r"""
 :root{ --g:#D64550; --gd:#A8323B; --gt:#FBEAEC; }
+.gloss{ font-size:.9em; line-height:1.32; }   /* steun is steun: kleiner en dichter */
 .p{color:#2563EB;font-weight:700}.v{color:#EA7317;font-weight:700}.pl{color:#0E9E97;font-weight:700}
 .tl{display:flex;gap:3mm;padding:.55mm 0;font-size:9.5pt;break-inside:avoid}
 .tl .sp{font-family:var(--disp);font-weight:700;color:var(--gd);width:22mm;flex:none}
@@ -154,7 +155,7 @@ HERO=f"""
   <div class="q">Esta es mi madre. Es muy elegante.</div>
 </section>
 <div class="page">
-  <div class="obj"><div class="se">Al final de esta unidad · Op het einde van deze les</div>
+  <div class="obj"><div class="se">Al final de esta unidad <span class="gloss">op het einde van deze les</span></div>
     <ul>
       <li><span class="ck">✓</span> <span><span class="es">Presentar a tu familia</span> <span class="nl">— esta es mi madre · se llama…</span></span></li>
       <li><span class="ck">✓</span> <span><span class="es">Describir el físico y el carácter</span> <span class="nl">— es alto/a · guapo/a · simpático/a</span></span></li>
@@ -162,10 +163,10 @@ HERO=f"""
       <li><span class="ck">✓</span> <span><span class="es">Graduar con <b>muy / un poco</b></span> <span class="nl">— muy guapa · un poco tímido</span></span></li>
     </ul>
   </div>
-  <div class="guide"><span class="ic">🎒</span><div><span class="hand">¡Seguimos la ruta! Parada 4.</span><div class="g">In deze «survival»-les leer je je familie voorstellen én mensen beschrijven. In de video toont een moeder haar fotoalbum en becommentarieert ze iedereen — perfecte adjectieven-input!</div></div></div>
+  <div class="guide"><span class="ic">🎒</span><div><span class="hand">¡Seguimos la ruta! Parada 4.</span><div class="g">En esta lección de «survival» aprendes a presentar a tu familia y a describir a la gente. En el vídeo una madre enseña su álbum de fotos y comenta a todo el mundo: adjetivos a raudales. <span class="gloss">perfecte input voor adjectieven</span></div></div></div>
 
-  <div class="se" style="margin-top:6mm">La gente de la ruta · je reisgenoten</div>
-  <p style="font-size:9.4pt;margin:0 0 1mm">Je reist mee met vier jongeren uit de Spaanstalige wereld. In de scène ontmoet je María, haar (heel directe!) moeder en Julio.</p>
+  <div class="se" style="margin-top:6mm">La gente de la ruta · tus compañeros de viaje</div>
+  <p style="font-size:9.4pt;margin:0 0 1mm">Viajas con cuatro jóvenes del mundo hispano. En la escena conoces a María, a su madre (¡muy directa!) y a Julio. <span class="gloss">je reist mee met vier jongeren</span></p>
   <div class="cast2">
     <div class="m"><div class="fl">🇪🇸</div><div class="nm">Lucía</div><div class="ro">Sevilla · familie</div></div>
     <div class="m"><div class="fl">🇲🇽</div><div class="nm">Diego</div><div class="ro">CDMX · eten & markt</div></div>
@@ -174,7 +175,7 @@ HERO=f"""
     <div class="m"><div class="fl">🎒</div><div class="nm">Tú</div><div class="ro">jij, de reiziger</div></div>
   </div>
 
-  <div class="truc" style="margin-top:5mm"><b>¿Qué reconoces ya?</b> Deze «beschrijf-woorden» lijken op het Nederlands of Engels (<i>palabras transparentes</i>) — durf te gissen:
+  <div class="truc" style="margin-top:5mm"><b>¿Qué reconoces ya?</b> Estos adjetivos para describir se parecen al neerlandés o al inglés (<i>palabras transparentes</i>) — durf te gissen:
     <div class="cogn"><span>la familia</span><span>elegante</span><span>inteligente</span><span>el álbum</span><span>la foto</span><span>moderno</span><span>favorito/a</span><span>normal</span><span>el carácter</span><span>sexy</span></div>
     <span style="font-size:8.6pt;color:var(--mut)">Tip: veel <i>adjetivos</i> herken je meteen — <b>elegante</b>, <b>inteligente</b>, <b>favorito</b>…</span>
   </div>
@@ -183,16 +184,16 @@ HERO=f"""
 
 ESCUCHA=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">§1 · ¡Escucha!</div><h2>Bekijk de scène en lees mee</h2>
+  <div class="se">§1 · ¡Escucha!</div><h2>Mira la escena y lee al mismo tiempo <span class="gloss" style="font-size:10pt;font-weight:400">bekijk en lees mee</span></h2>
   <div class="audiorow">
-    <div class="call"><span class="ic">🎬</span><div><b>Sitcom · Episodio 4 · La familia.</b> Scan de code en bekijk de aflevering op de digitale pagina. Een moeder ondervraagt haar dochter over «een jongen» en toont daarna het <b>fotoalbum</b> — met een lawine aan adjectieven. Luister eerst zónder te lezen; daarna lees je mee. De <b>vetgedrukte</b> woorden zijn chunks om mee te nemen.</div></div>
+    <div class="call"><span class="ic">🎬</span><div><b>Sitcom · Episodio 4 · La familia.</b> Escanea el código y mira el episodio en la página digital. Una madre interroga a su hija sobre «un chico» y después saca el <b>álbum de fotos</b>, con una avalancha de adjetivos. Primero escucha sin leer; después lee al mismo tiempo. Las palabras en <b>negrita</b> son chunks para llevarte. <span class="gloss">eerst zónder te lezen, daarna lees je mee</span></div></div>
     <div class="qr" data-url="{EN.url('C4', 4, EN.ancla_c4('escucha'))}"><div class="lab">Vídeo online</div>{qr(EN.url("C4", 4, EN.ancla_c4("escucha")))}<div class="meta">hub · Escucha</div></div>
   </div>
-  <div class="truc"><b>Antes de escuchar · vóór je luistert.</b> Welke <b>familieleden</b> en <b>adjectieven</b> ga je horen, denk je? <span style="font-size:8.8pt;color:var(--mut)">(gis gerust)</span>
+  <div class="truc"><b>Antes de escuchar.</b> ¿Qué <b>familiares</b> y qué <b>adjetivos</b> crees que vas a oír? <span class="gloss">wat ga je horen, denk je?</span> <span style="font-size:8.8pt;color:var(--mut)">(gis gerust)</span>
     <div style="margin-top:1.5mm;font-size:9.6pt;line-height:2.2">Un familiar: {wl('sm')} &nbsp;&nbsp; Un adjetivo (físico): {wl('sm')} &nbsp;&nbsp; Un adjetivo (carácter): {wl('sm')}</div>
   </div>
   <div class="twocol">{scenehtml(*SCENES[0])}{scenehtml(*SCENES[1])}</div>
-  <div class="ojo"><b>¡Ojo!</b> Om iemand te beschrijven gebruik je <b>ser</b> (es): «es guapa», «es simpático» — niet <i>estar</i>. En het adjectief past zich aan: una chica alt<b>a</b>, un chico alt<b>o</b>.</div>
+  <div class="ojo"><b>¡Ojo!</b> Para describir a alguien usas <b>ser</b> (es): «es guapa», «es simpático», no <i>estar</i>. Y el adjetivo cambia: una chica alt<b>a</b>, un chico alt<b>o</b>. <span class="gloss">beschrijven met ser; het adjectief past zich aan</span></div>
 
   <div class="se" style="margin-top:5mm">Después de escuchar · ¿Verdadero o falso?</div>
   <p style="font-size:9.4pt;margin:0 0 1mm">Kruis aan. Verbeter de <b>falsas</b> op de lijn.</p>
@@ -214,17 +215,17 @@ KIT=f"""
   <div class="cogn"><span>yo</span><span>ya</span><span>playa</span><span>mayo</span><span>desayuno</span><span>leyenda</span></div>
   <div class="klemline"><b>El acento llano · de meeste woorden (klemtoon op de voorlaatste):</b> <span class="t">MA</span>·dre · her·<span class="t">MA</span>·no · a·<span class="t">BUE</span>·la · e·le·<span class="t">GAN</span>·te</div>
 
-  <div class="se" style="margin-top:3mm">§2 · Kit de supervivencia</div><h2>De taal die je écht nodig hebt</h2>
-  <p style="font-size:9.4pt;color:var(--mut);margin:0 0 2mm">Vink ☐ af telkens je een uitdrukking vlot kunt <b>naspreken</b>. Oefen ze online met audio.</p>
+  <div class="se" style="margin-top:3mm">§2 · Kit de supervivencia</div><h2>La lengua que de verdad necesitas <span class="gloss" style="font-size:10pt;font-weight:400">de taal die je écht nodig hebt</span></h2>
+  <p style="font-size:9.4pt;color:var(--mut);margin:0 0 2mm">Marca ☐ cada vez que puedas <b>repetir</b> una expresión con soltura. Practícalas en línea con audio. <span class="gloss">vink af wat je vlot kunt naspreken</span></p>
   <div class="kitwrap">{"".join(kittable(n,it) for n,it in CLUSTERS)}</div>
 </div>
 """
 
 GRAM=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">§4 · Gramática en la práctica</div><h2>Kort en functioneel</h2>
-  <div class="modelo"><b>🔎 Fíjate · kijk terug naar de scène.</b> Je hoorde het al: «Esta es <b>mi</b> madre» · «<b>Es</b> muy elegante» · «Es una chica muy delgad<b>a</b> y muy guap<b>a</b>». Ontdek zelf het patroon — <i>eerst betekenis, dan de regel.</i></div>
-  <div class="regla"><span class="tag">mi · tu · su · van wie is het? (posesivos)</span>
+  <div class="se">§4 · Gramática en la práctica</div><h2>Corta y funcional <span class="gloss" style="font-size:10pt;font-weight:400">kort en functioneel</span></h2>
+  <div class="modelo"><b>🔎 Fíjate · vuelve a la escena.</b> Ya lo has oído: «Esta es <b>mi</b> madre» · «<b>Es</b> muy elegante» · «Es una chica muy delgad<b>a</b> y muy guap<b>a</b>». Descubre tú el patrón — <i>primero el significado, después la regla.</i> <span class="gloss">ontdek zelf het patroon</span></div>
+  <div class="regla"><span class="tag">mi · tu · su · ¿de quién es? (posesivos) <span class="gloss">van wie is het?</span></span>
     <table class="gt2"><tr><td class="p">mi</td><td>mijn</td><td class="ex"><b>mi</b> madre · <b>mi</b> hermano</td></tr>
     <tr><td class="p">tu</td><td>jouw</td><td class="ex">¿Y <b>tu</b> familia?</td></tr>
     <tr><td class="p">su</td><td>zijn/haar</td><td class="ex"><b>su</b> padre</td></tr></table>
@@ -237,11 +238,11 @@ GRAM=f"""
   <div class="regla"><span class="tag">muy · un poco</span>
     <p style="margin:1mm 0 0;font-size:9.6pt"><b>muy</b> = heel (versterkt): «muy alta». <b>un poco</b> = een beetje (verzacht, vaak iets negatiefs): «un poco gorda». In de scène: «muy elegante, <b>pero un poco</b> gorda».</p>
   </div>
-  <div class="truc"><b>Mini-oefening 1 · mi/tu + ser.</b> Vul aan:
-    <div style="margin-top:2mm;font-size:9.6pt;line-height:2.4">1. Esta es {wl('sm')} madre (van mij). &nbsp; 2. ¿Cómo {wl('sm')} tu hermano? &nbsp; 3. {wl('sm')} tía es muy amable (van mij). &nbsp; 4. ¿Y {wl('sm')} familia? (van jou)</div>
+  <div class="truc"><b>Mini-ejercicio 1 · mi/tu + ser.</b> Completa:
+    <div style="margin-top:2mm;font-size:9.6pt;line-height:2.4">1. Esta es {wl('sm')} madre (de mí). &nbsp; 2. ¿Cómo {wl('sm')} tu hermano? &nbsp; 3. {wl('sm')} tía es muy amable (de mí). &nbsp; 4. ¿Y {wl('sm')} familia? (de ti)</div>
   </div>
-  <div class="truc"><b>Mini-oefening 2 · adjetivo ♂/♀.</b> Schrijf het adjectief juist: a) Mi hermana (guapo) → {wl('sm')} &nbsp; b) Mi tío (alto) → {wl('sm')} &nbsp; c) María (divertido) → {wl('sm')}</div>
-  <div class="truc"><b>Mini-oefening 3 · muy of un poco?</b> Kies de logische versterker en vul aan:
+  <div class="truc"><b>Mini-ejercicio 2 · adjetivo ♂/♀.</b> Escribe bien el adjetivo: a) Mi hermana (guapo) → {wl('sm')} &nbsp; b) Mi tío (alto) → {wl('sm')} &nbsp; c) María (divertido) → {wl('sm')}</div>
+  <div class="truc"><b>Mini-ejercicio 3 · ¿muy o un poco?</b> Elige lo que tenga sentido y completa:
     <div style="margin-top:2mm;font-size:9.6pt;line-height:2.4">1. Einstein es {wl('sm')} inteligente. &nbsp; 2. Un ratón es {wl('sm')} pequeño (klein). &nbsp; 3. Un elefante es {wl('sm')} grande y {wl('sm')} fuerte.</div>
     <div style="margin-top:2mm;font-size:9.6pt">✍️ Describe a alguien de tu familia (naam + 2 adjectieven): {wl('full')}</div></div>
 </div>
@@ -254,7 +255,7 @@ def act(n,title,badges,body):
 
 PRAC=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">§3 · Práctica</div><h2>Oefen op papier — online verbeter je alles</h2>
+  <div class="se">§3 · Práctica</div><h2>Practica en papel · online se corrige solo <span class="gloss" style="font-size:10pt;font-weight:400">online verbetert het zichzelf</span></h2>
 
   {act(1,"Clasifica: familia, físico o carácter",[("receptief","skill"),("5 min","")],
     '<p style="margin-left:12.5mm">Schrijf elk woord in de juiste kolom. Voeg onderaan één eigen woord toe.<br><span class="gloss">la abuela · alto · simpático · el tío · guapo · divertido · la hermana · amable</span></p>'
@@ -304,21 +305,21 @@ PRAC=f"""
 TAREA=f"""
 <div class="page sec" style="break-before:page">
   <div class="se">§5 · Tarea final</div><h2>Mi árbol de familia</h2>
-  <div class="esen" style="margin-top:2mm"><b class="tt">Jouw opdracht.</b> Teken een <b>stamboom</b> met <b>4 personen</b> (echt of fantasie). Stel elk voor («Est_ es mi…, se llama…») en <b>beschrijf</b> ze met 2 adjectieven (let op ♂/♀ + muy/un poco). Presenteer je stamboom aan de klas. <span class="gloss">Sin leer del papel — zonder van het blad af te lezen.</span></div>
+  <div class="esen" style="margin-top:2mm"><b class="tt">Tu tarea.</b> Dibuja un <b>árbol de familia</b> con <b>4 personas</b> (real o inventada). Presenta a cada una («Est_ es mi…, se llama…») y <b>descríbela</b> con 2 adjetivos (ojo con ♂/♀ y con muy/un poco). Presenta tu árbol a la clase. <span class="gloss">Sin leer del papel — zonder van het blad af te lezen.</span></div>
   <div class="regla" style="margin-top:4mm"><span class="tag">Prepárate · vul eerst de frames in</span>
     <div style="margin-top:2mm;font-size:9.7pt;line-height:2.4">👩 Esta es mi {wl('sm')} . Se llama {wl('sm')} . Es {wl('sm')} y {wl('sm')} .<br>👨 Este es mi {wl('sm')} . Se llama {wl('sm')} . Es {wl('sm')} .<br>🧑 Est_ es mi {wl('sm')} . Es muy {wl('sm')} y un poco {wl('sm')} .</div>
   </div>
   <div class="modelo" style="margin-top:4mm"><b>Modelo · zo klinkt het:</b><br>
     — Esta es mi madre. Se llama Carmen. Es muy simpática y un poco elegante.<br>
     — Este es mi hermano. Se llama Tom. Es alto, guapo y muy divertido.</div>
-  <div style="margin-top:4mm"><div class="se">Mi árbol · teken hier je stamboom + noteer per persoon</div>
+  <div style="margin-top:4mm"><div class="se">Mi árbol · dibuja aquí tu árbol y anota a cada persona <span class="gloss">teken je stamboom en noteer per persoon</span></div>
     <div class="wbox" style="min-height:52mm;background:#fff"></div>
   </div>
   <div class="regla" style="margin-top:3mm"><span class="tag">Palabras y frases útiles</span>
     <p style="margin:1mm 0 0;font-size:9.6pt">mi madre/padre · hermano/a · abuelo/a · tío/a · Esta/Este es… · Se llama… · es alto/a · guapo/a · delgado/a · simpático/a · divertido/a · amable · inteligente · elegante · muy… · un poco…</p>
   </div>
   <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:6mm;margin-top:4mm;align-items:start">
-    <div class="truc" style="margin:0"><b>🏁 Klaar als…</b> je 4 familieleden voorstelt met «est_ es mi…», elk met 2 adjectieven (juiste ♂/♀ + muy/un poco), en de stamboom aanwijst — zónder af te lezen.</div>
+    <div class="truc" style="margin:0"><b>🏁 Está listo cuando…</b> presentas a 4 familiares con «est_ es mi…», cada uno con 2 adjetivos (♂/♀ correcto + muy/un poco), y señalas el árbol, sin leer. <span class="gloss">zónder af te lezen</span></div>
     <table class="rubric"><thead><tr><th>Evaluatie</th><th style="text-align:center">🟢🟡🔴</th></tr></thead>
       <tr><td>presentar (est_ es mi…) correct</td><td></td></tr>
       <tr><td>ser + adjetivo (♂/♀) correct</td><td></td></tr>
@@ -333,23 +334,23 @@ def banda(a,s,g): return f'<div class="banda"><div class="ar">{a}</div><div clas
 MUSICA=f"""
 <div class="page sec" style="break-before:page">
   <div class="se">Cultura · Banda sonora</div><h2>La familia en el mundo hispano</h2>
-  <p style="font-size:9.6pt">In de Spaanstalige cultuur is <b>la familia</b> vaak groot, warm en dichtbij: soms wonen <b>drie generaties</b> samen, en na het eten praat men lang na aan tafel (<b>la sobremesa</b>). Schilderes <b>Frida Kahlo</b> maakte zelfs een schilderij van haar stamboom. En elke unit heeft een <b>banda sonora</b>.</p>
+  <p style="font-size:9.6pt">En la cultura hispana <b>la familia</b> suele ser grande, cercana y calurosa: a veces conviven <b>tres generaciones</b>, y después de comer se habla largo rato en la mesa (<b>la sobremesa</b>). La pintora <b>Frida Kahlo</b> hizo incluso un cuadro de su árbol de familia. Y cada unidad tiene su <b>banda sonora</b>. <span class="gloss">groot, warm en dichtbij</span></p>
   <div class="bandas">{"".join(banda(*b) for b in BANDAS)}</div>
   <div class="musrow">
-    <div class="call"><span class="ic">🎧</span><div><b>Spotify · la playlist de la clase.</b> Scan en luister. Op de digitale pagina vind je ook <b>LyricsTraining</b> en de <b>wereldkaart</b>.</div></div>
+    <div class="call"><span class="ic">🎧</span><div><b>Spotify · la playlist de la clase.</b> Escanea y escucha. En la página digital tienes también <b>LyricsTraining</b> y el <b>mapa del mundo</b>. <span class="gloss">scan en luister; online staat er meer</span></div></div>
     <div class="qr" data-url="{SPOTIFY}"><div class="lab">Playlist</div>{qr(SPOTIFY)}<div class="meta">Spotify</div></div>
   </div>
   <div class="truc" style="margin-top:5mm"><b>La familia · ¿sabías que…?</b> Verbind (gis gerust):
-    <table class="mtab" style="margin-top:1mm"><tr><td class="a">La sobremesa es…</td><td>{wl('sm')}</td><td class="b">a. de moeder van je moeder</td></tr>
+    <table class="mtab" style="margin-top:1mm"><tr><td class="a">La sobremesa es…</td><td>{wl('sm')}</td><td class="b">a. la madre de tu madre</td></tr>
     <tr><td class="a">La abuela es…</td><td>{wl('sm')}</td><td class="b">b. lang napraten aan tafel</td></tr>
     <tr><td class="a">Casi todos tienen…</td><td>{wl('sm')}</td><td class="b">c. dos apellidos</td></tr></table>
-    <p style="font-size:8.6pt;color:var(--mut);margin-top:1mm">💡 Het tweede achternaam komt van de moeder — zo verdwijnt haar naam nooit uit de familie.</p>
+    <p style="font-size:8.6pt;color:var(--mut);margin-top:1mm">💡 El segundo apellido viene de la madre: así su nombre no desaparece nunca de la familia. <span class="gloss">het tweede achternaam komt van de moeder</span></p>
   </div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:3mm;align-items:start">
     <div class="truc" style="margin:0"><b>Escucha y responde.</b> Kies één nummer van de playlist.
       <div style="margin-top:1.5mm;font-size:9.6pt;line-height:2.3">Mi canción: {wl('lg')}<br>El/la artista es de: {wl('lg')}</div>
     </div>
-    <div class="truc" style="margin:0"><b>¿Y tu familia?</b> Schrijf één zin over een familielid met een adjectief.
+    <div class="truc" style="margin:0"><b>¿Y tu familia?</b> Escribe una frase sobre un familiar con un adjetivo. <span class="gloss">één zin met een adjectief</span>
       <div style="margin-top:1.5mm;font-size:9.6pt;line-height:2.4">{wl('full')}<br>{wl('full')}</div>
     </div>
   </div>
@@ -358,10 +359,10 @@ MUSICA=f"""
 
 REPASO=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">Repaso · Lo esencial de un vistazo</div><h2>Wat je nu kunt</h2>
+  <div class="se">Repaso · Lo esencial de un vistazo</div><h2>Lo que ya sabes hacer <span class="gloss">wat je nu kunt</span></h2>
   <div class="fams">
-    <div class="pcard"><div class="t">Zo stel je iemand voor</div><div class="ej"><b>Esta/Este es</b> mi ____ (madre/padre…). <b>Se llama</b> ____.</div><div class="t2">mi = van mij · tu = van jou · de + naam</div></div>
-    <div class="pcard"><div class="t">Zo beschrijf je iemand</div><div class="ej"><b>Es</b> alt<b>o</b>/alt<b>a</b> · guap<b>o</b>/guap<b>a</b> · simpátic<b>o</b>/a · <b>muy</b>… · <b>un poco</b>…</div><div class="anchor"><b>-o</b> = ♂ · <b>-a</b> = ♀ &nbsp;|&nbsp; -e blijft gelijk (amable, inteligente)</div></div>
+    <div class="pcard"><div class="t">Así presentas a alguien <span class="gloss">zo stel je iemand voor</span></div><div class="ej"><b>Esta/Este es</b> mi ____ (madre/padre…). <b>Se llama</b> ____.</div><div class="t2">mi = de mí · tu = de ti · de + nombre <span class="gloss">van mij · van jou · van + naam</span></div></div>
+    <div class="pcard"><div class="t">Así describes a alguien <span class="gloss">zo beschrijf je iemand</span></div><div class="ej"><b>Es</b> alt<b>o</b>/alt<b>a</b> · guap<b>o</b>/guap<b>a</b> · simpátic<b>o</b>/a · <b>muy</b>… · <b>un poco</b>…</div><div class="anchor"><b>-o</b> = ♂ · <b>-a</b> = ♀ &nbsp;|&nbsp; -e blijft gelijk (amable, inteligente)</div></div>
   </div>
   <div class="regla" style="margin:4mm 0"><span class="tag">Frases para la clase</span>
     <div class="cogn" style="margin-top:1mm"><span>¿Cómo se dice… ?</span><span>¿Qué significa… ?</span><span>Otra vez, por favor</span><span>No entiendo</span><span>¿Puedes repetir?</span><span>Más despacio, por favor</span></div>
@@ -373,7 +374,7 @@ REPASO=f"""
     <tr><td>mi/tu en muy/un poco juist gebruiken</td><td></td><td></td><td></td></tr>
     <tr><td>de familieleden benoemen</td><td></td><td></td><td></td></tr></table>
   <div class="regla" style="margin-top:5mm"><span class="tag">Mini-test · recuerda sin mirar</span>
-    <p style="margin:1mm 0 0;font-size:9.4pt">Sluit de cursus en vertaal uit het hoofd (ophalen = het beste leren).</p>
+    <p style="margin:1mm 0 0;font-size:9.4pt">Cierra el libro y traduce de memoria: recordar es la mejor manera de aprender. <span class="gloss">uit het hoofd — ophalen leert het best</span></p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:3mm 8mm;margin-top:2mm;font-size:9.8pt;line-height:2.2">
       <div>1. mijn moeder → {wl('')}</div><div>2. mijn broer → {wl('')}</div>
       <div>3. dit is mijn oma → {wl('')}</div><div>4. hij is heel knap → {wl('')}</div>
@@ -388,17 +389,17 @@ REPASO=f"""
 EDITBAR="""
 <div class="editbar" id="eb">
   <b>✏️ C4 · U4</b>
-  <button id="btnedit">Bewerken aan</button>
-  <button id="btnpdf">🖨️ Opslaan als PDF</button>
-  <button id="btnsave">💾 Bewaar (.html)</button>
+  <button id="btnedit">Editar</button>
+  <button id="btnpdf">🖨️ Guardar como PDF</button>
+  <button id="btnsave">💾 Guardar (.html)</button>
   <span class="sp"></span>
-  <span style="opacity:.85;font-size:12px">Tip: zet «Bewerken» aan, pas de tekst aan, en sla op als PDF.</span>
+  <span style="opacity:.85;font-size:12px">Consejo: activa «Editar», cambia el texto y guárdalo como PDF. <span class="gloss">bewerken aanzetten, aanpassen, opslaan</span></span>
 </div><div class="scr-spacer"></div>
 """
 SCRIPT="""
 <script>
 var editing=false;var be=document.getElementById('btnedit');
-be.onclick=function(){editing=!editing;document.querySelectorAll('.page,.hero').forEach(function(p){p.contentEditable=editing;});document.body.classList.toggle('editing',editing);be.classList.toggle('on',editing);be.textContent=editing?'Bewerken uit':'Bewerken aan';};
+be.onclick=function(){editing=!editing;document.querySelectorAll('.page,.hero').forEach(function(p){p.contentEditable=editing;});document.body.classList.toggle('editing',editing);be.classList.toggle('on',editing);be.textContent=editing?'Dejar de editar':'Editar';};
 document.getElementById('btnpdf').onclick=function(){window.print();};
 document.getElementById('btnsave').onclick=function(){var html='<!doctype html>'+document.documentElement.outerHTML;var b=new Blob([html],{type:'text/html'});var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='C4_U4_Familia_bewerkt.html';a.click();};
 </script>

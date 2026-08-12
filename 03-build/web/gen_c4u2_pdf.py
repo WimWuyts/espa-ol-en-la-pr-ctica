@@ -105,6 +105,11 @@ def wl(cls=""): return f'<span class="wl {cls}"></span>'
 CSS=FONTS+PRINTCSS+r"""
 /* C4-rood override */
 :root{ --g:#D64550; --gd:#A8323B; --gt:#FBEAEC; }
+/* De Nederlandse steun is steun, geen tweede cursus: kleiner en dichter dan de
+   Spaanse regel erboven. Relatief (em), zodat een tabel met een kleinere letter
+   niet ineens een grotere gloss krijgt. */
+.gloss{ font-size:.85em; line-height:1.24; }
+
 /* functionele kleursemantiek */
 .p{color:#2563EB;font-weight:700}.v{color:#EA7317;font-weight:700}
 /* Escucha transcript (print) */
@@ -164,6 +169,16 @@ ol.nl{margin:2mm 0;padding-left:7mm}ol.nl li{margin:2.6mm 0}
 .scr-spacer{height:44px}
 body.editing .page{outline:1.5px dashed var(--g);outline-offset:-6px}
 @media print{ .editbar,.scr-spacer{display:none!important} }
+
+/* Deze unit liep een paar mm over haar bladzijden. Het verticale ritme is
+   daarom iets strakker gezet dan in de andere units — alleen ademruimte,
+   geen inhoud — zodat elke sectie weer op één blad past.
+   Staat bewust achteraan: eerder in de reeks wint de originele regel. */
+ol.nl li{ margin:1.9mm 0 }
+.wl{ height:4.4mm }
+table.mp td, table.mp th{ padding-top:1mm; padding-bottom:1mm }
+.act{ margin:3.8mm 0 }
+.truc{ margin:3mm 0; padding:2.6mm 5mm }
 """
 
 # ── content ──────────────────────────────────────────────────────────────────
@@ -172,11 +187,11 @@ HERO=f"""
   <div class="tab">C4 · LA RUTA</div>
   <div class="eyebrow">EL DESPEGUE · PARADA 2 · SURVIVAL IN SPANISH</div>
   <h1>Saludos</h1>
-  <div class="sub">Groeten volgens het <b>moment van de dag</b> en zeggen <b>hoe je je voelt</b>. <span class="gloss">Saludar según la hora y decir cómo estás — todo lo que oyes, lo puedes usar enseguida.</span></div>
+  <div class="sub">Saludar según el <b>momento del día</b> y decir <b>cómo te sientes</b>. <span class="gloss">groeten naar het uur, en zeggen hoe je je voelt</span></div>
   <div class="q">¡Buenos días! ¿Qué tal?</div>
 </section>
 <div class="page">
-  <div class="obj"><div class="se">Al final de esta unidad · Op het einde van deze les</div>
+  <div class="obj"><div class="se">Al final de esta unidad <span class="gloss">op het einde van deze les</span></div>
     <ul>
       <li><span class="ck">✓</span> <span><span class="es">Saludar según el momento del día</span> <span class="nl">— días / tardes / noches</span></span></li>
       <li><span class="ck">✓</span> <span><span class="es">Preguntar y decir cómo estás</span> <span class="nl">— estar + estado (bien, cansado…)</span></span></li>
@@ -184,10 +199,10 @@ HERO=f"""
       <li><span class="ck">✓</span> <span><span class="es">Distinguir <b>-o/-a</b> y <b>tú/usted</b></span> <span class="nl">— man/vrouw & informeel/beleefd</span></span></li>
     </ul>
   </div>
-  <div class="guide"><span class="ic">🎒</span><div><span class="hand">¡Seguimos la ruta! Parada 2.</span><div class="g">In deze «survival»-les leer je begroeten op elk moment van de dag én zeggen hoe je je voelt. Luister, spreek na, en probeer het zelf.</div></div></div>
+  <div class="guide"><span class="ic">🎒</span><div><span class="hand">¡Seguimos la ruta! Parada 2.</span><div class="g">En esta lección de «survival» aprendes a saludar en cualquier momento del día y a decir cómo te sientes. Escucha, repite y pruébalo tú. <span class="gloss">luister, spreek na en probeer het zelf</span></div></div></div>
 
-  <div class="se" style="margin-top:6mm">La gente de la ruta · je reisgenoten</div>
-  <p style="font-size:9.4pt;margin:0 0 1mm">Je reist mee met vier jongeren uit de Spaanstalige wereld. In de scène ontmoet je de academia: Julio, María, Josefina en de directeur Fernando.</p>
+  <div class="se" style="margin-top:6mm">La gente de la ruta · tus compañeros de viaje</div>
+  <p style="font-size:9.4pt;margin:0 0 1mm">Viajas con cuatro jóvenes del mundo hispano. En la escena conoces la academia: Julio, María, Josefina y el director Fernando. <span class="gloss">je reist mee met vier jongeren</span></p>
   <div class="cast2">
     <div class="m"><div class="fl">🇪🇸</div><div class="nm">Lucía</div><div class="ro">Sevilla · familie</div></div>
     <div class="m"><div class="fl">🇲🇽</div><div class="nm">Diego</div><div class="ro">CDMX · eten & markt</div></div>
@@ -196,7 +211,7 @@ HERO=f"""
     <div class="m"><div class="fl">🎒</div><div class="nm">Tú</div><div class="ro">jij, de reiziger</div></div>
   </div>
 
-  <div class="truc" style="margin-top:5mm"><b>¿Qué reconoces ya?</b> Deze «woorden om je te voelen» lijken op het Nederlands of Engels (<i>palabras transparentes</i>) — durf te gissen:
+  <div class="truc" style="margin-top:5mm"><b>¿Qué reconoces ya?</b> Estas palabras para decir cómo estás se parecen al neerlandés o al inglés (<i>palabras transparentes</i>) — durf te gissen:
     <div class="cogn"><span>nervioso</span><span>el problema</span><span>el hospital</span><span>ocupado (occupied)</span><span>fatal</span><span>regular</span><span>la persona</span><span>importante</span><span>el momento</span><span>el trabajo (travail)</span></div>
     <span style="font-size:8.6pt;color:var(--mut)">Tip: veel <i>estados</i> herken je meteen — <b>nervioso</b>, <b>fatal</b>, <b>regular</b>…</span>
   </div>
@@ -205,16 +220,16 @@ HERO=f"""
 
 ESCUCHA=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">§1 · ¡Escucha!</div><h2>Bekijk de scène en lees mee</h2>
+  <div class="se">§1 · ¡Escucha!</div><h2>Mira la escena y lee al mismo tiempo <span class="gloss" style="font-size:10pt;font-weight:400">bekijk en lees mee</span></h2>
   <div class="audiorow">
-    <div class="call"><span class="ic">🎬</span><div><b>Sitcom · Episodio 2 · Saludos.</b> Scan de code en bekijk de aflevering op de digitale pagina. De scène speelt op <b>drie momenten</b>: 09.00 · 16.00 · 21.05 u. Luister eerst zónder te lezen; daarna lees je mee. De <b>vetgedrukte</b> woorden zijn chunks om mee te nemen.</div></div>
+    <div class="call"><span class="ic">🎬</span><div><b>Sitcom · Episodio 2 · Saludos.</b> Escanea el código y mira el episodio en la página digital. La escena pasa en <b>tres momentos</b>: 09.00 · 16.00 · 21.05. Primero escucha sin leer; después lee al mismo tiempo. Las palabras en <b>negrita</b> son chunks para llevarte. <span class="gloss">eerst zónder te lezen, daarna lees je mee</span></div></div>
     <div class="qr" data-url="{EN.url('C4', 2, EN.ancla_c4('escucha'))}"><div class="lab">Vídeo online</div>{qr(EN.url("C4", 2, EN.ancla_c4("escucha")))}<div class="meta">hub · Escucha</div></div>
   </div>
-  <div class="truc"><b>Antes de escuchar · vóór je luistert.</b> Kijk naar de klok. Welke groet hoor je op elk moment? <span style="font-size:8.8pt;color:var(--mut)">(gis gerust)</span>
+  <div class="truc"><b>Antes de escuchar.</b> Mira el reloj. ¿Qué saludo oyes en cada momento? <span class="gloss">kijk naar de klok</span> <span style="font-size:8.8pt;color:var(--mut)">(gis gerust)</span>
     <div style="margin-top:1.5mm;font-size:9.6pt;line-height:2.2">09.00 → {wl('sm')} &nbsp;&nbsp; 16.00 → {wl('sm')} &nbsp;&nbsp; 21.05 → {wl('sm')}</div>
   </div>
   <div class="twocol">{scenehtml(*SCENES[0])}{scenehtml(*SCENES[1])}{scenehtml(*SCENES[2])}</div>
-  <div class="ojo"><b>¡Ojo!</b> Iedereen is «un poco» iets: <b>ocupada</b> (druk), <b>nerviosa</b> (nerveus), <b>enferma</b> (ziek), <b>cansada</b> (moe). Hoe je je voelt = <b>estar</b>: «estoy cansada», niet «soy cansada».</div>
+  <div class="ojo"><b>¡Ojo!</b> Todo el mundo está «un poco» algo: <b>ocupada</b>, <b>nerviosa</b>, <b>enferma</b>, <b>cansada</b>. Cómo te sientes = <b>estar</b>: «estoy cansada», no «soy cansada». <span class="gloss">hoe je je voelt gaat met estar</span></div>
 
   <div class="se" style="margin-top:5mm">Después de escuchar · ¿Verdadero o falso?</div>
   <p style="font-size:9.4pt;margin:0 0 1mm">Kruis aan. Verbeter de <b>falsas</b> op de lijn.</p>
@@ -230,28 +245,28 @@ ESCUCHA=f"""
 KIT=f"""
 <div class="page sec" style="break-before:page">
   <div class="se">Suena bien · pronunciación</div><h2>La jota /x/, la h muda &amp; el acento</h2>
-  <p style="font-size:9.4pt;color:var(--mut);margin:0 0 1mm">De <b>j</b> (en <b>g</b> vóór e/i) is een <b>keelklank</b> /x/ — zoals de NL «g», maar krachtiger. Oefen online (QR §1): luister en spreek na.</p>
+  <p style="font-size:9.4pt;color:var(--mut);margin:0 0 1mm">La <b>j</b> (y la <b>g</b> delante de e/i) es un sonido de <b>garganta</b> /x/, como la «g» neerlandesa pero más fuerte. Practícalo en línea (QR §1): escucha y repite. <span class="gloss">een keelklank; luister en spreek na</span></p>
   <div class="cogn"><span>Josefina</span><span>jueves</span><span>gente</span><span>gimnasio</span><span>trabajo</span><span>mujer</span></div>
   <div class="ojo"><b>¡Ojo!</b> g + a/o/u = /g/ (<b>ga</b>to, <b>gu</b>sto) · maar g + e/i = /x/ (<b>ge</b>nte, <b>gi</b>mnasio) — net als de j.</div>
-  <p style="font-size:9.4pt;color:var(--mut);margin:2mm 0 1mm"><b>La h muda:</b> je schrijft de <b>h</b> wél, maar je hóórt ze niet. «hola» klinkt als «ola».</p>
+  <p style="font-size:9.4pt;color:var(--mut);margin:2mm 0 1mm"><b>La h muda:</b> la <b>h</b> se escribe, pero no se <b>oye</b>. «hola» suena «ola». <span class="gloss">je schrijft ze wél, je hoort ze niet</span></p>
   <div class="cogn"><span>hola</span><span>hasta</span><span>hija</span><span>ahora</span><span>hombre</span><span>hospital</span></div>
   <div class="klemline"><b>El acento · klemtoon in de saludos:</b> bue·nos <span class="t">DÍ</span>·as · bue·nas <span class="t">TAR</span>·des · bue·nas <span class="t">NO</span>·ches</div>
 
-  <div class="se" style="margin-top:3mm">§2 · Kit de supervivencia</div><h2>De taal die je écht nodig hebt</h2>
-  <p style="font-size:9.4pt;color:var(--mut);margin:0 0 2mm">Vink ☐ af telkens je een uitdrukking vlot kunt <b>naspreken</b>. Oefen ze online met audio.</p>
+  <div class="se" style="margin-top:3mm">§2 · Kit de supervivencia</div><h2>La lengua que de verdad necesitas <span class="gloss" style="font-size:10pt;font-weight:400">de taal die je écht nodig hebt</span></h2>
+  <p style="font-size:9.4pt;color:var(--mut);margin:0 0 2mm">Marca ☐ cada vez que puedas <b>repetir</b> una expresión con soltura. Practícalas en línea con audio. <span class="gloss">vink af wat je vlot kunt naspreken</span></p>
   <div class="kitwrap">{"".join(kittable(n,it) for n,it in CLUSTERS)}</div>
 </div>
 """
 
 GRAM=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">§4 · Gramática en la práctica</div><h2>Kort en functioneel</h2>
-  <div class="modelo"><b>🔎 Fíjate · kijk terug naar de scène.</b> Je hoorde het al: «¿Cómo <b>estás</b>?» → «<b>estoy</b> ocupada» · «<b>estoy</b> cansada» · «Buen<b>os</b> días · Buen<b>as</b> tardes». Ontdek zelf het patroon — <i>eerst betekenis, dan de regel.</i></div>
-  <div class="regla"><span class="tag">estar · hoe je je voelt</span>
+  <div class="se">§4 · Gramática en la práctica</div><h2>Corta y funcional <span class="gloss" style="font-size:10pt;font-weight:400">kort en functioneel</span></h2>
+  <div class="modelo"><b>🔎 Fíjate · vuelve a la escena.</b> Ya lo has oído: «¿Cómo <b>estás</b>?» → «<b>estoy</b> ocupada» · «<b>estoy</b> cansada» · «Buen<b>os</b> días · Buen<b>as</b> tardes». Descubre tú el patrón — <i>primero el significado, después la regla.</i> <span class="gloss">ontdek zelf het patroon</span></div>
+  <div class="regla"><span class="tag">estar · cómo te sientes <span class="gloss">hoe je je voelt</span></span>
     <table class="gt2"><tr><td class="p">yo</td><td class="v">estoy</td><td>ik ben / voel me</td><td class="ex">Yo <b>estoy</b> bien.</td></tr>
-    <tr><td class="p">tú</td><td class="v">estás</td><td>jij bent / voelt je</td><td class="ex">¿Cómo <b>estás</b>?</td></tr>
+    <tr><td class="p">tú</td><td class="v">estás</td><td>tú estás <span class="gloss">jij bent / voelt je</span></td><td class="ex">¿Cómo <b>estás</b>?</td></tr>
     <tr><td class="p">él/ella/usted</td><td class="v">está</td><td>hij/zij is · u bent</td><td class="ex">¿Cómo <b>está</b> María?</td></tr></table>
-    <p style="font-size:9pt;margin:1mm 0 0">⚠️ Hoe je je <b>voelt</b> = <b>estar</b> (niet <i>ser</i>): «Estoy bien», niet «Soy bien».</p>
+    <p style="font-size:9pt;margin:1mm 0 0">⚠️ Cómo te <b>sientes</b> = <b>estar</b>, no <i>ser</i>: «Estoy bien», nunca «Soy bien». <span class="gloss">niet «soy bien»</span></p>
   </div>
   <div class="regla"><span class="tag">Buenos días / tardes / noches · groeten volgens de klok</span>
     <div class="clock3"><div class="m">🌅 la mañana · ~6–12 u<b>Buenos días</b></div><div class="t">☀️ la tarde · ~12–20 u<b>Buenas tardes</b></div><div class="n">🌙 la noche · ~20–6 u<b>Buenas noches</b></div></div>
@@ -262,12 +277,12 @@ GRAM=f"""
     <p style="font-size:9pt;margin:1mm 0 0">Josefina zegt «estoy cansad<b>a</b>»; Julio zegt «estoy enferm<b>o</b>».</p>
   </div>
   <div class="regla"><span class="tag">tú ↔ usted</span>
-    <p style="margin:1mm 0 0;font-size:9.6pt">Met vrienden/klasgenoten: <b>tú</b> — <span class="ex" style="color:var(--mut)">¿Cómo estás?</span><br>Formeel, met een onbekende volwassene / de directeur: <b>usted</b> — <span class="ex" style="color:var(--mut)">¿Cómo está usted?</span></p>
+    <p style="margin:1mm 0 0;font-size:9.6pt">Con amigos y compañeros: <b>tú</b> — <span class="ex" style="color:var(--mut)">¿Cómo estás?</span><br>En situación formal, con un adulto desconocido o con el director: <b>usted</b> — <span class="ex" style="color:var(--mut)">¿Cómo está usted?</span> <span class="gloss">tú of usted, naar de situatie</span></p>
   </div>
-  <div class="truc"><b>Mini-oefening 1 · estar.</b> Vul aan met <i>estoy · estás · está</i>:
+  <div class="truc"><b>Mini-ejercicio 1 · estar.</b> Completa con <i>estoy · estás · está</i>:
     <div style="margin-top:2mm;font-size:9.6pt;line-height:2.4">1. Yo {wl('sm')} bien. &nbsp;&nbsp; 2. ¿Cómo {wl('sm')} (tú)? &nbsp;&nbsp; 3. María {wl('sm')} cansada. &nbsp;&nbsp; 4. Julio {wl('sm')} enfermo. &nbsp;&nbsp; 5. ¿Cómo {wl('sm')} usted?</div>
   </div>
-  <div class="truc"><b>Mini-oefening 2 · ¿qué saludo?</b> Schrijf de juiste groet bij het uur.
+  <div class="truc"><b>Mini-ejercicio 2 · ¿qué saludo?</b> Escribe el saludo que corresponde a cada hora.
     <div style="margin-top:2mm;font-size:9.6pt;line-height:2.4">a) 08.30 → {wl('lg')}<br>b) 17.00 → {wl('lg')}<br>c) 22.15 → {wl('lg')}</div>
   </div>
 </div>
@@ -280,7 +295,7 @@ def act(n,title,badges,body):
 
 PRAC=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">§3 · Práctica</div><h2>Oefen op papier — online verbeter je alles</h2>
+  <div class="se">§3 · Práctica</div><h2>Practica en papel · online se corrige solo <span class="gloss" style="font-size:10pt;font-weight:400">online verbetert het zichzelf</span></h2>
 
   {act(1,"Clasifica las expresiones",[("receptief","skill"),("5 min","")],
     '<p style="margin-left:12.5mm">Schrijf elke uitdrukking in de juiste kolom. Voeg onderaan één eigen woord toe.<br><span class="gloss">Buenos días · Adiós · Gracias · ¿Cómo estás? · Estoy cansada · Hasta luego · De nada · Buenas noches</span></p>'
@@ -292,7 +307,7 @@ PRAC=f"""
     +'<tr><td class="a">2. ¿Cómo estás?</td><td><span class="ln"></span></td><td class="b">b. tot morgen</td></tr>'
     +'<tr><td class="a">3. Estoy cansada</td><td><span class="ln"></span></td><td class="b">c. goedemorgen</td></tr>'
     +'<tr><td class="a">4. Hasta mañana</td><td><span class="ln"></span></td><td class="b">d. graag gedaan</td></tr>'
-    +'<tr><td class="a">5. De nada</td><td><span class="ln"></span></td><td class="b">e. hoe gaat het?</td></tr></table>')}
+    +'<tr><td class="a">5. De nada</td><td><span class="ln"></span></td><td class="b">e. ¿qué tal?</td></tr></table>')}
 
   {act(3,"Completa el diálogo",[("gestuurd","skill"),("★★☆","")],
     '<p style="margin-left:12.5mm">Completa la conversación (piensa en <i>estar</i>). <span class="gloss">vul aan met estar</span></p>'
@@ -320,7 +335,7 @@ PRAC=f"""
     +'<div class="wbox" style="margin-left:12.5mm;min-height:28mm"></div>')}
 
   {act(9,"Saludo relámpago · bliksemgroet",[("productie","skill"),("★★☆","")],
-    f'<p style="margin-left:12.5mm">Kijk naar het uur, schrijf de <b>juiste groet</b> én een <b>estado</b> (estar). Snel!</p>'
+    f'<p style="margin-left:12.5mm">Mira la hora y escribe el <b>saludo correcto</b> y un <b>estado</b> (estar). ¡Rápido! <span class="gloss">juiste groet plus een estado — snel!</span></p>'
     +f'<div style="margin-left:12.5mm;font-size:9.8pt;line-height:2.5">07.45 → {wl("lg")}<br>15.30 → {wl("lg")}<br>23.10 → {wl("lg")}<br>12.00 → {wl("lg")}</div>')}
 </div>
 """
@@ -328,11 +343,11 @@ PRAC=f"""
 TAREA=f"""
 <div class="page sec" style="break-before:page">
   <div class="se">§5 · Tarea final</div><h2>Un día de saludos</h2>
-  <div class="esen" style="margin-top:2mm"><b class="tt">Jouw opdracht.</b> Speel met een klasgenoot <b>3 mini-gesprekjes</b>, één per moment van de dag (🌅 mañana · ☀️ tarde · 🌙 noche). Groet gepast, vraag hoe het gaat, zeg met <b>estar</b> hoe je je voelt en neem afscheid. <span class="gloss">Sin leer del papel — zonder van het blad af te lezen.</span></div>
-  <div class="regla" style="margin-top:4mm"><span class="tag">Prepárate · vul eerst de frames in (jouw versie)</span>
+  <div class="esen" style="margin-top:2mm"><b class="tt">Tu tarea.</b> Representa con un compañero/a <b>3 minidiálogos</b>, uno por momento del día (🌅 mañana · ☀️ tarde · 🌙 noche). Saluda como toca, pregunta cómo está, di con <b>estar</b> cómo te sientes y despídete. <span class="gloss">Sin leer del papel — zonder van het blad af te lezen.</span></div>
+  <div class="regla" style="margin-top:4mm"><span class="tag">Prepárate · rellena primero los marcos (tu versión) <span class="gloss">vul eerst de frames in</span></span>
     <div style="margin-top:2mm;font-size:9.7pt;line-height:2.4">🌅 Buenos días, ¿qué tal? — Estoy {wl('sm')} , ¿y tú? &nbsp; Despedida: {wl('sm')}<br>☀️ Buenas tardes, ¿cómo estás? — Estoy {wl('sm')} . &nbsp; Despedida: {wl('sm')}<br>🌙 Buenas noches, ¿cómo estás? — Estoy {wl('sm')} . &nbsp; Despedida: {wl('sm')}</div>
   </div>
-  <div style="margin-top:4mm"><div class="se">Mi diario de saludos · noteer je gesprekjes tijdens het spelen</div>
+  <div style="margin-top:4mm"><div class="se">Mi diario de saludos · anota tus diálogos mientras juegas <span class="gloss">noteer je gesprekjes</span></div>
     <table class="wtab" style="margin-top:2mm"><thead><tr><th style="width:26mm">Momento</th><th>Saludo + pregunta</th><th>Estoy… (estado)</th><th style="width:30mm">Despedida</th></tr></thead>
       <tr><td style="height:15mm">🌅 mañana</td><td></td><td></td><td></td></tr>
       <tr><td style="height:15mm">☀️ tarde</td><td></td><td></td><td></td></tr>
@@ -346,7 +361,7 @@ TAREA=f"""
     — ¡Buenos días! ¿Qué tal? &nbsp; — Buenos días. Estoy bien, ¿y tú?<br>
     — Regular, estoy un poco cansado. &nbsp; — Vaya. ¡Hasta luego!</div>
   <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:6mm;margin-top:4mm;align-items:start">
-    <div class="truc" style="margin:0"><b>🏁 Klaar als…</b> je op elk moment de <b>juiste</b> groet kiest (días/tardes/noches), met <b>estar</b> zegt hoe je je voelt (juiste -o/-a) en netjes afscheid neemt — zónder af te lezen.</div>
+    <div class="truc" style="margin:0"><b>🏁 Está listo cuando…</b> eliges el saludo <b>correcto</b> en cada momento (días/tardes/noches), dices con <b>estar</b> cómo te sientes (-o/-a correcto) y te despides bien, sin leer. <span class="gloss">zónder af te lezen</span></div>
     <table class="rubric"><thead><tr><th>Evaluatie</th><th style="text-align:center">🟢🟡🔴</th></tr></thead>
       <tr><td>Juiste groet per moment</td><td></td></tr>
       <tr><td>estar + estado correct</td><td></td></tr>
@@ -362,22 +377,22 @@ def banda(a,s,g): return f'<div class="banda"><div class="ar">{a}</div><div clas
 MUSICA=f"""
 <div class="page sec" style="break-before:page">
   <div class="se">Cultura · Banda sonora</div><h2>Saludos &amp; música en español</h2>
-  <p style="font-size:9.6pt">In de Spaanstalige wereld groet je warm: een <b>«¡Buenos días!»</b>, vaak met <b>dos besos</b> (twee kussen) of een <b>abrazo</b>. Elke unit heeft ook een <b>banda sonora</b>. Voor deze les schittert <b>«La Perla»</b> van <b>Rosalía</b> (nr. 1 in Spanje).</p>
+  <p style="font-size:9.6pt">En el mundo hispano se saluda con calor: un <b>«¡Buenos días!»</b>, muchas veces con <b>dos besos</b> o un <b>abrazo</b>. Cada unidad tiene además su <b>banda sonora</b>. En esta lección brilla <b>«La Perla»</b> de <b>Rosalía</b> (nº 1 en España). <span class="gloss">warm groeten, met twee kussen of een abrazo</span></p>
   <div class="bandas">{"".join(banda(*b) for b in BANDAS)}</div>
   <div class="musrow">
-    <div class="call"><span class="ic">🎧</span><div><b>Spotify · la playlist de la clase.</b> Scan en luister. Op de digitale pagina vind je ook <b>LyricsTraining</b> (vul de tekst aan terwijl je luistert) en de video's.</div></div>
+    <div class="call"><span class="ic">🎧</span><div><b>Spotify · la playlist de la clase.</b> Escanea y escucha. En la página digital tienes también <b>LyricsTraining</b> (completa la letra mientras escuchas) y los vídeos. <span class="gloss">scan en luister; online staat er meer</span></div></div>
     <div class="qr" data-url="{SPOTIFY}"><div class="lab">Playlist</div>{qr(SPOTIFY)}<div class="meta">Spotify</div></div>
   </div>
 
-  <div class="truc" style="margin-top:5mm"><b>Los saludos por el mundo hispano.</b> Weet je het? Verbind (gis gerust):
+  <div class="truc" style="margin-top:5mm"><b>Los saludos por el mundo hispano.</b> ¿Lo sabes? Une (puedes adivinar): <span class="gloss">verbind — gis gerust</span>
     <table class="mtab" style="margin-top:1mm"><tr><td class="a">Entre amigos/familia (España)…</td><td>{wl('sm')}</td><td class="b">a. un apretón de manos (formeel)</td></tr>
     <tr><td class="a">En una situación formal…</td><td>{wl('sm')}</td><td class="b">b. dos besos (una mejilla y otra)</td></tr>
     <tr><td class="a">En muchos países de Latinoamérica…</td><td>{wl('sm')}</td><td class="b">c. a veces un solo beso o un abrazo</td></tr></table>
-    <p style="font-size:8.6pt;color:var(--mut);margin-top:1mm">💡 Un <b>saludo</b> zegt veel over een cultuur: warm, dichtbij, met contact. In Vlaanderen geef je vaak één kus of een hand — in Spanje meestal <b>dos besos</b>.</p>
+    <p style="font-size:8.6pt;color:var(--mut);margin-top:1mm">💡 Un <b>saludo</b> dice mucho de una cultura: cercanía, calor, contacto. En Flandes se da un beso o la mano; en España, casi siempre <b>dos besos</b>. <span class="gloss">een groet zegt veel over een cultuur</span></p>
   </div>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:4mm;align-items:start">
-    <div><div class="se">¿De qué país? · verbind</div>
+    <div><div class="se">¿De qué país? · relaciona</div>
       <table class="mtab"><tr><td class="a">Rosalía</td><td>{wl('sm')}</td><td class="b">a. Puerto Rico</td></tr>
       <tr><td class="a">Luis Fonsi</td><td>{wl('sm')}</td><td class="b">b. Colombia</td></tr>
       <tr><td class="a">Karol G</td><td>{wl('sm')}</td><td class="b">c. España</td></tr></table>
@@ -391,48 +406,48 @@ MUSICA=f"""
 
 REPASO=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">Repaso · Lo esencial de un vistazo</div><h2>Wat je nu kunt</h2>
+  <div class="se">Repaso · Lo esencial de un vistazo</div><h2>Lo que ya sabes hacer <span class="gloss">wat je nu kunt</span></h2>
   <div class="fams">
-    <div class="pcard"><div class="t">Zo groet je volgens het uur</div><div class="ej">🌅 <b>Buenos días</b> · ☀️ <b>Buenas tardes</b> · 🌙 <b>Buenas noches</b></div><div class="t2">Afscheid: Adiós · Hasta luego · Hasta mañana · ¡Nos vemos!</div></div>
-    <div class="pcard"><div class="t">Zo zeg je hoe het gaat</div><div class="ej">¿Cómo <b>estás</b>? → <b>Estoy</b> bien / cansad_ / ocupad_ / nervios_.</div><div class="anchor"><b>estar</b>: estoy · estás · está &nbsp; | &nbsp; <b>-o</b> = ♂ · <b>-a</b> = ♀</div></div>
+    <div class="pcard"><div class="t">Así saludas según la hora <span class="gloss">groeten volgens het uur</span></div><div class="ej">🌅 <b>Buenos días</b> · ☀️ <b>Buenas tardes</b> · 🌙 <b>Buenas noches</b></div><div class="t2">Afscheid: Adiós · Hasta luego · Hasta mañana · ¡Nos vemos!</div></div>
+    <div class="pcard"><div class="t">Así dices cómo estás <span class="gloss">zeggen hoe het gaat</span></div><div class="ej">¿Cómo <b>estás</b>? → <b>Estoy</b> bien / cansad_ / ocupad_ / nervios_.</div><div class="anchor"><b>estar</b>: estoy · estás · está &nbsp; | &nbsp; <b>-o</b> = ♂ · <b>-a</b> = ♀</div></div>
   </div>
   <div class="regla" style="margin:4mm 0"><span class="tag">Frases para la clase</span>
     <div class="cogn" style="margin-top:1mm"><span>¿Cómo se dice… ?</span><span>¿Qué significa… ?</span><span>Otra vez, por favor</span><span>No entiendo</span><span>¿Puedes repetir?</span><span>Más despacio, por favor</span></div>
     <span style="font-size:8.6pt;color:var(--mut)">Handige klaszinnen — gebruik ze in het Spaans i.p.v. Nederlands.</span>
   </div>
   <table class="sem"><thead><tr><th style="text-align:left">Puedo… · Ik kan…</th><th>🟢</th><th>🟡</th><th>🔴</th></tr></thead>
-    <tr><td>groeten volgens het moment van de dag</td><td></td><td></td><td></td></tr>
-    <tr><td>vragen en zeggen hoe het gaat (estar)</td><td></td><td></td><td></td></tr>
+    <tr><td>saludar según el momento del día <span class="gloss">groeten volgens het moment van de dag</span></td><td></td><td></td><td></td></tr>
+    <tr><td>preguntar y decir cómo estás (estar) <span class="gloss">vragen en zeggen hoe het gaat</span></td><td></td><td></td><td></td></tr>
     <tr><td>afscheid nemen</td><td></td><td></td><td></td></tr>
     <tr><td>-o/-a en tú/usted juist kiezen</td><td></td><td></td><td></td></tr></table>
   <div class="regla" style="margin-top:5mm"><span class="tag">Mini-test · recuerda sin mirar</span>
-    <p style="margin:1mm 0 0;font-size:9.4pt">Sluit de cursus en vertaal uit het hoofd (ophalen = het beste leren).</p>
+    <p style="margin:1mm 0 0;font-size:9.4pt">Cierra el libro y traduce de memoria: recordar es la mejor manera de aprender. <span class="gloss">uit het hoofd — ophalen leert het best</span></p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:4mm 8mm;margin-top:2mm;font-size:9.8pt;line-height:2.4">
-      <div>1. goedemorgen → {wl('')}</div><div>2. hoe gaat het? → {wl('')}</div>
+      <div>1. goedemorgen → {wl('')}</div><div>2. ¿qué tal? → {wl('')}</div>
       <div>3. ik ben moe → {wl('')}</div><div>4. ik heb het druk → {wl('')}</div>
       <div>5. goedenavond → {wl('')}</div><div>6. tot morgen → {wl('')}</div>
       <div>7. gaat wel → {wl('')}</div><div>8. ik ben ziek → {wl('')}</div>
     </div>
   </div>
   <div class="guide"><span class="ic">🎮</span><div><span class="hand">Repasa jugando</span><div class="g">Oefen alles online met spelletjes, flashcards en audio op de digitale hub (scan de QR bij §1).</div></div></div>
-  <div class="bridge"><b>Próxima parada →</b> In de volgende unit zeg je uit welk land je komt en welke talen je spreekt: <i>nacionalidades y países</i>. ¡Hasta pronto!</div>
+  <div class="bridge"><b>Próxima parada →</b> En la unidad siguiente dices de qué país eres y qué idiomas hablas: <i>nacionalidades y países</i>. ¡Hasta pronto! <span class="gloss">volgende halte: landen en talen</span></div>
 </div>
 """
 
 EDITBAR="""
 <div class="editbar" id="eb">
   <b>✏️ C4 · U2</b>
-  <button id="btnedit">Bewerken aan</button>
-  <button id="btnpdf">🖨️ Opslaan als PDF</button>
-  <button id="btnsave">💾 Bewaar (.html)</button>
+  <button id="btnedit">Editar</button>
+  <button id="btnpdf">🖨️ Guardar como PDF</button>
+  <button id="btnsave">💾 Guardar (.html)</button>
   <span class="sp"></span>
-  <span style="opacity:.85;font-size:12px">Tip: zet «Bewerken» aan, pas de tekst aan, en sla op als PDF.</span>
+  <span style="opacity:.85;font-size:12px">Consejo: activa «Editar», cambia el texto y guárdalo como PDF. <span class="gloss">bewerken aanzetten, aanpassen, opslaan</span></span>
 </div><div class="scr-spacer"></div>
 """
 SCRIPT="""
 <script>
 var editing=false;var be=document.getElementById('btnedit');
-be.onclick=function(){editing=!editing;document.querySelectorAll('.page,.hero').forEach(function(p){p.contentEditable=editing;});document.body.classList.toggle('editing',editing);be.classList.toggle('on',editing);be.textContent=editing?'Bewerken uit':'Bewerken aan';};
+be.onclick=function(){editing=!editing;document.querySelectorAll('.page,.hero').forEach(function(p){p.contentEditable=editing;});document.body.classList.toggle('editing',editing);be.classList.toggle('on',editing);be.textContent=editing?'Dejar de editar':'Editar';};
 document.getElementById('btnpdf').onclick=function(){window.print();};
 document.getElementById('btnsave').onclick=function(){var html='<!doctype html>'+document.documentElement.outerHTML;var b=new Blob([html],{type:'text/html'});var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='C4_U2_Saludos_bewerkt.html';a.click();};
 </script>

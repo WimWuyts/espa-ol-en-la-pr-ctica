@@ -15,17 +15,17 @@ def srcdoc(path):
     return h.replace("&","&amp;").replace('"',"&quot;")
 
 TABS=[
- ("escucha","🎬 Escucha","C4_U1_escucha.html","Mira la escena y lee al mismo tiempo: los chunks te entran por el oído. <span class="stn">bekijk en lees mee</span>"),
- ("comprension","📖 Lee y escucha","C4_U1_comprension.html","Una lectura y una escucha cortas: entiende el español que ya sabes. <span class="stn">korte lees- en luisteroefening</span>"),
- ("mapa","🗺️ Mapa","C4_U1_mapa.html","La Ruta — pulsa un país del mundo hispano y lee su ficha. <span class="stn">klik op een land</span>"),
- ("funciones","🗣️ Funciones","C4_U1_funciones.html","Lo que puedes HACER con el español: tu repertorio crece cada unidad. <span class="stn">wat je met het Spaans kunt doen</span>"),
- ("kit","🧰 Kit","C4_U1_kgt.html","Pronunciación (los sonidos), la lengua por situación, gramática y tarea. <span class="stn">uitspraak, taal per situatie, grammatica en taak</span>"),
- ("practica","✍️ Práctica","C4_U1_practica.html","Practica y corrígete: reconocer → elegir → decirlo tú. <span class="stn">zelfcorrigerend oefenen</span>"),
+ ("escucha","🎬 Escucha","C4_U1_escucha.html","Mira la escena y lee al mismo tiempo: los chunks te entran por el oído. <span class='stn'>bekijk en lees mee</span>"),
+ ("comprension","📖 Lee y escucha","C4_U1_comprension.html","Una lectura y una escucha cortas: entiende el español que ya sabes. <span class='stn'>korte lees- en luisteroefening</span>"),
+ ("mapa","🗺️ Mapa","C4_U1_mapa.html","La Ruta — pulsa un país del mundo hispano y lee su ficha. <span class='stn'>klik op een land</span>"),
+ ("funciones","🗣️ Funciones","C4_U1_funciones.html","Lo que puedes HACER con el español: tu repertorio crece cada unidad. <span class='stn'>wat je met het Spaans kunt doen</span>"),
+ ("kit","🧰 Kit","C4_U1_kgt.html","Pronunciación (los sonidos), la lengua por situación, gramática y tarea. <span class='stn'>uitspraak, taal per situatie, grammatica en taak</span>"),
+ ("practica","✍️ Práctica","C4_U1_practica.html","Practica y corrígete: reconocer → elegir → decirlo tú. <span class='stn'>zelfcorrigerend oefenen</span>"),
  ("rol","🎭 Ensaya","C4_U1_rol.html",
-  "Representa la escena: el compañero te corrige y funciona sin internet. <span class="stn">speel de scène, ook offline</span>"),
+  "Representa la escena: el compañero te corrige y funciona sin internet. <span class='stn'>speel de scène, ook offline</span>"),
  ("coach","📝 Entrega","C4_U1_coach.html",
-  "Escribe tu tarea final y hazla revisar antes de entregarla. <span class="stn">schrijf en laat nakijken</span>"),
- ("musica","🎧 Música","C4_musica.html","Banda sonora — aprende español con música que ya conocéis. <span class="stn">muziek die jullie kennen</span>"),
+  "Escribe tu tarea final y hazla revisar antes de entregarla. <span class='stn'>schrijf en laat nakijken</span>"),
+ ("musica","🎧 Música","C4_musica.html","Banda sonora — aprende español con música que ya conocéis. <span class='stn'>muziek die jullie kennen</span>"),
 ]
 # kgt bevat §2 Kit + §4 Gramática + §5 Tarea; we tonen het onder "Kit" én verwijzen ernaar.
 
@@ -69,7 +69,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
 <div class="hero">
   <span class="ruta">🗺️ La Ruta · C4 «El despegue» · Parada 1</span>
   <h1>Unidad 1 · Presentaciones</h1>
-  <p>Tus primeras palabras en español: <b>saludos</b>, <b>presentarte</b> y <b>despedirte</b>. Todo lo que oyes aquí lo puedes usar enseguida. <span class="stn">groeten, jezelf voorstellen, afscheid nemen</span> <i>Survival in Spanish.</i></p>
+  <p>Tus primeras palabras en español: <b>saludos</b>, <b>presentarte</b> y <b>despedirte</b>. Todo lo que oyes aquí lo puedes usar enseguida. <span class='stn'>groeten, jezelf voorstellen, afscheid nemen</span> <i>Survival in Spanish.</i></p>
 </div>
 <nav class="tabbar">{"".join(tabbtn(i,t) for i,t in enumerate(TABS))}</nav>
 <main>

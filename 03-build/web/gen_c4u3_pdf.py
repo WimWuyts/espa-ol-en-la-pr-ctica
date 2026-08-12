@@ -107,6 +107,10 @@ def wl(cls=""): return f'<span class="wl {cls}"></span>'
 CSS=FONTS+PRINTCSS+r"""
 /* C4-rood override */
 :root{ --g:#D64550; --gd:#A8323B; --gt:#FBEAEC; }
+/* De Nederlandse steun is steun, geen tweede cursus: kleiner en dichter dan de
+   Spaanse regel erboven. Relatief (em), zodat een tabel met een kleinere letter
+   niet ineens een grotere gloss krijgt. */
+.gloss{ font-size:.9em; line-height:1.32; }
 /* functionele kleursemantiek */
 .p{color:#2563EB;font-weight:700}.v{color:#EA7317;font-weight:700}.pl{color:#0E9E97;font-weight:700}
 /* Escucha transcript (print) */
@@ -177,11 +181,11 @@ HERO=f"""
   <div class="tab">C4 · LA RUTA</div>
   <div class="eyebrow">EL DESPEGUE · PARADA 3 · SURVIVAL IN SPANISH</div>
   <h1>Nacionalidades y países</h1>
-  <div class="sub">De kernvraag van de reis: <b>¿De dónde eres?</b> Zeggen waar je vandaan komt, je <b>nationaliteit</b> en welke <b>talen</b> je spreekt. <span class="gloss">Decir de dónde eres, tu nacionalidad y qué idiomas hablas — la pregunta que abre todo viaje.</span></div>
+  <div class="sub">La pregunta clave del viaje: <b>¿De dónde eres?</b> Decir de dónde vienes, tu <b>nacionalidad</b> y qué <b>idiomas</b> hablas. <span class="gloss">waar je vandaan komt, je nationaliteit en je talen</span></div>
   <div class="q">¿De dónde eres? ¡Soy de Bélgica!</div>
 </section>
 <div class="page">
-  <div class="obj"><div class="se">Al final de esta unidad · Op het einde van deze les</div>
+  <div class="obj"><div class="se">Al final de esta unidad <span class="gloss">op het einde van deze les</span></div>
     <ul>
       <li><span class="ck">✓</span> <span><span class="es">Preguntar y decir el origen</span> <span class="nl">— ¿de dónde eres? · soy de + país</span></span></li>
       <li><span class="ck">✓</span> <span><span class="es">La nacionalidad (gentilicio)</span> <span class="nl">— mexicano/a · español/a · belga</span></span></li>
@@ -189,10 +193,10 @@ HERO=f"""
       <li><span class="ck">✓</span> <span><span class="es">Situar los <b>21 países</b> del mundo hispano</span> <span class="nl">— op de kaart</span></span></li>
     </ul>
   </div>
-  <div class="guide"><span class="ic">🎒</span><div><span class="hand">¡Seguimos la ruta! Parada 3.</span><div class="g">In deze «survival»-les leer je de vraag die elke reis opent: <b>¿de dónde eres?</b> — en hoe je antwoordt met je land, je nationaliteit en je talen. Open de wereldkaart op de digitale hub!</div></div></div>
+  <div class="guide"><span class="ic">🎒</span><div><span class="hand">¡Seguimos la ruta! Parada 3.</span><div class="g">En esta lección de «survival» aprendes la pregunta que abre todo viaje: <b>¿de dónde eres?</b>, y cómo responder con tu país, tu nacionalidad y tus idiomas. ¡Abre el mapa del mundo en la página digital! <span class="gloss">de vraag die elke reis opent</span></div></div></div>
 
-  <div class="se" style="margin-top:6mm">La gente de la ruta · je reisgenoten</div>
-  <p style="font-size:9.4pt;margin:0 0 1mm">Je reist mee met vier jongeren uit de Spaanstalige wereld — élk uit een ander land met een andere <i>nacionalidad</i>. In de scène leert de directeur Fernando een reizigster de kernvraag.</p>
+  <div class="se" style="margin-top:6mm">La gente de la ruta · tus compañeros de viaje</div>
+  <p style="font-size:9.4pt;margin:0 0 1mm">Viajas con cuatro jóvenes del mundo hispano, cada uno de un país y con una <i>nacionalidad</i> distinta. En la escena el director Fernando le enseña la pregunta clave a una viajera. <span class="gloss">elk uit een ander land</span></p>
   <div class="cast2">
     <div class="m"><div class="fl">🇪🇸</div><div class="nm">Lucía</div><div class="ro">española · Sevilla</div></div>
     <div class="m"><div class="fl">🇲🇽</div><div class="nm">Diego</div><div class="ro">mexicano · CDMX</div></div>
@@ -201,7 +205,7 @@ HERO=f"""
     <div class="m"><div class="fl">🇧🇪</div><div class="nm">Tú</div><div class="ro">belga · de reiziger</div></div>
   </div>
 
-  <div class="truc" style="margin-top:5mm"><b>¿Qué reconoces ya?</b> Deze «woorden van de wereld» lijken op het Nederlands of Engels (<i>palabras transparentes</i>) — durf te gissen:
+  <div class="truc" style="margin-top:5mm"><b>¿Qué reconoces ya?</b> Estas palabras del mundo se parecen al neerlandés o al inglés (<i>palabras transparentes</i>) — durf te gissen:
     <div class="cogn"><span>internacional</span><span>la nación</span><span>el continente</span><span>la capital</span><span>europeo</span><span>americano</span><span>africano</span><span>el mapa</span><span>la región</span><span>el/la turista</span></div>
     <span style="font-size:8.6pt;color:var(--mut)">Tip: veel landen &amp; talen herken je meteen — <b>Italia</b>, <b>Portugal</b>, <b>el inglés</b>, <b>el árabe</b>…</span>
   </div>
@@ -210,16 +214,16 @@ HERO=f"""
 
 ESCUCHA=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">§1 · ¡Escucha!</div><h2>Bekijk de scène en lees mee</h2>
+  <div class="se">§1 · ¡Escucha!</div><h2>Mira la escena y lee al mismo tiempo <span class="gloss" style="font-size:10pt;font-weight:400">bekijk en lees mee</span></h2>
   <div class="audiorow">
-    <div class="call"><span class="ic">🎬</span><div><b>Sitcom · Episodio 3 · Nacionalidades y países.</b> Scan de code en bekijk de aflevering op de digitale pagina. Fernando leert een reizigster de kernvraag <b>¿de dónde eres?</b> — en meteen de valstrik «soy Argelia» → «soy <b>de</b> Argelia». Luister eerst zónder te lezen; daarna lees je mee. De <b>vetgedrukte</b> woorden zijn chunks om mee te nemen.</div></div>
+    <div class="call"><span class="ic">🎬</span><div><b>Sitcom · Episodio 3 · Nacionalidades y países.</b> Escanea el código y mira el episodio en la página digital. Fernando le enseña a una viajera la pregunta clave <b>¿de dónde eres?</b>, y de paso la trampa «soy Argelia» → «soy <b>de</b> Argelia». Primero escucha sin leer; después lee al mismo tiempo. Las palabras en <b>negrita</b> son chunks para llevarte. <span class="gloss">eerst zónder te lezen, daarna lees je mee</span></div></div>
     <div class="qr" data-url="{EN.url('C4', 3, EN.ancla_c4('escucha'))}"><div class="lab">Vídeo online</div>{qr(EN.url("C4", 3, EN.ancla_c4("escucha")))}<div class="meta">hub · Escucha</div></div>
   </div>
-  <div class="truc"><b>Antes de escuchar · vóór je luistert.</b> Welke landen en talen ga je horen, denk je? <span style="font-size:8.8pt;color:var(--mut)">(gis gerust)</span>
+  <div class="truc"><b>Antes de escuchar.</b> ¿Qué países e idiomas crees que vas a oír? <span class="gloss">welke landen en talen, denk je?</span> <span style="font-size:8.8pt;color:var(--mut)">(gis gerust)</span>
     <div style="margin-top:1.5mm;font-size:9.6pt;line-height:2.2">Un país: {wl('sm')} &nbsp;&nbsp; Una nacionalidad: {wl('sm')} &nbsp;&nbsp; Un idioma: {wl('sm')}</div>
   </div>
   <div class="twocol">{scenehtml(*SCENES[0])}{scenehtml(*SCENES[1])}{scenehtml(*SCENES[2])}</div>
-  <div class="ojo"><b>¡Ojo!</b> De reizigster zegt «Yo soy Argelia» — maar dat betekent «ik <i>ben</i> Algerije». Juist is «Yo soy <b>de</b> Argelia» (ik kom <b>uit</b> Algerije). Land = met <b>de</b>; nationaliteit = zónder <b>de</b>: «soy argelin<b>a</b>».</div>
+  <div class="ojo"><b>¡Ojo!</b> La viajera dice «Yo soy Argelia», que significa «yo <i>soy</i> Argelia». Lo correcto es «Yo soy <b>de</b> Argelia». País = con <b>de</b>; nacionalidad = sin <b>de</b>: «soy argelin<b>a</b>». <span class="gloss">land met «de», nationaliteit zonder</span></div>
 
   <div class="se" style="margin-top:5mm">Después de escuchar · ¿Verdadero o falso?</div>
   <p style="font-size:9.4pt;margin:0 0 1mm">Kruis aan. Verbeter de <b>falsas</b> op de lijn.</p>
@@ -243,25 +247,25 @@ KIT=f"""
   <div class="ojo"><b>¡Ojo!</b> c + a/o/u = /k/ (<b>ca</b>sa, <b>co</b>lombiano) · maar c + e/i = /θ~s/ (<b>ci</b>nco, Fran<b>ci</b>a) — net als de z.</div>
   <div class="klemline"><b>El acento agudo · klemtoon op de laatste lettergreep (-dad / -és):</b> na·cio·na·li·<span class="t">DAD</span> · por·tu·<span class="t">GUÉS</span> · fran·<span class="t">CÉS</span> · in·<span class="t">GLÉS</span></div>
 
-  <div class="se" style="margin-top:3mm">§2 · Kit de supervivencia</div><h2>De taal die je écht nodig hebt</h2>
-  <p style="font-size:9.4pt;color:var(--mut);margin:0 0 2mm">Vink ☐ af telkens je een uitdrukking vlot kunt <b>naspreken</b>. Oefen ze online met audio.</p>
+  <div class="se" style="margin-top:3mm">§2 · Kit de supervivencia</div><h2>La lengua que de verdad necesitas <span class="gloss" style="font-size:10pt;font-weight:400">de taal die je écht nodig hebt</span></h2>
+  <p style="font-size:9.4pt;color:var(--mut);margin:0 0 2mm">Marca ☐ cada vez que puedas <b>repetir</b> una expresión con soltura. Practícalas en línea con audio. <span class="gloss">vink af wat je vlot kunt naspreken</span></p>
   <div class="kitwrap">{"".join(kittable(n,it) for n,it in CLUSTERS)}</div>
 </div>
 """
 
 GRAM=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">§4 · Gramática en la práctica</div><h2>Kort en functioneel</h2>
-  <div class="modelo"><b>🔎 Fíjate · kijk terug naar de scène.</b> Je hoorde het al: «¿De dónde <b>eres</b>?» → «<b>Soy de</b> Argelia» · «Eres argelin<b>a</b> (chica) · argelin<b>o</b> (chico)» · «<b>Hablo</b> español». Ontdek zelf het patroon — <i>eerst betekenis, dan de regel.</i></div>
-  <div class="regla"><span class="tag">soy de + país · waar je vandaan komt</span>
+  <div class="se">§4 · Gramática en la práctica</div><h2>Corta y funcional <span class="gloss" style="font-size:10pt;font-weight:400">kort en functioneel</span></h2>
+  <div class="modelo"><b>🔎 Fíjate · vuelve a la escena.</b> Ya lo has oído: «¿De dónde <b>eres</b>?» → «<b>Soy de</b> Argelia» · «Eres argelin<b>a</b> (chica) · argelin<b>o</b> (chico)» · «<b>Hablo</b> español». Descubre tú el patrón — <i>primero el significado, después la regla.</i> <span class="gloss">ontdek zelf het patroon</span></div>
+  <div class="regla"><span class="tag">soy de + país · de dónde eres <span class="gloss">waar je vandaan komt</span></span>
     <table class="gt2"><tr><td class="p">yo</td><td class="v">soy de</td><td>ik kom uit</td><td class="ex"><b>Soy de</b> <span class="pl">Bélgica</span>.</td></tr>
     <tr><td class="p">tú</td><td class="v">eres de</td><td>jij komt uit</td><td class="ex">¿<b>Eres de</b> <span class="pl">España</span>?</td></tr>
     <tr><td class="p">él/ella/usted</td><td class="v">es de</td><td>hij/zij komt · u komt uit</td><td class="ex">María <b>es de</b> <span class="pl">Sevilla</span>.</td></tr></table>
-    <p style="font-size:9pt;margin:1mm 0 0">⚠️ Zeg «soy <b>de</b> Argelia» (= ik kom <b>uit</b>), niet «soy Argelia». Land = met <b>de</b>; nationaliteit = zónder <b>de</b> (soy argelina).</p>
+    <p style="font-size:9pt;margin:1mm 0 0">⚠️ Di «soy <b>de</b> Argelia», no «soy Argelia». País = con <b>de</b>; nacionalidad = sin <b>de</b> (soy argelina). <span class="gloss">land met «de», nationaliteit zonder</span></p>
   </div>
   <div class="regla"><span class="tag">El gentilicio · man of vrouw (de nationaliteit)</span>
     <div class="mv2"><div class="m">♂ Un chico: mexican<b>o</b> · colombian<b>o</b> · portugu<b>és</b> · franc<b>és</b> · ingl<b>és</b></div><div class="f">♀ Una chica: mexican<b>a</b> · colombian<b>a</b> · portugu<b>esa</b> · franc<b>esa</b> · ingl<b>esa</b></div></div>
-    <p style="font-size:9pt;margin:1mm 0 0">Sommige blijven gelijk (♂=♀): <b>belga</b>, <b>marroquí</b>, <b>estadounidense</b>, <b>canadiense</b>. ⚠️ In het Spaans met een <b>kleine letter</b>: soy <b>español</b>, hablo <b>neerlandés</b> (in het NL/Engels net met hoofdletter!).</p>
+    <p style="font-size:9pt;margin:1mm 0 0">Algunas no cambian (♂=♀): <b>belga</b>, <b>marroquí</b>, <b>estadounidense</b>, <b>canadiense</b>. ⚠️ En español van en <b>minúscula</b>: soy <b>español</b>, hablo <b>neerlandés</b>. <span class="gloss">in het Nederlands net met een hoofdletter</span></p>
   </div>
   <div class="regla"><span class="tag">hablo + idioma · welke talen je spreekt</span>
     <table class="gt2"><tr><td class="v">Hablo</td><td>ik spreek</td><td class="ex"><b>Hablo</b> neerlandés y un poco de español.</td></tr>
@@ -270,12 +274,12 @@ GRAM=f"""
     <p style="font-size:9pt;margin:1mm 0 0">De vrouw in de video spreekt <b>tres idiomas</b>: árabe, francés y español. Steun: «un poco» / «bastante bien».</p>
   </div>
   <div class="regla"><span class="tag">tú ↔ usted</span>
-    <p style="margin:1mm 0 0;font-size:9.6pt">Met vrienden/klasgenoten: <b>tú</b> — <span class="ex" style="color:var(--mut)">¿De dónde eres?</span><br>Formeel, met een onbekende volwassene: <b>usted</b> — <span class="ex" style="color:var(--mut)">¿De dónde es usted? / ¿Habla usted francés?</span></p>
+    <p style="margin:1mm 0 0;font-size:9.6pt">Con amigos y compañeros: <b>tú</b> — <span class="ex" style="color:var(--mut)">¿De dónde eres?</span><br>En situación formal, con un adulto desconocido: <b>usted</b> — <span class="ex" style="color:var(--mut)">¿De dónde es usted? / ¿Habla usted francés?</span> <span class="gloss">tú of usted, naar de situatie</span></p>
   </div>
-  <div class="truc"><b>Mini-oefening 1 · soy de.</b> Vul aan met <i>soy de · eres de · es de</i>:
+  <div class="truc"><b>Mini-ejercicio 1 · soy de.</b> Completa con <i>soy de · eres de · es de</i>:
     <div style="margin-top:2mm;font-size:9.6pt;line-height:2.4">1. Yo {wl('sm')} Bélgica. &nbsp; 2. ¿{wl('sm')} (tú) España? &nbsp; 3. Diego {wl('sm')} México. &nbsp; 4. ¿De dónde {wl('sm')} usted?</div>
   </div>
-  <div class="truc"><b>Mini-oefening 2 · país → gentilicio.</b> Schrijf de nationaliteit (♂/♀, kleine letter): a) México (chico) → {wl('sm')} &nbsp; b) Colombia (chica) → {wl('sm')} &nbsp; c) Francia (chica) → {wl('sm')}</div>
+  <div class="truc"><b>Mini-ejercicio 2 · país → gentilicio.</b> Escribe la nacionalidad (♂/♀, en minúscula): a) México (chico) → {wl('sm')} &nbsp; b) Colombia (chica) → {wl('sm')} &nbsp; c) Francia (chica) → {wl('sm')}</div>
 </div>
 """
 
@@ -286,7 +290,7 @@ def act(n,title,badges,body):
 
 PRAC=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">§3 · Práctica</div><h2>Oefen op papier — online verbeter je alles</h2>
+  <div class="se">§3 · Práctica</div><h2>Practica en papel · online se corrige solo <span class="gloss" style="font-size:10pt;font-weight:400">online verbetert het zichzelf</span></h2>
 
   {act(1,"Clasifica: país, gentilicio o idioma",[("receptief","skill"),("5 min","")],
     '<p style="margin-left:12.5mm">Schrijf elk woord in de juiste kolom. Voeg onderaan één eigen woord toe.<br><span class="gloss">España · mexicana · el árabe · Colombia · belga · el inglés · Argentina · francés (idioma)</span></p>'
@@ -336,11 +340,11 @@ PRAC=f"""
 TAREA=f"""
 <div class="page sec" style="break-before:page">
   <div class="se">§5 · Tarea final</div><h2>Mi mapa · ¿De dónde eres?</h2>
-  <div class="esen" style="margin-top:2mm"><b class="tt">Jouw opdracht.</b> Maak een <b>mini-kaart</b> met <b>3 personen</b> (jezelf + 2 anderen: klasgenoten of bekende personen). Zeg per persoon uit welk <b>land</b> ze komen (soy/es de), hun <b>nationaliteit</b> en welke <b>talen</b> ze spreken. Wijs het land aan op de wereldkaart (Mapa-tab) en stel ze voor. <span class="gloss">Sin leer del papel — zonder van het blad af te lezen.</span></div>
-  <div class="regla" style="margin-top:4mm"><span class="tag">Prepárate · vul eerst de frames in (jouw versie)</span>
+  <div class="esen" style="margin-top:2mm"><b class="tt">Tu tarea.</b> Haz un <b>minimapa</b> con <b>3 personas</b> (tú y 2 más: compañeros o gente conocida). Di de qué <b>país</b> es cada una (soy/es de), su <b>nacionalidad</b> y qué <b>idiomas</b> habla. Señala el país en el mapa del mundo (pestaña Mapa) y preséntalas. <span class="gloss">Sin leer del papel — zonder van het blad af te lezen.</span></div>
+  <div class="regla" style="margin-top:4mm"><span class="tag">Prepárate · rellena primero los marcos (tu versión) <span class="gloss">vul eerst de frames in</span></span>
     <div style="margin-top:2mm;font-size:9.7pt;line-height:2.4">🧍 Yo soy de {wl('sm')} . Soy {wl('sm')} y hablo {wl('sm')} .<br>🧑 ____ es de {wl('sm')} . Es {wl('sm')} y habla {wl('sm')} .<br>👤 ____ es de {wl('sm')} . Es {wl('sm')} y habla {wl('sm')} .</div>
   </div>
-  <div style="margin-top:4mm"><div class="se">Mi mapa · noteer je 3 fichas</div>
+  <div style="margin-top:4mm"><div class="se">Mi mapa · anota tus 3 fichas</div>
     <table class="wtab" style="margin-top:2mm"><thead><tr><th style="width:30mm">Nombre</th><th>Es de… (país)</th><th>Es… (nacionalidad)</th><th>Habla… (idiomas)</th></tr></thead>
       <tr><td style="height:15mm">🧍 (yo)</td><td></td><td></td><td></td></tr>
       <tr><td style="height:15mm">🧑</td><td></td><td></td><td></td></tr>
@@ -353,7 +357,7 @@ TAREA=f"""
     — Yo soy de Bélgica. Soy belga y hablo neerlandés y un poco de español.<br>
     — Ella es de México. Es mexicana y habla español e inglés.</div>
   <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:6mm;margin-top:4mm;align-items:start">
-    <div class="truc" style="margin:0"><b>🏁 Klaar als…</b> je voor 3 personen «es de + land» zegt én de juiste <b>gentilicio</b> (♂/♀, kleine letter) en <b>talen</b> geeft, en het land op de kaart aanwijst — zónder af te lezen.</div>
+    <div class="truc" style="margin:0"><b>🏁 Está listo cuando…</b> dices de 3 personas «es de + país», das el <b>gentilicio</b> correcto (♂/♀, en minúscula) y los <b>idiomas</b>, y señalas el país en el mapa, sin leer. <span class="gloss">zónder af te lezen</span></div>
     <table class="rubric"><thead><tr><th>Evaluatie</th><th style="text-align:center">🟢🟡🔴</th></tr></thead>
       <tr><td>soy/es de + país correct</td><td></td></tr>
       <tr><td>gentilicio (♂/♀) correct</td><td></td></tr>
@@ -369,10 +373,10 @@ def banda(a,s,g): return f'<div class="banda"><div class="ar">{a}</div><div clas
 MUSICA=f"""
 <div class="page sec" style="break-before:page">
   <div class="se">Cultura · Banda sonora</div><h2>El mundo hispano &amp; su música</h2>
-  <p style="font-size:9.6pt">El <b>español</b> is één taal die <b>21 landen</b> verbindt en door meer dan <b>490 miljoen</b> mensen wordt gesproken — de op één na meest gesproken moedertaal ter wereld. Eén taal, veel accenten en culturen. Zelfs in Afrika: <b>Guinea Ecuatorial</b>. En de artiesten van de banda sonora komen uit heel die wereld:</p>
+  <p style="font-size:9.6pt">El <b>español</b> une <b>21 países</b> y lo hablan más de <b>490 millones</b> de personas: es la segunda lengua materna más hablada del mundo. Una lengua, muchos acentos y culturas. Hasta en África: <b>Guinea Ecuatorial</b>. Y los artistas de la banda sonora vienen de todo ese mundo: <span class="gloss">één taal, 21 landen, veel accenten</span></p>
   <div class="bandas">{"".join(banda(*b) for b in BANDAS)}</div>
   <div class="musrow">
-    <div class="call"><span class="ic">🎧</span><div><b>Spotify · la playlist de la clase.</b> Scan en luister. Op de digitale pagina vind je ook <b>LyricsTraining</b> en de <b>wereldkaart</b> (klik op elk land voor zijn fiche).</div></div>
+    <div class="call"><span class="ic">🎧</span><div><b>Spotify · la playlist de la clase.</b> Escanea y escucha. En la página digital tienes también <b>LyricsTraining</b> y el <b>mapa del mundo</b> (pulsa cada país para ver su ficha). <span class="gloss">scan en luister; online staat er meer</span></div></div>
     <div class="qr" data-url="{SPOTIFY}"><div class="lab">Playlist</div>{qr(SPOTIFY)}<div class="meta">Spotify</div></div>
   </div>
 
@@ -384,7 +388,7 @@ MUSICA=f"""
   </div>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:4mm;align-items:start">
-    <div><div class="se">¿De qué país? · verbind de artiest</div>
+    <div><div class="se">¿De qué país? · relaciona al artista</div>
       <table class="mtab"><tr><td class="a">Shakira · Karol G</td><td>{wl('sm')}</td><td class="b">a. Puerto Rico</td></tr>
       <tr><td class="a">Bad Bunny · Rauw Alejandro</td><td>{wl('sm')}</td><td class="b">b. España</td></tr>
       <tr><td class="a">Rosalía · Quevedo</td><td>{wl('sm')}</td><td class="b">c. Colombia</td></tr></table>
@@ -398,10 +402,10 @@ MUSICA=f"""
 
 REPASO=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">Repaso · Lo esencial de un vistazo</div><h2>Wat je nu kunt</h2>
+  <div class="se">Repaso · Lo esencial de un vistazo</div><h2>Lo que ya sabes hacer <span class="gloss">wat je nu kunt</span></h2>
   <div class="fams">
-    <div class="pcard"><div class="t">Zo vraag &amp; zeg je het origen</div><div class="ej">¿<b>De dónde eres</b>? → <b>Soy de</b> + país (Soy de Bélgica).</div><div class="t2">Land = met <b>de</b> · nationaliteit = zónder de (soy belga).</div></div>
-    <div class="pcard"><div class="t">Nationaliteit &amp; talen</div><div class="ej">Soy mexican<b>o</b>/mexican<b>a</b> · Hablo español, neerlandés…</div><div class="anchor"><b>-o</b> = ♂ · <b>-a</b> = ♀ &nbsp;|&nbsp; kleine letter: <b>belga</b>, <b>francés</b></div></div>
+    <div class="pcard"><div class="t">Así preguntas y dices el origen <span class="gloss">vragen en zeggen waar je vandaan komt</span></div><div class="ej">¿<b>De dónde eres</b>? → <b>Soy de</b> + país (Soy de Bélgica).</div><div class="t2">Land = met <b>de</b> · nationaliteit = zónder de (soy belga).</div></div>
+    <div class="pcard"><div class="t">Nacionalidad e idiomas <span class="gloss">nationaliteit en talen</span></div><div class="ej">Soy mexican<b>o</b>/mexican<b>a</b> · Hablo español, neerlandés…</div><div class="anchor"><b>-o</b> = ♂ · <b>-a</b> = ♀ &nbsp;|&nbsp; kleine letter: <b>belga</b>, <b>francés</b></div></div>
   </div>
   <div class="regla" style="margin:4mm 0"><span class="tag">Frases para la clase</span>
     <div class="cogn" style="margin-top:1mm"><span>¿Cómo se dice… ?</span><span>¿Qué significa… ?</span><span>Otra vez, por favor</span><span>No entiendo</span><span>¿Puedes repetir?</span><span>Más despacio, por favor</span></div>
@@ -411,34 +415,34 @@ REPASO=f"""
     <tr><td>vragen en zeggen waar iemand vandaan komt (soy de + país)</td><td></td><td></td><td></td></tr>
     <tr><td>de nationaliteit geven (♂/♀, kleine letter)</td><td></td><td></td><td></td></tr>
     <tr><td>zeggen welke talen ik spreek (hablo…)</td><td></td><td></td><td></td></tr>
-    <tr><td>landen van het mundo hispano op de kaart situeren</td><td></td><td></td><td></td></tr></table>
+    <tr><td>situar en el mapa los países del mundo hispano <span class="gloss">de landen op de kaart situeren</span></td><td></td><td></td><td></td></tr></table>
   <div class="regla" style="margin-top:5mm"><span class="tag">Mini-test · recuerda sin mirar</span>
-    <p style="margin:1mm 0 0;font-size:9.4pt">Sluit de cursus en vertaal uit het hoofd (ophalen = het beste leren).</p>
+    <p style="margin:1mm 0 0;font-size:9.4pt">Cierra el libro y traduce de memoria: recordar es la mejor manera de aprender. <span class="gloss">uit het hoofd — ophalen leert het best</span></p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:3mm 8mm;margin-top:2mm;font-size:9.8pt;line-height:2.2">
-      <div>1. waar kom je vandaan? → {wl('')}</div><div>2. ik kom uit België → {wl('')}</div>
+      <div>1. ¿de dónde eres? → {wl('')}</div><div>2. ik kom uit België → {wl('')}</div>
       <div>3. ik ben Belgisch → {wl('')}</div><div>4. welke talen spreek je? → {wl('')}</div>
       <div>5. ik spreek Nederlands → {wl('')}</div><div>6. zij is Mexicaanse → {wl('')}</div>
     </div>
   </div>
   <div class="guide"><span class="ic">🎮</span><div><span class="hand">Repasa jugando</span><div class="g">Oefen alles online met spelletjes, flashcards, de <b>wereldkaart</b> en audio op de digitale hub (scan de QR bij §1).</div></div></div>
-  <div class="bridge"><b>Próxima parada →</b> In de volgende unit stel je je familie voor: <i>la familia</i>. ¡Hasta pronto!</div>
+  <div class="bridge"><b>Próxima parada →</b> En la unidad siguiente presentas a tu familia: <i>la familia</i>. ¡Hasta pronto! <span class="gloss">volgende halte: de familie</span></div>
 </div>
 """
 
 EDITBAR="""
 <div class="editbar" id="eb">
   <b>✏️ C4 · U3</b>
-  <button id="btnedit">Bewerken aan</button>
-  <button id="btnpdf">🖨️ Opslaan als PDF</button>
-  <button id="btnsave">💾 Bewaar (.html)</button>
+  <button id="btnedit">Editar</button>
+  <button id="btnpdf">🖨️ Guardar como PDF</button>
+  <button id="btnsave">💾 Guardar (.html)</button>
   <span class="sp"></span>
-  <span style="opacity:.85;font-size:12px">Tip: zet «Bewerken» aan, pas de tekst aan, en sla op als PDF.</span>
+  <span style="opacity:.85;font-size:12px">Consejo: activa «Editar», cambia el texto y guárdalo como PDF. <span class="gloss">bewerken aanzetten, aanpassen, opslaan</span></span>
 </div><div class="scr-spacer"></div>
 """
 SCRIPT="""
 <script>
 var editing=false;var be=document.getElementById('btnedit');
-be.onclick=function(){editing=!editing;document.querySelectorAll('.page,.hero').forEach(function(p){p.contentEditable=editing;});document.body.classList.toggle('editing',editing);be.classList.toggle('on',editing);be.textContent=editing?'Bewerken uit':'Bewerken aan';};
+be.onclick=function(){editing=!editing;document.querySelectorAll('.page,.hero').forEach(function(p){p.contentEditable=editing;});document.body.classList.toggle('editing',editing);be.classList.toggle('on',editing);be.textContent=editing?'Dejar de editar':'Editar';};
 document.getElementById('btnpdf').onclick=function(){window.print();};
 document.getElementById('btnsave').onclick=function(){var html='<!doctype html>'+document.documentElement.outerHTML;var b=new Blob([html],{type:'text/html'});var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='C4_U3_Nacionalidades_bewerkt.html';a.click();};
 </script>

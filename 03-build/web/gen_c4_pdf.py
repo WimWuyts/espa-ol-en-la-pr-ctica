@@ -129,7 +129,7 @@ def hero():
   <div class="q">%(cita)s</div>
 </section>
 <div class="page">
-  <div class="obj"><div class="se">Al final de esta unidad · Op het einde van deze les</div>
+  <div class="obj"><div class="se">Al final de esta unidad <span class="gloss">op het einde van deze les</span></div>
     <ul>%(lis)s</ul>
   </div>
   <div class="guide"><span class="ic">🎒</span><div>

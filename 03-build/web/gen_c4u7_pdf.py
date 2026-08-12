@@ -109,6 +109,7 @@ def wl(cls=""): return f'<span class="wl {cls}"></span>'
 
 CSS=FONTS+PRINTCSS+r"""
 :root{ --g:#D64550; --gd:#A8323B; --gt:#FBEAEC; }
+.gloss{ font-size:.9em; line-height:1.32; }   /* steun is steun: kleiner en dichter */
 .p{color:#2563EB;font-weight:700}.v{color:#EA7317;font-weight:700}.o{color:#1E9E74;font-weight:700}.pl{color:#0E9E97;font-weight:700}
 .tl{display:flex;gap:3mm;padding:.55mm 0;font-size:9.5pt;break-inside:avoid}
 .tl .sp{font-family:var(--disp);font-weight:700;color:var(--gd);width:22mm;flex:none}
@@ -160,11 +161,11 @@ HERO=f"""
   <div class="tab">C4 · LA RUTA</div>
   <div class="eyebrow">EL DESPEGUE · PARADA 7 · SURVIVAL IN SPANISH</div>
   <h1>Las profesiones</h1>
-  <div class="sub">Vragen en zeggen wat iemand <b>doet</b> — en gissen zoals Josefina. <span class="gloss">Las profesiones — ¿a qué te dedicas? · soy profesor/a · trabajo en… · ser ↔ estar.</span></div>
+  <div class="sub">Preguntar y decir a qué se <b>dedica</b> alguien, y adivinar como Josefina. <span class="gloss">Las profesiones — ¿a qué te dedicas? · soy profesor/a · trabajo en… · ser ↔ estar.</span></div>
   <div class="q">¿A qué te dedicas? — Soy profesora. Trabajo en una academia.</div>
 </section>
 <div class="page">
-  <div class="obj"><div class="se">Al final de esta unidad · Op het einde van deze les</div>
+  <div class="obj"><div class="se">Al final de esta unidad <span class="gloss">op het einde van deze les</span></div>
     <ul>
       <li><span class="ck">✓</span> <span><span class="es">Preguntar por el trabajo</span> <span class="nl">— ¿a qué te dedicas? · ¿en qué trabajas? · ¿dónde trabajas?</span></span></li>
       <li><span class="ck">✓</span> <span><span class="es">Decir la profesión con <b>ser</b> (zonder un/una)</span> <span class="nl">— soy profesor/a · es actriz · soy estudiante</span></span></li>
@@ -172,10 +173,10 @@ HERO=f"""
       <li><span class="ck">✓</span> <span><span class="es">Distinguir <b>ser ↔ estar</b></span> <span class="nl">— es profesora (wie) ↔ está tranquila (hoe)</span></span></li>
     </ul>
   </div>
-  <div class="guide"><span class="ic">🎒</span><div><span class="hand">¡Seguimos la ruta! Parada 7.</span><div class="g">In deze «survival»-les leer je over werk praten. In de video «leest» Josefina de kaarten en gist ze naar een beroep — escritora, dependienta, actriz… — perfecte input voor ser + profesión.</div></div></div>
+  <div class="guide"><span class="ic">🎒</span><div><span class="hand">¡Seguimos la ruta! Parada 7.</span><div class="g">En esta lección de «survival» aprendes a hablar del trabajo. En el vídeo Josefina «lee» las cartas y adivina profesiones: escritora, dependienta, actriz… Input perfecta para ser + profesión. <span class="gloss">over werk praten</span></div></div></div>
 
-  <div class="se" style="margin-top:6mm">La gente de la ruta · je reisgenoten</div>
-  <p style="font-size:9.4pt;margin:0 0 1mm">Je reist mee met vier jongeren uit de Spaanstalige wereld. In de scène werk je in de academia, met Fernando, María, Julio en waarzegster Josefina.</p>
+  <div class="se" style="margin-top:6mm">La gente de la ruta · tus compañeros de viaje</div>
+  <p style="font-size:9.4pt;margin:0 0 1mm">Viajas con cuatro jóvenes del mundo hispano. En la escena trabajas en la academia, con Fernando, María, Julio y la adivina Josefina. <span class="gloss">in de academia</span></p>
   <div class="cast2">
     <div class="m"><div class="fl">🇪🇸</div><div class="nm">Lucía</div><div class="ro">Sevilla · familie</div></div>
     <div class="m"><div class="fl">🇲🇽</div><div class="nm">Diego</div><div class="ro">CDMX · eten & markt</div></div>
@@ -184,7 +185,7 @@ HERO=f"""
     <div class="m"><div class="fl">🎒</div><div class="nm">Tú</div><div class="ro">jij, de reiziger</div></div>
   </div>
 
-  <div class="truc" style="margin-top:5mm"><b>¿Qué reconoces ya?</b> Deze werk-woorden lijken op het Nederlands of Engels (<i>palabras transparentes</i>) — durf te gissen:
+  <div class="truc" style="margin-top:5mm"><b>¿Qué reconoces ya?</b> Estas palabras del trabajo se parecen al neerlandés o al inglés (<i>palabras transparentes</i>) — durf te gissen:
     <div class="cogn"><span>el actor</span><span>la actriz</span><span>el/la artista</span><span>el/la dentista</span><span>el policía</span><span>el/la periodista</span><span>la oficina</span><span>el hospital</span><span>el teatro</span><span>la academia</span></div>
     <span style="font-size:8.6pt;color:var(--mut)">Tip: veel beroepen herken je meteen — <b>actor</b>, <b>dentista</b>, <b>policía</b>…</span>
   </div>
@@ -193,16 +194,16 @@ HERO=f"""
 
 ESCUCHA=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">§1 · ¡Escucha!</div><h2>Bekijk de scène en lees mee</h2>
+  <div class="se">§1 · ¡Escucha!</div><h2>Mira la escena y lee al mismo tiempo <span class="gloss" style="font-size:10pt;font-weight:400">bekijk en lees mee</span></h2>
   <div class="audiorow">
-    <div class="call"><span class="ic">🎬</span><div><b>Sitcom · Episodio 7 · Las profesiones.</b> Scan de code en bekijk de aflevering op de digitale pagina. Fernando ondervraagt María («yo trabajo aquí, tú trabajas aquí…»), en waarzegster Josefina <b>gist</b> beroepen uit de kaarten. Luister eerst zónder te lezen; daarna lees je mee. De <b>vetgedrukte</b> woorden zijn chunks om mee te nemen.</div></div>
+    <div class="call"><span class="ic">🎬</span><div><b>Sitcom · Episodio 7 · Las profesiones.</b> Escanea el código y mira el episodio en la página digital. Fernando interroga a María («yo trabajo aquí, tú trabajas aquí…») y la adivina Josefina <b>adivina</b> profesiones con las cartas. Primero escucha sin leer; después lee al mismo tiempo. Las palabras en <b>negrita</b> son chunks para llevarte. <span class="gloss">eerst zónder te lezen, daarna lees je mee</span></div></div>
     <div class="qr" data-url="{EN.url('C4', 7, EN.ancla_c4('escucha'))}"><div class="lab">Vídeo online</div>{qr(EN.url("C4", 7, EN.ancla_c4("escucha")))}<div class="meta">hub · Escucha</div></div>
   </div>
-  <div class="truc"><b>Antes de escuchar · vóór je luistert.</b> Welke <b>beroepen</b> ga je horen, denk je? <span style="font-size:8.8pt;color:var(--mut)">(gis gerust)</span>
+  <div class="truc"><b>Antes de escuchar.</b> ¿Qué <b>profesiones</b> crees que vas a oír? <span class="gloss">welke beroepen, denk je?</span> <span style="font-size:8.8pt;color:var(--mut)">(gis gerust)</span>
     <div style="margin-top:1.5mm;font-size:9.6pt;line-height:2.2">Una profesión: {wl('sm')} &nbsp;&nbsp; Otra profesión: {wl('sm')} &nbsp;&nbsp; Un lugar de trabajo: {wl('sm')}</div>
   </div>
   <div class="twocol">{scenehtml(*SCENES[0])}{scenehtml(*SCENES[1])}{scenehtml(*SCENES[2])}</div>
-  <div class="ojo"><b>¡Ojo!</b> «<b>Es</b> profesora» (wie ze is — beroep, mét ser, zónder un/una) ↔ «No <b>estás</b> bien» (hoe je eraan toe bent — toestand, met estar).</div>
+  <div class="ojo"><b>¡Ojo!</b> «<b>Es</b> profesora» (quién es: profesión, con ser y sin un/una) ↔ «No <b>estás</b> bien» (cómo está: estado, con estar). <span class="gloss">wie je bent ↔ hoe je eraan toe bent</span></div>
 
   <div class="se" style="margin-top:5mm">Después de escuchar · ¿Verdadero o falso?</div>
   <p style="font-size:9.4pt;margin:0 0 1mm">Kruis aan. Verbeter de <b>falsas</b> op de lijn.</p>
@@ -218,21 +219,21 @@ ESCUCHA=f"""
 KIT=f"""
 <div class="page sec" style="break-before:page">
   <div class="se">Suena bien · pronunciación</div><h2>La c/qu = /k/ &amp; la esdrújula</h2>
-  <p style="font-size:9.4pt;color:var(--mut);margin:0 0 1mm">Vóór a/o/u klinkt <b>c</b> als /k/ (casa, médico). Vóór e/i schrijf je <b>qu</b> — de u hoor je NIET: «queso» = «ke-so». Oefen online (QR §1).</p>
+  <p style="font-size:9.4pt;color:var(--mut);margin:0 0 1mm">Delante de a/o/u la <b>c</b> suena /k/ (casa, médico). Delante de e/i se escribe <b>qu</b> y la u NO se oye: «queso» = «ke-so». Practícalo en línea (QR §1). <span class="gloss">de u hoor je niet</span></p>
   <div class="cogn"><span>casa</span><span>cocina</span><span>médico</span><span>carta</span><span>queso</span><span>¿quién?</span><span>aquí</span><span>tranquilo</span></div>
   <div class="ojo"><b>¡Ojo!</b> que = «ke» (niet «kwe»!) · qui = «ki». Vergelijk: <b>c</b>asa /k/ ↔ <b>c</b>ine /θ/ (U3) — dáárom bestaat qu.</div>
-  <div class="klemline"><b>La esdrújula · klemtoon op de 3de lettergreep van achter — áltijd een accent:</b> <span class="t">MÉ</span>·di·co · <span class="t">MÚ</span>·si·ca · <span class="t">SÁ</span>·ba·do · te·<span class="t">LÉ</span>·fo·no</div>
+  <div class="klemline"><b>La esdrújula · acento en la antepenúltima sílaba, siempre con tilde:</b> <span class="t">MÉ</span>·di·co · <span class="t">MÚ</span>·si·ca · <span class="t">SÁ</span>·ba·do · te·<span class="t">LÉ</span>·fo·no <span class="gloss">derde lettergreep van achter, altijd een accent</span></div>
 
-  <div class="se" style="margin-top:3mm">§2 · Kit de supervivencia</div><h2>De taal die je écht nodig hebt</h2>
-  <p style="font-size:9.4pt;color:var(--mut);margin:0 0 2mm">Vink ☐ af telkens je een uitdrukking vlot kunt <b>naspreken</b>. Oefen ze online met audio.</p>
+  <div class="se" style="margin-top:3mm">§2 · Kit de supervivencia</div><h2>La lengua que de verdad necesitas <span class="gloss" style="font-size:10pt;font-weight:400">de taal die je écht nodig hebt</span></h2>
+  <p style="font-size:9.4pt;color:var(--mut);margin:0 0 2mm">Marca ☐ cada vez que puedas <b>repetir</b> una expresión con soltura. Practícalas en línea con audio. <span class="gloss">vink af wat je vlot kunt naspreken</span></p>
   <div class="kitwrap">{"".join(kittable(n,it) for n,it in CLUSTERS)}</div>
 </div>
 """
 
 GRAM=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">§4 · Gramática en la práctica</div><h2>Kort en functioneel</h2>
-  <div class="modelo"><b>🔎 Fíjate · kijk terug naar de scène.</b> Je hoorde het al: «Yo <b>trabajo</b> aquí, tú <b>trabajas</b> aquí y él <b>trabaja</b> aquí» · «<b>Es</b> profesora» · «Yo <b>estoy</b> bien. <b>Estamos</b> todos bien». Ontdek zelf het patroon — <i>eerst betekenis, dan de regel.</i></div>
+  <div class="se">§4 · Gramática en la práctica</div><h2>Corta y funcional <span class="gloss" style="font-size:10pt;font-weight:400">kort en functioneel</span></h2>
+  <div class="modelo"><b>🔎 Fíjate · vuelve a la escena.</b> Ya lo has oído: «Yo <b>trabajo</b> aquí, tú <b>trabajas</b> aquí y él <b>trabaja</b> aquí» · «<b>Es</b> profesora» · «Yo <b>estoy</b> bien. <b>Estamos</b> todos bien». Descubre tú el patrón — <i>primero el significado, después la regla.</i> <span class="gloss">ontdek zelf het patroon</span></div>
   <div class="regla"><span class="tag">ser + profesión · zonder un/una</span>
     <table class="gt2"><tr><td class="v">Soy profesora.</td><td>Ik ben lerares.</td><td class="ex">niet: <s>soy una profesora</s></td></tr>
     <tr><td class="v">Es escritor.</td><td>Hij is schrijver.</td><td class="ex">¿Es actriz? — No, es profesora.</td></tr></table>
@@ -242,15 +243,15 @@ GRAM=f"""
     <table class="gt2"><tr><td class="v">(yo) trabajo</td><td>ik werk</td><td class="ex">Trabajo <b>en</b> una tienda.</td></tr>
     <tr><td class="v">(tú) trabajas</td><td>jij werkt</td><td class="ex">¿Dónde trabajas?</td></tr>
     <tr><td class="v">(él/ella) trabaja</td><td>hij/zij werkt</td><td class="ex">¿Trabaja en una oficina?</td></tr></table>
-    <p style="font-size:9pt;margin:1mm 0 0">💡 Leer ze als vaste chunks — het volledige werkwoordsysteem komt in het 5de jaar. Werkplek altijd met <b>en</b>.</p>
+    <p style="font-size:9pt;margin:1mm 0 0">💡 Apréndelas como chunks fijos; el sistema completo del verbo llega en 5º. El lugar de trabajo siempre con <b>en</b>. <span class="gloss">werkplek altijd met «en»</span></p>
   </div>
-  <div class="regla"><span class="tag">ser ↔ estar · wie je bent ↔ hoe je je voelt</span>
+  <div class="regla"><span class="tag">ser ↔ estar · quién eres ↔ cómo estás <span class="gloss">wie je bent ↔ hoe je je voelt</span></span>
     <div class="mv2"><div class="m">SER — wie/wat: <b>es</b> profesora (beroep) · <b>soy</b> belga (afkomst)</div><div class="f">ESTAR — toestand: <b>estoy</b> bien · <b>estamos</b> todos tranquilos · ¿<b>estáis</b> bien?</div></div>
-    <p style="font-size:9pt;margin:1mm 0 0">💡 estar ken je al: estoy cansado (U2) · ¿dónde está? (U6). Nieuw: <b>estamos</b> (wij) en <b>estáis</b> (jullie) — uit de scène.</p>
+    <p style="font-size:9pt;margin:1mm 0 0">💡 Ya conoces estar: estoy cansado (U2) · ¿dónde está? (U6). Nuevo: <b>estamos</b> y <b>estáis</b>, los dos de la escena. <span class="gloss">nieuw: wij en jullie</span></p>
   </div>
-  <div class="truc"><b>Mini-oefening 1 · ser + profesión.</b> Vul de vrouwelijke vorm in: a) el profesor → la {wl('sm')} &nbsp; b) el escritor → la {wl('sm')} &nbsp; c) el actor → la {wl('sm')}</div>
-  <div class="truc"><b>Mini-oefening 2 · ¿ser of estar?</b> Kies: 1. María {wl('sm')} profesora (beroep). &nbsp; 2. Julio no {wl('sm')} bien (toestand). &nbsp; 3. Nosotros {wl('sm')} tranquilos.</div>
-  <div class="truc"><b>Mini-oefening 3 · trabajo/trabajas/trabaja.</b> Vul aan: 1. Yo {wl('sm')} en una tienda. &nbsp; 2. ¿Dónde {wl('sm')} tú? &nbsp; 3. Ella {wl('sm')} en el hospital.</div>
+  <div class="truc"><b>Mini-ejercicio 1 · ser + profesión.</b> Escribe la forma femenina: a) el profesor → la {wl('sm')} &nbsp; b) el escritor → la {wl('sm')} &nbsp; c) el actor → la {wl('sm')}</div>
+  <div class="truc"><b>Mini-ejercicio 2 · ¿ser o estar?</b> Elige: 1. María {wl('sm')} profesora (beroep). &nbsp; 2. Julio no {wl('sm')} bien (toestand). &nbsp; 3. Nosotros {wl('sm')} tranquilos.</div>
+  <div class="truc"><b>Mini-ejercicio 3 · trabajo/trabajas/trabaja.</b> Completa: 1. Yo {wl('sm')} en una tienda. &nbsp; 2. ¿Dónde {wl('sm')} tú? &nbsp; 3. Ella {wl('sm')} en el hospital.</div>
 </div>
 """
 
@@ -261,7 +262,7 @@ def act(n,title,badges,body):
 
 PRAC=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">§3 · Práctica</div><h2>Oefen op papier — online verbeter je alles</h2>
+  <div class="se">§3 · Práctica</div><h2>Practica en papel · online se corrige solo <span class="gloss" style="font-size:10pt;font-weight:400">online verbetert het zichzelf</span></h2>
 
   {act(1,"Clasifica: profesión, lugar o estado",[("receptief","skill"),("5 min","")],
     '<p style="margin-left:12.5mm">Schrijf elk woord in de juiste kolom. Voeg onderaan één eigen woord toe.<br><span class="gloss">escritora · la tienda · tranquilo · dependienta · la oficina · cansada · actriz · la academia</span></p>'
@@ -308,8 +309,8 @@ PRAC=f"""
 TAREA=f"""
 <div class="page sec" style="break-before:page">
   <div class="se">§5 · Tarea final</div><h2>¿Quién soy? · adivina la profesión</h2>
-  <div class="esen" style="margin-top:2mm"><b class="tt">Jouw opdracht.</b> Kies (geheim!) een <b>beroep + werkplek</b>. Geef <b>drie pistas</b> in het Spaans («trabajo en…», «estoy…», «trabajo con…»); de klas <b>gist</b> zoals Josefina («¿puede ser…?», «¿trabajas en…?», «¡ya lo sé!»). Wie raadt, is aan de beurt. <span class="gloss">Sin leer del papel — zonder van het blad af te lezen.</span></div>
-  <div class="regla" style="margin-top:4mm"><span class="tag">Prepárate · vul eerst je fiche in</span>
+  <div class="esen" style="margin-top:2mm"><b class="tt">Tu tarea.</b> Elige en secreto una <b>profesión y un lugar de trabajo</b>. Da <b>tres pistas</b> en español («trabajo en…», «estoy…», «trabajo con…»); la clase <b>adivina</b> como Josefina («¿puede ser…?», «¿trabajas en…?», «¡ya lo sé!»). Quien acierta, pasa a jugar. <span class="gloss">Sin leer del papel — zonder van het blad af te lezen.</span></div>
+  <div class="regla" style="margin-top:4mm"><span class="tag">Prepárate · rellena primero tu ficha <span class="gloss">vul eerst je fiche in</span></span>
     <div style="margin-top:2mm;font-size:9.7pt;line-height:2.4">Mi profesión (geheim): {wl('lg')}<br>Pista 1 · Trabajo en {wl('lg')}<br>Pista 2 · Estoy {wl('sm')} y trabajo con {wl('sm')}<br>Pista 3 · {wl('full')}</div>
   </div>
   <div class="modelo" style="margin-top:4mm"><b>Modelo · zo klinkt het:</b><br>
@@ -318,14 +319,14 @@ TAREA=f"""
   <div class="regla" style="margin-top:3mm"><span class="tag">Para adivinar · om te gissen (zoals Josefina)</span>
     <p style="margin:1mm 0 0;font-size:9.6pt">¿Puede ser… (escritora · actor · médico)? · ¿Trabajas en una tienda / una oficina? · ¿O algo parecido? · ¡Ya lo sé! Eres… · Sí, soy… / No, no soy…</p>
   </div>
-  <div style="margin-top:4mm"><div class="se">Mis notas · noteer hier wie wat is in de klas</div>
+  <div style="margin-top:4mm"><div class="se">Mis notas · anota aquí quién es qué en la clase <span class="gloss">noteer wie wat is</span></div>
     <table class="wtab" style="margin-top:2mm"><thead><tr><th>Compañero/a</th><th>Profesión</th><th>¿Dónde trabaja?</th></tr></thead>
     <tr><td style="height:9mm"></td><td></td><td></td></tr>
     <tr><td style="height:9mm"></td><td></td><td></td></tr>
     <tr><td style="height:9mm"></td><td></td><td></td></tr></table>
   </div>
   <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:6mm;margin-top:4mm;align-items:start">
-    <div class="truc" style="margin:0"><b>🏁 Klaar als…</b> je 3 pistas geeft met «trabajo en…» + «estoy…», gist met «¿puede ser…?» en antwoordt met «sí, soy… / no, no soy…» — zónder af te lezen.</div>
+    <div class="truc" style="margin:0"><b>🏁 Está listo cuando…</b> das 3 pistas con «trabajo en…» y «estoy…», adivinas con «¿puede ser…?» y respondes «sí, soy… / no, no soy…», sin leer. <span class="gloss">zónder af te lezen</span></div>
     <table class="rubric"><thead><tr><th>Evaluatie</th><th style="text-align:center">🟢🟡🔴</th></tr></thead>
       <tr><td>pistas (trabajo en… · estoy…) correct</td><td></td></tr>
       <tr><td>adivinar (¿puede ser…?) + ser sin un/una</td><td></td></tr>
@@ -340,23 +341,23 @@ def banda(a,s,g): return f'<div class="banda"><div class="ar">{a}</div><div clas
 MUSICA=f"""
 <div class="page sec" style="break-before:page">
   <div class="se">Cultura · Banda sonora</div><h2>El trabajo en el mundo hispano</h2>
-  <p style="font-size:9.6pt">Over werk praten klinkt anders in elke cultuur. In het Spaans zeg je <b>soy profesor</b> — zónder «un/una». In Spanje bestaat het <b>horario partido</b>: winkels sluiten van 14 tot 17 u en men werkt tot ± 20 u. En de klassieke kennismakingsvraag is <b>¿A qué te dedicas?</b> Beroemde beroepen: Frida Kahlo <b>pintora</b>, García Márquez <b>escritor</b>, Messi <b>futbolista</b>, Rosalía <b>cantante</b>.</p>
+  <p style="font-size:9.6pt">Hablar del trabajo suena distinto en cada cultura. En español se dice <b>soy profesor</b>, sin «un/una». En España existe el <b>horario partido</b>: las tiendas cierran de 14 a 17 y se trabaja hasta las 20. Y la pregunta clásica al conocer a alguien es <b>¿A qué te dedicas?</b> Profesiones famosas: Frida Kahlo <b>pintora</b>, García Márquez <b>escritor</b>, Messi <b>futbolista</b>, Rosalía <b>cantante</b>. <span class="gloss">soy profesor, zónder lidwoord</span></p>
   <div class="bandas">{"".join(banda(*b) for b in BANDAS)}</div>
   <div class="musrow">
-    <div class="call"><span class="ic">🎧</span><div><b>Spotify · la playlist de la clase.</b> Scan en luister. Op de digitale pagina vind je ook <b>LyricsTraining</b> en de <b>wereldkaart</b>.</div></div>
+    <div class="call"><span class="ic">🎧</span><div><b>Spotify · la playlist de la clase.</b> Escanea y escucha. En la página digital tienes también <b>LyricsTraining</b> y el <b>mapa del mundo</b>. <span class="gloss">scan en luister; online staat er meer</span></div></div>
     <div class="qr" data-url="{SPOTIFY}"><div class="lab">Playlist</div>{qr(SPOTIFY)}<div class="meta">Spotify</div></div>
   </div>
   <div class="truc" style="margin-top:5mm"><b>Profesiones famosas · ¿quién es quién?</b> Verbind (gis gerust):
     <table class="mtab" style="margin-top:1mm"><tr><td class="a">Frida Kahlo era…</td><td>{wl('sm')}</td><td class="b">a. escritor (Cien años de soledad)</td></tr>
     <tr><td class="a">García Márquez era…</td><td>{wl('sm')}</td><td class="b">b. pintora mexicana</td></tr>
     <tr><td class="a">Rosalía es…</td><td>{wl('sm')}</td><td class="b">c. cantante española</td></tr></table>
-    <p style="font-size:8.6pt;color:var(--mut);margin-top:1mm">💡 Ook hier: <b>ser</b> + beroep zonder un/una — «es cantante», «era pintora».</p>
+    <p style="font-size:8.6pt;color:var(--mut);margin-top:1mm">💡 Aquí también: <b>ser</b> + profesión sin un/una — «es cantante», «era pintora». <span class="gloss">zonder un/una</span></p>
   </div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:3mm;align-items:start">
     <div class="truc" style="margin:0"><b>Escucha y responde.</b> Kies één nummer van de playlist.
       <div style="margin-top:1.5mm;font-size:9.6pt;line-height:2.3">Mi canción: {wl('lg')}<br>La profesión del artista: {wl('lg')}</div>
     </div>
-    <div class="truc" style="margin:0"><b>¿Y tú?</b> Schrijf één zin: je (droom)beroep + waar je werkt.
+    <div class="truc" style="margin:0"><b>¿Y tú?</b> Escribe una frase: tu profesión (o la de tus sueños) y dónde trabajas. <span class="gloss">jouw (droom)beroep</span>
       <div style="margin-top:1.5mm;font-size:9.6pt;line-height:2.4">{wl('full')}<br>{wl('full')}</div>
     </div>
   </div>
@@ -365,10 +366,10 @@ MUSICA=f"""
 
 REPASO=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">Repaso · Lo esencial de un vistazo</div><h2>Wat je nu kunt</h2>
+  <div class="se">Repaso · Lo esencial de un vistazo</div><h2>Lo que ya sabes hacer <span class="gloss">wat je nu kunt</span></h2>
   <div class="fams">
-    <div class="pcard"><div class="t">Zo praat je over werk</div><div class="ej"><b>¿A qué te dedicas?</b> — <b>Soy</b> ____ (profesor/a…). <b>Trabajo en</b> ____.</div><div class="t2">ser + beroep zónder un/una · werkplek met en</div></div>
-    <div class="pcard"><div class="t">Zo hou je ser ↔ estar uit elkaar</div><div class="ej"><b>Es</b> profesora (wie/wat) ↔ <b>Está</b> tranquila (hoe). <b>Estamos</b> todos bien.</div><div class="anchor">ser = identiteit/beroep &nbsp;|&nbsp; estar = toestand/plaats</div></div>
+    <div class="pcard"><div class="t">Así hablas del trabajo <span class="gloss">zo praat je over werk</span></div><div class="ej"><b>¿A qué te dedicas?</b> — <b>Soy</b> ____ (profesor/a…). <b>Trabajo en</b> ____.</div><div class="t2">ser + beroep zónder un/una · werkplek met en</div></div>
+    <div class="pcard"><div class="t">Así distingues ser ↔ estar <span class="gloss">uit elkaar houden</span></div><div class="ej"><b>Es</b> profesora (quién) ↔ <b>Está</b> tranquila (cómo). <b>Estamos</b> todos bien. <span class="gloss">wie ↔ hoe</span></div><div class="anchor">ser = identiteit/beroep &nbsp;|&nbsp; estar = toestand/plaats</div></div>
   </div>
   <div class="regla" style="margin:4mm 0"><span class="tag">Frases para la clase</span>
     <div class="cogn" style="margin-top:1mm"><span>¿Cómo se dice… ?</span><span>¿Qué significa… ?</span><span>Otra vez, por favor</span><span>No entiendo</span><span>¿Puedes repetir?</span><span>¿Puedo ir al baño?</span></div>
@@ -380,9 +381,9 @@ REPASO=f"""
     <tr><td>trabajo/trabajas/trabaja + en gebruiken</td><td></td><td></td><td></td></tr>
     <tr><td>ser en estar uit elkaar houden</td><td></td><td></td><td></td></tr></table>
   <div class="regla" style="margin-top:5mm"><span class="tag">Mini-test · recuerda sin mirar</span>
-    <p style="margin:1mm 0 0;font-size:9.4pt">Sluit de cursus en vertaal uit het hoofd (ophalen = het beste leren).</p>
+    <p style="margin:1mm 0 0;font-size:9.4pt">Cierra el libro y traduce de memoria: recordar es la mejor manera de aprender. <span class="gloss">uit het hoofd — ophalen leert het best</span></p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:3mm 8mm;margin-top:2mm;font-size:9.8pt;line-height:2.2">
-      <div>1. wat doe je (voor werk)? → {wl('')}</div><div>2. ik ben lerares → {wl('')}</div>
+      <div>1. ¿a qué te dedicas? → {wl('')}</div><div>2. ik ben lerares → {wl('')}</div>
       <div>3. ik werk in een winkel → {wl('')}</div><div>4. de actrice → {wl('')}</div>
       <div>5. we zijn allemaal oké → {wl('')}</div><div>6. misschien is ze schrijfster → {wl('')}</div>
     </div>
@@ -395,17 +396,17 @@ REPASO=f"""
 EDITBAR="""
 <div class="editbar" id="eb">
   <b>✏️ C4 · U7</b>
-  <button id="btnedit">Bewerken aan</button>
-  <button id="btnpdf">🖨️ Opslaan als PDF</button>
-  <button id="btnsave">💾 Bewaar (.html)</button>
+  <button id="btnedit">Editar</button>
+  <button id="btnpdf">🖨️ Guardar como PDF</button>
+  <button id="btnsave">💾 Guardar (.html)</button>
   <span class="sp"></span>
-  <span style="opacity:.85;font-size:12px">Tip: zet «Bewerken» aan, pas de tekst aan, en sla op als PDF.</span>
+  <span style="opacity:.85;font-size:12px">Consejo: activa «Editar», cambia el texto y guárdalo como PDF. <span class="gloss">bewerken aanzetten, aanpassen, opslaan</span></span>
 </div><div class="scr-spacer"></div>
 """
 SCRIPT="""
 <script>
 var editing=false;var be=document.getElementById('btnedit');
-be.onclick=function(){editing=!editing;document.querySelectorAll('.page,.hero').forEach(function(p){p.contentEditable=editing;});document.body.classList.toggle('editing',editing);be.classList.toggle('on',editing);be.textContent=editing?'Bewerken uit':'Bewerken aan';};
+be.onclick=function(){editing=!editing;document.querySelectorAll('.page,.hero').forEach(function(p){p.contentEditable=editing;});document.body.classList.toggle('editing',editing);be.classList.toggle('on',editing);be.textContent=editing?'Dejar de editar':'Editar';};
 document.getElementById('btnpdf').onclick=function(){window.print();};
 document.getElementById('btnsave').onclick=function(){var html='<!doctype html>'+document.documentElement.outerHTML;var b=new Blob([html],{type:'text/html'});var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='C4_U7_Profesiones_bewerkt.html';a.click();};
 </script>

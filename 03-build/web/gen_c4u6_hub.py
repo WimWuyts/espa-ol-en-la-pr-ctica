@@ -13,17 +13,17 @@ def srcdoc(path):
     return h.replace("&","&amp;").replace('"',"&quot;")
 
 TABS=[
- ("escucha","🎬 Escucha","C4_U6_escucha.html","Mira la escena y lee al mismo tiempo: los chunks te entran por el oído. <span class="stn">bekijk en lees mee</span>"),
- ("comprension","📖 Lee y escucha","C4_U6_comprension.html","Una lectura y una escucha cortas: entiende el español que ya sabes. <span class="stn">korte lees- en luisteroefening</span>"),
- ("mapa","🗺️ Mapa","C4_U6_mapa.html","La Ruta — pulsa un país del mundo hispano y lee su ficha. <span class="stn">klik op een land</span>"),
- ("funciones","🗣️ Funciones","C4_U6_funciones.html","Lo que puedes HACER con el español: tu repertorio crece cada unidad. <span class="stn">wat je met het Spaans kunt doen</span>"),
- ("kit","🧰 Kit","C4_U6_kgt.html","Pronunciación (b = v, llana/aguda), la lengua por situación, gramática (preposiciones · hay/está · poder) y tarea. <span class="stn">uitspraak, taal per situatie, grammatica en taak</span>"),
- ("practica","✍️ Práctica","C4_U6_practica.html","Practica y corrígete: reconocer → elegir → decirlo tú. <span class="stn">zelfcorrigerend oefenen</span>"),
+ ("escucha","🎬 Escucha","C4_U6_escucha.html","Mira la escena y lee al mismo tiempo: los chunks te entran por el oído. <span class='stn'>bekijk en lees mee</span>"),
+ ("comprension","📖 Lee y escucha","C4_U6_comprension.html","Una lectura y una escucha cortas: entiende el español que ya sabes. <span class='stn'>korte lees- en luisteroefening</span>"),
+ ("mapa","🗺️ Mapa","C4_U6_mapa.html","La Ruta — pulsa un país del mundo hispano y lee su ficha. <span class='stn'>klik op een land</span>"),
+ ("funciones","🗣️ Funciones","C4_U6_funciones.html","Lo que puedes HACER con el español: tu repertorio crece cada unidad. <span class='stn'>wat je met het Spaans kunt doen</span>"),
+ ("kit","🧰 Kit","C4_U6_kgt.html","Pronunciación (b = v, llana/aguda), la lengua por situación, gramática (preposiciones · hay/está · poder) y tarea. <span class='stn'>uitspraak, taal per situatie, grammatica en taak</span>"),
+ ("practica","✍️ Práctica","C4_U6_practica.html","Practica y corrígete: reconocer → elegir → decirlo tú. <span class='stn'>zelfcorrigerend oefenen</span>"),
  ("rol","🎭 Ensaya","C4_U6_rol.html",
-  "Representa la escena: el compañero te corrige y funciona sin internet. <span class="stn">speel de scène, ook offline</span>"),
+  "Representa la escena: el compañero te corrige y funciona sin internet. <span class='stn'>speel de scène, ook offline</span>"),
  ("coach","📝 Entrega","C4_U6_coach.html",
-  "Escribe tu tarea final y hazla revisar antes de entregarla. <span class="stn">schrijf en laat nakijken</span>"),
- ("musica","🎧 Música","C4_U6_musica.html","Cultura (la casa hispana) + banda sonora — aprende español con música. <span class="stn">leer Spaans via muziek</span>"),
+  "Escribe tu tarea final y hazla revisar antes de entregarla. <span class='stn'>schrijf en laat nakijken</span>"),
+ ("musica","🎧 Música","C4_U6_musica.html","Cultura (la casa hispana) + banda sonora — aprende español con música. <span class='stn'>leer Spaans via muziek</span>"),
 ]
 
 def tabbtn(i,t):
@@ -66,7 +66,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
 <div class="hero">
   <span class="ruta">🗺️ La Ruta · C4 «El despegue» · Parada 6</span>
   <h1>Unidad 6 · La casa y los lugares</h1>
-  <p>Nombra las <b>habitaciones</b> de una casa y di <b>dónde</b> está cada cosa: ¿dónde está el bolso? — está encima de la mesa. Y pide permiso con educación: ¿puedo…? Todo lo que oyes aquí lo puedes usar enseguida. <span class="stn">de kamers, waar alles staat, en beleefd iets vragen</span> <i>Survival in Spanish.</i></p>
+  <p>Nombra las <b>habitaciones</b> de una casa y di <b>dónde</b> está cada cosa: ¿dónde está el bolso? — está encima de la mesa. Y pide permiso con educación: ¿puedo…? Todo lo que oyes aquí lo puedes usar enseguida. <span class='stn'>de kamers, waar alles staat, en beleefd iets vragen</span> <i>Survival in Spanish.</i></p>
 </div>
 <nav class="tabbar">{"".join(tabbtn(i,t) for i,t in enumerate(TABS))}</nav>
 <main>

@@ -105,6 +105,7 @@ def wl(cls=""): return f'<span class="wl {cls}"></span>'
 
 CSS=FONTS+PRINTCSS+r"""
 :root{ --g:#D64550; --gd:#A8323B; --gt:#FBEAEC; }
+.gloss{ font-size:.9em; line-height:1.32; }   /* steun is steun: kleiner en dichter */
 .p{color:#2563EB;font-weight:700}.v{color:#EA7317;font-weight:700}.o{color:#1E9E74;font-weight:700}.pl{color:#0E9E97;font-weight:700}
 .tl{display:flex;gap:3mm;padding:.55mm 0;font-size:9.5pt;break-inside:avoid}
 .tl .sp{font-family:var(--disp);font-weight:700;color:var(--gd);width:22mm;flex:none}
@@ -163,7 +164,7 @@ HERO=f"""
   <div class="q">¿Qué es esto? — Esto es un sofá, que sirve para descansar.</div>
 </section>
 <div class="page">
-  <div class="obj"><div class="se">Al final de esta unidad · Op het einde van deze les</div>
+  <div class="obj"><div class="se">Al final de esta unidad <span class="gloss">op het einde van deze les</span></div>
     <ul>
       <li><span class="ck">✓</span> <span><span class="es">Identificar objetos</span> <span class="nl">— ¿qué es esto? · esto es un/una… · esto son…</span></span></li>
       <li><span class="ck">✓</span> <span><span class="es">Usar <b>un/una</b> y el género</span> <span class="nl">— un libro · una mesa · el / la</span></span></li>
@@ -171,10 +172,10 @@ HERO=f"""
       <li><span class="ck">✓</span> <span><span class="es">Decir para qué <b>sirve</b></span> <span class="nl">— sirve para + infinitivo (beber, descansar…)</span></span></li>
     </ul>
   </div>
-  <div class="guide"><span class="ic">🎒</span><div><span class="hand">¡Seguimos la ruta! Parada 5.</span><div class="g">In deze «survival»-les leer je alles om je heen benoemen. In de video toont Julio zijn huis aan María en zegt bij elk voorwerp waarvoor het dient — perfecte input voor «esto es un… que sirve para…».</div></div></div>
+  <div class="guide"><span class="ic">🎒</span><div><span class="hand">¡Seguimos la ruta! Parada 5.</span><div class="g">En esta lección de «survival» aprendes a nombrar todo lo que te rodea. En el vídeo Julio le enseña su casa a María y dice de cada objeto para qué sirve: input perfecta para «esto es un… que sirve para…». <span class="gloss">alles om je heen benoemen</span></div></div></div>
 
-  <div class="se" style="margin-top:6mm">La gente de la ruta · je reisgenoten</div>
-  <p style="font-size:9.4pt;margin:0 0 1mm">Je reist mee met vier jongeren uit de Spaanstalige wereld. In de scène ben je te gast bij Julio thuis, samen met María.</p>
+  <div class="se" style="margin-top:6mm">La gente de la ruta · tus compañeros de viaje</div>
+  <p style="font-size:9.4pt;margin:0 0 1mm">Viajas con cuatro jóvenes del mundo hispano. En la escena estás de visita en casa de Julio, con María. <span class="gloss">je bent te gast bij Julio thuis</span></p>
   <div class="cast2">
     <div class="m"><div class="fl">🇪🇸</div><div class="nm">Lucía</div><div class="ro">Sevilla · familie</div></div>
     <div class="m"><div class="fl">🇲🇽</div><div class="nm">Diego</div><div class="ro">CDMX · eten & markt</div></div>
@@ -183,7 +184,7 @@ HERO=f"""
     <div class="m"><div class="fl">🎒</div><div class="nm">Tú</div><div class="ro">jij, de reiziger</div></div>
   </div>
 
-  <div class="truc" style="margin-top:5mm"><b>¿Qué reconoces ya?</b> Deze voorwerpen lijken op het Nederlands of Engels (<i>palabras transparentes</i>) — durf te gissen:
+  <div class="truc" style="margin-top:5mm"><b>¿Qué reconoces ya?</b> Estos objetos se parecen al neerlandés o al inglés (<i>palabras transparentes</i>) — durf te gissen:
     <div class="cogn"><span>el sofá</span><span>la televisión</span><span>el ordenador</span><span>la radio</span><span>el móvil</span><span>la foto</span><span>el vídeo</span><span>la guitarra</span><span>la pizza</span><span>el chocolate</span></div>
     <span style="font-size:8.6pt;color:var(--mut)">Tip: veel voorwerpen herken je meteen — <b>televisión</b>, <b>radio</b>, <b>móvil</b>…</span>
   </div>
@@ -192,16 +193,16 @@ HERO=f"""
 
 ESCUCHA=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">§1 · ¡Escucha!</div><h2>Bekijk de scène en lees mee</h2>
+  <div class="se">§1 · ¡Escucha!</div><h2>Mira la escena y lee al mismo tiempo <span class="gloss" style="font-size:10pt;font-weight:400">bekijk en lees mee</span></h2>
   <div class="audiorow">
-    <div class="call"><span class="ic">🎬</span><div><b>Sitcom · Episodio 5 · Objetos cotidianos.</b> Scan de code en bekijk de aflevering op de digitale pagina. Julio toont María zijn huis en zegt bij elk voorwerp <b>waarvoor het dient</b>. Luister eerst zónder te lezen; daarna lees je mee. De <b>vetgedrukte</b> woorden zijn chunks om mee te nemen.</div></div>
+    <div class="call"><span class="ic">🎬</span><div><b>Sitcom · Episodio 5 · Objetos cotidianos.</b> Escanea el código y mira el episodio en la página digital. Julio le enseña la casa a María y dice de cada objeto <b>para qué sirve</b>. Primero escucha sin leer; después lee al mismo tiempo. Las palabras en <b>negrita</b> son chunks para llevarte. <span class="gloss">eerst zónder te lezen, daarna lees je mee</span></div></div>
     <div class="qr" data-url="{EN.url('C4', 5, EN.ancla_c4('escucha'))}"><div class="lab">Vídeo online</div>{qr(EN.url("C4", 5, EN.ancla_c4("escucha")))}<div class="meta">hub · Escucha</div></div>
   </div>
-  <div class="truc"><b>Antes de escuchar · vóór je luistert.</b> Welke <b>voorwerpen</b> in een huis ga je horen, denk je? <span style="font-size:8.8pt;color:var(--mut)">(gis gerust)</span>
+  <div class="truc"><b>Antes de escuchar.</b> ¿Qué <b>objetos</b> de una casa crees que vas a oír? <span class="gloss">wat ga je horen, denk je?</span> <span style="font-size:8.8pt;color:var(--mut)">(gis gerust)</span>
     <div style="margin-top:1.5mm;font-size:9.6pt;line-height:2.2">Un objeto: {wl('sm')} &nbsp;&nbsp; Otro objeto: {wl('sm')} &nbsp;&nbsp; ¿Para qué sirve? {wl('sm')}</div>
   </div>
   <div class="twocol">{scenehtml(*SCENES[0])}{scenehtml(*SCENES[1])}</div>
-  <div class="ojo"><b>¡Ojo!</b> «Esto <b>es</b> un sofá» (één ding) maar «Esto <b>son</b> mis llaves» (meer dingen). En <b>hay</b> verandert nooit: hay un vaso, hay dos botellas.</div>
+  <div class="ojo"><b>¡Ojo!</b> «Esto <b>es</b> un sofá» (una cosa) pero «Esto <b>son</b> mis llaves» (varias). Y <b>hay</b> no cambia nunca: hay un vaso, hay dos botellas. <span class="gloss">es/son wisselt, hay nooit</span></div>
 
   <div class="se" style="margin-top:5mm">Después de escuchar · ¿Verdadero o falso?</div>
   <p style="font-size:9.4pt;margin:0 0 1mm">Kruis aan. Verbeter de <b>falsas</b> op de lijn.</p>
@@ -223,27 +224,27 @@ KIT=f"""
   <div class="cogn"><span>perro</span><span>rojo</span><span>guitarra</span><span>rosa</span><span>arriba</span><span>ratón</span></div>
   <div class="klemline"><b>La tilde · het accent staat op de sterkste lettergreep:</b> so·<span class="t">FÁ</span> · te·le·vi·<span class="t">SIÓN</span> · <span class="t">MÚ</span>·si·ca · bo·<span class="t">LÍ</span>·gra·fo</div>
 
-  <div class="se" style="margin-top:3mm">§2 · Kit de supervivencia</div><h2>De taal die je écht nodig hebt</h2>
-  <p style="font-size:9.4pt;color:var(--mut);margin:0 0 2mm">Vink ☐ af telkens je een uitdrukking vlot kunt <b>naspreken</b>. Oefen ze online met audio.</p>
+  <div class="se" style="margin-top:3mm">§2 · Kit de supervivencia</div><h2>La lengua que de verdad necesitas <span class="gloss" style="font-size:10pt;font-weight:400">de taal die je écht nodig hebt</span></h2>
+  <p style="font-size:9.4pt;color:var(--mut);margin:0 0 2mm">Marca ☐ cada vez que puedas <b>repetir</b> una expresión con soltura. Practícalas en línea con audio. <span class="gloss">vink af wat je vlot kunt naspreken</span></p>
   <div class="kitwrap">{"".join(kittable(n,it) for n,it in CLUSTERS)}</div>
 </div>
 """
 
 GRAM=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">§4 · Gramática en la práctica</div><h2>Kort en functioneel</h2>
-  <div class="modelo"><b>🔎 Fíjate · kijk terug naar de scène.</b> Je hoorde het al: «¿Qué <b>es</b> esto? — Esto es <b>un</b> sofá, que <b>sirve para</b> descansar» · «¿<b>Hay</b> un ordenador? — No <b>hay</b>… sí que <b>hay</b>». Ontdek zelf het patroon — <i>eerst betekenis, dan de regel.</i></div>
+  <div class="se">§4 · Gramática en la práctica</div><h2>Corta y funcional <span class="gloss" style="font-size:10pt;font-weight:400">kort en functioneel</span></h2>
+  <div class="modelo"><b>🔎 Fíjate · vuelve a la escena.</b> Ya lo has oído: «¿Qué <b>es</b> esto? — Esto es <b>un</b> sofá, que <b>sirve para</b> descansar» · «¿<b>Hay</b> un ordenador? — No <b>hay</b>… sí que <b>hay</b>». Descubre tú el patrón — <i>primero el significado, después la regla.</i> <span class="gloss">ontdek zelf het patroon</span></div>
   <div class="regla"><span class="tag">un · una · el · la — género (♂/♀)</span>
     <p style="font-size:9pt;margin:0 0 1mm">Elk voorwerp is ♂ of ♀. Meestal: <b>-o = ♂</b> (un libr<b>o</b>), <b>-a = ♀</b> (una mes<b>a</b>).</p>
     <div class="mv2"><div class="m">♂ masculino: <b>un</b> libro · <b>un</b> vaso · <b>el</b> boli · <b>el</b> ordenador</div><div class="f">♀ femenino: <b>una</b> mesa · <b>una</b> silla · <b>la</b> ventana · <b>la</b> mochila</div></div>
     <p style="font-size:9pt;margin:1mm 0 0">⚠️ Uitzonderingen leer je er gewoon bij: <b>el</b> sofá, <b>la</b> televisión, <b>el</b> día, <b>la</b> mano.</p>
   </div>
   <div class="regla"><span class="tag">¿Qué es esto? · esto es… / esto son…</span>
-    <table class="gt2"><tr><td class="v">¿Qué es esto/eso?</td><td>wat is dit/dat?</td><td class="ex">Esto <b>es</b> un libro. (één)</td></tr>
+    <table class="gt2"><tr><td class="v">¿Qué es esto/eso?</td><td>¿qué es esto? <span class="gloss">wat is dit?</span></td><td class="ex">Esto <b>es</b> un libro. (één)</td></tr>
     <tr><td class="v">Esto son…</td><td>dit zijn…</td><td class="ex">Esto <b>son</b> las llaves. (meer)</td></tr></table>
     <p style="font-size:9pt;margin:1mm 0 0">💡 <b>esto</b> = dit · <b>eso</b> = dat. Eén ding → «es»; meer dingen → «son».</p>
   </div>
-  <div class="regla"><span class="tag">hay · er is / er zijn (verandert nooit)</span>
+  <div class="regla"><span class="tag">hay · existe algo (no cambia nunca) <span class="gloss">er is / er zijn</span></span>
     <table class="gt2"><tr><td class="v">Hay…</td><td>er is / er zijn</td><td class="ex"><b>Hay</b> un sofá y dos sillas.</td></tr>
     <tr><td class="v">¿Hay…?</td><td>is/zijn er…?</td><td class="ex">¿<b>Hay</b> un ordenador?</td></tr>
     <tr><td class="v">No hay…</td><td>er is geen…</td><td class="ex"><b>No hay</b> televisión.</td></tr></table>
@@ -251,10 +252,10 @@ GRAM=f"""
   <div class="regla"><span class="tag">… que sirve para + infinitivo</span>
     <p style="margin:1mm 0 0;font-size:9.6pt">Waarvoor iets dient: <b>sirve para</b> + hele werkwoord. «un vaso que <b>sirve para</b> beber», «un sofá que <b>sirve para</b> descansar». Meer dingen: «que <b>sirven</b> para…».</p>
   </div>
-  <div class="truc"><b>Mini-oefening 1 · un/una + es/son.</b> Vul un/una in bij de voorwerpen, en kies es of son bij de zinnen:
+  <div class="truc"><b>Mini-ejercicio 1 · un/una + es/son.</b> Pon un/una en los objetos y elige es o son en las frases:
     <div style="margin-top:2mm;font-size:9.6pt;line-height:2.4">1. {wl('sm')} libro &nbsp; 2. {wl('sm')} mesa &nbsp; 3. {wl('sm')} silla &nbsp; 4. {wl('sm')} vaso &nbsp;|&nbsp; a) Esto {wl('sm')} un libro. &nbsp; b) Esto {wl('sm')} mis llaves.</div>
   </div>
-  <div class="truc"><b>Mini-oefening 2 · sirve para…</b> Verbind (el vaso · la ventana · el sofá → beber · mirar · descansar) en schrijf één zin: ✍️ Un {wl('lg')} sirve para {wl('lg')} .</div>
+  <div class="truc"><b>Mini-ejercicio 2 · sirve para…</b> Une (el vaso · la ventana · el sofá → beber · mirar · descansar) y escribe una frase: ✍️ Un {wl('lg')} sirve para {wl('lg')} .</div>
 </div>
 """
 
@@ -265,7 +266,7 @@ def act(n,title,badges,body):
 
 PRAC=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">§3 · Práctica</div><h2>Oefen op papier — online verbeter je alles</h2>
+  <div class="se">§3 · Práctica</div><h2>Practica en papel · online se corrige solo <span class="gloss" style="font-size:10pt;font-weight:400">online verbetert het zichzelf</span></h2>
 
   {act(1,"Clasifica: clase, casa o función",[("receptief","skill"),("5 min","")],
     '<p style="margin-left:12.5mm">Schrijf elk woord in de juiste kolom. Voeg onderaan één eigen woord toe.<br><span class="gloss">el boli · el sofá · beber · la mochila · la televisión · descansar · el cuaderno · las llaves</span></p>'
@@ -312,21 +313,21 @@ PRAC=f"""
 TAREA=f"""
 <div class="page sec" style="break-before:page">
   <div class="se">§5 · Tarea final</div><h2>Diccionario de la clase</h2>
-  <div class="esen" style="margin-top:2mm"><b class="tt">Jouw opdracht.</b> Maak een <b>mini-woordenboek</b> van <b>5 voorwerpen</b> (uit de klas of van thuis). Teken elk, benoem het met <b>un/una</b> («esto es…») en zeg waarvoor het <b>dient</b> («sirve para…»). Presenteer je woordenboek aan de klas. <span class="gloss">Sin leer del papel — zonder van het blad af te lezen.</span></div>
+  <div class="esen" style="margin-top:2mm"><b class="tt">Tu tarea.</b> Haz un <b>minidiccionario</b> de <b>5 objetos</b> (de la clase o de tu casa). Dibuja cada uno, nómbralo con <b>un/una</b> («esto es…») y di para qué <b>sirve</b> («sirve para…»). Presenta tu diccionario a la clase. <span class="gloss">Sin leer del papel — zonder van het blad af te lezen.</span></div>
   <div class="regla" style="margin-top:4mm"><span class="tag">Prepárate · vul eerst de frames in</span>
     <div style="margin-top:2mm;font-size:9.7pt;line-height:2.4">1. Esto es {wl('sm')} {wl('sm')} , que sirve para {wl('sm')} .<br>2. Esto es {wl('sm')} {wl('sm')} , que sirve para {wl('sm')} .<br>3. Esto son {wl('sm')} , que sirven para {wl('sm')} .</div>
   </div>
   <div class="modelo" style="margin-top:4mm"><b>Modelo · zo klinkt het:</b><br>
     — Esto es un boli, que sirve para escribir.<br>
     — Esto son mis llaves, que sirven para abrir la puerta.</div>
-  <div style="margin-top:4mm"><div class="se">Mi diccionario · teken hier 5 voorwerpen + noteer per voorwerp</div>
+  <div style="margin-top:4mm"><div class="se">Mi diccionario · dibuja aquí 5 objetos y anota cada uno</div>
     <div class="objgrid" style="margin-top:2mm"><div class="objcard" style="min-height:30mm"><div class="lb">1 · Esto es…</div></div><div class="objcard" style="min-height:30mm"><div class="lb">2 · Esto es…</div></div><div class="objcard" style="min-height:30mm"><div class="lb">3 · Esto es…</div></div><div class="objcard" style="min-height:30mm"><div class="lb">4 · Esto es…</div></div><div class="objcard" style="min-height:30mm"><div class="lb">5 · Esto son…</div></div><div class="objcard" style="min-height:30mm"><div class="lb">+ · sirve para…</div></div></div>
   </div>
   <div class="regla" style="margin-top:3mm"><span class="tag">Palabras y frases útiles</span>
     <p style="margin:1mm 0 0;font-size:9.6pt">un/una · el/la · Esto es… · Esto son… · ¿qué es esto? · sirve para + infinitivo (abrir · beber · descansar · estudiar · escribir · mirar) · hay · no hay</p>
   </div>
   <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:6mm;margin-top:4mm;align-items:start">
-    <div class="truc" style="margin:0"><b>🏁 Klaar als…</b> je 5 voorwerpen benoemt met «esto es un/una…» (juiste ♂/♀) en per voorwerp zegt «sirve para + werkwoord» — zónder af te lezen.</div>
+    <div class="truc" style="margin:0"><b>🏁 Está listo cuando…</b> nombras 5 objetos con «esto es un/una…» (♂/♀ correcto) y de cada uno dices «sirve para + infinitivo», sin leer. <span class="gloss">zónder af te lezen</span></div>
     <table class="rubric"><thead><tr><th>Evaluatie</th><th style="text-align:center">🟢🟡🔴</th></tr></thead>
       <tr><td>identificar (esto es un/una…) correct</td><td></td></tr>
       <tr><td>sirve para + infinitivo correct</td><td></td></tr>
@@ -341,23 +342,23 @@ def banda(a,s,g): return f'<div class="banda"><div class="ar">{a}</div><div clas
 MUSICA=f"""
 <div class="page sec" style="break-before:page">
   <div class="se">Cultura · Banda sonora</div><h2>Objetos con historia en el mundo hispano</h2>
-  <p style="font-size:9.6pt">Sommige <b>voorwerpen</b> zijn echte iconen van de Spaanstalige cultuur: de <b>guitarra española</b>, de <b>maraca</b> uit de Caraïben, de <b>mate</b>-beker uit Argentinië en de kleurrijke <b>hamaca</b> (hangmat) uit Latijns-Amerika. En elke unit heeft een <b>banda sonora</b>.</p>
+  <p style="font-size:9.6pt">Algunos <b>objetos</b> son iconos de la cultura hispana: la <b>guitarra española</b>, la <b>maraca</b> del Caribe, el <b>mate</b> de Argentina y la <b>hamaca</b> de colores de Latinoamérica. Y cada unidad tiene su <b>banda sonora</b>. <span class="gloss">voorwerpen als iconen van een cultuur</span></p>
   <div class="bandas">{"".join(banda(*b) for b in BANDAS)}</div>
   <div class="musrow">
-    <div class="call"><span class="ic">🎧</span><div><b>Spotify · la playlist de la clase.</b> Scan en luister. Op de digitale pagina vind je ook <b>LyricsTraining</b> en de <b>wereldkaart</b>.</div></div>
+    <div class="call"><span class="ic">🎧</span><div><b>Spotify · la playlist de la clase.</b> Escanea y escucha. En la página digital tienes también <b>LyricsTraining</b> y el <b>mapa del mundo</b>. <span class="gloss">scan en luister; online staat er meer</span></div></div>
     <div class="qr" data-url="{SPOTIFY}"><div class="lab">Playlist</div>{qr(SPOTIFY)}<div class="meta">Spotify</div></div>
   </div>
   <div class="truc" style="margin-top:5mm"><b>Objetos típicos · ¿de dónde son?</b> Verbind (gis gerust):
     <table class="mtab" style="margin-top:1mm"><tr><td class="a">El mate…</td><td>{wl('sm')}</td><td class="b">a. una guitarra flamenca de España</td></tr>
     <tr><td class="a">La guitarra española…</td><td>{wl('sm')}</td><td class="b">b. una bebida típica de Argentina</td></tr>
     <tr><td class="a">La hamaca…</td><td>{wl('sm')}</td><td class="b">c. para descansar en el Caribe</td></tr></table>
-    <p style="font-size:8.6pt;color:var(--mut);margin-top:1mm">💡 «Sirve para…» werkt ook voor cultuur: el mate sirve para compartir con amigos.</p>
+    <p style="font-size:8.6pt;color:var(--mut);margin-top:1mm">💡 «Sirve para…» vale también para la cultura: el mate sirve para compartir con amigos. <span class="gloss">werkt ook voor cultuur</span></p>
   </div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:3mm;align-items:start">
     <div class="truc" style="margin:0"><b>Escucha y responde.</b> Kies één nummer van de playlist.
       <div style="margin-top:1.5mm;font-size:9.6pt;line-height:2.3">Mi canción: {wl('lg')}<br>El/la artista es de: {wl('lg')}</div>
     </div>
-    <div class="truc" style="margin:0"><b>¿Y en tu casa?</b> Schrijf één voorwerp uit je kamer + waarvoor het dient.
+    <div class="truc" style="margin:0"><b>¿Y en tu casa?</b> Escribe un objeto de tu habitación y para qué sirve. <span class="gloss">één voorwerp en zijn functie</span>
       <div style="margin-top:1.5mm;font-size:9.6pt;line-height:2.4">{wl('full')}<br>{wl('full')}</div>
     </div>
   </div>
@@ -366,10 +367,10 @@ MUSICA=f"""
 
 REPASO=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">Repaso · Lo esencial de un vistazo</div><h2>Wat je nu kunt</h2>
+  <div class="se">Repaso · Lo esencial de un vistazo</div><h2>Lo que ya sabes hacer <span class="gloss">wat je nu kunt</span></h2>
   <div class="fams">
-    <div class="pcard"><div class="t">Zo benoem je een voorwerp</div><div class="ej"><b>¿Qué es esto?</b> — Esto <b>es un/una</b> ____. / Esto <b>son</b> ____.</div><div class="t2">un/el = ♂ · una/la = ♀ · es (één) · son (meer)</div></div>
-    <div class="pcard"><div class="t">Zo zeg je wat er is / waarvoor</div><div class="ej"><b>Hay</b> ____. / <b>No hay</b> ____. · Sirve <b>para</b> + infinitivo.</div><div class="anchor"><b>hay</b> verandert nooit &nbsp;|&nbsp; para + hele werkwoord (beber, descansar)</div></div>
+    <div class="pcard"><div class="t">Así nombras un objeto <span class="gloss">zo benoem je een voorwerp</span></div><div class="ej"><b>¿Qué es esto?</b> — Esto <b>es un/una</b> ____. / Esto <b>son</b> ____.</div><div class="t2">un/el = ♂ · una/la = ♀ · es (één) · son (meer)</div></div>
+    <div class="pcard"><div class="t">Así dices qué hay y para qué sirve <span class="gloss">wat er is en waarvoor het dient</span></div><div class="ej"><b>Hay</b> ____. / <b>No hay</b> ____. · Sirve <b>para</b> + infinitivo.</div><div class="anchor"><b>hay</b> verandert nooit &nbsp;|&nbsp; para + hele werkwoord (beber, descansar)</div></div>
   </div>
   <div class="regla" style="margin:4mm 0"><span class="tag">Frases para la clase</span>
     <div class="cogn" style="margin-top:1mm"><span>¿Cómo se dice… ?</span><span>¿Qué significa… ?</span><span>Otra vez, por favor</span><span>No entiendo</span><span>¿Puedes repetir?</span><span>Más despacio, por favor</span></div>
@@ -381,11 +382,11 @@ REPASO=f"""
     <tr><td>zeggen wat er is (hay · no hay · ¿hay…?)</td><td></td><td></td><td></td></tr>
     <tr><td>zeggen waarvoor iets dient (sirve para + inf.)</td><td></td><td></td><td></td></tr></table>
   <div class="regla" style="margin-top:5mm"><span class="tag">Mini-test · recuerda sin mirar</span>
-    <p style="margin:1mm 0 0;font-size:9.4pt">Sluit de cursus en vertaal uit het hoofd (ophalen = het beste leren).</p>
+    <p style="margin:1mm 0 0;font-size:9.4pt">Cierra el libro y traduce de memoria: recordar es la mejor manera de aprender. <span class="gloss">uit het hoofd — ophalen leert het best</span></p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:3mm 8mm;margin-top:2mm;font-size:9.8pt;line-height:2.2">
-      <div>1. wat is dit? → {wl('')}</div><div>2. dit is een boek → {wl('')}</div>
+      <div>1. ¿qué es esto? → {wl('')}</div><div>2. esto es un libro → {wl('')}</div>
       <div>3. er is een bank → {wl('')}</div><div>4. er is geen tv → {wl('')}</div>
-      <div>5. het dient om te drinken → {wl('')}</div><div>6. dit zijn mijn sleutels → {wl('')}</div>
+      <div>5. sirve para beber → {wl('')}</div><div>6. estas son mis llaves → {wl('')}</div>
     </div>
   </div>
   <div class="guide"><span class="ic">🎮</span><div><span class="hand">Repasa jugando</span><div class="g">Oefen alles online met spelletjes, flashcards en audio op de digitale hub (scan de QR bij §1).</div></div></div>
@@ -396,17 +397,17 @@ REPASO=f"""
 EDITBAR="""
 <div class="editbar" id="eb">
   <b>✏️ C4 · U5</b>
-  <button id="btnedit">Bewerken aan</button>
-  <button id="btnpdf">🖨️ Opslaan als PDF</button>
-  <button id="btnsave">💾 Bewaar (.html)</button>
+  <button id="btnedit">Editar</button>
+  <button id="btnpdf">🖨️ Guardar como PDF</button>
+  <button id="btnsave">💾 Guardar (.html)</button>
   <span class="sp"></span>
-  <span style="opacity:.85;font-size:12px">Tip: zet «Bewerken» aan, pas de tekst aan, en sla op als PDF.</span>
+  <span style="opacity:.85;font-size:12px">Consejo: activa «Editar», cambia el texto y guárdalo como PDF. <span class="gloss">bewerken aanzetten, aanpassen, opslaan</span></span>
 </div><div class="scr-spacer"></div>
 """
 SCRIPT="""
 <script>
 var editing=false;var be=document.getElementById('btnedit');
-be.onclick=function(){editing=!editing;document.querySelectorAll('.page,.hero').forEach(function(p){p.contentEditable=editing;});document.body.classList.toggle('editing',editing);be.classList.toggle('on',editing);be.textContent=editing?'Bewerken uit':'Bewerken aan';};
+be.onclick=function(){editing=!editing;document.querySelectorAll('.page,.hero').forEach(function(p){p.contentEditable=editing;});document.body.classList.toggle('editing',editing);be.classList.toggle('on',editing);be.textContent=editing?'Dejar de editar':'Editar';};
 document.getElementById('btnpdf').onclick=function(){window.print();};
 document.getElementById('btnsave').onclick=function(){var html='<!doctype html>'+document.documentElement.outerHTML;var b=new Blob([html],{type:'text/html'});var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='C4_U5_Objetos_bewerkt.html';a.click();};
 </script>

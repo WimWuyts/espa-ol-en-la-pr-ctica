@@ -200,7 +200,7 @@ HERO=f"""
   <div class="q">¡Hola! ¿Cómo te llamas?</div>
 </section>
 <div class="page">
-  <div class="obj"><div class="se">Al final de esta unidad · Op het einde van deze les</div>
+  <div class="obj"><div class="se">Al final de esta unidad <span class="gloss">op het einde van deze les</span></div>
     <ul>
       <li><span class="ck">✓</span> <span><span class="es">Saludar y despedirte</span> <span class="nl">— groeten en afscheid nemen</span></span></li>
       <li><span class="ck">✓</span> <span><span class="es">Decir tu nombre y de dónde eres</span> <span class="nl">— zeggen hoe je heet en waar je vandaan komt</span></span></li>
@@ -222,7 +222,7 @@ HERO=f"""
 
   <div class="truc" style="margin-top:5mm"><b>¿Qué reconoces ya?</b> Ya entiendes mucho español: estas palabras se parecen al neerlandés o al inglés (<i>palabras transparentes</i>). <span class="gloss">Je begrijpt nu al véél Spaans — deze woorden lijken op het Nederlands of Engels.</span>
     <div class="cogn"><span>la familia</span><span>la música</span><span>el teléfono</span><span>el restaurante</span><span>el profesor</span><span>el hospital</span><span>el chocolate</span><span>el animal</span><span>la información</span><span>el problema</span><span>importante</span><span>diferente</span></div>
-    <span style="font-size:8.6pt"><b>Consejo:</b> atrévete a adivinar — el español se parece más de lo que crees. <span class="gloss">Durf te gissen: Spaans lijkt vaker op wat je al kent dan je denkt.</span></span>
+    <span style="font-size:8.6pt"><b>Consejo:</b> atrévete a adivinar — el español se parece más de lo que crees. <span class="gloss">durf te gissen: Spaans lijkt vaker op wat je kent dan je denkt</span></span></span>
   </div>
 </div>
 """
@@ -288,7 +288,7 @@ GRAM=f"""
   <div class="regla"><span class="tag">tú ↔ usted</span>
     <p style="margin:1mm 0 0;font-size:9.6pt">Con amigos y compañeros: <b>tú</b> — <span class="ex" style="color:var(--mut)">¿Cómo estás? · ¿Cómo te llamas?</span><br>Con una persona adulta que no conoces: <b>usted</b> — <span class="ex" style="color:var(--mut)">¿Cómo está usted? · ¿Cómo se llama?</span><br><span class="gloss">tú = vrienden · usted = beleefd.</span></p>
   </div>
-  <div class="truc"><b>Mini-ejercicio 1 · Completa con <i>ser</i> o <i>llamarse</i>.</b> <span class="gloss">Vul aan met de juiste vorm van ser of llamarse.</span>
+  <div class="truc"><b>Mini-ejercicio 1 · Completa con <i>ser</i> o <i>llamarse</i>.</b> <span class="gloss">Completa con la forma correcta de ser o llamarse. <span class="gloss">vul de juiste vorm in</span></span>
     <div style="margin-top:2mm;font-size:9.6pt;line-height:2.4">1. Yo {wl('sm')} de Bélgica. &nbsp;&nbsp; 2. ¿Cómo {wl('sm')} llamas? &nbsp;&nbsp; 3. Me {wl('sm')} ____. &nbsp;&nbsp; 4. Ella {wl('sm')} profesora. &nbsp;&nbsp; 5. ¿{wl('sm')} tú Leo? &nbsp;&nbsp; 6. Él {wl('sm')} llama Pablo.</div>
   </div>
   <div class="truc"><b>Mini-ejercicio 2 · ¿tú o usted?</b> Elige y escribe la pregunta correcta. <span class="gloss">Kies en schrijf de juiste vraag.</span>
@@ -316,7 +316,7 @@ PRAC=f"""
     +'<tr><td class="a">2. ¿Cómo te llamas?</td><td><span class="ln"></span></td><td class="b">b. tot straks</td></tr>'
     +'<tr><td class="a">3. De nada</td><td><span class="ln"></span></td><td class="b">c. hallo</td></tr>'
     +'<tr><td class="a">4. Hasta luego</td><td><span class="ln"></span></td><td class="b">d. aangenaam</td></tr>'
-    +'<tr><td class="a">5. Encantada</td><td><span class="ln"></span></td><td class="b">e. hoe heet je?</td></tr></table>')}
+    +'<tr><td class="a">5. Encantada</td><td><span class="ln"></span></td><td class="b">e. ¿cómo te llamas?</td></tr></table>')}
 
   {act(3,"Completa el diálogo",[("con apoyo · met steun","skill"),("★★☆","")],
     '<p style="margin-left:12.5mm">Completa el diálogo. <span class="gloss">Vul het gesprek aan.</span></p>'
@@ -424,12 +424,12 @@ REPASO=f"""
 <div class="page sec" style="break-before:page">
   <div class="se">Repaso · Lo esencial de un vistazo</div><h2>Lo que ya sabes hacer <span class="gloss" style="font-size:10pt;font-weight:400">wat je nu kunt</span></h2>
   <div class="fams">
-    <div class="pcard"><div class="t">Así saludas y te presentas</div><div class="ej">¡Hola! <b>Me llamo</b> ___. <b>Soy de</b> ___. <b>Encantad_</b>. ¿Y tú, <b>cómo te llamas</b>?</div><div class="t2">Despedirse: Adiós · Hasta luego · ¡Nos vemos! <span class="gloss">afscheid nemen</span></div></div>
+    <div class="pcard"><div class="t">Así saludas y te presentas <span class="gloss">groeten en jezelf voorstellen</span></div><div class="ej">¡Hola! <b>Me llamo</b> ___. <b>Soy de</b> ___. <b>Encantad_</b>. ¿Y tú, <b>cómo te llamas</b>?</div><div class="t2">Despedirse: Adiós · Hasta luego · ¡Nos vemos! <span class="gloss">afscheid nemen</span></div></div>
     <div class="pcard"><div class="t">Recuerda</div><div class="ej"><b>ser</b>: soy · eres · es &nbsp; | &nbsp; <b>llamarse</b>: me/te/se llamo/llamas/llama</div><div class="anchor"><b>-o</b> = ♂ · <b>-a</b> = ♀ &nbsp; | &nbsp; <b>tú</b> = un amigo · <b>usted</b> = formal <span class="gloss">(vriend ↔ beleefd)</span></div></div>
   </div>
   <div class="regla" style="margin:4mm 0"><span class="tag">Frases para la clase</span>
     <div class="cogn" style="margin-top:1mm"><span>¿Cómo se dice… ?</span><span>¿Qué significa… ?</span><span>Otra vez, por favor</span><span>No entiendo</span><span>¿Puedes repetir?</span><span>Más despacio, por favor</span></div>
-    <span style="font-size:8.6pt">Úsalas en español, no en neerlandés. <span class="gloss">Handige klaszinnen: gebruik ze in het Spaans in plaats van in het Nederlands.</span></span>
+    <span style="font-size:8.6pt">Úsalas en español, no en neerlandés. <span class="gloss">handige klaszinnen — gebruik ze in het Spaans</span></span></span>
   </div>
   <table class="sem"><thead><tr><th style="text-align:left">Puedo… <span class="gloss">ik kan…</span></th><th>🟢</th><th>🟡</th><th>🔴</th></tr></thead>
     <tr><td>saludar y despedirme <span class="gloss">groeten en afscheid nemen</span></td><td></td><td></td><td></td></tr>
@@ -440,7 +440,7 @@ REPASO=f"""
     <p style="margin:1mm 0 0;font-size:9.4pt">Cierra el libro y traduce de memoria. <span class="gloss">Boek dicht: uit het hoofd vertalen leert het best.</span></p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:4mm 8mm;margin-top:2mm;font-size:9.8pt;line-height:2.4">
       <div>1. hallo → {wl('')}</div><div>2. dank je → {wl('')}</div>
-      <div>3. hoe heet je? → {wl('')}</div><div>4. ik kom uit… → {wl('')}</div>
+      <div>3. ¿cómo te llamas? → {wl('')}</div><div>4. ik kom uit… → {wl('')}</div>
       <div>5. tot straks → {wl('')}</div><div>6. aangenaam (v) → {wl('')}</div>
       <div>7. graag gedaan → {wl('')}</div><div>8. tot morgen → {wl('')}</div>
     </div>
@@ -453,17 +453,17 @@ REPASO=f"""
 EDITBAR="""
 <div class="editbar" id="eb">
   <b>✏️ C4 · U1</b>
-  <button id="btnedit">Bewerken aan</button>
-  <button id="btnpdf">🖨️ Opslaan als PDF</button>
-  <button id="btnsave">💾 Bewaar (.html)</button>
+  <button id="btnedit">Editar</button>
+  <button id="btnpdf">🖨️ Guardar como PDF</button>
+  <button id="btnsave">💾 Guardar (.html)</button>
   <span class="sp"></span>
-  <span style="opacity:.85;font-size:12px">Tip: zet «Bewerken» aan, pas de tekst aan, en sla op als PDF.</span>
+  <span style="opacity:.85;font-size:12px">Consejo: activa «Editar», cambia el texto y guárdalo como PDF. <span class="gloss">bewerken aanzetten, aanpassen, opslaan</span></span>
 </div><div class="scr-spacer"></div>
 """
 SCRIPT="""
 <script>
 var editing=false;var be=document.getElementById('btnedit');
-be.onclick=function(){editing=!editing;document.querySelectorAll('.page,.hero').forEach(function(p){p.contentEditable=editing;});document.body.classList.toggle('editing',editing);be.classList.toggle('on',editing);be.textContent=editing?'Bewerken uit':'Bewerken aan';};
+be.onclick=function(){editing=!editing;document.querySelectorAll('.page,.hero').forEach(function(p){p.contentEditable=editing;});document.body.classList.toggle('editing',editing);be.classList.toggle('on',editing);be.textContent=editing?'Dejar de editar':'Editar';};
 document.getElementById('btnpdf').onclick=function(){window.print();};
 document.getElementById('btnsave').onclick=function(){var html='<!doctype html>'+document.documentElement.outerHTML;var b=new Blob([html],{type:'text/html'});var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='C4_U1_Presentaciones_bewerkt.html';a.click();};
 </script>

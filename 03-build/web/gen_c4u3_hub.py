@@ -15,17 +15,17 @@ def srcdoc(path):
     return h.replace("&","&amp;").replace('"',"&quot;")
 
 TABS=[
- ("escucha","🎬 Escucha","C4_U3_escucha.html","Mira la escena y lee al mismo tiempo: los chunks te entran por el oído. <span class="stn">bekijk en lees mee</span>"),
- ("comprension","📖 Lee y escucha","C4_U3_comprension.html","Una lectura y una escucha cortas: entiende el español que ya sabes. <span class="stn">korte lees- en luisteroefening</span>"),
- ("mapa","🗺️ Mapa","C4_U3_mapa.html","La Ruta — la unidad del mapa: pulsa cada país y lee su ficha (país · gentilicio · idioma). <span class="stn">de kaart-unit bij uitstek</span>"),
- ("funciones","🗣️ Funciones","C4_U3_funciones.html","Lo que puedes HACER con el español: tu repertorio crece cada unidad. <span class="stn">wat je met het Spaans kunt doen</span>"),
- ("kit","🧰 Kit","C4_U3_kgt.html","Pronunciación (ñ, c/z), la lengua por situación, gramática (soy de + país) y tarea. <span class="stn">uitspraak, taal per situatie, grammatica en taak</span>"),
- ("practica","✍️ Práctica","C4_U3_practica.html","Practica y corrígete: reconocer → elegir → decirlo tú. <span class="stn">zelfcorrigerend oefenen</span>"),
+ ("escucha","🎬 Escucha","C4_U3_escucha.html","Mira la escena y lee al mismo tiempo: los chunks te entran por el oído. <span class='stn'>bekijk en lees mee</span>"),
+ ("comprension","📖 Lee y escucha","C4_U3_comprension.html","Una lectura y una escucha cortas: entiende el español que ya sabes. <span class='stn'>korte lees- en luisteroefening</span>"),
+ ("mapa","🗺️ Mapa","C4_U3_mapa.html","La Ruta — la unidad del mapa: pulsa cada país y lee su ficha (país · gentilicio · idioma). <span class='stn'>de kaart-unit bij uitstek</span>"),
+ ("funciones","🗣️ Funciones","C4_U3_funciones.html","Lo que puedes HACER con el español: tu repertorio crece cada unidad. <span class='stn'>wat je met het Spaans kunt doen</span>"),
+ ("kit","🧰 Kit","C4_U3_kgt.html","Pronunciación (ñ, c/z), la lengua por situación, gramática (soy de + país) y tarea. <span class='stn'>uitspraak, taal per situatie, grammatica en taak</span>"),
+ ("practica","✍️ Práctica","C4_U3_practica.html","Practica y corrígete: reconocer → elegir → decirlo tú. <span class='stn'>zelfcorrigerend oefenen</span>"),
  ("rol","🎭 Ensaya","C4_U3_rol.html",
-  "Representa la escena: el compañero te corrige y funciona sin internet. <span class="stn">speel de scène, ook offline</span>"),
+  "Representa la escena: el compañero te corrige y funciona sin internet. <span class='stn'>speel de scène, ook offline</span>"),
  ("coach","📝 Entrega","C4_U3_coach.html",
-  "Escribe tu tarea final y hazla revisar antes de entregarla. <span class="stn">schrijf en laat nakijken</span>"),
- ("musica","🎧 Música","C4_U3_musica.html","Cultura (el mundo hispano) + banda sonora — aprende español con música. <span class="stn">leer Spaans via muziek</span>"),
+  "Escribe tu tarea final y hazla revisar antes de entregarla. <span class='stn'>schrijf en laat nakijken</span>"),
+ ("musica","🎧 Música","C4_U3_musica.html","Cultura (el mundo hispano) + banda sonora — aprende español con música. <span class='stn'>leer Spaans via muziek</span>"),
 ]
 
 def tabbtn(i,t):
@@ -68,7 +68,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
 <div class="hero">
   <span class="ruta">🗺️ La Ruta · C4 «El despegue» · Parada 3</span>
   <h1>Unidad 3 · Nacionalidades y países</h1>
-  <p>La pregunta clave del viaje: <b>¿De dónde eres?</b> Di de dónde vienes (<b>soy de</b> + país), tu <b>nacionalidad</b> y qué <b>idiomas</b> hablas. Abre el <b>mapa</b> y conquista el mundo hispano. <span class="stn">waar kom je vandaan, en welke talen spreek je?</span> <i>Survival in Spanish.</i></p>
+  <p>La pregunta clave del viaje: <b>¿De dónde eres?</b> Di de dónde vienes (<b>soy de</b> + país), tu <b>nacionalidad</b> y qué <b>idiomas</b> hablas. Abre el <b>mapa</b> y conquista el mundo hispano. <span class='stn'>waar kom je vandaan, en welke talen spreek je?</span> <i>Survival in Spanish.</i></p>
 </div>
 <nav class="tabbar">{"".join(tabbtn(i,t) for i,t in enumerate(TABS))}</nav>
 <main>

@@ -107,6 +107,7 @@ def wl(cls=""): return f'<span class="wl {cls}"></span>'
 
 CSS=FONTS+PRINTCSS+r"""
 :root{ --g:#D64550; --gd:#A8323B; --gt:#FBEAEC; }
+.gloss{ font-size:.9em; line-height:1.32; }   /* steun is steun: kleiner en dichter */
 .p{color:#2563EB;font-weight:700}.v{color:#EA7317;font-weight:700}.o{color:#1E9E74;font-weight:700}.pl{color:#0E9E97;font-weight:700}
 .tl{display:flex;gap:3mm;padding:.55mm 0;font-size:9.5pt;break-inside:avoid}
 .tl .sp{font-family:var(--disp);font-weight:700;color:var(--gd);width:22mm;flex:none}
@@ -163,11 +164,11 @@ HERO=f"""
   <div class="tab">C4 · LA RUTA</div>
   <div class="eyebrow">EL DESPEGUE · PARADA 6 · SURVIVAL IN SPANISH</div>
   <h1>La casa y los lugares</h1>
-  <div class="sub">De <b>kamers</b> van een huis benoemen en zeggen <b>waar</b> alles staat. <span class="gloss">La casa y los lugares — ¿dónde está? · encima de · debajo de · hay · ¿puedo…?</span></div>
+  <div class="sub">Nombrar las <b>habitaciones</b> de una casa y decir <b>dónde</b> está cada cosa. <span class="gloss">La casa y los lugares — ¿dónde está? · encima de · debajo de · hay · ¿puedo…?</span></div>
   <div class="q">¿Dónde está el bolso? — Está encima de la mesa.</div>
 </section>
 <div class="page">
-  <div class="obj"><div class="se">Al final de esta unidad · Op het einde van deze les</div>
+  <div class="obj"><div class="se">Al final de esta unidad <span class="gloss">op het einde van deze les</span></div>
     <ul>
       <li><span class="ck">✓</span> <span><span class="es">Benoemen: de kamers &amp; meubels</span> <span class="nl">— la cocina · el salón · la cama · el armario</span></span></li>
       <li><span class="ck">✓</span> <span><span class="es">Situeren met <b>preposiciones de lugar</b></span> <span class="nl">— encima de · debajo de · al lado de · dentro de</span></span></li>
@@ -175,10 +176,10 @@ HERO=f"""
       <li><span class="ck">✓</span> <span><span class="es">Beleefd om iets vragen (<b>poder</b>)</span> <span class="nl">— ¿puedo…? · ¿puedes…? · sí, puedes…</span></span></li>
     </ul>
   </div>
-  <div class="guide"><span class="ic">🎒</span><div><span class="hand">¡Seguimos la ruta! Parada 6.</span><div class="g">In deze «survival»-les leer je een huis beschrijven. In de video is Julio zenuwachtig omdat María's spullen overal in zijn huis liggen — encima, debajo, dentro… — perfecte input voor de plaats-woorden.</div></div></div>
+  <div class="guide"><span class="ic">🎒</span><div><span class="hand">¡Seguimos la ruta! Parada 6.</span><div class="g">En esta lección de «survival» aprendes a describir una casa. En el vídeo Julio está nervioso porque las cosas de María están por todas partes: encima, debajo, dentro… Input perfecta para las palabras de lugar. <span class="gloss">een huis beschrijven</span></div></div></div>
 
-  <div class="se" style="margin-top:6mm">La gente de la ruta · je reisgenoten</div>
-  <p style="font-size:9.4pt;margin:0 0 1mm">Je reist mee met vier jongeren uit de Spaanstalige wereld. In de scène ben je bij Julio thuis, samen met zijn vriend Fernando.</p>
+  <div class="se" style="margin-top:6mm">La gente de la ruta · tus compañeros de viaje</div>
+  <p style="font-size:9.4pt;margin:0 0 1mm">Viajas con cuatro jóvenes del mundo hispano. En la escena estás en casa de Julio, con su amigo Fernando. <span class="gloss">je bent bij Julio thuis</span></p>
   <div class="cast2">
     <div class="m"><div class="fl">🇪🇸</div><div class="nm">Lucía</div><div class="ro">Sevilla · familie</div></div>
     <div class="m"><div class="fl">🇲🇽</div><div class="nm">Diego</div><div class="ro">CDMX · eten & markt</div></div>
@@ -187,7 +188,7 @@ HERO=f"""
     <div class="m"><div class="fl">🎒</div><div class="nm">Tú</div><div class="ro">jij, de reiziger</div></div>
   </div>
 
-  <div class="truc" style="margin-top:5mm"><b>¿Qué reconoces ya?</b> Deze woon-woorden lijken op het Nederlands of Engels (<i>palabras transparentes</i>) — durf te gissen:
+  <div class="truc" style="margin-top:5mm"><b>¿Qué reconoces ya?</b> Estas palabras de la vivienda se parecen al neerlandés o al inglés (<i>palabras transparentes</i>) — durf te gissen:
     <div class="cogn"><span>el apartamento</span><span>el balcón</span><span>la terraza</span><span>el garaje</span><span>el sofá</span><span>la lámpara</span><span>el jardín</span><span>la villa</span><span>el hotel</span><span>moderno</span></div>
     <span style="font-size:8.6pt;color:var(--mut)">Tip: veel woon-woorden herken je meteen — <b>apartamento</b>, <b>balcón</b>, <b>garaje</b>…</span>
   </div>
@@ -196,12 +197,12 @@ HERO=f"""
 
 ESCUCHA=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">§1 · ¡Escucha!</div><h2>Bekijk de scène en lees mee</h2>
+  <div class="se">§1 · ¡Escucha!</div><h2>Mira la escena y lee al mismo tiempo <span class="gloss" style="font-size:10pt;font-weight:400">bekijk en lees mee</span></h2>
   <div class="audiorow">
-    <div class="call"><span class="ic">🎬</span><div><b>Sitcom · Episodio 6 · La casa.</b> Scan de code en bekijk de aflevering op de digitale pagina. Julio is nerveus: María's spullen liggen <b>encima</b>, <b>debajo</b> en <b>dentro</b> van alles in zijn huis. Luister eerst zónder te lezen; daarna lees je mee. De <b>vetgedrukte</b> woorden zijn chunks om mee te nemen.</div></div>
+    <div class="call"><span class="ic">🎬</span><div><b>Sitcom · Episodio 6 · La casa.</b> Escanea el código y mira el episodio en la página digital. Julio está nervioso: las cosas de María están <b>encima</b>, <b>debajo</b> y <b>dentro</b> de todo en su casa. Primero escucha sin leer; después lee al mismo tiempo. Las palabras en <b>negrita</b> son chunks para llevarte. <span class="gloss">eerst zónder te lezen, daarna lees je mee</span></div></div>
     <div class="qr" data-url="{EN.url('C4', 6, EN.ancla_c4('escucha'))}"><div class="lab">Vídeo online</div>{qr(EN.url("C4", 6, EN.ancla_c4("escucha")))}<div class="meta">hub · Escucha</div></div>
   </div>
-  <div class="truc"><b>Antes de escuchar · vóór je luistert.</b> Welke <b>kamers</b> en <b>plaats-woorden</b> ga je horen, denk je? <span style="font-size:8.8pt;color:var(--mut)">(gis gerust)</span>
+  <div class="truc"><b>Antes de escuchar.</b> ¿Qué <b>habitaciones</b> y qué <b>palabras de lugar</b> crees que vas a oír? <span class="gloss">wat ga je horen, denk je?</span> <span style="font-size:8.8pt;color:var(--mut)">(gis gerust)</span>
     <div style="margin-top:1.5mm;font-size:9.6pt;line-height:2.2">Una habitación: {wl('sm')} &nbsp;&nbsp; Un mueble: {wl('sm')} &nbsp;&nbsp; Una preposición (waar?): {wl('sm')}</div>
   </div>
   <div class="twocol">{scenehtml(*SCENES[0])}{scenehtml(*SCENES[1])}</div>
@@ -221,22 +222,22 @@ ESCUCHA=f"""
 KIT=f"""
 <div class="page sec" style="break-before:page">
   <div class="se">Suena bien · pronunciación</div><h2>La b = la v (betacismo) &amp; llana/aguda</h2>
-  <p style="font-size:9.4pt;color:var(--mut);margin:0 0 1mm">In het Spaans klinken <b>b</b> en <b>v</b> <b>net hetzelfde</b>: «bien» en «vino» beginnen met dezelfde klank. Oefen online (QR §1).</p>
+  <p style="font-size:9.4pt;color:var(--mut);margin:0 0 1mm">En español la <b>b</b> y la <b>v</b> suenan <b>igual</b>: «bien» y «vino» empiezan con el mismo sonido. Practícalo en línea (QR §1). <span class="gloss">b en v klinken hetzelfde</span></p>
   <div class="cogn"><span>bien</span><span>vino</span><span>bueno</span><span>vivir</span><span>beber</span><span>ventana</span></div>
-  <div class="ojo"><b>¡Ojo!</b> Je hóórt geen verschil tussen b en v, dus let op de <b>schrijfwijze</b>: <b>b</b>aca (imperiaal) klinkt als <b>v</b>aca (koe)!</div>
+  <div class="ojo"><b>¡Ojo!</b> No se <b>oye</b> ninguna diferencia entre b y v, así que fíjate en cómo se <b>escribe</b>: <b>b</b>aca suena igual que <b>v</b>aca. <span class="gloss">imperiaal ↔ koe: alleen de spelling verschilt</span></div>
   <div class="klemline"><b>La fuerza · llana (meeste woorden, voorlaatste) vs. aguda (laatste):</b> ca·<span class="t">SA</span> · co·<span class="t">CI</span>·na (llana) &nbsp;↔&nbsp; sa·<span class="t">LÓN</span> · so·<span class="t">FÁ</span> (aguda)</div>
 
-  <div class="se" style="margin-top:3mm">§2 · Kit de supervivencia</div><h2>De taal die je écht nodig hebt</h2>
-  <p style="font-size:9.4pt;color:var(--mut);margin:0 0 2mm">Vink ☐ af telkens je een uitdrukking vlot kunt <b>naspreken</b>. Oefen ze online met audio.</p>
+  <div class="se" style="margin-top:3mm">§2 · Kit de supervivencia</div><h2>La lengua que de verdad necesitas <span class="gloss" style="font-size:10pt;font-weight:400">de taal die je écht nodig hebt</span></h2>
+  <p style="font-size:9.4pt;color:var(--mut);margin:0 0 2mm">Marca ☐ cada vez que puedas <b>repetir</b> una expresión con soltura. Practícalas en línea con audio. <span class="gloss">vink af wat je vlot kunt naspreken</span></p>
   <div class="kitwrap">{"".join(kittable(n,it) for n,it in CLUSTERS)}</div>
 </div>
 """
 
 GRAM=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">§4 · Gramática en la práctica</div><h2>Kort en functioneel</h2>
-  <div class="modelo"><b>🔎 Fíjate · kijk terug naar de scène.</b> Je hoorde het al: «Hay cosas <b>encima de</b> las sillas, <b>debajo de</b> la cama. <b>Dentro del</b> frigorífico…» · «¿<b>Puedo</b> fumar? — Aquí no, pero <b>puedes</b> ir fuera». Ontdek zelf het patroon — <i>eerst betekenis, dan de regel.</i></div>
-  <div class="regla"><span class="tag">las preposiciones de lugar · waar is het? (plaats = turquoise)</span>
+  <div class="se">§4 · Gramática en la práctica</div><h2>Corta y funcional <span class="gloss" style="font-size:10pt;font-weight:400">kort en functioneel</span></h2>
+  <div class="modelo"><b>🔎 Fíjate · vuelve a la escena.</b> Ya lo has oído: «Hay cosas <b>encima de</b> las sillas, <b>debajo de</b> la cama. <b>Dentro del</b> frigorífico…» · «¿<b>Puedo</b> fumar? — Aquí no, pero <b>puedes</b> ir fuera». Descubre tú el patrón — <i>primero el significado, después la regla.</i> <span class="gloss">ontdek zelf het patroon</span></div>
+  <div class="regla"><span class="tag">las preposiciones de lugar · ¿dónde está? (lugar = turquesa) <span class="gloss">waar is het?</span></span>
     <div class="prep2"><div><b>encima de</b><i>op/boven</i></div><div><b>debajo de</b><i>onder</i></div><div><b>dentro de</b><i>in/binnen</i></div><div><b>al lado de</b><i>naast</i></div>
     <div><b>delante de</b><i>voor</i></div><div><b>detrás de</b><i>achter</i></div><div><b>entre</b><i>tussen</i></div><div><b>en</b><i>in/op</i></div></div>
     <p style="font-size:9pt;margin:1mm 0 0">⚠️ <b>de + el = del</b>: encima <b>del</b> sofá · al lado <b>del</b> armario (niet «de el»).</p>
@@ -245,17 +246,17 @@ GRAM=f"""
     <table class="gt2"><tr><td class="v">hay</td><td>er is / er zijn (iets nieuw)</td><td class="ex">En el salón <b>hay</b> un sofá.</td></tr>
     <tr><td class="v">¿Dónde está…?</td><td>waar is…? (iets bekend)</td><td class="ex">¿Dónde <b>está</b> el bolso?</td></tr>
     <tr><td class="v">está / están</td><td>het staat / ze staan</td><td class="ex"><b>Está</b> encima de la mesa.</td></tr></table>
-    <p style="font-size:9pt;margin:1mm 0 0">💡 <b>hay</b> = er bestaat iets (onbekend) · <b>está</b> = waar dat bekende ding zich bevindt.</p>
+    <p style="font-size:9pt;margin:1mm 0 0">💡 <b>hay</b> = existe algo que aún no conoces · <b>está</b> = dónde se encuentra algo que ya conoces. <span class="gloss">er is ↔ waar het staat</span></p>
   </div>
   <div class="regla"><span class="tag">poder · ¿puedo…? / ¿puedes…? — permiso</span>
     <div class="mv2"><div class="m">🙋 vragen: ¿<b>Puedo</b> fumar? (ik) · ¿<b>Puedes</b> venir? (jij)</div><div class="f">✅ antwoorden: Sí, <b>puedes</b>… · Aquí no, pero <b>puedes</b> ir fuera.</div></div>
-    <p style="font-size:9pt;margin:1mm 0 0"><b>puedo</b> (ik) · <b>puedes</b> (jij) · <b>puede</b> (hij/zij) — altijd + een werkwoord in de hele vorm.</p>
+    <p style="font-size:9pt;margin:1mm 0 0"><b>puedo</b> (yo) · <b>puedes</b> (tú) · <b>puede</b> (él/ella), siempre + infinitivo. <span class="gloss">altijd met het hele werkwoord</span></p>
   </div>
-  <div class="truc"><b>Mini-oefening 1 · preposiciones.</b> Vul een plaats-woord in (kijk naar de tekening in je hoofd):
+  <div class="truc"><b>Mini-ejercicio 1 · preposiciones.</b> Completa con una palabra de lugar. <span class="gloss">stel je het beeld voor</span>
     <div style="margin-top:2mm;font-size:9.6pt;line-height:2.4">1. El gato está {wl('sm')} la cama (onder). &nbsp; 2. La lámpara está {wl('sm')} la mesa (op). &nbsp; 3. El armario está {wl('sm')} la ventana (naast).</div>
   </div>
-  <div class="truc"><b>Mini-oefening 2 · hay of está?</b> a) En la cocina {wl('sm')} un frigorífico. &nbsp; b) El bolso {wl('sm')} encima del sofá. &nbsp; c) ¿Qué {wl('sm')} en tu dormitorio?</div>
-  <div class="truc"><b>Mini-oefening 3 · ¿puedo of puedes?</b> Vul aan: 1. ¿{wl('sm')} abrir la ventana? (ik vraag) &nbsp; 2. Sí, {wl('sm')} abrirla (jij mag). &nbsp; 3. ¿{wl('sm')} ir al baño? (ik)</div>
+  <div class="truc"><b>Mini-ejercicio 2 · ¿hay o está?</b> a) En la cocina {wl('sm')} un frigorífico. &nbsp; b) El bolso {wl('sm')} encima del sofá. &nbsp; c) ¿Qué {wl('sm')} en tu dormitorio?</div>
+  <div class="truc"><b>Mini-ejercicio 3 · ¿puedo o puedes?</b> Completa: 1. ¿{wl('sm')} abrir la ventana? (pregunto yo) &nbsp; 2. Sí, {wl('sm')} abrirla (tú). &nbsp; 3. ¿{wl('sm')} ir al baño? (yo)</div>
 </div>
 """
 
@@ -266,7 +267,7 @@ def act(n,title,badges,body):
 
 PRAC=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">§3 · Práctica</div><h2>Oefen op papier — online verbeter je alles</h2>
+  <div class="se">§3 · Práctica</div><h2>Practica en papel · online se corrige solo <span class="gloss" style="font-size:10pt;font-weight:400">online verbetert het zichzelf</span></h2>
 
   {act(1,"Clasifica: habitación, mueble o posición",[("receptief","skill"),("5 min","")],
     '<p style="margin-left:12.5mm">Schrijf elk woord in de juiste kolom. Voeg onderaan één eigen woord toe.<br><span class="gloss">la cocina · la cama · encima de · el salón · el armario · debajo de · el dormitorio · al lado de</span></p>'
@@ -290,7 +291,7 @@ PRAC=f"""
     +'<div class="scramble" style="margin-left:12.5mm"><span>___ No, debajo de la mesa.</span><span>___ ¿Dónde está mi bolso?</span><span>___ ¡Ah, gracias!</span><span>___ Está en el salón.</span><span>___ ¿Encima del sofá?</span></div>')}
 
   {act(5,"¿hay o está?",[("gestuurd","skill"),("★☆☆","")],
-    f'<p style="margin-left:12.5mm">Vul hay of está in (hay = er is iets nieuw · está = waar het bekende ding staat).</p><div style="margin-left:12.5mm;font-size:10pt;line-height:2.4">'
+    f'<p style="margin-left:12.5mm">Completa con hay o está (hay = algo nuevo · está = dónde se encuentra lo conocido). <span class="gloss">hay of está?</span></p><div style="margin-left:12.5mm;font-size:10pt;line-height:2.4">'
     +f'1. En el salón {wl("sm")} un sofá. &nbsp; 2. El libro {wl("sm")} debajo de la cama. &nbsp; 3. ¿{wl("sm")} un frigorífico? &nbsp; 4. El bolso {wl("sm")} encima de la mesa.</div>')}
 
   {act(6,"Sitúa las cosas de tu cuarto",[("productie","skill"),("★★☆","")],
@@ -313,21 +314,21 @@ PRAC=f"""
 TAREA=f"""
 <div class="page sec" style="break-before:page">
   <div class="se">§5 · Tarea final</div><h2>Plano de mi casa</h2>
-  <div class="esen" style="margin-top:2mm"><b class="tt">Jouw opdracht.</b> Teken de <b>plattegrond</b> van je huis met <b>4 kamers</b> (echt of droomhuis). Benoem elke kamer, en zeg per kamer <b>wat er is</b> (hay) en <b>waar</b> het staat (met een plaats-woord). Presenteer je plattegrond aan de klas. <span class="gloss">Sin leer del papel — zonder van het blad af te lezen.</span></div>
+  <div class="esen" style="margin-top:2mm"><b class="tt">Tu tarea.</b> Dibuja el <b>plano</b> de tu casa con <b>4 habitaciones</b> (real o de tus sueños). Nombra cada habitación y di en cada una <b>qué hay</b> (hay) y <b>dónde</b> está (con una palabra de lugar). Presenta tu plano a la clase. <span class="gloss">Sin leer del papel — zonder van het blad af te lezen.</span></div>
   <div class="regla" style="margin-top:4mm"><span class="tag">Prepárate · vul eerst de frames in</span>
     <div style="margin-top:2mm;font-size:9.7pt;line-height:2.4">1. Aquí está {wl('sm')} (la cocina…). En {wl('sm')} hay {wl('sm')} .<br>2. El/la {wl('sm')} está {wl('sm')} (encima de · al lado de…) {wl('sm')} .<br>3. En mi casa también hay {wl('sm')} . ¿Puedo enseñártela? Sí, {wl('sm')} .</div>
   </div>
   <div class="modelo" style="margin-top:4mm"><b>Modelo · zo klinkt het:</b><br>
     — Aquí está el salón. En el salón hay un sofá y una tele. La tele está encima de una mesa.<br>
     — Y aquí está la cocina. Al lado de la cocina está el cuarto de baño.</div>
-  <div style="margin-top:4mm"><div class="se">Mi plano · teken hier je plattegrond + benoem de kamers</div>
+  <div style="margin-top:4mm"><div class="se">Mi plano · dibuja aquí tu plano y nombra las habitaciones <span class="gloss">teken en benoem</span></div>
     <div class="plano" style="margin-top:2mm"><div>1 · La habitación:</div><div>2 · La habitación:</div><div>3 · La habitación:</div><div>4 · La habitación:</div></div>
   </div>
   <div class="regla" style="margin-top:3mm"><span class="tag">Palabras y frases útiles</span>
     <p style="margin:1mm 0 0;font-size:9.6pt">la cocina · el salón · el dormitorio · el cuarto de baño · la cama · el sofá · el armario · hay… · está… · encima de · debajo de · al lado de · dentro de · delante de · detrás de · ¿puedo…? · sí, puedes…</p>
   </div>
   <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:6mm;margin-top:4mm;align-items:start">
-    <div class="truc" style="margin:0"><b>🏁 Klaar als…</b> je 4 kamers benoemt en per kamer zegt wat er is (hay) én waar het staat (met een plaats-woord) — zónder af te lezen.</div>
+    <div class="truc" style="margin:0"><b>🏁 Está listo cuando…</b> nombras 4 habitaciones y en cada una dices qué hay y dónde está (con una palabra de lugar), sin leer. <span class="gloss">zónder af te lezen</span></div>
     <table class="rubric"><thead><tr><th>Evaluatie</th><th style="text-align:center">🟢🟡🔴</th></tr></thead>
       <tr><td>habitaciones benoemen correct</td><td></td></tr>
       <tr><td>hay/está + preposición correct</td><td></td></tr>
@@ -342,23 +343,23 @@ def banda(a,s,g): return f'<div class="banda"><div class="ar">{a}</div><div clas
 MUSICA=f"""
 <div class="page sec" style="break-before:page">
   <div class="se">Cultura · Banda sonora</div><h2>La casa en el mundo hispano</h2>
-  <p style="font-size:9.6pt">Een huis vertelt veel over een cultuur. In veel Spaanse en Latijns-Amerikaanse huizen is er een <b>patio</b> (binnenkoer vol planten), het hart van het huis. In steden als <b>Guanajuato</b> (🇲🇽), <b>Cartagena</b> (🇨🇴) en <b>Guatapé</b> schilderen mensen hun huizen in <b>felle kleuren</b>. En midden op de dag rust men soms even: <b>la siesta</b>. Elke unit heeft ook een <b>banda sonora</b>.</p>
+  <p style="font-size:9.6pt">Una casa cuenta mucho de una cultura. En muchas casas de España y Latinoamérica hay un <b>patio</b> lleno de plantas: el corazón de la casa. En ciudades como <b>Guanajuato</b> (🇲🇽), <b>Cartagena</b> (🇨🇴) y <b>Guatapé</b> la gente pinta las casas de <b>colores fuertes</b>. Y a mediodía a veces se descansa un rato: <b>la siesta</b>. Cada unidad tiene además su <b>banda sonora</b>. <span class="gloss">patio, kleuren en siësta</span></p>
   <div class="bandas">{"".join(banda(*b) for b in BANDAS)}</div>
   <div class="musrow">
-    <div class="call"><span class="ic">🎧</span><div><b>Spotify · la playlist de la clase.</b> Scan en luister. Op de digitale pagina vind je ook <b>LyricsTraining</b> en de <b>wereldkaart</b>.</div></div>
+    <div class="call"><span class="ic">🎧</span><div><b>Spotify · la playlist de la clase.</b> Escanea y escucha. En la página digital tienes también <b>LyricsTraining</b> y el <b>mapa del mundo</b>. <span class="gloss">scan en luister; online staat er meer</span></div></div>
     <div class="qr" data-url="{SPOTIFY}"><div class="lab">Playlist</div>{qr(SPOTIFY)}<div class="meta">Spotify</div></div>
   </div>
   <div class="truc" style="margin-top:5mm"><b>La casa hispana · ¿sabías que…?</b> Verbind (gis gerust):
     <table class="mtab" style="margin-top:1mm"><tr><td class="a">El patio es…</td><td>{wl('sm')}</td><td class="b">a. casas pintadas de mil colores</td></tr>
-    <tr><td class="a">Guanajuato y Cartagena tienen…</td><td>{wl('sm')}</td><td class="b">b. het hart van veel huizen (planten)</td></tr>
+    <tr><td class="a">Guanajuato y Cartagena tienen…</td><td>{wl('sm')}</td><td class="b">b. el corazón de muchas casas (con plantas)</td></tr>
     <tr><td class="a">La siesta es…</td><td>{wl('sm')}</td><td class="b">c. een korte rust midden op de dag</td></tr></table>
-    <p style="font-size:8.6pt;color:var(--mut);margin-top:1mm">💡 «estar en casa» (thuis zijn) en «ir a casa» (naar huis) gebruik je zónder lidwoord — net als in het Nederlands.</p>
+    <p style="font-size:8.6pt;color:var(--mut);margin-top:1mm">💡 «estar en casa» e «ir a casa» van sin artículo, igual que en neerlandés «naar huis». <span class="gloss">zónder lidwoord</span></p>
   </div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:3mm;align-items:start">
     <div class="truc" style="margin:0"><b>Escucha y responde.</b> Kies één nummer van de playlist.
       <div style="margin-top:1.5mm;font-size:9.6pt;line-height:2.3">Mi canción: {wl('lg')}<br>El/la artista es de: {wl('lg')}</div>
     </div>
-    <div class="truc" style="margin:0"><b>¿Y tu casa?</b> Schrijf één zin over een kamer + waar iets staat.
+    <div class="truc" style="margin:0"><b>¿Y tu casa?</b> Escribe una frase sobre una habitación y dónde está algo. <span class="gloss">één zin over een kamer</span>
       <div style="margin-top:1.5mm;font-size:9.6pt;line-height:2.4">{wl('full')}<br>{wl('full')}</div>
     </div>
   </div>
@@ -367,10 +368,10 @@ MUSICA=f"""
 
 REPASO=f"""
 <div class="page sec" style="break-before:page">
-  <div class="se">Repaso · Lo esencial de un vistazo</div><h2>Wat je nu kunt</h2>
+  <div class="se">Repaso · Lo esencial de un vistazo</div><h2>Lo que ya sabes hacer <span class="gloss">wat je nu kunt</span></h2>
   <div class="fams">
-    <div class="pcard"><div class="t">Zo zeg je waar iets is</div><div class="ej"><b>¿Dónde está</b> ____? — <b>Está</b> ____ (encima de · debajo de · al lado de) ____.</div><div class="t2">de+el = <b>del</b> · a+el = <b>al</b></div></div>
-    <div class="pcard"><div class="t">Zo zeg je wat er is / vraag je iets</div><div class="ej"><b>Hay</b> ____ en ____. · ¿<b>Puedo</b> ____? — Sí, <b>puedes</b> ____.</div><div class="anchor"><b>hay</b> = nieuw ding · <b>está</b> = waar het staat &nbsp;|&nbsp; poder + hele werkwoord</div></div>
+    <div class="pcard"><div class="t">Así dices dónde está algo <span class="gloss">zeggen waar iets is</span></div><div class="ej"><b>¿Dónde está</b> ____? — <b>Está</b> ____ (encima de · debajo de · al lado de) ____.</div><div class="t2">de+el = <b>del</b> · a+el = <b>al</b></div></div>
+    <div class="pcard"><div class="t">Así dices qué hay y pides permiso <span class="gloss">wat er is, en iets vragen</span></div><div class="ej"><b>Hay</b> ____ en ____. · ¿<b>Puedo</b> ____? — Sí, <b>puedes</b> ____.</div><div class="anchor"><b>hay</b> = algo nuevo · <b>está</b> = dónde está &nbsp;|&nbsp; poder + infinitivo <span class="gloss">nieuw ding ↔ waar het staat</span></div></div>
   </div>
   <div class="regla" style="margin:4mm 0"><span class="tag">Frases para la clase</span>
     <div class="cogn" style="margin-top:1mm"><span>¿Cómo se dice… ?</span><span>¿Qué significa… ?</span><span>Otra vez, por favor</span><span>No entiendo</span><span>¿Puedes repetir?</span><span>¿Puedo ir al baño?</span></div>
@@ -382,11 +383,11 @@ REPASO=f"""
     <tr><td>hay en está juist gebruiken</td><td></td><td></td><td></td></tr>
     <tr><td>beleefd om iets vragen (¿puedo…? · puedes…)</td><td></td><td></td><td></td></tr></table>
   <div class="regla" style="margin-top:5mm"><span class="tag">Mini-test · recuerda sin mirar</span>
-    <p style="margin:1mm 0 0;font-size:9.4pt">Sluit de cursus en vertaal uit het hoofd (ophalen = het beste leren).</p>
+    <p style="margin:1mm 0 0;font-size:9.4pt">Cierra el libro y traduce de memoria: recordar es la mejor manera de aprender. <span class="gloss">uit het hoofd — ophalen leert het best</span></p>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:3mm 8mm;margin-top:2mm;font-size:9.8pt;line-height:2.2">
       <div>1. de keuken → {wl('')}</div><div>2. waar is de tas? → {wl('')}</div>
       <div>3. op de tafel → {wl('')}</div><div>4. onder het bed → {wl('')}</div>
-      <div>5. er is een bank → {wl('')}</div><div>6. mag ik roken? → {wl('')}</div>
+      <div>5. hay un sofá → {wl('')}</div><div>6. ¿puedo fumar? → {wl('')}</div>
     </div>
   </div>
   <div class="guide"><span class="ic">🎮</span><div><span class="hand">Repasa jugando</span><div class="g">Oefen alles online met spelletjes, flashcards en audio op de digitale hub (scan de QR bij §1).</div></div></div>
@@ -397,17 +398,17 @@ REPASO=f"""
 EDITBAR="""
 <div class="editbar" id="eb">
   <b>✏️ C4 · U6</b>
-  <button id="btnedit">Bewerken aan</button>
-  <button id="btnpdf">🖨️ Opslaan als PDF</button>
-  <button id="btnsave">💾 Bewaar (.html)</button>
+  <button id="btnedit">Editar</button>
+  <button id="btnpdf">🖨️ Guardar como PDF</button>
+  <button id="btnsave">💾 Guardar (.html)</button>
   <span class="sp"></span>
-  <span style="opacity:.85;font-size:12px">Tip: zet «Bewerken» aan, pas de tekst aan, en sla op als PDF.</span>
+  <span style="opacity:.85;font-size:12px">Consejo: activa «Editar», cambia el texto y guárdalo como PDF. <span class="gloss">bewerken aanzetten, aanpassen, opslaan</span></span>
 </div><div class="scr-spacer"></div>
 """
 SCRIPT="""
 <script>
 var editing=false;var be=document.getElementById('btnedit');
-be.onclick=function(){editing=!editing;document.querySelectorAll('.page,.hero').forEach(function(p){p.contentEditable=editing;});document.body.classList.toggle('editing',editing);be.classList.toggle('on',editing);be.textContent=editing?'Bewerken uit':'Bewerken aan';};
+be.onclick=function(){editing=!editing;document.querySelectorAll('.page,.hero').forEach(function(p){p.contentEditable=editing;});document.body.classList.toggle('editing',editing);be.classList.toggle('on',editing);be.textContent=editing?'Dejar de editar':'Editar';};
 document.getElementById('btnpdf').onclick=function(){window.print();};
 document.getElementById('btnsave').onclick=function(){var html='<!doctype html>'+document.documentElement.outerHTML;var b=new Blob([html],{type:'text/html'});var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='C4_U6_Casa_bewerkt.html';a.click();};
 </script>
