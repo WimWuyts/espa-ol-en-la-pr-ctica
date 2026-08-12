@@ -118,8 +118,10 @@ P(f'''
       <div class="ej" style="margin-top:2mm"><span class="badge skill">👂 Escuchar</span> <span class="badge skill">🎙️ Hablar</span> <span class="badge skill">🔍 Analizar</span> <span class="badge">👤 Solo</span> <span class="badge">👥 En parejas</span> <span class="badge">± 5 min</span> <span class="stars">★★☆</span></div>
       <div class="anchor gloss" style="margin-top:2mm">Elke oefening toont de <b>vaardigheid</b>, de <b>werkvorm</b>, de <b>tijd</b> en de <b>moeilijkheid</b>.</div></div>
     <div class="pcard"><div class="t" style="font-size:10.5pt">El apoyo baja poco a poco</div>
-      <div class="ej" style="margin-top:2mm"><span class="steun">Modelo</span> → <span class="steun">Banco</span> → <span class="steun">Marco</span> → <span class="steun">Pista</span> → <span class="steun">Sin ayuda</span></div>
-      <div class="anchor gloss" style="margin-top:2mm">De <b>steun bouwt af</b>: van model naar zónder hulp. Zo produceer je écht zelf.</div></div>
+      <div class="ej" style="margin-top:2mm">Un ejemplo hecho → las palabras que necesitas → una frase para completar
+      → solo la primera letra → nada.</div>
+      <div class="anchor" style="margin-top:2mm">La ayuda baja escalón a escalón hasta que escribes tú solo/a.
+      <span class="gloss">De steun bouwt af: voorbeeld → woordenbank → zin om aan te vullen → eerste letter → zonder hulp.</span></div></div>
   </div>
 </div>
 ''')
@@ -145,7 +147,7 @@ P(actx(AN(), "¿ser o estar? (repaso rápido)",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 2 min"},{"t":"★☆☆"}],
   '<p><i>Kies soy of estoy.</i></p>'
   '<p style="margin-left:12.5mm">1. Yo <span class="wl sm"></span> de Bélgica. &nbsp; 2. Hoy <span class="wl sm"></span> cansado. &nbsp; 3. <span class="wl sm"></span> estudiante. &nbsp; 4. <span class="wl sm"></span> en el instituto.</p>',
-  apoyo="Pista"))
+  apoyo="Pista: ser = identidad o carácter · estar = lugar o estado de ahora"))
 sec_close()
 
 # ================= §1 · LA HORA =================
@@ -182,7 +184,7 @@ P(actx(AN(), "¿A qué hora? · tu horario",
   '<tr><td>¿A qué hora empiezan las clases?</td><td>Empiezan <span class="wl md"></span></td></tr>'
   '<tr><td>¿A qué hora comes?</td><td>Como <span class="wl md"></span></td></tr>'
   '<tr><td>¿A qué hora te acuestas?</td><td>Me acuesto <span class="wl md"></span></td></tr></tbody></table>',
-  apoyo="Marco"))
+  apoyo="Marco: A las… · Es la una · Son las… y cuarto / y media / menos cuarto"))
 P(audiorow('<div class="ic">🎧</div><div><b>Dictado de horas.</b> Escucha en la página digital (o el/la profe lee) y escribe la hora. <b>1ª vez:</b> la hora en punto · <b>2ª vez:</b> con minutos.</div>',
            qr("Escanea y escucha", "§1 · Dictado de horas", seed=101)))
 P(actx(AN(), "Dictado · escribe la hora que oyes",
@@ -201,7 +203,7 @@ P(actx(AN(), "El calendario · completa",
   '<p>Vul de ontbrekende dagen aan. Vul daarna de twee zinnen over je favoriete maand en het seizoen aan.</p>'
   '<p style="margin-left:12.5mm">lunes — <span class="wl sm"></span> — miércoles — <span class="wl sm"></span> — viernes — <span class="wl sm"></span> — <span class="wl sm"></span><br>'
   'Mi mes favorito es <span class="wl sm"></span> porque <span class="wl md"></span>. &nbsp; En <span class="wl sm"></span> (estación) hace buen tiempo.</p>',
-  apoyo="Pista"))
+  apoyo="Pista: los días y los meses van en minúscula"))
 sec_close()
 
 retos("hora_c6p", "§1.4 · Retos — la hora que decide",
@@ -252,7 +254,7 @@ P(actx(AN(), "¿Con qué frecuencia? · escribe 4 frases",
   '<p>Schrijf 4 zinnen over je routine met een frequentiewoord + een uur. <span class="words"><b>siempre · normalmente · a veces · nunca</b></span></p>'
   '<p style="margin-left:12.5mm" class="gloss">Modelo: <i>Normalmente me levanto a las siete.</i></p>'
   '<div class="wbox sm"></div>',
-  apoyo="Marco"))
+  apoyo="Marco: Siempre… · Normalmente… · A veces… · Nunca…"))
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha «Un día con Lucía»</b> en la página digital (TTS). <b>1ª vez:</b> ¿a qué hora se levanta? · <b>2ª vez:</b> ¿qué hace por la tarde? Escribe los datos y luego cuenta tu día.</div>',
            qr("Escanea y escucha", "§2 · Un día con Lucía", seed=102)))
 sec_close()
@@ -335,7 +337,7 @@ P(actx(AN(), "Sustitución · cambia la persona",
   '<tr><td class="p">ella</td><td>Ella <span class="wl lg"></span></td></tr>'
   '<tr><td class="p">nosotros</td><td>Nosotros <span class="wl lg"></span></td></tr>'
   '<tr><td class="p">ellos</td><td>Ellos <span class="wl lg"></span></td></tr></tbody></table>',
-  apoyo="Marco"))
+  apoyo="Marco: me · te · se · nos · os · se + verbo"))
 P('</div>')  # sluit .page §3.2
 
 # ---- §3.3 La posición del pronombre + drills ----
@@ -369,12 +371,12 @@ P(actx(AN(), "Escribe tu rutina · 5 verbos reflexivos",
   '<p>Schrijf je ochtendroutine met minstens <b>5 reflexieve werkwoorden</b>, in orde (met conectores) en met de hora.</p>'
   '<p style="margin-left:12.5mm" class="gloss">Modelo: <i>Me despierto a las 7:00. Primero me ducho, luego me visto…</i></p>'
   '<div class="wbox"></div>',
-  apoyo="Marco"))
+  apoyo="Marco: Me despierto a las… · Me ducho… · Después me visto… · Luego…"))
 P(actx("★", "Tarea comunicativa · la rutina de tu compañero/a",
   [{"t":"🎙️ Hablar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
   '<p>Interview je buur (¿A qué hora te levantas? ¿Te duchas por la mañana o por la noche?) en schrijf daarna over hem/haar in de <b>3ª persona</b> (se levanta, se ducha…).</p>'
   '<p style="margin-left:12.5mm">Mi compañero/a se llama <span class="wl md"></span>. <span class="wl full"></span><span class="wl full"></span></p>',
-  apoyo="Marco"))
+  apoyo="Marco: ¿A qué hora te…? — Me… a las… · Él/Ella se… a las…"))
 P('<div class="guide"><div class="ic">🎡</div><div><span class="hand">Online:</span> <span class="g">de <b>vervangingsanimatie</b> en het <b>vervoegingswiel</b> op de digitale pagina oefenen elke reflexieve vorm; + cloze-, sorteer- en tetris-spellen (me/te/se…).</span></div></div>')
 P('</div>')  # sluit .page §3.3
 
@@ -439,7 +441,7 @@ P(actx(AN(), "¿Y tú? · ¿cómo estás en estos momentos?",
   'El viernes por la tarde: <span class="wl lg"></span><br>'
   'Antes de un examen: <span class="wl lg"></span></p>'
   '<p style="margin-left:12.5mm" class="gloss">Modelo: <i>El viernes estoy contento porque no hay clase.</i></p>',
-  apoyo="Marco"))
+  apoyo="Marco: Por la mañana estoy… · Después del examen estoy… · Los viernes estoy…"))
 P('</div>')  # sluit .page §4.2
 
 # ---- §4.3 El contraste es/está ----
@@ -464,12 +466,12 @@ P(actx(AN(), "Clínica de errores · ser/estar",
   '2. Mi mochila es en clase. → <span class="wl md"></span><br>'
   '3. Hoy soy muy cansado. → <span class="wl md"></span><br>'
   '4. Sevilla está en el sur de España — dat klopt! ¿verdad o falso? → <span class="wl sm"></span></p>',
-  apoyo="Pista"))
+  apoyo="Pista: pregúntate si es identidad (ser) o lugar/estado (estar)"))
 P(actx("★", "Tarea comunicativa · ¿cómo es y cómo está?",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Beschrijf een klasgenoot met <b>ser</b> (2 eigenschappen) én <b>estar</b> (hoe hij/zij zich nu voelt). Zeg het hardop.</p>'
   '<p style="margin-left:12.5mm">Mi compañero/a <b>es</b> <span class="wl md"></span> y <span class="wl md"></span>, y hoy <b>está</b> <span class="wl md"></span>.</p>',
-  apoyo="Marco"))
+  apoyo="Marco: … es … pero hoy está …"))
 P('</div>')  # sluit .page §4.3
 
 retos("ser_estar_c6p", "§4.4 · Retos — es aburrido o está aburrido",
@@ -536,7 +538,7 @@ P(actx(AN(), "Clínica de errores · gustar",
   '2. Me gusta los perros. → <span class="wl md"></span><br>'
   '3. Me gusta tenis. → <span class="wl md"></span><br>'
   '4. A María gusta bailar. → <span class="wl md"></span></p>',
-  apoyo="Pista"))
+  apoyo="Pista: el verbo va con la cosa, no con la persona: me gusta / me gustan"))
 P('</div>')  # sluit .page §5.2
 
 # ---- §5.3 la escala + porque + también/tampoco ----
@@ -564,7 +566,7 @@ P(actx(AN(), "Reacciona · me gusta… porque…",
   'Los videojuegos: <span class="wl lg"></span><br>'
   'Levantarse temprano: <span class="wl lg"></span></p>'
   '<p style="margin-left:12.5mm" class="gloss">Modelo: <i>Me encanta el fútbol porque es emocionante.</i></p>',
-  apoyo="Marco"))
+  apoyo="Marco: Me gusta(n)… porque… · No me gusta(n)… porque…"))
 P('<div class="se" style="margin-top:4mm">Reaccionar a los gustos de otro · a mí también / a mí tampoco</div>')
 P('<table class="alf"><thead><tr><th>Alguien dice…</th><th>De acuerdo (=)</th><th>En desacuerdo (≠)</th></tr></thead><tbody>'
   '<tr><td>Me gusta el pop. <span class="gloss">(+)</span></td><td><b>A mí también.</b></td><td>A mí no.</td></tr>'
@@ -668,7 +670,7 @@ P(actx(AN(), "Compara los horarios",
   '<tr><td>la comida</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>la cena</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr></tbody></table>'
   '<p style="margin-left:12.5mm">¿Qué diferencia te sorprende más? <span class="wl lg"></span></p>',
-  apoyo="Marco"))
+  apoyo="Marco: En España comen a las… pero en Bélgica comemos a las…"))
 P(actx(AN(), "Datos curiosos — une país y horario",
   [{"t":"🌍 Cultura","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Verbind (schrijf de letter).</p>'
@@ -775,7 +777,7 @@ P(actx("V.4", "Producir — una frase con tres palabras",
 P(actx("V.5", "Comunicar — mi día en 3 frases",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Schrijf 3 zinnen over je dag (rutina + hora + un gusto) en zeg ze daarna hardop tegen je buur.</p>'
-  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="Marco"))
+  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="Marco: Me levanto a las… · Por la tarde… · Me gusta… porque…"))
 P('<div class="se" style="margin-top:6mm">Mi red de palabras <span class="gloss" style="font-size:8pt">— teken je woordennetwerk rond «MI DÍA»: la mañana, la tarde, la noche, mis gustos</span></div>')
 P('<div class="wbox lg"></div>')
 P(mispal("Mis palabras de la unidad", 7))

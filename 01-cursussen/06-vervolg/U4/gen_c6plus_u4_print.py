@@ -115,8 +115,10 @@ P(f'''
       <div class="ej" style="margin-top:2mm"><span class="badge skill">👂 Escuchar</span> <span class="badge skill">🎙️ Hablar</span> <span class="badge skill">🔍 Analizar</span> <span class="badge">👤 Solo</span> <span class="badge">👥 En parejas</span> <span class="badge">± 5 min</span> <span class="stars">★★☆</span></div>
       <div class="anchor gloss" style="margin-top:2mm">Elke oefening toont de <b>vaardigheid</b>, de <b>werkvorm</b>, de <b>tijd</b> en de <b>moeilijkheid</b>.</div></div>
     <div class="pcard"><div class="t" style="font-size:10.5pt">El apoyo baja poco a poco</div>
-      <div class="ej" style="margin-top:2mm"><span class="steun">Modelo</span> → <span class="steun">Banco</span> → <span class="steun">Marco</span> → <span class="steun">Pista</span> → <span class="steun">Sin ayuda</span></div>
-      <div class="anchor gloss" style="margin-top:2mm">De <b>steun bouwt af</b>: van model naar zónder hulp. Zo produceer je écht zelf.</div></div>
+      <div class="ej" style="margin-top:2mm">Un ejemplo hecho → las palabras que necesitas → una frase para completar
+      → solo la primera letra → nada.</div>
+      <div class="anchor" style="margin-top:2mm">La ayuda baja escalón a escalón hasta que escribes tú solo/a.
+      <span class="gloss">De steun bouwt af: voorbeeld → woordenbank → zin om aan te vullen → eerste letter → zonder hulp.</span></div></div>
   </div>
 </div>
 ''')
@@ -136,7 +138,7 @@ P(actx(AN(), "Mis planes de viaje · ir a + infinitivo (repaso)",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p><i>repaso U3.</i> Schrijf 2 reisplannen met <b>ir a + infinitivo</b>.</p>'
   '<p style="margin-left:12.5mm">Este verano voy a <span class="wl lg"></span><br>Primero vamos a <span class="wl md"></span> y luego a <span class="wl md"></span></p>',
-  apoyo="Marco"))
+  apoyo="Marco: Voy a viajar a… · Vamos a visitar… · Voy a probar…"))
 sec_close()
 
 # ================= §1 · TRANSPORTE Y ALOJAMIENTO =================
@@ -176,7 +178,7 @@ P(actx(AN(), "Mi viaje ideal · escribe",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Schrijf 3 zinnen: welk vervoer, welk verblijf, welke plek je kiest.</p>'
   '<p style="margin-left:12.5mm">Viajo en <span class="wl md"></span> y me quedo en <span class="wl md"></span><br>Quiero visitar <span class="wl lg"></span></p>',
-  apoyo="Marco"))
+  apoyo="Marco: Quiero ir a… porque… · Allí voy a…"))
 sec_close()
 
 retos("viaje_c6p", "§1.4 · Retos — el viaje que empieza en el mostrador",
@@ -286,7 +288,7 @@ P(actx("★", "Tarea comunicativa · ¿qué has hecho hoy?",
   '<p>Vraag je buur wat hij vandaag heeft gedaan (¿qué has hecho hoy?) en antwoord met <b>el perfecto</b>. Noteer 2 dingen.</p>'
   '<p style="margin-left:12.5mm">— ¿Qué has hecho hoy? — <span class="wl lg"></span></p>'
   '<p style="margin-left:12.5mm">Mi compañero/a: 1. <span class="wl full"></span>2. <span class="wl full"></span></p>',
-  apoyo="Marco"))
+  apoyo="Marco: Hoy he… · Todavía no he… · ¿Y tú, has…?"))
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha «¿Qué tal el viaje?»</b> en la web (TTS): Nina cuenta su viaje. <b>1ª vez:</b> ¿adónde ha ido? · <b>2ª vez:</b> ¿qué ha hecho? Escribe los datos.</div>',
            qr("Escanea y escucha", "§2 · ¿Qué tal el viaje?", seed=401)))
 P('</div>')
@@ -355,12 +357,12 @@ P(actx(AN(), "Completa tu viaje · por/para",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Vul aan met je eigen reis.</p>'
   '<p style="margin-left:12.5mm">Salgo para <span class="wl md"></span>. Viajo por <span class="wl md"></span>. Me quedo por <span class="wl md"></span>. Voy para <span class="wl md"></span>.</p>',
-  apoyo="Marco"))
+  apoyo="Marco: salgo para… · viajo por… · un billete para…"))
 P(actx("★", "Tarea comunicativa · planificamos un viaje",
   [{"t":"🗣️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Plan samen een reis: waarheen (para), waarmee (por), hoelang (por), waarvoor (para + inf). Noteer je plan.</p>'
   '<p style="margin-left:12.5mm">Nuestro viaje: <span class="wl full"></span><span class="wl full"></span></p>',
-  apoyo="Marco"))
+  apoyo="Marco: Vamos a ir a… · Podemos… · Prefiero… porque…"))
 P('<div class="guide"><div class="ic">🎡</div><div><span class="hand">Online:</span> <span class="g">de <b>por/para-schuifregelaar</b> en de spellen op de hub oefenen elk geval; + cloze en foutenkliniek.</span></div></div>')
 P('</div>')
 
@@ -407,7 +409,7 @@ P(actx("★", "Info-gap · ¿lo has hecho alguna vez?",
   [{"t":"🗣️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
   '<p>Stel elkaar 4 vragen «¿Has … alguna vez?» en antwoord (sí/no/todavía no). Noteer 3 antwoorden van je buur.</p>'
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>',
-  apoyo="Marco"))
+  apoyo="Marco: ¿Alguna vez has…? — Sí, he… / No, nunca he…"))
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha «Experiencias de viaje»</b> en la web (TTS). Marca lo que <b>han hecho</b> los personajes. <b>2ª vez:</b> ¿quién ha estado dónde?</div>',
            qr("Escanea y escucha", "§4 · Experiencias", seed=402)))
 sec_close()
@@ -461,7 +463,7 @@ P(actx(AN(), "Ordena el relato del viaje",
   '<p>Herschrijf de reis in volgorde met <b>primero, luego, después, al final</b>.</p>'
   '<p style="margin-left:12.5mm">hemos vuelto · hemos cogido el avión · hemos visitado el desierto · hemos hecho las maletas<br>'
   '1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span>4. <span class="wl full"></span></p>',
-  apoyo="Marco"))
+  apoyo="Marco: Primero… · Después… · Al final…"))
 sec_close()
 
 # ================= LECTURA 2 · ESCUCHA =================
@@ -491,7 +493,7 @@ P(actx(AN(), "¿Adónde quieres viajar? · escribe",
   [{"t":"🌍 Cultura","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>Kies één bestemming en zeg waarom. Schrijf 2 zinnen met <b>quiero / tengo ganas de</b> + perfecto (todavía no he estado…).</p>'
   '<div class="wbox sm"></div>',
-  apoyo="Marco"))
+  apoyo="Marco: Quiero ir a… porque… · Me gustaría ver…"))
 P(actx(AN(), "Datos curiosos — une",
   [{"t":"🌍 Cultura","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Verbind (schrijf de letter).</p>'
@@ -598,7 +600,7 @@ P(actx("V.4", "Producir — una frase con tres palabras",
 P(actx("V.5", "Comunicar — mi viaje en 3 frases",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Schrijf 3 zinnen over een reis (adónde has ido · qué has hecho · una opinión) en zeg ze hardop.</p>'
-  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="Marco"))
+  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="Marco: He estado en… · He visto… · Lo mejor ha sido…"))
 P('<div class="se" style="margin-top:6mm">Mi mapa de palabras <span class="gloss" style="font-size:8pt">— teken je reis en label 6 dingen in het Spaans</span></div>')
 P('<div class="wbox lg"></div>')
 P(mispal("Mis palabras de la unidad", 7))

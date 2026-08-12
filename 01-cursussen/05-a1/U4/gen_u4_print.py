@@ -484,8 +484,10 @@ P(f'''
       <div class="ej" style="margin-top:2mm"><span class="badge skill">👂 Escuchar</span> <span class="badge skill">🎙️ Hablar</span> <span class="badge skill">🔍 Analizar</span> <span class="badge">👤 Solo</span> <span class="badge">👥 En parejas</span> <span class="badge">± 5 min</span> <span class="stars">★★☆</span></div>
       <div class="anchor gloss" style="margin-top:2mm">Elke oefening toont de <b>vaardigheid</b>, de <b>werkvorm</b>, de <b>tijd</b> en de <b>moeilijkheid</b>.</div></div>
     <div class="pcard"><div class="t" style="font-size:10.5pt">El apoyo baja poco a poco</div>
-      <div class="ej" style="margin-top:2mm"><span class="steun">Modelo</span> → <span class="steun">Banco</span> → <span class="steun">Marco</span> → <span class="steun">Pista</span> → <span class="steun">Sin ayuda</span></div>
-      <div class="anchor gloss" style="margin-top:2mm">De <b>steun bouwt af</b>: van model naar zónder hulp. Zo produceer je écht zelf.</div></div>
+      <div class="ej" style="margin-top:2mm">Un ejemplo hecho → las palabras que necesitas → una frase para completar
+      → solo la primera letra → nada.</div>
+      <div class="anchor" style="margin-top:2mm">La ayuda baja escalón a escalón hasta que escribes tú solo/a.
+      <span class="gloss">De steun bouwt af: voorbeeld → woordenbank → zin om aan te vullen → eerste letter → zonder hulp.</span></div></div>
   </div>
   <div class="fams" style="margin-top:4mm">
     <div class="pcard"><div class="t" style="font-size:10.5pt">Dos capas de color</div>
@@ -671,7 +673,7 @@ P(actx(7, "Encuesta rápida: gusta/gustan + tu opinión",
   '<tr><td>los videojuegos</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td>la música pop</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td>bailar</td><td><span class="wl lg"></span></td></tr>'
-  '<tr><td>las películas de terror</td><td><span class="wl lg"></span></td></tr></tbody></table>', apoyo="Marco"))
+  '<tr><td>las películas de terror</td><td><span class="wl lg"></span></td></tr></tbody></table>', apoyo="Marco: ¿Te gusta(n)…? — Sí, me gusta(n)… / No, no me gusta(n)…"))
 P(tarea_com("Tarea comunicativa · «Encuentra un gusto en común»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 Toda la clase"},{"t":"± 10 min"},{"t":"★★★"}],
   '<p><b>Situación:</b> jij loopt rond en zoekt per rij iemand met dezelfde smaak, en <b>rapporteert</b> daarna. <span class="gloss">«A mí me gustan los videojuegos. ¿Y a ti?»</span></p>'
@@ -757,7 +759,7 @@ P(tarea_com("Tarea comunicativa · «¿Estamos de acuerdo?»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
   '<p><b>Situación:</b> zeg om de beurt een gusto; je buur reageert echt (también/tampoco/sí/no) en jullie tellen hoeveel jullie <b>gemeen</b> hebben. <span class="gloss">«A mí me gusta… —A mí también / A mí no.»</span></p>'
   '<p style="margin-left:12.5mm">Gustos en común: <span class="wl sm"></span> / 5 &nbsp; Uno diferente: <span class="wl md"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Marco: vier reacties</div>'))
+  APO.html("Marco: vier reacties")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «Espejo de reacciones» (también/tampoco) en «a mí sí / a mí no».</div>')
 P('</div>')  # page §2.2
 
@@ -831,7 +833,7 @@ P(actx(3, "Completa con la forma correcta (cloze)",
 P(actx(4, "Cadena de transformación",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Begin met <b>«Quiero ir a la playa.»</b> en voer elke opdracht uit (schrijf de hele zin).</p>'
-  '<p style="margin-left:12.5mm">→ maak er een <b>vraag</b> van (tú): <span class="wl lg"></span><br>→ verander naar <b>nosotros</b>: <span class="wl lg"></span><br>→ maak <b>ontkennend</b> (yo, poder): <span class="wl lg"></span><br>→ voeg <b>«el domingo»</b> toe: <span class="wl lg"></span></p>', apoyo="Pista"))
+  '<p style="margin-left:12.5mm">→ maak er een <b>vraag</b> van (tú): <span class="wl lg"></span><br>→ verander naar <b>nosotros</b>: <span class="wl lg"></span><br>→ maak <b>ontkennend</b> (yo, poder): <span class="wl lg"></span><br>→ voeg <b>«el domingo»</b> toe: <span class="wl lg"></span></p>', apoyo="Pista: cada paso cambia una sola parte de la frase"))
 P(audiorow('<div class="ic">🎧</div><div><b>Microdictado.</b> Escucha dos veces y escribe las propuestas. <span class="gloss">1ª: betekenis · 2ª: schrijf de zinnen.</span></div>',
            qr("Escanea y escucha", "Audio 4.3 · Planes · 0:45", seed=43)))
 P(actx(5, "Propón un plan",
@@ -848,7 +850,7 @@ P(tarea_com("Tarea comunicativa · «Quedamos el finde»",
   '<p><b>Situación:</b> stel elkaar een plan voor, ga akkoord of stel iets anders voor, en spreek een <b>uur en plaats</b> af. <span class="gloss">«¿Quieres…? —Vale. ¿A qué hora quedamos?»</span></p>'
   '<p style="margin-left:12.5mm">Nuestro plan: <span class="wl full"></span></p>'
   '<p style="margin-left:12.5mm">☐ plan · ☐ hora · ☐ lugar</p>'
-  '<div class="steun" style="margin-left:12.5mm">Marco: proponer/quedar</div>'))
+  APO.html("Marco: proponer/quedar")))
 P('<div class="route-note">🔁 <b>Ojo — conjugador online:</b> alle vervoegingen (~1000 werkwoorden, nagerekend, incl. querer/poder/jugar) in de aparte cursus-tool «Conjugador».</div>')
 P('</div>')  # page §3.2
 
@@ -893,7 +895,7 @@ P(actx(3, "¿Verdadero o falso? + prueba",
 P(actx(4, "Del contexto: ¿qué significa?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Wat betekent <b>«prefiero salir»</b> en <b>«toco la guitarra»</b>? Kies + leg uit welke aanwijzing hielp.</p>'
-  '<p style="margin-left:12.5mm">prefiero = ☐ ik verkies ☐ ik haat &nbsp;·&nbsp; toco = ☐ ik bespeel ☐ ik luister<br>Pista que me ayudó: <span class="wl lg"></span></p>', apoyo="Pista"))
+  '<p style="margin-left:12.5mm">prefiero = ☐ ik verkies ☐ ik haat &nbsp;·&nbsp; toco = ☐ ik bespeel ☐ ik luister<br>Pista que me ayudó: <span class="wl lg"></span></p>', apoyo="Pista: no mires la palabra suelta: lee la frase entera"))
 P(actx(5, "Ordena la mini-conversación",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Zet de chat over gustos in de juiste volgorde (1–4).</p>'
@@ -902,7 +904,7 @@ P(tarea_com("Tarea comunicativa · Responde con tu perfil",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
   '<p><b></b> Kies één perfil en schrijf een <b>antwoord</b> met je eigen gustos (afzender = jij · ontvanger = Lucía/Diego · doel = smaak delen). Lees het daarna hardop voor.</p>'
   '<div class="wbox"></div>'
-  '<div class="steun" style="margin-left:0mm">Marco: Me encanta… · Me gusta… · No me gusta… porque…</div>'))
+  APO.html("Marco: Me encanta… · Me gusta… · No me gusta… porque…")))
 P('<div class="route-note">🎮 <b>Sigue online:</b> op de digitale pagina neem je je antwoord op (recorder) en luister je de perfiles (audio).</div>')
 P('</div>')  # page §4b
 
@@ -1072,7 +1074,7 @@ P(tarea_com("Tarea comunicativa · «La playlist de la clase»",
   '<tr><td>Karol G</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>Bad Bunny</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr></tbody></table>'
   '<p style="margin-left:12.5mm">Nuestra canción para la clase: <span class="wl lg"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Marco: escala + reacciones</div>'))
+  APO.html("Marco: escala + reacciones")))
 P('<div class="route-note">🎮 <b>Sigue online:</b> escucha la playlist, prueba <b>LyricsTraining</b> (vul de songtekst aan) y juega «La escala del gusto» met zelfcorrectie op de digitale pagina.</div>')
 P('</div>')  # page Banda 2
 
@@ -1198,7 +1200,7 @@ P(actx("V.7", "Mi carné de gustos — ficha final",
   '<div class="row"><span class="k">No me gusta…</span><span class="v"><span class="wl sm"></span></span></div></div>'
   '<div><div class="row"><span class="k">Odio…</span><span class="v"><span class="wl sm"></span></span></div>'
   '<div class="row"><span class="k">Mi artista favorito/a…</span><span class="v"><span class="wl sm"></span></span></div>'
-  '<div class="row"><span class="k">…porque…</span><span class="v"><span class="wl sm"></span></span></div></div></div>', apoyo="Marco"))
+  '<div class="row"><span class="k">…porque…</span><span class="v"><span class="wl sm"></span></span></div></div></div>', apoyo="Marco: Me encanta… · Me gusta… porque… · No me gusta nada…"))
 P(mispal("Mis palabras de la unidad", 4))
 P('<div class="route-note">🎴 <b>Sigue en la página digital:</b> flip cards (ES↔NL) van álle woorden, audio (TTS), buscador én de 20 spellen bouwen de steun verder af. Scan de QR op deze bladzijde en oefen tot je alles <b>sin ayuda</b> kan.</div>')
 P('</div>')  # page §V

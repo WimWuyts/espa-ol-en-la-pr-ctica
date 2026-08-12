@@ -468,8 +468,10 @@ P(f'''
       <div class="ej" style="margin-top:2mm"><span class="badge skill">👂 Escuchar</span> <span class="badge skill">🎙️ Hablar</span> <span class="badge skill">🔍 Analizar</span> <span class="badge">👤 Solo</span> <span class="badge">👥 En parejas</span> <span class="badge">± 5 min</span> <span class="stars">★★☆</span></div>
       <div class="anchor gloss" style="margin-top:2mm">Elke oefening toont de <b>vaardigheid</b>, de <b>werkvorm</b>, de <b>tijd</b> en de <b>moeilijkheid</b>.</div></div>
     <div class="pcard"><div class="t" style="font-size:10.5pt">El apoyo baja poco a poco</div>
-      <div class="ej" style="margin-top:2mm"><span class="steun">Modelo</span> → <span class="steun">Banco</span> → <span class="steun">Marco</span> → <span class="steun">Pista</span> → <span class="steun">Sin ayuda</span></div>
-      <div class="anchor gloss" style="margin-top:2mm">De <b>steun bouwt af</b>: van model naar zónder hulp. Zo produceer je écht zelf.</div></div>
+      <div class="ej" style="margin-top:2mm">Un ejemplo hecho → las palabras que necesitas → una frase para completar
+      → solo la primera letra → nada.</div>
+      <div class="anchor" style="margin-top:2mm">La ayuda baja escalón a escalón hasta que escribes tú solo/a.
+      <span class="gloss">De steun bouwt af: voorbeeld → woordenbank → zin om aan te vullen → eerste letter → zonder hulp.</span></div></div>
   </div>
   <div class="fams" style="margin-top:4mm">
     <div class="pcard"><div class="t" style="font-size:10.5pt">Dos capas de color</div>
@@ -625,7 +627,7 @@ P(tarea_com("Tarea comunicativa · «¿Qué has hecho esta semana?»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
   '<p><b>Situación:</b> vraag elkaar wat je <b>deze week gedaan hebt</b> (perfecto compuesto) en noteer twee dingen van je buur. <span class="gloss">«¿Qué has hecho esta semana? —He estudiado y he visto una serie.»</span></p>'
   '<p style="margin-left:12.5mm">Mi compañero/a ha…: <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Marco: ¿Qué has hecho? · He…</div>'))
+  APO.html("Marco: ¿Qué has hecho? · He…")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «haber + participio (cloze)», «haber Tetris» en de vraag-spiegel met zelfcorrectie.</div>')
 P('</div>')  # page §1.2
 
@@ -698,7 +700,7 @@ P(tarea_com("Tarea comunicativa · «Cadena de experiencias»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★☆"}],
   '<p><b>Situación:</b> in een ketting: A zegt «He viajado», B herhaalt + voegt toe «He viajado y he comido…», enz. Gebruik zoveel mogelijk <b>irregulares</b>. <span class="gloss">He hecho, he visto, he vuelto…</span></p>'
   '<p style="margin-left:12.5mm">Nuestra cadena más larga: <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Banco de palabras: lista de participios</div>'))
+  APO.html("Banco de palabras: lista de participios")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «participio ↔ infinitivo» (match), «regular o irregular» (classify) en «participio irregular» (cloze).</div>')
 P('</div>')  # page §2.2
 
@@ -761,7 +763,7 @@ P(tarea_com("Tarea comunicativa · «¿Lo has hecho alguna vez?»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 7 min"},{"t":"★★★"}],
   '<p><b>Situación:</b> stel elkaar drie vragen met <b>alguna vez</b> (viajar en avión, comer ceviche, ver la nieve…). Antwoord met <b>ya / nunca / muchas veces</b>. <span class="gloss">«¿Has visto la nieve alguna vez? —Sí, ya la he visto. / No, nunca.»</span></p>'
   '<p style="margin-left:12.5mm">Una respuesta interesante de mi compañero/a: <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Marco: ¿Has…? · Sí, ya… / No, nunca…</div>'))
+  APO.html("Marco: ¿Has…? · Sí, ya… / No, nunca…")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «ya o todavía no» (cloze) en «experiencia o periodo» (classify) met zelfcorrectie.</div>')
 P('</div>')  # page §3.2
 
@@ -824,7 +826,7 @@ P(tarea_com("Tarea comunicativa · «El tiempo en tu ciudad»",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★☆"}],
   '<p><b></b> A is de weerman/-vrouw en vertelt het weer van een stad (verzonnen); B tekent het symbool en zegt of hij/zij daar naartoe wil. Wissel. <span class="gloss">«Hoy en Cusco hace frío y está nublado.»</span></p>'
   '<p style="margin-left:12.5mm">El tiempo de mi compañero/a: <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Marco: Hoy hace… · está…</div>'))
+  APO.html("Marco: Hoy hace… · está…")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «¿qué tiempo hace?» (classify), «símbolo ↔ tiempo» (match) en el parte del tiempo (audio).</div>')
 P('</div>')  # page §4.2
 
@@ -870,7 +872,7 @@ P(actx(3, "¿Verdadero o falso? + prueba",
 P(actx(4, "Del contexto: ¿qué significa?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Wat betekent <b>«he tomado el tren»</b> en <b>«una postal»</b>? Kies + leg uit welke aanwijzing hielp.</p>'
-  '<p style="margin-left:12.5mm">he tomado = ☐ ik heb genomen ☐ ik heb gekocht &nbsp;·&nbsp; una postal = ☐ een ansichtkaart ☐ een koffer<br>Pista que me ayudó: <span class="wl lg"></span></p>', apoyo="Pista"))
+  '<p style="margin-left:12.5mm">he tomado = ☐ ik heb genomen ☐ ik heb gekocht &nbsp;·&nbsp; una postal = ☐ een ansichtkaart ☐ een koffer<br>Pista que me ayudó: <span class="wl lg"></span></p>', apoyo="Pista: no mires la palabra suelta: lee la frase entera"))
 P(actx(5, "Ordena el viaje de Nina",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Zet de reis van Nina in de juiste volgorde.</p>'
@@ -880,7 +882,7 @@ P(tarea_com("Tarea comunicativa · «Tu propio día de viaje» (keten lezen→sc
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 8 min"},{"t":"★★★"}],
   '<p><b></b> Schrijf, zoals Nina, één dagboekdag over een (echte of verzonnen) reis. Gebruik minstens <b>vier</b> keer perfecto compuesto + één marcador + het weer. <span class="gloss">«Hoy he llegado a… He visto… Ha hecho…»</span></p>'
   '<div class="wbox sm"></div>'
-  '<div class="steun" style="margin-left:0mm">Marco: Hoy he… · He visto… · Ha hecho…</div>'))
+  APO.html("Marco: Hoy he… · He visto… · Ha hecho…")))
 P('<div class="route-note">🎮 <b>Sigue online:</b> luister het diario (TTS), doe de begripsquiz en neem je eigen dag op (recorder) op de digitale pagina.</div>')
 P('</div>')  # page §5b
 

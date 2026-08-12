@@ -468,8 +468,10 @@ P(f'''
       <div class="ej" style="margin-top:2mm"><span class="badge skill">👂 Escuchar</span> <span class="badge skill">🎙️ Hablar</span> <span class="badge skill">🔍 Analizar</span> <span class="badge">👤 Solo</span> <span class="badge">👥 En parejas</span> <span class="badge">± 5 min</span> <span class="stars">★★☆</span></div>
       <div class="anchor gloss" style="margin-top:2mm">Elke oefening toont de <b>vaardigheid</b>, de <b>werkvorm</b>, de <b>tijd</b> en de <b>moeilijkheid</b>.</div></div>
     <div class="pcard"><div class="t" style="font-size:10.5pt">El apoyo baja poco a poco</div>
-      <div class="ej" style="margin-top:2mm"><span class="steun">Modelo</span> → <span class="steun">Banco</span> → <span class="steun">Marco</span> → <span class="steun">Pista</span> → <span class="steun">Sin ayuda</span></div>
-      <div class="anchor gloss" style="margin-top:2mm">De <b>steun bouwt af</b>: van model naar zónder hulp. Zo produceer je écht zelf.</div></div>
+      <div class="ej" style="margin-top:2mm">Un ejemplo hecho → las palabras que necesitas → una frase para completar
+      → solo la primera letra → nada.</div>
+      <div class="anchor" style="margin-top:2mm">La ayuda baja escalón a escalón hasta que escribes tú solo/a.
+      <span class="gloss">De steun bouwt af: voorbeeld → woordenbank → zin om aan te vullen → eerste letter → zonder hulp.</span></div></div>
   </div>
   <div class="fams" style="margin-top:4mm">
     <div class="pcard"><div class="t" style="font-size:10.5pt">Dos capas de color</div>
@@ -619,7 +621,7 @@ P(tarea_com("Tarea comunicativa · «¿Te lo llevas?»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 7 min"},{"t":"★★★"}],
   '<p><b>Situación:</b> A = dependiente/a, B = cliente. A vraagt over prendas («¿Te gusta esta camisa?»), B antwoordt kort met het pronomen («Sí, la quiero» / «No, no la quiero»). Wissel. <span class="gloss">«¿Los vaqueros? —Sí, me los llevo.»</span></p>'
   '<p style="margin-left:12.5mm">Un ejemplo nuestro: <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Marco: lo/la/los/las</div>'))
+  APO.html("Marco: lo/la/los/las")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «¿lo, la, los o las?» (cloze), de vervangingsanimatie en «ordena el diálogo de la tienda» met zelfcorrectie.</div>')
 P('</div>')  # page §1.2
 
@@ -686,7 +688,7 @@ P(actx(3, "Completa con acabar de + infinitivo (cloze)",
 P(actx(4, "Cadena de transformación",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Begin met <b>«Acabo de comprar una camisa.»</b> en voer elke opdracht uit (schrijf de hele zin).</p>'
-  '<p style="margin-left:12.5mm">→ maak er een <b>vraag</b> van (tú): <span class="wl lg"></span><br>→ verander naar <b>nosotros</b>: <span class="wl lg"></span><br>→ vervang «una camisa» door een <b>pronomen</b>: <span class="wl lg"></span><br>→ zet in het <b>meervoud</b> (dos camisas → las): <span class="wl lg"></span></p>', apoyo="Pista"))
+  '<p style="margin-left:12.5mm">→ maak er een <b>vraag</b> van (tú): <span class="wl lg"></span><br>→ verander naar <b>nosotros</b>: <span class="wl lg"></span><br>→ vervang «una camisa» door een <b>pronomen</b>: <span class="wl lg"></span><br>→ zet in het <b>meervoud</b> (dos camisas → las): <span class="wl lg"></span></p>', apoyo="Pista: cada paso cambia una sola parte de la frase"))
 P(actx(5, "¿Qué acabas de hacer? — escribe",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Schrijf drie ware zinnen: wat je vandaag <b>acabas de hacer</b> (comprar / comer / ver…).</p>'
@@ -695,7 +697,7 @@ P(tarea_com("Tarea comunicativa · «¡Acabo de comprarlo!»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★☆"}],
   '<p><b>Situación:</b> je komt terug van het winkelen. Vertel elkaar wat je <b>net gekocht/gedaan hebt</b> (acabar de + infinitivo) en gebruik een pronomen. <span class="gloss">«Acabo de comprar unas zapatillas. ¡Las acabo de estrenar!»</span></p>'
   '<p style="margin-left:12.5mm">Lo que acaba de hacer mi compañero/a: <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Marco: Acabo de + inf.</div>'))
+  APO.html("Marco: Acabo de + inf.")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «acabar de + infinitivo» (cloze) en de tijdlijn-oefening met zelfcorrectie.</div>')
 P('</div>')  # page §2.2
 
@@ -758,7 +760,7 @@ P(actx(3, "Empareja: distancia ↔ demostrativo",
 P(actx(4, "Transforma: este → ese → aquel",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★★"}],
   '<p>Begin met <b>«esta camiseta»</b> en verplaats ze steeds verder weg.</p>'
-  '<p style="margin-left:12.5mm">esta camiseta (aquí) → <b>ese</b>… (ahí): <span class="wl md"></span> → <b>aquel</b>… (allí): <span class="wl md"></span><br>estos zapatos (aquí) → esos (ahí): <span class="wl md"></span> → aquellos (allí): <span class="wl md"></span></p>', apoyo="Marco"))
+  '<p style="margin-left:12.5mm">esta camiseta (aquí) → <b>ese</b>… (ahí): <span class="wl md"></span> → <b>aquel</b>… (allí): <span class="wl md"></span><br>estos zapatos (aquí) → esos (ahí): <span class="wl md"></span> → aquellos (allí): <span class="wl md"></span></p>', apoyo="Marco: este (aquí) → ese (ahí) → aquel (allí), y el género no cambia"))
 P(actx(5, "Escribe: señala en la tienda",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Schrijf drie zinnen: wijs één prenda cerca, één ahí en één lejos aan (met de juiste vorm).</p>'
@@ -767,7 +769,7 @@ P(tarea_com("Tarea comunicativa · «Señala y pregunta»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★☆"}],
   '<p><b>Situación:</b> in de tienda wijs je prendas aan en vraag je de prijs. A: «¿Cuánto cuesta <b>esa</b> chaqueta?» B antwoordt. Gebruik este/ese/aquel volgens de afstand. <span class="gloss">Beweeg door de klas als «tienda».</span></p>'
   '<p style="margin-left:12.5mm">Una pregunta nuestra: <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Marco: ¿Cuánto cuesta este/ese/aquel…?</div>'))
+  APO.html("Marco: ¿Cuánto cuesta este/ese/aquel…?")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «este/ese/aquel» (cloze) en «señala en el escaparate» (point) met zelfcorrectie.</div>')
 P('</div>')  # page §3.2
 
@@ -847,7 +849,7 @@ P(tarea_com("Tarea comunicativa · «¿De qué color es tu equipación?»",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
   '<p><b>Situación:</b> beschrijf de <b>camiseta</b> van je lievelingsploeg (of van je school) met kleur + patroon; je buur raadt de selección/ploeg. <span class="gloss">«Mi camiseta es azul y blanca, de rayas. ¿Qué selección es?»</span></p>'
   '<p style="margin-left:12.5mm">Mi equipación: <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Marco: Mi camiseta es + color + de + patrón</div>'))
+  APO.html("Marco: Mi camiseta es + color + de + patrón")))
 P(actx(6, "Traduce y concuerda",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Vertaal en let op de uitgang van de kleur.</p>'
@@ -907,7 +909,7 @@ P(actx(3, "¿Verdadero o falso? + prueba",
 P(actx(4, "Del contexto: ¿qué significa?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Wat betekent <b>«me quedan bien»</b> en <b>«regatear»</b>? Kies + leg uit welke aanwijzing hielp.</p>'
-  '<p style="margin-left:12.5mm">me quedan bien = ☐ ze staan me goed ☐ ze zijn duur &nbsp;·&nbsp; regatear = ☐ afdingen ☐ betalen<br>Pista que me ayudó: <span class="wl lg"></span></p>', apoyo="Pista"))
+  '<p style="margin-left:12.5mm">me quedan bien = ☐ ze staan me goed ☐ ze zijn duur &nbsp;·&nbsp; regatear = ☐ afdingen ☐ betalen<br>Pista que me ayudó: <span class="wl lg"></span></p>', apoyo="Pista: no mires la palabra suelta: lee la frase entera"))
 P(actx(5, "Del anuncio: ¿la, lo, los o las?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Kijk terug naar §1. In de reseña staat «no <b>la</b> tenían». Waar verwijst <b>la</b> naar? En vul aan: «Me <b>los</b> probé» → los = ___?</p>'
@@ -916,7 +918,7 @@ P(tarea_com("Tarea comunicativa · «Escribe tu reseña» (keten lezen→schrijv
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 8 min"},{"t":"★★★"}],
   '<p><b></b> Schrijf een korte <b>reseña</b> (3–4 zinnen) over een prenda die je «net gekocht hebt»: wat, welke kleur, hoeveel, hoe ze zit, en of je terugkomt. Gebruik <b>acabar de</b> + een <b>pronomen</b>. <span class="gloss">«Acabo de comprar una chaqueta negra. Me queda bien. La pagué con tarjeta.»</span></p>'
   '<div class="wbox sm"></div>'
-  '<div class="steun" style="margin-left:0mm">Modelo: reseña de Valen</div>'))
+  APO.html("Modelo: reseña de Valen")))
 P(actx(6, "Después de leer: ¿qué prenda es?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Verbind de omschrijving uit het anuncio met de prenda (schrijf de letter).</p>'

@@ -115,8 +115,10 @@ P(f'''
       <div class="ej" style="margin-top:2mm"><span class="badge skill">👂 Escuchar</span> <span class="badge skill">🎙️ Hablar</span> <span class="badge skill">🔍 Analizar</span> <span class="badge">👤 Solo</span> <span class="badge">👥 En parejas</span> <span class="badge">± 5 min</span> <span class="stars">★★☆</span></div>
       <div class="anchor gloss" style="margin-top:2mm">Elke oefening toont de <b>vaardigheid</b>, de <b>werkvorm</b>, de <b>tijd</b> en de <b>moeilijkheid</b>.</div></div>
     <div class="pcard"><div class="t" style="font-size:10.5pt">El apoyo baja poco a poco</div>
-      <div class="ej" style="margin-top:2mm"><span class="steun">Modelo</span> → <span class="steun">Banco</span> → <span class="steun">Marco</span> → <span class="steun">Pista</span> → <span class="steun">Sin ayuda</span></div>
-      <div class="anchor gloss" style="margin-top:2mm">De <b>steun bouwt af</b>: van model naar zónder hulp. Zo produceer je écht zelf.</div></div>
+      <div class="ej" style="margin-top:2mm">Un ejemplo hecho → las palabras que necesitas → una frase para completar
+      → solo la primera letra → nada.</div>
+      <div class="anchor" style="margin-top:2mm">La ayuda baja escalón a escalón hasta que escribes tú solo/a.
+      <span class="gloss">De steun bouwt af: voorbeeld → woordenbank → zin om aan te vullen → eerste letter → zonder hulp.</span></div></div>
   </div>
 </div>
 ''')
@@ -135,7 +137,7 @@ P(actx(AN(), "Mi último recuerdo · escribe",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Schrijf 2 dingen die je <b>vroeger vaak</b> deed (probeer «-aba / -ía»; we oefenen ze zo).</p>'
   '<p style="margin-left:12.5mm">De pequeño/a <span class="wl lg"></span><br>Todos los días <span class="wl lg"></span></p>',
-  apoyo="Marco"))
+  apoyo="Marco: Era… / Tenía… cuando, de repente, …"))
 sec_close()
 
 # ================= §1 · LA INFANCIA =================
@@ -171,7 +173,7 @@ P(actx(AN(), "Mi infancia · escribe",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Schrijf 3 zinnen over je jeugd (waar je woonde, wat je speelde, wie je bezocht).</p>'
   '<p style="margin-left:12.5mm">De pequeño/a vivía en <span class="wl md"></span> y jugaba a <span class="wl md"></span><br>Visitaba a <span class="wl lg"></span></p>',
-  apoyo="Marco"))
+  apoyo="Marco: De pequeño/a vivía en… · Jugaba… · Iba a…"))
 sec_close()
 
 retos("infancia", "§1.4 · Retos — la infancia contada por otros",
@@ -262,13 +264,13 @@ P(actx(AN(), "Mi vida de pequeño/a · la ficha",
   '<tr><td>¿Qué te gustaba hacer?</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td>¿Cómo eras?</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td>¿A quién veías a menudo?</td><td><span class="wl lg"></span></td></tr></tbody></table>',
-  apoyo="Marco"))
+  apoyo="Marco: Vivía en… · Tenía… · Me gustaba…"))
 P(actx("★", "Tarea comunicativa · ¿cómo era tu infancia?",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
   '<p>Vraag je buur hoe zijn jeugd was (¿cómo era tu infancia?) en antwoord met het <b>imperfecto</b>. Noteer 2 dingen.</p>'
   '<p style="margin-left:12.5mm">— ¿Cómo era tu infancia? — <span class="wl lg"></span></p>'
   '<p style="margin-left:12.5mm">Mi compañero/a: 1. <span class="wl full"></span>2. <span class="wl full"></span></p>',
-  apoyo="Marco"))
+  apoyo="Marco: ¿Dónde vivías? — Vivía en… · ¿Qué hacías? — Jugaba…"))
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha «¿Cómo era tu infancia?»</b> en la web (TTS): Nina describe su niñez. <b>1ª vez:</b> ¿dónde vivía? · <b>2ª vez:</b> ¿qué hacía? Escribe los datos.</div>',
            qr("Escanea y escucha", "§2 · ¿Cómo era tu infancia?", seed=601)))
 P('</div>')
@@ -391,7 +393,7 @@ P(actx(AN(), "Antes ↔ ahora · compara",
   '<p style="margin-left:12.5mm">1. Antes <span class="wl md"></span>, ahora <span class="wl md"></span> (más…que).<br>'
   '2. Antes <span class="wl md"></span>, pero ahora ya no.<br>'
   '3. Antes <span class="wl md"></span>, y todavía <span class="wl md"></span></p>',
-  apoyo="Marco"))
+  apoyo="Marco: Antes… pero ahora… · Ya no…"))
 P('</div>')
 
 retos("comparativos", "§4.4 · Retos — comparar para entender",
@@ -478,7 +480,7 @@ P(actx(AN(), "Compara · tu infancia y la hispana",
   [{"t":"🌍 Cultura","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>Vergelijk. Welke spelletjes speelde jij? Wat is anders/gelijk? Schrijf 2 zinnen met het <b>imperfecto</b> + una comparación.</p>'
   '<div class="wbox sm"></div>',
-  apoyo="Marco"))
+  apoyo="Marco: De pequeño/a yo… y allí los niños…"))
 P(actx(AN(), "Datos curiosos — une",
   [{"t":"🌍 Cultura","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Verbind (schrijf de letter).</p>'
@@ -581,7 +583,7 @@ P(actx("V.4", "Producir — una frase con tres palabras",
 P(actx("V.5", "Comunicar — mi infancia en 3 frases",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Schrijf 3 zinnen over je jeugd (dónde vivías · qué hacías · una comparación) en zeg ze hardop.</p>'
-  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="Marco"))
+  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="Marco: De pequeño/a vivía en… · Me gustaba… · Antes… ahora…"))
 P('<div class="se" style="margin-top:6mm">Mi mapa de recuerdos <span class="gloss" style="font-size:8pt">— teken je jeugdplek en label 6 dingen in het Spaans</span></div>')
 P('<div class="wbox lg"></div>')
 P(mispal("Mis palabras de la unidad", 7))

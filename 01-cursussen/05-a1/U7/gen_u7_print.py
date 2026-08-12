@@ -468,8 +468,10 @@ P(f'''
       <div class="ej" style="margin-top:2mm"><span class="badge skill">👂 Escuchar</span> <span class="badge skill">🎙️ Hablar</span> <span class="badge skill">🔍 Analizar</span> <span class="badge">👤 Solo</span> <span class="badge">👥 En parejas</span> <span class="badge">± 5 min</span> <span class="stars">★★☆</span></div>
       <div class="anchor gloss" style="margin-top:2mm">Elke oefening toont de <b>vaardigheid</b>, de <b>werkvorm</b>, de <b>tijd</b> en de <b>moeilijkheid</b>.</div></div>
     <div class="pcard"><div class="t" style="font-size:10.5pt">El apoyo baja poco a poco</div>
-      <div class="ej" style="margin-top:2mm"><span class="steun">Modelo</span> → <span class="steun">Banco</span> → <span class="steun">Marco</span> → <span class="steun">Pista</span> → <span class="steun">Sin ayuda</span></div>
-      <div class="anchor gloss" style="margin-top:2mm">De <b>steun bouwt af</b>: van model naar zónder hulp. Zo produceer je écht zelf.</div></div>
+      <div class="ej" style="margin-top:2mm">Un ejemplo hecho → las palabras que necesitas → una frase para completar
+      → solo la primera letra → nada.</div>
+      <div class="anchor" style="margin-top:2mm">La ayuda baja escalón a escalón hasta que escribes tú solo/a.
+      <span class="gloss">De steun bouwt af: voorbeeld → woordenbank → zin om aan te vullen → eerste letter → zonder hulp.</span></div></div>
   </div>
   <div class="fams" style="margin-top:4mm">
     <div class="pcard"><div class="t" style="font-size:10.5pt">Dos capas de color</div>
@@ -611,7 +613,7 @@ P(tarea_com("Tarea comunicativa · «Mi habitación»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
   '<p><b>Situación:</b> A beschrijft zijn/haar kamer (¿qué hay? ¿dónde está?), B tekent mee zonder te kijken. Vergelijk daarna. Wissel. <span class="gloss">«En mi habitación hay una cama. La cama está al lado de la ventana.»</span></p>'
   '<p style="margin-left:12.5mm">Mi habitación (3 cosas + dónde): <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Marco: hay… / … está…</div>'))
+  APO.html("Marco: hay… / … está…")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «¿hay o está?» (classify), «señala en la habitación» (point) en de casa-Memoria met zelfcorrectie.</div>')
 P('</div>')  # page §1.2
 
@@ -694,7 +696,7 @@ P(tarea_com("Tarea comunicativa · «¿Dónde está?»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 7 min"},{"t":"★★★"}],
   '<p><b>Situación:</b> A verstopt een voorwerp in zijn plattegrond, B raadt met vragen (¿Está debajo de…? ¿al lado de…?). Wissel. <span class="gloss">«—¿Está detrás del sofá? —No. —¿Al lado de la ventana? —¡Sí!»</span></p>'
   '<p style="margin-left:12.5mm">Mi pregunta ganadora: <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Marco: ¿Está … de …?</div>'))
+  APO.html("Marco: ¿Está … de …?")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «preposición de lugar» (cloze), «señala en el plano del barrio» (point) en de preposiciones-Tetris.</div>')
 P('</div>')  # page §2.2
 
@@ -784,7 +786,7 @@ P(tarea_com("Tarea comunicativa · «¿Qué están haciendo?»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 7 min"},{"t":"★★★"}],
   '<p><b>Situación:</b> A mimet een actie (cocinar, dormir, leer…), B raadt met <b>«¿Estás …ndo?»</b>. Wissel. Noteer één actie van je buur. <span class="gloss">«—¿Estás cocinando? —¡Sí, estoy cocinando!»</span></p>'
   '<p style="margin-left:12.5mm">Mi compañero/a está: <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Marco: ¿Estás …ndo?</div>'))
+  APO.html("Marco: ¿Estás …ndo?")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «estar + gerundio» (cloze), «¿qué estás haciendo?» en de gerundio-drills met zelfcorrectie.</div>')
 P('</div>')  # page §3.2
 
@@ -853,7 +855,7 @@ P(tarea_com("Tarea comunicativa · «¿Cómo se va a…?»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 9 min"},{"t":"★★★"}],
   '<p><b>Situación:</b> A vraagt de weg naar een plek in het barrio, B legt uit met imperativo. A volgt op het plano en controleert. Wissel van rol. <span class="gloss">«—Perdona, ¿cómo se va a la farmacia? —Sigue todo recto y gira a la derecha.»</span></p>'
   '<p style="margin-left:12.5mm">☐ vraag gesteld · ☐ sigue/gira/cruza gebruikt · ☐ bestemming klopt<br>Mijn instructie: <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Marco: rollenkaart + plano</div>'))
+  APO.html("Marco: rollenkaart + plano")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «ordena las instrucciones», «imperativo (la ruta)» (cloze) en de simulatie «¡explica el camino!».</div>')
 P('</div>')  # page §4.2
 
@@ -956,12 +958,12 @@ P(actx(3, "¿Verdadero o falso? + prueba",
 P(actx(4, "Del contexto: ¿qué significa?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Wat betekent <b>«se alquila»</b> en <b>«vistas a la plaza»</b>? Kies + leg uit welke aanwijzing hielp.</p>'
-  '<p style="margin-left:12.5mm">se alquila = ☐ te huur ☐ te koop &nbsp;·&nbsp; vistas a la plaza = ☐ uitzicht op het plein ☐ dichtbij het plein<br>Pista que me ayudó: <span class="wl lg"></span></p>', apoyo="Pista"))
+  '<p style="margin-left:12.5mm">se alquila = ☐ te huur ☐ te koop &nbsp;·&nbsp; vistas a la plaza = ☐ uitzicht op het plein ☐ dichtbij het plein<br>Pista que me ayudó: <span class="wl lg"></span></p>', apoyo="Pista: no mires la palabra suelta: lee la frase entera"))
 P(tarea_com("Tarea comunicativa · «Se alquila» (keten lezen→spreken)",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
   '<p><b></b> A is de <b>propietario/a</b> en beschrijft een woning (habitaciones, dónde está, precio); B is de <b>cliente</b> en stelt vragen (¿Cuántas habitaciones hay? ¿Dónde está?). Wissel. <span class="gloss">«Es un piso en el segundo. Hay dos habitaciones y está cerca del parque.»</span></p>'
   '<div class="wbox sm"></div>'
-  '<div class="steun" style="margin-left:0mm">Marco: Hay… · … está… · cuesta…</div>'))
+  APO.html("Marco: Hay… · … está… · cuesta…")))
 P('<div class="route-note">🎮 <b>Sigue online:</b> luister het anuncio (TTS), lees de tekst en neem je beschrijving op (recorder) op de digitale pagina.</div>')
 P('</div>')  # page §6b
 
@@ -1019,7 +1021,7 @@ P(tarea_com("Tarea comunicativa · «Dame indicaciones»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★☆"}],
   '<p><b>Situación:</b> beschrijf mondeling de weg van de klas naar een plek in de school/stad met <b>conectores de lugar</b> (todo recto · a la derecha · al final de…). Je buur tekent en controleert. <span class="gloss">«Sal de clase, gira a la derecha y sigue todo recto.»</span></p>'
   '<p style="margin-left:12.5mm">Mi ruta (3 pasos): <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Banco de palabras: conectores</div>'))
+  APO.html("Banco de palabras: conectores")))
 P('<div class="route-note">🎮 <b>Practica online:</b> «diptongo o hiato» en de conectoren-oefeningen met zelfcorrectie.</div>')
 P('</div>')  # page Taller
 

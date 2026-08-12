@@ -468,8 +468,10 @@ P(f'''
       <div class="ej" style="margin-top:2mm"><span class="badge skill">👂 Escuchar</span> <span class="badge skill">🎙️ Hablar</span> <span class="badge skill">🔍 Analizar</span> <span class="badge">👤 Solo</span> <span class="badge">👥 En parejas</span> <span class="badge">± 5 min</span> <span class="stars">★★☆</span></div>
       <div class="anchor gloss" style="margin-top:2mm">Elke oefening toont de <b>vaardigheid</b>, de <b>werkvorm</b>, de <b>tijd</b> en de <b>moeilijkheid</b>.</div></div>
     <div class="pcard"><div class="t" style="font-size:10.5pt">El apoyo baja poco a poco</div>
-      <div class="ej" style="margin-top:2mm"><span class="steun">Modelo</span> → <span class="steun">Banco</span> → <span class="steun">Marco</span> → <span class="steun">Pista</span> → <span class="steun">Sin ayuda</span></div>
-      <div class="anchor gloss" style="margin-top:2mm">De <b>steun bouwt af</b>: van model naar zónder hulp. Zo produceer je écht zelf.</div></div>
+      <div class="ej" style="margin-top:2mm">Un ejemplo hecho → las palabras que necesitas → una frase para completar
+      → solo la primera letra → nada.</div>
+      <div class="anchor" style="margin-top:2mm">La ayuda baja escalón a escalón hasta que escribes tú solo/a.
+      <span class="gloss">De steun bouwt af: voorbeeld → woordenbank → zin om aan te vullen → eerste letter → zonder hulp.</span></div></div>
   </div>
   <div class="fams" style="margin-top:4mm">
     <div class="pcard"><div class="t" style="font-size:10.5pt">Dos capas de color</div>
@@ -618,7 +620,7 @@ P(tarea_com("Tarea comunicativa · «En el mercado»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
   '<p><b>Situación:</b> A = cliente met een lijst, B = vendedor/a in de mercado. Vraag om producten met een <b>cantidad</b>; B antwoordt met de prijs. Wissel. <span class="gloss">«¿Me pone un kilo de tomates? —Claro, son dos euros.»</span></p>'
   '<p style="margin-left:12.5mm">Mi compra (3 productos + cantidad): <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Marco: ¿me pone…? + cantidad</div>'))
+  APO.html("Marco: ¿me pone…? + cantidad")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «cantidades» (tetris), «un poco de o muchos» en «señala en el mercado» met zelfcorrectie.</div>')
 P('</div>')  # page §1.2
 
@@ -692,7 +694,7 @@ P(actx(3, "Completa con la forma correcta (cloze)",
 P(actx(4, "Cadena de transformación",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Begin met <b>«Voy a comer un taco.»</b> en voer elke opdracht uit (schrijf de hele zin).</p>'
-  '<p style="margin-left:12.5mm">→ maak er een <b>vraag</b> van (tú): <span class="wl lg"></span><br>→ verander naar <b>nosotros</b>: <span class="wl lg"></span><br>→ maak <b>ontkennend</b> (yo): <span class="wl lg"></span><br>→ voeg <b>«mañana»</b> toe: <span class="wl lg"></span></p>', apoyo="Pista"))
+  '<p style="margin-left:12.5mm">→ maak er een <b>vraag</b> van (tú): <span class="wl lg"></span><br>→ verander naar <b>nosotros</b>: <span class="wl lg"></span><br>→ maak <b>ontkennend</b> (yo): <span class="wl lg"></span><br>→ voeg <b>«mañana»</b> toe: <span class="wl lg"></span></p>', apoyo="Pista: cada paso cambia una sola parte de la frase"))
 P(actx(5, "¿Qué vas a pedir? — escribe",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Schrijf drie zinnen: wat je <b>vas a comer</b>, <b>a beber</b> en <b>a probar</b> in México.</p>'
@@ -701,7 +703,7 @@ P(tarea_com("Tarea comunicativa · «Nuestros planes para la cena»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 7 min"},{"t":"★★★"}],
   '<p><b>Situación:</b> vertel elkaar wat jullie vanavond <b>gaan eten en drinken</b> (ir a + infinitivo) en noteer één plan van je buur. <span class="gloss">«Esta noche voy a cenar pasta. ¿Y tú?»</span></p>'
   '<p style="margin-left:12.5mm">El plan de mi compañero/a: <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Marco: Voy a … · Vamos a …</div>'))
+  APO.html("Marco: Voy a … · Vamos a …")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «voy a… (cloze)», «ordena la cena» en de presente-Tetris met zelfcorrectie.</div>')
 P('</div>')  # page §2.2
 
@@ -776,7 +778,7 @@ P(tarea_com("Tarea comunicativa · «En el restaurante»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 9 min"},{"t":"★★★"}],
   '<p><b>Situación:</b> A = camarero/a, B = cliente. Speel de hele scène: begroeten → bestellen (primero/segundo/beber) → ¡que aproveche! → la cuenta. Wissel van rol. <span class="gloss">Gebruik: ¿Qué va a tomar? · Para mí… · ¿Me pone…? · La cuenta, por favor.</span></p>'
   '<p style="margin-left:12.5mm">☐ begroet · ☐ primero · ☐ segundo · ☐ bebida · ☐ la cuenta<br>Mijn bestelling: <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Marco: rollenkaart</div>'))
+  APO.html("Marco: rollenkaart")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «ordena el diálogo», «¿camarero o cliente?» en de simulatie «¡Pide en el restaurante!».</div>')
 P('</div>')  # page §3.2
 
@@ -847,7 +849,7 @@ P(tarea_com("Tarea comunicativa · «¿Me lo trae?»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★☆"}],
   '<p><b>Situación:</b> A vraagt om iets (la carta, el pan, los tacos…), B antwoordt kort met het pronomen. Wissel. <span class="gloss">«¿Me trae la carta? —Sí, la traigo.»</span></p>'
   '<p style="margin-left:12.5mm">Un ejemplo nuestro: <span class="wl full"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Marco: lo/la/los/las</div>'))
+  APO.html("Marco: lo/la/los/las")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «¿lo, la, los o las?» met zelfcorrectie.</div>')
 P('</div>')  # page §4.2
 
@@ -900,7 +902,7 @@ P(actx(3, "¿Verdadero o falso? + prueba",
 P(actx(4, "Del contexto: ¿qué significa?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Wat betekent <b>«plato fuerte»</b> en <b>«casero»</b>? Kies + leg uit welke aanwijzing hielp.</p>'
-  '<p style="margin-left:12.5mm">plato fuerte = ☐ hoofdgerecht ☐ dessert &nbsp;·&nbsp; casero = ☐ zelfgemaakt ☐ duur<br>Pista que me ayudó: <span class="wl lg"></span></p>', apoyo="Pista"))
+  '<p style="margin-left:12.5mm">plato fuerte = ☐ hoofdgerecht ☐ dessert &nbsp;·&nbsp; casero = ☐ zelfgemaakt ☐ duur<br>Pista que me ayudó: <span class="wl lg"></span></p>', apoyo="Pista: no mires la palabra suelta: lee la frase entera"))
 P('<div class="ptexts">'
   f'<div class="ptext"><div class="ph"><div class="av">{AV["diego"]}</div><div><div class="nm">Diego · una receta</div><div class="fr">guacamole en 3 pasos</div></div></div>'
   '<p><b>Ingredientes:</b> un <span class="evi">aguacate</span>, un <span class="evi">tomate</span>, un poco de <span class="evi">cebolla</span> y <span class="evi">lima</span>.<br>'
@@ -915,7 +917,7 @@ P(tarea_com("Tarea comunicativa · «¿Qué vas a pedir?» (keten lezen→spreke
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
   '<p><b></b> Kies één van de twee cartas. Zeg wat je <b>vas a pedir</b> (primero, segundo, postre, bebida) én waarom. Je buur bestelt uit de andere carta. <span class="gloss">«Voy a pedir tacos de pollo porque me gusta el pollo.»</span></p>'
   '<div class="wbox sm"></div>'
-  '<div class="steun" style="margin-left:0mm">Marco: Voy a pedir… porque…</div>'))
+  APO.html("Marco: Voy a pedir… porque…")))
 P('<div class="route-note">🎮 <b>Sigue online:</b> luister de cartas (TTS), lees de receta en neem je bestelling op (recorder) op de digitale pagina.</div>')
 P('</div>')  # page §5b
 

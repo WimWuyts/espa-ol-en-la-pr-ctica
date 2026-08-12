@@ -115,8 +115,10 @@ P(f'''
       <div class="ej" style="margin-top:2mm"><span class="badge skill">👂 Escuchar</span> <span class="badge skill">🎙️ Hablar</span> <span class="badge skill">🔍 Analizar</span> <span class="badge">👤 Solo</span> <span class="badge">👥 En parejas</span> <span class="badge">± 5 min</span> <span class="stars">★★☆</span></div>
       <div class="anchor gloss" style="margin-top:2mm">Elke oefening toont de <b>vaardigheid</b>, de <b>werkvorm</b>, de <b>tijd</b> en de <b>moeilijkheid</b>.</div></div>
     <div class="pcard"><div class="t" style="font-size:10.5pt">El apoyo baja poco a poco</div>
-      <div class="ej" style="margin-top:2mm"><span class="steun">Modelo</span> → <span class="steun">Banco</span> → <span class="steun">Marco</span> → <span class="steun">Pista</span> → <span class="steun">Sin ayuda</span></div>
-      <div class="anchor gloss" style="margin-top:2mm">De <b>steun bouwt af</b>: van model naar zónder hulp. Zo produceer je écht zelf.</div></div>
+      <div class="ej" style="margin-top:2mm">Un ejemplo hecho → las palabras que necesitas → una frase para completar
+      → solo la primera letra → nada.</div>
+      <div class="anchor" style="margin-top:2mm">La ayuda baja escalón a escalón hasta que escribes tú solo/a.
+      <span class="gloss">De steun bouwt af: voorbeeld → woordenbank → zin om aan te vullen → eerste letter → zonder hulp.</span></div></div>
   </div>
 </div>
 ''')
@@ -135,7 +137,7 @@ P(actx(AN(), "Presente → una acción del pasado (repaso)",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Schrijf 2 dingen die je <b>gisteren</b> deed (probeer een verleden-vorm; we oefenen ze zo).</p>'
   '<p style="margin-left:12.5mm">Ayer <span class="wl lg"></span><br>El fin de semana pasado <span class="wl lg"></span></p>',
-  apoyo="Marco"))
+  apoyo="Marco: hoy hablo → ayer hablé · hoy como → ayer comí"))
 sec_close()
 
 # ================= §1 · BIOGRAFÍA Y LOGROS =================
@@ -168,7 +170,7 @@ P(actx(AN(), "Mi persona admirada · escribe",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Schrijf 3 zinnen over een persoon die je bewondert (beroep, wat hij/zij deed).</p>'
   '<p style="margin-left:12.5mm">Admiro a <span class="wl md"></span>. Fue <span class="wl md"></span>.<br>Es famoso/a porque <span class="wl lg"></span></p>',
-  apoyo="Marco"))
+  apoyo="Marco: Admiro a… · Nació en… · Fue… · Porque…"))
 sec_close()
 
 retos("biografia", "§1.4 · Retos — una vida en objetos y en cifras",
@@ -278,7 +280,7 @@ P(actx("★", "Tarea comunicativa · ¿qué hiciste ayer?",
   '<p>Vraag je buur wat hij gisteren deed (¿qué hiciste ayer?) en antwoord met de <b>indefinido</b>. Noteer 2 dingen.</p>'
   '<p style="margin-left:12.5mm">— ¿Qué hiciste ayer? — <span class="wl lg"></span></p>'
   '<p style="margin-left:12.5mm">Mi compañero/a: 1. <span class="wl full"></span>2. <span class="wl full"></span></p>',
-  apoyo="Marco"))
+  apoyo="Marco: Ayer… · Después… · ¿Y tú, qué hiciste?"))
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha «¿Quién fue…?»</b> en la web (TTS): una minibiografía misteriosa. <b>1ª vez:</b> ¿de qué oficio habla? · <b>2ª vez:</b> ¿qué hizo? Escribe los datos.</div>',
            qr("Escanea y escucha", "§2 · ¿Quién fue…?", seed=501)))
 P('</div>')
@@ -350,7 +352,7 @@ P(actx("★", "Tarea comunicativa · ¿se lo diste?",
   [{"t":"🗣️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>Vraag je buur of hij dingen aan iemand gaf/stuurde; antwoord met <b>se lo/se la</b>. «¿El regalo a tu madre? — Sí, se lo di.» Noteer 3 antwoorden.</p>'
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>',
-  apoyo="Marco"))
+  apoyo="Marco: ¿Se lo diste? — Sí, se lo di / No, no se lo di"))
 P('<div class="guide"><div class="ic">🎡</div><div><span class="hand">Online:</span> <span class="g">de <b>dubbele-vervangingsanimatie</b> en de spellen op de hub oefenen se lo/se la; + cloze en foutenkliniek.</span></div></div>')
 P('</div>')
 
@@ -391,7 +393,7 @@ P(actx("★", "Info-gap · adivina el personaje",
   [{"t":"🗣️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
   '<p>A beschrijft een figuur met de indefinido (nació…, ganó…, escribió…) zonder de naam; B raadt. Wissel. Noteer wie het is.</p>'
   '<p style="margin-left:12.5mm">Personaje 1: <span class="wl full"></span>Personaje 2: <span class="wl full"></span></p>',
-  apoyo="Marco"))
+  apoyo="Marco: Nació en… · Trabajó como… · Escribió/pintó/ganó…"))
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha «Una leyenda del tango»</b> en la web (TTS). <b>1ª vez:</b> ¿de quién habla? · <b>2ª vez:</b> ordena los hechos de su vida.</div>',
            qr("Escanea y escucha", "§4 · Una leyenda", seed=502)))
 sec_close()
@@ -588,7 +590,7 @@ P(actx("V.4", "Producir — una frase con tres palabras",
 P(actx("V.5", "Comunicar — una minibiografía en 3 frases",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Schrijf 3 zinnen over een figuur (nació · hizo · una opinión) en zeg ze hardop.</p>'
-  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="Marco"))
+  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="Marco: Nació en… · Estudió/trabajó… · Murió en… / Hoy vive en…"))
 P('<div class="se" style="margin-top:6mm">Mi línea de tiempo <span class="gloss" style="font-size:8pt">— teken een tijdlijn en label 5 momenten in het Spaans</span></div>')
 P('<div class="wbox lg"></div>')
 P(mispal("Mis palabras de la unidad", 7))

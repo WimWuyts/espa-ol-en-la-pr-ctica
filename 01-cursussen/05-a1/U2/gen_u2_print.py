@@ -521,8 +521,10 @@ P(f'''
       <div class="ej" style="margin-top:2mm"><span class="badge skill">👂 Escuchar</span> <span class="badge skill">🎙️ Hablar</span> <span class="badge skill">🔍 Analizar</span> <span class="badge">👤 Solo</span> <span class="badge">👥 En parejas</span> <span class="badge">± 5 min</span> <span class="stars">★★☆</span></div>
       <div class="anchor gloss" style="margin-top:2mm">Elke oefening toont de <b>vaardigheid</b>, de <b>werkvorm</b>, de <b>tijd</b> en de <b>moeilijkheid</b>.</div></div>
     <div class="pcard"><div class="t" style="font-size:10.5pt">El apoyo baja poco a poco</div>
-      <div class="ej" style="margin-top:2mm"><span class="steun">Modelo</span> → <span class="steun">Banco</span> → <span class="steun">Marco</span> → <span class="steun">Pista</span> → <span class="steun">Sin ayuda</span></div>
-      <div class="anchor gloss" style="margin-top:2mm">De <b>steun bouwt af</b>: van model naar zónder hulp. Zo produceer je écht zelf.</div></div>
+      <div class="ej" style="margin-top:2mm">Un ejemplo hecho → las palabras que necesitas → una frase para completar
+      → solo la primera letra → nada.</div>
+      <div class="anchor" style="margin-top:2mm">La ayuda baja escalón a escalón hasta que escribes tú solo/a.
+      <span class="gloss">De steun bouwt af: voorbeeld → woordenbank → zin om aan te vullen → eerste letter → zonder hulp.</span></div></div>
   </div>
   <div class="fams" style="margin-top:4mm">
     <div class="pcard"><div class="t" style="font-size:10.5pt">Dos capas de color</div>
@@ -703,7 +705,7 @@ P('<p style="font-size:9.6pt">Nu je de leden kent en met <b>tener</b> kan tellen
 P(actx(8, "Mi familia en números",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Escribe tres frases sobre tu familia con <b>tener</b> + un número. <span class="gloss">Drie zinnen over jouw familie met tener en een aantal.</span></p>'
-  '<p style="margin-left:12.5mm">1) En mi familia somos <span class="wl md"></span>.<br>2) Tengo <span class="wl lg"></span>.<br>3) Mi familia tiene <span class="wl lg"></span>.</p>', apoyo="Marco"))
+  '<p style="margin-left:12.5mm">1) En mi familia somos <span class="wl md"></span>.<br>2) Tengo <span class="wl lg"></span>.<br>3) Mi familia tiene <span class="wl lg"></span>.</p>', apoyo="Marco: En mi familia somos… · Tengo… hermanos · Tengo… primos"))
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha a Lucía presentar a su familia.</b> <span class="gloss">Luister; noteer hoeveel broers/zussen en huisdieren ze heeft.</span></div>',
            qr("Escanea y escucha", "Audio 1 · Mi familia · 0:45", seed=221)))
 P(actx(9, "Escucha y anota",
@@ -714,7 +716,7 @@ P(tarea_com("Tarea comunicativa · Preséntame a tu gente",
   [{"t":"🎙️ Hablar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
   '<p><b>Situación:</b> jij en je buur wisselen jullie families uit, net zoals Lucía haar album toont. Vertel wie er in je gezin zit en hoeveel je er van elk hebt. Je buur tekent jouw <b>árbol genealógico</b>. <span class="gloss">«En mi familia somos cuatro. Tengo una hermana y un perro…»</span></p>'
   '<div class="wbox sm"></div>'
-  '<div class="steun" style="margin-left:0mm">Modelo: Lucía</div>'))
+  APO.html("Modelo: Lucía")))
 P(actx(10, "Dictado preparado — la familia de Lucía",
   [{"t":"👂 Escuchar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>Escucha y escribe las cuatro frases. <span class="gloss">Luister en schrijf de vier zinnen op.</span></p>'
@@ -795,7 +797,7 @@ P(tarea_com("Tarea comunicativa · El árbol de mi compañero/a",
   [{"t":"🎙️ Hablar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👥 En parejas"},{"t":"± 7 min"},{"t":"★★★"}],
   '<p><b>Situatie:</b> jij beschrijft je familie met posesivos; je buur tekent de stamboom en labelt elk vak. Wissel dan om. <span class="gloss">«Mi padre se llama… Mis abuelos viven en…»</span></p>'
   '<div class="wbox sm"></div>'
-  '<div class="steun" style="margin-left:0mm">Marco: mi/mis…</div>'))
+  APO.html("Marco: mi/mis…")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «posesivo (cloze)» en «singular o plural».</div>')
 P('</div>')  # page §2.2
 
@@ -858,7 +860,7 @@ P(actx(4, "Concuerda el adjetivo (cloze)",
   '2. Mis abuelos son muy <span class="wl md"></span> <i>(simpático)</i>.<br>'
   '3. Las primas de Lucía son <span class="wl md"></span> <i>(alto)</i>.<br>'
   '4. Mi profesor es <span class="wl md"></span> <i>(inteligente)</i>.</p>'
-  '<p style="margin-left:12.5mm" class="gloss">✅ Zelfcorrectie online.</p>', apoyo="Marco"))
+  '<p style="margin-left:12.5mm" class="gloss">✅ Zelfcorrectie online.</p>', apoyo="Marco: masculino -o · femenino -a · plural +s"))
 P(actx(5, "Clasifica: -o / -e·consonante",
   [{"t":"🔍 Analizar","skill":True},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>¿Qué adjetivos tienen cuatro formas (-o) y cuáles solo dos? <span class="gloss">Welke adjectieven hebben vier vormen en welke maar twee?<span class="words"><b>guapo · inteligente · alto · joven · rubio · mayor</b></span></span></p>'
@@ -887,7 +889,7 @@ P(tarea_com("Tarea comunicativa · ¿A quién describo?",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 7 min"},{"t":"★★★"}],
   '<p><b>Situatie (juego «¿Quién es?»):</b> beschrijf een familielid van je buur zonder de naam te zeggen; je buur raadt wie. Wissel om. <span class="gloss">«Es alta, morena y muy simpática. ¿Quién es?»</span></p>'
   '<p style="margin-left:12.5mm">Mi descripción: <span class="wl full"></span> ¿Quién es? <span class="wl md"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Marco: Es… tiene…</div>'))
+  APO.html("Marco: Es… tiene…")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «físico vs. carácter», «concuerda el adjetivo» en «colores».</div>')
 P('</div>')  # page §3.3
 
@@ -965,7 +967,7 @@ P(tarea_com("Tarea comunicativa · ¿Cómo es y cómo está hoy?",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
   '<p><b>Situatie:</b> beschrijf een familielid met <b>ser</b> (blijvend) én zeg hoe hij/zij zich <b>vandaag</b> voelt of waar hij/zij is met <b>estar</b>. Je buur reageert. <span class="gloss">«Mi tía es muy alegre, pero hoy está un poco cansada.»</span></p>'
   '<div class="wbox sm"></div>'
-  '<div class="steun" style="margin-left:0mm">Marco: es… / está…</div>'))
+  APO.html("Marco: es… / está…")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «ser o estar» (clasifica) en «ser/estar (cloze)».</div>')
 P('</div>')  # page §4.2
 
@@ -1017,7 +1019,7 @@ P(tarea_com("Tarea comunicativa · Presenta tu álbum",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
   '<p><b>Situatie:</b> toon (echte of getekende) foto\'s en stel je familie voor met <b>este/esta</b> + <b>ser</b> + una descripción. Je buur stelt vragen. <span class="gloss">«Esta es mi madre. Es alta y muy simpática.»</span></p>'
   '<div class="wbox sm"></div>'
-  '<div class="steun" style="margin-left:0mm">Modelo: Lucía</div>'))
+  APO.html("Modelo: Lucía")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «este o ese» en «señala en el álbum».</div>')
 P('</div>')  # page §5.2
 
@@ -1065,7 +1067,7 @@ P(tarea_com("Tarea comunicativa · Y tu familia, ¿cómo es?",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"± 8 min"},{"t":"★★★"}],
   '<p><b>Tu reacción:</b> escribe un texto corto como el de Lucía sobre tu familia (cuántos sois, nombres, una descripción por persona). Después léelo en voz alta. <span class="gloss">Schrijf een korte tekst zoals die van Lucía en lees hem daarna voor.</span> <span class="gloss">Recycle: tener · posesivos · adjetivos · ser/estar.</span></p>'
   '<div class="wbox"></div>'
-  '<div class="steun" style="margin-left:0mm">Modelo: de tekst van Lucía</div>'))
+  APO.html("Modelo: de tekst van Lucía")))
 P('</div>')  # page §6
 
 # ================= TALLER DE LENGUA =================

@@ -1,31 +1,31 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""De steunladder onder elke oefening — in het Spaans, met het Nederlands erbij.
+"""De steun onder een oefening — wat de leerling krijgt, niet hoe het heet.
 
-WAAROM DIT BESTAAT
-Onder elke oefening stond «Steun · Marco» of «Steun · Pista». De auteur, bij het
-nalezen van C5 U1: *«Wat bedoel je met Steun Marco?»* · *«Wat bedoel je met
-pista?»* · *«Apoyo (met als steuntaal NL: steun). Voor alle oefeningen doorheen
-de ganse C4 C5 en C6PLUS.»* Terecht: `Marco` en `Pista` zijn de namen van de
-niveaus uit het ontwerp (CLAUDE.md §14), niet iets wat een leerling van vijftien
-begrijpt. En het woord ervoor stond in het Nederlands terwijl de rest Spaans is.
+WAAROM DIT ZO IS
+Er stond «Steun · Marco» onder een oefening. De auteur: *«Wat bedoel je met
+Steun Marco?»* en later *«Waar slaat die Marco op?»*. Marco is de naam van een
+trede in de steunladder (modelo → banco → marco → primera letra → sin ayuda) uit
+CLAUDE.md §14 — ontwerptaal, geen woord dat een leerling van vijftien kan raden.
 
-Wat er nu staat:
+De ladder blijft bestaan in het ontwerp en in het docentendossier, maar op de
+leerlingbladzijde staat nu alleen nog **wat de hulp is**:
 
-    Apoyo (steun) · Marco (zinsframe): Vivo en… / En mi ciudad hay…
+    Apoyo · steun: Creo que… porque…
+    Apoyo · steun: las palabras que necesitas están en el recuadro
 
-Het niveau houdt zijn Spaanse naam — die staat in de leerlijn en op de
-docentenpagina — maar krijgt er één Nederlands woord bij dat zegt wát de hulp
-is. De detailtekst die erachter stond was vaak Nederlands («tabel open»,
-«onderstreep in de tekst»); die staat hier vertaald, op één plaats, zodat alle
-31 units in één keer meeveranderen.
+Dat maakte ook zichtbaar wat er misging: 77 oefeningen hadden `apoyo="Marco"`
+zónder frame erachter. Die steunregel zei de leerling niets. Ze zijn ingevuld
+met het échte frame; waar er geen zinvolle hulp bestond, is de regel geschrapt.
+
+De Nederlandse detailteksten («tabel open», «onderstreep in de tekst») staan
+hier vertaald, op één plaats, zodat alle 31 units meeveranderen.
 
 GEBRUIK
     import apoyo
     apoyo.html("Marco: wat/waar/wanneer/waarom")   → <div class="steun">…</div>
     apoyo.texto("Pista")                            → platte tekst
-
-De generatoren roepen dit aan via hun eigen `steun()`; niets anders verandert.
+    apoyo.nivel("Marco: …")                         → «Marco», voor het dossier
 """
 
 import re
@@ -168,38 +168,57 @@ def _parte(txt):
     return (nivel, _NIV.get(nivel, ""), des, dnl)
 
 
-def texto(txt):
-    """Platte tekst — voor de docentendossiers en de controle."""
+# Wat een kaal niveau betekent, in gewone taal. Voor «Modelo», «Banco de
+# palabras» en «Primera letra» valt dat te zeggen zonder de oefening te kennen:
+# het beschrijft wat er op de bladzijde staat. Voor «Marco» en «Pista» niet —
+# een frame en een tip zijn per oefening anders — dus die staan in de generator
+# zelf, en een kale «Marco» levert géén steunregel meer op.
+KALO = {
+    "Modelo":            ("arriba tienes un ejemplo hecho", "er staat een voorbeeld boven"),
+    "Banco de palabras": ("las palabras que necesitas están en el recuadro",
+                          "de woorden die je nodig hebt, staan in het kader"),
+    "Primera letra":     ("tienes la primera letra", "je krijgt de eerste letter"),
+    "Sin ayuda":         ("sin ayuda", "zonder hulp"),
+}
+
+
+def nivel(txt):
+    """De naam van de trede — voor het docentendossier, niet voor het boek."""
+    p = _parte(txt)
+    return p[0] if p else ""
+
+
+def _piezas(txt):
+    """(spaans, nederlands) van de hulp zelf, of None als er niets te zeggen valt."""
     p = _parte(txt)
     if not p:
-        return ""
-    nivel, nl, des, dnl = p
-    out = "Apoyo (steun)"
-    if nivel:
-        out += " · %s (%s)" % (nivel, nl)
+        return None
+    niv, _nl, des, dnl = p
     if des:
-        out += ": %s" % des
-    if dnl:
-        out += " — %s" % dnl
-    return out
+        return (des, dnl)
+    return KALO.get(niv)
+
+
+def texto(txt):
+    """Platte tekst — voor de docentendossiers en de controle."""
+    piezas = _piezas(txt)
+    if not piezas:
+        return ""
+    es, nl = piezas
+    return "Apoyo (steun): %s%s" % (es, " — %s" % nl if nl else "")
 
 
 def html(txt, margen="12.5mm"):
     """Het steunregeltje onder een oefening."""
-    p = _parte(txt)
-    if not p:
+    piezas = _piezas(txt)
+    if not piezas:
         return ""
-    nivel, nl, des, dnl = p
-    partes = ['<b>Apoyo</b> <span class="gloss">steun</span>']
-    if nivel:
-        partes.append('· <b>%s</b> <span class="gloss">%s</span>' % (nivel, nl))
-    if des:
-        partes[-1] += ':'
-        partes.append(des)
-    if dnl:
-        partes.append('<span class="gloss"> — %s</span>' % dnl)
+    es, nl = piezas
+    cuerpo = '<b>Apoyo</b> <span class="gloss">steun</span>: %s' % es
+    if nl:
+        cuerpo += ' <span class="gloss">— %s</span>' % nl
     estilo = ' style="margin-left:%s"' % margen if margen else ""
-    return '<div class="steun"%s>%s</div>' % (estilo, " ".join(partes))
+    return '<div class="steun"%s>%s</div>' % (estilo, cuerpo)
 
 
 if __name__ == "__main__":

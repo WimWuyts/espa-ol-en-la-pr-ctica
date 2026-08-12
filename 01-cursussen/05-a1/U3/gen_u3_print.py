@@ -471,8 +471,10 @@ P(f'''
       <div class="ej" style="margin-top:2mm"><span class="badge skill">👂 Escuchar</span> <span class="badge skill">🎙️ Hablar</span> <span class="badge skill">🔍 Analizar</span> <span class="badge">👤 Solo</span> <span class="badge">👥 En parejas</span> <span class="badge">± 5 min</span> <span class="stars">★★☆</span></div>
       <div class="anchor gloss" style="margin-top:2mm">Elke oefening toont de <b>vaardigheid</b>, de <b>werkvorm</b>, de <b>tijd</b> en de <b>moeilijkheid</b>.</div></div>
     <div class="pcard"><div class="t" style="font-size:10.5pt">El apoyo baja poco a poco</div>
-      <div class="ej" style="margin-top:2mm"><span class="steun">Modelo</span> → <span class="steun">Banco</span> → <span class="steun">Marco</span> → <span class="steun">Pista</span> → <span class="steun">Sin ayuda</span></div>
-      <div class="anchor gloss" style="margin-top:2mm">De <b>steun bouwt af</b>: van model naar zónder hulp. Zo produceer je écht zelf.</div></div>
+      <div class="ej" style="margin-top:2mm">Un ejemplo hecho → las palabras que necesitas → una frase para completar
+      → solo la primera letra → nada.</div>
+      <div class="anchor" style="margin-top:2mm">La ayuda baja escalón a escalón hasta que escribes tú solo/a.
+      <span class="gloss">De steun bouwt af: voorbeeld → woordenbank → zin om aan te vullen → eerste letter → zonder hulp.</span></div></div>
   </div>
   <div class="fams" style="margin-top:4mm">
     <div class="pcard"><div class="t" style="font-size:10.5pt">Dos capas de color</div>
@@ -618,7 +620,7 @@ P(tarea_com("Tarea comunicativa · ¿A qué hora…? — la agenda",
   '<tr><td>…comes</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>…sales del instituto</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr></tbody></table>'
   '<p style="margin-left:12.5mm">Nuestro momento libre común: <span class="wl md"></span></p>'
-  '<div class="steun" style="margin-left:12.5mm">Marco: ¿A qué hora…?</div>'))
+  APO.html("Marco: ¿A qué hora…?")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «La hora» (reloj ↔ frase), «¿es la o son las?» en «escucha la hora».</div>')
 P('</div>')  # page §1.2
 
@@ -717,7 +719,7 @@ P(tarea_com("Tarea comunicativa · Mi mañana",
   [{"t":"🎙️ Hablar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
   '<p>Vertel je buur je <b>ochtend</b> in de juiste volgorde met tijden en reflexieve werkwoorden. Je buur tekent jouw horario. <span class="gloss">«Me despierto a las 7, me levanto, me ducho…»</span></p>'
   '<div class="wbox sm"></div>'
-  '<div class="steun" style="margin-left:0mm">Modelo: Pau</div>'))
+  APO.html("Modelo: Pau")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «¿reflexivo o no?», «memoria de la rutina» en «ordena mi día».</div>')
 P('</div>')  # page §2.2
 
@@ -797,7 +799,7 @@ P(actx(3, "Completa con el presente irregular (cloze)",
 P(actx(4, "Una cosa cambia",
   [{"t":"🔍 Analizar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Begin met <b>«Yo empiezo a las ocho.»</b> en pas telkens één ding aan.</p>'
-  '<p style="margin-left:12.5mm">→ maak <b>nosotros</b>: <span class="wl lg"></span><br>→ maak <b>Pau</b>: <span class="wl lg"></span><br>→ verander werkwoord naar <b>querer</b> (yo): <span class="wl lg"></span></p>', apoyo="Pista"))
+  '<p style="margin-left:12.5mm">→ maak <b>nosotros</b>: <span class="wl lg"></span><br>→ maak <b>Pau</b>: <span class="wl lg"></span><br>→ verander werkwoord naar <b>querer</b> (yo): <span class="wl lg"></span></p>', apoyo="Pista: cambia solo lo que se te pide; lo demás se queda igual"))
 P('</div>')  # page §3.2
 # §3.3 hacer/ir/salir
 P('<div class="page">')
@@ -827,7 +829,7 @@ P(actx(5, "Conjuga hacer / ir / salir",
   '3. Yo <span class="wl md"></span> <i>(salir)</i> de casa a las ocho.<br>'
   '4. Nosotros <span class="wl md"></span> <i>(ir)</i> al parque el domingo.<br>'
   '5. ¿Tú <span class="wl md"></span> <i>(hacer)</i> deporte?</p>'
-  '<p style="margin-left:12.5mm" class="gloss">✅ De oplossingen staan online (zelfcorrectie op de digitale pagina).</p>', apoyo="Pista"))
+  '<p style="margin-left:12.5mm" class="gloss">✅ De oplossingen staan online (zelfcorrectie op de digitale pagina).</p>', apoyo="Pista: la forma de yo es la rara: hago · voy · salgo"))
 P(audiorow('<div class="ic">🎧</div><div><b>Microdictado.</b> Escucha dos veces y escribe las frases sobre el día de Pau. <span class="gloss">1ª: betekenis · 2ª: schrijf.</span></div>',
            qr("Escanea y escucha", "Audio 3.3 · Microdictado · 0:45", seed=133)))
 P(actx(6, "Microdictado con reconstrucción",
@@ -915,7 +917,7 @@ P(tarea_com("Tarea comunicativa · Mi semana típica",
   '<tr><td>lunes</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td>miércoles</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td>sábado</td><td><span class="wl lg"></span></td></tr></tbody></table>'
-  '<div class="steun" style="margin-left:12.5mm">Marco: frecuencia + hora</div>'))
+  APO.html("Marco: frecuencia + hora")))
 P(actx(5, "Mi estación favorita",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Schrijf 2–3 zinnen: welk seizoen vind je leuk en wat doe je dan? Gebruik <b>en</b> + seizoen + een frequentiebijwoord.</p>'
@@ -964,12 +966,12 @@ P(actx(3, "¿Verdadero o falso? + prueba",
 P(actx(4, "Del contexto: ¿qué significa?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Wat betekent <b>«enseguida»</b> en <b>«al mediodía»</b>? Kies + leg uit welke aanwijzing hielp.</p>'
-  '<p style="margin-left:12.5mm">enseguida = ☐ meteen ☐ later &nbsp;·&nbsp; al mediodía = ☐ \'s middags (12u) ☐ \'s nachts<br>Pista que me ayudó: <span class="wl lg"></span></p>', apoyo="Pista"))
+  '<p style="margin-left:12.5mm">enseguida = ☐ meteen ☐ later &nbsp;·&nbsp; al mediodía = ☐ \'s middags (12u) ☐ \'s nachts<br>Pista que me ayudó: <span class="wl lg"></span></p>', apoyo="Pista: no mires la palabra suelta: lee la frase entera"))
 P(tarea_com("Tarea comunicativa · Responde a Pau",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
   '<p><b></b> Schrijf Pau een <b>antwoordbericht</b> over jouw dag (afzender = jij · ontvanger = Pau · doel = je routine delen). Gebruik uren + reflexieve/onregelmatige werkwoorden. Lees het daarna hardop voor.</p>'
   '<div class="wbox"></div>'
-  '<div class="steun" style="margin-left:0mm">Marco: Me levanto a las… / empiezo… / por la tarde…</div>'))
+  APO.html("Marco: Me levanto a las… / empiezo… / por la tarde…")))
 P('<div class="route-note">🎮 <b>Sigue online:</b> op de digitale pagina beluister je «El día de Pau» (audio) en neem je je antwoord op (recorder).</div>')
 P('</div>')  # page §5b
 
@@ -1053,13 +1055,13 @@ P(actx(2, "Compara España ↔ Bélgica",
   '<table class="wtab mp"><thead><tr><th>¿A qué hora…?</th><th>España</th><th>Bélgica (tú)</th></tr></thead><tbody>'
   '<tr><td>se almuerza / comida</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>se cena</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr></tbody></table>'
-  '<p style="margin-left:12.5mm">La diferencia más grande: <span class="wl full"></span></p>', apoyo="Pista"))
+  '<p style="margin-left:12.5mm">La diferencia más grande: <span class="wl full"></span></p>', apoyo="Pista: fíjate en la hora de comer y en la hora de cenar"))
 P('<div class="truc"><b>🟡 Curiosidad:</b> el reloj de la <b>Puerta del Sol</b> en Madrid marca las <b>12 campanadas</b> de Nochevieja; con cada una se come <b>una uva</b> (¡doce uvas de la suerte!). El tiempo también es fiesta.</div>')
 P(actx(3, "Tu horario ideal — mini-proyecto",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>En España se come a las dos y se cena a las diez. ¿Y tu día «a la española»? Schrijf drie uren en vergelijk ze met je dag van nu.</p>'
   '<p style="margin-left:12.5mm">Desayuno: <span class="wl sm"></span> · Comida: <span class="wl sm"></span> · Cena: <span class="wl sm"></span></p>'
-  '<p style="margin-left:12.5mm">¿Te gusta más el horario español o el belga? <span class="wl full"></span></p>', apoyo="Pista"))
+  '<p style="margin-left:12.5mm">¿Te gusta más el horario español o el belga? <span class="wl full"></span></p>', apoyo="Pista: escribe primero las horas, después el verbo de cada momento"))
 P(mispal("Mi mochila cultural — el tiempo en España", 2))
 P('</div>')  # page Cultura
 

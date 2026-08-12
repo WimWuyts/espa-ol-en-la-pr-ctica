@@ -115,8 +115,10 @@ P(f'''
       <div class="ej" style="margin-top:2mm"><span class="badge skill">👂 Escuchar</span> <span class="badge skill">🎙️ Hablar</span> <span class="badge skill">🔍 Analizar</span> <span class="badge">👤 Solo</span> <span class="badge">👥 En parejas</span> <span class="badge">± 5 min</span> <span class="stars">★★☆</span></div>
       <div class="anchor gloss" style="margin-top:2mm">Elke oefening toont de <b>vaardigheid</b>, de <b>werkvorm</b>, de <b>tijd</b> en de <b>moeilijkheid</b>.</div></div>
     <div class="pcard"><div class="t" style="font-size:10.5pt">El apoyo baja poco a poco</div>
-      <div class="ej" style="margin-top:2mm"><span class="steun">Modelo</span> → <span class="steun">Banco</span> → <span class="steun">Marco</span> → <span class="steun">Pista</span> → <span class="steun">Sin ayuda</span></div>
-      <div class="anchor gloss" style="margin-top:2mm">De <b>steun bouwt af</b>: van model naar zónder hulp. Zo produceer je écht zelf.</div></div>
+      <div class="ej" style="margin-top:2mm">Un ejemplo hecho → las palabras que necesitas → una frase para completar
+      → solo la primera letra → nada.</div>
+      <div class="anchor" style="margin-top:2mm">La ayuda baja escalón a escalón hasta que escribes tú solo/a.
+      <span class="gloss">De steun bouwt af: voorbeeld → woordenbank → zin om aan te vullen → eerste letter → zonder hulp.</span></div></div>
   </div>
 </div>
 ''')
@@ -130,12 +132,12 @@ P(actx(AN(), "¿Consejo u opinión? (repaso)",
   '<p>Is het een <b>advies</b> (imperativo) of een <b>mening</b> (creo que…)? Vink aan.</p>'
   '<p style="margin-left:12.5mm">1. Come más fruta. → <span class="wl sm"></span> &nbsp; 2. Creo que el deporte es importante. → <span class="wl sm"></span><br>'
   '3. Recicla el papel. → <span class="wl sm"></span> &nbsp; 4. En mi opinión, hay mucha basura. → <span class="wl sm"></span></p>',
-  apoyo="Pista: bevel → consejo · creo que/en mi opinión → opinión"))
+  apoyo="Pista: un imperativo (recicla, apaga) es un consejo; «creo que / en mi opinión» es una opinión"))
 P(actx(AN(), "Mis hábitos · escribe",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Schrijf 2 dingen die jij doet voor je gezondheid of het milieu (presente).</p>'
   '<p style="margin-left:12.5mm">Para mi salud, yo <span class="wl lg"></span><br>Por el medio ambiente, yo <span class="wl lg"></span></p>',
-  apoyo="Marco"))
+  apoyo="Marco: Siempre… · A veces… · Nunca… porque…"))
 sec_close()
 
 # ================= §1 · SALUD Y MEDIO AMBIENTE =================
@@ -171,7 +173,7 @@ P(actx(AN(), "Mis consejos · escribe",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Schrijf 3 tips (gebruik de infinitief: comer sano, reciclar…).</p>'
   '<p style="margin-left:12.5mm">Para estar sano: <span class="wl md"></span> y <span class="wl md"></span><br>Por el planeta: <span class="wl lg"></span></p>',
-  apoyo="Marco"))
+  apoyo="Marco: Recicla… · Apaga… · Come… · No uses…"))
 sec_close()
 
 retos("salud_c6p", "§1.4 · Retos — la salud en cifras y en treinta segundos",
@@ -266,7 +268,7 @@ P(actx("★", "Tarea comunicativa · un consejo para tu compañero/a",
   '<p>Je buur wil gezonder leven. Geef 3 mondelinge tips (imperativo) en luister naar zijn/haar tips voor jou. Noteer 2.</p>'
   '<p style="margin-left:12.5mm">Mis consejos: <span class="wl full"></span></p>'
   '<p style="margin-left:12.5mm">Consejos para mí: 1. <span class="wl full"></span>2. <span class="wl full"></span></p>',
-  apoyo="Marco"))
+  apoyo="Marco: Para estar mejor, … · Es importante… porque…"))
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha «¿Qué opinas del medio ambiente?»</b> en la web (TTS): Valen y Diego opinan. <b>1ª vez:</b> ¿de qué hablan? · <b>2ª vez:</b> ¿qué consejo dan? Escribe.</div>',
            qr("Escanea y escucha", "§2 · ¿Qué opinas del medio ambiente?", seed=701)))
 P('</div>')
@@ -317,7 +319,7 @@ P(actx(AN(), "Encuesta · ¿qué opinas?",
   '<tr><td>la comida sana</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td>reciclar</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td>los coches en la ciudad</td><td><span class="wl lg"></span></td></tr></tbody></table>',
-  apoyo="Marco"))
+  apoyo="Marco: Creo que… · Me parece que… · En mi opinión…"))
 P(actx("★", "Tarea comunicativa · mini-debate",
   [{"t":"🗣️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
   '<p>Kies een stelling. Eén is <b>a favor</b>, één <b>en contra</b>. Geef je mening + één argument (porque…). Noteer.</p>'
@@ -465,7 +467,7 @@ P(actx(AN(), "Opina · ¿pura vida?",
   [{"t":"🌍 Cultura","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>¿Te parece bien un país sin ejército? Geef je mening (creo que…) + un argumento (porque…). Schrijf 2 zinnen.</p>'
   '<div class="wbox sm"></div>',
-  apoyo="Marco"))
+  apoyo="Marco: Creo que… porque… · Además… · Por eso…"))
 P(actx(AN(), "Datos curiosos — une",
   [{"t":"🌍 Cultura","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Verbind (schrijf de letter).</p>'
@@ -572,7 +574,7 @@ P(actx("V.4", "Producir — un consejo con imperativo",
 P(actx("V.5", "Comunicar — mi opinión en 3 frases",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Schrijf 3 zinnen over gezondheid of milieu (una opinión + un consejo + un conector) en zeg ze hardop.</p>'
-  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="Marco"))
+  '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="Marco: Creo que… porque… · Además… · Por eso…"))
 P('<div class="se" style="margin-top:6mm">Mi cartel de la «pura vida» <span class="gloss" style="font-size:8pt">— teken een affiche en label 6 dingen in het Spaans</span></div>')
 P('<div class="wbox lg"></div>')
 P(mispal("Mis palabras de la unidad", 7))
