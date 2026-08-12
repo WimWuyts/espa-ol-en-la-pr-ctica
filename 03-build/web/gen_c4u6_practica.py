@@ -127,7 +127,7 @@ var CHUNKS=[["la cocina","de keuken"],["el salón","de woonkamer"],["el dormitor
 (function(){var el=document.getElementById('g_poder');
  var items=[["¿___ fumar aquí? (ik vraag)","puedo"],["Sí, ___ ir fuera. (jij mag)","puedes"],["¿___ venir conmigo? (jij)","puedes"],["¿___ abrir la ventana? (ik)","puedo"],["Aquí no ___ comer. (jij)","puedes"]];
  var pool=items.slice(),p=0,s=0;
- el.innerHTML='<h3>¿puedo o puedes? 🙋</h3><p class="desc">puedo = ik · puedes = jij. Kies de juiste vorm.</p>'+sb('sbP')+'<div id="pw" style="font-size:18px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._pd(\'puedo\')">puedo (ik)</div><div class="chip" onclick="window._pd(\'puedes\')">puedes (jij)</div></div><div class="fb" id="pf"></div>';
+ el.innerHTML='<h3>¿puedo o puedes? 🙋</h3><p class="desc">puedo = ik · puedes = jij. Elige la forma correcta. <span class="gloss">Kies de juiste vorm.</span></p>'+sb('sbP')+'<div id="pw" style="font-size:18px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._pd(\'puedo\')">puedo (ik)</div><div class="chip" onclick="window._pd(\'puedes\')">puedes (jij)</div></div><div class="fb" id="pf"></div>';
  var bar=el.querySelector('#sbP');function nx(){if(!pool.length)pool=items.slice();el.cur=pool.splice(Math.floor(Math.random()*pool.length),1)[0];el.querySelector('#pw').textContent=el.cur[0];el.querySelector('#pf').className='fb';}
  window._pd=function(k){var ok=k===el.cur[1];if(ok){p++;s++}else s=0;setSc(bar,p,s);fb(el.querySelector('#pf'),ok,el.cur[0].replace('___',el.cur[1]));setTimeout(nx,1000);};nx();})();
 

@@ -501,24 +501,24 @@ P(clusters([
 ]))
 P(actx(1, "Los números que necesito para la hora",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★☆☆"}],
-  '<p>Schrijf het getal voluit in letters.</p>'
+  '<p>Escribe el número con letras. <span class="gloss">Schrijf het getal voluit.</span></p>'
   '<table class="mp"><thead><tr><th>Cifra</th><th>En letras</th><th>Cifra</th><th>En letras</th></tr></thead>'
   '<tbody><tr><td>12</td><td><span class="wl md"></span></td><td>15</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>30</td><td><span class="wl md"></span></td><td>45</td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Modelo"))
 P(actx(2, "Repasa el presente regular",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★☆☆"}],
-  '<p>Vervoeg in het presente regular (uit U1).</p>'
+  '<p>Conjuga en presente regular (lo viste en la U1). <span class="gloss">Vervoeg in de tegenwoordige tijd.</span></p>'
   '<table class="mp"><thead><tr><th>Infinitivo</th><th>yo</th><th>tú</th><th>nosotros</th></tr></thead><tbody>'
   '<tr><td>hablar</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>comer</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>vivir</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr></tbody></table>', apoyo="Banco de palabras: tabel open"))
 P(actx(3, "¿ser o tener?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Vul <b>ser</b> of <b>tener</b> in.</p>'
+  '<p>Escribe <b>ser</b> o <b>tener</b>. <span class="gloss">Vul ser of tener in.</span></p>'
   '<p style="margin-left:12.5mm">a) Yo <span class="wl sm"></span> de Bélgica. &nbsp; b) Pau <span class="wl sm"></span> 16 años. &nbsp; c) Nosotros <span class="wl sm"></span> estudiantes.</p>', apoyo="Pista: edad = tener"))
 P(actx(4, "El día de la semana",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Verbind de klaszin met zijn functie (schrijf de letter).</p>'
+  '<p>Une cada frase de clase con su función: escribe la letra. <span class="gloss">Verbind en schrijf de letter.</span></p>'
   '<table class="mp"><thead><tr><th>Frase</th><th></th><th>Función</th></tr></thead><tbody>'
   '<tr><td>1 · ¿Qué hora es?</td><td><span class="wl sm"></span></td><td>A · om hoe laat?</td></tr>'
   '<tr><td>2 · ¿A qué hora empiezas?</td><td><span class="wl sm"></span></td><td>B · hoe laat is het?</td></tr>'
@@ -554,7 +554,7 @@ P(regla("Regla · ¿Qué hora es?",
   '<br>🔴 <b>Valstrik:</b> nooit <span class="trap">son la una</span> of <span class="trap">es las dos</span>.</p>'))
 P(actx(1, "Empareja el reloj con la hora",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Schrijf onder elke klok de juiste tijd.</p>'
+  '<p>Escribe debajo de cada reloj la hora correcta. <span class="gloss">Schrijf onder elke klok de juiste tijd.</span></p>'
   '<div class="clockrow">'
   + '<div class="clockcard">'+clock(4,0)+'<div class="nl"><span class="wl sm"></span></div></div>'
   + '<div class="clockcard">'+clock(1,0)+'<div class="nl"><span class="wl sm"></span></div></div>'
@@ -567,7 +567,7 @@ P(actx(2, "¿es la o son las?",
   '<p style="margin-left:12.5mm">a) <span class="wl sm"></span> una. &nbsp; b) <span class="wl sm"></span> cinco. &nbsp; c) <span class="wl sm"></span> diez. &nbsp; d) <span class="wl sm"></span> doce. &nbsp; e) <span class="wl sm"></span> una y media.</p>', apoyo="Pista: 1 = es la"))
 P(actx(3, "Clasifica: singular o plural",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Zet elke tijd bij «es la» (1 u) of «son las» (≥2 u). <span class="words"><b>la una · las tres · las ocho · la una y cuarto · las doce · las dos</b></span></p>'
+  '<p>Coloca cada hora en «es la» (la una) o «son las» (las demás). <span class="gloss">es la bij één uur, son las bij de rest</span> <span class="words"><b>la una · las tres · las ocho · la una y cuarto · las doce · las dos</b></span></p>'
   + sortcols([("Es la…","1 uur"),("Son las…","vanaf 2 uur")]), apoyo="Banco de palabras"))
 P('</div>')  # page §1.1
 # §1.2 y media / cuarto / menos + ¿a qué hora?
@@ -595,7 +595,7 @@ P(mirror([
 P('<div class="truc"><b>🔴 de la vs. por la:</b> <b>de la</b> mañana/tarde/noche = bij een <b>concreet uur</b> (a las 7 <b>de la</b> mañana). <b>por la</b> mañana/tarde/noche = een <b>deel van de dag</b>, zonder uur (estudio <b>por la</b> tarde).</div>')
 P(actx(4, "Escribe la hora completa",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Schrijf bij elke klok de volledige zin (Es la… / Son las…). Vijf zinnen.</p>'
+  '<p>Escribe la frase entera junto a cada reloj (Es la… / Son las…). Son cinco frases. <span class="gloss">Schrijf bij elke klok de volledige zin — vijf zinnen.</span></p>'
   '<table class="mp"><thead><tr><th>Reloj</th><th>La hora (frase completa)</th></tr></thead><tbody>'
   '<tr><td>3:30</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td>9:15</td><td><span class="wl lg"></span></td></tr>'
@@ -606,11 +606,11 @@ P(audiorow('<div class="ic">🎧</div><div><b>Escucha cinco horas y dibuja las m
            qr("Escanea y escucha", "Audio 1.2 · La hora · 0:50", seed=131)))
 P(actx(5, "Escucha y anota la hora",
   [{"t":"👂 Escuchar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Schrijf de vijf tijden die je hoort.</p>'
+  '<p>Escribe las cinco horas que oyes. <span class="gloss">Schrijf de vijf tijden die je hoort.</span></p>'
   '<p style="margin-left:12.5mm">1) <span class="wl md"></span> 2) <span class="wl md"></span> 3) <span class="wl md"></span> 4) <span class="wl md"></span> 5) <span class="wl md"></span></p>', apoyo="Pista: media/cuarto"))
 P(actx(6, "de la o por la",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p>Kies <b>de la</b> (concreet uur) of <b>por la</b> (deel van de dag).</p>'
+  '<p>Elige <b>de la</b> (con una hora concreta) o <b>por la</b> (una parte del día). <span class="gloss">Kies de la bij een concreet uur, por la bij een deel van de dag.</span></p>'
   '<p style="margin-left:12.5mm">a) Me levanto a las 7 ___ mañana. &nbsp; b) ___ tarde hago los deberes.<br>c) Ceno a las 9 ___ noche. &nbsp; d) ___ mañana voy al instituto.<br><span class="wl full"></span></p>', apoyo="Pista: uur → de la"))
 P(tarea_com("Tarea comunicativa · ¿A qué hora…? — la agenda",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
@@ -620,7 +620,7 @@ P(tarea_com("Tarea comunicativa · ¿A qué hora…? — la agenda",
   '<tr><td>…comes</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>…sales del instituto</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr></tbody></table>'
   '<p style="margin-left:12.5mm">Nuestro momento libre común: <span class="wl md"></span></p>'
-  APO.html("Marco: ¿A qué hora…?")))
+  + APO.html("Marco: ¿A qué hora…?")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «La hora» (reloj ↔ frase), «¿es la o son las?» en «escucha la hora».</div>')
 P('</div>')  # page §1.2
 
@@ -651,15 +651,15 @@ P(clusters([
   ("🏫","Durante el día",["desayunar · almorzar","ir al instituto","hacer los deberes"],"School & eten."),
   ("🌙","Por la noche",["cenar · descansar","jugar · ver la tele","acostarse"],"Ontspannen & slapen."),
 ]))
-P('<p style="font-size:9.6pt">③ <b>Colocaciones.</b> Welke tijd hoort bij welke actie? Leer ze <b>samen</b>:</p>')
+P('<p style="font-size:9.6pt">③ <b>Colocaciones.</b> ¿Qué hora va con qué acción? Apréndelas <b>juntas</b>: <span class="gloss">welke tijd hoort bij welke actie? leer ze samen</span></p>')
 P(colloc("¿Cuándo?", ["por la mañana → me levanto","al mediodía → almuerzo","por la tarde → los deberes","por la noche → me acuesto"]))
 P(actx(1, "Ordena la rutina de Pau",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★☆☆"}],
-  '<p>Nummer de acties in de logische volgorde (1–6).</p>'
+  '<p>Numera las acciones en el orden lógico (1–6). <span class="gloss">Nummer de acties in de logische volgorde.</span></p>'
   '<p style="margin-left:12.5mm">___ se acuesta &nbsp; ___ se levanta &nbsp; ___ desayuna &nbsp; ___ se despierta &nbsp; ___ cena &nbsp; ___ va al instituto</p>', apoyo="Modelo: de klok helpt"))
 P(actx(2, "Empareja acción ↔ traducción",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★☆☆"}],
-  '<p>Verbind de Spaanse actie met de vertaling (schrijf de letter).</p>'
+  '<p>Une cada acción con su traducción: escribe la letra. <span class="gloss">Verbind de actie met de vertaling.</span></p>'
   '<table class="mp"><thead><tr><th>Acción</th><th>Letra</th><th></th><th>NL</th></tr></thead><tbody>'
   '<tr><td>1 · ducharse</td><td><span class="wl sm"></span></td><td>A</td><td>gaan slapen</td></tr>'
   '<tr><td>2 · vestirse</td><td><span class="wl sm"></span></td><td>B</td><td>douchen</td></tr>'
@@ -667,7 +667,7 @@ P(actx(2, "Empareja acción ↔ traducción",
   '<tr><td>4 · desayunar</td><td><span class="wl sm"></span></td><td>D</td><td>zich aankleden</td></tr></tbody></table>', apoyo="Banco de palabras"))
 P(actx(3, "Clasifica el momento del día",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Zet elke actie onder het juiste dagdeel. <span class="words"><b>me levanto · almuerzo · me acuesto · desayuno · ceno · hago los deberes</b></span></p>'
+  '<p>Coloca cada acción en su momento del día. <span class="gloss">zet elke actie onder het juiste dagdeel</span> <span class="words"><b>me levanto · almuerzo · me acuesto · desayuno · ceno · hago los deberes</b></span></p>'
   + sortcols([("Por la mañana",""),("Al mediodía / tarde",""),("Por la noche","")]), apoyo="Banco de palabras"))
 P(mispal("Mis acciones del día", 3))
 P('</div>')  # page §2.1
@@ -689,7 +689,7 @@ P('<table class="conj"><thead><tr><th>Persona</th><th>pronombre</th><th>levantar
   '<tr><td class="p">nosotros/-as</td><td class="v">nos</td><td>nos levantamos</td></tr>'
   '<tr><td class="p">vosotros/-as</td><td class="v">os</td><td>os levantáis</td></tr>'
   '<tr><td class="p">ellos/-as / ustedes</td><td class="v">se</td><td>se levantan</td></tr></tbody></table>')
-P('<p style="font-size:9.6pt">③ <b>Como bloques.</b> Kies één blok per rij en bouw je zin:</p>')
+P('<p style="font-size:9.6pt">③ <b>Como bloques.</b> Elige un bloque de cada fila y monta tu frase: <span class="gloss">kies één blok per rij</span></p>')
 P(blocks([
   [("per","Yo"),("vb","me"),("vb","levanto"),("ti","a las 7")],
   [("per","Tú"),("vb","te"),("vb","duchas"),("ti","por la mañana")],
@@ -700,11 +700,11 @@ P(regla("Regla · verbos reflexivos",
   '<br>🔴 <b>Valstrik NL:</b> zeg <i><b>me</b> levanto</i>, niet <span class="trap">levanto me</span>. Het werkwoord zelf vervoeg je gewoon (levantar → levanto).</p>'))
 P(actx(4, "Elige el pronombre",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★☆☆"}],
-  '<p>Vul me/te/se/nos in.</p>'
+  '<p>Escribe me/te/se/nos. <span class="gloss">Vul het juiste pronomen in.</span></p>'
   '<p style="margin-left:12.5mm">a) Yo <span class="wl sm"></span> ducho. &nbsp; b) ¿Tú <span class="wl sm"></span> levantas pronto? &nbsp; c) Pau <span class="wl sm"></span> viste rápido.<br>d) Nosotros <span class="wl sm"></span> acostamos tarde. &nbsp; e) Lucía y Pau <span class="wl sm"></span> despiertan a las siete.</p>', apoyo="Banco de palabras: me/te/se/nos"))
 P(actx(5, "Conjuga el verbo reflexivo (cloze)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 6 min"},{"t":"★★☆"}],
-  '<p>Vul het reflexief werkwoord <b>volledig</b> in (pronombre + vorm). Het infinitief staat tussen haakjes.</p>'
+  '<p>Escribe el verbo reflexivo <b>completo</b>: pronombre + forma. El infinitivo está entre paréntesis. <span class="gloss">Vul pronomen én vorm in; het infinitief staat tussen haakjes.</span></p>'
   '<p style="margin-left:12.5mm">1. Yo <span class="wl md"></span> <i>(despertarse)</i> a las siete.<br>'
   '2. Pau <span class="wl md"></span> <i>(ducharse)</i> por la mañana.<br>'
   '3. ¿Tú <span class="wl md"></span> <i>(vestirse)</i> rápido?<br>'
@@ -713,13 +713,13 @@ P(actx(5, "Conjuga el verbo reflexivo (cloze)",
   '<p style="margin-left:12.5mm" class="gloss">✅ De oplossingen staan online (zelfcorrectie op de digitale pagina).</p>', apoyo="Pista: pronombre gegeven"))
 P(actx(6, "De Pau a mí — transforma",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★★"}],
-  '<p>Zet de zin van <b>Pau (se)</b> naar <b>jou (yo)</b>.</p>'
+  '<p>Pasa la frase de <b>Pau (se)</b> a <b>ti (yo)</b>. <span class="gloss">Zet de zin om naar jezelf.</span></p>'
   '<p style="margin-left:12.5mm">Pau se levanta a las 7. → <span class="wl lg"></span><br>Pau se ducha y se viste. → <span class="wl lg"></span><br>Pau se acuesta a las 11. → <span class="wl lg"></span></p>', apoyo="Modelo"))
 P(tarea_com("Tarea comunicativa · Mi mañana",
   [{"t":"🎙️ Hablar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
   '<p>Vertel je buur je <b>ochtend</b> in de juiste volgorde met tijden en reflexieve werkwoorden. Je buur tekent jouw horario. <span class="gloss">«Me despierto a las 7, me levanto, me ducho…»</span></p>'
   '<div class="wbox sm"></div>'
-  APO.html("Modelo: Pau")))
+  + APO.html("Modelo: Pau")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «¿reflexivo o no?», «memoria de la rutina» en «ordena mi día».</div>')
 P('</div>')  # page §2.2
 
@@ -753,11 +753,11 @@ P(regla("Regla · o → ue (la «bota»)",
   '<br>🟡 Teken een <b>laars/bota</b> rond de vormen die veranderen: yo, tú, él, ellos. Nosotros/vosotros vallen erbuiten.</p>'))
 P(actx(1, "¿cambia o no cambia?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Sorteer de vormen: stamwissel (ue) of gewone stam?<span class="words"><b>podemos · puedo · dormís · duerme · volvemos · vuelven · juego · jugamos</b></span></p>'
+  '<p>Clasifica las formas: ¿cambia la raíz (ue) o no? <span class="gloss">stamwissel of gewone stam?</span><span class="words"><b>podemos · puedo · dormís · duerme · volvemos · vuelven · juego · jugamos</b></span></p>'
   + sortcols([("Cambia → ue",""),("No cambia (nos./vos.)","")]), apoyo="Banco de palabras"))
 P(actx(2, "Conjuga o→ue",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Vervoeg poder, dormir en volver voor yo, tú, nosotros en ellos.</p>'
+  '<p>Conjuga poder, dormir y volver en yo, tú, nosotros y ellos. <span class="gloss">Vervoeg de drie werkwoorden voor vier personen.</span></p>'
   '<table class="mp"><thead><tr><th>Infinitivo</th><th>yo</th><th>tú</th><th>nosotros</th><th>ellos</th></tr></thead><tbody>'
   '<tr><td>poder</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>dormir</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
@@ -788,7 +788,7 @@ P(regla("Regla · e→ie / e→i",
   '<br>🟡 Ken je de <b>yo</b>-vorm, dan ken je bijna heel het rijtje (behalve nosotros/vosotros).</p>'))
 P(actx(3, "Completa con el presente irregular (cloze)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 6 min"},{"t":"★★☆"}],
-  '<p>Vul de <b>juiste vorm</b> in. Het infinitief staat tussen haakjes.</p>'
+  '<p>Escribe la <b>forma correcta</b>. El infinitivo está entre paréntesis. <span class="gloss">Vul de juiste vorm in; het infinitief staat tussen haakjes.</span></p>'
   '<p style="margin-left:12.5mm">1. Las clases <span class="wl md"></span> <i>(empezar)</i> a las nueve.<br>'
   '2. Yo <span class="wl md"></span> <i>(querer)</i> dormir más.<br>'
   '3. ¿Tú <span class="wl md"></span> <i>(preferir)</i> la mañana o la tarde?<br>'
@@ -798,7 +798,7 @@ P(actx(3, "Completa con el presente irregular (cloze)",
   '<p style="margin-left:12.5mm" class="gloss">✅ De oplossingen staan online (zelfcorrectie op de digitale pagina).</p>', apoyo="Pista: infinitief gegeven"))
 P(actx(4, "Una cosa cambia",
   [{"t":"🔍 Analizar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Begin met <b>«Yo empiezo a las ocho.»</b> en pas telkens één ding aan.</p>'
+  '<p>Parte de <b>«Yo empiezo a las ocho.»</b> y cambia una sola cosa cada vez. <span class="gloss">Vertrek van die zin en verander telkens één ding.</span></p>'
   '<p style="margin-left:12.5mm">→ maak <b>nosotros</b>: <span class="wl lg"></span><br>→ maak <b>Pau</b>: <span class="wl lg"></span><br>→ verander werkwoord naar <b>querer</b> (yo): <span class="wl lg"></span></p>', apoyo="Pista: cambia solo lo que se te pide; lo demás se queda igual"))
 P('</div>')  # page §3.2
 # §3.3 hacer/ir/salir
@@ -823,7 +823,7 @@ P('</div>')
 P('<div class="truc"><b>🟡 Truc:</b> <b>hago · salgo</b> krijgen een <b>-g-</b> in de yo-vorm; <b>ir</b> is helemaal apart: <b>voy, vas, va…</b> De rest is gewoon regelmatig.</div>')
 P(actx(5, "Conjuga hacer / ir / salir",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Vul de juiste vorm in.</p>'
+  '<p>Escribe la forma correcta. <span class="gloss">Vul de juiste vorm in.</span></p>'
   '<p style="margin-left:12.5mm">1. Yo <span class="wl md"></span> <i>(hacer)</i> los deberes por la tarde.<br>'
   '2. Pau <span class="wl md"></span> <i>(ir)</i> al instituto en metro.<br>'
   '3. Yo <span class="wl md"></span> <i>(salir)</i> de casa a las ocho.<br>'
@@ -834,7 +834,7 @@ P(audiorow('<div class="ic">🎧</div><div><b>Microdictado.</b> Escucha dos vece
            qr("Escanea y escucha", "Audio 3.3 · Microdictado · 0:45", seed=133)))
 P(actx(6, "Microdictado con reconstrucción",
   [{"t":"👂 Escuchar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 6 min"},{"t":"★★★"}],
-  '<p>Reconstrueer de drie zinnen die je hoort en maak daarna één <b>eigen</b> variant over jouw dag.</p>'
+  '<p>Reconstruye las tres frases que oyes y escribe después una variante <b>tuya</b> sobre tu día. <span class="gloss">Reconstrueer de drie zinnen en maak er één eigen variant bij.</span></p>'
   '<p style="margin-left:12.5mm">1) <span class="wl full"></span>2) <span class="wl full"></span>3) <span class="wl full"></span></p>'
   '<p style="margin-left:12.5mm">Mi variante: <span class="wl full"></span></p>', apoyo="eerste letter"))
 P(tarea_com("Tarea comunicativa · El día de Pau, en 4/3/2",
@@ -849,7 +849,7 @@ P(machine([("e → ie","querer"),("raíz fuerte",'qu<span class="end">ie</span>r
 P(machine([("e → i","pedir"),("raíz fuerte",'p<span class="end">i</span>d-'),("yo","p<span class=end>i</span>do")]))
 P(actx(7, "¿ue, ie o i? — clasifica",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Zet elk werkwoord onder zijn cambio de raíz. <span class="words"><b>poder · empezar · pedir · dormir · querer · vestirse · volver · preferir</b></span></p>'
+  '<p>Coloca cada verbo bajo su cambio de raíz. <span class="gloss">zet elk werkwoord onder zijn stamwissel</span> <span class="words"><b>poder · empezar · pedir · dormir · querer · vestirse · volver · preferir</b></span></p>'
   + sortcols([("o → ue",""),("e → ie",""),("e → i","")]), apoyo="Banco de palabras"))
 P(mispal("Mis verbos con cambio de raíz", 2))
 P('<div class="route-note">🔁 <b>Ojo — conjugador online:</b> alle vervoegingen (~1000 werkwoorden, nagerekend) staan in de aparte cursus-tool «Conjugador» — óók de stamwisselaars.</div>')
@@ -879,11 +879,11 @@ P(regla("Regla · frecuencia",
   '<br>🟡 <b>todos los días</b>, <b>una vez por semana</b>, <b>el fin de semana</b> zijn ook frequentie-uitdrukkingen.</p>'))
 P(actx(1, "Ordena por frecuencia",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Nummer van <b>meest</b> (1) naar <b>minst</b> (5) vaak.</p>'
+  '<p>Numera de <b>más</b> frecuente (1) a <b>menos</b> frecuente (5). <span class="gloss">Nummer van meest naar minst vaak.</span></p>'
   '<p style="margin-left:12.5mm">___ a veces &nbsp; ___ siempre &nbsp; ___ nunca &nbsp; ___ a menudo &nbsp; ___ casi nunca</p>', apoyo="Modelo: de escala boven"))
 P(actx(2, "Escribe la verdad sobre ti",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Maak ware zinnen met een frequentiebijwoord.</p>'
+  '<p>Escribe frases verdaderas con un adverbio de frecuencia. <span class="gloss">Maak ware zinnen met een frequentiewoord.</span></p>'
   '<p style="margin-left:12.5mm">1. <span class="wl sm"></span> desayuno por la mañana.<br>'
   '2. <span class="wl sm"></span> hago los deberes.<br>'
   '3. <span class="wl sm"></span> me acuesto tarde.<br>'
@@ -901,11 +901,11 @@ P(clusters([
 P('<div class="truc"><b>🔴 Valstrik NL:</b> <b>días</b> en <b>meses</b> schrijf je met een <b>kleine letter</b> (lunes, enero) — anders dan landen/steden (Barcelona, España). «op maandag» = <b>el lunes</b>; «elke maandag» = <b>los lunes</b>.</div>')
 P(actx(3, "¿día, mes o estación?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★☆☆"}],
-  '<p>Zet elk woord in de juiste kolom. <span class="words"><b>martes · agosto · verano · domingo · marzo · invierno · viernes · julio</b></span></p>'
+  '<p>Escribe cada palabra en su columna. <span class="gloss">zet elk woord in de juiste kolom</span> <span class="words"><b>martes · agosto · verano · domingo · marzo · invierno · viernes · julio</b></span></p>'
   + sortcols([("Día",""),("Mes",""),("Estación","")]), apoyo="Banco de palabras"))
 P(actx(4, "Completa con el tiempo",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Vul een dag, maand of seizoen in (correcte kleine letter!).</p>'
+  '<p>Escribe un día, un mes o una estación (¡en minúscula!). <span class="gloss">Vul in — let op de kleine letter.</span></p>'
   '<p style="margin-left:12.5mm">a) Hoy es <span class="wl sm"></span>, mañana es <span class="wl sm"></span>.<br>'
   'b) Mi cumpleaños es en <span class="wl sm"></span>.<br>'
   'c) En <span class="wl sm"></span> hace calor y vamos a la playa.<br>'
@@ -917,10 +917,10 @@ P(tarea_com("Tarea comunicativa · Mi semana típica",
   '<tr><td>lunes</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td>miércoles</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td>sábado</td><td><span class="wl lg"></span></td></tr></tbody></table>'
-  APO.html("Marco: frecuencia + hora")))
+  + APO.html("Marco: frecuencia + hora")))
 P(actx(5, "Mi estación favorita",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Schrijf 2–3 zinnen: welk seizoen vind je leuk en wat doe je dan? Gebruik <b>en</b> + seizoen + een frequentiebijwoord.</p>'
+  '<p>Escribe 2–3 frases: ¿qué estación te gusta y qué haces entonces? Usa <b>en</b> + estación + un adverbio de frecuencia. <span class="gloss">Twee tot drie zinnen over je favoriete seizoen.</span></p>'
   '<div class="wbox sm"></div>', apoyo="Marco: En verano… siempre…"))
 P(mispal("Mis días, meses y estaciones", 2))
 P('<div class="route-note">🎮 <b>Juega online:</b> «frecuencia», «día vs. mes» en «señala la mañana».</div>')
@@ -935,7 +935,7 @@ P('</div>')
 P('<div class="txtmeta"><span class="tm"><b>Tipo:</b> blog / horario</span><span class="tm"><b>De:</b> Pau</span><span class="tm"><b>Para:</b> su intercambio</span><span class="tm">🎯 conocer su rutina</span></div>')
 P(actx(1, "Antes de leer: predice",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 2 min"},{"t":"★☆☆"}],
-  '<p>Bekijk alleen de titel en de klokjes. ¿Qué acciones esperas leer? Noteer er drie.</p>'
+  '<p>Mira solo el título y los relojes. ¿Qué acciones esperas leer? Escribe tres. <span class="gloss">Bekijk alleen titel en klokjes en noteer drie verwachte acties.</span></p>'
   '<p style="margin-left:12.5mm">Espero leer: <span class="wl full"></span></p>', apoyo="Modelo: levantarse, comer…"))
 P('<div class="ptext"><div class="ph"><div class="av">'+AV["diego"]+'</div><div><div class="nm">El blog de Pau</div><div class="fr">Barcelona · un día normal</div></div></div>'
   '<p>¡Hola! Soy Pau, de Barcelona. Os cuento mi día. <span class="evi">Me despierto a las siete</span> y me levanto enseguida. '
@@ -957,7 +957,7 @@ P(actx(2, "Escanea: completa el horario",
   '<tr><td class="hh"><span class="wl sm"></span></td><td>se acuesta</td></tr></tbody></table>', apoyo="Modelo: de bewijszinnen staan gemarkeerd"))
 P(actx(3, "¿Verdadero o falso? + prueba",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Waar of niet waar? Noteer de <b>woorden uit de tekst</b> die het bewijzen.</p>'
+  '<p>¿Verdadero o falso? Copia las <b>palabras del texto</b> que lo demuestran. <span class="gloss">Waar of niet waar? Schrijf de woorden die het bewijzen.</span></p>'
   '<table class="mp"><thead><tr><th>Afirmación</th><th>V/F</th><th>Prueba (palabras del texto)</th></tr></thead><tbody>'
   '<tr><td>Pau va al instituto en coche.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Las clases empiezan a las nueve.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
@@ -965,13 +965,13 @@ P(actx(3, "¿Verdadero o falso? + prueba",
   '<tr><td>Los sábados se levanta temprano.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Pista: onderstreep in de tekst"))
 P(actx(4, "Del contexto: ¿qué significa?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p>Wat betekent <b>«enseguida»</b> en <b>«al mediodía»</b>? Kies + leg uit welke aanwijzing hielp.</p>'
+  '<p>¿Qué significan <b>«enseguida»</b> y <b>«al mediodía»</b>? Elige y explica qué pista te ha ayudado. <span class="gloss">Wat betekenen ze? Kies en leg uit welke aanwijzing hielp.</span></p>'
   '<p style="margin-left:12.5mm">enseguida = ☐ meteen ☐ later &nbsp;·&nbsp; al mediodía = ☐ \'s middags (12u) ☐ \'s nachts<br>Pista que me ayudó: <span class="wl lg"></span></p>', apoyo="Pista: no mires la palabra suelta: lee la frase entera"))
 P(tarea_com("Tarea comunicativa · Responde a Pau",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
   '<p><b></b> Schrijf Pau een <b>antwoordbericht</b> over jouw dag (afzender = jij · ontvanger = Pau · doel = je routine delen). Gebruik uren + reflexieve/onregelmatige werkwoorden. Lees het daarna hardop voor.</p>'
   '<div class="wbox"></div>'
-  APO.html("Marco: Me levanto a las… / empiezo… / por la tarde…")))
+  + APO.html("Marco: Me levanto a las… / empiezo… / por la tarde…")))
 P('<div class="route-note">🎮 <b>Sigue online:</b> op de digitale pagina beluister je «El día de Pau» (audio) en neem je je antwoord op (recorder).</div>')
 P('</div>')  # page §5b
 
@@ -990,7 +990,7 @@ P('<table class="mp"><thead><tr><th>Conector</th><th>Uso</th><th>Ejemplo</th></t
 P('<div class="truc"><b>🔴 Valstrik NL:</b> «dan/vervolgens» = <b>después / luego</b>, niet <i>entonces</i> (dat is «in dat geval»). Recyclen U1: «want/omdat» = <b>porque</b>.</div>')
 P(actx(1, "Ordena el día con conectores",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Vul een conector temporal in (primero/después/luego/por fin).</p>'
+  '<p>Escribe un conector temporal (primero/después/luego/por fin). <span class="gloss">Vul een volgordewoord in.</span></p>'
   '<p style="margin-left:12.5mm"><span class="wl sm"></span> me despierto. <span class="wl sm"></span> me ducho. <span class="wl sm"></span> desayuno. <span class="wl sm"></span> voy al instituto.<br><span class="wl full"></span></p>', apoyo="Banco de palabras"))
 P('<h3 style="margin-top:6mm">Ortografía · la tilde y la hora</h3>')
 P('<p style="font-size:9.6pt">① <b>Contraste visual</b> — deze tijdwoorden dragen een tilde:</p>')
@@ -998,18 +998,18 @@ P(vpairs([("miércoles","sábado"),("¿qué hora?","el número"),("después","po
 P(regla("Regla · la tilde", '<p>Veel tijd-/klokwoorden dragen een <b>tilde</b>: <i>miércoles, sábado, después, mediodía, estación</i>. En de <b>vraagwoorden</b> altijd: <i>¿qué?, ¿a qué hora?</i>. 🟡 De tilde staat op de <b>sterke lettergreep</b>.</p>'))
 P(actx(2, "Pon las tildes que faltan",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Herschrijf met de correcte tilde(s).</p>'
+  '<p>Vuelve a escribir con la tilde correcta. <span class="gloss">Herschrijf met de juiste accenten.</span></p>'
   '<p style="margin-left:12.5mm">1) <span class="trap">el miercoles hago deporte</span> → <span class="wl lg"></span><br>'
   '2) <span class="trap">¿que hora es? son las tres y media</span> → <span class="wl lg"></span><br>'
   '3) <span class="trap">despues del mediodia almuerzo</span> → <span class="wl lg"></span></p>', apoyo="Modelo"))
 P(actx(3, "Puntúa y conecta",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Herschrijf met hoofdletters, tildes én een conector.</p>'
+  '<p>Vuelve a escribir con mayúsculas, tildes y un conector. <span class="gloss">Herschrijf met hoofdletters, accenten en een verbindingswoord.</span></p>'
   '<p style="margin-left:12.5mm">1) pau se levanta a las siete se ducha desayuna → <span class="wl full"></span>'
   '2) primero voy al insti luego hago los deberes → <span class="wl full"></span></p>', apoyo="Modelo"))
 P(actx(4, "Escribe tu mini-rutina con conectores",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
-  '<p>Schrijf 4 zinnen over je ochtend met <b>primero · después · luego · por fin</b> en correcte tildes.</p>'
+  '<p>Escribe cuatro frases sobre tu mañana con <b>primero · después · luego · por fin</b> y las tildes correctas. <span class="gloss">Vier zinnen over je ochtend, met volgordewoorden en accenten.</span></p>'
   '<div class="wbox sm"></div>', apoyo=""))
 P('<div class="route-note">🎮 <b>Practica online:</b> «caza del reflexivo» en de conectoren-/tilde-oefeningen met zelfcorrectie.</div>')
 P('</div>')  # page Taller
@@ -1044,14 +1044,14 @@ P(vpairs([("Mito: todos duermen la siesta","Realidad: pocos, sobre todo mayores"
 P('<div class="truc"><b>🟡 ¿Y tú?</b> Compara: ¿a qué hora comes y cenas <b>tú</b> en Bélgica? La hora dice mucho de una cultura.</div>')
 P(actx(1, "Comprensión — verdadero o falso",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★☆☆"}],
-  '<p>Waar of niet waar? Verbeter de foute.</p>'
+  '<p>¿Verdadero o falso? Corrige las frases falsas. <span class="gloss">Waar of niet waar? Verbeter de foute zinnen.</span></p>'
   '<table class="mp"><thead><tr><th>Afirmación</th><th>V/F</th><th>Corrección</th></tr></thead><tbody>'
   '<tr><td>En España se cena a las seis.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>La comida principal es al mediodía.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Todos los españoles duermen la siesta.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Modelo: tekst boven"))
 P(actx(2, "Compara España ↔ Bélgica",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★☆"}],
-  '<p>Vul de vergelijking in en zeg hardop wat anders is. </p>'
+  '<p>Completa la comparación y di en voz alta qué es diferente. <span class="gloss">Vul aan en zeg hardop wat anders is.</span> </p>'
   '<table class="wtab mp"><thead><tr><th>¿A qué hora…?</th><th>España</th><th>Bélgica (tú)</th></tr></thead><tbody>'
   '<tr><td>se almuerza / comida</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>se cena</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr></tbody></table>'
@@ -1059,7 +1059,7 @@ P(actx(2, "Compara España ↔ Bélgica",
 P('<div class="truc"><b>🟡 Curiosidad:</b> el reloj de la <b>Puerta del Sol</b> en Madrid marca las <b>12 campanadas</b> de Nochevieja; con cada una se come <b>una uva</b> (¡doce uvas de la suerte!). El tiempo también es fiesta.</div>')
 P(actx(3, "Tu horario ideal — mini-proyecto",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>En España se come a las dos y se cena a las diez. ¿Y tu día «a la española»? Schrijf drie uren en vergelijk ze met je dag van nu.</p>'
+  '<p>En España se come a las dos y se cena a las diez. ¿Y tu día «a la española»? Escribe tres horas y compáralas con tu día de ahora. <span class="gloss">Schrijf drie uren en vergelijk ze met je dag van nu.</span></p>'
   '<p style="margin-left:12.5mm">Desayuno: <span class="wl sm"></span> · Comida: <span class="wl sm"></span> · Cena: <span class="wl sm"></span></p>'
   '<p style="margin-left:12.5mm">¿Te gusta más el horario español o el belga? <span class="wl full"></span></p>', apoyo="Pista: escribe primero las horas, después el verbo de cada momento"))
 P(mispal("Mi mochila cultural — el tiempo en España", 2))
@@ -1155,23 +1155,23 @@ for key, titel in GRP:
 P('<div class="divider">Escalera de práctica · V.1–V.4</div>')
 P(actx("V.1", "Reconocer — ES → NL",
   [{"t":"🔍 Leer","skill":True},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Schrijf de vertaling. en punto = <span class="wl md"></span> · levantarse = <span class="wl md"></span> · a veces = <span class="wl md"></span> · el jueves = <span class="wl md"></span></p>', apoyo="Modelo"))
+  '<p>Escribe la traducción. <span class="gloss">Schrijf de vertaling.</span> en punto = <span class="wl md"></span> · levantarse = <span class="wl md"></span> · a veces = <span class="wl md"></span> · el jueves = <span class="wl md"></span></p>', apoyo="Modelo"))
 P(actx("V.2", "Distinguir — sorteer per thema",
   [{"t":"🔍 Analizar","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Sorteer: <span class="words"><b>y media · ducharse · siempre · agosto · empezar · el reloj</b></span></p>'
+  '<p>Clasifica: <span class="gloss">sorteer deze woorden</span> <span class="words"><b>y media · ducharse · siempre · agosto · empezar · el reloj</b></span></p>'
   + sortcols([("la hora",""),("rutina/verbo",""),("frecuencia/tiempo","")], eigen=False), apoyo="Banco de palabras"))
 P(actx("V.3", "Recordar — NL → ES (con letra)",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Vul het Spaanse woord aan (beginletter gegeven). opstaan = <b>l</b>___ · slapen = <b>d</b>___ · altijd = <b>s</b>___ · de zomer = <b>v</b>___<br><span class="wl full"></span></p>', apoyo="Primera letra"))
+  '<p>Completa la palabra en español; tienes la primera letra. <span class="gloss">de beginletter staat erbij</span><br>opstaan = <b>l</b>___ · slapen = <b>d</b>___ · altijd = <b>s</b>___ · de zomer = <b>v</b>___<br><span class="wl full"></span></p>', apoyo="Primera letra"))
 P(actx("V.4", "Producir — una frase con tres palabras",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★★"}],
-  '<p>Maak één correcte zin met <b>hora · levantarse · frecuencia</b>.</p><div class="wbox sm"></div>', apoyo=""))
+  '<p>Escribe una frase correcta con <b>hora · levantarse · frecuencia</b>.</p><div class="wbox sm"></div>', apoyo=""))
 P(actx("V.5", "Comunicar — mi rutina en tres pasos",
   [{"t":"🎙️ Hablar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"± 5 min"},{"t":"★★★"}],
-  '<p>Combineer een tijd, een reflexief werkwoord én een frequentiebijwoord in drie zinnen over jouw dag. Zeg ze daarna hardop.</p>'
+  '<p>Combina una hora, un verbo reflexivo y un adverbio de frecuencia en tres frases sobre tu día. Después dilas en voz alta. <span class="gloss">Drie zinnen over jouw dag; zeg ze daarna hardop.</span></p>'
   '<p style="margin-left:12.5mm">1) <span class="wl full"></span>2) <span class="wl full"></span>3) <span class="wl full"></span></p>', apoyo=""))
 P(mispal("Mis palabras de la unidad", 5))
-P('<p style="font-size:9.6pt;margin-top:4mm"><b>Tu red de palabras.</b> Kies uit elk cluster twee woorden en verbind ze in één zin over jouw dag — zo blijft de woordenschat plakken:</p>')
+P('<p style="font-size:9.6pt;margin-top:4mm"><b>Tu red de palabras.</b> Elige entre <span class="gloss">kies uit</span> elk cluster twee woorden en verbind ze in één zin over jouw dag — zo blijft de woordenschat plakken:</p>')
 P(vpairs([("la hora ↔ una acción","Son las 8 y desayuno."),("un día ↔ una frecuencia","El sábado casi nunca…"),("un reflexivo ↔ una hora","Me acuesto a las 11."),("un verbo irregular ↔ un momento","Por la tarde juego.")]))
 P('<div class="guide"><div class="ic">🎴</div><div><span class="hand">Sigue en la página digital:</span> <span class="g">flip cards (ES↔NL), audio en de 20 spellen bouwen de steun verder af.</span></div></div>')
 P('<div class="bridge"><b>» ¡Hasta la próxima parada!</b> Con la hora, tu rutina y el presente irregular ya puedes contar tu día. En <b>U4 «Me gusta»</b> viajas a <b>València</b> y hablas de tus gustos. <span class="gloss">Je kan nu je dag vertellen — op naar València!</span></div>')

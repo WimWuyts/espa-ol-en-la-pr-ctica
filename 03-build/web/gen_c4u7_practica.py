@@ -119,7 +119,7 @@ var CHUNKS=[["el profesor / la profesora","de leraar / lerares"],["el escritor /
 (function(){var el=document.getElementById('g_serestar');
  var items=[["María ___ profesora. (beroep)","es"],["Julio no ___ bien. (toestand)","está"],["Yo ___ estudiante. (wie ik ben)","soy"],["Nosotros ___ tranquilos. (toestand)","estamos"],["Ella ___ actriz. (beroep)","es"],["¿Cómo ___ tú hoy? (toestand)","estás"]];
  var pool=items.slice(),p=0,s=0;
- el.innerHTML='<h3>¿ser o estar? ⚖️</h3><p class="desc">ser = wie/wat je bent (beroep) · estar = hoe je je voelt. Kies de juiste vorm.</p>'+sb('sbS')+'<div id="sw" style="font-size:18px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" id="so" style="justify-content:center"></div><div class="fb" id="sf"></div>';
+ el.innerHTML='<h3>¿ser o estar? ⚖️</h3><p class="desc">ser = wie/wat je bent (beroep) · estar = hoe je je voelt. Elige la forma correcta. <span class="gloss">Kies de juiste vorm.</span></p>'+sb('sbS')+'<div id="sw" style="font-size:18px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" id="so" style="justify-content:center"></div><div class="fb" id="sf"></div>';
  var bar=el.querySelector('#sbS');
  function nx(){if(!pool.length)pool=items.slice();el.cur=pool.splice(Math.floor(Math.random()*pool.length),1)[0];el.querySelector('#sw').textContent=el.cur[0];
   var opts=[el.cur[1]];var all=["es","está","soy","estoy","estamos","estás"];while(opts.length<3){var c=all[Math.floor(Math.random()*all.length)];if(opts.indexOf(c)<0)opts.push(c);}opts.sort(()=>Math.random()-.5);

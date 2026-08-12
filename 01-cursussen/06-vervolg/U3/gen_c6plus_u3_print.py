@@ -136,7 +136,7 @@ P(actx(AN(), "Presente · la vida digital (repaso)",
   apoyo="Pista: chateo · sube · navegamos · sigues · comparten · enciendo"))
 P(actx(AN(), "Mi opinión · me gustan las redes porque…",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p>Schrijf 2 zinnen: wat vind je (niet) leuk online, met <b>porque</b>.</p>'
+  '<p>Escribe dos frases: qué te gusta y qué no te gusta de internet, con <b>porque</b>. <span class="gloss">Twee zinnen met porque.</span></p>'
   '<p style="margin-left:12.5mm">Me gustan las redes sociales porque <span class="wl lg"></span><br>No me gusta <span class="wl md"></span> porque <span class="wl md"></span></p>',
   apoyo="Marco: Me gusta(n)… porque… · No me gusta(n)… porque…"))
 sec_close()
@@ -152,7 +152,7 @@ P('<div class="clusters" style="grid-template-columns:1fr 1fr 1fr">'
 P('<div class="truc"><b>¡Ojo! el/la:</b> <b>el</b> móvil, <b>el</b> ordenador, <b>el</b> mensaje, <b>el</b> perfil, <b>el</b> vídeo (m) · <b>la</b> tableta, <b>la</b> pantalla, <b>la</b> app, <b>la</b> contraseña, <b>la</b> publicación (v). <b>los auriculares</b> = altijd meervoud (de oortjes).</div>')
 P(actx(AN(), "Relaciona el verbo con el objeto",
   [{"t":"🔗 Emparejar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Verbind (schrijf de letter).</p>'
+  '<p>Une las dos columnas: escribe la letra. <span class="gloss">Verbind en schrijf de letter.</span></p>'
   '<div class="wcols" style="grid-template-columns:1fr 1fr;margin-left:12.5mm">'
   '<div class="wcol"><div class="ch">Verbo</div><div class="cb short">1. subir &nbsp; 2. descargar &nbsp; 3. chatear &nbsp; 4. cargar</div></div>'
   '<div class="wcol"><div class="ch">Objeto</div><div class="cb short">a. una app &nbsp; b. un vídeo &nbsp; c. la batería &nbsp; d. con un amigo</div></div></div>'
@@ -160,7 +160,7 @@ P(actx(AN(), "Relaciona el verbo con el objeto",
   apoyo=""))
 P(actx(AN(), "Clasifica: ¿aparato, red o acción?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p>Zet elk woord in de juiste kolom: <span class="words"><b>el móvil · subir · el perfil · chatear · la pantalla · el mensaje · descargar · los auriculares</b></span></p>'
+  '<p>Escribe cada palabra en su columna: <span class="gloss">zet elk woord in de juiste kolom</span> <span class="words"><b>el móvil · subir · el perfil · chatear · la pantalla · el mensaje · descargar · los auriculares</b></span></p>'
   + sortcols([("Aparato",""),("Red / cosa",""),("Acción (verbo)","")], eigen=True), apoyo="Banco de palabras"))
 P(actx(AN(), "¿el o la? · el género digital",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 2 min"},{"t":"★☆☆"}],
@@ -169,14 +169,14 @@ P(actx(AN(), "¿el o la? · el género digital",
   apoyo="Pista: el móvil · la tableta · la pantalla · el mensaje · la contraseña · el perfil · la app · el vídeo"))
 P(actx(AN(), "El intruso · ¿qué palabra sobra?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 2 min"},{"t":"★★☆"}],
-  '<p>Streep het woord door dat er niet bij hoort en zeg waarom.</p>'
+  '<p>Tacha la palabra que no encaja y di por qué. <span class="gloss">Streep het vreemde woord door en zeg waarom.</span></p>'
   '<p style="margin-left:12.5mm">1. el móvil · la tableta · <b>la cocina</b> · el ordenador → <span class="wl md"></span><br>'
   '2. subir · descargar · <b>dormir</b> · compartir → <span class="wl md"></span><br>'
   '3. el perfil · la publicación · el mensaje · <b>la nevera</b> → <span class="wl md"></span></p>',
   apoyo=""))
 P(actx(AN(), "Mi mundo digital · escribe",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Schrijf 3 zinnen: welke apparaten je gebruikt, welke redes, wat je het meest doet.</p>'
+  '<p>Escribe tres frases: qué aparatos usas, qué redes y qué haces más. <span class="gloss">Drie zinnen over jouw toestellen en netwerken.</span></p>'
   '<p style="margin-left:12.5mm">Uso <span class="wl lg"></span><br>En las redes <span class="wl lg"></span></p>',
   apoyo="Marco: Uso… para… · Todos los días… · Nunca…"))
 sec_close()
@@ -207,7 +207,7 @@ P(regla("Regla · ir a + infinitivo", '<table class="conj" style="margin-top:1mm
   '<p style="margin:2mm 0 0">Enkel <b>ir</b> verandert met de persoon. Daarna altijd <b>a</b> + het <b>hele werkwoord</b> (infinitivo). <span class="gloss">Vergeet de <b>a</b> nooit: <span class="trap">voy subir</span> → voy <b>a</b> subir.</span></p>'))
 P(actx(AN(), "La gran cloze · ir a + infinitivo",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Vul <b>ir a + infinitivo</b> in (infinitivo tussen haakjes). Let op de <b>a</b>!</p>'
+  '<p>Escribe <b>ir a + infinitivo</b> (el infinitivo está entre paréntesis). ¡Ojo con la <b>a</b>! <span class="gloss">Vergeet de a niet.</span></p>'
   '<p style="margin-left:12.5mm">1. Yo <span class="wl md"></span> (subir) un vídeo esta tarde. &nbsp; 2. ¿Tú <span class="wl md"></span> (salir) el sábado?<br>'
   '3. Diego <span class="wl md"></span> (chatear) con nosotros luego. &nbsp; 4. Nosotros <span class="wl md"></span> (quedar) en la plaza.<br>'
   '5. Mis amigos <span class="wl md"></span> (ver) una serie. &nbsp; 6. ¿Vosotros <span class="wl md"></span> (estudiar) mañana?<br>'
@@ -232,13 +232,13 @@ P('<div class="fams three" style="margin-top:2mm">'
 P(colloc("Chunks del futuro", ["voy a + infinitivo","este finde voy a…","mañana vamos a…","luego te llamo","el próximo año voy a…"]))
 P(actx(AN(), "Completa con ir a + una expresión de tiempo",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Vul <b>ir a + infinitivo</b> aan én kies een tijdsuitdrukking. <span class="words"><b>luego · mañana · este finde · el próximo mes</b></span></p>'
+  '<p>Completa con <b>ir a + infinitivo</b> y elige una expresión de tiempo. <span class="gloss">Vul aan en kies een tijdsuitdrukking.</span> <span class="words"><b>luego · mañana · este finde · el próximo mes</b></span></p>'
   '<p style="margin-left:12.5mm">1. <span class="wl sm"></span> (tijd) yo <span class="wl md"></span> (llamar) a Diego. &nbsp; 2. <span class="wl sm"></span> (tijd) nosotros <span class="wl md"></span> (salir).<br>'
   '3. <span class="wl sm"></span> (tijd) mis padres <span class="wl md"></span> (comprar) un móvil nuevo.</p>',
   apoyo="Marco: Mañana voy a… · Este finde vamos a… · La semana que viene…"))
 P(actx(AN(), "Ordena el plan de Diego (1–5)",
   [{"t":"🔢 Ordenar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p>Zet het weekendplan in een logische volgorde (1–5). Schrijf het cijfer.</p>'
+  '<p>Ordena el plan del fin de semana (1–5) y escribe el número. <span class="gloss">Zet het weekendplan in volgorde.</span></p>'
   '<p style="margin-left:12.5mm">'
   '<span class="wl sm"></span> Por la noche voy a ver una peli.<br>'
   '<span class="wl sm"></span> Primero, el sábado por la mañana voy a estudiar.<br>'
@@ -263,18 +263,18 @@ P(actx(AN(), "Clínica de errores · ir a + infinitivo",
   apoyo="Pista: a · va · salir · vas"))
 P(actx(AN(), "Sustitución · cambia la persona",
   [{"t":"🔁 Practicar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p>Modelo: <b>Yo voy a salir el sábado.</b> Herschrijf per persoon.</p>'
+  '<p>Modelo: <b>Yo voy a salir el sábado.</b> Vuelve a escribirla para cada persona. <span class="gloss">Herschrijf de modelzin per persoon.</span></p>'
   '<p style="margin-left:12.5mm">tú → <span class="wl md"></span> &nbsp; Diego → <span class="wl md"></span> &nbsp; nosotros → <span class="wl md"></span> &nbsp; ellos → <span class="wl md"></span></p>',
   apoyo="Primera letra: vas a…"))
 P(actx(AN(), "Traduce · ik ga bellen",
   [{"t":"🔁 Practicar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p>Vertaal naar het Spaans met <b>ir a + infinitivo</b>.</p>'
+  '<p>Traduce al español con <b>ir a + infinitivo</b>. <span class="gloss">Vertaal met ir a + infinitief.</span></p>'
   '<p style="margin-left:12.5mm">1. Ik ga bellen. → <span class="wl md"></span> &nbsp; 2. We gaan afspreken. → <span class="wl md"></span><br>'
   '3. Ga jij morgen studeren? → <span class="wl lg"></span></p>',
   apoyo="Marco: voy a + infinitivo"))
 P(actx("★", "Tarea comunicativa · ¿qué vas a hacer el finde?",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
-  '<p>Vraag je buur naar zijn weekendplannen (¿qué vas a hacer?) en antwoord met <b>ir a + infinitivo</b> + een tijdsuitdrukking. Noteer 2 plannen van je buur.</p>'
+  '<p>Pregunta a tu compañero/a por sus planes del fin de semana (¿qué vas a hacer?) y contesta con <b>ir a + infinitivo</b> y una expresión de tiempo. <span class="gloss">Vraag naar de weekendplannen en antwoord met ir a.</span> Noteer 2 plannen van je buur.</p>'
   '<p style="margin-left:12.5mm">— ¿Qué vas a hacer el finde? — <span class="wl lg"></span></p>'
   '<p style="margin-left:12.5mm">Mi compañero/a: 1. <span class="wl full"></span>2. <span class="wl full"></span></p>',
   apoyo="Marco: ¿Qué vas a hacer…? — Voy a… · ¿Quedamos…?"))
@@ -336,7 +336,7 @@ P(actx(AN(), "Responde con le/les (cloze)",
   apoyo="Banco de palabras: le · les · le · les · le"))
 P(actx(AN(), "Empareja: pregunta ↔ respuesta",
   [{"t":"🔗 Emparejar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p>Verbind de vraag met het juiste antwoord (schrijf de letter).</p>'
+  '<p>Une cada pregunta con su respuesta: escribe la letra. <span class="gloss">Verbind de vraag met het antwoord.</span></p>'
   '<div class="wcols" style="grid-template-columns:1fr 1fr;margin-left:12.5mm">'
   '<div class="wcol"><div class="ch">Pregunta</div><div class="cb short">1. ¿Escribes a Diego? &nbsp; 2. ¿Mandas fotos a tus padres? &nbsp; 3. ¿Cuentas algo a Valen? &nbsp; 4. ¿Preguntas a los profes?</div></div>'
   '<div class="wcol"><div class="ch">Respuesta</div><div class="cb short">a. Sí, les mando fotos. &nbsp; b. Sí, le escribo. &nbsp; c. Sí, les pregunto. &nbsp; d. Sí, le cuento algo.</div></div></div>'
@@ -354,7 +354,7 @@ P('<div class="agree"><div class="w">Voy a mandar<u>le</u> una foto = <u>Le</u> 
 P(blocks([[("per","¿a Diego?"),("opt","→"),("ob","Le"),("vb","escribo")], [("per","¿a mis amigos?"),("opt","→"),("ob","Les"),("vb","mando fotos")]]))
 P(actx(AN(), "Reescribe con le/les (posición)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Herschrijf elke zin met <b>le/les</b>. Kies zelf een correcte plaats voor het pronomen.</p>'
+  '<p>Vuelve a escribir cada frase con <b>le/les</b> y coloca el pronombre en un sitio correcto. <span class="gloss">Herschrijf met le of les.</span></p>'
   '<p style="margin-left:12.5mm">1. Escribo un mensaje a Diego. → <span class="wl md"></span><br>'
   '2. Voy a mandar fotos a mis amigos. → <span class="wl lg"></span><br>'
   '3. Voy a contar la noticia a Valen. → <span class="wl lg"></span><br>'
@@ -370,7 +370,7 @@ P(actx(AN(), "Clínica de errores · le/les",
   apoyo="Pista: le vóór ww · les = meer personen · achter infinitivo vast"))
 P(actx("★", "Tarea comunicativa · ¿a quién le escribes?",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Vraag je buur aan wie hij vaak schrijft/belt/foto\'s stuurt; antwoord met <b>le/les</b>. «¿A quién le escribes cada día? — Le escribo a…» Noteer 3 antwoorden.</p>'
+  '<p>Pregunta a tu compañero/a a quién le escribe, le llama o le manda fotos a menudo <span class="gloss">vraag aan wie je buur vaak schrijft, belt of foto\'s stuurt; antwoord met <b>le/les</b>. «¿A quién le escribes cada día? — Le escribo a…» Noteer 3 antwoorden.</p>'
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>',
   apoyo="Marco: Le escribo a… · Les mando… · Me manda…"))
 P('<div class="guide"><div class="ic">🎡</div><div><span class="hand">Online:</span> <span class="g">de <b>vervangingsanimatie le/les</b> en de spellen op de hub oefenen elke keuze én plaats; + cloze en foutenkliniek.</span></div></div>')
@@ -398,7 +398,7 @@ P(regla("Regla · acabar de + infinitivo", '<p><b>acabar</b> (vervoegd) + <b>de<
 P(machine([("acabar → acabo…","acabo"),("+ de","acabo de"),("+ infinitivo","acabo de comer")]))
 P(actx(AN(), "Forma frases con acabar de",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p>Schrijf met <b>acabar de + infinitivo</b> (net gebeurd).</p>'
+  '<p>Escribe con <b>acabar de + infinitivo</b> (algo que acaba de pasar). <span class="gloss">Schrijf met acabar de: net gebeurd.</span></p>'
   '<p style="margin-left:12.5mm">1. yo / subir una foto → <span class="wl md"></span><br>'
   '2. Diego / mandar un mensaje → <span class="wl md"></span><br>'
   '3. nosotros / comer → <span class="wl md"></span><br>'
@@ -406,7 +406,7 @@ P(actx(AN(), "Forma frases con acabar de",
   apoyo="Marco: acabo de… · acaba de… · acabamos de… · acaban de…"))
 P(actx(AN(), "¿futuro (ir a) o recién (acabar de)?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p>Gaat het over <b>straks</b> (ir a) of <b>net gebeurd</b> (acabar de)? Vul de juiste structuur in.</p>'
+  '<p>¿Se habla de algo que <b>va a pasar</b> (ir a) o que <b>acaba de pasar</b> (acabar de)? Escribe la estructura correcta. <span class="gloss">Toekomst of net gebeurd?</span></p>'
   '<p style="margin-left:12.5mm">1. Mañana <span class="wl md"></span> (yo, salir). &nbsp; 2. ¡Mira! Diego <span class="wl md"></span> (subir) una foto ahora mismo.<br>'
   '3. Este finde <span class="wl md"></span> (nosotros, quedar). &nbsp; 4. No tengo hambre, <span class="wl md"></span> (yo, comer).</p>',
   apoyo="Pista: mañana/finde → ir a · ahora mismo/ya → acabar de"))
@@ -435,16 +435,16 @@ P(actx(AN(), "Cloze · creo que + indicativo",
   apoyo="Banco de palabras: son · tiene · pasamos · ayuda · pueden"))
 P(actx(AN(), "¿de acuerdo o no? · clasifica",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p>Zet elke reactie in de juiste kolom: <span class="words"><b>tienes razón · no estoy de acuerdo · es verdad · es mentira · estoy de acuerdo · creo que no</b></span></p>'
+  '<p>Coloca cada reacción en su columna: <span class="gloss">zet elke reactie in de juiste kolom</span> <span class="words"><b>tienes razón · no estoy de acuerdo · es verdad · es mentira · estoy de acuerdo · creo que no</b></span></p>'
   + sortcols([("Estoy de acuerdo 👍",""),("No estoy de acuerdo 👎","")], eigen=False), apoyo="Banco de palabras"))
 P(actx(AN(), "Mi opinión sobre las redes · escribe",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
-  '<p>Schrijf 3 zinnen met <b>creo que / pienso que + indicativo + porque</b>. Banco: útil · práctico · peligroso · adictivo · rápido.</p>'
+  '<p>Escribe tres frases con <b>creo que / pienso que + indicativo + porque</b>. <span class="gloss">Drie zinnen met je mening en een reden.</span> Banco: útil · práctico · peligroso · adictivo · rápido.</p>'
   '<div class="wbox sm"></div>',
   apoyo="Marco: Creo que … es … porque …"))
 P(actx("★", "Tarea comunicativa · debate exprés",
   [{"t":"🗣️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
-  '<p>Stelling: «Las redes sociales son buenas para los jóvenes.» A geeft een mening (creo que… porque…), B reageert (estoy de acuerdo / no estoy de acuerdo porque…). Noteer één argument van elk.</p>'
+  '<p>Tema: «Las redes sociales son buenas para los jóvenes.» A da su opinión (creo que… porque…) y B reacciona <span class="gloss">A geeft een mening, B reageert</span> (estoy de acuerdo / no estoy de acuerdo porque…). Noteer één argument van elk.</p>'
   '<p style="margin-left:12.5mm">A: <span class="wl full"></span>B: <span class="wl full"></span></p>',
   apoyo="Marco: Creo que… porque… · No estoy de acuerdo porque… · Además…"))
 P('</div>')
@@ -464,7 +464,7 @@ P('<div class="clusters" style="grid-template-columns:1fr 1fr 1fr">'
 P('<div class="truc"><b>Chunks para quedar:</b> <b>¿Quedamos?</b> (spreken we af?) · <b>¿A qué hora?</b> · <b>¿Dónde?</b> · <b>Vale, nos vemos</b> (oké, tot dan). Un plan: <i>«¿Quedamos el sábado? Vamos a ir al centro y luego le escribo a Diego.»</i></div>')
 P(actx(AN(), "Relaciona la acción con el objeto",
   [{"t":"🔗 Emparejar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Verbind (schrijf de letter).</p>'
+  '<p>Une las dos columnas: escribe la letra. <span class="gloss">Verbind en schrijf de letter.</span></p>'
   '<div class="wcols" style="grid-template-columns:1fr 1fr;margin-left:12.5mm">'
   '<div class="wcol"><div class="ch">Verbo</div><div class="cb short">1. mandar &nbsp; 2. contestar &nbsp; 3. quedar &nbsp; 4. hacer</div></div>'
   '<div class="wcol"><div class="ch">Objeto</div><div class="cb short">a. el mensaje &nbsp; b. un mensaje / una foto &nbsp; c. planes &nbsp; d. en la plaza</div></div></div>'
@@ -472,18 +472,18 @@ P(actx(AN(), "Relaciona la acción con el objeto",
   apoyo=""))
 P(actx(AN(), "Completa el chat de planes",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Vul aan met <b>quedamos · voy a · le · vamos a · vas a</b>.</p>'
+  '<p>Completa con <b>quedamos · voy a · le · vamos a · vas a</b>. <span class="gloss">Vul aan met die vijf woorden.</span></p>'
   '<p style="margin-left:12.5mm">— ¡Hola! ¿<span class="wl sm"></span> el sábado? &nbsp; — ¡Vale! ¿Qué <span class="wl sm"></span> hacer?<br>'
   '— <span class="wl sm"></span> ir al centro y luego <span class="wl sm"></span> escribo a Diego para invitarlo. &nbsp; — Genial, <span class="wl sm"></span> comer tacos juntos.</p>',
   apoyo="Banco de palabras"))
 P(actx(AN(), "Dictado · un plan para el finde",
   [{"t":"👂 Escuchar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Luister en schrijf de 5 zinnen (met ir a / le / acabar de).</p>'
+  '<p>Escucha y escribe las cinco frases (con ir a / le / acabar de). <span class="gloss">Luister en schrijf de vijf zinnen.</span></p>'
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span>4. <span class="wl full"></span>5. <span class="wl full"></span></p>',
   apoyo="docent/audio leest voor"))
 P(actx("★", "Info-gap · organizamos el finde",
   [{"t":"🗣️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
-  '<p>A en B maken samen een weekendplan. Wissel voorstellen (voy a… / ¿quedamos…?) en spreek dag, uur en plaats af. Noteer het afgesproken plan.</p>'
+  '<p>A y B hacen juntos un plan para el fin de semana: proponed (voy a… / ¿quedamos…?) y decidid día, hora y lugar. <span class="gloss">Maak samen een weekendplan.</span> Noteer het afgesproken plan.</p>'
   '<p style="margin-left:12.5mm">Nuestro plan: <span class="wl full"></span><span class="wl full"></span></p>',
   apoyo="Marco: ¿Puedes el sábado? — Sí, pero voy a… · Entonces quedamos a las…"))
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha «Quedamos el sábado»</b> en la web (TTS): Diego y una amiga organizan el finde. <b>1ª vez:</b> ¿qué van a hacer? · <b>2ª vez:</b> ¿cuándo y dónde quedan?</div>',
@@ -502,7 +502,7 @@ P(f'<div class="ptexts">'
   f'<p>A mí me gustan las redes, pero no paso tanto tiempo. Creo que las redes <span class="evi">conectan</span> a la gente, pero también <span class="evi">pueden ser peligrosas</span> si compartes demasiado. En mi opinión, lo importante es el <span class="evi">equilibrio</span>: uso el móvil para lo práctico y luego lo apago. Por un lado es genial, por otro hay que tener cuidado.</p></div></div>')
 P(actx(AN(), "Verdadero o falso — con prueba",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Schrijf V of F en kopieer in de derde kolom de zin uit de tekst die het bewijst.</p>'
+  '<p>Escribe V o F y copia en la tercera columna la frase del texto que lo demuestra. <span class="gloss">Schrijf V of F en kopieer de bewijszin.</span></p>'
   '<table class="alf"><thead><tr><th>Afirmación</th><th>V/F</th><th>Prueba (cita)</th></tr></thead><tbody>'
   '<tr><td>Diego cree que el móvil es útil para estudiar.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Diego va a usar el móvil aún más este finde.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
@@ -510,7 +510,7 @@ P(actx(AN(), "Verdadero o falso — con prueba",
   apoyo="Modelo"))
 P(actx(AN(), "Escanea — completa la ficha",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p>Zoek de gegevens per persoon terug in de tekst en vul de tabel aan. Eén woord of getal per vak.</p>'
+  '<p>Busca los datos de cada persona en el texto y completa la tabla. Una palabra o un número por casilla. <span class="gloss">Zoek de gegevens en vul de tabel aan.</span></p>'
   '<table class="alf"><thead><tr><th>—</th><th>Diego</th><th>Lucía</th></tr></thead><tbody>'
   '<tr><td>¿Qué opina del móvil/redes?</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>¿Qué problema ve?</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
@@ -518,7 +518,7 @@ P(actx(AN(), "Escanea — completa la ficha",
   apoyo=""))
 P(actx(AN(), "Reacciona — ¿y tú?",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
-  '<p>¿Estás más de acuerdo con Diego o con Lucía? Schrijf 2–3 zinnen met <b>creo que + porque</b>. Voeg één plan toe met <b>voy a</b>.</p>'
+  '<p>¿Estás más de acuerdo con Diego o con Lucía? Escribe 2–3 frases con <b>creo que + porque</b>. <span class="gloss">Twee tot drie zinnen met je mening.</span> Voeg één plan toe met <b>voy a</b>.</p>'
   '<div class="wbox sm"></div>',
   apoyo="Marco: Estoy más de acuerdo con … porque … Este finde voy a …"))
 sec_close()
@@ -536,7 +536,7 @@ P('<h3 style="margin-top:6mm">2 · Conectores de tiempo — ordena tu plan</h3>'
 P(colloc("primero · después · luego · más tarde · por último", ["primero = eerst","después / luego = daarna","más tarde = later","al final / por último = ten slotte"]))
 P(actx(AN(), "Ordena el plan con conectores",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p>Herschrijf het plan in volgorde met <b>primero, después, luego, más tarde, al final</b>.</p>'
+  '<p>Vuelve a escribir el plan en orden con <b>primero, después, luego, más tarde, al final</b>. <span class="gloss">Herschrijf het plan in volgorde.</span></p>'
   '<p style="margin-left:12.5mm">ver una peli · quedar con amigos · estudiar · comer tacos · descansar<br>'
   '1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span>4. <span class="wl full"></span>5. <span class="wl full"></span></p>',
   apoyo="Marco: Primero… · Luego… · Después… · Por último…"))
@@ -567,12 +567,12 @@ P('<div class="fams three" style="margin-top:2mm">'
 P('<div class="route-note" style="margin-top:5mm">🗺️ <b>En la web:</b> haz clic en México (★) en el mapa para descubrir CDMX, Diego y su música. <span class="gloss">Online: klik op México voor CDMX en de música-fiche.</span></div>')
 P(actx(AN(), "Compara · tú y el mundo digital hispano",
   [{"t":"🌍 Cultura","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Welke redes gebruik jij, en welke gebruikt men in Latijns-Amerika? Schrijf 2 zinnen met <b>creo que</b> of <b>me gusta</b>.</p>'
+  '<p>¿Qué redes usas tú y cuáles se usan en Latinoamérica? Escribe dos frases con <b>creo que</b> o <b>me gusta</b>. <span class="gloss">Twee zinnen met je mening.</span></p>'
   '<div class="wbox sm"></div>',
   apoyo="Marco: Aquí… pero allí… · Nosotros… y ellos…"))
 P(actx(AN(), "Datos curiosos — une",
   [{"t":"🌍 Cultura","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p>Verbind (schrijf de letter).</p>'
+  '<p>Une las dos columnas: escribe la letra. <span class="gloss">Verbind en schrijf de letter.</span></p>'
   '<div class="wcols" style="grid-template-columns:1fr 1fr;margin-left:12.5mm">'
   '<div class="wcol"><div class="ch">Elemento</div><div class="cb short">1. Bad Bunny &nbsp; 2. WhatsApp &nbsp; 3. el español &nbsp; 4. Karol G</div></div>'
   '<div class="wcol"><div class="ch">Dato</div><div class="cb short">a. red nº 1 en Latinoamérica &nbsp; b. 2ª lengua en redes sociales &nbsp; c. reguetón de Puerto Rico, récords en Spotify &nbsp; d. cantante de Colombia</div></div></div>'
@@ -662,20 +662,20 @@ for key, titel in GRP:
 P('<div class="divider">Escalera de práctica · V.1–V.5</div>')
 P(actx("V.1", "Reconocer — ES → NL",
   [{"t":"🔍 Leer","skill":True},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Schrijf de vertaling. el móvil = <span class="wl md"></span> · subir = <span class="wl md"></span> · las redes = <span class="wl md"></span> · creo que = <span class="wl md"></span></p>', apoyo="Modelo"))
+  '<p>Escribe la traducción. <span class="gloss">Schrijf de vertaling.</span> el móvil = <span class="wl md"></span> · subir = <span class="wl md"></span> · las redes = <span class="wl md"></span> · creo que = <span class="wl md"></span></p>', apoyo="Modelo"))
 P(actx("V.2", "Distinguir — sorteer per familia",
   [{"t":"🔍 Analizar","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Sorteer: <span class="words"><b>el móvil · subir · el mensaje · chatear · la tableta · compartir · el perfil · descargar</b></span></p>'
+  '<p>Clasifica: <span class="gloss">sorteer deze woorden</span> <span class="words"><b>el móvil · subir · el mensaje · chatear · la tableta · compartir · el perfil · descargar</b></span></p>'
   + sortcols([("aparato/red",""),("acción (verbo)","")], eigen=False), apoyo="Banco de palabras"))
 P(actx("V.3", "Recordar — NL → ES (con letra)",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Vul het Spaanse woord aan (beginletter gegeven). de gsm = <b>m</b>___ · uploaden = <b>s</b>___ · het bericht = <b>m</b>___ · ik denk dat = <b>c</b>___ q___<br><span class="wl full"></span></p>', apoyo="Primera letra"))
+  '<p>Completa la palabra en español; tienes la primera letra. <span class="gloss">de beginletter staat erbij</span><br>de gsm = <b>m</b>___ · uploaden = <b>s</b>___ · het bericht = <b>m</b>___ · ik denk dat = <b>c</b>___ q___<br><span class="wl full"></span></p>', apoyo="Primera letra"))
 P(actx("V.4", "Producir — una frase con tres palabras",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★★"}],
-  '<p>Maak één correcte zin met <b>voy a · el vídeo · subir</b>.</p><div class="wbox sm"></div>', apoyo=""))
+  '<p>Escribe una frase correcta con <b>voy a · el vídeo · subir</b>.</p><div class="wbox sm"></div>', apoyo=""))
 P(actx("V.5", "Comunicar — mi vida digital en 3 frases",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"± 5 min"},{"t":"★★★"}],
-  '<p>Schrijf 3 zinnen over jouw digitale leven (wat je gebruikt · een plan met ir a · een mening met creo que) en zeg ze hardop.</p>'
+  '<p>Escribe tres frases sobre tu vida digital (qué usas · un plan con ir a · una opinión con creo que) y dilas en voz alta. <span class="gloss">Drie zinnen over je digitale leven.</span></p>'
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span></p>', apoyo="Marco: Uso… · Voy a… · Creo que… porque…"))
 P('<div class="se" style="margin-top:6mm">Mi red de palabras <span class="gloss" style="font-size:8pt">— teken je scherm en label 6 apps/acties in het Spaans</span></div>')
 P('<div class="wbox lg"></div>')
