@@ -20,7 +20,7 @@ IFRAME=video_iframe(VIDEO_SRC)
 YT_WATCH="https://www.youtube.com/watch?v="+VIDEO_SRC[1]
 CHUNKS=["¿Qué es esto?","Esto son","Esto es un","que sirve para","sirven para","un sofá","una televisión","un libro","un vaso","la cocina","el cuarto de baño","una ventana","las llaves","hay un ordenador","no hay","sí que hay","la puerta","descansar","beber"]
 SCENES=[
- ("Escena 1 · La casa de Julio","María bezoekt Julio's huis; hij toont haar alle voorwerpen en waar ze voor dienen.",[
+ ("Escena 1 · La casa de Julio","María visita la casa de Julio; él le enseña todos los objetos y para qué sirven.",[
   ("María","¡Qué!","Wow!"),
   ("Julio","Esto son mis llaves, que sirven para abrir la puerta.","Dit zijn mijn sleutels, om de deur te openen."),
   ("María","Muy bien.","Heel goed."),
@@ -31,7 +31,7 @@ SCENES=[
   ("Julio","Ahí está la cocina, y ahí está el cuarto de baño.","Daar is de keuken, en daar is de badkamer."),
   ("Julio","Y esto es una ventana, que sirve para mirar la luna y las estrellas.","En dit is een raam, om naar de maan en de sterren te kijken."),
  ]),
- ("Escena 2 · ¿Hay un ordenador?","María vraagt naar de sleutels en of er een computer is.",[
+ ("Escena 2 · ¿Hay un ordenador?","María pregunta por las llaves y si hay un ordenador.",[
   ("María","¿Éstas son las llaves?","Zijn dit de sleutels?"),
   ("Julio","Las de la puerta de casa, sí.","Die van de voordeur, ja."),
   ("María","Y ordenador, ¿hay un ordenador?","En computer, is er een computer?"),
@@ -84,7 +84,7 @@ body.shownl .nl{display:block}
 BODY="".join(scene(*s) for s in SCENES)
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · Unidad 5 · Escucha</title><style>{CSS}</style></head><body>
-<div class="top"><h1>Unidad 5 · Objetos cotidianos — ¡Escucha!</h1><p>Bekijk de scène en <b>lees mee</b>. Klik een zin om ze te horen; zet Nederlands aan/uit; de <span style="background:#FEF08A;color:#20242E;border-radius:4px;padding:0 4px">gele</span> woorden zijn de bruikbare chunks.</p></div>
+<div class="top"><h1>Unidad 5 · Objetos cotidianos — ¡Escucha!</h1><p>Mira la escena y <b>lee al mismo tiempo</b>. Pulsa una frase para oírla; activa o desactiva el neerlandés. Las palabras en <span style="background:#FEF08A;color:#20242E;border-radius:4px;padding:0 4px">amarillo</span> son los chunks útiles. <span class="stn">lees mee; de gele woorden zijn de chunks</span></p></div>
 <main>
  <div class="grid">
   <div class="vid">
@@ -94,7 +94,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
       <a class="btn" href="{YT_WATCH}" target="_blank" rel="noopener">▶ Op YouTube</a>
       <span class="legend">💡 <span class="ch">geel</span> = chunk om mee te nemen</span>
     </div>
-    <p class="vidhint">Speelt de video niet af? Klik <a href="{YT_WATCH}" target="_blank" rel="noopener">hier om ze op YouTube te openen</a>.</p>
+    <p class="vidhint">¿No se reproduce el vídeo? Pulsa <a href="{YT_WATCH}" target="_blank" rel="noopener">aquí para abrirlo en YouTube</a>.</p>
   </div>
   <div class="tr">{BODY}</div>
  </div>

@@ -24,14 +24,14 @@ WATCH=("https://www.youtube.com/watch?v="+VIDEO_SRC[1]) if VIDEO_SRC[0]=="youtub
 WATCH_LABEL="▶ Op YouTube" if VIDEO_SRC[0]=="youtube" else "▶ Openen in Drive"
 CHUNKS=["Voy a preparar café","¿Quieres desayunar?","no tengo mucha hambre","Tengo sueño","¿No tienes sueño?","Vamos a dormir","Tengo cosas que hacer","¿quedamos para ir al cine?","no puedo","Tengo que pasear al perro","¿Vamos a pasear","tengo que lavarme el pelo","¿Tienes que hacer algo?","voy a quedar con unas amigas","Tengo que trabajar","tengo que dormir","voy a dar unas clases","el próximo fin de semana","esta noche","esta tarde","Mañana es domingo","Hasta luego"]
 SCENES=[
- ("Escena 1 · Un sábado por la mañana","Julio wil plannen maken; María heeft… «cosas que hacer». Let op elk **plan** (voy a) en elke **verplichting** (tengo que).",[
+ ("Escena 1 · Un sábado por la mañana","Julio quiere hacer planes; María tiene… «cosas que hacer». Fíjate en cada **plan** (voy a) y cada **obligación** (tengo que).",[
   ("María","Buenos días.","Goeiemorgen."),
   ("Julio","Buenos días. Voy a preparar café. ¿Quieres desayunar?","Goeiemorgen. Ik ga koffie zetten. Wil je ontbijten?"),
   ("María","Ah… no tengo mucha hambre.","Ah… ik heb niet veel honger."),
   ("Julio","Pero es sábado. Tengo sueño. ¿No tienes sueño? Vamos a dormir un poquito más.","Maar het is zaterdag. Ik ben slaperig. Ben jij niet slaperig? Laten we nog een beetje slapen."),
   ("María","Tengo cosas que hacer.","Ik heb dingen te doen."),
  ]),
- ("Escena 2 · «Tengo que…» (excuus na excuus)","Elke uitnodiging van Julio botst op een verplichting van María.",[
+ ("Escena 2 · «Tengo que…» (excuus na excuus)","Cada invitación de Julio choca con una obligación de María.",[
   ("Julio","Y esta noche, ¿quedamos para ir al cine?","En vanavond, spreken we af om naar de cinema te gaan?"),
   ("María","Eh… no puedo. Tengo que pasear al perro de mi madre.","Eh… ik kan niet. Ik moet de hond van mijn moeder uitlaten."),
   ("Julio","¿Y esta tarde? ¿Vamos a pasear, a comprar cosas?","En vanmiddag? Gaan we wandelen, dingen kopen?"),
@@ -41,7 +41,7 @@ SCENES=[
   ("Julio","¿Tienes que hacer algo?","Moet je iets doen?"),
   ("María","El domingo voy a quedar con unas amigas.","Zondag ga ik afspreken met wat vriendinnen."),
  ]),
- ("Escena 3 · ¿Y la semana? ¿Y el próximo finde?","Julio blijft proberen — tot en met «la India en globo».",[
+ ("Escena 3 · ¿Y la semana? ¿Y el próximo finde?","Julio sigue intentándolo, hasta lo de «la India en globo».",[
   ("Julio","¿El lunes, el martes, el miércoles?","Maandag, dinsdag, woensdag?"),
   ("María","Tengo que trabajar.","Ik moet werken."),
   ("Julio","¿Por las noches?","'s Avonds?"),
@@ -102,7 +102,7 @@ body.shownl .nl{display:block}
 BODY="".join(scene(*s) for s in SCENES)
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · Unidad 9 · Escucha</title><style>{CSS}</style></head><body>
-<div class="top"><h1>Unidad 9 · Planes y obligaciones — ¡Escucha!</h1><p>Bekijk de scène en <b>lees mee</b>. Klik een zin om ze te horen; zet Nederlands aan/uit. De <span style="background:#FEF08A;color:#20242E;border-radius:4px;padding:0 4px">gele</span> woorden zijn chunks: let op <b>voy a…</b> (plan) en <b>tengo que…</b> (moeten).</p></div>
+<div class="top"><h1>Unidad 9 · Planes y obligaciones — ¡Escucha!</h1><p>Mira la escena y <b>lee al mismo tiempo</b>. Pulsa una frase para oírla; activa o desactiva el neerlandés. Las palabras en <span style="background:#FEF08A;color:#20242E;border-radius:4px;padding:0 4px">amarillo</span> son chunks: fíjate en <b>voy a…</b> y <b>tengo que…</b> <span class="stn">lees mee; de gele woorden zijn de chunks</span></p></div>
 <main>
  <div class="grid">
   <div class="vid">
@@ -112,7 +112,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
       <a class="btn" href="{WATCH}" target="_blank" rel="noopener">{WATCH_LABEL}</a>
       <span class="legend">💡 <span class="ch">geel</span> = chunk om mee te nemen</span>
     </div>
-    <p class="vidhint">Speelt de video niet af? Klik <a href="{WATCH}" target="_blank" rel="noopener">hier om ze in een nieuw tabblad te openen</a>.</p>
+    <p class="vidhint">¿No se reproduce el vídeo? Pulsa <a href="{WATCH}" target="_blank" rel="noopener">aquí para abrirlo en otra pestaña</a>.</p>
   </div>
   <div class="tr">{BODY}</div>
  </div>

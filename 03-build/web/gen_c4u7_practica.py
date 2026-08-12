@@ -42,7 +42,7 @@ select.txin{width:auto}
 
 HTML="""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · U7 · Práctica</title><style>__CSS__</style></head><body>
-<div class="top"><h1>Unidad 7 · Las profesiones — Práctica</h1><p>Oefen de bruikbare taal uit de scène: van <b>herkennen</b> → <b>kiezen</b> → <b>zelf zeggen/schrijven</b>. Alles corrigeert zichzelf; klik 🔊 om te horen.</p></div>
+<div class="top"><h1>Unidad 7 · Las profesiones — Práctica</h1><p>Practica la lengua útil de la escena: de <b>reconocer</b> → <b>elegir</b> → <b>decirlo y escribirlo tú</b>. Todo se corrige solo; pulsa 🔊 para oírlo. <span class="stn">van herkennen naar zelf zeggen</span></p></div>
 <main>
  <h2 class="subh">① Reconocer <span class="pill">receptief</span></h2>
  <div class="game" id="g_cards"></div>
@@ -75,7 +75,7 @@ var CHUNKS=[["el profesor / la profesora","de leraar / lerares"],["el escritor /
 
 (function(){var el=document.getElementById('g_escucha');if(!TTS){el.innerHTML='<h3>¿Qué oyes? 🎧</h3><p class="desc">Spraak werkt in Chrome/Edge.</p>';return;}
  var bank=["profesora","escritor","actriz","dependienta","estudiante","médico","tienda","oficina","academia","hospital","teatro","profesor"];var p=0,s=0;
- el.innerHTML='<h3>¿Qué oyes? 🎧</h3><p class="desc">Klik ▶, luister en kies het beroep of de werkplek die je hoort.</p>'+sb('sbE')+'<div style="margin:6px 0"><button class="spk-btn" id="eP">▶ Speel af</button></div><div class="chips" id="eO"></div><div class="fb" id="eF"></div>';
+ el.innerHTML='<h3>¿Qué oyes? 🎧</h3><p class="desc">Pulsa ▶, escucha y elige la profesión o el lugar de trabajo que oyes. <span class="stn">luister en kies</span></p>'+sb('sbE')+'<div style="margin:6px 0"><button class="spk-btn" id="eP">▶ Speel af</button></div><div class="chips" id="eO"></div><div class="fb" id="eF"></div>';
  var bar=el.querySelector('#sbE');function nx(){var a=bank[Math.floor(Math.random()*bank.length)];el.cur=a;var o=[a];while(o.length<4){var c=bank[Math.floor(Math.random()*bank.length)];if(o.indexOf(c)<0)o.push(c);}o.sort(()=>Math.random()-.5);var oc=el.querySelector('#eO');oc.innerHTML='';o.forEach(function(x){var c=document.createElement('div');c.className='chip';c.textContent=x;c.onclick=function(){var ok=x===a;if(ok){p++;s++}else s=0;setSc(bar,p,s);oc.querySelectorAll('.chip').forEach(function(z){if(z.textContent===a)z.classList.add('ok');else if(z===c&&!ok)z.classList.add('no');});fb(el.querySelector('#eF'),ok,'«'+a+'»');setTimeout(nx,1100);};oc.appendChild(c);});el.querySelector('#eF').className='fb';speak(a);}
  el.querySelector('#eP').onclick=function(){speak(el.cur);};nx();})();
 
@@ -83,7 +83,7 @@ var CHUNKS=[["el profesor / la profesora","de leraar / lerares"],["el escritor /
 (function(){var el=document.getElementById('g_clasifica');
  var items=[["escritora","profesión"],["dependienta","profesión"],["actriz","profesión"],["la tienda","lugar"],["la oficina","lugar"],["la academia","lugar"],["tranquilo","estado"],["cansada","estado"],["bien","estado"]];
  var cat={"profesión":"profesión 💼","lugar":"lugar de trabajo 🏢","estado":"estado 😌"};var pool=items.slice(),p=0,s=0;
- el.innerHTML='<h3>Clasifica 🎯</h3><p class="desc">Is het een beroep, een werkplek of een toestand (hoe je je voelt)?</p>'+sb('sbC')+'<div id="cw" style="font-size:24px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" id="cc" style="justify-content:center"></div><div class="fb" id="cf"></div>';
+ el.innerHTML='<h3>Clasifica 🎯</h3><p class="desc">¿Es una profesión, un lugar de trabajo o un estado (cómo te sientes)? <span class="stn">beroep, werkplek of toestand?</span></p>'+sb('sbC')+'<div id="cw" style="font-size:24px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" id="cc" style="justify-content:center"></div><div class="fb" id="cf"></div>';
  var bar=el.querySelector('#sbC'),cc=el.querySelector('#cc');Object.keys(cat).forEach(function(k){var c=document.createElement('div');c.className='chip';c.textContent=cat[k];c.onclick=function(){g(k);};cc.appendChild(c);});
  function nx(){if(!pool.length)pool=items.slice();el.cur=pool.splice(Math.floor(Math.random()*pool.length),1)[0];el.querySelector('#cw').textContent=el.cur[0];el.querySelector('#cf').className='fb';}
  function g(k){var ok=k===el.cur[1];if(ok){p++;s++}else s=0;setSc(bar,p,s);fb(el.querySelector('#cf'),ok,'«'+el.cur[0]+'» → '+cat[el.cur[1]]);setTimeout(nx,900);}nx();})();
@@ -112,14 +112,14 @@ var CHUNKS=[["el profesor / la profesora","de leraar / lerares"],["el escritor /
  el.innerHTML='<h3>Ordena la conversación 🔮</h3><p class="desc">Zet Josefina’s raadsel in de juiste volgorde.</p><div class="chips" id="oP"></div><div class="col" id="oB"><b style="font-size:12px;color:var(--gd)">JOUW VOLGORDE</b><div class="chips" id="oBB" style="margin-top:6px"></div></div><div class="answerbtns"><button class="btn sec" id="oR">Reset</button><button class="btn" id="oC">Controleer</button></div><div class="fb" id="oF"></div>';
  function draw(){var p=el.querySelector('#oP');p.innerHTML='';pool.forEach(function(t,i){var c=document.createElement('div');c.className='chip';c.textContent=t;c.onclick=function(){cur.push(t);pool.splice(i,1);draw();built();};p.appendChild(c);});}
  function built(){var b=el.querySelector('#oBB');b.innerHTML='';cur.forEach(function(t,i){var c=document.createElement('div');c.className='chip sel';c.textContent=(i+1)+'. '+t;c.onclick=function(){pool.push(t);cur.splice(i,1);draw();built();};b.appendChild(c);});}
- el.querySelector('#oC').onclick=function(){fb(el.querySelector('#oF'),cur.join('|')===sol.join('|'),cur.join('|')===sol.join('|')?'¡Perfecto!':'Nog niet — begin met «Silencio…».');};
+ el.querySelector('#oC').onclick=function(){fb(el.querySelector('#oF'),cur.join('|')===sol.join('|'),cur.join('|')===sol.join('|')?'¡Perfecto!':'Todavía no — empieza por «Silencio…».');};
  el.querySelector('#oR').onclick=function(){cur=[];pool=sol.slice().sort(()=>Math.random()-.5);draw();built();el.querySelector('#oF').className='fb';};draw();built();})();
 
 // ② ¿ser o estar?
 (function(){var el=document.getElementById('g_serestar');
  var items=[["María ___ profesora. (beroep)","es"],["Julio no ___ bien. (toestand)","está"],["Yo ___ estudiante. (wie ik ben)","soy"],["Nosotros ___ tranquilos. (toestand)","estamos"],["Ella ___ actriz. (beroep)","es"],["¿Cómo ___ tú hoy? (toestand)","estás"]];
  var pool=items.slice(),p=0,s=0;
- el.innerHTML='<h3>¿ser o estar? ⚖️</h3><p class="desc">ser = wie/wat je bent (beroep) · estar = hoe je je voelt. Elige la forma correcta. <span class="gloss">Kies de juiste vorm.</span></p>'+sb('sbS')+'<div id="sw" style="font-size:18px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" id="so" style="justify-content:center"></div><div class="fb" id="sf"></div>';
+ el.innerHTML='<h3>¿ser o estar? ⚖️</h3><p class="desc">ser = quién o qué eres (profesión) · estar = cómo te sientes. Elige la forma correcta. <span class="stn">kies de juiste vorm</span></p>'+sb('sbS')+'<div id="sw" style="font-size:18px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" id="so" style="justify-content:center"></div><div class="fb" id="sf"></div>';
  var bar=el.querySelector('#sbS');
  function nx(){if(!pool.length)pool=items.slice();el.cur=pool.splice(Math.floor(Math.random()*pool.length),1)[0];el.querySelector('#sw').textContent=el.cur[0];
   var opts=[el.cur[1]];var all=["es","está","soy","estoy","estamos","estás"];while(opts.length<3){var c=all[Math.floor(Math.random()*all.length)];if(opts.indexOf(c)<0)opts.push(c);}opts.sort(()=>Math.random()-.5);
@@ -138,7 +138,7 @@ var CHUNKS=[["el profesor / la profesora","de leraar / lerares"],["el escritor /
 
 // ③ ¿A qué te dedicas? (vrije productie)
 (function(){var el=document.getElementById('g_dedicas');
- el.innerHTML='<h3>¿A qué te dedicas? ✍️🗣️</h3><p class="desc">Zeg wat je (later) doet en waar je werkt. Er is geen «juist» — het is jouw (droom)beroep.</p>'
+ el.innerHTML='<h3>¿A qué te dedicas? ✍️🗣️</h3><p class="desc">Di a qué te dedicas (o te vas a dedicar) y dónde trabajas. No hay respuesta «correcta»: es tu profesión soñada. <span class="stn">het is jouw (droom)beroep</span></p>'
   +'<div style="display:grid;gap:8px;max-width:640px"><div><span style="font-family:var(--disp)">Soy</span> <input class="txin" id="p1" placeholder="estudiante / profesora…" style="width:180px"> <span style="font-family:var(--disp)">y trabajo en</span> <input class="txin" id="p2" placeholder="una tienda / casa…" style="width:170px"> <span style="font-family:var(--disp)">. Estoy</span> <select class="txin" id="p3"><option>muy contento/a</option><option>tranquilo/a</option><option>un poco cansado/a</option></select> <span style="font-family:var(--disp)">.</span></div></div>'
   +'<div class="answerbtns"><button class="btn" id="pGo">Maak mijn zin</button>'+(TTS?'<button class="spk-btn" id="pSpk">🔊 hoor</button>':'')+'</div><div class="fb" id="pF"></div>';
  el.querySelector('#pGo').onclick=function(){var a=(el.querySelector('#p1').value||'estudiante').trim(),b=(el.querySelector('#p2').value||'una academia').trim(),c=el.querySelector('#p3').value;el.cur='Soy '+a+' y trabajo en '+b+'. Estoy '+c+'.';fb(el.querySelector('#pF'),true,'<b>'+el.cur+'</b><br><span style="color:var(--mut);font-style:italic">Zeg het nu hardop — en laat je buur gissen: ¿puede ser…?</span>');};

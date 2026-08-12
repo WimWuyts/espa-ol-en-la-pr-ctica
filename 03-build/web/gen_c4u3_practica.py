@@ -44,7 +44,7 @@ select.txin{width:auto}
 
 HTML="""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · U3 · Práctica</title><style>__CSS__</style></head><body>
-<div class="top"><h1>Unidad 3 · Nacionalidades y países — Práctica</h1><p>Oefen de bruikbare taal uit de scène: van <b>herkennen</b> → <b>kiezen</b> → <b>zelf zeggen/schrijven</b>. Alles corrigeert zichzelf; klik 🔊 om te horen.</p></div>
+<div class="top"><h1>Unidad 3 · Nacionalidades y países — Práctica</h1><p>Practica la lengua útil de la escena: de <b>reconocer</b> → <b>elegir</b> → <b>decirlo y escribirlo tú</b>. Todo se corrige solo; pulsa 🔊 para oírlo. <span class="stn">van herkennen naar zelf zeggen</span></p></div>
 <main>
  <h2 class="subh">① Reconocer <span class="pill">receptief</span></h2>
  <div class="game" id="g_cards"></div>
@@ -80,7 +80,7 @@ var CHUNKS=[["¿De dónde eres?","waar kom je vandaan?"],["Soy de Bélgica","ik 
 // ① Escucha
 (function(){var el=document.getElementById('g_escucha');if(!TTS){el.innerHTML='<h3>¿Qué oyes? 🎧</h3><p class="desc">Spraak werkt in Chrome/Edge.</p>';return;}
  var bank=CHUNKS.map(c=>c[0].replace('/a','').replace('…','')).filter(x=>x.length<16);var p=0,s=0;
- el.innerHTML='<h3>¿Qué oyes? 🎧</h3><p class="desc">Klik ▶, luister en kies wat je hoort.</p>'+sb('sbE')+'<div style="margin:6px 0"><button class="spk-btn" id="eP">▶ Speel af</button></div><div class="chips" id="eO"></div><div class="fb" id="eF"></div>';
+ el.innerHTML='<h3>¿Qué oyes? 🎧</h3><p class="desc">Pulsa ▶, escucha y elige lo que oyes. <span class="stn">luister en kies</span></p>'+sb('sbE')+'<div style="margin:6px 0"><button class="spk-btn" id="eP">▶ Speel af</button></div><div class="chips" id="eO"></div><div class="fb" id="eF"></div>';
  var bar=el.querySelector('#sbE');function nx(){var a=bank[Math.floor(Math.random()*bank.length)];el.cur=a;var o=[a];while(o.length<4){var c=bank[Math.floor(Math.random()*bank.length)];if(o.indexOf(c)<0)o.push(c);}o.sort(()=>Math.random()-.5);var oc=el.querySelector('#eO');oc.innerHTML='';o.forEach(function(x){var c=document.createElement('div');c.className='chip';c.textContent=x;c.onclick=function(){var ok=x===a;if(ok){p++;s++}else s=0;setSc(bar,p,s);oc.querySelectorAll('.chip').forEach(function(z){if(z.textContent===a)z.classList.add('ok');else if(z===c&&!ok)z.classList.add('no');});fb(el.querySelector('#eF'),ok,'«'+a+'»');setTimeout(nx,1100);};oc.appendChild(c);});el.querySelector('#eF').className='fb';speak(a);}
  el.querySelector('#eP').onclick=function(){speak(el.cur);};nx();})();
 
@@ -88,7 +88,7 @@ var CHUNKS=[["¿De dónde eres?","waar kom je vandaan?"],["Soy de Bélgica","ik 
 (function(){var el=document.getElementById('g_clasifica');
  var items=[["España","país"],["México","país"],["Colombia","país"],["mexicana","gentilicio"],["argentino","gentilicio"],["belga","gentilicio"],["el neerlandés","idioma"],["el árabe","idioma"],["el inglés","idioma"]];
  var cat={"país":"país 🌍","gentilicio":"gentilicio 🪪","idioma":"idioma 🗣️"};var pool=items.slice(),p=0,s=0;
- el.innerHTML='<h3>Clasifica 🎯</h3><p class="desc">Is het een land, een nationaliteit of een taal? Kies.</p>'+sb('sbC')+'<div id="cw" style="font-size:24px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" id="cc" style="justify-content:center"></div><div class="fb" id="cf"></div>';
+ el.innerHTML='<h3>Clasifica 🎯</h3><p class="desc">¿Es un país, una nacionalidad o un idioma? Elige. <span class="stn">land, nationaliteit of taal?</span></p>'+sb('sbC')+'<div id="cw" style="font-size:24px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" id="cc" style="justify-content:center"></div><div class="fb" id="cf"></div>';
  var bar=el.querySelector('#sbC'),cc=el.querySelector('#cc');Object.keys(cat).forEach(function(k){var c=document.createElement('div');c.className='chip';c.textContent=cat[k];c.onclick=function(){g(k);};cc.appendChild(c);});
  function nx(){if(!pool.length)pool=items.slice();el.cur=pool.splice(Math.floor(Math.random()*pool.length),1)[0];el.querySelector('#cw').textContent=el.cur[0];el.querySelector('#cf').className='fb';}
  function g(k){var ok=k===el.cur[1];if(ok){p++;s++}else s=0;setSc(bar,p,s);fb(el.querySelector('#cf'),ok,'«'+el.cur[0]+'» → '+cat[el.cur[1]]);setTimeout(nx,900);}nx();})();
@@ -117,7 +117,7 @@ var CHUNKS=[["¿De dónde eres?","waar kom je vandaan?"],["Soy de Bélgica","ik 
  el.innerHTML='<h3>Ordena la conversación 🔢</h3><p class="desc">Klik de zinnen in de juiste volgorde.</p><div class="chips" id="oP"></div><div class="col" id="oB"><b style="font-size:12px;color:var(--gd)">JOUW VOLGORDE</b><div class="chips" id="oBB" style="margin-top:6px"></div></div><div class="answerbtns"><button class="btn sec" id="oR">Reset</button><button class="btn" id="oC">Controleer</button></div><div class="fb" id="oF"></div>';
  function draw(){var p=el.querySelector('#oP');p.innerHTML='';pool.forEach(function(t,i){var c=document.createElement('div');c.className='chip';c.textContent=t;c.onclick=function(){cur.push(t);pool.splice(i,1);draw();built();};p.appendChild(c);});}
  function built(){var b=el.querySelector('#oBB');b.innerHTML='';cur.forEach(function(t,i){var c=document.createElement('div');c.className='chip sel';c.textContent=(i+1)+'. '+t;c.onclick=function(){pool.push(t);cur.splice(i,1);draw();built();};b.appendChild(c);});}
- el.querySelector('#oC').onclick=function(){fb(el.querySelector('#oF'),cur.join('|')===sol.join('|'),cur.join('|')===sol.join('|')?'¡Perfecto!':'Nog niet — begin met een vraag naar het land.');};
+ el.querySelector('#oC').onclick=function(){fb(el.querySelector('#oF'),cur.join('|')===sol.join('|'),cur.join('|')===sol.join('|')?'¡Perfecto!':'Todavía no — empieza preguntando por el país.');};
  el.querySelector('#oR').onclick=function(){cur=[];pool=sol.slice().sort(()=>Math.random()-.5);draw();built();el.querySelector('#oF').className='fb';};draw();built();})();
 
 // ② gentilicio (-o/-a) — m/v inductief
@@ -134,11 +134,11 @@ var CHUNKS=[["¿De dónde eres?","waar kom je vandaan?"],["Soy de Bélgica","ik 
  var pool=items.slice(),p=0,s=0;
  el.innerHTML='<h3>¿Tú o usted? 🤝</h3><p class="desc">Informeel (tú) of beleefd (usted)? Kies.</p>'+sb('sbTU')+'<div id="tw" style="font-size:19px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._tu(\'tú\')">tú (informeel)</div><div class="chip" onclick="window._tu(\'usted\')">usted (beleefd)</div></div><div class="fb" id="tf"></div>';
  var bar=el.querySelector('#sbTU');function nx(){if(!pool.length)pool=items.slice();el.cur=pool.splice(Math.floor(Math.random()*pool.length),1)[0];el.querySelector('#tw').textContent=el.cur[0];el.querySelector('#tf').className='fb';}
- window._tu=function(k){var ok=k===el.cur[1];if(ok){p++;s++}else s=0;setSc(bar,p,s);fb(el.querySelector('#tf'),ok,el.cur[1]==='tú'?'informeel (met vrienden/klasgenoten)':'beleefd (met een onbekende/volwassene)');setTimeout(nx,1100);};nx();})();
+ window._tu=function(k){var ok=k===el.cur[1];if(ok){p++;s++}else s=0;setSc(bar,p,s);fb(el.querySelector('#tf'),ok,el.cur[1]==='tú'?'informal (con amigos y compañeros)':'beleefd (met een onbekende/volwassene)');setTimeout(nx,1100);};nx();})();
 
 // ③ ¿De dónde eres? (vrije productie)
 (function(){var el=document.getElementById('g_presentate');
- el.innerHTML='<h3>¿De dónde eres? ✍️🗣️</h3><p class="desc">Zeg waar je vandaan komt, je nationaliteit en welke talen je spreekt. Er is geen «juist» — het is jouw voorstelling.</p>'
+ el.innerHTML='<h3>¿De dónde eres? ✍️🗣️</h3><p class="desc">Di de dónde eres, tu nacionalidad y qué idiomas hablas. No hay respuesta «correcta»: es tu presentación. <span class="stn">het is jouw voorstelling</span></p>'
   +'<div style="display:grid;gap:8px;max-width:560px"><div><span style="font-family:var(--disp)">Yo soy de</span> <input class="txin" id="p1" placeholder="Bélgica"> <span style="font-family:var(--disp)">. Soy</span> <input class="txin" id="p2" placeholder="belga"> <span style="font-family:var(--disp)">.</span></div>'
   +'<div><span style="font-family:var(--disp)">Hablo</span> <input class="txin" id="p3" placeholder="neerlandés y un poco de español"> <span style="font-family:var(--disp)">.</span></div></div>'
   +'<div class="answerbtns"><button class="btn" id="pGo">Maak mijn zin</button>'+(TTS?'<button class="spk-btn" id="pSpk">🔊 hoor</button>':'')+'</div><div class="fb" id="pF"></div>';

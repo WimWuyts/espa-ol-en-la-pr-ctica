@@ -25,7 +25,7 @@ WATCH=("https://www.youtube.com/watch?v="+VIDEO_SRC[1]) if VIDEO_SRC[0]=="youtub
 WATCH_LABEL="▶ Op YouTube" if VIDEO_SRC[0]=="youtube" else "▶ Openen in Drive"
 CHUNKS=["¿Qué hora es?","las ocho y media","¿A qué hora?","a las once","a las doce","¿Quieres quedar","quedamos en mi casa","esta noche","Más tarde","ahora mismo","un poco tarde","un poco pronto","en veinte minutos","Hasta ahora","No te oigo nada","¿Puedes hablar más despacio?","puede ser","un cine","un restaurante","vámonos","Un beso"]
 SCENES=[
- ("Escena 1 · La llamada (falsa)","Op een feestje doet Julio alsof hij met «Laura» telefoneert — om María jaloers te maken. Let op álle tijd-uitdrukkingen.",[
+ ("Escena 1 · La llamada (falsa)","En una fiesta Julio finge hablar por teléfono con «Laura» para poner celosa a María. Fíjate en todas las expresiones de tiempo.",[
   ("Julio","¿Sí? Laura, ¿cómo estás? ¿Qué? No te oigo nada.","Ja? Laura, hoe gaat het? Wat? Ik hoor je helemaal niet."),
   ("Julio","¿Esta noche? ¿Quieres quedar esta noche?","Vanavond? Wil je vanavond afspreken?"),
   ("Julio","Estoy en una fiesta, en mi oficina. No sé si puedo. ¿Puedes hablar más despacio?","Ik ben op een feestje, op mijn werk. Ik weet niet of ik kan. Kan je wat langzamer spreken?"),
@@ -38,7 +38,7 @@ SCENES=[
   ("Julio","Te veo en veinte minutos. Hasta ahora. Un beso.","Ik zie je over twintig minuten. Tot straks. Kusje."),
   ("Julio","Bueno, me voy, es un poco tarde.","Goed, ik ga, het is een beetje laat."),
  ]),
- ("Escena 2 · «Venga, vámonos»","En dan draait María het spel om…",[
+ ("Escena 2 · «Venga, vámonos»","Y entonces María le da la vuelta al juego…",[
   ("María","Sí. Venga, vámonos.","Ja. Kom, we gaan."),
   ("Julio","¿Cómo, tú y yo?","Wat, jij en ik?"),
   ("María","Ajá.","Mm-hm."),
@@ -93,7 +93,7 @@ body.shownl .nl{display:block}
 BODY="".join(scene(*s) for s in SCENES)
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · Unidad 8 · Escucha</title><style>{CSS}</style></head><body>
-<div class="top"><h1>Unidad 8 · Las horas — ¡Escucha!</h1><p>Bekijk de scène en <b>lees mee</b>. Klik een zin om ze te horen; zet Nederlands aan/uit; de <span style="background:#FEF08A;color:#20242E;border-radius:4px;padding:0 4px">gele</span> woorden zijn de bruikbare chunks (uren &amp; afspreken).</p></div>
+<div class="top"><h1>Unidad 8 · Las horas — ¡Escucha!</h1><p>Mira la escena y <b>lee al mismo tiempo</b>. Pulsa una frase para oírla; activa o desactiva el neerlandés. Las palabras en <span style="background:#FEF08A;color:#20242E;border-radius:4px;padding:0 4px">amarillo</span> son los chunks útiles. <span class="stn">lees mee; de gele woorden zijn de chunks</span></p></div>
 <main>
  <div class="grid">
   <div class="vid">
@@ -103,7 +103,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
       <a class="btn" href="{WATCH}" target="_blank" rel="noopener">{WATCH_LABEL}</a>
       <span class="legend">💡 <span class="ch">geel</span> = chunk om mee te nemen</span>
     </div>
-    <p class="vidhint">Speelt de video niet af? Klik <a href="{WATCH}" target="_blank" rel="noopener">hier om ze in een nieuw tabblad te openen</a>.</p>
+    <p class="vidhint">¿No se reproduce el vídeo? Pulsa <a href="{WATCH}" target="_blank" rel="noopener">aquí para abrirlo en otra pestaña</a>.</p>
   </div>
   <div class="tr">{BODY}</div>
  </div>

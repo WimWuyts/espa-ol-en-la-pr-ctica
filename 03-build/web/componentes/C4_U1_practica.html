@@ -65,7 +65,7 @@ var CHUNKS=[["¡Hola!","hallo"],["Buenos días","goedemorgen"],["¿Cómo estás?
 // ① Escucha
 (function(){var el=document.getElementById('g_escucha');if(!TTS){el.innerHTML='<h3>¿Qué oyes? 🎧</h3><p class="desc">El audio funciona en Chrome/Edge. <span class="nl">Spraak werkt in Chrome/Edge.</span></p>';return;}
  var bank=CHUNKS.map(c=>c[0].replace('…','')).filter(x=>x.length<16);var p=0,s=0;
- el.innerHTML='<h3>¿Qué oyes? 🎧</h3><p class="desc">Pulsa ▶, escucha y elige lo que oyes. <span class="nl">Klik ▶, luister en kies wat je hoort.</span></p>'+sb('sbE')+'<div style="margin:6px 0"><button class="spk-btn" id="eP">▶ Escuchar</button></div><div class="chips" id="eO"></div><div class="fb" id="eF"></div>';
+ el.innerHTML='<h3>¿Qué oyes? 🎧</h3><p class="desc">Pulsa ▶, escucha y elige lo que oyes. <span class="nl">Pulsa ▶, escucha y elige lo que oyes. <span class="stn">luister en kies</span></span></p>'+sb('sbE')+'<div style="margin:6px 0"><button class="spk-btn" id="eP">▶ Escuchar</button></div><div class="chips" id="eO"></div><div class="fb" id="eF"></div>';
  var bar=el.querySelector('#sbE');function nx(){var a=bank[Math.floor(Math.random()*bank.length)];el.cur=a;var o=[a];while(o.length<4){var c=bank[Math.floor(Math.random()*bank.length)];if(o.indexOf(c)<0)o.push(c);}o.sort(()=>Math.random()-.5);var oc=el.querySelector('#eO');oc.innerHTML='';o.forEach(function(x){var c=document.createElement('div');c.className='chip';c.textContent=x;c.onclick=function(){var ok=x===a;if(ok){p++;s++}else s=0;setSc(bar,p,s);oc.querySelectorAll('.chip').forEach(function(z){if(z.textContent===a)z.classList.add('ok');else if(z===c&&!ok)z.classList.add('no');});fb(el.querySelector('#eF'),ok,'«'+a+'»');setTimeout(nx,1100);};oc.appendChild(c);});el.querySelector('#eF').className='fb';speak(a);}
  el.querySelector('#eP').onclick=function(){speak(el.cur);};nx();})();
 
@@ -102,7 +102,7 @@ var CHUNKS=[["¡Hola!","hallo"],["Buenos días","goedemorgen"],["¿Cómo estás?
  el.innerHTML='<h3>Ordena la conversación 🔢</h3><p class="desc">Pulsa las frases en el orden correcto. <span class="nl">Klik de zinnen in de juiste volgorde.</span></p><div class="chips" id="oP"></div><div class="col" id="oB"><b style="font-size:12px;color:var(--gd)">TU ORDEN</b><div class="chips" id="oBB" style="margin-top:6px"></div></div><div class="answerbtns"><button class="btn sec" id="oR">Reset</button><button class="btn" id="oC">Comprobar</button></div><div class="fb" id="oF"></div>';
  function draw(){var p=el.querySelector('#oP');p.innerHTML='';pool.forEach(function(t,i){var c=document.createElement('div');c.className='chip';c.textContent=t;c.onclick=function(){cur.push(t);pool.splice(i,1);draw();built();};p.appendChild(c);});}
  function built(){var b=el.querySelector('#oBB');b.innerHTML='';cur.forEach(function(t,i){var c=document.createElement('div');c.className='chip sel';c.textContent=(i+1)+'. '+t;c.onclick=function(){pool.push(t);cur.splice(i,1);draw();built();};b.appendChild(c);});}
- el.querySelector('#oC').onclick=function(){fb(el.querySelector('#oF'),cur.join('|')===sol.join('|'),cur.join('|')===sol.join('|')?'¡Perfecto!':'Nog niet — begin met een begroeting.');};
+ el.querySelector('#oC').onclick=function(){fb(el.querySelector('#oF'),cur.join('|')===sol.join('|'),cur.join('|')===sol.join('|')?'¡Perfecto!':'Todavía no — empieza por un saludo.');};
  el.querySelector('#oR').onclick=function(){cur=[];pool=sol.slice().sort(()=>Math.random()-.5);draw();built();el.querySelector('#oF').className='fb';};draw();built();})();
 
 // ② Encantad_ (-o/-a) — m/v inductief
@@ -119,7 +119,7 @@ var CHUNKS=[["¡Hola!","hallo"],["Buenos días","goedemorgen"],["¿Cómo estás?
  var pool=items.slice(),p=0,s=0;
  el.innerHTML='<h3>¿Tú o usted? 🤝</h3><p class="desc">¿Informal (tú) o formal (usted)? Elige. <span class="nl">Informeel of beleefd? Kies.</span></p>'+sb('sbTU')+'<div id="tw" style="font-size:19px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._tu(\'tú\')">tú (informeel)</div><div class="chip" onclick="window._tu(\'usted\')">usted (beleefd)</div></div><div class="fb" id="tf"></div>';
  var bar=el.querySelector('#sbTU');function nx(){if(!pool.length)pool=items.slice();el.cur=pool.splice(Math.floor(Math.random()*pool.length),1)[0];el.querySelector('#tw').textContent=el.cur[0];el.querySelector('#tf').className='fb';}
- window._tu=function(k){var ok=k===el.cur[1];if(ok){p++;s++}else s=0;setSc(bar,p,s);fb(el.querySelector('#tf'),ok,el.cur[1]==='tú'?'informeel (met vrienden/klasgenoten)':'beleefd (met een onbekende/volwassene)');setTimeout(nx,1100);};nx();})();
+ window._tu=function(k){var ok=k===el.cur[1];if(ok){p++;s++}else s=0;setSc(bar,p,s);fb(el.querySelector('#tf'),ok,el.cur[1]==='tú'?'informal (con amigos y compañeros)':'beleefd (met een onbekende/volwassene)');setTimeout(nx,1100);};nx();})();
 
 // ③ Preséntate (vrije productie)
 (function(){var el=document.getElementById('g_presentate');

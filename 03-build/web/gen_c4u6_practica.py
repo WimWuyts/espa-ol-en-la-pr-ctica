@@ -42,7 +42,7 @@ select.txin{width:auto}
 
 HTML="""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · U6 · Práctica</title><style>__CSS__</style></head><body>
-<div class="top"><h1>Unidad 6 · La casa — Práctica</h1><p>Oefen de bruikbare taal uit de scène: van <b>herkennen</b> → <b>kiezen</b> → <b>zelf zeggen/schrijven</b>. Alles corrigeert zichzelf; klik 🔊 om te horen.</p></div>
+<div class="top"><h1>Unidad 6 · La casa — Práctica</h1><p>Practica la lengua útil de la escena: de <b>reconocer</b> → <b>elegir</b> → <b>decirlo y escribirlo tú</b>. Todo se corrige solo; pulsa 🔊 para oírlo. <span class="stn">van herkennen naar zelf zeggen</span></p></div>
 <main>
  <h2 class="subh">① Reconocer <span class="pill">receptief</span></h2>
  <div class="game" id="g_cards"></div>
@@ -75,7 +75,7 @@ var CHUNKS=[["la cocina","de keuken"],["el salón","de woonkamer"],["el dormitor
 
 (function(){var el=document.getElementById('g_escucha');if(!TTS){el.innerHTML='<h3>¿Qué oyes? 🎧</h3><p class="desc">Spraak werkt in Chrome/Edge.</p>';return;}
  var bank=["cocina","salón","dormitorio","baño","cama","armario","sofá","mesa","ventana","puerta","cocina","pasillo","entrada","frigorífico"];var p=0,s=0;
- el.innerHTML='<h3>¿Qué oyes? 🎧</h3><p class="desc">Klik ▶, luister en kies de kamer of het meubel dat je hoort.</p>'+sb('sbE')+'<div style="margin:6px 0"><button class="spk-btn" id="eP">▶ Speel af</button></div><div class="chips" id="eO"></div><div class="fb" id="eF"></div>';
+ el.innerHTML='<h3>¿Qué oyes? 🎧</h3><p class="desc">Pulsa ▶, escucha y elige la habitación o el mueble que oyes. <span class="stn">luister en kies</span></p>'+sb('sbE')+'<div style="margin:6px 0"><button class="spk-btn" id="eP">▶ Speel af</button></div><div class="chips" id="eO"></div><div class="fb" id="eF"></div>';
  var bar=el.querySelector('#sbE');function nx(){var a=bank[Math.floor(Math.random()*bank.length)];el.cur=a;var o=[a];while(o.length<4){var c=bank[Math.floor(Math.random()*bank.length)];if(o.indexOf(c)<0)o.push(c);}o.sort(()=>Math.random()-.5);var oc=el.querySelector('#eO');oc.innerHTML='';o.forEach(function(x){var c=document.createElement('div');c.className='chip';c.textContent=x;c.onclick=function(){var ok=x===a;if(ok){p++;s++}else s=0;setSc(bar,p,s);oc.querySelectorAll('.chip').forEach(function(z){if(z.textContent===a)z.classList.add('ok');else if(z===c&&!ok)z.classList.add('no');});fb(el.querySelector('#eF'),ok,'«'+a+'»');setTimeout(nx,1100);};oc.appendChild(c);});el.querySelector('#eF').className='fb';speak(a);}
  el.querySelector('#eP').onclick=function(){speak(el.cur);};nx();})();
 
@@ -83,7 +83,7 @@ var CHUNKS=[["la cocina","de keuken"],["el salón","de woonkamer"],["el dormitor
 (function(){var el=document.getElementById('g_clasifica');
  var items=[["la cocina","habitación"],["el salón","habitación"],["el dormitorio","habitación"],["la cama","mueble"],["el sofá","mueble"],["el armario","mueble"],["encima de","posición"],["debajo de","posición"],["al lado de","posición"]];
  var cat={"habitación":"habitación 🏠","mueble":"mueble 🛋️","posición":"posición 📍"};var pool=items.slice(),p=0,s=0;
- el.innerHTML='<h3>Clasifica 🎯</h3><p class="desc">Is het een kamer, een meubel of een plaats-woord?</p>'+sb('sbC')+'<div id="cw" style="font-size:24px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" id="cc" style="justify-content:center"></div><div class="fb" id="cf"></div>';
+ el.innerHTML='<h3>Clasifica 🎯</h3><p class="desc">¿Es una habitación, un mueble o una palabra de lugar? <span class="stn">kamer, meubel of plaats-woord?</span></p>'+sb('sbC')+'<div id="cw" style="font-size:24px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" id="cc" style="justify-content:center"></div><div class="fb" id="cf"></div>';
  var bar=el.querySelector('#sbC'),cc=el.querySelector('#cc');Object.keys(cat).forEach(function(k){var c=document.createElement('div');c.className='chip';c.textContent=cat[k];c.onclick=function(){g(k);};cc.appendChild(c);});
  function nx(){if(!pool.length)pool=items.slice();el.cur=pool.splice(Math.floor(Math.random()*pool.length),1)[0];el.querySelector('#cw').textContent=el.cur[0];el.querySelector('#cf').className='fb';}
  function g(k){var ok=k===el.cur[1];if(ok){p++;s++}else s=0;setSc(bar,p,s);fb(el.querySelector('#cf'),ok,'«'+el.cur[0]+'» → '+cat[el.cur[1]]);setTimeout(nx,900);}nx();})();
@@ -92,7 +92,7 @@ var CHUNKS=[["la cocina","de keuken"],["el salón","de woonkamer"],["el dormitor
 (function(){var el=document.getElementById('g_match');
  var pairs=[["la cocina","cocinar y comer"],["el dormitorio","dormir"],["el cuarto de baño","ducharse"],["el salón","ver la tele"],["la entrada","entrar en casa"]];
  var p=0,s=0,sel=null,done=0;var L=pairs.map(x=>x[0]),R=pairs.map(x=>x[1]).slice().sort(()=>Math.random()-.5);
- el.innerHTML='<h3>Relaciona · ¿qué hacemos ahí? 🧩</h3><p class="desc">Klik links een kamer, dan rechts wat je er doet.</p>'+sb('sbM')+'<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><div class="chips" style="flex-direction:column" id="mL"></div><div class="chips" style="flex-direction:column" id="mR"></div></div><div class="fb" id="mf"></div>';
+ el.innerHTML='<h3>Relaciona · ¿qué hacemos ahí? 🧩</h3><p class="desc">Pulsa a la izquierda una habitación y a la derecha lo que haces allí. <span class="stn">verbind kamer en activiteit</span></p>'+sb('sbM')+'<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><div class="chips" style="flex-direction:column" id="mL"></div><div class="chips" style="flex-direction:column" id="mR"></div></div><div class="fb" id="mf"></div>';
  var bar=el.querySelector('#sbM'),cL=el.querySelector('#mL'),cR=el.querySelector('#mR');
  L.forEach(function(t,i){var c=document.createElement('div');c.className='chip';c.textContent=t;c.dataset.i=i;c.onclick=function(){cL.querySelectorAll('.chip').forEach(z=>z.classList.remove('sel'));c.classList.add('sel');sel=i;};cL.appendChild(c);});
  R.forEach(function(t){var c=document.createElement('div');c.className='chip';c.textContent=t;c.onclick=function(){if(sel==null)return;var ok=t===pairs[sel][1];if(ok){c.classList.add('ok');cL.querySelector('.chip[data-i="'+sel+'"]').classList.add('ok');p++;s++;done++;fb(el.querySelector('#mf'),true,pairs[sel][0]+' → '+t);if(done===pairs.length)fb(el.querySelector('#mf'),true,'¡Completado!');}else{s=0;c.classList.add('no');setTimeout(()=>c.classList.remove('no'),500);fb(el.querySelector('#mf'),false,'Probeer opnieuw.');}setSc(bar,p,s);sel=null;cL.querySelectorAll('.chip').forEach(z=>z.classList.remove('sel'));};cR.appendChild(c);});})();
@@ -112,14 +112,14 @@ var CHUNKS=[["la cocina","de keuken"],["el salón","de woonkamer"],["el dormitor
  el.innerHTML='<h3>Ordena la conversación 🔢</h3><p class="desc">Klik de zinnen in de juiste volgorde.</p><div class="chips" id="oP"></div><div class="col" id="oB"><b style="font-size:12px;color:var(--gd)">JOUW VOLGORDE</b><div class="chips" id="oBB" style="margin-top:6px"></div></div><div class="answerbtns"><button class="btn sec" id="oR">Reset</button><button class="btn" id="oC">Controleer</button></div><div class="fb" id="oF"></div>';
  function draw(){var p=el.querySelector('#oP');p.innerHTML='';pool.forEach(function(t,i){var c=document.createElement('div');c.className='chip';c.textContent=t;c.onclick=function(){cur.push(t);pool.splice(i,1);draw();built();};p.appendChild(c);});}
  function built(){var b=el.querySelector('#oBB');b.innerHTML='';cur.forEach(function(t,i){var c=document.createElement('div');c.className='chip sel';c.textContent=(i+1)+'. '+t;c.onclick=function(){pool.push(t);cur.splice(i,1);draw();built();};b.appendChild(c);});}
- el.querySelector('#oC').onclick=function(){fb(el.querySelector('#oF'),cur.join('|')===sol.join('|'),cur.join('|')===sol.join('|')?'¡Perfecto!':'Nog niet — begin met de vraag «¿Dónde está…?».');};
+ el.querySelector('#oC').onclick=function(){fb(el.querySelector('#oF'),cur.join('|')===sol.join('|'),cur.join('|')===sol.join('|')?'¡Perfecto!':'Todavía no — empieza por «¿Dónde está…?».');};
  el.querySelector('#oR').onclick=function(){cur=[];pool=sol.slice().sort(()=>Math.random()-.5);draw();built();el.querySelector('#oF').className='fb';};draw();built();})();
 
 // ② ¿hay o está?
 (function(){var el=document.getElementById('g_hayesta');
  var items=[["En el salón ___ un sofá.","hay"],["El bolso ___ encima de la mesa.","está"],["¿___ un frigorífico en la cocina?","hay"],["Mi libro ___ debajo de la cama.","está"],["¿Qué ___ en tu dormitorio?","hay"],["La cocina ___ al lado del salón.","está"]];
  var pool=items.slice(),p=0,s=0;
- el.innerHTML='<h3>¿hay o está? 🔎</h3><p class="desc">hay = er is iets (nieuw) · está = waar dat bekende ding staat. Kies.</p>'+sb('sbH')+'<div id="hw" style="font-size:19px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._he(\'hay\')">hay</div><div class="chip" onclick="window._he(\'está\')">está</div></div><div class="fb" id="hf"></div>';
+ el.innerHTML='<h3>¿hay o está? 🔎</h3><p class="desc">hay = existe algo nuevo · está = dónde se encuentra lo que ya conoces. Elige. <span class="stn">hay of está?</span></p>'+sb('sbH')+'<div id="hw" style="font-size:19px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._he(\'hay\')">hay</div><div class="chip" onclick="window._he(\'está\')">está</div></div><div class="fb" id="hf"></div>';
  var bar=el.querySelector('#sbH');function nx(){if(!pool.length)pool=items.slice();el.cur=pool.splice(Math.floor(Math.random()*pool.length),1)[0];el.querySelector('#hw').textContent=el.cur[0];el.querySelector('#hf').className='fb';}
  window._he=function(k){var ok=k===el.cur[1];if(ok){p++;s++}else s=0;setSc(bar,p,s);fb(el.querySelector('#hf'),ok,el.cur[0].replace('___',el.cur[1]));setTimeout(nx,1000);};nx();})();
 
@@ -127,13 +127,13 @@ var CHUNKS=[["la cocina","de keuken"],["el salón","de woonkamer"],["el dormitor
 (function(){var el=document.getElementById('g_poder');
  var items=[["¿___ fumar aquí? (ik vraag)","puedo"],["Sí, ___ ir fuera. (jij mag)","puedes"],["¿___ venir conmigo? (jij)","puedes"],["¿___ abrir la ventana? (ik)","puedo"],["Aquí no ___ comer. (jij)","puedes"]];
  var pool=items.slice(),p=0,s=0;
- el.innerHTML='<h3>¿puedo o puedes? 🙋</h3><p class="desc">puedo = ik · puedes = jij. Elige la forma correcta. <span class="gloss">Kies de juiste vorm.</span></p>'+sb('sbP')+'<div id="pw" style="font-size:18px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._pd(\'puedo\')">puedo (ik)</div><div class="chip" onclick="window._pd(\'puedes\')">puedes (jij)</div></div><div class="fb" id="pf"></div>';
+ el.innerHTML='<h3>¿puedo o puedes? 🙋</h3><p class="desc">puedo = yo · puedes = tú. Elige la forma correcta. <span class="gloss">Kies de juiste vorm.</span></p>'+sb('sbP')+'<div id="pw" style="font-size:18px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._pd(\'puedo\')">puedo (ik)</div><div class="chip" onclick="window._pd(\'puedes\')">puedes (jij)</div></div><div class="fb" id="pf"></div>';
  var bar=el.querySelector('#sbP');function nx(){if(!pool.length)pool=items.slice();el.cur=pool.splice(Math.floor(Math.random()*pool.length),1)[0];el.querySelector('#pw').textContent=el.cur[0];el.querySelector('#pf').className='fb';}
  window._pd=function(k){var ok=k===el.cur[1];if(ok){p++;s++}else s=0;setSc(bar,p,s);fb(el.querySelector('#pf'),ok,el.cur[0].replace('___',el.cur[1]));setTimeout(nx,1000);};nx();})();
 
 // ③ Describe tu casa (vrije productie)
 (function(){var el=document.getElementById('g_describe');
- el.innerHTML='<h3>Describe tu casa ✍️🗣️</h3><p class="desc">Zeg in welke kamer wat staat en waar. Er is geen «juist» — het is jouw huis.</p>'
+ el.innerHTML='<h3>Describe tu casa ✍️🗣️</h3><p class="desc">Di en qué habitación está cada cosa y dónde. No hay respuesta «correcta»: es tu casa. <span class="stn">het is jouw huis</span></p>'
   +'<div style="display:grid;gap:8px;max-width:620px"><div><span style="font-family:var(--disp)">En mi</span> <select class="txin" id="p1"><option>salón</option><option>cocina</option><option>dormitorio</option><option>cuarto de baño</option></select> <span style="font-family:var(--disp)">hay</span> <input class="txin" id="p2" placeholder="un sofá / una cama…"> <span style="font-family:var(--disp)">. Está</span> <select class="txin" id="p3"><option>al lado de</option><option>encima de</option><option>debajo de</option><option>delante de</option><option>detrás de</option></select> <input class="txin" id="p4" placeholder="la ventana…" style="width:120px"> <span style="font-family:var(--disp)">.</span></div></div>'
   +'<div class="answerbtns"><button class="btn" id="pGo">Maak mijn zin</button>'+(TTS?'<button class="spk-btn" id="pSpk">🔊 hoor</button>':'')+'</div><div class="fb" id="pF"></div>';
  el.querySelector('#pGo').onclick=function(){var r=el.querySelector('#p1').value,o=(el.querySelector('#p2').value||'un sofá').trim(),pr=el.querySelector('#p3').value,w=(el.querySelector('#p4').value||'la ventana').trim();el.cur='En mi '+r+' hay '+o+'. Está '+pr+' '+w+'.';fb(el.querySelector('#pF'),true,'<b>'+el.cur+'</b><br><span style="color:var(--mut);font-style:italic">Zeg het nu hardop tegen je buur — wijs op je plattegrond.</span>');};

@@ -42,7 +42,7 @@ select.txin{width:auto}
 
 HTML="""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · U4 · Práctica</title><style>__CSS__</style></head><body>
-<div class="top"><h1>Unidad 4 · La familia — Práctica</h1><p>Oefen de bruikbare taal uit de scène: van <b>herkennen</b> → <b>kiezen</b> → <b>zelf zeggen/schrijven</b>. Alles corrigeert zichzelf; klik 🔊 om te horen.</p></div>
+<div class="top"><h1>Unidad 4 · La familia — Práctica</h1><p>Practica la lengua útil de la escena: de <b>reconocer</b> → <b>elegir</b> → <b>decirlo y escribirlo tú</b>. Todo se corrige solo; pulsa 🔊 para oírlo. <span class="stn">van herkennen naar zelf zeggen</span></p></div>
 <main>
  <h2 class="subh">① Reconocer <span class="pill">receptief</span></h2>
  <div class="game" id="g_cards"></div>
@@ -75,7 +75,7 @@ var CHUNKS=[["la madre","de moeder"],["el padre","de vader"],["el hermano","de b
 
 (function(){var el=document.getElementById('g_escucha');if(!TTS){el.innerHTML='<h3>¿Qué oyes? 🎧</h3><p class="desc">Spraak werkt in Chrome/Edge.</p>';return;}
  var bank=CHUNKS.map(c=>c[0].replace('/a','').replace('…','')).filter(x=>x.length<16);var p=0,s=0;
- el.innerHTML='<h3>¿Qué oyes? 🎧</h3><p class="desc">Klik ▶, luister en kies wat je hoort.</p>'+sb('sbE')+'<div style="margin:6px 0"><button class="spk-btn" id="eP">▶ Speel af</button></div><div class="chips" id="eO"></div><div class="fb" id="eF"></div>';
+ el.innerHTML='<h3>¿Qué oyes? 🎧</h3><p class="desc">Pulsa ▶, escucha y elige lo que oyes. <span class="stn">luister en kies</span></p>'+sb('sbE')+'<div style="margin:6px 0"><button class="spk-btn" id="eP">▶ Speel af</button></div><div class="chips" id="eO"></div><div class="fb" id="eF"></div>';
  var bar=el.querySelector('#sbE');function nx(){var a=bank[Math.floor(Math.random()*bank.length)];el.cur=a;var o=[a];while(o.length<4){var c=bank[Math.floor(Math.random()*bank.length)];if(o.indexOf(c)<0)o.push(c);}o.sort(()=>Math.random()-.5);var oc=el.querySelector('#eO');oc.innerHTML='';o.forEach(function(x){var c=document.createElement('div');c.className='chip';c.textContent=x;c.onclick=function(){var ok=x===a;if(ok){p++;s++}else s=0;setSc(bar,p,s);oc.querySelectorAll('.chip').forEach(function(z){if(z.textContent===a)z.classList.add('ok');else if(z===c&&!ok)z.classList.add('no');});fb(el.querySelector('#eF'),ok,'«'+a+'»');setTimeout(nx,1100);};oc.appendChild(c);});el.querySelector('#eF').className='fb';speak(a);}
  el.querySelector('#eP').onclick=function(){speak(el.cur);};nx();})();
 
@@ -83,7 +83,7 @@ var CHUNKS=[["la madre","de moeder"],["el padre","de vader"],["el hermano","de b
 (function(){var el=document.getElementById('g_clasifica');
  var items=[["la abuela","familia"],["el tío","familia"],["la hermana","familia"],["alto","físico"],["guapo","físico"],["delgado","físico"],["simpático","carácter"],["divertido","carácter"],["amable","carácter"]];
  var cat={"familia":"familia 👪","físico":"físico 🧍","carácter":"carácter 😊"};var pool=items.slice(),p=0,s=0;
- el.innerHTML='<h3>Clasifica 🎯</h3><p class="desc">Is het een familielid, uiterlijk of karakter?</p>'+sb('sbC')+'<div id="cw" style="font-size:24px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" id="cc" style="justify-content:center"></div><div class="fb" id="cf"></div>';
+ el.innerHTML='<h3>Clasifica 🎯</h3><p class="desc">¿Es un familiar, el aspecto físico o el carácter? <span class="stn">familielid, uiterlijk of karakter?</span></p>'+sb('sbC')+'<div id="cw" style="font-size:24px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" id="cc" style="justify-content:center"></div><div class="fb" id="cf"></div>';
  var bar=el.querySelector('#sbC'),cc=el.querySelector('#cc');Object.keys(cat).forEach(function(k){var c=document.createElement('div');c.className='chip';c.textContent=cat[k];c.onclick=function(){g(k);};cc.appendChild(c);});
  function nx(){if(!pool.length)pool=items.slice();el.cur=pool.splice(Math.floor(Math.random()*pool.length),1)[0];el.querySelector('#cw').textContent=el.cur[0];el.querySelector('#cf').className='fb';}
  function g(k){var ok=k===el.cur[1];if(ok){p++;s++}else s=0;setSc(bar,p,s);fb(el.querySelector('#cf'),ok,'«'+el.cur[0]+'» → '+cat[el.cur[1]]);setTimeout(nx,900);}nx();})();
@@ -112,7 +112,7 @@ var CHUNKS=[["la madre","de moeder"],["el padre","de vader"],["el hermano","de b
  el.innerHTML='<h3>Ordena la conversación 🔢</h3><p class="desc">Klik de zinnen in de juiste volgorde.</p><div class="chips" id="oP"></div><div class="col" id="oB"><b style="font-size:12px;color:var(--gd)">JOUW VOLGORDE</b><div class="chips" id="oBB" style="margin-top:6px"></div></div><div class="answerbtns"><button class="btn sec" id="oR">Reset</button><button class="btn" id="oC">Controleer</button></div><div class="fb" id="oF"></div>';
  function draw(){var p=el.querySelector('#oP');p.innerHTML='';pool.forEach(function(t,i){var c=document.createElement('div');c.className='chip';c.textContent=t;c.onclick=function(){cur.push(t);pool.splice(i,1);draw();built();};p.appendChild(c);});}
  function built(){var b=el.querySelector('#oBB');b.innerHTML='';cur.forEach(function(t,i){var c=document.createElement('div');c.className='chip sel';c.textContent=(i+1)+'. '+t;c.onclick=function(){pool.push(t);cur.splice(i,1);draw();built();};b.appendChild(c);});}
- el.querySelector('#oC').onclick=function(){fb(el.querySelector('#oF'),cur.join('|')===sol.join('|'),cur.join('|')===sol.join('|')?'¡Perfecto!':'Nog niet — begin met een vraag naar wie het is.');};
+ el.querySelector('#oC').onclick=function(){fb(el.querySelector('#oF'),cur.join('|')===sol.join('|'),cur.join('|')===sol.join('|')?'¡Perfecto!':'Todavía no — empieza preguntando quién es.');};
  el.querySelector('#oR').onclick=function(){cur=[];pool=sol.slice().sort(()=>Math.random()-.5);draw();built();el.querySelector('#oF').className='fb';};draw();built();})();
 
 // ② adjetivo (-o/-a)
@@ -127,13 +127,13 @@ var CHUNKS=[["la madre","de moeder"],["el padre","de vader"],["el hermano","de b
 (function(){var el=document.getElementById('g_mitu');
  var items=[["___ madre (van mij)","mi"],["¿Y ___ familia? (van jou)","tu"],["___ hermano (van mij)","mi"],["¿Vive aquí ___ abuela? (van jou)","tu"],["Esta es ___ tía (van mij)","mi"]];
  var pool=items.slice(),p=0,s=0;
- el.innerHTML='<h3>¿mi o tu? 🫱</h3><p class="desc">Van mij (mi) of van jou (tu)? Kies.</p>'+sb('sbTU')+'<div id="tw" style="font-size:19px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._mt(\'mi\')">mi (van mij)</div><div class="chip" onclick="window._mt(\'tu\')">tu (van jou)</div></div><div class="fb" id="tf"></div>';
+ el.innerHTML='<h3>¿mi o tu? 🫱</h3><p class="desc">¿De mí (mi) o de ti (tu)? Elige. <span class="gloss">van mij of van jou?</span></p>'+sb('sbTU')+'<div id="tw" style="font-size:19px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._mt(\'mi\')">mi (van mij)</div><div class="chip" onclick="window._mt(\'tu\')">tu (van jou)</div></div><div class="fb" id="tf"></div>';
  var bar=el.querySelector('#sbTU');function nx(){if(!pool.length)pool=items.slice();el.cur=pool.splice(Math.floor(Math.random()*pool.length),1)[0];el.querySelector('#tw').textContent=el.cur[0];el.querySelector('#tf').className='fb';}
  window._mt=function(k){var ok=k===el.cur[1];if(ok){p++;s++}else s=0;setSc(bar,p,s);fb(el.querySelector('#tf'),ok,el.cur[0].replace('___',el.cur[1]));setTimeout(nx,1000);};nx();})();
 
 // ③ Presenta a un familiar (vrije productie)
 (function(){var el=document.getElementById('g_presentate');
- el.innerHTML='<h3>Presenta a un familiar ✍️🗣️</h3><p class="desc">Stel één familielid voor en beschrijf het. Er is geen «juist» — het is jouw familie.</p>'
+ el.innerHTML='<h3>Presenta a un familiar ✍️🗣️</h3><p class="desc">Presenta a un familiar y descríbelo. No hay respuesta «correcta»: es tu familia. <span class="stn">het is jouw familie</span></p>'
   +'<div style="display:grid;gap:8px;max-width:560px"><div><span style="font-family:var(--disp)">Esta/Este es mi</span> <select class="txin" id="p1"><option>madre</option><option>padre</option><option>hermano</option><option>hermana</option><option>abuela</option><option>tío</option></select> <span style="font-family:var(--disp)">. Se llama</span> <input class="txin" id="p2" placeholder="Ana"> <span style="font-family:var(--disp)">.</span></div>'
   +'<div><span style="font-family:var(--disp)">Es</span> <input class="txin" id="p3" placeholder="muy simpática y un poco tímida"> <span style="font-family:var(--disp)">.</span></div></div>'
   +'<div class="answerbtns"><button class="btn" id="pGo">Maak mijn zin</button>'+(TTS?'<button class="spk-btn" id="pSpk">🔊 hoor</button>':'')+'</div><div class="fb" id="pF"></div>';

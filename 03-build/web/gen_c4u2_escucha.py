@@ -26,7 +26,7 @@ YT_WATCH="https://www.youtube.com/watch?v="+VIDEO_SRC[1] if VIDEO_SRC[0]=="youtu
 CHUNKS=["Buenos días","Buenas tardes","Buenas noches","¿Cómo estás?","¿Cómo está","Bien, bien","Bien","Muy ocupada","ocupada","Un poco nerviosa","nerviosa","está enfermo","estoy enferma","enferma","muy cansada","cansada","Demasiado","muy cansado","Hasta luego","Adiós","la verdad","pues nada"]
 # ── TRANSCRIPT = exact aangeleverd door de auteur (Episodio 2 · Saludos). 3 scènes op 09.00 / 16.00 / 21.05 u.
 SCENES=[
- ("Escena 1 · Por la mañana (09.00 h)","Julio komt binnen en groet Josefina; hij wil María voorstellen, maar Josefina heeft het druk.",[
+ ("Escena 1 · Por la mañana (09.00 h)","Julio entra y saluda a Josefina; quiere presentarle a María, pero Josefina está ocupada.",[
   ("Julio","Josefina… Buenos días.","Josefina… Goedemorgen."),
   ("Josefina","Buenos días.","Goedemorgen."),
   ("Julio","Yo es que…","Ik… het zit zo…"),
@@ -36,7 +36,7 @@ SCENES=[
   ("Julio","Ya. ¿Muy ocupada?","Juist. Heel druk?"),
   ("Josefina","Muy ocupada.","Heel druk."),
  ]),
- ("Escena 2 · Por la tarde (16.00 h)","'s Middags spreekt María Josefina aan; iedereen blijkt zich «un poco» iets te voelen.",[
+ ("Escena 2 · Por la tarde (16.00 h)","Por la tarde María habla con Josefina; resulta que todo el mundo está «un poco» algo.",[
   ("María","Josefina.","Josefina."),
   ("Josefina","Buenas tardes.","Goedemiddag."),
   ("María","Buenas tardes. Josefina, Julio es…","Goedemiddag. Josefina, Julio is…"),
@@ -46,7 +46,7 @@ SCENES=[
   ("María","Ya. Bueno. Bueno, pues nada. Hasta luego. Adiós.","Juist. Goed. Wel, niets aan te doen. Tot straks. Dag."),
   ("Josefina","Adiós.","Dag."),
  ]),
- ("Escena 3 · Por la noche (21.05 h)","'s Avonds vraagt de directeur Fernando hoe het met iedereen gaat; Josefina is doodmoe.",[
+ ("Escena 3 · Por la noche (21.05 h)","Por la noche el director Fernando pregunta cómo está cada uno; Josefina está agotada.",[
   ("Fernando","Qué.","Zeg."),
   ("Josefina","Ay… buenas noches.","Ay… goedenavond."),
   ("Fernando","¿Cómo está María? Y cómo está Julio.","Hoe gaat het met María? En hoe gaat het met Julio."),
@@ -108,7 +108,7 @@ body.shownl .nl{display:block}
 BODY="".join(scene(*s) for s in SCENES)
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · Unidad 2 · Escucha</title><style>{CSS}</style></head><body>
-<div class="top"><h1>Unidad 2 · Saludos — ¡Escucha!</h1><p>Bekijk de scène en <b>lees mee</b>. Klik een zin om ze te horen; zet Nederlands aan/uit; de <span style="background:#FEF08A;color:#20242E;border-radius:4px;padding:0 4px">gele</span> woorden zijn de bruikbare chunks.</p></div>
+<div class="top"><h1>Unidad 2 · Saludos — ¡Escucha!</h1><p>Mira la escena y <b>lee al mismo tiempo</b>. Pulsa una frase para oírla; activa o desactiva el neerlandés. Las palabras en <span style="background:#FEF08A;color:#20242E;border-radius:4px;padding:0 4px">amarillo</span> son los chunks útiles. <span class="stn">lees mee; de gele woorden zijn de chunks</span></p></div>
 <main>
  <div class="grid">
   <div class="vid">
@@ -118,7 +118,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
       <a class="btn" href="{YT_WATCH}" target="_blank" rel="noopener">▶ Op YouTube</a>
       <span class="legend">💡 <span class="ch">geel</span> = chunk om mee te nemen</span>
     </div>
-    <p class="vidhint">Speelt de video niet af? Klik <a href="{YT_WATCH}" target="_blank" rel="noopener">hier om ze op YouTube te openen</a>.</p>
+    <p class="vidhint">¿No se reproduce el vídeo? Pulsa <a href="{YT_WATCH}" target="_blank" rel="noopener">aquí para abrirlo en YouTube</a>.</p>
   </div>
   <div class="tr">{BODY}</div>
  </div>

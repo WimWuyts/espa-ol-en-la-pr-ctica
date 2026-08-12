@@ -31,7 +31,7 @@ select.txin{width:auto}
 .wbox{border:1px solid var(--line);border-radius:10px;background:var(--crema);min-height:60px;padding:8px;margin-top:8px}
 .foot{color:var(--mut);font-size:12px;text-align:center;margin:24px 0}
 </style></head><body>
-<div class="top"><h1>Unidad 5 · Objetos cotidianos — Práctica</h1><p>Oefen de bruikbare taal uit de scène: van <b>herkennen</b> → <b>kiezen</b> → <b>zelf zeggen/schrijven</b>. Alles corrigeert zichzelf; klik 🔊 om te horen.</p></div>
+<div class="top"><h1>Unidad 5 · Objetos cotidianos — Práctica</h1><p>Practica la lengua útil de la escena: de <b>reconocer</b> → <b>elegir</b> → <b>decirlo y escribirlo tú</b>. Todo se corrige solo; pulsa 🔊 para oírlo. <span class="stn">van herkennen naar zelf zeggen</span></p></div>
 <main>
  <h2 class="subh">① Reconocer <span class="pill">receptief</span></h2>
  <div class="game" id="g_cards"></div>
@@ -62,7 +62,7 @@ var CHUNKS=[["el libro","het boek"],["la mesa","de tafel"],["la mochila","de rug
 
 (function(){var el=document.getElementById('g_escucha');if(!TTS){el.innerHTML='<h3>¿Qué oyes? 🎧</h3><p class="desc">Spraak werkt in Chrome/Edge.</p>';return;}
  var bank=["libro","mesa","mochila","móvil","sofá","televisión","ventana","puerta","ordenador","llaves","vaso","silla","boli","cuaderno"];var p=0,s=0;
- el.innerHTML='<h3>¿Qué oyes? 🎧</h3><p class="desc">Klik ▶, luister en kies het voorwerp dat je hoort.</p>'+sb('sbE')+'<div style="margin:6px 0"><button class="spk-btn" id="eP">▶ Speel af</button></div><div class="chips" id="eO"></div><div class="fb" id="eF"></div>';
+ el.innerHTML='<h3>¿Qué oyes? 🎧</h3><p class="desc">Pulsa ▶, escucha y elige el objeto que oyes. <span class="stn">luister en kies het voorwerp</span></p>'+sb('sbE')+'<div style="margin:6px 0"><button class="spk-btn" id="eP">▶ Speel af</button></div><div class="chips" id="eO"></div><div class="fb" id="eF"></div>';
  var bar=el.querySelector('#sbE');function nx(){var a=bank[Math.floor(Math.random()*bank.length)];el.cur=a;var o=[a];while(o.length<4){var c=bank[Math.floor(Math.random()*bank.length)];if(o.indexOf(c)<0)o.push(c);}o.sort(()=>Math.random()-.5);var oc=el.querySelector('#eO');oc.innerHTML='';o.forEach(function(x){var c=document.createElement('div');c.className='chip';c.textContent=x;c.onclick=function(){var ok=x===a;if(ok){p++;s++}else s=0;setSc(bar,p,s);oc.querySelectorAll('.chip').forEach(function(z){if(z.textContent===a)z.classList.add('ok');else if(z===c&&!ok)z.classList.add('no');});fb(el.querySelector('#eF'),ok,'«'+a+'»');setTimeout(nx,1100);};oc.appendChild(c);});el.querySelector('#eF').className='fb';speak(a);}
  el.querySelector('#eP').onclick=function(){speak(el.cur);};nx();})();
 
@@ -70,7 +70,7 @@ var CHUNKS=[["el libro","het boek"],["la mesa","de tafel"],["la mochila","de rug
 (function(){var el=document.getElementById('g_clasifica');
  var items=[["el boli","clase"],["el cuaderno","clase"],["la mochila","clase"],["el sofá","casa"],["la televisión","casa"],["las llaves","casa"],["beber","función"],["descansar","función"],["abrir la puerta","función"]];
  var cat={"clase":"de la clase 📚","casa":"de casa 🏠","función":"para qué sirve 🔧"};var pool=items.slice(),p=0,s=0;
- el.innerHTML='<h3>Clasifica 🎯</h3><p class="desc">Hoort het bij de klas, bij huis, of is het een functie (para qué sirve)?</p>'+sb('sbC')+'<div id="cw" style="font-size:24px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" id="cc" style="justify-content:center"></div><div class="fb" id="cf"></div>';
+ el.innerHTML='<h3>Clasifica 🎯</h3><p class="desc">¿Es de la clase, de casa, o es una función (para qué sirve)? <span class="stn">klas, huis of functie?</span></p>'+sb('sbC')+'<div id="cw" style="font-size:24px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" id="cc" style="justify-content:center"></div><div class="fb" id="cf"></div>';
  var bar=el.querySelector('#sbC'),cc=el.querySelector('#cc');Object.keys(cat).forEach(function(k){var c=document.createElement('div');c.className='chip';c.textContent=cat[k];c.onclick=function(){g(k);};cc.appendChild(c);});
  function nx(){if(!pool.length)pool=items.slice();el.cur=pool.splice(Math.floor(Math.random()*pool.length),1)[0];el.querySelector('#cw').textContent=el.cur[0];el.querySelector('#cf').className='fb';}
  function g(k){var ok=k===el.cur[1];if(ok){p++;s++}else s=0;setSc(bar,p,s);fb(el.querySelector('#cf'),ok,'«'+el.cur[0]+'» → '+cat[el.cur[1]]);setTimeout(nx,900);}nx();})();
@@ -79,7 +79,7 @@ var CHUNKS=[["el libro","het boek"],["la mesa","de tafel"],["la mochila","de rug
 (function(){var el=document.getElementById('g_match');
  var pairs=[["las llaves","para abrir la puerta"],["el vaso","para beber"],["el sofá","para descansar"],["la ventana","para mirar la luna"],["el ordenador","para trabajar y jugar"]];
  var p=0,s=0,sel=null,done=0;var L=pairs.map(x=>x[0]),R=pairs.map(x=>x[1]).slice().sort(()=>Math.random()-.5);
- el.innerHTML='<h3>Relaciona · ¿para qué sirve? 🧩</h3><p class="desc">Klik links een voorwerp, dan rechts waarvoor het dient.</p>'+sb('sbM')+'<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><div class="chips" style="flex-direction:column" id="mL"></div><div class="chips" style="flex-direction:column" id="mR"></div></div><div class="fb" id="mf"></div>';
+ el.innerHTML='<h3>Relaciona · ¿para qué sirve? 🧩</h3><p class="desc">Pulsa a la izquierda un objeto y a la derecha para qué sirve. <span class="stn">verbind voorwerp en functie</span></p>'+sb('sbM')+'<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><div class="chips" style="flex-direction:column" id="mL"></div><div class="chips" style="flex-direction:column" id="mR"></div></div><div class="fb" id="mf"></div>';
  var bar=el.querySelector('#sbM'),cL=el.querySelector('#mL'),cR=el.querySelector('#mR');
  L.forEach(function(t,i){var c=document.createElement('div');c.className='chip';c.textContent=t;c.dataset.i=i;c.onclick=function(){cL.querySelectorAll('.chip').forEach(z=>z.classList.remove('sel'));c.classList.add('sel');sel=i;};cL.appendChild(c);});
  R.forEach(function(t){var c=document.createElement('div');c.className='chip';c.textContent=t;c.onclick=function(){if(sel==null)return;var ok=t===pairs[sel][1];if(ok){c.classList.add('ok');cL.querySelector('.chip[data-i="'+sel+'"]').classList.add('ok');p++;s++;done++;fb(el.querySelector('#mf'),true,pairs[sel][0]+' → '+t);if(done===pairs.length)fb(el.querySelector('#mf'),true,'¡Completado!');}else{s=0;c.classList.add('no');setTimeout(()=>c.classList.remove('no'),500);fb(el.querySelector('#mf'),false,'Probeer opnieuw.');}setSc(bar,p,s);sel=null;cL.querySelectorAll('.chip').forEach(z=>z.classList.remove('sel'));};cR.appendChild(c);});})();
@@ -87,7 +87,7 @@ var CHUNKS=[["el libro","het boek"],["la mesa","de tafel"],["la mochila","de rug
 // ② Completa el diálogo
 (function(){var el=document.getElementById('g_completa');
  var gaps=[["es"],["un"],["sirve"],["son"],["hay"]];
- el.innerHTML='<h3>Completa el diálogo 💬</h3><p class="desc">Vul aan (denk aan es/son · un/una · sirve · hay).</p>'
+ el.innerHTML='<h3>Completa el diálogo 💬</h3><p class="desc">Completa (piensa en es/son · un/una · sirve · hay). <span class="stn">vul aan</span></p>'
   +'<div class="dlgfill">— ¿Qué es esto? <br>— Esto <input class="txin" data-i="0"> <input class="txin" data-i="1"> sofá. <br>— ¿Para qué sirve?<br>— <input class="txin" data-i="2"> para descansar.<br>— ¿Y esto?<br>— Esto <input class="txin" data-i="3"> mis llaves.<br>— ¿<input class="txin" data-i="4"> un ordenador?<br>— Sí, sí que hay.</div>'
   +'<div class="answerbtns"><button class="btn" id="coGo">Controleer</button></div><div class="fb" id="coF"></div>';
  el.querySelector('#coGo').onclick=function(){var n=0;el.querySelectorAll('.txin').forEach(function(inp){var i=+inp.dataset.i;var ok=(inp.value||'').trim().toLowerCase()===gaps[i][0].toLowerCase();inp.style.borderColor=ok?'#2F9A4A':'#DC2626';if(ok)n++;});fb(el.querySelector('#coF'),n===gaps.length,n+' / '+gaps.length+' juist.'+(n<gaps.length?' Kijk naar de rode vakjes.':' ¡Perfecto!'));};})();
@@ -99,7 +99,7 @@ var CHUNKS=[["el libro","het boek"],["la mesa","de tafel"],["la mochila","de rug
  el.innerHTML='<h3>Ordena la conversación 🔢</h3><p class="desc">Klik de zinnen in de juiste volgorde.</p><div class="chips" id="oP"></div><div class="col" id="oB"><b style="font-size:12px;color:var(--gd)">JOUW VOLGORDE</b><div class="chips" id="oBB" style="margin-top:6px"></div></div><div class="answerbtns"><button class="btn sec" id="oR">Reset</button><button class="btn" id="oC">Controleer</button></div><div class="fb" id="oF"></div>';
  function draw(){var p=el.querySelector('#oP');p.innerHTML='';pool.forEach(function(t,i){var c=document.createElement('div');c.className='chip';c.textContent=t;c.onclick=function(){cur.push(t);pool.splice(i,1);draw();built();};p.appendChild(c);});}
  function built(){var b=el.querySelector('#oBB');b.innerHTML='';cur.forEach(function(t,i){var c=document.createElement('div');c.className='chip sel';c.textContent=(i+1)+'. '+t;c.onclick=function(){pool.push(t);cur.splice(i,1);draw();built();};b.appendChild(c);});}
- el.querySelector('#oC').onclick=function(){fb(el.querySelector('#oF'),cur.join('|')===sol.join('|'),cur.join('|')===sol.join('|')?'¡Perfecto!':'Nog niet — begin met de vraag «¿Qué es esto?».');};
+ el.querySelector('#oC').onclick=function(){fb(el.querySelector('#oF'),cur.join('|')===sol.join('|'),cur.join('|')===sol.join('|')?'¡Perfecto!':'Todavía no — empieza por «¿Qué es esto?».');};
  el.querySelector('#oR').onclick=function(){cur=[];pool=sol.slice().sort(()=>Math.random()-.5);draw();built();el.querySelector('#oF').className='fb';};draw();built();})();
 
 // ② ¿un o una?
@@ -114,13 +114,13 @@ var CHUNKS=[["el libro","het boek"],["la mesa","de tafel"],["la mochila","de rug
 (function(){var el=document.getElementById('g_hay');
  var items=[["🛋️ un sofá","sí"],["🖥️ un ordenador","sí"],["🐘 un elefante","no"],["🪟 una ventana","sí"],["🚗 un coche en el salón","no"],["🔑 unas llaves","sí"]];
  var pool=items.slice(),p=0,s=0;
- el.innerHTML='<h3>En la habitación: ¿hay o no hay? 🔎</h3><p class="desc">Kijk naar wat er logisch in een kamer is. Kies sí (hay) of no (no hay).</p>'+sb('sbH')+'<div id="hw" style="font-size:22px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._hy(\'sí\')">Sí, hay</div><div class="chip" onclick="window._hy(\'no\')">No hay</div></div><div class="fb" id="hf"></div>';
+ el.innerHTML='<h3>En la habitación: ¿hay o no hay? 🔎</h3><p class="desc">Mira qué es lógico que haya en una habitación. Elige sí (hay) o no (no hay). <span class="stn">wat is er logisch?</span></p>'+sb('sbH')+'<div id="hw" style="font-size:22px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._hy(\'sí\')">Sí, hay</div><div class="chip" onclick="window._hy(\'no\')">No hay</div></div><div class="fb" id="hf"></div>';
  var bar=el.querySelector('#sbH');function nx(){if(!pool.length)pool=items.slice();el.cur=pool.splice(Math.floor(Math.random()*pool.length),1)[0];el.querySelector('#hw').textContent=el.cur[0];el.querySelector('#hf').className='fb';}
  window._hy=function(k){var ok=k===el.cur[1];if(ok){p++;s++}else s=0;setSc(bar,p,s);var frase=(el.cur[1]==='sí'?'Hay ':'No hay ')+el.cur[0].replace(/^.\S*\s/,'').replace(/^\S+\s/,'');fb(el.querySelector('#hf'),ok,(el.cur[1]==='sí'?'Sí, hay. ':'No, no hay. ')+'«'+el.cur[0]+'»');setTimeout(nx,1000);};nx();})();
 
 // ③ Identifica un objeto (vrije productie)
 (function(){var el=document.getElementById('g_identifica');
- el.innerHTML='<h3>Identifica un objeto ✍️🗣️</h3><p class="desc">Kies een voorwerp, zeg wat het is en waarvoor het dient. Er is geen «juist» — het is jouw voorwerp.</p>'
+ el.innerHTML='<h3>Identifica un objeto ✍️🗣️</h3><p class="desc">Elige un objeto, di qué es y para qué sirve. No hay respuesta «correcta»: es tu objeto. <span class="stn">het is jouw voorwerp</span></p>'
   +'<div style="display:grid;gap:8px;max-width:600px"><div><span style="font-family:var(--disp)">Esto es</span> <select class="txin" id="p1"><option>un</option><option>una</option></select> <input class="txin" id="p2" placeholder="libro / mesa…"> <span style="font-family:var(--disp)">, que sirve para</span> <input class="txin" id="p3" placeholder="estudiar / beber…" style="width:170px"> <span style="font-family:var(--disp)">.</span></div></div>'
   +'<div class="answerbtns"><button class="btn" id="pGo">Maak mijn zin</button>'+(TTS?'<button class="spk-btn" id="pSpk">🔊 hoor</button>':'')+'</div><div class="fb" id="pF"></div>';
  el.querySelector('#pGo').onclick=function(){var art=el.querySelector('#p1').value,o=(el.querySelector('#p2').value||'libro').trim(),f=(el.querySelector('#p3').value||'estudiar').trim();el.cur='Esto es '+art+' '+o+', que sirve para '+f+'.';fb(el.querySelector('#pF'),true,'<b>'+el.cur+'</b><br><span style="color:var(--mut);font-style:italic">Zeg het nu hardop tegen je buur — wijs het voorwerp aan.</span>');};

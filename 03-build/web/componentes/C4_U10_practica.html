@@ -37,7 +37,7 @@ select.txin{width:auto}
 .tabla td{border-bottom:1px solid var(--line);padding:6px 9px;vertical-align:middle}
 .foot{color:var(--mut);font-size:12px;text-align:center;margin:24px 0}
 </style></head><body>
-<div class="top"><h1>Unidad 10 · Las tareas de casa — Práctica</h1><p>Oefen de bruikbare taal uit de scène: van <b>herkennen</b> → <b>kiezen</b> → <b>zelf zeggen/schrijven</b>. Alles corrigeert zichzelf; klik 🔊 om te horen.</p></div>
+<div class="top"><h1>Unidad 10 · Las tareas de casa — Práctica</h1><p>Practica la lengua útil de la escena: de <b>reconocer</b> → <b>elegir</b> → <b>decirlo y escribirlo tú</b>. Todo se corrige solo; pulsa 🔊 para oírlo. <span class="stn">van herkennen naar zelf zeggen</span></p></div>
 <main>
  <h2 class="subh">① Reconocer <span class="pill">receptief</span></h2>
  <div class="game" id="g_cards"></div>
@@ -80,7 +80,7 @@ var CHUNKS=[["limpiar el polvo","afstoffen"],["pasar la aspiradora","stofzuigen"
 (function(){var el=document.getElementById('g_clasifica');
  var items=[["pasar la aspiradora","tarea"],["fregar los platos","tarea"],["limpiar el polvo","tarea"],["hacer la cama","tarea"],["Yo te ayudo","ayuda"],["¿Te ayudo?","ayuda"],["No es molestia","ayuda"],["Claro que sé","saber"],["Sé cocinar","saber"],["No sé planchar","saber"]];
  var cat={"tarea":"una tarea 🧹","ayuda":"ofrecer ayuda 🤝","saber":"sé / no sé 💡"};var pool=items.slice(),p=0,s=0;
- el.innerHTML='<h3>Clasifica 🎯</h3><p class="desc">Is het een <b>huistaak</b>, <b>hulp aanbieden</b> of zeggen wat je <b>kan</b>?</p>'+sb('sbC')+'<div class="big" id="cw"></div><div class="chips" id="cc" style="justify-content:center"></div><div class="fb" id="cf"></div>';
+ el.innerHTML='<h3>Clasifica 🎯</h3><p class="desc">¿Es una <b>tarea de casa</b>, <b>ofrecer ayuda</b> o decir lo que <b>sabes hacer</b>? <span class="stn">huistaak, hulp of kunnen?</span></p>'+sb('sbC')+'<div class="big" id="cw"></div><div class="chips" id="cc" style="justify-content:center"></div><div class="fb" id="cf"></div>';
  var bar=el.querySelector('#sbC'),cc=el.querySelector('#cc');Object.keys(cat).forEach(function(k){var c=document.createElement('div');c.className='chip';c.textContent=cat[k];c.onclick=function(){g(k);};cc.appendChild(c);});
  function nx(){if(!pool.length)pool=items.slice();el.cur=pool.splice(Math.floor(Math.random()*pool.length),1)[0];el.querySelector('#cw').textContent=el.cur[0];el.querySelector('#cf').className='fb';}
  function g(k){var ok=k===el.cur[1];if(ok){p++;s++}else s=0;setSc(bar,p,s);fb(el.querySelector('#cf'),ok,'«'+el.cur[0]+'» → '+cat[el.cur[1]]);setTimeout(nx,900);}nx();})();
@@ -94,7 +94,7 @@ var CHUNKS=[["limpiar el polvo","afstoffen"],["pasar la aspiradora","stofzuigen"
   ["María, ___ hacer la cama. (jíj)","tienes que"],
   ["Hoy ___ planchar yo. (ík)","tengo que"]];
  var pool=items.slice(),p=0,s=0;
- el.innerHTML='<h3>¿hay que · tengo que · tienes que? ✅</h3><p class="desc"><b>hay que</b> = het moet gebeuren (algemeen) · <b>tengo que</b> = ík moet · <b>tienes que</b> = jíj moet.</p>'+sb('sbH')+'<div class="big" id="hw"></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._hq(\'hay que\')">hay que (algemeen)</div><div class="chip" onclick="window._hq(\'tengo que\')">tengo que (ik)</div><div class="chip" onclick="window._hq(\'tienes que\')">tienes que (jij)</div></div><div class="fb" id="hf"></div>';
+ el.innerHTML='<h3>¿hay que · tengo que · tienes que? ✅</h3><p class="desc"><b>hay que</b> = tiene que hacerse (general) · <b>tengo que</b> = yo debo · <b>tienes que</b> = tú debes. <span class="stn">algemeen · ík · jíj</span></p>'+sb('sbH')+'<div class="big" id="hw"></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._hq(\'hay que\')">hay que (algemeen)</div><div class="chip" onclick="window._hq(\'tengo que\')">tengo que (ik)</div><div class="chip" onclick="window._hq(\'tienes que\')">tienes que (jij)</div></div><div class="fb" id="hf"></div>';
  var bar=el.querySelector('#sbH');function nx(){if(!pool.length)pool=items.slice();el.cur=pool.splice(Math.floor(Math.random()*pool.length),1)[0];el.querySelector('#hw').textContent=el.cur[0];el.querySelector('#hf').className='fb';}
  window._hq=function(k){var ok=k===el.cur[1];if(ok){p++;s++}else s=0;setSc(bar,p,s);var f=el.cur[0].replace('___',el.cur[1]).replace(/\s*\([^)]*\)/g,'');fb(el.querySelector('#hf'),ok,f);if(TTS&&ok)speak(f.replace(/[¿?¡!]/g,''));setTimeout(nx,1300);};nx();})();
 
@@ -126,7 +126,7 @@ var CHUNKS=[["limpiar el polvo","afstoffen"],["pasar la aspiradora","stofzuigen"
 (function(){var el=document.getElementById('g_match');
  var pairs=[["pasar la aspiradora","la aspiradora 🧹"],["fregar los platos","los platos 🍽️"],["planchar","la plancha 👕"],["hacer la cama","el dormitorio 🛏️"],["ordenar los armarios","el armario 🚪"],["limpiar el polvo","el trapo 🧽"]];
  var p=0,s=0,sel=null,done=0;var L=pairs.map(x=>x[0]),R=pairs.map(x=>x[1]).slice().sort(()=>Math.random()-.5);
- el.innerHTML='<h3>Relaciona · tarea ↔ objeto 🧩</h3><p class="desc">Klik links een taak, dan rechts wat je ervoor nodig hebt (of waar je het doet).</p>'+sb('sbM')+'<div class="grid2"><div class="chips" style="flex-direction:column" id="mL"></div><div class="chips" style="flex-direction:column" id="mR"></div></div><div class="fb" id="mf"></div>';
+ el.innerHTML='<h3>Relaciona · tarea ↔ objeto 🧩</h3><p class="desc">Pulsa a la izquierda una tarea y a la derecha lo que necesitas para hacerla (o dónde la haces). <span class="stn">verbind taak en middel</span></p>'+sb('sbM')+'<div class="grid2"><div class="chips" style="flex-direction:column" id="mL"></div><div class="chips" style="flex-direction:column" id="mR"></div></div><div class="fb" id="mf"></div>';
  var bar=el.querySelector('#sbM'),cL=el.querySelector('#mL'),cR=el.querySelector('#mR');
  L.forEach(function(t,i){var c=document.createElement('div');c.className='chip';c.textContent=t;c.dataset.i=i;c.onclick=function(){cL.querySelectorAll('.chip').forEach(z=>z.classList.remove('sel'));c.classList.add('sel');sel=i;};cL.appendChild(c);});
  R.forEach(function(t){var c=document.createElement('div');c.className='chip';c.textContent=t;c.onclick=function(){if(sel==null)return;var ok=t===pairs[sel][1];if(ok){c.classList.add('ok');cL.querySelector('.chip[data-i="'+sel+'"]').classList.add('ok');p++;s++;done++;fb(el.querySelector('#mf'),true,pairs[sel][0]+' → '+t);if(done===pairs.length)fb(el.querySelector('#mf'),true,'¡Completado!');}else{s=0;c.classList.add('no');setTimeout(()=>c.classList.remove('no'),500);fb(el.querySelector('#mf'),false,'Probeer opnieuw.');}setSc(bar,p,s);sel=null;cL.querySelectorAll('.chip').forEach(z=>z.classList.remove('sel'));};cR.appendChild(c);});})();
@@ -143,10 +143,10 @@ var CHUNKS=[["limpiar el polvo","afstoffen"],["pasar la aspiradora","stofzuigen"
 (function(){var el=document.getElementById('g_ordena');
  var sol=["La asistenta está enferma y no puede venir.","Entonces hay que limpiar nosotros.","Yo te ayudo. ¿Qué tengo que hacer?","¿Sabes pasar la aspiradora?","Claro que sé. ¡Ahí está!"];
  var cur=[],pool=sol.slice().sort(()=>Math.random()-.5);
- el.innerHTML='<h3>Ordena la conversación 🔢</h3><p class="desc">Klik de zinnen in de juiste volgorde (probleem → wat moet gebeuren → hulp → taak → ¡gelukt!).</p><div class="chips" id="oP"></div><div class="col" id="oB"><b style="font-size:12px;color:var(--gd)">JOUW VOLGORDE</b><div class="chips" id="oBB" style="margin-top:6px"></div></div><div class="answerbtns"><button class="btn sec" id="oR">Reset</button><button class="btn" id="oC">Controleer</button></div><div class="fb" id="oF"></div>';
+ el.innerHTML='<h3>Ordena la conversación 🔢</h3><p class="desc">Pulsa las frases en el orden correcto (problema → qué hay que hacer → ayuda → tarea → ¡ya está!). <span class="stn">zet in de juiste volgorde</span></p><div class="chips" id="oP"></div><div class="col" id="oB"><b style="font-size:12px;color:var(--gd)">JOUW VOLGORDE</b><div class="chips" id="oBB" style="margin-top:6px"></div></div><div class="answerbtns"><button class="btn sec" id="oR">Reset</button><button class="btn" id="oC">Controleer</button></div><div class="fb" id="oF"></div>';
  function draw(){var p=el.querySelector('#oP');p.innerHTML='';pool.forEach(function(t,i){var c=document.createElement('div');c.className='chip';c.textContent=t;c.onclick=function(){cur.push(t);pool.splice(i,1);draw();built();};p.appendChild(c);});}
  function built(){var b=el.querySelector('#oBB');b.innerHTML='';cur.forEach(function(t,i){var c=document.createElement('div');c.className='chip sel';c.textContent=(i+1)+'. '+t;c.onclick=function(){pool.push(t);cur.splice(i,1);draw();built();};b.appendChild(c);});}
- el.querySelector('#oC').onclick=function(){var ok=cur.join('|')===sol.join('|');fb(el.querySelector('#oF'),ok,ok?'¡Perfecto!':'Nog niet — begin met het probleem (de asistenta).');};
+ el.querySelector('#oC').onclick=function(){var ok=cur.join('|')===sol.join('|');fb(el.querySelector('#oF'),ok,ok?'¡Perfecto!':'Todavía no — empieza por el problema (la asistenta).');};
  el.querySelector('#oR').onclick=function(){cur=[];pool=sol.slice().sort(()=>Math.random()-.5);draw();built();el.querySelector('#oF').className='fb';};draw();built();})();
 
 // ③ ¿Quién hace qué en mi casa? (vrije productie)
@@ -158,7 +158,7 @@ var CHUNKS=[["limpiar el polvo","afstoffen"],["pasar la aspiradora","stofzuigen"
    +'<td><select class="txin r-q"><option>yo</option><option>tú</option><option>mi madre</option><option>mi padre</option><option>mi hermano/a</option><option>nadie</option></select></td>'
    +'<td><select class="txin r-s"><option>sé hacerlo</option><option>no sé hacerlo</option></select></td></tr>';
  }
- el.innerHTML='<h3>¿Quién hace qué en mi casa? ✍️🗣️</h3><p class="desc">Kies drie taken en zeg wie ze doet. Er is geen «juist» — het is jouw huis.</p>'
+ el.innerHTML='<h3>¿Quién hace qué en mi casa? ✍️🗣️</h3><p class="desc">Elige tres tareas y di quién las hace. No hay respuesta «correcta»: es tu casa. <span class="stn">het is jouw huis</span></p>'
   +'<table class="tabla"><thead><tr><th>tarea</th><th>¿quién?</th><th>¿y yo?</th></tr></thead><tbody id="rB">'+rows+'</tbody></table>'
   +'<div class="answerbtns"><button class="btn" id="rGo">Maak mijn tekst</button>'+(TTS?'<button class="spk-btn" id="rSpk">🔊 hoor</button>':'')+'</div><div class="fb" id="rF"></div>';
  el.querySelector('#rGo').onclick=function(){
@@ -174,6 +174,6 @@ var CHUNKS=[["limpiar el polvo","afstoffen"],["pasar la aspiradora","stofzuigen"
    out.push(frase);});
   if(!out.length){fb(el.querySelector('#rF'),false,'Elige primero al menos una tarea. <span class="gloss">kies eerst minstens één taak</span>');return;}
   el.cur='En mi casa: '+out.join(' ');
-  fb(el.querySelector('#rF'),true,'<b>'+el.cur+'</b><br><span style="color:var(--mut);font-style:italic">Zeg het hardop. Vraag daarna aan je buur: «¿Y en tu casa? ¿Quién friega los platos?» — en bied hulp aan met «Yo te ayudo».</span>');};
+  fb(el.querySelector('#rF'),true,'<b>'+el.cur+'</b><br><span style="color:var(--mut);font-style:italic">Dilo en voz alta. Después pregúntale a tu compañero/a: «¿Y en tu casa? ¿Quién friega los platos?», y ofrece ayuda con «Yo te ayudo».</span>');};
  var sp=el.querySelector('#rSpk');if(sp)sp.onclick=function(){if(el.cur)speak(el.cur);};})();
 </script></body></html>

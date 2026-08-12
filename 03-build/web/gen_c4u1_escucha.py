@@ -25,7 +25,7 @@ YT_WATCH="https://www.youtube.com/watch?v="+VIDEO_SRC[1] if VIDEO_SRC[0]=="youtu
 # hoogfrequente chunks om te markeren (survival)
 CHUNKS=["Hola","¿Cómo estás?","Bien","encantada","Encantado","Encantado de conocerla","¿Cómo te llamas?","me llamo","Yo soy","soy","hasta luego","Adiós","Vale","¿Cómo está usted?","Igualmente","muy bien","¿Qué tal","Sí, claro","muchas gracias","De nada","Bienvenida","Perdona"]
 SCENES=[
- ("Escena 1 · Julio y María se despiertan","Julio en María worden wakker en moeten zich haasten naar hun werk.",[
+ ("Escena 1 · Julio y María se despiertan","Julio y María se despiertan y tienen que darse prisa para ir al trabajo.",[
   ("María","Hola.","Hallo."),("Julio","Hola.","Hallo."),
   ("María","¿Cómo estás?","Hoe gaat het?"),("Julio","Bien.","Goed."),
   ("María","Bueno, encantada. ¿Cómo te llamas?","Wel, aangenaam. Hoe heet je?"),
@@ -33,7 +33,7 @@ SCENES=[
   ("Julio","Encantado. Perdona, pero yo me voy… al trabajo.","Aangenaam. Sorry, maar ik ga… naar het werk."),
   ("María","Vale.","Oké."),("Julio","Bueno, hasta luego.","Wel, tot straks."),("María","Adiós.","Dag."),
  ]),
- ("Escena 2 · En la academia","María komt aan op haar nieuwe werk; Fernando stelt haar voor aan Josefina en Julio.",[
+ ("Escena 2 · En la academia","María llega a su nuevo trabajo; Fernando la presenta a Josefina y a Julio.",[
   ("Fernando","Las aulas, mi despacho. Ella es Josefina, la secretaria.","De klaslokalen, mijn kantoor. Zij is Josefina, de secretaresse."),
   ("Josefina","Hola, encantada. ¿Y tú cómo te llamas?","Hallo, aangenaam. En hoe heet jij?"),
   ("María","Me llamo María.","Ik heet María."),
@@ -98,7 +98,7 @@ body.shownl .nl{display:block}
 BODY="".join(scene(*s) for s in SCENES)
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · Unidad 1 · Escucha</title><style>{CSS}</style></head><body>
-<div class="top"><h1>Unidad 1 · Presentaciones — ¡Escucha!</h1><p>Bekijk de scène en <b>lees mee</b>. Klik een zin om ze te horen; zet Nederlands aan/uit; de <span style="background:#FEF08A;color:#20242E;border-radius:4px;padding:0 4px">gele</span> woorden zijn de bruikbare chunks.</p></div>
+<div class="top"><h1>Unidad 1 · Presentaciones — ¡Escucha!</h1><p>Mira la escena y <b>lee al mismo tiempo</b>. Pulsa una frase para oírla; activa o desactiva el neerlandés. Las palabras en <span style="background:#FEF08A;color:#20242E;border-radius:4px;padding:0 4px">amarillo</span> son los chunks útiles. <span class="stn">lees mee; de gele woorden zijn de chunks</span></p></div>
 <main>
  <div class="grid">
   <div class="vid">
@@ -108,7 +108,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
       <a class="btn" href="{YT_WATCH}" target="_blank" rel="noopener">▶ Op YouTube</a>
       <span class="legend">💡 <span class="ch">geel</span> = chunk om mee te nemen</span>
     </div>
-    <p class="vidhint">Speelt de video niet af? Klik <a href="{YT_WATCH}" target="_blank" rel="noopener">hier om ze op YouTube te openen</a>.</p>
+    <p class="vidhint">¿No se reproduce el vídeo? Pulsa <a href="{YT_WATCH}" target="_blank" rel="noopener">aquí para abrirlo en YouTube</a>.</p>
   </div>
   <div class="tr">{BODY}</div>
  </div>

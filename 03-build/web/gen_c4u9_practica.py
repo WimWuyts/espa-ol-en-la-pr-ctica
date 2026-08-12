@@ -43,7 +43,7 @@ select.txin{width:auto}
 
 HTML="""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · U9 · Práctica</title><style>__CSS__</style></head><body>
-<div class="top"><h1>Unidad 9 · Planes y obligaciones — Práctica</h1><p>Oefen de bruikbare taal uit de scène: van <b>herkennen</b> → <b>kiezen</b> → <b>zelf zeggen/schrijven</b>. Alles corrigeert zichzelf; klik 🔊 om te horen.</p></div>
+<div class="top"><h1>Unidad 9 · Planes y obligaciones — Práctica</h1><p>Practica la lengua útil de la escena: de <b>reconocer</b> → <b>elegir</b> → <b>decirlo y escribirlo tú</b>. Todo se corrige solo; pulsa 🔊 para oírlo. <span class="stn">van herkennen naar zelf zeggen</span></p></div>
 <main>
  <h2 class="subh">① Reconocer <span class="pill">receptief</span></h2>
  <div class="game" id="g_cards"></div>
@@ -78,7 +78,7 @@ var CHUNKS=[["Voy a + inf.","ik ga + werkwoord"],["Vamos a dormir","we gaan slap
 (function(){var el=document.getElementById('g_escucha');if(!TTS){el.innerHTML='<h3>¿Plan u obligación? 🎧</h3><p class="desc">Spraak werkt in Chrome/Edge.</p>';return;}
  var bank=[["Voy a ir al cine","plan"],["Tengo que trabajar","obligación"],["Vamos a dormir un poco más","plan"],["Tengo que estudiar","obligación"],["Voy a quedar con amigas","plan"],["Tengo que pasear al perro","obligación"],["¿Qué vas a hacer el finde?","plan"],["Tengo cosas que hacer","obligación"]];
  var p=0,s=0;
- el.innerHTML='<h3>¿Plan u obligación? 🎧</h3><p class="desc">Klik ▶, luister en beslis: is het een <b>plan</b> (voy a…) of een <b>verplichting</b> (tengo que…)?</p>'+sb('sbE')+'<div style="margin:6px 0"><button class="spk-btn" id="eP">▶ Speel opnieuw</button></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._po(\'plan\')">🗓️ un plan</div><div class="chip" onclick="window._po(\'obligación\')">✅ una obligación</div></div><div class="fb" id="eF"></div>';
+ el.innerHTML='<h3>¿Plan u obligación? 🎧</h3><p class="desc">Pulsa ▶, escucha y decide: ¿es un <b>plan</b> (voy a…) o una <b>obligación</b> (tengo que…)? <span class="stn">plan of verplichting?</span></p>'+sb('sbE')+'<div style="margin:6px 0"><button class="spk-btn" id="eP">▶ Speel opnieuw</button></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._po(\'plan\')">🗓️ un plan</div><div class="chip" onclick="window._po(\'obligación\')">✅ una obligación</div></div><div class="fb" id="eF"></div>';
  var bar=el.querySelector('#sbE');
  function nx(){el.cur=bank[Math.floor(Math.random()*bank.length)];el.querySelector('#eF').className='fb';speak(el.cur[0]);}
  window._po=function(k){var ok=k===el.cur[1];if(ok){p++;s++}else s=0;setSc(bar,p,s);fb(el.querySelector('#eF'),ok,'«'+el.cur[0]+'» → '+el.cur[1]);setTimeout(nx,1300);};
@@ -97,7 +97,7 @@ var CHUNKS=[["Voy a + inf.","ik ga + werkwoord"],["Vamos a dormir","we gaan slap
 (function(){var el=document.getElementById('g_plan');
  var items=[["Yo ___ preparar café.","voy a"],["¿Tú qué ___ hacer?","vas a"],["Nosotros ___ dormir más.","vamos a"],["Yo ___ quedar con amigas.","voy a"],["¿___ pasear? (nosotros)","vamos a"],["¿Qué ___ hacer el finde? (tú)","vas a"]];
  var pool=items.slice(),p=0,s=0;
- el.innerHTML='<h3>¿voy a · vas a · vamos a? 🗓️</h3><p class="desc">Kies de juiste vorm van «ir a» (let op wie het doet).</p>'+sb('sbP')+'<div class="big" id="pw"></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._ir(\'voy a\')">voy a (ik)</div><div class="chip" onclick="window._ir(\'vas a\')">vas a (jij)</div><div class="chip" onclick="window._ir(\'vamos a\')">vamos a (wij)</div></div><div class="fb" id="pf"></div>';
+ el.innerHTML='<h3>¿voy a · vas a · vamos a? 🗓️</h3><p class="desc">Elige la forma correcta de «ir a» (ojo con quién lo hace). <span class="stn">let op wie het doet</span></p>'+sb('sbP')+'<div class="big" id="pw"></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._ir(\'voy a\')">voy a (ik)</div><div class="chip" onclick="window._ir(\'vas a\')">vas a (jij)</div><div class="chip" onclick="window._ir(\'vamos a\')">vamos a (wij)</div></div><div class="fb" id="pf"></div>';
  var bar=el.querySelector('#sbP');function nx(){if(!pool.length)pool=items.slice();el.cur=pool.splice(Math.floor(Math.random()*pool.length),1)[0];el.querySelector('#pw').textContent=el.cur[0];el.querySelector('#pf').className='fb';}
  window._ir=function(k){var ok=k===el.cur[1];if(ok){p++;s++}else s=0;setSc(bar,p,s);var f=el.cur[0].replace('___',el.cur[1]);fb(el.querySelector('#pf'),ok,f);if(TTS&&ok)speak(f.replace(/[¿?]/g,''));setTimeout(nx,1050);};nx();})();
 
@@ -105,7 +105,7 @@ var CHUNKS=[["Voy a + inf.","ik ga + werkwoord"],["Vamos a dormir","we gaan slap
 (function(){var el=document.getElementById('g_tener');
  var items=[["Ik moet werken.","Tengo que trabajar"],["Ik heb honger.","Tengo hambre"],["Ik ben slaperig.","Tengo sueño"],["Ik moet studeren.","Tengo que estudiar"],["Ik heb haast.","Tengo prisa"],["Ik moet slapen.","Tengo que dormir"]];
  var pool=items.slice(),p=0,s=0;
- el.innerHTML='<h3>Con «que» o sin «que»? 🙋</h3><p class="desc">Vóór een <b>werkwoord</b> → tengo <b>que</b>… · vóór een <b>naamwoord</b> → tengo… (zonder que). Kies de juiste Spaanse zin.</p>'+sb('sbT')+'<div class="big" id="tw"></div><div class="chips" id="to" style="justify-content:center"></div><div class="fb" id="tf"></div>';
+ el.innerHTML='<h3>Con «que» o sin «que»? 🙋</h3><p class="desc">Delante de un <b>verbo</b> → tengo <b>que</b>… · delante de un <b>sustantivo</b> → tengo… (sin que). Elige la frase correcta. <span class="stn">wél of géén «que»</span></p>'+sb('sbT')+'<div class="big" id="tw"></div><div class="chips" id="to" style="justify-content:center"></div><div class="fb" id="tf"></div>';
  var bar=el.querySelector('#sbT');
  function nx(){if(!pool.length)pool=items.slice();el.cur=pool.splice(Math.floor(Math.random()*pool.length),1)[0];el.querySelector('#tw').textContent=el.cur[0];
   var right=el.cur[1];
@@ -122,7 +122,7 @@ var CHUNKS=[["Voy a + inf.","ik ga + werkwoord"],["Vamos a dormir","we gaan slap
 (function(){var el=document.getElementById('g_match');
  var pairs=[["¿Vamos al cine esta noche?","No puedo. Tengo que estudiar."],["¿Quedamos el sábado?","El sábado tengo que trabajar."],["¿Desayunamos juntos?","No tengo hambre, gracias."],["¿Vamos a dormir más?","No, tengo cosas que hacer."],["¿Tomamos algo el domingo?","Vale, el domingo estoy libre."]];
  var p=0,s=0,sel=null,done=0;var L=pairs.map(x=>x[0]),R=pairs.map(x=>x[1]).slice().sort(()=>Math.random()-.5);
- el.innerHTML='<h3>Relaciona · invitación ↔ respuesta 🧩</h3><p class="desc">Klik links een uitnodiging, dan rechts het passende antwoord.</p>'+sb('sbM')+'<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><div class="chips" style="flex-direction:column" id="mL"></div><div class="chips" style="flex-direction:column" id="mR"></div></div><div class="fb" id="mf"></div>';
+ el.innerHTML='<h3>Relaciona · invitación ↔ respuesta 🧩</h3><p class="desc">Pulsa a la izquierda una invitación y a la derecha la respuesta que encaja. <span class="stn">verbind uitnodiging en antwoord</span></p>'+sb('sbM')+'<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><div class="chips" style="flex-direction:column" id="mL"></div><div class="chips" style="flex-direction:column" id="mR"></div></div><div class="fb" id="mf"></div>';
  var bar=el.querySelector('#sbM'),cL=el.querySelector('#mL'),cR=el.querySelector('#mR');
  L.forEach(function(t,i){var c=document.createElement('div');c.className='chip';c.textContent=t;c.dataset.i=i;c.onclick=function(){cL.querySelectorAll('.chip').forEach(z=>z.classList.remove('sel'));c.classList.add('sel');sel=i;};cL.appendChild(c);});
  R.forEach(function(t){var c=document.createElement('div');c.className='chip';c.textContent=t;c.onclick=function(){if(sel==null)return;var ok=t===pairs[sel][1];if(ok){c.classList.add('ok');cL.querySelector('.chip[data-i="'+sel+'"]').classList.add('ok');p++;s++;done++;fb(el.querySelector('#mf'),true,pairs[sel][0]+' → '+t);if(done===pairs.length)fb(el.querySelector('#mf'),true,'¡Completado!');}else{s=0;c.classList.add('no');setTimeout(()=>c.classList.remove('no'),500);fb(el.querySelector('#mf'),false,'Probeer opnieuw.');}setSc(bar,p,s);sel=null;cL.querySelectorAll('.chip').forEach(z=>z.classList.remove('sel'));};cR.appendChild(c);});})();
@@ -142,15 +142,15 @@ var CHUNKS=[["Voy a + inf.","ik ga + werkwoord"],["Vamos a dormir","we gaan slap
  el.innerHTML='<h3>Ordena la conversación 🔢</h3><p class="desc">Klik de zinnen in de juiste volgorde (uitnodiging → excuus → nieuw voorstel).</p><div class="chips" id="oP"></div><div class="col" id="oB"><b style="font-size:12px;color:var(--gd)">JOUW VOLGORDE</b><div class="chips" id="oBB" style="margin-top:6px"></div></div><div class="answerbtns"><button class="btn sec" id="oR">Reset</button><button class="btn" id="oC">Controleer</button></div><div class="fb" id="oF"></div>';
  function draw(){var p=el.querySelector('#oP');p.innerHTML='';pool.forEach(function(t,i){var c=document.createElement('div');c.className='chip';c.textContent=t;c.onclick=function(){cur.push(t);pool.splice(i,1);draw();built();};p.appendChild(c);});}
  function built(){var b=el.querySelector('#oBB');b.innerHTML='';cur.forEach(function(t,i){var c=document.createElement('div');c.className='chip sel';c.textContent=(i+1)+'. '+t;c.onclick=function(){pool.push(t);cur.splice(i,1);draw();built();};b.appendChild(c);});}
- el.querySelector('#oC').onclick=function(){var ok=cur.join('|')===sol.join('|');fb(el.querySelector('#oF'),ok,ok?'¡Perfecto!':'Nog niet — begin met de uitnodiging.');};
+ el.querySelector('#oC').onclick=function(){var ok=cur.join('|')===sol.join('|');fb(el.querySelector('#oF'),ok,ok?'¡Perfecto!':'Todavía no — empieza por la invitación.');};
  el.querySelector('#oR').onclick=function(){cur=[];pool=sol.slice().sort(()=>Math.random()-.5);draw();built();el.querySelector('#oF').className='fb';};draw();built();})();
 
 // ③ Mi finde (vrije productie)
 (function(){var el=document.getElementById('g_finde');
- el.innerHTML='<h3>Mi finde ✍️🗣️</h3><p class="desc">Zeg één plan én één verplichting. Er is geen «juist» — het is jouw weekend.</p>'
+ el.innerHTML='<h3>Mi finde ✍️🗣️</h3><p class="desc">Di un plan y una obligación. No hay respuesta «correcta»: es tu finde. <span class="stn">het is jouw weekend</span></p>'
   +'<div style="display:grid;gap:8px;max-width:660px"><div><select class="txin" id="p0"><option>El sábado</option><option>El domingo</option><option>Esta noche</option><option>Este finde</option></select> <span style="font-family:var(--disp)">voy a</span> <input class="txin" id="p1" placeholder="ir al cine…" style="width:160px"> <span style="font-family:var(--disp)">, pero también tengo que</span> <input class="txin" id="p2" placeholder="estudiar…" style="width:150px"> <span style="font-family:var(--disp)">.</span></div></div>'
   +'<div class="answerbtns"><button class="btn" id="pGo">Maak mijn zin</button>'+(TTS?'<button class="spk-btn" id="pSpk">🔊 hoor</button>':'')+'</div><div class="fb" id="pF"></div>';
- el.querySelector('#pGo').onclick=function(){var d=el.querySelector('#p0').value,a=(el.querySelector('#p1').value||'ir al cine').trim(),b=(el.querySelector('#p2').value||'estudiar').trim();el.cur=d+' voy a '+a+', pero también tengo que '+b+'.';fb(el.querySelector('#pF'),true,'<b>'+el.cur+'</b><br><span style="color:var(--mut);font-style:italic">Zeg het hardop. Nodig dan je buur uit — en laat hem/haar beleefd «nee» zeggen met «tengo que…».</span>');};
+ el.querySelector('#pGo').onclick=function(){var d=el.querySelector('#p0').value,a=(el.querySelector('#p1').value||'ir al cine').trim(),b=(el.querySelector('#p2').value||'estudiar').trim();el.cur=d+' voy a '+a+', pero también tengo que '+b+'.';fb(el.querySelector('#pF'),true,'<b>'+el.cur+'</b><br><span style="color:var(--mut);font-style:italic">Dilo en voz alta. Después invita a tu compañero/a, y que te diga «no» con educación usando «tengo que…».</span>');};
  var sp=el.querySelector('#pSpk');if(sp)sp.onclick=function(){if(el.cur)speak(el.cur);};})();
 """
 

@@ -20,7 +20,7 @@ IFRAME=video_iframe(VIDEO_SRC)
 YT_WATCH="https://www.youtube.com/watch?v="+VIDEO_SRC[1]
 CHUNKS=["es un chico","es simpático","es divertido","es un amigo","muy elegante","un poco gorda","muy delgada","muy guapa","muy inteligente","muy alto","muy fuerte","la abuela","el tío","mi madre","mi padre","la hermana","¿dónde vives?","Vivo en","divertida","amable","guapo","de pequeña"]
 SCENES=[
- ("Escena 1 · El interrogatorio","María's moeder ondervraagt haar over «een jongen»: is hij aardig, leuk, een vriend?",[
+ ("Escena 1 · El interrogatorio","La madre de María la interroga sobre «un chico»: ¿es simpático, es divertido, es un amigo?",[
   ("Madre","Entonces, ¿es un chico?","Dus, is het een jongen?"),
   ("María","Sí mamá, es un chico.","Ja mama, het is een jongen."),
   ("Madre","Ya. ¿Y es simpático?","Juist. En is hij aardig?"),
@@ -31,7 +31,7 @@ SCENES=[
   ("María","¡Mamá! Ya voy yo. ¡Que voy yo!","Mama! Ik ga wel. Ik ga al!"),
   ("Madre","Sube, sube, ya abro. Sube.","Kom boven, ik doe open. Kom."),
  ]),
- ("Escena 2 · El álbum de fotos","De moeder toont Julio de familiefoto's en beschrijft iedereen — met veel adjectieven.",[
+ ("Escena 2 · El álbum de fotos","La madre le enseña a Julio las fotos de la familia y describe a todo el mundo, con muchos adjetivos.",[
   ("Madre","Esta es mi madre, la abuela de María. Es muy elegante, pero un poco gorda.","Dit is mijn moeder, de oma van María. Ze is heel elegant, maar een beetje mollig."),
   ("Madre","Esta es María, de pequeña. En esta foto está muy, muy gorda.","Dit is María als klein meisje. Op deze foto is ze heel, heel dik."),
   ("Julio","Ahora es una chica muy delgada y muy guapa.","Nu is ze een heel slank en heel knap meisje."),
@@ -91,7 +91,7 @@ body.shownl .nl{display:block}
 BODY="".join(scene(*s) for s in SCENES)
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · Unidad 4 · Escucha</title><style>{CSS}</style></head><body>
-<div class="top"><h1>Unidad 4 · La familia — ¡Escucha!</h1><p>Bekijk de scène en <b>lees mee</b>. Klik een zin om ze te horen; zet Nederlands aan/uit; de <span style="background:#FEF08A;color:#20242E;border-radius:4px;padding:0 4px">gele</span> woorden zijn de bruikbare chunks.</p></div>
+<div class="top"><h1>Unidad 4 · La familia — ¡Escucha!</h1><p>Mira la escena y <b>lee al mismo tiempo</b>. Pulsa una frase para oírla; activa o desactiva el neerlandés. Las palabras en <span style="background:#FEF08A;color:#20242E;border-radius:4px;padding:0 4px">amarillo</span> son los chunks útiles. <span class="stn">lees mee; de gele woorden zijn de chunks</span></p></div>
 <main>
  <div class="grid">
   <div class="vid">
@@ -101,7 +101,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
       <a class="btn" href="{YT_WATCH}" target="_blank" rel="noopener">▶ Op YouTube</a>
       <span class="legend">💡 <span class="ch">geel</span> = chunk om mee te nemen</span>
     </div>
-    <p class="vidhint">Speelt de video niet af? Klik <a href="{YT_WATCH}" target="_blank" rel="noopener">hier om ze op YouTube te openen</a>.</p>
+    <p class="vidhint">¿No se reproduce el vídeo? Pulsa <a href="{YT_WATCH}" target="_blank" rel="noopener">aquí para abrirlo en YouTube</a>.</p>
   </div>
   <div class="tr">{BODY}</div>
  </div>

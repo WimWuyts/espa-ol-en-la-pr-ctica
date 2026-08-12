@@ -24,7 +24,7 @@ WATCH=("https://www.youtube.com/watch?v="+VIDEO_SRC[1]) if VIDEO_SRC[0]=="youtub
 WATCH_LABEL="▶ Op YouTube" if VIDEO_SRC[0]=="youtube" else "▶ Openen in Drive"
 CHUNKS=["¿qué haces?","Limpiar el polvo","está enferma","hay que limpiar","Yo te ayudo","No tienes que molestarte","No es molestia","¿Qué tengo que hacer?","puedes ordenar los armarios","las estanterías","puedo pasar la aspiradora","sabemos pasar la aspiradora","¿Qué hacéis?","no tenemos asistenta","No puede venir","Déjame, lo hago yo","¿sabes pasar la aspiradora?","¿Sabes cómo funciona?","sé cómo funciona","no funciona","¡Ahí está!"]
 SCENES=[
- ("Escena 1 · «Yo te ayudo»","De poetshulp is ziek, dus María maakt zelf schoon. Julio biedt hulp aan — en Paul ook. Let op elk **hay que**, **te ayudo** en **saber**.",[
+ ("Escena 1 · «Yo te ayudo»","La asistenta está enferma, así que María limpia ella misma. Julio ofrece ayuda, y Paul también. Fíjate en cada **hay que**, **te ayudo** y **saber**.",[
   ("Julio","Perdona, ¿qué haces?","Sorry, wat doe je?"),
   ("María","Limpiar el polvo, la asistenta está enferma. Hay que limpiar esto.","Afstoffen, de poetshulp is ziek. Dit moet schoongemaakt worden."),
   ("Julio","Yo te ayudo.","Ik help je."),
@@ -35,7 +35,7 @@ SCENES=[
   ("Julio","Claro, yo no soy machista: los hombres también sabemos pasar la aspiradora.","Natuurlijk, ik ben niet machistisch: wij mannen kunnen ook stofzuigen."),
   ("María","Ahí está la aspiradora.","Daar staat de stofzuiger."),
  ]),
- ("Escena 2 · Llega Paul","Paul wil het overnemen — en beweert dat hij weet hoe het werkt.",[
+ ("Escena 2 · Llega Paul","Paul quiere hacerlo él, y dice que sabe cómo funciona.",[
   ("Paul","¿Qué hacéis?","Wat zijn jullie aan het doen?"),
   ("Julio","Limpiar un poco. Hoy no tenemos asistenta.","Een beetje schoonmaken. Vandaag hebben we geen poetshulp."),
   ("María","No puede venir en toda la semana, está enferma.","Ze kan de hele week niet komen, ze is ziek."),
@@ -45,7 +45,7 @@ SCENES=[
   ("Paul","Claro que sé cómo funciona. Lo que pasa es que esto no funciona.","Natuurlijk weet ik hoe het werkt. Het probleem is dat dit niet werkt."),
   ("Paul","¡Ahí está!","Daar is het!"),
  ]),
- ("Escena 3 · Fernando y Josefina observan","Van een afstandje becommentariëren Fernando en Josefina het tafereel.",[
+ ("Escena 3 · Fernando y Josefina observan","Desde lejos, Fernando y Josefina comentan la escena.",[
   ("Fernando","¿Qué hacen?","Wat zijn ze aan het doen?"),
   ("Josefina","Julio quiere a María. María quiere a Julio, pero Paul es más guapo.","Julio houdt van María. María houdt van Julio, maar Paul is knapper."),
   ("Josefina","Paul es inglés, así que nadie sabe exactamente qué quiere él.","Paul is Engels, dus niemand weet precies wat híj wil."),
@@ -99,7 +99,7 @@ body.shownl .nl{display:block}
 BODY="".join(scene(*s) for s in SCENES)
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · Unidad 10 · Escucha</title><style>{CSS}</style></head><body>
-<div class="top"><h1>Unidad 10 · ¡No tenemos asistenta! — ¡Escucha!</h1><p>Bekijk de scène en <b>lees mee</b>. Klik een zin om ze te horen; zet Nederlands aan/uit. De <span style="background:#FEF08A;color:#20242E;border-radius:4px;padding:0 4px">gele</span> woorden zijn chunks: let op <b>hay que…</b>, <b>te ayudo</b> en <b>¿sabes…?</b></p></div>
+<div class="top"><h1>Unidad 10 · ¡No tenemos asistenta! — ¡Escucha!</h1><p>Mira la escena y <b>lee al mismo tiempo</b>. Pulsa una frase para oírla; activa o desactiva el neerlandés. Las palabras en <span style="background:#FEF08A;color:#20242E;border-radius:4px;padding:0 4px">amarillo</span> son chunks: fíjate en <b>hay que…</b>, <b>te ayudo</b> y <b>¿sabes…?</b> <span class="stn">lees mee; de gele woorden zijn de chunks</span></p></div>
 <main>
  <div class="grid">
   <div class="vid">
@@ -109,7 +109,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
       <a class="btn" href="{WATCH}" target="_blank" rel="noopener">{WATCH_LABEL}</a>
       <span class="legend">💡 <span class="ch">geel</span> = chunk om mee te nemen</span>
     </div>
-    <p class="vidhint">Speelt de video niet af? Klik <a href="{WATCH}" target="_blank" rel="noopener">hier om ze in een nieuw tabblad te openen</a>.</p>
+    <p class="vidhint">¿No se reproduce el vídeo? Pulsa <a href="{WATCH}" target="_blank" rel="noopener">aquí para abrirlo en otra pestaña</a>.</p>
   </div>
   <div class="tr">{BODY}</div>
  </div>

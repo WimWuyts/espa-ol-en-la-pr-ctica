@@ -24,7 +24,7 @@ YT_WATCH="https://www.youtube.com/watch?v="+VIDEO_SRC[1] if VIDEO_SRC[0]=="youtu
 CHUNKS=["¿De dónde eres?","¿De qué país?","soy de Argelia","soy de","Eres argelina","argelina","argelino","alemán","alemana","portugués","portuguesa","colombiano","colombiana","Buenas noches","por favor","Habla usted francés","Habla bastante bien","No hablo mucho","entiendo un poco","Tres idiomas","árabe","francés","español","Veinte euros","Veinte","diez"]
 # ── TRANSCRIPT = exact aangeleverd door de auteur (Episodio 3 · Nacionalidades/Países). 3 scènes.
 SCENES=[
- ("Escena 1 · La pregunta clave: ¿De dónde eres?","Fernando ontmoet een vrouw die om geld vraagt en leert haar de kernvraag van de reis — én de valstrik «soy Argelia» → «soy de Argelia».",[
+ ("Escena 1 · La pregunta clave: ¿De dónde eres?","Fernando conoce a una mujer que pide dinero y le enseña la pregunta clave del viaje, y de paso la trampa «soy Argelia» → «soy de Argelia».",[
   ("Josefina","Bueno, buenas noches.","Goed, goedenavond."),
   ("Fernando","Buenas noches, Josefina.","Goedenavond, Josefina."),
   ("Extranjera","Dinero. Dinero, por favor.","Geld. Geld, alstublieft."),
@@ -34,7 +34,7 @@ SCENES=[
   ("Extranjera","¡Ah! Yo soy Argelia.","Ah! Ik ben Algerije. (fout!)"),
   ("Fernando","No. «Yo soy de Argelia». Eres argelina. Chica, argelina. Chico, argelino. Mira: alemán, alemana; portugués, portuguesa; colombiano, colombiana. Julio.","Nee. «Ik kom uit Algerije.» Je bent Algerijns. Meisje: argelina. Jongen: argelino. Kijk: Duits(e), Portugees/Portugese, Colombiaan(se). Julio."),
  ]),
- ("Escena 2 · La nacionalidad y los idiomas","Julio komt erbij; ze bevestigen de gentilicio en ontdekken dat de vrouw drie talen spreekt.",[
+ ("Escena 2 · La nacionalidad y los idiomas","Julio se acerca; confirman el gentilicio y descubren que la mujer habla tres idiomas.",[
   ("Julio","¿Sí?","Ja?"),
   ("Fernando","Se dice argelina, ¿no? De Argelia, argelino.","Je zegt argelina, toch? Uit Algerije: argelino."),
   ("Julio","O argelina, sí. Buenas noches.","Of argelina, ja. Goedenavond."),
@@ -43,7 +43,7 @@ SCENES=[
   ("Extranjera","No hablo mucho, pero entiendo un poco. El dinero.","Ik spreek niet veel, maar ik versta een beetje. Het geld."),
   ("Julio","¿Habla usted francés? ¡Qué maravilla! Tres idiomas, ¿no? Árabe, francés y español.","Spreekt u Frans? Wat geweldig! Drie talen, toch? Arabisch, Frans en Spaans."),
  ]),
- ("Escena 3 · El dinero y los números","Ze regelen het geld — met de getallen die je op reis nodig hebt.",[
+ ("Escena 3 · El dinero y los números","Arreglan lo del dinero, con los números que necesitas de viaje.",[
   ("Extranjera","El dinero.","Het geld."),
   ("Julio","¿Qué dinero?","Welk geld?"),
   ("Fernando","Veinte euros está bien, ¿no?","Twintig euro is goed, niet?"),
@@ -105,7 +105,7 @@ body.shownl .nl{display:block}
 BODY="".join(scene(*s) for s in SCENES)
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · Unidad 3 · Escucha</title><style>{CSS}</style></head><body>
-<div class="top"><h1>Unidad 3 · Nacionalidades y países — ¡Escucha!</h1><p>Bekijk de scène en <b>lees mee</b>. Klik een zin om ze te horen; zet Nederlands aan/uit; de <span style="background:#FEF08A;color:#20242E;border-radius:4px;padding:0 4px">gele</span> woorden zijn de bruikbare chunks.</p></div>
+<div class="top"><h1>Unidad 3 · Nacionalidades y países — ¡Escucha!</h1><p>Mira la escena y <b>lee al mismo tiempo</b>. Pulsa una frase para oírla; activa o desactiva el neerlandés. Las palabras en <span style="background:#FEF08A;color:#20242E;border-radius:4px;padding:0 4px">amarillo</span> son los chunks útiles. <span class="stn">lees mee; de gele woorden zijn de chunks</span></p></div>
 <main>
  <div class="grid">
   <div class="vid">
@@ -115,7 +115,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
       <a class="btn" href="{YT_WATCH}" target="_blank" rel="noopener">▶ Op YouTube</a>
       <span class="legend">💡 <span class="ch">geel</span> = chunk om mee te nemen</span>
     </div>
-    <p class="vidhint">Speelt de video niet af? Klik <a href="{YT_WATCH}" target="_blank" rel="noopener">hier om ze op YouTube te openen</a>.</p>
+    <p class="vidhint">¿No se reproduce el vídeo? Pulsa <a href="{YT_WATCH}" target="_blank" rel="noopener">aquí para abrirlo en YouTube</a>.</p>
   </div>
   <div class="tr">{BODY}</div>
  </div>

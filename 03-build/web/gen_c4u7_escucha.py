@@ -20,13 +20,13 @@ IFRAME=video_iframe(VIDEO_SRC)
 YT_WATCH="https://www.youtube.com/watch?v="+VIDEO_SRC[1]
 CHUNKS=["Yo trabajo aquí","tú trabajas","él trabaja","Estamos todos bien","No estáis bien","escritora","dependienta","¿Trabaja en una tienda?","una actriz","es profesora","Puede ser","¡Ya lo sé!","estás muy mal","estoy tranquilo","tranquila","Estamos todos tranquilos","Está todo bien","Hay una mujer","Hay un hombre","Coge una carta"]
 SCENES=[
- ("Escena 1 · Trabajamos aquí","Fernando spreekt María aan over haar (rare) relatie met Julio op het werk.",[
+ ("Escena 1 · Trabajamos aquí","Fernando habla con María sobre su (extraña) relación con Julio en el trabajo.",[
   ("Fernando","Yo trabajo aquí, tú trabajas aquí y él trabaja aquí.","Ik werk hier, jij werkt hier en hij werkt hier."),
   ("María","Está todo bien, de verdad. Yo estoy bien. Él está bien. Estamos todos bien.","Alles is oké, echt. Ik ben oké. Hij is oké. We zijn allemaal oké."),
   ("Fernando","Yo os veo… Si tú entras, él sale. Si él sube, tú bajas. No estáis bien.","Ik zie jullie… Als jij binnenkomt, gaat hij buiten. Als hij naar boven gaat, ga jij naar beneden. Jullie zijn niet oké."),
   ("María","De verdad, estamos bien. Puede parecer un poco raro, pero ya lo solucionamos.","Echt, we zijn oké. Het kan wat raar lijken, maar we lossen het op."),
  ]),
- ("Escena 2 · Josefina lee las cartas","Josefina «ziet» een vrouw in de kaarten en gokt haar beroep — Julio verbetert haar.",[
+ ("Escena 2 · Josefina lee las cartas","Josefina «ve» a una mujer en las cartas y adivina su profesión; Julio la corrige.",[
   ("Josefina","Shh… Silencio. Hay una mujer. Puede ser escritora.","Ssst… Stilte. Er is een vrouw. Misschien is ze schrijfster."),
   ("Julio","No, no es escritora.","Nee, ze is geen schrijfster."),
   ("Josefina","Pero… dependienta. ¿Trabaja en una tienda? ¿O algo parecido a una tienda?","Maar… winkelbediende. Werkt ze in een winkel? Of iets zoals een winkel?"),
@@ -35,13 +35,13 @@ SCENES=[
   ("Josefina","Es María, la nueva.","Het is María, de nieuwe."),
   ("Josefina","Tú no estás bien, estás muy mal.","Jij bent niet oké, jij bent er erg aan toe."),
  ]),
- ("Escena 3 · ¡Qué tranquilidad!","Fernando en María sluiten hun gesprek «heel rustig» af.",[
+ ("Escena 3 · ¡Qué tranquilidad!","Fernando y María terminan su conversación «muy tranquilos».",[
   ("Fernando","Si tú estás tranquila, yo estoy tranquilo.","Als jij rustig bent, ben ik rustig."),
   ("María","Él está tranquilo también.","Hij is ook rustig."),
   ("Fernando","Entonces estamos todos tranquilos. ¡Qué tranquilidad!","Dan zijn we allemaal rustig. Wat een rust!"),
   ("María","Bueno, hasta luego.","Goed, tot straks."),
  ]),
- ("Escena 4 · Hay un hombre…","Nu leest Josefina de kaarten voor María — en ziet een man.",[
+ ("Escena 4 · Hay un hombre…","Ahora Josefina le lee las cartas a María, y ve a un hombre.",[
   ("María","¿Puedes?","Kan je (even)?"),
   ("Josefina","Coge una carta. ¡Silencio! Hay un hombre.","Trek een kaart. Stilte! Er is een man."),
  ]),
@@ -92,7 +92,7 @@ body.shownl .nl{display:block}
 BODY="".join(scene(*s) for s in SCENES)
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · Unidad 7 · Escucha</title><style>{CSS}</style></head><body>
-<div class="top"><h1>Unidad 7 · Las profesiones — ¡Escucha!</h1><p>Bekijk de scène en <b>lees mee</b>. Klik een zin om ze te horen; zet Nederlands aan/uit; de <span style="background:#FEF08A;color:#20242E;border-radius:4px;padding:0 4px">gele</span> woorden zijn de bruikbare chunks (beroepen &amp; trabajo/estar).</p></div>
+<div class="top"><h1>Unidad 7 · Las profesiones — ¡Escucha!</h1><p>Mira la escena y <b>lee al mismo tiempo</b>. Pulsa una frase para oírla; activa o desactiva el neerlandés. Las palabras en <span style="background:#FEF08A;color:#20242E;border-radius:4px;padding:0 4px">amarillo</span> son los chunks útiles. <span class="stn">lees mee; de gele woorden zijn de chunks</span></p></div>
 <main>
  <div class="grid">
   <div class="vid">
@@ -102,7 +102,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
       <a class="btn" href="{YT_WATCH}" target="_blank" rel="noopener">▶ Op YouTube</a>
       <span class="legend">💡 <span class="ch">geel</span> = chunk om mee te nemen</span>
     </div>
-    <p class="vidhint">Speelt de video niet af? Klik <a href="{YT_WATCH}" target="_blank" rel="noopener">hier om ze op YouTube te openen</a>.</p>
+    <p class="vidhint">¿No se reproduce el vídeo? Pulsa <a href="{YT_WATCH}" target="_blank" rel="noopener">aquí para abrirlo en YouTube</a>.</p>
   </div>
   <div class="tr">{BODY}</div>
  </div>

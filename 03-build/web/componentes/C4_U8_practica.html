@@ -32,7 +32,7 @@ select.txin{width:auto}
 .bigclock{font-family:var(--disp);font-size:40px;font-weight:800;color:var(--gd);text-align:center;margin:6px 0;letter-spacing:1px}
 .foot{color:var(--mut);font-size:12px;text-align:center;margin:24px 0}
 </style></head><body>
-<div class="top"><h1>Unidad 8 · Las horas — Práctica</h1><p>Oefen de bruikbare taal uit de scène: van <b>herkennen</b> → <b>kiezen</b> → <b>zelf zeggen/schrijven</b>. Alles corrigeert zichzelf; klik 🔊 om te horen.</p></div>
+<div class="top"><h1>Unidad 8 · Las horas — Práctica</h1><p>Practica la lengua útil de la escena: de <b>reconocer</b> → <b>elegir</b> → <b>decirlo y escribirlo tú</b>. Todo se corrige solo; pulsa 🔊 para oírlo. <span class="stn">van herkennen naar zelf zeggen</span></p></div>
 <main>
  <h2 class="subh">① Reconocer <span class="pill">receptief</span></h2>
  <div class="game" id="g_cards"></div>
@@ -73,7 +73,7 @@ var CHUNKS=[["¿Qué hora es?","hoe laat is het?"],["Es la una","het is één uu
 (function(){var el=document.getElementById('g_clasifica');
  var items=[["y media","hora"],["menos cuarto","hora"],["en punto","hora"],["martes","día"],["domingo","día"],["el fin de semana","día"],["por la mañana","momento"],["esta noche","momento"],["más tarde","momento"]];
  var cat={"hora":"la hora 🕐","día":"el día 📅","momento":"momento del día 🌗"};var pool=items.slice(),p=0,s=0;
- el.innerHTML='<h3>Clasifica 🎯</h3><p class="desc">Is het een uuraanduiding, een dag of een moment van de dag?</p>'+sb('sbC')+'<div id="cw" style="font-size:24px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" id="cc" style="justify-content:center"></div><div class="fb" id="cf"></div>';
+ el.innerHTML='<h3>Clasifica 🎯</h3><p class="desc">¿Es una hora, un día o un momento del día? <span class="stn">uur, dag of moment?</span></p>'+sb('sbC')+'<div id="cw" style="font-size:24px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" id="cc" style="justify-content:center"></div><div class="fb" id="cf"></div>';
  var bar=el.querySelector('#sbC'),cc=el.querySelector('#cc');Object.keys(cat).forEach(function(k){var c=document.createElement('div');c.className='chip';c.textContent=cat[k];c.onclick=function(){g(k);};cc.appendChild(c);});
  function nx(){if(!pool.length)pool=items.slice();el.cur=pool.splice(Math.floor(Math.random()*pool.length),1)[0];el.querySelector('#cw').textContent=el.cur[0];el.querySelector('#cf').className='fb';}
  function g(k){var ok=k===el.cur[1];if(ok){p++;s++}else s=0;setSc(bar,p,s);fb(el.querySelector('#cf'),ok,'«'+el.cur[0]+'» → '+cat[el.cur[1]]);setTimeout(nx,900);}nx();})();
@@ -105,7 +105,7 @@ var CHUNKS=[["¿Qué hora es?","hoe laat is het?"],["Es la una","het is één uu
  el.innerHTML='<h3>Ordena los días 📅</h3><p class="desc">Klik de dagen in de juiste volgorde (maandag eerst).</p><div class="chips" id="dP"></div><div class="col" id="dB"><b style="font-size:12px;color:var(--gd)">JOUW VOLGORDE</b><div class="chips" id="dBB" style="margin-top:6px"></div></div><div class="answerbtns"><button class="btn sec" id="dR">Reset</button><button class="btn" id="dC">Controleer</button></div><div class="fb" id="dF"></div>';
  function draw(){var p=el.querySelector('#dP');p.innerHTML='';pool.forEach(function(t,i){var c=document.createElement('div');c.className='chip';c.textContent=t;c.onclick=function(){cur.push(t);pool.splice(i,1);draw();built();if(TTS)speak(t);};p.appendChild(c);});}
  function built(){var b=el.querySelector('#dBB');b.innerHTML='';cur.forEach(function(t,i){var c=document.createElement('div');c.className='chip sel';c.textContent=(i+1)+'. '+t;c.onclick=function(){pool.push(t);cur.splice(i,1);draw();built();};b.appendChild(c);});}
- el.querySelector('#dC').onclick=function(){var ok=cur.join('|')===sol.join('|');fb(el.querySelector('#dF'),ok,ok?'¡Perfecto! lunes → domingo':'Nog niet — begin met lunes (maandag).');};
+ el.querySelector('#dC').onclick=function(){var ok=cur.join('|')===sol.join('|');fb(el.querySelector('#dF'),ok,ok?'¡Perfecto! lunes → domingo':'Todavía no — empieza por lunes.');};
  el.querySelector('#dR').onclick=function(){cur=[];pool=sol.slice().sort(()=>Math.random()-.5);draw();built();el.querySelector('#dF').className='fb';};draw();built();})();
 
 // ② Completa el diálogo
@@ -123,12 +123,12 @@ var CHUNKS=[["¿Qué hora es?","hoe laat is het?"],["Es la una","het is één uu
  el.innerHTML='<h3>Ordena la conversación 🔢</h3><p class="desc">Klik de zinnen in de juiste volgorde.</p><div class="chips" id="oP"></div><div class="col" id="oB"><b style="font-size:12px;color:var(--gd)">JOUW VOLGORDE</b><div class="chips" id="oBB" style="margin-top:6px"></div></div><div class="answerbtns"><button class="btn sec" id="oR">Reset</button><button class="btn" id="oC">Controleer</button></div><div class="fb" id="oF"></div>';
  function draw(){var p=el.querySelector('#oP');p.innerHTML='';pool.forEach(function(t,i){var c=document.createElement('div');c.className='chip';c.textContent=t;c.onclick=function(){cur.push(t);pool.splice(i,1);draw();built();};p.appendChild(c);});}
  function built(){var b=el.querySelector('#oBB');b.innerHTML='';cur.forEach(function(t,i){var c=document.createElement('div');c.className='chip sel';c.textContent=(i+1)+'. '+t;c.onclick=function(){pool.push(t);cur.splice(i,1);draw();built();};b.appendChild(c);});}
- el.querySelector('#oC').onclick=function(){var ok=cur.join('|')===sol.join('|');fb(el.querySelector('#oF'),ok,ok?'¡Perfecto!':'Nog niet — begin met de vraag «¿Quieres quedar…?».');};
+ el.querySelector('#oC').onclick=function(){var ok=cur.join('|')===sol.join('|');fb(el.querySelector('#oF'),ok,ok?'¡Perfecto!':'Todavía no — empieza por «¿Quieres quedar…?».');};
  el.querySelector('#oR').onclick=function(){cur=[];pool=sol.slice().sort(()=>Math.random()-.5);draw();built();el.querySelector('#oF').className='fb';};draw();built();})();
 
 // ③ Queda conmigo (vrije productie)
 (function(){var el=document.getElementById('g_quedar');
- el.innerHTML='<h3>Queda conmigo ✍️🗣️</h3><p class="desc">Maak je eigen afspraak. Er is geen «juist» — het is jouw week.</p>'
+ el.innerHTML='<h3>Queda conmigo ✍️🗣️</h3><p class="desc">Haz tu propia cita. No hay respuesta «correcta»: es tu semana. <span class="stn">het is jouw week</span></p>'
   +'<div style="display:grid;gap:8px;max-width:640px"><div><span style="font-family:var(--disp)">¿Quieres quedar</span> <select class="txin" id="p1"><option>el lunes</option><option>el miércoles</option><option>el viernes</option><option>el sábado</option><option>esta noche</option></select> <span style="font-family:var(--disp)">? Quedamos a</span> <select class="txin" id="p2"><option>la una</option><option>las cuatro</option><option>las seis y media</option><option>las ocho menos cuarto</option></select> <span style="font-family:var(--disp)">en</span> <input class="txin" id="p3" placeholder="el cine / mi casa…" style="width:150px"> <span style="font-family:var(--disp)">.</span></div></div>'
   +'<div class="answerbtns"><button class="btn" id="pGo">Maak mijn afspraak</button>'+(TTS?'<button class="spk-btn" id="pSpk">🔊 hoor</button>':'')+'</div><div class="fb" id="pF"></div>';
  el.querySelector('#pGo').onclick=function(){var d=el.querySelector('#p1').value,h=el.querySelector('#p2').value,l=(el.querySelector('#p3').value||'el cine').trim();el.cur='¿Quieres quedar '+d+'? Quedamos a '+h+' en '+l+'.';fb(el.querySelector('#pF'),true,'<b>'+el.cur+'</b><br><span style="color:var(--mut);font-style:italic">Zeg het nu hardop tegen je buur — hij/zij antwoordt «Vale» of «A esa hora no puedo».</span>');};

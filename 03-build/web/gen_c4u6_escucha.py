@@ -20,7 +20,7 @@ IFRAME=video_iframe(VIDEO_SRC)
 YT_WATCH="https://www.youtube.com/watch?v="+VIDEO_SRC[1]
 CHUNKS=["encima de","debajo de","dentro del","el cuarto de baño","la cocina","la cama","el frigorífico","¿Puedo fumar?","puedes ir fuera","Necesito café","tengo mucho sueño","Estoy nervioso","una casa","un nido","la crema","el bolso","las sillas","tres botellas de leche","¿Puedes venir?","¿Dónde"]
 SCENES=[
- ("Escena 1 · La casa y las cosas de María","Julio is nerveus: hij ziet hoe María's spullen overal in zijn huis belanden.",[
+ ("Escena 1 · La casa y las cosas de María","Julio está nervioso: ve cómo las cosas de María acaban por toda su casa.",[
   ("Fernando","¡Qué frío! Buenos días.","Wat koud! Goeiemorgen."),
   ("Julio","Buenos días. Necesito café urgente, tengo mucho sueño. Estoy nervioso.","Goeiemorgen. Ik heb dringend koffie nodig, ik ben erg slaperig. Ik ben nerveus."),
   ("Fernando","¿Por qué?","Waarom?"),
@@ -35,7 +35,7 @@ SCENES=[
   ("Julio","¿Puedes venir?","Kan je meekomen?"),
   ("Fernando","Es que yo quiero tomar un café.","Ik wil eigenlijk een koffie drinken."),
  ]),
- ("Escena 2 · ¿Quién es Paul?","Julio vraagt Fernando om te helpen… en ziet dan María met een andere man.",[
+ ("Escena 2 · ¿Quién es Paul?","Julio le pide ayuda a Fernando… y entonces ve a María con otro hombre.",[
   ("Julio","¿Tú puedes hablar con María?","Kan jij met María praten?"),
   ("Fernando","No sé qué hace con Paul.","Ik weet niet wat ze met Paul doet."),
   ("Julio","¿Quién es Paul?","Wie is Paul?"),
@@ -90,7 +90,7 @@ body.shownl .nl{display:block}
 BODY="".join(scene(*s) for s in SCENES)
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · Unidad 6 · Escucha</title><style>{CSS}</style></head><body>
-<div class="top"><h1>Unidad 6 · La casa — ¡Escucha!</h1><p>Bekijk de scène en <b>lees mee</b>. Klik een zin om ze te horen; zet Nederlands aan/uit; de <span style="background:#FEF08A;color:#20242E;border-radius:4px;padding:0 4px">gele</span> woorden zijn de bruikbare chunks (kamers &amp; plaats-woorden).</p></div>
+<div class="top"><h1>Unidad 6 · La casa — ¡Escucha!</h1><p>Mira la escena y <b>lee al mismo tiempo</b>. Pulsa una frase para oírla; activa o desactiva el neerlandés. Las palabras en <span style="background:#FEF08A;color:#20242E;border-radius:4px;padding:0 4px">amarillo</span> son los chunks útiles. <span class="stn">lees mee; de gele woorden zijn de chunks</span></p></div>
 <main>
  <div class="grid">
   <div class="vid">
@@ -100,7 +100,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
       <a class="btn" href="{YT_WATCH}" target="_blank" rel="noopener">▶ Op YouTube</a>
       <span class="legend">💡 <span class="ch">geel</span> = chunk om mee te nemen</span>
     </div>
-    <p class="vidhint">Speelt de video niet af? Klik <a href="{YT_WATCH}" target="_blank" rel="noopener">hier om ze op YouTube te openen</a>.</p>
+    <p class="vidhint">¿No se reproduce el vídeo? Pulsa <a href="{YT_WATCH}" target="_blank" rel="noopener">aquí para abrirlo en YouTube</a>.</p>
   </div>
   <div class="tr">{BODY}</div>
  </div>
