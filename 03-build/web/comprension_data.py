@@ -4,14 +4,15 @@
 # (zie 00-brondocumenten/prompts/C4_comprension_prompts.md). None = nog te genereren
 # → de pagina toont dan een nette «binnenkort»-plek en print/PPT slaan het over.
 #
-# LECTURA[unit] = {tipo, contexto_nl, texto:[[spreker|"",zin]], global:[{q,opts,a}],
+# LECTURA[unit] = {tipo, contexto_es, contexto_nl, texto:[[spreker|"",zin]], global:[{q,opts,a}],
 #                  detalle:[{q,vf}], transfer, glosario:[[es,nl]]}
-# AUDIO[unit]   = {tipo, guion:[[spreker,zin]], tarea_nl, preguntas:[{q,opts,a}],
+# AUDIO[unit]   = {tipo, guion:[[spreker,zin]], tarea_es, tarea_nl, preguntas:[{q,opts,a}],
 #                  glosario:[[es,nl]], rallentado:[...]}
 
 LECTURA = {
  1: {  # ── NotebookLM-output (auteur), genormaliseerd naar het vaste format ──
    "tipo": "Chat de WhatsApp · presentaciones",
+   "contexto_es": "Sofía y Mateo se escriben por primera vez para conocerse.",
    "contexto_nl": "Sofía en Mateo sturen elkaar voor het eerst een WhatsApp-berichtje om kennis te maken.",
    "texto": [
      ["Sofía", "¡Hola! ¿Cómo estás?"],
@@ -38,6 +39,7 @@ LECTURA = {
  },
  2: {
    "tipo": "3 notas · saludos por el día",
+   "contexto_es": "Tres notas cortas en tres momentos del día.",
    "contexto_nl": "Drie korte briefjes op drie momenten van de dag.",
    "texto": [
      ["", "🌅 Nota de Pablo: «¡Buenos días, mamá! Estoy bien, pero un poco cansado. ¡Hasta luego!»"],
@@ -59,6 +61,7 @@ LECTURA = {
  },
  3: {
    "tipo": "3 fichas · foro internacional",
+   "contexto_es": "Tres adolescentes se presentan en un foro internacional.",
    "contexto_nl": "Drie tieners stellen zich voor op een internationaal forum.",
    "texto": [
      ["Mateo", "¡Hola! Me llamo Mateo. Soy de México y soy mexicano. Hablo español e inglés."],
@@ -80,6 +83,7 @@ LECTURA = {
  },
  4: {
    "tipo": "descripción de una foto de familia",
+   "contexto_es": "Un adolescente describe una foto de su familia.",
    "contexto_nl": "Een tiener beschrijft een foto van zijn familie.",
    "texto": [
      ["", "Esta es una foto de mi familia. Esta es mi madre. Se llama Carmen. Es alta y muy simpática."],
@@ -101,6 +105,7 @@ LECTURA = {
  },
  5: {
    "tipo": "un mensaje · ¿qué hay en mi habitación?",
+   "contexto_es": "Leo manda un mensaje sobre su habitación.",
    "contexto_nl": "Leo stuurt een berichtje over zijn kamer.",
    "texto": [
      ["", "¡Hola! Esta es mi habitación. Hay una mesa, una silla y una cama."],
@@ -122,6 +127,7 @@ LECTURA = {
  },
  6: {
    "tipo": "un mensaje · ¿cómo es mi casa?",
+   "contexto_es": "Sara describe su casa y dónde están las cosas.",
    "contexto_nl": "Sara beschrijft haar huis en waar de dingen staan.",
    "texto": [
      ["", "¡Hola! Esta es mi casa. Hay una cocina, un salón, un dormitorio y un cuarto de baño."],
@@ -144,6 +150,7 @@ LECTURA = {
  },
  7: {
    "tipo": "un perfil · ¿a qué se dedican?",
+   "contexto_es": "Un blog de clase presenta a tres personas y su trabajo.",
    "contexto_nl": "Een klasblog stelt drie mensen en hun werk voor.",
    "texto": [
      ["", "¡Hola! Somos tres amigos y trabajamos en la misma calle."],
@@ -166,6 +173,7 @@ LECTURA = {
  },
  8: {
    "tipo": "un mensaje · mi horario del sábado",
+   "contexto_es": "Nuria manda su horario del sábado al grupo de clase.",
    "contexto_nl": "Nuria stuurt haar zaterdagplanning door in de klasgroep.",
    "texto": [
      ["", "¡Hola! Este es mi horario del sábado."],
@@ -189,6 +197,7 @@ LECTURA = {
  },
  9: {
    "tipo": "un mensaje · mis planes del finde",
+   "contexto_es": "Iker manda sus planes del fin de semana al grupo de clase.",
    "contexto_nl": "Iker stuurt zijn weekendplannen naar de klasgroep.",
    "texto": [
      ["", "¡Hola! Este finde tengo muchos planes."],
@@ -212,6 +221,7 @@ LECTURA = {
  },
  10: {
    "tipo": "una nota en la cocina · ¿quién hace qué?",
+   "contexto_es": "Una nota en la nevera: las tareas de casa repartidas.",
    "contexto_nl": "Een briefje op de koelkast: de taken van het huis verdeeld.",
    "texto": [
      ["", "¡Hola, familia! Esta semana hay que ayudar más en casa."],
@@ -237,6 +247,7 @@ LECTURA = {
  # ── U11 · De compras / la ropa ────────────────────────────────────────────
  11: {
    "tipo": "dos anuncios de vacaciones",
+   "contexto_es": "Dos anuncios de vacaciones: adónde, en qué transporte y con qué tiempo.",
    "contexto_nl": "Twee vakantieadvertenties: waar, met welk vervoer en welk weer?",
    "texto": [
      ["", "☀️ CANARIAS · 7 noches"],
@@ -266,6 +277,7 @@ LECTURA = {
  # ── U12 · La ropa y los colores ───────────────────────────────────────────
  12: {
    "tipo": "la ficha de una tienda en línea",
+   "contexto_es": "Dos artículos de una tienda online, con la descripción y las tallas.",
    "contexto_nl": "Twee artikelen op een webshop, met de beschrijving en de maten.",
    "texto": [
      ["", "MODA SUR · rebajas de verano"],
@@ -293,6 +305,7 @@ LECTURA = {
  # ── U13 · En el mercado ───────────────────────────────────────────────────
  13: {
    "tipo": "la lista de precios de un mercado",
+   "contexto_es": "La pizarra de precios de un mercado, con sus puestos debajo.",
    "contexto_nl": "Het prijzenbord van een markt, met de kraampjes eronder.",
    "texto": [
      ["", "MERCADO DE SAN MIGUEL · precios de hoy"],
@@ -320,6 +333,7 @@ LECTURA = {
  # ── U14 · En el restaurante ───────────────────────────────────────────────
  14: {
    "tipo": "el menú del día de un restaurante",
+   "contexto_es": "El menú del día de un restaurante español — el mismo que te dan en la mesa.",
    "contexto_nl": "Het dagmenu van een Spaans restaurant — precies wat je ter plaatse in handen krijgt.",
    "texto": [
      ["", "CASA ROSALÍA · MENÚ DEL DÍA · 14,50 € (pan y bebida incluidos)"],
@@ -355,6 +369,7 @@ AUDIO = {
      ["Diego", "Buenos días. Yo soy Diego. Encantado. Estoy un poco cansado."],
      ["Sofía", "Hola, me llamo Sofía. ¿Qué tal? Yo estoy bien, gracias."],
    ],
+   "tarea_es": "Completa la ficha: ¿cómo se llama cada persona y cómo está?",
    "tarea_nl": "Vul de ficha in: hoe heet elke persoon en hoe voelt die zich?",
    "preguntas": [
      {"q": "¿Cuántas personas hablan?", "opts": ["Dos", "Tres", "Cuatro"], "a": 1},
@@ -373,6 +388,7 @@ AUDIO = {
      ["Luis", "Buenas tardes, señor López. ¿Cómo está usted?"], ["Sr. López", "Buenas tardes. Estoy un poco cansado, la verdad."], ["Luis", "Vaya. ¡Adiós!"],
      ["Nieta", "¡Buenas noches, abuela!"], ["Abuela", "Buenas noches, cariño. ¿Cómo estás?"], ["Nieta", "Bien, pero un poco nerviosa. Hasta mañana."],
    ],
+   "tarea_es": "Escucha tres diálogos: ¿qué momento del día es y cómo está la persona?",
    "tarea_nl": "Luister naar 3 gesprekjes: welk moment van de dag, en hoe voelt de persoon zich?",
    "preguntas": [
      {"q": "¿Cuántos diálogos hay?", "opts": ["Dos", "Tres", "Cuatro"], "a": 1},
@@ -391,6 +407,7 @@ AUDIO = {
      ["Reportero", "¡Qué bien! ¿Y qué idiomas hablas?"], ["Chica", "Hablo español y un poco de inglés."],
      ["Reportero", "Gracias. Y tú, ¿de dónde eres?"], ["Chico", "Yo soy de España. Soy español y hablo español y francés."],
    ],
+   "tarea_es": "Completa la tabla: país · nacionalidad · idioma de cada persona.",
    "tarea_nl": "Vul de tabel in: país · nacionalidad · idioma van elke persoon.",
    "preguntas": [
      {"q": "¿Cuántas personas responden?", "opts": ["Una", "Dos", "Tres"], "a": 1},
@@ -410,6 +427,7 @@ AUDIO = {
      ["Pablo", "Mi padre se llama Jorge. Es alto y muy fuerte."],
      ["Pablo", "Y mi hermano Leo es pequeño, pero muy divertido."],
    ],
+   "tarea_es": "Completa la ficha: ¿quién es cada persona y cómo es?",
    "tarea_nl": "Vul de fiche in: wie is elke persoon en hoe is die?",
    "preguntas": [
      {"q": "¿A cuántas personas describe Pablo?", "opts": ["A dos", "A tres", "A cuatro"], "a": 1},
@@ -431,6 +449,7 @@ AUDIO = {
      ["Nico", "¡Qué bien! ¿Hay un ordenador?"],
      ["Ana", "No, no hay ordenador, pero hay muchos libros."],
    ],
+   "tarea_es": "Escucha: ¿qué objetos hay en la habitación?",
    "tarea_nl": "Luister: welke voorwerpen zijn er in de kamer?",
    "preguntas": [
      {"q": "¿De qué habitación hablan?", "opts": ["De la clase", "De la habitación de Ana", "De la cocina"], "a": 1},
@@ -452,6 +471,7 @@ AUDIO = {
      ["Marta", "¡Ah! Y las llaves, ¿dónde están?"],
      ["Pablo", "Debajo de la mesa, al lado de tu libro."],
    ],
+   "tarea_es": "Escucha: ¿dónde están las cosas (el bolso, las llaves)?",
    "tarea_nl": "Luister: waar staan de spullen (bolso, llaves)?",
    "preguntas": [
      {"q": "¿Qué busca Marta primero?", "opts": ["Las llaves", "Su bolso", "Un libro"], "a": 1},
@@ -472,6 +492,7 @@ AUDIO = {
      ["Sofía", "Soy estudiante, pero los sábados trabajo en una oficina."],
      ["Óscar", "¡Trabajamos mucho los dos!"],
    ],
+   "tarea_es": "Escucha: ¿qué profesión tiene cada uno y dónde trabaja?",
    "tarea_nl": "Luister: welk beroep heeft elk, en waar werken ze?",
    "preguntas": [
      {"q": "¿A qué se dedica Óscar?", "opts": ["Es profesor", "Es dependiente", "Es escritor"], "a": 1},
@@ -492,6 +513,7 @@ AUDIO = {
      ["Elena", "A las seis no puedo. Mejor a las siete y media."],
      ["Tomás", "Perfecto. Quedamos en el cine. ¡Hasta luego!"],
    ],
+   "tarea_es": "Escucha: ¿a qué hora quedan y dónde?",
    "tarea_nl": "Luister: op welk uur spreken ze af, en waar?",
    "preguntas": [
      {"q": "¿Cuándo quieren quedar?", "opts": ["Esta mañana", "Esta tarde", "El domingo"], "a": 1},
@@ -512,6 +534,7 @@ AUDIO = {
      ["Lucas", "El domingo tengo que estudiar por la mañana, pero por la tarde estoy libre."],
      ["Alba", "Perfecto. Vamos a tomar algo el domingo por la tarde."],
    ],
+   "tarea_es": "Escucha: ¿qué va a hacer cada uno y qué tiene que hacer?",
    "tarea_nl": "Luister: wat gaat elk doen, en wat moet elk doen?",
    "preguntas": [
      {"q": "¿Qué va a hacer Alba el sábado?", "opts": ["Trabajar", "Ir a un concierto", "Estudiar"], "a": 1},
@@ -532,6 +555,7 @@ AUDIO = {
      ["Rosa", "Perfecto. Entonces yo limpio el polvo y ordeno los armarios."],
      ["Iván", "Vale. ¡Así terminamos rápido!"],
    ],
+   "tarea_es": "Escucha: ¿quién hace cada tarea?",
    "tarea_nl": "Luister: wie doet welke taak?",
    "preguntas": [
      {"q": "¿Qué hay que limpiar?", "opts": ["El salón", "La cocina", "El baño"], "a": 1},
@@ -554,6 +578,7 @@ AUDIO = {
      ["Nico", "¿Vas a menudo?"],
      ["Ana", "Todos los años. Y en invierno voy tres veces."],
    ],
+   "tarea_es": "Escucha: ¿adónde va cada uno, en qué transporte y por qué?",
    "tarea_nl": "Luister: waar gaat elk van beiden heen, met welk vervoer en waarom?",
    "preguntas": [
      {"q": "¿Adónde va Nico?", "opts": ["A la montaña", "A la playa", "Al pueblo"], "a": 1},
@@ -575,6 +600,7 @@ AUDIO = {
      ["Lucas", "Me queda un poco ancha. ¿Tiene la talla ese?"],
      ["Dependienta", "Sí, aquí tiene. Le queda muy bien."],
    ],
+   "tarea_es": "Escucha: ¿qué prenda, de qué color, qué talla y a qué precio?",
    "tarea_nl": "Luister: welk kledingstuk, welke kleur, welke maat en welke prijs?",
    "preguntas": [
      {"q": "¿Qué busca Lucas?", "opts": ["Unos zapatos", "Una chaqueta", "Un jersey"], "a": 1},
@@ -596,6 +622,7 @@ AUDIO = {
      ["Tomás", "No, gracias, no compro lechuga porque no me gusta."],
      ["Dependienta", "Entonces un kilo de manzanas y medio de tomates. Tres euros."],
    ],
+   "tarea_es": "Escucha: ¿qué productos, a qué precio y por qué no compra una cosa?",
    "tarea_nl": "Luister: welke producten, welke prijzen en waarom koopt hij iets níet?",
    "preguntas": [
      {"q": "¿Cuánto cuesta un kilo de manzanas?", "opts": ["1,20 €", "1,80 €", "2,20 €"], "a": 1},
@@ -617,6 +644,7 @@ AUDIO = {
      ["Camarero", "De segundo les recomiendo la paella. Está buenísima."],
      ["Lucas", "Dos paellas, entonces. Y la cuenta después, por favor."],
    ],
+   "tarea_es": "Escucha: ¿quién pide qué? Fíjate en «yo también» y «yo no».",
    "tarea_nl": "Luister: wie bestelt wat? Let op «yo también» en «yo no».",
    "preguntas": [
      {"q": "¿Qué beben los dos?", "opts": ["Vino", "Agua", "Cerveza"], "a": 1},

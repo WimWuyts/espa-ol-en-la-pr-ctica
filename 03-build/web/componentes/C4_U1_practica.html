@@ -28,21 +28,22 @@ main{max-width:1000px;margin:0 auto;padding:18px}
 .fc .w{font-family:var(--disp);font-weight:700;font-size:16px}.fc .tr{font-family:var(--disp);font-weight:700;font-size:15px;color:var(--gd)}
 .dlgfill{font-size:15.5px;line-height:2.4}.dlgfill .txin{width:130px}
 .wbox{border:1px solid var(--line);border-radius:10px;background:var(--crema);min-height:60px;padding:8px;margin-top:8px}
+.nl{display:block;color:var(--mut);font-style:italic}
 .foot{color:var(--mut);font-size:12px;text-align:center;margin:24px 0}
 </style></head><body>
-<div class="top"><h1>Unidad 1 · Presentaciones — Práctica</h1><p>Oefen de bruikbare taal uit de scène: van <b>herkennen</b> → <b>kiezen</b> → <b>zelf zeggen/schrijven</b>. Alles corrigeert zichzelf; klik 🔊 om te horen.</p></div>
+<div class="top"><h1>Unidad 1 · Presentaciones — Práctica</h1><p>Practica el español de la escena: de <b>reconocer</b> → <b>elegir</b> → <b>decirlo y escribirlo tú</b>. Todo se corrige solo; pulsa 🔊 para escuchar. <span class="nl">Oefen de taal uit de scène: herkennen → kiezen → zelf zeggen en schrijven. Alles corrigeert zichzelf; klik 🔊 om te horen.</span></p></div>
 <main>
- <h2 class="subh">① Reconocer <span class="pill">receptief</span></h2>
+ <h2 class="subh">① Reconocer <span class="pill">herkennen</span></h2>
  <div class="game" id="g_cards"></div>
  <div class="game" id="g_escucha"></div>
  <div class="game" id="g_clasifica"></div>
- <h2 class="subh">② Practicar <span class="pill">gestuurd</span></h2>
+ <h2 class="subh">② Practicar <span class="pill">met steun</span></h2>
  <div class="game" id="g_match"></div>
  <div class="game" id="g_completa"></div>
  <div class="game" id="g_ordena"></div>
  <div class="game" id="g_oa"></div>
  <div class="game" id="g_tuusted"></div>
- <h2 class="subh">③ Producir &amp; comunicar <span class="pill">vrije productie</span></h2>
+ <h2 class="subh">③ Producir y comunicar <span class="pill">zelf zeggen</span></h2>
  <div class="game" id="g_presentate"></div>
  <div class="foot">C4 · «Bienvenidos al español» · Unidad 1 · Presentaciones</div>
 </main>
@@ -57,14 +58,14 @@ function fb(el,ok,m){el.className='fb '+(ok?'good':'bad');el.innerHTML=(ok?'✅ 
 var CHUNKS=[["¡Hola!","hallo"],["Buenos días","goedemorgen"],["¿Cómo estás?","hoe gaat het?"],["¿Qué tal?","alles goed?"],["Bien","goed"],["Muy bien","heel goed"],["¿Cómo te llamas?","hoe heet je?"],["Me llamo…","ik heet…"],["Yo soy…","ik ben…"],["Encantado","aangenaam (man)"],["Encantada","aangenaam (vrouw)"],["Igualmente","insgelijks"],["Gracias","dank je"],["Muchas gracias","hartelijk dank"],["De nada","graag gedaan"],["Perdona","sorry"],["Hasta luego","tot straks"],["Adiós","dag / tot ziens"],["Vale","oké"],["Claro","natuurlijk"],["Bienvenida","welkom"]];
 
 // ① Tarjetas
-(function(){var el=document.getElementById('g_cards');el.innerHTML='<h3>Tarjetas 🗂️</h3><p class="desc">Draai de kaart (ES↔NL); klik 🔊 om te horen.</p><div class="fcgrid" id="cg"></div>';
+(function(){var el=document.getElementById('g_cards');el.innerHTML='<h3>Tarjetas 🗂️</h3><p class="desc">Gira la tarjeta (ES↔NL) y pulsa 🔊 para escuchar. <span class="nl">Draai de kaart; klik 🔊 om te horen.</span></p><div class="fcgrid" id="cg"></div>';
  var g=el.querySelector('#cg');CHUNKS.forEach(function(c){var d=document.createElement('div');d.className='fc';d.innerHTML='<div class="in"><div class="s"><div class="w">'+c[0]+'</div>'+(TTS?'<div style="font-size:12px;opacity:.5;margin-top:4px">🔊</div>':'')+'</div><div class="b"><div class="tr">'+c[1]+'</div></div></div>';
   d.onclick=function(){d.classList.toggle('flip');};if(TTS)d.querySelector('.s').addEventListener('click',function(e){e.stopPropagation();speak(c[0].replace('…',''));d.classList.toggle('flip');});g.appendChild(d);});})();
 
 // ① Escucha
-(function(){var el=document.getElementById('g_escucha');if(!TTS){el.innerHTML='<h3>¿Qué oyes? 🎧</h3><p class="desc">Spraak werkt in Chrome/Edge.</p>';return;}
+(function(){var el=document.getElementById('g_escucha');if(!TTS){el.innerHTML='<h3>¿Qué oyes? 🎧</h3><p class="desc">El audio funciona en Chrome/Edge. <span class="nl">Spraak werkt in Chrome/Edge.</span></p>';return;}
  var bank=CHUNKS.map(c=>c[0].replace('…','')).filter(x=>x.length<16);var p=0,s=0;
- el.innerHTML='<h3>¿Qué oyes? 🎧</h3><p class="desc">Klik ▶, luister en kies wat je hoort.</p>'+sb('sbE')+'<div style="margin:6px 0"><button class="spk-btn" id="eP">▶ Speel af</button></div><div class="chips" id="eO"></div><div class="fb" id="eF"></div>';
+ el.innerHTML='<h3>¿Qué oyes? 🎧</h3><p class="desc">Pulsa ▶, escucha y elige lo que oyes. <span class="nl">Klik ▶, luister en kies wat je hoort.</span></p>'+sb('sbE')+'<div style="margin:6px 0"><button class="spk-btn" id="eP">▶ Escuchar</button></div><div class="chips" id="eO"></div><div class="fb" id="eF"></div>';
  var bar=el.querySelector('#sbE');function nx(){var a=bank[Math.floor(Math.random()*bank.length)];el.cur=a;var o=[a];while(o.length<4){var c=bank[Math.floor(Math.random()*bank.length)];if(o.indexOf(c)<0)o.push(c);}o.sort(()=>Math.random()-.5);var oc=el.querySelector('#eO');oc.innerHTML='';o.forEach(function(x){var c=document.createElement('div');c.className='chip';c.textContent=x;c.onclick=function(){var ok=x===a;if(ok){p++;s++}else s=0;setSc(bar,p,s);oc.querySelectorAll('.chip').forEach(function(z){if(z.textContent===a)z.classList.add('ok');else if(z===c&&!ok)z.classList.add('no');});fb(el.querySelector('#eF'),ok,'«'+a+'»');setTimeout(nx,1100);};oc.appendChild(c);});el.querySelector('#eF').className='fb';speak(a);}
  el.querySelector('#eP').onclick=function(){speak(el.cur);};nx();})();
 
@@ -72,7 +73,7 @@ var CHUNKS=[["¡Hola!","hallo"],["Buenos días","goedemorgen"],["¿Cómo estás?
 (function(){var el=document.getElementById('g_clasifica');
  var items=[["¡Hola!","saludo"],["Buenos días","saludo"],["¿Qué tal?","saludo"],["Bien","respuesta"],["Muy bien","respuesta"],["Adiós","despedida"],["Hasta luego","despedida"],["Gracias","cortesía"],["De nada","cortesía"],["Encantada","cortesía"]];
  var cat={saludo:"saludo",respuesta:"respuesta",despedida:"despedida",cortesía:"cortesía"};var pool=items.slice(),p=0,s=0;
- el.innerHTML='<h3>Clasifica 🎯</h3><p class="desc">Wat is het? Kies de categorie.</p>'+sb('sbC')+'<div id="cw" style="font-size:24px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" id="cc" style="justify-content:center"></div><div class="fb" id="cf"></div>';
+ el.innerHTML='<h3>Clasifica 🎯</h3><p class="desc">¿Qué es? Elige la categoría. <span class="nl">Wat is het? Kies de categorie.</span></p>'+sb('sbC')+'<div id="cw" style="font-size:24px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" id="cc" style="justify-content:center"></div><div class="fb" id="cf"></div>';
  var bar=el.querySelector('#sbC'),cc=el.querySelector('#cc');Object.keys(cat).forEach(function(k){var c=document.createElement('div');c.className='chip';c.textContent=cat[k];c.onclick=function(){g(k);};cc.appendChild(c);});
  function nx(){if(!pool.length)pool=items.slice();el.cur=pool.splice(Math.floor(Math.random()*pool.length),1)[0];el.querySelector('#cw').textContent=el.cur[0];el.querySelector('#cf').className='fb';}
  function g(k){var ok=k===el.cur[1];if(ok){p++;s++}else s=0;setSc(bar,p,s);fb(el.querySelector('#cf'),ok,'«'+el.cur[0]+'» → '+cat[el.cur[1]]);setTimeout(nx,900);}nx();})();
@@ -81,7 +82,7 @@ var CHUNKS=[["¡Hola!","hallo"],["Buenos días","goedemorgen"],["¿Cómo estás?
 (function(){var el=document.getElementById('g_match');
  var pairs=[["¡Hola!","begroeten"],["¿Cómo te llamas?","iemands naam vragen"],["Encantada","kennismaken (vrouw)"],["Gracias","bedanken"],["De nada","graag gedaan"],["Adiós","afscheid nemen"]];
  var p=0,s=0,sel=null,done=0;var L=pairs.map(x=>x[0]),R=pairs.map(x=>x[1]).slice().sort(()=>Math.random()-.5);
- el.innerHTML='<h3>Relaciona 🧩</h3><p class="desc">Klik links een uitdrukking, dan rechts de situatie.</p>'+sb('sbM')+'<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><div class="chips" style="flex-direction:column" id="mL"></div><div class="chips" style="flex-direction:column" id="mR"></div></div><div class="fb" id="mf"></div>';
+ el.innerHTML='<h3>Relaciona 🧩</h3><p class="desc">Pulsa una expresión a la izquierda y su situación a la derecha. <span class="nl">Klik links een uitdrukking, dan rechts de situatie.</span></p>'+sb('sbM')+'<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><div class="chips" style="flex-direction:column" id="mL"></div><div class="chips" style="flex-direction:column" id="mR"></div></div><div class="fb" id="mf"></div>';
  var bar=el.querySelector('#sbM'),cL=el.querySelector('#mL'),cR=el.querySelector('#mR');
  L.forEach(function(t,i){var c=document.createElement('div');c.className='chip';c.textContent=t;c.dataset.i=i;c.onclick=function(){cL.querySelectorAll('.chip').forEach(z=>z.classList.remove('sel'));c.classList.add('sel');sel=i;};cL.appendChild(c);});
  R.forEach(function(t){var c=document.createElement('div');c.className='chip';c.textContent=t;c.onclick=function(){if(sel==null)return;var ok=t===pairs[sel][1];if(ok){c.classList.add('ok');cL.querySelector('.chip[data-i="'+sel+'"]').classList.add('ok');p++;s++;done++;fb(el.querySelector('#mf'),true,pairs[sel][0]+' → '+t);if(done===pairs.length)fb(el.querySelector('#mf'),true,'¡Completado!');}else{s=0;c.classList.add('no');setTimeout(()=>c.classList.remove('no'),500);fb(el.querySelector('#mf'),false,'Probeer opnieuw.');}setSc(bar,p,s);sel=null;cL.querySelectorAll('.chip').forEach(z=>z.classList.remove('sel'));};cR.appendChild(c);});})();
@@ -89,16 +90,16 @@ var CHUNKS=[["¡Hola!","hallo"],["Buenos días","goedemorgen"],["¿Cómo estás?
 // ② Completa el diálogo
 (function(){var el=document.getElementById('g_completa');
  var gaps=[["llamas"],["llamo"],["soy"],["Encantado"],["Qué"],["gracias"],["Hasta"]];
- el.innerHTML='<h3>Completa el diálogo 💬</h3><p class="desc">Vul de ontbrekende woorden in en klik Controleer.</p>'
+ el.innerHTML='<h3>Completa el diálogo 💬</h3><p class="desc">Escribe las palabras que faltan y pulsa «Comprobar». <span class="nl">Vul de ontbrekende woorden in en klik op Controleer.</span></p>'
   +'<div class="dlgfill">— ¡Hola! ¿Cómo te <input class="txin" data-i="0">? <br>— Me <input class="txin" data-i="1"> Ana. ¿Y tú?<br>— Yo <input class="txin" data-i="2"> Leo. <input class="txin" data-i="3">.<br>— Igualmente. ¿<input class="txin" data-i="4"> tal?<br>— Muy bien, <input class="txin" data-i="5">. ¡<input class="txin" data-i="6"> luego!</div>'
-  +'<div class="answerbtns"><button class="btn" id="coGo">Controleer</button></div><div class="fb" id="coF"></div>';
+  +'<div class="answerbtns"><button class="btn" id="coGo">Comprobar</button></div><div class="fb" id="coF"></div>';
  el.querySelector('#coGo').onclick=function(){var n=0;el.querySelectorAll('.txin').forEach(function(inp){var i=+inp.dataset.i;var ok=(inp.value||'').trim().toLowerCase()===gaps[i][0].toLowerCase();inp.style.borderColor=ok?'#2F9A4A':'#DC2626';if(ok)n++;});fb(el.querySelector('#coF'),n===gaps.length,n+' / '+gaps.length+' juist.'+(n<gaps.length?' Kijk naar de rood omrande vakjes.':' ¡Perfecto!'));};})();
 
 // ② Ordena la conversación
 (function(){var el=document.getElementById('g_ordena');
  var sol=["¡Hola! ¿Cómo te llamas?","Me llamo Ana. ¿Y tú?","Yo soy Leo. Encantado.","Igualmente. ¿Qué tal?","Muy bien, gracias.","¡Hasta luego!"];
  var cur=[],pool=sol.slice().sort(()=>Math.random()-.5);
- el.innerHTML='<h3>Ordena la conversación 🔢</h3><p class="desc">Klik de zinnen in de juiste volgorde.</p><div class="chips" id="oP"></div><div class="col" id="oB"><b style="font-size:12px;color:var(--gd)">JOUW VOLGORDE</b><div class="chips" id="oBB" style="margin-top:6px"></div></div><div class="answerbtns"><button class="btn sec" id="oR">Reset</button><button class="btn" id="oC">Controleer</button></div><div class="fb" id="oF"></div>';
+ el.innerHTML='<h3>Ordena la conversación 🔢</h3><p class="desc">Pulsa las frases en el orden correcto. <span class="nl">Klik de zinnen in de juiste volgorde.</span></p><div class="chips" id="oP"></div><div class="col" id="oB"><b style="font-size:12px;color:var(--gd)">TU ORDEN</b><div class="chips" id="oBB" style="margin-top:6px"></div></div><div class="answerbtns"><button class="btn sec" id="oR">Reset</button><button class="btn" id="oC">Comprobar</button></div><div class="fb" id="oF"></div>';
  function draw(){var p=el.querySelector('#oP');p.innerHTML='';pool.forEach(function(t,i){var c=document.createElement('div');c.className='chip';c.textContent=t;c.onclick=function(){cur.push(t);pool.splice(i,1);draw();built();};p.appendChild(c);});}
  function built(){var b=el.querySelector('#oBB');b.innerHTML='';cur.forEach(function(t,i){var c=document.createElement('div');c.className='chip sel';c.textContent=(i+1)+'. '+t;c.onclick=function(){pool.push(t);cur.splice(i,1);draw();built();};b.appendChild(c);});}
  el.querySelector('#oC').onclick=function(){fb(el.querySelector('#oF'),cur.join('|')===sol.join('|'),cur.join('|')===sol.join('|')?'¡Perfecto!':'Nog niet — begin met een begroeting.');};
@@ -108,7 +109,7 @@ var CHUNKS=[["¡Hola!","hallo"],["Buenos días","goedemorgen"],["¿Cómo estás?
 (function(){var el=document.getElementById('g_oa');
  var items=[["Un chico dice:","Encantad","o"],["Una chica dice:","Encantad","a"],["María dice:","Bienvenid","a"],["Un profesor (hombre) dice:","Encantad","o"],["Ana dice:","Encantad","a"]];
  var pool=items.slice(),p=0,s=0;
- el.innerHTML='<h3>¿-o o -a? 👀</h3><p class="desc">Mannen zeggen -o, vrouwen -a. Kies de juiste letter.</p>'+sb('sbO')+'<div id="ow" style="font-size:18px;text-align:center;margin:8px 0"></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._oa(\'o\')">-o</div><div class="chip" onclick="window._oa(\'a\')">-a</div></div><div class="fb" id="of"></div>';
+ el.innerHTML='<h3>¿-o o -a? 👀</h3><p class="desc">Un chico dice -o, una chica dice -a. Elige la letra correcta. <span class="nl">Jongens zeggen -o, meisjes -a. Kies de juiste letter.</span></p>'+sb('sbO')+'<div id="ow" style="font-size:18px;text-align:center;margin:8px 0"></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._oa(\'o\')">-o</div><div class="chip" onclick="window._oa(\'a\')">-a</div></div><div class="fb" id="of"></div>';
  var bar=el.querySelector('#sbO');function nx(){if(!pool.length)pool=items.slice();el.cur=pool.splice(Math.floor(Math.random()*pool.length),1)[0];el.querySelector('#ow').innerHTML=el.cur[0]+' <b>'+el.cur[1]+'__</b>';el.querySelector('#of').className='fb';}
  window._oa=function(k){var ok=k===el.cur[2];if(ok){p++;s++}else s=0;setSc(bar,p,s);fb(el.querySelector('#of'),ok,el.cur[1]+el.cur[2]);setTimeout(nx,950);};nx();})();
 
@@ -116,13 +117,13 @@ var CHUNKS=[["¡Hola!","hallo"],["Buenos días","goedemorgen"],["¿Cómo estás?
 (function(){var el=document.getElementById('g_tuusted');
  var items=[["¿Cómo estás?","tú"],["¿Cómo te llamas?","tú"],["¿Cómo está usted?","usted"],["¿Y tú?","tú"],["Encantado de conocerla.","usted"]];
  var pool=items.slice(),p=0,s=0;
- el.innerHTML='<h3>¿Tú o usted? 🤝</h3><p class="desc">Informeel (tú) of beleefd (usted)? Kies.</p>'+sb('sbTU')+'<div id="tw" style="font-size:19px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._tu(\'tú\')">tú (informeel)</div><div class="chip" onclick="window._tu(\'usted\')">usted (beleefd)</div></div><div class="fb" id="tf"></div>';
+ el.innerHTML='<h3>¿Tú o usted? 🤝</h3><p class="desc">¿Informal (tú) o formal (usted)? Elige. <span class="nl">Informeel of beleefd? Kies.</span></p>'+sb('sbTU')+'<div id="tw" style="font-size:19px;font-family:var(--disp);text-align:center;margin:8px 0"></div><div class="chips" style="justify-content:center"><div class="chip" onclick="window._tu(\'tú\')">tú (informeel)</div><div class="chip" onclick="window._tu(\'usted\')">usted (beleefd)</div></div><div class="fb" id="tf"></div>';
  var bar=el.querySelector('#sbTU');function nx(){if(!pool.length)pool=items.slice();el.cur=pool.splice(Math.floor(Math.random()*pool.length),1)[0];el.querySelector('#tw').textContent=el.cur[0];el.querySelector('#tf').className='fb';}
  window._tu=function(k){var ok=k===el.cur[1];if(ok){p++;s++}else s=0;setSc(bar,p,s);fb(el.querySelector('#tf'),ok,el.cur[1]==='tú'?'informeel (met vrienden/klasgenoten)':'beleefd (met een onbekende/volwassene)');setTimeout(nx,1100);};nx();})();
 
 // ③ Preséntate (vrije productie)
 (function(){var el=document.getElementById('g_presentate');
- el.innerHTML='<h3>Preséntate ✍️🗣️</h3><p class="desc">Stel jezelf voor. Vul in, maak je zin, en zeg ze hardop. Er is geen «juist» — het is jouw voorstelling.</p>'
+ el.innerHTML='<h3>Preséntate ✍️🗣️</h3><p class="desc">Preséntate: completa, forma tu frase y dila en voz alta. No hay una respuesta «correcta»: es tu presentación. <span class="nl">Stel jezelf voor: vul in, maak je zin en zeg ze hardop. Er is geen «juist» — het is jouw voorstelling.</span></p>'
   +'<div style="display:grid;gap:8px;max-width:460px"><div><span style="font-family:var(--disp)">¡Hola! Me llamo</span> <input class="txin" id="p1" placeholder="naam"></div>'
   +'<div><span style="font-family:var(--disp)">Soy de</span> <input class="txin" id="p2" placeholder="stad/land"> <span style="font-family:var(--disp)">y estoy</span> <input class="txin" id="p3" placeholder="bien" style="width:80px"><span style="font-family:var(--disp)">.</span></div></div>'
   +'<div class="answerbtns"><button class="btn" id="pGo">Maak mijn zin</button>'+(TTS?'<button class="spk-btn" id="pSpk">🔊 hoor</button>':'')+'</div><div class="fb" id="pF"></div>';

@@ -120,6 +120,26 @@
 99. **Enrique Iglesias** — *Experiencia Religiosa* (1994, 🇪🇸)
 100. **Camilo** — *Tutu* (2019, 🇨🇴)
 
+## 🎬 La banda sonora, unidad por unidad
+*Welk nummer bij welke les hoort — zo staat het in de cursus (print, hub en PowerPoint).*
+
+| Unidad | Tema | Canción | Artista |
+|---|---|---|---|
+| U1 | Presentaciones | «6 de febrero» | 🇪🇸 Aitana |
+| U2 | Saludos y despedidas | «La Perla» (LUX, 2025) | 🇪🇸 Rosalía |
+| U3 | Nacionalidades | «Si antes te hubiera conocido» | 🇨🇴 Karol G |
+| U4 | La familia | «La Perla» (LUX, 2025) | 🇪🇸 Rosalía |
+| U5 | Objetos de clase | «Me gustas tú» | 🇪🇸 Manu Chao |
+| U6 | La casa | «Me gustas tú» | 🇪🇸 Manu Chao |
+| U7 | Las profesiones | «La Perla» (LUX, 2025) | 🇪🇸 Rosalía |
+| U8 | Las horas | «Bzrp Music Session #52» | 🇪🇸 Quevedo |
+| U9 | Planes | «6 de febrero» | 🇪🇸 Aitana |
+| U10 | Tareas de casa | «Me gustas tú» | 🇪🇸 Manu Chao |
+| U11 | El tiempo | «Todo de ti» | 🇵🇷 Rauw Alejandro |
+| U12 | La ropa | «Baile inolvidable» | 🇵🇷 Bad Bunny |
+| U13 | En el mercado | «Si antes te hubiera conocido» | 🇨🇴 Karol G |
+| U14 | En el restaurante | «Baile inolvidable» | 🇵🇷 Bad Bunny |
+
 ---
 **Totaal: 100 nummers** · 17 met ⚠️ (clean-versie kiezen).
 

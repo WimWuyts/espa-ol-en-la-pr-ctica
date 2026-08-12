@@ -24,7 +24,9 @@ def print_section(unit, hub_url=None):
     if not (L or A):
         return ""
     parts = ['<div class="page sec" style="break-before:page">',
-             '<div class="se">Lee y escucha · comprensión</div><h2>Lezen &amp; luisteren</h2>']
+             '<div class="se">Lee y escucha · comprensión</div>'
+             '<h2>Leer, escuchar y entender <span class="gloss" style="font-size:10pt;font-weight:400">'
+             'lezen en luisteren</span></h2>']
     # ── LEZEN ──
     if L:
         # De chatregels staan strakker dan de `.tl` van het sitcom-transcript.
@@ -45,13 +47,17 @@ def print_section(unit, hub_url=None):
         gloss = "".join(f'<span>{e} · {n}</span>' for e, n in L["glosario"])
         parts.append(
             f'<div class="regla"><span class="tag">📖 Lee · {L["tipo"]}</span>'
-            f'<p style="font-size:8.8pt;color:var(--mut);margin:1mm 0">{L["contexto_nl"]}</p>'
+            f'<p style="font-size:8.8pt;margin:1mm 0">{L.get("contexto_es","")} '
+            f'<span class="gloss">{L["contexto_nl"]}</span></p>'
             f'<div class="twocol">{texto}</div></div>'
             f'<div class="se" style="margin-top:2mm">Comprensión</div>'
-            f'<p style="font-size:9pt;margin:0 0 1mm"><b>Globaal</b> — kruis aan:</p>{_mc(L["global"])}'
-            f'<p style="font-size:9pt;margin:2mm 0 1mm"><b>Detail</b> — ¿V of F? Verbeter de valse op de lijn:</p>'
+            f'<p style="font-size:9pt;margin:0 0 1mm"><b>Comprensión global · marca la respuesta correcta.</b> '
+            f'<span class="gloss">kruis het juiste antwoord aan</span></p>{_mc(L["global"])}'
+            f'<p style="font-size:9pt;margin:2mm 0 1mm"><b>En detalle · ¿verdadero o falso? Corrige las frases falsas en la línea.</b> '
+            f'<span class="gloss">verbeter de valse</span></p>'
             f'<table class="vf">{det}</table>'
-            f'<div class="truc" style="margin-top:2mm"><b>✍️ ¿Y tú?</b> {L["transfer"]} '
+            f'<div class="truc" style="margin-top:2mm"><b>✍️ Escribe tú.</b> '
+            f'{L["transfer"]} '
             f'<div style="margin-top:1mm">{_wl("full")}</div></div>'
             f'<div class="cogn" style="margin-top:2mm">{gloss}</div>')
     # ── LUISTEREN (audio online → begripsvragen op papier; luisteren gebeurt in de hub) ──
@@ -62,11 +68,14 @@ def print_section(unit, hub_url=None):
         parts.append(
             f'<div class="se" style="margin-top:3mm">🎧 Escucha · {A["tipo"]}</div>'
             f'<div class="audiorow"><div class="call"><span class="ic">🎧</span><div>'
-            f'<b>{A["tarea_nl"]}</b> Scan de code, beluister het fragment online (▶ / 🐢 lento) en beantwoord dan de vragen.</div></div>'
+            f'<b>{A.get("tarea_es","")}</b> Escanea el código, escucha el audio en la página '
+            f'digital (▶ / 🐢 lento) y contesta las preguntas. '
+            f'<span class="gloss">{A["tarea_nl"]}</span></div></div>'
             + (f'<div class="qr" data-url="{destino}"><div class="lab">Audio online</div>{qr}'
                f'<div class="meta">hub · Lee y escucha</div></div>' if qr else "")
             + '</div>'
-            f'<p style="font-size:9pt;margin:2mm 0 1mm"><b>Preguntas</b> — kruis aan wat je hoort:</p>{_mc(A["preguntas"])}')
+            f'<p style="font-size:9pt;margin:2mm 0 1mm"><b>Preguntas · marca lo que oyes.</b> '
+            f'<span class="gloss">kruis aan wat je hoort</span></p>{_mc(A["preguntas"])}')
     parts.append('</div>')
     return "".join(parts)
 

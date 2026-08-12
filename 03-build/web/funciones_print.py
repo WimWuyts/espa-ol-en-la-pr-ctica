@@ -34,7 +34,7 @@ def print_section(unit):
     else:
         compact_style = ''
     banco = (compact_style + '<table class="sem fbanco" style="margin-top:2mm"><thead><tr>'
-             '<th style="text-align:left">Función · exponentes (wat ik al kan zeggen)</th><th>🟢</th><th>🟡</th><th>🔴</th></tr></thead>'
+             '<th style="text-align:left">Función · exponentes <span class="gloss">wat ik al kan zeggen</span></th><th>🟢</th><th>🟡</th><th>🔴</th></tr></thead>'
              f'{rows}</table>')
     # ── noticing (compacte 2-koloms-oefening: cita → función) ──
     noti = FD.NOTICING.get(unit, [])
@@ -42,7 +42,8 @@ def print_section(unit):
     used_ids = sorted({fid for _, fid in noti})
     bank = " · ".join(FD.FMAP[i]["es"] for i in used_ids)
     noticing = (f'<div class="regla"><span class="tag">¿Qué hacen con el idioma? · uit de scène</span>'
-                f'<p style="margin:1mm 0;font-size:8.8pt">Welke <b>functie</b> voert elke zin uit? Schrijf ze erbij. '
+                f'<p style="margin:1mm 0;font-size:8.8pt"><b>¿Qué función tiene cada frase? Escríbela al lado.</b> '
+                f'<span class="gloss">welke functie voert elke zin uit?</span> '
                 f'<span style="color:var(--mut)">Banco: {bank}.</span></p>'
                 f'<div style="columns:2;column-gap:8mm;line-height:1.75">{n_cells}</div></div>')
     # ── tarea-tags + mini-reto (productie; wbox-hoogte schaalt met #functies → volle bladspiegel) ──
@@ -54,8 +55,9 @@ def print_section(unit):
     # lichte units (weinig functies) krijgen een extra ophaal-blokje → volle bladspiegel zonder U3 te overladen
     extra = ""
     if have <= 4:
-        extra = ('<div class="regla" style="margin-top:3mm"><span class="tag">Recuerda sin mirar · ophalen</span>'
-                 '<p style="font-size:9pt;margin:1mm 0">Vertaal uit het hoofd (ophalen = het beste leren):</p>'
+        extra = ('<div class="regla" style="margin-top:3mm"><span class="tag">Recuerda sin mirar</span>'
+                 '<p style="font-size:9pt;margin:1mm 0">Traduce de memoria, sin mirar. '
+                 '<span class="gloss">Vertaal uit het hoofd — ophalen is de beste manier om te leren.</span></p>'
                  f'<div style="font-size:9.6pt;line-height:2.5">a) hallo / tot ziens → {_wl("lg")}<br>'
                  f'b) hoe heet je? → {_wl("lg")}<br>c) ik heet… / ik ben… → {_wl("lg")}</div></div>')
     # de mini-reto vult lichte units; bij 9-14 functies is het banco al vol → geen reto (anders overloop).
@@ -64,18 +66,21 @@ def print_section(unit):
     reto = ""
     if have <= 8 or (tight and have <= 16):
         reto_h = 22 if tight else max(14, int(42 - have * 3.2))
-        reto = (f'<div class="truc" style="margin-top:3mm"><b>Mini-reto ✍️</b> Schrijf een korte mini-conversatie '
-                f'waarin je <b>minstens 3 functies</b> hierboven gebruikt. Onderstreep telkens welke functie.'
+        reto = (f'<div class="truc" style="margin-top:3mm"><b>Mini-reto ✍️</b> Escribe una conversación corta en la que uses '
+                f'<b>al menos 3 funciones</b> de arriba. Subraya cada una. '
+                f'<span class="gloss">korte conversatie met drie functies; onderstreep welke</span>'
                 f'<div class="wbox" style="min-height:{reto_h}mm"></div></div>')
     return (f'<div class="page sec" style="break-before:page">'
             f'<div class="se">Funciones comunicativas · lo que ya sé decir</div>'
-            f'<h2>Wat je nu al kunt DOEN met het Spaans</h2>'
+            f'<h2>Lo que ya puedes hacer con el español <span class="gloss" style="font-size:10pt;font-weight:400">'
+            f'wat je met het Spaans kunt dóen</span></h2>'
             f'<p style="font-size:9.4pt;margin:0 0 2mm">No solo palabras: <b>funciones</b> — lo que puedes hacer con el español. '
-            f'<span class="gloss">Niet enkel woorden: functies — wat je met het Spaans kunt dóen. En het groeit elke unit: '
-            f'nu <b>{have}/{total}</b> functies.</span></p>'
+            f'<span class="gloss">groeit elke unit: nu <b>{have}/{total}</b> functies</span></p>'
             f'{noticing}'
-            f'<div class="se" style="margin-top:3mm">Mi repertorio · zet je semáforo</div>'
-            f'<p style="font-size:8.8pt;color:var(--mut);margin:0 0 1mm">Alles wat je tot nu toe kunt zeggen. Kleur per functie: 🟢 vlot · 🟡 met moeite · 🔴 nog niet.</p>'
+            f'<div class="se" style="margin-top:3mm">Mi repertorio · pon tu semáforo</div>'
+            f'<p style="font-size:8.8pt;margin:0 0 1mm">Todo lo que ya sabes decir. Colorea cada función: '
+            f'🟢 con soltura · 🟡 con esfuerzo · 🔴 todavía no. '
+            f'<span class="gloss">alles wat je al kunt zeggen</span></p>'
             f'{banco}{tarea}{extra}{reto}</div>')
 
 if __name__ == "__main__":

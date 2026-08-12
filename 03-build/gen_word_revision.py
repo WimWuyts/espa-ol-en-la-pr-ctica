@@ -9,7 +9,7 @@ maakt, maakt er iets van dat er *bijna* uitziet zoals het boek — en juist dat
 opmerkingen die u maakt gaan over een layout die in de echte PDF niet bestaat.
 
 Dit document doet het omgekeerde: het gooit de opmaak wég. Alles wordt
-doorlopende tekst met koppen, genummerde oefeningen en een brede rechtermarge.
+doorlopende tekst met koppen, genummerde ejercicios en een brede rechtermarge.
 Het lijkt niet op de cursus — dat is de bedoeling. U kijkt de inhoud na
 (taal, opdrachten, volgorde, moeilijkheid), zet uw opmerkingen erbij met de
 Word-functie die u gewoon bent, en die opmerkingen verwerk ik daarna in de
@@ -160,6 +160,29 @@ def lee(ruta):
 # ── tekst uit een tak halen ────────────────────────────────────────────────
 SALTO = "\x00"          # merkteken voor een <br> uit het boek
 LARGO = {"sm": 8, "md": 14, "lg": 20, "full": 34, "short": 8}
+# Vlagemoji bestaan uit twee «regional indicator»-letters. Word op Windows
+# tekent daar geen vlag van maar de letters zelf: «🇪🇸 Lucía» wordt «ES Lucía».
+# In het boek (PDF) is het wél een vlag — daar zit een emoji-font in — dus dit
+# is een probleem van het reviewdocument alleen. Hier komt de landnaam.
+PAIS = {
+    "🇪🇸": "España", "🇲🇽": "México", "🇨🇴": "Colombia", "🇵🇪": "Perú",
+    "🇦🇷": "Argentina", "🇧🇪": "België", "🇵🇷": "Puerto Rico", "🇨🇺": "Cuba",
+    "🇨🇱": "Chile", "🇻🇪": "Venezuela", "🇩🇴": "Rep. Dominicana",
+    "🇬🇹": "Guatemala", "🇪🇨": "Ecuador", "🇧🇴": "Bolivia", "🇺🇾": "Uruguay",
+    "🇵🇾": "Paraguay", "🇨🇷": "Costa Rica", "🇵🇦": "Panamá", "🇭🇳": "Honduras",
+    "🇳🇮": "Nicaragua", "🇸🇻": "El Salvador", "🇬🇶": "Guinea Ecuatorial",
+    "🇺🇸": "EE. UU.", "🇫🇷": "Frankrijk", "🇳🇱": "Nederland", "🇬🇧": "VK",
+    "🇩🇪": "Duitsland", "🇮🇹": "Italië", "🇵🇹": "Portugal", "🇧🇷": "Brazilië",
+    "🌎": "Latijns-Amerika", "🌍": "wereld", "🌐": "wereld",
+}
+_BANDERA = re.compile("[\U0001F1E6-\U0001F1FF]{2}")
+
+
+def sin_banderas(t):
+    """Vlagemoji → landnaam tussen haakjes, want Word toont ze als letters."""
+    return _BANDERA.sub(lambda m: "(%s)" % PAIS.get(m.group(0), "vlag"), t)
+
+
 # stukjes die in het boek naast de tekst staan (cijfer, icoon, vinkje) en er
 # in doorlopende tekst tégen aan zouden plakken
 PEGAJOSO = {"ci", "ck", "ic", "num", "anum", "tag", "k", "lbl", "dot", "pk",
@@ -198,6 +221,7 @@ def _pega(n, k, h, prev):
     # + «de las 6:30 a las 8:30», die in het boek onder elkaar staan). Eén
     # woord in het kadertje is een woorduitgang (habl + o) en blijft plakken.
     if (isinstance(h, Nodo) and isinstance(prev, str) and prev[-1:].strip()
+            and prev[-1] not in "([{«¿¡\u2018\u201c/-"
             and " " in texto(h).strip()):
         return True
     return False
@@ -268,7 +292,8 @@ def run(t, negrita=False, cursiva=False, color=None, tam=None, sub=False):
     if sub:
         pr += '<w:u w:val="single"/>'
     pr = "<w:rPr>%s</w:rPr>" % pr if pr else ""
-    return '<w:r>%s<w:t xml:space="preserve">%s</w:t></w:r>' % (pr, esc(t))
+    return ('<w:r>%s<w:t xml:space="preserve">%s</w:t></w:r>'
+            % (pr, esc(sin_banderas(t))))
 
 
 def parrafo(runs, estilo=None, sangria=0, antes=0, despues=60, borde=None,
@@ -594,13 +619,17 @@ def compacto(n):
         return False
     if any({"act", "sec", "wbox"} & h.clases for h in hijos):
         return False
+    # losse tekst tussen de kaderdelen betekent dat dit een zin is en geen
+    # rijtje kaartjes; met « · » ertussen wordt die zin onleesbaar
+    if any(isinstance(h, str) and len(h.strip()) > 3 for h in n.hijos):
+        return False
     if tiene(n, tags=("table", "ul", "ol", "p")):
         return False
     return len(limpia(texto(n))) <= 200
 
 
 def oefening(n, ctx):
-    """Een .act: kop «Oefening N · titel», de labels als grijze regel,
+    """Een .act: kop «Ejercicio N · titel», de labels als grijze regel,
     daarna de inhoud."""
     color = ctx["color"]
     cab = _primero(n, clase="acthead")
@@ -610,9 +639,9 @@ def oefening(n, ctx):
     ctx["n"] = ctx.get("n", 0) + 1
     etiqueta = limpia(texto(num)) if num is not None else str(ctx["n"])
     titulo = limpia(texto(tit)) if tit is not None else ""
-    out = [parrafo([run("Oefening %s" % etiqueta, negrita=True, color=color),
+    out = [parrafo([run("Ejercicio %s" % etiqueta, negrita=True, color=color),
                     run("  ·  " + titulo, negrita=True)] if titulo else
-                   [run("Oefening %s" % etiqueta, negrita=True, color=color)],
+                   [run("Ejercicio %s" % etiqueta, negrita=True, color=color)],
                    estilo="Kop3", conserva=True)]
     if badges is not None:
         eti = " · ".join(x for x in (limpia(texto(k)) for k in badges.hijos

@@ -250,6 +250,40 @@ for c in ORDER:
         w=" ⚠️" if g=="chk" else ""
         md.append(f"{n}. **{a}** — *{t}* ({y}, {fl}){w}")
     md.append("")
+# ── de banda sonora per unit: uit dezelfde bron als de cursus ──────────────
+# `gen_c4_musica.ART` koppelt elke artiest aan de thema's waarbij hij past, en
+# `construir.C4_TEMA` zegt welk thema elke unit heeft. Zo staat in deze lijst
+# zwart op wit welk nummer bij welke les hoort — dat is precies wat je nodig
+# hebt om de playlist in de juiste volgorde te zetten.
+import importlib.util as _il
+def _mod(nombre, ruta):
+    sp = _il.spec_from_file_location(nombre, ruta); m = _il.module_from_spec(sp)
+    sp.loader.exec_module(m); return m
+try:
+    _mus = _mod("c4mus", f"{ROOT}/03-build/web/gen_c4_musica.py")
+    _con = _mod("c4con", f"{ROOT}/03-build/construir.py")
+    ART, TEMA = _mus.ART, _con.C4_TEMA
+except Exception as e:                      # nooit de levering blokkeren
+    ART, TEMA = [], {}
+    print("banda sonora per unit overgeslagen:", e)
+
+TITULOS = {1:"Presentaciones",2:"Saludos y despedidas",3:"Nacionalidades",4:"La familia",
+ 5:"Objetos de clase",6:"La casa",7:"Las profesiones",8:"Las horas",9:"Planes",
+ 10:"Tareas de casa",11:"El tiempo",12:"La ropa",13:"En el mercado",14:"En el restaurante"}
+
+if ART:
+    md.append("## 🎬 La banda sonora, unidad por unidad")
+    md.append("*Welk nummer bij welke les hoort — zo staat het in de cursus (print, hub en PowerPoint).*")
+    md.append("")
+    md.append("| Unidad | Tema | Canción | Artista |")
+    md.append("|---|---|---|---|")
+    for u in range(1, 15):
+        t = TEMA.get(u, "")
+        picks = [a for a in ART if t in a[8]] or [ART[0]]
+        a0 = picks[0]
+        md.append("| U%d | %s | %s | %s %s |" % (u, TITULOS.get(u, t), a0[4], a0[1], a0[0]))
+    md.append("")
+
 md.append("---")
 md.append(f"**Totaal: 100 nummers** · {sum(1 for r in NUM if r[6]=='chk')} met ⚠️ (clean-versie kiezen).")
 md.append("")
@@ -263,6 +297,13 @@ md.append("1. Maak in Spotify een nieuwe **openbare** playlist «Bienvenidos al 
 md.append("2. Voeg de nummers hierboven toe (zoek titel + artiest).")
 md.append("3. Stuur mij de **officiële deel-link** → ik vervang de placeholder in de Música-tab, de PDF-QR's en de PowerPoints.")
 open(f"{ROOT}/01-cursussen/04-welcome/PLAYLIST_TOP100.md","w",encoding="utf-8").write("\n".join(md)+"\n")
+
+# ── kale importlijst ───────────────────────────────────────────────────────
+# Spotify zelf kan geen tekst importeren; de gangbare hulpjes (Soundiiz,
+# TuneMyMusic, Spotlistr) wél, en die willen één «Artiest - Titel» per regel.
+# Vandaar dit derde bestand: zonder nummering, zonder vlaggen, zonder opmaak.
+txt = "\n".join("%s - %s" % (a, t) for a, t, y, fl, c, g in SONGS)
+open(f"{ROOT}/01-cursussen/04-welcome/PLAYLIST_TOP100.txt","w",encoding="utf-8").write(txt+"\n")
 
 nchk=sum(1 for r in NUM if r[6]=="chk")
 print(f"C4_playlist.html + PLAYLIST_TOP100.md geschreven · 100 nummers · {nchk} met ⚠️")
