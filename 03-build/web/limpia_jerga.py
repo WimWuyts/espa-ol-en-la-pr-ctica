@@ -19,6 +19,17 @@ losse bestanden die niet meegroeiden. Dit script sluit beide gaten na de bouw,
 zodat één blik volstaat om te zien dat het weg is.
 
 Herhaalbaar; draait ná de printgeneratoren.
+
+DE KOPIE KOMT LATER
+De bewerkbare kopie moet de printbladzijde zijn zoals ze uiteindelijk is —
+dus mét de Lucide-iconen (`print_iconos.py`) en met de breukregels van de
+bladspiegel (`bladspiegel.py`), die allebei ná deze stap draaien. Kopiëren we
+hier, dan krijgt de auteur een bewerkbare versie van een tussenstand: emoji in
+plaats van iconen. Vandaar `--copias`, dat alléén kopieert; `construir.py`
+roept dat aan als laatste HTML-stap.
+
+    python3 limpia_jerga.py             de opschoning (en niets kopiëren)
+    python3 limpia_jerga.py --copias    alleen de bewerkbare kopieën
 """
 import os
 import re
@@ -87,9 +98,14 @@ def unidades():
         yield (curso, u, impreso, copia)
 
 
-def main():
+def main(solo_copias=False):
     tot = 0
     for curso, u, ruta, copia in unidades():
+        if solo_copias:
+            if copia:
+                shutil.copyfile(ruta, copia)
+                tot += 1
+            continue
         doc = open(ruta, encoding="utf-8").read()
         nuevo, n = NIVEL.subn(_nivel, doc)
         for pat, rep in SUSTITUCIONES:
@@ -98,15 +114,13 @@ def main():
         if nuevo != doc:
             open(ruta, "w", encoding="utf-8").write(nuevo)
         tot += n
-        # de bewerkbare kopie is precies de printbladzijde, nooit een oudere versie
-        aviso = ""
-        if copia:
-            shutil.copyfile(ruta, copia)
-            aviso = " · bewerkbare kopie bijgewerkt"
-        if n or aviso:
-            print("%-4s U%d  %3d stukken bouwtaal weg%s" % (curso, u, n, aviso))
-    print("\n%d stukken bouwtaal van de leerlingpagina's gehaald" % tot)
+        if n:
+            print("%-4s U%d  %3d stukken bouwtaal weg" % (curso, u, n))
+    if solo_copias:
+        print("\n%d bewerkbare kopieën gelijkgezet aan de printbladzijde" % tot)
+    else:
+        print("\n%d stukken bouwtaal van de leerlingpagina's gehaald" % tot)
 
 
 if __name__ == "__main__":
-    main()
+    main("--copias" in sys.argv)

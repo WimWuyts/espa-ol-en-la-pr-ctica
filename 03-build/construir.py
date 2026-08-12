@@ -232,6 +232,14 @@ def main():
     if not ok:
         fallos.append("bladspiegel: " + salida[-300:])
 
+    # als láátste HTML-stap, want de bewerkbare kopie hoort de bladzijde te
+    # zijn zoals ze uiteindelijk is — mét iconen en mét de breukregels
+    print("── 7b · bewerkbare kopie = de afgewerkte bladzijde ───────────────")
+    ok, salida = corre(["python3", "limpia_jerga.py", "--copias"], cwd=WEB)
+    print("   %s" % (salida.splitlines()[-1] if salida else "ok"))
+    if not ok:
+        fallos.append("bewerkbare kopie: " + salida[-300:])
+
     if not a.sin_pdf:
         print("── 8 · PDF (als laatste: alle HTML-bewerkingen zitten erin) ──────")
         chrome = chromium()

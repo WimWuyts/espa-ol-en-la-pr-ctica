@@ -691,7 +691,7 @@ P('<ol class="pasos">'
   '<li><b>Escribe tu blog</b> (6–8 frases) con <b>verbos reflexivos</b>, <b>conectores</b> (primero, luego, después), <b>la hora</b> y <b>la frecuencia</b> (siempre, a veces).</li>'
   '<li><b>Añade tus gustos y tu ánimo</b>: «Me gusta… porque…» y «Por la mañana estoy…».</li>'
   '<li><b>Preséntalo en pareja</b>: lee tu día en voz alta; tu compañero/a anota una hora y hace una pregunta.</li>'
-  '<li><b>Graba</b> te en la página digital, escúchate y vuelve a grabar una vez.</li></ol>')
+  '<li><b>Grábate</b> en la página digital, escúchate y vuelve a grabar una vez.</li></ol>')
 P('<div class="se" style="margin-top:4mm">Mi día · el borrador <span class="gloss" style="font-size:8pt">· schrijf je 6–8 zinnen (geruit)</span></div><div class="wbox"></div>')
 P(audiorow('<div class="ic">🎬</div><div><b>Graba tu «día a día»</b> en la página digital (recorder + rúbrica). Escucha, compara con el modelo y vuelve a grabar.</div>',
            qr("Escanea y graba", "Tarea · Mi día a día", seed=170)))

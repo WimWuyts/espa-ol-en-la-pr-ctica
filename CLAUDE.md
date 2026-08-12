@@ -544,5 +544,26 @@ De richtlijnen zijn **geen proza om te "kennen" maar een plukvijver om uit te pu
 - **Kernstandpunt (BINDEND):** álles wat in de vier md-specs (grammatica · woordenschat · vaardigheden · PowerPoint) + de 100 spelvormen staat, moet **ergens terugkomen** → **VARIATIE is key** (>200 suggesties; geen herhaling van dezelfde werkvorm). Geldt ook voor de generator-oefeningen.
 - **Team van specialist-subagents** voert dit tot in detail uit, binnen de vastgelegde specs.
 - **PRINT = PDF (BESLIST 2026-07-25):** Word mag, maar als het moeilijk gaat leveren we in **PDF** (visueel sterker, aldus auteur). Pijplijn: **HTML = bron → PDF via Chromium/Playwright** (werkt in déze sandbox; vervangt de defecte Word→PDF-route). AI-foto's komen van de auteur (`[BEELD:…]`-hooks tot dan).
+- **NAKIJKEN GEBEURT IN EEN APART WORD-BESTAND (2026-08-12).** De vraag was of
+  de PDF's naar Word om te zetten zijn om er opmerkingen bij te schrijven.
+  Omzetten kan hier niet — **LibreOffice opent in deze sandbox géén enkel
+  bestand** (getest: PDF→docx, HTML→docx, met en zonder eigen profiel) en
+  `python-docx` is er niet (PyPI dicht). Belangrijker: een omgezette PDF geeft
+  een nagebootste layout, en dan gaan de opmerkingen over opmaak die in de
+  échte PDF niet bestaat. Daarom **`03-build/gen_word_revision.py`**: een met de
+  hand geschreven `.docx` (zip + WordprocessingML, zoals bij de PowerPoints)
+  met de inhoud in doorlopende tekst, koppen, genummerde oefeningen,
+  schrijflijnen als `______`, echte tabellen, 6 cm rechtermarge en
+  regelnummers. **De opmaak zit er bewust niet in** — bladspiegel en beeld
+  kijkt de auteur in de PDF na. Controle vóór levering:
+  **`03-build/revisar_docx.py`** (zip, XML-volgorde tegen ISO/IEC 29500-4,
+  tabellen, en of élk woord van de unit erin staat) — nodig omdat geen enkel
+  programma hier het bestand opent vóór de auteur dat doet. Werkwijze +
+  beperkingen: `03-build/revisie/LEESMIJ.md`.
+- **BEWERKBARE KOPIE = DE ÁFGEWERKTE BLADZIJDE (2026-08-12).** `limpia_jerga.py`
+  maakte de C6+-`_BEWERKBAAR.html`-kopieën in stap 6, dus vóór de Lucide-iconen
+  (6b) en de bladspiegel (7): de auteur kreeg een bewerkbare versie van een
+  tussenstand, met emoji in plaats van iconen. De kopie is nu een eigen stap
+  **7b** (`limpia_jerga.py --copias`), ná alle HTML-bewerkingen.
 - **Bladspiegelspecialist verplicht** in het build-team (zie §13 bladspiegel-regel: geen kaders, volle witruimte efficiënt benutten).
 - **Print-build-sjabloon (VASTGELEGD, golden sample U0 · 2026-07-26):** `02-huisstijl/templates/cursus-print.css` — de **bindende layout/componentenkit** (hero · parada-kop met achtergrondcijfer · LPD-chips · activiteit met nummerbadge + vaardigheid/tijd/moeilijkheidsbadges + APOYO-ladder · regla-onthoudkaart · klankkaart · QR-audiokaart · mochila-gids · sectiescheider · semáforo). **Print-hygiëne zit erin:** veilige `@page`-marges boven/onder met **hero-bleed op p1** (`@page:first{margin:0 0 12mm 0}`), doorvloeiende tabellen (`thead` herhaalt), weesregel, `print-color-adjust:exact`. **Elke unit-HTML hergebruikt dit — niet opnieuw uitvinden.** Render: HTML → Chromium `--print-to-pdf`. Per cursus enkel de `--g/--gd/--gt`-tokens wisselen (C4 rood · C5 groen · C6 blauw · C6+ paars).
