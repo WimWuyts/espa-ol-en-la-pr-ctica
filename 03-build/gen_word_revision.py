@@ -592,7 +592,7 @@ def bloques(n, ctx):
             continue
         destaca = {"intro", "ojo", "regla", "esen", "steun", "route-note",
                    "modelo", "pista"} & h.clases
-        marca = {"ojo": "¡Ojo! ", "steun": "Steun · ", "pista": "Tip · "}
+        marca = {"ojo": "¡Ojo! ", "pista": "Tip · "}
         plano = limpia(texto(h))
         pre = [run(marca[c], negrita=True, color=color)
                for c in h.clases if c in marca

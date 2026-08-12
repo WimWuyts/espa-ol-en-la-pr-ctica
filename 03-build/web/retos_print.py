@@ -144,7 +144,16 @@ def _pasos(r):
 
 
 def _regla(r):
-    return ('<div class="regla-reto"><b>La regla del reto</b><br>%s</div>' % E(r["regla"]))
+    """De regel van het spel — Spaans eerst, Nederlands als steun.
+
+    De regel stond alleen in het Nederlands terwijl de rest van de reto Spaans
+    is; de auteur vroeg bij het nalezen van C5 U1 om dat overal recht te zetten.
+    Een reto die nog geen `regla_es` heeft, toont zolang alleen het Nederlands
+    (beter dan een halve vertaling)."""
+    es = r.get("regla_es")
+    cuerpo = (('%s<br><span class="rnl">%s</span>' % (E(es), E(r["regla"])))
+              if es else E(r["regla"]))
+    return ('<div class="regla-reto"><b>La regla del reto</b><br>%s</div>' % cuerpo)
 
 
 def _lineas(n, klasse="wl full", start=1):

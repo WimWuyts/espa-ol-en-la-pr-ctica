@@ -10,6 +10,7 @@ Het QR-balkje naast elke oefening komt uit `03-build/web/qr/balk_<ID>.html`,
 al gegenereerd met echte QR-codes (segno). Het balkje draagt het oefening-ID als
 anker, zodat print, PDF en hub naar hetzelfde punt wijzen.
 """
+import apoyo as APO
 import os
 
 HIER = os.path.dirname(os.path.abspath(__file__))
@@ -156,8 +157,8 @@ def lectura_print(t, num, sola=False):
         '<span style="font-size:8.4pt;color:var(--mut)">prueba:</span> <span class="wl full"></span></div>'
         % (i + 1, v["q"]) for i, v in enumerate(t["vf"]))
 
-    ficha = ('<div class="fichatxt"><span><b>Tekstsoort</b>%s</span><span><b>Afzender</b>%s</span>'
-             '<span><b>Ontvanger</b>%s</span><span><b>Leesdoel</b>%s</span></div>'
+    ficha = ('<div class="fichatxt"><span><b>Tipo de texto</b>%s</span><span><b>Quién escribe</b>%s</span>'
+             '<span><b>Para quién</b>%s</span><span><b>Para qué leo</b>%s</span></div>'
              % (t["tipo"], t["emisor"], t["receptor"], t["objetivo"]))
 
     pasos = []
@@ -178,38 +179,44 @@ def lectura_print(t, num, sola=False):
         # Voorspellen deed de leerling al bij de eerste tekst van de unit; hier
         # staat het leesdoel er meteen, zodat er gericht gelezen wordt.
         pasos.append('<div class="lecdoel">🎯 <b>Lee con este objetivo:</b> %s '
-                     '<span class="gloss">Lees met dat doel voor ogen — je hoeft niet elk woord '
+                     '<span class="gloss">Lees met dat doel voor ogen; je hoeft niet elk woord '
                      'te begrijpen.</span></div>' % t["global"]["q"])
         paso("El texto.", '<div class="lecp">%s</div><div style="margin-left:12.5mm">Mi respuesta: '
              '<span class="wl full"></span></div>' % "".join(cuerpo))
 
-    paso("Escanea. Beantwoord de vragen met één woord of één getal uit de tekst.",
+    paso("Escanea. Contesta con una palabra o un número sacado del texto. "
+         "<span class='gloss'>Antwoord met één woord of één getal uit de tekst.</span>",
          '<div style="margin-left:12.5mm;font-size:9.6pt">%s</div>' % esc)
     if sola:
-        paso("Verdadero o falso — con prueba. Kruis aan én schrijf de zin die het bewijst.",
+        paso("Verdadero o falso — con prueba. Marca V o F y copia la frase que lo demuestra. "
+             "<span class='gloss'>Kruis aan en schrijf de zin die het bewijst.</span>",
              '<div style="margin-left:12.5mm;font-size:9.6pt">%s</div>' % vf)
-        paso("El significado por el contexto.",
+        paso("El significado por el contexto. "
+             "<span class='gloss'>De betekenis uit de zin eromheen halen.</span>",
              '<div style="margin-left:12.5mm;font-size:9.6pt">%s</div>' % ctx)
     else:
-        paso("El significado por el contexto. Raad uit de zin eromheen, niet uit het woordenboek.",
+        paso("El significado por el contexto. Adivina por la frase de alrededor, no por el diccionario. "
+             "<span class='gloss'>Raad uit de zin eromheen, niet uit het woordenboek.</span>",
              '<div style="margin-left:12.5mm;font-size:9.6pt">%s</div>' % ctx)
     paso("Tu reacción. " + t["produccion"]["prompt"], '<div class="wbox lg"></div>')
 
     cola = "" if sola else (
-        '<div class="route-note">📖 <b>Verdadero o falso — con prueba:</b> die vragen bij déze tekst '
-        'staan online, met zelfcorrectie. Op papier oefen je ze bij de eerste lectura van de unit.</div>')
+        '<div class="route-note">📖 <b>Verdadero o falso — con prueba:</b> esas preguntas sobre '
+        '<i>este</i> texto están en la página digital, con corrección automática. '
+        '<span class="gloss">Op papier oefen je ze bij de eerste lectura van de unit.</span></div>')
 
     return """<div class="act">
     %s
     %s
     %s
-    <span class="steun">tekst blijft zichtbaar · eerst herkennen, daarna zelf zeggen</span>
+    %s
     %s
     %s</div>""" % (
         _acthead(num, ("Lectura · %s" if sola else "Lectura 2 · %s") % t["titulo"],
                  [("📖 Leer", True), ("✍️ Escribir", True), ("👤 Solo", False),
                   ("± 20 min" if sola else "± 12 min", False), ("★★☆", False)]),
-        ficha, "".join(pasos), cola,
+        ficha, "".join(pasos),
+        APO.html("Modelo: el texto queda a la vista", margen=""), cola,
         puntero("Lectura", "de tekst met zelfcorrectie en de vertaling"))
 
 
@@ -227,19 +234,23 @@ def escucha_print(f, num, qr_html=None):
     claves = " &nbsp;·&nbsp; ".join("<b>%s</b>" % c for c in f["situacion"]["claves"])
     return """<div class="act">
     %s
-    <p><b>1 · Antes de escuchar.</b> Lees de fiche en de palabras clave. Noteer één vraag die je verwacht te horen: <span class="wl md"></span></p>
+    <p><b>1 · Antes de escuchar.</b> Lee la ficha y las palabras clave. Escribe una pregunta que esperas oír:
+    <span class="wl md"></span> <span class="gloss">Lees de fiche en de sleutelwoorden; noteer één vraag die je verwacht.</span></p>
     <div class="fichatxt"><span><b>¿Dónde?</b>%s</span><span><b>¿Quién?</b>%s</span><span><b>¿Qué pasa?</b>%s</span></div>
     <p style="margin-left:12.5mm;font-size:9.6pt">Palabras clave: %s</p>
     <p><b>2 · Escucha global.</b> %s</p>
     <div style="margin-left:12.5mm">☐ %s</div>
-    <p><b>3 · Escucha con detalle.</b> Luister opnieuw en beantwoord de vragen in het Spaans (één tot drie woorden).</p>
+    <p><b>3 · Escucha con detalle.</b> Escucha otra vez y contesta en español, con una a tres palabras.
+    <span class="gloss">Luister opnieuw en antwoord in het Spaans, met één tot drie woorden.</span></p>
     <div style="margin-left:12.5mm;font-size:9.6pt">%s</div>
-    <p><b>4 · Verdadero o falso — con prueba.</b> Kruis aan én schrijf wat je hoort.</p>
+    <p><b>4 · Verdadero o falso — con prueba.</b> Marca V o F y escribe lo que oyes.
+    <span class="gloss">Kruis aan en schrijf wat je hoort.</span></p>
     <div style="margin-left:12.5mm;font-size:9.6pt">%s</div>
-    <p><b>5 · La transcripción</b> staat online. Open ze pas ná opdracht 4.</p>
+    <p><b>5 · La transcripción</b> está en la página digital. Ábrela solo después del punto 4.
+    <span class="gloss">Het transcript staat online; open het pas ná opdracht 4.</span></p>
     <p><b>6 · Tu reacción.</b> %s</p>
     <div class="wbox lg"></div>
-    <span class="steun">Scan de QR om te luisteren</span>
+    %s
     %s</div>""" % (
         _acthead(num, "Escucha · %s" % f["titulo"],
                  [("👂 Escuchar", True), ("✍️ Escribir", True), ("👤 Solo", False), ("± 20 min", False), ("★★☆", False)]),
@@ -248,4 +259,5 @@ def escucha_print(f, num, qr_html=None):
         " &nbsp;&nbsp; ☐ ".join(f["global"]["opts"]),
         det, vf,
         f["produccion"]["prompt"],
+        APO.html("Escanea el QR para escuchar", margen=""),
         qr_html if qr_html is not None else puntero("Escuchar 🎧", "het fragment beluisteren en het transcript"))

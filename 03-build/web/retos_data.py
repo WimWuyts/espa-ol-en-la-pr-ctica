@@ -572,6 +572,7 @@ U1_RETO_02 = {
                    "escucha y busca quién eres entre las doce fichas de la pared.",
     "consigna_nl": "Stel je voor in de ik-vorm met de gegevens van de fiche. De klas "
                    "luistert en zoekt wie je bent tussen de twaalf fiches op het bord.",
+    "regla_es": "Habla siempre en primera persona, aunque no seas tú, y no digas el nombre de tu ficha. Puedes decir «¿cómo?» una sola vez.",
     "regla": "Alles in de ik-vorm, ook al ben jij het niet, en je mag de naam op je "
              "fiche niet zeggen. Eén keer «él es» of «ella vive» en je bent ontmaskerd.",
     "pasos": [
@@ -626,6 +627,7 @@ U1_RETO_03 = {
                    "con «somos» y «son».",
     "consigna_nl": "Verzamel de gegevens, teken de grafiek en schrijf drie conclusies "
                    "met «somos» en «son».",
+    "regla_es": "Cada conclusión lleva un número real de vuestro gráfico y empieza por «somos» o «son». «Muchos» no cuenta.",
     "regla": "Elke conclusie moet een écht getal uit jullie grafiek bevatten en met "
              "«somos» of «son» beginnen. «Muchos alumnos hablan inglés» telt niet — "
              "«Somos catorce que hablamos inglés» wel.",
@@ -676,6 +678,7 @@ U1_RETO_09 = {
                    "con «son… porque…». Sin razón, no hay pareja.",
     "consigna_nl": "Het algoritme stelt uitwisselingsduo's voor. Elk voorstel wordt verdedigd "
                    "met «son… porque…». Zonder reden geen match.",
+    "regla_es": "El algoritmo no puede emparejar por el nombre ni por quién es amigo de quién: solo valen los datos de los perfiles.",
     "regla": "Het algoritme mag niemand koppelen op naam of op wie bevriend is. Alleen "
              "gegevens uit de profielen tellen, en de reden moet met «son» of «tienen» "
              "geformuleerd worden.",
@@ -732,6 +735,7 @@ U1_RETO_06 = {
                    "Solo puedes preguntar con «¿eres…?» y «¿de dónde…?».",
     "consigna_nl": "Zoek in de klas de persoon van wie de gegevens bij jouw instapkaart "
                    "passen. Je mag alleen vragen met «¿eres…?» en «¿de dónde…?».",
+    "regla_es": "No enseñes nunca tu tarjeta y no preguntes en neerlandés. Dos pasajeros solo se diferencian en un dato: fíjate bien.",
     "regla": "Je mag je rolkaart nooit laten lezen en niet in het Nederlands vragen. "
              "Twee passagiers verschillen maar op één gegeven — die vind je alleen door "
              "door te vragen.",
@@ -785,6 +789,7 @@ U1_RETO_08 = {
                    "real le cuesta una vida. Cada acusación falsa te cuesta una a ti.",
     "consigna_nl": "Zoek de ser- en tener-fouten van het andere team. Elke echte fout kost "
                    "hun een leven. Elke valse beschuldiging kost jou er een.",
+    "regla_es": "Tienes que decir qué está mal y dar la forma correcta. «Eso no está bien» cuenta como acusación falsa y te cuesta una vida.",
     "regla": "Je moet zeggen wát er fout is én de juiste vorm geven. «Dat klopt niet» "
              "telt als een valse beschuldiging, ook als de zin écht fout is.",
     "pasos": [
@@ -841,6 +846,7 @@ U1_RETO_07 = {
                    "ya no hay.",
     "consigna_nl": "Zoek de verschillen en beschrijf ze in het presente: wat er nu is en "
                    "wat er niet meer is.",
+    "regla_es": "Todo en presente, también cuando hables de 1985: «en la foto antigua hay…», no «había…».",
     "regla": "Alles in het presente, ook als je over 1985 praat. Je zegt dus «en la foto "
              "antigua hay…», niet «había». Die verleden tijd leer je pas in het zesde.",
     "pasos": [
@@ -898,6 +904,7 @@ U1_RETO_01 = {
     "consigna_es": "La prensa pregunta, la estrella contesta. Solo cuentan las preguntas "
                    "con palabra interrogativa.",
     "consigna_nl": "De pers vraagt, de ster antwoordt. Alleen vragen mét een vraagwoord tellen.",
+    "regla_es": "Una pregunta de sí/no te cuesta el turno: empieza por qué, quién, dónde, cuándo, cómo, cuánto o por qué, y nadie puede repetir un interrogativo.",
     "regla": "Een ja/nee-vraag kost je je beurt. Je moet dus met qué, quién, dónde, "
              "cuándo, cómo, cuánto of por qué beginnen — en niemand mag hetzelfde "
              "vraagwoord twee keer gebruiken.",
@@ -950,6 +957,7 @@ U1_RETO_04 = {
                    "«¿cuántos años…?», «¿dónde…?» ni «¿qué lenguas…?».",
     "consigna_nl": "Achterhaal leeftijd, stad en talen van je partner zónder «¿cuántos "
                    "años…?», «¿dónde…?» of «¿qué lenguas…?» te gebruiken.",
+    "regla_es": "Las tres preguntas directas están prohibidas: tienes que rodearlas con una propuesta, una comparación o una suposición que el otro confirme.",
     "regla": "De drie rechtstreekse vragen zijn verboden. Je moet er dus omheen: met een "
              "voorstel, een vergelijking of een gok die je laat bevestigen.",
     "pasos": [
@@ -1000,6 +1008,7 @@ U1_RETO_05 = {
                    "solo la regla.",
     "consigna_nl": "Kies «el» of «la» en zeg WAAROM. Geen woordenboek helpt je hier — "
                    "alleen de regel.",
+    "regla_es": "Con cada palabra dices también qué regla usas. El artículo correcto con la regla equivocada cuenta como error: entonces has adivinado.",
     "regla": "Bij elk woord moet je de regel kiezen die je gebruikt. Het juiste lidwoord "
              "met de verkeerde regel telt als fout: dan had je geraden.",
     "pasos": [
@@ -1056,6 +1065,7 @@ U1_RETO_10 = {
                    "presentándolo a Lucía, que no entiende ni una palabra de neerlandés.",
     "consigna_nl": "Interview je partner in het Nederlands en neem één minuut Spaans op "
                    "waarin je hem voorstelt aan Lucía, die geen woord Nederlands verstaat.",
+    "regla_es": "No traduces, cuentas. Todo en tercera persona, y lo que no sepas decir, lo dejas fuera.",
     "regla": "Je vertaalt niet, je vertélt. Alles in de derde persoon, en je laat weg wat "
              "je niet kunt zeggen — een minuut die klopt is beter dan twee die vastlopen.",
     "pasos": [

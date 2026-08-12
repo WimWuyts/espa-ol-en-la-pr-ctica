@@ -13,6 +13,7 @@ import sys as _sys
 _sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
 import qr_print as QRP; QRP.fijar("C5", 6)
 import print_bloques as PB
+import apoyo as APO
 import lectura_data as LD
 import escucha_data as ED
 import retos_data as RD
@@ -298,7 +299,9 @@ def retos(ancla, titulo, intro_es, intro_nl):
 def pcard(t, body): return f'<div class="pcard"><div class="t">{t}</div>{body}</div>'
 
 def steun(niveau):
-    return (f'<div class="steun" style="margin-left:12.5mm">{niveau}</div>' if niveau else '')
+    # één plaats voor de hele cursus: apoyo.py maakt er «Apoyo (steun) · Marco
+    # (zinsframe): …» van, in het Spaans met het Nederlandse woord erbij
+    return APO.html(niveau)
 
 def sortcols(cols, height="short", eigen=True):
     n = len(cols)

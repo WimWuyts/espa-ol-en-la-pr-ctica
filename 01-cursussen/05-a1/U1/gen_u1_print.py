@@ -11,6 +11,7 @@ import cast_gen as C
 sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
 import qr_print as QRP; QRP.fijar("C5", 1)
 import print_bloques as PB
+import apoyo as APO
 import lectura_data as LD
 import escucha_data as ED
 import retos_data as RD
@@ -317,7 +318,9 @@ def retos(ancla, titulo, intro_es, intro_nl):
 def pcard(t, body): return f'<div class="pcard"><div class="t">{t}</div>{body}</div>'
 
 def steun(niveau):
-    return (f'<div class="steun" style="margin-left:12.5mm">{niveau}</div>' if niveau else '')
+    # één plaats voor de hele cursus: apoyo.py maakt er «Apoyo (steun) · Marco
+    # (zinsframe): …» van, in het Spaans met het Nederlandse woord erbij
+    return APO.html(niveau)
 
 def sortcols(cols, height="short", eigen=True):
     # cols = [(kop, sub)] → geruite sorteer/classificeer-schrijfkolommen (§14 antwoordruimte)
@@ -482,22 +485,34 @@ P(f'''
       <span><b>§0</b>Ponte al día</span><span><b>§1</b>Tus datos</span><span><b>§2</b>Ser + yo/tú</span><span><b>§3</b>-ar/-er/-ir</span><span><b>§4</b>Preguntar</span><span><b>Taller</b>Mayús./conect.</span><span><b>Cultura</b>Madrid</span><span><b>Tarea</b>Mi pasaporte</span><span><b>Repaso</b>Semáforo</span>
     </div>
   </div>
-  <div class="se" style="margin-top:8mm">Cómo trabajar esta unidad · leeswijzer</div>
+  <div class="se" style="margin-top:8mm">Cómo trabajar esta unidad <span class="gloss">leeswijzer</span></div>
   <div class="fams" style="margin-top:2mm">
     <div class="pcard"><div class="t" style="font-size:10.5pt">Las etiquetas de cada actividad</div>
       <div class="ej" style="margin-top:2mm"><span class="badge skill">👂 Escuchar</span> <span class="badge skill">🎙️ Hablar</span> <span class="badge skill">🔍 Analizar</span> <span class="badge">👤 Solo</span> <span class="badge">👥 En parejas</span> <span class="badge">± 5 min</span> <span class="stars">★★☆</span></div>
-      <div class="anchor gloss" style="margin-top:2mm">Elke oefening toont de <b>vaardigheid</b>, de <b>werkvorm</b>, de <b>tijd</b> en de <b>moeilijkheid</b>.</div></div>
+      <div class="anchor" style="margin-top:2mm">Cada actividad indica la <b>destreza</b>, la <b>forma de trabajo</b>,
+      el <b>tiempo</b> y la <b>dificultad</b>. <span class="gloss">vaardigheid · werkvorm · tijd · moeilijkheid</span></div></div>
     <div class="pcard"><div class="t" style="font-size:10.5pt">El apoyo baja poco a poco</div>
-      <div class="ej" style="margin-top:2mm"><span class="steun">Modelo</span> → <span class="steun">Banco</span> → <span class="steun">Marco</span> → <span class="steun">Pista</span> → <span class="steun">Sin ayuda</span></div>
-      <div class="anchor gloss" style="margin-top:2mm">De <b>steun bouwt af</b>: van model naar zónder hulp. Zo produceer je écht zelf.</div></div>
+      <div class="ej" style="margin-top:2mm"><span class="steun">Modelo</span> → <span class="steun">Banco de palabras</span>
+      → <span class="steun">Marco</span> → <span class="steun">Primera letra</span> → <span class="steun">Sin ayuda</span></div>
+      <div class="anchor" style="margin-top:2mm">La ayuda baja escalón a escalón: primero un ejemplo, después una lista
+      de palabras, luego una frase para completar, después solo la primera letra, y al final nada.
+      <span class="gloss">De steun bouwt af: voorbeeld → woordenbank → zinsframe → eerste letter → zonder hulp.</span></div></div>
   </div>
   <div class="fams" style="margin-top:4mm">
     <div class="pcard"><div class="t" style="font-size:10.5pt">Dos capas de color</div>
-      <div class="ej" style="margin-top:2mm"><b>1 · groen</b> = de cursus/unit. <b>2 · función</b>: <span class="fx per">persoon</span> <span class="fx vb">werkwoord</span> <span class="fx ob">voorwerp</span> <span class="fx ti">tijd</span> <span class="fx pl">plaats</span> <span style="color:var(--red);font-weight:700">🔴 valstrik</span>.</div>
-      <div class="anchor gloss" style="margin-top:2mm">Kleur is <b>nooit</b> de enige drager — altijd óók label of vorm.</div></div>
+      <div class="ej" style="margin-top:2mm"><b>1 · verde</b> = el curso. <b>2 · la función</b>:
+      <span class="fx per">persona</span> <span class="fx vb">verbo</span> <span class="fx ob">objeto</span>
+      <span class="fx ti">tiempo</span> <span class="fx pl">lugar</span>
+      <span style="color:var(--red);font-weight:700">🔴 trampa</span>.
+      <span class="gloss">persoon · werkwoord · voorwerp · tijd · plaats · valstrik</span></div>
+      <div class="anchor" style="margin-top:2mm">El color nunca va solo: siempre hay también una etiqueta o una forma.
+      <span class="gloss">Kleur is nooit de enige drager.</span></div></div>
     <div class="pcard"><div class="t" style="font-size:10.5pt">Papel + pantalla</div>
-      <div class="ej" style="margin-top:2mm">📄 el libro · 🎮 la <b>página digital</b> (20 spellen, audio, flip cards) · 📊 el PowerPoint. De <b>QR</b>-codes brengen je naar de juiste online-oefening.</div>
-      <div class="anchor gloss" style="margin-top:2mm">Print werkt <b>volledig zonder</b> scherm; het <b>repaso</b> staat online.</div></div>
+      <div class="ej" style="margin-top:2mm">📄 el libro · 🎮 la <b>página digital</b> (20 juegos, audio, flip cards)
+      · 📊 el PowerPoint. Los códigos <b>QR</b> te llevan al ejercicio online que toca.
+      <span class="gloss">De QR-codes brengen je naar de juiste online-oefening.</span></div>
+      <div class="anchor" style="margin-top:2mm">El libro funciona <b>sin pantalla</b>; el <b>repaso</b> completo está
+      en la página digital. <span class="gloss">Print werkt volledig zonder scherm; het repaso staat online.</span></div></div>
   </div>
 </div>
 ''')
@@ -508,42 +523,53 @@ P('<span class="num">0</span><span class="pk">§0 · ¡Ponte al día!</span>')
 P('<div class="intro"><b>ES:</b> Antes de empezar, recordamos lo que ya sabes de la Unidad 0 y que necesitas hoy: <b>saludar</b>, <b>deletrear</b> y los <b>números</b>. <span class="gloss">Voor we starten: kort ophalen — groeten, spellen en getallen.</span></div>')
 P(lpd(("7","woordenschat inzetten"), ("9","strategieën / lengua de clase")))
 P('</div>')
-P('<p style="font-size:9.6pt">① <b>¿Qué tienes ya en la mochila?</b> Drie clusters uit U0 die je vandaag inzet. <span class="gloss">Wat zit er al in je rugzak?</span></p>')
+P('<p style="font-size:9.6pt">① <b>¿Qué tienes ya en la mochila?</b> '
+  '<span class="gloss">wat zit er al in je rugzak?</span></p>')
 P(clusters([
-  ("👋","Saludar",["¡Hola! · Adiós","Buenos días","¿Qué tal? · Encantado/-a"],"Groeten & kennismaken."),
-  ("🔤","Deletrear",["¿Cómo se escribe?","con/sin hache · @ (arroba)","mayúscula · minúscula"],"Naam & e-mail spellen."),
-  ("🔢","Números 0–100",["catorce · quince · dieciséis","veintiuno · treinta","cuarenta y cinco"],"Voor leeftijd & telefoon."),
+  ("👋","Saludar",["¡Hola! · Adiós","Buenos días","¿Qué tal? · Encantado/-a"],"Saludar y conocerse. <span class='gloss'>groeten &amp; kennismaken</span>"),
+  ("🔤","Deletrear",["¿Cómo se escribe?","con/sin hache · @ (arroba)","mayúscula · minúscula"],"Deletrear tu nombre y tu correo. <span class='gloss'>naam &amp; e-mail spellen</span>"),
+  ("🔢","Números 0–100",["catorce · quince · dieciséis","veintiuno · treinta","cuarenta y cinco"],"Para la edad y el teléfono. <span class='gloss'>voor leeftijd &amp; telefoon</span>"),
 ]))
 P(actx(1, "Calentamiento: salúdate y deletrea",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 4 min"},{"t":"★☆☆"}],
-  '<p>Zeg <b>¡Hola!</b> + je naam en spel je voornaam. Je buur schrijft ze. Wissel.</p>'
+  '<p>Saluda con <b>¡Hola!</b>, di tu nombre y deletréalo. Tu compañero/a lo escribe. Después cambiad. '
+  '<span class="gloss">Groet, zeg je naam en spel je voornaam; je buur schrijft ze op. Wissel daarna.</span></p>'
   '<p style="margin-left:12.5mm">Mi nombre: <span class="wl lg"></span> &nbsp; Mi compañero/a: <span class="wl lg"></span></p>', apoyo="Modelo"))
 P(actx(2, "Los números que necesito hoy",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★☆☆"}],
-  '<p>Schrijf het getal voluit in letters.</p>'
-  '<table class="mp"><thead><tr><th>Cifra</th><th>En letras</th><th>Cifra</th><th>En letras</th></tr></thead>'
-  '<tbody><tr><td>14</td><td><span class="wl md"></span></td><td>30</td><td><span class="wl md"></span></td></tr>'
-  '<tr><td>16</td><td><span class="wl md"></span></td><td>21</td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Pista: 16–29 = één woord"))
+  '<p>Lee el número en español y escribe la cifra. '
+  '<span class="gloss">Lees het Spaanse getal en schrijf het cijfer.</span></p>'
+  '<table class="mp"><thead><tr><th>En letras</th><th>Cifra</th><th>En letras</th><th>Cifra</th></tr></thead>'
+  '<tbody><tr><td>catorce</td><td><span class="wl sm"></span></td><td>treinta</td><td><span class="wl sm"></span></td></tr>'
+  '<tr><td>dieciséis</td><td><span class="wl sm"></span></td><td>veintiuno</td><td><span class="wl sm"></span></td></tr>'
+  '<tr><td>cuarenta y cinco</td><td><span class="wl sm"></span></td><td>noventa y nueve</td><td><span class="wl sm"></span></td></tr></tbody></table>',
+  apoyo="Pista: 16–29 = één woord"))
 P(actx(3, "Empareja la frase de clase con su función",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Verbind de klaszin met zijn functie (schrijf de letter).</p>'
+  '<p>Une cada frase de clase con su función: escribe la letra. '
+  '<span class="gloss">Verbind de klaszin met zijn functie; schrijf de letter.</span></p>'
   '<table class="mp"><thead><tr><th>Frase</th><th></th><th>Función</th></tr></thead><tbody>'
-  '<tr><td>1 · ¿Cómo se dice…?</td><td><span class="wl sm"></span></td><td>A · niet begrepen</td></tr>'
-  '<tr><td>2 · ¿Puedes repetir?</td><td><span class="wl sm"></span></td><td>B · hoe zeg je…?</td></tr>'
-  '<tr><td>3 · No entiendo.</td><td><span class="wl sm"></span></td><td>C · herhaal a.u.b.</td></tr></tbody></table>', apoyo="Banco de palabras"))
+  '<tr><td>1 · ¿Cómo se dice…?</td><td><span class="wl sm"></span></td><td>A · no lo entiendo</td></tr>'
+  '<tr><td>2 · ¿Puedes repetir?</td><td><span class="wl sm"></span></td><td>B · cómo se dice</td></tr>'
+  '<tr><td>3 · No entiendo.</td><td><span class="wl sm"></span></td><td>C · repite, por favor</td></tr></tbody></table>', apoyo="Banco de palabras"))
 P(actx(4, "Deletrea tu correo",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Spel je (fictieve) e-mailadres letter per letter; je buur schrijft. Gebruik <b>arroba (@)</b>, <b>punto</b>, <b>guion</b>.</p>'
-  '<p style="margin-left:12.5mm">Correo van mijn buur: <span class="wl lg"></span></p>', apoyo="Marco: arroba/punto"))
+  '<p>Deletrea tu correo (puede ser inventado) letra por letra; tu compañero/a lo escribe. '
+  'Usa <b>arroba (@)</b>, <b>punto</b> y <b>guion</b>. '
+  '<span class="gloss">Spel je (verzonnen) e-mailadres letter per letter; je buur schrijft mee.</span></p>'
+  '<p style="margin-left:12.5mm">El correo de mi compañero/a: <span class="wl lg"></span></p>', apoyo="Marco: arroba/punto"))
 P(actx(5, "Números en contexto",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Schrijf het getal voluit in letters.</p>'
+  '<p>Escribe el número con letras. '
+  '<span class="gloss">Schrijf het getal voluit in letters.</span></p>'
   '<p style="margin-left:12.5mm">Tengo <b>15</b> años → <span class="wl md"></span><br>Mi número es <b>0470 22 13</b> → <span class="wl full"></span></p>', apoyo="Pista"))
 P(actx(6, "Ordena el saludo",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Zet de mini-dialoog in de juiste volgorde (1–4).</p>'
+  '<p>Ordena el mini-diálogo (1–4). '
+  '<span class="gloss">Zet de mini-dialoog in de juiste volgorde.</span></p>'
   '<p style="margin-left:12.5mm">___ Encantada. &nbsp; ___ ¡Hola! ¿Qué tal? &nbsp; ___ Muy bien, ¿y tú? &nbsp; ___ Bien. Me llamo Ana.</p>', apoyo="Banco de palabras"))
-P('<div class="route-note">🎮 <b>Repasa jugando (online):</b> números, saludos en spellen met zelfcorrectie op de digitale pagina.</div>')
+P('<div class="route-note">🎮 <b>Repasa jugando</b> en la página digital: números, saludos y deletreo, '
+  'con corrección automática. <span class="gloss">Online herhalen met zelfcorrectie.</span></div>')
 P('</div>')  # close page
 
 # ================= §1 · TUS DATOS PERSONALES =================
@@ -555,7 +581,7 @@ P(lpd(("7","woordenschat: datos personales"), ("2","relevante info in een ficha"
 P('</div>')
 # §1.1 — situatie (gelabelde ficha) + organiseren (cluster + collocatie)
 P('<h3 style="margin-top:6mm">§1.1 · La situación — la ficha de Lucía</h3>')
-P('<p style="font-size:9.6pt">① <b>Contexto.</b> Lucía llega a un intercambio y rellena su ficha. Léela y adivina las palabras <b>sin</b> mirar la traducción. <span class="gloss">Lees; raad de woorden zónder de kleine vertaling (verborgen vertaling).</span></p>')
+P('<p style="font-size:9.6pt">① <b>Contexto.</b> Lucía llega a un intercambio y rellena su ficha. Léela y adivina las palabras <b>sin</b> mirar la traducción. <span class="gloss">Lees de fiche en raad de woorden, zónder naar de kleine vertaling te kijken.</span></p>')
 P('<div class="fichacard">'
   '<div><div class="row"><span class="k">el nombre</span><span class="v">Lucía <span class="nl">voornaam</span></span></div>'
   '<div class="row"><span class="k">el apellido</span><span class="v">Ramírez García <span class="nl">achternaam (×2!)</span></span></div>'
@@ -565,17 +591,23 @@ P('<div class="fichacard">'
   '<div class="row"><span class="k">la ciudad</span><span class="v">Sevilla <span class="nl">stad</span></span></div>'
   '<div class="row"><span class="k">los idiomas</span><span class="v">español, inglés <span class="nl">talen</span></span></div>'
   '<div class="row"><span class="k">el correo</span><span class="v">lucia@mail.com <span class="nl">e-mail</span></span></div></div></div>')
-P('<p style="font-size:9.6pt">② <b>Organiza.</b> Dezelfde woorden als <b>netwerk</b>, niet als lijst — drie clusters:</p>')
+P('<p style="font-size:9.6pt">② <b>Organiza.</b> Las mismas palabras en <b>tres grupos</b>, no en una lista. '
+  '<span class="gloss">Dezelfde woorden geordend in drie clusters — zo onthoud je ze beter.</span></p>')
 P(clusters([
-  ("🪪","Identidad",["el nombre","el apellido","la edad"],"Wie je bent."),
-  ("🌍","Origen",["el país · la nacionalidad","la ciudad","los idiomas"],"Waar je vandaan komt."),
-  ("✉️","Contacto",["la dirección","el correo","el teléfono"],"Hoe men je bereikt."),
+  ("🪪","Identidad",["el nombre","el apellido","la edad"],"Quién eres. <span class='gloss'>wie je bent</span>"),
+  ("🌍","Origen",["el país · la nacionalidad","la ciudad","los idiomas"],"De dónde eres. <span class='gloss'>waar je vandaan komt</span>"),
+  ("✉️","Contacto",["la dirección","el correo","el teléfono"],"Cómo te encuentran. <span class='gloss'>hoe men je bereikt</span>"),
 ]))
-P('<p style="font-size:9.6pt">③ <b>Colocaciones.</b> Welke werkwoorden horen bij de datos? Leer ze <b>samen</b> (niet los):</p>')
-P(colloc("presentarse", ["me llamo + naam","soy de + land","soy + nationaliteit","tengo + años","vivo en + stad","hablo + taal"]))
+P('<p style="font-size:9.6pt">③ <b>Colocaciones.</b> Cada dato viaja con su verbo. Lee las seis parejas en voz '
+  'alta y subraya las dos que ya sabes usar. '
+  '<span class="gloss">Elk gegeven hoort bij een vast werkwoord. Lees de zes combinaties hardop en onderstreep '
+  'de twee die je al kunt gebruiken — leer ze als één geheel, niet los.</span></p>')
+P(colloc("presentarse", ["me llamo + nombre","soy de + país","soy + nacionalidad",
+                         "tengo + años","vivo en + ciudad","hablo + idioma"]))
 P(actx(1, "Empareja el dato con el ejemplo",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★☆☆"}],
-  '<p>Verbind het gegeven met het juiste voorbeeld (schrijf de letter).</p>'
+  '<p>Une cada dato con su ejemplo: escribe la letra. '
+  '<span class="gloss">Verbind het gegeven met het juiste voorbeeld; schrijf de letter.</span></p>'
   '<table class="mp"><thead><tr><th>Dato</th><th>Letra</th><th></th><th>Ejemplo</th></tr></thead><tbody>'
   '<tr><td>1 · el apellido</td><td><span class="wl sm"></span></td><td>A</td><td>16 años</td></tr>'
   '<tr><td>2 · la edad</td><td><span class="wl sm"></span></td><td>B</td><td>española</td></tr>'
@@ -584,25 +616,30 @@ P(actx(1, "Empareja el dato con el ejemplo",
   '<tr><td>5 · la ciudad</td><td><span class="wl sm"></span></td><td>E</td><td>Sevilla</td></tr></tbody></table>', apoyo="Modelo: ficha zichtbaar"))
 P(actx(2, "Clasifica en la red",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Zet elk woord in de juiste kolom. <span class="words"><b>apellido · país · correo · edad · ciudad · teléfono · nacionalidad · dirección</b></span></p>'
+  '<p>Escribe cada palabra en la columna que le toca. '
+  '<span class="gloss">Zet elk woord in de juiste kolom.</span>'
+  '<span class="words"><b>apellido · país · correo · edad · ciudad · teléfono · nacionalidad · dirección</b></span></p>'
   + sortcols([("Identidad",""),("Origen",""),("Contacto","")]), apoyo="Banco de palabras"))
 P(actx(3, "El intruso",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Streep het woord door dat er niet bij hoort en leg uit waarom.</p>'
-  '<p style="margin-left:12.5mm">a) nombre · apellido · <b>español</b> · edad → <span class="wl md"></span><br>'
+  '<p>Tacha la palabra que no encaja y escribe por qué. '
+  '<span class="gloss">Streep het woord door dat er niet bij hoort en schrijf waarom.</span></p>'
+  '<p style="margin-left:12.5mm">a) nombre · apellido · español · edad → <span class="wl md"></span><br>'
   'b) España · México · Sevilla · Perú → <span class="wl md"></span><br>'
-  'c) correo · teléfono · dirección · <b>idioma</b> → <span class="wl md"></span></p>', apoyo="Pista"))
+  'c) correo · teléfono · dirección · idioma → <span class="wl md"></span></p>', apoyo="Pista"))
 P('</div>')  # page §1.1a
 
 # §1.1b — afbouwen tot productie + Mis palabras
 P('<div class="page">')
 P(actx(4, "Completa las palabras",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Vul de ontbrekende letters aan. Vijf woorden.</p>'
+  '<p>Completa las letras que faltan. Son cinco palabras. '
+  '<span class="gloss">Vul de ontbrekende letters aan — vijf woorden.</span></p>'
   '<p style="margin-left:12.5mm">na__ona__dad · ap__l__do · di__ec__ión · i__ioma · c__rr__o<br><span class="wl full"></span></p>', apoyo="Pista: aantal letters"))
 P(actx(5, "Rellena tu ficha",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 6 min"},{"t":"★★☆"}],
-  '<p>Vul je eigen ficha in — echt of verzonnen. Je gebruikt ze in de eindtaak.</p>'
+  '<p>Rellena tu propia ficha: datos reales o inventados. La vas a usar en la tarea final. '
+  '<span class="gloss">Vul je eigen fiche in, echt of verzonnen; je gebruikt ze bij de eindtaak.</span></p>'
   '<div class="fichacard"><div>'
   '<div class="row"><span class="k">Nombre</span><span class="v"><span class="wl md"></span></span></div>'
   '<div class="row"><span class="k">Apellido</span><span class="v"><span class="wl md"></span></span></div>'
@@ -612,7 +649,7 @@ P(actx(5, "Rellena tu ficha",
   '<div class="row"><span class="k">Ciudad</span><span class="v"><span class="wl md"></span></span></div>'
   '<div class="row"><span class="k">Idiomas</span><span class="v"><span class="wl md"></span></span></div>'
   '<div class="row"><span class="k">Correo</span><span class="v"><span class="wl md"></span></span></div></div></div>', apoyo="Marco: labels gegeven"))
-P(audiorow('<div class="ic">🎧</div><div><b>Escucha a cuatro personas y anota el dato que falta.</b> <span class="gloss">Luister; noteer per persoon país of edad — selectief luisteren.</span></div>',
+P(audiorow('<div class="ic">🎧</div><div><b>Escucha a cuatro personas y anota el dato que falta.</b> <span class="gloss">Luister naar vier personen en noteer telkens het gegeven dat ontbreekt.</span></div>',
            qr("Escanea y escucha", "Audio 1.1 · Datos · 0:55", seed=11)))
 P(mispal("Mis palabras de la ficha", 3))
 P('</div>')  # page §1.1b
@@ -621,45 +658,61 @@ P('</div>')  # page §1.1b
 P('<div class="page">')
 P('<div class="divider">Presentarse · §1.2</div>')
 P('<h3>§1.2 · Presentarse — observa el patrón</h3>')
-P('<p style="font-size:9.6pt">① <b>Contexto.</b> Lucía te escribe por chat. Observa cómo se presenta ella y cómo respondes tú. <span class="gloss">Elke kleur = een taalfunctie.</span></p>')
+P('<p style="font-size:9.6pt">① <b>Contexto.</b> Lucía te escribe por chat. Observa cómo se presenta ella y cómo respondes tú. <span class="gloss">Kijk hoe zij zich voorstelt en hoe jij antwoordt; elke kleur is een taalfunctie.</span></p>')
 P('<div class="chat">'
   '<div class="chatline you"><div class="bub">¡Hola! ¿Quién eres?</div><div class="who">Lucía</div></div>'
   '<div class="chatline me"><div class="bub"><span class="fx per">Yo</span> <span class="fx vb">me llamo</span> Leo. <span class="fx vb">Soy</span> <span class="fx pl">de Bélgica</span> y <span class="fx vb">tengo</span> <span class="fx ti">15 años</span>.</div><div class="who">Tú</div></div>'
   '<div class="chatline you"><div class="bub">¿Y dónde vives?</div><div class="who">Lucía</div></div>'
   '<div class="chatline me"><div class="bub"><span class="fx vb">Vivo</span> <span class="fx pl">en Gante</span> y <span class="fx vb">hablo</span> neerlandés y español.</div><div class="who">Tú</div></div></div>')
-P('<p style="font-size:9.6pt">② <b>El patrón como bloques.</b> Bouw je eigen voorstelling: kies één blok uit elke rij.</p>')
+P('<p style="font-size:9.6pt">② <b>El patrón como bloques.</b> Cada frase se monta con tres bloques: '
+  '<b>persona + verbo + dato</b>. Completa el tercer bloque de las cuatro filas con <b>tus</b> datos y '
+  'lee las cuatro frases en voz alta. '
+  '<span class="gloss">Elke zin bestaat uit drie blokken: persoon + werkwoord + gegeven. Vul in de vier rijen '
+  'het derde blok in met jouw gegevens en lees de vier zinnen hardop.</span></p>')
 P(blocks([
-  [("per","Yo"),("vb","me llamo"),("ob","…naam")],
-  [("per","Yo"),("vb","soy de"),("pl","…land")],
-  [("per","Yo"),("vb","tengo"),("ti","…años")],
-  [("per","Yo"),("vb","vivo en"),("pl","…stad")],
+  [("per","Yo"),("vb","me llamo"),("ob","… (nombre)")],
+  [("per","Yo"),("vb","soy de"),("pl","… (país)")],
+  [("per","Yo"),("vb","tengo"),("ti","… años")],
+  [("per","Yo"),("vb","vivo en"),("pl","… (ciudad)")],
 ]))
-P('<p style="font-size:9.6pt">③ <b>Radiografía.</b> Elk deel heeft een functie:</p>')
+P('<p style="font-size:9.6pt">③ <b>Por dentro de la frase.</b> Mira la frase de abajo: debajo de cada parte '
+  'está escrito qué hace. Después señala esas mismas partes en <b>tu</b> frase del bloque ②. '
+  '<span class="gloss">Onder elk stuk van de zin staat wat het doet. Duid daarna dezelfde stukken aan in '
+  'jouw eigen zin uit blok ②.</span></p>')
 P(xray('<span class="fx per">Yo</span> <span class="fx vb">soy</span> <span class="fx pl">de Bélgica</span> y <span class="fx vb">tengo</span> <span class="fx ti">15 años</span>.',
-       [("Yo","persoon"),("soy","ser"),("de Bélgica","afkomst"),("tengo","tener"),("15 años","leeftijd!")]))
+       [("Yo","la persona"),("soy","el verbo ser"),("de Bélgica","el origen"),
+        ("tengo","el verbo tener"),("15 años","la edad")]))
 P(regla("Regla · presentarse",
-  '<p><b>Me llamo</b> + naam · <b>Soy de</b> + land · <b>Soy</b> + nationaliteit · <b>Tengo</b> + getal + <b>años</b> · <b>Vivo en</b> + stad · <b>Hablo</b> + taal. '
-  '<br>🔴 <b>Leeftijd = tener</b>: <i>Tengo 15 años</i> (niet <span class="trap">soy 15</span>). 🔴 <b>Nationaliteit met kleine letter</b>: <i>belga, español</i>.</p>'))
+  '<p><b>Me llamo</b> + nombre · <b>Soy de</b> + país · <b>Soy</b> + nacionalidad · <b>Tengo</b> + número + '
+  '<b>años</b> · <b>Vivo en</b> + ciudad · <b>Hablo</b> + idioma. '
+  '<span class="gloss">naam · land · nationaliteit · leeftijd · stad · taal</span>'
+  '<br>🔴 <b>La edad va con tener</b>: <i>Tengo 15 años</i>, no <span class="trap">soy 15</span>. '
+  '🔴 <b>La nacionalidad va en minúscula</b>: <i>belga, español</i>. '
+  '<span class="gloss">Leeftijd met tener, nationaliteit met kleine letter.</span></p>'))
 P('</div>')  # page §1.2a
 
 # §1.2b — scaffold + oefeningen + tarea
 P('<div class="page">')
-P('<p style="font-size:9.6pt">④ <b>De la copia a lo tuyo — la escalera.</b> De steun bouwt zichtbaar af:</p>')
+P('<p style="font-size:9.6pt">④ <b>De la copia a lo tuyo.</b> Cuatro escalones: el primero te lo damos hecho, '
+  'en el último escribes tú solo/a. Haz los cuatro. '
+  '<span class="gloss">Vier trapjes: bovenaan krijg je alles, onderaan schrijf je het zelf. Doe ze alle vier.</span></p>')
 P(scaffold([
   ("Modelo","«Me llamo Leo, soy de Bélgica y tengo 15 años.»"),
   ("Marco","«Me llamo ___, soy de ___ y tengo ___ años.»"),
   ("Clave","yo · llamarse · país · años"),
-  ("Solo","Escribe quién eres."),
+  ("Solo","Escribe quién eres, sin ayuda."),
 ]))
 P(actx(6, "Construye con la tabla de sustitución",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Combineer een correcte zin uit elke rij en schrijf ze op.</p>'
-  '<table class="mp"><thead><tr><th>Persona</th><th>Verbo</th><th>Aanvulling</th></tr></thead><tbody>'
+  '<p>Combina una palabra de cada columna y escribe tres frases correctas. '
+  '<span class="gloss">Combineer per zin één stuk uit elke kolom; schrijf drie correcte zinnen.</span></p>'
+  '<table class="mp"><thead><tr><th>Persona</th><th>Verbo</th><th>Dato</th></tr></thead><tbody>'
   '<tr><td>(Yo)</td><td>me llamo / soy de / vivo en / tengo / hablo</td><td>Leo · Bélgica · Gante · 15 años · español</td></tr></tbody></table>'
   '<p style="margin-left:12.5mm">1) <span class="wl full"></span>2) <span class="wl full"></span>3) <span class="wl full"></span></p>', apoyo="Marco"))
 P(actx(7, "Cue → frase completa",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Maak van elke cue één volledige zin. Vier zinnen.</p>'
+  '<p>Escribe una frase completa con cada grupo de palabras. Son cuatro frases. '
+  '<span class="gloss">Maak van elk groepje één volledige zin — vier zinnen.</span></p>'
   '<table class="mp"><thead><tr><th>Cue</th><th>Frase</th></tr></thead><tbody>'
   '<tr><td>yo / llamarse / Sara</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td>yo / ser de / México</td><td><span class="wl lg"></span></td></tr>'
@@ -667,37 +720,46 @@ P(actx(7, "Cue → frase completa",
   '<tr><td>yo / vivir en / Madrid</td><td><span class="wl lg"></span></td></tr></tbody></table>', apoyo="Pista: werkwoord gegeven"))
 P(actx(8, "Preséntate en cinco frases",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 7 min"},{"t":"★★★"}],
-  '<p>Schrijf vijf ware zinnen over jezelf en zeg ze hardop.</p>'
+  '<p>Escribe cinco frases verdaderas sobre ti y dilas en voz alta. '
+  '<span class="gloss">Schrijf vijf ware zinnen over jezelf en zeg ze hardop.</span></p>'
   '<div class="wbox"></div>', apoyo="ronde 2 uit het hoofd"))
 P(tarea_com("Tarea comunicativa · «¿Quién de la clase…?»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 Toda la clase"},{"t":"± 10 min"},{"t":"★★★"}],
-  '<p><b>Situación:</b> jij interviewt klasgenoten om iemand te vinden per voorwaarde, en <b>rapporteert</b> in de 3e persoon. <span class="gloss">«¿Quién de la clase vive en una ciudad grande? ¿Quién tiene 15 años?»</span></p>'
+  '<p><b>Situación:</b> pregunta por la clase hasta encontrar a alguien para cada línea de la tabla. Apunta su nombre y escribe la nota en <b>tercera persona</b>: «Ana tiene 15 años». <span class="gloss">Vraag rond in de klas tot je voor elke regel iemand vindt; noteer de naam en schrijf de notitie in de derde persoon.</span></p>'
   '<table class="wtab mp"><thead><tr><th>¿Quién de la clase…?</th><th>Nombre</th><th>Nota (3ª pers.)</th></tr></thead><tbody>'
   '<tr><td>…tiene 15 años</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>…vive en una ciudad grande</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>…habla más de dos idiomas</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr></tbody></table>'
   '<p style="margin-left:12.5mm">Resultado (rapport): <span class="wl full"></span></p>'
   ''))
-P('<div class="route-note">🎮 <b>Juega online:</b> «Memoria de los datos», «país ↔ nacionalidad» en «¡Preséntate!» met zelfcorrectie.</div>')
+P('<div class="route-note">🎮 <b>Juega online:</b> «Memoria de los datos», «país ↔ nacionalidad» y «¡Preséntate!», '
+  'con corrección automática. <span class="gloss">Online spelletjes met zelfcorrectie.</span></div>')
 P('</div>')  # page §1.2b
 
 # ================= §2 · EL VERBO SER =================
 retos("datos", "§1.3 · Retos — tus datos, de verdad",
-      'Ya sabes decir quién eres. Ahora lo usas: <b>prestando</b> otra identidad, <b>contando</b> la clase entera y dejando que un <b>algoritmo</b> te empareje.',
-      'Je kunt al zeggen wie je bent. Nu ga je het gebruiken: door een andere identiteit te lenen, de hele klas te tellen, en je door een algoritme te laten koppelen.')
+      'Tres juegos con tus datos. En cada uno tienes <b>una tarea concreta</b>: presentarte como otra '
+      'persona, contar a toda la clase en números, o escribir un perfil sin nombre. Cada reto explica '
+      'debajo qué haces paso a paso y qué regla no puedes romper.',
+      'Drie spellen met je gegevens. Elk reto zegt hieronder stap voor stap wat je doet en welke regel je '
+      'niet mag breken.')
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">2</span><span class="pk">§2 · El verbo SER + los pronombres</span>')
-P('<div class="intro"><b>ES:</b> Para decir <b>quién eres</b> y <b>de dónde eres</b> usas <b>ser</b>. La ruta: contexto → observar → patrón → regla → practicar → comunicar. <span class="gloss">Om te zeggen wie je bent gebruik je «ser».</span></div>')
+P('<div class="intro"><b>ES:</b> Para decir <b>quién eres</b> y <b>de dónde eres</b> usas el verbo <b>ser</b>. <span class="gloss">Om te zeggen wie je bent en waar je vandaan komt, gebruik je «ser».</span></div>')
 P(lpd(("8","taalsysteem: ser + pronombres"), ("3","zich voorstellen"), ("4","interactie")))
 P('</div>')
 # §2.1 observar
 P('<h3 style="margin-top:6mm">§2.1 · Observa el verbo SER</h3>')
-P('<p style="font-size:9.6pt">① <b>Contexto (input flood).</b> Lee el chat y fíjate en la forma de <i>ser</i>.</p>')
+P('<p style="font-size:9.6pt">① <b>Contexto.</b> Lee el chat y fíjate en la forma de <i>ser</i>. '
+  '<span class="gloss">Lees de chat en let op de vorm van «ser».</span></p>')
 P(obsbox([
   '<span class="fx per">Yo</span> <span class="hl">soy</span> Lucía. ¿<span class="fx per">Tú</span> <span class="hl">eres</span> de Bélgica?',
   '<span class="fx per">Diego</span> <span class="hl">es</span> de México. <span class="fx per">Nosotros</span> <span class="hl">somos</span> de Flandes.',
   '¿<span class="fx per">Vosotros</span> <span class="hl">sois</span> estudiantes? Ellas <span class="hl">son</span> profesoras.',
-], vragen='<b>1)</b> Welk werkwoord komt telkens terug? <b>2)</b> Verandert de vorm per persoon? <b>3)</b> Welke vorm hoort bij <i>yo</i>?'))
+], vragen='<b>1)</b> ¿Qué verbo se repite? <b>2)</b> ¿Cambia la forma según la persona? '
+             '<b>3)</b> ¿Qué forma va con <i>yo</i>? '
+             '<span class="gloss">Welk werkwoord keert terug? Verandert de vorm per persoon? '
+             'Welke vorm hoort bij «yo»?</span>'))
 P('<p style="font-size:9.6pt">② <b>El patrón — persona ↔ forma.</b></p>')
 P('<table class="conj"><thead><tr><th>Persona</th><th>ser</th><th>Ejemplo</th></tr></thead><tbody>'
   '<tr><td class="p">yo</td><td class="v">soy</td><td>Soy Leo, soy belga.</td></tr>'
@@ -707,28 +769,38 @@ P('<table class="conj"><thead><tr><th>Persona</th><th>ser</th><th>Ejemplo</th></
   '<tr><td class="p">vosotros/-as</td><td class="v">sois</td><td>¿Sois estudiantes?</td></tr>'
   '<tr><td class="p">ellos/-as / ustedes</td><td class="v">son</td><td>Son de México.</td></tr></tbody></table>')
 P('<p style="font-size:9.6pt">③ <b>Forma · significado · uso.</b></p>')
-P(fmu('<b>soy · eres · es<br>somos · sois · son</b><br><span class="gloss">onregelmatig; yo → soy</span>',
-      'zeggen <b>wie</b> iemand is, <b>waar vandaan</b>, <b>nationaliteit</b>, een <b>eigenschap</b>',
+P(fmu('<b>soy · eres · es<br>somos · sois · son</b><br>'
+      '<span class="gloss">onregelmatig: elke persoon heeft een eigen vorm</span>',
+      'decir <b>quién</b> es alguien, <b>de dónde</b> es, su <b>nacionalidad</b> o cómo <b>es</b> '
+      '<span class="gloss">zeggen wie iemand is, waar hij vandaan komt, welke nationaliteit hij heeft '
+      'of hoe hij is</span>',
       '<i>Soy Leo. · Soy de Bélgica. · Soy belga. · Lucía es simpática.</i>'))
-P('<div class="truc"><b>🟡 Truc — tú vs. usted:</b> leeftijdsgenoot <b>tú eres</b>; beleefd/onbekende <b>usted es</b> (3e persoon!). España veel <i>tú</i>; delen van LatAm <i>usted</i>. Onderwerpwoord mag weg: <i>(Yo) soy Leo</i>.</div>')
+P('<div class="truc"><b>🟡 Ojo · tú o usted.</b> Con alguien de tu edad: <b>tú eres</b>. '
+  'Con una persona adulta que no conoces: <b>usted es</b> (¡tercera persona!). En España se usa mucho '
+  '<i>tú</i>; en partes de Latinoamérica, <i>usted</i>. El pronombre puede desaparecer: <i>(Yo) soy Leo</i>. '
+  '<span class="gloss">Leeftijdsgenoot: tú eres. Onbekende volwassene: usted es (derde persoon!). '
+  'Het onderwerpwoord mag weg.</span></div>')
 P('</div>')  # page §2.1
 # §2.1 práctica
 P('<div class="page">')
 P('<div class="divider">Practicar SER · §2.1</div>')
 P(actx(1, "Elige la forma de ser",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★☆☆"}],
-  '<p>Vul de juiste vorm van <b>ser</b> in.</p>'
+  '<p>Escribe la forma correcta de <b>ser</b>. '
+  '<span class="gloss">Vul de juiste vorm van «ser» in.</span></p>'
   '<p style="margin-left:12.5mm">a) Yo <span class="wl sm"></span> de Gante. &nbsp; b) ¿Tú <span class="wl sm"></span> español? &nbsp; c) Lucía <span class="wl sm"></span> de Sevilla.<br>'
   'd) Nosotros <span class="wl sm"></span> belgas. &nbsp; e) Diego y Nina <span class="wl sm"></span> de América. &nbsp; f) ¿Vosotros <span class="wl sm"></span> amigos?</p>', apoyo="Banco de palabras: tabel open"))
 P(actx(2, "Una cosa cambia",
   [{"t":"🔍 Analizar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Begin met <b>«Yo soy de Bélgica.»</b> en pas telkens <b>één</b> ding aan.</p>'
+  '<p>Parte de <b>«Yo soy de Bélgica.»</b> y cambia <b>una sola cosa</b> cada vez. Escribe la frase entera. '
+  '<span class="gloss">Vertrek van die zin en verander telkens één ding; schrijf de hele zin.</span></p>'
   '<p style="margin-left:12.5mm">→ maak <b>tú</b>: <span class="wl lg"></span><br>→ maak <b>nosotros</b>: <span class="wl lg"></span><br>→ maak <b>ella</b> + España: <span class="wl lg"></span></p>', apoyo="Pista"))
-P(audiorow('<div class="ic">🎧</div><div><b>Escucha seis frases con «ser» y marca la persona.</b> <span class="gloss">Kruis per zin aan over wie het gaat.</span></div>',
+P(audiorow('<div class="ic">🎧</div><div><b>Escucha seis frases con «ser» y marca la persona.</b> <span class="gloss">Luister naar zes zinnen met «ser» en kruis per zin aan over wie het gaat.</span></div>',
            qr("Escanea y escucha", "Audio 2.1 · Ser · 0:45", seed=21)))
 P(actx(3, "Escucha y marca la persona",
   [{"t":"👂 Escuchar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Kruis aan wélke persoon je hoort.</p>'
+  '<p>Marca con una cruz la persona que oyes. '
+  '<span class="gloss">Kruis aan welke persoon je hoort.</span></p>'
   '<table class="mp"><thead><tr><th>#</th><th>yo</th><th>tú</th><th>él/ella</th><th>nosotros</th><th>ellos</th></tr></thead><tbody>'
   '<tr><td>1</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>2</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr>'
@@ -738,26 +810,33 @@ P(actx(3, "Escucha y marca la persona",
   '<tr><td>6</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td><td>☐</td></tr></tbody></table>', apoyo="Modelo: tabel ser open"))
 P(actx(4, "Clínica de errores",
   [{"t":"🔍 Analizar","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★★"}],
-  '<p>Zoek de fout, verbeter, en leg uit <b>waarom</b> (het correcte model staat als laatste).</p>'
+  '<p>Busca el error, escribe la frase correcta y explica <b>por qué</b>. '
+  '<span class="gloss">Zoek de fout, verbeter de zin en leg uit waarom.</span></p>'
   '<p style="margin-left:12.5mm">1) <span class="trap">Soy 15 años.</span> → <span class="wl lg"></span><br>'
   '2) <span class="trap">Yo es de Bélgica.</span> → <span class="wl lg"></span><br>'
   '3) <span class="trap">Nosotros somos Español.</span> → <span class="wl lg"></span></p>', apoyo="MODELO-correctie"))
 P(tarea_com("Tarea comunicativa · Entrevista con marco",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
-  '<p>Interview je buur met <b>ser</b> (naam, afkomst, nationaliteit) en presenteer die persoon daarna in de 3e persoon. <span class="gloss">«Ella es Sara, es de Amberes, es belga.»</span></p>'
+  '<p>Entrevista a tu compañero/a con <b>ser</b>: nombre, origen y nacionalidad. Después preséntalo/la '
+  'a la clase en <b>tercera persona</b>: «Ella es Sara, es de Amberes, es belga.» '
+  '<span class="gloss">Interview je buur met «ser» en stel die persoon daarna voor in de derde persoon.</span></p>'
   '<p style="margin-left:12.5mm">Mi compañero/a: <span class="wl full"></span></p>'
   '<div class="steun" style="margin-left:12.5mm">Marco: ¿Cómo…? ¿De dónde…?</div>'))
 P(actx(5, "Preséntate con SER",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Schrijf drie ware zinnen over jezelf met <b>ser</b> (identiteit · afkomst · nationaliteit).</p>'
+'<p>Escribe tres frases verdaderas sobre ti con <b>ser</b>: quién eres, de dónde eres y tu nacionalidad. <span class="gloss">Drie ware zinnen over jezelf met «ser»: identiteit, afkomst, nationaliteit.</span></p>'
   '<p style="margin-left:12.5mm"><span class="wl full"></span><span class="wl full"></span><span class="wl full"></span></p>', apoyo="Marco"))
 P('<div class="route-note">🎮 <b>Juega online:</b> «El verbo SER» (welke persoon?) en «Presente Tetris».</div>')
 P('</div>')  # page §2.1 práctica
 
 # ================= §3 · EL PRESENTE REGULAR =================
 retos("ser", "§2.3 · Retos — ser bajo presión",
-      'Dos retos donde <b>ser</b> decide: uno para encontrar a alguien, otro para cazar errores ajenos — con castigo si te equivocas.',
-      'Twee retos waarin ser beslist: één om iemand te vinden, één om andermans fouten te vangen — met straf als je ernaast zit.')
+      'Dos juegos con el verbo <b>ser</b>. En el primero buscas, preguntando, al pasajero que tiene tus '
+      'mismos datos. En el segundo cazas los errores de otro equipo, pero una acusación falsa te cuesta '
+      'una vida. Los pasos están debajo de cada reto.',
+      'Twee spellen met «ser»: in het eerste zoek je al vragend de passagier met jouw gegevens, in het '
+      'tweede jaag je op de fouten van een ander team — maar een valse beschuldiging kost je een leven. '
+      'De stappen staan onder elk reto.')
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">3</span><span class="pk">§3 · El presente regular (-ar · -er · -ir)</span>')
 P('<div class="intro"><b>ES:</b> Casi todos los verbos siguen un <b>patrón</b>. Descúbrelo como una <b>máquina</b>: quita la terminación del infinitivo y añade la nueva. <span class="gloss">Ontdek het patroon als een machine.</span></div>')
@@ -791,11 +870,13 @@ P('<div class="page">')
 P('<div class="divider">Usar el presente · §3.2</div>')
 P(actx(1, "Ordena por familia",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Sorteer de infinitieven per klasse. <span class="words"><b>hablar · comer · vivir · estudiar · aprender · escribir · trabajar · beber · abrir</b></span></p>'
+  '<p>Clasifica los infinitivos según su terminación: -ar, -er o -ir. '
+  '<span class="gloss">Sorteer de infinitieven volgens hun uitgang.</span>'
+  '<span class="words"><b>hablar · comer · vivir · estudiar · aprender · escribir · trabajar · beber · abrir</b></span></p>'
   + sortcols([("-ar",""),("-er",""),("-ir","")]), apoyo="Banco de palabras"))
 P(actx(2, "Conjuga en presente",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Vervoeg de vier werkwoorden in het presente voor yo, tú en nosotros.</p>'
+'<p>Conjuga los cuatro verbos en presente para <i>yo</i>, <i>tú</i> y <i>nosotros</i>. <span class="gloss">Vervoeg de vier werkwoorden in de tegenwoordige tijd voor yo, tú en nosotros.</span></p>'
   '<table class="mp"><thead><tr><th>Infinitivo</th><th>yo</th><th>tú</th><th>nosotros</th></tr></thead><tbody>'
   '<tr><td>hablar</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>aprender</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
@@ -803,7 +884,7 @@ P(actx(2, "Conjuga en presente",
   '<tr><td>estudiar</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr></tbody></table>', apoyo="Modelo"))
 P(actx(3, "Completa con la forma correcta",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 6 min"},{"t":"★★☆"}],
-  '<p>Vul de <b>juiste werkwoordsvorm</b> in. Het infinitief staat tussen haakjes. </p>'
+'<p>Escribe la <b>forma correcta</b> del verbo. El infinitivo está entre paréntesis. <span class="gloss">Vul de juiste werkwoordsvorm in; het infinitief staat tussen haakjes.</span></p>'
   '<p style="margin-left:12.5mm">1. Yo <span class="wl md"></span> <i>(ser)</i> de Bélgica y <span class="wl md"></span> <i>(hablar)</i> neerlandés.<br>'
   '2. Lucía <span class="wl md"></span> <i>(ser)</i> española y <span class="wl md"></span> <i>(vivir)</i> en Sevilla.<br>'
   '3. ¿Tú <span class="wl md"></span> <i>(estudiar)</i> español? — Sí, <span class="wl md"></span> <i>(aprender)</i> mucho.<br>'
@@ -813,7 +894,7 @@ P(actx(3, "Completa con la forma correcta",
   '<p style="margin-left:12.5mm" class="gloss">✅ De oplossingen staan online (zelfcorrectie op de digitale pagina).</p>', apoyo="Pista: infinitief gegeven"))
 P(actx(4, "Cadena de transformación",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
-  '<p>Begin met <b>«Yo hablo español.»</b> en voer elke opdracht uit (schrijf telkens de hele zin).</p>'
+  '<p>Parte de <b>«Yo hablo español.»</b> y haz cada cambio, escribiendo la frase entera. <span class="gloss">Vertrek van die zin, voer elke opdracht uit en schrijf telkens de hele zin.</span></p>'
   '<p style="margin-left:12.5mm">→ maak <b>ontkennend</b>: <span class="wl lg"></span><br>→ maak er een <b>vraag</b> van: <span class="wl lg"></span><br>→ verander onderwerp naar <b>nosotros</b>: <span class="wl lg"></span><br>→ voeg <b>«en el instituto»</b> toe: <span class="wl lg"></span></p>', apoyo="Pista"))
 P(actx(5, "Amplía la frase",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
@@ -823,7 +904,7 @@ P(audiorow('<div class="ic">🎧</div><div><b>Microdictado.</b> Escucha dos vece
            qr("Escanea y escucha", "Audio 3.2 · Microdictado · 0:40", seed=31)))
 P(actx(6, "Microdictado con reconstrucción",
   [{"t":"👂 Escuchar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 6 min"},{"t":"★★★"}],
-  '<p>Reconstrueer de drie zinnen die je hoort en maak daarna één <b>eigen</b> variant.</p>'
+'<p>Reconstruye las tres frases que oyes y escribe después una variante <b>tuya</b>. <span class="gloss">Reconstrueer de drie zinnen die je hoort en maak daarna één eigen variant.</span></p>'
   '<p style="margin-left:12.5mm">1) <span class="wl full"></span>2) <span class="wl full"></span>3) <span class="wl full"></span></p>'
   '<p style="margin-left:12.5mm">Mi variante: <span class="wl full"></span></p>', apoyo="eerste letter"))
 P(tarea_com("Tarea comunicativa · 4/3/2 «Un día en mi vida»",
@@ -833,18 +914,22 @@ P(tarea_com("Tarea comunicativa · 4/3/2 «Un día en mi vida»",
   '<div class="steun" style="margin-left:12.5mm">notas</div>'))
 P(actx(7, "Habla de tres personas",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
-  '<p>Schrijf per persoon één zin in het presente (hablar/estudiar/vivir/trabajar).</p>'
+'<p>Escribe una frase en presente por cada persona (hablar · estudiar · vivir · trabajar). <span class="gloss">Schrijf per persoon één zin in de tegenwoordige tijd.</span></p>'
   '<table class="mp"><thead><tr><th>Persona</th><th>Frase</th></tr></thead><tbody>'
   '<tr><td>yo</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td>mi amigo/a</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td>mis padres</td><td><span class="wl lg"></span></td></tr></tbody></table>', apoyo="Pista"))
-P('<div class="route-note">🔁 <b>Ojo — conjugador online:</b> alle vervoegingen (~1000 werkwoorden, nagerekend) in de aparte cursus-tool «Conjugador».</div>')
+P('<div class="route-note">🔁 <b>Ojo — el conjugador.</b> Todas las conjugaciones (unos 1000 verbos) están '
+  'en la herramienta «Conjugador» de la página digital. '
+  '<span class="gloss">Alle vervoegingen staan in de aparte cursus-tool «Conjugador».</span></div>')
 P('</div>')  # page §3.2
 
 # ================= §4 · PREGUNTAR + GÉNERO =================
 retos("presente", "§3.3 · Reto — el presente en la calle",
-      'Una plaza de Madrid, cuarenta años de diferencia, y todo en <b>presente</b>.',
-      'Eén plein in Madrid, veertig jaar verschil, en alles in het presente.')
+      'Comparas dos fotos de la misma plaza de Madrid, con cuarenta años de diferencia, y escribes cinco '
+      'frases en <b>presente</b> sobre lo que ves. Los pasos y la regla están debajo.',
+      'Je vergelijkt twee foto\'s van hetzelfde plein in Madrid, veertig jaar uit elkaar, en schrijft er vijf '
+      'zinnen over in het presente. De stappen en de regel staan eronder.')
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">4</span><span class="pk">§4 · Preguntar: interrogativos + el/la</span>')
 P('<div class="intro"><b>ES:</b> Ya sabes presentarte; ahora aprende a <b>preguntar</b> — y a poner el <b>artículo</b> correcto. <span class="gloss">Nu leer je vragen stellen en het juiste lidwoord kiezen.</span></div>')
@@ -877,7 +962,7 @@ P(actx(1, "Haz la pregunta",
   '<tr><td>Es nina@mail.com.</td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Pista"))
 P(actx(2, "Entrevista relámpago",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Stel je buur de vier vragen; noteer kort. Wissel.</p>'
+'<p>Hazle a tu compañero/a las cuatro preguntas y anota su respuesta en pocas palabras. Después cambiad. <span class="gloss">Stel je buur de vier vragen, noteer kort en wissel daarna van rol.</span></p>'
   '<table class="wtab mp"><thead><tr><th>¿Cómo?</th><th>¿De dónde?</th><th>¿Cuántos años?</th><th>¿Qué idiomas?</th></tr></thead><tbody>'
   '<tr><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr></tbody></table>', apoyo="Marco"))
 P('</div>')  # page §4.1
@@ -900,11 +985,13 @@ P('<div class="fams" style="margin-top:2mm"><div class="pcard">' + tree([
   '<div class="pcard"><div class="t" style="font-size:10pt">Onthoud</div><div class="ej">bepaald: <b>el/la · los/las</b><br>onbepaald: <b>un/una</b><br>🟡 leer elk woord <b>mét</b> lidwoord</div></div></div>')
 P(actx(3, "Clasifica el/la",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Zet elk woord in de juiste kolom: el of la. <span class="words"><b>ciudad · país · idioma · edad · correo · dirección · día · mano · nombre</b></span></p>'
+  '<p>Escribe cada palabra en su columna: <b>el</b> o <b>la</b>. '
+  '<span class="gloss">Zet elk woord in de juiste kolom.</span>'
+  '<span class="words"><b>ciudad · país · idioma · edad · correo · dirección · día · mano · nombre</b></span></p>'
   + sortcols([("el (m.)","-o, valstrik -a"),("la (f.)","-a, -ción, -dad")]), apoyo="Pista: valstrikken gemarkeerd"))
 P(actx(4, "Concordancia — singular ↔ plural",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Zet in het meervoud (lidwoord + woord).</p>'
+'<p>Pon en plural: artículo + palabra. <span class="gloss">Zet in het meervoud: lidwoord + woord.</span></p>'
   '<p style="margin-left:12.5mm">el país → <span class="wl md"></span> &nbsp; la ciudad → <span class="wl md"></span> &nbsp; el idioma → <span class="wl md"></span> &nbsp; la nacionalidad → <span class="wl md"></span></p>', apoyo="Modelo: los/las"))
 P(tarea_com("Tarea comunicativa · Tarjetas de rol",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 10 min"},{"t":"★★★"}],
@@ -914,15 +1001,19 @@ P(tarea_com("Tarea comunicativa · Tarjetas de rol",
   ''))
 P(actx(5, "Un/una — artículo indefinido",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p>Vul <b>un</b> of <b>una</b> in (eerste vermelding, onbekend).</p>'
+  '<p>Escribe <b>un</b> o <b>una</b>: es la primera vez que se nombra la cosa. <span class="gloss">Vul un of una in — het gaat om iets dat voor het eerst genoemd wordt.</span></p>'
   '<p style="margin-left:12.5mm">___ ciudad · ___ país · ___ idioma · ___ dirección · ___ nombre · ___ nacionalidad<br><span class="wl full"></span></p>', apoyo="Pista"))
-P('<div class="route-note">🎮 <b>Juega online:</b> «Palabras interrogativas», «Pregunta ↔ respuesta» en «El o la».</div>')
+P('<div class="route-note">🎮 <b>Juega online:</b> «Palabras interrogativas», «Pregunta ↔ respuesta» y «El o la». '
+  '<span class="gloss">Online spelletjes bij deze sectie.</span></div>')
 P('</div>')  # page §4.2
 
 # ================= §5 · LECTURA (leesvaardigheid) =================
 retos("preguntar", "§4.3 · Retos — preguntar de otra manera",
-      'Tres retos sobre la pregunta: una <b>rueda de prensa</b>, tres preguntas <b>prohibidas</b> y doce objetos que <b>no existen</b>.',
-      'Drie retos over de vraag: een persconferentie, drie verboden vragen en twaalf voorwerpen die niet bestaan.')
+      'Tres juegos para preguntar mejor: en una <b>rueda de prensa</b> cada periodista hace una pregunta '
+      'distinta; en el segundo consigues la misma información con tres preguntas <b>prohibidas</b>; en el '
+      'tercero decides el artículo (<b>el</b> o <b>la</b>) de doce objetos inventados y dices qué regla usas.',
+      'Drie spellen om beter te leren vragen: een persconferentie, dezelfde informatie halen zonder drie '
+      'verboden vragen, en het juiste lidwoord kiezen bij twaalf verzonnen voorwerpen — met de regel erbij.')
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">📖</span><span class="pk">§5 · Lectura 1 — «Dos perfiles»</span>')
 P('<div class="intro"><b>ES:</b> Vas a leer dos perfiles de una app de intercambio. Primero <b>predices</b>, después lees con un <b>objetivo</b>. <span class="gloss">Je leest twee profielen van een uitwisselings-app: eerst voorspellen, dan lezen met een doel.</span></div>')
@@ -932,7 +1023,8 @@ P('</div>')
 P('<div class="txtmeta"><span class="tm"><b>Tipo:</b> perfil (app)</span><span class="tm"><b>De:</b> Lucía · Diego</span><span class="tm"><b>Para:</b> un intercambio</span><span class="tm">🎯 conocer a alguien nuevo</span></div>')
 P(actx(1, "Antes de leer: predice",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 2 min"},{"t":"★☆☆"}],
-  '<p>Bekijk alleen de foto\'s en de vorm. Noteer drie gegevens die je verwacht te vinden.</p>'
+  '<p>Mira solo las fotos y la forma del texto. Escribe tres datos que esperas encontrar. '
+  '<span class="gloss">Bekijk alleen de foto\'s en de vorm; noteer drie gegevens die je verwacht.</span></p>'
   '<p style="margin-left:12.5mm">Espero encontrar: <span class="wl full"></span></p>', apoyo="Modelo: nombre, país, edad…"))
 # de teksten (parallelle perfiles) — de bewijszinnen staan gemarkeerd
 P('<div class="ptexts">'
@@ -948,14 +1040,14 @@ P('</div>')  # page §5a
 P('<div class="page">')
 P(actx(2, "Escanea: completa la tabla",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Zoek de gegevens in de perfiles.</p>'
+'<p>Busca los datos en los perfiles. <span class="gloss">Zoek de gegevens in de profielen.</span></p>'
   '<table class="mp"><thead><tr><th></th><th>País / ciudad</th><th>Edad</th><th>Idiomas</th><th>Le gusta…</th></tr></thead><tbody>'
   '<tr><td><b>Lucía</b></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td><b>Diego</b></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '</tbody></table>', apoyo="Modelo: de bewijszinnen staan gemarkeerd in de tekst"))
 P(actx(3, "¿Verdadero o falso? + prueba",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Waar of niet waar? Noteer de woorden uit de tekst die het bewijzen (evidencia).</p>'
+'<p>¿Verdadero o falso? Copia las palabras del texto que lo demuestran. <span class="gloss">Waar of niet waar? Schrijf de woorden uit de tekst die het bewijzen.</span></p>'
   '<table class="mp"><thead><tr><th>Afirmación</th><th>V/F</th><th>Prueba (palabras del texto)</th></tr></thead><tbody>'
   '<tr><td>Lucía tiene 16 años.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Diego es de España.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
@@ -964,7 +1056,8 @@ P(actx(3, "¿Verdadero o falso? + prueba",
   '</tbody></table>', apoyo="Pista: onderstreep in de tekst"))
 P(actx(4, "Del contexto: ¿qué significa?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p>Wat betekent <b>«Busco un amigo»</b> en <b>«¡Escríbeme!»</b>? Kies + leg uit welke aanwijzing hielp.</p>'
+  '<p>¿Qué significan <b>«Busco un amigo»</b> y <b>«¡Escríbeme!»</b>? Elige y explica qué pista te ha ayudado. '
+  '<span class="gloss">Wat betekenen die twee uitdrukkingen? Kies en leg uit welke aanwijzing je hielp.</span></p>'
   '<p style="margin-left:12.5mm">Busco = ☐ ik zoek ☐ ik vind &nbsp;·&nbsp; ¡Escríbeme! = ☐ bel me ☐ schrijf me<br>Pista que me ayudó: <span class="wl lg"></span></p>', apoyo="Pista"))
 # ③bis — leer una gráfica (infografía · mediación: lezen van data)
 P('<div class="infocard"><div class="it">📊 Infografía · ¿Qué idiomas estudian los jóvenes en Europa?</div>'
@@ -980,7 +1073,10 @@ P(actx(5, "Lee la gráfica y responde",
 # ③ productieve reactie (keten lezen→schrijven/spreken)
 P(tarea_com("Tarea comunicativa · Responde a un perfil",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
-  '<p><b></b> Kies één perfil en schrijf een <b>antwoordbericht</b> waarin je jezelf voorstelt (afzender = jij · ontvanger = Lucía/Diego · doel = kennismaken). Lees het daarna hardop voor.</p>'
+  '<p>Elige un perfil y escribe un <b>mensaje de respuesta</b> en el que te presentas: escribes tú, '
+  'a Lucía o a Diego, para conoceros. Después léelo en voz alta. '
+  '<span class="gloss">Kies één profiel en schrijf een antwoordbericht waarin je jezelf voorstelt; '
+  'lees het daarna hardop voor.</span></p>'
   '<div class="wbox"></div>'
   '<div class="steun" style="margin-left:0mm">Marco: Hola, me llamo… soy de… tengo… hablo…</div>'))
 P(mispal("Mis palabras del perfil — woorden die ik uit de teksten haal", 3))
@@ -999,7 +1095,7 @@ P(vpairs([("España 🔵 (land)","español (taal)"),("Bélgica (land)","belga (n
 P(regla("Regla · mayúsculas", '<p><b>Land/stad/naam = hoofdletter</b> · <b>nationaliteit/taal = kleine letter</b>. 🟡 <i>«el país grita, la nacionalidad susurra»</i> (het land roept, de nationaliteit fluistert).</p>'))
 P(actx(1, "Clínica de mayúsculas",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
-  '<p>Onderstreep de fout en herschrijf correct.</p>'
+'<p>Subraya el error y vuelve a escribir la frase bien. <span class="gloss">Onderstreep de fout en herschrijf de zin correct.</span></p>'
   '<p style="margin-left:12.5mm">1) <span class="trap">soy Español y vivo en bélgica</span> → <span class="wl lg"></span><br>'
   '2) <span class="trap">Ella habla Francés e Inglés</span> → <span class="wl lg"></span><br>'
   '3) <span class="trap">diego es de méxico, es Mexicano</span> → <span class="wl lg"></span></p>', apoyo="Modelo"))
@@ -1012,11 +1108,11 @@ P('<table class="mp"><thead><tr><th>Conector</th><th>Uso</th><th>Ejemplo</th></t
 P('<div class="truc"><b>🔴 Valstrik NL:</b> <i>want</i> én <i>omdat</i> = <b>porque</b> (één woord!). «dus» = <b>así que / por eso</b>, niet <i>luego</i>.</div>')
 P(actx(2, "Une con y / e / o / u / porque",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Vul het juiste verbindingswoord in.</p>'
+'<p>Escribe el conector que falta. <span class="gloss">Vul het juiste verbindingswoord in.</span></p>'
   '<p style="margin-left:12.5mm">a) Hablo neerlandés ___ inglés. &nbsp; b) ¿Tienes siete ___ ocho años? &nbsp; c) Estudio español ___ me gusta viajar. &nbsp; d) español ___ italiano.<br><span class="wl full"></span></p>', apoyo="Banco de palabras"))
 P(actx(3, "Amplía con un porqué",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Voeg aan elke zin een reden met <b>porque</b> toe.</p>'
+'<p>Añade a cada frase una razón con <b>porque</b>. <span class="gloss">Voeg aan elke zin een reden met «porque» toe.</span></p>'
   '<p style="margin-left:12.5mm">Aprendo español <span class="wl lg"></span><br>Vivo en mi ciudad <span class="wl lg"></span></p>', apoyo=""))
 P(actx(4, "Puntúa la frase",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
@@ -1025,7 +1121,7 @@ P(actx(4, "Puntúa la frase",
   '2) sara vive en madrid estudia español le gusta → <span class="wl full"></span></p>', apoyo="Modelo"))
 P(actx(5, "Escribe tu mini-perfil con conectores",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
-  '<p>Schrijf 3 zinnen over jezelf met <b>y</b>, <b>e</b> én <b>porque</b>, met correcte mayúsculas.</p>'
+'<p>Escribe tres frases sobre ti con <b>y</b>, <b>e</b> y <b>porque</b>, con las mayúsculas correctas. <span class="gloss">Schrijf drie zinnen over jezelf met y, e én porque, met correcte hoofdletters.</span></p>'
   '<div class="wbox sm"></div>', apoyo=""))
 P('<div class="route-note">🎮 <b>Practica online:</b> «Caza de mayúsculas» en de conectoren-oefeningen met zelfcorrectie.</div>')
 P('</div>')  # page Taller
@@ -1060,22 +1156,26 @@ P(vpairs([("tú (leeftijdsgenoot)","usted (beleefd)"),("¿Cómo estás?","¿Cóm
 P('<div class="truc"><b>🟡 Vooruitblik:</b> in <b>C6</b> ontmoet je Mateo uit Argentina met <b>vos</b> (nog een aanspreekvorm).</div>')
 P(actx(1, "Comprensión — verdadero o falso",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★☆☆"}],
-  '<p>Waar of niet waar? Verbeter de foute.</p>'
+'<p>¿Verdadero o falso? Corrige las frases falsas. <span class="gloss">Waar of niet waar? Verbeter de foute zinnen.</span></p>'
   '<table class="mp"><thead><tr><th>Afirmación</th><th>V/F</th><th>Corrección</th></tr></thead><tbody>'
   '<tr><td>En España se usa un solo apellido.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>«Usted» es más formal que «tú».</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Madrid es la capital de México.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Modelo: tekst boven"))
 P(actx(2, "Escribe y elige tú/usted",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★☆"}],
-  '<p>Bedenk 3 namen «à la hispana» (nombre + 2 apellidos) én kies per situatie <b>tú/usted</b> + de begroeting.</p>'
+  '<p>Inventa tres nombres «a la hispana» (nombre + dos apellidos) y elige para cada situación '
+  '<b>tú</b> o <b>usted</b> con su saludo. '
+  '<span class="gloss">Bedenk drie namen op zijn Spaans en kies per situatie tú of usted met de juiste groet.</span></p>'
   '<p style="margin-left:12.5mm">Nombres: <span class="wl full"></span></p>'
   '<p style="margin-left:12.5mm">a) een klasgenoot: <span class="wl md"></span> &nbsp; b) de directeur: <span class="wl md"></span> &nbsp; c) een oude mevrouw: <span class="wl md"></span></p>', apoyo="Pista"))
 P('</div>')  # page Cultura
 
 # ================= TAREA FINAL =================
 retos("cultura_u1", "Reto — hablar por otro",
-      'El último reto de la unidad no va de ti: va de <b>tu compañero/a</b>.',
-      'De laatste reto van de unit gaat niet over jou, maar over je partner.')
+      'El último reto no va de ti: presentas a <b>tu compañero/a</b> durante un minuto, en tercera persona, '
+      'con lo que has anotado en esta unidad.',
+      'De laatste reto gaat niet over jou: je stelt één minuut lang je partner voor, in de derde persoon, '
+      'met wat je in deze unit genoteerd hebt.')
 P('<div class="page"><div class="parada sec" style="border-top-color:var(--gd)">')
 P('<span class="num">✦</span><span class="pk" style="background:var(--gd)">Tarea final · Mi pasaporte</span>')
 P('<div class="intro"><b>ES:</b> Crea tu <b>pasaporte de La Ruta</b> y preséntate (identidad real o nueva). <span class="gloss">Maak je paspoort en stel je voor.</span></div>')
@@ -1165,17 +1265,20 @@ for key, titel in GRP:
 P('<div class="divider">Escalera de práctica · V.1–V.4</div>')
 P(actx("V.1", "Reconocer — ES → NL",
   [{"t":"🔍 Leer","skill":True},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Schrijf de vertaling. el apellido = <span class="wl md"></span> · la edad = <span class="wl md"></span> · el idioma = <span class="wl md"></span> · la dirección = <span class="wl md"></span></p>', apoyo="Modelo"))
+  '<p>Escribe la traducción. <span class="gloss">Schrijf de vertaling.</span> el apellido = <span class="wl md"></span> · la edad = <span class="wl md"></span> · el idioma = <span class="wl md"></span> · la dirección = <span class="wl md"></span></p>', apoyo="Modelo"))
 P(actx("V.2", "Distinguir — sorteer per thema",
   [{"t":"🔍 Analizar","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Sorteer: <span class="words"><b>correo · Perú · ¿Cuál? · nacionalidad · Chile · edad</b></span></p>'
+  '<p>Clasifica estas seis palabras. <span class="gloss">Sorteer deze zes woorden.</span>'
+  '<span class="words"><b>correo · Perú · ¿Cuál? · nacionalidad · Chile · edad</b></span></p>'
   + sortcols([("dato",""),("país",""),("interrogativo","")], eigen=False), apoyo="Banco de palabras"))
 P(actx("V.3", "Recordar — NL → ES (con letra)",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Vul het Spaanse woord aan (beginletter gegeven). het land = <b>p</b>___ · de stad = <b>c</b>___ · de taal = <b>i</b>___ · de nationaliteit = <b>n</b>___<br><span class="wl full"></span></p>', apoyo="Primera letra"))
+  '<p>Completa la palabra en español; tienes la primera letra. '
+  '<span class="gloss">Vul het Spaanse woord aan; de beginletter staat er.</span><br>het land = <b>p</b>___ · de stad = <b>c</b>___ · de taal = <b>i</b>___ · de nationaliteit = <b>n</b>___<br><span class="wl full"></span></p>', apoyo="Primera letra"))
 P(actx("V.4", "Producir — una frase con tres palabras",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★★"}],
-  '<p>Maak één correcte zin met <b>nombre · país · edad</b>.</p><div class="wbox sm"></div>', apoyo=""))
+  '<p>Escribe una frase correcta con <b>nombre · país · edad</b>. '
+  '<span class="gloss">Maak één correcte zin met die drie gegevens.</span></p><div class="wbox sm"></div>', apoyo=""))
 P(mispal("Mis palabras de la unidad", 3))
 P('<div class="guide"><div class="ic">🎴</div><div><span class="hand">Sigue en la página digital:</span> <span class="g">flip cards (ES↔NL), audio en de 20 spellen bouwen de steun verder af.</span></div></div>')
 P('</div>')  # page §V

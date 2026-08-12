@@ -1,17 +1,24 @@
 #!/usr/bin/env python3
-"""Zet de verwijzing boek → PowerPoint in elke hoofdsectie van elke unit.
+"""De verwijzing boek → PowerPoint — in het docentendossier, niet in het boek.
+
+DE VERWIJZING STOND OP DE VERKEERDE BLADZIJDE
+Ze stond onder elke sectiekop van de leerlingcursus: «En clase: diapositiva 6 —
+El verbo SER». De auteur streepte ze door bij het nalezen van C5 U1 en schreef
+erbij: «Weglaten» · «Moet dat in de leerlingencursus?». Nee: welk dianummer bij
+welke sectie hoort, is lesorganisatie — dat hoort bij de leerkracht, niet bij de
+leerling. CLAUDE.md §16 vraagt de kruisverwijzing wél, dus ze verdwijnt niet:
+ze verhuist naar `03-build/web/print/PUENTES_docente.md`.
 
 Waarom als nabewerking en niet in de zeventien generatoren: het dianummer komt
 uit het deck, en dat deck verandert (de reto-dia's kwamen er later bij). Door de
 brug ná de bouw te leggen, klopt hij altijd met het deck dat er op dat moment
 ligt — en één script vervangt zeventien keer handwerk.
 
-De brug komt onder de intro van de sectie te staan, in de bestaande
-`route-note`-stijl, zodat hij naast de al bestaande «oefen online»-verwijzing
-past. Secties waarvoor geen dia bestaat, krijgen niets: liever geen verwijzing
-dan een verwijzing naar een dia die er niet is.
+Secties waarvoor geen dia bestaat, krijgen niets: liever geen verwijzing dan een
+verwijzing naar een dia die er niet is.
 
-Herhaalbaar: bestaande bruggen worden vervangen, niet verdubbeld.
+Herhaalbaar: oude bruggen die nog in een gebouwde bladzijde staan, worden
+verwijderd.
 """
 import glob
 import os
@@ -64,9 +71,10 @@ def clave_de(titulo):
 
 
 def procesar(curso, unidad, ruta):
-    doc = open(ruta, encoding="utf-8").read()
+    original = open(ruta, encoding="utf-8").read()
     # oude bruggen eruit, zodat het script herhaalbaar is
-    doc = re.sub(re.escape(MARCA_INI) + r'<div class="route-note">.*?</div>', "", doc)
+    doc = re.sub(re.escape(MARCA_INI) + r'<div class="route-note">.*?</div>', "",
+                 original)
 
     puestos, saltados = [], []
 
@@ -86,26 +94,42 @@ def procesar(curso, unidad, ruta):
             return m.group(1)
         dtit = dict(PU.titulos(curso, unidad))[n].strip("«»")
         puestos.append((titulo, n, dtit))
-        return (m.group(1) + MARCA_INI +
-                '<div class="route-note">📊 <b>En clase:</b> diapositiva %d — «%s».</div>'
-                % (n, dtit))
+        # niets meer in de leerlingbladzijde; alleen noteren voor het dossier
+        return m.group(1)
 
     nuevo = SECCION.sub(sustituir, doc)
-    open(ruta, "w", encoding="utf-8").write(nuevo)
+    if nuevo != original:
+        open(ruta, "w", encoding="utf-8").write(nuevo)
     return puestos, saltados
+
+
+DOSSIER = os.path.join(ROOT, "03-build", "web", "print", "PUENTES_docente.md")
 
 
 def main():
     tot_p = tot_s = 0
+    md = ["# Boek ↔ PowerPoint — welke dia hoort bij welke sectie",
+          "",
+          "> Voor de leerkracht. In de leerlingcursus staat deze verwijzing niet:",
+          "> welk dianummer bij welke sectie hoort is lesorganisatie (auteur 2026-08-12).",
+          "> Wordt bij elke build herschreven, dus altijd gelijk aan het deck dat er nu ligt.",
+          ""]
     for curso, unidad, ruta in unidades():
         p, s = procesar(curso, unidad, ruta)
         tot_p += len(p); tot_s += len(s)
         print("%-4s U%d  %2d bruggen, %d secties zonder dia" % (curso, unidad, len(p), len(s)))
+        md.append("## %s · Unidad %d" % (curso, unidad))
+        md.append("")
+        md.append("| Sectie | Dia | Titel van de dia |")
+        md.append("|---|---|---|")
         for tit, n, dtit in p:
-            print("        %-42s → dia %2d  «%s»" % (tit[:42], n, dtit[:34]))
+            md.append("| %s | %d | %s |" % (tit, n, dtit))
         for tit in s:
-            print("      ! %-42s geen dia gevonden" % tit[:42])
-    print("\n%d bruggen gelegd, %d secties overgeslagen" % (tot_p, tot_s))
+            md.append("| %s | — | *geen dia gevonden* |" % tit)
+        md.append("")
+    open(DOSSIER, "w", encoding="utf-8").write("\n".join(md) + "\n")
+    print("\n%d bruggen in het docentendossier, %d secties zonder dia" % (tot_p, tot_s))
+    print("→ %s" % os.path.relpath(DOSSIER, ROOT))
 
 
 if __name__ == "__main__":

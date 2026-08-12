@@ -277,7 +277,9 @@ def divider(t): return f'<div class="divider">{t}</div>'
 def pcard(t, body): return f'<div class="pcard"><div class="t">{t}</div>{body}</div>'
 
 def steun(niveau):
-    return (f'<div class="steun" style="margin-left:12.5mm">{niveau}</div>' if niveau else '')
+    # één plaats voor de hele cursus: apoyo.py maakt er «Apoyo (steun) · Marco
+    # (zinsframe): …» van, in het Spaans met het Nederlandse woord erbij
+    return APO.html(niveau)
 
 def sortcols(cols, height="short", eigen=True):
     n = len(cols)
@@ -383,6 +385,7 @@ import sys as _sys
 _sys.path.insert(0, "/home/user/espa-ol-en-la-pr-ctica/03-build/web")
 import qr_print as QRP; QRP.fijar("C6+", 0)
 import print_bloques as PB
+import apoyo as APO
 import nat_data as ND, lectura_data as LD, escucha_data as ED
 import retos_data as RD
 import retos_print as RP
