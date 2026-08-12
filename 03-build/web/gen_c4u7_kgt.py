@@ -42,7 +42,7 @@ KIT="".join(cluster(*c) for c in CLUSTERS)
 
 GRAM=r"""
 <div class="note">
-  <div class="note-h">🔎 <b>Fíjate</b> · Kijk terug naar de scène — je hoorde dit al:</div>
+  <div class="note-h">🔎 <b>Fíjate</b> · vuelve a la escena: ya lo has oído. <span class="stn">je hoorde dit al</span></div>
   <div class="obs">«Yo <span class="v">trabajo</span> aquí, tú <span class="v">trabajas</span> aquí y él <span class="v">trabaja</span> aquí.» · «<span class="v">Es</span> profesora.» · «Yo <span class="v">estoy</span> bien. <span class="v">Estamos</span> todos bien.»</div>
 </div>
 
@@ -59,41 +59,41 @@ GRAM=r"""
 
 <div class="gcard">
   <h3><span class="v">trabajo · trabajas · trabaja</span> — <i>chunks uit de scène</i></h3>
-  <p class="gp">Drie vaste vormen om over werk te praten (leer ze als chunks — het volledige systeem komt in het 5de jaar):</p>
+  <p class="gp">Tres formas fijas para hablar del trabajo (apréndelas como chunks; el sistema completo llega en 5º): <span class="stn">leer ze als chunks</span></p>
   <table class="gt">
     <tr><td class="v">(yo) trabajo</td><td>ik werk</td><td class="ex">Trabajo <b>en</b> una tienda.</td></tr>
     <tr><td class="v">(tú) trabajas</td><td>jij werkt</td><td class="ex">¿Dónde trabajas?</td></tr>
     <tr><td class="v">(él/ella) trabaja</td><td>hij/zij werkt</td><td class="ex">¿Trabaja en una oficina?</td></tr>
   </table>
-  <p class="ojo">💡 <span class="es">Werkplek altijd met <b>en</b>: trabajo <b>en</b> una academia · <b>en</b> casa.</span></p>
+  <p class="ojo">💡 <span class="es">El lugar de trabajo siempre con <b>en</b>: trabajo <b>en</b> una academia · <b>en</b> casa.</span> <span class="stn">werkplek altijd met «en»</span></p>
 </div>
 
 <div class="gcard soft">
-  <h3><span class="v">ser</span> ↔ <span class="v">estar</span> — <i>wie je bent ↔ hoe je je voelt</i></h3>
-  <p class="gp">Twee keer «zijn», elk met een eigen job:</p>
+  <h3><span class="v">ser</span> ↔ <span class="v">estar</span> — <i>quién eres ↔ cómo estás</i> <span class="stn">wie je bent ↔ hoe je je voelt</span></h3>
+  <p class="gp">Dos verbos para «zijn», cada uno con su tarea: <span class="stn">twee keer «zijn»</span></p>
   <div class="mv">
-    <div class="mv-c mv-m"><span class="mv-t">SER · wie/wat je bent</span><span><b>Es</b> profesora. (beroep)</span><span><b>Soy</b> belga. (afkomst, U3)</span></div>
-    <div class="mv-c mv-f"><span class="mv-t">ESTAR · hoe je je voelt / bent</span><span><b>Estoy</b> bien · tranquilo/a.</span><span><b>Estamos</b> todos bien. · ¿<b>Estáis</b> bien?</span></div>
+    <div class="mv-c mv-m"><span class="mv-t">SER · quién o qué eres</span><span><b>Es</b> profesora. (profesión)</span><span><b>Soy</b> belga. (origen, U3)</span></div>
+    <div class="mv-c mv-f"><span class="mv-t">ESTAR · cómo estás</span><span><b>Estoy</b> bien · tranquilo/a.</span><span><b>Estamos</b> todos bien. · ¿<b>Estáis</b> bien?</span></div>
   </div>
-  <p class="ojo">💡 <span class="es">Uit de scène: «<b>Es</b> María» (wie) ↔ «Tú no <b>estás</b> bien» (toestand). estar ken je al van U2 (estoy cansado) en U6 (¿dónde está?).</span></p>
+  <p class="ojo">💡 <span class="es">De la escena: «<b>Es</b> María» (quién) ↔ «Tú no <b>estás</b> bien» (estado). Ya conoces estar de U2 (estoy cansado) y U6 (¿dónde está?).</span> <span class="stn">wie ↔ toestand</span></p>
 </div>
 """
 
 TAREA=r"""
 <div class="tcard">
   <div class="tmeta">
-    <span><b>👤 Wie</b> jij → de klas</span>
-    <span><b>🎯 Doel</b> een beroep raden & laten raden</span>
-    <span><b>🗣️ Hoe</b> vragen stellen + gissen (zoals Josefina!)</span>
-    <span><b>✅ Resultaat</b> «¿Quién soy?»-raadspel met fiche</span>
+    <span><b>👤 Quién</b> tú → la clase</span>
+    <span><b>🎯 Objetivo</b> adivinar una profesión y hacerla adivinar</span>
+    <span><b>🗣️ Cómo</b> hacer preguntas y adivinar (¡como Josefina!)</span>
+    <span><b>✅ Resultado</b> el juego «¿Quién soy?» con su ficha</span>
   </div>
   <h3>¿Quién soy? — <i>adivina la profesión</i></h3>
   <ol class="pasos">
-    <li><b>Elige una profesión.</b> Kies (geheim!) een beroep + werkplek en vul je fiche in.</li>
-    <li><b>Da tres pistas.</b> Geef drie tips in het Spaans, zónder het beroep te noemen:
+    <li><b>Elige una profesión.</b> Elige en secreto una profesión y un lugar de trabajo, y rellena tu ficha. <span class="stn">kies in het geheim</span></li>
+    <li><b>Da tres pistas.</b> Da tres pistas en español, sin decir la profesión: <span class="stn">drie tips, zónder het beroep te noemen</span>
         <div class="frame">«Trabajo en ____ .» · «Estoy con muchas personas.» · «Trabajo con libros / ropa / …»</div></li>
-    <li><b>La clase adivina.</b> De klas gist zoals Josefina: <div class="frame">«¿Puede ser ____ ?» · «¿Trabajas en una tienda?» · «¡Ya lo sé! Eres ____ .»</div></li>
-    <li><b>Confirma.</b> Antwoord: «Sí, soy…» of «No, no soy…» — wie het raadt, is aan de beurt.</li>
+    <li><b>La clase adivina.</b> La clase adivina como Josefina: <span class="stn">de klas gist</span> <div class="frame">«¿Puede ser ____ ?» · «¿Trabajas en una tienda?» · «¡Ya lo sé! Eres ____ .»</div></li>
+    <li><b>Confirma.</b> Responde «Sí, soy…» o «No, no soy…». Quien acierta, pasa a jugar. <span class="stn">wie raadt, is aan de beurt</span></li>
   </ol>
   <div class="carne">
     <div class="carne-h">¿QUIÉN SOY? · Academia «Bienvenidos al español»</div>
@@ -106,7 +106,7 @@ TAREA=r"""
         <div><span>Pista 3:</span><i></i></div><div><span>¡Ya lo sé! Eres…</span><i></i></div></div><span class="di-ok">☐</span></div>
     </div>
   </div>
-  <p class="crit">🏁 <b>Klaar als…</b> je drie pistas geeft met «trabajo en…» + «estoy…», en gist met «¿puede ser…?» / «¿trabajas en…?» — zónder af te lezen.</p>
+  <p class="crit">🏁 <b>Está listo cuando…</b> das tres pistas con «trabajo en…» y «estoy…», y adivinas con «¿puede ser…?» / «¿trabajas en…?», sin leer. <span class="stn">drie pistas geven en zelf gissen</span></p>
 </div>
 """
 
@@ -125,10 +125,10 @@ SUENA=('<div class="suena">'
  '<p class="sh">Delante de <b>a, o, u</b> la <b>c</b> suena /k/: «casa», «cocina», «médico». Pulsa 🔊 y repite. <span class="gloss">c vóór a/o/u = /k/</span></p>'
  f'<div class="cc-grid tight">{"".join(jcard(*w) for w in KWORDS)}</div></div>'
  '<div class="sblok"><h3>② qu + e/i = /k/ · de stille u</h3>'
- '<p class="sh">Vóór <b>e</b> en <b>i</b> schrijf je <b>qu</b> voor dezelfde /k/-klank — de <b>u</b> hoor je NIET: «queso» = «ke-so», «¿quién?» = «kjen».</p>'
+ '<p class="sh">Delante de <b>e</b> e <b>i</b> se escribe <b>qu</b> para el mismo sonido /k/: la <b>u</b> NO se oye: «queso» = «ke-so», «¿quién?» = «kjen». <span class="stn">de u hoor je niet</span></p>'
  f'<div class="cc-grid tight">{"".join(jcard(*w) for w in QUWORDS)}</div>'
- '<p class="ojo2">⚠️ <b>¡Ojo!</b> <span>que = «ke» (niet «kwe»!) · qui = «ki». Vergelijk: <b>c</b>asa /k/ maar <b>c</b>ine /θ/ (U3) — daarom bestaat qu.</span></p></div>'
- '<div class="sblok"><h3>③ ¿Esdrújula o no? · teken wat je hoort</h3>'
+ '<p class="ojo2">⚠️ <b>¡Ojo!</b> <span>que = «ke», nunca «kwe» · qui = «ki». Compara: <b>c</b>asa /k/ pero <b>c</b>ine /θ/ (U3): por eso existe qu.</span> <span class="stn">que klinkt «ke», niet «kwe»</span></p></div>'
+ '<div class="sblok"><h3>③ ¿Esdrújula o no? · marca lo que oyes <span class="stn">teken wat je hoort</span></h3>'
  '<p class="sh">Pulsa las palabras con el acento en la <b>antepenúltima</b> sílaba (<i>esdrújulas</i> — MÉ-di-co; verde = correcto). Pulsa 🔊 para escuchar. <span class="gloss">derde lettergreep van achter</span></p>'
  f'<div class="shrow">{"".join(dchip(*d) for d in DISCRIM)}</div>'
  '<p class="sfb" id="dfb"></p></div>'
@@ -207,11 +207,11 @@ main{max-width:1000px;margin:0 auto;padding:18px}
 
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · U7 · Kit · Gramática · Tarea</title><style>{CSS}</style></head><body>
-<div class="top"><h1>Unidad 7 · Las profesiones</h1><p>De <b>kit de supervivencia</b> (beroepen &amp; werkplekken, naar werk vragen), een korte <b>uitlegnota</b> waar het helpt, en je <b>eindtaak</b>. Klik 🔊 om woorden te horen.</p></div>
+<div class="top"><h1>Unidad 7 · Las profesiones</h1><p>El <b>kit de supervivencia</b> (profesiones y lugares de trabajo, preguntar por el trabajo), una <b>nota breve</b> donde ayuda, y tu <b>tarea final</b>. Pulsa 🔊 para oír las palabras. <span class="stn">de taal die je nodig hebt, kort uitgelegd, plus je eindtaak</span></p></div>
 <main>
  <h2 class="subh">🔊 Suena bien <small>uitspraak — c/qu = /k/ &amp; la esdrújula</small></h2>
  {SUENA}
- <h2 class="subh">§2 · Kit de supervivencia <small>de chunks per situatie — klik om te horen</small></h2>
+ <h2 class="subh">§2 · Kit de supervivencia <small>los chunks por situación — pulsa para oírlos</small></h2>
  {KIT}
  <h2 class="subh">§4 · Gramática en la práctica <small>kort en functioneel — geen theorie om de theorie</small></h2>
  {GRAM}

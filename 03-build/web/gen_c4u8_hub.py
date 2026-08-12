@@ -14,17 +14,17 @@ def srcdoc(path):
     return h.replace("&","&amp;").replace('"',"&quot;")
 
 TABS=[
- ("escucha","🎬 Escucha","C4_U8_escucha.html","Bekijk de scène en lees mee — de chunks komen uit je oren."),
- ("comprension","📖 Lee y escucha","C4_U8_comprension.html","Een korte lees- en luisteroefening — begrijp het Spaans dat je al kent."),
- ("mapa","🗺️ Mapa","C4_U8_mapa.html","La Ruta — klik op een land en ontdek hoe laat men er eet en leeft."),
- ("funciones","🗣️ Funciones","C4_U8_funciones.html","Wat je met het Spaans kunt DOEN — je repertoire groeit elke unit."),
- ("kit","🧰 Kit","C4_U8_kgt.html","Uitspraak (zachte d, getallen), de klokken, de taal per situatie, gramática (es la/son las · a las · el lunes) & tarea."),
- ("practica","✍️ Práctica","C4_U8_practica.html","Oefen zelfcorrigerend: herkennen → kiezen → zelf zeggen."),
+ ("escucha","🎬 Escucha","C4_U8_escucha.html","Mira la escena y lee al mismo tiempo: los chunks te entran por el oído. <span class="stn">bekijk en lees mee</span>"),
+ ("comprension","📖 Lee y escucha","C4_U8_comprension.html","Una lectura y una escucha cortas: entiende el español que ya sabes. <span class="stn">korte lees- en luisteroefening</span>"),
+ ("mapa","🗺️ Mapa","C4_U8_mapa.html","La Ruta — pulsa un país y descubre a qué hora se come y se vive allí. <span class="stn">klik op een land</span>"),
+ ("funciones","🗣️ Funciones","C4_U8_funciones.html","Lo que puedes HACER con el español: tu repertorio crece cada unidad. <span class="stn">wat je met het Spaans kunt doen</span>"),
+ ("kit","🧰 Kit","C4_U8_kgt.html","Pronunciación (la d suave, los números), los relojes, la lengua por situación, gramática (es la/son las · a las · el lunes) y tarea. <span class="stn">uitspraak, klokken, taal per situatie, grammatica en taak</span>"),
+ ("practica","✍️ Práctica","C4_U8_practica.html","Practica y corrígete: reconocer → elegir → decirlo tú. <span class="stn">zelfcorrigerend oefenen</span>"),
  ("rol","🎭 Ensaya","C4_U8_rol.html",
-  "Speel de scène zelf: de partner verbetert je en werkt zonder internet."),
+  "Representa la escena: el compañero te corrige y funciona sin internet. <span class="stn">speel de scène, ook offline</span>"),
  ("coach","📝 Entrega","C4_U8_coach.html",
-  "Schrijf je eindtaak en laat ze nakijken vóór je ze afgeeft."),
- ("musica","🎧 Música","C4_U8_musica.html","Cultura (los horarios hispanos) + banda sonora — leer Spaans via muziek."),
+  "Escribe tu tarea final y hazla revisar antes de entregarla. <span class="stn">schrijf en laat nakijken</span>"),
+ ("musica","🎧 Música","C4_U8_musica.html","Cultura (los horarios hispanos) + banda sonora — aprende español con música. <span class="stn">leer Spaans via muziek</span>"),
 ]
 
 def tabbtn(i,t):
@@ -54,6 +54,8 @@ CSS=FONTS+r"""
 main{max-width:1120px;margin:0 auto;padding:14px 16px 30px}
 .panel{display:none}.panel.show{display:block}
 .psub{color:var(--mut);font-size:14px;margin:6px 2px 10px;font-style:italic}
+.stn{color:var(--mut);font-style:italic;font-size:.9em;opacity:.9}
+.hero .stn{color:#fff;opacity:.85}
 .fw{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card)}
 .frame{width:100%;height:82vh;min-height:560px;border:0;display:block}
 .foot{color:var(--mut);font-size:12px;text-align:center;margin:22px 0 6px}
@@ -65,7 +67,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
 <div class="hero">
   <span class="ruta">🗺️ La Ruta · C4 «El despegue» · Parada 8</span>
   <h1>Unidad 8 · La hora y los días</h1>
-  <p>Zeg <b>hoe laat</b> het is en <b>spreek af</b>: ¿qué hora es? — son las ocho y media. ¿Quieres quedar el sábado a las siete? Alles wat je hier hoort, kun je meteen gebruiken. <i>Survival in Spanish.</i></p>
+  <p>Di <b>qué hora</b> es y <b>queda</b> con alguien: ¿qué hora es? — son las ocho y media. ¿Quieres quedar el sábado a las siete? Todo lo que oyes aquí lo puedes usar enseguida. <span class="stn">zeg hoe laat het is en spreek af</span> <i>Survival in Spanish.</i></p>
 </div>
 <nav class="tabbar">{"".join(tabbtn(i,t) for i,t in enumerate(TABS))}</nav>
 <main>

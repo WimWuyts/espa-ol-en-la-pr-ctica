@@ -15,17 +15,17 @@ def srcdoc(path):
     return h.replace("&","&amp;").replace('"',"&quot;")
 
 TABS=[
- ("escucha","🎬 Escucha","C4_U3_escucha.html","Bekijk de scène en lees mee — de chunks komen uit je oren."),
- ("comprension","📖 Lee y escucha","C4_U3_comprension.html","Een korte lees- en luisteroefening — begrijp het Spaans dat je al kent."),
- ("mapa","🗺️ Mapa","C4_U3_mapa.html","La Ruta — dé kaart-unit: klik op elk land en lees zijn fiche (país · gentilicio · idioma)."),
- ("funciones","🗣️ Funciones","C4_U3_funciones.html","Wat je met het Spaans kunt DOEN — je repertoire groeit elke unit."),
- ("kit","🧰 Kit","C4_U3_kgt.html","Uitspraak (ñ, c/z), de taal per situatie, gramática (soy de + país) & tarea."),
- ("practica","✍️ Práctica","C4_U3_practica.html","Oefen zelfcorrigerend: herkennen → kiezen → zelf zeggen."),
+ ("escucha","🎬 Escucha","C4_U3_escucha.html","Mira la escena y lee al mismo tiempo: los chunks te entran por el oído. <span class="stn">bekijk en lees mee</span>"),
+ ("comprension","📖 Lee y escucha","C4_U3_comprension.html","Una lectura y una escucha cortas: entiende el español que ya sabes. <span class="stn">korte lees- en luisteroefening</span>"),
+ ("mapa","🗺️ Mapa","C4_U3_mapa.html","La Ruta — la unidad del mapa: pulsa cada país y lee su ficha (país · gentilicio · idioma). <span class="stn">de kaart-unit bij uitstek</span>"),
+ ("funciones","🗣️ Funciones","C4_U3_funciones.html","Lo que puedes HACER con el español: tu repertorio crece cada unidad. <span class="stn">wat je met het Spaans kunt doen</span>"),
+ ("kit","🧰 Kit","C4_U3_kgt.html","Pronunciación (ñ, c/z), la lengua por situación, gramática (soy de + país) y tarea. <span class="stn">uitspraak, taal per situatie, grammatica en taak</span>"),
+ ("practica","✍️ Práctica","C4_U3_practica.html","Practica y corrígete: reconocer → elegir → decirlo tú. <span class="stn">zelfcorrigerend oefenen</span>"),
  ("rol","🎭 Ensaya","C4_U3_rol.html",
-  "Speel de scène zelf: de partner verbetert je en werkt zonder internet."),
+  "Representa la escena: el compañero te corrige y funciona sin internet. <span class="stn">speel de scène, ook offline</span>"),
  ("coach","📝 Entrega","C4_U3_coach.html",
-  "Schrijf je eindtaak en laat ze nakijken vóór je ze afgeeft."),
- ("musica","🎧 Música","C4_U3_musica.html","Cultura (el mundo hispano) + banda sonora — leer Spaans via muziek."),
+  "Escribe tu tarea final y hazla revisar antes de entregarla. <span class="stn">schrijf en laat nakijken</span>"),
+ ("musica","🎧 Música","C4_U3_musica.html","Cultura (el mundo hispano) + banda sonora — aprende español con música. <span class="stn">leer Spaans via muziek</span>"),
 ]
 
 def tabbtn(i,t):
@@ -55,6 +55,8 @@ CSS=FONTS+r"""
 main{max-width:1120px;margin:0 auto;padding:14px 16px 30px}
 .panel{display:none}.panel.show{display:block}
 .psub{color:var(--mut);font-size:14px;margin:6px 2px 10px;font-style:italic}
+.stn{color:var(--mut);font-style:italic;font-size:.9em;opacity:.9}
+.hero .stn{color:#fff;opacity:.85}
 .fw{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card)}
 .frame{width:100%;height:82vh;min-height:560px;border:0;display:block}
 .foot{color:var(--mut);font-size:12px;text-align:center;margin:22px 0 6px}
@@ -66,7 +68,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
 <div class="hero">
   <span class="ruta">🗺️ La Ruta · C4 «El despegue» · Parada 3</span>
   <h1>Unidad 3 · Nacionalidades y países</h1>
-  <p>De kernvraag van de reis: <b>¿De dónde eres?</b> Zeg waar je vandaan komt (<b>soy de</b> + land), je <b>nationaliteit</b> en welke <b>talen</b> je spreekt. Open de <b>kaart</b> en verover de Spaanstalige wereld. <i>Survival in Spanish.</i></p>
+  <p>La pregunta clave del viaje: <b>¿De dónde eres?</b> Di de dónde vienes (<b>soy de</b> + país), tu <b>nacionalidad</b> y qué <b>idiomas</b> hablas. Abre el <b>mapa</b> y conquista el mundo hispano. <span class="stn">waar kom je vandaan, en welke talen spreek je?</span> <i>Survival in Spanish.</i></p>
 </div>
 <nav class="tabbar">{"".join(tabbtn(i,t) for i,t in enumerate(TABS))}</nav>
 <main>

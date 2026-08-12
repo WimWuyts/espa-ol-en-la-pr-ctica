@@ -15,17 +15,17 @@ def srcdoc(path):
     return h.replace("&","&amp;").replace('"',"&quot;")
 
 TABS=[
- ("escucha","🎬 Escucha","C4_U1_escucha.html","Bekijk de scène en lees mee — de chunks komen uit je oren."),
- ("comprension","📖 Lee y escucha","C4_U1_comprension.html","Een korte lees- en luisteroefening — begrijp het Spaans dat je al kent."),
- ("mapa","🗺️ Mapa","C4_U1_mapa.html","La Ruta — klik op een land van de Spaanstalige wereld en lees zijn fiche."),
- ("funciones","🗣️ Funciones","C4_U1_funciones.html","Wat je met het Spaans kunt DOEN — je repertoire groeit elke unit."),
- ("kit","🧰 Kit","C4_U1_kgt.html","Uitspraak (klanken), de taal per situatie, gramática & tarea."),
- ("practica","✍️ Práctica","C4_U1_practica.html","Oefen zelfcorrigerend: herkennen → kiezen → zelf zeggen."),
+ ("escucha","🎬 Escucha","C4_U1_escucha.html","Mira la escena y lee al mismo tiempo: los chunks te entran por el oído. <span class="stn">bekijk en lees mee</span>"),
+ ("comprension","📖 Lee y escucha","C4_U1_comprension.html","Una lectura y una escucha cortas: entiende el español que ya sabes. <span class="stn">korte lees- en luisteroefening</span>"),
+ ("mapa","🗺️ Mapa","C4_U1_mapa.html","La Ruta — pulsa un país del mundo hispano y lee su ficha. <span class="stn">klik op een land</span>"),
+ ("funciones","🗣️ Funciones","C4_U1_funciones.html","Lo que puedes HACER con el español: tu repertorio crece cada unidad. <span class="stn">wat je met het Spaans kunt doen</span>"),
+ ("kit","🧰 Kit","C4_U1_kgt.html","Pronunciación (los sonidos), la lengua por situación, gramática y tarea. <span class="stn">uitspraak, taal per situatie, grammatica en taak</span>"),
+ ("practica","✍️ Práctica","C4_U1_practica.html","Practica y corrígete: reconocer → elegir → decirlo tú. <span class="stn">zelfcorrigerend oefenen</span>"),
  ("rol","🎭 Ensaya","C4_U1_rol.html",
-  "Speel de scène zelf: de partner verbetert je en werkt zonder internet."),
+  "Representa la escena: el compañero te corrige y funciona sin internet. <span class="stn">speel de scène, ook offline</span>"),
  ("coach","📝 Entrega","C4_U1_coach.html",
-  "Schrijf je eindtaak en laat ze nakijken vóór je ze afgeeft."),
- ("musica","🎧 Música","C4_musica.html","Banda sonora — leer Spaans via muziek die jullie kennen."),
+  "Escribe tu tarea final y hazla revisar antes de entregarla. <span class="stn">schrijf en laat nakijken</span>"),
+ ("musica","🎧 Música","C4_musica.html","Banda sonora — aprende español con música que ya conocéis. <span class="stn">muziek die jullie kennen</span>"),
 ]
 # kgt bevat §2 Kit + §4 Gramática + §5 Tarea; we tonen het onder "Kit" én verwijzen ernaar.
 
@@ -56,6 +56,8 @@ CSS=FONTS+r"""
 main{max-width:1120px;margin:0 auto;padding:14px 16px 30px}
 .panel{display:none}.panel.show{display:block}
 .psub{color:var(--mut);font-size:14px;margin:6px 2px 10px;font-style:italic}
+.stn{color:var(--mut);font-style:italic;font-size:.9em;opacity:.9}
+.hero .stn{color:#fff;opacity:.85}
 .fw{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card)}
 .frame{width:100%;height:82vh;min-height:560px;border:0;display:block}
 .foot{color:var(--mut);font-size:12px;text-align:center;margin:22px 0 6px}
@@ -67,7 +69,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
 <div class="hero">
   <span class="ruta">🗺️ La Ruta · C4 «El despegue» · Parada 1</span>
   <h1>Unidad 1 · Presentaciones</h1>
-  <p>Je eerste woorden Spaans — <b>saludos</b>, <b>jezelf voorstellen</b> en <b>afscheid nemen</b>. Alles wat je hier hoort, kun je meteen gebruiken. <i>Survival in Spanish.</i></p>
+  <p>Tus primeras palabras en español: <b>saludos</b>, <b>presentarte</b> y <b>despedirte</b>. Todo lo que oyes aquí lo puedes usar enseguida. <span class="stn">groeten, jezelf voorstellen, afscheid nemen</span> <i>Survival in Spanish.</i></p>
 </div>
 <nav class="tabbar">{"".join(tabbtn(i,t) for i,t in enumerate(TABS))}</nav>
 <main>

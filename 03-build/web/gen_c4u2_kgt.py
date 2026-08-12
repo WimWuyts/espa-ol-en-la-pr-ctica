@@ -48,35 +48,35 @@ KIT="".join(cluster(*c) for c in CLUSTERS)
 # person=blauw, werkwoord=oranje. Steeds: observeren (uit de scène) → compacte regel.
 GRAM=r"""
 <div class="note">
-  <div class="note-h">🔎 <b>Fíjate</b> · Kijk terug naar de scène — je hoorde dit al:</div>
+  <div class="note-h">🔎 <b>Fíjate</b> · vuelve a la escena: ya lo has oído. <span class="stn">je hoorde dit al</span></div>
   <div class="obs">«¿Cómo <span class="v">estás</span>?» → «<span class="p">Yo</span> <span class="v">estoy</span> ocupad<u>a</u>.» · «<span class="v">estoy</span> cansad<u>a</u>, muy cansad<u>a</u>.» · «Buen<u>os</u> días · Buen<u>as</u> tardes · Buen<u>as</u> noches.»</div>
 </div>
 
 <div class="gcard">
-  <h3><span class="v">estar</span> — <i>hoe je je voelt</i> (tijdelijke toestand)</h3>
-  <p class="gp">Om te zeggen <b>hoe het gaat / hoe je je voelt</b>. Drie vormen volstaan nu:</p>
+  <h3><span class="v">estar</span> — <i>cómo te sientes</i> (estado pasajero) <span class="stn">hoe je je voelt</span></h3>
+  <p class="gp">Para decir <b>cómo estás / cómo te sientes</b>. De momento bastan tres formas: <span class="stn">drie vormen volstaan</span></p>
   <table class="gt">
     <tr><td class="p">yo</td><td class="v">estoy</td><td>ik ben / voel me</td><td class="ex">Yo <b>estoy</b> bien.</td></tr>
-    <tr><td class="p">tú</td><td class="v">estás</td><td>jij bent / voelt je</td><td class="ex">¿Cómo <b>estás</b>?</td></tr>
+    <tr><td class="p">tú</td><td class="v">estás</td><td>tú estás <span class="stn">jij bent / voelt je</span></td><td class="ex">¿Cómo <b>estás</b>?</td></tr>
     <tr><td class="p">él/ella/usted</td><td class="v">está</td><td>hij/zij is · u bent</td><td class="ex">¿Cómo <b>está</b> María?</td></tr>
   </table>
-  <p class="ojo">⚠️ <b>¡Ojo!</b> <span class="es">Hoe je je <b>voelt</b> = <b>estar</b>: «Estoy bien / cansada».</span> Zeg <b>niet</b> «Soy bien». (<b>ser</b> = wie je bent, uit U1; <b>estar</b> = hoe je je nu voelt.)</p>
+  <p class="ojo">⚠️ <b>¡Ojo!</b> <span class="es">Cómo te <b>sientes</b> = <b>estar</b>: «Estoy bien / cansada». <b>No</b> digas «Soy bien». (<b>ser</b> = quién eres, U1; <b>estar</b> = cómo estás ahora.)</span> <span class="stn">niet «soy bien» maar «estoy bien»</span></p>
 </div>
 
 <div class="gcard">
   <h3>Buenos días / tardes / noches — <i>groeten volgens de klok</i></h3>
-  <p class="gp">Welke groet je kiest, hangt af van het <b>moment van de dag</b>. In de scène: 09.00 · 16.00 · 21.05.</p>
+  <p class="gp">El saludo depende del <b>momento del día</b>. En la escena: 09.00 · 16.00 · 21.05. <span class="stn">de groet volgt het uur</span></p>
   <div class="clock">
     <div class="cl-c cl-m"><span class="cl-ic">🌅</span><b>la mañana</b><span>~6–12 u</span><i>Buen<u>os</u> días</i></div>
     <div class="cl-c cl-t"><span class="cl-ic">☀️</span><b>la tarde</b><span>~12–20 u</span><i>Buen<u>as</u> tardes</i></div>
     <div class="cl-c cl-n"><span class="cl-ic">🌙</span><b>la noche</b><span>~20–6 u</span><i>Buen<u>as</u> noches</i></div>
   </div>
-  <p class="ojo">💡 <span class="es">Let op de uitgang: buen<b>os</b> día<b>s</b> (♂) maar buen<b>as</b> tarde<b>s</b> / noche<b>s</b> (♀).</span> «Buenas noches» = <b>goedenavond</b> (bij aankomst) én <b>goodnight</b> (bij vertrek).</p>
+  <p class="ojo">💡 <span class="es">Fíjate en la terminación: buen<b>os</b> día<b>s</b> (♂) pero buen<b>as</b> tarde<b>s</b> / noche<b>s</b> (♀). «Buenas noches» sirve para llegar y para despedirse.</span> <span class="stn">goedenavond én goodnight</span></p>
 </div>
 
 <div class="gcard">
   <h3>-o / -a — <i>man of vrouw</i> (nu op de estados)</h3>
-  <p class="gp">De toestand past zich aan aan man/vrouw — net als «encantad__» in U1:</p>
+  <p class="gp">El estado cambia según ♂/♀, igual que «encantad__» en U1: <span class="stn">de vorm past zich aan</span></p>
   <div class="mv">
     <div class="mv-c mv-m"><span class="mv-t">♂ un chico</span><span>Estoy cansad<b>o</b></span><span>ocupad<b>o</b> · nervios<b>o</b> · enferm<b>o</b></span></div>
     <div class="mv-c mv-f"><span class="mv-t">♀ una chica</span><span>Estoy cansad<b>a</b></span><span>ocupad<b>a</b> · nervios<b>a</b> · enferm<b>a</b></span></div>
@@ -86,7 +86,7 @@ GRAM=r"""
 
 <div class="gcard soft">
   <h3>tú <span class="v">↔</span> usted — <i>informeel of beleefd</i></h3>
-  <p class="gp">Met vrienden/klasgenoten: <b>tú</b> → «¿Cómo <b>estás</b>?». Met een onbekende volwassene / formeel: <b>usted</b> → «¿Cómo <b>está</b> usted?». In de scène tutoyeren de collega's; met de directeur Fernando klinkt het beleefder. In de klas gebruiken we meestal <b>tú</b>.</p>
+  <p class="gp">Con amigos y compañeros: <b>tú</b> → «¿Cómo <b>estás</b>?». Con un adulto desconocido o en situación formal: <b>usted</b> → «¿Cómo <b>está</b> usted?». En la escena los compañeros se tutean; con el director Fernando suena más educado el usted. En clase usamos casi siempre <b>tú</b>. <span class="stn">tú of usted, naar de situatie</span></p>
 </div>
 """
 
@@ -94,19 +94,19 @@ GRAM=r"""
 TAREA=r"""
 <div class="tcard">
   <div class="tmeta">
-    <span><b>👤 Wie</b> jij + een klasgenoot (paar)</span>
-    <span><b>🎯 Doel</b> gepast groeten op 3 momenten & zeggen hoe het gaat</span>
-    <span><b>🗣️ Hoe</b> mondeling, om de beurt, zonder blad af te lezen</span>
-    <span><b>✅ Resultaat</b> 3 mini-diálogos gespeeld + je «diario» ingevuld</span>
+    <span><b>👤 Quién</b> tú + un compañero/a (en parejas)</span>
+    <span><b>🎯 Objetivo</b> saludar bien en 3 momentos y decir cómo estás</span>
+    <span><b>🗣️ Cómo</b> oralmente, por turnos, sin leer la hoja</span>
+    <span><b>✅ Resultado</b> 3 minidiálogos representados y tu «diario» relleno</span>
   </div>
-  <h3>Un día de saludos — <i>groet volgens het uur van de dag</i></h3>
+  <h3>Un día de saludos — <i>saluda según la hora del día</i> <span class="stn">groet volgens het uur</span></h3>
   <ol class="pasos">
-    <li><b>Elige la hora.</b> Kies per rondje een moment: 🌅 mañana · ☀️ tarde · 🌙 noche.</li>
-    <li><b>Saluda + pregunta.</b> Groet gepast en vraag hoe het gaat:
+    <li><b>Elige la hora.</b> Elige un momento en cada ronda: 🌅 mañana · ☀️ tarde · 🌙 noche. <span class="stn">kies per rondje een moment</span></li>
+    <li><b>Saluda + pregunta.</b> Saluda como toca y pregunta cómo está: <span class="stn">groet gepast en vraag hoe het gaat</span>
         <div class="frame">«Buen__ ____, ¿qué tal? / ¿cómo estás?»</div></li>
-    <li><b>Responde con estar.</b> Zeg hoe je je voelt (let op -o/-a):
+    <li><b>Responde con estar.</b> Di cómo te sientes (ojo con -o/-a): <span class="stn">zeg hoe je je voelt</span>
         <div class="frame">«Estoy ____ (bien · cansad_ · ocupad_ · nervios_…). ¿Y tú?»</div></li>
-    <li><b>Despídete.</b> Sluit af volgens het uur: «Hasta luego / Hasta mañana / Adiós.»</li>
+    <li><b>Despídete.</b> Despídete según la hora: «Hasta luego / Hasta mañana / Adiós.» <span class="stn">sluit af volgens het uur</span></li>
   </ol>
   <div class="carne">
     <div class="carne-h">DIARIO DE SALUDOS · Academia «Bienvenidos al español»</div>
@@ -119,7 +119,7 @@ TAREA=r"""
         <div><span>Saludo</span><i></i></div><div><span>Estoy…</span><i></i></div></div><span class="di-ok">☐</span></div>
     </div>
   </div>
-  <p class="crit">🏁 <b>Klaar als…</b> je op elk moment de <b>juiste</b> groet kiest (días/tardes/noches), met <b>estar</b> zegt hoe je je voelt (juiste -o/-a), en netjes afscheid neemt — zónder af te lezen.</p>
+  <p class="crit">🏁 <b>Está listo cuando…</b> eliges el saludo <b>correcto</b> en cada momento (días/tardes/noches), dices con <b>estar</b> cómo te sientes (-o/-a correcto) y te despides bien, sin leer. <span class="stn">de juiste groet, estar, en een net afscheid</span></p>
 </div>
 """
 
@@ -136,14 +136,14 @@ def jcard(w,nl):
 def dchip(w,ok): return f'<button class="dchip" data-ok="{ok}" data-w="{w}">🔊 {w}</button>'
 def acchip(w,html): return f'<button class="shchip" data-w="{w}">🔊 {html}</button>'
 SUENA=('<div class="suena">'
- '<div class="sblok"><h3>① La jota /x/ · de klank van j en g+e,i</h3>'
+ '<div class="sblok"><h3>① La jota /x/ · el sonido de la j y de g + e, i <span class="stn">de klank van j en g+e,i</span></h3>'
  '<p class="sh">La <b>j</b> española (y la <b>g</b> delante de e/i) se pronuncia en la <b>garganta</b>, como la «g» de «gaan», pero más fuerte. Pulsa 🔊 y repite. <span class="gloss">j en g+e/i = keelklank</span></p>'
  f'<div class="cc-grid tight">{"".join(jcard(*j) for j in JOTA)}</div>'
- '<p class="ojo2">⚠️ <b>¡Ojo!</b> <span>g + a/o/u = /g/ (<b>ga</b>to, <b>gu</b>sto) · maar g + e/i = /x/ (<b>ge</b>nte, <b>gi</b>mnasio) — net als de j.</span></p></div>'
+ '<p class="ojo2">⚠️ <b>¡Ojo!</b> <span>g + a/o/u = /g/ (<b>ga</b>to, <b>gu</b>sto), pero g + e/i = /x/ (<b>ge</b>nte, <b>gi</b>mnasio), igual que la j.</span> <span class="stn">g+e/i klinkt als de jota</span></p></div>'
  '<div class="sblok"><h3>② La h muda · de stille h</h3>'
- '<p class="sh">De <b>h</b> schrijf je wél, maar je <b>hoort</b> ze niet. «hola» klinkt als «ola».</p>'
+ '<p class="sh">La <b>h</b> se escribe, pero no se <b>oye</b>: «hola» suena «ola». <span class="stn">de h is stil</span></p>'
  f'<div class="cc-grid tight">{"".join(jcard(*h) for h in HMUDA)}</div></div>'
- '<div class="sblok"><h3>③ ¿Jota o no? · teken wat je hoort</h3>'
+ '<div class="sblok"><h3>③ ¿Jota o no? · marca lo que oyes <span class="stn">teken wat je hoort</span></h3>'
  '<p class="sh">Pulsa las palabras con el sonido de la <b>jota</b> /x/ (verde = correcto). Pulsa 🔊 para escuchar. <span class="gloss">klik de woorden met de jota-klank</span></p>'
  f'<div class="shrow">{"".join(dchip(*d) for d in DISCRIM)}</div>'
  '<p class="sfb" id="dfb"></p></div>'
@@ -236,12 +236,12 @@ main{max-width:1000px;margin:0 auto;padding:18px}
 
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · U2 · Kit · Gramática · Tarea</title><style>{CSS}</style></head><body>
-<div class="top"><h1>Unidad 2 · Saludos</h1><p>De <b>kit de supervivencia</b> (groeten + zeggen hoe je je voelt), een korte <b>uitlegnota</b> waar het helpt, en je <b>eindtaak</b>. Klik 🔊 om woorden te horen.</p></div>
+<div class="top"><h1>Unidad 2 · Saludos</h1><p>El <b>kit de supervivencia</b> (saludar y decir cómo te sientes), una <b>nota breve</b> donde ayuda, y tu <b>tarea final</b>. Pulsa 🔊 para oír las palabras. <span class="stn">de taal die je nodig hebt, kort uitgelegd, plus je eindtaak</span></p></div>
 <main>
- <h2 class="subh">🔊 Suena bien <small>uitspraak — de jota /x/, de stille h &amp; de klemtoon</small></h2>
+ <h2 class="subh">🔊 Suena bien <small>pronunciación — la jota /x/, la h muda y el acento</small></h2>
  {SUENA}
 
- <h2 class="subh">§2 · Kit de supervivencia <small>de chunks per situatie — klik om te horen</small></h2>
+ <h2 class="subh">§2 · Kit de supervivencia <small>los chunks por situación — pulsa para oírlos</small></h2>
  {KIT}
 
  <h2 class="subh">§4 · Gramática en la práctica <small>kort en functioneel — geen theorie om de theorie</small></h2>

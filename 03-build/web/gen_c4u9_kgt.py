@@ -45,7 +45,7 @@ KIT="".join(cluster(*c) for c in CLUSTERS)
 # visuele «bouwmachine»: [persona] + a/que + [infinitivo]  → interactieve zinbouwer
 BUILD=r"""
 <div class="builder">
-  <div class="bh">🔧 <b>La máquina de frases</b> · bouw je eigen zin — kies en klik</div>
+  <div class="bh">🔧 <b>La máquina de frases</b> · construye tu propia frase: elige y pulsa. <span class="stn">bouw je eigen zin</span></div>
   <div class="brow">
     <div class="bcol"><span class="bl">1 · ¿plan of moeten?</span>
       <button class="bopt on" data-slot="0" data-v="Voy a">Voy a… <i>(plan)</i></button>
@@ -73,27 +73,27 @@ BUILD=r"""
 
 GRAM=r"""
 <div class="note">
-  <div class="note-h">🔎 <b>Fíjate</b> · Kijk terug naar de scène — je hoorde dit al:</div>
+  <div class="note-h">🔎 <b>Fíjate</b> · vuelve a la escena: ya lo has oído. <span class="stn">je hoorde dit al</span></div>
   <div class="obs">«<span class="v">Voy a</span> preparar café.» · «<span class="v">Vamos a</span> dormir un poquito más.» · «<span class="v">Tengo que</span> pasear al perro.» · «<span class="v">Tengo</span> sueño.»</div>
 </div>
 
 <div class="gcard">
   <h3><span class="v">ir a</span> + infinitivo — <i>plannen: «ik ga…»</i></h3>
-  <p class="gp">Om te zeggen wat je <b>gaat doen</b>: een vorm van <b>ir</b> + <b>a</b> + het <b>hele werkwoord</b>.</p>
+  <p class="gp">Para decir lo que <b>vas a hacer</b>: una forma de <b>ir</b> + <b>a</b> + <b>infinitivo</b>. <span class="stn">ir + a + het hele werkwoord</span></p>
   <table class="gt">
     <tr><td class="v">voy a</td><td>ik ga</td><td class="ex"><b>Voy a</b> preparar café.</td></tr>
     <tr><td class="v">vas a</td><td>jij gaat</td><td class="ex">¿Qué <b>vas a</b> hacer?</td></tr>
     <tr><td class="v">vamos a</td><td>we gaan / laten we</td><td class="ex"><b>Vamos a</b> dormir un poquito más.</td></tr>
   </table>
-  <p class="ojo">💡 <span class="es">Net als in het Nederlands: «ik <b>ga</b> koffie zetten». Vergeet de <b>a</b> niet: voy <b>a</b> estudiar.</span></p>
+  <p class="ojo">💡 <span class="es">No olvides la <b>a</b>: voy <b>a</b> estudiar.</span> <span class="stn">net als «ik ga koffie zetten»</span></p>
 </div>
 
 <div class="gcard">
   <h3><span class="v">tener que</span> + infinitivo — <i>moeten</i></h3>
-  <p class="gp">Om te zeggen wat je <b>moet</b> doen: <b>tengo que</b> / <b>tienes que</b> + het hele werkwoord.</p>
+  <p class="gp">Para decir lo que <b>tienes que</b> hacer: <b>tengo que</b> / <b>tienes que</b> + infinitivo. <span class="stn">wat je moet doen</span></p>
   <table class="gt">
     <tr><td class="v">tengo que</td><td>ik moet</td><td class="ex"><b>Tengo que</b> trabajar.</td></tr>
-    <tr><td class="v">tienes que</td><td>jij moet</td><td class="ex">¿<b>Tienes que</b> hacer algo?</td></tr>
+    <tr><td class="v">tienes que</td><td>tú debes <span class="stn">jij moet</span></td><td class="ex">¿<b>Tienes que</b> hacer algo?</td></tr>
     <tr><td class="v">tiene que</td><td>hij/zij moet</td><td class="ex"><b>Tiene que</b> estudiar.</td></tr>
   </table>
   <p class="ojo">⚠️ <b>¡Ojo!</b> <span class="es">De <b>que</b> is verplicht: tengo <b>que</b> trabajar (niet <s>tengo trabajar</s>). Letterlijk: «ik héb te werken».</span></p>
@@ -101,12 +101,12 @@ GRAM=r"""
 
 <div class="gcard soft">
   <h3><span class="v">tener</span> + naamwoord — <i>hambre · sueño · sed · prisa</i></h3>
-  <p class="gp">Hier zegt het Spaans <b>tener</b> (hebben) waar het Nederlands <b>zijn</b> of <b>hebben</b> gebruikt:</p>
+  <p class="gp">Aquí el español usa <b>tener</b> donde el neerlandés dice «zijn» o «hebben»: <span class="stn">Spaans «hebben» waar wij «zijn» zeggen</span></p>
   <div class="mv">
-    <div class="mv-c mv-m"><span class="mv-t">✅ zo zegt het Spaans het</span><span><b>Tengo</b> hambre · <b>Tengo</b> sed</span><span><b>Tengo</b> sueño · <b>Tengo</b> prisa</span></div>
+    <div class="mv-c mv-m"><span class="mv-t">✅ así lo dice el español</span><span><b>Tengo</b> hambre · <b>Tengo</b> sed</span><span><b>Tengo</b> sueño · <b>Tengo</b> prisa</span></div>
     <div class="mv-c mv-f"><span class="mv-t">🇳🇱 wat wij zeggen</span><span>Ik <b>heb</b> honger · dorst</span><span>Ik <b>ben</b> slaperig · <b>heb</b> haast</span></div>
   </div>
-  <p class="ojo">⚠️ <b>¡Ojo!</b> <span class="es">«Ik ben slaperig» = <b>tengo sueño</b> — niet <s>soy/estoy sueño</s>. Dat is dé valstrik van deze les.</span></p>
+  <p class="ojo">⚠️ <b>¡Ojo!</b> <span class="es">Se dice <b>tengo sueño</b>, nunca <s>soy/estoy sueño</s>. Es la trampa de esta lección.</span> <span class="stn">«ik ben slaperig» = tengo sueño</span></p>
 </div>
 
 <div class="gcard">
@@ -118,27 +118,27 @@ GRAM=r"""
     <div class="db">— ¿Y mañana?</div>
     <div class="da">— <b>Tengo cosas que hacer.</b> Otro día, ¿vale?</div>
   </div>
-  <p class="ojo">💡 <span class="es">Handige verzachters: <b>¡Qué pena!</b> (wat jammer) · <b>Otro día, ¿vale?</b> (een andere dag, oké?)</span></p>
+  <p class="ojo">💡 <span class="es">Suavizantes útiles: <b>¡Qué pena!</b> · <b>Otro día, ¿vale?</b></span> <span class="stn">wat jammer · een andere dag, oké?</span></p>
 </div>
 """
 
 TAREA=r"""
 <div class="tcard">
   <div class="tmeta">
-    <span><b>👤 Wie</b> jij ↔ een klasgenoot</span>
-    <span><b>🎯 Doel</b> je weekend plannen én een uitnodiging afwijzen</span>
-    <span><b>🗣️ Hoe</b> agenda invullen + dialoog spelen</span>
-    <span><b>✅ Resultaat</b> «Mi finde» + 1 afspraak en 1 excuus</span>
+    <span><b>👤 Quién</b> tú ↔ un compañero/a</span>
+    <span><b>🎯 Objetivo</b> planear tu finde y rechazar una invitación</span>
+    <span><b>🗣️ Cómo</b> rellenar la agenda y representar el diálogo</span>
+    <span><b>✅ Resultado</b> «Mi finde» + 1 cita y 1 excusa</span>
   </div>
   <h3>Mi finde — <i>plannen, moeten… en beleefd «nee» zeggen</i></h3>
   <ol class="pasos">
-    <li><b>Rellena tu finde.</b> Schrijf <b>3 planes</b> (voy a…) en <b>2 obligaciones</b> (tengo que…):
+    <li><b>Rellena tu finde.</b> Escribe <b>3 planes</b> (voy a…) y <b>2 obligaciones</b> (tengo que…): <span class="stn">drie plannen en twee verplichtingen</span>
         <div class="frame">«El sábado por la tarde <b>voy a</b> ____ .» · «El domingo <b>tengo que</b> ____ .»</div></li>
-    <li><b>Invita a un compañero.</b> Nodig je buur uit voor één van je plannen:
+    <li><b>Invita a un compañero.</b> Invita a tu compañero/a a uno de tus planes: <span class="stn">nodig je buur uit</span>
         <div class="frame">«¿<b>Quedamos para</b> ____ el ____ ?» — «¿<b>Vamos a</b> ____ ?»</div></li>
-    <li><b>Rechaza una vez.</b> Wijs zijn/haar uitnodiging één keer beleefd af — met een <b>echt excuus</b>:
+    <li><b>Rechaza una vez.</b> Rechaza su invitación una vez con educación, con una <b>excusa de verdad</b>: <span class="stn">wijs één keer beleefd af</span>
         <div class="frame">«<b>No puedo.</b> <b>Tengo que</b> ____ . ¡Qué pena! Otro día, ¿vale?»</div></li>
-    <li><b>Cerrad un plan.</b> Vind samen tóch één moment dat past en spreek af (dag + uur).</li>
+    <li><b>Cerrad un plan.</b> Buscad juntos un momento que sí os vaya bien y quedad (día + hora). <span class="stn">vind tóch één moment en spreek af</span></li>
   </ol>
   <div class="carne">
     <div class="carne-h">MI FINDE · Academia «Bienvenidos al español»</div>
@@ -151,7 +151,7 @@ TAREA=r"""
         <div><span>Quedamos:</span><i></i></div><div><span>A las…</span><i></i></div></div><span class="di-ok">☐</span></div>
     </div>
   </div>
-  <p class="crit">🏁 <b>Klaar als…</b> je 3 plannen zegt met «voy a + infinitivo», 2 verplichtingen met «tengo que + infinitivo», één uitnodiging beleefd afwijst («no puedo, tengo que…») en samen één afspraak vastlegt — zónder af te lezen.</p>
+  <p class="crit">🏁 <b>Está listo cuando…</b> dices 3 planes con «voy a + infinitivo», 2 obligaciones con «tengo que + infinitivo», rechazas una invitación con educación («no puedo, tengo que…») y cerráis una cita, sin leer. <span class="stn">drie plannen, twee verplichtingen, één beleefde weigering</span></p>
 </div>
 """
 
@@ -170,10 +170,10 @@ SUENA=('<div class="suena">'
  '<p class="sh">Dos vocales juntas = <b>una sola</b> sílaba (un <i>diptongo</i>). Di «qu<b>ie</b>-ro» en 2 partes, no en 3. Pulsa 🔊 y repite. <span class="gloss">twee klinkers = één lettergreep</span></p>'
  f'<div class="cc-grid tight">{"".join(jcard(*w) for w in IEW)}</div></div>'
  '<div class="sblok"><h3>② El diptongo <i>ue</i></h3>'
- '<p class="sh">Zelfde principe met <b>ue</b>: «p<b>ue</b>-do», «b<b>ue</b>-no» — glijd vloeiend van de u naar de e.</p>'
+ '<p class="sh">Mismo principio con <b>ue</b>: «p<b>ue</b>-do», «b<b>ue</b>-no». Desliza suavemente de la u a la e. <span class="stn">glijd vloeiend van u naar e</span></p>'
  f'<div class="cc-grid tight">{"".join(jcard(*w) for w in UEW)}</div>'
- '<p class="ojo2">⚠️ <b>¡Ojo!</b> <span>Splits ze niet: «pu-e-do» klinkt fout. Eén beweging: «pue-do». En de <b>u</b> in <b>que/qui</b> is stil (U7) — daar is het géén diptongo!</span></p></div>'
- '<div class="sblok"><h3>③ ¿ie o ue? · teken wat je hoort</h3>'
+ '<p class="ojo2">⚠️ <b>¡Ojo!</b> <span>No las separes: «pu-e-do» suena mal. Un solo movimiento: «pue-do». Y la <b>u</b> de <b>que/qui</b> es muda (U7): ahí no hay diptongo.</span> <span class="stn">niet splitsen; que/qui is géén diptongo</span></p></div>'
+ '<div class="sblok"><h3>③ ¿ie o ue? · marca lo que oyes <span class="stn">teken wat je hoort</span></h3>'
  '<p class="sh">Pulsa las palabras con el diptongo <b>ue</b> (verde = correcto). Pulsa 🔊 para escuchar. <span class="gloss">klik de woorden met ue</span></p>'
  f'<div class="shrow">{"".join(dchip(*d) for d in DISCRIM)}</div>'
  '<p class="sfb" id="dfb"></p></div>'
@@ -266,13 +266,13 @@ main{max-width:1000px;margin:0 auto;padding:18px}
 
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · U9 · Kit · Gramática · Tarea</title><style>{CSS}</style></head><body>
-<div class="top"><h1>Unidad 9 · Planes y obligaciones</h1><p>De <b>kit de supervivencia</b> (plannen maken, zeggen wat je moet doen, beleefd «nee» zeggen), een korte <b>uitlegnota</b> waar het helpt, en je <b>eindtaak</b>. Klik 🔊 om woorden te horen.</p></div>
+<div class="top"><h1>Unidad 9 · Planes y obligaciones</h1><p>El <b>kit de supervivencia</b> (hacer planes, decir lo que tienes que hacer, decir «no» con educación), una <b>nota breve</b> donde ayuda, y tu <b>tarea final</b>. Pulsa 🔊 para oír las palabras. <span class="stn">de taal die je nodig hebt, kort uitgelegd, plus je eindtaak</span></p></div>
 <main>
  <h2 class="subh">🔊 Suena bien <small>uitspraak — de diptongos ie &amp; ue</small></h2>
  {SUENA}
- <h2 class="subh">🔧 La máquina de frases <small>bouw zelf: voy a / tengo que + infinitivo</small></h2>
+ <h2 class="subh">🔧 La máquina de frases <small>constrúyela tú: voy a / tengo que + infinitivo</small></h2>
  {BUILD}
- <h2 class="subh">§2 · Kit de supervivencia <small>de chunks per situatie — klik om te horen</small></h2>
+ <h2 class="subh">§2 · Kit de supervivencia <small>los chunks por situación — pulsa para oírlos</small></h2>
  {KIT}
  <h2 class="subh">§4 · Gramática en la práctica <small>kort en functioneel — geen theorie om de theorie</small></h2>
  {GRAM}

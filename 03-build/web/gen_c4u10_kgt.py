@@ -46,13 +46,13 @@ KIT="".join(cluster(*c) for c in CLUSTERS)
 # interactieve «taakverdeler»: kies persoon + taak → juiste formule (hay que / tengo que / sé)
 REPARTO=r"""
 <div class="builder">
-  <div class="bh">🧹 <b>El reparto de tareas</b> · kies en klik — de juiste formule verschijnt</div>
+  <div class="bh">🧹 <b>El reparto de tareas</b> · elige y pulsa: aparece la fórmula correcta. <span class="stn">kies en klik</span></div>
   <div class="brow">
     <div class="bcol"><span class="bl">1 · ¿quién?</span>
-      <button class="bopt on" data-slot="0" data-v="hay">algemeen <i>(hay que…)</i></button>
-      <button class="bopt" data-slot="0" data-v="yo">ik <i>(tengo que…)</i></button>
-      <button class="bopt" data-slot="0" data-v="tu">jij <i>(tienes que…)</i></button>
-      <button class="bopt" data-slot="0" data-v="se">ik kán het <i>(sé…)</i></button>
+      <button class="bopt on" data-slot="0" data-v="hay">general <i>(hay que…)</i></button>
+      <button class="bopt" data-slot="0" data-v="yo">yo <i>(tengo que…)</i></button>
+      <button class="bopt" data-slot="0" data-v="tu">tú <i>(tienes que…)</i></button>
+      <button class="bopt" data-slot="0" data-v="se">sé hacerlo <i>(sé…)</i></button>
     </div>
     <div class="bcol"><span class="bl">2 · ¿qué tarea?</span>
       <button class="bopt on" data-slot="1" data-v="limpiar el polvo">limpiar el polvo</button>
@@ -63,44 +63,44 @@ REPARTO=r"""
     </div>
   </div>
   <div class="bout" id="bout"></div>
-  <p class="bhint">💡 <b>hay que</b> = het moet gebeuren (je zegt niet wie) · <b>tengo que</b> = ík moet · <b>sé</b> = ik kán het.</p>
+  <p class="bhint">💡 <b>hay que</b> = tiene que hacerse (no dices quién) · <b>tengo que</b> = yo debo · <b>sé</b> = yo sé hacerlo. <span class="stn">algemeen · ík moet · ik kán het</span></p>
 </div>
 """
 
 GRAM=r"""
 <div class="note">
-  <div class="note-h">🔎 <b>Fíjate</b> · Kijk terug naar de scène — je hoorde dit al:</div>
+  <div class="note-h">🔎 <b>Fíjate</b> · vuelve a la escena: ya lo has oído. <span class="stn">je hoorde dit al</span></div>
   <div class="obs">«<span class="v">Hay que</span> limpiar esto.» · «Yo <span class="v">te ayudo</span>. ¿Qué <span class="v">tengo que</span> hacer?» · «¿<span class="v">Sabes</span> pasar la aspiradora?» — «Claro que <span class="v">sé</span>.»</div>
 </div>
 
 <div class="gcard">
   <h3><span class="v">hay que</span> ↔ <span class="v">tengo que</span> — <i>algemeen of persoonlijk?</i></h3>
-  <p class="gp">Twee manieren om «moeten» te zeggen. Het verschil: <b>zeg je wíe?</b></p>
+  <p class="gp">Dos maneras de decir «moeten». La diferencia: <b>¿dices quién?</b> <span class="stn">zeg je wíe het moet doen?</span></p>
   <div class="mv">
-    <div class="mv-c mv-m"><span class="mv-t">🌐 hay que + infinitivo</span><span><b>Hay que</b> limpiar esto.</span><span><i>Er moet gepoetst worden</i> (niemand in het bijzonder)</span></div>
-    <div class="mv-c mv-f"><span class="mv-t">🙋 tener que + infinitivo</span><span><b>Tengo que</b> fregar. · <b>Tienes que</b> ordenar.</span><span><i>Ík moet · jíj moet</i> (wél een persoon)</span></div>
+    <div class="mv-c mv-m"><span class="mv-t">🌐 hay que + infinitivo</span><span><b>Hay que</b> limpiar esto.</span><span><i>Tiene que hacerse</i> (sin decir quién) <span class="stn">er moet gepoetst worden</span></span></div>
+    <div class="mv-c mv-f"><span class="mv-t">🙋 tener que + infinitivo</span><span><b>Tengo que</b> fregar. · <b>Tienes que</b> ordenar.</span><span><i>Yo debo · tú debes</i> (sí hay persona) <span class="stn">ík moet · jíj moet</span></span></div>
   </div>
-  <p class="ojo">💡 <span class="es"><b>hay que</b> verandert nooit — net als <b>hay</b> (U5/U6). Handig als je niet wil zeggen wie het moet doen!</span></p>
+  <p class="ojo">💡 <span class="es"><b>hay que</b> no cambia nunca, igual que <b>hay</b> (U5/U6). Útil cuando no quieres decir quién lo hace.</span> <span class="stn">hay que verandert nooit</span></p>
 </div>
 
 <div class="gcard">
   <h3><span class="v">saber</span> + infinitivo — <i>iets kúnnen (geleerd hebben)</i></h3>
-  <p class="gp">Om te zeggen dat je iets <b>kunt</b> omdat je het geleerd hebt:</p>
+  <p class="gp">Para decir que <b>sabes</b> hacer algo porque lo has aprendido: <span class="stn">kunnen omdat je het geleerd hebt</span></p>
   <table class="gt">
     <tr><td class="v">sé</td><td>ik kan / ik weet</td><td class="ex"><b>Sé</b> pasar la aspiradora.</td></tr>
     <tr><td class="v">¿sabes…?</td><td>kan jij…?</td><td class="ex">¿<b>Sabes</b> cómo funciona?</td></tr>
     <tr><td class="v">sabemos</td><td>wij kunnen</td><td class="ex">Los hombres también <b>sabemos</b> limpiar.</td></tr>
   </table>
-  <p class="ojo">⚠️ <b>¡Ojo!</b> <span class="es"><b>saber</b> = kunnen omdat je het <i>geleerd</i> hebt (sé cocinar). <b>poder</b> = kunnen omdat het <i>mag/lukt</i> (no puede venir, está enferma).</span></p>
+  <p class="ojo">⚠️ <b>¡Ojo!</b> <span class="es"><b>saber</b> = poder porque lo has <i>aprendido</i> (sé cocinar). <b>poder</b> = porque te <i>dejan</i> o te sale (no puede venir, está enferma).</span> <span class="stn">saber = geleerd · poder = mag/lukt</span></p>
 </div>
 
 <div class="gcard soft">
   <h3>Drie formules, één patroon: <span class="v">+ infinitivo</span></h3>
-  <p class="gp">Je kent er nu al een hele rij — en ze werken <b>allemaal</b> hetzelfde: vaste vorm + <b>het hele werkwoord</b>.</p>
+  <p class="gp">Ya conoces una buena lista, y <b>todas</b> funcionan igual: forma fija + <b>el infinitivo</b>. <span class="stn">vaste vorm + het hele werkwoord</span></p>
   <div class="stack">
     <div class="st"><b>voy a</b> limpiar<i>plan (U9)</i></div>
     <div class="st"><b>tengo que</b> limpiar<i>ik moet (U9)</i></div>
-    <div class="st"><b>hay que</b> limpiar<i>het moet (nieuw)</i></div>
+    <div class="st"><b>hay que</b> limpiar<i>tiene que hacerse (nuevo)</i></div>
     <div class="st"><b>sé</b> limpiar<i>ik kan het (nieuw)</i></div>
     <div class="st"><b>puedo</b> limpiar<i>ik mag/kan (U6)</i></div>
   </div>
@@ -114,27 +114,27 @@ GRAM=r"""
     <div class="db">— <b>No es molestia.</b> ¿Qué <b>tengo que</b> hacer?</div>
     <div class="da">— Pues <b>puedes</b> ordenar los armarios.</div>
   </div>
-  <p class="ojo">👂 <span class="es">In de scène hoor je Paul ook «<b>Déjame</b>, lo hago yo» en «<b>friega</b>, <b>ordena</b>…» zeggen. Die bevelvormen mag je <b>herkennen</b> — je hoeft ze nu nog niet zelf te maken.</span></p>
+  <p class="ojo">👂 <span class="es">En la escena Paul dice también «<b>Déjame</b>, lo hago yo» y «<b>friega</b>, <b>ordena</b>…». Esas formas de mandato solo hay que <b>reconocerlas</b>; todavía no tienes que formarlas tú.</span> <span class="stn">herkennen volstaat</span></p>
 </div>
 """
 
 TAREA=r"""
 <div class="tcard">
   <div class="tmeta">
-    <span><b>👤 Wie</b> jij + je groep</span>
-    <span><b>🎯 Doel</b> de taken eerlijk verdelen</span>
-    <span><b>🗣️ Hoe</b> zeggen wat moet, wat je kunt, wie wat doet</span>
-    <span><b>✅ Resultaat</b> «¿Quién hace qué?» — een cuadro de tareas</span>
+    <span><b>👤 Quién</b> tú + tu grupo</span>
+    <span><b>🎯 Objetivo</b> repartir las tareas de forma justa</span>
+    <span><b>🗣️ Cómo</b> decir qué hay que hacer, qué sabes hacer y quién hace qué</span>
+    <span><b>✅ Resultado</b> «¿Quién hace qué?» — un cuadro de tareas</span>
   </div>
-  <h3>¿Quién hace qué? — <i>maak samen een takenschema</i></h3>
+  <h3>¿Quién hace qué? — <i>haced juntos un cuadro de tareas</i> <span class="stn">maak samen een takenschema</span></h3>
   <ol class="pasos">
-    <li><b>¿Qué hay que hacer?</b> Noteer met je groep <b>4 taken</b> die gedaan moeten worden:
+    <li><b>¿Qué hay que hacer?</b> Anotad en grupo <b>4 tareas</b> que hay que hacer: <span class="stn">vier taken die gedaan moeten worden</span>
         <div class="frame">«<b>Hay que</b> ____ (limpiar el polvo · fregar los platos…).»</div></li>
-    <li><b>¿Qué sabes hacer?</b> Zeg wat jíj kunt — en vraag het je groepsgenoten:
+    <li><b>¿Qué sabes hacer?</b> Di lo que <b>tú</b> sabes hacer y pregúntaselo a tu grupo: <span class="stn">zeg wat jij kunt en vraag het door</span>
         <div class="frame">«<b>Yo sé</b> ____ .» · «¿<b>Sabes</b> ____ ?» — «Claro que sé.» / «No sé ____ .»</div></li>
-    <li><b>Repartid las tareas.</b> Verdeel ze: wie doet wat?
+    <li><b>Repartid las tareas.</b> Repartidlas: ¿quién hace qué? <span class="stn">wie doet wat?</span>
         <div class="frame">«Tú <b>tienes que</b> ____ y yo <b>tengo que</b> ____ .» · «<b>Yo te ayudo.</b>»</div></li>
-    <li><b>Presentad el cuadro.</b> Stel jullie schema voor aan de klas — zónder af te lezen.</li>
+    <li><b>Presentad el cuadro.</b> Presentad vuestro cuadro a la clase, sin leerlo. <span class="stn">zónder af te lezen</span></li>
   </ol>
   <div class="carne">
     <div class="carne-h">CUADRO DE TAREAS · Academia «Bienvenidos al español»</div>
@@ -147,7 +147,7 @@ TAREA=r"""
         <div><span>Yo sé…</span><i></i></div><div><span>No sé…</span><i></i></div></div><span class="di-ok">☐</span></div>
     </div>
   </div>
-  <p class="crit">🏁 <b>Klaar als…</b> je 4 taken noemt met «hay que + werkwoord», zegt wat je wél/niet kunt met «(no) sé + werkwoord», en de taken verdeelt met «tengo/tienes que» + «yo te ayudo» — zónder af te lezen.</p>
+  <p class="crit">🏁 <b>Está listo cuando…</b> nombras 4 tareas con «hay que + infinitivo», dices lo que sabes y lo que no con «(no) sé + infinitivo», y repartes las tareas con «tengo/tienes que» + «yo te ayudo», sin leer. <span class="stn">klaar als je dat alles zegt zónder af te lezen</span></p>
 </div>
 """
 
@@ -166,10 +166,10 @@ SUENA=('<div class="suena">'
  '<p class="sh">Delante de <b>a, o, u</b> la <b>g</b> suena como en «goal»: «<b>g</b>uapo», «a<b>g</b>ua», «lue<b>g</b>o». Pulsa 🔊 y repite. <span class="gloss">g vóór a/o/u = harde g</span></p>'
  f'<div class="cc-grid tight">{"".join(jcard(*w) for w in GWORDS)}</div></div>'
  '<div class="sblok"><h3>② gue / gui · de stille u</h3>'
- '<p class="sh">Vóór <b>e</b> en <b>i</b> schrijf je <b>gue/gui</b> voor dezelfde /g/-klank — de <b>u</b> hoor je NIET: «<b>gui</b>tarra» = «gi-tarra».</p>'
+ '<p class="sh">Delante de <b>e</b> e <b>i</b> se escribe <b>gue/gui</b> para el mismo sonido /g/: la <b>u</b> NO se oye: «<b>gui</b>tarra» = «gi-tarra». <span class="stn">de u hoor je niet</span></p>'
  f'<div class="cc-grid tight">{"".join(jcard(*w) for w in GUWORDS)}</div>'
- '<p class="ojo2">⚠️ <b>¡Ojo!</b> <span>Precies zoals bij <b>qu</b> (U7): de u is een <i>schrijftruc</i>. Zonder u wordt het de jota: <b>ge</b>nte, <b>gi</b>mnasio = /x/ (U2).</span></p></div>'
- '<div class="sblok"><h3>③ ¿/g/ o jota? · teken wat je hoort</h3>'
+ '<p class="ojo2">⚠️ <b>¡Ojo!</b> <span>Igual que con <b>qu</b> (U7): la u es un <i>truco de escritura</i>. Sin u sale la jota: <b>ge</b>nte, <b>gi</b>mnasio = /x/ (U2).</span> <span class="stn">de u is een schrijftruc</span></p></div>'
+ '<div class="sblok"><h3>③ ¿/g/ o jota? · marca lo que oyes <span class="stn">teken wat je hoort</span></h3>'
  '<p class="sh">Pulsa las palabras con el sonido de la <b>jota</b> /x/ (ge/gi; verde = correcto). Pulsa 🔊 para escuchar. <span class="gloss">klik de woorden met de jota-klank</span></p>'
  f'<div class="shrow">{"".join(dchip(*d) for d in DISCRIM)}</div>'
  '<p class="sfb" id="dfb"></p></div>'
@@ -266,13 +266,13 @@ main{max-width:1000px;margin:0 auto;padding:18px}
 
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · U10 · Kit · Gramática · Tarea</title><style>{CSS}</style></head><body>
-<div class="top"><h1>Unidad 10 · Las tareas de casa</h1><p>De <b>kit de supervivencia</b> (huistaken, hulp aanbieden, zeggen wat je kunt), een korte <b>uitlegnota</b> waar het helpt, en je <b>eindtaak</b>. Klik 🔊 om woorden te horen.</p></div>
+<div class="top"><h1>Unidad 10 · Las tareas de casa</h1><p>El <b>kit de supervivencia</b> (las tareas de casa, ofrecer ayuda, decir lo que sabes hacer), una <b>nota breve</b> donde ayuda, y tu <b>tarea final</b>. Pulsa 🔊 para oír las palabras. <span class="stn">de taal die je nodig hebt, kort uitgelegd, plus je eindtaak</span></p></div>
 <main>
- <h2 class="subh">🔊 Suena bien <small>uitspraak — de g, gue/gui &amp; de jota</small></h2>
+ <h2 class="subh">🔊 Suena bien <small>pronunciación — la g, gue/gui y la jota</small></h2>
  {SUENA}
- <h2 class="subh">🧹 El reparto de tareas <small>klik en zie de juiste formule</small></h2>
+ <h2 class="subh">🧹 El reparto de tareas <small>pulsa y mira la fórmula correcta</small></h2>
  {REPARTO}
- <h2 class="subh">§2 · Kit de supervivencia <small>de chunks per situatie — klik om te horen</small></h2>
+ <h2 class="subh">§2 · Kit de supervivencia <small>los chunks por situación — pulsa para oírlos</small></h2>
  {KIT}
  <h2 class="subh">§4 · Gramática en la práctica <small>kort en functioneel — geen theorie om de theorie</small></h2>
  {GRAM}
@@ -287,7 +287,7 @@ document.querySelectorAll('.shchip').forEach(function(b){{b.onclick=function(){{
 var dtot=document.querySelectorAll('.dchip[data-ok="1"]').length;
 document.querySelectorAll('.dchip').forEach(function(b){{b.onclick=function(){{speak(b.getAttribute('data-w'));var ok=b.getAttribute('data-ok')==='1';b.classList.remove('ok','no');b.classList.add(ok?'ok':'no');var n=document.querySelectorAll('.dchip.ok').length;var fb=document.getElementById('dfb');fb.textContent=ok?('¡jota! /x/ · '+n+'/'+dtot+' 👏'):'Die heeft de harde /g/. Prueba otra.';}};}});
 // taakverdeler
-var FORM={{hay:["Hay que"," (het moet gebeuren)"],yo:["Tengo que"," (ík moet)"],tu:["Tienes que"," (jíj moet)"],se:["Sé"," (ik kán het)"]}};
+var FORM={{hay:["Hay que"," (tiene que hacerse)"],yo:["Tengo que"," (yo)"],tu:["Tienes que"," (tú)"],se:["Sé"," (yo sé hacerlo)"]}};
 var pick=["hay","limpiar el polvo"];
 function render(){{var f=FORM[pick[0]];document.getElementById('bout').textContent=f[0]+" "+pick[1]+".";}}
 document.querySelectorAll('.bopt').forEach(function(b){{b.onclick=function(){{var s=+b.getAttribute('data-slot');pick[s]=b.getAttribute('data-v');

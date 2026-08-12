@@ -52,12 +52,12 @@ KIT="".join(cluster(*c) for c in CLUSTERS)
 # person=blauw, werkwoord=oranje. Steeds: observeren (uit de scène) → compacte regel.
 GRAM=r"""
 <div class="note">
-  <div class="note-h">🔎 <b>Fíjate</b> · Kijk terug naar de scène — je hoorde dit al:</div>
+  <div class="note-h">🔎 <b>Fíjate</b> · vuelve a la escena: ya lo has oído. <span class="stn">je hoorde dit al</span></div>
   <div class="obs">«<span class="p">Yo</span> <span class="v">soy</span> Julio.» · «<span class="p">Me</span> <span class="v">llamo</span> María.» · «Encantad<u>o</u> / Encantad<u>a</u>.»</div>
 </div>
 
 <div class="gcard">
-  <h3><span class="p">ser</span> — <i>zijn</i> (wie je bent)</h3>
+  <h3><span class="p">ser</span> — <i>quién eres</i> <span class="stn">zijn: wie je bent</span></h3>
   <p class="gp">Om te zeggen <b>wie</b> je bent. Drie vormen volstaan nu:</p>
   <table class="gt">
     <tr><td class="p">yo</td><td class="v">soy</td><td>ik ben</td><td class="ex">Yo <b>soy</b> Ana.</td></tr>
@@ -67,8 +67,8 @@ GRAM=r"""
 </div>
 
 <div class="gcard">
-  <h3><span class="p">llamarse</span> — <i>heten</i> (hoe je heet)</h3>
-  <p class="gp">Let op het woordje ervoor (<b>me / te / se</b>) — dat verandert mee met de persoon:</p>
+  <h3><span class="p">llamarse</span> — <i>cómo te llamas</i> <span class="stn">heten</span></h3>
+  <p class="gp">Fíjate en la palabrita de delante (<b>me / te / se</b>): cambia con la persona. <span class="stn">me/te/se verandert mee</span></p>
   <table class="gt">
     <tr><td class="p">(yo) me</td><td class="v">llamo</td><td>ik heet</td><td class="ex"><b>Me llamo</b> Sara.</td></tr>
     <tr><td class="p">(tú) te</td><td class="v">llamas</td><td>jij heet</td><td class="ex">¿Cómo <b>te llamas</b>?</td></tr>
@@ -79,7 +79,7 @@ GRAM=r"""
 
 <div class="gcard">
   <h3>-o / -a — <i>man of vrouw</i></h3>
-  <p class="gp">Veel woorden passen zich aan aan man/vrouw. Je hoorde het bij <b>encantad__</b>:</p>
+  <p class="gp">Muchas palabras cambian según ♂/♀. Ya lo oíste en <b>encantad__</b>: <span class="stn">de vorm past zich aan aan man/vrouw</span></p>
   <div class="mv">
     <div class="mv-c mv-m"><span class="mv-t">♂ chico</span><span>Encantad<b>o</b></span><span>bienvenid<b>o</b></span></div>
     <div class="mv-c mv-f"><span class="mv-t">♀ chica</span><span>Encantad<b>a</b></span><span>bienvenid<b>a</b></span></div>
@@ -89,7 +89,7 @@ GRAM=r"""
 
 <div class="gcard soft">
   <h3>tú <span class="v">↔</span> usted — <i>informeel of beleefd</i></h3>
-  <p class="gp">Met vrienden/klasgenoten: <b>tú</b> (¿Cómo estás? · ¿Cómo te llamas?). Met een onbekende volwassene / formeel: <b>usted</b> (¿Cómo está usted? · ¿Cómo se llama usted?). In de klas gebruiken we meestal <b>tú</b>.</p>
+  <p class="gp">Con amigos y compañeros: <b>tú</b> (¿Cómo estás? · ¿Cómo te llamas?). Con un adulto desconocido o en situación formal: <b>usted</b> (¿Cómo está usted? · ¿Cómo se llama usted?). En clase usamos casi siempre <b>tú</b>. <span class="stn">tú met leeftijdsgenoten, usted formeel</span></p>
 </div>
 """
 
@@ -97,18 +97,18 @@ GRAM=r"""
 TAREA=r"""
 <div class="tcard">
   <div class="tmeta">
-    <span><b>👤 Wie</b> jij (nieuw in de klas)</span>
-    <span><b>🎯 Doel</b> jezelf voorstellen & 3 klasgenoten leren kennen</span>
-    <span><b>🗣️ Hoe</b> mondeling, zonder blad af te lezen</span>
-    <span><b>✅ Resultaat</b> een ingevulde «carné» + 3 namen genoteerd</span>
+    <span><b>👤 Quién</b> tú (nuevo/a en la clase)</span>
+    <span><b>🎯 Objetivo</b> presentarte y conocer a 3 compañeros</span>
+    <span><b>🗣️ Cómo</b> oralmente, sin leer la hoja</span>
+    <span><b>✅ Resultado</b> un «carné» relleno y 3 nombres anotados</span>
   </div>
-  <h3>El carné de la clase — <i>maak je klaskaartje en stel je voor</i></h3>
+  <h3>El carné de la clase — <i>haz tu carné y preséntate</i> <span class="stn">maak je klaskaartje en stel je voor</span></h3>
   <ol class="pasos">
-    <li><b>Rellena tu carné.</b> Vul je kaartje in (naam · herkomst · een emoji die bij je past).</li>
-    <li><b>Preséntate.</b> Sta recht, groet, zeg wie je bent en waar je vandaan komt:
+    <li><b>Rellena tu carné.</b> Completa tu carné (nombre · de dónde eres · un emoji que te pega). <span class="stn">naam, herkomst, een emoji</span></li>
+    <li><b>Preséntate.</b> Ponte de pie, saluda y di quién eres y de dónde eres: <span class="stn">sta recht, groet en stel je voor</span>
         <div class="frame">«¡Hola! Me llamo ____. Soy de ____. ¡Encantad_!»</div></li>
-    <li><b>Pregunta.</b> Vraag 3 klasgenoten hun naam en herkomst («¿Cómo te llamas? ¿De dónde eres?») en noteer ze.</li>
-    <li><b>Despídete.</b> Sluit elk gesprekje af met «¡Encantad_! Hasta luego.»</li>
+    <li><b>Pregunta.</b> Pregunta a 3 compañeros su nombre y su origen («¿Cómo te llamas? ¿De dónde eres?») y anótalos. <span class="stn">drie klasgenoten, en noteer</span></li>
+    <li><b>Despídete.</b> Termina cada minidiálogo con «¡Encantad_! Hasta luego.» <span class="stn">sluit elk gesprekje af</span></li>
   </ol>
   <div class="carne">
     <div class="carne-h">CARNÉ · Academia «Bienvenidos al español»</div>
@@ -127,7 +127,7 @@ TAREA=r"""
     <tr><td>2</td><td></td><td></td></tr>
     <tr><td>3</td><td></td><td></td></tr>
   </table>
-  <p class="crit">🏁 <b>Klaar als…</b> je jezelf vlot voorstelt zónder af te lezen, de juiste vorm (-o/-a) gebruikt, en 3 namen genoteerd hebt.</p>
+  <p class="crit">🏁 <b>Está listo cuando…</b> te presentas con soltura sin leer, usas la forma correcta (-o/-a) y has anotado 3 nombres. <span class="stn">vlot, met de juiste vorm, en 3 namen genoteerd</span></p>
 </div>
 """
 
@@ -152,7 +152,7 @@ SUENA=('<div class="suena">'
  '<div class="sblok"><h3>② Repite · spreek na (shadowing)</h3>'
  '<p class="sh">Escucha y repite enseguida: imita la melodía. <span class="gloss">herhaal meteen en imiteer de melodie</span></p>'
  f'<div class="shrow">{"".join(shchip(w) for w in SHADOW)}</div></div>'
- '<div class="sblok"><h3>③ ¿Dónde está el acento? · waar ligt de klemtoon?</h3>'
+ '<div class="sblok"><h3>③ ¿Dónde está el acento? <span class="stn">waar ligt de klemtoon?</span></h3>'
  '<p class="sh">Pulsa la sílaba que oyes más <b>fuerte</b>; pulsa 🔊 para comprobar. <span class="gloss">klik de sterkste lettergreep</span></p>'
  f'<div class="klemgrid">{"".join(klemword(i,*k) for i,k in enumerate(KLEM))}</div>'
  '<p class="sfb" id="sfb"></p></div></div>')
@@ -245,12 +245,12 @@ main{max-width:1000px;margin:0 auto;padding:18px}
 
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · U1 · Kit · Gramática · Tarea</title><style>{CSS}</style></head><body>
-<div class="top"><h1>Unidad 1 · Presentaciones</h1><p>De <b>kit de supervivencia</b> (de taal die je écht nodig hebt), een korte <b>uitlegnota</b> waar het helpt, en je <b>eindtaak</b>. Klik 🔊 om woorden te horen.</p></div>
+<div class="top"><h1>Unidad 1 · Presentaciones</h1><p>El <b>kit de supervivencia</b> (la lengua que de verdad necesitas), una <b>nota breve</b> donde ayuda, y tu <b>tarea final</b>. Pulsa 🔊 para oír las palabras. <span class="stn">de taal die je nodig hebt, kort uitgelegd, plus je eindtaak</span></p></div>
 <main>
- <h2 class="subh">🔊 Suena bien <small>uitspraak — de 5 klinkers &amp; de klemtoon</small></h2>
+ <h2 class="subh">🔊 Suena bien <small>pronunciación — las 5 vocales y el acento</small></h2>
  {SUENA}
 
- <h2 class="subh">§2 · Kit de supervivencia <small>de chunks per situatie — klik om te horen</small></h2>
+ <h2 class="subh">§2 · Kit de supervivencia <small>los chunks por situación — pulsa para oírlos</small></h2>
  {KIT}
 
  <h2 class="subh">§4 · Gramática en la práctica <small>kort en functioneel — geen theorie om de theorie</small></h2>

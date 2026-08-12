@@ -42,54 +42,54 @@ KIT="".join(cluster(*c) for c in CLUSTERS)
 
 GRAM=r"""
 <div class="note">
-  <div class="note-h">🔎 <b>Fíjate</b> · Kijk terug naar de scène — je hoorde dit al:</div>
+  <div class="note-h">🔎 <b>Fíjate</b> · vuelve a la escena: ya lo has oído. <span class="stn">je hoorde dit al</span></div>
   <div class="obs">«Esta es <span class="p">mi</span> madre.» · «<span class="v">Es</span> muy elegante, pero un poco gorda.» · «<span class="v">Es</span> una chica muy delgad<u>a</u> y muy guap<u>a</u>.»</div>
 </div>
 
 <div class="gcard">
-  <h3><span class="p">mi · tu · su</span> — <i>van wie is het?</i> (posesivos)</h3>
+  <h3><span class="p">mi · tu · su</span> — <i>¿de quién es?</i> (posesivos) <span class="stn">van wie is het?</span></h3>
   <p class="gp">Om te zeggen <b>wiens</b> familielid het is. Drie vaste vormen volstaan nu:</p>
   <table class="gt">
     <tr><td class="p">mi</td><td>mijn</td><td class="ex"><b>mi</b> madre · <b>mi</b> hermano</td></tr>
     <tr><td class="p">tu</td><td>jouw</td><td class="ex">¿Y <b>tu</b> familia?</td></tr>
     <tr><td class="p">su</td><td>zijn/haar</td><td class="ex"><b>su</b> padre (el padre de él/ella)</td></tr>
   </table>
-  <p class="ojo">💡 <span class="es">Ook mogelijk: <b>de</b> + naam — «la hermana <b>de</b> María» (= de zus van María).</span> mi/tu blijven <b>gelijk</b> (geen -o/-a): mi madre én mi padre.</p>
+  <p class="ojo">💡 <span class="es">También vale <b>de</b> + nombre: «la hermana <b>de</b> María». Y mi/tu no cambian (no llevan -o/-a): mi madre y mi padre.</span> <span class="stn">mi/tu blijven gelijk</span></p>
 </div>
 
 <div class="gcard">
   <h3><span class="v">es</span> + <i>adjetivo</i> — <i>iemand beschrijven</i></h3>
-  <p class="gp">Met <b>ser</b> (es) beschrijf je hoe iemand <b>is</b>. Het adjectief past zich aan aan ♂/♀ (net als in U3):</p>
+  <p class="gp">Con <b>ser</b> (es) describes cómo <b>es</b> alguien. El adjetivo cambia según ♂/♀ (como en U3): <span class="stn">het adjectief past zich aan</span></p>
   <div class="mv">
     <div class="mv-c mv-m"><span class="mv-t">♂ un chico</span><span>es alt<b>o</b> · guap<b>o</b> · delgad<b>o</b></span><span>simpátic<b>o</b> · divertid<b>o</b></span></div>
     <div class="mv-c mv-f"><span class="mv-t">♀ una chica</span><span>es alt<b>a</b> · guap<b>a</b> · delgad<b>a</b></span><span>simpátic<b>a</b> · divertid<b>a</b></span></div>
   </div>
   <p class="gp" style="margin-top:10px">Sommige blijven <b>gelijk</b> voor ♂ én ♀: <b>amable</b>, <b>inteligente</b>, <b>elegante</b>, <b>fuerte</b> (eindigen op -e).</p>
-  <p class="ojo">⚠️ <b>¡Ojo!</b> <span class="es">Beschrijven = <b>ser</b> (es), niet estar: «es guapa», «es simpático».</span> (estar = hoe je je nú voelt, uit U2.)</p>
+  <p class="ojo">⚠️ <b>¡Ojo!</b> <span class="es">Describir = <b>ser</b> (es), no estar: «es guapa», «es simpático». (estar = cómo estás ahora, U2.)</span> <span class="stn">beschrijven doe je met ser</span></p>
 </div>
 
 <div class="gcard soft">
   <h3>muy <span class="v">·</span> un poco — <i>een beetje meer of minder</i></h3>
-  <p class="gp"><b>muy</b> = heel (versterkt): «muy alta», «muy inteligente». <b>un poco</b> = een beetje (verzacht, vaak iets negatiefs): «un poco gorda», «un poco tímido». In de scène: «muy elegante, <b>pero un poco</b> gorda».</p>
+  <p class="gp"><b>muy</b> refuerza: «muy alta», «muy inteligente». <b>un poco</b> suaviza, casi siempre algo negativo: «un poco gorda», «un poco tímido». En la escena: «muy elegante, <b>pero un poco</b> gorda». <span class="stn">muy versterkt, un poco verzacht</span></p>
 </div>
 """
 
 TAREA=r"""
 <div class="tcard">
   <div class="tmeta">
-    <span><b>👤 Wie</b> jij → de klas</span>
-    <span><b>🎯 Doel</b> je familie voorstellen &amp; beschrijven</span>
-    <span><b>🗣️ Hoe</b> een stamboom tekenen + mondeling presenteren</span>
-    <span><b>✅ Resultaat</b> «Mi árbol de familia» met 4 personen</span>
+    <span><b>👤 Quién</b> tú → la clase</span>
+    <span><b>🎯 Objetivo</b> presentar y describir a tu familia</span>
+    <span><b>🗣️ Cómo</b> dibujar un árbol y presentarlo oralmente</span>
+    <span><b>✅ Resultado</b> «Mi árbol de familia» con 4 personas</span>
   </div>
-  <h3>Mi árbol de familia — <i>teken en beschrijf je (echte of fantasie-)familie</i></h3>
+  <h3>Mi árbol de familia — <i>dibuja y describe tu familia (real o inventada)</i> <span class="stn">teken en beschrijf je familie</span></h3>
   <ol class="pasos">
-    <li><b>Dibuja el árbol.</b> Teken een stamboom met <b>4 personen</b> (bv. madre, padre, hermano/a, abuela).</li>
+    <li><b>Dibuja el árbol.</b> Dibuja un árbol con <b>4 personas</b> (por ejemplo madre, padre, hermano/a, abuela). <span class="stn">een stamboom met vier personen</span></li>
     <li><b>Presenta a cada persona.</b> Zeg wie het is:
         <div class="frame">«Est__ es mi ____ (madre/padre/…). Se llama ____.»</div></li>
     <li><b>Descríbelo/la.</b> Geef per persoon 2 adjectieven (let op ♂/♀ + muy/un poco):
         <div class="frame">«Es ____ y ____. Es muy ____.»</div></li>
-    <li><b>Preséntalo.</b> Stel je stamboom voor aan de klas — zónder af te lezen.</li>
+    <li><b>Preséntalo.</b> Presenta tu árbol a la clase, sin leer. <span class="stn">zónder af te lezen</span></li>
   </ol>
   <div class="carne">
     <div class="carne-h">MI ÁRBOL DE FAMILIA · Academia «Bienvenidos al español»</div>
@@ -102,7 +102,7 @@ TAREA=r"""
         <div><span>Es mi…</span><i></i></div><div><span>Se llama</span><i></i></div><div><span>Es…</span><i></i></div></div><span class="di-ok">☐</span></div>
     </div>
   </div>
-  <p class="crit">🏁 <b>Klaar als…</b> je 4 familieleden voorstelt met «est_ es mi…», elk met 2 adjectieven (juiste ♂/♀ + muy/un poco), en je de stamboom aanwijst — zónder af te lezen.</p>
+  <p class="crit">🏁 <b>Está listo cuando…</b> presentas a 4 familiares con «est_ es mi…», cada uno con 2 adjetivos (♂/♀ correcto + muy/un poco), y señalas el árbol, sin leer. <span class="stn">vier familieleden, elk met twee adjectieven</span></p>
 </div>
 """
 
@@ -117,14 +117,14 @@ def jcard(w,nl):
 def dchip(w,ok): return f'<button class="dchip" data-ok="{ok}" data-w="{w}">🔊 {w}</button>'
 def acchip(w,html): return f'<button class="shchip" data-w="{w}">🔊 {html}</button>'
 SUENA=('<div class="suena">'
- '<div class="sblok"><h3>① La elle · ll — de klank van «calle»</h3>'
+ '<div class="sblok"><h3>① La elle · ll — el sonido de «calle» <span class="stn">de klank van «calle»</span></h3>'
  '<p class="sh">En la mayoría de los países la <b>ll</b> suena como la «j» de «ja»: «calle» ≈ «ca-je». Pulsa 🔊 y repite. <span class="gloss">ll klinkt als j</span></p>'
  f'<div class="cc-grid tight">{"".join(jcard(*w) for w in LLWORDS)}</div>'
  '<p class="ojo2">⚠️ <b>¡Ojo!</b> <span>«ll» is één letter/klank, niet twee l\'s: ca<b>ll</b>e, <b>ll</b>ave, ape<b>ll</b>ido.</span></p></div>'
  '<div class="sblok"><h3>② La i griega · y — el yeísmo</h3>'
- '<p class="sh">De <b>y</b> klinkt <b>net als de ll</b> (dat heet <i>yeísmo</i>): «yo» ≈ «jo», «playa» ≈ «pla-ja».</p>'
+ '<p class="sh">La <b>y</b> suena <b>igual que la ll</b> (eso es el <i>yeísmo</i>): «yo» ≈ «jo», «playa» ≈ «pla-ja». <span class="stn">y en ll klinken hetzelfde</span></p>'
  f'<div class="cc-grid tight">{"".join(jcard(*w) for w in YWORDS)}</div></div>'
- '<div class="sblok"><h3>③ ¿ll/y o no? · teken wat je hoort</h3>'
+ '<div class="sblok"><h3>③ ¿ll/y o no? · marca lo que oyes <span class="stn">teken wat je hoort</span></h3>'
  '<p class="sh">Pulsa las palabras con el sonido <b>ll/y</b> /ʝ/ (verde = correcto). Pulsa 🔊 para escuchar. <span class="gloss">klik de woorden met de ll/y-klank</span></p>'
  f'<div class="shrow">{"".join(dchip(*d) for d in DISCRIM)}</div>'
  '<p class="sfb" id="dfb"></p></div>'
@@ -203,11 +203,11 @@ main{max-width:1000px;margin:0 auto;padding:18px}
 
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · U4 · Kit · Gramática · Tarea</title><style>{CSS}</style></head><body>
-<div class="top"><h1>Unidad 4 · La familia</h1><p>De <b>kit de supervivencia</b> (familie voorstellen &amp; beschrijven), een korte <b>uitlegnota</b> waar het helpt, en je <b>eindtaak</b>. Klik 🔊 om woorden te horen.</p></div>
+<div class="top"><h1>Unidad 4 · La familia</h1><p>El <b>kit de supervivencia</b> (presentar y describir a la familia), una <b>nota breve</b> donde ayuda, y tu <b>tarea final</b>. Pulsa 🔊 para oír las palabras. <span class="stn">de taal die je nodig hebt, kort uitgelegd, plus je eindtaak</span></p></div>
 <main>
- <h2 class="subh">🔊 Suena bien <small>uitspraak — de ll, de y (yeísmo) &amp; de klemtoon (llana)</small></h2>
+ <h2 class="subh">🔊 Suena bien <small>pronunciación — la ll, la y (yeísmo) y el acento (llana)</small></h2>
  {SUENA}
- <h2 class="subh">§2 · Kit de supervivencia <small>de chunks per situatie — klik om te horen</small></h2>
+ <h2 class="subh">§2 · Kit de supervivencia <small>los chunks por situación — pulsa para oírlos</small></h2>
  {KIT}
  <h2 class="subh">§4 · Gramática en la práctica <small>kort en functioneel — geen theorie om de theorie</small></h2>
  {GRAM}

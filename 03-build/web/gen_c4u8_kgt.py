@@ -57,7 +57,7 @@ RELOJES='<div class="clkrow">'+"".join(CLOCKS)+'</div>'
 
 GRAM=r"""
 <div class="note">
-  <div class="note-h">🔎 <b>Fíjate</b> · Kijk terug naar de scène — je hoorde dit al:</div>
+  <div class="note-h">🔎 <b>Fíjate</b> · vuelve a la escena: ya lo has oído. <span class="stn">je hoorde dit al</span></div>
   <div class="obs">«<span class="t">¿Qué hora es?</span> ¿<span class="t">Las ocho y media</span>?» · «<span class="t">¿A qué hora?</span> No, <span class="t">a las once</span> no, mejor <span class="t">a las doce</span>.» · «¿<span class="v">Quieres quedar</span> esta noche? — <span class="v">Quedamos</span> en mi casa.»</div>
 </div>
 
@@ -68,7 +68,7 @@ GRAM=r"""
     <div class="mv-c mv-m"><span class="mv-t">🕐 alleen 1 uur</span><span><b>Es la</b> una.</span><span><b>Es la</b> una y media.</span></div>
     <div class="mv-c mv-f"><span class="mv-t">🕑 alle andere uren</span><span><b>Son las</b> dos · tres · ocho…</span><span><b>Son las</b> doce en punto.</span></div>
   </div>
-  <p class="ojo">⚠️ <b>¡Ojo, valstrik!</b> <span class="es">«<b>Half negen</b>» = <b>las ocho y media</b> (8 + 30). Het Spaans kijkt <b>terug</b> naar het vórige uur; het Nederlands kijkt <b>vooruit</b>. Dus: half tien = las nueve y media.</span></p>
+  <p class="ojo">⚠️ <b>¡Ojo, trampa!</b> <span class="es">En español se cuenta desde la hora <b>anterior</b>: <b>las ocho y media</b> (8 + 30), <b>las nueve y media</b> (9 + 30).</span> <span class="stn">«half negen» kijkt vooruit, het Spaans kijkt terug</span></p>
 </div>
 
 <div class="gcard">
@@ -79,14 +79,14 @@ GRAM=r"""
     <tr><td class="t">Son las cuatro <b>menos cuarto</b></td><td>3.45</td><td class="ex">kwart voor vier</td></tr>
     <tr><td class="t">Son las tres <b>en punto</b></td><td>3.00</td><td class="ex">precies drie uur</td></tr>
   </table>
-  <p class="ojo">💡 <span class="es">Tot :30 gebruik je <b>y</b> (erbij), daarna <b>menos</b> (eraf) mét het <b>volgende</b> uur.</span></p>
+  <p class="ojo">💡 <span class="es">Hasta :30 usas <b>y</b> (sumas); después, <b>menos</b> (restas) con la hora <b>siguiente</b>.</span> <span class="stn">erbij tot half, daarna eraf</span></p>
 </div>
 
 <div class="gcard">
   <h3><span class="t">¿A qué hora?</span> — <i>a la una · a las doce</i></h3>
-  <p class="gp">Voor een <b>afspraak</b> zet je <b>a</b> ervoor. Vergelijk goed:</p>
+  <p class="gp">Para una <b>cita</b> pones <b>a</b> delante. Compara bien: <span class="stn">bij een afspraak komt er «a» voor</span></p>
   <table class="gt">
-    <tr><td class="t">Son las ocho.</td><td>Het <b>is</b> 8 u.</td><td class="ex">(hoe laat het nú is)</td></tr>
+    <tr><td class="t">Son las ocho.</td><td>Het <b>is</b> 8 u.</td><td class="ex">(qué hora es ahora) <span class="stn">hoe laat het nú is</span></td></tr>
     <tr><td class="t">A las ocho.</td><td><b>Om</b> 8 u.</td><td class="ex">(wanneer iets gebeurt)</td></tr>
     <tr><td class="t">¿A qué hora quedamos?</td><td>Hoe laat spreken we af?</td><td class="ex">— A la una y media.</td></tr>
   </table>
@@ -99,26 +99,26 @@ GRAM=r"""
     <tr><td class="pl"><b>el</b> lunes</td><td>op maandag (deze ene)</td><td class="ex">El lunes quedamos a las seis.</td></tr>
     <tr><td class="pl"><b>los</b> lunes</td><td>elke maandag</td><td class="ex">Los lunes estudio español.</td></tr>
   </table>
-  <p class="ojo">⚠️ <b>¡Ojo!</b> <span class="es">Zeg <b>el</b> lunes, niet <s>en lunes</s>. En dagen schrijf je met een <b>kleine letter</b>: lunes, martes, sábado…</span></p>
+  <p class="ojo">⚠️ <b>¡Ojo!</b> <span class="es">Di <b>el</b> lunes, no <s>en lunes</s>. Y los días van en <b>minúscula</b>: lunes, martes, sábado…</span> <span class="stn">«el lunes», met kleine letter</span></p>
 </div>
 """
 
 TAREA=r"""
 <div class="tcard">
   <div class="tmeta">
-    <span><b>👤 Wie</b> jij → een klasgenoot</span>
-    <span><b>🎯 Doel</b> je week tonen én een afspraak maken</span>
-    <span><b>🗣️ Hoe</b> schema invullen + samen quedar</span>
-    <span><b>✅ Resultaat</b> «Mi horario» + één afspraak</span>
+    <span><b>👤 Quién</b> tú → un compañero/a</span>
+    <span><b>🎯 Objetivo</b> enseñar tu semana y quedar con alguien</span>
+    <span><b>🗣️ Cómo</b> rellenar el horario y quedar juntos</span>
+    <span><b>✅ Resultado</b> «Mi horario» + una cita</span>
   </div>
-  <h3>Mi horario — <i>jouw week in het Spaans</i></h3>
+  <h3>Mi horario — <i>tu semana en español</i> <span class="stn">jouw week in het Spaans</span></h3>
   <ol class="pasos">
-    <li><b>Rellena tu horario.</b> Vul voor <b>4 dagen</b> één activiteit in met dag + uur:
+    <li><b>Rellena tu horario.</b> Escribe una actividad para <b>4 días</b>, con día y hora: <span class="stn">vier dagen, met dag en uur</span>
         <div class="frame">«<b>El</b> lunes <b>a las</b> ____ (hora) ____ (actividad).»</div></li>
-    <li><b>Di la hora en voz alta.</b> Zeg elk uur hardop — let op «es la una» ↔ «son las…».</li>
-    <li><b>Queda con un compañero.</b> Zoek samen een moment waarop jullie <b>beiden</b> vrij zijn:
+    <li><b>Di la hora en voz alta.</b> Di cada hora en voz alta; ojo con «es la una» ↔ «son las…». <span class="stn">zeg elk uur hardop</span></li>
+    <li><b>Queda con un compañero.</b> Buscad un momento en el que estéis <b>los dos</b> libres: <span class="stn">een moment waarop jullie beiden vrij zijn</span>
         <div class="frame">«¿Quieres quedar el ____? — ¿A qué hora? — Quedamos a las ____.» · «Vale, ¡hasta ahora!»</div></li>
-    <li><b>Presenta.</b> Vertel je week en jullie afspraak aan de klas — zónder af te lezen.</li>
+    <li><b>Presenta.</b> Cuenta tu semana y vuestra cita a la clase, sin leer. <span class="stn">zónder af te lezen</span></li>
   </ol>
   <div class="carne">
     <div class="carne-h">MI HORARIO · Academia «Bienvenidos al español»</div>
@@ -131,7 +131,7 @@ TAREA=r"""
         <div><span>Quedamos el:</span><i></i></div><div><span>A las…</span><i></i></div></div><span class="di-ok">☐</span></div>
     </div>
   </div>
-  <p class="crit">🏁 <b>Klaar als…</b> je 4 momenten zegt met «el + dag» én «a las + uur» (juiste es la/son las), en samen een afspraak maakt met «¿quieres quedar?» — zónder af te lezen.</p>
+  <p class="crit">🏁 <b>Está listo cuando…</b> dices 4 momentos con «el + día» y «a las + hora» (es la/son las correcto) y quedáis con «¿quieres quedar?», sin leer. <span class="stn">vier momenten en één afspraak</span></p>
 </div>
 """
 
@@ -150,9 +150,9 @@ SUENA=('<div class="suena">'
  '<p class="sh">Entre vocales (y al final) la <b>d</b> es <b>muy suave</b>, casi como la «th» inglesa de <i>this</i>: «na-da», «me-dia». Pulsa 🔊 y repite. <span class="gloss">d tussen klinkers = heel zacht</span></p>'
  f'<div class="cc-grid tight">{"".join(jcard(*w) for w in DSUAVE)}</div></div>'
  '<div class="sblok"><h3>② La d inicial · steviger</h3>'
- '<p class="sh">Aan het begin van een woord is de <b>d</b> <b>steviger</b> (zoals in het Nederlands): «<b>d</b>ía», «<b>d</b>oce», «<b>d</b>omingo».</p>'
+ '<p class="sh">Al principio de palabra la <b>d</b> es más <b>firme</b>: «<b>d</b>ía», «<b>d</b>oce», «<b>d</b>omingo». <span class="stn">vooraan klinkt de d steviger</span></p>'
  f'<div class="cc-grid tight">{"".join(jcard(*w) for w in DINIC)}</div>'
- '<p class="ojo2">⚠️ <b>¡Ojo!</b> <span>Zeg «me-<b>d</b>ia» héél zacht — niet als de harde NL «d» in «medisch». Vergelijk: <b>d</b>oce (stevig) ↔ na<b>d</b>a (zacht).</span></p></div>'
+ '<p class="ojo2">⚠️ <b>¡Ojo!</b> <span>Di «me-<b>d</b>ia» muy suave. Compara: <b>d</b>oce (firme) ↔ na<b>d</b>a (suave).</span> <span class="stn">niet de harde Nederlandse d</span></p></div>'
  '<div class="sblok"><h3>③ ¿Con tilde o sin tilde? · los números</h3>'
  '<p class="sh">Pulsa los números que llevan <b>tilde</b> (acento en la última sílaba; verde = correcto). Pulsa 🔊 para escuchar. <span class="gloss">klik de getallen met accent</span></p>'
  f'<div class="shrow">{"".join(dchip(*d) for d in DISCRIM)}</div>'
@@ -238,13 +238,13 @@ main{max-width:1000px;margin:0 auto;padding:18px}
 
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · U8 · Kit · Gramática · Tarea</title><style>{CSS}</style></head><body>
-<div class="top"><h1>Unidad 8 · La hora y los días</h1><p>De <b>kit de supervivencia</b> (de tijd zeggen, dagen &amp; afspreken), een korte <b>uitlegnota</b> waar het helpt, en je <b>eindtaak</b>. Klik 🔊 om woorden te horen.</p></div>
+<div class="top"><h1>Unidad 8 · La hora y los días</h1><p>El <b>kit de supervivencia</b> (decir la hora, los días y quedar), una <b>nota breve</b> donde ayuda, y tu <b>tarea final</b>. Pulsa 🔊 para oír las palabras. <span class="stn">de taal die je nodig hebt, kort uitgelegd, plus je eindtaak</span></p></div>
 <main>
- <h2 class="subh">🔊 Suena bien <small>uitspraak — de zachte d &amp; de klemtoon in getallen</small></h2>
+ <h2 class="subh">🔊 Suena bien <small>pronunciación — la d suave y el acento en los números</small></h2>
  {SUENA}
- <h2 class="subh">🕐 Los relojes <small>klik een klok om de tijd te horen</small></h2>
+ <h2 class="subh">🕐 Los relojes <small>pulsa un reloj para oír la hora</small></h2>
  {RELOJES}
- <h2 class="subh">§2 · Kit de supervivencia <small>de chunks per situatie — klik om te horen</small></h2>
+ <h2 class="subh">§2 · Kit de supervivencia <small>los chunks por situación — pulsa para oírlos</small></h2>
  {KIT}
  <h2 class="subh">§4 · Gramática en la práctica <small>kort en functioneel — geen theorie om de theorie</small></h2>
  {GRAM}

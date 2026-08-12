@@ -41,7 +41,7 @@ KIT="".join(cluster(*c) for c in CLUSTERS)
 
 GRAM=r"""
 <div class="note">
-  <div class="note-h">🔎 <b>Fíjate</b> · Kijk terug naar de scène — je hoorde dit al:</div>
+  <div class="note-h">🔎 <b>Fíjate</b> · vuelve a la escena: ya lo has oído. <span class="stn">je hoorde dit al</span></div>
   <div class="obs">«<span class="v">¿Qué es esto?</span> — Esto es <span class="o">un sofá</span>, que <span class="v">sirve para</span> descansar.» · «¿<span class="v">Hay</span> <span class="o">un ordenador</span>? — No <span class="v">hay</span>… sí que <span class="v">hay</span>.»</div>
 </div>
 
@@ -52,12 +52,12 @@ GRAM=r"""
     <div class="mv-c mv-m"><span class="mv-t">♂ masculino</span><span><b>un</b> libro · <b>un</b> vaso</span><span><b>el</b> boli · <b>el</b> ordenador</span></div>
     <div class="mv-c mv-f"><span class="mv-t">♀ femenino</span><span><b>una</b> mesa · <b>una</b> silla</span><span><b>la</b> ventana · <b>la</b> mochila</span></div>
   </div>
-  <p class="ojo">⚠️ <b>¡Ojo!</b> <span class="es">Enkele uitzonderingen: <b>el</b> sofá, <b>la</b> televisión, <b>el</b> día, <b>la</b> mano.</span> Leer die er gewoon bij met un/una.</p>
+  <p class="ojo">⚠️ <b>¡Ojo!</b> <span class="es">Algunas excepciones: <b>el</b> sofá, <b>la</b> televisión, <b>el</b> día, <b>la</b> mano. Apréndelas junto con su un/una.</span> <span class="stn">leer de uitzonderingen er meteen bij</span></p>
 </div>
 
 <div class="gcard">
   <h3><span class="v">¿Qué es esto?</span> — Esto es… · Esto son…</h3>
-  <p class="gp">Vraag naar een voorwerp en antwoord:</p>
+  <p class="gp">Pregunta por un objeto y responde: <span class="stn">vraag en antwoord</span></p>
   <table class="gt">
     <tr><td class="v">¿Qué es esto?</td><td>Wat is dit?</td><td class="ex">Esto <b>es</b> <b>un</b> libro. (één)</td></tr>
     <tr><td class="v">¿Qué es eso?</td><td>Wat is dat?</td><td class="ex">Eso <b>es</b> <b>una</b> ventana.</td></tr>
@@ -68,7 +68,7 @@ GRAM=r"""
 
 <div class="gcard">
   <h3><span class="v">hay</span> — <i>er is / er zijn</i></h3>
-  <p class="gp"><b>hay</b> verandert nooit — voor één én voor meer:</p>
+  <p class="gp"><b>hay</b> no cambia nunca: para uno y para varios. <span class="stn">hay blijft altijd hetzelfde</span></p>
   <table class="gt">
     <tr><td class="v">Hay</td><td>er is / er zijn</td><td class="ex"><b>Hay</b> un sofá y dos sillas.</td></tr>
     <tr><td class="v">¿Hay…?</td><td>is/zijn er…?</td><td class="ex">¿<b>Hay</b> un ordenador?</td></tr>
@@ -86,19 +86,19 @@ GRAM=r"""
 TAREA=r"""
 <div class="tcard">
   <div class="tmeta">
-    <span><b>👤 Wie</b> jij → de klas</span>
-    <span><b>🎯 Doel</b> een mini-woordenboek van voorwerpen maken</span>
-    <span><b>🗣️ Hoe</b> tekenen + benoemen + presenteren</span>
-    <span><b>✅ Resultaat</b> «Diccionario de la clase» met 5 objecten</span>
+    <span><b>👤 Quién</b> tú → la clase</span>
+    <span><b>🎯 Objetivo</b> hacer un minidiccionario de objetos</span>
+    <span><b>🗣️ Cómo</b> dibujar, nombrar y presentar</span>
+    <span><b>✅ Resultado</b> «Diccionario de la clase» con 5 objetos</span>
   </div>
   <h3>Diccionario de la clase — <i>teken en benoem 5 voorwerpen</i></h3>
   <ol class="pasos">
-    <li><b>Elige 5 objetos.</b> Kies 5 voorwerpen (uit de klas of van thuis).</li>
+    <li><b>Elige 5 objetos.</b> Elige 5 objetos de la clase o de tu casa. <span class="stn">vijf voorwerpen</span></li>
     <li><b>Dibuja e identifica.</b> Teken elk en schrijf de naam met <b>un/una</b>:
         <div class="frame">«Esto es ____ (un/una) ____.»</div></li>
     <li><b>¿Para qué sirve?</b> Schrijf per voorwerp waarvoor het dient:
         <div class="frame">«Sirve para ____ (abrir · beber · estudiar…).»</div></li>
-    <li><b>Preséntalo.</b> Stel je woordenboek voor aan de klas — zónder af te lezen.</li>
+    <li><b>Preséntalo.</b> Presenta tu diccionario a la clase, sin leer. <span class="stn">zónder af te lezen</span></li>
   </ol>
   <div class="carne">
     <div class="carne-h">DICCIONARIO DE LA CLASE · Academia «Bienvenidos al español»</div>
@@ -111,7 +111,7 @@ TAREA=r"""
         <div><span>Esto es…</span><i></i></div><div><span>Sirve para…</span><i></i></div></div><span class="di-ok">☐</span></div>
     </div>
   </div>
-  <p class="crit">🏁 <b>Klaar als…</b> je 5 voorwerpen benoemt met «esto es un/una…» (juiste ♂/♀) en per voorwerp zegt «sirve para + werkwoord» — zónder af te lezen.</p>
+  <p class="crit">🏁 <b>Está listo cuando…</b> nombras 5 objetos con «esto es un/una…» (♂/♀ correcto) y de cada uno dices «sirve para + infinitivo», sin leer. <span class="stn">vijf voorwerpen, elk met «sirve para»</span></p>
 </div>
 """
 
@@ -130,10 +130,10 @@ SUENA=('<div class="suena">'
  '<p class="sh">Entre vocales la <b>r</b> es <b>suave</b>: un solo toque de la lengua: «pe-ro», «ca-ra». Pulsa 🔊 y repite. <span class="gloss">r tussen klinkers = zacht</span></p>'
  f'<div class="cc-grid tight">{"".join(jcard(*w) for w in RWORDS)}</div></div>'
  '<div class="sblok"><h3>② La rr fuerte · rollende r</h3>'
- '<p class="sh">De <b>rr</b> (en de <b>r</b> aan het begin) is <b>sterk</b>, rollend: «pe-<b>rr</b>o», «<b>r</b>ojo».</p>'
+ '<p class="sh">La <b>rr</b> (y la <b>r</b> inicial) es <b>fuerte</b>, vibrante: «pe-<b>rr</b>o», «<b>r</b>ojo». <span class="stn">sterk en rollend</span></p>'
  f'<div class="cc-grid tight">{"".join(jcard(*w) for w in RRWORDS)}</div>'
- '<p class="ojo2">⚠️ <b>¡Ojo!</b> <span>pe<b>r</b>o (maar) ≠ pe<b>rr</b>o (hond)! De dubbele r verandert de betekenis.</span></p></div>'
- '<div class="sblok"><h3>③ ¿r o rr? · teken wat je hoort</h3>'
+ '<p class="ojo2">⚠️ <b>¡Ojo!</b> <span>pe<b>r</b>o ≠ pe<b>rr</b>o. La doble r cambia el significado.</span> <span class="stn">maar ≠ hond</span></p></div>'
+ '<div class="sblok"><h3>③ ¿r o rr? · marca lo que oyes <span class="stn">teken wat je hoort</span></h3>'
  '<p class="sh">Pulsa las palabras con la r <b>fuerte</b> (rr o r inicial; verde = correcto). Pulsa 🔊 para escuchar. <span class="gloss">klik de woorden met de sterke r</span></p>'
  f'<div class="shrow">{"".join(dchip(*d) for d in DISCRIM)}</div>'
  '<p class="sfb" id="dfb"></p></div>'
@@ -212,11 +212,11 @@ main{max-width:1000px;margin:0 auto;padding:18px}
 
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · U5 · Kit · Gramática · Tarea</title><style>{CSS}</style></head><body>
-<div class="top"><h1>Unidad 5 · Objetos cotidianos</h1><p>De <b>kit de supervivencia</b> (voorwerpen benoemen &amp; zeggen waar ze voor dienen), een korte <b>uitlegnota</b> waar het helpt, en je <b>eindtaak</b>. Klik 🔊 om woorden te horen.</p></div>
+<div class="top"><h1>Unidad 5 · Objetos cotidianos</h1><p>El <b>kit de supervivencia</b> (nombrar objetos y decir para qué sirven), una <b>nota breve</b> donde ayuda, y tu <b>tarea final</b>. Pulsa 🔊 para oír las palabras. <span class="stn">de taal die je nodig hebt, kort uitgelegd, plus je eindtaak</span></p></div>
 <main>
- <h2 class="subh">🔊 Suena bien <small>uitspraak — de r, de rr &amp; de tilde</small></h2>
+ <h2 class="subh">🔊 Suena bien <small>pronunciación — la r, la rr y la tilde</small></h2>
  {SUENA}
- <h2 class="subh">§2 · Kit de supervivencia <small>de chunks per situatie — klik om te horen</small></h2>
+ <h2 class="subh">§2 · Kit de supervivencia <small>los chunks por situación — pulsa para oírlos</small></h2>
  {KIT}
  <h2 class="subh">§4 · Gramática en la práctica <small>kort en functioneel — geen theorie om de theorie</small></h2>
  {GRAM}

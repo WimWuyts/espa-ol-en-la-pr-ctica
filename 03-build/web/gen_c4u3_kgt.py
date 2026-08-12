@@ -49,46 +49,46 @@ KIT="".join(cluster(*c) for c in CLUSTERS)
 # person=blauw (p), plaats=turquoise (pl), werkwoord=oranje (v). observeren → compacte regel.
 GRAM=r"""
 <div class="note">
-  <div class="note-h">🔎 <b>Fíjate</b> · Kijk terug naar de scène — je hoorde dit al:</div>
+  <div class="note-h">🔎 <b>Fíjate</b> · vuelve a la escena: ya lo has oído. <span class="stn">je hoorde dit al</span></div>
   <div class="obs">«<span class="v">¿De dónde</span> <span class="v">eres</span>?» → «<span class="p">Yo</span> <span class="v">soy</span> <span class="pl">de Argelia</span>.» · «<span class="v">Eres</span> argelin<u>a</u> (chica) · argelin<u>o</u> (chico).» · «<span class="v">Hablo</span> español.»</div>
 </div>
 
 <div class="gcard">
-  <h3><span class="v">soy de</span> + <span class="pl">país</span> — <i>waar je vandaan komt</i></h3>
+  <h3><span class="v">soy de</span> + <span class="pl">país</span> — <i>de dónde eres</i> <span class="stn">waar je vandaan komt</span></h3>
   <p class="gp">Om te zeggen uit welk <b>land</b> je komt. Twee vaste vormen volstaan nu:</p>
   <table class="gt">
     <tr><td class="p">yo</td><td class="v">soy de</td><td>ik kom uit</td><td class="ex"><b>Soy de</b> <span class="pl">Bélgica</span>.</td></tr>
     <tr><td class="p">tú</td><td class="v">eres de</td><td>jij komt uit</td><td class="ex">¿<b>Eres de</b> <span class="pl">España</span>?</td></tr>
     <tr><td class="p">él/ella/usted</td><td class="v">es de</td><td>hij/zij komt · u komt uit</td><td class="ex">María <b>es de</b> <span class="pl">Sevilla</span>.</td></tr>
   </table>
-  <p class="ojo">⚠️ <b>¡Ojo!</b> <span class="es">Zeg «soy <b>de</b> Argelia» (= ik kom <b>uit</b> Argelije), <b>niet</b> «soy Argelia».</span> De extranjera maakt net die fout in de video. Land = met <b>de</b>; nationaliteit = zónder <b>de</b> (soy argelina).</p>
+  <p class="ojo">⚠️ <b>¡Ojo!</b> <span class="es">Di «soy <b>de</b> Argelia», <b>no</b> «soy Argelia». En el vídeo la extranjera comete justo ese error. País = con <b>de</b>; nacionalidad = sin <b>de</b> (soy argelina).</span> <span class="stn">land met «de», nationaliteit zonder</span></p>
 </div>
 
 <div class="gcard">
   <h3>El gentilicio — <i>man of vrouw</i> (de nationaliteit)</h3>
-  <p class="gp">De nationaliteit past zich aan aan ♂/♀. Drie patronen:</p>
+  <p class="gp">La nacionalidad cambia según ♂/♀. Tres patrones: <span class="stn">drie patronen</span></p>
   <div class="mv">
     <div class="mv-c mv-m"><span class="mv-t">♂ un chico</span><span>mexican<b>o</b> · colombian<b>o</b></span><span>portugu<b>és</b> · franc<b>és</b> · ingl<b>és</b></span></div>
     <div class="mv-c mv-f"><span class="mv-t">♀ una chica</span><span>mexican<b>a</b> · colombian<b>a</b></span><span>portugu<b>esa</b> · franc<b>esa</b> · ingl<b>esa</b></span></div>
   </div>
   <p class="gp" style="margin-top:10px">Sommige blijven <b>gelijk</b> voor ♂ én ♀: <b>belga</b>, <b>marroquí</b>, <b>estadounidense</b>, <b>canadiense</b>.</p>
-  <p class="ojo">⚠️ <b>¡Ojo!</b> <span class="es">In het Spaans schrijf je de nationaliteit en de taal met een <b>kleine letter</b>: soy <b>español</b>, hablo <b>neerlandés</b>.</span> (In het Nederlands/Engels net met een hoofdletter — een klassieke valstrik!)</p>
+  <p class="ojo">⚠️ <b>¡Ojo!</b> <span class="es">En español la nacionalidad y el idioma van en <b>minúscula</b>: soy <b>español</b>, hablo <b>neerlandés</b>.</span> <span class="stn">in het Nederlands net met een hoofdletter — klassieke valstrik</span></p>
 </div>
 
 <div class="gcard">
   <h3><span class="v">hablo</span> + <i>idioma</i> — <i>welke talen je spreekt</i></h3>
-  <p class="gp">De taal = vaak de nationaliteit «in het klein»: español → <b>el español</b>. Vaste vormen:</p>
+  <p class="gp">El idioma es a menudo la nacionalidad «en pequeño»: español → <b>el español</b>. Formas fijas: <span class="stn">de taal lijkt op de nationaliteit</span></p>
   <table class="gt">
     <tr><td class="v">Hablo</td><td>ik spreek</td><td class="ex"><b>Hablo</b> neerlandés y un poco de español.</td></tr>
     <tr><td class="v">¿Hablas…?</td><td>spreek jij…?</td><td class="ex">¿<b>Hablas</b> francés?</td></tr>
     <tr><td class="v">¿Habla usted…?</td><td>spreekt u…?</td><td class="ex">¿<b>Habla usted</b> inglés?</td></tr>
   </table>
-  <p class="ojo">💡 <span class="es">In de video spreekt de vrouw <b>tres idiomas</b>: árabe, francés y español.</span> Steun: «un poco» / «bastante bien» zeggen hoe góed je iets spreekt.</p>
+  <p class="ojo">💡 <span class="es">En el vídeo la mujer habla <b>tres idiomas</b>: árabe, francés y español. Con «un poco» y «bastante bien» dices <i>cómo</i> de bien lo hablas.</span> <span class="stn">zeg ook hoe góed je een taal spreekt</span></p>
 </div>
 
 <div class="gcard soft">
   <h3>tú <span class="v">↔</span> usted — <i>informeel of beleefd</i></h3>
-  <p class="gp">Met vrienden/klasgenoten: <b>tú</b> → «¿De dónde <b>eres</b>?». Met een onbekende volwassene / formeel: <b>usted</b> → «¿De dónde <b>es</b> usted?». In de video vraagt Julio beleefd «¿<b>Habla usted</b> francés?». In de klas gebruiken we meestal <b>tú</b>.</p>
+  <p class="gp">Con amigos y compañeros: <b>tú</b> → «¿De dónde <b>eres</b>?». Con un adulto desconocido o en situación formal: <b>usted</b> → «¿De dónde <b>es</b> usted?». En el vídeo Julio pregunta con educación «¿<b>Habla usted</b> francés?». En clase usamos casi siempre <b>tú</b>. <span class="stn">tú of usted, naar de situatie</span></p>
 </div>
 """
 
@@ -96,19 +96,19 @@ GRAM=r"""
 TAREA=r"""
 <div class="tcard">
   <div class="tmeta">
-    <span><b>👤 Wie</b> jij + 2 klasgenoten (of bekende personen)</span>
-    <span><b>🎯 Doel</b> een mini-kaart maken: wie komt waarvandaan &amp; spreekt welke taal</span>
-    <span><b>🗣️ Hoe</b> mondeling presenteren + op de kaart aanwijzen</span>
-    <span><b>✅ Resultaat</b> «Mi mapa» ingevuld (3 personen) + kort voorgesteld</span>
+    <span><b>👤 Quién</b> tú + 2 compañeros (o personas conocidas)</span>
+    <span><b>🎯 Objetivo</b> hacer un minimapa: quién es de dónde y qué idioma habla</span>
+    <span><b>🗣️ Cómo</b> presentar oralmente y señalar en el mapa</span>
+    <span><b>✅ Resultado</b> «Mi mapa» relleno (3 personas) y presentado</span>
   </div>
   <h3>Mi mapa · ¿De dónde eres? — <i>plaats 3 personen op de wereldkaart</i></h3>
   <ol class="pasos">
-    <li><b>Elige a 3 personas.</b> Kies jezelf + 2 anderen (klasgenoten of bekende personen: cantantes, futbolistas…).</li>
-    <li><b>Pregunta el origen.</b> Vraag (of bedenk) waar ze vandaan komen:
+    <li><b>Elige a 3 personas.</b> Elígete a ti y a 2 personas más (compañeros o gente conocida: cantantes, futbolistas…). <span class="stn">jezelf plus twee anderen</span></li>
+    <li><b>Pregunta el origen.</b> Pregunta (o inventa) de dónde son: <span class="stn">vraag of bedenk hun herkomst</span>
         <div class="frame">«¿De dónde eres? / ¿De qué país?»</div></li>
-    <li><b>Escribe la ficha.</b> Vul per persoon in — let op de gentilicio (♂/♀) en de kleine letter:
+    <li><b>Escribe la ficha.</b> Rellena una ficha por persona; ojo con el gentilicio (♂/♀) y con la minúscula: <span class="stn">let op de gentilicio en de kleine letter</span>
         <div class="frame">«____ es de ____ (país). Es ____ (nacionalidad) y habla ____ (idioma).»</div></li>
-    <li><b>Preséntalo.</b> Wijs het land aan op de kaart (Mapa-tab) en stel je 3 personen voor aan de klas.</li>
+    <li><b>Preséntalo.</b> Señala el país en el mapa (pestaña Mapa) y presenta a tus 3 personas a la clase. <span class="stn">wijs het land aan en stel je personen voor</span></li>
   </ol>
   <div class="carne">
     <div class="carne-h">MI MAPA · Academia «Bienvenidos al español»</div>
@@ -121,7 +121,7 @@ TAREA=r"""
         <div><span>Nombre</span><i></i></div><div><span>Es de…</span><i></i></div><div><span>Es…/habla…</span><i></i></div></div><span class="di-ok">☐</span></div>
     </div>
   </div>
-  <p class="crit">🏁 <b>Klaar als…</b> je voor 3 personen zegt «<b>es de</b> + land» én de juiste <b>gentilicio</b> (♂/♀, kleine letter) en <b>taal</b> geeft, en het land op de kaart aanwijst — zónder af te lezen.</p>
+  <p class="crit">🏁 <b>Está listo cuando…</b> dices de 3 personas «<b>es de</b> + país», das el <b>gentilicio</b> correcto (♂/♀, en minúscula) y el <b>idioma</b>, y señalas el país en el mapa, sin leer. <span class="stn">land, gentilicio, taal en de kaart — zónder af te lezen</span></p>
 </div>
 """
 
@@ -140,15 +140,15 @@ def jcard(w,nl):
 def dchip(w,ok): return f'<button class="dchip" data-ok="{ok}" data-w="{w}">🔊 {w}</button>'
 def acchip(w,html): return f'<button class="shchip" data-w="{w}">🔊 {html}</button>'
 SUENA=('<div class="suena">'
- '<div class="sblok"><h3>① La eñe · ñ — de klank van España</h3>'
+ '<div class="sblok"><h3>① La eñe · ñ — el sonido de España <span class="stn">de klank van España</span></h3>'
  '<p class="sh">La <b>ñ</b> suena como «nj» en «oranje» o «Spanje». Pulsa 🔊 y repite. <span class="gloss">ñ = nj</span></p>'
  f'<div class="cc-grid tight">{"".join(jcard(*n) for n in NWORDS)}</div>'
- '<p class="ojo2">⚠️ <b>¡Ojo!</b> <span>ñ ≠ n: «año» (jaar) klinkt anders dan «ano». Het streepje (~) verandert de klank én de betekenis!</span></p></div>'
+ '<p class="ojo2">⚠️ <b>¡Ojo!</b> <span>ñ ≠ n: «año» no suena como «ano». La rayita (~) cambia el sonido <i>y</i> el significado.</span> <span class="stn">het streepje verandert alles</span></p></div>'
  '<div class="sblok"><h3>② La c y la z · /θ/ ~ /s/</h3>'
- '<p class="sh">In Spanje klinken <b>z</b> en <b>c</b> (vóór e/i) als een zachte <b>th</b> (zoals Engels «think»); in Latijns-Amerika als <b>s</b>. Allebei goed!</p>'
+ '<p class="sh">En España la <b>z</b> y la <b>c</b> (delante de e/i) suenan como una <b>th</b> suave (como en inglés «think»); en Latinoamérica, como <b>s</b>. ¡Las dos están bien! <span class="stn">allebei goed</span></p>'
  f'<div class="cc-grid tight">{"".join(jcard(*c) for c in CZWORDS)}</div>'
- '<p class="ojo2">⚠️ <b>¡Ojo!</b> <span>c + a/o/u = /k/ (<b>ca</b>sa, <b>co</b>lombiano) · maar c + e/i = /θ~s/ (<b>ci</b>nco, Fran<b>ci</b>a) — net als de z.</span></p></div>'
- '<div class="sblok"><h3>③ ¿c/z suave o no? · teken wat je hoort</h3>'
+ '<p class="ojo2">⚠️ <b>¡Ojo!</b> <span>c + a/o/u = /k/ (<b>ca</b>sa, <b>co</b>lombiano), pero c + e/i = /θ~s/ (<b>ci</b>nco, Fran<b>ci</b>a), igual que la z.</span> <span class="stn">c+e/i klinkt zacht</span></p></div>'
+ '<div class="sblok"><h3>③ ¿c/z suave o no? · marca lo que oyes <span class="stn">teken wat je hoort</span></h3>'
  '<p class="sh">Pulsa las palabras con el sonido <b>suave</b> de c/z /θ~s/ (verde = correcto). Pulsa 🔊 para escuchar. <span class="gloss">klik de woorden met de zachte c/z</span></p>'
  f'<div class="shrow">{"".join(dchip(*d) for d in DISCRIM)}</div>'
  '<p class="sfb" id="dfb"></p></div>'
@@ -235,12 +235,12 @@ main{max-width:1000px;margin:0 auto;padding:18px}
 
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · U3 · Kit · Gramática · Tarea</title><style>{CSS}</style></head><body>
-<div class="top"><h1>Unidad 3 · Nacionalidades y países</h1><p>De <b>kit de supervivencia</b> (¿de dónde eres? · soy de + land · nationaliteit · talen), een korte <b>uitlegnota</b> waar het helpt, en je <b>eindtaak</b>. Klik 🔊 om woorden te horen.</p></div>
+<div class="top"><h1>Unidad 3 · Nacionalidades y países</h1><p>El <b>kit de supervivencia</b> (¿de dónde eres? · soy de + país · nacionalidad · idiomas), una <b>nota breve</b> donde ayuda, y tu <b>tarea final</b>. Pulsa 🔊 para oír las palabras. <span class="stn">de taal die je nodig hebt, kort uitgelegd, plus je eindtaak</span></p></div>
 <main>
- <h2 class="subh">🔊 Suena bien <small>uitspraak — de ñ, de c/z &amp; de klemtoon (aguda)</small></h2>
+ <h2 class="subh">🔊 Suena bien <small>pronunciación — la ñ, la c/z y el acento (aguda)</small></h2>
  {SUENA}
 
- <h2 class="subh">§2 · Kit de supervivencia <small>de chunks per situatie — klik om te horen</small></h2>
+ <h2 class="subh">§2 · Kit de supervivencia <small>los chunks por situación — pulsa para oírlos</small></h2>
  {KIT}
 
  <h2 class="subh">§4 · Gramática en la práctica <small>kort en functioneel — geen theorie om de theorie</small></h2>

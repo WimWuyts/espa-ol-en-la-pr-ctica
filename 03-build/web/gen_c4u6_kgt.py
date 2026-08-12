@@ -41,13 +41,13 @@ KIT="".join(cluster(*c) for c in CLUSTERS)
 
 GRAM=r"""
 <div class="note">
-  <div class="note-h">🔎 <b>Fíjate</b> · Kijk terug naar de scène — je hoorde dit al:</div>
+  <div class="note-h">🔎 <b>Fíjate</b> · vuelve a la escena: ya lo has oído. <span class="stn">je hoorde dit al</span></div>
   <div class="obs">«Hay cosas <span class="pl">encima de</span> todas las sillas, <span class="pl">debajo de</span> la cama. <span class="pl">Dentro del</span> frigorífico tengo tres botellas.» · «¿<span class="v">Puedo</span> fumar? — Aquí no, pero <span class="v">puedes</span> ir fuera.»</div>
 </div>
 
 <div class="gcard">
   <h3><span class="pl">¿Dónde está?</span> — las preposiciones de lugar</h3>
-  <p class="gp">Om te zeggen <b>waar</b> iets is, gebruik je een <b>plaats-woord</b> (turquoise):</p>
+  <p class="gp">Para decir <b>dónde</b> está algo usas una <b>palabra de lugar</b> (en turquesa): <span class="stn">een plaats-woord</span></p>
   <div class="prep">
     <div class="pr"><b>encima de</b><i>op / boven</i></div>
     <div class="pr"><b>debajo de</b><i>onder</i></div>
@@ -57,7 +57,7 @@ GRAM=r"""
     <div class="pr"><b>detrás de</b><i>achter</i></div>
     <div class="pr"><b>entre</b><i>tussen</i></div>
   </div>
-  <p class="ojo">⚠️ <b>¡Ojo!</b> <span class="es"><b>de + el = del</b>: encima <b>del</b> sofá (niet «de el»). En <b>a + el = al</b>: al lado <b>del</b> armario.</span></p>
+  <p class="ojo">⚠️ <b>¡Ojo!</b> <span class="es"><b>de + el = del</b>: encima <b>del</b> sofá (nunca «de el»). Y <b>a + el = al</b>: al lado <b>del</b> armario.</span> <span class="stn">de+el wordt del</span></p>
 </div>
 
 <div class="gcard">
@@ -68,36 +68,36 @@ GRAM=r"""
     <tr><td class="v">¿Dónde está…?</td><td>waar is…? (iets bekend)</td><td class="ex">¿Dónde <b>está</b> el bolso?</td></tr>
     <tr><td class="v">está / están</td><td>het staat / ze staan</td><td class="ex"><b>Está</b> encima de la mesa.</td></tr>
   </table>
-  <p class="ojo">💡 <span class="es"><b>hay</b> = er bestaat iets (onbekend) · <b>está</b> = waar dat bekende ding zich bevindt.</span></p>
+  <p class="ojo">💡 <span class="es"><b>hay</b> = existe algo (todavía no conocido) · <b>está</b> = dónde se encuentra algo que ya conoces.</span> <span class="stn">hay = er is · está = waar het staat</span></p>
 </div>
 
 <div class="gcard soft">
   <h3><span class="v">poder</span> — ¿puedo…? · ¿puedes…? · pedir permiso</h3>
   <p class="gp">Om te vragen of iets <b>mag</b> of <b>kan</b>: <b>poder</b> + hele werkwoord.</p>
   <div class="mv">
-    <div class="mv-c mv-m"><span class="mv-t">🙋 vragen</span><span><b>¿Puedo</b> fumar? (ik)</span><span><b>¿Puedes</b> venir? (jij)</span></div>
+    <div class="mv-c mv-m"><span class="mv-t">🙋 vragen</span><span><b>¿Puedo</b> fumar? (yo)</span><span><b>¿Puedes</b> venir? (tú)</span></div>
     <div class="mv-c mv-f"><span class="mv-t">✅ antwoorden</span><span>Sí, <b>puedes</b>…</span><span>Aquí no, pero <b>puedes</b> ir fuera.</span></div>
   </div>
-  <p class="ojo">💡 <span class="es"><b>puedo</b> (ik) · <b>puedes</b> (jij) · <b>puede</b> (hij/zij). Altijd + een werkwoord in de hele vorm.</span></p>
+  <p class="ojo">💡 <span class="es"><b>puedo</b> (yo) · <b>puedes</b> (tú) · <b>puede</b> (él/ella). Siempre + infinitivo.</span> <span class="stn">altijd met het hele werkwoord</span></p>
 </div>
 """
 
 TAREA=r"""
 <div class="tcard">
   <div class="tmeta">
-    <span><b>👤 Wie</b> jij → de klas</span>
-    <span><b>🎯 Doel</b> je huis tonen en zeggen waar alles is</span>
-    <span><b>🗣️ Hoe</b> tekenen + benoemen + situeren</span>
-    <span><b>✅ Resultaat</b> «Plano de mi casa» met 4 kamers</span>
+    <span><b>👤 Quién</b> tú → la clase</span>
+    <span><b>🎯 Objetivo</b> enseñar tu casa y decir dónde está cada cosa</span>
+    <span><b>🗣️ Cómo</b> dibujar, nombrar y situar</span>
+    <span><b>✅ Resultado</b> «Plano de mi casa» con 4 habitaciones</span>
   </div>
-  <h3>Plano de mi casa — <i>teken je huis en zeg waar alles staat</i></h3>
+  <h3>Plano de mi casa — <i>dibuja tu casa y di dónde está cada cosa</i> <span class="stn">teken je huis en situeer alles</span></h3>
   <ol class="pasos">
-    <li><b>Dibuja el plano.</b> Teken de plattegrond van je huis (echt of droomhuis).</li>
-    <li><b>Etiqueta las habitaciones.</b> Benoem elke kamer:
+    <li><b>Dibuja el plano.</b> Dibuja el plano de tu casa (real o de tus sueños). <span class="stn">echt huis of droomhuis</span></li>
+    <li><b>Etiqueta las habitaciones.</b> Pon el nombre de cada habitación: <span class="stn">benoem elke kamer</span>
         <div class="frame">«Aquí está ____ (la cocina · el salón · el dormitorio…).»</div></li>
-    <li><b>Sitúa las cosas.</b> Zeg waar de meubels/dingen zijn met een plaats-woord:
+    <li><b>Sitúa las cosas.</b> Di dónde están los muebles y las cosas con una palabra de lugar: <span class="stn">situeer met een plaats-woord</span>
         <div class="frame">«En el salón hay un sofá. ____ (encima de · al lado de…) la mesa está ____.»</div></li>
-    <li><b>Preséntalo.</b> Stel je plattegrond voor aan de klas — zónder af te lezen.</li>
+    <li><b>Preséntalo.</b> Presenta tu plano a la clase, sin leer. <span class="stn">zónder af te lezen</span></li>
   </ol>
   <div class="carne">
     <div class="carne-h">PLANO DE MI CASA · Academia «Bienvenidos al español»</div>
@@ -110,7 +110,7 @@ TAREA=r"""
         <div><span>La habitación:</span><i></i></div><div><span>¿Qué hay?</span><i></i></div></div><span class="di-ok">☐</span></div>
     </div>
   </div>
-  <p class="crit">🏁 <b>Klaar als…</b> je 4 kamers benoemt en per kamer zegt wat er is én waar het staat (met «hay» + een plaats-woord) — zónder af te lezen.</p>
+  <p class="crit">🏁 <b>Está listo cuando…</b> nombras 4 habitaciones y de cada una dices qué hay y dónde está (con «hay» + una palabra de lugar), sin leer. <span class="stn">vier kamers, met «hay» en een plaats-woord</span></p>
 </div>
 """
 
@@ -129,10 +129,10 @@ SUENA=('<div class="suena">'
  '<p class="sh">En español la <b>b</b> y la <b>v</b> suenan <b>igual</b> (betacismo): «<b>b</b>ien» y «<b>v</b>ino» empiezan con el mismo sonido. Pulsa 🔊 y repite. <span class="gloss">b en v klinken hetzelfde</span></p>'
  f'<div class="cc-grid tight">{"".join(jcard(*w) for w in BVWORDS)}</div></div>'
  '<div class="sblok"><h3>② ¿b o v? · se escribe distinto</h3>'
- '<p class="sh">Je hóórt geen verschil, dus let op de <b>schrijfwijze</b>! Deze paren klinken identiek maar betekenen iets anders:</p>'
+ '<p class="sh">No se <b>oye</b> ninguna diferencia, así que fíjate en cómo se <b>escribe</b>. Estas parejas suenan igual pero significan cosas distintas: <span class="stn">let op de schrijfwijze</span></p>'
  f'<div class="cc-grid tight">{"".join(jcard(*w) for w in BVPAREN)}</div>'
  '<p class="ojo2">⚠️ <b>¡Ojo!</b> <span>ba<b>c</b>a (imperiaal) klinkt als <b>v</b>aca (koe)! De klank is gelijk; enkel de spelling verschilt.</span></p></div>'
- '<div class="sblok"><h3>③ ¿Llana o aguda? · teken wat je hoort</h3>'
+ '<div class="sblok"><h3>③ ¿Llana o aguda? · marca lo que oyes <span class="stn">teken wat je hoort</span></h3>'
  '<p class="sh">Pulsa las palabras con el acento en la <b>última</b> sílaba (<i>agudas</i>; verde = correcto). Pulsa 🔊 para escuchar. <span class="gloss">klemtoon op de laatste lettergreep</span></p>'
  f'<div class="shrow">{"".join(dchip(*d) for d in DISCRIM)}</div>'
  '<p class="sfb" id="dfb"></p></div>'
@@ -215,11 +215,11 @@ main{max-width:1000px;margin:0 auto;padding:18px}
 
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · U6 · Kit · Gramática · Tarea</title><style>{CSS}</style></head><body>
-<div class="top"><h1>Unidad 6 · La casa y los lugares</h1><p>De <b>kit de supervivencia</b> (kamers benoemen &amp; zeggen waar de dingen zijn), een korte <b>uitlegnota</b> waar het helpt, en je <b>eindtaak</b>. Klik 🔊 om woorden te horen.</p></div>
+<div class="top"><h1>Unidad 6 · La casa y los lugares</h1><p>El <b>kit de supervivencia</b> (nombrar las habitaciones y decir dónde están las cosas), una <b>nota breve</b> donde ayuda, y tu <b>tarea final</b>. Pulsa 🔊 para oír las palabras. <span class="stn">de taal die je nodig hebt, kort uitgelegd, plus je eindtaak</span></p></div>
 <main>
  <h2 class="subh">🔊 Suena bien <small>uitspraak — b = v &amp; llana/aguda</small></h2>
  {SUENA}
- <h2 class="subh">§2 · Kit de supervivencia <small>de chunks per situatie — klik om te horen</small></h2>
+ <h2 class="subh">§2 · Kit de supervivencia <small>los chunks por situación — pulsa para oírlos</small></h2>
  {KIT}
  <h2 class="subh">§4 · Gramática en la práctica <small>kort en functioneel — geen theorie om de theorie</small></h2>
  {GRAM}
