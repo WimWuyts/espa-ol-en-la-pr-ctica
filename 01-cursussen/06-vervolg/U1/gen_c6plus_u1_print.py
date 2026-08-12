@@ -138,14 +138,14 @@ P('<table class="conj"><thead><tr><th>—</th><th>hablar</th><th>comer</th><th>v
   '<tr><td class="p">ellos</td><td class="v">habl<span class="end">an</span></td><td class="v">com<span class="end">en</span></td><td class="v">viv<span class="end">en</span></td><td class="v">son</td><td class="v">van</td></tr></tbody></table>')
 P(actx(AN(), "Calienta · el presente (cloze)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p><i>Vul het presente in (infinitivo tussen haakjes).</i></p>'
+  '<p><i>Escribe el presente (el infinitivo está entre paréntesis).</i> <span class="gloss">Vul de tegenwoordige tijd in.</span></p>'
   '<p style="margin-left:12.5mm">1. Yo <span class="wl sm"></span> (estudiar) español. &nbsp; 2. ¿Tú <span class="wl sm"></span> (vivir) en Gante? &nbsp; 3. Lucía <span class="wl sm"></span> (ser) de Sevilla.<br>'
   '4. Nosotros <span class="wl sm"></span> (comer) a las dos. &nbsp; 5. Ellos <span class="wl sm"></span> (ir) al instituto. &nbsp; 6. Yo <span class="wl sm"></span> (hacer) deporte.</p>',
   apoyo="Banco de palabras: estudio · vives · es · comemos · van · hago"))
 P('<div class="truc"><b>Repaso ser/estar (U0):</b> <b>ser</b> = wie/wat je bent (soy belga, soy simpático) · <b>estar</b> = waar/hoe je bent (estoy en clase, estoy bien). <span class="gloss">In §4 zetten we dit contrast helemaal op scherp.</span></div>')
 P(actx(AN(), "¿ser o estar? (repaso rápido)",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 2 min"},{"t":"★☆☆"}],
-  '<p><i>Kies soy of estoy.</i></p>'
+  '<p><i>Elige soy o estoy.</i> <span class="gloss">Kies soy of estoy.</span></p>'
   '<p style="margin-left:12.5mm">1. Yo <span class="wl sm"></span> de Bélgica. &nbsp; 2. Hoy <span class="wl sm"></span> cansado. &nbsp; 3. <span class="wl sm"></span> estudiante. &nbsp; 4. <span class="wl sm"></span> en el instituto.</p>',
   apoyo="Pista: ser = identidad o carácter · estar = lugar o estado de ahora"))
 sec_close()

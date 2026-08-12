@@ -618,7 +618,7 @@ P(regla("Regla · cantidades",
   '<br>🔴 Envases: <b>un kilo de</b>, <b>una botella de</b>, <b>un paquete de</b> + product.</p>'))
 P(tarea_com("Tarea comunicativa · «En el mercado»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
-  '<p><b>Situación:</b> A = cliente met een lijst, B = vendedor/a in de mercado. Vraag om producten met een <b>cantidad</b>; B antwoordt met de prijs. Wissel. <span class="gloss">«¿Me pone un kilo de tomates? —Claro, son dos euros.»</span></p>'
+  '<p><b>Situación:</b> A es el/la cliente con una lista y B, el/la vendedor/a del mercado. Pide productos con una <b>cantidad</b> <span class="gloss">A vraagt met een hoeveelheid, B verkoopt.</span>; B antwoordt met de prijs. Wissel. <span class="gloss">«¿Me pone un kilo de tomates? —Claro, son dos euros.»</span></p>'
   '<p style="margin-left:12.5mm">Mi compra (3 productos + cantidad): <span class="wl full"></span></p>'
   + APO.html("Marco: ¿me pone…? + cantidad")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «cantidades» (tetris), «un poco de o muchos» en «señala en el mercado» met zelfcorrectie.</div>')

@@ -243,7 +243,7 @@ P(actx(AN(), "Empareja: infinitivo ↔ indefinido (él)",
   apoyo=""))
 P(actx(AN(), "Cloze · pretéritos fuertes",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p><i>cloze (irregular).</i> Vul de <b>indefinido</b> in.</p>'
+  '<p><i>cloze (irregulares).</i> Escribe el <b>indefinido</b>. <span class="gloss">Vul de verleden tijd in.</span></p>'
   '<p style="margin-left:12.5mm">1. Evita <span class="wl md"></span> (ser) muy importante. &nbsp; 2. Maradona <span class="wl md"></span> (hacer) el «gol del siglo».<br>'
   '3. (Yo) <span class="wl md"></span> (tener) un buen día. &nbsp; 4. Gardel <span class="wl md"></span> (ir) a París.<br>'
   '5. El equipo <span class="wl md"></span> (estar) en la final. &nbsp; 6. Ella me <span class="wl md"></span> (dar) un regalo.</p>',

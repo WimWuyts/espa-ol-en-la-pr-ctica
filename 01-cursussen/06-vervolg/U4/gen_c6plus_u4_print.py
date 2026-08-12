@@ -136,7 +136,7 @@ P(actx(AN(), "Presente · verbos del viaje (repaso)",
   apoyo="Banco de palabras: viajar · visitar · hacer · salir · volver · ver"))
 P(actx(AN(), "Mis planes de viaje · ir a + infinitivo (repaso)",
   [{"t":"✍️ Escribir","skill":True},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>repaso U3.</i> Schrijf 2 reisplannen met <b>ir a + infinitivo</b>.</p>'
+  '<p><i>repaso U3.</i> Escribe dos planes de viaje con <b>ir a + infinitivo</b>. <span class="gloss">Twee reisplannen.</span></p>'
   '<p style="margin-left:12.5mm">Este verano voy a <span class="wl lg"></span><br>Primero vamos a <span class="wl md"></span> y luego a <span class="wl md"></span></p>',
   apoyo="Marco: Voy a viajar a… · Vamos a visitar… · Voy a probar…"))
 sec_close()
@@ -332,7 +332,7 @@ P(actx(AN(), "Clasifica: ¿por o para?",
   + sortcols([("para (doel/bestemming)",""),("por (middel/duur/…)","")], eigen=False), apoyo="Banco de palabras"))
 P(actx(AN(), "Traduce · por / para",
   [{"t":"🔁 Practicar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>vertalen (NL → ES).</i> Kies por of para.</p>'
+  '<p><i>traducir (NL → ES).</i> Elige por o para. <span class="gloss">Vertaal en kies por of para.</span></p>'
   '<p style="margin-left:12.5mm">1. Ik vertrek naar Chile. → Salgo <span class="wl sm"></span> Chile.<br>'
   '2. Ik reis per trein. → Viajo <span class="wl sm"></span> tren.<br>'
   '3. Ik studeer om te reizen. → Estudio <span class="wl sm"></span> viajar.<br>'

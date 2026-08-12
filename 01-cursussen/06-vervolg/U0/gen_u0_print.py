@@ -586,7 +586,7 @@ P(actx(AN(), "Completa (cloze) · verbos regulares",
   '7. Yo <span class="wl sm"></span> (leer) un libro. &nbsp; 8. ¿Tú <span class="wl sm"></span> (escuchar) música?</p>', apoyo="Banco de palabras: hablo · vives · estudiamos · come · escribís · trabajan · leo · escuchas"))
 P(actx(AN(), "¿Quién hace qué? · relaciona sujeto y forma",
   [{"t":"🔗 Emparejar","skill":True},{"t":"👥 En parejas"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p><i>Verbind elk onderwerp met de juiste werkwoordsvorm (schrijf de letter).</i></p>'
+  '<p><i>Une cada sujeto con su forma verbal: escribe la letra.</i> <span class="gloss">Verbind en schrijf de letter.</span></p>'
   '<div class="wcols" style="grid-template-columns:1fr 1fr;margin-left:12.5mm">'
   '<div class="wcol"><div class="ch">Sujeto</div><div class="cb short">1. Yo &nbsp; 2. Mis abuelos &nbsp; 3. Tú &nbsp; 4. Mi hermana &nbsp; 5. Nosotros</div></div>'
   '<div class="wcol"><div class="ch">Forma</div><div class="cb short">a. comes pizza &nbsp; b. soy estudiante &nbsp; c. vive en Madrid &nbsp; d. hablamos dos lenguas &nbsp; e. viven en el campo</div></div></div>'
@@ -618,7 +618,7 @@ P(actx(AN(), "Conjuga «ser» · completa la tabla",
 P('<div class="truc"><b>¡Ojo! soy ↔ estoy:</b> <b>soy</b> = wie/wat je bent (<i>soy belga, soy estudiante</i>) · <b>estoy</b> = waar/hoe je bent (<i>estoy en clase, estoy bien</i>). <span class="gloss">Het volledige ser/estar-contrast komt in U1.</span></div>')
 P(actx(AN(), "¿soy o estoy?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>Kies soy of estoy.</i></p>'
+  '<p><i>Elige soy o estoy.</i> <span class="gloss">Kies soy of estoy.</span></p>'
   '<p style="margin-left:12.5mm">1. Yo <span class="wl sm"></span> de Bélgica. &nbsp; 2. Yo <span class="wl sm"></span> en clase. &nbsp; 3. <span class="wl sm"></span> estudiante. &nbsp; 4. Hoy <span class="wl sm"></span> contento/a. &nbsp; 5. <span class="wl sm"></span> alto/a. &nbsp; 6. <span class="wl sm"></span> bien, gracias.</p>', apoyo="Pista: ser = quién eres (siempre) · estar = dónde estás o cómo te sientes (ahora)"))
 P(actx(AN(), "★ Tarea comunicativa · entrevista",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
@@ -774,7 +774,7 @@ P(actx(AN(), "Une con flechas · nombre ↔ adjetivo",
   '<p style="margin-left:12.5mm" class="gloss">↳ <span class="wl full"></span></p>', apoyo=""))
 P(actx(AN(), "¿Correcto o no? · voorbeeld / niet-voorbeeld",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★★"}],
-  '<p><i>Schrijf ✔ of ✘ achter elke zin. Herschrijf de foute zinnen volledig correct.</i></p>'
+  '<p><i>Escribe ✔ o ✘ detrás de cada frase y vuelve a escribir enteras las que estén mal.</i> <span class="gloss">Kruis aan en herschrijf de foute zinnen volledig.</span></p>'
   '<p style="margin-left:12.5mm">☐ una chica simpático → <span class="wl md"></span><br>'
   '☐ los libros rojos → <span class="wl sm"></span> (✔/✘)<br>'
   '☐ un gran problema → <span class="wl sm"></span> (✔/✘)<br>'
@@ -834,7 +834,7 @@ P(actx(AN(), "Dictado de números y datos",
   '<p style="margin-left:12.5mm">a) edad: <span class="wl sm"></span> &nbsp; b) teléfono: <span class="wl md"></span> &nbsp; c) año: <span class="wl sm"></span> &nbsp; d) código postal: <span class="wl sm"></span></p>', apoyo="Modelo: audio"))
 P(actx(AN(), "¿Y tú? · país, nacionalidad y lengua",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"± 5 min"},{"t":"★★★"}],
-  '<p><i></i> Schrijf drie zinnen over jezelf en zeg ze daarna hardop.</p>'
+  '<p>Escribe tres frases sobre ti y dilas después en voz alta. <span class="gloss">Drie zinnen over jezelf; zeg ze daarna hardop.</span></p>'
   '<p style="margin-left:12.5mm">Soy de <span class="wl md"></span>. Soy <span class="wl md"></span>. Hablo <span class="wl md"></span>.</p>'
   '<p style="margin-left:12.5mm" class="gloss">Plus: doe hetzelfde voor een klasgenoot (3ª pers.: es de… / es… / habla…). <span class="wl full"></span></p>', apoyo="Marco: Soy de… · Soy… · Hablo…"))
 P(audiorow('<div class="ic">🎧</div><div><b>Escucha 3 presentaciones</b> (Diego, Lucía, Mateo) en la web. <b>1ª vez:</b> ¿de qué país? · <b>2ª vez:</b> nacionalidad y lengua. Escribe los datos.</div>',

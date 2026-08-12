@@ -1073,7 +1073,7 @@ P('<div class="route-note">🎯 <b>Communicatieve taak:</b> afzender = jij · on
 P(lpd(("3","doelgericht schrijven met een voorbeeld"), ("4","zich mondeling voorstellen"), ("7","woordenschat: hora/rutina"), ("8","reflexivos + presente irregular")))
 P('</div>')
 P('<ol class="pasos">'
-  '<li><b>Haz tu horario.</b> Vul de tabel hieronder in met de uren van jouw dag.</li>'
+  '<li><b>Haz tu horario.</b> Completa la tabla de abajo con las horas de tu día. <span class="gloss">Vul de tabel in met de uren van jouw dag.</span></li>'
   '<li><b>Escribe tu día</b> (6–8 frases) met uren, reflexieve werkwoorden én conectores (primero, después…).</li>'
   '<li><b>Di con qué frecuencia</b> haces algo (siempre, a veces, nunca).</li>'
   '<li><b>Preséntalo</b> a la clase (of neem een vlog/audio op via de digitale pagina).</li>'

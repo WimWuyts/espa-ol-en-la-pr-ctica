@@ -306,7 +306,7 @@ P(regla("Regla · me/te/le/nos/os/les (OI)", '<table class="conj" style="margin-
 P(mirror([("¿A quién le escribes?", "Le escribo a Diego."), ("¿Y a tus amigos?", "Les escribo (a ellos).")]))
 P(actx(AN(), "¿le o les?",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p><i>Kies le of les.</i></p>'
+  '<p><i>Elige le o les.</i> <span class="gloss">Kies le of les.</span></p>'
   '<p style="margin-left:12.5mm">1. <span class="wl sm"></span> escribo a mi amiga. &nbsp; 2. <span class="wl sm"></span> mando fotos a mis padres.<br>'
   '3. <span class="wl sm"></span> cuento un secreto a Diego. &nbsp; 4. <span class="wl sm"></span> regalo auriculares a mis hermanos.<br>'
   '5. <span class="wl sm"></span> pregunto la contraseña a Valen. &nbsp; 6. <span class="wl sm"></span> muestro mi perfil a mis amigos.</p>',
@@ -428,7 +428,7 @@ P(regla("Regla · dar tu opinión", '<p><b>creo que / pienso que / me parece que
   '<span class="gloss">Bouw je mening af: <b>creo que</b> + gewone zin + <b>porque</b> + reden.</span></p>'))
 P(actx(AN(), "Cloze · creo que + indicativo",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p><i>cloze (indicativo!).</i> Vervoeg in de <b>gewone tijd</b> na «creo que…».</p>'
+  '<p><i>cloze.</i> Conjuga en <b>indicativo</b> después de «creo que…». <span class="gloss">Na «creo que» komt de gewone tijd.</span></p>'
   '<p style="margin-left:12.5mm">1. Creo que las redes <span class="wl sm"></span> (ser) útiles. &nbsp; 2. Pienso que Diego <span class="wl sm"></span> (tener) razón.<br>'
   '3. Me parece que nosotros <span class="wl sm"></span> (pasar) mucho tiempo online. &nbsp; 4. Creo que el móvil <span class="wl sm"></span> (ayudar) a estudiar.<br>'
   '5. Pienso que los videojuegos <span class="wl sm"></span> (poder) ser adictivos.</p>',

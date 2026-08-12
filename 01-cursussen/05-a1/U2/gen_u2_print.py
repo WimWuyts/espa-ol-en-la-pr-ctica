@@ -1033,7 +1033,7 @@ P('<div class="lecdoel"><b>Tekstsoort:</b> un álbum/una descripción · <b>Afze
 P('<div class="txtmeta"><span class="tm"><b>Tekstsoort:</b> descripción</span><span class="tm"><b>Registro:</b> informeel</span><span class="tm"><b>Onderwerp:</b> la familia</span></div>')
 P(actx(1, "Antes de leer — predecir",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 2 min"},{"t":"★☆☆"}],
-  '<p>Lucía\'s familie is uit Sevilla. Welke woorden verwacht je in de tekst? Kruis aan.</p>'
+  '<p>Lucía\'s familie is uit Sevilla. ¿Qué palabras esperas encontrar en el texto? Márcalas. <span class="gloss">Welke woorden verwacht je? Kruis aan.</span></p>'
   '<p style="margin-left:12.5mm">☐ hermano &nbsp; ☐ paella &nbsp; ☐ abuelos &nbsp; ☐ ordenador &nbsp; ☐ simpática &nbsp; ☐ pelirroja</p>', apoyo=""))
 P('<div class="ptexts"><div class="ptext">'
   '<div class="ph"><div class="av">'+AV["lucia"]+'</div><div><div class="nm">Lucía</div><div class="fr">Sevilla 🇪🇸</div></div></div>'

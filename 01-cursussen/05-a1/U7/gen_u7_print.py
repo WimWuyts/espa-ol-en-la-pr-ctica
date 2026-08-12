@@ -611,7 +611,7 @@ P(regla("Regla · hay / estar",
   '<br>🔴 Nooit «hay el/la…». 🔴 Meervoud: <i>hay dos baños</i> maar <i>los baños <b>están</b></i>.</p>'))
 P(tarea_com("Tarea comunicativa · «Mi habitación»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
-  '<p><b>Situación:</b> A beschrijft zijn/haar kamer (¿qué hay? ¿dónde está?), B tekent mee zonder te kijken. Vergelijk daarna. Wissel. <span class="gloss">«En mi habitación hay una cama. La cama está al lado de la ventana.»</span></p>'
+  '<p><b>Situación:</b> A describe su habitación (¿qué hay? ¿dónde está?) y B la dibuja sin mirar. Después comparad. <span class="gloss">A beschrijft, B tekent; vergelijk daarna.</span> Wissel. <span class="gloss">«En mi habitación hay una cama. La cama está al lado de la ventana.»</span></p>'
   '<p style="margin-left:12.5mm">Mi habitación (3 cosas + dónde): <span class="wl full"></span></p>'
   + APO.html("Marco: hay… / … está…")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «¿hay o está?» (classify), «señala en la habitación» (point) en de casa-Memoria met zelfcorrectie.</div>')
@@ -784,7 +784,7 @@ P(actx(5, "¿Qué estás haciendo? — escribe",
   '<div class="wbox sm"></div>', apoyo="Marco: Estoy… / Está… / Estamos…"))
 P(tarea_com("Tarea comunicativa · «¿Qué están haciendo?»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 7 min"},{"t":"★★★"}],
-  '<p><b>Situación:</b> A mimet een actie (cocinar, dormir, leer…), B raadt met <b>«¿Estás …ndo?»</b>. Wissel. Noteer één actie van je buur. <span class="gloss">«—¿Estás cocinando? —¡Sí, estoy cocinando!»</span></p>'
+  '<p><b>Situación:</b> A hace mímica de una acción (cocinar, dormir, leer…) y B adivina con <b>«¿Estás …ndo?»</b>. Después cambiad. <span class="gloss">A mimet, B raadt; wissel daarna.</span> Noteer één actie van je buur. <span class="gloss">«—¿Estás cocinando? —¡Sí, estoy cocinando!»</span></p>'
   '<p style="margin-left:12.5mm">Mi compañero/a está: <span class="wl full"></span></p>'
   + APO.html("Marco: ¿Estás …ndo?")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «estar + gerundio» (cloze), «¿qué estás haciendo?» en de gerundio-drills met zelfcorrectie.</div>')
