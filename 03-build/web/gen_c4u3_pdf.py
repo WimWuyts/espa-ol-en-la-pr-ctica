@@ -293,7 +293,7 @@ PRAC=f"""
     +'<div class="wcols" style="margin-left:12.5mm"><div class="wcol"><h4>País 🌍</h4><div class="fill"></div></div><div class="wcol"><h4>Gentilicio 🪪</h4><div class="fill"></div></div><div class="wcol"><h4>Idioma 🗣️</h4><div class="fill"></div></div><div class="wcol"><h4>Tu palabra</h4><div class="fill"></div></div></div>')}
 
   {act(2,"Relaciona país ↔ nacionalidad",[("gestuurd","skill"),("★☆☆","")],
-    '<p style="margin-left:12.5mm">Trek een lijn tussen het land en de nationaliteit (♂/♀).</p>'
+    '<p style="margin-left:12.5mm">Une con una línea el país y la nacionalidad (♂/♀). <span class="gloss">verbind land en nationaliteit</span></p>'
     +'<table class="mtab" style="margin-left:12.5mm"><tr><td class="a">1. España</td><td><span class="ln"></span></td><td class="b">a. mexicano / mexicana</td></tr>'
     +'<tr><td class="a">2. México</td><td><span class="ln"></span></td><td class="b">b. colombiano / colombiana</td></tr>'
     +'<tr><td class="a">3. Colombia</td><td><span class="ln"></span></td><td class="b">c. español / española</td></tr>'
@@ -301,34 +301,34 @@ PRAC=f"""
     +'<tr><td class="a">5. Bélgica</td><td><span class="ln"></span></td><td class="b">e. argentino / argentina</td></tr></table>')}
 
   {act(3,"Completa el diálogo",[("gestuurd","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Vul het gesprek aan (denk aan <i>soy de</i> + land, en de gentilicio).</p>'
+    '<p style="margin-left:12.5mm">Completa la conversación (piensa en <i>soy de</i> + país, y en el gentilicio). <span class="gloss">gebruik soy de + land en de gentilicio</span></p>'
     +f'<div style="margin-left:12.5mm;font-size:10pt;line-height:2.5">'
     +f'— Hola, ¿de dónde {wl("sm")}?<br>— {wl("sm")} de México. Soy {wl("sm")} <span style="color:var(--mut);font-size:8.6pt">(un chico)</span>.<br>— ¿Qué idiomas {wl("sm")}?<br>— {wl("sm")} español e inglés.</div>')}
 
   {act(4,"Ordena la conversación",[("gestuurd","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Nummer de zinnen in de juiste volgorde (1–5).</p>'
+    '<p style="margin-left:12.5mm">Numera las frases en el orden correcto (1–5). <span class="gloss">nummer de zinnen</span></p>'
     +'<div class="scramble" style="margin-left:12.5mm"><span>___ Hablo español y un poco de inglés.</span><span>___ Hola, ¿de dónde eres?</span><span>___ ¡Encantado! Hasta luego.</span><span>___ Soy de Colombia, de Cartagena.</span><span>___ ¡Qué bien! ¿Y qué idiomas hablas?</span></div>')}
 
   {act(5,"La nacionalidad · ¿-o o -a?",[("gestuurd","skill"),("★☆☆","")],
-    f'<p style="margin-left:12.5mm">Vul de juiste letter in (♂ -o / ♀ -a).</p><div style="margin-left:12.5mm;font-size:10pt;line-height:2.4">'
+    f'<p style="margin-left:12.5mm">Escribe la letra correcta (♂ -o / ♀ -a). <span class="gloss">vul de juiste letter in</span></p><div style="margin-left:12.5mm;font-size:10pt;line-height:2.4">'
     +f'1. Diego (chico) es mexican{wl("sm")} &nbsp; 2. Valen (chica) es colombian{wl("sm")} &nbsp; 3. Mateo (chico) es argentin{wl("sm")} &nbsp; 4. Nina (chica) es peruan{wl("sm")}</div>')}
 
   {act(6,"Entrevista a un compañero",[("interactie","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Vraag het aan drie klasgenoten en noteer het antwoord. Wissel van rol.</p>'
+    '<p style="margin-left:12.5mm">Pregúntaselo a tres compañeros y anota la respuesta. Después cambiad. <span class="gloss">vraag het aan drie klasgenoten</span></p>'
     +f'<table class="wtab" style="margin-left:12.5mm;margin-top:2mm"><thead><tr><th style="width:38mm">Pregunta</th><th>Compañero/a 1</th><th>Compañero/a 2</th><th>Compañero/a 3</th></tr></thead>'
     +'<tr><td style="height:12mm">¿De dónde eres?</td><td></td><td></td><td></td></tr>'
     +'<tr><td style="height:12mm">¿Qué idiomas hablas?</td><td></td><td></td><td></td></tr></table>')}
 
   {act(7,"Escribe tres fichas",[("productie","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Schrijf voor 3 personen (bekend of verzonnen): «X es de ___. Es ___ y habla ___.» (2 zinnen elk).</p>'
+    '<p style="margin-left:12.5mm">Escribe sobre 3 personas (reales o inventadas): «X es de ___. Es ___ y habla ___.» (2 frases cada una). <span class="gloss">3 personen, 2 zinnen elk</span></p>'
     +'<div class="wbox" style="margin-left:12.5mm"></div>')}
 
   {act(8,"Escribe un mensaje",[("productie","skill"),("★★★","")],
-    '<p style="margin-left:12.5mm">Schrijf een kort chatbericht (WhatsApp) aan een nieuwe Spaanstalige vriend(in): stel je voor met land, nationaliteit en talen.</p>'
+    '<p style="margin-left:12.5mm">Escribe un mensaje corto (WhatsApp) a un amigo o una amiga hispanohablante nuevo/a: preséntate con tu país, tu nacionalidad y tus idiomas. <span class="gloss">stel je voor met land, nationaliteit en talen</span></p>'
     +'<div class="wbox" style="margin-left:12.5mm;min-height:28mm"></div>')}
 
   {act(9,"¿De qué país?",[("productie","skill"),("★★☆","")],
-    f'<p style="margin-left:12.5mm">Schrijf bij elke vlag het land én de nationaliteit (♂). Snel!</p>'
+    f'<p style="margin-left:12.5mm">Escribe el país y la nacionalidad (♂) junto a cada bandera. ¡Rápido! <span class="gloss">land én nationaliteit bij elke vlag</span></p>'
     +f'<div style="margin-left:12.5mm;font-size:9.8pt;line-height:2.3">🇲🇽 → {wl("lg")} &nbsp;&nbsp; 🇪🇸 → {wl("lg")}<br>🇨🇴 → {wl("lg")} &nbsp;&nbsp; 🇦🇷 → {wl("lg")}</div>')}
 </div>
 """

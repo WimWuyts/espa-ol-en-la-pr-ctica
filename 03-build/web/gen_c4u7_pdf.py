@@ -268,7 +268,7 @@ PRAC=f"""
     +'<div class="wcols" style="margin-left:12.5mm"><div class="wcol"><h4>Profesión 💼</h4><div class="fill"></div></div><div class="wcol"><h4>Lugar 🏢</h4><div class="fill"></div></div><div class="wcol"><h4>Estado 😌</h4><div class="fill"></div></div><div class="wcol"><h4>Tu palabra</h4><div class="fill"></div></div></div>')}
 
   {act(2,"Relaciona · ¿dónde trabaja?",[("gestuurd","skill"),("★☆☆","")],
-    '<p style="margin-left:12.5mm">Trek een lijn tussen het beroep en de werkplek.</p>'
+    '<p style="margin-left:12.5mm">Une con una línea la profesión y el lugar de trabajo. <span class="gloss">verbind beroep en werkplek</span></p>'
     +'<table class="mtab" style="margin-left:12.5mm"><tr><td class="a">1. la profesora</td><td><span class="ln"></span></td><td class="b">a. en una tienda</td></tr>'
     +'<tr><td class="a">2. el dependiente</td><td><span class="ln"></span></td><td class="b">b. en un teatro</td></tr>'
     +'<tr><td class="a">3. la médica</td><td><span class="ln"></span></td><td class="b">c. en una academia</td></tr>'
@@ -276,28 +276,28 @@ PRAC=f"""
     +'<tr><td class="a">5. la escritora</td><td><span class="ln"></span></td><td class="b">e. en casa, con sus libros</td></tr></table>')}
 
   {act(3,"Completa el diálogo",[("gestuurd","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Vul aan (dedicas · soy · trabajas · trabajo · estás).</p>'
+    '<p style="margin-left:12.5mm">Completa (dedicas · soy · trabajas · trabajo · estás). <span class="gloss">vul aan</span></p>'
     +f'<div style="margin-left:12.5mm;font-size:10pt;line-height:2.5">'
     +f'— ¿A qué te {wl("sm")}?<br>— {wl("sm")} profesora.<br>— ¿Y dónde {wl("sm")}?<br>— {wl("sm")} en una academia.<br>— ¿Y {wl("sm")} contenta?<br>— Sí, muy contenta.</div>')}
 
   {act(4,"Ordena · el juego de Josefina",[("gestuurd","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Nummer Josefina’s raadsel in de juiste volgorde (1–5).</p>'
+    '<p style="margin-left:12.5mm">Numera la adivinanza de Josefina en el orden correcto (1–5). <span class="gloss">nummer het raadsel in de juiste volgorde</span></p>'
     +'<div class="scramble" style="margin-left:12.5mm"><span>___ ¿Trabaja en una tienda?</span><span>___ Silencio… hay una mujer.</span><span>___ No. ¡Es profesora!</span><span>___ ¿Puede ser escritora?</span><span>___ No, no es escritora.</span></div>')}
 
   {act(5,"¿ser o estar?",[("gestuurd","skill"),("★★☆","")],
-    f'<p style="margin-left:12.5mm">Vul de juiste vorm in (ser = beroep/wie · estar = toestand).</p><div style="margin-left:12.5mm;font-size:10pt;line-height:2.4">'
+    f'<p style="margin-left:12.5mm">Escribe la forma correcta (ser = quién eres o tu profesión · estar = cómo estás). <span class="gloss">ser voor wie je bent, estar voor hoe je bent</span></p><div style="margin-left:12.5mm;font-size:10pt;line-height:2.4">'
     +f'1. María {wl("sm")} profesora. &nbsp; 2. Julio no {wl("sm")} bien. &nbsp; 3. Yo {wl("sm")} estudiante. &nbsp; 4. Nosotros {wl("sm")} todos tranquilos.</div>')}
 
   {act(6,"La forma femenina ♀",[("gestuurd","skill"),("★☆☆","")],
-    f'<p style="margin-left:12.5mm">Schrijf de vrouwelijke vorm.</p><div style="margin-left:12.5mm;font-size:10pt;line-height:2.4">'
+    f'<p style="margin-left:12.5mm">Escribe la forma femenina. <span class="gloss">schrijf de vrouwelijke vorm</span></p><div style="margin-left:12.5mm;font-size:10pt;line-height:2.4">'
     +f'1. el profesor → {wl("sm")} &nbsp; 2. el escritor → {wl("sm")} &nbsp; 3. el actor → {wl("sm")} &nbsp; 4. el dependiente → {wl("sm")}</div>')}
 
   {act(7,"Tres pistas · escribe",[("productie","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Kies (geheim) een beroep en schrijf 3 pistas: «Trabajo en…», «Estoy…», «Trabajo con…».</p>'
+    '<p style="margin-left:12.5mm">Elige en secreto una profesión y escribe tres pistas: «Trabajo en…», «Estoy…», «Trabajo con…». <span class="gloss">kies in het geheim een beroep en schrijf drie tips</span></p>'
     +'<div class="wbox" style="margin-left:12.5mm"></div>')}
 
   {act(8,"Entrevista · ¿a qué te dedicas?",[("interactie","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Interview je buur (kies een fantasieberoep) en noteer. Wissel van rol.</p>'
+    '<p style="margin-left:12.5mm">Entrevista a tu compañero/a (elegid una profesión inventada) y anota. Después cambiad. <span class="gloss">interview je buur en wissel van rol</span></p>'
     +f'<table class="wtab" style="margin-left:12.5mm;margin-top:2mm"><thead><tr><th style="width:48mm">Pregunta</th><th>Respuesta</th></tr></thead>'
     +'<tr><td style="height:12mm">¿A qué te dedicas?</td><td></td></tr>'
     +'<tr><td style="height:12mm">¿Dónde trabajas?</td><td></td></tr>'

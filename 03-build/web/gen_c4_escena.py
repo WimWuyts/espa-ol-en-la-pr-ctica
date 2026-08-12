@@ -142,6 +142,7 @@ CSS = FONTS + """
                   --line:#3a302e;--card:#211a19}
 *{box-sizing:border-box}
 body{margin:0;font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.55}
+.stn{color:var(--mut);font-style:italic;font-size:.9em;font-family:var(--body)}
 .top{background:linear-gradient(135deg,var(--g),var(--gd));color:#fff;padding:20px 22px}
 .top h1{font-family:var(--disp);font-weight:800;margin:0;font-size:24px}
 .top p{margin:4px 0 0;opacity:.95}
@@ -199,14 +200,15 @@ def construir(unit):
         # Geen opname gevonden: dan leest de browserstem voor. Dat staat er
         # eerlijk bij in plaats van een dode knop te tonen.
         reproductor = '<button class="btn" id="leer">▶ Leer de escena</button>'
-        nota = ('<p class="legend">De opname staat nog niet klaar; '
-                'voorlopig leest de browserstem voor.</p>')
+        nota = ('<p class="legend">La grabación todavía no está lista; '
+                'de momento lee la voz del navegador. '
+                '<span class="stn">voorlopig leest de browserstem voor</span></p>')
 
     marco, ver = video(unit)
     bloque_video = ("" if not marco else
         '<div class="vidbox">%s</div>'
-        '<p class="vidhint">Speelt de video niet af? '
-        '<a href="%s" target="_blank" rel="noopener">Open ze in een nieuw tabblad</a>.</p>'
+        '<p class="vidhint">¿No se reproduce el vídeo? '
+        '<a href="%s" target="_blank" rel="noopener">Ábrelo en otra pestaña</a>.</p>'
         % (marco, ver))
 
     return """<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
@@ -225,15 +227,18 @@ def construir(unit):
       %(nota)s
       <ol class="pasos">
         <li>%(paso1)s</li>
-        <li>Luister opnieuw en lees mee.</li>
-        <li>Zet het Nederlands aan als je vastzit.</li>
-        <li>Klik op een regel om ze apart te horen.</li>
+        <li>Escucha otra vez y lee al mismo tiempo.
+          <span class="stn">luister opnieuw en lees mee</span></li>
+        <li>Activa el neerlandés si te atascas.
+          <span class="stn">zet NL aan als je vastzit</span></li>
+        <li>Pulsa una línea para oírla por separado.
+          <span class="stn">klik een regel om ze apart te horen</span></li>
       </ol>
     </div>
     <div class="toolbar">
-      <button class="btn" id="tgnl">🇳🇱 Nederlands aan</button>
-      <button class="btn" id="tges">👁️ Tekst verbergen</button>
-      <span class="legend">💡 <span class="ch">geel</span> = chunk om mee te nemen</span>
+      <button class="btn" id="tgnl">🇳🇱 Neerlandés</button>
+      <button class="btn" id="tges">👁️ Ocultar el texto</button>
+      <span class="legend">💡 <span class="ch">amarillo</span> = chunk para llevarte <span class="stn">geel = chunk</span></span>
     </div>
   </div>
   <div class="tr">%(cuerpo)s</div>
@@ -251,10 +256,10 @@ document.querySelectorAll('.ln').forEach(function(l){
  l.addEventListener('click',function(e){if(e.target!==b)speak(es);});});
 var nlon=false;document.getElementById('tgnl').onclick=function(){
  nlon=!nlon;document.body.classList.toggle('shownl',nlon);this.classList.toggle('on',nlon);
- this.textContent=nlon?'🇳🇱 Nederlands uit':'🇳🇱 Nederlands aan';};
+ this.textContent=nlon?'🇳🇱 Neerlandés OFF':'🇳🇱 Neerlandés ON';};
 var esoff=false;document.getElementById('tges').onclick=function(){
  esoff=!esoff;document.body.classList.toggle('hidees',esoff);this.classList.toggle('on',esoff);
- this.textContent=esoff?'👁️ Tekst tonen':'👁️ Tekst verbergen';};
+ this.textContent=esoff?'👁️ Mostrar el texto':'👁️ Ocultar el texto';};
 var leer=document.getElementById('leer');
 if(leer)leer.onclick=function(){var i=0,ls=[].slice.call(document.querySelectorAll('.ln'));
  (function nx(){if(i>=ls.length)return;var u=new SpeechSynthesisUtterance(ls[i].getAttribute('data-es'));
@@ -263,9 +268,11 @@ if(leer)leer.onclick=function(){var i=0,ls=[].slice.call(document.querySelectorA
         "u": unit, "css": CSS, "tit": esc(e["titulo"]), "tema": esc(e["tema"]),
         "intro": e["intro"], "rep": reproductor, "nota": nota, "cuerpo": cuerpo,
         "video": bloque_video,
-        "paso1": ("Bekijk eerst de aflevering hierboven — je hoeft niet alles te "
-                  "verstaan." if marco else
-                  "Luister één keer <b>zonder</b> mee te lezen.")}
+        "paso1": ('Mira primero el episodio de arriba: no hace falta entenderlo '
+                  'todo. <span class="stn">je hoeft niet alles te verstaan</span>'
+                  if marco else
+                  'Escucha una vez <b>sin</b> leer. '
+                  '<span class="stn">één keer zonder mee te lezen</span>')}
 
 
 def main():

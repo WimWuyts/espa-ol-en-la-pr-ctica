@@ -303,7 +303,7 @@ PRAC=f"""
     +f'1. Yo {wl("sm")} planchar, mi madre me enseñó. &nbsp; 2. La asistenta no {wl("sm")} venir, está enferma.<br>3. ¿{wl("sm")} cocinar tú? &nbsp; 4. Hoy no {wl("sm")} ayudar, tengo que estudiar.</div>')}
 
   {act(4,"Relaciona · tarea ↔ objeto o lugar",[("gestuurd","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Trek een lijn tussen de taak en wat je ervoor nodig hebt (of waar je het doet).</p>'
+    '<p style="margin-left:12.5mm">Une con una línea cada tarea con lo que necesitas (o el lugar donde la haces). <span class="gloss">verbind de taak met wat je nodig hebt</span></p>'
     +'<table class="mtab" style="margin-left:12.5mm"><tr><td class="a">1. pasar la aspiradora</td><td><span class="ln"></span></td><td class="b">a. los platos 🍽️</td></tr>'
     +'<tr><td class="a">2. fregar</td><td><span class="ln"></span></td><td class="b">b. el dormitorio 🛏️</td></tr>'
     +'<tr><td class="a">3. planchar</td><td><span class="ln"></span></td><td class="b">c. la aspiradora 🧹</td></tr>'
@@ -315,7 +315,7 @@ PRAC=f"""
   <div class="se">§3 · Práctica · sigue</div><h2>Van gestuurd naar zelf zeggen</h2>
 
   {act(5,"Ordena la conversación",[("gestuurd","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Nummer de zinnen (1–5): probleem → wat moet gebeuren → hulp → taak → ¡gelukt!</p>'
+    '<p style="margin-left:12.5mm">Numera las frases (1–5): problema → qué hay que hacer → ayuda → tarea → ¡hecho! <span class="gloss">nummer de zinnen in die volgorde</span></p>'
     +'<div class="scramble" style="margin-left:12.5mm"><span>___ Yo te ayudo. ¿Qué tengo que hacer?</span><span>___ La asistenta está enferma y no puede venir.</span><span>___ Claro que sé. ¡Ahí está!</span><span>___ Entonces hay que limpiar nosotros.</span><span>___ ¿Sabes pasar la aspiradora?</span></div>')}
 
   {act(6,"Completa el diálogo · ofrecer ayuda",[("gestuurd","skill"),("★★☆","")],
@@ -323,7 +323,7 @@ PRAC=f"""
     +f'— ¡Qué desorden! {wl("sm")} que limpiar esto.<br>— Yo te {wl("sm")}. ¿Qué {wl("sm")} que hacer?<br>— No tienes que molestarte. — No es {wl("sm")}.<br>— ¿{wl("sm")} pasar la aspiradora? — Claro que {wl("sm")}.</div>')}
 
   {act(7,"En mi casa · escribe la verdad",[("productie","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Schrijf per taak wie het bij jou thuis doet — en of jíj het kunt.</p>'
+    '<p style="margin-left:12.5mm">Escribe quién hace cada tarea en tu casa y si sabes hacerla tú. <span class="gloss">wie doet het bij jou thuis, en kun jij het?</span></p>'
     +f'<table class="wtab" style="margin-left:12.5mm;margin-top:2mm"><thead><tr><th style="width:50mm">La tarea</th><th style="width:44mm">¿Quién la hace?</th><th>¿Y yo? (sé / no sé)</th></tr></thead>'
     +'<tr><td style="height:10mm">fregar los platos</td><td></td><td></td></tr>'
     +'<tr><td style="height:10mm">pasar la aspiradora</td><td></td><td></td></tr>'
@@ -331,7 +331,7 @@ PRAC=f"""
     +'<tr><td style="height:10mm">planchar</td><td></td><td></td></tr></table>')}
 
   {act(8,"Ofrece ayuda · en parejas",[("interactie","skill"),("★★★","")],
-    '<p style="margin-left:12.5mm">Je buur is aan het poetsen. Bied 3× hulp aan; hij/zij weigert 1× («no tienes que molestarte») en geeft 2× een taak. Noteer wat jullie afspreken en zeg het daarna hardop.</p>'
+    '<p style="margin-left:12.5mm">Tu compañero/a está limpiando. Ofrece ayuda 3 veces; él/ella rechaza 1 vez («no tienes que molestarte») y te da 2 tareas. Anota lo que acordáis y dilo después en voz alta. <span class="gloss">bied hulp aan, noteer de afspraak, zeg ze hardop</span></p>'
     +f'<div style="margin-left:12.5mm;font-size:9.8pt;line-height:2.4;margin-top:1mm">1. Mi oferta: {wl("lg")} → Su respuesta: {wl("sm")}<br>2. Mi oferta: {wl("lg")} → Su respuesta: {wl("sm")}<br>3. Mi oferta: {wl("lg")} → Su respuesta: {wl("sm")}<br>☐ Lo hemos dicho en voz alta · we hebben het hardop gezegd</div>')}
 
 

@@ -186,7 +186,7 @@ var CHUNKS=[["limpiar el polvo","afstoffen"],["pasar la aspiradora","stofzuigen"
    else frase=q.charAt(0).toUpperCase()+q.slice(1)+' hace una tarea: '+t+'.';
    frase+=' Yo '+(s==='sé hacerlo'?'sé':'no sé')+' '+t.replace(/^(pasar|fregar|limpiar|hacer|ordenar|planchar|cocinar)/,'$1')+'.';
    out.push(frase);});
-  if(!out.length){fb(el.querySelector('#rF'),false,'Kies eerst minstens één tarea.');return;}
+  if(!out.length){fb(el.querySelector('#rF'),false,'Elige primero al menos una tarea. <span class="gloss">kies eerst minstens één taak</span>');return;}
   el.cur='En mi casa: '+out.join(' ');
   fb(el.querySelector('#rF'),true,'<b>'+el.cur+'</b><br><span style="color:var(--mut);font-style:italic">Zeg het hardop. Vraag daarna aan je buur: «¿Y en tu casa? ¿Quién friega los platos?» — en bied hulp aan met «Yo te ayudo».</span>');};
  var sp=el.querySelector('#rSpk');if(sp)sp.onclick=function(){if(el.cur)speak(el.cur);};})();

@@ -295,29 +295,29 @@ PRAC=f"""
     +f'1. Tengo {wl("sm")} estudiar. &nbsp; 2. Tengo {wl("sm")} (honger). &nbsp; 3. Tengo {wl("sm")} trabajar.<br>4. Tengo {wl("sm")} (slaap). &nbsp; 5. ¿Tienes {wl("sm")} hacer algo?</div>')}
 
   {act(4,"Relaciona · invitación ↔ respuesta",[("gestuurd","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Trek een lijn tussen de uitnodiging en het passende antwoord.</p>'
+    '<p style="margin-left:12.5mm">Une con una línea cada invitación con su respuesta. <span class="gloss">verbind de uitnodiging met het antwoord</span></p>'
     +'<table class="mtab" style="margin-left:12.5mm"><tr><td class="a">1. ¿Vamos al cine esta noche?</td><td><span class="ln"></span></td><td class="b">a. Vale, el domingo estoy libre.</td></tr>'
     +'<tr><td class="a">2. ¿Quedamos el sábado?</td><td><span class="ln"></span></td><td class="b">b. No tengo hambre, gracias.</td></tr>'
     +'<tr><td class="a">3. ¿Desayunamos juntos?</td><td><span class="ln"></span></td><td class="b">c. No puedo. Tengo que estudiar.</td></tr>'
     +'<tr><td class="a">4. ¿Tomamos algo el domingo?</td><td><span class="ln"></span></td><td class="b">d. El sábado tengo que trabajar.</td></tr></table>')}
 
   {act(5,"Ordena la conversación",[("gestuurd","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Nummer de zinnen (1–5): uitnodiging → excuus → nieuw voorstel.</p>'
+    '<p style="margin-left:12.5mm">Numera las frases (1–5): invitación → excusa → nueva propuesta. <span class="gloss">nummer de zinnen in die volgorde</span></p>'
     +'<div class="scramble" style="margin-left:12.5mm"><span>___ ¿Y mañana?</span><span>___ ¿Quedamos para ir al cine esta noche?</span><span>___ ¡Qué pena! Otro día, ¿vale?</span><span>___ No puedo. Tengo que pasear al perro.</span><span>___ Mañana voy a quedar con unas amigas.</span></div>')}
 
   {act(6,"Mis planes de la semana",[("productie","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Schrijf per dag één plan (voy a…) of één verplichting (tengo que…).</p>'
+    '<p style="margin-left:12.5mm">Escribe por cada día un plan (voy a…) o una obligación (tengo que…). <span class="gloss">één plan of verplichting per dag</span></p>'
     +f'<div style="margin-left:12.5mm;font-size:9.8pt;line-height:2.3">📅 El lunes {wl("lg")}<br>📅 El miércoles {wl("lg")}<br>📅 El viernes {wl("lg")}<br>📅 El domingo {wl("lg")}</div>')}
 
   {act(7,"Invita y rechaza · en parejas",[("interactie","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Nodig je buur 3× uit. Hij/zij wijst 2× af met een excuus en zegt 1× ja. Noteer.</p>'
+    '<p style="margin-left:12.5mm">Invita a tu compañero/a tres veces: dos las rechaza con una excusa y una la acepta. Anótalo. <span class="gloss">nodig drie keer uit; twee keer een excuus, één keer ja</span></p>'
     +f'<table class="wtab" style="margin-left:12.5mm;margin-top:2mm"><thead><tr><th style="width:52mm">Mi invitación</th><th>Su respuesta</th></tr></thead>'
     +'<tr><td style="height:11mm">¿Vamos a…?</td><td></td></tr>'
     +'<tr><td style="height:11mm">¿Quedamos para…?</td><td></td></tr>'
     +'<tr><td style="height:11mm">¿Tomamos algo el…?</td><td></td></tr></table>')}
 
   {act(8,"Escribe un mensaje",[("productie","skill"),("★★★","")],
-    '<p style="margin-left:12.5mm">Schrijf een kort bericht aan een Spaanstalige vriend(in): 2 plannen + 1 verplichting + een voorstel om af te spreken.</p>'
+    '<p style="margin-left:12.5mm">Escribe un mensaje corto a un amigo o una amiga hispanohablante: dos planes, una obligación y una propuesta para quedar. <span class="gloss">kort bericht met plannen en een voorstel</span></p>'
     +'<div class="wbox" style="margin-left:12.5mm;min-height:46mm"></div>')}
 
 </div>

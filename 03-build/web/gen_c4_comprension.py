@@ -24,6 +24,7 @@ CSS=FONTS+"""
 .hero p{margin:0;max-width:660px;opacity:.96}.hero .nl{font-family:var(--hand);font-size:18px;opacity:.95;margin-top:4px}
 h2.sec{font-family:var(--disp);font-weight:700;color:var(--gd);font-size:21px;margin:24px 0 4px;display:flex;gap:8px;align-items:center}
 .lead{color:var(--mut);max-width:720px;margin:0 0 10px}
+.stn{color:var(--mut);font-style:italic;font-size:.9em;font-family:var(--body)}
 .tipo{display:inline-block;background:var(--gt);color:var(--gd);border-radius:20px;padding:3px 11px;font-size:12px;font-weight:700}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:12px 0}
 .ph{border-style:dashed;text-align:center;color:var(--mut)}.ph .nl{font-family:var(--hand);font-size:17px;display:block;margin-top:4px;color:var(--gd)}
@@ -149,7 +150,7 @@ def build(unit, out_name):
 <div class="wrap">
  <div class="hero"><h1>📖🎧 Lee y escucha</h1>
    <p>Una lectura y una audición cortas — para entender el español que ya conoces.</p>
-   <div class="nl">Een korte lees- en luisteroefening — begrijp het Spaans dat je al kent.</div></div>
+   <div class="nl">Una lectura y una escucha cortas: entiende el español que ya sabes. <span class="stn">korte lees- en luisteroefening</span></div></div>
  {inner}
  <div class="foot">C4 · «Bienvenidos al español» · Lee y escucha · comprensión (lezen &amp; luisteren)</div>
 </div>

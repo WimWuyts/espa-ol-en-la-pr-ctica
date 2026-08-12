@@ -99,7 +99,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
   <div class="vid">
     <div class="vidbox">{IFRAME}</div>
     <div class="toolbar">
-      <button class="btn" id="tgnl">🇳🇱 Nederlands aan</button>
+      <button class="btn" id="tgnl">🇳🇱 Neerlandés ON</button>
       <a class="btn" href="{WATCH}" target="_blank" rel="noopener">{WATCH_LABEL}</a>
       <span class="legend">💡 <span class="ch">geel</span> = chunk om mee te nemen</span>
     </div>
@@ -112,7 +112,7 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
 <script>
 function speak(t){{if(!('speechSynthesis'in window))return;var u=new SpeechSynthesisUtterance(t);u.lang='es-ES';u.rate=.9;var v=speechSynthesis.getVoices().find(function(x){{return /^es/i.test(x.lang)}});if(v)u.voice=v;speechSynthesis.cancel();speechSynthesis.speak(u);}}
 document.querySelectorAll('.ln').forEach(function(l){{var b=l.querySelector('.spk');var es=l.getAttribute('data-es');b.onclick=function(){{speak(es);}};l.addEventListener('click',function(e){{if(e.target!==b)speak(es);}});}});
-var nlon=false;document.getElementById('tgnl').onclick=function(){{nlon=!nlon;document.body.classList.toggle('shownl',nlon);this.classList.toggle('on',nlon);this.textContent=nlon?'🇳🇱 Nederlands uit':'🇳🇱 Nederlands aan';}};
+var nlon=false;document.getElementById('tgnl').onclick=function(){{nlon=!nlon;document.body.classList.toggle('shownl',nlon);this.classList.toggle('on',nlon);this.textContent=nlon?'🇳🇱 Neerlandés OFF':'🇳🇱 Neerlandés ON';}};
 </script></body></html>"""
 os.makedirs(f"{ROOT}/01-cursussen/04-welcome/U8",exist_ok=True)
 open(f"{ROOT}/03-build/web/componentes/C4_U8_escucha.html","w").write(HTML)

@@ -23,6 +23,7 @@ CSS=FONTS+"""
 .hero p{margin:0;max-width:660px;opacity:.96}.hero .nl{font-family:var(--hand);font-size:18px;opacity:.95;margin-top:4px}
 h2.sec{font-family:var(--disp);font-weight:700;color:var(--gd);font-size:21px;margin:24px 0 4px}
 .lead{color:var(--mut);max-width:720px;margin:0 0 12px}
+.stn{color:var(--mut);font-style:italic;font-size:.9em;font-family:var(--body)}
 .grow{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin:6px 0 0;font-size:13px;color:var(--mut)}
 .grow b{color:var(--gd)}.grow .dot{width:9px;height:9px;border-radius:50%;background:var(--line)}.grow .dot.on{background:var(--g)}
 /* noticing */
@@ -105,7 +106,7 @@ def tarea_block(unit):
     ch="".join(f'<span class="chip tar">🗣️ {FD.FMAP[i]["es"]}</span>' for i in ids)
     tt=FD.TAREA_TITEL.get(unit,"")
     return (f'<h2 class="sec">En la tarea de esta unidad usas… 🎯</h2>'
-            f'<p class="lead">De eindtaak <b>«{tt}»</b> combineert deze functies — oude én nieuwe. Zo herhaal je zonder het te merken.</p>'
+            f'<p class="lead">La tarea final <b>«{tt}»</b> combina estas funciones, las nuevas y las de antes: repasas sin darte cuenta. <span class="stn">zo herhaal je zonder het te merken</span></p>'
             f'<div class="chips">{ch}</div>')
 
 def build(unit, out_name):
@@ -117,8 +118,8 @@ def build(unit, out_name):
         os.path.dirname(os.path.abspath(__file__)), "gen_c4u%d_escucha.py" % unit))
         or unit in _ED.VIDEO)
     icono_escena = "🎬" if con_video else "🎧"
-    verbo_escena = ("Kijk terug naar de scène." if con_video
-                    else "Luister terug naar de scène.")
+    verbo_escena = ("Vuelve a mirar la escena." if con_video
+                    else "Vuelve a escuchar la escena.")
     total=len(FD.FUNCIONES)
     have=len(FD.funciones_hasta(unit))
     dots="".join(f'<span class="dot{" on" if i<have else ""}"></span>' for i in range(total))
@@ -128,20 +129,20 @@ def build(unit, out_name):
  <div class="hero">
    <h1>🗣️ Mis funciones comunicativas</h1>
    <p>No solo palabras: lo que <b>puedes hacer</b> con el español. Y crece en cada unidad.</p>
-   <div class="nl">Niet enkel woorden — wat je met het Spaans kunt <b>dóen</b>. En het groeit elke unit.</div>
+   <div class="nl">No solo palabras: lo que puedes <b>hacer</b> con el español. Y crece cada unidad. <span class="stn">wat je met het Spaans kunt doen</span></div>
  </div>
- <div class="grow"><b>Tu repertorio:</b> {have} / {total} funciones {dots} <span>· hoe verder op de ruta, hoe meer je kunt zeggen</span></div>
+ <div class="grow"><b>Tu repertorio:</b> {have} / {total} funciones {dots} <span>· cuanto más avanzas en la ruta, más cosas sabes decir</span></div>
 
  <h2 class="sec">¿Qué hacen con el idioma? {icono_escena}</h2>
- <p class="lead">{verbo_escena} Wat <b>doen</b> de personages met taal? Klik elke zin en ontdek de <i>función</i>.</p>
+ <p class="lead">{verbo_escena} ¿Qué <b>hacen</b> los personajes con la lengua? Pulsa cada frase y descubre la <i>función</i>. <span class="stn">klik elke zin en ontdek de functie</span></p>
  {noticing_block(unit)}
 
  <h2 class="sec">Esta unidad añade… ✨</h2>
- <p class="lead"><span style="color:var(--g);font-weight:700">＋ nieuw</span> = een nieuwe functie · <span style="color:var(--gd);font-weight:700">▲ niveau +</span> = een functie die je al kende, nu met méér manieren om ze te zeggen.</p>
+ <p class="lead"><span style="color:var(--g);font-weight:700">＋ nueva</span> = una función nueva · <span style="color:var(--gd);font-weight:700">▲ nivel +</span> = una función que ya conocías, ahora con más maneras de decirla. <span class="stn">nieuw of een niveau hoger</span></p>
  {esta_unidad(unit)}
 
  <h2 class="sec">Mi repertorio · lo que ya sé hacer 📚</h2>
- <p class="lead">Alles wat je tot nu toe kunt — met de <i>exponentes</i> (vaste formules) per unit. Klik 🔊 om te horen; zet je <b>semáforo</b> per functie.</p>
+ <p class="lead">Todo lo que ya sabes hacer, con los <i>exponentes</i> (fórmulas fijas) de cada unidad. Pulsa 🔊 para oírlo y pon tu <b>semáforo</b> en cada función. <span class="stn">klik om te horen; zet je semáforo</span></p>
  {banco_block(unit)}
 
  {tarea_block(unit)}

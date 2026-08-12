@@ -287,7 +287,7 @@ PRAC=f"""
     +'<div class="wcols" style="margin-left:12.5mm"><div class="wcol"><h4>Saludar</h4><div class="fill"></div></div><div class="wcol"><h4>Estado (¿cómo?)</h4><div class="fill"></div></div><div class="wcol"><h4>Cortesía</h4><div class="fill"></div></div><div class="wcol"><h4>Despedirse</h4><div class="fill"></div></div></div>')}
 
   {act(2,"Relaciona · verbind",[("gestuurd","skill"),("★☆☆","")],
-    '<p style="margin-left:12.5mm">Trek een lijn tussen het Spaans en de betekenis.</p>'
+    '<p style="margin-left:12.5mm">Une con una línea el español y su significado. <span class="gloss">verbind Spaans en betekenis</span></p>'
     +'<table class="mtab" style="margin-left:12.5mm"><tr><td class="a">1. Buenos días</td><td><span class="ln"></span></td><td class="b">a. ik ben moe</td></tr>'
     +'<tr><td class="a">2. ¿Cómo estás?</td><td><span class="ln"></span></td><td class="b">b. tot morgen</td></tr>'
     +'<tr><td class="a">3. Estoy cansada</td><td><span class="ln"></span></td><td class="b">c. goedemorgen</td></tr>'
@@ -295,28 +295,28 @@ PRAC=f"""
     +'<tr><td class="a">5. De nada</td><td><span class="ln"></span></td><td class="b">e. hoe gaat het?</td></tr></table>')}
 
   {act(3,"Completa el diálogo",[("gestuurd","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Vul het gesprek aan (denk aan <i>estar</i>).</p>'
+    '<p style="margin-left:12.5mm">Completa la conversación (piensa en <i>estar</i>). <span class="gloss">vul aan met estar</span></p>'
     +f'<div style="margin-left:12.5mm;font-size:10pt;line-height:2.5">'
     +f'— Buenos {wl("sm")}, ¿cómo {wl("sm")}?<br>— {wl("sm")} bien, gracias. ¿Y tú?<br>— Regular… {wl("sm")} un poco cansada.<br>— Vaya. ¡Hasta {wl("sm")}!</div>')}
 
   {act(4,"Ordena la conversación",[("gestuurd","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Nummer de zinnen in de juiste volgorde (1–5).</p>'
+    '<p style="margin-left:12.5mm">Numera las frases en el orden correcto (1–5). <span class="gloss">nummer de zinnen</span></p>'
     +'<div class="scramble" style="margin-left:12.5mm"><span>___ Regular, estoy un poco cansado.</span><span>___ Buenos días, ¿qué tal?</span><span>___ Adiós, hasta mañana.</span><span>___ Muy bien, ¿y tú?</span><span>___ Mucho trabajo. ¡Hasta luego!</span></div>')}
 
   {act(5,"Estoy… ¿-o o -a?",[("gestuurd","skill"),("★☆☆","")],
-    f'<p style="margin-left:12.5mm">Vul de juiste letter in (♂ -o / ♀ -a).</p><div style="margin-left:12.5mm;font-size:10pt;line-height:2.4">'
+    f'<p style="margin-left:12.5mm">Escribe la letra correcta (♂ -o / ♀ -a). <span class="gloss">vul de juiste letter in</span></p><div style="margin-left:12.5mm;font-size:10pt;line-height:2.4">'
     +f'1. (Julio) estoy cansad{wl("sm")} &nbsp; 2. (Josefina) estoy ocupad{wl("sm")} &nbsp; 3. (María) estoy nervios{wl("sm")} &nbsp; 4. (un chico) estoy enferm{wl("sm")}</div>')}
 
   {act(6,"Entrevista a un compañero",[("interactie","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Vraag het aan je buur op 3 momenten en noteer het antwoord. Wissel daarna van rol.</p>'
+    '<p style="margin-left:12.5mm">Pregúntaselo a tu compañero/a en tres momentos y anota la respuesta. Después cambiad. <span class="gloss">vraag het op drie momenten</span></p>'
     +f'<div style="margin-left:12.5mm;font-size:9.8pt;line-height:2.5">🌅 — Buenos días, ¿cómo estás? &nbsp;→ {wl("lg")}<br>☀️ — Buenas tardes, ¿qué tal? &nbsp;→ {wl("lg")}<br>🌙 — Buenas noches, ¿cómo estás? &nbsp;→ {wl("lg")}</div>')}
 
   {act(7,"Escribe tres saludos",[("productie","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Schrijf voor elk moment een korte begroeting + hoe je je voelt (2 zinnen elk).</p>'
+    '<p style="margin-left:12.5mm">Escribe para cada momento del día un saludo corto y cómo te sientes (2 frases cada vez). <span class="gloss">begroeting + gevoel, 2 zinnen</span></p>'
     +'<div class="wbox" style="margin-left:12.5mm"></div>')}
 
   {act(8,"Escribe un mensaje",[("productie","skill"),("★★★","")],
-    '<p style="margin-left:12.5mm">Schrijf een kort chatbericht (WhatsApp) aan een Spaanstalige vriend(in): groet volgens het uur en zeg hoe je je voelt.</p>'
+    '<p style="margin-left:12.5mm">Escribe un mensaje corto (WhatsApp) a un amigo o una amiga hispanohablante: saluda según la hora y di cómo estás. <span class="gloss">groet volgens het uur en zeg hoe je je voelt</span></p>'
     +'<div class="wbox" style="margin-left:12.5mm;min-height:28mm"></div>')}
 
   {act(9,"Saludo relámpago · bliksemgroet",[("productie","skill"),("★★☆","")],

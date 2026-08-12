@@ -136,11 +136,13 @@ def hero():
     <span class="hand">¡Seguimos la ruta! Parada %(nr)d.</span>
     <div class="g">%(guia)s</div></div></div>
   <div class="truc" style="margin-top:4mm"><b>¿Qué reconoces ya?</b>
-    Deze woorden lijken op het Nederlands, Frans of Engels — je begrijpt ze al
-    vóór je ze leert <i>(palabras transparentes)</i>:
+    Estas palabras se parecen al neerlandés, al francés o al inglés: las
+    entiendes antes de estudiarlas <i>(palabras transparentes)</i>.
+    <span class="gloss">doorzichtige woorden — je begrijpt ze al</span>
     <div class="cogn">%(chips)s</div>
-    <span style="font-size:8.6pt;color:var(--mut)">Onderstreep er drie die je
-    meteen herkent, en schrijf er één zin mee: %(wl)s</span>
+    <span style="font-size:8.6pt;color:var(--mut)">Subraya tres que reconozcas
+    enseguida y escribe una frase con una de ellas: %(wl)s
+    <span class="gloss">onderstreep er drie en schrijf één zin</span></span>
   </div>
 </div>""" % {"nr": nr, "tit": esc(tit), "subnl": esc(sub_nl), "subes": esc(sub_es),
               "cita": esc(cita), "lis": lis, "guia": esc(guia), "chips": chips,
@@ -170,37 +172,42 @@ def escucha():
   <div class="se">§1 · ¡Escucha!</div><h2>%(tit)s</h2>
   <div class="audiorow">
     <div class="call"><span class="ic">%(icono)s</span><div><b>%(tit)s</b> —
-      %(consigna)s <b>Eerst zonder mee te lezen</b>: je hoeft niet alles te
-      verstaan. Daarna lees je mee.</div></div>
+      %(consigna)s <b>Primero sin leer</b>: no hace falta entenderlo todo.
+      Después lees al mismo tiempo.
+      <span class="gloss">eerst zonder mee te lezen, daarna lees je mee</span></div></div>
     <div class="qr" data-url="%(url)s"><div class="lab">%(lab)s</div>%(qr)s
       <div class="meta">hub · Escucha</div></div>
   </div>
   <div class="se" style="margin-top:4mm">Antes de escuchar · voorspel</div>
-  <p style="font-size:9.6pt">Kijk naar de titel en de chunks hieronder. Waarover
-    gaat deze scène, denk je? Schrijf één zin in het Nederlands.</p>
+  <p style="font-size:9.6pt">Mira el título y los chunks de abajo. ¿De qué trata
+    esta escena, en tu opinión? Escribe una frase en neerlandés.
+    <span class="gloss">waarover gaat de scène? één zin in het Nederlands</span></p>
   <div style="margin-left:6mm">%(wl)s</div>
   %(lineas)s
-  <div class="truc" style="margin-top:3mm"><b>Chunks om mee te nemen</b> — hele
-    stukken die je als één woord onthoudt:
+  <div class="truc" style="margin-top:3mm"><b>Chunks para llevarte</b> — trozos
+    enteros que memorizas como si fueran una sola palabra.
+    <span class="gloss">hele stukken die je als één woord onthoudt</span>
     <div class="cogn">%(chunks)s</div></div>
   <div class="se" style="margin-top:4mm">Escucha con detalle · beantwoord in het Spaans</div>
   <div style="margin-left:6mm;font-size:9.6pt">%(preg)s</div>
   <div class="se" style="margin-top:4mm">Caza de chunks · zoek en onderstreep</div>
-  <p style="font-size:9.6pt">Zoek elke chunk hierboven terug in de tekst en
-    onderstreep hem. Schrijf er dan de Nederlandse betekenis bij.</p>
+  <p style="font-size:9.6pt">Busca cada chunk de arriba en el texto y subráyalo.
+    Escribe al lado lo que significa en neerlandés.
+    <span class="gloss">zoek, onderstreep en noteer de betekenis</span></p>
   <table class="mp"><thead><tr><th>Chunk</th><th>¿Qué significa?</th></tr></thead>
     <tbody>%(caza)s</tbody></table>
-  <div class="truc" style="margin-top:3mm"><b>Nog eens luisteren?</b> Op de
-    digitale pagina kan je elke regel apart aanklikken, het Nederlands aanzetten
-    en de tekst verbergen om te toetsen of je het écht hoort.</div>
+  <div class="truc" style="margin-top:3mm"><b>¿Otra vez?</b> En la página digital
+    puedes pulsar cada línea por separado, activar el neerlandés y esconder el
+    texto para comprobar si de verdad lo oyes.
+    <span class="gloss">online: regel per regel, NL aan/uit, tekst verbergen</span></div>
 </div>""" % {"tit": esc(e["titulo"]), "url": destino, "qr": qr(destino),
               "lineas": lineas, "chunks": chunks, "preg": preguntas,
               "wl": wl("full"),
               "icono": "🎬" if UNIT in ED.VIDEO else "🎧",
               "lab": "Vídeo online" if UNIT in ED.VIDEO else "Escucha online",
-              "consigna": ("scan de code en bekijk de aflevering op de digitale pagina."
+              "consigna": ("escanea el código y mira el episodio en la página digital."
                            if UNIT in ED.VIDEO else
-                           "scan de code en luister de scène op de digitale pagina."),
+                           "escanea el código y escucha la escena en la página digital."),
               "caza": "".join("<tr><td>%s</td><td>%s</td></tr>"
                               % (esc(c.replace("_", " ")), wl("md"))
                               for c in e["chunks"][:6])}
@@ -242,23 +249,26 @@ def suena():
 <div class="page sec">
   <div class="se">Suena bien · pronunciación</div><h2>%(tit)s</h2>
   <p style="font-size:9.6pt">%(expl)s</p>
-  <div class="truc"><b>Escucha y repite.</b> Zeg elk woord drie keer hardop.
-    Op de digitale pagina hoor je ze; hier vink je af wat al lukt.
+  <div class="truc"><b>Escucha y repite.</b> Di cada palabra tres veces en voz
+    alta. En la página digital las oyes; aquí marcas lo que ya te sale.
+    <span class="gloss">drie keer hardop; online hoor je ze</span>
     <div class="cogn">%(chips)s</div></div>
   <div class="se" style="margin-top:5mm">%(atit)s</div>
   <p style="font-size:9.6pt">%(aexpl)s</p>
   <table class="mp"><thead><tr><th>Palabra</th><th>¿Dónde está el acento?</th>
     <th>Klap mee ✓</th></tr></thead><tbody>%(filas)s</tbody></table>
   <div class="se" style="margin-top:5mm">Dictado corto · schrijf wat je hoort</div>
-  <p style="font-size:9.6pt">Je leerkracht (of de digitale pagina) leest zes
-    woorden voor. Schrijf ze op, mét accent waar het hoort.</p>
+  <p style="font-size:9.6pt">Tu profe (o la página digital) lee seis palabras.
+    Escríbelas con la tilde donde toca.
+    <span class="gloss">zes woorden, mét accent</span></p>
   <div style="margin-left:6mm;font-size:9.6pt">
     <div style="margin:2.4mm 0">1. %(l)s &nbsp; 2. %(l)s &nbsp; 3. %(l)s</div>
     <div style="margin:2.4mm 0">4. %(l)s &nbsp; 5. %(l)s &nbsp; 6. %(l)s</div>
   </div>
   <div class="se" style="margin-top:5mm">Tu turno · lees hardop voor</div>
-  <p style="font-size:9.6pt">Kies drie zinnen uit de scène en lees ze voor aan je
-    buur. Je buur luistert naar déze klank en zet een ✓ of een ✗.</p>
+  <p style="font-size:9.6pt">Elige tres frases de la escena y léeselas a tu
+    compañero/a. Él o ella escucha <b>este</b> sonido y pone ✓ o ✗.
+    <span class="gloss">lees voor; je buur beoordeelt de klank</span></p>
   <table class="mp"><thead><tr><th>Frase</th><th>La pronunciación ✓/✗</th></tr></thead>
     <tbody><tr><td>%(lf)s</td><td>%(ls)s</td></tr>
     <tr><td>%(lf)s</td><td>%(ls)s</td></tr>
@@ -282,22 +292,26 @@ def gramatica():
     return """
 <div class="page sec">
   <div class="se">§2 · Gramática en la práctica</div><h2>%(tit)s · %(sub)s</h2>
-  <p style="font-size:9.6pt">Kijk eerst naar de voorbeelden. Wat verandert er, en
-    waarmee verandert het mee? Schrijf je eigen voorbeeld in de rechterkolom.</p>
+  <p style="font-size:9.6pt">Mira primero los ejemplos. ¿Qué cambia, y con qué
+    cambia? Escribe tu propio ejemplo en la columna de la derecha.
+    <span class="gloss">wat verandert er, en waarmee?</span></p>
   %(cuerpo)s
   <div class="truc" style="margin-top:4mm"><b>¡Ojo!</b> %(trampa)s</div>
   <div class="se" style="margin-top:5mm">Completa · vul de juiste vorm in</div>
-  <p style="font-size:9.6pt">Vul aan. De oplossingen staan op de digitale pagina,
-    niet hier — eerst zelf proberen.</p>
+  <p style="font-size:9.6pt">Completa. Las soluciones están en la página digital,
+    no aquí: inténtalo tú primero.
+    <span class="gloss">oplossingen staan online</span></p>
   <div style="margin-left:6mm;font-size:9.6pt">%(ej)s</div>
   <div class="se" style="margin-top:5mm">Sustituye · vervang alleen wat gemarkeerd is</div>
-  <p style="font-size:9.6pt">Herschrijf de modelzin telkens met het nieuwe woord.
-    Alles wat mee moet veranderen, verandert mee.</p>
+  <p style="font-size:9.6pt">Reescribe la frase modelo con la palabra nueva.
+    Todo lo que tenga que cambiar, cambia.
+    <span class="gloss">alles wat mee moet veranderen, verandert mee</span></p>
   <table class="mp"><thead><tr><th>Modelo</th><th>Cambia a…</th><th>Mi frase</th>
     </tr></thead><tbody>%(sust)s</tbody></table>
   <div class="se" style="margin-top:5mm">Y ahora tú · schrijf drie eigen zinnen</div>
-  <p style="font-size:9.6pt">Gebruik het patroon van deze bladzijde. Onderstreep
-    telkens het woord dat het patroon draagt.</p>
+  <p style="font-size:9.6pt">Usa el patrón de esta página. Subraya cada vez la
+    palabra que lleva el patrón.
+    <span class="gloss">onderstreep het woord dat het patroon draagt</span></p>
   <div class="wbox"></div>
 </div>""" % {"tit": esc(tit), "sub": esc(sub), "cuerpo": cuerpo,
               "trampa": trampa, "ej": ejercicio,
@@ -317,13 +331,13 @@ SUSTITUCION = {
       ("Yo me ducho por la mañana.", "→ él"),
       ("Yo me ducho por la mañana.", "→ vosotros"),
       ("Paul lleva una chaqueta negra.", "→ una camiseta blanca"),
-      ("Paul es alto.", "→ está cansado (ser of estar?)")],
+      ("Paul es alto.", "→ está cansado (¿ser o estar?)")],
  13: [("¿Cuánto cuesta la lechuga?", "→ los tomates"),
       ("Las manzanas son baratas.", "→ caras"),
       ("Yo puedo ir al mercado.", "→ tú"),
-      ("No voy porque estoy enfermo.", "→ por eso (herschrijf de hele zin)")],
+      ("No voy porque estoy enfermo.", "→ por eso (reescribe toda la frase)")],
  14: [("Yo quiero agua.", "→ una cerveza"),
-      ("Yo quiero vino.", "→ yo tampoco (maak er een ontkenning van)"),
+      ("Yo quiero vino.", "→ yo tampoco (ponlo en negativo)"),
       ("La paella está buena.", "→ buenísima"),
       ("Ésa es la mesa que nos gusta.", "→ el restaurante")],
 }
@@ -337,19 +351,19 @@ CLOZE = {
       "¿A ti ____ gusta el yoga? (me/te)",
       "A Julio ____ gusta el submarinismo. (le/te)",
       "En Canarias ____ buen tiempo. (hace/tengo)",
-      "Cierra la ventana: ____ frío. (hace/tengo — het weer)",
-      "Ponme un abrigo: ____ frío. (hace/tengo — ík)"],
+      "Cierra la ventana: ____ frío. (hace/tengo — el tiempo)",
+      "Ponme un abrigo: ____ frío. (hace/tengo — yo)"],
  12: ["Yo ____ ducho a las siete. (me/te)",
       "¿Tú ____ peinas antes de salir? (me/te)",
       "Paul ____ afeita todos los días. (se/te)",
       "Vosotros ____ ducháis después del deporte. (os/se)",
-      "Paul ____ una chaqueta negra. (lleva/tiene — wat hij nú aanheeft)",
-      "Yo no ____ corbatas. (llevo/tengo — bezit)",
+      "Paul ____ una chaqueta negra. (lleva/tiene — lo que lleva puesto ahora)",
+      "Yo no ____ corbatas. (llevo/tengo — posesión)",
       "Paul ____ alto y guapo. (es/está)",
       "Hoy Julio ____ cansado. (es/está)"],
  13: ["¿Cuánto ____ los tomates? (cuesta/cuestan)",
       "¿Cuánto ____ un kilo de manzanas? (cuesta/cuestan)",
-      "¿____ pagar con tarjeta? (Puedo/Puedes — ik)",
+      "¿____ pagar con tarjeta? (Puedo/Puedes — yo)",
       "Nosotros ____ ir al mercado el sábado. (podemos/puedo)",
       "¿____ no comes carne? (Por qué/Porque)",
       "No como carne ____ soy vegetariano. (por qué/porque)",
@@ -357,8 +371,8 @@ CLOZE = {
  14: ["Ésa es la mesa ____ nos gusta. (que/qué)",
       "Somos cuatro personas ____ van a cenar. (que/qué)",
       "¿Quiere agua ____ vino? (o/y)",
-      "Yo quiero cerveza. — Yo ____. (también/tampoco — ik ook)",
-      "Yo no quiero vino. — Yo ____. (también/tampoco — ik ook niet)",
+      "Yo quiero cerveza. — Yo ____. (también/tampoco — frase afirmativa)",
+      "Yo no quiero vino. — Yo ____. (también/tampoco — frase negativa)",
       "La sopa está buena → está buen____. (-ísima/-ísimo)",
       "Mis padres son simpáticos → son simpatiqu____. (-ísimos/-ísimas)"],
 }
@@ -377,7 +391,8 @@ def practica():
         for _n, _s, _i, items in clusters for es, _nl in items[:3])
     return """
 <div class="page sec">
-  <div class="se">§3 · Práctica</div><h2>Oefen op papier — online verbeter je alles</h2>
+  <div class="se">§3 · Práctica</div><h2>Practica en papel · online se corrige solo
+    <span class="gloss">oefen op papier, online verbetert het zichzelf</span></h2>
   <div class="se" style="margin-top:3mm">Clasifica · zet elk woord in het juiste veld</div>
   <p style="font-size:9.4pt"><b>Banco de palabras:</b> %(banco)s</p>
   <div class="wcols">%(cols)s</div>
@@ -386,21 +401,25 @@ def practica():
     <tbody>%(tabla)s</tbody></table>
 </div>
 <div class="page sec">
-  <div class="se">§3 · Práctica · sigue</div><h2>Van gestuurd naar zelf zeggen</h2>
+  <div class="se">§3 · Práctica · sigue</div><h2>De guiado a decirlo tú solo/a
+    <span class="gloss">van gestuurd naar zelf zeggen</span></h2>
   <div class="se">Ordena · zet de woorden in de juiste volgorde</div>
   <div style="margin-left:6mm;font-size:9.6pt">%(ordena)s</div>
   <div class="se" style="margin-top:5mm">Pregunta y responde · in tweetallen</div>
-  <p style="font-size:9.6pt">Stel elkaar de vier vragen. Noteer het antwoord van
-    je buur in het Spaans — niet in het Nederlands.</p>
+  <p style="font-size:9.6pt">Haceos las cuatro preguntas. Anota la respuesta de
+    tu compañero/a en español, no en neerlandés.
+    <span class="gloss">noteer het antwoord in het Spaans</span></p>
   <table class="mp"><thead><tr><th>Pregunta</th><th>La respuesta de mi compañero/a</th>
     </tr></thead><tbody>%(pares)s</tbody></table>
   <div class="se" style="margin-top:5mm">Corrige · zoek de fout en herschrijf</div>
-  <p style="font-size:9.6pt">In elke zin staat één fout. Onderstreep hem en
-    schrijf de zin correct over.</p>
+  <p style="font-size:9.6pt">En cada frase hay un error. Subráyalo y vuelve a
+    escribir la frase bien.
+    <span class="gloss">één fout per zin: onderstreep en verbeter</span></p>
   <div style="margin-left:6mm;font-size:9.6pt">%(corrige)s</div>
   <div class="se" style="margin-top:5mm">Escribe · vijf zinnen over jezelf</div>
-  <p style="font-size:9.6pt">Gebruik minstens vier chunks uit deze unidad.
-    Onderstreep ze.</p>
+  <p style="font-size:9.6pt">Usa por lo menos cuatro chunks de esta unidad y
+    subráyalos.
+    <span class="gloss">minstens vier chunks, onderstreept</span></p>
   <div class="wbox lg"></div>
 </div>""" % {
         "banco": banco, "cols": cols, "tabla": tabla,
@@ -484,19 +503,24 @@ def tarea():
   <div class="se" style="margin-top:4mm">Mi preparación · schrijf hier je tekst</div>
   <div class="wbox lg"></div>
   <div class="audiorow" style="margin-top:4mm">
-    <div class="call"><span class="ic">🎙️</span><div><b>Grábate.</b> Neem je taak
-      op via de digitale pagina en luister terug: versta jíj jezelf? Neem daarna
-      nog een keer op — de tweede keer is altijd beter.</div></div>
+    <div class="call"><span class="ic">🎙️</span><div><b>Grábate.</b> Graba tu
+      tarea en la página digital y escúchate: ¿te entiendes a ti mismo/a? Después
+      grábate otra vez — la segunda siempre sale mejor.
+      <span class="gloss">neem op, luister terug, neem opnieuw op</span></div></div>
     <div class="qr" data-url="%(url)s"><div class="lab">Graba tu tarea</div>%(qr)s
       <div class="meta">hub · Práctica</div></div>
   </div>
   <div class="se" style="margin-top:4mm">Evaluación · kruis eerlijk aan</div>
   <table class="mp"><thead><tr><th>Criterio</th><th>Todavía no</th><th>Casi</th>
     <th>¡Sí!</th></tr></thead><tbody>
-    <tr><td>Ik gebruik de chunks van deze unidad</td><td>☐</td><td>☐</td><td>☐</td></tr>
-    <tr><td>Men verstaat mij zonder dat ik het herhaal</td><td>☐</td><td>☐</td><td>☐</td></tr>
-    <tr><td>Ik spreek de klank van deze unidad goed uit</td><td>☐</td><td>☐</td><td>☐</td></tr>
-    <tr><td>Ik durf te antwoorden zonder mijn blad</td><td>☐</td><td>☐</td><td>☐</td></tr>
+    <tr><td>Uso los chunks de esta unidad
+      <span class="gloss">ik gebruik de chunks</span></td><td>☐</td><td>☐</td><td>☐</td></tr>
+    <tr><td>Me entienden sin tener que repetirlo
+      <span class="gloss">men verstaat mij meteen</span></td><td>☐</td><td>☐</td><td>☐</td></tr>
+    <tr><td>Pronuncio bien el sonido de esta unidad
+      <span class="gloss">ik spreek de klank goed uit</span></td><td>☐</td><td>☐</td><td>☐</td></tr>
+    <tr><td>Me atrevo a responder sin mirar la hoja
+      <span class="gloss">ik antwoord zonder mijn blad</span></td><td>☐</td><td>☐</td><td>☐</td></tr>
   </tbody></table>
 </div>""" % {"tit": esc(tit), "ses": esc(ses), "snl": esc(snl), "lis": lis,
               "url": destino, "qr": qr(destino)}
@@ -504,17 +528,20 @@ def tarea():
 
 # ─── cultura ────────────────────────────────────────────────────────────────
 CULTURA = {
- 11: ("España en verano", "Waarom half Madrid in augustus verdwijnt",
+ 11: ("España en verano", "Por qué medio Madrid desaparece en agosto",
       "In augustus loopt Madrid leeg: wie kan, vertrekt naar de <b>costa</b> of naar "
       "<b>el pueblo</b> — het dorp waar de familie vandaan komt. Julio doet precies "
       "dat. Het binnenland kent extremen: 40 graden in de zomer, en in de bergen bij "
       "Ávila vriest het 's winters hard. Op de <b>Canarias</b>, voor de kust van "
       "Afrika, is het het hele jaar door 20 tot 26 graden — daarom heten ze "
       "<i>las islas de la eterna primavera</i>.",
-      ["Wat betekent <i>ir al pueblo</i>, en heb jij zoiets?",
-       "Zoek de temperatuur van vandaag in Madrid en in Las Palmas.",
-       "Waarom is het op de Canarias het hele jaar zacht? Zoek het op."]),
- 12: ("La ropa que cuenta algo", "Van de guayabera tot de sneakers van Madrid",
+      "En agosto Madrid se queda vacío: la gente va a la <b>costa</b> o "
+      "<b>al pueblo</b>. En el interior hace mucho calor en verano y mucho frío "
+      "en invierno. En <b>Canarias</b> hace entre 20 y 26 grados todo el año.",
+      ["¿Qué significa <i>ir al pueblo</i>? ¿Tienes tú algo parecido?",
+       "Busca la temperatura de hoy en Madrid y en Las Palmas.",
+       "¿Por qué en Canarias hace buen tiempo todo el año? Búscalo."]),
+ 12: ("La ropa que cuenta algo", "De la guayabera a las zapatillas de Madrid",
       "Kleding is nooit alleen kleding. In het Caribisch gebied draagt men de "
       "<b>guayabera</b>, een licht overhemd met plooien dat je zelfs op een "
       "trouwfeest mag aanhebben; in de Andes de <b>poncho</b>, geweven in de "
@@ -523,11 +550,15 @@ CULTURA = {
       "tieners ongeveer hetzelfde als jij. Eén detail is wel anders: "
       "<i>llevar</i> is «aanhebben», terwijl wij «dragen» zeggen — en dat woord "
       "betekent in het Spaans iets heel anders.",
-      ["Zoek een foto van een <i>guayabera</i> en van een <i>huipil</i>. Beschrijf "
-       "er één in het Spaans: <i>Lleva…</i>",
-       "Welke kleuren zie je het meest in de traditionele kleding van de Andes?",
-       "Wat draag jij vandaag? Schrijf drie zinnen met <i>llevo</i> + kleur."]),
- 13: ("El mercado de barrio", "Waarom de Spanjaard nog altijd bij vier winkels langsgaat",
+      "La ropa cuenta algo. En el Caribe se lleva la <b>guayabera</b>; en los "
+      "Andes, el <b>poncho</b>; en Guatemala, el <b>huipil</b>. En Madrid los "
+      "jóvenes llevan más o menos lo mismo que tú. ¡Ojo! <i>llevar</i> = "
+      "aanhebben.",
+      ["Busca una foto de una <i>guayabera</i> y de un <i>huipil</i>. Describe "
+       "una en español: <i>Lleva…</i>",
+       "¿Qué colores ves más en la ropa tradicional de los Andes?",
+       "¿Qué llevas hoy? Escribe tres frases con <i>llevo</i> + color."]),
+ 13: ("El mercado de barrio", "Por qué en España todavía se pasa por cuatro tiendas",
       "In Spanje en Latijns-Amerika is <b>el mercado</b> geen folklore maar een "
       "gewone maandagochtend. Onder één dak staan losse kraampjes: de "
       "<b>pescadería</b> voor vis, de <b>carnicería</b> voor vlees, de "
@@ -535,11 +566,15 @@ CULTURA = {
       "je vraagt de prijs hardop, en de verkoper kent je naam. In Mexico heet "
       "zo'n rondtrekkende markt een <i>tianguis</i>, een woord uit het Nahuatl — "
       "ouder dus dan het Spaans zelf.",
-      ["Zoek een Spaanse marktfolder en noteer drie prijzen per kilo.",
-       "Wat is een <i>tianguis</i>? Uit welke taal komt het woord?",
-       "Waar koopt jouw gezin: markt, winkel of online? Schrijf één zin met "
-       "<i>compramos… porque…</i>"]),
- 14: ("La mesa española", "Twee uur aan tafel, en niemand die haast heeft",
+      "En España y en Latinoamérica, <b>el mercado</b> es normal. Bajo un mismo "
+      "techo están la <b>pescadería</b>, la <b>carnicería</b> y la "
+      "<b>frutería</b>. Compras por unidad o por kilo y preguntas el precio en "
+      "voz alta. En México un mercado ambulante se llama <i>tianguis</i>.",
+      ["Busca un folleto de un mercado español y anota tres precios por kilo.",
+       "¿Qué es un <i>tianguis</i>? ¿De qué lengua viene la palabra?",
+       "¿Dónde compra tu familia: en el mercado, en la tienda o por internet? "
+       "Escribe una frase con <i>compramos… porque…</i>"]),
+ 14: ("La mesa española", "Dos horas en la mesa, y nadie tiene prisa",
       "Wie in Spanje uit eten gaat, eet later en langer. De <b>comida</b> is "
       "tussen twee en vier, de <b>cena</b> begint pas om negen of tien. "
       "'s Middags bestaat het <b>menú del día</b>: voorgerecht, hoofdgerecht, "
@@ -547,14 +582,19 @@ CULTURA = {
       "het land. Na het nagerecht komt de koffie, en die blijft staan: de "
       "<i>sobremesa</i>, het napraten aan tafel, hoort bij de maaltijd. De "
       "rekening vraag je zelf; ze wordt niet gebracht.",
-      ["Zoek een echt <i>menú del día</i> online. Wat kost het en wat krijg je?",
-       "Wat is <i>la sobremesa</i>? Bestaat daar een Nederlands woord voor?",
-       "Stel jouw menú del día samen in het Spaans: primer plato, segundo, postre."]),
+      "En España se come más tarde y más despacio. La <b>comida</b> es entre "
+      "las dos y las cuatro; la <b>cena</b>, a las nueve o las diez. A mediodía "
+      "hay <b>menú del día</b>: primer plato, segundo, postre, pan y bebida por "
+      "un precio. Después del café llega la <i>sobremesa</i>. La cuenta la "
+      "pides tú.",
+      ["Busca un <i>menú del día</i> de verdad en internet. ¿Cuánto cuesta y qué te dan?",
+       "¿Qué es <i>la sobremesa</i>? ¿Existe una palabra neerlandesa para eso?",
+       "Compón tu menú del día en español: primer plato, segundo, postre."]),
 }
 
 
 def cultura():
-    tit, sub, texto, preguntas = CULTURA[UNIT]
+    tit, sub, texto, lead, preguntas = CULTURA[UNIT]
     lis = "".join('<div style="margin:3mm 0"><b>%d.</b> %s<br>%s</div>'
                   % (i + 1, p, wl("full")) for i, p in enumerate(preguntas))
     destino = EN.url("C4", UNIT, EN.ancla_c4("musica"))
@@ -562,20 +602,22 @@ def cultura():
 <div class="page sec">
   <div class="se">Cultura · Banda sonora</div><h2>%(tit)s</h2>
   <p style="font-size:9.4pt;color:var(--mut);margin:0 0 2mm">%(sub)s</p>
-  <p style="font-size:9.8pt">%(texto)s</p>
+  <p style="font-size:9.8pt">%(lead)s</p>
+  <p style="font-size:9.2pt;color:var(--mut)"><b>Achtergrond ·</b> %(texto)s</p>
   <div class="se" style="margin-top:5mm">Investiga · zoek het op en schrijf</div>
   <div style="margin-left:6mm;font-size:9.6pt">%(lis)s</div>
   <div class="audiorow" style="margin-top:4mm">
     <div class="call"><span class="ic">🎵</span><div><b>La banda sonora.</b>
-      Op de digitale pagina staat de playlist bij deze unidad. Kies één nummer,
-      luister het twee keer en noteer drie woorden die je herkent.</div></div>
+      En la página digital tienes la playlist de esta unidad. Elige una canción,
+      escúchala dos veces y anota tres palabras que reconozcas.
+      <span class="gloss">kies één nummer en noteer drie woorden</span></div></div>
     <div class="qr" data-url="%(url)s"><div class="lab">Escucha la playlist</div>%(qr)s
       <div class="meta">hub · Música</div></div>
   </div>
   <div style="margin-left:6mm;font-size:9.6pt;margin-top:2mm">
     Mis tres palabras: %(l)s &nbsp; %(l)s &nbsp; %(l)s</div>
-</div>""" % {"tit": esc(tit), "sub": esc(sub), "texto": texto, "lis": lis,
-              "url": destino, "qr": qr(destino), "l": wl("md")}
+</div>""" % {"tit": esc(tit), "sub": esc(sub), "texto": texto, "lead": lead,
+              "lis": lis, "url": destino, "qr": qr(destino), "l": wl("md")}
 
 
 # ─── repaso ─────────────────────────────────────────────────────────────────
@@ -592,23 +634,27 @@ def repaso():
     destino = EN.url("C4", UNIT, EN.ancla_c4("practica"))
     return """
 <div class="page sec">
-  <div class="se">Repaso · Lo esencial de un vistazo</div><h2>Wat je nu kunt</h2>
+  <div class="se">Repaso · Lo esencial de un vistazo</div><h2>Lo que ya sabes hacer
+    <span class="gloss">wat je nu kunt</span></h2>
   <div class="kitwrap">%(esencial)s</div>
   <div class="se" style="margin-top:5mm">El semáforo · hoe zeker ben je?</div>
-  <p style="font-size:9.6pt">Kleur eerlijk in. Alles wat rood of oranje is, oefen
-    je online — daar verbetert het zichzelf.</p>
+  <p style="font-size:9.6pt">Colorea con sinceridad. Todo lo que quede en rojo o
+    naranja lo practicas en la página digital: allí se corrige solo.
+    <span class="gloss">kleur eerlijk in; rood en oranje oefen je online</span></p>
   <table class="mp"><thead><tr><th>Puedo…</th><th>nog niet</th><th>bijna</th>
     <th>ja</th></tr></thead><tbody>%(sem)s</tbody></table>
   <div class="audiorow" style="margin-top:4mm">
     <div class="call"><span class="ic">🎮</span><div><b>Repasa jugando.</b>
-      De digitale pagina heeft zeven zelfcorrigerende oefeningen bij deze unidad,
-      van herkennen tot zelf opnemen. Begin bij wat oranje of rood is.</div></div>
+      La página digital tiene siete ejercicios que se corrigen solos, desde
+      reconocer hasta grabarte. Empieza por lo naranja o lo rojo.
+      <span class="gloss">zeven zelfcorrigerende oefeningen online</span></div></div>
     <div class="qr" data-url="%(url)s"><div class="lab">Repasa online</div>%(qr)s
       <div class="meta">hub · Práctica</div></div>
   </div>
   <div class="se" style="margin-top:5mm">Mis palabras · jouw eigen vijf</div>
-  <p style="font-size:9.6pt">Welke vijf woorden of chunks uit deze unidad wil jíj
-    zeker onthouden? Schrijf ze op met een voorbeeldzin.</p>
+  <p style="font-size:9.6pt">¿Qué cinco palabras o chunks de esta unidad quieres
+    recordar <b>tú</b>? Escríbelos con una frase de ejemplo.
+    <span class="gloss">jouw vijf, elk met een voorbeeldzin</span></p>
   <table class="mp"><thead><tr><th>Mi palabra</th><th>Mi frase</th></tr></thead>
     <tbody>%(mis)s</tbody></table>
 </div>""" % {"esencial": esencial, "sem": sem, "url": destino, "qr": qr(destino),
@@ -656,18 +702,20 @@ def cierre():
     <span class="gloss">Een jaar geleden kon je hier nog niets zeggen. Nu stel je
     jezelf voor, beschrijf je je huis, maak je een afspraak, doe je boodschappen
     op de markt en bestel je een volledig menu.</span>
-    Loop de veertien parada's na en kleur eerlijk in: wat rood of oranje blijft,
-    staat online klaar om te herhalen.</p>
-  <div class="truc"><b>¿Y ahora?</b> Dit was «¡Bienvenidos al español!». De
-    klanken, het accent en de chunks die je hier opbouwde, zijn precies waarmee
-    de volgende cursus vertrekt.
-    <span class="gloss">Aquí termina el primer viaje; el siguiente empieza donde
-    este acaba.</span></div>
+    Repasa las catorce paradas y colorea con sinceridad: lo que quede en rojo o
+    naranja te espera en la página digital.
+    <span class="gloss">loop de veertien parada's na en kleur eerlijk in</span></p>
+  <div class="truc"><b>¿Y ahora?</b> Esto era «Bienvenidos al español». Los
+    sonidos, el acento y los chunks que has construido aquí son justo el punto
+    de partida del curso siguiente.
+    <span class="gloss">hier eindigt de eerste reis; de volgende vertrekt precies
+    hier</span></div>
   <table class="mp" style="margin-top:3mm"><thead><tr><th>#</th><th>Parada</th>
     <th>Ya sé decir…</th><th>nog niet</th><th>bijna</th><th>ja</th></tr></thead>
     <tbody>%(filas)s</tbody></table>
   <div style="margin-left:6mm;font-size:9.6pt;margin-top:3mm">
-    <b>Mi frase del año</b> — de Spaanse zin die je nooit meer wil vergeten:
+    <b>Mi frase del año</b> — la frase en español que no quieres olvidar nunca
+    <span class="gloss">jouw zin van het jaar</span>:
     %(l)s</div>
 </div>"""  % {"filas": filas, "l": wl("full")}
 

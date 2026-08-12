@@ -146,14 +146,14 @@ def klemword(i,syls,ton):
     return f'<div class="klemword" data-w="{"".join(syls)}"><button class="kspk">🔊</button>{chips}</div>'
 SUENA=('<div class="suena">'
  '<div class="sblok"><h3>① Las cinco vocales · de 5 klinkers</h3>'
- '<p class="sh">Spaanse klinkers zijn <b>kort en zuiver</b> — altijd dezelfde klank, nooit «versleept». Klik 🔊 en spreek na.</p>'
+ '<p class="sh">Las vocales españolas son <b>cortas y puras</b>: siempre el mismo sonido, nunca «arrastrado». Pulsa 🔊 y repite. <span class="gloss">klinkers zijn kort en zuiver</span></p>'
  f'<div class="vocgrid">{"".join(voccard(*v) for v in VOCALS)}</div>'
  '<p class="ojo2">⚠️ <b>¡Ojo!</b> <span>e blijft /e/ en o blijft /o/ — géén NL «ei/ou»-glijder. Denk: a·e·i·o·oe.</span></p></div>'
  '<div class="sblok"><h3>② Repite · spreek na (shadowing)</h3>'
- '<p class="sh">Luister en herhaal meteen — imiteer de melodie.</p>'
+ '<p class="sh">Escucha y repite enseguida: imita la melodía. <span class="gloss">herhaal meteen en imiteer de melodie</span></p>'
  f'<div class="shrow">{"".join(shchip(w) for w in SHADOW)}</div></div>'
  '<div class="sblok"><h3>③ ¿Dónde está el acento? · waar ligt de klemtoon?</h3>'
- '<p class="sh">Klik op de lettergreep die je het <b>sterkst</b> hoort; klik 🔊 om te controleren.</p>'
+ '<p class="sh">Pulsa la sílaba que oyes más <b>fuerte</b>; pulsa 🔊 para comprobar. <span class="gloss">klik de sterkste lettergreep</span></p>'
  f'<div class="klemgrid">{"".join(klemword(i,*k) for i,k in enumerate(KLEM))}</div>'
  '<p class="sfb" id="sfb"></p></div></div>')
 

@@ -8,6 +8,7 @@
                   --line:#3a302e;--card:#211a19}
 *{box-sizing:border-box}
 body{margin:0;font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.55}
+.stn{color:var(--mut);font-style:italic;font-size:.9em;font-family:var(--body)}
 .top{background:linear-gradient(135deg,var(--g),var(--gd));color:#fff;padding:20px 22px}
 .top h1{font-family:var(--disp);font-weight:800;margin:0;font-size:24px}
 .top p{margin:4px 0 0;opacity:.95}
@@ -54,17 +55,17 @@ input.ty.good{border-color:var(--ok)}input.ty.bad{border-color:var(--no)}
 .foot{color:var(--mut);font-size:12px;text-align:center;margin:26px 0 0}
 </style></head><body>
 <div class="top"><h1>Unidad 13 · La comida · las tiendas · los precios — Práctica</h1>
-<p>Van <b>herkennen</b> naar <b>zelf zeggen</b>. Alles verbetert zichzelf; klik 🔊 om te horen.</p></div>
+<p>De <b>reconocer</b> a <b>decirlo tú</b>. Todo se corrige solo; pulsa 🔊 para oírlo. <span class="stn">van herkennen naar zelf zeggen</span></p></div>
 <main>
- <h2 class="subh">① Reconocer <span class="pill">je ziet het en herkent het</span></h2>
+ <h2 class="subh">① Reconocer <span class="pill">lo ves y lo reconoces</span></h2>
  <div class="game" id="g_cards"></div>
  <div class="game" id="g_escucha"></div>
  <div class="game" id="g_clasifica"></div>
- <h2 class="subh">② Practicar <span class="pill">met steun</span></h2>
+ <h2 class="subh">② Practicar <span class="pill">con apoyo</span></h2>
  <div class="game" id="g_match"></div>
  <div class="game" id="g_completa"></div>
  <div class="game" id="g_ordena"></div>
- <h2 class="subh">③ Producir <span class="pill">zonder steun</span></h2>
+ <h2 class="subh">③ Producir <span class="pill">sin apoyo</span></h2>
  <div class="game" id="g_grabate"></div>
  <div class="foot">C4 · «Bienvenidos al español» · Unidad 13 · La comida · las tiendas · los precios</div>
 </main>
@@ -86,7 +87,7 @@ function marco(id,tit,desc,n){var h=document.getElementById(id);
 
 /* 1 · tarjetas — woord zien, betekenis oproepen, dan omdraaien */
 (function(){var m=marco('g_cards','① Tarjetas · ¿qué significa?',
- 'Zeg de betekenis hardop vóór je omdraait. Klik om te draaien, klik 🔊 om te horen.',D.pares.length);
+ 'Di el significado en voz alta antes de girar la tarjeta. Pulsa para girar, pulsa 🔊 para oírla. <span class=\"nl\">zeg het hardop vóór je omdraait</span>',D.pares.length);
  var g=document.createElement('div');g.className='flip';
  baraja(D.pares).forEach(function(p){var c=document.createElement('div');c.className='card';
   c.textContent=p.es;var vuelta=false;
@@ -98,7 +99,7 @@ function marco(id,tit,desc,n){var h=document.getElementById(id);
 /* 2 · ¿qué oyes? — klank naar schriftbeeld */
 (function(){var items=baraja(D.pares).slice(0,8);
  var m=marco('g_escucha','② ¿Qué oyes? · luister en kies',
-  'Klik ▶, luister en kies wat je hoort. Twijfel je? Luister nog eens.',items.length);
+  'Pulsa ▶, escucha y elige lo que oyes. ¿Dudas? Escucha otra vez. <span class="stn">luister en kies; twijfel je, luister nog eens</span>',items.length);
  items.forEach(function(it){
   var otras=baraja(D.pares.filter(function(p){return p.es!==it.es;})).slice(0,2);
   var ops=baraja([it].concat(otras));
@@ -117,7 +118,7 @@ function marco(id,tit,desc,n){var h=document.getElementById(id);
 
 /* 3 · clasifica — in welk veld hoort dit woord? */
 (function(){var m=marco('g_clasifica','③ Clasifica · ¿a qué grupo pertenece?',
- 'Sleep elk woord naar het juiste veld. Fout? Het springt terug.',
+ 'Arrastra cada palabra a su grupo. ¿Mal? Vuelve a su sitio. <span class=\"nl\">sleep naar het juiste veld</span>',
  D.clusters.reduce(function(a,c){return a+Math.min(c.items.length,3);},0));
  var pool=document.createElement('div');pool.style.margin='6px 0';
  var bins=document.createElement('div');bins.className='drop';
@@ -144,7 +145,7 @@ function marco(id,tit,desc,n){var h=document.getElementById(id);
 /* 4 · empareja — ES naar NL, zonder de kaartjes erbij */
 (function(){var items=baraja(D.pares).slice(0,8);
  var m=marco('g_match','④ Empareja · español → nederlands',
-  'Kies de juiste vertaling. Nu zonder kaartjes: uit je hoofd.',items.length);
+  'Elige la traducción correcta. Ahora sin tarjetas: de memoria. <span class="stn">nu zonder kaartjes, uit het hoofd</span>',items.length);
  items.forEach(function(it){
   var otras=baraja(D.pares.filter(function(p){return p.nl!==it.nl;})).slice(0,2);
   var ops=baraja([it].concat(otras));
@@ -162,7 +163,7 @@ function marco(id,tit,desc,n){var h=document.getElementById(id);
 
 /* 5 · completa — het gat in een zin uit de scène */
 (function(){var m=marco('g_completa','⑤ Completa · rellena el hueco',
- 'Vul de ontbrekende chunk in. Accenten mogen wegblijven.',D.huecos.length);
+ 'Escribe el chunk que falta. No hace falta poner las tildes. <span class="stn">accenten mogen wegblijven</span>',D.huecos.length);
  D.huecos.forEach(function(h){
   var q=document.createElement('div');q.className='q';
   q.innerHTML='<div class="qz">'+h.frase+'</div>'+
@@ -181,7 +182,7 @@ function marco(id,tit,desc,n){var h=document.getElementById(id);
 
 /* 6 · ordena — de woordvolgorde herstellen */
 (function(){var m=marco('g_ordena','⑥ Ordena · pon las palabras en orden',
- 'Klik de woorden in de juiste volgorde. Nog eens klikken haalt er een weg.',D.ordena.length);
+ 'Pulsa las palabras en el orden correcto. Pulsa otra vez para quitar una. <span class=\"nl\">klik in de juiste volgorde</span>',D.ordena.length);
  D.ordena.forEach(function(o){
   var pal=o.frase.replace(/[¿¡.,!?]/g,'').split(/\s+/);
   var q=document.createElement('div');q.className='q';
@@ -197,7 +198,7 @@ function marco(id,tit,desc,n){var h=document.getElementById(id);
   q.querySelector('.btn').onclick=function(){
    var bien=norm(puestas.join(' '))===norm(pal.join(' '));
    fb.className='fb '+(bien?'g':'b');
-   fb.textContent=bien?'¡Correcto!':'Nog niet — luister eens: '+o.frase;
+   fb.textContent=bien?'¡Correcto!':'Todavía no — escucha: '+o.frase;
    if(bien){m.punto();speak(o.frase);this.disabled=true;}else{speak(o.frase);}};
   m.cuerpo.appendChild(q);});})();
 
@@ -205,16 +206,16 @@ function marco(id,tit,desc,n){var h=document.getElementById(id);
 (function(){var h=document.getElementById('g_grabate');
  var pasos=D.tarea.pasos.map(function(p){return '<li>'+p+'</li>';}).join('');
  h.innerHTML='<h3>⑦ Grábate · '+D.tarea.titulo+'</h3>'+
-  '<p class="d">Doe de eindtaak hardop en neem jezelf op. Luister terug: versta jíj jezelf? '+
-  'Neem daarna nog eens op — de tweede keer is altijd beter.</p><ol>'+pasos+'</ol>'+
+  '<p class="d">Haz la tarea final en voz alta y grábate. Escúchate: ¿te entiendes tú? <span class="stn">neem jezelf op en luister terug</span> '+
+  'Después grábate otra vez: la segunda siempre sale mejor.</p><ol>'+pasos+'</ol>'+
   '<div class="rec"><button class="btn" id="rgo">⏺ Grabar</button>'+
   '<button class="btn" id="rst" disabled>⏹ Parar</button><audio id="rau" controls></audio></div>'+
-  '<p class="d" id="rmsg">De opname blijft op je toestel — er wordt niets verstuurd.</p>';
+  '<p class="d" id="rmsg">La grabación se queda en tu aparato: no se envía nada. <span class="stn">er wordt niets verstuurd</span></p>';
  var go=h.querySelector('#rgo'),st=h.querySelector('#rst'),au=h.querySelector('#rau'),
      msg=h.querySelector('#rmsg'),rec=null,trozos=[];
  go.onclick=function(){
   if(!navigator.mediaDevices||!window.MediaRecorder){
-   msg.textContent='Dit toestel kan niet opnemen in de browser. Neem op met je telefoon en luister zo terug.';return;}
+   msg.textContent='Este aparato no puede grabar en el navegador. Graba con el móvil y escúchate así.';return;}
   navigator.mediaDevices.getUserMedia({audio:true}).then(function(s){
    trozos=[];rec=new MediaRecorder(s);
    rec.ondataavailable=function(e){trozos.push(e.data);};
@@ -223,6 +224,6 @@ function marco(id,tit,desc,n){var h=document.getElementById(id);
     msg.textContent='Klaar. Luister terug en neem gerust nog eens op.';};
    rec.start();go.disabled=true;st.disabled=false;go.classList.add('on');
    msg.textContent='Aan het opnemen…';})
-  .catch(function(){msg.textContent='Geen toegang tot de microfoon. Zet ze aan in je browser.';});};
+  .catch(function(){msg.textContent='Sin acceso al micrófono. Actívalo en el navegador.';});};
  st.onclick=function(){if(rec)rec.stop();go.disabled=false;st.disabled=true;go.classList.remove('on');};})();
 </script></body></html>

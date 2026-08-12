@@ -124,7 +124,7 @@ var CHUNKS=[["¿Qué hora es?","hoe laat is het?"],["Es la una","het is één uu
 // ② Completa el diálogo
 (function(){var el=document.getElementById('g_completa');
  var gaps=[["quedar"],["hora"],["las"],["media"],["ahora"]];
- el.innerHTML='<h3>Completa el diálogo 💬</h3><p class="desc">Vul aan (quedar · hora · las · media · ahora).</p>'
+ el.innerHTML='<h3>Completa el diálogo 💬</h3><p class="desc">Completa (quedar · hora · las · media · ahora). <span class="gloss">vul aan</span></p>'
   +'<div class="dlgfill">— ¿Quieres <input class="txin" data-i="0"> esta noche? <br>— Sí, vale. ¿A qué <input class="txin" data-i="1">? <br>— ¿A <input class="txin" data-i="2"> nueve?<br>— Mejor a las nueve y <input class="txin" data-i="3"> <span style="color:var(--mut);font-size:12px">(9.30)</span>.<br>— Perfecto. ¡Hasta <input class="txin" data-i="4">!</div>'
   +'<div class="answerbtns"><button class="btn" id="coGo">Controleer</button></div><div class="fb" id="coF"></div>';
  el.querySelector('#coGo').onclick=function(){var n=0;el.querySelectorAll('.txin').forEach(function(inp){var i=+inp.dataset.i;var ok=(inp.value||'').trim().toLowerCase()===gaps[i][0].toLowerCase();inp.style.borderColor=ok?'#2F9A4A':'#DC2626';if(ok)n++;});fb(el.querySelector('#coF'),n===gaps.length,n+' / '+gaps.length+' juist.'+(n<gaps.length?' Kijk naar de rode vakjes.':' ¡Perfecto!'));};})();

@@ -311,7 +311,7 @@ PRAC=f"""
     +'<div class="wcols" style="margin-left:12.5mm"><div class="wcol"><h4>Saludar</h4><div class="fill"></div></div><div class="wcol"><h4>Preguntar</h4><div class="fill"></div></div><div class="wcol"><h4>Cortesía</h4><div class="fill"></div></div><div class="wcol"><h4>Despedirse</h4><div class="fill"></div></div></div>')}
 
   {act(2,"Relaciona · verbind",[("con apoyo · met steun","skill"),("★☆☆","")],
-    '<p style="margin-left:12.5mm">Une con una línea el español y su significado. <span class="gloss">Trek een lijn tussen het Spaans en de betekenis.</span></p>'
+    '<p style="margin-left:12.5mm">Une con una línea el español y su significado. <span class="gloss">Une con una línea el español y su significado. <span class="gloss">verbind Spaans en betekenis</span></span></p>'
     +'<table class="mtab" style="margin-left:12.5mm"><tr><td class="a">1. ¡Hola!</td><td><span class="ln"></span></td><td class="b">a. graag gedaan</td></tr>'
     +'<tr><td class="a">2. ¿Cómo te llamas?</td><td><span class="ln"></span></td><td class="b">b. tot straks</td></tr>'
     +'<tr><td class="a">3. De nada</td><td><span class="ln"></span></td><td class="b">c. hallo</td></tr>'

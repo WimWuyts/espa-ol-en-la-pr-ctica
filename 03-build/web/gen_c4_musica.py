@@ -52,7 +52,8 @@ TEMA_TITELS={"presentaciones":"Presentaciones","saludos":"Saludos","nacionalidad
 # (zo blijft U1 ongewijzigd). Elk item: (icoon, titel_es, tekst_es, tekst_nl).
 CULTURA={
  "presentaciones":{
-   "intro":"Als je je voorstelt, hoor je meteen iets over iemands achtergrond. Zo werken namen in de Spaanstalige wereld.",
+   "intro":"Cuando alguien se presenta, ya oyes algo de su historia. Así funcionan los nombres en el mundo hispano.",
+   "intro_nl":"namen vertellen iets over iemands achtergrond",
    "cards":[
      ("📛","Dos apellidos","Casi todos tienen <b>dos apellidos</b>: el del padre y el de la madre (p. ej. García Márquez).",
       "Bijna iedereen heeft <b>twee achternamen</b>: die van de vader én die van de moeder (bv. García <i>Márquez</i>)."),
@@ -66,7 +67,8 @@ CULTURA={
    "dato":"¿Sabías que…? En español el apellido de la madre no desaparece: los dos apellidos pasan a los hijos. Por eso mucha gente comparte apellidos… ¡pero no siempre son familia!",
  },
  "nacionalidades":{
-   "intro":"El español is één taal die 21 landen verbindt — van Europa tot Amerika en zelfs Afrika. Eén taal, veel accenten en culturen.",
+   "intro":"El español une 21 países, de Europa a América y hasta África: una lengua, muchos acentos y muchas culturas.",
+   "intro_nl":"één taal, 21 landen, veel accenten",
    "cards":[
      ("🌍","21 países","El español es lengua oficial en <b>21 países</b> y lo hablan más de <b>490 millones</b> de personas.",
       "Spaans is officiële taal in <b>21 landen</b> en wordt door meer dan <b>490 miljoen</b> mensen gesproken — de op één na meest gesproken moedertaal ter wereld."),
@@ -80,11 +82,12 @@ CULTURA={
    "dato":"¿Sabías que…? El gentilicio se escribe con minúscula: soy belga, hablo neerlandés. Y «americano» no significa solo «de EE. UU.»: ¡toda América (del Norte, Central y del Sur) es América!",
  },
  "familia":{
-   "intro":"De familie staat centraal in de Spaanstalige cultuur — vaak groot, warm en dichtbij. Zo praat men over «la familia».",
+   "intro":"La familia está en el centro de la cultura hispana: grande, cercana y calurosa. Así se habla de «la familia».",
+   "intro_nl":"de familie staat centraal",
    "cards":[
-     ("👨‍👩‍👧‍👦","La familia unida","In veel Spaanstalige landen wonen <b>drie generaties</b> dicht bij elkaar; <b>los abuelos</b> spelen een grote rol.",
+     ("👨‍👩‍👧‍👦","La familia unida","En muchos países hispanos viven <b>tres generaciones</b> cerca; <b>los abuelos</b> tienen un papel importante.",
       "In veel Spaanstalige landen leven <b>drie generaties</b> dicht bij elkaar; <b>grootouders</b> (los abuelos) zijn heel belangrijk."),
-     ("🍚","La sobremesa","Na het eten blijft de familie lang aan tafel praten: <b>la sobremesa</b>.",
+     ("🍚","La sobremesa","Después de comer, la familia se queda mucho rato hablando en la mesa: <b>la sobremesa</b>.",
       "Na het eten blijft de familie lang napraten aan tafel — dat heet <b>la sobremesa</b>, een echte familietraditie."),
      ("💃","Frida &amp; su familia","La pintora <b>Frida Kahlo</b> pintó «Mi familia» (Mis abuelos, mis padres y yo).",
       "Schilderes <b>Frida Kahlo</b> maakte een beroemd schilderij van haar stamboom: «Mis abuelos, mis padres y yo»."),
@@ -94,7 +97,8 @@ CULTURA={
    "dato":"¿Sabías que…? Casi todos tienen dos apellidos (del padre y de la madre) — así que el apellido de la madre nunca se pierde en la familia.",
  },
  "saludos":{
-   "intro":"Un saludo zegt veel over een cultuur: hoe dichtbij, hoe warm, hoeveel contact. Kijk hoe men groet in de Spaanstalige wereld.",
+   "intro":"Un saludo dice mucho de una cultura: cuánta cercanía, cuánto calor, cuánto contacto. Mira cómo se saluda en el mundo hispano.",
+   "intro_nl":"een groet zegt veel over een cultuur",
    "cards":[
      ("😘","Dos besos","En España, entre amigos y familia, se dan <b>dos besos</b> (primero en la mejilla izquierda).",
       "In Spanje geef je vrienden en familie <b>twee kussen</b> (eerst op de linkerwang). Twee jongens geven meestal een hand of een <i>abrazo</i>."),
@@ -108,7 +112,8 @@ CULTURA={
    "dato":"¿Sabías que…? En español el saludo cambia con la hora: buenos días (mañana) · buenas tardes (tarde) · buenas noches (noche). ¡Y «buenas noches» sirve para llegar y para despedirse!",
  },
  "objetos":{
-   "intro":"Sommige alledaagse voorwerpen zijn echte iconen van de Spaanstalige cultuur. Elk voorwerp «sirve para» iets — en vertelt een verhaal.",
+   "intro":"Algunos objetos de cada día son iconos de la cultura hispana. Cada objeto «sirve para» algo… y cuenta una historia.",
+   "intro_nl":"elk voorwerp dient ergens voor en vertelt een verhaal",
    "cards":[
      ("🎸","La guitarra española","La <b>guitarra española</b> (o flamenca) nació en España y sirve para tocar flamenco y muchos otros estilos.",
       "De <b>Spaanse (flamenco)gitaar</b> ontstond in Spanje en «sirve para» flamenco én talloze andere stijlen te spelen — een wereldwijd symbool."),
@@ -122,21 +127,23 @@ CULTURA={
    "dato":"¿Sabías que…? Muchas palabras de objetos vienen de lenguas indígenas de América: «hamaca», «canoa» y «chocolate» pasaron del taíno y del náhuatl al español… y luego a medio mundo.",
  },
  "casa":{
-   "intro":"Een huis vertelt veel over een cultuur: hoe men samenleeft, waar men rust, welke kleuren men kiest. Zo wonen mensen in de Spaanstalige wereld.",
+   "intro":"Una casa cuenta mucho de una cultura: cómo se convive, dónde se descansa, qué colores se eligen. Así se vive en el mundo hispano.",
+   "intro_nl":"een huis vertelt hoe mensen samenleven",
    "cards":[
-     ("🌿","El patio","In veel Spaanse en Latijns-Amerikaanse huizen is er een <b>patio</b>: een binnenkoer vol planten, het hart van het huis.",
+     ("🌿","El patio","En muchas casas de España y Latinoamérica hay un <b>patio</b> lleno de plantas: es el corazón de la casa.",
       "In veel Spaanse en Latijns-Amerikaanse huizen is er een <b>patio</b> (binnenkoer) vol planten — de centrale, gezellige plek van het huis."),
-     ("🎨","Casas de colores","In <b>Guanajuato</b> (🇲🇽), <b>Cartagena</b> (🇨🇴) en <b>Guatapé</b> schilderen mensen hun huizen in <b>felle kleuren</b>.",
+     ("🎨","Casas de colores","En <b>Guanajuato</b> (🇲🇽), <b>Cartagena</b> (🇨🇴) y <b>Guatapé</b> la gente pinta las casas de <b>colores fuertes</b>.",
       "In steden als <b>Guanajuato</b> (Mexico), <b>Cartagena</b> (Colombia) en <b>Guatapé</b> zijn de huizen geschilderd in <b>felle kleuren</b> — een kleurrijk straatbeeld."),
-     ("🛋️","La sobremesa en casa","Thuis blijft men na het eten lang aan tafel praten: de <b>sobremesa</b> — het huis is een plek om samen te zijn.",
+     ("🛋️","La sobremesa en casa","En casa, después de comer, se habla mucho rato en la mesa: la <b>sobremesa</b>. La casa es un lugar para estar juntos.",
       "Thuis blijft de familie na het eten lang natafelen (<b>la sobremesa</b>): het huis draait om samenzijn, niet enkel om ruimtes."),
-     ("😴","La siesta","In warme streken rust men midden op de dag — de <b>siesta</b>. Even alles dicht, dan weer open.",
+     ("😴","La siesta","En las zonas calurosas se descansa a mediodía: la <b>siesta</b>. Todo cierra un rato y después vuelve a abrir.",
       "In warme streken rust men midden op de dag: de <b>siesta</b>. Rond 14–17u sluiten sommige winkels; daarna gaat alles weer open."),
    ],
-   "dato":"¿Sabías que…? «Estar en casa» (thuis zijn) en «ir a casa» (naar huis gaan) gebruik je zónder lidwoord — net als in het Nederlands zeg je «naar huis», niet «naar het huis».",
+   "dato":"¿Sabías que…? <b>casa</b> va sin artículo en <i>estar en casa</i> y <i>ir a casa</i>. <span class='stn'>net als «naar huis», niet «naar het huis»</span>",
  },
  "profesiones":{
-   "intro":"Werk en beroep klinken anders in elke cultuur — van de siësta-mythe tot wereldberoemde beroepen. Zo werkt de Spaanstalige wereld.",
+   "intro":"El trabajo suena distinto en cada cultura, del mito de la siesta a profesiones famosas en todo el mundo. Así se trabaja en el mundo hispano.",
+   "intro_nl":"zo werkt de Spaanstalige wereld",
    "cards":[
      ("💼","Soy profesor — sin «un»","En español dices <b>soy profesor</b>, <b>es actriz</b> — ¡sin «un/una»!",
       "In het Spaans zeg je <b>soy profesor</b>, <b>es actriz</b> — zónder «un/una» (anders dan in het Engels «I'm A teacher»)."),
@@ -147,10 +154,11 @@ CULTURA={
      ("🗣️","¿A qué te dedicas?","La pregunta clásica al conocer a alguien: <b>¿A qué te dedicas?</b> o <b>¿En qué trabajas?</b>",
       "Dé klassieke kennismakingsvraag: <b>¿A qué te dedicas?</b> («waaraan wijd je je?») of <b>¿En qué trabajas?</b> — beleefd én nieuwsgierig."),
    ],
-   "dato":"¿Sabías que…? Veel beroepsnamen hebben een eigen ♀-vorm: profesor/profesora · escritor/escritora · actor/actriz · dependiente/dependienta. Sommige blijven gelijk: el/la estudiante, el/la periodista.",
+   "dato":"¿Sabías que…? Muchas profesiones tienen forma ♀ propia: profesor/profesora · escritor/escritora · actor/actriz · dependiente/dependienta. Otras no cambian: el/la estudiante, el/la periodista. <span class='stn'>sommige beroepen blijven gelijk</span>",
  },
  "horas":{
-   "intro":"De klok tikt anders in de Spaanstalige wereld: later eten, later uitgaan, en een eigen manier om de tijd te zeggen. Zo werkt de dag.",
+   "intro":"El reloj va distinto en el mundo hispano: se come más tarde, se sale más tarde y la hora se dice de otra manera. Así es el día.",
+   "intro_nl":"de klok tikt anders: later eten, later uitgaan",
    "cards":[
      ("🍽️","Se come a las dos","En España se come a las <b>14 h</b> y se cena a las <b>21–22 h</b>. En México se almuerza fuerte a las 14–15 h.",
       "In Spanje eet men warm rond <b>14 u</b> en avondmaal pas om <b>21–22 u</b> — voor Vlamingen bijzonder laat! In Mexico is de lunch (14–15 u) de hoofdmaaltijd."),
@@ -161,10 +169,11 @@ CULTURA={
      ("📅","Los días en minúscula","Los días se escriben con <b>minúscula</b>: lunes, martes… Y «op maandag» = <b>el</b> lunes (sin «en»).",
       "Dagen schrijf je met een <b>kleine letter</b> (lunes, martes…). En «op maandag» is <b>el</b> lunes — géén «en» ervoor, anders dan je verwacht."),
    ],
-   "dato":"¿Sabías que…? «Half negen» is in het Spaans <b>las ocho y media</b>: het Spaans kijkt <i>terug</i> naar het vorige uur (acht + dertig), terwijl het Nederlands vóóruit kijkt naar negen. Dé klassieke valstrik!",
+   "dato":"¿Sabías que…? En español se dice <b>las ocho y media</b>: se cuenta desde la hora <i>anterior</i> (ocho + treinta). <span class='stn'>«half negen» kijkt vooruit, het Spaans kijkt terug — dé valstrik</span>",
  },
  "planes":{
-   "intro":"Plannen maken klinkt anders in het Spaans — en het weekend begint er later. Zo ziet een <i>finde</i> in de Spaanstalige wereld eruit.",
+   "intro":"Hacer planes suena distinto en español, y el fin de semana empieza más tarde. Así es un <i>finde</i> en el mundo hispano.",
+   "intro_nl":"plannen maken, en een weekend dat later begint",
    "cards":[
      ("🌙","Salir tarde","En España la gente <b>queda</b> a las 22–23 h para salir; los conciertos empiezan tarde.",
       "In Spanje spreekt men vaak pas om <b>22–23 u</b> af om uit te gaan; concerten beginnen laat en de nacht duurt lang."),
@@ -175,10 +184,11 @@ CULTURA={
      ("👨‍👩‍👧","Planes en familia","El domingo suele ser el día de la <b>comida familiar</b> — un plan fijo para muchos.",
       "De zondag is bij veel families de dag van de <b>familiemaaltijd</b> — een vast plan, vaak met de hele familie samen."),
    ],
-   "dato":"¿Sabías que…? Om een plan te maken gebruik je <b>ir a + infinitivo</b>: «voy a estudiar» = ik ga studeren — net zoals in het Nederlands. Maar «ik moet werken» wordt <b>tengo que trabajar</b>, letterlijk «ik heb te werken».",
+   "dato":"¿Sabías que…? Para un plan usas <b>ir a + infinitivo</b>: <i>voy a estudiar</i>. Y para una obligación, <b>tener que + infinitivo</b>: <i>tengo que trabajar</i>. <span class='stn'>letterlijk «ik heb te werken»</span>",
  },
  "tareas":{
-   "intro":"Wie doet wat in huis? Dat verschilt per gezin en per land — en het is aan het veranderen. Zo zit het in de Spaanstalige wereld.",
+   "intro":"¿Quién hace qué en casa? Depende de la familia y del país, y está cambiando. Así está la cosa en el mundo hispano.",
+   "intro_nl":"wie doet wat in huis?",
    "cards":[
      ("🧹","«Los hombres también»","En la escena Julio dice: «yo no soy machista, los hombres <b>también</b> sabemos pasar la aspiradora».",
       "In de scène zegt Julio: «ik ben niet machistisch, wij mannen kunnen óók stofzuigen». Het <b>verdelen van huistaken</b> is in Spanje sterk veranderd: jonge koppels delen veel meer dan hun grootouders — al is het nog niet overal gelijk."),
@@ -189,10 +199,11 @@ CULTURA={
      ("🇧🇪","¿Y en tu casa?","¿Quién limpia? ¿Quién cocina? ¿Sabes cocinar o planchar?",
       "En bij jou thuis? Wie poetst, wie kookt? En wat kan <b>jij</b> al: koken, strijken, stofzuigen? Daarover ga je straks in het Spaans praten."),
    ],
-   "dato":"¿Sabías que…? Er zijn twee manieren om «moeten» te zeggen: <b>tengo que</b> limpiar (ík moet) is persoonlijk, <b>hay que</b> limpiar (er moet gepoetst worden) is algemeen — handig als je niet wil zeggen wíe het moet doen!",
+   "dato":"¿Sabías que…? Hay dos maneras de decir «moeten»: <b>tengo que</b> limpiar es personal, <b>hay que</b> limpiar es general. <span class='stn'>hay que = er moet gepoetst worden, zonder te zeggen door wie</span>",
  },
  "tiempo":{
-   "intro":"Eén taal, twee halfronden: als het in Madrid vriest, ligt men in Buenos Aires op het strand. Zo verschilt het weer over de Spaanstalige wereld.",
+   "intro":"Una lengua, dos hemisferios: cuando en Madrid hiela, en Buenos Aires están en la playa. Así cambia el tiempo en el mundo hispano.",
+   "intro_nl":"één taal, twee halfronden, heel ander weer",
    "cards":[
      ("🌍","Dos hemisferios","Cuando en España es invierno, en Argentina y Chile es <b>verano</b>. La Navidad allí se celebra en la playa.",
       "Als het in Spanje winter is, is het in Argentinië en Chili <b>zomer</b>. Kerstmis vieren ze daar op het strand — geen grap, gewoon aardrijkskunde."),
@@ -203,10 +214,11 @@ CULTURA={
      ("🌡️","Grados y extremos","En el interior se pasa de <b>40 grados</b> en verano a heladas en invierno; en Colombia, cerca del ecuador, casi no cambia.",
       "In het Spaanse binnenland gaat het van <b>40 graden</b> in de zomer naar vriesweer in de winter; in Colombia, vlak bij de evenaar, verandert er het hele jaar bijna niets."),
    ],
-   "dato":"¿Sabías que…? Het weer krijgt in het Spaans <b>hacer</b>: <i>hace frío, hace calor, hace viento</i> — letterlijk «het maakt koud». Maar over jezelf zeg je <b>tener</b>: <i>tengo frío</i>. «Estoy frío» bestaat niet.",
+   "dato":"¿Sabías que…? El tiempo lleva <b>hacer</b>: <i>hace frío, hace calor, hace viento</i>. Pero de ti mismo dices <b>tener</b>: <i>tengo frío</i>. <i>Estoy frío</i> no existe. <span class='stn'>het weer «maakt» koud; jij «hebt» koud</span>",
  },
  "ropa":{
-   "intro":"Kleding zegt in de Spaanstalige wereld iets over wáár je vandaan komt — soms tot op het dorp nauwkeurig.",
+   "intro":"En el mundo hispano la ropa dice de dónde eres, a veces hasta el pueblo exacto.",
+   "intro_nl":"kleding verraadt waar je vandaan komt",
    "cards":[
      ("👕","La guayabera","Camisa ligera con pliegues, típica del <b>Caribe</b>. Es tan elegante que se lleva incluso en una boda.",
       "Een licht overhemd met verticale plooien, typisch voor het <b>Caribisch gebied</b>. Zó net dat je het op een trouwfeest mag aanhebben."),
@@ -217,10 +229,11 @@ CULTURA={
      ("👟","Llevar, no «dragen»","En español no se «lleva» solo la ropa: <b>llevar</b> es lo que tienes puesto ahora. Lo que posees es <b>tener</b>.",
       "Let op het verschil: <b>llevar</b> is wat je nú aanhebt («lleva una chaqueta negra»), <b>tener</b> is wat je bezit («no tengo corbatas»). Twee werkwoorden waar wij er één gebruiken."),
    ],
-   "dato":"¿Sabías que…? Om te zeggen dat iets je goed staat, gebruik je <b>quedar</b>: <i>me queda bien</i> (het staat me goed), <i>me queda ancho</i> (het zit te wijd). Julio zegt het zelf in de aflevering: «A Paul la ropa le queda muy bien».",
+   "dato":"¿Sabías que…? Para decir que algo te sienta bien usas <b>quedar</b>: <i>me queda bien</i>, <i>me queda ancho</i>. Julio lo dice en el episodio: «A Paul la ropa le queda muy bien». <span class='stn'>me queda bien = het staat me goed</span>",
  },
  "mercado":{
-   "intro":"Boodschappen doen gebeurt in de Spaanstalige wereld nog vaak per kraampje — en dat is precies waarom je de namen van de winkels nodig hebt.",
+   "intro":"En el mundo hispano se compra todavía puesto por puesto, y por eso necesitas los nombres de las tiendas.",
+   "intro_nl":"per kraampje kopen: daarom die winkelnamen",
    "cards":[
      ("🏪","Una tienda por producto","Bajo un mismo techo: la <b>pescadería</b>, la <b>carnicería</b>, la <b>frutería</b>, la <b>panadería</b>. Cada puesto, un producto.",
       "Onder één dak staan losse kraampjes: de <b>viswinkel</b>, de <b>slagerij</b>, de <b>fruit- en groentekraam</b>, de <b>bakkerij</b>. De naam van de winkel zegt wat er verkocht wordt: <i>pescado → pescadería</i>."),
@@ -234,7 +247,8 @@ CULTURA={
    "dato":"¿Sabías que…? De prijs zeg je met «con»: <b>dos con veinte</b> = 2,20 €. En let op het verschil tussen <i>¿cuánto <b>cuesta</b>?</i> (één ding) en <i>¿cuánto <b>cuestan</b>?</i> (meerdere) — de o van <i>costar</i> springt naar <b>ue</b>.",
  },
  "restaurante":{
-   "intro":"In Spanje eet men later, langer en goedkoper dan je denkt. Dit moet je weten vóór je gaat zitten.",
+   "intro":"En España se come más tarde, más despacio y más barato de lo que crees. Esto conviene saberlo antes de sentarte.",
+   "intro_nl":"later, langer en goedkoper dan je denkt",
    "cards":[
      ("🕑","Comer a las tres","La <b>comida</b> es entre las dos y las cuatro; la <b>cena</b>, a las nueve o las diez. Un restaurante a las siete está vacío.",
       "Het middagmaal is tussen <b>twee en vier</b>, het avondeten om <b>negen of tien uur</b>. Ga je om zeven uur eten, dan zit je er alleen."),
@@ -256,7 +270,9 @@ def cultura_block(tema):
       f'<div class="cult-t">{t_es}</div><div class="cult-es">{es}</div><div class="cult-nl">{nl}</div></div></div>'
       for ic,t_es,es,nl in c["cards"])
     return (f'<h2 class="sec">Cultura · {TEMA_TITELS.get(tema,tema)} 🌍</h2>'
-            f'<p class="lead">{c["intro"]}</p>'
+            f'<p class="lead">{c["intro"]}'
+            + (f' <span class="stn">{c["intro_nl"]}</span>' if c.get("intro_nl") else "")
+            + '</p>'
             f'<div class="cultgrid">{cards}</div>'
             f'<div class="card cult-dato">💡 {c["dato"]}</div>')
 
@@ -273,6 +289,7 @@ main{max-width:1080px;margin:0 auto;padding:0 18px 80px}
 .hero h1{font-family:var(--disp);font-weight:800;font-size:30px;margin:0 0 4px}.hero p{margin:0;max-width:640px;opacity:.96}
 h2.sec{font-family:var(--disp);font-weight:700;color:var(--gd);font-size:24px;margin:26px 0 6px}
 .lead{color:var(--mut);max-width:720px;margin:0 0 12px}
+.stn{color:var(--mut);font-style:italic;font-size:.9em}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:14px 0}
 .artgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
 .art{border:1px solid var(--line);border-radius:16px;padding:14px;background:var(--card);display:flex;flex-direction:column;gap:6px}
@@ -323,7 +340,7 @@ def banda_block(tema):
     if a[0]=="Manu Chao": lt=lt_button("me-gustas-tu","Me gustas tú")
     return (f'<div class="card"><span class="pill">La banda sonora 🎧</span>'
       f'<h3 style="font-family:var(--disp);color:var(--gd);margin:8px 0 4px">{a[3].split(" ")[0].title()} — {a[0]} · {a[4]}</h3>'
-      f'<p class="lead" style="margin:0 0 8px">Luister het nummer van deze les op de klas-playlist. {a[7]}</p>'
+      f'<p class="lead" style="margin:0 0 8px">Escucha la canción de esta lección en la playlist de la clase. <span class="stn">beluister het nummer van de les</span> {a[7]}</p>'
       f'<div class="spotwrap"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/{SPOTIFY}" width="100%" height="152" frameborder="0" allow="encrypted-media"></iframe></div>'
       +(lt or "")+'</div>')
 
@@ -337,23 +354,23 @@ HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="
 <header class="top"><div class="bar"><div class="brand">Música en español <small>· C4</small></div>
 <button class="themebtn" onclick="document.documentElement.dataset.theme=document.documentElement.dataset.theme==='dark'?'light':'dark'">◐</button></div></header>
 <main>
- <div class="hero"><h1>La banda sonora 🎧</h1><p>Spaanstalige muziek klinkt over de hele wereld. Ontdek de artiesten van het moment, luister de klas-playlist, en vul de liedjes aan in LyricsTraining.</p></div>
+ <div class="hero"><h1>La banda sonora 🎧</h1><p>La música en español suena en todo el mundo. Descubre a los artistas del momento, escucha la playlist de la clase y completa las canciones en LyricsTraining. <span class="stn">ontdek, luister en vul aan</span></p></div>
 
  {cultura_block(TEMA)}
 
  <h2 class="sec">La banda sonora de esta unidad 🎶</h2>
- <p class="lead">Het nummer bij deze les — luister mee en pik nieuwe woorden op.</p>
+ <p class="lead">La canción de esta lección: escucha y pesca palabras nuevas. <span class="stn">luister mee en pik nieuwe woorden op</span></p>
  {banda_block(TEMA)}
 
  <h2 class="sec">Los artistas 🎤</h2>
- <p class="lead">Lees de fiches (Spaans + Nederlands), bekijk de clips en beluister de playlist.</p>
+ <p class="lead">Lee las fichas (español y neerlandés), mira los clips y escucha la playlist. <span class="stn">lees de fiches en beluister de playlist</span></p>
  <div class="artgrid">{ARTGRID}</div>
 
  <h2 class="sec">La playlist de la clase 🎧</h2>
  <div class="spotwrap"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/{SPOTIFY}" width="100%" height="352" frameborder="0" allow="encrypted-media"></iframe></div>
 
  <h2 class="sec">Canta y completa · LyricsTraining ✍️</h2>
- <p class="lead">Luister en vul de ontbrekende woorden in — leuk om je oor te trainen.</p>
+ <p class="lead">Escucha y completa las palabras que faltan: así entrenas el oído. <span class="stn">vul de ontbrekende woorden in</span></p>
  <div class="card" style="display:flex;gap:10px;flex-wrap:wrap">{lt_button("la-perla","La Perla — Rosalía")}{lt_button("me-gustas-tu","Me gustas tú — Manu Chao")}</div>
 
  <div class="foot">C4 · «Bienvenidos al español» · Música en español 🎧</div>

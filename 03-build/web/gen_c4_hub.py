@@ -23,6 +23,8 @@ if UNIT not in ED.ESCENAS:
 TEMA=ED.ESCENAS[UNIT]["tema"]
 TITULO=ED.ESCENAS[UNIT]["titulo"]
 GRAM=KD.GRAMATICA[UNIT][0]
+SUB_NL=KD.PORTADA[UNIT][2]
+SUB_ES=KD.PORTADA[UNIT][3]
 SUENA=KD.SUENA[UNIT][0].replace("<b>","").replace("</b>","")
 
 def b64(p): return base64.b64encode(open(p,"rb").read()).decode()
@@ -39,25 +41,27 @@ TABS=[
  # Zo belooft de tab nooit beeld dat er niet is.
  ("escucha", ("🎬 Escucha" if UNIT in ED.VIDEO else "🎧 Escucha"),
   f"C4_U{UNIT}_escucha.html",
-  (f"Bekijk de aflevering en luister naar «{TITULO}» — de chunks komen uit je oren."
+  (f"Mira el episodio y escucha «{TITULO}»: los chunks te entran por el oído. "
+   f'<span class="nl">bekijk de aflevering en luister</span>'
    if UNIT in ED.VIDEO else
-   f"Luister naar «{TITULO}» en lees mee — de chunks komen uit je oren.")),
+   f"Escucha «{TITULO}» y lee al mismo tiempo: los chunks te entran por el oído. "
+   f'<span class="nl">luister en lees mee</span>')),
  ("comprension","📖 Lee y escucha",f"C4_U{UNIT}_comprension.html",
-  "Een korte lees- en luisteroefening — begrijp het Spaans dat je al kent."),
+  'Una lectura y una escucha cortas: entiende el español que ya sabes. <span class="nl">korte lees- en luisteroefening</span>'),
  ("mapa","🗺️ Mapa",f"C4_U{UNIT}_mapa.html",
-  "La Ruta — klik op een land en lees zijn fiche."),
+  'La Ruta — pulsa un país y lee su ficha. <span class="nl">klik op een land</span>'),
  ("funciones","🗣️ Funciones",f"C4_U{UNIT}_funciones.html",
-  "Wat je met het Spaans kunt DOEN — je repertoire groeit elke unit."),
+  'Lo que puedes HACER con el español: tu repertorio crece cada unidad. <span class="nl">wat je met het Spaans kunt doen</span>'),
  ("kit","🧰 Kit",f"C4_U{UNIT}_kgt.html",
-  f"De woorden, de uitspraak ({SUENA}), het patroon ({GRAM}) en de tarea."),
+  f'Las palabras, la pronunciación ({SUENA}), el patrón ({GRAM}) y la tarea. <span class="nl">woorden, uitspraak, patroon en taak</span>'),
  ("practica","✍️ Práctica",f"C4_U{UNIT}_practica.html",
-  "Oefen zelfcorrigerend: herkennen → kiezen → zelf zeggen → opnemen."),
+  'Practica y corrígete: reconocer → elegir → decirlo tú → grabarte. <span class="nl">zelfcorrigerend oefenen</span>'),
  ("rol","🎭 Ensaya",f"C4_U{UNIT}_rol.html",
-  "Speel de scène zelf: de partner verbetert je en werkt zonder internet."),
+  'Representa la escena: el compañero te corrige y funciona sin internet. <span class="nl">speel de scène, ook offline</span>'),
  ("coach","📝 Entrega",f"C4_U{UNIT}_coach.html",
-  "Schrijf je eindtaak en laat ze nakijken vóór je ze afgeeft."),
+  'Escribe tu tarea final y hazla revisar antes de entregarla. <span class="nl">schrijf je eindtaak en laat ze nakijken</span>'),
  ("musica","🎧 Música",f"C4_U{UNIT}_musica.html",
-  "Cultura + banda sonora — leer Spaans via muziek."),
+  'Cultura + banda sonora — aprende español con música. <span class="nl">leer Spaans via muziek</span>'),
 ]
 
 def tabbtn(i,t):
@@ -87,6 +91,7 @@ CSS=FONTS+r"""
 main{max-width:1120px;margin:0 auto;padding:14px 16px 30px}
 .panel{display:none}.panel.show{display:block}
 .psub{color:var(--mut);font-size:14px;margin:6px 2px 10px;font-style:italic}
+.psub .nl,.hero .nl{font-style:normal;opacity:.8}
 .fw{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--card)}
 .frame{width:100%;height:82vh;min-height:560px;border:0;display:block}
 .foot{color:var(--mut);font-size:12px;text-align:center;margin:22px 0 6px}
@@ -96,9 +101,9 @@ main{max-width:1120px;margin:0 auto;padding:14px 16px 30px}
 HTML=f"""<!doctype html><html lang="es" data-theme="light"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>C4 · Unidad {UNIT} · {TEMA} — Hub</title><style>{CSS}</style></head><body>
 <div class="hero">
-  <span class="ruta">🗺️ La Ruta · C4 «El despegue» · Parada 10</span>
+  <span class="ruta">🗺️ La Ruta · C4 «El despegue» · Parada {UNIT}</span>
   <h1>Unidad {UNIT} · {TEMA}</h1>
-  <p>De asistenta is ziek — dus <b>hay que limpiar</b>. Zeg wat er móet gebeuren, wat <b>jij</b> moet doen, en bied hulp aan: <b>yo te ayudo</b> · <b>¿qué tengo que hacer?</b> · <b>¿sabes pasar la aspiradora?</b> <i>Survival in Spanish.</i></p>
+  <p><b>{SUB_ES}</b> <span class="nl">{SUB_NL}</span> <i>Survival in Spanish.</i></p>
 </div>
 <nav class="tabbar">{"".join(tabbtn(i,t) for i,t in enumerate(TABS))}</nav>
 <main>

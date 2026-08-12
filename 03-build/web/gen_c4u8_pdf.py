@@ -290,11 +290,11 @@ PRAC=f"""
     +'<div class="wcols" style="margin-left:12.5mm"><div class="wcol"><h4>La hora 🕐</h4><div class="fill"></div></div><div class="wcol"><h4>El día 📅</h4><div class="fill"></div></div><div class="wcol"><h4>Momento 🌗</h4><div class="fill"></div></div><div class="wcol"><h4>Tu palabra</h4><div class="fill"></div></div></div>')}
 
   {act(2,"Del reloj a las palabras",[("gestuurd","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Schrijf de tijd volledig in het Spaans (es la… / son las…).</p>'
+    '<p style="margin-left:12.5mm">Escribe la hora completa en español (es la… / son las…). <span class="gloss">schrijf het uur voluit</span></p>'
     +f'<div style="margin-left:12.5mm;font-size:9.8pt;line-height:2.4">🕐 1.00 → {wl("lg")} &nbsp;&nbsp; 🕞 3.30 → {wl("lg")}<br>🕡 6.30 → {wl("lg")} &nbsp;&nbsp; 🕗 8.45 → {wl("lg")}</div>')}
 
   {act(3,"Relaciona · hora ↔ palabras",[("gestuurd","skill"),("★☆☆","")],
-    '<p style="margin-left:12.5mm">Trek een lijn tussen het cijferuur en de Spaanse zin.</p>'
+    '<p style="margin-left:12.5mm">Une con una línea la hora en cifras y la frase en español. <span class="gloss">verbind het uur met de zin</span></p>'
     +'<table class="mtab" style="margin-left:12.5mm"><tr><td class="a">1. 1.00</td><td><span class="ln"></span></td><td class="b">a. Son las ocho y media</td></tr>'
     +'<tr><td class="a">2. 8.30</td><td><span class="ln"></span></td><td class="b">b. Son las diez menos cuarto</td></tr>'
     +'<tr><td class="a">3. 9.45</td><td><span class="ln"></span></td><td class="b">c. Es la una</td></tr>'
@@ -302,27 +302,27 @@ PRAC=f"""
     +'<tr><td class="a">5. 12.00</td><td><span class="ln"></span></td><td class="b">e. Son las cuatro y cuarto</td></tr></table>')}
 
   {act(4,"Los días · ordena",[("gestuurd","skill"),("★☆☆","")],
-    '<p style="margin-left:12.5mm">Nummer de dagen van 1 (lunes) tot 7 (domingo).</p>'
+    '<p style="margin-left:12.5mm">Numera los días del 1 (lunes) al 7 (domingo). <span class="gloss">nummer de dagen</span></p>'
     +'<div class="scramble" style="margin-left:12.5mm"><span>___ viernes</span><span>___ lunes</span><span>___ domingo</span><span>___ miércoles</span><span>___ sábado</span><span>___ martes</span><span>___ jueves</span></div>')}
 
   {act(5,"Completa el diálogo · quedar",[("gestuurd","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Vul aan (quedar · hora · las · media · ahora).</p>'
+    '<p style="margin-left:12.5mm">Completa (quedar · hora · las · media · ahora). <span class="gloss">vul aan</span></p>'
     +f'<div style="margin-left:12.5mm;font-size:10pt;line-height:2.5">'
     +f'— ¿Quieres {wl("sm")} esta noche?<br>— Sí, vale. ¿A qué {wl("sm")}?<br>— ¿A {wl("sm")} nueve?<br>— Mejor a las nueve y {wl("sm")} <span style="color:var(--mut);font-size:8.6pt">(9.30)</span>.<br>— Perfecto. ¡Hasta {wl("sm")}!</div>')}
 
   {act(6,"Mi día · ¿a qué hora?",[("productie","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Schrijf bij elke activiteit het uur in het Spaans (a las…).</p>'
+    '<p style="margin-left:12.5mm">Escribe la hora en español junto a cada actividad (a las…). <span class="gloss">schrijf het uur in het Spaans</span></p>'
     +f'<div style="margin-left:12.5mm;font-size:9.8pt;line-height:2.3">🌅 Me levanto {wl("lg")}<br>🏫 Voy a clase {wl("lg")}<br>🍽️ Como {wl("lg")}<br>😴 Me acuesto {wl("lg")}</div>')}
 
   {act(7,"Entrevista · ¿a qué hora?",[("interactie","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Vraag je buur naar zijn/haar uren en noteer. Wissel van rol.</p>'
+    '<p style="margin-left:12.5mm">Pregunta a tu compañero/a por sus horarios y anota. Después cambiad. <span class="gloss">vraag naar de uren van je buur</span></p>'
     +f'<table class="wtab" style="margin-left:12.5mm;margin-top:2mm"><thead><tr><th style="width:50mm">Pregunta</th><th>Respuesta</th></tr></thead>'
     +'<tr><td style="height:12mm">¿A qué hora empiezas la clase?</td><td></td></tr>'
     +'<tr><td style="height:12mm">¿A qué hora comes?</td><td></td></tr>'
     +'<tr><td style="height:12mm">¿Qué haces el sábado?</td><td></td></tr></table>')}
 
   {act(8,"Queda con un compañero",[("productie","skill"),("★★★","")],
-    '<p style="margin-left:12.5mm">Schrijf een korte afspraak-dialoog (4 zinnen): dag + uur + plaats.</p>'
+    '<p style="margin-left:12.5mm">Escribe un diálogo corto para quedar (cuatro frases): día, hora y lugar. <span class="gloss">korte afspraakdialoog</span></p>'
     +'<div class="wbox" style="margin-left:12.5mm"></div>')}
 </div>
 """

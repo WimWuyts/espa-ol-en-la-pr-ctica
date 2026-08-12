@@ -273,7 +273,7 @@ PRAC=f"""
     +'<div class="wcols" style="margin-left:12.5mm"><div class="wcol"><h4>Habitación 🏠</h4><div class="fill"></div></div><div class="wcol"><h4>Mueble 🛋️</h4><div class="fill"></div></div><div class="wcol"><h4>Posición 📍</h4><div class="fill"></div></div><div class="wcol"><h4>Tu palabra</h4><div class="fill"></div></div></div>')}
 
   {act(2,"Relaciona · ¿qué hacemos ahí?",[("gestuurd","skill"),("★☆☆","")],
-    '<p style="margin-left:12.5mm">Trek een lijn tussen de kamer en wat je er doet.</p>'
+    '<p style="margin-left:12.5mm">Une con una línea la habitación y lo que haces allí. <span class="gloss">verbind kamer en activiteit</span></p>'
     +'<table class="mtab" style="margin-left:12.5mm"><tr><td class="a">1. la cocina</td><td><span class="ln"></span></td><td class="b">a. dormir</td></tr>'
     +'<tr><td class="a">2. el dormitorio</td><td><span class="ln"></span></td><td class="b">b. ducharse</td></tr>'
     +'<tr><td class="a">3. el cuarto de baño</td><td><span class="ln"></span></td><td class="b">c. cocinar y comer</td></tr>'
@@ -281,12 +281,12 @@ PRAC=f"""
     +'<tr><td class="a">5. la entrada</td><td><span class="ln"></span></td><td class="b">e. ver la tele</td></tr></table>')}
 
   {act(3,"Completa el diálogo",[("gestuurd","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Vul aan (está · debajo · puedes).</p>'
+    '<p style="margin-left:12.5mm">Completa (está · debajo · puedes). <span class="gloss">vul aan</span></p>'
     +f'<div style="margin-left:12.5mm;font-size:10pt;line-height:2.5">'
     +f'— ¿Dónde {wl("sm")} mi bolso?<br>— {wl("sm")} encima del sofá.<br>— ¿Y las llaves?<br>— Están {wl("sm")} de la mesa <span style="color:var(--mut);font-size:8.6pt">(onder)</span>.<br>— ¿Puedo mirar en la cocina?<br>— Sí, {wl("sm")}.</div>')}
 
   {act(4,"Ordena la conversación",[("gestuurd","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Nummer de zinnen in de juiste volgorde (1–5).</p>'
+    '<p style="margin-left:12.5mm">Numera las frases en el orden correcto (1–5). <span class="gloss">nummer de zinnen</span></p>'
     +'<div class="scramble" style="margin-left:12.5mm"><span>___ No, debajo de la mesa.</span><span>___ ¿Dónde está mi bolso?</span><span>___ ¡Ah, gracias!</span><span>___ Está en el salón.</span><span>___ ¿Encima del sofá?</span></div>')}
 
   {act(5,"¿hay o está?",[("gestuurd","skill"),("★☆☆","")],
@@ -294,15 +294,15 @@ PRAC=f"""
     +f'1. En el salón {wl("sm")} un sofá. &nbsp; 2. El libro {wl("sm")} debajo de la cama. &nbsp; 3. ¿{wl("sm")} un frigorífico? &nbsp; 4. El bolso {wl("sm")} encima de la mesa.</div>')}
 
   {act(6,"Sitúa las cosas de tu cuarto",[("productie","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Teken 4 dingen in je kamer en schrijf waar ze staan met een plaats-woord.</p>'
+    '<p style="margin-left:12.5mm">Dibuja cuatro cosas de tu cuarto y escribe dónde están con una preposición de lugar. <span class="gloss">teken en schrijf waar ze staan</span></p>'
     +f'<div style="margin-left:12.5mm;font-size:9.8pt;line-height:2.3">🛏️ La cama está {wl("lg")}<br>💻 El ordenador está {wl("lg")}<br>🪟 La ventana está {wl("lg")}<br>🎒 La mochila está {wl("lg")}</div>')}
 
   {act(7,"Describe una habitación",[("productie","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Schrijf 2 zinnen over één kamer: wat er is (hay) en waar het staat (está + preposición).</p>'
+    '<p style="margin-left:12.5mm">Escribe dos frases sobre una habitación: qué hay y dónde está (está + preposición). <span class="gloss">twee zinnen: wat er is en waar het staat</span></p>'
     +'<div class="wbox" style="margin-left:12.5mm"></div>')}
 
   {act(8,"Entrevista · ¿cómo es tu casa?",[("interactie","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Vraag je buur naar zijn/haar huis en noteer. Wissel van rol. Vraag ook «¿Puedo…?».</p>'
+    '<p style="margin-left:12.5mm">Pregunta a tu compañero/a por su casa y anota. Después cambiad. Pregunta también «¿Puedo…?». <span class="gloss">vraag naar het huis van je buur</span></p>'
     +f'<table class="wtab" style="margin-left:12.5mm;margin-top:2mm"><thead><tr><th style="width:48mm">Pregunta</th><th>Respuesta</th></tr></thead>'
     +'<tr><td style="height:12mm">¿Cuántas habitaciones hay?</td><td></td></tr>'
     +'<tr><td style="height:12mm">¿Dónde está tu dormitorio?</td><td></td></tr>'

@@ -100,7 +100,7 @@ var CHUNKS=[["la cocina","de keuken"],["el salón","de woonkamer"],["el dormitor
 // ② Completa el diálogo
 (function(){var el=document.getElementById('g_completa');
  var gaps=[["está"],["Está"],["debajo"],["puedes"]];
- el.innerHTML='<h3>Completa el diálogo 💬</h3><p class="desc">Vul aan (está · debajo · puedes).</p>'
+ el.innerHTML='<h3>Completa el diálogo 💬</h3><p class="desc">Completa (está · debajo · puedes). <span class="gloss">vul aan</span></p>'
   +'<div class="dlgfill">— ¿Dónde <input class="txin" data-i="0"> mi bolso? <br>— <input class="txin" data-i="1"> encima del sofá. <br>— ¿Y las llaves?<br>— Están <input class="txin" data-i="2"> de la mesa <span style="color:var(--mut);font-size:12px">(onder)</span>.<br>— ¿Puedo mirar en la cocina?<br>— Sí, <input class="txin" data-i="3">.</div>'
   +'<div class="answerbtns"><button class="btn" id="coGo">Controleer</button></div><div class="fb" id="coF"></div>';
  el.querySelector('#coGo').onclick=function(){var n=0;el.querySelectorAll('.txin').forEach(function(inp){var i=+inp.dataset.i;var ok=(inp.value||'').trim().toLowerCase()===gaps[i][0].toLowerCase();inp.style.borderColor=ok?'#2F9A4A':'#DC2626';if(ok)n++;});fb(el.querySelector('#coF'),n===gaps.length,n+' / '+gaps.length+' juist.'+(n<gaps.length?' Kijk naar de rode vakjes.':' ¡Perfecto!'));};})();

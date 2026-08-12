@@ -95,6 +95,7 @@ def build(unit, out_name):
 .hero p{margin:0;max-width:640px;opacity:.96}.hero .nl{font-family:var(--hand);font-size:18px;opacity:.95;margin-top:4px}
 h2.sec{font-family:var(--disp);font-weight:700;color:var(--gd);font-size:22px;margin:22px 0 6px}
 .lead{color:var(--mut);max-width:720px;margin:0 0 12px}
+.stn{color:var(--mut);font-style:italic;font-size:.9em;font-family:var(--body)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:14px 0}
 #mapwrap svg{width:100%;height:auto;border-radius:12px;display:block}
 #mapwrap path.spa,#mapwrap path.usa{transition:opacity .12s}
@@ -118,10 +119,10 @@ h2.sec{font-family:var(--disp);font-weight:700;color:var(--gd);font-size:22px;ma
  <h2 class="sec">Haz clic en un país 👆</h2>
  <p class="lead">Los países en color son los <b>21 países</b> donde el español es lengua oficial. La <b>★</b> marca dónde estamos en la ruta.{(' Esta unidad añade: <b>'+tema_label+'</b>.') if tema_key else ''}</p>
  <div class="card" id="mapwrap">{MAPSVG}
-   <div class="mapinfo" id="mapinfo"><p class="gloss" style="margin:0">👆 Klik op een gekleurd land (of de halte ★) om de fiche te lezen — vlag, hoofdstad, nationaliteit, taal en een weetje.</p></div>
+   <div class="mapinfo" id="mapinfo"><p class="gloss" style="margin:0">👆 Pulsa un país en color (o la parada ★) para leer su ficha: bandera, capital, gentilicio, idioma y un dato curioso. <span class="stn">klik op een land om de fiche te lezen</span></p></div>
  </div>
  <div class="legend"><span><b>★</b> = ¡Estás aquí! (parada de la ruta)</span><span>🗣️ Gentilicio = de nationaliteit</span><span>🌐 Idioma = de taal</span></div>
- <div class="foot">C4 · «Bienvenidos al español» · El mundo hispano — feitenlaag gedeeld over C4·C5·C6·C6+</div>
+ <div class="foot">C4 · «Bienvenidos al español» · El mundo hispano</div>
 </div>
 <script>
 (function(){{

@@ -87,7 +87,7 @@ var CHUNKS=[["el profesor / la profesora","de leraar / lerares"],["el escritor /
 // ② Completa el diálogo
 (function(){var el=document.getElementById('g_completa');
  var gaps=[["dedicas"],["Soy"],["trabajas"],["Trabajo"],["estás"]];
- el.innerHTML='<h3>Completa el diálogo 💬</h3><p class="desc">Vul aan (dedicas · soy · trabajas · trabajo · estás).</p>'
+ el.innerHTML='<h3>Completa el diálogo 💬</h3><p class="desc">Completa (dedicas · soy · trabajas · trabajo · estás). <span class="gloss">vul aan</span></p>'
   +'<div class="dlgfill">— ¿A qué te <input class="txin" data-i="0">? <br>— <input class="txin" data-i="1"> profesora. <br>— ¿Y dónde <input class="txin" data-i="2">?<br>— <input class="txin" data-i="3"> en una academia.<br>— ¿Y <input class="txin" data-i="4"> contenta?<br>— Sí, muy contenta.</div>'
   +'<div class="answerbtns"><button class="btn" id="coGo">Controleer</button></div><div class="fb" id="coF"></div>';
  el.querySelector('#coGo').onclick=function(){var n=0;el.querySelectorAll('.txin').forEach(function(inp){var i=+inp.dataset.i;var ok=(inp.value||'').trim().toLowerCase()===gaps[i][0].toLowerCase();inp.style.borderColor=ok?'#2F9A4A':'#DC2626';if(ok)n++;});fb(el.querySelector('#coF'),n===gaps.length,n+' / '+gaps.length+' juist.'+(n<gaps.length?' Kijk naar de rode vakjes.':' ¡Perfecto!'));};})();

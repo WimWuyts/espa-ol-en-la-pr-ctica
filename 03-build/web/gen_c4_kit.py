@@ -72,8 +72,9 @@ def suena(unit):
             '<i>uitspraak van deze unidad</i></div></div>'
             '<h4>%s</h4><p>%s</p><div class="chips">%s</div>'
             '<h4>%s</h4><p>%s</p><div class="chips">%s</div>'
-            '<p class="hint">💡 Klik een woord om het te horen. Zeg het daarna zélf, '
-            'hardop — kijken naar een klank leert je niets.</p></div>'
+            '<p class="hint">💡 Pulsa una palabra para oírla. Después dila <b>tú</b>, '
+            'en voz alta: mirar un sonido no enseña nada. '
+            '<span class="stn">klik, luister en zeg het zelf hardop</span></p></div>'
             % (tit, esc(expl), chips, esc(atit), esc(aexpl), filas))
 
 
@@ -97,8 +98,9 @@ def tarea(unit):
     return ('<div class="tarea"><div class="th"><span class="tic">🎯</span>'
             '<div><b>Tarea final · %s</b><i>%s</i></div></div>'
             '<p class="tes">%s</p><p class="tnl">%s</p><ol>%s</ol>'
-            '<p class="hint">Klaar? Neem je scène op in het tabblad '
-            '<b>Práctica</b> en luister ze terug.</p></div>'
+            '<p class="hint">¿Listo/a? Graba tu escena en la pestaña '
+            '<b>Práctica</b> y escúchala. '
+            '<span class="stn">neem op en luister terug</span></p></div>'
             % (esc(tit), esc(snl), esc(ses), esc(snl), lis))
 
 
@@ -110,6 +112,7 @@ CSS = FONTS + """
                   --line:#3a302e;--card:#211a19;--amberbg:#3A2A0A}
 *{box-sizing:border-box}
 body{margin:0;font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.55}
+.stn{color:var(--mut);font-style:italic;font-size:.9em;font-family:var(--body)}
 .top{background:linear-gradient(135deg,var(--g),var(--gd));color:#fff;padding:20px 22px}
 .top h1{font-family:var(--disp);font-weight:800;margin:0;font-size:24px}
 .top p{margin:4px 0 0;opacity:.95}
@@ -170,12 +173,14 @@ def construir(unit):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>C4 · Unidad %(u)d · Kit</title><style>%(css)s</style></head><body>
 <div class="top"><h1>Unidad %(u)d · Kit</h1>
-<p>Alles wat je in deze unidad nodig hebt: de <b>woorden</b>, hoe ze <b>klinken</b>,
-het <b>patroon</b> erachter en de <b>taak</b> waarmee je het gebruikt.</p></div>
+<p>Todo lo que necesitas en esta unidad: las <b>palabras</b>, cómo <b>suenan</b>,
+el <b>patrón</b> que hay detrás y la <b>tarea</b> en la que lo usas.
+<span class="stn">woorden, klank, patroon en taak</span></p></div>
 <main>
  <h2 class="sec">Las palabras</h2>
- <p class="lead">Klik een kaartje om het te horen. Lees hardop mee — een woord dat je
- nooit gezegd hebt, komt er in een gesprek ook niet uit.</p>
+ <p class="lead">Pulsa una tarjeta para oírla y lee en voz alta: una palabra que
+ nunca has dicho tampoco te sale en una conversación.
+ <span class="stn">lees hardop mee</span></p>
  %(kit)s
  <h2 class="sec">Suena bien</h2>
  %(suena)s

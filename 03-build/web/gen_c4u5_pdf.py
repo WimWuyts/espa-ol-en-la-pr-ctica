@@ -272,7 +272,7 @@ PRAC=f"""
     +'<div class="wcols" style="margin-left:12.5mm"><div class="wcol"><h4>De la clase 📚</h4><div class="fill"></div></div><div class="wcol"><h4>De casa 🏠</h4><div class="fill"></div></div><div class="wcol"><h4>Función 🔧</h4><div class="fill"></div></div><div class="wcol"><h4>Tu palabra</h4><div class="fill"></div></div></div>')}
 
   {act(2,"Relaciona · ¿para qué sirve?",[("gestuurd","skill"),("★☆☆","")],
-    '<p style="margin-left:12.5mm">Trek een lijn tussen het voorwerp en waarvoor het dient.</p>'
+    '<p style="margin-left:12.5mm">Une con una línea el objeto y para qué sirve. <span class="gloss">verbind voorwerp en functie</span></p>'
     +'<table class="mtab" style="margin-left:12.5mm"><tr><td class="a">1. las llaves</td><td><span class="ln"></span></td><td class="b">a. para beber</td></tr>'
     +'<tr><td class="a">2. el vaso</td><td><span class="ln"></span></td><td class="b">b. para abrir la puerta</td></tr>'
     +'<tr><td class="a">3. el sofá</td><td><span class="ln"></span></td><td class="b">c. para mirar la luna</td></tr>'
@@ -280,28 +280,28 @@ PRAC=f"""
     +'<tr><td class="a">5. el ordenador</td><td><span class="ln"></span></td><td class="b">e. para trabajar y jugar</td></tr></table>')}
 
   {act(3,"Completa el diálogo",[("gestuurd","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Vul aan (es/son · un/una · sirve · hay).</p>'
+    '<p style="margin-left:12.5mm">Completa (es/son · un/una · sirve · hay). <span class="gloss">vul aan</span></p>'
     +f'<div style="margin-left:12.5mm;font-size:10pt;line-height:2.5">'
     +f'— ¿Qué es esto?<br>— Esto {wl("sm")} {wl("sm")} sofá. {wl("sm")} para descansar.<br>— ¿Y esto?<br>— Esto {wl("sm")} mis llaves.<br>— ¿{wl("sm")} un ordenador?<br>— Sí, sí que hay.</div>')}
 
   {act(4,"Ordena la conversación",[("gestuurd","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Nummer de zinnen in de juiste volgorde (1–5).</p>'
+    '<p style="margin-left:12.5mm">Numera las frases en el orden correcto (1–5). <span class="gloss">nummer de zinnen</span></p>'
     +'<div class="scramble" style="margin-left:12.5mm"><span>___ Sirve para beber.</span><span>___ ¿Qué es esto?</span><span>___ ¿Y hay un ordenador?</span><span>___ Esto es un vaso.</span><span>___ Sí, sí que hay.</span></div>')}
 
   {act(5,"El género · ¿un o una?",[("gestuurd","skill"),("★☆☆","")],
-    f'<p style="margin-left:12.5mm">Vul un of una in (♂ -o / ♀ -a; let op de uitzonderingen).</p><div style="margin-left:12.5mm;font-size:10pt;line-height:2.4">'
+    f'<p style="margin-left:12.5mm">Escribe un o una (♂ -o / ♀ -a; ojo con las excepciones). <span class="gloss">let op de uitzonderingen</span></p><div style="margin-left:12.5mm;font-size:10pt;line-height:2.4">'
     +f'1. {wl("sm")} libro &nbsp; 2. {wl("sm")} silla &nbsp; 3. {wl("sm")} ventana &nbsp; 4. {wl("sm")} vaso &nbsp; 5. {wl("sm")} mochila &nbsp; 6. {wl("sm")} sofá</div>')}
 
   {act(6,"Mi habitación · ¿qué hay?",[("productie","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Teken 6 voorwerpen uit je kamer en benoem ze met un/una.</p>'
+    '<p style="margin-left:12.5mm">Dibuja seis objetos de tu cuarto y ponles nombre con un/una. <span class="gloss">teken zes voorwerpen en benoem ze</span></p>'
     +'<div class="objgrid" style="margin-left:12.5mm"><div class="objcard"><div class="em">🛏️</div><span class="wl"></span></div><div class="objcard"><div class="em">📚</div><span class="wl"></span></div><div class="objcard"><div class="em">🪑</div><span class="wl"></span></div><div class="objcard"><div class="em">💻</div><span class="wl"></span></div><div class="objcard"><div class="em">🎒</div><span class="wl"></span></div><div class="objcard"><div class="em">🪟</div><span class="wl"></span></div></div>')}
 
   {act(7,"Describe 2 objetos",[("productie","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Schrijf voor 2 voorwerpen: «Esto es un/una ___, que sirve para ___.» (2 zinnen).</p>'
+    '<p style="margin-left:12.5mm">Escribe sobre 2 objetos: «Esto es un/una ___, que sirve para ___.» (2 frases). <span class="gloss">2 voorwerpen, 2 zinnen</span></p>'
     +'<div class="wbox" style="margin-left:12.5mm"></div>')}
 
   {act(8,"Entrevista · ¿qué hay en tu mochila?",[("interactie","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Vraag je buur wat er in zijn/haar tas of kamer is en noteer. Wissel van rol. Sluit af met «¿Qué es esto?» over 2 voorwerpen.</p>'
+    '<p style="margin-left:12.5mm">Pregunta a tu compañero/a qué hay en su bolsa o en su habitación y anótalo. Cambiad de papel. Terminad con «¿Qué es esto?» sobre 2 objetos. <span class="gloss">vraag, noteer, wissel van rol</span></p>'
     +f'<table class="wtab" style="margin-left:12.5mm;margin-top:2mm"><thead><tr><th style="width:45mm">Pregunta</th><th>Respuesta</th></tr></thead>'
     +'<tr><td style="height:12mm">¿Qué hay en tu mochila?</td><td></td></tr>'
     +'<tr><td style="height:12mm">¿Para qué sirve?</td><td></td></tr>'

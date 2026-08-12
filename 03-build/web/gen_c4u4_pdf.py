@@ -261,7 +261,7 @@ PRAC=f"""
     +'<div class="wcols" style="margin-left:12.5mm"><div class="wcol"><h4>Familia 👪</h4><div class="fill"></div></div><div class="wcol"><h4>Físico 🧍</h4><div class="fill"></div></div><div class="wcol"><h4>Carácter 😊</h4><div class="fill"></div></div><div class="wcol"><h4>Tu palabra</h4><div class="fill"></div></div></div>')}
 
   {act(2,"Relaciona · ¿quién es?",[("gestuurd","skill"),("★☆☆","")],
-    '<p style="margin-left:12.5mm">Trek een lijn tussen het familielid en de omschrijving.</p>'
+    '<p style="margin-left:12.5mm">Une con una línea el familiar y su descripción. <span class="gloss">verbind familielid en omschrijving</span></p>'
     +'<table class="mtab" style="margin-left:12.5mm"><tr><td class="a">1. la abuela</td><td><span class="ln"></span></td><td class="b">a. el padre de mi padre</td></tr>'
     +'<tr><td class="a">2. el tío</td><td><span class="ln"></span></td><td class="b">b. la madre de mi madre</td></tr>'
     +'<tr><td class="a">3. el abuelo</td><td><span class="ln"></span></td><td class="b">c. la hija de mis padres</td></tr>'
@@ -269,34 +269,34 @@ PRAC=f"""
     +'<tr><td class="a">5. los padres</td><td><span class="ln"></span></td><td class="b">e. la madre y el padre</td></tr></table>')}
 
   {act(3,"Completa la descripción",[("gestuurd","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Vul aan (denk aan ser + adjetivo en ♂/♀).</p>'
+    '<p style="margin-left:12.5mm">Completa (piensa en ser + adjetivo y en ♂/♀). <span class="gloss">ser + adjectief, let op ♂/♀</span></p>'
     +f'<div style="margin-left:12.5mm;font-size:10pt;line-height:2.5">'
     +f'— ¿Quién es esta chica?<br>— {wl("sm")} mi hermana. Es muy simpátic{wl("sm")} <span style="color:var(--mut);font-size:8.6pt">(♀)</span>.<br>— ¿Y este chico?<br>— Es {wl("sm")} hermano (van mij). Es alt{wl("sm")} <span style="color:var(--mut);font-size:8.6pt">(♂)</span> y un {wl("sm")} tímido.</div>')}
 
   {act(4,"Ordena la conversación",[("gestuurd","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Nummer de zinnen in de juiste volgorde (1–5).</p>'
+    '<p style="margin-left:12.5mm">Numera las frases en el orden correcto (1–5). <span class="gloss">nummer de zinnen</span></p>'
     +'<div class="scramble" style="margin-left:12.5mm"><span>___ Es muy elegante y amable.</span><span>___ ¿Quién es esta persona?</span><span>___ Vive en Madrid.</span><span>___ Es mi abuela.</span><span>___ ¿Y dónde vive?</span></div>')}
 
   {act(5,"El adjetivo · ¿-o o -a?",[("gestuurd","skill"),("★☆☆","")],
-    f'<p style="margin-left:12.5mm">Vul de juiste letter in (♂ -o / ♀ -a).</p><div style="margin-left:12.5mm;font-size:10pt;line-height:2.4">'
+    f'<p style="margin-left:12.5mm">Escribe la letra correcta (♂ -o / ♀ -a). <span class="gloss">vul de juiste letter in</span></p><div style="margin-left:12.5mm;font-size:10pt;line-height:2.4">'
     +f'1. Mi tío es guap{wl("sm")} &nbsp; 2. Mi hermana es alt{wl("sm")} &nbsp; 3. María es delgad{wl("sm")} &nbsp; 4. Mi abuelo es simpátic{wl("sm")}</div>')}
 
   {act(6,"Entrevista a un compañero",[("interactie","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Vraag naar de familie van je buur en noteer. Wissel van rol.</p>'
+    '<p style="margin-left:12.5mm">Pregunta por la familia de tu compañero/a y anota. Después cambiad. <span class="gloss">vraag naar de familie van je buur</span></p>'
     +f'<table class="wtab" style="margin-left:12.5mm;margin-top:2mm"><thead><tr><th style="width:40mm">Pregunta</th><th>Respuesta</th></tr></thead>'
     +'<tr><td style="height:12mm">¿Tienes hermanos/as?</td><td></td></tr>'
     +'<tr><td style="height:12mm">¿Cómo es tu madre/padre?</td><td></td></tr></table>')}
 
   {act(7,"Describe a 2 personas",[("productie","skill"),("★★☆","")],
-    '<p style="margin-left:12.5mm">Schrijf voor 2 familieleden (echt of verzonnen): «Est_ es mi ___. Es ___ y ___.» (2 zinnen elk).</p>'
+    '<p style="margin-left:12.5mm">Escribe sobre 2 familiares (reales o inventados): «Est_ es mi ___. Es ___ y ___.» (2 frases cada uno). <span class="gloss">2 familieleden, 2 zinnen elk</span></p>'
     +'<div class="wbox" style="margin-left:12.5mm"></div>')}
 
   {act(8,"Escribe un mensaje",[("productie","skill"),("★★★","")],
-    '<p style="margin-left:12.5mm">Schrijf een kort bericht aan een Spaanstalige vriend(in) over je familie: wie en hoe ze zijn.</p>'
+    '<p style="margin-left:12.5mm">Escribe un mensaje corto a un amigo o una amiga hispanohablante sobre tu familia: quiénes son y cómo son. <span class="gloss">kort bericht over je familie</span></p>'
     +'<div class="wbox" style="margin-left:12.5mm;min-height:28mm"></div>')}
 
   {act(9,"¿Cómo es?",[("productie","skill"),("★★☆","")],
-    f'<p style="margin-left:12.5mm">Schrijf bij elke persoon 2 adjectieven (let op ♂/♀). Snel!</p>'
+    f'<p style="margin-left:12.5mm">Escribe dos adjetivos por persona (¡ojo con ♂/♀!). ¡Rápido! <span class="gloss">twee adjectieven per persoon; let op de uitgang</span></p>'
     +f'<div style="margin-left:12.5mm;font-size:9.8pt;line-height:2.3">👩 mi madre → {wl("lg")} &nbsp;&nbsp; 👴 mi abuelo → {wl("lg")}<br>🧒 mi hermano → {wl("lg")} &nbsp;&nbsp; 👧 mi hermana → {wl("lg")}</div>')}
 </div>
 """
