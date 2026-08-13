@@ -94,7 +94,7 @@ def lectura_section(L):
             f'<div class="chat">{body}</div></div>'
             f'<div class="card"><b>Comprensión global</b>{mc_block(L["global"],"lg")}'
             f'<b>Comprensión detalle · ¿V o F?</b>{vf_block(L["detalle"])}'
-            f'<div class="transfer">✍️ {esc(L["transfer"])} <span style="font-weight:400;color:var(--mut)">— schrijf of zeg je antwoord.</span></div>'
+            f'<div class="transfer">✍️ {esc(L["transfer"])} <span style="font-weight:400;color:var(--mut)">— escribe o di tu respuesta.</span></div>'
             f'{gloss_block(L["glosario"])}</div>')
 
 WEB=f"{ROOT}/03-build/web"
