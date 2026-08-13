@@ -9,6 +9,7 @@ import hub_drills
 import hub_iconos
 import hub_type_sets
 import hub_type_gram
+import hub_presente
 import extra_bronnen
 import hub_bloques
 import escucha_data, lectura_data
@@ -310,6 +311,7 @@ __TYPESLOTS__
     <h3 class="subh">🎯 Repaso mixto — rellena con feedback</h3>
     <div class="card ex" id="gx_mix"></div>
   __GRAMSLOTS__
+  __PRESENTESLOT__
   </section>
 
   <section class="panel" data-p="lectura">
@@ -725,10 +727,12 @@ window.addEventListener('hashchange',()=>{const h=location.hash.replace('#','');
 # Getypte woordenschat-drills (fase ophalen + produceren) in het paneel zelf.
 JS += hub_type_sets.vocab_type_js(vocab)
 JS += hub_type_gram.js('C5', 1)
+JS += hub_presente.js()
 JS += hub_bloques.retos_js('retos_u1', 'C5', 1)
 JS += (hub_bloques.escucha_js("esc_u1", escucha_data.C5_U1)
        + hub_bloques.lectura_js("lec_u1", lectura_data.C5_U1))
 HTML = HTML.replace("__GRAMSLOTS__", hub_type_gram.slots('C5', 1))
+HTML = HTML.replace("__PRESENTESLOT__", hub_presente.slot())
 HTML = HTML.replace("__BRONNEN__", extra_bronnen.html('C5', 1))
 # Aantal spellen wordt geteld, niet met de hand bijgehouden.
 HTML = HTML.replace("__NGAMES__", str(len(GAMES)))

@@ -274,7 +274,7 @@ def main():
 
     print("── 10 · docentendossiers ─────────────────────────────────────────")
     for script in ("gen_docente_retos.py", "gen_docente_audio.py",
-                   "gen_guiones_elevenlabs.py"):
+                   "gen_docente_presente.py", "gen_guiones_elevenlabs.py"):
         ok, salida = corre(["python3", script], cwd=WEB)
         print("   %-24s %s" % (script, "ok" if ok else "MISLUKT"))
 

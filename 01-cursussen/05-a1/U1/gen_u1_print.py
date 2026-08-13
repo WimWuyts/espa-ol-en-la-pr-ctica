@@ -16,6 +16,7 @@ import lectura_data as LD
 import escucha_data as ED
 import retos_data as RD
 import retos_print as RP
+import presente_data as PD
 
 def b64(p): return base64.b64encode(open(p, "rb").read()).decode()
 def face(fam, fn, w):
@@ -923,8 +924,77 @@ P('<div class="route-note">🔁 <b>Ojo — el conjugador.</b> Todas las conjugac
   '<span class="gloss">Alle vervoegingen staan in de aparte cursus-tool «Conjugador».</span></div>')
 P('</div>')  # page §3.2
 
+# ================= §3.3 · CIEN FORMAS =================
+# De honderd invulvormen die de auteur aanleverde. Ze staan als gegevens in
+# `presente_data.py`; hier wordt alleen de vorm bepaald. Zeven oefeningen: drie
+# blokken losse zinnen (1–60) en vier blokken van twee tekstjes (61–100). De
+# doorlopende nummering van de bron blijft staan, zodat de clave in het
+# docentendossier één op één past.
+P('<div class="page">')
+P('<div class="divider">Cien formas · §3.3</div>')
+P('<div class="intro"><b>ES:</b> Cien formas para que el presente regular te salga sin pensar. '
+  'Primero frases sueltas, después textos cortos: ahí el verbo depende de lo que has leído antes. '
+  'Ningún verbo cambia de vocal — eso llega en U3. '
+  '<span class="gloss">Honderd invulvormen om het presente automatisch te maken. Geen enkel werkwoord '
+  'verandert van stamklinker; dat komt pas in U3.</span></div>')
+P(lpd(("8", "taalsysteem: presente regular")))
+
+BADGES_S = [{"t": "✍️ Escribir", "skill": True}, {"t": "👤 Solo"},
+            {"t": "± 8 min"}, {"t": "★★☆"}]
+
+
+def lineas_sueltas(items):
+    """De losse zinnen, elk op een eigen regel met zijn eigen schrijflijn."""
+    return '<p style="margin-left:12.5mm;line-height:2.05">' + "".join(
+        '<b>%d.</b> %s <i>(%s)</i><br>' % (n, q.replace("{}", '<span class="wl md"></span>'), inf)
+        for n, q, inf, _a in items) + '</p>'
+
+
+for i, (tit_es, tit_nl, items) in enumerate(PD.SUELTAS, start=1):
+    P(actx(i, "Frases sueltas · %s" % tit_es, BADGES_S,
+           '<p>Escribe la forma correcta del verbo. El infinitivo está entre paréntesis; '
+           'el sujeto te dice la terminación. <span class="gloss">Vul de juiste vorm in — '
+           'het onderwerp bepaalt de uitgang: %s.</span></p>' % tit_nl
+           + lineas_sueltas(items),
+           apoyo="Pista: el sujeto de la frase te dice qué terminación toca"))
+P('</div>')  # page §3.3a
+
+P('<div class="page">')
+P('<div class="divider">Cien formas · textos cortos · §3.3</div>')
+P('<p style="font-size:9.6pt">En un texto el verbo no está solo: el sujeto puede estar una frase '
+  'más arriba. Lee primero el texto entero y completa después. '
+  '<span class="gloss">Lees eerst de hele tekst: het onderwerp staat soms een zin eerder.</span></p>')
+
+
+def texto_hueco(tit_es, tit_nl, cuerpo, huecos):
+    """Eén tekstje met zijn genummerde gaten, in doorlopende tekst."""
+    partes = cuerpo.split("{}")
+    fuera = partes[0]
+    for (n, inf, _a), resto in zip(huecos, partes[1:]):
+        fuera += ('<b>(%d)</b> <span class="wl sm"></span> <i>(%s)</i>%s' % (n, inf, resto))
+    return ('<div class="se" style="margin-top:3mm">%s <span class="gloss">· %s</span></div>'
+            '<p style="margin-left:12.5mm;line-height:2.05">%s</p>' % (tit_es, tit_nl, fuera))
+
+
+for j in range(0, len(PD.TEXTOS), 2):
+    par = PD.TEXTOS[j:j + 2]
+    desde = par[0][3][0][0]
+    hasta = par[-1][3][-1][0]
+    P(actx(4 + j // 2, "Textos cortos · %d–%d" % (desde, hasta),
+           [{"t": "🔍 Leer", "skill": True}, {"t": "✍️ Escribir", "skill": True},
+            {"t": "👤 Solo"}, {"t": "± 6 min"}, {"t": "★★★"}],
+           "".join(texto_hueco(*t) for t in par),
+           apoyo="Pista: busca el sujeto antes de escribir; a veces está en la frase anterior"))
+P(audiorow('<div class="ic">✅</div><div><b>La corrección.</b> Las cien soluciones se corrigen '
+           'solas en la página digital, en el panel <b>Gramática</b>: escribes tu forma y ves al '
+           'momento si está bien, con una pista si la necesitas. '
+           '<span class="gloss">De honderd oplossingen verbeteren zichzelf online, in het paneel '
+           'Gramática — met een pista als je vastzit.</span></div>',
+           qr("Corrige las cien", "Gramática · cien formas", ancla="gram")))
+P('</div>')  # page §3.3b
+
 # ================= §4 · PREGUNTAR + GÉNERO =================
-retos("presente", "§3.3 · Reto — el presente en la calle",
+retos("presente", "§3.4 · Reto — el presente en la calle",
       'Comparas dos fotos de la misma plaza de Madrid, con cuarenta años de diferencia, y escribes cinco '
       'frases en <b>presente</b> sobre lo que ves. Los pasos y la regla están debajo.',
       'Je vergelijkt twee foto\'s van hetzelfde plein in Madrid, veertig jaar uit elkaar, en schrijft er vijf '
