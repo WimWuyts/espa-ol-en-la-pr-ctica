@@ -55,6 +55,10 @@ RETO_06 = {
                    "één punt aftrek per hapering.",
     "regla": "Je zegt de lettersnamen (efe, hache, uve doble), nooit de klanken. "
              "Wie «ffff» zegt in plaats van «efe», verliest de beurt.",
+    "regla_es": (
+        "Dices el nombre de las letras (efe, hache, uve doble), nunca el sonido. Quien diga "
+        "«ffff» en vez de «efe», pierde el turno."
+    ),
     "pasos": [
         ("Ronda 1 — los compañeros: deletrea el nombre de alguien de la clase.",
          "Ronde 1 — klasgenoten: spel de naam van iemand uit de klas."),
@@ -100,6 +104,10 @@ RETO_09 = {
                    "De klas raadt van wie ze is.",
     "regla": "Exact vijf seconden en precies één uitgerekte klank. Je mag je naam "
              "niet gewoon uitspreken — alleen spellen.",
+    "regla_es": (
+        "Exactamente cinco segundos y un solo sonido alargado. No puedes pronunciar tu nombre: "
+        "solo deletrearlo."
+    ),
     "pasos": [
         ("Escucha el modelo: «ese — a — eme… Sssssam».",
          "Luister naar het model: «ese — a — eme… Sssssam»."),
@@ -144,6 +152,10 @@ RETO_02 = {
                    "het lot. Fout? Je verliest je bod.",
     "regla": "Je mag pas bieden ná het horen van het lot, en je mag niet overleggen "
              "terwijl je biedt. De duurste loten zijn de valstrikken.",
+    "regla_es": (
+        "Solo puedes pujar después de oír el lote, y no se puede consultar mientras pujas. Los "
+        "lotes más caros son las trampas."
+    ),
     "pasos": [
         ("El/la profe lee el lote en voz alta, una sola vez.",
          "De leerkracht leest het lot één keer hardop voor."),
@@ -194,6 +206,10 @@ RETO_04 = {
                    "Aanwijzen volstaat niet — je moet je beschuldiging bewijzen.",
     "regla": "Bij elk woord dat je onmogelijk noemt, moet je de regel erbij zeggen. "
              "Een beschuldiging zonder regel telt als fout, ook als het woord echt fout is.",
+    "regla_es": (
+        "Cada vez que digas que una palabra es imposible, tienes que decir también la regla. Una "
+        "acusación sin regla cuenta como error, aunque la palabra esté mal de verdad."
+    ),
     "pasos": [
         ("Solo: marca las que te parecen imposibles.",
          "Alleen: kruis aan wat je onmogelijk lijkt."),
@@ -251,6 +267,10 @@ RETO_05 = {
                    "Je hebt drie seconden.",
     "regla": "Je beslist op wat je hóórt, niet op wat je ziet — het woord staat pas "
              "op het scherm ná de beslissing. Wie te laat is, gaat zitten.",
+    "regla_es": (
+        "Decides por lo que oyes, no por lo que ves: la palabra aparece en la pantalla después de "
+        "decidir. Quien llegue tarde, se sienta."
+    ),
     "pasos": [
         ("Calentamiento: tres palabras con el escrito a la vista.",
          "Opwarming: drie woorden mét het schriftbeeld erbij."),
@@ -304,6 +324,10 @@ RETO_03 = {
                    "Eén verkeerd verstaan getal en je zit in de verkeerde provincie.",
     "regla": "A mag de kaart niet zien en B mag de route niet lezen. Herhalen mag, "
              "maar alleen in het Spaans: «¿Puedes repetir, por favor?»",
+    "regla_es": (
+        "A no puede ver el mapa y B no puede leer la ruta. Repetir sí, pero solo en español: "
+        "«¿Puedes repetir, por favor?»"
+    ),
     "pasos": [
         ("A lee: «Sal del kilómetro X, avanza Y kilómetros.»",
          "A leest: «Vertrek bij kilometer X, rijd Y kilometer verder.»"),
@@ -356,6 +380,10 @@ RETO_08 = {
                    "zeg vanwaar je belt en spel je naam.",
     "regla": "Je noteert de cijfers als woord, niet als cijfer: «más treinta y cuatro», "
              "niet «+34». Daarmee wordt getallen kennen ineens getallen schríjven.",
+    "regla_es": (
+        "Anotas los números con letra, no con cifra: «más treinta y cuatro», no «+34». Así saber "
+        "los números pasa a ser escribir los números."
+    ),
     "pasos": [
         ("Escucha y anota los ocho prefijos.",
          "Luister en noteer de acht landcodes."),
@@ -402,6 +430,10 @@ RETO_01 = {
                    "De klas luistert en raadt welke welke is.",
     "regla": "Je mag geen enkel ander woord gebruiken. Alleen toon, tempo en volume "
              "vertellen het verhaal. Wie iets toevoegt, begint opnieuw.",
+    "regla_es": (
+        "No puedes usar ninguna otra palabra. Solo el tono, la velocidad y el volumen cuentan la "
+        "historia. Quien añada algo, empieza de nuevo."
+    ),
     "pasos": [
         ("Lee las cuatro situaciones. No las digas en voz alta todavía.",
          "Lees de vier situaties. Zeg ze nog niet hardop."),
@@ -452,6 +484,10 @@ RETO_10 = {
                    "letters en getallen. Maximaal acht vragen.",
     "regla": "Je mag niet vragen in welk land de stad ligt, en je mag geen letter "
              "raden die je nog niet hebt uitgesloten. Alleen tellen en spellen.",
+    "regla_es": (
+        "No puedes preguntar en qué país está la ciudad, ni adivinar una letra que aún no hayas "
+        "descartado. Solo contar y deletrear."
+    ),
     "pasos": [
         ("Coge una ficha. No la enseñes a nadie.",
          "Neem een fiche. Laat ze aan niemand zien."),
@@ -505,6 +541,10 @@ RETO_07 = {
     "regla": "Niemand mag twee landen na elkaar doen, en een land telt pas als "
              "iemand anders uit de klas bevestigt dat het correct klonk. "
              "Het doel is van de klas, niet van jou.",
+    "regla_es": (
+        "Nadie hace dos países seguidos, y un país solo cuenta si otra persona de la clase "
+        "confirma que ha sonado bien. El objetivo es de la clase, no tuyo."
+    ),
     "pasos": [
         ("Haz clic en un país gris. Aparece su nombre.",
          "Klik op een grijs land. De naam verschijnt."),
@@ -575,6 +615,10 @@ U1_RETO_02 = {
     "regla_es": "Habla siempre en primera persona, aunque no seas tú, y no digas el nombre de tu ficha. Puedes decir «¿cómo?» una sola vez.",
     "regla": "Alles in de ik-vorm, ook al ben jij het niet, en je mag de naam op je "
              "fiche niet zeggen. Eén keer «él es» of «ella vive» en je bent ontmaskerd.",
+    "regla_es": (
+        "Todo en primera persona, aunque no seas tú, y no puedes decir el nombre de tu ficha. Un "
+        "solo «él es» o «ella vive» y quedas descubierto."
+    ),
     "pasos": [
         ("Coge una ficha al azar. No la enseñes.",
          "Neem een willekeurige fiche. Laat ze niet zien."),
@@ -631,6 +675,10 @@ U1_RETO_03 = {
     "regla": "Elke conclusie moet een écht getal uit jullie grafiek bevatten en met "
              "«somos» of «son» beginnen. «Muchos alumnos hablan inglés» telt niet — "
              "«Somos catorce que hablamos inglés» wel.",
+    "regla_es": (
+        "Cada conclusión lleva un número real de vuestro gráfico y empieza por «somos» o «son». "
+        "«Muchos alumnos hablan inglés» no cuenta; «Somos catorce que hablamos inglés», sí."
+    ),
     "pasos": [
         ("Elegid una pregunta por grupo: edad, lenguas, ciudad o transporte.",
          "Kies één vraag per groep: leeftijd, talen, stad of vervoer."),
@@ -682,6 +730,10 @@ U1_RETO_09 = {
     "regla": "Het algoritme mag niemand koppelen op naam of op wie bevriend is. Alleen "
              "gegevens uit de profielen tellen, en de reden moet met «son» of «tienen» "
              "geformuleerd worden.",
+    "regla_es": (
+        "El algoritmo no puede emparejar por el nombre ni por quién es amigo de quién. Solo valen "
+        "los datos de los perfiles, y la razón se dice con «son» o «tienen»."
+    ),
     "pasos": [
         ("Escribe tu perfil en cuatro frases. Sin nombre.",
          "Schrijf je profiel in vier zinnen. Zonder naam."),
@@ -739,6 +791,10 @@ U1_RETO_06 = {
     "regla": "Je mag je rolkaart nooit laten lezen en niet in het Nederlands vragen. "
              "Twee passagiers verschillen maar op één gegeven — die vind je alleen door "
              "door te vragen.",
+    "regla_es": (
+        "No enseñes nunca tu tarjeta de rol y no preguntes en neerlandés. Dos pasajeros se "
+        "diferencian en un solo dato, y eso solo lo encuentras preguntando."
+    ),
     "pasos": [
         ("Coge una tarjeta de embarque y una ficha de pasajero.",
          "Neem één instapkaart en één passagiersfiche."),
@@ -792,6 +848,10 @@ U1_RETO_08 = {
     "regla_es": "Tienes que decir qué está mal y dar la forma correcta. «Eso no está bien» cuenta como acusación falsa y te cuesta una vida.",
     "regla": "Je moet zeggen wát er fout is én de juiste vorm geven. «Dat klopt niet» "
              "telt als een valse beschuldiging, ook als de zin écht fout is.",
+    "regla_es": (
+        "Tienes que decir qué está mal y dar la forma correcta. «Eso no está bien» cuenta como "
+        "acusación falsa, aunque la frase esté mal de verdad."
+    ),
     "pasos": [
         ("Ronda 0 — kalentamiento: caza los errores del banco de abajo.",
          "Ronde 0 — opwarming: jaag op de fouten in de bank hieronder."),
@@ -849,6 +909,10 @@ U1_RETO_07 = {
     "regla_es": "Todo en presente, también cuando hables de 1985: «en la foto antigua hay…», no «había…».",
     "regla": "Alles in het presente, ook als je over 1985 praat. Je zegt dus «en la foto "
              "antigua hay…», niet «había». Die verleden tijd leer je pas in het zesde.",
+    "regla_es": (
+        "Todo en presente, también cuando hables de 1985: «en la foto antigua hay…», no «había». "
+        "El pasado llega en sexto."
+    ),
     "pasos": [
         ("Mira las dos escenas sin escribir. ¿Qué te llama la atención?",
          "Bekijk de twee scènes zonder te schrijven. Wat valt je op?"),
@@ -908,6 +972,10 @@ U1_RETO_01 = {
     "regla": "Een ja/nee-vraag kost je je beurt. Je moet dus met qué, quién, dónde, "
              "cuándo, cómo, cuánto of por qué beginnen — en niemand mag hetzelfde "
              "vraagwoord twee keer gebruiken.",
+    "regla_es": (
+        "Una pregunta de sí o no te cuesta el turno. Empieza siempre por qué, quién, dónde, "
+        "cuándo, cómo, cuánto o por qué, y nadie repite la misma palabra interrogativa."
+    ),
     "pasos": [
         ("La estrella coge una ficha secreta y se sienta delante.",
          "De ster neemt een geheime fiche en gaat vooraan zitten."),
@@ -960,6 +1028,10 @@ U1_RETO_04 = {
     "regla_es": "Las tres preguntas directas están prohibidas: tienes que rodearlas con una propuesta, una comparación o una suposición que el otro confirme.",
     "regla": "De drie rechtstreekse vragen zijn verboden. Je moet er dus omheen: met een "
              "voorstel, een vergelijking of een gok die je laat bevestigen.",
+    "regla_es": (
+        "Las tres preguntas directas están prohibidas. Tienes que rodearlas: con una propuesta, "
+        "una comparación o una suposición que el otro confirme."
+    ),
     "pasos": [
         ("Mira las tres preguntas prohibidas. Piensa un rodeo para cada una.",
          "Bekijk de drie verboden vragen. Bedenk voor elk een omweg."),
@@ -1011,6 +1083,10 @@ U1_RETO_05 = {
     "regla_es": "Con cada palabra dices también qué regla usas. El artículo correcto con la regla equivocada cuenta como error: entonces has adivinado.",
     "regla": "Bij elk woord moet je de regel kiezen die je gebruikt. Het juiste lidwoord "
              "met de verkeerde regel telt als fout: dan had je geraden.",
+    "regla_es": (
+        "En cada palabra tienes que elegir la regla que usas. El artículo correcto con la regla "
+        "equivocada cuenta como error: entonces has adivinado."
+    ),
     "pasos": [
         ("Mira la terminación, no la palabra entera.",
          "Kijk naar de uitgang, niet naar het hele woord."),
@@ -1068,6 +1144,10 @@ U1_RETO_10 = {
     "regla_es": "No traduces, cuentas. Todo en tercera persona, y lo que no sepas decir, lo dejas fuera.",
     "regla": "Je vertaalt niet, je vertélt. Alles in de derde persoon, en je laat weg wat "
              "je niet kunt zeggen — een minuut die klopt is beter dan twee die vastlopen.",
+    "regla_es": (
+        "No traduces, cuentas. Todo en tercera persona, y deja fuera lo que no sepas decir: un "
+        "minuto que funciona vale más que dos que se atascan."
+    ),
     "pasos": [
         ("Entrevista en neerlandés. Anota solo palabras clave, no frases.",
          "Interview in het Nederlands. Noteer alleen sleutelwoorden, geen zinnen."),
@@ -1120,6 +1200,10 @@ U2_RETO_01 = {
                    "met de exacte zin als bewijs.",
     "regla": "Je beschuldiging telt alleen mét citaat. «Marco liegt» is geen antwoord; "
              "«Marco liegt, want hij zegt X en Ana zegt Y» wel.",
+    "regla_es": (
+        "Una acusación solo cuenta con cita. «Marco miente» no es una respuesta; «Marco miente, "
+        "porque dice X y Ana dice Y», sí."
+    ),
     "pasos": [
         ("Lee las cuatro declaraciones sin escribir nada.",
          "Lees de vier verklaringen zonder iets te schrijven."),
@@ -1165,6 +1249,10 @@ U2_RETO_05 = {
     "regla": "Elke zin bevat een écht getal uit de tabel én het werkwoord tener. "
              "«En México las familias son grandes» telt niet — «En México una familia "
              "tiene 3,6 personas» wel.",
+    "regla_es": (
+        "Cada frase lleva un número real de la tabla y el verbo tener. «En México las familias "
+        "son grandes» no cuenta; «En México una familia tiene 3,6 personas», sí."
+    ),
     "pasos": [
         ("Mira la tabla. ¿Qué país te sorprende?",
          "Bekijk de tabel. Welk land verrast je?"),
@@ -1208,6 +1296,10 @@ U2_RETO_06 = {
                    "«hermano/a» te gebruiken.",
     "regla": "Die vier woorden zijn verboden. Je moet dus omschrijven: wie die persoon is, "
              "wat die doet, waarom die telt. Niet iedereen woont in hetzelfde huis — dat mag.",
+    "regla_es": (
+        "Esas cuatro palabras están prohibidas. Tienes que describir: quién es esa persona, qué "
+        "hace, por qué cuenta. No todos viven en la misma casa, y eso vale."
+    ),
     "pasos": [
         ("Piensa en tres personas. No escribas sus papeles todavía.",
          "Denk aan drie personen. Schrijf hun rol nog niet op."),
@@ -1249,6 +1341,10 @@ U2_RETO_10 = {
                    "zeggen. Je buur raadt over wie je het hebt.",
     "regla": "Die drie zijn verboden, en je mag ze ook niet omzeilen met «muy bueno» of "
              "«no es malo». Je moet naar een ánder woord grijpen.",
+    "regla_es": (
+        "Esas tres están prohibidas, y tampoco puedes esquivarlas con «muy bueno» o «no es malo». "
+        "Tienes que buscar otra palabra."
+    ),
     "pasos": [
         ("Elige tres personas que los dos conocéis.",
          "Kies drie personen die jullie allebei kennen."),
@@ -1287,6 +1383,10 @@ U2_RETO_04 = {
                    "zelf iemand en laat je buur die vinden.",
     "regla": "Je mag geen vragen stellen tijdens het luisteren. Eén keer horen, dan kiezen. "
              "Wie het mis heeft, luistert opnieuw — maar verliest zijn punt.",
+    "regla_es": (
+        "No puedes preguntar nada mientras escuchas. Se oye una vez y se elige. Quien falle "
+        "vuelve a escuchar, pero pierde su punto."
+    ),
     "pasos": [
         ("Escucha la primera descripción. No mires los retratos todavía.",
          "Luister naar de eerste beschrijving. Kijk nog niet naar de portretten."),
@@ -1335,6 +1435,10 @@ U2_RETO_07 = {
                    "dertig seconden op: stel jouw mensen aan hem voor.",
     "regla": "Je antwoordt op wat hij écht vraagt — niet op wat je toevallig kunt zeggen. "
              "Zijn drie vragen moeten alle drie een antwoord krijgen.",
+    "regla_es": (
+        "Respondes a lo que él pregunta de verdad, no a lo que sabes decir por casualidad. Sus "
+        "tres preguntas tienen que recibir respuesta las tres."
+    ),
     "pasos": [
         ("Escucha una vez sin notas. ¿Qué te pregunta?",
          "Luister één keer zonder te noteren. Wat vraagt hij je?"),
@@ -1382,6 +1486,10 @@ U2_RETO_09 = {
                    "vindt. Niet vertalen: samenvatten.",
     "regla": "Je samenvatting is korter dan wat je hoorde. Je mag dus schrappen — maar niet "
              "verzinnen, en geen van de drie mag wegvallen.",
+    "regla_es": (
+        "Tu resumen es más corto que lo que has oído. Puedes quitar, pero no inventar, y ninguno "
+        "de los tres puede desaparecer."
+    ),
     "pasos": [
         ("Escucha las tres voces seguidas. No escribas.",
          "Luister de drie stemmen na elkaar. Schrijf niet."),
@@ -1428,6 +1536,10 @@ U2_RETO_02 = {
                    "voornaamwoord aan een ander gekoppeld.",
     "regla": "Elk nieuw personage moet met minstens twee bezittelijke voornaamwoorden aan de "
              "bestaande familie hangen. Een personage dat aan niemand hangt, komt er niet in.",
+    "regla_es": (
+        "Cada personaje nuevo se engancha a la familia con dos posesivos como mínimo. Un "
+        "personaje que no cuelga de nadie no entra."
+    ),
     "pasos": [
         ("Empezamos con Rosalía, la abuela. Todo cuelga de ella.",
          "We beginnen met Rosalía, de oma. Alles hangt aan haar."),
@@ -1472,6 +1584,10 @@ U2_RETO_03 = {
                    "familierelatie.",
     "regla": "Alleen familieargumenten tellen. «Ik wil het» of «het past bij mij» is geen "
              "argument; «es de su hermana, no de la mía» wel.",
+    "regla_es": (
+        "Solo valen los argumentos de familia. «Lo quiero yo» o «me pega» no es un argumento; «es "
+        "de su hermana, no de la mía», sí."
+    ),
     "pasos": [
         ("Leed la nota de la tía. No decide nada.",
          "Lees het briefje van de tante. Het beslist niets."),
@@ -1518,6 +1634,10 @@ U2_RETO_08 = {
                    "is dat «ser» of «estar».",
     "regla": "Je moet het verraderlijke wóórd aanwijzen, niet het onderschrift. Wie het "
              "juiste kiest maar het woord niet vindt, heeft geraden.",
+    "regla_es": (
+        "Tienes que señalar la palabra que engaña, no el pie de foto. Quien elija bien pero no "
+        "encuentre la palabra, ha adivinado."
+    ),
     "pasos": [
         ("Mira la escena. ¿Qué ves exactamente?",
          "Bekijk de scène. Wat zie je precies?"),
@@ -1574,6 +1694,10 @@ U3_RETO_01 = {
     "consigna_nl": "Vind de botsingen en herschrijf de agenda zodat alles past.",
     "regla": "Je mag niets schrappen: alle zeven afspraken moeten erin blijven. Je mag "
              "alleen verschuiven, en elke nieuwe tijd schrijf je voluit in het Spaans.",
+    "regla_es": (
+        "No puedes quitar nada: las siete citas se quedan. Solo puedes moverlas, y cada hora "
+        "nueva la escribes con letra en español."
+    ),
     "pasos": [("Lee la agenda entera antes de tocar nada.", "Lees de hele agenda vóór je iets aanraakt."),
               ("Marca los tres choques con un color.", "Markeer de drie botsingen met een kleur."),
               ("Reescribe las horas. Todo tiene que caber.", "Herschrijf de uren. Alles moet passen."),
@@ -1612,6 +1736,10 @@ U3_RETO_03 = {
     "consigna_nl": "Nummer de zinnen in de echte volgorde en voeg de ontbrekende conector toe.",
     "regla": "Je mag niet op de uren afgaan — die staan er niet. Alleen de logica van de dag "
              "en de reflexieve werkwoorden verraden de volgorde.",
+    "regla_es": (
+        "No puedes guiarte por las horas: no están. Solo la lógica del día y los verbos "
+        "reflexivos delatan el orden."
+    ),
     "pasos": [("Lee las ocho frases. No numeres todavía.", "Lees de acht zinnen. Nummer nog niet."),
               ("Busca la primera y la última. Esas son fáciles.", "Zoek de eerste en de laatste. Die zijn makkelijk."),
               ("Numera el resto y escribe el conector.", "Nummer de rest en schrijf de conector erbij.")],
@@ -1646,6 +1774,10 @@ U3_RETO_06 = {
     "consigna_nl": "Reconstrueer de dag van één van de drie en vergelijk hem met de jouwe.",
     "regla": "Je moet minstens twee dingen vinden die op een ándere tijd gebeuren dan bij "
              "jou, en dat mét het uur zeggen. «Werkt 's nachts» volstaat niet.",
+    "regla_es": (
+        "Tienes que encontrar por lo menos dos cosas que pasen a otra hora que en tu caso, y "
+        "decirlo con la hora. «Trabaja de noche» no basta."
+    ),
     "pasos": [("Elegid un oficio por grupo.", "Kies één beroep per groep."),
               ("Con las pistas, escribid su día en orden.", "Schrijf met de aanwijzingen zijn dag op volgorde."),
               ("Comparad con vuestro día: ¿qué choca?", "Vergelijk met jullie dag: wat botst?"),
@@ -1690,6 +1822,10 @@ U3_RETO_07 = {
     "consigna_nl": "Schrijf drie zinnen over je dag en daarna het antwoord dat de app je zou geven.",
     "regla": "De app antwoordt altijd met een werkwoord met klankverandering (empezar, poder, "
              "dormir, querer, jugar). Zonder zo'n werkwoord is het geen antwoord van de app.",
+    "regla_es": (
+        "La app responde siempre con un verbo que cambia de vocal (empezar, poder, dormir, "
+        "querer, jugar). Sin ese verbo no es una respuesta de la app."
+    ),
     "pasos": [("Escribe tres frases verdaderas sobre tu día.", "Schrijf drie ware zinnen over je dag."),
               ("Ahora eres la app. Contesta a cada una.", "Nu ben jij de app. Antwoord op elke zin."),
               ("¿Es dura o amable tu app? Elige y sé constante.", "Is jouw app streng of vriendelijk? Kies en hou vol.")],
@@ -1722,6 +1858,10 @@ U3_RETO_05 = {
     "consigna_nl": "Je hoort een uur en een scène. Kies het reflexieve werkwoord dat past.",
     "regla": "Je kiest op wat je hoort, niet op wat logisch lijkt. Twee scènes passen bij "
              "hetzelfde werkwoord — daar beslist het uur.",
+    "regla_es": (
+        "Eliges por lo que oyes, no por lo que parece lógico. Dos escenas van con el mismo verbo: "
+        "ahí decide la hora."
+    ),
     "pasos": [("Escucha la escena entera antes de elegir.", "Luister de hele scène af vóór je kiest."),
               ("Elige el verbo. Fíjate en la hora.", "Kies het werkwoord. Let op het uur."),
               ("¿Fallas? Vuelve a escuchar antes de leer.", "Fout? Luister opnieuw vóór je leest.")],
@@ -1763,6 +1903,10 @@ U3_RETO_04 = {
     "consigna_nl": "Neem je dag drie keer op. Elke keer moet je dichter bij de minuut komen.",
     "regla": "Exact zestig seconden. Te kort betekent dat je iets moet toevoegen, te lang dat "
              "je moet schrappen — niet dat je sneller mag praten.",
+    "regla_es": (
+        "Sesenta segundos exactos. Si te quedas corto, tienes que añadir; si te pasas, tienes que "
+        "quitar. Hablar más deprisa no vale."
+    ),
     "pasos": [("Primer intento: cuenta tu día sin preparar.", "Eerste poging: vertel je dag zonder voorbereiding."),
               ("Mira el tiempo. ¿Sobra o falta?", "Kijk naar de tijd. Te veel of te weinig?"),
               ("Segundo intento: ajusta el contenido, no la velocidad.", "Tweede poging: pas de inhoud aan, niet je tempo."),
@@ -1796,6 +1940,10 @@ U3_RETO_09 = {
     "consigna_nl": "Zet elke snelle zin om in een korte, heldere ondertitel.",
     "regla": "Maximaal acht woorden per ondertitel, en de betekenis moet heel blijven. "
              "Je comprimeert, je vertaalt niet.",
+    "regla_es": (
+        "Ocho palabras como máximo por subtítulo, y el sentido tiene que quedar entero. "
+        "Comprimes, no traduces."
+    ),
     "pasos": [("Escucha la frase entera.", "Luister de hele zin af."),
               ("¿Qué es lo esencial? Quita el resto.", "Wat is de kern? Schrap de rest."),
               ("Escribe el subtítulo. Cuenta las palabras.", "Schrijf de ondertitel. Tel je woorden.")],
@@ -1834,6 +1982,10 @@ U3_RETO_02 = {
     "consigna_nl": "Zoek het enige uur waarop jullie alle vier wakker zijn.",
     "regla": "Iedereen moet tussen 8:00 en 22:00 lokale tijd zitten. Eén persoon buiten dat "
              "venster en het voorstel valt af.",
+    "regla_es": (
+        "Todo el mundo tiene que estar entre las 8:00 y las 22:00 de su hora local. Una sola "
+        "persona fuera de esa franja y la propuesta cae."
+    ),
     "pasos": [("Mirad las cuatro zonas horarias.", "Bekijk de vier tijdzones."),
               ("Probad una hora. ¿Quién duerme?", "Probeer een uur. Wie slaapt er?"),
               ("Buscad la ventana común.", "Zoek het gemeenschappelijke venster."),
@@ -1870,6 +2022,10 @@ U3_RETO_08 = {
     "consigna_nl": "Onderhandel één gezamenlijk schema. Jullie moeten allebei iets opgeven.",
     "regla": "Elk voorstel bevat een uur én een reden met «porque». Een voorstel zonder "
              "reden mag de ander zonder meer weigeren.",
+    "regla_es": (
+        "Cada propuesta lleva una hora y una razón con «porque». Una propuesta sin razón se puede "
+        "rechazar sin más."
+    ),
     "pasos": [("Coge tu rol. No lo enseñes.", "Neem je rol. Laat hem niet zien."),
               ("Propón tu hora con una razón.", "Stel je uur voor met een reden."),
               ("Ceded hasta llegar a un acuerdo.", "Geef toe tot jullie akkoord zijn."),
@@ -1906,6 +2062,10 @@ U3_RETO_10 = {
     "consigna_nl": "Per twee verzinnen jullie een alibi met vijf uren. De klas verhoort jullie.",
     "regla": "Jullie twee verhalen moeten op de vijf uren identiek zijn — maar jullie worden "
              "apart ondervraagd. Eén verschil en het alibi valt.",
+    "regla_es": (
+        "Vuestras dos versiones tienen que coincidir en las cinco horas, pero os interrogan por "
+        "separado. Una sola diferencia y el alibi se cae."
+    ),
     "pasos": [("En parejas: inventad vuestra tarde, hora por hora.", "Per twee: verzin jullie namiddag, uur per uur."),
               ("Memorizad. No podéis mirar notas en el interrogatorio.", "Onthoud het. Bij het verhoor geen notities."),
               ("Uno sale del aula. La clase interroga al otro.", "Eén verlaat het lokaal. De klas verhoort de ander."),
@@ -1950,6 +2110,10 @@ U4_RETO_04 = {
     "consigna_nl": "Drie rondes briefjes: voorstellen, reageren, de afspraak sluiten. Zonder praten.",
     "regla": "Er wordt niet gesproken en niet gewezen. Alles gaat via het briefje, en elke "
              "reactie begint met «a mí también», «a mí tampoco», «a mí sí» of «a mí no».",
+    "regla_es": (
+        "No se habla y no se señala. Todo pasa por el papel, y cada reacción empieza por «a mí "
+        "también», «a mí tampoco», «a mí sí» o «a mí no»."
+    ),
     "pasos": [("Ronda 1: escribe un plan y un gusto tuyo.", "Ronde 1: schrijf een plan en één eigen gusto."),
               ("Ronda 2: reacciona al plan que recibes.", "Ronde 2: reageer op het plan dat je krijgt."),
               ("Ronda 3: cerrad hora y lugar.", "Ronde 3: spreek uur en plaats af."),
@@ -1985,6 +2149,10 @@ U4_RETO_05 = {
     "consigna_nl": "Kies samen wat jullie doen. Ieder moet één eigen plan opgeven.",
     "regla": "Het budget is hard: vijfentwintig euro voor de hele groep. En iedereen moet "
              "minstens één keer «a mí no me gusta» of «prefiero» gebruiken om iets te schrappen.",
+    "regla_es": (
+        "El presupuesto es intocable: veinticinco euros para todo el grupo. Y cada uno tiene que "
+        "usar por lo menos una vez «a mí no me gusta» o «prefiero» para quitar algo."
+    ),
     "pasos": [("Cada uno elige su plan favorito y su precio.", "Ieder kiest zijn favoriete plan en de prijs."),
               ("Sumad. ¿Cuánto os pasáis?", "Tel op. Hoeveel gaan jullie erover?"),
               ("Negociad hasta llegar a veinticinco.", "Onderhandel tot jullie op vijfentwintig zitten."),
@@ -2022,6 +2190,10 @@ U4_RETO_07 = {
                    "overtuigt.",
     "regla": "Niets weglaten en niets overdrijven. «Siempre hace sol» mag niet — «en verano "
              "hace mucho calor, a veces demasiado» wel.",
+    "regla_es": (
+        "No dejes nada fuera y no exageres. «Siempre hace sol» no vale; «en verano hace mucho "
+        "calor, a veces demasiado», sí."
+    ),
     "pasos": [("Mirad los datos. Elegid tres cosas buenas.", "Bekijk de gegevens. Kies drie goede dingen."),
               ("Elegid dos menos buenas. No las suavicéis.", "Kies twee minder goede. Verzacht ze niet."),
               ("Escribid la frase final: ¿por qué venir igualmente?", "Schrijf de slotzin: waarom tóch komen?")],
@@ -2059,6 +2231,10 @@ U4_RETO_10 = {
     "consigna_nl": "Ondervraag drie klasgenoten, teken het diagram en verdedig één conclusie.",
     "regla": "Je conclusie moet een getal bevatten én een reactie met también of tampoco. "
              "Een conclusie zonder cijfer is een mening, geen resultaat.",
+    "regla_es": (
+        "Tu conclusión lleva un número y una reacción con también o tampoco. Una conclusión sin "
+        "cifra es una opinión, no un resultado."
+    ),
     "pasos": [("Haz las tres preguntas a tres personas.", "Stel de drie vragen aan drie personen."),
               ("Anota las respuestas tal cual.", "Noteer de antwoorden letterlijk."),
               ("Dibuja el diagrama y escribe la conclusión.", "Teken het diagram en schrijf de conclusie."),
@@ -2092,6 +2268,10 @@ U4_RETO_02 = {
     "consigna_nl": "Beluister de acht titels en leid haar smaak af. Schrijf haar profiel in vijf zinnen.",
     "regla": "Elke zin over die persoon moet met «le gusta» of «le encanta» — niet met «me». "
              "Je praat over iemand anders, niet over jezelf.",
+    "regla_es": (
+        "Cada frase sobre esa persona va con «le gusta» o «le encanta», nunca con «me». Hablas de "
+        "otra persona, no de ti."
+    ),
     "pasos": [("Escucha la playlist entera.", "Beluister de hele playlist."),
               ("¿Qué se repite? ¿Qué falta?", "Wat komt terug? Wat ontbreekt?"),
               ("Escribe cinco frases sobre esa persona.", "Schrijf vijf zinnen over die persoon."),
@@ -2131,6 +2311,10 @@ U4_RETO_06 = {
     "consigna_nl": "Neem vier contrasten op: vroeger en nu. Alles in het presente.",
     "regla": "Je mag geen verleden tijd gebruiken — die ken je nog niet. Je zegt dus «a los "
              "diez años me gusta…» met een tijdsbepaling, niet «me gustaba».",
+    "regla_es": (
+        "No puedes usar el pasado: todavía no lo conoces. Dices «a los diez años me gusta…» con "
+        "una expresión de tiempo, no «me gustaba»."
+    ),
     "pasos": [("Piensa en cuatro cosas que han cambiado.", "Denk aan vier dingen die veranderd zijn."),
               ("Formula cada una con una expresión de tiempo.", "Formuleer elk met een tijdsbepaling."),
               ("Graba los cuatro contrastes seguidos.", "Neem de vier contrasten na elkaar op."),
@@ -2167,6 +2351,10 @@ U4_RETO_09 = {
                    "vertaling misloopt.",
     "regla": "Het juiste antwoord kiezen volstaat niet: je moet erbij zeggen wat er misgaat "
              "in de letterlijke versie. Zonder die uitleg telt het als gokken.",
+    "regla_es": (
+        "Elegir la respuesta correcta no basta: tienes que decir qué falla en la versión literal. "
+        "Sin esa explicación cuenta como adivinar."
+    ),
     "pasos": [("Lee la frase flamenca. No traduzcas todavía.", "Lees de Vlaamse zin. Vertaal nog niet."),
               ("Elige la versión que suena natural.", "Kies de versie die natuurlijk klinkt."),
               ("Explica qué falla en la literal.", "Leg uit wat er misloopt in de letterlijke.")],
@@ -2211,6 +2399,10 @@ U4_RETO_01 = {
                    "we een conclusie.",
     "regla": "Je mag niet in het midden blijven hangen: kies een van de vier plaatsen. En wie "
              "gevraagd wordt, verantwoordt zijn plek met «porque».",
+    "regla_es": (
+        "No puedes quedarte en medio: elige uno de los cuatro sitios. Y a quien le pregunten, "
+        "justifica su sitio con «porque»."
+    ),
     "pasos": [("El/la profe dice una cosa. Todos se colocan.", "De leerkracht noemt iets. Iedereen gaat staan."),
               ("Dos alumnos explican su sitio con «porque».", "Twee leerlingen verantwoorden hun plek met «porque»."),
               ("Contamos y anotamos el número.", "We tellen en noteren het getal."),
@@ -2245,6 +2437,10 @@ U4_RETO_03 = {
     "consigna_nl": "Bel de radio, groet, vraag je nummer aan en licht toe. De presentator reageert.",
     "regla": "De presentator reageert altijd met también, tampoco, a mí sí of a mí no — en "
              "nooit twee keer dezelfde in één uitzending.",
+    "regla_es": (
+        "El presentador reacciona siempre con también, tampoco, a mí sí o a mí no, y nunca dos "
+        "veces igual en un mismo programa."
+    ),
     "pasos": [("El/la profe es el presentador. Empieza la emisión.", "De leerkracht is presentator. De uitzending begint."),
               ("Llamas: saludo, canción, razón.", "Je belt: groet, nummer, reden."),
               ("El presentador reacciona y pasa al siguiente.", "De presentator reageert en gaat door."),
@@ -2282,6 +2478,10 @@ U4_RETO_08 = {
     "consigna_nl": "Reageer op je buur en voeg een eigen gusto toe. Zonder reacties te herhalen.",
     "regla": "Een reactie die al gebruikt is, breekt de ketting — ook als ze klopt. De klas "
              "moet dus bijhouden wat al voorbijkwam.",
+    "regla_es": (
+        "Una reacción ya usada rompe la cadena, aunque esté bien. La clase tiene que llevar la "
+        "cuenta de lo que ya ha salido."
+    ),
     "pasos": [("El primero dice un gusto.", "De eerste zegt een gusto."),
               ("El siguiente reacciona y añade el suyo.", "De volgende reageert en voegt de zijne toe."),
               ("¿Reacción repetida? Se rompe: vuelta a empezar.", "Reactie herhaald? Gebroken: opnieuw."),
@@ -2322,6 +2522,10 @@ U5_RETO_02 = {
     "consigna_nl": "Kruis de gerechten aan die niet Mexicaans zijn en zeg waar ze wél vandaan komen.",
     "regla": "Aanwijzen volstaat niet: bij elk fout gerecht zeg je het land. Wie een echt "
              "Mexicaans gerecht aankruist, verliest twee punten in plaats van er één te winnen.",
+    "regla_es": (
+        "Señalar no basta: en cada plato equivocado dices el país. Quien marque un plato mexicano "
+        "de verdad pierde dos puntos en vez de ganar uno."
+    ),
     "pasos": [("Leed la carta entera antes de marcar.", "Lees de hele kaart vóór je aankruist."),
               ("Marcad los intrusos y escribid su país.", "Kruis de indringers aan en schrijf hun land."),
               ("Cuidado: dos platos parecen extranjeros y son mexicanos.",
@@ -2357,6 +2561,10 @@ U5_RETO_03 = {
     "consigna_nl": "Schrijf een recensie van één ster zonder één lelijk woord.",
     "regla": "Geen scheldwoorden en geen «malo». Je beschikt alleen over «no me gusta», "
              "«un poco», «demasiado» en «no mucho». Beleefd vernietigend is de opdracht.",
+    "regla_es": (
+        "Nada de insultos y nada de «malo». Solo tienes «no me gusta», «un poco», «demasiado» y "
+        "«no mucho». Demoledor pero educado: esa es la tarea."
+    ),
     "pasos": [("Elige cinco cosas que salieron mal.", "Kies vijf dingen die misliepen."),
               ("Formula cada una en negativo suave.", "Formuleer elk in zacht negatief."),
               ("Cierra con una frase que suene amable y no lo sea.",
@@ -2391,6 +2599,10 @@ U5_RETO_05 = {
     "consigna_nl": "Reken de prijzen om, vergelijk en schrijf drie conclusies met hoeveelheden.",
     "regla": "Elke conclusie bevat een hoeveelheid (un kilo de, una botella de, un paquete "
              "de) én een prijs. Alleen «es más barato» telt niet.",
+    "regla_es": (
+        "Cada conclusión lleva una cantidad (un kilo de, una botella de, un paquete de) y un "
+        "precio. Solo «es más barato» no cuenta."
+    ),
     "pasos": [("Convertid los pesos a euros con el cambio de arriba.",
                "Reken de peso's om naar euro met de koers hierboven."),
               ("Comparad producto por producto.", "Vergelijk product per product."),
@@ -2429,6 +2641,10 @@ U5_RETO_10 = {
     "consigna_nl": "Vraag naar het ingrediënt met een voornaamwoord, beslis en verantwoord.",
     "regla": "Je vraag moet het pronomen bevatten («¿lo lleva picante?»), en je beslissing "
              "ook («no lo pido»). Een vraag zonder pronomen wordt niet beantwoord.",
+    "regla_es": (
+        "Tu pregunta lleva el pronombre («¿lo lleva picante?»), y tu decisión también («no lo "
+        "pido»). Una pregunta sin pronombre no se responde."
+    ),
     "pasos": [("Elige un plato. No mires la columna del ingrediente.",
                "Kies een gerecht. Kijk niet in de ingrediëntkolom."),
               ("Pregunta a tu compañero/a con el pronombre.", "Vraag het je buur, met het voornaamwoord."),
@@ -2467,6 +2683,10 @@ U5_RETO_01 = {
                    "gerecht mislukt.",
     "regla": "Je kiest op wat je hóórt, niet op wat logisch lijkt. Twee stappen gebruiken "
              "hetzelfde product met een ándere hoeveelheid — daar gaat het mis.",
+    "regla_es": (
+        "Eliges por lo que oyes, no por lo que parece lógico. Dos pasos usan el mismo producto "
+        "con otra cantidad: ahí está el fallo."
+    ),
     "pasos": [("Escucha el paso entero antes de elegir.", "Luister de hele stap af vóór je kiest."),
               ("Elige la cantidad. Fíjate en la palabra, no en el producto.",
                "Kies de hoeveelheid. Let op het woord, niet op het product."),
@@ -2511,6 +2731,10 @@ U5_RETO_06 = {
                    "gekookt heeft.",
     "regla": "Elke vage maat wordt een getal met eenheid. Je mag niet «een beetje» laten "
              "staan, en je mag ook niets weglaten.",
+    "regla_es": (
+        "Cada medida vaga se convierte en un número con unidad. No puedes dejar «un poco», y "
+        "tampoco puedes quitar nada."
+    ),
     "pasos": [("Lee la receta. Marca lo que no es exacto.", "Lees het recept. Markeer wat niet exact is."),
               ("Elige la medida que mejor lo traduce.", "Kies de maat die het best vertaalt."),
               ("Comprueba: ¿puede cocinarlo alguien sin experiencia?",
@@ -2558,6 +2782,10 @@ U5_RETO_09 = {
     "consigna_nl": "Neem een kookinstructie van dertig seconden op. Zonder «poner» te gebruiken.",
     "regla": "Het werkwoord «poner» is verboden — en dat is precies het werkwoord dat je "
              "wilt gebruiken. Je moet naar añadir, echar, cortar, mezclar, calentar grijpen.",
+    "regla_es": (
+        "El verbo «poner» está prohibido, y es justo el que te va a salir. Tienes que echar mano "
+        "de añadir, echar, cortar, mezclar, calentar."
+    ),
     "pasos": [("Elige un plato muy simple.", "Kies een heel eenvoudig gerecht."),
               ("Escribe los pasos sin «poner».", "Schrijf de stappen zonder «poner»."),
               ("Graba. Treinta segundos, ni uno más.", "Neem op. Dertig seconden, geen seconde meer."),
@@ -2590,6 +2818,10 @@ U5_RETO_04 = {
     "consigna_nl": "Krijg een volledig menu binnen: voorgerecht, hoofdgerecht, drank en dessert.",
     "regla": "Elke «lo siento» dwingt je tot een nieuw voorstel — en je mag nooit twee keer "
              "dezelfde beleefdheidsformule gebruiken.",
+    "regla_es": (
+        "Cada «lo siento» te obliga a hacer una propuesta nueva, y no puedes usar dos veces la "
+        "misma fórmula de cortesía."
+    ),
     "pasos": [("El camarero coge su lista de «no hay».", "De ober neemt zijn lijst met «niet meer»."),
               ("Pides. Te dicen que no. Propón otra cosa.", "Je bestelt. Ze zeggen nee. Stel iets anders voor."),
               ("Sigue hasta tener los cuatro platos.", "Ga door tot je de vier gangen hebt."),
@@ -2626,6 +2858,10 @@ U5_RETO_07 = {
     "consigna_nl": "Krijg het product te pakken met maximaal vijf woorden per poging.",
     "regla": "Vijf woorden per poging, gebaren mogen niet, en de naam van het product mag "
              "niet vallen — ook niet in het Nederlands of het Engels.",
+    "regla_es": (
+        "Cinco palabras por intento, sin gestos, y no puede aparecer el nombre del producto, "
+        "tampoco en neerlandés ni en inglés."
+    ),
     "pasos": [("Coge una tarjeta de producto. No la enseñes.", "Neem een productkaart. Laat ze niet zien."),
               ("Describe en cinco palabras. Cuenta en voz alta.", "Beschrijf in vijf woorden. Tel hardop mee."),
               ("¿No lo adivina? Otro intento, otras cinco.", "Raadt hij het niet? Nieuwe poging, vijf nieuwe woorden."),
@@ -2659,6 +2895,10 @@ U5_RETO_08 = {
     "consigna_nl": "Verdeel de rekening. Ieder heeft een geheime instructie.",
     "regla": "Je geheime instructie moet je volgen, maar je mag ze niet uitspreken. Wie zegt "
              "«ik heb weinig geld», heeft verloren — je moet het láten merken.",
+    "regla_es": (
+        "Tienes que seguir tu instrucción secreta, pero no puedes decirla. Quien diga «tengo poco "
+        "dinero» ha perdido: hay que dejar que se note."
+    ),
     "pasos": [("Coge tu instrucción secreta. No la enseñes.", "Neem je geheime instructie. Laat ze niet zien."),
               ("Mirad la cuenta juntos.", "Bekijk de rekening samen."),
               ("Negociad hasta que todos paguen algo.", "Onderhandel tot iedereen iets betaalt."),
@@ -2705,6 +2945,10 @@ U6_RETO_03 = {
     "consigna_nl": "Beschrijf het truitje op kleur en details. Je groep raadt de club en het land.",
     "regla": "De clubnaam en de stad zijn verboden. Alleen kleuren, strepen en kledingstukken. "
              "En elke beschrijving bevat minstens twee kledingwoorden.",
+    "regla_es": (
+        "El nombre del club y la ciudad están prohibidos. Solo colores, rayas y prendas. Y cada "
+        "descripción lleva dos palabras de ropa como mínimo."
+    ),
     "pasos": [("Coge una tarjeta de equipación.", "Neem een truitjeskaart."),
               ("Describe: colores, rayas, pantalón, medias.", "Beschrijf: kleuren, strepen, broek, kousen."),
               ("El grupo adivina club y país.", "De groep raadt club en land."),
@@ -2745,6 +2989,10 @@ U6_RETO_04 = {
                    "het bewijst.",
     "regla": "Elke conclusie heeft een bewijsstuk. «Ik denk dat hij jong is» telt niet; "
              "«es joven porque tiene cinco camisetas de grupos de música» wel.",
+    "regla_es": (
+        "Cada conclusión lleva una prueba. «Creo que es joven» no cuenta; «es joven porque tiene "
+        "cinco camisetas de grupos de música», sí."
+    ),
     "pasos": [("Lee el inventario entero.", "Lees de hele inventaris."),
               ("Busca lo que se repite y lo que falta.", "Zoek wat terugkeert en wat ontbreekt."),
               ("Escribe tres conclusiones con su prueba.", "Schrijf drie conclusies met hun bewijs.")],
@@ -2781,6 +3029,10 @@ U6_RETO_05 = {
     "consigna_nl": "Lees de gegevens en schrijf drie zinnen met «acabar de» over je laatste aankopen.",
     "regla": "Elke zin bevat «acabo de» plus een getal uit de tabel. Zonder cijfer is het "
              "een mening, geen conclusie.",
+    "regla_es": (
+        "Cada frase lleva «acabo de» y un número de la tabla. Sin cifra es una opinión, no una "
+        "conclusión."
+    ),
     "pasos": [("Leed la tabla. ¿Qué dato os sorprende?", "Lees de tabel. Welk cijfer verrast jullie?"),
               ("Pensad en vuestras tres últimas compras.", "Denk aan jullie drie laatste aankopen."),
               ("Escribid las frases con «acabar de» y el dato.", "Schrijf de zinnen met «acabar de» en het cijfer.")],
@@ -2816,6 +3068,10 @@ U6_RETO_07 = {
     "consigna_nl": "Schrijf het affiche met exact dertig woorden en minstens vier voornaamwoorden.",
     "regla": "Precies dertig — niet negenentwintig, niet eenendertig — en minstens vier keer "
              "lo, la, los of las. Tel na afloop hardop.",
+    "regla_es": (
+        "Treinta exactos, ni veintinueve ni treinta y uno, y por lo menos cuatro veces lo, la, "
+        "los o las. Cuéntalos en voz alta al final."
+    ),
     "pasos": [("Elegid una prenda y su precio.", "Kies een kledingstuk en zijn prijs."),
               ("Escribid el cartel sin contar.", "Schrijf het affiche zonder te tellen."),
               ("Ahora contad. ¿Sobran o faltan?", "Tel nu. Te veel of te weinig?"),
@@ -2849,6 +3105,10 @@ U6_RETO_06 = {
     "consigna_nl": "Reken de maat om en kies wat je door de telefoon zou zeggen.",
     "regla": "Je zegt niet het getal van je eigen systeem. Je moet omrekenen én de zin "
              "kiezen die in de winkel werkt.",
+    "regla_es": (
+        "No digas el número de tu propio sistema. Tienes que convertirlo y elegir la frase que "
+        "funciona en la tienda."
+    ),
     "pasos": [("Mira las tres tablas.", "Bekijk de drie tabellen."),
               ("Convierte y elige la frase correcta.", "Reken om en kies de juiste zin."),
               ("¿Fallas? Mira qué sistema has usado.", "Fout? Kijk welk systeem je gebruikte.")],
@@ -2896,6 +3156,10 @@ U6_RETO_09 = {
                    "terugkeert.",
     "regla": "Hetzelfde pronomen moet er drie keer in — en de naam van het kledingstuk mag "
              "maar één keer vallen. Daarna verwijs je er alleen nog naar.",
+    "regla_es": (
+        "El mismo pronombre tiene que salir tres veces, y el nombre de la prenda solo una. "
+        "Después ya solo te refieres a ella."
+    ),
     "pasos": [("Elegid la prenda. Decid su nombre una sola vez.", "Kies het kledingstuk. Noem het één keer."),
               ("Escribid el texto con tres pronombres.", "Schrijf de tekst met drie voornaamwoorden."),
               ("Grabad. Veinte segundos.", "Neem op. Twintig seconden."),
@@ -2929,6 +3193,10 @@ U6_RETO_10 = {
     "consigna_nl": "Beslis per geval en verantwoord met een voornaamwoord in de zin.",
     "regla": "Je antwoord bevat altijd het pronomen: «lo compro porque…» of «no la compro "
              "porque…». Een antwoord zonder pronomen telt niet.",
+    "regla_es": (
+        "Tu respuesta lleva siempre el pronombre: «lo compro porque…» o «no la compro porque…». "
+        "Una respuesta sin pronombre no cuenta."
+    ),
     "pasos": [("Lee el caso. No decidas todavía.", "Lees de casus. Beslis nog niet."),
               ("Elige y di por qué, con el pronombre.", "Kies en zeg waarom, met het voornaamwoord."),
               ("Comparad en grupo: ¿todos igual?", "Vergelijk in groep: iedereen hetzelfde?")],
@@ -2971,6 +3239,10 @@ U6_RETO_01 = {
     "consigna_nl": "Onderhandel tot jullie een deal hebben. Ieder heeft een geheime grens.",
     "regla": "De verkoper mag niet onder zijn bodemprijs, de koper niet boven zijn budget. "
              "En elk nieuw bod moet met een reden komen — een getal alleen telt niet.",
+    "regla_es": (
+        "El vendedor no puede bajar de su precio mínimo ni el comprador pasar de su presupuesto. "
+        "Y cada oferta nueva viene con una razón: un número solo no cuenta."
+    ),
     "pasos": [("Coge tu tarjeta: precio mínimo o presupuesto.", "Neem je kaart: bodemprijs of budget."),
               ("El vendedor empieza. Siempre alto.", "De verkoper begint. Altijd hoog."),
               ("Regatead con razones, no solo con números.", "Onderhandel met redenen, niet alleen met getallen."),
@@ -3006,6 +3278,10 @@ U6_RETO_02 = {
     "consigna_nl": "Krijg de ruil rond. De verkoper heeft drie weigeringen en jij drie argumenten.",
     "regla": "Je mag elk argument maar één keer gebruiken. Op wie in herhaling valt, hoeft "
              "de verkoper niet meer te antwoorden.",
+    "regla_es": (
+        "Cada argumento se usa una sola vez. A quien se repita, el vendedor ya no tiene que "
+        "contestarle."
+    ),
     "pasos": [("El cliente explica el problema.", "De klant legt het probleem uit."),
               ("El vendedor dice que no. Primera negativa.", "De verkoper zegt nee. Eerste weigering."),
               ("El cliente usa su siguiente argumento.", "De klant gebruikt zijn volgende argument."),
@@ -3042,6 +3318,10 @@ U6_RETO_08 = {
     "consigna_nl": "Speel je type zonder het te zeggen. De verkoper raadt op het einde.",
     "regla": "Je mag je type niet benoemen en niet overdrijven tot karikatuur. Het moet uit "
              "je vragen en je reacties blijken.",
+    "regla_es": (
+        "No puedes decir qué tipo de cliente eres ni exagerar hasta la caricatura. Tiene que "
+        "notarse en tus preguntas y en tus reacciones."
+    ),
     "pasos": [("Coge tu tarjeta de tipo. En secreto.", "Neem je typekaart. In het geheim."),
               ("Comprad algo. Cinco turnos como máximo.", "Koop iets. Maximaal vijf beurten."),
               ("El vendedor dice qué tipo cree que eres.", "De verkoper zegt welk type hij denkt."),
@@ -3097,6 +3377,10 @@ U7_RETO_01 = {
     "consigna_nl": "Zoek de drie leugens en schrijf de zin over die ze verraadt.",
     "regla": "Aanwijzen telt niet: je citeert de zin uit de advertentie én je zegt wat het "
              "plan écht toont, met hay of está. Een leugen zonder bewijszin blijft staan.",
+    "regla_es": (
+        "Señalar no cuenta: citas la frase del anuncio y dices qué muestra el plano de verdad, "
+        "con hay o está. Una mentira sin frase de prueba se queda en pie."
+    ),
     "pasos": [("Leed el anuncio entero antes de mirar el plano.",
                "Lees de hele advertentie vóór je naar het plan kijkt."),
               ("Comparad habitación por habitación.", "Vergelijk kamer per kamer."),
@@ -3144,6 +3428,10 @@ U7_RETO_04 = {
     "consigna_nl": "Beschrijf elke laag met hay en está, en zeg wat er niet meer is.",
     "regla": "Per laag minstens één zin met hay en één met está — en de laatste zin begint "
              "altijd met «Ya no hay…». Alles in het presente: je beschrijft een beeld, geen verleden.",
+    "regla_es": (
+        "Por capa, una frase con hay y otra con está como mínimo, y la última frase empieza "
+        "siempre por «Ya no hay…». Todo en presente: describes una imagen, no un pasado."
+    ),
     "pasos": [("Mira las tres capas en orden.", "Bekijk de drie lagen op volgorde."),
               ("Describe qué hay y dónde está, capa por capa.",
                "Beschrijf wat er is en waar het staat, laag per laag."),
@@ -3187,6 +3475,10 @@ U7_RETO_02 = {
     "regla": "De ene helft van het paar mag niet kijken, de andere niet wijzen. Alleen "
              "voorzetsels: al lado de, enfrente de, debajo de, entre, en el rincón. «Daar» "
              "bestaat niet.",
+    "regla_es": (
+        "Uno de la pareja no puede mirar y el otro no puede señalar. Solo preposiciones: al lado "
+        "de, enfrente de, debajo de, entre, en el rincón. «Ahí» no existe."
+    ),
     "pasos": [("A mira su plano. B tapa el suyo.", "A kijkt naar zijn plan. B dekt het zijne af."),
               ("A dicta mueble por mueble.", "A dicteert meubel per meubel."),
               ("B puede preguntar, pero solo en español.",
@@ -3234,6 +3526,10 @@ U7_RETO_06 = {
     "consigna_nl": "Schrijf de route in gebiedende wijs. Eén vage opdracht en de robot botst.",
     "regla": "Elke stap is één imperatief met één handeling. «Ga naar de bakker» is verboden — "
              "de robot weet niet waar dat is. Getallen en straatnamen mogen, gebaren niet.",
+    "regla_es": (
+        "Cada paso es un imperativo con una sola acción. «Ve a la panadería» está prohibido: el "
+        "robot no sabe dónde está. Números y nombres de calle sí; gestos no."
+    ),
     "pasos": [("Mirad el plano y la meta.", "Bekijk het plan en het doel."),
               ("Escribid la ruta, orden por orden.", "Schrijf de route, opdracht per opdracht."),
               ("Otra pareja «ejecuta» vuestras órdenes al pie de la letra.",
@@ -3275,6 +3571,10 @@ U7_RETO_05 = {
     "consigna_nl": "Neem een audiogids van je eigen straat op met minstens vijf plaatsvoorzetsels.",
     "regla": "Museumtoon: rustig, in de tweede persoon («ahora está usted delante de…»). Minstens "
              "vijf verschillende voorzetsels, en geen enkele twee keer.",
+    "regla_es": (
+        "Tono de museo: tranquilo, en segunda persona («ahora está usted delante de…»). Cinco "
+        "preposiciones distintas como mínimo, y ninguna dos veces."
+    ),
     "pasos": [("Escucha el modelo.", "Luister naar het model."),
               ("Apunta cinco puntos de tu calle y su preposición.",
                "Noteer vijf punten in je straat en hun voorzetsel."),
@@ -3311,6 +3611,10 @@ U7_RETO_09 = {
     "consigna_nl": "Kies wat er gebeurt en in welke kamer.",
     "regla": "Je antwoordt altijd met estar + gerundio én met de kamer. «Cocina» alleen is geen "
              "antwoord; «alguien está cocinando en la cocina» wel.",
+    "regla_es": (
+        "Respondes siempre con estar + gerundio y con la habitación. «Cocina» no es una "
+        "respuesta; «alguien está cocinando en la cocina», sí."
+    ),
     "pasos": [("Escucha el ruido entero.", "Luister het geluid helemaal af."),
               ("Elige la acción, no el objeto.", "Kies de handeling, niet het voorwerp."),
               ("Comprueba: ¿la habitación encaja?", "Controleer: past de kamer erbij?")],
@@ -3379,6 +3683,11 @@ U7_RETO_10 = {
     "consigna_nl": "Neem de instructies op met alleen wat je kunt tellen of voelen.",
     "regla": "Kleuren, «daar», «het grote gebouw» en wijzen bestaan niet. Wél: ordinaltallen "
              "(el tercer piso, la segunda puerta), aantallen treden, links/rechts en wat je hoort of voelt.",
+    "regla_es": (
+        "Los colores, «ahí», «el edificio grande» y señalar no existen. Sí valen: los ordinales "
+        "(el tercer piso, la segunda puerta), el número de escalones, izquierda y derecha, y lo "
+        "que oyes o notas."
+    ),
     "pasos": [("Escucha el modelo y fíjate en lo que NO dice.",
                "Luister naar het model en let op wat het níet zegt."),
               ("Escribe tu ruta con números ordinales.",
@@ -3420,6 +3729,10 @@ U7_RETO_03 = {
     "consigna_nl": "Kies wat jullie bouwen en verdedig waarom wél het park en niet de parking.",
     "regla": "Twaalf punten, geen dertien. Elke keuze wordt verdedigd met «hay que…» of «es "
              "importante porque…» — een keuze zonder reden wordt geschrapt door de klas.",
+    "regla_es": (
+        "Doce puntos, no trece. Cada elección se defiende con «hay que…» o «es importante "
+        "porque…»; una elección sin razón la tacha la clase."
+    ),
     "pasos": [("Mirad la manzana vacía y la lista de precios.",
                "Bekijk het lege blok en de prijslijst."),
               ("Negociad: doce puntos, ni uno más.", "Onderhandel: twaalf punten, geen enkel meer."),
@@ -3464,6 +3777,10 @@ U7_RETO_07 = {
     "consigna_nl": "Beschrijf je huis van de toekomst enkel in het presente: en mi casa hay…",
     "regla": "Alles in de tegenwoordige tijd, alsof je er nu rondloopt. Geen «zal», geen «gaat "
              "zijn». Wél «hay», «está», «tiene» en «se puede».",
+    "regla_es": (
+        "Todo en presente, como si estuvieras allí ahora. Nada de «será» ni «va a ser». Sí: "
+        "«hay», «está», «tiene» y «se puede»."
+    ),
     "pasos": [("Piensa en tres cosas que hoy no existen.",
                "Denk aan drie dingen die vandaag niet bestaan."),
               ("Descríbelas en presente, como en una foto de hoy.",
@@ -3505,6 +3822,10 @@ U7_RETO_08 = {
     "consigna_nl": "Schrijf beide briefjes. Allebei beleefd, elk met twee imperatieven.",
     "regla": "Geen scheldwoorden, geen dreigementen, geen uitroeptekens. Elke nota bevat twee "
              "imperatieven én één zin die de ander gelijk geeft («entiendo que…»).",
+    "regla_es": (
+        "Sin insultos, sin amenazas y sin signos de exclamación. Cada nota lleva dos imperativos "
+        "y una frase que le da la razón al otro («entiendo que…»)."
+    ),
     "pasos": [("Leed la situación y elegid papel: vecino de arriba o de abajo.",
                "Lees de situatie en kies een rol: buur boven of beneden."),
               ("Escribid vuestra nota. Educada, con dos imperativos.",
@@ -3553,6 +3874,10 @@ U8_RETO_01 = {
     "consigna_nl": "Reconstrueer waar hij geweest is en wat hij gedaan heeft. Elke conclusie mét bewijs.",
     "regla": "Elke conclusie staat in het perfecto compuesto én noemt het voorwerp dat haar "
              "bewijst. «Ha ido a la playa» zonder voorwerp telt niet.",
+    "regla_es": (
+        "Cada conclusión va en pretérito perfecto y nombra el objeto que la demuestra. «Ha ido a "
+        "la playa» sin objeto no cuenta."
+    ),
     "pasos": [("Vaciad la maleta: leed los quince objetos.",
                "Maak de koffer leeg: lees de vijftien voorwerpen."),
               ("Agrupad lo que va junto.", "Groepeer wat bij elkaar hoort."),
@@ -3607,6 +3932,10 @@ U8_RETO_04 = {
     "consigna_nl": "Schrijf zes zinnen in het perfecto. Vijf geloofwaardige en één te veel verzonnen.",
     "regla": "Alle zes de zinnen staan in het perfecto compuesto. Precies één zin is te mooi om "
              "waar te zijn — en jij weet welke. Niemand anders mag het horen aan je stem.",
+    "regla_es": (
+        "Las seis frases van en pretérito perfecto. Exactamente una es demasiado bonita para ser "
+        "verdad, y tú sabes cuál. Que no se te note en la voz."
+    ),
     "pasos": [("Elige una de las cuatro fotos.", "Kies een van de vier foto's."),
               ("Escribe seis frases: qué has hecho allí.",
                "Schrijf zes zinnen: wat je daar gedaan hebt."),
@@ -3650,6 +3979,10 @@ U8_RETO_05 = {
     "consigna_nl": "Lees de tabel en schrijf drie conclusies met ha subido / ha bajado.",
     "regla": "Elke conclusie bevat een cijfer uit de tabel én een werkwoord in het perfecto. "
              "«Er komen te veel mensen» is een mening; «el número ha subido de … a …» is een conclusie.",
+    "regla_es": (
+        "Cada conclusión lleva una cifra de la tabla y un verbo en perfecto. «Viene demasiada "
+        "gente» es una opinión; «el número ha subido de … a …» es una conclusión."
+    ),
     "pasos": [("Leed la tabla entera antes de escribir.",
                "Lees de hele tabel vóór je schrijft."),
               ("Buscad la subida más grande y la única bajada.",
@@ -3697,6 +4030,10 @@ U8_RETO_08 = {
     "consigna_nl": "Schrijf acht zinnen in het perfecto over je jaar, met acht verschillende participia.",
     "regla": "Ser en estar zijn verboden — dus geen «he sido feliz» en geen «he estado en». "
              "Alleen handelingswerkwoorden, en geen enkel participium twee keer.",
+    "regla_es": (
+        "Ser y estar están prohibidos: nada de «he sido feliz» ni «he estado en». Solo verbos de "
+        "acción, y ningún participio dos veces."
+    ),
     "pasos": [("Piensa en ocho cosas que has hecho, no en cómo te has sentido.",
                "Denk aan acht dingen die je gedaan hebt, niet aan hoe je je voelde."),
               ("Escribe cada una con un participio distinto.",
@@ -3741,6 +4078,10 @@ U8_RETO_03 = {
     "consigna_nl": "Neem het weerbericht van drie Peruaanse steden op, gebaren inbegrepen.",
     "regla": "Eén minuut, drie steden, geen pauze langer dan drie seconden. Elke stad krijgt een "
              "temperatuur, een weertype en één advies («lleva…»).",
+    "regla_es": (
+        "Un minuto, tres ciudades, sin pausas de más de tres segundos. Cada ciudad lleva una "
+        "temperatura, un tipo de tiempo y un consejo («lleva…»)."
+    ),
     "pasos": [("Escucha el modelo y fíjate en el ritmo.",
                "Luister naar het model en let op het tempo."),
               ("Reparte las ciudades: uno presenta, otro cronometra.",
@@ -3782,6 +4123,10 @@ U8_RETO_09 = {
     "consigna_nl": "Schrijf de kaart met ya, todavía no en nunca — elk één keer.",
     "regla": "Alle drie de marcadores komen erin, elk precies één keer, en elk in een zin die "
              "écht over jou gaat. Een lijstje met de drie woorden is geen kaart.",
+    "regla_es": (
+        "Los tres marcadores entran, cada uno una sola vez, y cada uno en una frase que hable de "
+        "ti de verdad. Una lista con las tres palabras no es una postal."
+    ),
     "pasos": [("Piensa: ¿qué es lo más inesperado que has hecho desde septiembre?",
                "Denk na: wat heb je gedaan dat je in september niet zag aankomen?"),
               ("Escribe cinco frases: saludo, tres noticias, despedida.",
@@ -3820,6 +4165,10 @@ U8_RETO_10 = {
     "consigna_nl": "Vat elk fragment samen in twee perfecto-zinnen. Vertaal niet woord voor woord.",
     "regla": "Twee zinnen per fragment, geen drie. Woord-voor-woord vertalen is fout, ook als het "
              "klopt: je vertelt wat er gebeurd is, niet hoe het er stond.",
+    "regla_es": (
+        "Dos frases por fragmento, no tres. Traducir palabra por palabra está mal, aunque salga "
+        "bien: cuentas lo que ha pasado, no cómo estaba escrito."
+    ),
     "pasos": [("Lee el fragmento entero.", "Lees het hele fragment."),
               ("Cierra el texto. ¿Qué ha pasado, en dos frases?",
                "Sluit de tekst. Wat is er gebeurd, in twee zinnen?"),
@@ -3887,6 +4236,10 @@ U8_RETO_02 = {
     "consigna_nl": "Zeg iets wat jij nooit gedaan hebt maar waarvan je denkt dat anderen het wél deden.",
     "regla": "Elke bewering begint met «Nunca he» plus een participium — en je moet zelf "
              "verliezen als je liegt. Wie een zin zonder perfecto zegt, verliest ook een vinger.",
+    "regla_es": (
+        "Cada afirmación empieza por «Nunca he» y un participio, y pierdes tú si mientes. Quien "
+        "diga una frase sin perfecto también pierde un dedo."
+    ),
     "pasos": [("Todos con cinco dedos arriba.", "Iedereen vijf vingers omhoog."),
               ("Por turnos: «Nunca he …».", "Om beurten: «Nunca he …»."),
               ("Quien sí lo ha hecho, baja un dedo y lo cuenta en una frase.",
@@ -3928,6 +4281,10 @@ U8_RETO_06 = {
     "consigna_nl": "Bereid vijf perfecto-vragen voor, luister en vat samen wat er veranderd is.",
     "regla": "Alle vijf de vragen staan in het perfecto compuesto en mogen niet met ja of nee te "
              "beantwoorden zijn. Een vraag die «sí» oplevert, telt niet mee.",
+    "regla_es": (
+        "Las cinco preguntas van en pretérito perfecto y no se pueden responder con sí o no. Una "
+        "pregunta que dé «sí» no cuenta."
+    ),
     "pasos": [("En grupo: escribid cinco preguntas en perfecto.",
                "In groep: schrijf vijf vragen in het perfecto."),
               ("Comprobad: ninguna se contesta con sí o no.",
@@ -3974,6 +4331,10 @@ U8_RETO_07 = {
     "consigna_nl": "Beslis samen op welke dag jullie vertrekken en verdedig het met het weer.",
     "regla": "Elke stem wordt verantwoord met een weerdetail én een gevolg («si llueve, el "
              "camino…»). Een stem zonder weerreden telt niet mee.",
+    "regla_es": (
+        "Cada voto se justifica con un detalle del tiempo y una consecuencia («si llueve, el "
+        "camino…»). Un voto sin razón meteorológica no cuenta."
+    ),
     "pasos": [("Leed los tres pronósticos.", "Lees de drie voorspellingen."),
               ("Cada uno defiende un día. Con el tiempo, no con el gusto.",
                "Iedereen verdedigt één dag. Met het weer, niet met een voorkeur."),
@@ -4028,6 +4389,10 @@ P0_RETO_01 = {
     "consigna_nl": "Kruis de foute zinnen aan, verbeter ze en zeg welke regel er misgaat.",
     "regla": "Verbeteren volstaat niet: bij elke fout schrijf je in één woord welke regel het "
              "betreft (persona · irregular · género · plural · ser/estar). Zonder die naam telt hij niet.",
+    "regla_es": (
+        "Corregir no basta: en cada error escribes en una palabra de qué regla se trata (persona "
+        "· irregular · género · plural · ser/estar). Sin ese nombre no cuenta."
+    ),
     "pasos": [("Lee las diez frases de una vez.", "Lees de tien zinnen in één keer."),
               ("Marca las que no suenan bien.", "Kruis aan wat niet goed klinkt."),
               ("Corrige y nombra la regla.", "Verbeter en benoem de regel."),
@@ -4075,6 +4440,10 @@ P0_RETO_02 = {
     "consigna_nl": "Raad de fiche van je buur met ja-of-nee-vragen.",
     "regla": "Alleen ja/nee-vragen, en de landnaam mag pas in je láátste vraag vallen. Vraag je "
              "«¿es de México?» als tweede vraag, dan heb je gegokt in plaats van uitgesloten.",
+    "regla_es": (
+        "Solo preguntas de sí o no, y el nombre del país solo puede aparecer en tu última "
+        "pregunta. Si preguntas «¿es de México?» la segunda, has adivinado en vez de descartar."
+    ),
     "pasos": [("Cada uno coge una ficha en secreto.", "Elk neemt in het geheim een fiche."),
               ("Preguntad por turnos. Solo sí o no.", "Vraag om beurten. Alleen ja of nee."),
               ("Apunta lo que descartas.", "Noteer wat je uitsluit."),
@@ -4137,6 +4506,10 @@ P0_RETO_04 = {
     "consigna_nl": "Lees de tabel en schrijf drie zinnen met «se habla» en een cijfer.",
     "regla": "Elke zin bevat «se habla» of «se hablan» én een getal uit de tabel. En let op het "
              "meervoud: «se hablan dos lenguas» — het werkwoord volgt het aantal talen, niet de spreker.",
+    "regla_es": (
+        "Cada frase lleva «se habla» o «se hablan» y un número de la tabla. Y ojo con el plural: "
+        "«se hablan dos lenguas»; el verbo sigue al número de lenguas, no al hablante."
+    ),
     "pasos": [("Leed la tabla entera.", "Lees de hele tabel."),
               ("Buscad la lengua con más hablantes que no es el español.",
                "Zoek de taal met de meeste sprekers die niet het Spaans is."),
@@ -4189,6 +4562,10 @@ P0_RETO_05 = {
     "consigna_nl": "Lees de zes paren in hun context en leid af wat elke plaats betekent.",
     "regla": "Je mag de regel niet opzoeken en niet vragen. Je leidt hem af uit de zes contexten "
              "en schrijft hem in één zin op. Pas dan vergelijk je met een ander duo.",
+    "regla_es": (
+        "No puedes buscar la regla ni preguntarla. La deduces de los seis contextos y la escribes "
+        "en una frase. Solo después la comparas con otra pareja."
+    ),
     "pasos": [("Leed los seis pares con su contexto.", "Lees de zes paren met hun context."),
               ("Escribid qué significa cada posición.", "Schrijf op wat elke plaats betekent."),
               ("Formulad la regla en una frase.", "Formuleer de regel in één zin."),
@@ -4239,6 +4616,10 @@ P0_RETO_06 = {
     "consigna_nl": "Neem zes zinnen op die beginnen met «No soy…» of «Nunca…». De klas raadt wie je bent.",
     "regla": "Elke zin is een ontkenning, en elk adjectief komt maar één keer voor. «No soy alto» "
              "en daarna «no soy bajo» mag niet: je moet echt kiezen wat je níet bent.",
+    "regla_es": (
+        "Cada frase es una negación, y cada adjetivo aparece una sola vez. «No soy alto» y luego "
+        "«no soy bajo» no vale: tienes que elegir de verdad lo que no eres."
+    ),
     "pasos": [("Piensa en seis cosas que no eres o no haces.",
                "Denk aan zes dingen die je niet bent of niet doet."),
               ("Cuida la concordancia: no soy tímido / tímida.",
@@ -4277,6 +4658,11 @@ P0_RETO_07 = {
     "regla": "Dertig seconden, en je publiek kent nog geen Spaans. Dus: korte zinnen, geen "
              "jargon, en elk moeilijk woord meteen uitgelegd met een ander Spaans woord — niet "
              "met Nederlands.",
+    "regla_es": (
+        "Treinta segundos, y tu público todavía no sabe español. Así que: frases cortas, sin "
+        "jerga, y cada palabra difícil explicada al momento con otra palabra española, no con "
+        "neerlandés."
+    ),
     "pasos": [("Pensad en quién os escucha: alguien que empieza hoy.",
                "Denk aan wie luistert: iemand die vandaag begint."),
               ("Escribid cinco frases cortas.", "Schrijf vijf korte zinnen."),
@@ -4318,6 +4704,10 @@ P0_RETO_08 = {
     "consigna_nl": "Kies de beste manier om verduidelijking te vragen. In het Spaans, altijd.",
     "regla": "Niet doen alsof je het begrijpt, en niet overschakelen op het Engels. Je vraagt in "
              "het Spaans wat je niet snapt — en je zegt erbij wát je wél begrepen hebt.",
+    "regla_es": (
+        "No hagas como que lo entiendes y no cambies al inglés. Preguntas en español lo que no "
+        "entiendes, y dices también lo que sí has entendido."
+    ),
     "pasos": [("Lee el correo entero.", "Lees de hele mail."),
               ("Marca lo que no entiendes.", "Markeer wat je niet begrijpt."),
               ("Elige cómo lo preguntas.", "Kies hoe je het vraagt.")],
@@ -4374,6 +4764,10 @@ P0_RETO_03 = {
     "consigna_nl": "Doe het sollicitatiegesprek. Alles in het presente, met één argument per antwoord.",
     "regla": "Alles in het presente — geen verleden, geen toekomst. En op elke vraag antwoord je "
              "met een reden («porque…»), nooit met alleen «sí».",
+    "regla_es": (
+        "Todo en presente: ni pasado ni futuro. Y a cada pregunta respondes con una razón "
+        "(«porque…»), nunca solo «sí»."
+    ),
     "pasos": [("Elegid un trabajo absurdo.", "Kies een absurde baan."),
               ("El entrevistador elige cinco preguntas.", "De interviewer kiest vijf vragen."),
               ("El candidato contesta en presente, con porque.",
@@ -4420,6 +4814,10 @@ P0_RETO_09 = {
     "consigna_nl": "Presenteer je land in vijf cijfers. De klas raadt welk het is.",
     "regla": "De landnaam, de hoofdstad en de vlag zijn verboden. Alleen cijfers, en elk cijfer "
              "krijgt een zin met een werkwoord — een lijstje getallen is geen presentatie.",
+    "regla_es": (
+        "El nombre del país, la capital y la bandera están prohibidos. Solo cifras, y cada cifra "
+        "lleva una frase con un verbo: una lista de números no es una presentación."
+    ),
     "pasos": [("Elige un país hispanohablante.", "Kies een Spaanstalig land."),
               ("Busca cinco cifras de verdad.", "Zoek vijf echte cijfers."),
               ("Escribe una frase por cifra.", "Schrijf één zin per cijfer."),
@@ -4465,6 +4863,11 @@ P0_RETO_10 = {
     "regla": "Elk voorstel bevat een zin met «es» of «está» — «es importante que hablemos "
              "español» mag niet, want dat is subjuntivo; «es importante hablar español» wel. "
              "Een voorstel zonder ser of estar komt niet op het bord.",
+    "regla_es": (
+        "Cada propuesta lleva una frase con «es» o «está». «Es importante que hablemos español» "
+        "no vale, porque es subjuntivo; «es importante hablar español», sí. Una propuesta sin ser "
+        "ni estar no sube a la pizarra."
+    ),
     "pasos": [("Cada uno escribe dos propuestas.", "Iedereen schrijft twee voorstellen."),
               ("Se leen en voz alta. Solo las que llevan ser o estar.",
                "Ze worden voorgelezen. Alleen die met ser of estar."),
@@ -4517,6 +4920,10 @@ P1_RETO_01 = {
     "consigna_nl": "Reconstrueer zijn hele dag en markeer welke reflexieve werkwoorden van uur veranderen.",
     "regla": "Je mag geen enkel uur verzinnen: elk uur volgt uit een gegeven. En elke zin bevat "
              "een reflexief werkwoord met het pronomen op de juiste plaats.",
+    "regla_es": (
+        "No puedes inventarte ninguna hora: cada hora sale de un dato. Y cada frase lleva un "
+        "verbo reflexivo con el pronombre en su sitio."
+    ),
     "pasos": [("Leed los ocho datos sueltos.", "Lees de acht losse gegevens."),
               ("Ordenad el día de las 18:00 a las 10:00.",
                "Zet de dag op volgorde, van 18 u tot 10 u."),
@@ -4568,6 +4975,10 @@ P1_RETO_03 = {
     "consigna_nl": "Ontdek de vijf verschillen door met drie klasgenoten te praten. Toon je agenda niet.",
     "regla": "Niemand mag zijn agenda laten zien. Alle uren worden hardop in woorden gezegd — "
              "«las siete y media», nooit «7.30» — en je noteert alleen wat je hóórt.",
+    "regla_es": (
+        "Nadie enseña su agenda. Todas las horas se dicen en voz alta y con letra — «las siete y "
+        "media», nunca «7.30» — y solo anotas lo que oyes."
+    ),
     "pasos": [("Cada uno recibe una agenda. Cuatro son distintas.",
                "Elk krijgt een agenda. Vier zijn verschillend."),
               ("Preguntad y comparad, sin enseñar nada.",
@@ -4621,6 +5032,10 @@ P1_RETO_05 = {
     "consigna_nl": "Schrijf de dag van je voorwerp in de ik-vorm, met zes reflexieve werkwoorden.",
     "regla": "Je bent het voorwerp: alles staat in de ik-vorm. Minstens zes reflexieve "
              "werkwoorden, en minstens twee ervan gebruik je figuurlijk («me apago», «me pierdo»).",
+    "regla_es": (
+        "Tú eres el objeto: todo en primera persona. Seis verbos reflexivos como mínimo, y dos de "
+        "ellos en sentido figurado («me apago», «me pierdo»)."
+    ),
     "pasos": [("Elige tu objeto: móvil, bici, mochila, despertador…",
                "Kies je voorwerp: gsm, fiets, rugzak, wekker…"),
               ("Piensa en su día, hora por hora.", "Denk aan zijn dag, uur per uur."),
@@ -4667,6 +5082,11 @@ P1_RETO_09 = {
     "regla": "Elke instructie heeft een uur én een reflexief werkwoord. En één regel is "
              "verplicht: «lo que no debes hacer» — precies één ding dat je vervanger absoluut "
              "níet mag doen.",
+    "regla_es": (
+        "Cada instrucción lleva una hora y un verbo reflexivo. Y hay una línea obligatoria: «lo "
+        "que no debes hacer», exactamente una cosa que tu sustituto no puede hacer de ninguna "
+        "manera."
+    ),
     "pasos": [("Escribe tu día de la mañana a la noche.",
                "Schrijf je dag van 's ochtends tot 's avonds."),
               ("Añade la hora a cada instrucción.", "Zet een uur bij elke instructie."),
@@ -4712,6 +5132,10 @@ P1_RETO_02 = {
     "consigna_nl": "Kies ser of estar en zeg wat in het beeld het bewijst.",
     "regla": "Kiezen volstaat niet: bij elke keuze hoort het detail uit de scène dat het bewijst. "
              "Wie kiest op gevoel, haalt de helft — en dat is precies de valstrik van dit paar.",
+    "regla_es": (
+        "Elegir no basta: cada elección va con el detalle de la escena que la demuestra. Quien "
+        "elija por intuición acierta la mitad, y esa es justo la trampa de esta pareja."
+    ),
     "pasos": [("Lee la escena entera, no solo la frase.",
                "Lees de hele scène, niet alleen de zin."),
               ("Decide: ¿característica o momento?", "Beslis: eigenschap of moment?"),
@@ -4786,6 +5210,10 @@ P1_RETO_08 = {
     "consigna_nl": "Neem twee minuten op over vijf willekeurige minuten uit je dag.",
     "regla": "Er mag niets spannends gebeuren — geen ongeluk, geen verrassing. Wat het boeiend "
              "maakt zijn de conectoren: minstens zes verschillende, en geen twee keer dezelfde.",
+    "regla_es": (
+        "No puede pasar nada emocionante: ni un accidente ni una sorpresa. Lo que lo hace "
+        "interesante son los conectores: seis distintos como mínimo, y ninguno dos veces."
+    ),
     "pasos": [("Elige cinco minutos aburridos: la cola del súper, el bus, el pasillo.",
                "Kies vijf saaie minuten: de rij in de winkel, de bus, de gang."),
               ("Escribe qué pasa, en orden.", "Schrijf op wat er gebeurt, op volgorde."),
@@ -4827,6 +5255,10 @@ P1_RETO_10 = {
     "consigna_nl": "Vind het enige mogelijke moment — of bewijs dat het niet bestaat.",
     "regla": "Niemand mag een afspraak schrappen of verzetten. Je zoekt binnen wat er is, en je "
              "verantwoordt elke uitsluiting met het uur én de reden.",
+    "regla_es": (
+        "Nadie puede quitar ni cambiar una cita. Buscas dentro de lo que hay, y justificas cada "
+        "descarte con la hora y la razón."
+    ),
     "pasos": [("Leed las cuatro agendas.", "Lees de vier agenda's."),
               ("Descartad hora por hora, en voz alta.", "Sluit uur per uur uit, hardop."),
               ("Elegid el momento posible.", "Kies het mogelijke moment.")],
@@ -4887,6 +5319,10 @@ P1_RETO_04 = {
     "regla": "De bemiddelaar mag pas een oplossing voorstellen nadat hij béide standpunten heeft "
              "samengevat — in de derde persoon, met reflexieve werkwoorden. Vóór die samenvatting "
              "is elk voorstel ongeldig.",
+    "regla_es": (
+        "El mediador solo puede proponer una solución después de resumir las dos posturas, en "
+        "tercera persona y con verbos reflexivos. Antes de ese resumen, toda propuesta es nula."
+    ),
     "pasos": [("Repartid los papeles: A, B y mediador/-a.",
                "Verdeel de rollen: A, B en bemiddelaar."),
               ("A y B cuentan su rutina y su queja.",
@@ -4939,6 +5375,10 @@ P1_RETO_06 = {
     "consigna_nl": "Stem anoniem, maak de grafiek en beschrijf de week met estar.",
     "regla": "Alles anoniem, en elke conclusie gebruikt «estar» met een percentage of een aantal. "
              "«La clase es cansada» is fout in twee opzichten — vorm én inhoud.",
+    "regla_es": (
+        "Todo anónimo, y cada conclusión usa «estar» con un porcentaje o un número. «La clase es "
+        "cansada» está mal por dos razones: la forma y el contenido."
+    ),
     "pasos": [("Cada uno vota en anónimo: ¿cómo estás hoy, del uno al cinco?",
                "Iedereen stemt anoniem: hoe voel je je vandaag, van één tot vijf?"),
               ("Contad y haced el gráfico en la pizarra.",
@@ -4983,6 +5423,10 @@ P1_RETO_07 = {
     "consigna_nl": "Vergelijk een extreme routine met de jouwe en zeg wat jou onmogelijk lijkt.",
     "regla": "Elke vergelijking noemt twee uren: het zijne en het jouwe. «Se levanta muy "
              "temprano» telt niet; «se levanta a las cuatro y yo a las siete» wel.",
+    "regla_es": (
+        "Cada comparación nombra dos horas: la suya y la tuya. «Se levanta muy temprano» no "
+        "cuenta; «se levanta a las cuatro y yo a las siete», sí."
+    ),
     "pasos": [("Elegid una rutina extrema.", "Kies een extreme routine."),
               ("Comparad hora por hora con la vuestra.",
                "Vergelijk uur per uur met die van jullie."),
@@ -5042,6 +5486,10 @@ P2_RETO_01 = {
     "consigna_nl": "Leg de alibi's naast de plattegrond en zeg wie niet kon zijn waar hij zegt.",
     "regla": "Elke beschuldiging staat in estar + gerundio én noemt de kamer. En je hebt twee "
              "verklaringen nodig die elkaar tegenspreken — één rare zin is geen bewijs.",
+    "regla_es": (
+        "Cada acusación va en estar + gerundio y nombra la habitación. Y necesitas dos "
+        "declaraciones que se contradigan: una frase rara no es una prueba."
+    ),
     "pasos": [("Leed las cuatro coartadas.", "Lees de vier alibi's."),
               ("Situadlas en el plano, habitación por habitación.",
                "Zet ze op het plan, kamer per kamer."),
@@ -5098,6 +5546,10 @@ P2_RETO_04 = {
     "consigna_nl": "Vergelijk de cijfers en schrijf drie conclusies met hay en está.",
     "regla": "Elke conclusie bevat een cijfer én «hay» of «está». En één van de drie moet over "
              "jóuw eigen situatie gaan — anders blijft het een tabel in plaats van een inzicht.",
+    "regla_es": (
+        "Cada conclusión lleva una cifra y «hay» o «está». Y una de las tres tiene que ser sobre "
+        "tu propia situación; si no, sigue siendo una tabla y no una idea."
+    ),
     "pasos": [("Leed la tabla entera.", "Lees de hele tabel."),
               ("Medid vuestra propia habitación, más o menos.",
                "Meet je eigen kamer, ongeveer."),
@@ -5146,6 +5598,10 @@ P2_RETO_06 = {
     "consigna_nl": "Schrijf tien regels met alleen licht, geluid, afstand en temperatuur.",
     "regla": "Geen enkel voorwerp bij naam. Geen cama, geen mesa, geen ventana. Wél: waar het "
              "licht vandaan komt, wat je hoort, hoe ver iets is en of het er koud is.",
+    "regla_es": (
+        "Ningún objeto por su nombre. Ni cama, ni mesa, ni ventana. Sí: de dónde viene la luz, "
+        "qué se oye, a qué distancia está algo y si hace frío."
+    ),
     "pasos": [("Cierra los ojos y piensa en una habitación real.",
                "Sluit je ogen en denk aan een echte kamer."),
               ("Apunta lo que se oye, no lo que se ve.",
@@ -5186,6 +5642,10 @@ P2_RETO_10 = {
     "consigna_nl": "Onderhandel over de tien en praat erover met voornaamwoorden, niet met namen.",
     "regla": "Vanaf de tweede keer dat je iets noemt, gebruik je een pronomen: «la nevera → la "
              "llevamos». Wie het zelfstandig naamwoord blijft herhalen, verliest zijn beurt.",
+    "regla_es": (
+        "A partir de la segunda vez que nombras algo, usas un pronombre: «la nevera → la "
+        "llevamos». Quien siga repitiendo el sustantivo pierde el turno."
+    ),
     "pasos": [("Cada uno elige tres cosas de la lista.", "Elk kiest drie dingen uit de lijst."),
               ("Defended cada una en una frase.", "Verdedig elk in één zin."),
               ("A partir de la segunda mención: pronombre.",
@@ -5227,6 +5687,10 @@ P2_RETO_03 = {
     "consigna_nl": "Neem je beschrijving op: wat je ziet, wat je hoort, wat iemand aan het doen is.",
     "regla": "Minstens vijf zinnen met estar + gerundio, en geen enkele met «creo que». Je "
              "beschrijft wat er gebeurt, je speculeert niet — dat komt pas op het einde.",
+    "regla_es": (
+        "Cinco frases con estar + gerundio como mínimo, y ninguna con «creo que». Describes lo "
+        "que pasa, no especulas: eso llega al final."
+    ),
     "pasos": [("Escucha el modelo.", "Luister naar het model."),
               ("Describe lo que se ve y lo que se oye.",
                "Beschrijf wat je ziet en wat je hoort."),
@@ -5265,6 +5729,10 @@ P2_RETO_07 = {
     "consigna_nl": "Kies wat er gebeurt en op welke verdieping.",
     "regla": "Je antwoordt met estar + gerundio én met het rangtelwoord van de verdieping. En "
              "let op de apócope: «el tercer piso», niet «el tercero piso».",
+    "regla_es": (
+        "Respondes con estar + gerundio y con el ordinal del piso. Y ojo con la apócope: «el "
+        "tercer piso», no «el tercero piso»."
+    ),
     "pasos": [("Escucha el ruido entero.", "Luister het geluid helemaal af."),
               ("Piensa: ¿arriba o abajo? El sonido lo dice.",
                "Denk na: boven of beneden? Het geluid verraadt het."),
@@ -5333,6 +5801,10 @@ P2_RETO_08 = {
     "consigna_nl": "Kies de uitleg die Valen écht zou begrijpen.",
     "regla": "Je legt uit, je vertaalt niet. Geen Nederlandse woorden, en geen uitleg die "
              "veronderstelt dat de ander al weet hoe een Vlaams huis eruitziet.",
+    "regla_es": (
+        "Explicas, no traduces. Sin palabras neerlandesas, y sin explicaciones que den por hecho "
+        "que el otro ya sabe cómo es una casa flamenca."
+    ),
     "pasos": [("Lee lo que Valen no entiende.", "Lees wat Valen niet begrijpt."),
               ("Elige la mejor explicación.", "Kies de beste uitleg."),
               ("Fíjate: la más corta no siempre es la más clara.",
@@ -5393,6 +5865,10 @@ P2_RETO_02 = {
     "consigna_nl": "Schrijf de advertentie met de zes gebreken erin, en zonder te liegen.",
     "regla": "Alle zes de gebreken staan erin, letterlijk. Je mag ze omkaderen maar niet "
              "weglaten, en je mag niets verzinnen dat er niet is.",
+    "regla_es": (
+        "Los seis defectos entran, tal cual. Puedes enmarcarlos, pero no quitarlos, y no puedes "
+        "inventarte nada que no esté."
+    ),
     "pasos": [("Leed el piso y sus seis defectos.", "Lees het appartement en zijn zes gebreken."),
               ("Buscad para cada defecto su lado bueno.",
                "Zoek bij elk gebrek de goede kant."),
@@ -5438,6 +5914,10 @@ P2_RETO_05 = {
     "regla": "Vijfhonderd euro, geen cent meer. En elke aankoop wordt verdedigd met een "
              "plaatsbepaling: «la estantería, encima del escritorio, porque…». Zonder plaats "
              "telt het voorstel niet.",
+    "regla_es": (
+        "Quinientos euros, ni un céntimo más. Y cada compra se defiende con un lugar: «la "
+        "estantería, encima del escritorio, porque…». Sin lugar, la propuesta no cuenta."
+    ),
     "pasos": [("Mirad la habitación y la lista de precios.",
                "Bekijk de kamer en de prijslijst."),
               ("Cada uno propone dos cosas, con su sitio.",
@@ -5482,6 +5962,10 @@ P2_RETO_09 = {
     "consigna_nl": "Doe de rondgang al pratend: zes voorzetsels en drie gerundio's, zonder te stoppen.",
     "regla": "Eén doorlopende take van veertig seconden. Stoppen mag niet, herbeginnen wel — maar "
              "dan vanaf nul. Zes verschillende voorzetsels en drie gerundio's.",
+    "regla_es": (
+        "Una sola toma de cuarenta segundos. No puedes parar; empezar de nuevo sí, pero desde "
+        "cero. Seis preposiciones distintas y tres gerundios."
+    ),
     "pasos": [("Planifica la ruta: de la puerta al último sitio.",
                "Plan de route: van de deur tot de laatste plek."),
               ("Escribe las seis preposiciones que vas a usar.",
@@ -5532,6 +6016,10 @@ P3_RETO_01 = {
     "consigna_nl": "Reconstrueer de draad: wie zegt wat tegen wie, met le of les.",
     "regla": "Elke reconstructie gebruikt «le» of «les» — en je moet kunnen aanwijzen waaruit "
              "blijkt wie de ontvanger is. Eén bericht is aan de héle groep gericht; dat wordt «les».",
+    "regla_es": (
+        "Cada reconstrucción usa «le» o «les», y tienes que poder señalar de dónde se deduce "
+        "quién recibe. Un mensaje va a todo el grupo: ese lleva «les»."
+    ),
     "pasos": [("Leed los catorce mensajes en orden.", "Lees de veertien berichten op volgorde."),
               ("Marcad a quién va dirigido cada uno.", "Markeer aan wie elk bericht gericht is."),
               ("Escribid siete frases con le o les.", "Schrijf zeven zinnen met le of les."),
@@ -5585,6 +6073,10 @@ P3_RETO_05 = {
     "consigna_nl": "Herschrijf de vijf berichten in woorden, zonder de toon te verliezen.",
     "regla": "Nul emoji, nul hoofdletters om te schreeuwen, nul uitroeptekens-in-rijtjes. Alleen "
              "woorden — en de ontvanger moet dezelfde toon aanvoelen als in het origineel.",
+    "regla_es": (
+        "Cero emojis, cero mayúsculas para gritar, cero filas de signos de exclamación. Solo "
+        "palabras, y quien lo lea tiene que notar el mismo tono que en el original."
+    ),
     "pasos": [("Lee el mensaje con sus emojis.", "Lees het bericht met zijn emoji's."),
               ("Di en una palabra qué tono tiene.", "Zeg in één woord welke toon het heeft."),
               ("Reescríbelo en palabras.", "Herschrijf het in woorden."),
@@ -5627,6 +6119,10 @@ P3_RETO_07 = {
     "consigna_nl": "Per scène: één zin met acabar de en één met ir a.",
     "regla": "Altijd twee zinnen, altijd in die volgorde: eerst wat net gebeurd is, dan wat gaat "
              "komen. En het presente is verboden — die scène zíe je al.",
+    "regla_es": (
+        "Siempre dos frases, y siempre en este orden: primero lo que acaba de pasar, después lo "
+        "que va a pasar. El presente está prohibido: esa escena ya la ves."
+    ),
     "pasos": [("Mirad la escena.", "Bekijk de scène."),
               ("Uno dice qué acaba de pasar.", "De ene zegt wat er net gebeurd is."),
               ("El otro dice qué va a pasar.", "De andere zegt wat er gaat gebeuren."),
@@ -5688,6 +6184,11 @@ P3_RETO_10 = {
     "regla": "Geen echte merknamen, geen echte links, geen echte telefoonnummers. Het valse "
              "bericht is een oefenmodel, geen werkend lokaas — en het tweede bericht moet elk "
              "van de vijf signalen bij naam noemen.",
+    "regla_es": (
+        "Sin marcas reales, sin enlaces reales y sin números de teléfono reales. El mensaje falso "
+        "es un modelo de práctica, no un cebo que funcione, y el segundo mensaje tiene que "
+        "nombrar las cinco señales una por una."
+    ),
     "pasos": [("Leed las cinco señales de alarma.", "Lees de vijf alarmsignalen."),
               ("Escribid el mensaje falso con las cinco dentro.",
                "Schrijf het valse bericht met de vijf erin."),
@@ -5734,6 +6235,10 @@ P3_RETO_04 = {
     "consigna_nl": "Kies welke conclusie je echt uit elk cijfer kunt trekken.",
     "regla": "Alles anoniem. En je conclusie mag niet verder gaan dan het cijfer: uit een "
              "gemiddelde volgt geen uitspraak over één persoon.",
+    "regla_es": (
+        "Todo anónimo. Y tu conclusión no puede ir más allá de la cifra: de una media no sale "
+        "nada sobre una persona concreta."
+    ),
     "pasos": [("Cada uno mira su tiempo de pantalla y lo apunta en anónimo.",
                "Iedereen bekijkt zijn schermtijd en noteert die anoniem."),
               ("La clase hace el gráfico.", "De klas maakt de grafiek."),
@@ -5794,6 +6299,10 @@ P3_RETO_08 = {
     "regla": "Je bent het écht oneens, en je onderbreekt nooit. Elke beurt begint met wat de "
              "ander gezegd heeft («entiendo que…», «tienes razón en que…») vóór je je eigen punt "
              "maakt.",
+    "regla_es": (
+        "Estás en desacuerdo de verdad, y no interrumpes nunca. Cada turno empieza por lo que ha "
+        "dicho el otro («entiendo que…», «tienes razón en que…») antes de dar tu punto."
+    ),
     "pasos": [("Repartid las posturas: a favor y en contra.",
                "Verdeel de standpunten: voor en tegen."),
               ("Cada uno escribe tres argumentos.", "Elk schrijft drie argumenten."),
@@ -5839,6 +6348,10 @@ P3_RETO_09 = {
     "consigna_nl": "Kies het Spaanse equivalent dat echt werkt.",
     "regla": "Een equivalent telt alleen als een Spaanstalige het zou begrijpen zonder het "
              "Engelse woord te kennen. Mooi bedacht maar onbegrijpelijk is fout.",
+    "regla_es": (
+        "Un equivalente solo vale si un hispanohablante lo entendería sin conocer la palabra "
+        "inglesa. Bonito pero incomprensible está mal."
+    ),
     "pasos": [("Leed el término y lo que significa de verdad.",
                "Lees de term en wat hij echt betekent."),
               ("Elegid el equivalente que funciona.", "Kies het equivalent dat werkt."),
@@ -5894,6 +6407,10 @@ P3_RETO_02 = {
     "consigna_nl": "Presenteer het plan met voy a / vamos a en antwoord de sceptici.",
     "regla": "Elk blok van de dag krijgt een «vamos a»-zin met een concrete activiteit. En je "
              "moet drie tegenwerpingen weerleggen — het plan telt pas als het de test doorstaat.",
+    "regla_es": (
+        "Cada bloque del día lleva una frase con «vamos a» y una actividad concreta. Y tienes que "
+        "rebatir tres objeciones: el plan solo cuenta si supera la prueba."
+    ),
     "pasos": [("Repartid el día en cinco bloques.", "Verdeel de dag in vijf blokken."),
               ("Cada bloque, una frase con vamos a.", "Elk blok één zin met vamos a."),
               ("Los escépticos ponen tres pegas.", "De sceptici werpen drie bezwaren op."),
@@ -5938,6 +6455,10 @@ P3_RETO_03 = {
     "consigna_nl": "Leg het algoritme uit in vijf zinnen, in eenvoudig Spaans en zonder anglicismen.",
     "regla": "Geen enkel Engels woord — geen algorithm, geen feed, geen like, geen data. En geen "
              "enkele zin langer dan twaalf woorden. Wat je niet kunt uitleggen, heb je niet begrepen.",
+    "regla_es": (
+        "Ni una palabra en inglés: ni algorithm, ni feed, ni like, ni data. Y ninguna frase de "
+        "más de doce palabras. Lo que no sabes explicar, no lo has entendido."
+    ),
     "pasos": [("Escribid qué hace un algoritmo, en una frase.",
                "Schrijf in één zin wat een algoritme doet."),
               ("Buscad una palabra española para cada anglicismo.",
@@ -5987,6 +6508,10 @@ P3_RETO_06 = {
     "regla": "Heen gaat het altijd via «le» (aan één persoon), terug altijd via «les» (aan de "
              "groep). Wie de verkeerde vorm gebruikt, breekt de ketting en die begint opnieuw "
              "bij hem.",
+    "regla_es": (
+        "La ida va siempre con «le» (a una persona) y la vuelta con «les» (al grupo). Quien use "
+        "la forma equivocada rompe la cadena, y esta vuelve a empezar por él."
+    ),
     "pasos": [("En círculo. El primero pide un favor a su vecino.",
                "In een kring. De eerste vraagt zijn buur een gunst."),
               ("«Le pido a … que …» y pasa.", "«Le pido a … que …» en doorgeven."),
@@ -6041,6 +6566,10 @@ P4_RETO_02 = {
     "consigna_nl": "Reconstrueer de route en geef de reden van elke reis, met por en para.",
     "regla": "Elke etappe krijgt één zin met «por» (de weg, de doorgang) én één met «para» (het "
              "doel). Wie de twee door elkaar haalt, verliest die etappe — dat is precies de test.",
+    "regla_es": (
+        "Cada etapa lleva una frase con «por» (el camino, el paso) y otra con «para» (el "
+        "objetivo). Quien las mezcle pierde esa etapa: esa es justo la prueba."
+    ),
     "pasos": [("Ordena los ocho sellos por fecha.", "Zet de acht stempels op datum."),
               ("Marca los que son solo de paso.", "Markeer welke enkel doorreis zijn."),
               ("Escribe una frase con por y una con para por etapa.",
@@ -6091,6 +6620,10 @@ P4_RETO_04 = {
     "consigna_nl": "Schrijf beide recensies met exact dezelfde acht gegevens.",
     "regla": "Alle acht de feiten staan in béide recensies. Je mag niets weglaten en niets "
              "verzinnen — alleen de volgorde, de conectoren en de toon mag je veranderen.",
+    "regla_es": (
+        "Los ocho hechos están en las dos reseñas. No puedes quitar nada ni inventar nada: solo "
+        "cambias el orden, los conectores y el tono."
+    ),
     "pasos": [("Leed los ocho datos del hostal.", "Lees de acht gegevens van de hostel."),
               ("Escribid la reseña de cinco estrellas.", "Schrijf de vijfsterrenrecensie."),
               ("Ahora la de una, con los mismos datos.",
@@ -6137,6 +6670,10 @@ P4_RETO_09 = {
     "consigna_nl": "Lees de gegevens en schrijf je standpunt in drie zinnen met cijfers.",
     "regla": "Elke zin van je standpunt bevat een cijfer uit de tabel. En één van de drie moet "
              "de ándere kant erkennen — een standpunt zonder tegenargument is een mening, geen positie.",
+    "regla_es": (
+        "Cada frase de tu postura lleva una cifra de la tabla. Y una de las tres tiene que "
+        "reconocer el otro lado: una postura sin contraargumento es una opinión."
+    ),
     "pasos": [("Leed la tabla de las dos ciudades.", "Lees de tabel van de twee steden."),
               ("Buscad el dato que más os choca.", "Zoek het cijfer dat jullie het meest raakt."),
               ("Escribid tres frases con cifra.", "Schrijf drie zinnen met een cijfer."),
@@ -6186,6 +6723,10 @@ P4_RETO_10 = {
     "consigna_nl": "Vul de kaart, en stel bij elk vakje één extra vraag in het perfecto.",
     "regla": "Eén naam per vakje en niemand twee keer op je kaart. En bij elke handtekening stel "
              "je één doorvraag in het perfecto — het antwoord noteer je erbij, anders telt het vakje niet.",
+    "regla_es": (
+        "Un nombre por casilla y nadie dos veces en tu tarjeta. Y con cada firma haces una "
+        "repregunta en perfecto; anotas la respuesta al lado, si no la casilla no cuenta."
+    ),
     "pasos": [("Levantaos y preguntad: «¿Has …?»", "Sta op en vraag: «¿Has …?»"),
               ("Si dice que sí, firma y contesta tu pregunta extra.",
                "Bij ja: handtekening plus antwoord op je doorvraag."),
@@ -6234,6 +6775,11 @@ P4_RETO_06 = {
     "regla": "Alles in het perfecto compuesto, en minstens één detail dat niemand zou verzinnen. "
              "Maar geen enkele leugen over een echt bestaande plek die je fout beschrijft — dat "
              "is het gat dat de klas zoekt.",
+    "regla_es": (
+        "Todo en pretérito perfecto, y por lo menos un detalle que nadie se inventaría. Pero "
+        "ninguna mentira sobre un sitio real que describas mal: ese es el agujero que busca la "
+        "clase."
+    ),
     "pasos": [("Elige un destino que conoces solo de fotos.",
                "Kies een bestemming die je alleen van foto's kent."),
               ("Busca dos datos reales: el clima y el transporte.",
@@ -6277,6 +6823,10 @@ P4_RETO_07 = {
     "consigna_nl": "Neem drie stationsomroepen op met de exacte formules.",
     "regla": "Usted-vorm, geen enkel woord te veel, en de drie vaste onderdelen in deze volgorde: "
              "aanspreking, informatie, instructie. Wie «tú» gebruikt, is geen omroeper.",
+    "regla_es": (
+        "Trato de usted, ni una palabra de más, y las tres partes fijas en este orden: llamada, "
+        "información, instrucción. Quien use «tú» no es locutor."
+    ),
     "pasos": [("Escucha el modelo dos veces.", "Luister het model twee keer."),
               ("Fíjate en el orden: quién, qué, qué hay que hacer.",
                "Let op de volgorde: wie, wat, wat te doen."),
@@ -6320,6 +6870,10 @@ P4_RETO_08 = {
     "consigna_nl": "Kies wat je in elke situatie echt zegt.",
     "regla": "Geen enkele optie is grammaticaal fout. Je kiest op register en gewoonte — en dat "
              "is precies waarom letterlijk vertalen hier niet werkt.",
+    "regla_es": (
+        "Ninguna opción está mal gramaticalmente. Eliges por registro y por costumbre, y por eso "
+        "mismo traducir literalmente no funciona aquí."
+    ),
     "pasos": [("Lee la situación entera.", "Lees de hele situatie."),
               ("Piensa qué espera la otra persona.",
                "Denk na wat de ander verwacht."),
@@ -6380,6 +6934,10 @@ P4_RETO_01 = {
     "consigna_nl": "Onderhandel over een oplossing. Elk heeft een geheime instructie.",
     "regla": "Je geheime instructie mag je niet voorlezen en niet vertalen — je moet ernaar "
              "hándelen. En niemand mag de stem verheffen: dit is een balie, geen ruzie.",
+    "regla_es": (
+        "No puedes leer ni traducir tu instrucción secreta: tienes que actuar según ella. Y nadie "
+        "levanta la voz: esto es un mostrador, no una discusión."
+    ),
     "pasos": [("Repartid los papeles y leed la instrucción en secreto.",
                "Verdeel de rollen en lees je instructie in het geheim."),
               ("El pasajero empieza. El mostrador escucha antes de contestar.",
@@ -6434,6 +6992,10 @@ P4_RETO_03 = {
     "consigna_nl": "Stel de reis samen binnen het budget en verantwoord elke uitgave met por of para.",
     "regla": "Zeshonderd euro, geen cent meer, en tien nachten moeten gedekt zijn. Elke uitgave "
              "wordt verantwoord met «por» (het bedrag, de ruil) of «para» (het doel).",
+    "regla_es": (
+        "Seiscientos euros, ni un céntimo más, y diez noches cubiertas. Cada gasto se justifica "
+        "con «por» (el importe, el intercambio) o «para» (el objetivo)."
+    ),
     "pasos": [("Mirad los precios de los tres países.",
                "Bekijk de prijzen van de drie landen."),
               ("Decidid la ruta y contad las noches.",
@@ -6485,6 +7047,10 @@ P4_RETO_05 = {
     "regla": "Zeven kilo, geen gram meer. Elk voorwerp krijgt een «para»-zin die zegt waarvóór "
              "het dient — «para el frío de la noche», niet «porque es útil». Zonder «para» blijft "
              "het thuis.",
+    "regla_es": (
+        "Siete kilos, ni un gramo más. Cada objeto lleva una frase con «para» que diga para qué "
+        "sirve: «para el frío de la noche», no «porque es útil». Sin «para» se queda en casa."
+    ),
     "pasos": [("Mirad la lista y los pesos.", "Bekijk de lijst en de gewichten."),
               ("Cada uno defiende tres objetos con para.",
                "Elk verdedigt drie voorwerpen met para."),
@@ -6543,6 +7109,10 @@ P5_RETO_02 = {
     "consigna_nl": "Zet de feiten op volgorde en gooi de twee valse eruit, met een argument.",
     "regla": "Aanwijzen volstaat niet: je zegt met welk ánder feit de valse botst. Een leugen die "
              "alleen «raar klinkt», blijft staan.",
+    "regla_es": (
+        "Señalar no basta: dices con qué otro dato choca la mentira. Una mentira que solo «suena "
+        "rara» se queda en pie."
+    ),
     "pasos": [("Leed los ocho hechos.", "Lees de acht feiten."),
               ("Ordenadlos por fecha.", "Zet ze op datum."),
               ("Buscad los dos que chocan con otro hecho.",
@@ -6594,6 +7164,10 @@ P5_RETO_04 = {
     "regla": "Vijf voorwerpen, niet zes. Elk bijschrift heeft drie regels — wat het is, uit welk "
              "jaar, en wat er met dat voorwerp gebeurde — en die derde regel staat altijd in het "
              "indefinido.",
+    "regla_es": (
+        "Cinco objetos, no seis. Cada cartela tiene tres líneas — qué es, de qué año, y qué pasó "
+        "con ese objeto — y esa tercera línea va siempre en indefinido."
+    ),
     "pasos": [("Elegid una figura del mundo hispano.",
                "Kies een figuur uit de Spaanstalige wereld."),
               ("Buscad cinco momentos de su vida.", "Zoek vijf momenten uit haar leven."),
@@ -6642,6 +7216,10 @@ P5_RETO_08 = {
     "consigna_nl": "Scheid feit van interpretatie, in beide versies.",
     "regla": "Een feit is wat beide teksten zeggen of wat te controleren valt. Alles wat maar in "
              "één versie staat, is een claim tot bewijs van het tegendeel — ook als het waar klinkt.",
+    "regla_es": (
+        "Un hecho es lo que dicen los dos textos o lo que se puede comprobar. Todo lo que solo "
+        "aparece en una versión es una afirmación hasta que se demuestre, aunque suene verdad."
+    ),
     "pasos": [("Leed las dos versiones enteras.", "Lees beide versies helemaal."),
               ("Subrayad lo que dicen las dos.", "Onderstreep wat beide zeggen."),
               ("Marcad lo que dice solo una.", "Markeer wat maar één zegt."),
@@ -6691,6 +7269,10 @@ P5_RETO_09 = {
     "consigna_nl": "Zet de cijfers om in een tijdlijn en in vijf indefinido-zinnen.",
     "regla": "Elke zin bevat één cijfer en één werkwoord in het indefinido. Bijvoeglijke "
              "naamwoorden zijn verboden — geen «grande», geen «famosa». De cijfers doen het werk.",
+    "regla_es": (
+        "Cada frase lleva una cifra y un verbo en indefinido. Los adjetivos están prohibidos: "
+        "nada de «grande», nada de «famosa». El trabajo lo hacen los números."
+    ),
     "pasos": [("Leed las ocho cifras.", "Lees de acht cijfers."),
               ("Dibujad la línea del tiempo.", "Teken de tijdlijn."),
               ("Escribid cinco frases con cifra e indefinido.",
@@ -6741,6 +7323,10 @@ P5_RETO_03 = {
     "regla": "Altijd met «se lo», «se la», «se los» of «se las» — het voorwerp en de persoon "
              "verdwijnen allebei in het pronomen. Wie de naam van het voorwerp nog uitspreekt, "
              "geeft de puzzel weg.",
+    "regla_es": (
+        "Siempre con «se lo», «se la», «se los» o «se las»: el objeto y la persona desaparecen "
+        "los dos en el pronombre. Quien diga todavía el nombre del objeto regala el puzle."
+    ),
     "pasos": [("Fíjate en el objeto y en quién lo recibe.",
                "Let op het voorwerp en op wie het krijgt."),
               ("Reconstruye la cadena.", "Reconstrueer de ketting."),
@@ -6800,6 +7386,10 @@ P5_RETO_07 = {
     "consigna_nl": "Neem een nieuwsflits van dertig seconden op over die gebeurtenis.",
     "regla": "Dertig seconden, en de vier w's in de eerste zin: qué, quién, cuándo, dónde. De "
              "reden of het gevolg komt pas daarna — een nieuwsflits begint nooit met de uitleg.",
+    "regla_es": (
+        "Treinta segundos, y las cuatro preguntas en la primera frase: qué, quién, cuándo, dónde. "
+        "La causa o la consecuencia vienen después: una noticia nunca empieza por la explicación."
+    ),
     "pasos": [("Busca qué pasó un día como hoy.",
                "Zoek wat er op een dag als vandaag gebeurde."),
               ("Escribe la primera frase con las cuatro w.",
@@ -6843,6 +7433,10 @@ P5_RETO_10 = {
     "consigna_nl": "Kies de versie die een kind zou begrijpen zonder de waarheid te verliezen.",
     "regla": "Vereenvoudigen is niet weglaten. Elke versie die het moeilijke deel gewoon schrapt, "
              "is fout — ook als ze mooi klinkt.",
+    "regla_es": (
+        "Simplificar no es quitar. Toda versión que se salte la parte difícil está mal, aunque "
+        "suene bien."
+    ),
     "pasos": [("Lee la frase original.", "Lees de originele zin."),
               ("Piensa qué palabra es la difícil.", "Denk na welk woord het moeilijke is."),
               ("Elige la versión que la explica, no la que la esconde.",
@@ -6904,6 +7498,10 @@ P5_RETO_01 = {
     "consigna_nl": "Schrijf het overlijdensbericht van iemand die niet beroemd werd, in acht zinnen.",
     "regla": "Geen beroemdheid, geen uitvinder, geen held. Iemand uit een gewoon leven — en toch "
              "moet je in één zin kunnen zeggen wat er zonder deze persoon níet zou bestaan.",
+    "regla_es": (
+        "Nada de famosos, ni inventores, ni héroes. Alguien de una vida corriente, y aun así "
+        "tienes que poder decir en una frase qué no existiría sin esa persona."
+    ),
     "pasos": [("Piensa en alguien real o inventado, pero corriente.",
                "Denk aan iemand echt of verzonnen, maar gewoon."),
               ("Escribe la frase «gracias a él/ella, …».",
@@ -6950,6 +7548,10 @@ P5_RETO_05 = {
     "consigna_nl": "Zet de acht delen op volgorde en vertel ze in eigen woorden.",
     "regla": "Bij het navertellen mag je geen enkele zin letterlijk overnemen. Je gebruikt de "
              "conectoren van het verhaal — érase una vez, entonces, al final — en je eigen woorden.",
+    "regla_es": (
+        "Al contarlo de nuevo no puedes copiar ni una frase tal cual. Usas los conectores del "
+        "cuento — érase una vez, entonces, al final — y tus propias palabras."
+    ),
     "pasos": [("Leed las ocho partes, desordenadas.",
                "Lees de acht delen, door elkaar."),
               ("Ordenadlas. Dos pistas: quién aparece primero y qué causa qué.",
@@ -7001,6 +7603,10 @@ P5_RETO_06 = {
     "consigna_nl": "Interview het personage. Alle antwoorden in het indefinido.",
     "regla": "Het personage antwoordt uitsluitend in het indefinido — hij vertelt afgeronde "
              "feiten, geen gewoontes en geen meningen. Wie «yo creo que» zegt, is uit zijn rol.",
+    "regla_es": (
+        "El personaje responde solo en indefinido: cuenta hechos cerrados, no costumbres ni "
+        "opiniones. Quien diga «yo creo que» se ha salido del papel."
+    ),
     "pasos": [("Un/a voluntario/-a elige un personaje y se sienta.",
                "Een vrijwilliger kiest een personage en gaat zitten."),
               ("La clase prepara dos preguntas cada uno, en indefinido.",
@@ -7061,6 +7667,10 @@ P6_RETO_01 = {
     "regla": "Elke zin krijgt één van de twee tijden — en je moet kunnen zeggen wáárom. «Het was "
              "koud» is achtergrond, «het begon te sneeuwen» is een feit. Twijfel je? Vraag je af "
              "of het een moment heeft.",
+    "regla_es": (
+        "Cada frase lleva uno de los dos tiempos, y tienes que poder decir por qué. «Hacía frío» "
+        "es fondo; «empezó a nevar» es un hecho. ¿Dudas? Pregúntate si tiene un momento."
+    ),
     "pasos": [("Leed las doce frases del pie de foto.",
                "Lees de twaalf zinnen van het onderschrift."),
               ("Clasificad: fondo o hecho.", "Klasseer: achtergrond of feit."),
@@ -7113,6 +7723,10 @@ P6_RETO_04 = {
     "consigna_nl": "Vergelijk de drie met más… que en menos… que, en zeg wat jullie verrast.",
     "regla": "Elke vergelijking noemt beide kanten én een concreet gegeven. «En Cusco es más "
              "difícil» telt niet; «en Cusco los niños andan más kilómetros que en Gante» wel.",
+    "regla_es": (
+        "Cada comparación nombra los dos lados y un dato concreto. «En Cusco es más difícil» no "
+        "cuenta; «en Cusco los niños andan más kilómetros que en Gante», sí."
+    ),
     "pasos": [("Leed la tabla de las tres infancias.",
                "Lees de tabel van de drie kindertijden."),
               ("Buscad dos cosas que os sorprenden.",
@@ -7168,6 +7782,10 @@ P6_RETO_05 = {
     "consigna_nl": "Schrijf verder: de achtergrond in het imperfecto, wat er gebeurt in het indefinido.",
     "regla": "Minstens drie zinnen achtergrond en drie gebeurtenissen, en ze mogen niet in "
              "blokken staan: ze moeten door elkaar lopen zoals in een echt verhaal.",
+    "regla_es": (
+        "Tres frases de fondo y tres hechos como mínimo, y no pueden ir en bloques: tienen que "
+        "alternarse como en un relato de verdad."
+    ),
     "pasos": [("Leed el principio en voz alta.", "Lees het begin hardop."),
               ("Subrayad qué es fondo y qué es hecho.",
                "Onderstreep wat achtergrond is en wat feit."),
@@ -7218,6 +7836,10 @@ P6_RETO_07 = {
     "consigna_nl": "Schrijf een nostalgische tekst over iets dat duidelijk slechter was.",
     "regla": "Alles in het imperfecto, en geen enkel woord dat verraadt dat je het meent of niet "
              "meent. De ironie moet uit de feiten komen, niet uit «ja hoor» of een emoji.",
+    "regla_es": (
+        "Todo en imperfecto, y ni una palabra que delate si lo dices en serio o no. La ironía "
+        "tiene que salir de los hechos, no de un «ya, claro» ni de un emoji."
+    ),
     "pasos": [("Elegid algo que era objetivamente peor.",
                "Kies iets dat objectief slechter was."),
               ("Escribid ocho frases en imperfecto, todas positivas.",
@@ -7264,6 +7886,10 @@ P6_RETO_06 = {
     "consigna_nl": "Luister naar de zin en zeg of het achtergrond (imperfecto) of feit (indefinido) is.",
     "regla": "Je beslist op wat je hóórt, niet op wat logisch lijkt. En bij elke keuze hoort de "
              "reden — de uitgang alleen is geen antwoord.",
+    "regla_es": (
+        "Decides por lo que oyes, no por lo que parece lógico. Y cada elección lleva su razón: la "
+        "terminación sola no es una respuesta."
+    ),
     "pasos": [("Escucha la frase entera.", "Luister de hele zin af."),
               ("Decide: ¿tiene un momento o es un decorado?",
                "Beslis: heeft het een moment of is het decor?"),
@@ -7345,6 +7971,10 @@ P6_RETO_08 = {
     "consigna_nl": "Neem twee minuten op: jullie herinneren zich hetzelfde, maar anders.",
     "regla": "Jullie spreken elkaar tegen op minstens drie punten, en niemand zegt dat de ander "
              "liegt. De formule is altijd «yo lo recuerdo distinto: …».",
+    "regla_es": (
+        "Os contradecís en tres puntos como mínimo, y nadie dice que el otro miente. La fórmula "
+        "es siempre «yo lo recuerdo distinto: …»."
+    ),
     "pasos": [("Elegid un recuerdo compartido, real o inventado.",
                "Kies een gedeelde herinnering, echt of verzonnen."),
               ("Cada uno apunta su versión, en imperfecto.",
@@ -7388,6 +8018,10 @@ P6_RETO_10 = {
     "consigna_nl": "Kies de vergelijking die het fenomeen echt uitlegt.",
     "regla": "Je enige gereedschap is de vergelijking: «es como… pero…». Geen enkel woord dat in "
              "1975 nog niet bestond — dat is precies wat je moet omzeilen.",
+    "regla_es": (
+        "Tu única herramienta es la comparación: «es como… pero…». Ni una palabra que en 1975 no "
+        "existiera: eso es justo lo que tienes que rodear."
+    ),
     "pasos": [("Lee el fenómeno de hoy.", "Lees het hedendaagse fenomeen."),
               ("Piensa qué existía en 1975 que se le parece.",
                "Denk na wat er in 1975 bestond dat erop lijkt."),
@@ -7453,6 +8087,10 @@ P6_RETO_02 = {
     "consigna_nl": "Vertel over je speelgoed in twee delen: hoe het was, en wat er één keer gebeurde.",
     "regla": "Precies twee delen. Het eerste helemaal in het imperfecto en zonder één gebeurtenis; "
              "het tweede begint met «un día» en staat in het indefinido. Wie mengt, begint opnieuw.",
+    "regla_es": (
+        "Exactamente dos partes. La primera entera en imperfecto y sin un solo hecho; la segunda "
+        "empieza por «un día» y va en indefinido. Quien mezcle, empieza de nuevo."
+    ),
     "pasos": [("Elige un objeto de tu infancia.", "Kies een voorwerp uit je kindertijd."),
               ("Parte 1: cómo era, dónde estaba, qué hacías con él. Todo en imperfecto.",
                "Deel 1: hoe het was, waar het lag, wat je ermee deed. Alles in het imperfecto."),
@@ -7493,6 +8131,10 @@ P6_RETO_03 = {
     "consigna_nl": "Interview en presenteer in de derde persoon, met het imperfecto.",
     "regla": "Je vertelt het na in de derde persoon — dus niet «yo podía», maar «mi tía podía». "
              "En elk antwoord krijgt een «ahora ya no»-zin ernaast, anders is het geen contrast.",
+    "regla_es": (
+        "Lo cuentas en tercera persona: no «yo podía», sino «mi tía podía». Y cada respuesta "
+        "lleva al lado una frase con «ahora ya no»; si no, no hay contraste."
+    ),
     "pasos": [("Preparad cinco preguntas con «¿se podía …?».",
                "Bereid vijf vragen voor met «¿se podía …?»."),
               ("Entrevistad a un adulto, en neerlandés si hace falta.",
@@ -7540,6 +8182,10 @@ P6_RETO_09 = {
     "consigna_nl": "Debatteer. Elk argument bevat een imperfecto en een comparativo.",
     "regla": "Een argument zonder imperfecto én zonder comparativo telt niet mee. En je mag geen "
              "argument herhalen dat al gevallen is — ook niet met andere woorden.",
+    "regla_es": (
+        "Un argumento sin imperfecto y sin comparativo no cuenta. Y no puedes repetir un "
+        "argumento que ya haya salido, ni con otras palabras."
+    ),
     "pasos": [("Repartid: acusación (era peor) y defensa (era mejor).",
                "Verdeel: aanklacht (het was slechter) en verdediging (het was beter)."),
               ("Cinco minutos para preparar cuatro argumentos cada uno.",
@@ -7597,6 +8243,11 @@ P7_RETO_01 = {
     "regla": "«Tienes que», «debes» en «hay que» zijn verboden — die klinken als bevelen. Wél: "
              "twee imperatieven, mits verzacht («prueba a…», «mira…»), en één zin die erkent dat "
              "de ander het zelf beslist.",
+    "regla_es": (
+        "«Tienes que», «debes» y «hay que» están prohibidos: suenan a orden. Sí valen dos "
+        "imperativos, siempre suavizados («prueba a…», «mira…»), y una frase que reconozca que "
+        "decide el otro."
+    ),
     "pasos": [("Elegid una de las seis situaciones.", "Kies een van de zes situaties."),
               ("Escribid el consejo directo. Va a sonar mal — es normal.",
                "Schrijf het advies direct. Het zal slecht klinken — dat hoort."),
@@ -7644,6 +8295,10 @@ P7_RETO_04 = {
     "consigna_nl": "Beoordeel elke bewering en formuleer je oordeel met creo que + indicativo.",
     "regla": "Je oordeel begint altijd met «creo que» of «no creo que sea…» — let op: na «creo "
              "que» staat de indicativo. En elk oordeel noemt wát je zou nakijken om zeker te zijn.",
+    "regla_es": (
+        "Tu juicio empieza siempre por «creo que» o «no creo que sea…». Ojo: después de «creo "
+        "que» va indicativo. Y cada juicio dice qué comprobarías para estar seguro."
+    ),
     "pasos": [("Leed las cuatro afirmaciones.", "Lees de vier beweringen."),
               ("Marcad qué parte es comprobable.", "Markeer welk deel controleerbaar is."),
               ("Escribid el veredicto con creo que.", "Schrijf het oordeel met creo que."),
@@ -7697,6 +8352,11 @@ P7_RETO_05 = {
     "regla": "Precies drie woorden — lidwoorden en voorzetsels tellen mee. Eén ervan is een "
              "imperatief. En het affiche moet werken zónder uitleg: als je het moet toelichten, "
              "is het mislukt.",
+    "regla_es": (
+        "Exactamente tres palabras, y los artículos y las preposiciones cuentan. Una de ellas es "
+        "un imperativo. Y el cartel tiene que funcionar sin explicación: si hay que explicarlo, "
+        "ha fallado."
+    ),
     "pasos": [("Elegid el tema de vuestra campaña.", "Kies het thema van je campagne."),
               ("Escribid diez versiones. Sí, diez.", "Schrijf tien versies. Ja, tien."),
               ("Tachad hasta que queden tres palabras.",
@@ -7741,6 +8401,10 @@ P7_RETO_10 = {
     "consigna_nl": "Schrijf het manifest van de klas met de tien conectoren, één per engagement.",
     "regla": "Elke conector uit de lijst komt exact één keer voor — niet twee, niet nul. En elk "
              "engagement is concreet genoeg om te kunnen falen: «ser buenos» telt niet.",
+    "regla_es": (
+        "Cada conector de la lista aparece una sola vez: ni dos ni ninguna. Y cada compromiso es "
+        "tan concreto que se puede incumplir: «ser buenos» no cuenta."
+    ),
     "pasos": [("Cada uno propone un compromiso concreto.",
                "Iedereen stelt één concreet engagement voor."),
               ("Elegid diez en grupo.", "Kies er in groep tien."),
@@ -7789,6 +8453,11 @@ P7_RETO_07 = {
     "regla": "Drie delen, in deze volgorde: probleem, gevolg, advies. Het advies staat in de "
              "imperatief en komt pas in de laatste tien seconden — een spot die met het advies "
              "begint, luistert niemand uit.",
+    "regla_es": (
+        "Tres partes, en este orden: problema, consecuencia, consejo. El consejo va en imperativo "
+        "y no llega hasta los últimos diez segundos: una cuña que empieza por el consejo no la "
+        "escucha nadie."
+    ),
     "pasos": [("Escucha el modelo y cuenta los segundos de cada parte.",
                "Luister het model en tel de seconden van elk deel."),
               ("Escribid las tres partes. La tercera es la más corta.",
@@ -7835,6 +8504,10 @@ P7_RETO_08 = {
     "consigna_nl": "Kies de reactie die eerst instemt en pas dan nuanceert.",
     "regla": "Je mag pas nuanceren nadat je hebt ingestemd. Wie meteen tegenspreekt, valt af — "
              "ook als hij gelijk heeft.",
+    "regla_es": (
+        "Solo puedes matizar después de haber dado la razón. Quien lleve la contraria de entrada "
+        "queda eliminado, aunque tenga razón."
+    ),
     "pasos": [("Lee lo que dice tu compañero/a.", "Lees wat je buur zegt."),
               ("Busca la parte con la que sí estás de acuerdo.",
                "Zoek het deel waar je het wél mee eens bent."),
@@ -7902,6 +8575,10 @@ P7_RETO_09 = {
     "consigna_nl": "Kies wat er moet veranderen zodat de campagne daar werkt.",
     "regla": "Vertalen volstaat niet: je verandert wat cultureel niet werkt en zet er iets "
              "gelijkwaardigs voor in de plaats. Alleen de woorden omzetten is de foute keuze.",
+    "regla_es": (
+        "Traducir no basta: cambias lo que no funciona culturalmente y pones algo equivalente en "
+        "su sitio. Pasar solo las palabras es la opción equivocada."
+    ),
     "pasos": [("Lee la campaña belga y su idea.", "Lees de Belgische campagne en haar idee."),
               ("Piensa qué supone que el público ya sabe.",
                "Denk na wat ze veronderstelt dat het publiek al weet."),
@@ -7965,6 +8642,10 @@ P7_RETO_02 = {
     "consigna_nl": "Bereken de voetafdruk van de klas en stel drie maatregelen voor in de imperatief.",
     "regla": "Elke maatregel is berekend: je zegt hoeveel ze scheelt, met een getal uit jullie "
              "eigen telling. Een maatregel zonder cijfer is een goed voornemen.",
+    "regla_es": (
+        "Cada medida está calculada: dices cuánto ahorra, con una cifra de vuestro propio "
+        "recuento. Una medida sin cifra es un buen propósito."
+    ),
     "pasos": [("Contad: cómo venís al instituto, cuántas botellas al día, cuánta comida se tira.",
                "Tel: hoe jullie naar school komen, hoeveel flesjes per dag, hoeveel eten er weg gaat."),
               ("Calculad con las cifras de referencia.", "Reken met de referentiecijfers."),
@@ -8019,6 +8700,11 @@ P7_RETO_03 = {
     "regla": "Je krijgt je standpunt toegewezen, niet gekozen — en het is bewust het "
              "tegenovergestelde van wat je zelf vindt. Elk argument begint met «creo que» plus "
              "indicativo, en op het eind noemt iedereen het sterkste argument van de tegenpartij.",
+    "regla_es": (
+        "Tu postura te toca, no la eliges, y es a propósito la contraria de lo que piensas. Cada "
+        "argumento empieza por «creo que» más indicativo, y al final cada uno nombra el mejor "
+        "argumento del otro bando."
+    ),
     "pasos": [("Cada uno dice en secreto qué piensa de verdad.",
                "Iedereen zegt in het geheim wat hij écht vindt."),
               ("Se reparten los papeles: al revés.", "De rollen worden verdeeld: omgekeerd."),
@@ -8068,6 +8754,10 @@ P7_RETO_06 = {
     "regla": "De dokter moet minstens vijf adviezen geven met een enclitisch voornaamwoord "
              "(«tómatelo», «descánsala», «cuídate») — en de patiënt mag geen enkel symptoom "
              "herhalen dat al genoemd is.",
+    "regla_es": (
+        "El médico da cinco consejos como mínimo con pronombre enclítico («tómatelo», "
+        "«descánsala», «cuídate»), y el paciente no puede repetir ningún síntoma ya dicho."
+    ),
     "pasos": [("Repartid: paciente y médico/-a.", "Verdeel: patiënt en dokter."),
               ("El paciente elige tres síntomas y los exagera.",
                "De patiënt kiest drie symptomen en overdrijft ze."),

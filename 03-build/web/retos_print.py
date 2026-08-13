@@ -35,7 +35,7 @@ CSS = """
 .reto h3{ font-family:var(--disp); font-size:13pt; color:var(--ink); margin:0; }
 .reto .rgancho{ font-size:10.4pt; margin:1.5mm 0 0; }
 .reto .rgancho b{ color:var(--gd); }
-.reto .rnl{ font-size:9pt; color:var(--mut); font-style:italic; margin:.6mm 0 2.5mm; }
+.reto .rnl, .rpunt .rnl{ font-size:9pt; color:var(--mut); font-style:italic; margin:.6mm 0 2.5mm; }
 .reto .rconsigna{ font-size:10pt; margin:0 0 2mm; }
 .regla-reto{ border-left:2.6mm solid var(--amber); background:var(--amberbg);
              border-radius:0 3mm 3mm 0; padding:2.6mm 4mm; margin:2.5mm 0 3mm; font-size:9.6pt; }
@@ -148,8 +148,8 @@ def _regla(r):
 
     De regel stond alleen in het Nederlands terwijl de rest van de reto Spaans
     is; de auteur vroeg bij het nalezen van C5 U1 om dat overal recht te zetten.
-    Een reto die nog geen `regla_es` heeft, toont zolang alleen het Nederlands
-    (beter dan een halve vertaling)."""
+    Alle 510 regels hebben intussen hun Spaanse versie; de terugval op enkel
+    Nederlands blijft staan voor een reto die er later bijkomt."""
     es = r.get("regla_es")
     cuerpo = (('%s<br><span class="rnl">%s</span>' % (E(es), E(r["regla"])))
               if es else E(r["regla"]))
@@ -1796,8 +1796,11 @@ def reto_puntero(r):
     return ('<div class="rpunt"><div class="ric">%s</div><div>'
             '<h4>Reto %d · %s</h4>'
             '<p><b>%s</b> <span class="gloss">%s</span></p>'
-            '<p style="margin-top:1.2mm"><b>La regla:</b> %s</p>'
+            '<p style="margin-top:1.2mm"><b>La regla:</b> %s'
+            '<br><span class="rnl">%s</span></p>'
             '<p class="rdonde">%s · %s — %s</p></div></div>'
             % (_ICONO[r["soporte"]], r["num"], E(r["nombre"]),
-               E(r["gancho_es"]), E(r["gancho_nl"]), E(r["regla"]),
+               E(r["gancho_es"]), E(r["gancho_nl"]),
+               E(r.get("regla_es") or r["regla"]),
+               E(r["regla"]) if r.get("regla_es") else "",
                E(r["lente"]), E(es), E(nl)))
