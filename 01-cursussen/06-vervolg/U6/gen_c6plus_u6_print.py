@@ -129,7 +129,7 @@ sec_open("0", "§0 · ¡Ponte al día!", 'Venimos del <b>indefinido</b> (U5: nac
 P('<div class="truc"><b>Indefinido ↔ imperfecto:</b> <b>Ayer jugué</b> (un hecho cerrado) frente a <b>De pequeño jugaba siempre</b> (costumbre, fondo). En U6 todo gira alrededor de <b>cómo era antes</b> → imperfecto. <span class="gloss">Afgerond feit tegenover gewoonte en achtergrond.</span></div>')
 P(actx(AN(), "¿acción única o costumbre? (repaso)",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p>Is het een <b>afgerond feit</b> (indefinido) of een <b>gewoonte/achtergrond</b> (imperfecto)? Vink aan.</p>'
+  '<p>¿Es un <b>hecho cerrado</b> (indefinido) o una <b>costumbre o un fondo</b> (imperfecto)? Marca. <span class="gloss">Afgerond feit of gewoonte?</span></p>'
   '<p style="margin-left:12.5mm">1. Ayer fui al cine. → <span class="wl sm"></span> &nbsp; 2. De pequeño iba al parque cada día. → <span class="wl sm"></span><br>'
   '3. En 2019 ganó un premio. → <span class="wl sm"></span> &nbsp; 4. Cuando era niña vivía en Cusco. → <span class="wl sm"></span></p>',
   apoyo="Pista: afgerond feit → indefinido · gewoonte/achtergrond → imperfecto"))
@@ -294,9 +294,7 @@ P(tree([
   '¿achtergrond / decor / gewoonte / beschrijving? → <span class="yes">imperfecto</span> <span class="res">era, llovía, jugaba</span>',
   '¿afgeronde gebeurtenis / plotse actie? → <span class="yes">indefinido</span> <span class="res">sonó, llegó, empezó</span>',
 ]))
-P(regla("Regla · imperfecto + indefinido", '<p><b>Imperfecto</b> = het decor: hoe alles <b>was</b>, wat al <b>bezig</b> was, <b>gewoontes</b> (era, tenía, llovía, jugaba). Markers: <i>siempre, a menudo, todos los días, mientras</i>.<br>'
-  '<b>Indefinido</b> = de <b>gebeurtenis</b> die toen plaatsvond en het verhaal vooruitduwt (llegó, empezó, sonó). Markers: <i>un día, de repente, entonces</i>.<br>'
-  '<span class="gloss">Vaak samen: <i>Jugaba (imperf.) cuando, de repente, empezó (indef.) a llover.</i></span></p>'))
+P(regla("Regla · imperfecto + indefinido", '<p><b>Imperfecto</b> = el decorado: cómo <b>era</b> todo, qué <b>estaba pasando</b>, las <b>costumbres</b> (era, tenía, llovía, jugaba). Marcadores: <i>siempre, a menudo, todos los días, mientras</i>.<br>' '<b>Indefinido</b> = el <b>hecho</b> que pasó entonces y empuja el relato (llegó, empezó, sonó). Marcadores: <i>un día, de repente, entonces</i>.<br>' '<span class="gloss">Vaak samen: <i>Jugaba (imperf.) cuando, de repente, empezó (indef.) a llover.</i></span></p>'))
 P(actx(AN(), "Clasifica: ¿indefinido o imperfecto?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>¿Qué tiempo verbal le toca? <span class="gloss">Welke tijd hoort erbij?</span> <span class="words"><b>Era de noche · sonó el teléfono · llovía · llegó mi abuela · siempre jugaba · un día empezó</b></span></p>'
@@ -412,7 +410,7 @@ P(f'<div class="ptexts">'
   f'<p>Yo <span class="evi">crecí</span> en la ciudad. De niño <span class="evi">veía</span> mucha tele y <span class="evi">jugaba</span> a videojuegos. Mi barrio <span class="evi">era más ruidoso que</span> el de Nina. <span class="evi">Tenía</span> muchos amigos y <span class="evi">íbamos</span> al parque. Un día <span class="evi">gané</span> un concurso de dibujo en la escuela. Ahora todo es diferente, pero también me gusta.</p></div></div>')
 P(actx(AN(), "Verdadero o falso — con prueba",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Waar (V) of niet waar (F)? Onderstreep het bewijs.</p>'
+  '<p>¿Verdadero (V) o falso (F)? Subraya la prueba. <span class="gloss">Waar of niet waar? Onderstreep het bewijs.</span></p>'
   '<table class="alf"><thead><tr><th>Afirmación</th><th>V/F</th><th>Prueba (cita)</th></tr></thead><tbody>'
   '<tr><td>Nina vivía en un pueblo cerca de Cusco.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Para Nina, todo era más ruidoso que ahora.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
@@ -436,7 +434,7 @@ sec_close()
 # ================= TALLER =================
 sec_open("T", "Taller de lengua", 'Dos herramientas: los <b>acentos</b> del imperfecto (-ía) y los <b>conectores de comparación y contraste</b> (en cambio, mientras, sin embargo). <span class="gloss">De accenten en de contrast-connectoren.</span>')
 P('<h3>1 · Ortografía — el acento en -ía</h3>')
-P(regla("El acento del imperfecto", '<p>De -er/-ir-werkwoorden dragen in het imperfecto altijd een <b>accent</b> op de <b>í</b>: com<b>í</b>a, viv<b>í</b>a, ten<b>í</b>a, hac<b>í</b>a, ve<b>í</b>a. Ook nosotros -ábamos (jug<b>á</b>bamos).<br><span class="gloss">🔴 Zonder accent verandert de betekenis of klopt het niet: <i>tenia</i> → ten<b>í</b>a.</span></p>'))
+P(regla("El acento del imperfecto", '<p>En el imperfecto, los verbos en -er/-ir llevan siempre <b>tilde</b> en la <b>í</b>: com<b>í</b>a, viv<b>í</b>a, ten<b>í</b>a, hac<b>í</b>a, ve<b>í</b>a. Y nosotros, -ábamos (jug<b>á</b>bamos).<br><span class="gloss">🔴 Zonder accent klopt het niet: <i>tenia</i> → ten<b>í</b>a.</span></p>'))
 P(actx(AN(), "¿Falta el acento? · corrige",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Escríbelo bien: tenia · vivia · comiamos · veia · hacia · jugabamos <span class="gloss">Zet de accenten juist.</span></p>'
@@ -472,7 +470,7 @@ P('</div>')
 sec_open("C", "Cultura · la infancia en el mundo hispano", 'Cada cultura tiene sus <b>rituales de infancia</b>: en Latinoamérica la <b>quinceañera</b> (los 15 años), los <b>juegos</b> tradicionales (la rayuela, el trompo) y el gran papel de los <b>abuelos</b>. En los Andes, Nina crece con historias y música. <span class="gloss">De jeugd in de Spaanstalige wereld: quinceañera, traditionele spelletjes, de grootouders.</span>',
         lpd(("5","identiteit in diversiteit: la infancia hispana")))
 P('<div class="fams three" style="margin-top:2mm">'
-  '<div class="pcard"><div class="t">🎉 La quinceañera</div><div class="ej" style="margin-top:2mm">In veel Latijns-Amerikaanse landen viert een meisje haar <b>15de verjaardag</b> met een groot feest: de <b>quinceañera</b>. Het markeert de overgang van kind naar jongvolwassene.</div></div>'
+  '<div class="pcard"><div class="t">🎉 La quinceañera</div><div class="ej" style="margin-top:2mm">En muchos países de Latinoamérica una chica celebra sus <b>15 años</b> con una gran fiesta: la <b>quinceañera</b>. Marca el paso de niña a joven adulta. <span class="gloss">De vijftiende verjaardag als overgangsfeest.</span></div></div>'
   '<div class="pcard"><div class="t">🪀 Los juegos tradicionales</div><div class="ej" style="margin-top:2mm">Vroeger speelden kinderen <b>la rayuela</b> (hinkelen), <b>el trompo</b> (tol) en <b>las canicas</b> (knikkers) op straat. Nina «jugaba» ze allemaal in het dorp.</div></div>'
   '<div class="pcard"><div class="t">👵 Los abuelos</div><div class="ej" style="margin-top:2mm">In de Spaanstalige wereld spelen de <b>abuelos</b> een grote rol: ze passen op, vertellen verhalen en geven de <b>traditie</b> door. «Iba a casa de mi abuela» is een klassieke jeugdherinnering.</div></div></div>')
 P('<div class="route-note" style="margin-top:5mm">🗺️ <b>En la web:</b> haz clic en Perú (★) en el mapa para descubrir Cusco y la infancia andina. <span class="gloss">Online: klik op Perú voor de familia-fiche.</span></div>')
@@ -507,7 +505,7 @@ P(audiorow('<div class="ic">🎬</div><div><b>Graba tu recuerdo</b> en la web (r
 P('<div class="se" style="margin-top:5mm">Rúbrica · ¿lo logré?</div>')
 P('<table class="sem"><tr class="semrow"><th>Criterio</th><th>🔴 todavía no</th><th>🟠 casi</th><th>🟢 ¡sí!</th></tr>'
   '<tr><td>Ik gebruik het <b>imperfecto</b> correct (era, tenía, jugaba…)</td><td>☐</td><td>☐</td><td>☐</td></tr>'
-  '<tr><td>Ik gebruik het <b>contrast</b> met een indefinido (un día…)</td><td>☐</td><td>☐</td><td>☐</td></tr>'
+  '<tr><td>Uso el <b>contraste</b> con un indefinido (un día…) <span class="gloss">ik gebruik het contrast</span></td><td>☐</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>Ik maak minstens <b>één vergelijking</b> (más/menos/tan)</td><td>☐</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>Ik geef <b>één mening</b> (creo que antes…)</td><td>☐</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>Ik <b>presenteer vlot</b> (± 1 min)</td><td>☐</td><td>☐</td><td>☐</td></tr></table>')

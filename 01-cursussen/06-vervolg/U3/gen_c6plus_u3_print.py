@@ -204,7 +204,7 @@ P(regla("Regla · ir a + infinitivo", '<table class="conj" style="margin-top:1mm
   '<tr><td class="p">nosotros/as</td><td class="v">vamos a</td><td>Vamos a <b>quedar</b>.</td></tr>'
   '<tr><td class="p">vosotros/as</td><td class="v">vais a</td><td>¿Vais a <b>estudiar</b>?</td></tr>'
   '<tr><td class="p">ellos/ellas</td><td class="v">van a</td><td>Van a <b>ver</b> una peli.</td></tr></tbody></table>'
-  '<p style="margin:2mm 0 0">Enkel <b>ir</b> verandert met de persoon. Daarna altijd <b>a</b> + het <b>hele werkwoord</b> (infinitivo). <span class="gloss">Vergeet de <b>a</b> nooit: <span class="trap">voy subir</span> → voy <b>a</b> subir.</span></p>'))
+  '<p style="margin:2mm 0 0">Solo <b>ir</b> cambia con la persona. Después va siempre <b>a</b> + <b>infinitivo</b>. <span class="gloss">Vergeet de <b>a</b> nooit: <span class="trap">voy subir</span> → voy <b>a</b> subir.</span></p>'))
 P(actx(AN(), "La gran cloze · ir a + infinitivo",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>Escribe <b>ir a + infinitivo</b> (el infinitivo está entre paréntesis). ¡Ojo con la <b>a</b>! <span class="gloss">Vergeet de a niet.</span></p>'
@@ -292,7 +292,7 @@ sec_open("3", "§3 · Los pronombres le/les — ¿a quién?", 'Cuando dices <b>a
 
 # §3.1 ¿qué es?
 P('<h3>§3.1 · ¿Qué es un pronombre de OI?</h3>')
-P('<p style="font-size:9.6pt">Het <b>meewerkend voorwerp</b> (OI) = de <b>persoon</b> die iets ontvangt (aan/voor wie?). Je zet er een klein woordje voor: <b>me/te/le/nos/os/les</b>. Bij <b>le/les</b> mag je de persoon ook nog eens noemen met <b>a</b>:</p>')
+P('<p style="font-size:9.6pt">El <b>objeto indirecto</b> (OI) es la <b>persona</b> que recibe algo (¿a quién? ¿para quién?). Delante va una palabrita: <b>me/te/le/nos/os/les</b>. Con <b>le/les</b> puedes nombrar además a la persona con <b>a</b>: <span class="gloss">Aan wie of voor wie — met le/les mag de naam erbij.</span></p>')
 P('<div class="agree"><div class="w">Escribo <u>a Diego</u> → <u>Le</u> escribo (a Diego).</div><div class="tie">a Diego (één persoon) → le</div></div>')
 P('<div class="agree"><div class="w">Mando fotos <u>a mis amigos</u> → <u>Les</u> mando fotos.</div><div class="tie">a mis amigos (meer personen) → les</div></div>')
 P(regla("Regla · me/te/le/nos/os/les (OI)", '<table class="conj" style="margin-top:1mm"><thead><tr><th>A quién</th><th>Pronombre</th><th>Ejemplo</th></tr></thead><tbody>'
@@ -302,7 +302,7 @@ P(regla("Regla · me/te/le/nos/os/les (OI)", '<table class="conj" style="margin-
   '<tr><td class="p">a nosotros/as</td><td class="v">nos</td><td>Mamá <b>nos</b> cuenta algo.</td></tr>'
   '<tr><td class="p">a vosotros/as</td><td class="v">os</td><td><b>Os</b> mando la foto.</td></tr>'
   '<tr><td class="p">a ellos/ellas/ustedes</td><td class="v">les</td><td><b>Les</b> regalo auriculares.</td></tr></tbody></table>'
-  '<p style="margin:2mm 0 0">Het pronomen staat <b>vóór</b> het vervoegde werkwoord. <b>le</b> = aan één persoon (hem/haar/u) · <b>les</b> = aan meerdere. <span class="gloss">In het Spaans zeg je vaak <b>le</b> én <b>a Diego</b> samen — dat is normaal.</span></p>'))
+  '<p style="margin:2mm 0 0">El pronombre va <b>delante</b> del verbo conjugado. <b>le</b> = a una persona · <b>les</b> = a varias. <span class="gloss">In het Spaans zeg je vaak <b>le</b> én <b>a Diego</b> samen — dat is normaal.</span></p>'))
 P(mirror([("¿A quién le escribes?", "Le escribo a Diego."), ("¿Y a tus amigos?", "Les escribo (a ellos).")]))
 P(actx(AN(), "¿le o les?",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],

@@ -545,7 +545,7 @@ P('<div class="chat">'
   '<div class="chatline me"><div class="bub">¡Qué bien! ¿<span class="fx vb">Has visto</span> las llamas?</div><div class="who">Tú</div></div>'
   '<div class="chatline you"><div class="bub">Sí, y <span class="fx vb">he sacado</span> muchas fotos. ¿Y tú? ¿Qué <span class="fx vb">has hecho</span> hoy?</div><div class="who">Nina</div></div>'
   '<div class="chatline me"><div class="bub">Yo <span class="fx vb">he estudiado</span> español. ¡Todavía no <span class="fx vb">he comido</span>!</div><div class="who">Tú</div></div></div>')
-P('<p style="font-size:9.6pt">② <b>La línea del tiempo (/ GT-003).</b> Het perfecto compuesto verbindt het <b>verleden</b> met <b>nu</b> (een periode die nog niet af is: hoy, esta semana…):</p>')
+P('<p style="font-size:9.6pt">② <b>La línea del tiempo (/ GT-003).</b> El pretérito perfecto une el <b>pasado</b> con el <b>ahora</b>: un periodo que todavía no ha terminado (hoy, esta semana…). <span class="gloss">Een periode die nog loopt.</span></p>')
 P('<div class="xray"><div class="xs">antes ─────●───── <span class="fx ti">HOY</span> ─────▶ ahora</div>'
   '<div class="xrow"><div><b>he subido</b>gebeurd, maar «vandaag» telt nog mee</div><div><b>ahora</b>je vertelt het nú</div></div></div>')
 P('<p style="font-size:9.6pt">③ <b>La pregunta como espejo — ¿has…? → he…</b></p>')
@@ -570,9 +570,7 @@ P(blocks([
   [("per","(Ellos) han"),("vb","viajado"),("opt","en tren")],
 ]))
 P(regla("Regla · pretérito perfecto compuesto",
-  '<p><b>haber</b> in het presente (he, has, ha, <b>hemos</b>, habéis, han) + <b>participio</b>. '
-  'Je gebruikt het voor iets wat gebeurd is in een periode die nog <b>doorloopt</b> (hoy, esta semana, este año) of voor <b>ervaringen</b> (alguna vez, nunca). '
-  '<br>🔴 Auxiliar = <b>haber</b> (niet tener). 🔴 Participio verandert niet van vorm: <i>ella ha comid<b>o</b></i>.</p>'))
+  '<p><b>haber</b> en presente (he, has, ha, <b>hemos</b>, habéis, han) + <b>participio</b>. ' 'Sirve para algo que ha pasado en un periodo que <b>sigue abierto</b> (hoy, esta semana, este año) o para <b>experiencias</b> (alguna vez, nunca). ' '<br>🔴 El auxiliar es <b>haber</b>, no tener. 🔴 El participio no cambia de forma: <i>ella ha comid<b>o</b></i>. <span class="gloss">Een periode die nog loopt, of een ervaring.</span></p>'))
 P('</div>')  # page §1.1
 
 # §1.2 práctica + CLOZE (verplicht)
@@ -625,7 +623,7 @@ P(actx(6, "¿Qué has hecho hoy? — escribe",
   '<div class="wbox sm"></div>', apoyo="Marco: Hoy he… / Todavía no he…"))
 P(tarea_com("Tarea comunicativa · «¿Qué has hecho esta semana?»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
-  '<p><b>Situación:</b> vraag elkaar wat je <b>deze week gedaan hebt</b> (perfecto compuesto) en noteer twee dingen van je buur. <span class="gloss">«¿Qué has hecho esta semana? —He estudiado y he visto una serie.»</span></p>'
+  '<p><b>Situación:</b> preguntaos qué habéis hecho <b>esta semana</b> (pretérito perfecto) y anota dos cosas de tu compañero/a. <span class="gloss">«¿Qué has hecho esta semana? —He estudiado y he visto una serie.»</span></p>'
   '<p style="margin-left:12.5mm">Mi compañero/a ha…: <span class="wl full"></span></p>'
   + APO.html("Marco: ¿Qué has hecho? · He…")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «haber + participio (cloze)», «haber Tetris» en de vraag-spiegel met zelfcorrectie.</div>')
@@ -729,8 +727,7 @@ P('<table class="conj"><thead><tr><th>Periodo abierto (nog bezig)</th><th>Experi
   '<tr><td>Hoy he estudiado.</td><td>¿Has viajado alguna vez en avión?</td></tr></tbody></table>')
 P('<div class="truc"><b>🔴 NL ↔ ES:</b> <b>ya</b> = «al, reeds»; <b>todavía no</b> = «nog niet». Ojo con <b>nunca</b> + he…: <i>Nunca he estado en Perú.</i> <span class="gloss">ya, todavía no en nunca he…</span></div>')
 P(regla("Regla · marcadores",
-  '<p>Deze marcadores kondigen het <b>perfecto compuesto</b> aan: <b>hoy, esta semana, este mes, este año</b> (periode die nog loopt) en <b>ya, todavía no, alguna vez, nunca, muchas veces</b> (ervaring). '
-  '<br><b>ya</b> (al ✅) ↔ <b>todavía no</b> (nog niet ⏳). <b>¿Alguna vez has…?</b> = «Heb je ooit…?».</p>'))
+  '<p>Estos marcadores anuncian el <b>pretérito perfecto</b>: <b>hoy, esta semana, este mes, este año</b> (periodo abierto) y <b>ya, todavía no, alguna vez, nunca, muchas veces</b> (experiencia). ' '<br><b>ya</b> (✅) ↔ <b>todavía no</b> (⏳). <b>¿Alguna vez has…?</b> pregunta por una experiencia. <span class="gloss">ya = al · todavía no = nog niet · ¿alguna vez? = heb je ooit…?</span></p>'))
 P('</div>')  # page §3.1
 # §3.2 práctica
 P('<div class="page">')
@@ -790,8 +787,7 @@ P('<p style="font-size:9.6pt">③ <b>La temperatura:</b> <i>Estamos a 20 grados.
 P(audiorow('<div class="ic">🎧</div><div><b>El parte del tiempo.</b> Escucha el pronóstico de cuatro ciudades (Lima, Cusco, Iquitos y Arequipa) y anota el tiempo. <span class="gloss">Weerbericht — 1ª betekenis, 2ª schrijven.</span></div>',
            qr("Escanea y escucha", "Audio 8.2 · El parte del tiempo · 0:50", seed=82)))
 P(regla("Regla · ¿qué tiempo hace?",
-  '<p>Drie manieren: (1) <b>hace</b> + sol / calor / frío / viento / buen tiempo / mal tiempo · (2) een werkwoord alleen: <b>llueve</b> (la lluvia) · <b>nieva</b> (la nieve) · (3) <b>está</b> nublado / <b>hay</b> tormenta. '
-  '<br>🔴 «Het is warm (weer)» = <b>hace calor</b> (niet <span class="trap">es caliente</span>). Voor de temperatuur: <i>estamos a … grados</i>.</p>'))
+  '<p>Tres maneras: (1) <b>hace</b> + sol / calor / frío / viento / buen tiempo / mal tiempo · (2) un verbo solo: <b>llueve</b> (la lluvia) · <b>nieva</b> (la nieve) · (3) <b>está</b> nublado / <b>hay</b> tormenta. ' '<br>🔴 «Het is warm» es <b>hace calor</b>, no <span class="trap">es caliente</span>. Para la temperatura: <i>estamos a … grados</i>. <span class="gloss">Het weer «maakt» warm; over jezelf zeg je tengo calor.</span></p>'))
 P('</div>')  # page §4.1
 # §4.2 práctica
 P('<div class="page">')
@@ -824,7 +820,7 @@ P(actx(4, "¿Qué tiempo hace hoy? — escribe",
   '<div class="wbox sm"></div>', apoyo="Marco: Hoy hace… / Está…"))
 P(tarea_com("Tarea comunicativa · «El tiempo en tu ciudad»",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★☆"}],
-  '<p><b></b> A is de weerman/-vrouw en vertelt het weer van een stad (verzonnen); B tekent het symbool en zegt of hij/zij daar naartoe wil. Wissel. <span class="gloss">«Hoy en Cusco hace frío y está nublado.»</span></p>'
+  '<p><b></b> A es el hombre o la mujer del tiempo y cuenta el tiempo de una ciudad (inventada); B dibuja el símbolo y dice si quiere ir allí. Después cambiad. <span class="gloss">«Hoy en Cusco hace frío y está nublado.»</span></p>'
   '<p style="margin-left:12.5mm">El tiempo de mi compañero/a: <span class="wl full"></span></p>'
   + APO.html("Marco: Hoy hace… · está…")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «¿qué tiempo hace?» (classify), «símbolo ↔ tiempo» (match) en el parte del tiempo (audio).</div>')
@@ -850,7 +846,7 @@ P('<div class="ptexts">'
   '<p><b>Lunes.</b> ¡Por fin <span class="evi">he llegado</span> a Cusco! <span class="evi">He viajado</span> en avión desde Lima. Aquí, a 3400 metros, <span class="evi">hace frío</span> y <span class="evi">está nublado</span>. Esta tarde <span class="evi">he visto</span> la Plaza de Armas y <span class="evi">he comido</span> un plato típico. Todavía no <span class="evi">he subido</span> a la montaña.</p></div>'
   f'<div class="ptext"><div class="ph"><div class="av">{AV["nina"]}</div><div><div class="nm">Nina · día 2 (Machu Picchu)</div><div class="fr">diario de viaje 🇵🇪</div></div></div>'
   '<p><b>Martes.</b> ¡Qué día! <span class="evi">He tomado</span> el tren muy pronto y <span class="evi">he subido</span> a <span class="evi">Machu Picchu</span>. <span class="evi">Ha hecho sol</span> toda la mañana. <span class="evi">He visto</span> las llamas y <span class="evi">he sacado</span> mil fotos. <span class="evi">He escrito</span> una postal para mi familia. ¡Nunca <span class="evi">he estado</span> tan feliz!</p></div></div>')
-P('<div class="lecdoel">🎯 <b>Objetivo de lectura:</b> lees om te volgen <b>wat Nina wél en nog niet gedaan heeft</b> en <b>welk weer</b> het was — je hoeft niet élk woord te begrijpen.</div>')
+P('<div class="lecdoel">🎯 <b>Objetivo de lectura:</b> lee para seguir <b>qué ha hecho Nina y qué no ha hecho todavía</b> y <b>qué tiempo</b> hacía. No hace falta entender todas las palabras. <span class="gloss">Lees gericht; je hoeft niet élk woord te begrijpen.</span></div>')
 P('</div>')  # page §5a
 P('<div class="page">')
 P(actx(2, "Escanea: ¿qué ha hecho Nina?",
@@ -880,7 +876,7 @@ P(actx(5, "Ordena el viaje de Nina",
   '___ Ha tomado el tren muy pronto. &nbsp; ___ Ha escrito una postal.</p>', apoyo="Banco de palabras: día 1 → día 2"))
 P(tarea_com("Tarea comunicativa · «Tu propio día de viaje» (keten lezen→schrijven)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 8 min"},{"t":"★★★"}],
-  '<p><b></b> Schrijf, zoals Nina, één dagboekdag over een (echte of verzonnen) reis. Gebruik minstens <b>vier</b> keer perfecto compuesto + één marcador + het weer. <span class="gloss">«Hoy he llegado a… He visto… Ha hecho…»</span></p>'
+  '<p><b></b> Escribe, como Nina, un día de diario sobre un viaje (real o inventado). Usa por lo menos <b>cuatro</b> veces el pretérito perfecto, un marcador y el tiempo que hacía. <span class="gloss">«Hoy he llegado a… He visto… Ha hecho…»</span></p>'
   '<div class="wbox sm"></div>'
   + APO.html("Marco: Hoy he… · He visto… · Ha hecho…")))
 P('<div class="route-note">🎮 <b>Sigue online:</b> en la página digital escuchas el diario, haces el test de comprensión y grabas tu propio día. <span class="gloss">Online: luisteren, begripstest en je eigen dag opnemen.</span></div>')
@@ -1001,7 +997,7 @@ P('</div>')
 P('<ol class="pasos">'
   '<li><b>Elige un destino</b> (echt of verzonnen) en het reismoment. ¿Adónde has ido?</li>'
   '<li><b>Rellena la ficha</b> hieronder: transporte · tiempo · tres cosas que has hecho.</li>'
-  '<li><b>Escribe el diario</b> (mín. 5 zinnen) met <b>perfecto compuesto</b> + marcadores (primero/luego/al final) + het weer.</li>'
+  '<li><b>Escribe el diario</b> (5 frases como mínimo) con <b>pretérito perfecto</b>, marcadores (primero/luego/al final) y el tiempo. <span class="gloss">Minstens vijf zinnen, met marcadores en het weer.</span></li>'
   '<li><b>Graba un vlog</b> (of lees voor) op de digitale pagina — of doe het in pareja.</li>'
   '<li><b>Añade una foto/dibujo</b> del viaje met een korte onderschrift («He visto…»).</li></ol>')
 P('<div class="se" style="margin-top:4mm">La ficha de mi viaje <span class="gloss" style="font-size:8pt">· vul in</span></div>')
@@ -1020,7 +1016,7 @@ P('<div class="se" style="margin-top:5mm">Rúbrica · ¿lo logré?</div>')
 P('<table class="sem"><tr class="semrow"><th>Criterio</th><th>🔴 todavía no</th><th>🟠 casi</th><th>🟢 ¡sí!</th></tr>'
   '<tr><td>Ik gebruik minstens <b>5×</b> perfecto compuesto</td><td>☐</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>Ik gebruik <b>participios</b> correct (ook irregular)</td><td>☐</td><td>☐</td><td>☐</td></tr>'
-  '<tr><td>Ik vertel het <b>weer</b> en het <b>transporte</b></td><td>☐</td><td>☐</td><td>☐</td></tr>'
+  '<tr><td>Cuento qué <b>tiempo</b> hace y qué <b>transporte</b> uso <span class="gloss">ik vertel het weer en het vervoer</span></td><td>☐</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>Ik gebruik <b>marcadores/conectores</b> (primero/ya…)</td><td>☐</td><td>☐</td><td>☐</td></tr></table>')
 P('<div class="mispal" style="margin-top:3mm"><div class="mh">🤝 Co-evaluación — el diario de mi compañero/a</div>'
   '<table><thead><tr><th>Lo que me gusta de su viaje</th><th>Un consejo (una cosa)</th></tr></thead>'

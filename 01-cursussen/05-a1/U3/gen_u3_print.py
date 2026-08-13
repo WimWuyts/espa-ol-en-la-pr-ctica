@@ -525,7 +525,7 @@ P(actx(4, "El día de la semana",
   '<tr><td>3 · Otra vez, por favor.</td><td><span class="wl sm"></span></td><td>C · nog eens a.u.b.</td></tr></tbody></table>', apoyo="Banco de palabras"))
 P(actx(5, "Calentamiento: cuenta tu horario",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 4 min"},{"t":"★☆☆"}],
-  '<p>Zeg aan je buur drie dingen die je <b>vandaag</b> doet met het presente regular (hablar, estudiar, comer…). Je buur telt ze.</p>'
+  '<p>Di a tu compañero/a tres cosas que haces <b>hoy</b> con el presente regular (hablar, estudiar, comer…). Tu compañero/a las cuenta. <span class="gloss">Drie dingen die je vandaag doet.</span></p>'
   '<p style="margin-left:12.5mm">Mis tres cosas: <span class="wl full"></span></p>', apoyo="Modelo"))
 P('<div class="route-note">🎮 <b>Repasa jugando (online):</b> números, presente regular en ser/tener met zelfcorrectie op de digitale pagina.</div>')
 P('</div>')  # close §0
@@ -583,9 +583,7 @@ P('<div class="clockrow">'
   + '</div>')
 P(machine([("hora","las dos"),("+ minutos",'<span class="end">y media</span>'),("resultado","las dos <span class=end>y media</span>")]))
 P(regla("Regla · los minutos",
-  '<p><b>hasta la media</b> → hora + <b>y</b> + minutos: <i>las dos <b>y</b> diez, <b>y</b> cuarto, <b>y</b> media</i>. '
-  '<b>después de la media</b> → volgend uur + <b>menos</b>: <i>las tres <b>menos</b> cuarto</i>. · <b>en punto</b> = precies. '
-  '<br>🟡 <b>Truc:</b> <i>y</i> = tot half; <i>menos</i> = na half (je «leent» van het volgende uur).</p>'))
+  '<p><b>hasta la media</b> → hora + <b>y</b> + minutos: <i>las dos <b>y</b> diez, <b>y</b> cuarto, <b>y</b> media</i>. ' '<b>después de la media</b> → la hora siguiente + <b>menos</b>: <i>las tres <b>menos</b> cuarto</i>. · <b>en punto</b> = exacto. ' '<br>🟡 <b>Truco:</b> <i>y</i> hasta la media; <i>menos</i> después de la media (tomas prestado de la hora siguiente). <span class="gloss">tot half met y, na half met menos.</span></p>'))
 P('<p style="font-size:9.6pt">② <b>¿A qué hora? — de la mañana/tarde/noche.</b> Om een concreet uur te noemen:</p>')
 P(mirror([
   ('¿<span class="mk">A qué hora</span> te levantas?', 'A las siete <b>de la mañana</b>. <span class="gloss">(concreet uur → de la)</span>'),
@@ -614,7 +612,7 @@ P(actx(6, "de la o por la",
   '<p style="margin-left:12.5mm">a) Me levanto a las 7 ___ mañana. &nbsp; b) ___ tarde hago los deberes.<br>c) Ceno a las 9 ___ noche. &nbsp; d) ___ mañana voy al instituto.<br><span class="wl full"></span></p>', apoyo="Pista: uur → de la"))
 P(tarea_com("Tarea comunicativa · ¿A qué hora…? — la agenda",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
-  '<p><b>Situación:</b> jij en je buur zijn in Barcelona en willen <b>afspreken</b>. Vraag naar elkaars uren en vind een gemeenschappelijk vrij moment. <span class="gloss">«¿A qué hora comes? ¿A qué hora sales del insti?»</span></p>'
+  '<p><b>Situación:</b> tú y tu compañero/a estáis en Barcelona y queréis <b>quedar</b>. Preguntaos las horas y buscad un rato libre en común. <span class="gloss">«¿A qué hora comes? ¿A qué hora sales del insti?»</span></p>'
   '<table class="wtab mp"><thead><tr><th>¿A qué hora…?</th><th>Yo</th><th>Mi compañero/a</th></tr></thead><tbody>'
   '<tr><td>…te levantas</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>…comes</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
@@ -696,8 +694,7 @@ P(blocks([
   [("per","Pau"),("vb","se"),("vb","acuesta"),("ti","a las 11")],
 ]))
 P(regla("Regla · verbos reflexivos",
-  '<p>Reflexief werkwoord = <b>pronombre</b> (me/te/se/nos/os/se) + vervoegd werkwoord. Het pronomen staat <b>vóór</b> het werkwoord en <b>past bij de persoon</b>. '
-  '<br>🔴 <b>Valstrik NL:</b> zeg <i><b>me</b> levanto</i>, niet <span class="trap">levanto me</span>. Het werkwoord zelf vervoeg je gewoon (levantar → levanto).</p>'))
+  '<p>Verbo reflexivo = <b>pronombre</b> (me/te/se/nos/os/se) + verbo conjugado. El pronombre va <b>delante</b> del verbo y <b>concuerda con la persona</b>. ' '<br>🔴 <b>Trampa NL:</b> di <i><b>me</b> levanto</i>, no <span class="trap">levanto me</span>. El verbo se conjuga normal (levantar → levanto). <span class="gloss">Het pronomen staat vóór het werkwoord.</span></p>'))
 P(actx(4, "Elige el pronombre",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★☆☆"}],
   '<p>Escribe me/te/se/nos. <span class="gloss">Vul het juiste pronomen in.</span></p>'
@@ -717,7 +714,7 @@ P(actx(6, "De Pau a mí — transforma",
   '<p style="margin-left:12.5mm">Pau se levanta a las 7. → <span class="wl lg"></span><br>Pau se ducha y se viste. → <span class="wl lg"></span><br>Pau se acuesta a las 11. → <span class="wl lg"></span></p>', apoyo="Modelo"))
 P(tarea_com("Tarea comunicativa · Mi mañana",
   [{"t":"🎙️ Hablar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
-  '<p>Vertel je buur je <b>ochtend</b> in de juiste volgorde met tijden en reflexieve werkwoorden. Je buur tekent jouw horario. <span class="gloss">«Me despierto a las 7, me levanto, me ducho…»</span></p>'
+  '<p>Cuenta a tu compañero/a tu <b>mañana</b> en orden, con horas y verbos reflexivos. Tu compañero/a dibuja tu horario. <span class="gloss">«Me despierto a las 7, me levanto, me ducho…»</span></p>'
   '<div class="wbox sm"></div>'
   + APO.html("Modelo: Pau")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «¿reflexivo o no?», «memoria de la rutina» en «ordena mi día».</div>')
@@ -784,8 +781,7 @@ P('<div class="fams" style="margin-top:2mm"><div class="pcard"><div class="t" st
   '<tr><td class="p">ellos</td><td>p<span class="end">i</span>den</td></tr></tbody></table>'
   '<div class="ej" style="margin-top:1mm">Zo ook: vestirse → me visto · servir → sirvo · repetir → repito.</div></div></div>')
 P(regla("Regla · e→ie / e→i",
-  '<p>Zelfde «bota»: de <b>e</b> wordt <b>ie</b> (empezar → empiezo) of <b>i</b> (pedir → pido) — behalve bij <b>nosotros/vosotros</b>. '
-  '<br>🟡 Ken je de <b>yo</b>-vorm, dan ken je bijna heel het rijtje (behalve nosotros/vosotros).</p>'))
+  '<p>La misma «bota»: la <b>e</b> pasa a <b>ie</b> (empezar → empiezo) o a <b>i</b> (pedir → pido), menos en <b>nosotros/vosotros</b>. ' '<br>🟡 Si sabes la forma de <b>yo</b>, tienes casi todo el paradigma. <span class="gloss">Alleen nosotros en vosotros vallen buiten de laars.</span></p>'))
 P(actx(3, "Completa con el presente irregular (cloze)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 6 min"},{"t":"★★☆"}],
   '<p>Escribe la <b>forma correcta</b>. El infinitivo está entre paréntesis. <span class="gloss">Vul de juiste vorm in; het infinitief staat tussen haakjes.</span></p>'
@@ -875,8 +871,7 @@ P(blocks([
   [("ti","Nunca"),("vb","llego"),("ob","tarde a clase")],
 ]))
 P(regla("Regla · frecuencia",
-  '<p><b>siempre · normalmente · a menudo · a veces · casi nunca · nunca</b>. Ze staan meestal <b>vóór</b> het werkwoord of <b>vooraan</b>. '
-  '<br>🟡 <b>todos los días</b>, <b>una vez por semana</b>, <b>el fin de semana</b> zijn ook frequentie-uitdrukkingen.</p>'))
+  '<p><b>siempre · normalmente · a menudo · a veces · casi nunca · nunca</b>. Suelen ir <b>delante</b> del verbo o al <b>principio</b> de la frase. ' '<br>🟡 <b>todos los días</b>, <b>una vez por semana</b> y <b>el fin de semana</b> también son expresiones de frecuencia. <span class="gloss">Meestal vóór het werkwoord of vooraan de zin.</span></p>'))
 P(actx(1, "Ordena por frecuencia",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Numera de <b>más</b> frecuente (1) a <b>menos</b> frecuente (5). <span class="gloss">Nummer van meest naar minst vaak.</span></p>'
@@ -912,7 +907,7 @@ P(actx(4, "Completa con el tiempo",
   'd) El <span class="wl sm"></span> no tengo clase.</p>', apoyo="Pista: kleine letter"))
 P(tarea_com("Tarea comunicativa · Mi semana típica",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 7 min"},{"t":"★★★"}],
-  '<p>Vertel je buur wat je op <b>drie verschillende dagen</b> doet, met frequentie en tijden. Je buur vult een mini-agenda in. <span class="gloss">«Los lunes siempre empiezo a las 8; el sábado juego al fútbol.»</span></p>'
+  '<p>Cuenta a tu compañero/a qué haces en <b>tres días distintos</b>, con frecuencia y horas. Tu compañero/a rellena una miniagenda. <span class="gloss">«Los lunes siempre empiezo a las 8; el sábado juego al fútbol.»</span></p>'
   '<table class="wtab mp"><thead><tr><th>Día</th><th>¿Qué hace mi compañero/a?</th></tr></thead><tbody>'
   '<tr><td>lunes</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td>miércoles</td><td><span class="wl lg"></span></td></tr>'
@@ -943,7 +938,7 @@ P('<div class="ptext"><div class="ph"><div class="av">'+AV["diego"]+'</div><div>
   'Las clases <span class="evi">empiezan a las nueve</span>. Al mediodía <span class="evi">almuerzo en el instituto</span> con mis amigos. '
   'Por la tarde <span class="evi">hago los deberes</span> y, a menudo, <span class="evi">juego al fútbol</span>. '
   'Ceno con mi familia a las nueve y <span class="evi">me acuesto a las once</span>. Los sábados duermo más: ¡me levanto a las diez! ¿Y tú, a qué hora te levantas?</p></div>')
-P('<div class="lecdoel">🎯 <b>Objetivo de lectura:</b> lees om te ontdekken <b>op welk uur</b> Pau de dingen doet en <b>wat hij ‘s middags/‘s avonds</b> doet — je hoeft niet élk woord te begrijpen.</div>')
+P('<div class="lecdoel">🎯 <b>Objetivo de lectura:</b> lee para descubrir <b>a qué hora</b> hace Pau cada cosa y <b>qué hace por la tarde y por la noche</b>. No hace falta entender todas las palabras. <span class="gloss">Lees gericht; je hoeft niet élk woord te begrijpen.</span></div>')
 P('</div>')  # page §5a
 P('<div class="page">')
 P(actx(2, "Escanea: completa el horario",
@@ -969,7 +964,7 @@ P(actx(4, "Del contexto: ¿qué significa?",
   '<p style="margin-left:12.5mm">enseguida = ☐ meteen ☐ later &nbsp;·&nbsp; al mediodía = ☐ \'s middags (12u) ☐ \'s nachts<br>Pista que me ayudó: <span class="wl lg"></span></p>', apoyo="Pista: no mires la palabra suelta: lee la frase entera"))
 P(tarea_com("Tarea comunicativa · Responde a Pau",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
-  '<p><b></b> Schrijf Pau een <b>antwoordbericht</b> over jouw dag (afzender = jij · ontvanger = Pau · doel = je routine delen). Gebruik uren + reflexieve/onregelmatige werkwoorden. Lees het daarna hardop voor.</p>'
+  '<p><b></b> Escribe a Pau un <b>mensaje de respuesta</b> sobre tu día (emisor = tú · destinatario = Pau · objetivo = compartir tu rutina). Usa horas y verbos reflexivos e irregulares. Léelo después en voz alta. <span class="gloss">Schrijf je antwoord en lees het hardop voor.</span></p>'
   '<div class="wbox"></div>'
   + APO.html("Marco: Me levanto a las… / empiezo… / por la tarde…")))
 P('<div class="route-note">🎮 <b>Sigue online:</b> en la página digital escuchas «El día de Pau» y grabas tu respuesta. <span class="gloss">Online: luisteren en je antwoord opnemen.</span></div>')
@@ -1037,7 +1032,7 @@ P(lpd(("5","kenmerkende aspecten van de cultuur"), ("2","relevante info uit een 
 P('</div>')
 P('<div class="fams" style="margin-top:6mm">')
 P(pcard("Las comidas 🍽️", '<div class="ej"><b>desayuno</b> (~8 u, licht) · <b>almuerzo/comida</b> (~14–15 u, de hoofdmaaltijd!) · <b>merienda</b> (~18 u) · <b>cena</b> (~21–22 u).</div><div class="anchor gloss">In België eet men rond 12 u en 18 u — een paar uur vroeger.</div>'))
-P(pcard("El instituto 🏫", '<div class="ej">Veel scholen: van ~<b>8:30</b> tot ~<b>14:30</b>, soms met een pauze. \'s Middags: deberes, deporte, amigos.</div><div class="t2">Andere ritme dan een lange schooldag met middagpauze.</div>'))
+P(pcard("El instituto 🏫", '<div class="ej">Muchos colegios van de las ~<b>8:30</b> a las ~<b>14:30</b>, a veces con un recreo largo. Por la tarde: deberes, deporte, amigos. <span class="gloss">Van half negen tot half drie, met de namiddag vrij.</span></div><div class="t2">Andere ritme dan een lange schooldag met middagpauze.</div>'))
 P('</div>')
 P('<p style="font-size:9.6pt">① <b>La siesta — ¿mito o realidad?</b></p>')
 P(vpairs([("Mito: todos duermen la siesta","Realidad: pocos, sobre todo mayores"),("comida = 14–15 h","cena = 21–22 h"),("tiendas cierran al mediodía","abren hasta tarde"),("España: cena tarde","Bélgica: cena ~18 h")]))

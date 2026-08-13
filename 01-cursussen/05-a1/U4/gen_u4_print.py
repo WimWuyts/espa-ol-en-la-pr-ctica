@@ -514,7 +514,7 @@ P(clusters([
 ]))
 P(actx(1, "Calentamiento: ¿qué haces en tu tiempo libre?",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 4 min"},{"t":"★☆☆"}],
-  '<p>Zeg drie activiteiten die je doet, met een frequentiewoord. Je buur noteert. Wissel.</p>'
+  '<p>Di tres actividades que haces, cada una con una palabra de frecuencia. Tu compañero/a las anota. Después cambiad. <span class="gloss">Drie activiteiten met een frequentiewoord.</span></p>'
   '<p style="margin-left:12.5mm">Modelo: <i>«A veces juego a videojuegos.»</i><br>Mi compañero/a hace: <span class="wl full"></span></p>', apoyo="Modelo"))
 P(actx(2, "Conjuga en presente (repaso)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★☆☆"}],
@@ -561,7 +561,7 @@ P('<div class="chat">'
   '<div class="chatline me"><div class="bub">Sí, <span class="fx vb">me gusta</span> mucho la música. Y <span class="fx vb">me gustan</span> los conciertos.</div><div class="who">Tú</div></div>'
   '<div class="chatline you"><div class="bub">A mí me encanta bailar. ¿Y a ti?</div><div class="who">Bea</div></div>'
   '<div class="chatline me"><div class="bub">A mí <span class="fx vb">me gusta</span> nadar, pero no <span class="fx vb">me gustan</span> los deportes de equipo.</div><div class="who">Tú</div></div></div>')
-P('<p style="font-size:9.6pt">② <b>Radiografía — «het bevalt mij».</b> In het Spaans is <b>lo que te gusta</b> het <i>onderwerp</i>, en <b>jij</b> bent het meewerkend voorwerp (me/te/le…):</p>')
+P('<p style="font-size:9.6pt">② <b>Radiografía — «me gusta».</b> En español <b>lo que te gusta</b> es el <i>sujeto</i>, y <b>tú</b> eres el objeto indirecto (me/te/le…): <span class="gloss">Het ding is het onderwerp; jij bent het meewerkend voorwerp.</span></p>')
 P(xray('<span class="fx ob">A mí</span> <span class="fx per">me</span> <span class="fx vb">gusta</span> <span class="fx pl">la música</span>.',
        [("A mí me","aan míj (OI)"),("gusta","3ª pers. — bevalt"),("la música","= het onderwerp!")]))
 P('<div class="truc"><b>🔴 NL ↔ ES:</b> «<i>Ik</i> vind muziek leuk» se da la vuelta en español: «<i>La música</i> me gusta <i>a mí</i>» = <b>Me gusta la música</b>. El verbo concuerda con <b>la cosa</b>, no con «yo». <span class="gloss">De zin draait om: het werkwoord volgt het ding, niet «ik».</span></div>')
@@ -636,8 +636,7 @@ P(fmu('<b>me/te/le/nos/os/les</b> + <b>gusta</b> (ev./inf.) of <b>gustan</b> (mv
       'zeggen <b>wat</b> je (niet) leuk / geweldig vindt',
       '<i>Me gusta el cine. · Me gustan las series. · Me encanta bailar.</i>'))
 P(regla("Regla · gustar & encantar",
-  '<p><b>gusta</b> + één ding of een <b>infinitivo</b> · <b>gustan</b> + meerdere dingen. Zelfde met <b>encanta/encantan</b> (= sterker). '
-  '<br>🔴 <b>Al revés:</b> me gusta <i>la música</i> = «de muziek bevalt mij». 🔴 Bij een <b>infinitief</b> altijd <b>gusta</b>: <i>me gusta bailar</i>. 🔴 Voor de naam mag <b>a + persoon</b>: <i>A Bea le gusta…</i>.</p>'))
+  '<p><b>gusta</b> + una cosa o un <b>infinitivo</b> · <b>gustan</b> + varias cosas. Igual con <b>encanta/encantan</b> (más fuerte). ' '<br>🔴 <b>Al revés:</b> me gusta <i>la música</i>. 🔴 Con un <b>infinitivo</b>, siempre <b>gusta</b>: <i>me gusta bailar</i>. 🔴 Delante del nombre puede ir <b>a + persona</b>: <i>A Bea le gusta…</i> <span class="gloss">Het werkwoord volgt het ding, niet de persoon.</span></p>'))
 P('</div>')  # page §1.2a
 
 # §1.2b — steiger + oefeningen + cloze-verbo(gustar) + tarea
@@ -697,7 +696,7 @@ P(lpd(("8","taalsysteem: reacties también/tampoco"), ("4","interactie: akkoord/
 P('</div>')
 # §2.1 observar via spiegel
 P('<h3 style="margin-top:6mm">§2.1 · Las cuatro reacciones — el espejo</h3>')
-P('<p style="font-size:9.6pt">① <b>Observa (espejo).</b> Bea zegt iets; jij reageert. De reactie hangt af van <b>+ of –</b> én van <b>akkoord of niet</b>:</p>')
+P('<p style="font-size:9.6pt">① <b>Observa (espejo).</b> Bea dice algo; tú reaccionas. La reacción depende de si es <b>+ o –</b> y de si estás <b>de acuerdo o no</b>: <span class="gloss">Positief of negatief, en akkoord of niet.</span></p>')
 P(mirror([
   ('Bea: «Me gusta el mar.» <span class="gloss">(+, akkoord)</span>', 'A mí <span class="mk">también</span>. <span class="gloss">(ik ook)</span>'),
   ('Bea: «Me gusta el mar.» <span class="gloss">(+, oneens)</span>', 'A mí <span class="mk">no</span>. <span class="gloss">(ik niet)</span>'),
@@ -710,9 +709,9 @@ P('<div class="fams" style="margin-top:2mm"><div class="pcard">' + tree([
   '¿La frase es <b>negativa</b> (no me gusta)? <span class="yes">akkoord →</span> <span class="res">A mí tampoco</span> · <span class="no">oneens →</span> <span class="res">A mí sí</span>',
 ]) + '</div>'
   '<div class="pcard"><div class="t" style="font-size:10pt">Onthoud</div><div class="ej"><b>+ akkoord</b> también<br><b>+ oneens</b> a mí no<br><b>– akkoord</b> tampoco<br><b>– oneens</b> a mí sí</div>'
-  '<div class="t2">🔴 <b>tampoco</b> = «ook niet», niet «ook».</div></div></div>')
+  '<div class="t2">🔴 <b>tampoco</b> = «ook niet», no «ook». <span class="gloss">tampoco is de negatieve tegenhanger van también.</span></div></div></div>')
 P(regla("Regla · reacciones",
-  '<p><b>A mí también</b> = ik ook (na +) · <b>A mí tampoco</b> = ik ook niet (na –) · <b>A mí sí</b> = ik wel (na –) · <b>A mí no</b> = ik niet (na +). 🟡 Zeg altijd <b>a mí</b>, niet <i>yo</i>: «A mí también» (niet <span class="trap">Yo también gusto</span>).</p>'))
+  '<p><b>A mí también</b> (después de +) · <b>A mí tampoco</b> (después de –) · <b>A mí sí</b> (después de –) · <b>A mí no</b> (después de +). 🟡 Di siempre <b>a mí</b>, no <i>yo</i>: «A mí también», no <span class="trap">Yo también gusto</span>. <span class="gloss">ik ook · ik ook niet · ik wel · ik niet.</span></p>'))
 P('</div>')  # page §2.1
 # §2 práctica
 P('<div class="page">')
@@ -726,7 +725,7 @@ P(actx(1, "Elige la reacción",
   'd) «No me gusta el frío.» → A mí <b>tampoco</b> / <b>sí</b> <span class="gloss">(jij wél)</span></p>', apoyo="Pista: boom hierboven"))
 P(actx(2, "Reacciona con la verdad",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Reageer op elke zin volgens <b>jouw</b> smaak (kies zelf akkoord of niet).</p>'
+  '<p>Reacciona a cada frase según <b>tu</b> gusto: decides tú si estás de acuerdo o no. <span class="gloss">Reageer volgens je eigen smaak.</span></p>'
   '<table class="mp"><thead><tr><th>Bea dice…</th><th>Tu reacción</th></tr></thead><tbody>'
   '<tr><td>Me gustan los videojuegos.</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>No me gusta madrugar.</td><td><span class="wl md"></span></td></tr>'
@@ -757,7 +756,7 @@ P(actx(5, "Cadena de gustos",
   '<p style="margin-left:12.5mm">Nota: <span class="wl full"></span></p>', apoyo=""))
 P(tarea_com("Tarea comunicativa · «¿Estamos de acuerdo?»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
-  '<p><b>Situación:</b> zeg om de beurt een gusto; je buur reageert echt (también/tampoco/sí/no) en jullie tellen hoeveel jullie <b>gemeen</b> hebben. <span class="gloss">«A mí me gusta… —A mí también / A mí no.»</span></p>'
+  '<p><b>Situación:</b> decid un gusto por turnos; tu compañero/a reacciona de verdad (también/tampoco/sí/no) y contáis cuántos tenéis <b>en común</b>. <span class="gloss">«A mí me gusta… —A mí también / A mí no.»</span></p>'
   '<p style="margin-left:12.5mm">Gustos en común: <span class="wl sm"></span> / 5 &nbsp; Uno diferente: <span class="wl md"></span></p>'
   + APO.html("Marco: vier reacties")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «Espejo de reacciones» (también/tampoco) en «a mí sí / a mí no».</div>')
@@ -833,7 +832,7 @@ P(actx(3, "Completa con la forma correcta (cloze)",
 P(actx(4, "Cadena de transformación",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Parte de <b>«Quiero ir a la playa.»</b> y haz cada cambio, escribiendo la frase entera. <span class="gloss">Vertrek van die zin en schrijf telkens de hele zin.</span></p>'
-  '<p style="margin-left:12.5mm">→ maak er een <b>vraag</b> van (tú): <span class="wl lg"></span><br>→ verander naar <b>nosotros</b>: <span class="wl lg"></span><br>→ maak <b>ontkennend</b> (yo, poder): <span class="wl lg"></span><br>→ voeg <b>«el domingo»</b> toe: <span class="wl lg"></span></p>', apoyo="Pista: cada paso cambia una sola parte de la frase"))
+  '<p style="margin-left:12.5mm">→ conviértelo en <b>pregunta</b> (tú): <span class="wl lg"></span><br>→ cámbialo a <b>nosotros</b>: <span class="wl lg"></span><br>→ ponlo en <b>negativo</b> (yo, poder): <span class="wl lg"></span><br>→ añade <b>«el domingo»</b>: <span class="wl lg"></span> <span class="gloss">vraag · nosotros · ontkennend · aanvullen</span></p>', apoyo="Pista: cada paso cambia una sola parte de la frase"))
 P(audiorow('<div class="ic">🎧</div><div><b>Microdictado.</b> Escucha dos veces y escribe las propuestas. <span class="gloss">1ª: betekenis · 2ª: schrijf de zinnen.</span></div>',
            qr("Escanea y escucha", "Audio 4.3 · Planes · 0:45", seed=43)))
 P(actx(5, "Propón un plan",
@@ -847,7 +846,7 @@ P(actx(6, "¿querer o poder?",
   'c) (nosotros, wens) ___ ver una peli. &nbsp; d) (ellos, kunnen) no ___ venir.<br><span class="wl full"></span></p>', apoyo="Pista: tabel §3.1"))
 P(tarea_com("Tarea comunicativa · «Quedamos el finde»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
-  '<p><b>Situación:</b> stel elkaar een plan voor, ga akkoord of stel iets anders voor, en spreek een <b>uur en plaats</b> af. <span class="gloss">«¿Quieres…? —Vale. ¿A qué hora quedamos?»</span></p>'
+  '<p><b>Situación:</b> proponeos un plan, aceptad o proponed otra cosa, y quedad a una <b>hora y en un sitio</b>. <span class="gloss">«¿Quieres…? —Vale. ¿A qué hora quedamos?»</span></p>'
   '<p style="margin-left:12.5mm">Nuestro plan: <span class="wl full"></span></p>'
   '<p style="margin-left:12.5mm">☐ plan · ☐ hora · ☐ lugar</p>'
   + APO.html("Marco: proponer/quedar")))
@@ -873,7 +872,7 @@ P('<div class="ptexts">'
   '<p>¡Hola! Me <span class="evi">encanta la música</span>. Mi artista favorita es <span class="evi">Rosalía</span>, ¡me gustan todas sus canciones! También me <span class="evi">gusta bailar</span> flamenco. Los fines de semana <span class="evi">voy a la playa</span> con amigos. No me gustan los videojuegos, prefiero salir. ¿Y a ti, qué te gusta?</p></div>'
   f'<div class="ptext"><div class="ph"><div class="av">{AV["diego"]}</div><div><div class="nm">Diego</div><div class="fr">app · mi playlist</div></div></div>'
   '<p>¡Qué onda! A mí me <span class="evi">gusta el reguetón</span> y me <span class="evi">encantan los videojuegos</span>. Toco un poco la <span class="evi">guitarra</span>. No me gusta bailar, pero me gusta escuchar música todos los días. Los sábados quiero <span class="evi">ver películas de acción</span>. ¡Escríbeme tu playlist!</p></div></div>')
-P('<div class="lecdoel">🎯 <b>Objetivo de lectura:</b> lees om te ontdekken <b>welke muziek</b> ze leuk vinden en <b>wat ze niet</b> leuk vinden — je hoeft niet élk woord te begrijpen.</div>')
+P('<div class="lecdoel">🎯 <b>Objetivo de lectura:</b> lee para descubrir <b>qué música</b> les gusta y <b>qué no</b> les gusta. No hace falta entender todas las palabras. <span class="gloss">Lees gericht; je hoeft niet élk woord te begrijpen.</span></div>')
 P('</div>')  # page §4a
 P('<div class="page">')
 P(actx(2, "Escanea: completa la tabla",
@@ -902,7 +901,7 @@ P(actx(5, "Ordena la mini-conversación",
   '<p style="margin-left:12.5mm">___ A mí también. ¿Quieres ir al concierto? &nbsp; ___ ¡Hola! ¿Te gusta Rosalía? &nbsp; ___ ¡Vale! ¿A qué hora quedamos? &nbsp; ___ Sí, me encanta.</p>', apoyo="Banco de palabras"))
 P(tarea_com("Tarea comunicativa · Responde con tu perfil",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
-  '<p><b></b> Kies één perfil en schrijf een <b>antwoord</b> met je eigen gustos (afzender = jij · ontvanger = Lucía/Diego · doel = smaak delen). Lees het daarna hardop voor.</p>'
+  '<p><b></b> Elige un perfil y escribe una <b>respuesta</b> con tus propios gustos (emisor = tú · destinatario = Lucía o Diego · objetivo = compartir gustos). Léela después en voz alta. <span class="gloss">Schrijf je antwoord en lees het hardop voor.</span></p>'
   '<div class="wbox"></div>'
   + APO.html("Marco: Me encanta… · Me gusta… · No me gusta… porque…")))
 P('<div class="route-note">🎮 <b>Sigue online:</b> en la página digital grabas tu respuesta y escuchas los perfiles. <span class="gloss">Online: opnemen en luisteren.</span></div>')
@@ -915,7 +914,7 @@ P('<div class="intro"><b>ES:</b> Dos herramientas para dar tu opinión: la pregu
 P(lpd(("8","taalsysteem: ¿por qué?/porque + conectoren"), ("3","mening motiveren")))
 P('</div>')
 P('<h3 style="margin-top:6mm">Opinar · ¿por qué? → porque</h3>')
-P('<p style="font-size:9.6pt">① <b>Espejo:</b> een vraag met <b>¿por qué?</b> vraagt om een reden met <b>porque</b>:</p>')
+P('<p style="font-size:9.6pt">① <b>Espejo:</b> una pregunta con <b>¿por qué?</b> pide una razón con <b>porque</b>: <span class="gloss">Vraag met ¿por qué?, antwoord met porque.</span></p>')
 P(mirror([
   ('¿<span class="mk">Por qué</span> te gusta Rosalía?', 'Me gusta <span class="mk">porque</span> canta muy bien.'),
   ('¿<span class="mk">Por qué</span> no te gusta el fútbol?', 'No me gusta <span class="mk">porque</span> es aburrido.'),
@@ -939,7 +938,7 @@ P(actx(2, "Une con el conector correcto",
   'c) Toco la guitarra ___ canto. &nbsp; d) Es divertido; ___, es barato.<br><span class="gloss">banco: pero · sobre todo · y también · además</span></p>', apoyo="Banco de palabras"))
 P(actx(3, "Amplía con un porqué",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Voeg aan elke zin een reden met <b>porque</b> toe.</p>'
+  '<p>Añade a cada frase una razón con <b>porque</b>. <span class="gloss">Voeg een reden toe.</span></p>'
   '<p style="margin-left:12.5mm">Me encanta la playa <span class="wl lg"></span><br>No me gustan los lunes <span class="wl lg"></span></p>', apoyo=""))
 P(actx(4, "Escribe tu mini-opinión con conectores",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
@@ -1050,7 +1049,7 @@ P(audiorow('<div class="ic">🎧</div><div><b>Escucha «La Perla» de Rosalía</
 P('</div>')  # page Banda 1
 P('<div class="page">')
 P('<div class="divider">La escala del gusto · «La Perla»</div>')
-P('<p style="font-size:9.6pt">① <b>De «odio» a «me encanta».</b> Rosalía canta en <i>La Perla</i> sobre alguien a quien no aguanta. Zo kan je je smaak <b>graderen</b>, van heel negatief tot heel positief:</p>')
+P('<p style="font-size:9.6pt">① <b>De «odio» a «me encanta».</b> Rosalía canta en <i>La Perla</i> sobre alguien a quien no aguanta. Así puedes <b>graduar</b> tu gusto, de muy negativo a muy positivo: <span class="gloss">Zo graad je je smaak, van heel negatief tot heel positief.</span></p>')
 P(perla_scale([
   ("#DC2626", "odio", "ik haat"),
   ("#B7860B", "no me gusta", "ik vind niet leuk"),
@@ -1068,7 +1067,7 @@ P(actx(2, "¿Qué artista y por qué? (mini-reseña con la escala)",
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span></p>', apoyo="Marco: Me encanta … porque …"))
 P(tarea_com("Tarea comunicativa · «La playlist de la clase»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
-  '<p><b>Situación:</b> vergelijk met je buur welke van de zes artiesten jullie <b>me encanta / me gusta / no me gusta / odio</b> vinden. Reageer met <b>también/tampoco/a mí sí/no</b> en kies samen één nummer voor de klasplaylist.</p>'
+  '<p><b>Situación:</b> compara con tu compañero/a cuáles de los seis artistas os <b>encantan</b>, os <b>gustan</b>, <b>no os gustan</b> u <b>odiáis</b>. Reaccionad con <b>también/tampoco/a mí sí/no</b> y elegid juntos una canción para la playlist de la clase. <span class="gloss">Vergelijk, reageer en kies samen één nummer.</span></p>'
   '<table class="mp"><thead><tr><th>Artista</th><th>Yo (escala)</th><th>Mi compañero/a</th><th>¿Igual?</th></tr></thead><tbody>'
   '<tr><td>Rosalía</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>Karol G</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'

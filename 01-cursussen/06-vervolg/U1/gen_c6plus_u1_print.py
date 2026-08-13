@@ -469,7 +469,7 @@ P(actx(AN(), "Clínica de errores · ser/estar",
   apoyo="Pista: pregúntate si es identidad (ser) o lugar/estado (estar)"))
 P(actx("★", "Tarea comunicativa · ¿cómo es y cómo está?",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★★"}],
-  '<p>Beschrijf een klasgenoot met <b>ser</b> (2 eigenschappen) én <b>estar</b> (hoe hij/zij zich nu voelt). Zeg het hardop.</p>'
+  '<p>Describe a un compañero/a con <b>ser</b> (2 rasgos) y con <b>estar</b> (cómo se siente ahora). Dilo en voz alta. <span class="gloss">Twee eigenschappen met ser, plus hoe hij of zij zich nu voelt.</span></p>'
   '<p style="margin-left:12.5mm">Mi compañero/a <b>es</b> <span class="wl md"></span> y <span class="wl md"></span>, y hoy <b>está</b> <span class="wl md"></span>.</p>',
   apoyo="Marco: … es … pero hoy está …"))
 P('</div>')  # sluit .page §4.3
@@ -560,7 +560,7 @@ P(regla("Mi primera opinión", '<p>Combina una frase con gustar y una razón: <b
   '<span class="gloss">Zo geef je je eerste mening. In U3 komt «creo que…»; nu volstaat «porque».</span></p>'))
 P(actx(AN(), "Reacciona · me gusta… porque…",
   [{"t":"✍️ Escribir","skill":True},{"t":"🎙️ Hablar","skill":True},{"t":"± 5 min"},{"t":"★★★"}],
-  '<p>Geef je mening over elk onderwerp met de schaal <b>én</b> een reden met <b>porque</b>.</p>'
+  '<p>Da tu opinión sobre cada tema con la escala <b>y</b> una razón con <b>porque</b>. <span class="gloss">Gebruik de schaal én een reden.</span></p>'
   '<p style="margin-left:12.5mm">El fútbol: <span class="wl lg"></span><br>'
   'La música clásica: <span class="wl lg"></span><br>'
   'Los videojuegos: <span class="wl lg"></span><br>'
@@ -622,8 +622,7 @@ sec_close()
 # ================= TALLER DE LENGUA =================
 sec_open("T", "Taller de lengua", 'Dos herramientas: la <b>sílaba tónica</b> en los verbos reflexivos (me DUcho, se desPIERta) y los <b>conectores de secuencia</b> para contar tu día en orden. <span class="gloss">Twee taalgereedschappen: klemtoon in reflexieven en verbindingswoorden.</span>')
 P('<h3>1 · Ortografía — la sílaba tónica</h3>')
-P(regla("¿Dónde va el acento?", '<p>De meeste woorden zijn <b>llana</b> (klemtoon op de voorlaatste lettergreep): <b>du</b>-cho, le-<b>van</b>-to. Draagt het woord een <b>tilde</b>, volg dan de tilde: <b>miér</b>-co-les (esdrújula), des-per-<b>tar</b> (aguda).<br>'
-  '<span class="gloss">Reflexieve vormen: me <b>du</b>-cho, se des-<b>pier</b>-ta, nos le-van-<b>ta</b>-mos.</span></p>'))
+P(regla("¿Dónde va el acento?", '<p>La mayoría de las palabras son <b>llanas</b> (acento en la penúltima sílaba): <b>du</b>-cho, le-<b>van</b>-to. Si la palabra lleva <b>tilde</b>, sigue la tilde: <b>miér</b>-co-les (esdrújula), des-per-<b>tar</b> (aguda).<br>' '<span class="gloss">Reflexieve vormen: me <b>du</b>-cho, se des-<b>pier</b>-ta, nos le-van-<b>ta</b>-mos.</span></p>'))
 P(actx(AN(), "Clasifica por el acento",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Clasifica: <span class="gloss">sorteer deze woorden</span> <span class="words"><b>ducho · levanto · miércoles · después · rutina · sábado · reloj · música</b></span></p>'
@@ -658,7 +657,7 @@ P('</div>')
 sec_open("C", "Cultura · el horario español", 'En España el <b>horario</b> es diferente: se <b>come</b> a las 2–3 y se <b>cena</b> a las 9–10. Y existe la <b>siesta</b>. Un día hispano no es igual en todos los países. <span class="gloss">In Spanje eet men laat en soms is er een siësta. De dagindeling verschilt per land.</span>',
         lpd(("5","identiteit in diversiteit: la vida cotidiana hispana")))
 P('<div class="fams three" style="margin-top:2mm">'
-  '<div class="pcard"><div class="t">🍽️ Se come tarde</div><div class="ej" style="margin-top:2mm">In España is <b>la comida</b> (de lunch) de hoofdmaaltijd, om <b>14–15u</b>. <b>La cena</b> is licht en laat: <b>21–22u</b>. Ontbijt (desayuno) is klein.</div><div class="anchor gloss">Vergelijk met jouw dag: wanneer eet jij?</div></div>'
+  '<div class="pcard"><div class="t">🍽️ Se come tarde</div><div class="ej" style="margin-top:2mm">In España is <b>la comida</b> (de lunch) de hoofdmaaltijd, om <b>14–15u</b>. <b>La cena</b> is licht en laat: <b>21–22u</b>. Ontbijt (desayuno) is klein.</div><div class="anchor gloss">Compara con tu día: ¿tú a qué hora comes? <span class="gloss">Wanneer eet jij?</span></div></div>'
   '<div class="pcard"><div class="t">😴 La siesta</div><div class="ej" style="margin-top:2mm">Na de comida rusten sommige mensen even (<b>la siesta</b>), vooral in kleine steden en in de zomer. In grote steden werkt bijna niemand nog met siesta.</div><div class="anchor gloss">Mito y realidad: geen siesta voor iedereen!</div></div>'
   '<div class="pcard"><div class="t">🌎 No es igual en todo el mundo</div><div class="ej" style="margin-top:2mm">In <b>México</b> is de hoofdmaaltijd ook rond 14–15u, maar men ontbijt steviger. In veel LatAm-landen eet men vroeger dan in España.</div><div class="anchor gloss">Un día hispano ≠ un solo horario.</div></div></div>')
 P('<div class="route-note" style="margin-top:5mm">🗺️ <b>En la web:</b> compara tu horario con el de Lucía (Sevilla) y Diego (CDMX) en la página digital. <span class="gloss">Online: vergelijk jouw dagindeling met die van de cast.</span></div>')

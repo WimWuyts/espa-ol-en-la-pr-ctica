@@ -613,9 +613,7 @@ P(actx(7, "Empareja: cantidad ↔ producto",
   '<tr><td>3 · un paquete de</td><td><span class="wl sm"></span></td><td>C · queso</td></tr>'
   '<tr><td>4 · un poco de</td><td><span class="wl sm"></span></td><td>D · tomates</td></tr></tbody></table>', apoyo="Banco de palabras"))
 P(regla("Regla · cantidades",
-  '<p><b>mucho/-a/-os/-as</b> past zich aan bij het woord (much<b>o</b> pan · much<b>a</b> fruta · much<b>os</b> tomates · much<b>as</b> uvas). '
-  '<b>un poco de</b> (= een beetje) blijft altijd gelijk en gebruik je bij <b>niet-telbare</b> dingen (queso, leche, agua). '
-  '<br>🔴 Envases: <b>un kilo de</b>, <b>una botella de</b>, <b>un paquete de</b> + product.</p>'))
+  '<p><b>mucho/-a/-os/-as</b> concuerda con la palabra (much<b>o</b> pan · much<b>a</b> fruta · much<b>os</b> tomates · much<b>as</b> uvas). ' '<b>un poco de</b> no cambia nunca y va con lo <b>incontable</b> (queso, leche, agua). ' '<br>🔴 Envases: <b>un kilo de</b>, <b>una botella de</b>, <b>un paquete de</b> + producto. <span class="gloss">mucho past zich aan, un poco de nooit.</span></p>'))
 P(tarea_com("Tarea comunicativa · «En el mercado»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
   '<p><b>Situación:</b> A es el/la cliente con una lista y B, el/la vendedor/a del mercado. Pide productos con una <b>cantidad</b> <span class="gloss">A vraagt met een hoeveelheid, B verkoopt.</span>; B antwoordt met de prijs. Wissel. <span class="gloss">«¿Me pone un kilo de tomates? —Claro, son dos euros.»</span></p>'
@@ -636,7 +634,7 @@ P(lpd(("8","taalsysteem: ir a + infinitivo (futuro próximo)"), ("4","interactie
 P('</div>')
 # §2.1 machine + bloques
 P('<h3 style="margin-top:6mm">§2.1 · La máquina «ir a + infinitivo»</h3>')
-P('<p style="font-size:9.6pt">① <b>Observa la máquina.</b> Neem het werkwoord <b>ir</b> in het presente + <b>a</b> + een infinitief:</p>')
+P('<p style="font-size:9.6pt">① <b>Observa la máquina.</b> Coge el verbo <b>ir</b> en presente + <b>a</b> + un infinitivo: <span class="gloss">ir vervoegd + a + het hele werkwoord.</span></p>')
 P(machine([("persona","yo"),("ir (presente)",'v<span class="end">oy</span>'),("+ a +","a"),("infinitivo","comer"),("frase","voy a comer")]))
 P('<p style="font-size:9.6pt">② <b>La tabla de <i>ir</i> (nagerekend):</b></p>')
 P('<div class="fams" style="margin-top:2mm">')
@@ -659,9 +657,7 @@ P(blocks([
   [("per","(Ellos) van"),("vb","a"),("opt","probar el guacamole")],
 ]))
 P(regla("Regla · ir a + infinitivo",
-  '<p><b>ir</b> in het presente (voy, vas, va, <b>vamos</b>, vais, van) + <b>a</b> + <b>infinitivo</b>. '
-  'Je gebruikt het voor plannen dichtbij: <i>Hoy voy a cenar en casa.</i> '
-  '<br>🔴 Vergeet de <b>a</b> niet: <i>voy <b>a</b> comer</i> (niet <span class="trap">voy comer</span>). 🔴 Tweede werkwoord = <b>infinitief</b>.</p>'))
+  '<p><b>ir</b> en presente (voy, vas, va, <b>vamos</b>, vais, van) + <b>a</b> + <b>infinitivo</b>. ' 'Sirve para planes cercanos: <i>Hoy voy a cenar en casa.</i> ' '<br>🔴 No olvides la <b>a</b>: <i>voy <b>a</b> comer</i>, no <span class="trap">voy comer</span>. 🔴 El segundo verbo va en <b>infinitivo</b>. <span class="gloss">Vergeet de a niet; het tweede werkwoord blijft in de hele vorm.</span></p>'))
 P('</div>')  # page §2.1
 
 # §2.2 práctica + CLOZE (verplicht)
@@ -694,14 +690,14 @@ P(actx(3, "Completa con la forma correcta (cloze)",
 P(actx(4, "Cadena de transformación",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Parte de <b>«Voy a comer un taco.»</b> y haz cada cambio, escribiendo la frase entera. <span class="gloss">Vertrek van die zin; schrijf telkens de hele zin.</span></p>'
-  '<p style="margin-left:12.5mm">→ maak er een <b>vraag</b> van (tú): <span class="wl lg"></span><br>→ verander naar <b>nosotros</b>: <span class="wl lg"></span><br>→ maak <b>ontkennend</b> (yo): <span class="wl lg"></span><br>→ voeg <b>«mañana»</b> toe: <span class="wl lg"></span></p>', apoyo="Pista: cada paso cambia una sola parte de la frase"))
+  '<p style="margin-left:12.5mm">→ conviértelo en <b>pregunta</b> (tú): <span class="wl lg"></span><br>→ cámbialo a <b>nosotros</b>: <span class="wl lg"></span><br>→ ponlo en <b>negativo</b> (yo): <span class="wl lg"></span><br>→ añade <b>«mañana»</b>: <span class="wl lg"></span> <span class="gloss">vraag · nosotros · ontkennend · aanvullen</span></p>', apoyo="Pista: cada paso cambia una sola parte de la frase"))
 P(actx(5, "¿Qué vas a pedir? — escribe",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Escribe tres frases: qué <b>vas a comer</b>, <b>a beber</b> y <b>a probar</b> en México. <span class="gloss">Drie zinnen over wat je gaat eten, drinken en proeven.</span></p>'
   '<div class="wbox sm"></div>', apoyo="Marco: Voy a … / Voy a probar …"))
 P(tarea_com("Tarea comunicativa · «Nuestros planes para la cena»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 7 min"},{"t":"★★★"}],
-  '<p><b>Situación:</b> vertel elkaar wat jullie vanavond <b>gaan eten en drinken</b> (ir a + infinitivo) en noteer één plan van je buur. <span class="gloss">«Esta noche voy a cenar pasta. ¿Y tú?»</span></p>'
+  '<p><b>Situación:</b> contaos qué vais a <b>cenar y beber</b> esta noche (ir a + infinitivo) y anota un plan de tu compañero/a. <span class="gloss">«Esta noche voy a cenar pasta. ¿Y tú?»</span></p>'
   '<p style="margin-left:12.5mm">El plan de mi compañero/a: <span class="wl full"></span></p>'
   + APO.html("Marco: Voy a … · Vamos a …")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «voy a… (cloze)», «ordena la cena» en de presente-Tetris met zelfcorrectie.</div>')
@@ -736,9 +732,7 @@ P(pcard("🙋 El cliente pide", '<div class="ej">Para mí, …<br>¿Me pone…?<
 P('</div>')
 P(colloc("pedir", ["Para mí…","¿Me pone…?","¿Me trae…?","De primero…","De segundo…","La cuenta, por favor"]))
 P(regla("Regla · pedir con cortesía",
-  '<p>De cliente bestelt beleefd met <b>Para mí, …</b> · <b>¿Me pone…?</b> · <b>¿Me trae…?</b> (+ <b>por favor</b>). '
-  'De camarero vraagt <b>¿Qué va a tomar?</b> / <b>¿Y para beber?</b>. '
-  '<br>🔴 Zeg niet enkel «quiero» — dat klinkt bot. Gebruik <b>¿me pone…?</b> of <b>para mí…</b>. Structuur: <b>de primero</b> (voor) · <b>de segundo</b> (hoofd) · <b>de postre</b> (na).</p>'))
+  '<p>El cliente pide con educación: <b>Para mí, …</b> · <b>¿Me pone…?</b> · <b>¿Me trae…?</b> (+ <b>por favor</b>). ' 'El camarero pregunta <b>¿Qué va a tomar?</b> / <b>¿Y para beber?</b>. ' '<br>🔴 No digas solo «quiero»: suena seco. Usa <b>¿me pone…?</b> o <b>para mí…</b>. La estructura: <b>de primero</b> · <b>de segundo</b> · <b>de postre</b>. <span class="gloss">Bestel beleefd; voorgerecht, hoofdgerecht, nagerecht.</span></p>'))
 P('</div>')  # page §3.1
 
 # §3.2 práctica
@@ -806,8 +800,7 @@ P('<p style="font-size:9.6pt">③ <b>Contrastes mínimos — de vier vormen:</b>
 P(vpairs([("el pan → lo","la carta → la"),("los tacos → los","las gambas → las"),("el postre → lo traigo","la cuenta → la traigo"),("¿el café? → lo pido","¿la sopa? → la pido")]))
 P('<div class="truc"><b>🔴 Concordancia:</b> <b>lo</b> (m. sing.) · <b>la</b> (f. sing.) · <b>los</b> (m. pl.) · <b>las</b> (f. pl.). El pronombre va <b>delante</b> del verbo: <i>La traigo</i>, no <span class="trap">traigo la</span>. <span class="gloss">Het pronomen staat vóór het werkwoord.</span></div>')
 P(regla("Regla · lo / la / los / las (OD-aanzet)",
-  '<p>Om het <b>voorwerp</b> niet te herhalen: <b>lo</b> (m. ev.), <b>la</b> (v. ev.), <b>los</b> (m. mv.), <b>las</b> (v. mv.). '
-  'Het staat <b>vóór</b> het vervoegde werkwoord: <i>¿La cuenta? — La traigo.</i> · <i>¿Los tacos? — Los quiero.</i></p>'))
+  '<p>Para no repetir el <b>objeto</b>: <b>lo</b> (m. sing.), <b>la</b> (f. sing.), <b>los</b> (m. pl.), <b>las</b> (f. pl.). ' 'Va <b>delante</b> del verbo conjugado: <i>¿La cuenta? — La traigo.</i> · <i>¿Los tacos? — Los quiero.</i> <span class="gloss">Het pronomen staat vóór het vervoegde werkwoord.</span></p>'))
 P('</div>')  # page §4.1
 # §4.2 práctica (kort, A2-aanzet)
 P('<div class="page">')
@@ -915,7 +908,7 @@ P(actx(5, "Ordena la receta",
   '<p style="margin-left:12.5mm">___ Después, exprime la lima. &nbsp; ___ Primero, abre el aguacate. &nbsp; ___ ¡Que aproveche! &nbsp; ___ Luego, añade el tomate y la cebolla.</p>', apoyo="Banco de palabras: primero/luego/después"))
 P(tarea_com("Tarea comunicativa · «¿Qué vas a pedir?» (keten lezen→spreken)",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
-  '<p><b></b> Kies één van de twee cartas. Zeg wat je <b>vas a pedir</b> (primero, segundo, postre, bebida) én waarom. Je buur bestelt uit de andere carta. <span class="gloss">«Voy a pedir tacos de pollo porque me gusta el pollo.»</span></p>'
+  '<p><b></b> Elige una de las dos cartas. Di qué <b>vas a pedir</b> (primero, segundo, postre, bebida) y por qué. Tu compañero/a pide de la otra carta. <span class="gloss">«Voy a pedir tacos de pollo porque me gusta el pollo.»</span></p>'
   '<div class="wbox sm"></div>'
   + APO.html("Marco: Voy a pedir… porque…")))
 P('<div class="route-note">🎮 <b>Sigue online:</b> luister de cartas (TTS), lees de receta en neem je bestelling op (recorder) op de digitale pagina.</div>')

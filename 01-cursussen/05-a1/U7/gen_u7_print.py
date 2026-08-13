@@ -606,9 +606,7 @@ P(actx(6, "¿Es correcto? — ejemplo o no-ejemplo",
   '<tr><td>Hay dos ventanas.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>La cocina hay a la derecha.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr></tbody></table>', apoyo="Pista: nieuw/bekend"))
 P(regla("Regla · hay / estar",
-  '<p><b>hay</b> = er is/zijn. Voor iets <b>nieuws</b>: <b>hay</b> + un/una/dos/muchos… (of niets). Altijd dezelfde vorm. '
-  '<b>estar</b> (está/están) = zeggen <b>waar</b> iets <b>bekends</b> (met el/la) staat: <i>El parque está cerca.</i> '
-  '<br>🔴 Nooit «hay el/la…». 🔴 Meervoud: <i>hay dos baños</i> maar <i>los baños <b>están</b></i>.</p>'))
+  '<p><b>hay</b> dice que algo existe. Para algo <b>nuevo</b>: <b>hay</b> + un/una/dos/muchos… (o nada). Siempre la misma forma. ' '<b>estar</b> (está/están) dice <b>dónde</b> está algo <b>conocido</b> (con el/la): <i>El parque está cerca.</i> ' '<br>🔴 Nunca «hay el/la…». 🔴 En plural: <i>hay dos baños</i> pero <i>los baños <b>están</b></i>. <span class="gloss">hay voor iets nieuws, está voor iets bekends.</span></p>'))
 P(tarea_com("Tarea comunicativa · «Mi habitación»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 8 min"},{"t":"★★★"}],
   '<p><b>Situación:</b> A describe su habitación (¿qué hay? ¿dónde está?) y B la dibuja sin mirar. Después comparad. <span class="gloss">A beschrijft, B tekent; vergelijk daarna.</span> Wissel. <span class="gloss">«En mi habitación hay una cama. La cama está al lado de la ventana.»</span></p>'
@@ -690,11 +688,11 @@ P(actx(5, "Dictado: mi habitación",
   '3. <span class="wl lg"></span> 4. <span class="wl lg"></span></p>', apoyo="Modelo: twee keer beluisteren"))
 P(actx(6, "Escribe: mi barrio en un plano",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
-  '<p>Teken een mini-plattegrond (4 gebouwen) en schrijf drie zinnen: waar staat wat.</p>'
+  '<p>Dibuja un miniplano (4 edificios) y escribe tres frases: qué está dónde. <span class="gloss">Teken en situeer.</span></p>'
   '<div class="wbox"></div>', apoyo="Marco: … está al lado de… / entre… y…"))
 P(tarea_com("Tarea comunicativa · «¿Dónde está?»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 7 min"},{"t":"★★★"}],
-  '<p><b>Situación:</b> A verstopt een voorwerp in zijn plattegrond, B raadt met vragen (¿Está debajo de…? ¿al lado de…?). Wissel. <span class="gloss">«—¿Está detrás del sofá? —No. —¿Al lado de la ventana? —¡Sí!»</span></p>'
+  '<p><b>Situación:</b> A esconde un objeto en su plano y B adivina con preguntas (¿Está debajo de…? ¿al lado de…?). Después cambiad. <span class="gloss">«—¿Está detrás del sofá? —No. —¿Al lado de la ventana? —¡Sí!»</span></p>'
   '<p style="margin-left:12.5mm">Mi pregunta ganadora: <span class="wl full"></span></p>'
   + APO.html("Marco: ¿Está … de …?")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «preposición de lugar» (cloze), «señala en el plano del barrio» (point) en de preposiciones-Tetris.</div>')
@@ -738,9 +736,7 @@ P(blocks([
   [("per","(Ellos) están"),("vb","durmiendo"),("opt","en el dormitorio")],
 ]))
 P(regla("Regla · estar + gerundio",
-  '<p><b>estar</b> in het presente (estoy, estás, está, <b>estamos</b>, estáis, están) + <b>gerundio</b> (-ando / -iendo). '
-  'Je gebruikt het voor wat <b>nu</b> gebeurt: <i>¿Qué estás haciendo? — Estoy estudiando.</i> '
-  '<br>🔴 Twee delen: <b>estar</b> (vervoegd) + gerundio (onveranderd). 🔴 -ar→-ando, -er/-ir→-iendo.</p>'))
+  '<p><b>estar</b> en presente (estoy, estás, está, <b>estamos</b>, estáis, están) + <b>gerundio</b> (-ando / -iendo). ' 'Sirve para lo que pasa <b>ahora</b>: <i>¿Qué estás haciendo? — Estoy estudiando.</i> ' '<br>🔴 Dos piezas: <b>estar</b> conjugado + gerundio invariable. 🔴 -ar→-ando, -er/-ir→-iendo. <span class="gloss">Twee delen: estar vervoegd, gerundio onveranderd.</span></p>'))
 P('</div>')  # page §3.1
 
 # §3.2 práctica + CLOZE (verplicht)
@@ -820,9 +816,7 @@ P(tree([
 ]))
 P('<div class="truc"><b>🔴 Formas útiles:</b> <b>gira</b> · <b>sigue</b> · <b>cruza</b> · <b>toma/coge</b> · <b>ve</b> (de «ir»). En un verbo regular en <b>-ar</b> la forma acaba en <b>-a</b>; en <b>-er/-ir</b>, en <b>-e</b>. <span class="gloss">draai · ga door · steek over · neem · ga.</span></div>')
 P(regla("Regla · imperativo afirmativo (tú)",
-  '<p>Voor een <b>bevel/instructie</b> aan <b>tú</b>: neem de <b>él/ella-vorm</b> van het presente. '
-  '<b>-ar</b> → <b>-a</b> (gira, cruza, toma) · <b>-er/-ir</b> → <b>-e</b> (sube, sigue). '
-  '<br>🔴 Onregelmatig: <b>ir → ve</b> · <b>seguir → sigue</b> (e→i). Zo leg je de weg uit.</p>'))
+  '<p>Para una <b>orden o instrucción</b> a <b>tú</b>: coge la forma de <b>él/ella</b> del presente. ' '<b>-ar</b> → <b>-a</b> (gira, cruza, toma) · <b>-er/-ir</b> → <b>-e</b> (sube, sigue). ' '<br>🔴 Irregulares: <b>ir → ve</b> · <b>seguir → sigue</b> (e→i). Así indicas el camino. <span class="gloss">Neem de él/ella-vorm van het presente.</span></p>'))
 P('</div>')  # page §4.1
 
 # §4.2 práctica
@@ -849,11 +843,11 @@ P(actx(4, "Escucha: ¿adónde llegas?",
   '<p style="margin-left:12.5mm">☐ la plaza &nbsp; ☐ el museo &nbsp; ☐ la estación &nbsp; ☐ el parque<br>Mi respuesta: <span class="wl md"></span></p>', apoyo="Modelo: plano gegeven"))
 P(actx(5, "Escribe el camino a tu casa",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
-  '<p>Leg uit hoe je van school naar jouw huis gaat (4–5 instructies, imperativo).</p>'
+  '<p>Explica cómo se va del colegio a tu casa (4–5 instrucciones, en imperativo). <span class="gloss">Leg de weg uit met de imperativo.</span></p>'
   '<div class="wbox sm"></div>', apoyo="Marco: Sal de… · Sigue… · Gira… · Cruza…"))
 P(tarea_com("Tarea comunicativa · «¿Cómo se va a…?»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 9 min"},{"t":"★★★"}],
-  '<p><b>Situación:</b> A vraagt de weg naar een plek in het barrio, B legt uit met imperativo. A volgt op het plano en controleert. Wissel van rol. <span class="gloss">«—Perdona, ¿cómo se va a la farmacia? —Sigue todo recto y gira a la derecha.»</span></p>'
+  '<p><b>Situación:</b> A pregunta el camino a un sitio del barrio y B lo explica con el imperativo. A lo sigue en el plano y comprueba. Después cambiad de papel. <span class="gloss">«—Perdona, ¿cómo se va a la farmacia? —Sigue todo recto y gira a la derecha.»</span></p>'
   '<p style="margin-left:12.5mm">☐ vraag gesteld · ☐ sigue/gira/cruza gebruikt · ☐ bestemming klopt<br>Mijn instructie: <span class="wl full"></span></p>'
   + APO.html("Marco: rollenkaart + plano")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «ordena las instrucciones», «imperativo (la ruta)» (cloze) en de simulatie «¡explica el camino!».</div>')
@@ -934,7 +928,7 @@ P('<div class="ptexts">'
   '<p><b>Bonito piso en el <span class="evi">centro</span>.</b> <span class="evi">Tercer piso</span> con ascensor. Tiene <span class="evi">dos habitaciones</span>, un <span class="evi">salón</span> grande, <span class="evi">cocina</span> y <span class="evi">baño</span>. Hay una <span class="evi">terraza</span> con vistas a la plaza. Está <span class="evi">cerca de</span> la panadería y del parque. <span class="evi">600 € al mes</span>.</p></div>'
   f'<div class="ptext"><div class="ph"><div class="av">{AV["valen"]}</div><div><div class="nm">Valen · mi barrio</div><div class="fr">texto · costeña</div></div></div>'
   '<p>Vivo en un barrio de <span class="evi">casas de colores</span>. Enfrente de mi casa <span class="evi">hay</span> una <span class="evi">plaza</span> con palmeras. La <span class="evi">panadería está al lado</span> y el mar <span class="evi">está cerca</span>. Por la tarde, la gente <span class="evi">está paseando</span> y los niños <span class="evi">están jugando</span>. ¡Me encanta mi barrio!</p></div></div>')
-P('<div class="lecdoel">🎯 <b>Objetivo de lectura:</b> lees om te <b>selecteren</b> welke kamers het piso heeft en <b>waar</b> alles staat in Valens barrio — je hoeft niet élk woord te begrijpen.</div>')
+P('<div class="lecdoel">🎯 <b>Objetivo de lectura:</b> lee para <b>seleccionar</b> qué habitaciones tiene el piso y <b>dónde</b> está cada cosa en el barrio de Valen. No hace falta entender todas las palabras. <span class="gloss">Lees gericht; je hoeft niet élk woord te begrijpen.</span></div>')
 P('</div>')  # page §6a
 P('<div class="page">')
 P(actx(2, "Escanea: completa la ficha del piso",
@@ -1019,7 +1013,7 @@ P(actx(6, "Pon la tilde donde toca",
   '<tr><td>bueno</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr></tbody></table>', apoyo="Pista: tilde op í = hiato"))
 P(tarea_com("Tarea comunicativa · «Dame indicaciones»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★☆"}],
-  '<p><b>Situación:</b> beschrijf mondeling de weg van de klas naar een plek in de school/stad met <b>conectores de lugar</b> (todo recto · a la derecha · al final de…). Je buur tekent en controleert. <span class="gloss">«Sal de clase, gira a la derecha y sigue todo recto.»</span></p>'
+  '<p><b>Situación:</b> describe oralmente el camino de la clase a un sitio del colegio o de la ciudad con <b>conectores de lugar</b> (todo recto · a la derecha · al final de…). Tu compañero/a lo dibuja y comprueba. <span class="gloss">«Sal de clase, gira a la derecha y sigue todo recto.»</span></p>'
   '<p style="margin-left:12.5mm">Mi ruta (3 pasos): <span class="wl full"></span></p>'
   + APO.html("Banco de palabras: conectores")))
 P('<div class="route-note">🎮 <b>Practica online:</b> «diptongo o hiato» en de conectoren-oefeningen met zelfcorrectie.</div>')

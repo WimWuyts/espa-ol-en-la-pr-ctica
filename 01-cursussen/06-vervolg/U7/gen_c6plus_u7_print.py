@@ -129,7 +129,7 @@ sec_open("0", "§0 · ¡Ponte al día!", 'Venimos del <b>imperfecto</b> (U6: era
 P('<div class="truc"><b>Consejo ↔ opinión:</b> un <b>consejo</b> es una orden o un truco (<i>¡Come sano!</i>) → imperativo. Una <b>opinión</b> es lo que tú piensas (<i>Creo que la salud es importante</i>) → creo que + indicativo. En U7 aprendes los dos. <span class="gloss">Advies gaat met de imperativo, mening met creo que.</span></div>')
 P(actx(AN(), "¿Consejo u opinión? (repaso)",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p>Is het een <b>advies</b> (imperativo) of een <b>mening</b> (creo que…)? Vink aan.</p>'
+  '<p>¿Es un <b>consejo</b> (imperativo) o una <b>opinión</b> (creo que…)? Marca. <span class="gloss">Advies of mening?</span></p>'
   '<p style="margin-left:12.5mm">1. Come más fruta. → <span class="wl sm"></span> &nbsp; 2. Creo que el deporte es importante. → <span class="wl sm"></span><br>'
   '3. Recicla el papel. → <span class="wl sm"></span> &nbsp; 4. En mi opinión, hay mucha basura. → <span class="wl sm"></span></p>',
   apoyo="Pista: un imperativo (recicla, apaga) es un consejo; «creo que / en mi opinión» es una opinión"))
@@ -402,7 +402,7 @@ P(f'<div class="ptexts">'
   f'<p>El planeta nos necesita. <span class="evi">Creo que</span> todos podemos ayudar con pequeños gestos. Aquí van diez consejos: <span class="evi">recicla</span> el papel, el vidrio y el plástico. <span class="evi">Ahorra</span> agua: cierra el grifo. <span class="evi">Apaga</span> las luces que no usas. <span class="evi">Usa</span> la bici o el transporte público, <span class="evi">porque</span> el coche contamina mucho. <span class="evi">Come</span> más verdura y menos carne. <span class="evi">No tires</span> basura al suelo. <span class="evi">Planta</span> un árbol si puedes. <span class="evi">Además</span>, comparte estos consejos con tu familia. En Costa Rica muchos jóvenes ya lo hacen: <span class="evi">en mi opinión</span>, son un ejemplo. ¡El planeta es de todos! <span class="evi">Por eso</span>, cuídalo hoy.</p></div></div>')
 P(actx(AN(), "Verdadero o falso — con prueba",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Waar (V) of niet waar (F)? Onderstreep het bewijs.</p>'
+  '<p>¿Verdadero (V) o falso (F)? Subraya la prueba. <span class="gloss">Waar of niet waar? Onderstreep het bewijs.</span></p>'
   '<table class="alf"><thead><tr><th>Afirmación</th><th>V/F</th><th>Prueba (cita)</th></tr></thead><tbody>'
   '<tr><td>El texto recomienda usar el coche.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Aconseja comer más verdura.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
@@ -423,7 +423,7 @@ sec_close()
 # ================= TALLER =================
 sec_open("T", "Taller de lengua", 'Dos herramientas: el <b>acento</b> con pronombres enclíticos (cuídate, dímelo) y los <b>conectores de argumentación</b>. <span class="gloss">Accenten bij aangehechte pronomen plus de argumentatie-connectoren.</span>')
 P('<h3>1 · Ortografía — el acento en los enclíticos</h3>')
-P(regla("El acento del imperativo + pronombre", '<p>Als je een pronomen achteraan plakt, groeit het woord. Om de klemtoon op de oude plek te houden, komt er vaak een <b>accent</b> bij: cuida → <b>cuídate</b>, come → <b>cómelo</b>, protege → <b>protégelo</b>, di+me+lo → <b>dímelo</b>.<br><span class="gloss">🔴 Korte vormen krijgen géén accent: <b>hazlo, dime, ponlo, dilo</b>.</span></p>'))
+P(regla("El acento del imperativo + pronombre", '<p>Cuando pegas un pronombre detrás, la palabra crece. Para mantener el acento en su sitio suele aparecer una <b>tilde</b>: cuida → <b>cuídate</b>, come → <b>cómelo</b>, protege → <b>protégelo</b>, di+me+lo → <b>dímelo</b>.<br><span class="gloss">🔴 Korte vormen krijgen géén accent: <b>hazlo, dime, ponlo, dilo</b>.</span></p>'))
 P(actx(AN(), "¿Falta el acento? · corrige",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>cuidate · comelo · protegelo · dimelo · hazlo · dime</p>'
@@ -459,9 +459,9 @@ P('</div>')
 sec_open("C", "Cultura · Costa Rica y la «pura vida»", 'Costa Rica es un país especial: <b>no tiene ejército</b> desde 1948, es líder mundial en <b>ecoturismo</b> y protege una <b>biodiversidad</b> enorme (¡el 5 % de las especies del planeta!). Su lema: «<b>pura vida</b>» — una forma de saludar, dar las gracias y decir que todo va bien. <span class="gloss">Costa Rica: geen leger, ecotoerisme, enorme biodiversiteit, en het motto «pura vida».</span>',
         lpd(("5","identiteit in diversiteit: Costa Rica")))
 P('<div class="fams three" style="margin-top:2mm">'
-  '<div class="pcard"><div class="t">🕊️ Sin ejército</div><div class="ej" style="margin-top:2mm">In <b>1948</b> schafte Costa Rica zijn <b>leger</b> af. Het geld gaat naar <b>onderwijs</b> en <b>gezondheidszorg</b>. Een uniek voorbeeld van vrede.</div></div>'
-  '<div class="pcard"><div class="t">🌿 Ecoturismo</div><div class="ej" style="margin-top:2mm">Meer dan <b>25 %</b> van het land is beschermde <b>natuur</b>: regenwoud, vulkanen, stranden. Costa Rica is een wereldleider in <b>duurzaam toerisme</b>.</div></div>'
-  '<div class="pcard"><div class="t">🐒 ¡Pura vida!</div><div class="ej" style="margin-top:2mm">«<b>Pura vida</b>» hoor je overal: als groet, bedankje of «alles oké». Het vat de <b>optimistische levensstijl</b> van de «ticos» samen.</div></div></div>')
+  '<div class="pcard"><div class="t">🕊️ Sin ejército</div><div class="ej" style="margin-top:2mm">En <b>1948</b> Costa Rica abolió su <b>ejército</b>. Ese dinero va a la <b>educación</b> y a la <b>sanidad</b>. Un ejemplo de paz único en el mundo. <span class="gloss">Een land zonder leger sinds 1948.</span></div></div>'
+  '<div class="pcard"><div class="t">🌿 Ecoturismo</div><div class="ej" style="margin-top:2mm">Más del <b>25 %</b> del país es <b>naturaleza</b> protegida: selva, volcanes, playas. Costa Rica es líder mundial en <b>turismo sostenible</b>. <span class="gloss">Een kwart van het land is beschermde natuur.</span></div></div>'
+  '<div class="pcard"><div class="t">🐒 ¡Pura vida!</div><div class="ej" style="margin-top:2mm">«<b>Pura vida</b>» se oye por todas partes: como saludo, como gracias o como «todo bien». Resume el <b>optimismo</b> de los «ticos». <span class="gloss">Groet, bedankje en «alles oké» in twee woorden.</span></div></div></div>')
 P('<div class="route-note" style="margin-top:5mm">🗺️ <b>En la web:</b> haz clic en Costa Rica (★) en el mapa para descubrir la «pura vida» y cerrar la ruta. <span class="gloss">Online: klik op Costa Rica om de reis af te sluiten.</span></div>')
 P(actx(AN(), "Opina · ¿pura vida?",
   [{"t":"🌍 Cultura","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★☆"}],
@@ -517,7 +517,7 @@ P('<div class="esen"><b class="tt">Lo esencial de un vistazo</b><ul>'
   '<li><b>Opinar (indicativo):</b> creo que / pienso que / en mi opinión + es/debemos… (géén subjuntivo).</li>'
   '<li><b>Reageren:</b> (no) estoy de acuerdo · tienes razón.</li>'
   '<li><b>Conectores:</b> porque (reden) · además (toevoeging) · por eso (gevolg) · sin embargo (tegenstelling).</li>'
-  '<li><b>Las trampas:</b> 🔴 haz (niet «hace») · 🔴 accent: cuídate · 🔴 want/omdat = porque · dus = por eso.</li></ul></div>')
+  '<li><b>Las trampas:</b> 🔴 haz, no «hace» · 🔴 la tilde: cuídate · 🔴 «want» y «omdat» = porque · «dus» = por eso. <span class="gloss">De vier valstrikken van deze unit.</span></li></ul></div>')
 P('<div class="route-note">🎮 <b>Repasa jugando (online):</b> spelletjes met zelfcorrectie (imperativo, opinar, conectores…).</div>')
 P('<div class="se" style="margin-top:6mm">Semáforo — ¿cómo lo llevas?</div>')
 P('<table class="sem"><tr class="semrow"><th>Puedo…</th><th>🔴 nog niet</th><th>🟠 met steun</th><th>🟢 zelfstandig</th></tr>'

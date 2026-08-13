@@ -862,7 +862,7 @@ P(blocks([
   [("per","Nosotros"),("vb","vivimos"),("pl","en Gante"),("ti","ahora")],
 ]))
 P(regla("Regla · presente regular",
-  '<p><b>-er</b> en <b>-ir</b> zijn bijna gelijk — alleen bij <b>nosotros/vosotros</b> verschillen ze (-emos/-éis vs. -imos/-ís). De <b>yo</b>-vorm eindigt altijd op <b>-o</b>. 🟡 Ken je de yo-vorm, dan ken je het patroon.</p>'))
+  '<p><b>-er</b> e <b>-ir</b> son casi iguales: solo se diferencian en <b>nosotros/vosotros</b> (-emos/-éis frente a -imos/-ís). La forma <b>yo</b> acaba siempre en <b>-o</b>. 🟡 Si sabes la forma de yo, ya tienes el patrón. <span class="gloss">-er en -ir verschillen alleen bij nosotros en vosotros.</span></p>'))
 P('</div>')  # page §3.1
 # §3.2 práctica
 P('<div class="page">')
@@ -894,7 +894,7 @@ P(actx(3, "Completa con la forma correcta",
 P(actx(4, "Cadena de transformación",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Parte de <b>«Yo hablo español.»</b> y haz cada cambio, escribiendo la frase entera. <span class="gloss">Vertrek van die zin, voer elke opdracht uit en schrijf telkens de hele zin.</span></p>'
-  '<p style="margin-left:12.5mm">→ maak <b>ontkennend</b>: <span class="wl lg"></span><br>→ maak er een <b>vraag</b> van: <span class="wl lg"></span><br>→ verander onderwerp naar <b>nosotros</b>: <span class="wl lg"></span><br>→ voeg <b>«en el instituto»</b> toe: <span class="wl lg"></span></p>', apoyo="Pista: cada paso cambia o añade una sola parte de la frase"))
+  '<p style="margin-left:12.5mm">→ ponlo en <b>negativo</b>: <span class="wl lg"></span><br>→ conviértelo en <b>pregunta</b>: <span class="wl lg"></span><br>→ cambia el sujeto a <b>nosotros</b>: <span class="wl lg"></span><br>→ añade <b>«en el instituto»</b>: <span class="wl lg"></span> <span class="gloss">ontkennen · vraag maken · van onderwerp wisselen · aanvullen</span></p>', apoyo="Pista: cada paso cambia o añade una sola parte de la frase"))
 P(actx(5, "Amplía la frase",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Start met <b>«Estudio.»</b> en voeg stap voor stap toe: <span class="gloss">wat · waar · wanneer · waarom.</span></p>'
@@ -1064,7 +1064,7 @@ P('<div class="infocard"><div class="it">📊 Infografía · ¿Qué idiomas estu
   + gustobars([("inglés",92),("español",26),("francés",23),("alemán",18),("neerlandés",6)]) + '</div>')
 P(actx(5, "Lee la gráfica y responde",
   [{"t":"🔍 Leer","skill":True},{"t":"🔢 Mediar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Antwoord met een <b>hele zin</b> op basis van de grafiek.</p>'
+  '<p>Responde con una <b>frase completa</b> a partir del gráfico. <span class="gloss">Antwoord met een hele zin.</span></p>'
   '<p style="margin-left:12.5mm">a) ¿Qué idioma estudian más? <span class="wl md"></span><br>'
   'b) ¿Cuántos por ciento estudian español? <span class="wl md"></span><br>'
   'c) ¿Qué idioma estudian menos? <span class="wl md"></span><br>'

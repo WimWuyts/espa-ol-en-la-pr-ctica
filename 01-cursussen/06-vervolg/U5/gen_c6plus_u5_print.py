@@ -200,7 +200,7 @@ P(regla("Regla · indefinido regular", '<table class="conj" style="margin-top:1m
   '<p style="margin:2mm 0 0"><span class="gloss">🔴 De klemtoon staat op de uitgang: habl<b>é</b>, habl<b>ó</b>, com<b>í</b>, com<b>ió</b>. -er en -ir hebben dezelfde uitgangen.</span></p>'))
 P(actx(AN(), "Forma el indefinido (regular)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
-  '<p>Vorm het indefinido van de regelmatige werkwoorden. <b>Let op het accent</b> bij yo en él/ella.</p>'
+  '<p>Forma el indefinido de los verbos regulares. <b>Ojo con la tilde</b> en yo y en él/ella. <span class="gloss">Let op het accent bij yo en él/ella.</span></p>'
   '<p style="margin-left:12.5mm">ganar → <span class="wl sm"></span> &nbsp; escribir → <span class="wl sm"></span> &nbsp; nacer → <span class="wl sm"></span><br>'
   'estudiar → <span class="wl sm"></span> &nbsp; vivir → <span class="wl sm"></span> &nbsp; pintar → <span class="wl sm"></span></p>',
   apoyo="Modelo: -ó / -ió"))
@@ -295,7 +295,7 @@ sec_open("3", "§3 · Los pronombres juntos — se lo / se la", 'Cuando juntas e
 
 # §3.1 qué es
 P('<h3>§3.1 · ¿Por qué «se»?</h3>')
-P('<p style="font-size:9.6pt">Als <b>le/les</b> (aan wie) samenkomt met <b>lo/la/los/las</b> (wat), wordt <b>le/les → se</b> (om «le lo» te vermijden). De volgorde is: <b>se + lo/la</b> + werkwoord.</p>')
+P('<p style="font-size:9.6pt">Cuando <b>le/les</b> (a quién) se junta con <b>lo/la/los/las</b> (qué), <b>le/les</b> pasa a <b>se</b> (para evitar «le lo»). El orden es: <b>se + lo/la</b> + verbo. <span class="gloss">le + lo wordt se lo.</span></p>')
 P('<div class="agree"><div class="w">Di el libro <u>a Mateo</u> → <u>Le</u> di el libro → <u>Se lo</u> di.</div><div class="tie">le + lo → se lo</div></div>')
 P('<div class="agree"><div class="w">Mandé las fotos <u>a Nina</u> → <u>Se las</u> mandé.</div><div class="tie">le + las → se las</div></div>')
 P(regla("Regla · se lo / se la / se los / se las", '<table class="conj" style="margin-top:1mm"><thead><tr><th>OI + OD</th><th>Resultado</th><th>Ejemplo</th></tr></thead><tbody>'
@@ -414,7 +414,7 @@ P(f'<div class="ptexts">'
   f'<p>Lionel Messi <span class="evi">nació</span> en Rosario, Argentina, en 1987. De niño <span class="evi">jugó</span> en un equipo local y luego <span class="evi">se mudó</span> a Barcelona. <span class="evi">Ganó</span> muchos títulos y en 2022 <span class="evi">fue</span> campeón del Mundo. Mucha gente <span class="evi">dijo</span> que <span class="evi">hizo</span> historia. Para muchos, es el mejor de todos los tiempos.</p></div></div>')
 P(actx(AN(), "Verdadero o falso — con prueba",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Waar (V) of niet waar (F)? Onderstreep het bewijs.</p>'
+  '<p>¿Verdadero (V) o falso (F)? Subraya la prueba. <span class="gloss">Waar of niet waar? Onderstreep het bewijs.</span></p>'
   '<table class="alf"><thead><tr><th>Afirmación</th><th>V/F</th><th>Prueba (cita)</th></tr></thead><tbody>'
   '<tr><td>Frida empezó a pintar después de un accidente.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Messi nació en Buenos Aires.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
@@ -475,9 +475,9 @@ P('</div>')
 sec_open("C", "Cultura · figuras del mundo hispano", 'De Spaanstalige wereld gaf grote <b>figuren</b>: uit Argentinië <b>Messi</b>, <b>Maradona</b>, <b>Gardel</b> (tango) en <b>Evita</b>; pan-hispano <b>Frida Kahlo</b> (México) en <b>García Márquez</b> (Colombia, Nobel). <span class="gloss">Beroemde figuren van de hispanofoon.</span>',
         lpd(("5","identiteit in diversiteit"), ("6","literatuur: figuras y obras")))
 P('<div class="fams three" style="margin-top:2mm">'
-  '<div class="pcard"><div class="t">🎵 Carlos Gardel</div><div class="ej" style="margin-top:2mm">De legende van de <b>tango</b>. Hij groeide op in <b>Buenos Aires</b> en werd de stem van het genre. «Gardel cada día canta mejor», zegt men. Mateo\'s stad ademt hem nog.</div></div>'
+  '<div class="pcard"><div class="t">🎵 Carlos Gardel</div><div class="ej" style="margin-top:2mm">La leyenda del <b>tango</b>. Creció en <b>Buenos Aires</b> y se convirtió en la voz del género. «Gardel cada día canta mejor», se dice. La ciudad de Mateo todavía lo respira. <span class="gloss">Gardel, de stem van de tango.</span></div></div>'
   '<div class="pcard"><div class="t">⚽ Messi y Maradona</div><div class="ej" style="margin-top:2mm">Twee <b>argentijnse</b> voetbalgoden. Maradona maakte in 1986 het «gol del siglo»; Messi werd in 2022 wereldkampioen. Beiden <b>hicieron historia</b>.</div></div>'
-  '<div class="pcard"><div class="t">🎨 Frida & García Márquez</div><div class="ej" style="margin-top:2mm"><b>Frida Kahlo</b> (México) schilderde onvergetelijke autorretratos; <b>Gabriel García Márquez</b> (Colombia) won de <b>Nobelprijs</b> voor literatuur met het «realismo mágico».</div></div></div>')
+  '<div class="pcard"><div class="t">🎨 Frida & García Márquez</div><div class="ej" style="margin-top:2mm"><b>Frida Kahlo</b> (México) pintó autorretratos inolvidables; <b>Gabriel García Márquez</b> (Colombia) ganó el <b>Premio Nobel</b> de literatura con el «realismo mágico». <span class="gloss">Twee namen die je overal tegenkomt.</span></div></div></div>')
 P('<div class="route-note" style="margin-top:5mm">🗺️ <b>En la web:</b> haz clic en Argentina (★) en el mapa para descubrir Buenos Aires y sus figuras. <span class="gloss">Online: klik op Argentinië voor de figuras-fiche.</span></div>')
 P(actx(AN(), "Une la figura con su logro",
   [{"t":"🌍 Cultura","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],

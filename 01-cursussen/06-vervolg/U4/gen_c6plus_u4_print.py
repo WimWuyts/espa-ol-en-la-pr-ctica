@@ -426,7 +426,7 @@ P(f'<div class="ptexts">'
   f'<p>Yo <span class="evi">he vuelto</span> hace poco de un viaje por Europa. <span class="evi">He estado</span> en España y <span class="evi">he probado</span> la paella en València. <span class="evi">He hecho</span> muchas fotos y <span class="evi">he escrito</span> un diario. Lo peor <span class="evi">ha sido</span> el vuelo, muy largo, pero ha valido la pena. Nunca <span class="evi">he estado</span> tan lejos de casa.</p></div></div>')
 P(actx(AN(), "Verdadero o falso — con prueba",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
-  '<p>Waar (V) of niet waar (F)? Onderstreep het bewijs.</p>'
+  '<p>¿Verdadero (V) o falso (F)? Subraya la prueba. <span class="gloss">Waar of niet waar? Onderstreep het bewijs.</span></p>'
   '<table class="alf"><thead><tr><th>Afirmación</th><th>V/F</th><th>Prueba (cita)</th></tr></thead><tbody>'
   '<tr><td>Nina ha estado en el desierto de Atacama.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
   '<tr><td>Nina ya ha estado en Rapa Nui.</td><td><span class="wl sm"></span></td><td><span class="wl md"></span></td></tr>'
@@ -450,7 +450,7 @@ sec_close()
 # ================= TALLER =================
 sec_open("T", "Taller de lengua", 'Dos herramientas: de <b>h muda</b> (stomme h, o.a. in <b>he/has/ha</b>!) en de <b>acentos</b> in participios (leído, oído) + conectoren van volgorde. <span class="gloss">De stomme h en de accenten.</span>')
 P('<h3>1 · Ortografía — la h muda</h3>')
-P(regla("La h no suena", '<p>De <b>h</b> wordt <b>niet uitgesproken</b> maar wél geschreven. Cruciaal in de perfecto: <b>h</b>e, <b>h</b>as, <b>h</b>a, <b>h</b>emos, <b>h</b>an. Ook: el <b>h</b>otel, el <b>h</b>ostal, la <b>h</b>abitación, <b>h</b>acer → <b>h</b>echo, <b>h</b>oy.<br><span class="gloss">🔴 Vergeet de h niet: <i>he comido</i>, niet <span class="trap">e comido</span>.</span></p>'))
+P(regla("La h no suena", '<p>La <b>h</b> no se pronuncia, pero sí se escribe. Es clave en el perfecto: <b>h</b>e, <b>h</b>as, <b>h</b>a, <b>h</b>emos, <b>h</b>an. También: el <b>h</b>otel, el <b>h</b>ostal, la <b>h</b>abitación, <b>h</b>acer → <b>h</b>echo, <b>h</b>oy.<br><span class="gloss">🔴 Vergeet de h niet: <i>he comido</i>, niet <span class="trap">e comido</span>.</span></p>'))
 P(actx(AN(), "¿Falta la h? · completa",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Escribe la h donde haga falta (o déjalo en blanco). <span class="gloss">Schrijf de h waar ze hoort.</span></p>'
@@ -550,7 +550,7 @@ P('<table class="sem"><tr class="semrow"><th>Puedo…</th><th>🔴 nog niet</th>
   '<tr><td>de <b>perfecto compuesto</b> vormen (haber + participio)</td><td>☐</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>de <b>onregelmatige participios</b> gebruiken</td><td>☐</td><td>☐</td><td>☐</td></tr>'
   '<tr><td><b>por</b> en <b>para</b> onderscheiden</td><td>☐</td><td>☐</td><td>☐</td></tr>'
-  '<tr><td>een <b>reis vertellen</b> met een mini-mening</td><td>☐</td><td>☐</td><td>☐</td></tr></table>')
+  '<tr><td>contar un <b>viaje</b> con una miniopinión <span class="gloss">een reis vertellen met een korte mening</span></td><td>☐</td><td>☐</td><td>☐</td></tr></table>')
 P('<div class="truc"><b>✍️ Reflexión (mochila):</b> <i>Lo más fácil para mí: <span class="wl md"></span> · Lo que quiero practicar más: <span class="wl md"></span></i></div>')
 P('<div class="se" style="margin-top:6mm">Auto-test rápido · ¿lo sé?</div>')
 P('<p style="margin-left:0">1. «Ik heb gereisd» = <span class="wl md"></span><br>'

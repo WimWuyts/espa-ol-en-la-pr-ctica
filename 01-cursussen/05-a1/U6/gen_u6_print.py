@@ -688,14 +688,14 @@ P(actx(3, "Completa con acabar de + infinitivo (cloze)",
 P(actx(4, "Cadena de transformación",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Parte de <b>«Acabo de comprar una camisa.»</b> y haz cada cambio, escribiendo la frase entera. <span class="gloss">vertrek van die zin; schrijf telkens de hele zin</span></p>'
-  '<p style="margin-left:12.5mm">→ maak er een <b>vraag</b> van (tú): <span class="wl lg"></span><br>→ verander naar <b>nosotros</b>: <span class="wl lg"></span><br>→ vervang «una camisa» door een <b>pronomen</b>: <span class="wl lg"></span><br>→ zet in het <b>meervoud</b> (dos camisas → las): <span class="wl lg"></span></p>', apoyo="Pista: cada paso cambia una sola parte de la frase"))
+  '<p style="margin-left:12.5mm">→ conviértelo en <b>pregunta</b> (tú): <span class="wl lg"></span><br>→ cámbialo a <b>nosotros</b>: <span class="wl lg"></span><br>→ sustituye «una camisa» por un <b>pronombre</b>: <span class="wl lg"></span><br>→ ponlo en <b>plural</b> (dos camisas → las): <span class="wl lg"></span> <span class="gloss">vraag · nosotros · pronomen · meervoud</span></p>', apoyo="Pista: cada paso cambia una sola parte de la frase"))
 P(actx(5, "¿Qué acabas de hacer? — escribe",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Escribe tres frases verdaderas: qué <b>acabas de hacer</b> hoy (comprar / comer / ver…). <span class="gloss">drie ware zinnen over wat je net gedaan hebt</span></p>'
   '<div class="wbox sm"></div>', apoyo="Marco: Acabo de + infinitivo"))
 P(tarea_com("Tarea comunicativa · «¡Acabo de comprarlo!»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★☆"}],
-  '<p><b>Situación:</b> je komt terug van het winkelen. Vertel elkaar wat je <b>net gekocht/gedaan hebt</b> (acabar de + infinitivo) en gebruik een pronomen. <span class="gloss">«Acabo de comprar unas zapatillas. ¡Las acabo de estrenar!»</span></p>'
+  '<p><b>Situación:</b> volvéis de comprar. Contaos qué <b>acabáis de comprar o de hacer</b> (acabar de + infinitivo) y usad un pronombre. <span class="gloss">«Acabo de comprar unas zapatillas. ¡Las acabo de estrenar!»</span></p>'
   '<p style="margin-left:12.5mm">Lo que acaba de hacer mi compañero/a: <span class="wl full"></span></p>'
   + APO.html("Marco: Acabo de + inf.")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «acabar de + infinitivo» (cloze) en de tijdlijn-oefening met zelfcorrectie.</div>')
@@ -767,7 +767,7 @@ P(actx(5, "Escribe: señala en la tienda",
   '<div class="wbox sm"></div>', apoyo="Marco: Me gusta este/ese/aquel…"))
 P(tarea_com("Tarea comunicativa · «Señala y pregunta»",
   [{"t":"🎙️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★☆"}],
-  '<p><b>Situación:</b> in de tienda wijs je prendas aan en vraag je de prijs. A: «¿Cuánto cuesta <b>esa</b> chaqueta?» B antwoordt. Gebruik este/ese/aquel volgens de afstand. <span class="gloss">Beweeg door de klas als «tienda».</span></p>'
+  '<p><b>Situación:</b> en la tienda señalas prendas y preguntas el precio. A: «¿Cuánto cuesta <b>esa</b> chaqueta?» B responde. Usa este/ese/aquel según la distancia. <span class="gloss">Beweeg door de klas als «tienda».</span></p>'
   '<p style="margin-left:12.5mm">Una pregunta nuestra: <span class="wl full"></span></p>'
   + APO.html("Marco: ¿Cuánto cuesta este/ese/aquel…?")))
 P('<div class="route-note">🎮 <b>Juega online:</b> «este/ese/aquel» (cloze) en «señala en el escaparate» (point) met zelfcorrectie.</div>')
@@ -800,8 +800,7 @@ P('<table class="mp"><thead><tr><th>Prenda</th><th>+ color</th><th>+ patrón/mat
   '<tr><td>las botas (v. mv.)</td><td class="v">rojas / azules</td><td>de cuadros</td></tr></tbody></table>')
 P('<div class="truc"><b>🔴 Dos tipos de colores:</b> (1) los colores en -o cambian: <b>rojo/roja/rojos/rojas</b>, blanco, negro, amarillo, morado. (2) Los demás <b>no</b> cambian de género: <b>azul, gris, verde, marrón, naranja, rosa, celeste</b>; solo hacen plural con +s/+es: <i>faldas azules, zapatos grises</i>. <span class="gloss">Kleuren op -o passen zich aan, de rest alleen in het meervoud.</span></div>')
 P(regla("Regla · concordancia del adjetivo",
-  '<p>Het adjectief (kleur, vorm, materiaal) komt overeen met de prenda in <b>geslacht</b> (m/v) en <b>getal</b> (ev/mv). '
-  'Kleuren op <b>-o</b>: rojo → roja → rojos → rojas. Andere kleuren (azul, gris, verde…): enkel meervoud (+s/+es). Patronen met <b>de</b> (de rayas, de cuadros) veranderen niet.</p>'))
+  '<p>El adjetivo (color, forma, material) concuerda con la prenda en <b>género</b> y <b>número</b>. ' 'Colores en <b>-o</b>: rojo → roja → rojos → rojas. Los demás (azul, gris, verde…): solo plural (+s/+es). Los estampados con <b>de</b> (de rayas, de cuadros) no cambian. <span class="gloss">Alleen kleuren op -o passen zich aan in geslacht.</span></p>'))
 P('</div>')  # page §4.1
 # §4.2 PAREL-1 equipación
 P('<div class="page">')
@@ -829,7 +828,7 @@ P(actx(2, "Grupo B · Top de la FIFA",
   '<tr><td>🇭🇷 Croacia</td><td>rojo</td><td>de cuadros</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>🇮🇹 Italia</td><td>azul</td><td>lisa</td><td><span class="wl md"></span></td></tr>'
   '<tr><td>🇧🇷 Brasil</td><td>amarillo</td><td>lisa</td><td><span class="wl md"></span></td></tr></tbody></table>'
-  '<p style="margin-left:12.5mm" class="gloss">🔴 Let op: niet elke kleur krijgt een -a.</p>', apoyo="Pista: azul verandert niet"))
+  '<p style="margin-left:12.5mm" class="gloss">🔴 Ojo: no todos los colores llevan -a. <span class="gloss">Niet elke kleur krijgt een -a.</span></p>', apoyo="Pista: azul verandert niet"))
 P(actx(3, "Concordancia: color ↔ prenda (cloze)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>Escribe el color en la forma correcta (entre paréntesis está la base). <span class="gloss">Vul de kleur in de juiste vorm in.</span></p>'
@@ -847,7 +846,7 @@ P(actx(5, "Describe una prenda del escaparate",
   '<div class="wbox sm"></div>', apoyo="Marco: una … + color + de …"))
 P(tarea_com("Tarea comunicativa · «¿De qué color es tu equipación?»",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
-  '<p><b>Situación:</b> beschrijf de <b>camiseta</b> van je lievelingsploeg (of van je school) met kleur + patroon; je buur raadt de selección/ploeg. <span class="gloss">«Mi camiseta es azul y blanca, de rayas. ¿Qué selección es?»</span></p>'
+  '<p><b>Situación:</b> describe la <b>camiseta</b> de tu equipo favorito (o la de tu colegio) con color y estampado; tu compañero/a adivina la selección o el equipo. <span class="gloss">«Mi camiseta es azul y blanca, de rayas. ¿Qué selección es?»</span></p>'
   '<p style="margin-left:12.5mm">Mi equipación: <span class="wl full"></span></p>'
   + APO.html("Marco: Mi camiseta es + color + de + patrón")))
 P(actx(6, "Traduce y concuerda",
@@ -887,7 +886,7 @@ P('<div class="fichacard">'
   '<div class="row"><span class="k">Pago</span><span class="v">tarjeta o en efectivo · ¡se puede regatear!</span></div></div>'
   '<div><div class="se" style="margin:0 0 2mm">⭐ Reseña · @valen_style 🇨🇴 · ★★★★☆</div>'
   '<div class="ej" style="font-size:9.3pt">«Acabo de comprar unos <span class="evi">vaqueros azules</span> en las <span class="evi">rebajas</span> de Moda Diego. Estaban a <span class="evi">25 €</span> (¡antes 40!). Me los <span class="evi">probé</span> en el probador y me quedan muy bien. El <span class="evi">dependiente</span> es simpático y pagué <span class="evi">con tarjeta</span>. La camiseta lisa no la compré porque no <span class="evi">la</span> tenían en mi talla. ¡Vuelvo seguro!»</div></div></div>')
-P('<div class="lecdoel">🎯 <b>Objetivo de lectura:</b> lees om te <b>vinden</b> welke prijzen en kortingen er zijn en wat de klant <b>wel/niet</b> kocht — je hoeft niet élk woord te begrijpen.</div>')
+P('<div class="lecdoel">🎯 <b>Objetivo de lectura:</b> lee para <b>encontrar</b> qué precios y qué rebajas hay y qué compró y qué no compró la clienta. No hace falta entender todas las palabras. <span class="gloss">Lees gericht; je hoeft niet élk woord te begrijpen.</span></div>')
 P('</div>')  # page §5a
 P('<div class="page">')
 P(actx(2, "Escanea: completa la tabla de precios",
@@ -916,7 +915,7 @@ P(actx(5, "Del anuncio: ¿la, lo, los o las?",
   '<p style="margin-left:12.5mm">«la» = <span class="wl md"></span> &nbsp;·&nbsp; «los» = <span class="wl md"></span><br><span class="gloss">✅ Zelfcorrectie op de digitale pagina.</span></p>', apoyo="Pista: zoek de prenda ervoor"))
 P(tarea_com("Tarea comunicativa · «Escribe tu reseña» (keten lezen→schrijven)",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 8 min"},{"t":"★★★"}],
-  '<p><b></b> Schrijf een korte <b>reseña</b> (3–4 zinnen) over een prenda die je «net gekocht hebt»: wat, welke kleur, hoeveel, hoe ze zit, en of je terugkomt. Gebruik <b>acabar de</b> + een <b>pronomen</b>. <span class="gloss">«Acabo de comprar una chaqueta negra. Me queda bien. La pagué con tarjeta.»</span></p>'
+  '<p><b></b> Escribe una <b>reseña</b> corta (3–4 frases) sobre una prenda que «acabas de comprar»: qué es, de qué color, cuánto cuesta, cómo te queda y si vuelves. Usa <b>acabar de</b> y un <b>pronombre</b>. <span class="gloss">«Acabo de comprar una chaqueta negra. Me queda bien. La pagué con tarjeta.»</span></p>'
   '<div class="wbox sm"></div>'
   + APO.html("Modelo: reseña de Valen")))
 P(actx(6, "Después de leer: ¿qué prenda es?",
@@ -1043,7 +1042,7 @@ P('<div class="route-note">🎯 <b>Communicatieve taak:</b> afzender = jij (de w
 P(lpd(("3","doelgericht schrijven met een voorbeeld"), ("4","mondeling interageren (verkopen)"), ("7","woordenschat ropa/tienda"), ("8","lo/la/los/las · concordantie · acabar de")))
 P('</div>')
 P('<ol class="pasos">'
-  '<li><b>Elige un nombre</b> voor je winkel en een estilo (deportivo, elegante, sostenible…).</li>'
+  '<li><b>Elige un nombre</b> para tu tienda y un estilo (deportivo, elegante, sostenible…). <span class="gloss">Kies een naam en een stijl.</span></li>'
   '<li><b>Diseña el escaparate</b>: 4 prendas met <b>color/patrón</b> en <b>precio</b> (let op concordantie).</li>'
   '<li><b>Escribe un anuncio de rebajas</b> (antes → ahora, descuento).</li>'
   '<li><b>Escribe el diálogo</b> (vendedor ↔ cliente): saludar → mostrar (este/ese) → probador → precio/regateo → «me lo llevo».</li>'
@@ -1082,7 +1081,7 @@ P('<div class="esen"><b class="tt">Lo esencial de un vistazo</b><ul>'
   '<li><b>acabar de + infinitivo:</b> acabo/acabas/acaba… + <b>de</b> + infinitief = net (zopas) iets gedaan: <i>Acabo de comprar.</i></li>'
   '<li><b>este/ese/aquel:</b> este (aquí) · ese (ahí) · aquel (allí) — past bij de prenda (este/esta/estos/estas…).</li>'
   '<li><b>Concordancia:</b> camiseta roj<b>a</b> · zapatos roj<b>os</b>. Kleuren op -o veranderen; azul/gris/verde/marrón/naranja/rosa niet (enkel mv. +s/+es).</li>'
-  '<li><b>Las trampas:</b> 🔴 la compro (niet «compro la») · 🔴 acabo <b>de</b> comprar · 🔴 una falda azul (niet «azula») · 🔴 los pantalones (tilde weg) · 🔴 «dus» = así que/por eso.</li></ul></div>')
+  '<li><b>Las trampas:</b> 🔴 la compro, no «compro la» · 🔴 acabo <b>de</b> comprar · 🔴 una falda azul, no «azula» · 🔴 los pantalones (sin tilde) · 🔴 «dus» = así que / por eso. <span class="gloss">De vijf fouten die hier het vaakst opduiken.</span></li></ul></div>')
 P('<div class="route-note">🎮 <b>Repasa jugando (online):</b> 16 spelletjes met zelfcorrectie op de digitale pagina.</div>')
 P('<div class="se" style="margin-top:6mm">Semáforo — ¿cómo lo llevas?</div>')
 P('<table class="sem"><tr class="semrow"><th>Puedo…</th><th>🔴 nog niet</th><th>🟠 met steun</th><th>🟢 zelfstandig</th></tr>'

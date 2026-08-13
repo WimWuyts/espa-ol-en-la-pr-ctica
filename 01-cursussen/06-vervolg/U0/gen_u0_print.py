@@ -515,7 +515,7 @@ P(actx(AN(), "Entrevista a tu compañero/a",
   '<tr><td>¿Dónde vives?</td><td>Vive en <span class="wl md"></span></td></tr></tbody></table>', apoyo="Marco: ¿Cómo te llamas? · ¿De dónde eres? · ¿Qué idiomas hablas?"))
 P(actx(AN(), "¿Quién de la clase…? (encuesta)",
   [{"t":"🗣️ Interacción","skill":True},{"t":"👥 Clase"},{"t":"± 6 min"},{"t":"★★★"}],
-  '<p><i>Sta op en vraag rond. Schrijf bij elke zin de naam van een klasgenoot.</i> Schrijf de naam van een klasgenoot bij elke zin. Vraag in het Spaans: «¿Tienes… ? ¿Eres… ?»</p>'
+  '<p><i>Levántate y pregunta por la clase. Escribe al lado de cada frase el nombre de un compañero/a.</i> Pregunta en español: «¿Tienes…? ¿Eres…?» <span class="gloss">Sta op, vraag rond en noteer bij elke zin een naam.</span></p>'
   '<table class="alf"><thead><tr><th>¿Quién de la clase…?</th><th>Nombre</th><th>Dato extra</th></tr></thead><tbody>'
   '<tr><td>…tiene un hermano o una hermana</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
   '<tr><td>…es de otro país / otra ciudad</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr>'
@@ -756,9 +756,7 @@ P('<div class="intro"><b>ES:</b> El adjetivo <b>concuerda</b> (m/v · ev/mv) y v
 P('</div>')
 P('<div class="agree"><div class="w">el chic<u>o</u> alt<u>o</u></div><div class="tie">m ev → -o … -o</div></div>')
 P('<div class="agree"><div class="w">las chic<u>as</u> alt<u>as</u></div><div class="tie">v mv → -as … -as</div></div>')
-P(regla("Regla · concordancia + lugar", '<p>Het <b>adjectief</b> volgt het zelfstandig nw. in <b>geslacht</b> én <b>getal</b> en staat er meestal <b>achter</b>: <i>una chica <b>simpática</b>, unos libros <b>rojos</b></i>.<br>'
-  'Adjectieven op <b>-e</b> of medeklinker veranderen niet voor m/v: <i>alegre, azul, difícil</i> (wel +s/-es in het meervoud).<br>'
-  '<b>Apócope:</b> <b>bueno→buen</b>, <b>malo→mal</b>, <b>grande→gran</b> vóór het zelfstandig nw.: <i>un <b>buen</b> amigo, una <b>gran</b> ciudad</i>.</p>'))
+P(regla("Regla · concordancia + lugar", '<p>El <b>adjetivo</b> concuerda con el sustantivo en <b>género</b> y <b>número</b>, y suele ir <b>detrás</b>: <i>una chica <b>simpática</b>, unos libros <b>rojos</b></i>.<br>' 'Los adjetivos en <b>-e</b> o en consonante no cambian de género: <i>alegre, azul, difícil</i> (sí hacen plural con +s/-es).<br>' '<b>Apócope:</b> <b>bueno→buen</b>, <b>malo→mal</b>, <b>grande→gran</b> delante del sustantivo: <i>un <b>buen</b> amigo, una <b>gran</b> ciudad</i>. <span class="gloss">Overeenkomst, plaats achteraan, en drie verkorte vormen.</span></p>'))
 P(vpairs([("el profesor","la profe<b>sora</b>"),("simpático","simpátic<b>a</b>"),("trabajador","trabajador<b>a</b>"),("alemán","aleman<b>a</b>"),("alegre","alegre <i>(=)</i>"),("azul","azul <i>(=)</i>")]))
 P(actx(AN(), "Concordancia · completa la terminación",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
@@ -941,7 +939,7 @@ P('<div class="intro"><b>ES:</b> El español es la lengua de <b>21 países</b> y
 P(lpd(("5","identiteit in diversiteit: de Spaanstalige wereld")))
 P('</div>')
 P('<div class="fams three" style="margin-top:2mm">'
-  '<div class="pcard"><div class="t">🇪🇸 Europa</div><div class="ej" style="margin-top:2mm"><b>España</b> is het enige Spaanstalige land in Europa. Naast het Spaans (castellano) spreekt men er ook <b>catalán</b>, <b>gallego</b> en <b>euskera</b>.</div><div class="anchor gloss">Madrid = de hoofdstad. ~47 miljoen inwoners.</div></div>'
+  '<div class="pcard"><div class="t">🇪🇸 Europa</div><div class="ej" style="margin-top:2mm"><b>España</b> es el único país hispanohablante de Europa. Además del español (castellano) se hablan allí <b>catalán</b>, <b>gallego</b> y <b>euskera</b>. <span class="gloss">Vier talen in één land.</span></div><div class="anchor gloss">Madrid = de hoofdstad. ~47 miljoen inwoners.</div></div>'
   '<div class="pcard"><div class="t">🌎 América</div><div class="ej" style="margin-top:2mm">De meeste hispanohablantes wonen in <b>Latijns-Amerika</b>: van 🇲🇽 México tot 🇦🇷 Argentina. <b>México</b> is het grootste Spaanstalige land (~130 miljoen).</div><div class="anchor gloss">19 landen · veel accenten (voseo in Argentina!).</div></div>'
   '<div class="pcard"><div class="t">🌍 ¿Sabías que…?</div><div class="ej" style="margin-top:2mm">Ook in <b>Guinea Ecuatorial</b> (Afrika) is Spaans officieel. En in de <b>VS</b> wonen ~40 miljoen hispanohablantes — bijna evenveel als in heel Spanje.</div><div class="anchor gloss">Español = 2ª lengua materna del mundo.</div></div></div>')
 P('<div class="route-note" style="margin-top:5mm">🗺️ <b>En la web:</b> el <b>mapa interactivo</b> del mundo hispano — haz clic en cada país para oír su nombre y ver la bandera. <span class="gloss">Online: klikbare kaart met vlaggen en audio.</span></div>')
@@ -1009,7 +1007,7 @@ P('<div class="esen"><b class="tt">Lo esencial de un vistazo</b><ul>'
   '<li><b>Presente regular:</b> -ar → o/as/a/amos/áis/an · -er → o/es/e/emos/éis/en · -ir → o/es/e/imos/ís/en.</li>'
   '<li><b>7 irregulares:</b> ser (soy) · estar (estoy) · tener (tengo) · ir (voy) · hacer (hago) · venir (vengo) · dar (doy).</li>'
   '<li><b>Concordancia:</b> el chic<b>o</b> alt<b>o</b> / la chic<b>a</b> alt<b>a</b> · los/las + -os/-as.</li>'
-  '<li><b>Las trampas:</b> 🔴 soy ≠ estoy · 🔴 porque = want én omdat · 🔴 nacionalidades met kleine letter · 🔴 belga = m/v gelijk.</li></ul></div>')
+  '<li><b>Las trampas:</b> 🔴 soy ≠ estoy · 🔴 porque vale para «want» y «omdat» · 🔴 nacionalidades en minúscula · 🔴 belga es igual en masculino y femenino. <span class="gloss">De vier valstrikken van deze unit.</span></li></ul></div>')
 P('<div class="route-note">🎮 <b>Repasa jugando (online):</b> 9 spelletjes met zelfcorrectie (presente, género, país↔nacionalidad, saludos…).</div>')
 P('<div class="se" style="margin-top:6mm">Semáforo — ¿cómo lo llevas?</div>')
 P('<table class="sem"><tr class="semrow"><th>Puedo…</th><th>🔴 nog niet</th><th>🟠 met steun</th><th>🟢 zelfstandig</th></tr>'

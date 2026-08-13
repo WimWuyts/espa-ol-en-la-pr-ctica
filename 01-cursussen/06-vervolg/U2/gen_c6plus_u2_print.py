@@ -193,9 +193,7 @@ P(obsbox([
   'En el salón <span class="hl">hay</span> un sofá. &nbsp;→&nbsp; El sofá <span class="hl">está</span> delante de la tele.',
   'En mi barrio <span class="hl">hay</span> dos parques. &nbsp;→&nbsp; El parque grande <span class="hl">está</span> cerca.',
 ], vragen='¿Cuándo usamos <b>hay</b> y cuándo <b>está(n)</b>? Fíjate en el artículo. <span class="gloss">Wanneer hay, wanneer está? Kijk naar het lidwoord.</span>'))
-P(regla("Regla · hay ↔ estar", '<p><b>hay</b> (van <i>haber</i>, verandert nooit) → zegt <b>dát</b> er iets is; met <b>un/una/unos/dos/mucho</b> (onbepaald) of een getal: <i>Hay <b>un</b> parque. Hay <b>dos</b> baños.</i><br>'
-  '<b>está / están</b> → zegt <b>waar</b> iets <b>bepaalds</b> staat; met <b>el/la/los/las/mi</b>: <i><b>El</b> parque <b>está</b> cerca. <b>Los</b> libros <b>están</b> en la estantería.</i><br>'
-  '<span class="gloss">Vuistregel: onbepaald (un/dos/…) → hay · bepaald (el/la/mi) → está(n).</span></p>'))
+P(regla("Regla · hay ↔ estar", '<p><b>hay</b> (de <i>haber</i>, no cambia nunca) → dice <b>que</b> algo existe; con <b>un/una/unos/dos/mucho</b> (indefinido) o con un número: <i>Hay <b>un</b> parque. Hay <b>dos</b> baños.</i><br>' '<b>está / están</b> → dice <b>dónde</b> está algo <b>definido</b>; con <b>el/la/los/las/mi</b>: <i><b>El</b> parque <b>está</b> cerca. <b>Los</b> libros <b>están</b> en la estantería.</i><br>' '<span class="gloss">Vuistregel: onbepaald (un/dos/…) → hay · bepaald (el/la/mi) → está(n).</span></p>'))
 P(tree([
   '<b>¿Qué quieres decir?</b>',
   '¿bestaat er iets (onbepaald: un, dos, mucho)? → <span class="yes">hay</span> <span class="res">hay un parque</span>',
@@ -307,14 +305,14 @@ P(actx(AN(), "Forma el gerundio",
   apoyo="Modelo: regla"))
 P(actx(AN(), "¿Qué está haciendo?",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
-  '<p>Kijk naar de cue en schrijf met <b>estar + gerundio</b>.</p>'
+  '<p>Mira la pista y escribe con <b>estar + gerundio</b>. <span class="gloss">Kijk naar de cue en schrijf.</span></p>'
   '<p style="margin-left:12.5mm">Valen (cocinar) → <span class="wl md"></span><br>'
   'Yo (estudiar) → <span class="wl md"></span><br>'
   'Los niños (jugar) → <span class="wl md"></span></p>',
   apoyo="Marco: está … / estoy … / están …"))
 P(actx(AN(), "¿ahora o en general? · reconoce",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 2 min"},{"t":"★★☆"}],
-  '<p>Gebeurt het <b>nú</b> (estar+gerundio) of <b>in het algemeen</b> (presente)? Vink aan.</p>'
+  '<p>¿Pasa <b>ahora</b> (estar + gerundio) o <b>en general</b> (presente)? Marca. <span class="gloss">Nu of in het algemeen?</span></p>'
   '<p style="margin-left:12.5mm">☐ Normalmente como a las dos. → <span class="wl sm"></span> (nu/algemeen)<br>'
   '☐ Ahora estoy comiendo. → <span class="wl sm"></span><br>'
   '☐ Valen está cocinando. → <span class="wl sm"></span><br>'
@@ -385,7 +383,7 @@ sec_open("4", "§4 · Los pronombres lo/la/los/las", 'Para no repetir siempre lo
 
 # §4.1 ¿qué es?
 P('<h3>§4.1 · ¿Qué es un pronombre de OD?</h3>')
-P('<p style="font-size:9.6pt">Het <b>lijdend voorwerp</b> (OD) = het ding dat de actie ondergaat. Je vervangt het door <b>lo/la/los/las</b> zodat je het niet herhaalt:</p>')
+P('<p style="font-size:9.6pt">El <b>objeto directo</b> (OD) es la cosa que recibe la acción. Lo sustituyes por <b>lo/la/los/las</b> para no repetirlo: <span class="gloss">Het lijdend voorwerp vervangen om herhaling te vermijden.</span></p>')
 P('<div class="agree"><div class="w">Veo <u>la casa</u> → <u>La</u> veo.</div><div class="tie">la casa (v ev) → la</div></div>')
 P('<div class="agree"><div class="w">Compro <u>los muebles</u> → <u>Los</u> compro.</div><div class="tie">los muebles (m mv) → los</div></div>')
 P(regla("Regla · lo/la/los/las (OD)", '<table class="conj" style="margin-top:1mm"><thead><tr><th>Vervangt</th><th>Pronombre</th><th>Ejemplo</th></tr></thead><tbody>'
@@ -393,7 +391,7 @@ P(regla("Regla · lo/la/los/las (OD)", '<table class="conj" style="margin-top:1m
   '<tr><td class="p">v. ev. (la casa)</td><td class="v">la</td><td>¿La casa? <b>La</b> veo.</td></tr>'
   '<tr><td class="p">m. mv. (los muebles)</td><td class="v">los</td><td>¿Los muebles? <b>Los</b> compro.</td></tr>'
   '<tr><td class="p">v. mv. (las sillas)</td><td class="v">las</td><td>¿Las sillas? <b>Las</b> pongo aquí.</td></tr></tbody></table>'
-  '<p style="margin:2mm 0 0">Het pronomen <b>komt overeen</b> met het woord dat het vervangt (m/v · ev/mv) en staat <b>vóór</b> het vervoegde werkwoord.</p>'))
+  '<p style="margin:2mm 0 0">El pronombre <b>concuerda</b> con la palabra que sustituye (m/f · sing./pl.) y va <b>delante</b> del verbo conjugado. <span class="gloss">Het komt overeen en staat vóór het werkwoord.</span></p>'))
 P(blocks([[("per","¿La casa?"),("opt","→"),("ob","La"),("vb","veo")], [("per","¿Los libros?"),("opt","→"),("ob","Los"),("vb","leo")]]))
 P(actx(AN(), "¿lo, la, los o las?",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
@@ -554,7 +552,7 @@ sec_close()
 # ================= TALLER =================
 sec_open("T", "Taller de lengua", 'Dos herramientas: la <b>b/v</b> (klinkt gelijk!) in huis-/plaatswoorden en de <b>adverbios de lugar</b> (aquí, ahí, allí). <span class="gloss">De b/v en de plaatsbijwoorden.</span>')
 P('<h3>1 · Ortografía — b of v</h3>')
-P(regla("b y v suenan igual", '<p>In het Spaans klinken <b>b</b> en <b>v</b> <b>hetzelfde</b> (≈ NL «b»). Je moet de spelling <b>uit het hoofd</b> leren: <b>v</b>ivir, la <b>v</b>entana, el <b>b</b>arrio, el <b>b</b>alcón, el ar<b>m</b>ario.<br><span class="gloss">Tip: schrijf twijfelwoorden een paar keer op.</span></p>'))
+P(regla("b y v suenan igual", '<p>En español la <b>b</b> y la <b>v</b> suenan <b>igual</b>. La ortografía hay que <b>aprenderla de memoria</b>: <b>v</b>ivir, la <b>v</b>entana, el <b>b</b>arrio, el <b>b</b>alcón, el ar<b>m</b>ario.<br><span class="gloss">Tip: schrijf twijfelwoorden een paar keer op.</span></p>'))
 P(actx(AN(), "¿b o v? · completa",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Escribe <b>b</b> o <b>v</b>. <span class="gloss">Vul b of v in.</span></p>'
@@ -589,7 +587,7 @@ P('</div>')
 sec_open("C", "Cultura · la vivienda hispana", 'La <b>casa</b> hispana tiene su propio estilo: <b>patios</b> con plantas, <b>balcones</b> floridos y <b>plazas</b> como corazón del barrio. Cada país tiene el suyo. <span class="gloss">Het Spaanstalige huis: patio\'s, balkons met bloemen en het plein als hart van de buurt.</span>',
         lpd(("5","identiteit in diversiteit: la vivienda hispana")))
 P('<div class="fams three" style="margin-top:2mm">'
-  '<div class="pcard"><div class="t">🏛️ El patio andaluz</div><div class="ej" style="margin-top:2mm">In het zuiden van <b>España</b> (Sevilla, Córdoba) heeft het huis een <b>patio</b>: een binnentuin met planten en een fontein, koel in de zomer. <b>Lucía</b> kent ze goed.</div></div>'
+  '<div class="pcard"><div class="t">🏛️ El patio andaluz</div><div class="ej" style="margin-top:2mm">En el sur de <b>España</b> (Sevilla, Córdoba) la casa tiene <b>patio</b>: un jardín interior con plantas y una fuente, fresco en verano. <b>Lucía</b> los conoce bien. <span class="gloss">De patio als koele binnentuin.</span></div></div>'
   '<div class="pcard"><div class="t">🌺 Los balcones de Cartagena</div><div class="ej" style="margin-top:2mm">In <b>Cartagena</b> (Colombia) zijn de koloniale huizen <b>kleurrijk</b>, met houten <b>balcones</b> vol bloemen. De <b>ciudad amurallada</b> is UNESCO-werelderfgoed.</div></div>'
   '<div class="pcard"><div class="t">🟨 La plaza, corazón del barrio</div><div class="ej" style="margin-top:2mm">Overal in de Spaanstalige wereld is de <b>plaza</b> het middelpunt: markt, terrasjes, ontmoeting. «Quedamos en la plaza».</div></div></div>')
 P('<div class="route-note" style="margin-top:5mm">🗺️ <b>En la web:</b> haz clic en Colombia (★) en el mapa para descubrir Cartagena y su barrio. <span class="gloss">Online: klik op Colombia voor Cartagena.</span></div>')
