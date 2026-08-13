@@ -62,7 +62,7 @@ P(f'''
   <div class="tab">U1 · EL DÍA A DÍA</div>
   <div class="eyebrow">UNIDAD 1 · LA RUTA · ESPAÑA · EL DÍA A DÍA ⏰</div>
   <h1>El día a día</h1>
-  <div class="sub">¡Empieza el viaje! Hoy cuenta je <b>dagelijks leven</b>: hoe laat je <b>opstaat</b> (me levanto), wat je <b>elke dag</b> doet, hoe je je <b>voelt</b> (estoy cansado) en wat je <b>leuk vindt</b> (me gusta…). <span class="gloss">De reis begint echt. We praten over routine, de klok, gevoelens en smaken — met reflexieve werkwoorden, ser/estar en gustar.</span></div>
+  <div class="sub">¡Empieza el viaje! Hoy cuentas tu <b>día a día</b>: a qué hora te <b>levantas</b>, qué haces <b>cada día</b>, cómo te <b>sientes</b> (estoy cansado) y qué te <b>gusta</b> (me gusta…). <span class="gloss">De reis begint echt: je dagelijks leven, je gevoel en je smaak.</span></div>
   <div class="q">¿Cómo es un día en tu vida? <span style="font-weight:400;opacity:.9">· Hoe ziet jouw dag eruit?</span></div>
 </div>
 <div class="page">
@@ -75,13 +75,13 @@ P(f'''
     <div class="stop"><div class="dot"></div><div class="lbl">U4 · De viaje</div></div>
     <div class="stop"><div class="dot"></div><div class="lbl">U5–U7 · el pasado</div></div>
   </div>
-  <div class="route-note">📍 <b>Parada 1 · España.</b> Onze eerste halte is <b>España</b>. Met gastvrouw <b>Lucía</b> (Sevilla) ontdek je het <b>horario español</b>: men eet er láát (comida om 14–15u, cena om 21–22u) en soms is er een <b>siesta</b>. <span class="gloss">Eerste halte: Spanje. Lucía leidt je door de Spaanse dagindeling.</span></div>
+  <div class="route-note">📍 <b>Parada 1 · España.</b> Nuestra primera parada es <b>España</b>. Con <b>Lucía</b> (Sevilla) descubres el <b>horario español</b>: se come tarde (la comida a las 14–15, la cena a las 21–22) y a veces hay <b>siesta</b>. <span class="gloss">Eerste halte Spanje: het Spaanse dagritme, met laat eten en soms een siësta.</span></div>
   <div class="lead" style="margin-top:7mm">
     <div>
       <div class="se">La historia</div>
       <div class="hist"><b>ES:</b> Un día normal de <b>Lucía</b> en Sevilla: se <b>despierta</b>, se <b>ducha</b>, va al instituto y por la tarde queda con <b>Diego</b>. Aprendes a contar <b>tu</b> día: la <b>hora</b>, la <b>rutina</b> (con verbos reflexivos), cómo te <b>sientes</b> (ser vs estar) y qué te <b>gusta</b> hacer. Al final: <b>«me gusta… porque…»</b> — tu primera opinión.
       <span class="gloss">Een gewone dag van Lucía in Sevilla. Je leert je eigen dag vertellen: het uur, de routine, hoe je je voelt en wat je graag doet — en je geeft je eerste mening met «porque».</span></div>
-      <div class="ojo"><b>¡Ojo! — twee valstrikken meteen scherp:</b> ① reflexief = <b>pronombre + verbo</b>: <i>me</i> levanto, <i>te</i> levantas (nooit «yo levanto» voor «ik sta op»). ② <b>gustar werkt omgekeerd</b>: <i>Me gusta la música</i> = de muziek bevalt míj (nooit <span class="trap">yo gusto</span>). <span class="gloss">reflexief heeft altijd me/te/se… · gustar staat «al revés».</span></div>
+      <div class="ojo"><b>¡Ojo! — dos trampas desde el primer día:</b> ① reflexivo = <b>pronombre + verbo</b>: <i>me</i> levanto, <i>te</i> levantas (nunca «yo levanto» para «ik sta op»). ② <b>gustar funciona al revés</b>: <i>Me gusta la música</i> = la música me gusta a mí. <span class="gloss">Het pronomen hoort erbij, en gustar draait de zin om.</span></div>
     </div>
     <div>
       <div class="se">La gente de la ruta</div>
@@ -142,7 +142,7 @@ P(actx(AN(), "Calienta · el presente (cloze)",
   '<p style="margin-left:12.5mm">1. Yo <span class="wl sm"></span> (estudiar) español. &nbsp; 2. ¿Tú <span class="wl sm"></span> (vivir) en Gante? &nbsp; 3. Lucía <span class="wl sm"></span> (ser) de Sevilla.<br>'
   '4. Nosotros <span class="wl sm"></span> (comer) a las dos. &nbsp; 5. Ellos <span class="wl sm"></span> (ir) al instituto. &nbsp; 6. Yo <span class="wl sm"></span> (hacer) deporte.</p>',
   apoyo="Banco de palabras: estudio · vives · es · comemos · van · hago"))
-P('<div class="truc"><b>Repaso ser/estar (U0):</b> <b>ser</b> = wie/wat je bent (soy belga, soy simpático) · <b>estar</b> = waar/hoe je bent (estoy en clase, estoy bien). <span class="gloss">In §4 zetten we dit contrast helemaal op scherp.</span></div>')
+P('<div class="truc"><b>Repaso ser/estar (U0):</b> <b>ser</b> = quién o qué eres (soy belga, soy simpático) · <b>estar</b> = dónde o cómo estás (estoy en clase, estoy bien). <span class="gloss">In §4 zetten we dit contrast helemaal op scherp.</span></div>')
 P(actx(AN(), "¿ser o estar? (repaso rápido)",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 2 min"},{"t":"★☆☆"}],
   '<p><i>Elige soy o estoy.</i> <span class="gloss">Kies soy of estoy.</span></p>'
@@ -197,7 +197,7 @@ P('<div class="clusters" style="grid-template-columns:1fr 1fr 1fr">'
   '<div class="clu"><div class="ch"><span class="ci">📅</span>Los días</div><ul><li>lunes · martes · miércoles</li><li>jueves · viernes</li><li>sábado · domingo</li></ul><div class="ex">el fin de semana · minuscule letter!</div></div>'
   '<div class="clu"><div class="ch"><span class="ci">🗓️</span>Los meses</div><ul><li>enero · febrero · marzo</li><li>abril · mayo · junio…</li><li>…diciembre</li></ul><div class="ex">en enero, en julio (met «en»)</div></div>'
   '<div class="clu"><div class="ch"><span class="ci">🍂</span>Las estaciones</div><ul><li>la primavera · el verano</li><li>el otoño · el invierno</li></ul><div class="ex">en verano vamos a la playa</div></div></div>')
-P('<div class="truc"><b>¡Ojo!</b> Los días y meses se escriben con <b>minúscula</b> (lunes, enero — niet <span class="trap">Lunes, Enero</span>). «Op maandag» = <b>el lunes</b>; «elke maandag» = <b>los lunes</b>.</div>')
+P('<div class="truc"><b>¡Ojo!</b> Los días y los meses se escriben con <b>minúscula</b> (lunes, enero), no <span class="trap">Lunes, Enero</span>. «Op maandag» es <b>el lunes</b>; «elke maandag», <b>los lunes</b>. <span class="gloss">Kleine letter, en el lunes tegenover los lunes.</span></div>')
 P(actx(AN(), "El calendario · completa",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Completa los días que faltan. Después completa las dos frases sobre tu mes favorito y la estación. <span class="gloss">Vul de dagen aan en daarna de twee zinnen.</span></p>'
@@ -312,7 +312,7 @@ P('<div class="fams" style="grid-template-columns:1fr 1fr;margin-top:2mm">'
   '<tr><td class="p">nosotros</td><td class="v">nos despertamos</td><td class="v">nos acostamos</td></tr>'
   '<tr><td class="p">vosotros</td><td class="v">os despertáis</td><td class="v">os acostáis</td></tr>'
   '<tr><td class="p">ellos</td><td class="v">se despiertan</td><td class="v">se acuestan</td></tr></tbody></table></div></div>')
-P('<div class="truc"><b>La bota (§4 U0-repaso):</b> de klinker wisselt in <b>yo · tú · él · ellos</b>, maar <b>niet</b> in <i>nosotros / vosotros</i> — die vier vormen tekenen samen een laarsje. Bij <b>vestirse</b> (e→i): me v<b>i</b>sto, te vistes… nos vestimos.</div>')
+P('<div class="truc"><b>La bota (§4, repaso de U0):</b> la vocal cambia en <b>yo · tú · él · ellos</b>, pero <b>no</b> en <i>nosotros / vosotros</i>: esas cuatro formas dibujan juntas una bota. Con <b>vestirse</b> (e→i): me v<b>i</b>sto, te vistes… nos vestimos. <span class="gloss">De vier vormen die veranderen tekenen samen een laarsje.</span></div>')
 P(actx(AN(), "Conjuga · completa la tabla",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Completa la tabla en presente: pronombre reflexivo + forma del verbo. <span class="gloss">Vul de tabel in: pronomen + werkwoordsvorm.</span></p>'
@@ -385,7 +385,7 @@ retos("reflexivos", "§3.4 · Retos — la acción vuelve a mí",
       'Een omgekeerde dag, een handleiding voor je vervanger, en twee huisgenoten die elkaar niet verdragen.')
 
 # ================= §4 · SER VS ESTAR (contrast) =================
-sec_open("4", "§4 · Ser vs estar — el contraste", 'Beide zijn «zijn», maar met een verschil. <b>ser</b> = wie/wat je <b>bent</b> (permanent, identiteit, karakter). <b>estar</b> = <b>waar</b> je bent en <b>hoe</b> je je <b>voelt</b> (plaats, toestand, gevoel). <span class="gloss">ser = permanent/identiteit · estar = plaats & gevoel. In U0 zag je enkel soy/estoy; nu het volledige contrast.</span>',
+sec_open("4", "§4 · Ser vs estar — el contraste", 'Los dos son «zijn», pero no significan lo mismo. <b>ser</b> = quién o qué <b>eres</b> (permanente, identidad, carácter). <b>estar</b> = <b>dónde</b> estás y <b>cómo</b> te <b>sientes</b> (lugar, estado, ánimo). <span class="gloss">ser = permanent/identiteit · estar = plaats en gevoel. In U0 zag je enkel soy/estoy; nu het volledige contrast.</span>',
         lpd(("8","taalsysteem: ser vs estar"), ("7","woordenschat: sentimientos")))
 
 # ---- §4.1 ¿ser o estar? ----
@@ -421,13 +421,13 @@ P('</div>')  # sluit .page §4.1
 # ---- §4.2 Los sentimientos con estar ----
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">4</span><span class="pk">§4.2 · ¿Cómo estás? — los sentimientos</span>')
-P('<div class="intro"><b>ES:</b> Om te zeggen <b>hoe je je voelt</b> gebruik je <b>estar</b> + adjectief: <i>estoy contento, estoy cansado</i>. Het gevoel is tijdelijk → altijd <b>estar</b>. <span class="gloss">Gevoelens = estar + bijvoeglijk nw. Het adjectief komt overeen (m/v): estoy cansado / cansada.</span></div>')
+P('<div class="intro"><b>ES:</b> Para decir <b>cómo te sientes</b> usas <b>estar</b> + adjetivo: <i>estoy contento, estoy cansado</i>. El estado es pasajero → siempre <b>estar</b>. <span class="gloss">Gevoelens = estar + bijvoeglijk naamwoord, dat overeenkomt in geslacht en getal.</span></div>')
 P('</div>')
 P('<div class="clusters" style="grid-template-columns:1fr 1fr 1fr;margin-top:2mm">'
   '<div class="clu"><div class="ch"><span class="ci">😀</span>+ positivo</div><ul><li>contento/a (blij)</li><li>feliz (gelukkig)</li><li>relajado/a (ontspannen)</li></ul></div>'
   '<div class="clu"><div class="ch"><span class="ci">😔</span>− negativo</div><ul><li>triste (verdrietig)</li><li>cansado/a (moe)</li><li>enfadado/a (boos)</li></ul></div>'
   '<div class="clu"><div class="ch"><span class="ci">😰</span>tensión</div><ul><li>nervioso/a (nerveus)</li><li>estresado/a (gestrest)</li><li>ocupado/a (druk)</li></ul></div></div>')
-P('<div class="truc"><b>¡Ojo! concordancia:</b> het adjectief past bij m/v: <i>Diego está cansad<b>o</b> · Lucía está cansad<b>a</b></i>. En let op: <b>estar aburrido</b> = zich vervelen (nu) ≠ <b>ser aburrido</b> = saai zijn (karakter). → §4.3.</div>')
+P('<div class="truc"><b>¡Ojo! concordancia:</b> el adjetivo concuerda: <i>Diego está cansad<b>o</b> · Lucía está cansad<b>a</b></i>. Y fíjate: <b>estar aburrido</b> = aburrirse ahora ≠ <b>ser aburrido</b> = ser una persona aburrida. → §4.3. <span class="gloss">estar aburrido = zich vervelen; ser aburrido = saai zijn.</span></div>')
 P(actx(AN(), "¿Cómo están? · completa con estar + adjetivo",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Escribe <b>estar</b> + el sentimiento correcto (¡ojo con masculino y femenino!). <span class="gloss">Vul estar en het juiste gevoel in.</span></p>'
@@ -487,7 +487,7 @@ P('<h3>§5.1 · gustar «al revés» — ¿gusta o gustan?</h3>')
 P('<div class="fams" style="grid-template-columns:1fr 1fr;margin-top:2mm">'
   '<div class="pcard"><div class="t" style="font-size:10pt">NL / EN</div><div class="ej"><b>Ik</b> vind muziek leuk. <span class="gloss">ik = onderwerp (doet de actie).</span></div></div>'
   '<div class="pcard"><div class="t" style="font-size:10pt">ES — ¡al revés!</div><div class="ej"><b>Me gusta la música.</b> <span class="gloss">la música = onderwerp → het bevalt mij.</span></div></div></div>')
-P('<div class="truc"><b>¡Ojo! NUNCA «yo gusto».</b> De persoon doet de actie niet; het ding bevalt jou. Altijd: <b>me gusta, te gusta, le gusta…</b></div>')
+P('<div class="truc"><b>¡Ojo! NUNCA «yo gusto».</b> La persona no hace la acción; la cosa te gusta a ti. Siempre: <b>me gusta, te gusta, le gusta…</b> <span class="gloss">Het ding bevalt jou, jij «gust» niet.</span></div>')
 P(regla("Regla · gusta of gustan?", '<p><b>gusta</b> + <b>1 ding</b> (met lidwoord) of een <b>infinitief</b>: <i>Me gusta <b>el</b> fútbol. Me gusta bailar.</i><br>'
   '<b>gustan</b> + <b>meerdere dingen</b> (meervoud): <i>Me gustan <b>los</b> perros.</i><br>'
   '<span class="gloss">Het werkwoord volgt het <b>ding</b> (ev/mv), niet de persoon. Met een sustantivo is het lidwoord verplicht.</span></p>'))
@@ -507,7 +507,7 @@ P('</div>')  # sluit .page §5.1
 # ---- §5.2 los pronombres OI ----
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">5</span><span class="pk">§5.2 · ¿A quién? — me · te · le · nos · os · les</span>')
-P('<div class="intro"><b>ES:</b> Met het pronomen zeg je <b>aan wie</b> iets bevalt: <b>me</b> (mij), <b>te</b> (jou), <b>le</b> (hem/haar), <b>nos</b>, <b>os</b>, <b>les</b>. Voor nadruk: <i>A mí me gusta…, A Lucía le gusta…</i> <span class="gloss">Het pronomen (OI) is verplicht; a mí/a ti… is extra nadruk, vooral bij le/les.</span></div>')
+P('<div class="intro"><b>ES:</b> Con el pronombre dices <b>a quién</b> le gusta algo: <b>me</b>, <b>te</b>, <b>le</b>, <b>nos</b>, <b>os</b>, <b>les</b>. Para insistir: <i>A mí me gusta…, A Lucía le gusta…</i> <span class="gloss">Het pronomen zegt aan wie iets bevalt; met «a mí» leg je nadruk.</span></div>')
 P('</div>')
 P('<table class="mp"><thead><tr><th>tónico (opcional)</th><th>átono (verplicht)</th><th>+ gusta / gustan</th></tr></thead><tbody>'
   '<tr><td>(a mí)</td><td class="v"><b>me</b></td><td>gusta el fútbol · gustan los perros</td></tr>'
@@ -516,7 +516,7 @@ P('<table class="mp"><thead><tr><th>tónico (opcional)</th><th>átono (verplicht
   '<tr><td>(a nosotros/as)</td><td class="v"><b>nos</b></td><td>gusta el fútbol · gustan los perros</td></tr>'
   '<tr><td>(a vosotros/as)</td><td class="v"><b>os</b></td><td>gusta el fútbol · gustan los perros</td></tr>'
   '<tr><td>(a ellos/as/ustedes)</td><td class="v"><b>les</b></td><td>gusta el fútbol · gustan los perros</td></tr></tbody></table>')
-P('<div class="truc"><b>¡Ojo con «le»!</b> Bij een naam gebruik je <b>le/les</b> + a + naam: <i>A Diego <b>le</b> gusta el fútbol. A mis padres <b>les</b> gusta viajar.</i></div>')
+P('<div class="truc"><b>¡Ojo con «le»!</b> Con un nombre usas <b>le/les</b> + a + nombre: <i>A Diego <b>le</b> gusta el fútbol. A mis padres <b>les</b> gusta viajar.</i> <span class="gloss">Bij een naam komt le of les erbij.</span></div>')
 P(actx(AN(), "Completa con el pronombre correcto",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Escribe <b>me · te · le · nos · os · les</b>. <span class="gloss">Vul het juiste pronomen in.</span></p>'
@@ -552,7 +552,7 @@ P('<div class="scale"><div class="track">'
   '<div class="sstop"><div class="sd"></div><div class="sl">me gusta 🙂</div><div class="bar"></div></div>'
   '<div class="sstop"><div class="sd"></div><div class="sl">no me gusta</div><div class="bar"></div></div>'
   '<div class="sstop"><div class="sd"></div><div class="sl">no me gusta nada 🙁</div></div></div></div>')
-P('<div class="truc"><b>me encanta = het maximum</b> (encantar werkt zoals gustar: me encanta / me encantan). Gebruik het <b>niet</b> met «mucho» of in de ontkenning (<span class="trap">me encanta mucho / no me encanta</span>).</div>')
+P('<div class="truc"><b>me encanta = el máximo</b> (encantar funciona como gustar: me encanta / me encantan). No lo uses con «mucho» ni en negativo (<span class="trap">me encanta mucho / no me encanta</span>). <span class="gloss">encantar is al het maximum: geen mucho, geen ontkenning.</span></div>')
 P(xray('A mí me gusta el fútbol porque es divertido.', [
   ('A mí me', 'aan wie (OI)'), ('gusta', 'ww. (al revés)'), ('el fútbol', 'wat (onderwerp)'), ('porque', 'want/omdat'), ('es divertido', 'reden = mening')]))
 P(regla("Mi primera opinión", '<p>Combina una frase con gustar y una razón: <b>Me gusta / No me gusta … porque …</b> <span class="gloss">Combineer een gustar-zin met een reden.</span><br>'
@@ -571,7 +571,7 @@ P('<div class="se" style="margin-top:4mm">Reaccionar a los gustos de otro · a m
 P('<table class="alf"><thead><tr><th>Alguien dice…</th><th>De acuerdo (=)</th><th>En desacuerdo (≠)</th></tr></thead><tbody>'
   '<tr><td>Me gusta el pop. <span class="gloss">(+)</span></td><td><b>A mí también.</b></td><td>A mí no.</td></tr>'
   '<tr><td>No me gusta el jazz. <span class="gloss">(−)</span></td><td><b>A mí tampoco.</b></td><td>A mí sí.</td></tr></tbody></table>')
-P('<div class="truc"><b>¡Ojo!</b> Met gustar zeg je <b>a mí también</b> (niet <span class="trap">yo también</span>), want gustar gebruikt <i>a mí</i>. «también» reageert op (+), «tampoco» op (−).</div>')
+P('<div class="truc"><b>¡Ojo!</b> Con gustar se dice <b>a mí también</b>, no <span class="trap">yo también</span>, porque gustar lleva <i>a mí</i>. «también» responde a (+) y «tampoco» a (−). <span class="gloss">a mí también, want gustar gaat met a mí.</span></div>')
 P(actx(AN(), "Reacciona · ¿a mí también o a mí tampoco?",
   [{"t":"✍️ Escribir","skill":True},{"t":"👥 En parejas"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Je bent het eens. Reageer met <b>A mí también</b> of <b>A mí tampoco</b>.</p>'
@@ -630,7 +630,7 @@ P(actx(AN(), "Clasifica por el acento",
   + sortcols([("aguda",""),("llana",""),("esdrújula","")], eigen=False), apoyo="Banco de palabras"))
 P('<h3 style="margin-top:6mm">2 · Conectores — contar tu día en orden</h3>')
 P(colloc("primero · luego · después · más tarde · por último", ["primero = eerst","luego/después = daarna","más tarde = later","antes de + inf.","por último = ten slotte"]))
-P('<div class="truc"><b>¡Ojo!</b> «want» én «omdat» = <b>porque</b> (nooit <span class="trap">por que / porqué</span> hier). «dus» = <b>así que / por eso</b>.</div>')
+P('<div class="truc"><b>¡Ojo!</b> «want» y «omdat» son <b>porque</b> (nunca <span class="trap">por que / porqué</span> aquí). «dus» es <b>así que / por eso</b>. <span class="gloss">Eén woord porque; «dus» is así que of por eso.</span></div>')
 P(actx(AN(), "Completa con el conector correcto",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Elige entre <span class="gloss">kies uit</span> <b>primero · luego · después · por último · porque</b>.</p>'
@@ -707,7 +707,7 @@ P('<table class="sem"><tr class="semrow"><th>Criterio</th><th>🔴 todavía no</
 P('<div class="mispal" style="margin-top:3mm"><div class="mh">🤝 Co-evaluación — el día de mi compañero/a</div>'
   '<table><thead><tr><th>Una cosa que hace igual que yo</th><th>Una pregunta que le hago</th></tr></thead>'
   '<tbody><tr><td></td><td></td></tr></tbody></table></div>')
-P('<div class="truc" style="margin-top:3mm"><b>✍️ Antes de colgar:</b> lees je blog nog eens na — <i>reflexivos correct? · ser/estar? · gustar met me/te/le? · una opinión con porque?</i> Verbeter één ding: <span class="wl lg"></span></div>')
+P('<div class="truc" style="margin-top:3mm"><b>✍️ Antes de colgar:</b> vuelve a leer tu blog — <i>¿reflexivos correctos? · ¿ser/estar? · ¿gustar con me/te/le? · ¿una opinión con porque?</i> Corrige una cosa: <span class="wl lg"></span> <span class="gloss">Lees na en verbeter één ding.</span></div>')
 sec_close()
 
 # ================= REPASO =================

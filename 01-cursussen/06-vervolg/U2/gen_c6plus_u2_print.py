@@ -59,7 +59,7 @@ P(f'''
   <div class="tab">U2 · AQUÍ VIVO</div>
   <div class="eyebrow">UNIDAD 2 · LA RUTA · CARTAGENA 🇨🇴 · AQUÍ VIVO 🏠</div>
   <h1>Aquí vivo</h1>
-  <div class="sub">De reis gaat verder naar <b>Cartagena</b>, bij <b>Valen</b>. Je leert je <b>huis</b> en <b>buurt</b> beschrijven: <b>waar</b> alles staat (hay/está + encima/al lado…), <b>wat er nú gebeurt</b> (estoy comiendo) en hoe je een woord kort maakt met <b>lo/la</b>. <span class="gloss">Wonen, de buurt en de weg — met hay/estar + voorzetsels, estar + gerundio en de voornaamwoorden lo/la.</span></div>
+  <div class="sub">El viaje sigue hasta <b>Cartagena</b>, con <b>Valen</b>. Aprendes a describir tu <b>casa</b> y tu <b>barrio</b>: <b>dónde</b> está todo (hay/está + encima, al lado…), <b>qué pasa ahora</b> (estoy comiendo) y cómo acortar con <b>lo/la/los/las</b>. <span class="gloss">Je huis en je buurt beschrijven, zeggen wat er nú gebeurt, en korter formuleren.</span></div>
   <div class="q">¿Dónde vives tú? <span style="font-weight:400;opacity:.9">· Waar woon jij?</span></div>
 </div>
 <div class="page">
@@ -78,7 +78,7 @@ P(f'''
       <div class="se">La historia</div>
       <div class="hist"><b>ES:</b> <b>Valen</b> te invita a su casa en Cartagena. Aprendes a decir <b>qué hay</b> en cada habitación y <b>dónde está</b> cada cosa (la cama está <b>al lado de</b> la ventana). Miras <b>qué está haciendo</b> la familia ahora (mamá <b>está cocinando</b>) y, cuando algo ya se sabe, lo dices más corto: «¿El sofá? <b>Lo</b> pongo aquí». Al final: un <b>mapa de tu barrio</b>.
       <span class="gloss">Valen nodigt je uit in haar huis. Je leert wat er in elke kamer is en waar alles staat, wat de familie nu aan het doen is, en hoe je met lo/la korter praat. Eindtaak: een plattegrond van je buurt.</span></div>
-      <div class="ojo"><b>¡Ojo! — twee valstrikken meteen scherp:</b> ① <b>hay</b> = «er is/zijn» (iets nieuws/onbepaald: <i>hay un parque</i>) tegenover <b>está</b> = «staat/ligt» (iets bepaald: <i>el parque está…</i>). ② <b>lo/la</b> vervangt het <b>lijdend voorwerp</b> en komt <b>vóór</b> het werkwoord: <i>Veo la casa → <b>La</b> veo.</i> <span class="gloss">hay = onbepaald · está = bepaald · lo/la vóór het werkwoord.</span></div>
+      <div class="ojo"><b>¡Ojo! — dos trampas desde el primer día:</b> ① <b>hay</b> = algo nuevo o indefinido (<i>hay un parque</i>) frente a <b>está</b> = algo definido (<i>el parque está…</i>). ② <b>lo/la</b> sustituye al <b>objeto directo</b> y va delante del verbo conjugado. <span class="gloss">hay tegenover está, en lo/la vóór het vervoegde werkwoord.</span></div>
     </div>
     <div>
       <div class="se">La gente de la ruta</div>
@@ -124,9 +124,9 @@ P(f'''
 ''')
 
 # ================= §0 · ¡PONTE AL DÍA! =================
-sec_open("0", "§0 · ¡Ponte al día!", 'Activamos dos cosas de U1 que necesitas hoy: <b>ser/estar</b> (estar = plaats/toestand → dé basis van hay/estar) y <b>gustar</b> (voor je mening over je barrio). <span class="gloss">We frissen ser/estar en gustar op — die heb je nodig voor «waar staat wat» en je mening over je buurt.</span>',
+sec_open("0", "§0 · ¡Ponte al día!", 'Activamos dos cosas de U1 que necesitas hoy: <b>ser/estar</b> (estar = lugar y estado, la base de hay/estar) y <b>gustar</b> (para tu opinión sobre el barrio). <span class="gloss">We frissen ser/estar en gustar op — die heb je nodig voor «waar staat wat» en je mening over je buurt.</span>',
         lpd(("8","taalsysteem: ser/estar (repaso)"), ("7","woordenschat: gustar")))
-P('<div class="truc"><b>Repaso ser/estar (U1):</b> <b>ser</b> = wie/wat iets is (permanent) · <b>estar</b> = <b>waar</b> iets is en <b>hoe</b> het is (plaats/toestand). In U2 bouwt <b>estar</b> = plaats verder uit met <b>hay</b> en de <b>preposiciones</b>.</div>')
+P('<div class="truc"><b>Repaso ser/estar (U1):</b> <b>ser</b> = qué es algo (permanente) · <b>estar</b> = <b>dónde</b> está y <b>cómo</b> está (lugar o estado). En U2 el <b>estar</b> de lugar crece con <b>hay</b> y las <b>preposiciones</b>. <span class="gloss">estar van plaats groeit uit met hay en de voorzetsels.</span></div>')
 P(actx(AN(), "¿ser o estar? (repaso)",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p><i>Kies de juiste vorm van ser of estar.</i></p>'
@@ -184,7 +184,7 @@ retos("casa_c6p", "§1.4 · Retos — la casa dicha de otra manera",
       'Een advertentie die niets verbergt, en een kamer beschreven zonder één meubel te noemen.')
 
 # ================= §2 · HAY VS ESTAR + PREPOSICIONES =================
-sec_open("2", "§2 · Hay vs estar + preposiciones", 'Voor <b>waar iets staat</b>: <b>hay</b> zegt <b>dát</b> er iets is (onbepaald), <b>estar</b> zegt <b>waar</b> iets bepaalds staat. En de <b>preposiciones</b> (encima de, al lado de…) preciseren de plaats. <span class="gloss">hay = er is (onbepaald) · está = staat (bepaald) · voorzetsels van plaats erbij.</span>',
+sec_open("2", "§2 · Hay vs estar + preposiciones", 'Para decir <b>dónde está algo</b>: <b>hay</b> dice <b>que</b> algo existe (indefinido) y <b>estar</b> dice <b>dónde</b> está algo conocido. Las <b>preposiciones</b> (encima de, al lado de…) precisan el lugar. <span class="gloss">hay = er is (onbepaald) · está = staat (bepaald) · voorzetsels van plaats erbij.</span>',
         lpd(("8","taalsysteem: hay/estar + preposiciones"), ("7","woordenschat: la casa"), ("4","interactie: dónde")))
 
 # §2.1 hay vs estar
@@ -380,7 +380,7 @@ retos("gerundio_c6p", "§3.4 · Retos — ¿qué está pasando ahí?",
       "Een verdwenen laptop met vier alibi's, en een videogesprek waarin je de kamer ziet maar de persoon niet.")
 
 # ================= §4 · OD-PRONOMINA lo/la/los/las =================
-sec_open("4", "§4 · Los pronombres lo/la/los/las", 'Om niet steeds hetzelfde te herhalen, vervang je het <b>lijdend voorwerp</b> door <b>lo/la/los/las</b>. <i>¿Ves la casa? Sí, <b>la</b> veo.</i> <span class="gloss">Het lijdend voorwerp korter maken met lo/la/los/las — het staat vóór het werkwoord.</span>',
+sec_open("4", "§4 · Los pronombres lo/la/los/las", 'Para no repetir siempre lo mismo, sustituyes el <b>objeto directo</b> por <b>lo/la/los/las</b>. <i>¿Ves la casa? Sí, <b>la</b> veo.</i> <span class="gloss">Het lijdend voorwerp korter maken met lo/la/los/las — het staat vóór het werkwoord.</span>',
         lpd(("8","taalsysteem: OD-pronomina lo/la"), ("7","woordenschat: la casa")))
 
 # §4.1 ¿qué es?
@@ -437,7 +437,7 @@ P('</div>')
 # §4.3 posición + foutenkliniek + tarea
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">4</span><span class="pk">§4.3 · La posición del pronombre</span>')
-P('<div class="intro"><b>ES:</b> Normaal <b>vóór</b> het vervoegde werkwoord: <i>Lo veo</i>. Bij een <b>infinitivo</b> of <b>gerundio</b> mag het ook <b>achteraan vast</b>: <i>Voy a comprar<b>lo</b> = <b>Lo</b> voy a comprar · Estoy leyéndo<b>lo</b> = <b>Lo</b> estoy leyendo</i>. <span class="gloss">Vóór het vervoegde werkwoord, óf vastgeplakt aan de infinitief/gerundio.</span></div>')
+P('<div class="intro"><b>ES:</b> Normalmente <b>delante</b> del verbo conjugado: <i>Lo veo</i>. Con <b>infinitivo</b> o <b>gerundio</b> también puede ir <b>pegado detrás</b>: <i>Voy a comprar<b>lo</b> = <b>Lo</b> voy a comprar · Estoy leyéndo<b>lo</b> = <b>Lo</b> estoy leyendo</i>. <span class="gloss">Vóór het vervoegde werkwoord, óf vastgeplakt achteraan.</span></div>')
 P('</div>')
 P('<div class="agree"><div class="w"><u>Lo</u> veo.</div><div class="tie">vóór het vervoegde werkwoord</div></div>')
 P('<div class="agree"><div class="w">Voy a comprar<u>lo</u> = <u>Lo</u> voy a comprar.</div><div class="tie">bij infinitief: achteraan óf vooraan</div></div>')
@@ -481,7 +481,7 @@ P('<div class="fams three" style="margin-top:1mm">'
   '<div class="pcard"><div class="t">Sigue recto</div><div class="ej">ga rechtdoor</div></div>'
   '<div class="pcard"><div class="t">Gira a la derecha / izquierda</div><div class="ej">sla rechts / links af</div></div>'
   '<div class="pcard"><div class="t">Cruza la calle</div><div class="ej">steek over · en la esquina / el semáforo</div></div></div>')
-P('<div class="truc"><b>¡Ojo!</b> <b>¿Cómo llego a…?</b> = hoe geraak ik bij…? Antwoord met de <b>tú-imperativo</b> (sigue, gira, cruza) of met <b>tienes que</b> + infinitivo (tienes que seguir recto). Afstand: <b>está a cinco minutos</b> (a pie / en bus).</div>')
+P('<div class="truc"><b>¡Ojo!</b> <b>¿Cómo llego a…?</b> Se responde con el <b>imperativo de tú</b> (sigue, gira, cruza) o con <b>tienes que</b> + infinitivo (tienes que seguir recto). La distancia: <b>está a cinco minutos</b> (a pie / en bus). <span class="gloss">Hoe geraak ik bij…? — antwoord met de imperativo of met tienes que.</span></div>')
 P(actx(AN(), "Relaciona el lugar con su función",
   [{"t":"🔗 Emparejar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Une las dos columnas: escribe la letra. <span class="gloss">Verbind en schrijf de letter.</span></p>'
@@ -635,7 +635,7 @@ P('<table class="sem"><tr class="semrow"><th>Criterio</th><th>🔴 todavía no</
 P('<div class="mispal" style="margin-top:3mm"><div class="mh">🤝 Co-evaluación — el barrio de mi compañero/a</div>'
   '<table><thead><tr><th>Un lugar que también hay en mi barrio</th><th>Una pregunta que le hago</th></tr></thead>'
   '<tbody><tr><td></td><td></td></tr></tbody></table></div>')
-P('<div class="truc" style="margin-top:3mm"><b>✍️ Antes de colgar:</b> lees je tekst na — <i>hay/está correct? · preposiciones met del/de la? · una ruta? · una opinión?</i> Verbeter één ding: <span class="wl lg"></span></div>')
+P('<div class="truc" style="margin-top:3mm"><b>✍️ Antes de colgar:</b> vuelve a leer tu texto — <i>¿hay/está correcto? · ¿preposiciones con del/de la? · ¿una ruta? · ¿una opinión?</i> Corrige una cosa: <span class="wl lg"></span> <span class="gloss">Lees na en verbeter één ding.</span></div>')
 sec_close()
 
 # ================= REPASO =================

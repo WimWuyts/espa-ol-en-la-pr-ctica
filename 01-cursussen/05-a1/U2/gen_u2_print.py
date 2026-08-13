@@ -484,7 +484,7 @@ P(f'''
       <div class="se">La historia</div>
       <div class="hist"><b>ES:</b> En <b>Sevilla</b>, Lucía te enseña una foto: «Esta es <b>mi familia</b>. Somos cinco.» Aprendes los <b>miembros de la familia</b>, a decir cuántos <b>tienes</b>, a <b>describir</b> a las personas (alto, moreno, simpático) y a distinguir <b>ser</b> (identidad) de <b>estar</b> (estado/lugar).
       <span class="gloss">In Sevilla toont Lucía haar familiefoto. Je leert de familieleden, tellen met tener, beschrijven en ser/estar onderscheiden.</span></div>
-      <div class="ojo"><b>¡Ojo! — valstrik:</b> in het NL is <b>zijn</b> één woord, in het Spaans <b>twee</b>: <b>ser</b> (wie/hoe iemand ís: es alta, es simpática) en <b>estar</b> (hoe/waar iemand nú is: está cansada, está en casa). En <b>mi</b> hermana → <b>mis</b> hermanas (het bezit past bij het <span class="trap">aantal</span>).</div>
+      <div class="ojo"><b>¡Ojo! — la trampa:</b> donde el neerlandés tiene <b>un</b> verbo «zijn», el español tiene <b>dos</b>: <b>ser</b> (quién o cómo es alguien: es alta, es simpática) y <b>estar</b> (cómo o dónde está ahora: está cansada, está en casa). Y <b>mi</b> hermana → <b>mis</b> hermanas: el posesivo también hace plural. <span class="gloss">Eén Nederlands «zijn», twee Spaanse werkwoorden — en mi wordt mis in het meervoud.</span></div>
     </div>
     <div>
       <div class="se">La gente de la ruta</div>
@@ -1078,7 +1078,7 @@ P(lpd(("8","taalsysteem: conectores"), ("9","strategie: schrijven verzorgen")))
 P('</div>')
 P('<h3 style="margin-top:6mm">Los conectores</h3>')
 P(colloc("conectores", ["y = en","pero = maar","también = ook","porque = want/omdat"]))
-P('<div class="truc"><b>🔴 Valstrik NL:</b> <b>want</b> én <b>omdat</b> zijn allebei <b>porque</b> (één woord!). En <b>también</b> = «ook» (Mi hermana también es morena).</div>')
+P('<div class="truc"><b>🔴 Trampa para neerlandeses:</b> «want» y «omdat» son las dos <b>porque</b>, una sola palabra. Y <b>también</b> es «ook»: <i>Mi hermana también es morena</i>. <span class="gloss">Eén woord porque; también = ook.</span></div>')
 P('<h3 style="margin-top:4mm">La ortografía</h3>')
 P('<div class="truc"><b>🟡 Recuerda:</b> nombres y apellidos con <b>mayúscula</b> (Antonio, García); los adjetivos concuerdan (-o/-a/-os/-as); la edad = <b>tener … años</b>.</div>')
 P(actx(1, "Une con el conector correcto",
@@ -1205,7 +1205,7 @@ P('<table class="sem"><thead><tr><th>Puedo…</th><th>🔴 nog niet</th><th>🟠
   '<tr><td>elegir entre ser y estar</td><td>☐</td><td>☐</td><td>☐</td></tr>'
   '<tr><td>señalar con este/ese</td><td>☐</td><td>☐</td><td>☐</td></tr></tbody></table>')
 P('<div class="truc"><b>✍️ Reflexión (mochila):</b> <i>Lo más fácil de U2: <span class="wl md"></span> · Lo más difícil: <span class="wl md"></span></i></div>')
-P('<div class="route-note">🎮 <b>Repasa jugando (online):</b> alle spellen van U2 met zelfcorrectie + de flip cards van álle woorden.</div>')
+P('<div class="route-note">🎮 <b>Repasa jugando (online):</b> todos los juegos de U2 con autocorrección y las flip cards de todas las palabras. <span class="gloss">Alle spellen met zelfcorrectie plus de flip cards.</span></div>')
 P('<div class="bridge"><b>» Siguiente parada: Barcelona (U3).</b> Ya sabes presentar a tu gente; en <b>U3 «El tiempo vuela»</b> aprendes <b>la hora</b> y tu <b>rutina diaria</b>. <span class="gloss">Op naar Barcelona: de klok en je dagritme.</span></div>')
 P('</div>')  # page Repaso
 

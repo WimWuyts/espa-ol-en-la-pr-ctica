@@ -413,7 +413,7 @@ P(f'''
   <div class="tab">U7 · MI CASA</div>
   <div class="eyebrow">UNIDAD 7 · LA RUTA · PARADA 7 — COLOMBIA / CARTAGENA 🇨🇴</div>
   <h1>Mi casa y mi barrio</h1>
-  <div class="sub">Bajamos por la costa hasta <b>Cartagena</b>, en <b>Colombia</b>. Hoy praat je over <b>waar je woont</b>: la casa, las habitaciones, los muebles — en je leert <b>de weg vragen en uitleggen</b> in el barrio. <span class="gloss">We reizen naar Cartagena. Vandaag: je huis, je kamers en de weg vinden in de buurt.</span></div>
+  <div class="sub">Bajamos por la costa hasta <b>Cartagena</b>, en <b>Colombia</b>. Hoy hablas de <b>dónde vives</b>: la casa, las habitaciones, los muebles, y aprendes a <b>preguntar e indicar el camino</b> en el barrio. <span class="gloss">We reizen naar Cartagena: je huis, de kamers, de meubels en de weg vragen.</span></div>
   <div class="q">¿Dónde vives? ¿Cómo es tu barrio? <span style="font-weight:400;opacity:.9">· Waar woon je? Hoe is jouw buurt?</span></div>
 </div>
 <div class="page">
@@ -431,7 +431,7 @@ P(f'''
       <div class="se">La historia</div>
       <div class="hist"><b>ES:</b> En <b>Cartagena</b> las casas son de colores y tienen <b>balcones con flores</b>. <b>Valen</b> te abre la puerta: «Mira, en el <b>salón</b> <b>hay</b> un sofá y la cocina <b>está</b> a la derecha». Salís al <b>barrio</b>: «¿Cómo se va a la <b>plaza</b>? <b>Sigue</b> todo recto y <b>gira</b> a la izquierda». Aprendes a decir <b>dónde está</b> todo y a <b>explicar el camino</b>.
       <span class="gloss">In Cartagena zijn de huizen kleurrijk. Valen toont je haar huis en buurt: waar alles staat en hoe je de weg uitlegt.</span></div>
-      <div class="ojo"><b>¡Ojo! — de valstrik van vandaag:</b> <b>hay</b> (= er is/zijn, iets nieuws, geen lidwoord-de) ≠ <b>está</b> (= staat/ligt, iets bekend, met de plaats). Zeg <i>Hay <b>un</b> parque</i> maar <i><b>El</b> parque está cerca</i>. En «rechts» = <b>a la derecha</b> (niet <span class="trap">correcto</span>!).</div>
+      <div class="ojo"><b>¡Ojo! — la trampa de hoy:</b> <b>hay</b> (algo nuevo, sin artículo determinado) ≠ <b>está</b> (algo conocido, con su lugar). Dices <i>Hay <b>un</b> parque</i> pero <i><b>El</b> parque está cerca</i>. Y «rechts» es <b>a la derecha</b>. <span class="gloss">hay voor iets nieuws, está voor iets bekends.</span></div>
     </div>
     <div>
       <div class="se">La gente de la ruta</div>
@@ -639,7 +639,7 @@ P('<div class="fichacard">'
   '<div class="row"><span class="k">detrás de</span><span class="v">la silla</span><span class="nl">achter</span></div>'
   '<div class="row"><span class="k">entre</span><span class="v">la mesa y la silla</span><span class="nl">tussen</span></div>'
   '<div class="row"><span class="k">enfrente de</span><span class="v">la ventana</span><span class="nl">tegenover</span></div></div></div>')
-P('<div class="truc"><b>🔴 De + el = del:</b> encima <b>del</b> armario (niet <span class="trap">de el</span>). Bij <b>entre</b> gebruik je géén «de»: <i>entre la mesa <b>y</b> la silla</i>.</div>')
+P('<div class="truc"><b>🔴 De + el = del:</b> encima <b>del</b> armario, nunca <span class="trap">de el</span>. Con <b>entre</b> no se pone «de»: <i>entre la mesa <b>y</b> la silla</i>. <span class="gloss">de + el wordt del; entre gaat zonder de.</span></div>')
 P('<p style="font-size:9.6pt">② <b>El plano del barrio (conceptmap) — ¿dónde está cada edificio?</b></p>')
 P('<table class="conj"><thead><tr><th>Edificio</th><th>Preposición</th><th>Ejemplo</th></tr></thead><tbody>'
   '<tr><td class="v">la farmacia</td><td class="p">en la esquina</td><td>La farmacia está en la esquina.</td></tr>'
@@ -818,7 +818,7 @@ P(tree([
   '¿A la derecha o a la izquierda? → <b>Gira</b> a la derecha en el semáforo.',
   '¿Ya llegaste? → <span class="yes">SÍ</span> → <span class="res">¡Estás en la plaza!</span>',
 ]))
-P('<div class="truc"><b>🔴 Formas útiles:</b> <b>gira</b> (draai) · <b>sigue</b> (ga door) · <b>cruza</b> (steek over) · <b>toma/coge</b> (neem) · <b>ve</b> (ga, van «ir»). Bij een regelmatig <b>-ar</b>-werkwoord: eind op <b>-a</b>; bij <b>-er/-ir</b>: eind op <b>-e</b>.</div>')
+P('<div class="truc"><b>🔴 Formas útiles:</b> <b>gira</b> · <b>sigue</b> · <b>cruza</b> · <b>toma/coge</b> · <b>ve</b> (de «ir»). En un verbo regular en <b>-ar</b> la forma acaba en <b>-a</b>; en <b>-er/-ir</b>, en <b>-e</b>. <span class="gloss">draai · ga door · steek over · neem · ga.</span></div>')
 P(regla("Regla · imperativo afirmativo (tú)",
   '<p>Voor een <b>bevel/instructie</b> aan <b>tú</b>: neem de <b>él/ella-vorm</b> van het presente. '
   '<b>-ar</b> → <b>-a</b> (gira, cruza, toma) · <b>-er/-ir</b> → <b>-e</b> (sube, sigue). '
@@ -879,7 +879,7 @@ P('<table class="conj"><thead><tr><th>Nº</th><th>Ordinal</th><th>Apócope (+ m.
   '<tr><td>5º</td><td class="v">quinto</td><td>el quinto piso</td></tr></tbody></table>')
 P('<p style="font-size:9.6pt">② <b>La lupa (foutenvergrootglas) — solo primero y tercero pierden la -o:</b></p>')
 P(zoom("primero + piso", "el primer piso", "primera + planta", "la primera planta"))
-P('<div class="truc"><b>🔴 Apócope:</b> <b>primero → primer</b> · <b>tercero → tercer</b> — enkel vóór een <b>mannelijk enkelvoud</b> zelfstandig naamwoord. Bij vrouwelijk blijft het: <i>la primer<b>a</b> planta</i>. De rest verandert niet: <i>el segundo piso</i>.</div>')
+P('<div class="truc"><b>🔴 Apócope:</b> <b>primero → primer</b> · <b>tercero → tercer</b>, solo delante de un sustantivo <b>masculino singular</b>. En femenino se mantiene: <i>la primer<b>a</b> planta</i>. Los demás no cambian: <i>el segundo piso</i>. <span class="gloss">Alleen vóór een mannelijk enkelvoud valt de -o weg.</span></div>')
 P(regla("Regla · ordinales + apócope",
   '<p><b>primero, segundo, tercero, cuarto, quinto…</b> = de volgorde. '
   '<b>primero</b> en <b>tercero</b> verliezen de <b>-o</b> vóór een mannelijk enkelvoud: <b>el primer piso</b>, <b>el tercer piso</b>. '
@@ -964,7 +964,7 @@ P(tarea_com("Tarea comunicativa · «Se alquila» (keten lezen→spreken)",
   '<p><b></b> A is de <b>propietario/a</b> en beschrijft een woning (habitaciones, dónde está, precio); B is de <b>cliente</b> en stelt vragen (¿Cuántas habitaciones hay? ¿Dónde está?). Wissel. <span class="gloss">«Es un piso en el segundo. Hay dos habitaciones y está cerca del parque.»</span></p>'
   '<div class="wbox sm"></div>'
   + APO.html("Marco: Hay… · … está… · cuesta…")))
-P('<div class="route-note">🎮 <b>Sigue online:</b> luister het anuncio (TTS), lees de tekst en neem je beschrijving op (recorder) op de digitale pagina.</div>')
+P('<div class="route-note">🎮 <b>Sigue online:</b> en la página digital escuchas el anuncio, lees el texto y grabas tu descripción. <span class="gloss">Online: luisteren, lezen en je beschrijving opnemen.</span></div>')
 P('</div>')  # page §6b
 
 # ================= TALLER DE LENGUA =================
@@ -985,7 +985,7 @@ P(actx(1, "Une la ruta con conectores",
   '<p>Escribe la expresión correcta (todo recto / a la derecha / al final de / enfrente de). <span class="gloss">Vul de juiste uitdrukking in.</span></p>'
   '<p style="margin-left:12.5mm">Sigue ___ por la calle Real. Gira ___ en el semáforo. La panadería está ___ la calle, ___ la plaza.<br><span class="wl full"></span></p>', apoyo="Banco de palabras"))
 P('<h3 style="margin-top:6mm">Ortografía · diptongos e hiatos (la regla del sombrero)</h3>')
-P('<div class="truc"><b>🔴 Diptongo vs. hiato:</b> een <b>diptongo</b> = twee klinkers in één lettergreep (b<b>ai</b>le, p<b>ue</b>rta). Een <b>hiato</b> = twee klinkers apart, vaak met tilde: pana-de-r<b>í</b>-a, d<b>í</b>-a, pa-<b>í</b>s. De tilde op de <b>i/u</b> breekt de tweeklank.</div>')
+P('<div class="truc"><b>🔴 Diptongo frente a hiato:</b> un <b>diptongo</b> son dos vocales en una sílaba (b<b>ai</b>le, p<b>ue</b>rta). Un <b>hiato</b> son dos vocales separadas, muchas veces con tilde: pana-de-r<b>í</b>-a, d<b>í</b>-a, pa-<b>í</b>s. La tilde en la <b>i/u</b> rompe el diptongo. <span class="gloss">Het accent op de i of u breekt de tweeklank.</span></div>')
 P(obsbox([
   '<span class="hl">diptongo</span>: puerta · bueno · tiene · seis <span class="gloss">(twee klinkers = één klank)</span>',
   '<span class="hl">hiato</span>: pana<b>de</b>ría · día · país · frío <span class="gloss">(tilde op í = apart)</span>',
@@ -1055,7 +1055,7 @@ P('<table class="mp"><thead><tr><th>Palabra</th><th>🇪🇸 España</th><th>�
   '<tr><td>vivienda urbana</td><td>el piso</td><td>el apartamento</td><td>het appartement</td></tr>'
   '<tr><td>vivienda con jardín</td><td>el chalet</td><td>la casa</td><td>het huis</td></tr>'
   '<tr><td>planta a nivel de calle</td><td>la planta baja</td><td>la planta baja</td><td>gelijkvloers</td></tr></tbody></table>')
-P('<div class="truc"><b>🟡 Dato:</b> in Spanje zegt men meestal <b>piso</b>, in Latijns-Amerika <b>apartamento</b>. Bij het adres komt vaak het <b>piso</b> erbij: <i>calle Real, 3º</i> (tercer piso).</div>')
+P('<div class="truc"><b>🟡 Dato:</b> en España se dice casi siempre <b>piso</b>; en Latinoamérica, <b>apartamento</b>. En la dirección suele ir el <b>piso</b>: <i>calle Real, 3º</i> (tercer piso). <span class="gloss">piso in Spanje, apartamento in Latijns-Amerika.</span></div>')
 P('<p style="font-size:9.6pt">② <b>Un lugar por país (pan-hispano):</b></p>')
 P(vpairs([("la Plaza Mayor 🇪🇸","la plaza de Cartagena 🇨🇴"),("el Zócalo 🇲🇽","la Plaza de Armas 🇵🇪"),("el barrio Getsemaní 🇨🇴","el barrio de La Boca 🇦🇷")]))
 P(actx(1, "Comprensión — verdadero o falso",
@@ -1088,7 +1088,7 @@ retos("cultura_u7", "Retos — el barrio que construyes tú",
 P('<div class="page"><div class="parada sec" style="border-top-color:var(--gd)">')
 P('<span class="num">✦</span><span class="pk" style="background:var(--gd)">Tarea final · Mapa de mi barrio</span>')
 P('<div class="intro"><b>ES:</b> Crea el <b>plano de tu barrio</b> (o de un barrio ideal) y da una <b>visita guiada</b>: di qué <b>hay</b>, dónde <b>está</b> cada cosa y <b>explica el camino</b> de tu casa a la plaza. <span class="gloss">Maak de plattegrond van je buurt en geef een rondleiding + de weg.</span></div>')
-P('<div class="route-note">🎯 <b>Communicatieve taak:</b> afzender = jij (de gids) · ontvanger = een bezoeker/nieuwe leerling · doel = je buurt voorstellen & de weg uitleggen · situatie = un paseo por el barrio · resultaat = ingevuld plano + gespeelde rondleiding.</div>')
+P('<div class="route-note">🎯 <b>Tarea comunicativa:</b> emisor = tú (el guía) · destinatario = un visitante o un alumno nuevo · objetivo = presentar tu barrio e indicar el camino · situación = un paseo por el barrio · resultado = plano relleno + visita guiada representada. <span class="gloss">Afzender, ontvanger, doel, situatie en resultaat van deze taak.</span></div>')
 P(lpd(("3","doelgericht schrijven met een voorbeeld"), ("4","mondeling interageren (de weg)"), ("7","woordenschat casa/barrio"), ("8","hay/estar · preposiciones · imperativo")))
 P('</div>')
 P('<ol class="pasos">'

@@ -59,7 +59,7 @@ P(f'''
   <div class="tab">U5 · ÉRASE UNA VEZ</div>
   <div class="eyebrow">UNIDAD 5 · LA RUTA · BUENOS AIRES 🇦🇷 · ÉRASE UNA VEZ 📖</div>
   <h1>Érase una vez</h1>
-  <div class="sub">De reis komt aan in <b>Buenos Aires</b>, bij <b>Mateo</b>. Je vertelt <b>biografieën</b> en <b>verhalen uit het verleden</b> met de <b>pretérito indefinido</b> (<b>nació</b> en 1919, <b>escribió</b> novelas, <b>ganó</b> el Mundial, <b>murió</b> en 1986) — de kern-verleden tijd voor afgesloten feiten. En je leert twee voornaamwoorden samen: <b>se lo di a Mateo</b>. <span class="gloss">De voltooid verleden tijd (indefinido) voor afgeronde feiten + de dubbele voornaamwoorden se lo/se la.</span></div>
+  <div class="sub">El viaje llega a <b>Buenos Aires</b>, con <b>Mateo</b>. Cuentas <b>biografías</b> e <b>historias del pasado</b> con el <b>pretérito indefinido</b> (<b>nació</b> en 1919, <b>escribió</b> novelas, <b>ganó</b> el Mundial, <b>murió</b> en 1990). <span class="gloss">Biografieën en verhalen uit het verleden vertellen.</span></div>
   <div class="q">¿A qué persona famosa admiras? <span style="font-weight:400;opacity:.9">· Welke beroemde persoon bewonder je?</span></div>
 </div>
 <div class="page">
@@ -78,7 +78,7 @@ P(f'''
       <div class="se">La historia</div>
       <div class="hist"><b>ES:</b> Cada persona famosa tiene una <b>historia</b>. Aprendes a contarla con el <b>indefinido</b>: <i>nació, creció, estudió, escribió, ganó, murió</i>. Memorizas las formas <b>fuertes</b> (fue, hizo, tuvo, estuvo, dijo) y combinas los pronombres: «¿La carta? <b>Se la</b> di a Mateo». Al final: escribes <b>una biografía</b>.
       <span class="gloss">Elk beroemd figuur heeft een verhaal. Je leert het vertellen met de indefinido, met de sterke vormen en de dubbele voornaamwoorden. Eindtaak: een biografie.</span></div>
-      <div class="ojo"><b>¡Ojo! — twee valstrikken meteen scherp:</b> ① De <b>indefinido</b> = <b>afgeronde</b> feiten in het verleden (<i>ayer, en 1982, el año pasado</i>) — niet de perfecto (<i>hoy, esta semana</i>). ② <b>hizo</b> schrijf je met <b>z</b> (hacer → hizo); <b>fue</b> = zowel «was» (ser) als «ging» (ir). <span class="gloss">indefinido = afgeronde feiten · hizo (z) · fue = ser én ir.</span></div>
+      <div class="ojo"><b>¡Ojo! — dos trampas desde el primer día:</b> ① El <b>indefinido</b> es para hechos <b>cerrados</b> (<i>ayer, en 1982, el año pasado</i>), no para el perfecto (<i>hoy, esta semana</i>). ② <b>hizo</b> va con <b>z</b> (hacer → hizo). <span class="gloss">Afgeronde feiten krijgen het indefinido; let op de spelling van hizo.</span></div>
     </div>
     <div>
       <div class="se">La gente de la ruta</div>
@@ -124,7 +124,7 @@ P(f'''
 ''')
 
 # ================= §0 · ¡PONTE AL DÍA! =================
-sec_open("0", "§0 · ¡Ponte al día!", 'We komen van de <b>perfecto</b> (U4: he viajado). Nu de <b>indefinido</b>: dezelfde «wat gebeurde», maar voor <b>afgeronde</b> feiten met een datum (ayer, en 1919). <span class="gloss">Van de voltooide tijd (perfecto) naar de onvoltooid verleden tijd (indefinido) — afgeronde feiten.</span>',
+sec_open("0", "§0 · ¡Ponte al día!", 'Venimos del <b>perfecto</b> (U4: he viajado). Ahora, el <b>indefinido</b>: el mismo «qué pasó», pero para hechos <b>cerrados</b> con fecha (ayer, en 1919). <span class="gloss">Van de voltooide tijd (perfecto) naar de afgeronde feiten (indefinido).</span>',
         lpd(("8","taalsysteem: perfecto → indefinido"), ("7","woordenschat")))
 P('<div class="truc"><b>Perfecto ↔ indefinido:</b> <b>hoy/esta semana he viajado</b> (perfecto, dichtbij) tegenover <b>ayer/en 2019 viajé</b> (indefinido, afgerond verleden). In U5 vertellen we <b>biografieën</b> → altijd indefinido.</div>')
 P(actx(AN(), "¿perfecto o indefinido? (repaso)",
@@ -141,7 +141,7 @@ P(actx(AN(), "Presente → una acción del pasado (repaso)",
 sec_close()
 
 # ================= §1 · BIOGRAFÍA Y LOGROS =================
-sec_open("1", "§1 · Biografía y logros", 'Het vocabulaire van een <b>leven</b>: de <b>etappes</b> (nacer, crecer, estudiar, casarse, morir), de <b>prestaties</b> (ganar, escribir, pintar, descubrir) en de <b>beroepen</b> (el escritor, la pintora, el futbolista). <span class="gloss">De woorden van een biografie: levensfasen, prestaties en beroepen.</span>',
+sec_open("1", "§1 · Biografía y logros", 'El vocabulario de una <b>vida</b>: las <b>etapas</b> (nacer, crecer, estudiar, casarse, morir), los <b>logros</b> (ganar, escribir, pintar, descubrir) y las <b>profesiones</b> (el escritor, la pintora, el futbolista). <span class="gloss">De woorden van een levensloop: etappes, prestaties en beroepen.</span>',
         lpd(("7","woordenschat: la biografía"), ("6","literatuur: biografía/personaje")))
 P('<div class="se">La vida de una persona <span class="gloss" style="font-size:8pt">— netwerk in clusters</span></div>')
 P('<div class="clusters" style="grid-template-columns:1fr 1fr 1fr">'
@@ -232,7 +232,7 @@ P('<table class="conj"><thead><tr><th>Infinitivo</th><th>yo</th><th>él/ella</th
   '<tr><td>decir</td><td class="v">dije</td><td class="v">dijo</td><td class="gloss">Dijo la verdad.</td></tr>'
   '<tr><td>venir</td><td class="v">vine</td><td class="v">vino</td><td class="gloss">Vino a la ciudad.</td></tr>'
   '<tr><td>dar</td><td class="v">di</td><td class="v">dio</td><td class="gloss">Dio un concierto.</td></tr></tbody></table>')
-P('<div class="truc"><b>¡Ojo!</b> <b>hizo</b> met <b>z</b> (niet <span class="trap">hició</span>) · <b>fue</b> = zowel «was» (ser) als «ging» (ir): <i>Fue médico / Fue a París</i>. Geen accent op fue, hizo, tuvo, dio, vio.</div>')
+P('<div class="truc"><b>¡Ojo!</b> <b>hizo</b> con <b>z</b>, no <span class="trap">hició</span> · <b>fue</b> vale para «was» (ser) y para «ging» (ir): <i>Fue médico / Fue a París</i>. Sin tilde: fue, hizo, tuvo, dio, vio. <span class="gloss">fue is zowel «was» als «ging»; deze vormen krijgen geen accent.</span></div>')
 P(actx(AN(), "Empareja: infinitivo ↔ indefinido (él)",
   [{"t":"🔗 Emparejar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Une cada verbo con su forma de él/ella. <span class="gloss">Verbind met de él/ella-vorm.</span></p>'
@@ -290,7 +290,7 @@ retos("indefinido", "§2.4 · Retos — lo que pasó de verdad",
       'Acht feiten uit één leven, waarvan er twee nooit gebeurden, en een stoel waarop een historisch personage plaatsneemt.')
 
 # ================= §3 · OD+OI JUNTOS (se lo) =================
-sec_open("3", "§3 · Los pronombres juntos — se lo / se la", 'Als je <b>OI (le/les)</b> én <b>OD (lo/la)</b> samen gebruikt, verandert <b>le/les</b> in <b>se</b>. <i>Le di el libro → <b>Se lo</b> di.</i> <span class="gloss">le + lo → se lo. Twee voornaamwoorden na elkaar: eerst wie ontvangt (se), dan wat (lo/la).</span>',
+sec_open("3", "§3 · Los pronombres juntos — se lo / se la", 'Cuando juntas el <b>OI (le/les)</b> con el <b>OD (lo/la)</b>, <b>le/les</b> se convierte en <b>se</b>. <i>Le di el libro → <b>Se lo</b> di.</i> <span class="gloss">le + lo wordt se lo: eerst wie ontvangt, dan wat.</span>',
         lpd(("8","taalsysteem: OD+OI se lo"), ("7","woordenschat")))
 
 # §3.1 qué es
@@ -361,7 +361,7 @@ retos("se_lo", "§3.4 · Reto — se lo di a…",
       'Vijf voorwerpen gaan de klas rond en op het eind weet niemand waar ze belandden.')
 
 # ================= §4 · CONTAR UNA HISTORIA =================
-sec_open("4", "§4 · Contar una historia", 'Om een <b>verhaal</b> te vertellen: de <b>conectoren</b> van volgorde (primero, después, entonces, al final) en de opbouw «érase una vez… al final». <span class="gloss">De verhaalconnectoren om een biografie of leyenda te structureren.</span>',
+sec_open("4", "§4 · Contar una historia", 'Para contar una <b>historia</b>: los <b>conectores</b> de orden (primero, después, entonces, al final) y la estructura «érase una vez… al final». <span class="gloss">De verhaalconnectoren om een biografie of leyenda te structureren.</span>',
         lpd(("6","literatuur: leyenda/relato"), ("3","schrijven: een verhaal"), ("4","interactie")))
 P('<div class="se">Los conectores del relato</div>')
 P('<div class="fams three" style="margin-top:1mm">'

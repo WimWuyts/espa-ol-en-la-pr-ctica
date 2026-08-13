@@ -431,7 +431,7 @@ P(f'''
       <div class="se">La historia</div>
       <div class="hist"><b>ES:</b> En el <b>mercado</b> hay ropa de todos los colores. <b>Diego</b> te ayuda: «¿Te gusta <b>esta</b> camiseta o <b>esa</b>?». Te pruebas una chaqueta en el <b>probador</b>, preguntas «¿<b>cuánto cuesta</b>?» y, en el tianguis, <b>regateas</b> el precio. Al final: «Me <b>lo</b> llevo».
       <span class="gloss">Op de markt is kleding in alle kleuren. Diego helpt je kiezen, je past iets in het paskamer, vraagt de prijs en dingt af. Op het einde: «ik neem het».</span></div>
-      <div class="ojo"><b>¡Ojo! — de valstrik van vandaag:</b> een kleur past zich aan bij het kledingstuk: <b>una camiseta roj<span class="trap">a</span></b> (v.) · <b>un vestido roj<span class="trap">o</span></b> (m.) · <b>unos zapatos roj<span class="trap">os</span></b>. Maar <b>azul · gris · verde · marrón · naranja · rosa</b> veranderen niet van geslacht: <i>una falda azul</i> (niet <span class="trap">azula</span>).</div>
+      <div class="ojo"><b>¡Ojo! — la trampa de hoy:</b> el color concuerda con la prenda: <b>una camiseta roj<span class="trap">a</span></b> (f.) · <b>un vestido roj<span class="trap">o</span></b> (m.) · <b>unos zapatos roj<span class="trap">os</span></b> (pl.). <span class="gloss">De kleur past zich aan aan het kledingstuk.</span></div>
     </div>
     <div>
       <div class="se">La gente de la ruta</div>
@@ -558,7 +558,7 @@ P('</div>')
 P('<p style="font-size:9.6pt">③ <b>Radiografía (foutenvergrootglas):</b></p>')
 P(xray('¿La camisa azul? — Sí, <span class="fx ob">la</span> <span class="fx vb">compro</span>.',
        [("la","= la camisa (v. ev.)"),("compro","werkwoord comprar"),("→","geen herhaling!")]))
-P('<div class="truc"><b>🔴 me / te / se — al bekend:</b> <i>Me llamo… · ¿Te gusta?</i> En bij het passen: <i>¿Puedo <b>probármelo</b>?</i> (me + lo). De OD-pronombres <b>lo/la/los/las</b> werken net zo: ze staan vóór het vervoegde werkwoord of vast achter de infinitief.</div>')
+P('<div class="truc"><b>🔴 me / te / se — ya los conoces:</b> <i>Me llamo… · ¿Te gusta?</i> Y al probarte algo: <i>¿Puedo <b>probármelo</b>?</i> (me + lo). Los pronombres de OD <b>lo/la/los/las</b> funcionan igual: delante del verbo conjugado o pegados detrás del infinitivo. <span class="gloss">Dezelfde plaatsingsregel als bij me/te/se.</span></div>')
 P(regla("Regla · lo / la / los / las",
   '<p>Om de <b>prenda</b> niet te herhalen: <b>lo</b> (m. ev.), <b>la</b> (v. ev.), <b>los</b> (m. mv.), <b>las</b> (v. mv.). '
   'Colócalo <b>delante</b> del verbo conjugado (<i>La compro</i>) o <b>pegado detrás</b> del infinitivo (<i>Voy a comprarla</i>). <span class="gloss">Vóór het vervoegde werkwoord of vast achter het infinitief.</span></p>'))
@@ -726,7 +726,7 @@ P(pcard("👉 este/esta", '<div class="ej"><i>Me gusta <b>esta</b> camiseta (aqu
 P(pcard("👉👉 ese/esa", '<div class="ej"><i>¿Cuánto cuesta <b>ese</b> jersey (ahí, cerca de ti)?</i></div>'))
 P(pcard("👉👉👉 aquel/aquella", '<div class="ej"><i><b>Aquellos</b> zapatos (allí, en el escaparate) son bonitos.</i></div>'))
 P('</div>')
-P('<div class="truc"><b>🔴 Concuerda con la prenda, no con la distancia:</b> <b>est<span class="trap">a</span></b> falda (v.) · <b>est<span class="trap">os</span></b> pantalones (m. mv.). Kijk naar het kledingstuk!</div>')
+P('<div class="truc"><b>🔴 Concuerda con la prenda, no con la distancia:</b> <b>est<span class="trap">a</span></b> falda (f.) · <b>est<span class="trap">os</span></b> pantalones (m. pl.). ¡Mira la prenda! <span class="gloss">Kijk naar het kledingstuk, niet naar de afstand.</span></div>')
 P(regla("Regla · este / ese / aquel",
   '<p><b>este</b> = cerca (aquí) · <b>ese</b> = un poco lejos (ahí) · <b>aquel</b> = lejos (allí). '
   'Elk woord past zich aan: este/esta/estos/estas — ese/esa/esos/esas — aquel/aquella/aquellos/aquellas.</p>'))
@@ -798,7 +798,7 @@ P('<table class="mp"><thead><tr><th>Prenda</th><th>+ color</th><th>+ patrón/mat
   '<tr><td>la camisa (v.)</td><td class="v">roja / azul</td><td>de rayas / de algodón</td></tr>'
   '<tr><td>los zapatos (m. mv.)</td><td class="v">rojos / azules</td><td>de cuero</td></tr>'
   '<tr><td>las botas (v. mv.)</td><td class="v">rojas / azules</td><td>de cuadros</td></tr></tbody></table>')
-P('<div class="truc"><b>🔴 Twee soorten kleuren:</b> (1) kleuren op -o veranderen: <b>rojo/roja/rojos/rojas</b>, blanco, negro, amarillo, morado. (2) De rest verandert <b>niet</b> van geslacht: <b>azul, gris, verde, marrón, naranja, rosa, celeste</b> — enkel meervoud +s/+es: <i>faldas azules, zapatos grises</i>.</div>')
+P('<div class="truc"><b>🔴 Dos tipos de colores:</b> (1) los colores en -o cambian: <b>rojo/roja/rojos/rojas</b>, blanco, negro, amarillo, morado. (2) Los demás <b>no</b> cambian de género: <b>azul, gris, verde, marrón, naranja, rosa, celeste</b>; solo hacen plural con +s/+es: <i>faldas azules, zapatos grises</i>. <span class="gloss">Kleuren op -o passen zich aan, de rest alleen in het meervoud.</span></div>')
 P(regla("Regla · concordancia del adjetivo",
   '<p>Het adjectief (kleur, vorm, materiaal) komt overeen met de prenda in <b>geslacht</b> (m/v) en <b>getal</b> (ev/mv). '
   'Kleuren op <b>-o</b>: rojo → roja → rojos → rojas. Andere kleuren (azul, gris, verde…): enkel meervoud (+s/+es). Patronen met <b>de</b> (de rayas, de cuadros) veranderen niet.</p>'))
@@ -927,7 +927,7 @@ P(actx(6, "Después de leer: ¿qué prenda es?",
   '<tr><td>2 · azules, 40 € → 25 €</td><td><span class="wl sm"></span></td><td>B · las zapatillas blancas</td></tr>'
   '<tr><td>3 · blancas, 39 €</td><td><span class="wl sm"></span></td><td>C · la camiseta</td></tr>'
   '<tr><td>4 · de lunares, 20 €</td><td><span class="wl sm"></span></td><td>D · el vestido</td></tr></tbody></table>', apoyo="Modelo: anuncio §5a"))
-P('<div class="route-note">🎮 <b>Sigue online:</b> luister het anuncio (TTS), lees de reseña en neem je eigen review op (recorder) op de digitale pagina.</div>')
+P('<div class="route-note">🎮 <b>Sigue online:</b> en la página digital escuchas el anuncio, lees la reseña y grabas la tuya. <span class="gloss">Online: luisteren, lezen en je eigen review opnemen.</span></div>')
 P('</div>')  # page §5b
 
 # ================= TALLER DE LENGUA =================
@@ -942,7 +942,7 @@ P('<table class="mp"><thead><tr><th>Tipo</th><th>Golpe de voz</th><th>Ejemplo (r
   '<tr><td><b>aguda</b></td><td>laatste lettergreep</td><td>pan-ta-<b>lón</b> · a-<b>zul</b> · mar-<b>rón</b></td></tr>'
   '<tr><td><b>llana</b></td><td>voorlaatste</td><td><b>fal</b>-da · <b>ne</b>-gro · <b>bo</b>-tas</td></tr>'
   '<tr><td><b>esdrújula</b></td><td>voor-voorlaatste (altijd tilde)</td><td><b>sá</b>-ba-do · <b>ú</b>l-ti-mo</td></tr></tbody></table>')
-P('<div class="truc"><b>🔴 La trampa del plural:</b> soms verhuist de klemtoon-regel: <b>el marrón → los marrones</b> (aguda → llana, tilde weg!) · <b>el pantalón → los pantalones</b>. Maar <b>el jersey → los jerséis</b>. Kijk goed naar de tilde in het meervoud.</div>')
+P('<div class="truc"><b>🔴 La trampa del plural:</b> a veces se mueve la regla del acento: <b>el marrón → los marrones</b> (aguda → llana, ¡se va la tilde!) · <b>el pantalón → los pantalones</b>. Pero <b>el jersey → los jerséis</b>. Fíjate bien en la tilde del plural. <span class="gloss">In het meervoud verspringt de accentregel.</span></div>')
 P(actx(1, "Clasifica: aguda, llana o esdrújula",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Clasifica: <span class="gloss">sorteer deze woorden</span> <span class="words"><b>camisa · pantalón · sábado · azul · botas · marrón</b></span></p>'
@@ -957,7 +957,7 @@ P('<table class="mp"><thead><tr><th>Conector</th><th>Uso</th><th>Ejemplo</th></t
   '<tr><td><b>o → u</b></td><td>«of» vóór o-/ho-</td><td>siete <b>u</b> ocho · mujer <b>u</b> hombre</td></tr>'
   '<tr><td><b>pero / sino</b></td><td>maar / maar wel (na ontkenning)</td><td>No es roja <b>sino</b> rosa.</td></tr>'
   '<tr><td><b>así que / por eso</b></td><td>dus</td><td>Hay rebajas, <b>así que</b> compro.</td></tr></tbody></table>')
-P('<div class="truc"><b>🔴 NL-valstrik:</b> «dus» = <b>así que / por eso</b> (niet <span class="trap">luego</span>). «want» én «omdat» = <b>porque</b>. Na een ontkenning: «maar wel» = <b>sino</b> (No es azul, <b>sino</b> verde).</div>')
+P('<div class="truc"><b>🔴 Trampa para neerlandeses:</b> «dus» es <b>así que / por eso</b>, no <span class="trap">luego</span>. «want» y «omdat» son <b>porque</b>. Después de una negación, «maar wel» es <b>sino</b>: <i>No es azul, <b>sino</b> verde</i>. <span class="gloss">Na een ontkenning gebruik je sino.</span></div>')
 P(actx(3, "Une con el conector correcto ",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Escribe: <b>e · u · pero · sino · así que · por eso</b>. <span class="gloss">Vul het juiste verbindingswoord in.</span></p>'

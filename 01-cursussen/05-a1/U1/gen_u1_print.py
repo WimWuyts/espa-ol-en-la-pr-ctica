@@ -448,13 +448,13 @@ P(f'''
     <div class="stop"><div class="dot"></div><div class="lbl">U4 · València</div></div>
     <div class="stop"><div class="dot"></div><div class="lbl">U5–U8 · América</div></div>
   </div>
-  <div class="route-note">📍 <b>Parada 1 · Madrid.</b> Vertrek van de reis in España. Je ontmoet <b>Lucía</b> en leert jezelf voorstellen — de basis voor élke volgende parada. <span class="gloss">We beginnen echt: je stelt jezelf voor en dat gebruik je de hele reis.</span></div>
+  <div class="route-note">📍 <b>Parada 1 · Madrid.</b> Empieza el viaje en España. Conoces a <b>Lucía</b> y aprendes a presentarte: la base de todas las paradas siguientes. <span class="gloss">We beginnen echt: je stelt jezelf voor, en dat gebruik je de hele reis.</span></div>
   <div class="lead" style="margin-top:7mm">
     <div>
       <div class="se">La historia</div>
       <div class="hist"><b>ES:</b> En Madrid conoces a <b>Lucía</b>. Ella te pregunta: «¿Quién eres?». Aprendes a decir tu <b>nombre</b>, tu <b>edad</b>, tu <b>país</b> y los <b>idiomas</b> que hablas — y a preguntar lo mismo a los demás.
       <span class="gloss">In Madrid ontmoet je Lucía. Zij vraagt: «Wie ben jij?». Je leert je naam, leeftijd, land en talen zeggen — en hetzelfde aan anderen vragen.</span></div>
-      <div class="ojo"><b>¡Ojo! — valstrik:</b> leeftijd zeg je met <b>tener</b>, niet met <i>ser</i>: <b>Tengo</b> 15 años (✔), niet <span class="trap">Soy 15 años</span> (✘). NL zegt «ik <i>ben</i> 15 jaar», Spaans «ik <i>heb</i> 15 jaar».</div>
+      <div class="ojo"><b>¡Ojo! — la trampa:</b> la edad va con <b>tener</b>, no con <i>ser</i>: <b>Tengo</b> 15 años (✔), no <span class="trap">Soy 15 años</span> (✘). <span class="gloss">Het Nederlands zegt «ik bén 15 jaar», het Spaans «ik héb 15 jaar».</span></div>
     </div>
     <div>
       <div class="se">La gente de la ruta</div>
@@ -950,7 +950,7 @@ P('<table class="mp"><thead><tr><th>Pregunta</th><th>Busca…</th><th>Respuesta 
   '<tr><td><b>¿Cuál</b> es tu correo?</td><td>een gegeven</td><td>Es leo@mail.com.</td></tr>'
   '<tr><td><b>¿Qué</b> idiomas hablas?</td><td>info (open)</td><td>Hablo dos idiomas.</td></tr>'
   '<tr><td><b>¿Quién</b> es ella?</td><td>een persoon</td><td>Es Lucía.</td></tr></tbody></table>')
-P('<div class="truc"><b>🔴 ¿Cuál? vs ¿Qué?</b> vóór <i>ser</i> + gegeven kies je <b>¿Cuál?</b>: <i>¿<b>Cuál</b> es tu nombre?</i> (niet <span class="trap">¿Qué es tu nombre?</span>). Vraagwoorden dragen een <b>tilde</b>.</div>')
+P('<div class="truc"><b>🔴 ¿Cuál? frente a ¿Qué?</b> Delante de <i>ser</i> + un dato eliges <b>¿Cuál?</b>: <i>¿<b>Cuál</b> es tu nombre?</i>, no <span class="trap">¿Qué es tu nombre?</span>. Las palabras interrogativas llevan <b>tilde</b>. <span class="gloss">Vóór ser + gegeven kies je ¿Cuál?; vraagwoorden dragen een accent.</span></div>')
 P(actx(1, "Haz la pregunta",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>¿Qué pregunta va con esta respuesta? <span class="gloss">welke vraag past bij dit antwoord?</span></p>'
@@ -1079,7 +1079,7 @@ P(tarea_com("Tarea comunicativa · Responde a un perfil",
   '<div class="wbox"></div>'
   + APO.html("Marco: Hola, me llamo… soy de… tengo… hablo…")))
 P(mispal("Mis palabras del perfil — woorden die ik uit de teksten haal", 3))
-P('<div class="route-note">🎮 <b>Sigue online (hub verrijkt):</b> op de digitale pagina luister je de twee perfiles (audio), neem je je antwoordbericht op (recorder) én speel je de flip cards + drills met zelfcorrectie.</div>')
+P('<div class="route-note">🎮 <b>Sigue online:</b> en la página digital escuchas los dos perfiles, grabas tu mensaje de respuesta y juegas con las flip cards y los drills, que se corrigen solos. <span class="gloss">Online: luisteren, opnemen en zelfcorrigerend oefenen.</span></div>')
 P('</div>')  # page §5b
 
 # ================= TALLER DE LENGUA =================
@@ -1104,7 +1104,7 @@ P('<table class="mp"><thead><tr><th>Conector</th><th>Uso</th><th>Ejemplo</th></t
   '<tr><td><b>e</b></td><td>«en» vóór i-/hi-</td><td>español <b>e</b> inglés</td></tr>'
   '<tr><td><b>o</b> / <b>u</b></td><td>of (u vóór o-/ho-)</td><td>siete <b>u</b> ocho</td></tr>'
   '<tr><td><b>porque</b></td><td>want / omdat</td><td>Aprendo español <b>porque</b> me gusta.</td></tr></tbody></table>')
-P('<div class="truc"><b>🔴 Valstrik NL:</b> <i>want</i> én <i>omdat</i> = <b>porque</b> (één woord!). «dus» = <b>así que / por eso</b>, niet <i>luego</i>.</div>')
+P('<div class="truc"><b>🔴 Trampa para neerlandeses:</b> «want» y «omdat» son las dos <b>porque</b>, una sola palabra. Y «dus» es <b>así que / por eso</b>, no <i>luego</i>. <span class="gloss">Eén woord porque voor allebei; «dus» is niet luego.</span></div>')
 P(actx(2, "Une con y / e / o / u / porque",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
 '<p>Escribe el conector que falta. <span class="gloss">Escribe el conector correcto. <span class="gloss">vul het juiste verbindingswoord in</span></span></p>'
@@ -1152,7 +1152,7 @@ P(pcard("Los dos apellidos", '<div class="ej"><b>Lucía Ramírez García</b>: <i
 P('</div>')
 P('<p style="font-size:9.6pt">① <b>¿Tú o usted? — contraste:</b></p>')
 P(vpairs([("tú (leeftijdsgenoot)","usted (beleefd)"),("¿Cómo estás?","¿Cómo está usted?"),("tú eres","usted es"),("España: veel tú","Colombia/Perú: vaak usted")]))
-P('<div class="truc"><b>🟡 Vooruitblik:</b> in <b>C6</b> ontmoet je Mateo uit Argentina met <b>vos</b> (nog een aanspreekvorm).</div>')
+P('<div class="truc"><b>🟡 Adelanto:</b> en <b>C6</b> conoces a Mateo, de Argentina, que usa <b>vos</b>: otra forma de tratamiento. <span class="gloss">In C6 kom je nog een aanspreekvorm tegen.</span></div>')
 P(actx(1, "Comprensión — verdadero o falso",
   [{"t":"🔍 Leer","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★☆☆"}],
 '<p>¿Verdadero o falso? Corrige las frases falsas. <span class="gloss">Waar of niet waar? Verbeter de foute zinnen.</span></p>'

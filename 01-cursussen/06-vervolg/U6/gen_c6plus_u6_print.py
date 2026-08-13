@@ -59,7 +59,7 @@ P(f'''
   <div class="tab">U6 · CUANDO ERA PEQUEÑO</div>
   <div class="eyebrow">UNIDAD 6 · LA RUTA · CUSCO 🇵🇪 · CUANDO ERA PEQUEÑO 🧸</div>
   <h1>Cuando era pequeño</h1>
-  <div class="sub">De reis komt hoog in de Andes aan, in <b>Cusco</b>, bij <b>Nina</b>. Je vertelt over je <b>jeugd</b> en <b>hoe het vroeger was</b> met de <b>pretérito imperfecto</b> (<b>era</b> un niño feliz, <b>tenía</b> un perro, <b>jugaba</b> en la calle, <b>iba</b> a la escuela a pie). Je leert het <b>contrast</b> met de indefinido en je <b>vergelijkt</b> vroeger met nu. <span class="gloss">De onvoltooid verleden tijd (imperfecto) voor gewoontes en beschrijving + het contrast met de indefinido + vergelijkingen.</span></div>
+  <div class="sub">El viaje llega a lo alto de los Andes, a <b>Cusco</b>, con <b>Nina</b>. Cuentas cómo era tu <b>infancia</b> y <b>cómo era todo antes</b> con el <b>pretérito imperfecto</b> (<b>era</b> un niño feliz, <b>tenía</b> un perro, <b>jugaba</b> en la calle, <b>iba</b> al colegio). <span class="gloss">Over je jeugd vertellen en hoe het vroeger was.</span></div>
   <div class="q">¿Cómo era tu vida cuando eras pequeño/a? <span style="font-weight:400;opacity:.9">· Hoe was je leven toen je klein was?</span></div>
 </div>
 <div class="page">
@@ -124,9 +124,9 @@ P(f'''
 ''')
 
 # ================= §0 · ¡PONTE AL DÍA! =================
-sec_open("0", "§0 · ¡Ponte al día!", 'We komen van de <b>indefinido</b> (U5: nació, ganó). Nu de <b>imperfecto</b>: geen afgerond feit, maar <b>hoe iets wás</b> (achtergrond, gewoonte). <span class="gloss">Van de afgeronde feiten (indefinido) naar de beschrijving/gewoontes van vroeger (imperfecto).</span>',
+sec_open("0", "§0 · ¡Ponte al día!", 'Venimos del <b>indefinido</b> (U5: nació, ganó). Ahora, el <b>imperfecto</b>: no un hecho cerrado, sino <b>cómo era</b> algo (fondo, costumbre). <span class="gloss">Van de afgeronde feiten naar de beschrijving en de gewoontes van vroeger.</span>',
         lpd(("8","taalsysteem: indefinido → imperfecto"), ("7","woordenschat")))
-P('<div class="truc"><b>Indefinido ↔ imperfecto:</b> <b>Ayer jugué</b> (één afgerond feit) tegenover <b>De pequeño jugaba siempre</b> (gewoonte, achtergrond). In U6 draait alles om <b>hoe het vroeger was</b> → imperfecto.</div>')
+P('<div class="truc"><b>Indefinido ↔ imperfecto:</b> <b>Ayer jugué</b> (un hecho cerrado) frente a <b>De pequeño jugaba siempre</b> (costumbre, fondo). En U6 todo gira alrededor de <b>cómo era antes</b> → imperfecto. <span class="gloss">Afgerond feit tegenover gewoonte en achtergrond.</span></div>')
 P(actx(AN(), "¿acción única o costumbre? (repaso)",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Is het een <b>afgerond feit</b> (indefinido) of een <b>gewoonte/achtergrond</b> (imperfecto)? Vink aan.</p>'
@@ -141,14 +141,14 @@ P(actx(AN(), "Mi último recuerdo · escribe",
 sec_close()
 
 # ================= §1 · LA INFANCIA =================
-sec_open("1", "§1 · La infancia", 'Het vocabulaire van de <b>jeugd</b>: de <b>herinneringen</b> (el recuerdo, de pequeño), de <b>school</b> (el patio, la maestra, el recreo) en de <b>familie van vroeger</b> (los abuelos, el pueblo, la mascota). <span class="gloss">De woorden van de kindertijd: herinneringen, school en familie.</span>',
+sec_open("1", "§1 · La infancia", 'El vocabulario de la <b>infancia</b>: los <b>recuerdos</b> (el recuerdo, de pequeño), el <b>colegio</b> (el patio, la maestra, el recreo) y la <b>familia de antes</b> (los abuelos, el pueblo, la mascota). <span class="gloss">De woorden van de kindertijd: herinneringen, school en familie.</span>',
         lpd(("7","woordenschat: la infancia"), ("5","identiteit: recuerdos")))
 P('<div class="se">Los recuerdos de la infancia <span class="gloss" style="font-size:8pt">— netwerk in clusters</span></div>')
 P('<div class="clusters" style="grid-template-columns:1fr 1fr 1fr">'
   '<div class="clu"><div class="ch"><span class="ci">🧸</span>La infancia</div><ul><li>de pequeño · el recuerdo</li><li>el juguete · jugar</li><li>soñar · pasarlo bien</li></ul><div class="ex">De pequeña jugaba mucho.</div></div>'
   '<div class="clu"><div class="ch"><span class="ci">🏫</span>La escuela</div><ul><li>la escuela · el patio</li><li>la maestra · el recreo</li><li>aprender · el compañero</li></ul><div class="ex">Iba a la escuela a pie.</div></div>'
   '<div class="clu"><div class="ch"><span class="ci">👵</span>La familia</div><ul><li>los abuelos · el pueblo</li><li>la casa de campo</li><li>la mascota · el vecino</li></ul><div class="ex">Visitaba a mis abuelos.</div></div></div>')
-P('<div class="truc"><b>Tegenstellingen antes ↔ ahora:</b> <b>antes</b> (vroeger) ↔ <b>ahora</b> (nu) · <b>ya no</b> (niet meer) ↔ <b>todavía</b> (nog steeds) · <b>siempre / a menudo / todos los días</b> (gewoonte-markers → imperfecto).</div>')
+P('<div class="truc"><b>Contrastes antes ↔ ahora:</b> <b>antes</b> ↔ <b>ahora</b> · <b>ya no</b> ↔ <b>todavía</b> · <b>siempre / a menudo / todos los días</b> (marcadores de costumbre → imperfecto). <span class="gloss">vroeger ↔ nu, niet meer ↔ nog steeds.</span></div>')
 P(actx(AN(), "Relaciona la palabra con el grupo",
   [{"t":"🔗 Emparejar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Une las dos columnas: escribe la letra. <span class="gloss">Verbind en schrijf de letter.</span></p>'
@@ -181,7 +181,7 @@ retos("infancia", "§1.4 · Retos — la infancia contada por otros",
       'Eén speeltje in twee tijden, en wat een volwassene vroeger mocht en nu niet meer.')
 
 # ================= §2 · EL IMPERFECTO =================
-sec_open("2", "§2 · El pretérito imperfecto", 'Voor <b>gewoontes, achtergrond en beschrijving</b> in het verleden: het <b>imperfecto</b>. Regelmatig: -ar → <b>-aba</b>, -er/-ir → <b>-ía</b>. <i>Jugaba, comía, vivía.</i> Slechts <b>3 onregelmatige</b>: <b>era, iba, veía</b>. <span class="gloss">De onvoltooid verleden tijd — heel regelmatig, maar 3 uitzonderingen.</span>',
+sec_open("2", "§2 · El pretérito imperfecto", 'Para <b>costumbres, fondo y descripción</b> en el pasado: el <b>imperfecto</b>. Regular: -ar → <b>-aba</b>, -er/-ir → <b>-ía</b>. <i>Jugaba, comía, vivía.</i> Solo <b>3 irregulares</b>: <b>era, iba, veía</b>. <span class="gloss">Heel regelmatig, met precies drie uitzonderingen.</span>',
         lpd(("8","taalsysteem: imperfecto"), ("7","woordenschat: la infancia"), ("3","beschrijven")))
 
 # §2.1 el sistema
@@ -280,7 +280,7 @@ retos("imperfecto", "§2.4 · Retos — la nostalgia, con y sin ironía",
       'Een nostalgische tekst over iets dat duidelijk slechter was, en twee mensen die zich hetzelfde anders herinneren.')
 
 # ================= §3 · CONTRASTE INDEF/IMPERF =================
-sec_open("3", "§3 · Contraste — indefinido ↔ imperfecto", 'In een verhaal werken de twee verleden tijden <b>samen</b>: het <b>imperfecto</b> geeft de <b>achtergrond</b> (wat er al aan de gang was), de <b>indefinido</b> geeft de <b>gebeurtenis</b> (wat er toen gebeurde). <i>Jugaba en el patio cuando, de repente, empezó a llover.</i> <span class="gloss">imperfecto = decor/achtergrond · indefinido = de gebeurtenis die het verhaal vooruitduwt.</span>',
+sec_open("3", "§3 · Contraste — indefinido ↔ imperfecto", 'En un relato los dos pasados trabajan <b>juntos</b>: el <b>imperfecto</b> pone el <b>fondo</b> (lo que ya estaba pasando) y el <b>indefinido</b> pone el <b>hecho</b> (lo que pasó entonces). <i>Jugaba en el patio cuando, de repente, empezó a llover.</i> <span class="gloss">imperfecto = decor · indefinido = de gebeurtenis die het verhaal vooruitduwt.</span>',
         lpd(("8","taalsysteem: contraste indef./imperf."), ("3","vertellen")))
 
 # §3.1 el sistema
@@ -349,7 +349,7 @@ P('<div class="fams three" style="margin-top:2mm">'
   '<div class="pcard"><div class="t">más … que</div><div class="ej">meer/-er dan: más alto que</div></div>'
   '<div class="pcard"><div class="t">menos … que</div><div class="ej">minder dan: menos caro que</div></div>'
   '<div class="pcard"><div class="t">tan … como</div><div class="ej">even … als: tan alto como</div></div></div>')
-P('<div class="truc"><b>¡Ojo! irregulares:</b> niet «más bueno/malo» maar <b>mejor</b> (beter) / <b>peor</b> (slechter); niet «más viejo/joven» (voor personen) maar <b>mayor</b> (ouder) / <b>menor</b> (jonger). Superlativo: <b>el/la más …</b> (de meeste): «el más rápido de la clase».</div>')
+P('<div class="truc"><b>¡Ojo, irregulares!</b> No «más bueno/malo», sino <b>mejor</b> / <b>peor</b>; y con personas, no «más viejo/joven», sino <b>mayor</b> / <b>menor</b>. Superlativo: <b>el/la más …</b>: «el más rápido de la clase». <span class="gloss">beter/slechter en ouder/jonger hebben een eigen vorm.</span></div>')
 P(actx(AN(), "Completa con más / menos / tan … que/como",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Completa la comparación. <span class="gloss">Vul de vergelijking aan.</span></p>'
@@ -376,7 +376,7 @@ P('</div>')
 # §4.2 relativo que + antes/ahora
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">4</span><span class="pk">§4.2 · La frase con «que» + antes/ahora</span>')
-P('<div class="intro"><b>ES:</b> Met <b>que</b> koppel je twee zinnen: «el niño <b>que</b> jugaba en el patio era yo». En je vergelijkt <b>antes ↔ ahora</b>. <span class="gloss">De betrekkelijke que + vroeger/nu vergelijken.</span></div>')
+P('<div class="intro"><b>ES:</b> Con <b>que</b> unes dos frases: «el niño <b>que</b> jugaba en el patio era yo». Y comparas <b>antes ↔ ahora</b>. <span class="gloss">De betrekkelijke que, en vroeger met nu vergelijken.</span></div>')
 P('</div>')
 P('<div class="agree"><div class="w">La casa. La casa era grande. → La casa <u>que</u> era grande…</div><div class="tie">que = die/dat</div></div>')
 P('<div class="agree"><div class="w">El lugar. Yo crecí allí. → El lugar <u>donde</u> crecí…</div><div class="tie">donde = waar</div></div>')
@@ -434,7 +434,7 @@ P(actx(AN(), "Reacciona — ¿y tú?",
 sec_close()
 
 # ================= TALLER =================
-sec_open("T", "Taller de lengua", 'Twee gereedschappen: de <b>acentos</b> in het imperfecto (-ía) en de <b>conectoren van vergelijking/contrast</b> (en cambio, mientras, sin embargo). <span class="gloss">De accenten en de contrast-connectoren.</span>')
+sec_open("T", "Taller de lengua", 'Dos herramientas: los <b>acentos</b> del imperfecto (-ía) y los <b>conectores de comparación y contraste</b> (en cambio, mientras, sin embargo). <span class="gloss">De accenten en de contrast-connectoren.</span>')
 P('<h3>1 · Ortografía — el acento en -ía</h3>')
 P(regla("El acento del imperfecto", '<p>De -er/-ir-werkwoorden dragen in het imperfecto altijd een <b>accent</b> op de <b>í</b>: com<b>í</b>a, viv<b>í</b>a, ten<b>í</b>a, hac<b>í</b>a, ve<b>í</b>a. Ook nosotros -ábamos (jug<b>á</b>bamos).<br><span class="gloss">🔴 Zonder accent verandert de betekenis of klopt het niet: <i>tenia</i> → ten<b>í</b>a.</span></p>'))
 P(actx(AN(), "¿Falta el acento? · corrige",
@@ -469,7 +469,7 @@ P(PB.escucha_print(ED.C6P_U6, AN()))
 P('</div>')
 
 # ================= CULTURA =================
-sec_open("C", "Cultura · la infancia en el mundo hispano", 'Elke cultuur heeft haar <b>kinderrituelen</b>: in Latijns-Amerika de <b>quinceañera</b> (15de verjaardag), traditionele <b>juegos</b> (la rayuela, el trompo) en de grote rol van de <b>abuelos</b>. In de Andes groeit Nina op met verhalen en muziek. <span class="gloss">De jeugd in de Spaanstalige wereld: quinceañera, traditionele spelletjes, de grootouders.</span>',
+sec_open("C", "Cultura · la infancia en el mundo hispano", 'Cada cultura tiene sus <b>rituales de infancia</b>: en Latinoamérica la <b>quinceañera</b> (los 15 años), los <b>juegos</b> tradicionales (la rayuela, el trompo) y el gran papel de los <b>abuelos</b>. En los Andes, Nina crece con historias y música. <span class="gloss">De jeugd in de Spaanstalige wereld: quinceañera, traditionele spelletjes, de grootouders.</span>',
         lpd(("5","identiteit in diversiteit: la infancia hispana")))
 P('<div class="fams three" style="margin-top:2mm">'
   '<div class="pcard"><div class="t">🎉 La quinceañera</div><div class="ej" style="margin-top:2mm">In veel Latijns-Amerikaanse landen viert een meisje haar <b>15de verjaardag</b> met een groot feest: de <b>quinceañera</b>. Het markeert de overgang van kind naar jongvolwassene.</div></div>'
@@ -492,7 +492,7 @@ P(actx(AN(), "Datos curiosos — une",
 sec_close()
 
 # ================= TAREA FINAL =================
-sec_open("★", "Tarea final · «Cuando era pequeño/a»", 'Escribe un <b>recuerdo</b> de tu infancia met het <b>imperfecto</b>, een <b>vergelijking</b> antes/ahora en una <b>mini-mening</b>. <span class="gloss">Schrijf een jeugdherinnering met het imperfecto, een vergelijking en een mening.</span>')
+sec_open("★", "Tarea final · «Cuando era pequeño/a»", 'Escribe un <b>recuerdo</b> de tu infancia con el <b>imperfecto</b>, una <b>comparación</b> antes/ahora y una <b>miniopinión</b>. <span class="gloss">Schrijf een jeugdherinnering met het imperfecto, een vergelijking en een mening.</span>')
 P(fmu('tus compañeros de clase (el muro de recuerdos)', 'compartir tu infancia', 'un recuerdo (6–8 frases) + una presentación oral (± 1 min)'))
 P('<ol class="pasos">'
   '<li><b>Describe cómo era todo</b> met het <b>imperfecto</b>: «De pequeño/a vivía en… tenía… jugaba…».</li>'
@@ -514,7 +514,7 @@ P('<table class="sem"><tr class="semrow"><th>Criterio</th><th>🔴 todavía no</
 P('<div class="mispal" style="margin-top:3mm"><div class="mh">🤝 Co-evaluación — la infancia de mi compañero/a</div>'
   '<table><thead><tr><th>Algo que teníamos en común</th><th>Una pregunta que le hago</th></tr></thead>'
   '<tbody><tr><td></td><td></td></tr></tbody></table></div>')
-P('<div class="truc" style="margin-top:3mm"><b>✍️ Antes de colgar:</b> lees je tekst na — <i>imperfecto correct? · een indefinido-feit? · una comparación? · una opinión?</i> Verbeter één ding: <span class="wl lg"></span></div>')
+P('<div class="truc" style="margin-top:3mm"><b>✍️ Antes de colgar:</b> vuelve a leer tu texto — <i>¿imperfecto correcto? · ¿un hecho en indefinido? · ¿una comparación? · ¿una opinión?</i> Corrige una cosa: <span class="wl lg"></span> <span class="gloss">Lees na en verbeter één ding.</span></div>')
 sec_close()
 
 # ================= REPASO =================

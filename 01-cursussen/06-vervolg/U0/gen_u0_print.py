@@ -416,7 +416,7 @@ P(f'''
   <div class="tab">U0 · ¡VOLVEMOS!</div>
   <div class="eyebrow">UNIDAD 0 · LA RUTA · EL REENCUENTRO 🧭</div>
   <h1>¡Volvemos!</h1>
-  <div class="sub">Otra vez juntos. Ya sabes <b>mucho</b> español: vamos a <b>activarlo</b>. Hoy: opnieuw <b>hola</b> zeggen, jezelf <b>voorstellen</b>, en checken waar je staat met het <b>presente</b>, het <b>geslacht</b> en de <b>nationaliteiten</b>. <span class="gloss">We zijn er weer. Je kent al veel Spaans — we maken het weer wakker: begroeten, jezelf voorstellen, en je basis opfrissen.</span></div>
+  <div class="sub">Otra vez juntos. Ya sabes <b>mucho</b> español: vamos a <b>activarlo</b>. Hoy: saludar de nuevo, <b>presentarte</b> y comprobar dónde estás con el <b>presente</b>, el <b>género</b> y las <b>nacionalidades</b>. <span class="gloss">Weer samen: je Spaans activeren, jezelf voorstellen en kijken waar je staat.</span></div>
   <div class="q">¿Quién eres… otra vez? <span style="font-weight:400;opacity:.9">· Wie ben je… opnieuw?</span></div>
 </div>
 <div class="page">
@@ -435,7 +435,7 @@ P(f'''
       <div class="se">La historia</div>
       <div class="hist"><b>ES:</b> Después del verano, <b>volvemos</b> a clase de español. <b>Diego</b>, <b>Lucía</b>, <b>Valen</b> y <b>Nina</b> también vuelven — y tú viajas con ellos. Primero nos <b>presentamos</b> otra vez: «¿Cómo te llamas? ¿De dónde eres? ¿Cuántos años tienes?». Luego repasamos el <b>presente</b> y las <b>nacionalidades</b>. Así, todos — también los <b>nuevos</b> — empezamos juntos.
       <span class="gloss">Na de zomer keren we terug naar de Spaanse les. De cast komt ook terug — en jij reist mee. Eerst stellen we ons opnieuw voor, daarna frissen we het presente en de nationaliteiten op. Zo starten we samen — ook de nieuwe leerlingen.</span></div>
-      <div class="ojo"><b>¡Ojo! — twee valstrikken meteen scherp:</b> «want» én «omdat» = <b>porque</b> (nooit <span class="trap">por que / porqué</span> hier). En «ik ben»: <b>soy</b> (wie/wat je bent: <i>soy belga</i>) tegenover <b>estoy</b> (waar/hoe: <i>estoy en clase, estoy bien</i>). <span class="gloss">porque = want/omdat · soy = permanent, estoy = plaats/gevoel.</span></div>
+      <div class="ojo"><b>¡Ojo! — dos trampas desde el primer día:</b> «want» y «omdat» son las dos <b>porque</b> (nunca <span class="trap">por que / porqué</span> aquí). Y «ik ben»: <b>soy</b> (quién o qué eres: <i>soy belga</i>) frente a <b>estoy</b> (dónde o cómo estás: <i>estoy en clase, estoy cansado</i>). <span class="gloss">Eén woord porque voor «want» én «omdat»; soy tegenover estoy.</span></div>
     </div>
     <div>
       <div class="se">La gente de la ruta</div>
@@ -615,7 +615,7 @@ P(actx(AN(), "Conjuga «ser» · completa la tabla",
   '<tr><td class="p">yo</td><td><span class="wl sm"></span></td><td class="p">nosotros/as</td><td><span class="wl sm"></span></td></tr>'
   '<tr><td class="p">tú</td><td><span class="wl sm"></span></td><td class="p">vosotros/as</td><td><span class="wl sm"></span></td></tr>'
   '<tr><td class="p">él/ella</td><td><span class="wl sm"></span></td><td class="p">ellos/as</td><td><span class="wl sm"></span></td></tr></tbody></table>', apoyo=""))
-P('<div class="truc"><b>¡Ojo! soy ↔ estoy:</b> <b>soy</b> = wie/wat je bent (<i>soy belga, soy estudiante</i>) · <b>estoy</b> = waar/hoe je bent (<i>estoy en clase, estoy bien</i>). <span class="gloss">Het volledige ser/estar-contrast komt in U1.</span></div>')
+P('<div class="truc"><b>¡Ojo! soy ↔ estoy:</b> <b>soy</b> = quién o qué eres (<i>soy belga, soy estudiante</i>) · <b>estoy</b> = dónde o cómo estás (<i>estoy en clase, estoy bien</i>). <span class="gloss">Het volledige ser/estar-contrast komt in U1.</span></div>')
 P(actx(AN(), "¿soy o estoy?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p><i>Elige soy o estoy.</i> <span class="gloss">Kies soy of estoy.</span></p>'
@@ -730,7 +730,7 @@ P('</div>')  # page §3.1
 # ---------- §3.2 El número ----------
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">3</span><span class="pk">§3.2 · El número — el plural</span>')
-P('<div class="intro"><b>ES:</b> Van enkelvoud naar meervoud, en het lidwoord wordt <b>los/las</b>. <span class="gloss">Meervoud vormen — en el/la wordt los/las.</span></div>')
+P('<div class="intro"><b>ES:</b> Del singular al plural, y el artículo pasa a <b>los/las</b>. <span class="gloss">Meervoud vormen — en el/la wordt los/las.</span></div>')
 P('</div>')
 P(regla("Regla · el plural", '<p>Eindigt op een <b>klinker</b> → <b>+ s</b>: chico → chic<b>os</b> · casa → cas<b>as</b>.<br>'
   'Eindigt op een <b>medeklinker</b> → <b>+ es</b>: profesor → profesor<b>es</b> · ciudad → ciudad<b>es</b>.<br>'
@@ -807,7 +807,7 @@ P('<table class="alf"><thead><tr><th>Patrón</th><th>Masculino</th><th>Femenino<
   '<tr><td><b>-és / -esa</b></td><td>franc<b>és</b></td><td>franc<b>esa</b></td><td class="gloss">Francia</td></tr>'
   '<tr><td><b>-ense</b></td><td>estadounid<b>ense</b></td><td>estadounid<b>ense</b></td><td class="gloss">EE. UU. (=)</td></tr>'
   '<tr><td><b>invariable</b></td><td>belga · marroquí</td><td>belga · marroquí</td><td class="gloss">Bélgica · Marruecos (=)</td></tr></tbody></table>')
-P('<div class="truc"><b>Nacionalidad = idioma:</b> de taal heeft meestal dezelfde vorm als de mannelijke nationaliteit: <i>Soy español → Hablo español.</i> <b>¡Ojo!</b> in Bélgica: <b>neerlandés</b> y <b>francés</b> (niet «belga»); in Brasil: <b>portugués</b>. En nationaliteiten met <b>kleine letter</b> (español, no <span class="trap">Español</span>), landen met hoofdletter.</div>')
+P('<div class="truc"><b>Nacionalidad = idioma:</b> el idioma suele tener la misma forma que la nacionalidad masculina: <i>Soy español → Hablo español.</i> <b>¡Ojo!</b> en Bélgica se habla <b>neerlandés</b> y <b>francés</b> (no «belga»); en Brasil, <b>portugués</b>. Las nacionalidades van en <b>minúscula</b> (español, no <span class="trap">Español</span>) y los países en mayúscula. <span class="gloss">De taal lijkt op de mannelijke nationaliteit — met kleine letter.</span></div>')
 P(actx(AN(), "¿De dónde son? · completa con la nacionalidad",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Escribe la nacionalidad de cada persona. Fíjate en el género y el número. <span class="gloss">Schrijf de nationaliteit; let op geslacht en getal.</span></p>'
@@ -899,7 +899,7 @@ P(actx(AN(), "Clasifica por el acento",
 P('<h3 style="margin-top:6mm">2 · Conectores — unir frases</h3>')
 P('<div class="colloc"><div class="cen">y · pero · porque · también</div><div class="brs">'
   '<span class="br">y = en</span><span class="br">pero = maar</span><span class="br">porque = want/omdat</span><span class="br">también = ook</span></div></div>')
-P('<div class="truc"><b>¡Ojo!</b> «want» én «omdat» zijn allebei <b>porque</b>. «dus» = <b>así que / por eso</b> (nooit <span class="trap">luego</span>). «maar» = <b>pero</b>.</div>')
+P('<div class="truc"><b>¡Ojo!</b> «want» y «omdat» son las dos <b>porque</b>. «dus» es <b>así que / por eso</b>, nunca <span class="trap">luego</span>. «maar» es <b>pero</b>. <span class="gloss">De drie verbindingswoorden die Nederlandstaligen het vaakst verwisselen.</span></div>')
 P(actx(AN(), "Completa con el conector correcto",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Elige entre <b>y · pero · porque · también</b>. <span class="gloss">Kies het juiste verbindingswoord.</span></p>'
@@ -996,7 +996,7 @@ P('<table class="sem"><tr class="semrow"><th>Criterio</th><th>🔴 todavía no</
 P('<div class="mispal" style="margin-top:3mm"><div class="mh">🤝 Co-evaluación — la tarjeta de mi compañero/a</div>'
   '<table><thead><tr><th>Lo que me gusta de su tarjeta</th><th>Una pregunta que le hago</th></tr></thead>'
   '<tbody><tr><td></td><td></td></tr></tbody></table></div>')
-P('<div class="truc" style="margin-top:3mm"><b>✍️ Antes de colgar:</b> lees je tarjeta nog eens na — <i>presente correct? · concordancia? · un conector?</i> Verbeter één ding: <span class="wl lg"></span></div>')
+P('<div class="truc" style="margin-top:3mm"><b>✍️ Antes de colgar:</b> vuelve a leer tu tarjeta — <i>¿presente correcto? · ¿concordancia? · ¿un conector?</i> Corrige una cosa: <span class="wl lg"></span> <span class="gloss">Lees na en verbeter één ding.</span></div>')
 P('</div>')  # page Tarea
 
 # ================= REPASO =================

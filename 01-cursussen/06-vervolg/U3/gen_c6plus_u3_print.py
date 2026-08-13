@@ -59,7 +59,7 @@ P(f'''
   <div class="tab">U3 · CONECTADOS</div>
   <div class="eyebrow">UNIDAD 3 · LA RUTA · CDMX 🇲🇽 · CONECTADOS 📱</div>
   <h1>Conectados</h1>
-  <div class="sub">La reis cruza «el charco» tot in <b>Ciudad de México</b>, bij <b>Diego</b>. Je leert <b>plannen maken</b> (<b>voy a</b> subir un vídeo), zeggen dat je iets <b>net gedaan</b> hebt (<b>acabo de</b> mandar un mensaje), <b>aan wie</b> je iets stuurt (<b>le</b> escribo a Diego) en je <b>eerste echte mening</b> geven (<b>creo que</b> las redes son útiles). <span class="gloss">Media & technologie: de nabije toekomst met ir a + infinitivo, de voornaamwoorden le/les en je mening met creo que.</span></div>
+  <div class="sub">El viaje cruza «el charco» hasta <b>Ciudad de México</b>, con <b>Diego</b>. Aprendes a <b>hacer planes</b> (<b>voy a</b> subir un vídeo), a decir que <b>acabas de</b> hacer algo (<b>acabo de</b> mandar un mensaje), <b>a quién</b> le mandas algo (<b>le/les</b>) y a dar tu <b>opinión</b>. <span class="gloss">Plannen maken, net iets gedaan hebben, aan wie je iets stuurt, en je mening geven.</span></div>
   <div class="q">¿Qué vas a hacer este fin de semana? <span style="font-weight:400;opacity:.9">· Wat ga je dit weekend doen?</span></div>
 </div>
 <div class="page">
@@ -78,7 +78,7 @@ P(f'''
       <div class="se">La historia</div>
       <div class="hist"><b>ES:</b> <b>Diego</b> te enseña cómo vive <b>en línea</b>: sube vídeos, chatea con amigos y hace planes por el móvil. Aprendes a decir <b>qué vas a hacer</b> (voy a salir), qué <b>acabas de hacer</b> (acabo de subir una foto), <b>a quién</b> escribes (le escribo a mi amiga) y <b>qué opinas</b> de las redes (creo que son útiles pero adictivas). Al final: tu <b>plan de fin de semana</b> en un chat, con tu opinión.
       <span class="gloss">Diego laat zien hoe hij online leeft. Je leert plannen maken, zeggen wat je net deed, aan wie je schrijft en wat je van sociale media vindt. Eindtaak: je weekendplan in een chat, met een mening.</span></div>
-      <div class="ojo"><b>¡Ojo! — twee valstrikken meteen scherp:</b> ① <b>ir a + infinitivo</b> = de <b>nabije toekomst</b> (voy a comer = ik ga eten). Vergeet de <b>a</b> niet! ② <b>creo que</b> gaat mét de <b>indicativo</b> (creo que <b>es</b> útil), <b>nooit</b> met de subjuntivo — die zien we niet in deze cursus. <span class="gloss">ir + a + infinitivo · creo que + indicativo (gewone tijd).</span></div>
+      <div class="ojo"><b>¡Ojo! — dos trampas desde el primer día:</b> ① <b>ir a + infinitivo</b> es el <b>futuro próximo</b> (voy a comer). ¡No olvides la <b>a</b>! ② <b>creo que</b> va con <b>indicativo</b> (creo que <b>es</b> útil), <b>nunca</b> con subjuntivo. <span class="gloss">Vergeet de a niet, en creo que gaat met de gewone tijd.</span></div>
     </div>
     <div>
       <div class="se">La gente de la ruta</div>
@@ -124,9 +124,9 @@ P(f'''
 ''')
 
 # ================= §0 · ¡PONTE AL DÍA! =================
-sec_open("0", "§0 · ¡Ponte al día!", 'Activamos dos cosas que hoy necesitas: el <b>presente</b> (voor je dagelijkse gewoontes online) y <b>gustar</b> (le gusta → dé opstap naar de pronombres <b>le/les</b>). <span class="gloss">We frissen de tegenwoordige tijd en gustar op — «le gusta» is de brug naar de voornaamwoorden le/les.</span>',
+sec_open("0", "§0 · ¡Ponte al día!", 'Activamos dos cosas que hoy necesitas: el <b>presente</b> (para tus rutinas en línea) y <b>gustar</b> (le gusta, el paso previo a los pronombres <b>le/les</b>). <span class="gloss">We frissen de tegenwoordige tijd en gustar op — «le gusta» is de brug naar de voornaamwoorden le/les.</span>',
         lpd(("8","taalsysteem: presente (repaso)"), ("7","woordenschat: gustar/OI")))
-P('<div class="truc"><b>Repaso gustar (U1) → le/les (U3):</b> je kent al <b>me gusta / te gusta / le gusta</b>. Dat kleine woordje <b>le</b> is precies het voornaamwoord van deze unit: het zegt <b>aan wie</b> iets gebeurt. In §3 gebruik je het bij véél meer werkwoorden: <i>le escribo, le mando, les cuento…</i></div>')
+P('<div class="truc"><b>Repaso gustar (U1) → le/les (U3):</b> ya conoces <b>me gusta / te gusta / le gusta</b>. Ese <b>le</b> es justo el pronombre de esta unidad: dice <b>a quién</b> le pasa algo. En §3 lo usas con muchos más verbos: <i>le escribo, le mando, les cuento…</i> <span class="gloss">Datzelfde kleine woordje le is het pronomen van deze unit.</span></div>')
 P(actx(AN(), "Presente · la vida digital (repaso)",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Vervoeg in het presente (infinitivo tussen haakjes).</p>'
@@ -186,7 +186,7 @@ retos("movil_c6p", "§1.4 · Retos — la pantalla, medida y traducida",
       'Vijf berichten die zonder emoji niets meer betekenen, je echte schermtijd, en de woorden die niemand vertaalt.')
 
 # ================= §2 · IR A + INFINITIVO =================
-sec_open("2", "§2 · Ir a + infinitivo — el futuro próximo", 'Om te zeggen wat je <b>gaat doen</b> (straks, morgen, dit weekend): <b>ir</b> (vervoegd) + <b>a</b> + <b>infinitivo</b>. <i>Voy a subir un vídeo. Vamos a quedar en la plaza.</i> <span class="gloss">De nabije toekomst: ir vervoegd + a + hele werkwoord.</span>',
+sec_open("2", "§2 · Ir a + infinitivo — el futuro próximo", 'Para decir lo que <b>vas a hacer</b> (luego, mañana, este fin de semana): <b>ir</b> conjugado + <b>a</b> + <b>infinitivo</b>. <i>Voy a subir un vídeo. Vamos a quedar en la plaza.</i> <span class="gloss">De nabije toekomst: ir vervoegd + a + hele werkwoord.</span>',
         lpd(("8","taalsysteem: ir a + infinitivo"), ("3","spreken/schrijven: planes"), ("7","woordenschat: planes")))
 
 # §2.1 el sistema
@@ -222,7 +222,7 @@ P('</div>')
 # §2.2 expresiones de tiempo + ordenar
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">2</span><span class="pk">§2.2 · ¿Cuándo? — las expresiones de tiempo</span>')
-P('<div class="intro"><b>ES:</b> Voor de toekomst gebruik je woorden als <b>luego, mañana, este fin de semana, el próximo mes, pronto</b>. Ze zeggen <b>wanneer</b> je plan gebeurt. <span class="gloss">De tijdsuitdrukkingen die bij ir a + infinitivo passen: straks, morgen, dit weekend…</span></div>')
+P('<div class="intro"><b>ES:</b> Para el futuro usas palabras como <b>luego, mañana, este fin de semana, el próximo mes, pronto</b>. Dicen <b>cuándo</b> pasa tu plan. <span class="gloss">De tijdsuitdrukkingen die bij ir a + infinitivo horen: straks, morgen, dit weekend…</span></div>')
 P('</div>')
 P('<div class="fams three" style="margin-top:2mm">'
   '<div class="pcard"><div class="t">Muy pronto</div><div class="ej" style="margin-top:1mm"><b>luego</b> (straks) · <b>más tarde</b> · <b>esta tarde/noche</b></div></div>'
@@ -287,7 +287,7 @@ retos("ir_a_c6p", "§2.4 · Reto — veinticuatro horas sin pantalla",
       'Plan de hele dag met «vamos a» — en overleef drie tegenwerpingen.')
 
 # ================= §3 · OI-PRONOMINA le/les =================
-sec_open("3", "§3 · Los pronombres le/les — ¿a quién?", 'Als je zegt <b>aan wie</b> je iets doet (schrijven, sturen, vertellen), gebruik je een <b>meewerkend voorwerp</b>: <b>me/te/le/nos/os/les</b>. <i>Le escribo a Diego. Les mando fotos a mis amigos.</i> <span class="gloss">Het meewerkend voorwerp (aan wie?): le = aan hem/haar/u · les = aan hen.</span>',
+sec_open("3", "§3 · Los pronombres le/les — ¿a quién?", 'Cuando dices <b>a quién</b> le haces algo (escribir, mandar, contar), usas un <b>objeto indirecto</b>: <b>me/te/le/nos/os/les</b>. <i>Le escribo a Diego. Les mando fotos a mis amigos.</i> <span class="gloss">Het meewerkend voorwerp (aan wie?): le voor één persoon, les voor meer.</span>',
         lpd(("8","taalsysteem: OI-pronomina le/les"), ("7","woordenschat: comunicar"), ("4","interactie")))
 
 # §3.1 ¿qué es?
@@ -347,7 +347,7 @@ P('</div>')
 # §3.3 posición + foutenkliniek + tarea
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">3</span><span class="pk">§3.3 · La posición de le/les</span>')
-P('<div class="intro"><b>ES:</b> Normaal <b>vóór</b> het vervoegde werkwoord: <i>Le escribo</i>. Bij <b>ir a + infinitivo</b> mag het ook <b>achteraan vast</b>: <i>Voy a escribir<b>le</b> = <b>Le</b> voy a escribir</i>. <span class="gloss">Vóór het vervoegde werkwoord, óf vastgeplakt aan de infinitief.</span></div>')
+P('<div class="intro"><b>ES:</b> Normalmente <b>delante</b> del verbo conjugado: <i>Le escribo</i>. Con <b>ir a + infinitivo</b> también puede ir <b>pegado detrás</b>: <i>Voy a escribir<b>le</b> = <b>Le</b> voy a escribir</i>. <span class="gloss">Vóór het vervoegde werkwoord, óf vastgeplakt achteraan.</span></div>')
 P('</div>')
 P('<div class="agree"><div class="w"><u>Le</u> escribo un mensaje.</div><div class="tie">vóór het vervoegde werkwoord</div></div>')
 P('<div class="agree"><div class="w">Voy a mandar<u>le</u> una foto = <u>Le</u> voy a mandar una foto.</div><div class="tie">bij ir a + inf.: achteraan óf vooraan</div></div>')
@@ -415,7 +415,7 @@ P('</div>')
 # §4.2 creo que + indicativo
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">4</span><span class="pk">§4.2 · Creo que + indicativo — tu opinión</span>')
-P('<div class="intro"><b>ES:</b> Om je <b>mening</b> te geven: <b>creo que · pienso que · me parece que</b> + de <b>gewone tijd</b> (indicativo). <i>Creo que las redes <b>son</b> útiles.</i> Voeg <b>porque</b> toe voor je reden. <span class="gloss">creo que + indicativo (nooit subjuntivo in deze cursus) + porque voor je argument.</span></div>')
+P('<div class="intro"><b>ES:</b> Para dar tu <b>opinión</b>: <b>creo que · pienso que · me parece que</b> + <b>indicativo</b>. <i>Creo que las redes <b>son</b> útiles.</i> Añade <b>porque</b> para dar tu razón. <span class="gloss">creo que + de gewone tijd, en porque voor je reden.</span></div>')
 P('</div>')
 P(obsbox([
   '<span class="hl">Creo que</span> el móvil <span class="hl">es</span> muy útil.',
@@ -454,7 +454,7 @@ retos("acabar_c6p", "§4.4 · Retos — medio segundo antes, medio segundo despu
       'Twaalf bevroren scènes, en een podcast waarin jullie het eens zijn dat jullie het oneens zijn.')
 
 # ================= §5 · COMUNICAR Y HACER PLANES =================
-sec_open("5", "§5 · Comunicar y hacer planes", 'Alles komt samen: de <b>werkwoorden van communicatie</b> (escribir, llamar, mandar, contestar) en de woorden om een <b>afspraak</b> te maken (quedar, salir, ¿cuándo?, ¿dónde?). <span class="gloss">Communiceren en afspreken — met le/les en ir a.</span>',
+sec_open("5", "§5 · Comunicar y hacer planes", 'Todo se junta: los <b>verbos de comunicación</b> (escribir, llamar, mandar, contestar) y las palabras para <b>quedar</b> (quedar, salir, ¿cuándo?, ¿dónde?). <span class="gloss">Communiceren en afspreken — met le/les en ir a.</span>',
         lpd(("7","woordenschat: comunicar y planes"), ("4","mondelinge interactie: quedar"), ("3","schrijven: un plan")))
 P('<div class="se">Comunicar · las acciones</div>')
 P('<div class="clusters" style="grid-template-columns:1fr 1fr 1fr">'

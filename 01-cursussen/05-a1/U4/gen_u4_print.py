@@ -441,13 +441,13 @@ P(f'''
     <div class="stop"><div class="dot"></div><div class="lbl">U5 · México</div></div>
     <div class="stop"><div class="dot"></div><div class="lbl">U6–U8 · América</div></div>
   </div>
-  <div class="route-note">📍 <b>Parada 4 · València, la costa.</b> Bij de zee spreek je over wat je <b>leuk</b> vindt en wat je <b>wil doen</b>. Met <b>Lucía</b> en haar valenciaanse vriendin <b>Bea</b> maak je plannen. <span class="gloss">Aan de kust praat je over je smaak en over afspreken.</span></div>
+  <div class="route-note">📍 <b>Parada 4 · València, la costa.</b> Junto al mar hablas de lo que te <b>gusta</b> y de lo que <b>quieres hacer</b>. Con <b>Lucía</b> y su amiga valenciana <b>Bea</b> haces planes. <span class="gloss">Aan de kust praat je over je smaak en maak je plannen.</span></div>
   <div class="lead" style="margin-top:7mm">
     <div>
       <div class="se">La historia</div>
       <div class="hist"><b>ES:</b> En <b>València</b> hace sol. Lucía y <b>Bea</b> te preguntan: «¿Qué te <b>gusta</b>?». Aprendes a decir lo que te <b>gusta</b> y lo que te <b>encanta</b> (música, deportes, cine), a estar de <b>acuerdo</b> o no, y a <b>proponer un plan</b>: «¿<b>Quieres</b> ir a la playa?».
       <span class="gloss">In València schijnt de zon. Lucía en Bea vragen: «Wat vind jij leuk?». Je leert zeggen wat je leuk/geweldig vindt, akkoord gaan of niet, en een plan voorstellen.</span></div>
-      <div class="ojo"><b>¡Ojo! — de grote valstrik:</b> <b>gustar</b> werkt <i>omgekeerd</i>. Je zegt niet «ik vind X leuk», maar <b>«X bevalt mij»</b>: <b>Me gusta</b> la música (= de muziek bevalt mij). Meervoud → <b>gusta<span class="trap">n</span></b>: <b>Me gustan</b> los deportes.</div>
+      <div class="ojo"><b>¡Ojo! — la trampa grande:</b> <b>gustar</b> funciona <i>al revés</i>. No dices «yo encuentro X agradable», sino <b>«X me gusta a mí»</b>: <b>Me gusta</b> la música. En plural → <b>gusta<span class="trap">n</span></b>: <b>Me gustan</b> los conciertos. <span class="gloss">Niet «ik vind X leuk» maar «X bevalt mij» — en meervoud maakt gustan.</span></div>
     </div>
     <div>
       <div class="se">La gente de la ruta</div>
@@ -564,7 +564,7 @@ P('<div class="chat">'
 P('<p style="font-size:9.6pt">② <b>Radiografía — «het bevalt mij».</b> In het Spaans is <b>lo que te gusta</b> het <i>onderwerp</i>, en <b>jij</b> bent het meewerkend voorwerp (me/te/le…):</p>')
 P(xray('<span class="fx ob">A mí</span> <span class="fx per">me</span> <span class="fx vb">gusta</span> <span class="fx pl">la música</span>.',
        [("A mí me","aan míj (OI)"),("gusta","3ª pers. — bevalt"),("la música","= het onderwerp!")]))
-P('<div class="truc"><b>🔴 NL ↔ ES:</b> «<i>Ik</i> vind muziek leuk» → in het Spaans staat het om: «<i>De muziek</i> bevalt <i>mij</i>» = <b>Me gusta la música</b>. Het werkwoord past zich aan bij <b>het ding</b>, niet bij «ik».</div>')
+P('<div class="truc"><b>🔴 NL ↔ ES:</b> «<i>Ik</i> vind muziek leuk» se da la vuelta en español: «<i>La música</i> me gusta <i>a mí</i>» = <b>Me gusta la música</b>. El verbo concuerda con <b>la cosa</b>, no con «yo». <span class="gloss">De zin draait om: het werkwoord volgt het ding, niet «ik».</span></div>')
 P(obsbox([
   '<span class="fx per">Me</span> <span class="hl">gusta</span> el fútbol. <span class="gloss">(één ding → gusta)</span>',
   '<span class="fx per">Me</span> <span class="hl">gustan</span> los deportes. <span class="gloss">(meerdere dingen → gustan)</span>',
@@ -905,7 +905,7 @@ P(tarea_com("Tarea comunicativa · Responde con tu perfil",
   '<p><b></b> Kies één perfil en schrijf een <b>antwoord</b> met je eigen gustos (afzender = jij · ontvanger = Lucía/Diego · doel = smaak delen). Lees het daarna hardop voor.</p>'
   '<div class="wbox"></div>'
   + APO.html("Marco: Me encanta… · Me gusta… · No me gusta… porque…")))
-P('<div class="route-note">🎮 <b>Sigue online:</b> op de digitale pagina neem je je antwoord op (recorder) en luister je de perfiles (audio).</div>')
+P('<div class="route-note">🎮 <b>Sigue online:</b> en la página digital grabas tu respuesta y escuchas los perfiles. <span class="gloss">Online: opnemen en luisteren.</span></div>')
 P('</div>')  # page §4b
 
 # ================= TALLER DE LENGUA =================
@@ -920,7 +920,7 @@ P(mirror([
   ('¿<span class="mk">Por qué</span> te gusta Rosalía?', 'Me gusta <span class="mk">porque</span> canta muy bien.'),
   ('¿<span class="mk">Por qué</span> no te gusta el fútbol?', 'No me gusta <span class="mk">porque</span> es aburrido.'),
 ]))
-P('<div class="truc"><b>🔴 Valstrik NL:</b> <i>waarom</i> = <b>¿por qué?</b> (twee woorden, tilde) · <i>want/omdat</i> = <b>porque</b> (één woord, geen tilde). Verwar ze niet!</div>')
+P('<div class="truc"><b>🔴 Trampa para neerlandeses:</b> «waarom» es <b>¿por qué?</b> (dos palabras, con tilde) y «want, omdat» es <b>porque</b> (una palabra, sin tilde). ¡No los mezcles! <span class="gloss">¿por qué? vraagt, porque antwoordt.</span></div>')
 P(actx(1, "¿por qué o porque?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Escribe <b>¿por qué?</b> o <b>porque</b>. <span class="gloss">Vul ¿por qué? of porque in.</span></p>'
@@ -1057,7 +1057,7 @@ P(perla_scale([
   ("#2FA8A0", "me gusta", "ik vind leuk"),
   ("#157355", "me encanta", "ik vind geweldig"),
 ]))
-P('<div class="truc"><b>🔴 Ojo:</b> <b>odio</b> + naamwoord/infinitief: <i>odio los lunes · odio madrugar</i>. Bij <b>me encanta / me gusta</b> geldt weer de regel gusta/gustan (bevalt mij). <b>odio</b> vervoeg je gewoon (yo odio, tú odias…).</div>')
+P('<div class="truc"><b>🔴 Ojo:</b> <b>odio</b> + sustantivo o infinitivo: <i>odio los lunes · odio madrugar</i>. Con <b>me encanta / me gusta</b> vuelve la regla de gusta/gustan. <b>odio</b> se conjuga normal (yo odio, tú odias…). <span class="gloss">odio vervoeg je gewoon; encantar en gustar werken omgekeerd.</span></div>')
 P(actx(1, "Coloca en la escala",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Coloca cada sentimiento en su escalón (1 = odio … 4 = me encanta) y escribe el número. <span class="gloss">Plaats elk gevoel op de juiste trap.</span></p>'
@@ -1075,14 +1075,14 @@ P(tarea_com("Tarea comunicativa · «La playlist de la clase»",
   '<tr><td>Bad Bunny</td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td><td><span class="wl sm"></span></td></tr></tbody></table>'
   '<p style="margin-left:12.5mm">Nuestra canción para la clase: <span class="wl lg"></span></p>'
   + APO.html("Marco: escala + reacciones")))
-P('<div class="route-note">🎮 <b>Sigue online:</b> escucha la playlist, prueba <b>LyricsTraining</b> (vul de songtekst aan) y juega «La escala del gusto» met zelfcorrectie op de digitale pagina.</div>')
+P('<div class="route-note">🎮 <b>Sigue online:</b> escucha la playlist, prueba <b>LyricsTraining</b> (completa la letra) y juega a «La escala del gusto», que se corrige solo. <span class="gloss">Playlist, songteksten aanvullen en een spel met zelfcorrectie.</span></div>')
 P('</div>')  # page Banda 2
 
 # ================= TAREA FINAL =================
 P('<div class="page"><div class="parada sec" style="border-top-color:var(--gd)">')
 P('<span class="num">✦</span><span class="pk" style="background:var(--gd)">Tarea final · Mi playlist</span>')
 P('<div class="intro"><b>ES:</b> Crea tu <b>playlist personal</b>: canciones que te gustan + <b>por qué</b> + qué sientes. Preséntala a la clase. <span class="gloss">Maak je persoonlijke playlist en stel ze voor.</span></div>')
-P('<div class="route-note">🎯 <b>Communicatieve taak:</b> afzender = jij · ontvanger = de klas/Lucía · doel = je smaak delen & motiveren · situatie = een muziekavond in València · resultaat = ingevulde playlist + presentatie.</div>')
+P('<div class="route-note">🎯 <b>Tarea comunicativa:</b> emisor = tú · destinatario = la clase y Lucía · objetivo = compartir tus gustos y justificarlos · situación = una noche de música en València · resultado = playlist rellena + presentación. <span class="gloss">Afzender, ontvanger, doel, situatie en resultaat van deze taak.</span></div>')
 P(lpd(("3","doelgericht schrijven met een voorbeeld"), ("4","mondeling presenteren & interageren"), ("7","woordenschat gustos/música"), ("8","gustar/encantar + porque")))
 P('</div>')
 P('<ol class="pasos">'
@@ -1202,7 +1202,7 @@ P(actx("V.7", "Mi carné de gustos — ficha final",
   '<div class="row"><span class="k">Mi artista favorito/a…</span><span class="v"><span class="wl sm"></span></span></div>'
   '<div class="row"><span class="k">…porque…</span><span class="v"><span class="wl sm"></span></span></div></div></div>', apoyo="Marco: Me encanta… · Me gusta… porque… · No me gusta nada…"))
 P(mispal("Mis palabras de la unidad", 4))
-P('<div class="route-note">🎴 <b>Sigue en la página digital:</b> flip cards (ES↔NL) van álle woorden, audio (TTS), buscador én de 20 spellen bouwen de steun verder af. Scan de QR op deze bladzijde en oefen tot je alles <b>sin ayuda</b> kan.</div>')
+P('<div class="route-note">🎴 <b>Sigue en la página digital:</b> flip cards (ES↔NL) de todas las palabras, audio, buscador y los 20 juegos van quitando el apoyo poco a poco. Escanea el QR de esta página y practica hasta que te salga <b>sin ayuda</b>. <span class="gloss">Online bouwt de steun zich verder af, tot je het zonder hulp kunt.</span></div>')
 P('</div>')  # page §V
 
 # ---------- EDITBAR ----------

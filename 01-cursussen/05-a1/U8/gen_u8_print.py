@@ -412,7 +412,7 @@ P(f'''
   <div class="tab">U8 · ¿QUÉ HAS HECHO?</div>
   <div class="eyebrow">UNIDAD 8 · LA RUTA · PARADA 8 — PERÚ / CUSCO · MACHU PICCHU 🇵🇪</div>
   <h1>¿Qué has hecho?</h1>
-  <div class="sub">Última parada del viaje: <b>Perú</b>. Subimos a los <b>Andes</b>, a <b>Cusco</b> y a <b>Machu Picchu</b>. Hoy vertel je <b>wat je (net) gedaan hebt</b> en praat je over <b>el tiempo</b>. <span class="gloss">Laatste halte van de reis: Peru. Vandaag: vertellen wat je gedaan hebt (perfecto compuesto) en over het weer praten.</span></div>
+  <div class="sub">Última parada del viaje: <b>Perú</b>. Subimos a los <b>Andes</b>, a <b>Cusco</b> y a <b>Machu Picchu</b>. Hoy cuentas <b>lo que acabas de hacer</b> y hablas <b>del tiempo</b>. <span class="gloss">Laatste halte: Peru. Vandaag: vertellen wat je gedaan hebt, en het weer.</span></div>
   <div class="q">¿Qué has hecho este año? <span style="font-weight:400;opacity:.9">· Wat heb je dit jaar gedaan?</span></div>
 </div>
 <div class="page">
@@ -431,7 +431,7 @@ P(f'''
       <div class="se">La historia</div>
       <div class="hist"><b>ES:</b> En <b>Cusco</b>, a 3400 metros, <b>Nina</b> te enseña su diario: «¡Mira todo lo que <b>he hecho</b>!». <b>Ha subido</b> a Machu Picchu, <b>ha visto</b> las llamas y <b>ha sacado</b> muchas fotos. «¿Y tú? ¿<b>Qué has hecho</b> este año?». Aprendes a contar tus <b>experiencias</b> y a decir qué <b>tiempo hace</b>.
       <span class="gloss">In Cusco, op 3400 m, toont Nina haar dagboek. Ze is naar Machu Picchu geklommen, heeft lama's gezien en veel foto's gemaakt. En jij? Wat heb jij dit jaar gedaan?</span></div>
-      <div class="ojo"><b>¡Ojo! — de valstrik van vandaag:</b> «heb je gedaan?» = <b>has hecho</b> (haber + participio), <b>niet</b> <span class="trap">tienes hecho</span>. Het hulpwerkwoord is <b>haber</b> (he, has, ha…), nooit <i>tener</i>. En de participio verandert hier <b>niet</b>: <i>María ha comid<span class="trap">o</span></i> (niet comida).</div>
+      <div class="ojo"><b>¡Ojo! — la trampa de hoy:</b> «heb je gedaan?» es <b>has hecho</b> (haber + participio), <b>no</b> <span class="trap">tienes hecho</span>. El auxiliar es <b>haber</b> (he, has, ha…), nunca <i>tener</i>. Y aquí el participio no cambia de forma. <span class="gloss">Het hulpwerkwoord is haber, niet tener; het participium blijft gelijk.</span></div>
     </div>
     <div>
       <div class="se">La gente de la ruta</div>
@@ -727,7 +727,7 @@ P('<table class="conj"><thead><tr><th>Periodo abierto (nog bezig)</th><th>Experi
   '<tr><td class="v">hoy · esta semana</td><td class="v">alguna vez · nunca</td></tr>'
   '<tr><td class="v">este mes · este año</td><td class="v">muchas veces · ya · todavía no</td></tr>'
   '<tr><td>Hoy he estudiado.</td><td>¿Has viajado alguna vez en avión?</td></tr></tbody></table>')
-P('<div class="truc"><b>🔴 NL ↔ ES:</b> <b>ya</b> = «al / reeds», <b>todavía no</b> = «nog niet». Let op: <b>nunca</b> + he… = «ik heb nooit…»: <i>Nunca he estado en Perú.</i></div>')
+P('<div class="truc"><b>🔴 NL ↔ ES:</b> <b>ya</b> = «al, reeds»; <b>todavía no</b> = «nog niet». Ojo con <b>nunca</b> + he…: <i>Nunca he estado en Perú.</i> <span class="gloss">ya, todavía no en nunca he…</span></div>')
 P(regla("Regla · marcadores",
   '<p>Deze marcadores kondigen het <b>perfecto compuesto</b> aan: <b>hoy, esta semana, este mes, este año</b> (periode die nog loopt) en <b>ya, todavía no, alguna vez, nunca, muchas veces</b> (ervaring). '
   '<br><b>ya</b> (al ✅) ↔ <b>todavía no</b> (nog niet ⏳). <b>¿Alguna vez has…?</b> = «Heb je ooit…?».</p>'))
@@ -883,7 +883,7 @@ P(tarea_com("Tarea comunicativa · «Tu propio día de viaje» (keten lezen→sc
   '<p><b></b> Schrijf, zoals Nina, één dagboekdag over een (echte of verzonnen) reis. Gebruik minstens <b>vier</b> keer perfecto compuesto + één marcador + het weer. <span class="gloss">«Hoy he llegado a… He visto… Ha hecho…»</span></p>'
   '<div class="wbox sm"></div>'
   + APO.html("Marco: Hoy he… · He visto… · Ha hecho…")))
-P('<div class="route-note">🎮 <b>Sigue online:</b> luister het diario (TTS), doe de begripsquiz en neem je eigen dag op (recorder) op de digitale pagina.</div>')
+P('<div class="route-note">🎮 <b>Sigue online:</b> en la página digital escuchas el diario, haces el test de comprensión y grabas tu propio día. <span class="gloss">Online: luisteren, begripstest en je eigen dag opnemen.</span></div>')
 P('</div>')  # page §5b
 
 # ================= TALLER DE LENGUA =================
@@ -900,7 +900,7 @@ P('<table class="mp"><thead><tr><th>Con tilde</th><th>uso</th><th>Sin tilde</th>
   '<tr><td class="trap">qué</td><td>wat? (vraag)</td><td>que</td><td>dat/die (verbinding)</td></tr>'
   '<tr><td class="trap">sí</td><td>ja</td><td>si</td><td>als/indien</td></tr>'
   '<tr><td class="trap">más</td><td>meer</td><td>mas</td><td>maar (literair)</td></tr></tbody></table>')
-P('<div class="truc"><b>🔴 Truco:</b> het <b>streepje (tilde diacrítica)</b> zit meestal op het woord met de <b>«sterkste» betekenis</b>: de persoon (tú, él), de vraag (qué), het antwoord ja (sí), de vergelijking (más).</div>')
+P('<div class="truc"><b>🔴 Truco:</b> la <b>tilde diacrítica</b> suele ir en la palabra con el significado más «fuerte»: la persona (tú, él), la pregunta (qué), el sí, la comparación (más). <span class="gloss">Het streepje zit op het woord met de sterkste betekenis.</span></div>')
 P(actx(1, "¿Con tilde o sin tilde?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Elige la forma correcta. <span class="gloss">Kies de juiste vorm.</span></p>'
@@ -995,7 +995,7 @@ retos("cultura_u8", "Retos — la montaña en cifras",
 P('<div class="page"><div class="parada sec" style="border-top-color:var(--gd)">')
 P('<span class="num">✦</span><span class="pk" style="background:var(--gd)">Tarea final · Diario de viaje</span>')
 P('<div class="intro"><b>ES:</b> Escribe (o graba en vlog) el <b>diario de tus vacaciones</b>: ¿qué has hecho, dónde, con qué transporte y qué tiempo ha hecho? Usa el <b>perfecto compuesto</b>. <span class="gloss">Maak je reisverslag met perfecto compuesto — als tekst of vlog.</span></div>')
-P('<div class="route-note">🎯 <b>Communicatieve taak:</b> afzender = jij (de reiziger) · ontvanger = je familie/vrienden · doel = je reis navertellen · situatie = terug van vakantie · resultaat = een reisverslag (of vlog) met perfecto compuesto.</div>')
+P('<div class="route-note">🎯 <b>Tarea comunicativa:</b> emisor = tú (el viajero) · destinatario = tu familia y tus amigos · objetivo = contar tu viaje · situación = de vuelta de las vacaciones · resultado = un diario de viaje (o un vlog) en pretérito perfecto. <span class="gloss">Afzender, ontvanger, doel, situatie en resultaat van deze taak.</span></div>')
 P(lpd(("3","doelgericht schrijven met een voorbeeld"), ("4","mondeling vertellen (vlog)"), ("7","woordenschat viajes/clima"), ("8","perfecto compuesto · marcadores · el tiempo")))
 P('</div>')
 P('<ol class="pasos">'

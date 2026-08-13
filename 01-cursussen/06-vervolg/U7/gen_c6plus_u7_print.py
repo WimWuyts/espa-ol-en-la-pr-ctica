@@ -59,7 +59,7 @@ P(f'''
   <div class="tab">U7 · ¡OPINA Y CUÍDATE!</div>
   <div class="eyebrow">UNIDAD 7 · LA RUTA · COSTA RICA 🇨🇷 · ¡PURA VIDA! 🌿</div>
   <h1>¡Opina y cuídate!</h1>
-  <div class="sub">La última parada: <b>Costa Rica</b>, «<b>pura vida</b>». Je leert <b>advies geven</b> met de <b>imperativo</b> (<b>cuida</b> tu salud, <b>come</b> sano, <b>haz</b> deporte, <b>recicla</b>) en je <b>geeft je mening en argumenteert</b> over <b>gezondheid</b> en het <b>milieu</b> (<i>creo que debemos reciclar <b>porque</b>… <b>además</b>…</i>). <span class="gloss">De gebiedende wijs (advies) + je mening geven en argumenteren met conectoren. Thema: salud y medio ambiente.</span></div>
+  <div class="sub">La última parada: <b>Costa Rica</b>, «<b>pura vida</b>». Aprendes a <b>dar consejos</b> con el <b>imperativo</b> (<b>cuida</b> tu salud, <b>come</b> sano, <b>haz</b> deporte, <b>recicla</b>) y a <b>dar tu opinión y argumentar</b> sobre la salud y el medio ambiente. <span class="gloss">Advies geven, je mening geven en argumenteren.</span></div>
   <div class="q">¿Qué haces tú para cuidarte y cuidar el planeta? <span style="font-weight:400;opacity:.9">· Wat doe jij om voor jezelf én de planeet te zorgen?</span></div>
 </div>
 <div class="page">
@@ -78,7 +78,7 @@ P(f'''
       <div class="se">La historia</div>
       <div class="hist"><b>ES:</b> Cierras la ruta con dos herramientas para la vida: <b>dar consejos</b> (<i>cuídate, come sano, recicla</i>) y <b>opinar y argumentar</b> (<i>creo que… porque… además…</i>). Hablas de la <b>salud</b> (el cuerpo, el deporte, la dieta) y del <b>medio ambiente</b> (reciclar, ahorrar, proteger el planeta). Al final: creas tu <b>«cartel de opinión»</b> con consejos y argumentos.
       <span class="gloss">Je sluit de reis af met twee vaardigheden voor het leven: advies geven en je mening beargumenteren, over gezondheid en milieu.</span></div>
-      <div class="ojo"><b>¡Ojo! — twee valstrikken meteen scherp:</b> ① De <b>imperativo (tú)</b> is heel kort: -ar → <b>-a</b> (cuida), -er/-ir → <b>-e</b> (come, vive). Acht onregelmatige: <b>ten, ven, pon, haz, di, sal, sé, ve</b>. Pronomen plakt eraan vast: cuida+te → <b>cuídate</b>. ② <b>Opinar = indicativo</b> (géén subjuntivo hier): <b>creo que es</b>, <b>pienso que debemos</b> (niet «sea»/«debamos»). <span class="gloss">imperativo tú = -a/-e + 8 irr. · na «creo que» gewoon de indicativo.</span></div>
+      <div class="ojo"><b>¡Ojo! — dos trampas desde el primer día:</b> ① El <b>imperativo (tú)</b> es muy corto: -ar → <b>-a</b> (cuida), -er/-ir → <b>-e</b> (come, vive). Ocho irregulares: <b>ten, ven, pon, haz, di, sal, sé, ve</b>. El pronombre se pega: cuida+te → <b>cuídate</b>. ② <b>creo que</b> va con indicativo. <span class="gloss">Korte vormen, acht onregelmatige, en het pronomen plakt vast.</span></div>
     </div>
     <div>
       <div class="se">La gente de la ruta</div>
@@ -124,9 +124,9 @@ P(f'''
 ''')
 
 # ================= §0 · ¡PONTE AL DÍA! =================
-sec_open("0", "§0 · ¡Ponte al día!", 'We komen van het <b>imperfecto</b> (U6: era, tenía). Nu twee nieuwe dingen: <b>advies geven</b> (imperativo) en <b>je mening geven</b> (creo que… + indicativo). <span class="gloss">Van beschrijven (imperfecto) naar advies geven en argumenteren.</span>',
+sec_open("0", "§0 · ¡Ponte al día!", 'Venimos del <b>imperfecto</b> (U6: era, tenía). Ahora, dos cosas nuevas: <b>dar consejos</b> (imperativo) y <b>dar tu opinión</b> (creo que… + indicativo). <span class="gloss">Van beschrijven naar advies geven en argumenteren.</span>',
         lpd(("8","taalsysteem: imperativo + opinar"), ("7","woordenschat")))
-P('<div class="truc"><b>Consejo ↔ opinión:</b> een <b>consejo</b> is een <b>bevel/tip</b> (<i>¡Come sano!</i>) → imperativo. Een <b>opinión</b> is wat jij <b>denkt</b> (<i>Creo que la salud es importante</i>) → creo que + indicativo. In U7 leer je allebei.</div>')
+P('<div class="truc"><b>Consejo ↔ opinión:</b> un <b>consejo</b> es una orden o un truco (<i>¡Come sano!</i>) → imperativo. Una <b>opinión</b> es lo que tú piensas (<i>Creo que la salud es importante</i>) → creo que + indicativo. En U7 aprendes los dos. <span class="gloss">Advies gaat met de imperativo, mening met creo que.</span></div>')
 P(actx(AN(), "¿Consejo u opinión? (repaso)",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Is het een <b>advies</b> (imperativo) of een <b>mening</b> (creo que…)? Vink aan.</p>'
@@ -224,10 +224,10 @@ P('</div>')
 # §2.2 pronombres enclíticos
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">2</span><span class="pk">§2.2 · El imperativo + pronombres (enclíticos)</span>')
-P('<div class="intro"><b>ES:</b> Bij de bevestigende imperativo <b>plak</b> je het pronomen <b>vast achteraan</b>: cuida + te → <b>cuídate</b>, haz + lo → <b>hazlo</b>, di + me + lo → <b>dímelo</b>. <span class="gloss">Pronomen plakt aan de imperativo vast; soms komt er een accent bij.</span></div>')
+P('<div class="intro"><b>ES:</b> En el imperativo afirmativo el pronombre se <b>pega detrás</b>: cuida + te → <b>cuídate</b>, haz + lo → <b>hazlo</b>, di + me + lo → <b>dímelo</b>. <span class="gloss">Het pronomen plakt vast, en soms komt er een accent bij.</span></div>')
 P('</div>')
 P(blocks([[("per","cuida"),("opt","+ te"),("vb","cuídate")], [("per","haz"),("opt","+ lo"),("vb","hazlo")], [("per","di"),("opt","+ me"),("vb","dime")], [("per","di"),("opt","+ me + lo"),("vb","dímelo")]]))
-P('<div class="truc"><b>¡Ojo! el acento:</b> als het woord langer wordt, houd je de klemtoon op de oude plek met een <b>accent</b>: cuida → <b>cuídate</b>, protege → <b>protégelo</b>, di+me+lo → <b>dímelo</b>. Korte vormen zonder accent: <b>hazlo, dime, ponlo</b>.</div>')
+P('<div class="truc"><b>¡Ojo, el acento!</b> Cuando la palabra crece, mantienes el acento en su sitio con una <b>tilde</b>: cuida → <b>cuídate</b>, protege → <b>protégelo</b>, di+me+lo → <b>dímelo</b>. Formas cortas sin tilde: <b>hazlo, dime, ponlo</b>. <span class="gloss">De klemtoon blijft waar ze zat, dus komt er een accent bij.</span></div>')
 P(actx(AN(), "Añade el pronombre",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Plak het pronomen vast (let op het accent).</p>'
@@ -334,7 +334,7 @@ retos("opinar", "§3.4 · Retos — creer, comprobar y defender lo contrario",
       'Vier beweringen over gezondheid waarvan er twee vals zijn, en een debat waarin je verdedigt wat je niet vindt.')
 
 # ================= §4 · CONECTORES =================
-sec_open("4", "§4 · Conectores — argumentar", 'Om te <b>argumenteren</b> koppel je je meningen met <b>conectoren</b>: <b>porque</b> (omdat), <b>además</b> (bovendien), <b>por eso</b> (daarom), <b>sin embargo</b> (echter), <b>por un lado / por otro lado</b> (enerzijds/anderzijds). <span class="gloss">De verbindingswoorden die van losse zinnen een argument maken.</span>',
+sec_open("4", "§4 · Conectores — argumentar", 'Para <b>argumentar</b> enlazas tus opiniones con <b>conectores</b>: <b>porque</b>, <b>además</b>, <b>por eso</b>, <b>sin embargo</b>, <b>por un lado / por otro lado</b>. <span class="gloss">omdat · bovendien · daarom · echter · enerzijds/anderzijds.</span>',
         lpd(("8","taalsysteem: conectores argumentativos"), ("4","interactie: argumenteren")))
 
 # §4.1 el sistema
@@ -348,7 +348,7 @@ P('<div class="fams three" style="margin-top:2mm">'
   '<div class="pcard"><div class="t">porque</div><div class="ej">reden (omdat/want): … porque es sano.</div></div>'
   '<div class="pcard"><div class="t">además · por eso</div><div class="ej">toevoeging / gevolg: además… · por eso…</div></div>'
   '<div class="pcard"><div class="t">sin embargo</div><div class="ej">tegenstelling (echter): …, sin embargo…</div></div></div>')
-P('<div class="truc"><b>¡Ojo! valstrik NL→ES:</b> <b>want</b> én <b>omdat</b> = <b>porque</b>. <b>Dus</b> = <b>por eso / así que</b> (niet «luego»). <b>Bovendien</b> = <b>además</b>. Zet een <b>komma</b> na «además», «por eso», «sin embargo» aan het begin van de zin.</div>')
+P('<div class="truc"><b>¡Ojo, trampa NL→ES!</b> «want» y «omdat» son <b>porque</b>. «dus» es <b>por eso / así que</b>, no «luego». «bovendien» es <b>además</b>. Pon <b>coma</b> después de «además», «por eso» o «sin embargo» al principio de la frase. <span class="gloss">Let ook op de komma na een conector vooraan de zin.</span></div>')
 P(actx(AN(), "Completa con el conector",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Completa con <b>porque · además · por eso · sin embargo</b>. <span class="gloss">Vul het verbindingswoord aan.</span></p>'
@@ -421,7 +421,7 @@ P(actx(AN(), "Reacciona — ¿y tú?",
 sec_close()
 
 # ================= TALLER =================
-sec_open("T", "Taller de lengua", 'Twee gereedschappen: het <b>accent</b> bij pronombres enclíticos (cuídate, dímelo) en de <b>conectoren van argumentatie</b>. <span class="gloss">Accenten bij aangehechte pronomen + de argumentatie-connectoren.</span>')
+sec_open("T", "Taller de lengua", 'Dos herramientas: el <b>acento</b> con pronombres enclíticos (cuídate, dímelo) y los <b>conectores de argumentación</b>. <span class="gloss">Accenten bij aangehechte pronomen plus de argumentatie-connectoren.</span>')
 P('<h3>1 · Ortografía — el acento en los enclíticos</h3>')
 P(regla("El acento del imperativo + pronombre", '<p>Als je een pronomen achteraan plakt, groeit het woord. Om de klemtoon op de oude plek te houden, komt er vaak een <b>accent</b> bij: cuida → <b>cuídate</b>, come → <b>cómelo</b>, protege → <b>protégelo</b>, di+me+lo → <b>dímelo</b>.<br><span class="gloss">🔴 Korte vormen krijgen géén accent: <b>hazlo, dime, ponlo, dilo</b>.</span></p>'))
 P(actx(AN(), "¿Falta el acento? · corrige",
@@ -483,7 +483,7 @@ retos("cultura_c6p7", "Reto — una campaña que cruza el océano",
       'Lo que funciona en Gante a veces no dice nada en Cartagena: cambia la forma y conserva la idea. <span class="gloss">Verander de vorm, houd het idee.</span>')
 
 # ================= TAREA FINAL =================
-sec_open("★", "Tarea final · «Mi cartel de opinión»", 'Crea un <b>cartel</b> sobre la salud of het milieu: geef <b>advies</b> (imperativo) én je <b>beargumenteerde mening</b> (creo que… porque… además…). <span class="gloss">Maak een affiche met advies (imperativo) + je beargumenteerde mening. De capstone van de reis.</span>')
+sec_open("★", "Tarea final · «Mi cartel de opinión»", 'Crea un <b>cartel</b> sobre la salud o el medio ambiente: da <b>consejos</b> (imperativo) y tu <b>opinión argumentada</b> (creo que… porque… además…). <span class="gloss">Maak een affiche met advies en je beargumenteerde mening — de capstone van de reis.</span>')
 P(fmu('tus compañeros de clase (la exposición «Pura Vida»)', 'convencer y aconsejar', 'un cartel (título + 4 consejos + un texto de opinión de 4–5 frases) + una presentación oral (± 1–2 min)'))
 P('<ol class="pasos">'
   '<li><b>Elige un tema</b>: la salud o el medio ambiente.</li>'

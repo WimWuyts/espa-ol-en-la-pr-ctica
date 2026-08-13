@@ -434,7 +434,7 @@ P(f'''
       <div class="se">La historia</div>
       <div class="hist"><b>ES:</b> En <b>Barcelona</b> pasas un día con <b>Pau</b>. Él <b>se levanta</b> temprano, <b>desayuna</b>, va al instituto y por la tarde <b>juega</b> y <b>hace</b> los deberes. Aprendes a decir <b>qué hora es</b>, a contar tu <b>rutina</b> y a usar verbos que cambian de raíz (<i>empezar, poder, dormir…</i>).
       <span class="gloss">In Barcelona breng je een dag door met Pau. Je leert de tijd zeggen, je routine vertellen en werkwoorden met een stamwissel gebruiken.</span></div>
-      <div class="ojo"><b>¡Ojo! — valstrik:</b> één uur = <b>Es la una</b> (enkelvoud); vanaf twee uur = <b>Son las</b> dos, tres… (meervoud). En het reflexief pronomen staat <b>vóór</b> het werkwoord: <b>me</b> levanto, niet <span class="trap">levanto me</span>.</div>
+      <div class="ojo"><b>¡Ojo! — la trampa:</b> la una va en singular (<b>Es la una</b>); a partir de las dos, en plural (<b>Son las</b> dos, tres…). Y el pronombre reflexivo va <b>delante</b> del verbo: <b>me</b> levanto, no <span class="trap">levanto me</span>. <span class="gloss">Eén uur is enkelvoud; het reflexief pronomen staat vóór het werkwoord.</span></div>
     </div>
     <div>
       <div class="se">La gente de la ruta</div>
@@ -592,7 +592,7 @@ P(mirror([
   ('¿<span class="mk">A qué hora</span> comes?', 'A las dos <b>de la tarde</b>.'),
   ('¿<span class="mk">A qué hora</span> te acuestas?', 'A las once <b>de la noche</b>.'),
 ]))
-P('<div class="truc"><b>🔴 de la vs. por la:</b> <b>de la</b> mañana/tarde/noche = bij een <b>concreet uur</b> (a las 7 <b>de la</b> mañana). <b>por la</b> mañana/tarde/noche = een <b>deel van de dag</b>, zonder uur (estudio <b>por la</b> tarde).</div>')
+P('<div class="truc"><b>🔴 de la frente a por la:</b> <b>de la</b> mañana/tarde/noche va con una <b>hora concreta</b> (a las 7 <b>de la</b> mañana). <b>por la</b> mañana/tarde/noche es una <b>parte del día</b>, sin hora (estudio <b>por la</b> tarde). <span class="gloss">Met een uur: de la. Zonder uur: por la.</span></div>')
 P(actx(4, "Escribe la hora completa",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 5 min"},{"t":"★★☆"}],
   '<p>Escribe la frase entera junto a cada reloj (Es la… / Son las…). Son cinco frases. <span class="gloss">Schrijf bij elke klok de volledige zin — vijf zinnen.</span></p>'
@@ -898,7 +898,7 @@ P(clusters([
   ("🗓️","Los meses",["enero · febrero · marzo","abril · mayo · junio","… diciembre"],"Ook klein, geen hoofdletter."),
   ("🍂","Las estaciones",["primavera · verano","otoño · invierno","en verano / en invierno"],"De seizoenen."),
 ]))
-P('<div class="truc"><b>🔴 Valstrik NL:</b> <b>días</b> en <b>meses</b> schrijf je met een <b>kleine letter</b> (lunes, enero) — anders dan landen/steden (Barcelona, España). «op maandag» = <b>el lunes</b>; «elke maandag» = <b>los lunes</b>.</div>')
+P('<div class="truc"><b>🔴 Trampa para neerlandeses:</b> los <b>días</b> y los <b>meses</b> van en <b>minúscula</b> (lunes, enero), al revés que los países y las ciudades (Barcelona, España). «Op maandag» es <b>el lunes</b>; «elke maandag», <b>los lunes</b>. <span class="gloss">Dagen en maanden met kleine letter; el lunes ↔ los lunes.</span></div>')
 P(actx(3, "¿día, mes o estación?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★☆☆"}],
   '<p>Escribe cada palabra en su columna. <span class="gloss">zet elk woord in de juiste kolom</span> <span class="words"><b>martes · agosto · verano · domingo · marzo · invierno · viernes · julio</b></span></p>'
@@ -972,7 +972,7 @@ P(tarea_com("Tarea comunicativa · Responde a Pau",
   '<p><b></b> Schrijf Pau een <b>antwoordbericht</b> over jouw dag (afzender = jij · ontvanger = Pau · doel = je routine delen). Gebruik uren + reflexieve/onregelmatige werkwoorden. Lees het daarna hardop voor.</p>'
   '<div class="wbox"></div>'
   + APO.html("Marco: Me levanto a las… / empiezo… / por la tarde…")))
-P('<div class="route-note">🎮 <b>Sigue online:</b> op de digitale pagina beluister je «El día de Pau» (audio) en neem je je antwoord op (recorder).</div>')
+P('<div class="route-note">🎮 <b>Sigue online:</b> en la página digital escuchas «El día de Pau» y grabas tu respuesta. <span class="gloss">Online: luisteren en je antwoord opnemen.</span></div>')
 P('</div>')  # page §5b
 
 # ================= TALLER DE LENGUA =================
@@ -987,7 +987,7 @@ P('<table class="mp"><thead><tr><th>Conector</th><th>Uso</th><th>Ejemplo</th></t
   '<tr><td><b>después / luego</b></td><td>daarna / vervolgens</td><td><b>Después</b> desayuno.</td></tr>'
   '<tr><td><b>más tarde</b></td><td>later</td><td><b>Más tarde</b> hago los deberes.</td></tr>'
   '<tr><td><b>por fin / finalmente</b></td><td>ten slotte</td><td><b>Por fin</b> me acuesto.</td></tr></tbody></table>')
-P('<div class="truc"><b>🔴 Valstrik NL:</b> «dan/vervolgens» = <b>después / luego</b>, niet <i>entonces</i> (dat is «in dat geval»). Recyclen U1: «want/omdat» = <b>porque</b>.</div>')
+P('<div class="truc"><b>🔴 Trampa para neerlandeses:</b> «dan, vervolgens» es <b>después / luego</b>, no <i>entonces</i> (que significa «in dat geval»). Y de U1: «want, omdat» es <b>porque</b>. <span class="gloss">entonces betekent «in dat geval», niet «daarna».</span></div>')
 P(actx(1, "Ordena el día con conectores",
   [{"t":"✍️ Escribir","skill":True},{"t":"👤 Solo"},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Escribe un conector temporal (primero/después/luego/por fin). <span class="gloss">Vul een volgordewoord in.</span></p>'
@@ -1069,7 +1069,7 @@ P('</div>')  # page Cultura
 P('<div class="page"><div class="parada sec" style="border-top-color:var(--gd)">')
 P('<span class="num">✦</span><span class="pk" style="background:var(--gd)">Tarea final · Un día en mi vida</span>')
 P('<div class="intro"><b>ES:</b> Crea tu <b>«Un día en mi vida»</b>: un vlog o un texto con horario sobre un día tuyo. <span class="gloss">Maak je «een dag uit mijn leven»: vlog of tekst met dagindeling.</span></div>')
-P('<div class="route-note">🎯 <b>Communicatieve taak:</b> afzender = jij · ontvanger = de klas/Lucía · doel = je dag vertellen · situatie = een dag meelopen in Barcelona · resultaat = horario + vlog/tekst + gesproken presentatie.</div>')
+P('<div class="route-note">🎯 <b>Tarea comunicativa:</b> emisor = tú · destinatario = la clase y Lucía · objetivo = contar tu día · situación = un día en Barcelona · resultado = horario + vlog o texto + presentación oral. <span class="gloss">Afzender, ontvanger, doel, situatie en resultaat van deze taak.</span></div>')
 P(lpd(("3","doelgericht schrijven met een voorbeeld"), ("4","zich mondeling voorstellen"), ("7","woordenschat: hora/rutina"), ("8","reflexivos + presente irregular")))
 P('</div>')
 P('<ol class="pasos">'

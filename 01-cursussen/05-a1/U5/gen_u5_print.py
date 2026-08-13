@@ -412,7 +412,7 @@ P(f'''
   <div class="tab">U5 · ¡ÑAM!</div>
   <div class="eyebrow">UNIDAD 5 · LA RUTA · PARADA 5 — MÉXICO / CDMX 🇲🇽</div>
   <h1>¡Ñam!</h1>
-  <div class="sub">Cruzamos <b>el charco</b> y llegamos a <b>México</b>. Hoy praat je over <b>eten</b>: en el mercado, en el restaurante, y bestel je zoals een echte cliente. <span class="gloss">We steken de oceaan over naar Mexico. Vandaag: eten, de markt, het restaurant en bestellen.</span></div>
+  <div class="sub">Cruzamos <b>el charco</b> y llegamos a <b>México</b>. Hoy hablas de <b>comida</b>: en el mercado, en el restaurante, y pides como un cliente de verdad. <span class="gloss">We steken de oceaan over naar Mexico. Vandaag: eten, de markt, het restaurant en bestellen.</span></div>
   <div class="q">¿Qué vas a comer hoy? <span style="font-weight:400;opacity:.9">· Wat ga je vandaag eten?</span></div>
 </div>
 <div class="page">
@@ -431,7 +431,7 @@ P(f'''
       <div class="se">La historia</div>
       <div class="hist"><b>ES:</b> En <b>CDMX</b> hay olores y colores por todas partes. <b>Diego</b> te enseña el <b>mercado</b>: «¿<b>Cuánto</b> quieres? ¿<b>mucho</b> o <b>poco</b>?». Luego vais a un restaurante: «¿Qué <b>vas a tomar</b>?». Aprendes a <b>pedir</b> comida y bebida, y a pedir la <b>cuenta</b>.
       <span class="gloss">In CDMX ruikt en kleurt het overal. Diego toont je de markt en jullie gaan naar een restaurant. Je leert eten & drinken bestellen en de rekening vragen.</span></div>
-      <div class="ojo"><b>¡Ojo! — de valstrik van vandaag:</b> «lekker» = <b>rico/-a</b> (niet <span class="trap">sabroso</span> nodig), en «pikant» = <b>picante</b> — <i>let op:</i> <b>picante ≠ pica</b> nu niet «prikken». En je bestelt beleefd met <b>¿me pone…?</b> of <b>para mí…</b>, niet met «quiero» alleen.</div>
+      <div class="ojo"><b>¡Ojo! — la trampa de hoy:</b> «lekker» es <b>rico/-a</b> (no hace falta <span class="trap">sabroso</span>), y «pikant» es <b>picante</b>. Y pides con educación: <b>¿me pone…?</b> o <b>¿me trae…?</b>, nunca «quiero» a secas. <span class="gloss">rico voor lekker, picante voor pikant — en bestel beleefd.</span></div>
     </div>
     <div>
       <div class="se">La gente de la ruta</div>
@@ -549,7 +549,7 @@ P('<p style="font-size:9.6pt">② <b>El deslizador — de betekenisschuifregelaa
 P(scale(["nada","un poco de","bastante","mucho/-a"]))
 P('<p style="font-size:9.6pt">③ <b>Escala semántica — el tamaño de las porciones:</b></p>')
 P(scale(["una pizca","un poco de","medio kilo","un kilo de","mucho/-a"]))
-P('<div class="truc"><b>🔴 NL ↔ ES:</b> <b>mucho/poco</b> passen zich aan bij het woord: <b>much<span class="trap">o</span> pan</b> (m.) · <b>much<span class="trap">a</span> fruta</b> (v.) · <b>much<span class="trap">os</span> tomates</b> · <b>much<span class="trap">as</span> manzanas</b>. Maar <b>un poco de</b> verandert nooit: <i>un poco de pan / un poco de leche</i>.</div>')
+P('<div class="truc"><b>🔴 NL ↔ ES:</b> <b>mucho/poco</b> concuerdan con la palabra: <b>much<span class="trap">o</span> pan</b> (m.) · <b>much<span class="trap">a</span> fruta</b> (f.) · <b>much<span class="trap">os</span> tomates</b> · <b>much<span class="trap">as</span> manzanas</b>. Pero <b>un poco de</b> no cambia nunca: <i>un poco de pan / un poco de leche</i>. <span class="gloss">mucho past zich aan, un poco de nooit.</span></div>')
 P(obsbox([
   '<span class="hl">mucho</span> pan · <span class="hl">mucha</span> fruta <span class="gloss">(past bij m./v.)</span>',
   '<span class="hl">muchos</span> tomates · <span class="hl">muchas</span> manzanas <span class="gloss">(meervoud)</span>',
@@ -789,7 +789,7 @@ retos("pedir", "§3.4 · Retos — pedir cuando todo sale mal",
 # ================= §4 · OD-PRONOMBRES (la cuenta → la traigo) =================
 P('<div class="page"><div class="parada sec">')
 P('<span class="num">4</span><span class="pk">§4 · La cuenta → la traigo · lo / la / los / las</span>')
-P('<div class="intro"><b>ES:</b> Voor niet steeds hetzelfde te herhalen, vervang je het <b>voorwerp</b> door <b>lo/la/los/las</b>. La ruta: contexto → radiografía → contraste → practicar. <span class="gloss">Om herhaling te vermijden vervang je het lijdend voorwerp door lo/la/los/las (A2-aanzet).</span></div>')
+P('<div class="intro"><b>ES:</b> Para no repetir siempre lo mismo, sustituyes el <b>objeto</b> por <b>lo/la/los/las</b>. La ruta: contexto → radiografía → contraste → practicar. <span class="gloss">Om herhaling te vermijden vervang je het lijdend voorwerp door lo/la/los/las.</span></div>')
 P(lpd(("8","taalsysteem: OD-pronomen (aanzet)"), ("4","interactie in de dialoog"), ("3","zinnen herschrijven")))
 P('</div>')
 P('<h3 style="margin-top:6mm">§4.1 · La radiografía — ¿qué reemplaza «la»?</h3>')
@@ -804,7 +804,7 @@ P(xray('¿Me trae la cuenta? — Sí, <span class="fx ob">la</span> <span class=
        [("la","= la cuenta (v. ev.)"),("traigo","werkwoord traer"),("→","geen herhaling!")]))
 P('<p style="font-size:9.6pt">③ <b>Contrastes mínimos — de vier vormen:</b></p>')
 P(vpairs([("el pan → lo","la carta → la"),("los tacos → los","las gambas → las"),("el postre → lo traigo","la cuenta → la traigo"),("¿el café? → lo pido","¿la sopa? → la pido")]))
-P('<div class="truc"><b>🔴 Concordancia:</b> <b>lo</b> (m. ev.) · <b>la</b> (v. ev.) · <b>los</b> (m. mv.) · <b>las</b> (v. mv.). Het pronomen staat <b>vóór</b> het werkwoord: <i>La traigo</i> (niet <span class="trap">traigo la</span>).</div>')
+P('<div class="truc"><b>🔴 Concordancia:</b> <b>lo</b> (m. sing.) · <b>la</b> (f. sing.) · <b>los</b> (m. pl.) · <b>las</b> (f. pl.). El pronombre va <b>delante</b> del verbo: <i>La traigo</i>, no <span class="trap">traigo la</span>. <span class="gloss">Het pronomen staat vóór het werkwoord.</span></div>')
 P(regla("Regla · lo / la / los / las (OD-aanzet)",
   '<p>Om het <b>voorwerp</b> niet te herhalen: <b>lo</b> (m. ev.), <b>la</b> (v. ev.), <b>los</b> (m. mv.), <b>las</b> (v. mv.). '
   'Het staat <b>vóór</b> het vervoegde werkwoord: <i>¿La cuenta? — La traigo.</i> · <i>¿Los tacos? — Los quiero.</i></p>'))
@@ -939,7 +939,7 @@ P(actx(1, "Une la receta con conectores",
   '<p>Escribe el conector correcto (primero/luego/después/por último). <span class="gloss">Vul het juiste volgordewoord in.</span></p>'
   '<p style="margin-left:12.5mm">___ , pon el arroz en el agua. ___ , añade la sal. ___ , espera 15 minutos. ___ , ¡a comer!<br><span class="wl full"></span></p>', apoyo="Banco de palabras"))
 P('<h3 style="margin-top:6mm">Ortografía · la ñ y los sonidos de la comida</h3>')
-P('<div class="truc"><b>🔴 La ñ:</b> <b>ñ</b> klinkt als «nj»: <b>ñam-ñam</b>, la <b>pi<span class="trap">ñ</span>a</b>, el <b>ni<span class="trap">ñ</span>o</b>. Verwar niet met <b>n</b>: <i>pena</i> ≠ <i>peña</i>.</div>')
+P('<div class="truc"><b>🔴 La ñ:</b> la <b>ñ</b> suena «nj»: <b>ñam-ñam</b>, la <b>pi<span class="trap">ñ</span>a</b>, el <b>ni<span class="trap">ñ</span>o</b>. No la confundas con la <b>n</b>: <i>pena</i> ≠ <i>peña</i>. <span class="gloss">Het streepje verandert de klank én de betekenis.</span></div>')
 P(actx(2, "¿n o ñ?",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Escribe <b>n</b> o <b>ñ</b>. <span class="gloss">Vul n of ñ in.</span></p>'
@@ -1024,7 +1024,7 @@ retos("cultura_u5", "Retos — la cocina que no se mide",
 P('<div class="page"><div class="parada sec" style="border-top-color:var(--gd)">')
 P('<span class="num">✦</span><span class="pk" style="background:var(--gd)">Tarea final · La carta</span>')
 P('<div class="intro"><b>ES:</b> Crea la <b>carta</b> de tu propio restaurante: primeros, segundos, postres y bebidas con <b>precios</b>. Luego, un compañero <b>pide</b> y tú eres el <b>camarero</b>. <span class="gloss">Maak je eigen menukaart en speel de restaurantscène.</span></div>')
-P('<div class="route-note">🎯 <b>Communicatieve taak:</b> afzender = jij (het restaurant) · ontvanger = de cliente · doel = een menu aanbieden & een bestelling opnemen · situatie = un restaurante en CDMX · resultaat = ingevulde carta + gespeelde dialoog.</div>')
+P('<div class="route-note">🎯 <b>Tarea comunicativa:</b> emisor = tú (el restaurante) · destinatario = el cliente · objetivo = ofrecer un menú y tomar nota · situación = un restaurante en CDMX · resultado = carta rellena + diálogo representado. <span class="gloss">Afzender, ontvanger, doel, situatie en resultaat van deze taak.</span></div>')
 P(lpd(("3","doelgericht schrijven met een voorbeeld"), ("4","mondeling interageren (bestellen)"), ("7","woordenschat comida/restaurante"), ("8","cantidades · ir a + inf. · cortesía")))
 P('</div>')
 P('<ol class="pasos">'

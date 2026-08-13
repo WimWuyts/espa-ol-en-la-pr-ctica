@@ -59,7 +59,7 @@ P(f'''
   <div class="tab">U4 · DE VIAJE</div>
   <div class="eyebrow">UNIDAD 4 · LA RUTA · CHILE 🇨🇱 · DE VIAJE ✈️</div>
   <h1>De viaje</h1>
-  <div class="sub">De reis gaat verder naar het zuiden: <b>Chile</b> en de hele Spaanstalige wereld. Je leert praten over <b>recente ervaringen</b> met de <b>pretérito perfecto compuesto</b> (<b>he estado</b> en Perú, <b>he visto</b> la catedral), de <b>participios</b> (regelmatig én onregelmatig) en het verschil tussen <b>por</b> en <b>para</b>. <span class="gloss">De eerste échte verleden tijd: de voltooide tijd (haber + deelwoord), plus por/para en reiswoordenschat.</span></div>
+  <div class="sub">El viaje sigue hacia el sur: <b>Chile</b> y todo el mundo hispano. Aprendes a hablar de <b>experiencias recientes</b> con el <b>pretérito perfecto compuesto</b> (<b>he estado</b> en Perú, <b>he visto</b> la catedral), los <b>participios</b> y los marcadores del perfecto. <span class="gloss">Praten over wat je onlangs gedaan hebt.</span></div>
   <div class="q">¿Has viajado alguna vez a un país hispano? <span style="font-weight:400;opacity:.9">· Ben je ooit naar een Spaanstalig land gereisd?</span></div>
 </div>
 <div class="page">
@@ -78,7 +78,7 @@ P(f'''
       <div class="se">La historia</div>
       <div class="hist"><b>ES:</b> Todos <b>han hecho</b> un viaje. Aprendes a contar <b>qué has hecho</b> hoy, esta semana o alguna vez: <i>he viajado, he probado la comida, he sacado fotos</i>. Distingues <b>por</b> (medio, duración: por avión, por dos días) de <b>para</b> (destino, objetivo: para Chile, para descansar). Al final: escribes sobre <b>tu mejor viaje</b>.
       <span class="gloss">Iedereen heeft een reis gemaakt. Je leert vertellen wat je (ooit/vandaag) gedaan hebt, en het verschil tussen por en para. Eindtaak: over je mooiste reis schrijven.</span></div>
-      <div class="ojo"><b>¡Ojo! — twee valstrikken meteen scherp:</b> ① De <b>perfecto</b> = <b>haber</b> (he/has/ha…) + <b>participio</b>. <b>haber</b> is niet <i>tener</i>! (<i>he comido</i>, niet <span class="trap">tengo comido</span>). ② Enkele participios zijn <b>onregelmatig</b>: hacer→<b>hecho</b>, ver→<b>visto</b>, decir→<b>dicho</b>, volver→<b>vuelto</b>. <span class="gloss">haber + participio · onregelmatige deelwoorden uit het hoofd.</span></div>
+      <div class="ojo"><b>¡Ojo! — dos trampas desde el primer día:</b> ① El <b>perfecto</b> es <b>haber</b> (he/has/ha…) + <b>participio</b>. ¡<b>haber</b> no es <i>tener</i>! (<i>he comido</i>, no <span class="trap">tengo comido</span>). ② Algunos participios son <b>irregulares</b>: hecho, visto, dicho, escrito, vuelto. <span class="gloss">Het hulpwerkwoord is haber, en een paar deelwoorden zijn onregelmatig.</span></div>
     </div>
     <div>
       <div class="se">La gente de la ruta</div>
@@ -124,9 +124,9 @@ P(f'''
 ''')
 
 # ================= §0 · ¡PONTE AL DÍA! =================
-sec_open("0", "§0 · ¡Ponte al día!", 'Activamos dos dingen: het <b>presente</b> van hoogfrequente werkwoorden (die je straks als participio nodig hebt) en <b>ir a + infinitivo</b> (U3) — want een reis heeft ook plannen. <span class="gloss">We frissen het presente en ir a + infinitivo op; die heb je nodig voor de reis.</span>',
+sec_open("0", "§0 · ¡Ponte al día!", 'Activamos dos cosas: el <b>presente</b> de los verbos más frecuentes (los vas a necesitar como participio) y <b>ir a + infinitivo</b> (U3), porque un viaje también tiene planes. <span class="gloss">We frissen het presente en ir a + infinitivo op; die heb je nodig voor de reis.</span>',
         lpd(("8","taalsysteem: presente/ir a (repaso)"), ("7","woordenschat")))
-P('<div class="truc"><b>Repaso → perfecto (U4):</b> je kent het presente. In U4 komt de <b>voltooide tijd</b>: <b>haber</b> (he/has/ha…) + <b>participio</b>. <i>Como paella → <b>He comido</b> paella.</i> Het is je <b>eerste verleden tijd</b> — de brug naar U5–U6.</div>')
+P('<div class="truc"><b>Repaso → perfecto (U4):</b> ya conoces el presente. En U4 llega el <b>pretérito perfecto</b>: <b>haber</b> (he/has/ha…) + <b>participio</b>. <i>Como paella → <b>He comido</b> paella.</i> Es tu <b>primer pasado</b>, el puente hacia U5 y U6. <span class="gloss">Je eerste verleden tijd — de brug naar U5 en U6.</span></div>')
 P(actx(AN(), "Presente · verbos del viaje (repaso)",
   [{"t":"🔍 Analizar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★☆☆"}],
   '<p>Vervoeg in de tegenwoordige tijd.</p>'
@@ -142,7 +142,7 @@ P(actx(AN(), "Mis planes de viaje · ir a + infinitivo (repaso)",
 sec_close()
 
 # ================= §1 · TRANSPORTE Y ALOJAMIENTO =================
-sec_open("1", "§1 · Transporte y alojamiento", 'Het vocabulaire van de reis: het <b>vervoer</b> (el avión, el tren, el billete), het <b>verblijf</b> (el hotel, la reserva, la llave) en de <b>plekken</b> (la playa, la montaña, el museo). <span class="gloss">De woorden van vervoer, verblijf en reisbestemmingen.</span>',
+sec_open("1", "§1 · Transporte y alojamiento", 'El vocabulario del viaje: el <b>transporte</b> (el avión, el tren, el billete), el <b>alojamiento</b> (el hotel, la reserva, la llave) y los <b>lugares</b> (la playa, la montaña, el museo). <span class="gloss">De woorden van vervoer, verblijf en reisbestemmingen.</span>',
         lpd(("7","woordenschat: el viaje"), ("8","taalsysteem: género & artículos")))
 P('<div class="se">El mundo del viaje <span class="gloss" style="font-size:8pt">— netwerk in clusters</span></div>')
 P('<div class="clusters" style="grid-template-columns:1fr 1fr 1fr">'
@@ -186,7 +186,7 @@ retos("viaje_c6p", "§1.4 · Retos — el viaje que empieza en el mostrador",
       'Een geannuleerde vlucht waarin jullie allebei gelijk hebben, twee recensies van dezelfde hostel met dezelfde acht gegevens, en een stationsomroep.')
 
 # ================= §2 · PERFECTO COMPUESTO =================
-sec_open("2", "§2 · El pretérito perfecto compuesto", 'Voor <b>recente ervaringen</b> en «wat je ooit gedaan hebt»: <b>haber</b> (he/has/ha/hemos/habéis/han) + <b>participio</b> (-ado/-ido). <i>He viajado a Chile. ¿Has visto el mar?</i> <span class="gloss">De voltooide tijd: haber + deelwoord. Je eerste verleden tijd.</span>',
+sec_open("2", "§2 · El pretérito perfecto compuesto", 'Para <b>experiencias recientes</b> y para «lo que has hecho alguna vez»: <b>haber</b> (he/has/ha/hemos/habéis/han) + <b>participio</b> (-ado/-ido). <i>He viajado a Chile. ¿Has visto el mar?</i> <span class="gloss">De voltooide tijd: haber + deelwoord. Je eerste verleden tijd.</span>',
         lpd(("8","taalsysteem: perfecto compuesto"), ("7","woordenschat: experiencias"), ("3","spreken: ervaringen")))
 
 # §2.1 el sistema
@@ -239,7 +239,7 @@ P('<table class="conj"><thead><tr><th>Infinitivo</th><th>Participio</th><th>Ejem
   '<tr><td>poner</td><td class="v">puesto</td><td class="gloss">Ha puesto la maleta aquí.</td></tr>'
   '<tr><td>escribir</td><td class="v">escrito</td><td class="gloss">He escrito una postal.</td></tr>'
   '<tr><td>abrir</td><td class="v">abierto</td><td class="gloss">Han abierto el museo.</td></tr></tbody></table>')
-P('<div class="truc"><b>¡Ojo! acentos:</b> na een klinker draagt de <b>i</b> een accent: leer → <b>leído</b>, oír → <b>oído</b>, creer → <b>creído</b>, caer → <b>caído</b>. (viajar → viajado, gewoon.)</div>')
+P('<div class="truc"><b>¡Ojo, acentos!</b> Después de una vocal, la <b>i</b> lleva tilde: leer → <b>leído</b>, oír → <b>oído</b>, creer → <b>creído</b>, caer → <b>caído</b>. (viajar → viajado, sin tilde.) <span class="gloss">Na een klinker krijgt de i een accent.</span></div>')
 P(actx(AN(), "Empareja: infinitivo ↔ participio",
   [{"t":"🔗 Emparejar","skill":True},{"t":"👤 Solo"},{"t":"± 3 min"},{"t":"★★☆"}],
   '<p>Une cada verbo con su participio irregular. <span class="gloss">Verbind met het onregelmatige deelwoord.</span></p>'
@@ -371,7 +371,7 @@ retos("por_para", "§3.4 · Retos — por dónde y para qué",
       'Acht stempels zonder uitleg, zeshonderd euro voor tien dagen, en zeven kilo voor dertig dagen.')
 
 # ================= §4 · EXPERIENCIAS Y LUGARES =================
-sec_open("4", "§4 · Experiencias y lugares", 'Vertel wat je <b>ooit</b> (of <b>nog niet</b>) hebt gedaan: met <b>ya</b> (al), <b>todavía no</b> (nog niet), <b>nunca</b> (nooit), <b>alguna vez</b> (ooit). <i>¿Has estado alguna vez en Perú? — Todavía no.</i> <span class="gloss">Ervaringen met ya/todavía no/nunca/alguna vez + reisbestemmingen.</span>',
+sec_open("4", "§4 · Experiencias y lugares", 'Cuenta lo que has hecho <b>alguna vez</b> (o lo que <b>todavía no</b>): con <b>ya</b>, <b>todavía no</b>, <b>nunca</b>, <b>alguna vez</b>. <i>¿Has estado alguna vez en Perú? — Todavía no.</i> <span class="gloss">Ervaringen met ya, todavía no, nunca en alguna vez.</span>',
         lpd(("7","woordenschat: lugares/experiencias"), ("4","interactie: preguntar por experiencias"), ("3","spreken")))
 P('<div class="se">Los marcadores del perfecto</div>')
 P('<div class="fams three" style="margin-top:1mm">'
@@ -482,7 +482,7 @@ P(PB.escucha_print(ED.C6P_U4, AN()))
 P('</div>')
 
 # ================= CULTURA =================
-sec_open("C", "Cultura · el gran viaje hispano", 'La Spaanstalige wereld staat vol <b>reisiconen</b>: het <b>desierto de Atacama</b> (Chile), <b>Machu Picchu</b> (Perú), het <b>Camino de Santiago</b> (España) en <b>Rapa Nui</b> met haar moáis. <span class="gloss">De grote reisbestemmingen van de hispanofoon.</span>',
+sec_open("C", "Cultura · el gran viaje hispano", 'El mundo hispano está lleno de <b>iconos de viaje</b>: el <b>desierto de Atacama</b> (Chile), <b>Machu Picchu</b> (Perú), el <b>Camino de Santiago</b> (España) y <b>Rapa Nui</b> con sus moáis. <span class="gloss">De grote reisbestemmingen van de Spaanstalige wereld.</span>',
         lpd(("5","identiteit in diversiteit: el gran viaje hispano")))
 P('<div class="fams three" style="margin-top:2mm">'
   '<div class="pcard"><div class="t">🏜️ El desierto de Atacama</div><div class="ej" style="margin-top:2mm">In <b>Chile</b> ligt de <b>droogste woestijn</b> ter wereld. \'s Nachts zie je er de helderste sterrenhemel — er staan grote sterrenwachten. Nina «ha estado» er.</div></div>'
