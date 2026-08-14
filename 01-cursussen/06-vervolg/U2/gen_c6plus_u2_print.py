@@ -360,11 +360,13 @@ P(actx(AN(), "La familia de Valen · ¿qué están haciendo?",
   '<tr><td>el hermano · el dormitorio (dormir)</td><td><span class="wl lg"></span></td></tr>'
   '<tr><td>tú · ¿? </td><td><span class="wl lg"></span></td></tr></tbody></table>',
   apoyo="Marco: … está + -ando / -iendo"))
+P(audiorow('<div class="ic">🎧</div><div><b>Escanea y escribe.</b> El dictado está en la página digital: <b>1ª vez</b> la frase entera, <b>2ª vez</b> por trozos. <span class="gloss">Het dictee staat online: eerst de hele zin, dan in stukken.</span></div>',
+           qr("Escanea y escucha", '§3.3 · Dictado · ¿qué está pasando?', seed=203)))
 P(actx(AN(), "Dictado · ¿qué está pasando?",
   [{"t":"👂 Escuchar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Escucha y escribe las cinco frases (con estar + gerundio). <span class="gloss">Luister en schrijf de vijf zinnen.</span></p>'
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span>4. <span class="wl full"></span>5. <span class="wl full"></span></p>',
-  apoyo="docent leest voor"))
+  apoyo="1ª de zin heel · 2ª in stukken"))
 P(actx("★", "Tarea comunicativa · llamada de vídeo",
   [{"t":"🎙️ Hablar","skill":True},{"t":"👥 En parejas"},{"t":"± 5 min"},{"t":"★★★"}],
   '<p>Haces una videollamada a tu compañero/a. Pregunta «¿Qué estás haciendo?» y contesta con <b>estar + gerundio</b>. Anota dos respuestas. <span class="gloss">Videogesprek: vraag en antwoord met estar + gerundio.</span></p>'

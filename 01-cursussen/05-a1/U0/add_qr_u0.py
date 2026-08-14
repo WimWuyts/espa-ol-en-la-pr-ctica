@@ -34,11 +34,65 @@ PATRON = re.compile(
     re.S)
 
 
+def escucha(doc):
+    """Zet de code naar het lange fragment op de plaats van de tekstverwijzing.
+
+    De zestien units met generator krijgen die kaart uit `print_bloques`; U0
+    heeft geen generator, dus staat ze hier. Waarom ze er hoort: alle korte
+    audiotaken hadden hun eigen code, maar «En la puerta de embarque» — de
+    luistertaak van twintig minuten — had alleen de zin «zie de digitale
+    pagina». Herhaalbaar: staat de code er al, dan gebeurt er niets.
+    """
+    import escucha_data as ED
+    import print_bloques as PB
+    if ED.C5_U0["ancla"] in doc:
+        return doc, False
+    patron = re.compile(
+        r'<div class="qb"[^>]*>(?:(?!</div>\s*</div>).)*?het fragment beluisteren'
+        r'.*?</span>\s*</div>', re.S)
+    nuevo, n = patron.subn(lambda _m: PB._qr_escucha(ED.C5_U0), doc, count=1)
+    return nuevo, bool(n)
+
+
+def dictado(doc):
+    """Zet de code naar het cijferdictee boven de oefening.
+
+    «Dictado de números» stond in het boek met «la mochila lee un listado» en
+    verder niets: wie thuis oefende had een luisteroefening zonder geluid. Het
+    fragment bestaat nu (C5-U0-AUD-10); dit legt de code ernaartoe.
+    """
+    import escucha_corta_data as EC
+    frag = [f for f in EC.CORTOS[("C5", 0)] if f["id"] == "C5-U0-AUD-10"][0]
+    if frag["ancla"] in doc:
+        return doc, False
+    llamada = ('<div class="ic">🎧</div><div><b>Escanea y escribe.</b> El dictado está '
+               'en la página digital: <b>1ª vez</b> la frase entera, <b>2ª vez</b> por '
+               'trozos. <span class="gloss">Het dictee staat online: eerst de hele zin, '
+               'dan in stukken.</span></div>')
+    fila = ('<div class="audiorow"><div class="call">%s</div>%s</div>\n\n  '
+            % (llamada, EN.tarjeta_qr(EN.url("C5", 0, frag["ancla"]),
+                                      "Escanea y escucha", frag["etiqueta"])))
+    i = doc.find("Dictado de números")
+    if i < 0:
+        return doc, False
+    j = doc.rfind('<div class="act">', 0, i)
+    if j < 0:
+        return doc, False
+    return doc[:j] + fila + doc[j:], True
+
+
 def main():
     QRP.fijar("C5", 0)
     doc = open(DOEL, encoding="utf-8").read()
     if 'data-url=' in doc:
-        print("U0.html is al bijgewerkt — niets gedaan")
+        doc, cambiado = escucha(doc)
+        doc, cambiado2 = dictado(doc)
+        cambiado = cambiado or cambiado2
+        if cambiado:
+            open(DOEL, "w", encoding="utf-8").write(doc)
+            print("U0.html: codes naar het lange fragment en het cijferdictee gelegd")
+        else:
+            print("U0.html is al bijgewerkt — niets gedaan")
         return
 
     hechos = []

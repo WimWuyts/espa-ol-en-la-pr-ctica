@@ -77,6 +77,8 @@ def escucha_js(host_id, frag):
     """
     cfg = {
         "title": frag["titulo"],
+        # het anker waar de QR uit het boek op uitkomt — zie buildEscucha
+        "ancla": frag["ancla"],
         "audio": frag["audio"],
         "expectDetalle": 5,
         "situacion": frag["situacion"],

@@ -384,11 +384,13 @@ P(actx(AN(), "Completa el relato con conectores",
   '<p>Completa con <b>érase una vez · primero · después · entonces · al final</b>. <span class="gloss">Vul de vertelwoorden aan.</span></p>'
   '<p style="margin-left:12.5mm"><span class="wl md"></span> un niño pobre. <span class="wl sm"></span> creció en un pueblo. <span class="wl sm"></span> se mudó a la ciudad. <span class="wl sm"></span> empezó a cantar. <span class="wl sm"></span>, se hizo famoso.</p>',
   apoyo="Banco de palabras"))
+P(audiorow('<div class="ic">🎧</div><div><b>Escanea y escribe.</b> El dictado está en la página digital: <b>1ª vez</b> la frase entera, <b>2ª vez</b> por trozos. <span class="gloss">Het dictee staat online: eerst de hele zin, dan in stukken.</span></div>',
+           qr("Escanea y escucha", '§2.3 · Dictado · una minibiografía', seed=503)))
 P(actx(AN(), "Dictado · una minibiografía",
   [{"t":"👂 Escuchar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Escucha y escribe las cinco frases (con el indefinido). <span class="gloss">Luister en schrijf de vijf zinnen.</span></p>'
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span>4. <span class="wl full"></span>5. <span class="wl full"></span></p>',
-  apoyo="docent/audio leest voor"))
+  apoyo="1ª de zin heel · 2ª in stukken"))
 P(actx("★", "Info-gap · adivina el personaje",
   [{"t":"🗣️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
   '<p>A describe a un personaje con el indefinido (nació…, ganó…, escribió…) sin decir el nombre; B adivina. Después cambiad. <span class="gloss">A beschrijft zonder naam, B raadt.</span> Noteer wie het is.</p>'

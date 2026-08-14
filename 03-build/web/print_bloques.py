@@ -220,6 +220,24 @@ def lectura_print(t, num, sola=False):
         puntero("Lectura", "de tekst met zelfcorrectie en de vertaling"))
 
 
+def _qr_escucha(f):
+    """De QR-kaart naar het lange fragment op de hub.
+
+    Deze stond er niet, en dat was het enige echte gat in de audioketen: alle
+    korte taken hadden hun code, maar de langste luistertaak van de unit — de
+    twintig minuten met voorspellen, twee beluisteringen en transcript — had
+    alleen een zin «zie de digitale pagina». Zeventien units, zeventien keer.
+    Het anker zit al in `escucha_data`; hier wordt het een code.
+    """
+    import qr_print as QRP
+    tarjeta = QRP.qr("Escuchar 🎧", f["titulo"], ancla=f["ancla"])
+    return ('<div class="audiorow"><div class="call"><div class="ic">🎧</div>'
+            '<div><b>Escanea y escucha.</b> El audio, la transcripción y las '
+            'mismas tareas — que se corrigen solas — están en la página digital. '
+            '<span class="gloss">Scan de code: het fragment, het transcript en '
+            'dezelfde taken met zelfcorrectie.</span></div></div>%s</div>' % tarjeta)
+
+
 def escucha_print(f, num, qr_html=None):
     """Het luisterfragment op papier: alle taken met antwoordruimte, en het
     transcript expres NIET — dat staat op de hub, ná de taken. Meelezen tijdens
@@ -260,4 +278,4 @@ def escucha_print(f, num, qr_html=None):
         det, vf,
         f["produccion"]["prompt"],
         APO.html("Escanea el QR para escuchar", margen=""),
-        qr_html if qr_html is not None else puntero("Escuchar 🎧", "het fragment beluisteren en het transcript"))
+        qr_html if qr_html is not None else _qr_escucha(f))

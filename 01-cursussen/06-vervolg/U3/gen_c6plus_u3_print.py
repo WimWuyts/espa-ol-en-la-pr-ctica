@@ -476,11 +476,13 @@ P(actx(AN(), "Completa el chat de planes",
   '<p style="margin-left:12.5mm">— ¡Hola! ¿<span class="wl sm"></span> el sábado? &nbsp; — ¡Vale! ¿Qué <span class="wl sm"></span> hacer?<br>'
   '— <span class="wl sm"></span> ir al centro y luego <span class="wl sm"></span> escribo a Diego para invitarlo. &nbsp; — Genial, <span class="wl sm"></span> comer tacos juntos.</p>',
   apoyo="Banco de palabras"))
+P(audiorow('<div class="ic">🎧</div><div><b>Escanea y escribe.</b> El dictado está en la página digital: <b>1ª vez</b> la frase entera, <b>2ª vez</b> por trozos. <span class="gloss">Het dictee staat online: eerst de hele zin, dan in stukken.</span></div>',
+           qr("Escanea y escucha", '§4 · Dictado · un plan para el finde', seed=303)))
 P(actx(AN(), "Dictado · un plan para el finde",
   [{"t":"👂 Escuchar","skill":True},{"t":"✍️ Escribir","skill":True},{"t":"± 4 min"},{"t":"★★☆"}],
   '<p>Escucha y escribe las cinco frases (con ir a / le / acabar de). <span class="gloss">Luister en schrijf de vijf zinnen.</span></p>'
   '<p style="margin-left:12.5mm">1. <span class="wl full"></span>2. <span class="wl full"></span>3. <span class="wl full"></span>4. <span class="wl full"></span>5. <span class="wl full"></span></p>',
-  apoyo="docent/audio leest voor"))
+  apoyo="1ª de zin heel · 2ª in stukken"))
 P(actx("★", "Info-gap · organizamos el finde",
   [{"t":"🗣️ Interacción","skill":True},{"t":"👥 En parejas"},{"t":"± 6 min"},{"t":"★★★"}],
   '<p>A y B hacen juntos un plan para el fin de semana: proponed (voy a… / ¿quedamos…?) y decidid día, hora y lugar. <span class="gloss">Maak samen een weekendplan.</span> Noteer het afgesproken plan.</p>'

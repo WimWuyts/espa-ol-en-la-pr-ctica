@@ -7,7 +7,7 @@ die staat er alleen bij als betekenis.
 > bestand op precies dat pad, onder `03-build/web/`. Klopt de naam niet, dan
 > blijft de browserstem spelen en merk je het pas in de klas.
 
-59 fragmenten · 818 regels in totaal.
+65 fragmenten · 890 regels in totaal.
 
 
 ---
@@ -420,6 +420,32 @@ Narradora: Mateo es argentino.
 ```
 
 <sub>Blok: ortografia. · het alfabet · de letter · spellen · de klinker · de medeklinker · de lettergreep · de klemtoonlettergreep · het accent(streepje) · het hoedje (= de tilde) · klemtoon op de laatste · klemtoon op de voorlaatste · klemtoon op de derde van achter · het eenlettergrepige woord · de hoofdletter · de kleine letter · het deelteken (op ü) · de klankcombinatie / digraaf · het apenstaartje · het koppelteken · met / zonder accent · met b/v · met/zonder h · Blok: numeros. · 11 once · 21 veintiuno · 40 cuarenta · het getal / nummer · tellen · nul · honderd · zestien / tweeëntwintig · vijfendertig · Blok: edad. · de leeftijd · … jaar zijn (lett. hebben) · Hoe oud ben je? · Blok: saludos. · Hallo! · Goedemorgen · Goeiemiddag · Goedenavond / -nacht · Hoe gaat het? · Hoe gaat het (met je)? · (Heel) goed, dank je. En jij? · Dag / Tot ziens · Tot straks · Tot morgen · Doei · Blok: presentarse. · Ik heet … · Ik ben … · Hoe heet jij? · En jij? · Aangenaam (m / v) · Aangenaam · Insgelijks · Dit is … (hij / zij) · Ik kom uit … · Blok: clase. · (Heel erg) bedankt · Alsjeblieft / a.u.b. · Hoe zeg je «…» in het Spaans? · Wat betekent «…»? · Ik begrijp het niet · Kun je herhalen, a.u.b.? · Trager, a.u.b. · Ik weet het niet · Hoe schrijf je dat? · Ik heb een vraag · Blok: mundo hispano. · de Spaanstalige wereld · het land · de taal · het Spaans · Spaanstalig(e) · het cognaat / transparant woord · de route · de halte/etappe · Blok: paises. · België → Belg(isch) · Spanje → Spaans · Mexico → Mexicaans · Colombia → Colombiaans · Peru → Peruaans · Argentinië → Argentijns</sub>
+
+### C5 U0 · Dictado de números — ocho cifras
+
+| | |
+|---|---|
+| **Bestandsnaam** | `audio/C5_U0_10.mp3` |
+| **Waar in de cursus** | §3 · Los números |
+| **Sprekers** | Narradora |
+| **Wat de leerling doet** | 1ª ronde: luister naar de hele zin. 2ª ronde: dezelfde zin in stukken — nu schrijf je mee. Vijf zinnen. |
+
+```
+Narradora: Primera ronda: la frase entera. Solo escucha.
+Narradora: 1. Tengo dieciséis años.
+Narradora: 2. En mi clase somos veintisiete.
+Narradora: 3. El vuelo sale a las quince cuarenta.
+Narradora: 4. Mi número es el seis, cinco, cuatro, tres, dos, uno.
+Narradora: 5. La puerta de embarque es la treinta y uno.
+Narradora: Segunda ronda: la misma frase, por trozos. Ahora escribe.
+Narradora: 1. Tengo ... dieciséis años
+Narradora: 2. En mi clase ... somos veintisiete
+Narradora: 3. El vuelo sale ... a las quince cuarenta
+Narradora: 4. Mi número es el seis, cinco, cuatro, ... tres, dos, uno
+Narradora: 5. La puerta de embarque ... es la treinta y uno
+```
+
+<sub>Eerste ronde: de hele zin. Alleen luisteren. · 1. Ik ben zestien. · 2. In mijn klas zijn we met zevenentwintig. · 3. De vlucht vertrekt om vijftien uur veertig. · 4. Mijn nummer is zes, vijf, vier, drie, twee, één. · 5. De gate is nummer eenendertig. · Tweede ronde: dezelfde zin, in stukken. Nu schrijven. · 1. (in stukken) · 2. (in stukken) · 3. (in stukken) · 4. (in stukken) · 5. (in stukken)</sub>
 
 ### C5 U0 · En la puerta de embarque
 
@@ -1180,6 +1206,32 @@ Mateo: Buenas. Yo soy Mateo, de Argentina. Vivo en Buenos Aires. Soy argentino y
 
 <sub>Hallo, ik ben Diego. Ik kom uit Mexico, uit Mexico-Stad. Ik ben Mexicaan en ik spreek Spaans. Op school studeer ik ook Engels. · Hallo! Ik heet Lucía. Ik kom uit Spanje, ik woon in Sevilla. Ik ben Spaanse en ik spreek Spaans en Engels. · Hoi. Ik ben Mateo, uit Argentinië. Ik woon in Buenos Aires. Ik ben Argentijn en ik spreek Spaans en Italiaans, want mijn oma komt uit Italië.</sub>
 
+### C6+ U0 · Dictado corto — cinco frases en presente
+
+| | |
+|---|---|
+| **Bestandsnaam** | `audio/C6plus_U0_04.mp3` |
+| **Waar in de cursus** | §2.3 · Los otros irregulares clave |
+| **Sprekers** | Narradora |
+| **Wat de leerling doet** | 1ª ronde: luister naar de hele zin. 2ª ronde: dezelfde zin in stukken — nu schrijf je mee. Vijf zinnen. |
+
+```
+Narradora: Primera ronda: la frase entera. Solo escucha.
+Narradora: 1. Me llamo Nina y soy peruana.
+Narradora: 2. Vivimos en un piso pequeño, cerca del instituto.
+Narradora: 3. Mis amigos son simpáticos y hablan tres lenguas.
+Narradora: 4. ¿De dónde eres tú y qué estudias?
+Narradora: 5. Hoy tengo clase de español a las nueve.
+Narradora: Segunda ronda: la misma frase, por trozos. Ahora escribe.
+Narradora: 1. Me llamo Nina ... y soy peruana
+Narradora: 2. Vivimos en un piso pequeño, ... cerca del instituto
+Narradora: 3. Mis amigos son simpáticos ... y hablan tres lenguas
+Narradora: 4. ¿De dónde eres tú ... y qué estudias?
+Narradora: 5. Hoy tengo clase de español ... a las nueve
+```
+
+<sub>Eerste ronde: de hele zin. Alleen luisteren. · 1. Ik heet Nina en ik ben Peruaanse. · 2. We wonen in een klein appartement, dicht bij de school. · 3. Mijn vrienden zijn aardig en spreken drie talen. · 4. Waar kom jij vandaan en wat studeer je? · 5. Vandaag heb ik Spaanse les om negen uur. · Tweede ronde: dezelfde zin, in stukken. Nu schrijven. · 1. (in stukken) · 2. (in stukken) · 3. (in stukken) · 4. (in stukken) · 5. (in stukken)</sub>
+
 ### C6+ U0 · El primer día de curso
 
 | | |
@@ -1326,6 +1378,32 @@ Turista: ¡Muchas gracias!
 
 <sub>Sorry, hoe geraak ik op het hoofdplein? Ik ben verdwaald. · Rustig, het is dichtbij. Kijk: volg deze straat rechtdoor. · Tot het einde? · Tot het verkeerslicht, ja. Sla daar linksaf. · Daarna steek je het kleine brugje over en neem je de tweede straat rechts. · De tweede, oké. En dan? · Dan loop je vóór de gele kerk langs. Het plein ligt er vlak achter. · Is het ver te voet? · Nee, een minuut of tien. En als je opnieuw verdwaalt, vraag het in de kiosk. · Heel erg bedankt!</sub>
 
+### C6+ U2 · Dictado — cinco frases con estar + gerundio
+
+| | |
+|---|---|
+| **Bestandsnaam** | `audio/C6plus_U2_03.mp3` |
+| **Waar in de cursus** | §3.3 · ¿Qué están haciendo en casa? |
+| **Sprekers** | Narradora |
+| **Wat de leerling doet** | 1ª ronde: luister naar de hele zin. 2ª ronde: dezelfde zin in stukken — nu schrijf je mee. Vijf zinnen. |
+
+```
+Narradora: Primera ronda: la frase entera. Solo escucha.
+Narradora: 1. Valen está cocinando en la cocina.
+Narradora: 2. Los niños están durmiendo en su habitación.
+Narradora: 3. ¿Qué estás haciendo ahora mismo?
+Narradora: 4. Estamos leyendo un libro en el salón.
+Narradora: 5. Mi hermano está diciendo la verdad.
+Narradora: Segunda ronda: la misma frase, por trozos. Ahora escribe.
+Narradora: 1. Valen está cocinando ... en la cocina
+Narradora: 2. Los niños están durmiendo ... en su habitación
+Narradora: 3. ¿Qué estás haciendo ... ahora mismo?
+Narradora: 4. Estamos leyendo un libro ... en el salón
+Narradora: 5. Mi hermano está diciendo ... la verdad
+```
+
+<sub>Eerste ronde: de hele zin. Alleen luisteren. · 1. Valen staat te koken in de keuken. · 2. De kinderen slapen in hun kamer. · 3. Wat ben je nu aan het doen? · 4. We zijn een boek aan het lezen in de woonkamer. · 5. Mijn broer zegt de waarheid. · Tweede ronde: dezelfde zin, in stukken. Nu schrijven. · 1. (in stukken) · 2. (in stukken) · 3. (in stukken) · 4. (in stukken) · 5. (in stukken)</sub>
+
 ### C6+ U2 · Estoy perdido en Cartagena
 
 | | |
@@ -1398,6 +1476,32 @@ Sofía: Hecho. Si llego tarde, te llamo.
 
 <sub>Diego, spreken we zaterdag af? Ik wil de expo in het museum zien. · Oké. Hoe laat? 's Ochtends kan ik niet, ik heb training. · Past vijf uur je? · Vijf uur, perfect. Waar spreken we af? · Aan de deur van het museum, vóór de kassa. · Oké. Ik ga Nina een berichtje sturen; zeggen we haar dat ze meekomt? · Ja, en Mateo en Valen ook. Ik stuur hun de foto's van de expo om ze te overtuigen. · Geweldig. Dus zaterdag om vijf uur, aan het museum. · Afgesproken. Als ik te laat ben, bel ik je.</sub>
 
+### C6+ U3 · Dictado — cinco frases con ir a, le y acabar de
+
+| | |
+|---|---|
+| **Bestandsnaam** | `audio/C6plus_U3_03.mp3` |
+| **Waar in de cursus** | §4.2 · Creo que + indicativo |
+| **Sprekers** | Narradora |
+| **Wat de leerling doet** | 1ª ronde: luister naar de hele zin. 2ª ronde: dezelfde zin in stukken — nu schrijf je mee. Vijf zinnen. |
+
+```
+Narradora: Primera ronda: la frase entera. Solo escucha.
+Narradora: 1. Este finde voy a quedar con Lucía.
+Narradora: 2. Le escribo un mensaje a mi madre.
+Narradora: 3. Acabo de llegar a casa, estoy cansada.
+Narradora: 4. Creo que el sábado hace buen tiempo.
+Narradora: 5. ¿Les cuentas el plan a tus amigos?
+Narradora: Segunda ronda: la misma frase, por trozos. Ahora escribe.
+Narradora: 1. Este finde ... voy a quedar con Lucía
+Narradora: 2. Le escribo un mensaje ... a mi madre
+Narradora: 3. Acabo de llegar a casa, ... estoy cansada
+Narradora: 4. Creo que el sábado ... hace buen tiempo
+Narradora: 5. ¿Les cuentas el plan ... a tus amigos?
+```
+
+<sub>Eerste ronde: de hele zin. Alleen luisteren. · 1. Dit weekend spreek ik af met Lucía. · 2. Ik schrijf mijn moeder een bericht. · 3. Ik ben net thuisgekomen, ik ben moe. · 4. Ik denk dat het zaterdag mooi weer is. · 5. Vertel jij het plan aan je vrienden? · Tweede ronde: dezelfde zin, in stukken. Nu schrijven. · 1. (in stukken) · 2. (in stukken) · 3. (in stukken) · 4. (in stukken) · 5. (in stukken)</sub>
+
 ### C6+ U3 · Cómo hacer una videollamada con la abuela
 
 | | |
@@ -1467,6 +1571,32 @@ Mateo: Yo he viajado a España para ver a mi tía. He caminado por Madrid y he c
 ```
 
 <sub>Vier personen vertellen over een reiservaring. · Ik ben in Marokko geweest met mijn familie. Ik heb op een kameel gereden en muntthee geproefd. · Ik ben nooit buiten Mexico geweest, maar ik heb de piramides van Teotihuacán drie keer bezocht. Ik heb nog nooit gevlogen. · Ik ben met de boot naar Panama gegaan. Ik heb het kanaal gezien en in de Caraïben gezwommen. · Ik ben naar Spanje gereisd om mijn tante te bezoeken. Ik heb door Madrid gewandeld en om zes uur 's ochtends churros gegeten.</sub>
+
+### C6+ U4 · Dictado — cinco frases con el pretérito perfecto
+
+| | |
+|---|---|
+| **Bestandsnaam** | `audio/C6plus_U4_03.mp3` |
+| **Waar in de cursus** | §2.3 · Practicar el perfecto |
+| **Sprekers** | Narradora |
+| **Wat de leerling doet** | 1ª ronde: luister naar de hele zin. 2ª ronde: dezelfde zin in stukken — nu schrijf je mee. Vijf zinnen. |
+
+```
+Narradora: Primera ronda: la frase entera. Solo escucha.
+Narradora: 1. Hoy he cogido el tren a Valparaíso.
+Narradora: 2. Nina ha escrito una postal para su abuela.
+Narradora: 3. ¿Has visto alguna vez el mar del sur?
+Narradora: 4. Todavía no hemos hecho las maletas.
+Narradora: 5. Esta semana han abierto un hostal nuevo.
+Narradora: Segunda ronda: la misma frase, por trozos. Ahora escribe.
+Narradora: 1. Hoy he cogido el tren ... a Valparaíso
+Narradora: 2. Nina ha escrito una postal ... para su abuela
+Narradora: 3. ¿Has visto alguna vez ... el mar del sur?
+Narradora: 4. Todavía no ... hemos hecho las maletas
+Narradora: 5. Esta semana ... han abierto un hostal nuevo
+```
+
+<sub>Eerste ronde: de hele zin. Alleen luisteren. · 1. Vandaag heb ik de trein naar Valparaíso genomen. · 2. Nina heeft een kaart geschreven voor haar oma. · 3. Heb jij ooit de zuidelijke zee gezien? · 4. We hebben de koffers nog niet gepakt. · 5. Deze week hebben ze een nieuw hostel geopend. · Tweede ronde: dezelfde zin, in stukken. Nu schrijven. · 1. (in stukken) · 2. (in stukken) · 3. (in stukken) · 4. (in stukken) · 5. (in stukken)</sub>
 
 ### C6+ U4 · En la recepción del hostal
 
@@ -1539,6 +1669,32 @@ Narradora: Se llamaba Carlos Gardel. En Buenos Aires dicen que «cada día canta
 ```
 
 <sub>In Buenos Aires kent iedereen dit gezicht. Het is een legende van de tango. · Niemand weet met zekerheid waar hij geboren is. Sommigen zeggen in Frankrijk, anderen in Uruguay, rond 1890. · Wat wel zeker is: hij groeide op in een wijk van Buenos Aires en begon te zingen in de cafés van de buurt. · Hij nam zijn eerste platen op en werd stilaan beroemd in heel Latijns-Amerika. · Hij reisde naar Parijs en New York, en speelde ook in verschillende films. · Zijn lied «El día que me quieras» is vandaag nog altijd een klassieker. · In 1935 stierf hij bij een vliegtuigongeluk in Medellín, in Colombia. Hij was vierenveertig. · Hij heette Carlos Gardel. In Buenos Aires zeggen ze dat hij «elke dag beter zingt».</sub>
+
+### C6+ U5 · Dictado — cinco frases con el indefinido
+
+| | |
+|---|---|
+| **Bestandsnaam** | `audio/C6plus_U5_03.mp3` |
+| **Waar in de cursus** | §2.3 · Practicar el indefinido |
+| **Sprekers** | Narradora |
+| **Wat de leerling doet** | 1ª ronde: luister naar de hele zin. 2ª ronde: dezelfde zin in stukken — nu schrijf je mee. Vijf zinnen. |
+
+```
+Narradora: Primera ronda: la frase entera. Solo escucha.
+Narradora: 1. Nació en Buenos Aires en mil novecientos ochenta.
+Narradora: 2. Estudió medicina y trabajó en un hospital.
+Narradora: 3. El año pasado fui a México con mi familia.
+Narradora: 4. Tuvimos que esperar dos horas en el aeropuerto.
+Narradora: 5. ¿Qué hiciste tú el fin de semana?
+Narradora: Segunda ronda: la misma frase, por trozos. Ahora escribe.
+Narradora: 1. Nació en Buenos Aires ... en mil novecientos ochenta
+Narradora: 2. Estudió medicina ... y trabajó en un hospital
+Narradora: 3. El año pasado ... fui a México con mi familia
+Narradora: 4. Tuvimos que esperar dos horas ... en el aeropuerto
+Narradora: 5. ¿Qué hiciste tú ... el fin de semana?
+```
+
+<sub>Eerste ronde: de hele zin. Alleen luisteren. · 1. Hij werd geboren in Buenos Aires in negentienhonderdtachtig. · 2. Hij studeerde geneeskunde en werkte in een ziekenhuis. · 3. Vorig jaar ging ik naar Mexico met mijn familie. · 4. We moesten twee uur wachten op de luchthaven. · 5. Wat deed jij in het weekend? · Tweede ronde: dezelfde zin, in stukken. Nu schrijven. · 1. (in stukken) · 2. (in stukken) · 3. (in stukken) · 4. (in stukken) · 5. (in stukken)</sub>
 
 ### C6+ U5 · Los que llegaron en barco
 

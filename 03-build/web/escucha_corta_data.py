@@ -1531,9 +1531,181 @@ C6P_U7_01 = {
 # Register + zelfcontrole
 # ===========================================================================
 
+
+# ── De dictees die er nog niet waren ───────────────────────────────────────
+# Zes luisteroefeningen in het boek zeiden «el/la profe lee» of «docent leest
+# voor». Dat werkt in de klas, maar dan kan de leerling ze thuis niet maken en
+# staat er een luistertaak zonder geluid. Hier zijn ze uitgeschreven en
+# ingesproken, met dezelfde tweerondestructuur als het uurwerkdictee van C6+ U1:
+# eerst de zin heel, dan nog een keer in stukken. De sleutel gaat naar het
+# docentendossier, niet naar de leerlingpagina (CLAUDE.md §14).
+#
+# De zinnen zijn per unit op de leerstof van die unit gebouwd: U0 het presente
+# en de concordantie, U2 estar + gerundio, U3 ir a + le/les + acabar de,
+# U4 het perfecto compuesto, U5 het indefinido. Elke zin gebruikt alleen
+# woordenschat die op dat punt in de unit al gezien is.
+
+
+def _dictado(ident, unidad, seccion, etiqueta, titulo, frases, nota, curso="C6+"):
+    """Bouwt één dictee: ronde één heel, ronde twee in stukken.
+
+    Waarom twee rondes en niet gewoon twee keer hetzelfde: de eerste keer luistert
+    de leerling naar de héle zin (betekenis eerst, CLAUDE.md §14), de tweede keer
+    komt dezelfde zin in brokken van drie à vier woorden zodat er tijd is om te
+    schrijven. Zonder die tweede ronde wordt een dictee een geheugenoefening.
+    """
+    pre = "C5" if curso == "C5" else "C6plus"
+    guion = [L("Narradora", "Primera ronda: la frase entera. Solo escucha.",
+               "Eerste ronde: de hele zin. Alleen luisteren.")]
+    for n, (es, nl, _trozos) in enumerate(frases, 1):
+        guion.append(L("Narradora", "%d. %s" % (n, es), "%d. %s" % (n, nl)))
+    guion.append(L("Narradora", "Segunda ronda: la misma frase, por trozos. Ahora escribe.",
+                   "Tweede ronde: dezelfde zin, in stukken. Nu schrijven."))
+    for n, (_es, _nl, trozos) in enumerate(frases, 1):
+        guion.append(L("Narradora", "%d. %s" % (n, " ... ".join(trozos)),
+                       "%d. (in stukken)" % n))
+    return {
+        "id": ident, "ancla": ident.lower(), "curso": curso, "unidad": unidad,
+        "seccion": seccion, "etiqueta": etiqueta, "titulo": titulo,
+        "tipo": "dictado",
+        "tarea": "1ª ronde: luister naar de hele zin. 2ª ronde: dezelfde zin in "
+                 "stukken — nu schrijf je mee. Vijf zinnen.",
+        "audio": "audio/%s_U%d_%s.mp3" % (pre, unidad, ident.split("-")[-1]),
+        "guion": guion,
+        "clave": ["%d. %s" % (n, es) for n, (es, _nl, _t) in enumerate(frases, 1)],
+        "nota": nota,
+    }
+
+
+C6P_U0_04 = _dictado(
+    "C6P-U0-AUD-04", 0, "§2.3 · Los otros irregulares clave",
+    "§2.3 · Dictado corto", "Dictado corto — cinco frases en presente",
+    [("Me llamo Nina y soy peruana.", "Ik heet Nina en ik ben Peruaanse.",
+      ["Me llamo Nina", "y soy peruana"]),
+     ("Vivimos en un piso pequeño, cerca del instituto.",
+      "We wonen in een klein appartement, dicht bij de school.",
+      ["Vivimos en un piso pequeño,", "cerca del instituto"]),
+     ("Mis amigos son simpáticos y hablan tres lenguas.",
+      "Mijn vrienden zijn aardig en spreken drie talen.",
+      ["Mis amigos son simpáticos", "y hablan tres lenguas"]),
+     ("¿De dónde eres tú y qué estudias?",
+      "Waar kom jij vandaan en wat studeer je?",
+      ["¿De dónde eres tú", "y qué estudias?"]),
+     ("Hoy tengo clase de español a las nueve.",
+      "Vandaag heb ik Spaanse les om negen uur.",
+      ["Hoy tengo clase de español", "a las nueve"])],
+    "Zin 3 test de concordantie in het meervoud (simpáticos), zin 4 de "
+    "vraagtekens én het accent op «dónde» en «qué» — precies waar de fout valt.")
+
+C6P_U2_03 = _dictado(
+    "C6P-U2-AUD-03", 2, "§3.3 · ¿Qué están haciendo en casa?",
+    "§3.3 · Dictado · ¿qué está pasando?",
+    "Dictado — cinco frases con estar + gerundio",
+    [("Valen está cocinando en la cocina.", "Valen staat te koken in de keuken.",
+      ["Valen está cocinando", "en la cocina"]),
+     ("Los niños están durmiendo en su habitación.",
+      "De kinderen slapen in hun kamer.",
+      ["Los niños están durmiendo", "en su habitación"]),
+     ("¿Qué estás haciendo ahora mismo?", "Wat ben je nu aan het doen?",
+      ["¿Qué estás haciendo", "ahora mismo?"]),
+     ("Estamos leyendo un libro en el salón.",
+      "We zijn een boek aan het lezen in de woonkamer.",
+      ["Estamos leyendo un libro", "en el salón"]),
+     ("Mi hermano está diciendo la verdad.", "Mijn broer zegt de waarheid.",
+      ["Mi hermano está diciendo", "la verdad"])],
+    "Drie van de vijf zijn onregelmatige gerundios (durmiendo, leyendo, "
+    "diciendo) — dat is het hele punt van §3.2.")
+
+C6P_U3_03 = _dictado(
+    "C6P-U3-AUD-03", 3, "§4.2 · Creo que + indicativo",
+    "§4 · Dictado · un plan para el finde",
+    "Dictado — cinco frases con ir a, le y acabar de",
+    [("Este finde voy a quedar con Lucía.",
+      "Dit weekend spreek ik af met Lucía.",
+      ["Este finde", "voy a quedar con Lucía"]),
+     ("Le escribo un mensaje a mi madre.",
+      "Ik schrijf mijn moeder een bericht.",
+      ["Le escribo un mensaje", "a mi madre"]),
+     ("Acabo de llegar a casa, estoy cansada.",
+      "Ik ben net thuisgekomen, ik ben moe.",
+      ["Acabo de llegar a casa,", "estoy cansada"]),
+     ("Creo que el sábado hace buen tiempo.",
+      "Ik denk dat het zaterdag mooi weer is.",
+      ["Creo que el sábado", "hace buen tiempo"]),
+     ("¿Les cuentas el plan a tus amigos?",
+      "Vertel jij het plan aan je vrienden?",
+      ["¿Les cuentas el plan", "a tus amigos?"])],
+    "Zin 2 en 5 zetten «le» en «les» naast elkaar mét de a-groep erbij: dat is "
+    "de verdubbeling die Nederlandstaligen weglaten.")
+
+C6P_U4_03 = _dictado(
+    "C6P-U4-AUD-03", 4, "§2.3 · Practicar el perfecto",
+    "§2.3 · Dictado · un día de viaje",
+    "Dictado — cinco frases con el pretérito perfecto",
+    [("Hoy he cogido el tren a Valparaíso.",
+      "Vandaag heb ik de trein naar Valparaíso genomen.",
+      ["Hoy he cogido el tren", "a Valparaíso"]),
+     ("Nina ha escrito una postal para su abuela.",
+      "Nina heeft een kaart geschreven voor haar oma.",
+      ["Nina ha escrito una postal", "para su abuela"]),
+     ("¿Has visto alguna vez el mar del sur?",
+      "Heb jij ooit de zuidelijke zee gezien?",
+      ["¿Has visto alguna vez", "el mar del sur?"]),
+     ("Todavía no hemos hecho las maletas.",
+      "We hebben de koffers nog niet gepakt.",
+      ["Todavía no", "hemos hecho las maletas"]),
+     ("Esta semana han abierto un hostal nuevo.",
+      "Deze week hebben ze een nieuw hostel geopend.",
+      ["Esta semana", "han abierto un hostal nuevo"])],
+    "Vier van de vijf deelwoorden zijn onregelmatig (cogido is de enige "
+    "regelmatige) — escrito, visto, hecho, abierto zijn precies §2.2.")
+
+C6P_U5_03 = _dictado(
+    "C6P-U5-AUD-03", 5, "§2.3 · Practicar el indefinido",
+    "§2.3 · Dictado · una minibiografía",
+    "Dictado — cinco frases con el indefinido",
+    [("Nació en Buenos Aires en mil novecientos ochenta.",
+      "Hij werd geboren in Buenos Aires in negentienhonderdtachtig.",
+      ["Nació en Buenos Aires", "en mil novecientos ochenta"]),
+     ("Estudió medicina y trabajó en un hospital.",
+      "Hij studeerde geneeskunde en werkte in een ziekenhuis.",
+      ["Estudió medicina", "y trabajó en un hospital"]),
+     ("El año pasado fui a México con mi familia.",
+      "Vorig jaar ging ik naar Mexico met mijn familie.",
+      ["El año pasado", "fui a México con mi familia"]),
+     ("Tuvimos que esperar dos horas en el aeropuerto.",
+      "We moesten twee uur wachten op de luchthaven.",
+      ["Tuvimos que esperar dos horas", "en el aeropuerto"]),
+     ("¿Qué hiciste tú el fin de semana?",
+      "Wat deed jij in het weekend?",
+      ["¿Qué hiciste tú", "el fin de semana?"])],
+    "Zin 3 tot 5 zijn de sterke onregelmatige stammen (fui, tuvimos, hiciste): "
+    "geen accent op de uitgang, en dát is de val na zin 1 en 2.")
+
+C5_U0_10 = _dictado(
+    "C5-U0-AUD-10", 0, "§3 · Los números",
+    "Audio 3.2 · Dictado de números", "Dictado de números — ocho cifras",
+    [("Tengo dieciséis años.", "Ik ben zestien.",
+      ["Tengo", "dieciséis años"]),
+     ("En mi clase somos veintisiete.", "In mijn klas zijn we met zevenentwintig.",
+      ["En mi clase", "somos veintisiete"]),
+     ("El vuelo sale a las quince cuarenta.",
+      "De vlucht vertrekt om vijftien uur veertig.",
+      ["El vuelo sale", "a las quince cuarenta"]),
+     ("Mi número es el seis, cinco, cuatro, tres, dos, uno.",
+      "Mijn nummer is zes, vijf, vier, drie, twee, één.",
+      ["Mi número es el seis, cinco, cuatro,", "tres, dos, uno"]),
+     ("La puerta de embarque es la treinta y uno.",
+      "De gate is nummer eenendertig.",
+      ["La puerta de embarque", "es la treinta y uno"])],
+    "Zestien en zevenentwintig zijn de twee die aan elkaar geschreven worden "
+    "(dieciséis, veintisiete); eenendertig is er weer los. Dat verschil is het "
+    "hele dictee.", curso="C5")
+
+
 CORTOS = {
     ("C5", 0): [C5_U0_01, C5_U0_02, C5_U0_03, C5_U0_04, C5_U0_05,
-                C5_U0_06, C5_U0_07, C5_U0_08, C5_U0_09],
+                C5_U0_06, C5_U0_07, C5_U0_08, C5_U0_09, C5_U0_10],
     ("C5", 1): [C5_U1_01, C5_U1_02, C5_U1_03],
     ("C5", 2): [C5_U2_01, C5_U2_02],
     ("C5", 3): [C5_U3_01, C5_U3_02],
@@ -1542,12 +1714,12 @@ CORTOS = {
     ("C5", 6): [C5_U6_01],
     ("C5", 7): [C5_U7_01, C5_U7_02],
     ("C5", 8): [C5_U8_01, C5_U8_02],
-    ("C6+", 0): [C6P_U0_01, C6P_U0_02, C6P_U0_03],
+    ("C6+", 0): [C6P_U0_01, C6P_U0_02, C6P_U0_03, C6P_U0_04],
     ("C6+", 1): [C6P_U1_01, C6P_U1_02, C6P_U1_03],
-    ("C6+", 2): [C6P_U2_01, C6P_U2_02],
-    ("C6+", 3): [C6P_U3_01, C6P_U3_02],
-    ("C6+", 4): [C6P_U4_01, C6P_U4_02],
-    ("C6+", 5): [C6P_U5_01, C6P_U5_02],
+    ("C6+", 2): [C6P_U2_01, C6P_U2_02, C6P_U2_03],
+    ("C6+", 3): [C6P_U3_01, C6P_U3_02, C6P_U3_03],
+    ("C6+", 4): [C6P_U4_01, C6P_U4_02, C6P_U4_03],
+    ("C6+", 5): [C6P_U5_01, C6P_U5_02, C6P_U5_03],
     ("C6+", 6): [C6P_U6_01],
     ("C6+", 7): [C6P_U7_01],
 }

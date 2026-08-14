@@ -56,7 +56,19 @@ def url(curso, unidad, ancla=None):
 # gerepareerd wordt en niet in zeventien generatoren.
 
 def ancla_audio_largo(curso, unidad):
-    """Het grote luisterfragment met de begripsladder."""
+    """Het grote luisterfragment met de begripsladder.
+
+    Het anker staat in `escucha_data` naast het fragment zelf, en dát is de
+    bron — de vorige versie leidde het af uit de naam van de container
+    (`esc_u5`, `esc_c6p_u5`), en die vlieger ging in C6+ U0 al niet op: die
+    container heet `esc_c6p`, zonder unitnummer. Nu is er één naam, aan beide
+    kanten dezelfde: print zet hem in de QR, `buildEscucha` zet hem op de kaart.
+    """
+    import escucha_data
+    clave = "%s_U%d" % ("C5" if curso == "C5" else "C6P", unidad)
+    frag = getattr(escucha_data, clave, None)
+    if frag and frag.get("ancla"):
+        return frag["ancla"]
     return "esc_u%d" % unidad if curso == "C5" else "esc_c6p_u%d" % unidad
 
 

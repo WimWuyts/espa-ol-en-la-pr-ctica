@@ -367,6 +367,14 @@ function buildEscucha(id,cfg){
    '<li class="escpaso" data-p="5"><h4>5 · Transcripción</h4><div class="esctr"></div></li>'+
    '<li class="escpaso" data-p="6"><h4>6 · Tu reacción</h4><div class="escprod"></div></li>'+
   '</ol>';
+ // Het anker uit `escucha_data`: de QR-code in het boek komt hier uit
+ // (#c5-u1-esc-01). De korte fragmenten hadden zo'n anker al, deze — de langste
+ // luistertaak van de unit, twintig minuten les — kreeg er nooit een, dus wees
+ // er geen enkele code naartoe. Als los spannetje en niet als id op de host:
+ // `buildAudioCortos` zoekt die host meteen daarna op bij zijn oude naam.
+ if(cfg.ancla){const an=document.createElement('span');an.id=cfg.ancla;
+   an.className='ancla';an.setAttribute('aria-hidden','true');
+   host.insertBefore(an,host.firstChild);}
  const $=s=>host.querySelector(s);
  const fuente=$('.escfuente');
  const player=escReproductor(cfg,(modo,sonando)=>{
