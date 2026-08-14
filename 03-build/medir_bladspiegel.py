@@ -150,19 +150,31 @@ def paginas(ruta):
 
 
 def informe(ruta):
+    """(aantal bladzijden, gemiddelde vulling, de halflege)
+
+    De láátste bladzijde van een unit telt niet mee als halfleeg. Een unit moet
+    ergens ophouden, en dat is bijna nooit precies onderaan een blad; die ene
+    bladzijde meerekenen zou elke unit een fout geven die niet te herstellen is.
+    Het gemiddelde blijft wél over álle bladzijden gaan — anders zou het een
+    mooier getal tonen dan er op papier staat.
+    """
     p = paginas(ruta)
     if not p:
         return None
     llenos = [x[0] for x in p]
     medio = sum(llenos) / len(llenos)
-    flacas = [i + 1 for i, f in enumerate(llenos) if f < VACIA]
+    flacas = [i + 1 for i, f in enumerate(llenos[:-1]) if f < VACIA]
     return len(p), medio, flacas
 
 
 def main():
     if len(sys.argv) > 1:
         nombre = sys.argv[1]
-        for i, (f, y) in enumerate(paginas(os.path.join(PDF, nombre + ".pdf")), 1):
+        # C4 zet zijn PDF's naast de print-HTML, C5 en C6+ in 03-build/pdf
+        ruta = os.path.join(PDF, nombre + ".pdf")
+        if not os.path.exists(ruta):
+            ruta = os.path.join(os.path.dirname(PDF), "web", "print", nombre + ".pdf")
+        for i, (f, y) in enumerate(paginas(ruta), 1):
             barra = "█" * int(f * 40)
             print("  p%-3d %5.0f %%  %s" % (i, f * 100, barra))
         return

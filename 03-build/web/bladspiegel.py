@@ -182,9 +182,203 @@ def procesar(ruta, curso="C5"):
     return puestos, corridos
 
 
+# ── de bladbreuk die zichzelf niet waard is ────────────────────────────────
+# Een mijlpaal opent een blad. Dat is de regel, en meestal klopt hij. Maar loopt
+# de mijlpaal ervóór net over een bladovergang — Cultura is in de meeste units
+# 1,3 blad — dan blijft dat laatste blad op 30 of 40 % staan, want de volgende
+# mijlpaal begint sowieso bovenaan. Zestien van de vijftig halflege bladzijden
+# kwamen daarvandaan, en het waren telkens dezelfde secties.
+#
+# De oplossing is niet «de regel afschaffen» maar «de regel meten»: waar een
+# breuk een bijna leeg blad achterlaat, gaat die ene breuk weg en vloeit de
+# volgende mijlpaal door. Waar hij wél iets oplevert, blijft hij staan. Dat kan
+# alleen ná de opmaak, want de hoogte van een sectie is pas dan bekend.
+CHROME = sorted(__import__("glob").glob(
+    "/opt/pw-browsers/chromium-*/chrome-linux/chrome"))
+UTIL_MM = 273.0          # bruikbare bladhoogte, A4 min de @page-marges
+LLENO = 0.55             # onder deze vulling noemen we een blad halfleeg
+
+
+def _medir(ruta):
+    """[(id, top in mm)] van elke mijlpaal + de totale hoogte, uit Chromium."""
+    if not CHROME:
+        return None
+    import subprocess
+    import tempfile
+    src = open(ruta, encoding="utf-8").read()
+    js = ("<script>window.addEventListener('load',function(){var o=[];"
+          "document.querySelectorAll('.sec.major').forEach(function(p){"
+          "o.push((p.id||'?')+'|'+Math.round(p.getBoundingClientRect().top*25.4/96));});"
+          "o.push('EINDE|'+Math.round(document.body.getBoundingClientRect().height*25.4/96));"
+          "var d=document.createElement('div');d.id='MEDIDA';d.textContent=o.join('\\n');"
+          "document.body.appendChild(d);});</script>")
+    tmp = tempfile.NamedTemporaryFile("w", suffix=".html", delete=False,
+                                      dir=os.path.dirname(ruta))
+    tmp.write(src.replace("</body>", js + "</body>"))
+    tmp.close()
+    try:
+        salida = subprocess.run(
+            [CHROME[0], "--headless", "--no-sandbox", "--disable-gpu",
+             "--virtual-time-budget=6000", "--dump-dom", tmp.name],
+            capture_output=True, text=True).stdout
+    finally:
+        os.unlink(tmp.name)
+    m = re.search(r'<div id="MEDIDA">(.*?)</div>', salida, re.S)
+    if not m:
+        return None
+    out = []
+    for linea in m.group(1).split("\n"):
+        if "|" in linea:
+            ident, mm = linea.rsplit("|", 1)
+            out.append((ident, int(mm)))
+    return out
+
+
+def _sobra(cortes):
+    """De id's van de mijlpalen wier bladbreuk een bijna leeg blad achterlaat.
+
+    Loopt de inhoud vóór mijlpaal M tot vlak na een bladovergang, dan is het
+    de breuk van M die dat laatste blad leeg houdt. De láátste sectie telt niet
+    mee: die eindigt op de laatste bladzijde van de unit, en die is nooit vol.
+
+    Ook een korte mijlpaal telt mee, en dat is niet vanzelfsprekend: eerst
+    keken we alleen naar secties die over een bladovergang liepen. Maar een
+    Repaso van 52 mm gevolgd door §V Vocabulario levert net zo goed een blad
+    van 19 % op — dat waren de laatste drie in C5. Eén blok inhoud is één blok
+    inhoud, of het nu een halve bladzijde of anderhalve beslaat.
+    """
+    fuera = []
+    anterior = 0
+    for ident, top in cortes:
+        alto = top - anterior
+        anterior = top
+        if ident == "EINDE" or alto <= 0:
+            continue
+        blados = max(1, int(-(-alto // UTIL_MM)))
+        resto = (alto - (blados - 1) * UTIL_MM) / UTIL_MM
+        if resto < LLENO:
+            fuera.append(ident)
+    return fuera
+
+
+# ── het blok dat niet op een blad past ─────────────────────────────────────
+# `break-inside:avoid` betekent «snijd dit kader niet doormidden», en dat klopt
+# voor een onthoudkaart van 40 mm. Voor een blok van 492 mm betekent het iets
+# anders: de browser kán het niet heel houden, dus schuift ze het in zijn geheel
+# naar de volgende bladzijde — en snijdt het daarna alsnog door. Het blad ervóór
+# blijft halfleeg achter. Dat was de oorzaak van de laatste zestien.
+#
+# Welke blokken dat zijn valt niet met de hand te weten: het hangt van de inhoud
+# af, en die verandert bij elke bouwronde. Dus meten. Chromium legt de bladzijde
+# op, wij lezen de hoogte én de berekende `break-inside` terug, en wie boven een
+# bladhoogte uitkomt krijgt `suelto` — breken mag, mét volledige omranding aan
+# beide helften (`box-decoration-break:clone`, zie de kit).
+
+def _bloques_altos(ruta, minimo=UTIL_MM):
+    """[(class-attribuut, hoeveelste, hoogte in mm)] van de te hoge kaders.
+
+    Het adres van een blok is «het n-de element met precies dít class-attribuut».
+    Ids zijn er niet op elk kader, en een positie in de DOM-boom overleeft de
+    volgende bouwronde niet; het class-attribuut wél, en bronvolgorde is
+    DOM-volgorde. De teller loopt over álle elementen met een class, niet enkel
+    over de gevonden — anders wijst het adres na de eerste treffer al mis.
+    """
+    if not CHROME:
+        return []
+    import html as HT
+    import subprocess
+    import tempfile
+    js = ("<script>window.addEventListener('load',function(){var o=[],c={};"
+          "document.querySelectorAll('*').forEach(function(e){"
+          "var k=e.getAttribute('class'); if(!k) return;"
+          "var n=(c[k]=(c[k]||0)+1)-1; var s=getComputedStyle(e);"
+          "if(s.breakInside!=='avoid'&&s.pageBreakInside!=='avoid') return;"
+          "var h=e.getBoundingClientRect().height*25.4/96; if(h<%d) return;"
+          "o.push(k+'\\t'+n+'\\t'+Math.round(h));});"
+          "var d=document.createElement('div');d.id='ALTOS';d.textContent=o.join('\\n');"
+          "document.body.appendChild(d);});</script>" % int(minimo))
+    src = open(ruta, encoding="utf-8").read()
+    tmp = tempfile.NamedTemporaryFile("w", suffix=".html", delete=False,
+                                      dir=os.path.dirname(ruta))
+    tmp.write(src.replace("</body>", js + "</body>"))
+    tmp.close()
+    try:
+        salida = subprocess.run(
+            [CHROME[0], "--headless", "--no-sandbox", "--disable-gpu",
+             "--virtual-time-budget=6000", "--dump-dom", tmp.name],
+            capture_output=True, text=True).stdout
+    finally:
+        os.unlink(tmp.name)
+    m = re.search(r'<div id="ALTOS">(.*?)</div>', salida, re.S)
+    if not m:
+        return []
+    out = []
+    for linea in m.group(1).split("\n"):
+        piezas = linea.split("\t")
+        if len(piezas) != 3:
+            continue
+        cls, n, alto = piezas
+        out.append((HT.unescape(cls), int(n), int(alto)))
+    return out
+
+
+def soltar(ruta, minimo=UTIL_MM):
+    """Zet `suelto` op elk onbreekbaar kader dat hoger is dan een bladzijde."""
+    altos = _bloques_altos(ruta, minimo)
+    if not altos:
+        return []
+    doc = open(ruta, encoding="utf-8").read()
+    hecho = []
+    # van achter naar voren per class: een vervanging haalt die voorkomst uit de
+    # telling, dus een lager volgnummer blijft alleen kloppen als het later komt
+    for cls, n, alto in sorted(altos, key=lambda x: (x[0], -x[1])):
+        aguja = 'class="%s"' % cls
+        pos = -1
+        for _ in range(n + 1):
+            pos = doc.find(aguja, pos + 1)
+            if pos < 0:
+                break
+        if pos < 0:
+            continue
+        doc = doc[:pos] + 'class="%s suelto"' % cls + doc[pos + len(aguja):]
+        hecho.append((cls, alto))
+    if hecho:
+        open(ruta, "w", encoding="utf-8").write(doc)
+    return hecho
+
+
+def afinar(ruta, rondas=3):
+    """Haalt de bladbreuken weg die alleen een halfleeg blad opleveren."""
+    quitados = []
+    for _ronda in range(rondas):
+        cortes = _medir(ruta)
+        if not cortes:
+            return quitados
+        sobran = [i for i in _sobra(cortes) if i not in quitados and i != "?"]
+        if not sobran:
+            break
+        doc = open(ruta, encoding="utf-8").read()
+        cambio = False
+        for ident in sobran:
+            pat = re.compile(r'(<div class="[^"]*)\bmajor\b([^"]*"[^>]*\bid="%s")'
+                             % re.escape(ident))
+            nuevo, n = pat.subn(r"\1\2", doc)
+            if not n:                       # id staat vóór de class
+                pat = re.compile(r'(<div class="[^"]*?)\s+major(\s*"[^>]*)'
+                                 r'(?=[^>]*id="%s")' % re.escape(ident))
+                nuevo, n = pat.subn(r"\1\2", doc)
+            if n:
+                doc, cambio = nuevo, True
+                quitados.append(ident)
+        if not cambio:
+            break
+        open(ruta, "w", encoding="utf-8").write(doc)
+    return quitados
+
+
 def main():
     solo_medir = "--medir" in sys.argv
-    tot_p = tot_c = 0
+    tot_p = tot_c = tot_q = tot_s = 0
     for curso, u, ruta in unidades():
         if solo_medir:
             doc = open(ruta, encoding="utf-8").read()
@@ -193,9 +387,25 @@ def main():
             c = [t for t in tit if not es_mojon(t)]
         else:
             p, c = procesar(ruta, curso)
+            # C4 beslist zijn eigen breuken (zie procesar); daar niets afnemen.
+            if curso != "C4":
+                # eerst de te hoge kaders losmaken, dan pas de breuken bijstellen:
+                # een blok dat nog in zijn geheel doorschuift, verplaatst elke
+                # mijlpaal erna en zou `afinar` op verkeerde hoogtes laten meten
+                tot_s += len(soltar(ruta))
+                q = afinar(ruta)
+                if q:
+                    tot_q += len(q)
+                    p = [x for x in p]      # de telling blijft de gezette mijlpalen
         tot_p += len(p); tot_c += len(c)
         print("%-4s U%d  %2d nieuwe bladzijde, %2d doorlopend" % (curso, u, len(p), len(c)))
     print("\n%d secties openen een blad, %d vloeien door" % (tot_p, tot_c))
+    if tot_s:
+        print("%d kaders losgemaakt: hoger dan een bladzijde, dus niet heel te houden"
+              % tot_s)
+    if tot_q:
+        print("%d bladbreuken teruggenomen: ze lieten alleen een halfleeg blad achter"
+              % tot_q)
 
 
 if __name__ == "__main__":

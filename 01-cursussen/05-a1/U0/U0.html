@@ -613,7 +613,7 @@ body.editing [contenteditable="true"]:focus{ outline:2px solid #157355; backgrou
 </div><!-- ===== retos · sonidos (einde) ===== -->
 <div class="page">
   <!-- ===== §2 PARADA HEADER ===== -->
-  <div class="parada sec major" id="sec-2">
+  <div class="parada sec     " id="sec-2">
     <div class="num">2</div>
     <span class="pk">§2 · Taller de lengua — El acento «la regla del sombrero»</span>
     <div class="intro">Ya sabes <b>cómo suena</b> cada letra. Ahora, algo pequeño con grandes consecuencias: <b>qué sílaba dices más fuerte</b> (la sílaba tónica) y <b>cuándo escribes un pequeño sombrero</b> — la <b>tilde</b> (´). Domínalo y leerás cada palabra nueva del viaje con la <b>acentuación correcta</b>.
@@ -2014,6 +2014,15 @@ h2,h3,.pk,.divider,.se{ break-after:avoid; }
       bladzijden — dus het blijft zoals het is. */
 body.c4 .sec{ break-before:page; break-inside:auto; break-after:auto; margin-top:0; }
 body.c4 .sec:first-of-type{ break-before:auto; }
+
+/* 8 · onbreekbaar wat niet op een blad past — bladspiegel.py zet `suelto`
+      op elk blok dat `break-inside:avoid` erft en tóch hoger is dan een
+      bladzijde. Zo'n blok schuift in zijn geheel door en laat het blad ervóór
+      halfleeg achter; in C5 U8 waren dat twee «parada sec»-blokken van 492 en
+      373 mm. Ze mogen dus breken, mét hun volledige omranding aan beide
+      helften. Welke blokken dat zijn is niet met de hand te weten — het hangt
+      van de inhoud af — dus wordt het gemeten, niet geraden. */
+.suelto{ break-inside:auto; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
 /* @bladspiegel:fin */
 </style></defs><rect x="6" y="6" width="326" height="100" rx="12" fill="#fff" stroke="#E4E3DE"/><circle cx="30" cy="31" r="14" fill="#E4F4EE"/><text x="30" y="36" text-anchor="middle" font-size="14">🗺️</text><text x="52" y="36" font-size="12" class="d" fill="#157355">EL MUNDO</text><text x="21" y="56" font-size="9" fill="#20242E">+20 países · España → México · Colombia</text><text x="21" y="71" font-size="9" fill="#20242E">Perú</text><rect x="388" y="6" width="326" height="100" rx="12" fill="#fff" stroke="#E4E3DE"/><circle cx="412" cy="31" r="14" fill="#E4F4EE"/><text x="412" y="36" text-anchor="middle" font-size="14"><svg class="ic" width="3.90mm" height="3.90mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.90" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-.14em"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z" /> <path d="M16 9a5 5 0 0 1 0 6" /> <path d="M19.364 18.364a9 9 0 0 0 0-12.728" /></svg></text><text x="434" y="36" font-size="12" class="d" fill="#157355">EL SONIDO</text><text x="403" y="56" font-size="9" fill="#20242E">h muda · b=v · j/ge/gi=jota · ll/y=«j»</text><text x="403" y="71" font-size="9" fill="#20242E">ñ=«nj» · z/ce/ci=«th»</text><rect x="6" y="132" width="326" height="100" rx="12" fill="#fff" stroke="#E4E3DE"/><circle cx="30" cy="157" r="14" fill="#E4F4EE"/><text x="30" y="162" text-anchor="middle" font-size="14">＾</text><text x="52" y="162" font-size="12" class="d" fill="#157355">EL SOMBRERO</text><text x="21" y="182" font-size="9" fill="#20242E">aguda/llana/esdrújula · esdrújula→siempre ´</text><text x="21" y="197" font-size="9" fill="#20242E">aguda -n/-s/vocal → ´</text><rect x="388" y="132" width="326" height="100" rx="12" fill="#fff" stroke="#E4E3DE"/><circle cx="412" cy="157" r="14" fill="#E4F4EE"/><text x="412" y="162" text-anchor="middle" font-size="14">123</text><text x="434" y="162" font-size="12" class="d" fill="#157355">NÚMEROS & SALUDOS</text><text x="403" y="182" font-size="9" fill="#20242E">0–15 · 16–29 één woord</text><text x="403" y="197" font-size="9" fill="#20242E">30+ decena y unidad · Hola/¿Qué tal?</text><circle cx="360" cy="119" r="22" fill="#1E9E74"/><text x="360" y="127" text-anchor="middle" font-size="20"><svg class="ic" width="3.90mm" height="3.90mm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.90" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-.14em"><path d="M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z" /> <path d="M8 10h8" /> <path d="M8 18h8" /> <path d="M8 22v-6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6" /> <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" /></svg></text></svg></div>
 

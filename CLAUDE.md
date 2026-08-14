@@ -398,6 +398,38 @@ Naast de twee *visuele* specs (§13) zijn er twee *didactische* specs in `02-hui
   `03-build/web/bladspiegel.py` en `03-build/medir_bladspiegel.py`.
   **Resultaat: 856 → 721 bladzijden, vulling 76 % → 87 %, halflege bladzijden
   198 → 56.**
+- **NUL HALFLEGE BLADZIJDEN — GEMETEN OP DE PDF (2026-08-14).** «Halfleeg» is
+  geen indruk maar een getal: `medir_bladspiegel.py` zoekt per blad de laagste
+  inkt en deelt door de bruikbare bladhoogte (273 mm); onder **55 %** telt het
+  blad als halfleeg. Na de vorige ronde stonden er nog 58. De vier oorzaken en
+  wat er tegen gedaan is:
+  1. **De laatste bladzijde van een unit** telde mee. Die eindigt waar de unit
+     eindigt en is nooit vol — ze telt niet meer mee (het gemiddelde wél).
+  2. **Een breuk die zichzelf niet waard is.** Loopt een mijlpaal net over een
+     bladovergang, dan houdt de bréuk van de volgende mijlpaal die staart leeg.
+     `bladspiegel.afinar()` meet dat en neemt zo'n breuk terug — **53 stuks**.
+  3. **Onbreekbaar wat niet op een blad past.** `break-inside:avoid` op een blok
+     van 370–490 mm (de Lectura- en Escucha-secties) schuift het blok héél
+     vooruit en snijdt het daarna alsnog. `bladspiegel.soltar()` meet elk kader,
+     geeft wie hoger is dan een bladzijde de klasse **`suelto`** en laat het
+     breken mét volledige omranding aan beide helften — **32 kaders**.
+  4. **Het model dat achterliep.** Punten 2 en 3 rekenen op de dóórlopende
+     pagina; een doorgeschoven kader verschuift alles erna, en in C5 U8 liep die
+     rekensom twee bladzijden mis. **`03-build/afinar_pdf.py`** meet daarom op
+     de gebouwde PDF zelf: vulling per blad (`medir_bladspiegel`) × waar elke
+     sectie begint (de `/Dests`-tabel via `paginar`), breuk weg, opnieuw
+     renderen, opnieuw meten. Staat als **stap 8b** in `construir.py`.
+  **In C4 werkt een breuk weghalen niet** — daar opent élke sectie een blad, dus
+  de doorvloeiende sectie duwt haar eigen staart vooruit en de volgende breuk
+  sneuvelt ook (geprobeerd op U2: één werd er drie). Daar is een te vol blad een
+  millimeterprobleem: `afinar_pdf.encoger()` leest op de PDF hoevéél er
+  overloopt en zet die ene sectie **maximaal 5 %** kleiner (U4 2,8 % · U5
+  3,4 % — één regel, op papier onzichtbaar). Loopt ze verder over, dan is het
+  redactiewerk en wordt het gemeld: zo bleek C4 U2 §4 vier identieke
+  regla-kaarten onder elkaar te zetten; twee ervan naast elkaar (ook wat §13
+  vraagt) haalde de 25 mm eruit.
+  **Resultaat: 865 → 854 bladzijden, vulling 88 % → 92 %, halflege bladzijden
+  58 → 0** — over alle 31 units, C4 inbegrepen.
 - **OEFENDICHTHEID — BINDEND (auteur 2026-07-26, na U0↔U1-vergelijking):** élke unit haalt de **dichtheid van de golden sample U0** (≈50 p print · ≈45–50 oefeningen). Dit is de norm voor **álle** units en **álle** formaten, telkens met **unit-eigen mechanismen en visuals** (geen kopie van U0's fonetiek-oefeningen, wél hetzelfde *niveau*). Concreet, per unit:
   - **Fijnmazige leercyclus per kernpunt:** splits elke grammatica-/woordenschatstap in **§x.1/§x.2/§x.3** met de volle route *context → observeren → patroon → compacte regla → oefenen (steun afbouwt) → communiceren* (niet één regla + 2 oefeningen).
   - **≈4 oefeningen per subsectie**, geordend over de **vijf fasen** (herkennen → onderscheiden → ophalen → gestuurd produceren → vrij produceren), elk met expliciet **steunniveau** (MODELO → BANCO → MARCO/LETRA → PISTA → SIN AYUDA).

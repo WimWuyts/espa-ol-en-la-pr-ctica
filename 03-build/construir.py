@@ -265,6 +265,17 @@ def main():
                     n = len(re.findall(rb"/Type\s*/Page[^s]", datos))
                 print("   %-4s U%-2d %2d bladzijden" % (curso, u, n))
 
+        print("── 8b · halflege bladzijden, gemeten op de PDF ──────────────────")
+        ok, salida = corre(["python3", "afinar_pdf.py"],
+                           cwd=os.path.join(ROOT, "03-build"))
+        for l in salida.splitlines()[-2:]:
+            print("   %s" % l)
+        if not ok:
+            fallos.append("afinar-pdf: " + salida[-300:])
+        # die stap knipt bladbreuken uit de print-HTML, dus de bewerkbare kopie
+        # van stap 7b is er niet meer gelijk aan — opnieuw gelijkzetten
+        corre(["python3", "limpia_jerga.py", "--copias"], cwd=WEB)
+
         print("── 9 · bladzijdenummers in de PDF ───────────────────────────────")
         ok, salida = corre(["python3", "paginar.py"], cwd=os.path.join(ROOT, "03-build"))
         hechas = sum(1 for l in salida.splitlines() if "genummerd" in l and "al " not in l)

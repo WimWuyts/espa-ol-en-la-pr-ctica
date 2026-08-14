@@ -86,6 +86,15 @@ h2,h3,.pk,.divider,.se{ break-after:avoid; }
       bladzijden — dus het blijft zoals het is. */
 body.c4 .sec{ break-before:page; break-inside:auto; break-after:auto; margin-top:0; }
 body.c4 .sec:first-of-type{ break-before:auto; }
+
+/* 8 · onbreekbaar wat niet op een blad past — bladspiegel.py zet `suelto`
+      op elk blok dat `break-inside:avoid` erft en tóch hoger is dan een
+      bladzijde. Zo'n blok schuift in zijn geheel door en laat het blad ervóór
+      halfleeg achter; in C5 U8 waren dat twee «parada sec»-blokken van 492 en
+      373 mm. Ze mogen dus breken, mét hun volledige omranding aan beide
+      helften. Welke blokken dat zijn is niet met de hand te weten — het hangt
+      van de inhoud af — dus wordt het gemeten, niet geraden. */
+.suelto{ break-inside:auto; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
 /* @bladspiegel:fin */
 
 /* hero */
