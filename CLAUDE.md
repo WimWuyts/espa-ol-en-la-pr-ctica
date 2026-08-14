@@ -536,6 +536,23 @@ De richtlijnen zijn **geen proza om te "kennen" maar een plukvijver om uit te pu
 
 **HTML — architectuur (BINDEND):**
 - **Visuele/interactieve grammatica (BINDEND, auteur 2026-07-26):** de kerngrammatica wordt op de HTML-pagina **visueel én interactief** uitgelegd volgens `02-huisstijl/richtlijnen/25_VISUELE_INTERACTIEVE_GRAMMATICATOOLS_HTML.md` (25 werkvormen + vaste opbouw context→noticing→ontdekken→visualiseren→regel→toepassen→produceren + herbruikbare componenten). Uitgangspunt: **eerst betekenis/patroon ontdekken, dan regel**; kleurcodering = de functionele taalsemantiek uit §13; verklarende feedback; toegankelijk (toetsenbord, geen kleur-alleen).
+- **DRIE SPOREN OP DE DIGITALE PAGINA (auteur 2026-08-14).** De cursus had één
+  moeilijkheidsspoor; met zij-instromers naast leerlingen uit het vierde jaar is
+  dat voor de ene te snel en voor de andere te traag. Boven aan elke C5-/C6+-hub
+  staat nu een schakelaar **«Con ayuda · Normal · Reto»** die vier dingen tegelijk
+  verzet: de **letterpista** (open · op verzoek · weg), de **accenten** (tolerant ·
+  zoals de oefening zegt · streng), het **rollenspel** (elegir · completar ·
+  escribir) en de **woordkaarten** (ES→NL · ES→NL · NL→ES). Eén keuze geldt voor
+  alle ~100 oefeningen van de unit en blijft staan (localStorage). Er komt géén
+  inhoud bij — het is dezelfde oefening met een andere hoeveelheid steun.
+  **Wat níet meeschuift:** «Ver solución» blijft in alle drie de sporen pas
+  beschikbaar na twee pogingen — ophalen vóór opnieuw tonen (§14) is didactiek,
+  geen steunniveau. Bouw: `03-build/web/hub_nivel.py`, stap **4d** in
+  `construir.py`; het zet ook één regel in de gedrukte opener die de leerling
+  vertelt dat de schakelaar bestaat. **C4 doet niet mee**: die hub zet zijn
+  oefeningen in `srcdoc`-iframes en gebruikt de gedeelde oefenmotor niet, dus
+  alleen het rollenspel zou meebewegen — een knop die voor een kwart werkt is
+  slechter dan geen knop.
 - **Repaso = online (BESLIST 2026-07-26):** het herhalings-/inoefenwerk (recordar sin pista, gemengde quiz, drills) staat **op de digitale pagina** met spellen + zelfcorrectie, niet meer als drills in print. Print-repaso = enkel **spiekkaart (SummaryQuadrant) + semáforo** + een «Repasa jugando (online)»-verwijzing. Houdt de printunit korter en minder repetitief.
 - **4 hoofdtabbladen** — één per cursus (C4·C5·C6·C6+). Per tab: een **overzicht van de unidades** van die cursus.
 - **Per cursus, achteraan:** een **«Conjugador» (werkwoordengenerator)** + de **woordenschat als naslagwerk** met correcte **unit/LPD-verwijzingen** en een **zoekfunctie**.

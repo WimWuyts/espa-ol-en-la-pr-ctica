@@ -404,6 +404,26 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
 .rol .tally{list-style:none;padding:0;margin:10px 0 0;font-size:14px;text-align:left}
 .rol .tally li{padding:4px 0;border-bottom:1px dashed var(--line)}
 @media (prefers-reduced-motion:reduce){.rol .b{animation:none}}
+
+/* ── drie sporen · hub_nivel.py ─────────────────────────────────────────── */
+.nivelsel{display:flex;align-items:center;gap:4px;margin-left:auto}
+.nivellab{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+          color:var(--mut);margin-right:4px}
+.nivelsel button{font:inherit;font-size:12px;font-weight:700;border:1.5px solid var(--line);
+                 background:var(--card);color:inherit;border-radius:999px;padding:4px 11px;
+                 cursor:pointer;white-space:nowrap}
+.nivelsel button:hover{border-color:var(--g)}
+.nivelsel button.on{background:var(--g);color:#fff;border-color:var(--g)}
+.nivelsel button:focus-visible{outline:2px solid var(--g);outline-offset:2px}
+@media (max-width:720px){.nivellab{display:none}.nivelsel button{padding:4px 8px}}
+
+/* Con ayuda: de letterpista staat open in plaats van achter een knop. De knop
+   blijft bestaan (hij sluit de pista weer), maar de hint is er meteen. */
+body.nivel-ayuda .typista{background:var(--gt);border-color:var(--g);color:var(--gd)}
+/* Reto: geen pista. Hem verbergen is eerlijker dan hem laten staan en niets
+   laten doen — een knop die niets doet leest als een fout. */
+body.nivel-reto .typista{display:none}
+.nivelnota{font-size:12px;color:var(--mut);margin:6px 0 0}
 </style></head><body>
 <header class="top"><div class="bar">
   <div class="brand">Más español en la práctica <small>· edición única</small></div>
@@ -413,7 +433,7 @@ body.editing [contenteditable=true]{outline:1.4px dashed var(--amber);outline-of
     <button class="tab" disabled>C6 · Clean</button>
     <button class="tab active">C6+ · Vervolg</button>
   </div>
-  <button class="themebtn" onclick="toggleTheme()" title="licht/donker">◐</button>
+  <!-- hub_nivel.py --><div class="nivelsel" role="group" aria-label="Nivel de ayuda"><span class="nivellab">Nivel</span><button type="button" data-nivel="ayuda">Con ayuda</button><button type="button" data-nivel="normal" class="on">Normal</button><button type="button" data-nivel="reto">Reto</button></div><button class="themebtn" onclick="toggleTheme()" title="licht/donker">◐</button>
 </div></header>
 <main>
   <div class="hero">
@@ -2131,4 +2151,67 @@ raiz.querySelectorAll('.modo button').forEach(function(b){
 pinta(); muestra();
 })();
 
+
+/* ── drie sporen · hub_nivel.py ─────────────────────────────────────────── */
+var NIVEL='normal';
+try{NIVEL=localStorage.getItem('sjb_nivel')||'normal';}catch(e){}
+
+/* De accentregel hangt normaal aan de oefening (`accents:'strict'|'soft'`), en
+   die staat vast op het moment dat de oefening gebouwd wordt. Om hem later nog
+   te kunnen verzetten leest de vergelijker het spoor: «con ayuda» vergeeft een
+   ontbrekende tilde altijd, «reto» nooit, «normal» laat de oefening beslissen.
+   Zonder deze omweg zou de schakelaar de hele pagina moeten herbouwen. */
+if(typeof tyOk==='function'){
+  var _tyOk=tyOk;
+  tyOk=function(val,it,mode){
+    if(NIVEL==='ayuda')mode='soft';
+    else if(NIVEL==='reto')mode='strict';
+    return _tyOk(val,it,mode);};
+}
+
+function nivelPistas(){
+  /* Con ayuda: toon elke pista meteen. Reto: haal getoonde pista's weg. */
+  document.querySelectorAll('.tyq').forEach(function(r){
+    var b=r.querySelector('.typista'),w=r.querySelector('.exwhy');
+    if(!b||!w)return;
+    if(w.classList.contains('g')||w.classList.contains('b'))return;   // al beoordeeld
+    if(NIVEL==='ayuda'){b.click();}
+    else if(NIVEL==='reto'&&w.classList.contains('n')){w.className='exwhy';w.innerHTML='';}
+  });
+}
+
+function nivelRol(){
+  var quiere=NIVEL==='ayuda'?'elegir':(NIVEL==='reto'?'escribir':null);
+  if(!quiere)return;
+  document.querySelectorAll('.rol .modo button[data-modo="'+quiere+'"]').forEach(function(b){
+    if(!b.classList.contains('on'))b.click();});
+}
+
+function nivelFichas(){
+  var d=document.getElementById('fcdir');
+  if(!d)return;
+  var quiere=NIVEL==='ayuda'?'es':(NIVEL==='reto'?'nl':null);
+  if(!quiere||d.value===quiere)return;
+  d.value=quiere;
+  if(typeof renderFC==='function')renderFC();
+}
+
+function aplicaNivel(n){
+  NIVEL=n;
+  try{localStorage.setItem('sjb_nivel',n);}catch(e){}
+  document.body.classList.remove('nivel-ayuda','nivel-normal','nivel-reto');
+  document.body.classList.add('nivel-'+n);
+  document.querySelectorAll('.nivelsel button').forEach(function(b){
+    var on=b.getAttribute('data-nivel')===n;
+    b.classList.toggle('on',on);
+    b.setAttribute('aria-pressed',on?'true':'false');});
+  nivelPistas();nivelRol();nivelFichas();
+}
+
+addEventListener('load',function(){
+  document.querySelectorAll('.nivelsel button').forEach(function(b){
+    b.onclick=function(){aplicaNivel(b.getAttribute('data-nivel'));};});
+  /* de componenten bouwen zichzelf op `load`; even wachten tot ze er staan */
+  setTimeout(function(){aplicaNivel(NIVEL);},450);
+});
 </script></body></html>

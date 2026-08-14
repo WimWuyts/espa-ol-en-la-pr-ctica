@@ -208,6 +208,15 @@ def main():
         if not ok:
             fallos.append("hub-iconen: " + salida[-300:])
 
+    # Buiten het hub-blok, want stap 1 schrijft de print-HTML opnieuw en wist
+    # daarmee de verwijzing naar de schakelaar: die moet er elke bouw weer in,
+    # ook bij --sin-hub.
+    print("── 4d · drie sporen: con ayuda · normal · reto ──────────────────")
+    ok, salida = corre(["python3", "hub_nivel.py"], cwd=WEB)
+    print("   %s" % (salida.splitlines()[-1] if salida else "ok"))
+    if not ok:
+        fallos.append("niveauschakelaar: " + salida[-300:])
+
     print("── 5 · aantallen gelijk aan de hub ──────────────────────────────")
     ok, salida = corre(["python3", "add_cifras.py"], cwd=WEB)
     print("   %s" % (salida.splitlines()[-1] if salida else "ok"))
