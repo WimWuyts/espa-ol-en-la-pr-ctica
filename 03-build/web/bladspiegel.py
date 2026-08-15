@@ -159,6 +159,27 @@ def procesar(ruta, curso="C5"):
     doc = SECCION.sub(sustituir, doc)
     doc = SECCION_C4.sub(lambda m: sustituir(m, "se"), doc)
 
+    # C5 U0 heeft geen generator en zet zijn latere mijlpalen — Lectura, Escucha,
+    # Cultura, Tarea final, Repaso, §V — niet in een `parada sec` met een
+    # `pk`-span maar als losse kop. Zonder anker geen bladwijzer, en dat was te
+    # zien: 68 bladzijden met vier bladwijzers, terwijl de andere units er negen
+    # tot zeventien hebben. Deze kopregels krijgen er dus ook een. Alleen een
+    # anker — géén `major`, want de bladspiegel van U0 is gemeten en klopt.
+    def ancla_suelta(m):
+        tit = re.sub(r"<[^>]+>", "", m.group("tit"))
+        tit = re.sub(r"\s+", " ", tit).strip()
+        ancla = "sec-%d" % (len(indice) + 1)
+        indice.append((ancla, tit))
+        return '<h3 id="%s"%s>%s</h3>' % (ancla, m.group("at"), m.group("tit"))
+
+    # Het anker van een vorige ronde staat er al; het patroon slaat het over en
+    # zet een nieuw nummer, zodat de verborgen lijst compleet blijft. Zonder dat
+    # («alleen koppen zonder id») verdween de bladwijzer bij de tweede bouw.
+    doc = re.sub(r'<h3(?: id="sec-\d+")?(?P<at> style="font-size:14pt;color:var\(--gd\)")'
+                 r'>(?P<tit>(?:(?!</h3>).){0,700})</h3>', ancla_suelta, doc, flags=re.S)
+    doc = re.sub(r'<h3(?: id="sec-\d+")?(?P<at>[^>]*)>(?P<tit>★ Tarea final[^<]{0,80})</h3>',
+                 ancla_suelta, doc)
+
     if indice:
         enlaces = "".join('<a href="#%s">%s</a>' % (a, t) for a, t in indice)
         # laat staan in de opmaak (anders schrijft Chromium geen bestemming),
