@@ -298,6 +298,12 @@ def main():
         ok, salida = corre(["python3", script], cwd=WEB)
         print("   %-24s %s" % (script, "ok" if ok else "MISLUKT"))
 
+    print("── 11 · inhoudstafel van de drie cursussen ──────────────────────")
+    ok, salida = corre(["python3", "gen_indice.py"], cwd=os.path.join(ROOT, "03-build"))
+    print("   %s" % (salida.splitlines()[-1] if salida else "ok"))
+    if not ok:
+        fallos.append("inhoudstafel: " + salida[-300:])
+
     print()
     if fallos:
         print("MISLUKT (%d):" % len(fallos))
