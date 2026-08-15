@@ -304,6 +304,13 @@ def main():
     if not ok:
         fallos.append("inhoudstafel: " + salida[-300:])
 
+    print("── 12 · C4-transcripten apart ───────────────────────────────────")
+    ok, salida = corre(["python3", "gen_transcripciones.py", "--sueltos"],
+                       cwd=os.path.join(ROOT, "03-build"))
+    print("   %s" % (salida.splitlines()[0] if salida else "ok"))
+    if not ok:
+        fallos.append("transcripten: " + salida[-300:])
+
     print()
     if fallos:
         print("MISLUKT (%d):" % len(fallos))
